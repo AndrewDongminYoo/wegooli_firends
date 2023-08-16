@@ -1,0 +1,26 @@
+name: wegooliFriendApp
+description: A new Flutter project.
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.0.0
+
+dependencies:
+  english_words: ^4.0.0
+  flutter_lorem: ^2.0.0
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  table_calendar: ^3.0.9
+  intl: ^0.18.1
+
+dev_dependencies:
+  analysis_defaults:
+    path: ../analysis_defaults
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - images/

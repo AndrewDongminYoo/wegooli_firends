@@ -107,7 +107,7 @@ class _ChatTapState extends State<ChatTab> with ChannelEventHandler {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Sendbird Demo")),
+      appBar: AppBar(title: const Text(ChatTab.title)),
       body: DashChat(
         currentUser: asDashChatUser(SendbirdSdk().currentUser),
         messages: asDashChatMessages(_messages),

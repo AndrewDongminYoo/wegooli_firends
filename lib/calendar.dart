@@ -11,6 +11,7 @@ import 'package:intl/date_symbol_data_local.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 // 🌎 Project imports:
+import 'gen/assets.gen.dart';
 import 'utils.dart';
 
 class CalendarTab extends StatefulWidget {
@@ -155,13 +156,12 @@ class _CalendarTabState extends State<CalendarTab> {
                     CircleAvatar(
                       backgroundColor: getRandomColor(),
                       radius: 24,
-                      child: const CircleAvatar(
+                      child: CircleAvatar(
                         backgroundColor: Colors.white,
                         radius: 21,
                         child: CircleAvatar(
                           radius: 18,
-                          backgroundImage:
-                              AssetImage('assets/images/profile.jpeg'),
+                          backgroundImage: Assets.images.profile.provider(),
                           backgroundColor: Colors.grey,
                         ),
                       ),
@@ -169,13 +169,12 @@ class _CalendarTabState extends State<CalendarTab> {
                     CircleAvatar(
                       backgroundColor: getRandomColor(),
                       radius: 24,
-                      child: const CircleAvatar(
+                      child: CircleAvatar(
                         backgroundColor: Colors.white,
                         radius: 21,
                         child: CircleAvatar(
                           radius: 18,
-                          backgroundImage:
-                              AssetImage('assets/images/profile.jpeg'),
+                          backgroundImage: Assets.images.profile.provider(),
                           backgroundColor: Colors.grey,
                         ),
                       ),
@@ -183,18 +182,17 @@ class _CalendarTabState extends State<CalendarTab> {
                     CircleAvatar(
                       backgroundColor: getRandomColor(),
                       radius: 24,
-                      child: const CircleAvatar(
+                      child: CircleAvatar(
                         backgroundColor: Colors.white,
                         radius: 21,
                         child: CircleAvatar(
                           radius: 18,
-                          backgroundImage:
-                              AssetImage('assets/images/profile.jpeg'),
+                          backgroundImage: Assets.images.profile.provider(),
                           backgroundColor: Colors.grey,
                         ),
                       ),
                     ),
-                    const CircleAvatar(
+                    CircleAvatar(
                       backgroundColor: Colors.grey,
                       radius: 24,
                       child: Icon(Icons.add, size: 35, color: Colors.white),

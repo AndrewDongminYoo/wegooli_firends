@@ -31,35 +31,36 @@ dependencies:
   # 다음은 애플리케이션에 Cupertino Icons 글꼴을 추가함.
   # iOS 스타일 아이콘을 위해 CupertinoIcons 클래스와 함께 사용함.
   cupertino_icons: ^1.0.5
-  english_words: ^4.0.0
-  flutter_lorem: ^2.0.0
-  intl: ^0.18.1
   dash_chat_2: ^0.0.17
+  english_words: ^4.0.0
+  flutter_gen: ^5.3.1
+  flutter_lorem: ^2.0.0
+  get: ^4.6.5
+  intl: ^0.18.1
+  just_the_tooltip: ^0.0.12
   sendbird_sdk: ^3.2.17
   table_calendar: ^3.0.9
-  flutter_gen: ^5.3.1
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
-  # dart run build_runner build 실행 시 아래의 generator들도 실행됨.
-  build_runner: ^2.4.5
-  import_sorter: ^4.6.0
-  flutter_gen_runner: ^5.3.1
-  # 아래 "flutter_lints" 패키지에는 좋은 코딩 관행을 장려하기 위한 권장 린트 세트가 포함되어 있음.
-  # 패키지에서 제공하는 린트 세트는 패키지 루트에 있는 `analysis_options.yaml` 파일에서 활성화됨.
-  # 특정 린트 규칙을 비활성화하고 추가 규칙을 활성화하는 방법에 대한 정보는 해당 파일을 참조.
-  flutter_lints: ^2.0.1
-  dart_code_metrics: ^5.7.5
   # `webdev`은 Dart로 웹 애플리케이션을 개발 및 배포하기 위한 명령줄 도구입니다.
   # `webdev`은 의존성 패키지로 사용되어서는 안 됩니다. 대신 글로벌 패키지로 "활성화"해야 합니다.
   # ``` dart pub global activate webdev ```
   # webdev: ^3.0.5
   # dart2js 및 DDC 컴파일러를 래핑하는 빌더 구현 패키지입니다. `webdev` 실행을 위해 필요합니다.
   build_web_compilers: ^4.0.3
+  # dart run build_runner build 실행 시 아래의 generator들도 실행됨.
+  build_runner: ^2.4.5
+  dart_code_metrics: ^5.7.5
+  flutter_gen_runner: ^5.3.1
+  # 아래 "flutter_lints" 패키지에는 좋은 코딩 관행을 장려하기 위한 권장 린트 세트가 포함되어 있음.
+  # 패키지에서 제공하는 린트 세트는 패키지 루트에 있는 `analysis_options.yaml` 파일에서 활성화됨.
+  # 특정 린트 규칙을 비활성화하고 추가 규칙을 활성화하는 방법에 대한 정보는 해당 파일을 참조.
+  flutter_lints: ^2.0.1
+  flutter_test:
+    sdk: flutter
+  import_sorter: ^4.6.0
 
 # 이 파일의 일반 Dart 부분에 대한 자세한 내용은 다음 페이지(https://dart.dev/tools/pub/pubspec)를 참조.
-
 # 다음 섹션은 Flutter 패키지에 대한 세부 설정.
 flutter:
   # 다음 줄은 머티리얼 아이콘 폰트가 애플리케이션에 포함되어 있는지 확인하여 머티리얼 아이콘 클래스에서 아이콘을 사용할 수 있도록 함.

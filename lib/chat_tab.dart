@@ -1,8 +1,12 @@
-import 'package:dash_chat_2/dash_chat_2.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:dash_chat_2/dash_chat_2.dart';
 import 'package:sendbird_sdk/sendbird_sdk.dart';
 
+// 🌎 Project imports:
 import 'main.dart';
 
 class ChatTab extends StatefulWidget {

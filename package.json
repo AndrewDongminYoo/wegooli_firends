@@ -1,0 +1,52 @@
+{
+  "name": "wegoolifriendapp",
+  "version": "1.0.0",
+  "description": "```bash flutter run ```",
+  "directories": {
+    "lib": "lib"
+  },
+  "keywords": [
+    "wegooli",
+    "mobility",
+    "car sharing",
+    "friends",
+    "app",
+    "iOS",
+    "android",
+    "flutter"
+  ],
+  "author": "weGooli Co.",
+  "license": "ISC",
+  "scripts": {
+    "build-aab": "flutter build appbundle",
+    "build-apk": "flutter build apk --split-per-abi",
+    "build-ios": "flutter build ios",
+    "build-ipa": "flutter build ipa",
+    "dev": "flutter run --debug --device-id chrome --web-renderer canvaskit --web-hostname localhost --web-port 8080",
+    "install": "flutter pub get",
+    "upgrade": "flutter upgrade && flutter pub upgrade",
+    "upgrade:dry": "flutter pub outdated && flutter outdated --json > logs/outdated.json",
+    "upgrade:hard": "flutter upgrade --force && flutter pub upgrade --major-versions",
+    "downgrade": "flutter pub downgrade",
+    "fmt:hard": "dart format .",
+    "fmt:fix": "dart fix --apply",
+    "fmt:sort": "dart run import_sorter:main -e",
+    "format": "yarn fmt:fix && yarn fmt:sort",
+    "format:hard": "yarn fmt:fix && yarn fmt:sort && yarn fmt:hard",
+    "gen:asset": "dart run build_runner build --delete-conflicting-outputs",
+    "gen:locale": "flutter gen-l10n",
+    "generate": "yarn gen:asset && yarn gen:locale && yarn fmt:sort",
+    "clean": "flutter clean",
+    "clean_preinstall": "yarn clean && yarn install && yarn gen:asset && yarn format",
+    "logs": "flutter logs -d",
+    "list": "flutter pub deps",
+    "devices:": "flutter custom-devices",
+    "devices:virt": "flutter emulators",
+    "devices:real": "flutter devices --machine",
+    "doctor": "flutter doctor",
+    "info": "flutter info",
+    "screenshot": "flutter screenshot",
+    "test": "flutter test",
+    "test:drive": "flutter drive"
+  }
+}

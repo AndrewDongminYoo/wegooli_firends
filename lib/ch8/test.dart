@@ -1,11 +1,11 @@
-import 'dart:developer';
-
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(MyApp());
 }
 
+// ignore: must_be_immutable
 class MyApp extends StatelessWidget {
   bool enabled = false;
   String stateText = 'OFF';

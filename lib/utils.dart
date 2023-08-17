@@ -2,14 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+// 🎯 Dart imports:
+import 'dart:collection';
 import 'dart:math';
 
-import 'package:english_words/english_words.dart';
-// ignore: implementation_imports
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'dart:collection';
+
+// 📦 Package imports:
+import 'package:english_words/english_words.dart';
 import 'package:table_calendar/table_calendar.dart';
-// This file has a number of platform-agnostic non-Widget utility functions.
 
 const _myListOfRandomColors = [
   Colors.red,

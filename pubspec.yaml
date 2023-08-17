@@ -1,28 +1,156 @@
-name: wegooliFriendApp
+name: wegooli_friends
 description: A new Flutter project.
+
+# 다음 줄은 `flutter pub publish`를 사용하여 패키지가 실수로 pub.dev에 게시되는 것을 방지함.
+# 이는 비공개 패키지의 경우 선호됨.
+publish_to: none
+# pub.dev에 게시하려면 이 줄을 제거.
+
+# 다음은 애플리케이션의 버전 및 빌드 번호를 정의함.
+# 버전 번호는 1.2.43과 같이 점으로 구분된 세 개의 숫자와 +로 구분된 선택적 빌드 번호로 구성됨.
+# 버전과 빌드 번호는 각각 --build-name과 --build-number를 지정하여 플래터 빌드에서 재정의할 수 있음.
+# 안드로이드에서 빌드명은 버전 이름으로, 빌드 번호는 버전 코드로 사용됨.
+# Android 버전 관리에 대한 자세한 내용은 https://developer.android.com/studio/publish/versioning 에서 확인.
+# iOS에서 빌드명은 CFBundleShortVersionString으로, 빌드번호는 CFBundleVersion으로 사용됨.
+# iOS 버전 관리에 대한 자세한 내용은
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+# Windows에서 빌드명은 제품 및 파일 버전의 메이저, 마이너, 패치 부분으로 사용되며 빌드번호는 빌드 접미사로 사용됨.
 version: 1.0.0+1
 
 environment:
   sdk: ^3.0.0
 
+# 종속성은 패키지가 작동하기 위해 필요한 다른 패키지를 지정.
+# 패키지 종속성을 최신 버전으로 자동 업그레이드하려면 `flutter pub upgrade --major-versions`를 실행하는 것이 좋음.
+# 또는 아래의 버전 번호를 pub.dev에서 사용 가능한 최신 버전으로 변경하여 # 종속성을 수동으로 업데이트할 수 있음.
+# 사용 가능한 최신 버전이 있는 종속성을 확인하려면 `flutter pub outdated`를 실행함.
 dependencies:
-  english_words: ^4.0.0
-  flutter_lorem: ^2.0.0
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.2
-  table_calendar: ^3.0.9
+
+  # 다음은 애플리케이션에 Cupertino Icons 글꼴을 추가함.
+  # iOS 스타일 아이콘을 위해 CupertinoIcons 클래스와 함께 사용함.
+  cupertino_icons: ^1.0.5
+  english_words: ^4.0.0
+  flutter_lorem: ^2.0.0
   intl: ^0.18.1
   dash_chat_2: ^0.0.17
   sendbird_sdk: ^3.2.17
+  table_calendar: ^3.0.9
+  flutter_gen: ^5.3.1
 
 dev_dependencies:
-  analysis_defaults:
-    path: ../analysis_defaults
   flutter_test:
     sdk: flutter
+  # dart run build_runner build 실행 시 아래의 generator들도 실행됨.
+  build_runner: ^2.4.5
+  import_sorter: ^4.6.0
+  flutter_gen_runner: ^5.3.1
+  # 아래 "flutter_lints" 패키지에는 좋은 코딩 관행을 장려하기 위한 권장 린트 세트가 포함되어 있음.
+  # 패키지에서 제공하는 린트 세트는 패키지 루트에 있는 `analysis_options.yaml` 파일에서 활성화됨.
+  # 특정 린트 규칙을 비활성화하고 추가 규칙을 활성화하는 방법에 대한 정보는 해당 파일을 참조.
+  flutter_lints: ^2.0.1
+  dart_code_metrics: ^5.7.5
+  # `webdev`은 Dart로 웹 애플리케이션을 개발 및 배포하기 위한 명령줄 도구입니다.
+  # `webdev`은 의존성 패키지로 사용되어서는 안 됩니다. 대신 글로벌 패키지로 "활성화"해야 합니다.
+  # ``` dart pub global activate webdev ```
+  # webdev: ^3.0.5
+  # dart2js 및 DDC 컴파일러를 래핑하는 빌더 구현 패키지입니다. `webdev` 실행을 위해 필요합니다.
+  build_web_compilers: ^4.0.3
 
+# 이 파일의 일반 Dart 부분에 대한 자세한 내용은 다음 페이지(https://dart.dev/tools/pub/pubspec)를 참조.
+
+# 다음 섹션은 Flutter 패키지에 대한 세부 설정.
 flutter:
+  # 다음 줄은 머티리얼 아이콘 폰트가 애플리케이션에 포함되어 있는지 확인하여 머티리얼 아이콘 클래스에서 아이콘을 사용할 수 있도록 함.
   uses-material-design: true
+
+  # https://github.com/FlutterGen/flutter_gen/blob/main/README.md#error-with-internationalization
+  # FlutterGen이 internationalization 충돌시, pubspec.yaml의 generate 설정을 삭제해줘야 함.
+  # l10n.yml 파일의 synthetic-package: false 설정.
+  generate: true
+
+  # 애플리케이션에 에셋을 추가하려면 다음과 같이 에셋 섹션을 추가함:
   assets:
-    - images/
+    - assets/
+    - assets/images/
+  fonts:
+    - family: Pretendard
+      fonts:
+        - asset: assets/fonts/Pretendard-Black.otf
+        - asset: assets/fonts/Pretendard-Bold.otf
+        - asset: assets/fonts/Pretendard-Light.otf
+        - asset: assets/fonts/Pretendard-Medium.otf
+        - asset: assets/fonts/Pretendard-Regular.otf
+        - asset: assets/fonts/Pretendard-Thin.otf
+          weight: 400
+    - family: SF-Pro-Text
+      fonts:
+        - asset: assets/fonts/SF-Pro-Text-Black.otf
+        - asset: assets/fonts/SF-Pro-Text-Bold.otf
+        - asset: assets/fonts/SF-Pro-Text-Light.otf
+        - asset: assets/fonts/SF-Pro-Text-Medium.otf
+        - asset: assets/fonts/SF-Pro-Text-Regular.otf
+        - asset: assets/fonts/SF-Pro-Text-Thin.otf
+          weight: 400
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter-Black.ttf
+        - asset: assets/fonts/Inter-Bold.ttf
+        - asset: assets/fonts/Inter-Light.ttf
+        - asset: assets/fonts/Inter-Medium.ttf
+        - asset: assets/fonts/Inter-Regular.ttf
+        - asset: assets/fonts/Inter-Thin.ttf
+
+# flutter_gen_runner는 자산, 폰트, 색상 등을 위한 Flutter 코드 생성기로, 문자열 기반 API를 없애줌.
+# String 기반으로 자산 경로를 사용하는 것은 안전하지 않음.
+# build_runner와 FlutterGen을 패키지의 pubspec.yaml 파일에 추가하고,
+# Homebrew 또는 Pub Global activate를 사용하여 FlutterGen CLI binary를 설치.
+#   (cli 설치 없으면 `flutter packages pub run build_runner build` 해야함)
+#
+# https://pub.dev/packages/flutter_gen_runner
+flutter_gen:
+  output: lib/gen/ # Optional (default: lib/gen/)
+  line_length: 120 # Optional (default: 80)
+
+  # Optional
+  integrations:
+    flutter_svg: true
+    flare_flutter: true
+    rive: true
+    lottie: true
+
+  colors:
+    enabled: true
+    outputs:
+      class_name: ColorConstant
+    inputs:
+      - assets/colors/happy_car.xml # Figma From Wegooli HappyCar
+
+# Usage:
+#   flutter pub run import_sorter:main
+#   OR
+#   pub run import_sorter:main
+import_sorter:
+  emojis: true # Optional, defaults to false
+  # ignored_files: # Optional, defaults to []
+  # - /lib/gen/assets.gen.dart
+  # - /lib/gen/colors.gen.dart
+  # - /lib/gen/fonts.gen.dart
+  # - /lib/gen/gen.dart
+  # - /lib/l10n/app_localizations_en.dart
+  # - /lib/l10n/app_localizations_ko.dart
+  # - /lib/l10n/app_localizations.dart
+
+analyzer:
+  errors:
+    deprecated_member_use_from_same_package: ignore
+    invalid_annotation_target: ignore
+  exclude:
+    - bin/cache/**
+    - "**/*.g.dart"
+    - "**/*.gen.dart"
+    - "**/gen/*.dart"
+    - "**/*.freezed.dart"
+    - "**/*.mocks.dart"
+    - "**/injector.config.dart"

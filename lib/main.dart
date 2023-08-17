@@ -2,17 +2,20 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+// 🐦 Flutter imports:
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:intl/date_symbol_data_local.dart';
 import 'package:sendbird_sdk/sendbird_sdk.dart';
 
+// 🌎 Project imports:
 import 'calendar.dart';
 import 'chat_tab.dart';
 import 'profile_tab.dart';
-// import 'settings_tab.dart';
 import 'smart_key_tab.dart';
 import 'widgets.dart';
-import 'package:intl/date_symbol_data_local.dart';
 
 void main() => initializeDateFormatting().then((_) => runApp(MyAdaptingApp()));
 

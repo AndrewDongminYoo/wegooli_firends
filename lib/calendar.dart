@@ -2,11 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+// 🐦 Flutter imports:
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+// 📦 Package imports:
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:table_calendar/table_calendar.dart';
 
+// 🌎 Project imports:
 import 'utils.dart';
 
 class CalendarTab extends StatefulWidget {
@@ -156,7 +160,8 @@ class _CalendarTabState extends State<CalendarTab> {
                         radius: 21,
                         child: CircleAvatar(
                           radius: 18,
-                          backgroundImage: AssetImage('images/profile.jpeg'),
+                          backgroundImage:
+                              AssetImage('assets/images/profile.jpeg'),
                           backgroundColor: Colors.grey,
                         ),
                       ),
@@ -169,7 +174,8 @@ class _CalendarTabState extends State<CalendarTab> {
                         radius: 21,
                         child: CircleAvatar(
                           radius: 18,
-                          backgroundImage: AssetImage('images/profile.jpeg'),
+                          backgroundImage:
+                              AssetImage('assets/images/profile.jpeg'),
                           backgroundColor: Colors.grey,
                         ),
                       ),
@@ -182,7 +188,8 @@ class _CalendarTabState extends State<CalendarTab> {
                         radius: 21,
                         child: CircleAvatar(
                           radius: 18,
-                          backgroundImage: AssetImage('images/profile.jpeg'),
+                          backgroundImage:
+                              AssetImage('assets/images/profile.jpeg'),
                           backgroundColor: Colors.grey,
                         ),
                       ),

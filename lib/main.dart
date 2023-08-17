@@ -8,7 +8,6 @@ import 'package:flutter/material.dart';
 
 // 📦 Package imports:
 import 'package:intl/date_symbol_data_local.dart';
-import 'package:sendbird_sdk/sendbird_sdk.dart';
 
 // 🌎 Project imports:
 import 'calendar.dart';
@@ -18,38 +17,6 @@ import 'smart_key_tab.dart';
 import 'widgets.dart';
 
 void main() => initializeDateFormatting().then((_) => runApp(MyAdaptingApp()));
-
-Future<User> connectWithSendbird(
-  String appId,
-  String userId,
-) async {
-  try {
-    final sendbird = SendbirdSdk(appId: appId);
-    final user = await sendbird.connect(userId);
-    return user;
-  } catch (e) {
-    throw e;
-  }
-}
-
-Future<GroupChannel> getChannelBetween(
-  String currentUserId,
-  List<String> otherUserIds,
-) async {
-  try {
-    final query = GroupChannelListQuery()
-      ..userIdsExactlyIn = otherUserIds
-      ..limit = 1;
-    final channels = await query.loadNext();
-    if (channels.isEmpty) {
-      return GroupChannel.createChannel(
-          GroupChannelParams()..userIds = [currentUserId] + otherUserIds);
-    }
-    return channels[0];
-  } catch (e) {
-    throw e;
-  }
-}
 
 class MyAdaptingApp extends StatelessWidget {
   const MyAdaptingApp({super.key});

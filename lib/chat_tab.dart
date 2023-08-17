@@ -7,7 +7,8 @@ import 'package:dash_chat_2/dash_chat_2.dart';
 import 'package:sendbird_sdk/sendbird_sdk.dart';
 
 // 🌎 Project imports:
-import 'main.dart';
+import 'package:wegooli_friends/connect_with_sendbird.dart';
+import 'package:wegooli_friends/get_channel_between.dart';
 
 class ChatTab extends StatefulWidget {
   static const title = '채팅';

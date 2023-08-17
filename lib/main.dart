@@ -4,6 +4,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:sendbird_sdk/sendbird_sdk.dart';
 
 import 'calendar.dart';
 import 'chat_tab.dart';
@@ -14,6 +15,39 @@ import 'widgets.dart';
 import 'package:intl/date_symbol_data_local.dart';
 
 void main() => initializeDateFormatting().then((_) => runApp(MyAdaptingApp()));
+
+Future<User> connectWithSendbird(
+  String appId,
+  String userId,
+) async {
+  try {
+    final sendbird = SendbirdSdk(appId: appId);
+    final user = await sendbird.connect(userId);
+    return user;
+  } catch (e) {
+    throw e;
+  }
+}
+
+Future<GroupChannel> getChannelBetween(
+  String currentUserId,
+  List<String> otherUserIds,
+) async {
+  try {
+    final query = GroupChannelListQuery()
+      ..userIdsExactlyIn = otherUserIds
+      ..limit = 1;
+    final channels = await query.loadNext();
+    if (channels.isEmpty) {
+      return GroupChannel.createChannel(
+          GroupChannelParams()..userIds = [currentUserId] + otherUserIds);
+    }
+    return channels[0];
+  } catch (e) {
+    throw e;
+  }
+}
+
 class MyAdaptingApp extends StatelessWidget {
   const MyAdaptingApp({super.key});
 
@@ -116,7 +150,11 @@ class _PlatformAdaptingHomePageState extends State<PlatformAdaptingHomePage> {
             ),
           1 => CupertinoTabView(
               defaultTitle: ChatTab.title,
-              builder: (context) => const ChatTab(),
+              builder: (context) => ChatTab(
+                appId: "36FB6EA9-27A7-44F1-9696-72E1E21033B6",
+                userId: "me",
+                otherUserIds: ["user1", "user2"],
+              ),
             ),
           2 => CupertinoTabView(
               defaultTitle: SmartKeyTab.title,
@@ -171,8 +209,14 @@ class _AndroidDrawer extends StatelessWidget {
             title: const Text(ChatTab.title),
             onTap: () {
               Navigator.pop(context);
-              Navigator.push<void>(context,
-                  MaterialPageRoute(builder: (context) => const ChatTab()));
+              Navigator.push<void>(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => ChatTab(
+                            appId: "36FB6EA9-27A7-44F1-9696-72E1E21033B6",
+                            userId: "me",
+                            otherUserIds: ["user1", "user2"],
+                          )));
             },
           ),
           ListTile(

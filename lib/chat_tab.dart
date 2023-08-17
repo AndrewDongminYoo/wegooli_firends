@@ -1,126 +1,133 @@
-// Copyright 2020 The Flutter team. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-
+import 'package:dash_chat_2/dash_chat_2.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_lorem/flutter_lorem.dart';
+import 'package:sendbird_sdk/sendbird_sdk.dart';
 
-import 'utils.dart';
-import 'widgets.dart';
+import 'main.dart';
 
 class ChatTab extends StatefulWidget {
   static const title = '채팅';
   static const androidIcon = Icon(Icons.chat, size: 28.0);
   static const iosIcon = Icon(CupertinoIcons.text_bubble, size: 28.0);
+  final String appId; // Sendbird application id
+  final String userId; // Unique user id for the buyer
+  final List<String> otherUserIds; // Unique user id for the seller(s)
 
-  const ChatTab({super.key});
+  // Constructor
+  ChatTab(
+      {required this.appId, required this.userId, required this.otherUserIds});
 
   @override
-  State<ChatTab> createState() => _ChatTabState();
+  _ChatTapState createState() => _ChatTapState();
 }
 
-class _ChatTabState extends State<ChatTab> {
-  static const _itemsLength = 20;
+class _ChatTapState extends State<ChatTab> with ChannelEventHandler {
+  late GroupChannel _channel;
+  List<BaseMessage> _messages = [];
 
-  late final List<Color> colors;
-  late final List<String> titles;
-  late final List<String> contents;
+  void loadSendbird(
+    String appId,
+    String userId,
+    List<String> otherUserIds,
+  ) async {
+    try {
+      // Init & connect with Sendbird
+      await connectWithSendbird(appId, userId);
+
+      // Get the GroupChannel between the specified users
+      final channel = await getChannelBetween(userId, otherUserIds);
+
+      // Retrieve any existing messages from the GroupChannel
+      final messages = await channel.getMessagesByTimestamp(
+        DateTime.now().millisecondsSinceEpoch * 1000,
+        MessageListParams(),
+      );
+
+      // Update & prompt the UI to rebuild
+      setState(() {
+        _channel = channel;
+        _messages = messages;
+      });
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  ChatUser asDashChatUser(User? user) {
+    // If no Sendbird user, return an empty ChatUser object
+    if (user == null) {
+      return ChatUser(id: "", lastName: "", firstName: "", profileImage: "");
+    }
+    // Sendbird user nicknames and profileUrls are optional and may be empty
+    return ChatUser(
+      id: user.userId,
+      lastName: '',
+      firstName: user.nickname,
+      profileImage: user.profileUrl ?? "",
+    );
+  }
+
+  List<ChatMessage> asDashChatMessages(List<BaseMessage> messages) {
+    return [
+      for (BaseMessage sendBirdMessage in messages)
+        ChatMessage(
+          text: sendBirdMessage.message,
+          user: asDashChatUser(sendBirdMessage.sender),
+          createdAt: DateTime.now(),
+        )
+    ];
+  }
 
   @override
   void initState() {
-    colors = getRandomColors(_itemsLength);
-    titles = List.generate(_itemsLength, (index) => generateRandomHeadline());
-    contents =
-        List.generate(_itemsLength, (index) => lorem(paragraphs: 1, words: 24));
     super.initState();
-  }
-
-  Widget _listBuilder(BuildContext context, int index) {
-    return SafeArea(
-      top: false,
-      bottom: false,
-      child: Card(
-        elevation: 1.5,
-        margin: const EdgeInsets.fromLTRB(6, 12, 6, 0),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(4),
-        ),
-        child: InkWell(
-          // Make it splash on Android. It would happen automatically if this
-          // was a real card but this is just a demo. Skip the splash on iOS.
-          onTap: defaultTargetPlatform == TargetPlatform.iOS ? null : () {},
-          child: Padding(
-            padding: const EdgeInsets.all(12.0),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                CircleAvatar(
-                  backgroundColor: colors[index],
-                  child: Text(
-                    titles[index].substring(0, 1),
-                    style: const TextStyle(color: Colors.white),
-                  ),
-                ),
-                const Padding(padding: EdgeInsets.only(left: 16)),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        titles[index],
-                        style: const TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      const Padding(padding: EdgeInsets.only(top: 8)),
-                      Text(
-                        contents[index],
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
+    loadSendbird(
+      widget.appId,
+      widget.userId,
+      widget.otherUserIds,
     );
-  }
-
-  // ===========================================================================
-  // Non-shared code below because this tab uses different scaffolds.
-  // ===========================================================================
-
-  Widget _buildAndroid(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(ChatTab.title),
-      ),
-      body: ListView.builder(
-        itemCount: _itemsLength,
-        itemBuilder: _listBuilder,
-      ),
-    );
-  }
-
-  Widget _buildIos(BuildContext context) {
-    return CupertinoPageScaffold(
-      navigationBar: const CupertinoNavigationBar(),
-      child: ListView.builder(
-        itemCount: _itemsLength,
-        itemBuilder: _listBuilder,
-      ),
-    );
+    SendbirdSdk().addChannelEventHandler("dashchat", this);
   }
 
   @override
-  Widget build(context) {
-    return PlatformWidget(
-      androidBuilder: _buildAndroid,
-      iosBuilder: _buildIos,
+  void dispose() {
+    super.dispose();
+    SendbirdSdk().removeChannelEventHandler("dashchat");
+  }
+
+  @override
+  void onMessageReceived(BaseChannel channel, BaseMessage message) {
+    super.onMessageReceived(channel, message);
+    setState(() {
+      _messages.add(message);
+      _messages.sort(((a, b) => b.createdAt.compareTo(a.createdAt)));
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Sendbird Demo")),
+      body: DashChat(
+        currentUser: asDashChatUser(SendbirdSdk().currentUser),
+        messages: asDashChatMessages(_messages),
+        onSend: (newMessage) {
+          final sentMessage = _channel.sendUserMessageWithText(newMessage.text);
+          setState(() {
+            // _messages.add(sentMessage);
+            _messages.insert(0, sentMessage);
+          });
+        },
+        inputOptions: const InputOptions(
+          sendOnEnter: true,
+        ),
+        messageListOptions: MessageListOptions(
+          onLoadEarlier: () async {
+            await Future.delayed(const Duration(seconds: 3));
+          },
+        ),
+        typingUsers: <ChatUser>[],
+      ),
     );
   }
 }

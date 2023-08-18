@@ -42,7 +42,7 @@ linter:
     avoid_escaping_inner_quotes:
       ignore_for_file:
         - lib/l10n/*.dart
-        - lib/generated/*.dart # must be ignored for items generated from arb files
+        - lib/gen/*.dart # must be ignored for items generated from arb files
     avoid_field_initializers_in_const_classes: false # Fields in 'const' classes should not have initializers.
     avoid_final_parameters: true # This rule is suppressed with ignore_for_file in some generated code.
     avoid_function_literals_in_foreach_calls: true

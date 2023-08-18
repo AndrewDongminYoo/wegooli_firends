@@ -53,6 +53,7 @@ dev_dependencies:
   # 아래 "flutter_lints" 패키지에는 좋은 코딩 관행을 장려하기 위한 권장 린트 세트가 포함되어 있음.
   # 패키지에서 제공하는 린트 세트는 패키지 루트에 있는 `analysis_options.yaml` 파일에서 활성화됨.
   # 특정 린트 규칙을 비활성화하고 추가 규칙을 활성화하는 방법에 대한 정보는 해당 파일을 참조.
+  flutter_launcher_icons: ^0.13.1
   flutter_lints: ^2.0.1
   flutter_test:
     sdk: flutter
@@ -143,7 +144,7 @@ flutter_gen:
 # Usage:
 #   flutter pub run import_sorter:main
 #   OR
-#   pub run import_sorter:main
+#   dart run import_sorter:main
 import_sorter:
   emojis: true # Optional, defaults to false
   # ignored_files: # Optional, defaults to []
@@ -167,3 +168,17 @@ analyzer:
     - "**/*.freezed.dart"
     - "**/*.mocks.dart"
     - "**/injector.config.dart"
+
+# 아이콘 생성 원할 시, dart run flutter_launcher_icons:main
+flutter_launcher_icons:
+  image_path: "assets/icons/GLLO.jpg"
+  ios: true
+  android: "ic_launcher"
+  min_sdk_android: 21
+  web:
+    generate: true
+  macos:
+    generate: true
+  windows:
+    generate: true
+    icon_size: 256 # 48-256

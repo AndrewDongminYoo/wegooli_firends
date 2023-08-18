@@ -24,6 +24,8 @@ environment:
 # 또는 아래의 버전 번호를 pub.dev에서 사용 가능한 최신 버전으로 변경하여 # 종속성을 수동으로 업데이트할 수 있음.
 # 사용 가능한 최신 버전이 있는 종속성을 확인하려면 `flutter pub outdated`를 실행함.
 dependencies:
+  cached_network_image: ^3.2.3
+  connectivity_plus: ^4.0.2
   cookie_jar: ^4.0.8
   cupertino_icons: ^1.0.5
   dash_chat_2: ^0.0.17
@@ -34,10 +36,13 @@ dependencies:
     sdk: flutter
   flutter_gen: ^5.3.1
   flutter_lorem: ^2.0.0
+  flutter_svg: ^2.0.7
   get: ^4.6.5
   intl: ^0.18.1
   just_the_tooltip: ^0.0.12
+  lottie: ^2.6.0
   sendbird_sdk: ^3.2.17
+  shared_preferences: ^2.2.0
   table_calendar: ^3.0.9
 
 dev_dependencies:
@@ -68,6 +73,8 @@ flutter:
   assets:
     - assets/
     - assets/images/
+    - assets/svg/
+    - assets/lotties/
   fonts:
     - family: Pretendard
       fonts:
@@ -95,6 +102,18 @@ flutter:
         - asset: assets/fonts/Inter-Medium.ttf
         - asset: assets/fonts/Inter-Regular.ttf
         - asset: assets/fonts/Inter-Thin.ttf
+          weight: 400
+    - family: CookieRun
+      fonts:
+        - asset: assets/fonts/CookieRun Black.otf
+        - asset: assets/fonts/CookieRun Bold.otf
+        - asset: assets/fonts/CookieRun Regular.otf
+    - family: Nanum-Square-Round
+      fonts:
+        - asset: assets/fonts/Nanum-Square-Round-Bold.ttf
+        - asset: assets/fonts/Nanum-Square-Round-ExtraBold.ttf
+        - asset: assets/fonts/Nanum-Square-Round-Light.ttf
+        - asset: assets/fonts/Nanum-Square-Round-Regular.ttf
 
 # flutter_gen_runner는 자산, 폰트, 색상 등을 위한 Flutter 코드 생성기로, 문자열 기반 API를 없애줌.
 # String 기반으로 자산 경로를 사용하는 것은 안전하지 않음.

@@ -312,7 +312,6 @@ class _CalendarTabState extends State<CalendarTab> {
               },
             ),
           ),
-
           Container(
             padding: const EdgeInsets.all(20),
             width: double.infinity,

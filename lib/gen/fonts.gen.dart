@@ -10,8 +10,14 @@
 class FontFamily {
   FontFamily._();
 
+  /// Font family: CookieRun
+  static const String cookieRun = 'CookieRun';
+
   /// Font family: Inter
   static const String inter = 'Inter';
+
+  /// Font family: Nanum-Square-Round
+  static const String nanumSquareRound = 'Nanum-Square-Round';
 
   /// Font family: Pretendard
   static const String pretendard = 'Pretendard';

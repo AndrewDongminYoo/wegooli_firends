@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+// 📦 Package imports:
 import 'package:sendbird_sdk/sendbird_sdk.dart';
 
 Future<User> connectWithSendbird(

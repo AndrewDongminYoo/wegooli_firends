@@ -22,12 +22,14 @@ class LoginPage extends StatelessWidget {
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [Text('wegooli friends', style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontStyle: FontStyle.italic,
-                  fontSize: 40,
-                  height:2
-                ))],
+                children: [
+                  Text('wegooli friends',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontStyle: FontStyle.italic,
+                          fontSize: 40,
+                          height: 2))
+                ],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

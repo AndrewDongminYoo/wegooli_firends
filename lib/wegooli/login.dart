@@ -87,10 +87,11 @@ class TextState extends State<TextScreen> {
           labelText: 'nickname',
           border: OutlineInputBorder(),
           counterText: "$textCounter characters.",
-      ),
-      // textInputAction: TextInputAction.text,
-       keyboardType: TextInputType.text,
-    )]));
+        ),
+        // textInputAction: TextInputAction.text,
+        keyboardType: TextInputType.text,
+      )
+    ]));
   }
 }
 

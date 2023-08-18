@@ -7,10 +7,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
-import '/platform_adapting_home_page.dart';
+import 'widgets/platform_handler.dart';
 
-class AdaptiveMusicApp extends StatelessWidget {
-  const AdaptiveMusicApp({
+class AdaptiveApp extends StatelessWidget {
+  const AdaptiveApp({
     super.key,
   });
 
@@ -33,7 +33,7 @@ class AdaptiveMusicApp extends StatelessWidget {
           child: Material(child: child),
         );
       },
-      home: const PlatformAdaptingHomePage(),
+      home: const PlatformHandler(),
     );
   }
 }

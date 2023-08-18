@@ -6,12 +6,16 @@
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
-import '/calendar_tab.dart';
-import '/chat_tab.dart';
-import '/profile_tab.dart';
-import '/smart_key_tab.dart';
+import 'chat_tab.dart';
+import 'profile_tab.dart';
+import 'smart_key_tab.dart';
 
 class AndroidDrawer extends StatelessWidget {
+  const AndroidDrawer({super.key, required this.androidIcon, required this.title});
+
+  final Widget androidIcon;
+  final String title;
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -30,8 +34,8 @@ class AndroidDrawer extends StatelessWidget {
             ),
           ),
           ListTile(
-            leading: CalendarTab.androidIcon,
-            title: const Text(CalendarTab.title),
+            leading: androidIcon,
+            title: Text(title),
             onTap: () {
               Navigator.pop(context);
             },

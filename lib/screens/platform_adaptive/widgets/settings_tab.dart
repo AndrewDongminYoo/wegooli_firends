@@ -7,7 +7,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
-import 'widgets.dart';
+import 'platform_widgets.dart';
 
 class SettingsTab extends StatefulWidget {
   static const title = 'Settings';

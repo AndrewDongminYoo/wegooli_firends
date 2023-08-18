@@ -11,8 +11,9 @@ import 'package:intl/date_symbol_data_local.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 // 🌎 Project imports:
-import 'gen/assets.gen.dart';
-import 'utils.dart';
+import '../utils/event_source.dart';
+import '../utils/generate_words.dart';
+import '/gen/assets.gen.dart';
 
 class CalendarTab extends StatefulWidget {
   static const title = '일정';
@@ -32,7 +33,7 @@ class _CalendarTabState extends State<CalendarTab> {
   late final ValueNotifier<List<Event>> _selectedEvents;
   CalendarFormat _calendarFormat = CalendarFormat.month;
   RangeSelectionMode _rangeSelectionMode = RangeSelectionMode
-      .toggledOff; // Can be toggled on/off by longpressing a date
+      .toggledOff; // Can be toggled on/off by long pressing a date
   DateTime _focusedDay = DateTime.now();
   DateTime? _selectedDay;
   DateTime? _rangeStart;
@@ -280,7 +281,7 @@ class _CalendarTabState extends State<CalendarTab> {
                   rangeEndDecoration: const BoxDecoration(
                       color: Color.fromARGB(255, 0, 255, 89),
                       shape: BoxShape.circle),
-                  // 선택된 Range 안의 Marker색상
+                  // 선택된 Range 안의 Marker 색상
                   withinRangeDecoration: const BoxDecoration(
                       color: Color.fromARGB(255, 0, 255, 89),
                       shape: BoxShape.circle),

@@ -4,39 +4,44 @@
 
 // 🐦 Flutter imports:
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
-import '/android_drawer.dart';
+import 'android_drawer.dart';
 import 'calendar_tab.dart';
 import 'chat_tab.dart';
+import 'platform_widgets.dart';
 import 'profile_tab.dart';
 import 'smart_key_tab.dart';
-import 'widgets.dart';
 
-class PlatformAdaptingHomePage extends StatefulWidget {
-  const PlatformAdaptingHomePage({super.key});
+class PlatformHandler extends StatefulWidget {
+  const PlatformHandler({super.key});
 
   @override
-  State<PlatformAdaptingHomePage> createState() =>
-      _PlatformAdaptingHomePageState();
+  State<PlatformHandler> createState() => _PlatformHandlerState();
 }
 
-class _PlatformAdaptingHomePageState extends State<PlatformAdaptingHomePage> {
+class _PlatformHandlerState extends State<PlatformHandler> {
   // This app keeps a global key for the songs tab because it owns a bunch of
   // data. Since changing platform re-parents those tabs into different
   // scaffolds, keeping a global key to it lets this app keep that tab's data as
   // the platform toggles.
   //
   // This isn't needed for apps that doesn't toggle platforms while running.
-  final calendarTabKey = GlobalKey();
+  // final calendarTabKey = GlobalKey();
 
   // In Material, this app uses the hamburger menu paradigm and flatly lists
   // all 4 possible tabs. This drawer is injected into the songs tab which is
   // actually building the scaffold around the drawer.
   Widget _buildAndroidHomePage(BuildContext context) {
+    const title = '일정';
+    const androidIcon = Icon(Icons.calendar_month_outlined, size: 28.0);
     return CalendarTab(
-      key: calendarTabKey,
-      androidDrawer: AndroidDrawer(),
+      // key: calendarTabKey,
+      androidDrawer: AndroidDrawer(
+        title: title,
+        androidIcon: androidIcon,
+      ),
     );
   }
 
@@ -49,12 +54,14 @@ class _PlatformAdaptingHomePageState extends State<PlatformAdaptingHomePage> {
   // for this, the app folds its fourth tab (the settings page) into the
   // third tab. This is a common pattern on iOS.
   Widget _buildIosHomePage(BuildContext context) {
+    const title = '일정';
+    const iosIcon = Icon(CupertinoIcons.calendar, size: 28.0);
     return CupertinoTabScaffold(
       tabBar: CupertinoTabBar(
         items: const [
           BottomNavigationBarItem(
-            label: CalendarTab.title,
-            icon: CalendarTab.iosIcon,
+            label: title,
+            icon: iosIcon,
           ),
           BottomNavigationBarItem(
             label: ChatTab.title,
@@ -74,8 +81,8 @@ class _PlatformAdaptingHomePageState extends State<PlatformAdaptingHomePage> {
         assert(index <= 3 && index >= 0, 'Unexpected tab index: $index');
         return switch (index) {
           0 => CupertinoTabView(
-              defaultTitle: CalendarTab.title,
-              builder: (context) => CalendarTab(key: calendarTabKey),
+              defaultTitle: title,
+              builder: (context) => CalendarTab(),
             ),
           1 => CupertinoTabView(
               defaultTitle: ChatTab.title,

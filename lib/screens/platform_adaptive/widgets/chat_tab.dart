@@ -7,8 +7,8 @@ import 'package:dash_chat_2/dash_chat_2.dart';
 import 'package:sendbird_sdk/sendbird_sdk.dart';
 
 // 🌎 Project imports:
-import '/connect_with_sendbird.dart';
-import '/get_channel_between.dart';
+import '../utils/connect_with_sendbird.dart';
+import '../utils/get_channel_between.dart';
 
 class ChatTab extends StatefulWidget {
   static const title = '채팅';

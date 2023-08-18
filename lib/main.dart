@@ -3,24 +3,39 @@
 // found in the LICENSE file.
 
 // 🐦 Flutter imports:
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 // 📦 Package imports:
 import 'package:intl/date_symbol_data_local.dart';
 
 // 🌎 Project imports:
-import '/adaptive_music_app.dart';
+import 'core/app_export.dart';
 
-void main() => initializeDateFormatting().then((_) => runApp(MyApp()));
+void main() {
+  Get.put(EnvConfig());
+  Get.find<EnvConfig>().initConfig();
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+      .then((value) {
+    Logger.init(kReleaseMode ? LogMode.live : LogMode.debug);
+    initializeDateFormatting().then((_) => runApp(MyApp()));
+  });
+}
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
   @override
-  Widget build(context) {
-    // Either Material or Cupertino widgets work in either Material or Cupertino
-    // Apps.
-    return AdaptiveMusicApp();
+  Widget build(BuildContext context) {
+    return GetMaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(visualDensity: VisualDensity.standard),
+        translations: AppLocalization(),
+        locale: Get.deviceLocale,
+        fallbackLocale: Locale('ko', 'KR'),
+        title: 'wegooli_friends',
+        initialBinding: InitialBindings(),
+        initialRoute: AppRoutes.appNavigation,
+        getPages: AppRoutes.pages);
   }
 }

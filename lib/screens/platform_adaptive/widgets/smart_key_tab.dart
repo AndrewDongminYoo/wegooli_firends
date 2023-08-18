@@ -11,8 +11,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_lorem/flutter_lorem.dart';
 
 // 🌎 Project imports:
-import 'utils.dart';
-import 'widgets.dart';
+import '../utils/generate_words.dart';
+import 'platform_widgets.dart';
 
 class SmartKeyTab extends StatefulWidget {
   static const title = '스마트 키';

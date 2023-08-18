@@ -7,8 +7,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
+import 'platform_widgets.dart';
 import 'settings_tab.dart';
-import 'widgets.dart';
 
 class ProfileTab extends StatelessWidget {
   static const title = '마이 페이지';

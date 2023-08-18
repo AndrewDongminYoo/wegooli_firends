@@ -94,7 +94,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                   top: 4,
                                 ),
                                 child: Text(
-                                  "license_plate".tr,
+                                  "12가 3456",
                                   overflow: TextOverflow.ellipsis,
                                   textAlign: TextAlign.left,
                                   style: CustomTextStyles.bodySmallOnPrimary

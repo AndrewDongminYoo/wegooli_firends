@@ -31,7 +31,7 @@ class SplashLoading extends GetWidget<SplashLoadingController> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Text(
-                "lbl_friends".tr,
+                "FRIENDS",
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.left,
                 style: theme.textTheme.displayMedium!.copyWith(
@@ -49,7 +49,7 @@ class SplashLoading extends GetWidget<SplashLoadingController> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text(
-                      "lbl_by".tr,
+                      "By",
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.left,
                       style: CustomTextStyles

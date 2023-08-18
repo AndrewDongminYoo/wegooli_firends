@@ -161,8 +161,7 @@ class ValidatePhone extends GetWidget<ValidatePhoneController> {
                                                             textStyle:
                                                                 CustomTextStyles
                                                                     .bodyLargeGray50003,
-                                                            hintText:
-                                                                "lbl_yymmdd".tr,
+                                                            hintText: "YYMMDD",
                                                             hintStyle:
                                                                 CustomTextStyles
                                                                     .bodyLargeGray50003,
@@ -215,7 +214,7 @@ class ValidatePhone extends GetWidget<ValidatePhoneController> {
                                         .copyWith(
                                             borderRadius: BorderRadiusStyle
                                                 .txtRoundedBorder5),
-                                    child: Text("lbl_nnnnnnn".tr,
+                                    child: Text("NNNNNNN",
                                         overflow: TextOverflow.ellipsis,
                                         textAlign: TextAlign.left,
                                         style: CustomTextStyles
@@ -273,7 +272,7 @@ class ValidatePhone extends GetWidget<ValidatePhoneController> {
                                               left: 10, top: 14, bottom: 14),
                                           textStyle:
                                               CustomTextStyles.bodyLargeGray500,
-                                          hintText: "lbl_skt".tr,
+                                          hintText: "SKT",
                                           hintStyle:
                                               CustomTextStyles.bodyLargeGray500,
                                           suffix: Container(
@@ -358,7 +357,7 @@ class ValidatePhone extends GetWidget<ValidatePhoneController> {
                                                                   0.03))),
                                               Padding(
                                                   padding: getPadding(left: 41),
-                                                  child: Text("lbl_3_00".tr,
+                                                  child: Text("3:00",
                                                       overflow:
                                                           TextOverflow.ellipsis,
                                                       textAlign: TextAlign.left,

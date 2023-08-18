@@ -41,7 +41,7 @@ class GatewayScreen extends GetWidget<AppGatewayController> {
                                             top: 10,
                                             right: 20,
                                             bottom: 10),
-                                        child: Text("lbl_app_navigation".tr,
+                                        child: Text("App Navigation".tr,
                                             overflow: TextOverflow.ellipsis,
                                             textAlign: TextAlign.center,
                                             style: TextStyle(
@@ -54,7 +54,9 @@ class GatewayScreen extends GetWidget<AppGatewayController> {
                                     alignment: Alignment.centerLeft,
                                     child: Padding(
                                         padding: getPadding(left: 20),
-                                        child: Text("msg_check_your_app_s".tr,
+                                        child: Text(
+                                            "Check your app's UI from the below demo screens of your app."
+                                                .tr,
                                             overflow: TextOverflow.ellipsis,
                                             textAlign: TextAlign.center,
                                             style: TextStyle(

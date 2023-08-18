@@ -92,7 +92,7 @@ class SmartKeyNotAvailable extends GetWidget<SmartKeyNotAvailableController> {
                                   top: 4,
                                 ),
                                 child: Text(
-                                  "license_plate".tr,
+                                  "12가 3456",
                                   overflow: TextOverflow.ellipsis,
                                   textAlign: TextAlign.left,
                                   style: CustomTextStyles.bodySmallOnPrimary
@@ -300,7 +300,7 @@ class SmartKeyNotAvailable extends GetWidget<SmartKeyNotAvailableController> {
                           ),
                         ),
                         Text(
-                          "lbl_13_00".tr,
+                          "13:00",
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.left,
                           style: CustomTextStyles.bodySmallOnPrimary.copyWith(

@@ -41,9 +41,9 @@ class RegisteredCreditCardList
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Obx(() => CustomRadioButton(
-                                    text: "lbl_7210".tr,
+                                    text: "신한 7210 / 개인",
                                     iconSize: getHorizontalSize(20),
-                                    value: "lbl_7210".tr,
+                                    value: "신한 7210 / 개인",
                                     groupValue: controller.radioGroup.value,
                                     textStyle: theme.textTheme.bodyLarge!,
                                     onChange: (value) {
@@ -61,9 +61,9 @@ class RegisteredCreditCardList
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Obx(() => CustomRadioButton(
-                                    text: "lbl_1210".tr,
+                                    text: "신한 1210 / 법인", // FIXME
                                     iconSize: getHorizontalSize(20),
-                                    value: "lbl_1210".tr,
+                                    value: "신한 1210 / 법인",
                                     groupValue: controller.radioGroup1.value,
                                     textStyle: theme.textTheme.bodyLarge!,
                                     onChange: (value) {

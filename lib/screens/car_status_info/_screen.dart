@@ -83,7 +83,7 @@ class CarStatusInformation extends GetWidget<CarStatusInformationController> {
                                           Padding(
                                               padding:
                                                   getPadding(top: 4, bottom: 2),
-                                              child: Text("license_plate".tr,
+                                              child: Text("12가 3456",
                                                   overflow:
                                                       TextOverflow.ellipsis,
                                                   textAlign: TextAlign.left,
@@ -110,7 +110,7 @@ class CarStatusInformation extends GetWidget<CarStatusInformationController> {
                                                       letterSpacing:
                                                           getHorizontalSize(
                                                               0.03))),
-                                          Text("lbl_150_000".tr,
+                                          Text('150,000 원',
                                               overflow: TextOverflow.ellipsis,
                                               textAlign: TextAlign.left,
                                               style: theme.textTheme.bodyLarge!
@@ -135,7 +135,7 @@ class CarStatusInformation extends GetWidget<CarStatusInformationController> {
                                                       letterSpacing:
                                                           getHorizontalSize(
                                                               0.03))),
-                                          Text("msg_2023_07_01_2023_08_01".tr,
+                                          Text("2023.07.01~2023.08.01",
                                               overflow: TextOverflow.ellipsis,
                                               textAlign: TextAlign.left,
                                               style: theme.textTheme.bodyLarge!
@@ -160,7 +160,7 @@ class CarStatusInformation extends GetWidget<CarStatusInformationController> {
                                                       letterSpacing:
                                                           getHorizontalSize(
                                                               0.03))),
-                                          Text("lbl_2023_08_20".tr,
+                                          Text('2023.08.20',
                                               overflow: TextOverflow.ellipsis,
                                               textAlign: TextAlign.left,
                                               style: theme.textTheme.bodyLarge!

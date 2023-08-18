@@ -96,7 +96,8 @@ class ReservationsCheckingPageDialog extends StatelessWidget {
                                             width: getHorizontalSize(79),
                                             margin: getMargin(
                                                 left: 10, top: 7, bottom: 6),
-                                            child: Text("msg_8_1_12_00_8_1".tr,
+                                            child: Text(
+                                                "8.1 (화) 12:00 ~\n 8.1 (화) 13:00",
                                                 maxLines: 2,
                                                 overflow: TextOverflow.ellipsis,
                                                 textAlign: TextAlign.left,
@@ -154,7 +155,7 @@ class ReservationsCheckingPageDialog extends StatelessWidget {
                                                     top: 7,
                                                     bottom: 6),
                                                 child: Text(
-                                                    "msg_8_1_15_00_8_1".tr,
+                                                    "8.1 (화) 15:00 ~\n 8.1 (화) 16:00",
                                                     maxLines: 2,
                                                     overflow:
                                                         TextOverflow.ellipsis,
@@ -213,7 +214,7 @@ class ReservationsCheckingPageDialog extends StatelessWidget {
                                                     top: 7,
                                                     bottom: 6),
                                                 child: Text(
-                                                    "msg_8_1_17_00_8_1".tr,
+                                                    "8.1 (화) 17:00 ~\n 8.1 (화) 18:00",
                                                     maxLines: 2,
                                                     overflow:
                                                         TextOverflow.ellipsis,

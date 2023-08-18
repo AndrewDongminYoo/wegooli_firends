@@ -50,7 +50,7 @@ class RegisterCreditCard extends GetWidget<RegisterCreditCardController> {
                                 contentPadding: getPadding(
                                     left: 12, top: 14, right: 12, bottom: 14),
                                 textStyle: CustomTextStyles.bodyLargeGray50003,
-                                hintText: "msg_0000_0000_0000".tr,
+                                hintText: "0000  0000  0000  0000",
                                 hintStyle: CustomTextStyles.bodyLargeGray50003,
                                 textInputAction: TextInputAction.next,
                                 filled: true,
@@ -79,7 +79,7 @@ class RegisterCreditCard extends GetWidget<RegisterCreditCardController> {
                                         bottom: 14),
                                     textStyle:
                                         CustomTextStyles.bodyLargeGray50003,
-                                    hintText: "lbl_mm_yy".tr,
+                                    hintText: "MM/YY",
                                     hintStyle:
                                         CustomTextStyles.bodyLargeGray50003,
                                     textInputAction: TextInputAction.next,
@@ -111,7 +111,7 @@ class RegisterCreditCard extends GetWidget<RegisterCreditCardController> {
                                         bottom: 14),
                                     textStyle:
                                         CustomTextStyles.bodyLargeGray50003,
-                                    hintText: "lbl_yymmdd".tr,
+                                    hintText: "YYMMDD",
                                     hintStyle:
                                         CustomTextStyles.bodyLargeGray50003,
                                     textInputAction: TextInputAction.next,

@@ -12,8 +12,7 @@ class SharedCalendar extends StatelessWidget {
           key: key,
         );
 
-  final TeamScheduleController controller =
-      Get.put(TeamScheduleController());
+  final TeamScheduleController controller = Get.put(TeamScheduleController());
 
   @override
   Widget build(BuildContext context) {
@@ -125,7 +124,7 @@ class SharedCalendar extends StatelessWidget {
                                 top: 4,
                               ),
                               child: Text(
-                                "lbl51".tr,
+                                "홍길동", // FIXME
                                 overflow: TextOverflow.ellipsis,
                                 textAlign: TextAlign.left,
                                 style: theme.textTheme.bodySmall!.copyWith(
@@ -194,7 +193,7 @@ class SharedCalendar extends StatelessWidget {
                                   top: 4,
                                 ),
                                 child: Text(
-                                  "lbl52".tr,
+                                  "김첨지",
                                   overflow: TextOverflow.ellipsis,
                                   textAlign: TextAlign.left,
                                   style: theme.textTheme.bodySmall!.copyWith(
@@ -264,7 +263,7 @@ class SharedCalendar extends StatelessWidget {
                                   top: 4,
                                 ),
                                 child: Text(
-                                  "lbl53".tr,
+                                  "김영희",
                                   overflow: TextOverflow.ellipsis,
                                   textAlign: TextAlign.left,
                                   style: theme.textTheme.bodySmall!.copyWith(
@@ -386,7 +385,7 @@ class SharedCalendar extends StatelessWidget {
                                     left: 80,
                                   ),
                                   child: Text(
-                                    "lbl_2023_8".tr,
+                                    '2023년 8월',
                                     overflow: TextOverflow.ellipsis,
                                     textAlign: TextAlign.left,
                                     style:
@@ -514,7 +513,7 @@ class SharedCalendar extends StatelessWidget {
                                                 top: 24,
                                               ),
                                               child: Text(
-                                                "lbl_133".tr,
+                                                '13',
                                                 overflow: TextOverflow.ellipsis,
                                                 textAlign: TextAlign.left,
                                                 style: theme
@@ -971,7 +970,7 @@ class SharedCalendar extends StatelessWidget {
                                                           top: 25,
                                                         ),
                                                         child: Text(
-                                                          "lbl_23".tr,
+                                                          "2",
                                                           overflow: TextOverflow
                                                               .ellipsis,
                                                           textAlign:
@@ -1544,7 +1543,7 @@ class SharedCalendar extends StatelessWidget {
                                           top: 28,
                                         ),
                                         child: Text(
-                                          "lbl_23".tr,
+                                          "2",
                                           overflow: TextOverflow.ellipsis,
                                           textAlign: TextAlign.left,
                                           style: CustomTextStyles

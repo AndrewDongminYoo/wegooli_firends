@@ -40,7 +40,7 @@ class ReservationDatetimePickerBottomSheet extends StatelessWidget {
                           child: Container(
                               width: getHorizontalSize(213),
                               margin: getMargin(left: 16, top: 16),
-                              child: Text("msg_2_8_1_16_00".tr,
+                              child: Text("총 2시간 이용\n8.1 화 16:00 ~ 8.1 화 18:00",
                                   maxLines: 2,
                                   overflow: TextOverflow.ellipsis,
                                   textAlign: TextAlign.left,
@@ -66,7 +66,7 @@ class ReservationDatetimePickerBottomSheet extends StatelessWidget {
                                             letterSpacing:
                                                 getHorizontalSize(0.03))),
                                 Spacer(),
-                                Text("lbl_8_1_16_00".tr,
+                                Text("8.1 화 16:00",
                                     overflow: TextOverflow.ellipsis,
                                     textAlign: TextAlign.left,
                                     style: theme.textTheme.titleMedium!
@@ -84,7 +84,7 @@ class ReservationDatetimePickerBottomSheet extends StatelessWidget {
                           child: Padding(
                               padding: getPadding(left: 68, top: 44),
                               child: Row(children: [
-                                Text("lbl_8_12".tr,
+                                Text("8/1",
                                     overflow: TextOverflow.ellipsis,
                                     textAlign: TextAlign.left,
                                     style: CustomTextStyles.bodyLargeOnPrimary
@@ -133,7 +133,7 @@ class ReservationDatetimePickerBottomSheet extends StatelessWidget {
                           child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text("lbl_8_22".tr,
+                                Text("8/2",
                                     overflow: TextOverflow.ellipsis,
                                     textAlign: TextAlign.left,
                                     style: theme.textTheme.bodyLarge!.copyWith(
@@ -228,7 +228,7 @@ class ReservationDatetimePickerBottomSheet extends StatelessWidget {
                                         child: CustomImageView(
                                             svgPath:
                                                 Assets.svg.imgArrowLeft.path)),
-                                    hintText: "lbl_8_1_18_00".tr,
+                                    hintText: "8.1 화 18:00",
                                     textStyle: theme.textTheme.titleMedium!,
                                     items: controller
                                         .reservationDatetimePickerModelObj

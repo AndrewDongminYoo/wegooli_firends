@@ -34,7 +34,7 @@ class LoginWithIdAndPassword
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Text(
-                "lbl_friends".tr,
+                "FRIENDS",
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.left,
                 style: theme.textTheme.displayMedium!.copyWith(
@@ -53,7 +53,7 @@ class LoginWithIdAndPassword
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Text(
-                        "lbl_by".tr,
+                        "By",
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.left,
                         style: CustomTextStyles

@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
         fallbackLocale: Locale('ko', 'KR'),
         title: 'wegooli_friends',
         initialBinding: InitialBindings(),
-        initialRoute: AppRoutes.appNavigation,
+        initialRoute: AppRoutes.appGateway,
         getPages: AppRoutes.pages);
   }
 }

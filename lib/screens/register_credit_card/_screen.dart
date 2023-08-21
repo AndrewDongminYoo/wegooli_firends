@@ -9,6 +9,12 @@ import 'controller/_controller.dart';
 class RegisterCreditCard extends GetWidget<RegisterCreditCardController> {
   const RegisterCreditCard({Key? key}) : super(key: key);
 
+  bool isValid() {
+    // TODO
+    // 카드 정보가 valid하면 true, 아니면 false.
+    return true;
+  }
+
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
@@ -145,11 +151,17 @@ class RegisterCreditCard extends GetWidget<RegisterCreditCardController> {
                 margin: getMargin(left: 16, right: 16, bottom: 29),
                 decoration: AppDecoration.shadow,
                 child: CustomElevatedButton(
-                    text: "lbl41".tr,
-                    buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
-                        fixedSize: MaterialStateProperty.all<Size>(
-                            Size(double.maxFinite, getVerticalSize(52)))),
-                    buttonTextStyle: CustomTextStyles.titleMedium18))));
+                  text: "lbl41".tr,
+                  buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
+                      fixedSize: MaterialStateProperty.all<Size>(
+                          Size(double.maxFinite, getVerticalSize(52)))),
+                  buttonTextStyle: CustomTextStyles.titleMedium18,
+                  onTap: () {
+                    if (this.isValid()) {
+                      onTapLoginRegisterSuccess();
+                    }
+                  },
+                ))));
   }
 
   /// Navigates to the previous screen.
@@ -158,5 +170,11 @@ class RegisterCreditCard extends GetWidget<RegisterCreditCardController> {
   /// navigate to the previous screen in the navigation stack.
   onTabBackButton() {
     Get.back();
+  }
+
+  onTapLoginRegisterSuccess() {
+    Get.toNamed(
+      AppRoutes.signUpSuccess,
+    );
   }
 }

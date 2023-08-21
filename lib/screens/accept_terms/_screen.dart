@@ -9,6 +9,23 @@ import 'controller/_controller.dart';
 class AcceptTerms extends GetWidget<AcceptTermsController> {
   const AcceptTerms({Key? key}) : super(key: key);
 
+  void checkAll(value) {
+    controller.isAcceptedTerm1.value = value;
+    controller.isAcceptedTerm2.value = value;
+    controller.isAcceptedTerm3.value = value;
+    controller.isAcceptedTerm4.value = value;
+    controller.isAcceptedTerm5.value = value;
+    controller.isAcceptedTerm6.value = value;
+  }
+
+  bool isValid() {
+    return controller.isAcceptedTerm1.value &&
+        controller.isAcceptedTerm2.value &&
+        controller.isAcceptedTerm3.value &&
+        controller.isAcceptedTerm4.value &&
+        controller.isAcceptedTerm5.value;
+  }
+
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
@@ -43,6 +60,7 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                           textStyle: theme.textTheme.bodyLarge!,
                           onChange: (value) {
                             controller.isAcceptedTerm0.value = value;
+                            this.checkAll(value);
                           })),
                       Padding(
                           padding: getPadding(left: 5, top: 53),
@@ -161,11 +179,17 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                 margin: getMargin(left: 16, right: 16, bottom: 29),
                 decoration: AppDecoration.shadow,
                 child: CustomElevatedButton(
-                    text: "동의 완료",
-                    buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
-                        fixedSize: MaterialStateProperty.all<Size>(
-                            Size(double.maxFinite, getVerticalSize(52)))),
-                    buttonTextStyle: CustomTextStyles.titleMedium18))));
+                  text: "동의 완료",
+                  buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
+                      fixedSize: MaterialStateProperty.all<Size>(
+                          Size(double.maxFinite, getVerticalSize(52)))),
+                  buttonTextStyle: CustomTextStyles.titleMedium18,
+                  onTap: () {
+                    if (this.isValid()) {
+                      onTapLogInValidatePhoneAuth();
+                    }
+                  },
+                ))));
   }
 
   /// Navigates to the previous screen.
@@ -174,5 +198,11 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
   /// navigate to the previous screen in the navigation stack.
   onTapArrowleft() {
     Get.back();
+  }
+
+  onTapLogInValidatePhoneAuth() {
+    Get.toNamed(
+      AppRoutes.validatePhone,
+    );
   }
 }

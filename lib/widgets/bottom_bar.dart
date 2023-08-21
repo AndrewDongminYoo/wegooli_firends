@@ -20,25 +20,25 @@ class CustomBottomBar extends StatelessWidget {
       iconPath: Assets.svg.imgCalGray.path,
       activeIconPath: Assets.svg.imgCalGray.path,
       title: "lbl46".tr,
-      type: BottomBarEnum.tf,
+      type: BottomBarEnum.sharedCalendar,
     ),
     BottomMenuModel(
       iconPath: Assets.svg.imgKeyWhite.path,
       activeIconPath: Assets.svg.imgKeyWhite.path,
       title: "lbl47".tr,
-      type: BottomBarEnum.tf,
+      type: BottomBarEnum.dashChat,
     ),
     BottomMenuModel(
       iconPath: Assets.svg.imgChatWhite.path,
       activeIconPath: Assets.svg.imgChatWhite.path,
       title: "lbl48".tr,
-      type: BottomBarEnum.tf,
+      type: BottomBarEnum.smartKey,
     ),
     BottomMenuModel(
       iconPath: Assets.svg.imgPersonWhite.path,
       activeIconPath: Assets.svg.imgPersonWhite.path,
       title: "lbl49".tr,
-      type: BottomBarEnum.tf,
+      type: BottomBarEnum.profile,
     )
   ];
 
@@ -147,7 +147,10 @@ class CustomBottomBar extends StatelessWidget {
 }
 
 enum BottomBarEnum {
-  tf,
+  sharedCalendar,
+  dashChat,
+  smartKey,
+  profile,
 }
 
 class BottomMenuModel {

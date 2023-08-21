@@ -14,6 +14,12 @@ class LoginWithIdAndPassword
           key: key,
         );
 
+  bool isAuthenticated() {
+    // TODO:
+    // id, pwd 확인해서 로그인 성공하면 true 아니면 false.
+    return false;
+  }
+
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
@@ -117,19 +123,26 @@ class LoginWithIdAndPassword
                 fillColor: theme.colorScheme.onPrimaryContainer,
               ),
               CustomElevatedButton(
-                text: "lbl3".tr,
-                margin: getMargin(
-                  top: 30,
-                ),
-                buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
-                    fixedSize: MaterialStateProperty.all<Size>(Size(
-                  double.maxFinite,
-                  getVerticalSize(
-                    52,
+                  text: "lbl3".tr,
+                  margin: getMargin(
+                    top: 30,
                   ),
-                ))),
-                buttonTextStyle: CustomTextStyles.titleMedium18,
-              ),
+                  buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
+                      fixedSize: MaterialStateProperty.all<Size>(Size(
+                    double.maxFinite,
+                    getVerticalSize(
+                      52,
+                    ),
+                  ))),
+                  buttonTextStyle: CustomTextStyles.titleMedium18,
+                  onTap: () {
+                    if (this.isAuthenticated()) {
+                      onTapTeamScheduleShare();
+                    } else {
+                      controller.usernameController.text = "";
+                      controller.passwordController.text = "";
+                    }
+                  }),
               Padding(
                 padding: getPadding(
                   top: 57,
@@ -146,24 +159,38 @@ class LoginWithIdAndPassword
                 ),
               ),
               CustomElevatedButton(
-                text: "lbl5".tr,
-                margin: getMargin(
-                  top: 11,
-                  bottom: 5,
-                ),
-                buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
-                    fixedSize: MaterialStateProperty.all<Size>(Size(
-                  double.maxFinite,
-                  getVerticalSize(
-                    52,
+                  text: "lbl5".tr,
+                  margin: getMargin(
+                    top: 11,
+                    bottom: 5,
                   ),
-                ))),
-                buttonTextStyle: CustomTextStyles.titleMedium18,
-              ),
+                  buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
+                      fixedSize: MaterialStateProperty.all<Size>(Size(
+                    double.maxFinite,
+                    getVerticalSize(
+                      52,
+                    ),
+                  ))),
+                  buttonTextStyle: CustomTextStyles.titleMedium18,
+                  onTap: () {
+                    onTapSignUpAcceptTerms();
+                  }),
             ],
           ),
         ),
       ),
+    );
+  }
+
+  onTapTeamScheduleShare() {
+    Get.toNamed(
+      AppRoutes.sharedSchedule,
+    );
+  }
+
+  onTapSignUpAcceptTerms() {
+    Get.toNamed(
+      AppRoutes.acceptTerms,
     );
   }
 }

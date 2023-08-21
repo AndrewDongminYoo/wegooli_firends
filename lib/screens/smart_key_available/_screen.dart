@@ -62,7 +62,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         CustomImageView(
-                          imagePath: Assets.images.imgCar2.path,
+                          imagePath: Assets.images.imgCarMorUrban.path,
                           height: getVerticalSize(
                             92,
                           ),

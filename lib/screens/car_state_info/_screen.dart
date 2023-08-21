@@ -50,7 +50,7 @@ class CarStateInformation extends GetWidget<CarStateInformationController> {
                           decoration: AppDecoration.fill5.copyWith(
                               borderRadius: BorderRadiusStyle.roundedBorder10),
                           child: CustomImageView(
-                              imagePath: Assets.images.imgCar1.path,
+                              imagePath: Assets.images.imgCarAllNewK3.path,
                               height: getVerticalSize(96),
                               width: getHorizontalSize(167))),
                       Container(

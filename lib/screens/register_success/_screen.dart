@@ -31,7 +31,7 @@ class LoginRegisterSuccessPage
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CustomImageView(
-                imagePath: Assets.images.imgGooli.path,
+                imagePath: Assets.images.imgGooli0.path,
                 height: getVerticalSize(
                   109,
                 ),

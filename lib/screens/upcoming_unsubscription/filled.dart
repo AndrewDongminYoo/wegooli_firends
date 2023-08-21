@@ -51,7 +51,7 @@ class UpcomingUnsubscriptionFilled
                           decoration: AppDecoration.fill5.copyWith(
                               borderRadius: BorderRadiusStyle.roundedBorder10),
                           child: CustomImageView(
-                              imagePath: Assets.images.imgCar1.path,
+                              imagePath: Assets.images.imgCarNewRay.path,
                               height: getVerticalSize(96),
                               width: getHorizontalSize(167))),
                       Container(

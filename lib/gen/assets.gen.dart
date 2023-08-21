@@ -21,6 +21,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/image_not_found.png
   AssetGenImage get imageNotFound => const AssetGenImage('assets/images/image_not_found.png');
 
+  /// File path: assets/images/img_acorn.png
+  AssetGenImage get imgAcorn => const AssetGenImage('assets/images/img_acorn.png');
+
   /// File path: assets/images/img_avatar_1.png
   AssetGenImage get imgAvatar1 => const AssetGenImage('assets/images/img_avatar_1.png');
 
@@ -36,20 +39,41 @@ class $AssetsImagesGen {
   /// File path: assets/images/img_avatar_5.png
   AssetGenImage get imgAvatar5 => const AssetGenImage('assets/images/img_avatar_5.png');
 
-  /// File path: assets/images/img_car_1.png
-  AssetGenImage get imgCar1 => const AssetGenImage('assets/images/img_car_1.png');
+  /// File path: assets/images/img_car_all_new_k3.png
+  AssetGenImage get imgCarAllNewK3 => const AssetGenImage('assets/images/img_car_all_new_k3.png');
 
-  /// File path: assets/images/img_car_2.png
-  AssetGenImage get imgCar2 => const AssetGenImage('assets/images/img_car_2.png');
+  /// File path: assets/images/img_car_all_new_mo.png
+  AssetGenImage get imgCarAllNewMo => const AssetGenImage('assets/images/img_car_all_new_mo.png');
+
+  /// File path: assets/images/img_car_mor_urban.png
+  AssetGenImage get imgCarMorUrban => const AssetGenImage('assets/images/img_car_mor_urban.png');
+
+  /// File path: assets/images/img_car_new_ray.png
+  AssetGenImage get imgCarNewRay => const AssetGenImage('assets/images/img_car_new_ray.png');
+
+  /// File path: assets/images/img_car_spark.png
+  AssetGenImage get imgCarSpark => const AssetGenImage('assets/images/img_car_spark.png');
 
   /// File path: assets/images/img_crying.png
   AssetGenImage get imgCrying => const AssetGenImage('assets/images/img_crying.png');
 
-  /// File path: assets/images/img_gooli.png
-  AssetGenImage get imgGooli => const AssetGenImage('assets/images/img_gooli.png');
+  /// File path: assets/images/img_gooli_0.png
+  AssetGenImage get imgGooli0 => const AssetGenImage('assets/images/img_gooli_0.png');
 
-  /// File path: assets/images/key.png
-  AssetGenImage get key => const AssetGenImage('assets/images/key.png');
+  /// File path: assets/images/img_gooli_1.png
+  AssetGenImage get imgGooli1 => const AssetGenImage('assets/images/img_gooli_1.png');
+
+  /// File path: assets/images/img_gooli_2.png
+  AssetGenImage get imgGooli2 => const AssetGenImage('assets/images/img_gooli_2.png');
+
+  /// File path: assets/images/img_gooli_3.png
+  AssetGenImage get imgGooli3 => const AssetGenImage('assets/images/img_gooli_3.png');
+
+  /// File path: assets/images/img_logo_gllo.png
+  AssetGenImage get imgLogoGllo => const AssetGenImage('assets/images/img_logo_gllo.png');
+
+  /// File path: assets/images/img_wegooli_title.png
+  AssetGenImage get imgWegooliTitle => const AssetGenImage('assets/images/img_wegooli_title.png');
 
   /// File path: assets/images/profile.jpeg
   AssetGenImage get profile => const AssetGenImage('assets/images/profile.jpeg');
@@ -57,16 +81,24 @@ class $AssetsImagesGen {
   /// List of all assets
   List<AssetGenImage> get values => [
         imageNotFound,
+        imgAcorn,
         imgAvatar1,
         imgAvatar2,
         imgAvatar3,
         imgAvatar4,
         imgAvatar5,
-        imgCar1,
-        imgCar2,
+        imgCarAllNewK3,
+        imgCarAllNewMo,
+        imgCarMorUrban,
+        imgCarNewRay,
+        imgCarSpark,
         imgCrying,
-        imgGooli,
-        key,
+        imgGooli0,
+        imgGooli1,
+        imgGooli2,
+        imgGooli3,
+        imgLogoGllo,
+        imgWegooliTitle,
         profile
       ];
 }

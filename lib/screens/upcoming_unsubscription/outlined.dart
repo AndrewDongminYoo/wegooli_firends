@@ -55,7 +55,7 @@ class UpcomingUnsubscriptionOutlined
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 CustomImageView(
-                                    imagePath: Assets.images.imgCar1.path,
+                                    imagePath: Assets.images.imgCarAllNewMo.path,
                                     height: getVerticalSize(96),
                                     width: getHorizontalSize(167),
                                     margin: getMargin(top: 10)),

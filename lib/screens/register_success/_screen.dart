@@ -76,11 +76,20 @@ class LoginRegisterSuccessPage
                   ),
                 ))),
                 buttonTextStyle: CustomTextStyles.titleMedium18,
+                onTap: () {
+                  onTapTeamScheduleShare();
+                },
               ),
             ],
           ),
         ),
       ),
+    );
+  }
+
+  onTapTeamScheduleShare() {
+    Get.toNamed(
+      AppRoutes.sharedSchedule,
     );
   }
 }

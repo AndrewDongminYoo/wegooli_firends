@@ -1,8 +1,8 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends/screens/screens.dart';
 
 // 🌎 Project imports:
+import '/screens/screens.dart';
 import '/core/app_export.dart';
 
 class TeamScheduleShare extends GetWidget<TeamScheduleController> {

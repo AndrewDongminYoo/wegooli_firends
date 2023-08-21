@@ -9,6 +9,12 @@ import 'controller/_controller.dart';
 class LoginRegisterZipCode extends GetWidget<LoginRegisterZipCodeController> {
   const LoginRegisterZipCode({Key? key}) : super(key: key);
 
+  bool isValid() {
+    // TODO
+    // 집 주소 필수 입력, 아이디 비번 입력 누락.
+    return true;
+  }
+
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
@@ -192,11 +198,17 @@ class LoginRegisterZipCode extends GetWidget<LoginRegisterZipCodeController> {
                 margin: getMargin(left: 16, right: 16, bottom: 29),
                 decoration: AppDecoration.shadow,
                 child: CustomElevatedButton(
-                    text: "입력 완료",
-                    buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
-                        fixedSize: MaterialStateProperty.all<Size>(
-                            Size(double.maxFinite, getVerticalSize(52)))),
-                    buttonTextStyle: CustomTextStyles.titleMedium18))));
+                  text: "입력 완료",
+                  buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
+                      fixedSize: MaterialStateProperty.all<Size>(
+                          Size(double.maxFinite, getVerticalSize(52)))),
+                  buttonTextStyle: CustomTextStyles.titleMedium18,
+                  onTap: () {
+                    if (this.isValid()) {
+                      onTapLoginRegisterLicensePage();
+                    }
+                  },
+                ))));
   }
 
   /// Navigates to the previous screen.
@@ -205,5 +217,11 @@ class LoginRegisterZipCode extends GetWidget<LoginRegisterZipCodeController> {
   /// navigate to the previous screen in the navigation stack.
   onTabBackButton() {
     Get.back();
+  }
+
+  onTapLoginRegisterLicensePage() {
+    Get.toNamed(
+      AppRoutes.registerLicense,
+    );
   }
 }

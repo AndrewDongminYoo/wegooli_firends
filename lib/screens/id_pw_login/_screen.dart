@@ -181,16 +181,16 @@ class LoginWithIdAndPassword
       ),
     );
   }
-}
 
-onTapTeamScheduleShare() {
-  Get.toNamed(
-    AppRoutes.sharedSchedule,
-  );
-}
+  onTapTeamScheduleShare() {
+    Get.toNamed(
+      AppRoutes.sharedSchedule,
+    );
+  }
 
-onTapSignUpAcceptTerms() {
-  Get.toNamed(
-    AppRoutes.acceptTerms,
-  );
+  onTapSignUpAcceptTerms() {
+    Get.toNamed(
+      AppRoutes.acceptTerms,
+    );
+  }
 }

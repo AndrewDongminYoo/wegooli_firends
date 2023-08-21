@@ -2,9 +2,9 @@
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
-import '/screens/screens.dart';
 import '/core/app_export.dart';
 import '/gen/assets.gen.dart';
+import '/screens/screens.dart';
 
 // ignore: must_be_immutable
 class SmartKeyNotAvailable extends GetWidget<SmartKeyNotAvailableController> {

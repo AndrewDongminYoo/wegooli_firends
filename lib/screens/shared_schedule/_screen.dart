@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
-import '/screens/screens.dart';
 import '/core/app_export.dart';
+import '/screens/screens.dart';
 
 class TeamScheduleShare extends GetWidget<TeamScheduleController> {
   const TeamScheduleShare({Key? key}) : super(key: key);

@@ -125,6 +125,14 @@ class ThemeHelper {
           fontFamily: FontFamily.pretendard,
           fontWeight: FontWeight.w700,
         ),
+        labelLarge: TextStyle(
+          color: appTheme.blueGray900,
+          fontSize: getFontSize(
+            12,
+          ),
+          fontFamily: FontFamily.pretendard,
+          fontWeight: FontWeight.w600,
+        ),
         headlineSmall: TextStyle(
           color: appTheme.black900,
           fontSize: getFontSize(
@@ -148,10 +156,10 @@ class ThemeHelper {
 /// Class containing the supported color schemes.
 class ColorSchemes {
   static final primaryColorScheme = ColorScheme.light(
-    background: Color(0XFFEF1010),
+    background: Color(0XFFFF0000),
     error: Color(0XFF222222),
     errorContainer: Color(0XFF82838D),
-    inversePrimary: Color(0XFFEF1010),
+    inversePrimary: Color(0XFFFF0000),
     inverseSurface: Color(0XFF222222),
     onBackground: Color(0XFFFFFFFF),
     onError: Color(0XFFFFCC08),
@@ -166,18 +174,18 @@ class ColorSchemes {
     onTertiary: Color(0XFFFFFFFF),
     onTertiaryContainer: Color(0XFF222222),
     outline: Color(0XFF222222),
-    outlineVariant: Color(0XFFEF1010),
+    outlineVariant: Color(0XFFFF0000),
     primary: Color(0XFFFFCC08),
-    primaryContainer: Color(0XFFEF1010),
-    scrim: Color(0XFFEF1010),
-    secondary: Color(0XFFEF1010),
-    secondaryContainer: Color(0XFFFFCC08),
+    primaryContainer: Color(0XFFFF0000),
+    scrim: Color(0XFFFF0000),
+    secondary: Color(0XFFFF0000),
+    secondaryContainer: Color(0XFFB9BCC3),
     shadow: Color(0XFF222222),
-    surface: Color(0XFFEF1010),
+    surface: Color(0XFFFF0000),
     surfaceTint: Color(0XFF222222),
-    surfaceVariant: Color(0XFFFFCC08),
-    tertiary: Color(0XFFEF1010),
-    tertiaryContainer: Color(0XFFFFCC08),
+    surfaceVariant: Color(0XFFB9BCC3),
+    tertiary: Color(0XFFFF0000),
+    tertiaryContainer: Color(0XFFB9BCC3),
   );
 }
 
@@ -186,8 +194,10 @@ class PrimaryColors {
   // Black
   Color get black900 => Color(0XFF000000);
   // BlueGray
+  Color get blueGray1007f => Color(0X7FD9D9D9);
   Color get blueGray30033 => Color(0X33A4A8AF);
   Color get blueGray400 => Color(0XFF888888);
+  Color get blueGray900 => Color(0XFF323232);
   // DeepOrange
   Color get deepOrangeA200 => Color(0XFFFF7034);
   // DeepPurple
@@ -195,11 +205,14 @@ class PrimaryColors {
   // Gray
   Color get gray100 => Color(0XFFF6F7F7);
   Color get gray10001 => Color(0XFFF5F5F5);
-  Color get gray400 => Color(0XFFB9BCC3);
+  Color get gray300 => Color(0XFFE6E6E6);
+  Color get gray400 => Color(0XFFCACACA);
   Color get gray500 => Color(0XFF8F9199);
   Color get gray50001 => Color(0XFF91969D);
   Color get gray50002 => Color(0XFF91959D);
   Color get gray50003 => Color(0XFF8E9199);
+  Color get gray50004 => Color(0XFF979797);
+  Color get gray600 => Color(0XFF858585);
   Color get gray700 => Color(0XFF666666);
   Color get gray800 => Color(0XFF474747);
   // Green
@@ -207,6 +220,7 @@ class PrimaryColors {
   // Red
   Color get red600 => Color(0XFFDB4646);
   Color get red700 => Color(0XFFE82121);
+  Color get redA700 => Color(0XFFEF1010);
 }
 
 PrimaryColors get appTheme => ThemeHelper().themeColor();

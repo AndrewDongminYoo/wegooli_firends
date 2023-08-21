@@ -107,7 +107,7 @@ class CustomTextFormField extends StatelessWidget {
                 ),
               ),
               borderSide: BorderSide(
-                color: appTheme.gray400,
+                color: theme.colorScheme.secondaryContainer,
                 width: 1,
               ),
             ),
@@ -119,7 +119,7 @@ class CustomTextFormField extends StatelessWidget {
                 ),
               ),
               borderSide: BorderSide(
-                color: appTheme.gray400,
+                color: theme.colorScheme.secondaryContainer,
                 width: 1,
               ),
             ),
@@ -131,7 +131,7 @@ class CustomTextFormField extends StatelessWidget {
                 ),
               ),
               borderSide: BorderSide(
-                color: appTheme.gray400,
+                color: theme.colorScheme.secondaryContainer,
                 width: 1,
               ),
             ),
@@ -143,7 +143,7 @@ class CustomTextFormField extends StatelessWidget {
                 ),
               ),
               borderSide: BorderSide(
-                color: appTheme.gray400,
+                color: theme.colorScheme.secondaryContainer,
                 width: 1,
               ),
             ),
@@ -152,6 +152,18 @@ class CustomTextFormField extends StatelessWidget {
 
 /// Extension on [CustomTextFormField] to facilitate inclusion of all types of border style etc
 extension TextFormFieldStyleHelper on CustomTextFormField {
+  static OutlineInputBorder get outlineSecondaryContainerTL5 =>
+      OutlineInputBorder(
+        borderRadius: BorderRadius.circular(
+          getHorizontalSize(
+            5.00,
+          ),
+        ),
+        borderSide: BorderSide(
+          color: theme.colorScheme.secondaryContainer,
+          width: 1,
+        ),
+      );
   static OutlineInputBorder get fillBluegray30033 => OutlineInputBorder(
         borderRadius: BorderRadius.circular(
           getHorizontalSize(

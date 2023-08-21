@@ -1,19 +1,22 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+// 🌎 Project imports:
+import 'package:wegooli_friends/gen/fonts.gen.dart';
+
 abstract class AppStyledText {
   static const textInputChatting = const TextStyle(
       fontSize: 15,
       color: Colors.transparent,
       fontWeight: FontWeight.w400,
-      fontFamily: "Pretendard-Regular",
+      fontFamily: FontFamily.pretendard,
       fontStyle: FontStyle.normal,
       letterSpacing: 0);
   static textInputChattingColor(Color color) => TextStyle(
       fontSize: 15,
       color: color,
       fontWeight: FontWeight.w400,
-      fontFamily: "Pretendard-Regular",
+      fontFamily: FontFamily.pretendard,
       fontStyle: FontStyle.normal,
       letterSpacing: 0);
 
@@ -21,14 +24,14 @@ abstract class AppStyledText {
       fontSize: 12,
       color: Colors.transparent,
       fontWeight: FontWeight.w400,
-      fontFamily: "Pretendard-Regular",
+      fontFamily: FontFamily.pretendard,
       fontStyle: FontStyle.normal,
       letterSpacing: 0);
   static textInputHelperTextClanderChattingTimeColor(Color color) => TextStyle(
       fontSize: 12,
       color: color,
       fontWeight: FontWeight.w400,
-      fontFamily: "Pretendard-Regular",
+      fontFamily: FontFamily.pretendard,
       fontStyle: FontStyle.normal,
       letterSpacing: 0);
 
@@ -36,14 +39,14 @@ abstract class AppStyledText {
       fontSize: 10,
       color: Colors.transparent,
       fontWeight: FontWeight.w400,
-      fontFamily: "Inter-Regular",
+      fontFamily: FontFamily.inter,
       fontStyle: FontStyle.normal,
       letterSpacing: 0);
   static textInputFooterColor(Color color) => TextStyle(
       fontSize: 10,
       color: color,
       fontWeight: FontWeight.w400,
-      fontFamily: "Inter-Regular",
+      fontFamily: FontFamily.inter,
       fontStyle: FontStyle.normal,
       letterSpacing: 0);
 
@@ -51,14 +54,14 @@ abstract class AppStyledText {
       fontSize: 18,
       color: Colors.transparent,
       fontWeight: FontWeight.w700,
-      fontFamily: "Pretendard-Bold",
+      fontFamily: FontFamily.pretendard,
       fontStyle: FontStyle.normal,
       letterSpacing: 0);
   static textInputTitleButtonColor(Color color) => TextStyle(
       fontSize: 18,
       color: color,
       fontWeight: FontWeight.w700,
-      fontFamily: "Pretendard-Bold",
+      fontFamily: FontFamily.pretendard,
       fontStyle: FontStyle.normal,
       letterSpacing: 0);
 
@@ -66,14 +69,14 @@ abstract class AppStyledText {
       fontSize: 24,
       color: Colors.transparent,
       fontWeight: FontWeight.w700,
-      fontFamily: "Pretendard-Bold",
+      fontFamily: FontFamily.pretendard,
       fontStyle: FontStyle.normal,
       letterSpacing: 0);
   static textInputBigTitleColor(Color color) => TextStyle(
       fontSize: 24,
       color: color,
       fontWeight: FontWeight.w700,
-      fontFamily: "Pretendard-Bold",
+      fontFamily: FontFamily.pretendard,
       fontStyle: FontStyle.normal,
       letterSpacing: 0);
 
@@ -81,14 +84,14 @@ abstract class AppStyledText {
       fontSize: 16,
       color: Colors.transparent,
       fontWeight: FontWeight.w400,
-      fontFamily: "Pretendard-Regular",
+      fontFamily: FontFamily.pretendard,
       fontStyle: FontStyle.normal,
       letterSpacing: 0);
   static textInputPlaceholderTextColor(Color color) => TextStyle(
       fontSize: 16,
       color: color,
       fontWeight: FontWeight.w400,
-      fontFamily: "Pretendard-Regular",
+      fontFamily: FontFamily.pretendard,
       fontStyle: FontStyle.normal,
       letterSpacing: 0);
 
@@ -96,14 +99,14 @@ abstract class AppStyledText {
       fontSize: 16,
       color: Colors.transparent,
       fontWeight: FontWeight.w400,
-      fontFamily: "Noto Sans KR-Regular",
+      fontFamily: FontFamily.notoSansKR,
       fontStyle: FontStyle.normal,
       letterSpacing: 0);
   static mainTextColor(Color color) => TextStyle(
       fontSize: 16,
       color: color,
       fontWeight: FontWeight.w400,
-      fontFamily: "Noto Sans KR-Regular",
+      fontFamily: FontFamily.notoSansKR,
       fontStyle: FontStyle.normal,
       letterSpacing: 0);
 
@@ -111,14 +114,14 @@ abstract class AppStyledText {
       fontSize: 16,
       color: Colors.transparent,
       fontWeight: FontWeight.w700,
-      fontFamily: "Pretendard-Bold",
+      fontFamily: FontFamily.pretendard,
       fontStyle: FontStyle.normal,
       letterSpacing: 0);
   static textInputLabelColor(Color color) => TextStyle(
       fontSize: 16,
       color: color,
       fontWeight: FontWeight.w700,
-      fontFamily: "Pretendard-Bold",
+      fontFamily: FontFamily.pretendard,
       fontStyle: FontStyle.normal,
       letterSpacing: 0);
 
@@ -126,14 +129,14 @@ abstract class AppStyledText {
       fontSize: 16,
       color: Colors.transparent,
       fontWeight: FontWeight.w400,
-      fontFamily: "Roboto-Regular",
+      fontFamily: FontFamily.roboto,
       fontStyle: FontStyle.normal,
       letterSpacing: 0);
   static defaultNormalTextColor(Color color) => TextStyle(
       fontSize: 16,
       color: color,
       fontWeight: FontWeight.w400,
-      fontFamily: "Roboto-Regular",
+      fontFamily: FontFamily.roboto,
       fontStyle: FontStyle.normal,
       letterSpacing: 0);
 
@@ -141,14 +144,14 @@ abstract class AppStyledText {
       fontSize: 16,
       color: Colors.transparent,
       fontWeight: FontWeight.w400,
-      fontFamily: "SF Pro Text-Semibold",
+      fontFamily: FontFamily.sFProText,
       fontStyle: FontStyle.normal,
       letterSpacing: -0.3199999928474426);
   static calloutBoldColor(Color color) => TextStyle(
       fontSize: 16,
       color: color,
       fontWeight: FontWeight.w400,
-      fontFamily: "SF Pro Text-Semibold",
+      fontFamily: FontFamily.sFProText,
       fontStyle: FontStyle.normal,
       letterSpacing: -0.3199999928474426);
 }

@@ -19,8 +19,14 @@ class FontFamily {
   /// Font family: Nanum-Square-Round
   static const String nanumSquareRound = 'Nanum-Square-Round';
 
+  /// Font family: NotoSansKR
+  static const String notoSansKR = 'NotoSansKR';
+
   /// Font family: Pretendard
   static const String pretendard = 'Pretendard';
+
+  /// Font family: Roboto
+  static const String roboto = 'Roboto';
 
   /// Font family: SF-Pro-Text
   static const String sFProText = 'SF-Pro-Text';

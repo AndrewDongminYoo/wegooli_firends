@@ -9,6 +9,11 @@ import 'controller/_controller.dart';
 class LoginRegisterLicensePage
     extends GetWidget<LoginRegisterLicensePageController> {
   const LoginRegisterLicensePage({Key? key}) : super(key: key);
+  bool isValid() {
+    // TODO
+    // 면허증이 valid하면 true, 아니면 false.
+    return true;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -306,11 +311,17 @@ class LoginRegisterLicensePage
                 margin: getMargin(left: 15, right: 17, bottom: 29),
                 decoration: AppDecoration.shadow,
                 child: CustomElevatedButton(
-                    text: "lbl35".tr,
-                    buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
-                        fixedSize: MaterialStateProperty.all<Size>(
-                            Size(double.maxFinite, getVerticalSize(52)))),
-                    buttonTextStyle: CustomTextStyles.titleMedium18))));
+                  text: "lbl35".tr,
+                  buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
+                      fixedSize: MaterialStateProperty.all<Size>(
+                          Size(double.maxFinite, getVerticalSize(52)))),
+                  buttonTextStyle: CustomTextStyles.titleMedium18,
+                  onTap: () {
+                    if (this.isValid()) {
+                      onRegisterCreditCard();
+                    }
+                  },
+                ))));
   }
 
   /// Navigates to the previous screen.
@@ -319,5 +330,11 @@ class LoginRegisterLicensePage
   /// navigate to the previous screen in the navigation stack.
   onTabBackButton() {
     Get.back();
+  }
+
+  onRegisterCreditCard() {
+    Get.toNamed(
+      AppRoutes.registerCredits,
+    );
   }
 }

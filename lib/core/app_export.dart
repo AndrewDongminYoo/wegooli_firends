@@ -1,7 +1,7 @@
 export 'package:connectivity_plus/connectivity_plus.dart';
 export 'package:get/get.dart';
 
-export 'constants/firebase.dart';
+// export 'constants/firebase.dart';
 export 'environment/base_env_config.dart';
 export 'environment/env_config.dart';
 export 'environment/open_api_config.dart';

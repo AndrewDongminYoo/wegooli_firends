@@ -31,7 +31,6 @@ dependencies:
   dash_chat_2: ^0.0.17
   dio: ^5.3.2
   dio_cookie_manager: ^3.1.0+1
-  english_words: ^4.0.0
   firebase_core: ^2.15.1
   flutter:
     sdk: flutter

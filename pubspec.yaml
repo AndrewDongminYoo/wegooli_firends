@@ -39,7 +39,7 @@ dependencies:
   flutter_lorem: ^2.0.0
   flutter_svg: ^2.0.7
   get: ^4.6.5
-  intl: ^0.18.1
+  intl: ^0.18.0
   just_the_tooltip: ^0.0.12
   lottie: ^2.6.0
   sendbird_sdk: ^3.2.17

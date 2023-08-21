@@ -82,8 +82,6 @@ dart format .
   https://pub.dev/packages/dio
 - dio_cookie_manager - 인터셉터 알고리즘을 기반으로 위의 cookie_jar와 dio를 결합.
   https://pub.dev/packages/dio_cookie_manager
-- english_words - 가장 많이 사용되는 ~5000개의 영어 단어와 일부 문자열 유틸리티 기능이 포함된 패키지
-  https://pub.dev/packages/english_words
 - flutter_gen - 에셋, 폰트, 색상 등을 위한 Flutter 코드 생성기 - 모든 오염되기 쉬운 문자열 기반 에셋 API를 제거.
   https://pub.dev/packages/flutter_gen
 - flutter_lorem - "lorem ipsum" 같은 임의의 문장과 단락을 생성하기 위한 Flutter 패키지.

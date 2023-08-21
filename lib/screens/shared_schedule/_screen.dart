@@ -1,10 +1,9 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+import 'package:wegooli_friends/screens/screens.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
-import 'controller/_controller.dart';
-import 'widgets/calendar.dart';
 
 class TeamScheduleShare extends GetWidget<TeamScheduleController> {
   const TeamScheduleShare({Key? key}) : super(key: key);
@@ -30,20 +29,28 @@ class TeamScheduleShare extends GetWidget<TeamScheduleController> {
   /// Handling route based on bottom click actions
   String getCurrentRoute(BottomBarEnum type) {
     switch (type) {
-      case BottomBarEnum.tf:
-        return AppRoutes.sharedCalendar;
+      case BottomBarEnum.dashChat:
+        return AppRoutes.chatWithFriends;
+      case BottomBarEnum.smartKey:
+        return AppRoutes.smartKeyAvailable;
+      case BottomBarEnum.profile:
+        return AppRoutes.myPage;
       default:
-        return "/";
+        return AppRoutes.sharedCalendar;
     }
   }
 
   /// Handling page based on route
   Widget getCurrentPage(String currentRoute) {
     switch (currentRoute) {
-      case AppRoutes.sharedCalendar:
-        return SharedCalendar();
+      case AppRoutes.chatWithFriends:
+        return DashChatWithFriendsPage();
+      case AppRoutes.smartKeyAvailable:
+        return SmartKeyAvailablePage();
+      case AppRoutes.myPage:
+        return MyProfilePage();
       default:
-        return DefaultWidget();
+        return SharedCalendar();
     }
   }
 }

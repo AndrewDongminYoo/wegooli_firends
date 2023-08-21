@@ -1,11 +1,10 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+import 'package:wegooli_friends/screens/screens.dart';
 
 // 🌎 Project imports:
-import '../shared_schedule/widgets/calendar.dart';
 import '/core/app_export.dart';
 import '/gen/assets.gen.dart';
-import 'controller/_controller.dart';
 
 // ignore: must_be_immutable
 class SmartKeyNotAvailable extends GetWidget<SmartKeyNotAvailableController> {
@@ -771,20 +770,30 @@ class SmartKeyNotAvailable extends GetWidget<SmartKeyNotAvailableController> {
   /// Handling route based on bottom click actions
   String getCurrentRoute(BottomBarEnum type) {
     switch (type) {
-      case BottomBarEnum.tf:
+      case BottomBarEnum.sharedCalendar:
         return AppRoutes.sharedCalendar;
+      case BottomBarEnum.dashChat:
+        return AppRoutes.chatWithFriends;
+      case BottomBarEnum.smartKey:
+        return AppRoutes.smartKeyAvailable;
+      case BottomBarEnum.profile:
+        return AppRoutes.myPage;
       default:
-        return "/";
+        return AppRoutes.sharedCalendar;
     }
   }
 
   /// Handling page based on route
   Widget getCurrentPage(String currentRoute) {
     switch (currentRoute) {
-      case AppRoutes.sharedCalendar:
-        return SharedCalendar();
+      case AppRoutes.chatWithFriends:
+        return DashChatWithFriendsPage();
+      case AppRoutes.smartKeyAvailable:
+        return SmartKeyAvailablePage();
+      case AppRoutes.myPage:
+        return MyProfilePage();
       default:
-        return DefaultWidget();
+        return SharedCalendar();
     }
   }
 }

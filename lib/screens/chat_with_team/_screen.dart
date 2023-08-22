@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:dash_chat_2/dash_chat_2.dart';
 import 'package:get/get.dart';
 import 'package:sendbird_sdk/sendbird_sdk.dart';
-import 'package:wegooli_friends/wegooli_friends.dart';
 
 // 🌎 Project imports:
+import 'package:wegooli_friends/lib.dart';
 import '/core/app_export.dart';
 import '/gen/assets.gen.dart';
 import 'controller/_controller.dart';
@@ -36,7 +36,6 @@ class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
   final DashChatWithFriendsController controller =
       Get.put(DashChatWithFriendsController(DashChatWithFriendsModel().obs));
 
-  late GroupChannel _channel;
   List<BaseMessage> _messages = [];
 
   void loadSendbird(
@@ -59,7 +58,6 @@ class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
 
       // Update & prompt the UI to rebuild
       setState(() {
-        _channel = channel;
         _messages = messages;
       });
     } catch (e) {

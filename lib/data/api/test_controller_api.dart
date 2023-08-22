@@ -19,7 +19,6 @@ class TestControllerApi {
 
   /// callTest
   ///
-  ///
   /// Parameters:
   /// * [model]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation

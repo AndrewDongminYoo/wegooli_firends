@@ -25,6 +25,10 @@ class _$Account extends Account {
   final String? updateAt;
   @override
   final String? color;
+  @override
+  final String? nickname;
+  @override
+  final String? profilePicture;
 
   factory _$Account([void Function(AccountBuilder)? updates]) =>
       (new AccountBuilder()..update(updates))._build();
@@ -38,7 +42,9 @@ class _$Account extends Account {
       this.deleteAt,
       this.createdAt,
       this.updateAt,
-      this.color})
+      this.color,
+      this.nickname,
+      this.profilePicture})
       : super._();
 
   @override
@@ -60,7 +66,9 @@ class _$Account extends Account {
         deleteAt == other.deleteAt &&
         createdAt == other.createdAt &&
         updateAt == other.updateAt &&
-        color == other.color;
+        color == other.color &&
+        nickname == other.nickname &&
+        profilePicture == other.profilePicture;
   }
 
   @override
@@ -75,6 +83,8 @@ class _$Account extends Account {
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, updateAt.hashCode);
     _$hash = $jc(_$hash, color.hashCode);
+    _$hash = $jc(_$hash, nickname.hashCode);
+    _$hash = $jc(_$hash, profilePicture.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -90,7 +100,9 @@ class _$Account extends Account {
           ..add('deleteAt', deleteAt)
           ..add('createdAt', createdAt)
           ..add('updateAt', updateAt)
-          ..add('color', color))
+          ..add('color', color)
+          ..add('nickname', nickname)
+          ..add('profilePicture', profilePicture))
         .toString();
   }
 }
@@ -134,6 +146,15 @@ class AccountBuilder implements Builder<Account, AccountBuilder> {
   String? get color => _$this._color;
   set color(String? color) => _$this._color = color;
 
+  String? _nickname;
+  String? get nickname => _$this._nickname;
+  set nickname(String? nickname) => _$this._nickname = nickname;
+
+  String? _profilePicture;
+  String? get profilePicture => _$this._profilePicture;
+  set profilePicture(String? profilePicture) =>
+      _$this._profilePicture = profilePicture;
+
   AccountBuilder() {
     Account._defaults(this);
   }
@@ -150,6 +171,8 @@ class AccountBuilder implements Builder<Account, AccountBuilder> {
       _createdAt = $v.createdAt;
       _updateAt = $v.updateAt;
       _color = $v.color;
+      _nickname = $v.nickname;
+      _profilePicture = $v.profilePicture;
       _$v = null;
     }
     return this;
@@ -180,7 +203,9 @@ class AccountBuilder implements Builder<Account, AccountBuilder> {
             deleteAt: deleteAt,
             createdAt: createdAt,
             updateAt: updateAt,
-            color: color);
+            color: color,
+            nickname: nickname,
+            profilePicture: profilePicture);
     replace(_$result);
     return _$result;
   }

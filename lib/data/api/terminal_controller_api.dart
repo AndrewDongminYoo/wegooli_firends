@@ -20,7 +20,6 @@ class TerminalControllerApi {
 
   /// registTerminal
   ///
-  ///
   /// Parameters:
   /// * [terminalRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -91,7 +90,6 @@ class TerminalControllerApi {
   }
 
   /// selectTerminal
-  ///
   ///
   /// Parameters:
   /// * [seq]
@@ -174,7 +172,6 @@ class TerminalControllerApi {
   }
 
   /// selectTerminalList
-  ///
   ///
   /// Parameters:
   /// * [request]
@@ -263,7 +260,6 @@ class TerminalControllerApi {
   }
 
   /// updateTerminal
-  ///
   ///
   /// Parameters:
   /// * [seq]

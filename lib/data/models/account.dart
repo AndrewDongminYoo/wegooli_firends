@@ -18,6 +18,8 @@ part 'account.g.dart';
 /// * [createdAt]
 /// * [updateAt]
 /// * [color]
+/// * [nickname]
+/// * [profilePicture]
 @BuiltValue()
 abstract class Account implements Built<Account, AccountBuilder> {
   @BuiltValueField(wireName: r'id')
@@ -46,6 +48,12 @@ abstract class Account implements Built<Account, AccountBuilder> {
 
   @BuiltValueField(wireName: r'color')
   String? get color;
+
+  @BuiltValueField(wireName: r'nickname')
+  String? get nickname;
+
+  @BuiltValueField(wireName: r'profilePicture')
+  String? get profilePicture;
 
   Account._();
 
@@ -130,6 +138,20 @@ class _$AccountSerializer implements PrimitiveSerializer<Account> {
       yield r'color';
       yield serializers.serialize(
         object.color,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.nickname != null) {
+      yield r'nickname';
+      yield serializers.serialize(
+        object.nickname,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.profilePicture != null) {
+      yield r'profilePicture';
+      yield serializers.serialize(
+        object.profilePicture,
         specifiedType: const FullType(String),
       );
     }
@@ -220,6 +242,20 @@ class _$AccountSerializer implements PrimitiveSerializer<Account> {
             specifiedType: const FullType(String),
           ) as String;
           result.color = valueDes;
+          break;
+        case r'nickname':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.nickname = valueDes;
+          break;
+        case r'profilePicture':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.profilePicture = valueDes;
           break;
         default:
           unhandled.add(key);

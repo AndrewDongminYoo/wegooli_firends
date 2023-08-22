@@ -20,7 +20,6 @@ class ScheduleControllerApi {
 
   /// deleteSchedule
   ///
-  ///
   /// Parameters:
   /// * [seq]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -73,7 +72,6 @@ class ScheduleControllerApi {
   }
 
   /// registSchedule
-  ///
   ///
   /// Parameters:
   /// * [scheduleRequest]
@@ -145,7 +143,6 @@ class ScheduleControllerApi {
   }
 
   /// selectSchedule
-  ///
   ///
   /// Parameters:
   /// * [seq]
@@ -228,7 +225,6 @@ class ScheduleControllerApi {
   }
 
   /// selectScheduleList
-  ///
   ///
   /// Parameters:
   /// * [request]
@@ -317,7 +313,6 @@ class ScheduleControllerApi {
   }
 
   /// updateSchedule
-  ///
   ///
   /// Parameters:
   /// * [seq]

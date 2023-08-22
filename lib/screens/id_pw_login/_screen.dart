@@ -1,13 +1,13 @@
 // 🐦 Flutter imports:
-import 'package:built_value/json_object.dart';
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends/wegooli_friends.dart';
 
 // 📦 Package imports:
+import 'package:built_value/json_object.dart';
+import 'package:dio/dio.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
+import '/data/api.dart';
 import '/core/app_export.dart';
 import '/gen/assets.gen.dart';
 import 'controller/_controller.dart';

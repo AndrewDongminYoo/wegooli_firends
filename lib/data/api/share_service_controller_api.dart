@@ -23,7 +23,6 @@ class ShareServiceControllerApi {
 
   /// getShareService
   ///
-  ///
   /// Parameters:
   /// * [request]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -112,7 +111,6 @@ class ShareServiceControllerApi {
 
   /// getShareServiceDetail
   ///
-  ///
   /// Parameters:
   /// * [request]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -199,7 +197,6 @@ class ShareServiceControllerApi {
   }
 
   /// setServiceLeader
-  ///
   ///
   /// Parameters:
   /// * [request]

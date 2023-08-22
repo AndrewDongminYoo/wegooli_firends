@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
-import 'package:wegooli_friends/wegooli_friends.dart';
+import '/data/api.dart';
 
 class InitialBindings extends Bindings {
   @override

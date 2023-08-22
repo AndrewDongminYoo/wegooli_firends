@@ -12,6 +12,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(AccountAgreementRequest.serializer)
       ..add(ApiResponseObject.serializer)
       ..add(CarControlHistoryModel.serializer)
+      ..add(CarHistoryDTO.serializer)
       ..add(DeviceControlResultDTO.serializer)
       ..add(DeviceOption.serializer)
       ..add(GrantedAuthority.serializer)
@@ -29,6 +30,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(ShareServiceRequest.serializer)
       ..add(TeamAccountConnectionModel.serializer)
       ..add(TeamAccountConnectionRequest.serializer)
+      ..add(TeamAccountConnectionResponse.serializer)
+      ..add(TeamAccountModel.serializer)
       ..add(TeamCarConnection.serializer)
       ..add(TeamModel.serializer)
       ..add(TeamRequest.serializer)
@@ -46,7 +49,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
           () => new ListBuilder<UserSubInfo>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(GrantedAuthority)]),
-          () => new ListBuilder<GrantedAuthority>()))
+          () => new ListBuilder<GrantedAuthority>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(TeamAccountModel)]),
+          () => new ListBuilder<TeamAccountModel>()))
     .build();
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

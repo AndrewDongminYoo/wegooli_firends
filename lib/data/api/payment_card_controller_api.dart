@@ -20,7 +20,6 @@ class PaymentCardControllerApi {
 
   /// deletePaymentCard
   ///
-  ///
   /// Parameters:
   /// * [seq]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -97,7 +96,6 @@ class PaymentCardControllerApi {
   }
 
   /// insertPaymentCard
-  ///
   ///
   /// Parameters:
   /// * [paymentCardRequest]
@@ -195,7 +193,6 @@ class PaymentCardControllerApi {
 
   /// selectPaymentCard
   ///
-  ///
   /// Parameters:
   /// * [seq]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -277,7 +274,6 @@ class PaymentCardControllerApi {
   }
 
   /// selectPaymentCardList
-  ///
   ///
   /// Parameters:
   /// * [memberSeq]
@@ -415,7 +411,6 @@ class PaymentCardControllerApi {
   }
 
   /// updatePaymentCard
-  ///
   ///
   /// Parameters:
   /// * [seq]

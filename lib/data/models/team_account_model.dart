@@ -4,79 +4,56 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'team_account_connection_model.g.dart';
+part 'team_account_model.g.dart';
 
-/// TeamAccountConnectionModel
+/// TeamAccountModel
 ///
 /// Properties:
-/// * [seq]
-/// * [teamSeq]
 /// * [accountId]
-/// * [joinedAt]
-/// * [leavedAt]
+/// * [color]
+/// * [nickname]
+/// * [profilePicture]
 @BuiltValue()
-abstract class TeamAccountConnectionModel
-    implements
-        Built<TeamAccountConnectionModel, TeamAccountConnectionModelBuilder> {
-  @BuiltValueField(wireName: r'seq')
-  int? get seq;
-
-  @BuiltValueField(wireName: r'teamSeq')
-  int? get teamSeq;
-
+abstract class TeamAccountModel
+    implements Built<TeamAccountModel, TeamAccountModelBuilder> {
   @BuiltValueField(wireName: r'accountId')
   String? get accountId;
 
-  @BuiltValueField(wireName: r'joinedAt')
-  String? get joinedAt;
+  @BuiltValueField(wireName: r'color')
+  String? get color;
 
-  @BuiltValueField(wireName: r'leavedAt')
-  String? get leavedAt;
+  @BuiltValueField(wireName: r'nickname')
+  String? get nickname;
 
-  TeamAccountConnectionModel._();
+  @BuiltValueField(wireName: r'profilePicture')
+  String? get profilePicture;
 
-  factory TeamAccountConnectionModel(
-          [void updates(TeamAccountConnectionModelBuilder b)]) =
-      _$TeamAccountConnectionModel;
+  TeamAccountModel._();
+
+  factory TeamAccountModel([void updates(TeamAccountModelBuilder b)]) =
+      _$TeamAccountModel;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(TeamAccountConnectionModelBuilder b) => b;
+  static void _defaults(TeamAccountModelBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<TeamAccountConnectionModel> get serializer =>
-      _$TeamAccountConnectionModelSerializer();
+  static Serializer<TeamAccountModel> get serializer =>
+      _$TeamAccountModelSerializer();
 }
 
-class _$TeamAccountConnectionModelSerializer
-    implements PrimitiveSerializer<TeamAccountConnectionModel> {
+class _$TeamAccountModelSerializer
+    implements PrimitiveSerializer<TeamAccountModel> {
   @override
-  final Iterable<Type> types = const [
-    TeamAccountConnectionModel,
-    _$TeamAccountConnectionModel
-  ];
+  final Iterable<Type> types = const [TeamAccountModel, _$TeamAccountModel];
 
   @override
-  final String wireName = r'TeamAccountConnectionModel';
+  final String wireName = r'TeamAccountModel';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    TeamAccountConnectionModel object, {
+    TeamAccountModel object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.seq != null) {
-      yield r'seq';
-      yield serializers.serialize(
-        object.seq,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.teamSeq != null) {
-      yield r'teamSeq';
-      yield serializers.serialize(
-        object.teamSeq,
-        specifiedType: const FullType(int),
-      );
-    }
     if (object.accountId != null) {
       yield r'accountId';
       yield serializers.serialize(
@@ -84,17 +61,24 @@ class _$TeamAccountConnectionModelSerializer
         specifiedType: const FullType(String),
       );
     }
-    if (object.joinedAt != null) {
-      yield r'joinedAt';
+    if (object.color != null) {
+      yield r'color';
       yield serializers.serialize(
-        object.joinedAt,
+        object.color,
         specifiedType: const FullType(String),
       );
     }
-    if (object.leavedAt != null) {
-      yield r'leavedAt';
+    if (object.nickname != null) {
+      yield r'nickname';
       yield serializers.serialize(
-        object.leavedAt,
+        object.nickname,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.profilePicture != null) {
+      yield r'profilePicture';
+      yield serializers.serialize(
+        object.profilePicture,
         specifiedType: const FullType(String),
       );
     }
@@ -103,7 +87,7 @@ class _$TeamAccountConnectionModelSerializer
   @override
   Object serialize(
     Serializers serializers,
-    TeamAccountConnectionModel object, {
+    TeamAccountModel object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -116,27 +100,13 @@ class _$TeamAccountConnectionModelSerializer
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required TeamAccountConnectionModelBuilder result,
+    required TeamAccountModelBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'seq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.seq = valueDes;
-          break;
-        case r'teamSeq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.teamSeq = valueDes;
-          break;
         case r'accountId':
           final valueDes = serializers.deserialize(
             value,
@@ -144,19 +114,26 @@ class _$TeamAccountConnectionModelSerializer
           ) as String;
           result.accountId = valueDes;
           break;
-        case r'joinedAt':
+        case r'color':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.joinedAt = valueDes;
+          result.color = valueDes;
           break;
-        case r'leavedAt':
+        case r'nickname':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.leavedAt = valueDes;
+          result.nickname = valueDes;
+          break;
+        case r'profilePicture':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.profilePicture = valueDes;
           break;
         default:
           unhandled.add(key);
@@ -167,12 +144,12 @@ class _$TeamAccountConnectionModelSerializer
   }
 
   @override
-  TeamAccountConnectionModel deserialize(
+  TeamAccountModel deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = TeamAccountConnectionModelBuilder();
+    final result = TeamAccountModelBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(
@@ -186,4 +163,3 @@ class _$TeamAccountConnectionModelSerializer
     return result.build();
   }
 }
-

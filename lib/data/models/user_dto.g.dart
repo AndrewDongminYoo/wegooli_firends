@@ -45,6 +45,10 @@ class _$UserDTO extends UserDTO {
   final String? updateAt;
   @override
   final String? color;
+  @override
+  final String? nickname;
+  @override
+  final String? profilePicture;
 
   factory _$UserDTO([void Function(UserDTOBuilder)? updates]) =>
       (new UserDTOBuilder()..update(updates))._build();
@@ -68,7 +72,9 @@ class _$UserDTO extends UserDTO {
       this.delimit,
       this.deleteAt,
       this.updateAt,
-      this.color})
+      this.color,
+      this.nickname,
+      this.profilePicture})
       : super._();
 
   @override
@@ -100,7 +106,9 @@ class _$UserDTO extends UserDTO {
         delimit == other.delimit &&
         deleteAt == other.deleteAt &&
         updateAt == other.updateAt &&
-        color == other.color;
+        color == other.color &&
+        nickname == other.nickname &&
+        profilePicture == other.profilePicture;
   }
 
   @override
@@ -125,6 +133,8 @@ class _$UserDTO extends UserDTO {
     _$hash = $jc(_$hash, deleteAt.hashCode);
     _$hash = $jc(_$hash, updateAt.hashCode);
     _$hash = $jc(_$hash, color.hashCode);
+    _$hash = $jc(_$hash, nickname.hashCode);
+    _$hash = $jc(_$hash, profilePicture.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -150,7 +160,9 @@ class _$UserDTO extends UserDTO {
           ..add('delimit', delimit)
           ..add('deleteAt', deleteAt)
           ..add('updateAt', updateAt)
-          ..add('color', color))
+          ..add('color', color)
+          ..add('nickname', nickname)
+          ..add('profilePicture', profilePicture))
         .toString();
   }
 }
@@ -234,6 +246,15 @@ class UserDTOBuilder implements Builder<UserDTO, UserDTOBuilder> {
   String? get color => _$this._color;
   set color(String? color) => _$this._color = color;
 
+  String? _nickname;
+  String? get nickname => _$this._nickname;
+  set nickname(String? nickname) => _$this._nickname = nickname;
+
+  String? _profilePicture;
+  String? get profilePicture => _$this._profilePicture;
+  set profilePicture(String? profilePicture) =>
+      _$this._profilePicture = profilePicture;
+
   UserDTOBuilder() {
     UserDTO._defaults(this);
   }
@@ -260,6 +281,8 @@ class UserDTOBuilder implements Builder<UserDTO, UserDTOBuilder> {
       _deleteAt = $v.deleteAt;
       _updateAt = $v.updateAt;
       _color = $v.color;
+      _nickname = $v.nickname;
+      _profilePicture = $v.profilePicture;
       _$v = null;
     }
     return this;
@@ -300,7 +323,9 @@ class UserDTOBuilder implements Builder<UserDTO, UserDTOBuilder> {
             delimit: delimit,
             deleteAt: deleteAt,
             updateAt: updateAt,
-            color: color);
+            color: color,
+            nickname: nickname,
+            profilePicture: profilePicture);
     replace(_$result);
     return _$result;
   }

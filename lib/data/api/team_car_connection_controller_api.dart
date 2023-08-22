@@ -17,7 +17,6 @@ class TeamCarConnectionControllerApi {
 
   /// teamCarConnection
   ///
-  ///
   /// Parameters:
   /// * [teamCarConnection]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -113,7 +112,6 @@ class TeamCarConnectionControllerApi {
   }
 
   /// teamCarDisConnection
-  ///
   ///
   /// Parameters:
   /// * [teamCarConnection]

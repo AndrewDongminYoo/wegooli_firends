@@ -20,7 +20,6 @@ class AccountAgreementControllerApi {
 
   /// deleteAccountAgreement
   ///
-  ///
   /// Parameters:
   /// * [classification]
   /// * [accountId]
@@ -100,7 +99,6 @@ class AccountAgreementControllerApi {
   }
 
   /// insertAccountAgreement
-  ///
   ///
   /// Parameters:
   /// * [accountAgreementRequest]
@@ -198,7 +196,6 @@ class AccountAgreementControllerApi {
 
   /// selectAccountAgreement
   ///
-  ///
   /// Parameters:
   /// * [classification]
   /// * [accountId]
@@ -283,7 +280,6 @@ class AccountAgreementControllerApi {
   }
 
   /// selectAccountAgreementList
-  ///
   ///
   /// Parameters:
   /// * [classification]
@@ -404,7 +400,6 @@ class AccountAgreementControllerApi {
   }
 
   /// updateAccountAgreement
-  ///
   ///
   /// Parameters:
   /// * [accountAgreementRequest]

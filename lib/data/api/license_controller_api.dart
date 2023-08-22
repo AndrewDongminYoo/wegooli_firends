@@ -20,7 +20,6 @@ class LicenseControllerApi {
 
   /// deleteLicense
   ///
-  ///
   /// Parameters:
   /// * [seq]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -96,7 +95,6 @@ class LicenseControllerApi {
   }
 
   /// deleteLicenseByMemberSeq
-  ///
   ///
   /// Parameters:
   /// * [memberSeq]
@@ -174,7 +172,6 @@ class LicenseControllerApi {
   }
 
   /// insertLicense
-  ///
   ///
   /// Parameters:
   /// * [licenseRequest]
@@ -271,7 +268,6 @@ class LicenseControllerApi {
 
   /// selectLicense
   ///
-  ///
   /// Parameters:
   /// * [seq]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -352,7 +348,6 @@ class LicenseControllerApi {
   }
 
   /// selectLicenseList
-  ///
   ///
   /// Parameters:
   /// * [request]
@@ -442,7 +437,6 @@ class LicenseControllerApi {
 
   /// selectServiceStop
   ///
-  ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -516,7 +510,6 @@ class LicenseControllerApi {
   }
 
   /// updateLicense
-  ///
   ///
   /// Parameters:
   /// * [seq]

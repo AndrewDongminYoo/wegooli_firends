@@ -19,7 +19,6 @@ class DeviceControllerApi {
 
   /// doorClose
   ///
-  ///
   /// Parameters:
   /// * [carNum]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -102,7 +101,6 @@ class DeviceControllerApi {
 
   /// doorOpen
   ///
-  ///
   /// Parameters:
   /// * [carNum]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -184,7 +182,6 @@ class DeviceControllerApi {
   }
 
   /// selectDeviceControlHistoryList
-  ///
   ///
   /// Parameters:
   /// * [request]
@@ -275,7 +272,6 @@ class DeviceControllerApi {
 
   /// turnOnEmergencyLight
   ///
-  ///
   /// Parameters:
   /// * [carNum]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -357,7 +353,6 @@ class DeviceControllerApi {
   }
 
   /// turnOnHorn
-  ///
   ///
   /// Parameters:
   /// * [carNum]

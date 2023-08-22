@@ -21,7 +21,6 @@ class TeamControllerApi {
 
   /// deleteTeam
   ///
-  ///
   /// Parameters:
   /// * [teamSeq]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -98,7 +97,6 @@ class TeamControllerApi {
   }
 
   /// insertTeam
-  ///
   ///
   /// Parameters:
   /// * [teamRequest]
@@ -200,7 +198,6 @@ class TeamControllerApi {
 
   /// selectTeam
   ///
-  ///
   /// Parameters:
   /// * [teamSeq]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -283,7 +280,6 @@ class TeamControllerApi {
 
   /// selectTeamByTeamCode
   ///
-  ///
   /// Parameters:
   /// * [teamCode]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -365,7 +361,6 @@ class TeamControllerApi {
   }
 
   /// selectTeamList
-  ///
   ///
   /// Parameters:
   /// * [accountId]
@@ -489,7 +484,6 @@ class TeamControllerApi {
   }
 
   /// updateTeam
-  ///
   ///
   /// Parameters:
   /// * [teamSeq]

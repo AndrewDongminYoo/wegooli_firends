@@ -1,8 +1,10 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+
 // 📦 Package imports:
 import 'package:get/get.dart';
+import 'package:wegooli_friends/data/models/models.dart';
 
 // 🌎 Project imports:
 import '../models/_model.dart';
@@ -17,7 +19,8 @@ class DashChatWithFriendsController extends GetxController {
   TextEditingController group1104Controller = TextEditingController();
 
   Rx<DashChatWithFriendsModel> dashChatWithFriendsModelObj;
-
+  RxList<TeamAccountModel> members =
+      RxList<TeamAccountModel>([]);
   @override
   void onClose() {
     super.onClose();

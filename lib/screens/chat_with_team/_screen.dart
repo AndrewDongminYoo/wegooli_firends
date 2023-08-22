@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 // 📦 Package imports:
 import 'package:dash_chat_2/dash_chat_2.dart';
 import 'package:sendbird_sdk/sendbird_sdk.dart';
+import 'package:wegooli_friends/wegooli_friends.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
@@ -90,6 +91,24 @@ class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
     ];
   }
 
+  Future fun() async {
+    String token = Get.find<PrefUtils>().getData('token');
+    final api = Get.find<ApiClient>().getTeamAccountConnectionControllerApi();
+    print('token : $token');
+    Map<String, dynamic> extra = <String, dynamic>{
+      'secure': <Map<String, String>>[
+        {
+          'type': 'http',
+          'scheme': 'bearer',
+          'name': token,
+        },
+      ],
+    };
+    final response = await api.selectTeamAccountList(extra: extra);
+    print(response.requestOptions);
+    print(response);
+  }
+
   @override
   void initState() {
     super.initState();
@@ -143,13 +162,14 @@ class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
         body: DashChat(
           currentUser: asDashChatUser(SendbirdSdk().currentUser),
           messages: asDashChatMessages(_messages),
-          onSend: (newMessage) {
-            final sentMessage =
-                _channel.sendUserMessageWithText(newMessage.text);
-            setState(() {
-              // _messages.add(sentMessage);
-              _messages.insert(0, sentMessage);
-            });
+          onSend: (newMessage) async {
+            // final sentMessage =
+            //     _channel.sendUserMessageWithText(newMessage.text);
+            // setState(() {
+            //   // _messages.add(sentMessage);
+            //   _messages.insert(0, sentMessage);
+            // });
+            await fun();
           },
           inputOptions: const InputOptions(
             sendOnEnter: true,

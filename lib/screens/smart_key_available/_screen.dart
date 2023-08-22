@@ -113,7 +113,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     CustomImageView(
-                                      svgPath: Assets.svg.imgGasCharger.path,
+                                      svgPath: Assets.svg.imgGasStation.path,
                                       height: getSize(
                                         24,
                                       ),
@@ -329,8 +329,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
                                       CustomImageView(
-                                        svgPath:
-                                            Assets.svg.imgUnlockYellow.path,
+                                        svgPath: Assets.svg.imgUnlocked.path,
                                         height: getSize(
                                           46,
                                         ),
@@ -485,7 +484,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 CustomImageView(
-                                  svgPath: Assets.svg.imgLightOnYellow.path,
+                                  svgPath: Assets.svg.imgTriangle.path,
                                   height: getSize(
                                     46,
                                   ),
@@ -538,7 +537,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 CustomImageView(
-                                  svgPath: Assets.svg.imgCampaignYellow.path,
+                                  svgPath: Assets.svg.imgCampaign.path,
                                   height: getSize(
                                     46,
                                   ),

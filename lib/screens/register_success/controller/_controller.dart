@@ -2,11 +2,11 @@
 import '../models/_model.dart';
 import '/core/app_export.dart';
 
-/// A controller class for the LoginRegisterSuccessPageScreen.
+/// A controller class for the RegisterSuccessPageScreen.
 ///
-/// This class manages the state of the LoginRegisterSuccessPageScreen, including the
+/// This class manages the state of the RegisterSuccessPageScreen, including the
 /// current registerSuccessPageModelObj
-class LoginRegisterSuccessPageController extends GetxController {
-  Rx<LoginRegisterSuccessPageModel> registerSuccessPageModelObj =
-      LoginRegisterSuccessPageModel().obs;
+class RegisterSuccessPageController extends GetxController {
+  Rx<RegisterSuccessPageModel> registerSuccessPageModelObj =
+      RegisterSuccessPageModel().obs;
 }

@@ -6,7 +6,7 @@ import '/data/models/selection_popup.dart';
 
 /// This class defines the variables used in the [register_license],
 /// and is typically used to hold data that is passed between different parts of the application.
-class LoginRegisterLicensePageModel {
+class RegisterLicensePageModel {
   Rx<List<SelectionPopupModel>> dropdownItemList = Rx([
     SelectionPopupModel(
       id: 1,

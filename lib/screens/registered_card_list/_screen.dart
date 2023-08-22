@@ -50,7 +50,7 @@ class RegisteredCreditCardList
                                       controller.radioGroup.value = value;
                                     })),
                                 CustomImageView(
-                                    svgPath: Assets.svg.imgCloseInCircle.path,
+                                    svgPath: Assets.svg.imgClose.path,
                                     height: getSize(18),
                                     width: getSize(18),
                                     margin: getMargin(top: 1, bottom: 1))
@@ -70,7 +70,7 @@ class RegisteredCreditCardList
                                       controller.radioGroup1.value = value;
                                     })),
                                 CustomImageView(
-                                    svgPath: Assets.svg.imgCloseInCircle.path,
+                                    svgPath: Assets.svg.imgClose.path,
                                     height: getSize(18),
                                     width: getSize(18),
                                     margin: getMargin(top: 1, bottom: 1))

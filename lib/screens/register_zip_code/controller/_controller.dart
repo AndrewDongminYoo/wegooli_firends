@@ -5,18 +5,17 @@ import 'package:flutter/material.dart';
 import '../models/_model.dart';
 import '/core/app_export.dart';
 
-/// A controller class for the LoginRegisterZipCodeScreen.
+/// A controller class for the RegisterZipCodeScreen.
 ///
-/// This class manages the state of the LoginRegisterZipCodeScreen, including the
+/// This class manages the state of the RegisterZipCodeScreen, including the
 /// current registerZipCodeModelObj
-class LoginRegisterZipCodeController extends GetxController {
+class RegisterZipCodeController extends GetxController {
   TextEditingController postalCodeController = TextEditingController();
   TextEditingController defaultAddressController = TextEditingController();
   TextEditingController detailedAddressControllerA = TextEditingController();
   TextEditingController detailedAddressControllerB = TextEditingController();
 
-  Rx<LoginRegisterZipCodeModel> registerZipCodeModelObj =
-      LoginRegisterZipCodeModel().obs;
+  Rx<RegisterZipCodeModel> registerZipCodeModelObj = RegisterZipCodeModel().obs;
 
   @override
   void onClose() {

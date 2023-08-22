@@ -42,7 +42,7 @@ class ReservationsCheckingPageDialog extends StatelessWidget {
                                             letterSpacing:
                                                 getHorizontalSize(0.04)))),
                             CustomImageView(
-                                svgPath: Assets.svg.imgCloseWhite.path,
+                                svgPath: Assets.svg.imgCloseGray400Sharp.path,
                                 height: getSize(13),
                                 width: getSize(13),
                                 margin: getMargin(bottom: 15),

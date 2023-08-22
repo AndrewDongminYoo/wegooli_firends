@@ -35,7 +35,7 @@ class UnsubscriptionConfirmWarnDialog extends StatelessWidget {
                             style: CustomTextStyles.titleMedium18.copyWith(
                                 letterSpacing: getHorizontalSize(0.04))),
                         CustomImageView(
-                            svgPath: Assets.svg.imgCloseWhiteRounded.path,
+                            svgPath: Assets.svg.imgCloseGray400Round.path,
                             height: getSize(15),
                             width: getSize(15),
                             margin: getMargin(top: 3, bottom: 3),

@@ -158,7 +158,7 @@ class RegisterCreditCard extends GetWidget<RegisterCreditCardController> {
                   buttonTextStyle: CustomTextStyles.titleMedium18,
                   onTap: () {
                     if (this.isValid()) {
-                      onTapLoginRegisterSuccess();
+                      onTapRegisterSuccess();
                     }
                   },
                 ))));
@@ -172,7 +172,7 @@ class RegisterCreditCard extends GetWidget<RegisterCreditCardController> {
     Get.back();
   }
 
-  onTapLoginRegisterSuccess() {
+  onTapRegisterSuccess() {
     Get.toNamed(
       AppRoutes.signUpSuccess,
     );

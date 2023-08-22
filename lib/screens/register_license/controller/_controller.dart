@@ -5,17 +5,17 @@ import 'package:flutter/material.dart';
 import '../models/_model.dart';
 import '/core/app_export.dart';
 
-/// A controller class for the LoginRegisterLicensePageScreen.
+/// A controller class for the RegisterLicensePageScreen.
 ///
-/// This class manages the state of the LoginRegisterLicensePageScreen, including the
+/// This class manages the state of the RegisterLicensePageScreen, including the
 /// current registerLicensePageModelObj
-class LoginRegisterLicensePageController extends GetxController {
+class RegisterLicensePageController extends GetxController {
   TextEditingController frontNumberController = TextEditingController();
   TextEditingController expDateController = TextEditingController();
   TextEditingController backNumberController = TextEditingController();
 
-  Rx<LoginRegisterLicensePageModel> registerLicensePageModelObj =
-      LoginRegisterLicensePageModel().obs;
+  Rx<RegisterLicensePageModel> registerLicensePageModelObj =
+      RegisterLicensePageModel().obs;
 
   SelectionPopupModel? selectedDropDownValue;
 

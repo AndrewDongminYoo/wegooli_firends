@@ -387,7 +387,7 @@ class ValidatePhone extends GetWidget<ValidatePhoneController> {
                   buttonTextStyle: CustomTextStyles.titleMedium18,
                   onTap: () {
                     if (this.isValid()) {
-                      onTapLoginRegisterZipCode();
+                      onTapRegisterZipCode();
                     }
                   },
                 ))));
@@ -401,7 +401,7 @@ class ValidatePhone extends GetWidget<ValidatePhoneController> {
     Get.back();
   }
 
-  onTapLoginRegisterZipCode() {
+  onTapRegisterZipCode() {
     Get.toNamed(
       AppRoutes.registerZipCode,
     );

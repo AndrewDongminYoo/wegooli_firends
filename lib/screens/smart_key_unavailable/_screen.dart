@@ -110,7 +110,7 @@ class SmartKeyNotAvailable extends GetWidget<SmartKeyNotAvailableController> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     CustomImageView(
-                                      svgPath: Assets.svg.imgGasCharger.path,
+                                      svgPath: Assets.svg.imgGasStation.path,
                                       height: getSize(
                                         24,
                                       ),
@@ -231,7 +231,7 @@ class SmartKeyNotAvailable extends GetWidget<SmartKeyNotAvailableController> {
                     ),
                   ),
                   CustomImageView(
-                    svgPath: Assets.svg.imgCarYellow.path,
+                    svgPath: Assets.svg.imgTaxi.path,
                     height: getSize(
                       26,
                     ),
@@ -429,8 +429,8 @@ class SmartKeyNotAvailable extends GetWidget<SmartKeyNotAvailableController> {
                                                     MainAxisAlignment.start,
                                                 children: [
                                                   CustomImageView(
-                                                    svgPath: Assets.svg
-                                                        .imgUnlockYellow.path,
+                                                    svgPath: Assets
+                                                        .svg.imgUnlocked.path,
                                                     height: getSize(
                                                       46,
                                                     ),
@@ -599,8 +599,8 @@ class SmartKeyNotAvailable extends GetWidget<SmartKeyNotAvailableController> {
                                                 MainAxisAlignment.start,
                                             children: [
                                               CustomImageView(
-                                                svgPath: Assets
-                                                    .svg.imgLightOnYellow.path,
+                                                svgPath:
+                                                    Assets.svg.imgTriangle.path,
                                                 height: getSize(
                                                   46,
                                                 ),
@@ -661,8 +661,8 @@ class SmartKeyNotAvailable extends GetWidget<SmartKeyNotAvailableController> {
                                                 MainAxisAlignment.start,
                                             children: [
                                               CustomImageView(
-                                                svgPath: Assets
-                                                    .svg.imgCampaignYellow.path,
+                                                svgPath:
+                                                    Assets.svg.imgCampaign.path,
                                                 height: getSize(
                                                   46,
                                                 ),
@@ -777,7 +777,7 @@ class SmartKeyNotAvailable extends GetWidget<SmartKeyNotAvailableController> {
       case BottomBarEnum.smartKey:
         return AppRoutes.smartKeyAvailable;
       case BottomBarEnum.profile:
-        return AppRoutes.myPage;
+        return AppRoutes.myProfilePage;
       default:
         return AppRoutes.sharedCalendar;
     }
@@ -797,7 +797,7 @@ class SmartKeyNotAvailable extends GetWidget<SmartKeyNotAvailableController> {
         );
       case AppRoutes.smartKeyAvailable:
         return SmartKeyAvailablePage();
-      case AppRoutes.myPage:
+      case AppRoutes.myProfilePage:
         return MyProfilePage();
       default:
         return SharedCalendar();

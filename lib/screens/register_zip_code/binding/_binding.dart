@@ -4,13 +4,13 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '../controller/_controller.dart';
 
-/// A binding class for the LoginRegisterZipCodeScreen.
+/// A binding class for the RegisterZipCodeScreen.
 ///
-/// This class ensures that the LoginRegisterZipCodeController is created when the
-/// LoginRegisterZipCodeScreen is first loaded.
-class LoginRegisterZipCodeBinding extends Bindings {
+/// This class ensures that the RegisterZipCodeController is created when the
+/// RegisterZipCodeScreen is first loaded.
+class RegisterZipCodeBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => LoginRegisterZipCodeController());
+    Get.lazyPut(() => RegisterZipCodeController());
   }
 }

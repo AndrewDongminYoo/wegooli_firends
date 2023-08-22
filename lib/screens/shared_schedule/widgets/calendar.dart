@@ -290,7 +290,7 @@ class SharedCalendar extends StatelessWidget {
                                   all: 13,
                                 ),
                                 child: CustomImageView(
-                                  svgPath: Assets.svg.imgPlusWhite.path,
+                                  svgPath: Assets.svg.imgGrid.path,
                                 ),
                               ),
                               Padding(

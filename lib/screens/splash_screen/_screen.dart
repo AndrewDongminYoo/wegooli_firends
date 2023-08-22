@@ -64,7 +64,7 @@ class SplashLoading extends GetWidget<SplashLoadingController> {
                       onTap: () => AlertDialog(
                         title: Text('Hello World!!'),
                       ),
-                      svgPath: Assets.svg.imgWegooliTitle.path,
+                      svgPath: Assets.svg.imgWegooliBlueGray900.path,
                       height: getVerticalSize(
                         11,
                       ),

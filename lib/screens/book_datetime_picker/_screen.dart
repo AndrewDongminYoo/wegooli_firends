@@ -27,7 +27,7 @@ class ReservationDatetimePickerBottomSheet extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       CustomImageView(
-                          svgPath: Assets.svg.imgCloseWhite.path,
+                          svgPath: Assets.svg.imgCloseGray400Sharp.path,
                           height: getSize(13),
                           width: getSize(13),
                           alignment: Alignment.centerRight,

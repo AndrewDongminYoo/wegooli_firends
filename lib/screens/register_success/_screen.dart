@@ -7,9 +7,8 @@ import '/gen/assets.gen.dart';
 import 'controller/_controller.dart';
 
 // ignore: must_be_immutable
-class LoginRegisterSuccessPage
-    extends GetWidget<LoginRegisterSuccessPageController> {
-  const LoginRegisterSuccessPage({Key? key})
+class RegisterSuccess extends GetWidget<RegisterSuccessPageController> {
+  const RegisterSuccess({Key? key})
       : super(
           key: key,
         );

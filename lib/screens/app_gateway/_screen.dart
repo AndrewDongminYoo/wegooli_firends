@@ -298,7 +298,7 @@ class GatewayScreen extends GetWidget<AppGatewayController> {
                                                     ]))),
                                         GestureDetector(
                                             onTap: () {
-                                              onTapLoginRegisterZipCode();
+                                              onTapRegisterZipCode();
                                             },
                                             child: Container(
                                                 decoration: AppDecoration.fill6,
@@ -352,7 +352,7 @@ class GatewayScreen extends GetWidget<AppGatewayController> {
                                                     ]))),
                                         GestureDetector(
                                             onTap: () {
-                                              onTapLoginRegisterLicensePage();
+                                              onTapRegisterLicensePage();
                                             },
                                             child: Container(
                                                 decoration: AppDecoration.fill6,
@@ -460,7 +460,7 @@ class GatewayScreen extends GetWidget<AppGatewayController> {
                                                     ]))),
                                         GestureDetector(
                                             onTap: () {
-                                              onTapLoginRegisterSuccess();
+                                              onTapRegisterSuccess();
                                             },
                                             child: Container(
                                                 decoration: AppDecoration.fill6,
@@ -1262,7 +1262,7 @@ class GatewayScreen extends GetWidget<AppGatewayController> {
 
   /// When the action is triggered, this function uses the `Get` package to
   /// push the named route for the registerZipCodeScreen.
-  onTapLoginRegisterZipCode() {
+  onTapRegisterZipCode() {
     Get.toNamed(
       AppRoutes.registerZipCode,
     );
@@ -1272,7 +1272,7 @@ class GatewayScreen extends GetWidget<AppGatewayController> {
 
   /// When the action is triggered, this function uses the `Get` package to
   /// push the named route for the registerLicensePageScreen.
-  onTapLoginRegisterLicensePage() {
+  onTapRegisterLicensePage() {
     Get.toNamed(
       AppRoutes.registerLicense,
     );
@@ -1292,7 +1292,7 @@ class GatewayScreen extends GetWidget<AppGatewayController> {
 
   /// When the action is triggered, this function uses the `Get` package to
   /// push the named route for the registerSuccessPageScreen.
-  onTapLoginRegisterSuccess() {
+  onTapRegisterSuccess() {
     Get.toNamed(
       AppRoutes.signUpSuccess,
     );
@@ -1334,7 +1334,7 @@ class GatewayScreen extends GetWidget<AppGatewayController> {
   /// push the named route for the carStatusInformationScreen.
   onTapCarStatusInfo() {
     Get.toNamed(
-      AppRoutes.carStatusInfo1,
+      AppRoutes.carStatusInfo,
     );
   }
 
@@ -1436,7 +1436,7 @@ class GatewayScreen extends GetWidget<AppGatewayController> {
   /// push the named route for the upcomingUnsubscriptionInfoScreen.
   onTapUpcomingUnsubscriptionInfo() {
     Get.toNamed(
-      AppRoutes.unsubscriptionInfo1,
+      AppRoutes.unsubscriptionInfo,
     );
   }
 

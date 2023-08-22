@@ -6,9 +6,8 @@ import '/core/app_export.dart';
 import '/gen/assets.gen.dart';
 import 'controller/_controller.dart';
 
-class LoginRegisterLicensePage
-    extends GetWidget<LoginRegisterLicensePageController> {
-  const LoginRegisterLicensePage({Key? key}) : super(key: key);
+class RegisterLicense extends GetWidget<RegisterLicensePageController> {
+  const RegisterLicense({Key? key}) : super(key: key);
   bool isValid() {
     // TODO
     // 면허증이 valid하면 true, 아니면 false.

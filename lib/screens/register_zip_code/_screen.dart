@@ -6,8 +6,8 @@ import '/core/app_export.dart';
 import '/gen/assets.gen.dart';
 import 'controller/_controller.dart';
 
-class LoginRegisterZipCode extends GetWidget<LoginRegisterZipCodeController> {
-  const LoginRegisterZipCode({Key? key}) : super(key: key);
+class RegisterZipCode extends GetWidget<RegisterZipCodeController> {
+  const RegisterZipCode({Key? key}) : super(key: key);
 
   bool isValid() {
     // TODO
@@ -205,7 +205,7 @@ class LoginRegisterZipCode extends GetWidget<LoginRegisterZipCodeController> {
                   buttonTextStyle: CustomTextStyles.titleMedium18,
                   onTap: () {
                     if (this.isValid()) {
-                      onTapLoginRegisterLicensePage();
+                      onTapRegisterLicensePage();
                     }
                   },
                 ))));
@@ -219,7 +219,7 @@ class LoginRegisterZipCode extends GetWidget<LoginRegisterZipCodeController> {
     Get.back();
   }
 
-  onTapLoginRegisterLicensePage() {
+  onTapRegisterLicensePage() {
     Get.toNamed(
       AppRoutes.registerLicense,
     );

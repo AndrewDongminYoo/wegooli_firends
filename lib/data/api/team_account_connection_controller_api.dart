@@ -293,7 +293,7 @@ class TeamAccountConnectionControllerApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<BuiltList<TeamAccountConnectionModel>>>
       selectTeamAccountList({
-    required SelectTeamAccountConnectionRequest requestDto,
+    SelectTeamAccountConnectionRequest? requestDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -319,7 +319,6 @@ class TeamAccountConnectionControllerApi {
       },
       validateStatus: validateStatus,
     );
-
     final _queryParameters = <String, dynamic>{
       r'requestDto': encodeQueryParameter(_serializers, requestDto,
           const FullType(SelectTeamAccountConnectionRequest)),

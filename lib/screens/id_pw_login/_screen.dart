@@ -28,7 +28,9 @@ class LoginWithIdAndPassword
       if (jsonObj.value.containsKey('token')) {
         String? token = jsonObj.value['token'] as String?;
         if (token != null) {
-          Get.find<PrefUtils>().setData('token', token);
+          List<String> splitToken = token.split(' ');
+          print('splitToken: $splitToken[1]');
+          Get.find<PrefUtils>().setData('token', splitToken[1]);
           controller.isAuthenticated.value = true;
         } else {
           controller.isAuthenticated.value = false;

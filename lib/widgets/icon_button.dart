@@ -54,7 +54,7 @@ class CustomIconButton extends StatelessWidget {
             padding: padding ?? EdgeInsets.zero,
             decoration: decoration ??
                 BoxDecoration(
-                  color: appTheme.gray400,
+                  color: theme.colorScheme.secondaryContainer,
                   borderRadius: BorderRadius.circular(
                     getHorizontalSize(
                       24.00,

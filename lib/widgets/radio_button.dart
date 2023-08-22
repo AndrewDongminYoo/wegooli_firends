@@ -1,6 +1,7 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class CustomRadioButton extends StatelessWidget {
   CustomRadioButton({
     Key? key,
@@ -27,8 +28,7 @@ class CustomRadioButton extends StatelessWidget {
   final Alignment? alignment;
   final bool? isRightCheck;
   final double? iconSize;
-
-  late final String? value;
+  String? value;
   final String? groupValue;
   final Function(String) onChange;
   final String? text;

@@ -111,7 +111,7 @@ class CustomDropDown extends StatelessWidget {
                 ),
               ),
               borderSide: BorderSide(
-                color: appTheme.gray400,
+                color: theme.colorScheme.secondaryContainer,
                 width: 1,
               ),
             ),
@@ -123,7 +123,7 @@ class CustomDropDown extends StatelessWidget {
                 ),
               ),
               borderSide: BorderSide(
-                color: appTheme.gray400,
+                color: theme.colorScheme.secondaryContainer,
                 width: 1,
               ),
             ),
@@ -135,7 +135,7 @@ class CustomDropDown extends StatelessWidget {
                 ),
               ),
               borderSide: BorderSide(
-                color: appTheme.gray400,
+                color: theme.colorScheme.secondaryContainer,
                 width: 1,
               ),
             ),
@@ -147,7 +147,7 @@ class CustomDropDown extends StatelessWidget {
                 ),
               ),
               borderSide: BorderSide(
-                color: appTheme.gray400,
+                color: theme.colorScheme.secondaryContainer,
                 width: 1,
               ),
             ),

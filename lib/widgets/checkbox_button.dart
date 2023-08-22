@@ -1,6 +1,7 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class CustomCheckboxButton extends StatelessWidget {
   CustomCheckboxButton({
     Key? key,
@@ -24,8 +25,7 @@ class CustomCheckboxButton extends StatelessWidget {
   final Alignment? alignment;
   final bool? isRightCheck;
   final double? iconSize;
-
-  late final bool? value;
+  bool? value;
   final Function(bool) onChange;
   final String? text;
   final double? width;

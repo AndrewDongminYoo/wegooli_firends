@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '/core/app_export.dart';
 import '/gen/assets.gen.dart';
 
+// ignore: must_be_immutable
 class CustomBottomBar extends StatelessWidget {
   CustomBottomBar({
     Key? key,
@@ -13,36 +14,36 @@ class CustomBottomBar extends StatelessWidget {
           key: key,
         );
 
-  final RxInt selectedIndex = 0.obs;
+  RxInt selectedIndex = 0.obs;
 
-  final List<BottomMenuModel> bottomMenuList = [
+  List<BottomMenuModel> bottomMenuList = [
     BottomMenuModel(
-      iconPath: Assets.svg.imgCalGray.path,
-      activeIconPath: Assets.svg.imgCalGray.path,
+      iconPath: Assets.svg.imgCalOnPrimary.path,
+      activeIconPath: Assets.svg.imgCalOnPrimary.path,
       title: "lbl46".tr,
       type: BottomBarEnum.sharedCalendar,
     ),
     BottomMenuModel(
-      iconPath: Assets.svg.imgKeyWhite.path,
-      activeIconPath: Assets.svg.imgKeyWhite.path,
+      iconPath: Assets.svg.imgKeyGray400.path,
+      activeIconPath: Assets.svg.imgKeyGray400.path,
       title: "lbl47".tr,
       type: BottomBarEnum.dashChat,
     ),
     BottomMenuModel(
-      iconPath: Assets.svg.imgChatWhite.path,
-      activeIconPath: Assets.svg.imgChatWhite.path,
+      iconPath: Assets.svg.imgKeyGray400.path,
+      activeIconPath: Assets.svg.imgKeyGray400.path,
       title: "lbl48".tr,
       type: BottomBarEnum.smartKey,
     ),
     BottomMenuModel(
-      iconPath: Assets.svg.imgPersonWhite.path,
-      activeIconPath: Assets.svg.imgPersonWhite.path,
+      iconPath: Assets.svg.imgUser2.path,
+      activeIconPath: Assets.svg.imgUser2.path,
       title: "lbl49".tr,
       type: BottomBarEnum.profile,
     )
   ];
 
-  final Function(BottomBarEnum)? onChanged;
+  Function(BottomBarEnum)? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +81,7 @@ class CustomBottomBar extends StatelessWidget {
                     width: getSize(
                       24,
                     ),
-                    color: appTheme.gray400,
+                    color: theme.colorScheme.secondaryContainer,
                   ),
                   Padding(
                     padding: getPadding(
@@ -90,11 +91,12 @@ class CustomBottomBar extends StatelessWidget {
                       bottomMenuList[index].title ?? "",
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.left,
-                      style: CustomTextStyles.bodySmallInterGray400.copyWith(
+                      style: CustomTextStyles.bodySmallInterSecondaryContainer
+                          .copyWith(
                         letterSpacing: getHorizontalSize(
                           0.02,
                         ),
-                        color: appTheme.gray400,
+                        color: theme.colorScheme.secondaryContainer,
                       ),
                     ),
                   ),

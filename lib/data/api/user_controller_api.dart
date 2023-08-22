@@ -12,7 +12,6 @@ import 'package:wegooli_friends/data/models/account.dart';
 import 'package:wegooli_friends/data/models/api_response_object.dart';
 import 'package:wegooli_friends/data/models/user_details_dto.dart';
 import 'package:wegooli_friends/data/models/user_dto.dart';
-import 'package:wegooli_friends/data/models/token_model.dart';
 class UserControllerApi {
   final Dio _dio;
 

@@ -1,4 +1,5 @@
 // 🐦 Flutter imports:
+import 'package:built_collection/built_collection.dart';
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
@@ -105,8 +106,12 @@ class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
       ],
     };
     final response = await api.selectTeamAccountList(extra: extra);
-    print(response.requestOptions);
     print(response);
+    BuiltList<TeamAccountConnectionModel>? list = response.data;
+    if (list != null && list.isNotEmpty) {
+      list.map((it) => it).forEach((it) => controller.members.add(it));
+    }
+    print('members : ${controller.members.length}');
   }
 
   @override

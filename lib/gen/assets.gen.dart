@@ -69,6 +69,12 @@ class $AssetsImagesGen {
   /// File path: assets/images/img_gooli_3.png
   AssetGenImage get imgGooli3 => const AssetGenImage('assets/images/img_gooli_3.png');
 
+  /// File path: assets/images/img_gooli_4.png
+  AssetGenImage get imgGooli4 => const AssetGenImage('assets/images/img_gooli_4.png');
+
+  /// File path: assets/images/img_gooli_5.png
+  AssetGenImage get imgGooli5 => const AssetGenImage('assets/images/img_gooli_5.png');
+
   /// File path: assets/images/img_logo_gllo.png
   AssetGenImage get imgLogoGllo => const AssetGenImage('assets/images/img_logo_gllo.png');
 
@@ -97,6 +103,8 @@ class $AssetsImagesGen {
         imgGooli1,
         imgGooli2,
         imgGooli3,
+        imgGooli4,
+        imgGooli5,
         imgLogoGllo,
         imgWegooliTitle,
         profile
@@ -119,38 +127,53 @@ class $AssetsSvgGen {
   /// File path: assets/svg/img_arrow_left.svg
   SvgGenImage get imgArrowLeft => const SvgGenImage('assets/svg/img_arrow_left.svg');
 
-  /// File path: assets/svg/img_cal_gray.svg
-  SvgGenImage get imgCalGray => const SvgGenImage('assets/svg/img_cal_gray.svg');
+  /// File path: assets/svg/img_arrow_up.svg
+  SvgGenImage get imgArrowUp => const SvgGenImage('assets/svg/img_arrow_up.svg');
 
-  /// File path: assets/svg/img_cal_white.svg
-  SvgGenImage get imgCalWhite => const SvgGenImage('assets/svg/img_cal_white.svg');
+  /// File path: assets/svg/img_cal.svg
+  SvgGenImage get imgCal => const SvgGenImage('assets/svg/img_cal.svg');
+
+  /// File path: assets/svg/img_cal_gray_500.svg
+  SvgGenImage get imgCalGray500 => const SvgGenImage('assets/svg/img_cal_gray_500.svg');
+
+  /// File path: assets/svg/img_cal_on_primary.svg
+  SvgGenImage get imgCalOnPrimary => const SvgGenImage('assets/svg/img_cal_on_primary.svg');
 
   /// File path: assets/svg/img_camera.svg
   SvgGenImage get imgCamera => const SvgGenImage('assets/svg/img_camera.svg');
 
-  /// File path: assets/svg/img_campaign_yellow.svg
-  SvgGenImage get imgCampaignYellow => const SvgGenImage('assets/svg/img_campaign_yellow.svg');
+  /// File path: assets/svg/img_campaign.svg
+  SvgGenImage get imgCampaign => const SvgGenImage('assets/svg/img_campaign.svg');
 
-  /// File path: assets/svg/img_car_yellow.svg
-  SvgGenImage get imgCarYellow => const SvgGenImage('assets/svg/img_car_yellow.svg');
+  /// File path: assets/svg/img_campaign_blue_gray_900.svg
+  SvgGenImage get imgCampaignBlueGray900 => const SvgGenImage('assets/svg/img_campaign_blue_gray_900.svg');
+
+  /// File path: assets/svg/img_campaign_on_primary.svg
+  SvgGenImage get imgCampaignOnPrimary => const SvgGenImage('assets/svg/img_campaign_on_primary.svg');
 
   /// File path: assets/svg/img_caret_down.svg
   SvgGenImage get imgCaretDown => const SvgGenImage('assets/svg/img_caret_down.svg');
 
-  /// File path: assets/svg/img_chat_gray.svg
-  SvgGenImage get imgChatGray => const SvgGenImage('assets/svg/img_chat_gray.svg');
+  /// File path: assets/svg/img_chat_gray_400.svg
+  SvgGenImage get imgChatGray400 => const SvgGenImage('assets/svg/img_chat_gray_400.svg');
 
-  /// File path: assets/svg/img_chat_white.svg
-  SvgGenImage get imgChatWhite => const SvgGenImage('assets/svg/img_chat_white.svg');
+  /// File path: assets/svg/img_chat_gray_500.svg
+  SvgGenImage get imgChatGray500 => const SvgGenImage('assets/svg/img_chat_gray_500.svg');
 
-  /// File path: assets/svg/img_close_in_circle.svg
-  SvgGenImage get imgCloseInCircle => const SvgGenImage('assets/svg/img_close_in_circle.svg');
+  /// File path: assets/svg/img_chat_on_primary.svg
+  SvgGenImage get imgChatOnPrimary => const SvgGenImage('assets/svg/img_chat_on_primary.svg');
 
-  /// File path: assets/svg/img_close_white.svg
-  SvgGenImage get imgCloseWhite => const SvgGenImage('assets/svg/img_close_white.svg');
+  /// File path: assets/svg/img_close.svg
+  SvgGenImage get imgClose => const SvgGenImage('assets/svg/img_close.svg');
 
-  /// File path: assets/svg/img_close_white_rounded.svg
-  SvgGenImage get imgCloseWhiteRounded => const SvgGenImage('assets/svg/img_close_white_rounded.svg');
+  /// File path: assets/svg/img_close_gray_400_round.svg
+  SvgGenImage get imgCloseGray400Round => const SvgGenImage('assets/svg/img_close_gray_400_round.svg');
+
+  /// File path: assets/svg/img_close_gray_400_sharp.svg
+  SvgGenImage get imgCloseGray400Sharp => const SvgGenImage('assets/svg/img_close_gray_400_sharp.svg');
+
+  /// File path: assets/svg/img_close_primary_container.svg
+  SvgGenImage get imgClosePrimaryContainer => const SvgGenImage('assets/svg/img_close_primary_container.svg');
 
   /// File path: assets/svg/img_credit_card.svg
   SvgGenImage get imgCreditCard => const SvgGenImage('assets/svg/img_credit_card.svg');
@@ -158,70 +181,131 @@ class $AssetsSvgGen {
   /// File path: assets/svg/img_edit.svg
   SvgGenImage get imgEdit => const SvgGenImage('assets/svg/img_edit.svg');
 
+  /// File path: assets/svg/img_edit_blue_gray_900.svg
+  SvgGenImage get imgEditBlueGray900 => const SvgGenImage('assets/svg/img_edit_blue_gray_900.svg');
+
+  /// File path: assets/svg/img_eye_crossed_out.svg
+  SvgGenImage get imgEyeCrossedOut => const SvgGenImage('assets/svg/img_eye_crossed_out.svg');
+
   /// File path: assets/svg/img_friends_typo.svg
   SvgGenImage get imgFriendsTypo => const SvgGenImage('assets/svg/img_friends_typo.svg');
 
-  /// File path: assets/svg/img_gas_charger.svg
-  SvgGenImage get imgGasCharger => const SvgGenImage('assets/svg/img_gas_charger.svg');
+  /// File path: assets/svg/img_gas_station.svg
+  SvgGenImage get imgGasStation => const SvgGenImage('assets/svg/img_gas_station.svg');
 
-  /// File path: assets/svg/img_key_gray.svg
-  SvgGenImage get imgKeyGray => const SvgGenImage('assets/svg/img_key_gray.svg');
+  /// File path: assets/svg/img_grid.svg
+  SvgGenImage get imgGrid => const SvgGenImage('assets/svg/img_grid.svg');
 
-  /// File path: assets/svg/img_key_white.svg
-  SvgGenImage get imgKeyWhite => const SvgGenImage('assets/svg/img_key_white.svg');
+  /// File path: assets/svg/img_information.svg
+  SvgGenImage get imgInformation => const SvgGenImage('assets/svg/img_information.svg');
 
-  /// File path: assets/svg/img_light_on_yellow.svg
-  SvgGenImage get imgLightOnYellow => const SvgGenImage('assets/svg/img_light_on_yellow.svg');
+  /// File path: assets/svg/img_key.svg
+  SvgGenImage get imgKey => const SvgGenImage('assets/svg/img_key.svg');
+
+  /// File path: assets/svg/img_key_blue_gray_900.svg
+  SvgGenImage get imgKeyBlueGray900 => const SvgGenImage('assets/svg/img_key_blue_gray_900.svg');
+
+  /// File path: assets/svg/img_key_gray_400.svg
+  SvgGenImage get imgKeyGray400 => const SvgGenImage('assets/svg/img_key_gray_400.svg');
+
+  /// File path: assets/svg/img_light_bulb_blue_gray_900.svg
+  SvgGenImage get imgLightBulbBlueGray900 => const SvgGenImage('assets/svg/img_light_bulb_blue_gray_900.svg');
+
+  /// File path: assets/svg/img_light_bulb_on_primary.svg
+  SvgGenImage get imgLightBulbOnPrimary => const SvgGenImage('assets/svg/img_light_bulb_on_primary.svg');
 
   /// File path: assets/svg/img_locked.svg
   SvgGenImage get imgLocked => const SvgGenImage('assets/svg/img_locked.svg');
 
-  /// File path: assets/svg/img_person_gray.svg
-  SvgGenImage get imgPersonGray => const SvgGenImage('assets/svg/img_person_gray.svg');
+  /// File path: assets/svg/img_locked_blue_gray_900.svg
+  SvgGenImage get imgLockedBlueGray900 => const SvgGenImage('assets/svg/img_locked_blue_gray_900.svg');
 
-  /// File path: assets/svg/img_person_white.svg
-  SvgGenImage get imgPersonWhite => const SvgGenImage('assets/svg/img_person_white.svg');
-
-  /// File path: assets/svg/img_plus_white.svg
-  SvgGenImage get imgPlusWhite => const SvgGenImage('assets/svg/img_plus_white.svg');
+  /// File path: assets/svg/img_locked_on_primary.svg
+  SvgGenImage get imgLockedOnPrimary => const SvgGenImage('assets/svg/img_locked_on_primary.svg');
 
   /// File path: assets/svg/img_send.svg
   SvgGenImage get imgSend => const SvgGenImage('assets/svg/img_send.svg');
 
-  /// File path: assets/svg/img_unlock_yellow.svg
-  SvgGenImage get imgUnlockYellow => const SvgGenImage('assets/svg/img_unlock_yellow.svg');
+  /// File path: assets/svg/img_taxi.svg
+  SvgGenImage get imgTaxi => const SvgGenImage('assets/svg/img_taxi.svg');
 
-  /// File path: assets/svg/img_wegooli_title.svg
-  SvgGenImage get imgWegooliTitle => const SvgGenImage('assets/svg/img_wegooli_title.svg');
+  /// File path: assets/svg/img_triangle.svg
+  SvgGenImage get imgTriangle => const SvgGenImage('assets/svg/img_triangle.svg');
+
+  /// File path: assets/svg/img_unlocked.svg
+  SvgGenImage get imgUnlocked => const SvgGenImage('assets/svg/img_unlocked.svg');
+
+  /// File path: assets/svg/img_unlocked_blue_gray_900.svg
+  SvgGenImage get imgUnlockedBlueGray900 => const SvgGenImage('assets/svg/img_unlocked_blue_gray_900.svg');
+
+  /// File path: assets/svg/img_unlocked_on_primary.svg
+  SvgGenImage get imgUnlockedOnPrimary => const SvgGenImage('assets/svg/img_unlocked_on_primary.svg');
+
+  /// File path: assets/svg/img_user_1.svg
+  SvgGenImage get imgUser1 => const SvgGenImage('assets/svg/img_user_1.svg');
+
+  /// File path: assets/svg/img_user_2.svg
+  SvgGenImage get imgUser2 => const SvgGenImage('assets/svg/img_user_2.svg');
+
+  /// File path: assets/svg/img_user_3.svg
+  SvgGenImage get imgUser3 => const SvgGenImage('assets/svg/img_user_3.svg');
+
+  /// File path: assets/svg/img_wegooli.svg
+  SvgGenImage get imgWegooli => const SvgGenImage('assets/svg/img_wegooli.svg');
+
+  /// File path: assets/svg/img_wegooli_blue_gray_900.svg
+  SvgGenImage get imgWegooliBlueGray900 => const SvgGenImage('assets/svg/img_wegooli_blue_gray_900.svg');
+
+  /// File path: assets/svg/img_wegooli_friends.svg
+  SvgGenImage get imgWegooliFriends => const SvgGenImage('assets/svg/img_wegooli_friends.svg');
 
   /// List of all assets
   List<SvgGenImage> get values => [
         imgArrowLeft,
-        imgCalGray,
-        imgCalWhite,
+        imgArrowUp,
+        imgCal,
+        imgCalGray500,
+        imgCalOnPrimary,
         imgCamera,
-        imgCampaignYellow,
-        imgCarYellow,
+        imgCampaign,
+        imgCampaignBlueGray900,
+        imgCampaignOnPrimary,
         imgCaretDown,
-        imgChatGray,
-        imgChatWhite,
-        imgCloseInCircle,
-        imgCloseWhite,
-        imgCloseWhiteRounded,
+        imgChatGray400,
+        imgChatGray500,
+        imgChatOnPrimary,
+        imgClose,
+        imgCloseGray400Round,
+        imgCloseGray400Sharp,
+        imgClosePrimaryContainer,
         imgCreditCard,
         imgEdit,
+        imgEditBlueGray900,
+        imgEyeCrossedOut,
         imgFriendsTypo,
-        imgGasCharger,
-        imgKeyGray,
-        imgKeyWhite,
-        imgLightOnYellow,
+        imgGasStation,
+        imgGrid,
+        imgInformation,
+        imgKey,
+        imgKeyBlueGray900,
+        imgKeyGray400,
+        imgLightBulbBlueGray900,
+        imgLightBulbOnPrimary,
         imgLocked,
-        imgPersonGray,
-        imgPersonWhite,
-        imgPlusWhite,
+        imgLockedBlueGray900,
+        imgLockedOnPrimary,
         imgSend,
-        imgUnlockYellow,
-        imgWegooliTitle
+        imgTaxi,
+        imgTriangle,
+        imgUnlocked,
+        imgUnlockedBlueGray900,
+        imgUnlockedOnPrimary,
+        imgUser1,
+        imgUser2,
+        imgUser3,
+        imgWegooli,
+        imgWegooliBlueGray900,
+        imgWegooliFriends
       ];
 }
 

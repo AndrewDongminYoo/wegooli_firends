@@ -56,6 +56,15 @@ class AppDecoration {
           ),
         ),
       );
+  static BoxDecoration get outline4 => BoxDecoration(
+        color: theme.colorScheme.onPrimaryContainer,
+        border: Border.all(
+          color: appTheme.blueGray30033,
+          width: getHorizontalSize(
+            1,
+          ),
+        ),
+      );
   static BoxDecoration get fill3 => BoxDecoration(
         color: appTheme.deepPurpleA200,
       );

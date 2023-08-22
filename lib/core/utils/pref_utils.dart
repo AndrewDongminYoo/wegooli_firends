@@ -23,6 +23,18 @@ class PrefUtils {
     _sharedPreferences!.clear();
   }
 
+  Future<void> setData(String key, String value) {
+    return _sharedPreferences!.setString(key, value);
+  }
+
+  String getData(String key) {
+    try {
+      return _sharedPreferences!.getString(key)!;
+    } catch (e) {
+      return 'primary';
+    }
+  }
+
   Future<void> setThemeData(String value) {
     return _sharedPreferences!.setString('themeData', value);
   }

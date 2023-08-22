@@ -1,5 +1,8 @@
 // 🐦 Flutter imports:
+import 'package:built_value/json_object.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:wegooli_friends/wegooli_friends.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
@@ -14,10 +17,39 @@ class LoginWithIdAndPassword
           key: key,
         );
 
-  bool isAuthenticated() {
-    // TODO:
+  Future<void> authorize() async {
+    final api = Get.find<ApiClient>().getUserControllerApi();
+
+    try {
+      final response = await api.login(
+          id: controller.usernameController.text,
+          password: controller.passwordController.text);
+      MapJsonObject? jsonObj = response.data?.result as MapJsonObject;
+      if (jsonObj.value.containsKey('token')) {
+        String? token = jsonObj.value['token'] as String?;
+        if (token != null) {
+          Get.find<PrefUtils>().setData('token', token);
+          controller.isAuthenticated.value = true;
+        } else {
+          controller.isAuthenticated.value = false;
+        }
+      }
+      // Logger.log("response : ${response.data?.result?.toString()}");
+      // return true;
+    } on DioException catch (e) {
+      controller.isAuthenticated.value = false;
+      print("DioException when calling UserControllerApi->login: $e\n");
+    } on Exception catch (e) {
+      controller.isAuthenticated.value = false;
+      print("Exception when calling UserControllerApi->login: $e\n");
+    } finally {
+      // return false;
+    }
     // id, pwd 확인해서 로그인 성공하면 true 아니면 false.
-    return false;
+  }
+
+  bool isAuthenticated() {
+    return controller.isAuthenticated.value;
   }
 
   @override
@@ -136,6 +168,7 @@ class LoginWithIdAndPassword
                   ))),
                   buttonTextStyle: CustomTextStyles.titleMedium18,
                   onTap: () {
+                    this.authorize();
                     if (this.isAuthenticated()) {
                       onTapTeamScheduleShare();
                     } else {

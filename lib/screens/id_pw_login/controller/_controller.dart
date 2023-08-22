@@ -12,7 +12,7 @@ import '/core/app_export.dart';
 class LoginWithIdAndPasswordController extends GetxController {
   TextEditingController usernameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-
+  RxBool isAuthenticated = false.obs;
   Rx<LoginWithIdAndPasswordModel> withIdAndPasswordModelObj =
       LoginWithIdAndPasswordModel().obs;
 

@@ -1,5 +1,6 @@
 // 🎯 Dart imports:
 import 'dart:async';
+import 'dart:convert';
 
 // 📦 Package imports:
 import 'package:built_value/serializer.dart';
@@ -11,7 +12,7 @@ import 'package:wegooli_friends/data/models/account.dart';
 import 'package:wegooli_friends/data/models/api_response_object.dart';
 import 'package:wegooli_friends/data/models/user_details_dto.dart';
 import 'package:wegooli_friends/data/models/user_dto.dart';
-
+import 'package:wegooli_friends/data/models/token_model.dart';
 class UserControllerApi {
   final Dio _dio;
 
@@ -388,7 +389,7 @@ class UserControllerApi {
   ///
   /// Returns a [Future] containing a [Response] with a [String] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<String>> login({
+  Future<Response<ApiResponseObject>> login({
     required String id,
     required String password,
     CancelToken? cancelToken,
@@ -432,11 +433,19 @@ class UserControllerApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    String? _responseData;
+    ApiResponseObject? _responseData;
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as String;
+      // print("rawResponse : $rawResponse");
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType:
+                  const FullType(ApiResponseObject),
+            ) as ApiResponseObject;
+      // print("_responseData : $_responseData");
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -447,7 +456,7 @@ class UserControllerApi {
       );
     }
 
-    return Response<String>(
+    return Response<ApiResponseObject>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

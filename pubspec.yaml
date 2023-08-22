@@ -116,6 +116,24 @@ flutter:
         - asset: assets/fonts/Nanum-Square-Round-ExtraBold.ttf
         - asset: assets/fonts/Nanum-Square-Round-Light.ttf
         - asset: assets/fonts/Nanum-Square-Round-Regular.ttf
+    - family: NotoSansKR
+      fonts:
+        - asset: assets/fonts/NotoSansKR-Black.otf
+        - asset: assets/fonts/NotoSansKR-Bold.otf
+        - asset: assets/fonts/NotoSansKR-Light.otf
+        - asset: assets/fonts/NotoSansKR-Medium.otf
+        - asset: assets/fonts/NotoSansKR-Regular.otf
+        - asset: assets/fonts/NotoSansKR-Thin.otf
+          weight: 400
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Black.ttf
+        - asset: assets/fonts/Roboto-Bold.ttf
+        - asset: assets/fonts/Roboto-Light.ttf
+        - asset: assets/fonts/Roboto-Medium.ttf
+        - asset: assets/fonts/Roboto-Regular.ttf
+        - asset: assets/fonts/Roboto-Thin.ttf
+          weight: 400
 
 # flutter_gen_runner는 자산, 폰트, 색상 등을 위한 Flutter 코드 생성기로, 문자열 기반 API를 없애줌.
 # String 기반으로 자산 경로를 사용하는 것은 안전하지 않음.

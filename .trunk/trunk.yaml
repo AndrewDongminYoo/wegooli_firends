@@ -8,6 +8,7 @@ plugins:
       uri: https://github.com/trunk-io/plugins
 lint:
   enabled:
+    - svgo@3.0.2
     - checkov@2.4.0
     - git-diff-check
     - ktlint@0.50.0

@@ -53,16 +53,16 @@ try {
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[jwtAuth](../../README.md#jwtAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
 - **Accept**: "/"
 
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
 ### **insertAccountAgreement**
 
@@ -99,16 +99,16 @@ try {
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[jwtAuth](../../README.md#jwtAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/json
 - **Accept**: "/"
 
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
 ### **selectAccountAgreement**
 
@@ -147,16 +147,16 @@ try {
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[jwtAuth](../../README.md#jwtAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
 - **Accept**: "/"
 
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
 ### **selectAccountAgreementList**
 
@@ -205,16 +205,16 @@ try {
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[jwtAuth](../../README.md#jwtAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
 - **Accept**: "/"
 
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
 ### **updateAccountAgreement**
 
@@ -251,13 +251,13 @@ try {
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[jwtAuth](../../README.md#jwtAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/json
 - **Accept**: "/"
 
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)

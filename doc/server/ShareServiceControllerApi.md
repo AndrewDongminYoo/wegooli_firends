@@ -39,9 +39,9 @@ try {
 
 ### Parameters
 
-| Name        | Type                           | Description | Notes |
-| ----------- | ------------------------------ | ----------- | ----- |
-| **request** | [**ShareServiceRequest**](.md) |             |
+| Name        | Type                              | Description | Notes |
+| ----------- | --------------------------------- | ----------- | ----- |
+| **request** | [**ShareServiceRequest**](../.md) |             |
 
 ### Return type
 
@@ -49,16 +49,16 @@ try {
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[jwtAuth](../../README.md#jwtAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
 - **Accept**: "/"
 
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
 ### **getShareServiceDetail**
 
@@ -85,9 +85,9 @@ try {
 
 ### Parameters
 
-| Name        | Type                               | Description | Notes |
-| ----------- | ---------------------------------- | ----------- | ----- |
-| **request** | [**ServiceCarDetailRequest**](.md) |             |
+| Name        | Type                                  | Description | Notes |
+| ----------- | ------------------------------------- | ----------- | ----- |
+| **request** | [**ServiceCarDetailRequest**](../.md) |             |
 
 ### Return type
 
@@ -95,16 +95,16 @@ try {
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[jwtAuth](../../README.md#jwtAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
 - **Accept**: "/"
 
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
 ### **setServiceLeader**
 
@@ -131,9 +131,9 @@ try {
 
 ### Parameters
 
-| Name        | Type                        | Description | Notes |
-| ----------- | --------------------------- | ----------- | ----- |
-| **request** | [**LeaderSetRequest**](.md) |             |
+| Name        | Type                           | Description | Notes |
+| ----------- | ------------------------------ | ----------- | ----- |
+| **request** | [**LeaderSetRequest**](../.md) |             |
 
 ### Return type
 
@@ -141,13 +141,13 @@ try {
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[jwtAuth](../../README.md#jwtAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
 - **Accept**: "/"
 
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)

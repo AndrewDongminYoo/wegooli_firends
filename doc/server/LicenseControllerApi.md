@@ -53,16 +53,16 @@ try {
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[jwtAuth](../../README.md#jwtAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
 - **Accept**: "/"
 
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
 ### **deleteLicenseByMemberSeq**
 
@@ -99,16 +99,16 @@ try {
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[jwtAuth](../../README.md#jwtAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
 - **Accept**: "/"
 
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
 ### **insertLicense**
 
@@ -145,16 +145,16 @@ try {
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[jwtAuth](../../README.md#jwtAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/json
 - **Accept**: "/"
 
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
 ### **selectLicense**
 
@@ -191,16 +191,16 @@ try {
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[jwtAuth](../../README.md#jwtAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
 - **Accept**: "/"
 
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
 ### **selectLicenseList**
 
@@ -227,9 +227,9 @@ try {
 
 ### Parameters
 
-| Name        | Type                      | Description | Notes |
-| ----------- | ------------------------- | ----------- | ----- |
-| **request** | [**LicenseRequest**](.md) |             |
+| Name        | Type                         | Description | Notes |
+| ----------- | ---------------------------- | ----------- | ----- |
+| **request** | [**LicenseRequest**](../.md) |             |
 
 ### Return type
 
@@ -237,16 +237,16 @@ try {
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[jwtAuth](../../README.md#jwtAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
 - **Accept**: "/"
 
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
 ### **selectServiceStop**
 
@@ -280,16 +280,16 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[jwtAuth](../../README.md#jwtAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
 - **Accept**: "/"
 
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
 ### **updateLicense**
 
@@ -328,13 +328,13 @@ try {
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[jwtAuth](../../README.md#jwtAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/json
 - **Accept**: "/"
 
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)

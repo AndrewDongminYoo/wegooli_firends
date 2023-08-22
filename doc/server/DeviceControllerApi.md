@@ -51,16 +51,16 @@ try {
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[jwtAuth](../../README.md#jwtAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
 - **Accept**: "/"
 
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
 ### **doorOpen**
 
@@ -97,16 +97,16 @@ try {
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[jwtAuth](../../README.md#jwtAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
 - **Accept**: "/"
 
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
 ### **selectDeviceControlHistoryList**
 
@@ -133,9 +133,9 @@ try {
 
 ### Parameters
 
-| Name        | Type                              | Description | Notes |
-| ----------- | --------------------------------- | ----------- | ----- |
-| **request** | [**CarControlHistoryModel**](.md) |             |
+| Name        | Type                                 | Description | Notes |
+| ----------- | ------------------------------------ | ----------- | ----- |
+| **request** | [**CarControlHistoryModel**](../.md) |             |
 
 ### Return type
 
@@ -143,16 +143,16 @@ try {
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[jwtAuth](../../README.md#jwtAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
 - **Accept**: "/"
 
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
 ### **turnOnEmergencyLight**
 
@@ -189,16 +189,16 @@ try {
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[jwtAuth](../../README.md#jwtAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
 - **Accept**: "/"
 
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
 ### **turnOnHorn**
 
@@ -235,13 +235,13 @@ try {
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[jwtAuth](../../README.md#jwtAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
 - **Accept**: "/"
 
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)

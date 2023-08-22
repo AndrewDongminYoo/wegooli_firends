@@ -50,16 +50,15 @@ void (empty response body)
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[jwtAuth](../../README.md#jwtAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
 - **Accept**: Not defined
-
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
 ### **registSchedule**
 
@@ -95,16 +94,15 @@ void (empty response body)
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[jwtAuth](../../README.md#jwtAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/json
 - **Accept**: Not defined
-
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
 ### **selectSchedule**
 
@@ -141,16 +139,16 @@ try {
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[jwtAuth](../../README.md#jwtAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
 - **Accept**: "/"
 
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
 ### **selectScheduleList**
 
@@ -177,9 +175,9 @@ try {
 
 ### Parameters
 
-| Name        | Type                       | Description | Notes |
-| ----------- | -------------------------- | ----------- | ----- |
-| **request** | [**ScheduleRequest**](.md) |             |
+| Name        | Type                          | Description | Notes |
+| ----------- | ----------------------------- | ----------- | ----- |
+| **request** | [**ScheduleRequest**](../.md) |             |
 
 ### Return type
 
@@ -187,16 +185,16 @@ try {
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[jwtAuth](../../README.md#jwtAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
 - **Accept**: "/"
 
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
 ### **updateSchedule**
 
@@ -234,13 +232,12 @@ void (empty response body)
 
 ### Authorization
 
-[jwtAuth](../README.md#jwtAuth)
+[jwtAuth](../../README.md#jwtAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/json
 - **Accept**: Not defined
-
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)

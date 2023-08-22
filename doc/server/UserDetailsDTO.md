@@ -20,6 +20,7 @@ import 'package:wegooli_friends/api.dart';
 | **password**              | **String**                                                   |             | [optional] |
 | **seq**                   | **int**                                                      |             | [optional] |
 | **delYn**                 | **String**                                                   |             | [optional] |
+| **delimit**               | **String**                                                   |             | [optional] |
 | **username**              | **String**                                                   |             | [optional] |
 | **add1**                  | **String**                                                   |             | [optional] |
 | **add2**                  | **String**                                                   |             | [optional] |
@@ -27,7 +28,9 @@ import 'package:wegooli_friends/api.dart';
 | **phoneNumber**           | **String**                                                   |             | [optional] |
 | **email**                 | **String**                                                   |             | [optional] |
 | **sex**                   | **String**                                                   |             | [optional] |
-| **delimit**               | **String**                                                   |             | [optional] |
+| **nickname**              | **String**                                                   |             | [optional] |
+| **profilePicture**        | **String**                                                   |             | [optional] |
+| **credentialsNonExpired** | **bool**                                                     |             | [optional] |
 | **birthDay**              | **String**                                                   |             | [optional] |
 | **createdAt**             | **String**                                                   |             | [optional] |
 | **updatedAt**             | **String**                                                   |             | [optional] |
@@ -35,8 +38,7 @@ import 'package:wegooli_friends/api.dart';
 | **updateAt**              | **String**                                                   |             | [optional] |
 | **accountNonExpired**     | **bool**                                                     |             | [optional] |
 | **accountNonLocked**      | **bool**                                                     |             | [optional] |
-| **credentialsNonExpired** | **bool**                                                     |             | [optional] |
 
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to README]](../../README.md)

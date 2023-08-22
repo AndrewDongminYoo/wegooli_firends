@@ -237,40 +237,31 @@ class AppLocalizationsKo extends AppLocalizations {
   String get rayGen3 => '레이 3세대';
 
   @override
-  String get locationBasedServicesTermsOfUseRequiredAgreement =>
-      '위치기반서비스 이용약관 (필수)';
+  String get locationBasedServicesTermsOfUseRequiredAgreement => '위치기반서비스 이용약관 (필수)';
 
   @override
   String get nameAreYouSureYouWantToUnsubscribe => '(닉네임)님 정말로 구독을\n해지하시겠습니까?';
 
   @override
-  String
-      get ifYouCancelYouWillLoseAllBenefitsOfWegooliFriendsYouCanCancelYourSubscriptionWithinTheRemainingPeriod =>
-          '해지 시 위굴리 프렌즈의 모든 혜택을 잃게 됩니다. 남은 기간 내에 해지를 취소하실 수 있습니다.';
+  String get ifYouCancelYouWillLoseAllBenefitsOfWegooliFriendsYouCanCancelYourSubscriptionWithinTheRemainingPeriod => '해지 시 위굴리 프렌즈의 모든 혜택을 잃게 됩니다. 남은 기간 내에 해지를 취소하실 수 있습니다.';
 
   @override
-  String get consentToCollectionAndUseOfVehicleLocationInformationRequired =>
-      '차량 위치정보의 수집 이용 제공 동의 (필수)';
+  String get consentToCollectionAndUseOfVehicleLocationInformationRequired => '차량 위치정보의 수집 이용 제공 동의 (필수)';
 
   @override
-  String
-      get collectionAndUseOfPersonalInformationForMarketingPurposesOptional =>
-          '마케팅 목적 개인정보 수집/이용 (선택)';
+  String get collectionAndUseOfPersonalInformationForMarketingPurposesOptional => '마케팅 목적 개인정보 수집/이용 (선택)';
 
   @override
   String get pleaseEnterYourLicenseNumberNumbersOnly => '면허증번호(숫자만)를 입력해주세요.';
 
   @override
-  String get pleaseEnterYourAptitudePeriodTestExpirationDateOnlyNumbers =>
-      '적성기간 만료일(숫자만)을 입력해주세요.';
+  String get pleaseEnterYourAptitudePeriodTestExpirationDateOnlyNumbers => '적성기간 만료일(숫자만)을 입력해주세요.';
 
   @override
-  String get pleaseEnterYourLicenseIssueDateOnlyNumbers =>
-      '면허발급일자(숫자만)를 입력해주세요.';
+  String get pleaseEnterYourLicenseIssueDateOnlyNumbers => '면허발급일자(숫자만)를 입력해주세요.';
 
   @override
-  String get iLlBeUsingTheVehicleThisWeekendDoesAnyoneElseNeedIt =>
-      '이번 주 주말에 차량 사용하려하는데\n필요하신 분 계신가요?';
+  String get iLlBeUsingTheVehicleThisWeekendDoesAnyoneElseNeedIt => '이번 주 주말에 차량 사용하려하는데\n필요하신 분 계신가요?';
 
   @override
   String get iDonTNeedToUseIt => '저는 사용 할 필요 없습니다.';
@@ -279,12 +270,10 @@ class AppLocalizationsKo extends AppLocalizations {
   String get iThinkILlUseItNextWeekend => '저는 다음주 주말에 쓸거 같아요';
 
   @override
-  String get subscriptionsWillBeCanceledAfterAugust42023 =>
-      '2023년 8월 4일 이후에 구독이 해지됩니다.';
+  String get subscriptionsWillBeCanceledAfterAugust42023 => '2023년 8월 4일 이후에 구독이 해지됩니다.';
 
   @override
-  String get subscriptionsAreRestrictedToThoseUnderTheAgeOf26 =>
-      '만 26세 미만은 가입이 제한됩니다.';
+  String get subscriptionsAreRestrictedToThoseUnderTheAgeOf26 => '만 26세 미만은 가입이 제한됩니다.';
 
   @override
   String get msgCarStateInformation => 'car_state_information';
@@ -356,8 +345,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get appNavigation => 'App Navigation';
 
   @override
-  String get checkYourAppSUiFromTheBelowDemoScreensOfYourApp =>
-      'Check your app\'s UI from the below demo screens of your app.';
+  String get checkYourAppSUiFromTheBelowDemoScreensOfYourApp => 'Check your app\'s UI from the below demo screens of your app.';
 
   @override
   String get networkError => 'Network Error';

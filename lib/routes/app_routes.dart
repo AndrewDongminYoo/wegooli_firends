@@ -21,7 +21,7 @@ class AppRoutes {
 
   static const String signUpSuccess = '/register_success';
 
-  static const String myPage = '/my_profile';
+  static const String myProfilePage = '/my_profile';
 
   static const String sharedCalendar = '/shared_calendar';
 
@@ -35,13 +35,13 @@ class AppRoutes {
 
   static const String registeredCardList = '/credit_card_list';
 
-  static const String carStatusInfo1 = '/car_status_info1';
+  static const String carStatusInfo = '/car_status_info1';
 
   static const String carStatusInfo2 = '/car_status_info2';
 
   static const String unsubscriptionConfirm = '/unsubscribe';
 
-  static const String unsubscriptionInfo1 = '/unsubscribingInfo1';
+  static const String unsubscriptionInfo = '/unsubscribingInfo1';
 
   static const String unsubscriptionInfo2 = '/unsubscribingInfo2';
 
@@ -80,16 +80,16 @@ class AppRoutes {
     ),
     GetPage(
       name: registerZipCode,
-      page: () => LoginRegisterZipCode(),
+      page: () => RegisterZipCode(),
       bindings: [
-        LoginRegisterZipCodeBinding(),
+        RegisterZipCodeBinding(),
       ],
     ),
     GetPage(
       name: registerLicense,
-      page: () => LoginRegisterLicensePage(),
+      page: () => RegisterLicense(),
       bindings: [
-        LoginRegisterLicensePageBinding(),
+        RegisterLicensePageBinding(),
       ],
     ),
     GetPage(
@@ -101,9 +101,9 @@ class AppRoutes {
     ),
     GetPage(
       name: signUpSuccess,
-      page: () => LoginRegisterSuccessPage(),
+      page: () => RegisterSuccess(),
       bindings: [
-        LoginRegisterSuccessPageBinding(),
+        RegisterSuccessPageBinding(),
       ],
     ),
     GetPage(
@@ -128,7 +128,7 @@ class AppRoutes {
       ],
     ),
     GetPage(
-      name: carStatusInfo1,
+      name: carStatusInfo,
       page: () => CarStatusInformation(),
       bindings: [
         CarStatusInformationBinding(),
@@ -149,7 +149,7 @@ class AppRoutes {
       ],
     ),
     GetPage(
-      name: unsubscriptionInfo1,
+      name: unsubscriptionInfo,
       page: () => UpcomingUnsubscriptionOutlined(),
       bindings: [
         UpcomingUnsubscriptionViewBinding(),

@@ -1,13 +1,15 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+// 📦 Package imports:
+import 'package:get/get.dart';
+
 // 🌎 Project imports:
 import '/core/app_export.dart';
 import '/gen/assets.gen.dart';
 import 'controller/_controller.dart';
 
-class UnsubscriptionConfirm
-    extends GetWidget<UnsubscriptionConfirmController> {
+class UnsubscriptionConfirm extends GetWidget<UnsubscriptionConfirmController> {
   const UnsubscriptionConfirm({Key? key}) : super(key: key);
 
   @override

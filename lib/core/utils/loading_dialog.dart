@@ -2,10 +2,8 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
+import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
-
-// 🌎 Project imports:
-import '../app_export.dart';
 
 class LoadingDialog {
   static bool isProgressVisible = false;

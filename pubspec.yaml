@@ -34,7 +34,6 @@ dependencies:
   dash_chat_2: ^0.0.17
   dio: ^5.3.2
   dio_cookie_manager: ^3.1.0+1
-  firebase_core: ^2.15.1
   flutter:
     sdk: flutter
   flutter_gen: ^5.3.1
@@ -188,13 +187,13 @@ analyzer:
     invalid_annotation_target: ignore
   exclude:
     - bin/cache/**
-    - "**/*.g.dart"
-    - "**/*.gen.dart"
-    - "**/gen/*.dart"
-    - "**/*.freezed.dart"
-    - "**/*.mocks.dart"
-    - "**/injector.config.dart"
-    - "**/test/*.dart"
+    - '**/*.g.dart'
+    - '**/*.gen.dart'
+    - '**/gen/*.dart'
+    - '**/*.freezed.dart'
+    - '**/*.mocks.dart'
+    - '**/injector.config.dart'
+    - '**/test/*.dart'
 
 # 아이콘 생성 원할 시, dart run flutter_launcher_icons:main
 flutter_launcher_icons:

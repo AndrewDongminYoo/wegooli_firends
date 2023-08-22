@@ -1,3 +1,6 @@
+// 📦 Package imports:
+import 'package:get/get.dart';
+
 // 🌎 Project imports:
 import '/core/app_export.dart';
 import '/screens/book_datetime_picker/models/_model.dart';

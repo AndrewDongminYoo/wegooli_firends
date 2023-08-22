@@ -1,6 +1,9 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+// 📦 Package imports:
+import 'package:get/get.dart';
+
 // 🌎 Project imports:
 import '../reservations_check/_dialog.dart';
 import '../reservations_check/controller/_controller.dart';

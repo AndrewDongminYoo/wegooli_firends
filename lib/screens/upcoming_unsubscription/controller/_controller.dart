@@ -1,5 +1,7 @@
+// 📦 Package imports:
+import 'package:get/get.dart';
+
 // 🌎 Project imports:
-import '/core/app_export.dart';
 import '/screens/upcoming_unsubscription/models/_model.dart';
 
 /// A controller class for the UpcomingUnsubscriptionViewScreen.

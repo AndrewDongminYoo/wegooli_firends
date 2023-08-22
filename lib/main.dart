@@ -1,13 +1,10 @@
-// Copyright 2020 The Flutter team. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-
 // 🐦 Flutter imports:
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 // 📦 Package imports:
+import 'package:get/get.dart';
 import 'package:intl/date_symbol_data_local.dart';
 
 // 🌎 Project imports:
@@ -43,9 +40,10 @@ class MyApp extends StatelessWidget {
         fallbackLocale: Locale('ko'),
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
-        title: 'wegooli_friends',
+        title: '위굴리 프렌즈',
         initialBinding: InitialBindings(),
-        logWriterCallback: (String text, {bool isError = false}) => print(text),
+        logWriterCallback: (String text, {bool isError = false}) =>
+            isError ? Logger.log(text) : print(text),
         navigatorObservers: [MyApp.routeObserver],
         initialRoute: AppRoutes.appGateway,
         getPages: AppRoutes.pages);

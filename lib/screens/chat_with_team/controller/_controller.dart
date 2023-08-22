@@ -1,9 +1,11 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+// 📦 Package imports:
+import 'package:get/get.dart';
+
 // 🌎 Project imports:
 import '../models/_model.dart';
-import '/core/app_export.dart';
 
 /// A controller class for the DashChatWithFriendsPage.
 ///

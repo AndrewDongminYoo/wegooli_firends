@@ -4,6 +4,9 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends/wegooli_friends.dart';
 
+// 📦 Package imports:
+import 'package:get/get.dart';
+
 // 🌎 Project imports:
 import '/core/app_export.dart';
 import '/gen/assets.gen.dart';

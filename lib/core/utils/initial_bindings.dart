@@ -1,3 +1,7 @@
+// 📦 Package imports:
+import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:get/get.dart';
+
 // 🌎 Project imports:
 import '/core/app_export.dart';
 import 'package:wegooli_friends/wegooli_friends.dart';

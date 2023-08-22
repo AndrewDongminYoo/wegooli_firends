@@ -238,6 +238,11 @@ linter:
     void_checks: true
 
 analyzer:
+  language:
+    unused_import: true
   exclude:
-    lib/gen/*.dart
-    lib/data/**/*.dart
+    - lib/gen/*.dart
+    - lib/data/**/*.dart
+    - test/*.dart
+  errors:
+    deprecated_member_use_from_same_package: ignore

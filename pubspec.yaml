@@ -187,6 +187,7 @@ analyzer:
     - "**/*.freezed.dart"
     - "**/*.mocks.dart"
     - "**/injector.config.dart"
+    - "**/test/*.dart"
 
 # 아이콘 생성 원할 시, dart run flutter_launcher_icons:main
 flutter_launcher_icons:

@@ -7,9 +7,9 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
-import 'package:wegooli_friends/data/api_util.dart';
-import 'package:wegooli_friends/data/models/schedule_model.dart';
-import 'package:wegooli_friends/data/models/schedule_request.dart';
+import '/data/api_util.dart';
+import '/data/models/schedule_model.dart';
+import '/data/models/schedule_request.dart';
 
 class ScheduleControllerApi {
   final Dio _dio;

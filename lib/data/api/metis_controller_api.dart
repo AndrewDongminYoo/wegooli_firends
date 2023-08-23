@@ -7,9 +7,9 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
-import 'package:wegooli_friends/data/api_util.dart';
-import 'package:wegooli_friends/data/models/car_history_dto.dart';
-import 'package:wegooli_friends/data/models/device_control_result_dto.dart';
+import '/data/api_util.dart';
+import '/data/models/car_history_dto.dart';
+import '/data/models/device_control_result_dto.dart';
 
 class MetisControllerApi {
   final Dio _dio;
@@ -194,7 +194,7 @@ class MetisControllerApi {
     );
   }
 
-  /// receivced
+  /// received
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -206,7 +206,7 @@ class MetisControllerApi {
   ///
   /// Returns a [Future] containing a [Response] with a [String] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<String>> receivced({
+  Future<Response<String>> received({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,

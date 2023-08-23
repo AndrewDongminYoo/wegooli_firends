@@ -7,9 +7,9 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
-import 'package:wegooli_friends/data/api_util.dart';
-import 'package:wegooli_friends/data/models/license_model.dart';
-import 'package:wegooli_friends/data/models/license_request.dart';
+import '/data/api_util.dart';
+import '/data/models/license_model.dart';
+import '/data/models/license_request.dart';
 
 class LicenseControllerApi {
   final Dio _dio;

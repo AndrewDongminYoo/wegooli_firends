@@ -57,7 +57,7 @@ class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
 
       // Update & prompt the UI to rebuild
       setState(() {
-         _channel = channel;
+        _channel = channel;
         _messages = messages;
       });
     } catch (e) {

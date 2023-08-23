@@ -5,17 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '../reservations_check/_dialog.dart';
-import '../reservations_check/controller/_controller.dart';
-import '../sending_invitation/_dialog.dart';
-import '../sending_invitation/controller/_controller.dart';
-import '../unsubscribe_warn/_dialog.dart';
-import '../unsubscribe_warn/controller/_controller.dart';
 import '/core/app_export.dart';
 import '/gen/fonts.gen.dart';
-import '/screens/book_datetime_picker/_screen.dart';
-import '/screens/book_datetime_picker/controller/_controller.dart';
-import 'controller/_controller.dart';
+import '/screens/screens.dart';
 
 class GatewayScreen extends GetWidget<AppGatewayController> {
   const GatewayScreen({Key? key}) : super(key: key);
@@ -57,9 +49,7 @@ class GatewayScreen extends GetWidget<AppGatewayController> {
                                     alignment: Alignment.centerLeft,
                                     child: Padding(
                                         padding: getPadding(left: 20),
-                                        child: Text(
-                                            "Check your app's UI from the below demo screens of your app."
-                                                .tr,
+                                        child: Text("checkYourAppUI".tr,
                                             overflow: TextOverflow.ellipsis,
                                             textAlign: TextAlign.center,
                                             style: TextStyle(
@@ -753,7 +743,7 @@ class GatewayScreen extends GetWidget<AppGatewayController> {
                                                                       bottom:
                                                                           10),
                                                               child: Text(
-                                                                  "msg_car_state_information"
+                                                                  "msg_car_status_information"
                                                                       .tr,
                                                                   overflow:
                                                                       TextOverflow

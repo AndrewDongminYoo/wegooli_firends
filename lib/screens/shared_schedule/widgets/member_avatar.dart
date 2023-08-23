@@ -4,8 +4,8 @@
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
-import 'package:wegooli_friends/core/app_export.dart';
-import 'package:wegooli_friends/screens/shared_schedule/widgets/utilities.dart';
+import '/core/app_export.dart';
+import '/screens/shared_schedule/widgets/utilities.dart';
 
 class MemberAvatar extends StatelessWidget {
   const MemberAvatar({

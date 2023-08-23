@@ -6,11 +6,12 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
-import 'package:wegooli_friends/data/api_util.dart';
-import 'package:wegooli_friends/data/models/account.dart';
-import 'package:wegooli_friends/data/models/api_response_object.dart';
-import 'package:wegooli_friends/data/models/user_details_dto.dart';
-import 'package:wegooli_friends/data/models/user_dto.dart';
+import '/data/api_util.dart';
+import '/data/models/account.dart';
+import '/data/models/api_response_object.dart';
+import '/data/models/user_details_dto.dart';
+import '/data/models/user_dto.dart';
+
 class UserControllerApi {
   final Dio _dio;
 

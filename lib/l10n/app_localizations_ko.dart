@@ -275,82 +275,82 @@ class AppLocalizationsKo extends AppLocalizations {
   String get subscriptionsAreRestrictedToThoseUnderTheAgeOf26 => '만 26세 미만은 가입이 제한됩니다.';
 
   @override
-  String get msgCarStateInformation => 'car_state_information';
+  String get msgCarStateInformation => '자동차 상태 정보';
 
   @override
-  String get msgCarStatusInformation => 'car_status_information';
+  String get msgCarStatusInformation => '차량 상태 정보';
 
   @override
-  String get msgLoginRegisterCreditCard => 'login_register_credit_card';
+  String get msgLoginRegisterCreditCard => '등록 신용카드';
 
   @override
-  String get msgLoginRegisterLicensePage => 'login_register_license_page';
+  String get msgLoginRegisterLicensePage => '등록 라이센스 페이지';
 
   @override
-  String get msgLoginRegisterSuccessPage => 'login_register_success_page';
+  String get msgLoginRegisterSuccessPage => '등록 성공 페이지';
 
   @override
-  String get msgLoginRegisterZipCode => 'login_register_zip_code';
+  String get msgLoginRegisterZipCode => '등록 우편번호/주소 입력';
 
   @override
-  String get msgLoginValidatePhoneAuth => 'login_validate_phone_auth';
+  String get msgLoginValidatePhoneAuth => '전화 인증 로그인';
 
   @override
-  String get msgLoginWithIdAndPassword => 'login_with_id_and_password';
+  String get msgLoginWithIdAndPassword => '로그인 ID 및 비밀번호 로그인';
 
   @override
-  String get msgRegisteredCreditCardList => 'registered_credit_card_list';
+  String get msgRegisteredCreditCardList => '등록된 신용카드 목록';
 
   @override
-  String get msgReservationDatetimePicker => 'reservation_datetime_picker';
+  String get msgReservationDatetimePicker => '예약 날짜 선택기';
 
   @override
-  String get msgReservationsCheckingPage => 'reservations_checking_page';
+  String get msgReservationsCheckingPage => '예약 확인 페이지';
 
   @override
-  String get msgSendingCrewInvitation => 'sending_crew_invitation';
+  String get msgSendingCrewInvitation => '팀 초대 보내기';
 
   @override
-  String get msgSignupAcceptTerms => 'signup_accept_terms';
+  String get msgSignupAcceptTerms => '동의 약관 보기';
 
   @override
-  String get msgSignupRegisterCreditCard => 'signup_register_credit_card';
+  String get msgSignupRegisterCreditCard => '등록 신용카드';
 
   @override
-  String get msgSmartKeyNotAvailable => 'smart_key_not_available';
+  String get msgSmartKeyNotAvailable => '스마트 키 (사용불가)';
 
   @override
-  String get msgSplashLoadingScreen => 'splash_screen';
+  String get msgSplashLoadingScreen => '스플래시 화면';
 
   @override
-  String get msgSubscriptionInfoNoService => 'subscription_info_no_service';
+  String get msgSubscriptionInfoNoService => '서비스 정보 없음';
 
   @override
-  String get msgTeamScheduleShare => 'team_schedule_share';
+  String get msgTeamScheduleShare => '팀 스케줄 공유';
 
   @override
-  String get msgUnsubscriptionConfirm => 'unsubscription_confirm';
+  String get msgUnsubscriptionConfirm => '구독 취소 확인';
 
   @override
-  String get msgUnsubscriptionConfirmWarn => 'unsubscription_confirm_warn';
+  String get msgUnsubscriptionConfirmWarn => '구독 취소 확인 경고';
 
   @override
-  String get msgUpcomingUnsubscriptionInfo => 'upcoming_unsubscription_info';
+  String get msgUpcomingUnsubscriptionInfo => '예정된 구독 취소 정보';
 
   @override
-  String get msgUpcomingUnsubscriptionView => 'upcoming_unsubscription_view';
+  String get msgUpcomingUnsubscriptionView => '예정된 구독 취소 보기';
 
   @override
-  String get appNavigation => 'App Navigation';
+  String get appNavigation => '앱 네비게이션';
 
   @override
-  String get checkYourAppSUiFromTheBelowDemoScreensOfYourApp => 'Check your app\'s UI from the below demo screens of your app.';
+  String get checkYourAppUI => '아래 데모 화면에서 앱의 UI를 확인하세요.';
 
   @override
-  String get networkError => 'Network Error';
+  String get networkError => '네트워크 에러';
 
   @override
-  String get somethingWentWrong => 'Something Went Wrong!';
+  String get somethingWentWrong => '오류가 발생했습니다.';
 
   @override
   String get subscriptionInformation => '구독 정보';

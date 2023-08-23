@@ -10,8 +10,8 @@ import 'package:one_of_serializer/any_of_serializer.dart';
 import 'package:one_of_serializer/one_of_serializer.dart';
 
 // 🌎 Project imports:
-import 'package:wegooli_friends/data/data.dart';
-import 'package:wegooli_friends/data/models/date.dart';
+import '/data/data.dart';
+import '/data/models/date.dart';
 
 part 'serializers.g.dart';
 

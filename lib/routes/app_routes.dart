@@ -2,7 +2,7 @@
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import 'package:wegooli_friends/screens/screens.dart';
+import '/screens/screens.dart';
 
 class AppRoutes {
   static const String splashScreen = '/splash';

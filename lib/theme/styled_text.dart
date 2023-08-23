@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
-import 'package:wegooli_friends/gen/fonts.gen.dart';
+import '/gen/fonts.gen.dart';
 
 abstract class AppStyledText {
   static const textInputChatting = const TextStyle(

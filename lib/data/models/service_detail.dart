@@ -6,8 +6,8 @@ import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 // 🌎 Project imports:
-import 'package:wegooli_friends/data/models/device_option.dart';
-import 'package:wegooli_friends/data/models/user_sub_info.dart';
+import '/data/models/device_option.dart';
+import '/data/models/user_sub_info.dart';
 
 part 'service_detail.g.dart';
 

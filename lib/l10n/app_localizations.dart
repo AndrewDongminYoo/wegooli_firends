@@ -634,157 +634,157 @@ abstract class AppLocalizations {
   /// No description provided for @msgCarStateInformation.
   ///
   /// In ko, this message translates to:
-  /// **'car_state_information'**
+  /// **'자동차 상태 정보'**
   String get msgCarStateInformation;
 
   /// No description provided for @msgCarStatusInformation.
   ///
   /// In ko, this message translates to:
-  /// **'car_status_information'**
+  /// **'차량 상태 정보'**
   String get msgCarStatusInformation;
 
   /// No description provided for @msgLoginRegisterCreditCard.
   ///
   /// In ko, this message translates to:
-  /// **'login_register_credit_card'**
+  /// **'등록 신용카드'**
   String get msgLoginRegisterCreditCard;
 
   /// No description provided for @msgLoginRegisterLicensePage.
   ///
   /// In ko, this message translates to:
-  /// **'login_register_license_page'**
+  /// **'등록 라이센스 페이지'**
   String get msgLoginRegisterLicensePage;
 
   /// No description provided for @msgLoginRegisterSuccessPage.
   ///
   /// In ko, this message translates to:
-  /// **'login_register_success_page'**
+  /// **'등록 성공 페이지'**
   String get msgLoginRegisterSuccessPage;
 
   /// No description provided for @msgLoginRegisterZipCode.
   ///
   /// In ko, this message translates to:
-  /// **'login_register_zip_code'**
+  /// **'등록 우편번호/주소 입력'**
   String get msgLoginRegisterZipCode;
 
   /// No description provided for @msgLoginValidatePhoneAuth.
   ///
   /// In ko, this message translates to:
-  /// **'login_validate_phone_auth'**
+  /// **'전화 인증 로그인'**
   String get msgLoginValidatePhoneAuth;
 
   /// No description provided for @msgLoginWithIdAndPassword.
   ///
   /// In ko, this message translates to:
-  /// **'login_with_id_and_password'**
+  /// **'로그인 ID 및 비밀번호 로그인'**
   String get msgLoginWithIdAndPassword;
 
   /// No description provided for @msgRegisteredCreditCardList.
   ///
   /// In ko, this message translates to:
-  /// **'registered_credit_card_list'**
+  /// **'등록된 신용카드 목록'**
   String get msgRegisteredCreditCardList;
 
   /// No description provided for @msgReservationDatetimePicker.
   ///
   /// In ko, this message translates to:
-  /// **'reservation_datetime_picker'**
+  /// **'예약 날짜 선택기'**
   String get msgReservationDatetimePicker;
 
   /// No description provided for @msgReservationsCheckingPage.
   ///
   /// In ko, this message translates to:
-  /// **'reservations_checking_page'**
+  /// **'예약 확인 페이지'**
   String get msgReservationsCheckingPage;
 
   /// No description provided for @msgSendingCrewInvitation.
   ///
   /// In ko, this message translates to:
-  /// **'sending_crew_invitation'**
+  /// **'팀 초대 보내기'**
   String get msgSendingCrewInvitation;
 
   /// No description provided for @msgSignupAcceptTerms.
   ///
   /// In ko, this message translates to:
-  /// **'signup_accept_terms'**
+  /// **'동의 약관 보기'**
   String get msgSignupAcceptTerms;
 
   /// No description provided for @msgSignupRegisterCreditCard.
   ///
   /// In ko, this message translates to:
-  /// **'signup_register_credit_card'**
+  /// **'등록 신용카드'**
   String get msgSignupRegisterCreditCard;
 
   /// No description provided for @msgSmartKeyNotAvailable.
   ///
   /// In ko, this message translates to:
-  /// **'smart_key_not_available'**
+  /// **'스마트 키 (사용불가)'**
   String get msgSmartKeyNotAvailable;
 
   /// No description provided for @msgSplashLoadingScreen.
   ///
   /// In ko, this message translates to:
-  /// **'splash_screen'**
+  /// **'스플래시 화면'**
   String get msgSplashLoadingScreen;
 
   /// No description provided for @msgSubscriptionInfoNoService.
   ///
   /// In ko, this message translates to:
-  /// **'subscription_info_no_service'**
+  /// **'서비스 정보 없음'**
   String get msgSubscriptionInfoNoService;
 
   /// No description provided for @msgTeamScheduleShare.
   ///
   /// In ko, this message translates to:
-  /// **'team_schedule_share'**
+  /// **'팀 스케줄 공유'**
   String get msgTeamScheduleShare;
 
   /// No description provided for @msgUnsubscriptionConfirm.
   ///
   /// In ko, this message translates to:
-  /// **'unsubscription_confirm'**
+  /// **'구독 취소 확인'**
   String get msgUnsubscriptionConfirm;
 
   /// No description provided for @msgUnsubscriptionConfirmWarn.
   ///
   /// In ko, this message translates to:
-  /// **'unsubscription_confirm_warn'**
+  /// **'구독 취소 확인 경고'**
   String get msgUnsubscriptionConfirmWarn;
 
   /// No description provided for @msgUpcomingUnsubscriptionInfo.
   ///
   /// In ko, this message translates to:
-  /// **'upcoming_unsubscription_info'**
+  /// **'예정된 구독 취소 정보'**
   String get msgUpcomingUnsubscriptionInfo;
 
   /// No description provided for @msgUpcomingUnsubscriptionView.
   ///
   /// In ko, this message translates to:
-  /// **'upcoming_unsubscription_view'**
+  /// **'예정된 구독 취소 보기'**
   String get msgUpcomingUnsubscriptionView;
 
   /// No description provided for @appNavigation.
   ///
   /// In ko, this message translates to:
-  /// **'App Navigation'**
+  /// **'앱 네비게이션'**
   String get appNavigation;
 
-  /// No description provided for @checkYourAppSUiFromTheBelowDemoScreensOfYourApp.
+  /// No description provided for @checkYourAppUI.
   ///
   /// In ko, this message translates to:
-  /// **'Check your app\'s UI from the below demo screens of your app.'**
-  String get checkYourAppSUiFromTheBelowDemoScreensOfYourApp;
+  /// **'아래 데모 화면에서 앱의 UI를 확인하세요.'**
+  String get checkYourAppUI;
 
   /// No description provided for @networkError.
   ///
   /// In ko, this message translates to:
-  /// **'Network Error'**
+  /// **'네트워크 에러'**
   String get networkError;
 
   /// No description provided for @somethingWentWrong.
   ///
   /// In ko, this message translates to:
-  /// **'Something Went Wrong!'**
+  /// **'오류가 발생했습니다.'**
   String get somethingWentWrong;
 
   /// No description provided for @subscriptionInformation.

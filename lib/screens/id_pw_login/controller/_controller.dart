@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 
 // 📦 Package imports:
 import 'package:get/get.dart';
-import 'package:wegooli_friends/lib.dart';
 
 // 🌎 Project imports:
+import '/lib.dart';
 
 /// A controller class for the LoginWithIdAndPasswordScreen.
 ///

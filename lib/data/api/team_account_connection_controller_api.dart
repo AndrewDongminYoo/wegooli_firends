@@ -7,13 +7,12 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
-import 'package:wegooli_friends/data/api_util.dart';
-import 'package:wegooli_friends/data/models/select_team_account_connection_request.dart';
-import 'package:wegooli_friends/data/models/team_account_connection_model.dart';
-import 'package:wegooli_friends/data/models/team_account_connection_request.dart';
-import 'package:wegooli_friends/data/models/team_account_connection_response.dart';
-import 'package:wegooli_friends/data/models/team_account_model.dart';
-
+import '/data/api_util.dart';
+import '/data/models/select_team_account_connection_request.dart';
+import '/data/models/team_account_connection_model.dart';
+import '/data/models/team_account_connection_request.dart';
+import '/data/models/team_account_connection_response.dart';
+import '/data/models/team_account_model.dart';
 
 class TeamAccountConnectionControllerApi {
   final Dio _dio;

@@ -5,7 +5,7 @@ import 'dart:convert';
 import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
-import 'package:wegooli_friends/data/auth/auth.dart';
+import '/data/auth/auth.dart';
 
 class BasicAuthInfo {
   final String username;

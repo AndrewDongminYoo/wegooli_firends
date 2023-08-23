@@ -1,10 +1,11 @@
+// 🎯 Dart imports:
 import 'dart:convert';
 
 // 📦 Package imports:
 import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
-import 'package:wegooli_friends/data/auth/auth.dart';
+import '/data/auth/auth.dart';
 
 class BearerAuthInterceptor extends AuthInterceptor {
   final Map<String, String> tokens = {};

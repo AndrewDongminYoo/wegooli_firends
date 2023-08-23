@@ -1,18 +1,14 @@
 // 🐦 Flutter imports:
-import 'package:built_collection/built_collection.dart';
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
+import 'package:built_collection/built_collection.dart';
 import 'package:built_value/json_object.dart';
 import 'package:dio/dio.dart';
 import 'package:get/get.dart';
-import 'package:wegooli_friends/data/auth/auth.dart';
-import 'package:wegooli_friends/lib.dart';
 
 // 🌎 Project imports:
-import '/core/app_export.dart';
-import '/gen/assets.gen.dart';
-import 'controller/_controller.dart';
+import '/lib.dart';
 
 // ignore: must_be_immutable
 class LoginWithIdAndPassword

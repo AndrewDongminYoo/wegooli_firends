@@ -4,7 +4,7 @@
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
-import 'package:wegooli_friends/core/app_export.dart';
+import '/core/app_export.dart';
 
 class CalendarTitle extends StatelessWidget {
   const CalendarTitle({

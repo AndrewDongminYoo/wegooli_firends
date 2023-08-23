@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import 'package:wegooli_friends/core/app_export.dart';
+import '/core/app_export.dart';
 
 class MemberListTitle extends StatelessWidget {
   const MemberListTitle({

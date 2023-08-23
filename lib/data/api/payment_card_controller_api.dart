@@ -7,9 +7,9 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
-import 'package:wegooli_friends/data/api_util.dart';
-import 'package:wegooli_friends/data/models/payment_card_model.dart';
-import 'package:wegooli_friends/data/models/payment_card_request.dart';
+import '/data/api_util.dart';
+import '/data/models/payment_card_model.dart';
+import '/data/models/payment_card_request.dart';
 
 class PaymentCardControllerApi {
   final Dio _dio;

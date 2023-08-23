@@ -3,7 +3,7 @@ import 'package:built_collection/built_collection.dart';
 import 'package:built_value/serializer.dart';
 
 // 🌎 Project imports:
-import 'package:wegooli_friends/data/models/date.dart';
+import '/data/models/date.dart';
 
 class DateSerializer implements PrimitiveSerializer<Date> {
   const DateSerializer();

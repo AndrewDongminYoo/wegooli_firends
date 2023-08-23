@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 // 📦 Package imports:
 import 'package:get/get.dart';
-import 'package:wegooli_friends/data/models/models.dart';
 
 // 🌎 Project imports:
 import '../models/_model.dart';

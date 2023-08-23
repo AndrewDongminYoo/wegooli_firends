@@ -10,7 +10,6 @@ import 'package:wegooli_friends/data/auth/auth.dart';
 import 'package:wegooli_friends/lib.dart';
 
 // 🌎 Project imports:
-import '/data/api.dart';
 import '/core/app_export.dart';
 import '/gen/assets.gen.dart';
 import 'controller/_controller.dart';

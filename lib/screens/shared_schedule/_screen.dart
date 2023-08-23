@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '/data/models/models.dart';
 import '/core/app_export.dart';
+import '/data/models/models.dart';
 import '/screens/screens.dart';
 
 class TeamScheduleShare extends GetWidget<TeamScheduleController> {

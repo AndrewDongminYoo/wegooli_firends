@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '/lib.dart';
+import '/data/data.dart';
 
 /// A controller class for the LoginWithIdAndPasswordScreen.
 ///

@@ -8,7 +8,10 @@ import 'package:dio/dio.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '/lib.dart';
+import '/core/app_export.dart';
+import '/data/data.dart';
+import '/gen/assets.gen.dart';
+import '/screens/screens.dart';
 
 // ignore: must_be_immutable
 class LoginWithIdAndPassword
@@ -20,7 +23,7 @@ class LoginWithIdAndPassword
 
   Future findMembers() async {
     String token = Get.find<PrefUtils>().getData('token');
-    final api = Get.find<ApiClient>().getTeamAccountConnectionControllerApi();
+    final api = Get.find<WegooliApi>().getTeamAccountConnectionControllerApi();
     print('token : $token');
     Map<String, dynamic> extra = <String, dynamic>{
       'secure': <Map<String, String>>[
@@ -44,7 +47,7 @@ class LoginWithIdAndPassword
   }
 
   Future<void> authorize() async {
-    final api = Get.find<ApiClient>().getUserControllerApi();
+    final api = Get.find<WegooliApi>().getUserControllerApi();
 
     try {
       final response = await api.login(
@@ -77,6 +80,12 @@ class LoginWithIdAndPassword
       // return true;
     } on DioException catch (e) {
       controller.isAuthenticated.value = false;
+      switch (e.type) {
+        case DioExceptionType.connectionError:
+          print(e.message ?? "Unknown connection error occurred");
+          break;
+        default:
+      }
       print("DioException when calling UserControllerApi->login: $e\n");
     } on Exception catch (e) {
       controller.isAuthenticated.value = false;

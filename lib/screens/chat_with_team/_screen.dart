@@ -80,14 +80,17 @@ class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
   }
 
   List<ChatMessage> asDashChatMessages(List<BaseMessage> messages) {
-    return [
-      for (BaseMessage sendBirdMessage in messages)
-        ChatMessage(
-          text: sendBirdMessage.message,
-          user: asDashChatUser(sendBirdMessage.sender),
-          createdAt: DateTime.now(),
-        )
-    ];
+    List<ChatMessage> chatMessages = messages
+        .map((sendBirdMessage) => ChatMessage(
+              text: sendBirdMessage.message,
+              user: asDashChatUser(sendBirdMessage.sender),
+              createdAt: DateTime.fromMillisecondsSinceEpoch(
+                  sendBirdMessage.createdAt),
+            ))
+        .toList();
+    chatMessages.sort((a, b) => b.createdAt.compareTo(a.createdAt));
+
+    return chatMessages;
   }
 
   @override
@@ -111,8 +114,7 @@ class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
   void onMessageReceived(BaseChannel channel, BaseMessage message) {
     super.onMessageReceived(channel, message);
     setState(() {
-      _messages.add(message);
-      _messages.sort(((a, b) => b.createdAt.compareTo(a.createdAt)));
+      _messages.insert(0, message);
     });
   }
 
@@ -147,7 +149,6 @@ class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
             final sentMessage =
                 _channel.sendUserMessageWithText(newMessage.text);
             setState(() {
-              // _messages.add(sentMessage);
               _messages.insert(0, sentMessage);
             });
           },

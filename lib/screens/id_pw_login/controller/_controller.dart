@@ -6,7 +6,6 @@ import 'package:get/get.dart';
 import 'package:wegooli_friends/lib.dart';
 
 // 🌎 Project imports:
-import '../models/_model.dart';
 
 /// A controller class for the LoginWithIdAndPasswordScreen.
 ///
@@ -16,8 +15,8 @@ class LoginWithIdAndPasswordController extends GetxController {
   TextEditingController usernameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   RxBool isAuthenticated = false.obs;
-  Rx<UserDTO> currentUser =
-      UserDTO().obs;
+  Rx<UserDTO> currentUser = UserDTO().obs;
+  RxList<TeamAccountModel> members = RxList<TeamAccountModel>([]);
 
   @override
   void onClose() {

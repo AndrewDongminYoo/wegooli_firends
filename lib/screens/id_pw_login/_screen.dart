@@ -1,4 +1,5 @@
 // 🐦 Flutter imports:
+import 'package:built_collection/built_collection.dart';
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
@@ -22,6 +23,31 @@ class LoginWithIdAndPassword
           key: key,
         );
 
+  Future findMembers() async {
+    String token = Get.find<PrefUtils>().getData('token');
+    final api = Get.find<ApiClient>().getTeamAccountConnectionControllerApi();
+    print('token : $token');
+    Map<String, dynamic> extra = <String, dynamic>{
+      'secure': <Map<String, String>>[
+        {
+          'type': 'http',
+          'scheme': 'bearer',
+          'name': token,
+        },
+      ],
+    };
+    final response = await api.selectTeamAccountList(extra: extra);
+    BuiltList<TeamAccountConnectionResponse>? teams = response.data;
+    if (teams != null && teams.isNotEmpty) {
+      // TODO
+      // 현재는 Team이 1개만 존재한다고 가정하기 때문에 첫번째 Team 정보로만 연결한다.
+      teams.first.account?.forEach((it) =>
+          !controller.members.contains(it) ? controller.members.add(it) : null);
+    }
+    // print('members : ${controller.members.length}');
+    print('members : ${controller.members.toString()}');
+  }
+
   Future<void> authorize() async {
     final api = Get.find<ApiClient>().getUserControllerApi();
 
@@ -36,26 +62,18 @@ class LoginWithIdAndPassword
           List<String> splitToken = token.split(' ');
           print('splitToken: $splitToken[1]');
           Get.find<PrefUtils>().setData('token', splitToken[1]);
-
           Map<String, dynamic> payload = parseJwtPayLoad(splitToken[1]);
-          String? email = payload['userEmail'];
-          String? nickname = payload['userNm'];
-          String? id = payload['userId'];
-          String? color = payload['color'];
-          String? phoneNumber = payload['phoneNumber'];
-          String? add1 = payload['addr1'];
-          String? add2 = payload['addr2'];
-          UserDTOBuilder builder = UserDTOBuilder()
-            ..email = email
-            ..nickname = nickname
-            ..id = id
-            ..color = color
-            ..phoneNumber = phoneNumber
-            ..add1 = add1
-            ..add2 = add2;
-          UserDTO userDTO = builder.build();
-          controller.currentUser.value = userDTO;
+          controller.currentUser.value = (UserDTOBuilder()
+                ..email = payload['userEmail']
+                ..nickname = payload['userNm']
+                ..id = payload['userId']
+                ..color = payload['color']
+                ..phoneNumber = payload['phoneNumber']
+                ..add1 = payload['add1']
+                ..add2 = payload['add2'])
+              .build();
           controller.isAuthenticated.value = true;
+          await findMembers();
         } else {
           controller.isAuthenticated.value = false;
         }

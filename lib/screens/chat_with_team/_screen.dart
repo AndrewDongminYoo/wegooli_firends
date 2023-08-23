@@ -1,5 +1,4 @@
 // 🐦 Flutter imports:
-import 'package:built_collection/built_collection.dart';
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
@@ -8,7 +7,6 @@ import 'package:get/get.dart';
 import 'package:sendbird_sdk/sendbird_sdk.dart';
 
 // 🌎 Project imports:
-import 'package:wegooli_friends/lib.dart';
 import '/core/app_export.dart';
 import '/gen/assets.gen.dart';
 import 'controller/_controller.dart';
@@ -36,7 +34,7 @@ class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
     with ChannelEventHandler {
   final DashChatWithFriendsController controller =
       Get.put(DashChatWithFriendsController(DashChatWithFriendsModel().obs));
-
+  late GroupChannel _channel;
   List<BaseMessage> _messages = [];
 
   void loadSendbird(
@@ -59,6 +57,7 @@ class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
 
       // Update & prompt the UI to rebuild
       setState(() {
+         _channel = channel;
         _messages = messages;
       });
     } catch (e) {
@@ -89,32 +88,6 @@ class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
           createdAt: DateTime.now(),
         )
     ];
-  }
-
-  Future fun() async {
-    String token = Get.find<PrefUtils>().getData('token');
-    final api = Get.find<ApiClient>().getTeamAccountConnectionControllerApi();
-    print('token : $token');
-    Map<String, dynamic> extra = <String, dynamic>{
-      'secure': <Map<String, String>>[
-        {
-          'type': 'http',
-          'scheme': 'bearer',
-          'name': token,
-        },
-      ],
-    };
-    final response = await api.selectTeamAccountList(extra: extra);
-    // print(response);
-    BuiltList<TeamAccountConnectionResponse>? list = response.data;
-    if (list != null && list.isNotEmpty) {
-      // list
-      //     .mapMany((it) => it.account)
-      //     .forEach((it) => controller.members.add(it));
-      list.first.account?.forEach((it) => !controller.members.contains(it)? controller.members.add(it): null);
-    }
-    print('members : ${controller.members.length}');
-    print('members : ${controller.members.toString()}');
   }
 
   @override
@@ -171,13 +144,12 @@ class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
           currentUser: asDashChatUser(SendbirdSdk().currentUser),
           messages: asDashChatMessages(_messages),
           onSend: (newMessage) async {
-            // final sentMessage =
-            //     _channel.sendUserMessageWithText(newMessage.text);
-            // setState(() {
-            //   // _messages.add(sentMessage);
-            //   _messages.insert(0, sentMessage);
-            // });
-            await fun();
+            final sentMessage =
+                _channel.sendUserMessageWithText(newMessage.text);
+            setState(() {
+              // _messages.add(sentMessage);
+              _messages.insert(0, sentMessage);
+            });
           },
           inputOptions: const InputOptions(
             sendOnEnter: true,

@@ -18,7 +18,6 @@ class DashChatWithFriendsController extends GetxController {
   TextEditingController group1104Controller = TextEditingController();
 
   Rx<DashChatWithFriendsModel> dashChatWithFriendsModelObj;
-  RxList<TeamAccountModel> members = RxList<TeamAccountModel>([]);
 
   @override
   void onClose() {

@@ -48,10 +48,12 @@ class TeamScheduleShare extends GetWidget<TeamScheduleController> {
   Widget getCurrentPage(String currentRoute) {
     UserDTO currentUser =
         Get.find<LoginWithIdAndPasswordController>().currentUser.value;
-    // Iterable<String> otherUserIds = Get.find<DashChatWithFriendsController>()
-    //     .members
-    //     .map((it) => it.accountId as String);
-    //     print(otherUserIds.toList());
+    List<String> otherUserIds = Get.find<LoginWithIdAndPasswordController>()
+        .members
+        .map((it) => it.accountId as String)
+        .toList();
+    print('currentUser $currentUser');
+    print('otherUserIds $otherUserIds');
     switch (currentRoute) {
       case AppRoutes.chatWithFriends:
         // TODO
@@ -59,9 +61,8 @@ class TeamScheduleShare extends GetWidget<TeamScheduleController> {
         // 팀 정보 넣기
         return DashChatWithFriendsPage(
           appId: "36FB6EA9-27A7-44F1-9696-72E1E21033B6",
-          userId: currentUser.email as String,
-          // otherUserIds: otherUserIds.toList(),
-          otherUserIds: [],
+          userId: currentUser.id as String,
+          otherUserIds: otherUserIds,
         );
       case AppRoutes.smartKeyAvailable:
         return SmartKeyAvailablePage();

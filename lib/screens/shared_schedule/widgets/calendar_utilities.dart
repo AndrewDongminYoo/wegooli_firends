@@ -1,9 +1,6 @@
 // 🎯 Dart imports:
 import 'dart:collection';
 
-// 🐦 Flutter imports:
-import 'package:flutter/painting.dart';
-
 // 📦 Package imports:
 import 'package:table_calendar/table_calendar.dart';
 
@@ -51,15 +48,3 @@ List<DateTime> daysInRange(DateTime first, DateTime last) {
 final kToday = DateTime.now();
 final kFirstDay = DateTime(kToday.year, kToday.month - 3, kToday.day);
 final kLastDay = DateTime(kToday.year, kToday.month + 3, kToday.day);
-
-extension ColorExtension on String {
-  toColor() {
-    var hexColor = this.replaceAll("#", "");
-    if (hexColor.length == 6) {
-      hexColor = "FF" + hexColor;
-    }
-    if (hexColor.length == 8) {
-      return Color(int.parse("0x$hexColor"));
-    }
-  }
-}

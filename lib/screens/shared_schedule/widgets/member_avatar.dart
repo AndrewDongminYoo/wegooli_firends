@@ -1,11 +1,8 @@
 // 🐦 Flutter imports:
-
-// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
-import '/screens/shared_schedule/widgets/utilities.dart';
 
 class MemberAvatar extends StatelessWidget {
   const MemberAvatar({

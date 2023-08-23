@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 // 📦 Package imports:
 import 'package:get/get.dart';
+import 'package:wegooli_friends/lib.dart';
 
 // 🌎 Project imports:
 import '../models/_model.dart';
@@ -15,8 +16,8 @@ class LoginWithIdAndPasswordController extends GetxController {
   TextEditingController usernameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   RxBool isAuthenticated = false.obs;
-  Rx<LoginWithIdAndPasswordModel> withIdAndPasswordModelObj =
-      LoginWithIdAndPasswordModel().obs;
+  Rx<UserDTO> currentUser =
+      UserDTO().obs;
 
   @override
   void onClose() {

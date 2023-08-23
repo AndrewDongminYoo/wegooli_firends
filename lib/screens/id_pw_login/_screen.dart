@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:built_value/json_object.dart';
 import 'package:dio/dio.dart';
 import 'package:get/get.dart';
+import 'package:wegooli_friends/data/auth/auth.dart';
+import 'package:wegooli_friends/lib.dart';
 
 // 🌎 Project imports:
 import '/data/api.dart';
@@ -34,6 +36,25 @@ class LoginWithIdAndPassword
           List<String> splitToken = token.split(' ');
           print('splitToken: $splitToken[1]');
           Get.find<PrefUtils>().setData('token', splitToken[1]);
+
+          Map<String, dynamic> payload = parseJwtPayLoad(splitToken[1]);
+          String? email = payload['userEmail'];
+          String? nickname = payload['userNm'];
+          String? id = payload['userId'];
+          String? color = payload['color'];
+          String? phoneNumber = payload['phoneNumber'];
+          String? add1 = payload['addr1'];
+          String? add2 = payload['addr2'];
+          UserDTOBuilder builder = UserDTOBuilder()
+            ..email = email
+            ..nickname = nickname
+            ..id = id
+            ..color = color
+            ..phoneNumber = phoneNumber
+            ..add1 = add1
+            ..add2 = add2;
+          UserDTO userDTO = builder.build();
+          controller.currentUser.value = userDTO;
           controller.isAuthenticated.value = true;
         } else {
           controller.isAuthenticated.value = false;

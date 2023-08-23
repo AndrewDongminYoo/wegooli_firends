@@ -45,6 +45,10 @@ class TeamScheduleShare extends GetWidget<TeamScheduleController> {
 
   /// Handling page based on route
   Widget getCurrentPage(String currentRoute) {
+    // Iterable<String> otherUserIds = Get.find<DashChatWithFriendsController>()
+    //     .members
+    //     .map((it) => it.accountId as String);
+    //     print(otherUserIds.toList());
     switch (currentRoute) {
       case AppRoutes.chatWithFriends:
         // TODO
@@ -53,7 +57,8 @@ class TeamScheduleShare extends GetWidget<TeamScheduleController> {
         return DashChatWithFriendsPage(
           appId: "36FB6EA9-27A7-44F1-9696-72E1E21033B6",
           userId: "me",
-          otherUserIds: ["user1", "user2"],
+          // otherUserIds: otherUserIds.toList(),
+          otherUserIds: [],
         );
       case AppRoutes.smartKeyAvailable:
         return SmartKeyAvailablePage();

@@ -29,7 +29,7 @@ class RegisterZipCode extends GetWidget<RegisterZipCodeController> {
             appBar: CustomAppBar(
                 height: getVerticalSize(53),
                 leadingWidth: 34,
-                leading: AppbarImage(
+                leading: CustomImageView(
                     height: getSize(18),
                     width: getSize(18),
                     svgPath: Assets.svg.imgArrowLeft.path,
@@ -120,8 +120,10 @@ class RegisterZipCode extends GetWidget<RegisterZipCodeController> {
                                                   TextInputAction.next,
                                               filled: true,
                                               inputFormatters: [
-                                                LengthLimitingTextInputFormatter(6),
-                                                FilteringTextInputFormatter.digitsOnly,
+                                                LengthLimitingTextInputFormatter(
+                                                    6),
+                                                FilteringTextInputFormatter
+                                                    .digitsOnly,
                                               ],
                                               fillColor: theme.colorScheme
                                                   .onPrimaryContainer)

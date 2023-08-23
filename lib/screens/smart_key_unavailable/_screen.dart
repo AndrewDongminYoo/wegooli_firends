@@ -28,7 +28,7 @@ class SmartKeyNotAvailable extends GetWidget<SmartKeyNotAvailableController> {
             45,
           ),
           centerTitle: true,
-          title: AppbarImage(
+          title: CustomImageView(
             height: getVerticalSize(
               17,
             ),

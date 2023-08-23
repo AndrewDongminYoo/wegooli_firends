@@ -1,5 +1,5 @@
+// 🎯 Dart imports:
 import 'dart:async';
-import 'dart:io';
 
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
@@ -7,11 +7,12 @@ import 'package:flutter/material.dart';
 // 📦 Package imports:
 import 'package:dash_chat_2/dash_chat_2.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:sendbird_sdk/sendbird_sdk.dart';
+
+// 🌎 Project imports:
 import 'package:wegooli_friends/data/data.dart';
 import 'package:wegooli_friends/screens/screens.dart';
-import 'package:image_picker/image_picker.dart';
-// 🌎 Project imports:
 import '/core/app_export.dart';
 import '/gen/assets.gen.dart';
 
@@ -39,7 +40,8 @@ class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
       Get.put(DashChatWithFriendsController(DashChatWithFriendsModel().obs));
   late GroupChannel _channel;
   List<BaseMessage> _messages = [];
-  XFile? _image;
+  // ignore: unused_field
+  XFile? _image; //TODO: ImagePicker로 가져온 결과물을 담아서 보낸다.
   final ImagePicker picker = ImagePicker();
   void loadSendbird(
     String appId,
@@ -150,7 +152,7 @@ class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
             45,
           ),
           centerTitle: true,
-          title: AppbarImage(
+          title: CustomImageView(
             height: getVerticalSize(
               17,
             ),

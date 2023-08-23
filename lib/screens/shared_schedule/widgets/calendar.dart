@@ -29,7 +29,7 @@ class SharedCalendar extends GetWidget<TeamScheduleController> {
             45,
           ),
           centerTitle: true,
-          title: AppbarImage(
+          title: CustomImageView(
             height: getVerticalSize(
               17,
             ),
@@ -43,28 +43,28 @@ class SharedCalendar extends GetWidget<TeamScheduleController> {
         body: SizedBox(
           width: mediaQueryData.size.width,
           child: SingleChildScrollView(
-          padding: getPadding(
-            top: 21,
-          ),
-          child: Padding(
             padding: getPadding(
-              bottom: 5,
+              top: 21,
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                MemberListTitle(),
-                MembersList(controller: controller),
-                GrayHorizonSeparator(),
-                CalendarTitle(),
-                CalendarBody(),
-                AddScheduleButton(),
-              ],
+            child: Padding(
+              padding: getPadding(
+                bottom: 5,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  MemberListTitle(),
+                  MembersList(controller: controller),
+                  GrayHorizonSeparator(),
+                  CalendarTitle(),
+                  CalendarBody(),
+                  AddScheduleButton(),
+                ],
+              ),
             ),
           ),
         ),
-      ),
       ),
     );
   }

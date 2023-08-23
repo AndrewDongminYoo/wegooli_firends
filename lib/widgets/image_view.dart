@@ -10,47 +10,42 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 // ignore: must_be_immutable
 class CustomImageView extends StatelessWidget {
-  ///[url] is required parameter for fetching network image
-  String? url;
-
-  ///[imagePath] is required parameter for showing png,jpg,etc image
-  String? imagePath;
-
-  ///[svgPath] is required parameter for showing svg image
-  String? svgPath;
-
-  ///[file] is required parameter for fetching image file
-  File? file;
-
+  /// a [CustomImageView] it can be used for showing any type of images
+  /// it will shows the placeholder image if image is not found on network image
+  CustomImageView({
+    this.height = 18,
+    this.width = 18,
+    this.url,
+    this.imagePath,
+    this.svgPath,
+    this.margin,
+    this.onTap,
+    this.file,
+    this.color,
+    this.fit,
+    this.alignment,
+    this.radius,
+    this.border,
+    this.placeHolder = 'assets/images/image_not_found.png',
+  });
   double? height;
   double? width;
+  ///[imagePath] is required parameter for showing png,jpg,etc image
+  String? imagePath;
+  ///[svgPath] is required parameter for showing svg image
+  String? svgPath;
+  ///[url] is required parameter for fetching network image
+  String? url;
+  ///[file] is required parameter for fetching image file
+  File? file;
   Color? color;
   BoxFit? fit;
   final String placeHolder;
   Alignment? alignment;
-  VoidCallback? onTap;
   EdgeInsetsGeometry? margin;
+  VoidCallback? onTap;
   BorderRadius? radius;
   BoxBorder? border;
-
-  /// a [CustomImageView] it can be used for showing any type of images
-  /// it will shows the placeholder image if image is not found on network image
-  CustomImageView({
-    this.url,
-    this.imagePath,
-    this.svgPath,
-    this.file,
-    this.height,
-    this.width,
-    this.color,
-    this.fit,
-    this.alignment,
-    this.onTap,
-    this.radius,
-    this.margin,
-    this.border,
-    this.placeHolder = 'assets/images/image_not_found.png',
-  });
 
   @override
   Widget build(BuildContext context) {

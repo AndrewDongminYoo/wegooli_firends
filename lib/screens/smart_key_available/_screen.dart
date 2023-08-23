@@ -31,7 +31,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
             45,
           ),
           centerTitle: true,
-          title: AppbarImage(
+          title: CustomImageView(
             height: getVerticalSize(
               17,
             ),
@@ -142,20 +142,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                         ),
                                       ),
                                     ),
-                                    CustomImageView(
-                                      svgPath: Assets.svg.imgArrowLeft.path,
-                                      height: getSize(
-                                        18,
-                                      ),
-                                      width: getSize(
-                                        18,
-                                      ),
-                                      margin: getMargin(
-                                        left: 54,
-                                        top: 2,
-                                        bottom: 4,
-                                      ),
-                                    ),
+                                    ArrowLeft(),
                                   ],
                                 ),
                               ),
@@ -600,6 +587,30 @@ class SmartKeyAvailablePage extends StatelessWidget {
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+class ArrowLeft extends StatelessWidget {
+  const ArrowLeft({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomImageView(
+      svgPath: Assets.svg.imgArrowLeft.path,
+      height: getSize(
+        18,
+      ),
+      width: getSize(
+        18,
+      ),
+      margin: getMargin(
+        left: 54,
+        top: 2,
+        bottom: 4,
       ),
     );
   }

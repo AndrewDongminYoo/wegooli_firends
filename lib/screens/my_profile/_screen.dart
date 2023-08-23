@@ -31,7 +31,7 @@ class MyProfilePage extends StatelessWidget {
             45,
           ),
           centerTitle: true,
-          title: AppbarImage(
+          title: CustomImageView(
             height: getVerticalSize(
               17,
             ),

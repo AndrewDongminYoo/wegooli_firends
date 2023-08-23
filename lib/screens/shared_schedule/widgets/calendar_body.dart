@@ -30,13 +30,13 @@ class _CalendarBodyState extends State<CalendarBody> {
   DateTime? _rangeStart;
   DateTime? _rangeEnd;
   get _daysOfWeekStyle => DaysOfWeekStyle(
-      weekdayStyle: TextStyle(
-          color: Colors.black, fontWeight: FontWeight.bold, fontSize: 14),
-      weekendStyle: TextStyle(
-          color: Colors.red.shade400,
-          fontWeight: FontWeight.bold,
-          fontSize: 14),
-  );
+        weekdayStyle: TextStyle(
+            color: Colors.black, fontWeight: FontWeight.bold, fontSize: 14),
+        weekendStyle: TextStyle(
+            color: Colors.red.shade400,
+            fontWeight: FontWeight.bold,
+            fontSize: 14),
+      );
 
   List<Event> _getEventsForDay(DateTime day) {
     // Implementation example
@@ -207,4 +207,34 @@ class _CalendarBodyState extends State<CalendarBody> {
         rightChevronIcon: Icon(Icons.keyboard_arrow_right),
         titleTextStyle: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
       );
+
+  CalendarBuilders builders = CalendarBuilders(
+    rangeHighlightBuilder: (context, date, events) {
+      return Container(
+        margin: const EdgeInsets.symmetric(horizontal: 1.0),
+        decoration: BoxDecoration(
+          color: Colors.deepPurple.withOpacity(0.3),
+          borderRadius: BorderRadius.circular(10),
+        ),
+      );
+    },
+    rangeStartBuilder: (context, date, events) {
+      return Container(
+        margin: const EdgeInsets.symmetric(horizontal: 1.0),
+        decoration: BoxDecoration(
+          color: Colors.deepPurple.withOpacity(0.3),
+          borderRadius: BorderRadius.horizontal(left: Radius.circular(10)),
+        ),
+      );
+    },
+    rangeEndBuilder: (context, date, events) {
+      return Container(
+        margin: const EdgeInsets.symmetric(horizontal: 1.0),
+        decoration: BoxDecoration(
+          color: Colors.deepPurple.withOpacity(0.3),
+          borderRadius: BorderRadius.horizontal(right: Radius.circular(10)),
+        ),
+      );
+    },
+  );
 }

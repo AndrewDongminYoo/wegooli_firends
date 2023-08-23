@@ -32,12 +32,14 @@ dependencies:
   cookie_jar: ^4.0.8
   cupertino_icons: ^1.0.5
   dash_chat_2: ^0.0.17
+  daum_postcode_search: ^0.0.2
   dio: ^5.3.2
   dio_cookie_manager: ^3.1.0+1
   firebase_core: ^2.15.1
   flutter:
     sdk: flutter
   flutter_gen: ^5.3.1
+  flutter_inappwebview: ^5.7.2+3
   flutter_localization: ^0.1.13
   flutter_lorem: ^2.0.0
   flutter_svg: ^2.0.7

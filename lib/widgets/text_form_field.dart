@@ -1,5 +1,6 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
@@ -11,6 +12,7 @@ class CustomTextFormField extends StatelessWidget {
     this.width,
     this.margin,
     this.controller,
+    this.inputFormatters = const [],
     this.focusNode,
     this.autofocus = true,
     this.textStyle,
@@ -40,6 +42,7 @@ class CustomTextFormField extends StatelessWidget {
   final double? width;
   final EdgeInsetsGeometry? margin;
   final TextEditingController? controller;
+  final List<TextInputFormatter> inputFormatters;
   final FocusNode? focusNode;
   final bool? autofocus;
   final TextStyle? textStyle;
@@ -76,6 +79,7 @@ class CustomTextFormField extends StatelessWidget {
         width: width ?? double.maxFinite,
         margin: margin,
         child: TextFormField(
+          inputFormatters: inputFormatters,
           controller: controller,
           focusNode: focusNode ?? FocusNode(),
           autofocus: autofocus!,

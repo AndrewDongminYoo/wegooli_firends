@@ -29,11 +29,13 @@ class _CalendarBodyState extends State<CalendarBody> {
   DateTime? _selectedDay;
   DateTime? _rangeStart;
   DateTime? _rangeEnd;
-  CalendarDatePicker datePicker = CalendarDatePicker(
-    initialDate: DateTime.now(),
-    firstDate: DateTime(1900),
-    lastDate: DateTime(2100),
-    onDateChanged: (date) {},
+  get _daysOfWeekStyle => DaysOfWeekStyle(
+      weekdayStyle: TextStyle(
+          color: Colors.black, fontWeight: FontWeight.bold, fontSize: 14),
+      weekendStyle: TextStyle(
+          color: Colors.red.shade400,
+          fontWeight: FontWeight.bold,
+          fontSize: 14),
   );
 
   List<Event> _getEventsForDay(DateTime day) {
@@ -152,63 +154,57 @@ class _CalendarBodyState extends State<CalendarBody> {
     }
   }
 
-  get _calendarStyle => CalendarStyle(
-      outsideDaysVisible: true,
-      weekendTextStyle: const TextStyle().copyWith(color: Colors.grey),
-      holidayTextStyle: const TextStyle().copyWith(color: Colors.blue[800]),
-      markerSize: 3,
-      markersAlignment: Alignment.topCenter,
-      markersMaxCount: 3,
-      markerMargin: EdgeInsets.all(1),
-      markerDecoration: BoxDecoration(
-        shape: BoxShape.circle,
-        color: Colors.red,
-      ),
-      selectedDecoration: BoxDecoration(
-        color: Colors.orange,
-        shape: BoxShape.circle,
-      ),
-      // 선택된 Range 의 첫번째 Marker 색상
-      rangeStartDecoration: BoxDecoration(
-        color: Colors.yellow,
-        shape: BoxShape.circle,
-      ),
-      // 선택된 Range 의 마지막 Marker 색상
-      rangeEndDecoration: BoxDecoration(
-        color: Colors.green,
-        shape: BoxShape.circle,
-      ),
-      // 선택된 Range 안의 Marker 색상
-      withinRangeDecoration: BoxDecoration(
-        color: Colors.blue,
-        shape: BoxShape.circle,
-      ),
-      // 선택된 Range 안의 색상
-      rangeHighlightColor: Colors.purple,
-      todayDecoration: BoxDecoration(
-        color: Colors.cyan,
-        shape: BoxShape.circle,
-      ),
-    );
-
-    get _daysOfWeekStyle => DaysOfWeekStyle(
-      weekdayStyle: TextStyle(
-          color: Colors.black, fontWeight: FontWeight.bold, fontSize: 14),
-      weekendStyle: TextStyle(
-          color: Colors.red.shade400,
-          fontWeight: FontWeight.bold,
-          fontSize: 14),
-    );
-    
-    get _headerStyle => HeaderStyle(
-      headerMargin: getMargin(left: 10, right: 10),
-      titleCentered: true,
-      formatButtonVisible: false,
-      leftChevronIcon: Icon(Icons.keyboard_arrow_left),
-      rightChevronIcon: Icon(Icons.keyboard_arrow_right),
-      titleTextStyle: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
-    );
-
-  CalendarBuilders builders = CalendarBuilders(
+  CalendarStyle _calendarStyle = CalendarStyle(
+    markerSize: 3.5,
+    markersAlignment: Alignment.topCenter,
+    markerDecoration: BoxDecoration(
+      color: Colors.deepPurple.shade300,
+      shape: BoxShape.circle,
+    ),
+    selectedDecoration: BoxDecoration(
+      color: Colors.deepPurple.shade100,
+      shape: BoxShape.circle,
+    ),
+    selectedTextStyle: TextStyle(
+      color: Color(0xFFFAFAFA),
+      fontSize: 16.0,
+    ),
+    rangeStartDecoration: BoxDecoration(
+      color: Colors.deepPurple.shade100,
+      shape: BoxShape.circle,
+    ),
+    rangeStartTextStyle: TextStyle(
+      color: Color(0xFFFAFAFA),
+      fontSize: 16.0,
+    ),
+    rangeEndDecoration: BoxDecoration(
+      color: Colors.deepPurple.shade100,
+      shape: BoxShape.circle,
+    ),
+    rangeEndTextStyle: TextStyle(
+      color: Color(0xFFFAFAFA),
+      fontSize: 16.0,
+    ),
+    rangeHighlightScale: 0.8,
+    withinRangeDecoration: BoxDecoration(
+      shape: BoxShape.rectangle,
+    ),
+    rangeHighlightColor: Colors.deepPurple.shade100,
+    todayDecoration: BoxDecoration(
+      color: Colors.deepPurple.shade100,
+      shape: BoxShape.circle,
+    ),
+    todayTextStyle: TextStyle(
+      color: Color(0xFFFAFAFA),
+      fontSize: 16.0,
+    ), //
   );
+  get _headerStyle => HeaderStyle(
+        headerMargin: getMargin(left: 10, right: 10),
+        titleCentered: true,
+        formatButtonVisible: false,
+        leftChevronIcon: Icon(Icons.keyboard_arrow_left),
+        rightChevronIcon: Icon(Icons.keyboard_arrow_right),
+        titleTextStyle: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+      );
 }

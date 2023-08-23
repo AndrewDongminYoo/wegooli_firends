@@ -13,18 +13,17 @@ import '../models/_model.dart';
 /// current registerZipCodeModelObj
 class RegisterZipCodeController extends GetxController {
   TextEditingController postalCodeController = TextEditingController();
-  TextEditingController defaultAddressController = TextEditingController();
-  TextEditingController detailedAddressControllerA = TextEditingController();
-  TextEditingController detailedAddressControllerB = TextEditingController();
-
+  TextEditingController primaryAddressController = TextEditingController();
+  TextEditingController detailedAddressController = TextEditingController();
+  TextEditingController emailAddressController = TextEditingController();
   Rx<RegisterZipCodeModel> registerZipCodeModelObj = RegisterZipCodeModel().obs;
 
   @override
   void onClose() {
     super.onClose();
     postalCodeController.dispose();
-    defaultAddressController.dispose();
-    detailedAddressControllerA.dispose();
-    detailedAddressControllerB.dispose();
+    primaryAddressController.dispose();
+    detailedAddressController.dispose();
+    emailAddressController.dispose();
   }
 }

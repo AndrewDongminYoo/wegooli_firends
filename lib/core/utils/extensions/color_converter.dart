@@ -16,13 +16,13 @@ String hexFromColor(String hexColor) {
 /// 이 함수는 16진수 색상 코드를 Dart 코드에서 사용할 수 있는 형식으로 변환
 ///
 /// @param [String] hexColor - 시작 부분에 '#' 기호가 있거나 없는 16진수 형식의 색상을 나타내는 문자열입니다.
-/// @return [String] - RR은 빨간색 값, GG는 녹색 값, BB는 파란색 값, AA는 색상의 알파 값(투명도)을 나타내는 `0xRRGGBBAA` 형식의 16진수 색상 코드 문자열 표현입니다.
-String colorFromHex(String hexColor) {
+/// @return [Color] - RR은 빨간색 값, GG는 녹색 값, BB는 파란색 값, AA는 색상의 알파 값(투명도)을 나타내는 `0xRRGGBBAA` 형식의 16진수 색상 코드 문자열 표현입니다.
+Color colorFromHex(String hexColor) {
   hexColor = hexColor.toUpperCase().replaceFirst('#', '');
   if (hexColor.length == 6) {
     hexColor = 'FF$hexColor';
   }
-  return '0x$hexColor';
+  return Color.hex('0x$hexColor');
 }
 
 /// [Material Design Color Generator](https://github.com/mbitson/mcg)

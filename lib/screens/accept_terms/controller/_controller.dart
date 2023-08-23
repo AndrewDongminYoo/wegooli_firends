@@ -18,4 +18,15 @@ class AcceptTermsController extends GetxController {
   Rx<bool> isAcceptedTerm4 = false.obs;
   Rx<bool> isAcceptedTerm5 = false.obs;
   Rx<bool> isAcceptedTerm6 = false.obs;
+
+  Rx<bool> get isAllTermsAccepted {
+    return (isAcceptedTerm0.value &&
+            isAcceptedTerm1.value &&
+            isAcceptedTerm2.value &&
+            isAcceptedTerm3.value &&
+            isAcceptedTerm4.value &&
+            isAcceptedTerm5.value &&
+            isAcceptedTerm6.value)
+        .obs;
+  }
 }

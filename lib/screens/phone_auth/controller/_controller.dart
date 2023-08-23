@@ -20,6 +20,11 @@ class ValidatePhoneController extends GetxController {
   Rx<LoginValidatePhoneAuthModel> validatePhoneAuthModelObj =
       LoginValidatePhoneAuthModel().obs;
 
+  bool get isValidatedPhone {
+    // TODO: 휴대폰 인증 로직이 필요합니다.
+    return true;
+  }
+
   @override
   void onClose() {
     super.onClose();

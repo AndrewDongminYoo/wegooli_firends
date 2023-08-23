@@ -8,15 +8,10 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 import '/gen/assets.gen.dart';
 import 'controller/_controller.dart';
+import 'widgets/complete_button.dart';
 
 class ValidatePhone extends GetWidget<ValidatePhoneController> {
   const ValidatePhone({Key? key}) : super(key: key);
-
-  bool isValid() {
-    // TODO
-    // 휴대폰 인증 로직 추가
-    return true;
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -379,21 +374,7 @@ class ValidatePhone extends GetWidget<ValidatePhoneController> {
                                             ])))
                               ]))
                     ])),
-            bottomNavigationBar: Container(
-                margin: getMargin(left: 16, right: 16, bottom: 29),
-                decoration: AppDecoration.shadow,
-                child: CustomElevatedButton(
-                  text: "인증 완료",
-                  buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
-                      fixedSize: MaterialStateProperty.all<Size>(
-                          Size(double.maxFinite, getVerticalSize(52)))),
-                  buttonTextStyle: CustomTextStyles.titleMedium18,
-                  onTap: () {
-                    if (this.isValid()) {
-                      onTapRegisterZipCode();
-                    }
-                  },
-                ))));
+            bottomNavigationBar: ValidatePhoneCompleteButton()));
   }
 
   /// Navigates to the previous screen.
@@ -402,11 +383,5 @@ class ValidatePhone extends GetWidget<ValidatePhoneController> {
   /// navigate to the previous screen in the navigation stack.
   onTabBackButton() {
     Get.back();
-  }
-
-  onTapRegisterZipCode() {
-    Get.toNamed(
-      AppRoutes.registerZipCode,
-    );
   }
 }

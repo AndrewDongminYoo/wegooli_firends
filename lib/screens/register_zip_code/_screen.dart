@@ -1,5 +1,6 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 // 📦 Package imports:
 import 'package:get/get.dart';
@@ -89,6 +90,8 @@ class RegisterZipCode extends GetWidget<RegisterZipCodeController> {
                                                                         0.06))))
                                               ]),
                                           CustomTextFormField(
+                                              textInputType:
+                                                  TextInputType.number,
                                               width: getHorizontalSize(160),
                                               controller: controller
                                                   .postalCodeController,
@@ -98,6 +101,16 @@ class RegisterZipCode extends GetWidget<RegisterZipCodeController> {
                                                   top: 14,
                                                   right: 12,
                                                   bottom: 14),
+                                              validator: (value) {
+                                                if (value == null ||
+                                                    value.isEmpty) {
+                                                  return '우편번호는 필수 입력값입니다.';
+                                                } else if (value
+                                                    .isNumericOnly) {
+                                                  return value;
+                                                }
+                                                return null;
+                                              },
                                               textStyle: CustomTextStyles
                                                   .bodyLargeGray50003,
                                               hintText: "우편번호",
@@ -106,6 +119,10 @@ class RegisterZipCode extends GetWidget<RegisterZipCodeController> {
                                               textInputAction:
                                                   TextInputAction.next,
                                               filled: true,
+                                              inputFormatters: [
+                                                LengthLimitingTextInputFormatter(6),
+                                                FilteringTextInputFormatter.digitsOnly,
+                                              ],
                                               fillColor: theme.colorScheme
                                                   .onPrimaryContainer)
                                         ]))),
@@ -124,7 +141,8 @@ class RegisterZipCode extends GetWidget<RegisterZipCodeController> {
                                         theme.textTheme.titleMedium!))
                           ]),
                       CustomTextFormField(
-                          controller: controller.defaultAddressController,
+                          textInputType: TextInputType.streetAddress,
+                          controller: controller.primaryAddressController,
                           margin: getMargin(top: 10),
                           contentPadding: getPadding(
                               left: 12, top: 14, right: 12, bottom: 14),
@@ -135,7 +153,8 @@ class RegisterZipCode extends GetWidget<RegisterZipCodeController> {
                           filled: true,
                           fillColor: theme.colorScheme.onPrimaryContainer),
                       CustomTextFormField(
-                          controller: controller.detailedAddressControllerA,
+                          textInputType: TextInputType.streetAddress,
+                          controller: controller.detailedAddressController,
                           margin: getMargin(top: 10),
                           contentPadding: getPadding(
                               left: 12, top: 14, right: 12, bottom: 14),
@@ -157,7 +176,7 @@ class RegisterZipCode extends GetWidget<RegisterZipCodeController> {
                                     children: [
                                       Padding(
                                           padding: getPadding(top: 2),
-                                          child: Text("집 주소",
+                                          child: Text("아이디",
                                               overflow: TextOverflow.ellipsis,
                                               textAlign: TextAlign.left,
                                               style: theme
@@ -179,8 +198,9 @@ class RegisterZipCode extends GetWidget<RegisterZipCodeController> {
                                                               0.06))))
                                     ]),
                                 CustomTextFormField(
+                                    textInputType: TextInputType.emailAddress,
                                     controller:
-                                        controller.detailedAddressControllerB,
+                                        controller.emailAddressController,
                                     margin: getMargin(top: 4),
                                     contentPadding: getPadding(
                                         left: 12,
@@ -189,7 +209,7 @@ class RegisterZipCode extends GetWidget<RegisterZipCodeController> {
                                         bottom: 14),
                                     textStyle:
                                         CustomTextStyles.bodyLargeGray50003,
-                                    hintText: "동·호수 등 상세 주소",
+                                    hintText: "이메일 주소 입력",
                                     hintStyle:
                                         CustomTextStyles.bodyLargeGray50003,
                                     filled: true,
@@ -208,7 +228,9 @@ class RegisterZipCode extends GetWidget<RegisterZipCodeController> {
                   buttonTextStyle: CustomTextStyles.titleMedium18,
                   onTap: () {
                     if (this.isValid()) {
-                      onTapRegisterLicensePage();
+                      Get.toNamed(
+                        AppRoutes.registerLicense,
+                      );
                     }
                   },
                 ))));
@@ -220,11 +242,5 @@ class RegisterZipCode extends GetWidget<RegisterZipCodeController> {
   /// navigate to the previous screen in the navigation stack.
   onTabBackButton() {
     Get.back();
-  }
-
-  onTapRegisterLicensePage() {
-    Get.toNamed(
-      AppRoutes.registerLicense,
-    );
   }
 }

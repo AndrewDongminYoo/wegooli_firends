@@ -1,3 +1,6 @@
+import 'dart:async';
+import 'dart:io';
+
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
@@ -5,12 +8,12 @@ import 'package:flutter/material.dart';
 import 'package:dash_chat_2/dash_chat_2.dart';
 import 'package:get/get.dart';
 import 'package:sendbird_sdk/sendbird_sdk.dart';
-
+import 'package:wegooli_friends/data/data.dart';
+import 'package:wegooli_friends/screens/screens.dart';
+import 'package:image_picker/image_picker.dart';
 // 🌎 Project imports:
 import '/core/app_export.dart';
 import '/gen/assets.gen.dart';
-import 'controller/_controller.dart';
-import 'models/_model.dart';
 
 class DashChatWithFriendsPage extends StatefulWidget {
   final String appId; // Sendbird application id
@@ -36,7 +39,8 @@ class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
       Get.put(DashChatWithFriendsController(DashChatWithFriendsModel().obs));
   late GroupChannel _channel;
   List<BaseMessage> _messages = [];
-
+  XFile? _image;
+  final ImagePicker picker = ImagePicker();
   void loadSendbird(
     String appId,
     String userId,
@@ -65,17 +69,32 @@ class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
     }
   }
 
+  Future getImage(ImageSource imageSource) async {
+    //pickedFile에 ImagePicker로 가져온 이미지가 담긴다.
+    final XFile? pickedFile = await picker.pickImage(source: imageSource);
+    if (pickedFile != null) {
+      setState(() {
+        _image = XFile(pickedFile.path); //가져온 이미지를 _image에 저장
+      });
+    }
+  }
+
   ChatUser asDashChatUser(User? user) {
     // If no Sendbird user, return an empty ChatUser object
     if (user == null) {
       return ChatUser(id: "", lastName: "", firstName: "", profileImage: "");
     }
-    // Sendbird user nicknames and profileUrls are optional and may be empty
+    TeamAccountModel model = Get.find<LoginWithIdAndPasswordController>()
+        .members
+        .firstWhere((it) => user.userId == it.accountId);
+    // print('model : $model');
+    // print(
+    //     'userId : ${user.userId} user.nickname : ${user.nickname} user.profileUrl : ${user.profileUrl}');
     return ChatUser(
-      id: user.userId,
+      id: model.accountId as String,
       lastName: '',
-      firstName: user.nickname,
-      profileImage: user.profileUrl ?? "",
+      firstName: model.nickname,
+      profileImage: model.profilePicture ?? "",
     );
   }
 
@@ -152,8 +171,78 @@ class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
               _messages.insert(0, sentMessage);
             });
           },
-          inputOptions: const InputOptions(
+          messageOptions: MessageOptions(
+            messageDecorationBuilder: (message, previousMessage, nextMessage) =>
+                BoxDecoration(
+              color: message.user.id ==
+                      Get.find<LoginWithIdAndPasswordController>()
+                          .currentUser
+                          .value
+                          .id
+                  ? Color.fromRGBO(255, 225, 66, 1)
+                  : Color.fromRGBO(164, 168, 175, 0.2),
+              borderRadius: BorderRadius.circular(15),
+            ),
+            // borderRadius: 18.0,
+            textColor: Color.fromRGBO(34, 34, 34, 1),
+            containerColor: Color.fromRGBO(164, 168, 175, 0.2),
+            currentUserTextColor: Color.fromRGBO(34, 34, 34, 1),
+            currentUserContainerColor: Color.fromRGBO(255, 225, 66, 1),
+            timeFontSize: 12,
+            // 너무 구려서 안쓰는게 나을듯...
+            showTime: false,
+            showOtherUsersName: true,
+            // userNameBuilder: (user) => Text(user.firstName as String),
+          ),
+          inputOptions: InputOptions(
             sendOnEnter: true,
+            alwaysShowSend: true,
+            // maxInputLength: 500,
+            sendButtonBuilder: (Function onSend) {
+              return IconButton(
+                icon: Icon(Icons.send),
+                onPressed: () {
+                  onSend();
+                },
+                color: Colors.black,
+                iconSize: 24,
+              );
+            },
+            leading: <Widget>[
+              IconButton(
+                icon: Icon(Icons.camera_alt, color: Colors.black),
+                onPressed: () async {
+                  // TODO
+                  // 추가 구현 필요.
+                  await getImage(ImageSource.gallery);
+                },
+              )
+            ],
+            cursorStyle: CursorStyle(color: Colors.black),
+            // 바깥 부분...
+            // inputToolbarStyle: BoxDecoration(
+            //   borderRadius: BorderRadius.all(Radius.circular(20)),
+            //   color: Colors.red,
+            // ),
+            inputDecoration: InputDecoration(
+              // leading 을 추가함으로써 필요없어짐.
+              // icon: Icon(Icons.camera_alt),
+              // iconColor: Colors.black,
+              fillColor: Color.fromRGBO(164, 168, 175, 0.2),
+              filled: true,
+              hintText: '채팅을 입력해주세요😃',
+              hintStyle: TextStyle(
+                  color: Color.fromRGBO(145, 150, 157, 1), fontSize: 15),
+              // helperText: 'Helper Text',
+              // counterText: '0 characters',
+              constraints: BoxConstraints.expand(height: getVerticalSize(36)),
+              contentPadding: EdgeInsets.symmetric(horizontal: 20),
+              border: OutlineInputBorder(
+                borderRadius: const BorderRadius.all(Radius.circular(15.0)),
+                borderSide: BorderSide.none,
+                gapPadding: 0,
+              ),
+            ),
           ),
           messageListOptions: MessageListOptions(
             onLoadEarlier: () async {

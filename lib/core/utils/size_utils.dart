@@ -6,18 +6,30 @@ import 'package:flutter/material.dart';
 MediaQueryData mediaQueryData =
     MediaQueryData.fromView(PlatformDispatcher.instance.views.first);
 
-// These are the Viewport values of your Figma Design.
-// These are used in the code as a reference to create your UI Responsively.
+/// SingletonFlutterView는 곧 지원될 다중 뷰 및 다중 창에 대한 Flutter의 지원을 준비하기 위해 더 이상 사용되지 않습니다.
+/// [BuildContext]를 사용할 수 있는 경우, [View.of]를 통해 해당 컨텍스트와 연결된 현재 [FlutterView]를 조회하세요.
+/// [window] 프로퍼티에서 마이그레이션하려면 [View.of]를 [BuildContext]와 함께 사용하는 것이 좋습니다.
+/// [FlutterView]를 조회할 수 있는 컨텍스트가 없는 경우, 이 위젯바인딩에 의해 노출된 [platformDispatcher]를 플랫폼별 기능에 직접 사용할 수 있습니다.
+/// @Deprecated(
+///    '컨텍스트에서 `View.of(buildContext)`를 통해 현재 `FlutterView`를 조회하거나 대신 `PlatformDispatcher`를 직접 참조하세요.'
+///    '이 기능은 v3.7.0-32.0.pre 이후부터 멀티뷰 지원을 위해 더 이상 사용되지 않습니다.'
+///  )
+var implicitView = WidgetsBinding.instance.platformDispatcher.implicitView;
+Size size = implicitView!.physicalSize / implicitView!.devicePixelRatio;
+
+/// 주의! 이 값들이 정적 UI를 빌드하는 데 사용되는 정적 값이라고 생각하면 안 됩니다.
+/// 이들은 피그마 디자인의 뷰포트 값입니다.
+/// 코드에서 UI를 반응형으로 만들기 위한 참조로 사용됩니다.
 const num FIGMA_DESIGN_WIDTH = 360;
 const num FIGMA_DESIGN_HEIGHT = 760;
 const num FIGMA_DESIGN_STATUS_BAR = 47;
 
-/// This method is used to get device viewport width.
+/// 이 메서드는 디바이스 뷰포트 너비를 가져오는 데 사용됩니다.
 get _width {
   return mediaQueryData.size.width;
 }
 
-/// This method is used to get device viewport height.
+/// 이 메서드는 디바이스 뷰포트 높이를 가져오는 데 사용됩니다.
 get _height {
   num statusBar = mediaQueryData.viewPadding.top;
   num bottomBar = mediaQueryData.viewPadding.bottom;
@@ -25,17 +37,17 @@ get _height {
   return screenHeight;
 }
 
-/// This method is used to set padding/margin (for the left and Right side) & width of the screen or widget according to the Viewport width.
+/// 이 메서드는 뷰포트 너비에 따라 화면 또는 위젯의 패딩/여백(왼쪽 및 오른쪽) 및 너비를 설정하는 데 사용됩니다.
 double getHorizontalSize(double px) {
   return ((px * _width) / FIGMA_DESIGN_WIDTH);
 }
 
-/// This method is used to set padding/margin (for the top and bottom side) & height of the screen or widget according to the Viewport height.
+/// 이 메서드는 뷰포트 높이에 따라 화면 또는 위젯의 패딩/여백(위쪽 및 아래쪽) 및 높이를 설정하는 데 사용됩니다.
 double getVerticalSize(double px) {
   return ((px * _height) / (FIGMA_DESIGN_HEIGHT - FIGMA_DESIGN_STATUS_BAR));
 }
 
-/// This method is used to set smallest px in image height and width
+/// 이 메서드는 이미지 높이와 너비의 최소 픽셀을 설정하는 데 사용됩니다.
 double getSize(double px) {
   var height = getVerticalSize(px);
   var width = getHorizontalSize(px);
@@ -46,12 +58,12 @@ double getSize(double px) {
   }
 }
 
-/// This method is used to set text font size according to Viewport
+/// 이 메서드는 뷰포트에 따라 텍스트 폰트 크기를 설정하는 데 사용됩니다.
 double getFontSize(double px) {
   return getSize(px);
 }
 
-/// This method is used to set padding responsively
+/// 이 메서드는 패딩을 반응형으로 설정하는 데 사용됩니다.
 EdgeInsets getPadding({
   double? all,
   double? left,
@@ -68,7 +80,7 @@ EdgeInsets getPadding({
   );
 }
 
-/// This method is used to set margin responsively
+/// 이 메서드는 여백을 반응형으로 설정하는 데 사용됩니다.
 EdgeInsets getMargin({
   double? all,
   double? left,
@@ -85,7 +97,7 @@ EdgeInsets getMargin({
   );
 }
 
-/// This method is used to get padding or margin responsively
+/// 이 방법은 패딩이나 여백을 반응형으로 가져오는 데 사용됩니다.
 EdgeInsets getMarginOrPadding({
   double? all,
   double? left,

@@ -4,8 +4,9 @@ import 'package:intl/intl.dart';
 
 const String dateTimeFormatPattern = 'dd/MM/yyyy';
 
+/// `DateTime` 클래스에서 `format`이라는 확장 메서드를 정의합니다.
 extension DateTimeExtension on DateTime {
-  /// Return a string representing [date] formatted according to our locale
+  /// 로캘에 따라 형식이 지정된 [날짜]를 나타내는 문자열을 반환합니다.
   String format([
     String pattern = dateTimeFormatPattern,
     String? locale,

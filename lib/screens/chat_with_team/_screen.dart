@@ -108,9 +108,10 @@ class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
     // print(response);
     BuiltList<TeamAccountConnectionResponse>? list = response.data;
     if (list != null && list.isNotEmpty) {
-      list
-          .mapMany((it) => it.account)
-          .forEach((it) => controller.members.add(it));
+      // list
+      //     .mapMany((it) => it.account)
+      //     .forEach((it) => controller.members.add(it));
+      list.first.account?.forEach((it) => !controller.members.contains(it)? controller.members.add(it): null);
     }
     print('members : ${controller.members.length}');
     print('members : ${controller.members.toString()}');

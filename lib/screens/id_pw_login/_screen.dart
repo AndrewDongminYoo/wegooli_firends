@@ -53,9 +53,7 @@ class LoginWithIdAndPassword
     // id, pwd 확인해서 로그인 성공하면 true 아니면 false.
   }
 
-  bool isAuthenticated() {
-    return controller.isAuthenticated.value;
-  }
+  bool get isAuthenticated => controller.isAuthenticated.value;
 
   @override
   Widget build(BuildContext context) {
@@ -172,9 +170,9 @@ class LoginWithIdAndPassword
                     ),
                   ))),
                   buttonTextStyle: CustomTextStyles.titleMedium18,
-                  onTap: () {
-                    this.authorize();
-                    if (this.isAuthenticated()) {
+                  onTap: () async {
+                    await authorize();
+                    if (isAuthenticated) {
                       onTapTeamScheduleShare();
                     } else {
                       controller.usernameController.text = "";

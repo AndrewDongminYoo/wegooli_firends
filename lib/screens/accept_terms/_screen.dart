@@ -13,7 +13,7 @@ import 'widgets/next_button.dart';
 class AcceptTerms extends GetWidget<AcceptTermsController> {
   const AcceptTerms({Key? key}) : super(key: key);
 
-  void checkAll(value) {
+  void checkAll(bool value) {
     controller.isAcceptedTerm1.value = value;
     controller.isAcceptedTerm2.value = value;
     controller.isAcceptedTerm3.value = value;

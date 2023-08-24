@@ -64,7 +64,7 @@ class RegisteredCreditCardList
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Obx(() => CustomRadioButton(
-                                    text: "신한 1210 / 법인", // FIXME
+                                    text: "신한 1210 / 법인", // FIXME 임시 텍스트
                                     iconSize: getHorizontalSize(20),
                                     value: "신한 1210 / 법인",
                                     groupValue: controller.radioGroup1.value,

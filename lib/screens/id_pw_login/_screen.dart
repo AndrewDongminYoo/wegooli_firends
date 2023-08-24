@@ -37,8 +37,7 @@ class LoginWithIdAndPassword
     final response = await api.selectTeamAccountList(extra: extra);
     BuiltList<TeamAccountConnectionResponse>? teams = response.data;
     if (teams != null && teams.isNotEmpty) {
-      // TODO
-      // 현재는 Team이 1개만 존재한다고 가정하기 때문에 첫번째 Team 정보로만 연결한다.
+      // TODO: 현재는 Team이 1개만 존재한다고 가정하기 때문에 첫번째 Team 정보로만 연결한다.
       teams.first.account?.forEach((it) =>
           !controller.members.contains(it) ? controller.members.add(it) : null);
     }

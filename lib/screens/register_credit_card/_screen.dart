@@ -13,8 +13,7 @@ class RegisterCreditCard extends GetWidget<RegisterCreditCardController> {
   const RegisterCreditCard({Key? key}) : super(key: key);
 
   bool isValid() {
-    // TODO
-    // 카드 정보가 valid하면 true, 아니면 false.
+    // TODO: 카드 정보가 valid하면 true, 아니면 false.
     return true;
   }
 

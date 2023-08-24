@@ -12,8 +12,7 @@ import 'controller/_controller.dart';
 class RegisterLicense extends GetWidget<RegisterLicensePageController> {
   const RegisterLicense({Key? key}) : super(key: key);
   bool isValid() {
-    // TODO
-    // 면허증이 valid하면 true, 아니면 false.
+    // TODO: 면허증이 valid하면 true, 아니면 false.
     return true;
   }
 

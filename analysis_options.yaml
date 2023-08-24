@@ -54,21 +54,21 @@ linter:
     implicit_reopen: true # [🧪 ,🔧] 암시적으로 클래스를 다시 열지 마세요.
     invalid_case_patterns: true # [🧪 ,🔧] Dart 3.0에서 유효한 사용 case 표현식을 사용합니다.
     invariant_booleans: true # [❕] 조건은 무조건 "true" 또는 "false"로 평가해서는 안 됩니다.
-    iterable_contains_unrelated_type: false # [❕] 관련 없는 타입의 참조와 함께 "Iterable.contains"를 호출하는 경우.
-    list_remove_unrelated_type: false # [❕] 관련 없는 타입의 참조와 함께 "remove"를 호출합니다.
+    iterable_contains_unrelated_type: true # [❕] 관련 없는 타입의 참조와 함께 "Iterable.contains"를 호출하는 경우.
+    list_remove_unrelated_type: true # [❕] 관련 없는 타입의 참조와 함께 "remove"를 호출합니다.
     literal_only_boolean_expressions: true # 리터럴로만 구성된 부울 표현식.
     no_adjacent_strings_in_list: true # 목록에 인접한 문자열을 사용하지 마세요.
     no_duplicate_case_values: true # [🔰,🔵,🦩,🔧] 같은 값의 케이스를 두 개 이상 사용하지 않습니다.
     no_logic_in_create_state: true # [🦩] createState에 로직을 넣지 않습니다.
-    no_self_assignments: false # 변수를 self에 할당하지 마세요.
-    no_wildcard_variable_uses: false # 와일드카드 파라미터나 변수를 사용하지 마세요.
+    no_self_assignments: true # 변수를 self에 할당하지 마세요.
+    no_wildcard_variable_uses: true # 와일드카드 파라미터나 변수를 사용하지 마세요.
     prefer_relative_imports: true # [🔧] "lib/"에 있는 파일에 대한 상대 임포트를 선호합니다.
     prefer_void_to_null: true # [🔵,🦩,🔧] 무효화를 원하지 않는 것이 확실하지 않는 한 Null 타입을 사용하지 마세요.
     test_types_in_equals: true # 연산자 ==(객체 기타)에서 타입 인수를 테스트합니다.
     throw_in_finally: true # finally 블록에서 "throw"를 사용하지 마세요.
     unnecessary_statements: true # 불필요한 문을 사용하지 마세요.
     unrelated_type_equality_checks: true # [🔰,🔵,🦩] 관련 없는 타입의 참조와 함께 등호 연산자 "==" 호출.
-    unsafe_html: false # 안전하지 않은 HTML API를 피하세요.
+    unsafe_html: true # 안전하지 않은 HTML API를 피하세요.
     use_build_context_synchronously: true # [🧪 ,🦩] 비동기 갭에 걸쳐 빌드 컨텍스트를 사용하지 마세요.
     use_key_in_widget_constructors: true # [🦩,🔧] 위젯 생성자에서 키를 사용합니다.
     valid_regexps: true # [🔰,🔵,🦩] 유효한 정규식 구문을 사용합니다.
@@ -84,7 +84,7 @@ linter:
     avoid_annotating_with_dynamic: true # [🔧] 불필요한 dynamic 타입 어노테이션을 달지 마세요.
     avoid_as: true # [❕] 타입캐스팅을 위해 "as"를 사용하지 마세요.
     avoid_bool_literals_in_conditional_expressions: false # 조건식 표현식에 부울 리터럴을 사용하지 마세요.
-    avoid_catches_without_on_clauses: false # 온 절 없이 캐치를 사용하지 마세요.
+    avoid_catches_without_on_clauses: false # on 절 없이 캐치를 사용하지 마세요.
     avoid_catching_errors: true # 오류나 이를 구현하는 타입을 명시적으로 캐치하지 마세요.
     avoid_classes_with_only_static_members: false # 정적 멤버만 포함하는 클래스를 정의하지 마세요.
     avoid_double_and_int_checks: false # 이중 및 정수 검사를 피하세요.
@@ -98,7 +98,7 @@ linter:
     avoid_function_literals_in_foreach_calls: true # [🔵,🦩,🔧] 함수 리터럴에 "forEach"를 사용하지 마세요.
     avoid_implementing_value_types: false # 오버라이딩 "=="를 오버라이딩하는 클래스를 구현하지 마세요.
     avoid_init_to_null: true # [🔵,🦩,🔧] 변수를 명시적으로 널로 초기화하지 마세요.
-    avoid_js_rounded_ints: false # 자바스크립트 반올림 정수를 피하세요.
+    avoid_js_rounded_ints: true # 자바스크립트 반올림 정수를 피하세요.
     avoid_multiple_declarations_per_line: true # [🔧] 한 줄에 여러 변수를 선언하지 마세요.
     avoid_null_checks_in_equality_operators: true # [🔵,🦩,🔧] 사용자 정의 == 연산자에서 "null"을 확인하지 마세요.
     avoid_positional_boolean_parameters: false # 위치 부울 파라미터를 사용하지 마세요.
@@ -135,7 +135,7 @@ linter:
     eol_at_end_of_file: true # [🔧] 파일 끝에 줄 바꿈 한 줄을 넣습니다.
     exhaustive_cases: true # [🔵,🦩,🔧] 열거형 클래스의 모든 상수에 대해 대/소문자 절을 정의합니다.
     file_names: true # [🔰,🔵,🦩] "lowercase_with_underscores"를 사용하여 소스 파일 이름을 지정합니다.
-    flutter_style_todos: false # Flutter TODO 형식을 사용합니다: // TODO(메시지 작성자 이름): 메시지, https://URL-to-issue.
+    flutter_style_todos: true # Flutter TODO 형식을 사용합니다: // TODO(메시지 작성자 이름): 메시지, https://URL-to-issue.
     implementation_imports: true # [🔵,🦩] 다른 패키지에서 구현 파일을 가져오지 마세요.
     implicit_call_tearoffs: true # [🔰,🔵,🦩,🔧] 객체를 함수로 사용할 때 "call" 메서드를 명시적으로 분리합니다.
     join_return_with_assignment: true # 가능하면 할당과 함께 반환 문을 조인합니다.
@@ -151,7 +151,7 @@ linter:
     no_leading_underscores_for_library_prefixes: true # [🔵,🦩,🔧] 라이브러리 접두사에 선행 언더스코어를 사용하지 마세요.
     no_leading_underscores_for_local_identifiers: true # [🔵,🦩,🔧] 로컬 식별자에 선행 밑줄을 사용하지 마세요.
     no_literal_bool_comparisons: true # [🔧] 부울을 부울 리터럴과 비교하지 마세요.
-    no_runtimeType_toString: false # 런타임 타입에서 toString()을 호출하지 마세요.
+    no_runtimeType_toString: true # 런타임 타입에서 toString()을 호출하지 마세요.
     non_constant_identifier_names: true # [🔰,🔵,🦩,🔧] 소문자를 사용하여 상수가 아닌 식별자의 이름을 지정합니다.
     noop_primitive_operations: true # [🔧] 원시 연산자를 사용하지 않습니다.
     null_check_on_nullable_type_parameter: true # [🔰,🔵,🦩,🔧] 잠재적인 널 가능 타입 파라미터에 대해 널 검사를 사용하지 마세요.
@@ -247,7 +247,7 @@ linter:
     use_enums: true # [🔧] 열거형처럼 동작하는 클래스 대신 열거형을 사용합니다.
     use_full_hex_values_for_flutter_colors: true # [🦩,🔧] 색을 인스턴스화할 때 8자리 16진수(0xFFFFFFFF)를 선호합니다.
     use_function_type_syntax_for_parameters: true # [🔵,🦩,🔧] 파라미터에는 일반 함수형 구문을 사용합니다.
-    use_if_null_to_convert_nulls_to_bools: false # if-null 연산자를 사용하여 널을 부울로 변환합니다.
+    use_if_null_to_convert_nulls_to_bools: true # if-null 연산자를 사용하여 널을 부울로 변환합니다.
     use_is_even_rather_than_modulo: true # "initValue % 2"의 결과를 확인하는 대신 "intValue.isOdd/isEven"을 선호합니다.
     use_late_for_private_fields_and_variables: true # [🧪 ] 널링할 수 없는 타입의 private 멤버에는 late를 사용합니다.
     use_named_constants: true # 미리 정의된 명명된 상수를 사용합니다.
@@ -270,10 +270,15 @@ linter:
 
 analyzer:
   language:
+    # strict-casts: true
+    # strict-raw-types: true
     unused_import: true
-  exclude:
+  errors:
+    # allow self-reference to deprecated members (we do this because otherwise we have
+    # to annotate every member in every test, assert, etc, when we deprecate something)
+    deprecated_member_use_from_same_package: ignore
+  exclude: # DIFFERENT FROM FLUTTER/FLUTTER
+    # Fixture depends on dart:ui and raises false positives.
     - lib/gen/*.dart
     - lib/data/**/*.dart
     - test/*.dart
-  errors:
-    deprecated_member_use_from_same_package: ignore

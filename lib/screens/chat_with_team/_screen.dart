@@ -71,7 +71,7 @@ class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
     }
   }
 
-  Future getImage(ImageSource imageSource) async {
+  Future<void> getImage(ImageSource imageSource) async {
     //pickedFile에 ImagePicker로 가져온 이미지가 담긴다.
     final XFile? pickedFile = await picker.pickImage(source: imageSource);
     if (pickedFile != null) {
@@ -214,8 +214,7 @@ class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
               IconButton(
                 icon: Icon(Icons.camera_alt, color: Colors.black),
                 onPressed: () async {
-                  // TODO
-                  // 추가 구현 필요.
+                  // TODO 추가 구현 필요.
                   await getImage(ImageSource.gallery);
                 },
               )

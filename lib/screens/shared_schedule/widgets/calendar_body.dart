@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
-import 'package:get/get.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:table_calendar/table_calendar.dart';
 
@@ -19,9 +18,11 @@ class CalendarBody extends StatefulWidget {
   State<CalendarBody> createState() => _CalendarBodyState();
 }
 
+final today = DateUtils.dateOnly(DateTime.now());
+
 class _CalendarBodyState extends State<CalendarBody> {
   late List<MaterialColor> colors;
-  late final RxList<Event> _selectedEvents;
+  // late final RxList<Event> _selectedEvents;
   CalendarFormat _calendarFormat = CalendarFormat.month;
   RangeSelectionMode _rangeSelectionMode = RangeSelectionMode
       .toggledOff; // Can be toggled on/off by long pressing a date
@@ -37,10 +38,27 @@ class _CalendarBodyState extends State<CalendarBody> {
             fontWeight: FontWeight.bold,
             fontSize: 14),
       );
+  String _getValueText(
+    List<DateTime?> values,
+  ) {
+    values =
+        values.map((e) => e != null ? DateUtils.dateOnly(e) : null).toList();
+    var valueText = (values.isNotEmpty ? values[0] : null)
+        .toString()
+        .replaceAll('00:00:00.000', '');
+    valueText = values.isNotEmpty
+        ? values
+            .map((v) => v.toString().replaceAll('00:00:00.000', ''))
+            .join(', ')
+        : 'null';
+    return valueText;
+  }
 
-  List<Event> _getEventsForDay(DateTime day) {
-    // Implementation example
-    return kEvents[day] ?? [];
+  List<DateTime> _rangeDatePickerValueWithDefaultValue(DateTime day) {
+    return [
+      DateTime(1999, 5, 6),
+      DateTime(1999, 5, 21),
+    ];
   }
 
   @override
@@ -48,28 +66,13 @@ class _CalendarBodyState extends State<CalendarBody> {
     super.initState();
 
     _selectedDay = _focusedDay;
-    _selectedEvents = _getEventsForDay(_selectedDay!).obs;
+    // _selectedEvents = _getEventsForDay(_selectedDay!).obs;
   }
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
     initializeDateFormatting(Localizations.localeOf(context).languageCode);
-  }
-
-  @override
-  void dispose() {
-    _selectedEvents.close();
-    super.dispose();
-  }
-
-  List<Event> _getEventsForRange(DateTime start, DateTime end) {
-    // Implementation example
-    final days = daysInRange(start, end);
-
-    return [
-      for (final d in days) ..._getEventsForDay(d),
-    ];
   }
 
   void _onDaySelected(DateTime selectedDay, DateTime focusedDay) {
@@ -81,8 +84,7 @@ class _CalendarBodyState extends State<CalendarBody> {
         _rangeEnd = null;
         _rangeSelectionMode = RangeSelectionMode.toggledOff;
       });
-
-      _selectedEvents.value = _getEventsForDay(selectedDay);
+      // _selectedEvents.value = _getEventsForDay(selectedDay);
     }
   }
 
@@ -97,12 +99,8 @@ class _CalendarBodyState extends State<CalendarBody> {
 
     // `start` or `end` could be null
     if (start != null && end != null) {
-      _selectedEvents.value = _getEventsForRange(start, end);
     } else if (start != null) {
-      _selectedEvents.value = _getEventsForDay(start);
-    } else if (end != null) {
-      _selectedEvents.value = _getEventsForDay(end);
-    }
+    } else if (end != null) {}
   }
 
   @override
@@ -116,10 +114,11 @@ class _CalendarBodyState extends State<CalendarBody> {
         ),
         child: Align(
           alignment: Alignment.center,
-          child: TableCalendar<Event>(
+          child: TableCalendar<DateTime>(
+            calendarBuilders: builders,
             calendarFormat: _calendarFormat,
             daysOfWeekHeight: 30,
-            eventLoader: _getEventsForDay,
+            eventLoader: _rangeDatePickerValueWithDefaultValue,
             firstDay: kFirstDay,
             focusedDay: _focusedDay,
             lastDay: kLastDay,
@@ -162,7 +161,7 @@ class _CalendarBodyState extends State<CalendarBody> {
       shape: BoxShape.circle,
     ),
     selectedDecoration: BoxDecoration(
-      color: Colors.deepPurple.shade100,
+      color: Colors.deepPurple.shade200,
       shape: BoxShape.circle,
     ),
     selectedTextStyle: TextStyle(
@@ -208,13 +207,26 @@ class _CalendarBodyState extends State<CalendarBody> {
         titleTextStyle: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
       );
 
-  CalendarBuilders builders = CalendarBuilders(
+  CalendarBuilders<DateTime> builders = CalendarBuilders(
+    singleMarkerBuilder: (ctx, day, events) {
+      return Container(
+        width: 3,
+        height: 3,
+        margin: EdgeInsets.only(bottom: 10),
+        alignment: Alignment.topCenter,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: Colors.amber,
+        ),
+      );
+    },
     rangeHighlightBuilder: (context, date, events) {
       return Container(
         margin: const EdgeInsets.symmetric(horizontal: 1.0),
         decoration: BoxDecoration(
           color: Colors.deepPurple.withOpacity(0.3),
-          borderRadius: BorderRadius.circular(10),
+          shape: BoxShape.circle,
+          // borderRadius: BorderRadius.circular(10),
         ),
       );
     },
@@ -223,7 +235,8 @@ class _CalendarBodyState extends State<CalendarBody> {
         margin: const EdgeInsets.symmetric(horizontal: 1.0),
         decoration: BoxDecoration(
           color: Colors.deepPurple.withOpacity(0.3),
-          borderRadius: BorderRadius.horizontal(left: Radius.circular(10)),
+          shape: BoxShape.circle,
+          // borderRadius: BorderRadius.horizontal(left: Radius.circular(10)),
         ),
       );
     },
@@ -232,7 +245,8 @@ class _CalendarBodyState extends State<CalendarBody> {
         margin: const EdgeInsets.symmetric(horizontal: 1.0),
         decoration: BoxDecoration(
           color: Colors.deepPurple.withOpacity(0.3),
-          borderRadius: BorderRadius.horizontal(right: Radius.circular(10)),
+          shape: BoxShape.circle,
+          // borderRadius: BorderRadius.horizontal(right: Radius.circular(10)),
         ),
       );
     },

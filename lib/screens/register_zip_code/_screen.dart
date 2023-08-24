@@ -14,8 +14,7 @@ class RegisterZipCode extends GetWidget<RegisterZipCodeController> {
   const RegisterZipCode({Key? key}) : super(key: key);
 
   bool isValid() {
-    // TODO
-    // 집 주소 필수 입력, 아이디 비번 입력 누락.
+    // TODO: 집 주소 필수 입력, 아이디 비번 입력 누락.
     return true;
   }
 

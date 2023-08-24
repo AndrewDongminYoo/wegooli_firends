@@ -13,9 +13,11 @@ import '../models/_model.dart';
 /// current validatePhoneAuthModelObj
 class ValidatePhoneController extends GetxController {
   TextEditingController namePromptController = TextEditingController();
-  TextEditingController ageFormatController = TextEditingController();
-  TextEditingController languageController = TextEditingController();
+  TextEditingController age1FormatController = TextEditingController();
+  TextEditingController age2FormatController = TextEditingController();
+  TextEditingController codeController = TextEditingController();
   TextEditingController phoneProviderController = TextEditingController();
+  TextEditingController phoneNumberController = TextEditingController();
 
   Rx<LoginValidatePhoneAuthModel> validatePhoneAuthModelObj =
       LoginValidatePhoneAuthModel().obs;
@@ -29,8 +31,10 @@ class ValidatePhoneController extends GetxController {
   void onClose() {
     super.onClose();
     namePromptController.dispose();
-    ageFormatController.dispose();
-    languageController.dispose();
+    age1FormatController.dispose();
+    age2FormatController.dispose();
+    codeController.dispose();
     phoneProviderController.dispose();
+    phoneNumberController.dispose();
   }
 }

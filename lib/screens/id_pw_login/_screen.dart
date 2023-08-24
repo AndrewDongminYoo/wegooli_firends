@@ -252,7 +252,11 @@ class LoginWithIdAndPassword
                   ))),
                   buttonTextStyle: CustomTextStyles.titleMedium18,
                   onTap: () {
-                    onTapSignUpAcceptTerms();
+                    // 해당 탭은 dialog로 변경 예정
+                    // onTapSignUpAcceptTerms();
+                    Get.toNamed(
+                      AppRoutes.validatePhone,
+                    );
                   }),
             ],
           ),

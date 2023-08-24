@@ -17,7 +17,6 @@ class ValidatePhoneCompleteButton extends GetWidget<ValidatePhoneController> {
   Widget build(BuildContext context) {
     return Container(
         margin: getMargin(left: 16, right: 16, bottom: 29),
-        decoration: AppDecoration.shadow,
         child: CustomElevatedButton(
           text: "인증 완료",
           buttonStyle: CustomButtonStyles.fillPrimary.copyWith(

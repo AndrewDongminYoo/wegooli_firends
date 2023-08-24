@@ -7,12 +7,9 @@
 // ignore_for_file: type=lint
 // ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal,deprecated_member_use
 
-// 🐦 Flutter imports:
-import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-
-// 📦 Package imports:
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
 
 class $AssetsImagesGen {
@@ -127,6 +124,9 @@ class $AssetsSvgGen {
   /// File path: assets/svg/img_arrow_left.svg
   SvgGenImage get imgArrowLeft => const SvgGenImage('assets/svg/img_arrow_left.svg');
 
+  /// File path: assets/svg/img_arrow_right.svg
+  SvgGenImage get imgArrowRight => const SvgGenImage('assets/svg/img_arrow_right.svg');
+
   /// File path: assets/svg/img_arrow_up.svg
   SvgGenImage get imgArrowUp => const SvgGenImage('assets/svg/img_arrow_up.svg');
 
@@ -186,6 +186,9 @@ class $AssetsSvgGen {
 
   /// File path: assets/svg/img_eye_crossed_out.svg
   SvgGenImage get imgEyeCrossedOut => const SvgGenImage('assets/svg/img_eye_crossed_out.svg');
+  
+  /// File path: assets/svg/img_eye_opened.svg
+  SvgGenImage get imgEyeOpened => const SvgGenImage('assets/svg/img_eye_opened.svg');
 
   /// File path: assets/svg/img_friends_typo.svg
   SvgGenImage get imgFriendsTypo => const SvgGenImage('assets/svg/img_friends_typo.svg');
@@ -262,6 +265,7 @@ class $AssetsSvgGen {
   /// List of all assets
   List<SvgGenImage> get values => [
         imgArrowLeft,
+        imgArrowRight,
         imgArrowUp,
         imgCal,
         imgCalGray500,

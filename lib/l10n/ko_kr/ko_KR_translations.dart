@@ -90,7 +90,7 @@ final Map<String, String> koKR = {
   "msg8": "저는 사용 할 필요 없습니다.",
   "msg9": "저는 다음주 주말에 쓸거 같아요",
   "msg_2023_8_4": "2023년 8월 4일 이후에 구독이 해지됩니다.",
-  "msg_26": "만 26세 미만은 가입이 제한됩니다.",
+  "msg_26": "· 만 26세 미만은 가입이 제한됩니다.",
   "msg_car_status_information": "차량 상태 정보",
   "msg_login_register_credit_card": "등록 신용카드",
   "msg_login_register_license_page": "등록 라이센스 페이지",

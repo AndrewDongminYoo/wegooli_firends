@@ -310,7 +310,7 @@ class RegisterLicense extends GetWidget<RegisterLicensePageController> {
                     ])),
             bottomNavigationBar: Container(
                 margin: getMargin(left: 15, right: 17, bottom: 29),
-                decoration: AppDecoration.shadow,
+                // decoration: AppDecoration.shadow,
                 child: CustomElevatedButton(
                   text: "lbl35".tr,
                   buttonStyle: CustomButtonStyles.fillPrimary.copyWith(

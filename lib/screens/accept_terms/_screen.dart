@@ -72,7 +72,7 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                                 controller.isAcceptedTerm1.value = value;
                               })),
                           CustomImageView(
-                              svgPath: Assets.svg.imgArrowLeft.path,
+                              svgPath: Assets.svg.imgArrowRight.path,
                               height: getSize(18),
                               width: getSize(18),
                               margin: getMargin(top: 1, bottom: 2))
@@ -91,7 +91,7 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                                 controller.isAcceptedTerm2.value = value;
                               })),
                           CustomImageView(
-                              svgPath: Assets.svg.imgArrowLeft.path,
+                              svgPath: Assets.svg.imgArrowRight.path,
                               height: getSize(18),
                               width: getSize(18),
                               margin: getMargin(top: 1, bottom: 2))
@@ -110,7 +110,7 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                                 controller.isAcceptedTerm3.value = value;
                               })),
                           CustomImageView(
-                              svgPath: Assets.svg.imgArrowLeft.path,
+                              svgPath: Assets.svg.imgArrowRight.path,
                               height: getSize(18),
                               width: getSize(18),
                               margin: getMargin(top: 1, bottom: 2))
@@ -129,7 +129,7 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                                 controller.isAcceptedTerm4.value = value;
                               })),
                           CustomImageView(
-                              svgPath: Assets.svg.imgArrowLeft.path,
+                              svgPath: Assets.svg.imgArrowRight.path,
                               height: getSize(18),
                               width: getSize(18),
                               margin: getMargin(top: 1, bottom: 2))
@@ -147,7 +147,7 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                                 controller.isAcceptedTerm5.value = value;
                               }))),
                       CustomImageView(
-                          svgPath: Assets.svg.imgArrowLeft.path,
+                          svgPath: Assets.svg.imgArrowRight.path,
                           height: getSize(18),
                           width: getSize(18),
                           margin: getMargin(left: 10, top: 1, bottom: 2))
@@ -165,7 +165,7 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                                 controller.isAcceptedTerm6.value = value;
                               }))),
                       CustomImageView(
-                          svgPath: Assets.svg.imgArrowLeft.path,
+                          svgPath: Assets.svg.imgArrowRight.path,
                           height: getSize(18),
                           width: getSize(18),
                           margin: getMargin(left: 40, top: 1, bottom: 2))

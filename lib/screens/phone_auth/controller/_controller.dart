@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 // 📦 Package imports:
 import 'package:get/get.dart';
+import 'package:wegooli_friends/core/app_export.dart';
 
 // 🌎 Project imports:
 import '../models/_model.dart';
@@ -13,13 +14,14 @@ import '../models/_model.dart';
 /// current validatePhoneAuthModelObj
 class ValidatePhoneController extends GetxController {
   TextEditingController namePromptController = TextEditingController();
-  TextEditingController ageFormatController = TextEditingController();
-  TextEditingController languageController = TextEditingController();
-  TextEditingController phoneProviderController = TextEditingController();
+  TextEditingController age1FormatController = TextEditingController();
+  TextEditingController age2FormatController = TextEditingController();
+  TextEditingController codeController = TextEditingController();
+  TextEditingController phoneNumberController = TextEditingController();
 
-  Rx<LoginValidatePhoneAuthModel> validatePhoneAuthModelObj =
-      LoginValidatePhoneAuthModel().obs;
+  Rx<PhoneProviderModel> phoneProviderModelObj = PhoneProviderModel().obs;
 
+  SelectionPopupModel? selectedDropDownValue;
   bool get isValidatedPhone {
     // TODO: 휴대폰 인증 로직이 필요합니다.
     return true;
@@ -29,8 +31,19 @@ class ValidatePhoneController extends GetxController {
   void onClose() {
     super.onClose();
     namePromptController.dispose();
-    ageFormatController.dispose();
-    languageController.dispose();
-    phoneProviderController.dispose();
+    age1FormatController.dispose();
+    age2FormatController.dispose();
+    codeController.dispose();
+    phoneNumberController.dispose();
+  }
+
+  onSelected(dynamic value) {
+    for (var element in phoneProviderModelObj.value.dropdownItemList.value) {
+      element.isSelected = false;
+      if (element.id == value.id) {
+        element.isSelected = true;
+      }
+    }
+    phoneProviderModelObj.value.dropdownItemList.refresh();
   }
 }

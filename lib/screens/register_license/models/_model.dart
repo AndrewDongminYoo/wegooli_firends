@@ -10,32 +10,28 @@ class RegisterLicensePageModel {
   Rx<List<SelectionPopupModel>> dropdownItemList = Rx([
     SelectionPopupModel(
       id: 1,
-      title: "Item One",
+      title: "1종 보통",
       isSelected: true,
     ),
     SelectionPopupModel(
       id: 2,
-      title: "Item Two",
+      title: "2종 보통",
     ),
-    SelectionPopupModel(
-      id: 3,
-      title: "Item Three",
-    )
   ]);
 
   Rx<List<SelectionPopupModel>> dropdownItemList1 = Rx([
     SelectionPopupModel(
       id: 1,
-      title: "Item One",
+      title: "서울",
       isSelected: true,
     ),
     SelectionPopupModel(
       id: 2,
-      title: "Item Two",
+      title: "인천",
     ),
     SelectionPopupModel(
       id: 3,
-      title: "Item Three",
+      title: "...",
     )
   ]);
 

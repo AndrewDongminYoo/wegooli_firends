@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 // 📦 Package imports:
 import 'package:get/get.dart';
+import 'package:wegooli_friends/screens/phone_auth/controller/_controller.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
@@ -48,11 +49,29 @@ class RegisterCreditCard extends GetWidget<RegisterCreditCardController> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Text("lbl38".tr,
-                                overflow: TextOverflow.ellipsis,
-                                textAlign: TextAlign.left,
-                                style: theme.textTheme.titleMedium!.copyWith(
-                                    letterSpacing: getHorizontalSize(0.03))),
+                            Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                      padding: getPadding(top: 2),
+                                      child: Text("lbl38".tr,
+                                          overflow: TextOverflow.ellipsis,
+                                          textAlign: TextAlign.left,
+                                          style: theme.textTheme.titleMedium!
+                                              .copyWith(
+                                                  letterSpacing:
+                                                      getHorizontalSize(
+                                                          0.03)))),
+                                  Padding(
+                                      padding: getPadding(left: 5, bottom: 5),
+                                      child: Text("*",
+                                          overflow: TextOverflow.ellipsis,
+                                          textAlign: TextAlign.left,
+                                          style: theme.textTheme.titleSmall!
+                                              .copyWith(
+                                                  letterSpacing:
+                                                      getHorizontalSize(0.06))))
+                                ]),
                             CustomTextFormField(
                                 controller: controller.cardNumController,
                                 margin: getMargin(top: 4),
@@ -71,13 +90,33 @@ class RegisterCreditCard extends GetWidget<RegisterCreditCardController> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                Text("lbl39".tr,
-                                    overflow: TextOverflow.ellipsis,
-                                    textAlign: TextAlign.left,
-                                    style: theme.textTheme.titleMedium!
-                                        .copyWith(
-                                            letterSpacing:
-                                                getHorizontalSize(0.03))),
+                                Row(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Padding(
+                                          padding: getPadding(top: 2),
+                                          child: Text("lbl39".tr,
+                                              overflow: TextOverflow.ellipsis,
+                                              textAlign: TextAlign.left,
+                                              style: theme
+                                                  .textTheme.titleMedium!
+                                                  .copyWith(
+                                                      letterSpacing:
+                                                          getHorizontalSize(
+                                                              0.03)))),
+                                      Padding(
+                                          padding:
+                                              getPadding(left: 5, bottom: 5),
+                                          child: Text("*",
+                                              overflow: TextOverflow.ellipsis,
+                                              textAlign: TextAlign.left,
+                                              style: theme.textTheme.titleSmall!
+                                                  .copyWith(
+                                                      letterSpacing:
+                                                          getHorizontalSize(
+                                                              0.06))))
+                                    ]),
                                 CustomTextFormField(
                                     controller: controller.expDateController,
                                     margin: getMargin(top: 4),
@@ -102,16 +141,35 @@ class RegisterCreditCard extends GetWidget<RegisterCreditCardController> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                Text("lbl40".tr,
-                                    overflow: TextOverflow.ellipsis,
-                                    textAlign: TextAlign.left,
-                                    style: theme.textTheme.titleMedium!
-                                        .copyWith(
-                                            letterSpacing:
-                                                getHorizontalSize(0.03))),
+                                Row(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Padding(
+                                          padding: getPadding(top: 2),
+                                          child: Text("lbl40".tr,
+                                              overflow: TextOverflow.ellipsis,
+                                              textAlign: TextAlign.left,
+                                              style: theme
+                                                  .textTheme.titleMedium!
+                                                  .copyWith(
+                                                      letterSpacing:
+                                                          getHorizontalSize(
+                                                              0.03)))),
+                                      Padding(
+                                          padding:
+                                              getPadding(left: 5, bottom: 5),
+                                          child: Text("*",
+                                              overflow: TextOverflow.ellipsis,
+                                              textAlign: TextAlign.left,
+                                              style: theme.textTheme.titleSmall!
+                                                  .copyWith(
+                                                      letterSpacing:
+                                                          getHorizontalSize(
+                                                              0.06))))
+                                    ]),
                                 CustomTextFormField(
-                                    controller:
-                                        controller.firstsixdigitsoController,
+                                    enabled: false,
                                     margin: getMargin(top: 4),
                                     contentPadding: getPadding(
                                         left: 12,
@@ -121,6 +179,10 @@ class RegisterCreditCard extends GetWidget<RegisterCreditCardController> {
                                     textStyle:
                                         CustomTextStyles.bodyLargeGray50003,
                                     hintText: "YYMMDD",
+                                    initialValue:
+                                        Get.find<ValidatePhoneController>()
+                                            .age1FormatController
+                                            .text ,
                                     hintStyle:
                                         CustomTextStyles.bodyLargeGray50003,
                                     textInputAction: TextInputAction.next,
@@ -134,13 +196,33 @@ class RegisterCreditCard extends GetWidget<RegisterCreditCardController> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                Text("lbl_22".tr,
-                                    overflow: TextOverflow.ellipsis,
-                                    textAlign: TextAlign.left,
-                                    style: theme.textTheme.titleMedium!
-                                        .copyWith(
-                                            letterSpacing:
-                                                getHorizontalSize(0.03))),
+                                Row(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Padding(
+                                          padding: getPadding(top: 2),
+                                          child: Text("lbl_22".tr,
+                                              overflow: TextOverflow.ellipsis,
+                                              textAlign: TextAlign.left,
+                                              style: theme
+                                                  .textTheme.titleMedium!
+                                                  .copyWith(
+                                                      letterSpacing:
+                                                          getHorizontalSize(
+                                                              0.03)))),
+                                      Padding(
+                                          padding:
+                                              getPadding(left: 5, bottom: 5),
+                                          child: Text("*",
+                                              overflow: TextOverflow.ellipsis,
+                                              textAlign: TextAlign.left,
+                                              style: theme.textTheme.titleSmall!
+                                                  .copyWith(
+                                                      letterSpacing:
+                                                          getHorizontalSize(
+                                                              0.06))))
+                                    ]),
                                 CustomTextFormField(
                                     controller:
                                         controller.grouptwentynineController,
@@ -152,8 +234,10 @@ class RegisterCreditCard extends GetWidget<RegisterCreditCardController> {
                     ])),
             bottomNavigationBar: Container(
                 margin: getMargin(left: 16, right: 16, bottom: 29),
-                decoration: AppDecoration.shadow,
+                // decoration: AppDecoration.shadow,
                 child: CustomElevatedButton(
+                  // TODO
+                  // disabled 일때 스타일 정의하기
                   text: "lbl41".tr,
                   buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
                       fixedSize: MaterialStateProperty.all<Size>(

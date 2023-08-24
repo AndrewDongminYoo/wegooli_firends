@@ -35,6 +35,7 @@ class CustomTextFormField extends StatelessWidget {
     this.disabledBorderDecoration,
     this.validator,
     this.enabled = true,
+    this.initialValue,
   }) : super(
           key: key,
         );
@@ -53,6 +54,7 @@ class CustomTextFormField extends StatelessWidget {
   final TextInputType? textInputType;
   final int? maxLines;
   final String? hintText;
+  final String? initialValue;
   final TextStyle? hintStyle;
   final Widget? prefix;
   final BoxConstraints? prefixConstraints;
@@ -93,6 +95,7 @@ class CustomTextFormField extends StatelessWidget {
           decoration: decoration,
           validator: validator,
           enabled: enabled,
+          initialValue: initialValue,
         ),
       );
   InputDecoration get decoration => InputDecoration(

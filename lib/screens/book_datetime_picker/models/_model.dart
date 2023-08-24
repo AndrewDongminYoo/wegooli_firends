@@ -2,7 +2,7 @@
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '/data/models/selection_popup.dart';
+import '/core/utils/selection_popup.dart';
 
 /// This class defines the variables used in the [reservation_datetime_picker_bottomsheet],
 /// and is typically used to hold data that is passed between different parts of the application.

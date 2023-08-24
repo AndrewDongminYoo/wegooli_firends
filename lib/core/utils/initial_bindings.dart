@@ -10,7 +10,7 @@ class InitialBindings extends Bindings {
   @override
   void dependencies() {
     Get.put(PrefUtils());
-    Get.put(WegooliApi());
+    Get.put(WegooliFriends());
     Connectivity connectivity = Connectivity();
     Get.put(NetworkInfo(connectivity));
   }

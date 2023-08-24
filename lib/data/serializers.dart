@@ -32,7 +32,6 @@ part 'serializers.g.dart';
   PaymentCardRequest,
   ScheduleModel,
   ScheduleRequest,
-  SelectTeamAccountConnectionRequest,
   ServiceCarDetailRequest,
   ServiceDetail,
   ShareServiceModel,

@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 
 // 🌎 Project imports:
 import '../models/_model.dart';
-import '/core/app_export.dart';
+import '/core/utils/selection_popup.dart';
 
 /// A controller class for the RegisterLicensePageScreen.
 ///

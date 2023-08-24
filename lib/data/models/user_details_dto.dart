@@ -20,10 +20,12 @@ part 'user_details_dto.g.dart';
 /// * [id]
 /// * [enabled]
 /// * [color]
+/// * [nickname]
+/// * [profilePicture]
 /// * [memberSeq]
+/// * [delYn]
 /// * [password]
 /// * [seq]
-/// * [delYn]
 /// * [delimit]
 /// * [username]
 /// * [add1]
@@ -32,16 +34,14 @@ part 'user_details_dto.g.dart';
 /// * [phoneNumber]
 /// * [email]
 /// * [sex]
-/// * [nickname]
-/// * [profilePicture]
+/// * [accountNonExpired]
+/// * [accountNonLocked]
 /// * [credentialsNonExpired]
 /// * [birthDay]
 /// * [createdAt]
 /// * [updatedAt]
 /// * [deleteAt]
 /// * [updateAt]
-/// * [accountNonExpired]
-/// * [accountNonLocked]
 @BuiltValue()
 abstract class UserDetailsDTO
     implements Built<UserDetailsDTO, UserDetailsDTOBuilder> {
@@ -63,17 +63,23 @@ abstract class UserDetailsDTO
   @BuiltValueField(wireName: r'color')
   String? get color;
 
+  @BuiltValueField(wireName: r'nickname')
+  String? get nickname;
+
+  @BuiltValueField(wireName: r'profilePicture')
+  String? get profilePicture;
+
   @BuiltValueField(wireName: r'memberSeq')
   int? get memberSeq;
+
+  @BuiltValueField(wireName: r'delYn')
+  String? get delYn;
 
   @BuiltValueField(wireName: r'password')
   String? get password;
 
   @BuiltValueField(wireName: r'seq')
   int? get seq;
-
-  @BuiltValueField(wireName: r'delYn')
-  String? get delYn;
 
   @BuiltValueField(wireName: r'delimit')
   String? get delimit;
@@ -99,11 +105,11 @@ abstract class UserDetailsDTO
   @BuiltValueField(wireName: r'sex')
   String? get sex;
 
-  @BuiltValueField(wireName: r'nickname')
-  String? get nickname;
+  @BuiltValueField(wireName: r'accountNonExpired')
+  bool? get accountNonExpired;
 
-  @BuiltValueField(wireName: r'profilePicture')
-  String? get profilePicture;
+  @BuiltValueField(wireName: r'accountNonLocked')
+  bool? get accountNonLocked;
 
   @BuiltValueField(wireName: r'credentialsNonExpired')
   bool? get credentialsNonExpired;
@@ -122,12 +128,6 @@ abstract class UserDetailsDTO
 
   @BuiltValueField(wireName: r'updateAt')
   String? get updateAt;
-
-  @BuiltValueField(wireName: r'accountNonExpired')
-  bool? get accountNonExpired;
-
-  @BuiltValueField(wireName: r'accountNonLocked')
-  bool? get accountNonLocked;
 
   UserDetailsDTO._();
 
@@ -197,11 +197,32 @@ class _$UserDetailsDTOSerializer
         specifiedType: const FullType(String),
       );
     }
+    if (object.nickname != null) {
+      yield r'nickname';
+      yield serializers.serialize(
+        object.nickname,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.profilePicture != null) {
+      yield r'profilePicture';
+      yield serializers.serialize(
+        object.profilePicture,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.memberSeq != null) {
       yield r'memberSeq';
       yield serializers.serialize(
         object.memberSeq,
         specifiedType: const FullType(int),
+      );
+    }
+    if (object.delYn != null) {
+      yield r'delYn';
+      yield serializers.serialize(
+        object.delYn,
+        specifiedType: const FullType(String),
       );
     }
     if (object.password != null) {
@@ -216,13 +237,6 @@ class _$UserDetailsDTOSerializer
       yield serializers.serialize(
         object.seq,
         specifiedType: const FullType(int),
-      );
-    }
-    if (object.delYn != null) {
-      yield r'delYn';
-      yield serializers.serialize(
-        object.delYn,
-        specifiedType: const FullType(String),
       );
     }
     if (object.delimit != null) {
@@ -281,18 +295,18 @@ class _$UserDetailsDTOSerializer
         specifiedType: const FullType(String),
       );
     }
-    if (object.nickname != null) {
-      yield r'nickname';
+    if (object.accountNonExpired != null) {
+      yield r'accountNonExpired';
       yield serializers.serialize(
-        object.nickname,
-        specifiedType: const FullType(String),
+        object.accountNonExpired,
+        specifiedType: const FullType(bool),
       );
     }
-    if (object.profilePicture != null) {
-      yield r'profilePicture';
+    if (object.accountNonLocked != null) {
+      yield r'accountNonLocked';
       yield serializers.serialize(
-        object.profilePicture,
-        specifiedType: const FullType(String),
+        object.accountNonLocked,
+        specifiedType: const FullType(bool),
       );
     }
     if (object.credentialsNonExpired != null) {
@@ -335,20 +349,6 @@ class _$UserDetailsDTOSerializer
       yield serializers.serialize(
         object.updateAt,
         specifiedType: const FullType(String),
-      );
-    }
-    if (object.accountNonExpired != null) {
-      yield r'accountNonExpired';
-      yield serializers.serialize(
-        object.accountNonExpired,
-        specifiedType: const FullType(bool),
-      );
-    }
-    if (object.accountNonLocked != null) {
-      yield r'accountNonLocked';
-      yield serializers.serialize(
-        object.accountNonLocked,
-        specifiedType: const FullType(bool),
       );
     }
   }
@@ -419,12 +419,33 @@ class _$UserDetailsDTOSerializer
           ) as String;
           result.color = valueDes;
           break;
+        case r'nickname':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.nickname = valueDes;
+          break;
+        case r'profilePicture':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.profilePicture = valueDes;
+          break;
         case r'memberSeq':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(int),
           ) as int;
           result.memberSeq = valueDes;
+          break;
+        case r'delYn':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.delYn = valueDes;
           break;
         case r'password':
           final valueDes = serializers.deserialize(
@@ -439,13 +460,6 @@ class _$UserDetailsDTOSerializer
             specifiedType: const FullType(int),
           ) as int;
           result.seq = valueDes;
-          break;
-        case r'delYn':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.delYn = valueDes;
           break;
         case r'delimit':
           final valueDes = serializers.deserialize(
@@ -503,19 +517,19 @@ class _$UserDetailsDTOSerializer
           ) as String;
           result.sex = valueDes;
           break;
-        case r'nickname':
+        case r'accountNonExpired':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.nickname = valueDes;
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.accountNonExpired = valueDes;
           break;
-        case r'profilePicture':
+        case r'accountNonLocked':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.profilePicture = valueDes;
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.accountNonLocked = valueDes;
           break;
         case r'credentialsNonExpired':
           final valueDes = serializers.deserialize(
@@ -558,20 +572,6 @@ class _$UserDetailsDTOSerializer
             specifiedType: const FullType(String),
           ) as String;
           result.updateAt = valueDes;
-          break;
-        case r'accountNonExpired':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.accountNonExpired = valueDes;
-          break;
-        case r'accountNonLocked':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.accountNonLocked = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -17,11 +17,11 @@ export 'utils/initial_bindings.dart';
 export 'utils/loading_dialog.dart';
 export 'utils/logger.dart';
 export 'utils/pref_utils.dart';
+export 'utils/selection_popup.dart';
 export 'utils/size_utils.dart';
 export 'utils/string_util.dart';
 export 'utils/validation_functions.dart';
 
-export '/data/models/selection_popup.dart';
 export '/l10n/app_localizations.dart';
 export '/routes/app_routes.dart';
 export '/theme/app_decoration.dart';

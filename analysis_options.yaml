@@ -29,8 +29,8 @@ linter:
   # [🧪 experimental] : 실험적인 린터
   # [❕ removed/deprecated] : 더이상 지원하지 않는/않을 예정인 린터
   rules:
-  ### Error rules ###
-  # 이러한 규칙은 코드에서 발생할 수 있는 오류 및 기타 실수를 식별합니다.
+    ### Error rules ###
+    # 이러한 규칙은 코드에서 발생할 수 있는 오류 및 기타 실수를 식별합니다.
     always_use_package_imports: false # [🔧] "lib/"에 있는 파일에 대한 상대 임포트를 피하세요.
     avoid_dynamic_calls: false # "dynamic" 대상에서 메서드 호출이나 속성 액세스를 피하세요.
     avoid_empty_else: true # [🔰,🔵,🦩,🔧] 빈 else 문을 사용하지 마세요.
@@ -73,8 +73,8 @@ linter:
     use_key_in_widget_constructors: true # [🦩,🔧] 위젯 생성자에서 키를 사용합니다.
     valid_regexps: true # [🔰,🔵,🦩] 유효한 정규식 구문을 사용합니다.
 
-  ### Style rules
-  # 주로 [Dart 스타일 가이드](https://dart.dev/effective-dart/style)에서 파생된 스타일 개선 가이드의 확장입니다.
+    ### Style rules
+    # 주로 [Dart 스타일 가이드](https://dart.dev/effective-dart/style)에서 파생된 스타일 개선 가이드의 확장입니다.
     always_declare_return_types: false # [🔧] 메서드 반환 타입을 선언합니다.
     always_put_control_body_on_new_line: false # [🔧] 제어 구조 표현식을 해당 문에서 분리합니다.
     always_put_required_named_parameters_first: false # [🔧] 필수 명명된 파라미터를 먼저 넣으세요.
@@ -89,7 +89,7 @@ linter:
     avoid_classes_with_only_static_members: false # 정적 멤버만 포함하는 클래스를 정의하지 마세요.
     avoid_double_and_int_checks: false # 이중 및 정수 검사를 피하세요.
     avoid_equals_and_hash_code_on_mutable_classes: true # '@immutable'으로 표시되지 않은 클래스에 == 연산자 및 해시코드를 오버로드하지 마세요.
-    avoid_escaping_inner_quotes:  # [🔧] 주변 따옴표를 변환하여 내부 따옴표를 이스케이프하지 마세요.
+    avoid_escaping_inner_quotes: # [🔧] 주변 따옴표를 변환하여 내부 따옴표를 이스케이프하지 마세요.
       ignore_for_file:
         - lib/l10n/*.dart
         - lib/gen/*.dart # must be ignored for items generated from arb files
@@ -261,8 +261,8 @@ linter:
     use_to_and_as_if_applicable: true # 해당되는 경우 메서드 이름을 to/_to 또는 as/_as로 시작합니다.
     void_checks: true # [🔰,🔵,🦩] void를 명시적으로 할당하지 마세요.
 
-  # Pub Rules
-  # 이 규칙은 [펍 패키지](https://dart.dev/guides/packages) 설정과 관련하여 발생할 수 있는 문제를 식별합니다.
+    # Pub Rules
+    # 이 규칙은 [펍 패키지](https://dart.dev/guides/packages) 설정과 관련하여 발생할 수 있는 문제를 식별합니다.
     depend_on_referenced_packages: true # [🔰,🔵,🦩] (직접 의존하지 않고 간접적으로) 참조된 패키지에 의존하지 않습니다.
     package_names: true # [🔵,🦩] 패키지 이름에 "lowercase_with_underscores"를 사용합니다.
     secure_pubspec_urls: true # "pubspec.yaml"에서 보안 URL을 사용합니다.

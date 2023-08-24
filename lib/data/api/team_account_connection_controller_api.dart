@@ -8,11 +8,9 @@ import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
 import '/data/api_util.dart';
-import '/data/models/select_team_account_connection_request.dart';
 import '/data/models/team_account_connection_model.dart';
 import '/data/models/team_account_connection_request.dart';
 import '/data/models/team_account_connection_response.dart';
-import '/data/models/team_account_model.dart';
 
 class TeamAccountConnectionControllerApi {
   final Dio _dio;
@@ -279,7 +277,13 @@ class TeamAccountConnectionControllerApi {
   /// selectTeamAccountList
   ///
   /// Parameters:
-  /// * [requestDto]
+  /// * [teamSeq]
+  /// * [accountId]
+  /// * [startJoinedAt]
+  /// * [endJoinedAt]
+  /// * [startLeavedAt]
+  /// * [endLeavedAt]
+  /// * [isLeaved]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -291,7 +295,13 @@ class TeamAccountConnectionControllerApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<BuiltList<TeamAccountConnectionResponse>>>
       selectTeamAccountList({
-    SelectTeamAccountConnectionRequest? requestDto,
+    int? teamSeq,
+    String? accountId,
+    String? startJoinedAt,
+    String? endJoinedAt,
+    String? startLeavedAt,
+    String? endLeavedAt,
+    String? isLeaved,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -319,8 +329,27 @@ class TeamAccountConnectionControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'requestDto': encodeQueryParameter(_serializers, requestDto,
-          const FullType(SelectTeamAccountConnectionRequest)),
+      if (teamSeq != null)
+        r'teamSeq':
+            encodeQueryParameter(_serializers, teamSeq, const FullType(int)),
+      if (accountId != null)
+        r'accountId': encodeQueryParameter(
+            _serializers, accountId, const FullType(String)),
+      if (startJoinedAt != null)
+        r'startJoinedAt': encodeQueryParameter(
+            _serializers, startJoinedAt, const FullType(String)),
+      if (endJoinedAt != null)
+        r'endJoinedAt': encodeQueryParameter(
+            _serializers, endJoinedAt, const FullType(String)),
+      if (startLeavedAt != null)
+        r'startLeavedAt': encodeQueryParameter(
+            _serializers, startLeavedAt, const FullType(String)),
+      if (endLeavedAt != null)
+        r'endLeavedAt': encodeQueryParameter(
+            _serializers, endLeavedAt, const FullType(String)),
+      if (isLeaved != null)
+        r'isLeaved': encodeQueryParameter(
+            _serializers, isLeaved, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(

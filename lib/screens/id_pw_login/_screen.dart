@@ -23,7 +23,8 @@ class LoginWithIdAndPassword
 
   Future findMembers() async {
     String token = Get.find<PrefUtils>().getData('token');
-    final api = Get.find<WegooliApi>().getTeamAccountConnectionControllerApi();
+    final api =
+        Get.find<WegooliFriends>().getTeamAccountConnectionControllerApi();
     print('token : $token');
     Map<String, dynamic> extra = <String, dynamic>{
       'secure': <Map<String, String>>[
@@ -46,7 +47,7 @@ class LoginWithIdAndPassword
   }
 
   Future<void> authorize() async {
-    final api = Get.find<WegooliApi>().getUserControllerApi();
+    final api = Get.find<WegooliFriends>().getUserControllerApi();
 
     try {
       final response = await api.login(

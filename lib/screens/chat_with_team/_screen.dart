@@ -11,10 +11,10 @@ import 'package:image_picker/image_picker.dart';
 import 'package:sendbird_sdk/sendbird_sdk.dart';
 
 // 🌎 Project imports:
-import 'package:wegooli_friends/data/data.dart';
-import 'package:wegooli_friends/screens/screens.dart';
 import '/core/app_export.dart';
+import '/data/data.dart';
 import '/gen/assets.gen.dart';
+import '/screens/screens.dart';
 
 class DashChatWithFriendsPage extends StatefulWidget {
   final String appId; // Sendbird application id

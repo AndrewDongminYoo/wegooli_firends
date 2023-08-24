@@ -11,7 +11,6 @@ part 'device_control_result_dto.g.dart';
 /// Properties:
 /// * [userId]
 /// * [terTelNum]
-/// * [t42]
 /// * [t0]
 /// * [t1]
 /// * [t2]
@@ -35,6 +34,7 @@ part 'device_control_result_dto.g.dart';
 /// * [t21]
 /// * [t22]
 /// * [t41]
+/// * [t42]
 /// * [t51]
 /// * [t61]
 /// * [ucp]

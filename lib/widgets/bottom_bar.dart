@@ -24,7 +24,7 @@ class CustomBottomBar extends StatelessWidget {
       iconPath: Assets.svg.imgCalOnPrimary.path,
       activeIconPath: Assets.svg.imgCalOnPrimary.path,
       title: "lbl46".tr,
-      type: BottomBarEnum.sharedCalendar,
+      type: BottomBarEnum.sharedSchedule,
     ),
     BottomMenuModel(
       iconPath: Assets.svg.imgKeyGray400.path,
@@ -152,7 +152,7 @@ class CustomBottomBar extends StatelessWidget {
 }
 
 enum BottomBarEnum {
-  sharedCalendar,
+  sharedSchedule,
   dashChat,
   smartKey,
   profile,

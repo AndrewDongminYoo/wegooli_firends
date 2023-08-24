@@ -2,6 +2,7 @@
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
+import '../shared_schedule.dart';
 import '/data/models/models.dart';
 
 /// A controller class for the TeamScheduleShareScreen.
@@ -9,6 +10,6 @@ import '/data/models/models.dart';
 /// This class manages the state of the TeamScheduleShareScreen, including the
 /// current teamScheduleShareModelObj
 class TeamScheduleController extends GetxController {
-  RxList<ScheduleModel> schedules = <ScheduleModel>[].obs;
-  RxList<UserDTO> members = <UserDTO>[].obs;
+  RxList<Schedule> schedules = <Schedule>[].obs;
+  RxList<TeamAccountModel> members = <TeamAccountModel>[].obs;
 }

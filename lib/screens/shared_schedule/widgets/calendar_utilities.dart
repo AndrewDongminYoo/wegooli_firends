@@ -1,34 +1,46 @@
 // 🎯 Dart imports:
 import 'dart:collection';
 
+// 🐦 Flutter imports:
+import 'package:flutter/material.dart';
+
 // 📦 Package imports:
 import 'package:table_calendar/table_calendar.dart';
 
-/// Example event class.
-class Event {
-  final String title;
-  const Event(this.title);
+/// 스케쥴 이벤트의 예시입니다.
+/// [/data/models/schedule_model.dart] 참조
+class Schedule {
+  int? seq = 0;
+  int? teamSeq = 0;
+  String? delYn = 'N';
+  final String accountId;
+  String? startAt = kToday.toString();
+  String? endAt = kToday.toString();
+  DateTime? createdAt = DateTime.now();
+  DateTime? updatedAt = DateTime.now();
+  Color? highlightColor;
+
+  Schedule({required this.accountId});
 
   @override
-  String toString() => title;
+  String toString() => accountId;
 }
 
-/// Example events.
-///
-/// Using a [LinkedHashMap] is highly recommended if you decide to use a map.
-final kEvents = LinkedHashMap<DateTime, List<Event>>(
+/// [Map]을 사용하기로 한 경우, [LinkedHashMap]를 사용하는 것이 권장됩니다.
+final kEvents = LinkedHashMap<DateTime, List<Schedule>>(
   equals: isSameDay,
   hashCode: getHashCode,
 )..addAll(_kEventSource);
 
 final _kEventSource = Map.fromIterable(List.generate(50, (index) => index),
     key: (item) => DateTime.utc(kFirstDay.year, kFirstDay.month, item * 5),
-    value: (item) => List.generate(
-        item % 4 + 1, (index) => Event('Event $item | ${index + 1}')))
+    value: (item) => List.generate(item % 4 + 1,
+        (index) => Schedule(accountId: '사용자 $item | ${index + 1}')))
   ..addAll({
     kToday: [
-      Event('Today\'s Event 1'),
-      Event('Today\'s Event 2'),
+      // TODO: 실제 데이터로 변경
+      Schedule(accountId: '김영희'),
+      Schedule(accountId: '홍길동'),
     ],
   });
 
@@ -36,7 +48,7 @@ int getHashCode(DateTime key) {
   return key.day * 1000000 + key.month * 10000 + key.year;
 }
 
-/// Returns a list of [DateTime] objects from [first] to [last], inclusive.
+/// [first] 부터 [last]까지의 [DateTime]의 목록을 반환합니다.
 List<DateTime> daysInRange(DateTime first, DateTime last) {
   final dayCount = last.difference(first).inDays + 1;
   return List.generate(
@@ -45,6 +57,16 @@ List<DateTime> daysInRange(DateTime first, DateTime last) {
   );
 }
 
+/// 주어진 [weekday]와 관련된 숫자 값을 반환합니다.
+int getWeekdayNumber(StartingDayOfWeek weekday) {
+  return StartingDayOfWeek.values.indexOf(weekday) + 1;
+}
+
+/// 시간 부분을 제외한 UTC 형식의 [date]를 반환합니다.
+DateTime normalizeDate(DateTime date) {
+  return DateTime.utc(date.year, date.month, date.day);
+}
+
 final kToday = DateTime.now();
-final kFirstDay = DateTime(kToday.year, kToday.month - 3, kToday.day);
-final kLastDay = DateTime(kToday.year, kToday.month + 3, kToday.day);
+final kFirstDay = DateTime(kToday.year, kToday.month - 1, kToday.day);
+final kLastDay = DateTime(kToday.year, kToday.month + 1, kToday.day);

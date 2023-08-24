@@ -1,51 +1,39 @@
+// 🐦 Flutter imports:
 import 'package:flutter/widgets.dart';
 
-/// Signature for a function that creates a widget for a given `day`.
-typedef DayBuilder = Widget? Function(BuildContext context, DateTime day);
+// 🌎 Project imports:
+import '/core/utils/utils.dart';
 
-/// Signature for a function that creates a widget for a given `day`.
-/// Additionally, contains the currently focused day.
-typedef FocusedDayBuilder = Widget? Function(
-    BuildContext context, DateTime day, DateTime focusedDay);
+/// 주어진 [day]에 위젯을 생성하는 함수에 대한 서명입니다.
+Widget? dayBuilder(BuildContext context, DateTime day) {
+  return null;
+}
 
-/// Signature for a function returning text that can be localized and formatted with `DateFormat`.
-typedef TextFormatter = String Function(DateTime date, dynamic locale);
+/// 주어진 [day]에 위젯을 생성하는 함수에 대한 서명입니다.
+/// 또한 현재 초점이 맞춰진 요일을 포함합니다.
+Widget? focusedDayBuilder(
+    BuildContext context, DateTime day, DateTime focusedDay) {
+  return null;
+}
 
-/// Gestures available for the calendar.
+/// [날짜 형식]으로 지역화 및 서식을 지정할 수 있는 텍스트를 반환하는 함수에 대한 서명입니다.
+String textFormatter(DateTime date, Locale locale) {
+  return date.format('yyyy-mm-dd', locale.toString());
+}
+
+/// 캘린더에서 사용할 수 있는 [Gestures].
 enum AvailableGestures { none, verticalSwipe, horizontalSwipe, all }
 
-/// Formats that the calendar can display.
+/// 캘린더에서 표시할 수 있는 [Formats].
 enum CalendarFormat { month, twoWeeks, week }
 
-/// Days of the week that the calendar can start with.
+/// 캘린더가 시작할 수 있는 요일.
 enum StartingDayOfWeek {
-  monday,
-  tuesday,
-  wednesday,
-  thursday,
-  friday,
-  saturday,
-  sunday,
-}
-
-/// Returns a numerical value associated with given `weekday`.
-///
-/// Returns 1 for `StartingDayOfWeek.monday`, all the way to 7 for `StartingDayOfWeek.sunday`.
-int getWeekdayNumber(StartingDayOfWeek weekday) {
-  return StartingDayOfWeek.values.indexOf(weekday) + 1;
-}
-
-/// Returns `date` in UTC format, without its time part.
-DateTime normalizeDate(DateTime date) {
-  return DateTime.utc(date.year, date.month, date.day);
-}
-
-/// Checks if two DateTime objects are the same day.
-/// Returns `false` if either of them is null.
-bool isSameDay(DateTime? a, DateTime? b) {
-  if (a == null || b == null) {
-    return false;
-  }
-
-  return a.year == b.year && a.month == b.month && a.day == b.day;
+  monday, // 1
+  tuesday, // 2
+  wednesday, // 3
+  thursday, // 4
+  friday, // 5
+  saturday, // 6
+  sunday, // 7
 }

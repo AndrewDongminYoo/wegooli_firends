@@ -773,8 +773,8 @@ class SmartKeyNotAvailable extends GetWidget<SmartKeyNotAvailableController> {
   /// Handling route based on bottom click actions
   String getCurrentRoute(BottomBarEnum type) {
     switch (type) {
-      case BottomBarEnum.sharedCalendar:
-        return AppRoutes.sharedCalendar;
+      case BottomBarEnum.sharedSchedule:
+        return AppRoutes.sharedSchedule;
       case BottomBarEnum.dashChat:
         return AppRoutes.chatWithFriends;
       case BottomBarEnum.smartKey:
@@ -782,7 +782,7 @@ class SmartKeyNotAvailable extends GetWidget<SmartKeyNotAvailableController> {
       case BottomBarEnum.profile:
         return AppRoutes.myProfilePage;
       default:
-        return AppRoutes.sharedCalendar;
+        return AppRoutes.sharedSchedule;
     }
   }
 }

@@ -26,7 +26,7 @@ class BottomTabRouterBar extends StatelessWidget {
             case BottomBarEnum.profile:
               return AppRoutes.myProfilePage;
             default:
-              return AppRoutes.sharedCalendar;
+              return AppRoutes.sharedSchedule;
           }
         }
         return Get.toNamed(getCurrentRoute(type), id: 1);

@@ -28,7 +28,6 @@ class MemberAvatar extends StatelessWidget {
             clipBehavior: Clip.antiAlias,
             elevation: 0,
             margin: EdgeInsets.all(0),
-            color: personalColor.toColor(),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadiusStyle.circleBorder25,
             ),
@@ -43,6 +42,7 @@ class MemberAvatar extends StatelessWidget {
                 all: 4,
               ),
               decoration: AppDecoration.fill3.copyWith(
+                color: ColorUtils.stringToColor(personalColor),
                 borderRadius: BorderRadiusStyle.circleBorder25,
               ),
               child: Stack(

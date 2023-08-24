@@ -17,12 +17,7 @@ class TeamScheduleShare extends GetWidget<TeamScheduleController> {
     return SafeArea(
         child: Scaffold(
       backgroundColor: theme.colorScheme.onPrimaryContainer,
-      body: Navigator(
-          key: Get.nestedKey(1),
-          initialRoute: AppRoutes.sharedCalendar,
-          onGenerateRoute: (routeSetting) => GetPageRoute(
-              page: () => getCurrentPage(routeSetting.name!),
-              transition: Transition.noTransition)),
+      body: SharedCalendar(),
       bottomNavigationBar: BottomTabRouterBar(),
     ));
   }

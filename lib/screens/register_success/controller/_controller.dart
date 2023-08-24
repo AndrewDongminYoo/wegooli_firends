@@ -10,7 +10,6 @@ import 'package:get/get.dart';
 /// current registerSuccessPageModelObj
 class RegisterSuccessPageController extends GetxController {
   TextEditingController codeController = TextEditingController();
-  RxBool isShowCode = false.obs;
   
   @override
   void onClose() {

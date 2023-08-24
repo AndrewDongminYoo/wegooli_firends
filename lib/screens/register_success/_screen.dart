@@ -95,25 +95,8 @@ class RegisterSuccess extends GetWidget<RegisterSuccessPageController> {
                                   textStyle:
                                       CustomTextStyles.bodyLargeGray50003,
                                   hintText: "초대코드를 입력하세요.",
-                                  obscureText: controller.isShowCode.isFalse,
                                   hintStyle:
                                       CustomTextStyles.bodyLargeGray50003,
-                                  suffix: Container(
-                                      margin: getMargin(
-                                          left: 30,
-                                          top: 12,
-                                          right: 10,
-                                          bottom: 12),
-                                      child: CustomImageView(
-                                        svgPath: controller.isShowCode.isTrue
-                                            ? Assets.svg.imgEyeOpened.path
-                                            : Assets.svg.imgEyeCrossedOut.path,
-                                        onTap: () {
-                                          controller.isShowCode.toggle();
-                                        },
-                                      )),
-                                  suffixConstraints: BoxConstraints(
-                                      maxHeight: getVerticalSize(48)),
                                   filled: true,
                                   fillColor:
                                       theme.colorScheme.onPrimaryContainer)),

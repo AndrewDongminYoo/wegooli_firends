@@ -15,6 +15,7 @@ class LoginWithIdAndPasswordController extends GetxController {
   TextEditingController usernameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   RxBool isAuthenticated = false.obs;
+  RxBool isShowPassword = false.obs;
   Rx<UserDTO> currentUser = UserDTO().obs;
   RxList<TeamAccountModel> members = RxList<TeamAccountModel>([]);
 

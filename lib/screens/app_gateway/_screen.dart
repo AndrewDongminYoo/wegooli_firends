@@ -1213,7 +1213,7 @@ class GatewayScreen extends GetWidget<AppGatewayController> {
 
   /// Navigates to the splashLoadingScreen when the action is triggered.
 
-  /// When the action is triggered, this function uses the `Get` package to
+  /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the splashLoadingScreen.
   onTapSplashScreen() {
     Get.toNamed(
@@ -1223,7 +1223,7 @@ class GatewayScreen extends GetWidget<AppGatewayController> {
 
   /// Navigates to the withIdAndPasswordScreen when the action is triggered.
 
-  /// When the action is triggered, this function uses the `Get` package to
+  /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the withIdAndPasswordScreen.
   onTapLoginWithIdAndPassword() {
     Get.toNamed(
@@ -1233,7 +1233,7 @@ class GatewayScreen extends GetWidget<AppGatewayController> {
 
   /// Navigates to the signupAcceptTermsScreen when the action is triggered.
 
-  /// When the action is triggered, this function uses the `Get` package to
+  /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the signupAcceptTermsScreen.
   onTapSignUpAcceptTerms() {
     Get.toNamed(
@@ -1243,7 +1243,7 @@ class GatewayScreen extends GetWidget<AppGatewayController> {
 
   /// Navigates to the validatePhoneAuthScreen when the action is triggered.
 
-  /// When the action is triggered, this function uses the `Get` package to
+  /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the validatePhoneAuthScreen.
   onTapLogInValidatePhoneAuth() {
     Get.toNamed(
@@ -1253,7 +1253,7 @@ class GatewayScreen extends GetWidget<AppGatewayController> {
 
   /// Navigates to the registerZipCodeScreen when the action is triggered.
 
-  /// When the action is triggered, this function uses the `Get` package to
+  /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the registerZipCodeScreen.
   onTapRegisterZipCode() {
     Get.toNamed(
@@ -1263,7 +1263,7 @@ class GatewayScreen extends GetWidget<AppGatewayController> {
 
   /// Navigates to the registerLicensePageScreen when the action is triggered.
 
-  /// When the action is triggered, this function uses the `Get` package to
+  /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the registerLicensePageScreen.
   onTapRegisterLicensePage() {
     Get.toNamed(
@@ -1273,7 +1273,7 @@ class GatewayScreen extends GetWidget<AppGatewayController> {
 
   /// Navigates to the registerCreditCardScreen when the action is triggered.
 
-  /// When the action is triggered, this function uses the `Get` package to
+  /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the registerCreditCardScreen.
   onRegisterCreditCard() {
     Get.toNamed(
@@ -1283,7 +1283,7 @@ class GatewayScreen extends GetWidget<AppGatewayController> {
 
   /// Navigates to the registerSuccessPageScreen when the action is triggered.
 
-  /// When the action is triggered, this function uses the `Get` package to
+  /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the registerSuccessPageScreen.
   onTapRegisterSuccess() {
     Get.toNamed(
@@ -1293,7 +1293,7 @@ class GatewayScreen extends GetWidget<AppGatewayController> {
 
   /// Navigates to the teamScheduleShareScreen when the action is triggered.
 
-  /// When the action is triggered, this function uses the `Get` package to
+  /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the teamScheduleShareScreen.
   onTapTeamScheduleShare() {
     Get.toNamed(
@@ -1303,7 +1303,7 @@ class GatewayScreen extends GetWidget<AppGatewayController> {
 
   /// Navigates to the smartKeyNotAvailableScreen when the action is triggered.
 
-  /// When the action is triggered, this function uses the `Get` package to
+  /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the smartKeyNotAvailableScreen.
   onTapSmartKeyUnavailable() {
     Get.toNamed(
@@ -1313,7 +1313,7 @@ class GatewayScreen extends GetWidget<AppGatewayController> {
 
   /// Navigates to the registeredCreditCardListScreen when the action is triggered.
 
-  /// When the action is triggered, this function uses the `Get` package to
+  /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the registeredCreditCardListScreen.
   onTapRegisteredCardList() {
     Get.toNamed(
@@ -1323,7 +1323,7 @@ class GatewayScreen extends GetWidget<AppGatewayController> {
 
   /// Navigates to the carStatusInformationScreen when the action is triggered.
 
-  /// When the action is triggered, this function uses the `Get` package to
+  /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the carStatusInformationScreen.
   onTapCarStatusInfo() {
     Get.toNamed(
@@ -1333,7 +1333,7 @@ class GatewayScreen extends GetWidget<AppGatewayController> {
 
   /// Navigates to the carStateInformationScreen when the action is triggered.
 
-  /// When the action is triggered, this function uses the `Get` package to
+  /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the carStateInformationScreen.
   onTapCarStatus() {
     Get.toNamed(
@@ -1397,7 +1397,7 @@ class GatewayScreen extends GetWidget<AppGatewayController> {
 
   /// Navigates to the unsubscriptionConfirmScreen when the action is triggered.
 
-  /// When the action is triggered, this function uses the `Get` package to
+  /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the unsubscriptionConfirmScreen.
   onTapUnsubscriptionConfirm() {
     Get.toNamed(
@@ -1425,7 +1425,7 @@ class GatewayScreen extends GetWidget<AppGatewayController> {
 
   /// Navigates to the upcomingUnsubscriptionInfoScreen when the action is triggered.
 
-  /// When the action is triggered, this function uses the `Get` package to
+  /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the upcomingUnsubscriptionInfoScreen.
   onTapUpcomingUnsubscriptionInfo() {
     Get.toNamed(
@@ -1435,7 +1435,7 @@ class GatewayScreen extends GetWidget<AppGatewayController> {
 
   /// Navigates to the upcomingUnsubscriptionViewScreen when the action is triggered.
 
-  /// When the action is triggered, this function uses the `Get` package to
+  /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the upcomingUnsubscriptionViewScreen.
   onTapUpcomingUnsubscription() {
     Get.toNamed(
@@ -1445,7 +1445,7 @@ class GatewayScreen extends GetWidget<AppGatewayController> {
 
   /// Navigates to the subscriptionInfoNoServiceScreen when the action is triggered.
 
-  /// When the action is triggered, this function uses the `Get` package to
+  /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the subscriptionInfoNoServiceScreen.
   onTapNoSubscription() {
     Get.toNamed(

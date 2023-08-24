@@ -11,7 +11,7 @@ MediaQueryData mediaQueryData =
 /// [window] 프로퍼티에서 마이그레이션하려면 [View.of]를 [BuildContext]와 함께 사용하는 것이 좋습니다.
 /// [FlutterView]를 조회할 수 있는 컨텍스트가 없는 경우, 이 위젯바인딩에 의해 노출된 [platformDispatcher]를 플랫폼별 기능에 직접 사용할 수 있습니다.
 /// @Deprecated(
-///    '컨텍스트에서 `View.of(buildContext)`를 통해 현재 `FlutterView`를 조회하거나 대신 `PlatformDispatcher`를 직접 참조하세요.'
+///    '컨텍스트에서 [View.of(buildContext)]를 통해 현재 [FlutterView]를 조회하거나 대신 [PlatformDispatcher]를 직접 참조하세요.'
 ///    '이 기능은 v3.7.0-32.0.pre 이후부터 멀티뷰 지원을 위해 더 이상 사용되지 않습니다.'
 ///  )
 var implicitView = WidgetsBinding.instance.platformDispatcher.implicitView;

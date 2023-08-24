@@ -23,8 +23,6 @@ class AppRoutes {
 
   static const String myProfilePage = '/my_profile';
 
-  static const String sharedCalendar = '/shared_calendar';
-
   static const String sharedSchedule = '/shared_schedule';
 
   static const String chatWithFriends = '/chat_with_team';

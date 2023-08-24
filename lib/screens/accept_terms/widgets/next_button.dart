@@ -13,7 +13,6 @@ class AcceptTermsNextButton extends GetWidget<AcceptTermsController> {
   Widget build(BuildContext context) {
     return Container(
         margin: getMargin(left: 16, right: 16, bottom: 29),
-        decoration: AppDecoration.shadow,
         child: CustomElevatedButton(
           text: "동의 완료",
           buttonStyle: CustomButtonStyles.fillPrimary.copyWith(

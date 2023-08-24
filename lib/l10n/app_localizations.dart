@@ -628,7 +628,7 @@ abstract class AppLocalizations {
   /// No description provided for @subscriptionsAreRestrictedToThoseUnderTheAgeOf26.
   ///
   /// In ko, this message translates to:
-  /// **'만 26세 미만은 가입이 제한됩니다.'**
+  /// **'· 만 26세 미만은 가입이 제한됩니다.'**
   String get subscriptionsAreRestrictedToThoseUnderTheAgeOf26;
 
   /// No description provided for @msgCarStateInformation.

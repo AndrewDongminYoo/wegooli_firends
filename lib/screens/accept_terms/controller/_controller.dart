@@ -25,8 +25,7 @@ class AcceptTermsController extends GetxController {
             isAcceptedTerm2.value &&
             isAcceptedTerm3.value &&
             isAcceptedTerm4.value &&
-            isAcceptedTerm5.value &&
-            isAcceptedTerm6.value)
+            isAcceptedTerm5.value)
         .obs;
   }
 }

@@ -272,7 +272,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get subscriptionsWillBeCanceledAfterAugust42023 => '2023년 8월 4일 이후에 구독이 해지됩니다.';
 
   @override
-  String get subscriptionsAreRestrictedToThoseUnderTheAgeOf26 => '만 26세 미만은 가입이 제한됩니다.';
+  String get subscriptionsAreRestrictedToThoseUnderTheAgeOf26 => '· 만 26세 미만은 가입이 제한됩니다.';
 
   @override
   String get msgCarStateInformation => '자동차 상태 정보';

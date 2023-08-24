@@ -16,7 +16,22 @@ class RegisterZipCodeController extends GetxController {
   TextEditingController primaryAddressController = TextEditingController();
   TextEditingController detailedAddressController = TextEditingController();
   TextEditingController emailAddressController = TextEditingController();
-  Rx<RegisterZipCodeModel> registerZipCodeModelObj = RegisterZipCodeModel().obs;
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController confirmPasswordController = TextEditingController();
+  TextEditingController nicknameController = TextEditingController();
+  // Rx<RegisterZipCodeModel> registerZipCodeModelObj = RegisterZipCodeModel().obs;
+  RxBool isShowPassword = false.obs;
+  RxBool isShowConfirmPassword = false.obs;
+
+  bool get isValid =>
+      postalCodeController.text.length > 0 &&
+      primaryAddressController.text.length > 0 &&
+      detailedAddressController.text.length > 0 &&
+      emailAddressController.text.isEmail &&
+      passwordController.text.length > 0 &&
+      nicknameController.text.length > 0 &&
+      confirmPasswordController.text.length > 0 &&
+      (passwordController.text == confirmPasswordController.text);
 
   @override
   void onClose() {
@@ -25,5 +40,8 @@ class RegisterZipCodeController extends GetxController {
     primaryAddressController.dispose();
     detailedAddressController.dispose();
     emailAddressController.dispose();
+    passwordController.dispose();
+    confirmPasswordController.dispose();
+    nicknameController.dispose();
   }
 }

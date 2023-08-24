@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 
 // 📦 Package imports:
 import 'package:get/get.dart';
+import 'package:kpostal/kpostal.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
@@ -12,12 +13,6 @@ import 'controller/_controller.dart';
 
 class RegisterZipCode extends GetWidget<RegisterZipCodeController> {
   const RegisterZipCode({Key? key}) : super(key: key);
-
-  bool isValid() {
-    // TODO
-    // 집 주소 필수 입력, 아이디 비번 입력 누락.
-    return true;
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,8 +34,9 @@ class RegisterZipCode extends GetWidget<RegisterZipCodeController> {
                     }),
                 centerTitle: true,
                 title: AppbarTitle(text: "정보 입력")),
-            body: Container(
-                width: double.maxFinite,
+            body: SingleChildScrollView(
+
+                // width: double.maxFinite,
                 padding: getPadding(left: 16, top: 22, right: 16, bottom: 22),
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -90,6 +86,7 @@ class RegisterZipCode extends GetWidget<RegisterZipCodeController> {
                                                                         0.06))))
                                               ]),
                                           CustomTextFormField(
+                                              enabled: false,
                                               textInputType:
                                                   TextInputType.number,
                                               width: getHorizontalSize(160),
@@ -120,27 +117,45 @@ class RegisterZipCode extends GetWidget<RegisterZipCodeController> {
                                                   TextInputAction.next,
                                               filled: true,
                                               inputFormatters: [
-                                                LengthLimitingTextInputFormatter(6),
-                                                FilteringTextInputFormatter.digitsOnly,
+                                                LengthLimitingTextInputFormatter(
+                                                    6),
+                                                FilteringTextInputFormatter
+                                                    .digitsOnly,
                                               ],
                                               fillColor: theme.colorScheme
                                                   .onPrimaryContainer)
                                         ]))),
                             Expanded(
                                 child: CustomElevatedButton(
-                                    text: "주소 검색",
-                                    margin: getMargin(left: 4, top: 27),
-                                    buttonStyle: CustomButtonStyles
-                                        .fillPrimaryTL5
-                                        .copyWith(
-                                            fixedSize:
-                                                MaterialStateProperty.all<Size>(
-                                                    Size(double.maxFinite,
-                                                        getVerticalSize(48)))),
-                                    buttonTextStyle:
-                                        theme.textTheme.titleMedium!))
+                              text: "주소 검색",
+                              margin: getMargin(left: 4, top: 27),
+                              buttonStyle: CustomButtonStyles.fillPrimaryTL5
+                                  .copyWith(
+                                      fixedSize:
+                                          MaterialStateProperty.all<Size>(Size(
+                                              double.maxFinite,
+                                              getVerticalSize(48)))),
+                              buttonTextStyle: theme.textTheme.titleMedium!,
+                              onTap: () async {
+                                await Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (_) => KpostalView(
+                                              useLocalServer: true,
+                                              localPort: 1024,
+                                              callback: (Kpostal result) {
+                                                controller.postalCodeController
+                                                    .text = result.postCode;
+                                                controller
+                                                    .primaryAddressController
+                                                    .text = result.address;
+                                              },
+                                            )));
+                              },
+                            ))
                           ]),
                       CustomTextFormField(
+                          enabled: false,
                           textInputType: TextInputType.streetAddress,
                           controller: controller.primaryAddressController,
                           margin: getMargin(top: 10),
@@ -165,7 +180,7 @@ class RegisterZipCode extends GetWidget<RegisterZipCodeController> {
                           filled: true,
                           fillColor: theme.colorScheme.onPrimaryContainer),
                       Padding(
-                          padding: getPadding(top: 26, bottom: 5),
+                          padding: getPadding(top: 27),
                           child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.start,
@@ -215,19 +230,219 @@ class RegisterZipCode extends GetWidget<RegisterZipCodeController> {
                                     filled: true,
                                     fillColor:
                                         theme.colorScheme.onPrimaryContainer)
+                              ])),
+                      Padding(
+                          padding: getPadding(top: 27),
+                          child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Row(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Padding(
+                                          padding: getPadding(top: 2),
+                                          child: Text("비밀번호",
+                                              overflow: TextOverflow.ellipsis,
+                                              textAlign: TextAlign.left,
+                                              style: theme
+                                                  .textTheme.titleMedium!
+                                                  .copyWith(
+                                                      letterSpacing:
+                                                          getHorizontalSize(
+                                                              0.03)))),
+                                      Padding(
+                                          padding:
+                                              getPadding(left: 5, bottom: 5),
+                                          child: Text("*",
+                                              overflow: TextOverflow.ellipsis,
+                                              textAlign: TextAlign.left,
+                                              style: theme.textTheme.titleSmall!
+                                                  .copyWith(
+                                                      letterSpacing:
+                                                          getHorizontalSize(
+                                                              0.06))))
+                                    ]),
+                                Obx(() => CustomTextFormField(
+                                    textInputType: TextInputType.emailAddress,
+                                    controller: controller.passwordController,
+                                    margin: getMargin(top: 4),
+                                    contentPadding: getPadding(
+                                        left: 12,
+                                        top: 14,
+                                        right: 12,
+                                        bottom: 14),
+                                    textStyle:
+                                        CustomTextStyles.bodyLargeGray50003,
+                                    hintText: "영문/숫자/특수문자 조합 (6~12자)",
+                                    obscureText:
+                                        controller.isShowPassword.isFalse,
+                                    hintStyle:
+                                        CustomTextStyles.bodyLargeGray50003,
+                                    suffix: Container(
+                                        margin: getMargin(
+                                            left: 30,
+                                            top: 12,
+                                            right: 10,
+                                            bottom: 12),
+                                        child: CustomImageView(
+                                          svgPath:
+                                              controller.isShowPassword.isTrue
+                                                  ? Assets.svg.imgEyeOpened.path
+                                                  : Assets.svg.imgEyeCrossedOut
+                                                      .path,
+                                          onTap: () {
+                                            controller.isShowPassword.toggle();
+                                          },
+                                        )),
+                                    suffixConstraints: BoxConstraints(
+                                        maxHeight: getVerticalSize(48)),
+                                    filled: true,
+                                    fillColor:
+                                        theme.colorScheme.onPrimaryContainer)),
+                              ])),
+                      Padding(
+                          padding: getPadding(top: 27),
+                          child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Row(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Padding(
+                                          padding: getPadding(top: 2),
+                                          child: Text("비밀번호 확인",
+                                              overflow: TextOverflow.ellipsis,
+                                              textAlign: TextAlign.left,
+                                              style: theme
+                                                  .textTheme.titleMedium!
+                                                  .copyWith(
+                                                      letterSpacing:
+                                                          getHorizontalSize(
+                                                              0.03)))),
+                                      Padding(
+                                          padding:
+                                              getPadding(left: 5, bottom: 5),
+                                          child: Text("*",
+                                              overflow: TextOverflow.ellipsis,
+                                              textAlign: TextAlign.left,
+                                              style: theme.textTheme.titleSmall!
+                                                  .copyWith(
+                                                      letterSpacing:
+                                                          getHorizontalSize(
+                                                              0.06))))
+                                    ]),
+                                Obx(() => CustomTextFormField(
+                                    textInputType: TextInputType.emailAddress,
+                                    controller:
+                                        controller.confirmPasswordController,
+                                    margin: getMargin(top: 4),
+                                    contentPadding: getPadding(
+                                        left: 12,
+                                        top: 14,
+                                        right: 12,
+                                        bottom: 14),
+                                    textStyle:
+                                        CustomTextStyles.bodyLargeGray50003,
+                                    hintText: "비밀번호재입력",
+                                    obscureText: controller
+                                        .isShowConfirmPassword.isFalse,
+                                    hintStyle:
+                                        CustomTextStyles.bodyLargeGray50003,
+                                    suffix: Container(
+                                        margin: getMargin(
+                                            left: 30,
+                                            top: 12,
+                                            right: 10,
+                                            bottom: 12),
+                                        child: CustomImageView(
+                                          svgPath: controller
+                                                  .isShowConfirmPassword.isTrue
+                                              ? Assets.svg.imgEyeOpened.path
+                                              : Assets
+                                                  .svg.imgEyeCrossedOut.path,
+                                          onTap: () {
+                                            controller.isShowConfirmPassword
+                                                .toggle();
+                                          },
+                                        )),
+                                    suffixConstraints: BoxConstraints(
+                                        maxHeight: getVerticalSize(48)),
+                                    filled: true,
+                                    fillColor:
+                                        theme.colorScheme.onPrimaryContainer)),
+                              ])),
+                      Padding(
+                          padding: getPadding(top: 27),
+                          child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Row(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Padding(
+                                          padding: getPadding(top: 2),
+                                          child: Text("닉네임",
+                                              overflow: TextOverflow.ellipsis,
+                                              textAlign: TextAlign.left,
+                                              style: theme
+                                                  .textTheme.titleMedium!
+                                                  .copyWith(
+                                                      letterSpacing:
+                                                          getHorizontalSize(
+                                                              0.03)))),
+                                      Padding(
+                                          padding:
+                                              getPadding(left: 5, bottom: 5),
+                                          child: Text("*",
+                                              overflow: TextOverflow.ellipsis,
+                                              textAlign: TextAlign.left,
+                                              style: theme.textTheme.titleSmall!
+                                                  .copyWith(
+                                                      letterSpacing:
+                                                          getHorizontalSize(
+                                                              0.06))))
+                                    ]),
+                                Obx(() => CustomTextFormField(
+                                    textInputType: TextInputType.emailAddress,
+                                    controller: controller.nicknameController,
+                                    margin: getMargin(top: 4),
+                                    contentPadding: getPadding(
+                                        left: 12,
+                                        top: 14,
+                                        right: 12,
+                                        bottom: 14),
+                                    textStyle:
+                                        CustomTextStyles.bodyLargeGray50003,
+                                    hintText: "닉네임 입력 (10자 이내))",
+                                    obscureText: controller
+                                        .isShowConfirmPassword.isFalse,
+                                    hintStyle:
+                                        CustomTextStyles.bodyLargeGray50003,
+                                    filled: true,
+                                    fillColor:
+                                        theme.colorScheme.onPrimaryContainer)),
                               ]))
                     ])),
             bottomNavigationBar: Container(
                 margin: getMargin(left: 16, right: 16, bottom: 29),
-                decoration: AppDecoration.shadow,
+                // decoration: AppDecoration.shadow,
                 child: CustomElevatedButton(
                   text: "입력 완료",
+                  // TODO
+                  // disabled일 때 스타일 정의하기
+                  // isDisabled: !controller.isValid,
                   buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
                       fixedSize: MaterialStateProperty.all<Size>(
                           Size(double.maxFinite, getVerticalSize(52)))),
                   buttonTextStyle: CustomTextStyles.titleMedium18,
                   onTap: () {
-                    if (this.isValid()) {
+                    if (controller.isValid) {
                       Get.toNamed(
                         AppRoutes.registerLicense,
                       );

@@ -186,6 +186,9 @@ class $AssetsSvgGen {
 
   /// File path: assets/svg/img_eye_crossed_out.svg
   SvgGenImage get imgEyeCrossedOut => const SvgGenImage('assets/svg/img_eye_crossed_out.svg');
+  
+  /// File path: assets/svg/img_eye_opened.svg
+  SvgGenImage get imgEyeOpened => const SvgGenImage('assets/svg/img_eye_opened.svg');
 
   /// File path: assets/svg/img_friends_typo.svg
   SvgGenImage get imgFriendsTypo => const SvgGenImage('assets/svg/img_friends_typo.svg');

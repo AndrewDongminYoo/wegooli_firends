@@ -34,6 +34,7 @@ class CustomTextFormField extends StatelessWidget {
     this.focusedBorderDecoration,
     this.disabledBorderDecoration,
     this.validator,
+    this.enabled = true,
   }) : super(
           key: key,
         );
@@ -45,6 +46,7 @@ class CustomTextFormField extends StatelessWidget {
   final List<TextInputFormatter> inputFormatters;
   final FocusNode? focusNode;
   final bool? autofocus;
+  final bool? enabled;
   final TextStyle? textStyle;
   final bool? obscureText;
   final TextInputAction? textInputAction;
@@ -90,6 +92,7 @@ class CustomTextFormField extends StatelessWidget {
           maxLines: maxLines ?? 1,
           decoration: decoration,
           validator: validator,
+          enabled: enabled,
         ),
       );
   InputDecoration get decoration => InputDecoration(

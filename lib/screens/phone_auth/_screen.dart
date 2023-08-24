@@ -113,7 +113,8 @@ class ValidatePhone extends GetWidget<ValidatePhoneController> {
                                                               0.06))))
                                     ]),
                                 Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
                                     CustomTextFormField(
                                         width: getHorizontalSize(158),
@@ -205,34 +206,28 @@ class ValidatePhone extends GetWidget<ValidatePhoneController> {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  // TODO
-                                  // Dropbox로 변경
-                                  CustomTextFormField(
+                                  CustomDropDown(
                                       width: getHorizontalSize(104),
-                                      controller:
-                                          controller.phoneProviderController,
-                                      margin: getMargin(top: 4),
-                                      contentPadding: getPadding(
-                                          left: 10, top: 14, bottom: 14),
-                                      textStyle:
-                                          CustomTextStyles.bodyLargeGray500,
-                                      hintText: "SKT",
-                                      hintStyle:
-                                          CustomTextStyles.bodyLargeGray500,
-                                      suffix: Container(
-                                          margin: getMargin(
-                                              left: 30,
-                                              top: 12,
-                                              right: 10,
-                                              bottom: 12),
+                                      icon: Container(
+                                          margin:
+                                              getMargin(left: 30, right: 10),
                                           child: CustomImageView(
                                               svgPath: Assets
                                                   .svg.imgCaretDown.path)),
-                                      suffixConstraints: BoxConstraints(
-                                          maxHeight: getVerticalSize(48)),
+                                      hintText: "통신사",
+                                      margin: getMargin(top: 4),
+                                      textStyle:
+                                          CustomTextStyles.bodyLargeGray500,
+                                      items: controller.phoneProviderModelObj
+                                          .value.dropdownItemList.value,
                                       filled: true,
                                       fillColor:
-                                          theme.colorScheme.onPrimaryContainer),
+                                          theme.colorScheme.onPrimaryContainer,
+                                      contentPadding: getPadding(
+                                          left: 10, top: 14, bottom: 14),
+                                      onChanged: (value) {
+                                        controller.onSelected(value);
+                                      }),
                                   CustomTextFormField(
                                       width: getHorizontalSize(216),
                                       controller:

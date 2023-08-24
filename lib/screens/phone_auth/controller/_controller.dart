@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 // 📦 Package imports:
 import 'package:get/get.dart';
+import 'package:wegooli_friends/core/app_export.dart';
 
 // 🌎 Project imports:
 import '../models/_model.dart';
@@ -16,12 +17,11 @@ class ValidatePhoneController extends GetxController {
   TextEditingController age1FormatController = TextEditingController();
   TextEditingController age2FormatController = TextEditingController();
   TextEditingController codeController = TextEditingController();
-  TextEditingController phoneProviderController = TextEditingController();
   TextEditingController phoneNumberController = TextEditingController();
 
-  Rx<LoginValidatePhoneAuthModel> validatePhoneAuthModelObj =
-      LoginValidatePhoneAuthModel().obs;
+  Rx<PhoneProviderModel> phoneProviderModelObj = PhoneProviderModel().obs;
 
+  SelectionPopupModel? selectedDropDownValue;
   bool get isValidatedPhone {
     // TODO: 휴대폰 인증 로직이 필요합니다.
     return true;
@@ -34,7 +34,16 @@ class ValidatePhoneController extends GetxController {
     age1FormatController.dispose();
     age2FormatController.dispose();
     codeController.dispose();
-    phoneProviderController.dispose();
     phoneNumberController.dispose();
+  }
+
+  onSelected(dynamic value) {
+    for (var element in phoneProviderModelObj.value.dropdownItemList.value) {
+      element.isSelected = false;
+      if (element.id == value.id) {
+        element.isSelected = true;
+      }
+    }
+    phoneProviderModelObj.value.dropdownItemList.refresh();
   }
 }

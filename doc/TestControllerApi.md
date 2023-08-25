@@ -13,7 +13,7 @@ All URIs are relative to *http://13.209.6.245:8089*
 | [**callTest**](TestControllerApi.md#calltest) | **GET** /test/test |
 
 > callTest
-> BuiltList<TestModel> callTest(model)
+> JsonObject callTest(model)
 
 ### Example
 
@@ -24,7 +24,7 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getTestControllerApi();
-final TestModel model = ; // TestModel |
+final TestModel model = ;
 
 try {
     final response = api.callTest(model);
@@ -42,7 +42,7 @@ try {
 
 ### Return type
 
-[**BuiltList&lt;TestModel&gt;**](TestModel.md)
+[**JsonObject**](JsonObject.md)
 
 ### Authorization
 

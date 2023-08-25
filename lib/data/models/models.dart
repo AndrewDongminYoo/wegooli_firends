@@ -28,6 +28,7 @@ export 'team_model.dart';
 export 'team_request.dart';
 export 'terminal_model.dart';
 export 'terminal_request.dart';
+export 'terminal_update_request.dart';
 export 'test_model.dart';
 export 'user_details_dto.dart';
 export 'user_dto.dart';

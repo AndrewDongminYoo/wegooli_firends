@@ -14,6 +14,8 @@ class _$DeviceControlResultDTO extends DeviceControlResultDTO {
   @override
   final String? t42;
   @override
+  final String? t5;
+  @override
   final String? t0;
   @override
   final String? t1;
@@ -23,8 +25,6 @@ class _$DeviceControlResultDTO extends DeviceControlResultDTO {
   final String? t3;
   @override
   final String? t4;
-  @override
-  final String? t5;
   @override
   final String? t6;
   @override
@@ -76,12 +76,12 @@ class _$DeviceControlResultDTO extends DeviceControlResultDTO {
       {this.userId,
       this.terTelNum,
       this.t42,
+      this.t5,
       this.t0,
       this.t1,
       this.t2,
       this.t3,
       this.t4,
-      this.t5,
       this.t6,
       this.t7,
       this.t8,
@@ -121,12 +121,12 @@ class _$DeviceControlResultDTO extends DeviceControlResultDTO {
         userId == other.userId &&
         terTelNum == other.terTelNum &&
         t42 == other.t42 &&
+        t5 == other.t5 &&
         t0 == other.t0 &&
         t1 == other.t1 &&
         t2 == other.t2 &&
         t3 == other.t3 &&
         t4 == other.t4 &&
-        t5 == other.t5 &&
         t6 == other.t6 &&
         t7 == other.t7 &&
         t8 == other.t8 &&
@@ -156,12 +156,12 @@ class _$DeviceControlResultDTO extends DeviceControlResultDTO {
     _$hash = $jc(_$hash, userId.hashCode);
     _$hash = $jc(_$hash, terTelNum.hashCode);
     _$hash = $jc(_$hash, t42.hashCode);
+    _$hash = $jc(_$hash, t5.hashCode);
     _$hash = $jc(_$hash, t0.hashCode);
     _$hash = $jc(_$hash, t1.hashCode);
     _$hash = $jc(_$hash, t2.hashCode);
     _$hash = $jc(_$hash, t3.hashCode);
     _$hash = $jc(_$hash, t4.hashCode);
-    _$hash = $jc(_$hash, t5.hashCode);
     _$hash = $jc(_$hash, t6.hashCode);
     _$hash = $jc(_$hash, t7.hashCode);
     _$hash = $jc(_$hash, t8.hashCode);
@@ -193,12 +193,12 @@ class _$DeviceControlResultDTO extends DeviceControlResultDTO {
           ..add('userId', userId)
           ..add('terTelNum', terTelNum)
           ..add('t42', t42)
+          ..add('t5', t5)
           ..add('t0', t0)
           ..add('t1', t1)
           ..add('t2', t2)
           ..add('t3', t3)
           ..add('t4', t4)
-          ..add('t5', t5)
           ..add('t6', t6)
           ..add('t7', t7)
           ..add('t8', t8)
@@ -240,6 +240,10 @@ class DeviceControlResultDTOBuilder
   String? get t42 => _$this._t42;
   set t42(String? t42) => _$this._t42 = t42;
 
+  String? _t5;
+  String? get t5 => _$this._t5;
+  set t5(String? t5) => _$this._t5 = t5;
+
   String? _t0;
   String? get t0 => _$this._t0;
   set t0(String? t0) => _$this._t0 = t0;
@@ -259,10 +263,6 @@ class DeviceControlResultDTOBuilder
   String? _t4;
   String? get t4 => _$this._t4;
   set t4(String? t4) => _$this._t4 = t4;
-
-  String? _t5;
-  String? get t5 => _$this._t5;
-  set t5(String? t5) => _$this._t5 = t5;
 
   String? _t6;
   String? get t6 => _$this._t6;
@@ -358,12 +358,12 @@ class DeviceControlResultDTOBuilder
       _userId = $v.userId;
       _terTelNum = $v.terTelNum;
       _t42 = $v.t42;
+      _t5 = $v.t5;
       _t0 = $v.t0;
       _t1 = $v.t1;
       _t2 = $v.t2;
       _t3 = $v.t3;
       _t4 = $v.t4;
-      _t5 = $v.t5;
       _t6 = $v.t6;
       _t7 = $v.t7;
       _t8 = $v.t8;
@@ -410,12 +410,12 @@ class DeviceControlResultDTOBuilder
             userId: userId,
             terTelNum: terTelNum,
             t42: t42,
+            t5: t5,
             t0: t0,
             t1: t1,
             t2: t2,
             t3: t3,
             t4: t4,
-            t5: t5,
             t6: t6,
             t7: t7,
             t8: t8,

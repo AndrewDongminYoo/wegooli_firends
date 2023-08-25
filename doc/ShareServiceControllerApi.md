@@ -26,7 +26,7 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getShareServiceControllerApi();
-final ShareServiceRequest request = ; // ShareServiceRequest |
+final ShareServiceRequest request = ;
 
 try {
     final response = api.getShareService(request);
@@ -71,7 +71,7 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getShareServiceControllerApi();
-final ServiceCarDetailRequest request = ; // ServiceCarDetailRequest |
+final ServiceCarDetailRequest request = ;
 
 try {
     final response = api.getShareServiceDetail(request);
@@ -116,7 +116,7 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getShareServiceControllerApi();
-final LeaderSetRequest request = ; // LeaderSetRequest |
+final LeaderSetRequest request = ;
 
 try {
     final response = api.setServiceLeader(request);

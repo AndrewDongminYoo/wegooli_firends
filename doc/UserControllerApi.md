@@ -15,8 +15,8 @@ All URIs are relative to *http://13.209.6.245:8089*
 | [**getUserDetail**](UserControllerApi.md#getuserdetail) | **POST** /auth/getUserDetail |
 | [**logOut**](UserControllerApi.md#logout)               | **GET** /auth/logout         |
 | [**login**](UserControllerApi.md#login)                 | **POST** /auth/login         |
-| [**signin**](UserControllerApi.md#signin)               | **POST** /auth/signin        |
 | [**signout**](UserControllerApi.md#signout)             | **GET** /auth/signout        |
+| [**signup**](UserControllerApi.md#signup)               | **POST** /auth/signup        |
 
 > checkId
 > String checkId(id)
@@ -30,6 +30,7 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getUserControllerApi();
+final String id = id_example;
 
 try {
     final response = api.checkId(id);
@@ -78,7 +79,7 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getUserControllerApi();
-final UserDetailsDTO userDetailsDTO = ; // UserDetailsDTO |
+final UserDetailsDTO userDetailsDTO = ;
 
 try {
     final response = api.generateToken(userDetailsDTO);
@@ -123,7 +124,7 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getUserControllerApi();
-final Account account = ; // Account |
+final Account account = ;
 
 try {
     final response = api.getUserDetail(account);
@@ -210,6 +211,8 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getUserControllerApi();
+final String id = id_example;
+final String password = password_example;
 
 try {
     final response = api.login(id, password);
@@ -243,51 +246,6 @@ try {
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-> signin
-> String signin(userDTO)
-
-### Example
-
-```dart
-import 'package:wegooli_friends/api.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
-
-final api = WegooliFriends().getUserControllerApi();
-final UserDTO userDTO = ; // UserDTO |
-
-try {
-    final response = api.signin(userDTO);
-    print(response);
-} catch on DioException (e) {
-    print('Exception when calling UserControllerApi->signin: $e\n');
-}
-```
-
-### Parameters
-
-| Name        | Type                      | Description | Notes      |
-| ----------- | ------------------------- | ----------- | ---------- |
-| **userDTO** | [**UserDTO**](UserDTO.md) |             | [optional] |
-
-### Return type
-
-**String**
-
-### Authorization
-
-[jwtAuth](../README.md#jwtAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: "/"
-
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
 > signout
 > String signout(id)
 
@@ -300,6 +258,7 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getUserControllerApi();
+final String id = id_example;
 
 try {
     final response = api.signout(id);
@@ -326,6 +285,51 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: "/"
+
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+> signup
+> String signup(userDTO)
+
+### Example
+
+```dart
+import 'package:wegooli_friends/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
+
+final api = WegooliFriends().getUserControllerApi();
+final UserDTO userDTO = ;
+
+try {
+    final response = api.signup(userDTO);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling UserControllerApi->signup: $e\n');
+}
+```
+
+### Parameters
+
+| Name        | Type                      | Description | Notes |
+| ----------- | ------------------------- | ----------- | ----- |
+| **userDTO** | [**UserDTO**](UserDTO.md) |             |
+
+### Return type
+
+**String**
+
+### Authorization
+
+[jwtAuth](../README.md#jwtAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: "/"
 
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

@@ -77,7 +77,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
         Get.find<WegooliFriends>().getScheduleControllerApi();
 
     final response2 = await scheduleControllerApi.selectScheduleList(
-        request: (ScheduleRequestBuilder()..teamSeq = 2).build(), extra: extra);
+         teamSeq: (ScheduleRequestBuilder()..teamSeq = 2).build().teamSeq, extra: extra);
     print('response2.data : ${response2.data}');
     bool done = response2.data!.any(compose);
     controller.isUsed.value = done;

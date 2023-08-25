@@ -10,6 +10,7 @@ import 'package:dio/dio.dart';
 import '/data/api_util.dart';
 import '/data/models/terminal_model.dart';
 import '/data/models/terminal_request.dart';
+import '/data/models/terminal_update_request.dart';
 
 class TerminalControllerApi {
   final Dio _dio;
@@ -263,7 +264,7 @@ class TerminalControllerApi {
   ///
   /// Parameters:
   /// * [seq]
-  /// * [terminalRequest]
+  /// * [terminalUpdateRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -275,7 +276,7 @@ class TerminalControllerApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> updateTerminal({
     required int seq,
-    required TerminalRequest terminalRequest,
+    required TerminalUpdateRequest terminalUpdateRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -307,8 +308,9 @@ class TerminalControllerApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(TerminalRequest);
-      _bodyData = _serializers.serialize(terminalRequest, specifiedType: _type);
+      const _type = FullType(TerminalUpdateRequest);
+      _bodyData =
+          _serializers.serialize(terminalUpdateRequest, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(

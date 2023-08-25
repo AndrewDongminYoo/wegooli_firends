@@ -227,7 +227,10 @@ class ScheduleControllerApi {
   /// selectScheduleList
   ///
   /// Parameters:
-  /// * [request]
+  /// * [teamSeq]
+  /// * [accountId]
+  /// * [startAt]
+  /// * [endAt]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -238,7 +241,10 @@ class ScheduleControllerApi {
   /// Returns a [Future] containing a [Response] with a [BuiltList<ScheduleModel>] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<BuiltList<ScheduleModel>>> selectScheduleList({
-    required ScheduleRequest request,
+    int? teamSeq,
+    String? accountId,
+    String? startAt,
+    String? endAt,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -266,8 +272,18 @@ class ScheduleControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'request': encodeQueryParameter(
-          _serializers, request, const FullType(ScheduleRequest)),
+      if (teamSeq != null)
+        r'teamSeq':
+            encodeQueryParameter(_serializers, teamSeq, const FullType(int)),
+      if (accountId != null)
+        r'accountId': encodeQueryParameter(
+            _serializers, accountId, const FullType(String)),
+      if (startAt != null)
+        r'startAt':
+            encodeQueryParameter(_serializers, startAt, const FullType(String)),
+      if (endAt != null)
+        r'endAt':
+            encodeQueryParameter(_serializers, endAt, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(

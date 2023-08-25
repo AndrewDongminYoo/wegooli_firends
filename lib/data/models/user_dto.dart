@@ -30,6 +30,7 @@ part 'user_dto.g.dart';
 /// * [color]
 /// * [nickname]
 /// * [profilePicture]
+/// * [customerKey]
 @BuiltValue()
 abstract class UserDTO implements Built<UserDTO, UserDTOBuilder> {
   @BuiltValueField(wireName: r'seq')
@@ -94,6 +95,9 @@ abstract class UserDTO implements Built<UserDTO, UserDTOBuilder> {
 
   @BuiltValueField(wireName: r'profilePicture')
   String? get profilePicture;
+
+  @BuiltValueField(wireName: r'customerKey')
+  String? get customerKey;
 
   UserDTO._();
 
@@ -262,6 +266,13 @@ class _$UserDTOSerializer implements PrimitiveSerializer<UserDTO> {
       yield r'profilePicture';
       yield serializers.serialize(
         object.profilePicture,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.customerKey != null) {
+      yield r'customerKey';
+      yield serializers.serialize(
+        object.customerKey,
         specifiedType: const FullType(String),
       );
     }
@@ -436,6 +447,13 @@ class _$UserDTOSerializer implements PrimitiveSerializer<UserDTO> {
             specifiedType: const FullType(String),
           ) as String;
           result.profilePicture = valueDes;
+          break;
+        case r'customerKey':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.customerKey = valueDes;
           break;
         default:
           unhandled.add(key);

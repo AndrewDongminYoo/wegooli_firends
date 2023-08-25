@@ -28,7 +28,7 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getScheduleControllerApi();
-final int seq = 56; // int |
+final int seq = 56;
 
 try {
     api.deleteSchedule(seq);
@@ -72,7 +72,7 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getScheduleControllerApi();
-final ScheduleRequest scheduleRequest = ; // ScheduleRequest |
+final ScheduleRequest scheduleRequest = ;
 
 try {
     api.registSchedule(scheduleRequest);
@@ -116,7 +116,7 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getScheduleControllerApi();
-final int seq = 56; // int |
+final int seq = 56;
 
 try {
     final response = api.selectSchedule(seq);
@@ -150,7 +150,7 @@ try {
 [[Back to README]](../README.md)
 
 > selectScheduleList
-> BuiltList<ScheduleModel> selectScheduleList(request)
+> BuiltList<ScheduleModel> selectScheduleList(teamSeq, accountId, startAt, endAt)
 
 ### Example
 
@@ -161,10 +161,13 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getScheduleControllerApi();
-final ScheduleRequest request = ; // ScheduleRequest |
+final int teamSeq = 56;
+final String accountId = accountId_example;
+final String startAt = startAt_example;
+final String endAt = endAt_example;
 
 try {
-    final response = api.selectScheduleList(request);
+    final response = api.selectScheduleList(teamSeq, accountId, startAt, endAt);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling ScheduleControllerApi->selectScheduleList: $e\n');
@@ -173,9 +176,12 @@ try {
 
 ### Parameters
 
-| Name        | Type                       | Description | Notes |
-| ----------- | -------------------------- | ----------- | ----- |
-| **request** | [**ScheduleRequest**](.md) |             |
+| Name          | Type       | Description | Notes      |
+| ------------- | ---------- | ----------- | ---------- |
+| **teamSeq**   | **int**    |             | [optional] |
+| **accountId** | **String** |             | [optional] |
+| **startAt**   | **String** |             | [optional] |
+| **endAt**     | **String** |             | [optional] |
 
 ### Return type
 
@@ -206,8 +212,8 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getScheduleControllerApi();
-final int seq = 56; // int |
-final ScheduleRequest scheduleRequest = ; // ScheduleRequest |
+final int seq = 56;
+final ScheduleRequest scheduleRequest = ;
 
 try {
     api.updateSchedule(seq, scheduleRequest);

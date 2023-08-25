@@ -28,6 +28,8 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getAccountAgreementControllerApi();
+final String classification = classification_example;
+final String accountId = accountId_example;
 
 try {
     final response = api.deleteAccountAgreement(classification, accountId);
@@ -73,7 +75,7 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getAccountAgreementControllerApi();
-final AccountAgreementRequest accountAgreementRequest = ; // AccountAgreementRequest |
+final AccountAgreementRequest accountAgreementRequest = ;
 
 try {
     final response = api.insertAccountAgreement(accountAgreementRequest);
@@ -118,6 +120,8 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getAccountAgreementControllerApi();
+final String classification = classification_example;
+final String accountId = accountId_example;
 
 try {
     final response = api.selectAccountAgreement(classification, accountId);
@@ -163,6 +167,13 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getAccountAgreementControllerApi();
+final String classification = classification_example;
+final String accountId = accountId_example;
+final String agreeYn = agreeYn_example;
+final String startCreatedAt = startCreatedAt_example;
+final String endCreatedAt = endCreatedAt_example;
+final String startUpdatedAt = startUpdatedAt_example;
+final String endUpdatedAt = endUpdatedAt_example;
 
 try {
     final response = api.selectAccountAgreementList(classification, accountId, agreeYn, startCreatedAt, endCreatedAt, startUpdatedAt, endUpdatedAt);
@@ -213,7 +224,7 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getAccountAgreementControllerApi();
-final AccountAgreementRequest accountAgreementRequest = ; // AccountAgreementRequest |
+final AccountAgreementRequest accountAgreementRequest = ;
 
 try {
     final response = api.updateAccountAgreement(accountAgreementRequest);

@@ -39,6 +39,7 @@ doc/TeamRequest.md
 doc/TerminalControllerApi.md
 doc/TerminalModel.md
 doc/TerminalRequest.md
+doc/TerminalUpdateRequest.md
 doc/TestControllerApi.md
 doc/TestModel.md
 doc/UserControllerApi.md
@@ -96,6 +97,7 @@ lib/data/models/team_model.dart
 lib/data/models/team_request.dart
 lib/data/models/terminal_model.dart
 lib/data/models/terminal_request.dart
+lib/data/models/terminal_update_request.dart
 lib/data/models/test_model.dart
 lib/data/models/user_details_dto.dart
 lib/data/models/user_dto.dart
@@ -142,6 +144,7 @@ test/team_request_test.dart
 test/terminal_controller_api_test.dart
 test/terminal_model_test.dart
 test/terminal_request_test.dart
+test/terminal_update_request_test.dart
 test/test_controller_api_test.dart
 test/test_model_test.dart
 test/user_controller_api_test.dart

@@ -17,6 +17,13 @@ import 'package:wegooli_friends/api.dart';
 | **carNum**      | **String**                  |             | [optional] |
 | **phoneNumber** | **String**                  |             | [optional] |
 | **status**      | **String**                  |             | [optional] |
+| **model**       | **String**                  |             | [optional] |
+| **volt**        | **String**                  |             | [optional] |
+| **fuelType**    | **String**                  |             | [optional] |
+| **fuel**        | **String**                  |             | [optional] |
+| **segment**     | **String**                  |             | [optional] |
+| **accountId**   | **String**                  |             | [optional] |
+| **carNickName** | **String**                  |             | [optional] |
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

@@ -432,12 +432,7 @@ class UserControllerApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null
-          ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ApiResponseObject),
-            ) as ApiResponseObject;
+      _responseData = rawResponse == null ? null : rawResponse as ApiResponseObject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -460,7 +455,7 @@ class UserControllerApi {
     );
   }
 
-  /// signin
+  /// signup
   ///
   /// Parameters:
   /// * [userDTO]
@@ -473,8 +468,8 @@ class UserControllerApi {
   ///
   /// Returns a [Future] containing a [Response] with a [String] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<String>> signin({
-    UserDTO? userDTO,
+  Future<Response<String>> signup({
+    required UserDTO userDTO,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -482,7 +477,7 @@ class UserControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/auth/signin';
+    final _path = r'/auth/signup';
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -506,9 +501,7 @@ class UserControllerApi {
 
     try {
       const _type = FullType(UserDTO);
-      _bodyData = userDTO == null
-          ? null
-          : _serializers.serialize(userDTO, specifiedType: _type);
+      _bodyData = _serializers.serialize(userDTO, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(

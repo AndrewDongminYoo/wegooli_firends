@@ -8,12 +8,13 @@ import 'package:wegooli_friends/api.dart';
 
 All URIs are relative to *http://13.209.6.245:8089*
 
-| Method                                                                                   | HTTP request                   | Description |
-| ---------------------------------------------------------------------------------------- | ------------------------------ | ----------- |
-| [**deleteTeamAccount**](TeamAccountConnectionControllerApi.md#deleteteamaccount)         | **DELETE** /team/account/{seq} |
-| [**insertTeamAccount**](TeamAccountConnectionControllerApi.md#insertteamaccount)         | **POST** /team/account         |
-| [**selectTeamAccount**](TeamAccountConnectionControllerApi.md#selectteamaccount)         | **GET** /team/account/{seq}    |
-| [**selectTeamAccountList**](TeamAccountConnectionControllerApi.md#selectteamaccountlist) | **GET** /team/account          |
+| Method                                                                                   | HTTP request                             | Description |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------- | ----------- |
+| [**deleteTeamAccount**](TeamAccountConnectionControllerApi.md#deleteteamaccount)         | **DELETE** /team/account/{seq}           |
+| [**insertTeamAccount**](TeamAccountConnectionControllerApi.md#insertteamaccount)         | **POST** /team/account                   |
+| [**inviteTeamAccount**](TeamAccountConnectionControllerApi.md#inviteteamaccount)         | **PUT** /team/account/{accountId}/{code} |
+| [**selectTeamAccount**](TeamAccountConnectionControllerApi.md#selectteamaccount)         | **GET** /team/account/{seq}              |
+| [**selectTeamAccountList**](TeamAccountConnectionControllerApi.md#selectteamaccountlist) | **GET** /team/account                    |
 
 > deleteTeamAccount
 > String deleteTeamAccount(seq)
@@ -27,7 +28,7 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getTeamAccountConnectionControllerApi();
-final int seq = 56; // int |
+final int seq = 56;
 
 try {
     final response = api.deleteTeamAccount(seq);
@@ -72,7 +73,7 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getTeamAccountConnectionControllerApi();
-final TeamAccountConnectionRequest teamAccountConnectionRequest = ; // TeamAccountConnectionRequest |
+final TeamAccountConnectionRequest teamAccountConnectionRequest = ;
 
 try {
     final response = api.insertTeamAccount(teamAccountConnectionRequest);
@@ -105,6 +106,53 @@ try {
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
+> inviteTeamAccount
+> String inviteTeamAccount(accountId, code)
+
+### Example
+
+```dart
+import 'package:wegooli_friends/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
+
+final api = WegooliFriends().getTeamAccountConnectionControllerApi();
+final String accountId = accountId_example;
+final String code = code_example;
+
+try {
+    final response = api.inviteTeamAccount(accountId, code);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling TeamAccountConnectionControllerApi->inviteTeamAccount: $e\n');
+}
+```
+
+### Parameters
+
+| Name          | Type       | Description | Notes |
+| ------------- | ---------- | ----------- | ----- |
+| **accountId** | **String** |             |
+| **code**      | **String** |             |
+
+### Return type
+
+**String**
+
+### Authorization
+
+[jwtAuth](../README.md#jwtAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: "/"
+
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
 > selectTeamAccount
 > TeamAccountConnectionModel selectTeamAccount(seq)
 
@@ -117,7 +165,7 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getTeamAccountConnectionControllerApi();
-final int seq = 56; // int |
+final int seq = 56;
 
 try {
     final response = api.selectTeamAccount(seq);
@@ -162,7 +210,13 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getTeamAccountConnectionControllerApi();
-final int teamSeq = 56; // int |
+final int teamSeq = 56;
+final String accountId = accountId_example;
+final String startJoinedAt = startJoinedAt_example;
+final String endJoinedAt = endJoinedAt_example;
+final String startLeavedAt = startLeavedAt_example;
+final String endLeavedAt = endLeavedAt_example;
+final String isLeaved = isLeaved_example;
 
 try {
     final response = api.selectTeamAccountList(teamSeq, accountId, startJoinedAt, endJoinedAt, startLeavedAt, endLeavedAt, isLeaved);

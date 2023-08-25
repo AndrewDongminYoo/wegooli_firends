@@ -22,9 +22,19 @@ class _$TerminalModel extends TerminalModel {
   @override
   final String? status;
   @override
+  final String? model;
+  @override
+  final String? volt;
+  @override
+  final String? fuelType;
+  @override
   final String? fuel;
   @override
-  final String? model;
+  final String? segment;
+  @override
+  final String? accountId;
+  @override
+  final String? carNickName;
 
   factory _$TerminalModel([void Function(TerminalModelBuilder)? updates]) =>
       (new TerminalModelBuilder()..update(updates))._build();
@@ -37,8 +47,13 @@ class _$TerminalModel extends TerminalModel {
       this.carNum,
       this.phoneNumber,
       this.status,
+      this.model,
+      this.volt,
+      this.fuelType,
       this.fuel,
-      this.model})
+      this.segment,
+      this.accountId,
+      this.carNickName})
       : super._();
 
   @override
@@ -59,8 +74,13 @@ class _$TerminalModel extends TerminalModel {
         carNum == other.carNum &&
         phoneNumber == other.phoneNumber &&
         status == other.status &&
+        model == other.model &&
+        volt == other.volt &&
+        fuelType == other.fuelType &&
         fuel == other.fuel &&
-        model == other.model;
+        segment == other.segment &&
+        accountId == other.accountId &&
+        carNickName == other.carNickName;
   }
 
   @override
@@ -73,8 +93,13 @@ class _$TerminalModel extends TerminalModel {
     _$hash = $jc(_$hash, carNum.hashCode);
     _$hash = $jc(_$hash, phoneNumber.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
-    _$hash = $jc(_$hash, fuel.hashCode);
     _$hash = $jc(_$hash, model.hashCode);
+    _$hash = $jc(_$hash, volt.hashCode);
+    _$hash = $jc(_$hash, fuelType.hashCode);
+    _$hash = $jc(_$hash, fuel.hashCode);
+    _$hash = $jc(_$hash, segment.hashCode);
+    _$hash = $jc(_$hash, accountId.hashCode);
+    _$hash = $jc(_$hash, carNickName.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -89,8 +114,13 @@ class _$TerminalModel extends TerminalModel {
           ..add('carNum', carNum)
           ..add('phoneNumber', phoneNumber)
           ..add('status', status)
+          ..add('model', model)
+          ..add('volt', volt)
+          ..add('fuelType', fuelType)
           ..add('fuel', fuel)
-          ..add('model', model))
+          ..add('segment', segment)
+          ..add('accountId', accountId)
+          ..add('carNickName', carNickName))
         .toString();
   }
 }
@@ -127,13 +157,33 @@ class TerminalModelBuilder
   String? get status => _$this._status;
   set status(String? status) => _$this._status = status;
 
+  String? _model;
+  String? get model => _$this._model;
+  set model(String? model) => _$this._model = model;
+
+  String? _volt;
+  String? get volt => _$this._volt;
+  set volt(String? volt) => _$this._volt = volt;
+
+  String? _fuelType;
+  String? get fuelType => _$this._fuelType;
+  set fuelType(String? fuelType) => _$this._fuelType = fuelType;
+
   String? _fuel;
   String? get fuel => _$this._fuel;
   set fuel(String? fuel) => _$this._fuel = fuel;
 
-  String? _model;
-  String? get model => _$this._model;
-  set model(String? model) => _$this._model = model;
+  String? _segment;
+  String? get segment => _$this._segment;
+  set segment(String? segment) => _$this._segment = segment;
+
+  String? _accountId;
+  String? get accountId => _$this._accountId;
+  set accountId(String? accountId) => _$this._accountId = accountId;
+
+  String? _carNickName;
+  String? get carNickName => _$this._carNickName;
+  set carNickName(String? carNickName) => _$this._carNickName = carNickName;
 
   TerminalModelBuilder() {
     TerminalModel._defaults(this);
@@ -149,8 +199,13 @@ class TerminalModelBuilder
       _carNum = $v.carNum;
       _phoneNumber = $v.phoneNumber;
       _status = $v.status;
-      _fuel = $v.fuel;
       _model = $v.model;
+      _volt = $v.volt;
+      _fuelType = $v.fuelType;
+      _fuel = $v.fuel;
+      _segment = $v.segment;
+      _accountId = $v.accountId;
+      _carNickName = $v.carNickName;
       _$v = null;
     }
     return this;
@@ -180,8 +235,13 @@ class TerminalModelBuilder
             carNum: carNum,
             phoneNumber: phoneNumber,
             status: status,
+            model: model,
+            volt: volt,
+            fuelType: fuelType,
             fuel: fuel,
-            model: model);
+            segment: segment,
+            accountId: accountId,
+            carNickName: carNickName);
     replace(_$result);
     return _$result;
   }

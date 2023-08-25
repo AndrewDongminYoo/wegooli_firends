@@ -27,7 +27,7 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getTerminalControllerApi();
-final TerminalRequest terminalRequest = ; // TerminalRequest |
+final TerminalRequest terminalRequest = ;
 
 try {
     api.registTerminal(terminalRequest);
@@ -71,7 +71,7 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getTerminalControllerApi();
-final int seq = 56; // int |
+final int seq = 56;
 
 try {
     final response = api.selectTerminal(seq);
@@ -116,7 +116,7 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getTerminalControllerApi();
-final TerminalRequest request = ; // TerminalRequest |
+final TerminalRequest request = ;
 
 try {
     final response = api.selectTerminalList(request);
@@ -150,7 +150,7 @@ try {
 [[Back to README]](../README.md)
 
 > updateTerminal
-> updateTerminal(seq, terminalRequest)
+> updateTerminal(seq, terminalUpdateRequest)
 
 ### Example
 
@@ -161,11 +161,11 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getTerminalControllerApi();
-final int seq = 56; // int |
-final TerminalRequest terminalRequest = ; // TerminalRequest |
+final int seq = 56;
+final TerminalUpdateRequest terminalUpdateRequest = ;
 
 try {
-    api.updateTerminal(seq, terminalRequest);
+    api.updateTerminal(seq, terminalUpdateRequest);
 } catch on DioException (e) {
     print('Exception when calling TerminalControllerApi->updateTerminal: $e\n');
 }
@@ -173,10 +173,10 @@ try {
 
 ### Parameters
 
-| Name                | Type                                      | Description | Notes |
-| ------------------- | ----------------------------------------- | ----------- | ----- |
-| **seq**             | **int**                                   |             |
-| **terminalRequest** | [**TerminalRequest**](TerminalRequest.md) |             |
+| Name                      | Type                                                  | Description | Notes |
+| ------------------------- | ----------------------------------------------------- | ----------- | ----- |
+| **seq**                   | **int**                                               |             |
+| **terminalUpdateRequest** | [**TerminalUpdateRequest**](TerminalUpdateRequest.md) |             |
 
 ### Return type
 

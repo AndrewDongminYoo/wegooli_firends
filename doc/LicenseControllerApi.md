@@ -30,7 +30,7 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getLicenseControllerApi();
-final int seq = 56; // int |
+final int seq = 56;
 
 try {
     final response = api.deleteLicense(seq);
@@ -75,7 +75,7 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getLicenseControllerApi();
-final int memberSeq = 56; // int |
+final int memberSeq = 56;
 
 try {
     final response = api.deleteLicenseByMemberSeq(memberSeq);
@@ -120,7 +120,7 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getLicenseControllerApi();
-final LicenseRequest licenseRequest = ; // LicenseRequest |
+final LicenseRequest licenseRequest = ;
 
 try {
     final response = api.insertLicense(licenseRequest);
@@ -165,7 +165,7 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getLicenseControllerApi();
-final int seq = 56; // int |
+final int seq = 56;
 
 try {
     final response = api.selectLicense(seq);
@@ -210,7 +210,7 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getLicenseControllerApi();
-final LicenseRequest request = ; // LicenseRequest |
+final LicenseRequest request = ;
 
 try {
     final response = api.selectLicenseList(request);
@@ -297,8 +297,8 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getLicenseControllerApi();
-final int seq = 56; // int |
-final LicenseRequest licenseRequest = ; // LicenseRequest |
+final int seq = 56;
+final LicenseRequest licenseRequest = ;
 
 try {
     final response = api.updateLicense(seq, licenseRequest);

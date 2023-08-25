@@ -25,7 +25,7 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getTeamCarConnectionControllerApi();
-final TeamCarConnection teamCarConnection = ; // TeamCarConnection |
+final TeamCarConnection teamCarConnection = ;
 
 try {
     final response = api.teamCarConnection(teamCarConnection);
@@ -70,7 +70,7 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getTeamCarConnectionControllerApi();
-final TeamCarConnection teamCarConnection = ; // TeamCarConnection |
+final TeamCarConnection teamCarConnection = ;
 
 try {
     final response = api.teamCarDisConnection(teamCarConnection);

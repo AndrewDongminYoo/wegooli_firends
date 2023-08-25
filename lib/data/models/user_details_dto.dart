@@ -20,20 +20,21 @@ part 'user_details_dto.g.dart';
 /// * [id]
 /// * [enabled]
 /// * [color]
-/// * [nickname]
-/// * [profilePicture]
+/// * [phoneNumber]
+/// * [add1]
+/// * [add2]
+/// * [zipCode]
+/// * [email]
+/// * [sex]
 /// * [memberSeq]
 /// * [delYn]
 /// * [password]
 /// * [seq]
 /// * [delimit]
+/// * [customerKey]
+/// * [nickname]
+/// * [profilePicture]
 /// * [username]
-/// * [add1]
-/// * [add2]
-/// * [zipCode]
-/// * [phoneNumber]
-/// * [email]
-/// * [sex]
 /// * [accountNonExpired]
 /// * [accountNonLocked]
 /// * [credentialsNonExpired]
@@ -63,11 +64,23 @@ abstract class UserDetailsDTO
   @BuiltValueField(wireName: r'color')
   String? get color;
 
-  @BuiltValueField(wireName: r'nickname')
-  String? get nickname;
+  @BuiltValueField(wireName: r'phoneNumber')
+  String? get phoneNumber;
 
-  @BuiltValueField(wireName: r'profilePicture')
-  String? get profilePicture;
+  @BuiltValueField(wireName: r'add1')
+  String? get add1;
+
+  @BuiltValueField(wireName: r'add2')
+  String? get add2;
+
+  @BuiltValueField(wireName: r'zipCode')
+  String? get zipCode;
+
+  @BuiltValueField(wireName: r'email')
+  String? get email;
+
+  @BuiltValueField(wireName: r'sex')
+  String? get sex;
 
   @BuiltValueField(wireName: r'memberSeq')
   int? get memberSeq;
@@ -84,26 +97,17 @@ abstract class UserDetailsDTO
   @BuiltValueField(wireName: r'delimit')
   String? get delimit;
 
+  @BuiltValueField(wireName: r'customerKey')
+  String? get customerKey;
+
+  @BuiltValueField(wireName: r'nickname')
+  String? get nickname;
+
+  @BuiltValueField(wireName: r'profilePicture')
+  String? get profilePicture;
+
   @BuiltValueField(wireName: r'username')
   String? get username;
-
-  @BuiltValueField(wireName: r'add1')
-  String? get add1;
-
-  @BuiltValueField(wireName: r'add2')
-  String? get add2;
-
-  @BuiltValueField(wireName: r'zipCode')
-  String? get zipCode;
-
-  @BuiltValueField(wireName: r'phoneNumber')
-  String? get phoneNumber;
-
-  @BuiltValueField(wireName: r'email')
-  String? get email;
-
-  @BuiltValueField(wireName: r'sex')
-  String? get sex;
 
   @BuiltValueField(wireName: r'accountNonExpired')
   bool? get accountNonExpired;
@@ -197,17 +201,45 @@ class _$UserDetailsDTOSerializer
         specifiedType: const FullType(String),
       );
     }
-    if (object.nickname != null) {
-      yield r'nickname';
+    if (object.phoneNumber != null) {
+      yield r'phoneNumber';
       yield serializers.serialize(
-        object.nickname,
+        object.phoneNumber,
         specifiedType: const FullType(String),
       );
     }
-    if (object.profilePicture != null) {
-      yield r'profilePicture';
+    if (object.add1 != null) {
+      yield r'add1';
       yield serializers.serialize(
-        object.profilePicture,
+        object.add1,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.add2 != null) {
+      yield r'add2';
+      yield serializers.serialize(
+        object.add2,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.zipCode != null) {
+      yield r'zipCode';
+      yield serializers.serialize(
+        object.zipCode,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.email != null) {
+      yield r'email';
+      yield serializers.serialize(
+        object.email,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.sex != null) {
+      yield r'sex';
+      yield serializers.serialize(
+        object.sex,
         specifiedType: const FullType(String),
       );
     }
@@ -246,52 +278,31 @@ class _$UserDetailsDTOSerializer
         specifiedType: const FullType(String),
       );
     }
+    if (object.customerKey != null) {
+      yield r'customerKey';
+      yield serializers.serialize(
+        object.customerKey,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.nickname != null) {
+      yield r'nickname';
+      yield serializers.serialize(
+        object.nickname,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.profilePicture != null) {
+      yield r'profilePicture';
+      yield serializers.serialize(
+        object.profilePicture,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.username != null) {
       yield r'username';
       yield serializers.serialize(
         object.username,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.add1 != null) {
-      yield r'add1';
-      yield serializers.serialize(
-        object.add1,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.add2 != null) {
-      yield r'add2';
-      yield serializers.serialize(
-        object.add2,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.zipCode != null) {
-      yield r'zipCode';
-      yield serializers.serialize(
-        object.zipCode,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.phoneNumber != null) {
-      yield r'phoneNumber';
-      yield serializers.serialize(
-        object.phoneNumber,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.email != null) {
-      yield r'email';
-      yield serializers.serialize(
-        object.email,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.sex != null) {
-      yield r'sex';
-      yield serializers.serialize(
-        object.sex,
         specifiedType: const FullType(String),
       );
     }
@@ -419,19 +430,47 @@ class _$UserDetailsDTOSerializer
           ) as String;
           result.color = valueDes;
           break;
-        case r'nickname':
+        case r'phoneNumber':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.nickname = valueDes;
+          result.phoneNumber = valueDes;
           break;
-        case r'profilePicture':
+        case r'add1':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.profilePicture = valueDes;
+          result.add1 = valueDes;
+          break;
+        case r'add2':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.add2 = valueDes;
+          break;
+        case r'zipCode':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.zipCode = valueDes;
+          break;
+        case r'email':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.email = valueDes;
+          break;
+        case r'sex':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.sex = valueDes;
           break;
         case r'memberSeq':
           final valueDes = serializers.deserialize(
@@ -468,54 +507,33 @@ class _$UserDetailsDTOSerializer
           ) as String;
           result.delimit = valueDes;
           break;
+        case r'customerKey':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.customerKey = valueDes;
+          break;
+        case r'nickname':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.nickname = valueDes;
+          break;
+        case r'profilePicture':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.profilePicture = valueDes;
+          break;
         case r'username':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.username = valueDes;
-          break;
-        case r'add1':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.add1 = valueDes;
-          break;
-        case r'add2':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.add2 = valueDes;
-          break;
-        case r'zipCode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.zipCode = valueDes;
-          break;
-        case r'phoneNumber':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.phoneNumber = valueDes;
-          break;
-        case r'email':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.email = valueDes;
-          break;
-        case r'sex':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.sex = valueDes;
           break;
         case r'accountNonExpired':
           final valueDes = serializers.deserialize(

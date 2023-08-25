@@ -2,7 +2,7 @@
 import 'dart:async';
 
 // 📦 Package imports:
-import 'package:built_collection/built_collection.dart';
+import 'package:built_value/json_object.dart';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
@@ -28,9 +28,9 @@ class TestControllerApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<TestModel>] as data
+  /// Returns a [Future] containing a [Response] with a [JsonObject] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<TestModel>>> callTest({
+  Future<Response<JsonObject>> callTest({
     required TestModel model,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -72,7 +72,7 @@ class TestControllerApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<TestModel>? _responseData;
+    JsonObject? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -80,8 +80,8 @@ class TestControllerApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(BuiltList, [FullType(TestModel)]),
-            ) as BuiltList<TestModel>;
+              specifiedType: const FullType(JsonObject),
+            ) as JsonObject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -92,7 +92,7 @@ class TestControllerApi {
       );
     }
 
-    return Response<BuiltList<TestModel>>(
+    return Response<JsonObject>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

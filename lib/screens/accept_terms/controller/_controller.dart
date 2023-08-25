@@ -2,7 +2,7 @@
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import 'package:wegooli_friends/data/data.dart';
+import '/data/data.dart';
 
 /// A controller class for the SignupAcceptTermsScreen.
 ///
@@ -14,8 +14,10 @@ class AcceptTermsController extends GetxController {
           ? Get.find<AcceptTermsController>()
           : Get.put(AcceptTermsController());
   Rx<Account> agreementModel = Account().obs;
-  RxList<AccountAgreementModel> accountAgreementModelList = RxList<AccountAgreementModel>();
-  RxList<AccountAgreementRequest> accountAgreementRequestList = RxList<AccountAgreementRequest>();
+  RxList<AccountAgreementModel> accountAgreementModelList =
+      RxList<AccountAgreementModel>();
+  RxList<AccountAgreementRequest> accountAgreementRequestList =
+      RxList<AccountAgreementRequest>();
 
   Rx<bool> isAcceptedTerm0 = false.obs;
   Rx<bool> isAcceptedTerm1 = false.obs;

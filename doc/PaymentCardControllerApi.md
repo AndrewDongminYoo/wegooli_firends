@@ -28,7 +28,7 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getPaymentCardControllerApi();
-final int seq = 56; // int |
+final int seq = 56;
 
 try {
     final response = api.deletePaymentCard(seq);
@@ -73,7 +73,7 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getPaymentCardControllerApi();
-final PaymentCardRequest paymentCardRequest = ; // PaymentCardRequest |
+final PaymentCardRequest paymentCardRequest = ;
 
 try {
     final response = api.insertPaymentCard(paymentCardRequest);
@@ -118,7 +118,7 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getPaymentCardControllerApi();
-final int seq = 56; // int |
+final int seq = 56;
 
 try {
     final response = api.selectPaymentCard(seq);
@@ -163,7 +163,17 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getPaymentCardControllerApi();
-final int memberSeq = 56; // int |
+final int memberSeq = 56;
+final String cardNumber = cardNumber_example;
+final String defaultYn = defaultYn_example;
+final String delYn = delYn_example;
+final String startCreatedAt = startCreatedAt_example;
+final String endCreatedAt = endCreatedAt_example;
+final String startUpdatedAt = startUpdatedAt_example;
+final String endUpdatedAt = endUpdatedAt_example;
+final String password = password_example;
+final String rrn = rrn_example;
+final String crn = crn_example;
 
 try {
     final response = api.selectPaymentCardList(memberSeq, cardNumber, defaultYn, delYn, startCreatedAt, endCreatedAt, startUpdatedAt, endUpdatedAt, password, rrn, crn);
@@ -218,8 +228,8 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getPaymentCardControllerApi();
-final int seq = 56; // int |
-final PaymentCardRequest paymentCardRequest = ; // PaymentCardRequest |
+final int seq = 56;
+final PaymentCardRequest paymentCardRequest = ;
 
 try {
     final response = api.updatePaymentCard(seq, paymentCardRequest);

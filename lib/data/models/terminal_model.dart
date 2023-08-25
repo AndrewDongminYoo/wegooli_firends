@@ -16,6 +16,13 @@ part 'terminal_model.g.dart';
 /// * [carNum]
 /// * [phoneNumber]
 /// * [status]
+/// * [model]
+/// * [volt]
+/// * [fuelType]
+/// * [fuel]
+/// * [segment]
+/// * [accountId]
+/// * [carNickName]
 @BuiltValue()
 abstract class TerminalModel
     implements Built<TerminalModel, TerminalModelBuilder> {
@@ -40,11 +47,26 @@ abstract class TerminalModel
   @BuiltValueField(wireName: r'status')
   String? get status;
 
-  @BuiltValueField(wireName: r'fuel')
-  String? get fuel;
-  
   @BuiltValueField(wireName: r'model')
   String? get model;
+
+  @BuiltValueField(wireName: r'volt')
+  String? get volt;
+
+  @BuiltValueField(wireName: r'fuelType')
+  String? get fuelType;
+
+  @BuiltValueField(wireName: r'fuel')
+  String? get fuel;
+
+  @BuiltValueField(wireName: r'segment')
+  String? get segment;
+
+  @BuiltValueField(wireName: r'accountId')
+  String? get accountId;
+
+  @BuiltValueField(wireName: r'carNickName')
+  String? get carNickName;
 
   TerminalModel._();
 
@@ -120,17 +142,52 @@ class _$TerminalModelSerializer implements PrimitiveSerializer<TerminalModel> {
         specifiedType: const FullType(String),
       );
     }
-    if (object.fuel != null) {
-      yield r'fuel';
-      yield serializers.serialize(
-        object.status,
-        specifiedType: const FullType(String),
-      );
-    }
     if (object.model != null) {
       yield r'model';
       yield serializers.serialize(
-        object.status,
+        object.model,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.volt != null) {
+      yield r'volt';
+      yield serializers.serialize(
+        object.volt,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.fuelType != null) {
+      yield r'fuelType';
+      yield serializers.serialize(
+        object.fuelType,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.fuel != null) {
+      yield r'fuel';
+      yield serializers.serialize(
+        object.fuel,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.segment != null) {
+      yield r'segment';
+      yield serializers.serialize(
+        object.segment,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.accountId != null) {
+      yield r'accountId';
+      yield serializers.serialize(
+        object.accountId,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.carNickName != null) {
+      yield r'carNickName';
+      yield serializers.serialize(
+        object.carNickName,
         specifiedType: const FullType(String),
       );
     }
@@ -208,6 +265,27 @@ class _$TerminalModelSerializer implements PrimitiveSerializer<TerminalModel> {
           ) as String;
           result.status = valueDes;
           break;
+        case r'model':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.model = valueDes;
+          break;
+        case r'volt':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.volt = valueDes;
+          break;
+        case r'fuelType':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.fuelType = valueDes;
+          break;
         case r'fuel':
           final valueDes = serializers.deserialize(
             value,
@@ -215,12 +293,26 @@ class _$TerminalModelSerializer implements PrimitiveSerializer<TerminalModel> {
           ) as String;
           result.fuel = valueDes;
           break;
-        case r'model':
+        case r'segment':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.model = valueDes;
+          result.segment = valueDes;
+          break;
+        case r'accountId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.accountId = valueDes;
+          break;
+        case r'carNickName':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.carNickName = valueDes;
           break;
         default:
           unhandled.add(key);

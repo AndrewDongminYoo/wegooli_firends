@@ -11,12 +11,13 @@ part 'device_control_result_dto.g.dart';
 /// Properties:
 /// * [userId]
 /// * [terTelNum]
+/// * [t42]
+/// * [t5]
 /// * [t0]
 /// * [t1]
 /// * [t2]
 /// * [t3]
 /// * [t4]
-/// * [t5]
 /// * [t6]
 /// * [t7]
 /// * [t8]
@@ -34,7 +35,6 @@ part 'device_control_result_dto.g.dart';
 /// * [t21]
 /// * [t22]
 /// * [t41]
-/// * [t42]
 /// * [t51]
 /// * [t61]
 /// * [ucp]
@@ -51,6 +51,9 @@ abstract class DeviceControlResultDTO
   @BuiltValueField(wireName: r't42')
   String? get t42;
 
+  @BuiltValueField(wireName: r't5')
+  String? get t5;
+
   @BuiltValueField(wireName: r't0')
   String? get t0;
 
@@ -65,9 +68,6 @@ abstract class DeviceControlResultDTO
 
   @BuiltValueField(wireName: r't4')
   String? get t4;
-
-  @BuiltValueField(wireName: r't5')
-  String? get t5;
 
   @BuiltValueField(wireName: r't6')
   String? get t6;
@@ -183,6 +183,13 @@ class _$DeviceControlResultDTOSerializer
         specifiedType: const FullType(String),
       );
     }
+    if (object.t5 != null) {
+      yield r't5';
+      yield serializers.serialize(
+        object.t5,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.t0 != null) {
       yield r't0';
       yield serializers.serialize(
@@ -215,13 +222,6 @@ class _$DeviceControlResultDTOSerializer
       yield r't4';
       yield serializers.serialize(
         object.t4,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.t5 != null) {
-      yield r't5';
-      yield serializers.serialize(
-        object.t5,
         specifiedType: const FullType(String),
       );
     }
@@ -418,6 +418,13 @@ class _$DeviceControlResultDTOSerializer
           ) as String;
           result.t42 = valueDes;
           break;
+        case r't5':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.t5 = valueDes;
+          break;
         case r't0':
           final valueDes = serializers.deserialize(
             value,
@@ -452,13 +459,6 @@ class _$DeviceControlResultDTOSerializer
             specifiedType: const FullType(String),
           ) as String;
           result.t4 = valueDes;
-          break;
-        case r't5':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.t5 = valueDes;
           break;
         case r't6':
           final valueDes = serializers.deserialize(

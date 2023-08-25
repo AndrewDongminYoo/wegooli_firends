@@ -49,6 +49,8 @@ class _$UserDTO extends UserDTO {
   final String? nickname;
   @override
   final String? profilePicture;
+  @override
+  final String? customerKey;
 
   factory _$UserDTO([void Function(UserDTOBuilder)? updates]) =>
       (new UserDTOBuilder()..update(updates))._build();
@@ -74,7 +76,8 @@ class _$UserDTO extends UserDTO {
       this.updateAt,
       this.color,
       this.nickname,
-      this.profilePicture})
+      this.profilePicture,
+      this.customerKey})
       : super._();
 
   @override
@@ -108,7 +111,8 @@ class _$UserDTO extends UserDTO {
         updateAt == other.updateAt &&
         color == other.color &&
         nickname == other.nickname &&
-        profilePicture == other.profilePicture;
+        profilePicture == other.profilePicture &&
+        customerKey == other.customerKey;
   }
 
   @override
@@ -135,6 +139,7 @@ class _$UserDTO extends UserDTO {
     _$hash = $jc(_$hash, color.hashCode);
     _$hash = $jc(_$hash, nickname.hashCode);
     _$hash = $jc(_$hash, profilePicture.hashCode);
+    _$hash = $jc(_$hash, customerKey.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -162,7 +167,8 @@ class _$UserDTO extends UserDTO {
           ..add('updateAt', updateAt)
           ..add('color', color)
           ..add('nickname', nickname)
-          ..add('profilePicture', profilePicture))
+          ..add('profilePicture', profilePicture)
+          ..add('customerKey', customerKey))
         .toString();
   }
 }
@@ -255,6 +261,10 @@ class UserDTOBuilder implements Builder<UserDTO, UserDTOBuilder> {
   set profilePicture(String? profilePicture) =>
       _$this._profilePicture = profilePicture;
 
+  String? _customerKey;
+  String? get customerKey => _$this._customerKey;
+  set customerKey(String? customerKey) => _$this._customerKey = customerKey;
+
   UserDTOBuilder() {
     UserDTO._defaults(this);
   }
@@ -283,6 +293,7 @@ class UserDTOBuilder implements Builder<UserDTO, UserDTOBuilder> {
       _color = $v.color;
       _nickname = $v.nickname;
       _profilePicture = $v.profilePicture;
+      _customerKey = $v.customerKey;
       _$v = null;
     }
     return this;
@@ -325,7 +336,8 @@ class UserDTOBuilder implements Builder<UserDTO, UserDTOBuilder> {
             updateAt: updateAt,
             color: color,
             nickname: nickname,
-            profilePicture: profilePicture);
+            profilePicture: profilePicture,
+            customerKey: customerKey);
     replace(_$result);
     return _$result;
   }

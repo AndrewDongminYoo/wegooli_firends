@@ -13,9 +13,7 @@ import '../models/_model.dart';
 /// current dashChatWithFriendsModelObj
 class DashChatWithFriendsController extends GetxController {
   DashChatWithFriendsController(this.dashChatWithFriendsModelObj);
-
   TextEditingController group1104Controller = TextEditingController();
-
   Rx<DashChatWithFriendsModel> dashChatWithFriendsModelObj;
 
   @override

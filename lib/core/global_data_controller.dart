@@ -7,6 +7,9 @@ import '/data/data.dart';
 GlobalDataController _global = GlobalDataController();
 
 class GlobalDataController extends GetxController {
+  static GlobalDataController get to => Get.isRegistered<GlobalDataController>()
+  ? Get.find<GlobalDataController>() : Get.put(GlobalDataController());
+
   var account = Account().obs;
   var serviceDetail = ServiceDetail().obs;
   var teamAccountModel = TeamAccountModel().obs;

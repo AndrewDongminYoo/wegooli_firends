@@ -20,6 +20,10 @@ class SplashLoading extends GetWidget<SplashLoadingController> {
 
     return SafeArea(
       child: Scaffold(
+        appBar: CustomAppBar(
+          height: getVerticalSize(53),
+          leadingWidth: 34,
+        ),
         backgroundColor: theme.colorScheme.primary,
         body: Container(
           width: double.maxFinite,
@@ -37,6 +41,7 @@ class SplashLoading extends GetWidget<SplashLoadingController> {
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.left,
                 style: theme.textTheme.displayMedium!.copyWith(
+                  fontFamily: FontFamily.cookieRun,
                   letterSpacing: getHorizontalSize(
                     0.1,
                   ),
@@ -79,6 +84,21 @@ class SplashLoading extends GetWidget<SplashLoadingController> {
                       ),
                     ),
                   ],
+                ),
+              ),
+              Container(
+                alignment: Alignment.center,
+                margin: EdgeInsets.only(top: getVerticalSize(44)),
+                width: Get.width,
+                child: CustomImageView(
+                  onTap: () {
+                    Get.toNamed(
+                      AppRoutes.validatePhone,
+                    );
+                  },
+                  imagePath: Assets.images.imgGooli1.path,
+                  height: getVerticalSize(93),
+                  width: getHorizontalSize(163),
                 ),
               ),
             ],

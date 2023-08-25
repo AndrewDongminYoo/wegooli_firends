@@ -13,6 +13,7 @@ class CustomDropDown extends StatelessWidget {
     this.focusNode,
     this.icon,
     this.autofocus = true,
+    this.initialValue = false,
     this.textStyle,
     this.items,
     this.hintText,
@@ -42,6 +43,7 @@ class CustomDropDown extends StatelessWidget {
   final bool? autofocus;
   final TextStyle? textStyle;
   final List<SelectionPopupModel>? items;
+  final bool initialValue;
   final String? hintText;
   final TextStyle? hintStyle;
   final Widget? prefix;
@@ -87,6 +89,9 @@ class CustomDropDown extends StatelessWidget {
           }).toList(),
           decoration: decoration,
           validator: validator,
+          value: initialValue
+              ? items![0]
+              : null,
           onChanged: (value) {
             onChanged!(value!);
           },

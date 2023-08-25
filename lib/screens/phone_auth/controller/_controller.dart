@@ -29,15 +29,15 @@ class ValidatePhoneController extends GetxController {
 
   @override
   void onClose() {
-    super.onClose();
     namePromptController.dispose();
     age1FormatController.dispose();
     age2FormatController.dispose();
     codeController.dispose();
     phoneNumberController.dispose();
+    super.onClose();
   }
 
-  onSelected(dynamic value) {
+  void setDropdownItem(dynamic value) {
     for (var element in phoneProviderModelObj.value.dropdownItemList.value) {
       element.isSelected = false;
       if (element.id == value.id) {

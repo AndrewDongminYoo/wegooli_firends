@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 
 // 📦 Package imports:
 import 'package:get/get.dart';
-import 'package:wegooli_friends/core/app_export.dart';
 
 // 🌎 Project imports:
+import 'package:wegooli_friends/core/app_export.dart';
 import '../models/_model.dart';
 
 /// A controller class for the LoginValidatePhoneAuthScreen.

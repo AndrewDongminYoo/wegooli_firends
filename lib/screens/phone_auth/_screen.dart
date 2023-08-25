@@ -6,7 +6,6 @@ import 'package:get/get.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
-import '/gen/assets.gen.dart';
 import 'controller/_controller.dart';
 import 'widgets/complete_button.dart';
 

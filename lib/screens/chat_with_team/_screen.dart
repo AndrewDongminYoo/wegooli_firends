@@ -13,7 +13,6 @@ import 'package:sendbird_sdk/sendbird_sdk.dart';
 // 🌎 Project imports:
 import '/core/app_export.dart';
 import '/data/data.dart';
-import '/gen/assets.gen.dart';
 import '/screens/screens.dart';
 
 class DashChatWithFriendsPage extends StatefulWidget {

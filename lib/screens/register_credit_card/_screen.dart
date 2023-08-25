@@ -3,11 +3,10 @@ import 'package:flutter/material.dart';
 
 // 📦 Package imports:
 import 'package:get/get.dart';
-import 'package:wegooli_friends/screens/phone_auth/controller/_controller.dart';
 
 // 🌎 Project imports:
+import 'package:wegooli_friends/screens/phone_auth/controller/_controller.dart';
 import '/core/app_export.dart';
-import '/gen/assets.gen.dart';
 import 'controller/_controller.dart';
 
 class RegisterCreditCard extends GetWidget<RegisterCreditCardController> {

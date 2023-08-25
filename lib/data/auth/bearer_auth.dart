@@ -1,3 +1,6 @@
+// 🎯 Dart imports:
+import 'dart:convert' show utf8, base64Url;
+
 // 📦 Package imports:
 import 'package:dio/dio.dart';
 
@@ -19,9 +22,9 @@ class BearerAuthInterceptor extends AuthInterceptor {
       if (!info.containsKey('name')) {
         continue;
       } else {
-      if (token != null) {
-        options.headers['Authorization'] = 'Bearer ${token}';
-        break;
+        if (token != null) {
+          options.headers['Authorization'] = 'Bearer ${token}';
+          break;
         } else {
           String value = info['name'] as String;
           tokens.addAll({value: value});

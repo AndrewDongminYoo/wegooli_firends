@@ -6,7 +6,6 @@ import 'package:get/get.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
-import '/gen/fonts.gen.dart';
 
 /// Helper class for managing themes and colors.
 class ThemeHelper {

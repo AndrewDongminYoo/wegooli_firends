@@ -7,7 +7,6 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '../shared_schedule.dart';
 import '/core/app_export.dart';
-import '/gen/assets.gen.dart';
 import 'calendar_body.dart';
 import 'members_list.dart';
 

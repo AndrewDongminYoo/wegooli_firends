@@ -6,7 +6,6 @@ import 'package:get/get.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
-import '/gen/assets.gen.dart';
 
 class InviteTeamButton extends StatelessWidget {
   const InviteTeamButton({

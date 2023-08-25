@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
-import '/data/api.dart';
 
 class InitialBindings extends Bindings {
   @override

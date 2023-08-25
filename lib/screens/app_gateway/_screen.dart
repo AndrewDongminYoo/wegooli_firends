@@ -6,7 +6,6 @@ import 'package:get/get.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
-import '/gen/fonts.gen.dart';
 import '/screens/screens.dart';
 
 class GatewayScreen extends GetWidget<AppGatewayController> {

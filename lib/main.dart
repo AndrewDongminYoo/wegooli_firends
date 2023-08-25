@@ -8,7 +8,6 @@ import 'package:get/get.dart';
 import 'package:intl/date_symbol_data_local.dart';
 
 // 🌎 Project imports:
-import '/l10n/messages.dart';
 import 'core/app_export.dart';
 
 void main() {

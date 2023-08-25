@@ -10,7 +10,6 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/core/app_export.dart';
 import '/data/data.dart';
-import '/gen/assets.gen.dart';
 import '/screens/screens.dart';
 
 // ignore: must_be_immutable

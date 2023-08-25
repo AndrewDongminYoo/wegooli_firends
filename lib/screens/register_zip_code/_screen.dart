@@ -8,7 +8,6 @@ import 'package:kpostal/kpostal.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
-import '/gen/assets.gen.dart';
 import 'controller/_controller.dart';
 
 class RegisterZipCode extends GetWidget<RegisterZipCodeController> {

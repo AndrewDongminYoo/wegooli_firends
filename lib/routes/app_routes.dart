@@ -112,10 +112,17 @@ class AppRoutes {
       ],
     ),
     GetPage(
+      name: smartKeyAvailable,
+      page: () => SmartKeyAvailablePage(),
+      bindings: [
+        SmartKeyAvailableBinding(),
+      ],
+    ),
+    GetPage(
       name: smartKeyUnavailable,
       page: () => SmartKeyNotAvailable(),
       bindings: [
-        SmartKeyNotAvailableBinding(),
+        SmartKeyAvailableBinding(),
       ],
     ),
     GetPage(

@@ -8,7 +8,7 @@ import '../models/_model.dart';
 ///
 /// This class manages the state of the SmartKeyNotAvailableScreen, including the
 /// current smartKeyNotAvailableModelObj
-class SmartKeyNotAvailableController extends GetxController {
+class SmartKeyAvailabilityController extends GetxController {
   Rx<SmartKeyNotAvailableModel> smartKeyNotAvailableModelObj =
       SmartKeyNotAvailableModel().obs;
 }

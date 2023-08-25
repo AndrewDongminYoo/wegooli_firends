@@ -9,7 +9,7 @@ import '/core/app_export.dart';
 import '/screens/screens.dart';
 
 // ignore: must_be_immutable
-class SmartKeyNotAvailable extends GetWidget<SmartKeyNotAvailableController> {
+class SmartKeyNotAvailable extends GetWidget<SmartKeyAvailabilityController> {
   const SmartKeyNotAvailable({Key? key})
       : super(
           key: key,

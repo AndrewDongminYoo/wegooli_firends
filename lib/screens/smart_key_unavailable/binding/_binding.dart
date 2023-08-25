@@ -8,9 +8,9 @@ import '../controller/_controller.dart';
 ///
 /// This class ensures that the SmartKeyNotAvailableController is created when the
 /// SmartKeyNotAvailableScreen is first loaded.
-class SmartKeyNotAvailableBinding extends Bindings {
+class SmartKeyAvailableBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => SmartKeyNotAvailableController());
+    Get.lazyPut(() => SmartKeyAvailabilityController());
   }
 }

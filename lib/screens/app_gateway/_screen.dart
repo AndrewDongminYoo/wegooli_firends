@@ -14,6 +14,90 @@ class GatewayScreen extends GetWidget<AppGatewayController> {
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
+    var toRegisterZipCode = GestureDetector(
+        onTap: () {
+          onTapRegisterZipCode();
+        },
+        child: Container(
+            decoration: AppDecoration.fill6,
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.start, children: [
+              Align(
+                  alignment: Alignment.centerLeft,
+                  child: Padding(
+                      padding:
+                          getPadding(left: 20, top: 10, right: 20, bottom: 10),
+                      child: Text("msg_login_register_zip_code".tr,
+                          overflow: TextOverflow.ellipsis,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              color: appTheme.black900,
+                              fontSize: getFontSize(20),
+                              fontFamily: 'Roboto',
+                              fontWeight: FontWeight.w400)))),
+              Padding(
+                  padding: getPadding(top: 5),
+                  child: Divider(
+                      height: getVerticalSize(1),
+                      thickness: getVerticalSize(1),
+                      color: appTheme.blueGray400))
+            ])));
+    var toTapSignUpAcceptTerms = GestureDetector(
+        onTap: () {
+          onTapSignUpAcceptTerms();
+        },
+        child: Container(
+            decoration: AppDecoration.fill6,
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.start, children: [
+              Align(
+                  alignment: Alignment.centerLeft,
+                  child: Padding(
+                      padding:
+                          getPadding(left: 20, top: 10, right: 20, bottom: 10),
+                      child: Text("msg_signup_accept_terms".tr,
+                          overflow: TextOverflow.ellipsis,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              color: appTheme.black900,
+                              fontSize: getFontSize(20),
+                              fontFamily: 'Roboto',
+                              fontWeight: FontWeight.w400)))),
+              Padding(
+                  padding: getPadding(top: 5),
+                  child: Divider(
+                      height: getVerticalSize(1),
+                      thickness: getVerticalSize(1),
+                      color: appTheme.blueGray400))
+            ])));
+    var toTapNoSubscription = GestureDetector(
+        onTap: () {
+          onTapNoSubscription();
+        },
+        child: Container(
+            decoration: AppDecoration.fill6,
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.start, children: [
+              Align(
+                  alignment: Alignment.centerLeft,
+                  child: Padding(
+                      padding:
+                          getPadding(left: 20, top: 10, right: 20, bottom: 10),
+                      child: Text("msg_subscription_info_no_service".tr,
+                          overflow: TextOverflow.ellipsis,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              color: appTheme.black900,
+                              fontSize: getFontSize(20),
+                              fontFamily: 'Roboto',
+                              fontWeight: FontWeight.w400)))),
+              Padding(
+                  padding: getPadding(top: 5),
+                  child: Divider(
+                      height: getVerticalSize(1),
+                      thickness: getVerticalSize(1),
+                      color: appTheme.blueGray400))
+            ])));
     return SafeArea(
         child: Scaffold(
             backgroundColor: theme.colorScheme.onSecondary,
@@ -180,60 +264,7 @@ class GatewayScreen extends GetWidget<AppGatewayController> {
                                                               color: appTheme
                                                                   .blueGray400))
                                                     ]))),
-                                        GestureDetector(
-                                            onTap: () {
-                                              onTapSignUpAcceptTerms();
-                                            },
-                                            child: Container(
-                                                decoration: AppDecoration.fill6,
-                                                child: Column(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.start,
-                                                    children: [
-                                                      Align(
-                                                          alignment: Alignment
-                                                              .centerLeft,
-                                                          child: Padding(
-                                                              padding:
-                                                                  getPadding(
-                                                                      left: 20,
-                                                                      top: 10,
-                                                                      right: 20,
-                                                                      bottom:
-                                                                          10),
-                                                              child: Text(
-                                                                  "msg_signup_accept_terms"
-                                                                      .tr,
-                                                                  overflow:
-                                                                      TextOverflow
-                                                                          .ellipsis,
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .center,
-                                                                  style: TextStyle(
-                                                                      color: appTheme
-                                                                          .black900,
-                                                                      fontSize:
-                                                                          getFontSize(
-                                                                              20),
-                                                                      fontFamily:
-                                                                          'Roboto',
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w400)))),
-                                                      Padding(
-                                                          padding: getPadding(
-                                                              top: 5),
-                                                          child: Divider(
-                                                              height:
-                                                                  getVerticalSize(
-                                                                      1),
-                                                              thickness:
-                                                                  getVerticalSize(
-                                                                      1),
-                                                              color: appTheme
-                                                                  .blueGray400))
-                                                    ]))),
+                                        toTapSignUpAcceptTerms,
                                         GestureDetector(
                                             onTap: () {
                                               onTapLogInValidatePhoneAuth();
@@ -288,60 +319,7 @@ class GatewayScreen extends GetWidget<AppGatewayController> {
                                                               color: appTheme
                                                                   .blueGray400))
                                                     ]))),
-                                        GestureDetector(
-                                            onTap: () {
-                                              onTapRegisterZipCode();
-                                            },
-                                            child: Container(
-                                                decoration: AppDecoration.fill6,
-                                                child: Column(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.start,
-                                                    children: [
-                                                      Align(
-                                                          alignment: Alignment
-                                                              .centerLeft,
-                                                          child: Padding(
-                                                              padding:
-                                                                  getPadding(
-                                                                      left: 20,
-                                                                      top: 10,
-                                                                      right: 20,
-                                                                      bottom:
-                                                                          10),
-                                                              child: Text(
-                                                                  "msg_login_register_zip_code"
-                                                                      .tr,
-                                                                  overflow:
-                                                                      TextOverflow
-                                                                          .ellipsis,
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .center,
-                                                                  style: TextStyle(
-                                                                      color: appTheme
-                                                                          .black900,
-                                                                      fontSize:
-                                                                          getFontSize(
-                                                                              20),
-                                                                      fontFamily:
-                                                                          'Roboto',
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w400)))),
-                                                      Padding(
-                                                          padding: getPadding(
-                                                              top: 5),
-                                                          child: Divider(
-                                                              height:
-                                                                  getVerticalSize(
-                                                                      1),
-                                                              thickness:
-                                                                  getVerticalSize(
-                                                                      1),
-                                                              color: appTheme
-                                                                  .blueGray400))
-                                                    ]))),
+                                        toRegisterZipCode,
                                         GestureDetector(
                                             onTap: () {
                                               onTapRegisterLicensePage();
@@ -1152,9 +1130,12 @@ class GatewayScreen extends GetWidget<AppGatewayController> {
                                                               color: appTheme
                                                                   .blueGray400))
                                                     ]))),
+                                        toTapNoSubscription,
                                         GestureDetector(
                                             onTap: () {
-                                              onTapNoSubscription();
+                                              Get.toNamed(
+                                                AppRoutes.smartKeyAvailable,
+                                              );
                                             },
                                             child: Container(
                                                 decoration: AppDecoration.fill6,
@@ -1174,8 +1155,7 @@ class GatewayScreen extends GetWidget<AppGatewayController> {
                                                                       bottom:
                                                                           10),
                                                               child: Text(
-                                                                  "msg_subscription_info_no_service"
-                                                                      .tr,
+                                                                  "스마트 키",
                                                                   overflow:
                                                                       TextOverflow
                                                                           .ellipsis,

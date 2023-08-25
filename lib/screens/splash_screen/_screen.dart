@@ -3,6 +3,13 @@ import 'package:flutter/material.dart';
 
 // 📦 Package imports:
 import 'package:get/get.dart';
+import 'package:wegooli_friends/gen/assets.gen.dart';
+import 'package:wegooli_friends/gen/fonts.gen.dart';
+import 'package:wegooli_friends/routes/app_routes.dart';
+import 'package:wegooli_friends/theme/text_styles.dart';
+import 'package:wegooli_friends/theme/theme_helper.dart';
+import 'package:wegooli_friends/widgets/app_bar/custom_app_bar.dart';
+import 'package:wegooli_friends/widgets/image_view.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';

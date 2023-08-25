@@ -40,6 +40,12 @@ abstract class TerminalModel
   @BuiltValueField(wireName: r'status')
   String? get status;
 
+  @BuiltValueField(wireName: r'fuel')
+  String? get fuel;
+  
+  @BuiltValueField(wireName: r'model')
+  String? get model;
+
   TerminalModel._();
 
   factory TerminalModel([void updates(TerminalModelBuilder b)]) =
@@ -109,6 +115,20 @@ class _$TerminalModelSerializer implements PrimitiveSerializer<TerminalModel> {
     }
     if (object.status != null) {
       yield r'status';
+      yield serializers.serialize(
+        object.status,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.fuel != null) {
+      yield r'fuel';
+      yield serializers.serialize(
+        object.status,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.model != null) {
+      yield r'model';
       yield serializers.serialize(
         object.status,
         specifiedType: const FullType(String),
@@ -187,6 +207,20 @@ class _$TerminalModelSerializer implements PrimitiveSerializer<TerminalModel> {
             specifiedType: const FullType(String),
           ) as String;
           result.status = valueDes;
+          break;
+        case r'fuel':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.fuel = valueDes;
+          break;
+        case r'model':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.model = valueDes;
           break;
         default:
           unhandled.add(key);

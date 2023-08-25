@@ -3,11 +3,15 @@ import 'package:flutter/material.dart';
 
 // 📦 Package imports:
 import 'package:get/get.dart';
+import 'package:wegooli_friends/data/data.dart';
+import 'package:wegooli_friends/data/models/models.dart';
+import 'package:wegooli_friends/gen/assets.gen.dart';
+import 'package:wegooli_friends/screens/screens.dart';
+import 'package:wegooli_friends/theme/theme.dart';
+import 'package:wegooli_friends/widgets/widgets.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
-import 'controller/_controller.dart';
-import 'models/_model.dart';
 
 class SmartKeyAvailablePage extends StatelessWidget {
   SmartKeyAvailablePage({Key? key})
@@ -16,12 +20,117 @@ class SmartKeyAvailablePage extends StatelessWidget {
         );
 
   final SmartKeyAvailableController controller =
-      Get.put(SmartKeyAvailableController(SmartKeyAvailableModel().obs));
+      Get.put(SmartKeyAvailableController(TerminalModel().obs));
+
+  final String token = Get.find<PrefUtils>().getData('token');
+  late Map<String, dynamic> extra = <String, dynamic>{
+    'secure': <Map<String, String>>[
+      {
+        'type': 'http',
+        'scheme': 'bearer',
+        'name': token,
+      },
+    ],
+  };
+  bool isBetween(String? from, String? to) {
+    if (from == null || to == null) return false;
+    DateTime s = DateTime.parse(from);
+    DateTime e = DateTime.parse(to);
+    DateTime n = DateTime.now();
+    return s.isBefore(n) && e.isAfter(n);
+  }
+
+  void getClient(String? accountId) {
+    final members = [
+      (TeamAccountModelBuilder()
+            ..accountId = 'test'
+            ..color = '#B432BE'
+            ..nickname = '테스트'
+            ..profilePicture = '/test')
+          .build(),
+      (TeamAccountModelBuilder()
+            ..accountId = 'test2'
+            ..color = '#9DA775'
+            ..nickname = '아무거나이거이거저거저거')
+          .build(),
+      (TeamAccountModelBuilder()
+            ..accountId = 'test3'
+            ..color = '#62AF93'
+            ..nickname = '아무거나저거저거이거이거')
+          .build()
+    ];
+    // final client = Get.find<LoginWithIdAndPasswordController>()
+    //     .members
+    //     .firstWhere((it) => it.accountId == accountId);
+    final client = members.firstWhereOrNull((it) => it.accountId == accountId);
+    print('client : ${client}');
+    controller.clientName.text = client?.nickname ?? '';
+  }
+
+  bool compose(ScheduleModel schedule) {
+    getClient(schedule.accountId);
+    return isBetween(schedule.startAt, schedule.endAt);
+  }
+
+  Future retrieveCarInfo() async {
+    final terminalControllerApi =
+        Get.find<WegooliFriends>().getTerminalControllerApi();
+    final response =
+        await terminalControllerApi.selectTerminal(seq: 2, extra: extra);
+    print('response.data : ${response.data}');
+    controller.terminalModelObj.value = response.data ?? TerminalModel();
+
+    final scheduleControllerApi =
+        Get.find<WegooliFriends>().getScheduleControllerApi();
+
+    final response2 = await scheduleControllerApi.selectScheduleList(
+        request: (ScheduleRequestBuilder()..teamSeq = 2).build(), extra: extra);
+    print('response2.data : ${response2.data}');
+    bool done = response2.data!.any(compose);
+    controller.isUsed.value = done;
+    print('done : $done');
+  }
+
+  Future openDoor() async {
+    final deviceControllerApi =
+        Get.find<WegooliFriends>().getDeviceControllerApi();
+    final response = await deviceControllerApi.doorOpen(
+        carNum: controller.terminalModelObj.value.carNum as String,
+        extra: extra);
+    print('response : ${response}');
+  }
+
+  Future closeDoor() async {
+    final deviceControllerApi =
+        Get.find<WegooliFriends>().getDeviceControllerApi();
+    final response = await deviceControllerApi.doorClose(
+        carNum: controller.terminalModelObj.value.carNum as String,
+        extra: extra);
+    print('response : ${response}');
+  }
+
+  Future horn() async {
+    final deviceControllerApi =
+        Get.find<WegooliFriends>().getDeviceControllerApi();
+    final response = await deviceControllerApi.turnOnHorn(
+        carNum: controller.terminalModelObj.value.carNum as String,
+        extra: extra);
+    print('response : ${response}');
+  }
+
+  Future emergencyLight() async {
+    final deviceControllerApi =
+        Get.find<WegooliFriends>().getDeviceControllerApi();
+    final response = await deviceControllerApi.turnOnEmergencyLight(
+        carNum: controller.terminalModelObj.value.carNum as String,
+        extra: extra);
+    print('response : ${response}');
+  }
 
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
-
+    retrieveCarInfo();
     return SafeArea(
       child: Scaffold(
         backgroundColor: theme.colorScheme.onPrimaryContainer,
@@ -47,119 +156,131 @@ class SmartKeyAvailablePage extends StatelessWidget {
             padding: getPadding(
               top: 24,
             ),
-            child: Padding(
-              padding: getPadding(
-                bottom: 5,
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: getPadding(
-                      left: 16,
-                      right: 16,
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        CustomImageView(
-                          imagePath: Assets.images.imgCarMorUrban.path,
-                          height: getVerticalSize(
-                            92,
-                          ),
-                          width: getHorizontalSize(
-                            139,
-                          ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: getPadding(
+                    left: 16,
+                    right: 16,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      CustomImageView(
+                        imagePath: Assets.images.imgCarMorUrban.path,
+                        height: getVerticalSize(
+                          92,
                         ),
-                        Padding(
-                          padding: getPadding(
-                            top: 8,
-                            bottom: 18,
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Text(
-                                "rayGen3".tr,
+                        width: getHorizontalSize(
+                          139,
+                        ),
+                      ),
+                      Padding(
+                        padding: getPadding(
+                          top: 8,
+                          bottom: 18,
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text(
+                              controller.terminalModelObj.value.model ??
+                                  "model",
+                              overflow: TextOverflow.ellipsis,
+                              textAlign: TextAlign.left,
+                              style: theme.textTheme.titleMedium!.copyWith(
+                                letterSpacing: getHorizontalSize(
+                                  0.03,
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: getPadding(
+                                top: 4,
+                              ),
+                              child: Text(
+                                controller.terminalModelObj.value.carNum ??
+                                    "차량 번호",
                                 overflow: TextOverflow.ellipsis,
                                 textAlign: TextAlign.left,
-                                style: theme.textTheme.titleMedium!.copyWith(
+                                style: CustomTextStyles.bodySmallOnPrimary
+                                    .copyWith(
                                   letterSpacing: getHorizontalSize(
-                                    0.03,
+                                    0.02,
                                   ),
                                 ),
                               ),
-                              Padding(
-                                padding: getPadding(
-                                  top: 4,
-                                ),
-                                child: Text(
-                                  "12가 3456",
-                                  overflow: TextOverflow.ellipsis,
-                                  textAlign: TextAlign.left,
-                                  style: CustomTextStyles.bodySmallOnPrimary
-                                      .copyWith(
-                                    letterSpacing: getHorizontalSize(
-                                      0.02,
+                            ),
+                            Padding(
+                              padding: getPadding(
+                                top: 1,
+                              ),
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  CustomImageView(
+                                    svgPath: Assets.svg.imgGasStation.path,
+                                    height: getSize(
+                                      24,
+                                    ),
+                                    width: getSize(
+                                      24,
                                     ),
                                   ),
-                                ),
-                              ),
-                              Padding(
-                                padding: getPadding(
-                                  top: 1,
-                                ),
-                                child: Row(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    CustomImageView(
-                                      svgPath: Assets.svg.imgGasStation.path,
-                                      height: getSize(
-                                        24,
-                                      ),
-                                      width: getSize(
-                                        24,
-                                      ),
+                                  Padding(
+                                    padding: getPadding(
+                                      left: 5,
+                                      top: 7,
+                                      bottom: 1,
                                     ),
-                                    Padding(
-                                      padding: getPadding(
-                                        left: 5,
-                                        top: 7,
-                                        bottom: 1,
-                                      ),
-                                      child: Text(
-                                        "gasoline20Percent".tr,
-                                        overflow: TextOverflow.ellipsis,
-                                        textAlign: TextAlign.left,
-                                        style:
-                                            theme.textTheme.bodySmall!.copyWith(
-                                          letterSpacing: getHorizontalSize(
-                                            0.02,
-                                          ),
+                                    child: Text(
+                                      '연료 ${controller.terminalModelObj.value.fuel ?? 0}%',
+                                      overflow: TextOverflow.ellipsis,
+                                      textAlign: TextAlign.left,
+                                      style:
+                                          theme.textTheme.bodySmall!.copyWith(
+                                        letterSpacing: getHorizontalSize(
+                                          0.02,
                                         ),
                                       ),
                                     ),
-                                    ArrowLeft(),
-                                  ],
-                                ),
+                                  ),
+                                  ArrowLeft(),
+                                ],
                               ),
-                            ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: getPadding(
+                    top: 6,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "lbl68".tr,
+                        overflow: TextOverflow.ellipsis,
+                        textAlign: TextAlign.left,
+                        style: CustomTextStyles.bodySmallOnPrimary.copyWith(
+                          letterSpacing: getHorizontalSize(
+                            0.02,
                           ),
                         ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: getPadding(
-                      top: 6,
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "status".tr,
+                      ),
+                      Padding(
+                        padding: getPadding(
+                          left: 5,
+                        ),
+                        child: Text(
+                          "|",
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.left,
                           style: CustomTextStyles.bodySmallOnPrimary.copyWith(
@@ -168,424 +289,466 @@ class SmartKeyAvailablePage extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Padding(
-                          padding: getPadding(
-                            left: 5,
-                          ),
-                          child: Text(
-                            "|",
-                            overflow: TextOverflow.ellipsis,
-                            textAlign: TextAlign.left,
-                            style: CustomTextStyles.bodySmallOnPrimary.copyWith(
-                              letterSpacing: getHorizontalSize(
-                                0.02,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          height: getSize(
-                            4,
-                          ),
-                          width: getSize(
-                            4,
-                          ),
-                          margin: getMargin(
-                            left: 5,
-                            top: 5,
-                            bottom: 5,
-                          ),
-                          decoration: BoxDecoration(
-                            color: appTheme.green500,
-                            borderRadius: BorderRadius.circular(
-                              getHorizontalSize(
-                                2,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: getPadding(
-                            left: 2,
-                          ),
-                          child: Text(
-                            "available".tr,
-                            overflow: TextOverflow.ellipsis,
-                            textAlign: TextAlign.left,
-                            style: theme.textTheme.bodySmall!.copyWith(
-                              letterSpacing: getHorizontalSize(
-                                0.02,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    height: getVerticalSize(
-                      8,
-                    ),
-                    width: double.maxFinite,
-                    margin: getMargin(
-                      top: 31,
-                    ),
-                    decoration: BoxDecoration(
-                      color: appTheme.gray100,
-                    ),
-                  ),
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Padding(
-                      padding: getPadding(
-                        left: 16,
-                        top: 21,
                       ),
-                      child: Text(
-                        "smartKey".tr,
-                        overflow: TextOverflow.ellipsis,
-                        textAlign: TextAlign.left,
-                        style: CustomTextStyles.titleMediumBlack900.copyWith(
-                          letterSpacing: getHorizontalSize(
-                            0.04,
+                      Container(
+                        height: getSize(
+                          4,
+                        ),
+                        width: getSize(
+                          4,
+                        ),
+                        margin: getMargin(
+                          left: 5,
+                          top: 5,
+                          bottom: 5,
+                        ),
+                        decoration: BoxDecoration(
+                          color: appTheme.green500,
+                          borderRadius: BorderRadius.circular(
+                            getHorizontalSize(
+                              2,
+                            ),
                           ),
                         ),
                       ),
-                    ),
+                      Padding(
+                        padding: getPadding(
+                          left: 2,
+                        ),
+                        child: Text(
+                          controller.isUsed.isTrue
+                              ? '${controller.clientName.text}님이 사용중입니다.'
+                              : 'lbl70'.tr,
+                          overflow: TextOverflow.ellipsis,
+                          textAlign: TextAlign.left,
+                          style: theme.textTheme.bodySmall!.copyWith(
+                            letterSpacing: getHorizontalSize(
+                              0.02,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                  Padding(
+                ),
+                Container(
+                  height: getVerticalSize(
+                    8,
+                  ),
+                  width: double.maxFinite,
+                  margin: getMargin(
+                    top: 31,
+                  ),
+                  decoration: BoxDecoration(
+                    color: appTheme.gray100,
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Padding(
                     padding: getPadding(
-                      left: 40,
-                      top: 22,
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          height: getSize(
-                            130,
-                          ),
-                          width: getSize(
-                            130,
-                          ),
-                          child: Stack(
-                            alignment: Alignment.center,
-                            children: [
-                              Align(
-                                alignment: Alignment.center,
-                                child: Container(
-                                  padding: getPadding(
-                                    all: 5,
-                                  ),
-                                  decoration: AppDecoration.shadow.copyWith(
-                                    borderRadius:
-                                        BorderRadiusStyle.circleBorder65,
-                                  ),
-                                  child: Container(
-                                    height: getSize(
-                                      120,
-                                    ),
-                                    width: getSize(
-                                      120,
-                                    ),
-                                    decoration: BoxDecoration(
-                                      color:
-                                          theme.colorScheme.onPrimaryContainer,
-                                      borderRadius: BorderRadius.circular(
-                                        getHorizontalSize(
-                                          60,
-                                        ),
-                                      ),
-                                      border: Border.all(
-                                        color: appTheme.blueGray30033,
-                                        width: getHorizontalSize(
-                                          1,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Align(
-                                alignment: Alignment.center,
-                                child: Padding(
-                                  padding: getPadding(
-                                    left: 42,
-                                    right: 42,
-                                  ),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      CustomImageView(
-                                        svgPath: Assets.svg.imgUnlocked.path,
-                                        height: getSize(
-                                          46,
-                                        ),
-                                        width: getSize(
-                                          46,
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: getPadding(
-                                          top: 5,
-                                        ),
-                                        child: Text(
-                                          "openDoor".tr,
-                                          overflow: TextOverflow.ellipsis,
-                                          textAlign: TextAlign.left,
-                                          style: theme.textTheme.titleMedium!
-                                              .copyWith(
-                                            letterSpacing: getHorizontalSize(
-                                              0.03,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Container(
-                          height: getSize(
-                            130,
-                          ),
-                          width: getSize(
-                            130,
-                          ),
-                          margin: getMargin(
-                            left: 20,
-                          ),
-                          child: Stack(
-                            alignment: Alignment.center,
-                            children: [
-                              Align(
-                                alignment: Alignment.center,
-                                child: Container(
-                                  padding: getPadding(
-                                    all: 5,
-                                  ),
-                                  decoration: AppDecoration.shadow.copyWith(
-                                    borderRadius:
-                                        BorderRadiusStyle.circleBorder65,
-                                  ),
-                                  child: Container(
-                                    height: getSize(
-                                      120,
-                                    ),
-                                    width: getSize(
-                                      120,
-                                    ),
-                                    decoration: BoxDecoration(
-                                      color:
-                                          theme.colorScheme.onPrimaryContainer,
-                                      borderRadius: BorderRadius.circular(
-                                        getHorizontalSize(
-                                          60,
-                                        ),
-                                      ),
-                                      border: Border.all(
-                                        color: appTheme.blueGray30033,
-                                        width: getHorizontalSize(
-                                          1,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Align(
-                                alignment: Alignment.center,
-                                child: Padding(
-                                  padding: getPadding(
-                                    left: 42,
-                                    right: 42,
-                                  ),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      CustomImageView(
-                                        svgPath: Assets.svg.imgLocked.path,
-                                        height: getSize(
-                                          46,
-                                        ),
-                                        width: getSize(
-                                          46,
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: getPadding(
-                                          top: 5,
-                                        ),
-                                        child: Text(
-                                          "lockTheDoor".tr,
-                                          overflow: TextOverflow.ellipsis,
-                                          textAlign: TextAlign.left,
-                                          style: theme.textTheme.titleMedium!
-                                              .copyWith(
-                                            letterSpacing: getHorizontalSize(
-                                              0.03,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: getPadding(
-                      left: 40,
-                      top: 20,
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          padding: getPadding(
-                            all: 5,
-                          ),
-                          decoration: AppDecoration.shadow.copyWith(
-                            borderRadius: BorderRadiusStyle.circleBorder65,
-                          ),
-                          child: Container(
-                            padding: getPadding(
-                              left: 37,
-                              top: 24,
-                              right: 37,
-                              bottom: 24,
-                            ),
-                            decoration: AppDecoration.outline1.copyWith(
-                              borderRadius: BorderRadiusStyle.circleBorder60,
-                            ),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                CustomImageView(
-                                  svgPath: Assets.svg.imgTriangle.path,
-                                  height: getSize(
-                                    46,
-                                  ),
-                                  width: getSize(
-                                    46,
-                                  ),
-                                ),
-                                Padding(
-                                  padding: getPadding(
-                                    top: 5,
-                                  ),
-                                  child: Text(
-                                    "turnOnHazardLights".tr,
-                                    overflow: TextOverflow.ellipsis,
-                                    textAlign: TextAlign.left,
-                                    style:
-                                        theme.textTheme.titleMedium!.copyWith(
-                                      letterSpacing: getHorizontalSize(
-                                        0.03,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        Container(
-                          margin: getMargin(
-                            left: 20,
-                          ),
-                          padding: getPadding(
-                            all: 5,
-                          ),
-                          decoration: AppDecoration.shadow.copyWith(
-                            borderRadius: BorderRadiusStyle.circleBorder65,
-                          ),
-                          child: Container(
-                            padding: getPadding(
-                              left: 37,
-                              top: 24,
-                              right: 37,
-                              bottom: 24,
-                            ),
-                            decoration: AppDecoration.outline1.copyWith(
-                              borderRadius: BorderRadiusStyle.circleBorder60,
-                            ),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                CustomImageView(
-                                  svgPath: Assets.svg.imgCampaign.path,
-                                  height: getSize(
-                                    46,
-                                  ),
-                                  width: getSize(
-                                    46,
-                                  ),
-                                ),
-                                Padding(
-                                  padding: getPadding(
-                                    top: 5,
-                                  ),
-                                  child: Text(
-                                    "honkTheHorn".tr,
-                                    overflow: TextOverflow.ellipsis,
-                                    textAlign: TextAlign.left,
-                                    style:
-                                        theme.textTheme.titleMedium!.copyWith(
-                                      letterSpacing: getHorizontalSize(
-                                        0.03,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  CustomElevatedButton(
-                    text: "reportAnIncident".tr,
-                    margin: getMargin(
                       left: 16,
-                      top: 30,
-                      right: 16,
+                      top: 21,
                     ),
-                    leftIcon: Container(
-                      margin: getMargin(
-                        right: 1,
-                      ),
-                      child: CustomImageView(
-                        svgPath: Assets.svg.imgEdit.path,
+                    child: Text(
+                      "lbl71".tr,
+                      overflow: TextOverflow.ellipsis,
+                      textAlign: TextAlign.left,
+                      style: CustomTextStyles.titleMediumBlack900.copyWith(
+                        letterSpacing: getHorizontalSize(
+                          0.04,
+                        ),
                       ),
                     ),
-                    buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
-                        fixedSize: MaterialStateProperty.all<Size>(Size(
-                      double.maxFinite,
-                      getVerticalSize(
-                        52,
-                      ),
-                    ))),
-                    buttonTextStyle: CustomTextStyles.titleMedium18,
                   ),
-                ],
-              ),
+                ),
+                Column(
+                  children: [
+                    Padding(
+                      padding: getPadding(
+                        // left: 40,
+                        top: 22,
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          InkWell(
+                            onTap: () {
+                              openDoor();
+                            },
+                            child: SizedBox(
+                              height: getSize(
+                                130,
+                              ),
+                              width: getSize(
+                                130,
+                              ),
+                              child: Stack(
+                                alignment: Alignment.center,
+                                children: [
+                                  Align(
+                                    alignment: Alignment.center,
+                                    child: Container(
+                                      padding: getPadding(
+                                        all: 5,
+                                      ),
+                                      decoration: AppDecoration.shadow.copyWith(
+                                        borderRadius:
+                                            BorderRadiusStyle.circleBorder65,
+                                      ),
+                                      child: Container(
+                                        height: getSize(
+                                          120,
+                                        ),
+                                        width: getSize(
+                                          120,
+                                        ),
+                                        decoration: BoxDecoration(
+                                          color: theme
+                                              .colorScheme.onPrimaryContainer,
+                                          borderRadius: BorderRadius.circular(
+                                            getHorizontalSize(
+                                              60,
+                                            ),
+                                          ),
+                                          border: Border.all(
+                                            color: appTheme.blueGray30033,
+                                            width: getHorizontalSize(
+                                              1,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Align(
+                                    alignment: Alignment.center,
+                                    child: Padding(
+                                      padding: getPadding(
+                                        left: 42,
+                                        right: 42,
+                                      ),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        children: [
+                                          CustomImageView(
+                                            svgPath:
+                                                Assets.svg.imgUnlocked.path,
+                                            height: getSize(
+                                              46,
+                                            ),
+                                            width: getSize(
+                                              46,
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding: getPadding(
+                                              top: 5,
+                                            ),
+                                            child: Text(
+                                              "lbl72".tr,
+                                              overflow: TextOverflow.ellipsis,
+                                              textAlign: TextAlign.left,
+                                              style: theme
+                                                  .textTheme.titleMedium!
+                                                  .copyWith(
+                                                letterSpacing:
+                                                    getHorizontalSize(
+                                                  0.03,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          InkWell(
+                            onTap: () {
+                              closeDoor();
+                            },
+                            child: Container(
+                              height: getSize(
+                                130,
+                              ),
+                              width: getSize(
+                                130,
+                              ),
+                              margin: getMargin(
+                                left: 20,
+                              ),
+                              child: Stack(
+                                alignment: Alignment.center,
+                                children: [
+                                  Align(
+                                    alignment: Alignment.center,
+                                    child: Container(
+                                      padding: getPadding(
+                                        all: 5,
+                                      ),
+                                      decoration: AppDecoration.shadow.copyWith(
+                                        borderRadius:
+                                            BorderRadiusStyle.circleBorder65,
+                                      ),
+                                      child: Container(
+                                        height: getSize(
+                                          120,
+                                        ),
+                                        width: getSize(
+                                          120,
+                                        ),
+                                        decoration: BoxDecoration(
+                                          color: theme
+                                              .colorScheme.onPrimaryContainer,
+                                          borderRadius: BorderRadius.circular(
+                                            getHorizontalSize(
+                                              60,
+                                            ),
+                                          ),
+                                          border: Border.all(
+                                            color: appTheme.blueGray30033,
+                                            width: getHorizontalSize(
+                                              1,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Align(
+                                    alignment: Alignment.center,
+                                    child: Padding(
+                                      padding: getPadding(
+                                        left: 42,
+                                        right: 42,
+                                      ),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        children: [
+                                          CustomImageView(
+                                            svgPath: Assets.svg.imgLocked.path,
+                                            height: getSize(
+                                              46,
+                                            ),
+                                            width: getSize(
+                                              46,
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding: getPadding(
+                                              top: 5,
+                                            ),
+                                            child: Text(
+                                              "lbl73".tr,
+                                              overflow: TextOverflow.ellipsis,
+                                              textAlign: TextAlign.left,
+                                              style: theme
+                                                  .textTheme.titleMedium!
+                                                  .copyWith(
+                                                letterSpacing:
+                                                    getHorizontalSize(
+                                                  0.03,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: getPadding(
+                        // left: 40,
+                        top: 20,
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          InkWell(
+                            onTap: () {
+                              emergencyLight();
+                            },
+                            child: Container(
+                              padding: getPadding(
+                                all: 5,
+                              ),
+                              decoration: AppDecoration.shadow.copyWith(
+                                borderRadius: BorderRadiusStyle.circleBorder65,
+                              ),
+                              child: Container(
+                                padding: getPadding(
+                                  left: 37,
+                                  top: 24,
+                                  right: 37,
+                                  bottom: 24,
+                                ),
+                                decoration: AppDecoration.outline1.copyWith(
+                                  borderRadius:
+                                      BorderRadiusStyle.circleBorder60,
+                                ),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    CustomImageView(
+                                      svgPath: Assets.svg.imgTriangle.path,
+                                      height: getSize(
+                                        46,
+                                      ),
+                                      width: getSize(
+                                        46,
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: getPadding(
+                                        top: 5,
+                                      ),
+                                      child: Text(
+                                        "lbl74".tr,
+                                        overflow: TextOverflow.ellipsis,
+                                        textAlign: TextAlign.left,
+                                        style: theme.textTheme.titleMedium!
+                                            .copyWith(
+                                          letterSpacing: getHorizontalSize(
+                                            0.03,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                          InkWell(
+                            onTap: () {
+                              horn();
+                            },
+                            child: Container(
+                              margin: getMargin(
+                                left: 20,
+                              ),
+                              padding: getPadding(
+                                all: 5,
+                              ),
+                              decoration: AppDecoration.shadow.copyWith(
+                                borderRadius: BorderRadiusStyle.circleBorder65,
+                              ),
+                              child: Container(
+                                padding: getPadding(
+                                  left: 37,
+                                  top: 24,
+                                  right: 37,
+                                  bottom: 24,
+                                ),
+                                decoration: AppDecoration.outline1.copyWith(
+                                  borderRadius:
+                                      BorderRadiusStyle.circleBorder60,
+                                ),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    CustomImageView(
+                                      svgPath: Assets.svg.imgCampaign.path,
+                                      height: getSize(
+                                        46,
+                                      ),
+                                      width: getSize(
+                                        46,
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: getPadding(
+                                        top: 5,
+                                      ),
+                                      child: Text(
+                                        "lbl75".tr,
+                                        overflow: TextOverflow.ellipsis,
+                                        textAlign: TextAlign.left,
+                                        style: theme.textTheme.titleMedium!
+                                            .copyWith(
+                                          letterSpacing: getHorizontalSize(
+                                            0.03,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: CustomIconButton(
+                    height: 70,
+                    width: 70,
+                    padding: getPadding(
+                        // all: 13,
+                        ),
+                    margin: getMargin(right: 22, top: 30),
+                    decoration: BoxDecoration(
+                        color: Color.fromRGBO(255, 225, 66, 1),
+                        shape: BoxShape.circle),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        CustomImageView(
+                          svgPath: Assets.svg.imgEdit.path,
+                          color: Colors.black,
+                          width: 22.5,
+                          height: 22.5,
+                          margin: getMargin(bottom: 3),
+                        ),
+                        Text('사고 접수',
+                            style: TextStyle(color: Colors.black, fontSize: 12))
+                      ],
+                    ),
+                  ),
+                )
+              ],
             ),
           ),
         ),
+        // bottomNavigationBar: Container(
+        //     margin: getMargin(left: 16, right: 16, bottom: 30),
+        //     child: CustomElevatedButton(
+        //       text: "lbl76".tr,
+        //       leftIcon: Container(
+        //         margin: getMargin(
+        //           right: 1,
+        //         ),
+        //         child: CustomImageView(
+        //           svgPath: Assets.svg.imgEdit.path,
+        //         ),
+        //       ),
+        //       buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
+        //           fixedSize: MaterialStateProperty.all<Size>(
+        //               Size(double.maxFinite, getVerticalSize(52)))),
+        //       buttonTextStyle: CustomTextStyles.titleMedium18,
+        //       onTap: () {},
+        //     ))
       ),
     );
   }

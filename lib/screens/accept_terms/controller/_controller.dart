@@ -1,6 +1,9 @@
 // 📦 Package imports:
 import 'package:get/get.dart';
 
+// 🌎 Project imports:
+import 'package:wegooli_friends/data/data.dart';
+
 /// A controller class for the SignupAcceptTermsScreen.
 ///
 /// This class manages the state of the SignupAcceptTermsScreen, including the
@@ -10,6 +13,10 @@ class AcceptTermsController extends GetxController {
       Get.isRegistered<AcceptTermsController>()
           ? Get.find<AcceptTermsController>()
           : Get.put(AcceptTermsController());
+  Rx<Account> agreementModel = Account().obs;
+  RxList<AccountAgreementModel> accountAgreementModelList = RxList<AccountAgreementModel>();
+  RxList<AccountAgreementRequest> accountAgreementRequestList = RxList<AccountAgreementRequest>();
+
   Rx<bool> isAcceptedTerm0 = false.obs;
   Rx<bool> isAcceptedTerm1 = false.obs;
   Rx<bool> isAcceptedTerm2 = false.obs;

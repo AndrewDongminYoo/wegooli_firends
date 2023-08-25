@@ -8,6 +8,7 @@ final Map<String, String> koKR = {
   "cancel": "취소",
   "cancelingASubscription": "구독 해지하기",
   "cardNumber": "카드번호",
+  "carInfo": "차량 정보",
   "cardRegistration": "카드 등록",
   "carStatusInformation": "차량 상태 정보",
   "chat": "채팅",
@@ -72,6 +73,7 @@ final Map<String, String> koKR = {
   "splashLoadingScreen": "스플래시 화면",
   "status": "상태",
   "subscription": "구독",
+  "subscriptionInformation": "구독 정보",
   "subscriptionInfoNoService": "서비스 정보 없음",
   "subscriptionsAreRestrictedToThoseUnderTheAgeOf26": "· 만 26세 미만은 가입이 제한됩니다.",
   "subscriptionsWillBeCanceledAfterAugust4": "2023년 8월 4일 이후에 구독이 해지됩니다.",
@@ -85,7 +87,8 @@ final Map<String, String> koKR = {
   "upcomingUnsubscriptionView": "예정된 구독 취소 보기",
   "useOfPersonalInfoForMarketing": "마케팅 목적 개인정보 수집/이용 (선택)",
   "viewSchedules": "일정 확인",
-  "youCanCancelYourSubscriptionWithinTheRemainingPeriod": "해지 시 위굴리 프렌즈의 모든 혜택을 잃게 됩니다. 남은 기간 내에 해지를 취소하실 수 있습니다.",
+  "youCanCancelYourSubscriptionWithinTheRemainingPeriod":
+      "해지 시 위굴리 프렌즈의 모든 혜택을 잃게 됩니다. 남은 기간 내에 해지를 취소하실 수 있습니다.",
   "youHaveNoAccount": "계정이 없으신가요?",
   "yourRegistrationHasBeenCompleted": "회원가입이\n완료되었습니다."
 };

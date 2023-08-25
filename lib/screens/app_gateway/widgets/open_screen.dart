@@ -21,9 +21,7 @@ class RouteItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
         onTap: () {
-          Get.toNamed(
-            routeDestination,
-          );
+          Get.toNamed(routeDestination);
         },
         child: Container(
             decoration: AppDecoration.fill6,

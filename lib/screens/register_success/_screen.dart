@@ -10,11 +10,6 @@ import 'controller/_controller.dart';
 
 // ignore: must_be_immutable
 class RegisterSuccess extends GetWidget<RegisterSuccessPageController> {
-  const RegisterSuccess({Key? key})
-      : super(
-          key: key,
-        );
-
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
@@ -35,33 +30,21 @@ class RegisterSuccess extends GetWidget<RegisterSuccessPageController> {
                   children: [
                     CustomImageView(
                       imagePath: Assets.images.imgGooli0.path,
-                      height: getVerticalSize(
-                        109,
-                      ),
-                      width: getHorizontalSize(
-                        136,
-                      ),
+                      height: getVerticalSize(109),
+                      width: getHorizontalSize(136),
                       alignment: Alignment.centerRight,
-                      margin: getMargin(
-                        right: 87,
-                      ),
+                      margin: getMargin(right: 87),
                     ),
                     Container(
-                      width: getHorizontalSize(
-                        153,
-                      ),
-                      margin: getMargin(
-                        top: 36,
-                      ),
+                      width: getHorizontalSize(153),
+                      margin: getMargin(top: 36),
                       child: Text(
                         "yourRegistrationHasBeenCompleted".tr,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.center,
                         style: theme.textTheme.headlineSmall!.copyWith(
-                          letterSpacing: getHorizontalSize(
-                            0.05,
-                          ),
+                          letterSpacing: getHorizontalSize(0.05),
                         ),
                       ),
                     ),
@@ -135,9 +118,7 @@ class RegisterSuccess extends GetWidget<RegisterSuccessPageController> {
                         Size(double.maxFinite, getVerticalSize(52)))),
                 buttonTextStyle: CustomTextStyles.titleMedium18,
                 onTap: () {
-                  Get.toNamed(
-                    AppRoutes.sharedSchedule,
-                  );
+                  Get.toNamed(AppRoutes.sharedSchedule);
                 },
               ))),
     );

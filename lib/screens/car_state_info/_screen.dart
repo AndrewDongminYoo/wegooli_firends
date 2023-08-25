@@ -26,7 +26,7 @@ class CarStateInformation extends StatelessWidget {
                       onTabBackButton();
                     }),
                 centerTitle: true,
-                title: AppbarTitle(text: "subscription_information".tr)),
+                title: AppbarTitle(text: "subscriptionInformation".tr)),
             body: Container(
                 width: double.maxFinite,
                 padding: getPadding(left: 16, top: 24, right: 16, bottom: 24),
@@ -36,7 +36,7 @@ class CarStateInformation extends StatelessWidget {
                     children: [
                       Padding(
                           padding: getPadding(left: 2),
-                          child: Text("car_info".tr,
+                          child: Text("carInfo".tr,
                               overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.left,
                               style: CustomTextStyles.titleMediumBlack900

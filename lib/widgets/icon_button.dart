@@ -15,9 +15,7 @@ class CustomIconButton extends StatelessWidget {
     this.decoration,
     this.child,
     this.onTap,
-  }) : super(
-          key: key,
-        );
+  }) : super(key: key);
 
   final Alignment? alignment;
   final EdgeInsetsGeometry? margin;
@@ -56,9 +54,7 @@ class CustomIconButton extends StatelessWidget {
                 BoxDecoration(
                   color: theme.colorScheme.secondaryContainer,
                   borderRadius: BorderRadius.circular(
-                    getHorizontalSize(
-                      24.00,
-                    ),
+                    getHorizontalSize(24.00),
                   ),
                 ),
             child: child,

@@ -36,6 +36,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get cardRegistration => '카드 등록';
 
   @override
+  String get carInfo => '차량 정보';
+
+  @override
   String get carStatusInformation => '차량 상태 정보';
 
   @override
@@ -223,6 +226,9 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get subscription => '구독';
+
+  @override
+  String get subscriptionInformation => '구독 정보';
 
   @override
   String get subscriptionInfoNoService => '서비스 정보 없음';

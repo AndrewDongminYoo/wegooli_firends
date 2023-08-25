@@ -93,9 +93,8 @@ class _CalendarBodyState extends State<CalendarBody> {
       padding: getPadding(all: 16),
       child: Container(
         padding: getPadding(all: 16),
-        decoration: AppDecoration.outline.copyWith(
-          borderRadius: BorderRadiusStyle.roundedBorder10,
-        ),
+        decoration: AppDecoration.outline
+            .copyWith(borderRadius: BorderRadiusStyle.roundedBorder10),
         child: Align(
           alignment: Alignment.center,
           child: TableCalendar<Schedule>(

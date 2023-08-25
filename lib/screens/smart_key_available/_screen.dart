@@ -12,9 +12,7 @@ import 'controller/_controller.dart';
 // ignore: must_be_immutable
 class SmartKeyAvailablePage extends StatelessWidget {
   SmartKeyAvailablePage({Key? key})
-      : super(
-          key: key,
-        );
+      : super(key: key);
   SmartKeyAvailableController controller = SmartKeyAvailableController.to;
 
   final String token = Get.find<PrefUtils>().getData('token');
@@ -130,17 +128,11 @@ class SmartKeyAvailablePage extends StatelessWidget {
       child: Scaffold(
         backgroundColor: theme.colorScheme.onPrimaryContainer,
         appBar: CustomAppBar(
-          height: getVerticalSize(
-            45,
-          ),
+          height: getVerticalSize(45),
           centerTitle: true,
           title: CustomImageView(
-            height: getVerticalSize(
-              17,
-            ),
-            width: getHorizontalSize(
-              88,
-            ),
+            height: getVerticalSize(17),
+            width: getHorizontalSize(88),
             svgPath: Assets.svg.imgFriendsTypo.path,
           ),
           styleType: Style.bgOutline,
@@ -148,9 +140,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
         body: SizedBox(
           width: mediaQueryData.size.width,
           child: SingleChildScrollView(
-            padding: getPadding(
-              top: 24,
-            ),
+            padding: getPadding(top: 24),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -165,12 +155,8 @@ class SmartKeyAvailablePage extends StatelessWidget {
                     children: [
                       CustomImageView(
                         imagePath: Assets.images.imgCarMorUrban.path,
-                        height: getVerticalSize(
-                          92,
-                        ),
-                        width: getHorizontalSize(
-                          139,
-                        ),
+                        height: getVerticalSize(92),
+                        width: getHorizontalSize(139),
                       ),
                       Padding(
                         padding: getPadding(
@@ -187,15 +173,11 @@ class SmartKeyAvailablePage extends StatelessWidget {
                               overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.left,
                               style: theme.textTheme.titleMedium!.copyWith(
-                                letterSpacing: getHorizontalSize(
-                                  0.03,
-                                ),
+                                letterSpacing: getHorizontalSize(0.03),
                               ),
                             ),
                             Padding(
-                              padding: getPadding(
-                                top: 4,
-                              ),
+                              padding: getPadding(top: 4),
                               child: Text(
                                 controller.terminalModelObj.value.carNum ??
                                     "차량 번호",
@@ -203,27 +185,19 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                 textAlign: TextAlign.left,
                                 style: CustomTextStyles.bodySmallOnPrimary
                                     .copyWith(
-                                  letterSpacing: getHorizontalSize(
-                                    0.02,
-                                  ),
+                                  letterSpacing: getHorizontalSize(0.02),
                                 ),
                               ),
                             ),
                             Padding(
-                              padding: getPadding(
-                                top: 1,
-                              ),
+                              padding: getPadding(top: 1),
                               child: Row(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   CustomImageView(
                                     svgPath: Assets.svg.imgGasStation.path,
-                                    height: getSize(
-                                      24,
-                                    ),
-                                    width: getSize(
-                                      24,
-                                    ),
+                                    height: getSize(24),
+                                    width: getSize(24),
                                   ),
                                   Padding(
                                     padding: getPadding(
@@ -237,9 +211,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                       textAlign: TextAlign.left,
                                       style:
                                           theme.textTheme.bodySmall!.copyWith(
-                                        letterSpacing: getHorizontalSize(
-                                          0.02,
-                                        ),
+                                        letterSpacing: getHorizontalSize(0.02),
                                       ),
                                     ),
                                   ),
@@ -254,9 +226,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: getPadding(
-                    top: 6,
-                  ),
+                  padding: getPadding(top: 6),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -265,33 +235,23 @@ class SmartKeyAvailablePage extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.left,
                         style: CustomTextStyles.bodySmallOnPrimary.copyWith(
-                          letterSpacing: getHorizontalSize(
-                            0.02,
-                          ),
+                          letterSpacing: getHorizontalSize(0.02),
                         ),
                       ),
                       Padding(
-                        padding: getPadding(
-                          left: 5,
-                        ),
+                        padding: getPadding(left: 5),
                         child: Text(
                           "|",
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.left,
                           style: CustomTextStyles.bodySmallOnPrimary.copyWith(
-                            letterSpacing: getHorizontalSize(
-                              0.02,
-                            ),
+                            letterSpacing: getHorizontalSize(0.02),
                           ),
                         ),
                       ),
                       Container(
-                        height: getSize(
-                          4,
-                        ),
-                        width: getSize(
-                          4,
-                        ),
+                        height: getSize(4),
+                        width: getSize(4),
                         margin: getMargin(
                           left: 5,
                           top: 5,
@@ -300,16 +260,12 @@ class SmartKeyAvailablePage extends StatelessWidget {
                         decoration: BoxDecoration(
                           color: appTheme.green500,
                           borderRadius: BorderRadius.circular(
-                            getHorizontalSize(
-                              2,
-                            ),
+                            getHorizontalSize(2),
                           ),
                         ),
                       ),
                       Padding(
-                        padding: getPadding(
-                          left: 2,
-                        ),
+                        padding: getPadding(left: 2),
                         child: Text(
                           controller.isUsed.isTrue
                               ? '${controller.clientName.text}님이 사용중입니다.'
@@ -317,9 +273,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.left,
                           style: theme.textTheme.bodySmall!.copyWith(
-                            letterSpacing: getHorizontalSize(
-                              0.02,
-                            ),
+                            letterSpacing: getHorizontalSize(0.02),
                           ),
                         ),
                       ),
@@ -327,16 +281,10 @@ class SmartKeyAvailablePage extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  height: getVerticalSize(
-                    8,
-                  ),
+                  height: getVerticalSize(8),
                   width: double.maxFinite,
-                  margin: getMargin(
-                    top: 31,
-                  ),
-                  decoration: BoxDecoration(
-                    color: appTheme.gray100,
-                  ),
+                  margin: getMargin(top: 31),
+                  decoration: BoxDecoration(color: appTheme.gray100),
                 ),
                 Align(
                   alignment: Alignment.centerLeft,
@@ -350,9 +298,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.left,
                       style: CustomTextStyles.titleMediumBlack900.copyWith(
-                        letterSpacing: getHorizontalSize(
-                          0.04,
-                        ),
+                        letterSpacing: getHorizontalSize(0.04),
                       ),
                     ),
                   ),
@@ -372,45 +318,31 @@ class SmartKeyAvailablePage extends StatelessWidget {
                               openDoor();
                             },
                             child: SizedBox(
-                              height: getSize(
-                                130,
-                              ),
-                              width: getSize(
-                                130,
-                              ),
+                              height: getSize(130),
+                              width: getSize(130),
                               child: Stack(
                                 alignment: Alignment.center,
                                 children: [
                                   Align(
                                     alignment: Alignment.center,
                                     child: Container(
-                                      padding: getPadding(
-                                        all: 5,
-                                      ),
+                                      padding: getPadding(all: 5),
                                       decoration: AppDecoration.shadow.copyWith(
                                         borderRadius:
                                             BorderRadiusStyle.circleBorder65,
                                       ),
                                       child: Container(
-                                        height: getSize(
-                                          120,
-                                        ),
-                                        width: getSize(
-                                          120,
-                                        ),
+                                        height: getSize(120),
+                                        width: getSize(120),
                                         decoration: BoxDecoration(
                                           color: theme
                                               .colorScheme.onPrimaryContainer,
                                           borderRadius: BorderRadius.circular(
-                                            getHorizontalSize(
-                                              60,
-                                            ),
+                                            getHorizontalSize(60),
                                           ),
                                           border: Border.all(
                                             color: appTheme.blueGray30033,
-                                            width: getHorizontalSize(
-                                              1,
-                                            ),
+                                            width: getHorizontalSize(1),
                                           ),
                                         ),
                                       ),
@@ -431,17 +363,11 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                           CustomImageView(
                                             svgPath:
                                                 Assets.svg.imgUnlocked.path,
-                                            height: getSize(
-                                              46,
-                                            ),
-                                            width: getSize(
-                                              46,
-                                            ),
+                                            height: getSize(46),
+                                            width: getSize(46),
                                           ),
                                           Padding(
-                                            padding: getPadding(
-                                              top: 5,
-                                            ),
+                                            padding: getPadding(top: 5),
                                             child: Text(
                                               "lbl72".tr,
                                               overflow: TextOverflow.ellipsis,
@@ -450,9 +376,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                                   .textTheme.titleMedium!
                                                   .copyWith(
                                                 letterSpacing:
-                                                    getHorizontalSize(
-                                                  0.03,
-                                                ),
+                                                    getHorizontalSize(0.03),
                                               ),
                                             ),
                                           ),
@@ -469,48 +393,32 @@ class SmartKeyAvailablePage extends StatelessWidget {
                               closeDoor();
                             },
                             child: Container(
-                              height: getSize(
-                                130,
-                              ),
-                              width: getSize(
-                                130,
-                              ),
-                              margin: getMargin(
-                                left: 20,
-                              ),
+                              height: getSize(130),
+                              width: getSize(130),
+                              margin: getMargin(left: 20),
                               child: Stack(
                                 alignment: Alignment.center,
                                 children: [
                                   Align(
                                     alignment: Alignment.center,
                                     child: Container(
-                                      padding: getPadding(
-                                        all: 5,
-                                      ),
+                                      padding: getPadding(all: 5),
                                       decoration: AppDecoration.shadow.copyWith(
                                         borderRadius:
                                             BorderRadiusStyle.circleBorder65,
                                       ),
                                       child: Container(
-                                        height: getSize(
-                                          120,
-                                        ),
-                                        width: getSize(
-                                          120,
-                                        ),
+                                        height: getSize(120),
+                                        width: getSize(120),
                                         decoration: BoxDecoration(
                                           color: theme
                                               .colorScheme.onPrimaryContainer,
                                           borderRadius: BorderRadius.circular(
-                                            getHorizontalSize(
-                                              60,
-                                            ),
+                                            getHorizontalSize(60),
                                           ),
                                           border: Border.all(
                                             color: appTheme.blueGray30033,
-                                            width: getHorizontalSize(
-                                              1,
-                                            ),
+                                            width: getHorizontalSize(1),
                                           ),
                                         ),
                                       ),
@@ -530,17 +438,11 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                         children: [
                                           CustomImageView(
                                             svgPath: Assets.svg.imgLocked.path,
-                                            height: getSize(
-                                              46,
-                                            ),
-                                            width: getSize(
-                                              46,
-                                            ),
+                                            height: getSize(46),
+                                            width: getSize(46),
                                           ),
                                           Padding(
-                                            padding: getPadding(
-                                              top: 5,
-                                            ),
+                                            padding: getPadding(top: 5),
                                             child: Text(
                                               "lbl73".tr,
                                               overflow: TextOverflow.ellipsis,
@@ -549,9 +451,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                                   .textTheme.titleMedium!
                                                   .copyWith(
                                                 letterSpacing:
-                                                    getHorizontalSize(
-                                                  0.03,
-                                                ),
+                                                    getHorizontalSize(0.03),
                                               ),
                                             ),
                                           ),
@@ -579,12 +479,8 @@ class SmartKeyAvailablePage extends StatelessWidget {
                               emergencyLight();
                             },
                             child: Container(
-                              padding: getPadding(
-                                all: 5,
-                              ),
-                              decoration: AppDecoration.shadow.copyWith(
-                                borderRadius: BorderRadiusStyle.circleBorder65,
-                              ),
+                              padding: getPadding(all: 5),
+                              decoration: AppDecoration.shadow.copyWith(borderRadius: BorderRadiusStyle.circleBorder65),
                               child: Container(
                                 padding: getPadding(
                                   left: 37,
@@ -602,26 +498,18 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                   children: [
                                     CustomImageView(
                                       svgPath: Assets.svg.imgTriangle.path,
-                                      height: getSize(
-                                        46,
-                                      ),
-                                      width: getSize(
-                                        46,
-                                      ),
+                                      height: getSize(46),
+                                      width: getSize(46),
                                     ),
                                     Padding(
-                                      padding: getPadding(
-                                        top: 5,
-                                      ),
+                                      padding: getPadding(top: 5),
                                       child: Text(
                                         "lbl74".tr,
                                         overflow: TextOverflow.ellipsis,
                                         textAlign: TextAlign.left,
                                         style: theme.textTheme.titleMedium!
                                             .copyWith(
-                                          letterSpacing: getHorizontalSize(
-                                            0.03,
-                                          ),
+                                          letterSpacing: getHorizontalSize(0.03),
                                         ),
                                       ),
                                     ),
@@ -635,15 +523,9 @@ class SmartKeyAvailablePage extends StatelessWidget {
                               horn();
                             },
                             child: Container(
-                              margin: getMargin(
-                                left: 20,
-                              ),
-                              padding: getPadding(
-                                all: 5,
-                              ),
-                              decoration: AppDecoration.shadow.copyWith(
-                                borderRadius: BorderRadiusStyle.circleBorder65,
-                              ),
+                              margin: getMargin(left: 20),
+                              padding: getPadding(all: 5),
+                              decoration: AppDecoration.shadow.copyWith(borderRadius: BorderRadiusStyle.circleBorder65),
                               child: Container(
                                 padding: getPadding(
                                   left: 37,
@@ -661,26 +543,18 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                   children: [
                                     CustomImageView(
                                       svgPath: Assets.svg.imgCampaign.path,
-                                      height: getSize(
-                                        46,
-                                      ),
-                                      width: getSize(
-                                        46,
-                                      ),
+                                      height: getSize(46),
+                                      width: getSize(46),
                                     ),
                                     Padding(
-                                      padding: getPadding(
-                                        top: 5,
-                                      ),
+                                      padding: getPadding(top: 5),
                                       child: Text(
                                         "lbl75".tr,
                                         overflow: TextOverflow.ellipsis,
                                         textAlign: TextAlign.left,
                                         style: theme.textTheme.titleMedium!
                                             .copyWith(
-                                          letterSpacing: getHorizontalSize(
-                                            0.03,
-                                          ),
+                                          letterSpacing: getHorizontalSize(0.03),
                                         ),
                                       ),
                                     ),
@@ -699,9 +573,6 @@ class SmartKeyAvailablePage extends StatelessWidget {
                   child: CustomIconButton(
                     height: 70,
                     width: 70,
-                    padding: getPadding(
-                        // all: 13,
-                        ),
                     margin: getMargin(right: 22, top: 30),
                     decoration: BoxDecoration(
                         color: Color.fromRGBO(255, 225, 66, 1),
@@ -758,12 +629,8 @@ class ArrowLeft extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomImageView(
       svgPath: Assets.svg.imgArrowLeft.path,
-      height: getSize(
-        18,
-      ),
-      width: getSize(
-        18,
-      ),
+      height: getSize(18),
+      width: getSize(18),
       margin: getMargin(
         left: 54,
         top: 2,

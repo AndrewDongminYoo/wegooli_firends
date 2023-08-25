@@ -26,7 +26,7 @@ class SubscriptionInfoNoService extends StatelessWidget {
                       onTabBackButton();
                     }),
                 centerTitle: true,
-                title: AppbarTitle(text: "subscription_information".tr)),
+                title: AppbarTitle(text: "subscriptionInformation".tr)),
             body: SizedBox(
                 width: double.maxFinite,
                 child: Column(

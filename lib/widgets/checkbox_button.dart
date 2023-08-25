@@ -17,9 +17,7 @@ class CustomCheckboxButton extends StatelessWidget {
     this.padding,
     this.textStyle,
     this.textAlignment,
-  }) : super(
-          key: key,
-        );
+  }) : super(key: key);
 
   final BoxDecoration? decoration;
   final Alignment? alignment;

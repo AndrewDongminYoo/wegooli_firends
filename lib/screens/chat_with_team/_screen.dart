@@ -25,9 +25,7 @@ class DashChatWithFriendsPage extends StatefulWidget {
       required this.userId,
       required this.otherUserIds,
       Key? key})
-      : super(
-          key: key,
-        );
+      : super(key: key);
 
   @override
   _DashChatWithFriendsState createState() => _DashChatWithFriendsState();
@@ -102,11 +100,10 @@ class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
   List<ChatMessage> asDashChatMessages(List<BaseMessage> messages) {
     List<ChatMessage> chatMessages = messages
         .map((sendBirdMessage) => ChatMessage(
-              text: sendBirdMessage.message,
-              user: asDashChatUser(sendBirdMessage.sender),
-              createdAt: DateTime.fromMillisecondsSinceEpoch(
-                  sendBirdMessage.createdAt),
-            ))
+            text: sendBirdMessage.message,
+            user: asDashChatUser(sendBirdMessage.sender),
+            createdAt:
+                DateTime.fromMillisecondsSinceEpoch(sendBirdMessage.createdAt)))
         .toList();
     chatMessages.sort((a, b) => b.createdAt.compareTo(a.createdAt));
 
@@ -147,17 +144,11 @@ class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
         resizeToAvoidBottomInset: false,
         backgroundColor: theme.colorScheme.onPrimaryContainer,
         appBar: CustomAppBar(
-          height: getVerticalSize(
-            45,
-          ),
+          height: getVerticalSize(45),
           centerTitle: true,
           title: CustomImageView(
-            height: getVerticalSize(
-              17,
-            ),
-            width: getHorizontalSize(
-              88,
-            ),
+            height: getVerticalSize(17),
+            width: getHorizontalSize(88),
             svgPath: Assets.svg.imgFriendsTypo.path,
           ),
           styleType: Style.bgOutline,

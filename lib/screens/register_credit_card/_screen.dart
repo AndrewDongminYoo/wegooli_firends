@@ -259,8 +259,6 @@ class RegisterCreditCard extends GetWidget<RegisterCreditCardController> {
   }
 
   onTapRegisterSuccess() {
-    Get.toNamed(
-      AppRoutes.signUpSuccess,
-    );
+    Get.toNamed(AppRoutes.signUpSuccess);
   }
 }

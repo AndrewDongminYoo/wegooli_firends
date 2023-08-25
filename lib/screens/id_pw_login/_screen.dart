@@ -15,11 +15,6 @@ import '/screens/screens.dart';
 // ignore: must_be_immutable
 class LoginWithIdAndPassword
     extends GetWidget<LoginWithIdAndPasswordController> {
-  const LoginWithIdAndPassword({Key? key})
-      : super(
-          key: key,
-        );
-
   Future findMembers() async {
     String token = Get.find<PrefUtils>().getData('token');
     final api =
@@ -122,17 +117,13 @@ class LoginWithIdAndPassword
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.left,
                 style: theme.textTheme.displayMedium!.copyWith(
-                  letterSpacing: getHorizontalSize(
-                    0.1,
-                  ),
+                  letterSpacing: getHorizontalSize(0.1),
                 ),
               ),
               Align(
                 alignment: Alignment.centerRight,
                 child: Padding(
-                  padding: getPadding(
-                    right: 68,
-                  ),
+                  padding: getPadding(right: 68),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
@@ -143,19 +134,13 @@ class LoginWithIdAndPassword
                         style: CustomTextStyles
                             .titleSmallNanumSquareRoundOnPrimary
                             .copyWith(
-                          letterSpacing: getHorizontalSize(
-                            0.03,
-                          ),
+                          letterSpacing: getHorizontalSize(0.03),
                         ),
                       ),
                       CustomImageView(
                         svgPath: Assets.svg.imgWegooliBlueGray900.path,
-                        height: getVerticalSize(
-                          11,
-                        ),
-                        width: getHorizontalSize(
-                          53,
-                        ),
+                        height: getVerticalSize(11),
+                        width: getHorizontalSize(53),
                         margin: getMargin(
                           left: 5,
                           bottom: 3,
@@ -167,9 +152,7 @@ class LoginWithIdAndPassword
               ),
               CustomTextFormField(
                 controller: controller.usernameController,
-                margin: getMargin(
-                  top: 40,
-                ),
+                margin: getMargin(top: 40),
                 contentPadding: getPadding(
                   left: 12,
                   top: 14,
@@ -185,9 +168,7 @@ class LoginWithIdAndPassword
               ),
               Obx(() => CustomTextFormField(
                     controller: controller.passwordController,
-                    margin: getMargin(
-                      top: 12,
-                    ),
+                    margin: getMargin(top: 12),
                     contentPadding: getPadding(
                       left: 12,
                       top: 14,
@@ -216,15 +197,11 @@ class LoginWithIdAndPassword
                   )),
               CustomElevatedButton(
                   text: "signIn".tr,
-                  margin: getMargin(
-                    top: 30,
-                  ),
+                  margin: getMargin(top: 30),
                   buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
                       fixedSize: MaterialStateProperty.all<Size>(Size(
                     double.maxFinite,
-                    getVerticalSize(
-                      52,
-                    ),
+                    getVerticalSize(52),
                   ))),
                   buttonTextStyle: CustomTextStyles.titleMedium18,
                   onTap: () async {
@@ -237,17 +214,13 @@ class LoginWithIdAndPassword
                     }
                   }),
               Padding(
-                padding: getPadding(
-                  top: 57,
-                ),
+                padding: getPadding(top: 57),
                 child: Text(
                   "youHaveNoAccount".tr,
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.left,
                   style: theme.textTheme.bodyLarge!.copyWith(
-                    letterSpacing: getHorizontalSize(
-                      0.03,
-                    ),
+                    letterSpacing: getHorizontalSize(0.03),
                   ),
                 ),
               ),
@@ -260,17 +233,13 @@ class LoginWithIdAndPassword
                   buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
                       fixedSize: MaterialStateProperty.all<Size>(Size(
                     double.maxFinite,
-                    getVerticalSize(
-                      52,
-                    ),
+                    getVerticalSize(52),
                   ))),
                   buttonTextStyle: CustomTextStyles.titleMedium18,
                   onTap: () {
                     // 해당 탭은 dialog로 변경 예정
                     // onTapSignUpAcceptTerms();
-                    Get.toNamed(
-                      AppRoutes.validatePhone,
-                    );
+                    Get.toNamed(AppRoutes.validatePhone);
                   }),
             ],
           ),
@@ -280,14 +249,10 @@ class LoginWithIdAndPassword
   }
 
   onTapTeamScheduleShare() {
-    Get.toNamed(
-      AppRoutes.sharedSchedule,
-    );
+    Get.toNamed(AppRoutes.sharedSchedule);
   }
 
   onTapSignUpAcceptTerms() {
-    Get.toNamed(
-      AppRoutes.acceptTerms,
-    );
+    Get.toNamed(AppRoutes.acceptTerms);
   }
 }

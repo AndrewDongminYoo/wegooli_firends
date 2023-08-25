@@ -22,9 +22,7 @@ class CalendarTitle extends StatelessWidget {
         textAlign: TextAlign.left,
         style: CustomTextStyles.titleMediumBlack900.copyWith(
           fontWeight: FontWeight.w900,
-          letterSpacing: getHorizontalSize(
-            0.04,
-          ),
+          letterSpacing: getHorizontalSize(0.04),
         ),
       ),
     );

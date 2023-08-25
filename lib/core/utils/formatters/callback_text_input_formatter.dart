@@ -14,9 +14,7 @@ class CallbackTextInputFormatter extends FilteringTextInputFormatter {
     this.inputtingCallback,
   });
 
-  void Function(
-    bool valid,
-  )? inputtingCallback;
+  void Function(bool valid)? inputtingCallback;
 
   @override
   TextEditingValue formatEditUpdate(
@@ -61,9 +59,7 @@ class CallbackTextInputFormatter extends FilteringTextInputFormatter {
     required void Function(bool valid) inputtingCallback,
   }) {
     return CallbackTextInputFormatter(
-      RegExp(
-        r"""[₩0-9~!@#\$%^&*()_+`\-={}|\[\]\:";'<>?,./]""",
-      ),
+      RegExp(r"""[₩0-9~!@#\$%^&*()_+`\-={}|\[\]\:";'<>?,./]"""),
       allow: false,
       inputtingCallback: inputtingCallback,
     );

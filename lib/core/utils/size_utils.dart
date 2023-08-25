@@ -112,18 +112,10 @@ EdgeInsets getMarginOrPadding({
     bottom = all;
   }
   return EdgeInsets.only(
-    left: getHorizontalSize(
-      left ?? 0,
-    ),
-    top: getVerticalSize(
-      top ?? 0,
-    ),
-    right: getHorizontalSize(
-      right ?? 0,
-    ),
-    bottom: getVerticalSize(
-      bottom ?? 0,
-    ),
+    left: getHorizontalSize(left ?? 0),
+    top: getVerticalSize(top ?? 0),
+    right: getHorizontalSize(right ?? 0),
+    bottom: getVerticalSize(bottom ?? 0),
   );
 }
 

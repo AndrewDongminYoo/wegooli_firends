@@ -1,6 +1,9 @@
 // 📦 Package imports:
 import 'package:get/get.dart';
 
+// 🌎 Project imports:
+import '/data/data.dart';
+
 /// A controller class for the MyProfilePage.
 ///
 /// This class manages the state of the MyProfilePage, including the
@@ -10,4 +13,6 @@ class MyProfileController extends GetxController {
       ? Get.find<MyProfileController>()
       : Get.put(MyProfileController());
   RxString phoneNumber = ''.obs;
+  var account = Account().obs;
+  var userDetailInfo = UserDetailsDTO().obs;
 }

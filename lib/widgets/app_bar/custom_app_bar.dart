@@ -15,9 +15,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.title,
     this.centerTitle,
     this.actions,
-  }) : super(
-          key: key,
-        );
+  }) : super(key: key);
 
   double height;
   Style? styleType;
@@ -53,36 +51,28 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     switch (styleType) {
       case Style.bgOutline_1:
         return Container(
-          height: getVerticalSize(
-            45,
-          ),
+          height: getVerticalSize(45),
           width: double.maxFinite,
           decoration: BoxDecoration(
             color: theme.colorScheme.onPrimaryContainer,
             border: Border(
               bottom: BorderSide(
                 color: appTheme.gray400,
-                width: getHorizontalSize(
-                  1,
-                ),
+                width: getHorizontalSize(1),
               ),
             ),
           ),
         );
       case Style.bgOutline:
         return Container(
-          height: getVerticalSize(
-            45,
-          ),
+          height: getVerticalSize(45),
           width: double.maxFinite,
           decoration: BoxDecoration(
             color: theme.colorScheme.onPrimaryContainer,
             border: Border(
               bottom: BorderSide(
                 color: appTheme.blueGray30033,
-                width: getHorizontalSize(
-                  1,
-                ),
+                width: getHorizontalSize(1),
               ),
             ),
           ),

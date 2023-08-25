@@ -156,6 +156,12 @@ abstract class AppLocalizations {
   /// **'카드 등록'**
   String get cardRegistration;
 
+  /// No description provided for @carInfo.
+  ///
+  /// In ko, this message translates to:
+  /// **'차량 정보'**
+  String get carInfo;
+
   /// No description provided for @carStatusInformation.
   ///
   /// In ko, this message translates to:
@@ -533,6 +539,12 @@ abstract class AppLocalizations {
   /// In ko, this message translates to:
   /// **'구독'**
   String get subscription;
+
+  /// No description provided for @subscriptionInformation.
+  ///
+  /// In ko, this message translates to:
+  /// **'구독 정보'**
+  String get subscriptionInformation;
 
   /// No description provided for @subscriptionInfoNoService.
   ///

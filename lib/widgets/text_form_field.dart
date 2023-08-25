@@ -37,9 +37,7 @@ class CustomTextFormField extends StatelessWidget {
     this.validator,
     this.enabled = true,
     this.initialValue,
-  }) : super(
-          key: key,
-        );
+  }) : super(key: key);
 
   final Alignment? alignment;
   final double? width;
@@ -115,9 +113,7 @@ class CustomTextFormField extends StatelessWidget {
         border: defaultBorderDecoration ??
             OutlineInputBorder(
               borderRadius: BorderRadius.circular(
-                getHorizontalSize(
-                  5.00,
-                ),
+                getHorizontalSize(5.00),
               ),
               borderSide: BorderSide(
                 color: theme.colorScheme.secondaryContainer,
@@ -127,9 +123,7 @@ class CustomTextFormField extends StatelessWidget {
         enabledBorder: enabledBorderDecoration ??
             OutlineInputBorder(
               borderRadius: BorderRadius.circular(
-                getHorizontalSize(
-                  5.00,
-                ),
+                getHorizontalSize(5.00),
               ),
               borderSide: BorderSide(
                 color: theme.colorScheme.secondaryContainer,
@@ -139,9 +133,7 @@ class CustomTextFormField extends StatelessWidget {
         focusedBorder: focusedBorderDecoration ??
             OutlineInputBorder(
               borderRadius: BorderRadius.circular(
-                getHorizontalSize(
-                  5.00,
-                ),
+                getHorizontalSize(5.00),
               ),
               borderSide: BorderSide(
                 color: theme.colorScheme.secondaryContainer,
@@ -151,9 +143,7 @@ class CustomTextFormField extends StatelessWidget {
         disabledBorder: disabledBorderDecoration ??
             OutlineInputBorder(
               borderRadius: BorderRadius.circular(
-                getHorizontalSize(
-                  5.00,
-                ),
+                getHorizontalSize(5.00),
               ),
               borderSide: BorderSide(
                 color: theme.colorScheme.secondaryContainer,
@@ -168,9 +158,7 @@ extension TextFormFieldStyleHelper on CustomTextFormField {
   static OutlineInputBorder get outlineSecondaryContainerTL5 =>
       OutlineInputBorder(
         borderRadius: BorderRadius.circular(
-          getHorizontalSize(
-            5.00,
-          ),
+          getHorizontalSize(5.00),
         ),
         borderSide: BorderSide(
           color: theme.colorScheme.secondaryContainer,
@@ -179,9 +167,7 @@ extension TextFormFieldStyleHelper on CustomTextFormField {
       );
   static OutlineInputBorder get fillBluegray30033 => OutlineInputBorder(
         borderRadius: BorderRadius.circular(
-          getHorizontalSize(
-            18.00,
-          ),
+          getHorizontalSize(18.00),
         ),
         borderSide: BorderSide.none,
       );

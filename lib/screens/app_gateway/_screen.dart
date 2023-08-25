@@ -84,7 +84,8 @@ class GatewayScreen extends StatelessWidget {
                                         RouteItem(
                                             routeDestination:
                                                 AppRoutes.signUpSuccess,
-                                            routeName: "loginRegisterSuccessPage".tr),
+                                            routeName:
+                                                "loginRegisterSuccessPage".tr),
                                         RouteItem(
                                             routeDestination:
                                                 AppRoutes.sharedSchedule,
@@ -166,9 +167,7 @@ class GatewayScreen extends StatelessWidget {
     backgroundColor: Colors.transparent,
     contentPadding: EdgeInsets.zero,
     insetPadding: const EdgeInsets.only(left: 0),
-    content: SendingCrewInvitationDialog(
-      SendingCrewInvitationController.to,
-    ),
+    content: SendingCrewInvitationDialog(SendingCrewInvitationController.to),
   );
 
   Widget openCheckReservations = AlertDialog(
@@ -179,6 +178,5 @@ class GatewayScreen extends StatelessWidget {
   );
 
   Widget openDateTimePicker = ReservationDatetimePickerBottomSheet(
-    ReservationDatetimePickerController.to,
-  );
+      ReservationDatetimePickerController.to);
 }

@@ -8,11 +8,6 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 class SplashLoading extends StatelessWidget {
-  const SplashLoading({Key? key})
-      : super(
-          key: key,
-        );
-
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
@@ -41,9 +36,7 @@ class SplashLoading extends StatelessWidget {
                 textAlign: TextAlign.left,
                 style: theme.textTheme.displayMedium!.copyWith(
                   fontFamily: FontFamily.cookieRun,
-                  letterSpacing: getHorizontalSize(
-                    0.1,
-                  ),
+                  letterSpacing: getHorizontalSize(0.1),
                 ),
               ),
               Padding(
@@ -61,22 +54,14 @@ class SplashLoading extends StatelessWidget {
                       style: CustomTextStyles
                           .titleSmallNanumSquareRoundOnPrimary
                           .copyWith(
-                        letterSpacing: getHorizontalSize(
-                          0.03,
-                        ),
+                        letterSpacing: getHorizontalSize(0.03),
                       ),
                     ),
                     CustomImageView(
-                      onTap: () => AlertDialog(
-                        title: Text('Hello World!!'),
-                      ),
+                      onTap: () => AlertDialog(title: Text('Hello World!!')),
                       svgPath: Assets.svg.imgWegooliBlueGray900.path,
-                      height: getVerticalSize(
-                        11,
-                      ),
-                      width: getHorizontalSize(
-                        53,
-                      ),
+                      height: getVerticalSize(11),
+                      width: getHorizontalSize(53),
                       margin: getMargin(
                         left: 5,
                         bottom: 3,
@@ -91,9 +76,7 @@ class SplashLoading extends StatelessWidget {
                 width: Get.width,
                 child: CustomImageView(
                   onTap: () {
-                    Get.toNamed(
-                      AppRoutes.validatePhone,
-                    );
+                    Get.toNamed(AppRoutes.validatePhone);
                   },
                   imagePath: Assets.images.imgGooli1.path,
                   height: getVerticalSize(93),

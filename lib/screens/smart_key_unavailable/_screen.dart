@@ -9,11 +9,6 @@ import '/core/app_export.dart';
 
 // ignore: must_be_immutable
 class SmartKeyNotAvailable extends StatelessWidget {
-  const SmartKeyNotAvailable({Key? key})
-      : super(
-          key: key,
-        );
-
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
@@ -22,17 +17,11 @@ class SmartKeyNotAvailable extends StatelessWidget {
       child: Scaffold(
         backgroundColor: theme.colorScheme.onPrimaryContainer,
         appBar: CustomAppBar(
-          height: getVerticalSize(
-            45,
-          ),
+          height: getVerticalSize(45),
           centerTitle: true,
           title: CustomImageView(
-            height: getVerticalSize(
-              17,
-            ),
-            width: getHorizontalSize(
-              88,
-            ),
+            height: getVerticalSize(17),
+            width: getHorizontalSize(88),
             svgPath: Assets.svg.imgFriendsTypo.path,
           ),
           styleType: Style.bgOutline,
@@ -40,13 +29,9 @@ class SmartKeyNotAvailable extends StatelessWidget {
         body: SizedBox(
           width: mediaQueryData.size.width,
           child: SingleChildScrollView(
-            padding: getPadding(
-              top: 24,
-            ),
+            padding: getPadding(top: 24),
             child: Padding(
-              padding: getPadding(
-                bottom: 5,
-              ),
+              padding: getPadding(bottom: 5),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -61,12 +46,8 @@ class SmartKeyNotAvailable extends StatelessWidget {
                       children: [
                         CustomImageView(
                           imagePath: Assets.images.imgCarMorUrban.path,
-                          height: getVerticalSize(
-                            92,
-                          ),
-                          width: getHorizontalSize(
-                            139,
-                          ),
+                          height: getVerticalSize(92),
+                          width: getHorizontalSize(139),
                         ),
                         Padding(
                           padding: getPadding(
@@ -82,42 +63,30 @@ class SmartKeyNotAvailable extends StatelessWidget {
                                 overflow: TextOverflow.ellipsis,
                                 textAlign: TextAlign.left,
                                 style: theme.textTheme.titleMedium!.copyWith(
-                                  letterSpacing: getHorizontalSize(
-                                    0.03,
-                                  ),
+                                  letterSpacing: getHorizontalSize(0.03),
                                 ),
                               ),
                               Padding(
-                                padding: getPadding(
-                                  top: 4,
-                                ),
+                                padding: getPadding(top: 4),
                                 child: Text(
                                   "12가 3456",
                                   overflow: TextOverflow.ellipsis,
                                   textAlign: TextAlign.left,
                                   style: CustomTextStyles.bodySmallOnPrimary
                                       .copyWith(
-                                    letterSpacing: getHorizontalSize(
-                                      0.02,
-                                    ),
+                                    letterSpacing: getHorizontalSize(0.02),
                                   ),
                                 ),
                               ),
                               Padding(
-                                padding: getPadding(
-                                  top: 1,
-                                ),
+                                padding: getPadding(top: 1),
                                 child: Row(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     CustomImageView(
                                       svgPath: Assets.svg.imgGasStation.path,
-                                      height: getSize(
-                                        24,
-                                      ),
-                                      width: getSize(
-                                        24,
-                                      ),
+                                      height: getSize(24),
+                                      width: getSize(24),
                                     ),
                                     Padding(
                                       padding: getPadding(
@@ -131,20 +100,15 @@ class SmartKeyNotAvailable extends StatelessWidget {
                                         textAlign: TextAlign.left,
                                         style:
                                             theme.textTheme.bodySmall!.copyWith(
-                                          letterSpacing: getHorizontalSize(
-                                            0.02,
-                                          ),
+                                          letterSpacing:
+                                              getHorizontalSize(0.02),
                                         ),
                                       ),
                                     ),
                                     CustomImageView(
                                       svgPath: Assets.svg.imgArrowLeft.path,
-                                      height: getSize(
-                                        18,
-                                      ),
-                                      width: getSize(
-                                        18,
-                                      ),
+                                      height: getSize(18),
+                                      width: getSize(18),
                                       margin: getMargin(
                                         left: 54,
                                         top: 2,
@@ -161,9 +125,7 @@ class SmartKeyNotAvailable extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: getPadding(
-                      top: 6,
-                    ),
+                    padding: getPadding(top: 6),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -172,33 +134,23 @@ class SmartKeyNotAvailable extends StatelessWidget {
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.left,
                           style: CustomTextStyles.bodySmallOnPrimary.copyWith(
-                            letterSpacing: getHorizontalSize(
-                              0.02,
-                            ),
+                            letterSpacing: getHorizontalSize(0.02),
                           ),
                         ),
                         Padding(
-                          padding: getPadding(
-                            left: 5,
-                          ),
+                          padding: getPadding(left: 5),
                           child: Text(
                             "|",
                             overflow: TextOverflow.ellipsis,
                             textAlign: TextAlign.left,
                             style: CustomTextStyles.bodySmallOnPrimary.copyWith(
-                              letterSpacing: getHorizontalSize(
-                                0.02,
-                              ),
+                              letterSpacing: getHorizontalSize(0.02),
                             ),
                           ),
                         ),
                         Container(
-                          height: getSize(
-                            4,
-                          ),
-                          width: getSize(
-                            4,
-                          ),
+                          height: getSize(4),
+                          width: getSize(4),
                           margin: getMargin(
                             left: 5,
                             top: 5,
@@ -207,24 +159,18 @@ class SmartKeyNotAvailable extends StatelessWidget {
                           decoration: BoxDecoration(
                             color: appTheme.red700,
                             borderRadius: BorderRadius.circular(
-                              getHorizontalSize(
-                                2,
-                              ),
+                              getHorizontalSize(2),
                             ),
                           ),
                         ),
                         Padding(
-                          padding: getPadding(
-                            left: 2,
-                          ),
+                          padding: getPadding(left: 2),
                           child: Text(
                             "hongGilDongIsUsingIt".tr,
                             overflow: TextOverflow.ellipsis,
                             textAlign: TextAlign.left,
                             style: theme.textTheme.bodySmall!.copyWith(
-                              letterSpacing: getHorizontalSize(
-                                0.02,
-                              ),
+                              letterSpacing: getHorizontalSize(0.02),
                             ),
                           ),
                         ),
@@ -233,16 +179,10 @@ class SmartKeyNotAvailable extends StatelessWidget {
                   ),
                   CustomImageView(
                     svgPath: Assets.svg.imgTaxi.path,
-                    height: getSize(
-                      26,
-                    ),
-                    width: getSize(
-                      26,
-                    ),
+                    height: getSize(26),
+                    width: getSize(26),
                     alignment: Alignment.centerRight,
-                    margin: getMargin(
-                      top: 11,
-                    ),
+                    margin: getMargin(top: 11),
                   ),
                   Padding(
                     padding: getPadding(
@@ -250,32 +190,23 @@ class SmartKeyNotAvailable extends StatelessWidget {
                       right: 16,
                     ),
                     child: Container(
-                      height: getVerticalSize(
-                        10,
-                      ),
-                      width: getHorizontalSize(
-                        328,
-                      ),
+                      height: getVerticalSize(10),
+                      width: getHorizontalSize(328),
                       decoration: BoxDecoration(
                         color: appTheme.blueGray30033,
                         borderRadius: BorderRadius.circular(
-                          getHorizontalSize(
-                            5,
-                          ),
+                          getHorizontalSize(5),
                         ),
                       ),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(
-                          getHorizontalSize(
-                            5,
-                          ),
+                          getHorizontalSize(5),
                         ),
                         child: LinearProgressIndicator(
                           value: 0.57,
                           backgroundColor: appTheme.blueGray30033,
                           valueColor: AlwaysStoppedAnimation<Color>(
-                            theme.colorScheme.primary,
-                          ),
+                              theme.colorScheme.primary),
                         ),
                       ),
                     ),
@@ -294,9 +225,7 @@ class SmartKeyNotAvailable extends StatelessWidget {
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.left,
                           style: CustomTextStyles.bodySmallOnPrimary.copyWith(
-                            letterSpacing: getHorizontalSize(
-                              0.02,
-                            ),
+                            letterSpacing: getHorizontalSize(0.02),
                           ),
                         ),
                         Text(
@@ -304,25 +233,17 @@ class SmartKeyNotAvailable extends StatelessWidget {
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.left,
                           style: CustomTextStyles.bodySmallOnPrimary.copyWith(
-                            letterSpacing: getHorizontalSize(
-                              0.02,
-                            ),
+                            letterSpacing: getHorizontalSize(0.02),
                           ),
                         ),
                       ],
                     ),
                   ),
                   Container(
-                    height: getVerticalSize(
-                      8,
-                    ),
+                    height: getVerticalSize(8),
                     width: double.maxFinite,
-                    margin: getMargin(
-                      top: 21,
-                    ),
-                    decoration: BoxDecoration(
-                      color: appTheme.gray100,
-                    ),
+                    margin: getMargin(top: 21),
+                    decoration: BoxDecoration(color: appTheme.gray100),
                   ),
                   Align(
                     alignment: Alignment.centerLeft,
@@ -336,21 +257,15 @@ class SmartKeyNotAvailable extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.left,
                         style: CustomTextStyles.titleMediumBlack900.copyWith(
-                          letterSpacing: getHorizontalSize(
-                            0.04,
-                          ),
+                          letterSpacing: getHorizontalSize(0.04),
                         ),
                       ),
                     ),
                   ),
                   Container(
-                    height: getVerticalSize(
-                      300,
-                    ),
+                    height: getVerticalSize(300),
                     width: double.maxFinite,
-                    margin: getMargin(
-                      top: 12,
-                    ),
+                    margin: getMargin(top: 12),
                     child: Stack(
                       alignment: Alignment.center,
                       children: [
@@ -370,48 +285,34 @@ class SmartKeyNotAvailable extends StatelessWidget {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     SizedBox(
-                                      height: getSize(
-                                        130,
-                                      ),
-                                      width: getSize(
-                                        130,
-                                      ),
+                                      height: getSize(130),
+                                      width: getSize(130),
                                       child: Stack(
                                         alignment: Alignment.center,
                                         children: [
                                           Align(
                                             alignment: Alignment.center,
                                             child: Container(
-                                              padding: getPadding(
-                                                all: 5,
-                                              ),
+                                              padding: getPadding(all: 5),
                                               decoration:
                                                   AppDecoration.shadow.copyWith(
                                                 borderRadius: BorderRadiusStyle
                                                     .circleBorder65,
                                               ),
                                               child: Container(
-                                                height: getSize(
-                                                  120,
-                                                ),
-                                                width: getSize(
-                                                  120,
-                                                ),
+                                                height: getSize(120),
+                                                width: getSize(120),
                                                 decoration: BoxDecoration(
                                                   color: theme.colorScheme
                                                       .onPrimaryContainer,
                                                   borderRadius:
                                                       BorderRadius.circular(
-                                                    getHorizontalSize(
-                                                      60,
-                                                    ),
+                                                    getHorizontalSize(60),
                                                   ),
                                                   border: Border.all(
                                                     color:
                                                         appTheme.blueGray30033,
-                                                    width: getHorizontalSize(
-                                                      1,
-                                                    ),
+                                                    width: getHorizontalSize(1),
                                                   ),
                                                 ),
                                               ),
@@ -432,17 +333,11 @@ class SmartKeyNotAvailable extends StatelessWidget {
                                                   CustomImageView(
                                                     svgPath: Assets
                                                         .svg.imgUnlocked.path,
-                                                    height: getSize(
-                                                      46,
-                                                    ),
-                                                    width: getSize(
-                                                      46,
-                                                    ),
+                                                    height: getSize(46),
+                                                    width: getSize(46),
                                                   ),
                                                   Padding(
-                                                    padding: getPadding(
-                                                      top: 5,
-                                                    ),
+                                                    padding: getPadding(top: 5),
                                                     child: Text(
                                                       "openDoor".tr,
                                                       overflow:
@@ -453,8 +348,7 @@ class SmartKeyNotAvailable extends StatelessWidget {
                                                           .copyWith(
                                                         letterSpacing:
                                                             getHorizontalSize(
-                                                          0.03,
-                                                        ),
+                                                                0.03),
                                                       ),
                                                     ),
                                                   ),
@@ -466,48 +360,34 @@ class SmartKeyNotAvailable extends StatelessWidget {
                                       ),
                                     ),
                                     SizedBox(
-                                      height: getSize(
-                                        130,
-                                      ),
-                                      width: getSize(
-                                        130,
-                                      ),
+                                      height: getSize(130),
+                                      width: getSize(130),
                                       child: Stack(
                                         alignment: Alignment.center,
                                         children: [
                                           Align(
                                             alignment: Alignment.center,
                                             child: Container(
-                                              padding: getPadding(
-                                                all: 5,
-                                              ),
+                                              padding: getPadding(all: 5),
                                               decoration:
                                                   AppDecoration.shadow.copyWith(
                                                 borderRadius: BorderRadiusStyle
                                                     .circleBorder65,
                                               ),
                                               child: Container(
-                                                height: getSize(
-                                                  120,
-                                                ),
-                                                width: getSize(
-                                                  120,
-                                                ),
+                                                height: getSize(120),
+                                                width: getSize(120),
                                                 decoration: BoxDecoration(
                                                   color: theme.colorScheme
                                                       .onPrimaryContainer,
                                                   borderRadius:
                                                       BorderRadius.circular(
-                                                    getHorizontalSize(
-                                                      60,
-                                                    ),
+                                                    getHorizontalSize(60),
                                                   ),
                                                   border: Border.all(
                                                     color:
                                                         appTheme.blueGray30033,
-                                                    width: getHorizontalSize(
-                                                      1,
-                                                    ),
+                                                    width: getHorizontalSize(1),
                                                   ),
                                                 ),
                                               ),
@@ -528,17 +408,11 @@ class SmartKeyNotAvailable extends StatelessWidget {
                                                   CustomImageView(
                                                     svgPath: Assets
                                                         .svg.imgLocked.path,
-                                                    height: getSize(
-                                                      46,
-                                                    ),
-                                                    width: getSize(
-                                                      46,
-                                                    ),
+                                                    height: getSize(46),
+                                                    width: getSize(46),
                                                   ),
                                                   Padding(
-                                                    padding: getPadding(
-                                                      top: 5,
-                                                    ),
+                                                    padding: getPadding(top: 5),
                                                     child: Text(
                                                       "lockTheDoor".tr,
                                                       overflow:
@@ -549,8 +423,7 @@ class SmartKeyNotAvailable extends StatelessWidget {
                                                           .copyWith(
                                                         letterSpacing:
                                                             getHorizontalSize(
-                                                          0.03,
-                                                        ),
+                                                                0.03),
                                                       ),
                                                     ),
                                                   ),
@@ -564,19 +437,13 @@ class SmartKeyNotAvailable extends StatelessWidget {
                                   ],
                                 ),
                                 Padding(
-                                  padding: getPadding(
-                                    top: 20,
-                                  ),
+                                  padding: getPadding(top: 20),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Container(
-                                        margin: getMargin(
-                                          right: 10,
-                                        ),
-                                        padding: getPadding(
-                                          all: 5,
-                                        ),
+                                        margin: getMargin(right: 10),
+                                        padding: getPadding(all: 5),
                                         decoration:
                                             AppDecoration.shadow.copyWith(
                                           borderRadius:
@@ -602,17 +469,11 @@ class SmartKeyNotAvailable extends StatelessWidget {
                                               CustomImageView(
                                                 svgPath:
                                                     Assets.svg.imgTriangle.path,
-                                                height: getSize(
-                                                  46,
-                                                ),
-                                                width: getSize(
-                                                  46,
-                                                ),
+                                                height: getSize(46),
+                                                width: getSize(46),
                                               ),
                                               Padding(
-                                                padding: getPadding(
-                                                  top: 5,
-                                                ),
+                                                padding: getPadding(top: 5),
                                                 child: Text(
                                                   "turnOnHazardLights".tr,
                                                   overflow:
@@ -622,9 +483,7 @@ class SmartKeyNotAvailable extends StatelessWidget {
                                                       .textTheme.titleMedium!
                                                       .copyWith(
                                                     letterSpacing:
-                                                        getHorizontalSize(
-                                                      0.03,
-                                                    ),
+                                                        getHorizontalSize(0.03),
                                                   ),
                                                 ),
                                               ),
@@ -633,12 +492,8 @@ class SmartKeyNotAvailable extends StatelessWidget {
                                         ),
                                       ),
                                       Container(
-                                        margin: getMargin(
-                                          left: 10,
-                                        ),
-                                        padding: getPadding(
-                                          all: 5,
-                                        ),
+                                        margin: getMargin(left: 10),
+                                        padding: getPadding(all: 5),
                                         decoration:
                                             AppDecoration.shadow.copyWith(
                                           borderRadius:
@@ -664,17 +519,11 @@ class SmartKeyNotAvailable extends StatelessWidget {
                                               CustomImageView(
                                                 svgPath:
                                                     Assets.svg.imgCampaign.path,
-                                                height: getSize(
-                                                  46,
-                                                ),
-                                                width: getSize(
-                                                  46,
-                                                ),
+                                                height: getSize(46),
+                                                width: getSize(46),
                                               ),
                                               Padding(
-                                                padding: getPadding(
-                                                  top: 5,
-                                                ),
+                                                padding: getPadding(top: 5),
                                                 child: Text(
                                                   "honkTheHorn".tr,
                                                   overflow:
@@ -684,9 +533,7 @@ class SmartKeyNotAvailable extends StatelessWidget {
                                                       .textTheme.titleMedium!
                                                       .copyWith(
                                                     letterSpacing:
-                                                        getHorizontalSize(
-                                                      0.03,
-                                                    ),
+                                                        getHorizontalSize(0.03),
                                                   ),
                                                 ),
                                               ),
@@ -718,9 +565,7 @@ class SmartKeyNotAvailable extends StatelessWidget {
                                       fixedSize:
                                           MaterialStateProperty.all<Size>(Size(
                                 double.maxFinite,
-                                getVerticalSize(
-                                  44,
-                                ),
+                                getVerticalSize(44),
                               ))),
                               buttonTextStyle:
                                   CustomTextStyles.bodyLargeOnPrimaryContainer,
@@ -738,19 +583,13 @@ class SmartKeyNotAvailable extends StatelessWidget {
                       right: 16,
                     ),
                     leftIcon: Container(
-                      margin: getMargin(
-                        right: 1,
-                      ),
-                      child: CustomImageView(
-                        svgPath: Assets.svg.imgEdit.path,
-                      ),
+                      margin: getMargin(right: 1),
+                      child: CustomImageView(svgPath: Assets.svg.imgEdit.path),
                     ),
                     buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
                         fixedSize: MaterialStateProperty.all<Size>(Size(
                       double.maxFinite,
-                      getVerticalSize(
-                        52,
-                      ),
+                      getVerticalSize(52),
                     ))),
                     buttonTextStyle: CustomTextStyles.titleMedium18,
                   ),

@@ -24,9 +24,7 @@ class AddScheduleButton extends StatelessWidget {
       buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
           fixedSize: MaterialStateProperty.all<Size>(Size(
         double.maxFinite,
-        getVerticalSize(
-          52,
-        ),
+        getVerticalSize(52),
       ))),
       buttonTextStyle: CustomTextStyles.titleMedium18,
       alignment: Alignment.center,

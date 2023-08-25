@@ -367,11 +367,10 @@ class TeamAccountConnectionControllerApi {
       final rawResponse = _response.data;
       _responseData = rawResponse == null
           ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(
-                  BuiltList, [FullType(TeamAccountConnectionResponse)]),
-            ) as BuiltList<TeamAccountConnectionResponse>;
+          : _serializers.deserialize(rawResponse,
+                  specifiedType: const FullType(
+                      BuiltList, [FullType(TeamAccountConnectionResponse)]))
+              as BuiltList<TeamAccountConnectionResponse>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

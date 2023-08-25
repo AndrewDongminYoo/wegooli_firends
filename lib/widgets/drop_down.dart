@@ -31,9 +31,7 @@ class CustomDropDown extends StatelessWidget {
     this.disabledBorderDecoration,
     this.validator,
     this.onChanged,
-  }) : super(
-          key: key,
-        );
+  }) : super(key: key);
 
   final Alignment? alignment;
   final double? width;
@@ -89,9 +87,7 @@ class CustomDropDown extends StatelessWidget {
           }).toList(),
           decoration: decoration,
           validator: validator,
-          value: initialValue
-              ? items![0]
-              : null,
+          value: initialValue ? items![0] : null,
           onChanged: (value) {
             onChanged!(value!);
           },
@@ -111,9 +107,7 @@ class CustomDropDown extends StatelessWidget {
         border: defaultBorderDecoration ??
             OutlineInputBorder(
               borderRadius: BorderRadius.circular(
-                getHorizontalSize(
-                  4.00,
-                ),
+                getHorizontalSize(4.00),
               ),
               borderSide: BorderSide(
                 color: theme.colorScheme.secondaryContainer,
@@ -123,9 +117,7 @@ class CustomDropDown extends StatelessWidget {
         enabledBorder: enabledBorderDecoration ??
             OutlineInputBorder(
               borderRadius: BorderRadius.circular(
-                getHorizontalSize(
-                  4.00,
-                ),
+                getHorizontalSize(4.00),
               ),
               borderSide: BorderSide(
                 color: theme.colorScheme.secondaryContainer,
@@ -135,9 +127,7 @@ class CustomDropDown extends StatelessWidget {
         focusedBorder: focusedBorderDecoration ??
             OutlineInputBorder(
               borderRadius: BorderRadius.circular(
-                getHorizontalSize(
-                  4.00,
-                ),
+                getHorizontalSize(4.00),
               ),
               borderSide: BorderSide(
                 color: theme.colorScheme.secondaryContainer,
@@ -147,9 +137,7 @@ class CustomDropDown extends StatelessWidget {
         disabledBorder: disabledBorderDecoration ??
             OutlineInputBorder(
               borderRadius: BorderRadius.circular(
-                getHorizontalSize(
-                  4.00,
-                ),
+                getHorizontalSize(4.00),
               ),
               borderSide: BorderSide(
                 color: theme.colorScheme.secondaryContainer,

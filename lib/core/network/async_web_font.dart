@@ -22,9 +22,7 @@ void loadFont(String fontFamily, List<String> urls) async {
 Future<ByteData> _fetchFont(String url) async {
   try {
     var uri = Uri.parse(url);
-    var options = Options(
-      responseType: ResponseType.bytes,
-    );
+    var options = Options(responseType: ResponseType.bytes);
     final dioClient = Dio();
     final response = await dioClient.getUri<Uint8List>(uri, options: options);
     if (response.statusCode == 200) {

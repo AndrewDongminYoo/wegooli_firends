@@ -15,9 +15,7 @@ class CustomFloatingButton extends StatelessWidget {
     this.height,
     this.decoration,
     this.child,
-  }) : super(
-          key: key,
-        );
+  }) : super(key: key);
 
   final Alignment? alignment;
 

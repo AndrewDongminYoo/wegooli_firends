@@ -57,9 +57,7 @@ class ThemeHelper {
         style: ElevatedButton.styleFrom(
           backgroundColor: colorScheme.primary,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(
-              26,
-            ),
+            borderRadius: BorderRadius.circular(26),
           ),
         ),
       ),
@@ -81,65 +79,49 @@ class ThemeHelper {
       textTheme: TextTheme(
         bodyMedium: TextStyle(
           color: colorScheme.onPrimary,
-          fontSize: getFontSize(
-            15,
-          ),
+          fontSize: getFontSize(15),
           fontFamily: FontFamily.pretendard,
           fontWeight: FontWeight.w400,
         ),
         bodySmall: TextStyle(
           color: colorScheme.onPrimary,
-          fontSize: getFontSize(
-            12,
-          ),
+          fontSize: getFontSize(12),
           fontFamily: FontFamily.pretendard,
           fontWeight: FontWeight.w400,
         ),
         titleMedium: TextStyle(
           color: colorScheme.onPrimary,
-          fontSize: getFontSize(
-            16,
-          ),
+          fontSize: getFontSize(16),
           fontFamily: FontFamily.pretendard,
           fontWeight: FontWeight.w700,
         ),
         displayMedium: TextStyle(
           color: colorScheme.onPrimary,
-          fontSize: getFontSize(
-            50,
-          ),
+          fontSize: getFontSize(50),
           fontFamily: FontFamily.cookieRun,
           fontWeight: FontWeight.w900,
         ),
         bodyLarge: TextStyle(
           color: colorScheme.onPrimary,
-          fontSize: getFontSize(
-            16,
-          ),
+          fontSize: getFontSize(16),
           fontFamily: FontFamily.pretendard,
           fontWeight: FontWeight.w400,
         ),
         titleSmall: TextStyle(
           color: appTheme.red600,
-          fontSize: getFontSize(
-            14,
-          ),
+          fontSize: getFontSize(14),
           fontFamily: FontFamily.pretendard,
           fontWeight: FontWeight.w700,
         ),
         labelLarge: TextStyle(
           color: appTheme.blueGray900,
-          fontSize: getFontSize(
-            12,
-          ),
+          fontSize: getFontSize(12),
           fontFamily: FontFamily.pretendard,
           fontWeight: FontWeight.w600,
         ),
         headlineSmall: TextStyle(
           color: appTheme.black900,
-          fontSize: getFontSize(
-            24,
-          ),
+          fontSize: getFontSize(24),
           fontFamily: FontFamily.pretendard,
           fontWeight: FontWeight.w700,
         ),

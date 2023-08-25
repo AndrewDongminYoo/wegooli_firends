@@ -20,9 +20,7 @@ class CustomRadioButton extends StatelessWidget {
     this.textAlignment,
     this.gradient,
     this.backgroundColor,
-  }) : super(
-          key: key,
-        );
+  }) : super(key: key);
 
   final BoxDecoration? decoration;
   final Alignment? alignment;

@@ -163,7 +163,9 @@ class RegisterLicense extends GetWidget<RegisterLicensePageController> {
                                                       left: 10,
                                                       top: 14,
                                                       bottom: 14),
-                                                  onChanged: (SelectionPopupModel value) {
+                                                  onChanged:
+                                                      (SelectionPopupModel
+                                                          value) {
                                                     controller
                                                         .onSelected1(value);
                                                   })
@@ -339,8 +341,6 @@ class RegisterLicense extends GetWidget<RegisterLicensePageController> {
   }
 
   onRegisterCreditCard() {
-    Get.toNamed(
-      AppRoutes.registerCredits,
-    );
+    Get.toNamed(AppRoutes.registerCredits);
   }
 }

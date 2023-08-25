@@ -18,9 +18,7 @@ class MemberAvatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: getPadding(
-        left: 15,
-      ),
+      padding: getPadding(left: 15),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -29,18 +27,11 @@ class MemberAvatar extends StatelessWidget {
             elevation: 0,
             margin: EdgeInsets.all(0),
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadiusStyle.circleBorder25,
-            ),
+                borderRadius: BorderRadiusStyle.circleBorder25),
             child: Container(
-              height: getSize(
-                50,
-              ),
-              width: getSize(
-                50,
-              ),
-              padding: getPadding(
-                all: 4,
-              ),
+              height: getSize(50),
+              width: getSize(50),
+              padding: getPadding(all: 4),
               decoration: AppDecoration.fill3.copyWith(
                 color: ColorUtils.stringToColor(personalColor),
                 borderRadius: BorderRadiusStyle.circleBorder25,
@@ -49,16 +40,10 @@ class MemberAvatar extends StatelessWidget {
                 children: [
                   CustomImageView(
                     imagePath: avatarImagePath,
-                    height: getSize(
-                      42,
-                    ),
-                    width: getSize(
-                      42,
-                    ),
+                    height: getSize(42),
+                    width: getSize(42),
                     radius: BorderRadius.circular(
-                      getHorizontalSize(
-                        21,
-                      ),
+                      getHorizontalSize(21),
                     ),
                     alignment: Alignment.center,
                   ),
@@ -67,17 +52,13 @@ class MemberAvatar extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: getPadding(
-              top: 4,
-            ),
+            padding: getPadding(top: 4),
             child: Text(
               name,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.left,
               style: theme.textTheme.bodySmall!.copyWith(
-                letterSpacing: getHorizontalSize(
-                  0.02,
-                ),
+                letterSpacing: getHorizontalSize(0.02),
               ),
             ),
           ),

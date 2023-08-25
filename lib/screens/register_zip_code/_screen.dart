@@ -440,9 +440,7 @@ class RegisterZipCode extends GetWidget<RegisterZipCodeController> {
                   buttonTextStyle: CustomTextStyles.titleMedium18,
                   onTap: () {
                     if (controller.isValid) {
-                      Get.toNamed(
-                        AppRoutes.registerLicense,
-                      );
+                      Get.toNamed(AppRoutes.registerLicense);
                     }
                   },
                 ))));

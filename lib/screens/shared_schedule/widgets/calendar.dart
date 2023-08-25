@@ -12,10 +12,6 @@ import 'members_list.dart';
 
 // ignore: must_be_immutable
 class SharedCalendar extends GetWidget<TeamScheduleController> {
-  SharedCalendar({Key? key})
-      : super(
-          key: key,
-        );
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
@@ -24,17 +20,11 @@ class SharedCalendar extends GetWidget<TeamScheduleController> {
       child: Scaffold(
         backgroundColor: theme.colorScheme.onPrimaryContainer,
         appBar: CustomAppBar(
-          height: getVerticalSize(
-            45,
-          ),
+          height: getVerticalSize(45),
           centerTitle: true,
           title: CustomImageView(
-            height: getVerticalSize(
-              17,
-            ),
-            width: getHorizontalSize(
-              88,
-            ),
+            height: getVerticalSize(17),
+            width: getHorizontalSize(88),
             svgPath: Assets.svg.imgFriendsTypo.path,
           ),
           styleType: Style.bgOutline,
@@ -42,13 +32,9 @@ class SharedCalendar extends GetWidget<TeamScheduleController> {
         body: SizedBox(
           width: mediaQueryData.size.width,
           child: SingleChildScrollView(
-            padding: getPadding(
-              top: 21,
-            ),
+            padding: getPadding(top: 21),
             child: Padding(
-              padding: getPadding(
-                bottom: 5,
-              ),
+              padding: getPadding(bottom: 5),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,

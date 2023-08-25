@@ -12,9 +12,7 @@ class CustomBottomBar extends StatelessWidget {
   CustomBottomBar({
     Key? key,
     this.onChanged,
-  }) : super(
-          key: key,
-        );
+  }) : super(key: key);
 
   RxInt selectedIndex = 0.obs;
 
@@ -54,9 +52,7 @@ class CustomBottomBar extends StatelessWidget {
         border: Border(
           top: BorderSide(
             color: appTheme.blueGray30033,
-            width: getHorizontalSize(
-              1,
-            ),
+            width: getHorizontalSize(1),
           ),
         ),
       ),
@@ -77,27 +73,19 @@ class CustomBottomBar extends StatelessWidget {
                 children: [
                   CustomImageView(
                     svgPath: bottomMenuList[index].iconPath,
-                    height: getSize(
-                      24,
-                    ),
-                    width: getSize(
-                      24,
-                    ),
+                    height: getSize(24),
+                    width: getSize(24),
                     color: theme.colorScheme.secondaryContainer,
                   ),
                   Padding(
-                    padding: getPadding(
-                      top: 4,
-                    ),
+                    padding: getPadding(top: 4),
                     child: Text(
                       bottomMenuList[index].title ?? "",
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.left,
                       style: CustomTextStyles.bodySmallInterSecondaryContainer
                           .copyWith(
-                        letterSpacing: getHorizontalSize(
-                          0.02,
-                        ),
+                        letterSpacing: getHorizontalSize(0.02),
                         color: theme.colorScheme.secondaryContainer,
                       ),
                     ),
@@ -111,26 +99,18 @@ class CustomBottomBar extends StatelessWidget {
                 children: [
                   CustomImageView(
                     svgPath: bottomMenuList[index].activeIconPath,
-                    height: getSize(
-                      24,
-                    ),
-                    width: getSize(
-                      24,
-                    ),
+                    height: getSize(24),
+                    width: getSize(24),
                     color: theme.colorScheme.onPrimary,
                   ),
                   Padding(
-                    padding: getPadding(
-                      top: 4,
-                    ),
+                    padding: getPadding(top: 4),
                     child: Text(
                       bottomMenuList[index].title ?? "",
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.left,
                       style: CustomTextStyles.bodySmallInter.copyWith(
-                        letterSpacing: getHorizontalSize(
-                          0.02,
-                        ),
+                        letterSpacing: getHorizontalSize(0.02),
                         color: theme.colorScheme.onPrimary,
                       ),
                     ),
@@ -187,9 +167,7 @@ class DefaultWidget extends StatelessWidget {
           children: [
             Text(
               'Please replace the respective Widget here',
-              style: TextStyle(
-                fontSize: 18,
-              ),
+              style: TextStyle(fontSize: 18),
             ),
           ],
         ),

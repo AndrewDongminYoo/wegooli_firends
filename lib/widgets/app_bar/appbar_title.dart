@@ -11,9 +11,7 @@ class AppbarTitle extends StatelessWidget {
     required this.text,
     this.margin,
     this.onTap,
-  }) : super(
-          key: key,
-        );
+  }) : super(key: key);
 
   String text;
 
@@ -34,9 +32,7 @@ class AppbarTitle extends StatelessWidget {
           overflow: TextOverflow.ellipsis,
           textAlign: TextAlign.left,
           style: CustomTextStyles.titleMedium18.copyWith(
-            letterSpacing: getHorizontalSize(
-              0.04,
-            ),
+            letterSpacing: getHorizontalSize(0.04),
             color: theme.colorScheme.onPrimary,
           ),
         ),

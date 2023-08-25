@@ -164,16 +164,6 @@ import 'package:wegooli_friends/api.dart';
 
 final api = WegooliFriends().getPaymentCardControllerApi();
 final int memberSeq = 56; // int |
-final String cardNumber = cardNumber_example; // String |
-final String defaultYn = defaultYn_example; // String |
-final String delYn = delYn_example; // String |
-final String startCreatedAt = startCreatedAt_example; // String |
-final String endCreatedAt = endCreatedAt_example; // String |
-final String startUpdatedAt = startUpdatedAt_example; // String |
-final String endUpdatedAt = endUpdatedAt_example; // String |
-final String password = password_example; // String |
-final String rrn = rrn_example; // String |
-final String crn = crn_example; // String |
 
 try {
     final response = api.selectPaymentCardList(memberSeq, cardNumber, defaultYn, delYn, startCreatedAt, endCreatedAt, startUpdatedAt, endUpdatedAt, password, rrn, crn);

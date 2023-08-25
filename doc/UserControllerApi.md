@@ -30,7 +30,6 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getUserControllerApi();
-final String id = id_example; // String |
 
 try {
     final response = api.checkId(id);
@@ -211,8 +210,6 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getUserControllerApi();
-final String id = id_example; // String |
-final String password = password_example; // String |
 
 try {
     final response = api.login(id, password);
@@ -303,7 +300,6 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getUserControllerApi();
-final String id = id_example; // String |
 
 try {
     final response = api.signout(id);

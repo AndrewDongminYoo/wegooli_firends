@@ -29,7 +29,7 @@ class UnsubscriptionConfirm extends GetWidget<UnsubscriptionConfirmController> {
                       onTabBackButton();
                     }),
                 centerTitle: true,
-                title: AppbarTitle(text: "lbl94".tr)),
+                title: AppbarTitle(text: "scheduleAnUnsubscribe".tr)),
             body: Container(
                 width: double.maxFinite,
                 padding: getPadding(left: 16, top: 52, right: 16, bottom: 52),
@@ -43,7 +43,7 @@ class UnsubscriptionConfirm extends GetWidget<UnsubscriptionConfirmController> {
                       Container(
                           width: getHorizontalSize(179),
                           margin: getMargin(top: 50),
-                          child: Text("msg10".tr,
+                          child: Text("areYouSureYouWantToUnsubscribe".tr,
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.center,
@@ -52,7 +52,8 @@ class UnsubscriptionConfirm extends GetWidget<UnsubscriptionConfirmController> {
                                       letterSpacing: getHorizontalSize(0.04)))),
                       Padding(
                           padding: getPadding(top: 23),
-                          child: Text("msg_2023_8_4".tr,
+                          child: Text(
+                              "subscriptionsWillBeCanceledAfterAugust4".tr,
                               overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.left,
                               style: CustomTextStyles.bodyLargeBlack900
@@ -64,7 +65,7 @@ class UnsubscriptionConfirm extends GetWidget<UnsubscriptionConfirmController> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 CustomElevatedButton(
-                                    text: "lbl92".tr,
+                                    text: "cancel".tr,
                                     buttonStyle: CustomButtonStyles
                                         .fillGray400TL26
                                         .copyWith(
@@ -75,7 +76,7 @@ class UnsubscriptionConfirm extends GetWidget<UnsubscriptionConfirmController> {
                                     buttonTextStyle:
                                         CustomTextStyles.titleMedium18),
                                 CustomElevatedButton(
-                                    text: "lbl95".tr,
+                                    text: "cancelingASubscription".tr,
                                     buttonStyle: CustomButtonStyles.fillPrimary
                                         .copyWith(
                                             fixedSize:

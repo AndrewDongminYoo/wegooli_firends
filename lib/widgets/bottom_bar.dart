@@ -22,25 +22,25 @@ class CustomBottomBar extends StatelessWidget {
     BottomMenuModel(
       iconPath: Assets.svg.imgCalOnPrimary.path,
       activeIconPath: Assets.svg.imgCalOnPrimary.path,
-      title: "lbl46".tr,
+      title: "schedule".tr,
       type: BottomBarEnum.sharedSchedule,
     ),
     BottomMenuModel(
       iconPath: Assets.svg.imgKeyGray400.path,
       activeIconPath: Assets.svg.imgKeyGray400.path,
-      title: "lbl47".tr,
+      title: "chat".tr,
       type: BottomBarEnum.dashChat,
     ),
     BottomMenuModel(
       iconPath: Assets.svg.imgKeyGray400.path,
       activeIconPath: Assets.svg.imgKeyGray400.path,
-      title: "lbl48".tr,
+      title: "smartKey".tr,
       type: BottomBarEnum.smartKey,
     ),
     BottomMenuModel(
       iconPath: Assets.svg.imgUser2.path,
       activeIconPath: Assets.svg.imgUser2.path,
-      title: "lbl49".tr,
+      title: "myPage".tr,
       type: BottomBarEnum.profile,
     )
   ];

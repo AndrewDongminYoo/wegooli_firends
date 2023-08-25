@@ -164,7 +164,6 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getTeamControllerApi();
-final String teamCode = teamCode_example; // String |
 
 try {
     final response = api.selectTeamByTeamCode(teamCode);
@@ -209,14 +208,6 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getTeamControllerApi();
-final String accountId = accountId_example; // String |
-final String name = name_example; // String |
-final String delYn = delYn_example; // String |
-final String startCreatedAt = startCreatedAt_example; // String |
-final String endCreatedAt = endCreatedAt_example; // String |
-final String startUpdatedAt = startUpdatedAt_example; // String |
-final String endUpdatedAt = endUpdatedAt_example; // String |
-final String contract = contract_example; // String |
 
 try {
     final response = api.selectTeamList(accountId, name, delYn, startCreatedAt, endCreatedAt, startUpdatedAt, endUpdatedAt, contract);

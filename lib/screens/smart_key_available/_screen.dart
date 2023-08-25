@@ -82,7 +82,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Text(
-                                "lbl_33".tr,
+                                "rayGen3".tr,
                                 overflow: TextOverflow.ellipsis,
                                 textAlign: TextAlign.left,
                                 style: theme.textTheme.titleMedium!.copyWith(
@@ -130,7 +130,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                         bottom: 1,
                                       ),
                                       child: Text(
-                                        "lbl_203".tr,
+                                        "gasoline20Percent".tr,
                                         overflow: TextOverflow.ellipsis,
                                         textAlign: TextAlign.left,
                                         style:
@@ -159,7 +159,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          "lbl68".tr,
+                          "status".tr,
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.left,
                           style: CustomTextStyles.bodySmallOnPrimary.copyWith(
@@ -209,7 +209,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                             left: 2,
                           ),
                           child: Text(
-                            "lbl70".tr,
+                            "available".tr,
                             overflow: TextOverflow.ellipsis,
                             textAlign: TextAlign.left,
                             style: theme.textTheme.bodySmall!.copyWith(
@@ -242,7 +242,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                         top: 21,
                       ),
                       child: Text(
-                        "lbl71".tr,
+                        "smartKey".tr,
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.left,
                         style: CustomTextStyles.titleMediumBlack900.copyWith(
@@ -331,7 +331,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                           top: 5,
                                         ),
                                         child: Text(
-                                          "lbl72".tr,
+                                          "openDoor".tr,
                                           overflow: TextOverflow.ellipsis,
                                           textAlign: TextAlign.left,
                                           style: theme.textTheme.titleMedium!
@@ -422,7 +422,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                           top: 5,
                                         ),
                                         child: Text(
-                                          "lbl73".tr,
+                                          "lockTheDoor".tr,
                                           overflow: TextOverflow.ellipsis,
                                           textAlign: TextAlign.left,
                                           style: theme.textTheme.titleMedium!
@@ -486,7 +486,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                     top: 5,
                                   ),
                                   child: Text(
-                                    "lbl74".tr,
+                                    "turnOnHazardLights".tr,
                                     overflow: TextOverflow.ellipsis,
                                     textAlign: TextAlign.left,
                                     style:
@@ -539,7 +539,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                     top: 5,
                                   ),
                                   child: Text(
-                                    "lbl75".tr,
+                                    "honkTheHorn".tr,
                                     overflow: TextOverflow.ellipsis,
                                     textAlign: TextAlign.left,
                                     style:
@@ -558,7 +558,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                     ),
                   ),
                   CustomElevatedButton(
-                    text: "lbl76".tr,
+                    text: "reportAnIncident".tr,
                     margin: getMargin(
                       left: 16,
                       top: 30,

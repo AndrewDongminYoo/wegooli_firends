@@ -101,7 +101,7 @@ class UpcomingUnsubscriptionFilled
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
                                         children: [
-                                          Text("lbl82".tr,
+                                          Text("monthlyPayment".tr,
                                               overflow: TextOverflow.ellipsis,
                                               textAlign: TextAlign.left,
                                               style: CustomTextStyles
@@ -125,7 +125,7 @@ class UpcomingUnsubscriptionFilled
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
                                         children: [
-                                          Text("lbl83".tr,
+                                          Text("subscription".tr,
                                               overflow: TextOverflow.ellipsis,
                                               textAlign: TextAlign.left,
                                               style: CustomTextStyles
@@ -149,7 +149,7 @@ class UpcomingUnsubscriptionFilled
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
                                         children: [
-                                          Text("lbl96".tr,
+                                          Text("expectedUnsubscribeDate".tr,
                                               overflow: TextOverflow.ellipsis,
                                               textAlign: TextAlign.left,
                                               style: CustomTextStyles

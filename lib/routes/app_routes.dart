@@ -177,9 +177,6 @@ class AppRoutes {
     GetPage(
       name: appGateway,
       page: () => GatewayScreen(),
-      bindings: [
-        AppGatewayBinding(),
-      ],
     )
   ];
 }

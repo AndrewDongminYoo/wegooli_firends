@@ -37,7 +37,7 @@ class InviteTeamButton extends StatelessWidget {
               top: 6,
             ),
             child: Text(
-              "lbl54".tr,
+              "invite".tr,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.left,
               style: CustomTextStyles.bodySmallBlack900.copyWith(

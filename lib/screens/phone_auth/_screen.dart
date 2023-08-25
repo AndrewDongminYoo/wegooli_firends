@@ -90,7 +90,9 @@ class ValidatePhone extends GetWidget<ValidatePhoneController> {
                                     children: [
                                       Padding(
                                           padding: getPadding(top: 2),
-                                          child: Text("lbl_132".tr,
+                                          child: Text(
+                                              "digitOf13SocialSecurityNumber"
+                                                  .tr,
                                               overflow: TextOverflow.ellipsis,
                                               textAlign: TextAlign.left,
                                               style: theme
@@ -159,7 +161,9 @@ class ValidatePhone extends GetWidget<ValidatePhoneController> {
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
-                                    Text("msg_26".tr,
+                                    Text(
+                                        "subscriptionsAreRestrictedToThoseUnderTheAgeOf26"
+                                            .tr,
                                         overflow: TextOverflow.ellipsis,
                                         textAlign: TextAlign.left,
                                         style: CustomTextStyles

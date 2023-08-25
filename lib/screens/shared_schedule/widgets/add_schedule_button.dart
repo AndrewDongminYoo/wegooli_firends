@@ -15,7 +15,7 @@ class AddScheduleButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomElevatedButton(
-      text: "lbl62".tr,
+      text: "addAnItineraryAdd".tr,
       margin: getMargin(
         left: 16,
         top: 30,

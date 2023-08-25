@@ -27,7 +27,6 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getMetisControllerApi();
-final String carNum = carNum_example; // String |
 
 try {
     final response = api.carLogTop(carNum);
@@ -72,7 +71,6 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getMetisControllerApi();
-final String carNum = carNum_example; // String |
 
 try {
     final response = api.history(carNum);

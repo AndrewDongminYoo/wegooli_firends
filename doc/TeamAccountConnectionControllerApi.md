@@ -163,12 +163,6 @@ import 'package:wegooli_friends/api.dart';
 
 final api = WegooliFriends().getTeamAccountConnectionControllerApi();
 final int teamSeq = 56; // int |
-final String accountId = accountId_example; // String |
-final String startJoinedAt = startJoinedAt_example; // String |
-final String endJoinedAt = endJoinedAt_example; // String |
-final String startLeavedAt = startLeavedAt_example; // String |
-final String endLeavedAt = endLeavedAt_example; // String |
-final String isLeaved = isLeaved_example; // String |
 
 try {
     final response = api.selectTeamAccountList(teamSeq, accountId, startJoinedAt, endJoinedAt, startLeavedAt, endLeavedAt, isLeaved);

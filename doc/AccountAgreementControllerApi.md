@@ -28,8 +28,6 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getAccountAgreementControllerApi();
-final String classification = classification_example; // String |
-final String accountId = accountId_example; // String |
 
 try {
     final response = api.deleteAccountAgreement(classification, accountId);
@@ -120,8 +118,6 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getAccountAgreementControllerApi();
-final String classification = classification_example; // String |
-final String accountId = accountId_example; // String |
 
 try {
     final response = api.selectAccountAgreement(classification, accountId);
@@ -167,13 +163,6 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getAccountAgreementControllerApi();
-final String classification = classification_example; // String |
-final String accountId = accountId_example; // String |
-final String agreeYn = agreeYn_example; // String |
-final String startCreatedAt = startCreatedAt_example; // String |
-final String endCreatedAt = endCreatedAt_example; // String |
-final String startUpdatedAt = startUpdatedAt_example; // String |
-final String endUpdatedAt = endUpdatedAt_example; // String |
 
 try {
     final response = api.selectAccountAgreementList(classification, accountId, agreeYn, startCreatedAt, endCreatedAt, startUpdatedAt, endUpdatedAt);

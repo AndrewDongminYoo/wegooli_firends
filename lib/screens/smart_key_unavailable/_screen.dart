@@ -79,7 +79,7 @@ class SmartKeyNotAvailable extends GetWidget<SmartKeyAvailabilityController> {
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Text(
-                                "lbl_33".tr,
+                                "rayGen3".tr,
                                 overflow: TextOverflow.ellipsis,
                                 textAlign: TextAlign.left,
                                 style: theme.textTheme.titleMedium!.copyWith(
@@ -127,7 +127,7 @@ class SmartKeyNotAvailable extends GetWidget<SmartKeyAvailabilityController> {
                                         bottom: 1,
                                       ),
                                       child: Text(
-                                        "lbl_203".tr,
+                                        "gasoline20Percent".tr,
                                         overflow: TextOverflow.ellipsis,
                                         textAlign: TextAlign.left,
                                         style:
@@ -169,7 +169,7 @@ class SmartKeyNotAvailable extends GetWidget<SmartKeyAvailabilityController> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          "lbl68".tr,
+                          "status".tr,
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.left,
                           style: CustomTextStyles.bodySmallOnPrimary.copyWith(
@@ -219,7 +219,7 @@ class SmartKeyNotAvailable extends GetWidget<SmartKeyAvailabilityController> {
                             left: 2,
                           ),
                           child: Text(
-                            "lbl77".tr,
+                            "hongGilDongIsUsingIt".tr,
                             overflow: TextOverflow.ellipsis,
                             textAlign: TextAlign.left,
                             style: theme.textTheme.bodySmall!.copyWith(
@@ -333,7 +333,7 @@ class SmartKeyNotAvailable extends GetWidget<SmartKeyAvailabilityController> {
                         top: 21,
                       ),
                       child: Text(
-                        "lbl71".tr,
+                        "smartKey".tr,
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.left,
                         style: CustomTextStyles.titleMediumBlack900.copyWith(
@@ -445,7 +445,7 @@ class SmartKeyNotAvailable extends GetWidget<SmartKeyAvailabilityController> {
                                                       top: 5,
                                                     ),
                                                     child: Text(
-                                                      "lbl72".tr,
+                                                      "openDoor".tr,
                                                       overflow:
                                                           TextOverflow.ellipsis,
                                                       textAlign: TextAlign.left,
@@ -541,7 +541,7 @@ class SmartKeyNotAvailable extends GetWidget<SmartKeyAvailabilityController> {
                                                       top: 5,
                                                     ),
                                                     child: Text(
-                                                      "lbl73".tr,
+                                                      "lockTheDoor".tr,
                                                       overflow:
                                                           TextOverflow.ellipsis,
                                                       textAlign: TextAlign.left,
@@ -615,7 +615,7 @@ class SmartKeyNotAvailable extends GetWidget<SmartKeyAvailabilityController> {
                                                   top: 5,
                                                 ),
                                                 child: Text(
-                                                  "lbl74".tr,
+                                                  "turnOnHazardLights".tr,
                                                   overflow:
                                                       TextOverflow.ellipsis,
                                                   textAlign: TextAlign.left,
@@ -677,7 +677,7 @@ class SmartKeyNotAvailable extends GetWidget<SmartKeyAvailabilityController> {
                                                   top: 5,
                                                 ),
                                                 child: Text(
-                                                  "lbl75".tr,
+                                                  "honkTheHorn".tr,
                                                   overflow:
                                                       TextOverflow.ellipsis,
                                                   textAlign: TextAlign.left,
@@ -713,7 +713,7 @@ class SmartKeyNotAvailable extends GetWidget<SmartKeyAvailabilityController> {
                             ),
                             decoration: AppDecoration.fill4,
                             child: CustomElevatedButton(
-                              text: "lbl78".tr,
+                              text: "hongGilDongIsUsingIt".tr,
                               buttonStyle: CustomButtonStyles.fillOnPrimary
                                   .copyWith(
                                       fixedSize:
@@ -732,7 +732,7 @@ class SmartKeyNotAvailable extends GetWidget<SmartKeyAvailabilityController> {
                     ),
                   ),
                   CustomElevatedButton(
-                    text: "lbl76".tr,
+                    text: "reportAnIncident".tr,
                     margin: getMargin(
                       left: 16,
                       top: 20,

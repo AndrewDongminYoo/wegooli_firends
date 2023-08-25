@@ -194,7 +194,7 @@ class LoginWithIdAndPassword
                       bottom: 14,
                     ),
                     textStyle: CustomTextStyles.bodyLargeGray50003,
-                    hintText: "lbl2".tr,
+                    hintText: "password".tr,
                     obscureText: controller.isShowPassword.isFalse,
                     hintStyle: CustomTextStyles.bodyLargeGray50003,
                     suffix: Container(
@@ -214,7 +214,7 @@ class LoginWithIdAndPassword
                     fillColor: theme.colorScheme.onPrimaryContainer,
                   )),
               CustomElevatedButton(
-                  text: "lbl3".tr,
+                  text: "signIn".tr,
                   margin: getMargin(
                     top: 30,
                   ),
@@ -240,7 +240,7 @@ class LoginWithIdAndPassword
                   top: 57,
                 ),
                 child: Text(
-                  "lbl4".tr,
+                  "youHaveNoAccount".tr,
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.left,
                   style: theme.textTheme.bodyLarge!.copyWith(
@@ -251,7 +251,7 @@ class LoginWithIdAndPassword
                 ),
               ),
               CustomElevatedButton(
-                  text: "lbl5".tr,
+                  text: "signUp".tr,
                   margin: getMargin(
                     top: 11,
                     bottom: 5,

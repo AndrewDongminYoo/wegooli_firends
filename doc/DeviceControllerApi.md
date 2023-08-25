@@ -28,7 +28,6 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getDeviceControllerApi();
-final String carNum = carNum_example; // String |
 
 try {
     final response = api.doorClose(carNum);
@@ -73,7 +72,6 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getDeviceControllerApi();
-final String carNum = carNum_example; // String |
 
 try {
     final response = api.doorOpen(carNum);
@@ -163,7 +161,6 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getDeviceControllerApi();
-final String carNum = carNum_example; // String |
 
 try {
     final response = api.turnOnEmergencyLight(carNum);
@@ -208,7 +205,6 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getDeviceControllerApi();
-final String carNum = carNum_example; // String |
 
 try {
     final response = api.turnOnHorn(carNum);

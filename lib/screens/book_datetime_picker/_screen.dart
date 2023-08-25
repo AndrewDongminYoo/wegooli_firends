@@ -60,7 +60,7 @@ class ReservationDatetimePickerBottomSheet extends StatelessWidget {
                           child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text("lbl91".tr,
+                                Text("rentalTime".tr,
                                     overflow: TextOverflow.ellipsis,
                                     textAlign: TextAlign.left,
                                     style: theme.textTheme.titleMedium!
@@ -216,7 +216,7 @@ class ReservationDatetimePickerBottomSheet extends StatelessWidget {
                           child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text("lbl91".tr,
+                                Text("rentalTime".tr,
                                     overflow: TextOverflow.ellipsis,
                                     textAlign: TextAlign.left,
                                     style: theme.textTheme.titleMedium!
@@ -252,7 +252,7 @@ class ReservationDatetimePickerBottomSheet extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 CustomElevatedButton(
-                                    text: "lbl92".tr,
+                                    text: "cancel".tr,
                                     buttonStyle: CustomButtonStyles
                                         .fillGray400TL26
                                         .copyWith(
@@ -263,7 +263,7 @@ class ReservationDatetimePickerBottomSheet extends StatelessWidget {
                                     buttonTextStyle:
                                         CustomTextStyles.titleMedium18),
                                 CustomElevatedButton(
-                                    text: "lbl93".tr,
+                                    text: "confirm".tr,
                                     margin: getMargin(left: 8),
                                     buttonStyle: CustomButtonStyles.fillPrimary
                                         .copyWith(

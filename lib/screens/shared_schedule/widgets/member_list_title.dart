@@ -19,7 +19,7 @@ class MemberListTitle extends StatelessWidget {
         left: 16,
       ),
       child: Text(
-        "lbl50".tr,
+        "teamMembers".tr,
         overflow: TextOverflow.ellipsis,
         textAlign: TextAlign.left,
         style: CustomTextStyles.titleMediumBlack900.copyWith(

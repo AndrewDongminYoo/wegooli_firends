@@ -37,7 +37,7 @@ class SubscriptionInfoNoService
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Spacer(),
-                      Text("lbl99".tr,
+                      Text("haveNoAnySubscriptionInfo".tr,
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.left,
                           style: CustomTextStyles.titleMediumBlack900

@@ -69,7 +69,7 @@ class MyProfilePage extends StatelessWidget {
                   top: 16,
                 ),
                 child: Text(
-                  "lbl44".tr,
+                  "nickname".tr,
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.left,
                   style: CustomTextStyles.titleMedium18.copyWith(
@@ -182,7 +182,7 @@ class MyProfilePage extends StatelessWidget {
                         bottom: 1,
                       ),
                       child: Text(
-                        "lbl37".tr,
+                        "cardRegistration".tr,
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.left,
                         style: theme.textTheme.bodyLarge!.copyWith(

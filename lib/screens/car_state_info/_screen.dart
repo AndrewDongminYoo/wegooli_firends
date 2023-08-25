@@ -100,7 +100,7 @@ class CarStateInformation extends GetWidget<CarStateInformationController> {
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
                                         children: [
-                                          Text("lbl82".tr,
+                                          Text("monthlyPayment".tr,
                                               overflow: TextOverflow.ellipsis,
                                               textAlign: TextAlign.left,
                                               style: CustomTextStyles
@@ -124,7 +124,7 @@ class CarStateInformation extends GetWidget<CarStateInformationController> {
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
                                         children: [
-                                          Text("lbl83".tr,
+                                          Text("subscription".tr,
                                               overflow: TextOverflow.ellipsis,
                                               textAlign: TextAlign.left,
                                               style: CustomTextStyles
@@ -148,7 +148,7 @@ class CarStateInformation extends GetWidget<CarStateInformationController> {
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
                                         children: [
-                                          Text("lbl84".tr,
+                                          Text("paymentDueDate".tr,
                                               overflow: TextOverflow.ellipsis,
                                               textAlign: TextAlign.left,
                                               style: CustomTextStyles
@@ -167,7 +167,7 @@ class CarStateInformation extends GetWidget<CarStateInformationController> {
                                                               0.03)))
                                         ])),
                                 CustomElevatedButton(
-                                    text: "lbl85".tr,
+                                    text: "cancel".tr,
                                     margin: getMargin(top: 21),
                                     buttonStyle: CustomButtonStyles
                                         .fillPrimaryTL5

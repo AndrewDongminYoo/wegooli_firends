@@ -39,7 +39,7 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                 onTapArrowleft();
               }),
           centerTitle: true,
-          title: AppbarTitle(text: "lbl6".tr)),
+          title: AppbarTitle(text: "acceptTerms".tr)),
       body: Container(
           width: double.maxFinite,
           padding: getPadding(left: 11, top: 31, right: 11, bottom: 31),
@@ -48,7 +48,7 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Obx(() => CustomCheckboxButton(
-                    text: "lbl7".tr,
+                    text: "acceptAll".tr,
                     iconSize: getHorizontalSize(20),
                     value: controller.isAcceptedTerm0.value,
                     margin: getMargin(left: 5),
@@ -63,7 +63,7 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Obx(() => CustomCheckboxButton(
-                              text: "lbl8".tr,
+                              text: "termsOfServiceRequiredAgreement".tr,
                               iconSize: getHorizontalSize(20),
                               value: controller.isAcceptedTerm1.value,
                               textStyle: theme.textTheme.bodyLarge!,
@@ -82,7 +82,7 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Obx(() => CustomCheckboxButton(
-                              text: "lbl9".tr,
+                              text: "privacyPolicyRequiredConsent".tr,
                               iconSize: getHorizontalSize(20),
                               value: controller.isAcceptedTerm2.value,
                               textStyle: theme.textTheme.bodyLarge!,
@@ -120,7 +120,7 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Obx(() => CustomCheckboxButton(
-                              text: "msg".tr,
+                              text: "locationBasedServicesTerms".tr,
                               iconSize: getHorizontalSize(20),
                               value: controller.isAcceptedTerm4.value,
                               textStyle: theme.textTheme.bodyLarge!,
@@ -138,7 +138,9 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                     child: Row(children: [
                       Expanded(
                           child: Obx(() => CustomCheckboxButton(
-                              text: "msg2".tr,
+                              text:
+                                  "consentToCollectionAndUseOfVehicleLocationInfo"
+                                      .tr,
                               iconSize: getHorizontalSize(20),
                               value: controller.isAcceptedTerm5.value,
                               textStyle: theme.textTheme.bodyLarge!,
@@ -156,7 +158,7 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                     child: Row(children: [
                       Expanded(
                           child: Obx(() => CustomCheckboxButton(
-                              text: "msg3".tr,
+                              text: "useOfPersonalInfoForMarketing".tr,
                               iconSize: getHorizontalSize(20),
                               value: controller.isAcceptedTerm6.value,
                               textStyle: theme.textTheme.bodyLarge!,

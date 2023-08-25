@@ -34,7 +34,7 @@ class SendingCrewInvitationDialog extends StatelessWidget {
                           children: [
                             Padding(
                                 padding: getPadding(top: 6),
-                                child: Text("lbl86".tr,
+                                child: Text("invitationCode".tr,
                                     overflow: TextOverflow.ellipsis,
                                     textAlign: TextAlign.left,
                                     style: CustomTextStyles.titleMedium18
@@ -61,7 +61,7 @@ class SendingCrewInvitationDialog extends StatelessWidget {
                       filled: true,
                       fillColor: theme.colorScheme.onPrimaryContainer),
                   CustomElevatedButton(
-                      text: "lbl87".tr,
+                      text: "copy".tr,
                       margin: getMargin(top: 25),
                       buttonStyle: CustomButtonStyles.fillPrimaryBL10.copyWith(
                           fixedSize: MaterialStateProperty.all<Size>(

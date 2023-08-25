@@ -36,7 +36,7 @@ class RegisterCreditCard extends GetWidget<RegisterCreditCardController> {
                       onTabBackButton();
                     }),
                 centerTitle: true,
-                title: AppbarTitle(text: "lbl37".tr)),
+                title: AppbarTitle(text: "cardRegistration".tr)),
             body: Container(
                 width: double.maxFinite,
                 padding: getPadding(left: 16, top: 35, right: 16, bottom: 35),
@@ -52,7 +52,7 @@ class RegisterCreditCard extends GetWidget<RegisterCreditCardController> {
                                 children: [
                                   Padding(
                                       padding: getPadding(top: 2),
-                                      child: Text("lbl38".tr,
+                                      child: Text("cardNumber".tr,
                                           overflow: TextOverflow.ellipsis,
                                           textAlign: TextAlign.left,
                                           style: theme.textTheme.titleMedium!
@@ -94,7 +94,7 @@ class RegisterCreditCard extends GetWidget<RegisterCreditCardController> {
                                     children: [
                                       Padding(
                                           padding: getPadding(top: 2),
-                                          child: Text("lbl39".tr,
+                                          child: Text("expirationDate".tr,
                                               overflow: TextOverflow.ellipsis,
                                               textAlign: TextAlign.left,
                                               style: theme
@@ -145,7 +145,9 @@ class RegisterCreditCard extends GetWidget<RegisterCreditCardController> {
                                     children: [
                                       Padding(
                                           padding: getPadding(top: 2),
-                                          child: Text("lbl40".tr,
+                                          child: Text(
+                                              "socialSecurityNumberFirstDigit"
+                                                  .tr,
                                               overflow: TextOverflow.ellipsis,
                                               textAlign: TextAlign.left,
                                               style: theme
@@ -180,7 +182,7 @@ class RegisterCreditCard extends GetWidget<RegisterCreditCardController> {
                                     initialValue:
                                         Get.find<ValidatePhoneController>()
                                             .age1FormatController
-                                            .text ,
+                                            .text,
                                     hintStyle:
                                         CustomTextStyles.bodyLargeGray50003,
                                     textInputAction: TextInputAction.next,
@@ -200,7 +202,8 @@ class RegisterCreditCard extends GetWidget<RegisterCreditCardController> {
                                     children: [
                                       Padding(
                                           padding: getPadding(top: 2),
-                                          child: Text("lbl_22".tr,
+                                          child: Text(
+                                              "first2DigitsOfCardPassword".tr,
                                               overflow: TextOverflow.ellipsis,
                                               textAlign: TextAlign.left,
                                               style: theme
@@ -236,7 +239,7 @@ class RegisterCreditCard extends GetWidget<RegisterCreditCardController> {
                 child: CustomElevatedButton(
                   // TODO
                   // disabled 일때 스타일 정의하기
-                  text: "lbl41".tr,
+                  text: "register".tr,
                   buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
                       fixedSize: MaterialStateProperty.all<Size>(
                           Size(double.maxFinite, getVerticalSize(52)))),

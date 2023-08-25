@@ -21,6 +21,10 @@ class _$TerminalModel extends TerminalModel {
   final String? phoneNumber;
   @override
   final String? status;
+  @override
+  final String? fuel;
+  @override
+  final String? model;
 
   factory _$TerminalModel([void Function(TerminalModelBuilder)? updates]) =>
       (new TerminalModelBuilder()..update(updates))._build();
@@ -32,7 +36,9 @@ class _$TerminalModel extends TerminalModel {
       this.updatedAt,
       this.carNum,
       this.phoneNumber,
-      this.status})
+      this.status,
+      this.fuel,
+      this.model})
       : super._();
 
   @override
@@ -52,7 +58,9 @@ class _$TerminalModel extends TerminalModel {
         updatedAt == other.updatedAt &&
         carNum == other.carNum &&
         phoneNumber == other.phoneNumber &&
-        status == other.status;
+        status == other.status &&
+        fuel == other.fuel &&
+        model == other.model;
   }
 
   @override
@@ -65,6 +73,8 @@ class _$TerminalModel extends TerminalModel {
     _$hash = $jc(_$hash, carNum.hashCode);
     _$hash = $jc(_$hash, phoneNumber.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
+    _$hash = $jc(_$hash, fuel.hashCode);
+    _$hash = $jc(_$hash, model.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -78,7 +88,9 @@ class _$TerminalModel extends TerminalModel {
           ..add('updatedAt', updatedAt)
           ..add('carNum', carNum)
           ..add('phoneNumber', phoneNumber)
-          ..add('status', status))
+          ..add('status', status)
+          ..add('fuel', fuel)
+          ..add('model', model))
         .toString();
   }
 }
@@ -115,6 +127,14 @@ class TerminalModelBuilder
   String? get status => _$this._status;
   set status(String? status) => _$this._status = status;
 
+  String? _fuel;
+  String? get fuel => _$this._fuel;
+  set fuel(String? fuel) => _$this._fuel = fuel;
+
+  String? _model;
+  String? get model => _$this._model;
+  set model(String? model) => _$this._model = model;
+
   TerminalModelBuilder() {
     TerminalModel._defaults(this);
   }
@@ -129,6 +149,8 @@ class TerminalModelBuilder
       _carNum = $v.carNum;
       _phoneNumber = $v.phoneNumber;
       _status = $v.status;
+      _fuel = $v.fuel;
+      _model = $v.model;
       _$v = null;
     }
     return this;
@@ -157,7 +179,9 @@ class TerminalModelBuilder
             updatedAt: updatedAt,
             carNum: carNum,
             phoneNumber: phoneNumber,
-            status: status);
+            status: status,
+            fuel: fuel,
+            model: model);
     replace(_$result);
     return _$result;
   }

@@ -68,7 +68,7 @@ export 'shared_schedule/models/_model.dart';
 export 'shared_schedule/widgets/calendar.dart';
 export 'smart_key_available/_screen.dart';
 export 'smart_key_available/controller/_controller.dart';
-export 'smart_key_available/models/_model.dart';
+// export 'smart_key_available/models/_model.dart';
 export 'smart_key_unavailable/_screen.dart';
 export 'smart_key_unavailable/binding/_binding.dart';
 export 'smart_key_unavailable/controller/_controller.dart';

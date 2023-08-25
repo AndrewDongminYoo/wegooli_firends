@@ -7,7 +7,6 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/core/app_export.dart';
 import 'controller/_controller.dart';
-import 'models/_model.dart';
 
 class MyProfilePage extends StatelessWidget {
   MyProfilePage({Key? key})
@@ -15,13 +14,10 @@ class MyProfilePage extends StatelessWidget {
           key: key,
         );
 
-  final MyProfileController controller =
-      Get.put(MyProfileController(MyProfileModel().obs));
+  final MyProfileController controller = MyProfileController.to;
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
-
     return SafeArea(
       child: Scaffold(
         backgroundColor: theme.colorScheme.onPrimaryContainer,
@@ -84,7 +80,7 @@ class MyProfilePage extends StatelessWidget {
                   top: 7,
                 ),
                 child: Text(
-                  "010-1234-5678",
+                  controller.phoneNumber.value,
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.left,
                   style: theme.textTheme.bodyLarge!.copyWith(

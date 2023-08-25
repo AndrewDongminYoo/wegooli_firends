@@ -6,11 +6,8 @@ import 'package:get/get.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
-import 'controller/_controller.dart';
 
-class CarStatusInformation extends GetWidget<CarStatusInformationController> {
-  const CarStatusInformation({Key? key}) : super(key: key);
-
+class CarStatusInformation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);

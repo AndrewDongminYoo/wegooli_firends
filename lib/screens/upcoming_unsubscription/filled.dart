@@ -10,8 +10,6 @@ import 'controller/_controller.dart';
 
 class UpcomingUnsubscriptionFilled
     extends GetWidget<UpcomingUnsubscriptionViewController> {
-  const UpcomingUnsubscriptionFilled({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);

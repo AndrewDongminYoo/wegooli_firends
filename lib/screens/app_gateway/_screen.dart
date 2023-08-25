@@ -159,11 +159,7 @@ class GatewayScreen extends StatelessWidget {
     backgroundColor: Colors.transparent,
     contentPadding: EdgeInsets.zero,
     insetPadding: EdgeInsets.only(left: 0),
-    content: UnsubscriptionConfirmWarnDialog(
-      Get.put(
-        UnsubscriptionConfirmWarnController(),
-      ),
-    ),
+    content: UnsubscriptionConfirmWarnDialog(),
   );
 
   Widget openInvitationModal = AlertDialog(
@@ -171,9 +167,7 @@ class GatewayScreen extends StatelessWidget {
     contentPadding: EdgeInsets.zero,
     insetPadding: const EdgeInsets.only(left: 0),
     content: SendingCrewInvitationDialog(
-      Get.put(
-        SendingCrewInvitationController(),
-      ),
+      SendingCrewInvitationController.to,
     ),
   );
 
@@ -181,16 +175,10 @@ class GatewayScreen extends StatelessWidget {
     backgroundColor: Colors.transparent,
     contentPadding: EdgeInsets.zero,
     insetPadding: const EdgeInsets.only(left: 0),
-    content: ReservationsCheckingPageDialog(
-      Get.put(
-        ReservationsCheckingPageController(),
-      ),
-    ),
+    content: ReservationsCheckingPageDialog(),
   );
 
   Widget openDateTimePicker = ReservationDatetimePickerBottomSheet(
-    Get.put(
-      ReservationDatetimePickerController(),
-    ),
+    ReservationDatetimePickerController.to,
   );
 }

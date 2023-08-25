@@ -1,16 +1,15 @@
 // 📦 Package imports:
 import 'package:get/get.dart';
 
-// 🌎 Project imports:
-import '../models/_model.dart';
-
 /// A controller class for the SignupAcceptTermsScreen.
 ///
 /// This class manages the state of the SignupAcceptTermsScreen, including the
 /// current signupAcceptTermsModelObj
 class AcceptTermsController extends GetxController {
-  Rx<SignupAcceptTermsModel> signupAcceptTermsModelObj =
-      SignupAcceptTermsModel().obs;
+  static AcceptTermsController get to =>
+      Get.isRegistered<AcceptTermsController>()
+          ? Get.find<AcceptTermsController>()
+          : Get.put(AcceptTermsController());
   Rx<bool> isAcceptedTerm0 = false.obs;
   Rx<bool> isAcceptedTerm1 = false.obs;
   Rx<bool> isAcceptedTerm2 = false.obs;

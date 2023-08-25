@@ -11,8 +11,6 @@ import '/core/app_export.dart';
 import 'controller/_controller.dart';
 
 class RegisterZipCode extends GetWidget<RegisterZipCodeController> {
-  const RegisterZipCode({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
@@ -97,7 +95,7 @@ class RegisterZipCode extends GetWidget<RegisterZipCodeController> {
                                                   top: 14,
                                                   right: 12,
                                                   bottom: 14),
-                                              validator: (value) {
+                                              validator: (String? value) {
                                                 if (value == null ||
                                                     value.isEmpty) {
                                                   return '우편번호는 필수 입력값입니다.';

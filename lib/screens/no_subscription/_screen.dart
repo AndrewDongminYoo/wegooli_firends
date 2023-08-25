@@ -6,12 +6,8 @@ import 'package:get/get.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
-import 'controller/_controller.dart';
 
-class SubscriptionInfoNoService
-    extends GetWidget<SubscriptionInfoNoServiceController> {
-  const SubscriptionInfoNoService({Key? key}) : super(key: key);
-
+class SubscriptionInfoNoService extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);

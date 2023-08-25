@@ -10,6 +10,10 @@ import '/data/models/models.dart';
 /// This class manages the state of the TeamScheduleShareScreen, including the
 /// current teamScheduleShareModelObj
 class TeamScheduleController extends GetxController {
+  static TeamScheduleController get to =>
+      Get.isRegistered<TeamScheduleController>()
+          ? Get.find<TeamScheduleController>()
+          : Get.put(TeamScheduleController());
   RxList<Schedule> schedules = <Schedule>[].obs;
   RxList<TeamAccountModel> members = <TeamAccountModel>[].obs;
 }

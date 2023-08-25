@@ -36,7 +36,7 @@ class DashChatWithFriendsPage extends StatefulWidget {
 class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
     with ChannelEventHandler {
   final DashChatWithFriendsController controller =
-      Get.put(DashChatWithFriendsController(DashChatWithFriendsModel().obs));
+      DashChatWithFriendsController.to;
   late GroupChannel _channel;
   List<BaseMessage> _messages = [];
   // ignore: unused_field

@@ -9,6 +9,10 @@ import 'package:get/get.dart';
 /// This class manages the state of the RegisterZipCodeScreen, including the
 /// current registerZipCodeModelObj
 class RegisterZipCodeController extends GetxController {
+  static RegisterZipCodeController get to =>
+      Get.isRegistered<RegisterZipCodeController>()
+          ? Get.find<RegisterZipCodeController>()
+          : Get.put(RegisterZipCodeController());
   TextEditingController postalCodeController = TextEditingController();
   TextEditingController primaryAddressController = TextEditingController();
   TextEditingController detailedAddressController = TextEditingController();

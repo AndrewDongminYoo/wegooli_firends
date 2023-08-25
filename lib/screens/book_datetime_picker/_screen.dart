@@ -237,7 +237,7 @@ class ReservationDatetimePickerBottomSheet extends StatelessWidget {
                                         .value
                                         .dropdownItemList
                                         .value,
-                                    onChanged: (value) {
+                                    onChanged: (SelectionPopupModel value) {
                                       controller.onSelected(value);
                                     })
                               ])),

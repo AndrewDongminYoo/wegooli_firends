@@ -10,6 +10,10 @@ import '/screens/book_datetime_picker/models/_model.dart';
 /// This class manages the state of the ReservationDatetimePickerBottomsheet, including the
 /// current reservationDatetimePickerModelObj
 class ReservationDatetimePickerController extends GetxController {
+  static ReservationDatetimePickerController get to =>
+      Get.isRegistered<ReservationDatetimePickerController>()
+          ? Get.find<ReservationDatetimePickerController>()
+          : Get.put(ReservationDatetimePickerController());
   Rx<ReservationDatetimePickerModel> reservationDatetimePickerModelObj =
       ReservationDatetimePickerModel().obs;
 

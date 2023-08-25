@@ -6,13 +6,9 @@ import 'package:get/get.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
-import 'controller/_controller.dart';
 
 // ignore: must_be_immutable
 class ReservationsCheckingPageDialog extends StatelessWidget {
-  ReservationsCheckingPageDialog(this.controller, {Key? key}) : super(key: key);
-
-  ReservationsCheckingPageController controller;
 
   @override
   Widget build(BuildContext context) {

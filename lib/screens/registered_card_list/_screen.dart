@@ -10,8 +10,6 @@ import 'controller/_controller.dart';
 
 class RegisteredCreditCardList
     extends GetWidget<RegisteredCreditCardListController> {
-  const RegisteredCreditCardList({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
@@ -48,7 +46,7 @@ class RegisteredCreditCardList
                                     value: "신한 7210 / 개인",
                                     groupValue: controller.radioGroup.value,
                                     textStyle: theme.textTheme.bodyLarge!,
-                                    onChange: (value) {
+                                    onChange: (String value) {
                                       controller.radioGroup.value = value;
                                     })),
                                 CustomImageView(
@@ -68,7 +66,7 @@ class RegisteredCreditCardList
                                     value: "신한 1210 / 법인",
                                     groupValue: controller.radioGroup1.value,
                                     textStyle: theme.textTheme.bodyLarge!,
-                                    onChange: (value) {
+                                    onChange: (String value) {
                                       controller.radioGroup1.value = value;
                                     })),
                                 CustomImageView(

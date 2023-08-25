@@ -11,8 +11,6 @@ import 'controller/_controller.dart';
 import 'widgets/complete_button.dart';
 
 class ValidatePhone extends GetWidget<ValidatePhoneController> {
-  const ValidatePhone({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
@@ -173,7 +171,7 @@ class ValidatePhone extends GetWidget<ValidatePhoneController> {
                                           right: 5,
                                           top: 14,
                                           bottom: 14),
-                                      onChanged: (value) {
+                                      onChanged: (SelectionPopupModel value) {
                                         controller.setDropdownItem(value);
                                       }),
                                   CustomTextFormField(
@@ -229,7 +227,7 @@ class ValidatePhone extends GetWidget<ValidatePhoneController> {
                                 children: [
                                   CustomTextFormField(
                                       width: getHorizontalSize(160),
-                                      controller: controller.codeController,
+                                      controller: controller.pinCodeController,
                                       margin: getMargin(top: 10),
                                       contentPadding: getPadding(
                                           left: 10, top: 14, bottom: 14),

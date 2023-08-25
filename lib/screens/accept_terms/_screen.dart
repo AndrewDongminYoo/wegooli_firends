@@ -10,8 +10,6 @@ import 'controller/_controller.dart';
 import 'widgets/next_button.dart';
 
 class AcceptTerms extends GetWidget<AcceptTermsController> {
-  const AcceptTerms({Key? key}) : super(key: key);
-
   void checkAll(bool value) {
     controller.isAcceptedTerm1.value = value;
     controller.isAcceptedTerm2.value = value;
@@ -53,7 +51,7 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                     value: controller.isAcceptedTerm0.value,
                     margin: getMargin(left: 5),
                     textStyle: theme.textTheme.bodyLarge!,
-                    onChange: (value) {
+                    onChange: (bool value) {
                       controller.isAcceptedTerm0.value = value;
                       this.checkAll(value);
                     })),
@@ -67,7 +65,7 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                               iconSize: getHorizontalSize(20),
                               value: controller.isAcceptedTerm1.value,
                               textStyle: theme.textTheme.bodyLarge!,
-                              onChange: (value) {
+                              onChange: (bool value) {
                                 controller.isAcceptedTerm1.value = value;
                               })),
                           CustomImageView(
@@ -86,7 +84,7 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                               iconSize: getHorizontalSize(20),
                               value: controller.isAcceptedTerm2.value,
                               textStyle: theme.textTheme.bodyLarge!,
-                              onChange: (value) {
+                              onChange: (bool value) {
                                 controller.isAcceptedTerm2.value = value;
                               })),
                           CustomImageView(
@@ -105,7 +103,7 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                               iconSize: getHorizontalSize(20),
                               value: controller.isAcceptedTerm3.value,
                               textStyle: theme.textTheme.bodyLarge!,
-                              onChange: (value) {
+                              onChange: (bool value) {
                                 controller.isAcceptedTerm3.value = value;
                               })),
                           CustomImageView(
@@ -124,7 +122,7 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                               iconSize: getHorizontalSize(20),
                               value: controller.isAcceptedTerm4.value,
                               textStyle: theme.textTheme.bodyLarge!,
-                              onChange: (value) {
+                              onChange: (bool value) {
                                 controller.isAcceptedTerm4.value = value;
                               })),
                           CustomImageView(
@@ -144,7 +142,7 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                               iconSize: getHorizontalSize(20),
                               value: controller.isAcceptedTerm5.value,
                               textStyle: theme.textTheme.bodyLarge!,
-                              onChange: (value) {
+                              onChange: (bool value) {
                                 controller.isAcceptedTerm5.value = value;
                               }))),
                       CustomImageView(
@@ -162,7 +160,7 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                               iconSize: getHorizontalSize(20),
                               value: controller.isAcceptedTerm6.value,
                               textStyle: theme.textTheme.bodyLarge!,
-                              onChange: (value) {
+                              onChange: (bool value) {
                                 controller.isAcceptedTerm6.value = value;
                               }))),
                       CustomImageView(

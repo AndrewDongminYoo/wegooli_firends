@@ -6,11 +6,8 @@ import 'package:get/get.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
-import 'controller/_controller.dart';
 
-class UnsubscriptionConfirm extends GetWidget<UnsubscriptionConfirmController> {
-  const UnsubscriptionConfirm({Key? key}) : super(key: key);
-
+class UnsubscriptionConfirm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);

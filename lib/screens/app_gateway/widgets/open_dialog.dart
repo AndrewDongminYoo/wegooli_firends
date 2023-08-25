@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import 'package:wegooli_friends/core/app_export.dart';
+import '/core/app_export.dart';
 
 // ignore: must_be_immutable
 class RouteModal extends StatelessWidget {
@@ -25,7 +25,9 @@ class RouteModal extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
         onTap: () {
-          dialog != null ? Get.dialog(dialog!) : Get.bottomSheet(bottomSheet!, isScrollControlled: true);
+          dialog != null
+              ? Get.dialog(dialog!)
+              : Get.bottomSheet(bottomSheet!, isScrollControlled: true);
         },
         child: Container(
             decoration: AppDecoration.fill6,

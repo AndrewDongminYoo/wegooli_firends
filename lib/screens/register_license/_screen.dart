@@ -9,7 +9,6 @@ import '/core/app_export.dart';
 import 'controller/_controller.dart';
 
 class RegisterLicense extends GetWidget<RegisterLicensePageController> {
-  const RegisterLicense({Key? key}) : super(key: key);
   bool isValid() {
     // TODO: 면허증이 valid하면 true, 아니면 false.
     return true;
@@ -83,7 +82,7 @@ class RegisterLicense extends GetWidget<RegisterLicensePageController> {
                                 fillColor: theme.colorScheme.onPrimaryContainer,
                                 contentPadding:
                                     getPadding(left: 10, top: 14, bottom: 14),
-                                onChanged: (value) {
+                                onChanged: (SelectionPopupModel value) {
                                   controller.onSelected(value);
                                 })
                           ]),
@@ -164,7 +163,7 @@ class RegisterLicense extends GetWidget<RegisterLicensePageController> {
                                                       left: 10,
                                                       top: 14,
                                                       bottom: 14),
-                                                  onChanged: (value) {
+                                                  onChanged: (SelectionPopupModel value) {
                                                     controller
                                                         .onSelected1(value);
                                                   })
@@ -191,7 +190,7 @@ class RegisterLicense extends GetWidget<RegisterLicensePageController> {
                                             .colorScheme.onPrimaryContainer,
                                         contentPadding: getPadding(
                                             left: 10, top: 14, bottom: 14),
-                                        onChanged: (value) {
+                                        onChanged: (SelectionPopupModel value) {
                                           controller.onSelected2(value);
                                         }))
                               ])),

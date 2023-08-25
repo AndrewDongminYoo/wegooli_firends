@@ -51,9 +51,6 @@ class AppRoutes {
     GetPage(
       name: splashScreen,
       page: () => SplashLoading(),
-      bindings: [
-        SplashLoadingBinding(),
-      ],
     ),
     GetPage(
       name: logInIdPassword,
@@ -114,16 +111,10 @@ class AppRoutes {
     GetPage(
       name: smartKeyAvailable,
       page: () => SmartKeyAvailablePage(),
-      bindings: [
-        SmartKeyAvailableBinding(),
-      ],
     ),
     GetPage(
       name: smartKeyUnavailable,
       page: () => SmartKeyNotAvailable(),
-      bindings: [
-        SmartKeyAvailableBinding(),
-      ],
     ),
     GetPage(
       name: registeredCardList,
@@ -135,23 +126,14 @@ class AppRoutes {
     GetPage(
       name: carStatusInfo,
       page: () => CarStatusInformation(),
-      bindings: [
-        CarStatusInformationBinding(),
-      ],
     ),
     GetPage(
       name: carStatusInfo2,
       page: () => CarStateInformation(),
-      bindings: [
-        CarStateInformationBinding(),
-      ],
     ),
     GetPage(
       name: unsubscriptionConfirm,
       page: () => UnsubscriptionConfirm(),
-      bindings: [
-        UnsubscriptionConfirmBinding(),
-      ],
     ),
     GetPage(
       name: unsubscriptionInfo,
@@ -170,9 +152,6 @@ class AppRoutes {
     GetPage(
       name: subscriptionNoService,
       page: () => SubscriptionInfoNoService(),
-      bindings: [
-        SubscriptionInfoNoServiceBinding(),
-      ],
     ),
     GetPage(
       name: appGateway,

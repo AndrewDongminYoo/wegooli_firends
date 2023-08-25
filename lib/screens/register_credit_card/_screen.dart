@@ -5,13 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import 'package:wegooli_friends/screens/phone_auth/controller/_controller.dart';
 import '/core/app_export.dart';
+import '/screens/phone_auth/controller/_controller.dart';
 import 'controller/_controller.dart';
 
 class RegisterCreditCard extends GetWidget<RegisterCreditCardController> {
-  const RegisterCreditCard({Key? key}) : super(key: key);
-
   bool isValid() {
     // TODO: 카드 정보가 valid하면 true, 아니면 false.
     return true;

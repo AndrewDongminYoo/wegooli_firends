@@ -3,24 +3,19 @@ import 'package:flutter/material.dart';
 
 // 📦 Package imports:
 import 'package:get/get.dart';
-import 'package:wegooli_friends/data/data.dart';
-import 'package:wegooli_friends/data/models/models.dart';
-import 'package:wegooli_friends/gen/assets.gen.dart';
-import 'package:wegooli_friends/screens/screens.dart';
-import 'package:wegooli_friends/theme/theme.dart';
-import 'package:wegooli_friends/widgets/widgets.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
+import '/data/data.dart';
+import 'controller/_controller.dart';
 
+// ignore: must_be_immutable
 class SmartKeyAvailablePage extends StatelessWidget {
   SmartKeyAvailablePage({Key? key})
       : super(
           key: key,
         );
-
-  final SmartKeyAvailableController controller =
-      Get.put(SmartKeyAvailableController(TerminalModel().obs));
+  SmartKeyAvailableController controller = SmartKeyAvailableController.to;
 
   final String token = Get.find<PrefUtils>().getData('token');
   late Map<String, dynamic> extra = <String, dynamic>{

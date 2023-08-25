@@ -3,20 +3,12 @@ import 'package:flutter/material.dart';
 
 // 📦 Package imports:
 import 'package:get/get.dart';
-import 'package:wegooli_friends/gen/assets.gen.dart';
-import 'package:wegooli_friends/routes/app_routes.dart';
-import 'package:wegooli_friends/theme/theme.dart';
-import 'package:wegooli_friends/widgets/app_bar/custom_app_bar.dart';
-import 'package:wegooli_friends/widgets/bottom_bar.dart';
-import 'package:wegooli_friends/widgets/elevated_button.dart';
-import 'package:wegooli_friends/widgets/image_view.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
-import '/screens/screens.dart';
 
 // ignore: must_be_immutable
-class SmartKeyNotAvailable extends GetWidget<SmartKeyAvailabilityController> {
+class SmartKeyNotAvailable extends StatelessWidget {
   const SmartKeyNotAvailable({Key? key})
       : super(
           key: key,

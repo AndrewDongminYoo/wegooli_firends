@@ -10,8 +10,6 @@ import "/core/app_export.dart";
 
 class UpcomingUnsubscriptionOutlined
     extends GetWidget<UpcomingUnsubscriptionViewController> {
-  const UpcomingUnsubscriptionOutlined({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);

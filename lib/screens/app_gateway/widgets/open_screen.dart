@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import 'package:wegooli_friends/core/app_export.dart';
+import '/core/app_export.dart';
 
 class RouteItem extends StatelessWidget {
   final String routeDestination;
@@ -28,12 +28,12 @@ class RouteItem extends StatelessWidget {
         child: Container(
             decoration: AppDecoration.fill6,
             child:
-            Column(mainAxisAlignment: MainAxisAlignment.start, children: [
+                Column(mainAxisAlignment: MainAxisAlignment.start, children: [
               Align(
                   alignment: Alignment.centerLeft,
                   child: Padding(
                       padding:
-                      getPadding(left: 20, top: 10, right: 20, bottom: 10),
+                          getPadding(left: 20, top: 10, right: 20, bottom: 10),
                       child: Text(routeName,
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.center,

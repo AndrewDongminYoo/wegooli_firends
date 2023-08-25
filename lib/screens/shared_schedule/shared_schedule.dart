@@ -1,7 +1,6 @@
 export '_screen.dart';
 export 'binding/_binding.dart';
 export 'controller/_controller.dart';
-export 'models/_model.dart';
 export 'widgets/add_schedule_button.dart';
 export 'widgets/calendar.dart';
 export 'widgets/calendar_title.dart';

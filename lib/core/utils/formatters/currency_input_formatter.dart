@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 // 📦 Package imports:
 import 'package:intl/intl.dart';
 
+/// [CurrentInputFormatter] 클래스는 입력 형식을 통화로 지정하는 `Dart`의 [TextInputFormatter]의 하위 클래스
 class CurrencyInputFormatter extends TextInputFormatter {
   String? locale;
   String? name;

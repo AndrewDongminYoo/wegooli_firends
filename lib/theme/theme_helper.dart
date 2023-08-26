@@ -140,71 +140,71 @@ class ThemeHelper {
 /// Class containing the supported color schemes.
 class ColorSchemes {
   static final primaryColorScheme = ColorScheme.light(
-    background: Color(0XFFFF0000),
-    error: Color(0XFF222222),
-    errorContainer: Color(0XFF82838D),
-    inversePrimary: Color(0XFFFF0000),
-    inverseSurface: Color(0XFF222222),
-    onBackground: Color(0XFFFFFFFF),
-    onError: Color(0XFFFFCC08),
-    onErrorContainer: Color(0XFF222222),
-    onInverseSurface: Color(0XFFFFCC08),
-    onPrimary: Color(0XFF222222),
-    onPrimaryContainer: Color(0XFFFFFFFF),
-    onSecondary: Color(0XFFFFFFFF),
-    onSecondaryContainer: Color(0XFF222222),
-    onSurface: Color(0XFFFFFFFF),
-    onSurfaceVariant: Color(0XFF222222),
-    onTertiary: Color(0XFFFFFFFF),
-    onTertiaryContainer: Color(0XFF222222),
-    outline: Color(0XFF222222),
-    outlineVariant: Color(0XFFFF0000),
-    primary: Color(0XFFFFCC08),
-    primaryContainer: Color(0XFFFF0000),
-    scrim: Color(0XFFFF0000),
-    secondary: Color(0XFFFF0000),
-    secondaryContainer: Color(0XFFB9BCC3),
-    shadow: Color(0XFF222222),
-    surface: Color(0XFFFF0000),
-    surfaceTint: Color(0XFF222222),
-    surfaceVariant: Color(0XFFB9BCC3),
-    tertiary: Color(0XFFFF0000),
-    tertiaryContainer: Color(0XFFB9BCC3),
+    background: Color(0xFFFF0000), // 'red'
+    error: Color(0xFF222222), // 'mineShaft'
+    errorContainer: Color(0xFF82838D), // 'waterloo'
+    inversePrimary: Color(0xFFFF0000), // 'red'
+    inverseSurface: Color(0xFF222222), // 'mineShaft'
+    onBackground: Color(0xFFFFFFFF), // 'white'
+    onError: Color(0xFFFFCC08), // 'supernova'
+    onErrorContainer: Color(0xFF222222), // 'mineShaft'
+    onInverseSurface: Color(0xFFFFCC08), // 'supernova'
+    onPrimary: Color(0xFF222222), // 'mineShaft'
+    onPrimaryContainer: Color(0xFFFFFFFF), // 'white'
+    onSecondary: Color(0xFFFFFFFF), // 'white'
+    onSecondaryContainer: Color(0xFF222222), // 'mineShaft'
+    onSurface: Color(0xFFFFFFFF), // 'white'
+    onSurfaceVariant: Color(0xFF222222), // 'mineShaft'
+    onTertiary: Color(0xFFFFFFFF), // 'white'
+    onTertiaryContainer: Color(0xFF222222), // 'mineShaft'
+    outline: Color(0xFF222222), // 'mineShaft'
+    outlineVariant: Color(0xFFFF0000), // 'red'
+    primary: Color(0xFFFFCC08), // 'supernova'
+    primaryContainer: Color(0xFFFF0000), // 'red'
+    scrim: Color(0xFFFF0000), // 'red'
+    secondary: Color(0xFFFF0000), // 'red'
+    secondaryContainer: Color(0xFFB9BCC3), // 'frenchGray'
+    shadow: Color(0xFF222222), // 'mineShaft'
+    surface: Color(0xFFFF0000), // 'red'
+    surfaceTint: Color(0xFF222222), // 'mineShaft'
+    surfaceVariant: Color(0xFFB9BCC3), // 'frenchGray'
+    tertiary: Color(0xFFFF0000), // 'red'
+    tertiaryContainer: Color(0xFFB9BCC3), // 'frenchGray'
   );
 }
 
 /// Class containing custom colors for a primary theme.
 class PrimaryColors {
   // Black
-  Color get black900 => Color(0XFF000000);
+  Color get black900 => Color(0xFF000000); // 'black'
   // BlueGray
-  Color get blueGray1007f => Color(0X7FD9D9D9);
-  Color get blueGray30033 => Color(0X33A4A8AF);
-  Color get blueGray400 => Color(0XFF888888);
-  Color get blueGray900 => Color(0XFF323232);
+  Color get blueGray1007f => Color(0x7FD9D9D9);
+  Color get blueGray30033 => Color(0x33A4A8AF);
+  Color get blueGray400 => Color(0xFF888888); // 'gray'
+  Color get blueGray900 => Color(0xFF323232); // 'mineShaft'
   // DeepOrange
-  Color get deepOrangeA200 => Color(0XFFFF7034);
+  Color get deepOrangeA200 => Color(0xFFFF7034); // 'burningOrange'
   // DeepPurple
-  Color get deepPurpleA200 => Color(0XFF7850E9);
+  Color get deepPurpleA200 => Color(0xFF7850E9); // 'royalBlue'
   // Gray
-  Color get gray100 => Color(0XFFF6F7F7);
-  Color get gray10001 => Color(0XFFF5F5F5);
-  Color get gray300 => Color(0XFFE6E6E6);
-  Color get gray400 => Color(0XFFCACACA);
-  Color get gray500 => Color(0XFF8F9199);
-  Color get gray50001 => Color(0XFF91969D);
-  Color get gray50002 => Color(0XFF91959D);
-  Color get gray50003 => Color(0XFF8E9199);
-  Color get gray50004 => Color(0XFF979797);
-  Color get gray600 => Color(0XFF858585);
-  Color get gray700 => Color(0XFF666666);
-  Color get gray800 => Color(0XFF474747);
+  Color get gray100 => Color(0xFFF6F7F7); // 'blackHaze'
+  Color get gray10001 => Color(0xFFF5F5F5); // 'wildSand'
+  Color get gray300 => Color(0xFFE6E6E6); // 'mercury'
+  Color get gray400 => Color(0xFFCACACA); // 'silver'
+  Color get gray500 => Color(0xFF8F9199); // 'manatee'
+  Color get gray50001 => Color(0xFF91969D); // 'manatee'
+  Color get gray50002 => Color(0xFF91959D); // 'manatee'
+  Color get gray50003 => Color(0xFF8E9199); // 'manatee'
+  Color get gray50004 => Color(0xFF979797); // 'dustyGray'
+  Color get gray600 => Color(0xFF858585); // 'gray'
+  Color get gray700 => Color(0xFF666666); // 'doveGray'
+  Color get gray800 => Color(0xFF474747); // 'tundora'
   // Green
-  Color get green500 => Color(0XFF38DD66);
+  Color get green500 => Color(0xFF38DD66); // 'shamrock'
   // Red
-  Color get red600 => Color(0XFFDB4646);
-  Color get red700 => Color(0XFFE82121);
-  Color get redA700 => Color(0XFFEF1010);
+  Color get red600 => Color(0xFFDB4646); // 'valencia'
+  Color get red700 => Color(0xFFE82121); // 'alizarinCrimson'
+  Color get redA700 => Color(0xFFEF1010); // 'redRibbon'
 }
 
 PrimaryColors get appTheme => ThemeHelper().themeColor();

@@ -15,5 +15,32 @@
     "wegooli",
     "xxxkm",
     "Zeplin"
-  ]
+  ],
+  "dart.documentation": "full",
+  "dart.enableSdkFormatter": true,
+  "dart.flutterCreateAndroidLanguage": "kotlin",
+  "dart.flutterCreateIOSLanguage": "swift",
+  "dart.flutterCreatePlatforms": [
+    "android",
+    "ios",
+    "macos",
+    "web"
+  ],
+  "dart.flutterHotReloadOnSave": "all",
+  "dart.flutterWebRenderer": "auto",
+  "dart.openDevTools": "flutter",
+  "dart.previewFlutterUiGuides": true,
+  "dart.showInspectorNotificationsForWidgetErrors": false,
+  "dart.updateImportsOnRename": true,
+  "dartBarrelFileGenerator.excludeDirList": [
+    "gen",
+    "generated",
+    "binding",
+    "controller",
+    "api"
+  ],
+  "dartBarrelFileGenerator.excludeFreezed": true,
+  "dartBarrelFileGenerator.excludeGenerated": true,
+  "dartBarrelFileGenerator.skipEmpty": true,
+  "docwriter.language": "Korean"
 }

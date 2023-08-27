@@ -34,9 +34,8 @@ class InviteTeamButton extends StatelessWidget {
               "invite".tr,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.left,
-              style: CustomTextStyles.bodySmallBlack900.copyWith(
-                letterSpacing: getHorizontalSize(0.02),
-              ),
+              style: CustomTextStyles.bodySmallBlack900
+                  .copyWith(letterSpacing: getHorizontalSize(0.02)),
             ),
           ),
         ],

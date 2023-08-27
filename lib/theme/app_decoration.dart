@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 import '/core/app_export.dart';
 
 class AppDecoration {
-  static BoxDecoration get fill =>
+  static BoxDecoration get fillOnPrimaryContainer =>
       BoxDecoration(color: theme.colorScheme.onPrimaryContainer);
   static BoxDecoration get fill5 => BoxDecoration(color: appTheme.gray10001);
-  static BoxDecoration get outline1 => BoxDecoration(
+  static BoxDecoration get outlineBlueGray => BoxDecoration(
         color: theme.colorScheme.onPrimaryContainer,
         border: Border.all(
           color: appTheme.blueGray30033,
@@ -17,7 +17,7 @@ class AppDecoration {
       );
   static BoxDecoration get fill4 =>
       BoxDecoration(color: appTheme.blueGray30033);
-  static BoxDecoration get fill6 =>
+  static BoxDecoration get fillOnSecondary =>
       BoxDecoration(color: theme.colorScheme.onSecondary);
   static BoxDecoration get fill1 =>
       BoxDecoration(color: theme.colorScheme.primary);

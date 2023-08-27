@@ -24,7 +24,7 @@ class RouteItem extends StatelessWidget {
           Get.toNamed(routeDestination);
         },
         child: Container(
-            decoration: AppDecoration.fill6,
+            decoration: AppDecoration.fillOnSecondary,
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.start, children: [
               Align(

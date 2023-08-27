@@ -42,9 +42,7 @@ class MemberAvatar extends StatelessWidget {
                     imagePath: avatarImagePath,
                     height: getSize(42),
                     width: getSize(42),
-                    radius: BorderRadius.circular(
-                      getHorizontalSize(21),
-                    ),
+                    radius: BorderRadius.circular(getHorizontalSize(21)),
                     alignment: Alignment.center,
                   ),
                 ],
@@ -57,9 +55,8 @@ class MemberAvatar extends StatelessWidget {
               name,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.left,
-              style: theme.textTheme.bodySmall!.copyWith(
-                letterSpacing: getHorizontalSize(0.02),
-              ),
+              style: theme.textTheme.bodySmall!
+                  .copyWith(letterSpacing: getHorizontalSize(0.02)),
             ),
           ),
         ],

@@ -1,6 +1,9 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+// 🌎 Project imports:
+import '../theme/theme_helper.dart';
+
 // ignore: must_be_immutable
 class CustomCheckboxButton extends StatelessWidget {
   CustomCheckboxButton({
@@ -17,6 +20,7 @@ class CustomCheckboxButton extends StatelessWidget {
     this.padding,
     this.textStyle,
     this.textAlignment,
+    this.isExpandedText = false,
   }) : super(key: key);
 
   final BoxDecoration? decoration;
@@ -31,6 +35,7 @@ class CustomCheckboxButton extends StatelessWidget {
   final EdgeInsetsGeometry? padding;
   final TextStyle? textStyle;
   final TextAlign? textAlignment;
+  final bool isExpandedText;
 
   @override
   Widget build(BuildContext context) {
@@ -58,16 +63,17 @@ class CustomCheckboxButton extends StatelessWidget {
         children: [
           Padding(
             child: checkboxWidget,
-            padding: padding ?? EdgeInsets.zero,
+            padding: EdgeInsets.only(right: 8),
           ),
-          textWidget,
+          isExpandedText ? Expanded(child: textWidget) : textWidget,
         ],
       );
   Widget get rightSideCheckbox => Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          textWidget,
+          isExpandedText ? Expanded(child: textWidget) : textWidget,
           Padding(
-            padding: padding ?? EdgeInsets.zero,
+            padding: EdgeInsets.only(left: 8),
             child: checkboxWidget,
           ),
         ],
@@ -75,12 +81,16 @@ class CustomCheckboxButton extends StatelessWidget {
   Widget get textWidget => Text(
         text ?? "",
         textAlign: textAlignment ?? TextAlign.center,
-        style: textStyle,
+        style: textStyle ?? theme.textTheme.bodyLarge,
       );
   Widget get checkboxWidget => SizedBox(
         height: iconSize,
         width: iconSize,
         child: Checkbox(
+          visualDensity: VisualDensity(
+            vertical: -4,
+            horizontal: -4,
+          ),
           value: value ?? false,
           onChanged: (value) {
             onChange(value!);

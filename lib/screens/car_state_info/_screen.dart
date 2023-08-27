@@ -55,8 +55,10 @@ class CarStateInformation extends StatelessWidget {
                       Container(
                           margin: getMargin(bottom: 5),
                           padding: getPadding(top: 20, bottom: 20),
-                          decoration: AppDecoration.fill.copyWith(
-                              borderRadius: BorderRadiusStyle.customBorderBL10),
+                          decoration: AppDecoration.fillOnPrimaryContainer
+                              .copyWith(
+                                  borderRadius:
+                                      BorderRadiusStyle.customBorderBL10),
                           child: Column(
                               mainAxisSize: MainAxisSize.min,
                               crossAxisAlignment: CrossAxisAlignment.end,

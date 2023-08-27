@@ -1,5 +1,5 @@
 /// 비밀번호는
-/// 대문자 이상, 소문자 이상, 숫자 하나 이상, 특수 문자 [@#$%^&+=] 이상이어야 합니다.
+/// 대문자 1자 이상, 소문자 1자 이상, 숫자 1자 이상, 특수 문자([@#$%^&+=]) 1자 이상이어야 합니다.
 /// 최소 4자 이상의 길이여야 하며, 공백은 허용되지 않습니다.
 bool isValidPassword(String? inputString, {bool isRequired = false}) {
   bool isInputStringValid = false;
@@ -8,7 +8,7 @@ bool isValidPassword(String? inputString, {bool isRequired = false}) {
     isInputStringValid = true;
   }
 
-  if (inputString != null) {
+  if (inputString != null && inputString.isNotEmpty) {
     const pattern =
         r'^(?=.*?[A-Z])(?=(.*[a-z]){1,})(?=(.*[\d]){1,})(?=(.*[\W]){1,})(?!.*\s).{8,}$';
 
@@ -28,7 +28,7 @@ bool isValidEmail(String? inputString, {bool isRequired = false}) {
     isInputStringValid = true;
   }
 
-  if (inputString != null) {
+  if (inputString != null && inputString.isNotEmpty) {
     const pattern =
         r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
 
@@ -50,6 +50,28 @@ bool isText(String? inputString, {bool isRequired = false}) {
 
   if (inputString != null) {
     const pattern = r'^[a-zA-Z]+$';
+
+    final regExp = RegExp(pattern);
+
+    isInputStringValid = regExp.hasMatch(inputString);
+  }
+
+  return isInputStringValid;
+}
+
+/// Checks if string consist only numeric.
+bool isNumeric(
+  String? inputString, {
+  bool isRequired = false,
+}) {
+  bool isInputStringValid = false;
+
+  if (!isRequired && (inputString == null ? true : inputString.isEmpty)) {
+    isInputStringValid = true;
+  }
+
+  if (inputString != null && inputString.isNotEmpty) {
+    const pattern = r'^\d+$';
 
     final regExp = RegExp(pattern);
 

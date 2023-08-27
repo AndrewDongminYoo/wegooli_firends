@@ -20,7 +20,7 @@ class SendingCrewInvitationDialog extends StatelessWidget {
     return SingleChildScrollView(
         child: Container(
             margin: getMargin(left: 16, right: 16, bottom: 323),
-            decoration: AppDecoration.fill
+            decoration: AppDecoration.fillOnPrimaryContainer
                 .copyWith(borderRadius: BorderRadiusStyle.roundedBorder10),
             child: Column(
                 mainAxisSize: MainAxisSize.min,

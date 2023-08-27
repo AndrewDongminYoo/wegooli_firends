@@ -2,27 +2,19 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-// This functions are responsible to make UI responsive across all the mobile devices.
-MediaQueryData mediaQueryData =
-    MediaQueryData.fromView(PlatformDispatcher.instance.views.first);
-
 /// SingletonFlutterView는 곧 지원될 다중 뷰 및 다중 창에 대한 Flutter의 지원을 준비하기 위해 더 이상 사용되지 않습니다.
 /// [BuildContext]를 사용할 수 있는 경우, [View.of]를 통해 해당 컨텍스트와 연결된 현재 [FlutterView]를 조회하세요.
 /// [window] 프로퍼티에서 마이그레이션하려면 [View.of]를 [BuildContext]와 함께 사용하는 것이 좋습니다.
 /// [FlutterView]를 조회할 수 있는 컨텍스트가 없는 경우, 이 위젯바인딩에 의해 노출된 [platformDispatcher]를 플랫폼별 기능에 직접 사용할 수 있습니다.
-/// @Deprecated(
-///    '컨텍스트에서 [View.of(buildContext)]를 통해 현재 [FlutterView]를 조회하거나 대신 [PlatformDispatcher]를 직접 참조하세요.'
-///    '이 기능은 v3.7.0-32.0.pre 이후부터 멀티뷰 지원을 위해 더 이상 사용되지 않습니다.'
-///  )
-var implicitView = WidgetsBinding.instance.platformDispatcher.implicitView;
-Size size = implicitView!.physicalSize / implicitView!.devicePixelRatio;
+MediaQueryData mediaQueryData =
+    MediaQueryData.fromView(PlatformDispatcher.instance.views.first);
 
 /// 주의! 이 값들이 정적 UI를 빌드하는 데 사용되는 정적 값이라고 생각하면 안 됩니다.
 /// 이들은 피그마 디자인의 뷰포트 값입니다.
 /// 코드에서 UI를 반응형으로 만들기 위한 참조로 사용됩니다.
 const num FIGMA_DESIGN_WIDTH = 360;
-const num FIGMA_DESIGN_HEIGHT = 760;
-const num FIGMA_DESIGN_STATUS_BAR = 47;
+const num FIGMA_DESIGN_HEIGHT = 640;
+const num FIGMA_DESIGN_STATUS_BAR = 0;
 
 /// 이 메서드는 디바이스 뷰포트 너비를 가져오는 데 사용됩니다.
 get _width {

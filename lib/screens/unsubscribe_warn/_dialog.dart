@@ -14,7 +14,7 @@ class UnsubscriptionConfirmWarnDialog extends StatelessWidget {
     mediaQueryData = MediaQuery.of(context);
     return Container(
         width: getHorizontalSize(328),
-        decoration: AppDecoration.fill
+        decoration: AppDecoration.fillOnPrimaryContainer
             .copyWith(borderRadius: BorderRadiusStyle.roundedBorder10),
         child: Column(
             mainAxisSize: MainAxisSize.min,

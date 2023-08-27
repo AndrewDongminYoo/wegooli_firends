@@ -53,9 +53,7 @@ class SplashLoading extends StatelessWidget {
                       textAlign: TextAlign.left,
                       style: CustomTextStyles
                           .titleSmallNanumSquareRoundOnPrimary
-                          .copyWith(
-                        letterSpacing: getHorizontalSize(0.03),
-                      ),
+                          .copyWith(letterSpacing: getHorizontalSize(0.03)),
                     ),
                     CustomImageView(
                       onTap: () => AlertDialog(title: Text('Hello World!!')),

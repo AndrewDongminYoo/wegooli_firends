@@ -26,7 +26,7 @@ class GatewayScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Container(
-                          decoration: AppDecoration.fill6,
+                          decoration: AppDecoration.fillOnSecondary,
                           child: Column(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
@@ -42,7 +42,7 @@ class GatewayScreen extends StatelessWidget {
                       Expanded(
                           child: SingleChildScrollView(
                               child: Container(
-                                  decoration: AppDecoration.fill6,
+                                  decoration: AppDecoration.fillOnSecondary,
                                   child: Column(
                                       mainAxisAlignment:
                                           MainAxisAlignment.start,

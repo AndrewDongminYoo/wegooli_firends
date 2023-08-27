@@ -43,9 +43,8 @@ class RegisterSuccess extends GetWidget<RegisterSuccessPageController> {
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.center,
-                        style: theme.textTheme.headlineSmall!.copyWith(
-                          letterSpacing: getHorizontalSize(0.05),
-                        ),
+                        style: theme.textTheme.headlineSmall!
+                            .copyWith(letterSpacing: getHorizontalSize(0.05)),
                       ),
                     ),
                     Padding(

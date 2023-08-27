@@ -456,8 +456,9 @@ class SmartKeyNotAvailable extends StatelessWidget {
                                             right: 37,
                                             bottom: 24,
                                           ),
-                                          decoration:
-                                              AppDecoration.outline1.copyWith(
+                                          decoration: AppDecoration
+                                              .outlineBlueGray
+                                              .copyWith(
                                             borderRadius: BorderRadiusStyle
                                                 .circleBorder60,
                                           ),
@@ -506,8 +507,9 @@ class SmartKeyNotAvailable extends StatelessWidget {
                                             right: 37,
                                             bottom: 24,
                                           ),
-                                          decoration:
-                                              AppDecoration.outline1.copyWith(
+                                          decoration: AppDecoration
+                                              .outlineBlueGray
+                                              .copyWith(
                                             borderRadius: BorderRadiusStyle
                                                 .circleBorder60,
                                           ),

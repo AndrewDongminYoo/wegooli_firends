@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable, deprecated_member_use
+
 // 🎯 Dart imports:
 import 'dart:io';
 
@@ -8,13 +10,12 @@ import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-// ignore: must_be_immutable
 class CustomImageView extends StatelessWidget {
   /// a [CustomImageView] it can be used for showing any type of images
   /// it will shows the placeholder image if image is not found on network image
   CustomImageView({
-    this.height = 18,
-    this.width = 18,
+    this.height,
+    this.width,
     this.url,
     this.imagePath,
     this.svgPath,
@@ -104,6 +105,7 @@ class CustomImageView extends StatelessWidget {
           height: height,
           width: width,
           fit: fit ?? BoxFit.contain,
+          color: color,
         ),
       );
     } else if (file != null && file!.path.isNotEmpty) {

@@ -4,11 +4,10 @@ import 'package:flutter/material.dart';
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
-// ignore: must_be_immutable
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   CustomAppBar({
     Key? key,
-    required this.height,
+    this.height,
     this.styleType,
     this.leadingWidth,
     this.leading,
@@ -17,19 +16,19 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.actions,
   }) : super(key: key);
 
-  double height;
-  Style? styleType;
-  double? leadingWidth;
-  Widget? leading;
-  Widget? title;
-  bool? centerTitle;
-  List<Widget>? actions;
+  final double? height;
+  final Style? styleType;
+  final double? leadingWidth;
+  final Widget? leading;
+  final Widget? title;
+  final bool? centerTitle;
+  final List<Widget>? actions;
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       elevation: 0,
-      toolbarHeight: height,
+      toolbarHeight: height ?? getVerticalSize(55),
       automaticallyImplyLeading: false,
       backgroundColor: Colors.transparent,
       flexibleSpace: _getStyle(),
@@ -45,7 +44,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Size get preferredSize => Size(
         mediaQueryData.size.width,
-        height,
+        height ?? getVerticalSize(55),
       );
   _getStyle() {
     switch (styleType) {

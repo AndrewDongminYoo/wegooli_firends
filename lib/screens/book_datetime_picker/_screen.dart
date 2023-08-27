@@ -22,7 +22,7 @@ class ReservationDatetimePickerBottomSheet extends StatelessWidget {
         child: SingleChildScrollView(
             child: Container(
                 padding: getPadding(top: 16, bottom: 16),
-                decoration: AppDecoration.fill
+                decoration: AppDecoration.fillOnPrimaryContainer
                     .copyWith(borderRadius: BorderRadiusStyle.customBorderTL10),
                 child: Column(
                     mainAxisSize: MainAxisSize.min,

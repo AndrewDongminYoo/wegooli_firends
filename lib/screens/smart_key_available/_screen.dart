@@ -11,8 +11,7 @@ import 'controller/_controller.dart';
 
 // ignore: must_be_immutable
 class SmartKeyAvailablePage extends StatelessWidget {
-  SmartKeyAvailablePage({Key? key})
-      : super(key: key);
+  SmartKeyAvailablePage({Key? key}) : super(key: key);
   SmartKeyAvailableController controller = SmartKeyAvailableController.to;
 
   final String token = Get.find<PrefUtils>().getData('token');
@@ -77,7 +76,8 @@ class SmartKeyAvailablePage extends StatelessWidget {
         Get.find<WegooliFriends>().getScheduleControllerApi();
 
     final response2 = await scheduleControllerApi.selectScheduleList(
-         teamSeq: (ScheduleRequestBuilder()..teamSeq = 2).build().teamSeq, extra: extra);
+        teamSeq: (ScheduleRequestBuilder()..teamSeq = 2).build().teamSeq,
+        extra: extra);
     print('response2.data : ${response2.data}');
     bool done = response2.data!.any(compose);
     controller.isUsed.value = done;
@@ -173,8 +173,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                               overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.left,
                               style: theme.textTheme.titleMedium!.copyWith(
-                                letterSpacing: getHorizontalSize(0.03),
-                              ),
+                                  letterSpacing: getHorizontalSize(0.03)),
                             ),
                             Padding(
                               padding: getPadding(top: 4),
@@ -185,8 +184,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                 textAlign: TextAlign.left,
                                 style: CustomTextStyles.bodySmallOnPrimary
                                     .copyWith(
-                                  letterSpacing: getHorizontalSize(0.02),
-                                ),
+                                        letterSpacing: getHorizontalSize(0.02)),
                               ),
                             ),
                             Padding(
@@ -209,10 +207,10 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                       '연료 ${controller.terminalModelObj.value.fuel ?? 0}%',
                                       overflow: TextOverflow.ellipsis,
                                       textAlign: TextAlign.left,
-                                      style:
-                                          theme.textTheme.bodySmall!.copyWith(
-                                        letterSpacing: getHorizontalSize(0.02),
-                                      ),
+                                      style: theme.textTheme.bodySmall!
+                                          .copyWith(
+                                              letterSpacing:
+                                                  getHorizontalSize(0.02)),
                                     ),
                                   ),
                                   ArrowLeft(),
@@ -234,9 +232,8 @@ class SmartKeyAvailablePage extends StatelessWidget {
                         "lbl68".tr,
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.left,
-                        style: CustomTextStyles.bodySmallOnPrimary.copyWith(
-                          letterSpacing: getHorizontalSize(0.02),
-                        ),
+                        style: CustomTextStyles.bodySmallOnPrimary
+                            .copyWith(letterSpacing: getHorizontalSize(0.02)),
                       ),
                       Padding(
                         padding: getPadding(left: 5),
@@ -244,9 +241,8 @@ class SmartKeyAvailablePage extends StatelessWidget {
                           "|",
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.left,
-                          style: CustomTextStyles.bodySmallOnPrimary.copyWith(
-                            letterSpacing: getHorizontalSize(0.02),
-                          ),
+                          style: CustomTextStyles.bodySmallOnPrimary
+                              .copyWith(letterSpacing: getHorizontalSize(0.02)),
                         ),
                       ),
                       Container(
@@ -259,9 +255,8 @@ class SmartKeyAvailablePage extends StatelessWidget {
                         ),
                         decoration: BoxDecoration(
                           color: appTheme.green500,
-                          borderRadius: BorderRadius.circular(
-                            getHorizontalSize(2),
-                          ),
+                          borderRadius:
+                              BorderRadius.circular(getHorizontalSize(2)),
                         ),
                       ),
                       Padding(
@@ -272,9 +267,8 @@ class SmartKeyAvailablePage extends StatelessWidget {
                               : 'lbl70'.tr,
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.left,
-                          style: theme.textTheme.bodySmall!.copyWith(
-                            letterSpacing: getHorizontalSize(0.02),
-                          ),
+                          style: theme.textTheme.bodySmall!
+                              .copyWith(letterSpacing: getHorizontalSize(0.02)),
                         ),
                       ),
                     ],
@@ -297,9 +291,8 @@ class SmartKeyAvailablePage extends StatelessWidget {
                       "lbl71".tr,
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.left,
-                      style: CustomTextStyles.titleMediumBlack900.copyWith(
-                        letterSpacing: getHorizontalSize(0.04),
-                      ),
+                      style: CustomTextStyles.titleMediumBlack900
+                          .copyWith(letterSpacing: getHorizontalSize(0.04)),
                     ),
                   ),
                 ),
@@ -338,8 +331,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                           color: theme
                                               .colorScheme.onPrimaryContainer,
                                           borderRadius: BorderRadius.circular(
-                                            getHorizontalSize(60),
-                                          ),
+                                              getHorizontalSize(60)),
                                           border: Border.all(
                                             color: appTheme.blueGray30033,
                                             width: getHorizontalSize(1),
@@ -414,8 +406,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                           color: theme
                                               .colorScheme.onPrimaryContainer,
                                           borderRadius: BorderRadius.circular(
-                                            getHorizontalSize(60),
-                                          ),
+                                              getHorizontalSize(60)),
                                           border: Border.all(
                                             color: appTheme.blueGray30033,
                                             width: getHorizontalSize(1),
@@ -480,7 +471,9 @@ class SmartKeyAvailablePage extends StatelessWidget {
                             },
                             child: Container(
                               padding: getPadding(all: 5),
-                              decoration: AppDecoration.shadow.copyWith(borderRadius: BorderRadiusStyle.circleBorder65),
+                              decoration: AppDecoration.shadow.copyWith(
+                                  borderRadius:
+                                      BorderRadiusStyle.circleBorder65),
                               child: Container(
                                 padding: getPadding(
                                   left: 37,
@@ -488,7 +481,8 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                   right: 37,
                                   bottom: 24,
                                 ),
-                                decoration: AppDecoration.outline1.copyWith(
+                                decoration:
+                                    AppDecoration.outlineBlueGray.copyWith(
                                   borderRadius:
                                       BorderRadiusStyle.circleBorder60,
                                 ),
@@ -509,8 +503,8 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                         textAlign: TextAlign.left,
                                         style: theme.textTheme.titleMedium!
                                             .copyWith(
-                                          letterSpacing: getHorizontalSize(0.03),
-                                        ),
+                                                letterSpacing:
+                                                    getHorizontalSize(0.03)),
                                       ),
                                     ),
                                   ],
@@ -525,7 +519,9 @@ class SmartKeyAvailablePage extends StatelessWidget {
                             child: Container(
                               margin: getMargin(left: 20),
                               padding: getPadding(all: 5),
-                              decoration: AppDecoration.shadow.copyWith(borderRadius: BorderRadiusStyle.circleBorder65),
+                              decoration: AppDecoration.shadow.copyWith(
+                                  borderRadius:
+                                      BorderRadiusStyle.circleBorder65),
                               child: Container(
                                 padding: getPadding(
                                   left: 37,
@@ -533,7 +529,8 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                   right: 37,
                                   bottom: 24,
                                 ),
-                                decoration: AppDecoration.outline1.copyWith(
+                                decoration:
+                                    AppDecoration.outlineBlueGray.copyWith(
                                   borderRadius:
                                       BorderRadiusStyle.circleBorder60,
                                 ),
@@ -554,8 +551,8 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                         textAlign: TextAlign.left,
                                         style: theme.textTheme.titleMedium!
                                             .copyWith(
-                                          letterSpacing: getHorizontalSize(0.03),
-                                        ),
+                                                letterSpacing:
+                                                    getHorizontalSize(0.03)),
                                       ),
                                     ),
                                   ],

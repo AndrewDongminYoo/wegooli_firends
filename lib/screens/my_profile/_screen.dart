@@ -39,9 +39,7 @@ class MyProfilePage extends StatelessWidget {
                 imagePath: Assets.images.imgAvatar5.path,
                 height: getSize(80),
                 width: getSize(80),
-                radius: BorderRadius.circular(
-                  getHorizontalSize(40),
-                ),
+                radius: BorderRadius.circular(getHorizontalSize(40)),
               ),
               Padding(
                 padding: getPadding(top: 16),
@@ -49,9 +47,8 @@ class MyProfilePage extends StatelessWidget {
                   "nickname".tr,
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.left,
-                  style: CustomTextStyles.titleMedium18.copyWith(
-                    letterSpacing: getHorizontalSize(0.04),
-                  ),
+                  style: CustomTextStyles.titleMedium18
+                      .copyWith(letterSpacing: getHorizontalSize(0.04)),
                 ),
               ),
               Padding(
@@ -60,9 +57,8 @@ class MyProfilePage extends StatelessWidget {
                   controller.phoneNumber.value,
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.left,
-                  style: theme.textTheme.bodyLarge!.copyWith(
-                    letterSpacing: getHorizontalSize(0.03),
-                  ),
+                  style: theme.textTheme.bodyLarge!
+                      .copyWith(letterSpacing: getHorizontalSize(0.03)),
                 ),
               ),
               Container(
@@ -94,9 +90,8 @@ class MyProfilePage extends StatelessWidget {
                         "subscriptionInformation".tr,
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.left,
-                        style: theme.textTheme.bodyLarge!.copyWith(
-                          letterSpacing: getHorizontalSize(0.03),
-                        ),
+                        style: theme.textTheme.bodyLarge!
+                            .copyWith(letterSpacing: getHorizontalSize(0.03)),
                       ),
                     ),
                     Spacer(),
@@ -136,9 +131,8 @@ class MyProfilePage extends StatelessWidget {
                         "cardRegistration".tr,
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.left,
-                        style: theme.textTheme.bodyLarge!.copyWith(
-                          letterSpacing: getHorizontalSize(0.03),
-                        ),
+                        style: theme.textTheme.bodyLarge!
+                            .copyWith(letterSpacing: getHorizontalSize(0.03)),
                       ),
                     ),
                     Spacer(),

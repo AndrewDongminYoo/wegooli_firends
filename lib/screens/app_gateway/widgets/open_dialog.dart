@@ -30,7 +30,7 @@ class RouteModal extends StatelessWidget {
               : Get.bottomSheet(bottomSheet!, isScrollControlled: true);
         },
         child: Container(
-            decoration: AppDecoration.fill6,
+            decoration: AppDecoration.fillOnSecondary,
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.start, children: [
               Align(

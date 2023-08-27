@@ -28,6 +28,7 @@ dependencies:
   built_collection: ^5.1.1
   built_value: ^8.6.1
   cached_network_image: ^3.2.3
+  carousel_slider: ^4.2.1
   connectivity_plus: ^4.0.2
   cookie_jar: ^4.0.8
   cupertino_icons: ^1.0.5
@@ -44,6 +45,7 @@ dependencies:
   flutter_localization: ^0.1.13
   flutter_lorem: ^2.0.0
   flutter_svg: ^2.0.7
+  flutter_svg_provider: ^1.0.4
   get: ^4.6.5
   image_picker: ^1.0.2
   intl: any
@@ -55,6 +57,7 @@ dependencies:
   one_of_serializer: ^1.5.0
   sendbird_sdk: ^3.2.17
   shared_preferences: ^2.2.0
+  smooth_page_indicator: ^1.1.0
   table_calendar: ^3.0.9
 
 dev_dependencies:

@@ -31,12 +31,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(visualDensity: VisualDensity.standard),
+        theme: theme,
         darkTheme: ThemeData.dark(useMaterial3: true),
         defaultTransition: Transition.fadeIn,
         translations: LocaleMessages(),
         locale: const Locale('ko'), // for setting localization strings
-        fallbackLocale: Locale('ko'),
+        fallbackLocale: Get.deviceLocale,
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
         title: '위굴리 프렌즈',

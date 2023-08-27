@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
+import '/core/utils/size_utils.dart';
+import '/theme/text_styles.dart';
 import '/widgets/base_button.dart';
 
 class CustomElevatedButton extends BaseButton {
@@ -14,7 +16,6 @@ class CustomElevatedButton extends BaseButton {
     VoidCallback? onTap,
     ButtonStyle? buttonStyle,
     Alignment? alignment,
-    ButtonStyle? disabledButtonStyle,
     TextStyle? buttonTextStyle,
     bool? isDisabled,
     double? height,
@@ -25,7 +26,6 @@ class CustomElevatedButton extends BaseButton {
           onTap: onTap,
           buttonStyle: buttonStyle,
           isDisabled: isDisabled,
-          disabledButtonStyle: disabledButtonStyle,
           buttonTextStyle: buttonTextStyle,
           height: height,
           width: width,
@@ -47,19 +47,14 @@ class CustomElevatedButton extends BaseButton {
         : buildElevatedButtonWidget;
   }
 
-  ButtonStyle? get elevatedButtonStyle =>
-      (isDisabled ?? false) ? disabledButtonStyle : buttonStyle;
   Widget get buildElevatedButtonWidget => Container(
-        height: this.height,
+        height: this.height ?? getVerticalSize(52),
+        width: this.width ?? double.maxFinite,
         margin: margin,
-        width: this.width,
         decoration: decoration,
         child: ElevatedButton(
-          style: elevatedButtonStyle!.copyWith(
-            visualDensity: VisualDensity(horizontal: -4, vertical: -4),
-            padding: MaterialStateProperty.all(EdgeInsets.zero),
-          ),
-          onPressed: onTap ?? () {},
+          style: buttonStyle,
+          onPressed: isDisabled ?? false ? null : onTap ?? () {},
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -67,7 +62,7 @@ class CustomElevatedButton extends BaseButton {
               leftIcon ?? const SizedBox.shrink(),
               Text(
                 text,
-                style: buttonTextStyle,
+                style: buttonTextStyle ?? CustomTextStyles.titleMedium18,
               ),
               rightIcon ?? const SizedBox.shrink(),
             ],

@@ -57,8 +57,10 @@ class UpcomingUnsubscriptionFilled
                       Container(
                           margin: getMargin(bottom: 5),
                           padding: getPadding(all: 20),
-                          decoration: AppDecoration.fill.copyWith(
-                              borderRadius: BorderRadiusStyle.customBorderBL10),
+                          decoration: AppDecoration.fillOnPrimaryContainer
+                              .copyWith(
+                                  borderRadius:
+                                      BorderRadiusStyle.customBorderBL10),
                           child: Column(
                               mainAxisSize: MainAxisSize.min,
                               crossAxisAlignment: CrossAxisAlignment.end,

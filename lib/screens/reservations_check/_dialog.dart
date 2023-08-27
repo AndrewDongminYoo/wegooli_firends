@@ -9,7 +9,6 @@ import '/core/app_export.dart';
 
 // ignore: must_be_immutable
 class ReservationsCheckingPageDialog extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
@@ -17,7 +16,7 @@ class ReservationsCheckingPageDialog extends StatelessWidget {
         child: Container(
             margin: getMargin(left: 16, right: 16, bottom: 288),
             padding: getPadding(all: 15),
-            decoration: AppDecoration.fill
+            decoration: AppDecoration.fillOnPrimaryContainer
                 .copyWith(borderRadius: BorderRadiusStyle.roundedBorder10),
             child: Column(
                 mainAxisSize: MainAxisSize.min,

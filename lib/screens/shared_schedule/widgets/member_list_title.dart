@@ -20,9 +20,8 @@ class MemberListTitle extends StatelessWidget {
         "teamMembers".tr,
         overflow: TextOverflow.ellipsis,
         textAlign: TextAlign.left,
-        style: CustomTextStyles.titleMediumBlack900.copyWith(
-          letterSpacing: getHorizontalSize(0.04),
-        ),
+        style: CustomTextStyles.titleMediumBlack900
+            .copyWith(letterSpacing: getHorizontalSize(0.04)),
       ),
     );
   }

@@ -25,10 +25,7 @@ class CustomDropDown extends StatelessWidget {
     this.fillColor,
     this.filled = false,
     this.contentPadding,
-    this.defaultBorderDecoration,
-    this.enabledBorderDecoration,
-    this.focusedBorderDecoration,
-    this.disabledBorderDecoration,
+    this.borderDecoration,
     this.validator,
     this.onChanged,
   }) : super(key: key);
@@ -51,10 +48,7 @@ class CustomDropDown extends StatelessWidget {
   final Color? fillColor;
   final bool? filled;
   final EdgeInsets? contentPadding;
-  final InputBorder? defaultBorderDecoration;
-  final InputBorder? enabledBorderDecoration;
-  final InputBorder? focusedBorderDecoration;
-  final InputBorder? disabledBorderDecoration;
+  final InputBorder? borderDecoration;
   final FormFieldValidator<SelectionPopupModel>? validator;
   final Function(SelectionPopupModel)? onChanged;
 
@@ -75,19 +69,19 @@ class CustomDropDown extends StatelessWidget {
           focusNode: focusNode ?? FocusNode(),
           icon: icon,
           autofocus: autofocus!,
-          style: textStyle,
+          style: textStyle ?? CustomTextStyles.bodyLargeGray500,
           items: items?.map((SelectionPopupModel item) {
             return DropdownMenuItem<SelectionPopupModel>(
               value: item,
               child: Text(
                 item.title,
                 overflow: TextOverflow.ellipsis,
+                style: hintStyle ?? CustomTextStyles.bodyLargeGray500,
               ),
             );
           }).toList(),
           decoration: decoration,
           validator: validator,
-          value: initialValue ? items![0] : null,
           onChanged: (value) {
             onChanged!(value!);
           },
@@ -95,7 +89,7 @@ class CustomDropDown extends StatelessWidget {
       );
   InputDecoration get decoration => InputDecoration(
         hintText: hintText ?? "",
-        hintStyle: hintStyle,
+        hintStyle: hintStyle ?? CustomTextStyles.bodyLargeGray500,
         prefixIcon: prefix,
         prefixIconConstraints: prefixConstraints,
         suffixIcon: suffix,
@@ -103,44 +97,31 @@ class CustomDropDown extends StatelessWidget {
         fillColor: fillColor,
         filled: filled,
         isDense: true,
-        contentPadding: contentPadding,
-        border: defaultBorderDecoration ??
+        contentPadding: contentPadding ??
+            getPadding(
+              left: 10,
+              top: 14,
+              bottom: 14,
+            ),
+        border: borderDecoration ??
             OutlineInputBorder(
-              borderRadius: BorderRadius.circular(
-                getHorizontalSize(4.00),
-              ),
               borderSide: BorderSide(
-                color: theme.colorScheme.secondaryContainer,
+                color: appTheme.blueGray30033,
                 width: 1,
               ),
             ),
-        enabledBorder: enabledBorderDecoration ??
+        enabledBorder: borderDecoration ??
             OutlineInputBorder(
-              borderRadius: BorderRadius.circular(
-                getHorizontalSize(4.00),
-              ),
               borderSide: BorderSide(
-                color: theme.colorScheme.secondaryContainer,
+                color: appTheme.blueGray30033,
                 width: 1,
               ),
             ),
-        focusedBorder: focusedBorderDecoration ??
+        focusedBorder: borderDecoration ??
             OutlineInputBorder(
-              borderRadius: BorderRadius.circular(
-                getHorizontalSize(4.00),
-              ),
+              borderRadius: BorderRadius.circular(getHorizontalSize(4.00)),
               borderSide: BorderSide(
-                color: theme.colorScheme.secondaryContainer,
-                width: 1,
-              ),
-            ),
-        disabledBorder: disabledBorderDecoration ??
-            OutlineInputBorder(
-              borderRadius: BorderRadius.circular(
-                getHorizontalSize(4.00),
-              ),
-              borderSide: BorderSide(
-                color: theme.colorScheme.secondaryContainer,
+                color: theme.colorScheme.onError,
                 width: 1,
               ),
             ),

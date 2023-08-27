@@ -116,9 +116,8 @@ class LoginWithIdAndPassword
                 "FRIENDS",
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.left,
-                style: theme.textTheme.displayMedium!.copyWith(
-                  letterSpacing: getHorizontalSize(0.1),
-                ),
+                style: theme.textTheme.displayMedium!
+                    .copyWith(letterSpacing: getHorizontalSize(0.1)),
               ),
               Align(
                 alignment: Alignment.centerRight,
@@ -133,9 +132,7 @@ class LoginWithIdAndPassword
                         textAlign: TextAlign.left,
                         style: CustomTextStyles
                             .titleSmallNanumSquareRoundOnPrimary
-                            .copyWith(
-                          letterSpacing: getHorizontalSize(0.03),
-                        ),
+                            .copyWith(letterSpacing: getHorizontalSize(0.03)),
                       ),
                       CustomImageView(
                         svgPath: Assets.svg.imgWegooliBlueGray900.path,
@@ -219,9 +216,8 @@ class LoginWithIdAndPassword
                   "youHaveNoAccount".tr,
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.left,
-                  style: theme.textTheme.bodyLarge!.copyWith(
-                    letterSpacing: getHorizontalSize(0.03),
-                  ),
+                  style: theme.textTheme.bodyLarge!
+                      .copyWith(letterSpacing: getHorizontalSize(0.03)),
                 ),
               ),
               CustomElevatedButton(

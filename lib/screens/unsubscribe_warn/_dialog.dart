@@ -25,7 +25,7 @@ class UnsubscriptionConfirmWarnDialog extends StatelessWidget {
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text("scheduleAnUnsubscribe".tr,
+                        Text(Localized.message.scheduleAnUnsubscribe,
                             overflow: TextOverflow.ellipsis,
                             textAlign: TextAlign.left,
                             style: CustomTextStyles.titleMedium18.copyWith(
@@ -43,7 +43,8 @@ class UnsubscriptionConfirmWarnDialog extends StatelessWidget {
                   width: getHorizontalSize(278),
                   margin: getMargin(left: 25, top: 38, right: 25),
                   child: Text(
-                      "youCanCancelYourSubscriptionWithinTheRemainingPeriod".tr,
+                      Localized.message
+                          .youCanCancelYourSubscriptionWithinTheRemainingPeriod,
                       maxLines: 3,
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.justify,
@@ -55,7 +56,7 @@ class UnsubscriptionConfirmWarnDialog extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         CustomElevatedButton(
-                            text: "cancel".tr,
+                            text: Localized.message.cancel,
                             buttonStyle: CustomButtonStyles.fillGray400BL10
                                 .copyWith(
                                     fixedSize: MaterialStateProperty.all<Size>(
@@ -63,7 +64,7 @@ class UnsubscriptionConfirmWarnDialog extends StatelessWidget {
                                             getVerticalSize(52)))),
                             buttonTextStyle: theme.textTheme.titleMedium!),
                         CustomElevatedButton(
-                            text: "cancel".tr,
+                            text: Localized.message.cancel,
                             buttonStyle: CustomButtonStyles.fillPrimaryBR10
                                 .copyWith(
                                     fixedSize: MaterialStateProperty.all<Size>(

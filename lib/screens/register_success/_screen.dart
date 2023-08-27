@@ -39,7 +39,7 @@ class RegisterSuccess extends GetWidget<RegisterSuccessPageController> {
                       width: getHorizontalSize(153),
                       margin: getMargin(top: 36),
                       child: Text(
-                        "yourRegistrationHasBeenCompleted".tr,
+                        Localized.message.yourRegistrationHasBeenCompleted,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.center,
@@ -111,7 +111,7 @@ class RegisterSuccess extends GetWidget<RegisterSuccessPageController> {
           bottomNavigationBar: Container(
               margin: getMargin(left: 16, right: 16, bottom: 29),
               child: CustomElevatedButton(
-                text: "getStarted".tr,
+                text: Localized.message.getStarted,
                 buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
                     fixedSize: MaterialStateProperty.all<Size>(
                         Size(double.maxFinite, getVerticalSize(52)))),

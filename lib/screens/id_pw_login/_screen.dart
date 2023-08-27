@@ -173,7 +173,7 @@ class LoginWithIdAndPassword
                       bottom: 14,
                     ),
                     textStyle: CustomTextStyles.bodyLargeGray50003,
-                    hintText: "password".tr,
+                    hintText: Localized.message.password,
                     obscureText: controller.isShowPassword.isFalse,
                     hintStyle: CustomTextStyles.bodyLargeGray50003,
                     suffix: Container(
@@ -193,7 +193,7 @@ class LoginWithIdAndPassword
                     fillColor: theme.colorScheme.onPrimaryContainer,
                   )),
               CustomElevatedButton(
-                  text: "signIn".tr,
+                  text: Localized.message.signIn,
                   margin: getMargin(top: 30),
                   buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
                       fixedSize: MaterialStateProperty.all<Size>(Size(
@@ -213,7 +213,7 @@ class LoginWithIdAndPassword
               Padding(
                 padding: getPadding(top: 57),
                 child: Text(
-                  "youHaveNoAccount".tr,
+                  Localized.message.youHaveNoAccount,
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.left,
                   style: theme.textTheme.bodyLarge!
@@ -221,7 +221,7 @@ class LoginWithIdAndPassword
                 ),
               ),
               CustomElevatedButton(
-                  text: "signUp".tr,
+                  text: Localized.message.signUp,
                   margin: getMargin(
                     top: 11,
                     bottom: 5,

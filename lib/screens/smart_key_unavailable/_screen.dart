@@ -59,7 +59,7 @@ class SmartKeyNotAvailable extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Text(
-                                "rayGen3".tr,
+                                Localized.message.rayGen3,
                                 overflow: TextOverflow.ellipsis,
                                 textAlign: TextAlign.left,
                                 style: theme.textTheme.titleMedium!.copyWith(
@@ -95,7 +95,7 @@ class SmartKeyNotAvailable extends StatelessWidget {
                                         bottom: 1,
                                       ),
                                       child: Text(
-                                        "gasoline20Percent".tr,
+                                        Localized.message.gasoline20Percent,
                                         overflow: TextOverflow.ellipsis,
                                         textAlign: TextAlign.left,
                                         style:
@@ -130,7 +130,7 @@ class SmartKeyNotAvailable extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          "status".tr,
+                          Localized.message.status,
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.left,
                           style: CustomTextStyles.bodySmallOnPrimary.copyWith(
@@ -166,7 +166,7 @@ class SmartKeyNotAvailable extends StatelessWidget {
                         Padding(
                           padding: getPadding(left: 2),
                           child: Text(
-                            "hongGilDongIsUsingIt".tr,
+                            Localized.message.hongGilDongIsUsingIt,
                             overflow: TextOverflow.ellipsis,
                             textAlign: TextAlign.left,
                             style: theme.textTheme.bodySmall!.copyWith(
@@ -253,7 +253,7 @@ class SmartKeyNotAvailable extends StatelessWidget {
                         top: 21,
                       ),
                       child: Text(
-                        "smartKey".tr,
+                        Localized.message.smartKey,
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.left,
                         style: CustomTextStyles.titleMediumBlack900.copyWith(
@@ -339,7 +339,8 @@ class SmartKeyNotAvailable extends StatelessWidget {
                                                   Padding(
                                                     padding: getPadding(top: 5),
                                                     child: Text(
-                                                      "openDoor".tr,
+                                                      Localized
+                                                          .message.openDoor,
                                                       overflow:
                                                           TextOverflow.ellipsis,
                                                       textAlign: TextAlign.left,
@@ -414,7 +415,8 @@ class SmartKeyNotAvailable extends StatelessWidget {
                                                   Padding(
                                                     padding: getPadding(top: 5),
                                                     child: Text(
-                                                      "lockTheDoor".tr,
+                                                      Localized
+                                                          .message.lockTheDoor,
                                                       overflow:
                                                           TextOverflow.ellipsis,
                                                       textAlign: TextAlign.left,
@@ -476,7 +478,8 @@ class SmartKeyNotAvailable extends StatelessWidget {
                                               Padding(
                                                 padding: getPadding(top: 5),
                                                 child: Text(
-                                                  "turnOnHazardLights".tr,
+                                                  Localized.message
+                                                      .turnOnHazardLights,
                                                   overflow:
                                                       TextOverflow.ellipsis,
                                                   textAlign: TextAlign.left,
@@ -527,7 +530,7 @@ class SmartKeyNotAvailable extends StatelessWidget {
                                               Padding(
                                                 padding: getPadding(top: 5),
                                                 child: Text(
-                                                  "honkTheHorn".tr,
+                                                  Localized.message.honkTheHorn,
                                                   overflow:
                                                       TextOverflow.ellipsis,
                                                   textAlign: TextAlign.left,
@@ -561,7 +564,7 @@ class SmartKeyNotAvailable extends StatelessWidget {
                             ),
                             decoration: AppDecoration.fill4,
                             child: CustomElevatedButton(
-                              text: "hongGilDongIsUsingIt".tr,
+                              text: Localized.message.hongGilDongIsUsingIt,
                               buttonStyle: CustomButtonStyles.fillOnPrimary
                                   .copyWith(
                                       fixedSize:
@@ -578,7 +581,7 @@ class SmartKeyNotAvailable extends StatelessWidget {
                     ),
                   ),
                   CustomElevatedButton(
-                    text: "reportAnIncident".tr,
+                    text: Localized.message.reportAnIncident,
                     margin: getMargin(
                       left: 16,
                       top: 20,

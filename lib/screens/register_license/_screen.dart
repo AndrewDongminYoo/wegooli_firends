@@ -33,7 +33,8 @@ class RegisterLicense extends GetWidget<RegisterLicensePageController> {
                       onTabBackButton();
                     }),
                 centerTitle: true,
-                title: AppbarTitle(text: "driverSLicenseRegistration".tr)),
+                title: AppbarTitle(
+                    text: Localized.message.driverSLicenseRegistration)),
             body: Container(
                 width: double.maxFinite,
                 padding: getPadding(left: 16, top: 32, right: 16, bottom: 32),
@@ -49,7 +50,7 @@ class RegisterLicense extends GetWidget<RegisterLicensePageController> {
                                 children: [
                                   Padding(
                                       padding: getPadding(top: 2),
-                                      child: Text("licenseType".tr,
+                                      child: Text(Localized.message.licenseType,
                                           overflow: TextOverflow.ellipsis,
                                           textAlign: TextAlign.left,
                                           style: theme.textTheme.titleMedium!
@@ -73,7 +74,8 @@ class RegisterLicense extends GetWidget<RegisterLicensePageController> {
                                     margin: getMargin(left: 30, right: 10),
                                     child: CustomImageView(
                                         svgPath: Assets.svg.imgCaretDown.path)),
-                                hintText: "pleaseSelectYourLicenseType".tr,
+                                hintText: Localized
+                                    .message.pleaseSelectYourLicenseType,
                                 margin: getMargin(top: 4),
                                 textStyle: CustomTextStyles.bodyLargeGray500,
                                 items: controller.registerLicensePageModelObj
@@ -108,7 +110,8 @@ class RegisterLicense extends GetWidget<RegisterLicensePageController> {
                                                         padding:
                                                             getPadding(top: 2),
                                                         child: Text(
-                                                            "licenseType".tr,
+                                                            Localized.message
+                                                                .licenseType,
                                                             overflow:
                                                                 TextOverflow
                                                                     .ellipsis,
@@ -147,7 +150,8 @@ class RegisterLicense extends GetWidget<RegisterLicensePageController> {
                                                               .svg
                                                               .imgCaretDown
                                                               .path)),
-                                                  hintText: "region".tr,
+                                                  hintText:
+                                                      Localized.message.region,
                                                   margin: getMargin(top: 4),
                                                   textStyle: CustomTextStyles
                                                       .bodyLargeGray500,
@@ -202,7 +206,8 @@ class RegisterLicense extends GetWidget<RegisterLicensePageController> {
                           contentPadding: getPadding(
                               left: 12, top: 14, right: 12, bottom: 14),
                           textStyle: CustomTextStyles.bodyLargeGray50003,
-                          hintText: "pleaseEnterYourLicenseNumbersOnly".tr,
+                          hintText: Localized
+                              .message.pleaseEnterYourLicenseNumbersOnly,
                           hintStyle: CustomTextStyles.bodyLargeGray50003,
                           textInputAction: TextInputAction.next,
                           filled: true,
@@ -220,8 +225,8 @@ class RegisterLicense extends GetWidget<RegisterLicensePageController> {
                                       Padding(
                                           padding: getPadding(top: 2),
                                           child: Text(
-                                              "eligibilityPeriodExpirationDate"
-                                                  .tr,
+                                              Localized.message
+                                                  .eligibilityPeriodExpirationDate,
                                               overflow: TextOverflow.ellipsis,
                                               textAlign: TextAlign.left,
                                               style: theme
@@ -252,9 +257,8 @@ class RegisterLicense extends GetWidget<RegisterLicensePageController> {
                                         bottom: 14),
                                     textStyle:
                                         CustomTextStyles.bodyLargeGray50003,
-                                    hintText:
-                                        "enterYourAptitudePeriodTestExpirationDate"
-                                            .tr,
+                                    hintText: Localized.message
+                                        .enterYourAptitudePeriodTestExpirationDate,
                                     hintStyle:
                                         CustomTextStyles.bodyLargeGray50003,
                                     textInputAction: TextInputAction.next,
@@ -274,7 +278,9 @@ class RegisterLicense extends GetWidget<RegisterLicensePageController> {
                                     children: [
                                       Padding(
                                           padding: getPadding(top: 2),
-                                          child: Text("licenseIssueDate".tr,
+                                          child: Text(
+                                              Localized
+                                                  .message.licenseIssueDate,
                                               overflow: TextOverflow.ellipsis,
                                               textAlign: TextAlign.left,
                                               style: theme
@@ -305,9 +311,8 @@ class RegisterLicense extends GetWidget<RegisterLicensePageController> {
                                         bottom: 14),
                                     textStyle:
                                         CustomTextStyles.bodyLargeGray50003,
-                                    hintText:
-                                        "pleaseEnterYourLicenseIssueDateOnlyNumbers"
-                                            .tr,
+                                    hintText: Localized.message
+                                        .pleaseEnterYourLicenseIssueDateOnlyNumbers,
                                     hintStyle:
                                         CustomTextStyles.bodyLargeGray50003,
                                     filled: true,
@@ -319,7 +324,7 @@ class RegisterLicense extends GetWidget<RegisterLicensePageController> {
                 margin: getMargin(left: 15, right: 17, bottom: 29),
                 // decoration: AppDecoration.shadow,
                 child: CustomElevatedButton(
-                  text: "registrationComplete".tr,
+                  text: Localized.message.registrationComplete,
                   buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
                       fixedSize: MaterialStateProperty.all<Size>(
                           Size(double.maxFinite, getVerticalSize(52)))),

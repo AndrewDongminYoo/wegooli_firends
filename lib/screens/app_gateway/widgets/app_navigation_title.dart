@@ -1,9 +1,6 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:get/get.dart';
-
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
@@ -14,7 +11,7 @@ class AppNavigationTitle extends StatelessWidget {
         alignment: Alignment.centerLeft,
         child: Padding(
             padding: getPadding(left: 20, top: 10, right: 20, bottom: 10),
-            child: Text("App Navigation".tr,
+            child: Text("App Navigation",
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.center,
                 style: TextStyle(

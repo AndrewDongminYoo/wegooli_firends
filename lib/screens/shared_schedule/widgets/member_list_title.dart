@@ -1,9 +1,6 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:get/get.dart';
-
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
@@ -17,7 +14,7 @@ class MemberListTitle extends StatelessWidget {
     return Padding(
       padding: getPadding(left: 16),
       child: Text(
-        "teamMembers".tr,
+        Localized.message.teamMembers,
         overflow: TextOverflow.ellipsis,
         textAlign: TextAlign.left,
         style: CustomTextStyles.titleMediumBlack900

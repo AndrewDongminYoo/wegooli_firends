@@ -1,9 +1,6 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:get/get.dart';
-
 // 🌎 Project imports:
 import '/core/app_export.dart';
 import 'controller/_controller.dart';
@@ -44,7 +41,7 @@ class MyProfilePage extends StatelessWidget {
               Padding(
                 padding: getPadding(top: 16),
                 child: Text(
-                  "nickname".tr,
+                  Localized.message.nickname,
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.left,
                   style: CustomTextStyles.titleMedium18
@@ -87,7 +84,7 @@ class MyProfilePage extends StatelessWidget {
                         bottom: 1,
                       ),
                       child: Text(
-                        "subscriptionInformation".tr,
+                        Localized.message.subscriptionInformation,
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.left,
                         style: theme.textTheme.bodyLarge!
@@ -128,7 +125,7 @@ class MyProfilePage extends StatelessWidget {
                         bottom: 1,
                       ),
                       child: Text(
-                        "cardRegistration".tr,
+                        Localized.message.cardRegistration,
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.left,
                         style: theme.textTheme.bodyLarge!

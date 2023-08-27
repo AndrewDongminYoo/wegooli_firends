@@ -35,8 +35,8 @@ export '/gen/fonts.gen.dart';
 
 export '/l10n/app_localizations.dart';
 export '/l10n/app_localizations_ko.dart';
-export '/l10n/ko_kr/ko_KR_translations.dart';
-export '/l10n/messages.dart';
+export '/l10n/localization.dart';
+
 export '/routes/app_routes.dart';
 export '/theme/app_decoration.dart';
 export '/theme/button_styles.dart';

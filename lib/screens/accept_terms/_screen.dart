@@ -37,7 +37,7 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                 onTapArrowleft();
               }),
           centerTitle: true,
-          title: AppbarTitle(text: "acceptTerms".tr)),
+          title: AppbarTitle(text: Localized.message.acceptTerms)),
       body: Container(
           width: double.maxFinite,
           padding: getPadding(left: 11, top: 31, right: 11, bottom: 31),
@@ -46,7 +46,7 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Obx(() => CustomCheckboxButton(
-                    text: "acceptAll".tr,
+                    text: Localized.message.acceptAll,
                     iconSize: getHorizontalSize(20),
                     value: controller.isAcceptedTerm0.value,
                     margin: getMargin(left: 5),
@@ -61,7 +61,8 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Obx(() => CustomCheckboxButton(
-                              text: "termsOfServiceRequiredAgreement".tr,
+                              text: Localized
+                                  .message.termsOfServiceRequiredAgreement,
                               iconSize: getHorizontalSize(20),
                               value: controller.isAcceptedTerm1.value,
                               textStyle: theme.textTheme.bodyLarge!,
@@ -80,7 +81,8 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Obx(() => CustomCheckboxButton(
-                              text: "privacyPolicyRequiredConsent".tr,
+                              text: Localized
+                                  .message.privacyPolicyRequiredConsent,
                               iconSize: getHorizontalSize(20),
                               value: controller.isAcceptedTerm2.value,
                               textStyle: theme.textTheme.bodyLarge!,
@@ -118,7 +120,8 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Obx(() => CustomCheckboxButton(
-                              text: "locationBasedServicesTerms".tr,
+                              text:
+                                  Localized.message.locationBasedServicesTerms,
                               iconSize: getHorizontalSize(20),
                               value: controller.isAcceptedTerm4.value,
                               textStyle: theme.textTheme.bodyLarge!,
@@ -136,9 +139,8 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                     child: Row(children: [
                       Expanded(
                           child: Obx(() => CustomCheckboxButton(
-                              text:
-                                  "consentToCollectionAndUseOfVehicleLocationInfo"
-                                      .tr,
+                              text: Localized.message
+                                  .consentToCollectionAndUseOfVehicleLocationInfo,
                               iconSize: getHorizontalSize(20),
                               value: controller.isAcceptedTerm5.value,
                               textStyle: theme.textTheme.bodyLarge!,
@@ -156,7 +158,8 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                     child: Row(children: [
                       Expanded(
                           child: Obx(() => CustomCheckboxButton(
-                              text: "useOfPersonalInfoForMarketing".tr,
+                              text: Localized
+                                  .message.useOfPersonalInfoForMarketing,
                               iconSize: getHorizontalSize(20),
                               value: controller.isAcceptedTerm6.value,
                               textStyle: theme.textTheme.bodyLarge!,

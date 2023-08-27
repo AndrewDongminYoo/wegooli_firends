@@ -34,7 +34,6 @@ class MyApp extends StatelessWidget {
         theme: theme,
         darkTheme: ThemeData.dark(useMaterial3: true),
         defaultTransition: Transition.fadeIn,
-        translations: LocaleMessages(),
         locale: const Locale('ko'), // for setting localization strings
         fallbackLocale: Get.deviceLocale,
         localizationsDelegates: AppLocalizations.localizationsDelegates,

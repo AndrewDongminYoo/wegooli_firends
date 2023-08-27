@@ -1,9 +1,6 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:get/get.dart';
-
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
@@ -14,7 +11,7 @@ class CheckYourAppUIMessage extends StatelessWidget {
         alignment: Alignment.centerLeft,
         child: Padding(
             padding: getPadding(left: 20),
-            child: Text("checkYourAppUI".tr,
+            child: Text(Localized.message.checkYourAppUI,
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.center,
                 style: TextStyle(

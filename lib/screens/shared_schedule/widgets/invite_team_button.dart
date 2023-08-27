@@ -1,9 +1,6 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:get/get.dart';
-
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
@@ -31,7 +28,7 @@ class InviteTeamButton extends StatelessWidget {
           Padding(
             padding: getPadding(top: 6),
             child: Text(
-              "invite".tr,
+              Localized.message.invite,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.left,
               style: CustomTextStyles.bodySmallBlack900

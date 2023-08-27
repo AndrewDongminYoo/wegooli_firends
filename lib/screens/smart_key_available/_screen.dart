@@ -229,7 +229,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "lbl68".tr,
+                        Localized.message.status,
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.left,
                         style: CustomTextStyles.bodySmallOnPrimary
@@ -264,7 +264,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                         child: Text(
                           controller.isUsed.isTrue
                               ? '${controller.clientName.text}님이 사용중입니다.'
-                              : 'lbl70'.tr,
+                              : Localized.message.available,
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.left,
                           style: theme.textTheme.bodySmall!
@@ -288,7 +288,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                       top: 21,
                     ),
                     child: Text(
-                      "lbl71".tr,
+                      Localized.message.smartKey,
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.left,
                       style: CustomTextStyles.titleMediumBlack900
@@ -361,7 +361,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                           Padding(
                                             padding: getPadding(top: 5),
                                             child: Text(
-                                              "lbl72".tr,
+                                              Localized.message.openDoor,
                                               overflow: TextOverflow.ellipsis,
                                               textAlign: TextAlign.left,
                                               style: theme
@@ -435,7 +435,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                           Padding(
                                             padding: getPadding(top: 5),
                                             child: Text(
-                                              "lbl73".tr,
+                                              Localized.message.lockTheDoor,
                                               overflow: TextOverflow.ellipsis,
                                               textAlign: TextAlign.left,
                                               style: theme
@@ -498,7 +498,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                     Padding(
                                       padding: getPadding(top: 5),
                                       child: Text(
-                                        "lbl74".tr,
+                                        Localized.message.turnOnHazardLights,
                                         overflow: TextOverflow.ellipsis,
                                         textAlign: TextAlign.left,
                                         style: theme.textTheme.titleMedium!
@@ -546,7 +546,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                     Padding(
                                       padding: getPadding(top: 5),
                                       child: Text(
-                                        "lbl75".tr,
+                                        Localized.message.honkTheHorn,
                                         overflow: TextOverflow.ellipsis,
                                         textAlign: TextAlign.left,
                                         style: theme.textTheme.titleMedium!
@@ -597,7 +597,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
         // bottomNavigationBar: Container(
         //     margin: getMargin(left: 16, right: 16, bottom: 30),
         //     child: CustomElevatedButton(
-        //       text: "lbl76".tr,
+        //       text: LocaleMessage.message.lbl76,
         //       leftIcon: Container(
         //         margin: getMargin(
         //           right: 1,

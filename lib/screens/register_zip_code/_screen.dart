@@ -431,8 +431,7 @@ class RegisterZipCode extends GetWidget<RegisterZipCodeController> {
                 // decoration: AppDecoration.shadow,
                 child: CustomElevatedButton(
                   text: "입력 완료",
-                  // TODO
-                  // disabled일 때 스타일 정의하기
+                  // TODO disabled일 때 스타일 정의하기
                   // isDisabled: !controller.isValid,
                   buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
                       fixedSize: MaterialStateProperty.all<Size>(

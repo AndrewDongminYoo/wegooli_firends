@@ -26,7 +26,8 @@ class UnsubscriptionConfirm extends StatelessWidget {
                       onTabBackButton();
                     }),
                 centerTitle: true,
-                title: AppbarTitle(text: "scheduleAnUnsubscribe".tr)),
+                title:
+                    AppbarTitle(text: Localized.message.scheduleAnUnsubscribe)),
             body: Container(
                 width: double.maxFinite,
                 padding: getPadding(left: 16, top: 52, right: 16, bottom: 52),
@@ -40,7 +41,8 @@ class UnsubscriptionConfirm extends StatelessWidget {
                       Container(
                           width: getHorizontalSize(179),
                           margin: getMargin(top: 50),
-                          child: Text("areYouSureYouWantToUnsubscribe".tr,
+                          child: Text(
+                              Localized.message.areYouSureYouWantToUnsubscribe,
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.center,
@@ -50,7 +52,8 @@ class UnsubscriptionConfirm extends StatelessWidget {
                       Padding(
                           padding: getPadding(top: 23),
                           child: Text(
-                              "subscriptionsWillBeCanceledAfterAugust4".tr,
+                              Localized.message
+                                  .subscriptionsWillBeCanceledAfterAugust4,
                               overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.left,
                               style: CustomTextStyles.bodyLargeBlack900
@@ -62,7 +65,7 @@ class UnsubscriptionConfirm extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 CustomElevatedButton(
-                                    text: "cancel".tr,
+                                    text: Localized.message.cancel,
                                     buttonStyle: CustomButtonStyles
                                         .fillGray400TL26
                                         .copyWith(
@@ -73,7 +76,8 @@ class UnsubscriptionConfirm extends StatelessWidget {
                                     buttonTextStyle:
                                         CustomTextStyles.titleMedium18),
                                 CustomElevatedButton(
-                                    text: "cancelingASubscription".tr,
+                                    text: Localized
+                                        .message.cancelingASubscription,
                                     buttonStyle: CustomButtonStyles.fillPrimary
                                         .copyWith(
                                             fixedSize:

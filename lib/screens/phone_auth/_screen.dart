@@ -68,8 +68,8 @@ class ValidatePhone extends GetWidget<ValidatePhoneController> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 CustomInputLabel(
-                                    labelText:
-                                        "digitOf13SocialSecurityNumber".tr),
+                                    labelText: Localized
+                                        .message.digitOf13SocialSecurityNumber),
                                 Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
@@ -135,9 +135,8 @@ class ValidatePhone extends GetWidget<ValidatePhoneController> {
                                             .colorScheme.onPrimaryContainer),
                                   ],
                                 ),
-                                CustomGuideText(
-                                    "subscriptionsAreRestrictedToThoseUnderTheAgeOf26"
-                                        .tr),
+                                CustomGuideText(Localized.message
+                                    .subscriptionsAreRestrictedToThoseUnderTheAgeOf26),
                               ])),
                       Padding(
                         padding: getPadding(top: 6),

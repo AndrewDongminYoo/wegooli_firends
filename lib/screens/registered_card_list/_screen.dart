@@ -28,7 +28,7 @@ class RegisteredCreditCardList
                       onTabBackButton();
                     }),
                 centerTitle: true,
-                title: AppbarTitle(text: "cardRegistration".tr)),
+                title: AppbarTitle(text: Localized.message.cardRegistration)),
             body: Container(
                 width: double.maxFinite,
                 padding: getPadding(left: 16, top: 24, right: 16, bottom: 24),
@@ -76,7 +76,7 @@ class RegisteredCreditCardList
                                     margin: getMargin(top: 1, bottom: 1))
                               ])),
                       CustomElevatedButton(
-                          text: "addACard".tr,
+                          text: Localized.message.addACard,
                           margin: getMargin(top: 51, bottom: 5),
                           buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
                               fixedSize: MaterialStateProperty.all<Size>(

@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/data/data.dart';
 
-GlobalDataController _global = GlobalDataController();
+GlobalDataController _global = GlobalDataController.to;
 
 class GlobalDataController extends GetxController {
   static GlobalDataController get to => Get.isRegistered<GlobalDataController>()

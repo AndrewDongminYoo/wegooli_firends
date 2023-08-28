@@ -31,26 +31,26 @@ class CustomDropDown extends StatelessWidget {
   }) : super(key: key);
 
   final Alignment? alignment;
-  final double? width;
-  final EdgeInsetsGeometry? margin;
-  final FocusNode? focusNode;
-  final Widget? icon;
-  final bool? autofocus;
-  final TextStyle? textStyle;
-  final List<SelectionPopupModel>? items;
   final bool initialValue;
-  final String? hintText;
-  final TextStyle? hintStyle;
-  final Widget? prefix;
+  final bool? autofocus;
+  final bool? filled;
   final BoxConstraints? prefixConstraints;
-  final Widget? suffix;
   final BoxConstraints? suffixConstraints;
   final Color? fillColor;
-  final bool? filled;
+  final double? width;
   final EdgeInsets? contentPadding;
-  final InputBorder? borderDecoration;
+  final EdgeInsetsGeometry? margin;
+  final FocusNode? focusNode;
   final FormFieldValidator<SelectionPopupModel>? validator;
   final Function(SelectionPopupModel)? onChanged;
+  final InputBorder? borderDecoration;
+  final List<SelectionPopupModel>? items;
+  final String? hintText;
+  final TextStyle? hintStyle;
+  final TextStyle? textStyle;
+  final Widget? icon;
+  final Widget? prefix;
+  final Widget? suffix;
 
   @override
   Widget build(BuildContext context) {

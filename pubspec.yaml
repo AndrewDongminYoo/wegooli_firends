@@ -47,6 +47,7 @@ dependencies:
   flutter_lorem: ^2.0.0
   flutter_svg: ^2.0.7
   flutter_svg_provider: ^1.0.4
+  flutter_timer_countdown: ^1.0.5
   get: ^4.6.5
   image_picker: ^1.0.2
   intl: any

@@ -1,32 +1,32 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+// 📦 Package imports:
+import 'package:get/route_manager.dart';
+
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
 // ignore: must_be_immutable
 class AppbarImage extends StatelessWidget {
+  String? imagePath;
+  String? svgPath;
+  EdgeInsetsGeometry? margin;
+  Function? onTap;
+
   AppbarImage({
     Key? key,
     this.imagePath,
-    this.svgPath,
+    this.svgPath = 'assets/svg/arrow_back.svg',
     this.margin,
     this.onTap,
-  }) : super(key: key);
-
-  String? imagePath;
-
-  String? svgPath;
-
-  EdgeInsetsGeometry? margin;
-
-  Function? onTap;
+  });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
         onTap: () {
-          onTap?.call();
+          onTap != null ? onTap!() : Get.back();
         },
         child: Padding(
             padding: margin ?? EdgeInsets.zero,

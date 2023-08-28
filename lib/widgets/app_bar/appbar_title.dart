@@ -14,9 +14,7 @@ class AppbarTitle extends StatelessWidget {
   }) : super(key: key);
 
   String text;
-
   EdgeInsetsGeometry? margin;
-
   Function? onTap;
 
   @override

@@ -14,6 +14,7 @@ class CustomImageView extends StatelessWidget {
   /// a [CustomImageView] it can be used for showing any type of images
   /// it will shows the placeholder image if image is not found on network image
   CustomImageView({
+    Key? key,
     this.height,
     this.width,
     this.url,
@@ -28,7 +29,11 @@ class CustomImageView extends StatelessWidget {
     this.radius,
     this.border,
     this.placeHolder = 'assets/images/image_not_found.png',
-  });
+  }) : super(key: key) {
+    assert(!(imagePath == null && svgPath == null),
+        'imagePath or svgPath both can\'t be null at a time.');
+  }
+
   double? height;
   double? width;
   ///[imagePath] is required parameter for showing png,jpg,etc image
@@ -92,6 +97,9 @@ class CustomImageView extends StatelessWidget {
               width: width,
               fit: fit ?? BoxFit.contain,
               colorFilter: ColorFilter.mode(color!, BlendMode.srcIn)));
+    } else if (imagePath != null && imagePath!.isNotEmpty) {
+      return Image.asset(imagePath!,
+          height: height, width: width, fit: fit ?? BoxFit.cover, color: color);
     } else if (file != null && file!.path.isNotEmpty) {
       return Image.file(file!,
           height: height, width: width, fit: fit ?? BoxFit.cover, color: color);
@@ -110,9 +118,6 @@ class CustomImageView extends StatelessWidget {
                   backgroundColor: Colors.grey.shade100)),
           errorWidget: (context, url, error) => Image.asset(placeHolder,
               height: height, width: width, fit: fit ?? BoxFit.cover));
-    } else if (imagePath != null && imagePath!.isNotEmpty) {
-      return Image.asset(imagePath!,
-          height: height, width: width, fit: fit ?? BoxFit.cover, color: color);
     }
     return SizedBox();
   }

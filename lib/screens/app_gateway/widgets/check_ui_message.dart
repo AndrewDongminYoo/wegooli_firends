@@ -11,7 +11,7 @@ class CheckYourAppUIMessage extends StatelessWidget {
         alignment: Alignment.centerLeft,
         child: Padding(
             padding: getPadding(left: 20),
-            child: Text(Localized.message.checkYourAppUI,
+            child: Text(l10ns.checkYourAppUI,
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.center,
                 style: TextStyle(

@@ -37,7 +37,7 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                       onTapArrowleft();
                     }),
                 centerTitle: true,
-                title: AppbarTitle(text: Localized.message.acceptTerms)),
+                title: AppbarTitle(text: l10ns.acceptTerms)),
             body: Container(
                 width: double.maxFinite,
                 padding: getPadding(left: 11, top: 31, right: 11, bottom: 31),
@@ -46,7 +46,7 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Obx(() => CustomCheckboxButton(
-                          text: Localized.message.acceptAll,
+                          text: l10ns.acceptAll,
                           iconSize: getHorizontalSize(20),
                           value: controller.isAcceptedTerm0.value,
                           margin: getMargin(left: 5),
@@ -61,8 +61,7 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Obx(() => CustomCheckboxButton(
-                                    text: Localized.message
-                                        .termsOfServiceRequiredAgreement,
+                                    text: l10ns.termsOfServiceRequiredAgreement,
                                     iconSize: getHorizontalSize(20),
                                     value: controller.isAcceptedTerm1.value,
                                     textStyle: theme.textTheme.bodyLarge!,
@@ -81,8 +80,7 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Obx(() => CustomCheckboxButton(
-                                    text: Localized
-                                        .message.privacyPolicyRequiredConsent,
+                                    text: l10ns.privacyPolicyRequiredConsent,
                                     iconSize: getHorizontalSize(20),
                                     value: controller.isAcceptedTerm2.value,
                                     textStyle: theme.textTheme.bodyLarge!,
@@ -120,8 +118,7 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Obx(() => CustomCheckboxButton(
-                                    text: Localized
-                                        .message.locationBasedServicesTerms,
+                                    text: l10ns.locationBasedServicesTerms,
                                     iconSize: getHorizontalSize(20),
                                     value: controller.isAcceptedTerm4.value,
                                     textStyle: theme.textTheme.bodyLarge!,
@@ -139,7 +136,7 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                           child: Row(children: [
                             Expanded(
                                 child: Obx(() => CustomCheckboxButton(
-                                    text: Localized.message
+                                    text: l10ns
                                         .consentToCollectionAndUseOfVehicleLocationInfo,
                                     iconSize: getHorizontalSize(20),
                                     value: controller.isAcceptedTerm5.value,
@@ -158,8 +155,7 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                           child: Row(children: [
                             Expanded(
                                 child: Obx(() => CustomCheckboxButton(
-                                    text: Localized
-                                        .message.useOfPersonalInfoForMarketing,
+                                    text: l10ns.useOfPersonalInfoForMarketing,
                                     iconSize: getHorizontalSize(20),
                                     value: controller.isAcceptedTerm6.value,
                                     textStyle: theme.textTheme.bodyLarge!,

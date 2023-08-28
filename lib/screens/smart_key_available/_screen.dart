@@ -216,7 +216,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                     child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(Localized.message.status,
+                          Text(l10ns.status,
                               overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.left,
                               style: CustomTextStyles.bodySmallOnPrimary
@@ -244,7 +244,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                               child: Text(
                                   controller.isUsed.isTrue
                                       ? '${controller.clientName.text}님이 사용중입니다.'
-                                      : Localized.message.available,
+                                      : l10ns.available,
                                   overflow: TextOverflow.ellipsis,
                                   textAlign: TextAlign.left,
                                   style: theme.textTheme.bodySmall!.copyWith(
@@ -259,7 +259,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                     alignment: Alignment.centerLeft,
                     child: Padding(
                         padding: getPadding(left: 16, top: 21),
-                        child: Text(Localized.message.smartKey,
+                        child: Text(l10ns.smartKey,
                             overflow: TextOverflow.ellipsis,
                             textAlign: TextAlign.left,
                             style: CustomTextStyles.titleMediumBlack900
@@ -329,9 +329,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                                             padding: getPadding(
                                                                 top: 5),
                                                             child: Text(
-                                                                Localized
-                                                                    .message
-                                                                    .openDoor,
+                                                                l10ns.openDoor,
                                                                 overflow:
                                                                     TextOverflow
                                                                         .ellipsis,
@@ -401,8 +399,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                                             padding: getPadding(
                                                                 top: 5),
                                                             child: Text(
-                                                                Localized
-                                                                    .message
+                                                                l10ns
                                                                     .lockTheDoor,
                                                                 overflow:
                                                                     TextOverflow
@@ -459,8 +456,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                               Padding(
                                                   padding: getPadding(top: 5),
                                                   child: Text(
-                                                      Localized.message
-                                                          .turnOnHazardLights,
+                                                      l10ns.turnOnHazardLights,
                                                       overflow:
                                                           TextOverflow.ellipsis,
                                                       textAlign: TextAlign.left,
@@ -504,9 +500,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                                   width: getSize(46)),
                                               Padding(
                                                   padding: getPadding(top: 5),
-                                                  child: Text(
-                                                      Localized
-                                                          .message.honkTheHorn,
+                                                  child: Text(l10ns.honkTheHorn,
                                                       overflow:
                                                           TextOverflow.ellipsis,
                                                       textAlign: TextAlign.left,

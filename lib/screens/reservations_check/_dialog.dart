@@ -31,7 +31,7 @@ class ReservationsCheckingPageDialog extends StatelessWidget {
                           children: [
                             Padding(
                                 padding: getPadding(top: 6),
-                                child: Text(Localized.message.viewSchedules,
+                                child: Text(l10ns.viewSchedules,
                                     overflow: TextOverflow.ellipsis,
                                     textAlign: TextAlign.left,
                                     style: CustomTextStyles.titleMedium18
@@ -226,7 +226,7 @@ class ReservationsCheckingPageDialog extends StatelessWidget {
                                           ]))
                                 ]),
                             CustomElevatedButton(
-                                text: Localized.message.edit,
+                                text: l10ns.edit,
                                 margin:
                                     getMargin(left: 21, top: 15, bottom: 123),
                                 buttonStyle: CustomButtonStyles
@@ -239,7 +239,7 @@ class ReservationsCheckingPageDialog extends StatelessWidget {
                                 buttonTextStyle:
                                     CustomTextStyles.bodySmallBlack900),
                             CustomElevatedButton(
-                                text: Localized.message.delete,
+                                text: l10ns.delete,
                                 margin:
                                     getMargin(left: 5, top: 15, bottom: 123),
                                 buttonStyle: CustomButtonStyles.fillGray400

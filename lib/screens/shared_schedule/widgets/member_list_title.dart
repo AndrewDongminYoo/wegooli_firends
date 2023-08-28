@@ -13,7 +13,7 @@ class MemberListTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
         padding: getPadding(left: 16),
-        child: Text(Localized.message.teamMembers,
+        child: Text(l10ns.teamMembers,
             overflow: TextOverflow.ellipsis,
             textAlign: TextAlign.left,
             style: CustomTextStyles.titleMediumBlack900

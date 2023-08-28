@@ -5,7 +5,9 @@ import 'package:flutter/material.dart';
 import 'app_localizations.dart';
 
 class Localized {
-  static Locale locale = WidgetsBinding.instance.platformDispatcher.locale;
+  static Locale locale = AppLocalizations.supportedLocales.first;
   static AppLocalizations localizations = lookupAppLocalizations(locale);
-  static AppLocalizations get message => localizations;
+  static AppLocalizations get _message => localizations;
 }
+
+AppLocalizations l10ns = Localized._message;

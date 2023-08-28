@@ -149,7 +149,7 @@ class LoginWithIdAndPassword extends GetWidget<IdPwLoginController> {
                           contentPadding: getPadding(
                               left: 12, top: 14, right: 12, bottom: 14),
                           textStyle: CustomTextStyles.bodyLargeGray50003,
-                          hintText: Localized.message.password,
+                          hintText: l10ns.password,
                           obscureText: controller.isShowPassword.isFalse,
                           hintStyle: CustomTextStyles.bodyLargeGray50003,
                           suffix: Container(
@@ -167,7 +167,7 @@ class LoginWithIdAndPassword extends GetWidget<IdPwLoginController> {
                           filled: true,
                           fillColor: theme.colorScheme.onPrimaryContainer)),
                       CustomElevatedButton(
-                          text: Localized.message.signIn,
+                          text: l10ns.signIn,
                           margin: getMargin(top: 30),
                           buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
                               fixedSize: MaterialStateProperty.all<Size>(
@@ -184,13 +184,13 @@ class LoginWithIdAndPassword extends GetWidget<IdPwLoginController> {
                           }),
                       Padding(
                           padding: getPadding(top: 57),
-                          child: Text(Localized.message.youHaveNoAccount,
+                          child: Text(l10ns.youHaveNoAccount,
                               overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.left,
                               style: theme.textTheme.bodyLarge!.copyWith(
                                   letterSpacing: getHorizontalSize(0.03)))),
                       CustomElevatedButton(
-                          text: Localized.message.signUp,
+                          text: l10ns.signUp,
                           margin: getMargin(top: 11, bottom: 5),
                           buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
                               fixedSize: MaterialStateProperty.all<Size>(

@@ -60,7 +60,7 @@ class ReservationDatetimePickerBottomSheet extends StatelessWidget {
                           child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text(Localized.message.rentalTime,
+                                Text(l10ns.rentalTime,
                                     overflow: TextOverflow.ellipsis,
                                     textAlign: TextAlign.left,
                                     style: theme.textTheme.titleMedium!
@@ -216,7 +216,7 @@ class ReservationDatetimePickerBottomSheet extends StatelessWidget {
                           child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text(Localized.message.rentalTime,
+                                Text(l10ns.rentalTime,
                                     overflow: TextOverflow.ellipsis,
                                     textAlign: TextAlign.left,
                                     style: theme.textTheme.titleMedium!
@@ -252,7 +252,7 @@ class ReservationDatetimePickerBottomSheet extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 CustomElevatedButton(
-                                    text: Localized.message.cancel,
+                                    text: l10ns.cancel,
                                     buttonStyle: CustomButtonStyles
                                         .fillGray400TL26
                                         .copyWith(
@@ -263,7 +263,7 @@ class ReservationDatetimePickerBottomSheet extends StatelessWidget {
                                     buttonTextStyle:
                                         CustomTextStyles.titleMedium18),
                                 CustomElevatedButton(
-                                    text: Localized.message.confirm,
+                                    text: l10ns.confirm,
                                     margin: getMargin(left: 8),
                                     buttonStyle: CustomButtonStyles.fillPrimary
                                         .copyWith(

@@ -26,8 +26,7 @@ class CarStateInformation extends StatelessWidget {
                       onTabBackButton();
                     }),
                 centerTitle: true,
-                title: AppbarTitle(
-                    text: Localized.message.subscriptionInformation)),
+                title: AppbarTitle(text: l10ns.subscriptionInformation)),
             body: Container(
                 width: double.maxFinite,
                 padding: getPadding(left: 16, top: 24, right: 16, bottom: 24),
@@ -37,7 +36,7 @@ class CarStateInformation extends StatelessWidget {
                     children: [
                       Padding(
                           padding: getPadding(left: 2),
-                          child: Text(Localized.message.carInfo,
+                          child: Text(l10ns.carInfo,
                               overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.left,
                               style: CustomTextStyles.titleMediumBlack900
@@ -100,7 +99,7 @@ class CarStateInformation extends StatelessWidget {
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
                                         children: [
-                                          Text(Localized.message.monthlyPayment,
+                                          Text(l10ns.monthlyPayment,
                                               overflow: TextOverflow.ellipsis,
                                               textAlign: TextAlign.left,
                                               style: CustomTextStyles
@@ -124,7 +123,7 @@ class CarStateInformation extends StatelessWidget {
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
                                         children: [
-                                          Text(Localized.message.subscription,
+                                          Text(l10ns.subscription,
                                               overflow: TextOverflow.ellipsis,
                                               textAlign: TextAlign.left,
                                               style: CustomTextStyles
@@ -148,7 +147,7 @@ class CarStateInformation extends StatelessWidget {
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
                                         children: [
-                                          Text(Localized.message.paymentDueDate,
+                                          Text(l10ns.paymentDueDate,
                                               overflow: TextOverflow.ellipsis,
                                               textAlign: TextAlign.left,
                                               style: CustomTextStyles
@@ -167,7 +166,7 @@ class CarStateInformation extends StatelessWidget {
                                                               0.03)))
                                         ])),
                                 CustomElevatedButton(
-                                    text: Localized.message.cancel,
+                                    text: l10ns.cancel,
                                     margin: getMargin(top: 21),
                                     buttonStyle: CustomButtonStyles
                                         .fillPrimaryTL5

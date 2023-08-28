@@ -13,7 +13,6 @@ import 'widgets/open_screen.dart';
 class GatewayScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    AppLocalizations msg = Localized.message;
     return SafeArea(
         child: Scaffold(
             backgroundColor: theme.colorScheme.onSecondary,
@@ -47,55 +46,56 @@ class GatewayScreen extends StatelessWidget {
                                         RouteItem(
                                             routeDestination:
                                                 AppRoutes.splashScreen,
-                                            routeName: msg.splashLoadingScreen),
+                                            routeName:
+                                                l10ns.splashLoadingScreen),
                                         RouteItem(
                                             routeDestination:
                                                 AppRoutes.logInIdPassword,
                                             routeName:
-                                                msg.loginWithIdAndPassword),
+                                                l10ns.loginWithIdAndPassword),
                                         RouteItem(
                                             routeDestination:
                                                 AppRoutes.acceptTerms,
-                                            routeName: msg.signupAcceptTerms),
+                                            routeName: l10ns.signupAcceptTerms),
                                         RouteItem(
                                             routeDestination:
                                                 AppRoutes.validatePhone,
                                             routeName:
-                                                msg.loginValidatePhoneAuth),
+                                                l10ns.loginValidatePhoneAuth),
                                         RouteItem(
                                             routeDestination:
                                                 AppRoutes.registerZipCode,
                                             routeName:
-                                                msg.loginRegisterZipCode),
+                                                l10ns.loginRegisterZipCode),
                                         RouteItem(
                                             routeDestination:
                                                 AppRoutes.registerLicense,
                                             routeName:
-                                                msg.loginRegisterLicensePage),
+                                                l10ns.loginRegisterLicensePage),
                                         RouteItem(
                                             routeDestination:
                                                 AppRoutes.registerCredits,
                                             routeName:
-                                                msg.loginRegisterCreditCard),
+                                                l10ns.loginRegisterCreditCard),
                                         RouteItem(
                                             routeDestination:
                                                 AppRoutes.signUpSuccess,
                                             routeName:
-                                                msg.loginRegisterSuccessPage),
+                                                l10ns.loginRegisterSuccessPage),
                                         RouteItem(
                                             routeDestination:
                                                 AppRoutes.sharedSchedule,
-                                            routeName: msg.teamScheduleShare),
+                                            routeName: l10ns.teamScheduleShare),
                                         RouteItem(
                                             routeDestination:
                                                 AppRoutes.smartKeyUnavailable,
                                             routeName:
-                                                msg.smartKeyNotAvailable),
+                                                l10ns.smartKeyNotAvailable),
                                         RouteItem(
                                             routeDestination:
                                                 AppRoutes.registeredCardList,
                                             routeName:
-                                                msg.registeredCreditCardList),
+                                                l10ns.registeredCreditCardList),
                                         RouteItem(
                                             routeDestination:
                                                 AppRoutes.carStatusInfo,
@@ -105,47 +105,47 @@ class GatewayScreen extends StatelessWidget {
                                             routeDestination:
                                                 AppRoutes.carStatusInfo2,
                                             routeName:
-                                                msg.carStatusInformation),
+                                                l10ns.carStatusInformation),
                                         RouteModal(
                                             dialog: openInvitationModal,
                                             dialogTitle:
-                                                msg.sendingCrewInvitation),
+                                                l10ns.sendingCrewInvitation),
                                         RouteModal(
                                             dialog: openCheckReservations,
                                             dialogTitle:
-                                                msg.reservationsCheckingPage),
+                                                l10ns.reservationsCheckingPage),
                                         RouteModal(
                                             bottomSheet: openDateTimePicker,
-                                            dialogTitle:
-                                                msg.reservationDatetimePicker),
+                                            dialogTitle: l10ns
+                                                .reservationDatetimePicker),
                                         RouteItem(
                                             routeDestination:
                                                 AppRoutes.unsubscriptionConfirm,
                                             routeName:
-                                                msg.unsubscriptionConfirm),
+                                                l10ns.unsubscriptionConfirm),
                                         RouteModal(
                                             dialog: alertDialog,
-                                            dialogTitle:
-                                                msg.unsubscriptionConfirmWarn),
+                                            dialogTitle: l10ns
+                                                .unsubscriptionConfirmWarn),
                                         RouteItem(
                                             routeDestination:
                                                 AppRoutes.unsubscriptionInfo,
-                                            routeName:
-                                                msg.upcomingUnsubscriptionInfo),
+                                            routeName: l10ns
+                                                .upcomingUnsubscriptionInfo),
                                         RouteItem(
                                             routeDestination:
                                                 AppRoutes.unsubscriptionInfo2,
-                                            routeName:
-                                                msg.upcomingUnsubscriptionView),
+                                            routeName: l10ns
+                                                .upcomingUnsubscriptionView),
                                         RouteItem(
                                             routeDestination:
                                                 AppRoutes.subscriptionNoService,
-                                            routeName:
-                                                msg.subscriptionInfoNoService),
+                                            routeName: l10ns
+                                                .subscriptionInfoNoService),
                                         RouteItem(
                                             routeDestination:
                                                 AppRoutes.smartKeyAvailable,
-                                            routeName: msg.smartKey)
+                                            routeName: l10ns.smartKey)
                                       ]))))
                     ]))));
   }

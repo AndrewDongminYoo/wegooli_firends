@@ -68,8 +68,8 @@ class ValidatePhone extends GetWidget<PhoneAuthController> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 CustomInputLabel(
-                                    labelText: Localized
-                                        .message.digitOf13SocialSecurityNumber),
+                                    labelText:
+                                        l10ns.digitOf13SocialSecurityNumber),
                                 Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
@@ -134,7 +134,7 @@ class ValidatePhone extends GetWidget<PhoneAuthController> {
                                           fillColor: theme
                                               .colorScheme.onPrimaryContainer),
                                     ]),
-                                CustomGuideText(Localized.message
+                                CustomGuideText(l10ns
                                     .subscriptionsAreRestrictedToThoseUnderTheAgeOf26),
                               ])),
                       Padding(

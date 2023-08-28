@@ -34,7 +34,7 @@ class MyProfilePage extends StatelessWidget {
                           radius: BorderRadius.circular(getHorizontalSize(40))),
                       Padding(
                           padding: getPadding(top: 16),
-                          child: Text(Localized.message.nickname,
+                          child: Text(l10ns.nickname,
                               overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.left,
                               style: CustomTextStyles.titleMedium18.copyWith(
@@ -63,9 +63,7 @@ class MyProfilePage extends StatelessWidget {
                                 Padding(
                                     padding:
                                         getPadding(left: 8, top: 2, bottom: 1),
-                                    child: Text(
-                                        Localized
-                                            .message.subscriptionInformation,
+                                    child: Text(l10ns.subscriptionInformation,
                                         overflow: TextOverflow.ellipsis,
                                         textAlign: TextAlign.left,
                                         style: theme.textTheme.bodyLarge!
@@ -91,8 +89,7 @@ class MyProfilePage extends StatelessWidget {
                                 Padding(
                                     padding:
                                         getPadding(left: 8, top: 2, bottom: 1),
-                                    child: Text(
-                                        Localized.message.cardRegistration,
+                                    child: Text(l10ns.cardRegistration,
                                         overflow: TextOverflow.ellipsis,
                                         textAlign: TextAlign.left,
                                         style: theme.textTheme.bodyLarge!

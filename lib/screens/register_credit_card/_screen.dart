@@ -34,7 +34,7 @@ class RegisterCreditCard extends GetWidget<RegisterCreditCardController> {
                       onTabBackButton();
                     }),
                 centerTitle: true,
-                title: AppbarTitle(text: Localized.message.cardRegistration)),
+                title: AppbarTitle(text: l10ns.cardRegistration)),
             body: Container(
                 width: double.maxFinite,
                 padding: getPadding(left: 16, top: 35, right: 16, bottom: 35),
@@ -50,7 +50,7 @@ class RegisterCreditCard extends GetWidget<RegisterCreditCardController> {
                                 children: [
                                   Padding(
                                       padding: getPadding(top: 2),
-                                      child: Text(Localized.message.cardNumber,
+                                      child: Text(l10ns.cardNumber,
                                           overflow: TextOverflow.ellipsis,
                                           textAlign: TextAlign.left,
                                           style: theme.textTheme.titleMedium!
@@ -92,8 +92,7 @@ class RegisterCreditCard extends GetWidget<RegisterCreditCardController> {
                                     children: [
                                       Padding(
                                           padding: getPadding(top: 2),
-                                          child: Text(
-                                              Localized.message.expirationDate,
+                                          child: Text(l10ns.expirationDate,
                                               overflow: TextOverflow.ellipsis,
                                               textAlign: TextAlign.left,
                                               style: theme
@@ -145,7 +144,7 @@ class RegisterCreditCard extends GetWidget<RegisterCreditCardController> {
                                       Padding(
                                           padding: getPadding(top: 2),
                                           child: Text(
-                                              Localized.message
+                                              l10ns
                                                   .socialSecurityNumberFirstDigit,
                                               overflow: TextOverflow.ellipsis,
                                               textAlign: TextAlign.left,
@@ -202,8 +201,7 @@ class RegisterCreditCard extends GetWidget<RegisterCreditCardController> {
                                       Padding(
                                           padding: getPadding(top: 2),
                                           child: Text(
-                                              Localized.message
-                                                  .first2DigitsOfCardPassword,
+                                              l10ns.first2DigitsOfCardPassword,
                                               overflow: TextOverflow.ellipsis,
                                               textAlign: TextAlign.left,
                                               style: theme
@@ -239,7 +237,7 @@ class RegisterCreditCard extends GetWidget<RegisterCreditCardController> {
                 child: CustomElevatedButton(
                     // TODO
                     // disabled 일때 스타일 정의하기
-                    text: Localized.message.register,
+                    text: l10ns.register,
                     buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
                         fixedSize: MaterialStateProperty.all<Size>(
                             Size(double.maxFinite, getVerticalSize(52)))),

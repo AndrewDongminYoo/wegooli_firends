@@ -25,7 +25,7 @@ class UnsubscriptionConfirmWarnDialog extends StatelessWidget {
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(Localized.message.scheduleAnUnsubscribe,
+                        Text(l10ns.scheduleAnUnsubscribe,
                             overflow: TextOverflow.ellipsis,
                             textAlign: TextAlign.left,
                             style: CustomTextStyles.titleMedium18.copyWith(
@@ -43,7 +43,7 @@ class UnsubscriptionConfirmWarnDialog extends StatelessWidget {
                   width: getHorizontalSize(278),
                   margin: getMargin(left: 25, top: 38, right: 25),
                   child: Text(
-                      Localized.message
+                      l10ns
                           .youCanCancelYourSubscriptionWithinTheRemainingPeriod,
                       maxLines: 3,
                       overflow: TextOverflow.ellipsis,
@@ -56,7 +56,7 @@ class UnsubscriptionConfirmWarnDialog extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         CustomElevatedButton(
-                            text: Localized.message.cancel,
+                            text: l10ns.cancel,
                             buttonStyle: CustomButtonStyles.fillGray400BL10
                                 .copyWith(
                                     fixedSize: MaterialStateProperty.all<Size>(
@@ -64,7 +64,7 @@ class UnsubscriptionConfirmWarnDialog extends StatelessWidget {
                                             getVerticalSize(52)))),
                             buttonTextStyle: theme.textTheme.titleMedium!),
                         CustomElevatedButton(
-                            text: Localized.message.cancel,
+                            text: l10ns.cancel,
                             buttonStyle: CustomButtonStyles.fillPrimaryBR10
                                 .copyWith(
                                     fixedSize: MaterialStateProperty.all<Size>(

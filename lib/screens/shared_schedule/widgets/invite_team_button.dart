@@ -22,7 +22,7 @@ class InviteTeamButton extends StatelessWidget {
                   svgPath: Assets.svg.imgGrid.path, color: Colors.white)),
           Padding(
               padding: getPadding(top: 6),
-              child: Text(Localized.message.invite,
+              child: Text(l10ns.invite,
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.left,
                   style: CustomTextStyles.bodySmallBlack900

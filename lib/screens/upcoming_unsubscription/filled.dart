@@ -28,8 +28,7 @@ class UpcomingUnsubscriptionFilled
                       onTabBackButton();
                     }),
                 centerTitle: true,
-                title: AppbarTitle(
-                    text: Localized.message.subscriptionInformation)),
+                title: AppbarTitle(text: l10ns.subscriptionInformation)),
             body: Container(
                 width: double.maxFinite,
                 padding: getPadding(left: 16, top: 24, right: 16, bottom: 24),
@@ -39,7 +38,7 @@ class UpcomingUnsubscriptionFilled
                     children: [
                       Padding(
                           padding: getPadding(left: 2),
-                          child: Text(Localized.message.carInfo,
+                          child: Text(l10ns.carInfo,
                               overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.left,
                               style: CustomTextStyles.titleMediumBlack900
@@ -102,7 +101,7 @@ class UpcomingUnsubscriptionFilled
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
                                         children: [
-                                          Text(Localized.message.monthlyPayment,
+                                          Text(l10ns.monthlyPayment,
                                               overflow: TextOverflow.ellipsis,
                                               textAlign: TextAlign.left,
                                               style: CustomTextStyles
@@ -126,7 +125,7 @@ class UpcomingUnsubscriptionFilled
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
                                         children: [
-                                          Text(Localized.message.subscription,
+                                          Text(l10ns.subscription,
                                               overflow: TextOverflow.ellipsis,
                                               textAlign: TextAlign.left,
                                               style: CustomTextStyles
@@ -150,9 +149,7 @@ class UpcomingUnsubscriptionFilled
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
                                         children: [
-                                          Text(
-                                              Localized.message
-                                                  .expectedUnsubscribeDate,
+                                          Text(l10ns.expectedUnsubscribeDate,
                                               overflow: TextOverflow.ellipsis,
                                               textAlign: TextAlign.left,
                                               style: CustomTextStyles

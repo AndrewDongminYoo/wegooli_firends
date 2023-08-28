@@ -26,15 +26,14 @@ class SubscriptionInfoNoService extends StatelessWidget {
                       onTabBackButton();
                     }),
                 centerTitle: true,
-                title: AppbarTitle(
-                    text: Localized.message.subscriptionInformation)),
+                title: AppbarTitle(text: l10ns.subscriptionInformation)),
             body: SizedBox(
                 width: double.maxFinite,
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Spacer(),
-                      Text(Localized.message.haveNoAnySubscriptionInfo,
+                      Text(l10ns.haveNoAnySubscriptionInfo,
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.left,
                           style: CustomTextStyles.titleMediumBlack900

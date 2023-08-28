@@ -15,19 +15,19 @@ CalendarStyle calendarStyle = CalendarStyle(
       BoxDecoration(color: const Color(0xffdc4747), shape: BoxShape.rectangle),
   selectedDecoration:
       BoxDecoration(color: const Color(0xffdc4747), shape: BoxShape.circle),
-  selectedTextStyle: TextStyle(color: Color(0xFFFAFAFA), fontSize: 16.0),
+  selectedTextStyle: TextStyle(color: Color(0xFFFAFAFA), fontSize: 16),
   rangeStartDecoration:
       BoxDecoration(color: Color(0xffdc4747), shape: BoxShape.circle),
-  rangeStartTextStyle: TextStyle(color: Color(0xFFFAFAFA), fontSize: 16.0),
+  rangeStartTextStyle: TextStyle(color: Color(0xFFFAFAFA), fontSize: 16),
   rangeEndDecoration:
       BoxDecoration(color: Color(0xffdc4747), shape: BoxShape.circle),
-  rangeEndTextStyle: TextStyle(color: Color(0xFFFAFAFA), fontSize: 16.0),
+  rangeEndTextStyle: TextStyle(color: Color(0xFFFAFAFA), fontSize: 16),
   rangeHighlightScale: 1,
   withinRangeDecoration: BoxDecoration(shape: BoxShape.rectangle),
   rangeHighlightColor: Color(0xffdc4747).withAlpha(70),
   todayDecoration:
       BoxDecoration(color: Color(0xffdc4747), shape: BoxShape.circle),
-  todayTextStyle: TextStyle(color: Color(0xFFFAFAFA), fontSize: 16.0), //
+  todayTextStyle: TextStyle(color: Color(0xFFFAFAFA), fontSize: 16), //
   isTodayHighlighted: true,
   canMarkersOverflow: true,
   outsideDaysVisible: true,
@@ -36,7 +36,7 @@ CalendarStyle calendarStyle = CalendarStyle(
   markersAnchor: 0.7,
   markerMargin: const EdgeInsets.symmetric(horizontal: 0.3),
   markersMaxCount: 4,
-  cellMargin: const EdgeInsets.all(6.0),
+  cellMargin: const EdgeInsets.all(6),
   cellPadding: const EdgeInsets.all(0),
   cellAlignment: Alignment.center,
   markersOffset: const PositionedOffset(),

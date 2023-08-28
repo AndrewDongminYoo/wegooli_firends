@@ -31,16 +31,12 @@ class CustomImageView extends StatelessWidget {
   });
   double? height;
   double? width;
-
   ///[imagePath] is required parameter for showing png,jpg,etc image
   String? imagePath;
-
   ///[svgPath] is required parameter for showing svg image
   String? svgPath;
-
   ///[url] is required parameter for fetching network image
   String? url;
-
   ///[file] is required parameter for fetching image file
   File? file;
 

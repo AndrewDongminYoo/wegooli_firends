@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
-import '../theme/theme_helper.dart';
+import '/theme/theme_helper.dart';
 
 // ignore: must_be_immutable
 class CustomCheckboxButton extends StatelessWidget {

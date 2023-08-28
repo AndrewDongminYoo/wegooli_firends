@@ -40,9 +40,7 @@ class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
   XFile? _image; //TODO: ImagePicker로 가져온 결과물을 담아서 보낸다.
   final ImagePicker picker = ImagePicker();
   void loadSendbird(
-    String appId,
-    String userId,
-    List<String> otherUserIds) async {
+      String appId, String userId, List<String> otherUserIds) async {
     try {
       // Init & connect with Sendbird
       await connectWithSendbird(appId, userId);
@@ -52,8 +50,7 @@ class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
 
       // Retrieve any existing messages from the GroupChannel
       final messages = await channel.getMessagesByTimestamp(
-        DateTime.now().millisecondsSinceEpoch * 1000,
-        MessageListParams());
+          DateTime.now().millisecondsSinceEpoch * 1000, MessageListParams());
 
       // Update & prompt the UI to rebuild
       setState(() {
@@ -87,10 +84,10 @@ class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
     // print(
     //     'userId : ${user.userId} user.nickname : ${user.nickname} user.profileUrl : ${user.profileUrl}');
     return ChatUser(
-      id: model.accountId as String,
-      lastName: '',
-      firstName: model.nickname,
-      profileImage: model.profilePicture ?? "");
+        id: model.accountId as String,
+        lastName: '',
+        firstName: model.nickname,
+        profileImage: model.profilePicture ?? "");
   }
 
   List<ChatMessage> asDashChatMessages(List<BaseMessage> messages) {
@@ -109,10 +106,7 @@ class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
   @override
   void initState() {
     super.initState();
-    loadSendbird(
-      widget.appId,
-      widget.userId,
-      widget.otherUserIds);
+    loadSendbird(widget.appId, widget.userId, widget.otherUserIds);
     SendbirdSdk().addChannelEventHandler("dashchat", this);
   }
 
@@ -135,94 +129,100 @@ class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
     mediaQueryData = MediaQuery.of(context);
 
     return SafeArea(
-      child: Scaffold(
-        resizeToAvoidBottomInset: false,
-        backgroundColor: theme.colorScheme.onPrimaryContainer,
-        appBar: CustomAppBar(
-          height: getVerticalSize(45),
-          centerTitle: true,
-          title: CustomImageView(
-            height: getVerticalSize(17),
-            width: getHorizontalSize(88),
-            svgPath: Assets.svg.imgFriendsTypo.path),
-          styleType: Style.bgOutline),
-        body: DashChat(
-          currentUser: asDashChatUser(SendbirdSdk().currentUser),
-          messages: asDashChatMessages(_messages),
-          onSend: (newMessage) async {
-            final sentMessage =
-                _channel.sendUserMessageWithText(newMessage.text);
-            setState(() {
-              _messages.insert(0, sentMessage);
-            });
-          },
-          messageOptions: MessageOptions(
-            messageDecorationBuilder: (message, previousMessage, nextMessage) =>
-                BoxDecoration(
-              color: message.user.id ==
-                      Get.find<IdPwLoginController>().currentUser.value.id
-                  ? Color.fromRGBO(255, 225, 66, 1)
-                  : Color.fromRGBO(164, 168, 175, 0.2),
-              borderRadius: BorderRadius.circular(15)),
-            // borderRadius: 18.0,
-            textColor: Color.fromRGBO(34, 34, 34, 1),
-            containerColor: Color.fromRGBO(164, 168, 175, 0.2),
-            currentUserTextColor: Color.fromRGBO(34, 34, 34, 1),
-            currentUserContainerColor: Color.fromRGBO(255, 225, 66, 1),
-            timeFontSize: 12,
-            // 너무 구려서 안쓰는게 나을듯...
-            // userNameBuilder: (user) => Text(user.firstName as String)
-            showTime: false,
-            showOtherUsersName: true),
-          inputOptions: InputOptions(
-            sendOnEnter: true,
-            alwaysShowSend: true,
-            // maxInputLength: 500,
-            sendButtonBuilder: (Function onSend) {
-              return IconButton(
-                icon: Icon(Icons.send),
-                onPressed: () {
-                  onSend();
+        child: Scaffold(
+            resizeToAvoidBottomInset: false,
+            backgroundColor: theme.colorScheme.onPrimaryContainer,
+            appBar: CustomAppBar(
+                height: getVerticalSize(45),
+                centerTitle: true,
+                title: CustomImageView(
+                    height: getVerticalSize(17),
+                    width: getHorizontalSize(88),
+                    svgPath: Assets.svg.imgFriendsTypo.path),
+                styleType: Style.bgOutline),
+            body: DashChat(
+                currentUser: asDashChatUser(SendbirdSdk().currentUser),
+                messages: asDashChatMessages(_messages),
+                onSend: (newMessage) async {
+                  final sentMessage =
+                      _channel.sendUserMessageWithText(newMessage.text);
+                  setState(() {
+                    _messages.insert(0, sentMessage);
+                  });
                 },
-                color: Colors.black,
-                iconSize: 24);
-            },
-            leading: <Widget>[
-              IconButton(
-                icon: Icon(Icons.camera_alt, color: Colors.black),
-                onPressed: () async {
-                  // TODO 추가 구현 필요.
-                  await getImage(ImageSource.gallery);
-                })
-            ],
-            cursorStyle: CursorStyle(color: Colors.black),
-            // 바깥 부분...
-            // inputToolbarStyle: BoxDecoration(
-            //   borderRadius: BorderRadius.all(Radius.circular(20)),
-            //   color: Colors.red,
-            // ),
-            inputDecoration: InputDecoration(
-              // leading 을 추가함으로써 필요없어짐.
-              // icon: Icon(Icons.camera_alt),
-              // iconColor: Colors.black,
-              fillColor: Color.fromRGBO(164, 168, 175, 0.2),
-              filled: true,
-              hintText: '채팅을 입력해주세요😃',
-              hintStyle: TextStyle(
-                  color: Color.fromRGBO(145, 150, 157, 1), fontSize: 15),
-              // helperText: 'Helper Text',
-              // counterText: '0 characters',
-              constraints: BoxConstraints.expand(height: getVerticalSize(36)),
-              contentPadding: EdgeInsets.symmetric(horizontal: 20),
-              border: OutlineInputBorder(
-                borderRadius: const BorderRadius.all(Radius.circular(15.0)),
-                borderSide: BorderSide.none,
-                gapPadding: 0))),
-          messageListOptions: MessageListOptions(
-            onLoadEarlier: () async {
-              await Future.delayed(const Duration(seconds: 3));
-            }),
-          typingUsers: <ChatUser>[])));
+                messageOptions: MessageOptions(
+                    messageDecorationBuilder:
+                        (message, previousMessage, nextMessage) =>
+                            BoxDecoration(
+                                color: message.user.id ==
+                                        Get.find<IdPwLoginController>()
+                                            .currentUser
+                                            .value
+                                            .id
+                                    ? Color.fromRGBO(255, 225, 66, 1)
+                                    : Color.fromRGBO(164, 168, 175, 0.2),
+                                borderRadius: BorderRadius.circular(15)),
+                    // borderRadius: 18.0,
+                    textColor: Color.fromRGBO(34, 34, 34, 1),
+                    containerColor: Color.fromRGBO(164, 168, 175, 0.2),
+                    currentUserTextColor: Color.fromRGBO(34, 34, 34, 1),
+                    currentUserContainerColor: Color.fromRGBO(255, 225, 66, 1),
+                    timeFontSize: 12,
+                    // 너무 구려서 안쓰는게 나을듯...
+                    // userNameBuilder: (user) => Text(user.firstName as String)
+                    showTime: false,
+                    showOtherUsersName: true),
+                inputOptions: InputOptions(
+                    sendOnEnter: true,
+                    alwaysShowSend: true,
+                    // maxInputLength: 500,
+                    sendButtonBuilder: (Function onSend) {
+                      return IconButton(
+                          icon: Icon(Icons.send),
+                          onPressed: () {
+                            onSend();
+                          },
+                          color: Colors.black,
+                          iconSize: 24);
+                    },
+                    leading: <Widget>[
+                      IconButton(
+                          icon: Icon(Icons.camera_alt, color: Colors.black),
+                          onPressed: () async {
+                            // TODO 추가 구현 필요.
+                            await getImage(ImageSource.gallery);
+                          })
+                    ],
+                    cursorStyle: CursorStyle(color: Colors.black),
+                    // 바깥 부분...
+                    // inputToolbarStyle: BoxDecoration(
+                    //   borderRadius: BorderRadius.all(Radius.circular(20)),
+                    //   color: Colors.red,
+                    // ),
+                    inputDecoration: InputDecoration(
+                        // leading 을 추가함으로써 필요없어짐.
+                        // icon: Icon(Icons.camera_alt),
+                        // iconColor: Colors.black,
+                        fillColor: Color.fromRGBO(164, 168, 175, 0.2),
+                        filled: true,
+                        hintText: '채팅을 입력해주세요😃',
+                        hintStyle: TextStyle(
+                            color: Color.fromRGBO(145, 150, 157, 1),
+                            fontSize: 15),
+                        // helperText: 'Helper Text',
+                        // counterText: '0 characters',
+                        constraints:
+                            BoxConstraints.expand(height: getVerticalSize(36)),
+                        contentPadding: EdgeInsets.symmetric(horizontal: 20),
+                        border: OutlineInputBorder(
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(15)),
+                            borderSide: BorderSide.none,
+                            gapPadding: 0))),
+                messageListOptions: MessageListOptions(onLoadEarlier: () async {
+                  await Future.delayed(const Duration(seconds: 3));
+                }),
+                typingUsers: <ChatUser>[])));
   }
 }
 

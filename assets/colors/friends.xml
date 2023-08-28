@@ -1,0 +1,21 @@
+<!-- Color palette -->
+<resources>
+	<color name="separation_bar">#f6f7f7</color>
+	<color name="action_primary_pressed">#ffd600</color>
+	<color name="action_primary_default">#ffe142</color>
+	<color name="action_primary_disabled">#33ffe142</color>
+	<color name="action_primary_inverted">#ffffff</color>
+	<color name="action_neutral_default">#babcc3</color>
+	<color name="action_neutral_inverted">#ffffff</color>
+	<color name="action_neutral_disabled">#33a4a8af</color>
+	<color name="action_neutral_pressed">#91969d</color>
+	<color name="action_neutral_inverted_disabled">#ccffffff</color>
+	<color name="action_secondary_default">#7951ea</color>
+	<color name="font_color_black">#222222</color>
+	<color name="font_color_error_message">#dc4747</color>
+	<color name="font_color_black_disabled">#66222222</color>
+	<color name="font_color_gray">#5d5d5d</color>
+	<color name="font_color_white">#ffffff</color>
+	<color name="status_status_able">#38dd66</color>
+	<color name="status_status_unable">#e92222</color>
+</resources>

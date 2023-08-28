@@ -139,51 +139,50 @@ class TextThemes {
 /// Class containing the supported color schemes.
 class ColorSchemes {
   static final primaryColorScheme = ColorScheme.light(
-      // Primary colors
-      primary: Color(0xFFFFE041),
-      primaryContainer: Color(0xFFEF1010),
-      secondary: Color(0xFFEF1010),
-      secondaryContainer: Color(0xFFFFE041),
-      tertiary: Color(0xFFEF1010),
-      tertiaryContainer: Color(0xFFFFE041),
+    // Primary colors
+    primary: Color(0xFFFFCC08),
+    primaryContainer: Color(0xFFFF0000),
+    secondary: Color(0xFFFF0000),
+    secondaryContainer: Color(0xFFB9BCC3),
+    tertiary: Color(0xFFFF0000),
+    tertiaryContainer: Color(0xFFB9BCC3),
+    // Background colors
+    background: Color(0xFFFF0000),
+    // Surface colors
+    surface: Color(0xFFFF0000),
+    surfaceTint: Color(0xFF222222),
+    surfaceVariant: Color(0xFFB9BCC3),
 
-      // Background colors
-      background: Color(0xFFEF1010),
+    // Error colors
+    error: Color(0xFF222222),
+    errorContainer: Color(0xFF82838D),
+    onError: Color(0xFFFFCC08),
+    onErrorContainer: Color(0xFF222222),
 
-      // Surface colors
-      surface: Color(0xFFEF1010),
-      surfaceTint: Color(0xFF222222),
-      surfaceVariant: Color(0xFFFFE041),
+    // On colors(text colors)
+    onBackground: Color(0xFFFFFFFF),
+    onInverseSurface: Color(0xFFFFCC08),
+    onPrimary: Color(0xFF222222),
+    onPrimaryContainer: Color(0xFFFFFFFF),
+    onSecondary: Color(0xFFFFFFFF),
+    onSecondaryContainer: Color(0xFF222222),
+    onTertiary: Color(0xFFFFFFFF),
+    onTertiaryContainer: Color(0xFF222222),
 
-      // Error colors
-      error: Color(0xFF222222),
-      errorContainer: Color(0xFF82838D),
-      onError: Color(0xFFB9BCC3),
-      onErrorContainer: Color(0xFF222222),
+    // Other colors
+    outline: Color(0xFF222222),
+    outlineVariant: Color(0xFFFF0000),
+    scrim: Color(0xFFFF0000),
+    shadow: Color(0xFF222222),
 
-      // On colors(text colors)
-      onBackground: Color(0xFFFFFFFF),
-      onInverseSurface: Color(0xFFB9BCC3),
-      onPrimary: Color(0xFF222222),
-      onPrimaryContainer: Color(0xFFFFFFFF),
-      onSecondary: Color(0xFFFFFFFF),
-      onSecondaryContainer: Color(0xFF222222),
-      onTertiary: Color(0xFFFFFFFF),
-      onTertiaryContainer: Color(0xFF222222),
+    // Inverse colors
+    inversePrimary: Color(0xFFFF0000),
+    inverseSurface: Color(0xFF222222),
 
-      // Other colors
-      outline: Color(0xFF222222),
-      outlineVariant: Color(0xFFEF1010),
-      scrim: Color(0xFFEF1010),
-      shadow: Color(0xFF222222),
-
-      // Inverse colors
-      inversePrimary: Color(0xFFEF1010),
-      inverseSurface: Color(0xFF222222),
-
-      // Pending colors
-      onSurface: Color(0xFFFFFFFF),
-      onSurfaceVariant: Color(0xFF222222));
+    // Pending colors
+    onSurface: Color(0xFFFFFFFF),
+    onSurfaceVariant: Color(0xFF222222),
+  );
 }
 
 /// Class containing custom colors for a primary theme.
@@ -195,6 +194,7 @@ class PrimaryColors {
   Color get black900 => Color(0xFF000000);
 
   // BlueGray
+  Color get blueGray1007f => Color(0x7FD9D9D9);
   Color get blueGray30033 => Color(0x33A4A8AF);
   Color get blueGray400 => Color(0xFF888888);
   Color get blueGray900 => Color(0xFF323232);
@@ -208,14 +208,14 @@ class PrimaryColors {
   // Gray
   Color get whiteSmoke => Color(0xFFF5F5F5);
   Color get gray100 => Color(0xFFF6F7F7);
-  Color get gray200 => Color(0xFFEEEEEE);
+  Color get gray200 => Color(0xFFF5F5F5);
   Color get gray300 => Color(0xFFE6E6E6);
-  Color get gray400 => Color(0xFFB9BCC3);
+  Color get gray400 => Color(0xFFCACACA);
   Color get gray500 => Color(0xFF8F9199);
   Color get gray50001 => Color(0xFF91969D);
-  Color get gray50002 => Color(0xFF8E9199);
-  Color get gray50003 => Color(0xFF979797);
-  Color get gray700 => Color(0xFF5D5D5D);
+  Color get gray50002 => Color(0xFF91959D);
+  Color get gray50003 => Color(0xFF8E9199);
+  Color get gray700 => Color(0xFF666666);
   Color get gray800 => Color(0xFF474747);
 
   // Green

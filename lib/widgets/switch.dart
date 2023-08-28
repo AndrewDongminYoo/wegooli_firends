@@ -37,19 +37,16 @@ class CustomSwitch extends StatelessWidget {
         margin: margin,
         child: alignment != null
             ? Align(
-                alignment: alignment ?? Alignment.center,
-                child: switchWidget,
-              )
+                alignment: alignment ?? Alignment.center, child: switchWidget)
             : switchWidget);
   }
 
   Widget get switchWidget => CupertinoSwitch(
-        value: value ?? false,
-        trackColor: theme.colorScheme.onPrimaryContainer,
-        thumbColor: theme.colorScheme.onError,
-        activeColor: theme.colorScheme.primary,
-        onChanged: (value) {
-          onChange(value);
-        },
-      );
+      value: value ?? false,
+      trackColor: theme.colorScheme.onPrimaryContainer,
+      thumbColor: theme.colorScheme.onError,
+      activeColor: theme.colorScheme.primary,
+      onChanged: (value) {
+        onChange(value);
+      });
 }

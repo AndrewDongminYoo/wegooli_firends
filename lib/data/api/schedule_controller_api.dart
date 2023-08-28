@@ -43,30 +43,27 @@ class ScheduleControllerApi {
     final _path =
         r'/schedule/delete/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
     final _options = Options(
-      method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'jwtAuth',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
+        method: r'PUT',
+        headers: <String, dynamic>{
+          ...?headers,
+        },
+        extra: <String, dynamic>{
+          'secure': <Map<String, String>>[
+            {
+              'type': 'http',
+              'scheme': 'bearer',
+              'name': 'jwtAuth',
+            },
+          ],
+          ...?extra,
+        },
+        validateStatus: validateStatus);
 
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
+    final _response = await _dio.request<Object>(_path,
+        options: _options,
+        cancelToken: cancelToken,
+        onSendProgress: onSendProgress,
+        onReceiveProgress: onReceiveProgress);
 
     return _response;
   }
@@ -95,23 +92,22 @@ class ScheduleControllerApi {
   }) async {
     final _path = r'/schedule/regist';
     final _options = Options(
-      method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'jwtAuth',
-          },
-        ],
-        ...?extra,
-      },
-      contentType: 'application/json',
-      validateStatus: validateStatus,
-    );
+        method: r'POST',
+        headers: <String, dynamic>{
+          ...?headers,
+        },
+        extra: <String, dynamic>{
+          'secure': <Map<String, String>>[
+            {
+              'type': 'http',
+              'scheme': 'bearer',
+              'name': 'jwtAuth',
+            },
+          ],
+          ...?extra,
+        },
+        contentType: 'application/json',
+        validateStatus: validateStatus);
 
     dynamic _bodyData;
 
@@ -120,24 +116,18 @@ class ScheduleControllerApi {
       _bodyData = _serializers.serialize(scheduleRequest, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
+          requestOptions: _options.compose(_dio.options, _path),
+          type: DioExceptionType.unknown,
+          error: error,
+          stackTrace: stackTrace);
     }
 
-    final _response = await _dio.request<Object>(
-      _path,
-      data: _bodyData,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
+    final _response = await _dio.request<Object>(_path,
+        data: _bodyData,
+        options: _options,
+        cancelToken: cancelToken,
+        onSendProgress: onSendProgress,
+        onReceiveProgress: onReceiveProgress);
 
     return _response;
   }
@@ -167,30 +157,27 @@ class ScheduleControllerApi {
     final _path =
         r'/schedule/detail/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
     final _options = Options(
-      method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'jwtAuth',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
+        method: r'GET',
+        headers: <String, dynamic>{
+          ...?headers,
+        },
+        extra: <String, dynamic>{
+          'secure': <Map<String, String>>[
+            {
+              'type': 'http',
+              'scheme': 'bearer',
+              'name': 'jwtAuth',
+            },
+          ],
+          ...?extra,
+        },
+        validateStatus: validateStatus);
 
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
+    final _response = await _dio.request<Object>(_path,
+        options: _options,
+        cancelToken: cancelToken,
+        onSendProgress: onSendProgress,
+        onReceiveProgress: onReceiveProgress);
 
     ScheduleModel? _responseData;
 
@@ -198,30 +185,26 @@ class ScheduleControllerApi {
       final rawResponse = _response.data;
       _responseData = rawResponse == null
           ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ScheduleModel),
-            ) as ScheduleModel;
+          : _serializers.deserialize(rawResponse,
+              specifiedType: const FullType(ScheduleModel)) as ScheduleModel;
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
+          requestOptions: _response.requestOptions,
+          response: _response,
+          type: DioExceptionType.unknown,
+          error: error,
+          stackTrace: stackTrace);
     }
 
     return Response<ScheduleModel>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
+        data: _responseData,
+        headers: _response.headers,
+        isRedirect: _response.isRedirect,
+        requestOptions: _response.requestOptions,
+        redirects: _response.redirects,
+        statusCode: _response.statusCode,
+        statusMessage: _response.statusMessage,
+        extra: _response.extra);
   }
 
   /// selectScheduleList
@@ -254,22 +237,21 @@ class ScheduleControllerApi {
   }) async {
     final _path = r'/schedule/list';
     final _options = Options(
-      method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'jwtAuth',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
+        method: r'GET',
+        headers: <String, dynamic>{
+          ...?headers,
+        },
+        extra: <String, dynamic>{
+          'secure': <Map<String, String>>[
+            {
+              'type': 'http',
+              'scheme': 'bearer',
+              'name': 'jwtAuth',
+            },
+          ],
+          ...?extra,
+        },
+        validateStatus: validateStatus);
 
     final _queryParameters = <String, dynamic>{
       if (teamSeq != null)
@@ -286,14 +268,12 @@ class ScheduleControllerApi {
             encodeQueryParameter(_serializers, endAt, const FullType(String)),
     };
 
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      queryParameters: _queryParameters,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
+    final _response = await _dio.request<Object>(_path,
+        options: _options,
+        queryParameters: _queryParameters,
+        cancelToken: cancelToken,
+        onSendProgress: onSendProgress,
+        onReceiveProgress: onReceiveProgress);
 
     BuiltList<ScheduleModel>? _responseData;
 
@@ -301,31 +281,28 @@ class ScheduleControllerApi {
       final rawResponse = _response.data;
       _responseData = rawResponse == null
           ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(BuiltList, [FullType(ScheduleModel)]),
-            ) as BuiltList<ScheduleModel>;
+          : _serializers.deserialize(rawResponse,
+                  specifiedType:
+                      const FullType(BuiltList, [FullType(ScheduleModel)]))
+              as BuiltList<ScheduleModel>;
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
+          requestOptions: _response.requestOptions,
+          response: _response,
+          type: DioExceptionType.unknown,
+          error: error,
+          stackTrace: stackTrace);
     }
 
     return Response<BuiltList<ScheduleModel>>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
+        data: _responseData,
+        headers: _response.headers,
+        isRedirect: _response.isRedirect,
+        requestOptions: _response.requestOptions,
+        redirects: _response.redirects,
+        statusCode: _response.statusCode,
+        statusMessage: _response.statusMessage,
+        extra: _response.extra);
   }
 
   /// updateSchedule
@@ -355,23 +332,22 @@ class ScheduleControllerApi {
     final _path =
         r'/schedule/update/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
     final _options = Options(
-      method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'jwtAuth',
-          },
-        ],
-        ...?extra,
-      },
-      contentType: 'application/json',
-      validateStatus: validateStatus,
-    );
+        method: r'PUT',
+        headers: <String, dynamic>{
+          ...?headers,
+        },
+        extra: <String, dynamic>{
+          'secure': <Map<String, String>>[
+            {
+              'type': 'http',
+              'scheme': 'bearer',
+              'name': 'jwtAuth',
+            },
+          ],
+          ...?extra,
+        },
+        contentType: 'application/json',
+        validateStatus: validateStatus);
 
     dynamic _bodyData;
 
@@ -380,24 +356,18 @@ class ScheduleControllerApi {
       _bodyData = _serializers.serialize(scheduleRequest, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
+          requestOptions: _options.compose(_dio.options, _path),
+          type: DioExceptionType.unknown,
+          error: error,
+          stackTrace: stackTrace);
     }
 
-    final _response = await _dio.request<Object>(
-      _path,
-      data: _bodyData,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
+    final _response = await _dio.request<Object>(_path,
+        data: _bodyData,
+        options: _options,
+        cancelToken: cancelToken,
+        onSendProgress: onSendProgress,
+        onReceiveProgress: onReceiveProgress);
 
     return _response;
   }

@@ -12,14 +12,11 @@ class MemberListTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: getPadding(left: 16),
-      child: Text(
-        Localized.message.teamMembers,
-        overflow: TextOverflow.ellipsis,
-        textAlign: TextAlign.left,
-        style: CustomTextStyles.titleMediumBlack900
-            .copyWith(letterSpacing: getHorizontalSize(0.04)),
-      ),
-    );
+        padding: getPadding(left: 16),
+        child: Text(Localized.message.teamMembers,
+            overflow: TextOverflow.ellipsis,
+            textAlign: TextAlign.left,
+            style: CustomTextStyles.titleMediumBlack900
+                .copyWith(letterSpacing: getHorizontalSize(0.04))));
   }
 }

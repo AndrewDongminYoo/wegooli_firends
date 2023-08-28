@@ -43,35 +43,32 @@ class UserControllerApi {
   }) async {
     final _path = r'/auth/checkId';
     final _options = Options(
-      method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'jwtAuth',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
+        method: r'GET',
+        headers: <String, dynamic>{
+          ...?headers,
+        },
+        extra: <String, dynamic>{
+          'secure': <Map<String, String>>[
+            {
+              'type': 'http',
+              'scheme': 'bearer',
+              'name': 'jwtAuth',
+            },
+          ],
+          ...?extra,
+        },
+        validateStatus: validateStatus);
 
     final _queryParameters = <String, dynamic>{
       r'id': encodeQueryParameter(_serializers, id, const FullType(String)),
     };
 
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      queryParameters: _queryParameters,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
+    final _response = await _dio.request<Object>(_path,
+        options: _options,
+        queryParameters: _queryParameters,
+        cancelToken: cancelToken,
+        onSendProgress: onSendProgress,
+        onReceiveProgress: onReceiveProgress);
 
     String? _responseData;
 
@@ -80,24 +77,22 @@ class UserControllerApi {
       _responseData = rawResponse == null ? null : rawResponse as String;
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
+          requestOptions: _response.requestOptions,
+          response: _response,
+          type: DioExceptionType.unknown,
+          error: error,
+          stackTrace: stackTrace);
     }
 
     return Response<String>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
+        data: _responseData,
+        headers: _response.headers,
+        isRedirect: _response.isRedirect,
+        requestOptions: _response.requestOptions,
+        redirects: _response.redirects,
+        statusCode: _response.statusCode,
+        statusMessage: _response.statusMessage,
+        extra: _response.extra);
   }
 
   /// 토큰 발급
@@ -125,23 +120,22 @@ class UserControllerApi {
   }) async {
     final _path = r'/auth/generateToken';
     final _options = Options(
-      method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'jwtAuth',
-          },
-        ],
-        ...?extra,
-      },
-      contentType: 'application/json',
-      validateStatus: validateStatus,
-    );
+        method: r'POST',
+        headers: <String, dynamic>{
+          ...?headers,
+        },
+        extra: <String, dynamic>{
+          'secure': <Map<String, String>>[
+            {
+              'type': 'http',
+              'scheme': 'bearer',
+              'name': 'jwtAuth',
+            },
+          ],
+          ...?extra,
+        },
+        contentType: 'application/json',
+        validateStatus: validateStatus);
 
     dynamic _bodyData;
 
@@ -150,24 +144,18 @@ class UserControllerApi {
       _bodyData = _serializers.serialize(userDetailsDTO, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
+          requestOptions: _options.compose(_dio.options, _path),
+          type: DioExceptionType.unknown,
+          error: error,
+          stackTrace: stackTrace);
     }
 
-    final _response = await _dio.request<Object>(
-      _path,
-      data: _bodyData,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
+    final _response = await _dio.request<Object>(_path,
+        data: _bodyData,
+        options: _options,
+        cancelToken: cancelToken,
+        onSendProgress: onSendProgress,
+        onReceiveProgress: onReceiveProgress);
 
     ApiResponseObject? _responseData;
 
@@ -175,30 +163,27 @@ class UserControllerApi {
       final rawResponse = _response.data;
       _responseData = rawResponse == null
           ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ApiResponseObject),
-            ) as ApiResponseObject;
+          : _serializers.deserialize(rawResponse,
+                  specifiedType: const FullType(ApiResponseObject))
+              as ApiResponseObject;
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
+          requestOptions: _response.requestOptions,
+          response: _response,
+          type: DioExceptionType.unknown,
+          error: error,
+          stackTrace: stackTrace);
     }
 
     return Response<ApiResponseObject>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
+        data: _responseData,
+        headers: _response.headers,
+        isRedirect: _response.isRedirect,
+        requestOptions: _response.requestOptions,
+        redirects: _response.redirects,
+        statusCode: _response.statusCode,
+        statusMessage: _response.statusMessage,
+        extra: _response.extra);
   }
 
   /// getUserDetail
@@ -225,23 +210,22 @@ class UserControllerApi {
   }) async {
     final _path = r'/auth/getUserDetail';
     final _options = Options(
-      method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'jwtAuth',
-          },
-        ],
-        ...?extra,
-      },
-      contentType: 'application/json',
-      validateStatus: validateStatus,
-    );
+        method: r'POST',
+        headers: <String, dynamic>{
+          ...?headers,
+        },
+        extra: <String, dynamic>{
+          'secure': <Map<String, String>>[
+            {
+              'type': 'http',
+              'scheme': 'bearer',
+              'name': 'jwtAuth',
+            },
+          ],
+          ...?extra,
+        },
+        contentType: 'application/json',
+        validateStatus: validateStatus);
 
     dynamic _bodyData;
 
@@ -250,24 +234,18 @@ class UserControllerApi {
       _bodyData = _serializers.serialize(account, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
+          requestOptions: _options.compose(_dio.options, _path),
+          type: DioExceptionType.unknown,
+          error: error,
+          stackTrace: stackTrace);
     }
 
-    final _response = await _dio.request<Object>(
-      _path,
-      data: _bodyData,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
+    final _response = await _dio.request<Object>(_path,
+        data: _bodyData,
+        options: _options,
+        cancelToken: cancelToken,
+        onSendProgress: onSendProgress,
+        onReceiveProgress: onReceiveProgress);
 
     String? _responseData;
 
@@ -276,24 +254,22 @@ class UserControllerApi {
       _responseData = rawResponse == null ? null : rawResponse as String;
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
+          requestOptions: _response.requestOptions,
+          response: _response,
+          type: DioExceptionType.unknown,
+          error: error,
+          stackTrace: stackTrace);
     }
 
     return Response<String>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
+        data: _responseData,
+        headers: _response.headers,
+        isRedirect: _response.isRedirect,
+        requestOptions: _response.requestOptions,
+        redirects: _response.redirects,
+        statusCode: _response.statusCode,
+        statusMessage: _response.statusMessage,
+        extra: _response.extra);
   }
 
   /// logOut
@@ -318,30 +294,27 @@ class UserControllerApi {
   }) async {
     final _path = r'/auth/logout';
     final _options = Options(
-      method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'jwtAuth',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
+        method: r'GET',
+        headers: <String, dynamic>{
+          ...?headers,
+        },
+        extra: <String, dynamic>{
+          'secure': <Map<String, String>>[
+            {
+              'type': 'http',
+              'scheme': 'bearer',
+              'name': 'jwtAuth',
+            },
+          ],
+          ...?extra,
+        },
+        validateStatus: validateStatus);
 
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
+    final _response = await _dio.request<Object>(_path,
+        options: _options,
+        cancelToken: cancelToken,
+        onSendProgress: onSendProgress,
+        onReceiveProgress: onReceiveProgress);
 
     String? _responseData;
 
@@ -350,24 +323,22 @@ class UserControllerApi {
       _responseData = rawResponse == null ? null : rawResponse as String;
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
+          requestOptions: _response.requestOptions,
+          response: _response,
+          type: DioExceptionType.unknown,
+          error: error,
+          stackTrace: stackTrace);
     }
 
     return Response<String>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
+        data: _responseData,
+        headers: _response.headers,
+        isRedirect: _response.isRedirect,
+        requestOptions: _response.requestOptions,
+        redirects: _response.redirects,
+        statusCode: _response.statusCode,
+        statusMessage: _response.statusMessage,
+        extra: _response.extra);
   }
 
   /// login
@@ -396,22 +367,21 @@ class UserControllerApi {
   }) async {
     final _path = r'/auth/login';
     final _options = Options(
-      method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'jwtAuth',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
+        method: r'POST',
+        headers: <String, dynamic>{
+          ...?headers,
+        },
+        extra: <String, dynamic>{
+          'secure': <Map<String, String>>[
+            {
+              'type': 'http',
+              'scheme': 'bearer',
+              'name': 'jwtAuth',
+            },
+          ],
+          ...?extra,
+        },
+        validateStatus: validateStatus);
 
     final _queryParameters = <String, dynamic>{
       r'id': encodeQueryParameter(_serializers, id, const FullType(String)),
@@ -419,40 +389,37 @@ class UserControllerApi {
           encodeQueryParameter(_serializers, password, const FullType(String)),
     };
 
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      queryParameters: _queryParameters,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
+    final _response = await _dio.request<Object>(_path,
+        options: _options,
+        queryParameters: _queryParameters,
+        cancelToken: cancelToken,
+        onSendProgress: onSendProgress,
+        onReceiveProgress: onReceiveProgress);
 
     ApiResponseObject? _responseData;
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as ApiResponseObject;
+      _responseData =
+          rawResponse == null ? null : rawResponse as ApiResponseObject;
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
+          requestOptions: _response.requestOptions,
+          response: _response,
+          type: DioExceptionType.unknown,
+          error: error,
+          stackTrace: stackTrace);
     }
 
     return Response<ApiResponseObject>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
+        data: _responseData,
+        headers: _response.headers,
+        isRedirect: _response.isRedirect,
+        requestOptions: _response.requestOptions,
+        redirects: _response.redirects,
+        statusCode: _response.statusCode,
+        statusMessage: _response.statusMessage,
+        extra: _response.extra);
   }
 
   /// signup
@@ -479,23 +446,22 @@ class UserControllerApi {
   }) async {
     final _path = r'/auth/signup';
     final _options = Options(
-      method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'jwtAuth',
-          },
-        ],
-        ...?extra,
-      },
-      contentType: 'application/json',
-      validateStatus: validateStatus,
-    );
+        method: r'POST',
+        headers: <String, dynamic>{
+          ...?headers,
+        },
+        extra: <String, dynamic>{
+          'secure': <Map<String, String>>[
+            {
+              'type': 'http',
+              'scheme': 'bearer',
+              'name': 'jwtAuth',
+            },
+          ],
+          ...?extra,
+        },
+        contentType: 'application/json',
+        validateStatus: validateStatus);
 
     dynamic _bodyData;
 
@@ -504,24 +470,18 @@ class UserControllerApi {
       _bodyData = _serializers.serialize(userDTO, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
+          requestOptions: _options.compose(_dio.options, _path),
+          type: DioExceptionType.unknown,
+          error: error,
+          stackTrace: stackTrace);
     }
 
-    final _response = await _dio.request<Object>(
-      _path,
-      data: _bodyData,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
+    final _response = await _dio.request<Object>(_path,
+        data: _bodyData,
+        options: _options,
+        cancelToken: cancelToken,
+        onSendProgress: onSendProgress,
+        onReceiveProgress: onReceiveProgress);
 
     String? _responseData;
 
@@ -530,24 +490,22 @@ class UserControllerApi {
       _responseData = rawResponse == null ? null : rawResponse as String;
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
+          requestOptions: _response.requestOptions,
+          response: _response,
+          type: DioExceptionType.unknown,
+          error: error,
+          stackTrace: stackTrace);
     }
 
     return Response<String>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
+        data: _responseData,
+        headers: _response.headers,
+        isRedirect: _response.isRedirect,
+        requestOptions: _response.requestOptions,
+        redirects: _response.redirects,
+        statusCode: _response.statusCode,
+        statusMessage: _response.statusMessage,
+        extra: _response.extra);
   }
 
   /// signout
@@ -574,35 +532,32 @@ class UserControllerApi {
   }) async {
     final _path = r'/auth/signout';
     final _options = Options(
-      method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'jwtAuth',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
+        method: r'GET',
+        headers: <String, dynamic>{
+          ...?headers,
+        },
+        extra: <String, dynamic>{
+          'secure': <Map<String, String>>[
+            {
+              'type': 'http',
+              'scheme': 'bearer',
+              'name': 'jwtAuth',
+            },
+          ],
+          ...?extra,
+        },
+        validateStatus: validateStatus);
 
     final _queryParameters = <String, dynamic>{
       r'id': encodeQueryParameter(_serializers, id, const FullType(String)),
     };
 
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      queryParameters: _queryParameters,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
+    final _response = await _dio.request<Object>(_path,
+        options: _options,
+        queryParameters: _queryParameters,
+        cancelToken: cancelToken,
+        onSendProgress: onSendProgress,
+        onReceiveProgress: onReceiveProgress);
 
     String? _responseData;
 
@@ -611,23 +566,21 @@ class UserControllerApi {
       _responseData = rawResponse == null ? null : rawResponse as String;
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
+          requestOptions: _response.requestOptions,
+          response: _response,
+          type: DioExceptionType.unknown,
+          error: error,
+          stackTrace: stackTrace);
     }
 
     return Response<String>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
+        data: _responseData,
+        headers: _response.headers,
+        isRedirect: _response.isRedirect,
+        requestOptions: _response.requestOptions,
+        redirects: _response.redirects,
+        statusCode: _response.statusCode,
+        statusMessage: _response.statusMessage,
+        extra: _response.extra);
   }
 }

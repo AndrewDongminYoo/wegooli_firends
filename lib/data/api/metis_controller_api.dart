@@ -42,36 +42,33 @@ class MetisControllerApi {
   }) async {
     final _path = r'/metis/history/carLogTop';
     final _options = Options(
-      method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'jwtAuth',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
+        method: r'GET',
+        headers: <String, dynamic>{
+          ...?headers,
+        },
+        extra: <String, dynamic>{
+          'secure': <Map<String, String>>[
+            {
+              'type': 'http',
+              'scheme': 'bearer',
+              'name': 'jwtAuth',
+            },
+          ],
+          ...?extra,
+        },
+        validateStatus: validateStatus);
 
     final _queryParameters = <String, dynamic>{
       r'carNum':
           encodeQueryParameter(_serializers, carNum, const FullType(String)),
     };
 
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      queryParameters: _queryParameters,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
+    final _response = await _dio.request<Object>(_path,
+        options: _options,
+        queryParameters: _queryParameters,
+        cancelToken: cancelToken,
+        onSendProgress: onSendProgress,
+        onReceiveProgress: onReceiveProgress);
 
     CarHistoryDTO? _responseData;
 
@@ -79,30 +76,26 @@ class MetisControllerApi {
       final rawResponse = _response.data;
       _responseData = rawResponse == null
           ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(CarHistoryDTO),
-            ) as CarHistoryDTO;
+          : _serializers.deserialize(rawResponse,
+              specifiedType: const FullType(CarHistoryDTO)) as CarHistoryDTO;
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
+          requestOptions: _response.requestOptions,
+          response: _response,
+          type: DioExceptionType.unknown,
+          error: error,
+          stackTrace: stackTrace);
     }
 
     return Response<CarHistoryDTO>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
+        data: _responseData,
+        headers: _response.headers,
+        isRedirect: _response.isRedirect,
+        requestOptions: _response.requestOptions,
+        redirects: _response.redirects,
+        statusCode: _response.statusCode,
+        statusMessage: _response.statusMessage,
+        extra: _response.extra);
   }
 
   /// history
@@ -129,22 +122,21 @@ class MetisControllerApi {
   }) async {
     final _path = r'/metis/history';
     final _options = Options(
-      method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'jwtAuth',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
+        method: r'GET',
+        headers: <String, dynamic>{
+          ...?headers,
+        },
+        extra: <String, dynamic>{
+          'secure': <Map<String, String>>[
+            {
+              'type': 'http',
+              'scheme': 'bearer',
+              'name': 'jwtAuth',
+            },
+          ],
+          ...?extra,
+        },
+        validateStatus: validateStatus);
 
     final _queryParameters = <String, dynamic>{
       if (carNum != null)
@@ -152,14 +144,12 @@ class MetisControllerApi {
             encodeQueryParameter(_serializers, carNum, const FullType(String)),
     };
 
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      queryParameters: _queryParameters,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
+    final _response = await _dio.request<Object>(_path,
+        options: _options,
+        queryParameters: _queryParameters,
+        cancelToken: cancelToken,
+        onSendProgress: onSendProgress,
+        onReceiveProgress: onReceiveProgress);
 
     BuiltList<CarHistoryDTO>? _responseData;
 
@@ -167,31 +157,28 @@ class MetisControllerApi {
       final rawResponse = _response.data;
       _responseData = rawResponse == null
           ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(BuiltList, [FullType(CarHistoryDTO)]),
-            ) as BuiltList<CarHistoryDTO>;
+          : _serializers.deserialize(rawResponse,
+                  specifiedType:
+                      const FullType(BuiltList, [FullType(CarHistoryDTO)]))
+              as BuiltList<CarHistoryDTO>;
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
+          requestOptions: _response.requestOptions,
+          response: _response,
+          type: DioExceptionType.unknown,
+          error: error,
+          stackTrace: stackTrace);
     }
 
     return Response<BuiltList<CarHistoryDTO>>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
+        data: _responseData,
+        headers: _response.headers,
+        isRedirect: _response.isRedirect,
+        requestOptions: _response.requestOptions,
+        redirects: _response.redirects,
+        statusCode: _response.statusCode,
+        statusMessage: _response.statusMessage,
+        extra: _response.extra);
   }
 
   /// received
@@ -216,30 +203,27 @@ class MetisControllerApi {
   }) async {
     final _path = r'/metis/m2m/digiparts';
     final _options = Options(
-      method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'jwtAuth',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
+        method: r'GET',
+        headers: <String, dynamic>{
+          ...?headers,
+        },
+        extra: <String, dynamic>{
+          'secure': <Map<String, String>>[
+            {
+              'type': 'http',
+              'scheme': 'bearer',
+              'name': 'jwtAuth',
+            },
+          ],
+          ...?extra,
+        },
+        validateStatus: validateStatus);
 
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
+    final _response = await _dio.request<Object>(_path,
+        options: _options,
+        cancelToken: cancelToken,
+        onSendProgress: onSendProgress,
+        onReceiveProgress: onReceiveProgress);
 
     String? _responseData;
 
@@ -248,24 +232,22 @@ class MetisControllerApi {
       _responseData = rawResponse == null ? null : rawResponse as String;
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
+          requestOptions: _response.requestOptions,
+          response: _response,
+          type: DioExceptionType.unknown,
+          error: error,
+          stackTrace: stackTrace);
     }
 
     return Response<String>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
+        data: _responseData,
+        headers: _response.headers,
+        isRedirect: _response.isRedirect,
+        requestOptions: _response.requestOptions,
+        redirects: _response.redirects,
+        statusCode: _response.statusCode,
+        statusMessage: _response.statusMessage,
+        extra: _response.extra);
   }
 
   /// receiveTerminalResponse
@@ -292,36 +274,33 @@ class MetisControllerApi {
   }) async {
     final _path = r'/metis/digiparts';
     final _options = Options(
-      method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'jwtAuth',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
+        method: r'GET',
+        headers: <String, dynamic>{
+          ...?headers,
+        },
+        extra: <String, dynamic>{
+          'secure': <Map<String, String>>[
+            {
+              'type': 'http',
+              'scheme': 'bearer',
+              'name': 'jwtAuth',
+            },
+          ],
+          ...?extra,
+        },
+        validateStatus: validateStatus);
 
     final _queryParameters = <String, dynamic>{
       r'dto': encodeQueryParameter(
           _serializers, dto, const FullType(DeviceControlResultDTO)),
     };
 
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      queryParameters: _queryParameters,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
+    final _response = await _dio.request<Object>(_path,
+        options: _options,
+        queryParameters: _queryParameters,
+        cancelToken: cancelToken,
+        onSendProgress: onSendProgress,
+        onReceiveProgress: onReceiveProgress);
 
     String? _responseData;
 
@@ -330,23 +309,21 @@ class MetisControllerApi {
       _responseData = rawResponse == null ? null : rawResponse as String;
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
+          requestOptions: _response.requestOptions,
+          response: _response,
+          type: DioExceptionType.unknown,
+          error: error,
+          stackTrace: stackTrace);
     }
 
     return Response<String>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
+        data: _responseData,
+        headers: _response.headers,
+        isRedirect: _response.isRedirect,
+        requestOptions: _response.requestOptions,
+        redirects: _response.redirects,
+        statusCode: _response.statusCode,
+        statusMessage: _response.statusMessage,
+        extra: _response.extra);
   }
 }

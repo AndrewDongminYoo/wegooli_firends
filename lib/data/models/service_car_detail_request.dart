@@ -48,10 +48,8 @@ class _$ServiceCarDetailRequestSerializer
   }) sync* {
     if (object.serviceSeq != null) {
       yield r'serviceSeq';
-      yield serializers.serialize(
-        object.serviceSeq,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize(object.serviceSeq,
+          specifiedType: const FullType(String));
     }
   }
 
@@ -79,10 +77,8 @@ class _$ServiceCarDetailRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'serviceSeq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           result.serviceSeq = valueDes;
           break;
         default:
@@ -102,14 +98,11 @@ class _$ServiceCarDetailRequestSerializer
     final result = ServiceCarDetailRequestBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
+    _deserializeProperties(serializers, serialized,
+        specifiedType: specifiedType,
+        serializedList: serializedList,
+        unhandled: unhandled,
+        result: result);
     return result.build();
   }
 }

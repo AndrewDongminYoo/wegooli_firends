@@ -73,16 +73,14 @@ class CustomSearchView extends StatelessWidget {
   Widget build(BuildContext context) {
     return alignment != null
         ? Align(
-            alignment: alignment ?? Alignment.center,
-            child: searchViewWidget,
-          )
+            alignment: alignment ?? Alignment.center, child: searchViewWidget)
         : searchViewWidget;
   }
 
   Widget get searchViewWidget => Container(
-        width: width ?? double.maxFinite,
-        margin: margin,
-        child: TextFormField(
+      width: width ?? double.maxFinite,
+      margin: margin,
+      child: TextFormField(
           controller: controller,
           focusNode: focusNode ?? FocusNode(),
           autofocus: autofocus!,
@@ -90,58 +88,37 @@ class CustomSearchView extends StatelessWidget {
           keyboardType: textInputType,
           maxLines: maxLines ?? 1,
           decoration: decoration,
-          validator: validator,
-        ),
-      );
+          validator: validator));
   InputDecoration get decoration => InputDecoration(
-        hintText: hintText ?? "",
-        hintStyle: hintStyle ?? CustomTextStyles.bodyLargeGray50002,
-        prefixIcon: prefix,
-        prefixIconConstraints: prefixConstraints,
-        suffixIcon: suffix ??
-            Padding(
+      hintText: hintText ?? "",
+      hintStyle: hintStyle ?? CustomTextStyles.bodyLargeGray50002,
+      prefixIcon: prefix,
+      prefixIconConstraints: prefixConstraints,
+      suffixIcon: suffix ??
+          Padding(
               padding: EdgeInsets.only(right: getHorizontalSize(15)),
               child: IconButton(
-                onPressed: () => controller!.clear(),
-                icon: Icon(
-                  Icons.clear,
-                  color: Colors.grey.shade600,
-                ),
-              ),
-            ),
-        suffixIconConstraints: suffixConstraints,
-        isDense: true,
-        contentPadding: contentPadding ??
-            getPadding(
-              left: 12,
-              top: 14,
-              bottom: 14,
-            ),
-        fillColor: fillColor,
-        filled: filled,
-        border: borderDecoration ??
-            OutlineInputBorder(
+                  onPressed: () => controller!.clear(),
+                  icon: Icon(Icons.clear, color: Colors.grey.shade600))),
+      suffixIconConstraints: suffixConstraints,
+      isDense: true,
+      contentPadding:
+          contentPadding ?? getPadding(left: 12, top: 14, bottom: 14),
+      fillColor: fillColor,
+      filled: filled,
+      border: borderDecoration ??
+          OutlineInputBorder(
               borderRadius: BorderRadius.circular(getHorizontalSize(5)),
-              borderSide: BorderSide(
-                color: theme.colorScheme.onError,
-                width: 1,
-              ),
-            ),
-        enabledBorder: borderDecoration ??
-            OutlineInputBorder(
+              borderSide:
+                  BorderSide(color: theme.colorScheme.onError, width: 1)),
+      enabledBorder: borderDecoration ??
+          OutlineInputBorder(
               borderRadius: BorderRadius.circular(getHorizontalSize(5)),
-              borderSide: BorderSide(
-                color: theme.colorScheme.onError,
-                width: 1,
-              ),
-            ),
-        focusedBorder: borderDecoration ??
-            OutlineInputBorder(
+              borderSide:
+                  BorderSide(color: theme.colorScheme.onError, width: 1)),
+      focusedBorder: borderDecoration ??
+          OutlineInputBorder(
               borderRadius: BorderRadius.circular(getHorizontalSize(5)),
-              borderSide: BorderSide(
-                color: theme.colorScheme.onError,
-                width: 1,
-              ),
-            ),
-      );
+              borderSide:
+                  BorderSide(color: theme.colorScheme.onError, width: 1)));
 }

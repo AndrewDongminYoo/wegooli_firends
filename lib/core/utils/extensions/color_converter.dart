@@ -96,10 +96,9 @@ extension _ColorExt on Color {
   ///   결과 RGB 값은 `Color`를 사용하여 새로운 `Color` 개체를 만드는 데 사용됩니다.
   Color operator *(Color other) {
     return Color.rgb(
-      (toRgbColor().r * other.toRgbColor().r / 255).floor(),
-      (toRgbColor().g * other.toRgbColor().g / 255).floor(),
-      (toRgbColor().b * other.toRgbColor().b / 255).floor(),
-    );
+        (toRgbColor().r * other.toRgbColor().r / 255).floor(),
+        (toRgbColor().g * other.toRgbColor().g / 255).floor(),
+        (toRgbColor().b * other.toRgbColor().b / 255).floor());
   }
 
   /// https://github.com/bgrins/TinyColor/blob/master/tinycolor.js#L647
@@ -170,9 +169,6 @@ Color _mix(
   final p = amount / 100;
   final c1 = color1.toRgbColor();
   final c2 = color2.toRgbColor();
-  return Color.rgb(
-    ((c2.r - c1.r) * p + c1.r).round(),
-    ((c2.g - c1.g) * p + c1.g).round(),
-    ((c2.b - c1.b) * p + c1.b).round(),
-  );
+  return Color.rgb(((c2.r - c1.r) * p + c1.r).round(),
+      ((c2.g - c1.g) * p + c1.g).round(), ((c2.b - c1.b) * p + c1.b).round());
 }

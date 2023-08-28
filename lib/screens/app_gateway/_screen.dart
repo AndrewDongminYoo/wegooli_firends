@@ -151,25 +151,22 @@ class GatewayScreen extends StatelessWidget {
   }
 
   Widget alertDialog = AlertDialog(
-    backgroundColor: Colors.transparent,
-    contentPadding: EdgeInsets.zero,
-    insetPadding: EdgeInsets.only(left: 0),
-    content: UnsubscriptionConfirmWarnDialog(),
-  );
+      backgroundColor: Colors.transparent,
+      contentPadding: EdgeInsets.zero,
+      insetPadding: EdgeInsets.only(left: 0),
+      content: UnsubscriptionConfirmWarnDialog());
 
   Widget openInvitationModal = AlertDialog(
-    backgroundColor: Colors.transparent,
-    contentPadding: EdgeInsets.zero,
-    insetPadding: const EdgeInsets.only(left: 0),
-    content: SendingCrewInvitationDialog(SendingCrewInvitationController.to),
-  );
+      backgroundColor: Colors.transparent,
+      contentPadding: EdgeInsets.zero,
+      insetPadding: const EdgeInsets.only(left: 0),
+      content: SendingCrewInvitationDialog(SendingCrewInvitationController.to));
 
   Widget openCheckReservations = AlertDialog(
-    backgroundColor: Colors.transparent,
-    contentPadding: EdgeInsets.zero,
-    insetPadding: const EdgeInsets.only(left: 0),
-    content: ReservationsCheckingPageDialog(),
-  );
+      backgroundColor: Colors.transparent,
+      contentPadding: EdgeInsets.zero,
+      insetPadding: const EdgeInsets.only(left: 0),
+      content: ReservationsCheckingPageDialog());
 
   Widget openDateTimePicker = ReservationDatetimePickerBottomSheet(
       ReservationDatetimePickerController.to);

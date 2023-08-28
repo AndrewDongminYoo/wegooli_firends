@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 import 'controller/_controller.dart';
 
-class RegisterLicense extends GetWidget<RegisterLicensePageController> {
+class RegisterLicense extends GetWidget<RegisterLicenseController> {
   bool isValid() {
     // TODO: 면허증이 valid하면 true, 아니면 false.
     return true;
@@ -324,17 +324,16 @@ class RegisterLicense extends GetWidget<RegisterLicensePageController> {
                 margin: getMargin(left: 15, right: 17, bottom: 29),
                 // decoration: AppDecoration.shadow,
                 child: CustomElevatedButton(
-                  text: Localized.message.registrationComplete,
-                  buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
-                      fixedSize: MaterialStateProperty.all<Size>(
-                          Size(double.maxFinite, getVerticalSize(52)))),
-                  buttonTextStyle: CustomTextStyles.titleMedium18,
-                  onTap: () {
-                    if (this.isValid()) {
-                      onRegisterCreditCard();
-                    }
-                  },
-                ))));
+                    text: Localized.message.registrationComplete,
+                    buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
+                        fixedSize: MaterialStateProperty.all<Size>(
+                            Size(double.maxFinite, getVerticalSize(52)))),
+                    buttonTextStyle: CustomTextStyles.titleMedium18,
+                    onTap: () {
+                      if (this.isValid()) {
+                        onRegisterCreditCard();
+                      }
+                    }))));
   }
 
   /// Navigates to the previous screen.

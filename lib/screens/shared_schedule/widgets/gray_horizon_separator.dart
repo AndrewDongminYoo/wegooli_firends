@@ -12,10 +12,9 @@ class GrayHorizonSeparator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: getVerticalSize(8),
-      width: double.maxFinite,
-      margin: getMargin(top: 21),
-      decoration: BoxDecoration(color: appTheme.gray100),
-    );
+        height: getVerticalSize(8),
+        width: double.maxFinite,
+        margin: getMargin(top: 21),
+        decoration: BoxDecoration(color: appTheme.gray100));
   }
 }

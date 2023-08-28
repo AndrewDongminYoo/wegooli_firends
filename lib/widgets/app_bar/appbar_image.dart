@@ -25,19 +25,16 @@ class AppbarImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        onTap?.call();
-      },
-      child: Padding(
-        padding: margin ?? EdgeInsets.zero,
-        child: CustomImageView(
-          svgPath: svgPath,
-          imagePath: imagePath,
-          height: getSize(18),
-          width: getSize(18),
-          fit: BoxFit.contain,
-        ),
-      ),
-    );
+        onTap: () {
+          onTap?.call();
+        },
+        child: Padding(
+            padding: margin ?? EdgeInsets.zero,
+            child: CustomImageView(
+                svgPath: svgPath,
+                imagePath: imagePath,
+                height: getSize(18),
+                width: getSize(18),
+                fit: BoxFit.contain)));
   }
 }

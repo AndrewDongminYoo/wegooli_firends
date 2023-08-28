@@ -45,36 +45,33 @@ class ShareServiceControllerApi {
   }) async {
     final _path = r'/getShareService';
     final _options = Options(
-      method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'jwtAuth',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
+        method: r'GET',
+        headers: <String, dynamic>{
+          ...?headers,
+        },
+        extra: <String, dynamic>{
+          'secure': <Map<String, String>>[
+            {
+              'type': 'http',
+              'scheme': 'bearer',
+              'name': 'jwtAuth',
+            },
+          ],
+          ...?extra,
+        },
+        validateStatus: validateStatus);
 
     final _queryParameters = <String, dynamic>{
       r'request': encodeQueryParameter(
           _serializers, request, const FullType(ShareServiceRequest)),
     };
 
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      queryParameters: _queryParameters,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
+    final _response = await _dio.request<Object>(_path,
+        options: _options,
+        queryParameters: _queryParameters,
+        cancelToken: cancelToken,
+        onSendProgress: onSendProgress,
+        onReceiveProgress: onReceiveProgress);
 
     BuiltList<ShareServiceModel>? _responseData;
 
@@ -82,31 +79,28 @@ class ShareServiceControllerApi {
       final rawResponse = _response.data;
       _responseData = rawResponse == null
           ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(BuiltList, [FullType(ShareServiceModel)]),
-            ) as BuiltList<ShareServiceModel>;
+          : _serializers.deserialize(rawResponse,
+                  specifiedType:
+                      const FullType(BuiltList, [FullType(ShareServiceModel)]))
+              as BuiltList<ShareServiceModel>;
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
+          requestOptions: _response.requestOptions,
+          response: _response,
+          type: DioExceptionType.unknown,
+          error: error,
+          stackTrace: stackTrace);
     }
 
     return Response<BuiltList<ShareServiceModel>>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
+        data: _responseData,
+        headers: _response.headers,
+        isRedirect: _response.isRedirect,
+        requestOptions: _response.requestOptions,
+        redirects: _response.redirects,
+        statusCode: _response.statusCode,
+        statusMessage: _response.statusMessage,
+        extra: _response.extra);
   }
 
   /// getShareServiceDetail
@@ -133,36 +127,33 @@ class ShareServiceControllerApi {
   }) async {
     final _path = r'/getShareServiceDetail';
     final _options = Options(
-      method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'jwtAuth',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
+        method: r'GET',
+        headers: <String, dynamic>{
+          ...?headers,
+        },
+        extra: <String, dynamic>{
+          'secure': <Map<String, String>>[
+            {
+              'type': 'http',
+              'scheme': 'bearer',
+              'name': 'jwtAuth',
+            },
+          ],
+          ...?extra,
+        },
+        validateStatus: validateStatus);
 
     final _queryParameters = <String, dynamic>{
       r'request': encodeQueryParameter(
           _serializers, request, const FullType(ServiceCarDetailRequest)),
     };
 
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      queryParameters: _queryParameters,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
+    final _response = await _dio.request<Object>(_path,
+        options: _options,
+        queryParameters: _queryParameters,
+        cancelToken: cancelToken,
+        onSendProgress: onSendProgress,
+        onReceiveProgress: onReceiveProgress);
 
     ServiceDetail? _responseData;
 
@@ -170,30 +161,26 @@ class ShareServiceControllerApi {
       final rawResponse = _response.data;
       _responseData = rawResponse == null
           ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ServiceDetail),
-            ) as ServiceDetail;
+          : _serializers.deserialize(rawResponse,
+              specifiedType: const FullType(ServiceDetail)) as ServiceDetail;
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
+          requestOptions: _response.requestOptions,
+          response: _response,
+          type: DioExceptionType.unknown,
+          error: error,
+          stackTrace: stackTrace);
     }
 
     return Response<ServiceDetail>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
+        data: _responseData,
+        headers: _response.headers,
+        isRedirect: _response.isRedirect,
+        requestOptions: _response.requestOptions,
+        redirects: _response.redirects,
+        statusCode: _response.statusCode,
+        statusMessage: _response.statusMessage,
+        extra: _response.extra);
   }
 
   /// setServiceLeader
@@ -220,36 +207,33 @@ class ShareServiceControllerApi {
   }) async {
     final _path = r'/setServiceLeader';
     final _options = Options(
-      method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'jwtAuth',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
+        method: r'GET',
+        headers: <String, dynamic>{
+          ...?headers,
+        },
+        extra: <String, dynamic>{
+          'secure': <Map<String, String>>[
+            {
+              'type': 'http',
+              'scheme': 'bearer',
+              'name': 'jwtAuth',
+            },
+          ],
+          ...?extra,
+        },
+        validateStatus: validateStatus);
 
     final _queryParameters = <String, dynamic>{
       r'request': encodeQueryParameter(
           _serializers, request, const FullType(LeaderSetRequest)),
     };
 
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      queryParameters: _queryParameters,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
+    final _response = await _dio.request<Object>(_path,
+        options: _options,
+        queryParameters: _queryParameters,
+        cancelToken: cancelToken,
+        onSendProgress: onSendProgress,
+        onReceiveProgress: onReceiveProgress);
 
     String? _responseData;
 
@@ -258,23 +242,21 @@ class ShareServiceControllerApi {
       _responseData = rawResponse == null ? null : rawResponse as String;
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
+          requestOptions: _response.requestOptions,
+          response: _response,
+          type: DioExceptionType.unknown,
+          error: error,
+          stackTrace: stackTrace);
     }
 
     return Response<String>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
+        data: _responseData,
+        headers: _response.headers,
+        isRedirect: _response.isRedirect,
+        requestOptions: _response.requestOptions,
+        redirects: _response.redirects,
+        statusCode: _response.statusCode,
+        statusMessage: _response.statusMessage,
+        extra: _response.extra);
   }
 }

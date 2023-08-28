@@ -72,59 +72,43 @@ class _$TeamCarConnectionSerializer
   }) sync* {
     if (object.seq != null) {
       yield r'seq';
-      yield serializers.serialize(
-        object.seq,
-        specifiedType: const FullType(int),
-      );
+      yield serializers.serialize(object.seq,
+          specifiedType: const FullType(int));
     }
     if (object.teamSeq != null) {
       yield r'teamSeq';
-      yield serializers.serialize(
-        object.teamSeq,
-        specifiedType: const FullType(int),
-      );
+      yield serializers.serialize(object.teamSeq,
+          specifiedType: const FullType(int));
     }
     if (object.carNum != null) {
       yield r'carNum';
-      yield serializers.serialize(
-        object.carNum,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize(object.carNum,
+          specifiedType: const FullType(String));
     }
     if (object.startAt != null) {
       yield r'startAt';
-      yield serializers.serialize(
-        object.startAt,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize(object.startAt,
+          specifiedType: const FullType(String));
     }
     if (object.endAt != null) {
       yield r'endAt';
-      yield serializers.serialize(
-        object.endAt,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize(object.endAt,
+          specifiedType: const FullType(String));
     }
     if (object.createdAt != null) {
       yield r'createdAt';
-      yield serializers.serialize(
-        object.createdAt,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize(object.createdAt,
+          specifiedType: const FullType(String));
     }
     if (object.updatedAt != null) {
       yield r'updatedAt';
-      yield serializers.serialize(
-        object.updatedAt,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize(object.updatedAt,
+          specifiedType: const FullType(String));
     }
     if (object.activeYn != null) {
       yield r'activeYn';
-      yield serializers.serialize(
-        object.activeYn,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize(object.activeYn,
+          specifiedType: const FullType(String));
     }
   }
 
@@ -152,59 +136,43 @@ class _$TeamCarConnectionSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'seq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
           result.seq = valueDes;
           break;
         case r'teamSeq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
           result.teamSeq = valueDes;
           break;
         case r'carNum':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           result.carNum = valueDes;
           break;
         case r'startAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           result.startAt = valueDes;
           break;
         case r'endAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           result.endAt = valueDes;
           break;
         case r'createdAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           result.createdAt = valueDes;
           break;
         case r'updatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           result.updatedAt = valueDes;
           break;
         case r'activeYn':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           result.activeYn = valueDes;
           break;
         default:
@@ -224,14 +192,11 @@ class _$TeamCarConnectionSerializer
     final result = TeamCarConnectionBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
+    _deserializeProperties(serializers, serialized,
+        specifiedType: specifiedType,
+        serializedList: serializedList,
+        unhandled: unhandled,
+        result: result);
     return result.build();
   }
 }

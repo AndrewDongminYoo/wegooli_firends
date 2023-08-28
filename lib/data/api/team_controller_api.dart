@@ -44,30 +44,27 @@ class TeamControllerApi {
     final _path =
         r'/team/{teamSeq}'.replaceAll('{' r'teamSeq' '}', teamSeq.toString());
     final _options = Options(
-      method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'jwtAuth',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
+        method: r'DELETE',
+        headers: <String, dynamic>{
+          ...?headers,
+        },
+        extra: <String, dynamic>{
+          'secure': <Map<String, String>>[
+            {
+              'type': 'http',
+              'scheme': 'bearer',
+              'name': 'jwtAuth',
+            },
+          ],
+          ...?extra,
+        },
+        validateStatus: validateStatus);
 
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
+    final _response = await _dio.request<Object>(_path,
+        options: _options,
+        cancelToken: cancelToken,
+        onSendProgress: onSendProgress,
+        onReceiveProgress: onReceiveProgress);
 
     String? _responseData;
 
@@ -76,24 +73,22 @@ class TeamControllerApi {
       _responseData = rawResponse == null ? null : rawResponse as String;
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
+          requestOptions: _response.requestOptions,
+          response: _response,
+          type: DioExceptionType.unknown,
+          error: error,
+          stackTrace: stackTrace);
     }
 
     return Response<String>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
+        data: _responseData,
+        headers: _response.headers,
+        isRedirect: _response.isRedirect,
+        requestOptions: _response.requestOptions,
+        redirects: _response.redirects,
+        statusCode: _response.statusCode,
+        statusMessage: _response.statusMessage,
+        extra: _response.extra);
   }
 
   /// insertTeam
@@ -120,23 +115,22 @@ class TeamControllerApi {
   }) async {
     final _path = r'/team';
     final _options = Options(
-      method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'jwtAuth',
-          },
-        ],
-        ...?extra,
-      },
-      contentType: 'application/json',
-      validateStatus: validateStatus,
-    );
+        method: r'POST',
+        headers: <String, dynamic>{
+          ...?headers,
+        },
+        extra: <String, dynamic>{
+          'secure': <Map<String, String>>[
+            {
+              'type': 'http',
+              'scheme': 'bearer',
+              'name': 'jwtAuth',
+            },
+          ],
+          ...?extra,
+        },
+        contentType: 'application/json',
+        validateStatus: validateStatus);
 
     dynamic _bodyData;
 
@@ -145,24 +139,18 @@ class TeamControllerApi {
       _bodyData = _serializers.serialize(teamRequest, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
+          requestOptions: _options.compose(_dio.options, _path),
+          type: DioExceptionType.unknown,
+          error: error,
+          stackTrace: stackTrace);
     }
 
-    final _response = await _dio.request<Object>(
-      _path,
-      data: _bodyData,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
+    final _response = await _dio.request<Object>(_path,
+        data: _bodyData,
+        options: _options,
+        cancelToken: cancelToken,
+        onSendProgress: onSendProgress,
+        onReceiveProgress: onReceiveProgress);
 
     JsonObject? _responseData;
 
@@ -170,30 +158,26 @@ class TeamControllerApi {
       final rawResponse = _response.data;
       _responseData = rawResponse == null
           ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(JsonObject),
-            ) as JsonObject;
+          : _serializers.deserialize(rawResponse,
+              specifiedType: const FullType(JsonObject)) as JsonObject;
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
+          requestOptions: _response.requestOptions,
+          response: _response,
+          type: DioExceptionType.unknown,
+          error: error,
+          stackTrace: stackTrace);
     }
 
     return Response<JsonObject>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
+        data: _responseData,
+        headers: _response.headers,
+        isRedirect: _response.isRedirect,
+        requestOptions: _response.requestOptions,
+        redirects: _response.redirects,
+        statusCode: _response.statusCode,
+        statusMessage: _response.statusMessage,
+        extra: _response.extra);
   }
 
   /// selectTeam
@@ -221,30 +205,27 @@ class TeamControllerApi {
     final _path =
         r'/team/{teamSeq}'.replaceAll('{' r'teamSeq' '}', teamSeq.toString());
     final _options = Options(
-      method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'jwtAuth',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
+        method: r'GET',
+        headers: <String, dynamic>{
+          ...?headers,
+        },
+        extra: <String, dynamic>{
+          'secure': <Map<String, String>>[
+            {
+              'type': 'http',
+              'scheme': 'bearer',
+              'name': 'jwtAuth',
+            },
+          ],
+          ...?extra,
+        },
+        validateStatus: validateStatus);
 
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
+    final _response = await _dio.request<Object>(_path,
+        options: _options,
+        cancelToken: cancelToken,
+        onSendProgress: onSendProgress,
+        onReceiveProgress: onReceiveProgress);
 
     TeamModel? _responseData;
 
@@ -252,30 +233,26 @@ class TeamControllerApi {
       final rawResponse = _response.data;
       _responseData = rawResponse == null
           ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(TeamModel),
-            ) as TeamModel;
+          : _serializers.deserialize(rawResponse,
+              specifiedType: const FullType(TeamModel)) as TeamModel;
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
+          requestOptions: _response.requestOptions,
+          response: _response,
+          type: DioExceptionType.unknown,
+          error: error,
+          stackTrace: stackTrace);
     }
 
     return Response<TeamModel>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
+        data: _responseData,
+        headers: _response.headers,
+        isRedirect: _response.isRedirect,
+        requestOptions: _response.requestOptions,
+        redirects: _response.redirects,
+        statusCode: _response.statusCode,
+        statusMessage: _response.statusMessage,
+        extra: _response.extra);
   }
 
   /// selectTeamByTeamCode
@@ -303,30 +280,27 @@ class TeamControllerApi {
     final _path = r'/team/code/{teamCode}'
         .replaceAll('{' r'teamCode' '}', teamCode.toString());
     final _options = Options(
-      method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'jwtAuth',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
+        method: r'GET',
+        headers: <String, dynamic>{
+          ...?headers,
+        },
+        extra: <String, dynamic>{
+          'secure': <Map<String, String>>[
+            {
+              'type': 'http',
+              'scheme': 'bearer',
+              'name': 'jwtAuth',
+            },
+          ],
+          ...?extra,
+        },
+        validateStatus: validateStatus);
 
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
+    final _response = await _dio.request<Object>(_path,
+        options: _options,
+        cancelToken: cancelToken,
+        onSendProgress: onSendProgress,
+        onReceiveProgress: onReceiveProgress);
 
     TeamModel? _responseData;
 
@@ -334,30 +308,26 @@ class TeamControllerApi {
       final rawResponse = _response.data;
       _responseData = rawResponse == null
           ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(TeamModel),
-            ) as TeamModel;
+          : _serializers.deserialize(rawResponse,
+              specifiedType: const FullType(TeamModel)) as TeamModel;
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
+          requestOptions: _response.requestOptions,
+          response: _response,
+          type: DioExceptionType.unknown,
+          error: error,
+          stackTrace: stackTrace);
     }
 
     return Response<TeamModel>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
+        data: _responseData,
+        headers: _response.headers,
+        isRedirect: _response.isRedirect,
+        requestOptions: _response.requestOptions,
+        redirects: _response.redirects,
+        statusCode: _response.statusCode,
+        statusMessage: _response.statusMessage,
+        extra: _response.extra);
   }
 
   /// selectTeamList
@@ -398,22 +368,21 @@ class TeamControllerApi {
   }) async {
     final _path = r'/team';
     final _options = Options(
-      method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'jwtAuth',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
+        method: r'GET',
+        headers: <String, dynamic>{
+          ...?headers,
+        },
+        extra: <String, dynamic>{
+          'secure': <Map<String, String>>[
+            {
+              'type': 'http',
+              'scheme': 'bearer',
+              'name': 'jwtAuth',
+            },
+          ],
+          ...?extra,
+        },
+        validateStatus: validateStatus);
 
     final _queryParameters = <String, dynamic>{
       if (accountId != null)
@@ -442,14 +411,12 @@ class TeamControllerApi {
             _serializers, contract, const FullType(String)),
     };
 
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      queryParameters: _queryParameters,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
+    final _response = await _dio.request<Object>(_path,
+        options: _options,
+        queryParameters: _queryParameters,
+        cancelToken: cancelToken,
+        onSendProgress: onSendProgress,
+        onReceiveProgress: onReceiveProgress);
 
     BuiltList<TeamModel>? _responseData;
 
@@ -457,30 +424,28 @@ class TeamControllerApi {
       final rawResponse = _response.data;
       _responseData = rawResponse == null
           ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(BuiltList, [FullType(TeamModel)]),
-            ) as BuiltList<TeamModel>;
+          : _serializers.deserialize(rawResponse,
+                  specifiedType:
+                      const FullType(BuiltList, [FullType(TeamModel)]))
+              as BuiltList<TeamModel>;
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
+          requestOptions: _response.requestOptions,
+          response: _response,
+          type: DioExceptionType.unknown,
+          error: error,
+          stackTrace: stackTrace);
     }
 
     return Response<BuiltList<TeamModel>>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
+        data: _responseData,
+        headers: _response.headers,
+        isRedirect: _response.isRedirect,
+        requestOptions: _response.requestOptions,
+        redirects: _response.redirects,
+        statusCode: _response.statusCode,
+        statusMessage: _response.statusMessage,
+        extra: _response.extra);
   }
 
   /// updateTeam
@@ -510,23 +475,22 @@ class TeamControllerApi {
     final _path =
         r'/team/{teamSeq}'.replaceAll('{' r'teamSeq' '}', teamSeq.toString());
     final _options = Options(
-      method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'jwtAuth',
-          },
-        ],
-        ...?extra,
-      },
-      contentType: 'application/json',
-      validateStatus: validateStatus,
-    );
+        method: r'PUT',
+        headers: <String, dynamic>{
+          ...?headers,
+        },
+        extra: <String, dynamic>{
+          'secure': <Map<String, String>>[
+            {
+              'type': 'http',
+              'scheme': 'bearer',
+              'name': 'jwtAuth',
+            },
+          ],
+          ...?extra,
+        },
+        contentType: 'application/json',
+        validateStatus: validateStatus);
 
     dynamic _bodyData;
 
@@ -535,24 +499,18 @@ class TeamControllerApi {
       _bodyData = _serializers.serialize(teamRequest, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
+          requestOptions: _options.compose(_dio.options, _path),
+          type: DioExceptionType.unknown,
+          error: error,
+          stackTrace: stackTrace);
     }
 
-    final _response = await _dio.request<Object>(
-      _path,
-      data: _bodyData,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
+    final _response = await _dio.request<Object>(_path,
+        data: _bodyData,
+        options: _options,
+        cancelToken: cancelToken,
+        onSendProgress: onSendProgress,
+        onReceiveProgress: onReceiveProgress);
 
     String? _responseData;
 
@@ -561,23 +519,21 @@ class TeamControllerApi {
       _responseData = rawResponse == null ? null : rawResponse as String;
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
+          requestOptions: _response.requestOptions,
+          response: _response,
+          type: DioExceptionType.unknown,
+          error: error,
+          stackTrace: stackTrace);
     }
 
     return Response<String>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
+        data: _responseData,
+        headers: _response.headers,
+        isRedirect: _response.isRedirect,
+        requestOptions: _response.requestOptions,
+        redirects: _response.redirects,
+        statusCode: _response.statusCode,
+        statusMessage: _response.statusMessage,
+        extra: _response.extra);
   }
 }

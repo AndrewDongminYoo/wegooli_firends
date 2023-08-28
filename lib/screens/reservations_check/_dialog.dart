@@ -71,7 +71,8 @@ class ReservationsCheckingPageDialog extends StatelessWidget {
                                                 height: getSize(50),
                                                 width: getSize(50),
                                                 padding: getPadding(all: 4),
-                                                decoration: AppDecoration.fill1
+                                                decoration: AppDecoration
+                                                    .fillPrimary
                                                     .copyWith(
                                                         borderRadius:
                                                             BorderRadiusStyle
@@ -125,7 +126,7 @@ class ReservationsCheckingPageDialog extends StatelessWidget {
                                                     width: getSize(50),
                                                     padding: getPadding(all: 4),
                                                     decoration: AppDecoration
-                                                        .fill2
+                                                        .fillDeepOrange
                                                         .copyWith(
                                                             borderRadius:
                                                                 BorderRadiusStyle
@@ -184,7 +185,7 @@ class ReservationsCheckingPageDialog extends StatelessWidget {
                                                     width: getSize(50),
                                                     padding: getPadding(all: 4),
                                                     decoration: AppDecoration
-                                                        .fill3
+                                                        .fillDeepPurple
                                                         .copyWith(
                                                             borderRadius:
                                                                 BorderRadiusStyle

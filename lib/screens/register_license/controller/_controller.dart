@@ -12,11 +12,11 @@ import '/core/utils/selection_popup.dart';
 ///
 /// This class manages the state of the RegisterLicensePageScreen, including the
 /// current registerLicensePageModelObj
-class RegisterLicensePageController extends GetxController {
-  static RegisterLicensePageController get to =>
-      Get.isRegistered<RegisterLicensePageController>()
-          ? Get.find<RegisterLicensePageController>()
-          : Get.put(RegisterLicensePageController());
+class RegisterLicenseController extends GetxController {
+  static RegisterLicenseController get to =>
+      Get.isRegistered<RegisterLicenseController>()
+          ? Get.find<RegisterLicenseController>()
+          : Get.put(RegisterLicenseController());
   TextEditingController frontNumberController = TextEditingController();
   TextEditingController expDateController = TextEditingController();
   TextEditingController backNumberController = TextEditingController();

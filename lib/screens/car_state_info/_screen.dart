@@ -47,7 +47,7 @@ class CarStateInformation extends StatelessWidget {
                           margin: getMargin(top: 12),
                           padding: getPadding(
                               left: 80, top: 30, right: 80, bottom: 30),
-                          decoration: AppDecoration.fill5.copyWith(
+                          decoration: AppDecoration.fillWhiteSmoke.copyWith(
                               borderRadius: BorderRadiusStyle.roundedBorder10),
                           child: CustomImageView(
                               imagePath: Assets.images.imgCarAllNewK3.path,

@@ -53,24 +53,18 @@ class _$ApiResponseObjectSerializer
   }) sync* {
     if (object.result != null) {
       yield r'result';
-      yield serializers.serialize(
-        object.result,
-        specifiedType: const FullType(JsonObject),
-      );
+      yield serializers.serialize(object.result,
+          specifiedType: const FullType(JsonObject));
     }
     if (object.resultCode != null) {
       yield r'resultCode';
-      yield serializers.serialize(
-        object.resultCode,
-        specifiedType: const FullType(int),
-      );
+      yield serializers.serialize(object.resultCode,
+          specifiedType: const FullType(int));
     }
     if (object.resultMsg != null) {
       yield r'resultMsg';
-      yield serializers.serialize(
-        object.resultMsg,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize(object.resultMsg,
+          specifiedType: const FullType(String));
     }
   }
 
@@ -98,24 +92,18 @@ class _$ApiResponseObjectSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'result':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(JsonObject),
-          ) as JsonObject;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(JsonObject)) as JsonObject;
           result.result = valueDes;
           break;
         case r'resultCode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
           result.resultCode = valueDes;
           break;
         case r'resultMsg':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           result.resultMsg = valueDes;
           break;
         default:
@@ -135,14 +123,11 @@ class _$ApiResponseObjectSerializer
     final result = ApiResponseObjectBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
+    _deserializeProperties(serializers, serialized,
+        specifiedType: specifiedType,
+        serializedList: serializedList,
+        unhandled: unhandled,
+        result: result);
     return result.build();
   }
 }

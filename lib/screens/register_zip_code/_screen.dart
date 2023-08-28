@@ -124,32 +124,33 @@ class RegisterZipCode extends GetWidget<RegisterZipCodeController> {
                                         ]))),
                             Expanded(
                                 child: CustomElevatedButton(
-                              text: "주소 검색",
-                              margin: getMargin(left: 4, top: 27),
-                              buttonStyle: CustomButtonStyles.fillPrimaryTL5
-                                  .copyWith(
-                                      fixedSize:
-                                          MaterialStateProperty.all<Size>(Size(
-                                              double.maxFinite,
-                                              getVerticalSize(48)))),
-                              buttonTextStyle: theme.textTheme.titleMedium!,
-                              onTap: () async {
-                                await Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (_) => KpostalView(
-                                              useLocalServer: true,
-                                              localPort: 1024,
-                                              callback: (Kpostal result) {
-                                                controller.postalCodeController
-                                                    .text = result.postCode;
-                                                controller
-                                                    .primaryAddressController
-                                                    .text = result.address;
-                                              },
-                                            )));
-                              },
-                            ))
+                                    text: "주소 검색",
+                                    margin: getMargin(left: 4, top: 27),
+                                    buttonStyle: CustomButtonStyles
+                                        .fillPrimaryTL5
+                                        .copyWith(
+                                            fixedSize:
+                                                MaterialStateProperty.all<Size>(
+                                                    Size(double.maxFinite,
+                                                        getVerticalSize(48)))),
+                                    buttonTextStyle:
+                                        theme.textTheme.titleMedium!,
+                                    onTap: () async {
+                                      await Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (_) => KpostalView(
+                                                  useLocalServer: true,
+                                                  localPort: 1024,
+                                                  callback: (Kpostal result) {
+                                                    controller
+                                                        .postalCodeController
+                                                        .text = result.postCode;
+                                                    controller
+                                                        .primaryAddressController
+                                                        .text = result.address;
+                                                  })));
+                                    }))
                           ]),
                       CustomTextFormField(
                           enabled: false,
@@ -284,15 +285,15 @@ class RegisterZipCode extends GetWidget<RegisterZipCodeController> {
                                             right: 10,
                                             bottom: 12),
                                         child: CustomImageView(
-                                          svgPath:
-                                              controller.isShowPassword.isTrue
-                                                  ? Assets.svg.imgEyeOpened.path
-                                                  : Assets.svg.imgEyeCrossedOut
-                                                      .path,
-                                          onTap: () {
-                                            controller.isShowPassword.toggle();
-                                          },
-                                        )),
+                                            svgPath: controller
+                                                    .isShowPassword.isTrue
+                                                ? Assets.svg.imgEyeOpened.path
+                                                : Assets
+                                                    .svg.imgEyeCrossedOut.path,
+                                            onTap: () {
+                                              controller.isShowPassword
+                                                  .toggle();
+                                            })),
                                     suffixConstraints: BoxConstraints(
                                         maxHeight: getVerticalSize(48)),
                                     filled: true,
@@ -356,16 +357,16 @@ class RegisterZipCode extends GetWidget<RegisterZipCodeController> {
                                             right: 10,
                                             bottom: 12),
                                         child: CustomImageView(
-                                          svgPath: controller
-                                                  .isShowConfirmPassword.isTrue
-                                              ? Assets.svg.imgEyeOpened.path
-                                              : Assets
-                                                  .svg.imgEyeCrossedOut.path,
-                                          onTap: () {
-                                            controller.isShowConfirmPassword
-                                                .toggle();
-                                          },
-                                        )),
+                                            svgPath: controller
+                                                    .isShowConfirmPassword
+                                                    .isTrue
+                                                ? Assets.svg.imgEyeOpened.path
+                                                : Assets
+                                                    .svg.imgEyeCrossedOut.path,
+                                            onTap: () {
+                                              controller.isShowConfirmPassword
+                                                  .toggle();
+                                            })),
                                     suffixConstraints: BoxConstraints(
                                         maxHeight: getVerticalSize(48)),
                                     filled: true,
@@ -430,19 +431,18 @@ class RegisterZipCode extends GetWidget<RegisterZipCodeController> {
                 margin: getMargin(left: 16, right: 16, bottom: 29),
                 // decoration: AppDecoration.shadow,
                 child: CustomElevatedButton(
-                  text: "입력 완료",
-                  // TODO disabled일 때 스타일 정의하기
-                  // isDisabled: !controller.isValid,
-                  buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
-                      fixedSize: MaterialStateProperty.all<Size>(
-                          Size(double.maxFinite, getVerticalSize(52)))),
-                  buttonTextStyle: CustomTextStyles.titleMedium18,
-                  onTap: () {
-                    if (controller.isValid) {
-                      Get.toNamed(AppRoutes.registerLicense);
-                    }
-                  },
-                ))));
+                    text: "입력 완료",
+                    // TODO disabled일 때 스타일 정의하기
+                    // isDisabled: !controller.isValid,
+                    buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
+                        fixedSize: MaterialStateProperty.all<Size>(
+                            Size(double.maxFinite, getVerticalSize(52)))),
+                    buttonTextStyle: CustomTextStyles.titleMedium18,
+                    onTap: () {
+                      if (controller.isValid) {
+                        Get.toNamed(AppRoutes.registerLicense);
+                      }
+                    }))));
   }
 
   /// Navigates to the previous screen.

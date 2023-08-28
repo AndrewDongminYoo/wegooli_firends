@@ -51,17 +51,13 @@ class _$ShareServiceRequestSerializer
   }) sync* {
     if (object.startMonthlyAmount != null) {
       yield r'startMonthlyAmount';
-      yield serializers.serialize(
-        object.startMonthlyAmount,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize(object.startMonthlyAmount,
+          specifiedType: const FullType(String));
     }
     if (object.endMonthlyAmount != null) {
       yield r'endMonthlyAmount';
-      yield serializers.serialize(
-        object.endMonthlyAmount,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize(object.endMonthlyAmount,
+          specifiedType: const FullType(String));
     }
   }
 
@@ -89,17 +85,13 @@ class _$ShareServiceRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'startMonthlyAmount':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           result.startMonthlyAmount = valueDes;
           break;
         case r'endMonthlyAmount':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           result.endMonthlyAmount = valueDes;
           break;
         default:
@@ -119,14 +111,11 @@ class _$ShareServiceRequestSerializer
     final result = ShareServiceRequestBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
+    _deserializeProperties(serializers, serialized,
+        specifiedType: specifiedType,
+        serializedList: serializedList,
+        unhandled: unhandled,
+        result: result);
     return result.build();
   }
 }

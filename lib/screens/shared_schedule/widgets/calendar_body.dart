@@ -33,13 +33,12 @@ class _CalendarBodyState extends State<CalendarBody> {
   DateTime? _rangeEnd;
   TeamScheduleController controller = Get.find<TeamScheduleController>();
   get daysOfWeekStyle => DaysOfWeekStyle(
-        weekdayStyle: TextStyle(
-            color: Colors.black, fontWeight: FontWeight.bold, fontSize: 14),
-        weekendStyle: TextStyle(
-            color: Colors.red.shade400,
-            fontWeight: FontWeight.bold,
-            fontSize: 14),
-      );
+      weekdayStyle: TextStyle(
+          color: Colors.black, fontWeight: FontWeight.bold, fontSize: 14),
+      weekendStyle: TextStyle(
+          color: Colors.red.shade400,
+          fontWeight: FontWeight.bold,
+          fontSize: 14));
 
   @override
   void initState() {
@@ -90,37 +89,33 @@ class _CalendarBodyState extends State<CalendarBody> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: getPadding(all: 16),
-      child: Container(
         padding: getPadding(all: 16),
-        decoration: AppDecoration.outline
-            .copyWith(borderRadius: BorderRadiusStyle.roundedBorder10),
-        child: Align(
-          alignment: Alignment.center,
-          child: TableCalendar<Schedule>(
-            calendarFormat: _calendarFormat,
-            daysOfWeekHeight: 30,
-            eventLoader: (day) => kEvents[day] ?? [],
-            firstDay: kFirstDay,
-            focusedDay: _focusedDay,
-            lastDay: kLastDay,
-            locale: Locale('ko', 'KR').toString(),
-            rangeEndDay: _rangeEnd,
-            rangeSelectionMode: _rangeSelectionMode,
-            rangeStartDay: _rangeStart,
-            selectedDayPredicate: (day) => isSameDay(_selectedDay, day),
-            startingDayOfWeek: StartingDayOfWeek.sunday,
-            daysOfWeekStyle: daysOfWeekStyle,
-            calendarStyle: calendarStyle,
-            headerStyle: headerStyle,
-            onDaySelected: _onDaySelected,
-            onRangeSelected: _onRangeSelected,
-            onFormatChanged: _onFormatChanged,
-            onPageChanged: _onPageChanged,
-          ),
-        ),
-      ),
-    );
+        child: Container(
+            padding: getPadding(all: 16),
+            decoration: AppDecoration.outline
+                .copyWith(borderRadius: BorderRadiusStyle.roundedBorder10),
+            child: Align(
+                alignment: Alignment.center,
+                child: TableCalendar<Schedule>(
+                    calendarFormat: _calendarFormat,
+                    daysOfWeekHeight: 30,
+                    eventLoader: (day) => kEvents[day] ?? [],
+                    firstDay: kFirstDay,
+                    focusedDay: _focusedDay,
+                    lastDay: kLastDay,
+                    locale: Locale('ko', 'KR').toString(),
+                    rangeEndDay: _rangeEnd,
+                    rangeSelectionMode: _rangeSelectionMode,
+                    rangeStartDay: _rangeStart,
+                    selectedDayPredicate: (day) => isSameDay(_selectedDay, day),
+                    startingDayOfWeek: StartingDayOfWeek.sunday,
+                    daysOfWeekStyle: daysOfWeekStyle,
+                    calendarStyle: calendarStyle,
+                    headerStyle: headerStyle,
+                    onDaySelected: _onDaySelected,
+                    onRangeSelected: _onRangeSelected,
+                    onFormatChanged: _onFormatChanged,
+                    onPageChanged: _onPageChanged))));
   }
 
   void _onPageChanged(focusedDay) {

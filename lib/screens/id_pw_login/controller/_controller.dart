@@ -11,11 +11,10 @@ import '/data/data.dart';
 ///
 /// This class manages the state of the LoginWithIdAndPasswordScreen, including the
 /// current withIdAndPasswordModelObj
-class LoginWithIdAndPasswordController extends GetxController {
-  static LoginWithIdAndPasswordController get to =>
-      Get.isRegistered<LoginWithIdAndPasswordController>()
-          ? Get.find<LoginWithIdAndPasswordController>()
-          : Get.put(LoginWithIdAndPasswordController());
+class IdPwLoginController extends GetxController {
+  static IdPwLoginController get to => Get.isRegistered<IdPwLoginController>()
+      ? Get.find<IdPwLoginController>()
+      : Get.put(IdPwLoginController());
   TextEditingController usernameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   RxBool isAuthenticated = false.obs;

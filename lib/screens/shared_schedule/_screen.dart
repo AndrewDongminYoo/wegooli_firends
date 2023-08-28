@@ -15,10 +15,9 @@ class TeamScheduleShare extends GetWidget<TeamScheduleController> {
     mediaQueryData = MediaQuery.of(context);
     return SafeArea(
         child: Scaffold(
-      backgroundColor: theme.colorScheme.onPrimaryContainer,
-      body: SharedCalendar(),
-      bottomNavigationBar: BottomTabRouterBar(),
-    ));
+            backgroundColor: theme.colorScheme.onPrimaryContainer,
+            body: SharedCalendar(),
+            bottomNavigationBar: BottomTabRouterBar()));
   }
 
   /// Handling page based on route
@@ -26,19 +25,17 @@ class TeamScheduleShare extends GetWidget<TeamScheduleController> {
     switch (currentRoute) {
       case AppRoutes.chatWithFriends:
         // TODO 로그인한 사용자 정보 넣기 !! 팀 정보 넣기
-        UserDTO currentUser =
-            Get.find<LoginWithIdAndPasswordController>().currentUser.value;
-        List<String> otherUserIds = Get.find<LoginWithIdAndPasswordController>()
+        UserDTO currentUser = Get.find<IdPwLoginController>().currentUser.value;
+        List<String> otherUserIds = Get.find<IdPwLoginController>()
             .members
             .map((it) => it.accountId as String)
             .toList();
         print('currentUser $currentUser');
         print('otherUserIds $otherUserIds');
         return DashChatWithFriendsPage(
-          appId: "36FB6EA9-27A7-44F1-9696-72E1E21033B6",
-          userId: currentUser.id as String,
-          otherUserIds: otherUserIds,
-        );
+            appId: "36FB6EA9-27A7-44F1-9696-72E1E21033B6",
+            userId: currentUser.id as String,
+            otherUserIds: otherUserIds);
       case AppRoutes.smartKeyAvailable:
         return SmartKeyAvailablePage();
       case AppRoutes.myProfilePage:

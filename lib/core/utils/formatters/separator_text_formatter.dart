@@ -12,9 +12,7 @@ class SeperateTextFormatter extends TextInputFormatter {
 
   @override
   TextEditingValue formatEditUpdate(
-    TextEditingValue oldValue,
-    TextEditingValue newValue,
-  ) {
+      TextEditingValue oldValue, TextEditingValue newValue) {
     final String newText = newValue.text;
     final String oldText = oldValue.text;
 

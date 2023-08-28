@@ -18,10 +18,7 @@ class BasicAuthInterceptor extends AuthInterceptor {
   final Map<String, BasicAuthInfo> authInfo = {};
 
   @override
-  void onRequest(
-    RequestOptions options,
-    RequestInterceptorHandler handler,
-  ) {
+  void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
     final metadataAuthInfo = getAuthInfo(
         options,
         (secure) =>

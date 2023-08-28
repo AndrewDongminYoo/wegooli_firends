@@ -74,15 +74,14 @@ class CustomTextFormField extends StatelessWidget {
     return alignment != null
         ? Align(
             alignment: alignment ?? Alignment.center,
-            child: textFormFieldWidget,
-          )
+            child: textFormFieldWidget)
         : textFormFieldWidget;
   }
 
   Widget get textFormFieldWidget => Container(
-        width: width ?? double.maxFinite,
-        margin: margin,
-        child: TextFormField(
+      width: width ?? double.maxFinite,
+      margin: margin,
+      child: TextFormField(
           obscuringCharacter: obscureChar,
           inputFormatters: inputFormatters,
           obscureText: obscureText!,
@@ -96,79 +95,48 @@ class CustomTextFormField extends StatelessWidget {
           decoration: decoration,
           validator: validator,
           enabled: enabled,
-          initialValue: initialValue,
-        ),
-      );
+          initialValue: initialValue));
   InputDecoration get decoration => InputDecoration(
-        hintText: hintText ?? "",
-        hintStyle: hintStyle,
-        prefixIcon: prefix,
-        prefixIconConstraints: prefixConstraints,
-        suffixIcon: suffix,
-        suffixIconConstraints: suffixConstraints,
-        fillColor: fillColor,
-        filled: filled,
-        isDense: true,
-        contentPadding: contentPadding,
-        border: defaultBorderDecoration ??
-            OutlineInputBorder(
-              borderRadius: BorderRadius.circular(
-                getHorizontalSize(5.00),
-              ),
+      hintText: hintText ?? "",
+      hintStyle: hintStyle,
+      prefixIcon: prefix,
+      prefixIconConstraints: prefixConstraints,
+      suffixIcon: suffix,
+      suffixIconConstraints: suffixConstraints,
+      fillColor: fillColor,
+      filled: filled,
+      isDense: true,
+      contentPadding: contentPadding,
+      border: defaultBorderDecoration ??
+          OutlineInputBorder(
+              borderRadius: BorderRadius.circular(getHorizontalSize(5.00)),
               borderSide: BorderSide(
-                color: theme.colorScheme.secondaryContainer,
-                width: 1,
-              ),
-            ),
-        enabledBorder: enabledBorderDecoration ??
-            OutlineInputBorder(
-              borderRadius: BorderRadius.circular(
-                getHorizontalSize(5.00),
-              ),
+                  color: theme.colorScheme.secondaryContainer, width: 1)),
+      enabledBorder: enabledBorderDecoration ??
+          OutlineInputBorder(
+              borderRadius: BorderRadius.circular(getHorizontalSize(5.00)),
               borderSide: BorderSide(
-                color: theme.colorScheme.secondaryContainer,
-                width: 1,
-              ),
-            ),
-        focusedBorder: focusedBorderDecoration ??
-            OutlineInputBorder(
-              borderRadius: BorderRadius.circular(
-                getHorizontalSize(5.00),
-              ),
+                  color: theme.colorScheme.secondaryContainer, width: 1)),
+      focusedBorder: focusedBorderDecoration ??
+          OutlineInputBorder(
+              borderRadius: BorderRadius.circular(getHorizontalSize(5.00)),
               borderSide: BorderSide(
-                color: theme.colorScheme.secondaryContainer,
-                width: 1,
-              ),
-            ),
-        disabledBorder: disabledBorderDecoration ??
-            OutlineInputBorder(
-              borderRadius: BorderRadius.circular(
-                getHorizontalSize(5.00),
-              ),
+                  color: theme.colorScheme.secondaryContainer, width: 1)),
+      disabledBorder: disabledBorderDecoration ??
+          OutlineInputBorder(
+              borderRadius: BorderRadius.circular(getHorizontalSize(5.00)),
               borderSide: BorderSide(
-                color: theme.colorScheme.secondaryContainer,
-                width: 1,
-              ),
-            ),
-      );
+                  color: theme.colorScheme.secondaryContainer, width: 1)));
 }
 
 /// Extension on [CustomTextFormField] to facilitate inclusion of all types of border style etc
 extension TextFormFieldStyleHelper on CustomTextFormField {
   static OutlineInputBorder get outlineSecondaryContainerTL5 =>
       OutlineInputBorder(
-        borderRadius: BorderRadius.circular(
-          getHorizontalSize(5.00),
-        ),
-        borderSide: BorderSide(
-          color: theme.colorScheme.secondaryContainer,
-          width: 1,
-        ),
-      );
-  static OutlineInputBorder get fillBluegray30033 => OutlineInputBorder(
-        borderRadius: BorderRadius.circular(
-          getHorizontalSize(18.00),
-        ),
-        borderSide: BorderSide.none,
-      );
+          borderRadius: BorderRadius.circular(getHorizontalSize(5.00)),
+          borderSide: BorderSide(
+              color: theme.colorScheme.secondaryContainer, width: 1));
+  static OutlineInputBorder get fillBluegray => OutlineInputBorder(
+      borderRadius: BorderRadius.circular(getHorizontalSize(18.00)),
+      borderSide: BorderSide.none);
 }

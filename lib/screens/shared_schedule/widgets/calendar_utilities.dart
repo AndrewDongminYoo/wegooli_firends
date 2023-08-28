@@ -51,10 +51,8 @@ int getHashCode(DateTime key) {
 /// [first] 부터 [last]까지의 [DateTime]의 목록을 반환합니다.
 List<DateTime> daysInRange(DateTime first, DateTime last) {
   final dayCount = last.difference(first).inDays + 1;
-  return List.generate(
-    dayCount,
-    (index) => DateTime.utc(first.year, first.month, first.day + index),
-  );
+  return List.generate(dayCount,
+      (index) => DateTime.utc(first.year, first.month, first.day + index));
 }
 
 /// 주어진 [weekday]와 관련된 숫자 값을 반환합니다.

@@ -12,8 +12,7 @@ import '/core/app_export.dart';
 import '/screens/screens.dart';
 
 // ignore: must_be_immutable
-class LoginWithIdAndPassword
-    extends GetWidget<LoginWithIdAndPasswordController> {
+class LoginWithIdAndPassword extends GetWidget<IdPwLoginController> {
   Future findMembers() async {
     String token = Get.find<PrefUtils>().getData('token');
     final api =
@@ -97,150 +96,112 @@ class LoginWithIdAndPassword
     mediaQueryData = MediaQuery.of(context);
 
     return SafeArea(
-      child: Scaffold(
-        resizeToAvoidBottomInset: false,
-        backgroundColor: theme.colorScheme.onPrimaryContainer,
-        body: Container(
-          width: double.maxFinite,
-          padding: getPadding(
-            left: 16,
-            top: 58,
-            right: 16,
-            bottom: 58,
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Text(
-                "FRIENDS",
-                overflow: TextOverflow.ellipsis,
-                textAlign: TextAlign.left,
-                style: theme.textTheme.displayMedium!
-                    .copyWith(letterSpacing: getHorizontalSize(0.1)),
-              ),
-              Align(
-                alignment: Alignment.centerRight,
-                child: Padding(
-                  padding: getPadding(right: 68),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
+        child: Scaffold(
+            resizeToAvoidBottomInset: false,
+            backgroundColor: theme.colorScheme.onPrimaryContainer,
+            body: Container(
+                width: double.maxFinite,
+                padding: getPadding(left: 16, top: 58, right: 16, bottom: 58),
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text(
-                        "By",
-                        overflow: TextOverflow.ellipsis,
-                        textAlign: TextAlign.left,
-                        style: CustomTextStyles
-                            .titleSmallNanumSquareRoundOnPrimary
-                            .copyWith(letterSpacing: getHorizontalSize(0.03)),
-                      ),
-                      CustomImageView(
-                        svgPath: Assets.svg.imgWegooliBlueGray900.path,
-                        height: getVerticalSize(11),
-                        width: getHorizontalSize(53),
-                        margin: getMargin(
-                          left: 5,
-                          bottom: 3,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              CustomTextFormField(
-                controller: controller.usernameController,
-                margin: getMargin(top: 40),
-                contentPadding: getPadding(
-                  left: 12,
-                  top: 14,
-                  right: 12,
-                  bottom: 14,
-                ),
-                textStyle: CustomTextStyles.bodyLargeGray50003,
-                hintText: "아이디",
-                hintStyle: CustomTextStyles.bodyLargeGray50003,
-                textInputAction: TextInputAction.next,
-                filled: true,
-                fillColor: theme.colorScheme.onPrimaryContainer,
-              ),
-              Obx(() => CustomTextFormField(
-                    controller: controller.passwordController,
-                    margin: getMargin(top: 12),
-                    contentPadding: getPadding(
-                      left: 12,
-                      top: 14,
-                      right: 12,
-                      bottom: 14,
-                    ),
-                    textStyle: CustomTextStyles.bodyLargeGray50003,
-                    hintText: Localized.message.password,
-                    obscureText: controller.isShowPassword.isFalse,
-                    hintStyle: CustomTextStyles.bodyLargeGray50003,
-                    suffix: Container(
-                        margin:
-                            getMargin(left: 30, top: 12, right: 10, bottom: 12),
-                        child: CustomImageView(
-                          svgPath: controller.isShowPassword.isTrue
-                              ? Assets.svg.imgEyeOpened.path
-                              : Assets.svg.imgEyeCrossedOut.path,
+                      Text("FRIENDS",
+                          overflow: TextOverflow.ellipsis,
+                          textAlign: TextAlign.left,
+                          style: theme.textTheme.displayMedium!
+                              .copyWith(letterSpacing: getHorizontalSize(0.1))),
+                      Align(
+                          alignment: Alignment.centerRight,
+                          child: Padding(
+                              padding: getPadding(right: 68),
+                              child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    Text("By",
+                                        overflow: TextOverflow.ellipsis,
+                                        textAlign: TextAlign.left,
+                                        style: CustomTextStyles
+                                            .titleSmallNanumSquareRoundOnPrimary
+                                            .copyWith(
+                                                letterSpacing:
+                                                    getHorizontalSize(0.03))),
+                                    CustomImageView(
+                                        svgPath: Assets
+                                            .svg.imgWegooliBlueGray900.path,
+                                        height: getVerticalSize(11),
+                                        width: getHorizontalSize(53),
+                                        margin: getMargin(left: 5, bottom: 3)),
+                                  ]))),
+                      CustomTextFormField(
+                          controller: controller.usernameController,
+                          margin: getMargin(top: 40),
+                          contentPadding: getPadding(
+                              left: 12, top: 14, right: 12, bottom: 14),
+                          textStyle: CustomTextStyles.bodyLargeGray50003,
+                          hintText: "아이디",
+                          hintStyle: CustomTextStyles.bodyLargeGray50003,
+                          textInputAction: TextInputAction.next,
+                          filled: true,
+                          fillColor: theme.colorScheme.onPrimaryContainer),
+                      Obx(() => CustomTextFormField(
+                          controller: controller.passwordController,
+                          margin: getMargin(top: 12),
+                          contentPadding: getPadding(
+                              left: 12, top: 14, right: 12, bottom: 14),
+                          textStyle: CustomTextStyles.bodyLargeGray50003,
+                          hintText: Localized.message.password,
+                          obscureText: controller.isShowPassword.isFalse,
+                          hintStyle: CustomTextStyles.bodyLargeGray50003,
+                          suffix: Container(
+                              margin: getMargin(
+                                  left: 30, top: 12, right: 10, bottom: 12),
+                              child: CustomImageView(
+                                  svgPath: controller.isShowPassword.isTrue
+                                      ? Assets.svg.imgEyeOpened.path
+                                      : Assets.svg.imgEyeCrossedOut.path,
+                                  onTap: () {
+                                    controller.isShowPassword.toggle();
+                                  })),
+                          suffixConstraints:
+                              BoxConstraints(maxHeight: getVerticalSize(48)),
+                          filled: true,
+                          fillColor: theme.colorScheme.onPrimaryContainer)),
+                      CustomElevatedButton(
+                          text: Localized.message.signIn,
+                          margin: getMargin(top: 30),
+                          buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
+                              fixedSize: MaterialStateProperty.all<Size>(
+                                  Size(double.maxFinite, getVerticalSize(52)))),
+                          buttonTextStyle: CustomTextStyles.titleMedium18,
+                          onTap: () async {
+                            await authorize();
+                            if (isAuthenticated) {
+                              onTapTeamScheduleShare();
+                            } else {
+                              controller.usernameController.text = "";
+                              controller.passwordController.text = "";
+                            }
+                          }),
+                      Padding(
+                          padding: getPadding(top: 57),
+                          child: Text(Localized.message.youHaveNoAccount,
+                              overflow: TextOverflow.ellipsis,
+                              textAlign: TextAlign.left,
+                              style: theme.textTheme.bodyLarge!.copyWith(
+                                  letterSpacing: getHorizontalSize(0.03)))),
+                      CustomElevatedButton(
+                          text: Localized.message.signUp,
+                          margin: getMargin(top: 11, bottom: 5),
+                          buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
+                              fixedSize: MaterialStateProperty.all<Size>(
+                                  Size(double.maxFinite, getVerticalSize(52)))),
+                          buttonTextStyle: CustomTextStyles.titleMedium18,
                           onTap: () {
-                            controller.isShowPassword.toggle();
-                          },
-                        )),
-                    suffixConstraints:
-                        BoxConstraints(maxHeight: getVerticalSize(48)),
-                    filled: true,
-                    fillColor: theme.colorScheme.onPrimaryContainer,
-                  )),
-              CustomElevatedButton(
-                  text: Localized.message.signIn,
-                  margin: getMargin(top: 30),
-                  buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
-                      fixedSize: MaterialStateProperty.all<Size>(Size(
-                    double.maxFinite,
-                    getVerticalSize(52),
-                  ))),
-                  buttonTextStyle: CustomTextStyles.titleMedium18,
-                  onTap: () async {
-                    await authorize();
-                    if (isAuthenticated) {
-                      onTapTeamScheduleShare();
-                    } else {
-                      controller.usernameController.text = "";
-                      controller.passwordController.text = "";
-                    }
-                  }),
-              Padding(
-                padding: getPadding(top: 57),
-                child: Text(
-                  Localized.message.youHaveNoAccount,
-                  overflow: TextOverflow.ellipsis,
-                  textAlign: TextAlign.left,
-                  style: theme.textTheme.bodyLarge!
-                      .copyWith(letterSpacing: getHorizontalSize(0.03)),
-                ),
-              ),
-              CustomElevatedButton(
-                  text: Localized.message.signUp,
-                  margin: getMargin(
-                    top: 11,
-                    bottom: 5,
-                  ),
-                  buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
-                      fixedSize: MaterialStateProperty.all<Size>(Size(
-                    double.maxFinite,
-                    getVerticalSize(52),
-                  ))),
-                  buttonTextStyle: CustomTextStyles.titleMedium18,
-                  onTap: () {
-                    // 해당 탭은 dialog로 변경 예정
-                    // onTapSignUpAcceptTerms();
-                    Get.toNamed(AppRoutes.validatePhone);
-                  }),
-            ],
-          ),
-        ),
-      ),
-    );
+                            // 해당 탭은 dialog로 변경 예정
+                            // onTapSignUpAcceptTerms();
+                            Get.toNamed(AppRoutes.validatePhone);
+                          }),
+                    ]))));
   }
 
   onTapTeamScheduleShare() {

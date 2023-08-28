@@ -30,43 +30,33 @@ class CustomIconButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return alignment != null
         ? Align(
-            alignment: alignment ?? Alignment.center,
-            child: iconButtonWidget,
-          )
+            alignment: alignment ?? Alignment.center, child: iconButtonWidget)
         : iconButtonWidget;
   }
 
   Widget get iconButtonWidget => Padding(
-        padding: margin ?? EdgeInsets.zero,
-        child: SizedBox(
+      padding: margin ?? EdgeInsets.zero,
+      child: SizedBox(
           height: height ?? 0,
           width: width ?? 0,
           child: IconButton(
-            visualDensity: VisualDensity(
-              vertical: -4,
-              horizontal: -4,
-            ),
-            padding: EdgeInsets.zero,
-            icon: Container(
-              alignment: Alignment.center,
-              padding: padding ?? EdgeInsets.zero,
-              decoration: decoration ??
-                  BoxDecoration(
-                    color: theme.colorScheme.onPrimaryContainer,
-                    borderRadius: BorderRadius.circular(getHorizontalSize(12)),
-                    boxShadow: [
-                      BoxShadow(
-                        color: appTheme.black900.withOpacity(0.1),
-                        spreadRadius: getHorizontalSize(2),
-                        blurRadius: getHorizontalSize(2),
-                        offset: Offset(2, 2),
-                      ),
-                    ],
-                  ),
-              child: child,
-            ),
-            onPressed: onTap,
-          ),
-        ),
-      );
+              visualDensity: VisualDensity(vertical: -4, horizontal: -4),
+              padding: EdgeInsets.zero,
+              icon: Container(
+                  alignment: Alignment.center,
+                  padding: padding ?? EdgeInsets.zero,
+                  decoration: decoration ??
+                      BoxDecoration(
+                          color: theme.colorScheme.onPrimaryContainer,
+                          borderRadius:
+                              BorderRadius.circular(getHorizontalSize(12)),
+                          boxShadow: [
+                            BoxShadow(
+                                color: appTheme.black900.withOpacity(0.1),
+                                spreadRadius: getHorizontalSize(2),
+                                blurRadius: getHorizontalSize(2),
+                                offset: Offset(2, 2)),
+                          ]),
+                  child: child),
+              onPressed: onTap)));
 }

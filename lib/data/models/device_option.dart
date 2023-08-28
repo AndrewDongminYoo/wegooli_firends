@@ -45,17 +45,13 @@ class _$DeviceOptionSerializer implements PrimitiveSerializer<DeviceOption> {
   }) sync* {
     if (object.seq != null) {
       yield r'seq';
-      yield serializers.serialize(
-        object.seq,
-        specifiedType: const FullType(int),
-      );
+      yield serializers.serialize(object.seq,
+          specifiedType: const FullType(int));
     }
     if (object.optName != null) {
       yield r'optName';
-      yield serializers.serialize(
-        object.optName,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize(object.optName,
+          specifiedType: const FullType(String));
     }
   }
 
@@ -83,17 +79,13 @@ class _$DeviceOptionSerializer implements PrimitiveSerializer<DeviceOption> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'seq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
           result.seq = valueDes;
           break;
         case r'optName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           result.optName = valueDes;
           break;
         default:
@@ -113,14 +105,11 @@ class _$DeviceOptionSerializer implements PrimitiveSerializer<DeviceOption> {
     final result = DeviceOptionBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
+    _deserializeProperties(serializers, serialized,
+        specifiedType: specifiedType,
+        serializedList: serializedList,
+        unhandled: unhandled,
+        result: result);
     return result.build();
   }
 }

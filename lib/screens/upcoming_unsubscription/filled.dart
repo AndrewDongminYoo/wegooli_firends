@@ -9,7 +9,7 @@ import '/core/app_export.dart';
 import 'controller/_controller.dart';
 
 class UpcomingUnsubscriptionFilled
-    extends GetWidget<UpcomingUnsubscriptionViewController> {
+    extends GetWidget<UpcomingUnsubscriptionController> {
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
@@ -49,7 +49,7 @@ class UpcomingUnsubscriptionFilled
                           margin: getMargin(top: 14),
                           padding: getPadding(
                               left: 80, top: 30, right: 80, bottom: 30),
-                          decoration: AppDecoration.fill5.copyWith(
+                          decoration: AppDecoration.fillWhiteSmoke.copyWith(
                               borderRadius: BorderRadiusStyle.roundedBorder10),
                           child: CustomImageView(
                               imagePath: Assets.images.imgCarNewRay.path,

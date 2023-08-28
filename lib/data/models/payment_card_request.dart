@@ -64,45 +64,33 @@ class _$PaymentCardRequestSerializer
   }) sync* {
     if (object.memberSeq != null) {
       yield r'memberSeq';
-      yield serializers.serialize(
-        object.memberSeq,
-        specifiedType: const FullType(int),
-      );
+      yield serializers.serialize(object.memberSeq,
+          specifiedType: const FullType(int));
     }
     if (object.cardNumber != null) {
       yield r'cardNumber';
-      yield serializers.serialize(
-        object.cardNumber,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize(object.cardNumber,
+          specifiedType: const FullType(String));
     }
     if (object.defaultYn != null) {
       yield r'defaultYn';
-      yield serializers.serialize(
-        object.defaultYn,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize(object.defaultYn,
+          specifiedType: const FullType(String));
     }
     if (object.password != null) {
       yield r'password';
-      yield serializers.serialize(
-        object.password,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize(object.password,
+          specifiedType: const FullType(String));
     }
     if (object.rrn != null) {
       yield r'rrn';
-      yield serializers.serialize(
-        object.rrn,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize(object.rrn,
+          specifiedType: const FullType(String));
     }
     if (object.crn != null) {
       yield r'crn';
-      yield serializers.serialize(
-        object.crn,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize(object.crn,
+          specifiedType: const FullType(String));
     }
   }
 
@@ -130,45 +118,33 @@ class _$PaymentCardRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'memberSeq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
           result.memberSeq = valueDes;
           break;
         case r'cardNumber':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           result.cardNumber = valueDes;
           break;
         case r'defaultYn':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           result.defaultYn = valueDes;
           break;
         case r'password':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           result.password = valueDes;
           break;
         case r'rrn':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           result.rrn = valueDes;
           break;
         case r'crn':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           result.crn = valueDes;
           break;
         default:
@@ -188,14 +164,11 @@ class _$PaymentCardRequestSerializer
     final result = PaymentCardRequestBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
+    _deserializeProperties(serializers, serialized,
+        specifiedType: specifiedType,
+        serializedList: serializedList,
+        unhandled: unhandled,
+        result: result);
     return result.build();
   }
 }

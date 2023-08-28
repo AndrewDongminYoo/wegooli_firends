@@ -56,31 +56,23 @@ class _$TeamAccountModelSerializer
   }) sync* {
     if (object.accountId != null) {
       yield r'accountId';
-      yield serializers.serialize(
-        object.accountId,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize(object.accountId,
+          specifiedType: const FullType(String));
     }
     if (object.color != null) {
       yield r'color';
-      yield serializers.serialize(
-        object.color,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize(object.color,
+          specifiedType: const FullType(String));
     }
     if (object.nickname != null) {
       yield r'nickname';
-      yield serializers.serialize(
-        object.nickname,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize(object.nickname,
+          specifiedType: const FullType(String));
     }
     if (object.profilePicture != null) {
       yield r'profilePicture';
-      yield serializers.serialize(
-        object.profilePicture,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize(object.profilePicture,
+          specifiedType: const FullType(String));
     }
   }
 
@@ -108,31 +100,23 @@ class _$TeamAccountModelSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'accountId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           result.accountId = valueDes;
           break;
         case r'color':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           result.color = valueDes;
           break;
         case r'nickname':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           result.nickname = valueDes;
           break;
         case r'profilePicture':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           result.profilePicture = valueDes;
           break;
         default:
@@ -152,14 +136,11 @@ class _$TeamAccountModelSerializer
     final result = TeamAccountModelBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
+    _deserializeProperties(serializers, serialized,
+        specifiedType: specifiedType,
+        serializedList: serializedList,
+        unhandled: unhandled,
+        result: result);
     return result.build();
   }
 }

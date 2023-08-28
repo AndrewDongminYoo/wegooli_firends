@@ -8,18 +8,8 @@ import '/core/utils/selection_popup.dart';
 /// and is typically used to hold data that is passed between different parts of the application.
 class ReservationDatetimePickerModel {
   Rx<List<SelectionPopupModel>> dropdownItemList = Rx([
-    SelectionPopupModel(
-      id: 1,
-      title: "Item One",
-      isSelected: true,
-    ),
-    SelectionPopupModel(
-      id: 2,
-      title: "Item Two",
-    ),
-    SelectionPopupModel(
-      id: 3,
-      title: "Item Three",
-    )
+    SelectionPopupModel(id: 1, title: "Item One", isSelected: true),
+    SelectionPopupModel(id: 2, title: "Item Two"),
+    SelectionPopupModel(id: 3, title: "Item Three")
   ]);
 }

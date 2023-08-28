@@ -27,55 +27,33 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      elevation: 0,
-      toolbarHeight: height ?? getVerticalSize(55),
-      automaticallyImplyLeading: false,
-      backgroundColor: Colors.transparent,
-      flexibleSpace: _getStyle(),
-      leadingWidth: leadingWidth ?? 0,
-      leading: leading,
-      title: title,
-      titleSpacing: 0,
-      centerTitle: centerTitle ?? false,
-      actions: actions,
-    );
+        elevation: 0,
+        toolbarHeight: height ?? getVerticalSize(55),
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.transparent,
+        flexibleSpace: _getStyle(),
+        leadingWidth: leadingWidth ?? 0,
+        leading: leading,
+        title: title,
+        titleSpacing: 0,
+        centerTitle: centerTitle ?? false,
+        actions: actions);
   }
 
   @override
-  Size get preferredSize => Size(
-        mediaQueryData.size.width,
-        height ?? getVerticalSize(55),
-      );
+  Size get preferredSize =>
+      Size(mediaQueryData.size.width, height ?? getVerticalSize(55));
   _getStyle() {
     switch (styleType) {
-      case Style.bgOutline_1:
-        return Container(
-          height: getVerticalSize(45),
-          width: double.maxFinite,
-          decoration: BoxDecoration(
-            color: theme.colorScheme.onPrimaryContainer,
-            border: Border(
-              bottom: BorderSide(
-                color: appTheme.gray400,
-                width: getHorizontalSize(1),
-              ),
-            ),
-          ),
-        );
       case Style.bgOutline:
         return Container(
-          height: getVerticalSize(45),
-          width: double.maxFinite,
-          decoration: BoxDecoration(
-            color: theme.colorScheme.onPrimaryContainer,
-            border: Border(
-              bottom: BorderSide(
-                color: appTheme.blueGray30033,
-                width: getHorizontalSize(1),
-              ),
-            ),
-          ),
-        );
+            height: getVerticalSize(45),
+            width: double.maxFinite,
+            decoration: BoxDecoration(
+                border: Border(
+                    bottom: BorderSide(
+                        color: appTheme.blueGray30033,
+                        width: getHorizontalSize(1)))));
       default:
         return null;
     }
@@ -83,6 +61,5 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 }
 
 enum Style {
-  bgOutline_1,
   bgOutline,
 }

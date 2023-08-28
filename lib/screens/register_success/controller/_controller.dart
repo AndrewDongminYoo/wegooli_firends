@@ -8,11 +8,11 @@ import 'package:get/get.dart';
 ///
 /// This class manages the state of the RegisterSuccessPageScreen, including the
 /// current registerSuccessPageModelObj
-class RegisterSuccessPageController extends GetxController {
-  static RegisterSuccessPageController get to =>
-      Get.isRegistered<RegisterSuccessPageController>()
-          ? Get.find<RegisterSuccessPageController>()
-          : Get.put(RegisterSuccessPageController());
+class RegisterSuccessController extends GetxController {
+  static RegisterSuccessController get to =>
+      Get.isRegistered<RegisterSuccessController>()
+          ? Get.find<RegisterSuccessController>()
+          : Get.put(RegisterSuccessController());
   TextEditingController codeController = TextEditingController();
 
   @override

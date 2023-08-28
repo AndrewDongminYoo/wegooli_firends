@@ -12,19 +12,12 @@ class AddScheduleButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomElevatedButton(
-      text: Localized.message.addAnItineraryAdd,
-      margin: getMargin(
-        left: 16,
-        top: 30,
-        right: 16,
-      ),
-      buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
-          fixedSize: MaterialStateProperty.all<Size>(Size(
-        double.maxFinite,
-        getVerticalSize(52),
-      ))),
-      buttonTextStyle: CustomTextStyles.titleMedium18,
-      alignment: Alignment.center,
-    );
+        text: Localized.message.addAnItineraryAdd,
+        margin: getMargin(left: 16, top: 30, right: 16),
+        buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
+            fixedSize: MaterialStateProperty.all<Size>(
+                Size(double.maxFinite, getVerticalSize(52)))),
+        buttonTextStyle: CustomTextStyles.titleMedium18,
+        alignment: Alignment.center);
   }
 }

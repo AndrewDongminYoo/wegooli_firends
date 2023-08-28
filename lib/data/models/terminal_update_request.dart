@@ -75,59 +75,43 @@ class _$TerminalUpdateRequestSerializer
   }) sync* {
     if (object.seq != null) {
       yield r'seq';
-      yield serializers.serialize(
-        object.seq,
-        specifiedType: const FullType(int),
-      );
+      yield serializers.serialize(object.seq,
+          specifiedType: const FullType(int));
     }
     if (object.delYn != null) {
       yield r'delYn';
-      yield serializers.serialize(
-        object.delYn,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize(object.delYn,
+          specifiedType: const FullType(String));
     }
     if (object.createdAt != null) {
       yield r'createdAt';
-      yield serializers.serialize(
-        object.createdAt,
-        specifiedType: const FullType(DateTime),
-      );
+      yield serializers.serialize(object.createdAt,
+          specifiedType: const FullType(DateTime));
     }
     if (object.updatedAt != null) {
       yield r'updatedAt';
-      yield serializers.serialize(
-        object.updatedAt,
-        specifiedType: const FullType(DateTime),
-      );
+      yield serializers.serialize(object.updatedAt,
+          specifiedType: const FullType(DateTime));
     }
     if (object.carNum != null) {
       yield r'carNum';
-      yield serializers.serialize(
-        object.carNum,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize(object.carNum,
+          specifiedType: const FullType(String));
     }
     if (object.phoneNumber != null) {
       yield r'phoneNumber';
-      yield serializers.serialize(
-        object.phoneNumber,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize(object.phoneNumber,
+          specifiedType: const FullType(String));
     }
     if (object.status != null) {
       yield r'status';
-      yield serializers.serialize(
-        object.status,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize(object.status,
+          specifiedType: const FullType(String));
     }
     if (object.carNickName != null) {
       yield r'carNickName';
-      yield serializers.serialize(
-        object.carNickName,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize(object.carNickName,
+          specifiedType: const FullType(String));
     }
   }
 
@@ -155,59 +139,43 @@ class _$TerminalUpdateRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'seq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
           result.seq = valueDes;
           break;
         case r'delYn':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           result.delYn = valueDes;
           break;
         case r'createdAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(DateTime)) as DateTime;
           result.createdAt = valueDes;
           break;
         case r'updatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(DateTime)) as DateTime;
           result.updatedAt = valueDes;
           break;
         case r'carNum':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           result.carNum = valueDes;
           break;
         case r'phoneNumber':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           result.phoneNumber = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           result.status = valueDes;
           break;
         case r'carNickName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           result.carNickName = valueDes;
           break;
         default:
@@ -227,14 +195,11 @@ class _$TerminalUpdateRequestSerializer
     final result = TerminalUpdateRequestBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
+    _deserializeProperties(serializers, serialized,
+        specifiedType: specifiedType,
+        serializedList: serializedList,
+        unhandled: unhandled,
+        result: result);
     return result.build();
   }
 }

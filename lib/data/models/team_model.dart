@@ -68,59 +68,43 @@ class _$TeamModelSerializer implements PrimitiveSerializer<TeamModel> {
   }) sync* {
     if (object.seq != null) {
       yield r'seq';
-      yield serializers.serialize(
-        object.seq,
-        specifiedType: const FullType(int),
-      );
+      yield serializers.serialize(object.seq,
+          specifiedType: const FullType(int));
     }
     if (object.delYn != null) {
       yield r'delYn';
-      yield serializers.serialize(
-        object.delYn,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize(object.delYn,
+          specifiedType: const FullType(String));
     }
     if (object.createdAt != null) {
       yield r'createdAt';
-      yield serializers.serialize(
-        object.createdAt,
-        specifiedType: const FullType(DateTime),
-      );
+      yield serializers.serialize(object.createdAt,
+          specifiedType: const FullType(DateTime));
     }
     if (object.updatedAt != null) {
       yield r'updatedAt';
-      yield serializers.serialize(
-        object.updatedAt,
-        specifiedType: const FullType(DateTime),
-      );
+      yield serializers.serialize(object.updatedAt,
+          specifiedType: const FullType(DateTime));
     }
     if (object.accountId != null) {
       yield r'accountId';
-      yield serializers.serialize(
-        object.accountId,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize(object.accountId,
+          specifiedType: const FullType(String));
     }
     if (object.teamCode != null) {
       yield r'teamCode';
-      yield serializers.serialize(
-        object.teamCode,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize(object.teamCode,
+          specifiedType: const FullType(String));
     }
     if (object.name != null) {
       yield r'name';
-      yield serializers.serialize(
-        object.name,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize(object.name,
+          specifiedType: const FullType(String));
     }
     if (object.contract != null) {
       yield r'contract';
-      yield serializers.serialize(
-        object.contract,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize(object.contract,
+          specifiedType: const FullType(String));
     }
   }
 
@@ -148,59 +132,43 @@ class _$TeamModelSerializer implements PrimitiveSerializer<TeamModel> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'seq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
           result.seq = valueDes;
           break;
         case r'delYn':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           result.delYn = valueDes;
           break;
         case r'createdAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(DateTime)) as DateTime;
           result.createdAt = valueDes;
           break;
         case r'updatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(DateTime)) as DateTime;
           result.updatedAt = valueDes;
           break;
         case r'accountId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           result.accountId = valueDes;
           break;
         case r'teamCode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           result.teamCode = valueDes;
           break;
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           result.name = valueDes;
           break;
         case r'contract':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           result.contract = valueDes;
           break;
         default:
@@ -220,14 +188,11 @@ class _$TeamModelSerializer implements PrimitiveSerializer<TeamModel> {
     final result = TeamModelBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
+    _deserializeProperties(serializers, serialized,
+        specifiedType: specifiedType,
+        serializedList: serializedList,
+        unhandled: unhandled,
+        result: result);
     return result.build();
   }
 }

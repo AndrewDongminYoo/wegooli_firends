@@ -179,7 +179,7 @@ class RegisterCreditCard extends GetWidget<RegisterCreditCardController> {
                                         CustomTextStyles.bodyLargeGray50003,
                                     hintText: "YYMMDD",
                                     initialValue:
-                                        Get.find<ValidatePhoneController>()
+                                        Get.find<PhoneAuthController>()
                                             .age1FormatController
                                             .text,
                                     hintStyle:
@@ -237,19 +237,18 @@ class RegisterCreditCard extends GetWidget<RegisterCreditCardController> {
                 margin: getMargin(left: 16, right: 16, bottom: 29),
                 // decoration: AppDecoration.shadow,
                 child: CustomElevatedButton(
-                  // TODO
-                  // disabled 일때 스타일 정의하기
-                  text: Localized.message.register,
-                  buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
-                      fixedSize: MaterialStateProperty.all<Size>(
-                          Size(double.maxFinite, getVerticalSize(52)))),
-                  buttonTextStyle: CustomTextStyles.titleMedium18,
-                  onTap: () {
-                    if (this.isValid()) {
-                      onTapRegisterSuccess();
-                    }
-                  },
-                ))));
+                    // TODO
+                    // disabled 일때 스타일 정의하기
+                    text: Localized.message.register,
+                    buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
+                        fixedSize: MaterialStateProperty.all<Size>(
+                            Size(double.maxFinite, getVerticalSize(52)))),
+                    buttonTextStyle: CustomTextStyles.titleMedium18,
+                    onTap: () {
+                      if (this.isValid()) {
+                        onTapRegisterSuccess();
+                      }
+                    }))));
   }
 
   /// Navigates to the previous screen.

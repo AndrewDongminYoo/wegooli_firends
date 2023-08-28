@@ -33,11 +33,9 @@ Widget? rangeStartBuilder(
     child: Text(day.day.toString(),
         style: TextStyle(color: Colors.blue)), // Example: Display custom text
     decoration: BoxDecoration(
+      // borderRadius: BorderRadius.horizontal(left: Radius.circular(10))
       color: Colors.white.withOpacity(0.5),
-      shape: BoxShape.circle,
-      // borderRadius: BorderRadius.horizontal(left: Radius.circular(10)),
-    ),
-  );
+      shape: BoxShape.circle));
 }
 
 /// 현재 범위 선택의 끝인 일 셀에 대한 사용자 지정 빌더입니다.
@@ -49,9 +47,7 @@ Widget? rangeEndBuilder(
         style: TextStyle(color: Colors.blue)), // Example: Display custom text
     decoration: BoxDecoration(
       color: Colors.white.withOpacity(0.3),
-      shape: BoxShape.circle,
-    ),
-  );
+      shape: BoxShape.circle));
 }
 
 /// 현재 선택된 범위 내에 있는 요일 셀에 대한 사용자 지정 빌더입니다.
@@ -96,11 +92,9 @@ Widget? rangeHighlightBuilder(
     child: Text(day.day.toString(),
         style: TextStyle(color: Colors.blue)), // Example: Display custom text
     decoration: BoxDecoration(
+      // borderRadius: BorderRadius.circular(10))
       color: Colors.white.withOpacity(0.3),
-      shape: BoxShape.circle,
-      // borderRadius: BorderRadius.circular(10),
-    ),
-  );
+      shape: BoxShape.circle));
 }
 
 /// [singleMarker]에 대한 사용자 지정 빌더. 각 마커는 요일 셀 위의 [행]에 표시됩니다.
@@ -116,9 +110,7 @@ Widget? singleMarkerBuilder(
     alignment: Alignment.topCenter,
     decoration: BoxDecoration(
       shape: BoxShape.circle,
-      color: getColorEachMembersPersonalColor(event),
-    ),
-  );
+      color: getColorEachMembersPersonalColor(event)));
 }
 
 getColorEachMembersPersonalColor(Schedule event) {

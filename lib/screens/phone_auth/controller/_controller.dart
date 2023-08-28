@@ -12,11 +12,10 @@ import '/core/app_export.dart';
 ///
 /// This class manages the state of the LoginValidatePhoneAuthScreen, including the
 /// current validatePhoneAuthModelObj
-class ValidatePhoneController extends GetxController {
-  static ValidatePhoneController get to =>
-      Get.isRegistered<ValidatePhoneController>()
-          ? Get.find<ValidatePhoneController>()
-          : Get.put(ValidatePhoneController());
+class PhoneAuthController extends GetxController {
+  static PhoneAuthController get to => Get.isRegistered<PhoneAuthController>()
+      ? Get.find<PhoneAuthController>()
+      : Get.put(PhoneAuthController());
   TextEditingController namePromptController = TextEditingController();
   TextEditingController age1FormatController = TextEditingController();
   TextEditingController age2FormatController = TextEditingController();

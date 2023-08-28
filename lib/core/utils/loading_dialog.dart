@@ -22,14 +22,7 @@ class LoadingDialog {
   static void showProgressDialog({isCancellable = false}) {
     if (!isProgressVisible) {
       Get.dialog(
-        Center(
-          child: Lottie.asset(
-            lottiePath,
-            height: 250,
-            width: 250,
-          ),
-        ),
-      );
+          Center(child: Lottie.asset(lottiePath, height: 250, width: 250)));
     }
     isProgressVisible = true;
   }

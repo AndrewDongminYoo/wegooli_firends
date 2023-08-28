@@ -48,114 +48,59 @@ class AppRoutes {
   static const String appGateway = '/app_gateway';
 
   static List<GetPage> pages = [
+    GetPage(name: splashScreen, page: () => SplashLoading()),
     GetPage(
-      name: splashScreen,
-      page: () => SplashLoading(),
-    ),
+        name: logInIdPassword,
+        page: () => LoginWithIdAndPassword(),
+        bindings: [
+          IdPwLoginBinding(),
+        ]),
+    GetPage(name: acceptTerms, page: () => AcceptTerms(), bindings: [
+      AcceptTermsBinding(),
+    ]),
+    GetPage(name: validatePhone, page: () => ValidatePhone(), bindings: [
+      PhoneAuthBinding(),
+    ]),
+    GetPage(name: registerZipCode, page: () => RegisterZipCode(), bindings: [
+      RegisterZipCodeBinding(),
+    ]),
+    GetPage(name: registerLicense, page: () => RegisterLicense(), bindings: [
+      RegisterLicenseBinding(),
+    ]),
+    GetPage(name: registerCredits, page: () => RegisterCreditCard(), bindings: [
+      RegisterCreditCardBinding(),
+    ]),
+    GetPage(name: signUpSuccess, page: () => RegisterSuccess(), bindings: [
+      RegisterSuccessBinding(),
+    ]),
+    GetPage(name: sharedSchedule, page: () => TeamScheduleShare(), bindings: [
+      TeamScheduleShareBinding(),
+    ]),
+    GetPage(name: smartKeyAvailable, page: () => SmartKeyAvailablePage()),
+    GetPage(name: smartKeyUnavailable, page: () => SmartKeyNotAvailable()),
     GetPage(
-      name: logInIdPassword,
-      page: () => LoginWithIdAndPassword(),
-      bindings: [
-        LoginWithIdAndPasswordBinding(),
-      ],
-    ),
+        name: registeredCardList,
+        page: () => RegisteredCreditCardList(),
+        bindings: [
+          RegisteredCreditCardListBinding(),
+        ]),
+    GetPage(name: carStatusInfo, page: () => CarStatusInformation()),
+    GetPage(name: carStatusInfo2, page: () => CarStateInformation()),
+    GetPage(name: unsubscriptionConfirm, page: () => UnsubscriptionConfirm()),
     GetPage(
-      name: acceptTerms,
-      page: () => AcceptTerms(),
-      bindings: [
-        SignupAcceptTermsBinding(),
-      ],
-    ),
+        name: unsubscriptionInfo,
+        page: () => UpcomingUnsubscriptionOutlined(),
+        bindings: [
+          UpcomingUnsubscriptionBinding(),
+        ]),
     GetPage(
-      name: validatePhone,
-      page: () => ValidatePhone(),
-      bindings: [
-        LoginValidatePhoneAuthBinding(),
-      ],
-    ),
+        name: unsubscriptionInfo2,
+        page: () => UpcomingUnsubscriptionFilled(),
+        bindings: [
+          UpcomingUnsubscriptionBinding(),
+        ]),
     GetPage(
-      name: registerZipCode,
-      page: () => RegisterZipCode(),
-      bindings: [
-        RegisterZipCodeBinding(),
-      ],
-    ),
-    GetPage(
-      name: registerLicense,
-      page: () => RegisterLicense(),
-      bindings: [
-        RegisterLicensePageBinding(),
-      ],
-    ),
-    GetPage(
-      name: registerCredits,
-      page: () => RegisterCreditCard(),
-      bindings: [
-        RegisterCreditCardBinding(),
-      ],
-    ),
-    GetPage(
-      name: signUpSuccess,
-      page: () => RegisterSuccess(),
-      bindings: [
-        RegisterSuccessPageBinding(),
-      ],
-    ),
-    GetPage(
-      name: sharedSchedule,
-      page: () => TeamScheduleShare(),
-      bindings: [
-        TeamScheduleShareBinding(),
-      ],
-    ),
-    GetPage(
-      name: smartKeyAvailable,
-      page: () => SmartKeyAvailablePage(),
-    ),
-    GetPage(
-      name: smartKeyUnavailable,
-      page: () => SmartKeyNotAvailable(),
-    ),
-    GetPage(
-      name: registeredCardList,
-      page: () => RegisteredCreditCardList(),
-      bindings: [
-        RegisteredCreditCardListBinding(),
-      ],
-    ),
-    GetPage(
-      name: carStatusInfo,
-      page: () => CarStatusInformation(),
-    ),
-    GetPage(
-      name: carStatusInfo2,
-      page: () => CarStateInformation(),
-    ),
-    GetPage(
-      name: unsubscriptionConfirm,
-      page: () => UnsubscriptionConfirm(),
-    ),
-    GetPage(
-      name: unsubscriptionInfo,
-      page: () => UpcomingUnsubscriptionOutlined(),
-      bindings: [
-        UpcomingUnsubscriptionViewBinding(),
-      ],
-    ),
-    GetPage(
-      name: unsubscriptionInfo2,
-      page: () => UpcomingUnsubscriptionFilled(),
-      bindings: [
-        UpcomingUnsubscriptionViewBinding(),
-      ],
-    ),
-    GetPage(
-      name: subscriptionNoService,
-      page: () => SubscriptionInfoNoService(),
-    ),
-    GetPage(
-      name: appGateway,
-      page: () => GatewayScreen(),
-    )
+        name: subscriptionNoService, page: () => SubscriptionInfoNoService()),
+    GetPage(name: appGateway, page: () => GatewayScreen())
   ];
 }

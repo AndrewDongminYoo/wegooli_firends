@@ -80,73 +80,53 @@ class _$ShareServiceModelSerializer
   }) sync* {
     if (object.shareServiceSeq != null) {
       yield r'shareServiceSeq';
-      yield serializers.serialize(
-        object.shareServiceSeq,
-        specifiedType: const FullType(int),
-      );
+      yield serializers.serialize(object.shareServiceSeq,
+          specifiedType: const FullType(int));
     }
     if (object.serviceName != null) {
       yield r'serviceName';
-      yield serializers.serialize(
-        object.serviceName,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize(object.serviceName,
+          specifiedType: const FullType(String));
     }
     if (object.serviceDes != null) {
       yield r'serviceDes';
-      yield serializers.serialize(
-        object.serviceDes,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize(object.serviceDes,
+          specifiedType: const FullType(String));
     }
     if (object.carSeq != null) {
       yield r'carSeq';
-      yield serializers.serialize(
-        object.carSeq,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize(object.carSeq,
+          specifiedType: const FullType(String));
     }
     if (object.carName != null) {
       yield r'carName';
-      yield serializers.serialize(
-        object.carName,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize(object.carName,
+          specifiedType: const FullType(String));
     }
     if (object.carImg != null) {
       yield r'carImg';
-      yield serializers.serialize(
-        object.carImg,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize(object.carImg,
+          specifiedType: const FullType(String));
     }
     if (object.monthlyPay != null) {
       yield r'monthlyPay';
-      yield serializers.serialize(
-        object.monthlyPay,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize(object.monthlyPay,
+          specifiedType: const FullType(String));
     }
     if (object.personalPay != null) {
       yield r'personalPay';
-      yield serializers.serialize(
-        object.personalPay,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize(object.personalPay,
+          specifiedType: const FullType(String));
     }
     if (object.nowSub != null) {
       yield r'nowSub';
-      yield serializers.serialize(
-        object.nowSub,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize(object.nowSub,
+          specifiedType: const FullType(String));
     }
     if (object.maxSub != null) {
       yield r'maxSub';
-      yield serializers.serialize(
-        object.maxSub,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize(object.maxSub,
+          specifiedType: const FullType(String));
     }
   }
 
@@ -174,73 +154,53 @@ class _$ShareServiceModelSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'shareServiceSeq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
           result.shareServiceSeq = valueDes;
           break;
         case r'serviceName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           result.serviceName = valueDes;
           break;
         case r'serviceDes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           result.serviceDes = valueDes;
           break;
         case r'carSeq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           result.carSeq = valueDes;
           break;
         case r'carName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           result.carName = valueDes;
           break;
         case r'carImg':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           result.carImg = valueDes;
           break;
         case r'monthlyPay':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           result.monthlyPay = valueDes;
           break;
         case r'personalPay':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           result.personalPay = valueDes;
           break;
         case r'nowSub':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           result.nowSub = valueDes;
           break;
         case r'maxSub':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           result.maxSub = valueDes;
           break;
         default:
@@ -260,14 +220,11 @@ class _$ShareServiceModelSerializer
     final result = ShareServiceModelBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
+    _deserializeProperties(serializers, serialized,
+        specifiedType: specifiedType,
+        serializedList: serializedList,
+        unhandled: unhandled,
+        result: result);
     return result.build();
   }
 }

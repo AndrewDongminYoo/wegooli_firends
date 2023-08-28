@@ -9,7 +9,7 @@ import "./controller/_controller.dart";
 import "/core/app_export.dart";
 
 class UpcomingUnsubscriptionOutlined
-    extends GetWidget<UpcomingUnsubscriptionViewController> {
+    extends GetWidget<UpcomingUnsubscriptionController> {
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);

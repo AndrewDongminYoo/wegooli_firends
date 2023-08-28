@@ -18,10 +18,8 @@ dynamic encodeFormParameter(
   if (value is String || value is num || value is bool) {
     return value;
   }
-  final serialized = serializers.serialize(
-    value as Object,
-    specifiedType: type,
-  );
+  final serialized =
+      serializers.serialize(value as Object, specifiedType: type);
   if (serialized is String) {
     return serialized;
   }
@@ -46,10 +44,8 @@ dynamic encodeQueryParameter(
     // Currently not sure how to serialize this
     return value;
   }
-  final serialized = serializers.serialize(
-    value as Object,
-    specifiedType: type,
-  );
+  final serialized =
+      serializers.serialize(value as Object, specifiedType: type);
   if (serialized == null) {
     return '';
   }
@@ -65,10 +61,8 @@ ListParam<Object?> encodeCollectionQueryParameter<T>(
   FullType type, {
   ListFormat format = ListFormat.multi,
 }) {
-  final serialized = serializers.serialize(
-    value as Object,
-    specifiedType: type,
-  );
+  final serialized =
+      serializers.serialize(value as Object, specifiedType: type);
   if (value is BuiltList<T> || value is BuiltSet<T>) {
     return ListParam(List.of((serialized as Iterable<Object?>).cast()), format);
   }

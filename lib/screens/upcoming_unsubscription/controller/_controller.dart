@@ -5,9 +5,9 @@ import 'package:get/get.dart';
 ///
 /// This class manages the state of the UpcomingUnsubscriptionViewScreen, including the
 /// current upcomingUnsubscriptionViewModelObj
-class UpcomingUnsubscriptionViewController extends GetxController {
-  static UpcomingUnsubscriptionViewController get to =>
-      Get.isRegistered<UpcomingUnsubscriptionViewController>()
-          ? Get.find<UpcomingUnsubscriptionViewController>()
-          : Get.put(UpcomingUnsubscriptionViewController());
+class UpcomingUnsubscriptionController extends GetxController {
+  static UpcomingUnsubscriptionController get to =>
+      Get.isRegistered<UpcomingUnsubscriptionController>()
+          ? Get.find<UpcomingUnsubscriptionController>()
+          : Get.put(UpcomingUnsubscriptionController());
 }

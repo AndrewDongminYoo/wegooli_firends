@@ -22,16 +22,11 @@ class CurrencyInputFormatter extends TextInputFormatter {
     if (newValue.selection.baseOffset == 0) {
       return newValue;
     }
-    String newText = format(
-      newValue.text,
-      locale: locale,
-      name: name,
-      decimalDigits: decimalDigits,
-    );
+    String newText = format(newValue.text,
+        locale: locale, name: name, decimalDigits: decimalDigits);
     return newValue.copyWith(
-      text: newText,
-      selection: TextSelection.collapsed(offset: newText.length),
-    );
+        text: newText,
+        selection: TextSelection.collapsed(offset: newText.length));
   }
 
   static String format(

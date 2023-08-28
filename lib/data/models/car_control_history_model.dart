@@ -72,52 +72,38 @@ class _$CarControlHistoryModelSerializer
   }) sync* {
     if (object.seq != null) {
       yield r'seq';
-      yield serializers.serialize(
-        object.seq,
-        specifiedType: const FullType(int),
-      );
+      yield serializers.serialize(object.seq,
+          specifiedType: const FullType(int));
     }
     if (object.createdAt != null) {
       yield r'createdAt';
-      yield serializers.serialize(
-        object.createdAt,
-        specifiedType: const FullType(DateTime),
-      );
+      yield serializers.serialize(object.createdAt,
+          specifiedType: const FullType(DateTime));
     }
     if (object.terminalSeq != null) {
       yield r'terminalSeq';
-      yield serializers.serialize(
-        object.terminalSeq,
-        specifiedType: const FullType(int),
-      );
+      yield serializers.serialize(object.terminalSeq,
+          specifiedType: const FullType(int));
     }
     if (object.carNum != null) {
       yield r'carNum';
-      yield serializers.serialize(
-        object.carNum,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize(object.carNum,
+          specifiedType: const FullType(String));
     }
     if (object.accountId != null) {
       yield r'accountId';
-      yield serializers.serialize(
-        object.accountId,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize(object.accountId,
+          specifiedType: const FullType(String));
     }
     if (object.context != null) {
       yield r'context';
-      yield serializers.serialize(
-        object.context,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize(object.context,
+          specifiedType: const FullType(String));
     }
     if (object.successYn != null) {
       yield r'successYn';
-      yield serializers.serialize(
-        object.successYn,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize(object.successYn,
+          specifiedType: const FullType(String));
     }
   }
 
@@ -145,52 +131,38 @@ class _$CarControlHistoryModelSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'seq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
           result.seq = valueDes;
           break;
         case r'createdAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(DateTime)) as DateTime;
           result.createdAt = valueDes;
           break;
         case r'terminalSeq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
           result.terminalSeq = valueDes;
           break;
         case r'carNum':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           result.carNum = valueDes;
           break;
         case r'accountId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           result.accountId = valueDes;
           break;
         case r'context':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           result.context = valueDes;
           break;
         case r'successYn':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           result.successYn = valueDes;
           break;
         default:
@@ -210,14 +182,11 @@ class _$CarControlHistoryModelSerializer
     final result = CarControlHistoryModelBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
+    _deserializeProperties(serializers, serialized,
+        specifiedType: specifiedType,
+        serializedList: serializedList,
+        unhandled: unhandled,
+        result: result);
     return result.build();
   }
 }

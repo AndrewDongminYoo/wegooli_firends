@@ -42,8 +42,7 @@ class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
   void loadSendbird(
     String appId,
     String userId,
-    List<String> otherUserIds,
-  ) async {
+    List<String> otherUserIds) async {
     try {
       // Init & connect with Sendbird
       await connectWithSendbird(appId, userId);
@@ -54,8 +53,7 @@ class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
       // Retrieve any existing messages from the GroupChannel
       final messages = await channel.getMessagesByTimestamp(
         DateTime.now().millisecondsSinceEpoch * 1000,
-        MessageListParams(),
-      );
+        MessageListParams());
 
       // Update & prompt the UI to rebuild
       setState(() {
@@ -82,7 +80,7 @@ class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
     if (user == null) {
       return ChatUser(id: "", lastName: "", firstName: "", profileImage: "");
     }
-    TeamAccountModel model = Get.find<LoginWithIdAndPasswordController>()
+    TeamAccountModel model = Get.find<IdPwLoginController>()
         .members
         .firstWhere((it) => user.userId == it.accountId);
     // print('model : $model');
@@ -92,8 +90,7 @@ class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
       id: model.accountId as String,
       lastName: '',
       firstName: model.nickname,
-      profileImage: model.profilePicture ?? "",
-    );
+      profileImage: model.profilePicture ?? "");
   }
 
   List<ChatMessage> asDashChatMessages(List<BaseMessage> messages) {
@@ -115,8 +112,7 @@ class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
     loadSendbird(
       widget.appId,
       widget.userId,
-      widget.otherUserIds,
-    );
+      widget.otherUserIds);
     SendbirdSdk().addChannelEventHandler("dashchat", this);
   }
 
@@ -148,10 +144,8 @@ class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
           title: CustomImageView(
             height: getVerticalSize(17),
             width: getHorizontalSize(88),
-            svgPath: Assets.svg.imgFriendsTypo.path,
-          ),
-          styleType: Style.bgOutline,
-        ),
+            svgPath: Assets.svg.imgFriendsTypo.path),
+          styleType: Style.bgOutline),
         body: DashChat(
           currentUser: asDashChatUser(SendbirdSdk().currentUser),
           messages: asDashChatMessages(_messages),
@@ -166,14 +160,10 @@ class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
             messageDecorationBuilder: (message, previousMessage, nextMessage) =>
                 BoxDecoration(
               color: message.user.id ==
-                      Get.find<LoginWithIdAndPasswordController>()
-                          .currentUser
-                          .value
-                          .id
+                      Get.find<IdPwLoginController>().currentUser.value.id
                   ? Color.fromRGBO(255, 225, 66, 1)
                   : Color.fromRGBO(164, 168, 175, 0.2),
-              borderRadius: BorderRadius.circular(15),
-            ),
+              borderRadius: BorderRadius.circular(15)),
             // borderRadius: 18.0,
             textColor: Color.fromRGBO(34, 34, 34, 1),
             containerColor: Color.fromRGBO(164, 168, 175, 0.2),
@@ -181,10 +171,9 @@ class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
             currentUserContainerColor: Color.fromRGBO(255, 225, 66, 1),
             timeFontSize: 12,
             // 너무 구려서 안쓰는게 나을듯...
+            // userNameBuilder: (user) => Text(user.firstName as String)
             showTime: false,
-            showOtherUsersName: true,
-            // userNameBuilder: (user) => Text(user.firstName as String),
-          ),
+            showOtherUsersName: true),
           inputOptions: InputOptions(
             sendOnEnter: true,
             alwaysShowSend: true,
@@ -196,8 +185,7 @@ class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
                   onSend();
                 },
                 color: Colors.black,
-                iconSize: 24,
-              );
+                iconSize: 24);
             },
             leading: <Widget>[
               IconButton(
@@ -205,8 +193,7 @@ class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
                 onPressed: () async {
                   // TODO 추가 구현 필요.
                   await getImage(ImageSource.gallery);
-                },
-              )
+                })
             ],
             cursorStyle: CursorStyle(color: Colors.black),
             // 바깥 부분...
@@ -230,19 +217,12 @@ class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
               border: OutlineInputBorder(
                 borderRadius: const BorderRadius.all(Radius.circular(15.0)),
                 borderSide: BorderSide.none,
-                gapPadding: 0,
-              ),
-            ),
-          ),
+                gapPadding: 0))),
           messageListOptions: MessageListOptions(
             onLoadEarlier: () async {
               await Future.delayed(const Duration(seconds: 3));
-            },
-          ),
-          typingUsers: <ChatUser>[],
-        ),
-      ),
-    );
+            }),
+          typingUsers: <ChatUser>[])));
   }
 }
 

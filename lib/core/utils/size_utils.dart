@@ -63,12 +63,7 @@ EdgeInsets getPadding({
   double? bottom,
 }) {
   return getMarginOrPadding(
-    all: all,
-    left: left,
-    top: top,
-    right: right,
-    bottom: bottom,
-  );
+      all: all, left: left, top: top, right: right, bottom: bottom);
 }
 
 /// 이 메서드는 여백을 반응형으로 설정하는 데 사용됩니다.
@@ -80,12 +75,7 @@ EdgeInsets getMargin({
   double? bottom,
 }) {
   return getMarginOrPadding(
-    all: all,
-    left: left,
-    top: top,
-    right: right,
-    bottom: bottom,
-  );
+      all: all, left: left, top: top, right: right, bottom: bottom);
 }
 
 /// 이 방법은 패딩이나 여백을 반응형으로 가져오는 데 사용됩니다.
@@ -103,11 +93,10 @@ EdgeInsets getMarginOrPadding({
     bottom = all;
   }
   return EdgeInsets.only(
-    left: getHorizontalSize(left ?? 0),
-    top: getVerticalSize(top ?? 0),
-    right: getHorizontalSize(right ?? 0),
-    bottom: getVerticalSize(bottom ?? 0),
-  );
+      left: getHorizontalSize(left ?? 0),
+      top: getVerticalSize(top ?? 0),
+      right: getHorizontalSize(right ?? 0),
+      bottom: getVerticalSize(bottom ?? 0));
 }
 
 extension FormatExtension on double {

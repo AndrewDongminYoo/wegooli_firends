@@ -42,59 +42,40 @@ class CustomCheckboxButton extends StatelessWidget {
     return alignment != null
         ? Align(
             alignment: alignment ?? Alignment.center,
-            child: buildCheckBoxWidget,
-          )
+            child: buildCheckBoxWidget)
         : buildCheckBoxWidget;
   }
 
   Widget get buildCheckBoxWidget => InkWell(
-        onTap: () {
-          value = !(value!);
-          onChange(value!);
-        },
-        child: Container(
+      onTap: () {
+        value = !(value!);
+        onChange(value!);
+      },
+      child: Container(
           decoration: decoration,
           width: width,
           margin: margin ?? EdgeInsets.zero,
-          child: (isRightCheck ?? false) ? rightSideCheckbox : leftSideCheckbox,
-        ),
-      );
-  Widget get leftSideCheckbox => Row(
-        children: [
-          Padding(
-            child: checkboxWidget,
-            padding: EdgeInsets.only(right: 8),
-          ),
-          isExpandedText ? Expanded(child: textWidget) : textWidget,
-        ],
-      );
-  Widget get rightSideCheckbox => Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          isExpandedText ? Expanded(child: textWidget) : textWidget,
-          Padding(
-            padding: EdgeInsets.only(left: 8),
-            child: checkboxWidget,
-          ),
-        ],
-      );
-  Widget get textWidget => Text(
-        text ?? "",
-        textAlign: textAlignment ?? TextAlign.center,
-        style: textStyle ?? theme.textTheme.bodyLarge,
-      );
+          child:
+              (isRightCheck ?? false) ? rightSideCheckbox : leftSideCheckbox));
+  Widget get leftSideCheckbox => Row(children: [
+        Padding(child: checkboxWidget, padding: EdgeInsets.only(right: 8)),
+        isExpandedText ? Expanded(child: textWidget) : textWidget,
+      ]);
+  Widget get rightSideCheckbox =>
+      Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+        isExpandedText ? Expanded(child: textWidget) : textWidget,
+        Padding(padding: EdgeInsets.only(left: 8), child: checkboxWidget),
+      ]);
+  Widget get textWidget => Text(text ?? "",
+      textAlign: textAlignment ?? TextAlign.center,
+      style: textStyle ?? theme.textTheme.bodyLarge);
   Widget get checkboxWidget => SizedBox(
-        height: iconSize,
-        width: iconSize,
-        child: Checkbox(
-          visualDensity: VisualDensity(
-            vertical: -4,
-            horizontal: -4,
-          ),
+      height: iconSize,
+      width: iconSize,
+      child: Checkbox(
+          visualDensity: VisualDensity(vertical: -4, horizontal: -4),
           value: value ?? false,
           onChanged: (value) {
             onChange(value!);
-          },
-        ),
-      );
+          }));
 }

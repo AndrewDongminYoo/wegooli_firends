@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 import '../controller/_controller.dart';
 import '/core/app_export.dart';
 
-class ValidatePhoneCompleteButton extends GetWidget<ValidatePhoneController> {
+class ValidatePhoneCompleteButton extends GetWidget<PhoneAuthController> {
   const ValidatePhoneCompleteButton({
     super.key,
   });
@@ -18,16 +18,15 @@ class ValidatePhoneCompleteButton extends GetWidget<ValidatePhoneController> {
     return Container(
         margin: getMargin(left: 16, right: 16, bottom: 29),
         child: CustomElevatedButton(
-          text: "인증 완료",
-          buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
-              fixedSize: MaterialStateProperty.all<Size>(
-                  Size(double.maxFinite, getVerticalSize(52)))),
-          buttonTextStyle: CustomTextStyles.titleMedium18,
-          onTap: () {
-            if (controller.isValidatedPhone) {
-              Get.toNamed(AppRoutes.registerZipCode);
-            }
-          },
-        ));
+            text: "인증 완료",
+            buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
+                fixedSize: MaterialStateProperty.all<Size>(
+                    Size(double.maxFinite, getVerticalSize(52)))),
+            buttonTextStyle: CustomTextStyles.titleMedium18,
+            onTap: () {
+              if (controller.isValidatedPhone) {
+                Get.toNamed(AppRoutes.registerZipCode);
+              }
+            }));
   }
 }

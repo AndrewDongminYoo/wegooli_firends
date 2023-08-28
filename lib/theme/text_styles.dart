@@ -1,5 +1,3 @@
-// ignore_for_file: unused_element
-
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
@@ -9,99 +7,117 @@ import '/core/app_export.dart';
 /// A collection of pre-defined text styles for customizing text appearance,
 /// categorized by different font families and weights.
 /// Additionally, this class includes extensions on [TextStyle] to easily apply specific font families to text.
+
 class CustomTextStyles {
   // Title text style
-  static get titleSmallPrimaryContainer => theme.textTheme.titleSmall!
-      .copyWith(color: theme.colorScheme.primaryContainer);
-  static get titleSmallNanumSquareRoundOnPrimary =>
+  static TextStyle get titleMedium18 =>
+      theme.textTheme.titleMedium!.copyWith(fontSize: getFontSize(18));
+  static TextStyle get titleMediumBlack900 => theme.textTheme.titleMedium!
+      .copyWith(color: appTheme.black900, fontSize: getFontSize(18));
+  static TextStyle get titleMediumBlack90018 => theme.textTheme.titleMedium!
+      .copyWith(color: appTheme.black900, fontSize: getFontSize(18));
+  static TextStyle get titleMediumBluegray900 => theme.textTheme.titleMedium!
+      .copyWith(color: appTheme.blueGray900, fontSize: getFontSize(18));
+  static TextStyle get titleMediumInterBlack900 =>
+      theme.textTheme.titleMedium!.inter
+          .copyWith(color: appTheme.black900, fontSize: getFontSize(18));
+  static TextStyle get titleMediumOnPrimary =>
+      theme.textTheme.titleMedium!.copyWith(
+          color: theme.colorScheme.onPrimary.withOpacity(0.4),
+          fontSize: getFontSize(18));
+  static TextStyle get titleMediumOnPrimary18 =>
+      theme.textTheme.titleMedium!.copyWith(
+          color: theme.colorScheme.onPrimary.withOpacity(0.4),
+          fontSize: getFontSize(18));
+  static TextStyle get titleMediumOnPrimary_1 => theme.textTheme.titleMedium!
+      .copyWith(color: theme.colorScheme.onPrimary.withOpacity(0.4));
+  static TextStyle get titleSmallBlack900 => theme.textTheme.titleSmall!
+      .copyWith(color: appTheme.black900, fontWeight: FontWeight.w500);
+  static TextStyle get titleSmallNanumSquareRoundOnPrimary =>
       theme.textTheme.titleSmall!.nanumSquareRound
           .copyWith(color: theme.colorScheme.onPrimary);
-  static get titleSmallRedA700 =>
-      theme.textTheme.titleSmall!.copyWith(color: appTheme.redA700);
-  static get titleMediumBlack900_1 =>
-      theme.textTheme.titleMedium!.copyWith(color: appTheme.black900);
-  static get titleMedium18 => theme.textTheme.titleMedium!.copyWith(
-        fontSize: getFontSize(18),
-      );
-  static get titleMedium18_1 => theme.textTheme.titleMedium!.copyWith(
-        fontSize: getFontSize(18),
-      );
-  static get titleMediumBlack900 => theme.textTheme.titleMedium!.copyWith(
-        color: appTheme.black900,
-        fontSize: getFontSize(18),
-      );
-  static get titleMediumInterBlack900 =>
-      theme.textTheme.titleMedium!.inter.copyWith(
-        color: appTheme.black900,
-        fontSize: getFontSize(18),
-      );
-  static get titleMediumMedium =>
-      theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.w500);
+  static TextStyle get titleSmallOnPrimary =>
+      theme.textTheme.titleSmall!.copyWith(color: theme.colorScheme.onPrimary);
+  static TextStyle get titleSmallOnPrimaryMedium =>
+      theme.textTheme.titleSmall!.copyWith(
+          color: theme.colorScheme.onPrimary, fontWeight: FontWeight.w500);
+  static TextStyle get titleSmallPrimaryContainer => theme.textTheme.titleSmall!
+      .copyWith(color: theme.colorScheme.primaryContainer);
   // Body text style
-  static get bodyLargeGray50003 =>
-      theme.textTheme.bodyLarge!.copyWith(color: appTheme.gray50003);
-  static get bodyLargeBluegray900 =>
-      theme.textTheme.bodyLarge!.copyWith(color: appTheme.blueGray900);
-  static get bodySmallGray400 =>
-      theme.textTheme.bodySmall!.copyWith(color: appTheme.gray400);
-  static get bodySmallInter => theme.textTheme.bodySmall!.inter.copyWith(
-        fontSize: getFontSize(10),
-      );
-  static get bodySmallBluegray900 => theme.textTheme.bodySmall!.copyWith(
-        color: appTheme.blueGray900,
-        fontSize: getFontSize(10),
-      );
-  static get bodySmallInterGray400 => theme.textTheme.bodySmall!.inter.copyWith(
-        color: appTheme.gray400,
-        fontSize: getFontSize(10),
-      );
-  static get bodyLargeNotoSansKRGray700 =>
-      theme.textTheme.bodyLarge!.notoSansKR.copyWith(color: appTheme.gray700);
-  static get bodyLargeGray500 =>
-      theme.textTheme.bodyLarge!.copyWith(color: appTheme.gray500);
-  static get bodySmallGray50002 =>
-      theme.textTheme.bodySmall!.copyWith(color: appTheme.gray50002);
-  static get bodySmallGray50004 => theme.textTheme.bodySmall!.copyWith(
-        color: appTheme.gray50004,
-        fontSize: getFontSize(10),
-      );
-  static get bodyMediumInterBlack900 =>
-      theme.textTheme.bodyMedium!.inter.copyWith(color: appTheme.black900);
-  static get bodySmallOnPrimaryContainer => theme.textTheme.bodySmall!
-      .copyWith(color: theme.colorScheme.onPrimaryContainer);
-  static get bodySmallInterGray400_1 =>
-      theme.textTheme.bodySmall!.inter.copyWith(color: appTheme.gray400);
-  static get bodyLargeOnPrimaryContainer => theme.textTheme.bodyLarge!
-      .copyWith(color: theme.colorScheme.onPrimaryContainer);
-  static get bodySmallOnPrimary => theme.textTheme.bodySmall!
-      .copyWith(color: theme.colorScheme.onPrimary.withOpacity(0.4));
-  static get bodyMediumBlack900 =>
-      theme.textTheme.bodyMedium!.copyWith(color: appTheme.black900);
-  static get bodySmallErrorContainer => theme.textTheme.bodySmall!
-      .copyWith(color: theme.colorScheme.errorContainer);
-  static get bodyMediumGray50001 =>
-      theme.textTheme.bodyMedium!.copyWith(color: appTheme.gray50001);
-  static get bodySmallInterSecondaryContainer_1 =>
-      theme.textTheme.bodySmall!.inter
-          .copyWith(color: theme.colorScheme.secondaryContainer);
-  static get bodySmallInterSecondaryContainer =>
-      theme.textTheme.bodySmall!.inter.copyWith(
-        color: theme.colorScheme.secondaryContainer,
-        fontSize: getFontSize(10),
-      );
-  static get bodyLargeBlack900 =>
+  static TextStyle get bodyLargeBlack900 =>
       theme.textTheme.bodyLarge!.copyWith(color: appTheme.black900);
-  static get bodyLargeOnPrimary => theme.textTheme.bodyLarge!
+  static TextStyle get bodyLargeBluegray900 =>
+      theme.textTheme.bodyLarge!.copyWith(color: appTheme.blueGray900);
+  static TextStyle get bodyLargeGray500 =>
+      theme.textTheme.bodyLarge!.copyWith(color: appTheme.gray500);
+  static TextStyle get bodyLargeGray50002 =>
+      theme.textTheme.bodyLarge!.copyWith(color: appTheme.gray50002);
+  static TextStyle get bodyLargeGray50003 =>
+      theme.textTheme.bodyLarge!.copyWith(color: appTheme.gray50003);
+  static TextStyle get bodyLargeInterBlack900 =>
+      theme.textTheme.bodyLarge!.inter.copyWith(color: appTheme.black900);
+  static TextStyle get bodyLargeNotoSansKRGray700 =>
+      theme.textTheme.bodyLarge!.notoSansKR.copyWith(color: appTheme.gray700);
+  static TextStyle get bodyLargeOnPrimary => theme.textTheme.bodyLarge!
       .copyWith(color: theme.colorScheme.onPrimary.withOpacity(0.4));
-  static get bodySmallBlack900 =>
+  static TextStyle get bodyLargeOnPrimaryContainer => theme.textTheme.bodyLarge!
+      .copyWith(color: theme.colorScheme.onPrimaryContainer);
+  static TextStyle get bodyMediumBlack900 =>
+      theme.textTheme.bodyMedium!.copyWith(color: appTheme.black900);
+  static TextStyle get bodyMediumBluegray900 =>
+      theme.textTheme.bodyMedium!.copyWith(
+          color: appTheme.blueGray900,
+          fontSize: getFontSize(14),
+          fontWeight: FontWeight.w300);
+  static TextStyle get bodyMediumGray50001 =>
+      theme.textTheme.bodyMedium!.copyWith(color: appTheme.gray50001);
+  static TextStyle get bodySmall12 =>
+      theme.textTheme.bodySmall!.copyWith(fontSize: getFontSize(12));
+  static TextStyle get bodySmallBlack900 =>
       theme.textTheme.bodySmall!.copyWith(color: appTheme.black900);
-  static get bodyMediumInterOnPrimaryContainer =>
-      theme.textTheme.bodyMedium!.inter
-          .copyWith(color: theme.colorScheme.onPrimaryContainer);
-  static get bodyMediumInterGray600 =>
-      theme.textTheme.bodyMedium!.inter.copyWith(color: appTheme.gray600);
-  static get bodySmallSecondaryContainer => theme.textTheme.bodySmall!
-      .copyWith(color: theme.colorScheme.secondaryContainer);
+  static TextStyle get bodySmallErrorContainer => theme.textTheme.bodySmall!
+      .copyWith(color: theme.colorScheme.errorContainer);
+  static TextStyle get bodySmallGray700 =>
+      theme.textTheme.bodySmall!.copyWith(color: appTheme.gray700);
+  static TextStyle get bodySmallInter =>
+      theme.textTheme.bodySmall!.inter.copyWith(fontSize: getFontSize(10));
+  static TextStyle get bodySmallInterOnError => theme.textTheme.bodySmall!.inter
+      .copyWith(color: theme.colorScheme.onError);
+  static TextStyle get bodySmallInterOnError10 => theme
+      .textTheme.bodySmall!.inter
+      .copyWith(color: theme.colorScheme.onError, fontSize: getFontSize(10));
+  static TextStyle get bodySmallInterOnPrimary => theme
+      .textTheme.bodySmall!.inter
+      .copyWith(color: theme.colorScheme.onPrimary, fontSize: getFontSize(10));
+  static TextStyle get bodySmallOnError =>
+      theme.textTheme.bodySmall!.copyWith(color: theme.colorScheme.onError);
+  static TextStyle get bodySmallOnPrimary =>
+      theme.textTheme.bodySmall!.copyWith(color: theme.colorScheme.onPrimary);
+  static TextStyle get bodySmallOnPrimary_1 => theme.textTheme.bodySmall!
+      .copyWith(color: theme.colorScheme.onPrimary.withOpacity(0.4));
+  static TextStyle get bodySmallPretendard =>
+      theme.textTheme.bodySmall!.pretendard.copyWith(fontSize: getFontSize(12));
+  static TextStyle get bodySmallPretendardBlack900 =>
+      theme.textTheme.bodySmall!.pretendard
+          .copyWith(color: appTheme.black900, fontSize: getFontSize(12));
+  static TextStyle get bodySmallPretendardBluegray900 =>
+      theme.textTheme.bodySmall!.pretendard
+          .copyWith(color: appTheme.blueGray900);
+  static TextStyle get bodySmallPretendardErrorContainer =>
+      theme.textTheme.bodySmall!.pretendard.copyWith(
+          color: theme.colorScheme.errorContainer, fontSize: getFontSize(12));
+  static TextStyle get bodySmallPretendardGray50003 =>
+      theme.textTheme.bodySmall!.pretendard.copyWith(color: appTheme.gray50003);
+  static TextStyle get bodySmallPretendardGray700 =>
+      theme.textTheme.bodySmall!.pretendard
+          .copyWith(color: appTheme.gray700, fontSize: getFontSize(12));
+  static TextStyle get bodySmallPretendardOnPrimary => theme
+      .textTheme.bodySmall!.pretendard
+      .copyWith(color: theme.colorScheme.onPrimary, fontSize: getFontSize(12));
+  static TextStyle get bodySmallPretendardOnPrimary12 =>
+      theme.textTheme.bodySmall!.pretendard.copyWith(
+          color: theme.colorScheme.onPrimary.withOpacity(0.4),
+          fontSize: getFontSize(12));
 }
 
 extension on TextStyle {

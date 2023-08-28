@@ -52,82 +52,36 @@ class ThemeHelper {
     var colorScheme =
         _supportedColorScheme[_appTheme] ?? ColorSchemes.primaryColorScheme;
     return ThemeData(
-      colorScheme: colorScheme,
-      elevatedButtonTheme: ElevatedButtonThemeData(
-        style: ElevatedButton.styleFrom(
-          backgroundColor: colorScheme.primary,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(26),
-          ),
-        ),
-      ),
-      radioTheme: RadioThemeData(
-        fillColor: MaterialStateProperty.all<Color>(colorScheme.primary),
-        visualDensity: const VisualDensity(
-          vertical: -4,
-          horizontal: -4,
-        ),
-      ),
-      checkboxTheme: CheckboxThemeData(
-        checkColor:
-            MaterialStateProperty.all<Color>(colorScheme.onPrimaryContainer),
-        visualDensity: const VisualDensity(
-          vertical: -4,
-          horizontal: -4,
-        ),
-      ),
-      textTheme: TextTheme(
-        bodyMedium: TextStyle(
-          color: colorScheme.onPrimary,
-          fontSize: getFontSize(15),
-          fontFamily: FontFamily.pretendard,
-          fontWeight: FontWeight.w400,
-        ),
-        bodySmall: TextStyle(
-          color: colorScheme.onPrimary,
-          fontSize: getFontSize(12),
-          fontFamily: FontFamily.pretendard,
-          fontWeight: FontWeight.w400,
-        ),
-        titleMedium: TextStyle(
-          color: colorScheme.onPrimary,
-          fontSize: getFontSize(16),
-          fontFamily: FontFamily.pretendard,
-          fontWeight: FontWeight.w700,
-        ),
-        displayMedium: TextStyle(
-          color: colorScheme.onPrimary,
-          fontSize: getFontSize(50),
-          fontFamily: FontFamily.cookieRun,
-          fontWeight: FontWeight.w900,
-        ),
-        bodyLarge: TextStyle(
-          color: colorScheme.onPrimary,
-          fontSize: getFontSize(16),
-          fontFamily: FontFamily.pretendard,
-          fontWeight: FontWeight.w400,
-        ),
-        titleSmall: TextStyle(
-          color: appTheme.red600,
-          fontSize: getFontSize(14),
-          fontFamily: FontFamily.pretendard,
-          fontWeight: FontWeight.w700,
-        ),
-        labelLarge: TextStyle(
-          color: appTheme.blueGray900,
-          fontSize: getFontSize(12),
-          fontFamily: FontFamily.pretendard,
-          fontWeight: FontWeight.w600,
-        ),
-        headlineSmall: TextStyle(
-          color: appTheme.black900,
-          fontSize: getFontSize(24),
-          fontFamily: FontFamily.pretendard,
-          fontWeight: FontWeight.w700,
-        ),
-      ),
-      visualDensity: VisualDensity.standard,
-    );
+        visualDensity: VisualDensity.standard,
+        colorScheme: colorScheme,
+        textTheme: TextThemes.textTheme(colorScheme),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+            style: ElevatedButton.styleFrom(
+                backgroundColor: colorScheme.primary,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(26)),
+                visualDensity:
+                    const VisualDensity(vertical: -4, horizontal: -4),
+                padding: EdgeInsets.zero)),
+        radioTheme: RadioThemeData(
+            fillColor: MaterialStateColor.resolveWith((states) {
+              if (states.contains(MaterialState.selected)) {
+                return colorScheme.primary;
+              }
+              return colorScheme.onSurface;
+            }),
+            visualDensity: const VisualDensity(vertical: -4, horizontal: -4)),
+        checkboxTheme: CheckboxThemeData(
+            fillColor: MaterialStateColor.resolveWith((states) {
+              if (states.contains(MaterialState.selected)) {
+                return colorScheme.primary;
+              }
+              return colorScheme.onSurface;
+            }),
+            side: BorderSide(width: 1),
+            visualDensity: const VisualDensity(vertical: -4, horizontal: -4)),
+        dividerTheme: DividerThemeData(
+            thickness: 1, space: 1, color: appTheme.blueGray30033));
   }
 
   /// Returns the primary colors for the current theme.
@@ -137,74 +91,139 @@ class ThemeHelper {
   ThemeData themeData() => _getThemeData();
 }
 
+/// Class containing the supported text theme styles.
+class TextThemes {
+  static TextTheme textTheme(ColorScheme colorScheme) => TextTheme(
+      bodyLarge: TextStyle(
+          color: colorScheme.onPrimary,
+          fontSize: getFontSize(16),
+          fontFamily: FontFamily.pretendard,
+          fontWeight: FontWeight.w400),
+      bodyMedium: TextStyle(
+          color: colorScheme.onPrimary,
+          fontSize: getFontSize(15),
+          fontFamily: FontFamily.pretendard,
+          fontWeight: FontWeight.w400),
+      bodySmall: TextStyle(
+          color: colorScheme.onPrimary.withOpacity(0.4),
+          fontSize: getFontSize(12),
+          fontFamily: FontFamily.pretendard,
+          fontWeight: FontWeight.w400),
+      displayMedium: TextStyle(
+          color: colorScheme.onPrimary,
+          fontSize: getFontSize(50),
+          fontFamily: FontFamily.cookieRun,
+          fontWeight: FontWeight.w900),
+      titleMedium: TextStyle(
+          color: colorScheme.onPrimary,
+          fontSize: getFontSize(16),
+          fontFamily: FontFamily.pretendard,
+          fontWeight: FontWeight.w700),
+      titleSmall: TextStyle(
+          color: appTheme.red600,
+          fontSize: getFontSize(14),
+          fontFamily: FontFamily.pretendard,
+          fontWeight: FontWeight.w700),
+      labelLarge: TextStyle(
+          color: appTheme.blueGray900,
+          fontSize: getFontSize(12),
+          fontFamily: FontFamily.pretendard,
+          fontWeight: FontWeight.w600),
+      headlineSmall: TextStyle(
+          color: appTheme.black900,
+          fontSize: getFontSize(24),
+          fontFamily: FontFamily.pretendard,
+          fontWeight: FontWeight.w700));
+}
+
 /// Class containing the supported color schemes.
 class ColorSchemes {
   static final primaryColorScheme = ColorScheme.light(
-    background: Color(0xFFFF0000), // 'red'
-    error: Color(0xFF222222), // 'mineShaft'
-    errorContainer: Color(0xFF82838D), // 'waterloo'
-    inversePrimary: Color(0xFFFF0000), // 'red'
-    inverseSurface: Color(0xFF222222), // 'mineShaft'
-    onBackground: Color(0xFFFFFFFF), // 'white'
-    onError: Color(0xFFFFCC08), // 'supernova'
-    onErrorContainer: Color(0xFF222222), // 'mineShaft'
-    onInverseSurface: Color(0xFFFFCC08), // 'supernova'
-    onPrimary: Color(0xFF222222), // 'mineShaft'
-    onPrimaryContainer: Color(0xFFFFFFFF), // 'white'
-    onSecondary: Color(0xFFFFFFFF), // 'white'
-    onSecondaryContainer: Color(0xFF222222), // 'mineShaft'
-    onSurface: Color(0xFFFFFFFF), // 'white'
-    onSurfaceVariant: Color(0xFF222222), // 'mineShaft'
-    onTertiary: Color(0xFFFFFFFF), // 'white'
-    onTertiaryContainer: Color(0xFF222222), // 'mineShaft'
-    outline: Color(0xFF222222), // 'mineShaft'
-    outlineVariant: Color(0xFFFF0000), // 'red'
-    primary: Color(0xFFFFCC08), // 'supernova'
-    primaryContainer: Color(0xFFFF0000), // 'red'
-    scrim: Color(0xFFFF0000), // 'red'
-    secondary: Color(0xFFFF0000), // 'red'
-    secondaryContainer: Color(0xFFB9BCC3), // 'frenchGray'
-    shadow: Color(0xFF222222), // 'mineShaft'
-    surface: Color(0xFFFF0000), // 'red'
-    surfaceTint: Color(0xFF222222), // 'mineShaft'
-    surfaceVariant: Color(0xFFB9BCC3), // 'frenchGray'
-    tertiary: Color(0xFFFF0000), // 'red'
-    tertiaryContainer: Color(0xFFB9BCC3), // 'frenchGray'
-  );
+      // Primary colors
+      primary: Color(0xFFFFE041),
+      primaryContainer: Color(0xFFEF1010),
+      secondary: Color(0xFFEF1010),
+      secondaryContainer: Color(0xFFFFE041),
+      tertiary: Color(0xFFEF1010),
+      tertiaryContainer: Color(0xFFFFE041),
+
+      // Background colors
+      background: Color(0xFFEF1010),
+
+      // Surface colors
+      surface: Color(0xFFEF1010),
+      surfaceTint: Color(0xFF222222),
+      surfaceVariant: Color(0xFFFFE041),
+
+      // Error colors
+      error: Color(0xFF222222),
+      errorContainer: Color(0xFF82838D),
+      onError: Color(0xFFB9BCC3),
+      onErrorContainer: Color(0xFF222222),
+
+      // On colors(text colors)
+      onBackground: Color(0xFFFFFFFF),
+      onInverseSurface: Color(0xFFB9BCC3),
+      onPrimary: Color(0xFF222222),
+      onPrimaryContainer: Color(0xFFFFFFFF),
+      onSecondary: Color(0xFFFFFFFF),
+      onSecondaryContainer: Color(0xFF222222),
+      onTertiary: Color(0xFFFFFFFF),
+      onTertiaryContainer: Color(0xFF222222),
+
+      // Other colors
+      outline: Color(0xFF222222),
+      outlineVariant: Color(0xFFEF1010),
+      scrim: Color(0xFFEF1010),
+      shadow: Color(0xFF222222),
+
+      // Inverse colors
+      inversePrimary: Color(0xFFEF1010),
+      inverseSurface: Color(0xFF222222),
+
+      // Pending colors
+      onSurface: Color(0xFFFFFFFF),
+      onSurfaceVariant: Color(0xFF222222));
 }
 
 /// Class containing custom colors for a primary theme.
 class PrimaryColors {
+  // Amber
+  Color get amberA20033 => Color(0x33FFE142);
+
   // Black
-  Color get black900 => Color(0xFF000000); // 'black'
+  Color get black900 => Color(0xFF000000);
+
   // BlueGray
-  Color get blueGray1007f => Color(0x7FD9D9D9);
   Color get blueGray30033 => Color(0x33A4A8AF);
-  Color get blueGray400 => Color(0xFF888888); // 'gray'
-  Color get blueGray900 => Color(0xFF323232); // 'mineShaft'
+  Color get blueGray400 => Color(0xFF888888);
+  Color get blueGray900 => Color(0xFF323232);
+
   // DeepOrange
-  Color get deepOrangeA200 => Color(0xFFFF7034); // 'burningOrange'
+  Color get deepOrangeA200 => Color(0xFFFF7034);
+
   // DeepPurple
-  Color get deepPurpleA200 => Color(0xFF7850E9); // 'royalBlue'
+  Color get deepPurpleA200 => Color(0xFF7850E9);
+
   // Gray
-  Color get gray100 => Color(0xFFF6F7F7); // 'blackHaze'
-  Color get gray10001 => Color(0xFFF5F5F5); // 'wildSand'
-  Color get gray300 => Color(0xFFE6E6E6); // 'mercury'
-  Color get gray400 => Color(0xFFCACACA); // 'silver'
-  Color get gray500 => Color(0xFF8F9199); // 'manatee'
-  Color get gray50001 => Color(0xFF91969D); // 'manatee'
-  Color get gray50002 => Color(0xFF91959D); // 'manatee'
-  Color get gray50003 => Color(0xFF8E9199); // 'manatee'
-  Color get gray50004 => Color(0xFF979797); // 'dustyGray'
-  Color get gray600 => Color(0xFF858585); // 'gray'
-  Color get gray700 => Color(0xFF666666); // 'doveGray'
-  Color get gray800 => Color(0xFF474747); // 'tundora'
+  Color get whiteSmoke => Color(0xFFF5F5F5);
+  Color get gray100 => Color(0xFFF6F7F7);
+  Color get gray200 => Color(0xFFEEEEEE);
+  Color get gray300 => Color(0xFFE6E6E6);
+  Color get gray400 => Color(0xFFB9BCC3);
+  Color get gray500 => Color(0xFF8F9199);
+  Color get gray50001 => Color(0xFF91969D);
+  Color get gray50002 => Color(0xFF8E9199);
+  Color get gray50003 => Color(0xFF979797);
+  Color get gray700 => Color(0xFF5D5D5D);
+  Color get gray800 => Color(0xFF474747);
+
   // Green
-  Color get green500 => Color(0xFF38DD66); // 'shamrock'
+  Color get green500 => Color(0xFF38DD66);
+
   // Red
-  Color get red600 => Color(0xFFDB4646); // 'valencia'
-  Color get red700 => Color(0xFFE82121); // 'alizarinCrimson'
-  Color get redA700 => Color(0xFFEF1010); // 'redRibbon'
+  Color get red600 => Color(0xFFDB4646);
+  Color get red700 => Color(0xFFE82121);
 }
 
 PrimaryColors get appTheme => ThemeHelper().themeColor();

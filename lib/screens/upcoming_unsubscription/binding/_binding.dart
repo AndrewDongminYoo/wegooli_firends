@@ -4,13 +4,13 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '../controller/_controller.dart';
 
-/// A binding class for the UpcomingUnsubscriptionViewScreen.
+/// A binding class for the UpcomingUnsubscriptionScreen.
 ///
-/// This class ensures that the UpcomingUnsubscriptionViewController is created when the
-/// UpcomingUnsubscriptionViewScreen is first loaded.
-class UpcomingUnsubscriptionViewBinding extends Bindings {
+/// This class ensures that the UpcomingUnsubscriptionController is created when the
+/// UpcomingUnsubscriptionScreen is first loaded.
+class UpcomingUnsubscriptionBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => UpcomingUnsubscriptionViewController());
+    Get.lazyPut(() => UpcomingUnsubscriptionController());
   }
 }

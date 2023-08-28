@@ -4,10 +4,10 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/data/data.dart';
 
-/// A controller class for the SignupAcceptTermsScreen.
+/// A controller class for the AcceptTermsScreen.
 ///
-/// This class manages the state of the SignupAcceptTermsScreen, including the
-/// current signupAcceptTermsModelObj
+/// This class manages the state of the AcceptTermsScreen, including the
+/// current acceptTermsModelObj
 class AcceptTermsController extends GetxController {
   static AcceptTermsController get to =>
       Get.isRegistered<AcceptTermsController>()

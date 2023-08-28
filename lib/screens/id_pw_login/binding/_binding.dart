@@ -4,13 +4,13 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '../controller/_controller.dart';
 
-/// A binding class for the LoginWithIdAndPasswordScreen.
+/// A binding class for the IdPwLoginScreen.
 ///
-/// This class ensures that the LoginWithIdAndPasswordController is created when the
-/// LoginWithIdAndPasswordScreen is first loaded.
-class LoginWithIdAndPasswordBinding extends Bindings {
+/// This class ensures that the IdPwLoginController is created when the
+/// IdPwLoginScreen is first loaded.
+class IdPwLoginBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => LoginWithIdAndPasswordController());
+    Get.lazyPut(() => IdPwLoginController());
   }
 }

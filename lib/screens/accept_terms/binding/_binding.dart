@@ -4,11 +4,11 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '../controller/_controller.dart';
 
-/// A binding class for the SignupAcceptTermsScreen.
+/// A binding class for the AcceptTermsScreen.
 ///
-/// This class ensures that the SignupAcceptTermsController is created when the
-/// SignupAcceptTermsScreen is first loaded.
-class SignupAcceptTermsBinding extends Bindings {
+/// This class ensures that the AcceptTermsController is created when the
+/// AcceptTermsScreen is first loaded.
+class AcceptTermsBinding extends Bindings {
   @override
   void dependencies() {
     Get.lazyPut(() => AcceptTermsController());

@@ -1,4 +1,4 @@
-// ignore_for_file: must_be_immutable, deprecated_member_use
+// ignore_for_file: must_be_immutable
 
 // 🎯 Dart imports:
 import 'dart:io';
@@ -39,6 +39,7 @@ class CustomImageView extends StatelessWidget {
   String? url;
   ///[file] is required parameter for fetching image file
   File? file;
+
   Color? color;
   BoxFit? fit;
   final String placeHolder;
@@ -105,7 +106,7 @@ class CustomImageView extends StatelessWidget {
           height: height,
           width: width,
           fit: fit ?? BoxFit.contain,
-          color: color,
+          colorFilter: ColorFilter.mode(color!, BlendMode.srcIn),
         ),
       );
     } else if (file != null && file!.path.isNotEmpty) {

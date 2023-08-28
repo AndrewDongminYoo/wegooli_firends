@@ -2,7 +2,7 @@
 import 'base_env_config.dart';
 import 'open_api_config.dart';
 
-enum Environment { openAPIDefinition }
+enum Environment { openApiEnv }
 
 class EnvConfig {
   late BaseEnvConfig config;
@@ -13,10 +13,10 @@ class EnvConfig {
 
   _getConfig([Environment? environment]) {
     switch (environment) {
-      case Environment.openAPIDefinition:
-        return OpenAPIConfig();
+      case Environment.openApiEnv:
+        return OpenApiConfig();
       default:
-        return OpenAPIConfig();
+        return OpenApiConfig();
     }
   }
 }

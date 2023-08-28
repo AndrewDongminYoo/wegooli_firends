@@ -38,28 +38,35 @@ class CustomIconButton extends StatelessWidget {
 
   Widget get iconButtonWidget => Padding(
         padding: margin ?? EdgeInsets.zero,
-        child: IconButton(
-          visualDensity: VisualDensity(
-            vertical: -4,
-            horizontal: -4,
-          ),
-          iconSize: getSize(height ?? 0),
-          padding: EdgeInsets.all(0),
-          icon: Container(
-            alignment: Alignment.center,
-            width: getSize(width ?? 0),
-            height: getSize(height ?? 0),
-            padding: padding ?? EdgeInsets.zero,
-            decoration: decoration ??
-                BoxDecoration(
-                  color: theme.colorScheme.secondaryContainer,
-                  borderRadius: BorderRadius.circular(
-                    getHorizontalSize(24.00),
+        child: SizedBox(
+          height: height ?? 0,
+          width: width ?? 0,
+          child: IconButton(
+            visualDensity: VisualDensity(
+              vertical: -4,
+              horizontal: -4,
+            ),
+            padding: EdgeInsets.zero,
+            icon: Container(
+              alignment: Alignment.center,
+              padding: padding ?? EdgeInsets.zero,
+              decoration: decoration ??
+                  BoxDecoration(
+                    color: theme.colorScheme.onPrimaryContainer,
+                    borderRadius: BorderRadius.circular(getHorizontalSize(12)),
+                    boxShadow: [
+                      BoxShadow(
+                        color: appTheme.black900.withOpacity(0.1),
+                        spreadRadius: getHorizontalSize(2),
+                        blurRadius: getHorizontalSize(2),
+                        offset: Offset(2, 2),
+                      ),
+                    ],
                   ),
-                ),
-            child: child,
+              child: child,
+            ),
+            onPressed: onTap,
           ),
-          onPressed: onTap,
         ),
       );
 }

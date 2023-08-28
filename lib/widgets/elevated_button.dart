@@ -2,9 +2,7 @@
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
-import '/core/utils/size_utils.dart';
-import '/theme/text_styles.dart';
-import '/widgets/base_button.dart';
+import '/core/app_export.dart';
 
 class CustomElevatedButton extends BaseButton {
   CustomElevatedButton({

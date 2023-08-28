@@ -1,6 +1,9 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+// 🌎 Project imports:
+import '/core/app_export.dart';
+
 // ignore: must_be_immutable
 class CustomRadioButton extends StatelessWidget {
   CustomRadioButton({
@@ -68,14 +71,17 @@ class CustomRadioButton extends StatelessWidget {
         children: [
           Padding(
             child: radioButtonWidget,
-            padding: padding ?? EdgeInsets.zero,
+            padding: padding ?? EdgeInsets.only(right: 8),
           ),
+          textWidget,
         ],
       );
   Widget get rightSideRadioButton => Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
+          textWidget,
           Padding(
-            padding: padding ?? EdgeInsets.zero,
+            padding: padding ?? EdgeInsets.only(left: 8),
             child: radioButtonWidget,
           ),
         ],
@@ -83,12 +89,16 @@ class CustomRadioButton extends StatelessWidget {
   Widget get textWidget => Text(
         text ?? "",
         textAlign: textAlignment ?? TextAlign.center,
-        style: textStyle,
+        style: textStyle ?? theme.textTheme.bodyLarge,
       );
   Widget get radioButtonWidget => SizedBox(
-        height: iconSize,
-        width: iconSize,
+        height: iconSize ?? getHorizontalSize(20),
+        width: iconSize ?? getHorizontalSize(20),
         child: Radio<String>(
+          visualDensity: VisualDensity(
+            vertical: -4,
+            horizontal: -4,
+          ),
           value: value ?? "",
           groupValue: groupValue,
           onChanged: (value) {

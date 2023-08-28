@@ -6,7 +6,6 @@ import 'package:get/get.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
-import '/data/models/user_dto.dart';
 import '/screens/screens.dart';
 import 'widgets/bottom_tab_bar_router.dart';
 

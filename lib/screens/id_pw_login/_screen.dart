@@ -48,6 +48,7 @@ class LoginWithIdAndPassword
       final response = await api.login(
           id: controller.usernameController.text,
           password: controller.passwordController.text);
+      print('response : ${response}');
       MapJsonObject? jsonObj = response.data?.result as MapJsonObject;
       if (jsonObj.value.containsKey('token')) {
         String? token = jsonObj.value['token'] as String?;

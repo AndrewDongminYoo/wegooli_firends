@@ -1,5 +1,6 @@
 // 🎯 Dart imports:
 import 'dart:async';
+import 'dart:convert';
 
 // 📦 Package imports:
 import 'package:built_value/serializer.dart';
@@ -431,8 +432,11 @@ class UserControllerApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData =
-          rawResponse == null ? null : rawResponse as ApiResponseObject;
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(rawResponse,
+                  specifiedType: const FullType(ApiResponseObject))
+              as ApiResponseObject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

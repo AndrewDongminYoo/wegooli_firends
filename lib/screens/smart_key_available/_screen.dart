@@ -120,6 +120,35 @@ class SmartKeyAvailablePage extends StatelessWidget {
     print('response : ${response}');
   }
 
+  String getGasImg() {
+    int i = int.parse(controller.terminalModelObj.value.fuel ?? '0');
+    switch (i ~/ 10) {
+      case 0:
+        return Assets.svg.gas.imgGasPer10.path;
+      case 1:
+        return Assets.svg.gas.imgGasPer20.path;
+      case 2:
+        return Assets.svg.gas.imgGasPer30.path;
+      case 3:
+        return Assets.svg.gas.imgGasPer40.path;
+      case 4:
+        return Assets.svg.gas.imgGasPer50.path;
+      case 5:
+        return Assets.svg.gas.imgGasPer60.path;
+      case 6:
+        return Assets.svg.gas.imgGasPer70.path;
+      case 7:
+        return Assets.svg.gas.imgGasPer80.path;
+      case 8:
+        return Assets.svg.gas.imgGasPer90.path;
+      case 9:
+      case 10:
+        return Assets.svg.gas.imgGasPer100.path;
+      default:
+        return Assets.svg.gas.imgGasPer100.path;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
@@ -194,7 +223,8 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     CustomImageView(
-                                      svgPath: Assets.svg.imgGasStation.path,
+                                      // svgPath: Assets.svg.imgGasStation.path,
+                                      svgPath: getGasImg(),
                                       height: getSize(24),
                                       width: getSize(24),
                                     ),
@@ -386,7 +416,8 @@ class SmartKeyAvailablePage extends StatelessWidget {
                       // 사용중일 때 화면 가리기용
                       if (controller.isUsed.isTrue)
                         Container(
-                          height: mediaQueryData.size.height - getVerticalSize(200),
+                          height:
+                              mediaQueryData.size.height - getVerticalSize(200),
                           width: mediaQueryData.size.width,
                           decoration: BoxDecoration(
                               color: Color.fromRGBO(164, 168, 175, 0.2)),

@@ -94,6 +94,7 @@ flutter:
     - assets/images/
     - assets/svg/
     - assets/lotties/
+    - assets/svg/gas/
   fonts:
     - family: Pretendard
       fonts:

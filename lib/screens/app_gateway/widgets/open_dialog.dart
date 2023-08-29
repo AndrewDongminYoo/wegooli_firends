@@ -44,7 +44,7 @@ class RouteModal extends StatelessWidget {
                           style: TextStyle(
                               color: appTheme.black900,
                               fontSize: getFontSize(20),
-                              fontFamily: 'Roboto',
+                              fontFamily: FontFamily.roboto,
                               fontWeight: FontWeight.w400)))),
               Padding(
                   padding: getPadding(top: 5),

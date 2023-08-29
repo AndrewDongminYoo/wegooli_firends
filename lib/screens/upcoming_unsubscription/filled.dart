@@ -48,7 +48,7 @@ class UpcomingUnsubscriptionFilled
                           margin: getMargin(top: 14),
                           padding: getPadding(
                               left: 80, top: 30, right: 80, bottom: 30),
-                          decoration: AppDecoration.fillWhiteSmoke.copyWith(
+                          decoration: AppDecoration.fillGray10001.copyWith(
                               borderRadius: BorderRadiusStyle.roundedBorder10),
                           child: CustomImageView(
                               imagePath: Assets.images.imgCarNewRay.path,

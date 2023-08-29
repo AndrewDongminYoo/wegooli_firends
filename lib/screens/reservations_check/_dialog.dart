@@ -242,7 +242,7 @@ class ReservationsCheckingPageDialog extends StatelessWidget {
                                 text: l10ns.delete,
                                 margin:
                                     getMargin(left: 5, top: 15, bottom: 123),
-                                buttonStyle: CustomButtonStyles.fillGray400
+                                buttonStyle: CustomButtonStyles.fillGray400TL26
                                     .copyWith(
                                         fixedSize:
                                             MaterialStateProperty.all<Size>(

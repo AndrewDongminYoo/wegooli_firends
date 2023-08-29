@@ -404,7 +404,7 @@ class SmartKeyNotAvailable extends StatelessWidget {
                                                     right: 85,
                                                     bottom: 128),
                                                 decoration:
-                                                    AppDecoration.fillBluegray,
+                                                    AppDecoration.fillBlueGray,
                                                 child: CustomElevatedButton(
                                                     text: l10ns
                                                         .hongGilDongIsUsingIt,

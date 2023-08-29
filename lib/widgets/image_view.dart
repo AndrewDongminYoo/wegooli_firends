@@ -1,5 +1,3 @@
-// ignore_for_file: must_be_immutable
-
 // 🎯 Dart imports:
 import 'dart:io';
 
@@ -10,13 +8,13 @@ import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+// ignore: must_be_immutable
 class CustomImageView extends StatelessWidget {
   /// a [CustomImageView] it can be used for showing any type of images
   /// it will shows the placeholder image if image is not found on network image
   CustomImageView({
-    Key? key,
-    this.height,
-    this.width,
+    this.height = 18,
+    this.width = 18,
     this.url,
     this.imagePath,
     this.svgPath,
@@ -29,22 +27,21 @@ class CustomImageView extends StatelessWidget {
     this.radius,
     this.border,
     this.placeHolder = 'assets/images/image_not_found.png',
-  }) : super(key: key) {
-    assert(!(imagePath == null && svgPath == null),
-        'imagePath or svgPath both can\'t be null at a time.');
-  }
-
+  });
   double? height;
   double? width;
+
   ///[imagePath] is required parameter for showing png,jpg,etc image
   String? imagePath;
+
   ///[svgPath] is required parameter for showing svg image
   String? svgPath;
+
   ///[url] is required parameter for fetching network image
   String? url;
+
   ///[file] is required parameter for fetching image file
   File? file;
-
   Color? color;
   BoxFit? fit;
   final String placeHolder;
@@ -80,8 +77,12 @@ class CustomImageView extends StatelessWidget {
   _buildImageWithBorder() {
     if (border != null) {
       return Container(
-          decoration: BoxDecoration(border: border, borderRadius: radius),
-          child: _buildImageView());
+        decoration: BoxDecoration(
+          border: border,
+          borderRadius: radius,
+        ),
+        child: _buildImageView(),
+      );
     } else {
       return _buildImageView();
     }
@@ -90,19 +91,31 @@ class CustomImageView extends StatelessWidget {
   Widget _buildImageView() {
     if (svgPath != null && svgPath!.isNotEmpty) {
       return Container(
+        height: height,
+        width: width,
+        child: SvgPicture.asset(
+          svgPath!,
           height: height,
           width: width,
-          child: SvgPicture.asset(svgPath!,
-              height: height,
-              width: width,
-              fit: fit ?? BoxFit.contain,
-              colorFilter: ColorFilter.mode(color!, BlendMode.srcIn)));
+          fit: fit ?? BoxFit.contain,
+        ),
+      );
     } else if (imagePath != null && imagePath!.isNotEmpty) {
-      return Image.asset(imagePath!,
-          height: height, width: width, fit: fit ?? BoxFit.cover, color: color);
+      return Image.asset(
+        imagePath!,
+        height: height,
+        width: width,
+        fit: fit ?? BoxFit.cover,
+        color: color,
+      );
     } else if (file != null && file!.path.isNotEmpty) {
-      return Image.file(file!,
-          height: height, width: width, fit: fit ?? BoxFit.cover, color: color);
+      return Image.file(
+        file!,
+        height: height,
+        width: width,
+        fit: fit ?? BoxFit.cover,
+        color: color,
+      );
     } else if (url != null && url!.isNotEmpty) {
       return CachedNetworkImage(
           height: height,
@@ -114,10 +127,15 @@ class CustomImageView extends StatelessWidget {
               height: 30,
               width: 30,
               child: LinearProgressIndicator(
-                  color: Colors.grey.shade200,
-                  backgroundColor: Colors.grey.shade100)),
-          errorWidget: (context, url, error) => Image.asset(placeHolder,
-              height: height, width: width, fit: fit ?? BoxFit.cover));
+                color: Colors.grey.shade200,
+                backgroundColor: Colors.grey.shade100,
+              )),
+          errorWidget: (context, url, error) => Image.asset(
+                placeHolder,
+                height: height,
+                width: width,
+                fit: fit ?? BoxFit.cover,
+              ));
     }
     return SizedBox();
   }

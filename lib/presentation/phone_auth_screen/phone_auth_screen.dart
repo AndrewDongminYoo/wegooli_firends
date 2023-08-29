@@ -19,10 +19,10 @@ class PhoneAuthScreen extends GetWidget<PhoneAuthController> {
             resizeToAvoidBottomInset: false,
             backgroundColor: theme.colorScheme.onPrimaryContainer,
             appBar: CustomAppBar(
-                leadingWidth: getHorizontalSize(34),
+                leadingWidth: getHorizontalSize(42),
                 leading: AppbarImage(
                     svgPath: ImageConstant.imgArrowleftOnprimary,
-                    margin: getMargin(left: 16, top: 19, bottom: 18),
+                    margin: getMargin(left: 24, top: 19, bottom: 18),
                     onTap: () {
                       onTapArrowleftone();
                     }),
@@ -31,9 +31,9 @@ class PhoneAuthScreen extends GetWidget<PhoneAuthController> {
             body: SizedBox(
                 width: mediaQueryData.size.width,
                 child: SingleChildScrollView(
-                    padding: getPadding(top: 20),
+                    padding: getPadding(top: 30),
                     child: Padding(
-                        padding: getPadding(left: 16, right: 16, bottom: 5),
+                        padding: getPadding(left: 24, right: 28, bottom: 5),
                         child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
@@ -48,8 +48,8 @@ class PhoneAuthScreen extends GetWidget<PhoneAuthController> {
                                           Padding(
                                               padding: getPadding(top: 2),
                                               child: Text("lbl71".tr,
-                                                  style: theme
-                                                      .textTheme.titleMedium)),
+                                                  style: CustomTextStyles
+                                                      .titleMedium16)),
                                           Padding(
                                               padding: getPadding(
                                                   left: 5, bottom: 5),
@@ -63,7 +63,7 @@ class PhoneAuthScreen extends GetWidget<PhoneAuthController> {
                                         margin: getMargin(top: 4),
                                         hintText: "lbl72".tr,
                                         hintStyle:
-                                            CustomTextStyles.bodyLargeGray50002)
+                                            CustomTextStyles.bodyLargeGray50003)
                                   ]),
                               Container(
                                   height: getVerticalSize(94),
@@ -91,9 +91,8 @@ class PhoneAuthScreen extends GetWidget<PhoneAuthController> {
                                                                 top: 2),
                                                             child: Text(
                                                                 "lbl_132".tr,
-                                                                style: theme
-                                                                    .textTheme
-                                                                    .titleMedium)),
+                                                                style: CustomTextStyles
+                                                                    .titleMedium16)),
                                                         Padding(
                                                             padding: getPadding(
                                                                 left: 6,
@@ -113,45 +112,43 @@ class PhoneAuthScreen extends GetWidget<PhoneAuthController> {
                                                                 getHorizontalSize(
                                                                     160),
                                                             controller: controller
-                                                                .birthdateoneController,
+                                                                .tfController,
                                                             hintText:
                                                                 "lbl_yymmdd".tr,
                                                             hintStyle:
                                                                 CustomTextStyles
-                                                                    .bodyLargeGray50002),
-                                                        CustomTextFormField(
+                                                                    .bodyLargeGray50003),
+                                                        Container(
+                                                            height:
+                                                                getVerticalSize(
+                                                                    1),
                                                             width:
                                                                 getHorizontalSize(
                                                                     4),
-                                                            controller: controller
-                                                                .edittextController,
                                                             margin: getMargin(
                                                                 left: 2,
                                                                 top: 24,
                                                                 bottom: 23),
-                                                            borderDecoration:
-                                                                TextFormFieldStyleHelper
-                                                                    .fillOnPrimary,
-                                                            filled: true,
-                                                            fillColor: theme
-                                                                .colorScheme
-                                                                .onPrimary)
+                                                            decoration: BoxDecoration(
+                                                                color: theme
+                                                                    .colorScheme
+                                                                    .onPrimary))
                                                       ])),
                                                   Padding(
                                                       padding:
                                                           getPadding(top: 4),
-                                                      child: Text("msg_26".tr,
+                                                      child: Text("msg_262".tr,
                                                           style: CustomTextStyles
                                                               .bodySmallErrorContainer))
                                                 ])),
                                         CustomTextFormField(
                                             width: getHorizontalSize(160),
-                                            controller: controller
-                                                .phonenumberoneController,
+                                            controller:
+                                                controller.oneController,
                                             margin: getMargin(bottom: 19),
                                             hintText: "lbl_nnnnnnn".tr,
                                             hintStyle: CustomTextStyles
-                                                .bodyLargeGray50002,
+                                                .bodyLargeGray50003,
                                             alignment: Alignment.bottomRight)
                                       ])),
                               Padding(
@@ -174,9 +171,8 @@ class PhoneAuthScreen extends GetWidget<PhoneAuthController> {
                                                         padding:
                                                             getPadding(top: 2),
                                                         child: Text("lbl73".tr,
-                                                            style: theme
-                                                                .textTheme
-                                                                .titleMedium)),
+                                                            style: CustomTextStyles
+                                                                .titleMedium16)),
                                                     Padding(
                                                         padding: getPadding(
                                                             left: 5, bottom: 5),
@@ -209,11 +205,11 @@ class PhoneAuthScreen extends GetWidget<PhoneAuthController> {
                                         CustomTextFormField(
                                             width: getHorizontalSize(216),
                                             controller: controller
-                                                .phonenumberinpuController,
+                                                .phoneinputoneController,
                                             margin: getMargin(top: 27),
                                             hintText: "lbl_010_1234_5678".tr,
                                             hintStyle: CustomTextStyles
-                                                .bodyLargeGray50002,
+                                                .bodyLargeGray50003,
                                             textInputAction:
                                                 TextInputAction.done)
                                       ])),
@@ -224,62 +220,43 @@ class PhoneAuthScreen extends GetWidget<PhoneAuthController> {
                                   buttonStyle:
                                       CustomButtonStyles.fillPrimaryTL5,
                                   buttonTextStyle:
-                                      theme.textTheme.titleMedium!),
+                                      CustomTextStyles.titleMedium16),
                               Padding(
                                   padding: getPadding(top: 12),
                                   child: Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Expanded(
-                                            child: Container(
-                                                margin: getMargin(right: 4),
-                                                padding: getPadding(
-                                                    left: 12,
-                                                    top: 13,
-                                                    right: 12,
-                                                    bottom: 13),
-                                                decoration: AppDecoration
-                                                    .outlineOnError
-                                                    .copyWith(
-                                                        borderRadius:
-                                                            BorderRadiusStyle
-                                                                .roundedBorder5),
-                                                child: Row(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
-                                                    children: [
-                                                      Text("lbl_000000".tr,
-                                                          style: CustomTextStyles
-                                                              .bodyLargeGray50002),
-                                                      Padding(
-                                                          padding: getPadding(
-                                                              left: 41),
-                                                          child: Text(
-                                                              "lbl_3_00".tr,
-                                                              style: CustomTextStyles
-                                                                  .bodyLargeGray50002))
-                                                    ]))),
+                                            child: CustomImageView(
+                                                svgPath:
+                                                    ImageConstant.imgFrame121,
+                                                height: getVerticalSize(35),
+                                                width: getHorizontalSize(160),
+                                                radius: BorderRadius.circular(
+                                                    getHorizontalSize(5)),
+                                                margin: getMargin(
+                                                    right: 4, bottom: 12))),
                                         Expanded(
                                             child: CustomElevatedButton(
                                                 height: getVerticalSize(48),
                                                 text: "lbl75".tr,
                                                 margin: getMargin(left: 4),
                                                 buttonStyle: CustomButtonStyles
-                                                    .fillAmberATL5,
+                                                    .fillAmberATL51,
                                                 buttonTextStyle: CustomTextStyles
-                                                    .titleMediumOnPrimary_1))
+                                                    .titleMediumOnPrimary16))
                                       ]))
                             ])))),
             bottomNavigationBar: Container(
-                margin: getMargin(left: 16, right: 16, bottom: 29),
+                margin: getMargin(left: 24, right: 28, bottom: 41),
                 decoration: AppDecoration.shadow,
                 child: CustomElevatedButton(
                     text: "lbl76".tr,
-                    buttonStyle: CustomButtonStyles.fillAmberA,
-                    buttonTextStyle:
-                        CustomTextStyles.titleMediumOnPrimary18))));
+                    buttonStyle: CustomButtonStyles.fillAmberATL26,
+                    buttonTextStyle: CustomTextStyles.titleMediumOnPrimary))));
   }
 
   /// Navigates to the previous screen.

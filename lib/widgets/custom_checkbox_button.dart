@@ -94,14 +94,15 @@ class CustomCheckboxButton extends StatelessWidget {
         style: textStyle ?? theme.textTheme.bodyLarge,
       );
   Widget get checkboxWidget => SizedBox(
-        height: iconSize,
-        width: iconSize,
+        height: iconSize ?? getHorizontalSize(20.00),
+        width: iconSize ?? getHorizontalSize(20.00),
         child: Checkbox(
           visualDensity: VisualDensity(
             vertical: -4,
             horizontal: -4,
           ),
           value: value ?? false,
+          checkColor: appTheme.gray400,
           onChanged: (value) {
             onChange(value!);
           },

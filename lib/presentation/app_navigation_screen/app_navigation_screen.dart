@@ -1,22 +1,12 @@
 import 'controller/app_navigation_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_public/core/app_export.dart';
-import 'package:wegooli_friends_public/presentation/map_view_car_bottomsheet/map_view_car_bottomsheet.dart';
-import 'package:wegooli_friends_public/presentation/map_view_car_bottomsheet/controller/map_view_car_controller.dart';
-import 'package:wegooli_friends_public/presentation/verification_bottomsheet/verification_bottomsheet.dart';
-import 'package:wegooli_friends_public/presentation/verification_bottomsheet/controller/verification_controller.dart';
-import 'package:wegooli_friends_public/presentation/send_invitation_dialog/send_invitation_dialog.dart';
-import 'package:wegooli_friends_public/presentation/send_invitation_dialog/controller/send_invitation_controller.dart';
-import 'package:wegooli_friends_public/presentation/schedule_details_dialog/schedule_details_dialog.dart';
-import 'package:wegooli_friends_public/presentation/schedule_details_dialog/controller/schedule_details_controller.dart';
-import 'package:wegooli_friends_public/presentation/datetime_picker_a_bottomsheet/datetime_picker_a_bottomsheet.dart';
-import 'package:wegooli_friends_public/presentation/datetime_picker_a_bottomsheet/controller/datetime_picker_a_controller.dart';
-import 'package:wegooli_friends_public/presentation/datetime_picker_b_bottomsheet/datetime_picker_b_bottomsheet.dart';
-import 'package:wegooli_friends_public/presentation/datetime_picker_b_bottomsheet/controller/datetime_picker_b_controller.dart';
-import 'package:wegooli_friends_public/presentation/schedule_confirm_bottomsheet/schedule_confirm_bottomsheet.dart';
-import 'package:wegooli_friends_public/presentation/schedule_confirm_bottomsheet/controller/schedule_confirm_controller.dart';
-import 'package:wegooli_friends_public/presentation/unsubscription_warn_dialog/unsubscription_warn_dialog.dart';
-import 'package:wegooli_friends_public/presentation/unsubscription_warn_dialog/controller/unsubscription_warn_controller.dart';
+import 'package:wegooli_friends_public/presentation/terms_bottomsheet/terms_bottomsheet.dart';
+import 'package:wegooli_friends_public/presentation/terms_bottomsheet/controller/terms_controller.dart';
+import 'package:wegooli_friends_public/presentation/sending_invitation_dialog/sending_invitation_dialog.dart';
+import 'package:wegooli_friends_public/presentation/sending_invitation_dialog/controller/sending_invitation_controller.dart';
+import 'package:wegooli_friends_public/presentation/book_datetime_picker_bottomsheet/book_datetime_picker_bottomsheet.dart';
+import 'package:wegooli_friends_public/presentation/book_datetime_picker_bottomsheet/controller/book_datetime_picker_controller.dart';
 
 class AppNavigationScreen extends GetWidget<AppNavigationController> {
   const AppNavigationScreen({Key? key}) : super(key: key);
@@ -80,7 +70,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       children: [
                                         GestureDetector(
                                             onTap: () {
-                                              onTapMapviewcar();
+                                              onTapOne();
                                             },
                                             child: Container(
                                                 decoration: AppDecoration
@@ -101,8 +91,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                                       bottom:
                                                                           10),
                                                               child: Text(
-                                                                  "lbl_map_view_car"
-                                                                      .tr,
+                                                                  "msg26".tr,
                                                                   textAlign:
                                                                       TextAlign
                                                                           .center,
@@ -132,7 +121,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                     ]))),
                                         GestureDetector(
                                             onTap: () {
-                                              onTapMapviewcars();
+                                              onTaptf();
                                             },
                                             child: Container(
                                                 decoration: AppDecoration
@@ -153,8 +142,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                                       bottom:
                                                                           10),
                                                               child: Text(
-                                                                  "lbl_map_view_cars"
-                                                                      .tr,
+                                                                  "lbl9".tr,
                                                                   textAlign:
                                                                       TextAlign
                                                                           .center,
@@ -184,7 +172,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                     ]))),
                                         GestureDetector(
                                             onTap: () {
-                                              onTapSelectcar();
+                                              onTaptf1();
                                             },
                                             child: Container(
                                                 decoration: AppDecoration
@@ -205,8 +193,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                                       bottom:
                                                                           10),
                                                               child: Text(
-                                                                  "lbl_select_car"
-                                                                      .tr,
+                                                                  "lbl159".tr,
                                                                   textAlign:
                                                                       TextAlign
                                                                           .center,
@@ -236,7 +223,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                     ]))),
                                         GestureDetector(
                                             onTap: () {
-                                              onTapSplashscreen();
+                                              onTapSplash();
                                             },
                                             child: Container(
                                                 decoration: AppDecoration
@@ -257,7 +244,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                                       bottom:
                                                                           10),
                                                               child: Text(
-                                                                  "lbl_splash_screen"
+                                                                  "lbl_splash"
                                                                       .tr,
                                                                   textAlign:
                                                                       TextAlign
@@ -340,7 +327,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                     ]))),
                                         GestureDetector(
                                             onTap: () {
-                                              onTapRegisterzipcode();
+                                              onTapModifyprofile();
                                             },
                                             child: Container(
                                                 decoration: AppDecoration
@@ -361,7 +348,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                                       bottom:
                                                                           10),
                                                               child: Text(
-                                                                  "msg_register_zip_code"
+                                                                  "lbl_modify_profile"
                                                                       .tr,
                                                                   textAlign:
                                                                       TextAlign
@@ -392,7 +379,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                     ]))),
                                         GestureDetector(
                                             onTap: () {
-                                              onTapRegisterlicense();
+                                              onTapPhoneauth();
                                             },
                                             child: Container(
                                                 decoration: AppDecoration
@@ -413,7 +400,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                                       bottom:
                                                                           10),
                                                               child: Text(
-                                                                  "msg_register_license"
+                                                                  "lbl_phone_auth"
                                                                       .tr,
                                                                   textAlign:
                                                                       TextAlign
@@ -548,7 +535,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                     ]))),
                                         GestureDetector(
                                             onTap: () {
-                                              onTapRegistersuccess();
+                                              onTapTerms();
                                             },
                                             child: Container(
                                                 decoration: AppDecoration
@@ -569,7 +556,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                                       bottom:
                                                                           10),
                                                               child: Text(
-                                                                  "msg_register_success"
+                                                                  "lbl_terms"
                                                                       .tr,
                                                                   textAlign:
                                                                       TextAlign
@@ -600,7 +587,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                     ]))),
                                         GestureDetector(
                                             onTap: () {
-                                              onTapVerification();
+                                              onTapUnsubscribewarn();
                                             },
                                             child: Container(
                                                 decoration: AppDecoration
@@ -621,7 +608,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                                       bottom:
                                                                           10),
                                                               child: Text(
-                                                                  "lbl_verification"
+                                                                  "msg_unsubscribe_warn"
                                                                       .tr,
                                                                   textAlign:
                                                                       TextAlign
@@ -652,7 +639,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                     ]))),
                                         GestureDetector(
                                             onTap: () {
-                                              onTapPhoneauth();
+                                              onTapSendinginvitation();
                                             },
                                             child: Container(
                                                 decoration: AppDecoration
@@ -673,7 +660,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                                       bottom:
                                                                           10),
                                                               child: Text(
-                                                                  "lbl_phone_auth"
+                                                                  "msg_sending_invitation"
                                                                       .tr,
                                                                   textAlign:
                                                                       TextAlign
@@ -704,7 +691,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                     ]))),
                                         GestureDetector(
                                             onTap: () {
-                                              onTapPersonalinfo();
+                                              onTapBookdatetimepicker();
                                             },
                                             child: Container(
                                                 decoration: AppDecoration
@@ -725,7 +712,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                                       bottom:
                                                                           10),
                                                               child: Text(
-                                                                  "lbl_personal_info"
+                                                                  "msg_book_datetime_picker"
                                                                       .tr,
                                                                   textAlign:
                                                                       TextAlign
@@ -756,7 +743,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                     ]))),
                                         GestureDetector(
                                             onTap: () {
-                                              onTapTermsdialog();
+                                              onTapCalendar();
                                             },
                                             child: Container(
                                                 decoration: AppDecoration
@@ -777,7 +764,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                                       bottom:
                                                                           10),
                                                               child: Text(
-                                                                  "lbl_terms_dialog"
+                                                                  "lbl_calendar"
                                                                       .tr,
                                                                   textAlign:
                                                                       TextAlign
@@ -860,7 +847,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                     ]))),
                                         GestureDetector(
                                             onTap: () {
-                                              onTapNotifications();
+                                              onTapUpcomingunsubscription();
                                             },
                                             child: Container(
                                                 decoration: AppDecoration
@@ -881,7 +868,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                                       bottom:
                                                                           10),
                                                               child: Text(
-                                                                  "lbl_notifications"
+                                                                  "msg_upcoming_unsubscription"
                                                                       .tr,
                                                                   textAlign:
                                                                       TextAlign
@@ -912,7 +899,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                     ]))),
                                         GestureDetector(
                                             onTap: () {
-                                              onTapTermsdialogchecked();
+                                              onTapSmartkeyavailable();
                                             },
                                             child: Container(
                                                 decoration: AppDecoration
@@ -933,111 +920,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                                       bottom:
                                                                           10),
                                                               child: Text(
-                                                                  "msg_terms_dialog_checked"
-                                                                      .tr,
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .center,
-                                                                  style: TextStyle(
-                                                                      color: appTheme
-                                                                          .black900,
-                                                                      fontSize:
-                                                                          getFontSize(
-                                                                              20),
-                                                                      fontFamily:
-                                                                          'Roboto',
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w400)))),
-                                                      Padding(
-                                                          padding: getPadding(
-                                                              top: 5),
-                                                          child: Divider(
-                                                              height:
-                                                                  getVerticalSize(
-                                                                      1),
-                                                              thickness:
-                                                                  getVerticalSize(
-                                                                      1),
-                                                              color: appTheme
-                                                                  .blueGray400))
-                                                    ]))),
-                                        GestureDetector(
-                                            onTap: () {
-                                              onTapNocontents();
-                                            },
-                                            child: Container(
-                                                decoration: AppDecoration
-                                                    .fillOnSecondary,
-                                                child: Column(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.start,
-                                                    children: [
-                                                      Align(
-                                                          alignment: Alignment
-                                                              .centerLeft,
-                                                          child: Padding(
-                                                              padding:
-                                                                  getPadding(
-                                                                      left: 20,
-                                                                      top: 10,
-                                                                      right: 20,
-                                                                      bottom:
-                                                                          10),
-                                                              child: Text(
-                                                                  "lbl_no_contents"
-                                                                      .tr,
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .center,
-                                                                  style: TextStyle(
-                                                                      color: appTheme
-                                                                          .black900,
-                                                                      fontSize:
-                                                                          getFontSize(
-                                                                              20),
-                                                                      fontFamily:
-                                                                          'Roboto',
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w400)))),
-                                                      Padding(
-                                                          padding: getPadding(
-                                                              top: 5),
-                                                          child: Divider(
-                                                              height:
-                                                                  getVerticalSize(
-                                                                      1),
-                                                              thickness:
-                                                                  getVerticalSize(
-                                                                      1),
-                                                              color: appTheme
-                                                                  .blueGray400))
-                                                    ]))),
-                                        GestureDetector(
-                                            onTap: () {
-                                              onTapNoteamdata();
-                                            },
-                                            child: Container(
-                                                decoration: AppDecoration
-                                                    .fillOnSecondary,
-                                                child: Column(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.start,
-                                                    children: [
-                                                      Align(
-                                                          alignment: Alignment
-                                                              .centerLeft,
-                                                          child: Padding(
-                                                              padding:
-                                                                  getPadding(
-                                                                      left: 20,
-                                                                      top: 10,
-                                                                      right: 20,
-                                                                      bottom:
-                                                                          10),
-                                                              child: Text(
-                                                                  "lbl_no_team_data"
+                                                                  "msg_smart_key_available"
                                                                       .tr,
                                                                   textAlign:
                                                                       TextAlign
@@ -1120,422 +1003,6 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                     ]))),
                                         GestureDetector(
                                             onTap: () {
-                                              onTapSendinvitation();
-                                            },
-                                            child: Container(
-                                                decoration: AppDecoration
-                                                    .fillOnSecondary,
-                                                child: Column(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.start,
-                                                    children: [
-                                                      Align(
-                                                          alignment: Alignment
-                                                              .centerLeft,
-                                                          child: Padding(
-                                                              padding:
-                                                                  getPadding(
-                                                                      left: 20,
-                                                                      top: 10,
-                                                                      right: 20,
-                                                                      bottom:
-                                                                          10),
-                                                              child: Text(
-                                                                  "lbl_send_invitation"
-                                                                      .tr,
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .center,
-                                                                  style: TextStyle(
-                                                                      color: appTheme
-                                                                          .black900,
-                                                                      fontSize:
-                                                                          getFontSize(
-                                                                              20),
-                                                                      fontFamily:
-                                                                          'Roboto',
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w400)))),
-                                                      Padding(
-                                                          padding: getPadding(
-                                                              top: 5),
-                                                          child: Divider(
-                                                              height:
-                                                                  getVerticalSize(
-                                                                      1),
-                                                              thickness:
-                                                                  getVerticalSize(
-                                                                      1),
-                                                              color: appTheme
-                                                                  .blueGray400))
-                                                    ]))),
-                                        GestureDetector(
-                                            onTap: () {
-                                              onTapScheduledetails();
-                                            },
-                                            child: Container(
-                                                decoration: AppDecoration
-                                                    .fillOnSecondary,
-                                                child: Column(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.start,
-                                                    children: [
-                                                      Align(
-                                                          alignment: Alignment
-                                                              .centerLeft,
-                                                          child: Padding(
-                                                              padding:
-                                                                  getPadding(
-                                                                      left: 20,
-                                                                      top: 10,
-                                                                      right: 20,
-                                                                      bottom:
-                                                                          10),
-                                                              child: Text(
-                                                                  "msg_schedule_details"
-                                                                      .tr,
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .center,
-                                                                  style: TextStyle(
-                                                                      color: appTheme
-                                                                          .black900,
-                                                                      fontSize:
-                                                                          getFontSize(
-                                                                              20),
-                                                                      fontFamily:
-                                                                          'Roboto',
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w400)))),
-                                                      Padding(
-                                                          padding: getPadding(
-                                                              top: 5),
-                                                          child: Divider(
-                                                              height:
-                                                                  getVerticalSize(
-                                                                      1),
-                                                              thickness:
-                                                                  getVerticalSize(
-                                                                      1),
-                                                              color: appTheme
-                                                                  .blueGray400))
-                                                    ]))),
-                                        GestureDetector(
-                                            onTap: () {
-                                              onTapDatetimepickera();
-                                            },
-                                            child: Container(
-                                                decoration: AppDecoration
-                                                    .fillOnSecondary,
-                                                child: Column(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.start,
-                                                    children: [
-                                                      Align(
-                                                          alignment: Alignment
-                                                              .centerLeft,
-                                                          child: Padding(
-                                                              padding:
-                                                                  getPadding(
-                                                                      left: 20,
-                                                                      top: 10,
-                                                                      right: 20,
-                                                                      bottom:
-                                                                          10),
-                                                              child: Text(
-                                                                  "msg_datetime_picker_a"
-                                                                      .tr,
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .center,
-                                                                  style: TextStyle(
-                                                                      color: appTheme
-                                                                          .black900,
-                                                                      fontSize:
-                                                                          getFontSize(
-                                                                              20),
-                                                                      fontFamily:
-                                                                          'Roboto',
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w400)))),
-                                                      Padding(
-                                                          padding: getPadding(
-                                                              top: 5),
-                                                          child: Divider(
-                                                              height:
-                                                                  getVerticalSize(
-                                                                      1),
-                                                              thickness:
-                                                                  getVerticalSize(
-                                                                      1),
-                                                              color: appTheme
-                                                                  .blueGray400))
-                                                    ]))),
-                                        GestureDetector(
-                                            onTap: () {
-                                              onTapDatetimepickerb();
-                                            },
-                                            child: Container(
-                                                decoration: AppDecoration
-                                                    .fillOnSecondary,
-                                                child: Column(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.start,
-                                                    children: [
-                                                      Align(
-                                                          alignment: Alignment
-                                                              .centerLeft,
-                                                          child: Padding(
-                                                              padding:
-                                                                  getPadding(
-                                                                      left: 20,
-                                                                      top: 10,
-                                                                      right: 20,
-                                                                      bottom:
-                                                                          10),
-                                                              child: Text(
-                                                                  "msg_datetime_picker_b"
-                                                                      .tr,
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .center,
-                                                                  style: TextStyle(
-                                                                      color: appTheme
-                                                                          .black900,
-                                                                      fontSize:
-                                                                          getFontSize(
-                                                                              20),
-                                                                      fontFamily:
-                                                                          'Roboto',
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w400)))),
-                                                      Padding(
-                                                          padding: getPadding(
-                                                              top: 5),
-                                                          child: Divider(
-                                                              height:
-                                                                  getVerticalSize(
-                                                                      1),
-                                                              thickness:
-                                                                  getVerticalSize(
-                                                                      1),
-                                                              color: appTheme
-                                                                  .blueGray400))
-                                                    ]))),
-                                        GestureDetector(
-                                            onTap: () {
-                                              onTapScheduleconfirm();
-                                            },
-                                            child: Container(
-                                                decoration: AppDecoration
-                                                    .fillOnSecondary,
-                                                child: Column(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.start,
-                                                    children: [
-                                                      Align(
-                                                          alignment: Alignment
-                                                              .centerLeft,
-                                                          child: Padding(
-                                                              padding:
-                                                                  getPadding(
-                                                                      left: 20,
-                                                                      top: 10,
-                                                                      right: 20,
-                                                                      bottom:
-                                                                          10),
-                                                              child: Text(
-                                                                  "msg_schedule_confirm"
-                                                                      .tr,
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .center,
-                                                                  style: TextStyle(
-                                                                      color: appTheme
-                                                                          .black900,
-                                                                      fontSize:
-                                                                          getFontSize(
-                                                                              20),
-                                                                      fontFamily:
-                                                                          'Roboto',
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w400)))),
-                                                      Padding(
-                                                          padding: getPadding(
-                                                              top: 5),
-                                                          child: Divider(
-                                                              height:
-                                                                  getVerticalSize(
-                                                                      1),
-                                                              thickness:
-                                                                  getVerticalSize(
-                                                                      1),
-                                                              color: appTheme
-                                                                  .blueGray400))
-                                                    ]))),
-                                        GestureDetector(
-                                            onTap: () {
-                                              onTapSmartkeyunavailable();
-                                            },
-                                            child: Container(
-                                                decoration: AppDecoration
-                                                    .fillOnSecondary,
-                                                child: Column(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.start,
-                                                    children: [
-                                                      Align(
-                                                          alignment: Alignment
-                                                              .centerLeft,
-                                                          child: Padding(
-                                                              padding:
-                                                                  getPadding(
-                                                                      left: 20,
-                                                                      top: 10,
-                                                                      right: 20,
-                                                                      bottom:
-                                                                          10),
-                                                              child: Text(
-                                                                  "msg_smart_key_unavailable"
-                                                                      .tr,
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .center,
-                                                                  style: TextStyle(
-                                                                      color: appTheme
-                                                                          .black900,
-                                                                      fontSize:
-                                                                          getFontSize(
-                                                                              20),
-                                                                      fontFamily:
-                                                                          'Roboto',
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w400)))),
-                                                      Padding(
-                                                          padding: getPadding(
-                                                              top: 5),
-                                                          child: Divider(
-                                                              height:
-                                                                  getVerticalSize(
-                                                                      1),
-                                                              thickness:
-                                                                  getVerticalSize(
-                                                                      1),
-                                                              color: appTheme
-                                                                  .blueGray400))
-                                                    ]))),
-                                        GestureDetector(
-                                            onTap: () {
-                                              onTapUnsubscribe();
-                                            },
-                                            child: Container(
-                                                decoration: AppDecoration
-                                                    .fillOnSecondary,
-                                                child: Column(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.start,
-                                                    children: [
-                                                      Align(
-                                                          alignment: Alignment
-                                                              .centerLeft,
-                                                          child: Padding(
-                                                              padding:
-                                                                  getPadding(
-                                                                      left: 20,
-                                                                      top: 10,
-                                                                      right: 20,
-                                                                      bottom:
-                                                                          10),
-                                                              child: Text(
-                                                                  "lbl_unsubscribe"
-                                                                      .tr,
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .center,
-                                                                  style: TextStyle(
-                                                                      color: appTheme
-                                                                          .black900,
-                                                                      fontSize:
-                                                                          getFontSize(
-                                                                              20),
-                                                                      fontFamily:
-                                                                          'Roboto',
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w400)))),
-                                                      Padding(
-                                                          padding: getPadding(
-                                                              top: 5),
-                                                          child: Divider(
-                                                              height:
-                                                                  getVerticalSize(
-                                                                      1),
-                                                              thickness:
-                                                                  getVerticalSize(
-                                                                      1),
-                                                              color: appTheme
-                                                                  .blueGray400))
-                                                    ]))),
-                                        GestureDetector(
-                                            onTap: () {
-                                              onTapProfileaddcard();
-                                            },
-                                            child: Container(
-                                                decoration: AppDecoration
-                                                    .fillOnSecondary,
-                                                child: Column(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.start,
-                                                    children: [
-                                                      Align(
-                                                          alignment: Alignment
-                                                              .centerLeft,
-                                                          child: Padding(
-                                                              padding:
-                                                                  getPadding(
-                                                                      left: 20,
-                                                                      top: 10,
-                                                                      right: 20,
-                                                                      bottom:
-                                                                          10),
-                                                              child: Text(
-                                                                  "msg_profile_add_card"
-                                                                      .tr,
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .center,
-                                                                  style: TextStyle(
-                                                                      color: appTheme
-                                                                          .black900,
-                                                                      fontSize:
-                                                                          getFontSize(
-                                                                              20),
-                                                                      fontFamily:
-                                                                          'Roboto',
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w400)))),
-                                                      Padding(
-                                                          padding: getPadding(
-                                                              top: 5),
-                                                          child: Divider(
-                                                              height:
-                                                                  getVerticalSize(
-                                                                      1),
-                                                              thickness:
-                                                                  getVerticalSize(
-                                                                      1),
-                                                              color: appTheme
-                                                                  .blueGray400))
-                                                    ]))),
-                                        GestureDetector(
-                                            onTap: () {
                                               onTapCarstatusinfo();
                                             },
                                             child: Container(
@@ -1585,202 +1052,38 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                                       1),
                                                               color: appTheme
                                                                   .blueGray400))
-                                                    ]))),
-                                        GestureDetector(
-                                            onTap: () {
-                                              onTapUnsubscriptionwarn();
-                                            },
-                                            child: Container(
-                                                decoration: AppDecoration
-                                                    .fillOnSecondary,
-                                                child: Column(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.start,
-                                                    children: [
-                                                      Align(
-                                                          alignment: Alignment
-                                                              .centerLeft,
-                                                          child: Padding(
-                                                              padding:
-                                                                  getPadding(
-                                                                      left: 20,
-                                                                      top: 10,
-                                                                      right: 20,
-                                                                      bottom:
-                                                                          10),
-                                                              child: Text(
-                                                                  "msg_unsubscription_warn"
-                                                                      .tr,
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .center,
-                                                                  style: TextStyle(
-                                                                      color: appTheme
-                                                                          .black900,
-                                                                      fontSize:
-                                                                          getFontSize(
-                                                                              20),
-                                                                      fontFamily:
-                                                                          'Roboto',
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w400)))),
-                                                      Padding(
-                                                          padding: getPadding(
-                                                              top: 5),
-                                                          child: Divider(
-                                                              height:
-                                                                  getVerticalSize(
-                                                                      1),
-                                                              thickness:
-                                                                  getVerticalSize(
-                                                                      1),
-                                                              color: appTheme
-                                                                  .blueGray400))
-                                                    ]))),
-                                        GestureDetector(
-                                            onTap: () {
-                                              onTapUpcomingunsubscription();
-                                            },
-                                            child: Container(
-                                                decoration: AppDecoration
-                                                    .fillOnSecondary,
-                                                child: Column(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.start,
-                                                    children: [
-                                                      Align(
-                                                          alignment: Alignment
-                                                              .centerLeft,
-                                                          child: Padding(
-                                                              padding:
-                                                                  getPadding(
-                                                                      left: 20,
-                                                                      top: 10,
-                                                                      right: 20,
-                                                                      bottom:
-                                                                          10),
-                                                              child: Text(
-                                                                  "msg_upcoming_unsubscription"
-                                                                      .tr,
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .center,
-                                                                  style: TextStyle(
-                                                                      color: appTheme
-                                                                          .black900,
-                                                                      fontSize:
-                                                                          getFontSize(
-                                                                              20),
-                                                                      fontFamily:
-                                                                          'Roboto',
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w400)))),
-                                                      Padding(
-                                                          padding: getPadding(
-                                                              top: 5),
-                                                          child: Divider(
-                                                              height:
-                                                                  getVerticalSize(
-                                                                      1),
-                                                              thickness:
-                                                                  getVerticalSize(
-                                                                      1),
-                                                              color: appTheme
-                                                                  .blueGray400))
-                                                    ]))),
-                                        GestureDetector(
-                                            onTap: () {
-                                              onTapNosubscription();
-                                            },
-                                            child: Container(
-                                                decoration: AppDecoration
-                                                    .fillOnSecondary,
-                                                child: Column(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.start,
-                                                    children: [
-                                                      Align(
-                                                          alignment: Alignment
-                                                              .centerLeft,
-                                                          child: Padding(
-                                                              padding:
-                                                                  getPadding(
-                                                                      left: 20,
-                                                                      top: 10,
-                                                                      right: 20,
-                                                                      bottom:
-                                                                          10),
-                                                              child: Text(
-                                                                  "lbl_no_subscription"
-                                                                      .tr,
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .center,
-                                                                  style: TextStyle(
-                                                                      color: appTheme
-                                                                          .black900,
-                                                                      fontSize:
-                                                                          getFontSize(
-                                                                              20),
-                                                                      fontFamily:
-                                                                          'Roboto',
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w400)))),
-                                                      Padding(
-                                                          padding: getPadding(
-                                                              top: 5),
-                                                          child: Divider(
-                                                              height:
-                                                                  getVerticalSize(
-                                                                      1),
-                                                              thickness:
-                                                                  getVerticalSize(
-                                                                      1),
-                                                              color: appTheme
-                                                                  .blueGray400))
                                                     ])))
                                       ]))))
                     ]))));
   }
 
-  /// Displays a scrollable bottom sheet widget using the [Get] package
-  /// and the [MapViewCarBottomsheet] widget.
-  ///
-  /// The bottom sheet is controlled by the [MapViewCarController]
-  /// and is displayed using the [Get.bottomSheet] method with
-  /// [isScrollControlled] set to true.
+  /// Navigates to the oneScreen when the action is triggered.
 
-  onTapMapviewcar() {
-    Get.bottomSheet(
-      MapViewCarBottomsheet(
-        Get.put(
-          MapViewCarController(),
-        ),
-      ),
-      isScrollControlled: true,
+  /// When the action is triggered, this function uses the [Get] package to
+  /// push the named route for the oneScreen.
+  onTapOne() {
+    Get.toNamed(
+      AppRoutes.oneScreen,
     );
   }
 
-  /// Navigates to the mapViewCarsScreen when the action is triggered.
+  /// Navigates to the k1Screen when the action is triggered.
 
   /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the mapViewCarsScreen.
-  onTapMapviewcars() {
+  /// push the named route for the k1Screen.
+  onTaptf() {
     Get.toNamed(
-      AppRoutes.mapViewCarsScreen,
+      AppRoutes.k1Screen,
     );
   }
 
-  /// Navigates to the selectCarScreen when the action is triggered.
+  /// Navigates to the k2Screen when the action is triggered.
 
   /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the selectCarScreen.
-  onTapSelectcar() {
+  /// push the named route for the k2Screen.
+  onTaptf1() {
     Get.toNamed(
-      AppRoutes.selectCarScreen,
+      AppRoutes.k2Screen,
     );
   }
 
@@ -1788,7 +1091,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
 
   /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the splashScreen.
-  onTapSplashscreen() {
+  onTapSplash() {
     Get.toNamed(
       AppRoutes.splashScreen,
     );
@@ -1804,23 +1107,23 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
     );
   }
 
-  /// Navigates to the registerZipCodeScreen when the action is triggered.
+  /// Navigates to the modifyProfileScreen when the action is triggered.
 
   /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the registerZipCodeScreen.
-  onTapRegisterzipcode() {
+  /// push the named route for the modifyProfileScreen.
+  onTapModifyprofile() {
     Get.toNamed(
-      AppRoutes.registerZipCodeScreen,
+      AppRoutes.modifyProfileScreen,
     );
   }
 
-  /// Navigates to the registerLicenseScreen when the action is triggered.
+  /// Navigates to the phoneAuthScreen when the action is triggered.
 
   /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the registerLicenseScreen.
-  onTapRegisterlicense() {
+  /// push the named route for the phoneAuthScreen.
+  onTapPhoneauth() {
     Get.toNamed(
-      AppRoutes.registerLicenseScreen,
+      AppRoutes.phoneAuthScreen,
     );
   }
 
@@ -1844,61 +1147,77 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
     );
   }
 
-  /// Navigates to the registerSuccessScreen when the action is triggered.
-
-  /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the registerSuccessScreen.
-  onTapRegistersuccess() {
-    Get.toNamed(
-      AppRoutes.registerSuccessScreen,
-    );
-  }
-
   /// Displays a scrollable bottom sheet widget using the [Get] package
-  /// and the [VerificationBottomsheet] widget.
+  /// and the [TermsBottomsheet] widget.
   ///
-  /// The bottom sheet is controlled by the [VerificationController]
+  /// The bottom sheet is controlled by the [TermsController]
   /// and is displayed using the [Get.bottomSheet] method with
   /// [isScrollControlled] set to true.
 
-  onTapVerification() {
+  onTapTerms() {
     Get.bottomSheet(
-      VerificationBottomsheet(
+      TermsBottomsheet(
         Get.put(
-          VerificationController(),
+          TermsController(),
         ),
       ),
       isScrollControlled: true,
     );
   }
 
-  /// Navigates to the phoneAuthScreen when the action is triggered.
+  /// Navigates to the unsubscribeWarnScreen when the action is triggered.
 
   /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the phoneAuthScreen.
-  onTapPhoneauth() {
+  /// push the named route for the unsubscribeWarnScreen.
+  onTapUnsubscribewarn() {
     Get.toNamed(
-      AppRoutes.phoneAuthScreen,
+      AppRoutes.unsubscribeWarnScreen,
     );
   }
 
-  /// Navigates to the personalInfoScreen when the action is triggered.
+  /// Displays a dialog with the [SendingInvitationDialog] content.
+  ///
+  /// The [SendingInvitationDialog] widget is created with a new
+  /// instance of the [SendingInvitationController],
+  /// which is obtained using the Get.put() method.
+  onTapSendinginvitation() {
+    Get.dialog(AlertDialog(
+      backgroundColor: Colors.transparent,
+      contentPadding: EdgeInsets.zero,
+      insetPadding: const EdgeInsets.only(left: 0),
+      content: SendingInvitationDialog(
+        Get.put(
+          SendingInvitationController(),
+        ),
+      ),
+    ));
+  }
 
-  /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the personalInfoScreen.
-  onTapPersonalinfo() {
-    Get.toNamed(
-      AppRoutes.personalInfoScreen,
+  /// Displays a scrollable bottom sheet widget using the [Get] package
+  /// and the [BookDatetimePickerBottomsheet] widget.
+  ///
+  /// The bottom sheet is controlled by the [BookDatetimePickerController]
+  /// and is displayed using the [Get.bottomSheet] method with
+  /// [isScrollControlled] set to true.
+
+  onTapBookdatetimepicker() {
+    Get.bottomSheet(
+      BookDatetimePickerBottomsheet(
+        Get.put(
+          BookDatetimePickerController(),
+        ),
+      ),
+      isScrollControlled: true,
     );
   }
 
-  /// Navigates to the termsDialogScreen when the action is triggered.
+  /// Navigates to the calendarScreen when the action is triggered.
 
   /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the termsDialogScreen.
-  onTapTermsdialog() {
+  /// push the named route for the calendarScreen.
+  onTapCalendar() {
     Get.toNamed(
-      AppRoutes.termsDialogScreen,
+      AppRoutes.calendarScreen,
     );
   }
 
@@ -1912,43 +1231,23 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
     );
   }
 
-  /// Navigates to the notificationsScreen when the action is triggered.
+  /// Navigates to the upcomingUnsubscriptionScreen when the action is triggered.
 
   /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the notificationsScreen.
-  onTapNotifications() {
+  /// push the named route for the upcomingUnsubscriptionScreen.
+  onTapUpcomingunsubscription() {
     Get.toNamed(
-      AppRoutes.notificationsScreen,
+      AppRoutes.upcomingUnsubscriptionScreen,
     );
   }
 
-  /// Navigates to the termsDialogCheckedScreen when the action is triggered.
+  /// Navigates to the smartKeyAvailableScreen when the action is triggered.
 
   /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the termsDialogCheckedScreen.
-  onTapTermsdialogchecked() {
+  /// push the named route for the smartKeyAvailableScreen.
+  onTapSmartkeyavailable() {
     Get.toNamed(
-      AppRoutes.termsDialogCheckedScreen,
-    );
-  }
-
-  /// Navigates to the noContentsScreen when the action is triggered.
-
-  /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the noContentsScreen.
-  onTapNocontents() {
-    Get.toNamed(
-      AppRoutes.noContentsScreen,
-    );
-  }
-
-  /// Navigates to the noTeamDataScreen when the action is triggered.
-
-  /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the noTeamDataScreen.
-  onTapNoteamdata() {
-    Get.toNamed(
-      AppRoutes.noTeamDataScreen,
+      AppRoutes.smartKeyAvailableScreen,
     );
   }
 
@@ -1962,126 +1261,6 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
     );
   }
 
-  /// Displays a dialog with the [SendInvitationDialog] content.
-  ///
-  /// The [SendInvitationDialog] widget is created with a new
-  /// instance of the [SendInvitationController],
-  /// which is obtained using the Get.put() method.
-  onTapSendinvitation() {
-    Get.dialog(AlertDialog(
-      backgroundColor: Colors.transparent,
-      contentPadding: EdgeInsets.zero,
-      insetPadding: const EdgeInsets.only(left: 0),
-      content: SendInvitationDialog(
-        Get.put(
-          SendInvitationController(),
-        ),
-      ),
-    ));
-  }
-
-  /// Displays a dialog with the [ScheduleDetailsDialog] content.
-  ///
-  /// The [ScheduleDetailsDialog] widget is created with a new
-  /// instance of the [ScheduleDetailsController],
-  /// which is obtained using the Get.put() method.
-  onTapScheduledetails() {
-    Get.dialog(AlertDialog(
-      backgroundColor: Colors.transparent,
-      contentPadding: EdgeInsets.zero,
-      insetPadding: const EdgeInsets.only(left: 0),
-      content: ScheduleDetailsDialog(
-        Get.put(
-          ScheduleDetailsController(),
-        ),
-      ),
-    ));
-  }
-
-  /// Displays a scrollable bottom sheet widget using the [Get] package
-  /// and the [DatetimePickerABottomsheet] widget.
-  ///
-  /// The bottom sheet is controlled by the [DatetimePickerAController]
-  /// and is displayed using the [Get.bottomSheet] method with
-  /// [isScrollControlled] set to true.
-
-  onTapDatetimepickera() {
-    Get.bottomSheet(
-      DatetimePickerABottomsheet(
-        Get.put(
-          DatetimePickerAController(),
-        ),
-      ),
-      isScrollControlled: true,
-    );
-  }
-
-  /// Displays a scrollable bottom sheet widget using the [Get] package
-  /// and the [DatetimePickerBBottomsheet] widget.
-  ///
-  /// The bottom sheet is controlled by the [DatetimePickerBController]
-  /// and is displayed using the [Get.bottomSheet] method with
-  /// [isScrollControlled] set to true.
-
-  onTapDatetimepickerb() {
-    Get.bottomSheet(
-      DatetimePickerBBottomsheet(
-        Get.put(
-          DatetimePickerBController(),
-        ),
-      ),
-      isScrollControlled: true,
-    );
-  }
-
-  /// Displays a scrollable bottom sheet widget using the [Get] package
-  /// and the [ScheduleConfirmBottomsheet] widget.
-  ///
-  /// The bottom sheet is controlled by the [ScheduleConfirmController]
-  /// and is displayed using the [Get.bottomSheet] method with
-  /// [isScrollControlled] set to true.
-
-  onTapScheduleconfirm() {
-    Get.bottomSheet(
-      ScheduleConfirmBottomsheet(
-        Get.put(
-          ScheduleConfirmController(),
-        ),
-      ),
-      isScrollControlled: true,
-    );
-  }
-
-  /// Navigates to the smartKeyUnavailableScreen when the action is triggered.
-
-  /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the smartKeyUnavailableScreen.
-  onTapSmartkeyunavailable() {
-    Get.toNamed(
-      AppRoutes.smartKeyUnavailableScreen,
-    );
-  }
-
-  /// Navigates to the unsubscribeScreen when the action is triggered.
-
-  /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the unsubscribeScreen.
-  onTapUnsubscribe() {
-    Get.toNamed(
-      AppRoutes.unsubscribeScreen,
-    );
-  }
-
-  /// Navigates to the profileAddCardScreen when the action is triggered.
-
-  /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the profileAddCardScreen.
-  onTapProfileaddcard() {
-    Get.toNamed(
-      AppRoutes.profileAddCardScreen,
-    );
-  }
-
   /// Navigates to the carStatusInfoScreen when the action is triggered.
 
   /// When the action is triggered, this function uses the [Get] package to
@@ -2089,44 +1268,6 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
   onTapCarstatusinfo() {
     Get.toNamed(
       AppRoutes.carStatusInfoScreen,
-    );
-  }
-
-  /// Displays a dialog with the [UnsubscriptionWarnDialog] content.
-  ///
-  /// The [UnsubscriptionWarnDialog] widget is created with a new
-  /// instance of the [UnsubscriptionWarnController],
-  /// which is obtained using the Get.put() method.
-  onTapUnsubscriptionwarn() {
-    Get.dialog(AlertDialog(
-      backgroundColor: Colors.transparent,
-      contentPadding: EdgeInsets.zero,
-      insetPadding: const EdgeInsets.only(left: 0),
-      content: UnsubscriptionWarnDialog(
-        Get.put(
-          UnsubscriptionWarnController(),
-        ),
-      ),
-    ));
-  }
-
-  /// Navigates to the upcomingUnsubscriptionScreen when the action is triggered.
-
-  /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the upcomingUnsubscriptionScreen.
-  onTapUpcomingunsubscription() {
-    Get.toNamed(
-      AppRoutes.upcomingUnsubscriptionScreen,
-    );
-  }
-
-  /// Navigates to the noSubscriptionScreen when the action is triggered.
-
-  /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the noSubscriptionScreen.
-  onTapNosubscription() {
-    Get.toNamed(
-      AppRoutes.noSubscriptionScreen,
     );
   }
 }

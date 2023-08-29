@@ -7,9 +7,9 @@ import 'package:flutter/material.dart';
 /// This class manages the state of the RegisterCreditCardScreen, including the
 /// current registerCreditCardModelObj
 class RegisterCreditCardController extends GetxController {
-  TextEditingController cardnumbervalueController = TextEditingController();
+  TextEditingController cardnumberoneController = TextEditingController();
 
-  TextEditingController expirationdatevController = TextEditingController();
+  TextEditingController expirationdateController = TextEditingController();
 
   TextEditingController zipcodeController = TextEditingController();
 
@@ -23,8 +23,8 @@ class RegisterCreditCardController extends GetxController {
   @override
   void onClose() {
     super.onClose();
-    cardnumbervalueController.dispose();
-    expirationdatevController.dispose();
+    cardnumberoneController.dispose();
+    expirationdateController.dispose();
     zipcodeController.dispose();
     edittextController.dispose();
   }

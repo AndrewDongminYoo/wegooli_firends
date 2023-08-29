@@ -72,7 +72,7 @@ class CustomBottomBar extends StatelessWidget {
                     svgPath: bottomMenuList[index].icon,
                     height: getSize(24),
                     width: getSize(24),
-                    color: theme.colorScheme.onError,
+                    color: appTheme.gray400,
                   ),
                   Padding(
                     padding: getPadding(
@@ -80,8 +80,8 @@ class CustomBottomBar extends StatelessWidget {
                     ),
                     child: Text(
                       bottomMenuList[index].title ?? "",
-                      style: CustomTextStyles.bodySmallInterOnError10.copyWith(
-                        color: theme.colorScheme.onError,
+                      style: CustomTextStyles.bodySmallInterGray400.copyWith(
+                        color: appTheme.gray400,
                       ),
                     ),
                   ),
@@ -104,7 +104,7 @@ class CustomBottomBar extends StatelessWidget {
                     ),
                     child: Text(
                       bottomMenuList[index].title ?? "",
-                      style: CustomTextStyles.bodySmallInterOnPrimary.copyWith(
+                      style: CustomTextStyles.bodySmallInter.copyWith(
                         color: theme.colorScheme.onPrimary,
                       ),
                     ),

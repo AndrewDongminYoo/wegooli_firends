@@ -7,18 +7,16 @@ import 'package:flutter/material.dart';
 /// This class manages the state of the IdPwLoginScreen, including the
 /// current idPwLoginModelObj
 class IdPwLoginController extends GetxController {
-  TextEditingController idoneController = TextEditingController();
+  TextEditingController tfController = TextEditingController();
 
-  TextEditingController passwordoneController = TextEditingController();
+  TextEditingController oneController = TextEditingController();
 
   Rx<IdPwLoginModel> idPwLoginModelObj = IdPwLoginModel().obs;
-
-  Rx<bool> isShowPassword = true.obs;
 
   @override
   void onClose() {
     super.onClose();
-    idoneController.dispose();
-    passwordoneController.dispose();
+    tfController.dispose();
+    oneController.dispose();
   }
 }

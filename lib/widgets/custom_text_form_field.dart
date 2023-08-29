@@ -91,7 +91,7 @@ class CustomTextFormField extends StatelessWidget {
           controller: controller,
           focusNode: focusNode ?? FocusNode(),
           autofocus: autofocus!,
-          style: textStyle ?? CustomTextStyles.bodyLargeGray50002,
+          style: textStyle ?? CustomTextStyles.bodyLargeGray50003,
           obscureText: obscureText!,
           textInputAction: textInputAction,
           keyboardType: textInputType,
@@ -102,7 +102,7 @@ class CustomTextFormField extends StatelessWidget {
       );
   InputDecoration get decoration => InputDecoration(
         hintText: hintText ?? "",
-        hintStyle: hintStyle ?? CustomTextStyles.bodyLargeGray50002,
+        hintStyle: hintStyle ?? CustomTextStyles.bodyLargeGray50003,
         prefixIcon: prefix,
         prefixIconConstraints: prefixConstraints,
         suffixIcon: suffix,
@@ -121,7 +121,7 @@ class CustomTextFormField extends StatelessWidget {
             OutlineInputBorder(
               borderRadius: BorderRadius.circular(getHorizontalSize(5.00)),
               borderSide: BorderSide(
-                color: theme.colorScheme.onError,
+                color: appTheme.gray400,
                 width: 1,
               ),
             ),
@@ -129,7 +129,7 @@ class CustomTextFormField extends StatelessWidget {
             OutlineInputBorder(
               borderRadius: BorderRadius.circular(getHorizontalSize(5.00)),
               borderSide: BorderSide(
-                color: theme.colorScheme.onError,
+                color: appTheme.gray400,
                 width: 1,
               ),
             ),
@@ -137,7 +137,7 @@ class CustomTextFormField extends StatelessWidget {
             OutlineInputBorder(
               borderRadius: BorderRadius.circular(getHorizontalSize(5.00)),
               borderSide: BorderSide(
-                color: theme.colorScheme.onError,
+                color: appTheme.gray400,
                 width: 1,
               ),
             ),
@@ -146,27 +146,15 @@ class CustomTextFormField extends StatelessWidget {
 
 /// Extension on [CustomTextFormField] to facilitate inclusion of all types of border style etc
 extension TextFormFieldStyleHelper on CustomTextFormField {
-  static UnderlineInputBorder get underLineGray => UnderlineInputBorder(
-        borderSide: BorderSide(
-          color: appTheme.gray300,
-        ),
-      );
-  static OutlineInputBorder get outlineOnErrorTL5 => OutlineInputBorder(
+  static OutlineInputBorder get outlineGrayTL51 => OutlineInputBorder(
         borderRadius: BorderRadius.circular(getHorizontalSize(5.00)),
         borderSide: BorderSide(
-          color: theme.colorScheme.onError,
+          color: appTheme.gray400,
           width: 1,
         ),
       );
-  static OutlineInputBorder get fillOnPrimary => OutlineInputBorder(
-        borderSide: BorderSide.none,
-      );
   static OutlineInputBorder get fillPrimary => OutlineInputBorder(
         borderRadius: BorderRadius.circular(getHorizontalSize(5.00)),
-        borderSide: BorderSide.none,
-      );
-  static OutlineInputBorder get fillBlueGray => OutlineInputBorder(
-        borderRadius: BorderRadius.circular(getHorizontalSize(18.00)),
         borderSide: BorderSide.none,
       );
 }

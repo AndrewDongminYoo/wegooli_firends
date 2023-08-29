@@ -28,171 +28,148 @@ class RegisterCreditCardScreen extends GetWidget<RegisterCreditCardController> {
                     }),
                 centerTitle: true,
                 title: AppbarTitle(text: "lbl51".tr)),
-            body: SizedBox(
-                width: mediaQueryData.size.width,
-                child: SingleChildScrollView(
-                    padding: getPadding(top: 20),
-                    child: Padding(
-                        padding: getPadding(bottom: 5),
-                        child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Padding(
-                                  padding: getPadding(left: 16, right: 16),
-                                  child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        Row(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Padding(
-                                                  padding: getPadding(top: 2),
-                                                  child: Text("lbl52".tr,
-                                                      style: theme.textTheme
-                                                          .titleMedium)),
-                                              Padding(
-                                                  padding: getPadding(
-                                                      left: 5, bottom: 5),
-                                                  child: Text("lbl31".tr,
-                                                      style: theme.textTheme
-                                                          .titleSmall))
-                                            ]),
-                                        CustomTextFormField(
-                                            controller: controller
-                                                .cardnumbervalueController,
-                                            margin: getMargin(top: 4),
-                                            hintText: "msg_0000_0000_0000".tr,
-                                            hintStyle: CustomTextStyles
-                                                .bodyLargeGray50002)
-                                      ])),
-                              Padding(
-                                  padding:
-                                      getPadding(left: 16, top: 26, right: 16),
-                                  child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        Row(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Padding(
-                                                  padding: getPadding(top: 2),
-                                                  child: Text("lbl53".tr,
-                                                      style: theme.textTheme
-                                                          .titleMedium)),
-                                              Padding(
-                                                  padding: getPadding(
-                                                      left: 5, bottom: 5),
-                                                  child: Text("lbl31".tr,
-                                                      style: theme.textTheme
-                                                          .titleSmall))
-                                            ]),
-                                        CustomTextFormField(
-                                            controller: controller
-                                                .expirationdatevController,
-                                            margin: getMargin(top: 4),
-                                            hintText: "lbl_mm_yy".tr,
-                                            hintStyle: CustomTextStyles
-                                                .bodyLargeGray50002)
-                                      ])),
-                              Padding(
-                                  padding:
-                                      getPadding(left: 16, top: 29, right: 16),
-                                  child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        Text("lbl54".tr,
-                                            style: theme.textTheme.titleMedium),
-                                        CustomTextFormField(
-                                            controller:
-                                                controller.zipcodeController,
-                                            margin: getMargin(top: 4),
-                                            hintText: "lbl_980709".tr,
-                                            hintStyle: CustomTextStyles
-                                                .bodyLargeGray50002,
-                                            borderDecoration:
-                                                TextFormFieldStyleHelper
-                                                    .outlineOnErrorTL5,
-                                            filled: true,
-                                            fillColor: appTheme.blueGray30033)
-                                      ])),
-                              Padding(
-                                  padding:
-                                      getPadding(left: 16, top: 26, right: 16),
-                                  child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        Row(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Padding(
-                                                  padding: getPadding(top: 2),
-                                                  child: Text("lbl_22".tr,
-                                                      style: theme.textTheme
-                                                          .titleMedium)),
-                                              Padding(
-                                                  padding: getPadding(
-                                                      left: 5, bottom: 5),
-                                                  child: Text("lbl31".tr,
-                                                      style: theme.textTheme
-                                                          .titleSmall))
-                                            ]),
-                                        CustomTextFormField(
-                                            controller:
-                                                controller.edittextController,
-                                            margin: getMargin(top: 4),
-                                            textInputAction:
-                                                TextInputAction.done)
-                                      ])),
-                              CustomDropDown(
-                                  icon: Container(
-                                      margin: getMargin(left: 30, right: 16),
-                                      child: CustomImageView(
-                                          svgPath: ImageConstant
-                                              .imgArrowleftOnprimary)),
-                                  margin: getMargin(top: 82),
-                                  hintText: "msg11".tr,
-                                  hintStyle: theme.textTheme.bodyLarge!,
-                                  items: controller.registerCreditCardModelObj
-                                      .value.dropdownItemList.value,
-                                  prefix: Container(
-                                      margin: getMargin(
-                                          left: 16,
-                                          top: 22,
-                                          right: 10,
-                                          bottom: 22),
-                                      child: CustomImageView(
-                                          svgPath: ImageConstant.imgComputer)),
-                                  prefixConstraints: BoxConstraints(
-                                      maxHeight: getVerticalSize(64)),
-                                  contentPadding:
-                                      getPadding(top: 22, bottom: 22),
-                                  onChanged: (value) {
-                                    controller.onSelected(value);
-                                  })
-                            ])))),
+            body: Container(
+                width: double.maxFinite,
+                padding: getPadding(top: 20, bottom: 20),
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Padding(
+                          padding: getPadding(left: 16, right: 16),
+                          child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Row(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Padding(
+                                          padding: getPadding(top: 2),
+                                          child: Text("lbl52".tr,
+                                              style: CustomTextStyles
+                                                  .titleMedium16)),
+                                      Padding(
+                                          padding:
+                                              getPadding(left: 5, bottom: 5),
+                                          child: Text("lbl31".tr,
+                                              style:
+                                                  theme.textTheme.titleSmall))
+                                    ]),
+                                CustomTextFormField(
+                                    controller:
+                                        controller.cardnumberoneController,
+                                    margin: getMargin(top: 4),
+                                    hintText: "msg_0000_0000_0000".tr,
+                                    hintStyle:
+                                        CustomTextStyles.bodyLargeGray50003)
+                              ])),
+                      Padding(
+                          padding: getPadding(left: 16, top: 26, right: 16),
+                          child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Row(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Padding(
+                                          padding: getPadding(top: 2),
+                                          child: Text("lbl53".tr,
+                                              style: CustomTextStyles
+                                                  .titleMedium16)),
+                                      Padding(
+                                          padding:
+                                              getPadding(left: 5, bottom: 5),
+                                          child: Text("lbl31".tr,
+                                              style:
+                                                  theme.textTheme.titleSmall))
+                                    ]),
+                                CustomTextFormField(
+                                    controller:
+                                        controller.expirationdateController,
+                                    margin: getMargin(top: 4),
+                                    hintText: "lbl_mm_yy".tr,
+                                    hintStyle:
+                                        CustomTextStyles.bodyLargeGray50003)
+                              ])),
+                      Padding(
+                          padding: getPadding(left: 16, top: 29, right: 16),
+                          child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text("lbl54".tr,
+                                    style: CustomTextStyles.titleMedium16),
+                                CustomTextFormField(
+                                    controller: controller.zipcodeController,
+                                    margin: getMargin(top: 4),
+                                    hintText: "lbl_980709".tr,
+                                    hintStyle:
+                                        CustomTextStyles.bodyLargeGray50003,
+                                    borderDecoration: TextFormFieldStyleHelper
+                                        .outlineGrayTL51,
+                                    filled: true,
+                                    fillColor: appTheme.blueGray30033)
+                              ])),
+                      Padding(
+                          padding: getPadding(left: 16, top: 26, right: 16),
+                          child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Row(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Padding(
+                                          padding: getPadding(top: 2),
+                                          child: Text("lbl_22".tr,
+                                              style: CustomTextStyles
+                                                  .titleMedium16)),
+                                      Padding(
+                                          padding:
+                                              getPadding(left: 5, bottom: 5),
+                                          child: Text("lbl31".tr,
+                                              style:
+                                                  theme.textTheme.titleSmall))
+                                    ]),
+                                CustomTextFormField(
+                                    controller: controller.edittextController,
+                                    margin: getMargin(top: 4),
+                                    textInputAction: TextInputAction.done)
+                              ])),
+                      CustomDropDown(
+                          icon: Container(
+                              margin: getMargin(left: 30, right: 16),
+                              child: CustomImageView(
+                                  svgPath:
+                                      ImageConstant.imgArrowleftOnprimary)),
+                          margin: getMargin(top: 82, bottom: 8),
+                          hintText: "msg11".tr,
+                          hintStyle: theme.textTheme.bodyLarge!,
+                          items: controller.registerCreditCardModelObj.value
+                              .dropdownItemList.value,
+                          prefix: Container(
+                              margin: getMargin(
+                                  left: 16, top: 22, right: 10, bottom: 22),
+                              child: CustomImageView(
+                                  svgPath: ImageConstant.imgComputer)),
+                          prefixConstraints:
+                              BoxConstraints(maxHeight: getVerticalSize(64)),
+                          contentPadding: getPadding(top: 22, bottom: 22),
+                          onChanged: (value) {
+                            controller.onSelected(value);
+                          })
+                    ])),
             bottomNavigationBar: Container(
                 margin: getMargin(left: 16, right: 16, bottom: 29),
                 decoration: AppDecoration.shadow,
                 child: CustomElevatedButton(
                     text: "lbl55".tr,
-                    buttonStyle: CustomButtonStyles.fillAmberA,
-                    buttonTextStyle:
-                        CustomTextStyles.titleMediumOnPrimary18))));
+                    buttonStyle: CustomButtonStyles.fillAmberATL26,
+                    buttonTextStyle: CustomTextStyles.titleMediumOnPrimary))));
   }
 
   /// Navigates to the previous screen.

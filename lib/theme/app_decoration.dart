@@ -3,14 +3,14 @@ import 'package:wegooli_friends_public/core/app_export.dart';
 
 class AppDecoration {
   // Fill decorations
-  static BoxDecoration get fillAmberA => BoxDecoration(
-        color: appTheme.amberA20033,
-      );
   static BoxDecoration get fillBlueGray => BoxDecoration(
         color: appTheme.blueGray30033,
       );
-  static BoxDecoration get fillOnPrimary => BoxDecoration(
-        color: theme.colorScheme.onPrimary.withOpacity(0.4),
+  static BoxDecoration get fillDeepOrangeA => BoxDecoration(
+        color: appTheme.deepOrangeA200,
+      );
+  static BoxDecoration get fillDeepPurpleA => BoxDecoration(
+        color: appTheme.deepPurpleA200,
       );
   static BoxDecoration get fillOnPrimaryContainer => BoxDecoration(
         color: theme.colorScheme.onPrimaryContainer,
@@ -38,24 +38,6 @@ class AppDecoration {
         ],
       );
   static BoxDecoration get outlineBlueGray => BoxDecoration(
-        color: theme.colorScheme.onPrimaryContainer,
-        border: Border.all(
-          color: appTheme.blueGray30033,
-          width: getHorizontalSize(1),
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: appTheme.black900.withOpacity(0.1),
-            spreadRadius: getHorizontalSize(2),
-            blurRadius: getHorizontalSize(2),
-            offset: Offset(
-              2,
-              2,
-            ),
-          ),
-        ],
-      );
-  static BoxDecoration get outlineBluegray30033 => BoxDecoration(
         border: Border(
           bottom: BorderSide(
             color: appTheme.blueGray30033,
@@ -63,23 +45,10 @@ class AppDecoration {
           ),
         ),
       );
-  static BoxDecoration get outlineBluegray300331 => BoxDecoration(
-        border: Border(
-          top: BorderSide(
-            color: appTheme.blueGray30033,
-            width: getHorizontalSize(1),
-          ),
-        ),
-      );
-  static BoxDecoration get outlineBluegray300332 => BoxDecoration(
+  static BoxDecoration get outlineBluegray30033 => BoxDecoration(
+        color: theme.colorScheme.onPrimaryContainer,
         border: Border.all(
           color: appTheme.blueGray30033,
-          width: getHorizontalSize(1),
-        ),
-      );
-  static BoxDecoration get outlineOnError => BoxDecoration(
-        border: Border.all(
-          color: theme.colorScheme.onError,
           width: getHorizontalSize(1),
         ),
       );
@@ -103,8 +72,14 @@ class AppDecoration {
 
 class BorderRadiusStyle {
   // Circle borders
-  static BorderRadius get circleBorder33 => BorderRadius.circular(
-        getHorizontalSize(33),
+  static BorderRadius get circleBorder21 => BorderRadius.circular(
+        getHorizontalSize(21),
+      );
+  static BorderRadius get circleBorder25 => BorderRadius.circular(
+        getHorizontalSize(25),
+      );
+  static BorderRadius get circleBorder35 => BorderRadius.circular(
+        getHorizontalSize(35),
       );
   static BorderRadius get circleBorder40 => BorderRadius.circular(
         getHorizontalSize(40),
@@ -120,19 +95,10 @@ class BorderRadiusStyle {
   static BorderRadius get customBorderTL10 => BorderRadius.vertical(
         top: Radius.circular(getHorizontalSize(10)),
       );
-  static BorderRadius get customBorderTL15 => BorderRadius.vertical(
-        top: Radius.circular(getHorizontalSize(15)),
-      );
 
   // Rounded borders
   static BorderRadius get roundedBorder10 => BorderRadius.circular(
         getHorizontalSize(10),
-      );
-  static BorderRadius get roundedBorder15 => BorderRadius.circular(
-        getHorizontalSize(15),
-      );
-  static BorderRadius get roundedBorder2 => BorderRadius.circular(
-        getHorizontalSize(2),
       );
   static BorderRadius get roundedBorder5 => BorderRadius.circular(
         getHorizontalSize(5),

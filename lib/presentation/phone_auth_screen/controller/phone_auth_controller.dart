@@ -9,13 +9,11 @@ import 'package:flutter/material.dart';
 class PhoneAuthController extends GetxController {
   TextEditingController nameinputoneController = TextEditingController();
 
-  TextEditingController birthdateoneController = TextEditingController();
+  TextEditingController tfController = TextEditingController();
 
-  TextEditingController edittextController = TextEditingController();
+  TextEditingController oneController = TextEditingController();
 
-  TextEditingController phonenumberoneController = TextEditingController();
-
-  TextEditingController phonenumberinpuController = TextEditingController();
+  TextEditingController phoneinputoneController = TextEditingController();
 
   Rx<PhoneAuthModel> phoneAuthModelObj = PhoneAuthModel().obs;
 
@@ -25,10 +23,9 @@ class PhoneAuthController extends GetxController {
   void onClose() {
     super.onClose();
     nameinputoneController.dispose();
-    birthdateoneController.dispose();
-    edittextController.dispose();
-    phonenumberoneController.dispose();
-    phonenumberinpuController.dispose();
+    tfController.dispose();
+    oneController.dispose();
+    phoneinputoneController.dispose();
   }
 
   onSelected(dynamic value) {

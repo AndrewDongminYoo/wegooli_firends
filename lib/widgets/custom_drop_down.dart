@@ -137,7 +137,7 @@ class CustomDropDown extends StatelessWidget {
             OutlineInputBorder(
               borderRadius: BorderRadius.circular(getHorizontalSize(4.00)),
               borderSide: BorderSide(
-                color: theme.colorScheme.onError,
+                color: appTheme.gray400,
                 width: 1,
               ),
             ),

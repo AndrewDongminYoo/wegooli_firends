@@ -25,75 +25,77 @@ class SettingsScreen extends GetWidget<SettingsController> {
                     }),
                 centerTitle: true,
                 title: AppbarTitle(text: "lbl79".tr)),
-            body: SizedBox(
-                width: mediaQueryData.size.width,
-                child: SingleChildScrollView(
-                    padding: getPadding(top: 22),
-                    child: Padding(
-                        padding: getPadding(bottom: 5),
-                        child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Padding(
-                                  padding: getPadding(left: 16),
-                                  child: Text("lbl39".tr,
-                                      style: CustomTextStyles.titleMedium18)),
-                              Padding(
-                                  padding: getPadding(left: 16, top: 4),
-                                  child: Text("lbl_010_1234_5678".tr,
-                                      style: theme.textTheme.bodyLarge)),
-                              Container(
-                                  height: getVerticalSize(8),
-                                  width: double.maxFinite,
-                                  margin: getMargin(top: 21),
-                                  decoration:
-                                      BoxDecoration(color: appTheme.gray100)),
-                              Align(
-                                  alignment: Alignment.center,
-                                  child: Padding(
-                                      padding: getPadding(
-                                          left: 16, top: 22, right: 16),
-                                      child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Text("lbl88".tr,
-                                                style: CustomTextStyles
-                                                    .bodyLargeBlack900),
-                                            Obx(() => CustomSwitch(
-                                                value: controller
-                                                    .isSelectedSwitch.value,
-                                                onChange: (value) {
-                                                  controller.isSelectedSwitch
-                                                      .value = value;
-                                                }))
-                                          ]))),
-                              Align(
-                                  alignment: Alignment.center,
-                                  child: Padding(
-                                      padding: getPadding(
-                                          left: 16, top: 23, right: 16),
-                                      child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Text("lbl_sms".tr,
-                                                style: CustomTextStyles
-                                                    .bodyLargeBlack900),
-                                            Obx(() => CustomSwitch(
-                                                value: controller
-                                                    .isSelectedSwitch1.value,
-                                                onChange: (value) {
-                                                  controller.isSelectedSwitch1
-                                                      .value = value;
-                                                }))
-                                          ]))),
-                              Padding(
-                                  padding: getPadding(left: 16, top: 22),
-                                  child: Text("msg16".tr,
-                                      style: theme.textTheme.bodySmall))
-                            ]))))));
+            body: Container(
+                width: double.maxFinite,
+                padding: getPadding(top: 25, bottom: 25),
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      CustomImageView(
+                          svgPath: ImageConstant.imgSort,
+                          height: getVerticalSize(16),
+                          width: getHorizontalSize(43),
+                          margin: getMargin(left: 16)),
+                      CustomImageView(
+                          svgPath: ImageConstant.img01012345678,
+                          height: getVerticalSize(11),
+                          width: getHorizontalSize(112),
+                          margin: getMargin(left: 16, top: 11)),
+                      Container(
+                          height: getVerticalSize(8),
+                          width: double.maxFinite,
+                          margin: getMargin(top: 25),
+                          decoration: BoxDecoration(color: appTheme.gray100)),
+                      Align(
+                          alignment: Alignment.center,
+                          child: Padding(
+                              padding: getPadding(left: 16, top: 22, right: 16),
+                              child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    CustomImageView(
+                                        svgPath:
+                                            ImageConstant.imgBlack90013x106,
+                                        height: getVerticalSize(13),
+                                        width: getHorizontalSize(106),
+                                        margin: getMargin(top: 3, bottom: 2)),
+                                    Obx(() => CustomSwitch(
+                                        value:
+                                            controller.isSelectedSwitch.value,
+                                        onChange: (value) {
+                                          controller.isSelectedSwitch.value =
+                                              value;
+                                        }))
+                                  ]))),
+                      Align(
+                          alignment: Alignment.center,
+                          child: Padding(
+                              padding: getPadding(left: 16, top: 24, right: 16),
+                              child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    CustomImageView(
+                                        svgPath: ImageConstant.imgSms,
+                                        height: getVerticalSize(13),
+                                        width: getHorizontalSize(94),
+                                        margin: getMargin(top: 3, bottom: 2)),
+                                    Obx(() => CustomSwitch(
+                                        value:
+                                            controller.isSelectedSwitch1.value,
+                                        onChange: (value) {
+                                          controller.isSelectedSwitch1.value =
+                                              value;
+                                        }))
+                                  ]))),
+                      CustomImageView(
+                          svgPath: ImageConstant.imgOnprimary10x264,
+                          height: getVerticalSize(10),
+                          width: getHorizontalSize(264),
+                          margin: getMargin(left: 16, top: 25, bottom: 5))
+                    ]))));
   }
 
   /// Navigates to the previous screen.

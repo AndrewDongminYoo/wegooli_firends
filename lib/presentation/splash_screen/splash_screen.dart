@@ -18,61 +18,24 @@ class SplashScreen extends GetWidget<SplashController> {
         backgroundColor: theme.colorScheme.primary,
         body: SizedBox(
           width: double.maxFinite,
-          child: SingleChildScrollView(
-            padding: getPadding(
-              top: 169,
-            ),
-            child: Padding(
-              padding: getPadding(
-                left: 81,
-                right: 81,
-                bottom: 225,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CustomImageView(
+                svgPath: ImageConstant.imgGroup19058,
+                height: getVerticalSize(64),
+                width: getHorizontalSize(193),
               ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Text(
-                    "lbl_friends".tr,
-                    style: theme.textTheme.displayMedium,
-                  ),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: Padding(
-                      padding: getPadding(
-                        right: 3,
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Text(
-                            "lbl_by".tr,
-                            style: CustomTextStyles
-                                .titleSmallNanumSquareRoundOnPrimary,
-                          ),
-                          CustomImageView(
-                            svgPath: ImageConstant.imgLocationOnprimary,
-                            height: getVerticalSize(11),
-                            width: getHorizontalSize(53),
-                            margin: getMargin(
-                              left: 6,
-                              bottom: 3,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  CustomImageView(
-                    imagePath: ImageConstant.img1,
-                    height: getVerticalSize(93),
-                    width: getHorizontalSize(166),
-                    margin: getMargin(
-                      top: 144,
-                    ),
-                  ),
-                ],
+              Spacer(),
+              CustomImageView(
+                imagePath: ImageConstant.img1,
+                height: getVerticalSize(93),
+                width: getHorizontalSize(166),
+                margin: getMargin(
+                  bottom: 40,
+                ),
               ),
-            ),
+            ],
           ),
         ),
       ),

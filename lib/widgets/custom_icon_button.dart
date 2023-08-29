@@ -75,3 +75,22 @@ class CustomIconButton extends StatelessWidget {
         ),
       );
 }
+
+/// Extension on [CustomIconButton] to facilitate inclusion of all types of border style etc
+extension IconButtonStyleHelper on CustomIconButton {
+  static BoxDecoration get outlineBlackTL35 => BoxDecoration(
+        color: theme.colorScheme.primary,
+        borderRadius: BorderRadius.circular(getHorizontalSize(35.00)),
+        boxShadow: [
+          BoxShadow(
+            color: appTheme.black900.withOpacity(0.1),
+            spreadRadius: getHorizontalSize(2.00),
+            blurRadius: getHorizontalSize(2.00),
+            offset: Offset(
+              2,
+              2,
+            ),
+          ),
+        ],
+      );
+}

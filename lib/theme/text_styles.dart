@@ -136,8 +136,4 @@ extension on TextStyle {
   TextStyle get inter {
     return copyWith(fontFamily: FontFamily.inter);
   }
-
-  TextStyle get cookieRun {
-    return copyWith(fontFamily: FontFamily.cookieRun);
-  }
 }

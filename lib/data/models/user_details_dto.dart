@@ -6,8 +6,7 @@ import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 // 🌎 Project imports:
-import '/data/models/granted_authority.dart';
-import '/data/models/user_dto.dart';
+import '/data/models/models.dart';
 
 part 'user_details_dto.g.dart';
 

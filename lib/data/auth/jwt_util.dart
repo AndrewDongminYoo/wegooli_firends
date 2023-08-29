@@ -1,3 +1,12 @@
+// 🎯 Dart imports:
+import 'dart:convert';
+
+// 📦 Package imports:
+import 'package:dio/dio.dart';
+
+// 🌎 Project imports:
+import '/data/data.dart';
+
 /// base64로 인코딩된 문자열을 디코딩.
 /// 마지막 문자열이 누락된 경우(길이가 3바이트의 배수가 아닌 경우) 인코딩 된 문자열을 채우기 위해 패딩 `=`문자를 사용
 /// `==`는 인코딩된 문자열에 2바이트의 패딩이 있음을 나타내며, 이는 디코딩 중에 원본 바이너리 데이터를 정확하게 재구성할 수 있게 함.

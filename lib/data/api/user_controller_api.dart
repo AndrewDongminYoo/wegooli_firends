@@ -6,11 +6,7 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
-import '/data/api_util.dart';
-import '/data/models/account.dart';
-import '/data/models/api_response_object.dart';
-import '/data/models/user_details_dto.dart';
-import '/data/models/user_dto.dart';
+import '/data/data.dart';
 
 class UserControllerApi {
   final Dio _dio;
@@ -556,8 +552,6 @@ class UserControllerApi {
     );
   }
 
-}
-
   /// signout
   ///
   /// Parameters:
@@ -639,3 +633,4 @@ class UserControllerApi {
       extra: _response.extra,
     );
   }
+}

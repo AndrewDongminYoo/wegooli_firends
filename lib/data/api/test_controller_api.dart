@@ -7,8 +7,7 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
-import '/data/api_util.dart';
-import '/data/models/test_model.dart';
+import '/data/data.dart';
 
 class TestControllerApi {
   final Dio _dio;

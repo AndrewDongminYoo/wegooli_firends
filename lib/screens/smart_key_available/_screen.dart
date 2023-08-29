@@ -137,6 +137,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
             styleType: Style.bgOutline),
         body: SizedBox(
           width: mediaQueryData.size.width,
+          height: mediaQueryData.size.height - getVerticalSize(45),
           child: SingleChildScrollView(
             padding: getPadding(top: 24),
             child: Column(
@@ -213,7 +214,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                                     getHorizontalSize(0.02)),
                                       ),
                                     ),
-                                    ArrowLeft(),
+                                    ArrowRight(),
                                   ],
                                 ),
                               ),
@@ -277,95 +278,137 @@ class SmartKeyAvailablePage extends StatelessWidget {
                 ),
                 Container(
                     height: getVerticalSize(8),
-                    width: double.maxFinite,
+                    width: mediaQueryData.size.width,
                     margin: getMargin(top: 31),
                     decoration: BoxDecoration(color: appTheme.gray100)),
-                Align(
-                    alignment: Alignment.centerLeft,
-                    child: Padding(
-                        padding: getPadding(left: 16, top: 21),
-                        child: Text(l10ns.smartKey,
-                            overflow: TextOverflow.ellipsis,
-                            textAlign: TextAlign.left,
-                            style: CustomTextStyles.titleMediumBlack900
-                                .copyWith(
-                                    letterSpacing: getHorizontalSize(0.04))))),
-                Column(
-                  children: [
-                    Padding(
-                      padding: getPadding(
-                          // left: 40,
-                          top: 22),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Container(
-                            margin: getMargin(right: 20),
-                            child: ControlButton(
-                              text: l10ns.openDoor,
-                              svgPath: Assets.svg.imgUnlocked.path,
-                              // onTap: () => openDoor(),
+                Container(
+                  width: mediaQueryData.size.width,
+                  child: Stack(
+                    children: [
+                      Container(
+                        // height: mediaQueryData.size.height,
+                        width: mediaQueryData.size.width,
+                        child: Column(
+                          children: [
+                            Align(
+                                alignment: Alignment.centerLeft,
+                                child: Padding(
+                                    padding: getPadding(left: 16, top: 21),
+                                    child: Text(l10ns.smartKey,
+                                        overflow: TextOverflow.ellipsis,
+                                        textAlign: TextAlign.left,
+                                        style: CustomTextStyles
+                                            .titleMediumBlack900
+                                            .copyWith(
+                                                letterSpacing:
+                                                    getHorizontalSize(0.04))))),
+                            Column(
+                              children: [
+                                Padding(
+                                  padding: getPadding(
+                                      // left: 40,
+                                      top: 22),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Container(
+                                        margin: getMargin(right: 20),
+                                        child: ControlButton(
+                                          text: l10ns.openDoor,
+                                          svgPath: Assets.svg.imgUnlocked.path,
+                                          // onTap: () => openDoor(),
+                                        ),
+                                      ),
+                                      ControlButton(
+                                        text: l10ns.lockTheDoor,
+                                        svgPath: Assets.svg.imgLocked.path,
+                                        // onTap: () => closeDoor(),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Padding(
+                                  padding: getPadding(
+                                      // left: 40,
+                                      top: 20),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Container(
+                                        margin: getMargin(right: 20),
+                                        child: ControlButton(
+                                          text: l10ns.turnOnHazardLights,
+                                          svgPath: Assets.svg.imgTriangle.path,
+                                          // onTap: () => emergencyLight(),
+                                        ),
+                                      ),
+                                      ControlButton(
+                                        text: l10ns.honkTheHorn,
+                                        svgPath: Assets.svg.imgCampaign.path,
+                                        // onTap: () => horn(),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
                             ),
-                          ),
-                          ControlButton(
-                            text: l10ns.lockTheDoor,
-                            svgPath: Assets.svg.imgLocked.path,
-                            // onTap: () => closeDoor(),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: getPadding(
-                          // left: 40,
-                          top: 20),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Container(
-                            margin: getMargin(right: 20),
-                            child: ControlButton(
-                              text: l10ns.turnOnHazardLights,
-                              svgPath: Assets.svg.imgTriangle.path,
-                              // onTap: () => emergencyLight(),
+                            Align(
+                              alignment: Alignment.bottomRight,
+                              child: CustomIconButton(
+                                height: getVerticalSize(70),
+                                width: getHorizontalSize(70),
+                                margin: getMargin(right: 22, top: 30),
+                                decoration: BoxDecoration(
+                                    color: Color.fromRGBO(255, 225, 66, 1),
+                                    shape: BoxShape.circle),
+                                onTap: () =>
+                                    launchUrl(Uri.parse('tel:15666560')),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    CustomImageView(
+                                      svgPath: Assets.svg.imgEdit.path,
+                                      color: Colors.black,
+                                      width: 22.5,
+                                      height: 22.5,
+                                      margin: getMargin(bottom: 3),
+                                    ),
+                                    Text('사고 접수',
+                                        style: TextStyle(
+                                            color: Colors.black, fontSize: 12))
+                                  ],
+                                ),
+                              ),
                             ),
-                          ),
-                          ControlButton(
-                            text: l10ns.honkTheHorn,
-                            svgPath: Assets.svg.imgCampaign.path,
-                            // onTap: () => horn(),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: CustomIconButton(
-                    height: 70,
-                    width: 70,
-                    margin: getMargin(right: 22, top: 30),
-                    decoration: BoxDecoration(
-                        color: Color.fromRGBO(255, 225, 66, 1),
-                        shape: BoxShape.circle),
-                    onTap: () => launchUrl(Uri.parse('tel:15666560')),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        CustomImageView(
-                          svgPath: Assets.svg.imgEdit.path,
-                          color: Colors.black,
-                          width: 22.5,
-                          height: 22.5,
-                          margin: getMargin(bottom: 3),
+                          ],
                         ),
-                        Text('사고 접수',
-                            style: TextStyle(color: Colors.black, fontSize: 12))
-                      ],
-                    ),
+                      ),
+                      // 사용중일 때 화면 가리기용
+                      if (controller.isUsed.isTrue)
+                        Container(
+                          height: mediaQueryData.size.height - getVerticalSize(200),
+                          width: mediaQueryData.size.width,
+                          decoration: BoxDecoration(
+                              color: Color.fromRGBO(164, 168, 175, 0.2)),
+                          child: Center(
+                              child: Container(
+                            alignment: Alignment.center,
+                            width: getHorizontalSize(180),
+                            height: getVerticalSize(44),
+                            decoration: BoxDecoration(
+                                color: Color.fromRGBO(34, 34, 34, 0.4),
+                                borderRadius: BorderRadius.circular(100)),
+                            child: Text(
+                                controller.isUsed.isTrue
+                                    ? '${controller.clientName.text}님이 사용중입니다.'
+                                    : l10ns.available,
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 16)),
+                          )),
+                        ),
+                    ],
                   ),
-                )
+                ),
               ],
             ),
           ),
@@ -481,6 +524,21 @@ class ArrowLeft extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomImageView(
         svgPath: Assets.svg.imgArrowLeft.path,
+        height: getSize(18),
+        width: getSize(18),
+        margin: getMargin(left: 54, top: 2, bottom: 4));
+  }
+}
+
+class ArrowRight extends StatelessWidget {
+  const ArrowRight({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomImageView(
+        svgPath: Assets.svg.imgArrowRight.path,
         height: getSize(18),
         width: getSize(18),
         margin: getMargin(left: 54, top: 2, bottom: 4));

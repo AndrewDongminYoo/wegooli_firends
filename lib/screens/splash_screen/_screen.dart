@@ -17,7 +17,7 @@ class SplashLoading extends StatelessWidget {
             appBar: CustomAppBar(height: getVerticalSize(53), leadingWidth: 34),
             backgroundColor: theme.colorScheme.primary,
             body: Container(
-                width: double.maxFinite,
+                width: mediaQueryData.size.width,
                 padding: getPadding(left: 81, top: 169, right: 81),
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
@@ -47,9 +47,11 @@ class SplashLoading extends StatelessWidget {
                                         title: Text('Hello World!!')),
                                     svgPath:
                                         Assets.svg.imgWegooliBlueGray900.path,
+                                    fit: BoxFit.fitWidth,
                                     height: getVerticalSize(11),
                                     width: getHorizontalSize(53),
-                                    margin: getMargin(left: 5, bottom: 3)),
+                                    margin: getMargin(left: 5, bottom: 3)
+                                    ),
                               ])),
                       Container(
                           alignment: Alignment.center,
@@ -57,11 +59,12 @@ class SplashLoading extends StatelessWidget {
                           width: Get.width,
                           child: CustomImageView(
                               onTap: () {
-                                Get.toNamed(AppRoutes.validatePhone);
+                                Get.toNamed(AppRoutes.logInIdPassword);
                               },
                               imagePath: Assets.images.imgGooli1.path,
+                              fit: BoxFit.fitWidth,
                               height: getVerticalSize(93),
-                              width: getHorizontalSize(163))),
+                              width: getHorizontalSize(166))),
                     ]))));
   }
 }

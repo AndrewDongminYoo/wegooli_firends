@@ -30,18 +30,22 @@ class CustomImageView extends StatelessWidget {
     this.border,
     this.placeHolder = 'assets/images/image_not_found.png',
   }) : super(key: key) {
-    assert(!(imagePath == null && svgPath == null),
+    assert((imagePath == null || svgPath == null),
         'imagePath or svgPath both can\'t be null at a time.');
   }
 
   double? height;
   double? width;
+
   ///[imagePath] is required parameter for showing png,jpg,etc image
   String? imagePath;
+
   ///[svgPath] is required parameter for showing svg image
   String? svgPath;
+
   ///[url] is required parameter for fetching network image
   String? url;
+
   ///[file] is required parameter for fetching image file
   File? file;
 
@@ -96,7 +100,8 @@ class CustomImageView extends StatelessWidget {
               height: height,
               width: width,
               fit: fit ?? BoxFit.contain,
-              colorFilter: ColorFilter.mode(color!, BlendMode.srcIn)));
+              // colorFilter: ColorFilter.mode(color!, BlendMode.srcIn)
+              ));
     } else if (imagePath != null && imagePath!.isNotEmpty) {
       return Image.asset(imagePath!,
           height: height, width: width, fit: fit ?? BoxFit.cover, color: color);

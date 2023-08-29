@@ -52,18 +52,24 @@ class _$LeaderSetRequestSerializer
   }) sync* {
     if (object.userId != null) {
       yield r'userId';
-      yield serializers.serialize(object.userId,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.userId,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.serviceSeq != null) {
       yield r'serviceSeq';
-      yield serializers.serialize(object.serviceSeq,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.serviceSeq,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.maxSub != null) {
       yield r'maxSub';
-      yield serializers.serialize(object.maxSub,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.maxSub,
+        specifiedType: const FullType(String),
+      );
     }
   }
 
@@ -91,18 +97,24 @@ class _$LeaderSetRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'userId':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.userId = valueDes;
           break;
         case r'serviceSeq':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.serviceSeq = valueDes;
           break;
         case r'maxSub':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.maxSub = valueDes;
           break;
         default:
@@ -122,11 +134,14 @@ class _$LeaderSetRequestSerializer
     final result = LeaderSetRequestBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
-    _deserializeProperties(serializers, serialized,
-        specifiedType: specifiedType,
-        serializedList: serializedList,
-        unhandled: unhandled,
-        result: result);
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
     return result.build();
   }
 }

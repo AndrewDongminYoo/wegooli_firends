@@ -49,6 +49,7 @@ export '/data/auth/auth_interceptor.dart';
 export '/data/auth/basic_auth.dart';
 export '/data/auth/bearer_auth.dart';
 export '/data/auth/oauth.dart';
+export '/data/auth/jwt_util.dart';
 
 export '/data/api.dart';
 export '/data/api_util.dart';

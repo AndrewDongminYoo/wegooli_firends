@@ -42,51 +42,57 @@ class LicenseControllerApi {
   }) async {
     final _path = r'/license/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
     final _options = Options(
-        method: r'DELETE',
-        headers: <String, dynamic>{
-          ...?headers,
-        },
-        extra: <String, dynamic>{
-          'secure': <Map<String, String>>[
-            {
-              'type': 'http',
-              'scheme': 'bearer',
-              'name': 'jwtAuth',
-            },
-          ],
-          ...?extra,
-        },
-        validateStatus: validateStatus);
+      method: r'DELETE',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'jwtAuth',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
 
-    final _response = await _dio.request<Object>(_path,
-        options: _options,
-        cancelToken: cancelToken,
-        onSendProgress: onSendProgress,
-        onReceiveProgress: onReceiveProgress);
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
 
     bool? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : rawResponse as bool;
+
     } catch (error, stackTrace) {
       throw DioException(
-          requestOptions: _response.requestOptions,
-          response: _response,
-          type: DioExceptionType.unknown,
-          error: error,
-          stackTrace: stackTrace);
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<bool>(
-        data: _responseData,
-        headers: _response.headers,
-        isRedirect: _response.isRedirect,
-        requestOptions: _response.requestOptions,
-        redirects: _response.redirects,
-        statusCode: _response.statusCode,
-        statusMessage: _response.statusMessage,
-        extra: _response.extra);
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// deleteLicenseByMemberSeq
@@ -111,54 +117,59 @@ class LicenseControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/license/member/{memberSeq}'
-        .replaceAll('{' r'memberSeq' '}', memberSeq.toString());
+    final _path = r'/license/member/{memberSeq}'.replaceAll('{' r'memberSeq' '}', memberSeq.toString());
     final _options = Options(
-        method: r'DELETE',
-        headers: <String, dynamic>{
-          ...?headers,
-        },
-        extra: <String, dynamic>{
-          'secure': <Map<String, String>>[
-            {
-              'type': 'http',
-              'scheme': 'bearer',
-              'name': 'jwtAuth',
-            },
-          ],
-          ...?extra,
-        },
-        validateStatus: validateStatus);
+      method: r'DELETE',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'jwtAuth',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
 
-    final _response = await _dio.request<Object>(_path,
-        options: _options,
-        cancelToken: cancelToken,
-        onSendProgress: onSendProgress,
-        onReceiveProgress: onReceiveProgress);
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
 
     bool? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : rawResponse as bool;
+
     } catch (error, stackTrace) {
       throw DioException(
-          requestOptions: _response.requestOptions,
-          response: _response,
-          type: DioExceptionType.unknown,
-          error: error,
-          stackTrace: stackTrace);
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<bool>(
-        data: _responseData,
-        headers: _response.headers,
-        isRedirect: _response.isRedirect,
-        requestOptions: _response.requestOptions,
-        redirects: _response.redirects,
-        statusCode: _response.statusCode,
-        statusMessage: _response.statusMessage,
-        extra: _response.extra);
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// insertLicense
@@ -185,66 +196,77 @@ class LicenseControllerApi {
   }) async {
     final _path = r'/license';
     final _options = Options(
-        method: r'POST',
-        headers: <String, dynamic>{
-          ...?headers,
-        },
-        extra: <String, dynamic>{
-          'secure': <Map<String, String>>[
-            {
-              'type': 'http',
-              'scheme': 'bearer',
-              'name': 'jwtAuth',
-            },
-          ],
-          ...?extra,
-        },
-        contentType: 'application/json',
-        validateStatus: validateStatus);
+      method: r'POST',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'jwtAuth',
+          },
+        ],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
 
     dynamic _bodyData;
 
     try {
       const _type = FullType(LicenseRequest);
       _bodyData = _serializers.serialize(licenseRequest, specifiedType: _type);
-    } catch (error, stackTrace) {
+
+    } catch(error, stackTrace) {
       throw DioException(
-          requestOptions: _options.compose(_dio.options, _path),
-          type: DioExceptionType.unknown,
-          error: error,
-          stackTrace: stackTrace);
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
     }
 
-    final _response = await _dio.request<Object>(_path,
-        data: _bodyData,
-        options: _options,
-        cancelToken: cancelToken,
-        onSendProgress: onSendProgress,
-        onReceiveProgress: onReceiveProgress);
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
 
     int? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : rawResponse as int;
+
     } catch (error, stackTrace) {
       throw DioException(
-          requestOptions: _response.requestOptions,
-          response: _response,
-          type: DioExceptionType.unknown,
-          error: error,
-          stackTrace: stackTrace);
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<int>(
-        data: _responseData,
-        headers: _response.headers,
-        isRedirect: _response.isRedirect,
-        requestOptions: _response.requestOptions,
-        redirects: _response.redirects,
-        statusCode: _response.statusCode,
-        statusMessage: _response.statusMessage,
-        extra: _response.extra);
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// selectLicense
@@ -271,54 +293,60 @@ class LicenseControllerApi {
   }) async {
     final _path = r'/license/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
     final _options = Options(
-        method: r'GET',
-        headers: <String, dynamic>{
-          ...?headers,
-        },
-        extra: <String, dynamic>{
-          'secure': <Map<String, String>>[
-            {
-              'type': 'http',
-              'scheme': 'bearer',
-              'name': 'jwtAuth',
-            },
-          ],
-          ...?extra,
-        },
-        validateStatus: validateStatus);
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'jwtAuth',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
 
-    final _response = await _dio.request<Object>(_path,
-        options: _options,
-        cancelToken: cancelToken,
-        onSendProgress: onSendProgress,
-        onReceiveProgress: onReceiveProgress);
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
 
     LicenseModel? _responseData;
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null
-          ? null
-          : _serializers.deserialize(rawResponse,
-              specifiedType: const FullType(LicenseModel)) as LicenseModel;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(LicenseModel),
+      ) as LicenseModel;
+
     } catch (error, stackTrace) {
       throw DioException(
-          requestOptions: _response.requestOptions,
-          response: _response,
-          type: DioExceptionType.unknown,
-          error: error,
-          stackTrace: stackTrace);
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<LicenseModel>(
-        data: _responseData,
-        headers: _response.headers,
-        isRedirect: _response.isRedirect,
-        requestOptions: _response.requestOptions,
-        redirects: _response.redirects,
-        statusCode: _response.statusCode,
-        statusMessage: _response.statusMessage,
-        extra: _response.extra);
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// selectLicenseList
@@ -345,62 +373,65 @@ class LicenseControllerApi {
   }) async {
     final _path = r'/license/list';
     final _options = Options(
-        method: r'GET',
-        headers: <String, dynamic>{
-          ...?headers,
-        },
-        extra: <String, dynamic>{
-          'secure': <Map<String, String>>[
-            {
-              'type': 'http',
-              'scheme': 'bearer',
-              'name': 'jwtAuth',
-            },
-          ],
-          ...?extra,
-        },
-        validateStatus: validateStatus);
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'jwtAuth',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
 
     final _queryParameters = <String, dynamic>{
-      r'request': encodeQueryParameter(
-          _serializers, request, const FullType(LicenseRequest)),
+      r'request': encodeQueryParameter(_serializers, request, const FullType(LicenseRequest)),
     };
 
-    final _response = await _dio.request<Object>(_path,
-        options: _options,
-        queryParameters: _queryParameters,
-        cancelToken: cancelToken,
-        onSendProgress: onSendProgress,
-        onReceiveProgress: onReceiveProgress);
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
 
     BuiltList<LicenseModel>? _responseData;
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null
-          ? null
-          : _serializers.deserialize(rawResponse,
-                  specifiedType:
-                      const FullType(BuiltList, [FullType(LicenseModel)]))
-              as BuiltList<LicenseModel>;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(BuiltList, [FullType(LicenseModel)]),
+      ) as BuiltList<LicenseModel>;
+
     } catch (error, stackTrace) {
       throw DioException(
-          requestOptions: _response.requestOptions,
-          response: _response,
-          type: DioExceptionType.unknown,
-          error: error,
-          stackTrace: stackTrace);
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<BuiltList<LicenseModel>>(
-        data: _responseData,
-        headers: _response.headers,
-        isRedirect: _response.isRedirect,
-        requestOptions: _response.requestOptions,
-        redirects: _response.redirects,
-        statusCode: _response.statusCode,
-        statusMessage: _response.statusMessage,
-        extra: _response.extra);
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// selectServiceStop
@@ -425,51 +456,57 @@ class LicenseControllerApi {
   }) async {
     final _path = r'/license/stop';
     final _options = Options(
-        method: r'GET',
-        headers: <String, dynamic>{
-          ...?headers,
-        },
-        extra: <String, dynamic>{
-          'secure': <Map<String, String>>[
-            {
-              'type': 'http',
-              'scheme': 'bearer',
-              'name': 'jwtAuth',
-            },
-          ],
-          ...?extra,
-        },
-        validateStatus: validateStatus);
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'jwtAuth',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
 
-    final _response = await _dio.request<Object>(_path,
-        options: _options,
-        cancelToken: cancelToken,
-        onSendProgress: onSendProgress,
-        onReceiveProgress: onReceiveProgress);
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
 
     bool? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : rawResponse as bool;
+
     } catch (error, stackTrace) {
       throw DioException(
-          requestOptions: _response.requestOptions,
-          response: _response,
-          type: DioExceptionType.unknown,
-          error: error,
-          stackTrace: stackTrace);
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<bool>(
-        data: _responseData,
-        headers: _response.headers,
-        isRedirect: _response.isRedirect,
-        requestOptions: _response.requestOptions,
-        redirects: _response.redirects,
-        statusCode: _response.statusCode,
-        statusMessage: _response.statusMessage,
-        extra: _response.extra);
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// updateLicense
@@ -498,65 +535,77 @@ class LicenseControllerApi {
   }) async {
     final _path = r'/license/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
     final _options = Options(
-        method: r'PUT',
-        headers: <String, dynamic>{
-          ...?headers,
-        },
-        extra: <String, dynamic>{
-          'secure': <Map<String, String>>[
-            {
-              'type': 'http',
-              'scheme': 'bearer',
-              'name': 'jwtAuth',
-            },
-          ],
-          ...?extra,
-        },
-        contentType: 'application/json',
-        validateStatus: validateStatus);
+      method: r'PUT',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'jwtAuth',
+          },
+        ],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
 
     dynamic _bodyData;
 
     try {
       const _type = FullType(LicenseRequest);
       _bodyData = _serializers.serialize(licenseRequest, specifiedType: _type);
-    } catch (error, stackTrace) {
+
+    } catch(error, stackTrace) {
       throw DioException(
-          requestOptions: _options.compose(_dio.options, _path),
-          type: DioExceptionType.unknown,
-          error: error,
-          stackTrace: stackTrace);
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
     }
 
-    final _response = await _dio.request<Object>(_path,
-        data: _bodyData,
-        options: _options,
-        cancelToken: cancelToken,
-        onSendProgress: onSendProgress,
-        onReceiveProgress: onReceiveProgress);
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
 
     bool? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : rawResponse as bool;
+
     } catch (error, stackTrace) {
       throw DioException(
-          requestOptions: _response.requestOptions,
-          response: _response,
-          type: DioExceptionType.unknown,
-          error: error,
-          stackTrace: stackTrace);
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<bool>(
-        data: _responseData,
-        headers: _response.headers,
-        isRedirect: _response.isRedirect,
-        requestOptions: _response.requestOptions,
-        redirects: _response.redirects,
-        statusCode: _response.statusCode,
-        statusMessage: _response.statusMessage,
-        extra: _response.extra);
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
+
 }

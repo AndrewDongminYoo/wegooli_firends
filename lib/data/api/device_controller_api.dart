@@ -41,57 +41,62 @@ class DeviceControllerApi {
   }) async {
     final _path = r'/control/door/close';
     final _options = Options(
-        method: r'PUT',
-        headers: <String, dynamic>{
-          ...?headers,
-        },
-        extra: <String, dynamic>{
-          'secure': <Map<String, String>>[
-            {
-              'type': 'http',
-              'scheme': 'bearer',
-              'name': 'jwtAuth',
-            },
-          ],
-          ...?extra,
-        },
-        validateStatus: validateStatus);
+      method: r'PUT',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'jwtAuth',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
 
     final _queryParameters = <String, dynamic>{
-      r'carNum':
-          encodeQueryParameter(_serializers, carNum, const FullType(String)),
+      r'carNum': encodeQueryParameter(_serializers, carNum, const FullType(String)),
     };
 
-    final _response = await _dio.request<Object>(_path,
-        options: _options,
-        queryParameters: _queryParameters,
-        cancelToken: cancelToken,
-        onSendProgress: onSendProgress,
-        onReceiveProgress: onReceiveProgress);
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
 
     bool? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : rawResponse as bool;
+
     } catch (error, stackTrace) {
       throw DioException(
-          requestOptions: _response.requestOptions,
-          response: _response,
-          type: DioExceptionType.unknown,
-          error: error,
-          stackTrace: stackTrace);
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<bool>(
-        data: _responseData,
-        headers: _response.headers,
-        isRedirect: _response.isRedirect,
-        requestOptions: _response.requestOptions,
-        redirects: _response.redirects,
-        statusCode: _response.statusCode,
-        statusMessage: _response.statusMessage,
-        extra: _response.extra);
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// doorOpen
@@ -118,57 +123,62 @@ class DeviceControllerApi {
   }) async {
     final _path = r'/control/door/open';
     final _options = Options(
-        method: r'PUT',
-        headers: <String, dynamic>{
-          ...?headers,
-        },
-        extra: <String, dynamic>{
-          'secure': <Map<String, String>>[
-            {
-              'type': 'http',
-              'scheme': 'bearer',
-              'name': 'jwtAuth',
-            },
-          ],
-          ...?extra,
-        },
-        validateStatus: validateStatus);
+      method: r'PUT',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'jwtAuth',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
 
     final _queryParameters = <String, dynamic>{
-      r'carNum':
-          encodeQueryParameter(_serializers, carNum, const FullType(String)),
+      r'carNum': encodeQueryParameter(_serializers, carNum, const FullType(String)),
     };
 
-    final _response = await _dio.request<Object>(_path,
-        options: _options,
-        queryParameters: _queryParameters,
-        cancelToken: cancelToken,
-        onSendProgress: onSendProgress,
-        onReceiveProgress: onReceiveProgress);
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
 
     bool? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : rawResponse as bool;
+
     } catch (error, stackTrace) {
       throw DioException(
-          requestOptions: _response.requestOptions,
-          response: _response,
-          type: DioExceptionType.unknown,
-          error: error,
-          stackTrace: stackTrace);
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<bool>(
-        data: _responseData,
-        headers: _response.headers,
-        isRedirect: _response.isRedirect,
-        requestOptions: _response.requestOptions,
-        redirects: _response.redirects,
-        statusCode: _response.statusCode,
-        statusMessage: _response.statusMessage,
-        extra: _response.extra);
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// selectDeviceControlHistoryList
@@ -184,8 +194,7 @@ class DeviceControllerApi {
   ///
   /// Returns a [Future] containing a [Response] with a [BuiltList<CarControlHistoryModel>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<CarControlHistoryModel>>>
-      selectDeviceControlHistoryList({
+  Future<Response<BuiltList<CarControlHistoryModel>>> selectDeviceControlHistoryList({
     required CarControlHistoryModel request,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -196,62 +205,65 @@ class DeviceControllerApi {
   }) async {
     final _path = r'/control/history/list';
     final _options = Options(
-        method: r'GET',
-        headers: <String, dynamic>{
-          ...?headers,
-        },
-        extra: <String, dynamic>{
-          'secure': <Map<String, String>>[
-            {
-              'type': 'http',
-              'scheme': 'bearer',
-              'name': 'jwtAuth',
-            },
-          ],
-          ...?extra,
-        },
-        validateStatus: validateStatus);
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'jwtAuth',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
 
     final _queryParameters = <String, dynamic>{
-      r'request': encodeQueryParameter(
-          _serializers, request, const FullType(CarControlHistoryModel)),
+      r'request': encodeQueryParameter(_serializers, request, const FullType(CarControlHistoryModel)),
     };
 
-    final _response = await _dio.request<Object>(_path,
-        options: _options,
-        queryParameters: _queryParameters,
-        cancelToken: cancelToken,
-        onSendProgress: onSendProgress,
-        onReceiveProgress: onReceiveProgress);
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
 
     BuiltList<CarControlHistoryModel>? _responseData;
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null
-          ? null
-          : _serializers.deserialize(rawResponse,
-                  specifiedType: const FullType(
-                      BuiltList, [FullType(CarControlHistoryModel)]))
-              as BuiltList<CarControlHistoryModel>;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(BuiltList, [FullType(CarControlHistoryModel)]),
+      ) as BuiltList<CarControlHistoryModel>;
+
     } catch (error, stackTrace) {
       throw DioException(
-          requestOptions: _response.requestOptions,
-          response: _response,
-          type: DioExceptionType.unknown,
-          error: error,
-          stackTrace: stackTrace);
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<BuiltList<CarControlHistoryModel>>(
-        data: _responseData,
-        headers: _response.headers,
-        isRedirect: _response.isRedirect,
-        requestOptions: _response.requestOptions,
-        redirects: _response.redirects,
-        statusCode: _response.statusCode,
-        statusMessage: _response.statusMessage,
-        extra: _response.extra);
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// turnOnEmergencyLight
@@ -278,57 +290,62 @@ class DeviceControllerApi {
   }) async {
     final _path = r'/control/light';
     final _options = Options(
-        method: r'PUT',
-        headers: <String, dynamic>{
-          ...?headers,
-        },
-        extra: <String, dynamic>{
-          'secure': <Map<String, String>>[
-            {
-              'type': 'http',
-              'scheme': 'bearer',
-              'name': 'jwtAuth',
-            },
-          ],
-          ...?extra,
-        },
-        validateStatus: validateStatus);
+      method: r'PUT',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'jwtAuth',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
 
     final _queryParameters = <String, dynamic>{
-      r'carNum':
-          encodeQueryParameter(_serializers, carNum, const FullType(String)),
+      r'carNum': encodeQueryParameter(_serializers, carNum, const FullType(String)),
     };
 
-    final _response = await _dio.request<Object>(_path,
-        options: _options,
-        queryParameters: _queryParameters,
-        cancelToken: cancelToken,
-        onSendProgress: onSendProgress,
-        onReceiveProgress: onReceiveProgress);
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
 
     bool? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : rawResponse as bool;
+
     } catch (error, stackTrace) {
       throw DioException(
-          requestOptions: _response.requestOptions,
-          response: _response,
-          type: DioExceptionType.unknown,
-          error: error,
-          stackTrace: stackTrace);
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<bool>(
-        data: _responseData,
-        headers: _response.headers,
-        isRedirect: _response.isRedirect,
-        requestOptions: _response.requestOptions,
-        redirects: _response.redirects,
-        statusCode: _response.statusCode,
-        statusMessage: _response.statusMessage,
-        extra: _response.extra);
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// turnOnHorn
@@ -355,56 +372,62 @@ class DeviceControllerApi {
   }) async {
     final _path = r'/control/horn';
     final _options = Options(
-        method: r'PUT',
-        headers: <String, dynamic>{
-          ...?headers,
-        },
-        extra: <String, dynamic>{
-          'secure': <Map<String, String>>[
-            {
-              'type': 'http',
-              'scheme': 'bearer',
-              'name': 'jwtAuth',
-            },
-          ],
-          ...?extra,
-        },
-        validateStatus: validateStatus);
+      method: r'PUT',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'jwtAuth',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
 
     final _queryParameters = <String, dynamic>{
-      r'carNum':
-          encodeQueryParameter(_serializers, carNum, const FullType(String)),
+      r'carNum': encodeQueryParameter(_serializers, carNum, const FullType(String)),
     };
 
-    final _response = await _dio.request<Object>(_path,
-        options: _options,
-        queryParameters: _queryParameters,
-        cancelToken: cancelToken,
-        onSendProgress: onSendProgress,
-        onReceiveProgress: onReceiveProgress);
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
 
     bool? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : rawResponse as bool;
+
     } catch (error, stackTrace) {
       throw DioException(
-          requestOptions: _response.requestOptions,
-          response: _response,
-          type: DioExceptionType.unknown,
-          error: error,
-          stackTrace: stackTrace);
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<bool>(
-        data: _responseData,
-        headers: _response.headers,
-        isRedirect: _response.isRedirect,
-        requestOptions: _response.requestOptions,
-        redirects: _response.redirects,
-        statusCode: _response.statusCode,
-        statusMessage: _response.statusMessage,
-        extra: _response.extra);
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
+
 }

@@ -88,58 +88,80 @@ class _$ServiceDetailSerializer implements PrimitiveSerializer<ServiceDetail> {
   }) sync* {
     if (object.shareServiceSeq != null) {
       yield r'shareServiceSeq';
-      yield serializers.serialize(object.shareServiceSeq,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.shareServiceSeq,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.carName != null) {
       yield r'carName';
-      yield serializers.serialize(object.carName,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.carName,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.carMadeCom != null) {
       yield r'carMadeCom';
-      yield serializers.serialize(object.carMadeCom,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.carMadeCom,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.type != null) {
       yield r'type';
-      yield serializers.serialize(object.type,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.type,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.fulName != null) {
       yield r'fulName';
-      yield serializers.serialize(object.fulName,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.fulName,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.gearType != null) {
       yield r'gearType';
-      yield serializers.serialize(object.gearType,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.gearType,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.maxRide != null) {
       yield r'maxRide';
-      yield serializers.serialize(object.maxRide,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.maxRide,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.distanceDriven != null) {
       yield r'distanceDriven';
-      yield serializers.serialize(object.distanceDriven,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.distanceDriven,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.carOpt != null) {
       yield r'carOpt';
-      yield serializers.serialize(object.carOpt,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.carOpt,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.carOptList != null) {
       yield r'carOptList';
-      yield serializers.serialize(object.carOptList,
-          specifiedType: const FullType(BuiltList, [FullType(DeviceOption)]));
+      yield serializers.serialize(
+        object.carOptList,
+        specifiedType: const FullType(BuiltList, [FullType(DeviceOption)]),
+      );
     }
     if (object.userSubInfoList != null) {
       yield r'userSubInfoList';
-      yield serializers.serialize(object.userSubInfoList,
-          specifiedType: const FullType(BuiltList, [FullType(UserSubInfo)]));
+      yield serializers.serialize(
+        object.userSubInfoList,
+        specifiedType: const FullType(BuiltList, [FullType(UserSubInfo)]),
+      );
     }
   }
 
@@ -167,62 +189,80 @@ class _$ServiceDetailSerializer implements PrimitiveSerializer<ServiceDetail> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'shareServiceSeq':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.shareServiceSeq = valueDes;
           break;
         case r'carName':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.carName = valueDes;
           break;
         case r'carMadeCom':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.carMadeCom = valueDes;
           break;
         case r'type':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.type = valueDes;
           break;
         case r'fulName':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.fulName = valueDes;
           break;
         case r'gearType':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.gearType = valueDes;
           break;
         case r'maxRide':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.maxRide = valueDes;
           break;
         case r'distanceDriven':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.distanceDriven = valueDes;
           break;
         case r'carOpt':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.carOpt = valueDes;
           break;
         case r'carOptList':
-          final valueDes = serializers.deserialize(value,
-                  specifiedType:
-                      const FullType(BuiltList, [FullType(DeviceOption)]))
-              as BuiltList<DeviceOption>;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(DeviceOption)]),
+          ) as BuiltList<DeviceOption>;
           result.carOptList.replace(valueDes);
           break;
         case r'userSubInfoList':
-          final valueDes = serializers.deserialize(value,
-                  specifiedType:
-                      const FullType(BuiltList, [FullType(UserSubInfo)]))
-              as BuiltList<UserSubInfo>;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(UserSubInfo)]),
+          ) as BuiltList<UserSubInfo>;
           result.userSubInfoList.replace(valueDes);
           break;
         default:
@@ -242,11 +282,14 @@ class _$ServiceDetailSerializer implements PrimitiveSerializer<ServiceDetail> {
     final result = ServiceDetailBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
-    _deserializeProperties(serializers, serialized,
-        specifiedType: specifiedType,
-        serializedList: serializedList,
-        unhandled: unhandled,
-        result: result);
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
     return result.build();
   }
 }

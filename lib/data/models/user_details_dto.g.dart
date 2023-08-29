@@ -20,29 +20,21 @@ class _$UserDetailsDTO extends UserDetailsDTO {
   @override
   final String? color;
   @override
-  final String? phoneNumber;
-  @override
-  final String? add1;
-  @override
-  final String? add2;
-  @override
-  final String? zipCode;
+  final String? password;
   @override
   final String? email;
   @override
   final String? sex;
   @override
-  final int? memberSeq;
-  @override
-  final String? delYn;
-  @override
-  final String? password;
-  @override
-  final int? seq;
-  @override
   final String? delimit;
   @override
   final String? customerKey;
+  @override
+  final int? seq;
+  @override
+  final int? memberSeq;
+  @override
+  final String? delYn;
   @override
   final String? nickname;
   @override
@@ -50,11 +42,15 @@ class _$UserDetailsDTO extends UserDetailsDTO {
   @override
   final String? username;
   @override
+  final String? add1;
+  @override
+  final String? add2;
+  @override
+  final String? zipCode;
+  @override
+  final String? phoneNumber;
+  @override
   final bool? accountNonExpired;
-  @override
-  final bool? accountNonLocked;
-  @override
-  final bool? credentialsNonExpired;
   @override
   final String? birthDay;
   @override
@@ -65,6 +61,10 @@ class _$UserDetailsDTO extends UserDetailsDTO {
   final String? deleteAt;
   @override
   final String? updateAt;
+  @override
+  final bool? accountNonLocked;
+  @override
+  final bool? credentialsNonExpired;
 
   factory _$UserDetailsDTO([void Function(UserDetailsDTOBuilder)? updates]) =>
       (new UserDetailsDTOBuilder()..update(updates))._build();
@@ -76,29 +76,29 @@ class _$UserDetailsDTO extends UserDetailsDTO {
       this.id,
       this.enabled,
       this.color,
-      this.phoneNumber,
-      this.add1,
-      this.add2,
-      this.zipCode,
+      this.password,
       this.email,
       this.sex,
-      this.memberSeq,
-      this.delYn,
-      this.password,
-      this.seq,
       this.delimit,
       this.customerKey,
+      this.seq,
+      this.memberSeq,
+      this.delYn,
       this.nickname,
       this.profilePicture,
       this.username,
+      this.add1,
+      this.add2,
+      this.zipCode,
+      this.phoneNumber,
       this.accountNonExpired,
-      this.accountNonLocked,
-      this.credentialsNonExpired,
       this.birthDay,
       this.createdAt,
       this.updatedAt,
       this.deleteAt,
-      this.updateAt})
+      this.updateAt,
+      this.accountNonLocked,
+      this.credentialsNonExpired})
       : super._();
 
   @override
@@ -119,29 +119,29 @@ class _$UserDetailsDTO extends UserDetailsDTO {
         id == other.id &&
         enabled == other.enabled &&
         color == other.color &&
-        phoneNumber == other.phoneNumber &&
-        add1 == other.add1 &&
-        add2 == other.add2 &&
-        zipCode == other.zipCode &&
+        password == other.password &&
         email == other.email &&
         sex == other.sex &&
-        memberSeq == other.memberSeq &&
-        delYn == other.delYn &&
-        password == other.password &&
-        seq == other.seq &&
         delimit == other.delimit &&
         customerKey == other.customerKey &&
+        seq == other.seq &&
+        memberSeq == other.memberSeq &&
+        delYn == other.delYn &&
         nickname == other.nickname &&
         profilePicture == other.profilePicture &&
         username == other.username &&
+        add1 == other.add1 &&
+        add2 == other.add2 &&
+        zipCode == other.zipCode &&
+        phoneNumber == other.phoneNumber &&
         accountNonExpired == other.accountNonExpired &&
-        accountNonLocked == other.accountNonLocked &&
-        credentialsNonExpired == other.credentialsNonExpired &&
         birthDay == other.birthDay &&
         createdAt == other.createdAt &&
         updatedAt == other.updatedAt &&
         deleteAt == other.deleteAt &&
-        updateAt == other.updateAt;
+        updateAt == other.updateAt &&
+        accountNonLocked == other.accountNonLocked &&
+        credentialsNonExpired == other.credentialsNonExpired;
   }
 
   @override
@@ -153,29 +153,29 @@ class _$UserDetailsDTO extends UserDetailsDTO {
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, enabled.hashCode);
     _$hash = $jc(_$hash, color.hashCode);
-    _$hash = $jc(_$hash, phoneNumber.hashCode);
-    _$hash = $jc(_$hash, add1.hashCode);
-    _$hash = $jc(_$hash, add2.hashCode);
-    _$hash = $jc(_$hash, zipCode.hashCode);
+    _$hash = $jc(_$hash, password.hashCode);
     _$hash = $jc(_$hash, email.hashCode);
     _$hash = $jc(_$hash, sex.hashCode);
-    _$hash = $jc(_$hash, memberSeq.hashCode);
-    _$hash = $jc(_$hash, delYn.hashCode);
-    _$hash = $jc(_$hash, password.hashCode);
-    _$hash = $jc(_$hash, seq.hashCode);
     _$hash = $jc(_$hash, delimit.hashCode);
     _$hash = $jc(_$hash, customerKey.hashCode);
+    _$hash = $jc(_$hash, seq.hashCode);
+    _$hash = $jc(_$hash, memberSeq.hashCode);
+    _$hash = $jc(_$hash, delYn.hashCode);
     _$hash = $jc(_$hash, nickname.hashCode);
     _$hash = $jc(_$hash, profilePicture.hashCode);
     _$hash = $jc(_$hash, username.hashCode);
+    _$hash = $jc(_$hash, add1.hashCode);
+    _$hash = $jc(_$hash, add2.hashCode);
+    _$hash = $jc(_$hash, zipCode.hashCode);
+    _$hash = $jc(_$hash, phoneNumber.hashCode);
     _$hash = $jc(_$hash, accountNonExpired.hashCode);
-    _$hash = $jc(_$hash, accountNonLocked.hashCode);
-    _$hash = $jc(_$hash, credentialsNonExpired.hashCode);
     _$hash = $jc(_$hash, birthDay.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jc(_$hash, deleteAt.hashCode);
     _$hash = $jc(_$hash, updateAt.hashCode);
+    _$hash = $jc(_$hash, accountNonLocked.hashCode);
+    _$hash = $jc(_$hash, credentialsNonExpired.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -189,29 +189,29 @@ class _$UserDetailsDTO extends UserDetailsDTO {
           ..add('id', id)
           ..add('enabled', enabled)
           ..add('color', color)
-          ..add('phoneNumber', phoneNumber)
-          ..add('add1', add1)
-          ..add('add2', add2)
-          ..add('zipCode', zipCode)
+          ..add('password', password)
           ..add('email', email)
           ..add('sex', sex)
-          ..add('memberSeq', memberSeq)
-          ..add('delYn', delYn)
-          ..add('password', password)
-          ..add('seq', seq)
           ..add('delimit', delimit)
           ..add('customerKey', customerKey)
+          ..add('seq', seq)
+          ..add('memberSeq', memberSeq)
+          ..add('delYn', delYn)
           ..add('nickname', nickname)
           ..add('profilePicture', profilePicture)
           ..add('username', username)
+          ..add('add1', add1)
+          ..add('add2', add2)
+          ..add('zipCode', zipCode)
+          ..add('phoneNumber', phoneNumber)
           ..add('accountNonExpired', accountNonExpired)
-          ..add('accountNonLocked', accountNonLocked)
-          ..add('credentialsNonExpired', credentialsNonExpired)
           ..add('birthDay', birthDay)
           ..add('createdAt', createdAt)
           ..add('updatedAt', updatedAt)
           ..add('deleteAt', deleteAt)
-          ..add('updateAt', updateAt))
+          ..add('updateAt', updateAt)
+          ..add('accountNonLocked', accountNonLocked)
+          ..add('credentialsNonExpired', credentialsNonExpired))
         .toString();
   }
 }
@@ -246,21 +246,9 @@ class UserDetailsDTOBuilder
   String? get color => _$this._color;
   set color(String? color) => _$this._color = color;
 
-  String? _phoneNumber;
-  String? get phoneNumber => _$this._phoneNumber;
-  set phoneNumber(String? phoneNumber) => _$this._phoneNumber = phoneNumber;
-
-  String? _add1;
-  String? get add1 => _$this._add1;
-  set add1(String? add1) => _$this._add1 = add1;
-
-  String? _add2;
-  String? get add2 => _$this._add2;
-  set add2(String? add2) => _$this._add2 = add2;
-
-  String? _zipCode;
-  String? get zipCode => _$this._zipCode;
-  set zipCode(String? zipCode) => _$this._zipCode = zipCode;
+  String? _password;
+  String? get password => _$this._password;
+  set password(String? password) => _$this._password = password;
 
   String? _email;
   String? get email => _$this._email;
@@ -270,22 +258,6 @@ class UserDetailsDTOBuilder
   String? get sex => _$this._sex;
   set sex(String? sex) => _$this._sex = sex;
 
-  int? _memberSeq;
-  int? get memberSeq => _$this._memberSeq;
-  set memberSeq(int? memberSeq) => _$this._memberSeq = memberSeq;
-
-  String? _delYn;
-  String? get delYn => _$this._delYn;
-  set delYn(String? delYn) => _$this._delYn = delYn;
-
-  String? _password;
-  String? get password => _$this._password;
-  set password(String? password) => _$this._password = password;
-
-  int? _seq;
-  int? get seq => _$this._seq;
-  set seq(int? seq) => _$this._seq = seq;
-
   String? _delimit;
   String? get delimit => _$this._delimit;
   set delimit(String? delimit) => _$this._delimit = delimit;
@@ -293,6 +265,18 @@ class UserDetailsDTOBuilder
   String? _customerKey;
   String? get customerKey => _$this._customerKey;
   set customerKey(String? customerKey) => _$this._customerKey = customerKey;
+
+  int? _seq;
+  int? get seq => _$this._seq;
+  set seq(int? seq) => _$this._seq = seq;
+
+  int? _memberSeq;
+  int? get memberSeq => _$this._memberSeq;
+  set memberSeq(int? memberSeq) => _$this._memberSeq = memberSeq;
+
+  String? _delYn;
+  String? get delYn => _$this._delYn;
+  set delYn(String? delYn) => _$this._delYn = delYn;
 
   String? _nickname;
   String? get nickname => _$this._nickname;
@@ -307,20 +291,26 @@ class UserDetailsDTOBuilder
   String? get username => _$this._username;
   set username(String? username) => _$this._username = username;
 
+  String? _add1;
+  String? get add1 => _$this._add1;
+  set add1(String? add1) => _$this._add1 = add1;
+
+  String? _add2;
+  String? get add2 => _$this._add2;
+  set add2(String? add2) => _$this._add2 = add2;
+
+  String? _zipCode;
+  String? get zipCode => _$this._zipCode;
+  set zipCode(String? zipCode) => _$this._zipCode = zipCode;
+
+  String? _phoneNumber;
+  String? get phoneNumber => _$this._phoneNumber;
+  set phoneNumber(String? phoneNumber) => _$this._phoneNumber = phoneNumber;
+
   bool? _accountNonExpired;
   bool? get accountNonExpired => _$this._accountNonExpired;
   set accountNonExpired(bool? accountNonExpired) =>
       _$this._accountNonExpired = accountNonExpired;
-
-  bool? _accountNonLocked;
-  bool? get accountNonLocked => _$this._accountNonLocked;
-  set accountNonLocked(bool? accountNonLocked) =>
-      _$this._accountNonLocked = accountNonLocked;
-
-  bool? _credentialsNonExpired;
-  bool? get credentialsNonExpired => _$this._credentialsNonExpired;
-  set credentialsNonExpired(bool? credentialsNonExpired) =>
-      _$this._credentialsNonExpired = credentialsNonExpired;
 
   String? _birthDay;
   String? get birthDay => _$this._birthDay;
@@ -342,6 +332,16 @@ class UserDetailsDTOBuilder
   String? get updateAt => _$this._updateAt;
   set updateAt(String? updateAt) => _$this._updateAt = updateAt;
 
+  bool? _accountNonLocked;
+  bool? get accountNonLocked => _$this._accountNonLocked;
+  set accountNonLocked(bool? accountNonLocked) =>
+      _$this._accountNonLocked = accountNonLocked;
+
+  bool? _credentialsNonExpired;
+  bool? get credentialsNonExpired => _$this._credentialsNonExpired;
+  set credentialsNonExpired(bool? credentialsNonExpired) =>
+      _$this._credentialsNonExpired = credentialsNonExpired;
+
   UserDetailsDTOBuilder() {
     UserDetailsDTO._defaults(this);
   }
@@ -355,29 +355,29 @@ class UserDetailsDTOBuilder
       _id = $v.id;
       _enabled = $v.enabled;
       _color = $v.color;
-      _phoneNumber = $v.phoneNumber;
-      _add1 = $v.add1;
-      _add2 = $v.add2;
-      _zipCode = $v.zipCode;
+      _password = $v.password;
       _email = $v.email;
       _sex = $v.sex;
-      _memberSeq = $v.memberSeq;
-      _delYn = $v.delYn;
-      _password = $v.password;
-      _seq = $v.seq;
       _delimit = $v.delimit;
       _customerKey = $v.customerKey;
+      _seq = $v.seq;
+      _memberSeq = $v.memberSeq;
+      _delYn = $v.delYn;
       _nickname = $v.nickname;
       _profilePicture = $v.profilePicture;
       _username = $v.username;
+      _add1 = $v.add1;
+      _add2 = $v.add2;
+      _zipCode = $v.zipCode;
+      _phoneNumber = $v.phoneNumber;
       _accountNonExpired = $v.accountNonExpired;
-      _accountNonLocked = $v.accountNonLocked;
-      _credentialsNonExpired = $v.credentialsNonExpired;
       _birthDay = $v.birthDay;
       _createdAt = $v.createdAt;
       _updatedAt = $v.updatedAt;
       _deleteAt = $v.deleteAt;
       _updateAt = $v.updateAt;
+      _accountNonLocked = $v.accountNonLocked;
+      _credentialsNonExpired = $v.credentialsNonExpired;
       _$v = null;
     }
     return this;
@@ -408,29 +408,29 @@ class UserDetailsDTOBuilder
               id: id,
               enabled: enabled,
               color: color,
-              phoneNumber: phoneNumber,
-              add1: add1,
-              add2: add2,
-              zipCode: zipCode,
+              password: password,
               email: email,
               sex: sex,
-              memberSeq: memberSeq,
-              delYn: delYn,
-              password: password,
-              seq: seq,
               delimit: delimit,
               customerKey: customerKey,
+              seq: seq,
+              memberSeq: memberSeq,
+              delYn: delYn,
               nickname: nickname,
               profilePicture: profilePicture,
               username: username,
+              add1: add1,
+              add2: add2,
+              zipCode: zipCode,
+              phoneNumber: phoneNumber,
               accountNonExpired: accountNonExpired,
-              accountNonLocked: accountNonLocked,
-              credentialsNonExpired: credentialsNonExpired,
               birthDay: birthDay,
               createdAt: createdAt,
               updatedAt: updatedAt,
               deleteAt: deleteAt,
-              updateAt: updateAt);
+              updateAt: updateAt,
+              accountNonLocked: accountNonLocked,
+              credentialsNonExpired: credentialsNonExpired);
     } catch (_) {
       late String _$failedField;
       try {

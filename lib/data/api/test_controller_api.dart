@@ -41,59 +41,65 @@ class TestControllerApi {
   }) async {
     final _path = r'/test/test';
     final _options = Options(
-        method: r'GET',
-        headers: <String, dynamic>{
-          ...?headers,
-        },
-        extra: <String, dynamic>{
-          'secure': <Map<String, String>>[
-            {
-              'type': 'http',
-              'scheme': 'bearer',
-              'name': 'jwtAuth',
-            },
-          ],
-          ...?extra,
-        },
-        validateStatus: validateStatus);
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'jwtAuth',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
 
     final _queryParameters = <String, dynamic>{
-      r'model':
-          encodeQueryParameter(_serializers, model, const FullType(TestModel)),
+      r'model': encodeQueryParameter(_serializers, model, const FullType(TestModel)),
     };
 
-    final _response = await _dio.request<Object>(_path,
-        options: _options,
-        queryParameters: _queryParameters,
-        cancelToken: cancelToken,
-        onSendProgress: onSendProgress,
-        onReceiveProgress: onReceiveProgress);
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
 
     JsonObject? _responseData;
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null
-          ? null
-          : _serializers.deserialize(rawResponse,
-              specifiedType: const FullType(JsonObject)) as JsonObject;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(JsonObject),
+      ) as JsonObject;
+
     } catch (error, stackTrace) {
       throw DioException(
-          requestOptions: _response.requestOptions,
-          response: _response,
-          type: DioExceptionType.unknown,
-          error: error,
-          stackTrace: stackTrace);
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<JsonObject>(
-        data: _responseData,
-        headers: _response.headers,
-        isRedirect: _response.isRedirect,
-        requestOptions: _response.requestOptions,
-        redirects: _response.redirects,
-        statusCode: _response.statusCode,
-        statusMessage: _response.statusMessage,
-        extra: _response.extra);
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
+
 }

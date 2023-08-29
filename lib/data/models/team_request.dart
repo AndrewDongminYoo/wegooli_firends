@@ -48,18 +48,24 @@ class _$TeamRequestSerializer implements PrimitiveSerializer<TeamRequest> {
   }) sync* {
     if (object.accountId != null) {
       yield r'accountId';
-      yield serializers.serialize(object.accountId,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.accountId,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.name != null) {
       yield r'name';
-      yield serializers.serialize(object.name,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.name,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.contract != null) {
       yield r'contract';
-      yield serializers.serialize(object.contract,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.contract,
+        specifiedType: const FullType(String),
+      );
     }
   }
 
@@ -87,18 +93,24 @@ class _$TeamRequestSerializer implements PrimitiveSerializer<TeamRequest> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'accountId':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.accountId = valueDes;
           break;
         case r'name':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.name = valueDes;
           break;
         case r'contract':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.contract = valueDes;
           break;
         default:
@@ -118,11 +130,14 @@ class _$TeamRequestSerializer implements PrimitiveSerializer<TeamRequest> {
     final result = TeamRequestBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
-    _deserializeProperties(serializers, serialized,
-        specifiedType: specifiedType,
-        serializedList: serializedList,
-        unhandled: unhandled,
-        result: result);
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
     return result.build();
   }
 }

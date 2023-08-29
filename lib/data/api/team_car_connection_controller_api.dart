@@ -39,67 +39,77 @@ class TeamCarConnectionControllerApi {
   }) async {
     final _path = r'/team/car/teamCarConnection';
     final _options = Options(
-        method: r'PUT',
-        headers: <String, dynamic>{
-          ...?headers,
-        },
-        extra: <String, dynamic>{
-          'secure': <Map<String, String>>[
-            {
-              'type': 'http',
-              'scheme': 'bearer',
-              'name': 'jwtAuth',
-            },
-          ],
-          ...?extra,
-        },
-        contentType: 'application/json',
-        validateStatus: validateStatus);
+      method: r'PUT',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'jwtAuth',
+          },
+        ],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
 
     dynamic _bodyData;
 
     try {
       const _type = FullType(TeamCarConnection);
-      _bodyData =
-          _serializers.serialize(teamCarConnection, specifiedType: _type);
-    } catch (error, stackTrace) {
+      _bodyData = _serializers.serialize(teamCarConnection, specifiedType: _type);
+
+    } catch(error, stackTrace) {
       throw DioException(
-          requestOptions: _options.compose(_dio.options, _path),
-          type: DioExceptionType.unknown,
-          error: error,
-          stackTrace: stackTrace);
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
     }
 
-    final _response = await _dio.request<Object>(_path,
-        data: _bodyData,
-        options: _options,
-        cancelToken: cancelToken,
-        onSendProgress: onSendProgress,
-        onReceiveProgress: onReceiveProgress);
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
 
     String? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : rawResponse as String;
+
     } catch (error, stackTrace) {
       throw DioException(
-          requestOptions: _response.requestOptions,
-          response: _response,
-          type: DioExceptionType.unknown,
-          error: error,
-          stackTrace: stackTrace);
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<String>(
-        data: _responseData,
-        headers: _response.headers,
-        isRedirect: _response.isRedirect,
-        requestOptions: _response.requestOptions,
-        redirects: _response.redirects,
-        statusCode: _response.statusCode,
-        statusMessage: _response.statusMessage,
-        extra: _response.extra);
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// teamCarDisConnection
@@ -126,66 +136,77 @@ class TeamCarConnectionControllerApi {
   }) async {
     final _path = r'/team/car/teamCarDisConnection';
     final _options = Options(
-        method: r'PUT',
-        headers: <String, dynamic>{
-          ...?headers,
-        },
-        extra: <String, dynamic>{
-          'secure': <Map<String, String>>[
-            {
-              'type': 'http',
-              'scheme': 'bearer',
-              'name': 'jwtAuth',
-            },
-          ],
-          ...?extra,
-        },
-        contentType: 'application/json',
-        validateStatus: validateStatus);
+      method: r'PUT',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'jwtAuth',
+          },
+        ],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
 
     dynamic _bodyData;
 
     try {
       const _type = FullType(TeamCarConnection);
-      _bodyData =
-          _serializers.serialize(teamCarConnection, specifiedType: _type);
-    } catch (error, stackTrace) {
+      _bodyData = _serializers.serialize(teamCarConnection, specifiedType: _type);
+
+    } catch(error, stackTrace) {
       throw DioException(
-          requestOptions: _options.compose(_dio.options, _path),
-          type: DioExceptionType.unknown,
-          error: error,
-          stackTrace: stackTrace);
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
     }
 
-    final _response = await _dio.request<Object>(_path,
-        data: _bodyData,
-        options: _options,
-        cancelToken: cancelToken,
-        onSendProgress: onSendProgress,
-        onReceiveProgress: onReceiveProgress);
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
 
     String? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : rawResponse as String;
+
     } catch (error, stackTrace) {
       throw DioException(
-          requestOptions: _response.requestOptions,
-          response: _response,
-          type: DioExceptionType.unknown,
-          error: error,
-          stackTrace: stackTrace);
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<String>(
-        data: _responseData,
-        headers: _response.headers,
-        isRedirect: _response.isRedirect,
-        requestOptions: _response.requestOptions,
-        redirects: _response.redirects,
-        statusCode: _response.statusCode,
-        statusMessage: _response.statusMessage,
-        extra: _response.extra);
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
+
 }

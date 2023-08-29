@@ -115,98 +115,136 @@ class _$CarHistoryDTOSerializer implements PrimitiveSerializer<CarHistoryDTO> {
   }) sync* {
     if (object.seq != null) {
       yield r'seq';
-      yield serializers.serialize(object.seq,
-          specifiedType: const FullType(int));
+      yield serializers.serialize(
+        object.seq,
+        specifiedType: const FullType(int),
+      );
     }
     if (object.terminalSeq != null) {
       yield r'terminalSeq';
-      yield serializers.serialize(object.terminalSeq,
-          specifiedType: const FullType(int));
+      yield serializers.serialize(
+        object.terminalSeq,
+        specifiedType: const FullType(int),
+      );
     }
     if (object.carNum != null) {
       yield r'carNum';
-      yield serializers.serialize(object.carNum,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.carNum,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.status != null) {
       yield r'status';
-      yield serializers.serialize(object.status,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.status,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.lat != null) {
       yield r'lat';
-      yield serializers.serialize(object.lat,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.lat,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.lon != null) {
       yield r'lon';
-      yield serializers.serialize(object.lon,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.lon,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.volt != null) {
       yield r'volt';
-      yield serializers.serialize(object.volt,
-          specifiedType: const FullType(int));
+      yield serializers.serialize(
+        object.volt,
+        specifiedType: const FullType(int),
+      );
     }
     if (object.fuel != null) {
       yield r'fuel';
-      yield serializers.serialize(object.fuel,
-          specifiedType: const FullType(int));
+      yield serializers.serialize(
+        object.fuel,
+        specifiedType: const FullType(int),
+      );
     }
     if (object.flDoorClose != null) {
       yield r'flDoorClose';
-      yield serializers.serialize(object.flDoorClose,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.flDoorClose,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.frDoorClose != null) {
       yield r'frDoorClose';
-      yield serializers.serialize(object.frDoorClose,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.frDoorClose,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.blDoorClose != null) {
       yield r'blDoorClose';
-      yield serializers.serialize(object.blDoorClose,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.blDoorClose,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.brDoorClose != null) {
       yield r'brDoorClose';
-      yield serializers.serialize(object.brDoorClose,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.brDoorClose,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.distance != null) {
       yield r'distance';
-      yield serializers.serialize(object.distance,
-          specifiedType: const FullType(int));
+      yield serializers.serialize(
+        object.distance,
+        specifiedType: const FullType(int),
+      );
     }
     if (object.speed != null) {
       yield r'speed';
-      yield serializers.serialize(object.speed,
-          specifiedType: const FullType(int));
+      yield serializers.serialize(
+        object.speed,
+        specifiedType: const FullType(int),
+      );
     }
     if (object.flDoorLock != null) {
       yield r'flDoorLock';
-      yield serializers.serialize(object.flDoorLock,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.flDoorLock,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.frDoorLock != null) {
       yield r'frDoorLock';
-      yield serializers.serialize(object.frDoorLock,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.frDoorLock,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.blDoorLock != null) {
       yield r'blDoorLock';
-      yield serializers.serialize(object.blDoorLock,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.blDoorLock,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.brDoorLock != null) {
       yield r'brDoorLock';
-      yield serializers.serialize(object.brDoorLock,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.brDoorLock,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.createdAt != null) {
       yield r'createdAt';
-      yield serializers.serialize(object.createdAt,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.createdAt,
+        specifiedType: const FullType(String),
+      );
     }
   }
 
@@ -234,98 +272,136 @@ class _$CarHistoryDTOSerializer implements PrimitiveSerializer<CarHistoryDTO> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'seq':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
           result.seq = valueDes;
           break;
         case r'terminalSeq':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
           result.terminalSeq = valueDes;
           break;
         case r'carNum':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.carNum = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.status = valueDes;
           break;
         case r'lat':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.lat = valueDes;
           break;
         case r'lon':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.lon = valueDes;
           break;
         case r'volt':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
           result.volt = valueDes;
           break;
         case r'fuel':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
           result.fuel = valueDes;
           break;
         case r'flDoorClose':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.flDoorClose = valueDes;
           break;
         case r'frDoorClose':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.frDoorClose = valueDes;
           break;
         case r'blDoorClose':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.blDoorClose = valueDes;
           break;
         case r'brDoorClose':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.brDoorClose = valueDes;
           break;
         case r'distance':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
           result.distance = valueDes;
           break;
         case r'speed':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
           result.speed = valueDes;
           break;
         case r'flDoorLock':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.flDoorLock = valueDes;
           break;
         case r'frDoorLock':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.frDoorLock = valueDes;
           break;
         case r'blDoorLock':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.blDoorLock = valueDes;
           break;
         case r'brDoorLock':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.brDoorLock = valueDes;
           break;
         case r'createdAt':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.createdAt = valueDes;
           break;
         default:
@@ -345,11 +421,14 @@ class _$CarHistoryDTOSerializer implements PrimitiveSerializer<CarHistoryDTO> {
     final result = CarHistoryDTOBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
-    _deserializeProperties(serializers, serialized,
-        specifiedType: specifiedType,
-        serializedList: serializedList,
-        unhandled: unhandled,
-        result: result);
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
     return result.build();
   }
 }

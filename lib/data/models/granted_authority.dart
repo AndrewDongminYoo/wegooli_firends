@@ -44,8 +44,10 @@ class _$GrantedAuthoritySerializer
   }) sync* {
     if (object.authority != null) {
       yield r'authority';
-      yield serializers.serialize(object.authority,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.authority,
+        specifiedType: const FullType(String),
+      );
     }
   }
 
@@ -73,8 +75,10 @@ class _$GrantedAuthoritySerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'authority':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.authority = valueDes;
           break;
         default:
@@ -94,11 +98,14 @@ class _$GrantedAuthoritySerializer
     final result = GrantedAuthorityBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
-    _deserializeProperties(serializers, serialized,
-        specifiedType: specifiedType,
-        serializedList: serializedList,
-        unhandled: unhandled,
-        result: result);
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
     return result.build();
   }
 }

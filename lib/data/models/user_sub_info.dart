@@ -52,23 +52,31 @@ class _$UserSubInfoSerializer implements PrimitiveSerializer<UserSubInfo> {
   }) sync* {
     if (object.userId != null) {
       yield r'userId';
-      yield serializers.serialize(object.userId,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.userId,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.serviceSeq != null) {
       yield r'serviceSeq';
-      yield serializers.serialize(object.serviceSeq,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.serviceSeq,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.weekInfo != null) {
       yield r'weekInfo';
-      yield serializers.serialize(object.weekInfo,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.weekInfo,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.timeInfo != null) {
       yield r'timeInfo';
-      yield serializers.serialize(object.timeInfo,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.timeInfo,
+        specifiedType: const FullType(String),
+      );
     }
   }
 
@@ -96,23 +104,31 @@ class _$UserSubInfoSerializer implements PrimitiveSerializer<UserSubInfo> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'userId':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.userId = valueDes;
           break;
         case r'serviceSeq':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.serviceSeq = valueDes;
           break;
         case r'weekInfo':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.weekInfo = valueDes;
           break;
         case r'timeInfo':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.timeInfo = valueDes;
           break;
         default:
@@ -132,11 +148,14 @@ class _$UserSubInfoSerializer implements PrimitiveSerializer<UserSubInfo> {
     final result = UserSubInfoBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
-    _deserializeProperties(serializers, serialized,
-        specifiedType: specifiedType,
-        serializedList: serializedList,
-        unhandled: unhandled,
-        result: result);
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
     return result.build();
   }
 }

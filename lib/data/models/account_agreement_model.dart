@@ -63,28 +63,38 @@ class _$AccountAgreementModelSerializer
   }) sync* {
     if (object.classification != null) {
       yield r'classification';
-      yield serializers.serialize(object.classification,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.classification,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.accountId != null) {
       yield r'accountId';
-      yield serializers.serialize(object.accountId,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.accountId,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.agreeYn != null) {
       yield r'agreeYn';
-      yield serializers.serialize(object.agreeYn,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.agreeYn,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.createdAt != null) {
       yield r'createdAt';
-      yield serializers.serialize(object.createdAt,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.createdAt,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.updatedAt != null) {
       yield r'updatedAt';
-      yield serializers.serialize(object.updatedAt,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.updatedAt,
+        specifiedType: const FullType(String),
+      );
     }
   }
 
@@ -112,28 +122,38 @@ class _$AccountAgreementModelSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'classification':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.classification = valueDes;
           break;
         case r'accountId':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.accountId = valueDes;
           break;
         case r'agreeYn':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.agreeYn = valueDes;
           break;
         case r'createdAt':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.createdAt = valueDes;
           break;
         case r'updatedAt':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.updatedAt = valueDes;
           break;
         default:
@@ -153,11 +173,14 @@ class _$AccountAgreementModelSerializer
     final result = AccountAgreementModelBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
-    _deserializeProperties(serializers, serialized,
-        specifiedType: specifiedType,
-        serializedList: serializedList,
-        unhandled: unhandled,
-        result: result);
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
     return result.build();
   }
 }

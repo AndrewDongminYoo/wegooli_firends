@@ -124,113 +124,157 @@ class _$UserDTOSerializer implements PrimitiveSerializer<UserDTO> {
   }) sync* {
     if (object.seq != null) {
       yield r'seq';
-      yield serializers.serialize(object.seq,
-          specifiedType: const FullType(int));
+      yield serializers.serialize(
+        object.seq,
+        specifiedType: const FullType(int),
+      );
     }
     if (object.name != null) {
       yield r'name';
-      yield serializers.serialize(object.name,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.name,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.add1 != null) {
       yield r'add1';
-      yield serializers.serialize(object.add1,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.add1,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.add2 != null) {
       yield r'add2';
-      yield serializers.serialize(object.add2,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.add2,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.zipCode != null) {
       yield r'zipCode';
-      yield serializers.serialize(object.zipCode,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.zipCode,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.phoneNumber != null) {
       yield r'phoneNumber';
-      yield serializers.serialize(object.phoneNumber,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.phoneNumber,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.email != null) {
       yield r'email';
-      yield serializers.serialize(object.email,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.email,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.birthDay != null) {
       yield r'birthDay';
-      yield serializers.serialize(object.birthDay,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.birthDay,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.sex != null) {
       yield r'sex';
-      yield serializers.serialize(object.sex,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.sex,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.delYn != null) {
       yield r'delYn';
-      yield serializers.serialize(object.delYn,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.delYn,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.createdAt != null) {
       yield r'createdAt';
-      yield serializers.serialize(object.createdAt,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.createdAt,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.updatedAt != null) {
       yield r'updatedAt';
-      yield serializers.serialize(object.updatedAt,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.updatedAt,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.id != null) {
       yield r'id';
-      yield serializers.serialize(object.id,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.id,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.memberSeq != null) {
       yield r'memberSeq';
-      yield serializers.serialize(object.memberSeq,
-          specifiedType: const FullType(int));
+      yield serializers.serialize(
+        object.memberSeq,
+        specifiedType: const FullType(int),
+      );
     }
     if (object.password != null) {
       yield r'password';
-      yield serializers.serialize(object.password,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.password,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.delimit != null) {
       yield r'delimit';
-      yield serializers.serialize(object.delimit,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.delimit,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.deleteAt != null) {
       yield r'deleteAt';
-      yield serializers.serialize(object.deleteAt,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.deleteAt,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.updateAt != null) {
       yield r'updateAt';
-      yield serializers.serialize(object.updateAt,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.updateAt,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.color != null) {
       yield r'color';
-      yield serializers.serialize(object.color,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.color,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.nickname != null) {
       yield r'nickname';
-      yield serializers.serialize(object.nickname,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.nickname,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.profilePicture != null) {
       yield r'profilePicture';
-      yield serializers.serialize(object.profilePicture,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.profilePicture,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.customerKey != null) {
       yield r'customerKey';
-      yield serializers.serialize(object.customerKey,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.customerKey,
+        specifiedType: const FullType(String),
+      );
     }
   }
 
@@ -258,113 +302,157 @@ class _$UserDTOSerializer implements PrimitiveSerializer<UserDTO> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'seq':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
           result.seq = valueDes;
           break;
         case r'name':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.name = valueDes;
           break;
         case r'add1':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.add1 = valueDes;
           break;
         case r'add2':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.add2 = valueDes;
           break;
         case r'zipCode':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.zipCode = valueDes;
           break;
         case r'phoneNumber':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.phoneNumber = valueDes;
           break;
         case r'email':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.email = valueDes;
           break;
         case r'birthDay':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.birthDay = valueDes;
           break;
         case r'sex':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.sex = valueDes;
           break;
         case r'delYn':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.delYn = valueDes;
           break;
         case r'createdAt':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.createdAt = valueDes;
           break;
         case r'updatedAt':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.updatedAt = valueDes;
           break;
         case r'id':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.id = valueDes;
           break;
         case r'memberSeq':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
           result.memberSeq = valueDes;
           break;
         case r'password':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.password = valueDes;
           break;
         case r'delimit':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.delimit = valueDes;
           break;
         case r'deleteAt':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.deleteAt = valueDes;
           break;
         case r'updateAt':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.updateAt = valueDes;
           break;
         case r'color':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.color = valueDes;
           break;
         case r'nickname':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.nickname = valueDes;
           break;
         case r'profilePicture':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.profilePicture = valueDes;
           break;
         case r'customerKey':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.customerKey = valueDes;
           break;
         default:
@@ -384,11 +472,14 @@ class _$UserDTOSerializer implements PrimitiveSerializer<UserDTO> {
     final result = UserDTOBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
-    _deserializeProperties(serializers, serialized,
-        specifiedType: specifiedType,
-        serializedList: serializedList,
-        unhandled: unhandled,
-        result: result);
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
     return result.build();
   }
 }

@@ -10,7 +10,7 @@ import 'package:one_of_serializer/any_of_serializer.dart';
 import 'package:one_of_serializer/one_of_serializer.dart';
 
 // 🌎 Project imports:
-import '/data/date_serializer.dart';
+import 'date_serializer.dart';
 import 'models/account.dart';
 import 'models/account_agreement_model.dart';
 import 'models/account_agreement_request.dart';
@@ -88,34 +88,44 @@ part 'serializers.g.dart';
 Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(PaymentCardModel)]),
-        () => ListBuilder<PaymentCardModel>())
+        () => ListBuilder<PaymentCardModel>(),
+      )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(ShareServiceModel)]),
-        () => ListBuilder<ShareServiceModel>())
+        () => ListBuilder<ShareServiceModel>(),
+      )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(TeamModel)]),
-        () => ListBuilder<TeamModel>())
+        () => ListBuilder<TeamModel>(),
+      )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(CarHistoryDTO)]),
-        () => ListBuilder<CarHistoryDTO>())
+        () => ListBuilder<CarHistoryDTO>(),
+      )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(ScheduleModel)]),
-        () => ListBuilder<ScheduleModel>())
+        () => ListBuilder<ScheduleModel>(),
+      )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(TeamAccountConnectionResponse)]),
-        () => ListBuilder<TeamAccountConnectionResponse>())
+        () => ListBuilder<TeamAccountConnectionResponse>(),
+      )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(CarControlHistoryModel)]),
-        () => ListBuilder<CarControlHistoryModel>())
+        () => ListBuilder<CarControlHistoryModel>(),
+      )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(LicenseModel)]),
-        () => ListBuilder<LicenseModel>())
+        () => ListBuilder<LicenseModel>(),
+      )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(AccountAgreementModel)]),
-        () => ListBuilder<AccountAgreementModel>())
+        () => ListBuilder<AccountAgreementModel>(),
+      )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(TerminalModel)]),
-        () => ListBuilder<TerminalModel>())
+        () => ListBuilder<TerminalModel>(),
+      )
       ..add(const OneOfSerializer())
       ..add(const AnyOfSerializer())
       ..add(const DateSerializer())

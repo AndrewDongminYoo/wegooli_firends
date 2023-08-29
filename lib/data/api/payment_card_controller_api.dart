@@ -40,54 +40,59 @@ class PaymentCardControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/payment/card/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
+    final _path = r'/payment/card/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
     final _options = Options(
-        method: r'DELETE',
-        headers: <String, dynamic>{
-          ...?headers,
-        },
-        extra: <String, dynamic>{
-          'secure': <Map<String, String>>[
-            {
-              'type': 'http',
-              'scheme': 'bearer',
-              'name': 'jwtAuth',
-            },
-          ],
-          ...?extra,
-        },
-        validateStatus: validateStatus);
+      method: r'DELETE',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'jwtAuth',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
 
-    final _response = await _dio.request<Object>(_path,
-        options: _options,
-        cancelToken: cancelToken,
-        onSendProgress: onSendProgress,
-        onReceiveProgress: onReceiveProgress);
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
 
     String? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : rawResponse as String;
+
     } catch (error, stackTrace) {
       throw DioException(
-          requestOptions: _response.requestOptions,
-          response: _response,
-          type: DioExceptionType.unknown,
-          error: error,
-          stackTrace: stackTrace);
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<String>(
-        data: _responseData,
-        headers: _response.headers,
-        isRedirect: _response.isRedirect,
-        requestOptions: _response.requestOptions,
-        redirects: _response.redirects,
-        statusCode: _response.statusCode,
-        statusMessage: _response.statusMessage,
-        extra: _response.extra);
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// insertPaymentCard
@@ -114,67 +119,77 @@ class PaymentCardControllerApi {
   }) async {
     final _path = r'/payment/card';
     final _options = Options(
-        method: r'POST',
-        headers: <String, dynamic>{
-          ...?headers,
-        },
-        extra: <String, dynamic>{
-          'secure': <Map<String, String>>[
-            {
-              'type': 'http',
-              'scheme': 'bearer',
-              'name': 'jwtAuth',
-            },
-          ],
-          ...?extra,
-        },
-        contentType: 'application/json',
-        validateStatus: validateStatus);
+      method: r'POST',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'jwtAuth',
+          },
+        ],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
 
     dynamic _bodyData;
 
     try {
       const _type = FullType(PaymentCardRequest);
-      _bodyData =
-          _serializers.serialize(paymentCardRequest, specifiedType: _type);
-    } catch (error, stackTrace) {
+      _bodyData = _serializers.serialize(paymentCardRequest, specifiedType: _type);
+
+    } catch(error, stackTrace) {
       throw DioException(
-          requestOptions: _options.compose(_dio.options, _path),
-          type: DioExceptionType.unknown,
-          error: error,
-          stackTrace: stackTrace);
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
     }
 
-    final _response = await _dio.request<Object>(_path,
-        data: _bodyData,
-        options: _options,
-        cancelToken: cancelToken,
-        onSendProgress: onSendProgress,
-        onReceiveProgress: onReceiveProgress);
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
 
     String? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : rawResponse as String;
+
     } catch (error, stackTrace) {
       throw DioException(
-          requestOptions: _response.requestOptions,
-          response: _response,
-          type: DioExceptionType.unknown,
-          error: error,
-          stackTrace: stackTrace);
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<String>(
-        data: _responseData,
-        headers: _response.headers,
-        isRedirect: _response.isRedirect,
-        requestOptions: _response.requestOptions,
-        redirects: _response.redirects,
-        statusCode: _response.statusCode,
-        statusMessage: _response.statusMessage,
-        extra: _response.extra);
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// selectPaymentCard
@@ -199,58 +214,62 @@ class PaymentCardControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/payment/card/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
+    final _path = r'/payment/card/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
     final _options = Options(
-        method: r'GET',
-        headers: <String, dynamic>{
-          ...?headers,
-        },
-        extra: <String, dynamic>{
-          'secure': <Map<String, String>>[
-            {
-              'type': 'http',
-              'scheme': 'bearer',
-              'name': 'jwtAuth',
-            },
-          ],
-          ...?extra,
-        },
-        validateStatus: validateStatus);
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'jwtAuth',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
 
-    final _response = await _dio.request<Object>(_path,
-        options: _options,
-        cancelToken: cancelToken,
-        onSendProgress: onSendProgress,
-        onReceiveProgress: onReceiveProgress);
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
 
     PaymentCardModel? _responseData;
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null
-          ? null
-          : _serializers.deserialize(rawResponse,
-                  specifiedType: const FullType(PaymentCardModel))
-              as PaymentCardModel;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(PaymentCardModel),
+      ) as PaymentCardModel;
+
     } catch (error, stackTrace) {
       throw DioException(
-          requestOptions: _response.requestOptions,
-          response: _response,
-          type: DioExceptionType.unknown,
-          error: error,
-          stackTrace: stackTrace);
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<PaymentCardModel>(
-        data: _responseData,
-        headers: _response.headers,
-        isRedirect: _response.isRedirect,
-        requestOptions: _response.requestOptions,
-        redirects: _response.redirects,
-        statusCode: _response.statusCode,
-        statusMessage: _response.statusMessage,
-        extra: _response.extra);
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// selectPaymentCardList
@@ -297,91 +316,75 @@ class PaymentCardControllerApi {
   }) async {
     final _path = r'/payment/card';
     final _options = Options(
-        method: r'GET',
-        headers: <String, dynamic>{
-          ...?headers,
-        },
-        extra: <String, dynamic>{
-          'secure': <Map<String, String>>[
-            {
-              'type': 'http',
-              'scheme': 'bearer',
-              'name': 'jwtAuth',
-            },
-          ],
-          ...?extra,
-        },
-        validateStatus: validateStatus);
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'jwtAuth',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
 
     final _queryParameters = <String, dynamic>{
-      if (memberSeq != null)
-        r'memberSeq':
-            encodeQueryParameter(_serializers, memberSeq, const FullType(int)),
-      if (cardNumber != null)
-        r'cardNumber': encodeQueryParameter(
-            _serializers, cardNumber, const FullType(String)),
-      if (defaultYn != null)
-        r'defaultYn': encodeQueryParameter(
-            _serializers, defaultYn, const FullType(String)),
-      if (delYn != null)
-        r'delYn':
-            encodeQueryParameter(_serializers, delYn, const FullType(String)),
-      if (startCreatedAt != null)
-        r'startCreatedAt': encodeQueryParameter(
-            _serializers, startCreatedAt, const FullType(String)),
-      if (endCreatedAt != null)
-        r'endCreatedAt': encodeQueryParameter(
-            _serializers, endCreatedAt, const FullType(String)),
-      if (startUpdatedAt != null)
-        r'startUpdatedAt': encodeQueryParameter(
-            _serializers, startUpdatedAt, const FullType(String)),
-      if (endUpdatedAt != null)
-        r'endUpdatedAt': encodeQueryParameter(
-            _serializers, endUpdatedAt, const FullType(String)),
-      if (password != null)
-        r'password': encodeQueryParameter(
-            _serializers, password, const FullType(String)),
-      if (rrn != null)
-        r'rrn': encodeQueryParameter(_serializers, rrn, const FullType(String)),
-      if (crn != null)
-        r'crn': encodeQueryParameter(_serializers, crn, const FullType(String)),
+      if (memberSeq != null) r'memberSeq': encodeQueryParameter(_serializers, memberSeq, const FullType(int)),
+      if (cardNumber != null) r'cardNumber': encodeQueryParameter(_serializers, cardNumber, const FullType(String)),
+      if (defaultYn != null) r'defaultYn': encodeQueryParameter(_serializers, defaultYn, const FullType(String)),
+      if (delYn != null) r'delYn': encodeQueryParameter(_serializers, delYn, const FullType(String)),
+      if (startCreatedAt != null) r'startCreatedAt': encodeQueryParameter(_serializers, startCreatedAt, const FullType(String)),
+      if (endCreatedAt != null) r'endCreatedAt': encodeQueryParameter(_serializers, endCreatedAt, const FullType(String)),
+      if (startUpdatedAt != null) r'startUpdatedAt': encodeQueryParameter(_serializers, startUpdatedAt, const FullType(String)),
+      if (endUpdatedAt != null) r'endUpdatedAt': encodeQueryParameter(_serializers, endUpdatedAt, const FullType(String)),
+      if (password != null) r'password': encodeQueryParameter(_serializers, password, const FullType(String)),
+      if (rrn != null) r'rrn': encodeQueryParameter(_serializers, rrn, const FullType(String)),
+      if (crn != null) r'crn': encodeQueryParameter(_serializers, crn, const FullType(String)),
     };
 
-    final _response = await _dio.request<Object>(_path,
-        options: _options,
-        queryParameters: _queryParameters,
-        cancelToken: cancelToken,
-        onSendProgress: onSendProgress,
-        onReceiveProgress: onReceiveProgress);
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
 
     BuiltList<PaymentCardModel>? _responseData;
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null
-          ? null
-          : _serializers.deserialize(rawResponse,
-                  specifiedType:
-                      const FullType(BuiltList, [FullType(PaymentCardModel)]))
-              as BuiltList<PaymentCardModel>;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(BuiltList, [FullType(PaymentCardModel)]),
+      ) as BuiltList<PaymentCardModel>;
+
     } catch (error, stackTrace) {
       throw DioException(
-          requestOptions: _response.requestOptions,
-          response: _response,
-          type: DioExceptionType.unknown,
-          error: error,
-          stackTrace: stackTrace);
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<BuiltList<PaymentCardModel>>(
-        data: _responseData,
-        headers: _response.headers,
-        isRedirect: _response.isRedirect,
-        requestOptions: _response.requestOptions,
-        redirects: _response.redirects,
-        statusCode: _response.statusCode,
-        statusMessage: _response.statusMessage,
-        extra: _response.extra);
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// updatePaymentCard
@@ -408,69 +411,79 @@ class PaymentCardControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/payment/card/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
+    final _path = r'/payment/card/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
     final _options = Options(
-        method: r'PUT',
-        headers: <String, dynamic>{
-          ...?headers,
-        },
-        extra: <String, dynamic>{
-          'secure': <Map<String, String>>[
-            {
-              'type': 'http',
-              'scheme': 'bearer',
-              'name': 'jwtAuth',
-            },
-          ],
-          ...?extra,
-        },
-        contentType: 'application/json',
-        validateStatus: validateStatus);
+      method: r'PUT',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'jwtAuth',
+          },
+        ],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
 
     dynamic _bodyData;
 
     try {
       const _type = FullType(PaymentCardRequest);
-      _bodyData =
-          _serializers.serialize(paymentCardRequest, specifiedType: _type);
-    } catch (error, stackTrace) {
+      _bodyData = _serializers.serialize(paymentCardRequest, specifiedType: _type);
+
+    } catch(error, stackTrace) {
       throw DioException(
-          requestOptions: _options.compose(_dio.options, _path),
-          type: DioExceptionType.unknown,
-          error: error,
-          stackTrace: stackTrace);
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
     }
 
-    final _response = await _dio.request<Object>(_path,
-        data: _bodyData,
-        options: _options,
-        cancelToken: cancelToken,
-        onSendProgress: onSendProgress,
-        onReceiveProgress: onReceiveProgress);
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
 
     String? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : rawResponse as String;
+
     } catch (error, stackTrace) {
       throw DioException(
-          requestOptions: _response.requestOptions,
-          response: _response,
-          type: DioExceptionType.unknown,
-          error: error,
-          stackTrace: stackTrace);
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<String>(
-        data: _responseData,
-        headers: _response.headers,
-        isRedirect: _response.isRedirect,
-        requestOptions: _response.requestOptions,
-        redirects: _response.redirects,
-        statusCode: _response.statusCode,
-        statusMessage: _response.statusMessage,
-        extra: _response.extra);
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
+
 }

@@ -56,18 +56,24 @@ class _$AccountAgreementRequestSerializer
   }) sync* {
     if (object.classification != null) {
       yield r'classification';
-      yield serializers.serialize(object.classification,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.classification,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.accountId != null) {
       yield r'accountId';
-      yield serializers.serialize(object.accountId,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.accountId,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.agreeYn != null) {
       yield r'agreeYn';
-      yield serializers.serialize(object.agreeYn,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.agreeYn,
+        specifiedType: const FullType(String),
+      );
     }
   }
 
@@ -95,18 +101,24 @@ class _$AccountAgreementRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'classification':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.classification = valueDes;
           break;
         case r'accountId':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.accountId = valueDes;
           break;
         case r'agreeYn':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.agreeYn = valueDes;
           break;
         default:
@@ -126,11 +138,14 @@ class _$AccountAgreementRequestSerializer
     final result = AccountAgreementRequestBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
-    _deserializeProperties(serializers, serialized,
-        specifiedType: specifiedType,
-        serializedList: serializedList,
-        unhandled: unhandled,
-        result: result);
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
     return result.build();
   }
 }

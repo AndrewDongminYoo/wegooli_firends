@@ -65,28 +65,38 @@ class _$TeamAccountConnectionModelSerializer
   }) sync* {
     if (object.seq != null) {
       yield r'seq';
-      yield serializers.serialize(object.seq,
-          specifiedType: const FullType(int));
+      yield serializers.serialize(
+        object.seq,
+        specifiedType: const FullType(int),
+      );
     }
     if (object.teamSeq != null) {
       yield r'teamSeq';
-      yield serializers.serialize(object.teamSeq,
-          specifiedType: const FullType(int));
+      yield serializers.serialize(
+        object.teamSeq,
+        specifiedType: const FullType(int),
+      );
     }
     if (object.accountId != null) {
       yield r'accountId';
-      yield serializers.serialize(object.accountId,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.accountId,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.joinedAt != null) {
       yield r'joinedAt';
-      yield serializers.serialize(object.joinedAt,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.joinedAt,
+        specifiedType: const FullType(String),
+      );
     }
     if (object.leavedAt != null) {
       yield r'leavedAt';
-      yield serializers.serialize(object.leavedAt,
-          specifiedType: const FullType(String));
+      yield serializers.serialize(
+        object.leavedAt,
+        specifiedType: const FullType(String),
+      );
     }
   }
 
@@ -114,28 +124,38 @@ class _$TeamAccountConnectionModelSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'seq':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
           result.seq = valueDes;
           break;
         case r'teamSeq':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
           result.teamSeq = valueDes;
           break;
         case r'accountId':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.accountId = valueDes;
           break;
         case r'joinedAt':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.joinedAt = valueDes;
           break;
         case r'leavedAt':
-          final valueDes = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.leavedAt = valueDes;
           break;
         default:
@@ -155,11 +175,14 @@ class _$TeamAccountConnectionModelSerializer
     final result = TeamAccountConnectionModelBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
-    _deserializeProperties(serializers, serialized,
-        specifiedType: specifiedType,
-        serializedList: serializedList,
-        unhandled: unhandled,
-        result: result);
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
     return result.build();
   }
 }

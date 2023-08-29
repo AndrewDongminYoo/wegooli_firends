@@ -145,7 +145,7 @@ class GatewayScreen extends StatelessWidget {
                                         RouteItem(
                                             routeDestination:
                                                 AppRoutes.smartKeyAvailable,
-                                            routeName: l10ns.smartKey)
+                                            routeName: l10ns.smartKeyAvailable)
                                       ]))))
                     ]))));
   }

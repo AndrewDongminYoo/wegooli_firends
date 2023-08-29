@@ -179,7 +179,7 @@ class RegisterCreditCard extends GetWidget<RegisterCreditCardController> {
                                     hintText: "YYMMDD",
                                     initialValue:
                                         Get.find<PhoneAuthController>()
-                                            .age1FormatController
+                                            .birthDay
                                             .text,
                                     hintStyle:
                                         CustomTextStyles.bodyLargeGray50003,

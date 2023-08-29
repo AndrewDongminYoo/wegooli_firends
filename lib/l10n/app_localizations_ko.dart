@@ -1,3 +1,4 @@
+// 🌎 Project imports:
 import 'app_localizations.dart';
 
 /// The translations for Korean (`ko`).
@@ -38,7 +39,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get carInfo => '차량 정보';
 
   @override
-  String get carStatusInformation => '차량 상태 정보';
+  String get carStatusInformation => '[Page] 차량 상세정보';
 
   @override
   String get chat => '채팅';
@@ -72,6 +73,9 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get enterYourAptitudePeriodTestExpirationDate => '적성기간 만료일(숫자만)을 입력해주세요.';
+
+  @override
+  String get enterYourVerificationNumber => '인증 번호를 입력하세요.';
 
   @override
   String get expectedUnsubscribeDate => '해지 예정일';
@@ -116,22 +120,22 @@ class AppLocalizationsKo extends AppLocalizations {
   String get lockTheDoor => '문잠금';
 
   @override
-  String get loginRegisterCreditCard => '등록 신용카드';
+  String get loginRegisterCreditCard => '[Page] 신용카드 등록';
 
   @override
-  String get loginRegisterLicensePage => '등록 라이센스 페이지';
+  String get loginRegisterLicensePage => '[Page] 운전면허증 등록';
 
   @override
-  String get loginRegisterSuccessPage => '등록 성공 페이지';
+  String get loginRegisterSuccessPage => '[Page] 입력/가입 성공';
 
   @override
-  String get loginRegisterZipCode => '등록 우편번호/주소 입력';
+  String get loginRegisterZipCode => '[Page] 주소 검색/등록';
 
   @override
-  String get loginValidatePhoneAuth => '전화 인증 로그인';
+  String get loginValidatePhoneAuth => '[Page] 휴대 전화 인증';
 
   @override
-  String get loginWithIdAndPassword => '로그인 ID 및 비밀번호 로그인';
+  String get loginWithIdAndPassword => '[Page] ID/PASSWORD 로그인';
 
   @override
   String get monthlyPayment => '월 결제 금액';
@@ -173,7 +177,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get register => '등록하기';
 
   @override
-  String get registeredCreditCardList => '등록된 신용카드 목록';
+  String get registeredCreditCardList => '[Page] 카드 관리 페이지';
 
   @override
   String get registrationComplete => '등록 완료';
@@ -185,10 +189,10 @@ class AppLocalizationsKo extends AppLocalizations {
   String get reportAnIncident => '사고 접수';
 
   @override
-  String get reservationDatetimePicker => '예약 날짜 선택기';
+  String get reservationDatetimePicker => '[BottomSheet] 예약 날짜 선택기';
 
   @override
-  String get reservationsCheckingPage => '예약 확인 페이지';
+  String get reservationsCheckingPage => '[PopupDialog] 예약 확인 페이지';
 
   @override
   String get schedule => '일정';
@@ -197,7 +201,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get scheduleAnUnsubscribe => '구독 해지 예약';
 
   @override
-  String get sendingCrewInvitation => '팀 초대 보내기';
+  String get sendingCrewInvitation => '[PopupDialog] 팀 초대하기';
 
   @override
   String get signIn => '로그인';
@@ -206,19 +210,22 @@ class AppLocalizationsKo extends AppLocalizations {
   String get signUp => '회원가입';
 
   @override
-  String get signupAcceptTerms => '동의 약관 보기';
+  String get signupAcceptTerms => '[Page] 이용 약관 동의';
 
   @override
-  String get smartKey => '스마트 키';
+  String get smartKey => '스마트키';
 
   @override
-  String get smartKeyNotAvailable => '스마트 키 (사용불가)';
+  String get smartKeyAvailable => '[Page] 스마트키 (사용가능)';
+
+  @override
+  String get smartKeyNotAvailable => '[Page] 스마트키 (사용중)';
 
   @override
   String get socialSecurityNumberFirstDigit => '주민등록번호 앞자리';
 
   @override
-  String get splashLoadingScreen => '스플래시 화면';
+  String get splashLoadingScreen => '[Page] 스플래시 화면';
 
   @override
   String get status => '상태';
@@ -227,10 +234,10 @@ class AppLocalizationsKo extends AppLocalizations {
   String get subscription => '구독';
 
   @override
-  String get subscriptionInformation => '구독 정보';
+  String get subscriptionInfoNoService => '[Page] 서비스 정보 없음';
 
   @override
-  String get subscriptionInfoNoService => '서비스 정보 없음';
+  String get subscriptionInformation => '구독 정보';
 
   @override
   String get subscriptionsAreRestrictedToThoseUnderTheAgeOf26 => '· 만 26세 미만은 가입이 제한됩니다.';
@@ -242,7 +249,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get teamMembers => '팀원';
 
   @override
-  String get teamScheduleShare => '팀 스케줄 공유';
+  String get teamScheduleShare => '[Page] 팀 스케줄 공유';
 
   @override
   String get termsOfServiceRequiredAgreement => '서비스 이용약관 (필수)';
@@ -251,16 +258,16 @@ class AppLocalizationsKo extends AppLocalizations {
   String get turnOnHazardLights => '비상등';
 
   @override
-  String get unsubscriptionConfirm => '구독 취소 확인';
+  String get unsubscriptionConfirm => '[PopupDialog] 구독 해지';
 
   @override
-  String get unsubscriptionConfirmWarn => '구독 취소 확인 경고';
+  String get unsubscriptionConfirmWarn => '[PopupDialog] 구독 취소 확인 경고';
 
   @override
-  String get upcomingUnsubscriptionInfo => '예정된 구독 취소 정보';
+  String get upcomingUnsubscriptionInfo => '[Page] 예정된 구독 취소 정보';
 
   @override
-  String get upcomingUnsubscriptionView => '예정된 구독 취소 보기';
+  String get upcomingUnsubscriptionView => '[Page] 예정된 구독 취소 보기';
 
   @override
   String get useOfPersonalInfoForMarketing => '마케팅 목적 개인정보 수집/이용 (선택)';
@@ -269,7 +276,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get viewSchedules => '일정 확인';
 
   @override
-  String get youCanCancelYourSubscriptionWithinTheRemainingPeriod => '해지 시 위굴리 프렌즈의 모든 혜택을 잃게 됩니다. 남은 기간 내에 해지를 취소하실 수 있습니다.';
+  String get youCanCancelAnytime => '해지 시 위굴리 프렌즈의 모든 혜택을 잃게 됩니다. 남은 기간 내에 해지를 취소하실 수 있습니다.';
 
   @override
   String get youHaveNoAccount => '계정이 없으신가요?';

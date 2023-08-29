@@ -1,10 +1,15 @@
+// 🎯 Dart imports:
 import 'dart:async';
 
+// 🐦 Flutter imports:
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
+
+// 📦 Package imports:
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart' as intl;
 
+// 🌎 Project imports:
 import 'app_localizations_ko.dart';
 
 /// Callers can lookup localized strings with an instance of AppLocalizations
@@ -160,7 +165,7 @@ abstract class AppLocalizations {
   /// No description provided for @carStatusInformation.
   ///
   /// In ko, this message translates to:
-  /// **'차량 상태 정보'**
+  /// **'[Page] 차량 상세정보'**
   String get carStatusInformation;
 
   /// No description provided for @chat.
@@ -228,6 +233,12 @@ abstract class AppLocalizations {
   /// In ko, this message translates to:
   /// **'적성기간 만료일(숫자만)을 입력해주세요.'**
   String get enterYourAptitudePeriodTestExpirationDate;
+
+  /// No description provided for @enterYourVerificationNumber.
+  ///
+  /// In ko, this message translates to:
+  /// **'인증 번호를 입력하세요.'**
+  String get enterYourVerificationNumber;
 
   /// No description provided for @expectedUnsubscribeDate.
   ///
@@ -316,37 +327,37 @@ abstract class AppLocalizations {
   /// No description provided for @loginRegisterCreditCard.
   ///
   /// In ko, this message translates to:
-  /// **'등록 신용카드'**
+  /// **'[Page] 신용카드 등록'**
   String get loginRegisterCreditCard;
 
   /// No description provided for @loginRegisterLicensePage.
   ///
   /// In ko, this message translates to:
-  /// **'등록 라이센스 페이지'**
+  /// **'[Page] 운전면허증 등록'**
   String get loginRegisterLicensePage;
 
   /// No description provided for @loginRegisterSuccessPage.
   ///
   /// In ko, this message translates to:
-  /// **'등록 성공 페이지'**
+  /// **'[Page] 입력/가입 성공'**
   String get loginRegisterSuccessPage;
 
   /// No description provided for @loginRegisterZipCode.
   ///
   /// In ko, this message translates to:
-  /// **'등록 우편번호/주소 입력'**
+  /// **'[Page] 주소 검색/등록'**
   String get loginRegisterZipCode;
 
   /// No description provided for @loginValidatePhoneAuth.
   ///
   /// In ko, this message translates to:
-  /// **'전화 인증 로그인'**
+  /// **'[Page] 휴대 전화 인증'**
   String get loginValidatePhoneAuth;
 
   /// No description provided for @loginWithIdAndPassword.
   ///
   /// In ko, this message translates to:
-  /// **'로그인 ID 및 비밀번호 로그인'**
+  /// **'[Page] ID/PASSWORD 로그인'**
   String get loginWithIdAndPassword;
 
   /// No description provided for @monthlyPayment.
@@ -430,7 +441,7 @@ abstract class AppLocalizations {
   /// No description provided for @registeredCreditCardList.
   ///
   /// In ko, this message translates to:
-  /// **'등록된 신용카드 목록'**
+  /// **'[Page] 카드 관리 페이지'**
   String get registeredCreditCardList;
 
   /// No description provided for @registrationComplete.
@@ -454,13 +465,13 @@ abstract class AppLocalizations {
   /// No description provided for @reservationDatetimePicker.
   ///
   /// In ko, this message translates to:
-  /// **'예약 날짜 선택기'**
+  /// **'[BottomSheet] 예약 날짜 선택기'**
   String get reservationDatetimePicker;
 
   /// No description provided for @reservationsCheckingPage.
   ///
   /// In ko, this message translates to:
-  /// **'예약 확인 페이지'**
+  /// **'[PopupDialog] 예약 확인 페이지'**
   String get reservationsCheckingPage;
 
   /// No description provided for @schedule.
@@ -478,7 +489,7 @@ abstract class AppLocalizations {
   /// No description provided for @sendingCrewInvitation.
   ///
   /// In ko, this message translates to:
-  /// **'팀 초대 보내기'**
+  /// **'[PopupDialog] 팀 초대하기'**
   String get sendingCrewInvitation;
 
   /// No description provided for @signIn.
@@ -496,19 +507,25 @@ abstract class AppLocalizations {
   /// No description provided for @signupAcceptTerms.
   ///
   /// In ko, this message translates to:
-  /// **'동의 약관 보기'**
+  /// **'[Page] 이용 약관 동의'**
   String get signupAcceptTerms;
 
   /// No description provided for @smartKey.
   ///
   /// In ko, this message translates to:
-  /// **'스마트 키'**
+  /// **'스마트키'**
   String get smartKey;
+
+  /// No description provided for @smartKeyAvailable.
+  ///
+  /// In ko, this message translates to:
+  /// **'[Page] 스마트키 (사용가능)'**
+  String get smartKeyAvailable;
 
   /// No description provided for @smartKeyNotAvailable.
   ///
   /// In ko, this message translates to:
-  /// **'스마트 키 (사용불가)'**
+  /// **'[Page] 스마트키 (사용중)'**
   String get smartKeyNotAvailable;
 
   /// No description provided for @socialSecurityNumberFirstDigit.
@@ -520,7 +537,7 @@ abstract class AppLocalizations {
   /// No description provided for @splashLoadingScreen.
   ///
   /// In ko, this message translates to:
-  /// **'스플래시 화면'**
+  /// **'[Page] 스플래시 화면'**
   String get splashLoadingScreen;
 
   /// No description provided for @status.
@@ -535,17 +552,17 @@ abstract class AppLocalizations {
   /// **'구독'**
   String get subscription;
 
+  /// No description provided for @subscriptionInfoNoService.
+  ///
+  /// In ko, this message translates to:
+  /// **'[Page] 서비스 정보 없음'**
+  String get subscriptionInfoNoService;
+
   /// No description provided for @subscriptionInformation.
   ///
   /// In ko, this message translates to:
   /// **'구독 정보'**
   String get subscriptionInformation;
-
-  /// No description provided for @subscriptionInfoNoService.
-  ///
-  /// In ko, this message translates to:
-  /// **'서비스 정보 없음'**
-  String get subscriptionInfoNoService;
 
   /// No description provided for @subscriptionsAreRestrictedToThoseUnderTheAgeOf26.
   ///
@@ -568,7 +585,7 @@ abstract class AppLocalizations {
   /// No description provided for @teamScheduleShare.
   ///
   /// In ko, this message translates to:
-  /// **'팀 스케줄 공유'**
+  /// **'[Page] 팀 스케줄 공유'**
   String get teamScheduleShare;
 
   /// No description provided for @termsOfServiceRequiredAgreement.
@@ -586,25 +603,25 @@ abstract class AppLocalizations {
   /// No description provided for @unsubscriptionConfirm.
   ///
   /// In ko, this message translates to:
-  /// **'구독 취소 확인'**
+  /// **'[PopupDialog] 구독 해지'**
   String get unsubscriptionConfirm;
 
   /// No description provided for @unsubscriptionConfirmWarn.
   ///
   /// In ko, this message translates to:
-  /// **'구독 취소 확인 경고'**
+  /// **'[PopupDialog] 구독 취소 확인 경고'**
   String get unsubscriptionConfirmWarn;
 
   /// No description provided for @upcomingUnsubscriptionInfo.
   ///
   /// In ko, this message translates to:
-  /// **'예정된 구독 취소 정보'**
+  /// **'[Page] 예정된 구독 취소 정보'**
   String get upcomingUnsubscriptionInfo;
 
   /// No description provided for @upcomingUnsubscriptionView.
   ///
   /// In ko, this message translates to:
-  /// **'예정된 구독 취소 보기'**
+  /// **'[Page] 예정된 구독 취소 보기'**
   String get upcomingUnsubscriptionView;
 
   /// No description provided for @useOfPersonalInfoForMarketing.
@@ -619,11 +636,11 @@ abstract class AppLocalizations {
   /// **'일정 확인'**
   String get viewSchedules;
 
-  /// No description provided for @youCanCancelYourSubscriptionWithinTheRemainingPeriod.
+  /// No description provided for @youCanCancelAnytime.
   ///
   /// In ko, this message translates to:
   /// **'해지 시 위굴리 프렌즈의 모든 혜택을 잃게 됩니다. 남은 기간 내에 해지를 취소하실 수 있습니다.'**
-  String get youCanCancelYourSubscriptionWithinTheRemainingPeriod;
+  String get youCanCancelAnytime;
 
   /// No description provided for @youHaveNoAccount.
   ///

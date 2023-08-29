@@ -95,7 +95,7 @@ class SocialSecurity7NumberInput extends StatelessWidget {
     return CustomTextFormField(
         width: getHorizontalSize(158),
         controller:
-            controller.age2FormatController,
+            controller.socialId,
         margin: getMargin(top: 4),
         contentPadding: getPadding(
             left: 12,
@@ -139,7 +139,7 @@ class Birthday6NumberInput extends StatelessWidget {
     return CustomTextFormField(
         width: getHorizontalSize(158),
         controller:
-            controller.age1FormatController,
+            controller.birthDay,
         margin: getMargin(top: 4),
         inputFormatters: [
           FilteringTextInputFormatter
@@ -177,7 +177,7 @@ class NameTextInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomTextFormField(
-        controller: controller.namePromptController,
+        controller: controller.fullName,
         margin: getMargin(top: 4),
         contentPadding: getPadding(
             left: 12, top: 14, right: 12, bottom: 14),

@@ -74,7 +74,7 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getTeamControllerApi();
-final TeamRequest teamRequest = ;
+final TeamRequest teamRequest;
 
 try {
     final response = api.insertTeam(teamRequest);
@@ -269,7 +269,7 @@ import 'package:wegooli_friends/api.dart';
 
 final api = WegooliFriends().getTeamControllerApi();
 final int teamSeq = 56;
-final TeamRequest teamRequest = ;
+final TeamRequest teamRequest;
 
 try {
     final response = api.updateTeam(teamSeq, teamRequest);

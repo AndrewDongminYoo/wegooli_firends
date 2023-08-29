@@ -159,7 +159,7 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getMetisControllerApi();
-final DeviceControlResultDTO dto = ;
+final DeviceControlResultDTO dto;
 
 try {
     final response = api.receiveTerminalResponse(dto);

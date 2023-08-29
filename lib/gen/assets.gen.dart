@@ -124,6 +124,12 @@ class $AssetsLottiesGen {
 class $AssetsSvgGen {
   const $AssetsSvgGen();
 
+  /// File path: assets/svg/arrow_back.svg
+  SvgGenImage get arrowBack => const SvgGenImage('assets/svg/arrow_back.svg');
+
+  /// File path: assets/svg/arrow_forward.svg
+  SvgGenImage get arrowForward => const SvgGenImage('assets/svg/arrow_forward.svg');
+
   /// File path: assets/svg/img_arrow_left.svg
   SvgGenImage get imgArrowLeft => const SvgGenImage('assets/svg/img_arrow_left.svg');
 
@@ -267,6 +273,8 @@ class $AssetsSvgGen {
 
   /// List of all assets
   List<SvgGenImage> get values => [
+        arrowBack,
+        arrowForward,
         imgArrowLeft,
         imgArrowRight,
         imgArrowUp,

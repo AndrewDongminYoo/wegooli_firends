@@ -27,7 +27,7 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getTerminalControllerApi();
-final TerminalRequest terminalRequest = ;
+final TerminalRequest terminalRequest;
 
 try {
     api.registTerminal(terminalRequest);
@@ -116,7 +116,7 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getTerminalControllerApi();
-final TerminalRequest request = ;
+final TerminalRequest request;
 
 try {
     final response = api.selectTerminalList(request);
@@ -162,7 +162,7 @@ import 'package:wegooli_friends/api.dart';
 
 final api = WegooliFriends().getTerminalControllerApi();
 final int seq = 56;
-final TerminalUpdateRequest terminalUpdateRequest = ;
+final TerminalUpdateRequest terminalUpdateRequest;
 
 try {
     api.updateTerminal(seq, terminalUpdateRequest);

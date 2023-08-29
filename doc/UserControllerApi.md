@@ -79,7 +79,7 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getUserControllerApi();
-final UserDetailsDTO userDetailsDTO = ;
+final UserDetailsDTO userDetailsDTO;
 
 try {
     final response = api.generateToken(userDetailsDTO);
@@ -124,7 +124,7 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getUserControllerApi();
-final Account account = ;
+final Account account;
 
 try {
     final response = api.getUserDetail(account);
@@ -303,7 +303,7 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getUserControllerApi();
-final UserDTO userDTO = ;
+final UserDTO userDTO;
 
 try {
     final response = api.signup(userDTO);

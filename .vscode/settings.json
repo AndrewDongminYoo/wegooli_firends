@@ -40,12 +40,7 @@
   "dart.enableSdkFormatter": true,
   "dart.flutterCreateAndroidLanguage": "kotlin",
   "dart.flutterCreateIOSLanguage": "swift",
-  "dart.flutterCreatePlatforms": [
-    "android",
-    "ios",
-    "macos",
-    "web"
-  ],
+  "dart.flutterCreatePlatforms": ["android", "ios", "macos", "web"],
   "dart.flutterHotReloadOnSave": "all",
   "dart.flutterWebRenderer": "auto",
   "dart.openDevTools": "flutter",

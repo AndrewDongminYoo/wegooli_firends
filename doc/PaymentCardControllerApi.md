@@ -73,7 +73,7 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getPaymentCardControllerApi();
-final PaymentCardRequest paymentCardRequest = ;
+final PaymentCardRequest paymentCardRequest;
 
 try {
     final response = api.insertPaymentCard(paymentCardRequest);
@@ -229,7 +229,7 @@ import 'package:wegooli_friends/api.dart';
 
 final api = WegooliFriends().getPaymentCardControllerApi();
 final int seq = 56;
-final PaymentCardRequest paymentCardRequest = ;
+final PaymentCardRequest paymentCardRequest;
 
 try {
     final response = api.updatePaymentCard(seq, paymentCardRequest);

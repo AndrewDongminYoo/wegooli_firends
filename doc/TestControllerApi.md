@@ -24,7 +24,7 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getTestControllerApi();
-final TestModel model = ;
+final TestModel model;
 
 try {
     final response = api.callTest(model);

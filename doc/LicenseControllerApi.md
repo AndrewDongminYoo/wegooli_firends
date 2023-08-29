@@ -120,7 +120,7 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getLicenseControllerApi();
-final LicenseRequest licenseRequest = ;
+final LicenseRequest licenseRequest;
 
 try {
     final response = api.insertLicense(licenseRequest);
@@ -210,7 +210,7 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getLicenseControllerApi();
-final LicenseRequest request = ;
+final LicenseRequest request;
 
 try {
     final response = api.selectLicenseList(request);
@@ -298,7 +298,7 @@ import 'package:wegooli_friends/api.dart';
 
 final api = WegooliFriends().getLicenseControllerApi();
 final int seq = 56;
-final LicenseRequest licenseRequest = ;
+final LicenseRequest licenseRequest;
 
 try {
     final response = api.updateLicense(seq, licenseRequest);

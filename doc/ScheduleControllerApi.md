@@ -72,7 +72,7 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getScheduleControllerApi();
-final ScheduleRequest scheduleRequest = ;
+final ScheduleRequest scheduleRequest;
 
 try {
     api.registSchedule(scheduleRequest);
@@ -213,7 +213,7 @@ import 'package:wegooli_friends/api.dart';
 
 final api = WegooliFriends().getScheduleControllerApi();
 final int seq = 56;
-final ScheduleRequest scheduleRequest = ;
+final ScheduleRequest scheduleRequest;
 
 try {
     api.updateSchedule(seq, scheduleRequest);

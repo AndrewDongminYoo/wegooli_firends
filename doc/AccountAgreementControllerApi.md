@@ -75,7 +75,7 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getAccountAgreementControllerApi();
-final AccountAgreementRequest accountAgreementRequest = ;
+final AccountAgreementRequest accountAgreementRequest;
 
 try {
     final response = api.insertAccountAgreement(accountAgreementRequest);
@@ -224,7 +224,7 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getAccountAgreementControllerApi();
-final AccountAgreementRequest accountAgreementRequest = ;
+final AccountAgreementRequest accountAgreementRequest;
 
 try {
     final response = api.updateAccountAgreement(accountAgreementRequest);

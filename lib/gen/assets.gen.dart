@@ -7,12 +7,9 @@
 // ignore_for_file: type=lint
 // ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal,deprecated_member_use
 
-// 🐦 Flutter imports:
-import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-
-// 📦 Package imports:
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
 
 class $AssetsImagesGen {
@@ -177,6 +174,9 @@ class $AssetsSvgGen {
   /// File path: assets/svg/img_close.svg
   SvgGenImage get imgClose => const SvgGenImage('assets/svg/img_close.svg');
 
+  /// File path: assets/svg/img_close_btn.svg
+  SvgGenImage get imgCloseBtn => const SvgGenImage('assets/svg/img_close_btn.svg');
+
   /// File path: assets/svg/img_close_gray_400_round.svg
   SvgGenImage get imgCloseGray400Round => const SvgGenImage('assets/svg/img_close_gray_400_round.svg');
 
@@ -292,6 +292,7 @@ class $AssetsSvgGen {
         imgChatGray500,
         imgChatOnPrimary,
         imgClose,
+        imgCloseBtn,
         imgCloseGray400Round,
         imgCloseGray400Sharp,
         imgClosePrimaryContainer,

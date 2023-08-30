@@ -17,6 +17,7 @@ export 'no_subscription/_screen.dart';
 export 'phone_auth/_screen.dart';
 export 'phone_auth/binding/_binding.dart';
 export 'phone_auth/controller/_controller.dart';
+export 'profile_info/_screen.dart';
 export 'register_credit_card/_screen.dart';
 export 'register_credit_card/binding/_binding.dart';
 export 'register_credit_card/controller/_controller.dart';

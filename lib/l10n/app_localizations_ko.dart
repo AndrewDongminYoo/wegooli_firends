@@ -1,3 +1,4 @@
+// 🌎 Project imports:
 import 'app_localizations.dart';
 
 /// The translations for Korean (`ko`).
@@ -39,6 +40,9 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get carStatusInformation => '[Page] 차량 상세정보';
+
+  @override
+  String get changeYourPersonalInformation => '개인정보 변경하기';
 
   @override
   String get chat => '채팅';
@@ -140,7 +144,10 @@ class AppLocalizationsKo extends AppLocalizations {
   String get monthlyPayment => '월 결제 금액';
 
   @override
-  String get myPage => '[Page] 마이페이지';
+  String get myPage => '마이페이지';
+
+  @override
+  String get myProfileScreen => '[Page] 마이페이지';
 
   @override
   String get nickname => '닉네임';
@@ -192,6 +199,9 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get reservationsCheckingPage => '[PopupDialog] 예약 확인 페이지';
+
+  @override
+  String get settings => '설정';
 
   @override
   String get schedule => '일정';

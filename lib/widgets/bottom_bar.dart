@@ -50,7 +50,8 @@ class CustomBottomBar extends StatelessWidget {
                 top: BorderSide(
                     color: appTheme.blueGray30033,
                     width: getHorizontalSize(1)))),
-        child: Obx(() => BottomNavigationBar(
+        child: Obx(
+          () => BottomNavigationBar(
             backgroundColor: Colors.transparent,
             showSelectedLabels: false,
             showUnselectedLabels: false,
@@ -69,39 +70,40 @@ class CustomBottomBar extends StatelessWidget {
                             svgPath: bottomMenuList[index].iconPath,
                             height: getSize(24),
                             width: getSize(24),
-                            color: theme.colorScheme.onError),
+                            color: appTheme.gray400),
                         Padding(
                             padding: getPadding(top: 4),
                             child: Text(bottomMenuList[index].title ?? "",
-                                style: CustomTextStyles.bodySmallInter10OnError
-                                    .copyWith(
-                                        color: theme.colorScheme.onError))),
+                                style: CustomTextStyles.bodySmallInter10Gray400
+                                    .copyWith(color: appTheme.gray400)))
                       ]),
                   activeIcon: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        CustomImageView(
-                            svgPath: bottomMenuList[index].activeIconPath,
-                            height: getSize(24),
-                            width: getSize(24),
-                            color: theme.colorScheme.onPrimary),
-                        Padding(
-                            padding: getPadding(top: 4),
-                            child: Text(bottomMenuList[index].title ?? "",
-                                style: CustomTextStyles.bodySmallInterOnPrimary
-                                    .copyWith(
-                                        color: theme.colorScheme.onPrimary,
-                                        letterSpacing:
-                                            getHorizontalSize(0.02)))),
-                      ]),
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      CustomImageView(
+                          svgPath: bottomMenuList[index].activeIconPath,
+                          height: getSize(24),
+                          width: getSize(24),
+                          color: theme.colorScheme.onPrimary),
+                      Padding(
+                        padding: getPadding(top: 4),
+                        child: Text(
+                          bottomMenuList[index].title ?? "",
+                          style: CustomTextStyles.bodySmallInterOnPrimary,
+                        ),
+                      ),
+                    ],
+                  ),
                   label: '');
             }),
             onTap: (index) {
               selectedIndex.value = index;
               onChanged?.call(bottomMenuList[index].type);
-            })));
+            },
+          ),
+        ));
   }
 }
 

@@ -1,10 +1,15 @@
+// 🎯 Dart imports:
 import 'dart:async';
 
+// 🐦 Flutter imports:
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
+
+// 📦 Package imports:
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart' as intl;
 
+// 🌎 Project imports:
 import 'app_localizations_ko.dart';
 
 /// Callers can lookup localized strings with an instance of AppLocalizations
@@ -162,6 +167,12 @@ abstract class AppLocalizations {
   /// In ko, this message translates to:
   /// **'[Page] 차량 상세정보'**
   String get carStatusInformation;
+
+  /// No description provided for @changeYourPersonalInformation.
+  ///
+  /// In ko, this message translates to:
+  /// **'개인정보 변경하기'**
+  String get changeYourPersonalInformation;
 
   /// No description provided for @chat.
   ///
@@ -364,8 +375,14 @@ abstract class AppLocalizations {
   /// No description provided for @myPage.
   ///
   /// In ko, this message translates to:
-  /// **'[Page] 마이페이지'**
+  /// **'마이페이지'**
   String get myPage;
+
+  /// No description provided for @myProfileScreen.
+  ///
+  /// In ko, this message translates to:
+  /// **'[Page] 마이페이지'**
+  String get myProfileScreen;
 
   /// No description provided for @nickname.
   ///
@@ -468,6 +485,12 @@ abstract class AppLocalizations {
   /// In ko, this message translates to:
   /// **'[PopupDialog] 예약 확인 페이지'**
   String get reservationsCheckingPage;
+
+  /// No description provided for @settings.
+  ///
+  /// In ko, this message translates to:
+  /// **'설정'**
+  String get settings;
 
   /// No description provided for @schedule.
   ///

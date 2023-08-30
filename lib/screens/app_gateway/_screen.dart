@@ -171,7 +171,7 @@ class GatewayScreen extends StatelessWidget {
                                         RouteItem(
                                             routeDestination:
                                                 AppRoutes.myProfile,
-                                            routeName: l10ns.myPage),
+                                            routeName: l10ns.myProfileScreen),
                                       ]))))
                     ]))));
   }

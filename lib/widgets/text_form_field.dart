@@ -2,6 +2,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+// 📦 Package imports:
+import 'package:get/get.dart';
+
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
@@ -90,6 +93,7 @@ class CustomTextFormField extends StatelessWidget {
           decoration: decoration,
           validator: validator,
           enabled: enabled,
+          onEditingComplete: () => FocusScope.of(Get.context!).nextFocus(),
           initialValue: initialValue));
   InputDecoration get decoration => InputDecoration(
       hintText: hintText ?? "",
@@ -138,9 +142,7 @@ extension TextFormFieldStyleHelper on CustomTextFormField {
 
 InputBorder createBorderSide(Color borderColor, {double radius = 5.0}) {
   return OutlineInputBorder(
-    borderRadius: BorderRadius.circular(
-      getHorizontalSize(radius),
-    ),
+    borderRadius: BorderRadius.circular(getHorizontalSize(radius)),
     borderSide: BorderSide(
       color: borderColor,
       width: 1,

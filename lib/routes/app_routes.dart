@@ -1,6 +1,5 @@
 // 📦 Package imports:
 import 'package:get/get.dart';
-import 'package:wegooli_friends/screens/profile_info/_screen.dart';
 
 // 🌎 Project imports:
 import '/screens/screens.dart';

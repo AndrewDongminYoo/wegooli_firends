@@ -127,7 +127,7 @@ class RegisterZipCode extends GetWidget<RegisterZipCodeController> {
                                     text: "주소 검색",
                                     margin: getMargin(left: 4, top: 27),
                                     buttonStyle: CustomButtonStyles
-                                        .fillPrimaryTL5
+                                        .fillPrimaryC5
                                         .copyWith(
                                             fixedSize:
                                                 MaterialStateProperty.all<Size>(
@@ -434,7 +434,7 @@ class RegisterZipCode extends GetWidget<RegisterZipCodeController> {
                     text: "입력 완료",
                     // TODO disabled일 때 스타일 정의하기
                     // isDisabled: !controller.isValid,
-                    buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
+                    buttonStyle: CustomButtonStyles.fillPrimaryC26.copyWith(
                         fixedSize: MaterialStateProperty.all<Size>(
                             Size(double.maxFinite, getVerticalSize(52)))),
                     buttonTextStyle: CustomTextStyles.titleMedium18,

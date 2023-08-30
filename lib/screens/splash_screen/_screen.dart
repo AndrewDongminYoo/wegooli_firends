@@ -43,8 +43,8 @@ class SplashLoading extends StatelessWidget {
                                             letterSpacing:
                                                 getHorizontalSize(0.03))),
                                 CustomImageView(
-                                    onTap: () => AlertDialog(
-                                        title: Text('Hello World!!')),
+                                    onTap: () => Get.dialog(AlertDialog(
+                                        title: Text('Hello World!!'))),
                                     svgPath:
                                         Assets.svg.imgWegooliBlueGray900.path,
                                     fit: BoxFit.fitWidth,

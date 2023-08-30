@@ -23,7 +23,7 @@ class ReservationDatetimePickerBottomSheet extends StatelessWidget {
             child: Container(
                 padding: getPadding(top: 16, bottom: 16),
                 decoration: AppDecoration.fillOnPrimaryContainer
-                    .copyWith(borderRadius: BorderRadiusStyle.customBorderTL10),
+                    .copyWith(borderRadius: BorderRadiusStyle.customBorderT10),
                 child: Column(
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -254,7 +254,7 @@ class ReservationDatetimePickerBottomSheet extends StatelessWidget {
                                 CustomElevatedButton(
                                     text: l10ns.cancel,
                                     buttonStyle: CustomButtonStyles
-                                        .fillGray400TL26
+                                        .fillGray400C26
                                         .copyWith(
                                             fixedSize:
                                                 MaterialStateProperty.all<Size>(
@@ -265,7 +265,7 @@ class ReservationDatetimePickerBottomSheet extends StatelessWidget {
                                 CustomElevatedButton(
                                     text: l10ns.confirm,
                                     margin: getMargin(left: 8),
-                                    buttonStyle: CustomButtonStyles.fillPrimary
+                                    buttonStyle: CustomButtonStyles.fillPrimaryC26
                                         .copyWith(
                                             fixedSize:
                                                 MaterialStateProperty.all<Size>(

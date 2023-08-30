@@ -318,7 +318,7 @@ class RegisterLicense extends GetWidget<RegisterLicenseController> {
                 // decoration: AppDecoration.shadow,
                 child: CustomElevatedButton(
                     text: l10ns.registrationComplete,
-                    buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
+                    buttonStyle: CustomButtonStyles.fillPrimaryC26.copyWith(
                         fixedSize: MaterialStateProperty.all<Size>(
                             Size(double.maxFinite, getVerticalSize(52)))),
                     buttonTextStyle: CustomTextStyles.titleMedium18,

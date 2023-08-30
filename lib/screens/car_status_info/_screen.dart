@@ -47,7 +47,7 @@ class CarStatusInformation extends StatelessWidget {
                           padding: getPadding(
                               left: 10, top: 20, right: 10, bottom: 20),
                           decoration: AppDecoration.outline.copyWith(
-                              borderRadius: BorderRadiusStyle.roundedBorder10),
+                              borderRadius: BorderRadiusStyle.circleBorder10),
                           child: Column(
                               mainAxisSize: MainAxisSize.min,
                               mainAxisAlignment: MainAxisAlignment.end,
@@ -172,7 +172,7 @@ class CarStatusInformation extends StatelessWidget {
                                     text: l10ns.cancel,
                                     margin: getMargin(top: 21, right: 9),
                                     buttonStyle: CustomButtonStyles
-                                        .fillPrimaryTL5
+                                        .fillPrimaryC5
                                         .copyWith(
                                             fixedSize:
                                                 MaterialStateProperty.all<Size>(

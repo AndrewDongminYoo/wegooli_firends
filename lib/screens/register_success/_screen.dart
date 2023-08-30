@@ -108,7 +108,7 @@ class RegisterSuccess extends GetWidget<RegisterSuccessController> {
                 margin: getMargin(left: 16, right: 16, bottom: 29),
                 child: CustomElevatedButton(
                     text: l10ns.getStarted,
-                    buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
+                    buttonStyle: CustomButtonStyles.fillPrimaryC26.copyWith(
                         fixedSize: MaterialStateProperty.all<Size>(
                             Size(double.maxFinite, getVerticalSize(52)))),
                     buttonTextStyle: CustomTextStyles.titleMedium18,

@@ -15,7 +15,7 @@ class UnsubscriptionConfirmWarnDialog extends StatelessWidget {
     return Container(
         width: getHorizontalSize(328),
         decoration: AppDecoration.fillOnPrimaryContainer
-            .copyWith(borderRadius: BorderRadiusStyle.roundedBorder10),
+            .copyWith(borderRadius: BorderRadiusStyle.circleBorder10),
         child: Column(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.end,
@@ -57,7 +57,7 @@ class UnsubscriptionConfirmWarnDialog extends StatelessWidget {
                       children: [
                         CustomElevatedButton(
                             text: l10ns.cancel,
-                            buttonStyle: CustomButtonStyles.fillGray400BL10
+                            buttonStyle: CustomButtonStyles.fillGray400B10
                                 .copyWith(
                                     fixedSize: MaterialStateProperty.all<Size>(
                                         Size(getHorizontalSize(164),

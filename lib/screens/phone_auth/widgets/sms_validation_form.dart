@@ -76,7 +76,7 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
                         },
                         text: "인증번호 발송",
                         margin: getMargin(top: 10),
-                        buttonStyle: CustomButtonStyles.fillPrimaryTL5.copyWith(
+                        buttonStyle: CustomButtonStyles.fillPrimaryC5.copyWith(
                             fixedSize: MaterialStateProperty.all<Size>(
                                 Size(double.maxFinite, getVerticalSize(48)))),
                         buttonTextStyle: theme.textTheme.titleMedium!)),
@@ -134,7 +134,7 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
                         text: "확인",
                         width: getHorizontalSize(160),
                         margin: getMargin(top: 10),
-                        buttonStyle: CustomButtonStyles.fillPrimaryTL5,
+                        buttonStyle: CustomButtonStyles.fillPrimaryC5,
                         buttonTextStyle: theme.textTheme.titleMedium!),
                   ])
             ]));

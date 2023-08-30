@@ -409,7 +409,7 @@ class SmartKeyNotAvailable extends StatelessWidget {
                                                     text: l10ns
                                                         .hongGilDongIsUsingIt,
                                                     buttonStyle: CustomButtonStyles
-                                                        .fillOnPrimary
+                                                        .fillOnPrimaryC22
                                                         .copyWith(
                                                             fixedSize: MaterialStateProperty.all<Size>(Size(
                                                                 double
@@ -429,7 +429,7 @@ class SmartKeyNotAvailable extends StatelessWidget {
                                       child: CustomImageView(
                                           svgPath: Assets.svg.imgEdit.path)),
                                   buttonStyle: CustomButtonStyles
-                                      .fillPrimary
+                                      .fillPrimaryC26
                                       .copyWith(
                                           fixedSize:
                                               MaterialStateProperty.all<Size>(

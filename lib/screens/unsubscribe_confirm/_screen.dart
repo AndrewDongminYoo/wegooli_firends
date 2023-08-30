@@ -64,7 +64,7 @@ class UnsubscriptionConfirm extends StatelessWidget {
                                 CustomElevatedButton(
                                     text: l10ns.cancel,
                                     buttonStyle: CustomButtonStyles
-                                        .fillGray400TL26
+                                        .fillGray400C26
                                         .copyWith(
                                             fixedSize:
                                                 MaterialStateProperty.all<Size>(
@@ -74,7 +74,7 @@ class UnsubscriptionConfirm extends StatelessWidget {
                                         CustomTextStyles.titleMedium18),
                                 CustomElevatedButton(
                                     text: l10ns.cancelingASubscription,
-                                    buttonStyle: CustomButtonStyles.fillPrimary
+                                    buttonStyle: CustomButtonStyles.fillPrimaryC26
                                         .copyWith(
                                             fixedSize:
                                                 MaterialStateProperty.all<Size>(

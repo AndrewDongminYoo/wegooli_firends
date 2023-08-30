@@ -19,7 +19,7 @@ class ValidatePhoneCompleteButton extends GetWidget<PhoneAuthController> {
         margin: getMargin(left: 16, right: 16, bottom: 29),
         child: CustomElevatedButton(
             text: "인증 완료",
-            buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
+            buttonStyle: CustomButtonStyles.fillPrimaryC26.copyWith(
                 fixedSize: MaterialStateProperty.all<Size>(
                     Size(double.maxFinite, getVerticalSize(52)))),
             buttonTextStyle: CustomTextStyles.titleMedium18,

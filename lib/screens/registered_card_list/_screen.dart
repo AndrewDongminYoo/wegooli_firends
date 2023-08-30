@@ -78,7 +78,7 @@ class RegisteredCreditCardList
                       CustomElevatedButton(
                           text: l10ns.addACard,
                           margin: getMargin(top: 51, bottom: 5),
-                          buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
+                          buttonStyle: CustomButtonStyles.fillPrimaryC26.copyWith(
                               fixedSize: MaterialStateProperty.all<Size>(
                                   Size(double.maxFinite, getVerticalSize(52)))),
                           buttonTextStyle: CustomTextStyles.titleMedium18)

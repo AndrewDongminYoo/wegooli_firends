@@ -17,7 +17,7 @@ class ReservationsCheckingPageDialog extends StatelessWidget {
             margin: getMargin(left: 16, right: 16, bottom: 288),
             padding: getPadding(all: 15),
             decoration: AppDecoration.fillOnPrimaryContainer
-                .copyWith(borderRadius: BorderRadiusStyle.roundedBorder10),
+                .copyWith(borderRadius: BorderRadiusStyle.circleBorder10),
             child: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -230,7 +230,7 @@ class ReservationsCheckingPageDialog extends StatelessWidget {
                                 margin:
                                     getMargin(left: 21, top: 15, bottom: 123),
                                 buttonStyle: CustomButtonStyles
-                                    .fillPrimaryTL5
+                                    .fillPrimaryC5
                                     .copyWith(
                                         fixedSize:
                                             MaterialStateProperty.all<Size>(
@@ -242,7 +242,7 @@ class ReservationsCheckingPageDialog extends StatelessWidget {
                                 text: l10ns.delete,
                                 margin:
                                     getMargin(left: 5, top: 15, bottom: 123),
-                                buttonStyle: CustomButtonStyles.fillGray400TL26
+                                buttonStyle: CustomButtonStyles.fillGray400C26
                                     .copyWith(
                                         fixedSize:
                                             MaterialStateProperty.all<Size>(

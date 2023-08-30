@@ -86,6 +86,12 @@ class AppDecoration {
 
 class BorderRadiusStyle {
   // Circle borders
+  static BorderRadius get circleBorder5 => BorderRadius.circular(
+        getHorizontalSize(5),
+      );
+  static BorderRadius get circleBorder10 => BorderRadius.circular(
+        getHorizontalSize(10),
+      );
   static BorderRadius get circleBorder21 => BorderRadius.circular(
         getHorizontalSize(21),
       );
@@ -105,21 +111,13 @@ class BorderRadiusStyle {
         getHorizontalSize(65),
       );
 
-  // Custom borders
-  static BorderRadius get customBorderTL10 => BorderRadius.vertical(
+  // Rounded borders
+  static BorderRadius get customBorderT10 => BorderRadius.vertical(
         top: Radius.circular(getHorizontalSize(10)),
       );
 
-  static BorderRadius get customBorderBL10 => BorderRadius.vertical(
+  static BorderRadius get customBorderB10 => BorderRadius.vertical(
         bottom: Radius.circular(getHorizontalSize(10)),
-      );
-
-  // Rounded borders
-  static BorderRadius get roundedBorder10 => BorderRadius.circular(
-        getHorizontalSize(10),
-      );
-  static BorderRadius get roundedBorder5 => BorderRadius.circular(
-        getHorizontalSize(5),
       );
 }
 

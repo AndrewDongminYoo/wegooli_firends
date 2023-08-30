@@ -49,7 +49,7 @@ class UpcomingUnsubscriptionFilled
                           padding: getPadding(
                               left: 80, top: 30, right: 80, bottom: 30),
                           decoration: AppDecoration.fillGray10001.copyWith(
-                              borderRadius: BorderRadiusStyle.roundedBorder10),
+                              borderRadius: BorderRadiusStyle.circleBorder10),
                           child: CustomImageView(
                               imagePath: Assets.images.imgCarNewRay.path,
                               height: getVerticalSize(96),
@@ -60,7 +60,7 @@ class UpcomingUnsubscriptionFilled
                           decoration: AppDecoration.fillOnPrimaryContainer
                               .copyWith(
                                   borderRadius:
-                                      BorderRadiusStyle.customBorderBL10),
+                                      BorderRadiusStyle.customBorderB10),
                           child: Column(
                               mainAxisSize: MainAxisSize.min,
                               crossAxisAlignment: CrossAxisAlignment.end,
@@ -171,7 +171,7 @@ class UpcomingUnsubscriptionFilled
                                     text: "해지 취소",
                                     margin: getMargin(top: 21),
                                     buttonStyle: CustomButtonStyles
-                                        .fillPrimaryTL5
+                                        .fillPrimaryC5
                                         .copyWith(
                                             fixedSize:
                                                 MaterialStateProperty.all<Size>(

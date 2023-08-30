@@ -47,7 +47,7 @@ class CarStateInformation extends StatelessWidget {
                           padding: getPadding(
                               left: 80, top: 30, right: 80, bottom: 30),
                           decoration: AppDecoration.fillGray10001.copyWith(
-                              borderRadius: BorderRadiusStyle.roundedBorder10),
+                              borderRadius: BorderRadiusStyle.circleBorder10),
                           child: CustomImageView(
                               imagePath: Assets.images.imgCarAllNewK3.path,
                               height: getVerticalSize(96),
@@ -58,7 +58,7 @@ class CarStateInformation extends StatelessWidget {
                           decoration: AppDecoration.fillOnPrimaryContainer
                               .copyWith(
                                   borderRadius:
-                                      BorderRadiusStyle.customBorderBL10),
+                                      BorderRadiusStyle.customBorderB10),
                           child: Column(
                               mainAxisSize: MainAxisSize.min,
                               crossAxisAlignment: CrossAxisAlignment.end,
@@ -169,7 +169,7 @@ class CarStateInformation extends StatelessWidget {
                                     text: l10ns.cancel,
                                     margin: getMargin(top: 21),
                                     buttonStyle: CustomButtonStyles
-                                        .fillPrimaryTL5
+                                        .fillPrimaryC5
                                         .copyWith(
                                             fixedSize:
                                                 MaterialStateProperty.all<Size>(

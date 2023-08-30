@@ -73,7 +73,7 @@ class CustomBottomBar extends StatelessWidget {
                         Padding(
                             padding: getPadding(top: 4),
                             child: Text(bottomMenuList[index].title ?? "",
-                                style: CustomTextStyles.bodySmallInterOnError10
+                                style: CustomTextStyles.bodySmallInter10OnError
                                     .copyWith(
                                         color: theme.colorScheme.onError))),
                       ]),

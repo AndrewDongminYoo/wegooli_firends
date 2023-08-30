@@ -8,8 +8,6 @@ import 'package:table_calendar/table_calendar.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
-import '/screens/shared_schedule/shared_schedule.dart';
-import 'calendar_style.dart';
 
 class CalendarBody extends StatefulWidget {
   const CalendarBody({
@@ -93,7 +91,7 @@ class _CalendarBodyState extends State<CalendarBody> {
         child: Container(
             padding: getPadding(all: 16),
             decoration: AppDecoration.outline
-                .copyWith(borderRadius: BorderRadiusStyle.roundedBorder10),
+                .copyWith(borderRadius: BorderRadiusStyle.circleBorder10),
             child: Align(
                 alignment: Alignment.center,
                 child: TableCalendar<Schedule>(

@@ -23,17 +23,3 @@ String textFormatter(DateTime date, Locale locale) {
 
 /// 캘린더에서 사용할 수 있는 [Gestures].
 enum AvailableGestures { none, verticalSwipe, horizontalSwipe, all }
-
-/// 캘린더에서 표시할 수 있는 [Formats].
-enum CalendarFormat { month, twoWeeks, week }
-
-/// 캘린더가 시작할 수 있는 요일.
-enum StartingDayOfWeek {
-  monday, // 1
-  tuesday, // 2
-  wednesday, // 3
-  thursday, // 4
-  friday, // 5
-  saturday, // 6
-  sunday, // 7
-}

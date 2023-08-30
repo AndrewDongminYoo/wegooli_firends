@@ -69,12 +69,12 @@ class CustomTextStyles {
   static get bodySmallGray700 => theme.textTheme.bodySmall!.copyWith(
         color: appTheme.gray700,
       );
-  static get bodySmallInter => theme.textTheme.bodySmall!.inter.copyWith(
+  static get bodySmallInter10 => theme.textTheme.bodySmall!.inter.copyWith(
         fontSize: getFontSize(
           10,
         ),
       );
-  static get bodySmallInterGray400 => theme.textTheme.bodySmall!.inter.copyWith(
+  static get bodySmallInter10Gray400 => theme.textTheme.bodySmall!.inter.copyWith(
         color: appTheme.gray400,
         fontSize: getFontSize(
           10,
@@ -83,7 +83,7 @@ class CustomTextStyles {
   static get bodySmallInterOnError => theme.textTheme.bodySmall!.inter.copyWith(
         color: theme.colorScheme.onError,
       );
-  static get bodySmallInterOnError10 =>
+  static get bodySmallInter10OnError =>
       theme.textTheme.bodySmall!.inter.copyWith(
         color: theme.colorScheme.onError,
         fontSize: getFontSize(

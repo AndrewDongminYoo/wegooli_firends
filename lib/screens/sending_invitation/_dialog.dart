@@ -21,7 +21,7 @@ class SendingCrewInvitationDialog extends StatelessWidget {
         child: Container(
             margin: getMargin(left: 16, right: 16, bottom: 323),
             decoration: AppDecoration.fillOnPrimaryContainer
-                .copyWith(borderRadius: BorderRadiusStyle.roundedBorder10),
+                .copyWith(borderRadius: BorderRadiusStyle.circleBorder10),
             child: Column(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -52,18 +52,23 @@ class SendingCrewInvitationDialog extends StatelessWidget {
                           ])),
                   CustomTextFormField(
                       controller: controller.invitationCodeController,
+                      hintText: "xxxx-xxxx-xxxx-xxxx",
                       margin: getMargin(left: 25, top: 17, right: 25),
                       contentPadding:
                           getPadding(left: 12, top: 14, right: 12, bottom: 14),
-                      textStyle: CustomTextStyles.bodyLargeGray50003,
-                      hintText: "xxxx-xxxx-xxxx-xxxx",
-                      hintStyle: CustomTextStyles.bodyLargeGray50003,
                       filled: true,
+                      enabled: false,
+                      textStyle: CustomTextStyles.bodyLargeGray50003,
+                      hintStyle: CustomTextStyles.bodyLargeGray50003,
                       fillColor: theme.colorScheme.onPrimaryContainer),
                   CustomElevatedButton(
+                      onTap: () {
+                        /// FIXME: controller.invitationCodeController.text 값을 클립보드에 복사 / 또는 공유 모달 띄우기
+                        Get.dialog(AlertDialog(title: Text(controller.invitationCodeController.text)));
+                      },
                       text: l10ns.copy,
                       margin: getMargin(top: 25),
-                      buttonStyle: CustomButtonStyles.fillPrimaryBL10.copyWith(
+                      buttonStyle: CustomButtonStyles.fillPrimaryB10.copyWith(
                           fixedSize: MaterialStateProperty.all<Size>(
                               Size(double.maxFinite, getVerticalSize(52)))),
                       buttonTextStyle: theme.textTheme.titleMedium!)

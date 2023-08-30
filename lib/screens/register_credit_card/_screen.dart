@@ -238,7 +238,7 @@ class RegisterCreditCard extends GetWidget<RegisterCreditCardController> {
                     // TODO
                     // disabled 일때 스타일 정의하기
                     text: l10ns.register,
-                    buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
+                    buttonStyle: CustomButtonStyles.fillPrimaryC26.copyWith(
                         fixedSize: MaterialStateProperty.all<Size>(
                             Size(double.maxFinite, getVerticalSize(52)))),
                     buttonTextStyle: CustomTextStyles.titleMedium18,

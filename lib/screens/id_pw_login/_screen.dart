@@ -170,7 +170,7 @@ class LoginWithIdAndPassword extends GetWidget<IdPwLoginController> {
                       CustomElevatedButton(
                           text: l10ns.signIn,
                           margin: getMargin(top: 30),
-                          buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
+                          buttonStyle: CustomButtonStyles.fillPrimaryC26.copyWith(
                               fixedSize: MaterialStateProperty.all<Size>(
                                   Size(double.maxFinite, getVerticalSize(52)))),
                           buttonTextStyle: CustomTextStyles.titleMedium18,
@@ -193,7 +193,7 @@ class LoginWithIdAndPassword extends GetWidget<IdPwLoginController> {
                       CustomElevatedButton(
                           text: l10ns.signUp,
                           margin: getMargin(top: 11, bottom: 5),
-                          buttonStyle: CustomButtonStyles.fillPrimary.copyWith(
+                          buttonStyle: CustomButtonStyles.fillPrimaryC26.copyWith(
                               fixedSize: MaterialStateProperty.all<Size>(
                                   Size(double.maxFinite, getVerticalSize(52)))),
                           buttonTextStyle: CustomTextStyles.titleMedium18,

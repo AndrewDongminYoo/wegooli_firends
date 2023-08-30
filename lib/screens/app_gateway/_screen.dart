@@ -43,6 +43,8 @@ class GatewayScreen extends StatelessWidget {
                                       mainAxisAlignment:
                                           MainAxisAlignment.start,
                                       children: [
+                                        /// `RouteItem`은 경로 목록의 단일 항목을 나타내는 위젯입니다. 경로 이름을 표시하고 탭 시 해당
+                                        /// 경로로의 탐색을 처리하는 데 사용됩니다.
                                         RouteItem(
                                             routeDestination:
                                                 AppRoutes.splashScreen,

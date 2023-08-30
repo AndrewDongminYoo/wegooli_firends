@@ -10,6 +10,7 @@ import '/core/app_export.dart';
 class UnsubscriptionConfirm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    DateTime expireDate = DateTime(2023, 08, 04);
     mediaQueryData = MediaQuery.of(context);
     return SafeArea(
         child: Scaffold(
@@ -40,7 +41,7 @@ class UnsubscriptionConfirm extends StatelessWidget {
                       Container(
                           width: getHorizontalSize(179),
                           margin: getMargin(top: 50),
-                          child: Text(l10ns.areYouSureYouWantToUnsubscribe,
+                          child: Text(l10ns.areYouSureYouWantToUnsubscribe('유동민'),
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.center,
@@ -50,7 +51,7 @@ class UnsubscriptionConfirm extends StatelessWidget {
                       Padding(
                           padding: getPadding(top: 23),
                           child: Text(
-                              l10ns.subscriptionsWillBeCanceledAfterAugust4,
+                              l10ns.subscriptionsWillBeCanceledAfter(expireDate.year, expireDate.month, expireDate.day),
                               overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.left,
                               style: CustomTextStyles.bodyLargeBlack900

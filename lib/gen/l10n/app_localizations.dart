@@ -12,10 +12,10 @@ import 'package:intl/intl.dart' as intl;
 // 🌎 Project imports:
 import 'app_localizations_ko.dart';
 
-/// Callers can lookup localized strings with an instance of AppLocalizations
-/// returned by `AppLocalizations.of(context)`.
+/// Callers can lookup localized strings with an instance of Localized
+/// returned by `Localized.of(context)`.
 ///
-/// Applications need to include `AppLocalizations.delegate()` in their app's
+/// Applications need to include `Localized.delegate()` in their app's
 /// `localizationDelegates` list, and the locales they support in the app's
 /// `supportedLocales` list. For example:
 ///
@@ -23,8 +23,8 @@ import 'app_localizations_ko.dart';
 /// import 'l10n/app_localizations.dart';
 ///
 /// return MaterialApp(
-///   localizationsDelegates: AppLocalizations.localizationsDelegates,
-///   supportedLocales: AppLocalizations.supportedLocales,
+///   localizationsDelegates: Localized.localizationsDelegates,
+///   supportedLocales: Localized.supportedLocales,
 ///   home: MyApplicationHome(),
 /// );
 /// ```
@@ -61,18 +61,18 @@ import 'app_localizations_ko.dart';
 /// Select and expand the newly-created Localizations item then, for each
 /// locale your application supports, add a new item and select the locale
 /// you wish to add from the pop-up menu in the Value field. This list should
-/// be consistent with the languages listed in the AppLocalizations.supportedLocales
+/// be consistent with the languages listed in the Localized.supportedLocales
 /// property.
-abstract class AppLocalizations {
-  AppLocalizations(String locale) : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+abstract class Localized {
+  Localized(String locale) : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
-  static AppLocalizations? of(BuildContext context) {
-    return Localizations.of<AppLocalizations>(context, AppLocalizations);
+  static Localized? of(BuildContext context) {
+    return Localizations.of<Localized>(context, Localized);
   }
 
-  static const LocalizationsDelegate<AppLocalizations> delegate = _AppLocalizationsDelegate();
+  static const LocalizationsDelegate<Localized> delegate = _LocalizedDelegate();
 
   /// A list of this localizations delegate along with the default localizations
   /// delegates.
@@ -96,608 +96,608 @@ abstract class AppLocalizations {
     Locale('ko')
   ];
 
-  /// No description provided for @acceptAll.
+  /// 모든 약관에 동의합니다.
   ///
   /// In ko, this message translates to:
   /// **'전체 동의'**
   String get acceptAll;
 
-  /// No description provided for @acceptTerms.
+  /// 상기 이용 약관에 동의합니다.
   ///
   /// In ko, this message translates to:
   /// **'약관 동의'**
   String get acceptTerms;
 
-  /// No description provided for @addACard.
+  /// 결제를 위한 개인 신용카드 등록
   ///
   /// In ko, this message translates to:
   /// **'카드 추가'**
   String get addACard;
 
-  /// No description provided for @addAnItineraryAdd.
+  /// 캘린더 하단 일정 추가 버튼 텍스트
   ///
   /// In ko, this message translates to:
   /// **'일정 추가 +'**
   String get addAnItineraryAdd;
 
-  /// No description provided for @areYouSureYouWantToUnsubscribe.
+  /// The question at the bottom to confirm 'Warning'.$nickname is user's nickname or name
   ///
   /// In ko, this message translates to:
-  /// **'(닉네임)님 정말로 구독을\n해지하시겠습니까?'**
-  String get areYouSureYouWantToUnsubscribe;
+  /// **'{nickname}님 정말로 구독을\n해지하시겠습니까?'**
+  String areYouSureYouWantToUnsubscribe(String nickname);
 
-  /// No description provided for @available.
+  /// 스마트키 화면에서 현재 차량이 이용가능한 상태임을 알리는 텍스트
   ///
   /// In ko, this message translates to:
   /// **'사용 가능합니다.'**
   String get available;
 
-  /// No description provided for @cancel.
+  /// 창 닫기, 행동 취소, 비활성화 등의 상황에 쓰임
   ///
   /// In ko, this message translates to:
   /// **'취소'**
   String get cancel;
 
-  /// No description provided for @cancelingASubscription.
+  /// 팀의 서비스 구독 상태를 해지하며 다음 결제일까지만 서비스를 이용할 것입니다.
   ///
   /// In ko, this message translates to:
   /// **'구독 해지하기'**
   String get cancelingASubscription;
 
-  /// No description provided for @cardNumber.
+  /// 신용카드 결제를 위한 필수 입력
   ///
   /// In ko, this message translates to:
   /// **'카드번호'**
   String get cardNumber;
 
-  /// No description provided for @cardRegistration.
+  /// 신용카드 자동결제 등록
   ///
   /// In ko, this message translates to:
   /// **'카드 등록'**
   String get cardRegistration;
 
-  /// No description provided for @carInfo.
+  /// 서비스 이용 중인 차량에 대한 정보 (주유 상태, 이용 중 여부, 차종 등)
   ///
   /// In ko, this message translates to:
   /// **'차량 정보'**
   String get carInfo;
 
-  /// No description provided for @carStatusInformation.
+  /// [Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨.
   ///
   /// In ko, this message translates to:
   /// **'[Page] 차량 상세정보'**
   String get carStatusInformation;
 
-  /// No description provided for @changeYourPersonalInformation.
+  /// 개인정보 변경 스크린 (주소, 전화번호, 이메일 등)
   ///
   /// In ko, this message translates to:
   /// **'개인정보 변경하기'**
   String get changeYourPersonalInformation;
 
-  /// No description provided for @chat.
+  /// 차량 공유 유저 간 채팅하기
   ///
   /// In ko, this message translates to:
   /// **'채팅'**
   String get chat;
 
-  /// No description provided for @checkYourAppUI.
+  /// 디버그를 위한 게이트웨이 스크린 안내 문구
   ///
   /// In ko, this message translates to:
   /// **'아래 데모 화면에서 앱의 UI를 확인하세요.'**
   String get checkYourAppUI;
 
-  /// No description provided for @confirm.
+  /// 알겠습니다/승인합니다/동의합니다/확인했습니다.
   ///
   /// In ko, this message translates to:
   /// **'확인'**
   String get confirm;
 
-  /// No description provided for @consentToCollectionAndUseOfVehicleLocationInfo.
+  /// 이용 약관 항목 중 하나
   ///
   /// In ko, this message translates to:
   /// **'차량 위치정보의 수집 이용 제공 동의 (필수)'**
   String get consentToCollectionAndUseOfVehicleLocationInfo;
 
-  /// No description provided for @copy.
+  /// 초대 코드 복사하기 버튼
   ///
   /// In ko, this message translates to:
   /// **'복사하기'**
   String get copy;
 
-  /// No description provided for @delete.
+  /// 일정 등 삭제를 위한 버튼
   ///
   /// In ko, this message translates to:
   /// **'삭제'**
   String get delete;
 
-  /// No description provided for @digitOf13SocialSecurityNumber.
+  ///
   ///
   /// In ko, this message translates to:
   /// **'주민등록번호 13자리'**
   String get digitOf13SocialSecurityNumber;
 
-  /// No description provided for @driverSLicenseRegistration.
+  ///
   ///
   /// In ko, this message translates to:
   /// **'운전면허 등록'**
   String get driverSLicenseRegistration;
 
-  /// No description provided for @edit.
+  /// 메세지, 일정 내용, 개인정보 등 수정
   ///
   /// In ko, this message translates to:
   /// **'수정'**
   String get edit;
 
-  /// No description provided for @eligibilityPeriodExpirationDate.
+  /// 운전면허 적성검사 유효기간 만료일
   ///
   /// In ko, this message translates to:
   /// **'적성기간 만료일'**
   String get eligibilityPeriodExpirationDate;
 
-  /// No description provided for @enterYourAptitudePeriodTestExpirationDate.
+  /// 20240912와 같은 형식으로 적성기간 연월일 입력 요구.
   ///
   /// In ko, this message translates to:
   /// **'적성기간 만료일(숫자만)을 입력해주세요.'**
   String get enterYourAptitudePeriodTestExpirationDate;
 
-  /// No description provided for @enterYourVerificationNumber.
+  /// 휴대폰 인증코드 입력 화면 헬프 텍스트
   ///
   /// In ko, this message translates to:
   /// **'인증 번호를 입력하세요.'**
   String get enterYourVerificationNumber;
 
-  /// No description provided for @expectedUnsubscribeDate.
+  /// 구독 해지 신청 후 다음 결제 예정일까지 남은 기간 안내.
   ///
   /// In ko, this message translates to:
   /// **'해지 예정일'**
   String get expectedUnsubscribeDate;
 
-  /// No description provided for @expirationDate.
+  /// 면허나 승인, 인가 등의 유효함이 끝나는 날짜
   ///
   /// In ko, this message translates to:
   /// **'유효기간'**
   String get expirationDate;
 
-  /// No description provided for @first2DigitsOfCardPassword.
+  /// 토스페이에 보낼 데이터 중 신용카드 비밀번호 앞 2자리
   ///
   /// In ko, this message translates to:
   /// **'카드 비밀번호 앞 2자리'**
   String get first2DigitsOfCardPassword;
 
-  /// No description provided for @gasoline20Percent.
+  /// 원활한 이용을 위해 남은 연료의 양 표기 및 기록
   ///
   /// In ko, this message translates to:
-  /// **'휘발유 20%'**
-  String get gasoline20Percent;
+  /// **'{oil} {remain}'**
+  String remainingFuelLevel(String oil, String remain);
 
-  /// No description provided for @getStarted.
+  /// 서비스 첫 이용 시 유저 행동 유도
   ///
   /// In ko, this message translates to:
   /// **'시작하기'**
   String get getStarted;
 
-  /// No description provided for @haveNoAnySubscriptionInfo.
+  /// 구독 해지 신청 후 다음 결제일이 지난 사용자 또는 구독을 신청한 적 없는 팀에 소속된 유저를 위한 문구
   ///
   /// In ko, this message translates to:
   /// **'구독 정보가 없습니다.'**
   String get haveNoAnySubscriptionInfo;
 
-  /// No description provided for @hongGilDongIsUsingIt.
+  /// 스마트키 화면 중 팀원이 이용 중인 차량에서 위험한 접근 방지.
   ///
   /// In ko, this message translates to:
   /// **'홍길동님이 사용중입니다.'**
   String get hongGilDongIsUsingIt;
 
-  /// No description provided for @honkTheHorn.
+  /// 스마트키 버튼 중 하나.
   ///
   /// In ko, this message translates to:
   /// **'경적'**
   String get honkTheHorn;
 
-  /// No description provided for @invitationCode.
+  /// GUID 형식의 초대코드 생성 및 승인
   ///
   /// In ko, this message translates to:
   /// **'초대 코드'**
   String get invitationCode;
 
-  /// No description provided for @invite.
+  /// 초대 코드 발송 및 다이나믹 링크 공유하기
   ///
   /// In ko, this message translates to:
   /// **'초대하기'**
   String get invite;
 
-  /// No description provided for @licenseIssueDate.
+  /// 운전면허 발급된 날짜
   ///
   /// In ko, this message translates to:
   /// **'면허발급일자'**
   String get licenseIssueDate;
 
-  /// No description provided for @licenseType.
+  /// 1종 보통, 2종 보통 등
   ///
   /// In ko, this message translates to:
   /// **'면허증 종류'**
   String get licenseType;
 
-  /// No description provided for @locationBasedServicesTerms.
+  /// 이용 약관 항목 중 하나
   ///
   /// In ko, this message translates to:
   /// **'위치기반서비스 이용약관 (필수)'**
   String get locationBasedServicesTerms;
 
-  /// No description provided for @lockTheDoor.
+  /// 스마트키 버튼 중 하나.
   ///
   /// In ko, this message translates to:
   /// **'문잠금'**
   String get lockTheDoor;
 
-  /// No description provided for @loginRegisterCreditCard.
+  /// [Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨.
   ///
   /// In ko, this message translates to:
   /// **'[Page] 신용카드 등록'**
   String get loginRegisterCreditCard;
 
-  /// No description provided for @loginRegisterLicensePage.
+  /// [Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨.
   ///
   /// In ko, this message translates to:
   /// **'[Page] 운전면허증 등록'**
   String get loginRegisterLicensePage;
 
-  /// No description provided for @loginRegisterSuccessPage.
+  /// [Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨.
   ///
   /// In ko, this message translates to:
   /// **'[Page] 입력/가입 성공'**
   String get loginRegisterSuccessPage;
 
-  /// No description provided for @loginRegisterZipCode.
+  /// [Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨.
   ///
   /// In ko, this message translates to:
   /// **'[Page] 주소 검색/등록'**
   String get loginRegisterZipCode;
 
-  /// No description provided for @loginValidatePhoneAuth.
+  /// [Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨.
   ///
   /// In ko, this message translates to:
   /// **'[Page] 휴대 전화 인증'**
   String get loginValidatePhoneAuth;
 
-  /// No description provided for @loginWithIdAndPassword.
+  /// [Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨.
   ///
   /// In ko, this message translates to:
   /// **'[Page] ID/PASSWORD 로그인'**
   String get loginWithIdAndPassword;
 
-  /// No description provided for @monthlyPayment.
+  /// 사용자가 서비스 이용을 위해 매월 지불하는 요금
   ///
   /// In ko, this message translates to:
   /// **'월 결제 금액'**
   String get monthlyPayment;
 
-  /// No description provided for @myPage.
+  /// 구독 정보, 사용자 정보, 앱 내 설정, 알림 설정, 탈퇴 신청 등 진입할 수 있는 페이지
   ///
   /// In ko, this message translates to:
   /// **'마이페이지'**
   String get myPage;
 
-  /// No description provided for @myProfileScreen.
+  /// [Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨.
   ///
   /// In ko, this message translates to:
   /// **'[Page] 마이페이지'**
   String get myProfileScreen;
 
-  /// No description provided for @nickname.
+  /// 별명 또는 사용자 정의 닉네임
   ///
   /// In ko, this message translates to:
   /// **'닉네임'**
   String get nickname;
 
-  /// No description provided for @openDoor.
+  /// 스마트키 버튼 중 하나.
   ///
   /// In ko, this message translates to:
   /// **'문열기'**
   String get openDoor;
 
-  /// No description provided for @password.
+  /// 가입 또는 사용자 정보 변경 화면의 문구
   ///
   /// In ko, this message translates to:
   /// **'비밀번호'**
   String get password;
 
-  /// No description provided for @paymentDueDate.
+  /// 다음 구독 서비스 결제 예정일
   ///
   /// In ko, this message translates to:
   /// **'결제 예정일'**
   String get paymentDueDate;
 
-  /// No description provided for @pleaseEnterYourLicenseIssueDateOnlyNumbers.
+  /// 면허증이 발급된 날짜를 입력받는 인풋의 헬프 텍스트
   ///
   /// In ko, this message translates to:
   /// **'면허발급일자(숫자만)를 입력해주세요.'**
   String get pleaseEnterYourLicenseIssueDateOnlyNumbers;
 
-  /// No description provided for @pleaseEnterYourLicenseNumbersOnly.
+  /// 면허증의 고유번호를 입력받는 인풋의 헬프 텍스트
   ///
   /// In ko, this message translates to:
   /// **'면허증번호(숫자만)를 입력해주세요.'**
   String get pleaseEnterYourLicenseNumbersOnly;
 
-  /// No description provided for @pleaseSelectYourLicenseType.
+  /// 면허종류 중 하나를 선택하는 드롭다운의 헬프 텍스트
   ///
   /// In ko, this message translates to:
   /// **'면허증 종류를 선택하세요.'**
   String get pleaseSelectYourLicenseType;
 
-  /// No description provided for @privacyPolicyRequiredConsent.
+  /// 이용 약관 항목 중 하나
   ///
   /// In ko, this message translates to:
   /// **'개인정보 처리방침 (필수)'**
   String get privacyPolicyRequiredConsent;
 
-  /// No description provided for @rayGen3.
+  /// 차량 모델명.
   ///
   /// In ko, this message translates to:
   /// **'레이 3세대'**
   String get rayGen3;
 
-  /// No description provided for @region.
+  /// 운전면허증 또는 사용자 서비스 이용 지역 표기 텍스트
   ///
   /// In ko, this message translates to:
   /// **'지역'**
   String get region;
 
-  /// No description provided for @register.
+  /// 개인 신용카드/ 운전면허증 등록하기 위한 버튼 텍스트
   ///
   /// In ko, this message translates to:
   /// **'등록하기'**
   String get register;
 
-  /// No description provided for @registeredCreditCardList.
+  /// [Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨.
   ///
   /// In ko, this message translates to:
   /// **'[Page] 카드 관리 페이지'**
   String get registeredCreditCardList;
 
-  /// No description provided for @registrationComplete.
+  /// 개인 신용카드/ 운전면허증 등록 완료 안내 텍스트
   ///
   /// In ko, this message translates to:
   /// **'등록 완료'**
   String get registrationComplete;
 
-  /// No description provided for @rentalTime.
+  /// 차량 대여 시간 경과
   ///
   /// In ko, this message translates to:
   /// **'대여시간'**
   String get rentalTime;
 
-  /// No description provided for @reportAnIncident.
+  /// 스마트키 화면 중 플로팅 액션 버튼 텍스트
   ///
   /// In ko, this message translates to:
   /// **'사고 접수'**
   String get reportAnIncident;
 
-  /// No description provided for @reservationDatetimePicker.
+  /// [BottomSheet]는 원활한 개발을 위한 게이트웨이 바텀시트 띄우기 버튼에 사용됨.
   ///
   /// In ko, this message translates to:
   /// **'[BottomSheet] 예약 날짜 선택기'**
   String get reservationDatetimePicker;
 
-  /// No description provided for @reservationsCheckingPage.
+  /// [PopupDialog]는 원활한 개발을 위한 게이트웨이 모달 띄우기 버튼에 사용됨.
   ///
   /// In ko, this message translates to:
   /// **'[PopupDialog] 예약 확인 페이지'**
   String get reservationsCheckingPage;
 
-  /// No description provided for @settings.
+  /// 사용자 개인정보 설정, 앱 설정 등에 사용
   ///
   /// In ko, this message translates to:
   /// **'설정'**
   String get settings;
 
-  /// No description provided for @schedule.
+  /// 캘린더 상단 제목 텍스트
   ///
   /// In ko, this message translates to:
   /// **'일정'**
   String get schedule;
 
-  /// No description provided for @scheduleAnUnsubscribe.
+  /// 서비스 이용 후 다음 결제 예정일에 자동으로 구독 해지하기
   ///
   /// In ko, this message translates to:
   /// **'구독 해지 예약'**
   String get scheduleAnUnsubscribe;
 
-  /// No description provided for @sendingCrewInvitation.
+  /// [PopupDialog]는 원활한 개발을 위한 게이트웨이 모달 띄우기 버튼에 사용됨.
   ///
   /// In ko, this message translates to:
   /// **'[PopupDialog] 팀 초대하기'**
   String get sendingCrewInvitation;
 
-  /// No description provided for @signIn.
+  /// 서비스에 접속하기
   ///
   /// In ko, this message translates to:
   /// **'로그인'**
   String get signIn;
 
-  /// No description provided for @signUp.
+  /// 서비스에 가입하기
   ///
   /// In ko, this message translates to:
   /// **'회원가입'**
   String get signUp;
 
-  /// No description provided for @signupAcceptTerms.
+  /// [Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨.
   ///
   /// In ko, this message translates to:
   /// **'[Page] 이용 약관 동의'**
   String get signupAcceptTerms;
 
-  /// No description provided for @smartKey.
+  /// 서비스 이용 중 차량 제어를 위한 스마트키
   ///
   /// In ko, this message translates to:
   /// **'스마트키'**
   String get smartKey;
 
-  /// No description provided for @smartKeyAvailable.
+  /// [Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨.
   ///
   /// In ko, this message translates to:
   /// **'[Page] 스마트키 (사용가능)'**
   String get smartKeyAvailable;
 
-  /// No description provided for @smartKeyNotAvailable.
+  /// [Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨.
   ///
   /// In ko, this message translates to:
   /// **'[Page] 스마트키 (사용중)'**
   String get smartKeyNotAvailable;
 
-  /// No description provided for @socialSecurityNumberFirstDigit.
+  /// 주민등록번호 앞자리 입력 헬프 텍스트 6자리 YYMMDD
   ///
   /// In ko, this message translates to:
   /// **'주민등록번호 앞자리'**
   String get socialSecurityNumberFirstDigit;
 
-  /// No description provided for @splashLoadingScreen.
+  /// [Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨.
   ///
   /// In ko, this message translates to:
   /// **'[Page] 스플래시 화면'**
   String get splashLoadingScreen;
 
-  /// No description provided for @status.
+  /// 현재 상태 표시 텍스트
   ///
   /// In ko, this message translates to:
   /// **'상태'**
   String get status;
 
-  /// No description provided for @subscription.
+  /// 구독 서비스 관련 텍스트
   ///
   /// In ko, this message translates to:
   /// **'구독'**
   String get subscription;
 
-  /// No description provided for @subscriptionInfoNoService.
+  /// [Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨.
   ///
   /// In ko, this message translates to:
   /// **'[Page] 서비스 정보 없음'**
   String get subscriptionInfoNoService;
 
-  /// No description provided for @subscriptionInformation.
+  /// 사용 중/ 사용 예정 구독 서비스에 대한 정보
   ///
   /// In ko, this message translates to:
   /// **'구독 정보'**
   String get subscriptionInformation;
 
-  /// No description provided for @subscriptionsAreRestrictedToThoseUnderTheAgeOf26.
+  /// 정책에 의해 만 26세 미만의 이용자에게 서비스 가입이 제한됨
   ///
   /// In ko, this message translates to:
   /// **'· 만 26세 미만은 가입이 제한됩니다.'**
   String get subscriptionsAreRestrictedToThoseUnderTheAgeOf26;
 
-  /// No description provided for @subscriptionsWillBeCanceledAfterAugust4.
+  /// 구독 해지 신청 후 남은 이용기간 안내 텍스트
   ///
   /// In ko, this message translates to:
-  /// **'2023년 8월 4일 이후에 구독이 해지됩니다.'**
-  String get subscriptionsWillBeCanceledAfterAugust4;
+  /// **'{y}년 {m}월 {d}일 이후에 구독이 해지됩니다.'**
+  String subscriptionsWillBeCanceledAfter(int y, int m, int d);
 
-  /// No description provided for @teamMembers.
+  /// 서비스를 함께 공유하는 팀원 간 호칭
   ///
   /// In ko, this message translates to:
   /// **'팀원'**
   String get teamMembers;
 
-  /// No description provided for @teamScheduleShare.
+  /// [Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨.
   ///
   /// In ko, this message translates to:
   /// **'[Page] 팀 스케줄 공유'**
   String get teamScheduleShare;
 
-  /// No description provided for @termsOfServiceRequiredAgreement.
+  /// 이용 약관 항목 중 하나
   ///
   /// In ko, this message translates to:
   /// **'서비스 이용약관 (필수)'**
   String get termsOfServiceRequiredAgreement;
 
-  /// No description provided for @turnOnHazardLights.
+  /// 스마트키 버튼 중 하나. 특수 상황에 사용.
   ///
   /// In ko, this message translates to:
   /// **'비상등'**
   String get turnOnHazardLights;
 
-  /// No description provided for @unsubscriptionConfirm.
+  /// [PopupDialog]는 원활한 개발을 위한 게이트웨이 모달 띄우기 버튼에 사용됨.
   ///
   /// In ko, this message translates to:
   /// **'[PopupDialog] 구독 해지'**
   String get unsubscriptionConfirm;
 
-  /// No description provided for @unsubscriptionConfirmWarn.
+  /// [PopupDialog]는 원활한 개발을 위한 게이트웨이 모달 띄우기 버튼에 사용됨.
   ///
   /// In ko, this message translates to:
   /// **'[PopupDialog] 구독 취소 확인 경고'**
   String get unsubscriptionConfirmWarn;
 
-  /// No description provided for @upcomingUnsubscriptionInfo.
+  /// [Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨.
   ///
   /// In ko, this message translates to:
   /// **'[Page] 예정된 구독 취소 정보'**
   String get upcomingUnsubscriptionInfo;
 
-  /// No description provided for @upcomingUnsubscriptionView.
+  /// [Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨.
   ///
   /// In ko, this message translates to:
   /// **'[Page] 예정된 구독 취소 보기'**
   String get upcomingUnsubscriptionView;
 
-  /// No description provided for @useOfPersonalInfoForMarketing.
+  /// 이용 약관 항목 중 하나
   ///
   /// In ko, this message translates to:
   /// **'마케팅 목적 개인정보 수집/이용 (선택)'**
   String get useOfPersonalInfoForMarketing;
 
-  /// No description provided for @viewSchedules.
+  /// 차량 이용 일정 확인하기
   ///
   /// In ko, this message translates to:
   /// **'일정 확인'**
   String get viewSchedules;
 
-  /// No description provided for @youCanCancelAnytime.
+  /// 해지 모달 안내 문구
   ///
   /// In ko, this message translates to:
   /// **'해지 시 위굴리 프렌즈의 모든 혜택을 잃게 됩니다. 남은 기간 내에 해지를 취소하실 수 있습니다.'**
   String get youCanCancelAnytime;
 
-  /// No description provided for @youHaveNoAccount.
+  /// 로그인 정보를 가지고 있지 않은 사용자에게 보여줄 문구
   ///
   /// In ko, this message translates to:
   /// **'계정이 없으신가요?'**
   String get youHaveNoAccount;
 
-  /// No description provided for @yourRegistrationHasBeenCompleted.
+  /// 가입 프로세스 최종 완료 문구
   ///
   /// In ko, this message translates to:
   /// **'회원가입이\n완료되었습니다.'**
   String get yourRegistrationHasBeenCompleted;
 }
 
-class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
-  const _AppLocalizationsDelegate();
+class _LocalizedDelegate extends LocalizationsDelegate<Localized> {
+  const _LocalizedDelegate();
 
   @override
-  Future<AppLocalizations> load(Locale locale) {
-    return SynchronousFuture<AppLocalizations>(lookupAppLocalizations(locale));
+  Future<Localized> load(Locale locale) {
+    return SynchronousFuture<Localized>(lookupLocalized(locale));
   }
 
   @override
   bool isSupported(Locale locale) => <String>['ko'].contains(locale.languageCode);
 
   @override
-  bool shouldReload(_AppLocalizationsDelegate old) => false;
+  bool shouldReload(_LocalizedDelegate old) => false;
 }
 
-AppLocalizations lookupAppLocalizations(Locale locale) {
+Localized lookupLocalized(Locale locale) {
 
 
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
-    case 'ko': return AppLocalizationsKo();
+    case 'ko': return LocalizedKo();
   }
 
   throw FlutterError(
-    'AppLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
+    'Localized.delegate failed to load unsupported locale "$locale". This is likely '
     'an issue with the localizations generation tool. Please file an issue '
     'on GitHub with a reproducible sample app and the gen-l10n configuration '
     'that was used.'

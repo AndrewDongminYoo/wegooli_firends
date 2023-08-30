@@ -1,5 +1,12 @@
 # run `flutter gen-l10n` after updating arb files
 arb-dir: lib/l10n
-template-arb-file: app_ko.arb
+gen-inputs-and-outputs-list: true
+output-class: Localized
+output-dir: lib/gen/l10n
 output-localization-file: app_localizations.dart
+preferred-supported-locales: [ko]
+project-dir: null
 synthetic-package: false
+template-arb-file: app_ko.arb
+untranslated-messages-file: ''
+use-escaping: false

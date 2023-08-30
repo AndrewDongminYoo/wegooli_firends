@@ -2,8 +2,8 @@
 import 'app_localizations.dart';
 
 /// The translations for Korean (`ko`).
-class AppLocalizationsKo extends AppLocalizations {
-  AppLocalizationsKo([String locale = 'ko']) : super(locale);
+class LocalizedKo extends Localized {
+  LocalizedKo([String locale = 'ko']) : super(locale);
 
   @override
   String get acceptAll => '전체 동의';
@@ -18,7 +18,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get addAnItineraryAdd => '일정 추가 +';
 
   @override
-  String get areYouSureYouWantToUnsubscribe => '(닉네임)님 정말로 구독을\n해지하시겠습니까?';
+  String areYouSureYouWantToUnsubscribe(String nickname) {
+    return '$nickname님 정말로 구독을\n해지하시겠습니까?';
+  }
 
   @override
   String get available => '사용 가능합니다.';
@@ -90,7 +92,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get first2DigitsOfCardPassword => '카드 비밀번호 앞 2자리';
 
   @override
-  String get gasoline20Percent => '휘발유 20%';
+  String remainingFuelLevel(String oil, String remain) {
+    return '$oil $remain';
+  }
 
   @override
   String get getStarted => '시작하기';
@@ -252,7 +256,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get subscriptionsAreRestrictedToThoseUnderTheAgeOf26 => '· 만 26세 미만은 가입이 제한됩니다.';
 
   @override
-  String get subscriptionsWillBeCanceledAfterAugust4 => '2023년 8월 4일 이후에 구독이 해지됩니다.';
+  String subscriptionsWillBeCanceledAfter(int y, int m, int d) {
+    return '$y년 $m월 $d일 이후에 구독이 해지됩니다.';
+  }
 
   @override
   String get teamMembers => '팀원';

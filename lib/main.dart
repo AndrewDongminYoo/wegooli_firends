@@ -36,8 +36,8 @@ class MyApp extends StatelessWidget {
         defaultTransition: Transition.fadeIn,
         locale: const Locale('ko'), // for setting localization strings
         fallbackLocale: const Locale('ko'),
-        localizationsDelegates: AppLocalizations.localizationsDelegates,
-        supportedLocales: AppLocalizations.supportedLocales,
+        localizationsDelegates: Localized.localizationsDelegates,
+        supportedLocales: Localized.supportedLocales,
         title: '위굴리 프렌즈',
         initialBinding: InitialBindings(),
         logWriterCallback: (String text, {bool isError = false}) =>

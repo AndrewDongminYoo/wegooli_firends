@@ -1,98 +1,419 @@
 {
+  "@@locale": "ko",
+  "@@x-reference": true,
+  "@@context": "WegooliFriends",
   "acceptAll": "전체 동의",
+  "@acceptAll": {
+    "description": "모든 약관에 동의합니다."
+  },
   "acceptTerms": "약관 동의",
+  "@acceptTerms": {
+    "description": "상기 이용 약관에 동의합니다."
+  },
   "addACard": "카드 추가",
+  "@addACard": {
+    "description": "결제를 위한 개인 신용카드 등록"
+  },
   "addAnItineraryAdd": "일정 추가 +",
-  "areYouSureYouWantToUnsubscribe": "(닉네임)님 정말로 구독을\n해지하시겠습니까?",
+  "@addAnItineraryAdd": {
+    "description": "캘린더 하단 일정 추가 버튼 텍스트"
+  },
+  "areYouSureYouWantToUnsubscribe": "{nickname}님 정말로 구독을\n해지하시겠습니까?",
+  "@areYouSureYouWantToUnsubscribe": {
+    "description": "The question at the bottom to confirm 'Warning'.$nickname is user's nickname or name",
+    "placeholders": {
+      "nickname": {
+        "type": "String",
+        "example": "람구리"
+      }
+    }
+  },
   "available": "사용 가능합니다.",
+  "@available": {
+    "description": "스마트키 화면에서 현재 차량이 이용가능한 상태임을 알리는 텍스트"
+  },
   "cancel": "취소",
+  "@cancel": {
+    "description": "창 닫기, 행동 취소, 비활성화 등의 상황에 쓰임"
+  },
   "cancelingASubscription": "구독 해지하기",
+  "@cancelingASubscription": {
+    "description": "팀의 서비스 구독 상태를 해지하며 다음 결제일까지만 서비스를 이용할 것입니다."
+  },
   "cardNumber": "카드번호",
+  "@cardNumber": {
+    "description": "신용카드 결제를 위한 필수 입력"
+  },
   "cardRegistration": "카드 등록",
+  "@cardRegistration": {
+    "description": "신용카드 자동결제 등록"
+  },
   "carInfo": "차량 정보",
+  "@carInfo": {
+    "description": "서비스 이용 중인 차량에 대한 정보 (주유 상태, 이용 중 여부, 차종 등)"
+  },
   "carStatusInformation": "[Page] 차량 상세정보",
+  "@carStatusInformation": {
+    "description": "[Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨."
+  },
   "changeYourPersonalInformation": "개인정보 변경하기",
+  "@changeYourPersonalInformation": {
+    "description": "개인정보 변경 스크린 (주소, 전화번호, 이메일 등)"
+  },
   "chat": "채팅",
+  "@chat": {
+    "description": "차량 공유 유저 간 채팅하기"
+  },
   "checkYourAppUI": "아래 데모 화면에서 앱의 UI를 확인하세요.",
+  "@checkYourAppUI": {
+    "description": "디버그를 위한 게이트웨이 스크린 안내 문구"
+  },
   "confirm": "확인",
+  "@confirm": {
+    "description": "알겠습니다/승인합니다/동의합니다/확인했습니다."
+  },
   "consentToCollectionAndUseOfVehicleLocationInfo": "차량 위치정보의 수집 이용 제공 동의 (필수)",
+  "@consentToCollectionAndUseOfVehicleLocationInfo": {
+    "description": "이용 약관 항목 중 하나"
+  },
   "copy": "복사하기",
+  "@copy": {
+    "description": "초대 코드 복사하기 버튼"
+  },
   "delete": "삭제",
+  "@delete": {
+    "description": "일정 등 삭제를 위한 버튼"
+  },
   "digitOf13SocialSecurityNumber": "주민등록번호 13자리",
+  "@digitOf13SocialSecurityNumber": {
+    "description": ""
+  },
   "driverSLicenseRegistration": "운전면허 등록",
+  "@driverSLicenseRegistration": {
+    "description": ""
+  },
   "edit": "수정",
+  "@edit": {
+    "description": "메세지, 일정 내용, 개인정보 등 수정"
+  },
   "eligibilityPeriodExpirationDate": "적성기간 만료일",
+  "@eligibilityPeriodExpirationDate": {
+    "description": "운전면허 적성검사 유효기간 만료일"
+  },
   "enterYourAptitudePeriodTestExpirationDate": "적성기간 만료일(숫자만)을 입력해주세요.",
+  "@enterYourAptitudePeriodTestExpirationDate": {
+    "description": "20240912와 같은 형식으로 적성기간 연월일 입력 요구."
+  },
   "enterYourVerificationNumber": "인증 번호를 입력하세요.",
+  "@enterYourVerificationNumber": {
+    "description": "휴대폰 인증코드 입력 화면 헬프 텍스트"
+  },
   "expectedUnsubscribeDate": "해지 예정일",
+  "@expectedUnsubscribeDate": {
+    "description": "구독 해지 신청 후 다음 결제 예정일까지 남은 기간 안내."
+  },
   "expirationDate": "유효기간",
+  "@expirationDate": {
+    "description": "면허나 승인, 인가 등의 유효함이 끝나는 날짜"
+  },
   "first2DigitsOfCardPassword": "카드 비밀번호 앞 2자리",
-  "gasoline20Percent": "휘발유 20%",
+  "@first2DigitsOfCardPassword": {
+    "description": "토스페이에 보낼 데이터 중 신용카드 비밀번호 앞 2자리"
+  },
+  "remainingFuelLevel": "{oil} {remain}",
+  "@remainingFuelLevel": {
+    "description": "원활한 이용을 위해 남은 연료의 양 표기 및 기록",
+    "placeholders": {
+      "oil": {
+        "type": "String",
+        "example": "휘발유"
+      },
+      "remain": {
+        "type": "String",
+        "example": "20%"
+      }
+    }
+  },
   "getStarted": "시작하기",
+  "@getStarted": {
+    "description": "서비스 첫 이용 시 유저 행동 유도"
+  },
   "haveNoAnySubscriptionInfo": "구독 정보가 없습니다.",
+  "@haveNoAnySubscriptionInfo": {
+    "description": "구독 해지 신청 후 다음 결제일이 지난 사용자 또는 구독을 신청한 적 없는 팀에 소속된 유저를 위한 문구"
+  },
   "hongGilDongIsUsingIt": "홍길동님이 사용중입니다.",
+  "@hongGilDongIsUsingIt": {
+    "description": "스마트키 화면 중 팀원이 이용 중인 차량에서 위험한 접근 방지."
+  },
   "honkTheHorn": "경적",
+  "@honkTheHorn": {
+    "description": "스마트키 버튼 중 하나."
+  },
   "invitationCode": "초대 코드",
+  "@invitationCode": {
+    "description": "GUID 형식의 초대코드 생성 및 승인"
+  },
   "invite": "초대하기",
+  "@invite": {
+    "description": "초대 코드 발송 및 다이나믹 링크 공유하기"
+  },
   "licenseIssueDate": "면허발급일자",
+  "@licenseIssueDate": {
+    "description": "운전면허 발급된 날짜"
+  },
   "licenseType": "면허증 종류",
+  "@licenseType": {
+    "description": "1종 보통, 2종 보통 등"
+  },
   "locationBasedServicesTerms": "위치기반서비스 이용약관 (필수)",
+  "@locationBasedServicesTerms": {
+    "description": "이용 약관 항목 중 하나"
+  },
   "lockTheDoor": "문잠금",
+  "@lockTheDoor": {
+    "description": "스마트키 버튼 중 하나."
+  },
   "loginRegisterCreditCard": "[Page] 신용카드 등록",
+  "@loginRegisterCreditCard": {
+    "description": "[Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨."
+  },
   "loginRegisterLicensePage": "[Page] 운전면허증 등록",
+  "@loginRegisterLicensePage": {
+    "description": "[Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨."
+  },
   "loginRegisterSuccessPage": "[Page] 입력/가입 성공",
+  "@loginRegisterSuccessPage": {
+    "description": "[Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨."
+  },
   "loginRegisterZipCode": "[Page] 주소 검색/등록",
+  "@loginRegisterZipCode": {
+    "description": "[Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨."
+  },
   "loginValidatePhoneAuth": "[Page] 휴대 전화 인증",
+  "@loginValidatePhoneAuth": {
+    "description": "[Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨."
+  },
   "loginWithIdAndPassword": "[Page] ID/PASSWORD 로그인",
+  "@loginWithIdAndPassword": {
+    "description": "[Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨."
+  },
   "monthlyPayment": "월 결제 금액",
+  "@monthlyPayment": {
+    "description": "사용자가 서비스 이용을 위해 매월 지불하는 요금"
+  },
   "myPage": "마이페이지",
+  "@myPage": {
+    "description": "구독 정보, 사용자 정보, 앱 내 설정, 알림 설정, 탈퇴 신청 등 진입할 수 있는 페이지"
+  },
   "myProfileScreen": "[Page] 마이페이지",
+  "@myProfileScreen": {
+    "description": "[Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨."
+  },
   "nickname": "닉네임",
+  "@nickname": {
+    "description": "별명 또는 사용자 정의 닉네임"
+  },
   "openDoor": "문열기",
+  "@openDoor": {
+    "description": "스마트키 버튼 중 하나."
+  },
   "password": "비밀번호",
+  "@password": {
+    "description": "가입 또는 사용자 정보 변경 화면의 문구"
+  },
   "paymentDueDate": "결제 예정일",
+  "@paymentDueDate": {
+    "description": "다음 구독 서비스 결제 예정일"
+  },
   "pleaseEnterYourLicenseIssueDateOnlyNumbers": "면허발급일자(숫자만)를 입력해주세요.",
+  "@pleaseEnterYourLicenseIssueDateOnlyNumbers": {
+    "description": "면허증이 발급된 날짜를 입력받는 인풋의 헬프 텍스트"
+  },
   "pleaseEnterYourLicenseNumbersOnly": "면허증번호(숫자만)를 입력해주세요.",
+  "@pleaseEnterYourLicenseNumbersOnly": {
+    "description": "면허증의 고유번호를 입력받는 인풋의 헬프 텍스트"
+  },
   "pleaseSelectYourLicenseType": "면허증 종류를 선택하세요.",
+  "@pleaseSelectYourLicenseType": {
+    "description": "면허종류 중 하나를 선택하는 드롭다운의 헬프 텍스트"
+  },
   "privacyPolicyRequiredConsent": "개인정보 처리방침 (필수)",
+  "@privacyPolicyRequiredConsent": {
+    "description": "이용 약관 항목 중 하나"
+  },
   "rayGen3": "레이 3세대",
+  "@rayGen3": {
+    "description": "차량 모델명."
+  },
   "region": "지역",
+  "@region": {
+    "description": "운전면허증 또는 사용자 서비스 이용 지역 표기 텍스트"
+  },
   "register": "등록하기",
+  "@register": {
+    "description": "개인 신용카드/ 운전면허증 등록하기 위한 버튼 텍스트"
+  },
   "registeredCreditCardList": "[Page] 카드 관리 페이지",
+  "@registeredCreditCardList": {
+    "description": "[Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨."
+  },
   "registrationComplete": "등록 완료",
+  "@registrationComplete": {
+    "description": "개인 신용카드/ 운전면허증 등록 완료 안내 텍스트"
+  },
   "rentalTime": "대여시간",
+  "@rentalTime": {
+    "description": "차량 대여 시간 경과"
+  },
   "reportAnIncident": "사고 접수",
+  "@reportAnIncident": {
+    "description": "스마트키 화면 중 플로팅 액션 버튼 텍스트"
+  },
   "reservationDatetimePicker": "[BottomSheet] 예약 날짜 선택기",
+  "@reservationDatetimePicker": {
+    "description": "[BottomSheet]는 원활한 개발을 위한 게이트웨이 바텀시트 띄우기 버튼에 사용됨."
+  },
   "reservationsCheckingPage": "[PopupDialog] 예약 확인 페이지",
+  "@reservationsCheckingPage": {
+    "description": "[PopupDialog]는 원활한 개발을 위한 게이트웨이 모달 띄우기 버튼에 사용됨."
+  },
   "settings": "설정",
+  "@settings": {
+    "description": "사용자 개인정보 설정, 앱 설정 등에 사용"
+  },
   "schedule": "일정",
+  "@schedule": {
+    "description": "캘린더 상단 제목 텍스트"
+  },
   "scheduleAnUnsubscribe": "구독 해지 예약",
+  "@scheduleAnUnsubscribe": {
+    "description": "서비스 이용 후 다음 결제 예정일에 자동으로 구독 해지하기"
+  },
   "sendingCrewInvitation": "[PopupDialog] 팀 초대하기",
+  "@sendingCrewInvitation": {
+    "description": "[PopupDialog]는 원활한 개발을 위한 게이트웨이 모달 띄우기 버튼에 사용됨."
+  },
   "signIn": "로그인",
+  "@signIn": {
+    "description": "서비스에 접속하기"
+  },
   "signUp": "회원가입",
+  "@signUp": {
+    "description": "서비스에 가입하기"
+  },
   "signupAcceptTerms": "[Page] 이용 약관 동의",
+  "@signupAcceptTerms": {
+    "description": "[Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨."
+  },
   "smartKey": "스마트키",
+  "@smartKey": {
+    "description": "서비스 이용 중 차량 제어를 위한 스마트키"
+  },
   "smartKeyAvailable": "[Page] 스마트키 (사용가능)",
+  "@smartKeyAvailable": {
+    "description": "[Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨."
+  },
   "smartKeyNotAvailable": "[Page] 스마트키 (사용중)",
+  "@smartKeyNotAvailable": {
+    "description": "[Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨."
+  },
   "socialSecurityNumberFirstDigit": "주민등록번호 앞자리",
+  "@socialSecurityNumberFirstDigit": {
+    "description": "주민등록번호 앞자리 입력 헬프 텍스트 6자리 YYMMDD"
+  },
   "splashLoadingScreen": "[Page] 스플래시 화면",
+  "@splashLoadingScreen": {
+    "description": "[Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨."
+  },
   "status": "상태",
+  "@status": {
+    "description": "현재 상태 표시 텍스트"
+  },
   "subscription": "구독",
+  "@subscription": {
+    "description": "구독 서비스 관련 텍스트"
+  },
   "subscriptionInfoNoService": "[Page] 서비스 정보 없음",
+  "@subscriptionInfoNoService": {
+    "description": "[Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨."
+  },
   "subscriptionInformation": "구독 정보",
+  "@subscriptionInformation": {
+    "description": "사용 중/ 사용 예정 구독 서비스에 대한 정보"
+  },
   "subscriptionsAreRestrictedToThoseUnderTheAgeOf26": "· 만 26세 미만은 가입이 제한됩니다.",
-  "subscriptionsWillBeCanceledAfterAugust4": "2023년 8월 4일 이후에 구독이 해지됩니다.",
+  "@subscriptionsAreRestrictedToThoseUnderTheAgeOf26": {
+    "description": "정책에 의해 만 26세 미만의 이용자에게 서비스 가입이 제한됨"
+  },
+  "subscriptionsWillBeCanceledAfter": "{y}년 {m}월 {d}일 이후에 구독이 해지됩니다.",
+  "@subscriptionsWillBeCanceledAfter": {
+    "description": "구독 해지 신청 후 남은 이용기간 안내 텍스트",
+    "placeholders": {
+      "y": {
+        "type": "int",
+        "example": "2023"
+      },
+      "m": {
+        "type": "int",
+        "example": "09"
+      },
+      "d": {
+        "type": "int",
+        "example": "11"
+      }
+    }
+  },
   "teamMembers": "팀원",
+  "@teamMembers": {
+    "description": "서비스를 함께 공유하는 팀원 간 호칭"
+  },
   "teamScheduleShare": "[Page] 팀 스케줄 공유",
+  "@teamScheduleShare": {
+    "description": "[Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨."
+  },
   "termsOfServiceRequiredAgreement": "서비스 이용약관 (필수)",
+  "@termsOfServiceRequiredAgreement": {
+    "description": "이용 약관 항목 중 하나"
+  },
   "turnOnHazardLights": "비상등",
+  "@turnOnHazardLights": {
+    "description": "스마트키 버튼 중 하나. 특수 상황에 사용."
+  },
   "unsubscriptionConfirm": "[PopupDialog] 구독 해지",
+  "@unsubscriptionConfirm": {
+    "description": "[PopupDialog]는 원활한 개발을 위한 게이트웨이 모달 띄우기 버튼에 사용됨."
+  },
   "unsubscriptionConfirmWarn": "[PopupDialog] 구독 취소 확인 경고",
+  "@unsubscriptionConfirmWarn": {
+    "description": "[PopupDialog]는 원활한 개발을 위한 게이트웨이 모달 띄우기 버튼에 사용됨."
+  },
   "upcomingUnsubscriptionInfo": "[Page] 예정된 구독 취소 정보",
+  "@upcomingUnsubscriptionInfo": {
+    "description": "[Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨."
+  },
   "upcomingUnsubscriptionView": "[Page] 예정된 구독 취소 보기",
+  "@upcomingUnsubscriptionView": {
+    "description": "[Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨."
+  },
   "useOfPersonalInfoForMarketing": "마케팅 목적 개인정보 수집/이용 (선택)",
+  "@useOfPersonalInfoForMarketing": {
+    "description": "이용 약관 항목 중 하나"
+  },
   "viewSchedules": "일정 확인",
+  "@viewSchedules": {
+    "description": "차량 이용 일정 확인하기"
+  },
   "youCanCancelAnytime": "해지 시 위굴리 프렌즈의 모든 혜택을 잃게 됩니다. 남은 기간 내에 해지를 취소하실 수 있습니다.",
+  "@youCanCancelAnytime": {
+    "description": "해지 모달 안내 문구"
+  },
   "youHaveNoAccount": "계정이 없으신가요?",
-  "yourRegistrationHasBeenCompleted": "회원가입이\n완료되었습니다."
+  "@youHaveNoAccount": {
+    "description": "로그인 정보를 가지고 있지 않은 사용자에게 보여줄 문구"
+  },
+  "yourRegistrationHasBeenCompleted": "회원가입이\n완료되었습니다.",
+  "@yourRegistrationHasBeenCompleted": {
+    "description": "가입 프로세스 최종 완료 문구"
+  }
 }

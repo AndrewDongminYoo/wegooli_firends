@@ -6,7 +6,6 @@ import 'package:get/get.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
-import 'controller/_controller.dart';
 
 // ignore: must_be_immutable
 class SendingCrewInvitationDialog extends StatelessWidget {

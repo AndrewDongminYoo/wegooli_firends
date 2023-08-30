@@ -7,11 +7,6 @@ import 'package:get/get.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
-import 'controller/_controller.dart';
-import 'widgets/complete_button.dart';
-import 'widgets/guide_text.dart';
-import 'widgets/input_label.dart';
-import 'widgets/sms_validation_form.dart';
 
 class ValidatePhone extends GetWidget<PhoneAuthController> {
   @override

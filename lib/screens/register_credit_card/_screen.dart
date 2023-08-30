@@ -6,8 +6,6 @@ import 'package:get/get.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
-import '/screens/phone_auth/controller/_controller.dart';
-import 'controller/_controller.dart';
 
 class RegisterCreditCard extends GetWidget<RegisterCreditCardController> {
   bool isValid() {
@@ -235,8 +233,7 @@ class RegisterCreditCard extends GetWidget<RegisterCreditCardController> {
                 margin: getMargin(left: 16, right: 16, bottom: 29),
                 // decoration: AppDecoration.shadow,
                 child: CustomElevatedButton(
-                    // TODO
-                    // disabled 일때 스타일 정의하기
+                    // TODO disabled 일때 스타일 정의하기
                     text: l10ns.register,
                     buttonStyle: CustomButtonStyles.fillPrimaryC26.copyWith(
                         fixedSize: MaterialStateProperty.all<Size>(

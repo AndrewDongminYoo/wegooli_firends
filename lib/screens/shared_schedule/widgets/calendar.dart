@@ -5,10 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '../shared_schedule.dart';
 import '/core/app_export.dart';
-import 'calendar_body.dart';
-import 'members_list.dart';
 
 // ignore: must_be_immutable
 class SharedCalendar extends GetWidget<TeamScheduleController> {

@@ -7,7 +7,6 @@ import 'package:url_launcher/url_launcher.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
-import 'controller/_controller.dart';
 
 // ignore: must_be_immutable
 class SmartKeyAvailablePage extends StatelessWidget {

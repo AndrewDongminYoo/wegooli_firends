@@ -8,7 +8,6 @@ import 'package:kpostal/kpostal.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
-import 'controller/_controller.dart';
 
 class RegisterZipCode extends GetWidget<RegisterZipCodeController> {
   @override
@@ -345,7 +344,7 @@ class RegisterZipCode extends GetWidget<RegisterZipCodeController> {
                                         bottom: 14),
                                     textStyle:
                                         CustomTextStyles.bodyLargeGray50003,
-                                    hintText: "비밀번호재입력",
+                                    hintText: "비밀번호 재입력",
                                     obscureText: controller
                                         .isShowConfirmPassword.isFalse,
                                     hintStyle:
@@ -417,7 +416,7 @@ class RegisterZipCode extends GetWidget<RegisterZipCodeController> {
                                         bottom: 14),
                                     textStyle:
                                         CustomTextStyles.bodyLargeGray50003,
-                                    hintText: "닉네임 입력 (10자 이내))",
+                                    hintText: "닉네임 입력 (10자 이내)",
                                     obscureText: controller
                                         .isShowConfirmPassword.isFalse,
                                     hintStyle:

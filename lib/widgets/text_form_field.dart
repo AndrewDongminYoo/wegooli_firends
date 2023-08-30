@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
+/// TODO: 인풋 창의 값에 따라 스타일 변경( 노란색 디폴트 아님
 class CustomTextFormField extends StatelessWidget {
   CustomTextFormField({
     Key? key,
@@ -62,6 +63,15 @@ class CustomTextFormField extends StatelessWidget {
   final TextStyle? textStyle;
   final Widget? prefix;
   final Widget? suffix;
+
+  /// 텍스트인풋 상태별 스타일
+  /// 기본 (입력전) - 회색 테두리, 조금 더 연한 글씨색
+  /// 초기화값 있는 경우
+  ///   readonly: 진한 회색 테두리, 회색 음영, 진한 글씨색, 작성 불가
+  ///   readonly x: 기본 스타일과 같음.
+  /// validation 있는 경우
+  ///   (잘못된 값일떄) - 빨간색 테두리, 빨간색 에러문구
+  ///   (올바른 값일때) - 초록색 테두리, 문구 없음
 
   @override
   Widget build(BuildContext context) {

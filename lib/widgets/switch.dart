@@ -41,6 +41,7 @@ class CustomSwitch extends StatelessWidget {
             : switchWidget);
   }
 
+  /// 토글 기능 쿠퍼티노 스타일로 통일
   Widget get switchWidget => CupertinoSwitch(
       value: value ?? false,
       trackColor: theme.colorScheme.onPrimaryContainer,

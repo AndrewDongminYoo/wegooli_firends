@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
-import 'controller/_controller.dart';
 
 class MyProfilePage extends StatelessWidget {
   final MyProfileController controller = MyProfileController.to;

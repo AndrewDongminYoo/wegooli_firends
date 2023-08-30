@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
-import '/screens/shared_schedule/shared_schedule.dart';
 
 class MembersList extends StatelessWidget {
   const MembersList({

@@ -74,7 +74,6 @@ class AccountAgreementControllerApi {
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : rawResponse as String;
-
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -143,11 +142,11 @@ class AccountAgreementControllerApi {
 
     try {
       const _type = FullType(AccountAgreementRequest);
-      _bodyData = _serializers.serialize(accountAgreementRequest, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+      _bodyData =
+          _serializers.serialize(accountAgreementRequest, specifiedType: _type);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -171,7 +170,6 @@ class AccountAgreementControllerApi {
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : rawResponse as String;
-
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -251,11 +249,12 @@ class AccountAgreementControllerApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(AccountAgreementModel),
-      ) as AccountAgreementModel;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(AccountAgreementModel),
+            ) as AccountAgreementModel;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -297,7 +296,8 @@ class AccountAgreementControllerApi {
   ///
   /// Returns a [Future] containing a [Response] with a [BuiltList<AccountAgreementModel>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<AccountAgreementModel>>> selectAccountAgreementList({
+  Future<Response<BuiltList<AccountAgreementModel>>>
+      selectAccountAgreementList({
     String? classification,
     String? accountId,
     String? agreeYn,
@@ -332,13 +332,27 @@ class AccountAgreementControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (classification != null) r'classification': encodeQueryParameter(_serializers, classification, const FullType(String)),
-      if (accountId != null) r'accountId': encodeQueryParameter(_serializers, accountId, const FullType(String)),
-      if (agreeYn != null) r'agreeYn': encodeQueryParameter(_serializers, agreeYn, const FullType(String)),
-      if (startCreatedAt != null) r'startCreatedAt': encodeQueryParameter(_serializers, startCreatedAt, const FullType(String)),
-      if (endCreatedAt != null) r'endCreatedAt': encodeQueryParameter(_serializers, endCreatedAt, const FullType(String)),
-      if (startUpdatedAt != null) r'startUpdatedAt': encodeQueryParameter(_serializers, startUpdatedAt, const FullType(String)),
-      if (endUpdatedAt != null) r'endUpdatedAt': encodeQueryParameter(_serializers, endUpdatedAt, const FullType(String)),
+      if (classification != null)
+        r'classification': encodeQueryParameter(
+            _serializers, classification, const FullType(String)),
+      if (accountId != null)
+        r'accountId': encodeQueryParameter(
+            _serializers, accountId, const FullType(String)),
+      if (agreeYn != null)
+        r'agreeYn':
+            encodeQueryParameter(_serializers, agreeYn, const FullType(String)),
+      if (startCreatedAt != null)
+        r'startCreatedAt': encodeQueryParameter(
+            _serializers, startCreatedAt, const FullType(String)),
+      if (endCreatedAt != null)
+        r'endCreatedAt': encodeQueryParameter(
+            _serializers, endCreatedAt, const FullType(String)),
+      if (startUpdatedAt != null)
+        r'startUpdatedAt': encodeQueryParameter(
+            _serializers, startUpdatedAt, const FullType(String)),
+      if (endUpdatedAt != null)
+        r'endUpdatedAt': encodeQueryParameter(
+            _serializers, endUpdatedAt, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -354,11 +368,13 @@ class AccountAgreementControllerApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(AccountAgreementModel)]),
-      ) as BuiltList<AccountAgreementModel>;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType:
+                  const FullType(BuiltList, [FullType(AccountAgreementModel)]),
+            ) as BuiltList<AccountAgreementModel>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -427,11 +443,11 @@ class AccountAgreementControllerApi {
 
     try {
       const _type = FullType(AccountAgreementRequest);
-      _bodyData = _serializers.serialize(accountAgreementRequest, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+      _bodyData =
+          _serializers.serialize(accountAgreementRequest, specifiedType: _type);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -455,7 +471,6 @@ class AccountAgreementControllerApi {
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : rawResponse as String;
-
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -477,5 +492,4 @@ class AccountAgreementControllerApi {
       extra: _response.extra,
     );
   }
-
 }

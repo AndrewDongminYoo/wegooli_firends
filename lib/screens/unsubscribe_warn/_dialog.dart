@@ -42,9 +42,7 @@ class UnsubscriptionConfirmWarnDialog extends StatelessWidget {
               Container(
                   width: getHorizontalSize(278),
                   margin: getMargin(left: 25, top: 38, right: 25),
-                  child: Text(
-                      l10ns
-                          .youCanCancelAnytime,
+                  child: Text(l10ns.youCanCancelAnytime,
                       maxLines: 3,
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.justify,

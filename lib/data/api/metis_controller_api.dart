@@ -58,7 +58,8 @@ class MetisControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'carNum': encodeQueryParameter(_serializers, carNum, const FullType(String)),
+      r'carNum':
+          encodeQueryParameter(_serializers, carNum, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -74,11 +75,12 @@ class MetisControllerApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(CarHistoryDTO),
-      ) as CarHistoryDTO;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(CarHistoryDTO),
+            ) as CarHistoryDTO;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -143,7 +145,9 @@ class MetisControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (carNum != null) r'carNum': encodeQueryParameter(_serializers, carNum, const FullType(String)),
+      if (carNum != null)
+        r'carNum':
+            encodeQueryParameter(_serializers, carNum, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -159,11 +163,13 @@ class MetisControllerApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(CarHistoryDTO)]),
-      ) as BuiltList<CarHistoryDTO>;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType:
+                  const FullType(BuiltList, [FullType(CarHistoryDTO)]),
+            ) as BuiltList<CarHistoryDTO>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -238,7 +244,6 @@ class MetisControllerApi {
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : rawResponse as String;
-
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -303,7 +308,8 @@ class MetisControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'dto': encodeQueryParameter(_serializers, dto, const FullType(DeviceControlResultDTO)),
+      r'dto': encodeQueryParameter(
+          _serializers, dto, const FullType(DeviceControlResultDTO)),
     };
 
     final _response = await _dio.request<Object>(
@@ -320,7 +326,6 @@ class MetisControllerApi {
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : rawResponse as String;
-
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -342,5 +347,4 @@ class MetisControllerApi {
       extra: _response.extra,
     );
   }
-
 }

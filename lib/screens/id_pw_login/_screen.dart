@@ -12,31 +12,7 @@ import '/core/app_export.dart';
 
 // ignore: must_be_immutable
 class LoginWithIdAndPassword extends GetWidget<IdPwLoginController> {
-  Future findMembers() async {
-    String token = Get.find<PrefUtils>().getData('token');
-    final api =
-        Get.find<WegooliFriends>().getTeamAccountConnectionControllerApi();
-    print('token : $token');
-    Map<String, dynamic> extra = <String, dynamic>{
-      'secure': <Map<String, String>>[
-        {
-          'type': 'http',
-          'scheme': 'bearer',
-          'name': token,
-        },
-      ],
-    };
-    final response = await api.selectTeamAccountList(extra: extra);
-    print('response : $response');
-    BuiltList<TeamAccountConnectionResponse>? teams = response.data;
-    if (teams != null && teams.isNotEmpty) {
-      // TODO: 현재는 Team이 1개만 존재한다고 가정하기 때문에 첫번째 Team 정보로만 연결한다.
-      teams.first.account?.forEach((it) =>
-          !controller.members.contains(it) ? controller.members.add(it) : null);
-    }
-    // print('members : ${controller.members.length}');
-    print('members : ${controller.members.toString()}');
-  }
+  bool get isAuthenticated => controller.isAuthenticated.value;
 
   Future<void> authorize() async {
     final api = Get.find<WegooliFriends>().getUserControllerApi();
@@ -88,8 +64,6 @@ class LoginWithIdAndPassword extends GetWidget<IdPwLoginController> {
     }
     // id, pwd 확인해서 로그인 성공하면 true 아니면 false.
   }
-
-  bool get isAuthenticated => controller.isAuthenticated.value;
 
   @override
   Widget build(BuildContext context) {
@@ -169,9 +143,11 @@ class LoginWithIdAndPassword extends GetWidget<IdPwLoginController> {
                       CustomElevatedButton(
                           text: l10ns.signIn,
                           margin: getMargin(top: 30),
-                          buttonStyle: CustomButtonStyles.fillPrimaryC26.copyWith(
-                              fixedSize: MaterialStateProperty.all<Size>(
-                                  Size(double.maxFinite, getVerticalSize(52)))),
+                          buttonStyle: CustomButtonStyles.fillPrimaryC26
+                              .copyWith(
+                                  fixedSize: MaterialStateProperty.all<Size>(
+                                      Size(double.maxFinite,
+                                          getVerticalSize(52)))),
                           buttonTextStyle: CustomTextStyles.titleMedium18,
                           onTap: () async {
                             await authorize();
@@ -192,23 +168,51 @@ class LoginWithIdAndPassword extends GetWidget<IdPwLoginController> {
                       CustomElevatedButton(
                           text: l10ns.signUp,
                           margin: getMargin(top: 11, bottom: 5),
-                          buttonStyle: CustomButtonStyles.fillPrimaryC26.copyWith(
-                              fixedSize: MaterialStateProperty.all<Size>(
-                                  Size(double.maxFinite, getVerticalSize(52)))),
+                          buttonStyle: CustomButtonStyles.fillPrimaryC26
+                              .copyWith(
+                                  fixedSize: MaterialStateProperty.all<Size>(
+                                      Size(double.maxFinite,
+                                          getVerticalSize(52)))),
                           buttonTextStyle: CustomTextStyles.titleMedium18,
                           onTap: () {
                             // 해당 탭은 dialog로 변경 예정
                             // onTapSignUpAcceptTerms();
-                            Get.toNamed(AppRoutes.validatePhone);
+                            Get.toNamed(AppRoutes.phoneAuth);
                           }),
                     ]))));
   }
 
-  onTapTeamScheduleShare() {
-    Get.toNamed(AppRoutes.sharedSchedule);
+  Future findMembers() async {
+    String token = Get.find<PrefUtils>().getData('token');
+    final api =
+        Get.find<WegooliFriends>().getTeamAccountConnectionControllerApi();
+    print('token : $token');
+    Map<String, dynamic> extra = <String, dynamic>{
+      'secure': <Map<String, String>>[
+        {
+          'type': 'http',
+          'scheme': 'bearer',
+          'name': token,
+        },
+      ],
+    };
+    final response = await api.selectTeamAccountList(extra: extra);
+    print('response : $response');
+    BuiltList<TeamAccountConnectionResponse>? teams = response.data;
+    if (teams != null && teams.isNotEmpty) {
+      // TODO: 현재는 Team이 1개만 존재한다고 가정하기 때문에 첫번째 Team 정보로만 연결한다.
+      teams.first.account?.forEach((it) =>
+          !controller.members.contains(it) ? controller.members.add(it) : null);
+    }
+    // print('members : ${controller.members.length}');
+    print('members : ${controller.members.toString()}');
   }
 
   onTapSignUpAcceptTerms() {
     Get.toNamed(AppRoutes.acceptTerms);
+  }
+
+  onTapTeamScheduleShare() {
+    Get.toNamed(AppRoutes.sharedSchedule);
   }
 }

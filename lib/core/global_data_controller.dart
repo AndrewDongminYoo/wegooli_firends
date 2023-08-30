@@ -8,7 +8,8 @@ GlobalDataController _global = GlobalDataController.to;
 
 class GlobalDataController extends GetxController {
   static GlobalDataController get to => Get.isRegistered<GlobalDataController>()
-  ? Get.find<GlobalDataController>() : Get.put(GlobalDataController());
+      ? Get.find<GlobalDataController>()
+      : Get.put(GlobalDataController());
 
   var account = Account().obs;
   var serviceDetail = ServiceDetail().obs;

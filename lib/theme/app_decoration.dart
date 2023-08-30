@@ -6,28 +6,22 @@ import '/core/app_export.dart';
 
 class AppDecoration {
   // Fill decorations
-  static BoxDecoration get fillBlueGray => BoxDecoration(
-        color: appTheme.blueGray30033,
-      );
-  static BoxDecoration get fillGray10001 => BoxDecoration(color: appTheme.gray10001);
-  static BoxDecoration get fillDeepOrange => BoxDecoration(
-        color: appTheme.deepOrangeA200,
-      );
-  static BoxDecoration get fillDeepPurple => BoxDecoration(
-        color: appTheme.deepPurpleA200,
-      );
-  static BoxDecoration get fillOnPrimaryContainer => BoxDecoration(
-        color: theme.colorScheme.onPrimaryContainer,
-      );
-  static BoxDecoration get fillOnSecondary => BoxDecoration(
-        color: theme.colorScheme.onSecondary,
-      );
-  static BoxDecoration get fillOnPrimary => BoxDecoration(
-        color: theme.colorScheme.onPrimary,
-      );
-  static BoxDecoration get fillPrimary => BoxDecoration(
-        color: theme.colorScheme.primary,
-      );
+  static BoxDecoration get fillBlueGray =>
+      BoxDecoration(color: appTheme.blueGray30033);
+  static BoxDecoration get fillGray10001 =>
+      BoxDecoration(color: appTheme.gray10001);
+  static BoxDecoration get fillDeepOrange =>
+      BoxDecoration(color: appTheme.deepOrangeA200);
+  static BoxDecoration get fillDeepPurple =>
+      BoxDecoration(color: appTheme.deepPurpleA200);
+  static BoxDecoration get fillOnPrimaryContainer =>
+      BoxDecoration(color: theme.colorScheme.onPrimaryContainer);
+  static BoxDecoration get fillOnSecondary =>
+      BoxDecoration(color: theme.colorScheme.onSecondary);
+  static BoxDecoration get fillOnPrimary =>
+      BoxDecoration(color: theme.colorScheme.onPrimary);
+  static BoxDecoration get fillPrimary =>
+      BoxDecoration(color: theme.colorScheme.primary);
 
   // Outline decorations
   static BoxDecoration get outlineBlack => BoxDecoration(
@@ -86,39 +80,29 @@ class AppDecoration {
 
 class BorderRadiusStyle {
   // Circle borders
-  static BorderRadius get circleBorder5 => BorderRadius.circular(
-        getHorizontalSize(5),
-      );
-  static BorderRadius get circleBorder10 => BorderRadius.circular(
-        getHorizontalSize(10),
-      );
-  static BorderRadius get circleBorder21 => BorderRadius.circular(
-        getHorizontalSize(21),
-      );
-  static BorderRadius get circleBorder25 => BorderRadius.circular(
-        getHorizontalSize(25),
-      );
-  static BorderRadius get circleBorder35 => BorderRadius.circular(
-        getHorizontalSize(35),
-      );
-  static BorderRadius get circleBorder40 => BorderRadius.circular(
-        getHorizontalSize(40),
-      );
-  static BorderRadius get circleBorder60 => BorderRadius.circular(
-        getHorizontalSize(60),
-      );
-  static BorderRadius get circleBorder65 => BorderRadius.circular(
-        getHorizontalSize(65),
-      );
+  static BorderRadius get circleBorder5 =>
+      BorderRadius.circular(getHorizontalSize(5));
+  static BorderRadius get circleBorder10 =>
+      BorderRadius.circular(getHorizontalSize(10));
+  static BorderRadius get circleBorder21 =>
+      BorderRadius.circular(getHorizontalSize(21));
+  static BorderRadius get circleBorder25 =>
+      BorderRadius.circular(getHorizontalSize(25));
+  static BorderRadius get circleBorder35 =>
+      BorderRadius.circular(getHorizontalSize(35));
+  static BorderRadius get circleBorder40 =>
+      BorderRadius.circular(getHorizontalSize(40));
+  static BorderRadius get circleBorder60 =>
+      BorderRadius.circular(getHorizontalSize(60));
+  static BorderRadius get circleBorder65 =>
+      BorderRadius.circular(getHorizontalSize(65));
 
   // Rounded borders
-  static BorderRadius get customBorderT10 => BorderRadius.vertical(
-        top: Radius.circular(getHorizontalSize(10)),
-      );
+  static BorderRadius get customBorderT10 =>
+      BorderRadius.vertical(top: Radius.circular(getHorizontalSize(10)));
 
-  static BorderRadius get customBorderB10 => BorderRadius.vertical(
-        bottom: Radius.circular(getHorizontalSize(10)),
-      );
+  static BorderRadius get customBorderB10 =>
+      BorderRadius.vertical(bottom: Radius.circular(getHorizontalSize(10)));
 }
 
 // Comment/Uncomment the below code based on your Flutter SDK version.

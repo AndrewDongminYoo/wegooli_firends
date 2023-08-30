@@ -58,7 +58,8 @@ class DeviceControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'carNum': encodeQueryParameter(_serializers, carNum, const FullType(String)),
+      r'carNum':
+          encodeQueryParameter(_serializers, carNum, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -75,7 +76,6 @@ class DeviceControllerApi {
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : rawResponse as bool;
-
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -140,7 +140,8 @@ class DeviceControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'carNum': encodeQueryParameter(_serializers, carNum, const FullType(String)),
+      r'carNum':
+          encodeQueryParameter(_serializers, carNum, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -157,7 +158,6 @@ class DeviceControllerApi {
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : rawResponse as bool;
-
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -193,7 +193,8 @@ class DeviceControllerApi {
   ///
   /// Returns a [Future] containing a [Response] with a [BuiltList<CarControlHistoryModel>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<CarControlHistoryModel>>> selectDeviceControlHistoryList({
+  Future<Response<BuiltList<CarControlHistoryModel>>>
+      selectDeviceControlHistoryList({
     required CarControlHistoryModel request,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -222,7 +223,8 @@ class DeviceControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'request': encodeQueryParameter(_serializers, request, const FullType(CarControlHistoryModel)),
+      r'request': encodeQueryParameter(
+          _serializers, request, const FullType(CarControlHistoryModel)),
     };
 
     final _response = await _dio.request<Object>(
@@ -238,11 +240,13 @@ class DeviceControllerApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(CarControlHistoryModel)]),
-      ) as BuiltList<CarControlHistoryModel>;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType:
+                  const FullType(BuiltList, [FullType(CarControlHistoryModel)]),
+            ) as BuiltList<CarControlHistoryModel>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -307,7 +311,8 @@ class DeviceControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'carNum': encodeQueryParameter(_serializers, carNum, const FullType(String)),
+      r'carNum':
+          encodeQueryParameter(_serializers, carNum, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -324,7 +329,6 @@ class DeviceControllerApi {
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : rawResponse as bool;
-
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -389,7 +393,8 @@ class DeviceControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'carNum': encodeQueryParameter(_serializers, carNum, const FullType(String)),
+      r'carNum':
+          encodeQueryParameter(_serializers, carNum, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -406,7 +411,6 @@ class DeviceControllerApi {
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : rawResponse as bool;
-
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -428,5 +432,4 @@ class DeviceControllerApi {
       extra: _response.extra,
     );
   }
-
 }

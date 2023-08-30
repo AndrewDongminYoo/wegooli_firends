@@ -58,7 +58,8 @@ class TestControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'model': encodeQueryParameter(_serializers, model, const FullType(TestModel)),
+      r'model':
+          encodeQueryParameter(_serializers, model, const FullType(TestModel)),
     };
 
     final _response = await _dio.request<Object>(
@@ -74,11 +75,12 @@ class TestControllerApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(JsonObject),
-      ) as JsonObject;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(JsonObject),
+            ) as JsonObject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -100,5 +102,4 @@ class TestControllerApi {
       extra: _response.extra,
     );
   }
-
 }

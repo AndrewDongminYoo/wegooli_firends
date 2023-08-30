@@ -39,7 +39,8 @@ class TeamControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/team/{teamSeq}'.replaceAll('{' r'teamSeq' '}', teamSeq.toString());
+    final _path =
+        r'/team/{teamSeq}'.replaceAll('{' r'teamSeq' '}', teamSeq.toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -71,7 +72,6 @@ class TeamControllerApi {
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : rawResponse as String;
-
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -141,10 +141,9 @@ class TeamControllerApi {
     try {
       const _type = FullType(TeamRequest);
       _bodyData = _serializers.serialize(teamRequest, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -167,11 +166,12 @@ class TeamControllerApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(JsonObject),
-      ) as JsonObject;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(JsonObject),
+            ) as JsonObject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -216,7 +216,8 @@ class TeamControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/team/{teamSeq}'.replaceAll('{' r'teamSeq' '}', teamSeq.toString());
+    final _path =
+        r'/team/{teamSeq}'.replaceAll('{' r'teamSeq' '}', teamSeq.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -247,11 +248,12 @@ class TeamControllerApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(TeamModel),
-      ) as TeamModel;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(TeamModel),
+            ) as TeamModel;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -296,7 +298,8 @@ class TeamControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/team/code/{teamCode}'.replaceAll('{' r'teamCode' '}', teamCode.toString());
+    final _path = r'/team/code/{teamCode}'
+        .replaceAll('{' r'teamCode' '}', teamCode.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -327,11 +330,12 @@ class TeamControllerApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(TeamModel),
-      ) as TeamModel;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(TeamModel),
+            ) as TeamModel;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -410,14 +414,30 @@ class TeamControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (accountId != null) r'accountId': encodeQueryParameter(_serializers, accountId, const FullType(String)),
-      if (name != null) r'name': encodeQueryParameter(_serializers, name, const FullType(String)),
-      if (delYn != null) r'delYn': encodeQueryParameter(_serializers, delYn, const FullType(String)),
-      if (startCreatedAt != null) r'startCreatedAt': encodeQueryParameter(_serializers, startCreatedAt, const FullType(String)),
-      if (endCreatedAt != null) r'endCreatedAt': encodeQueryParameter(_serializers, endCreatedAt, const FullType(String)),
-      if (startUpdatedAt != null) r'startUpdatedAt': encodeQueryParameter(_serializers, startUpdatedAt, const FullType(String)),
-      if (endUpdatedAt != null) r'endUpdatedAt': encodeQueryParameter(_serializers, endUpdatedAt, const FullType(String)),
-      if (contract != null) r'contract': encodeQueryParameter(_serializers, contract, const FullType(String)),
+      if (accountId != null)
+        r'accountId': encodeQueryParameter(
+            _serializers, accountId, const FullType(String)),
+      if (name != null)
+        r'name':
+            encodeQueryParameter(_serializers, name, const FullType(String)),
+      if (delYn != null)
+        r'delYn':
+            encodeQueryParameter(_serializers, delYn, const FullType(String)),
+      if (startCreatedAt != null)
+        r'startCreatedAt': encodeQueryParameter(
+            _serializers, startCreatedAt, const FullType(String)),
+      if (endCreatedAt != null)
+        r'endCreatedAt': encodeQueryParameter(
+            _serializers, endCreatedAt, const FullType(String)),
+      if (startUpdatedAt != null)
+        r'startUpdatedAt': encodeQueryParameter(
+            _serializers, startUpdatedAt, const FullType(String)),
+      if (endUpdatedAt != null)
+        r'endUpdatedAt': encodeQueryParameter(
+            _serializers, endUpdatedAt, const FullType(String)),
+      if (contract != null)
+        r'contract': encodeQueryParameter(
+            _serializers, contract, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -433,11 +453,12 @@ class TeamControllerApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(TeamModel)]),
-      ) as BuiltList<TeamModel>;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(BuiltList, [FullType(TeamModel)]),
+            ) as BuiltList<TeamModel>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -484,7 +505,8 @@ class TeamControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/team/{teamSeq}'.replaceAll('{' r'teamSeq' '}', teamSeq.toString());
+    final _path =
+        r'/team/{teamSeq}'.replaceAll('{' r'teamSeq' '}', teamSeq.toString());
     final _options = Options(
       method: r'PUT',
       headers: <String, dynamic>{
@@ -509,10 +531,9 @@ class TeamControllerApi {
     try {
       const _type = FullType(TeamRequest);
       _bodyData = _serializers.serialize(teamRequest, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -536,7 +557,6 @@ class TeamControllerApi {
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : rawResponse as String;
-
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -558,5 +578,4 @@ class TeamControllerApi {
       extra: _response.extra,
     );
   }
-
 }

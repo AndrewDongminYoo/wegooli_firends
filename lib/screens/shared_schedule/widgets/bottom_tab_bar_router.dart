@@ -22,11 +22,11 @@ class BottomTabRouterBar extends StatelessWidget {
         String getCurrentRoute(BottomBarEnum type) {
           switch (type) {
             case BottomBarEnum.dashChat:
-              return AppRoutes.chatWithFriends;
+              return AppRoutes.chatWithTeam;
             case BottomBarEnum.smartKey:
               return AppRoutes.smartKeyAvailable;
             case BottomBarEnum.profile:
-              return AppRoutes.myProfilePage;
+              return AppRoutes.myProfile;
             default:
               return AppRoutes.sharedSchedule;
           }

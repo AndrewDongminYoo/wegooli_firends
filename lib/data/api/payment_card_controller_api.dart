@@ -38,7 +38,8 @@ class PaymentCardControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/payment/card/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
+    final _path =
+        r'/payment/card/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -70,7 +71,6 @@ class PaymentCardControllerApi {
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : rawResponse as String;
-
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -139,11 +139,11 @@ class PaymentCardControllerApi {
 
     try {
       const _type = FullType(PaymentCardRequest);
-      _bodyData = _serializers.serialize(paymentCardRequest, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+      _bodyData =
+          _serializers.serialize(paymentCardRequest, specifiedType: _type);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -167,7 +167,6 @@ class PaymentCardControllerApi {
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : rawResponse as String;
-
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -212,7 +211,8 @@ class PaymentCardControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/payment/card/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
+    final _path =
+        r'/payment/card/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -243,11 +243,12 @@ class PaymentCardControllerApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(PaymentCardModel),
-      ) as PaymentCardModel;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(PaymentCardModel),
+            ) as PaymentCardModel;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -332,17 +333,37 @@ class PaymentCardControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (memberSeq != null) r'memberSeq': encodeQueryParameter(_serializers, memberSeq, const FullType(int)),
-      if (cardNumber != null) r'cardNumber': encodeQueryParameter(_serializers, cardNumber, const FullType(String)),
-      if (defaultYn != null) r'defaultYn': encodeQueryParameter(_serializers, defaultYn, const FullType(String)),
-      if (delYn != null) r'delYn': encodeQueryParameter(_serializers, delYn, const FullType(String)),
-      if (startCreatedAt != null) r'startCreatedAt': encodeQueryParameter(_serializers, startCreatedAt, const FullType(String)),
-      if (endCreatedAt != null) r'endCreatedAt': encodeQueryParameter(_serializers, endCreatedAt, const FullType(String)),
-      if (startUpdatedAt != null) r'startUpdatedAt': encodeQueryParameter(_serializers, startUpdatedAt, const FullType(String)),
-      if (endUpdatedAt != null) r'endUpdatedAt': encodeQueryParameter(_serializers, endUpdatedAt, const FullType(String)),
-      if (password != null) r'password': encodeQueryParameter(_serializers, password, const FullType(String)),
-      if (rrn != null) r'rrn': encodeQueryParameter(_serializers, rrn, const FullType(String)),
-      if (crn != null) r'crn': encodeQueryParameter(_serializers, crn, const FullType(String)),
+      if (memberSeq != null)
+        r'memberSeq':
+            encodeQueryParameter(_serializers, memberSeq, const FullType(int)),
+      if (cardNumber != null)
+        r'cardNumber': encodeQueryParameter(
+            _serializers, cardNumber, const FullType(String)),
+      if (defaultYn != null)
+        r'defaultYn': encodeQueryParameter(
+            _serializers, defaultYn, const FullType(String)),
+      if (delYn != null)
+        r'delYn':
+            encodeQueryParameter(_serializers, delYn, const FullType(String)),
+      if (startCreatedAt != null)
+        r'startCreatedAt': encodeQueryParameter(
+            _serializers, startCreatedAt, const FullType(String)),
+      if (endCreatedAt != null)
+        r'endCreatedAt': encodeQueryParameter(
+            _serializers, endCreatedAt, const FullType(String)),
+      if (startUpdatedAt != null)
+        r'startUpdatedAt': encodeQueryParameter(
+            _serializers, startUpdatedAt, const FullType(String)),
+      if (endUpdatedAt != null)
+        r'endUpdatedAt': encodeQueryParameter(
+            _serializers, endUpdatedAt, const FullType(String)),
+      if (password != null)
+        r'password': encodeQueryParameter(
+            _serializers, password, const FullType(String)),
+      if (rrn != null)
+        r'rrn': encodeQueryParameter(_serializers, rrn, const FullType(String)),
+      if (crn != null)
+        r'crn': encodeQueryParameter(_serializers, crn, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -358,11 +379,13 @@ class PaymentCardControllerApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(PaymentCardModel)]),
-      ) as BuiltList<PaymentCardModel>;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType:
+                  const FullType(BuiltList, [FullType(PaymentCardModel)]),
+            ) as BuiltList<PaymentCardModel>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -409,7 +432,8 @@ class PaymentCardControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/payment/card/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
+    final _path =
+        r'/payment/card/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
     final _options = Options(
       method: r'PUT',
       headers: <String, dynamic>{
@@ -433,11 +457,11 @@ class PaymentCardControllerApi {
 
     try {
       const _type = FullType(PaymentCardRequest);
-      _bodyData = _serializers.serialize(paymentCardRequest, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+      _bodyData =
+          _serializers.serialize(paymentCardRequest, specifiedType: _type);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -461,7 +485,6 @@ class PaymentCardControllerApi {
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : rawResponse as String;
-
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -483,5 +506,4 @@ class PaymentCardControllerApi {
       extra: _response.extra,
     );
   }
-
 }

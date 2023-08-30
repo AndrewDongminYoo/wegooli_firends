@@ -428,8 +428,7 @@ class SmartKeyNotAvailable extends StatelessWidget {
                                       margin: getMargin(right: 1),
                                       child: CustomImageView(
                                           svgPath: Assets.svg.imgEdit.path)),
-                                  buttonStyle: CustomButtonStyles
-                                      .fillPrimaryC26
+                                  buttonStyle: CustomButtonStyles.fillPrimaryC26
                                       .copyWith(
                                           fixedSize:
                                               MaterialStateProperty.all<Size>(
@@ -450,11 +449,11 @@ class SmartKeyNotAvailable extends StatelessWidget {
       case BottomBarEnum.sharedSchedule:
         return AppRoutes.sharedSchedule;
       case BottomBarEnum.dashChat:
-        return AppRoutes.chatWithFriends;
+        return AppRoutes.chatWithTeam;
       case BottomBarEnum.smartKey:
         return AppRoutes.smartKeyAvailable;
       case BottomBarEnum.profile:
-        return AppRoutes.myProfilePage;
+        return AppRoutes.myProfile;
       default:
         return AppRoutes.sharedSchedule;
     }

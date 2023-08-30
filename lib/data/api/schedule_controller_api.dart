@@ -38,7 +38,8 @@ class ScheduleControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/schedule/delete/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
+    final _path =
+        r'/schedule/delete/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
     final _options = Options(
       method: r'PUT',
       headers: <String, dynamic>{
@@ -115,10 +116,9 @@ class ScheduleControllerApi {
     try {
       const _type = FullType(ScheduleRequest);
       _bodyData = _serializers.serialize(scheduleRequest, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -162,7 +162,8 @@ class ScheduleControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/schedule/detail/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
+    final _path =
+        r'/schedule/detail/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -193,11 +194,12 @@ class ScheduleControllerApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ScheduleModel),
-      ) as ScheduleModel;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(ScheduleModel),
+            ) as ScheduleModel;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -268,10 +270,18 @@ class ScheduleControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (teamSeq != null) r'teamSeq': encodeQueryParameter(_serializers, teamSeq, const FullType(int)),
-      if (accountId != null) r'accountId': encodeQueryParameter(_serializers, accountId, const FullType(String)),
-      if (startAt != null) r'startAt': encodeQueryParameter(_serializers, startAt, const FullType(String)),
-      if (endAt != null) r'endAt': encodeQueryParameter(_serializers, endAt, const FullType(String)),
+      if (teamSeq != null)
+        r'teamSeq':
+            encodeQueryParameter(_serializers, teamSeq, const FullType(int)),
+      if (accountId != null)
+        r'accountId': encodeQueryParameter(
+            _serializers, accountId, const FullType(String)),
+      if (startAt != null)
+        r'startAt':
+            encodeQueryParameter(_serializers, startAt, const FullType(String)),
+      if (endAt != null)
+        r'endAt':
+            encodeQueryParameter(_serializers, endAt, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -287,11 +297,13 @@ class ScheduleControllerApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(ScheduleModel)]),
-      ) as BuiltList<ScheduleModel>;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType:
+                  const FullType(BuiltList, [FullType(ScheduleModel)]),
+            ) as BuiltList<ScheduleModel>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -338,7 +350,8 @@ class ScheduleControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/schedule/update/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
+    final _path =
+        r'/schedule/update/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
     final _options = Options(
       method: r'PUT',
       headers: <String, dynamic>{
@@ -363,10 +376,9 @@ class ScheduleControllerApi {
     try {
       const _type = FullType(ScheduleRequest);
       _bodyData = _serializers.serialize(scheduleRequest, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -387,5 +399,4 @@ class ScheduleControllerApi {
 
     return _response;
   }
-
 }

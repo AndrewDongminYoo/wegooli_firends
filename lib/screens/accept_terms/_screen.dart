@@ -51,11 +51,11 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                                       child: Obx(() => CustomCheckboxButton(
                                           alignment: Alignment.center,
                                           text: l10ns.acceptAll,
-                                          value:
-                                              controller.isAllTermsAccepted.value,
+                                          value: controller
+                                              .isAllTermsAccepted.value,
                                           onChange: (value) {
-                                            controller.isAllTermsAccepted.value =
-                                                value;
+                                            controller.isAllTermsAccepted
+                                                .value = value;
                                           })))),
                               Padding(
                                   padding: getPadding(top: 53),
@@ -64,7 +64,8 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                                           MainAxisAlignment.spaceBetween,
                                       children: [
                                         Obx(() => CustomCheckboxButton(
-                                            text: l10ns.termsOfServiceRequiredAgreement,
+                                            text: l10ns
+                                                .termsOfServiceRequiredAgreement,
                                             value: controller
                                                 .isAcceptedTerm0.value,
                                             onChange: (value) {
@@ -85,9 +86,10 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                                           MainAxisAlignment.spaceBetween,
                                       children: [
                                         Obx(() => CustomCheckboxButton(
-                                            text: l10ns.privacyPolicyRequiredConsent,
-                                            value:
-                                                controller.isAcceptedTerm1.value,
+                                            text: l10ns
+                                                .privacyPolicyRequiredConsent,
+                                            value: controller
+                                                .isAcceptedTerm1.value,
                                             onChange: (value) {
                                               controller.isAcceptedTerm1.value =
                                                   value;
@@ -127,7 +129,8 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                                           MainAxisAlignment.spaceBetween,
                                       children: [
                                         Obx(() => CustomCheckboxButton(
-                                            text: l10ns.locationBasedServicesTerms,
+                                            text: l10ns
+                                                .locationBasedServicesTerms,
                                             value: controller
                                                 .isAcceptedTerm3.value,
                                             onChange: (value) {
@@ -147,8 +150,9 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                                     Expanded(
                                         child: Obx(() => CustomCheckboxButton(
                                             text: l10ns
-                                        .consentToCollectionAndUseOfVehicleLocationInfo,
-                                            value: controller.isAcceptedTerm4.value,
+                                                .consentToCollectionAndUseOfVehicleLocationInfo,
+                                            value: controller
+                                                .isAcceptedTerm4.value,
                                             onChange: (value) {
                                               controller.isAcceptedTerm4.value =
                                                   value;
@@ -164,9 +168,10 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                                   child: Row(children: [
                                     Expanded(
                                         child: Obx(() => CustomCheckboxButton(
-                                            text: l10ns.useOfPersonalInfoForMarketing,
-                                            value:
-                                                controller.isAcceptedTerm5.value,
+                                            text: l10ns
+                                                .useOfPersonalInfoForMarketing,
+                                            value: controller
+                                                .isAcceptedTerm5.value,
                                             onChange: (value) {
                                               controller.isAcceptedTerm5.value =
                                                   value;

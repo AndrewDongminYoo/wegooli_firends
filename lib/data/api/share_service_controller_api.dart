@@ -58,7 +58,8 @@ class ShareServiceControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'request': encodeQueryParameter(_serializers, request, const FullType(ShareServiceRequest)),
+      r'request': encodeQueryParameter(
+          _serializers, request, const FullType(ShareServiceRequest)),
     };
 
     final _response = await _dio.request<Object>(
@@ -74,11 +75,13 @@ class ShareServiceControllerApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(ShareServiceModel)]),
-      ) as BuiltList<ShareServiceModel>;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType:
+                  const FullType(BuiltList, [FullType(ShareServiceModel)]),
+            ) as BuiltList<ShareServiceModel>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -143,7 +146,8 @@ class ShareServiceControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'request': encodeQueryParameter(_serializers, request, const FullType(ServiceCarDetailRequest)),
+      r'request': encodeQueryParameter(
+          _serializers, request, const FullType(ServiceCarDetailRequest)),
     };
 
     final _response = await _dio.request<Object>(
@@ -159,11 +163,12 @@ class ShareServiceControllerApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ServiceDetail),
-      ) as ServiceDetail;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(ServiceDetail),
+            ) as ServiceDetail;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -228,7 +233,8 @@ class ShareServiceControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'request': encodeQueryParameter(_serializers, request, const FullType(LeaderSetRequest)),
+      r'request': encodeQueryParameter(
+          _serializers, request, const FullType(LeaderSetRequest)),
     };
 
     final _response = await _dio.request<Object>(
@@ -245,7 +251,6 @@ class ShareServiceControllerApi {
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : rawResponse as String;
-
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -267,5 +272,4 @@ class ShareServiceControllerApi {
       extra: _response.extra,
     );
   }
-
 }

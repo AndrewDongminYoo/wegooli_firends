@@ -21,7 +21,7 @@ class TeamScheduleShare extends GetWidget<TeamScheduleController> {
   /// Handling page based on route
   Widget getCurrentPage(String currentRoute) {
     switch (currentRoute) {
-      case AppRoutes.chatWithFriends:
+      case AppRoutes.chatWithTeam:
         // TODO 로그인한 사용자 정보 넣기 !! 팀 정보 넣기
         UserDTO currentUser = Get.find<IdPwLoginController>().currentUser.value;
         List<String> otherUserIds = Get.find<IdPwLoginController>()
@@ -36,7 +36,7 @@ class TeamScheduleShare extends GetWidget<TeamScheduleController> {
             otherUserIds: otherUserIds);
       case AppRoutes.smartKeyAvailable:
         return SmartKeyAvailablePage();
-      case AppRoutes.myProfilePage:
+      case AppRoutes.myProfile:
         return MyProfilePage();
       default:
         return SharedCalendar();

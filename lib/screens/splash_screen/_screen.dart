@@ -50,8 +50,7 @@ class SplashLoading extends StatelessWidget {
                                     fit: BoxFit.fitWidth,
                                     height: getVerticalSize(11),
                                     width: getHorizontalSize(53),
-                                    margin: getMargin(left: 5, bottom: 3)
-                                    ),
+                                    margin: getMargin(left: 5, bottom: 3)),
                               ])),
                       Container(
                           alignment: Alignment.center,
@@ -59,7 +58,7 @@ class SplashLoading extends StatelessWidget {
                           width: Get.width,
                           child: CustomImageView(
                               onTap: () {
-                                Get.toNamed(AppRoutes.logInIdPassword);
+                                Get.toNamed(AppRoutes.idPwLogin);
                               },
                               imagePath: Assets.images.imgGooli1.path,
                               fit: BoxFit.fitWidth,

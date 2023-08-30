@@ -86,9 +86,7 @@ class PinCodeInput extends StatelessWidget {
       },
       keyboardType: TextInputType.number,
       maxLength: 1,
-      decoration: const InputDecoration(
-        counterText: "",
-      ),
+      decoration: const InputDecoration(counterText: ""),
       textAlign: TextAlign.center,
     );
   }

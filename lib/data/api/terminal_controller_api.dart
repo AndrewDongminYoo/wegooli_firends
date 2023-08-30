@@ -63,10 +63,9 @@ class TerminalControllerApi {
     try {
       const _type = FullType(TerminalRequest);
       _bodyData = _serializers.serialize(terminalRequest, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -110,7 +109,8 @@ class TerminalControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/terminal/detail/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
+    final _path =
+        r'/terminal/detail/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -141,11 +141,12 @@ class TerminalControllerApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(TerminalModel),
-      ) as TerminalModel;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(TerminalModel),
+            ) as TerminalModel;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -210,7 +211,8 @@ class TerminalControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'request': encodeQueryParameter(_serializers, request, const FullType(TerminalRequest)),
+      r'request': encodeQueryParameter(
+          _serializers, request, const FullType(TerminalRequest)),
     };
 
     final _response = await _dio.request<Object>(
@@ -226,11 +228,13 @@ class TerminalControllerApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(TerminalModel)]),
-      ) as BuiltList<TerminalModel>;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType:
+                  const FullType(BuiltList, [FullType(TerminalModel)]),
+            ) as BuiltList<TerminalModel>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -277,7 +281,8 @@ class TerminalControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/terminal/update/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
+    final _path =
+        r'/terminal/update/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
     final _options = Options(
       method: r'PUT',
       headers: <String, dynamic>{
@@ -301,11 +306,11 @@ class TerminalControllerApi {
 
     try {
       const _type = FullType(TerminalUpdateRequest);
-      _bodyData = _serializers.serialize(terminalUpdateRequest, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+      _bodyData =
+          _serializers.serialize(terminalUpdateRequest, specifiedType: _type);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -326,5 +331,4 @@ class TerminalControllerApi {
 
     return _response;
   }
-
 }

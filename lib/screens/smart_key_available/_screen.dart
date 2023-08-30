@@ -196,13 +196,12 @@ class SmartKeyAvailablePage extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Text(
-                                controller.terminalModelObj.value.model ??
-                                    "model",
-                                overflow: TextOverflow.ellipsis,
-                                textAlign: TextAlign.left,
-                                style: theme.textTheme.titleMedium!.copyWith(
-                                    letterSpacing: getHorizontalSize(0.03)),
-                              ),
+                                  controller.terminalModelObj.value.model ??
+                                      "model",
+                                  overflow: TextOverflow.ellipsis,
+                                  textAlign: TextAlign.left,
+                                  style: theme.textTheme.titleMedium!.copyWith(
+                                      letterSpacing: getHorizontalSize(0.03))),
                               Padding(
                                 padding: getPadding(top: 4),
                                 child: Text(
@@ -422,19 +421,18 @@ class SmartKeyAvailablePage extends StatelessWidget {
                               color: Color.fromRGBO(164, 168, 175, 0.2)),
                           child: Center(
                               child: Container(
-                            alignment: Alignment.center,
-                            width: getHorizontalSize(180),
-                            height: getVerticalSize(44),
-                            decoration: BoxDecoration(
-                                color: Color.fromRGBO(34, 34, 34, 0.4),
-                                borderRadius: BorderRadius.circular(100)),
-                            child: Text(
-                                controller.isUsed.isTrue
-                                    ? '${controller.clientName.text}님이 사용중입니다.'
-                                    : l10ns.available,
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 16)),
-                          )),
+                                  alignment: Alignment.center,
+                                  width: getHorizontalSize(180),
+                                  height: getVerticalSize(44),
+                                  decoration: BoxDecoration(
+                                      color: Color.fromRGBO(34, 34, 34, 0.4),
+                                      borderRadius: BorderRadius.circular(100)),
+                                  child: Text(
+                                      controller.isUsed.isTrue
+                                          ? '${controller.clientName.text}님이 사용중입니다.'
+                                          : l10ns.available,
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 16)))),
                         ),
                     ],
                   ),

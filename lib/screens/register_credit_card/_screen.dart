@@ -8,11 +8,6 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 class RegisterCreditCard extends GetWidget<RegisterCreditCardController> {
-  bool isValid() {
-    // TODO: 카드 정보가 valid하면 true, 아니면 false.
-    return true;
-  }
-
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
@@ -246,6 +241,11 @@ class RegisterCreditCard extends GetWidget<RegisterCreditCardController> {
                     }))));
   }
 
+  bool isValid() {
+    // TODO: 카드 정보가 valid하면 true, 아니면 false.
+    return true;
+  }
+
   /// Navigates to the previous screen.
   ///
   /// When the action is triggered, this function uses the [Get] library to
@@ -255,6 +255,6 @@ class RegisterCreditCard extends GetWidget<RegisterCreditCardController> {
   }
 
   onTapRegisterSuccess() {
-    Get.toNamed(AppRoutes.signUpSuccess);
+    Get.toNamed(AppRoutes.registerSuccess);
   }
 }

@@ -75,7 +75,6 @@ class UserControllerApi {
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : rawResponse as String;
-
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -146,10 +145,9 @@ class UserControllerApi {
     try {
       const _type = FullType(UserDetailsDTO);
       _bodyData = _serializers.serialize(userDetailsDTO, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -172,11 +170,12 @@ class UserControllerApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ApiResponseObject),
-      ) as ApiResponseObject;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(ApiResponseObject),
+            ) as ApiResponseObject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -246,10 +245,9 @@ class UserControllerApi {
     try {
       const _type = FullType(Account);
       _bodyData = _serializers.serialize(account, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -273,7 +271,6 @@ class UserControllerApi {
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : rawResponse as String;
-
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -348,7 +345,6 @@ class UserControllerApi {
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : rawResponse as String;
-
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -416,7 +412,8 @@ class UserControllerApi {
 
     final _queryParameters = <String, dynamic>{
       r'id': encodeQueryParameter(_serializers, id, const FullType(String)),
-      r'password': encodeQueryParameter(_serializers, password, const FullType(String)),
+      r'password':
+          encodeQueryParameter(_serializers, password, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -506,10 +503,9 @@ class UserControllerApi {
     try {
       const _type = FullType(UserDTO);
       _bodyData = _serializers.serialize(userDTO, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -533,7 +529,6 @@ class UserControllerApi {
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : rawResponse as String;
-
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -614,8 +609,8 @@ class UserControllerApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as ApiResponseObject;
-
+      _responseData =
+          rawResponse == null ? null : rawResponse as ApiResponseObject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

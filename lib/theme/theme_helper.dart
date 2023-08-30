@@ -52,16 +52,14 @@ class ThemeHelper {
     var colorScheme =
         _supportedColorScheme[_appTheme] ?? ColorSchemes.primaryColorScheme;
     return ThemeData(
-        visualDensity: VisualDensity.standard,
-        colorScheme: colorScheme,
-        textTheme: TextThemes.textTheme(colorScheme),
-        elevatedButtonTheme: ElevatedButtonThemeData(
-            style: ElevatedButton.styleFrom(
-                backgroundColor: colorScheme.primary,
-                shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(
-              26,
-            ),
+      visualDensity: VisualDensity.standard,
+      colorScheme: colorScheme,
+      textTheme: TextThemes.textTheme(colorScheme),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: colorScheme.primary,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(26),
           ),
           visualDensity: const VisualDensity(
             vertical: -4,
@@ -70,37 +68,34 @@ class ThemeHelper {
           padding: EdgeInsets.zero,
         ),
       ),
-        radioTheme: RadioThemeData(
-            fillColor: MaterialStateColor.resolveWith((states) {
-              if (states.contains(MaterialState.selected)) {
+      radioTheme: RadioThemeData(
+        fillColor: MaterialStateColor.resolveWith((states) {
+          if (states.contains(MaterialState.selected)) {
             return appTheme.gray400;
-              }
-              return colorScheme.onSurface;
-            }),
+          }
+          return colorScheme.onSurface;
+        }),
         visualDensity: const VisualDensity(
           vertical: -4,
           horizontal: -4,
         ),
       ),
-        checkboxTheme: CheckboxThemeData(
-            fillColor: MaterialStateColor.resolveWith((states) {
-              if (states.contains(MaterialState.selected)) {
+      checkboxTheme: CheckboxThemeData(
+        fillColor: MaterialStateColor.resolveWith((states) {
+          if (states.contains(MaterialState.selected)) {
             return appTheme.gray400;
-              }
-              return colorScheme.onSurface;
-            }),
-        side: BorderSide(
-          width: 1,
-        ),
+          }
+          return colorScheme.onSurface;
+        }),
+        side: BorderSide(width: 1),
         visualDensity: const VisualDensity(
           vertical: -4,
           horizontal: -4,
         ),
       ),
-      floatingActionButtonTheme: FloatingActionButtonThemeData(
-        backgroundColor: colorScheme.primary,
-      ),
-        dividerTheme: DividerThemeData(
+      floatingActionButtonTheme:
+          FloatingActionButtonThemeData(backgroundColor: colorScheme.primary),
+      dividerTheme: DividerThemeData(
         thickness: 1,
         space: 1,
         color: colorScheme.primary,
@@ -118,59 +113,45 @@ class ThemeHelper {
 /// Class containing the supported text theme styles.
 class TextThemes {
   static TextTheme textTheme(ColorScheme colorScheme) => TextTheme(
-      bodyLarge: TextStyle(
+        bodyLarge: TextStyle(
           color: colorScheme.onPrimary,
-          fontSize: getFontSize(
-            16,
-          ),
+          fontSize: getFontSize(16),
           fontFamily: FontFamily.pretendard,
           fontWeight: FontWeight.w400,
         ),
-      bodyMedium: TextStyle(
+        bodyMedium: TextStyle(
           color: colorScheme.onPrimary,
-          fontSize: getFontSize(
-            15,
-          ),
+          fontSize: getFontSize(15),
           fontFamily: FontFamily.pretendard,
           fontWeight: FontWeight.w400,
         ),
-      bodySmall: TextStyle(
+        bodySmall: TextStyle(
           color: colorScheme.onPrimary,
-          fontSize: getFontSize(
-            12,
-          ),
+          fontSize: getFontSize(12),
           fontFamily: FontFamily.pretendard,
           fontWeight: FontWeight.w400,
         ),
-      displayMedium: TextStyle(
+        displayMedium: TextStyle(
           color: colorScheme.onPrimary,
-          fontSize: getFontSize(
-            50,
-          ),
+          fontSize: getFontSize(50),
           fontFamily: FontFamily.cookieRun,
           fontWeight: FontWeight.w900,
         ),
         headlineSmall: TextStyle(
           color: appTheme.black900,
-          fontSize: getFontSize(
-            24,
-          ),
+          fontSize: getFontSize(24),
           fontFamily: FontFamily.pretendard,
           fontWeight: FontWeight.w700,
         ),
-      titleMedium: TextStyle(
+        titleMedium: TextStyle(
           color: colorScheme.onPrimary,
-          fontSize: getFontSize(
-            18,
-          ),
+          fontSize: getFontSize(18),
           fontFamily: FontFamily.pretendard,
           fontWeight: FontWeight.w700,
         ),
-      titleSmall: TextStyle(
+        titleSmall: TextStyle(
           color: appTheme.red600,
-          fontSize: getFontSize(
-            14,
-          ),
+          fontSize: getFontSize(14),
           fontFamily: FontFamily.pretendard,
           fontWeight: FontWeight.w700,
         ),

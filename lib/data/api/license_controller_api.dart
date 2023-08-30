@@ -70,7 +70,6 @@ class LicenseControllerApi {
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : rawResponse as bool;
-
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -115,7 +114,8 @@ class LicenseControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/license/member/{memberSeq}'.replaceAll('{' r'memberSeq' '}', memberSeq.toString());
+    final _path = r'/license/member/{memberSeq}'
+        .replaceAll('{' r'memberSeq' '}', memberSeq.toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -147,7 +147,6 @@ class LicenseControllerApi {
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : rawResponse as bool;
-
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -217,10 +216,9 @@ class LicenseControllerApi {
     try {
       const _type = FullType(LicenseRequest);
       _bodyData = _serializers.serialize(licenseRequest, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -244,7 +242,6 @@ class LicenseControllerApi {
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : rawResponse as int;
-
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -320,11 +317,12 @@ class LicenseControllerApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(LicenseModel),
-      ) as LicenseModel;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(LicenseModel),
+            ) as LicenseModel;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -389,7 +387,8 @@ class LicenseControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'request': encodeQueryParameter(_serializers, request, const FullType(LicenseRequest)),
+      r'request': encodeQueryParameter(
+          _serializers, request, const FullType(LicenseRequest)),
     };
 
     final _response = await _dio.request<Object>(
@@ -405,11 +404,13 @@ class LicenseControllerApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(LicenseModel)]),
-      ) as BuiltList<LicenseModel>;
-
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType:
+                  const FullType(BuiltList, [FullType(LicenseModel)]),
+            ) as BuiltList<LicenseModel>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -484,7 +485,6 @@ class LicenseControllerApi {
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : rawResponse as bool;
-
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -556,10 +556,9 @@ class LicenseControllerApi {
     try {
       const _type = FullType(LicenseRequest);
       _bodyData = _serializers.serialize(licenseRequest, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -583,7 +582,6 @@ class LicenseControllerApi {
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : rawResponse as bool;
-
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -605,5 +603,4 @@ class LicenseControllerApi {
       extra: _response.extra,
     );
   }
-
 }

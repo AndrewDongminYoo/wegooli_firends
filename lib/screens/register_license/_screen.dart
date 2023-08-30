@@ -8,11 +8,6 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 class RegisterLicense extends GetWidget<RegisterLicenseController> {
-  bool isValid() {
-    // TODO: 면허증이 valid하면 true, 아니면 false.
-    return true;
-  }
-
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
@@ -328,15 +323,20 @@ class RegisterLicense extends GetWidget<RegisterLicenseController> {
                     }))));
   }
 
+  bool isValid() {
+    // TODO: 면허증이 valid하면 true, 아니면 false.
+    return true;
+  }
+
+  onRegisterCreditCard() {
+    Get.toNamed(AppRoutes.registerCreditCard);
+  }
+
   /// Navigates to the previous screen.
   ///
   /// When the action is triggered, this function uses the [Get] library to
   /// navigate to the previous screen in the navigation stack.
   onTabBackButton() {
     Get.back();
-  }
-
-  onRegisterCreditCard() {
-    Get.toNamed(AppRoutes.registerCredits);
   }
 }

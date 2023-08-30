@@ -63,7 +63,9 @@ class SendingCrewInvitationDialog extends StatelessWidget {
                   CustomElevatedButton(
                       onTap: () {
                         /// FIXME: controller.invitationCodeController.text 값을 클립보드에 복사 / 또는 공유 모달 띄우기
-                        Get.dialog(AlertDialog(title: Text(controller.invitationCodeController.text)));
+                        Get.dialog(AlertDialog(
+                            title: Text(
+                                controller.invitationCodeController.text)));
                       },
                       text: l10ns.copy,
                       margin: getMargin(top: 25),

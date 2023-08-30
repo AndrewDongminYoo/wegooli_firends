@@ -35,6 +35,7 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
                     width: getHorizontalSize(104),
                     icon:
                         Icon(Icons.arrow_drop_down, color: appTheme.gray50003),
+
                     /// `initialValue`가 `true`인 경우 `hintText`는 보이지 않습니다.
                     hintText: "통신사",
                     initialValue: true,
@@ -105,7 +106,8 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
                         padding: getPadding(
                             left: 30, top: 12, right: 10, bottom: 12),
                         child: Obx(() {
-                          var isWaitingOtpCode = widget.controller.isWaitingOtpCode.isTrue;
+                          var isWaitingOtpCode =
+                              widget.controller.isWaitingOtpCode.isTrue;
                           if (isWaitingOtpCode) {
                             return TimerCountdown(
                               spacerWidth: 0,

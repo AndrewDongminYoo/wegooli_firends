@@ -56,12 +56,15 @@ class ValidatePhone extends GetWidget<PhoneAuthController> {
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Birthday6NumberInput(controller: controller),
+                                      Birthday6NumberInput(
+                                          controller: controller),
                                       Text("-", style: TextStyle(fontSize: 24)),
-                                      SocialSecurity7NumberInput(controller: controller),
+                                      SocialSecurity7NumberInput(
+                                          controller: controller),
                                     ]),
-                                CustomGuideText(text: l10ns
-                                    .subscriptionsAreRestrictedToThoseUnderTheAgeOf26),
+                                CustomGuideText(
+                                    text: l10ns
+                                        .subscriptionsAreRestrictedToThoseUnderTheAgeOf26),
                               ])),
                       SMSValidationForm(controller: controller)
                     ])),
@@ -89,19 +92,12 @@ class SocialSecurity7NumberInput extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomTextFormField(
         width: getHorizontalSize(158),
-        controller:
-            controller.socialId,
+        controller: controller.socialId,
         margin: getMargin(top: 4),
-        contentPadding: getPadding(
-            left: 12,
-            top: 14,
-            right: 12,
-            bottom: 14),
+        contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),
         inputFormatters: [
-          FilteringTextInputFormatter
-              .digitsOnly,
-          FilteringTextInputFormatter
-              .singleLineFormatter,
+          FilteringTextInputFormatter.digitsOnly,
+          FilteringTextInputFormatter.singleLineFormatter,
           LengthLimitingTextInputFormatter(7)
         ],
 
@@ -109,15 +105,12 @@ class SocialSecurity7NumberInput extends StatelessWidget {
         obscureChar: '○',
         obscureText: true,
         textInputType: TextInputType.number,
-        textStyle: CustomTextStyles
-            .bodyLargeGray50003,
+        textStyle: CustomTextStyles.bodyLargeGray50003,
         hintText: "●●●●●●●",
-        hintStyle: CustomTextStyles
-            .bodyLargeGray50003,
+        hintStyle: CustomTextStyles.bodyLargeGray50003,
         textInputAction: TextInputAction.next,
         filled: true,
-        fillColor: theme
-            .colorScheme.onPrimaryContainer);
+        fillColor: theme.colorScheme.onPrimaryContainer);
   }
 }
 
@@ -133,31 +126,21 @@ class Birthday6NumberInput extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomTextFormField(
         width: getHorizontalSize(158),
-        controller:
-            controller.birthDay,
+        controller: controller.birthDay,
         margin: getMargin(top: 4),
         inputFormatters: [
-          FilteringTextInputFormatter
-              .digitsOnly,
-          FilteringTextInputFormatter
-              .singleLineFormatter,
+          FilteringTextInputFormatter.digitsOnly,
+          FilteringTextInputFormatter.singleLineFormatter,
           LengthLimitingTextInputFormatter(6)
         ],
         textInputType: TextInputType.number,
-        contentPadding: getPadding(
-            left: 12,
-            top: 14,
-            right: 12,
-            bottom: 14),
-        textStyle: CustomTextStyles
-            .bodyLargeGray50003,
+        contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),
+        textStyle: CustomTextStyles.bodyLargeGray50003,
         hintText: "YYMMDD",
-        hintStyle: CustomTextStyles
-            .bodyLargeGray50003,
+        hintStyle: CustomTextStyles.bodyLargeGray50003,
         textInputAction: TextInputAction.next,
         filled: true,
-        fillColor: theme
-            .colorScheme.onPrimaryContainer);
+        fillColor: theme.colorScheme.onPrimaryContainer);
   }
 }
 
@@ -174,17 +157,14 @@ class NameTextInput extends StatelessWidget {
     return CustomTextFormField(
         controller: controller.fullName,
         margin: getMargin(top: 4),
-        contentPadding: getPadding(
-            left: 12, top: 14, right: 12, bottom: 14),
-        textStyle:
-            CustomTextStyles.bodyLargeNotoSansKRGray700,
+        contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),
+        textStyle: CustomTextStyles.bodyLargeNotoSansKRGray700,
         hintStyle: CustomTextStyles.bodyLargeGray50003,
         hintText: "이름을 입력해주세요.",
         textInputAction: TextInputAction.next,
         inputFormatters: [
           /// 테스트를 위해 입력할 수 있는 글자를 제한해 봄. 숫자 입력 못하게 함.
-          FilteringTextInputFormatter.allow(
-              RegExp(r'[A-Za-z가-힣ㄱ-ㅎ, ]+'))
+          FilteringTextInputFormatter.allow(RegExp(r'[A-Za-z가-힣ㄱ-ㅎ, ]+'))
         ],
         filled: true,
         fillColor: theme.colorScheme.onPrimaryContainer);

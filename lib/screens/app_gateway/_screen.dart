@@ -6,6 +6,27 @@ import '/core/app_export.dart';
 
 // ignore: must_be_immutable
 class GatewayScreen extends StatelessWidget {
+  Widget alertDialog = AlertDialog(
+      backgroundColor: Colors.transparent,
+      contentPadding: EdgeInsets.zero,
+      insetPadding: EdgeInsets.only(left: 0),
+      content: UnsubscriptionConfirmWarnDialog());
+
+  Widget openInvitationModal = AlertDialog(
+      backgroundColor: Colors.transparent,
+      contentPadding: EdgeInsets.zero,
+      insetPadding: const EdgeInsets.only(left: 0),
+      content: SendingCrewInvitationDialog(SendingCrewInvitationController.to));
+
+  Widget openCheckReservations = AlertDialog(
+      backgroundColor: Colors.transparent,
+      contentPadding: EdgeInsets.zero,
+      insetPadding: const EdgeInsets.only(left: 0),
+      content: ReservationsCheckingPageDialog());
+
+  Widget openDateTimePicker = ReservationDatetimePickerBottomSheet(
+      ReservationDatetimePickerController.to);
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -47,7 +68,7 @@ class GatewayScreen extends StatelessWidget {
                                                 l10ns.splashLoadingScreen),
                                         RouteItem(
                                             routeDestination:
-                                                AppRoutes.logInIdPassword,
+                                                AppRoutes.idPwLogin,
                                             routeName:
                                                 l10ns.loginWithIdAndPassword),
                                         RouteItem(
@@ -56,7 +77,7 @@ class GatewayScreen extends StatelessWidget {
                                             routeName: l10ns.signupAcceptTerms),
                                         RouteItem(
                                             routeDestination:
-                                                AppRoutes.validatePhone,
+                                                AppRoutes.phoneAuth,
                                             routeName:
                                                 l10ns.loginValidatePhoneAuth),
                                         RouteItem(
@@ -71,12 +92,12 @@ class GatewayScreen extends StatelessWidget {
                                                 l10ns.loginRegisterLicensePage),
                                         RouteItem(
                                             routeDestination:
-                                                AppRoutes.registerCredits,
+                                                AppRoutes.registerCreditCard,
                                             routeName:
                                                 l10ns.loginRegisterCreditCard),
                                         RouteItem(
                                             routeDestination:
-                                                AppRoutes.signUpSuccess,
+                                                AppRoutes.registerSuccess,
                                             routeName:
                                                 l10ns.loginRegisterSuccessPage),
                                         RouteItem(
@@ -96,13 +117,45 @@ class GatewayScreen extends StatelessWidget {
                                         RouteItem(
                                             routeDestination:
                                                 AppRoutes.carStatusInfo,
-                                            routeName: AppLocalizationsKo()
-                                                .carStatusInformation),
-                                        RouteItem(
-                                            routeDestination:
-                                                AppRoutes.carStatusInfo2,
                                             routeName:
                                                 l10ns.carStatusInformation),
+                                        RouteItem(
+                                            routeDestination:
+                                                AppRoutes.carStateInfo,
+                                            routeName:
+                                                l10ns.carStatusInformation),
+                                        RouteItem(
+                                            routeDestination:
+                                                AppRoutes.unsubscribeConfirm,
+                                            routeName:
+                                                l10ns.unsubscriptionConfirm),
+                                        RouteItem(
+                                            routeDestination: AppRoutes
+                                                    .upcomingUnsubscription +
+                                                '_outlined',
+                                            routeName: l10ns
+                                                    .upcomingUnsubscriptionInfo +
+                                                "(1)"),
+                                        RouteItem(
+                                            routeDestination: AppRoutes
+                                                    .upcomingUnsubscription +
+                                                '_filled',
+                                            routeName: l10ns
+                                                    .upcomingUnsubscriptionView +
+                                                "(2)"),
+                                        RouteItem(
+                                            routeDestination:
+                                                AppRoutes.noSubscription,
+                                            routeName: l10ns
+                                                .subscriptionInfoNoService),
+                                        RouteItem(
+                                            routeDestination:
+                                                AppRoutes.smartKeyAvailable,
+                                            routeName: l10ns.smartKeyAvailable),
+                                        RouteModal(
+                                            dialog: alertDialog,
+                                            dialogTitle: l10ns
+                                                .unsubscriptionConfirmWarn),
                                         RouteModal(
                                             dialog: openInvitationModal,
                                             dialogTitle:
@@ -115,56 +168,7 @@ class GatewayScreen extends StatelessWidget {
                                             bottomSheet: openDateTimePicker,
                                             dialogTitle: l10ns
                                                 .reservationDatetimePicker),
-                                        RouteItem(
-                                            routeDestination:
-                                                AppRoutes.unsubscriptionConfirm,
-                                            routeName:
-                                                l10ns.unsubscriptionConfirm),
-                                        RouteModal(
-                                            dialog: alertDialog,
-                                            dialogTitle: l10ns
-                                                .unsubscriptionConfirmWarn),
-                                        RouteItem(
-                                            routeDestination:
-                                                AppRoutes.unsubscriptionInfo,
-                                            routeName: l10ns
-                                                .upcomingUnsubscriptionInfo),
-                                        RouteItem(
-                                            routeDestination:
-                                                AppRoutes.unsubscriptionInfo2,
-                                            routeName: l10ns
-                                                .upcomingUnsubscriptionView),
-                                        RouteItem(
-                                            routeDestination:
-                                                AppRoutes.subscriptionNoService,
-                                            routeName: l10ns
-                                                .subscriptionInfoNoService),
-                                        RouteItem(
-                                            routeDestination:
-                                                AppRoutes.smartKeyAvailable,
-                                            routeName: l10ns.smartKeyAvailable)
                                       ]))))
                     ]))));
   }
-
-  Widget alertDialog = AlertDialog(
-      backgroundColor: Colors.transparent,
-      contentPadding: EdgeInsets.zero,
-      insetPadding: EdgeInsets.only(left: 0),
-      content: UnsubscriptionConfirmWarnDialog());
-
-  Widget openInvitationModal = AlertDialog(
-      backgroundColor: Colors.transparent,
-      contentPadding: EdgeInsets.zero,
-      insetPadding: const EdgeInsets.only(left: 0),
-      content: SendingCrewInvitationDialog(SendingCrewInvitationController.to));
-
-  Widget openCheckReservations = AlertDialog(
-      backgroundColor: Colors.transparent,
-      contentPadding: EdgeInsets.zero,
-      insetPadding: const EdgeInsets.only(left: 0),
-      content: ReservationsCheckingPageDialog());
-
-  Widget openDateTimePicker = ReservationDatetimePickerBottomSheet(
-      ReservationDatetimePickerController.to);
 }

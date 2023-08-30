@@ -264,7 +264,8 @@ class ReservationDatetimePickerBottomSheet extends StatelessWidget {
                                 CustomElevatedButton(
                                     text: l10ns.confirm,
                                     margin: getMargin(left: 8),
-                                    buttonStyle: CustomButtonStyles.fillPrimaryC26
+                                    buttonStyle: CustomButtonStyles
+                                        .fillPrimaryC26
                                         .copyWith(
                                             fixedSize:
                                                 MaterialStateProperty.all<Size>(

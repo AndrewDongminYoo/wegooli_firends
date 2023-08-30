@@ -20,7 +20,7 @@ class AcceptTermsNextButton extends GetWidget<AcceptTermsController> {
             buttonTextStyle: CustomTextStyles.titleMedium18,
             onTap: () {
               if (controller.isAllTermsAccepted.value) {
-                Get.toNamed(AppRoutes.validatePhone);
+                Get.toNamed(AppRoutes.phoneAuth);
               }
             }));
   }

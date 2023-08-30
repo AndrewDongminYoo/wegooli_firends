@@ -61,11 +61,11 @@ class TeamCarConnectionControllerApi {
 
     try {
       const _type = FullType(TeamCarConnection);
-      _bodyData = _serializers.serialize(teamCarConnection, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+      _bodyData =
+          _serializers.serialize(teamCarConnection, specifiedType: _type);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -89,7 +89,6 @@ class TeamCarConnectionControllerApi {
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : rawResponse as String;
-
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -158,11 +157,11 @@ class TeamCarConnectionControllerApi {
 
     try {
       const _type = FullType(TeamCarConnection);
-      _bodyData = _serializers.serialize(teamCarConnection, specifiedType: _type);
-
-    } catch(error, stackTrace) {
+      _bodyData =
+          _serializers.serialize(teamCarConnection, specifiedType: _type);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -186,7 +185,6 @@ class TeamCarConnectionControllerApi {
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : rawResponse as String;
-
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -208,5 +206,4 @@ class TeamCarConnectionControllerApi {
       extra: _response.extra,
     );
   }
-
 }

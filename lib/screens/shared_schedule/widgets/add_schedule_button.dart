@@ -5,10 +5,6 @@ import 'package:flutter/material.dart';
 import '/core/app_export.dart';
 
 class AddScheduleButton extends StatelessWidget {
-  const AddScheduleButton({
-    super.key,
-  });
-
   @override
   Widget build(BuildContext context) {
     return CustomElevatedButton(

@@ -56,7 +56,8 @@ class LocalizedKo extends Localized {
   String get confirm => '확인';
 
   @override
-  String get consentToCollectionAndUseOfVehicleLocationInfo => '차량 위치정보의 수집 이용 제공 동의 (필수)';
+  String get consentToCollectionAndUseOfVehicleLocationInfo =>
+      '차량 위치정보의 수집 이용 제공 동의 (필수)';
 
   @override
   String get copy => '복사하기';
@@ -77,7 +78,8 @@ class LocalizedKo extends Localized {
   String get eligibilityPeriodExpirationDate => '적성기간 만료일';
 
   @override
-  String get enterYourAptitudePeriodTestExpirationDate => '적성기간 만료일(숫자만)을 입력해주세요.';
+  String get enterYourAptitudePeriodTestExpirationDate =>
+      '적성기간 만료일(숫자만)을 입력해주세요.';
 
   @override
   String get enterYourVerificationNumber => '인증 번호를 입력하세요.';
@@ -166,7 +168,8 @@ class LocalizedKo extends Localized {
   String get paymentDueDate => '결제 예정일';
 
   @override
-  String get pleaseEnterYourLicenseIssueDateOnlyNumbers => '면허발급일자(숫자만)를 입력해주세요.';
+  String get pleaseEnterYourLicenseIssueDateOnlyNumbers =>
+      '면허발급일자(숫자만)를 입력해주세요.';
 
   @override
   String get pleaseEnterYourLicenseNumbersOnly => '면허증번호(숫자만)를 입력해주세요.';
@@ -253,7 +256,8 @@ class LocalizedKo extends Localized {
   String get subscriptionInformation => '구독 정보';
 
   @override
-  String get subscriptionsAreRestrictedToThoseUnderTheAgeOf26 => '· 만 26세 미만은 가입이 제한됩니다.';
+  String get subscriptionsAreRestrictedToThoseUnderTheAgeOf26 =>
+      '· 만 26세 미만은 가입이 제한됩니다.';
 
   @override
   String subscriptionsWillBeCanceledAfter(int y, int m, int d) {
@@ -291,7 +295,8 @@ class LocalizedKo extends Localized {
   String get viewSchedules => '일정 확인';
 
   @override
-  String get youCanCancelAnytime => '해지 시 위굴리 프렌즈의 모든 혜택을 잃게 됩니다. 남은 기간 내에 해지를 취소하실 수 있습니다.';
+  String get youCanCancelAnytime =>
+      '해지 시 위굴리 프렌즈의 모든 혜택을 잃게 됩니다. 남은 기간 내에 해지를 취소하실 수 있습니다.';
 
   @override
   String get youHaveNoAccount => '계정이 없으신가요?';

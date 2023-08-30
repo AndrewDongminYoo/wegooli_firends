@@ -104,8 +104,9 @@ class SmartKeyNotAvailable extends StatelessWidget {
                                                                         bottom:
                                                                             1),
                                                                 child: Text(
-                                                                    l10ns
-                                                                        .remainingFuelLevel('휘발유', '20%'),
+                                                                    l10ns.remainingFuelLevel(
+                                                                        '휘발유',
+                                                                        '20%'),
                                                                     overflow:
                                                                         TextOverflow
                                                                             .ellipsis,

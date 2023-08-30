@@ -36,7 +36,6 @@ class ThemeHelper {
           "$_appTheme is not found.Make sure you have added this theme class in JSON Try running flutter pub run build_runner");
     }
     // return theme from map
-
     return _supportedCustomColor[_appTheme] ?? PrimaryColors();
   }
 
@@ -48,7 +47,6 @@ class ThemeHelper {
           "$_appTheme is not found.Make sure you have added this theme class in JSON Try running flutter pub run build_runner");
     }
     // return theme from map
-
     var colorScheme =
         _supportedColorScheme[_appTheme] ?? ColorSchemes.primaryColorScheme;
     return ThemeData(

@@ -10,10 +10,6 @@ import 'package:table_calendar/table_calendar.dart';
 import '/core/app_export.dart';
 
 class CalendarBody extends StatefulWidget {
-  const CalendarBody({
-    super.key,
-  });
-
   @override
   State<CalendarBody> createState() => _CalendarBodyState();
 }

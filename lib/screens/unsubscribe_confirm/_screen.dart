@@ -41,7 +41,8 @@ class UnsubscriptionConfirm extends StatelessWidget {
                       Container(
                           width: getHorizontalSize(179),
                           margin: getMargin(top: 50),
-                          child: Text(l10ns.areYouSureYouWantToUnsubscribe('유동민'),
+                          child: Text(
+                              l10ns.areYouSureYouWantToUnsubscribe('유동민'),
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.center,
@@ -51,7 +52,10 @@ class UnsubscriptionConfirm extends StatelessWidget {
                       Padding(
                           padding: getPadding(top: 23),
                           child: Text(
-                              l10ns.subscriptionsWillBeCanceledAfter(expireDate.year, expireDate.month, expireDate.day),
+                              l10ns.subscriptionsWillBeCanceledAfter(
+                                  expireDate.year,
+                                  expireDate.month,
+                                  expireDate.day),
                               overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.left,
                               style: CustomTextStyles.bodyLargeBlack900

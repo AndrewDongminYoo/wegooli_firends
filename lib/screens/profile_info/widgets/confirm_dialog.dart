@@ -48,10 +48,8 @@ class ConfirmDialog extends StatelessWidget {
           fontSize: 16,
           fontWeight: FontWeight.w400,
           fontFamily: FontFamily.pretendard),
-      content: SingleChildScrollView(
-          child: ListBody(
-        children: <Widget>[content],
-      )),
+      content:
+          SingleChildScrollView(child: ListBody(children: <Widget>[content])),
       actionsPadding: getPadding(all: 0),
       actionsOverflowButtonSpacing: null,
       actions: <Widget>[
@@ -61,44 +59,43 @@ class ConfirmDialog extends StatelessWidget {
           child: Row(
             children: [
               TextButton(
-                onPressed: () => Navigator.pop(context, false), // passing false
-                child: Text(cancelText,
-                    style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontSize: 16,
-                        fontFamily: FontFamily.pretendard)),
-                style: ButtonStyle(
-                    shape: MaterialStatePropertyAll(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.zero))),
-                    foregroundColor:
-                        MaterialStateProperty.all<Color>(Colors.black),
-                    backgroundColor: MaterialStatePropertyAll<Color>(
-                        Color.fromRGBO(186, 188, 195, 1)),
-                    fixedSize: MaterialStateProperty.all<Size>(
-                        Size(getSize(164), getSize(52)))),
-              ),
+                  onPressed: () =>
+                      Navigator.pop(context, false), // passing false
+                  child: Text(cancelText,
+                      style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontSize: 16,
+                          fontFamily: FontFamily.pretendard)),
+                  style: ButtonStyle(
+                      shape: MaterialStatePropertyAll(RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.zero))),
+                      foregroundColor:
+                          MaterialStateProperty.all<Color>(Colors.black),
+                      backgroundColor: MaterialStatePropertyAll<Color>(
+                          Color.fromRGBO(186, 188, 195, 1)),
+                      fixedSize: MaterialStateProperty.all<Size>(
+                          Size(getSize(164), getSize(52))))),
               TextButton(
-                onPressed: () {
-                  if (confirmFunc != null) {
-                    confirmFunc!();
-                  }
-                  Navigator.pop(context, false);
-                }, // passing true
-                child: Text(confirmText,
-                    style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontSize: 16,
-                        fontFamily: FontFamily.pretendard)),
-                style: ButtonStyle(
-                    padding: MaterialStatePropertyAll(EdgeInsets.zero),
-                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                    foregroundColor:
-                        MaterialStateProperty.all<Color>(Colors.black),
-                    backgroundColor: MaterialStatePropertyAll<Color>(
-                        Color.fromRGBO(255, 225, 66, 1)),
-                    fixedSize: MaterialStateProperty.all<Size>(
-                        Size(getSize(164), getSize(52)))),
-              ),
+                  onPressed: () {
+                    if (confirmFunc != null) {
+                      confirmFunc!();
+                    }
+                    Navigator.pop(context, false);
+                  }, // passing true
+                  child: Text(confirmText,
+                      style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontSize: 16,
+                          fontFamily: FontFamily.pretendard)),
+                  style: ButtonStyle(
+                      padding: MaterialStatePropertyAll(EdgeInsets.zero),
+                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                      foregroundColor:
+                          MaterialStateProperty.all<Color>(Colors.black),
+                      backgroundColor: MaterialStatePropertyAll<Color>(
+                          Color.fromRGBO(255, 225, 66, 1)),
+                      fixedSize: MaterialStateProperty.all<Size>(
+                          Size(getSize(164), getSize(52))))),
             ],
           ),
         ),

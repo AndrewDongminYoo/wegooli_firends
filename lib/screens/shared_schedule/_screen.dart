@@ -31,6 +31,7 @@ class TeamScheduleShare extends GetWidget<TeamScheduleController> {
         print('currentUser $currentUser');
         print('otherUserIds $otherUserIds');
         return DashChatWithFriendsPage(
+            // FIXME: 나중에 배포용 아이디 받으면 환경변수 또는 서버 응답으로 변경
             appId: "36FB6EA9-27A7-44F1-9696-72E1E21033B6",
             userId: currentUser.id as String,
             otherUserIds: otherUserIds);

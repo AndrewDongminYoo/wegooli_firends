@@ -43,25 +43,22 @@ class CallbackTextInputFormatter extends FilteringTextInputFormatter {
     inputtingCallback!(valid);
   }
 
-  static CallbackTextInputFormatter businessNumber({
-    required void Function(bool valid) inputtingCallback,
-  }) {
+  static CallbackTextInputFormatter businessNumber(
+      {required void Function(bool valid) inputtingCallback}) {
     return CallbackTextInputFormatter(RegExp(r'[0-9]'),
         allow: true, inputtingCallback: inputtingCallback);
   }
 
-  static CallbackTextInputFormatter name({
-    required void Function(bool valid) inputtingCallback,
-  }) {
+  static CallbackTextInputFormatter name(
+      {required void Function(bool valid) inputtingCallback}) {
     return CallbackTextInputFormatter(
         RegExp(r"""[₩0-9~!@#\$%^&*()_+`\-={}|\[\]\:";'<>?,./]"""),
         allow: false,
         inputtingCallback: inputtingCallback);
   }
 
-  static CallbackTextInputFormatter phone({
-    required void Function(bool valid) inputtingCallback,
-  }) {
+  static CallbackTextInputFormatter phone(
+      {required void Function(bool valid) inputtingCallback}) {
     return CallbackTextInputFormatter(RegExp(r'[0-9\-]'),
         allow: true, inputtingCallback: inputtingCallback);
   }

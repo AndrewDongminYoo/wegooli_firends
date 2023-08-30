@@ -5,10 +5,6 @@ import 'package:flutter/material.dart';
 import '/core/app_export.dart';
 
 class CalendarTitle extends StatelessWidget {
-  const CalendarTitle({
-    super.key,
-  });
-
   @override
   Widget build(BuildContext context) {
     return Padding(

@@ -414,26 +414,27 @@ class SmartKeyAvailablePage extends StatelessWidget {
                       // 사용중일 때 화면 가리기용
                       if (controller.isUsed.isTrue)
                         Container(
-                          height:
-                              mediaQueryData.size.height - getVerticalSize(200),
-                          width: mediaQueryData.size.width,
-                          decoration: BoxDecoration(
-                              color: Color.fromRGBO(164, 168, 175, 0.2)),
-                          child: Center(
-                              child: Container(
-                                  alignment: Alignment.center,
-                                  width: getHorizontalSize(180),
-                                  height: getVerticalSize(44),
-                                  decoration: BoxDecoration(
-                                      color: Color.fromRGBO(34, 34, 34, 0.4),
-                                      borderRadius: BorderRadius.circular(100)),
-                                  child: Text(
-                                      controller.isUsed.isTrue
-                                          ? '${controller.clientName.text}님이 사용중입니다.'
-                                          : l10ns.available,
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 16)))),
-                        ),
+                            height: mediaQueryData.size.height -
+                                getVerticalSize(200),
+                            width: mediaQueryData.size.width,
+                            decoration: BoxDecoration(
+                                color: Color.fromRGBO(164, 168, 175, 0.2)),
+                            child: Center(
+                                child: Container(
+                                    alignment: Alignment.center,
+                                    width: getHorizontalSize(180),
+                                    height: getVerticalSize(44),
+                                    decoration: BoxDecoration(
+                                        color: Color.fromRGBO(34, 34, 34, 0.4),
+                                        borderRadius:
+                                            BorderRadius.circular(100)),
+                                    child: Text(
+                                        controller.isUsed.isTrue
+                                            ? '${controller.clientName.text}님이 사용중입니다.'
+                                            : l10ns.available,
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 16))))),
                     ],
                   ),
                 ),
@@ -544,10 +545,6 @@ class ControlButton extends StatelessWidget {
 }
 
 class ArrowLeft extends StatelessWidget {
-  const ArrowLeft({
-    super.key,
-  });
-
   @override
   Widget build(BuildContext context) {
     return CustomImageView(
@@ -559,10 +556,6 @@ class ArrowLeft extends StatelessWidget {
 }
 
 class ArrowRight extends StatelessWidget {
-  const ArrowRight({
-    super.key,
-  });
-
   @override
   Widget build(BuildContext context) {
     return CustomImageView(

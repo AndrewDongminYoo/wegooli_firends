@@ -8,10 +8,6 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 class BottomTabRouterBar extends StatelessWidget {
-  const BottomTabRouterBar({
-    super.key,
-  });
-
   @override
   Widget build(BuildContext context) {
     return CustomBottomBar(onChanged: (BottomBarEnum type) {

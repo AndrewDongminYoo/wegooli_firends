@@ -54,7 +54,7 @@ class PhoneAuthController extends GetxController {
     }
   }
 
-   void verificaticonIsExpired() {
+  void verificaticonIsExpired() {
     print('verificationCodeHasExpired called!!!');
     verifyCodeExpire.value = true;
     // TODO: 다음 로직들 실행

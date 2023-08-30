@@ -6,12 +6,10 @@ import 'package:get/get.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
-import 'controller/_controller.dart';
-import 'widgets/list_item.dart';
+import 'widgets/confirm_dialog.dart';
 
-class MyProfilePage extends StatelessWidget {
-  final MyProfileController controller = MyProfileController.to;
-
+class ProfileInfoPage extends StatelessWidget {
+  final api = Get.find<WegooliFriends>().getUserControllerApi();
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
@@ -19,13 +17,18 @@ class MyProfilePage extends StatelessWidget {
         child: Scaffold(
             backgroundColor: theme.colorScheme.onPrimaryContainer,
             appBar: CustomAppBar(
-                height: getVerticalSize(45),
+                height: getVerticalSize(53),
+                leadingWidth: 34,
+                leading: CustomImageView(
+                    height: getSize(18),
+                    width: getSize(18),
+                    svgPath: Assets.svg.imgArrowLeft.path,
+                    margin: getMargin(left: 16, top: 19, bottom: 16),
+                    onTap: () {
+                      onTabBackButton();
+                    }),
                 centerTitle: true,
-                title: CustomImageView(
-                    height: getVerticalSize(17),
-                    width: getHorizontalSize(88),
-                    svgPath: Assets.svg.imgFriendsTypo.path),
-                styleType: Style.bgOutline),
+                title: AppbarTitle(text: '개인 정보')),
             body: Container(
                 width: mediaQueryData.size.width,
                 height: mediaQueryData.size.height,
@@ -80,30 +83,54 @@ class MyProfilePage extends StatelessWidget {
                         width: mediaQueryData.size.width,
                         color: Color.fromRGBO(246, 247, 247, 1),
                       ),
-                      Container(
-                        width: mediaQueryData.size.width,
-                        // color: Colors.amber[900],
-                        child: Column(children: [
-                          ListItem(
-                              svgPath: Assets.svg.imgEdit.path,
-                              text: '개인 정보',
-                              onTap: () {
-                                Get.toNamed(AppRoutes.profileInfoPage);
-                              }),
-                          ListItem(
-                              svgPath: Assets.svg.imgInformation.path,
-                              text: '구독 정보',
-                              onTap: () {
-                                Get.toNamed(AppRoutes.unsubscriptionInfo);
-                              }),
-                          ListItem(
-                              svgPath: Assets.svg.imgCreditCard.path,
-                              text: '카드 등록',
-                              onTap: () {
-                                Get.toNamed(AppRoutes.registeredCardList);
-                              }),
-                        ]),
-                      ),
+                      Expanded(
+                          child: Padding(
+                        padding: getPadding(left: 16, right: 16),
+                        child: Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              CustomElevatedButton(
+                                  text: '로그아웃',
+                                  margin: getMargin(top: 30, bottom: 20),
+                                  buttonStyle: CustomButtonStyles.fillPrimaryC26
+                                      .copyWith(
+                                          fixedSize:
+                                              MaterialStateProperty.all<Size>(
+                                                  Size(double.maxFinite,
+                                                      getVerticalSize(52)))),
+                                  buttonTextStyle:
+                                      CustomTextStyles.titleMedium18,
+                                  onTap: () {
+                                    api.logOut();
+                                  }),
+                              TextButton(
+                                  onPressed: () {
+                                    Get.dialog(ConfirmDialog(
+                                      title: Text('회원 탈퇴'),
+                                      content: Text(
+                                          '위굴리 프렌즈의 회원 탈퇴 요청하시겠습니까? 회원 탈퇴는 7일간 진행되며 7일 후엔 완전히 삭제됩니다.'),
+                                      cancelText: '취소',
+                                      confirmText: '탈퇴',
+                                      confirmFunc: () {
+                                        // TODO
+                                        // globalController로 사용자 정보 옮긴 뒤 해당 id 이용해서 회원 탈퇴 진행.
+                                        // api.signout(id: );
+                                      },
+                                    ));
+                                  },
+                                  child: Text('회원 탈퇴',
+                                      style: TextStyle(
+                                          color:
+                                              Color.fromRGBO(34, 34, 34, 0.4),
+                                          decoration:
+                                              TextDecoration.underline))),
+                            ]),
+                      )),
                     ]))));
+  }
+
+  onTabBackButton() {
+    Get.back();
   }
 }

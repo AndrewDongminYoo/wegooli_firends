@@ -3,11 +3,6 @@ import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
-import '/screens/screens.dart';
-import 'widgets/app_navigation_title.dart';
-import 'widgets/check_ui_message.dart';
-import 'widgets/open_dialog.dart';
-import 'widgets/open_screen.dart';
 
 // ignore: must_be_immutable
 class GatewayScreen extends StatelessWidget {
@@ -147,7 +142,11 @@ class GatewayScreen extends StatelessWidget {
                                         RouteItem(
                                             routeDestination:
                                                 AppRoutes.smartKeyAvailable,
-                                            routeName: l10ns.smartKeyAvailable)
+                                            routeName: l10ns.smartKeyAvailable),
+                                        RouteItem(
+                                            routeDestination:
+                                                AppRoutes.myProfilePage,
+                                            routeName: l10ns.myPage),
                                       ]))))
                     ]))));
   }

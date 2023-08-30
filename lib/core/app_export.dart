@@ -125,7 +125,6 @@ export '/screens/phone_auth/widgets/guide_text.dart';
 export '/screens/phone_auth/widgets/input_label.dart';
 export '/screens/phone_auth/widgets/otp_form.dart';
 export '/screens/phone_auth/widgets/sms_validation_form.dart';
-export '/screens/phone_auth/widgets/verify_form.dart';
 export '/screens/register_credit_card/_screen.dart';
 export '/screens/register_credit_card/binding/_binding.dart';
 export '/screens/register_credit_card/controller/_controller.dart';

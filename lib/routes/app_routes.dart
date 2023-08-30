@@ -1,5 +1,6 @@
 // 📦 Package imports:
 import 'package:get/get.dart';
+import 'package:wegooli_friends/screens/profile_info/_screen.dart';
 
 // 🌎 Project imports:
 import '/screens/screens.dart';
@@ -22,6 +23,8 @@ class AppRoutes {
   static const String signUpSuccess = '/register_success';
 
   static const String myProfilePage = '/my_profile';
+
+  static const String profileInfoPage = '/profile_info';
 
   static const String sharedSchedule = '/shared_schedule';
 
@@ -101,6 +104,8 @@ class AppRoutes {
         ]),
     GetPage(
         name: subscriptionNoService, page: () => SubscriptionInfoNoService()),
+    GetPage(name: myProfilePage, page: () => MyProfilePage()),
+    GetPage(name: profileInfoPage, page: () => ProfileInfoPage()),
     GetPage(name: appGateway, page: () => GatewayScreen())
   ];
 }

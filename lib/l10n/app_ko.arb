@@ -44,7 +44,7 @@
   "loginValidatePhoneAuth": "[Page] 휴대 전화 인증",
   "loginWithIdAndPassword": "[Page] ID/PASSWORD 로그인",
   "monthlyPayment": "월 결제 금액",
-  "myPage": "마이페이지",
+  "myPage": "[Page] 마이페이지",
   "nickname": "닉네임",
   "openDoor": "문열기",
   "password": "비밀번호",

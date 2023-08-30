@@ -168,6 +168,10 @@ class GatewayScreen extends StatelessWidget {
                                             bottomSheet: openDateTimePicker,
                                             dialogTitle: l10ns
                                                 .reservationDatetimePicker),
+                                        RouteItem(
+                                            routeDestination:
+                                                AppRoutes.myProfile,
+                                            routeName: l10ns.myPage),
                                       ]))))
                     ]))));
   }

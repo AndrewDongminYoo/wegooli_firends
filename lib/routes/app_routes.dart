@@ -1,5 +1,6 @@
 // 📦 Package imports:
 import 'package:get/get.dart';
+import 'package:wegooli_friends/screens/profile_info/_screen.dart';
 
 // 🌎 Project imports:
 import '/screens/screens.dart';
@@ -13,6 +14,7 @@ class AppRoutes {
   static const String chatWithTeam = '/chat_with_team';
   static const String idPwLogin = '/id_pw_login';
   static const String myProfile = '/my_profile';
+  static const String profileInfoPage = '/profile_info';
   static const String noSubscription = '/no_subscription';
   static const String phoneAuth = '/phone_auth';
   static const String registerCreditCard = '/register_credit_card';
@@ -99,6 +101,9 @@ class AppRoutes {
     GetPage(
         name: upcomingUnsubscription + "_outlined",
         page: () => UpcomingUnsubscriptionOutlined(),
-        bindings: [UpcomingUnsubscriptionBinding()])
+        bindings: [UpcomingUnsubscriptionBinding()]),
+    GetPage(name: myProfile, page: () => MyProfilePage()),
+    GetPage(name: profileInfoPage, page: () => ProfileInfoPage()),
+    GetPage(name: appGateway, page: () => GatewayScreen())
   ];
 }

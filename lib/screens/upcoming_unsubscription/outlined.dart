@@ -171,6 +171,8 @@ class UpcomingUnsubscriptionOutlined
                                                               0.03)))
                                         ])),
                                 CustomElevatedButton(
+                                    width: getHorizontalSize(160),
+                                    height: getVerticalSize(48),
                                     text: "해지 취소",
                                     margin: getMargin(top: 21, right: 9),
                                     buttonStyle: CustomButtonStyles

@@ -2,7 +2,7 @@
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '../controller/_controller.dart';
+import '/core/app_export.dart';
 
 /// A binding class for the TeamScheduleShareScreen.
 ///
@@ -11,6 +11,8 @@ import '../controller/_controller.dart';
 class TeamScheduleBinding extends Bindings {
   @override
   void dependencies() {
+    Get.lazyPut(() => ConnectionController());
+    Get.lazyPut(() => VehicleController());
     Get.lazyPut(() => ScheduleController());
   }
 }

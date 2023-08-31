@@ -62,8 +62,8 @@ class RegisterSuccess extends GetWidget<RegisterSuccessController> {
                                                               0.03)))),
                                     ]),
                                 Obx(() => CustomTextFormField(
-                                    textInputType: TextInputType.emailAddress,
-                                    controller: controller.inviteLink,
+                                    textInputType: TextInputType.visiblePassword,
+                                    controller: controller.inviteCode,
                                     margin: getMargin(top: 4),
                                     contentPadding: getPadding(
                                         left: 12,
@@ -91,7 +91,7 @@ class RegisterSuccess extends GetWidget<RegisterSuccessController> {
                                               .copyWith(
                                                   letterSpacing:
                                                       getHorizontalSize(0.04))),
-                                      Text("바로 파티에 들어갈 수 있습니다.",
+                                      Text("바로 팀에 들어갈 수 있습니다.",
                                           overflow: TextOverflow.ellipsis,
                                           textAlign: TextAlign.left,
                                           style: CustomTextStyles

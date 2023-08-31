@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
-import '../app_export.dart';
+import '/core/app_export.dart';
 
 class CurrentLocale {
   static Locale locale = Localized.supportedLocales.first;

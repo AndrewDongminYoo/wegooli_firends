@@ -2,12 +2,8 @@
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '/data/data.dart';
+import '/core/app_export.dart';
 
-/// A controller class for the AcceptTermsScreen.
-///
-/// This class manages the state of the AcceptTermsScreen, including the
-/// current acceptTermsModelObj
 class AccountAgreementController extends GetxController {
   static AccountAgreementController get to =>
       Get.isRegistered<AccountAgreementController>()
@@ -18,7 +14,6 @@ class AccountAgreementController extends GetxController {
       RxList<AccountAgreementModel>();
   RxList<AccountAgreementRequest> accountAgreementRequestList =
       RxList<AccountAgreementRequest>();
-  RxBool _isAllTermsAccepted = false.obs;
 
   RxBool isAcceptedTerm0 = false.obs;
   RxBool isAcceptedTerm1 = false.obs;
@@ -29,7 +24,7 @@ class AccountAgreementController extends GetxController {
   RxBool isAcceptedTerm6 = false.obs;
 
   RxBool get isAllTermsAccepted {
-    _isAllTermsAccepted = (isAcceptedTerm0.isTrue &&
+    return (isAcceptedTerm0.isTrue &&
             isAcceptedTerm1.isTrue &&
             isAcceptedTerm2.isTrue &&
             isAcceptedTerm3.isTrue &&
@@ -37,7 +32,6 @@ class AccountAgreementController extends GetxController {
             isAcceptedTerm5.isTrue &&
             isAcceptedTerm6.isTrue)
         .obs;
-    return _isAllTermsAccepted;
   }
 
   set isAllTermsAccepted(RxBool e) {
@@ -48,6 +42,5 @@ class AccountAgreementController extends GetxController {
     isAcceptedTerm4 = e;
     isAcceptedTerm5 = e;
     isAcceptedTerm6 = e;
-    _isAllTermsAccepted = e;
   }
 }

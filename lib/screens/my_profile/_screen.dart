@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 class MyProfilePage extends StatelessWidget {
-  final TeamAccountConnectionController controller = TeamAccountConnectionController.to;
+  final ConnectionController controller = ConnectionController.to;
 
   @override
   Widget build(BuildContext context) {

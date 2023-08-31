@@ -1,6 +1,5 @@
 // 🌎 Project imports:
-import 'base_env_config.dart';
-import 'open_api_config.dart';
+import '/core/app_export.dart';
 
 enum Environment { openApiEnv }
 

@@ -5,7 +5,7 @@ import 'dart:math' as Math;
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
-import 'color_names.dart';
+import '/core/app_export.dart';
 
 /// class to parse the color and get the color value using different approaches
 /// such as RGB, HEX etc.

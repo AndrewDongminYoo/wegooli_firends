@@ -11,7 +11,7 @@ import '/core/app_export.dart';
 // ignore: must_be_immutable
 class SmartKeyAvailablePage extends StatelessWidget {
   SmartKeyAvailablePage({Key? key}) : super(key: key);
-  DeviceController controller = DeviceController.to;
+  VehicleController controller = VehicleController.to;
 
   final String token = Get.find<PrefUtils>().getData('token');
   late Map<String, dynamic> extra = <String, dynamic>{
@@ -69,7 +69,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
     final response =
         await terminalControllerApi.selectTerminal(seq: 2, extra: extra);
     print('response.data : ${response.data}');
-    controller.terminalModelObj.value = response.data ?? TerminalModel();
+    controller.terminalDevice.value = response.data ?? TerminalModel();
 
     final scheduleControllerApi =
         Get.find<WegooliFriends>().getScheduleControllerApi();
@@ -87,7 +87,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
     final deviceControllerApi =
         Get.find<WegooliFriends>().getDeviceControllerApi();
     final response = await deviceControllerApi.doorOpen(
-        carNum: controller.terminalModelObj.value.carNum as String,
+        carNum: controller.terminalDevice.value.carNum as String,
         extra: extra);
     print('response : ${response}');
   }
@@ -96,7 +96,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
     final deviceControllerApi =
         Get.find<WegooliFriends>().getDeviceControllerApi();
     final response = await deviceControllerApi.doorClose(
-        carNum: controller.terminalModelObj.value.carNum as String,
+        carNum: controller.terminalDevice.value.carNum as String,
         extra: extra);
     print('response : ${response}');
   }
@@ -105,7 +105,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
     final deviceControllerApi =
         Get.find<WegooliFriends>().getDeviceControllerApi();
     final response = await deviceControllerApi.turnOnHorn(
-        carNum: controller.terminalModelObj.value.carNum as String,
+        carNum: controller.terminalDevice.value.carNum as String,
         extra: extra);
     print('response : ${response}');
   }
@@ -114,13 +114,13 @@ class SmartKeyAvailablePage extends StatelessWidget {
     final deviceControllerApi =
         Get.find<WegooliFriends>().getDeviceControllerApi();
     final response = await deviceControllerApi.turnOnEmergencyLight(
-        carNum: controller.terminalModelObj.value.carNum as String,
+        carNum: controller.terminalDevice.value.carNum as String,
         extra: extra);
     print('response : ${response}');
   }
 
   String getGasImg() {
-    int i = int.parse(controller.terminalModelObj.value.fuel ?? '0');
+    int i = int.parse(controller.terminalDevice.value.fuel ?? '0');
     switch (i ~/ 10) {
       case 0:
         return Assets.svg.gas.imgGasPer10.path;
@@ -196,7 +196,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Text(
-                                  controller.terminalModelObj.value.model ??
+                                  controller.terminalDevice.value.model ??
                                       "model",
                                   overflow: TextOverflow.ellipsis,
                                   textAlign: TextAlign.left,
@@ -205,7 +205,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                               Padding(
                                 padding: getPadding(top: 4),
                                 child: Text(
-                                  controller.terminalModelObj.value.carNum ??
+                                  controller.terminalDevice.value.carNum ??
                                       "차량 번호",
                                   overflow: TextOverflow.ellipsis,
                                   textAlign: TextAlign.left,
@@ -232,7 +232,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                         bottom: 1,
                                       ),
                                       child: Text(
-                                        '연료 ${controller.terminalModelObj.value.fuel ?? 0}%',
+                                        '연료 ${controller.terminalDevice.value.fuel ?? 0}%',
                                         overflow: TextOverflow.ellipsis,
                                         textAlign: TextAlign.left,
                                         style: theme.textTheme.bodySmall!

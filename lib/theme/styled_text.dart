@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
-import '/gen/fonts.gen.dart';
+import '/core/app_export.dart';
 
 class StyledText {
   static const textInputChatting = const TextStyle(

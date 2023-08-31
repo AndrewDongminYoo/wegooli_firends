@@ -4,20 +4,16 @@ import 'package:flutter/material.dart';
 // 📦 Package imports:
 import 'package:get/get.dart';
 
-/// A controller class for the RegisterSuccessPageScreen.
-///
-/// This class manages the state of the RegisterSuccessPageScreen, including the
-/// current registerSuccessPageModelObj
 class RegisterSuccessController extends GetxController {
   static RegisterSuccessController get to =>
       Get.isRegistered<RegisterSuccessController>()
           ? Get.find<RegisterSuccessController>()
           : Get.put(RegisterSuccessController());
-  TextEditingController inviteLink = TextEditingController();
+  TextEditingController inviteCode = TextEditingController();
 
   @override
   void onClose() {
     super.onClose();
-    inviteLink.dispose();
+    inviteCode.dispose();
   }
 }

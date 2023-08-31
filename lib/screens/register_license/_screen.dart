@@ -70,8 +70,7 @@ class RegisterLicense extends GetWidget<LicenseController> {
                                 hintText: l10ns.pleaseSelectYourLicenseType,
                                 margin: getMargin(top: 4),
                                 textStyle: CustomTextStyles.bodyLargeGray500,
-                                items: controller.registerLicensePageModelObj
-                                    .value.dropdownItemList.value,
+                                items: controller.dropdownItemList.value,
                                 filled: true,
                                 fillColor: theme.colorScheme.onPrimaryContainer,
                                 contentPadding:
@@ -146,8 +145,6 @@ class RegisterLicense extends GetWidget<LicenseController> {
                                                   textStyle: CustomTextStyles
                                                       .bodyLargeGray500,
                                                   items: controller
-                                                      .registerLicensePageModelObj
-                                                      .value
                                                       .dropdownItemList1
                                                       .value,
                                                   filled: true,
@@ -177,8 +174,6 @@ class RegisterLicense extends GetWidget<LicenseController> {
                                         textStyle:
                                             CustomTextStyles.bodyLargeGray500,
                                         items: controller
-                                            .registerLicensePageModelObj
-                                            .value
                                             .dropdownItemList2
                                             .value,
                                         filled: true,

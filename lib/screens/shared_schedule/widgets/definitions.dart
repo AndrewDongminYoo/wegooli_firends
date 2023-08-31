@@ -2,7 +2,7 @@
 import 'package:flutter/widgets.dart';
 
 // 🌎 Project imports:
-import '/core/utils/utils.dart';
+import '/core/app_export.dart';
 
 /// 주어진 [day]에 위젯을 생성하는 함수에 대한 서명입니다.
 Widget? dayBuilder(BuildContext context, DateTime day) {

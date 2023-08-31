@@ -31,8 +31,8 @@ class DashChatWithFriendsPage extends StatefulWidget {
 
 class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
     with ChannelEventHandler {
-  final TeamAccountConnectionController controller =
-      TeamAccountConnectionController.to;
+  final ConnectionController controller =
+      ConnectionController.to;
   late GroupChannel _channel;
   List<BaseMessage> _messages = [];
   // ignore: unused_field

@@ -7,28 +7,24 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
-/// A controller class for the LoginWithIdAndPasswordScreen.
-///
-/// This class manages the state of the LoginWithIdAndPasswordScreen, including the
-/// current withIdAndPasswordModelObj
 class UserController extends GetxController {
   static UserController get to => Get.isRegistered<UserController>()
       ? Get.find<UserController>()
       : Get.put(UserController());
-  TextEditingController usernameController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
-  TextEditingController postalCodeController = TextEditingController();
-  TextEditingController primaryAddressController = TextEditingController();
-  TextEditingController detailedAddressController = TextEditingController();
-  TextEditingController emailAddressController = TextEditingController();
-  TextEditingController confirmPasswordController = TextEditingController();
-  TextEditingController nicknameController = TextEditingController();
+  TextEditingController primaryAddress = TextEditingController();
+  TextEditingController detailAddress = TextEditingController();
+  TextEditingController emailAddress = TextEditingController();
+  TextEditingController rePassword = TextEditingController();
+  TextEditingController inviteCode = TextEditingController();
+  TextEditingController username = TextEditingController();
+  TextEditingController password = TextEditingController();
+  TextEditingController postCode = TextEditingController();
+  TextEditingController nickname = TextEditingController();
   TextEditingController fullName = TextEditingController();
   TextEditingController birthDay = TextEditingController();
   TextEditingController socialId = TextEditingController();
   TextEditingController pinCodes = TextEditingController();
   TextEditingController phoneNum = TextEditingController();
-  TextEditingController inviteLink = TextEditingController();
 
   SelectionPopupModel? phoneCarriers;
   List<SelectionPopupModel> telecoms = [
@@ -38,7 +34,6 @@ class UserController extends GetxController {
   ];
   Rx<UserDTO> currentUser = UserDTO().obs;
   RxList<TeamAccountModel> members = RxList<TeamAccountModel>([]);
-
 
   RxBool isAuthenticated = false.obs;
   RxBool isShowPassword = false.obs;
@@ -83,14 +78,14 @@ class UserController extends GetxController {
   }
 
   bool get isValid =>
-      postalCodeController.text.length > 0 &&
-      primaryAddressController.text.length > 0 &&
-      detailedAddressController.text.length > 0 &&
-      emailAddressController.text.isEmail &&
-      passwordController.text.length > 0 &&
-      nicknameController.text.length > 0 &&
-      confirmPasswordController.text.length > 0 &&
-      (passwordController.text == confirmPasswordController.text);
+      postCode.text.length > 0 &&
+      primaryAddress.text.length > 0 &&
+      detailAddress.text.length > 0 &&
+      emailAddress.text.isEmail &&
+      password.text.length > 0 &&
+      nickname.text.length > 0 &&
+      rePassword.text.length > 0 &&
+      (password.text == rePassword.text);
 
   @override
   void onClose() {
@@ -100,13 +95,13 @@ class UserController extends GetxController {
     socialId.dispose();
     phoneNum.dispose();
     pinCodes.dispose();
-    usernameController.dispose();
-    postalCodeController.dispose();
-    primaryAddressController.dispose();
-    detailedAddressController.dispose();
-    emailAddressController.dispose();
-    passwordController.dispose();
-    confirmPasswordController.dispose();
-    nicknameController.dispose();
+    username.dispose();
+    postCode.dispose();
+    primaryAddress.dispose();
+    detailAddress.dispose();
+    emailAddress.dispose();
+    password.dispose();
+    rePassword.dispose();
+    nickname.dispose();
   }
 }

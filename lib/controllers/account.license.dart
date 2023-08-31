@@ -1,12 +1,21 @@
+// 🐦 Flutter imports:
+import 'package:flutter/material.dart';
+
 // 📦 Package imports:
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '/core/utils/selection_popup.dart';
+import '/core/app_export.dart';
 
-/// This class defines the variables used in the [register_license],
-/// and is typically used to hold data that is passed between different parts of the application.
-class RegisterLicensePageModel {
+class LicenseController extends GetxController {
+  static LicenseController get to =>
+      Get.isRegistered<LicenseController>()
+          ? Get.find<LicenseController>()
+          : Get.put(LicenseController());
+  TextEditingController frontNumberController = TextEditingController();
+  TextEditingController expDateController = TextEditingController();
+  TextEditingController backNumberController = TextEditingController();
+
   Rx<List<SelectionPopupModel>> dropdownItemList = Rx([
     SelectionPopupModel(id: 1, title: '1종 보통면허', isSelected: true),
     SelectionPopupModel(id: 2, title: '2종 보통면허'),
@@ -55,4 +64,51 @@ class RegisterLicensePageModel {
     SelectionPopupModel(id: 17, title: '27', isSelected: true),
     SelectionPopupModel(id: 18, title: '28')
   ]);
+
+  SelectionPopupModel? selectedDropDownValue;
+
+  SelectionPopupModel? selectedDropDownValue1;
+
+  SelectionPopupModel? selectedDropDownValue2;
+
+  @override
+  void onClose() {
+    super.onClose();
+    frontNumberController.dispose();
+    expDateController.dispose();
+    backNumberController.dispose();
+  }
+
+  onSelected(dynamic value) {
+    for (var element
+        in dropdownItemList.value) {
+      element.isSelected = false;
+      if (element.id == value.id) {
+        element.isSelected = true;
+      }
+    }
+    dropdownItemList.refresh();
+  }
+
+  onSelected1(dynamic value) {
+    for (var element
+        in dropdownItemList1.value) {
+      element.isSelected = false;
+      if (element.id == value.id) {
+        element.isSelected = true;
+      }
+    }
+    dropdownItemList1.refresh();
+  }
+
+  onSelected2(dynamic value) {
+    for (var element
+        in dropdownItemList2.value) {
+      element.isSelected = false;
+      if (element.id == value.id) {
+        element.isSelected = true;
+      }
+    }
+    dropdownItemList2.refresh();
+  }
 }

@@ -4,10 +4,6 @@ import 'package:flutter/material.dart';
 // 📦 Package imports:
 import 'package:get/get.dart';
 
-/// A controller class for the RegisterCreditCardScreen.
-///
-/// This class manages the state of the RegisterCreditCardScreen, including the
-/// current registerCreditCardModelObj
 class PaymentCardController extends GetxController {
   static PaymentCardController get to =>
       Get.isRegistered<PaymentCardController>()

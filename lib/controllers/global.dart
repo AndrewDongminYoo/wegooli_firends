@@ -2,7 +2,7 @@
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '/data/data.dart';
+import '/core/app_export.dart';
 
 GlobalDataController _global = GlobalDataController.to;
 

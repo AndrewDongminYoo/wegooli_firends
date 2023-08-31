@@ -8,11 +8,7 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 // ignore: must_be_immutable
-class SendingCrewInvitationDialog extends StatelessWidget {
-  SendingCrewInvitationDialog(this.controller, {Key? key}) : super(key: key);
-
-  DeviceController controller;
-
+class SendingInvitationLog extends GetView<VehicleController> {
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
@@ -50,7 +46,7 @@ class SendingCrewInvitationDialog extends StatelessWidget {
                                 })
                           ])),
                   CustomTextFormField(
-                      controller: controller.invitationCodeController,
+                      controller: controller.invitation,
                       hintText: "xxxx-xxxx-xxxx-xxxx",
                       margin: getMargin(left: 25, top: 17, right: 25),
                       contentPadding:
@@ -65,7 +61,7 @@ class SendingCrewInvitationDialog extends StatelessWidget {
                         /// FIXME: controller.invitationCodeController.text 값을 클립보드에 복사 / 또는 공유 모달 띄우기
                         Get.dialog(AlertDialog(
                             title: Text(
-                                controller.invitationCodeController.text)));
+                                controller.invitation.text)));
                       },
                       text: l10ns.copy,
                       margin: getMargin(top: 25),

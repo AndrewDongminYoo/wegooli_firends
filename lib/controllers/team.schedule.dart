@@ -4,10 +4,6 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
-/// A controller class for the TeamScheduleShareScreen.
-///
-/// This class manages the state of the TeamScheduleShareScreen, including the
-/// current teamScheduleShareModelObj
 class ScheduleController extends GetxController {
   static ScheduleController get to =>
       Get.isRegistered<ScheduleController>()

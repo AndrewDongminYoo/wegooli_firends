@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 // 🌎 Project imports:
-import 'calendar_utilities.dart';
+import '/core/app_export.dart';
 
 /// 다른 빌더보다 우선순위가 있는 일 셀에 대한 사용자 지정 빌더입니다.
 Widget? prioritizedBuilder(

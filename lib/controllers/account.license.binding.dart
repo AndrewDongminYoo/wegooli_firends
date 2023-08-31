@@ -2,7 +2,7 @@
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '../controller/_controller.dart';
+import '/core/app_export.dart';
 
 /// A binding class for the RegisterLicenseScreen.
 ///

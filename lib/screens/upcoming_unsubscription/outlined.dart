@@ -8,7 +8,7 @@ import "package:get/get.dart";
 import "/core/app_export.dart";
 
 class UpcomingUnsubscriptionOutlined
-    extends GetWidget<DeviceController> {
+    extends GetWidget<VehicleController> {
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);

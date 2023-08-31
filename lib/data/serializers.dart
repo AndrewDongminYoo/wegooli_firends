@@ -10,42 +10,7 @@ import 'package:one_of_serializer/any_of_serializer.dart';
 import 'package:one_of_serializer/one_of_serializer.dart';
 
 // 🌎 Project imports:
-import 'date_serializer.dart';
-import 'models/account.dart';
-import 'models/account_agreement_model.dart';
-import 'models/account_agreement_request.dart';
-import 'models/api_response_object.dart';
-import 'models/car_control_history_model.dart';
-import 'models/car_history_dto.dart';
-import 'models/date.dart';
-import 'models/device_control_result_dto.dart';
-import 'models/device_option.dart';
-import 'models/granted_authority.dart';
-import 'models/leader_set_request.dart';
-import 'models/license_model.dart';
-import 'models/license_request.dart';
-import 'models/payment_card_model.dart';
-import 'models/payment_card_request.dart';
-import 'models/schedule_model.dart';
-import 'models/schedule_request.dart';
-import 'models/service_car_detail_request.dart';
-import 'models/service_detail.dart';
-import 'models/share_service_model.dart';
-import 'models/share_service_request.dart';
-import 'models/team_account_connection_model.dart';
-import 'models/team_account_connection_request.dart';
-import 'models/team_account_connection_response.dart';
-import 'models/team_account_model.dart';
-import 'models/team_car_connection.dart';
-import 'models/team_model.dart';
-import 'models/team_request.dart';
-import 'models/terminal_model.dart';
-import 'models/terminal_request.dart';
-import 'models/terminal_update_request.dart';
-import 'models/test_model.dart';
-import 'models/user_details_dto.dart';
-import 'models/user_dto.dart';
-import 'models/user_sub_info.dart';
+import '/core/app_export.dart';
 
 part 'serializers.g.dart';
 

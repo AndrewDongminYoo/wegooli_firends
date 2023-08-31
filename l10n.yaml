@@ -8,5 +8,4 @@ preferred-supported-locales: [ko]
 project-dir: null
 synthetic-package: false
 template-arb-file: app_ko.arb
-untranslated-messages-file: ''
 use-escaping: false

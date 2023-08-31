@@ -8,12 +8,7 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 // ignore: must_be_immutable
-class ReservationDatetimePickerBottomSheet extends StatelessWidget {
-  ReservationDatetimePickerBottomSheet(this.controller, {Key? key})
-      : super(key: key);
-
-  ScheduleController controller;
-
+class DatetimePickerBottomSheet extends GetView<ScheduleController> {
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);

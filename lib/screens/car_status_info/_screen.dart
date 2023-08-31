@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 class CarStatusInformation extends StatelessWidget {
-  final DeviceController controller = DeviceController.to;
+  final VehicleController controller = VehicleController.to;
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +41,7 @@ class CarStatusInformation extends StatelessWidget {
                               left: 80, top: 13, bottom: 20, right: 80),
                           child: CustomImageView(
                             // TODO
-                            // controller.terminalModelObj.value.carImg 로 대체해야함!!
+                            // controller.terminalDevice.value.carImg 로 대체해야함!!
                             imagePath: Assets.images.imgCarSpark.path,
                             height: getVerticalSize(132),
                             width: getHorizontalSize(200),
@@ -86,7 +86,7 @@ class CarStatusInformation extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  controller.terminalModelObj.value.model ??
+                                  controller.terminalDevice.value.model ??
                                       '모델명',
                                   textAlign: TextAlign.right,
                                   style: TextStyle(
@@ -115,7 +115,7 @@ class CarStatusInformation extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  controller.terminalModelObj.value.segment ??
+                                  controller.terminalDevice.value.segment ??
                                       '차종',
                                   textAlign: TextAlign.right,
                                   style: TextStyle(
@@ -144,7 +144,7 @@ class CarStatusInformation extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  controller.terminalModelObj.value.fuelType ??
+                                  controller.terminalDevice.value.fuelType ??
                                       '연료',
                                   textAlign: TextAlign.right,
                                   style: TextStyle(
@@ -173,7 +173,7 @@ class CarStatusInformation extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  '${controller.terminalModelObj.value.seats ?? 0}인승',
+                                  '${controller.terminalDevice.value.seats ?? 0}인승',
                                   textAlign: TextAlign.right,
                                   style: TextStyle(
                                     color: Color(0xFF222222),

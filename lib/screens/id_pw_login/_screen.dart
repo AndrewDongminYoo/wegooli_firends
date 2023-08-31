@@ -18,8 +18,8 @@ class LoginWithIdAndPassword extends GetWidget<UserController> {
 
     try {
       final response = await api.login(
-          id: controller.usernameController.text,
-          password: controller.passwordController.text);
+          id: controller.username.text,
+          password: controller.password.text);
       print('response : ${response}');
       MapJsonObject? jsonObj = response.data?.result as MapJsonObject;
       if (jsonObj.value.containsKey('token')) {
@@ -108,7 +108,7 @@ class LoginWithIdAndPassword extends GetWidget<UserController> {
                                         margin: getMargin(left: 5, bottom: 3)),
                                   ]))),
                       CustomTextFormField(
-                          controller: controller.usernameController,
+                          controller: controller.username,
                           margin: getMargin(top: 40),
                           contentPadding: getPadding(
                               left: 12, top: 14, right: 12, bottom: 14),
@@ -119,7 +119,7 @@ class LoginWithIdAndPassword extends GetWidget<UserController> {
                           filled: true,
                           fillColor: theme.colorScheme.onPrimaryContainer),
                       Obx(() => CustomTextFormField(
-                          controller: controller.passwordController,
+                          controller: controller.password,
                           margin: getMargin(top: 12),
                           contentPadding: getPadding(
                               left: 12, top: 14, right: 12, bottom: 14),
@@ -155,8 +155,8 @@ class LoginWithIdAndPassword extends GetWidget<UserController> {
                             if (isAuthenticated) {
                               onTapTeamScheduleShare();
                             } else {
-                              controller.usernameController.text = "";
-                              controller.passwordController.text = "";
+                              controller.username.text = "";
+                              controller.password.text = "";
                             }
                           }),
                       Padding(

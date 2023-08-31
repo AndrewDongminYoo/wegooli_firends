@@ -59,5 +59,9 @@
   "dartBarrelFileGenerator.excludeFreezed": true,
   "dartBarrelFileGenerator.excludeGenerated": true,
   "dartBarrelFileGenerator.skipEmpty": true,
-  "docwriter.language": "Korean"
+  "docwriter.language": "Korean",
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "*.dart": "${capture}.*.dart"
+  }
 }

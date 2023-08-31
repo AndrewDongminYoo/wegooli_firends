@@ -8,7 +8,6 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
-/// TODO: 인풋 창의 값에 따라 스타일 변경( 노란색 디폴트 아님
 class CustomTextFormField extends StatelessWidget {
   CustomTextFormField({
     Key? key,

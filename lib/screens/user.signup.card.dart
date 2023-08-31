@@ -15,19 +15,7 @@ class RegisterCreditCard extends GetWidget<PaymentCardController> {
         child: Scaffold(
             resizeToAvoidBottomInset: false,
             backgroundColor: theme.colorScheme.onPrimaryContainer,
-            appBar: CustomAppBar(
-                height: getVerticalSize(53),
-                leadingWidth: 34,
-                leading: CustomImageView(
-                    height: getSize(18),
-                    width: getSize(18),
-                    svgPath: Assets.svg.imgArrowLeft.path,
-                    margin: getMargin(left: 16, top: 19, bottom: 16),
-                    onTap: () {
-                      onTabBackButton();
-                    }),
-                centerTitle: true,
-                title: AppbarTitle(text: l10ns.cardRegistration)),
+            appBar: CustomAppBar.getDefaultAppBar(l10ns.cardRegistration),
             body: Container(
                 width: double.maxFinite,
                 padding: getPadding(left: 16, top: 35, right: 16, bottom: 35),

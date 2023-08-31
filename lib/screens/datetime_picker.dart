@@ -226,11 +226,10 @@ class DatetimePickerBottomSheet extends GetView<ScheduleController> {
                                                 Assets.svg.imgArrowLeft.path)),
                                     hintText: "8.1 화 18:00",
                                     textStyle: theme.textTheme.titleMedium!,
-                                    items: controller
-                                        .dropdownItemList
-                                        .value,
+                                    items: controller.dropdownItemList.value,
                                     onChanged: (SelectionPopupModel value) {
-                                      controller.onSelected(value);
+                                      controller.dropdownItemList
+                                          .onSelected(value);
                                     })
                               ])),
                       Container(

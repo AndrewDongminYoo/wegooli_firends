@@ -15,19 +15,7 @@ class RegisterLicense extends GetWidget<LicenseController> {
         child: Scaffold(
             resizeToAvoidBottomInset: false,
             backgroundColor: theme.colorScheme.onPrimaryContainer,
-            appBar: CustomAppBar(
-                height: getVerticalSize(53),
-                leadingWidth: 34,
-                leading: CustomImageView(
-                    height: getSize(18),
-                    width: getSize(18),
-                    svgPath: Assets.svg.imgArrowLeft.path,
-                    margin: getMargin(left: 16, top: 19, bottom: 16),
-                    onTap: () {
-                      onTabBackButton();
-                    }),
-                centerTitle: true,
-                title: AppbarTitle(text: l10ns.driverSLicenseRegistration)),
+            appBar: CustomAppBar.getDefaultAppBar(l10ns.driverSLicenseRegistration),
             body: Container(
                 width: double.maxFinite,
                 padding: getPadding(left: 16, top: 32, right: 16, bottom: 32),
@@ -76,7 +64,7 @@ class RegisterLicense extends GetWidget<LicenseController> {
                                 contentPadding:
                                     getPadding(left: 10, top: 14, bottom: 14),
                                 onChanged: (SelectionPopupModel value) {
-                                  controller.onSelected(value);
+                                  controller.dropdownItemList.onSelected(value);
                                 })
                           ]),
                       Padding(
@@ -154,11 +142,8 @@ class RegisterLicense extends GetWidget<LicenseController> {
                                                       left: 10,
                                                       top: 14,
                                                       bottom: 14),
-                                                  onChanged:
-                                                      (SelectionPopupModel
-                                                          value) {
-                                                    controller
-                                                        .onSelected1(value);
+                                                  onChanged: (SelectionPopupModel value) {
+                                                    controller.dropdownItemList1.onSelected(value);
                                                   })
                                             ]))),
                                 Expanded(
@@ -182,7 +167,7 @@ class RegisterLicense extends GetWidget<LicenseController> {
                                         contentPadding: getPadding(
                                             left: 10, top: 14, bottom: 14),
                                         onChanged: (SelectionPopupModel value) {
-                                          controller.onSelected2(value);
+                                          controller.dropdownItemList2.onSelected(value);
                                         }))
                               ])),
                       CustomTextFormField(

@@ -6,13 +6,14 @@ import 'package:built_collection/built_collection.dart';
 import 'package:built_value/json_object.dart';
 import 'package:dio/dio.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
 // ignore: must_be_immutable
 class LoginWithIdAndPassword extends GetWidget<UserController> {
-  bool get isAuthenticated => controller.isAuthenticated.isTrue;
+  bool get isAuthenticated => controller.isAuthenticated.value;
   Future<void> authorize() async {
     final api = WegooliFriends.client.getUserControllerApi();
 
@@ -21,7 +22,14 @@ class LoginWithIdAndPassword extends GetWidget<UserController> {
           id: controller.username.text,
           password: controller.password.text);
       print('response : ${response}');
-      MapJsonObject? jsonObj = response.data?.result as MapJsonObject;
+      var result = response.data?.result;
+      if (result == null) {
+        print('something is wrong!!! login API returns $result, ${response.data?.resultCode}');
+        Get.dialog(Center(child: Lottie.asset(Assets.lotties.xInCircle.path, height: 250, width: 250)));
+        controller.isAuthenticated.value = false;
+        return;
+      }
+      MapJsonObject? jsonObj = result as MapJsonObject;
       if (jsonObj.value.containsKey('token')) {
         String? token = jsonObj.value['token'] as String?;
         if (token != null) {
@@ -40,16 +48,16 @@ class LoginWithIdAndPassword extends GetWidget<UserController> {
                 ..memberSeq = payload['memberSeq']
                 )
               .build();
-          controller.isAuthenticated = true.obs;
+          controller.isAuthenticated.value = true;
           await findMembers();
         } else {
-          controller.isAuthenticated = false.obs;
+          controller.isAuthenticated.value = false;
         }
       }
       // Logger.log("response : ${response.data?.result?.toString()}");
       // return true;
     } on DioException catch (e) {
-      controller.isAuthenticated = false.obs;
+      controller.isAuthenticated.value = false;
       switch (e.type) {
         case DioExceptionType.connectionError:
           print(e.message ?? "Unknown connection error occurred");
@@ -58,7 +66,7 @@ class LoginWithIdAndPassword extends GetWidget<UserController> {
       }
       print("DioException when calling UserControllerApi->login: $e\n");
     } on Exception catch (e) {
-      controller.isAuthenticated = false.obs;
+      controller.isAuthenticated.value = false;
       print("Exception when calling UserControllerApi->login: $e\n");
     } finally {
       // return false;
@@ -107,7 +115,7 @@ class LoginWithIdAndPassword extends GetWidget<UserController> {
                               margin: getMargin(
                                   left: 30, top: 12, right: 10, bottom: 12),
                               child: CustomImageView(
-                                  svgPath: controller.isShowPassword.isTrue
+                                  svgPath: controller.isShowPassword.value
                                       ? Assets.svg.imgEyeOpened.path
                                       : Assets.svg.imgEyeCrossedOut.path,
                                   onTap: () {

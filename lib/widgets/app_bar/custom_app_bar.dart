@@ -1,6 +1,9 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+// 📦 Package imports:
+import 'package:get/route_manager.dart';
+
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
@@ -58,6 +61,36 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       default:
         return SizedBox.shrink();
     }
+  }
+
+  static CustomAppBar getDefaultAppBar(
+    String? titleText, {
+    void Function()? onTapLeading,
+  }) {
+    return CustomAppBar(
+        height: getVerticalSize(53),
+        leadingWidth: 34,
+        leading: CustomImageView(
+            height: getSize(18),
+            width: getSize(18),
+            svgPath: Assets.svg.imgArrowLeft.path,
+            margin: getMargin(left: 16, top: 19, bottom: 16),
+            onTap: () {
+              onTapLeading == null ? onTapLeading?.call() : Get.back();
+            }),
+        centerTitle: true,
+        title: AppbarTitle(text: titleText ?? "FRIENDS"));
+  }
+
+  static CustomAppBar getFriendsTypoAppBar() {
+    return CustomAppBar(
+        height: getVerticalSize(45),
+        centerTitle: true,
+        title: CustomImageView(
+            height: getVerticalSize(17),
+            width: getHorizontalSize(88),
+            svgPath: Assets.svg.imgFriendsTypo.path),
+        styleType: Style.bgOutline);
   }
 }
 

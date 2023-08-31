@@ -24,13 +24,13 @@ class AccountAgreementController extends GetxController {
   RxBool isAcceptedTerm6 = false.obs;
 
   RxBool get isAllTermsAccepted {
-    return (isAcceptedTerm0.isTrue &&
-            isAcceptedTerm1.isTrue &&
-            isAcceptedTerm2.isTrue &&
-            isAcceptedTerm3.isTrue &&
-            isAcceptedTerm4.isTrue &&
-            isAcceptedTerm5.isTrue &&
-            isAcceptedTerm6.isTrue)
+    return (isAcceptedTerm0.value &&
+            isAcceptedTerm1.value &&
+            isAcceptedTerm2.value &&
+            isAcceptedTerm3.value &&
+            isAcceptedTerm4.value &&
+            isAcceptedTerm5.value &&
+            isAcceptedTerm6.value)
         .obs;
   }
 

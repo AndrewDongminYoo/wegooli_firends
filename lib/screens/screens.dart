@@ -20,7 +20,6 @@ export 'shared_schedule/calendar_style.dart';
 export 'shared_schedule/calendar_title.dart';
 export 'shared_schedule/calendar_utilities.dart';
 export 'shared_schedule/definitions.dart';
-export 'shared_schedule/gray_horizon_separator.dart';
 export 'shared_schedule/invite_team_button.dart';
 export 'shared_schedule/member_avatar.dart';
 export 'shared_schedule/member_list_title.dart';

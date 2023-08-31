@@ -106,8 +106,8 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
                         padding: getPadding(
                             left: 30, top: 12, right: 10, bottom: 12),
                         child: Obx(() {
-                          var isWaitingOtpCode =
-                              widget.controller.isWaitingOtpCode.isTrue;
+                          bool isWaitingOtpCode =
+                              widget.controller.isWaitingOtpCode.value;
                           if (isWaitingOtpCode) {
                             return TimerCountdown(
                               spacerWidth: 0,
@@ -125,13 +125,13 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
                                   widget.controller.verificaticonIsExpired(),
                             );
                           } else {
-                            return const SizedBox();
+                            return const SizedBox.shrink();
                           }
                         }),
                       ),
                     ),
                     CustomElevatedButton(
-                        text: "확인",
+                        text: l10ns.confirm,
                         width: getHorizontalSize(160),
                         margin: getMargin(top: 10),
                         buttonStyle: CustomButtonStyles.fillPrimaryC5,

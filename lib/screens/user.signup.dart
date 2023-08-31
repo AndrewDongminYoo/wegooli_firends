@@ -17,19 +17,7 @@ class RegisterZipCode extends GetWidget<UserController> {
         child: Scaffold(
             resizeToAvoidBottomInset: false,
             backgroundColor: theme.colorScheme.onPrimaryContainer,
-            appBar: CustomAppBar(
-                height: getVerticalSize(53),
-                leadingWidth: 34,
-                leading: CustomImageView(
-                    height: getSize(18),
-                    width: getSize(18),
-                    svgPath: Assets.svg.imgArrowLeft.path,
-                    margin: getMargin(left: 16, top: 19, bottom: 16),
-                    onTap: () {
-                      onTabBackButton();
-                    }),
-                centerTitle: true,
-                title: AppbarTitle(text: "정보 입력")),
+            appBar: CustomAppBar.getDefaultAppBar(l10ns.signUp),
             body: SingleChildScrollView(
 
                 // width: double.maxFinite,
@@ -285,7 +273,7 @@ class RegisterZipCode extends GetWidget<UserController> {
                                             bottom: 12),
                                         child: CustomImageView(
                                             svgPath: controller
-                                                    .isShowPassword.isTrue
+                                                    .isShowPassword.value
                                                 ? Assets.svg.imgEyeOpened.path
                                                 : Assets
                                                     .svg.imgEyeCrossedOut.path,
@@ -358,7 +346,7 @@ class RegisterZipCode extends GetWidget<UserController> {
                                         child: CustomImageView(
                                             svgPath: controller
                                                     .isShowConfirmPassword
-                                                    .isTrue
+                                                    .value
                                                 ? Assets.svg.imgEyeOpened.path
                                                 : Assets
                                                     .svg.imgEyeCrossedOut.path,

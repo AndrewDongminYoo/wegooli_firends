@@ -14,19 +14,7 @@ class SubscriptionInfoNoService extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
             backgroundColor: theme.colorScheme.onPrimaryContainer,
-            appBar: CustomAppBar(
-                height: getVerticalSize(53),
-                leadingWidth: 34,
-                leading: CustomImageView(
-                    height: getSize(18),
-                    width: getSize(18),
-                    svgPath: Assets.svg.imgArrowLeft.path,
-                    margin: getMargin(left: 16, top: 19, bottom: 16),
-                    onTap: () {
-                      onTabBackButton();
-                    }),
-                centerTitle: true,
-                title: AppbarTitle(text: l10ns.subscriptionInformation)),
+            appBar: CustomAppBar.getDefaultAppBar(l10ns.subscriptionInformation),
             body: SizedBox(
                 width: double.maxFinite,
                 child: Column(

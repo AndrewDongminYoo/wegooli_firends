@@ -64,45 +64,11 @@ class LicenseController extends GetxController {
     SelectionPopupModel(id: 18, title: '28')
   ]);
 
-  SelectionPopupModel? selectedDropDownValue;
-  SelectionPopupModel? selectedDropDownValue1;
-  SelectionPopupModel? selectedDropDownValue2;
-
   @override
   void onClose() {
     super.onClose();
     frontNumberController.dispose();
     expDateController.dispose();
     backNumberController.dispose();
-  }
-
-  onSelected(SelectionPopupModel value) {
-    for (SelectionPopupModel element in dropdownItemList.value) {
-      element.isSelected = false;
-      if (element.id == value.id) {
-        element.isSelected = true;
-      }
-    }
-    dropdownItemList.refresh();
-  }
-
-  onSelected1(SelectionPopupModel value) {
-    for (SelectionPopupModel element in dropdownItemList1.value) {
-      element.isSelected = false;
-      if (element.id == value.id) {
-        element.isSelected = true;
-      }
-    }
-    dropdownItemList1.refresh();
-  }
-
-  onSelected2(SelectionPopupModel value) {
-    for (SelectionPopupModel element in dropdownItemList2.value) {
-      element.isSelected = false;
-      if (element.id == value.id) {
-        element.isSelected = true;
-      }
-    }
-    dropdownItemList2.refresh();
   }
 }

@@ -138,6 +138,7 @@ export '/widgets/drop_down.dart';
 export '/widgets/elevated_button.dart';
 export '/widgets/floating_button.dart';
 export '/widgets/friends_by_wegooli.dart';
+export '/widgets/gray_horizon_separator.dart';
 export '/widgets/icon_button.dart';
 export '/widgets/image_view.dart';
 export '/widgets/radio_button.dart';

@@ -79,7 +79,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
         extra: extra);
     print('response2.data : ${response2.data}');
     bool done = response2.data!.any(compose);
-    controller.isUsed = done.obs;
+    controller.isUsed.value = done;
     print('done : $done');
   }
 
@@ -155,14 +155,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         backgroundColor: theme.colorScheme.onPrimaryContainer,
-        appBar: CustomAppBar(
-            height: getVerticalSize(45),
-            centerTitle: true,
-            title: CustomImageView(
-                height: getVerticalSize(17),
-                width: getHorizontalSize(88),
-                svgPath: Assets.svg.imgFriendsTypo.path),
-            styleType: Style.bgOutline),
+        appBar: CustomAppBar.getFriendsTypoAppBar(),
         body: SizedBox(
           width: mediaQueryData.size.width,
           height: mediaQueryData.size.height - getVerticalSize(45),
@@ -295,7 +288,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                       Padding(
                         padding: getPadding(left: 2),
                         child: Text(
-                          controller.isUsed.isTrue
+                          controller.isUsed.value
                               ? '${controller.clientName.text}님이 사용중입니다.'
                               : l10ns.available,
                           overflow: TextOverflow.ellipsis,
@@ -415,7 +408,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                         ),
                       ),
                       // 사용중일 때 화면 가리기용
-                      if (controller.isUsed.isTrue)
+                      if (controller.isUsed.value)
                         Container(
                             height: mediaQueryData.size.height -
                                 getVerticalSize(200),
@@ -432,7 +425,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                         borderRadius:
                                             BorderRadius.circular(100)),
                                     child: Text(
-                                        controller.isUsed.isTrue
+                                        controller.isUsed.value
                                             ? '${controller.clientName.text}님이 사용중입니다.'
                                             : l10ns.available,
                                         style: TextStyle(

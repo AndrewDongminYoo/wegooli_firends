@@ -16,19 +16,7 @@ class RegisteredCreditCardList
         child: Scaffold(
             // backgroundColor: theme.colorScheme.onPrimaryContainer,
             backgroundColor: Colors.amber,
-            appBar: CustomAppBar(
-                height: getVerticalSize(53),
-                leadingWidth: 34,
-                leading: CustomImageView(
-                    height: getSize(18),
-                    width: getSize(18),
-                    svgPath: Assets.svg.imgArrowLeft.path,
-                    margin: getMargin(left: 16, top: 19, bottom: 16),
-                    onTap: () {
-                      onTabBackButton();
-                    }),
-                centerTitle: true,
-                title: AppbarTitle(text: l10ns.cardRegistration)),
+            appBar: CustomAppBar.getDefaultAppBar(l10ns.cardRegistration),
             body: Container(
                 width: mediaQueryData.size.width,
                 height: mediaQueryData.size.height,

@@ -19,7 +19,7 @@ class AcceptTermsNextButton extends GetWidget<AccountAgreementController> {
                     Size(double.maxFinite, getVerticalSize(52)))),
             buttonTextStyle: CustomTextStyles.titleMedium18,
             onTap: () {
-              if (controller.isAllTermsAccepted.isTrue) {
+              if (controller.isAllTermsAccepted.value) {
                 Get.toNamed(AppRoutes.phoneAuth);
               }
             }));

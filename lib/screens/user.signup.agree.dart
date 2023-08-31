@@ -9,12 +9,12 @@ import '/core/app_export.dart';
 
 class AcceptTerms extends GetWidget<AccountAgreementController> {
   void checkAll(bool value) {
-    controller.isAcceptedTerm1 = value.obs;
-    controller.isAcceptedTerm2 = value.obs;
-    controller.isAcceptedTerm3 = value.obs;
-    controller.isAcceptedTerm4 = value.obs;
-    controller.isAcceptedTerm5 = value.obs;
-    controller.isAcceptedTerm6 = value.obs;
+    controller.isAcceptedTerm1.value = value;
+    controller.isAcceptedTerm2.value = value;
+    controller.isAcceptedTerm3.value = value;
+    controller.isAcceptedTerm4.value = value;
+    controller.isAcceptedTerm5.value = value;
+    controller.isAcceptedTerm6.value = value;
   }
 
   @override
@@ -52,10 +52,9 @@ class AcceptTerms extends GetWidget<AccountAgreementController> {
                                           alignment: Alignment.center,
                                           text: l10ns.acceptAll,
                                           value: controller
-                                              .isAllTermsAccepted.isTrue,
+                                              .isAllTermsAccepted.value,
                                           onChange: (value) {
-                                            controller.isAllTermsAccepted
-                                                 = value.obs;
+                                            controller.isAllTermsAccepted.value = value;
                                           })))),
                               Padding(
                                   padding: getPadding(top: 53),
@@ -67,7 +66,7 @@ class AcceptTerms extends GetWidget<AccountAgreementController> {
                                             text: l10ns
                                                 .termsOfServiceRequiredAgreement,
                                             value: controller
-                                                .isAcceptedTerm0.isTrue,
+                                                .isAcceptedTerm0.value,
                                             onChange: (value) {
                                               controller.isAcceptedTerm0 =
                                                   value.obs;
@@ -89,7 +88,7 @@ class AcceptTerms extends GetWidget<AccountAgreementController> {
                                             text: l10ns
                                                 .privacyPolicyRequiredConsent,
                                             value: controller
-                                                .isAcceptedTerm1.isTrue,
+                                                .isAcceptedTerm1.value,
                                             onChange: (value) {
                                               controller.isAcceptedTerm1 =
                                                   value.obs;
@@ -110,7 +109,7 @@ class AcceptTerms extends GetWidget<AccountAgreementController> {
                                         Obx(() => CustomCheckboxButton(
                                             text: "자동차 대여약관 (필수)",
                                             value: controller
-                                                .isAcceptedTerm2.isTrue,
+                                                .isAcceptedTerm2.value,
                                             onChange: (value) {
                                               controller.isAcceptedTerm2 =
                                                   value.obs;
@@ -132,7 +131,7 @@ class AcceptTerms extends GetWidget<AccountAgreementController> {
                                             text: l10ns
                                                 .locationBasedServicesTerms,
                                             value: controller
-                                                .isAcceptedTerm3.isTrue,
+                                                .isAcceptedTerm3.value,
                                             onChange: (value) {
                                               controller.isAcceptedTerm3 =
                                                   value.obs;
@@ -152,7 +151,7 @@ class AcceptTerms extends GetWidget<AccountAgreementController> {
                                             text: l10ns
                                                 .consentToCollectionAndUseOfVehicleLocationInfo,
                                             value: controller
-                                                .isAcceptedTerm4.isTrue,
+                                                .isAcceptedTerm4.value,
                                             onChange: (value) {
                                               controller.isAcceptedTerm4 =
                                                   value.obs;
@@ -171,7 +170,7 @@ class AcceptTerms extends GetWidget<AccountAgreementController> {
                                             text: l10ns
                                                 .useOfPersonalInfoForMarketing,
                                             value: controller
-                                                .isAcceptedTerm5.isTrue,
+                                                .isAcceptedTerm5.value,
                                             onChange: (value) {
                                               controller.isAcceptedTerm5 =
                                                   value.obs;

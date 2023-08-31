@@ -10,7 +10,6 @@ class ScheduleController extends GetxController {
           ? Get.find<ScheduleController>()
           : Get.put(ScheduleController());
 
-  SelectionPopupModel? selectedDropDownValue;
   Rx<List<SelectionPopupModel>> dropdownItemList = Rx([
     SelectionPopupModel(id: 1, title: "Item One"),
     SelectionPopupModel(id: 2, title: "Item Two"),
@@ -19,14 +18,4 @@ class ScheduleController extends GetxController {
 
   RxList<Schedule> schedules = <Schedule>[].obs;
   RxList<TeamAccountModel> members = <TeamAccountModel>[].obs;
-  onSelected(SelectionPopupModel value) {
-    for (var element
-        in dropdownItemList.value) {
-      element.isSelected = false;
-      if (element.id == value.id) {
-        element.isSelected = true;
-      }
-    }
-    dropdownItemList.refresh();
-  }
 }

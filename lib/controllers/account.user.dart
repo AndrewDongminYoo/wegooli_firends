@@ -52,7 +52,7 @@ class UserController extends GetxController {
 
   void sendVerificationCode() {
     if (phoneCarriers != null && phoneNum.text.isNotEmpty) {
-      isWaitingOtpCode = true.obs;
+      isWaitingOtpCode.value = true;
       print('인증번호가 발송되었습니다.');
       // TODO: 휴대폰 인증 로직이 필요합니다.
       // 숫자 n개 리턴하는 동작 서버에서 실행.
@@ -65,7 +65,7 @@ class UserController extends GetxController {
 
   void verificaticonIsExpired() {
     print('verificationCodeHasExpired called!!!');
-    verifyCodeExpire = true.obs;
+    verifyCodeExpire.value = true;
     // TODO: 다음 로직들 실행
     // 1. 기존 인증번호 코드 무효화 (서버에 타임아웃 전달)
     // 2. 사용자에게 알림 창으로 타임아웃 사실 알림. 재발송 버튼 실행 유도.

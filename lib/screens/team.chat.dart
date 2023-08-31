@@ -131,14 +131,7 @@ class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
         child: Scaffold(
             resizeToAvoidBottomInset: false,
             backgroundColor: theme.colorScheme.onPrimaryContainer,
-            appBar: CustomAppBar(
-                height: getVerticalSize(45),
-                centerTitle: true,
-                title: CustomImageView(
-                    height: getVerticalSize(17),
-                    width: getHorizontalSize(88),
-                    svgPath: Assets.svg.imgFriendsTypo.path),
-                styleType: Style.bgOutline),
+            appBar: CustomAppBar.getFriendsTypoAppBar(),
             body: DashChat(
                 currentUser: asDashChatUser(SendbirdSdk().currentUser),
                 messages: asDashChatMessages(_messages),

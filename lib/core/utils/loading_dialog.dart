@@ -5,10 +5,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
+// 🌎 Project imports:
+import '/core/app_export.dart';
+
 class LoadingDialog {
   static bool isProgressVisible = false;
-
-  static String lottiePath = 'assets/lotties/custom_loader.json';
+  /// `Lottie` 애니메이션 파일의 경로를  `lottiePath` 변수에 할당
+  static String lottiePath = Assets.lotties.customLoader.path;
 
   /// Displays a progress dialog with a Lottie animation.
   ///

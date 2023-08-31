@@ -25,7 +25,7 @@ export 'errors/failures.dart';
 export 'network/async_web_font.dart';
 export 'network/network_info.dart';
 
-export 'utils/date_time_extensions.dart';
+export 'utils/extensions/date_time_extensions.dart';
 export 'utils/extensions/color_converter.dart';
 export 'utils/extensions/function_lodash.dart';
 export 'utils/extensions/list_extension_at.dart';
@@ -137,6 +137,7 @@ export '/widgets/checkbox_button.dart';
 export '/widgets/drop_down.dart';
 export '/widgets/elevated_button.dart';
 export '/widgets/floating_button.dart';
+export '/widgets/friends_by_wegooli.dart';
 export '/widgets/icon_button.dart';
 export '/widgets/image_view.dart';
 export '/widgets/radio_button.dart';

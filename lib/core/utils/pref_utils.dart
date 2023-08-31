@@ -1,10 +1,14 @@
 // ignore: unused_import
 
 // 📦 Package imports:
+import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class PrefUtils {
   static SharedPreferences? _sharedPreferences;
+  static PrefUtils get storage => Get.isRegistered<PrefUtils>()
+      ? Get.find<PrefUtils>()
+      : Get.put(PrefUtils());
 
   PrefUtils() {
     // init();

@@ -1,4 +1,4 @@
-export 'date_time_extensions.dart';
+export 'extensions/date_time_extensions.dart';
 export 'extensions/extensions.dart';
 export 'formatters/formatters.dart';
 export 'initial_bindings.dart';

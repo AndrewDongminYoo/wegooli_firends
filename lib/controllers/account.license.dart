@@ -8,10 +8,9 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 class LicenseController extends GetxController {
-  static LicenseController get to =>
-      Get.isRegistered<LicenseController>()
-          ? Get.find<LicenseController>()
-          : Get.put(LicenseController());
+  static LicenseController get to => Get.isRegistered<LicenseController>()
+      ? Get.find<LicenseController>()
+      : Get.put(LicenseController());
   TextEditingController frontNumberController = TextEditingController();
   TextEditingController expDateController = TextEditingController();
   TextEditingController backNumberController = TextEditingController();
@@ -66,9 +65,7 @@ class LicenseController extends GetxController {
   ]);
 
   SelectionPopupModel? selectedDropDownValue;
-
   SelectionPopupModel? selectedDropDownValue1;
-
   SelectionPopupModel? selectedDropDownValue2;
 
   @override
@@ -79,9 +76,8 @@ class LicenseController extends GetxController {
     backNumberController.dispose();
   }
 
-  onSelected(dynamic value) {
-    for (var element
-        in dropdownItemList.value) {
+  onSelected(SelectionPopupModel value) {
+    for (SelectionPopupModel element in dropdownItemList.value) {
       element.isSelected = false;
       if (element.id == value.id) {
         element.isSelected = true;
@@ -90,9 +86,8 @@ class LicenseController extends GetxController {
     dropdownItemList.refresh();
   }
 
-  onSelected1(dynamic value) {
-    for (var element
-        in dropdownItemList1.value) {
+  onSelected1(SelectionPopupModel value) {
+    for (SelectionPopupModel element in dropdownItemList1.value) {
       element.isSelected = false;
       if (element.id == value.id) {
         element.isSelected = true;
@@ -101,9 +96,8 @@ class LicenseController extends GetxController {
     dropdownItemList1.refresh();
   }
 
-  onSelected2(dynamic value) {
-    for (var element
-        in dropdownItemList2.value) {
+  onSelected2(SelectionPopupModel value) {
+    for (SelectionPopupModel element in dropdownItemList2.value) {
       element.isSelected = false;
       if (element.id == value.id) {
         element.isSelected = true;

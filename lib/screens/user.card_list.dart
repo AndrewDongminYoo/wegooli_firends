@@ -57,7 +57,7 @@ class RegisteredCreditCardList
                                           onChange: (String value) {
                                             // print(
                                             //     'first option selected : $value');
-                                            controller.selected = value.obs;
+                                            controller.selected.value = value;
                                           })),
                                       CustomImageView(
                                           svgPath: Assets.svg.imgClose.path,
@@ -80,7 +80,7 @@ class RegisteredCreditCardList
                                         onChange: (String value) {
                                           // print(
                                           //     'second option selected : $value');
-                                          controller.selected = value.obs;
+                                          controller.selected.value = value;
                                         })),
                                     CustomImageView(
                                         svgPath: Assets.svg.imgClose.path,
@@ -119,7 +119,7 @@ class RegisteredCreditCardList
                       //               groupValue: controller.radioGroup.value,
                       //               textStyle: theme.textTheme.bodyLarge!,
                       //               onChange: (String value) {
-                      //                 controller.radioGroup = value.obs;
+                      //                 controller.radioGroup.value = value;
                       //               })),
                       //           CustomImageView(
                       //               svgPath: Assets.svg.imgClose.path,
@@ -139,7 +139,7 @@ class RegisteredCreditCardList
                       //               groupValue: controller.radioGroup1.value,
                       //               textStyle: theme.textTheme.bodyLarge!,
                       //               onChange: (String value) {
-                      //                 controller.radioGroup1 = value.obs;
+                      //                 controller.radioGroup1.value = value;
                       //               })),
                       //           CustomImageView(
                       //               svgPath: Assets.svg.imgClose.path,

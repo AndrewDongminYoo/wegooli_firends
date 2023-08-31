@@ -14,7 +14,7 @@ import '/core/app_export.dart';
 class LoginWithIdAndPassword extends GetWidget<UserController> {
   bool get isAuthenticated => controller.isAuthenticated.isTrue;
   Future<void> authorize() async {
-    final api = Get.find<WegooliFriends>().getUserControllerApi();
+    final api = WegooliFriends.client.getUserControllerApi();
 
     try {
       final response = await api.login(
@@ -27,7 +27,7 @@ class LoginWithIdAndPassword extends GetWidget<UserController> {
         if (token != null) {
           List<String> splitToken = token.split(' ');
           print('splitToken: $splitToken[1]');
-          Get.find<PrefUtils>().setData('token', splitToken[1]);
+          PrefUtils.storage.setData('token', splitToken[1]);
           Map<String, dynamic> payload = parseJwtPayLoad(splitToken[1]);
           controller.currentUser.value = (UserDTOBuilder()
                 ..email = payload['userEmail']
@@ -76,37 +76,13 @@ class LoginWithIdAndPassword extends GetWidget<UserController> {
             backgroundColor: theme.colorScheme.onPrimaryContainer,
             body: Container(
                 width: double.maxFinite,
+                alignment: Alignment.center,
                 padding: getPadding(left: 16, top: 58, right: 16, bottom: 58),
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text("FRIENDS",
-                          overflow: TextOverflow.ellipsis,
-                          textAlign: TextAlign.left,
-                          style: theme.textTheme.displayMedium!
-                              .copyWith(letterSpacing: getHorizontalSize(0.1))),
-                      Align(
-                          alignment: Alignment.centerRight,
-                          child: Padding(
-                              padding: getPadding(right: 68),
-                              child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    Text("By",
-                                        overflow: TextOverflow.ellipsis,
-                                        textAlign: TextAlign.left,
-                                        style: CustomTextStyles
-                                            .titleSmallNanumSquareRoundOnPrimary
-                                            .copyWith(
-                                                letterSpacing:
-                                                    getHorizontalSize(0.03))),
-                                    CustomImageView(
-                                        svgPath: Assets
-                                            .svg.imgWegooliBlueGray900.path,
-                                        height: getVerticalSize(11),
-                                        width: getHorizontalSize(53),
-                                        margin: getMargin(left: 5, bottom: 3)),
-                                  ]))),
+                      FriendsByWegooli(),
                       CustomTextFormField(
                           controller: controller.username,
                           margin: getMargin(top: 40),
@@ -184,9 +160,9 @@ class LoginWithIdAndPassword extends GetWidget<UserController> {
   }
 
   Future findMembers() async {
-    String token = Get.find<PrefUtils>().getData('token');
+    String token = PrefUtils.storage.getData('token');
     final api =
-        Get.find<WegooliFriends>().getTeamAccountConnectionControllerApi();
+        WegooliFriends.client.getTeamAccountConnectionControllerApi();
     print('token : $token');
     Map<String, dynamic> extra = <String, dynamic>{
       'secure': <Map<String, String>>[

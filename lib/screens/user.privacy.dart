@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 class ProfileInfoPage extends StatelessWidget {
-  final api = Get.find<WegooliFriends>().getUserControllerApi();
+  final api = WegooliFriends.client.getUserControllerApi();
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);

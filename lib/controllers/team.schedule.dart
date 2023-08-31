@@ -19,7 +19,7 @@ class ScheduleController extends GetxController {
 
   RxList<Schedule> schedules = <Schedule>[].obs;
   RxList<TeamAccountModel> members = <TeamAccountModel>[].obs;
-  onSelected(dynamic value) {
+  onSelected(SelectionPopupModel value) {
     for (var element
         in dropdownItemList.value) {
       element.isSelected = false;

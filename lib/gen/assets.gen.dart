@@ -117,8 +117,11 @@ class $AssetsLottiesGen {
   /// File path: assets/lotties/custom_loader.json
   LottieGenImage get customLoader => const LottieGenImage('assets/lotties/custom_loader.json');
 
+  /// File path: assets/lotties/img_gooli_1.json
+  LottieGenImage get imgGooli1 => const LottieGenImage('assets/lotties/img_gooli_1.json');
+
   /// List of all assets
-  List<LottieGenImage> get values => [customLoader];
+  List<LottieGenImage> get values => [customLoader, imgGooli1];
 }
 
 class $AssetsSvgGen {

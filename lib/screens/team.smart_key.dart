@@ -13,7 +13,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
   SmartKeyAvailablePage({Key? key}) : super(key: key);
   VehicleController controller = VehicleController.to;
 
-  final String token = Get.find<PrefUtils>().getData('token');
+  final String token = PrefUtils.storage.getData('token');
   late Map<String, dynamic> extra = <String, dynamic>{
     'secure': <Map<String, String>>[
       {
@@ -65,14 +65,14 @@ class SmartKeyAvailablePage extends StatelessWidget {
 
   Future retrieveCarInfo() async {
     final terminalControllerApi =
-        Get.find<WegooliFriends>().getTerminalControllerApi();
+        WegooliFriends.client.getTerminalControllerApi();
     final response =
         await terminalControllerApi.selectTerminal(seq: 2, extra: extra);
     print('response.data : ${response.data}');
     controller.terminalDevice.value = response.data ?? TerminalModel();
 
     final scheduleControllerApi =
-        Get.find<WegooliFriends>().getScheduleControllerApi();
+        WegooliFriends.client.getScheduleControllerApi();
 
     final response2 = await scheduleControllerApi.selectScheduleList(
         teamSeq: (ScheduleRequestBuilder()..teamSeq = 2).build().teamSeq,
@@ -85,7 +85,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
 
   Future openDoor() async {
     final deviceControllerApi =
-        Get.find<WegooliFriends>().getDeviceControllerApi();
+        WegooliFriends.client.getDeviceControllerApi();
     final response = await deviceControllerApi.doorOpen(
         carNum: controller.terminalDevice.value.carNum as String,
         extra: extra);
@@ -94,7 +94,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
 
   Future closeDoor() async {
     final deviceControllerApi =
-        Get.find<WegooliFriends>().getDeviceControllerApi();
+        WegooliFriends.client.getDeviceControllerApi();
     final response = await deviceControllerApi.doorClose(
         carNum: controller.terminalDevice.value.carNum as String,
         extra: extra);
@@ -103,7 +103,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
 
   Future horn() async {
     final deviceControllerApi =
-        Get.find<WegooliFriends>().getDeviceControllerApi();
+        WegooliFriends.client.getDeviceControllerApi();
     final response = await deviceControllerApi.turnOnHorn(
         carNum: controller.terminalDevice.value.carNum as String,
         extra: extra);
@@ -112,7 +112,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
 
   Future emergencyLight() async {
     final deviceControllerApi =
-        Get.find<WegooliFriends>().getDeviceControllerApi();
+        WegooliFriends.client.getDeviceControllerApi();
     final response = await deviceControllerApi.turnOnEmergencyLight(
         carNum: controller.terminalDevice.value.carNum as String,
         extra: extra);

@@ -25,7 +25,7 @@ class _CalendarBodyState extends State<CalendarBody> {
   DateTime? _selectedDay;
   DateTime? _rangeStart;
   DateTime? _rangeEnd;
-  TeamScheduleController controller = Get.find<TeamScheduleController>();
+  TeamScheduleController controller = TeamScheduleController.to;
   get daysOfWeekStyle => DaysOfWeekStyle(
       weekdayStyle: TextStyle(
           color: Colors.black, fontWeight: FontWeight.bold, fontSize: 14),

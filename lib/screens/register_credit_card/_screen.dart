@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 class RegisterCreditCard extends GetWidget<RegisterCreditCardController> {
+  PhoneAuthController phoneAuthController = PhoneAuthController.to;
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
@@ -171,9 +172,7 @@ class RegisterCreditCard extends GetWidget<RegisterCreditCardController> {
                                         CustomTextStyles.bodyLargeGray50003,
                                     hintText: "YYMMDD",
                                     initialValue:
-                                        Get.find<PhoneAuthController>()
-                                            .birthDay
-                                            .text,
+                                        phoneAuthController.birthDay.text,
                                     hintStyle:
                                         CustomTextStyles.bodyLargeGray50003,
                                     textInputAction: TextInputAction.next,

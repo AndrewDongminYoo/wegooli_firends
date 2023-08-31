@@ -10,6 +10,6 @@ class RegisteredCreditCardListController extends GetxController {
       Get.isRegistered<RegisteredCreditCardListController>()
           ? Get.find<RegisteredCreditCardListController>()
           : Get.put(RegisteredCreditCardListController());
-  Rx<String> radioGroup = "".obs;
-  Rx<String> radioGroup1 = "".obs;
+  
+  RxString selected = "".obs;
 }

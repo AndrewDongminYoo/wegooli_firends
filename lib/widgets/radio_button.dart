@@ -84,6 +84,14 @@ class CustomRadioButton extends StatelessWidget {
       height: iconSize ?? getHorizontalSize(20),
       width: iconSize ?? getHorizontalSize(20),
       child: Radio<String>(
+          // activeColor: Color(0xFFFFE041),
+          fillColor: MaterialStateColor.resolveWith((states) {
+            if (states.contains(MaterialState.selected)) {
+              return theme.colorScheme.primary;
+            } else {
+              return Color(0xFFB9BCC3);
+            }
+          }),
           visualDensity: VisualDensity(vertical: -4, horizontal: -4),
           value: value ?? "",
           groupValue: groupValue,

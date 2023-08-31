@@ -37,7 +37,9 @@ class LoginWithIdAndPassword extends GetWidget<IdPwLoginController> {
                 ..color = payload['color']
                 ..phoneNumber = payload['phoneNumber']
                 ..add1 = payload['add1']
-                ..add2 = payload['add2'])
+                ..add2 = payload['add2']
+                ..memberSeq = payload['memberSeq']
+                )
               .build();
           controller.isAuthenticated.value = true;
           await findMembers();

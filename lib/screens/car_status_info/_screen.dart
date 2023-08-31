@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 class CarStatusInformation extends StatelessWidget {
-  SmartKeyAvailableController controller = SmartKeyAvailableController.to;
+  final DeviceController controller = DeviceController.to;
 
   @override
   Widget build(BuildContext context) {

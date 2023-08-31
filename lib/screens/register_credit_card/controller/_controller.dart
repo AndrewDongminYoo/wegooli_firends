@@ -8,15 +8,18 @@ import 'package:get/get.dart';
 ///
 /// This class manages the state of the RegisterCreditCardScreen, including the
 /// current registerCreditCardModelObj
-class RegisterCreditCardController extends GetxController {
-  static RegisterCreditCardController get to =>
-      Get.isRegistered<RegisterCreditCardController>()
-          ? Get.find<RegisterCreditCardController>()
-          : Get.put(RegisterCreditCardController());
+class PaymentCardController extends GetxController {
+  static PaymentCardController get to =>
+      Get.isRegistered<PaymentCardController>()
+          ? Get.find<PaymentCardController>()
+          : Get.put(PaymentCardController());
   TextEditingController cardNumController = TextEditingController();
   TextEditingController expDateController = TextEditingController();
   TextEditingController firstsixdigitsoController = TextEditingController();
   TextEditingController grouptwentynineController = TextEditingController();
+  Rx<String> radioGroup = "".obs;
+  Rx<String> radioGroup1 = "".obs;
+  Rx<String> selected = "".obs;
 
   @override
   void onClose() {

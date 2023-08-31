@@ -6,11 +6,11 @@ import '../controller/_controller.dart';
 
 /// A binding class for the IdPwLoginScreen.
 ///
-/// This class ensures that the IdPwLoginController is created when the
+/// This class ensures that the UserController is created when the
 /// IdPwLoginScreen is first loaded.
-class IdPwLoginBinding extends Bindings {
+class UserAuthBInding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => IdPwLoginController());
+    Get.lazyPut(() => UserController());
   }
 }

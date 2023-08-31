@@ -10,7 +10,7 @@ class MembersList extends StatelessWidget {
     required this.controller,
   });
 
-  final TeamScheduleController controller;
+  final ScheduleController controller;
 
   @override
   Widget build(BuildContext context) {

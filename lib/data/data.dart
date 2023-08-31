@@ -1,7 +1,20 @@
 export 'api.dart';
-export 'api/api.dart';
 export 'api_util.dart';
-export 'auth/auth.dart';
 export 'date_serializer.dart';
-export 'models/models.dart';
 export 'serializers.dart';
+
+export 'api/account_agreement_controller_api.dart';
+export 'api/device_controller_api.dart';
+export 'api/license_controller_api.dart';
+export 'api/metis_controller_api.dart';
+export 'api/payment_card_controller_api.dart';
+export 'api/schedule_controller_api.dart';
+export 'api/share_service_controller_api.dart';
+export 'api/team_account_connection_controller_api.dart';
+export 'api/team_car_connection_controller_api.dart';
+export 'api/team_controller_api.dart';
+export 'api/terminal_controller_api.dart';
+export 'api/test_controller_api.dart';
+export 'api/user_controller_api.dart';
+export 'auth/auth.dart';
+export 'models/models.dart';

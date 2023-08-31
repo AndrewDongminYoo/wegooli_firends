@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
-class ValidatePhoneCompleteButton extends GetWidget<PhoneAuthController> {
+class ValidatePhoneCompleteButton extends GetWidget<UserController> {
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -11,9 +11,8 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 // ignore: must_be_immutable
-class LoginWithIdAndPassword extends GetWidget<IdPwLoginController> {
-  bool get isAuthenticated => controller.isAuthenticated.value;
-
+class LoginWithIdAndPassword extends GetWidget<UserController> {
+  bool get isAuthenticated => controller.isAuthenticated.isTrue;
   Future<void> authorize() async {
     final api = Get.find<WegooliFriends>().getUserControllerApi();
 
@@ -41,16 +40,16 @@ class LoginWithIdAndPassword extends GetWidget<IdPwLoginController> {
                 ..memberSeq = payload['memberSeq']
                 )
               .build();
-          controller.isAuthenticated.value = true;
+          controller.isAuthenticated = true.obs;
           await findMembers();
         } else {
-          controller.isAuthenticated.value = false;
+          controller.isAuthenticated = false.obs;
         }
       }
       // Logger.log("response : ${response.data?.result?.toString()}");
       // return true;
     } on DioException catch (e) {
-      controller.isAuthenticated.value = false;
+      controller.isAuthenticated = false.obs;
       switch (e.type) {
         case DioExceptionType.connectionError:
           print(e.message ?? "Unknown connection error occurred");
@@ -59,7 +58,7 @@ class LoginWithIdAndPassword extends GetWidget<IdPwLoginController> {
       }
       print("DioException when calling UserControllerApi->login: $e\n");
     } on Exception catch (e) {
-      controller.isAuthenticated.value = false;
+      controller.isAuthenticated = false.obs;
       print("Exception when calling UserControllerApi->login: $e\n");
     } finally {
       // return false;

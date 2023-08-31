@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
-class TeamScheduleShare extends GetWidget<TeamScheduleController> {
+class TeamScheduleShare extends GetWidget<ScheduleController> {
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
@@ -23,8 +23,8 @@ class TeamScheduleShare extends GetWidget<TeamScheduleController> {
     switch (currentRoute) {
       case AppRoutes.chatWithTeam:
         // TODO 로그인한 사용자 정보 넣기 !! 팀 정보 넣기
-        UserDTO currentUser = Get.find<IdPwLoginController>().currentUser.value;
-        List<String> otherUserIds = Get.find<IdPwLoginController>()
+        UserDTO currentUser = Get.find<UserController>().currentUser.value;
+        List<String> otherUserIds = Get.find<UserController>()
             .members
             .map((it) => it.accountId as String)
             .toList();

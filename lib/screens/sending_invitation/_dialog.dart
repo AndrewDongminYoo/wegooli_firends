@@ -11,7 +11,7 @@ import '/core/app_export.dart';
 class SendingCrewInvitationDialog extends StatelessWidget {
   SendingCrewInvitationDialog(this.controller, {Key? key}) : super(key: key);
 
-  SendingCrewInvitationController controller;
+  DeviceController controller;
 
   @override
   Widget build(BuildContext context) {

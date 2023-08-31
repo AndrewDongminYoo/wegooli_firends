@@ -7,14 +7,14 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
-class AcceptTerms extends GetWidget<AcceptTermsController> {
+class AcceptTerms extends GetWidget<AccountAgreementController> {
   void checkAll(bool value) {
-    controller.isAcceptedTerm1.value = value;
-    controller.isAcceptedTerm2.value = value;
-    controller.isAcceptedTerm3.value = value;
-    controller.isAcceptedTerm4.value = value;
-    controller.isAcceptedTerm5.value = value;
-    controller.isAcceptedTerm6.value = value;
+    controller.isAcceptedTerm1 = value.obs;
+    controller.isAcceptedTerm2 = value.obs;
+    controller.isAcceptedTerm3 = value.obs;
+    controller.isAcceptedTerm4 = value.obs;
+    controller.isAcceptedTerm5 = value.obs;
+    controller.isAcceptedTerm6 = value.obs;
   }
 
   @override
@@ -52,10 +52,10 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                                           alignment: Alignment.center,
                                           text: l10ns.acceptAll,
                                           value: controller
-                                              .isAllTermsAccepted.value,
+                                              .isAllTermsAccepted.isTrue,
                                           onChange: (value) {
                                             controller.isAllTermsAccepted
-                                                .value = value;
+                                                 = value.obs;
                                           })))),
                               Padding(
                                   padding: getPadding(top: 53),
@@ -67,10 +67,10 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                                             text: l10ns
                                                 .termsOfServiceRequiredAgreement,
                                             value: controller
-                                                .isAcceptedTerm0.value,
+                                                .isAcceptedTerm0.isTrue,
                                             onChange: (value) {
-                                              controller.isAcceptedTerm0.value =
-                                                  value;
+                                              controller.isAcceptedTerm0 =
+                                                  value.obs;
                                             })),
                                         CustomImageView(
                                             svgPath:
@@ -89,10 +89,10 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                                             text: l10ns
                                                 .privacyPolicyRequiredConsent,
                                             value: controller
-                                                .isAcceptedTerm1.value,
+                                                .isAcceptedTerm1.isTrue,
                                             onChange: (value) {
-                                              controller.isAcceptedTerm1.value =
-                                                  value;
+                                              controller.isAcceptedTerm1 =
+                                                  value.obs;
                                             })),
                                         CustomImageView(
                                             svgPath:
@@ -110,10 +110,10 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                                         Obx(() => CustomCheckboxButton(
                                             text: "자동차 대여약관 (필수)",
                                             value: controller
-                                                .isAcceptedTerm2.value,
+                                                .isAcceptedTerm2.isTrue,
                                             onChange: (value) {
-                                              controller.isAcceptedTerm2.value =
-                                                  value;
+                                              controller.isAcceptedTerm2 =
+                                                  value.obs;
                                             })),
                                         CustomImageView(
                                             svgPath:
@@ -132,10 +132,10 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                                             text: l10ns
                                                 .locationBasedServicesTerms,
                                             value: controller
-                                                .isAcceptedTerm3.value,
+                                                .isAcceptedTerm3.isTrue,
                                             onChange: (value) {
-                                              controller.isAcceptedTerm3.value =
-                                                  value;
+                                              controller.isAcceptedTerm3 =
+                                                  value.obs;
                                             })),
                                         CustomImageView(
                                             svgPath:
@@ -152,10 +152,10 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                                             text: l10ns
                                                 .consentToCollectionAndUseOfVehicleLocationInfo,
                                             value: controller
-                                                .isAcceptedTerm4.value,
+                                                .isAcceptedTerm4.isTrue,
                                             onChange: (value) {
-                                              controller.isAcceptedTerm4.value =
-                                                  value;
+                                              controller.isAcceptedTerm4 =
+                                                  value.obs;
                                             }))),
                                     CustomImageView(
                                         svgPath: Assets.svg.imgArrowLeft.path,
@@ -171,10 +171,10 @@ class AcceptTerms extends GetWidget<AcceptTermsController> {
                                             text: l10ns
                                                 .useOfPersonalInfoForMarketing,
                                             value: controller
-                                                .isAcceptedTerm5.value,
+                                                .isAcceptedTerm5.isTrue,
                                             onChange: (value) {
-                                              controller.isAcceptedTerm5.value =
-                                                  value;
+                                              controller.isAcceptedTerm5 =
+                                                  value.obs;
                                             }))),
                                     CustomImageView(
                                         svgPath: Assets.svg.imgArrowLeft.path,

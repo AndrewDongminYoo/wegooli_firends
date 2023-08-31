@@ -10,7 +10,7 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 class SMSValidationForm extends StatefulWidget {
-  final PhoneAuthController controller;
+  final UserController controller;
   const SMSValidationForm({
     super.key,
     required this.controller,

@@ -63,7 +63,7 @@ class RegisterSuccess extends GetWidget<RegisterSuccessController> {
                                     ]),
                                 Obx(() => CustomTextFormField(
                                     textInputType: TextInputType.emailAddress,
-                                    controller: controller.codeController,
+                                    controller: controller.inviteLink,
                                     margin: getMargin(top: 4),
                                     contentPadding: getPadding(
                                         left: 12,

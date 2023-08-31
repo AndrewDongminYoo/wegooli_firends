@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 class RegisteredCreditCardList
-    extends GetWidget<RegisteredCreditCardListController> {
+    extends GetWidget<PaymentCardController> {
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
@@ -57,7 +57,7 @@ class RegisteredCreditCardList
                                           onChange: (String value) {
                                             // print(
                                             //     'first option selected : $value');
-                                            controller.selected.value = value;
+                                            controller.selected = value.obs;
                                           })),
                                       CustomImageView(
                                           svgPath: Assets.svg.imgClose.path,
@@ -80,7 +80,7 @@ class RegisteredCreditCardList
                                         onChange: (String value) {
                                           // print(
                                           //     'second option selected : $value');
-                                          controller.selected.value = value;
+                                          controller.selected = value.obs;
                                         })),
                                     CustomImageView(
                                         svgPath: Assets.svg.imgClose.path,
@@ -119,7 +119,7 @@ class RegisteredCreditCardList
                       //               groupValue: controller.radioGroup.value,
                       //               textStyle: theme.textTheme.bodyLarge!,
                       //               onChange: (String value) {
-                      //                 controller.radioGroup.value = value;
+                      //                 controller.radioGroup = value.obs;
                       //               })),
                       //           CustomImageView(
                       //               svgPath: Assets.svg.imgClose.path,
@@ -139,7 +139,7 @@ class RegisteredCreditCardList
                       //               groupValue: controller.radioGroup1.value,
                       //               textStyle: theme.textTheme.bodyLarge!,
                       //               onChange: (String value) {
-                      //                 controller.radioGroup1.value = value;
+                      //                 controller.radioGroup1 = value.obs;
                       //               })),
                       //           CustomImageView(
                       //               svgPath: Assets.svg.imgClose.path,

@@ -6,7 +6,6 @@ import 'package:get/get.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
-import 'widgets/confirm_dialog.dart';
 
 class ProfileInfoPage extends StatelessWidget {
   final api = Get.find<WegooliFriends>().getUserControllerApi();

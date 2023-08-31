@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
-class RegisterLicense extends GetWidget<RegisterLicenseController> {
+class RegisterLicense extends GetWidget<LicenseController> {
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);

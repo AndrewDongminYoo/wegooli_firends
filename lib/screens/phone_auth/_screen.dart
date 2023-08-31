@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
-class ValidatePhone extends GetWidget<PhoneAuthController> {
+class ValidatePhone extends GetWidget<UserController> {
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
@@ -86,7 +86,7 @@ class SocialSecurity7NumberInput extends StatelessWidget {
     required this.controller,
   });
 
-  final PhoneAuthController controller;
+  final UserController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -120,7 +120,7 @@ class Birthday6NumberInput extends StatelessWidget {
     required this.controller,
   });
 
-  final PhoneAuthController controller;
+  final UserController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -150,7 +150,7 @@ class NameTextInput extends StatelessWidget {
     required this.controller,
   });
 
-  final PhoneAuthController controller;
+  final UserController controller;
 
   @override
   Widget build(BuildContext context) {

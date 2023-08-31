@@ -9,7 +9,7 @@ import 'package:kpostal/kpostal.dart';
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
-class RegisterZipCode extends GetWidget<RegisterZipCodeController> {
+class RegisterZipCode extends GetWidget<UserController> {
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);

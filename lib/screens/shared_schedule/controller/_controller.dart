@@ -2,18 +2,35 @@
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '../shared_schedule.dart';
-import '/data/models/models.dart';
+import '/core/app_export.dart';
 
 /// A controller class for the TeamScheduleShareScreen.
 ///
 /// This class manages the state of the TeamScheduleShareScreen, including the
 /// current teamScheduleShareModelObj
-class TeamScheduleController extends GetxController {
-  static TeamScheduleController get to =>
-      Get.isRegistered<TeamScheduleController>()
-          ? Get.find<TeamScheduleController>()
-          : Get.put(TeamScheduleController());
+class ScheduleController extends GetxController {
+  static ScheduleController get to =>
+      Get.isRegistered<ScheduleController>()
+          ? Get.find<ScheduleController>()
+          : Get.put(ScheduleController());
+
+  SelectionPopupModel? selectedDropDownValue;
+  Rx<List<SelectionPopupModel>> dropdownItemList = Rx([
+    SelectionPopupModel(id: 1, title: "Item One", isSelected: true),
+    SelectionPopupModel(id: 2, title: "Item Two"),
+    SelectionPopupModel(id: 3, title: "Item Three")
+  ]);
+
   RxList<Schedule> schedules = <Schedule>[].obs;
   RxList<TeamAccountModel> members = <TeamAccountModel>[].obs;
+  onSelected(dynamic value) {
+    for (var element
+        in dropdownItemList.value) {
+      element.isSelected = false;
+      if (element.id == value.id) {
+        element.isSelected = true;
+      }
+    }
+    dropdownItemList.refresh();
+  }
 }

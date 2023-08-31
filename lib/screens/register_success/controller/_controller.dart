@@ -13,11 +13,11 @@ class RegisterSuccessController extends GetxController {
       Get.isRegistered<RegisterSuccessController>()
           ? Get.find<RegisterSuccessController>()
           : Get.put(RegisterSuccessController());
-  TextEditingController codeController = TextEditingController();
+  TextEditingController inviteLink = TextEditingController();
 
   @override
   void onClose() {
     super.onClose();
-    codeController.dispose();
+    inviteLink.dispose();
   }
 }

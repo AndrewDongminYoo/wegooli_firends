@@ -6,11 +6,11 @@ import '../controller/_controller.dart';
 
 /// A binding class for the AcceptTermsScreen.
 ///
-/// This class ensures that the AcceptTermsController is created when the
+/// This class ensures that the AccountAgreementController is created when the
 /// AcceptTermsScreen is first loaded.
 class AcceptTermsBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => AcceptTermsController());
+    Get.lazyPut(() => AccountAgreementController());
   }
 }

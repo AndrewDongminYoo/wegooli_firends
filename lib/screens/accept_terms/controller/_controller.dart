@@ -8,33 +8,46 @@ import '/data/data.dart';
 ///
 /// This class manages the state of the AcceptTermsScreen, including the
 /// current acceptTermsModelObj
-class AcceptTermsController extends GetxController {
-  static AcceptTermsController get to =>
-      Get.isRegistered<AcceptTermsController>()
-          ? Get.find<AcceptTermsController>()
-          : Get.put(AcceptTermsController());
+class AccountAgreementController extends GetxController {
+  static AccountAgreementController get to =>
+      Get.isRegistered<AccountAgreementController>()
+          ? Get.find<AccountAgreementController>()
+          : Get.put(AccountAgreementController());
   Rx<Account> agreementModel = Account().obs;
   RxList<AccountAgreementModel> accountAgreementModelList =
       RxList<AccountAgreementModel>();
   RxList<AccountAgreementRequest> accountAgreementRequestList =
       RxList<AccountAgreementRequest>();
+  RxBool _isAllTermsAccepted = false.obs;
 
-  Rx<bool> isAcceptedTerm0 = false.obs;
-  Rx<bool> isAcceptedTerm1 = false.obs;
-  Rx<bool> isAcceptedTerm2 = false.obs;
-  Rx<bool> isAcceptedTerm3 = false.obs;
-  Rx<bool> isAcceptedTerm4 = false.obs;
-  Rx<bool> isAcceptedTerm5 = false.obs;
-  Rx<bool> isAcceptedTerm6 = false.obs;
+  RxBool isAcceptedTerm0 = false.obs;
+  RxBool isAcceptedTerm1 = false.obs;
+  RxBool isAcceptedTerm2 = false.obs;
+  RxBool isAcceptedTerm3 = false.obs;
+  RxBool isAcceptedTerm4 = false.obs;
+  RxBool isAcceptedTerm5 = false.obs;
+  RxBool isAcceptedTerm6 = false.obs;
 
-  Rx<bool> get isAllTermsAccepted {
-    return (isAcceptedTerm0.value &&
-            isAcceptedTerm1.value &&
-            isAcceptedTerm2.value &&
-            isAcceptedTerm3.value &&
-            isAcceptedTerm4.value &&
-            isAcceptedTerm5.value &&
-            isAcceptedTerm6.value)
+  RxBool get isAllTermsAccepted {
+    _isAllTermsAccepted = (isAcceptedTerm0.isTrue &&
+            isAcceptedTerm1.isTrue &&
+            isAcceptedTerm2.isTrue &&
+            isAcceptedTerm3.isTrue &&
+            isAcceptedTerm4.isTrue &&
+            isAcceptedTerm5.isTrue &&
+            isAcceptedTerm6.isTrue)
         .obs;
+    return _isAllTermsAccepted;
+  }
+
+  set isAllTermsAccepted(RxBool e) {
+    isAcceptedTerm0 = e;
+    isAcceptedTerm1 = e;
+    isAcceptedTerm2 = e;
+    isAcceptedTerm3 = e;
+    isAcceptedTerm4 = e;
+    isAcceptedTerm5 = e;
+    isAcceptedTerm6 = e;
+    _isAllTermsAccepted = e;
   }
 }

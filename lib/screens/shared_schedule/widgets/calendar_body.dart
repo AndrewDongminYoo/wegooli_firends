@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
-import 'package:get/get.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:table_calendar/table_calendar.dart';
 
@@ -25,7 +24,7 @@ class _CalendarBodyState extends State<CalendarBody> {
   DateTime? _selectedDay;
   DateTime? _rangeStart;
   DateTime? _rangeEnd;
-  TeamScheduleController controller = TeamScheduleController.to;
+  ScheduleController controller = ScheduleController.to;
   get daysOfWeekStyle => DaysOfWeekStyle(
       weekdayStyle: TextStyle(
           color: Colors.black, fontWeight: FontWeight.bold, fontSize: 14),

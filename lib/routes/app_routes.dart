@@ -2,7 +2,8 @@
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '/screens/screens.dart';
+import 'package:wegooli_friends/screens/register_license/binding/_binding.dart';
+import '/core/app_export.dart';
 
 class AppRoutes {
   static const String acceptTerms = '/accept_terms';
@@ -39,7 +40,7 @@ class AppRoutes {
     GetPage(
         name: bookDatetimePicker,
         page: () => ReservationDatetimePickerBottomSheet(
-            ReservationDatetimePickerController.to)),
+            ScheduleController.to)),
     GetPage(name: carStatusInfo, page: () => CarStatusInformation()),
     GetPage(
         name: chatWithTeam,
@@ -48,13 +49,13 @@ class AppRoutes {
     GetPage(
         name: idPwLogin,
         page: () => LoginWithIdAndPassword(),
-        bindings: [IdPwLoginBinding()]),
+        bindings: [UserAuthBInding()]),
     GetPage(name: myProfile, page: () => MyProfilePage()),
     GetPage(name: noSubscription, page: () => SubscriptionInfoNoService()),
     GetPage(
         name: phoneAuth,
         page: () => ValidatePhone(),
-        bindings: [PhoneAuthBinding()]),
+        bindings: [UserAuthBInding()]),
     GetPage(
         name: registerCreditCard,
         page: () => RegisterCreditCard(),
@@ -62,7 +63,7 @@ class AppRoutes {
     GetPage(
         name: registeredCardList,
         page: () => RegisteredCreditCardList(),
-        bindings: [RegisteredCreditCardListBinding()]),
+        bindings: [RegisterCreditCardBinding()]),
     GetPage(
         name: registerLicense,
         page: () => RegisterLicense(),
@@ -70,21 +71,21 @@ class AppRoutes {
     GetPage(
         name: registerSuccess,
         page: () => RegisterSuccess(),
-        bindings: [RegisterSuccessBinding()]),
+        bindings: [UserAuthBInding()]),
     GetPage(
         name: registerZipCode,
         page: () => RegisterZipCode(),
-        bindings: [RegisterZipCodeBinding()]),
+        bindings: [UserAuthBInding()]),
     GetPage(
         name: reservationsCheck, page: () => ReservationsCheckingPageDialog()),
     GetPage(
         name: sendingInvitation,
         page: () =>
-            SendingCrewInvitationDialog(SendingCrewInvitationController.to)),
+            SendingCrewInvitationDialog(DeviceController.to)),
     GetPage(
         name: sharedSchedule,
         page: () => TeamScheduleShare(),
-        bindings: [TeamScheduleShareBinding()]),
+        bindings: [TeamScheduleBinding()]),
     GetPage(name: smartKeyAvailable, page: () => SmartKeyAvailablePage()),
     GetPage(name: smartKeyUnavailable, page: () => SmartKeyNotAvailable()),
     GetPage(name: splashScreen, page: () => SplashLoading()),
@@ -94,11 +95,11 @@ class AppRoutes {
     GetPage(
         name: upcomingUnsubscription + "_filled",
         page: () => UpcomingUnsubscriptionFilled(),
-        bindings: [UpcomingUnsubscriptionBinding()]),
+        bindings: [TeamScheduleBinding()]),
     GetPage(
         name: upcomingUnsubscription + "_outlined",
         page: () => UpcomingUnsubscriptionOutlined(),
-        bindings: [UpcomingUnsubscriptionBinding()]),
+        bindings: [TeamScheduleBinding()]),
     GetPage(name: myProfile, page: () => MyProfilePage()),
     GetPage(name: profileInfoPage, page: () => ProfileInfoPage()),
     GetPage(name: appGateway, page: () => GatewayScreen())

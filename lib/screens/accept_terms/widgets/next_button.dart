@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
-class AcceptTermsNextButton extends GetWidget<AcceptTermsController> {
+class AcceptTermsNextButton extends GetWidget<AccountAgreementController> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -19,7 +19,7 @@ class AcceptTermsNextButton extends GetWidget<AcceptTermsController> {
                     Size(double.maxFinite, getVerticalSize(52)))),
             buttonTextStyle: CustomTextStyles.titleMedium18,
             onTap: () {
-              if (controller.isAllTermsAccepted.value) {
+              if (controller.isAllTermsAccepted.isTrue) {
                 Get.toNamed(AppRoutes.phoneAuth);
               }
             }));

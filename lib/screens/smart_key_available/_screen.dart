@@ -11,7 +11,7 @@ import '/core/app_export.dart';
 // ignore: must_be_immutable
 class SmartKeyAvailablePage extends StatelessWidget {
   SmartKeyAvailablePage({Key? key}) : super(key: key);
-  SmartKeyAvailableController controller = SmartKeyAvailableController.to;
+  DeviceController controller = DeviceController.to;
 
   final String token = Get.find<PrefUtils>().getData('token');
   late Map<String, dynamic> extra = <String, dynamic>{
@@ -79,7 +79,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
         extra: extra);
     print('response2.data : ${response2.data}');
     bool done = response2.data!.any(compose);
-    controller.isUsed.value = done;
+    controller.isUsed = done.obs;
     print('done : $done');
   }
 

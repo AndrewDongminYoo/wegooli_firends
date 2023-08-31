@@ -31,8 +31,8 @@ class DashChatWithFriendsPage extends StatefulWidget {
 
 class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
     with ChannelEventHandler {
-  final DashChatWithFriendsController controller =
-      DashChatWithFriendsController.to;
+  final TeamAccountConnectionController controller =
+      TeamAccountConnectionController.to;
   late GroupChannel _channel;
   List<BaseMessage> _messages = [];
   // ignore: unused_field
@@ -76,7 +76,7 @@ class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
     if (user == null) {
       return ChatUser(id: "", lastName: "", firstName: "", profileImage: "");
     }
-    TeamAccountModel model = Get.find<IdPwLoginController>()
+    TeamAccountModel model = Get.find<UserController>()
         .members
         .firstWhere((it) => user.userId == it.accountId);
     // print('model : $model');
@@ -154,7 +154,7 @@ class _DashChatWithFriendsState extends State<DashChatWithFriendsPage>
                         (message, previousMessage, nextMessage) =>
                             BoxDecoration(
                                 color: message.user.id ==
-                                        Get.find<IdPwLoginController>()
+                                        Get.find<UserController>()
                                             .currentUser
                                             .value
                                             .id

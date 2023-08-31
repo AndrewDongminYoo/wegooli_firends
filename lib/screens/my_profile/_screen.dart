@@ -6,10 +6,9 @@ import 'package:get/get.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
-import 'widgets/list_item.dart';
 
 class MyProfilePage extends StatelessWidget {
-  final MyProfileController controller = MyProfileController.to;
+  final TeamAccountConnectionController controller = TeamAccountConnectionController.to;
 
   @override
   Widget build(BuildContext context) {

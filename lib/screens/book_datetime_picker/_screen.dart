@@ -12,7 +12,7 @@ class ReservationDatetimePickerBottomSheet extends StatelessWidget {
   ReservationDatetimePickerBottomSheet(this.controller, {Key? key})
       : super(key: key);
 
-  ReservationDatetimePickerController controller;
+  ScheduleController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -232,8 +232,6 @@ class ReservationDatetimePickerBottomSheet extends StatelessWidget {
                                     hintText: "8.1 화 18:00",
                                     textStyle: theme.textTheme.titleMedium!,
                                     items: controller
-                                        .reservationDatetimePickerModelObj
-                                        .value
                                         .dropdownItemList
                                         .value,
                                     onChanged: (SelectionPopupModel value) {

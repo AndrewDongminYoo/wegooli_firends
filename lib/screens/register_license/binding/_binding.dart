@@ -6,11 +6,11 @@ import '../controller/_controller.dart';
 
 /// A binding class for the RegisterLicenseScreen.
 ///
-/// This class ensures that the RegisterLicenseController is created when the
+/// This class ensures that the LicenseController is created when the
 /// RegisterLicenseScreen is first loaded.
 class RegisterLicenseBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => RegisterLicenseController());
+    Get.lazyPut(() => LicenseController());
   }
 }

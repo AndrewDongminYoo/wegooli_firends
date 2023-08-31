@@ -16,7 +16,7 @@ class GatewayScreen extends StatelessWidget {
       backgroundColor: Colors.transparent,
       contentPadding: EdgeInsets.zero,
       insetPadding: const EdgeInsets.only(left: 0),
-      content: SendingCrewInvitationDialog(SendingCrewInvitationController.to));
+      content: SendingCrewInvitationDialog(DeviceController.to));
 
   Widget openCheckReservations = AlertDialog(
       backgroundColor: Colors.transparent,
@@ -25,7 +25,7 @@ class GatewayScreen extends StatelessWidget {
       content: ReservationsCheckingPageDialog());
 
   Widget openDateTimePicker = ReservationDatetimePickerBottomSheet(
-      ReservationDatetimePickerController.to);
+      ScheduleController.to);
 
   @override
   Widget build(BuildContext context) {

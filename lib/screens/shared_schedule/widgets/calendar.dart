@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 // ignore: must_be_immutable
-class SharedCalendar extends GetWidget<TeamScheduleController> {
+class SharedCalendar extends GetWidget<ScheduleController> {
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);

@@ -8,9 +8,9 @@ import '../controller/_controller.dart';
 ///
 /// This class ensures that the TeamScheduleShareController is created when the
 /// TeamScheduleShareScreen is first loaded.
-class TeamScheduleShareBinding extends Bindings {
+class TeamScheduleBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => TeamScheduleController());
+    Get.lazyPut(() => ScheduleController());
   }
 }

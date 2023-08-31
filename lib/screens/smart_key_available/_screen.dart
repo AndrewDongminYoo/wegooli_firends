@@ -221,7 +221,6 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     CustomImageView(
-                                      // svgPath: Assets.svg.imgGasStation.path,
                                       svgPath: getGasImg(),
                                       height: getSize(24),
                                       width: getSize(24),
@@ -242,7 +241,11 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                                     getHorizontalSize(0.02)),
                                       ),
                                     ),
-                                    ArrowRight(),
+                                    ArrowRight(
+                                      onTap: () {
+                                        Get.toNamed(AppRoutes.carStatusInfo);
+                                      },
+                                    ),
                                   ],
                                 ),
                               ),
@@ -556,9 +559,12 @@ class ArrowLeft extends StatelessWidget {
 }
 
 class ArrowRight extends StatelessWidget {
+  final Function()? onTap;
+  ArrowRight({super.key, this.onTap});
   @override
   Widget build(BuildContext context) {
     return CustomImageView(
+        onTap: onTap,
         svgPath: Assets.svg.imgArrowRight.path,
         height: getSize(18),
         width: getSize(18),

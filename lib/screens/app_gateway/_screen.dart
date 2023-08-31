@@ -121,11 +121,6 @@ class GatewayScreen extends StatelessWidget {
                                                 l10ns.carStatusInformation),
                                         RouteItem(
                                             routeDestination:
-                                                AppRoutes.carStateInfo,
-                                            routeName:
-                                                l10ns.carStatusInformation),
-                                        RouteItem(
-                                            routeDestination:
                                                 AppRoutes.unsubscribeConfirm,
                                             routeName:
                                                 l10ns.unsubscriptionConfirm),

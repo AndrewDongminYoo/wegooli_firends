@@ -107,7 +107,6 @@ export '/screens/app_gateway/widgets/open_screen.dart';
 export '/screens/book_datetime_picker/_screen.dart';
 export '/screens/book_datetime_picker/controller/_controller.dart';
 export '/screens/book_datetime_picker/models/_model.dart';
-export '/screens/car_state_info/_screen.dart';
 export '/screens/car_status_info/_screen.dart';
 export '/screens/chat_with_team/_screen.dart';
 export '/screens/chat_with_team/controller/_controller.dart';

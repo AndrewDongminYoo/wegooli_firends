@@ -8,7 +8,6 @@ class AppRoutes {
   static const String acceptTerms = '/accept_terms';
   static const String appGateway = '/app_gateway';
   static const String bookDatetimePicker = '/book_datetime_picker';
-  static const String carStateInfo = '/car_state_info';
   static const String carStatusInfo = '/car_status_info';
   static const String chatWithTeam = '/chat_with_team';
   static const String idPwLogin = '/id_pw_login';
@@ -41,7 +40,6 @@ class AppRoutes {
         name: bookDatetimePicker,
         page: () => ReservationDatetimePickerBottomSheet(
             ReservationDatetimePickerController.to)),
-    GetPage(name: carStateInfo, page: () => CarStateInformation()),
     GetPage(name: carStatusInfo, page: () => CarStatusInformation()),
     GetPage(
         name: chatWithTeam,

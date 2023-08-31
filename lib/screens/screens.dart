@@ -4,7 +4,6 @@ export 'accept_terms/controller/_controller.dart';
 export 'app_gateway/_screen.dart';
 export 'book_datetime_picker/_screen.dart';
 export 'book_datetime_picker/controller/_controller.dart';
-export 'car_state_info/_screen.dart';
 export 'car_status_info/_screen.dart';
 export 'chat_with_team/_screen.dart';
 export 'chat_with_team/controller/_controller.dart';

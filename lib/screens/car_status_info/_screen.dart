@@ -26,162 +26,274 @@ class CarStatusInformation extends StatelessWidget {
                       onTabBackButton();
                     }),
                 centerTitle: true,
-                title: AppbarTitle(text: l10ns.subscriptionInformation)),
+                title: AppbarTitle(text: l10ns.carStatusInformation)),
             body: Container(
-                width: double.maxFinite,
-                padding: getPadding(left: 16, top: 24, right: 16, bottom: 24),
+                width: mediaQueryData.size.width,
+                height: mediaQueryData.size.height,
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Padding(
-                          padding: getPadding(left: 2),
-                          child: Text(l10ns.carInfo,
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.left,
-                              style: CustomTextStyles.titleMediumBlack900
-                                  .copyWith(
-                                      letterSpacing: getHorizontalSize(0.04)))),
                       Container(
-                          margin: getMargin(top: 12, bottom: 5),
                           padding: getPadding(
-                              left: 10, top: 20, right: 10, bottom: 20),
-                          decoration: AppDecoration.outline.copyWith(
-                              borderRadius: BorderRadiusStyle.circleBorder10),
-                          child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              mainAxisAlignment: MainAxisAlignment.end,
+                              left: 80, top: 13, bottom: 20, right: 80),
+                          child: CustomImageView(
+                            imagePath: Assets.images.imgCarSpark.path,
+                            height: getVerticalSize(132),
+                            width: getHorizontalSize(200),
+                          )),
+                      Container(
+                        height: getVerticalSize(8),
+                        width: mediaQueryData.size.width,
+                        color: Color.fromRGBO(246, 247, 247, 1),
+                      ),
+                      Container(
+                        padding: getPadding(
+                            left: 16, top: 20, bottom: 20, right: 16),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: getPadding(bottom: 10),
+                              child: Text(
+                                '기본 정보',
+                                style: TextStyle(
+                                  color: Color(0xFF222222),
+                                  fontSize: 18,
+                                  fontFamily: 'Pretendard',
+                                  fontWeight: FontWeight.w700,
+                                  height: 1.44,
+                                  letterSpacing: 0.04,
+                                ),
+                              ),
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                CustomImageView(
-                                    imagePath: Assets.images.imgCarSpark.path,
-                                    height: getVerticalSize(96),
-                                    width: getHorizontalSize(167),
-                                    margin: getMargin(top: 10)),
-                                Padding(
-                                    padding: getPadding(top: 30),
-                                    child: Divider(
-                                        height: getVerticalSize(1),
-                                        thickness: getVerticalSize(1),
-                                        color: appTheme.blueGray30033)),
-                                Padding(
-                                    padding:
-                                        getPadding(left: 9, top: 21, right: 9),
-                                    child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Text("모닝",
-                                              overflow: TextOverflow.ellipsis,
-                                              textAlign: TextAlign.left,
-                                              style: CustomTextStyles
-                                                  .titleMedium18
-                                                  .copyWith(
-                                                      letterSpacing:
-                                                          getHorizontalSize(
-                                                              0.04))),
-                                          Padding(
-                                              padding:
-                                                  getPadding(top: 4, bottom: 2),
-                                              child: Text("12가 3456",
-                                                  overflow:
-                                                      TextOverflow.ellipsis,
-                                                  textAlign: TextAlign.left,
-                                                  style: CustomTextStyles
-                                                      .bodySmallOnPrimary
-                                                      .copyWith(
-                                                          letterSpacing:
-                                                              getHorizontalSize(
-                                                                  0.02))))
-                                        ])),
-                                Padding(
-                                    padding:
-                                        getPadding(left: 9, top: 13, right: 9),
-                                    child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Text(l10ns.monthlyPayment,
-                                              overflow: TextOverflow.ellipsis,
-                                              textAlign: TextAlign.left,
-                                              style: CustomTextStyles
-                                                  .bodyLargeOnPrimary
-                                                  .copyWith(
-                                                      letterSpacing:
-                                                          getHorizontalSize(
-                                                              0.03))),
-                                          Text('150,000 원',
-                                              overflow: TextOverflow.ellipsis,
-                                              textAlign: TextAlign.left,
-                                              style: theme.textTheme.bodyLarge!
-                                                  .copyWith(
-                                                      letterSpacing:
-                                                          getHorizontalSize(
-                                                              0.03)))
-                                        ])),
-                                Padding(
-                                    padding:
-                                        getPadding(left: 9, top: 3, right: 9),
-                                    child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Text(l10ns.subscription,
-                                              overflow: TextOverflow.ellipsis,
-                                              textAlign: TextAlign.left,
-                                              style: CustomTextStyles
-                                                  .bodyLargeOnPrimary
-                                                  .copyWith(
-                                                      letterSpacing:
-                                                          getHorizontalSize(
-                                                              0.03))),
-                                          Text("2023.07.01~2023.08.01",
-                                              overflow: TextOverflow.ellipsis,
-                                              textAlign: TextAlign.left,
-                                              style: theme.textTheme.bodyLarge!
-                                                  .copyWith(
-                                                      letterSpacing:
-                                                          getHorizontalSize(
-                                                              0.03)))
-                                        ])),
-                                Padding(
-                                    padding:
-                                        getPadding(left: 9, top: 3, right: 9),
-                                    child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Text(l10ns.paymentDueDate,
-                                              overflow: TextOverflow.ellipsis,
-                                              textAlign: TextAlign.left,
-                                              style: CustomTextStyles
-                                                  .bodyLargeOnPrimary
-                                                  .copyWith(
-                                                      letterSpacing:
-                                                          getHorizontalSize(
-                                                              0.03))),
-                                          Text('2023.08.20',
-                                              overflow: TextOverflow.ellipsis,
-                                              textAlign: TextAlign.left,
-                                              style: theme.textTheme.bodyLarge!
-                                                  .copyWith(
-                                                      letterSpacing:
-                                                          getHorizontalSize(
-                                                              0.03)))
-                                        ])),
-                                CustomElevatedButton(
-                                    text: l10ns.cancel,
-                                    margin: getMargin(top: 21, right: 9),
-                                    buttonStyle: CustomButtonStyles
-                                        .fillPrimaryC5
-                                        .copyWith(
-                                            fixedSize:
-                                                MaterialStateProperty.all<Size>(
-                                                    Size(getHorizontalSize(160),
-                                                        getVerticalSize(48)))),
-                                    buttonTextStyle:
-                                        theme.textTheme.titleMedium!,
-                                    alignment: Alignment.centerRight)
-                              ]))
+                                Text(
+                                  '모델',
+                                  style: TextStyle(
+                                    color: Color(0x66222222),
+                                    fontSize: 16,
+                                    fontFamily: 'Pretendard',
+                                    fontWeight: FontWeight.w400,
+                                    height: 1.50,
+                                    letterSpacing: 0.03,
+                                  ),
+                                ),
+                                Text(
+                                  '레이 3세대',
+                                  textAlign: TextAlign.right,
+                                  style: TextStyle(
+                                    color: Color(0xFF222222),
+                                    fontSize: 16,
+                                    fontFamily: 'Pretendard',
+                                    fontWeight: FontWeight.w400,
+                                    height: 1.50,
+                                    letterSpacing: 0.03,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  '차종',
+                                  style: TextStyle(
+                                    color: Color(0x66222222),
+                                    fontSize: 16,
+                                    fontFamily: 'Pretendard',
+                                    fontWeight: FontWeight.w400,
+                                    height: 1.50,
+                                    letterSpacing: 0.03,
+                                  ),
+                                ),
+                                Text(
+                                  '소형',
+                                  textAlign: TextAlign.right,
+                                  style: TextStyle(
+                                    color: Color(0xFF222222),
+                                    fontSize: 16,
+                                    fontFamily: 'Pretendard',
+                                    fontWeight: FontWeight.w400,
+                                    height: 1.50,
+                                    letterSpacing: 0.03,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  '연료',
+                                  style: TextStyle(
+                                    color: Color(0x66222222),
+                                    fontSize: 16,
+                                    fontFamily: 'Pretendard',
+                                    fontWeight: FontWeight.w400,
+                                    height: 1.50,
+                                    letterSpacing: 0.03,
+                                  ),
+                                ),
+                                Text(
+                                  '휘발유',
+                                  textAlign: TextAlign.right,
+                                  style: TextStyle(
+                                    color: Color(0xFF222222),
+                                    fontSize: 16,
+                                    fontFamily: 'Pretendard',
+                                    fontWeight: FontWeight.w400,
+                                    height: 1.50,
+                                    letterSpacing: 0.03,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  '인원',
+                                  style: TextStyle(
+                                    color: Color(0x66222222),
+                                    fontSize: 16,
+                                    fontFamily: 'Pretendard',
+                                    fontWeight: FontWeight.w400,
+                                    height: 1.50,
+                                    letterSpacing: 0.03,
+                                  ),
+                                ),
+                                Text(
+                                  '4인승',
+                                  textAlign: TextAlign.right,
+                                  style: TextStyle(
+                                    color: Color(0xFF222222),
+                                    fontSize: 16,
+                                    fontFamily: 'Pretendard',
+                                    fontWeight: FontWeight.w400,
+                                    height: 1.50,
+                                    letterSpacing: 0.03,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        height: getVerticalSize(8),
+                        width: mediaQueryData.size.width,
+                        color: Color.fromRGBO(246, 247, 247, 1),
+                      ),
+                      Container(
+                        padding: getPadding(
+                            left: 16, top: 20, bottom: 20, right: 16),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: getPadding(bottom: 10),
+                              child: Text(
+                                '정비 상태',
+                                style: TextStyle(
+                                  color: Color(0xFF222222),
+                                  fontSize: 18,
+                                  fontFamily: 'Pretendard',
+                                  fontWeight: FontWeight.w700,
+                                  height: 1.44,
+                                  letterSpacing: 0.04,
+                                ),
+                              ),
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  '엔진오일 점검일',
+                                  style: TextStyle(
+                                    color: Color(0x66222222),
+                                    fontSize: 16,
+                                    fontFamily: 'Pretendard',
+                                    fontWeight: FontWeight.w400,
+                                    height: 1.50,
+                                    letterSpacing: 0.03,
+                                  ),
+                                ),
+                                Text(
+                                  '2023.08.01',
+                                  textAlign: TextAlign.right,
+                                  style: TextStyle(
+                                    color: Color(0xFF222222),
+                                    fontSize: 16,
+                                    fontFamily: 'Pretendard',
+                                    fontWeight: FontWeight.w400,
+                                    height: 1.50,
+                                    letterSpacing: 0.03,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  '타이어 점검일',
+                                  style: TextStyle(
+                                    color: Color(0x66222222),
+                                    fontSize: 16,
+                                    fontFamily: 'Pretendard',
+                                    fontWeight: FontWeight.w400,
+                                    height: 1.50,
+                                    letterSpacing: 0.03,
+                                  ),
+                                ),
+                                Text(
+                                  '2023.08.01',
+                                  textAlign: TextAlign.right,
+                                  style: TextStyle(
+                                    color: Color(0xFF222222),
+                                    fontSize: 16,
+                                    fontFamily: 'Pretendard',
+                                    fontWeight: FontWeight.w400,
+                                    height: 1.50,
+                                    letterSpacing: 0.03,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  '배터리 상태',
+                                  style: TextStyle(
+                                    color: Color(0x66222222),
+                                    fontSize: 16,
+                                    fontFamily: 'Pretendard',
+                                    fontWeight: FontWeight.w400,
+                                    height: 1.50,
+                                    letterSpacing: 0.03,
+                                  ),
+                                ),
+                                Text(
+                                  '양호',
+                                  textAlign: TextAlign.right,
+                                  style: TextStyle(
+                                    color: Color(0xFF222222),
+                                    fontSize: 16,
+                                    fontFamily: FontFamily.pretendard,
+                                    fontWeight: FontWeight.w400,
+                                    height: 1.50,
+                                    letterSpacing: 0.03,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
                     ]))));
   }
 

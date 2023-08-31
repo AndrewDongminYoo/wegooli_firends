@@ -35,6 +35,10 @@ class _$TerminalModel extends TerminalModel {
   final String? accountId;
   @override
   final String? carNickName;
+  @override
+  final int? seats;
+  @override
+  final String? carImg;
 
   factory _$TerminalModel([void Function(TerminalModelBuilder)? updates]) =>
       (new TerminalModelBuilder()..update(updates))._build();
@@ -53,7 +57,9 @@ class _$TerminalModel extends TerminalModel {
       this.fuel,
       this.segment,
       this.accountId,
-      this.carNickName})
+      this.carNickName,
+      this.seats,
+      this.carImg})
       : super._();
 
   @override
@@ -80,7 +86,9 @@ class _$TerminalModel extends TerminalModel {
         fuel == other.fuel &&
         segment == other.segment &&
         accountId == other.accountId &&
-        carNickName == other.carNickName;
+        carNickName == other.carNickName &&
+        seats == other.seats &&
+        carImg == other.carImg;
   }
 
   @override
@@ -100,6 +108,8 @@ class _$TerminalModel extends TerminalModel {
     _$hash = $jc(_$hash, segment.hashCode);
     _$hash = $jc(_$hash, accountId.hashCode);
     _$hash = $jc(_$hash, carNickName.hashCode);
+    _$hash = $jc(_$hash, seats.hashCode);
+    _$hash = $jc(_$hash, carImg.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -120,7 +130,9 @@ class _$TerminalModel extends TerminalModel {
           ..add('fuel', fuel)
           ..add('segment', segment)
           ..add('accountId', accountId)
-          ..add('carNickName', carNickName))
+          ..add('carNickName', carNickName)
+          ..add('seats', seats)
+          ..add('carImg', carImg))
         .toString();
   }
 }
@@ -185,6 +197,14 @@ class TerminalModelBuilder
   String? get carNickName => _$this._carNickName;
   set carNickName(String? carNickName) => _$this._carNickName = carNickName;
 
+  int? _seats;
+  int? get seats => _$this._seats;
+  set seats(int? seats) => _$this._seats = seats;
+
+  String? _carImg;
+  String? get carImg => _$this._carImg;
+  set carImg(String? carImg) => _$this._carImg = carImg;
+
   TerminalModelBuilder() {
     TerminalModel._defaults(this);
   }
@@ -206,6 +226,8 @@ class TerminalModelBuilder
       _segment = $v.segment;
       _accountId = $v.accountId;
       _carNickName = $v.carNickName;
+      _seats = $v.seats;
+      _carImg = $v.carImg;
       _$v = null;
     }
     return this;
@@ -241,7 +263,9 @@ class TerminalModelBuilder
             fuel: fuel,
             segment: segment,
             accountId: accountId,
-            carNickName: carNickName);
+            carNickName: carNickName,
+            seats: seats,
+            carImg: carImg);
     replace(_$result);
     return _$result;
   }

@@ -8,6 +8,8 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 class CarStatusInformation extends StatelessWidget {
+  SmartKeyAvailableController controller = SmartKeyAvailableController.to;
+
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
@@ -38,6 +40,8 @@ class CarStatusInformation extends StatelessWidget {
                           padding: getPadding(
                               left: 80, top: 13, bottom: 20, right: 80),
                           child: CustomImageView(
+                            // TODO
+                            // controller.terminalModelObj.value.carImg 로 대체해야함!!
                             imagePath: Assets.images.imgCarSpark.path,
                             height: getVerticalSize(132),
                             width: getHorizontalSize(200),
@@ -60,7 +64,7 @@ class CarStatusInformation extends StatelessWidget {
                                 style: TextStyle(
                                   color: Color(0xFF222222),
                                   fontSize: 18,
-                                  fontFamily: 'Pretendard',
+                                  fontFamily: FontFamily.pretendard,
                                   fontWeight: FontWeight.w700,
                                   height: 1.44,
                                   letterSpacing: 0.04,
@@ -75,19 +79,20 @@ class CarStatusInformation extends StatelessWidget {
                                   style: TextStyle(
                                     color: Color(0x66222222),
                                     fontSize: 16,
-                                    fontFamily: 'Pretendard',
+                                    fontFamily: FontFamily.pretendard,
                                     fontWeight: FontWeight.w400,
                                     height: 1.50,
                                     letterSpacing: 0.03,
                                   ),
                                 ),
                                 Text(
-                                  '레이 3세대',
+                                  controller.terminalModelObj.value.model ??
+                                      '모델명',
                                   textAlign: TextAlign.right,
                                   style: TextStyle(
                                     color: Color(0xFF222222),
                                     fontSize: 16,
-                                    fontFamily: 'Pretendard',
+                                    fontFamily: FontFamily.pretendard,
                                     fontWeight: FontWeight.w400,
                                     height: 1.50,
                                     letterSpacing: 0.03,
@@ -103,19 +108,20 @@ class CarStatusInformation extends StatelessWidget {
                                   style: TextStyle(
                                     color: Color(0x66222222),
                                     fontSize: 16,
-                                    fontFamily: 'Pretendard',
+                                    fontFamily: FontFamily.pretendard,
                                     fontWeight: FontWeight.w400,
                                     height: 1.50,
                                     letterSpacing: 0.03,
                                   ),
                                 ),
                                 Text(
-                                  '소형',
+                                  controller.terminalModelObj.value.segment ??
+                                      '차종',
                                   textAlign: TextAlign.right,
                                   style: TextStyle(
                                     color: Color(0xFF222222),
                                     fontSize: 16,
-                                    fontFamily: 'Pretendard',
+                                    fontFamily: FontFamily.pretendard,
                                     fontWeight: FontWeight.w400,
                                     height: 1.50,
                                     letterSpacing: 0.03,
@@ -131,19 +137,20 @@ class CarStatusInformation extends StatelessWidget {
                                   style: TextStyle(
                                     color: Color(0x66222222),
                                     fontSize: 16,
-                                    fontFamily: 'Pretendard',
+                                    fontFamily: FontFamily.pretendard,
                                     fontWeight: FontWeight.w400,
                                     height: 1.50,
                                     letterSpacing: 0.03,
                                   ),
                                 ),
                                 Text(
-                                  '휘발유',
+                                  controller.terminalModelObj.value.fuelType ??
+                                      '연료',
                                   textAlign: TextAlign.right,
                                   style: TextStyle(
                                     color: Color(0xFF222222),
                                     fontSize: 16,
-                                    fontFamily: 'Pretendard',
+                                    fontFamily: FontFamily.pretendard,
                                     fontWeight: FontWeight.w400,
                                     height: 1.50,
                                     letterSpacing: 0.03,
@@ -159,19 +166,19 @@ class CarStatusInformation extends StatelessWidget {
                                   style: TextStyle(
                                     color: Color(0x66222222),
                                     fontSize: 16,
-                                    fontFamily: 'Pretendard',
+                                    fontFamily: FontFamily.pretendard,
                                     fontWeight: FontWeight.w400,
                                     height: 1.50,
                                     letterSpacing: 0.03,
                                   ),
                                 ),
                                 Text(
-                                  '4인승',
+                                  '${controller.terminalModelObj.value.seats ?? 0}인승',
                                   textAlign: TextAlign.right,
                                   style: TextStyle(
                                     color: Color(0xFF222222),
                                     fontSize: 16,
-                                    fontFamily: 'Pretendard',
+                                    fontFamily: FontFamily.pretendard,
                                     fontWeight: FontWeight.w400,
                                     height: 1.50,
                                     letterSpacing: 0.03,
@@ -200,7 +207,7 @@ class CarStatusInformation extends StatelessWidget {
                                 style: TextStyle(
                                   color: Color(0xFF222222),
                                   fontSize: 18,
-                                  fontFamily: 'Pretendard',
+                                  fontFamily: FontFamily.pretendard,
                                   fontWeight: FontWeight.w700,
                                   height: 1.44,
                                   letterSpacing: 0.04,
@@ -215,7 +222,7 @@ class CarStatusInformation extends StatelessWidget {
                                   style: TextStyle(
                                     color: Color(0x66222222),
                                     fontSize: 16,
-                                    fontFamily: 'Pretendard',
+                                    fontFamily: FontFamily.pretendard,
                                     fontWeight: FontWeight.w400,
                                     height: 1.50,
                                     letterSpacing: 0.03,
@@ -227,7 +234,7 @@ class CarStatusInformation extends StatelessWidget {
                                   style: TextStyle(
                                     color: Color(0xFF222222),
                                     fontSize: 16,
-                                    fontFamily: 'Pretendard',
+                                    fontFamily: FontFamily.pretendard,
                                     fontWeight: FontWeight.w400,
                                     height: 1.50,
                                     letterSpacing: 0.03,
@@ -243,7 +250,7 @@ class CarStatusInformation extends StatelessWidget {
                                   style: TextStyle(
                                     color: Color(0x66222222),
                                     fontSize: 16,
-                                    fontFamily: 'Pretendard',
+                                    fontFamily: FontFamily.pretendard,
                                     fontWeight: FontWeight.w400,
                                     height: 1.50,
                                     letterSpacing: 0.03,
@@ -255,7 +262,7 @@ class CarStatusInformation extends StatelessWidget {
                                   style: TextStyle(
                                     color: Color(0xFF222222),
                                     fontSize: 16,
-                                    fontFamily: 'Pretendard',
+                                    fontFamily: FontFamily.pretendard,
                                     fontWeight: FontWeight.w400,
                                     height: 1.50,
                                     letterSpacing: 0.03,
@@ -271,7 +278,7 @@ class CarStatusInformation extends StatelessWidget {
                                   style: TextStyle(
                                     color: Color(0x66222222),
                                     fontSize: 16,
-                                    fontFamily: 'Pretendard',
+                                    fontFamily: FontFamily.pretendard,
                                     fontWeight: FontWeight.w400,
                                     height: 1.50,
                                     letterSpacing: 0.03,

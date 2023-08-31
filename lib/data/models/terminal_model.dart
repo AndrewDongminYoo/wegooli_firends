@@ -68,6 +68,12 @@ abstract class TerminalModel
   @BuiltValueField(wireName: r'carNickName')
   String? get carNickName;
 
+  @BuiltValueField(wireName: r'seats')
+  int? get seats;
+
+   @BuiltValueField(wireName: r'carImg')
+  String? get carImg;
+
   TerminalModel._();
 
   factory TerminalModel([void updates(TerminalModelBuilder b)]) =
@@ -97,6 +103,13 @@ class _$TerminalModelSerializer implements PrimitiveSerializer<TerminalModel> {
       yield r'seq';
       yield serializers.serialize(
         object.seq,
+        specifiedType: const FullType(int),
+      );
+    }
+    if (object.seats != null) {
+      yield r'seats';
+      yield serializers.serialize(
+        object.seats,
         specifiedType: const FullType(int),
       );
     }
@@ -191,6 +204,13 @@ class _$TerminalModelSerializer implements PrimitiveSerializer<TerminalModel> {
         specifiedType: const FullType(String),
       );
     }
+    if (object.carImg != null) {
+      yield r'carImg';
+      yield serializers.serialize(
+        object.carImg,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -222,6 +242,13 @@ class _$TerminalModelSerializer implements PrimitiveSerializer<TerminalModel> {
             specifiedType: const FullType(int),
           ) as int;
           result.seq = valueDes;
+          break;
+        case r'seats':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.seats = valueDes;
           break;
         case r'delYn':
           final valueDes = serializers.deserialize(
@@ -313,6 +340,13 @@ class _$TerminalModelSerializer implements PrimitiveSerializer<TerminalModel> {
             specifiedType: const FullType(String),
           ) as String;
           result.carNickName = valueDes;
+          break;
+        case r'carImg':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.carImg = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -347,13 +347,13 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                         child: ControlButton(
                                           text: l10ns.openDoor,
                                           svgPath: Assets.svg.imgUnlocked.path,
-                                          // onTap: () => openDoor(),
+                                          onTap: () => openDoor(),
                                         ),
                                       ),
                                       ControlButton(
                                         text: l10ns.lockTheDoor,
                                         svgPath: Assets.svg.imgLocked.path,
-                                        // onTap: () => closeDoor(),
+                                        onTap: () => closeDoor(),
                                       ),
                                     ],
                                   ),
@@ -370,13 +370,13 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                         child: ControlButton(
                                           text: l10ns.turnOnHazardLights,
                                           svgPath: Assets.svg.imgTriangle.path,
-                                          // onTap: () => emergencyLight(),
+                                          onTap: () => emergencyLight(),
                                         ),
                                       ),
                                       ControlButton(
                                         text: l10ns.honkTheHorn,
                                         svgPath: Assets.svg.imgCampaign.path,
-                                        // onTap: () => horn(),
+                                        onTap: () => horn(),
                                       ),
                                     ],
                                   ),

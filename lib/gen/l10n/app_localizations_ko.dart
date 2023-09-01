@@ -12,6 +12,9 @@ class LocalizedKo extends Localized {
   String get acceptTerms => '약관 동의';
 
   @override
+  String get acceptanceComplete => '동의 완료';
+
+  @override
   String get addACard => '카드 추가';
 
   @override
@@ -39,6 +42,9 @@ class LocalizedKo extends Localized {
 
   @override
   String get carInfo => '차량 정보';
+
+  @override
+  String get carRentalTermsAndConditionsRequired => '자동차 대여약관 (필수)';
 
   @override
   String get carStatusInformation => '[Page] 차량 상세정보';

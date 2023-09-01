@@ -13,7 +13,7 @@ import '/data/data.dart';
 /// @see: https://ko.wikipedia.org/wiki/base64
 ///
 /// Args:
-///   str (String): 매개변수 "str"은 base64로 인코딩된 값을 나타내는 문자열
+///   str [String]: base64로 인코딩된 값을 나타내는 문자열
 String _decodeBase64(String str) {
   String output = str.replaceAll('-', '+').replaceAll('_', '/');
   switch (output.length % 4) {

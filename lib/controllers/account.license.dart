@@ -64,6 +64,13 @@ class LicenseController extends GetxController {
     SelectionPopupModel(id: 18, title: '28')
   ]);
 
+  final api = WegooliFriends.client.getLicenseControllerApi();
+  bool get licenseInputSucceed => false;
+  // api.insertLicense
+  // api.selectLicense
+  // api.selectLicenseList
+  // api.selectServiceStop
+
   @override
   void onClose() {
     super.onClose();

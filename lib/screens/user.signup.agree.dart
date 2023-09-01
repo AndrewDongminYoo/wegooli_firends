@@ -68,8 +68,7 @@ class AcceptTerms extends GetWidget<AccountAgreementController> {
                                             value: controller
                                                 .isAcceptedTerm0.value,
                                             onChange: (value) {
-                                              controller.isAcceptedTerm0 =
-                                                  value.obs;
+                                              controller.isAcceptedTerm0.value = value;
                                             })),
                                         CustomImageView(
                                             svgPath:
@@ -90,8 +89,7 @@ class AcceptTerms extends GetWidget<AccountAgreementController> {
                                             value: controller
                                                 .isAcceptedTerm1.value,
                                             onChange: (value) {
-                                              controller.isAcceptedTerm1 =
-                                                  value.obs;
+                                              controller.isAcceptedTerm1.value = value;
                                             })),
                                         CustomImageView(
                                             svgPath:
@@ -107,12 +105,11 @@ class AcceptTerms extends GetWidget<AccountAgreementController> {
                                           MainAxisAlignment.spaceBetween,
                                       children: [
                                         Obx(() => CustomCheckboxButton(
-                                            text: "자동차 대여약관 (필수)",
+                                            text: l10ns.carRentalTermsAndConditionsRequired,
                                             value: controller
                                                 .isAcceptedTerm2.value,
                                             onChange: (value) {
-                                              controller.isAcceptedTerm2 =
-                                                  value.obs;
+                                              controller.isAcceptedTerm2.value = value;
                                             })),
                                         CustomImageView(
                                             svgPath:
@@ -133,8 +130,7 @@ class AcceptTerms extends GetWidget<AccountAgreementController> {
                                             value: controller
                                                 .isAcceptedTerm3.value,
                                             onChange: (value) {
-                                              controller.isAcceptedTerm3 =
-                                                  value.obs;
+                                              controller.isAcceptedTerm3.value = value;
                                             })),
                                         CustomImageView(
                                             svgPath:
@@ -153,14 +149,13 @@ class AcceptTerms extends GetWidget<AccountAgreementController> {
                                             value: controller
                                                 .isAcceptedTerm4.value,
                                             onChange: (value) {
-                                              controller.isAcceptedTerm4 =
-                                                  value.obs;
+                                              controller.isAcceptedTerm4.value = value;
                                             }))),
                                     CustomImageView(
                                         svgPath: Assets.svg.imgArrowLeft.path,
                                         height: getSize(18),
                                         width: getSize(18),
-                                        margin: getMargin(left: 10, bottom: 2))
+                                        margin: getMargin(left: 10, bottom: 2)),
                                   ])),
                               Padding(
                                   padding: getPadding(top: 14),
@@ -172,14 +167,13 @@ class AcceptTerms extends GetWidget<AccountAgreementController> {
                                             value: controller
                                                 .isAcceptedTerm5.value,
                                             onChange: (value) {
-                                              controller.isAcceptedTerm5 =
-                                                  value.obs;
+                                              controller.isAcceptedTerm5.value = value;
                                             }))),
                                     CustomImageView(
                                         svgPath: Assets.svg.imgArrowLeft.path,
                                         height: getSize(18),
                                         width: getSize(18),
-                                        margin: getMargin(left: 40, bottom: 2))
+                                        margin: getMargin(left: 40, bottom: 2)),
                                   ]))
                             ])))),
             bottomNavigationBar: Container(

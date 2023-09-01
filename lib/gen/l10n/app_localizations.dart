@@ -108,6 +108,12 @@ abstract class Localized {
   /// **'약관 동의'**
   String get acceptTerms;
 
+  /// 유저 등록 정보 제공 요청 후 소셜로그인 이후 동의한 약관 표시
+  ///
+  /// In ko, this message translates to:
+  /// **'동의 완료'**
+  String get acceptanceComplete;
+
   /// 결제를 위한 개인 신용카드 등록
   ///
   /// In ko, this message translates to:
@@ -161,6 +167,12 @@ abstract class Localized {
   /// In ko, this message translates to:
   /// **'차량 정보'**
   String get carInfo;
+
+  /// 이용 약관 항목 중 하나
+  ///
+  /// In ko, this message translates to:
+  /// **'자동차 대여약관 (필수)'**
+  String get carRentalTermsAndConditionsRequired;
 
   /// [Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨.
   ///

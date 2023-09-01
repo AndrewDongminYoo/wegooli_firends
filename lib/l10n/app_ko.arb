@@ -10,6 +10,10 @@
   "@acceptTerms": {
     "description": "상기 이용 약관에 동의합니다."
   },
+  "acceptanceComplete": "동의 완료",
+  "@acceptanceComplete": {
+    "description": "유저 등록 정보 제공 요청 후 소셜로그인 이후 동의한 약관 표시"
+  },
   "addACard": "카드 추가",
   "@addACard": {
     "description": "결제를 위한 개인 신용카드 등록"
@@ -51,6 +55,10 @@
   "carInfo": "차량 정보",
   "@carInfo": {
     "description": "서비스 이용 중인 차량에 대한 정보 (주유 상태, 이용 중 여부, 차종 등)"
+  },
+  "carRentalTermsAndConditionsRequired": "자동차 대여약관 (필수)",
+  "@carRentalTermsAndConditionsRequired": {
+    "description": "이용 약관 항목 중 하나"
   },
   "carStatusInformation": "[Page] 차량 상세정보",
   "@carStatusInformation": {

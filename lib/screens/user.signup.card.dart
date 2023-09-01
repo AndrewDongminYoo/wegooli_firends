@@ -1,5 +1,6 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 // 📦 Package imports:
 import 'package:get/get.dart';
@@ -26,37 +27,20 @@ class RegisterCreditCard extends GetWidget<PaymentCardController> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Row(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Padding(
-                                      padding: getPadding(top: 2),
-                                      child: Text(l10ns.cardNumber,
-                                          overflow: TextOverflow.ellipsis,
-                                          textAlign: TextAlign.left,
-                                          style: theme.textTheme.titleMedium!
-                                              .copyWith(
-                                                  letterSpacing:
-                                                      getHorizontalSize(
-                                                          0.03)))),
-                                  Padding(
-                                      padding: getPadding(left: 5, bottom: 5),
-                                      child: Text("*",
-                                          overflow: TextOverflow.ellipsis,
-                                          textAlign: TextAlign.left,
-                                          style: theme.textTheme.titleSmall!
-                                              .copyWith(
-                                                  letterSpacing:
-                                                      getHorizontalSize(0.06))))
-                                ]),
+                            CustomInputLabel(labelText: l10ns.cardNumber),
                             CustomTextFormField(
-                                controller: controller.cardNumController,
+                                controller: controller.creditCardId,
                                 margin: getMargin(top: 4),
                                 contentPadding: getPadding(
                                     left: 12, top: 14, right: 12, bottom: 14),
                                 textStyle: CustomTextStyles.bodyLargeGray50003,
-                                hintText: "0000  0000  0000  0000",
                                 hintStyle: CustomTextStyles.bodyLargeGray50003,
+                                inputFormatters: <TextInputFormatter>[
+                                  SeperateTextFormatter(sample: 'XXXX XXXX XXXX XXXX', separator: ' '),
+                                  LengthLimitingTextInputFormatter(19),
+                                  FilteringTextInputFormatter.allow(r'[0-9 ]'),
+                                ],
+                                hintText: "0000\t0000\t0000\t0000",
                                 textInputAction: TextInputAction.next,
                                 filled: true,
                                 fillColor: theme.colorScheme.onPrimaryContainer)
@@ -67,35 +51,9 @@ class RegisterCreditCard extends GetWidget<PaymentCardController> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Padding(
-                                          padding: getPadding(top: 2),
-                                          child: Text(l10ns.expirationDate,
-                                              overflow: TextOverflow.ellipsis,
-                                              textAlign: TextAlign.left,
-                                              style: theme
-                                                  .textTheme.titleMedium!
-                                                  .copyWith(
-                                                      letterSpacing:
-                                                          getHorizontalSize(
-                                                              0.03)))),
-                                      Padding(
-                                          padding:
-                                              getPadding(left: 5, bottom: 5),
-                                          child: Text("*",
-                                              overflow: TextOverflow.ellipsis,
-                                              textAlign: TextAlign.left,
-                                              style: theme.textTheme.titleSmall!
-                                                  .copyWith(
-                                                      letterSpacing:
-                                                          getHorizontalSize(
-                                                              0.06))))
-                                    ]),
+                                CustomInputLabel(labelText: l10ns.expirationDate),
                                 CustomTextFormField(
-                                    controller: controller.expDateController,
+                                    controller: controller.expirationDT,
                                     margin: getMargin(top: 4),
                                     contentPadding: getPadding(
                                         left: 12,
@@ -104,9 +62,14 @@ class RegisterCreditCard extends GetWidget<PaymentCardController> {
                                         bottom: 14),
                                     textStyle:
                                         CustomTextStyles.bodyLargeGray50003,
-                                    hintText: "MM/YY",
                                     hintStyle:
                                         CustomTextStyles.bodyLargeGray50003,
+                                    hintText: "MM/YY",
+                                    inputFormatters: [
+                                      SeperateTextFormatter(sample: 'XX/XX', separator: '/'),
+                                      LengthLimitingTextInputFormatter(5),
+                                      FilteringTextInputFormatter.allow(r'[0-9/]'),
+                                    ],
                                     textInputAction: TextInputAction.next,
                                     filled: true,
                                     fillColor:
@@ -118,35 +81,7 @@ class RegisterCreditCard extends GetWidget<PaymentCardController> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Padding(
-                                          padding: getPadding(top: 2),
-                                          child: Text(
-                                              l10ns
-                                                  .socialSecurityNumberFirstDigit,
-                                              overflow: TextOverflow.ellipsis,
-                                              textAlign: TextAlign.left,
-                                              style: theme
-                                                  .textTheme.titleMedium!
-                                                  .copyWith(
-                                                      letterSpacing:
-                                                          getHorizontalSize(
-                                                              0.03)))),
-                                      Padding(
-                                          padding:
-                                              getPadding(left: 5, bottom: 5),
-                                          child: Text("*",
-                                              overflow: TextOverflow.ellipsis,
-                                              textAlign: TextAlign.left,
-                                              style: theme.textTheme.titleSmall!
-                                                  .copyWith(
-                                                      letterSpacing:
-                                                          getHorizontalSize(
-                                                              0.06))))
-                                    ]),
+                                CustomInputLabel(labelText: l10ns.socialSecurityNumberFirstDigit),
                                 CustomTextFormField(
                                     enabled: false,
                                     margin: getMargin(top: 4),
@@ -157,13 +92,16 @@ class RegisterCreditCard extends GetWidget<PaymentCardController> {
                                         bottom: 14),
                                     textStyle:
                                         CustomTextStyles.bodyLargeGray50003,
-                                    hintText: "YYMMDD",
-                                    initialValue:
-                                        Get.find<UserController>()
-                                            .birthDay
-                                            .text,
                                     hintStyle:
                                         CustomTextStyles.bodyLargeGray50003,
+                                    hintText: "YYMMDD",
+                                    inputFormatters: [
+                                      LengthLimitingTextInputFormatter(6),
+                                    ],
+                                    initialValue:
+                                        UserController.to
+                                            .birthDay
+                                            .text,
                                     textInputAction: TextInputAction.next,
                                     filled: true,
                                     fillColor:
@@ -175,37 +113,13 @@ class RegisterCreditCard extends GetWidget<PaymentCardController> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Padding(
-                                          padding: getPadding(top: 2),
-                                          child: Text(
-                                              l10ns.first2DigitsOfCardPassword,
-                                              overflow: TextOverflow.ellipsis,
-                                              textAlign: TextAlign.left,
-                                              style: theme
-                                                  .textTheme.titleMedium!
-                                                  .copyWith(
-                                                      letterSpacing:
-                                                          getHorizontalSize(
-                                                              0.03)))),
-                                      Padding(
-                                          padding:
-                                              getPadding(left: 5, bottom: 5),
-                                          child: Text("*",
-                                              overflow: TextOverflow.ellipsis,
-                                              textAlign: TextAlign.left,
-                                              style: theme.textTheme.titleSmall!
-                                                  .copyWith(
-                                                      letterSpacing:
-                                                          getHorizontalSize(
-                                                              0.06))))
-                                    ]),
+                                CustomInputLabel(labelText: l10ns.first2DigitsOfCardPassword),
                                 CustomTextFormField(
-                                    controller:
-                                        controller.grouptwentynineController,
+                                    controller: controller.cardPassword,
+                                    inputFormatters: [
+                                      LengthLimitingTextInputFormatter(2),
+                                      FilteringTextInputFormatter.digitsOnly
+                                    ],
                                     margin: getMargin(top: 4),
                                     filled: true,
                                     fillColor:
@@ -223,7 +137,7 @@ class RegisterCreditCard extends GetWidget<PaymentCardController> {
                             Size(double.maxFinite, getVerticalSize(52)))),
                     buttonTextStyle: CustomTextStyles.titleMedium18,
                     onTap: () {
-                      if (this.isValid()) {
+                      if (controller.cardInputSucceed) {
                         onTapRegisterSuccess();
                       }
                     }))));

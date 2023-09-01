@@ -8,10 +8,9 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 class VehicleController extends GetxController {
-  static VehicleController get to =>
-      Get.isRegistered<VehicleController>()
-          ? Get.find<VehicleController>()
-          : Get.put(VehicleController());
+  static VehicleController get to => Get.isRegistered<VehicleController>()
+      ? Get.find<VehicleController>()
+      : Get.put(VehicleController());
   TextEditingController clientName = TextEditingController();
   TextEditingController invitation = TextEditingController();
   Rx<TerminalModel> terminalDevice = TerminalModel().obs;

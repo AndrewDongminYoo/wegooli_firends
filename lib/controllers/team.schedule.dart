@@ -5,10 +5,9 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 class ScheduleController extends GetxController {
-  static ScheduleController get to =>
-      Get.isRegistered<ScheduleController>()
-          ? Get.find<ScheduleController>()
-          : Get.put(ScheduleController());
+  static ScheduleController get to => Get.isRegistered<ScheduleController>()
+      ? Get.find<ScheduleController>()
+      : Get.put(ScheduleController());
 
   Rx<List<SelectionPopupModel>> dropdownItemList = Rx([
     SelectionPopupModel(id: 1, title: "Item One"),

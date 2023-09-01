@@ -50,7 +50,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
             ..nickname = '아무거나저거저거이거이거')
           .build()
     ];
-    // final client = Get.find<LoginWithIdAndPasswordController>()
+    // final client = UserController.to
     //     .members
     //     .firstWhere((it) => it.accountId == accountId);
     final client = members.firstWhereOrNull((it) => it.accountId == accountId);
@@ -541,9 +541,12 @@ class ControlButton extends StatelessWidget {
 }
 
 class ArrowLeft extends StatelessWidget {
+  final Function()? onTap;
+  ArrowLeft({super.key, this.onTap});
   @override
   Widget build(BuildContext context) {
     return CustomImageView(
+        onTap: onTap,
         svgPath: Assets.svg.imgArrowLeft.path,
         height: getSize(18),
         width: getSize(18),

@@ -26,30 +26,7 @@ class RegisterLicense extends GetWidget<LicenseController> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Row(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Padding(
-                                      padding: getPadding(top: 2),
-                                      child: Text(l10ns.licenseType,
-                                          overflow: TextOverflow.ellipsis,
-                                          textAlign: TextAlign.left,
-                                          style: theme.textTheme.titleMedium!
-                                              .copyWith(
-                                                  letterSpacing:
-                                                      getHorizontalSize(
-                                                          0.03)))),
-                                  Padding(
-                                      padding: getPadding(left: 5, bottom: 5),
-                                      child: Text("*",
-                                          overflow: TextOverflow.ellipsis,
-                                          textAlign: TextAlign.left,
-                                          style: CustomTextStyles
-                                              .titleSmallPrimaryContainer
-                                              .copyWith(
-                                                  letterSpacing:
-                                                      getHorizontalSize(0.06))))
-                                ]),
+                            CustomInputLabel(labelText: l10ns.licenseType),
                             CustomDropDown(
                                 icon: Container(
                                     margin: getMargin(left: 30, right: 10),
@@ -81,43 +58,7 @@ class RegisterLicense extends GetWidget<LicenseController> {
                                             mainAxisAlignment:
                                                 MainAxisAlignment.start,
                                             children: [
-                                              Row(
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
-                                                  children: [
-                                                    Padding(
-                                                        padding:
-                                                            getPadding(top: 2),
-                                                        child: Text(
-                                                            l10ns.licenseType,
-                                                            overflow:
-                                                                TextOverflow
-                                                                    .ellipsis,
-                                                            textAlign:
-                                                                TextAlign.left,
-                                                            style: theme
-                                                                .textTheme
-                                                                .titleMedium!
-                                                                .copyWith(
-                                                                    letterSpacing:
-                                                                        getHorizontalSize(
-                                                                            0.03)))),
-                                                    Padding(
-                                                        padding: getPadding(
-                                                            left: 5, bottom: 5),
-                                                        child: Text("*",
-                                                            overflow:
-                                                                TextOverflow
-                                                                    .ellipsis,
-                                                            textAlign:
-                                                                TextAlign.left,
-                                                            style: CustomTextStyles
-                                                                .titleSmallPrimaryContainer
-                                                                .copyWith(
-                                                                    letterSpacing:
-                                                                        getHorizontalSize(
-                                                                            0.06))))
-                                                  ]),
+                                              CustomInputLabel(labelText: l10ns.licenseType),
                                               CustomDropDown(
                                                   width: getHorizontalSize(160),
                                                   icon: Container(
@@ -187,35 +128,7 @@ class RegisterLicense extends GetWidget<LicenseController> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Padding(
-                                          padding: getPadding(top: 2),
-                                          child: Text(
-                                              l10ns
-                                                  .eligibilityPeriodExpirationDate,
-                                              overflow: TextOverflow.ellipsis,
-                                              textAlign: TextAlign.left,
-                                              style: theme
-                                                  .textTheme.titleMedium!
-                                                  .copyWith(
-                                                      letterSpacing:
-                                                          getHorizontalSize(
-                                                              0.03)))),
-                                      Padding(
-                                          padding:
-                                              getPadding(left: 5, bottom: 5),
-                                          child: Text("*",
-                                              overflow: TextOverflow.ellipsis,
-                                              textAlign: TextAlign.left,
-                                              style: theme.textTheme.titleSmall!
-                                                  .copyWith(
-                                                      letterSpacing:
-                                                          getHorizontalSize(
-                                                              0.06))))
-                                    ]),
+                                CustomInputLabel(labelText: l10ns.eligibilityPeriodExpirationDate),
                                 CustomTextFormField(
                                     controller: controller.expDateController,
                                     margin: getMargin(top: 4),
@@ -241,33 +154,7 @@ class RegisterLicense extends GetWidget<LicenseController> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Padding(
-                                          padding: getPadding(top: 2),
-                                          child: Text(l10ns.licenseIssueDate,
-                                              overflow: TextOverflow.ellipsis,
-                                              textAlign: TextAlign.left,
-                                              style: theme
-                                                  .textTheme.titleMedium!
-                                                  .copyWith(
-                                                      letterSpacing:
-                                                          getHorizontalSize(
-                                                              0.03)))),
-                                      Padding(
-                                          padding:
-                                              getPadding(left: 5, bottom: 5),
-                                          child: Text("*",
-                                              overflow: TextOverflow.ellipsis,
-                                              textAlign: TextAlign.left,
-                                              style: theme.textTheme.titleSmall!
-                                                  .copyWith(
-                                                      letterSpacing:
-                                                          getHorizontalSize(
-                                                              0.06))))
-                                    ]),
+                                CustomInputLabel(labelText: l10ns.licenseIssueDate),
                                 CustomTextFormField(
                                     controller: controller.backNumberController,
                                     margin: getMargin(top: 4),
@@ -297,7 +184,7 @@ class RegisterLicense extends GetWidget<LicenseController> {
                             Size(double.maxFinite, getVerticalSize(52)))),
                     buttonTextStyle: CustomTextStyles.titleMedium18,
                     onTap: () {
-                      if (this.isValid()) {
+                      if (controller.licenseInputSucceed) {
                         onRegisterCreditCard();
                       }
                     }))));

@@ -15,19 +15,7 @@ class ProfileInfoPage extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
             backgroundColor: theme.colorScheme.onPrimaryContainer,
-            appBar: CustomAppBar(
-                height: getVerticalSize(53),
-                leadingWidth: 34,
-                leading: CustomImageView(
-                    height: getSize(18),
-                    width: getSize(18),
-                    svgPath: Assets.svg.imgArrowLeft.path,
-                    margin: getMargin(left: 16, top: 19, bottom: 16),
-                    onTap: () {
-                      onTabBackButton();
-                    }),
-                centerTitle: true,
-                title: AppbarTitle(text: '개인 정보')),
+            appBar: CustomAppBar.getDefaultAppBar('나의 정보'),
             body: Container(
                 width: mediaQueryData.size.width,
                 height: mediaQueryData.size.height,

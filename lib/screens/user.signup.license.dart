@@ -197,20 +197,7 @@ class RegisterLicense extends GetWidget<LicenseController> {
                     }))));
   }
 
-  bool isValid() {
-    // TODO: 면허증이 valid하면 true, 아니면 false.
-    return true;
-  }
-
   onRegisterCreditCard() {
     Get.toNamed(AppRoutes.registerCreditCard);
-  }
-
-  /// Navigates to the previous screen.
-  ///
-  /// When the action is triggered, this function uses the [Get] library to
-  /// navigate to the previous screen in the navigation stack.
-  onTabBackButton() {
-    Get.back();
   }
 }

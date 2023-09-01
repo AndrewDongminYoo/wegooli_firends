@@ -20,6 +20,15 @@ class BearerAuthInterceptor extends AuthInterceptor {
         options.headers['Authorization'] = 'Bearer ${token}';
         break;
         /// TODO: 토큰이 존재하지 않으면..?
+      } else {
+        if (!info.containsKey('name')) {
+          continue;
+        } else {
+          String value = info['name'] as String;
+          tokens.addAll({value: value});
+          // print('tokens : $tokens \n');
+          options.headers['Authorization'] = 'Bearer ${info['name']}';
+        }
       }
     }
     super.onRequest(options, handler);

@@ -144,7 +144,7 @@ class RegisterCreditCard extends GetWidget<PaymentCardController> {
                             Size(double.maxFinite, getVerticalSize(52)))),
                     buttonTextStyle: CustomTextStyles.titleMedium18,
                     onTap: () {
-                      if (paymentCardController.paymentCards.length > 0) {
+                      if (paymentCardController.paymentCards.length == 0) {
                         onTapRegisterSuccess();
                       } else {
                         // TODO

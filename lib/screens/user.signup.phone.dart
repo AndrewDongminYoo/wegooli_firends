@@ -57,12 +57,4 @@ class ValidatePhone extends GetWidget<UserController> {
                     ])),
             bottomNavigationBar: ValidatePhoneCompleteButton()));
   }
-
-  /// Navigates to the previous screen.
-  ///
-  /// When the action is triggered, this function uses the [Get] library to
-  /// navigate to the previous screen in the navigation stack.
-  onTabBackButton() {
-    Get.back();
-  }
 }

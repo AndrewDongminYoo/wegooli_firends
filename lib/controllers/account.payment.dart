@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 
 // 📦 Package imports:
 import 'package:get/get.dart';
-import 'package:wegooli_friends/core/app_export.dart';
-import 'package:wegooli_friends/data/models/models.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
@@ -21,7 +19,6 @@ class PaymentCardController extends GetxController {
   TextEditingController cardPassword = TextEditingController();
   Rx<String> selected = "".obs;
 
-  final api = WegooliFriends.client.getPaymentCardControllerApi();
   bool get cardInputSucceed => false;
   final userController = UserController.to;
   final paymentCardControllerApi =
@@ -38,9 +35,9 @@ class PaymentCardController extends GetxController {
     ],
   };
 
-
-  RxList<PaymentCardModel> paymentCards = RxList.of([]);
-
+  RxList<PaymentCardModel> _paymentCards = <PaymentCardModel>[].obs;
+  RxList<PaymentCardModel> get paymentCards => _paymentCards;
+  // Rx<PaymentCardModel> paymentCard = PaymentCardModel().obs;
   // RxList<PaymentCardModel> paymentCards = RxList.of([
   //   (PaymentCardModelBuilder()
   //         ..seq = 2
@@ -57,8 +54,9 @@ class PaymentCardController extends GetxController {
   // RxList<PaymentCardModel> get paymentCards => _paymentCards.obs;
 
   @override
-  void onInit() {
+  void onInit() async {
     super.onInit();
+    // ever(paymentCards, (val) => print('Changed : $val'));
     // await retrieveCards();
   }
 
@@ -72,17 +70,14 @@ class PaymentCardController extends GetxController {
   }
 
   Future<void> retrieveCards() async {
-    print('retrieveCards');
     if (userController.currentUser.value.memberSeq != null) {
       final response = await paymentCardControllerApi.selectPaymentCardList(
           memberSeq: userController.currentUser.value.memberSeq!, extra: extra);
       print('response => ${response.data}');
       if (response.data != null) {
-        print('AAA : ');
-        paymentCards.value  = response.data!.toList();
-        print('AAA : $paymentCards');
+        _paymentCards.clear();
+        _paymentCards.addAll(response.data!.toList());
       }
     }
-    paymentCards.refresh();
   }
 }

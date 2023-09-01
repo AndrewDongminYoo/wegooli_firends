@@ -61,7 +61,7 @@ class RegisterSuccess extends GetWidget<RegisterSuccessController> {
                                                           getHorizontalSize(
                                                               0.03)))),
                                     ]),
-                                Obx(() => CustomTextFormField(
+                                CustomTextFormField(
                                     textInputType:
                                         TextInputType.visiblePassword,
                                     controller: controller.inviteCode,
@@ -78,7 +78,7 @@ class RegisterSuccess extends GetWidget<RegisterSuccessController> {
                                         CustomTextStyles.bodyLargeGray50003,
                                     filled: true,
                                     fillColor:
-                                        theme.colorScheme.onPrimaryContainer)),
+                                        theme.colorScheme.onPrimaryContainer),
                                 Column(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     crossAxisAlignment:

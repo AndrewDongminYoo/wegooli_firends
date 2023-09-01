@@ -65,7 +65,7 @@ class LicenseController extends GetxController {
   ]);
 
   final api = WegooliFriends.client.getLicenseControllerApi();
-  bool get licenseInputSucceed => false;
+  bool get licenseInputSucceed => true;
   // api.insertLicense
   // api.selectLicense
   // api.selectLicenseList

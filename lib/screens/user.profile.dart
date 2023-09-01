@@ -8,7 +8,9 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 class MyProfilePage extends StatelessWidget {
-  final ConnectionController controller = ConnectionController.to;
+  final userController = UserController.to;
+  // TODO 제거 해도 되지않을까? 안쓰이는듯
+  // final ConnectionController controller = ConnectionController.to;
 
   @override
   Widget build(BuildContext context) {
@@ -42,20 +44,27 @@ class MyProfilePage extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text('닉네임',
+                                Text(
+                                    userController.currentUser.value.nickname ??
+                                        '닉네임',
                                     // overflow: TextOverflow.ellipsis,
                                     // textAlign: TextAlign.left,
                                     style: CustomTextStyles.titleMedium18
                                         .copyWith(
                                             letterSpacing:
                                                 getHorizontalSize(0.04))),
-                                Text('010-1234-5678',
+                                Text(
+                                    userController
+                                            .currentUser.value.phoneNumber ??
+                                        '010-1234-5678',
                                     // overflow: TextOverflow.ellipsis,
                                     // textAlign: TextAlign.left,
                                     style: theme.textTheme.bodyLarge!.copyWith(
                                         letterSpacing:
                                             getHorizontalSize(0.03))),
-                                Text('abc@gmail.com',
+                                Text(
+                                    userController.currentUser.value.email ??
+                                        'abc@gmail.com',
                                     // overflow: TextOverflow.ellipsis,
                                     // textAlign: TextAlign.left,
                                     style: theme.textTheme.bodyLarge!.copyWith(

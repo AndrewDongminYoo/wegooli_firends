@@ -95,31 +95,26 @@ class CustomTextFormField extends StatelessWidget {
           onEditingComplete: () => FocusScope.of(Get.context!).nextFocus(),
           initialValue: initialValue));
   InputDecoration get decoration => InputDecoration(
-      hintText: hintText ?? "",
-      hintStyle: hintStyle ?? CustomTextStyles.bodyLargeGray50002,
-      prefixIcon: prefix,
-      prefixIconConstraints: prefixConstraints,
-      suffixIcon: suffix,
-      suffixIconConstraints: suffixConstraints,
-      fillColor: enabled != true ? Color(0x33A4A8AF) : fillColor,
-      filled: enabled != true ? true : filled,
-      isDense: true,
-      contentPadding: contentPadding ??
-          getPadding(left: 12, top: 14, right: 12, bottom: 14),
-      counterText: "",
-      border: borderDecoration ??
-          createBorderSide(Color(0xFFB9BCC3)),
-      enabledBorder: borderDecoration ??
-          createBorderSide(Color(0xFFB9BCC3)),
-      focusedBorder: borderDecoration ??
-          createBorderSide(Color(0xFFFFE041)),
-      disabledBorder: borderDecoration ??
-          createBorderSide(Color(0xFFB9BCC3)),
-      errorBorder: borderDecoration ??
-          createBorderSide(Color(0xFFDB4646)),
-      focusedErrorBorder: borderDecoration ??
-          createBorderSide(Color(0xFFFFE041)),
-    );
+        hintText: hintText ?? "",
+        hintStyle: hintStyle ?? CustomTextStyles.bodyLargeGray50002,
+        prefixIcon: prefix,
+        prefixIconConstraints: prefixConstraints,
+        suffixIcon: suffix,
+        suffixIconConstraints: suffixConstraints,
+        fillColor: enabled != true ? Color(0x33A4A8AF) : fillColor,
+        filled: enabled != true ? true : filled,
+        isDense: true,
+        contentPadding: contentPadding ??
+            getPadding(left: 12, top: 14, right: 12, bottom: 14),
+        counterText: "",
+        border: borderDecoration ?? createBorderSide(Color(0xFFB9BCC3)),
+        enabledBorder: borderDecoration ?? createBorderSide(Color(0xFFB9BCC3)),
+        focusedBorder: borderDecoration ?? createBorderSide(Color(0xFFFFE041)),
+        disabledBorder: borderDecoration ?? createBorderSide(Color(0xFFB9BCC3)),
+        errorBorder: borderDecoration ?? createBorderSide(Color(0xFFDB4646)),
+        focusedErrorBorder:
+            borderDecoration ?? createBorderSide(Color(0xFFFFE041)),
+      );
 }
 
 /// Extension on [CustomTextFormField] to facilitate inclusion of all types of border style etc

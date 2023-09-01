@@ -13,24 +13,34 @@ import '/core/app_export.dart';
 class ColorParser {
   /// color
   Color? _color;
+
   /// hue
   num? _hue;
+
   /// saturation
   num? _sat;
+
   /// lightness
   num? _lightness;
+
   /// whiteness
   num? _whiteness;
+
   /// blackness
   num? _blackness;
+
   /// cyan
   num? _cyan;
+
   /// magenta
   num? _magenta;
+
   /// yellow
   num? _yellow;
+
   /// black
   num? _black;
+
   /// Ncol
   String? _ncol;
 
@@ -102,7 +112,7 @@ class ColorParser {
     _sat = num.parse(hsl[1].toStringAsFixed(2));
     _lightness = num.parse(hsl[2].toStringAsFixed(2));
     _cyan = num.parse(cmyk[0].toStringAsFixed(2));
-       _magenta = num.parse(cmyk[1].toStringAsFixed(2));
+    _magenta = num.parse(cmyk[1].toStringAsFixed(2));
     _yellow = num.parse(cmyk[2].toStringAsFixed(2));
     _black = num.parse(cmyk[3].toStringAsFixed(2));
 

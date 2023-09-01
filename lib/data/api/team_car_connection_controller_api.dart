@@ -6,7 +6,7 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
-import '/data/models/team_car_connection.dart';
+import '/core/app_export.dart';
 
 class TeamCarConnectionControllerApi {
   final Dio _dio;

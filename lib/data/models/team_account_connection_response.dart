@@ -6,7 +6,7 @@ import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 // 🌎 Project imports:
-import '/data/models/team_account_model.dart';
+import '/core/app_export.dart';
 
 part 'team_account_connection_response.g.dart';
 

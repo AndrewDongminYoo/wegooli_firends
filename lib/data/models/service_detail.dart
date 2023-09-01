@@ -6,7 +6,7 @@ import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 // 🌎 Project imports:
-import '/data/models/models.dart';
+import '/core/app_export.dart';
 
 part 'service_detail.g.dart';
 

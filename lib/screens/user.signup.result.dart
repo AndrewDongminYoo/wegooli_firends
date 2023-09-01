@@ -62,7 +62,8 @@ class RegisterSuccess extends GetWidget<RegisterSuccessController> {
                                                               0.03)))),
                                     ]),
                                 Obx(() => CustomTextFormField(
-                                    textInputType: TextInputType.visiblePassword,
+                                    textInputType:
+                                        TextInputType.visiblePassword,
                                     controller: controller.inviteCode,
                                     margin: getMargin(top: 4),
                                     contentPadding: getPadding(

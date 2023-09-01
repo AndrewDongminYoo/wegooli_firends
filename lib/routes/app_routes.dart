@@ -32,14 +32,14 @@ class AppRoutes {
 
   static List<GetPage> pages = [
     GetPage(
-      name: acceptTerms,
-      bindings: [UserAccountBinding()],
-      page: () => AcceptTerms(),
-    ),
-    GetPage(
       bindings: [InitialBindings()],
       name: appGateway,
       page: () => GatewayScreen(),
+    ),
+    GetPage(
+      name: acceptTerms,
+      bindings: [UserAccountBinding()],
+      page: () => AcceptTerms(),
     ),
     GetPage(
       bindings: [TeamCommunityBinding()],
@@ -54,11 +54,7 @@ class AppRoutes {
     GetPage(
       bindings: [TeamCommunityBinding()],
       name: chatWithTeam,
-      page: () => DashChatWithFriendsPage(
-        appId: 'appId',
-        userId: 'userId',
-        otherUserIds: ['otherUserIds'],
-      ),
+      page: () => DashChatWithFriendsPage(),
     ),
     GetPage(
       bindings: [UserAccountBinding()],

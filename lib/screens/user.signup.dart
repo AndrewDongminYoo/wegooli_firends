@@ -74,8 +74,7 @@ class RegisterZipCode extends GetWidget<UserController> {
                                               textInputType:
                                                   TextInputType.number,
                                               width: getHorizontalSize(160),
-                                              controller: controller
-                                                  .postCode,
+                                              controller: controller.postCode,
                                               margin: getMargin(top: 4),
                                               contentPadding: getPadding(
                                                   left: 12,
@@ -130,11 +129,9 @@ class RegisterZipCode extends GetWidget<UserController> {
                                                   useLocalServer: true,
                                                   localPort: 1024,
                                                   callback: (Kpostal result) {
-                                                    controller
-                                                        .postCode
-                                                        .text = result.postCode;
-                                                    controller
-                                                        .primaryAddress
+                                                    controller.postCode.text =
+                                                        result.postCode;
+                                                    controller.primaryAddress
                                                         .text = result.address;
                                                   })));
                                     }))
@@ -199,8 +196,7 @@ class RegisterZipCode extends GetWidget<UserController> {
                                     ]),
                                 CustomTextFormField(
                                     textInputType: TextInputType.emailAddress,
-                                    controller:
-                                        controller.emailAddress,
+                                    controller: controller.emailAddress,
                                     margin: getMargin(top: 4),
                                     contentPadding: getPadding(
                                         left: 12,
@@ -322,8 +318,7 @@ class RegisterZipCode extends GetWidget<UserController> {
                                     ]),
                                 Obx(() => CustomTextFormField(
                                     textInputType: TextInputType.emailAddress,
-                                    controller:
-                                        controller.rePassword,
+                                    controller: controller.rePassword,
                                     margin: getMargin(top: 4),
                                     contentPadding: getPadding(
                                         left: 12,
@@ -345,8 +340,7 @@ class RegisterZipCode extends GetWidget<UserController> {
                                             bottom: 12),
                                         child: CustomImageView(
                                             svgPath: controller
-                                                    .isShowConfirmPassword
-                                                    .value
+                                                    .isShowConfirmPassword.value
                                                 ? Assets.svg.imgEyeOpened.path
                                                 : Assets
                                                     .svg.imgEyeCrossedOut.path,

@@ -7,15 +7,15 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
-class UpcomingUnsubscriptionFilled
-    extends GetWidget<VehicleController> {
+class UpcomingUnsubscriptionFilled extends GetWidget<VehicleController> {
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
     return SafeArea(
         child: Scaffold(
             backgroundColor: theme.colorScheme.onPrimaryContainer,
-            appBar: CustomAppBar.getDefaultAppBar(l10ns.subscriptionInformation),
+            appBar:
+                CustomAppBar.getDefaultAppBar(l10ns.subscriptionInformation),
             body: Container(
                 width: double.maxFinite,
                 padding: getPadding(left: 16, top: 24, right: 16, bottom: 24),

@@ -84,38 +84,30 @@ class SmartKeyAvailablePage extends StatelessWidget {
   }
 
   Future openDoor() async {
-    final deviceControllerApi =
-        WegooliFriends.client.getDeviceControllerApi();
+    final deviceControllerApi = WegooliFriends.client.getDeviceControllerApi();
     final response = await deviceControllerApi.doorOpen(
-        carNum: controller.terminalDevice.value.carNum as String,
-        extra: extra);
+        carNum: controller.terminalDevice.value.carNum as String, extra: extra);
     print('response : ${response}');
   }
 
   Future closeDoor() async {
-    final deviceControllerApi =
-        WegooliFriends.client.getDeviceControllerApi();
+    final deviceControllerApi = WegooliFriends.client.getDeviceControllerApi();
     final response = await deviceControllerApi.doorClose(
-        carNum: controller.terminalDevice.value.carNum as String,
-        extra: extra);
+        carNum: controller.terminalDevice.value.carNum as String, extra: extra);
     print('response : ${response}');
   }
 
   Future horn() async {
-    final deviceControllerApi =
-        WegooliFriends.client.getDeviceControllerApi();
+    final deviceControllerApi = WegooliFriends.client.getDeviceControllerApi();
     final response = await deviceControllerApi.turnOnHorn(
-        carNum: controller.terminalDevice.value.carNum as String,
-        extra: extra);
+        carNum: controller.terminalDevice.value.carNum as String, extra: extra);
     print('response : ${response}');
   }
 
   Future emergencyLight() async {
-    final deviceControllerApi =
-        WegooliFriends.client.getDeviceControllerApi();
+    final deviceControllerApi = WegooliFriends.client.getDeviceControllerApi();
     final response = await deviceControllerApi.turnOnEmergencyLight(
-        carNum: controller.terminalDevice.value.carNum as String,
-        extra: extra);
+        carNum: controller.terminalDevice.value.carNum as String, extra: extra);
     print('response : ${response}');
   }
 

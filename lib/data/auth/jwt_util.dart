@@ -5,7 +5,7 @@ import 'dart:convert';
 import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
-import '/data/data.dart';
+import '/core/app_export.dart';
 
 /// base64로 인코딩된 문자열을 디코딩.
 /// 마지막 문자열이 누락된 경우(길이가 3바이트의 배수가 아닌 경우) 인코딩 된 문자열을 채우기 위해 패딩 `=`문자를 사용

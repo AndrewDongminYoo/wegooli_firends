@@ -15,7 +15,6 @@ import '/core/app_export.dart';
 
 // ignore: must_be_immutable
 class DashChatWithFriendsPage extends GetView<ConnectionController> {
-
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
@@ -34,10 +33,7 @@ class DashChatWithFriendsPage extends GetView<ConnectionController> {
                         (message, previousMessage, nextMessage) =>
                             BoxDecoration(
                                 color: message.user.id ==
-                                        UserController.to
-                                            .currentUser
-                                            .value
-                                            .id
+                                        UserController.to.currentUser.value.id
                                     ? Color.fromRGBO(255, 225, 66, 1)
                                     : Color.fromRGBO(164, 168, 175, 0.2),
                                 borderRadius: BorderRadius.circular(15)),

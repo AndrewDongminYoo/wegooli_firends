@@ -19,13 +19,15 @@ class LoginWithIdAndPassword extends GetWidget<UserController> {
 
     try {
       final response = await api.login(
-          id: controller.username.text,
-          password: controller.password.text);
+          id: controller.username.text, password: controller.password.text);
       print('response : ${response}');
       var result = response.data?.result;
       if (result == null) {
-        print('something is wrong!!! login API returns $result, ${response.data?.resultCode}');
-        Get.dialog(Center(child: Lottie.asset(Assets.lotties.xInCircle.path, height: 250, width: 250)));
+        print(
+            'something is wrong!!! login API returns $result, ${response.data?.resultCode}');
+        Get.dialog(Center(
+            child: Lottie.asset(Assets.lotties.xInCircle.path,
+                height: 250, width: 250)));
         controller.isAuthenticated.value = false;
         return;
       }
@@ -45,8 +47,7 @@ class LoginWithIdAndPassword extends GetWidget<UserController> {
                 ..phoneNumber = payload['phoneNumber']
                 ..add1 = payload['add1']
                 ..add2 = payload['add2']
-                ..memberSeq = payload['memberSeq']
-                )
+                ..memberSeq = payload['memberSeq'])
               .build();
           controller.isAuthenticated.value = true;
           await findMembers();
@@ -169,8 +170,7 @@ class LoginWithIdAndPassword extends GetWidget<UserController> {
 
   Future findMembers() async {
     String token = PrefUtils.storage.getData('token');
-    final api =
-        WegooliFriends.client.getTeamAccountConnectionControllerApi();
+    final api = WegooliFriends.client.getTeamAccountConnectionControllerApi();
     print('token : $token');
     Map<String, dynamic> extra = <String, dynamic>{
       'secure': <Map<String, String>>[

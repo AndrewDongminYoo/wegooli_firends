@@ -7,8 +7,7 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
-class RegisteredCreditCardList
-    extends GetWidget<PaymentCardController> {
+class RegisteredCreditCardList extends GetWidget<PaymentCardController> {
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);

@@ -75,7 +75,8 @@ class PinCodeInput extends StatelessWidget {
       autofocus: true,
       controller: controller,
       inputFormatters: <TextInputFormatter>[
-        FilteringTextInputFormatter.digitsOnly],
+        FilteringTextInputFormatter.digitsOnly
+      ],
       onSaved: (pin1) {},
       onChanged: (value) {
         if (value.length == 1) {

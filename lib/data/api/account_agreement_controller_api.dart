@@ -7,7 +7,7 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
-import '/data/data.dart';
+import '/core/app_export.dart';
 
 class AccountAgreementControllerApi {
   final Dio _dio;

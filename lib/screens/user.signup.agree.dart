@@ -54,7 +54,8 @@ class AcceptTerms extends GetWidget<AccountAgreementController> {
                                           value: controller
                                               .isAllTermsAccepted.value,
                                           onChange: (value) {
-                                            controller.isAllTermsAccepted.value = value;
+                                            controller.isAllTermsAccepted
+                                                .value = value;
                                           })))),
                               Padding(
                                   padding: getPadding(top: 53),
@@ -68,7 +69,8 @@ class AcceptTerms extends GetWidget<AccountAgreementController> {
                                             value: controller
                                                 .isAcceptedTerm0.value,
                                             onChange: (value) {
-                                              controller.isAcceptedTerm0.value = value;
+                                              controller.isAcceptedTerm0.value =
+                                                  value;
                                             })),
                                         CustomImageView(
                                             svgPath:
@@ -89,7 +91,8 @@ class AcceptTerms extends GetWidget<AccountAgreementController> {
                                             value: controller
                                                 .isAcceptedTerm1.value,
                                             onChange: (value) {
-                                              controller.isAcceptedTerm1.value = value;
+                                              controller.isAcceptedTerm1.value =
+                                                  value;
                                             })),
                                         CustomImageView(
                                             svgPath:
@@ -105,11 +108,13 @@ class AcceptTerms extends GetWidget<AccountAgreementController> {
                                           MainAxisAlignment.spaceBetween,
                                       children: [
                                         Obx(() => CustomCheckboxButton(
-                                            text: l10ns.carRentalTermsAndConditionsRequired,
+                                            text: l10ns
+                                                .carRentalTermsAndConditionsRequired,
                                             value: controller
                                                 .isAcceptedTerm2.value,
                                             onChange: (value) {
-                                              controller.isAcceptedTerm2.value = value;
+                                              controller.isAcceptedTerm2.value =
+                                                  value;
                                             })),
                                         CustomImageView(
                                             svgPath:
@@ -130,7 +135,8 @@ class AcceptTerms extends GetWidget<AccountAgreementController> {
                                             value: controller
                                                 .isAcceptedTerm3.value,
                                             onChange: (value) {
-                                              controller.isAcceptedTerm3.value = value;
+                                              controller.isAcceptedTerm3.value =
+                                                  value;
                                             })),
                                         CustomImageView(
                                             svgPath:
@@ -149,7 +155,8 @@ class AcceptTerms extends GetWidget<AccountAgreementController> {
                                             value: controller
                                                 .isAcceptedTerm4.value,
                                             onChange: (value) {
-                                              controller.isAcceptedTerm4.value = value;
+                                              controller.isAcceptedTerm4.value =
+                                                  value;
                                             }))),
                                     CustomImageView(
                                         svgPath: Assets.svg.imgArrowLeft.path,
@@ -167,7 +174,8 @@ class AcceptTerms extends GetWidget<AccountAgreementController> {
                                             value: controller
                                                 .isAcceptedTerm5.value,
                                             onChange: (value) {
-                                              controller.isAcceptedTerm5.value = value;
+                                              controller.isAcceptedTerm5.value =
+                                                  value;
                                             }))),
                                     CustomImageView(
                                         svgPath: Assets.svg.imgArrowLeft.path,

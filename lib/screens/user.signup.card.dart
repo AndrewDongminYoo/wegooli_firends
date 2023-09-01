@@ -36,7 +36,9 @@ class RegisterCreditCard extends GetWidget<PaymentCardController> {
                                 textStyle: CustomTextStyles.bodyLargeGray50003,
                                 hintStyle: CustomTextStyles.bodyLargeGray50003,
                                 inputFormatters: <TextInputFormatter>[
-                                  SeperateTextFormatter(sample: 'XXXX XXXX XXXX XXXX', separator: ' '),
+                                  SeperateTextFormatter(
+                                      sample: 'XXXX XXXX XXXX XXXX',
+                                      separator: ' '),
                                   LengthLimitingTextInputFormatter(19),
                                   FilteringTextInputFormatter.allow(r'[0-9 ]'),
                                 ],
@@ -51,7 +53,8 @@ class RegisterCreditCard extends GetWidget<PaymentCardController> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                CustomInputLabel(labelText: l10ns.expirationDate),
+                                CustomInputLabel(
+                                    labelText: l10ns.expirationDate),
                                 CustomTextFormField(
                                     controller: controller.expirationDT,
                                     margin: getMargin(top: 4),
@@ -66,9 +69,11 @@ class RegisterCreditCard extends GetWidget<PaymentCardController> {
                                         CustomTextStyles.bodyLargeGray50003,
                                     hintText: "MM/YY",
                                     inputFormatters: [
-                                      SeperateTextFormatter(sample: 'XX/XX', separator: '/'),
+                                      SeperateTextFormatter(
+                                          sample: 'XX/XX', separator: '/'),
                                       LengthLimitingTextInputFormatter(5),
-                                      FilteringTextInputFormatter.allow(r'[0-9/]'),
+                                      FilteringTextInputFormatter.allow(
+                                          r'[0-9/]'),
                                     ],
                                     textInputAction: TextInputAction.next,
                                     filled: true,
@@ -81,7 +86,9 @@ class RegisterCreditCard extends GetWidget<PaymentCardController> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                CustomInputLabel(labelText: l10ns.socialSecurityNumberFirstDigit),
+                                CustomInputLabel(
+                                    labelText:
+                                        l10ns.socialSecurityNumberFirstDigit),
                                 CustomTextFormField(
                                     enabled: false,
                                     margin: getMargin(top: 4),
@@ -99,9 +106,7 @@ class RegisterCreditCard extends GetWidget<PaymentCardController> {
                                       LengthLimitingTextInputFormatter(6),
                                     ],
                                     initialValue:
-                                        UserController.to
-                                            .birthDay
-                                            .text,
+                                        UserController.to.birthDay.text,
                                     textInputAction: TextInputAction.next,
                                     filled: true,
                                     fillColor:
@@ -113,7 +118,9 @@ class RegisterCreditCard extends GetWidget<PaymentCardController> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                CustomInputLabel(labelText: l10ns.first2DigitsOfCardPassword),
+                                CustomInputLabel(
+                                    labelText:
+                                        l10ns.first2DigitsOfCardPassword),
                                 CustomTextFormField(
                                     controller: controller.cardPassword,
                                     inputFormatters: [

@@ -15,7 +15,8 @@ class RegisterLicense extends GetWidget<LicenseController> {
         child: Scaffold(
             resizeToAvoidBottomInset: false,
             backgroundColor: theme.colorScheme.onPrimaryContainer,
-            appBar: CustomAppBar.getDefaultAppBar(l10ns.driverSLicenseRegistration),
+            appBar:
+                CustomAppBar.getDefaultAppBar(l10ns.driverSLicenseRegistration),
             body: Container(
                 width: double.maxFinite,
                 padding: getPadding(left: 16, top: 32, right: 16, bottom: 32),
@@ -58,7 +59,8 @@ class RegisterLicense extends GetWidget<LicenseController> {
                                             mainAxisAlignment:
                                                 MainAxisAlignment.start,
                                             children: [
-                                              CustomInputLabel(labelText: l10ns.licenseType),
+                                              CustomInputLabel(
+                                                  labelText: l10ns.licenseType),
                                               CustomDropDown(
                                                   width: getHorizontalSize(160),
                                                   icon: Container(
@@ -74,8 +76,7 @@ class RegisterLicense extends GetWidget<LicenseController> {
                                                   textStyle: CustomTextStyles
                                                       .bodyLargeGray500,
                                                   items: controller
-                                                      .dropdownItemList1
-                                                      .value,
+                                                      .dropdownItemList1.value,
                                                   filled: true,
                                                   fillColor: theme.colorScheme
                                                       .onPrimaryContainer,
@@ -83,8 +84,11 @@ class RegisterLicense extends GetWidget<LicenseController> {
                                                       left: 10,
                                                       top: 14,
                                                       bottom: 14),
-                                                  onChanged: (SelectionPopupModel value) {
-                                                    controller.dropdownItemList1.onSelected(value);
+                                                  onChanged:
+                                                      (SelectionPopupModel
+                                                          value) {
+                                                    controller.dropdownItemList1
+                                                        .onSelected(value);
                                                   })
                                             ]))),
                                 Expanded(
@@ -99,16 +103,16 @@ class RegisterLicense extends GetWidget<LicenseController> {
                                         margin: getMargin(left: 4, top: 27),
                                         textStyle:
                                             CustomTextStyles.bodyLargeGray500,
-                                        items: controller
-                                            .dropdownItemList2
-                                            .value,
+                                        items:
+                                            controller.dropdownItemList2.value,
                                         filled: true,
                                         fillColor: theme
                                             .colorScheme.onPrimaryContainer,
                                         contentPadding: getPadding(
                                             left: 10, top: 14, bottom: 14),
                                         onChanged: (SelectionPopupModel value) {
-                                          controller.dropdownItemList2.onSelected(value);
+                                          controller.dropdownItemList2
+                                              .onSelected(value);
                                         }))
                               ])),
                       CustomTextFormField(
@@ -128,7 +132,9 @@ class RegisterLicense extends GetWidget<LicenseController> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                CustomInputLabel(labelText: l10ns.eligibilityPeriodExpirationDate),
+                                CustomInputLabel(
+                                    labelText:
+                                        l10ns.eligibilityPeriodExpirationDate),
                                 CustomTextFormField(
                                     controller: controller.expDateController,
                                     margin: getMargin(top: 4),
@@ -154,7 +160,8 @@ class RegisterLicense extends GetWidget<LicenseController> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                CustomInputLabel(labelText: l10ns.licenseIssueDate),
+                                CustomInputLabel(
+                                    labelText: l10ns.licenseIssueDate),
                                 CustomTextFormField(
                                     controller: controller.backNumberController,
                                     margin: getMargin(top: 4),

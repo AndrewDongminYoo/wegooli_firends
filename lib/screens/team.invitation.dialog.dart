@@ -60,8 +60,7 @@ class SendingInvitationLog extends GetView<VehicleController> {
                       onTap: () {
                         /// FIXME: controller.invitationCodeController.text 값을 클립보드에 복사 / 또는 공유 모달 띄우기
                         Get.dialog(AlertDialog(
-                            title: Text(
-                                controller.invitation.text)));
+                            title: Text(controller.invitation.text)));
                       },
                       text: l10ns.copy,
                       margin: getMargin(top: 25),

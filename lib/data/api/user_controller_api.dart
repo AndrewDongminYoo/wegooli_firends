@@ -615,7 +615,7 @@ class UserControllerApi {
       );
     }
 
-    return Response<bool>(
+    return Response<ApiResponseObject>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

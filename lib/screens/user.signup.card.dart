@@ -8,6 +8,8 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 class RegisterCreditCard extends GetWidget<PaymentCardController> {
+  final paymentCardController = PaymentCardController.to;
+
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
@@ -158,10 +160,9 @@ class RegisterCreditCard extends GetWidget<PaymentCardController> {
                                     textStyle:
                                         CustomTextStyles.bodyLargeGray50003,
                                     hintText: "YYMMDD",
-                                    initialValue:
-                                        Get.find<UserController>()
-                                            .birthDay
-                                            .text,
+                                    initialValue: Get.find<UserController>()
+                                        .birthDay
+                                        .text,
                                     hintStyle:
                                         CustomTextStyles.bodyLargeGray50003,
                                     textInputAction: TextInputAction.next,
@@ -223,8 +224,12 @@ class RegisterCreditCard extends GetWidget<PaymentCardController> {
                             Size(double.maxFinite, getVerticalSize(52)))),
                     buttonTextStyle: CustomTextStyles.titleMedium18,
                     onTap: () {
-                      if (this.isValid()) {
+                      if (paymentCardController.paymentCards.length > 0) {
                         onTapRegisterSuccess();
+                      } else {
+                        // TODO
+                        // 카드 등록
+                        Get.back();
                       }
                     }))));
   }

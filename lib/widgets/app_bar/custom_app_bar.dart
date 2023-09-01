@@ -76,7 +76,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             svgPath: Assets.svg.imgArrowLeft.path,
             margin: getMargin(left: 16, top: 19, bottom: 16),
             onTap: () {
-              onTapLeading == null ? onTapLeading?.call() : Get.back();
+              onTapLeading != null ? onTapLeading.call() : Get.back();
             }),
         centerTitle: true,
         title: AppbarTitle(text: titleText ?? "FRIENDS"));

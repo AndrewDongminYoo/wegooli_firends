@@ -1,7 +1,7 @@
 #!/bin/sh
 # ref: https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/
 #
-# Usage example: /bin/sh ./git_push.sh wing328 openapi-petstore-perl "minor update" "gitlab.com"
+# Usage example: /bin/sh ./git_push.sh AndrewDongminYoo wegooliFriendApp "fix: 👽️ reflected API changes" "github.com"
 
 git_user_id=$1
 git_repo_id=$2
@@ -14,17 +14,17 @@ if [ "$git_host" = "" ]; then
 fi
 
 if [ "$git_user_id" = "" ]; then
-	git_user_id="GIT_USER_ID"
+	git_user_id="wegooli"
 	echo "[INFO] No command line input provided. Set \$git_user_id to $git_user_id"
 fi
 
 if [ "$git_repo_id" = "" ]; then
-	git_repo_id="GIT_REPO_ID"
+	git_repo_id="wegooliFriendApp"
 	echo "[INFO] No command line input provided. Set \$git_repo_id to $git_repo_id"
 fi
 
 if [ "$release_note" = "" ]; then
-	release_note="Minor update"
+	release_note="fix: 👽️ reflected API changes"
 	echo "[INFO] No command line input provided. Set \$release_note to $release_note"
 fi
 

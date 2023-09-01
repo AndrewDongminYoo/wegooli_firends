@@ -11,7 +11,32 @@ void main() {
   group(AccountAgreementControllerApi, () {
     //Future<String> deleteAccountAgreement(String classification, String accountId) async
     test('test deleteAccountAgreement', () async {
-      // TODO
+      // Arrange
+      final classification = 'classification';
+      final accountId = 'accountId';
+
+      // Act
+      await api.deleteAccountAgreement(
+        classification: classification,
+        accountId: accountId
+      );
+
+      // Assert
+      expect(
+        dio.requests.first.path,
+        '/account/agreement/$classification/$accountId'
+      );
+    });
+
+    test('deleteAccountAgreement throws error', () async {
+      // Arrange
+      dio.response = Response(statusCode: 500);
+
+      // Act & Assert
+      expect(
+        api.deleteAccountAgreement(classification: '', accountId: ''),
+        throwsA(isA<DioException>()),
+      );
     });
 
     //Future<String> insertAccountAgreement(AccountAgreementRequest accountAgreementRequest) async

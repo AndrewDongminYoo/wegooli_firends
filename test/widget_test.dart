@@ -10,25 +10,41 @@ import 'package:flutter/material.dart';
 
 // 📦 Package imports:
 import 'package:flutter_test/flutter_test.dart';
+import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import 'package:wegooli_friends/main.dart';
+import 'package:my_app/main.dart';
+import 'package:my_app/core/app_export.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(MyApp());
+  test('initializes Get bindings', () {
+    // Act
+    main();
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    // Assert
+    expect(Get.isPrepared<EnvConfig>(), true);
+  });
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+  test('configures orientations', () async {
+    // Arrange
+    TestWidgetsFlutterBinding.ensureInitialized();
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    // Act
+    await main();
+
+    // Assert
+    expect(WidgetsBinding.instance.window.physicalSize.aspectRatio,
+        DeviceOrientation.portraitUp.aspectRatio);
+  });
+
+  test('runs app', () async {
+    // Arrange
+    TestWidgetsFlutterBinding.ensureInitialized();
+
+    // Act
+    await main();
+
+    // Assert
+    expect(Get.isRegistered<MyApp>(), true);
   });
 }

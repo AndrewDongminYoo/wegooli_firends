@@ -1,8 +1,8 @@
 // 📦 Package imports:
-import 'package:wegooli_friends/ackage:test/test.dart';
+import 'package:test/test.dart';
 
 // 🌎 Project imports:
-import 'package:wegooli_friends/wegooli_friends.dart';
+import 'package:wegooli_friends/lib.dart';
 
 // tests for Sms
 void main() {

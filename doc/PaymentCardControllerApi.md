@@ -152,7 +152,7 @@ try {
 [[Back to README]](../README.md)
 
 > selectPaymentCardList
-> BuiltList<PaymentCardModel> selectPaymentCardList(memberSeq, cardNumber, defaultYn, delYn, startCreatedAt, endCreatedAt, startUpdatedAt, endUpdatedAt, password, rrn, crn)
+> BuiltList<PaymentCardModel> selectPaymentCardList(memberSeq, cardNumber, defaultYn, delYn, startCreatedAt, endCreatedAt, startUpdatedAt, endUpdatedAt, password, rrn, crn, expirationMonth, expirationYear)
 
 ### Example
 
@@ -174,9 +174,11 @@ final String endUpdatedAt = endUpdatedAt_example;
 final String password = password_example;
 final String rrn = rrn_example;
 final String crn = crn_example;
+final String expirationMonth = expirationMonth_example;
+final String expirationYear = expirationYear_example;
 
 try {
-    final response = api.selectPaymentCardList(memberSeq, cardNumber, defaultYn, delYn, startCreatedAt, endCreatedAt, startUpdatedAt, endUpdatedAt, password, rrn, crn);
+    final response = api.selectPaymentCardList(memberSeq, cardNumber, defaultYn, delYn, startCreatedAt, endCreatedAt, startUpdatedAt, endUpdatedAt, password, rrn, crn, expirationMonth, expirationYear);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling PaymentCardControllerApi->selectPaymentCardList: $e\n');
@@ -185,19 +187,21 @@ try {
 
 ### Parameters
 
-| Name               | Type       | Description | Notes      |
-| ------------------ | ---------- | ----------- | ---------- |
-| **memberSeq**      | **int**    |             | [optional] |
-| **cardNumber**     | **String** |             | [optional] |
-| **defaultYn**      | **String** |             | [optional] |
-| **delYn**          | **String** |             | [optional] |
-| **startCreatedAt** | **String** |             | [optional] |
-| **endCreatedAt**   | **String** |             | [optional] |
-| **startUpdatedAt** | **String** |             | [optional] |
-| **endUpdatedAt**   | **String** |             | [optional] |
-| **password**       | **String** |             | [optional] |
-| **rrn**            | **String** |             | [optional] |
-| **crn**            | **String** |             | [optional] |
+| Name                | Type       | Description | Notes      |
+| ------------------- | ---------- | ----------- | ---------- |
+| **memberSeq**       | **int**    |             | [optional] |
+| **cardNumber**      | **String** |             | [optional] |
+| **defaultYn**       | **String** |             | [optional] |
+| **delYn**           | **String** |             | [optional] |
+| **startCreatedAt**  | **String** |             | [optional] |
+| **endCreatedAt**    | **String** |             | [optional] |
+| **startUpdatedAt**  | **String** |             | [optional] |
+| **endUpdatedAt**    | **String** |             | [optional] |
+| **password**        | **String** |             | [optional] |
+| **rrn**             | **String** |             | [optional] |
+| **crn**             | **String** |             | [optional] |
+| **expirationMonth** | **String** |             | [optional] |
+| **expirationYear**  | **String** |             | [optional] |
 
 ### Return type
 

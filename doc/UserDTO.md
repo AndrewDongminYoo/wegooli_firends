@@ -26,12 +26,12 @@ import 'package:wegooli_friends/api.dart';
 | **memberSeq**      | **int**    |             | [optional] |
 | **password**       | **String** |             | [optional] |
 | **delimit**        | **String** |             | [optional] |
-| **deleteAt**       | **String** |             | [optional] |
-| **updateAt**       | **String** |             | [optional] |
-| **color**          | **String** |             | [optional] |
 | **nickname**       | **String** |             | [optional] |
 | **profilePicture** | **String** |             | [optional] |
+| **deleteAt**       | **String** |             | [optional] |
+| **color**          | **String** |             | [optional] |
 | **customerKey**    | **String** |             | [optional] |
+| **activeYn**       | **String** |             | [optional] |
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

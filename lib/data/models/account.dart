@@ -16,7 +16,7 @@ part 'account.g.dart';
 /// * [delYn]
 /// * [deleteAt]
 /// * [createdAt]
-/// * [updateAt]
+/// * [updatedAt]
 /// * [color]
 /// * [nickname]
 /// * [profilePicture]
@@ -43,8 +43,8 @@ abstract class Account implements Built<Account, AccountBuilder> {
   @BuiltValueField(wireName: r'createdAt')
   String? get createdAt;
 
-  @BuiltValueField(wireName: r'updateAt')
-  String? get updateAt;
+  @BuiltValueField(wireName: r'updatedAt')
+  String? get updatedAt;
 
   @BuiltValueField(wireName: r'color')
   String? get color;
@@ -127,10 +127,10 @@ class _$AccountSerializer implements PrimitiveSerializer<Account> {
         specifiedType: const FullType(String),
       );
     }
-    if (object.updateAt != null) {
-      yield r'updateAt';
+    if (object.updatedAt != null) {
+      yield r'updatedAt';
       yield serializers.serialize(
-        object.updateAt,
+        object.updatedAt,
         specifiedType: const FullType(String),
       );
     }
@@ -229,12 +229,12 @@ class _$AccountSerializer implements PrimitiveSerializer<Account> {
           ) as String;
           result.createdAt = valueDes;
           break;
-        case r'updateAt':
+        case r'updatedAt':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.updateAt = valueDes;
+          result.updatedAt = valueDes;
           break;
         case r'color':
           final valueDes = serializers.deserialize(

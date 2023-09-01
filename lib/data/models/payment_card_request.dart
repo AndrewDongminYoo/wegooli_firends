@@ -15,6 +15,9 @@ part 'payment_card_request.g.dart';
 /// * [password]
 /// * [rrn]
 /// * [crn]
+/// * [expirationMonth]
+/// * [expirationYear]
+/// * [billingKey]
 @BuiltValue()
 abstract class PaymentCardRequest
     implements Built<PaymentCardRequest, PaymentCardRequestBuilder> {
@@ -35,6 +38,15 @@ abstract class PaymentCardRequest
 
   @BuiltValueField(wireName: r'crn')
   String? get crn;
+
+  @BuiltValueField(wireName: r'expirationMonth')
+  String? get expirationMonth;
+
+  @BuiltValueField(wireName: r'expirationYear')
+  String? get expirationYear;
+
+  @BuiltValueField(wireName: r'billingKey')
+  String? get billingKey;
 
   PaymentCardRequest._();
 
@@ -104,6 +116,27 @@ class _$PaymentCardRequestSerializer
         specifiedType: const FullType(String),
       );
     }
+    if (object.expirationMonth != null) {
+      yield r'expirationMonth';
+      yield serializers.serialize(
+        object.expirationMonth,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.expirationYear != null) {
+      yield r'expirationYear';
+      yield serializers.serialize(
+        object.expirationYear,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.billingKey != null) {
+      yield r'billingKey';
+      yield serializers.serialize(
+        object.billingKey,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -170,6 +203,27 @@ class _$PaymentCardRequestSerializer
             specifiedType: const FullType(String),
           ) as String;
           result.crn = valueDes;
+          break;
+        case r'expirationMonth':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.expirationMonth = valueDes;
+          break;
+        case r'expirationYear':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.expirationYear = valueDes;
+          break;
+        case r'billingKey':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.billingKey = valueDes;
           break;
         default:
           unhandled.add(key);

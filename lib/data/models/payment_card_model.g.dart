@@ -27,6 +27,12 @@ class _$PaymentCardModel extends PaymentCardModel {
   final String? rrn;
   @override
   final String? crn;
+  @override
+  final String? expirationMonth;
+  @override
+  final String? expirationYear;
+  @override
+  final String? billingKey;
 
   factory _$PaymentCardModel(
           [void Function(PaymentCardModelBuilder)? updates]) =>
@@ -42,7 +48,10 @@ class _$PaymentCardModel extends PaymentCardModel {
       this.defaultYn,
       this.password,
       this.rrn,
-      this.crn})
+      this.crn,
+      this.expirationMonth,
+      this.expirationYear,
+      this.billingKey})
       : super._();
 
   @override
@@ -66,7 +75,10 @@ class _$PaymentCardModel extends PaymentCardModel {
         defaultYn == other.defaultYn &&
         password == other.password &&
         rrn == other.rrn &&
-        crn == other.crn;
+        crn == other.crn &&
+        expirationMonth == other.expirationMonth &&
+        expirationYear == other.expirationYear &&
+        billingKey == other.billingKey;
   }
 
   @override
@@ -82,6 +94,9 @@ class _$PaymentCardModel extends PaymentCardModel {
     _$hash = $jc(_$hash, password.hashCode);
     _$hash = $jc(_$hash, rrn.hashCode);
     _$hash = $jc(_$hash, crn.hashCode);
+    _$hash = $jc(_$hash, expirationMonth.hashCode);
+    _$hash = $jc(_$hash, expirationYear.hashCode);
+    _$hash = $jc(_$hash, billingKey.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -98,7 +113,10 @@ class _$PaymentCardModel extends PaymentCardModel {
           ..add('defaultYn', defaultYn)
           ..add('password', password)
           ..add('rrn', rrn)
-          ..add('crn', crn))
+          ..add('crn', crn)
+          ..add('expirationMonth', expirationMonth)
+          ..add('expirationYear', expirationYear)
+          ..add('billingKey', billingKey))
         .toString();
   }
 }
@@ -147,6 +165,20 @@ class PaymentCardModelBuilder
   String? get crn => _$this._crn;
   set crn(String? crn) => _$this._crn = crn;
 
+  String? _expirationMonth;
+  String? get expirationMonth => _$this._expirationMonth;
+  set expirationMonth(String? expirationMonth) =>
+      _$this._expirationMonth = expirationMonth;
+
+  String? _expirationYear;
+  String? get expirationYear => _$this._expirationYear;
+  set expirationYear(String? expirationYear) =>
+      _$this._expirationYear = expirationYear;
+
+  String? _billingKey;
+  String? get billingKey => _$this._billingKey;
+  set billingKey(String? billingKey) => _$this._billingKey = billingKey;
+
   PaymentCardModelBuilder() {
     PaymentCardModel._defaults(this);
   }
@@ -164,6 +196,9 @@ class PaymentCardModelBuilder
       _password = $v.password;
       _rrn = $v.rrn;
       _crn = $v.crn;
+      _expirationMonth = $v.expirationMonth;
+      _expirationYear = $v.expirationYear;
+      _billingKey = $v.billingKey;
       _$v = null;
     }
     return this;
@@ -195,7 +230,10 @@ class PaymentCardModelBuilder
             defaultYn: defaultYn,
             password: password,
             rrn: rrn,
-            crn: crn);
+            crn: crn,
+            expirationMonth: expirationMonth,
+            expirationYear: expirationYear,
+            billingKey: billingKey);
     replace(_$result);
     return _$result;
   }

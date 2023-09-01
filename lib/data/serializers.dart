@@ -10,7 +10,7 @@ import 'package:one_of_serializer/any_of_serializer.dart';
 import 'package:one_of_serializer/one_of_serializer.dart';
 
 // 🌎 Project imports:
-import '/core/app_export.dart';
+import '/lib.dart';
 
 part 'serializers.g.dart';
 
@@ -19,22 +19,34 @@ part 'serializers.g.dart';
   AccountAgreementModel,
   AccountAgreementRequest,
   ApiResponseObject,
+  BillingKeyRequestModel,
+  CancelRequestModel,
   CarControlHistoryModel,
   CarHistoryDTO,
+  CarModel,
+  CarRequest,
   DeviceControlResultDTO,
   DeviceOption,
   GrantedAuthority,
   LeaderSetRequest,
   LicenseModel,
   LicenseRequest,
+  Member,
+  Notice,
+  PayBillingRequestModel,
   PaymentCardModel,
   PaymentCardRequest,
+  PaymentModel,
+  Push,
+  QnA,
   ScheduleModel,
   ScheduleRequest,
+  SelectUserDTO,
   ServiceCarDetailRequest,
   ServiceDetail,
   ShareServiceModel,
   ShareServiceRequest,
+  Sms,
   TeamAccountConnectionModel,
   TeamAccountConnectionRequest,
   TeamAccountConnectionResponse,
@@ -60,16 +72,12 @@ Serializers serializers = (_$serializers.toBuilder()
         () => ListBuilder<ShareServiceModel>(),
       )
       ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(TeamModel)]),
-        () => ListBuilder<TeamModel>(),
+        const FullType(BuiltList, [FullType(QnA)]),
+        () => ListBuilder<QnA>(),
       )
       ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(CarHistoryDTO)]),
-        () => ListBuilder<CarHistoryDTO>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ScheduleModel)]),
-        () => ListBuilder<ScheduleModel>(),
+        const FullType(BuiltList, [FullType(SelectUserDTO)]),
+        () => ListBuilder<SelectUserDTO>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(TeamAccountConnectionResponse)]),
@@ -86,6 +94,38 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(AccountAgreementModel)]),
         () => ListBuilder<AccountAgreementModel>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(Sms)]),
+        () => ListBuilder<Sms>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(CarModel)]),
+        () => ListBuilder<CarModel>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(Push)]),
+        () => ListBuilder<Push>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(TeamModel)]),
+        () => ListBuilder<TeamModel>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(CarHistoryDTO)]),
+        () => ListBuilder<CarHistoryDTO>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(PaymentModel)]),
+        () => ListBuilder<PaymentModel>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(ScheduleModel)]),
+        () => ListBuilder<ScheduleModel>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(Notice)]),
+        () => ListBuilder<Notice>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(TerminalModel)]),

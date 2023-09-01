@@ -22,7 +22,7 @@ class _$Account extends Account {
   @override
   final String? createdAt;
   @override
-  final String? updateAt;
+  final String? updatedAt;
   @override
   final String? color;
   @override
@@ -41,7 +41,7 @@ class _$Account extends Account {
       this.delYn,
       this.deleteAt,
       this.createdAt,
-      this.updateAt,
+      this.updatedAt,
       this.color,
       this.nickname,
       this.profilePicture})
@@ -65,7 +65,7 @@ class _$Account extends Account {
         delYn == other.delYn &&
         deleteAt == other.deleteAt &&
         createdAt == other.createdAt &&
-        updateAt == other.updateAt &&
+        updatedAt == other.updatedAt &&
         color == other.color &&
         nickname == other.nickname &&
         profilePicture == other.profilePicture;
@@ -81,7 +81,7 @@ class _$Account extends Account {
     _$hash = $jc(_$hash, delYn.hashCode);
     _$hash = $jc(_$hash, deleteAt.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
-    _$hash = $jc(_$hash, updateAt.hashCode);
+    _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jc(_$hash, color.hashCode);
     _$hash = $jc(_$hash, nickname.hashCode);
     _$hash = $jc(_$hash, profilePicture.hashCode);
@@ -99,7 +99,7 @@ class _$Account extends Account {
           ..add('delYn', delYn)
           ..add('deleteAt', deleteAt)
           ..add('createdAt', createdAt)
-          ..add('updateAt', updateAt)
+          ..add('updatedAt', updatedAt)
           ..add('color', color)
           ..add('nickname', nickname)
           ..add('profilePicture', profilePicture))
@@ -138,9 +138,9 @@ class AccountBuilder implements Builder<Account, AccountBuilder> {
   String? get createdAt => _$this._createdAt;
   set createdAt(String? createdAt) => _$this._createdAt = createdAt;
 
-  String? _updateAt;
-  String? get updateAt => _$this._updateAt;
-  set updateAt(String? updateAt) => _$this._updateAt = updateAt;
+  String? _updatedAt;
+  String? get updatedAt => _$this._updatedAt;
+  set updatedAt(String? updatedAt) => _$this._updatedAt = updatedAt;
 
   String? _color;
   String? get color => _$this._color;
@@ -169,7 +169,7 @@ class AccountBuilder implements Builder<Account, AccountBuilder> {
       _delYn = $v.delYn;
       _deleteAt = $v.deleteAt;
       _createdAt = $v.createdAt;
-      _updateAt = $v.updateAt;
+      _updatedAt = $v.updatedAt;
       _color = $v.color;
       _nickname = $v.nickname;
       _profilePicture = $v.profilePicture;
@@ -202,7 +202,7 @@ class AccountBuilder implements Builder<Account, AccountBuilder> {
             delYn: delYn,
             deleteAt: deleteAt,
             createdAt: createdAt,
-            updateAt: updateAt,
+            updatedAt: updatedAt,
             color: color,
             nickname: nickname,
             profilePicture: profilePicture);

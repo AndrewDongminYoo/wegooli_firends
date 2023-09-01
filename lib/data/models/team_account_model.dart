@@ -13,6 +13,9 @@ part 'team_account_model.g.dart';
 /// * [color]
 /// * [nickname]
 /// * [profilePicture]
+/// * [useYn]
+/// * [joinedAt]
+/// * [leavedAt]
 @BuiltValue()
 abstract class TeamAccountModel
     implements Built<TeamAccountModel, TeamAccountModelBuilder> {
@@ -27,6 +30,15 @@ abstract class TeamAccountModel
 
   @BuiltValueField(wireName: r'profilePicture')
   String? get profilePicture;
+
+  @BuiltValueField(wireName: r'useYn')
+  String? get useYn;
+
+  @BuiltValueField(wireName: r'joinedAt')
+  String? get joinedAt;
+
+  @BuiltValueField(wireName: r'leavedAt')
+  String? get leavedAt;
 
   TeamAccountModel._();
 
@@ -82,6 +94,27 @@ class _$TeamAccountModelSerializer
         specifiedType: const FullType(String),
       );
     }
+    if (object.useYn != null) {
+      yield r'useYn';
+      yield serializers.serialize(
+        object.useYn,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.joinedAt != null) {
+      yield r'joinedAt';
+      yield serializers.serialize(
+        object.joinedAt,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.leavedAt != null) {
+      yield r'leavedAt';
+      yield serializers.serialize(
+        object.leavedAt,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -134,6 +167,27 @@ class _$TeamAccountModelSerializer
             specifiedType: const FullType(String),
           ) as String;
           result.profilePicture = valueDes;
+          break;
+        case r'useYn':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.useYn = valueDes;
+          break;
+        case r'joinedAt':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.joinedAt = valueDes;
+          break;
+        case r'leavedAt':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.leavedAt = valueDes;
           break;
         default:
           unhandled.add(key);

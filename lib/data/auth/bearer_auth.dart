@@ -2,7 +2,7 @@
 import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
-import '/core/app_export.dart';
+import '/lib.dart';
 
 class BearerAuthInterceptor extends AuthInterceptor {
   final Map<String, String> tokens = {};
@@ -19,15 +19,7 @@ class BearerAuthInterceptor extends AuthInterceptor {
       if (token != null) {
         options.headers['Authorization'] = 'Bearer ${token}';
         break;
-      } else {
-        if (!info.containsKey('name')) {
-          continue;
-        } else {
-          String value = info['name'] as String;
-          tokens.addAll({value: value});
-          // print('tokens : $tokens \n');
-          options.headers['Authorization'] = 'Bearer ${info['name']}';
-        }
+        /// TODO: 토큰이 존재하지 않으면..?
       }
     }
     super.onRequest(options, handler);

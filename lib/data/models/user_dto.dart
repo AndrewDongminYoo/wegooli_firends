@@ -25,12 +25,12 @@ part 'user_dto.g.dart';
 /// * [memberSeq]
 /// * [password]
 /// * [delimit]
-/// * [deleteAt]
-/// * [updateAt]
-/// * [color]
 /// * [nickname]
 /// * [profilePicture]
+/// * [deleteAt]
+/// * [color]
 /// * [customerKey]
+/// * [activeYn]
 @BuiltValue()
 abstract class UserDTO implements Built<UserDTO, UserDTOBuilder> {
   @BuiltValueField(wireName: r'seq')
@@ -81,23 +81,23 @@ abstract class UserDTO implements Built<UserDTO, UserDTOBuilder> {
   @BuiltValueField(wireName: r'delimit')
   String? get delimit;
 
-  @BuiltValueField(wireName: r'deleteAt')
-  String? get deleteAt;
-
-  @BuiltValueField(wireName: r'updateAt')
-  String? get updateAt;
-
-  @BuiltValueField(wireName: r'color')
-  String? get color;
-
   @BuiltValueField(wireName: r'nickname')
   String? get nickname;
 
   @BuiltValueField(wireName: r'profilePicture')
   String? get profilePicture;
 
+  @BuiltValueField(wireName: r'deleteAt')
+  String? get deleteAt;
+
+  @BuiltValueField(wireName: r'color')
+  String? get color;
+
   @BuiltValueField(wireName: r'customerKey')
   String? get customerKey;
+
+  @BuiltValueField(wireName: r'activeYn')
+  String? get activeYn;
 
   UserDTO._();
 
@@ -234,27 +234,6 @@ class _$UserDTOSerializer implements PrimitiveSerializer<UserDTO> {
         specifiedType: const FullType(String),
       );
     }
-    if (object.deleteAt != null) {
-      yield r'deleteAt';
-      yield serializers.serialize(
-        object.deleteAt,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.updateAt != null) {
-      yield r'updateAt';
-      yield serializers.serialize(
-        object.updateAt,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.color != null) {
-      yield r'color';
-      yield serializers.serialize(
-        object.color,
-        specifiedType: const FullType(String),
-      );
-    }
     if (object.nickname != null) {
       yield r'nickname';
       yield serializers.serialize(
@@ -269,10 +248,31 @@ class _$UserDTOSerializer implements PrimitiveSerializer<UserDTO> {
         specifiedType: const FullType(String),
       );
     }
+    if (object.deleteAt != null) {
+      yield r'deleteAt';
+      yield serializers.serialize(
+        object.deleteAt,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.color != null) {
+      yield r'color';
+      yield serializers.serialize(
+        object.color,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.customerKey != null) {
       yield r'customerKey';
       yield serializers.serialize(
         object.customerKey,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.activeYn != null) {
+      yield r'activeYn';
+      yield serializers.serialize(
+        object.activeYn,
         specifiedType: const FullType(String),
       );
     }
@@ -413,27 +413,6 @@ class _$UserDTOSerializer implements PrimitiveSerializer<UserDTO> {
           ) as String;
           result.delimit = valueDes;
           break;
-        case r'deleteAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.deleteAt = valueDes;
-          break;
-        case r'updateAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.updateAt = valueDes;
-          break;
-        case r'color':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.color = valueDes;
-          break;
         case r'nickname':
           final valueDes = serializers.deserialize(
             value,
@@ -448,12 +427,33 @@ class _$UserDTOSerializer implements PrimitiveSerializer<UserDTO> {
           ) as String;
           result.profilePicture = valueDes;
           break;
+        case r'deleteAt':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.deleteAt = valueDes;
+          break;
+        case r'color':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.color = valueDes;
+          break;
         case r'customerKey':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.customerKey = valueDes;
+          break;
+        case r'activeYn':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.activeYn = valueDes;
           break;
         default:
           unhandled.add(key);

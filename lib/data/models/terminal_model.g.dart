@@ -22,6 +22,8 @@ class _$TerminalModel extends TerminalModel {
   @override
   final String? status;
   @override
+  final int? seats;
+  @override
   final String? model;
   @override
   final String? volt;
@@ -34,11 +36,11 @@ class _$TerminalModel extends TerminalModel {
   @override
   final String? accountId;
   @override
+  final int? teamSeq;
+  @override
+  final String? carImage;
+  @override
   final String? carNickName;
-  @override
-  final int? seats;
-  @override
-  final String? carImg;
 
   factory _$TerminalModel([void Function(TerminalModelBuilder)? updates]) =>
       (new TerminalModelBuilder()..update(updates))._build();
@@ -51,15 +53,16 @@ class _$TerminalModel extends TerminalModel {
       this.carNum,
       this.phoneNumber,
       this.status,
+      this.seats,
       this.model,
       this.volt,
       this.fuelType,
       this.fuel,
       this.segment,
       this.accountId,
-      this.carNickName,
-      this.seats,
-      this.carImg})
+      this.teamSeq,
+      this.carImage,
+      this.carNickName})
       : super._();
 
   @override
@@ -80,15 +83,16 @@ class _$TerminalModel extends TerminalModel {
         carNum == other.carNum &&
         phoneNumber == other.phoneNumber &&
         status == other.status &&
+        seats == other.seats &&
         model == other.model &&
         volt == other.volt &&
         fuelType == other.fuelType &&
         fuel == other.fuel &&
         segment == other.segment &&
         accountId == other.accountId &&
-        carNickName == other.carNickName &&
-        seats == other.seats &&
-        carImg == other.carImg;
+        teamSeq == other.teamSeq &&
+        carImage == other.carImage &&
+        carNickName == other.carNickName;
   }
 
   @override
@@ -101,15 +105,16 @@ class _$TerminalModel extends TerminalModel {
     _$hash = $jc(_$hash, carNum.hashCode);
     _$hash = $jc(_$hash, phoneNumber.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
+    _$hash = $jc(_$hash, seats.hashCode);
     _$hash = $jc(_$hash, model.hashCode);
     _$hash = $jc(_$hash, volt.hashCode);
     _$hash = $jc(_$hash, fuelType.hashCode);
     _$hash = $jc(_$hash, fuel.hashCode);
     _$hash = $jc(_$hash, segment.hashCode);
     _$hash = $jc(_$hash, accountId.hashCode);
+    _$hash = $jc(_$hash, teamSeq.hashCode);
+    _$hash = $jc(_$hash, carImage.hashCode);
     _$hash = $jc(_$hash, carNickName.hashCode);
-    _$hash = $jc(_$hash, seats.hashCode);
-    _$hash = $jc(_$hash, carImg.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -124,15 +129,16 @@ class _$TerminalModel extends TerminalModel {
           ..add('carNum', carNum)
           ..add('phoneNumber', phoneNumber)
           ..add('status', status)
+          ..add('seats', seats)
           ..add('model', model)
           ..add('volt', volt)
           ..add('fuelType', fuelType)
           ..add('fuel', fuel)
           ..add('segment', segment)
           ..add('accountId', accountId)
-          ..add('carNickName', carNickName)
-          ..add('seats', seats)
-          ..add('carImg', carImg))
+          ..add('teamSeq', teamSeq)
+          ..add('carImage', carImage)
+          ..add('carNickName', carNickName))
         .toString();
   }
 }
@@ -169,6 +175,10 @@ class TerminalModelBuilder
   String? get status => _$this._status;
   set status(String? status) => _$this._status = status;
 
+  int? _seats;
+  int? get seats => _$this._seats;
+  set seats(int? seats) => _$this._seats = seats;
+
   String? _model;
   String? get model => _$this._model;
   set model(String? model) => _$this._model = model;
@@ -193,17 +203,17 @@ class TerminalModelBuilder
   String? get accountId => _$this._accountId;
   set accountId(String? accountId) => _$this._accountId = accountId;
 
+  int? _teamSeq;
+  int? get teamSeq => _$this._teamSeq;
+  set teamSeq(int? teamSeq) => _$this._teamSeq = teamSeq;
+
+  String? _carImage;
+  String? get carImage => _$this._carImage;
+  set carImage(String? carImage) => _$this._carImage = carImage;
+
   String? _carNickName;
   String? get carNickName => _$this._carNickName;
   set carNickName(String? carNickName) => _$this._carNickName = carNickName;
-
-  int? _seats;
-  int? get seats => _$this._seats;
-  set seats(int? seats) => _$this._seats = seats;
-
-  String? _carImg;
-  String? get carImg => _$this._carImg;
-  set carImg(String? carImg) => _$this._carImg = carImg;
 
   TerminalModelBuilder() {
     TerminalModel._defaults(this);
@@ -219,15 +229,16 @@ class TerminalModelBuilder
       _carNum = $v.carNum;
       _phoneNumber = $v.phoneNumber;
       _status = $v.status;
+      _seats = $v.seats;
       _model = $v.model;
       _volt = $v.volt;
       _fuelType = $v.fuelType;
       _fuel = $v.fuel;
       _segment = $v.segment;
       _accountId = $v.accountId;
+      _teamSeq = $v.teamSeq;
+      _carImage = $v.carImage;
       _carNickName = $v.carNickName;
-      _seats = $v.seats;
-      _carImg = $v.carImg;
       _$v = null;
     }
     return this;
@@ -257,15 +268,16 @@ class TerminalModelBuilder
             carNum: carNum,
             phoneNumber: phoneNumber,
             status: status,
+            seats: seats,
             model: model,
             volt: volt,
             fuelType: fuelType,
             fuel: fuel,
             segment: segment,
             accountId: accountId,
-            carNickName: carNickName,
-            seats: seats,
-            carImg: carImg);
+            teamSeq: teamSeq,
+            carImage: carImage,
+            carNickName: carNickName);
     replace(_$result);
     return _$result;
   }

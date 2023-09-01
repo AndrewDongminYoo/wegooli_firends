@@ -17,7 +17,7 @@ import 'package:wegooli_friends/api.dart';
 | **delYn**          | **String** |             | [optional] |
 | **deleteAt**       | **String** |             | [optional] |
 | **createdAt**      | **String** |             | [optional] |
-| **updateAt**       | **String** |             | [optional] |
+| **updatedAt**      | **String** |             | [optional] |
 | **color**          | **String** |             | [optional] |
 | **nickname**       | **String** |             | [optional] |
 | **profilePicture** | **String** |             | [optional] |

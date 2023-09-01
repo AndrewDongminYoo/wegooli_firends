@@ -8,15 +8,20 @@ import 'package:wegooli_friends/api.dart';
 
 All URIs are relative to *http://13.209.6.245:8089*
 
-| Method                                                  | HTTP request                 | Description |
-| ------------------------------------------------------- | ---------------------------- | ----------- |
-| [**checkId**](UserControllerApi.md#checkid)             | **GET** /auth/checkId        |
-| [**generateToken**](UserControllerApi.md#generatetoken) | **POST** /auth/generateToken | 토큰 발급   |
-| [**getUserDetail**](UserControllerApi.md#getuserdetail) | **POST** /auth/getUserDetail |
-| [**logOut**](UserControllerApi.md#logout)               | **GET** /auth/logout         |
-| [**login**](UserControllerApi.md#login)                 | **POST** /auth/login         |
-| [**signout**](UserControllerApi.md#signout)             | **GET** /auth/signout        |
-| [**signup**](UserControllerApi.md#signup)               | **POST** /auth/signup        |
+| Method                                                    | HTTP request                    | Description |
+| --------------------------------------------------------- | ------------------------------- | ----------- |
+| [**checkId**](UserControllerApi.md#checkid)               | **GET** /auth/checkId           |
+| [**generateToken**](UserControllerApi.md#generatetoken)   | **POST** /auth/generateToken    | 토큰 발급   |
+| [**getUserDetail**](UserControllerApi.md#getuserdetail)   | **POST** /auth/getUserDetail    |
+| [**logOut**](UserControllerApi.md#logout)                 | **GET** /auth/logout            |
+| [**login**](UserControllerApi.md#login)                   | **POST** /auth/login            |
+| [**selectAccount**](UserControllerApi.md#selectaccount)   | **GET** /auth/user/account/{id} |
+| [**selectMember**](UserControllerApi.md#selectmember)     | **GET** /auth/user/member/{seq} |
+| [**selectUserList**](UserControllerApi.md#selectuserlist) | **GET** /auth/user              |
+| [**signIn**](UserControllerApi.md#signin)                 | **POST** /auth/signin           |
+| [**signOut**](UserControllerApi.md#signout)               | **GET** /auth/signout           |
+| [**signup**](UserControllerApi.md#signup)                 | **POST** /auth/signup           |
+| [**updateUser**](UserControllerApi.md#updateuser)         | **PUT** /auth/user              |
 
 > checkId
 > String checkId(id)
@@ -246,8 +251,8 @@ try {
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-> signout
-> String signout(id)
+> selectAccount
+> Account selectAccount(id)
 
 ### Example
 
@@ -261,10 +266,10 @@ final api = WegooliFriends().getUserControllerApi();
 final String id = id_example;
 
 try {
-    final response = api.signout(id);
+    final response = api.selectAccount(id);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling UserControllerApi->signout: $e\n');
+    print('Exception when calling UserControllerApi->selectAccount: $e\n');
 }
 ```
 
@@ -276,7 +281,187 @@ try {
 
 ### Return type
 
-**String**
+[**Account**](Account.md)
+
+### Authorization
+
+[jwtAuth](../README.md#jwtAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: "/"
+
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+> selectMember
+> Member selectMember(seq)
+
+### Example
+
+```dart
+import 'package:wegooli_friends/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
+
+final api = WegooliFriends().getUserControllerApi();
+final int seq = 56;
+
+try {
+    final response = api.selectMember(seq);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling UserControllerApi->selectMember: $e\n');
+}
+```
+
+### Parameters
+
+| Name    | Type    | Description | Notes |
+| ------- | ------- | ----------- | ----- |
+| **seq** | **int** |             |
+
+### Return type
+
+[**Member**](Member.md)
+
+### Authorization
+
+[jwtAuth](../README.md#jwtAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: "/"
+
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+> selectUserList
+> BuiltList<SelectUserDTO> selectUserList(request)
+
+### Example
+
+```dart
+import 'package:wegooli_friends/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
+
+final api = WegooliFriends().getUserControllerApi();
+final SelectUserDTO request;
+
+try {
+    final response = api.selectUserList(request);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling UserControllerApi->selectUserList: $e\n');
+}
+```
+
+### Parameters
+
+| Name        | Type                     | Description | Notes |
+| ----------- | ------------------------ | ----------- | ----- |
+| **request** | [**SelectUserDTO**](.md) |             |
+
+### Return type
+
+[**BuiltList&lt;SelectUserDTO&gt;**](SelectUserDTO.md)
+
+### Authorization
+
+[jwtAuth](../README.md#jwtAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: "/"
+
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+> signIn
+> int signIn(userDTO)
+
+### Example
+
+```dart
+import 'package:wegooli_friends/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
+
+final api = WegooliFriends().getUserControllerApi();
+final UserDTO userDTO;
+
+try {
+    final response = api.signIn(userDTO);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling UserControllerApi->signIn: $e\n');
+}
+```
+
+### Parameters
+
+| Name        | Type                      | Description | Notes      |
+| ----------- | ------------------------- | ----------- | ---------- |
+| **userDTO** | [**UserDTO**](UserDTO.md) |             | [optional] |
+
+### Return type
+
+**int**
+
+### Authorization
+
+[jwtAuth](../README.md#jwtAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: "/"
+
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+> signOut
+> bool signOut(id)
+
+### Example
+
+```dart
+import 'package:wegooli_friends/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
+
+final api = WegooliFriends().getUserControllerApi();
+final String id = id_example;
+
+try {
+    final response = api.signOut(id);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling UserControllerApi->signOut: $e\n');
+}
+```
+
+### Parameters
+
+| Name   | Type       | Description | Notes |
+| ------ | ---------- | ----------- | ----- |
+| **id** | **String** |             |
+
+### Return type
+
+**bool**
 
 ### Authorization
 
@@ -322,6 +507,55 @@ try {
 ### Return type
 
 **String**
+
+### Authorization
+
+[jwtAuth](../README.md#jwtAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: "/"
+
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+> updateUser
+> bool updateUser(memberSeq, accountId, userDTO)
+
+### Example
+
+```dart
+import 'package:wegooli_friends/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
+
+final api = WegooliFriends().getUserControllerApi();
+final int memberSeq = 56;
+final String accountId = accountId_example;
+final UserDTO userDTO;
+
+try {
+    final response = api.updateUser(memberSeq, accountId, userDTO);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling UserControllerApi->updateUser: $e\n');
+}
+```
+
+### Parameters
+
+| Name          | Type                      | Description | Notes |
+| ------------- | ------------------------- | ----------- | ----- |
+| **memberSeq** | **int**                   |             |
+| **accountId** | **String**                |             |
+| **userDTO**   | [**UserDTO**](UserDTO.md) |             |
+
+### Return type
+
+**bool**
 
 ### Authorization
 

@@ -16,12 +16,15 @@ part 'terminal_model.g.dart';
 /// * [carNum]
 /// * [phoneNumber]
 /// * [status]
+/// * [seats]
 /// * [model]
 /// * [volt]
 /// * [fuelType]
 /// * [fuel]
 /// * [segment]
 /// * [accountId]
+/// * [teamSeq]
+/// * [carImage]
 /// * [carNickName]
 @BuiltValue()
 abstract class TerminalModel
@@ -47,6 +50,9 @@ abstract class TerminalModel
   @BuiltValueField(wireName: r'status')
   String? get status;
 
+  @BuiltValueField(wireName: r'seats')
+  int? get seats;
+
   @BuiltValueField(wireName: r'model')
   String? get model;
 
@@ -65,14 +71,14 @@ abstract class TerminalModel
   @BuiltValueField(wireName: r'accountId')
   String? get accountId;
 
+  @BuiltValueField(wireName: r'teamSeq')
+  int? get teamSeq;
+
+  @BuiltValueField(wireName: r'carImage')
+  String? get carImage;
+
   @BuiltValueField(wireName: r'carNickName')
   String? get carNickName;
-
-  @BuiltValueField(wireName: r'seats')
-  int? get seats;
-
-   @BuiltValueField(wireName: r'carImg')
-  String? get carImg;
 
   TerminalModel._();
 
@@ -103,13 +109,6 @@ class _$TerminalModelSerializer implements PrimitiveSerializer<TerminalModel> {
       yield r'seq';
       yield serializers.serialize(
         object.seq,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.seats != null) {
-      yield r'seats';
-      yield serializers.serialize(
-        object.seats,
         specifiedType: const FullType(int),
       );
     }
@@ -155,6 +154,13 @@ class _$TerminalModelSerializer implements PrimitiveSerializer<TerminalModel> {
         specifiedType: const FullType(String),
       );
     }
+    if (object.seats != null) {
+      yield r'seats';
+      yield serializers.serialize(
+        object.seats,
+        specifiedType: const FullType(int),
+      );
+    }
     if (object.model != null) {
       yield r'model';
       yield serializers.serialize(
@@ -197,17 +203,24 @@ class _$TerminalModelSerializer implements PrimitiveSerializer<TerminalModel> {
         specifiedType: const FullType(String),
       );
     }
+    if (object.teamSeq != null) {
+      yield r'teamSeq';
+      yield serializers.serialize(
+        object.teamSeq,
+        specifiedType: const FullType(int),
+      );
+    }
+    if (object.carImage != null) {
+      yield r'carImage';
+      yield serializers.serialize(
+        object.carImage,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.carNickName != null) {
       yield r'carNickName';
       yield serializers.serialize(
         object.carNickName,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.carImg != null) {
-      yield r'carImg';
-      yield serializers.serialize(
-        object.carImg,
         specifiedType: const FullType(String),
       );
     }
@@ -242,13 +255,6 @@ class _$TerminalModelSerializer implements PrimitiveSerializer<TerminalModel> {
             specifiedType: const FullType(int),
           ) as int;
           result.seq = valueDes;
-          break;
-        case r'seats':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.seats = valueDes;
           break;
         case r'delYn':
           final valueDes = serializers.deserialize(
@@ -292,6 +298,13 @@ class _$TerminalModelSerializer implements PrimitiveSerializer<TerminalModel> {
           ) as String;
           result.status = valueDes;
           break;
+        case r'seats':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.seats = valueDes;
+          break;
         case r'model':
           final valueDes = serializers.deserialize(
             value,
@@ -334,19 +347,26 @@ class _$TerminalModelSerializer implements PrimitiveSerializer<TerminalModel> {
           ) as String;
           result.accountId = valueDes;
           break;
+        case r'teamSeq':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.teamSeq = valueDes;
+          break;
+        case r'carImage':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.carImage = valueDes;
+          break;
         case r'carNickName':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.carNickName = valueDes;
-          break;
-        case r'carImg':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.carImg = valueDes;
           break;
         default:
           unhandled.add(key);

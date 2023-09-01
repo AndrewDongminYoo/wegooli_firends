@@ -6,37 +6,25 @@ import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 // 🌎 Project imports:
-import '/core/app_export.dart';
+import '/lib.dart';
 
 part 'team_account_connection_response.g.dart';
 
 /// TeamAccountConnectionResponse
 ///
 /// Properties:
-/// * [seq]
 /// * [teamSeq]
 /// * [account]
-/// * [joinedAt]
-/// * [leavedAt]
 @BuiltValue()
 abstract class TeamAccountConnectionResponse
     implements
         Built<TeamAccountConnectionResponse,
             TeamAccountConnectionResponseBuilder> {
-  @BuiltValueField(wireName: r'seq')
-  int? get seq;
-
   @BuiltValueField(wireName: r'teamSeq')
   int? get teamSeq;
 
   @BuiltValueField(wireName: r'account')
   BuiltList<TeamAccountModel>? get account;
-
-  @BuiltValueField(wireName: r'joinedAt')
-  String? get joinedAt;
-
-  @BuiltValueField(wireName: r'leavedAt')
-  String? get leavedAt;
 
   TeamAccountConnectionResponse._();
 
@@ -68,13 +56,6 @@ class _$TeamAccountConnectionResponseSerializer
     TeamAccountConnectionResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.seq != null) {
-      yield r'seq';
-      yield serializers.serialize(
-        object.seq,
-        specifiedType: const FullType(int),
-      );
-    }
     if (object.teamSeq != null) {
       yield r'teamSeq';
       yield serializers.serialize(
@@ -87,20 +68,6 @@ class _$TeamAccountConnectionResponseSerializer
       yield serializers.serialize(
         object.account,
         specifiedType: const FullType(BuiltList, [FullType(TeamAccountModel)]),
-      );
-    }
-    if (object.joinedAt != null) {
-      yield r'joinedAt';
-      yield serializers.serialize(
-        object.joinedAt,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.leavedAt != null) {
-      yield r'leavedAt';
-      yield serializers.serialize(
-        object.leavedAt,
-        specifiedType: const FullType(String),
       );
     }
   }
@@ -128,13 +95,6 @@ class _$TeamAccountConnectionResponseSerializer
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'seq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.seq = valueDes;
-          break;
         case r'teamSeq':
           final valueDes = serializers.deserialize(
             value,
@@ -149,20 +109,6 @@ class _$TeamAccountConnectionResponseSerializer
                 const FullType(BuiltList, [FullType(TeamAccountModel)]),
           ) as BuiltList<TeamAccountModel>;
           result.account.replace(valueDes);
-          break;
-        case r'joinedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.joinedAt = valueDes;
-          break;
-        case r'leavedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.leavedAt = valueDes;
           break;
         default:
           unhandled.add(key);

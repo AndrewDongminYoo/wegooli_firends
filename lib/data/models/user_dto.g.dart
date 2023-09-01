@@ -40,17 +40,17 @@ class _$UserDTO extends UserDTO {
   @override
   final String? delimit;
   @override
-  final String? deleteAt;
-  @override
-  final String? updateAt;
-  @override
-  final String? color;
-  @override
   final String? nickname;
   @override
   final String? profilePicture;
   @override
+  final String? deleteAt;
+  @override
+  final String? color;
+  @override
   final String? customerKey;
+  @override
+  final String? activeYn;
 
   factory _$UserDTO([void Function(UserDTOBuilder)? updates]) =>
       (new UserDTOBuilder()..update(updates))._build();
@@ -72,12 +72,12 @@ class _$UserDTO extends UserDTO {
       this.memberSeq,
       this.password,
       this.delimit,
-      this.deleteAt,
-      this.updateAt,
-      this.color,
       this.nickname,
       this.profilePicture,
-      this.customerKey})
+      this.deleteAt,
+      this.color,
+      this.customerKey,
+      this.activeYn})
       : super._();
 
   @override
@@ -107,12 +107,12 @@ class _$UserDTO extends UserDTO {
         memberSeq == other.memberSeq &&
         password == other.password &&
         delimit == other.delimit &&
-        deleteAt == other.deleteAt &&
-        updateAt == other.updateAt &&
-        color == other.color &&
         nickname == other.nickname &&
         profilePicture == other.profilePicture &&
-        customerKey == other.customerKey;
+        deleteAt == other.deleteAt &&
+        color == other.color &&
+        customerKey == other.customerKey &&
+        activeYn == other.activeYn;
   }
 
   @override
@@ -134,12 +134,12 @@ class _$UserDTO extends UserDTO {
     _$hash = $jc(_$hash, memberSeq.hashCode);
     _$hash = $jc(_$hash, password.hashCode);
     _$hash = $jc(_$hash, delimit.hashCode);
-    _$hash = $jc(_$hash, deleteAt.hashCode);
-    _$hash = $jc(_$hash, updateAt.hashCode);
-    _$hash = $jc(_$hash, color.hashCode);
     _$hash = $jc(_$hash, nickname.hashCode);
     _$hash = $jc(_$hash, profilePicture.hashCode);
+    _$hash = $jc(_$hash, deleteAt.hashCode);
+    _$hash = $jc(_$hash, color.hashCode);
     _$hash = $jc(_$hash, customerKey.hashCode);
+    _$hash = $jc(_$hash, activeYn.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -163,12 +163,12 @@ class _$UserDTO extends UserDTO {
           ..add('memberSeq', memberSeq)
           ..add('password', password)
           ..add('delimit', delimit)
-          ..add('deleteAt', deleteAt)
-          ..add('updateAt', updateAt)
-          ..add('color', color)
           ..add('nickname', nickname)
           ..add('profilePicture', profilePicture)
-          ..add('customerKey', customerKey))
+          ..add('deleteAt', deleteAt)
+          ..add('color', color)
+          ..add('customerKey', customerKey)
+          ..add('activeYn', activeYn))
         .toString();
   }
 }
@@ -240,18 +240,6 @@ class UserDTOBuilder implements Builder<UserDTO, UserDTOBuilder> {
   String? get delimit => _$this._delimit;
   set delimit(String? delimit) => _$this._delimit = delimit;
 
-  String? _deleteAt;
-  String? get deleteAt => _$this._deleteAt;
-  set deleteAt(String? deleteAt) => _$this._deleteAt = deleteAt;
-
-  String? _updateAt;
-  String? get updateAt => _$this._updateAt;
-  set updateAt(String? updateAt) => _$this._updateAt = updateAt;
-
-  String? _color;
-  String? get color => _$this._color;
-  set color(String? color) => _$this._color = color;
-
   String? _nickname;
   String? get nickname => _$this._nickname;
   set nickname(String? nickname) => _$this._nickname = nickname;
@@ -261,9 +249,21 @@ class UserDTOBuilder implements Builder<UserDTO, UserDTOBuilder> {
   set profilePicture(String? profilePicture) =>
       _$this._profilePicture = profilePicture;
 
+  String? _deleteAt;
+  String? get deleteAt => _$this._deleteAt;
+  set deleteAt(String? deleteAt) => _$this._deleteAt = deleteAt;
+
+  String? _color;
+  String? get color => _$this._color;
+  set color(String? color) => _$this._color = color;
+
   String? _customerKey;
   String? get customerKey => _$this._customerKey;
   set customerKey(String? customerKey) => _$this._customerKey = customerKey;
+
+  String? _activeYn;
+  String? get activeYn => _$this._activeYn;
+  set activeYn(String? activeYn) => _$this._activeYn = activeYn;
 
   UserDTOBuilder() {
     UserDTO._defaults(this);
@@ -288,12 +288,12 @@ class UserDTOBuilder implements Builder<UserDTO, UserDTOBuilder> {
       _memberSeq = $v.memberSeq;
       _password = $v.password;
       _delimit = $v.delimit;
-      _deleteAt = $v.deleteAt;
-      _updateAt = $v.updateAt;
-      _color = $v.color;
       _nickname = $v.nickname;
       _profilePicture = $v.profilePicture;
+      _deleteAt = $v.deleteAt;
+      _color = $v.color;
       _customerKey = $v.customerKey;
+      _activeYn = $v.activeYn;
       _$v = null;
     }
     return this;
@@ -332,12 +332,12 @@ class UserDTOBuilder implements Builder<UserDTO, UserDTOBuilder> {
             memberSeq: memberSeq,
             password: password,
             delimit: delimit,
-            deleteAt: deleteAt,
-            updateAt: updateAt,
-            color: color,
             nickname: nickname,
             profilePicture: profilePicture,
-            customerKey: customerKey);
+            deleteAt: deleteAt,
+            color: color,
+            customerKey: customerKey,
+            activeYn: activeYn);
     replace(_$result);
     return _$result;
   }

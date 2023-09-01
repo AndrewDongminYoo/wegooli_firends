@@ -15,13 +15,25 @@ class _$TeamAccountModel extends TeamAccountModel {
   final String? nickname;
   @override
   final String? profilePicture;
+  @override
+  final String? useYn;
+  @override
+  final String? joinedAt;
+  @override
+  final String? leavedAt;
 
   factory _$TeamAccountModel(
           [void Function(TeamAccountModelBuilder)? updates]) =>
       (new TeamAccountModelBuilder()..update(updates))._build();
 
   _$TeamAccountModel._(
-      {this.accountId, this.color, this.nickname, this.profilePicture})
+      {this.accountId,
+      this.color,
+      this.nickname,
+      this.profilePicture,
+      this.useYn,
+      this.joinedAt,
+      this.leavedAt})
       : super._();
 
   @override
@@ -39,7 +51,10 @@ class _$TeamAccountModel extends TeamAccountModel {
         accountId == other.accountId &&
         color == other.color &&
         nickname == other.nickname &&
-        profilePicture == other.profilePicture;
+        profilePicture == other.profilePicture &&
+        useYn == other.useYn &&
+        joinedAt == other.joinedAt &&
+        leavedAt == other.leavedAt;
   }
 
   @override
@@ -49,6 +64,9 @@ class _$TeamAccountModel extends TeamAccountModel {
     _$hash = $jc(_$hash, color.hashCode);
     _$hash = $jc(_$hash, nickname.hashCode);
     _$hash = $jc(_$hash, profilePicture.hashCode);
+    _$hash = $jc(_$hash, useYn.hashCode);
+    _$hash = $jc(_$hash, joinedAt.hashCode);
+    _$hash = $jc(_$hash, leavedAt.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -59,7 +77,10 @@ class _$TeamAccountModel extends TeamAccountModel {
           ..add('accountId', accountId)
           ..add('color', color)
           ..add('nickname', nickname)
-          ..add('profilePicture', profilePicture))
+          ..add('profilePicture', profilePicture)
+          ..add('useYn', useYn)
+          ..add('joinedAt', joinedAt)
+          ..add('leavedAt', leavedAt))
         .toString();
   }
 }
@@ -85,6 +106,18 @@ class TeamAccountModelBuilder
   set profilePicture(String? profilePicture) =>
       _$this._profilePicture = profilePicture;
 
+  String? _useYn;
+  String? get useYn => _$this._useYn;
+  set useYn(String? useYn) => _$this._useYn = useYn;
+
+  String? _joinedAt;
+  String? get joinedAt => _$this._joinedAt;
+  set joinedAt(String? joinedAt) => _$this._joinedAt = joinedAt;
+
+  String? _leavedAt;
+  String? get leavedAt => _$this._leavedAt;
+  set leavedAt(String? leavedAt) => _$this._leavedAt = leavedAt;
+
   TeamAccountModelBuilder() {
     TeamAccountModel._defaults(this);
   }
@@ -96,6 +129,9 @@ class TeamAccountModelBuilder
       _color = $v.color;
       _nickname = $v.nickname;
       _profilePicture = $v.profilePicture;
+      _useYn = $v.useYn;
+      _joinedAt = $v.joinedAt;
+      _leavedAt = $v.leavedAt;
       _$v = null;
     }
     return this;
@@ -121,7 +157,10 @@ class TeamAccountModelBuilder
             accountId: accountId,
             color: color,
             nickname: nickname,
-            profilePicture: profilePicture);
+            profilePicture: profilePicture,
+            useYn: useYn,
+            joinedAt: joinedAt,
+            leavedAt: leavedAt);
     replace(_$result);
     return _$result;
   }

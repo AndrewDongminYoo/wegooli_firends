@@ -13,6 +13,7 @@ All URIs are relative to *http://13.209.6.245:8089*
 | [**deleteLicense**](LicenseControllerApi.md#deletelicense)                       | **DELETE** /license/{seq}              |
 | [**deleteLicenseByMemberSeq**](LicenseControllerApi.md#deletelicensebymemberseq) | **DELETE** /license/member/{memberSeq} |
 | [**insertLicense**](LicenseControllerApi.md#insertlicense)                       | **POST** /license                      |
+| [**isValidLicense**](LicenseControllerApi.md#isvalidlicense)                     | **POST** /license/verify               |
 | [**selectLicense**](LicenseControllerApi.md#selectlicense)                       | **GET** /license/{seq}                 |
 | [**selectLicenseList**](LicenseControllerApi.md#selectlicenselist)               | **GET** /license/list                  |
 | [**selectServiceStop**](LicenseControllerApi.md#selectservicestop)               | **GET** /license/stop                  |
@@ -139,6 +140,51 @@ try {
 ### Return type
 
 **int**
+
+### Authorization
+
+[jwtAuth](../README.md#jwtAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: "/"
+
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+> isValidLicense
+> bool isValidLicense(licenseRequest)
+
+### Example
+
+```dart
+import 'package:wegooli_friends/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
+
+final api = WegooliFriends().getLicenseControllerApi();
+final LicenseRequest licenseRequest;
+
+try {
+    final response = api.isValidLicense(licenseRequest);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling LicenseControllerApi->isValidLicense: $e\n');
+}
+```
+
+### Parameters
+
+| Name               | Type                                    | Description | Notes |
+| ------------------ | --------------------------------------- | ----------- | ----- |
+| **licenseRequest** | [**LicenseRequest**](LicenseRequest.md) |             |
+
+### Return type
+
+**bool**
 
 ### Authorization
 

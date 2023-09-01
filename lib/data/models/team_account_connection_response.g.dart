@@ -8,23 +8,15 @@ part of 'team_account_connection_response.dart';
 
 class _$TeamAccountConnectionResponse extends TeamAccountConnectionResponse {
   @override
-  final int? seq;
-  @override
   final int? teamSeq;
   @override
   final BuiltList<TeamAccountModel>? account;
-  @override
-  final String? joinedAt;
-  @override
-  final String? leavedAt;
 
   factory _$TeamAccountConnectionResponse(
           [void Function(TeamAccountConnectionResponseBuilder)? updates]) =>
       (new TeamAccountConnectionResponseBuilder()..update(updates))._build();
 
-  _$TeamAccountConnectionResponse._(
-      {this.seq, this.teamSeq, this.account, this.joinedAt, this.leavedAt})
-      : super._();
+  _$TeamAccountConnectionResponse._({this.teamSeq, this.account}) : super._();
 
   @override
   TeamAccountConnectionResponse rebuild(
@@ -39,21 +31,15 @@ class _$TeamAccountConnectionResponse extends TeamAccountConnectionResponse {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is TeamAccountConnectionResponse &&
-        seq == other.seq &&
         teamSeq == other.teamSeq &&
-        account == other.account &&
-        joinedAt == other.joinedAt &&
-        leavedAt == other.leavedAt;
+        account == other.account;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, seq.hashCode);
     _$hash = $jc(_$hash, teamSeq.hashCode);
     _$hash = $jc(_$hash, account.hashCode);
-    _$hash = $jc(_$hash, joinedAt.hashCode);
-    _$hash = $jc(_$hash, leavedAt.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -61,11 +47,8 @@ class _$TeamAccountConnectionResponse extends TeamAccountConnectionResponse {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'TeamAccountConnectionResponse')
-          ..add('seq', seq)
           ..add('teamSeq', teamSeq)
-          ..add('account', account)
-          ..add('joinedAt', joinedAt)
-          ..add('leavedAt', leavedAt))
+          ..add('account', account))
         .toString();
   }
 }
@@ -75,10 +58,6 @@ class TeamAccountConnectionResponseBuilder
         Builder<TeamAccountConnectionResponse,
             TeamAccountConnectionResponseBuilder> {
   _$TeamAccountConnectionResponse? _$v;
-
-  int? _seq;
-  int? get seq => _$this._seq;
-  set seq(int? seq) => _$this._seq = seq;
 
   int? _teamSeq;
   int? get teamSeq => _$this._teamSeq;
@@ -90,14 +69,6 @@ class TeamAccountConnectionResponseBuilder
   set account(ListBuilder<TeamAccountModel>? account) =>
       _$this._account = account;
 
-  String? _joinedAt;
-  String? get joinedAt => _$this._joinedAt;
-  set joinedAt(String? joinedAt) => _$this._joinedAt = joinedAt;
-
-  String? _leavedAt;
-  String? get leavedAt => _$this._leavedAt;
-  set leavedAt(String? leavedAt) => _$this._leavedAt = leavedAt;
-
   TeamAccountConnectionResponseBuilder() {
     TeamAccountConnectionResponse._defaults(this);
   }
@@ -105,11 +76,8 @@ class TeamAccountConnectionResponseBuilder
   TeamAccountConnectionResponseBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _seq = $v.seq;
       _teamSeq = $v.teamSeq;
       _account = $v.account?.toBuilder();
-      _joinedAt = $v.joinedAt;
-      _leavedAt = $v.leavedAt;
       _$v = null;
     }
     return this;
@@ -134,11 +102,7 @@ class TeamAccountConnectionResponseBuilder
     try {
       _$result = _$v ??
           new _$TeamAccountConnectionResponse._(
-              seq: seq,
-              teamSeq: teamSeq,
-              account: _account?.build(),
-              joinedAt: joinedAt,
-              leavedAt: leavedAt);
+              teamSeq: teamSeq, account: _account?.build());
     } catch (_) {
       late String _$failedField;
       try {

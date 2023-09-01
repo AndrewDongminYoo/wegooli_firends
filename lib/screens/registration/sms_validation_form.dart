@@ -90,7 +90,6 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
                       hintText: "000000",
                       controller: widget.controller.pinCodes,
                       inputFormatters: <TextInputFormatter>[
-                        FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
                         FilteringTextInputFormatter.digitsOnly,
                         LengthLimitingTextInputFormatter(6),
                       ],

@@ -1,18 +1,15 @@
 export '/controllers/global.dart';
-export '/controllers/account.agreement.binding.dart';
+
+export '/controllers/account.dart';
 export '/controllers/account.agreement.dart';
-export '/controllers/account.user.binding.dart';
 export '/controllers/account.user.dart';
-export '/controllers/account.license.binding.dart';
 export '/controllers/account.license.dart';
-export '/controllers/account.payment.binding.dart';
 export '/controllers/account.payment.dart';
-export '/controllers/account.profile.dart';
-export '/controllers/account.signup.binding.dart';
 export '/controllers/account.signup.dart';
+
+export '/controllers/team.dart';
 export '/controllers/team.connection.dart';
 export '/controllers/team.invite.dart';
-export '/controllers/team.dart';
 export '/controllers/team.schedule.dart';
 
 export 'environment/base_env_config.dart';

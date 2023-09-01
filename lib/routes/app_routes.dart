@@ -33,7 +33,7 @@ class AppRoutes {
   static List<GetPage> pages = [
     GetPage(
       name: acceptTerms,
-      bindings: [AcceptTermsBinding()],
+      bindings: [UserAccountBinding()],
       page: () => AcceptTerms(),
     ),
     GetPage(
@@ -42,17 +42,17 @@ class AppRoutes {
       page: () => GatewayScreen(),
     ),
     GetPage(
-      bindings: [TeamScheduleBinding()],
+      bindings: [TeamCommunityBinding()],
       name: bookDatetimePicker,
       page: () => DatetimePickerBottomSheet(),
     ),
     GetPage(
-      bindings: [TeamScheduleBinding()],
+      bindings: [TeamCommunityBinding()],
       name: carStatusInfo,
       page: () => CarStatusInformation(),
     ),
     GetPage(
-      bindings: [],
+      bindings: [TeamCommunityBinding()],
       name: chatWithTeam,
       page: () => DashChatWithFriendsPage(
         appId: 'appId',
@@ -61,112 +61,112 @@ class AppRoutes {
       ),
     ),
     GetPage(
-      bindings: [UserAuthBinding()],
+      bindings: [UserAccountBinding()],
       name: idPwLogin,
       page: () => LoginWithIdAndPassword(),
     ),
     GetPage(
-      bindings: [UserAuthBinding()],
+      bindings: [UserAccountBinding()],
       name: myProfile,
       page: () => MyProfilePage(),
     ),
     GetPage(
-      bindings: [TeamScheduleBinding()],
+      bindings: [TeamCommunityBinding()],
       name: noSubscription,
       page: () => SubscriptionInfoNoService(),
     ),
     GetPage(
-      bindings: [UserAuthBinding()],
+      bindings: [UserAccountBinding()],
       name: phoneAuth,
       page: () => ValidatePhone(),
     ),
     GetPage(
-      bindings: [RegisterCreditCardBinding()],
+      bindings: [UserAccountBinding()],
       name: registerCreditCard,
       page: () => RegisterCreditCard(),
     ),
     GetPage(
-      bindings: [RegisterCreditCardBinding()],
+      bindings: [UserAccountBinding()],
       name: registeredCardList,
       page: () => RegisteredCreditCardList(),
     ),
     GetPage(
-      bindings: [RegisterLicenseBinding()],
+      bindings: [UserAccountBinding()],
       name: registerLicense,
       page: () => RegisterLicense(),
     ),
     GetPage(
-      bindings: [UserAuthBinding()],
+      bindings: [UserAccountBinding()],
       name: registerSuccess,
       page: () => RegisterSuccess(),
     ),
     GetPage(
-      bindings: [UserAuthBinding()],
+      bindings: [UserAccountBinding()],
       name: registerZipCode,
       page: () => RegisterZipCode(),
     ),
     GetPage(
-      bindings: [TeamScheduleBinding()],
+      bindings: [TeamCommunityBinding()],
       name: reservationsCheck,
       page: () => ReservationsCheckingPageDialog(),
     ),
     GetPage(
-      bindings: [TeamScheduleBinding()],
+      bindings: [TeamCommunityBinding()],
       name: sendingInvitation,
       page: () => SendingInvitationLog(),
     ),
     GetPage(
-      bindings: [TeamScheduleBinding()],
+      bindings: [TeamCommunityBinding()],
       name: sharedSchedule,
       page: () => TeamScheduleShare(),
     ),
     GetPage(
-      bindings: [TeamScheduleBinding()],
+      bindings: [TeamCommunityBinding()],
       name: smartKeyAvailable,
       page: () => SmartKeyAvailablePage(),
     ),
     GetPage(
-      bindings: [TeamScheduleBinding()],
+      bindings: [TeamCommunityBinding()],
       name: smartKeyUnavailable,
       page: () => SmartKeyNotAvailable(),
     ),
     GetPage(
-      bindings: [UserAuthBinding()],
+      bindings: [UserAccountBinding()],
       name: splashScreen,
       page: () => SplashLoading(),
     ),
     GetPage(
-      bindings: [TeamScheduleBinding()],
+      bindings: [TeamCommunityBinding()],
       name: unsubscribeConfirm,
       page: () => UnsubscriptionConfirm(),
     ),
     GetPage(
       page: () => UnsubscriptionConfirmWarnDialog(),
-      bindings: [TeamScheduleBinding()],
+      bindings: [TeamCommunityBinding()],
       name: unsubscribeWarn,
     ),
     GetPage(
-      bindings: [TeamScheduleBinding()],
+      bindings: [TeamCommunityBinding()],
       name: upcomingUnsubscription + "_filled",
       page: () => UpcomingUnsubscriptionFilled(),
     ),
     GetPage(
-      bindings: [TeamScheduleBinding()],
+      bindings: [TeamCommunityBinding()],
       name: upcomingUnsubscription + "_outlined",
       page: () => UpcomingUnsubscriptionOutlined(),
     ),
     GetPage(
-      bindings: [UserAuthBinding()],
+      bindings: [UserAccountBinding()],
       name: myProfile,
       page: () => MyProfilePage(),
     ),
     GetPage(
-      bindings: [UserAuthBinding()],
+      bindings: [UserAccountBinding()],
       name: profileInfoPage,
       page: () => ProfileInfoPage(),
     ),
     GetPage(
-      bindings: [UserAuthBinding()],
+      bindings: [UserAccountBinding()],
       name: appGateway,
       page: () => GatewayScreen(),
     )

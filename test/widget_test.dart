@@ -13,8 +13,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import 'package:my_app/main.dart';
-import 'package:my_app/core/app_export.dart';
+import 'package:wegooli_friends/core/app_export.dart';
+import 'package:wegooli_friends/main.dart';
 
 void main() {
   test('initializes Get bindings', () {

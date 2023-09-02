@@ -105,11 +105,6 @@ class GatewayScreen extends StatelessWidget {
                                             routeName: l10ns.teamScheduleShare),
                                         RouteItem(
                                             routeDestination:
-                                                AppRoutes.smartKeyUnavailable,
-                                            routeName:
-                                                l10ns.smartKeyNotAvailable),
-                                        RouteItem(
-                                            routeDestination:
                                                 AppRoutes.registeredCardList,
                                             routeName:
                                                 l10ns.registeredCreditCardList),

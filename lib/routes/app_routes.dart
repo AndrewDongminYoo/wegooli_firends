@@ -24,7 +24,6 @@ class AppRoutes {
   static const String sendingInvitation = '/sending_invitation';
   static const String sharedSchedule = '/shared_schedule';
   static const String smartKeyAvailable = '/smart_key_available';
-  static const String smartKeyUnavailable = '/smart_key_unavailable';
   static const String splashScreen = '/splash_screen';
   static const String unsubscribeConfirm = '/unsubscribe_confirm';
   static const String unsubscribeWarn = '/unsubscribe_warn';
@@ -120,11 +119,6 @@ class AppRoutes {
       bindings: [TeamCommunityBinding()],
       name: smartKeyAvailable,
       page: () => SmartKeyAvailablePage(),
-    ),
-    GetPage(
-      bindings: [TeamCommunityBinding()],
-      name: smartKeyUnavailable,
-      page: () => SmartKeyNotAvailable(),
     ),
     GetPage(
       bindings: [UserAccountBinding()],

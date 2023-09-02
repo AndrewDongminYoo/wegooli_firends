@@ -114,7 +114,7 @@ export 'gen/colors.gen.dart';
 export 'gen/fonts.gen.dart';
 export 'gen/l10n/app_localizations.dart';
 export 'gen/l10n/app_localizations_ko.dart';
-export 'main.dart';
+
 export 'routes/app_routes.dart';
 export 'screens/app_gateway/app_navigation_title.dart';
 export 'screens/app_gateway/check_ui_message.dart';

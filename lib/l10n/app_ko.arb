@@ -150,9 +150,15 @@
   "@haveNoAnySubscriptionInfo": {
     "description": "구독 해지 신청 후 다음 결제일이 지난 사용자 또는 구독을 신청한 적 없는 팀에 소속된 유저를 위한 문구"
   },
-  "hongGilDongIsUsingIt": "홍길동님이 사용중입니다.",
+  "hongGilDongIsUsingIt": "{username}님이 사용중입니다.",
   "@hongGilDongIsUsingIt": {
-    "description": "스마트키 화면 중 팀원이 이용 중인 차량에서 위험한 접근 방지."
+  "description": "스마트키 화면 중 팀원이 이용 중인 차량에서 위험한 접근 방지.",
+    "placeholders": {
+    "username": {
+      "type": "String",
+      "example": "람구리"
+    }
+  }
   },
   "honkTheHorn": "경적",
   "@honkTheHorn": {

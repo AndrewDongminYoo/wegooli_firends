@@ -297,8 +297,8 @@ abstract class Localized {
   /// 스마트키 화면 중 팀원이 이용 중인 차량에서 위험한 접근 방지.
   ///
   /// In ko, this message translates to:
-  /// **'홍길동님이 사용중입니다.'**
-  String get hongGilDongIsUsingIt;
+  /// **'{username}님이 사용중입니다.'**
+  String hongGilDongIsUsingIt(String username);
 
   /// 스마트키 버튼 중 하나.
   ///

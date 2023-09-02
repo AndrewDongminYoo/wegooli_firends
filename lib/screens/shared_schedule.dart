@@ -17,18 +17,4 @@ class TeamScheduleShare extends GetWidget<ScheduleController> {
             body: SharedCalendar(),
             bottomNavigationBar: BottomTabRouterBar()));
   }
-
-  /// Handling page based on route
-  Widget getCurrentPage(String currentRoute) {
-    switch (currentRoute) {
-      case AppRoutes.chatWithTeam:
-        return DashChatWithFriendsPage();
-      case AppRoutes.smartKeyAvailable:
-        return SmartKeyAvailablePage();
-      case AppRoutes.myProfile:
-        return MyProfilePage();
-      default:
-        return SharedCalendar();
-    }
-  }
 }

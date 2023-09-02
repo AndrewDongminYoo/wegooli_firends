@@ -109,7 +109,9 @@ class LocalizedKo extends Localized {
   String get haveNoAnySubscriptionInfo => '구독 정보가 없습니다.';
 
   @override
-  String get hongGilDongIsUsingIt => '홍길동님이 사용중입니다.';
+  String hongGilDongIsUsingIt(String username) {
+    return '$username님이 사용중입니다.';
+  }
 
   @override
   String get honkTheHorn => '경적';

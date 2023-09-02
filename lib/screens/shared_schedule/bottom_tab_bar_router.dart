@@ -12,8 +12,7 @@ class BottomTabRouterBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomBottomBar(onChanged: (BottomBarEnum type) {
       Future<dynamic>? navigateToCurrentRoute(BottomBarEnum type) {
-        print('type $type');
-
+        print('type ${type.toString()}');
         /// Handling route based on bottom click actions
         String getCurrentRoute(BottomBarEnum type) {
           switch (type) {
@@ -27,12 +26,24 @@ class BottomTabRouterBar extends StatelessWidget {
               return AppRoutes.sharedSchedule;
           }
         }
-
         print('getCurrentRoute(type): ${getCurrentRoute(type)}');
         return Get.toNamed(getCurrentRoute(type));
       }
 
       navigateToCurrentRoute(type);
     });
+  }
+  /// Handling page based on route
+  Widget getCurrentPage(String currentRoute) {
+    switch (currentRoute) {
+      case AppRoutes.chatWithTeam:
+        return DashChatWithFriendsPage();
+      case AppRoutes.smartKeyAvailable:
+        return SmartKeyAvailablePage();
+      case AppRoutes.myProfile:
+        return MyProfilePage();
+      default:
+        return SharedCalendar();
+    }
   }
 }

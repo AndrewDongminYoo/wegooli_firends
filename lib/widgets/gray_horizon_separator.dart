@@ -1,16 +1,20 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 🌎 Project imports:
-import '/core/app_export.dart';
-
-class GrayHorizonSeparator extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        height: getVerticalSize(8),
-        width: double.maxFinite,
-        margin: getMargin(top: 21),
-        decoration: BoxDecoration(color: appTheme.gray100));
-  }
+class GrayHorizonSeparator extends Divider {
+  const GrayHorizonSeparator({
+    Key? key,
+    double? borderWidth = 8.0,
+    double? gapHeight = 21.0,
+    Color? color = const Color(0XFFF6F7F7),
+    double? leftMargin = 0.0,
+    double? rightMargin = 0.0,
+  }) : super(
+          key: key,
+          color: color,
+          height: gapHeight,
+          indent: leftMargin,
+          endIndent: rightMargin,
+          thickness: borderWidth,
+        );
 }

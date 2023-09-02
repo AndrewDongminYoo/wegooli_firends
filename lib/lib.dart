@@ -195,6 +195,5 @@ export 'widgets/friends_by_wegooli.dart';
 export 'widgets/gray_horizon_separator.dart';
 export 'widgets/image_view.dart';
 export 'widgets/search_view.dart';
-export 'widgets/searching_page.dart';
 export 'widgets/switch.dart';
 export 'widgets/text_form_field.dart';

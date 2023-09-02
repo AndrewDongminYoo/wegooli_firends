@@ -6,35 +6,55 @@
   "@acceptAll": {
     "description": "모든 약관에 동의합니다."
   },
-  "acceptTerms": "약관 동의",
-  "@acceptTerms": {
-    "description": "상기 이용 약관에 동의합니다."
-  },
   "acceptanceComplete": "동의 완료",
   "@acceptanceComplete": {
     "description": "유저 등록 정보 제공 요청 후 소셜로그인 이후 동의한 약관 표시"
   },
-  "addACard": "카드 추가",
-  "@addACard": {
-    "description": "결제를 위한 개인 신용카드 등록"
+  "acceptTerms": "약관 동의",
+  "@acceptTerms": {
+    "description": "상기 이용 약관에 동의합니다."
   },
-  "addAnItineraryAdd": "일정 추가 +",
-  "@addAnItineraryAdd": {
+  "addAnSchedule": "일정 추가 +",
+  "@addAnSchedule": {
     "description": "캘린더 하단 일정 추가 버튼 텍스트"
+  },
+  "addressSearch": "주소 검색",
+  "@addressSearch": {
+    "description": ""
+  },
+  "alphanumericSpecialCharacterCombination612Characters": "영문/숫자/특수문자 조합 (6~12자)",
+  "@alphanumericSpecialCharacterCombination612Characters": {
+    "description": ""
   },
   "areYouSureYouWantToUnsubscribe": "{nickname}님 정말로 구독을\n해지하시겠습니까?",
   "@areYouSureYouWantToUnsubscribe": {
     "description": "The question at the bottom to confirm 'Warning'.$nickname is user's nickname or name",
     "placeholders": {
       "nickname": {
-        "type": "String",
-        "example": "람구리"
+        "example": "람구리",
+        "type": "String"
       }
     }
+  },
+  "authenticateYourself": "본인 인증",
+  "@authenticateYourself": {
+    "description": ""
+  },
+  "authenticationComplete": "인증 완료",
+  "@authenticationComplete": {
+    "description": ""
   },
   "available": "사용 가능합니다.",
   "@available": {
     "description": "스마트키 화면에서 현재 차량이 이용가능한 상태임을 알리는 텍스트"
+  },
+  "basicInfo": "기본 정보",
+  "@basicInfo": {
+    "description": ""
+  },
+  "batteryStatus": "배터리 상태",
+  "@batteryStatus": {
+    "description": ""
   },
   "cancel": "취소",
   "@cancel": {
@@ -43,6 +63,10 @@
   "cancelingASubscription": "구독 해지하기",
   "@cancelingASubscription": {
     "description": "팀의 서비스 구독 상태를 해지하며 다음 결제일까지만 서비스를 이용할 것입니다."
+  },
+  "cardAdditions": "카드 추가",
+  "@cardAdditions": {
+    "description": "결제를 위한 개인 신용카드 등록"
   },
   "cardNumber": "카드번호",
   "@cardNumber": {
@@ -56,6 +80,14 @@
   "@carInfo": {
     "description": "서비스 이용 중인 차량에 대한 정보 (주유 상태, 이용 중 여부, 차종 등)"
   },
+  "carMorning": "모닝",
+  "@carMorning": {
+    "description": "차량 모델명."
+  },
+  "carRayGen3": "레이 3세대",
+  "@carRayGen3": {
+    "description": "차량 모델명."
+  },
   "carRentalTermsAndConditionsRequired": "자동차 대여약관 (필수)",
   "@carRentalTermsAndConditionsRequired": {
     "description": "이용 약관 항목 중 하나"
@@ -63,6 +95,14 @@
   "carStatusInformation": "[Page] 차량 상세정보",
   "@carStatusInformation": {
     "description": "[Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨."
+  },
+  "carType": "차종",
+  "@carType": {
+    "description": "차량의 종류"
+  },
+  "cellPhoneInformation": "휴대폰 정보",
+  "@cellPhoneInformation": {
+    "description": "사용자 휴대폰 디바이스 정보"
   },
   "changeYourPersonalInformation": "개인정보 변경하기",
   "@changeYourPersonalInformation": {
@@ -80,6 +120,10 @@
   "@confirm": {
     "description": "알겠습니다/승인합니다/동의합니다/확인했습니다."
   },
+  "confirmPassword": "비밀번호 확인",
+  "@confirmPassword": {
+    "description": "비밀번호 오입력 방지를 위한 비밀번호 텍스트 반복 입력"
+  },
   "consentToCollectionAndUseOfVehicleLocationInfo": "차량 위치정보의 수집 이용 제공 동의 (필수)",
   "@consentToCollectionAndUseOfVehicleLocationInfo": {
     "description": "이용 약관 항목 중 하나"
@@ -94,23 +138,39 @@
   },
   "digitOf13SocialSecurityNumber": "주민등록번호 13자리",
   "@digitOf13SocialSecurityNumber": {
-    "description": ""
+    "description": "주민등록번호 13자리 입력 헬프 텍스트 13자리 yymmdd-xxxxxxx"
   },
   "driverSLicenseRegistration": "운전면허 등록",
   "@driverSLicenseRegistration": {
-    "description": ""
+    "description": "개인 사용자 운전면허 촬영 등록하기"
   },
   "edit": "수정",
   "@edit": {
     "description": "메세지, 일정 내용, 개인정보 등 수정"
   },
-  "eligibilityPeriodExpirationDate": "적성기간 만료일",
-  "@eligibilityPeriodExpirationDate": {
+  "eligibilityPeriodTestExpirationDate": "적성기간 만료일",
+  "@eligibilityPeriodTestExpirationDate": {
     "description": "운전면허 적성검사 유효기간 만료일"
   },
-  "enterYourAptitudePeriodTestExpirationDate": "적성기간 만료일(숫자만)을 입력해주세요.",
-  "@enterYourAptitudePeriodTestExpirationDate": {
+  "engineOilChangedDate": "엔진오일 점검일",
+  "@engineOilChangedDate": {
+    "description": "자동차 엔진오일 교체 및 엔진 상태 점검일"
+  },
+  "enterANicknameUpTo10Characters": "닉네임 입력 (10자 이내)",
+  "@enterANicknameUpTo10Characters": {
+    "description": "팀원 닉네임을 입력하는 인풋 비어있을 시 나타나는 헬프 텍스트"
+  },
+  "enterEmailAddress": "이메일 주소 입력",
+  "@enterEmailAddress": {
+    "description": "사용자의 이메일 주소를 입력받는 인풋(가입 이후 변경 가능)"
+  },
+  "enterYourEligibilityPeriodTestExpirationDate": "적성기간 만료일(숫자만)을 입력해주세요.",
+  "@enterYourEligibilityPeriodTestExpirationDate": {
     "description": "20240912와 같은 형식으로 적성기간 연월일 입력 요구."
+  },
+  "enterYourInvitationCode": "리더에게 받은 초대코드를 입력하세요.",
+  "@enterYourInvitationCode": {
+    "description": "팀원 초대 코드 입력 받는 부분 헬프 텍스트"
   },
   "enterYourVerificationNumber": "인증 번호를 입력하세요.",
   "@enterYourVerificationNumber": {
@@ -124,45 +184,55 @@
   "@expirationDate": {
     "description": "면허나 승인, 인가 등의 유효함이 끝나는 날짜"
   },
+  "filledIn": "입력 완료",
+  "@filledIn": {
+    "description": "모든 입력을 완료하였음을 확인함"
+  },
   "first2DigitsOfCardPassword": "카드 비밀번호 앞 2자리",
   "@first2DigitsOfCardPassword": {
     "description": "토스페이에 보낼 데이터 중 신용카드 비밀번호 앞 2자리"
   },
-  "remainingFuelLevel": "{oil} {remain}",
-  "@remainingFuelLevel": {
-    "description": "원활한 이용을 위해 남은 연료의 양 표기 및 기록",
-    "placeholders": {
-      "oil": {
-        "type": "String",
-        "example": "휘발유"
-      },
-      "remain": {
-        "type": "String",
-        "example": "20%"
-      }
-    }
+  "fuel": "연료",
+  "@fuel": {
+    "description": "자동차 연료 종류의 표기 텍스트"
+  },
+  "gasoline": "휘발유",
+  "@gasoline": {
+    "description": "자동차 연료의 한 종류"
   },
   "getStarted": "시작하기",
   "@getStarted": {
     "description": "서비스 첫 이용 시 유저 행동 유도"
   },
+  "good": "양호",
+  "@good": {
+    "description": "상태 표기 텍스트. 자동차 상태를 '양호'로 나타냄"
+  },
   "haveNoAnySubscriptionInfo": "구독 정보가 없습니다.",
   "@haveNoAnySubscriptionInfo": {
     "description": "구독 해지 신청 후 다음 결제일이 지난 사용자 또는 구독을 신청한 적 없는 팀에 소속된 유저를 위한 문구"
   },
+  "homeAddress": "집 주소",
+  "@homeAddress": {
+    "description": "사용자의 주거지 주소"
+  },
   "hongGilDongIsUsingIt": "{username}님이 사용중입니다.",
   "@hongGilDongIsUsingIt": {
-  "description": "스마트키 화면 중 팀원이 이용 중인 차량에서 위험한 접근 방지.",
+    "description": "스마트키 화면 중 팀원이 이용 중인 차량에서 위험한 접근 방지.",
     "placeholders": {
-    "username": {
-      "type": "String",
-      "example": "람구리"
+      "username": {
+        "example": "람구리",
+        "type": "String"
+      }
     }
-  }
   },
   "honkTheHorn": "경적",
   "@honkTheHorn": {
     "description": "스마트키 버튼 중 하나."
+  },
+  "id": "아이디",
+  "@id": {
+    "description": "사용자의 서비스 이용에 필요한 아이디"
   },
   "invitationCode": "초대 코드",
   "@invitationCode": {
@@ -175,6 +245,10 @@
   "licenseIssueDate": "면허발급일자",
   "@licenseIssueDate": {
     "description": "운전면허 발급된 날짜"
+  },
+  "licensePlatePlaceholder": "12가 3456",
+  "@licensePlatePlaceholder": {
+    "description": "차량 번호판 4자리 숫자/영문 입력 헬프 텍스트"
   },
   "licenseType": "면허증 종류",
   "@licenseType": {
@@ -212,9 +286,25 @@
   "@loginWithIdAndPassword": {
     "description": "[Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨."
   },
+  "loremipsum": "아무거나저거저거이거이거",
+  "@loremipsum": {
+    "description": "아무 뜻 없는 텍스트 ...Lorem ipsum"
+  },
+  "maintenanceStatus": "정비 상태",
+  "@maintenanceStatus": {
+    "description": "자동차 최근 정비 상태 확인"
+  },
+  "modelName": "모델명",
+  "@modelName": {
+    "description": "차량 모델명 정보"
+  },
   "monthlyPayment": "월 결제 금액",
   "@monthlyPayment": {
     "description": "사용자가 서비스 이용을 위해 매월 지불하는 요금"
+  },
+  "myInfo": "나의 정보",
+  "@myInfo": {
+    "description": "사용자 개인정보 화면 헬프 텍스트 및 네비게이션 버튼 텍스트"
   },
   "myPage": "마이페이지",
   "@myPage": {
@@ -224,13 +314,41 @@
   "@myProfileScreen": {
     "description": "[Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨."
   },
+  "name": "이름",
+  "@name": {
+    "description": "사용자의 이름"
+  },
+  "name1": "람구리",
+  "@name1": {
+    "description": "TODO: 이름 예시. 프로덕션 앱에 나가면 안됨!!"
+  },
+  "name2": "김영희",
+  "@name2": {
+    "description": "TODO: 이름 예시. 프로덕션 앱에 나가면 안됨!!"
+  },
+  "name3": "홍길동",
+  "@name3": {
+    "description": "TODO: 이름 예시. 프로덕션 앱에 나가면 안됨!!"
+  },
+  "name4": "김희영",
+  "@name4": {
+    "description": "TODO: 이름 예시. 프로덕션 앱에 나가면 안됨!!"
+  },
   "nickname": "닉네임",
   "@nickname": {
     "description": "별명 또는 사용자 정의 닉네임"
   },
+  "numberOfPeople": "인원",
+  "@numberOfPeople": {
+    "description": "차량을 함께 사용하는 팀의 초대된 인원 수 (최대 4명)"
+  },
   "openDoor": "문열기",
   "@openDoor": {
     "description": "스마트키 버튼 중 하나."
+  },
+  "optionalInvitaionCode": "(선택) 초대코드",
+  "@optionalInvitaionCode": {
+    "description": "가입 시 초대받은 코드를 입력하거나 나중에 입력할 수 있음"
   },
   "password": "비밀번호",
   "@password": {
@@ -240,6 +358,10 @@
   "@paymentDueDate": {
     "description": "다음 구독 서비스 결제 예정일"
   },
+  "personalInfo": "개인 정보",
+  "@personalInfo": {
+    "description": "사용자의 신상과 관련된 정보"
+  },
   "pleaseEnterYourLicenseIssueDateOnlyNumbers": "면허발급일자(숫자만)를 입력해주세요.",
   "@pleaseEnterYourLicenseIssueDateOnlyNumbers": {
     "description": "면허증이 발급된 날짜를 입력받는 인풋의 헬프 텍스트"
@@ -248,17 +370,25 @@
   "@pleaseEnterYourLicenseNumbersOnly": {
     "description": "면허증의 고유번호를 입력받는 인풋의 헬프 텍스트"
   },
+  "pleaseEnterYourName": "이름을 입력해주세요.",
+  "@pleaseEnterYourName": {
+    "description": "사용자의 이름 설정시에 나타나는 인풋 헬프 텍스트."
+  },
   "pleaseSelectYourLicenseType": "면허증 종류를 선택하세요.",
   "@pleaseSelectYourLicenseType": {
     "description": "면허종류 중 하나를 선택하는 드롭다운의 헬프 텍스트"
+  },
+  "primaryAddress": "기본주소",
+  "@primaryAddress": {
+    "description": "우편번호 검색에서 기준이 되는 주소"
   },
   "privacyPolicyRequiredConsent": "개인정보 처리방침 (필수)",
   "@privacyPolicyRequiredConsent": {
     "description": "이용 약관 항목 중 하나"
   },
-  "rayGen3": "레이 3세대",
-  "@rayGen3": {
-    "description": "차량 모델명."
+  "reEnterYourPassword": "비밀번호 재입력",
+  "@reEnterYourPassword": {
+    "description": "비밀번호 입력 실수 방지를 위한 반복 입력 텍스트 필드의 플레이스 홀더"
   },
   "region": "지역",
   "@region": {
@@ -276,13 +406,27 @@
   "@registrationComplete": {
     "description": "개인 신용카드/ 운전면허증 등록 완료 안내 텍스트"
   },
+  "remainingFuelLevel": "{oil} {remain}",
+  "@remainingFuelLevel": {
+    "description": "원활한 이용을 위해 남은 연료의 양 표기 및 기록",
+    "placeholders": {
+      "oil": {
+        "example": "휘발유",
+        "type": "String"
+      },
+      "remain": {
+        "example": "20%",
+        "type": "String"
+      }
+    }
+  },
   "rentalTime": "대여시간",
   "@rentalTime": {
     "description": "차량 대여 시간 경과"
   },
   "reportAnIncident": "사고 접수",
   "@reportAnIncident": {
-    "description": "스마트키 화면 중 플로팅 액션 버튼 텍스트"
+    "description": "사고 발생 후 운영센터 또는 고객센터와 연결하는 등의 기능이 있는 텍스트 버튼 텍스트"
   },
   "reservationDatetimePicker": "[BottomSheet] 예약 날짜 선택기",
   "@reservationDatetimePicker": {
@@ -292,10 +436,6 @@
   "@reservationsCheckingPage": {
     "description": "[PopupDialog]는 원활한 개발을 위한 게이트웨이 모달 띄우기 버튼에 사용됨."
   },
-  "settings": "설정",
-  "@settings": {
-    "description": "사용자 개인정보 설정, 앱 설정 등에 사용"
-  },
   "schedule": "일정",
   "@schedule": {
     "description": "캘린더 상단 제목 텍스트"
@@ -304,13 +444,39 @@
   "@scheduleAnUnsubscribe": {
     "description": "서비스 이용 후 다음 결제 예정일에 자동으로 구독 해지하기"
   },
+  "seater": "{seat} 인승",
+  "@seater": {
+    "description": "[차종], 좌석 장착 개수",
+    "placeholders": {
+      "seat": {
+        "example": "4",
+        "type": "int"
+      }
+    }
+  },
+  "segmentB": "소형차",
+  "@segmentB": {
+    "description": "[차종], 후원차종"
+  },
+  "sendAuthorizationNumber": "인증번호 발송",
+  "@sendAuthorizationNumber": {
+    "description": "휴대폰 인증번호를 요청하는 버튼 텍스트"
+  },
   "sendingCrewInvitation": "[PopupDialog] 팀 초대하기",
   "@sendingCrewInvitation": {
     "description": "[PopupDialog]는 원활한 개발을 위한 게이트웨이 모달 띄우기 버튼에 사용됨."
   },
+  "settings": "설정",
+  "@settings": {
+    "description": "사용자 개인정보 설정, 앱 설정 등에 사용"
+  },
   "signIn": "로그인",
   "@signIn": {
     "description": "서비스에 접속하기"
+  },
+  "signOut": "로그아웃",
+  "@signOut": {
+    "description": "서비스 접속 종료하기"
   },
   "signUp": "회원가입",
   "@signUp": {
@@ -365,16 +531,16 @@
     "description": "구독 해지 신청 후 남은 이용기간 안내 텍스트",
     "placeholders": {
       "y": {
-        "type": "int",
-        "example": "2023"
+        "example": "2023",
+        "type": "int"
       },
       "m": {
-        "type": "int",
-        "example": "09"
+        "example": "09",
+        "type": "int"
       },
       "d": {
-        "type": "int",
-        "example": "11"
+        "example": "11",
+        "type": "int"
       }
     }
   },
@@ -386,13 +552,29 @@
   "@teamScheduleShare": {
     "description": "[Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨."
   },
+  "telecomCarrier": "통신사",
+  "@telecomCarrier": {
+    "description": "사용자 휴대전화 통신사 (ex, SKT, LGU+, KT 등) NOTE: 알뜰폰 고려해야 할까?"
+  },
   "termsOfServiceRequiredAgreement": "서비스 이용약관 (필수)",
   "@termsOfServiceRequiredAgreement": {
     "description": "이용 약관 항목 중 하나"
   },
+  "test": "테스트",
+  "@test": {
+    "description": "테스트용 임시 문구"
+  },
+  "tireInspectionDate": "타이어 점검일",
+  "@tireInspectionDate": {
+    "description": "자동차 타이어 마모 상태 등 종합 점검일"
+  },
   "turnOnHazardLights": "비상등",
   "@turnOnHazardLights": {
     "description": "스마트키 버튼 중 하나. 특수 상황에 사용."
+  },
+  "unsubscribeCancel": "해지 취소",
+  "@unsubscribeCancel": {
+    "description": "구독 해지 신청 이후, 다음 결제일까지 서비스를 계속 사용할 수 있으며, 이때 해지 예약을 취소할 수도 있음"
   },
   "unsubscriptionConfirm": "[PopupDialog] 구독 해지",
   "@unsubscriptionConfirm": {
@@ -414,13 +596,33 @@
   "@useOfPersonalInfoForMarketing": {
     "description": "이용 약관 항목 중 하나"
   },
+  "vehicleNumber": "차량 번호",
+  "@vehicleNumber": {
+    "description": "자동차 등록 번호판. ex. 12가 3456"
+  },
   "viewSchedules": "일정 확인",
   "@viewSchedules": {
     "description": "차량 이용 일정 확인하기"
   },
+  "withdrawal": "탈퇴",
+  "@withdrawal": {
+    "description": "사용자 가입 해지"
+  },
+  "withdrawingMember": "회원 탈퇴",
+  "@withdrawingMember": {
+    "description": "사용자 가입 해지"
+  },
+  "wouldYouLikeToRequestToBeRemovedFromWegooliFriends": "위굴리 프렌즈의 회원 탈퇴 요청하시겠습니까? 회원 탈퇴는 7일간 진행되며 7일 후엔 완전히 삭제됩니다.",
+  "@wouldYouLikeToRequestToBeRemovedFromWegooliFriends": {
+    "description": "가입 해지 모달 안내 문구2"
+  },
   "youCanCancelAnytime": "해지 시 위굴리 프렌즈의 모든 혜택을 잃게 됩니다. 남은 기간 내에 해지를 취소하실 수 있습니다.",
   "@youCanCancelAnytime": {
-    "description": "해지 모달 안내 문구"
+    "description": "가입 해지 모달 안내 문구1"
+  },
+  "youCanJoinTheTeamRightAway": "바로 팀에 들어갈 수 있습니다.",
+  "@youCanJoinTheTeamRightAway": {
+    "description": "가입 시 초대코드 입력을 통해 팀 가입 또는 이메일 신청 후 팀 가입 대기 가능 여부 안내 문구"
   },
   "youHaveNoAccount": "계정이 없으신가요?",
   "@youHaveNoAccount": {
@@ -429,5 +631,13 @@
   "yourRegistrationHasBeenCompleted": "회원가입이\n완료되었습니다.",
   "@yourRegistrationHasBeenCompleted": {
     "description": "가입 프로세스 최종 완료 문구"
+  },
+  "yourZipCodeIsRequired": "우편번호는 필수 입력값입니다.",
+  "@yourZipCodeIsRequired": {
+    "description": "우편번호 미입력 시 유저에게 보여줄 오류 문구"
+  },
+  "zipCode": "우편번호",
+  "@zipCode": {
+    "description": "주소 검색을 위한 우편번호 입력 인풋 라벨 텍스트"
   }
 }

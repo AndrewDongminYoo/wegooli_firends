@@ -9,16 +9,19 @@ class LocalizedKo extends Localized {
   String get acceptAll => '전체 동의';
 
   @override
-  String get acceptTerms => '약관 동의';
-
-  @override
   String get acceptanceComplete => '동의 완료';
 
   @override
-  String get addACard => '카드 추가';
+  String get acceptTerms => '약관 동의';
 
   @override
-  String get addAnItineraryAdd => '일정 추가 +';
+  String get addAnSchedule => '일정 추가 +';
+
+  @override
+  String get addressSearch => '주소 검색';
+
+  @override
+  String get alphanumericSpecialCharacterCombination612Characters => '영문/숫자/특수문자 조합 (6~12자)';
 
   @override
   String areYouSureYouWantToUnsubscribe(String nickname) {
@@ -26,13 +29,28 @@ class LocalizedKo extends Localized {
   }
 
   @override
+  String get authenticateYourself => '본인 인증';
+
+  @override
+  String get authenticationComplete => '인증 완료';
+
+  @override
   String get available => '사용 가능합니다.';
+
+  @override
+  String get basicInfo => '기본 정보';
+
+  @override
+  String get batteryStatus => '배터리 상태';
 
   @override
   String get cancel => '취소';
 
   @override
   String get cancelingASubscription => '구독 해지하기';
+
+  @override
+  String get cardAdditions => '카드 추가';
 
   @override
   String get cardNumber => '카드번호';
@@ -44,10 +62,22 @@ class LocalizedKo extends Localized {
   String get carInfo => '차량 정보';
 
   @override
+  String get carMorning => '모닝';
+
+  @override
+  String get carRayGen3 => '레이 3세대';
+
+  @override
   String get carRentalTermsAndConditionsRequired => '자동차 대여약관 (필수)';
 
   @override
   String get carStatusInformation => '[Page] 차량 상세정보';
+
+  @override
+  String get carType => '차종';
+
+  @override
+  String get cellPhoneInformation => '휴대폰 정보';
 
   @override
   String get changeYourPersonalInformation => '개인정보 변경하기';
@@ -60,6 +90,9 @@ class LocalizedKo extends Localized {
 
   @override
   String get confirm => '확인';
+
+  @override
+  String get confirmPassword => '비밀번호 확인';
 
   @override
   String get consentToCollectionAndUseOfVehicleLocationInfo => '차량 위치정보의 수집 이용 제공 동의 (필수)';
@@ -80,10 +113,22 @@ class LocalizedKo extends Localized {
   String get edit => '수정';
 
   @override
-  String get eligibilityPeriodExpirationDate => '적성기간 만료일';
+  String get eligibilityPeriodTestExpirationDate => '적성기간 만료일';
 
   @override
-  String get enterYourAptitudePeriodTestExpirationDate => '적성기간 만료일(숫자만)을 입력해주세요.';
+  String get engineOilChangedDate => '엔진오일 점검일';
+
+  @override
+  String get enterANicknameUpTo10Characters => '닉네임 입력 (10자 이내)';
+
+  @override
+  String get enterEmailAddress => '이메일 주소 입력';
+
+  @override
+  String get enterYourEligibilityPeriodTestExpirationDate => '적성기간 만료일(숫자만)을 입력해주세요.';
+
+  @override
+  String get enterYourInvitationCode => '리더에게 받은 초대코드를 입력하세요.';
 
   @override
   String get enterYourVerificationNumber => '인증 번호를 입력하세요.';
@@ -95,18 +140,28 @@ class LocalizedKo extends Localized {
   String get expirationDate => '유효기간';
 
   @override
+  String get filledIn => '입력 완료';
+
+  @override
   String get first2DigitsOfCardPassword => '카드 비밀번호 앞 2자리';
 
   @override
-  String remainingFuelLevel(String oil, String remain) {
-    return '$oil $remain';
-  }
+  String get fuel => '연료';
+
+  @override
+  String get gasoline => '휘발유';
 
   @override
   String get getStarted => '시작하기';
 
   @override
+  String get good => '양호';
+
+  @override
   String get haveNoAnySubscriptionInfo => '구독 정보가 없습니다.';
+
+  @override
+  String get homeAddress => '집 주소';
 
   @override
   String hongGilDongIsUsingIt(String username) {
@@ -117,6 +172,9 @@ class LocalizedKo extends Localized {
   String get honkTheHorn => '경적';
 
   @override
+  String get id => '아이디';
+
+  @override
   String get invitationCode => '초대 코드';
 
   @override
@@ -124,6 +182,9 @@ class LocalizedKo extends Localized {
 
   @override
   String get licenseIssueDate => '면허발급일자';
+
+  @override
+  String get licensePlatePlaceholder => '12가 3456';
 
   @override
   String get licenseType => '면허증 종류';
@@ -153,7 +214,19 @@ class LocalizedKo extends Localized {
   String get loginWithIdAndPassword => '[Page] ID/PASSWORD 로그인';
 
   @override
+  String get loremipsum => '아무거나저거저거이거이거';
+
+  @override
+  String get maintenanceStatus => '정비 상태';
+
+  @override
+  String get modelName => '모델명';
+
+  @override
   String get monthlyPayment => '월 결제 금액';
+
+  @override
+  String get myInfo => '나의 정보';
 
   @override
   String get myPage => '마이페이지';
@@ -162,10 +235,31 @@ class LocalizedKo extends Localized {
   String get myProfileScreen => '[Page] 마이페이지';
 
   @override
+  String get name => '이름';
+
+  @override
+  String get name1 => '람구리';
+
+  @override
+  String get name2 => '김영희';
+
+  @override
+  String get name3 => '홍길동';
+
+  @override
+  String get name4 => '김희영';
+
+  @override
   String get nickname => '닉네임';
 
   @override
+  String get numberOfPeople => '인원';
+
+  @override
   String get openDoor => '문열기';
+
+  @override
+  String get optionalInvitaionCode => '(선택) 초대코드';
 
   @override
   String get password => '비밀번호';
@@ -174,19 +268,28 @@ class LocalizedKo extends Localized {
   String get paymentDueDate => '결제 예정일';
 
   @override
+  String get personalInfo => '개인 정보';
+
+  @override
   String get pleaseEnterYourLicenseIssueDateOnlyNumbers => '면허발급일자(숫자만)를 입력해주세요.';
 
   @override
   String get pleaseEnterYourLicenseNumbersOnly => '면허증번호(숫자만)를 입력해주세요.';
 
   @override
+  String get pleaseEnterYourName => '이름을 입력해주세요.';
+
+  @override
   String get pleaseSelectYourLicenseType => '면허증 종류를 선택하세요.';
+
+  @override
+  String get primaryAddress => '기본주소';
 
   @override
   String get privacyPolicyRequiredConsent => '개인정보 처리방침 (필수)';
 
   @override
-  String get rayGen3 => '레이 3세대';
+  String get reEnterYourPassword => '비밀번호 재입력';
 
   @override
   String get region => '지역';
@@ -201,6 +304,11 @@ class LocalizedKo extends Localized {
   String get registrationComplete => '등록 완료';
 
   @override
+  String remainingFuelLevel(String oil, String remain) {
+    return '$oil $remain';
+  }
+
+  @override
   String get rentalTime => '대여시간';
 
   @override
@@ -213,19 +321,33 @@ class LocalizedKo extends Localized {
   String get reservationsCheckingPage => '[PopupDialog] 예약 확인 페이지';
 
   @override
-  String get settings => '설정';
-
-  @override
   String get schedule => '일정';
 
   @override
   String get scheduleAnUnsubscribe => '구독 해지 예약';
 
   @override
+  String seater(int seat) {
+    return '$seat 인승';
+  }
+
+  @override
+  String get segmentB => '소형차';
+
+  @override
+  String get sendAuthorizationNumber => '인증번호 발송';
+
+  @override
   String get sendingCrewInvitation => '[PopupDialog] 팀 초대하기';
 
   @override
+  String get settings => '설정';
+
+  @override
   String get signIn => '로그인';
+
+  @override
+  String get signOut => '로그아웃';
 
   @override
   String get signUp => '회원가입';
@@ -275,10 +397,22 @@ class LocalizedKo extends Localized {
   String get teamScheduleShare => '[Page] 팀 스케줄 공유';
 
   @override
+  String get telecomCarrier => '통신사';
+
+  @override
   String get termsOfServiceRequiredAgreement => '서비스 이용약관 (필수)';
 
   @override
+  String get test => '테스트';
+
+  @override
+  String get tireInspectionDate => '타이어 점검일';
+
+  @override
   String get turnOnHazardLights => '비상등';
+
+  @override
+  String get unsubscribeCancel => '해지 취소';
 
   @override
   String get unsubscriptionConfirm => '[PopupDialog] 구독 해지';
@@ -296,14 +430,35 @@ class LocalizedKo extends Localized {
   String get useOfPersonalInfoForMarketing => '마케팅 목적 개인정보 수집/이용 (선택)';
 
   @override
+  String get vehicleNumber => '차량 번호';
+
+  @override
   String get viewSchedules => '일정 확인';
 
   @override
+  String get withdrawal => '탈퇴';
+
+  @override
+  String get withdrawingMember => '회원 탈퇴';
+
+  @override
+  String get wouldYouLikeToRequestToBeRemovedFromWegooliFriends => '위굴리 프렌즈의 회원 탈퇴 요청하시겠습니까? 회원 탈퇴는 7일간 진행되며 7일 후엔 완전히 삭제됩니다.';
+
+  @override
   String get youCanCancelAnytime => '해지 시 위굴리 프렌즈의 모든 혜택을 잃게 됩니다. 남은 기간 내에 해지를 취소하실 수 있습니다.';
+
+  @override
+  String get youCanJoinTheTeamRightAway => '바로 팀에 들어갈 수 있습니다.';
 
   @override
   String get youHaveNoAccount => '계정이 없으신가요?';
 
   @override
   String get yourRegistrationHasBeenCompleted => '회원가입이\n완료되었습니다.';
+
+  @override
+  String get yourZipCodeIsRequired => '우편번호는 필수 입력값입니다.';
+
+  @override
+  String get zipCode => '우편번호';
 }

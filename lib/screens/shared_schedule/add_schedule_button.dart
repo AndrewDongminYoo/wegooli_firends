@@ -8,7 +8,7 @@ class AddScheduleButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomElevatedButton(
-        text: l10ns.addAnItineraryAdd,
+        text: l10ns.addAnSchedule,
         margin: getMargin(left: 16, top: 30, right: 16),
         buttonStyle: CustomButtonStyles.fillPrimaryC26.copyWith(
             fixedSize: MaterialStateProperty.all<Size>(

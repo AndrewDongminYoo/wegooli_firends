@@ -29,7 +29,7 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              CustomInputLabel(labelText: '휴대폰 정보'),
+              CustomInputLabel(labelText: l10ns.cellPhoneInformation),
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
                 CustomDropDown(
                     width: getHorizontalSize(104),
@@ -37,7 +37,7 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
                         Icon(Icons.arrow_drop_down, color: appTheme.gray50003),
 
                     /// `initialValue`가 `true`인 경우 `hintText`는 보이지 않습니다.
-                    hintText: "통신사",
+                    hintText: l10ns.telecomCarrier,
                     initialValue: true,
                     margin: getMargin(top: 4),
                     items: telecoms,
@@ -73,7 +73,7 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
                         onTap: () {
                           widget.controller.sendVerificationCode();
                         },
-                        text: "인증번호 발송",
+                        text: l10ns.sendAuthorizationNumber,
                         margin: getMargin(top: 10),
                         buttonStyle: CustomButtonStyles.fillPrimaryC5.copyWith(
                             fixedSize: MaterialStateProperty.all<Size>(

@@ -18,16 +18,16 @@ class MembersList extends StatelessWidget {
         padding: getPadding(left: 16, top: 12),
         child: Row(children: [
           MemberAvatar(
-              name: '홍길동',
+              name: l10ns.name2,
               avatarImagePath: Assets.images.imgAvatar2.path,
               personalColor: '#FFCC08'),
           MemberAvatar(
-              name: '김영희',
+              name: l10ns.name3,
               avatarImagePath: Assets.images.imgAvatar3.path,
               personalColor: '#FF7134'),
           MemberAvatar(
-              name: '김희영',
-              avatarImagePath: Assets.images.imgAvatar1.path,
+              name: l10ns.name4,
+              avatarImagePath: Assets.images.imgAvatar4.path,
               personalColor: '#7951EA')
         ]));
   }

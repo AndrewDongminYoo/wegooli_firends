@@ -7,6 +7,9 @@ import 'package:flutter/material.dart';
 // 📦 Package imports:
 import 'package:table_calendar/table_calendar.dart';
 
+// 🌎 Project imports:
+import 'package:wegooli_friends/core/app_export.dart';
+
 /// 스케쥴 이벤트의 예시입니다.
 /// [/data/models/schedule_model.dart] 참조
 class Schedule {
@@ -39,8 +42,8 @@ final _kEventSource = Map.fromIterable(List.generate(50, (index) => index),
   ..addAll({
     kToday: [
       // TODO: 실제 데이터로 변경
-      Schedule(accountId: '김영희'),
-      Schedule(accountId: '홍길동'),
+      Schedule(accountId: l10ns.name2),
+      Schedule(accountId: l10ns.name3),
     ],
   });
 

@@ -125,18 +125,9 @@ class GatewayScreen extends StatelessWidget {
                                                 l10ns.unsubscriptionConfirm),
                                         RouteItem(
                                             routeDestination: AppRoutes
-                                                    .upcomingUnsubscription +
-                                                '_outlined',
+                                                    .upcomingUnsubscription,
                                             routeName: l10ns
-                                                    .upcomingUnsubscriptionInfo +
-                                                "(1)"),
-                                        RouteItem(
-                                            routeDestination: AppRoutes
-                                                    .upcomingUnsubscription +
-                                                '_filled',
-                                            routeName: l10ns
-                                                    .upcomingUnsubscriptionView +
-                                                "(2)"),
+                                                    .upcomingUnsubscriptionInfo),
                                         RouteItem(
                                             routeDestination:
                                                 AppRoutes.noSubscription,

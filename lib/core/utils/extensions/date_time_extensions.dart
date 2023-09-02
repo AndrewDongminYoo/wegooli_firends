@@ -16,4 +16,13 @@ extension DateTimeExtension on DateTime {
     }
     return DateFormat(pattern, locale).format(this);
   }
+
+  /// 이 함수는 주어진 날짜(this)가 다른 두 날짜 사이에 있는지 확인
+  ///
+  /// Args:
+  ///   past [DateTime]: 과거 특정 시점
+  ///   then [DateTime]: 미래 특정 날짜
+  bool isBetween(DateTime past, DateTime then) {
+    return !this.isAfter(then) && !this.isBefore(past);
+  }
 }

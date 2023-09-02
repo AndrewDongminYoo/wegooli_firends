@@ -143,13 +143,8 @@ class AppRoutes {
     ),
     GetPage(
       bindings: [TeamCommunityBinding()],
-      name: upcomingUnsubscription + "_filled",
-      page: () => UpcomingUnsubscriptionFilled(),
-    ),
-    GetPage(
-      bindings: [TeamCommunityBinding()],
-      name: upcomingUnsubscription + "_outlined",
-      page: () => UpcomingUnsubscriptionOutlined(),
+      name: upcomingUnsubscription,
+      page: () => UpcomingUnsubscription(),
     ),
     GetPage(
       bindings: [UserAccountBinding()],

@@ -6,15 +6,22 @@ import 'package:intl/intl.dart';
 
 /// [CurrentInputFormatter] 클래스는 입력 형식을 통화로 지정하는 `Dart`의 [TextInputFormatter]의 하위 클래스
 class CurrencyInputFormatter extends TextInputFormatter {
-  String? locale;
-  String? name;
-  int? decimalDigits;
+  final String locale;
+  final String name;
+  final int decimalDigits;
 
-  CurrencyInputFormatter({
-    this.locale,
-    this.name,
-    this.decimalDigits,
+  const CurrencyInputFormatter({
+    this.locale = "ko-KR",
+    this.name = "KRW",
+    this.decimalDigits = 0,
   });
+
+  static final NumberFormat formatter = NumberFormat.currency(
+        locale: "ko-KR",
+        name: "KRW",
+        symbol: "₩",
+        decimalDigits: 0
+  );
 
   @override
   TextEditingValue formatEditUpdate(
@@ -39,10 +46,6 @@ class CurrencyInputFormatter extends TextInputFormatter {
     if (doubleValue == null) {
       return value;
     }
-    final formatter = NumberFormat.simpleCurrency(
-        locale: locale ?? "ko-KR",
-        name: name,
-        decimalDigits: decimalDigits ?? 0);
     String newText = formatter.format(doubleValue);
     return newText;
   }
@@ -56,10 +59,6 @@ class CurrencyInputFormatter extends TextInputFormatter {
     if (value.isEmpty) {
       return value;
     }
-    final formatter = NumberFormat.simpleCurrency(
-        locale: locale ?? "ko-KR",
-        name: name,
-        decimalDigits: decimalDigits ?? 0);
     String result = value
         .replaceAll(formatter.currencySymbol, '')
         .replaceAll(formatter.negativePrefix, '')

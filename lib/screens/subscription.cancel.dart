@@ -8,9 +8,10 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 class UnsubscriptionConfirm extends StatelessWidget {
+  final UserController controller = UserController.to;
   @override
   Widget build(BuildContext context) {
-    DateTime expireDate = DateTime(2023, 08, 04);
+    DateTime expireDate = DateTime.tryParse(controller.carConnection.endAt ?? '') ?? DateTime.now();
     mediaQueryData = MediaQuery.of(context);
     return SafeArea(
         child: Scaffold(
@@ -30,7 +31,7 @@ class UnsubscriptionConfirm extends StatelessWidget {
                           width: getHorizontalSize(179),
                           margin: getMargin(top: 50),
                           child: Text(
-                              l10ns.areYouSureYouWantToUnsubscribe('유동민'),
+                              l10ns.areYouSureYouWantToUnsubscribe(controller.currentUser.value.name ?? l10ns.name4),
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.center,

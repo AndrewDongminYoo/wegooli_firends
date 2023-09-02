@@ -3,147 +3,16 @@ import 'package:flutter/material.dart';
 
 // 📦 Package imports:
 import 'package:get/get.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
 // ignore: must_be_immutable
-class SmartKeyAvailablePage extends StatelessWidget {
-  SmartKeyAvailablePage({Key? key}) : super(key: key);
-  VehicleController controller = VehicleController.to;
-
-  final String token = PrefUtils.storage.getData('token');
-  late Map<String, dynamic> extra = <String, dynamic>{
-    'secure': <Map<String, String>>[
-      {
-        'type': 'http',
-        'scheme': 'bearer',
-        'name': token,
-      },
-    ],
-  };
-  bool isBetween(String? from, String? to) {
-    if (from == null || to == null) return false;
-    DateTime s = DateTime.parse(from);
-    DateTime e = DateTime.parse(to);
-    DateTime n = DateTime.now();
-    return s.isBefore(n) && e.isAfter(n);
-  }
-
-  void getClient(String? accountId) {
-    final members = [
-      (TeamAccountModelBuilder()
-            ..accountId = 'test'
-            ..color = '#B432BE'
-            ..nickname = '테스트'
-            ..profilePicture = '/test')
-          .build(),
-      (TeamAccountModelBuilder()
-            ..accountId = 'test2'
-            ..color = '#9DA775'
-            ..nickname = '아무거나이거이거저거저거')
-          .build(),
-      (TeamAccountModelBuilder()
-            ..accountId = 'test3'
-            ..color = '#62AF93'
-            ..nickname = '아무거나저거저거이거이거')
-          .build()
-    ];
-    // final client = UserController.to
-    //     .members
-    //     .firstWhere((it) => it.accountId == accountId);
-    final client = members.firstWhereOrNull((it) => it.accountId == accountId);
-    print('client : ${client}');
-    controller.clientName.text = client?.nickname ?? '';
-  }
-
-  bool compose(ScheduleModel schedule) {
-    getClient(schedule.accountId);
-    return isBetween(schedule.startAt, schedule.endAt);
-  }
-
-  Future retrieveCarInfo() async {
-    final terminalControllerApi =
-        WegooliFriends.client.getTerminalControllerApi();
-    final response =
-        await terminalControllerApi.selectTerminal(seq: 2, extra: extra);
-    print('response.data : ${response.data}');
-    controller.terminalDevice.value = response.data ?? TerminalModel();
-
-    final scheduleControllerApi =
-        WegooliFriends.client.getScheduleControllerApi();
-
-    final response2 = await scheduleControllerApi.selectScheduleList(
-        teamSeq: (ScheduleRequestBuilder()..teamSeq = 2).build().teamSeq,
-        extra: extra);
-    print('response2.data : ${response2.data}');
-    bool done = response2.data!.any(compose);
-    controller.isUsed.value = done;
-    print('done : $done');
-  }
-
-  Future openDoor() async {
-    final deviceControllerApi = WegooliFriends.client.getDeviceControllerApi();
-    final response = await deviceControllerApi.doorOpen(
-        carNum: controller.terminalDevice.value.carNum as String, extra: extra);
-    print('response : ${response}');
-  }
-
-  Future closeDoor() async {
-    final deviceControllerApi = WegooliFriends.client.getDeviceControllerApi();
-    final response = await deviceControllerApi.doorClose(
-        carNum: controller.terminalDevice.value.carNum as String, extra: extra);
-    print('response : ${response}');
-  }
-
-  Future horn() async {
-    final deviceControllerApi = WegooliFriends.client.getDeviceControllerApi();
-    final response = await deviceControllerApi.turnOnHorn(
-        carNum: controller.terminalDevice.value.carNum as String, extra: extra);
-    print('response : ${response}');
-  }
-
-  Future emergencyLight() async {
-    final deviceControllerApi = WegooliFriends.client.getDeviceControllerApi();
-    final response = await deviceControllerApi.turnOnEmergencyLight(
-        carNum: controller.terminalDevice.value.carNum as String, extra: extra);
-    print('response : ${response}');
-  }
-
-  String getGasImg() {
-    int i = int.parse(controller.terminalDevice.value.fuel ?? '0');
-    switch (i ~/ 10) {
-      case 0:
-        return Assets.svg.gas.imgGasPer10.path;
-      case 1:
-        return Assets.svg.gas.imgGasPer20.path;
-      case 2:
-        return Assets.svg.gas.imgGasPer30.path;
-      case 3:
-        return Assets.svg.gas.imgGasPer40.path;
-      case 4:
-        return Assets.svg.gas.imgGasPer50.path;
-      case 5:
-        return Assets.svg.gas.imgGasPer60.path;
-      case 6:
-        return Assets.svg.gas.imgGasPer70.path;
-      case 7:
-        return Assets.svg.gas.imgGasPer80.path;
-      case 8:
-        return Assets.svg.gas.imgGasPer90.path;
-      case 9:
-      case 10:
-        return Assets.svg.gas.imgGasPer100.path;
-      default:
-        return Assets.svg.gas.imgGasPer100.path;
-    }
-  }
-
+class SmartKeyAvailablePage extends GetWidget<VehicleController> {
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
-    retrieveCarInfo();
     return SafeArea(
       child: Scaffold(
         backgroundColor: theme.colorScheme.onPrimaryContainer,
@@ -181,17 +50,19 @@ class SmartKeyAvailablePage extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Text(
-                                  controller.terminalDevice.value.model ??
-                                      "model",
-                                  overflow: TextOverflow.ellipsis,
-                                  textAlign: TextAlign.left,
-                                  style: theme.textTheme.titleMedium!.copyWith(
-                                      letterSpacing: getHorizontalSize(0.03))),
+                                controller.terminalDevice.model ??
+                                    l10ns.carMorning,
+                                overflow: TextOverflow.ellipsis,
+                                textAlign: TextAlign.left,
+                                style: theme.textTheme.titleMedium!.copyWith(
+                                  letterSpacing: getHorizontalSize(0.03),
+                                ),
+                              ),
                               Padding(
                                 padding: getPadding(top: 4),
                                 child: Text(
-                                  controller.terminalDevice.value.carNum ??
-                                      "차량 번호",
+                                  controller.terminalDevice.carNum ??
+                                      l10ns.licensePlatePlaceholder,
                                   overflow: TextOverflow.ellipsis,
                                   textAlign: TextAlign.left,
                                   style: CustomTextStyles.bodySmallOnPrimary
@@ -205,11 +76,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                 child: Row(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    CustomImageView(
-                                      svgPath: getGasImg(),
-                                      height: getSize(24),
-                                      width: getSize(24),
-                                    ),
+                                    FuelStatus(),
                                     Padding(
                                       padding: getPadding(
                                         left: 5,
@@ -217,13 +84,16 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                         bottom: 1,
                                       ),
                                       child: Text(
-                                        '연료 ${controller.terminalDevice.value.fuel ?? 0}%',
+                                        l10ns.remainingFuelLevel(
+                                            controller.fuelType,
+                                            controller.fuel + '%'),
                                         overflow: TextOverflow.ellipsis,
                                         textAlign: TextAlign.left,
-                                        style: theme.textTheme.bodySmall!
-                                            .copyWith(
-                                                letterSpacing:
-                                                    getHorizontalSize(0.02)),
+                                        style:
+                                            theme.textTheme.bodySmall!.copyWith(
+                                          letterSpacing:
+                                              getHorizontalSize(0.02),
+                                        ),
                                       ),
                                     ),
                                     ArrowRight(
@@ -280,8 +150,9 @@ class SmartKeyAvailablePage extends StatelessWidget {
                       Padding(
                         padding: getPadding(left: 2),
                         child: Text(
-                          controller.isUsed.value
-                              ? '${controller.clientName.text}님이 사용중입니다.'
+                          controller.availableNow.value
+                              ? l10ns.hongGilDongIsUsingIt(
+                                  controller.driverName.text)
                               : l10ns.available,
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.left,
@@ -300,6 +171,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                 Container(
                   width: mediaQueryData.size.width,
                   child: Stack(
+                    alignment: Alignment.center,
                     children: [
                       Container(
                         // height: mediaQueryData.size.height,
@@ -307,17 +179,20 @@ class SmartKeyAvailablePage extends StatelessWidget {
                         child: Column(
                           children: [
                             Align(
-                                alignment: Alignment.centerLeft,
-                                child: Padding(
-                                    padding: getPadding(left: 16, top: 21),
-                                    child: Text(l10ns.smartKey,
-                                        overflow: TextOverflow.ellipsis,
-                                        textAlign: TextAlign.left,
-                                        style: CustomTextStyles
-                                            .titleMediumBlack900
-                                            .copyWith(
-                                                letterSpacing:
-                                                    getHorizontalSize(0.04))))),
+                              alignment: Alignment.centerLeft,
+                              child: Padding(
+                                padding: getPadding(left: 16, top: 21),
+                                child: Text(
+                                  l10ns.smartKey,
+                                  overflow: TextOverflow.ellipsis,
+                                  textAlign: TextAlign.left,
+                                  style: CustomTextStyles.titleMediumBlack900
+                                      .copyWith(
+                                    letterSpacing: getHorizontalSize(0.04),
+                                  ),
+                                ),
+                              ),
+                            ),
                             Column(
                               children: [
                                 Padding(
@@ -332,13 +207,13 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                         child: ControlButton(
                                           text: l10ns.openDoor,
                                           svgPath: Assets.svg.imgUnlocked.path,
-                                          onTap: () => openDoor(),
+                                          onTap: controller.openDoor,
                                         ),
                                       ),
                                       ControlButton(
                                         text: l10ns.lockTheDoor,
                                         svgPath: Assets.svg.imgLocked.path,
-                                        onTap: () => closeDoor(),
+                                        onTap: controller.closeDoor,
                                       ),
                                     ],
                                   ),
@@ -355,13 +230,13 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                         child: ControlButton(
                                           text: l10ns.turnOnHazardLights,
                                           svgPath: Assets.svg.imgTriangle.path,
-                                          onTap: () => emergencyLight(),
+                                          onTap: controller.emergencyLight,
                                         ),
                                       ),
                                       ControlButton(
                                         text: l10ns.honkTheHorn,
                                         svgPath: Assets.svg.imgCampaign.path,
-                                        onTap: () => horn(),
+                                        onTap: controller.horn,
                                       ),
                                     ],
                                   ),
@@ -377,8 +252,7 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                 decoration: BoxDecoration(
                                     color: Color.fromRGBO(255, 225, 66, 1),
                                     shape: BoxShape.circle),
-                                onTap: () =>
-                                    launchUrl(Uri.parse('tel:15666560')),
+                                onTap: () => launchUrlString('tel:15666560'),
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
@@ -389,9 +263,13 @@ class SmartKeyAvailablePage extends StatelessWidget {
                                       height: 22.5,
                                       margin: getMargin(bottom: 3),
                                     ),
-                                    Text('사고 접수',
-                                        style: TextStyle(
-                                            color: Colors.black, fontSize: 12))
+                                    Text(
+                                      l10ns.reportAnIncident,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 12,
+                                      ),
+                                    )
                                   ],
                                 ),
                               ),
@@ -400,34 +278,40 @@ class SmartKeyAvailablePage extends StatelessWidget {
                         ),
                       ),
                       // 사용중일 때 화면 가리기용
-                      if (controller.isUsed.value)
-                        Container(
-                            height: mediaQueryData.size.height -
-                                getVerticalSize(200),
-                            width: mediaQueryData.size.width,
-                            decoration: BoxDecoration(
-                                color: Color.fromRGBO(164, 168, 175, 0.2)),
-                            child: Center(
-                                child: Container(
-                                    alignment: Alignment.center,
-                                    width: getHorizontalSize(180),
-                                    height: getVerticalSize(44),
-                                    decoration: BoxDecoration(
-                                        color: Color.fromRGBO(34, 34, 34, 0.4),
-                                        borderRadius:
-                                            BorderRadius.circular(100)),
-                                    child: Text(
-                                        controller.isUsed.value
-                                            ? '${controller.clientName.text}님이 사용중입니다.'
-                                            : l10ns.available,
-                                        style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 16))))),
+                      if (controller.availableNow.value) UntouchableMask(),
                     ],
                   ),
                 ),
               ],
             ),
+          ),
+        ),
+        bottomNavigationBar: BottomTabRouterBar(),
+      ),
+    );
+  }
+}
+
+class UntouchableMask extends GetView<VehicleController> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: mediaQueryData.size.height - getVerticalSize(200),
+      width: mediaQueryData.size.width,
+      decoration: BoxDecoration(color: Color.fromRGBO(164, 168, 175, 0.2)),
+      child: Center(
+        child: Container(
+          alignment: Alignment.center,
+          width: getHorizontalSize(180),
+          height: getVerticalSize(44),
+          decoration: BoxDecoration(
+              color: Color.fromRGBO(34, 34, 34, 0.4),
+              borderRadius: BorderRadius.circular(100)),
+          child: Text(
+            controller.availableNow.value
+                ? l10ns.hongGilDongIsUsingIt(controller.driverName.text)
+                : l10ns.available,
+            style: TextStyle(color: Colors.white, fontSize: 16),
           ),
         ),
       ),
@@ -455,80 +339,117 @@ class ControlButton extends StatelessWidget {
           decoration: BoxDecoration(
               color: Color.fromRGBO(255, 225, 66, 1), shape: BoxShape.circle)),
       ElevatedButton(
-          onPressed: () {
-            if (onTap != null) {
-              onTap!();
+        onPressed: () {
+          if (onTap != null) {
+            onTap!();
+          }
+        },
+        style: ButtonStyle(
+          overlayColor: MaterialStateProperty.all(Colors.transparent),
+          padding: MaterialStateProperty.all(EdgeInsets.all(0)),
+          side: MaterialStateProperty.all(BorderSide(
+            color: Color.fromRGBO(0, 0, 0, 0.1),
+            width: getHorizontalSize(1.0),
+          )),
+          fixedSize: MaterialStateProperty.all(Size(130, 130)),
+          shape: MaterialStateProperty.all(CircleBorder(
+            side: BorderSide(
+              // color: Color.fromRGBO(0, 0, 0, 0.1),
+              color: Color.fromRGBO(164, 168, 175, 0.2),
+              width: 1,
+            ),
+          )),
+          shadowColor: MaterialStateProperty.all(Color.fromRGBO(0, 0, 0, 0.1)),
+          // [
+          //   BoxShadow(
+          //     color: Color.fromRGBO(0, 0, 0, 0.1),
+          //     blurRadius: 10,
+          //     offset: Offset(2, 2),
+          //   ),
+          // ],
+          backgroundColor: MaterialStateProperty.resolveWith((states) {
+            // If the button is pressed, return green, otherwise blue
+            if (states.contains(MaterialState.pressed)) {
+              return Colors.transparent;
             }
-          },
-          style: ButtonStyle(
-            overlayColor: MaterialStateProperty.all(Colors.transparent),
-            padding: MaterialStateProperty.all(EdgeInsets.all(0)),
-            side: MaterialStateProperty.all(BorderSide(
-              color: Color.fromRGBO(0, 0, 0, 0.1),
-              width: getHorizontalSize(1.0),
-            )),
-            fixedSize: MaterialStateProperty.all(Size(130, 130)),
-            shape: MaterialStateProperty.all(CircleBorder(
-              side: BorderSide(
-                // color: Color.fromRGBO(0, 0, 0, 0.1),
-                color: Color.fromRGBO(164, 168, 175, 0.2),
-                width: 1,
-              ),
-            )),
-            shadowColor:
-                MaterialStateProperty.all(Color.fromRGBO(0, 0, 0, 0.1)),
-            // [
-            //   BoxShadow(
-            //     color: Color.fromRGBO(0, 0, 0, 0.1),
-            //     blurRadius: 10,
-            //     offset: Offset(2, 2),
-            //   ),
-            // ],
-            backgroundColor: MaterialStateProperty.resolveWith((states) {
-              // If the button is pressed, return green, otherwise blue
-              if (states.contains(MaterialState.pressed)) {
-                return Colors.transparent;
-              }
-              return Colors.white;
-            }),
-            textStyle: MaterialStateProperty.resolveWith((states) {
-              if (states.contains(MaterialState.pressed)) {
-                return TextStyle(fontSize: 16);
-              }
+            return Colors.white;
+          }),
+          textStyle: MaterialStateProperty.resolveWith((states) {
+            if (states.contains(MaterialState.pressed)) {
               return TextStyle(fontSize: 16);
-            }),
+            }
+            return TextStyle(fontSize: 16);
+          }),
+        ),
+        child: Container(
+          width: 120,
+          height: 120,
+          padding: getPadding(),
+          margin: getMargin(),
+          decoration: BoxDecoration(
+            color: Colors.transparent,
+            shape: BoxShape.circle,
+            border: Border.all(color: Color.fromRGBO(0, 0, 0, 0.1), width: 1),
           ),
-          child: Container(
-              width: 120,
-              height: 120,
-              padding: getPadding(),
-              margin: getMargin(),
-              decoration: BoxDecoration(
-                color: Colors.transparent,
-                shape: BoxShape.circle,
-                border:
-                    Border.all(color: Color.fromRGBO(0, 0, 0, 0.1), width: 1),
+          child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+            CustomImageView(
+              svgPath: svgPath,
+              height: getSize(46),
+              width: getSize(46),
+              color: Colors.transparent,
+            ),
+            Padding(
+              padding: getPadding(top: 3),
+              child: Text(
+                text,
+                textAlign: TextAlign.center,
+                style: theme.textTheme.titleMedium!
+                    .copyWith(letterSpacing: getHorizontalSize(0.03)),
               ),
-              child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    CustomImageView(
-                      svgPath: svgPath,
-                      height: getSize(46),
-                      width: getSize(46),
-                      color: Colors.transparent,
-                    ),
-                    Padding(
-                      padding: getPadding(top: 3),
-                      child: Text(
-                        text,
-                        textAlign: TextAlign.center,
-                        style: theme.textTheme.titleMedium!
-                            .copyWith(letterSpacing: getHorizontalSize(0.03)),
-                      ),
-                    ),
-                  ])))
+            ),
+          ]),
+        ),
+      )
     ]);
+  }
+}
+
+class FuelStatus extends GetView<VehicleController> {
+  @override
+  Widget build(BuildContext context) {
+    return getGasImg(level: controller.level).svg(
+      semanticsLabel: controller.terminalDevice.fuel,
+      height: getSize(24),
+      width: getSize(24),
+    );
+  }
+
+  SvgGenImage getGasImg({required int level}) {
+    switch (level) {
+      case 0:
+      case 1:
+        return Assets.svg.gas.imgGasPer10;
+      case 2:
+        return Assets.svg.gas.imgGasPer20;
+      case 3:
+        return Assets.svg.gas.imgGasPer30;
+      case 4:
+        return Assets.svg.gas.imgGasPer40;
+      case 5:
+        return Assets.svg.gas.imgGasPer50;
+      case 6:
+        return Assets.svg.gas.imgGasPer60;
+      case 7:
+        return Assets.svg.gas.imgGasPer70;
+      case 8:
+        return Assets.svg.gas.imgGasPer80;
+      case 9:
+        return Assets.svg.gas.imgGasPer90;
+      case 10:
+        return Assets.svg.gas.imgGasPer100;
+      default:
+        return Assets.svg.gas.imgGasPer100;
+    }
   }
 }
 

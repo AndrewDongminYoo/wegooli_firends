@@ -1,13 +1,13 @@
 // 🐦 Flutter imports:
-import "package:flutter/material.dart";
+import 'package:flutter/material.dart';
 
 // 📦 Package imports:
-import "package:get/get.dart";
+import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import "/core/app_export.dart";
+import '/core/app_export.dart';
 
-class UpcomingUnsubscriptionOutlined extends GetWidget<VehicleController> {
+class UpcomingUnsubscription extends GetWidget<VehicleController> {
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
@@ -34,7 +34,7 @@ class UpcomingUnsubscriptionOutlined extends GetWidget<VehicleController> {
                       Container(
                           margin: getMargin(top: 12, bottom: 5),
                           padding: getPadding(
-                              left: 10, top: 20, right: 10, bottom: 20),
+                              left: 10, top: 30, right: 10, bottom: 20),
                           decoration: AppDecoration.outline.copyWith(
                               borderRadius: BorderRadiusStyle.circleBorder10),
                           child: Column(
@@ -46,7 +46,7 @@ class UpcomingUnsubscriptionOutlined extends GetWidget<VehicleController> {
                                         Assets.images.imgCarAllNewMo.path,
                                     height: getVerticalSize(96),
                                     width: getHorizontalSize(167),
-                                    margin: getMargin(top: 10)),
+                                ),
                                 Padding(
                                     padding: getPadding(top: 30),
                                     child: Divider(
@@ -60,7 +60,7 @@ class UpcomingUnsubscriptionOutlined extends GetWidget<VehicleController> {
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
                                         children: [
-                                          Text("모닝",
+                                          Text(l10ns.carMorning,
                                               overflow: TextOverflow.ellipsis,
                                               textAlign: TextAlign.left,
                                               style: CustomTextStyles
@@ -72,7 +72,7 @@ class UpcomingUnsubscriptionOutlined extends GetWidget<VehicleController> {
                                           Padding(
                                               padding:
                                                   getPadding(top: 5, bottom: 1),
-                                              child: Text("12가 3456",
+                                              child: Text(l10ns.licensePlatePlaceholder,
                                                   overflow:
                                                       TextOverflow.ellipsis,
                                                   textAlign: TextAlign.left,
@@ -84,8 +84,7 @@ class UpcomingUnsubscriptionOutlined extends GetWidget<VehicleController> {
                                                                   0.02))))
                                         ])),
                                 Padding(
-                                    padding:
-                                        getPadding(left: 9, top: 14, right: 9),
+                                    padding: getPadding(left: 9, top: 14, right: 9),
                                     child: Row(
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
@@ -99,7 +98,7 @@ class UpcomingUnsubscriptionOutlined extends GetWidget<VehicleController> {
                                                       letterSpacing:
                                                           getHorizontalSize(
                                                               0.03))),
-                                          Text('150,000 원',
+                                          Text(controller.subMonthlyPrice,
                                               overflow: TextOverflow.ellipsis,
                                               textAlign: TextAlign.left,
                                               style: theme.textTheme.bodyLarge!
@@ -109,8 +108,7 @@ class UpcomingUnsubscriptionOutlined extends GetWidget<VehicleController> {
                                                               0.03)))
                                         ])),
                                 Padding(
-                                    padding:
-                                        getPadding(left: 9, top: 3, right: 9),
+                                    padding: getPadding(left: 9, top: 3, right: 9),
                                     child: Row(
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
@@ -134,8 +132,7 @@ class UpcomingUnsubscriptionOutlined extends GetWidget<VehicleController> {
                                                               0.03)))
                                         ])),
                                 Padding(
-                                    padding:
-                                        getPadding(left: 9, top: 3, right: 9),
+                                    padding: getPadding(left: 9, top: 3, right: 9),
                                     child: Row(
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
@@ -161,8 +158,8 @@ class UpcomingUnsubscriptionOutlined extends GetWidget<VehicleController> {
                                 CustomElevatedButton(
                                     width: getHorizontalSize(160),
                                     height: getVerticalSize(48),
-                                    text: "해지 취소",
-                                    margin: getMargin(top: 21, right: 9),
+                                    text: l10ns.unsubscribeCancel,
+                                    margin: getMargin(left: 9, top: 21, right: 9),
                                     buttonStyle: CustomButtonStyles
                                         .fillPrimaryC5
                                         .copyWith(

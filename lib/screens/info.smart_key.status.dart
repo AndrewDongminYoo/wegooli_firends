@@ -29,7 +29,7 @@ class CarStatusInformation extends StatelessWidget {
                               left: 80, top: 13, bottom: 20, right: 80),
                           child: CustomImageView(
                             // TODO
-                            // controller.terminalDevice.value.carImg 로 대체해야함!!
+                            // controller.terminalDevice.carImg 로 대체해야함!!
                             imagePath: Assets.images.imgCarSpark.path,
                             height: getVerticalSize(132),
                             width: getHorizontalSize(200),
@@ -48,7 +48,7 @@ class CarStatusInformation extends StatelessWidget {
                             Padding(
                               padding: getPadding(bottom: 10),
                               child: Text(
-                                '기본 정보',
+                                l10ns.basicInfo,
                                 style: TextStyle(
                                   color: Color(0xFF222222),
                                   fontSize: 18,
@@ -63,7 +63,7 @@ class CarStatusInformation extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  '모델',
+                                  l10ns.modelName,
                                   style: TextStyle(
                                     color: Color(0x66222222),
                                     fontSize: 16,
@@ -74,8 +74,8 @@ class CarStatusInformation extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  controller.terminalDevice.value.model ??
-                                      '모델명',
+                                  controller.terminalDevice.model ??
+                                      l10ns.carMorning,
                                   textAlign: TextAlign.right,
                                   style: TextStyle(
                                     color: Color(0xFF222222),
@@ -92,7 +92,7 @@ class CarStatusInformation extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  '차종',
+                                  l10ns.carType,
                                   style: TextStyle(
                                     color: Color(0x66222222),
                                     fontSize: 16,
@@ -103,8 +103,8 @@ class CarStatusInformation extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  controller.terminalDevice.value.segment ??
-                                      '차종',
+                                  controller.terminalDevice.segment ??
+                                      l10ns.segmentB,
                                   textAlign: TextAlign.right,
                                   style: TextStyle(
                                     color: Color(0xFF222222),
@@ -121,7 +121,7 @@ class CarStatusInformation extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  '연료',
+                                  l10ns.fuel,
                                   style: TextStyle(
                                     color: Color(0x66222222),
                                     fontSize: 16,
@@ -132,8 +132,8 @@ class CarStatusInformation extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  controller.terminalDevice.value.fuelType ??
-                                      '연료',
+                                  controller.terminalDevice.fuelType ??
+                                      l10ns.gasoline,
                                   textAlign: TextAlign.right,
                                   style: TextStyle(
                                     color: Color(0xFF222222),
@@ -150,7 +150,7 @@ class CarStatusInformation extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  '인원',
+                                  l10ns.numberOfPeople,
                                   style: TextStyle(
                                     color: Color(0x66222222),
                                     fontSize: 16,
@@ -161,7 +161,7 @@ class CarStatusInformation extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  '${controller.terminalDevice.value.seats ?? 0}인승',
+                                  l10ns.seater(controller.terminalDevice.seats ?? 0),
                                   textAlign: TextAlign.right,
                                   style: TextStyle(
                                     color: Color(0xFF222222),
@@ -191,7 +191,7 @@ class CarStatusInformation extends StatelessWidget {
                             Padding(
                               padding: getPadding(bottom: 10),
                               child: Text(
-                                '정비 상태',
+                                l10ns.maintenanceStatus,
                                 style: TextStyle(
                                   color: Color(0xFF222222),
                                   fontSize: 18,
@@ -206,7 +206,7 @@ class CarStatusInformation extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  '엔진오일 점검일',
+                                  l10ns.engineOilChangedDate,
                                   style: TextStyle(
                                     color: Color(0x66222222),
                                     fontSize: 16,
@@ -217,7 +217,7 @@ class CarStatusInformation extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  '2023.08.01',
+                                  (controller.terminalDevice.updatedAt ?? DateTime(2023, 08, 01)).format(),
                                   textAlign: TextAlign.right,
                                   style: TextStyle(
                                     color: Color(0xFF222222),
@@ -234,7 +234,7 @@ class CarStatusInformation extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  '타이어 점검일',
+                                  l10ns.tireInspectionDate,
                                   style: TextStyle(
                                     color: Color(0x66222222),
                                     fontSize: 16,
@@ -245,7 +245,7 @@ class CarStatusInformation extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  '2023.08.01',
+                                  (controller.terminalDevice.updatedAt ?? DateTime(2023, 08, 01)).format(),
                                   textAlign: TextAlign.right,
                                   style: TextStyle(
                                     color: Color(0xFF222222),
@@ -262,7 +262,7 @@ class CarStatusInformation extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  '배터리 상태',
+                                  l10ns.batteryStatus,
                                   style: TextStyle(
                                     color: Color(0x66222222),
                                     fontSize: 16,
@@ -273,7 +273,7 @@ class CarStatusInformation extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  '양호',
+                                  controller.terminalDevice.status ?? l10ns.good,
                                   textAlign: TextAlign.right,
                                   style: TextStyle(
                                     color: Color(0xFF222222),

@@ -159,7 +159,7 @@ class CustomTextStyles {
 
 extension on TextStyle {
   TextStyle get notoSansKR {
-    return copyWith(fontFamily: 'Noto Sans KR');
+    return copyWith(fontFamily: FontFamily.notoSansKR);
   }
 
   TextStyle get nanumSquareRound {

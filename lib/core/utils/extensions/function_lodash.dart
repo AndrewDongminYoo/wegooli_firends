@@ -12,7 +12,7 @@ import 'package:flutter/services.dart';
 /// 이 경우 확장 프로그램은 `throttle()`, `throttleWithTimeout()` 및 `debounce()`의 세 가지 새로운 메서드를 추가합니다.
 /// 모두 이벤트 핸들러의 실행을 제어하기 위한 목적이지만, `debounce`는 마지막 이벤트를 기준으로 실행을 지연시키고, `throttle`은 일정 시간 간격으로 실행을 제한하는 차이가 있습니다.
 /// 이러한 메서드는 `Function` 클래스의 모든 인스턴스에서 호출할 수 있습니다.
-extension _FunctionExt on Function {
+extension on Function {
   /// `Throttle`은 이벤트 핸들러의 실행을 일정 시간 간격(여기서는 500ms) 으로 제한하는 것입니다.
   /// 예를 들어, 스크롤 이벤트를 처리하는 경우, 스크롤 이벤트가 연속적으로 발생할 수 있으므로 이를 throttle로 제어하여 일정 시간 간격으로만 이벤트 핸들러를 실행할 수 있습니다.
   /// 이렇게 함으로써, 많은 이벤트가 발생할 때에도 너무 많은 리소스를 소비하지 않고 이벤트 핸들러를 실행할 수 있습니다.

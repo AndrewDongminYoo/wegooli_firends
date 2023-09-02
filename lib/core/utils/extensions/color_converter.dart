@@ -76,7 +76,7 @@ Map<int, String> accentSwatchFromPrimaryHex(String primaryHex) {
   };
 }
 
-extension _ColorExt on Color {
+extension on Color {
   /// 이 함수는 접두사가 `0xFF`인 16진수 색상 값의 문자열 표현을 반환
   ///
   /// @return [String] `0xFFRRGGBB` 형식의 16진수 색상 값을 나타내는 문자열입니다.

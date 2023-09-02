@@ -99,7 +99,7 @@ EdgeInsets getMarginOrPadding({
       bottom: getVerticalSize(bottom ?? 0));
 }
 
-extension FormatExtension on double {
+extension on double {
   /// Return a [double] value with formatted according to provided fractionDigits
   double toDoubleValue({int fractionDigits = 2}) {
     return double.parse(this.toStringAsFixed(fractionDigits));

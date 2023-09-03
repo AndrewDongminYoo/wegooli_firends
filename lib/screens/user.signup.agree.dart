@@ -27,154 +27,145 @@ class AcceptTerms extends GetWidget<AccountAgreementController> {
             body: SizedBox(
                 width: mediaQueryData.size.width,
                 child: SingleChildScrollView(
-                    padding: getPadding(top: 29),
-                    child: Padding(
-                        padding: getPadding(left: 23, right: 23, bottom: 5),
-                        child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              SizedBox(
-                                  height: getVerticalSize(20),
-                                  width: getHorizontalSize(126),
-                                  child: Align(
+                  padding: getPadding(top: 29),
+                  child: Padding(
+                      padding: getPadding(left: 23, right: 23, bottom: 5),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                              height: getVerticalSize(20),
+                              width: getHorizontalSize(126),
+                              child: Align(
+                                  alignment: Alignment.center,
+                                  child: Obx(() => CustomCheckboxButton(
                                       alignment: Alignment.center,
-                                      child: Obx(() => CustomCheckboxButton(
-                                          alignment: Alignment.center,
-                                          text: l10ns.acceptAll,
-                                          value: controller
-                                              .isAllTermsAccepted.value,
-                                          onChange: (value) {
-                                            controller.isAllTermsAccepted
-                                                .value = value;
-                                          })))),
-                              Padding(
-                                  padding: getPadding(top: 53),
-                                  child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Obx(() => CustomCheckboxButton(
-                                            text: l10ns
-                                                .termsOfServiceRequiredAgreement,
-                                            value: controller
-                                                .isAcceptedTerm0.value,
-                                            onChange: (value) {
-                                              controller.isAcceptedTerm0.value =
-                                                  value;
-                                            })),
-                                        CustomImageView(
-                                            svgPath:
-                                                Assets.svg.imgArrowLeft.path,
-                                            height: getSize(18),
-                                            width: getSize(18),
-                                            margin: getMargin(bottom: 2))
-                                      ])),
-                              Padding(
-                                  padding: getPadding(top: 14),
-                                  child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Obx(() => CustomCheckboxButton(
-                                            text: l10ns
-                                                .privacyPolicyRequiredConsent,
-                                            value: controller
-                                                .isAcceptedTerm1.value,
-                                            onChange: (value) {
-                                              controller.isAcceptedTerm1.value =
-                                                  value;
-                                            })),
-                                        CustomImageView(
-                                            svgPath:
-                                                Assets.svg.imgArrowLeft.path,
-                                            height: getSize(18),
-                                            width: getSize(18),
-                                            margin: getMargin(bottom: 2))
-                                      ])),
-                              Padding(
-                                  padding: getPadding(top: 14),
-                                  child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Obx(() => CustomCheckboxButton(
-                                            text: l10ns
-                                                .carRentalTermsAndConditionsRequired,
-                                            value: controller
-                                                .isAcceptedTerm2.value,
-                                            onChange: (value) {
-                                              controller.isAcceptedTerm2.value =
-                                                  value;
-                                            })),
-                                        CustomImageView(
-                                            svgPath:
-                                                Assets.svg.imgArrowLeft.path,
-                                            height: getSize(18),
-                                            width: getSize(18),
-                                            margin: getMargin(bottom: 2))
-                                      ])),
-                              Padding(
-                                  padding: getPadding(top: 14),
-                                  child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Obx(() => CustomCheckboxButton(
-                                            text: l10ns
-                                                .locationBasedServicesTerms,
-                                            value: controller
-                                                .isAcceptedTerm3.value,
-                                            onChange: (value) {
-                                              controller.isAcceptedTerm3.value =
-                                                  value;
-                                            })),
-                                        CustomImageView(
-                                            svgPath:
-                                                Assets.svg.imgArrowLeft.path,
-                                            height: getSize(18),
-                                            width: getSize(18),
-                                            margin: getMargin(bottom: 2))
-                                      ])),
-                              Padding(
-                                  padding: getPadding(top: 14),
-                                  child: Row(children: [
-                                    Expanded(
-                                        child: Obx(() => CustomCheckboxButton(
-                                            text: l10ns
-                                                .consentToCollectionAndUseOfVehicleLocationInfo,
-                                            value: controller
-                                                .isAcceptedTerm4.value,
-                                            onChange: (value) {
-                                              controller.isAcceptedTerm4.value =
-                                                  value;
-                                            }))),
+                                      text: l10ns.acceptAll,
+                                      value:
+                                          controller.isAllTermsAccepted.value,
+                                      onChange: (value) {
+                                        controller.isAllTermsAccepted.value =
+                                            value;
+                                      })))),
+                          Padding(
+                              padding: getPadding(top: 53),
+                              child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Obx(() => CustomCheckboxButton(
+                                        text: l10ns
+                                            .termsOfServiceRequiredAgreement,
+                                        value: controller.isAcceptedTerm0.value,
+                                        onChange: (value) {
+                                          controller.isAcceptedTerm0.value =
+                                              value;
+                                        })),
                                     CustomImageView(
                                         svgPath: Assets.svg.imgArrowLeft.path,
                                         height: getSize(18),
                                         width: getSize(18),
-                                        margin: getMargin(left: 10, bottom: 2)),
+                                        margin: getMargin(bottom: 2))
                                   ])),
-                              Padding(
-                                  padding: getPadding(top: 14),
-                                  child: Row(children: [
-                                    Expanded(
-                                        child: Obx(() => CustomCheckboxButton(
-                                            text: l10ns
-                                                .useOfPersonalInfoForMarketing,
-                                            value: controller
-                                                .isAcceptedTerm5.value,
-                                            onChange: (value) {
-                                              controller.isAcceptedTerm5.value =
-                                                  value;
-                                            }))),
+                          Padding(
+                              padding: getPadding(top: 14),
+                              child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Obx(() => CustomCheckboxButton(
+                                        text:
+                                            l10ns.privacyPolicyRequiredConsent,
+                                        value: controller.isAcceptedTerm1.value,
+                                        onChange: (value) {
+                                          controller.isAcceptedTerm1.value =
+                                              value;
+                                        })),
                                     CustomImageView(
                                         svgPath: Assets.svg.imgArrowLeft.path,
                                         height: getSize(18),
                                         width: getSize(18),
-                                        margin: getMargin(left: 40, bottom: 2)),
-                                  ]))
-                            ])))),
+                                        margin: getMargin(bottom: 2))
+                                  ])),
+                          Padding(
+                              padding: getPadding(top: 14),
+                              child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Obx(() => CustomCheckboxButton(
+                                        text: l10ns
+                                            .carRentalTermsAndConditionsRequired,
+                                        value: controller.isAcceptedTerm2.value,
+                                        onChange: (value) {
+                                          controller.isAcceptedTerm2.value =
+                                              value;
+                                        })),
+                                    CustomImageView(
+                                        svgPath: Assets.svg.imgArrowLeft.path,
+                                        height: getSize(18),
+                                        width: getSize(18),
+                                        margin: getMargin(bottom: 2))
+                                  ])),
+                          Padding(
+                              padding: getPadding(top: 14),
+                              child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Obx(() => CustomCheckboxButton(
+                                        text: l10ns.locationBasedServicesTerms,
+                                        value: controller.isAcceptedTerm3.value,
+                                        onChange: (value) {
+                                          controller.isAcceptedTerm3.value =
+                                              value;
+                                        })),
+                                    CustomImageView(
+                                        svgPath: Assets.svg.imgArrowLeft.path,
+                                        height: getSize(18),
+                                        width: getSize(18),
+                                        margin: getMargin(bottom: 2))
+                                  ])),
+                          Padding(
+                              padding: getPadding(top: 14),
+                              child: Row(children: [
+                                Expanded(
+                                    child: Obx(() => CustomCheckboxButton(
+                                        text: l10ns
+                                            .consentToCollectionAndUseOfVehicleLocationInfo,
+                                        value: controller.isAcceptedTerm4.value,
+                                        onChange: (value) {
+                                          controller.isAcceptedTerm4.value =
+                                              value;
+                                        }))),
+                                CustomImageView(
+                                    svgPath: Assets.svg.imgArrowLeft.path,
+                                    height: getSize(18),
+                                    width: getSize(18),
+                                    margin: getMargin(left: 10, bottom: 2)),
+                              ])),
+                          Padding(
+                              padding: getPadding(top: 14),
+                              child: Row(children: [
+                                Expanded(
+                                    child: Obx(() => CustomCheckboxButton(
+                                        text:
+                                            l10ns.useOfPersonalInfoForMarketing,
+                                        value: controller.isAcceptedTerm5.value,
+                                        onChange: (value) {
+                                          controller.isAcceptedTerm5.value =
+                                              value;
+                                        }))),
+                                CustomImageView(
+                                    svgPath: Assets.svg.imgArrowLeft.path,
+                                    height: getSize(18),
+                                    width: getSize(18),
+                                    margin: getMargin(left: 40, bottom: 2)),
+                              ]))
+                        ],
+                      )),
+                )),
             bottomNavigationBar: Container(
                 margin: getMargin(left: 24, right: 28, bottom: 41),
                 decoration: AppDecoration.shadow,

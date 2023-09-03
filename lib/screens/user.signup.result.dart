@@ -8,11 +8,9 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 // ignore: must_be_immutable
-class RegisterSuccess extends GetWidget<RegisterSuccessController> {
+class RegisterSuccess extends GetWidget<UserController> {
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
-
     return SafeArea(
         child: Scaffold(
             backgroundColor: theme.colorScheme.onPrimaryContainer,
@@ -51,7 +49,8 @@ class RegisterSuccess extends GetWidget<RegisterSuccessController> {
                                     children: [
                                       Padding(
                                           padding: getPadding(top: 2),
-                                          child: Text("(선택) 초대코드",
+                                          child: Text(
+                                              l10ns.optionalInvitaionCode,
                                               overflow: TextOverflow.ellipsis,
                                               textAlign: TextAlign.left,
                                               style: theme
@@ -73,7 +72,7 @@ class RegisterSuccess extends GetWidget<RegisterSuccessController> {
                                         bottom: 14),
                                     textStyle:
                                         CustomTextStyles.bodyLargeGray50003,
-                                    hintText: "초대코드를 입력하세요.",
+                                    hintText: l10ns.invitationCode,
                                     hintStyle:
                                         CustomTextStyles.bodyLargeGray50003,
                                     filled: true,
@@ -84,7 +83,7 @@ class RegisterSuccess extends GetWidget<RegisterSuccessController> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text("리더에게 받은 초대코드를 입력하세요.",
+                                      Text(l10ns.enterYourInvitationCode,
                                           overflow: TextOverflow.ellipsis,
                                           textAlign: TextAlign.left,
                                           style: CustomTextStyles
@@ -92,7 +91,7 @@ class RegisterSuccess extends GetWidget<RegisterSuccessController> {
                                               .copyWith(
                                                   letterSpacing:
                                                       getHorizontalSize(0.04))),
-                                      Text("바로 팀에 들어갈 수 있습니다.",
+                                      Text(l10ns.youCanJoinTheTeamRightAway,
                                           overflow: TextOverflow.ellipsis,
                                           textAlign: TextAlign.left,
                                           style: CustomTextStyles

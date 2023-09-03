@@ -102,8 +102,8 @@ class RegisterLicense extends GetWidget<LicenseController> {
                                         margin: getMargin(left: 4, top: 27),
                                         textStyle:
                                             CustomTextStyles.bodyLargeGray500,
-                                        items:
-                                            controller.yearOfLicenseIssuance.value,
+                                        items: controller
+                                            .yearOfLicenseIssuance.value,
                                         filled: true,
                                         fillColor: theme
                                             .colorScheme.onPrimaryContainer,
@@ -132,8 +132,8 @@ class RegisterLicense extends GetWidget<LicenseController> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 CustomInputLabel(
-                                    labelText:
-                                        l10ns.eligibilityPeriodTestExpirationDate),
+                                    labelText: l10ns
+                                        .eligibilityPeriodTestExpirationDate),
                                 CustomTextFormField(
                                     controller: controller.expirationDate,
                                     margin: getMargin(top: 4),

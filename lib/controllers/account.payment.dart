@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 class PaymentCardController extends GetxController {
+  final wegooli = WegooliFriends.client;
   static PaymentCardController get to =>
       Get.isRegistered<PaymentCardController>()
           ? Get.find<PaymentCardController>()
@@ -21,9 +22,21 @@ class PaymentCardController extends GetxController {
 
   bool get cardInputSucceed => false;
   final userController = UserController.to;
-  final paymentCardControllerApi =
-      WegooliFriends.client.getPaymentCardControllerApi();
-  final String token = PrefUtils.storage.getData('token');
+  String _token = '';
+
+  String get token {
+    _token = PrefUtils.storage.getData('token');
+    if (_token.isEmpty) {
+      return _token;
+    } else {
+      // userController.currentUser.value.memberSeq;
+      return _token;
+    }
+  }
+
+  set token(String value) {
+    _token = value;
+  }
 
   late Map<String, dynamic> extra = <String, dynamic>{
     'secure': <Map<String, String>>[
@@ -71,6 +84,7 @@ class PaymentCardController extends GetxController {
 
   Future<void> retrieveCards() async {
     if (userController.currentUser.value.memberSeq != null) {
+      final paymentCardControllerApi = wegooli.getPaymentCardControllerApi();
       final response = await paymentCardControllerApi.selectPaymentCardList(
           memberSeq: userController.currentUser.value.memberSeq!, extra: extra);
       print('response => ${response.data}');

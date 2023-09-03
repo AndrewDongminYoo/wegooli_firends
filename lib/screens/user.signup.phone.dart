@@ -10,12 +10,11 @@ import '/core/app_export.dart';
 class ValidatePhone extends GetWidget<UserController> {
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
     return SafeArea(
         child: Scaffold(
             resizeToAvoidBottomInset: false,
             backgroundColor: theme.colorScheme.onPrimaryContainer,
-            appBar: CustomAppBar.getDefaultAppBar('본인 인증'),
+            appBar: CustomAppBar.getDefaultAppBar(l10ns.authenticateYourself),
             body: Container(
                 width: double.maxFinite,
                 padding: getPadding(left: 16, top: 32, right: 16, bottom: 32),
@@ -26,7 +25,7 @@ class ValidatePhone extends GetWidget<UserController> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            CustomInputLabel(labelText: "이름"),
+                            CustomInputLabel(labelText: l10ns.name),
                             NameTextInput(controller: controller)
                           ]),
                       Padding(

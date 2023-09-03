@@ -13,7 +13,6 @@ class RegisterCreditCard extends GetWidget<PaymentCardController> {
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
     return SafeArea(
         child: Scaffold(
             resizeToAvoidBottomInset: false,
@@ -144,29 +143,11 @@ class RegisterCreditCard extends GetWidget<PaymentCardController> {
                     buttonTextStyle: CustomTextStyles.titleMedium18,
                     onTap: () {
                       if (paymentCardController.paymentCards.length == 0) {
-                        onTapRegisterSuccess();
+                        Get.toNamed(AppRoutes.registerSuccess);
                       } else {
-                        // TODO
-                        // 카드 등록
+                        // TODO 카드 등록 로직
                         Get.back();
                       }
                     }))));
-  }
-
-  bool isValid() {
-    // TODO: 카드 정보가 valid하면 true, 아니면 false.
-    return true;
-  }
-
-  /// Navigates to the previous screen.
-  ///
-  /// When the action is triggered, this function uses the [Get] library to
-  /// navigate to the previous screen in the navigation stack.
-  onTabBackButton() {
-    Get.back();
-  }
-
-  onTapRegisterSuccess() {
-    Get.toNamed(AppRoutes.registerSuccess);
   }
 }

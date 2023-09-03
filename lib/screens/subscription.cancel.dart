@@ -2,17 +2,15 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
-import 'package:get/get.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
-class UnsubscriptionConfirm extends StatelessWidget {
-  final UserController controller = UserController.to;
+class UnsubscriptionConfirm extends GetWidget<UserController> {
   @override
   Widget build(BuildContext context) {
     DateTime expireDate = DateTime.tryParse(controller.carConnection.endAt ?? '') ?? DateTime.now();
-    mediaQueryData = MediaQuery.of(context);
     return SafeArea(
         child: Scaffold(
             backgroundColor: theme.colorScheme.onPrimaryContainer,
@@ -79,13 +77,5 @@ class UnsubscriptionConfirm extends StatelessWidget {
                                         CustomTextStyles.titleMedium18)
                               ]))
                     ]))));
-  }
-
-  /// Navigates to the previous screen.
-  ///
-  /// When the action is triggered, this function uses the [Get] library to
-  /// navigate to the previous screen in the navigation stack.
-  onTabBackButton() {
-    Get.back();
   }
 }

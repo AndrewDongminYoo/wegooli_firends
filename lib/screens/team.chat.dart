@@ -17,7 +17,7 @@ import '/core/app_export.dart';
 class DashChatWithFriendsPage extends GetView<ConnectionController> {
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
+
 
     return SafeArea(
         child: Scaffold(
@@ -34,14 +34,14 @@ class DashChatWithFriendsPage extends GetView<ConnectionController> {
                             BoxDecoration(
                                 color: message.user.id ==
                                         UserController.to.currentUser.value.id
-                                    ? Color.fromRGBO(255, 225, 66, 1)
-                                    : Color.fromRGBO(164, 168, 175, 0.2),
+                                    ? Color(0xFFFFE142)
+                                    : Color(0x33A4A8AF),
                                 borderRadius: BorderRadius.circular(15)),
                     // borderRadius: 18.0,
-                    textColor: Color.fromRGBO(34, 34, 34, 1),
-                    containerColor: Color.fromRGBO(164, 168, 175, 0.2),
-                    currentUserTextColor: Color.fromRGBO(34, 34, 34, 1),
-                    currentUserContainerColor: Color.fromRGBO(255, 225, 66, 1),
+                    textColor: Color(0xFF222222),
+                    containerColor: Color(0x33A4A8AF),
+                    currentUserTextColor: Color(0xFF222222),
+                    currentUserContainerColor: Color(0xFFFFE142),
                     timeFontSize: 12,
                     showTime: false,
                     showOtherUsersName: true),
@@ -54,23 +54,23 @@ class DashChatWithFriendsPage extends GetView<ConnectionController> {
                           onPressed: () {
                             onSend();
                           },
-                          color: Colors.black,
+                          color: Color(0xFF000000),
                           iconSize: 24);
                     },
                     leading: <Widget>[
                       IconButton(
-                          icon: Icon(Icons.camera_alt, color: Colors.black),
+                          icon: Icon(Icons.camera_alt, color: Color(0xFF000000)),
                           onPressed: () async {
                             await controller.getImage(ImageSource.gallery);
                           })
                     ],
-                    cursorStyle: CursorStyle(color: Colors.black),
+                    cursorStyle: CursorStyle(color: const Color(0xFF000000)),
                     inputDecoration: InputDecoration(
-                        fillColor: Color.fromRGBO(164, 168, 175, 0.2),
+                        fillColor: Color(0x33A4A8AF),
                         filled: true,
                         hintText: '채팅을 입력해주세요😃',
                         hintStyle: TextStyle(
-                            color: Color.fromRGBO(145, 150, 157, 1),
+                            color: Color(0xFF91969D),
                             fontSize: 15),
                         constraints:
                             BoxConstraints.expand(height: getVerticalSize(36)),

@@ -12,7 +12,86 @@ import '/core/app_export.dart';
 class RegisterZipCode extends GetWidget<UserController> {
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
+    var row = Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      Padding(
+          padding: getPadding(top: 2),
+          child: Text(l10ns.confirmPassword,
+              overflow: TextOverflow.ellipsis,
+              textAlign: TextAlign.left,
+              style: theme.textTheme.titleMedium!
+                  .copyWith(letterSpacing: getHorizontalSize(0.03)))),
+      Padding(
+          padding: getPadding(left: 5, bottom: 5),
+          child: Text("*",
+              overflow: TextOverflow.ellipsis,
+              textAlign: TextAlign.left,
+              style: theme.textTheme.titleSmall!
+                  .copyWith(letterSpacing: getHorizontalSize(0.06))))
+    ]);
+    var row2 = Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      Padding(
+          padding: getPadding(top: 2),
+          child: Text(l10ns.password,
+              overflow: TextOverflow.ellipsis,
+              textAlign: TextAlign.left,
+              style: theme.textTheme.titleMedium!
+                  .copyWith(letterSpacing: getHorizontalSize(0.03)))),
+      Padding(
+          padding: getPadding(left: 5, bottom: 5),
+          child: Text("*",
+              overflow: TextOverflow.ellipsis,
+              textAlign: TextAlign.left,
+              style: theme.textTheme.titleSmall!
+                  .copyWith(letterSpacing: getHorizontalSize(0.06))))
+    ]);
+    var row3 = Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      Padding(
+          padding: getPadding(top: 2),
+          child: Text(l10ns.id,
+              overflow: TextOverflow.ellipsis,
+              textAlign: TextAlign.left,
+              style: theme.textTheme.titleMedium!
+                  .copyWith(letterSpacing: getHorizontalSize(0.03)))),
+      Padding(
+          padding: getPadding(left: 5, bottom: 5),
+          child: Text("*",
+              overflow: TextOverflow.ellipsis,
+              textAlign: TextAlign.left,
+              style: theme.textTheme.titleSmall!
+                  .copyWith(letterSpacing: getHorizontalSize(0.06))))
+    ]);
+    var row4 = Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      Padding(
+          padding: getPadding(top: 2),
+          child: Text(l10ns.homeAddress,
+              overflow: TextOverflow.ellipsis,
+              textAlign: TextAlign.left,
+              style: theme.textTheme.titleMedium!
+                  .copyWith(letterSpacing: getHorizontalSize(0.03)))),
+      Padding(
+          padding: getPadding(left: 5, bottom: 5),
+          child: Text("*",
+              overflow: TextOverflow.ellipsis,
+              textAlign: TextAlign.left,
+              style: theme.textTheme.titleSmall!
+                  .copyWith(letterSpacing: getHorizontalSize(0.06))))
+    ]);
+    var row5 = Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      Padding(
+          padding: getPadding(top: 2),
+          child: Text(l10ns.nickname,
+              overflow: TextOverflow.ellipsis,
+              textAlign: TextAlign.left,
+              style: theme.textTheme.titleMedium!
+                  .copyWith(letterSpacing: getHorizontalSize(0.03)))),
+      Padding(
+          padding: getPadding(left: 5, bottom: 5),
+          child: Text("*",
+              overflow: TextOverflow.ellipsis,
+              textAlign: TextAlign.left,
+              style: theme.textTheme.titleSmall!
+                  .copyWith(letterSpacing: getHorizontalSize(0.06))))
+    ]);
     return SafeArea(
         child: Scaffold(
             resizeToAvoidBottomInset: false,
@@ -37,38 +116,7 @@ class RegisterZipCode extends GetWidget<UserController> {
                                         mainAxisAlignment:
                                             MainAxisAlignment.start,
                                         children: [
-                                          Row(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Padding(
-                                                    padding: getPadding(top: 2),
-                                                    child: Text("집 주소",
-                                                        overflow: TextOverflow
-                                                            .ellipsis,
-                                                        textAlign:
-                                                            TextAlign.left,
-                                                        style: theme.textTheme
-                                                            .titleMedium!
-                                                            .copyWith(
-                                                                letterSpacing:
-                                                                    getHorizontalSize(
-                                                                        0.03)))),
-                                                Padding(
-                                                    padding: getPadding(
-                                                        left: 5, bottom: 5),
-                                                    child: Text("*",
-                                                        overflow: TextOverflow
-                                                            .ellipsis,
-                                                        textAlign:
-                                                            TextAlign.left,
-                                                        style: theme.textTheme
-                                                            .titleSmall!
-                                                            .copyWith(
-                                                                letterSpacing:
-                                                                    getHorizontalSize(
-                                                                        0.06))))
-                                              ]),
+                                          row4,
                                           CustomTextFormField(
                                               enabled: false,
                                               textInputType:
@@ -84,7 +132,8 @@ class RegisterZipCode extends GetWidget<UserController> {
                                               validator: (String? value) {
                                                 if (value == null ||
                                                     value.isEmpty) {
-                                                  return '우편번호는 필수 입력값입니다.';
+                                                  return l10ns
+                                                      .yourZipCodeIsRequired;
                                                 } else if (value
                                                     .isNumericOnly) {
                                                   return value;
@@ -93,7 +142,7 @@ class RegisterZipCode extends GetWidget<UserController> {
                                               },
                                               textStyle: CustomTextStyles
                                                   .bodyLargeGray50003,
-                                              hintText: "우편번호",
+                                              hintText: l10ns.zipCode,
                                               hintStyle: CustomTextStyles
                                                   .bodyLargeGray50003,
                                               textInputAction:
@@ -110,7 +159,7 @@ class RegisterZipCode extends GetWidget<UserController> {
                                         ]))),
                             Expanded(
                                 child: CustomElevatedButton(
-                                    text: "주소 검색",
+                                    text: l10ns.addressSearch,
                                     margin: getMargin(left: 4, top: 27),
                                     buttonStyle: CustomButtonStyles
                                         .fillPrimaryC5
@@ -144,7 +193,7 @@ class RegisterZipCode extends GetWidget<UserController> {
                           contentPadding: getPadding(
                               left: 12, top: 14, right: 12, bottom: 14),
                           textStyle: CustomTextStyles.bodyLargeGray50003,
-                          hintText: "기본주소",
+                          hintText: l10ns.primaryAddress,
                           hintStyle: CustomTextStyles.bodyLargeGray50003,
                           textInputAction: TextInputAction.next,
                           filled: true,
@@ -167,33 +216,7 @@ class RegisterZipCode extends GetWidget<UserController> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Padding(
-                                          padding: getPadding(top: 2),
-                                          child: Text("아이디",
-                                              overflow: TextOverflow.ellipsis,
-                                              textAlign: TextAlign.left,
-                                              style: theme
-                                                  .textTheme.titleMedium!
-                                                  .copyWith(
-                                                      letterSpacing:
-                                                          getHorizontalSize(
-                                                              0.03)))),
-                                      Padding(
-                                          padding:
-                                              getPadding(left: 5, bottom: 5),
-                                          child: Text("*",
-                                              overflow: TextOverflow.ellipsis,
-                                              textAlign: TextAlign.left,
-                                              style: theme.textTheme.titleSmall!
-                                                  .copyWith(
-                                                      letterSpacing:
-                                                          getHorizontalSize(
-                                                              0.06))))
-                                    ]),
+                                row3,
                                 CustomTextFormField(
                                     textInputType: TextInputType.emailAddress,
                                     controller: controller.emailAddress,
@@ -205,7 +228,7 @@ class RegisterZipCode extends GetWidget<UserController> {
                                         bottom: 14),
                                     textStyle:
                                         CustomTextStyles.bodyLargeGray50003,
-                                    hintText: "이메일 주소 입력",
+                                    hintText: l10ns.enterEmailAddress,
                                     hintStyle:
                                         CustomTextStyles.bodyLargeGray50003,
                                     filled: true,
@@ -218,33 +241,7 @@ class RegisterZipCode extends GetWidget<UserController> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Padding(
-                                          padding: getPadding(top: 2),
-                                          child: Text("비밀번호",
-                                              overflow: TextOverflow.ellipsis,
-                                              textAlign: TextAlign.left,
-                                              style: theme
-                                                  .textTheme.titleMedium!
-                                                  .copyWith(
-                                                      letterSpacing:
-                                                          getHorizontalSize(
-                                                              0.03)))),
-                                      Padding(
-                                          padding:
-                                              getPadding(left: 5, bottom: 5),
-                                          child: Text("*",
-                                              overflow: TextOverflow.ellipsis,
-                                              textAlign: TextAlign.left,
-                                              style: theme.textTheme.titleSmall!
-                                                  .copyWith(
-                                                      letterSpacing:
-                                                          getHorizontalSize(
-                                                              0.06))))
-                                    ]),
+                                row2,
                                 Obx(() => CustomTextFormField(
                                     textInputType: TextInputType.emailAddress,
                                     controller: controller.password,
@@ -256,7 +253,8 @@ class RegisterZipCode extends GetWidget<UserController> {
                                         bottom: 14),
                                     textStyle:
                                         CustomTextStyles.bodyLargeGray50003,
-                                    hintText: "영문/숫자/특수문자 조합 (6~12자)",
+                                    hintText: l10ns
+                                        .alphanumericSpecialCharacterCombination612Characters,
                                     obscureText:
                                         controller.isShowPassword.isFalse,
                                     hintStyle:
@@ -289,33 +287,7 @@ class RegisterZipCode extends GetWidget<UserController> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Padding(
-                                          padding: getPadding(top: 2),
-                                          child: Text("비밀번호 확인",
-                                              overflow: TextOverflow.ellipsis,
-                                              textAlign: TextAlign.left,
-                                              style: theme
-                                                  .textTheme.titleMedium!
-                                                  .copyWith(
-                                                      letterSpacing:
-                                                          getHorizontalSize(
-                                                              0.03)))),
-                                      Padding(
-                                          padding:
-                                              getPadding(left: 5, bottom: 5),
-                                          child: Text("*",
-                                              overflow: TextOverflow.ellipsis,
-                                              textAlign: TextAlign.left,
-                                              style: theme.textTheme.titleSmall!
-                                                  .copyWith(
-                                                      letterSpacing:
-                                                          getHorizontalSize(
-                                                              0.06))))
-                                    ]),
+                                row,
                                 Obx(() => CustomTextFormField(
                                     textInputType: TextInputType.emailAddress,
                                     controller: controller.rePassword,
@@ -327,7 +299,7 @@ class RegisterZipCode extends GetWidget<UserController> {
                                         bottom: 14),
                                     textStyle:
                                         CustomTextStyles.bodyLargeGray50003,
-                                    hintText: "비밀번호 재입력",
+                                    hintText: l10ns.confirmPassword,
                                     obscureText: controller
                                         .isShowConfirmPassword.isFalse,
                                     hintStyle:
@@ -360,33 +332,7 @@ class RegisterZipCode extends GetWidget<UserController> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Padding(
-                                          padding: getPadding(top: 2),
-                                          child: Text("닉네임",
-                                              overflow: TextOverflow.ellipsis,
-                                              textAlign: TextAlign.left,
-                                              style: theme
-                                                  .textTheme.titleMedium!
-                                                  .copyWith(
-                                                      letterSpacing:
-                                                          getHorizontalSize(
-                                                              0.03)))),
-                                      Padding(
-                                          padding:
-                                              getPadding(left: 5, bottom: 5),
-                                          child: Text("*",
-                                              overflow: TextOverflow.ellipsis,
-                                              textAlign: TextAlign.left,
-                                              style: theme.textTheme.titleSmall!
-                                                  .copyWith(
-                                                      letterSpacing:
-                                                          getHorizontalSize(
-                                                              0.06))))
-                                    ]),
+                                row5,
                                 Obx(() => CustomTextFormField(
                                     textInputType: TextInputType.emailAddress,
                                     controller: controller.nickname,
@@ -398,7 +344,8 @@ class RegisterZipCode extends GetWidget<UserController> {
                                         bottom: 14),
                                     textStyle:
                                         CustomTextStyles.bodyLargeGray50003,
-                                    hintText: "닉네임 입력 (10자 이내)",
+                                    hintText:
+                                        l10ns.enterANicknameUpTo10Characters,
                                     obscureText: controller
                                         .isShowConfirmPassword.isFalse,
                                     hintStyle:
@@ -412,7 +359,7 @@ class RegisterZipCode extends GetWidget<UserController> {
                 margin: getMargin(left: 16, right: 16, bottom: 29),
                 // decoration: AppDecoration.shadow,
                 child: CustomElevatedButton(
-                    text: "입력 완료",
+                    text: l10ns.filledIn,
                     // TODO disabled일 때 스타일 정의하기
                     // isDisabled: !controller.isValid,
                     buttonStyle: CustomButtonStyles.fillPrimaryC26.copyWith(
@@ -424,13 +371,5 @@ class RegisterZipCode extends GetWidget<UserController> {
                         Get.toNamed(AppRoutes.registerLicense);
                       }
                     }))));
-  }
-
-  /// Navigates to the previous screen.
-  ///
-  /// When the action is triggered, this function uses the [Get] library to
-  /// navigate to the previous screen in the navigation stack.
-  onTabBackButton() {
-    Get.back();
   }
 }

@@ -7,24 +7,23 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
-class ProfileInfoPage extends StatelessWidget {
-  final api = WegooliFriends.client.getUserControllerApi();
+class ProfileInfoPage extends GetWidget<UserController> {
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
     return SafeArea(
         child: Scaffold(
             backgroundColor: theme.colorScheme.onPrimaryContainer,
-            appBar: CustomAppBar.getDefaultAppBar('나의 정보'),
+            appBar: CustomAppBar.getDefaultAppBar(l10ns.myInfo),
             body: Container(
                 width: mediaQueryData.size.width,
                 height: mediaQueryData.size.height,
-                // color: Colors.amber,
+                // color: Color(0xFFFFC107),
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Container(
-                        // color: Colors.amber[600],
+                        // color: Color(0xFFFFB300),
                         height: getVerticalSize(105),
                         padding: getPadding(
                             top: 20, bottom: 20, left: 16, right: 16),
@@ -41,7 +40,7 @@ class ProfileInfoPage extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text('닉네임',
+                                Text(l10ns.nickname,
                                     // overflow: TextOverflow.ellipsis,
                                     // textAlign: TextAlign.left,
                                     style: CustomTextStyles.titleMedium18
@@ -68,7 +67,7 @@ class ProfileInfoPage extends StatelessWidget {
                       Container(
                         height: getVerticalSize(8),
                         width: mediaQueryData.size.width,
-                        color: Color.fromRGBO(246, 247, 247, 1),
+                        color: Color(0xFFF6F7F7),
                       ),
                       Expanded(
                           child: Padding(
@@ -78,7 +77,7 @@ class ProfileInfoPage extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               CustomElevatedButton(
-                                  text: '로그아웃',
+                                  text: l10ns.signOut,
                                   margin: getMargin(top: 30, bottom: 20),
                                   buttonStyle: CustomButtonStyles.fillPrimaryC26
                                       .copyWith(
@@ -89,16 +88,16 @@ class ProfileInfoPage extends StatelessWidget {
                                   buttonTextStyle:
                                       CustomTextStyles.titleMedium18,
                                   onTap: () {
-                                    api.logOut();
+                                    controller.logOut();
                                   }),
                               TextButton(
                                   onPressed: () {
                                     Get.dialog(ConfirmDialog(
-                                      title: Text('회원 탈퇴'),
+                                      title: Text(l10ns.withdrawingMember),
                                       content: Text(
-                                          '위굴리 프렌즈의 회원 탈퇴 요청하시겠습니까? 회원 탈퇴는 7일간 진행되며 7일 후엔 완전히 삭제됩니다.'),
-                                      cancelText: '취소',
-                                      confirmText: '탈퇴',
+                                          l10ns.wouldYouLikeToRequestToBeRemovedFromWegooliFriends),
+                                      cancelText: l10ns.cancel,
+                                      confirmText: l10ns.withdrawal,
                                       confirmFunc: () {
                                         // TODO
                                         // globalController로 사용자 정보 옮긴 뒤 해당 id 이용해서 회원 탈퇴 진행.
@@ -106,18 +105,14 @@ class ProfileInfoPage extends StatelessWidget {
                                       },
                                     ));
                                   },
-                                  child: Text('회원 탈퇴',
+                                  child: Text(l10ns.withdrawingMember,
                                       style: TextStyle(
                                           color:
-                                              Color.fromRGBO(34, 34, 34, 0.4),
+                                              Color(0x66222222),
                                           decoration:
                                               TextDecoration.underline))),
                             ]),
                       )),
                     ]))));
-  }
-
-  onTabBackButton() {
-    Get.back();
   }
 }

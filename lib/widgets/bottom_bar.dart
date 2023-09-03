@@ -52,7 +52,7 @@ class CustomBottomBar extends StatelessWidget {
                     width: getHorizontalSize(1)))),
         child: Obx(
           () => BottomNavigationBar(
-            backgroundColor: Colors.transparent,
+            backgroundColor: Color(0x00000000),
             showSelectedLabels: false,
             showUnselectedLabels: false,
             selectedFontSize: 0,

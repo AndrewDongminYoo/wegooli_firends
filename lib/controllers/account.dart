@@ -10,7 +10,6 @@ class UserAccountBinding extends Bindings {
     Get.lazyPut(() => AccountAgreementController());
     Get.lazyPut(() => LicenseController());
     Get.lazyPut(() => PaymentCardController());
-    Get.lazyPut(() => RegisterSuccessController());
     Get.lazyPut(() => UserController());
   }
 }

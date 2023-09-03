@@ -99,7 +99,7 @@ class CustomSearchView extends StatelessWidget {
               padding: EdgeInsets.only(right: getHorizontalSize(15)),
               child: IconButton(
                   onPressed: () => controller!.clear(),
-                  icon: Icon(Icons.clear, color: Colors.grey.shade600))),
+                  icon: Icon(Icons.clear, color: Color(0xFF757575)))),
       suffixIconConstraints: suffixConstraints,
       isDense: true,
       contentPadding:

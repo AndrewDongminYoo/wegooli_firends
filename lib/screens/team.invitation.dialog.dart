@@ -11,7 +11,6 @@ import '/core/app_export.dart';
 class SendingInvitationLog extends GetView<VehicleController> {
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
     return SingleChildScrollView(
         child: Container(
             margin: getMargin(left: 16, right: 16, bottom: 323),
@@ -42,7 +41,7 @@ class SendingInvitationLog extends GetView<VehicleController> {
                                 width: getSize(13),
                                 margin: getMargin(bottom: 15),
                                 onTap: () {
-                                  onTapImgClose();
+                                  Get.back();
                                 })
                           ])),
                   CustomTextFormField(
@@ -58,7 +57,7 @@ class SendingInvitationLog extends GetView<VehicleController> {
                       fillColor: theme.colorScheme.onPrimaryContainer),
                   CustomElevatedButton(
                       onTap: () {
-                        /// FIXME: controller.invitationCodeController.text 값을 클립보드에 복사 / 또는 공유 모달 띄우기
+                        /// FIXME: controller.invitation.text 값을 클립보드에 복사 / 또는 공유 모달 띄우기
                         Get.dialog(AlertDialog(
                             title: Text(controller.invitation.text)));
                       },
@@ -69,13 +68,5 @@ class SendingInvitationLog extends GetView<VehicleController> {
                               Size(double.maxFinite, getVerticalSize(52)))),
                       buttonTextStyle: theme.textTheme.titleMedium!)
                 ])));
-  }
-
-  /// Navigates to the previous screen.
-  ///
-  /// When the action is triggered, this function uses the [Get] library to
-  /// navigate to the previous screen in the navigation stack.
-  onTapImgClose() {
-    Get.back();
   }
 }

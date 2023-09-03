@@ -250,7 +250,7 @@ class SmartKeyAvailablePage extends GetWidget<VehicleController> {
                                 width: getHorizontalSize(70),
                                 margin: getMargin(right: 22, top: 30),
                                 decoration: BoxDecoration(
-                                    color: Color.fromRGBO(255, 225, 66, 1),
+                                    color: Color(0xFFFFE142),
                                     shape: BoxShape.circle),
                                 onTap: () => launchUrlString('tel:15666560'),
                                 child: Column(
@@ -258,7 +258,7 @@ class SmartKeyAvailablePage extends GetWidget<VehicleController> {
                                   children: [
                                     CustomImageView(
                                       svgPath: Assets.svg.imgEdit.path,
-                                      color: Colors.black,
+                                      color: Color(0xFF000000),
                                       width: 22.5,
                                       height: 22.5,
                                       margin: getMargin(bottom: 3),
@@ -266,7 +266,7 @@ class SmartKeyAvailablePage extends GetWidget<VehicleController> {
                                     Text(
                                       l10ns.reportAnIncident,
                                       style: TextStyle(
-                                        color: Colors.black,
+                                        color: Color(0xFF000000),
                                         fontSize: 12,
                                       ),
                                     )
@@ -298,20 +298,20 @@ class UntouchableMask extends GetView<VehicleController> {
     return Container(
       height: mediaQueryData.size.height - getVerticalSize(200),
       width: mediaQueryData.size.width,
-      decoration: BoxDecoration(color: Color.fromRGBO(164, 168, 175, 0.2)),
+      decoration: BoxDecoration(color: Color(0x33A4A8AF)),
       child: Center(
         child: Container(
           alignment: Alignment.center,
           width: getHorizontalSize(180),
           height: getVerticalSize(44),
           decoration: BoxDecoration(
-              color: Color.fromRGBO(34, 34, 34, 0.4),
+              color: Color(0x66222222),
               borderRadius: BorderRadius.circular(100)),
           child: Text(
             controller.availableNow.value
                 ? l10ns.hongGilDongIsUsingIt(controller.driverName.text)
                 : l10ns.available,
-            style: TextStyle(color: Colors.white, fontSize: 16),
+            style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 16),
           ),
         ),
       ),
@@ -336,8 +336,8 @@ class ControlButton extends StatelessWidget {
       Container(
           width: 120,
           height: 120,
-          decoration: BoxDecoration(
-              color: Color.fromRGBO(255, 225, 66, 1), shape: BoxShape.circle)),
+          decoration:
+              BoxDecoration(color: Color(0xFFFFE142), shape: BoxShape.circle)),
       ElevatedButton(
         onPressed: () {
           if (onTap != null) {
@@ -345,24 +345,24 @@ class ControlButton extends StatelessWidget {
           }
         },
         style: ButtonStyle(
-          overlayColor: MaterialStateProperty.all(Colors.transparent),
+          overlayColor: MaterialStateProperty.all(Color(0x00000000)),
           padding: MaterialStateProperty.all(EdgeInsets.all(0)),
           side: MaterialStateProperty.all(BorderSide(
-            color: Color.fromRGBO(0, 0, 0, 0.1),
+            color: Color(0x18000000),
             width: getHorizontalSize(1.0),
           )),
           fixedSize: MaterialStateProperty.all(Size(130, 130)),
           shape: MaterialStateProperty.all(CircleBorder(
             side: BorderSide(
-              // color: Color.fromRGBO(0, 0, 0, 0.1),
-              color: Color.fromRGBO(164, 168, 175, 0.2),
+              // color: Color(0x18000000),
+              color: Color(0x33A4A8AF),
               width: 1,
             ),
           )),
-          shadowColor: MaterialStateProperty.all(Color.fromRGBO(0, 0, 0, 0.1)),
+          shadowColor: MaterialStateProperty.all(Color(0x18000000)),
           // [
           //   BoxShadow(
-          //     color: Color.fromRGBO(0, 0, 0, 0.1),
+          //     color: Color(0x18000000),
           //     blurRadius: 10,
           //     offset: Offset(2, 2),
           //   ),
@@ -370,9 +370,9 @@ class ControlButton extends StatelessWidget {
           backgroundColor: MaterialStateProperty.resolveWith((states) {
             // If the button is pressed, return green, otherwise blue
             if (states.contains(MaterialState.pressed)) {
-              return Colors.transparent;
+              return Color(0x00000000);
             }
-            return Colors.white;
+            return Color(0xFFFFFFFF);
           }),
           textStyle: MaterialStateProperty.resolveWith((states) {
             if (states.contains(MaterialState.pressed)) {
@@ -387,16 +387,16 @@ class ControlButton extends StatelessWidget {
           padding: getPadding(),
           margin: getMargin(),
           decoration: BoxDecoration(
-            color: Colors.transparent,
+            color: Color(0x00000000),
             shape: BoxShape.circle,
-            border: Border.all(color: Color.fromRGBO(0, 0, 0, 0.1), width: 1),
+            border: Border.all(color: Color(0x18000000), width: 1),
           ),
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
             CustomImageView(
               svgPath: svgPath,
               height: getSize(46),
               width: getSize(46),
-              color: Colors.transparent,
+              color: Color(0x00000000),
             ),
             Padding(
               padding: getPadding(top: 3),

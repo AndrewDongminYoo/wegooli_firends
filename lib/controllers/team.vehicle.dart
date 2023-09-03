@@ -17,12 +17,15 @@ class VehicleController extends GetxController {
   @override
   void onInit() async {
     final terminalApi = wegooli.getTerminalControllerApi();
-    final terminal = await terminalApi.selectTerminal(seq: 2); // FIXME: hard-coded 2.
+    final terminal =
+        await terminalApi.selectTerminal(seq: 2); // FIXME: hard-coded 2.
     print('terminal.data : ${terminal.data}');
     terminalDevice = terminal.data ?? TerminalModel();
     final scheduleApi = wegooli.getScheduleControllerApi();
     final scheduleList = await scheduleApi.selectScheduleList(
-        teamSeq: (ScheduleRequestBuilder()..teamSeq = 2).build().teamSeq); // FIXME: hard-coded 2.
+        teamSeq: (ScheduleRequestBuilder()..teamSeq = 2)
+            .build()
+            .teamSeq); // FIXME: hard-coded 2.
     print('scheduleList.data : ${scheduleList.data}');
     bool using = scheduleList.data!.any(compose);
     availableNow.value = using;
@@ -63,8 +66,10 @@ class VehicleController extends GetxController {
 
   /// 현재 차량의 잔여 연료량
   String get fuel => terminalDevice.fuel ?? '0';
+
   /// 현재 차량의 연료 유형 (gasHybrid, gasoline,...)
   String get fuelType => terminalDevice.fuelType ?? '';
+
   /// 현재 차량의 잔여 연료 레벨 (0~10).
   int get level => int.parse(fuel) ~/ 10;
 
@@ -76,6 +81,7 @@ class VehicleController extends GetxController {
       return _sharingService!;
     }
   }
+
   set sharingService(ShareServiceModel value) {
     _sharingService = value;
   }

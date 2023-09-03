@@ -1,4 +1,21 @@
 {
+  "cSpell.ignorePaths": [
+    ".git/objects",
+    ".vscode",
+    "lib/theme/color_names.dart",
+    "package.json",
+    "*.plist",
+    "*.xcconfig",
+    "*.xcassets",
+    "*.appiconset",
+    "*.imageset",
+    "*.lproj",
+    "*.xcodeproj",
+    "*.xcworkspace",
+    "*.xcsettings",
+    "*.xcworkspacedata",
+    "*.lock"
+  ],
   "cSpell.words": [
     "ARGB",
     "Bodymovin",
@@ -20,23 +37,6 @@
     "xcworkspace",
     "xxxkm",
     "Zeplin"
-  ],
-  "cSpell.ignorePaths": [
-    ".git/objects",
-    ".vscode",
-    "lib/theme/color_names.dart",
-    "package.json",
-    "*.plist",
-    "*.xcconfig",
-    "*.xcassets",
-    "*.appiconset",
-    "*.imageset",
-    "*.lproj",
-    "*.xcodeproj",
-    "*.xcworkspace",
-    "*.xcsettings",
-    "*.xcworkspacedata",
-    "*.lock"
   ],
   "dart.documentation": "full",
   "dart.enableSdkFormatter": true,
@@ -63,5 +63,9 @@
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.patterns": {
     "*.dart": "${capture}.*.dart"
+  },
+  "files.associations": {
+    "*.arb": "json",
+    ".openapi-generator-ignore": "ignore"
   }
 }

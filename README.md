@@ -66,10 +66,6 @@ dart format .
 
 ## Libraries and tools used
 
-- `built_collection` - 빌드 컬렉션은 빌더 패턴을 사용하는 불변성 클래스 컬렉션입니다.
-  https://pub.dev/packages/built_collection
-- `built_value` - 불변성을 제공하고 복제 기능이 포함된 패키지. JSON 직렬화와 Enum 타입 제공.
-  https://pub.dev/packages/built_value
 - `cached_network_image` - 온라인에서 이미지를 표시하고 캐시 디렉토리에 보관하는 플러터 라이브러리입니다.
   https://pub.dev/packages/cached_network_image
 - `connectivity_plus` - 네트워크 연결을 검색하고 셀룰러 연결과 WiFi 연결을 구분할 수 있게 되어 그에 따라 스스로 구성할 수 있음.

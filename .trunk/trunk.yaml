@@ -19,7 +19,7 @@ lint:
     - oxipng@8.0.0
     - prettier@3.0.3
     - trivy@0.44.1
-    - trufflehog@3.54.0
+    - trufflehog@3.54.3
     - yamllint@1.32.0
   ignore:
     - linters:

@@ -79,6 +79,7 @@ dev_dependencies:
     sdk: flutter
   import_sorter: ^4.6.0
   json_annotation: ^4.8.1
+  leancode_lint: ^6.0.0
   test: ^1.24.3
 
 # 이 파일의 일반 Dart 부분에 대한 자세한 내용은 다음 페이지(https://dart.dev/tools/pub/pubspec)를 참조.

@@ -164,14 +164,14 @@ class UserController extends GetxController {
           PrefUtils.storage.setData('token', splitToken[1]);
           Map<String, dynamic> payload = parseJwtPayLoad(splitToken[1]);
           currentUser.value = (UserDTOBuilder()
-                ..email = payload['userEmail']
-                ..nickname = payload['userNm']
-                ..id = payload['userId']
-                ..color = payload['color']
-                ..phoneNumber = payload['phoneNumber']
-                ..add1 = payload['add1']
-                ..add2 = payload['add2']
-                ..memberSeq = payload['memberSeq'])
+                ..email = payload['userEmail'] as String?
+                ..nickname = payload['userNm'] as String?
+                ..id = payload['userId'] as String?
+                ..color = payload['color'] as String?
+                ..phoneNumber = payload['phoneNumber'] as String?
+                ..add1 = payload['add1'] as String?
+                ..add2 = payload['add2'] as String?
+                ..memberSeq = payload['memberSeq'] as int?)
               .build();
           isAuthenticated.value = true;
           await findMembers();
@@ -199,7 +199,7 @@ class UserController extends GetxController {
     // id, pwd 확인해서 로그인 성공하면 true 아니면 false.
   }
 
-  Future findMembers() async {
+  Future<void> findMembers() async {
     String token = PrefUtils.storage.getData('token');
     final api = wegooli.getTeamAccountConnectionControllerApi();
     print('token : $token');

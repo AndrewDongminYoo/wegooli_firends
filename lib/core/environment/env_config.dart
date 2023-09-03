@@ -6,11 +6,11 @@ enum Environment { openApiEnv }
 class EnvConfig {
   late BaseEnvConfig config;
 
-  initConfig({Environment? environment}) {
+  void initConfig({Environment? environment}) {
     config = _getConfig(environment ?? null);
   }
 
-  _getConfig([Environment? environment]) {
+  BaseEnvConfig _getConfig([Environment? environment]) {
     switch (environment) {
       case Environment.openApiEnv:
         return OpenApiConfig();

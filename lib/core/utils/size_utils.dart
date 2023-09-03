@@ -16,12 +16,12 @@ const num FIGMA_DESIGN_HEIGHT = 640;
 const num FIGMA_DESIGN_STATUS_BAR = 0;
 
 /// 이 메서드는 디바이스 뷰포트 너비를 가져오는 데 사용됩니다.
-get _width {
+num get _width {
   return mediaQueryData.size.width;
 }
 
 /// 이 메서드는 디바이스 뷰포트 높이를 가져오는 데 사용됩니다.
-get _height {
+num get _height {
   num statusBar = mediaQueryData.viewPadding.top;
   num bottomBar = mediaQueryData.viewPadding.bottom;
   num screenHeight = mediaQueryData.size.height - statusBar - bottomBar;

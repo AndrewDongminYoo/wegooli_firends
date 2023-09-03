@@ -2,7 +2,6 @@ export 'controllers/account.agreement.dart';
 export 'controllers/account.dart';
 export 'controllers/account.license.dart';
 export 'controllers/account.payment.dart';
-export 'controllers/account.signup.dart';
 export 'controllers/account.user.dart';
 export 'controllers/global.dart';
 export 'controllers/team.connection.dart';

@@ -114,7 +114,7 @@ Widget? singleMarkerBuilder(
           color: getColorEachMembersPersonalColor(event)));
 }
 
-getColorEachMembersPersonalColor(Schedule event) {
+Color? getColorEachMembersPersonalColor(Schedule event) {
   return event.highlightColor;
   // TODO: 각 멤버별 색상으로 달력의 마커 표시해야 함.
 }

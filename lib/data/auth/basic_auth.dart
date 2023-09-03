@@ -5,7 +5,7 @@ import 'dart:convert';
 import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
-import '/core/app_export.dart';
+import '/data/auth/auth_interceptor.dart';
 
 class BasicAuthInfo {
   final String username;

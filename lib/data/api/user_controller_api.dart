@@ -1,22 +1,26 @@
 // 🎯 Dart imports:
 import 'dart:async';
+import 'dart:convert';
 
 // 📦 Package imports:
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
-import '/lib.dart';
+import '/data/models/account.dart';
+import '/data/models/api_response_object.dart';
+import '/data/models/member.dart';
+import '/data/models/select_user_dto.dart';
+import '/data/models/user_details_dto.dart';
+import '/data/models/user_dto.dart';
+import '/src/deserialize.dart';
 
 class UserControllerApi {
   final Dio _dio;
 
-  final Serializers _serializers;
+  const UserControllerApi(this._dio);
 
-  const UserControllerApi(this._dio, this._serializers);
-
-  /// checkId
+  /// 아이디 중복체크
+  /// 가입된 아이디가 있는지 검증
   ///
   /// Parameters:
   /// * [id]
@@ -58,7 +62,7 @@ class UserControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'id': encodeQueryParameter(_serializers, id, const FullType(String)),
+      r'id': id,
     };
 
     final _response = await _dio.request<Object>(
@@ -74,7 +78,9 @@ class UserControllerApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as String;
+      _responseData = rawResponse == null
+          ? null
+          : deserialize<String, String>(rawResponse, 'String', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -143,8 +149,7 @@ class UserControllerApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(UserDetailsDTO);
-      _bodyData = _serializers.serialize(userDetailsDTO, specifiedType: _type);
+      _bodyData = jsonEncode(userDetailsDTO);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -172,10 +177,9 @@ class UserControllerApi {
       final rawResponse = _response.data;
       _responseData = rawResponse == null
           ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ApiResponseObject),
-            ) as ApiResponseObject;
+          : deserialize<ApiResponseObject, ApiResponseObject>(
+              rawResponse, 'ApiResponseObject',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -243,8 +247,7 @@ class UserControllerApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(Account);
-      _bodyData = _serializers.serialize(account, specifiedType: _type);
+      _bodyData = jsonEncode(account);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -270,7 +273,9 @@ class UserControllerApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as String;
+      _responseData = rawResponse == null
+          ? null
+          : deserialize<String, String>(rawResponse, 'String', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -293,7 +298,7 @@ class UserControllerApi {
     );
   }
 
-  /// logOut
+  /// 로그아웃
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -344,7 +349,9 @@ class UserControllerApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as String;
+      _responseData = rawResponse == null
+          ? null
+          : deserialize<String, String>(rawResponse, 'String', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -367,7 +374,7 @@ class UserControllerApi {
     );
   }
 
-  /// login
+  /// 로그인 (토큰발급)
   ///
   /// Parameters:
   /// * [id]
@@ -411,9 +418,8 @@ class UserControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'id': encodeQueryParameter(_serializers, id, const FullType(String)),
-      r'password':
-          encodeQueryParameter(_serializers, password, const FullType(String)),
+      r'id': id,
+      r'password': password,
     };
 
     final _response = await _dio.request<Object>(
@@ -431,11 +437,7 @@ class UserControllerApi {
       final rawResponse = _response.data;
       _responseData = rawResponse == null
           ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ApiResponseObject),
-            ) as ApiResponseObject;
-
+          : deserialize<ApiResponseObject, ApiResponseObject>(rawResponse, 'String', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -445,6 +447,7 @@ class UserControllerApi {
         stackTrace: stackTrace,
       );
     }
+
     return Response<ApiResponseObject>(
       data: _responseData,
       headers: _response.headers,
@@ -502,8 +505,7 @@ class UserControllerApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(UserDTO);
-      _bodyData = _serializers.serialize(userDTO, specifiedType: _type);
+      _bodyData = jsonEncode(userDTO);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -529,7 +531,9 @@ class UserControllerApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as String;
+      _responseData = rawResponse == null
+          ? null
+          : deserialize<String, String>(rawResponse, 'String', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -563,9 +567,9 @@ class UserControllerApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [ApiResponseObject] as data
+  /// Returns a [Future] containing a [Response] with a [bool] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ApiResponseObject>> signOut({
+  Future<Response<bool>> signOut({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -594,7 +598,7 @@ class UserControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'id': encodeQueryParameter(_serializers, id, const FullType(String)),
+      r'id': id,
     };
 
     final _response = await _dio.request<Object>(
@@ -606,11 +610,13 @@ class UserControllerApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    ApiResponseObject? _responseData;
+    bool? _responseData;
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as ApiResponseObject;
+      _responseData = rawResponse == null
+          ? null
+          : deserialize<bool, bool>(rawResponse, 'bool', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -621,7 +627,7 @@ class UserControllerApi {
       );
     }
 
-    return Response<ApiResponseObject>(
+    return Response<bool>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -689,10 +695,7 @@ class UserControllerApi {
       final rawResponse = _response.data;
       _responseData = rawResponse == null
           ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Account),
-            ) as Account;
+          : deserialize<Account, Account>(rawResponse, 'Account', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -771,10 +774,7 @@ class UserControllerApi {
       final rawResponse = _response.data;
       _responseData = rawResponse == null
           ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Member),
-            ) as Member;
+          : deserialize<Member, Member>(rawResponse, 'Member', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -808,9 +808,9 @@ class UserControllerApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<SelectUserDTO>] as data
+  /// Returns a [Future] containing a [Response] with a [List<SelectUserDTO>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<SelectUserDTO>>> selectUserList({
+  Future<Response<List<SelectUserDTO>>> selectUserList({
     required SelectUserDTO request,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -839,8 +839,7 @@ class UserControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'request': encodeQueryParameter(
-          _serializers, request, const FullType(SelectUserDTO)),
+      r'request': request,
     };
 
     final _response = await _dio.request<Object>(
@@ -852,17 +851,15 @@ class UserControllerApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<SelectUserDTO>? _responseData;
+    List<SelectUserDTO>? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null
           ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(BuiltList, [FullType(SelectUserDTO)]),
-            ) as BuiltList<SelectUserDTO>;
+          : deserialize<List<SelectUserDTO>, SelectUserDTO>(
+              rawResponse, 'List<SelectUserDTO>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -873,7 +870,7 @@ class UserControllerApi {
       );
     }
 
-    return Response<BuiltList<SelectUserDTO>>(
+    return Response<List<SelectUserDTO>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -930,10 +927,7 @@ class UserControllerApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(UserDTO);
-      _bodyData = userDTO == null
-          ? null
-          : _serializers.serialize(userDTO, specifiedType: _type);
+      _bodyData = jsonEncode(userDTO);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -959,7 +953,9 @@ class UserControllerApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as int;
+      _responseData = rawResponse == null
+          ? null
+          : deserialize<int, int>(rawResponse, 'int', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -985,9 +981,9 @@ class UserControllerApi {
   /// updateUser
   ///
   /// Parameters:
+  /// * [userDTO]
   /// * [memberSeq]
   /// * [accountId]
-  /// * [userDTO]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -998,9 +994,9 @@ class UserControllerApi {
   /// Returns a [Future] containing a [Response] with a [bool] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<bool>> updateUser({
+    required UserDTO userDTO,
     required int memberSeq,
     required String accountId,
-    required UserDTO userDTO,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -1029,17 +1025,14 @@ class UserControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'memberSeq':
-          encodeQueryParameter(_serializers, memberSeq, const FullType(int)),
-      r'accountId':
-          encodeQueryParameter(_serializers, accountId, const FullType(String)),
+      r'memberSeq': memberSeq,
+      r'accountId': accountId,
     };
 
     dynamic _bodyData;
 
     try {
-      const _type = FullType(UserDTO);
-      _bodyData = _serializers.serialize(userDTO, specifiedType: _type);
+      _bodyData = jsonEncode(userDTO);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -1067,7 +1060,9 @@ class UserControllerApi {
 
     try {
       final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as bool;
+      _responseData = rawResponse == null
+          ? null
+          : deserialize<bool, bool>(rawResponse, 'bool', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

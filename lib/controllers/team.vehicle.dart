@@ -23,9 +23,8 @@ class VehicleController extends GetxController {
     terminalDevice = terminal.data ?? TerminalModel();
     final scheduleApi = wegooli.getScheduleControllerApi();
     final scheduleList = await scheduleApi.selectScheduleList(
-        teamSeq: (ScheduleRequestBuilder()..teamSeq = 2)
-            .build()
-            .teamSeq); // FIXME: hard-coded 2.
+      teamSeq: ScheduleRequest().teamSeq,
+    );
     print('scheduleList.data : ${scheduleList.data}');
     bool using = scheduleList.data!.any(compose);
     availableNow.value = using;

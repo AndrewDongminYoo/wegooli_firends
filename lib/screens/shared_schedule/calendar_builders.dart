@@ -30,10 +30,10 @@ Widget? rangeStartBuilder(
   return Container(
       margin: const EdgeInsets.symmetric(horizontal: 1),
       child: Text(day.day.toString(),
-          style: TextStyle(color: Colors.blue)), // Example: Display custom text
+          style: TextStyle(color: Color(0xFF2196F3))), // Example: Display custom text
       decoration: BoxDecoration(
           // borderRadius: BorderRadius.horizontal(left: Radius.circular(10))
-          color: Colors.white.withOpacity(0.5),
+          color: Color(0x7EFFFFFF),
           shape: BoxShape.circle));
 }
 
@@ -43,9 +43,9 @@ Widget? rangeEndBuilder(
   return Container(
       margin: const EdgeInsets.symmetric(horizontal: 1),
       child: Text(day.day.toString(),
-          style: TextStyle(color: Colors.blue)), // Example: Display custom text
+          style: TextStyle(color: Color(0xFF2196F3))), // Example: Display custom text
       decoration: BoxDecoration(
-          color: Colors.white.withOpacity(0.3), shape: BoxShape.circle));
+          color: Color(0x4BFFFFFF), shape: BoxShape.circle));
 }
 
 /// 현재 선택된 범위 내에 있는 요일 셀에 대한 사용자 지정 빌더입니다.
@@ -88,10 +88,10 @@ Widget? rangeHighlightBuilder(
   return Container(
       margin: const EdgeInsets.symmetric(horizontal: 1),
       child: Text(day.day.toString(),
-          style: TextStyle(color: Colors.blue)), // Example: Display custom text
+          style: TextStyle(color: Color(0xFF2196F3))), // Example: Display custom text
       decoration: BoxDecoration(
           // borderRadius: BorderRadius.circular(10))
-          color: Colors.white.withOpacity(0.3),
+          color: Color(0x4BFFFFFF),
           shape: BoxShape.circle));
 }
 

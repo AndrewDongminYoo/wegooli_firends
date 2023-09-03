@@ -69,3 +69,10 @@ HeaderStyle headerStyle = HeaderStyle(
   rightChevronIcon: Icon(Icons.keyboard_arrow_right),
   titleTextStyle: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
 );
+
+DaysOfWeekStyle daysOfWeekStyle = DaysOfWeekStyle(
+  weekdayStyle: TextStyle(
+      color: Color(0xFF000000), fontWeight: FontWeight.bold, fontSize: 14),
+  weekendStyle: TextStyle(
+      color: Color(0xFFEF5350), fontWeight: FontWeight.bold, fontSize: 14),
+);

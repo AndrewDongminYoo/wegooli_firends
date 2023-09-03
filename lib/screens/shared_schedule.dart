@@ -10,7 +10,6 @@ import '/core/app_export.dart';
 class TeamScheduleShare extends GetWidget<ScheduleController> {
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
     return SafeArea(
         child: Scaffold(
             backgroundColor: theme.colorScheme.onPrimaryContainer,

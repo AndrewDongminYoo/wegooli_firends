@@ -7,10 +7,7 @@ import '/core/app_export.dart';
 class MembersList extends StatelessWidget {
   const MembersList({
     super.key,
-    required this.controller,
   });
-
-  final ScheduleController controller;
 
   @override
   Widget build(BuildContext context) {

@@ -1,6 +1,3 @@
-// 🎯 Dart imports:
-import 'dart:collection';
-
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
@@ -23,29 +20,21 @@ class Schedule {
   DateTime? updatedAt = DateTime.now();
   Color? highlightColor;
 
-  Schedule({required this.accountId});
+  Schedule({
+    required this.accountId,
+    this.seq,
+    this.teamSeq,
+    this.delYn,
+    this.startAt,
+    this.endAt,
+    this.createdAt,
+    this.updatedAt,
+    this.highlightColor,
+  });
 
   @override
   String toString() => accountId;
 }
-
-/// [Map]을 사용하기로 한 경우, [LinkedHashMap]를 사용하는 것이 권장됩니다.
-final kEvents = LinkedHashMap<DateTime, List<Schedule>>(
-  equals: isSameDay,
-  hashCode: getHashCode,
-)..addAll(_kEventSource);
-
-final _kEventSource = Map.fromIterable(List.generate(50, (index) => index),
-    key: (item) => DateTime.utc(kFirstDay.year, kFirstDay.month, item * 5),
-    value: (item) => List.generate(item % 4 + 1,
-        (index) => Schedule(accountId: '사용자 $item | ${index + 1}')))
-  ..addAll({
-    kToday: [
-      // TODO: 실제 데이터로 변경
-      Schedule(accountId: l10ns.name2),
-      Schedule(accountId: l10ns.name3),
-    ],
-  });
 
 int getHashCode(DateTime key) {
   return key.day * 1000000 + key.month * 10000 + key.year;
@@ -67,7 +56,3 @@ int getWeekdayNumber(StartingDayOfWeek weekday) {
 DateTime normalizeDate(DateTime date) {
   return DateTime.utc(date.year, date.month, date.day);
 }
-
-final kToday = DateTime.now();
-final kFirstDay = DateTime(kToday.year, kToday.month - 1, kToday.day);
-final kLastDay = DateTime(kToday.year, kToday.month + 1, kToday.day);

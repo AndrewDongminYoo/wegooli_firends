@@ -11,7 +11,7 @@ import '/core/app_export.dart';
 class DatetimePickerBottomSheet extends GetView<ScheduleController> {
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
+
     return SingleChildScrollView(
         child: SingleChildScrollView(
             child: Container(
@@ -29,7 +29,7 @@ class DatetimePickerBottomSheet extends GetView<ScheduleController> {
                           alignment: Alignment.centerRight,
                           margin: getMargin(right: 16),
                           onTap: () {
-                            onTapImgClose();
+                            Get.back();
                           }),
                       Align(
                           alignment: Alignment.centerLeft,
@@ -267,13 +267,5 @@ class DatetimePickerBottomSheet extends GetView<ScheduleController> {
                                         CustomTextStyles.titleMedium18)
                               ]))
                     ]))));
-  }
-
-  /// Navigates to the previous screen.
-  ///
-  /// When the action is triggered, this function uses the [Get] library to
-  /// navigate to the previous screen in the navigation stack.
-  onTapImgClose() {
-    Get.back();
   }
 }

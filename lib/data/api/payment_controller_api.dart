@@ -1,26 +1,27 @@
 // 🎯 Dart imports:
 import 'dart:async';
+import 'dart:convert';
 
 // 📦 Package imports:
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
-import '/lib.dart';
+import '/data/models/billing_key_request_model.dart';
+import '/data/models/cancel_request_model.dart';
+import '/data/models/pay_billing_request_model.dart';
+import '/data/models/payment_model.dart';
+import '/src/deserialize.dart';
 
 class PaymentControllerApi {
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const PaymentControllerApi(this._dio, this._serializers);
+  const PaymentControllerApi(this._dio);
 
   /// cancelPayment
   ///
   /// Parameters:
-  /// * [paymentKey]
   /// * [cancelRequestModel]
+  /// * [paymentKey]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -31,8 +32,8 @@ class PaymentControllerApi {
   /// Returns a [Future] containing a [Response] with a [String] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<String>> cancelPayment({
-    required String paymentKey,
     required CancelRequestModel cancelRequestModel,
+    required String paymentKey,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -64,9 +65,7 @@ class PaymentControllerApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(CancelRequestModel);
-      _bodyData =
-          _serializers.serialize(cancelRequestModel, specifiedType: _type);
+      _bodyData = jsonEncode(cancelRequestModel);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -91,8 +90,10 @@ class PaymentControllerApi {
     String? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as String;
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<String, String>(rawData, 'String', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -118,8 +119,8 @@ class PaymentControllerApi {
   /// createBillingKey
   ///
   /// Parameters:
-  /// * [accountId]
   /// * [billingKeyRequestModel]
+  /// * [accountId]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -130,8 +131,8 @@ class PaymentControllerApi {
   /// Returns a [Future] containing a [Response] with a [String] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<String>> createBillingKey({
-    required String accountId,
     required BillingKeyRequestModel billingKeyRequestModel,
+    required String accountId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -163,9 +164,7 @@ class PaymentControllerApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(BillingKeyRequestModel);
-      _bodyData =
-          _serializers.serialize(billingKeyRequestModel, specifiedType: _type);
+      _bodyData = jsonEncode(billingKeyRequestModel);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -190,8 +189,10 @@ class PaymentControllerApi {
     String? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as String;
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<String, String>(rawData, 'String', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -267,13 +268,11 @@ class PaymentControllerApi {
     PaymentModel? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null
+      final rawData = _response.data;
+      _responseData = rawData == null
           ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(PaymentModel),
-            ) as PaymentModel;
+          : deserialize<PaymentModel, PaymentModel>(rawData, 'PaymentModel',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -313,9 +312,9 @@ class PaymentControllerApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<PaymentModel>] as data
+  /// Returns a [Future] containing a [Response] with a [List<PaymentModel>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<PaymentModel>>> getPaymentList({
+  Future<Response<List<PaymentModel>>> getPaymentList({
     String? paymentKey,
     String? status,
     String? lastTransactionKey,
@@ -350,27 +349,13 @@ class PaymentControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (paymentKey != null)
-        r'paymentKey': encodeQueryParameter(
-            _serializers, paymentKey, const FullType(String)),
-      if (status != null)
-        r'status':
-            encodeQueryParameter(_serializers, status, const FullType(String)),
-      if (lastTransactionKey != null)
-        r'lastTransactionKey': encodeQueryParameter(
-            _serializers, lastTransactionKey, const FullType(String)),
-      if (orderId != null)
-        r'orderId':
-            encodeQueryParameter(_serializers, orderId, const FullType(String)),
-      if (orderName != null)
-        r'orderName': encodeQueryParameter(
-            _serializers, orderName, const FullType(String)),
-      if (startRequestedAt != null)
-        r'startRequestedAt': encodeQueryParameter(
-            _serializers, startRequestedAt, const FullType(String)),
-      if (endRequestedAt != null)
-        r'endRequestedAt': encodeQueryParameter(
-            _serializers, endRequestedAt, const FullType(String)),
+      if (paymentKey != null) r'paymentKey': paymentKey,
+      if (status != null) r'status': status,
+      if (lastTransactionKey != null) r'lastTransactionKey': lastTransactionKey,
+      if (orderId != null) r'orderId': orderId,
+      if (orderName != null) r'orderName': orderName,
+      if (startRequestedAt != null) r'startRequestedAt': startRequestedAt,
+      if (endRequestedAt != null) r'endRequestedAt': endRequestedAt,
     };
 
     final _response = await _dio.request<Object>(
@@ -382,17 +367,15 @@ class PaymentControllerApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<PaymentModel>? _responseData;
+    List<PaymentModel>? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null
+      final rawData = _response.data;
+      _responseData = rawData == null
           ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(BuiltList, [FullType(PaymentModel)]),
-            ) as BuiltList<PaymentModel>;
+          : deserialize<List<PaymentModel>, PaymentModel>(
+              rawData, 'List<PaymentModel>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -403,7 +386,7 @@ class PaymentControllerApi {
       );
     }
 
-    return Response<BuiltList<PaymentModel>>(
+    return Response<List<PaymentModel>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -418,8 +401,8 @@ class PaymentControllerApi {
   /// payByBillingKey
   ///
   /// Parameters:
-  /// * [billingKey]
   /// * [payBillingRequestModel]
+  /// * [billingKey]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -430,8 +413,8 @@ class PaymentControllerApi {
   /// Returns a [Future] containing a [Response] with a [String] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<String>> payByBillingKey({
-    required String billingKey,
     required PayBillingRequestModel payBillingRequestModel,
+    required String billingKey,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -463,9 +446,7 @@ class PaymentControllerApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(PayBillingRequestModel);
-      _bodyData =
-          _serializers.serialize(payBillingRequestModel, specifiedType: _type);
+      _bodyData = jsonEncode(payBillingRequestModel);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -490,8 +471,10 @@ class PaymentControllerApi {
     String? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as String;
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<String, String>(rawData, 'String', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -564,8 +547,10 @@ class PaymentControllerApi {
     String? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as String;
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<String, String>(rawData, 'String', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

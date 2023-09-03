@@ -1,20 +1,20 @@
 // 🎯 Dart imports:
 import 'dart:async';
+import 'dart:convert';
 
 // 📦 Package imports:
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
-import '/core/app_export.dart';
+import '/data/models/terminal_model.dart';
+import '/data/models/terminal_request.dart';
+import '/data/models/terminal_update_request.dart';
+import '/src/deserialize.dart';
 
 class TerminalControllerApi {
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const TerminalControllerApi(this._dio, this._serializers);
+  const TerminalControllerApi(this._dio);
 
   /// registTerminal
   ///
@@ -61,8 +61,7 @@ class TerminalControllerApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(TerminalRequest);
-      _bodyData = _serializers.serialize(terminalRequest, specifiedType: _type);
+      _bodyData = jsonEncode(terminalRequest);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -140,13 +139,11 @@ class TerminalControllerApi {
     TerminalModel? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null
+      final rawData = _response.data;
+      _responseData = rawData == null
           ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(TerminalModel),
-            ) as TerminalModel;
+          : deserialize<TerminalModel, TerminalModel>(rawData, 'TerminalModel',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -180,9 +177,9 @@ class TerminalControllerApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<TerminalModel>] as data
+  /// Returns a [Future] containing a [Response] with a [List<TerminalModel>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<TerminalModel>>> selectTerminalList({
+  Future<Response<List<TerminalModel>>> selectTerminalList({
     required TerminalRequest request,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -211,8 +208,7 @@ class TerminalControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'request': encodeQueryParameter(
-          _serializers, request, const FullType(TerminalRequest)),
+      r'request': request,
     };
 
     final _response = await _dio.request<Object>(
@@ -224,17 +220,15 @@ class TerminalControllerApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<TerminalModel>? _responseData;
+    List<TerminalModel>? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null
+      final rawData = _response.data;
+      _responseData = rawData == null
           ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(BuiltList, [FullType(TerminalModel)]),
-            ) as BuiltList<TerminalModel>;
+          : deserialize<List<TerminalModel>, TerminalModel>(
+              rawData, 'List<TerminalModel>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -245,7 +239,7 @@ class TerminalControllerApi {
       );
     }
 
-    return Response<BuiltList<TerminalModel>>(
+    return Response<List<TerminalModel>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -260,8 +254,8 @@ class TerminalControllerApi {
   /// updateTerminal
   ///
   /// Parameters:
-  /// * [seq]
   /// * [terminalUpdateRequest]
+  /// * [seq]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -272,8 +266,8 @@ class TerminalControllerApi {
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> updateTerminal({
-    required int seq,
     required TerminalUpdateRequest terminalUpdateRequest,
+    required int seq,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -305,9 +299,7 @@ class TerminalControllerApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(TerminalUpdateRequest);
-      _bodyData =
-          _serializers.serialize(terminalUpdateRequest, specifiedType: _type);
+      _bodyData = jsonEncode(terminalUpdateRequest);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(

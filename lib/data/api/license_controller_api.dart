@@ -1,20 +1,19 @@
 // 🎯 Dart imports:
 import 'dart:async';
+import 'dart:convert';
 
 // 📦 Package imports:
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
-import '/lib.dart';
+import '/data/models/license_model.dart';
+import '/data/models/license_request.dart';
+import '/src/deserialize.dart';
 
 class LicenseControllerApi {
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const LicenseControllerApi(this._dio, this._serializers);
+  const LicenseControllerApi(this._dio);
 
   /// deleteLicense
   ///
@@ -68,8 +67,10 @@ class LicenseControllerApi {
     bool? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as bool;
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<bool, bool>(rawData, 'bool', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -145,8 +146,10 @@ class LicenseControllerApi {
     bool? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as bool;
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<bool, bool>(rawData, 'bool', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -214,8 +217,7 @@ class LicenseControllerApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(LicenseRequest);
-      _bodyData = _serializers.serialize(licenseRequest, specifiedType: _type);
+      _bodyData = jsonEncode(licenseRequest);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -240,8 +242,10 @@ class LicenseControllerApi {
     int? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as int;
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<int, int>(rawData, 'int', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -309,8 +313,7 @@ class LicenseControllerApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(LicenseRequest);
-      _bodyData = _serializers.serialize(licenseRequest, specifiedType: _type);
+      _bodyData = jsonEncode(licenseRequest);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -335,8 +338,10 @@ class LicenseControllerApi {
     bool? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as bool;
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<bool, bool>(rawData, 'bool', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -411,13 +416,11 @@ class LicenseControllerApi {
     LicenseModel? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null
+      final rawData = _response.data;
+      _responseData = rawData == null
           ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(LicenseModel),
-            ) as LicenseModel;
+          : deserialize<LicenseModel, LicenseModel>(rawData, 'LicenseModel',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -451,9 +454,9 @@ class LicenseControllerApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<LicenseModel>] as data
+  /// Returns a [Future] containing a [Response] with a [List<LicenseModel>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<LicenseModel>>> selectLicenseList({
+  Future<Response<List<LicenseModel>>> selectLicenseList({
     required LicenseRequest request,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -482,8 +485,7 @@ class LicenseControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'request': encodeQueryParameter(
-          _serializers, request, const FullType(LicenseRequest)),
+      r'request': request,
     };
 
     final _response = await _dio.request<Object>(
@@ -495,17 +497,15 @@ class LicenseControllerApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<LicenseModel>? _responseData;
+    List<LicenseModel>? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null
+      final rawData = _response.data;
+      _responseData = rawData == null
           ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(BuiltList, [FullType(LicenseModel)]),
-            ) as BuiltList<LicenseModel>;
+          : deserialize<List<LicenseModel>, LicenseModel>(
+              rawData, 'List<LicenseModel>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -516,7 +516,7 @@ class LicenseControllerApi {
       );
     }
 
-    return Response<BuiltList<LicenseModel>>(
+    return Response<List<LicenseModel>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -578,8 +578,10 @@ class LicenseControllerApi {
     bool? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as bool;
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<bool, bool>(rawData, 'bool', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -605,8 +607,8 @@ class LicenseControllerApi {
   /// updateLicense
   ///
   /// Parameters:
-  /// * [seq]
   /// * [licenseRequest]
+  /// * [seq]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -617,8 +619,8 @@ class LicenseControllerApi {
   /// Returns a [Future] containing a [Response] with a [bool] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<bool>> updateLicense({
-    required int seq,
     required LicenseRequest licenseRequest,
+    required int seq,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -649,8 +651,7 @@ class LicenseControllerApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(LicenseRequest);
-      _bodyData = _serializers.serialize(licenseRequest, specifiedType: _type);
+      _bodyData = jsonEncode(licenseRequest);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -675,8 +676,10 @@ class LicenseControllerApi {
     bool? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as bool;
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<bool, bool>(rawData, 'bool', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

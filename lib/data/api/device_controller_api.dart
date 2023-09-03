@@ -1,20 +1,18 @@
 // 🎯 Dart imports:
 import 'dart:async';
+import 'dart:convert';
 
 // 📦 Package imports:
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
-import '/core/app_export.dart';
+import '/data/models/car_control_history_model.dart';
+import '/src/deserialize.dart';
 
 class DeviceControllerApi {
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const DeviceControllerApi(this._dio, this._serializers);
+  const DeviceControllerApi(this._dio);
 
   /// doorClose
   ///
@@ -58,8 +56,7 @@ class DeviceControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'carNum':
-          encodeQueryParameter(_serializers, carNum, const FullType(String)),
+      r'carNum': carNum,
     };
 
     final _response = await _dio.request<Object>(
@@ -74,8 +71,10 @@ class DeviceControllerApi {
     bool? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as bool;
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<bool, bool>(rawData, 'bool', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -140,8 +139,7 @@ class DeviceControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'carNum':
-          encodeQueryParameter(_serializers, carNum, const FullType(String)),
+      r'carNum': carNum,
     };
 
     final _response = await _dio.request<Object>(
@@ -156,8 +154,10 @@ class DeviceControllerApi {
     bool? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as bool;
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<bool, bool>(rawData, 'bool', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -191,9 +191,9 @@ class DeviceControllerApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<CarControlHistoryModel>] as data
+  /// Returns a [Future] containing a [Response] with a [List<CarControlHistoryModel>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<CarControlHistoryModel>>>
+  Future<Response<List<CarControlHistoryModel>>>
       selectDeviceControlHistoryList({
     required CarControlHistoryModel request,
     CancelToken? cancelToken,
@@ -223,8 +223,7 @@ class DeviceControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'request': encodeQueryParameter(
-          _serializers, request, const FullType(CarControlHistoryModel)),
+      r'request': request,
     };
 
     final _response = await _dio.request<Object>(
@@ -236,17 +235,15 @@ class DeviceControllerApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<CarControlHistoryModel>? _responseData;
+    List<CarControlHistoryModel>? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null
+      final rawData = _response.data;
+      _responseData = rawData == null
           ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(BuiltList, [FullType(CarControlHistoryModel)]),
-            ) as BuiltList<CarControlHistoryModel>;
+          : deserialize<List<CarControlHistoryModel>, CarControlHistoryModel>(
+              rawData, 'List<CarControlHistoryModel>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -257,7 +254,7 @@ class DeviceControllerApi {
       );
     }
 
-    return Response<BuiltList<CarControlHistoryModel>>(
+    return Response<List<CarControlHistoryModel>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -311,8 +308,7 @@ class DeviceControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'carNum':
-          encodeQueryParameter(_serializers, carNum, const FullType(String)),
+      r'carNum': carNum,
     };
 
     final _response = await _dio.request<Object>(
@@ -327,8 +323,10 @@ class DeviceControllerApi {
     bool? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as bool;
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<bool, bool>(rawData, 'bool', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -393,8 +391,7 @@ class DeviceControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'carNum':
-          encodeQueryParameter(_serializers, carNum, const FullType(String)),
+      r'carNum': carNum,
     };
 
     final _response = await _dio.request<Object>(
@@ -409,8 +406,10 @@ class DeviceControllerApi {
     bool? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as bool;
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<bool, bool>(rawData, 'bool', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

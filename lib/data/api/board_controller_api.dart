@@ -1,20 +1,18 @@
 // 🎯 Dart imports:
 import 'dart:async';
+import 'dart:convert';
 
 // 📦 Package imports:
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
-import '/lib.dart';
+import '/data/models/qn_a.dart';
+import '/src/deserialize.dart';
 
 class BoardControllerApi {
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const BoardControllerApi(this._dio, this._serializers);
+  const BoardControllerApi(this._dio);
 
   /// deleteAnswer
   ///
@@ -69,8 +67,10 @@ class BoardControllerApi {
     bool? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as bool;
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<bool, bool>(rawData, 'bool', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -146,8 +146,10 @@ class BoardControllerApi {
     bool? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as bool;
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<bool, bool>(rawData, 'bool', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -173,8 +175,8 @@ class BoardControllerApi {
   /// insertAnswer
   ///
   /// Parameters:
-  /// * [seq]
   /// * [qnA]
+  /// * [seq]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -185,8 +187,8 @@ class BoardControllerApi {
   /// Returns a [Future] containing a [Response] with a [int] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<int>> insertAnswer({
-    required int seq,
     required QnA qnA,
+    required int seq,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -218,8 +220,7 @@ class BoardControllerApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(QnA);
-      _bodyData = _serializers.serialize(qnA, specifiedType: _type);
+      _bodyData = jsonEncode(qnA);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -244,8 +245,10 @@ class BoardControllerApi {
     int? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as int;
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<int, int>(rawData, 'int', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -313,8 +316,7 @@ class BoardControllerApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(QnA);
-      _bodyData = _serializers.serialize(qnA, specifiedType: _type);
+      _bodyData = jsonEncode(qnA);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -339,8 +341,10 @@ class BoardControllerApi {
     int? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as int;
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<int, int>(rawData, 'int', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -405,8 +409,7 @@ class BoardControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'request':
-          encodeQueryParameter(_serializers, request, const FullType(QnA)),
+      r'request': request,
     };
 
     final _response = await _dio.request<Object>(
@@ -421,8 +424,10 @@ class BoardControllerApi {
     int? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as int;
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<int, int>(rawData, 'int', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -498,13 +503,10 @@ class BoardControllerApi {
     QnA? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null
+      final rawData = _response.data;
+      _responseData = rawData == null
           ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(QnA),
-            ) as QnA;
+          : deserialize<QnA, QnA>(rawData, 'QnA', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -538,9 +540,9 @@ class BoardControllerApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<QnA>] as data
+  /// Returns a [Future] containing a [Response] with a [List<QnA>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<QnA>>> selectQnAList({
+  Future<Response<List<QnA>>> selectQnAList({
     required QnA request,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -569,8 +571,7 @@ class BoardControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'request':
-          encodeQueryParameter(_serializers, request, const FullType(QnA)),
+      r'request': request,
     };
 
     final _response = await _dio.request<Object>(
@@ -582,16 +583,13 @@ class BoardControllerApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<QnA>? _responseData;
+    List<QnA>? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null
+      final rawData = _response.data;
+      _responseData = rawData == null
           ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(BuiltList, [FullType(QnA)]),
-            ) as BuiltList<QnA>;
+          : deserialize<List<QnA>, QnA>(rawData, 'List<QnA>', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -602,7 +600,7 @@ class BoardControllerApi {
       );
     }
 
-    return Response<BuiltList<QnA>>(
+    return Response<List<QnA>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -617,8 +615,8 @@ class BoardControllerApi {
   /// updateAnswer
   ///
   /// Parameters:
-  /// * [seq]
   /// * [qnA]
+  /// * [seq]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -629,8 +627,8 @@ class BoardControllerApi {
   /// Returns a [Future] containing a [Response] with a [int] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<int>> updateAnswer({
-    required int seq,
     required QnA qnA,
+    required int seq,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -662,8 +660,7 @@ class BoardControllerApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(QnA);
-      _bodyData = _serializers.serialize(qnA, specifiedType: _type);
+      _bodyData = jsonEncode(qnA);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -688,8 +685,10 @@ class BoardControllerApi {
     int? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as int;
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<int, int>(rawData, 'int', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -715,8 +714,8 @@ class BoardControllerApi {
   /// updateQuestion
   ///
   /// Parameters:
-  /// * [seq]
   /// * [qnA]
+  /// * [seq]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -727,8 +726,8 @@ class BoardControllerApi {
   /// Returns a [Future] containing a [Response] with a [int] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<int>> updateQuestion({
-    required int seq,
     required QnA qnA,
+    required int seq,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -760,8 +759,7 @@ class BoardControllerApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(QnA);
-      _bodyData = _serializers.serialize(qnA, specifiedType: _type);
+      _bodyData = jsonEncode(qnA);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -786,8 +784,10 @@ class BoardControllerApi {
     int? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as int;
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<int, int>(rawData, 'int', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

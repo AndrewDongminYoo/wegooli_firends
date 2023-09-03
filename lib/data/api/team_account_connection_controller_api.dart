@@ -1,20 +1,20 @@
 // 🎯 Dart imports:
 import 'dart:async';
+import 'dart:convert';
 
 // 📦 Package imports:
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
-import '/core/app_export.dart';
+import '/data/models/team_account_connection_model.dart';
+import '/data/models/team_account_connection_request.dart';
+import '/data/models/team_account_connection_response.dart';
+import '/src/deserialize.dart';
 
 class TeamAccountConnectionControllerApi {
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const TeamAccountConnectionControllerApi(this._dio, this._serializers);
+  const TeamAccountConnectionControllerApi(this._dio);
 
   /// deleteTeamAccount
   ///
@@ -69,8 +69,10 @@ class TeamAccountConnectionControllerApi {
     String? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as String;
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<String, String>(rawData, 'String', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -138,9 +140,7 @@ class TeamAccountConnectionControllerApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(TeamAccountConnectionRequest);
-      _bodyData = _serializers.serialize(teamAccountConnectionRequest,
-          specifiedType: _type);
+      _bodyData = jsonEncode(teamAccountConnectionRequest);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -165,8 +165,10 @@ class TeamAccountConnectionControllerApi {
     String? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as String;
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<String, String>(rawData, 'String', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -245,8 +247,10 @@ class TeamAccountConnectionControllerApi {
     String? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as String;
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<String, String>(rawData, 'String', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -322,13 +326,12 @@ class TeamAccountConnectionControllerApi {
     TeamAccountConnectionModel? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null
+      final rawData = _response.data;
+      _responseData = rawData == null
           ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(TeamAccountConnectionModel),
-            ) as TeamAccountConnectionModel;
+          : deserialize<TeamAccountConnectionModel, TeamAccountConnectionModel>(
+              rawData, 'TeamAccountConnectionModel',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -368,10 +371,9 @@ class TeamAccountConnectionControllerApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<TeamAccountConnectionResponse>] as data
+  /// Returns a [Future] containing a [Response] with a [List<TeamAccountConnectionResponse>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<TeamAccountConnectionResponse>>>
-      selectTeamAccountList({
+  Future<Response<List<TeamAccountConnectionResponse>>> selectTeamAccountList({
     int? teamSeq,
     String? accountId,
     String? startJoinedAt,
@@ -406,27 +408,13 @@ class TeamAccountConnectionControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (teamSeq != null)
-        r'teamSeq':
-            encodeQueryParameter(_serializers, teamSeq, const FullType(int)),
-      if (accountId != null)
-        r'accountId': encodeQueryParameter(
-            _serializers, accountId, const FullType(String)),
-      if (startJoinedAt != null)
-        r'startJoinedAt': encodeQueryParameter(
-            _serializers, startJoinedAt, const FullType(String)),
-      if (endJoinedAt != null)
-        r'endJoinedAt': encodeQueryParameter(
-            _serializers, endJoinedAt, const FullType(String)),
-      if (startLeavedAt != null)
-        r'startLeavedAt': encodeQueryParameter(
-            _serializers, startLeavedAt, const FullType(String)),
-      if (endLeavedAt != null)
-        r'endLeavedAt': encodeQueryParameter(
-            _serializers, endLeavedAt, const FullType(String)),
-      if (isLeaved != null)
-        r'isLeaved': encodeQueryParameter(
-            _serializers, isLeaved, const FullType(String)),
+      if (teamSeq != null) r'teamSeq': teamSeq,
+      if (accountId != null) r'accountId': accountId,
+      if (startJoinedAt != null) r'startJoinedAt': startJoinedAt,
+      if (endJoinedAt != null) r'endJoinedAt': endJoinedAt,
+      if (startLeavedAt != null) r'startLeavedAt': startLeavedAt,
+      if (endLeavedAt != null) r'endLeavedAt': endLeavedAt,
+      if (isLeaved != null) r'isLeaved': isLeaved,
     };
 
     final _response = await _dio.request<Object>(
@@ -438,16 +426,16 @@ class TeamAccountConnectionControllerApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<TeamAccountConnectionResponse>? _responseData;
+    List<TeamAccountConnectionResponse>? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null
+      final rawData = _response.data;
+      _responseData = rawData == null
           ? null
-          : _serializers.deserialize(rawResponse,
-                  specifiedType: const FullType(
-                      BuiltList, [FullType(TeamAccountConnectionResponse)]))
-              as BuiltList<TeamAccountConnectionResponse>;
+          : deserialize<List<TeamAccountConnectionResponse>,
+                  TeamAccountConnectionResponse>(
+              rawData, 'List<TeamAccountConnectionResponse>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -458,7 +446,7 @@ class TeamAccountConnectionControllerApi {
       );
     }
 
-    return Response<BuiltList<TeamAccountConnectionResponse>>(
+    return Response<List<TeamAccountConnectionResponse>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

@@ -1,20 +1,20 @@
 // 🎯 Dart imports:
 import 'dart:async';
+import 'dart:convert';
 
 // 📦 Package imports:
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
-import '/lib.dart';
+import '/data/models/notice.dart';
+import '/data/models/push.dart';
+import '/data/models/sms.dart';
+import '/src/deserialize.dart';
 
 class NoticeControllerApi {
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const NoticeControllerApi(this._dio, this._serializers);
+  const NoticeControllerApi(this._dio);
 
   /// deleteNotice
   ///
@@ -68,8 +68,10 @@ class NoticeControllerApi {
     int? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as int;
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<int, int>(rawData, 'int', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -145,8 +147,10 @@ class NoticeControllerApi {
     int? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as int;
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<int, int>(rawData, 'int', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -222,8 +226,10 @@ class NoticeControllerApi {
     int? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as int;
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<int, int>(rawData, 'int', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -291,8 +297,7 @@ class NoticeControllerApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(Notice);
-      _bodyData = _serializers.serialize(notice, specifiedType: _type);
+      _bodyData = jsonEncode(notice);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -317,8 +322,10 @@ class NoticeControllerApi {
     int? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as int;
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<int, int>(rawData, 'int', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -386,8 +393,7 @@ class NoticeControllerApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(Push);
-      _bodyData = _serializers.serialize(push, specifiedType: _type);
+      _bodyData = jsonEncode(push);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -412,8 +418,10 @@ class NoticeControllerApi {
     int? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as int;
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<int, int>(rawData, 'int', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -481,8 +489,7 @@ class NoticeControllerApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(Sms);
-      _bodyData = _serializers.serialize(sms, specifiedType: _type);
+      _bodyData = jsonEncode(sms);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -507,8 +514,10 @@ class NoticeControllerApi {
     int? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as int;
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<int, int>(rawData, 'int', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -583,13 +592,10 @@ class NoticeControllerApi {
     Notice? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null
+      final rawData = _response.data;
+      _responseData = rawData == null
           ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Notice),
-            ) as Notice;
+          : deserialize<Notice, Notice>(rawData, 'Notice', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -623,9 +629,9 @@ class NoticeControllerApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<Notice>] as data
+  /// Returns a [Future] containing a [Response] with a [List<Notice>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<Notice>>> selectNoticeList({
+  Future<Response<List<Notice>>> selectNoticeList({
     required Notice request,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -654,8 +660,7 @@ class NoticeControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'request':
-          encodeQueryParameter(_serializers, request, const FullType(Notice)),
+      r'request': request,
     };
 
     final _response = await _dio.request<Object>(
@@ -667,16 +672,14 @@ class NoticeControllerApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<Notice>? _responseData;
+    List<Notice>? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null
+      final rawData = _response.data;
+      _responseData = rawData == null
           ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(BuiltList, [FullType(Notice)]),
-            ) as BuiltList<Notice>;
+          : deserialize<List<Notice>, Notice>(rawData, 'List<Notice>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -687,7 +690,7 @@ class NoticeControllerApi {
       );
     }
 
-    return Response<BuiltList<Notice>>(
+    return Response<List<Notice>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -752,13 +755,10 @@ class NoticeControllerApi {
     Push? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null
+      final rawData = _response.data;
+      _responseData = rawData == null
           ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Push),
-            ) as Push;
+          : deserialize<Push, Push>(rawData, 'Push', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -792,9 +792,9 @@ class NoticeControllerApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<Push>] as data
+  /// Returns a [Future] containing a [Response] with a [List<Push>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<Push>>> selectPushList({
+  Future<Response<List<Push>>> selectPushList({
     required Push request,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -823,8 +823,7 @@ class NoticeControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'request':
-          encodeQueryParameter(_serializers, request, const FullType(Push)),
+      r'request': request,
     };
 
     final _response = await _dio.request<Object>(
@@ -836,16 +835,14 @@ class NoticeControllerApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<Push>? _responseData;
+    List<Push>? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null
+      final rawData = _response.data;
+      _responseData = rawData == null
           ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(BuiltList, [FullType(Push)]),
-            ) as BuiltList<Push>;
+          : deserialize<List<Push>, Push>(rawData, 'List<Push>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -856,7 +853,7 @@ class NoticeControllerApi {
       );
     }
 
-    return Response<BuiltList<Push>>(
+    return Response<List<Push>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -921,13 +918,10 @@ class NoticeControllerApi {
     Sms? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null
+      final rawData = _response.data;
+      _responseData = rawData == null
           ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(Sms),
-            ) as Sms;
+          : deserialize<Sms, Sms>(rawData, 'Sms', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -961,9 +955,9 @@ class NoticeControllerApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<Sms>] as data
+  /// Returns a [Future] containing a [Response] with a [List<Sms>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<Sms>>> selectSmsList({
+  Future<Response<List<Sms>>> selectSmsList({
     required Sms request,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -992,8 +986,7 @@ class NoticeControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'request':
-          encodeQueryParameter(_serializers, request, const FullType(Sms)),
+      r'request': request,
     };
 
     final _response = await _dio.request<Object>(
@@ -1005,16 +998,13 @@ class NoticeControllerApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<Sms>? _responseData;
+    List<Sms>? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null
+      final rawData = _response.data;
+      _responseData = rawData == null
           ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(BuiltList, [FullType(Sms)]),
-            ) as BuiltList<Sms>;
+          : deserialize<List<Sms>, Sms>(rawData, 'List<Sms>', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1025,7 +1015,7 @@ class NoticeControllerApi {
       );
     }
 
-    return Response<BuiltList<Sms>>(
+    return Response<List<Sms>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -1040,8 +1030,8 @@ class NoticeControllerApi {
   /// updateNotice
   ///
   /// Parameters:
-  /// * [seq]
   /// * [notice]
+  /// * [seq]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1052,8 +1042,8 @@ class NoticeControllerApi {
   /// Returns a [Future] containing a [Response] with a [int] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<int>> updateNotice({
-    required int seq,
     required Notice notice,
+    required int seq,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -1084,8 +1074,7 @@ class NoticeControllerApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(Notice);
-      _bodyData = _serializers.serialize(notice, specifiedType: _type);
+      _bodyData = jsonEncode(notice);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -1110,8 +1099,10 @@ class NoticeControllerApi {
     int? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as int;
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<int, int>(rawData, 'int', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1137,8 +1128,8 @@ class NoticeControllerApi {
   /// updatePush
   ///
   /// Parameters:
-  /// * [seq]
   /// * [push]
+  /// * [seq]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1149,8 +1140,8 @@ class NoticeControllerApi {
   /// Returns a [Future] containing a [Response] with a [int] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<int>> updatePush({
-    required int seq,
     required Push push,
+    required int seq,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -1182,8 +1173,7 @@ class NoticeControllerApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(Push);
-      _bodyData = _serializers.serialize(push, specifiedType: _type);
+      _bodyData = jsonEncode(push);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -1208,8 +1198,10 @@ class NoticeControllerApi {
     int? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as int;
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<int, int>(rawData, 'int', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1235,8 +1227,8 @@ class NoticeControllerApi {
   /// updateSms
   ///
   /// Parameters:
-  /// * [seq]
   /// * [sms]
+  /// * [seq]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1247,8 +1239,8 @@ class NoticeControllerApi {
   /// Returns a [Future] containing a [Response] with a [int] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<int>> updateSms({
-    required int seq,
     required Sms sms,
+    required int seq,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -1280,8 +1272,7 @@ class NoticeControllerApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(Sms);
-      _bodyData = _serializers.serialize(sms, specifiedType: _type);
+      _bodyData = jsonEncode(sms);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -1306,8 +1297,10 @@ class NoticeControllerApi {
     int? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as int;
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<int, int>(rawData, 'int', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

@@ -1,20 +1,19 @@
 // 🎯 Dart imports:
 import 'dart:async';
+import 'dart:convert';
 
 // 📦 Package imports:
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
-import '/core/app_export.dart';
+import '/data/models/payment_card_model.dart';
+import '/data/models/payment_card_request.dart';
+import '/src/deserialize.dart';
 
 class PaymentCardControllerApi {
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const PaymentCardControllerApi(this._dio, this._serializers);
+  const PaymentCardControllerApi(this._dio);
 
   /// deletePaymentCard
   ///
@@ -69,8 +68,10 @@ class PaymentCardControllerApi {
     String? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as String;
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<String, String>(rawData, 'String', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -138,9 +139,7 @@ class PaymentCardControllerApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(PaymentCardRequest);
-      _bodyData =
-          _serializers.serialize(paymentCardRequest, specifiedType: _type);
+      _bodyData = jsonEncode(paymentCardRequest);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -165,8 +164,10 @@ class PaymentCardControllerApi {
     String? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as String;
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<String, String>(rawData, 'String', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -242,13 +243,12 @@ class PaymentCardControllerApi {
     PaymentCardModel? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null
+      final rawData = _response.data;
+      _responseData = rawData == null
           ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(PaymentCardModel),
-            ) as PaymentCardModel;
+          : deserialize<PaymentCardModel, PaymentCardModel>(
+              rawData, 'PaymentCardModel',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -285,6 +285,8 @@ class PaymentCardControllerApi {
   /// * [password]
   /// * [rrn]
   /// * [crn]
+  /// * [expirationMonth]
+  /// * [expirationYear]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -292,9 +294,9 @@ class PaymentCardControllerApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<PaymentCardModel>] as data
+  /// Returns a [Future] containing a [Response] with a [List<PaymentCardModel>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<PaymentCardModel>>> selectPaymentCardList({
+  Future<Response<List<PaymentCardModel>>> selectPaymentCardList({
     int? memberSeq,
     String? cardNumber,
     String? defaultYn,
@@ -306,6 +308,8 @@ class PaymentCardControllerApi {
     String? password,
     String? rrn,
     String? crn,
+    String? expirationMonth,
+    String? expirationYear,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -333,37 +337,19 @@ class PaymentCardControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (memberSeq != null)
-        r'memberSeq':
-            encodeQueryParameter(_serializers, memberSeq, const FullType(int)),
-      if (cardNumber != null)
-        r'cardNumber': encodeQueryParameter(
-            _serializers, cardNumber, const FullType(String)),
-      if (defaultYn != null)
-        r'defaultYn': encodeQueryParameter(
-            _serializers, defaultYn, const FullType(String)),
-      if (delYn != null)
-        r'delYn':
-            encodeQueryParameter(_serializers, delYn, const FullType(String)),
-      if (startCreatedAt != null)
-        r'startCreatedAt': encodeQueryParameter(
-            _serializers, startCreatedAt, const FullType(String)),
-      if (endCreatedAt != null)
-        r'endCreatedAt': encodeQueryParameter(
-            _serializers, endCreatedAt, const FullType(String)),
-      if (startUpdatedAt != null)
-        r'startUpdatedAt': encodeQueryParameter(
-            _serializers, startUpdatedAt, const FullType(String)),
-      if (endUpdatedAt != null)
-        r'endUpdatedAt': encodeQueryParameter(
-            _serializers, endUpdatedAt, const FullType(String)),
-      if (password != null)
-        r'password': encodeQueryParameter(
-            _serializers, password, const FullType(String)),
-      if (rrn != null)
-        r'rrn': encodeQueryParameter(_serializers, rrn, const FullType(String)),
-      if (crn != null)
-        r'crn': encodeQueryParameter(_serializers, crn, const FullType(String)),
+      if (memberSeq != null) r'memberSeq': memberSeq,
+      if (cardNumber != null) r'cardNumber': cardNumber,
+      if (defaultYn != null) r'defaultYn': defaultYn,
+      if (delYn != null) r'delYn': delYn,
+      if (startCreatedAt != null) r'startCreatedAt': startCreatedAt,
+      if (endCreatedAt != null) r'endCreatedAt': endCreatedAt,
+      if (startUpdatedAt != null) r'startUpdatedAt': startUpdatedAt,
+      if (endUpdatedAt != null) r'endUpdatedAt': endUpdatedAt,
+      if (password != null) r'password': password,
+      if (rrn != null) r'rrn': rrn,
+      if (crn != null) r'crn': crn,
+      if (expirationMonth != null) r'expirationMonth': expirationMonth,
+      if (expirationYear != null) r'expirationYear': expirationYear,
     };
 
     final _response = await _dio.request<Object>(
@@ -375,17 +361,15 @@ class PaymentCardControllerApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<PaymentCardModel>? _responseData;
+    List<PaymentCardModel>? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null
+      final rawData = _response.data;
+      _responseData = rawData == null
           ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(BuiltList, [FullType(PaymentCardModel)]),
-            ) as BuiltList<PaymentCardModel>;
+          : deserialize<List<PaymentCardModel>, PaymentCardModel>(
+              rawData, 'List<PaymentCardModel>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -396,7 +380,7 @@ class PaymentCardControllerApi {
       );
     }
 
-    return Response<BuiltList<PaymentCardModel>>(
+    return Response<List<PaymentCardModel>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -411,8 +395,8 @@ class PaymentCardControllerApi {
   /// updatePaymentCard
   ///
   /// Parameters:
-  /// * [seq]
   /// * [paymentCardRequest]
+  /// * [seq]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -423,8 +407,8 @@ class PaymentCardControllerApi {
   /// Returns a [Future] containing a [Response] with a [String] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<String>> updatePaymentCard({
-    required int seq,
     required PaymentCardRequest paymentCardRequest,
+    required int seq,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -456,9 +440,7 @@ class PaymentCardControllerApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(PaymentCardRequest);
-      _bodyData =
-          _serializers.serialize(paymentCardRequest, specifiedType: _type);
+      _bodyData = jsonEncode(paymentCardRequest);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -483,8 +465,10 @@ class PaymentCardControllerApi {
     String? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as String;
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<String, String>(rawData, 'String', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

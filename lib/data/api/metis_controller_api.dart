@@ -1,20 +1,19 @@
 // 🎯 Dart imports:
 import 'dart:async';
+import 'dart:convert';
 
 // 📦 Package imports:
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
-import '/core/app_export.dart';
+import '/data/models/car_history_dto.dart';
+import '/data/models/device_control_result_dto.dart';
+import '/src/deserialize.dart';
 
 class MetisControllerApi {
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const MetisControllerApi(this._dio, this._serializers);
+  const MetisControllerApi(this._dio);
 
   /// carLogTop
   ///
@@ -58,8 +57,7 @@ class MetisControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'carNum':
-          encodeQueryParameter(_serializers, carNum, const FullType(String)),
+      r'carNum': carNum,
     };
 
     final _response = await _dio.request<Object>(
@@ -74,13 +72,11 @@ class MetisControllerApi {
     CarHistoryDTO? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null
+      final rawData = _response.data;
+      _responseData = rawData == null
           ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(CarHistoryDTO),
-            ) as CarHistoryDTO;
+          : deserialize<CarHistoryDTO, CarHistoryDTO>(rawData, 'CarHistoryDTO',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -114,9 +110,9 @@ class MetisControllerApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<CarHistoryDTO>] as data
+  /// Returns a [Future] containing a [Response] with a [List<CarHistoryDTO>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<CarHistoryDTO>>> history({
+  Future<Response<List<CarHistoryDTO>>> history({
     String? carNum,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -145,9 +141,7 @@ class MetisControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (carNum != null)
-        r'carNum':
-            encodeQueryParameter(_serializers, carNum, const FullType(String)),
+      if (carNum != null) r'carNum': carNum,
     };
 
     final _response = await _dio.request<Object>(
@@ -159,17 +153,15 @@ class MetisControllerApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<CarHistoryDTO>? _responseData;
+    List<CarHistoryDTO>? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null
+      final rawData = _response.data;
+      _responseData = rawData == null
           ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(BuiltList, [FullType(CarHistoryDTO)]),
-            ) as BuiltList<CarHistoryDTO>;
+          : deserialize<List<CarHistoryDTO>, CarHistoryDTO>(
+              rawData, 'List<CarHistoryDTO>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -180,7 +172,7 @@ class MetisControllerApi {
       );
     }
 
-    return Response<BuiltList<CarHistoryDTO>>(
+    return Response<List<CarHistoryDTO>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -192,7 +184,7 @@ class MetisControllerApi {
     );
   }
 
-  /// received
+  /// receivced
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -204,7 +196,7 @@ class MetisControllerApi {
   ///
   /// Returns a [Future] containing a [Response] with a [String] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<String>> received({
+  Future<Response<String>> receivced({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -242,8 +234,10 @@ class MetisControllerApi {
     String? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as String;
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<String, String>(rawData, 'String', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -308,8 +302,7 @@ class MetisControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'dto': encodeQueryParameter(
-          _serializers, dto, const FullType(DeviceControlResultDTO)),
+      r'dto': dto,
     };
 
     final _response = await _dio.request<Object>(
@@ -324,8 +317,10 @@ class MetisControllerApi {
     String? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as String;
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<String, String>(rawData, 'String', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

@@ -1,20 +1,19 @@
 // 🎯 Dart imports:
 import 'dart:async';
+import 'dart:convert';
 
 // 📦 Package imports:
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
-import '/core/app_export.dart';
+import '/data/models/schedule_model.dart';
+import '/data/models/schedule_request.dart';
+import '/src/deserialize.dart';
 
 class ScheduleControllerApi {
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const ScheduleControllerApi(this._dio, this._serializers);
+  const ScheduleControllerApi(this._dio);
 
   /// deleteSchedule
   ///
@@ -114,8 +113,7 @@ class ScheduleControllerApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(ScheduleRequest);
-      _bodyData = _serializers.serialize(scheduleRequest, specifiedType: _type);
+      _bodyData = jsonEncode(scheduleRequest);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -193,13 +191,11 @@ class ScheduleControllerApi {
     ScheduleModel? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null
+      final rawData = _response.data;
+      _responseData = rawData == null
           ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(ScheduleModel),
-            ) as ScheduleModel;
+          : deserialize<ScheduleModel, ScheduleModel>(rawData, 'ScheduleModel',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -236,9 +232,9 @@ class ScheduleControllerApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<ScheduleModel>] as data
+  /// Returns a [Future] containing a [Response] with a [List<ScheduleModel>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<ScheduleModel>>> selectScheduleList({
+  Future<Response<List<ScheduleModel>>> selectScheduleList({
     int? teamSeq,
     String? accountId,
     String? startAt,
@@ -270,18 +266,10 @@ class ScheduleControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (teamSeq != null)
-        r'teamSeq':
-            encodeQueryParameter(_serializers, teamSeq, const FullType(int)),
-      if (accountId != null)
-        r'accountId': encodeQueryParameter(
-            _serializers, accountId, const FullType(String)),
-      if (startAt != null)
-        r'startAt':
-            encodeQueryParameter(_serializers, startAt, const FullType(String)),
-      if (endAt != null)
-        r'endAt':
-            encodeQueryParameter(_serializers, endAt, const FullType(String)),
+      if (teamSeq != null) r'teamSeq': teamSeq,
+      if (accountId != null) r'accountId': accountId,
+      if (startAt != null) r'startAt': startAt,
+      if (endAt != null) r'endAt': endAt,
     };
 
     final _response = await _dio.request<Object>(
@@ -293,17 +281,15 @@ class ScheduleControllerApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<ScheduleModel>? _responseData;
+    List<ScheduleModel>? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null
+      final rawData = _response.data;
+      _responseData = rawData == null
           ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(BuiltList, [FullType(ScheduleModel)]),
-            ) as BuiltList<ScheduleModel>;
+          : deserialize<List<ScheduleModel>, ScheduleModel>(
+              rawData, 'List<ScheduleModel>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -314,7 +300,7 @@ class ScheduleControllerApi {
       );
     }
 
-    return Response<BuiltList<ScheduleModel>>(
+    return Response<List<ScheduleModel>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -329,8 +315,8 @@ class ScheduleControllerApi {
   /// updateSchedule
   ///
   /// Parameters:
-  /// * [seq]
   /// * [scheduleRequest]
+  /// * [seq]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -341,8 +327,8 @@ class ScheduleControllerApi {
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> updateSchedule({
-    required int seq,
     required ScheduleRequest scheduleRequest,
+    required int seq,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -374,8 +360,7 @@ class ScheduleControllerApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(ScheduleRequest);
-      _bodyData = _serializers.serialize(scheduleRequest, specifiedType: _type);
+      _bodyData = jsonEncode(scheduleRequest);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(

@@ -1,20 +1,19 @@
 // 🎯 Dart imports:
 import 'dart:async';
+import 'dart:convert';
 
 // 📦 Package imports:
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
-import '/lib.dart';
+import '/data/models/car_model.dart';
+import '/data/models/car_request.dart';
+import '/src/deserialize.dart';
 
 class CarControllerApi {
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const CarControllerApi(this._dio, this._serializers);
+  const CarControllerApi(this._dio);
 
   /// deleteCar
   ///
@@ -114,8 +113,7 @@ class CarControllerApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(CarRequest);
-      _bodyData = _serializers.serialize(carRequest, specifiedType: _type);
+      _bodyData = jsonEncode(carRequest);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -193,13 +191,11 @@ class CarControllerApi {
     CarModel? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null
+      final rawData = _response.data;
+      _responseData = rawData == null
           ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(CarModel),
-            ) as CarModel;
+          : deserialize<CarModel, CarModel>(rawData, 'CarModel',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -233,9 +229,9 @@ class CarControllerApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<CarModel>] as data
+  /// Returns a [Future] containing a [Response] with a [List<CarModel>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<CarModel>>> selectCarList({
+  Future<Response<List<CarModel>>> selectCarList({
     required CarRequest request,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -264,8 +260,7 @@ class CarControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'request': encodeQueryParameter(
-          _serializers, request, const FullType(CarRequest)),
+      r'request': request,
     };
 
     final _response = await _dio.request<Object>(
@@ -277,16 +272,14 @@ class CarControllerApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<CarModel>? _responseData;
+    List<CarModel>? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null
+      final rawData = _response.data;
+      _responseData = rawData == null
           ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(BuiltList, [FullType(CarModel)]),
-            ) as BuiltList<CarModel>;
+          : deserialize<List<CarModel>, CarModel>(rawData, 'List<CarModel>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -297,7 +290,7 @@ class CarControllerApi {
       );
     }
 
-    return Response<BuiltList<CarModel>>(
+    return Response<List<CarModel>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -312,8 +305,8 @@ class CarControllerApi {
   /// updateCar
   ///
   /// Parameters:
-  /// * [carNum]
   /// * [carRequest]
+  /// * [carNum]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -324,8 +317,8 @@ class CarControllerApi {
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> updateCar({
-    required String carNum,
     required CarRequest carRequest,
+    required String carNum,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -357,8 +350,7 @@ class CarControllerApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(CarRequest);
-      _bodyData = _serializers.serialize(carRequest, specifiedType: _type);
+      _bodyData = jsonEncode(carRequest);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(

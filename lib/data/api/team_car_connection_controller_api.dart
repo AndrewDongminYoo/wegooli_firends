@@ -1,19 +1,18 @@
 // 🎯 Dart imports:
 import 'dart:async';
+import 'dart:convert';
 
 // 📦 Package imports:
-import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
-import '/core/app_export.dart';
+import '/data/models/team_car_connection.dart';
+import '/src/deserialize.dart';
 
 class TeamCarConnectionControllerApi {
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const TeamCarConnectionControllerApi(this._dio, this._serializers);
+  const TeamCarConnectionControllerApi(this._dio);
 
   /// teamCarConnection
   ///
@@ -60,9 +59,7 @@ class TeamCarConnectionControllerApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(TeamCarConnection);
-      _bodyData =
-          _serializers.serialize(teamCarConnection, specifiedType: _type);
+      _bodyData = jsonEncode(teamCarConnection);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -87,8 +84,10 @@ class TeamCarConnectionControllerApi {
     String? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as String;
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<String, String>(rawData, 'String', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -156,9 +155,7 @@ class TeamCarConnectionControllerApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(TeamCarConnection);
-      _bodyData =
-          _serializers.serialize(teamCarConnection, specifiedType: _type);
+      _bodyData = jsonEncode(teamCarConnection);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -183,8 +180,10 @@ class TeamCarConnectionControllerApi {
     String? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as String;
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<String, String>(rawData, 'String', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

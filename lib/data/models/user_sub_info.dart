@@ -1,161 +1,60 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'user_sub_info.g.dart';
 
-/// UserSubInfo
-///
-/// Properties:
-/// * [userId]
-/// * [serviceSeq]
-/// * [weekInfo]
-/// * [timeInfo]
-@BuiltValue()
-abstract class UserSubInfo implements Built<UserSubInfo, UserSubInfoBuilder> {
-  @BuiltValueField(wireName: r'userId')
-  String? get userId;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class UserSubInfo {
+  /// Returns a new [UserSubInfo] instance.
+  UserSubInfo({
+    this.userId,
+    this.serviceSeq,
+    this.weekInfo,
+    this.timeInfo,
+  });
 
-  @BuiltValueField(wireName: r'serviceSeq')
-  String? get serviceSeq;
+  @JsonKey(name: r'userId', required: false, includeIfNull: false)
+  final String? userId;
 
-  @BuiltValueField(wireName: r'weekInfo')
-  String? get weekInfo;
+  @JsonKey(name: r'serviceSeq', required: false, includeIfNull: false)
+  final String? serviceSeq;
 
-  @BuiltValueField(wireName: r'timeInfo')
-  String? get timeInfo;
+  @JsonKey(name: r'weekInfo', required: false, includeIfNull: false)
+  final String? weekInfo;
 
-  UserSubInfo._();
-
-  factory UserSubInfo([void updates(UserSubInfoBuilder b)]) = _$UserSubInfo;
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(UserSubInfoBuilder b) => b;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<UserSubInfo> get serializer => _$UserSubInfoSerializer();
-}
-
-class _$UserSubInfoSerializer implements PrimitiveSerializer<UserSubInfo> {
-  @override
-  final Iterable<Type> types = const [UserSubInfo, _$UserSubInfo];
+  @JsonKey(name: r'timeInfo', required: false, includeIfNull: false)
+  final String? timeInfo;
 
   @override
-  final String wireName = r'UserSubInfo';
-
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    UserSubInfo object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.userId != null) {
-      yield r'userId';
-      yield serializers.serialize(
-        object.userId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.serviceSeq != null) {
-      yield r'serviceSeq';
-      yield serializers.serialize(
-        object.serviceSeq,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.weekInfo != null) {
-      yield r'weekInfo';
-      yield serializers.serialize(
-        object.weekInfo,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.timeInfo != null) {
-      yield r'timeInfo';
-      yield serializers.serialize(
-        object.timeInfo,
-        specifiedType: const FullType(String),
-      );
-    }
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is UserSubInfo &&
+          other.userId == userId &&
+          other.serviceSeq == serviceSeq &&
+          other.weekInfo == weekInfo &&
+          other.timeInfo == timeInfo;
 
   @override
-  Object serialize(
-    Serializers serializers,
-    UserSubInfo object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
-  }
+  int get hashCode =>
+      userId.hashCode +
+      serviceSeq.hashCode +
+      weekInfo.hashCode +
+      timeInfo.hashCode;
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required UserSubInfoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'userId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.userId = valueDes;
-          break;
-        case r'serviceSeq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.serviceSeq = valueDes;
-          break;
-        case r'weekInfo':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.weekInfo = valueDes;
-          break;
-        case r'timeInfo':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.timeInfo = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+  factory UserSubInfo.fromJson(Map<String, dynamic> json) =>
+      _$UserSubInfoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$UserSubInfoToJson(this);
 
   @override
-  UserSubInfo deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = UserSubInfoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

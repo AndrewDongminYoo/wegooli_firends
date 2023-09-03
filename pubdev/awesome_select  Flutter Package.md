@@ -12,33 +12,29 @@ author:
 
 SmartSelect allows you to easily convert your usual form select or dropdown into dynamic page, popup dialog, or sliding bottom sheet with various choices input such as radio, checkbox, switch, chips, or even custom input. Supports single and multiple choice. Inspired by Smart Select component from [Framework7](https://framework7.io/).
 
-- Customizable every part on modal widget (header, footer, searchbar, confirm button, searchbar toggle) using style configuration or widget builder
-- Validate before confirm
-- Auto search on type
-- Accent marks handler on search
-- Highlight search result
-- Chips tile widget
-- Grid choice layout
-- Horizontal or vertical choice list scroll direction
-- Simplify class name and enum
-- Configurations supports `copyWith` and `merge`
-- Use `StatefulWidget` as state management
-- Easy shortcut to define configuration
-- Soft depends to other package
+- 스타일 구성 또는 위젯 빌더를 사용하여 모달 위젯의 모든 부분(헤더, 바닥글, 검색창, 확인 버튼, 검색창 토글)을 사용자 지정할 수 있습니다.
+- 확인 전 유효성 검사
+- 유형에 따른 자동 검색
+- 검색 시 악센트 마크 핸들러
+- 검색 결과 하이라이트
+- 칩 타일 위젯
+- 그리드 선택 레이아웃
+- 가로 또는 세로 선택 목록 스크롤 방향
+- 클래스 이름 및 열거형 단순화
+- 구성에서 `copyWith` 및 `merge` 지원
+- 상태 관리로 `StatefulWidget` 사용
+- 구성을 정의하는 쉬운 단축키
+- 다른 패키지에 대한 소프트 종속성
 
-- Right-To-Left parameter support, currently this can be achieved using widget builder
-- Internally handle async choice items loader
-- Custom search handler
-- Choice items pagination (pull to refresh and pull to load more)
-- Add more test
-
-- `modalValidation` function nows should return `String` to indicates the changes value is not valid and `null` or empty `String` to indicates the changes value is valid
-
-- To display tile with chips use param `S2Tile.body` and `S2TileChips`, instead of `S2ChipsTile`
-
-- The parameter `options` is removed, instead use `choiceItems`
-
-- Simplify class name and enum
+- 오른쪽에서 왼쪽으로 파라미터 지원, 현재 위젯 빌더를 사용하여 달성할 수 있습니다.
+- 내부적으로 비동기 선택 항목 로더 처리
+- 사용자 정의 검색 핸들러
+- 선택 항목 페이지 매김(당기면 새로고침, 당기면 더 로드)
+- 테스트 추가
+- 이제 `modalValidation` 함수는 변경 값이 유효하지 않음을 나타내는 `String`을 반환하고 `null` 또는 빈 `String`을 반환해야합니다. changes value is valid
+- 칩이 있는 타일을 표시하려면 `S2ChipsTile` 대신 파라미터 `S2Tile.body` 및 `S2TileChips`를 사용합니다.
+- 파라미터 `options`이 제거되고 대신 `choiceItems`을 사용합니다.
+- 클래스 이름 및 열거형 간소화
 
   - `SmartSelectTile` to `S2Tile`
   - `SmartSelectOption` to `S2Choice`
@@ -50,35 +46,21 @@ SmartSelect allows you to easily convert your usual form select or dropdown into
   - `SmartSelectModalHeaderStyle` to `S2ModalHeaderStyle`
   - `SmartSelectModalType` to `S2ModalType`
 
-- The parameter `builder` now is a collection of builder (`S2SingleBuilder` or `S2MultiBuilder`), instead use `tileBuilder` to create trigger tile widget.
-
-- The parameters `dense`, `enabled`, `isLoading`, `isTwoLine`, `leading`, `loadingText`, `padding`, `selected`, `trailing` is removed from `SmartSelect` class, instead use `builder.tile` or `tileBuilder` and return `S2Tile` widget, it's has all these parameters.
-
-- The parameter `onChange` nows return `S2SingleState state` or `S2MultiState state` instead of `T value` or `List<T> value`
-
-- The parameter `choiceConfig.useWrap` is removed, instead use `choiceConfig.layout = S2ChoiceLayout.wrap`
-
-- The parameter `choiceConfig.builder` moved to `builder.choice` or `choiceBuilder`
-
-- The parameter `choiceConfig.titleBuilder` moved to `builder.choiceTitle` or `choiceTitleBuilder`
-
-- The parameter `choiceConfig.subtitleBuilder` moved to `builder.choiceSubtitle` or `choiceSubtitleBuilder`
-
-- The parameter `choiceConfig.secondaryBuilder` moved to `builder.choiceSecondary` or `choiceSecondaryBuilder`
-
-- The parameter `choiceConfig.dividerBuilder` moved to `builder.choiceDivider` or `choiceDividerBuilder`
-
-- The parameter `choiceConfig.emptyBuilder` moved to `builder.choiceEmpty` or `choiceEmptybuilder`
-
-- The parameter `choiceConfig.glowingOverscrollIndicatorColor` is removed, instead use `choiceConfig.overscrollColor`
-
-- The parameter `choiceConfig.spacing` and `choiceConfig.runSpacing` moved to `choiceConfig.style.spacing` and `choiceConfig.style.runSpacing`
-
-- The parameter `choiceConfig.useCheckmark` moved to `choiceConfig.style.showCheckmark`
-
-- The parameter `choiceConfig.padding` moved to `choiceConfig.style.wrapperPadding`
-
-- The default of grouped choice is not using sticky header now, instead use `groupBuilder` like this:
+- 파라미터 `builder`는 이제 빌더(`S2SingleBuilder` 또는 `S2MultiBuilder`)의 컬렉션이며, 대신 `tileBuilder`를 사용하여 트리거 타일을 생성합니다. widget.
+- 파라미터 `dense`, `enabled`, `isLoading`, `isTwoLine`, `leading`, `loadingText`, `padding`, `selected`, `trailing`은 다음에서 제거됩니다. `SmartSelect` class, instead use `builder.tile` or `tileBuilder` and return `S2Tile` widget, it's has all these parameters.
+- 파라미터 `onChange`는 이제 `T value` 또는 `List<T> value` 대신 `S2SingleState state` 또는 `S2MultiState state`를 반환합니다.
+- 파라미터 `choiceConfig.useWrap`이 제거되었으며, 대신 `choiceConfig.layout = S2ChoiceLayout.wrap`을 사용합니다.
+- 파라미터 `choiceConfig.builder`가 `builder.choice` 또는 `choiceBuilder`로 이동했습니다.
+- 파라미터 `choiceConfig.titleBuilder`가 `builder.choiceTitle` 또는 `choiceTitleBuilder`로 이동했습니다.
+- 파라미터 `choiceConfig.subtitleBuilder`가 `builder.choiceSubtitle` 또는 `choiceSubtitleBuilder`로 이동했습니다.
+- 파라미터 `choiceConfig.secondaryBuilder`가 `builder.choiceSecondary` 또는 `choiceSecondaryBuilder`로 이동했습니다.
+- 파라미터 `choiceConfig.dividerBuilder`가 `builder.choiceDivider` 또는 `choiceDividerBuilder`로 이동했습니다.
+- 파라미터 `choiceConfig.emptyBuilder`가 `builder.choiceEmpty` 또는 `choiceEmptybuilder`로 이동했습니다.
+- 파라미터 `choiceConfig.glowingOverscrollIndicatorColor`가 제거되었으며, 대신 `choiceConfig.overscrollColor`를 사용합니다.
+- 파라미터 `choiceConfig.spacing` 및 `choiceConfig.runSpacing`이 `choiceConfig.style.spacing` 및 `choiceConfig.style.runSpacing`으로 이동했습니다.
+- 파라미터 `choiceConfig.useCheckmark`가 `choiceConfig.style.showCheckmark`로 이동했습니다.
+- 파라미터 `choiceConfig.padding`이 `choiceConfig.style.wrapperPadding`으로 이동했습니다.
+- 그룹화된 선택 항목의 기본값은 이제 스티커 헤더를 사용하지 않고 다음과 같이 `groupBuilder`를 사용합니다:
 
   ```yaml
   dependencies:
@@ -116,21 +98,20 @@ SmartSelect allows you to easily convert your usual form select or dropdown into
 | Choice Builder   | ![Choice Builder](https://raw.githubusercontent.com/davigmacode/flutter_smart_select/master/demo/screens/choice-builder.gif)                                                                                         |
 | Download APK     | [![Demo App](https://raw.githubusercontent.com/davigmacode/flutter_smart_select/master/demo/build/qr-apk.png)](https://raw.githubusercontent.com/davigmacode/flutter_smart_select/master/demo/build/SmartSelect.apk) |
 
-- Select single or multiple choice
-- Open choices modal in full page, bottom sheet, or popup dialog
-- Various choices input (radio, checkbox, switch, chips, or custom widget)
-- Various choices layout (list, wrap, or grid)
-- Grouping choices with easy support to sticky header
-- Searchable choices with highlighted result
-- Disabled or hidden choices
-- Customizable trigger/tile widget
-- Customizable modal style
-- Customizable modal header style
-- Customizable modal footer
-- Customizable choices style
-- Build choice items from any `List`
-- Easy load async choice items
-- and many more
+- 단일 또는 다중 선택 선택
+- 전체 페이지, 하단 시트 또는 팝업 대화 상자에서 선택 모달 열기
+- 다양한 선택 항목 입력(라디오, 체크박스, 스위치, 칩 또는 사용자 정의 위젯)
+- 다양한 선택지 레이아웃(목록, 줄 바꿈 또는 그리드)
+- 스티커 헤더를 쉽게 지원하는 선택 항목 그룹화
+- 강조 표시된 결과로 검색 가능한 선택 항목
+- 비활성화 또는 숨겨진 선택 항목
+- 사용자 정의 가능한 트리거/타일 위젯
+- 사용자 정의 가능한 모달 스타일
+- 사용자 정의 가능한 모달 헤더 스타일
+- 사용자 정의 가능한 모달 바닥글
+- 사용자 정의 가능한 선택 스타일
+- 모든 `List`에서 선택 항목 빌드
+- 쉬운 비동기 선택 항목로드
 
 For a complete usage, please see the [example](https://pub.dev/packages/smart_select#-example-tab-).
 

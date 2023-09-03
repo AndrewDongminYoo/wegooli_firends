@@ -1,251 +1,89 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'sms.g.dart';
 
-/// Sms
-///
-/// Properties:
-/// * [seq]
-/// * [delYn]
-/// * [createdAt]
-/// * [updatedAt]
-/// * [title]
-/// * [content]
-/// * [file]
-/// * [bm]
-/// * [createdBy]
-@BuiltValue()
-abstract class Sms implements Built<Sms, SmsBuilder> {
-  @BuiltValueField(wireName: r'seq')
-  int? get seq;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class Sms {
+  /// Returns a new [Sms] instance.
+  Sms({
+    this.seq,
+    this.delYn,
+    this.createdAt,
+    this.updatedAt,
+    this.title,
+    this.content,
+    this.file,
+    this.bm,
+    this.createdBy,
+  });
 
-  @BuiltValueField(wireName: r'delYn')
-  String? get delYn;
+  @JsonKey(name: r'seq', required: false, includeIfNull: false)
+  final int? seq;
 
-  @BuiltValueField(wireName: r'createdAt')
-  DateTime? get createdAt;
+  @JsonKey(name: r'delYn', required: false, includeIfNull: false)
+  final String? delYn;
 
-  @BuiltValueField(wireName: r'updatedAt')
-  DateTime? get updatedAt;
+  @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
+  final DateTime? createdAt;
 
-  @BuiltValueField(wireName: r'title')
-  String? get title;
+  @JsonKey(name: r'updatedAt', required: false, includeIfNull: false)
+  final DateTime? updatedAt;
 
-  @BuiltValueField(wireName: r'content')
-  String? get content;
+  @JsonKey(name: r'title', required: false, includeIfNull: false)
+  final String? title;
 
-  @BuiltValueField(wireName: r'file')
-  String? get file;
+  @JsonKey(name: r'content', required: false, includeIfNull: false)
+  final String? content;
 
-  @BuiltValueField(wireName: r'bm')
-  String? get bm;
+  @JsonKey(name: r'file', required: false, includeIfNull: false)
+  final String? file;
 
-  @BuiltValueField(wireName: r'createdBy')
-  String? get createdBy;
+  @JsonKey(name: r'bm', required: false, includeIfNull: false)
+  final String? bm;
 
-  Sms._();
-
-  factory Sms([void updates(SmsBuilder b)]) = _$Sms;
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(SmsBuilder b) => b;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<Sms> get serializer => _$SmsSerializer();
-}
-
-class _$SmsSerializer implements PrimitiveSerializer<Sms> {
-  @override
-  final Iterable<Type> types = const [Sms, _$Sms];
+  @JsonKey(name: r'createdBy', required: false, includeIfNull: false)
+  final String? createdBy;
 
   @override
-  final String wireName = r'Sms';
-
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    Sms object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.seq != null) {
-      yield r'seq';
-      yield serializers.serialize(
-        object.seq,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.delYn != null) {
-      yield r'delYn';
-      yield serializers.serialize(
-        object.delYn,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.createdAt != null) {
-      yield r'createdAt';
-      yield serializers.serialize(
-        object.createdAt,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.updatedAt != null) {
-      yield r'updatedAt';
-      yield serializers.serialize(
-        object.updatedAt,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.title != null) {
-      yield r'title';
-      yield serializers.serialize(
-        object.title,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.content != null) {
-      yield r'content';
-      yield serializers.serialize(
-        object.content,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.file != null) {
-      yield r'file';
-      yield serializers.serialize(
-        object.file,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.bm != null) {
-      yield r'bm';
-      yield serializers.serialize(
-        object.bm,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.createdBy != null) {
-      yield r'createdBy';
-      yield serializers.serialize(
-        object.createdBy,
-        specifiedType: const FullType(String),
-      );
-    }
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is Sms &&
+          other.seq == seq &&
+          other.delYn == delYn &&
+          other.createdAt == createdAt &&
+          other.updatedAt == updatedAt &&
+          other.title == title &&
+          other.content == content &&
+          other.file == file &&
+          other.bm == bm &&
+          other.createdBy == createdBy;
 
   @override
-  Object serialize(
-    Serializers serializers,
-    Sms object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
-  }
+  int get hashCode =>
+      seq.hashCode +
+      delYn.hashCode +
+      createdAt.hashCode +
+      updatedAt.hashCode +
+      title.hashCode +
+      content.hashCode +
+      file.hashCode +
+      bm.hashCode +
+      createdBy.hashCode;
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required SmsBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'seq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.seq = valueDes;
-          break;
-        case r'delYn':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.delYn = valueDes;
-          break;
-        case r'createdAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.createdAt = valueDes;
-          break;
-        case r'updatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.updatedAt = valueDes;
-          break;
-        case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.title = valueDes;
-          break;
-        case r'content':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.content = valueDes;
-          break;
-        case r'file':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.file = valueDes;
-          break;
-        case r'bm':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.bm = valueDes;
-          break;
-        case r'createdBy':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.createdBy = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+  factory Sms.fromJson(Map<String, dynamic> json) => _$SmsFromJson(json);
+
+  Map<String, dynamic> toJson() => _$SmsToJson(this);
 
   @override
-  Sms deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = SmsBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

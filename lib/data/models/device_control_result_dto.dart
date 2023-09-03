@@ -1,637 +1,216 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'device_control_result_dto.g.dart';
 
-/// DeviceControlResultDTO
-///
-/// Properties:
-/// * [userId]
-/// * [terTelNum]
-/// * [t42]
-/// * [t5]
-/// * [t0]
-/// * [t1]
-/// * [t2]
-/// * [t3]
-/// * [t4]
-/// * [t6]
-/// * [t7]
-/// * [t8]
-/// * [t9]
-/// * [t10]
-/// * [t11]
-/// * [t12]
-/// * [t14]
-/// * [t15]
-/// * [t16]
-/// * [t17]
-/// * [t18]
-/// * [t19]
-/// * [t20]
-/// * [t21]
-/// * [t22]
-/// * [t41]
-/// * [t51]
-/// * [t61]
-/// * [ucp]
-/// * [nsdur]
-@BuiltValue()
-abstract class DeviceControlResultDTO
-    implements Built<DeviceControlResultDTO, DeviceControlResultDTOBuilder> {
-  @BuiltValueField(wireName: r'userId')
-  String? get userId;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class DeviceControlResultDTO {
+  /// Returns a new [DeviceControlResultDTO] instance.
+  DeviceControlResultDTO({
+    this.userId,
+    this.terTelNum,
+    this.t42,
+    this.t5,
+    this.t0,
+    this.t1,
+    this.t2,
+    this.t3,
+    this.t4,
+    this.t6,
+    this.t7,
+    this.t8,
+    this.t9,
+    this.t10,
+    this.t11,
+    this.t12,
+    this.t14,
+    this.t15,
+    this.t16,
+    this.t17,
+    this.t18,
+    this.t19,
+    this.t20,
+    this.t21,
+    this.t22,
+    this.t41,
+    this.t51,
+    this.t61,
+    this.ucp,
+    this.nsdur,
+  });
 
-  @BuiltValueField(wireName: r'terTelNum')
-  String? get terTelNum;
+  @JsonKey(name: r'userId', required: false, includeIfNull: false)
+  final String? userId;
 
-  @BuiltValueField(wireName: r't42')
-  String? get t42;
+  @JsonKey(name: r'terTelNum', required: false, includeIfNull: false)
+  final String? terTelNum;
 
-  @BuiltValueField(wireName: r't5')
-  String? get t5;
+  @JsonKey(name: r't42', required: false, includeIfNull: false)
+  final String? t42;
 
-  @BuiltValueField(wireName: r't0')
-  String? get t0;
+  @JsonKey(name: r't5', required: false, includeIfNull: false)
+  final String? t5;
 
-  @BuiltValueField(wireName: r't1')
-  String? get t1;
+  @JsonKey(name: r't0', required: false, includeIfNull: false)
+  final String? t0;
 
-  @BuiltValueField(wireName: r't2')
-  String? get t2;
+  @JsonKey(name: r't1', required: false, includeIfNull: false)
+  final String? t1;
 
-  @BuiltValueField(wireName: r't3')
-  String? get t3;
+  @JsonKey(name: r't2', required: false, includeIfNull: false)
+  final String? t2;
 
-  @BuiltValueField(wireName: r't4')
-  String? get t4;
+  @JsonKey(name: r't3', required: false, includeIfNull: false)
+  final String? t3;
 
-  @BuiltValueField(wireName: r't6')
-  String? get t6;
+  @JsonKey(name: r't4', required: false, includeIfNull: false)
+  final String? t4;
 
-  @BuiltValueField(wireName: r't7')
-  String? get t7;
+  @JsonKey(name: r't6', required: false, includeIfNull: false)
+  final String? t6;
 
-  @BuiltValueField(wireName: r't8')
-  String? get t8;
+  @JsonKey(name: r't7', required: false, includeIfNull: false)
+  final String? t7;
 
-  @BuiltValueField(wireName: r't9')
-  String? get t9;
+  @JsonKey(name: r't8', required: false, includeIfNull: false)
+  final String? t8;
 
-  @BuiltValueField(wireName: r't10')
-  String? get t10;
+  @JsonKey(name: r't9', required: false, includeIfNull: false)
+  final String? t9;
 
-  @BuiltValueField(wireName: r't11')
-  String? get t11;
+  @JsonKey(name: r't10', required: false, includeIfNull: false)
+  final String? t10;
 
-  @BuiltValueField(wireName: r't12')
-  String? get t12;
+  @JsonKey(name: r't11', required: false, includeIfNull: false)
+  final String? t11;
 
-  @BuiltValueField(wireName: r't14')
-  String? get t14;
+  @JsonKey(name: r't12', required: false, includeIfNull: false)
+  final String? t12;
 
-  @BuiltValueField(wireName: r't15')
-  String? get t15;
+  @JsonKey(name: r't14', required: false, includeIfNull: false)
+  final String? t14;
 
-  @BuiltValueField(wireName: r't16')
-  String? get t16;
+  @JsonKey(name: r't15', required: false, includeIfNull: false)
+  final String? t15;
 
-  @BuiltValueField(wireName: r't17')
-  String? get t17;
+  @JsonKey(name: r't16', required: false, includeIfNull: false)
+  final String? t16;
 
-  @BuiltValueField(wireName: r't18')
-  String? get t18;
+  @JsonKey(name: r't17', required: false, includeIfNull: false)
+  final String? t17;
 
-  @BuiltValueField(wireName: r't19')
-  String? get t19;
+  @JsonKey(name: r't18', required: false, includeIfNull: false)
+  final String? t18;
 
-  @BuiltValueField(wireName: r't20')
-  String? get t20;
+  @JsonKey(name: r't19', required: false, includeIfNull: false)
+  final String? t19;
 
-  @BuiltValueField(wireName: r't21')
-  String? get t21;
+  @JsonKey(name: r't20', required: false, includeIfNull: false)
+  final String? t20;
 
-  @BuiltValueField(wireName: r't22')
-  String? get t22;
+  @JsonKey(name: r't21', required: false, includeIfNull: false)
+  final String? t21;
 
-  @BuiltValueField(wireName: r't41')
-  String? get t41;
+  @JsonKey(name: r't22', required: false, includeIfNull: false)
+  final String? t22;
 
-  @BuiltValueField(wireName: r't51')
-  String? get t51;
+  @JsonKey(name: r't41', required: false, includeIfNull: false)
+  final String? t41;
 
-  @BuiltValueField(wireName: r't61')
-  String? get t61;
+  @JsonKey(name: r't51', required: false, includeIfNull: false)
+  final String? t51;
 
-  @BuiltValueField(wireName: r'ucp')
-  String? get ucp;
+  @JsonKey(name: r't61', required: false, includeIfNull: false)
+  final String? t61;
 
-  @BuiltValueField(wireName: r'nsdur')
-  String? get nsdur;
+  @JsonKey(name: r'ucp', required: false, includeIfNull: false)
+  final String? ucp;
 
-  DeviceControlResultDTO._();
-
-  factory DeviceControlResultDTO(
-          [void updates(DeviceControlResultDTOBuilder b)]) =
-      _$DeviceControlResultDTO;
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(DeviceControlResultDTOBuilder b) => b;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<DeviceControlResultDTO> get serializer =>
-      _$DeviceControlResultDTOSerializer();
-}
-
-class _$DeviceControlResultDTOSerializer
-    implements PrimitiveSerializer<DeviceControlResultDTO> {
-  @override
-  final Iterable<Type> types = const [
-    DeviceControlResultDTO,
-    _$DeviceControlResultDTO
-  ];
+  @JsonKey(name: r'nsdur', required: false, includeIfNull: false)
+  final String? nsdur;
 
   @override
-  final String wireName = r'DeviceControlResultDTO';
-
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    DeviceControlResultDTO object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.userId != null) {
-      yield r'userId';
-      yield serializers.serialize(
-        object.userId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.terTelNum != null) {
-      yield r'terTelNum';
-      yield serializers.serialize(
-        object.terTelNum,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.t42 != null) {
-      yield r't42';
-      yield serializers.serialize(
-        object.t42,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.t5 != null) {
-      yield r't5';
-      yield serializers.serialize(
-        object.t5,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.t0 != null) {
-      yield r't0';
-      yield serializers.serialize(
-        object.t0,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.t1 != null) {
-      yield r't1';
-      yield serializers.serialize(
-        object.t1,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.t2 != null) {
-      yield r't2';
-      yield serializers.serialize(
-        object.t2,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.t3 != null) {
-      yield r't3';
-      yield serializers.serialize(
-        object.t3,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.t4 != null) {
-      yield r't4';
-      yield serializers.serialize(
-        object.t4,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.t6 != null) {
-      yield r't6';
-      yield serializers.serialize(
-        object.t6,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.t7 != null) {
-      yield r't7';
-      yield serializers.serialize(
-        object.t7,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.t8 != null) {
-      yield r't8';
-      yield serializers.serialize(
-        object.t8,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.t9 != null) {
-      yield r't9';
-      yield serializers.serialize(
-        object.t9,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.t10 != null) {
-      yield r't10';
-      yield serializers.serialize(
-        object.t10,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.t11 != null) {
-      yield r't11';
-      yield serializers.serialize(
-        object.t11,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.t12 != null) {
-      yield r't12';
-      yield serializers.serialize(
-        object.t12,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.t14 != null) {
-      yield r't14';
-      yield serializers.serialize(
-        object.t14,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.t15 != null) {
-      yield r't15';
-      yield serializers.serialize(
-        object.t15,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.t16 != null) {
-      yield r't16';
-      yield serializers.serialize(
-        object.t16,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.t17 != null) {
-      yield r't17';
-      yield serializers.serialize(
-        object.t17,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.t18 != null) {
-      yield r't18';
-      yield serializers.serialize(
-        object.t18,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.t19 != null) {
-      yield r't19';
-      yield serializers.serialize(
-        object.t19,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.t20 != null) {
-      yield r't20';
-      yield serializers.serialize(
-        object.t20,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.t21 != null) {
-      yield r't21';
-      yield serializers.serialize(
-        object.t21,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.t22 != null) {
-      yield r't22';
-      yield serializers.serialize(
-        object.t22,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.t41 != null) {
-      yield r't41';
-      yield serializers.serialize(
-        object.t41,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.t51 != null) {
-      yield r't51';
-      yield serializers.serialize(
-        object.t51,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.t61 != null) {
-      yield r't61';
-      yield serializers.serialize(
-        object.t61,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.ucp != null) {
-      yield r'ucp';
-      yield serializers.serialize(
-        object.ucp,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.nsdur != null) {
-      yield r'nsdur';
-      yield serializers.serialize(
-        object.nsdur,
-        specifiedType: const FullType(String),
-      );
-    }
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is DeviceControlResultDTO &&
+          other.userId == userId &&
+          other.terTelNum == terTelNum &&
+          other.t42 == t42 &&
+          other.t5 == t5 &&
+          other.t0 == t0 &&
+          other.t1 == t1 &&
+          other.t2 == t2 &&
+          other.t3 == t3 &&
+          other.t4 == t4 &&
+          other.t6 == t6 &&
+          other.t7 == t7 &&
+          other.t8 == t8 &&
+          other.t9 == t9 &&
+          other.t10 == t10 &&
+          other.t11 == t11 &&
+          other.t12 == t12 &&
+          other.t14 == t14 &&
+          other.t15 == t15 &&
+          other.t16 == t16 &&
+          other.t17 == t17 &&
+          other.t18 == t18 &&
+          other.t19 == t19 &&
+          other.t20 == t20 &&
+          other.t21 == t21 &&
+          other.t22 == t22 &&
+          other.t41 == t41 &&
+          other.t51 == t51 &&
+          other.t61 == t61 &&
+          other.ucp == ucp &&
+          other.nsdur == nsdur;
 
   @override
-  Object serialize(
-    Serializers serializers,
-    DeviceControlResultDTO object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
-  }
+  int get hashCode =>
+      userId.hashCode +
+      terTelNum.hashCode +
+      t42.hashCode +
+      t5.hashCode +
+      t0.hashCode +
+      t1.hashCode +
+      t2.hashCode +
+      t3.hashCode +
+      t4.hashCode +
+      t6.hashCode +
+      t7.hashCode +
+      t8.hashCode +
+      t9.hashCode +
+      t10.hashCode +
+      t11.hashCode +
+      t12.hashCode +
+      t14.hashCode +
+      t15.hashCode +
+      t16.hashCode +
+      t17.hashCode +
+      t18.hashCode +
+      t19.hashCode +
+      t20.hashCode +
+      t21.hashCode +
+      t22.hashCode +
+      t41.hashCode +
+      t51.hashCode +
+      t61.hashCode +
+      ucp.hashCode +
+      nsdur.hashCode;
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required DeviceControlResultDTOBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'userId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.userId = valueDes;
-          break;
-        case r'terTelNum':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.terTelNum = valueDes;
-          break;
-        case r't42':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.t42 = valueDes;
-          break;
-        case r't5':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.t5 = valueDes;
-          break;
-        case r't0':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.t0 = valueDes;
-          break;
-        case r't1':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.t1 = valueDes;
-          break;
-        case r't2':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.t2 = valueDes;
-          break;
-        case r't3':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.t3 = valueDes;
-          break;
-        case r't4':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.t4 = valueDes;
-          break;
-        case r't6':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.t6 = valueDes;
-          break;
-        case r't7':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.t7 = valueDes;
-          break;
-        case r't8':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.t8 = valueDes;
-          break;
-        case r't9':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.t9 = valueDes;
-          break;
-        case r't10':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.t10 = valueDes;
-          break;
-        case r't11':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.t11 = valueDes;
-          break;
-        case r't12':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.t12 = valueDes;
-          break;
-        case r't14':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.t14 = valueDes;
-          break;
-        case r't15':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.t15 = valueDes;
-          break;
-        case r't16':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.t16 = valueDes;
-          break;
-        case r't17':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.t17 = valueDes;
-          break;
-        case r't18':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.t18 = valueDes;
-          break;
-        case r't19':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.t19 = valueDes;
-          break;
-        case r't20':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.t20 = valueDes;
-          break;
-        case r't21':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.t21 = valueDes;
-          break;
-        case r't22':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.t22 = valueDes;
-          break;
-        case r't41':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.t41 = valueDes;
-          break;
-        case r't51':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.t51 = valueDes;
-          break;
-        case r't61':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.t61 = valueDes;
-          break;
-        case r'ucp':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.ucp = valueDes;
-          break;
-        case r'nsdur':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.nsdur = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+  factory DeviceControlResultDTO.fromJson(Map<String, dynamic> json) =>
+      _$DeviceControlResultDTOFromJson(json);
+
+  Map<String, dynamic> toJson() => _$DeviceControlResultDTOToJson(this);
 
   @override
-  DeviceControlResultDTO deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = DeviceControlResultDTOBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

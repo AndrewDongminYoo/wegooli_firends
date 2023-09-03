@@ -1,287 +1,102 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'account.g.dart';
 
-/// Account
-///
-/// Properties:
-/// * [id]
-/// * [memberSeq]
-/// * [password]
-/// * [delimit]
-/// * [delYn]
-/// * [deleteAt]
-/// * [createdAt]
-/// * [updatedAt]
-/// * [color]
-/// * [nickname]
-/// * [profilePicture]
-@BuiltValue()
-abstract class Account implements Built<Account, AccountBuilder> {
-  @BuiltValueField(wireName: r'id')
-  String? get id;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class Account {
+  /// Returns a new [Account] instance.
+  Account({
+    this.id,
+    this.memberSeq,
+    this.password,
+    this.delimit,
+    this.delYn,
+    this.deleteAt,
+    this.createdAt,
+    this.updatedAt,
+    this.color,
+    this.nickname,
+    this.profilePicture,
+  });
 
-  @BuiltValueField(wireName: r'memberSeq')
-  int? get memberSeq;
+  @JsonKey(name: r'id', required: false, includeIfNull: false)
+  final String? id;
 
-  @BuiltValueField(wireName: r'password')
-  String? get password;
+  @JsonKey(name: r'memberSeq', required: false, includeIfNull: false)
+  final int? memberSeq;
 
-  @BuiltValueField(wireName: r'delimit')
-  String? get delimit;
+  @JsonKey(name: r'password', required: false, includeIfNull: false)
+  final String? password;
 
-  @BuiltValueField(wireName: r'delYn')
-  String? get delYn;
+  @JsonKey(name: r'delimit', required: false, includeIfNull: false)
+  final String? delimit;
 
-  @BuiltValueField(wireName: r'deleteAt')
-  String? get deleteAt;
+  @JsonKey(name: r'delYn', required: false, includeIfNull: false)
+  final String? delYn;
 
-  @BuiltValueField(wireName: r'createdAt')
-  String? get createdAt;
+  @JsonKey(name: r'deleteAt', required: false, includeIfNull: false)
+  final String? deleteAt;
 
-  @BuiltValueField(wireName: r'updatedAt')
-  String? get updatedAt;
+  @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
+  final String? createdAt;
 
-  @BuiltValueField(wireName: r'color')
-  String? get color;
+  @JsonKey(name: r'updatedAt', required: false, includeIfNull: false)
+  final String? updatedAt;
 
-  @BuiltValueField(wireName: r'nickname')
-  String? get nickname;
+  @JsonKey(name: r'color', required: false, includeIfNull: false)
+  final String? color;
 
-  @BuiltValueField(wireName: r'profilePicture')
-  String? get profilePicture;
+  @JsonKey(name: r'nickname', required: false, includeIfNull: false)
+  final String? nickname;
 
-  Account._();
-
-  factory Account([void updates(AccountBuilder b)]) = _$Account;
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(AccountBuilder b) => b;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<Account> get serializer => _$AccountSerializer();
-}
-
-class _$AccountSerializer implements PrimitiveSerializer<Account> {
-  @override
-  final Iterable<Type> types = const [Account, _$Account];
+  @JsonKey(name: r'profilePicture', required: false, includeIfNull: false)
+  final String? profilePicture;
 
   @override
-  final String wireName = r'Account';
-
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    Account object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.id != null) {
-      yield r'id';
-      yield serializers.serialize(
-        object.id,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.memberSeq != null) {
-      yield r'memberSeq';
-      yield serializers.serialize(
-        object.memberSeq,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.password != null) {
-      yield r'password';
-      yield serializers.serialize(
-        object.password,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.delimit != null) {
-      yield r'delimit';
-      yield serializers.serialize(
-        object.delimit,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.delYn != null) {
-      yield r'delYn';
-      yield serializers.serialize(
-        object.delYn,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.deleteAt != null) {
-      yield r'deleteAt';
-      yield serializers.serialize(
-        object.deleteAt,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.createdAt != null) {
-      yield r'createdAt';
-      yield serializers.serialize(
-        object.createdAt,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.updatedAt != null) {
-      yield r'updatedAt';
-      yield serializers.serialize(
-        object.updatedAt,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.color != null) {
-      yield r'color';
-      yield serializers.serialize(
-        object.color,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.nickname != null) {
-      yield r'nickname';
-      yield serializers.serialize(
-        object.nickname,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.profilePicture != null) {
-      yield r'profilePicture';
-      yield serializers.serialize(
-        object.profilePicture,
-        specifiedType: const FullType(String),
-      );
-    }
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is Account &&
+          other.id == id &&
+          other.memberSeq == memberSeq &&
+          other.password == password &&
+          other.delimit == delimit &&
+          other.delYn == delYn &&
+          other.deleteAt == deleteAt &&
+          other.createdAt == createdAt &&
+          other.updatedAt == updatedAt &&
+          other.color == color &&
+          other.nickname == nickname &&
+          other.profilePicture == profilePicture;
 
   @override
-  Object serialize(
-    Serializers serializers,
-    Account object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
-  }
+  int get hashCode =>
+      id.hashCode +
+      memberSeq.hashCode +
+      password.hashCode +
+      delimit.hashCode +
+      delYn.hashCode +
+      deleteAt.hashCode +
+      createdAt.hashCode +
+      updatedAt.hashCode +
+      color.hashCode +
+      nickname.hashCode +
+      profilePicture.hashCode;
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required AccountBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.id = valueDes;
-          break;
-        case r'memberSeq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.memberSeq = valueDes;
-          break;
-        case r'password':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.password = valueDes;
-          break;
-        case r'delimit':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.delimit = valueDes;
-          break;
-        case r'delYn':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.delYn = valueDes;
-          break;
-        case r'deleteAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.deleteAt = valueDes;
-          break;
-        case r'createdAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.createdAt = valueDes;
-          break;
-        case r'updatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.updatedAt = valueDes;
-          break;
-        case r'color':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.color = valueDes;
-          break;
-        case r'nickname':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.nickname = valueDes;
-          break;
-        case r'profilePicture':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.profilePicture = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+  factory Account.fromJson(Map<String, dynamic> json) =>
+      _$AccountFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AccountToJson(this);
 
   @override
-  Account deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = AccountBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

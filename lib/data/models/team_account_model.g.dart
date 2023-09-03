@@ -3,167 +3,43 @@
 part of 'team_account_model.dart';
 
 // **************************************************************************
-// BuiltValueGenerator
+// JsonSerializableGenerator
 // **************************************************************************
 
-class _$TeamAccountModel extends TeamAccountModel {
-  @override
-  final String? accountId;
-  @override
-  final String? color;
-  @override
-  final String? nickname;
-  @override
-  final String? profilePicture;
-  @override
-  final String? useYn;
-  @override
-  final String? joinedAt;
-  @override
-  final String? leavedAt;
+TeamAccountModel _$TeamAccountModelFromJson(Map<String, dynamic> json) =>
+    $checkedCreate(
+      'TeamAccountModel',
+      json,
+      ($checkedConvert) {
+        final val = TeamAccountModel(
+          accountId: $checkedConvert('accountId', (v) => v as String?),
+          color: $checkedConvert('color', (v) => v as String?),
+          nickname: $checkedConvert('nickname', (v) => v as String?),
+          profilePicture:
+              $checkedConvert('profilePicture', (v) => v as String?),
+          useYn: $checkedConvert('useYn', (v) => v as String?),
+          joinedAt: $checkedConvert('joinedAt', (v) => v as String?),
+          leavedAt: $checkedConvert('leavedAt', (v) => v as String?),
+        );
+        return val;
+      },
+    );
 
-  factory _$TeamAccountModel(
-          [void Function(TeamAccountModelBuilder)? updates]) =>
-      (new TeamAccountModelBuilder()..update(updates))._build();
+Map<String, dynamic> _$TeamAccountModelToJson(TeamAccountModel instance) {
+  final val = <String, dynamic>{};
 
-  _$TeamAccountModel._(
-      {this.accountId,
-      this.color,
-      this.nickname,
-      this.profilePicture,
-      this.useYn,
-      this.joinedAt,
-      this.leavedAt})
-      : super._();
-
-  @override
-  TeamAccountModel rebuild(void Function(TeamAccountModelBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  TeamAccountModelBuilder toBuilder() =>
-      new TeamAccountModelBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is TeamAccountModel &&
-        accountId == other.accountId &&
-        color == other.color &&
-        nickname == other.nickname &&
-        profilePicture == other.profilePicture &&
-        useYn == other.useYn &&
-        joinedAt == other.joinedAt &&
-        leavedAt == other.leavedAt;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, accountId.hashCode);
-    _$hash = $jc(_$hash, color.hashCode);
-    _$hash = $jc(_$hash, nickname.hashCode);
-    _$hash = $jc(_$hash, profilePicture.hashCode);
-    _$hash = $jc(_$hash, useYn.hashCode);
-    _$hash = $jc(_$hash, joinedAt.hashCode);
-    _$hash = $jc(_$hash, leavedAt.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'TeamAccountModel')
-          ..add('accountId', accountId)
-          ..add('color', color)
-          ..add('nickname', nickname)
-          ..add('profilePicture', profilePicture)
-          ..add('useYn', useYn)
-          ..add('joinedAt', joinedAt)
-          ..add('leavedAt', leavedAt))
-        .toString();
-  }
-}
-
-class TeamAccountModelBuilder
-    implements Builder<TeamAccountModel, TeamAccountModelBuilder> {
-  _$TeamAccountModel? _$v;
-
-  String? _accountId;
-  String? get accountId => _$this._accountId;
-  set accountId(String? accountId) => _$this._accountId = accountId;
-
-  String? _color;
-  String? get color => _$this._color;
-  set color(String? color) => _$this._color = color;
-
-  String? _nickname;
-  String? get nickname => _$this._nickname;
-  set nickname(String? nickname) => _$this._nickname = nickname;
-
-  String? _profilePicture;
-  String? get profilePicture => _$this._profilePicture;
-  set profilePicture(String? profilePicture) =>
-      _$this._profilePicture = profilePicture;
-
-  String? _useYn;
-  String? get useYn => _$this._useYn;
-  set useYn(String? useYn) => _$this._useYn = useYn;
-
-  String? _joinedAt;
-  String? get joinedAt => _$this._joinedAt;
-  set joinedAt(String? joinedAt) => _$this._joinedAt = joinedAt;
-
-  String? _leavedAt;
-  String? get leavedAt => _$this._leavedAt;
-  set leavedAt(String? leavedAt) => _$this._leavedAt = leavedAt;
-
-  TeamAccountModelBuilder() {
-    TeamAccountModel._defaults(this);
-  }
-
-  TeamAccountModelBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _accountId = $v.accountId;
-      _color = $v.color;
-      _nickname = $v.nickname;
-      _profilePicture = $v.profilePicture;
-      _useYn = $v.useYn;
-      _joinedAt = $v.joinedAt;
-      _leavedAt = $v.leavedAt;
-      _$v = null;
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
     }
-    return this;
   }
 
-  @override
-  void replace(TeamAccountModel other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$TeamAccountModel;
-  }
-
-  @override
-  void update(void Function(TeamAccountModelBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  TeamAccountModel build() => _build();
-
-  _$TeamAccountModel _build() {
-    final _$result = _$v ??
-        new _$TeamAccountModel._(
-            accountId: accountId,
-            color: color,
-            nickname: nickname,
-            profilePicture: profilePicture,
-            useYn: useYn,
-            joinedAt: joinedAt,
-            leavedAt: leavedAt);
-    replace(_$result);
-    return _$result;
-  }
+  writeNotNull('accountId', instance.accountId);
+  writeNotNull('color', instance.color);
+  writeNotNull('nickname', instance.nickname);
+  writeNotNull('profilePicture', instance.profilePicture);
+  writeNotNull('useYn', instance.useYn);
+  writeNotNull('joinedAt', instance.joinedAt);
+  writeNotNull('leavedAt', instance.leavedAt);
+  return val;
 }
-
-// ignore_for_file: deprecated_member_use_from_same_package,type=lint

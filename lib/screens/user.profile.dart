@@ -83,8 +83,7 @@ class MyProfilePage extends GetWidget<UserController> {
                       svgPath: Assets.svg.imgInformation.path,
                       text: l10ns.subscriptionInformation,
                       onTap: () {
-                        Get.toNamed(
-                            AppRoutes.upcomingUnsubscription);
+                        Get.toNamed(AppRoutes.upcomingUnsubscription);
                       }),
                   ListItem(
                       svgPath: Assets.svg.imgCreditCard.path,

@@ -1,132 +1,46 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'share_service_request.g.dart';
 
-/// ShareServiceRequest
-///
-/// Properties:
-/// * [startMonthlyAmount]
-/// * [endMonthlyAmount]
-@BuiltValue()
-abstract class ShareServiceRequest
-    implements Built<ShareServiceRequest, ShareServiceRequestBuilder> {
-  @BuiltValueField(wireName: r'startMonthlyAmount')
-  String? get startMonthlyAmount;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class ShareServiceRequest {
+  /// Returns a new [ShareServiceRequest] instance.
+  ShareServiceRequest({
+    this.startMonthlyAmount,
+    this.endMonthlyAmount,
+  });
 
-  @BuiltValueField(wireName: r'endMonthlyAmount')
-  String? get endMonthlyAmount;
+  @JsonKey(name: r'startMonthlyAmount', required: false, includeIfNull: false)
+  final String? startMonthlyAmount;
 
-  ShareServiceRequest._();
-
-  factory ShareServiceRequest([void updates(ShareServiceRequestBuilder b)]) =
-      _$ShareServiceRequest;
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ShareServiceRequestBuilder b) => b;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<ShareServiceRequest> get serializer =>
-      _$ShareServiceRequestSerializer();
-}
-
-class _$ShareServiceRequestSerializer
-    implements PrimitiveSerializer<ShareServiceRequest> {
-  @override
-  final Iterable<Type> types = const [
-    ShareServiceRequest,
-    _$ShareServiceRequest
-  ];
+  @JsonKey(name: r'endMonthlyAmount', required: false, includeIfNull: false)
+  final String? endMonthlyAmount;
 
   @override
-  final String wireName = r'ShareServiceRequest';
-
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    ShareServiceRequest object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.startMonthlyAmount != null) {
-      yield r'startMonthlyAmount';
-      yield serializers.serialize(
-        object.startMonthlyAmount,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.endMonthlyAmount != null) {
-      yield r'endMonthlyAmount';
-      yield serializers.serialize(
-        object.endMonthlyAmount,
-        specifiedType: const FullType(String),
-      );
-    }
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is ShareServiceRequest &&
+          other.startMonthlyAmount == startMonthlyAmount &&
+          other.endMonthlyAmount == endMonthlyAmount;
 
   @override
-  Object serialize(
-    Serializers serializers,
-    ShareServiceRequest object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
-  }
+  int get hashCode => startMonthlyAmount.hashCode + endMonthlyAmount.hashCode;
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required ShareServiceRequestBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'startMonthlyAmount':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.startMonthlyAmount = valueDes;
-          break;
-        case r'endMonthlyAmount':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.endMonthlyAmount = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+  factory ShareServiceRequest.fromJson(Map<String, dynamic> json) =>
+      _$ShareServiceRequestFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ShareServiceRequestToJson(this);
 
   @override
-  ShareServiceRequest deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = ShareServiceRequestBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

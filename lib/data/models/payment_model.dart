@@ -1,432 +1,150 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'payment_model.g.dart';
 
-/// PaymentModel
-///
-/// Properties:
-/// * [paymentKey]
-/// * [status]
-/// * [lastTransactionKey]
-/// * [orderId]
-/// * [orderName]
-/// * [requestedAt]
-/// * [approvedAt]
-/// * [cancelReason]
-/// * [canceledAt]
-/// * [cancelAmount]
-/// * [type]
-/// * [currency]
-/// * [totalAmount]
-/// * [balanceAmount]
-/// * [suppliedAmount]
-/// * [vat]
-/// * [taxFreeAmount]
-/// * [taxExemptionAmount]
-/// * [method]
-@BuiltValue()
-abstract class PaymentModel
-    implements Built<PaymentModel, PaymentModelBuilder> {
-  @BuiltValueField(wireName: r'paymentKey')
-  String? get paymentKey;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class PaymentModel {
+  /// Returns a new [PaymentModel] instance.
+  PaymentModel({
+    this.paymentKey,
+    this.status,
+    this.lastTransactionKey,
+    this.orderId,
+    this.orderName,
+    this.requestedAt,
+    this.approvedAt,
+    this.cancelReason,
+    this.canceledAt,
+    this.cancelAmount,
+    this.type,
+    this.currency,
+    this.totalAmount,
+    this.balanceAmount,
+    this.suppliedAmount,
+    this.vat,
+    this.taxFreeAmount,
+    this.taxExemptionAmount,
+    this.method,
+  });
 
-  @BuiltValueField(wireName: r'status')
-  String? get status;
+  @JsonKey(name: r'paymentKey', required: false, includeIfNull: false)
+  final String? paymentKey;
 
-  @BuiltValueField(wireName: r'lastTransactionKey')
-  String? get lastTransactionKey;
+  @JsonKey(name: r'status', required: false, includeIfNull: false)
+  final String? status;
 
-  @BuiltValueField(wireName: r'orderId')
-  String? get orderId;
+  @JsonKey(name: r'lastTransactionKey', required: false, includeIfNull: false)
+  final String? lastTransactionKey;
 
-  @BuiltValueField(wireName: r'orderName')
-  String? get orderName;
+  @JsonKey(name: r'orderId', required: false, includeIfNull: false)
+  final String? orderId;
 
-  @BuiltValueField(wireName: r'requestedAt')
-  String? get requestedAt;
+  @JsonKey(name: r'orderName', required: false, includeIfNull: false)
+  final String? orderName;
 
-  @BuiltValueField(wireName: r'approvedAt')
-  String? get approvedAt;
+  @JsonKey(name: r'requestedAt', required: false, includeIfNull: false)
+  final String? requestedAt;
 
-  @BuiltValueField(wireName: r'cancelReason')
-  String? get cancelReason;
+  @JsonKey(name: r'approvedAt', required: false, includeIfNull: false)
+  final String? approvedAt;
 
-  @BuiltValueField(wireName: r'canceledAt')
-  String? get canceledAt;
+  @JsonKey(name: r'cancelReason', required: false, includeIfNull: false)
+  final String? cancelReason;
 
-  @BuiltValueField(wireName: r'cancelAmount')
-  int? get cancelAmount;
+  @JsonKey(name: r'canceledAt', required: false, includeIfNull: false)
+  final String? canceledAt;
 
-  @BuiltValueField(wireName: r'type')
-  String? get type;
+  @JsonKey(name: r'cancelAmount', required: false, includeIfNull: false)
+  final int? cancelAmount;
 
-  @BuiltValueField(wireName: r'currency')
-  String? get currency;
+  @JsonKey(name: r'type', required: false, includeIfNull: false)
+  final String? type;
 
-  @BuiltValueField(wireName: r'totalAmount')
-  int? get totalAmount;
+  @JsonKey(name: r'currency', required: false, includeIfNull: false)
+  final String? currency;
 
-  @BuiltValueField(wireName: r'balanceAmount')
-  int? get balanceAmount;
+  @JsonKey(name: r'totalAmount', required: false, includeIfNull: false)
+  final int? totalAmount;
 
-  @BuiltValueField(wireName: r'suppliedAmount')
-  int? get suppliedAmount;
+  @JsonKey(name: r'balanceAmount', required: false, includeIfNull: false)
+  final int? balanceAmount;
 
-  @BuiltValueField(wireName: r'vat')
-  int? get vat;
+  @JsonKey(name: r'suppliedAmount', required: false, includeIfNull: false)
+  final int? suppliedAmount;
 
-  @BuiltValueField(wireName: r'taxFreeAmount')
-  int? get taxFreeAmount;
+  @JsonKey(name: r'vat', required: false, includeIfNull: false)
+  final int? vat;
 
-  @BuiltValueField(wireName: r'taxExemptionAmount')
-  int? get taxExemptionAmount;
+  @JsonKey(name: r'taxFreeAmount', required: false, includeIfNull: false)
+  final int? taxFreeAmount;
 
-  @BuiltValueField(wireName: r'method')
-  String? get method;
+  @JsonKey(name: r'taxExemptionAmount', required: false, includeIfNull: false)
+  final int? taxExemptionAmount;
 
-  PaymentModel._();
-
-  factory PaymentModel([void updates(PaymentModelBuilder b)]) = _$PaymentModel;
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(PaymentModelBuilder b) => b;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<PaymentModel> get serializer => _$PaymentModelSerializer();
-}
-
-class _$PaymentModelSerializer implements PrimitiveSerializer<PaymentModel> {
-  @override
-  final Iterable<Type> types = const [PaymentModel, _$PaymentModel];
+  @JsonKey(name: r'method', required: false, includeIfNull: false)
+  final String? method;
 
   @override
-  final String wireName = r'PaymentModel';
-
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    PaymentModel object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.paymentKey != null) {
-      yield r'paymentKey';
-      yield serializers.serialize(
-        object.paymentKey,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.status != null) {
-      yield r'status';
-      yield serializers.serialize(
-        object.status,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.lastTransactionKey != null) {
-      yield r'lastTransactionKey';
-      yield serializers.serialize(
-        object.lastTransactionKey,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.orderId != null) {
-      yield r'orderId';
-      yield serializers.serialize(
-        object.orderId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.orderName != null) {
-      yield r'orderName';
-      yield serializers.serialize(
-        object.orderName,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.requestedAt != null) {
-      yield r'requestedAt';
-      yield serializers.serialize(
-        object.requestedAt,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.approvedAt != null) {
-      yield r'approvedAt';
-      yield serializers.serialize(
-        object.approvedAt,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.cancelReason != null) {
-      yield r'cancelReason';
-      yield serializers.serialize(
-        object.cancelReason,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.canceledAt != null) {
-      yield r'canceledAt';
-      yield serializers.serialize(
-        object.canceledAt,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.cancelAmount != null) {
-      yield r'cancelAmount';
-      yield serializers.serialize(
-        object.cancelAmount,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.type != null) {
-      yield r'type';
-      yield serializers.serialize(
-        object.type,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.currency != null) {
-      yield r'currency';
-      yield serializers.serialize(
-        object.currency,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.totalAmount != null) {
-      yield r'totalAmount';
-      yield serializers.serialize(
-        object.totalAmount,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.balanceAmount != null) {
-      yield r'balanceAmount';
-      yield serializers.serialize(
-        object.balanceAmount,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.suppliedAmount != null) {
-      yield r'suppliedAmount';
-      yield serializers.serialize(
-        object.suppliedAmount,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.vat != null) {
-      yield r'vat';
-      yield serializers.serialize(
-        object.vat,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.taxFreeAmount != null) {
-      yield r'taxFreeAmount';
-      yield serializers.serialize(
-        object.taxFreeAmount,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.taxExemptionAmount != null) {
-      yield r'taxExemptionAmount';
-      yield serializers.serialize(
-        object.taxExemptionAmount,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.method != null) {
-      yield r'method';
-      yield serializers.serialize(
-        object.method,
-        specifiedType: const FullType(String),
-      );
-    }
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is PaymentModel &&
+          other.paymentKey == paymentKey &&
+          other.status == status &&
+          other.lastTransactionKey == lastTransactionKey &&
+          other.orderId == orderId &&
+          other.orderName == orderName &&
+          other.requestedAt == requestedAt &&
+          other.approvedAt == approvedAt &&
+          other.cancelReason == cancelReason &&
+          other.canceledAt == canceledAt &&
+          other.cancelAmount == cancelAmount &&
+          other.type == type &&
+          other.currency == currency &&
+          other.totalAmount == totalAmount &&
+          other.balanceAmount == balanceAmount &&
+          other.suppliedAmount == suppliedAmount &&
+          other.vat == vat &&
+          other.taxFreeAmount == taxFreeAmount &&
+          other.taxExemptionAmount == taxExemptionAmount &&
+          other.method == method;
 
   @override
-  Object serialize(
-    Serializers serializers,
-    PaymentModel object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
-  }
+  int get hashCode =>
+      paymentKey.hashCode +
+      status.hashCode +
+      lastTransactionKey.hashCode +
+      orderId.hashCode +
+      orderName.hashCode +
+      requestedAt.hashCode +
+      approvedAt.hashCode +
+      cancelReason.hashCode +
+      canceledAt.hashCode +
+      cancelAmount.hashCode +
+      type.hashCode +
+      currency.hashCode +
+      totalAmount.hashCode +
+      balanceAmount.hashCode +
+      suppliedAmount.hashCode +
+      vat.hashCode +
+      taxFreeAmount.hashCode +
+      taxExemptionAmount.hashCode +
+      method.hashCode;
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required PaymentModelBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'paymentKey':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.paymentKey = valueDes;
-          break;
-        case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.status = valueDes;
-          break;
-        case r'lastTransactionKey':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.lastTransactionKey = valueDes;
-          break;
-        case r'orderId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.orderId = valueDes;
-          break;
-        case r'orderName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.orderName = valueDes;
-          break;
-        case r'requestedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.requestedAt = valueDes;
-          break;
-        case r'approvedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.approvedAt = valueDes;
-          break;
-        case r'cancelReason':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.cancelReason = valueDes;
-          break;
-        case r'canceledAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.canceledAt = valueDes;
-          break;
-        case r'cancelAmount':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.cancelAmount = valueDes;
-          break;
-        case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.type = valueDes;
-          break;
-        case r'currency':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.currency = valueDes;
-          break;
-        case r'totalAmount':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.totalAmount = valueDes;
-          break;
-        case r'balanceAmount':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.balanceAmount = valueDes;
-          break;
-        case r'suppliedAmount':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.suppliedAmount = valueDes;
-          break;
-        case r'vat':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.vat = valueDes;
-          break;
-        case r'taxFreeAmount':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.taxFreeAmount = valueDes;
-          break;
-        case r'taxExemptionAmount':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.taxExemptionAmount = valueDes;
-          break;
-        case r'method':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.method = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+  factory PaymentModel.fromJson(Map<String, dynamic> json) =>
+      _$PaymentModelFromJson(json);
+
+  Map<String, dynamic> toJson() => _$PaymentModelToJson(this);
 
   @override
-  PaymentModel deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = PaymentModelBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

@@ -1,287 +1,102 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'test_model.g.dart';
 
-/// TestModel
-///
-/// Properties:
-/// * [seq]
-/// * [postYn]
-/// * [title]
-/// * [cont]
-/// * [viewCnt]
-/// * [busiRegNum]
-/// * [bmId]
-/// * [delYn]
-/// * [groupNo]
-/// * [test1]
-/// * [test2]
-@BuiltValue()
-abstract class TestModel implements Built<TestModel, TestModelBuilder> {
-  @BuiltValueField(wireName: r'seq')
-  String? get seq;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class TestModel {
+  /// Returns a new [TestModel] instance.
+  TestModel({
+    this.seq,
+    this.postYn,
+    this.title,
+    this.cont,
+    this.viewCnt,
+    this.busiRegNum,
+    this.bmId,
+    this.delYn,
+    this.groupNo,
+    this.test1,
+    this.test2,
+  });
 
-  @BuiltValueField(wireName: r'postYn')
-  String? get postYn;
+  @JsonKey(name: r'seq', required: false, includeIfNull: false)
+  final String? seq;
 
-  @BuiltValueField(wireName: r'title')
-  String? get title;
+  @JsonKey(name: r'postYn', required: false, includeIfNull: false)
+  final String? postYn;
 
-  @BuiltValueField(wireName: r'cont')
-  String? get cont;
+  @JsonKey(name: r'title', required: false, includeIfNull: false)
+  final String? title;
 
-  @BuiltValueField(wireName: r'viewCnt')
-  String? get viewCnt;
+  @JsonKey(name: r'cont', required: false, includeIfNull: false)
+  final String? cont;
 
-  @BuiltValueField(wireName: r'busiRegNum')
-  String? get busiRegNum;
+  @JsonKey(name: r'viewCnt', required: false, includeIfNull: false)
+  final String? viewCnt;
 
-  @BuiltValueField(wireName: r'bmId')
-  String? get bmId;
+  @JsonKey(name: r'busiRegNum', required: false, includeIfNull: false)
+  final String? busiRegNum;
 
-  @BuiltValueField(wireName: r'delYn')
-  String? get delYn;
+  @JsonKey(name: r'bmId', required: false, includeIfNull: false)
+  final String? bmId;
 
-  @BuiltValueField(wireName: r'groupNo')
-  String? get groupNo;
+  @JsonKey(name: r'delYn', required: false, includeIfNull: false)
+  final String? delYn;
 
-  @BuiltValueField(wireName: r'test1')
-  String? get test1;
+  @JsonKey(name: r'groupNo', required: false, includeIfNull: false)
+  final String? groupNo;
 
-  @BuiltValueField(wireName: r'test2')
-  String? get test2;
+  @JsonKey(name: r'test1', required: false, includeIfNull: false)
+  final String? test1;
 
-  TestModel._();
-
-  factory TestModel([void updates(TestModelBuilder b)]) = _$TestModel;
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(TestModelBuilder b) => b;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<TestModel> get serializer => _$TestModelSerializer();
-}
-
-class _$TestModelSerializer implements PrimitiveSerializer<TestModel> {
-  @override
-  final Iterable<Type> types = const [TestModel, _$TestModel];
+  @JsonKey(name: r'test2', required: false, includeIfNull: false)
+  final String? test2;
 
   @override
-  final String wireName = r'TestModel';
-
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    TestModel object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.seq != null) {
-      yield r'seq';
-      yield serializers.serialize(
-        object.seq,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.postYn != null) {
-      yield r'postYn';
-      yield serializers.serialize(
-        object.postYn,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.title != null) {
-      yield r'title';
-      yield serializers.serialize(
-        object.title,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.cont != null) {
-      yield r'cont';
-      yield serializers.serialize(
-        object.cont,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.viewCnt != null) {
-      yield r'viewCnt';
-      yield serializers.serialize(
-        object.viewCnt,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.busiRegNum != null) {
-      yield r'busiRegNum';
-      yield serializers.serialize(
-        object.busiRegNum,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.bmId != null) {
-      yield r'bmId';
-      yield serializers.serialize(
-        object.bmId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.delYn != null) {
-      yield r'delYn';
-      yield serializers.serialize(
-        object.delYn,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.groupNo != null) {
-      yield r'groupNo';
-      yield serializers.serialize(
-        object.groupNo,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.test1 != null) {
-      yield r'test1';
-      yield serializers.serialize(
-        object.test1,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.test2 != null) {
-      yield r'test2';
-      yield serializers.serialize(
-        object.test2,
-        specifiedType: const FullType(String),
-      );
-    }
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is TestModel &&
+          other.seq == seq &&
+          other.postYn == postYn &&
+          other.title == title &&
+          other.cont == cont &&
+          other.viewCnt == viewCnt &&
+          other.busiRegNum == busiRegNum &&
+          other.bmId == bmId &&
+          other.delYn == delYn &&
+          other.groupNo == groupNo &&
+          other.test1 == test1 &&
+          other.test2 == test2;
 
   @override
-  Object serialize(
-    Serializers serializers,
-    TestModel object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
-  }
+  int get hashCode =>
+      seq.hashCode +
+      postYn.hashCode +
+      title.hashCode +
+      cont.hashCode +
+      viewCnt.hashCode +
+      busiRegNum.hashCode +
+      bmId.hashCode +
+      delYn.hashCode +
+      groupNo.hashCode +
+      test1.hashCode +
+      test2.hashCode;
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required TestModelBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'seq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.seq = valueDes;
-          break;
-        case r'postYn':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.postYn = valueDes;
-          break;
-        case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.title = valueDes;
-          break;
-        case r'cont':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.cont = valueDes;
-          break;
-        case r'viewCnt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.viewCnt = valueDes;
-          break;
-        case r'busiRegNum':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.busiRegNum = valueDes;
-          break;
-        case r'bmId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.bmId = valueDes;
-          break;
-        case r'delYn':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.delYn = valueDes;
-          break;
-        case r'groupNo':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.groupNo = valueDes;
-          break;
-        case r'test1':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.test1 = valueDes;
-          break;
-        case r'test2':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.test2 = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+  factory TestModel.fromJson(Map<String, dynamic> json) =>
+      _$TestModelFromJson(json);
+
+  Map<String, dynamic> toJson() => _$TestModelToJson(this);
 
   @override
-  TestModel deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = TestModelBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

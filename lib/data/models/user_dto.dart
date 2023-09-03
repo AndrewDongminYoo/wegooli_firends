@@ -1,485 +1,168 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'user_dto.g.dart';
 
-/// UserDTO
-///
-/// Properties:
-/// * [seq]
-/// * [name]
-/// * [add1]
-/// * [add2]
-/// * [zipCode]
-/// * [phoneNumber]
-/// * [email]
-/// * [birthDay]
-/// * [sex]
-/// * [delYn]
-/// * [createdAt]
-/// * [updatedAt]
-/// * [id]
-/// * [memberSeq]
-/// * [password]
-/// * [delimit]
-/// * [nickname]
-/// * [profilePicture]
-/// * [deleteAt]
-/// * [color]
-/// * [customerKey]
-/// * [activeYn]
-@BuiltValue()
-abstract class UserDTO implements Built<UserDTO, UserDTOBuilder> {
-  @BuiltValueField(wireName: r'seq')
-  int? get seq;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class UserDTO {
+  /// Returns a new [UserDTO] instance.
+  UserDTO({
+    this.seq,
+    this.name,
+    this.add1,
+    this.add2,
+    this.zipCode,
+    this.phoneNumber,
+    this.email,
+    this.birthDay,
+    this.sex,
+    this.delYn,
+    this.createdAt,
+    this.updatedAt,
+    this.id,
+    this.memberSeq,
+    this.password,
+    this.delimit,
+    this.nickname,
+    this.profilePicture,
+    this.deleteAt,
+    this.color,
+    this.customerKey,
+    this.activeYn,
+  });
 
-  @BuiltValueField(wireName: r'name')
-  String? get name;
+  @JsonKey(name: r'seq', required: false, includeIfNull: false)
+  final int? seq;
 
-  @BuiltValueField(wireName: r'add1')
-  String? get add1;
+  @JsonKey(name: r'name', required: false, includeIfNull: false)
+  final String? name;
 
-  @BuiltValueField(wireName: r'add2')
-  String? get add2;
+  @JsonKey(name: r'add1', required: false, includeIfNull: false)
+  final String? add1;
 
-  @BuiltValueField(wireName: r'zipCode')
-  String? get zipCode;
+  @JsonKey(name: r'add2', required: false, includeIfNull: false)
+  final String? add2;
 
-  @BuiltValueField(wireName: r'phoneNumber')
-  String? get phoneNumber;
+  @JsonKey(name: r'zipCode', required: false, includeIfNull: false)
+  final String? zipCode;
 
-  @BuiltValueField(wireName: r'email')
-  String? get email;
+  @JsonKey(name: r'phoneNumber', required: false, includeIfNull: false)
+  final String? phoneNumber;
 
-  @BuiltValueField(wireName: r'birthDay')
-  String? get birthDay;
+  @JsonKey(name: r'email', required: false, includeIfNull: false)
+  final String? email;
 
-  @BuiltValueField(wireName: r'sex')
-  String? get sex;
+  @JsonKey(name: r'birthDay', required: false, includeIfNull: false)
+  final String? birthDay;
 
-  @BuiltValueField(wireName: r'delYn')
-  String? get delYn;
+  @JsonKey(name: r'sex', required: false, includeIfNull: false)
+  final String? sex;
 
-  @BuiltValueField(wireName: r'createdAt')
-  String? get createdAt;
+  @JsonKey(name: r'delYn', required: false, includeIfNull: false)
+  final String? delYn;
 
-  @BuiltValueField(wireName: r'updatedAt')
-  String? get updatedAt;
+  @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
+  final String? createdAt;
 
-  @BuiltValueField(wireName: r'id')
-  String? get id;
+  @JsonKey(name: r'updatedAt', required: false, includeIfNull: false)
+  final String? updatedAt;
 
-  @BuiltValueField(wireName: r'memberSeq')
-  int? get memberSeq;
+  @JsonKey(name: r'id', required: false, includeIfNull: false)
+  final String? id;
 
-  @BuiltValueField(wireName: r'password')
-  String? get password;
+  @JsonKey(name: r'memberSeq', required: false, includeIfNull: false)
+  final int? memberSeq;
 
-  @BuiltValueField(wireName: r'delimit')
-  String? get delimit;
+  @JsonKey(name: r'password', required: false, includeIfNull: false)
+  final String? password;
 
-  @BuiltValueField(wireName: r'nickname')
-  String? get nickname;
+  @JsonKey(name: r'delimit', required: false, includeIfNull: false)
+  final String? delimit;
 
-  @BuiltValueField(wireName: r'profilePicture')
-  String? get profilePicture;
+  @JsonKey(name: r'nickname', required: false, includeIfNull: false)
+  final String? nickname;
 
-  @BuiltValueField(wireName: r'deleteAt')
-  String? get deleteAt;
+  @JsonKey(name: r'profilePicture', required: false, includeIfNull: false)
+  final String? profilePicture;
 
-  @BuiltValueField(wireName: r'color')
-  String? get color;
+  @JsonKey(name: r'deleteAt', required: false, includeIfNull: false)
+  final String? deleteAt;
 
-  @BuiltValueField(wireName: r'customerKey')
-  String? get customerKey;
+  @JsonKey(name: r'color', required: false, includeIfNull: false)
+  final String? color;
 
-  @BuiltValueField(wireName: r'activeYn')
-  String? get activeYn;
+  @JsonKey(name: r'customerKey', required: false, includeIfNull: false)
+  final String? customerKey;
 
-  UserDTO._();
-
-  factory UserDTO([void updates(UserDTOBuilder b)]) = _$UserDTO;
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(UserDTOBuilder b) => b;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<UserDTO> get serializer => _$UserDTOSerializer();
-}
-
-class _$UserDTOSerializer implements PrimitiveSerializer<UserDTO> {
-  @override
-  final Iterable<Type> types = const [UserDTO, _$UserDTO];
+  @JsonKey(name: r'activeYn', required: false, includeIfNull: false)
+  final String? activeYn;
 
   @override
-  final String wireName = r'UserDTO';
-
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    UserDTO object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.seq != null) {
-      yield r'seq';
-      yield serializers.serialize(
-        object.seq,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.name != null) {
-      yield r'name';
-      yield serializers.serialize(
-        object.name,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.add1 != null) {
-      yield r'add1';
-      yield serializers.serialize(
-        object.add1,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.add2 != null) {
-      yield r'add2';
-      yield serializers.serialize(
-        object.add2,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.zipCode != null) {
-      yield r'zipCode';
-      yield serializers.serialize(
-        object.zipCode,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.phoneNumber != null) {
-      yield r'phoneNumber';
-      yield serializers.serialize(
-        object.phoneNumber,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.email != null) {
-      yield r'email';
-      yield serializers.serialize(
-        object.email,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.birthDay != null) {
-      yield r'birthDay';
-      yield serializers.serialize(
-        object.birthDay,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.sex != null) {
-      yield r'sex';
-      yield serializers.serialize(
-        object.sex,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.delYn != null) {
-      yield r'delYn';
-      yield serializers.serialize(
-        object.delYn,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.createdAt != null) {
-      yield r'createdAt';
-      yield serializers.serialize(
-        object.createdAt,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.updatedAt != null) {
-      yield r'updatedAt';
-      yield serializers.serialize(
-        object.updatedAt,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.id != null) {
-      yield r'id';
-      yield serializers.serialize(
-        object.id,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.memberSeq != null) {
-      yield r'memberSeq';
-      yield serializers.serialize(
-        object.memberSeq,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.password != null) {
-      yield r'password';
-      yield serializers.serialize(
-        object.password,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.delimit != null) {
-      yield r'delimit';
-      yield serializers.serialize(
-        object.delimit,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.nickname != null) {
-      yield r'nickname';
-      yield serializers.serialize(
-        object.nickname,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.profilePicture != null) {
-      yield r'profilePicture';
-      yield serializers.serialize(
-        object.profilePicture,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.deleteAt != null) {
-      yield r'deleteAt';
-      yield serializers.serialize(
-        object.deleteAt,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.color != null) {
-      yield r'color';
-      yield serializers.serialize(
-        object.color,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.customerKey != null) {
-      yield r'customerKey';
-      yield serializers.serialize(
-        object.customerKey,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.activeYn != null) {
-      yield r'activeYn';
-      yield serializers.serialize(
-        object.activeYn,
-        specifiedType: const FullType(String),
-      );
-    }
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is UserDTO &&
+          other.seq == seq &&
+          other.name == name &&
+          other.add1 == add1 &&
+          other.add2 == add2 &&
+          other.zipCode == zipCode &&
+          other.phoneNumber == phoneNumber &&
+          other.email == email &&
+          other.birthDay == birthDay &&
+          other.sex == sex &&
+          other.delYn == delYn &&
+          other.createdAt == createdAt &&
+          other.updatedAt == updatedAt &&
+          other.id == id &&
+          other.memberSeq == memberSeq &&
+          other.password == password &&
+          other.delimit == delimit &&
+          other.nickname == nickname &&
+          other.profilePicture == profilePicture &&
+          other.deleteAt == deleteAt &&
+          other.color == color &&
+          other.customerKey == customerKey &&
+          other.activeYn == activeYn;
 
   @override
-  Object serialize(
-    Serializers serializers,
-    UserDTO object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
-  }
+  int get hashCode =>
+      seq.hashCode +
+      name.hashCode +
+      add1.hashCode +
+      add2.hashCode +
+      zipCode.hashCode +
+      phoneNumber.hashCode +
+      email.hashCode +
+      birthDay.hashCode +
+      sex.hashCode +
+      delYn.hashCode +
+      createdAt.hashCode +
+      updatedAt.hashCode +
+      id.hashCode +
+      memberSeq.hashCode +
+      password.hashCode +
+      delimit.hashCode +
+      nickname.hashCode +
+      profilePicture.hashCode +
+      deleteAt.hashCode +
+      color.hashCode +
+      customerKey.hashCode +
+      activeYn.hashCode;
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required UserDTOBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'seq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.seq = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
-          break;
-        case r'add1':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.add1 = valueDes;
-          break;
-        case r'add2':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.add2 = valueDes;
-          break;
-        case r'zipCode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.zipCode = valueDes;
-          break;
-        case r'phoneNumber':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.phoneNumber = valueDes;
-          break;
-        case r'email':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.email = valueDes;
-          break;
-        case r'birthDay':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.birthDay = valueDes;
-          break;
-        case r'sex':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.sex = valueDes;
-          break;
-        case r'delYn':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.delYn = valueDes;
-          break;
-        case r'createdAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.createdAt = valueDes;
-          break;
-        case r'updatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.updatedAt = valueDes;
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.id = valueDes;
-          break;
-        case r'memberSeq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.memberSeq = valueDes;
-          break;
-        case r'password':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.password = valueDes;
-          break;
-        case r'delimit':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.delimit = valueDes;
-          break;
-        case r'nickname':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.nickname = valueDes;
-          break;
-        case r'profilePicture':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.profilePicture = valueDes;
-          break;
-        case r'deleteAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.deleteAt = valueDes;
-          break;
-        case r'color':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.color = valueDes;
-          break;
-        case r'customerKey':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.customerKey = valueDes;
-          break;
-        case r'activeYn':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.activeYn = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+  factory UserDTO.fromJson(Map<String, dynamic> json) =>
+      _$UserDTOFromJson(json);
+
+  Map<String, dynamic> toJson() => _$UserDTOToJson(this);
 
   @override
-  UserDTO deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = UserDTOBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

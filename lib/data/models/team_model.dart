@@ -1,233 +1,84 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'team_model.g.dart';
 
-/// TeamModel
-///
-/// Properties:
-/// * [seq]
-/// * [delYn]
-/// * [createdAt]
-/// * [updatedAt]
-/// * [accountId]
-/// * [teamCode]
-/// * [name]
-/// * [contract]
-@BuiltValue()
-abstract class TeamModel implements Built<TeamModel, TeamModelBuilder> {
-  @BuiltValueField(wireName: r'seq')
-  int? get seq;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class TeamModel {
+  /// Returns a new [TeamModel] instance.
+  TeamModel({
+    this.seq,
+    this.delYn,
+    this.createdAt,
+    this.updatedAt,
+    this.accountId,
+    this.teamCode,
+    this.name,
+    this.contract,
+  });
 
-  @BuiltValueField(wireName: r'delYn')
-  String? get delYn;
+  @JsonKey(name: r'seq', required: false, includeIfNull: false)
+  final int? seq;
 
-  @BuiltValueField(wireName: r'createdAt')
-  DateTime? get createdAt;
+  @JsonKey(name: r'delYn', required: false, includeIfNull: false)
+  final String? delYn;
 
-  @BuiltValueField(wireName: r'updatedAt')
-  DateTime? get updatedAt;
+  @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
+  final DateTime? createdAt;
 
-  @BuiltValueField(wireName: r'accountId')
-  String? get accountId;
+  @JsonKey(name: r'updatedAt', required: false, includeIfNull: false)
+  final DateTime? updatedAt;
 
-  @BuiltValueField(wireName: r'teamCode')
-  String? get teamCode;
+  @JsonKey(name: r'accountId', required: false, includeIfNull: false)
+  final String? accountId;
 
-  @BuiltValueField(wireName: r'name')
-  String? get name;
+  @JsonKey(name: r'teamCode', required: false, includeIfNull: false)
+  final String? teamCode;
 
-  @BuiltValueField(wireName: r'contract')
-  String? get contract;
+  @JsonKey(name: r'name', required: false, includeIfNull: false)
+  final String? name;
 
-  TeamModel._();
-
-  factory TeamModel([void updates(TeamModelBuilder b)]) = _$TeamModel;
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(TeamModelBuilder b) => b;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<TeamModel> get serializer => _$TeamModelSerializer();
-}
-
-class _$TeamModelSerializer implements PrimitiveSerializer<TeamModel> {
-  @override
-  final Iterable<Type> types = const [TeamModel, _$TeamModel];
+  @JsonKey(name: r'contract', required: false, includeIfNull: false)
+  final String? contract;
 
   @override
-  final String wireName = r'TeamModel';
-
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    TeamModel object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.seq != null) {
-      yield r'seq';
-      yield serializers.serialize(
-        object.seq,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.delYn != null) {
-      yield r'delYn';
-      yield serializers.serialize(
-        object.delYn,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.createdAt != null) {
-      yield r'createdAt';
-      yield serializers.serialize(
-        object.createdAt,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.updatedAt != null) {
-      yield r'updatedAt';
-      yield serializers.serialize(
-        object.updatedAt,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.accountId != null) {
-      yield r'accountId';
-      yield serializers.serialize(
-        object.accountId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.teamCode != null) {
-      yield r'teamCode';
-      yield serializers.serialize(
-        object.teamCode,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.name != null) {
-      yield r'name';
-      yield serializers.serialize(
-        object.name,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.contract != null) {
-      yield r'contract';
-      yield serializers.serialize(
-        object.contract,
-        specifiedType: const FullType(String),
-      );
-    }
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is TeamModel &&
+          other.seq == seq &&
+          other.delYn == delYn &&
+          other.createdAt == createdAt &&
+          other.updatedAt == updatedAt &&
+          other.accountId == accountId &&
+          other.teamCode == teamCode &&
+          other.name == name &&
+          other.contract == contract;
 
   @override
-  Object serialize(
-    Serializers serializers,
-    TeamModel object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
-  }
+  int get hashCode =>
+      seq.hashCode +
+      delYn.hashCode +
+      createdAt.hashCode +
+      updatedAt.hashCode +
+      accountId.hashCode +
+      teamCode.hashCode +
+      name.hashCode +
+      contract.hashCode;
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required TeamModelBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'seq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.seq = valueDes;
-          break;
-        case r'delYn':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.delYn = valueDes;
-          break;
-        case r'createdAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.createdAt = valueDes;
-          break;
-        case r'updatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.updatedAt = valueDes;
-          break;
-        case r'accountId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.accountId = valueDes;
-          break;
-        case r'teamCode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.teamCode = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
-          break;
-        case r'contract':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.contract = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+  factory TeamModel.fromJson(Map<String, dynamic> json) =>
+      _$TeamModelFromJson(json);
+
+  Map<String, dynamic> toJson() => _$TeamModelToJson(this);
 
   @override
-  TeamModel deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = TeamModelBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

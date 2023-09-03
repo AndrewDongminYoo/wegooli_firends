@@ -1,434 +1,150 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'car_history_dto.g.dart';
 
-/// CarHistoryDTO
-///
-/// Properties:
-/// * [seq]
-/// * [terminalSeq]
-/// * [carNum]
-/// * [status]
-/// * [lat]
-/// * [lon]
-/// * [volt]
-/// * [fuel]
-/// * [flDoorClose]
-/// * [frDoorClose]
-/// * [blDoorClose]
-/// * [brDoorClose]
-/// * [distance]
-/// * [speed]
-/// * [flDoorLock]
-/// * [frDoorLock]
-/// * [blDoorLock]
-/// * [brDoorLock]
-/// * [createdAt]
-@BuiltValue()
-abstract class CarHistoryDTO
-    implements Built<CarHistoryDTO, CarHistoryDTOBuilder> {
-  @BuiltValueField(wireName: r'seq')
-  int? get seq;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class CarHistoryDTO {
+  /// Returns a new [CarHistoryDTO] instance.
+  CarHistoryDTO({
+    this.seq,
+    this.terminalSeq,
+    this.carNum,
+    this.status,
+    this.lat,
+    this.lon,
+    this.volt,
+    this.fuel,
+    this.flDoorClose,
+    this.frDoorClose,
+    this.blDoorClose,
+    this.brDoorClose,
+    this.distance,
+    this.speed,
+    this.flDoorLock,
+    this.frDoorLock,
+    this.blDoorLock,
+    this.brDoorLock,
+    this.createdAt,
+  });
 
-  @BuiltValueField(wireName: r'terminalSeq')
-  int? get terminalSeq;
+  @JsonKey(name: r'seq', required: false, includeIfNull: false)
+  final int? seq;
 
-  @BuiltValueField(wireName: r'carNum')
-  String? get carNum;
+  @JsonKey(name: r'terminalSeq', required: false, includeIfNull: false)
+  final int? terminalSeq;
 
-  @BuiltValueField(wireName: r'status')
-  String? get status;
+  @JsonKey(name: r'carNum', required: false, includeIfNull: false)
+  final String? carNum;
 
-  @BuiltValueField(wireName: r'lat')
-  String? get lat;
+  @JsonKey(name: r'status', required: false, includeIfNull: false)
+  final String? status;
 
-  @BuiltValueField(wireName: r'lon')
-  String? get lon;
+  @JsonKey(name: r'lat', required: false, includeIfNull: false)
+  final String? lat;
 
-  @BuiltValueField(wireName: r'volt')
-  int? get volt;
+  @JsonKey(name: r'lon', required: false, includeIfNull: false)
+  final String? lon;
 
-  @BuiltValueField(wireName: r'fuel')
-  int? get fuel;
+  @JsonKey(name: r'volt', required: false, includeIfNull: false)
+  final int? volt;
 
-  @BuiltValueField(wireName: r'flDoorClose')
-  String? get flDoorClose;
+  @JsonKey(name: r'fuel', required: false, includeIfNull: false)
+  final int? fuel;
 
-  @BuiltValueField(wireName: r'frDoorClose')
-  String? get frDoorClose;
+  @JsonKey(name: r'flDoorClose', required: false, includeIfNull: false)
+  final String? flDoorClose;
 
-  @BuiltValueField(wireName: r'blDoorClose')
-  String? get blDoorClose;
+  @JsonKey(name: r'frDoorClose', required: false, includeIfNull: false)
+  final String? frDoorClose;
 
-  @BuiltValueField(wireName: r'brDoorClose')
-  String? get brDoorClose;
+  @JsonKey(name: r'blDoorClose', required: false, includeIfNull: false)
+  final String? blDoorClose;
 
-  @BuiltValueField(wireName: r'distance')
-  int? get distance;
+  @JsonKey(name: r'brDoorClose', required: false, includeIfNull: false)
+  final String? brDoorClose;
 
-  @BuiltValueField(wireName: r'speed')
-  int? get speed;
+  @JsonKey(name: r'distance', required: false, includeIfNull: false)
+  final int? distance;
 
-  @BuiltValueField(wireName: r'flDoorLock')
-  String? get flDoorLock;
+  @JsonKey(name: r'speed', required: false, includeIfNull: false)
+  final int? speed;
 
-  @BuiltValueField(wireName: r'frDoorLock')
-  String? get frDoorLock;
+  @JsonKey(name: r'flDoorLock', required: false, includeIfNull: false)
+  final String? flDoorLock;
 
-  @BuiltValueField(wireName: r'blDoorLock')
-  String? get blDoorLock;
+  @JsonKey(name: r'frDoorLock', required: false, includeIfNull: false)
+  final String? frDoorLock;
 
-  @BuiltValueField(wireName: r'brDoorLock')
-  String? get brDoorLock;
+  @JsonKey(name: r'blDoorLock', required: false, includeIfNull: false)
+  final String? blDoorLock;
 
-  @BuiltValueField(wireName: r'createdAt')
-  String? get createdAt;
+  @JsonKey(name: r'brDoorLock', required: false, includeIfNull: false)
+  final String? brDoorLock;
 
-  CarHistoryDTO._();
-
-  factory CarHistoryDTO([void updates(CarHistoryDTOBuilder b)]) =
-      _$CarHistoryDTO;
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(CarHistoryDTOBuilder b) => b;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<CarHistoryDTO> get serializer =>
-      _$CarHistoryDTOSerializer();
-}
-
-class _$CarHistoryDTOSerializer implements PrimitiveSerializer<CarHistoryDTO> {
-  @override
-  final Iterable<Type> types = const [CarHistoryDTO, _$CarHistoryDTO];
+  @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
+  final String? createdAt;
 
   @override
-  final String wireName = r'CarHistoryDTO';
-
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    CarHistoryDTO object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.seq != null) {
-      yield r'seq';
-      yield serializers.serialize(
-        object.seq,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.terminalSeq != null) {
-      yield r'terminalSeq';
-      yield serializers.serialize(
-        object.terminalSeq,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.carNum != null) {
-      yield r'carNum';
-      yield serializers.serialize(
-        object.carNum,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.status != null) {
-      yield r'status';
-      yield serializers.serialize(
-        object.status,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.lat != null) {
-      yield r'lat';
-      yield serializers.serialize(
-        object.lat,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.lon != null) {
-      yield r'lon';
-      yield serializers.serialize(
-        object.lon,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.volt != null) {
-      yield r'volt';
-      yield serializers.serialize(
-        object.volt,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.fuel != null) {
-      yield r'fuel';
-      yield serializers.serialize(
-        object.fuel,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.flDoorClose != null) {
-      yield r'flDoorClose';
-      yield serializers.serialize(
-        object.flDoorClose,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.frDoorClose != null) {
-      yield r'frDoorClose';
-      yield serializers.serialize(
-        object.frDoorClose,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.blDoorClose != null) {
-      yield r'blDoorClose';
-      yield serializers.serialize(
-        object.blDoorClose,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.brDoorClose != null) {
-      yield r'brDoorClose';
-      yield serializers.serialize(
-        object.brDoorClose,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.distance != null) {
-      yield r'distance';
-      yield serializers.serialize(
-        object.distance,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.speed != null) {
-      yield r'speed';
-      yield serializers.serialize(
-        object.speed,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.flDoorLock != null) {
-      yield r'flDoorLock';
-      yield serializers.serialize(
-        object.flDoorLock,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.frDoorLock != null) {
-      yield r'frDoorLock';
-      yield serializers.serialize(
-        object.frDoorLock,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.blDoorLock != null) {
-      yield r'blDoorLock';
-      yield serializers.serialize(
-        object.blDoorLock,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.brDoorLock != null) {
-      yield r'brDoorLock';
-      yield serializers.serialize(
-        object.brDoorLock,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.createdAt != null) {
-      yield r'createdAt';
-      yield serializers.serialize(
-        object.createdAt,
-        specifiedType: const FullType(String),
-      );
-    }
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is CarHistoryDTO &&
+          other.seq == seq &&
+          other.terminalSeq == terminalSeq &&
+          other.carNum == carNum &&
+          other.status == status &&
+          other.lat == lat &&
+          other.lon == lon &&
+          other.volt == volt &&
+          other.fuel == fuel &&
+          other.flDoorClose == flDoorClose &&
+          other.frDoorClose == frDoorClose &&
+          other.blDoorClose == blDoorClose &&
+          other.brDoorClose == brDoorClose &&
+          other.distance == distance &&
+          other.speed == speed &&
+          other.flDoorLock == flDoorLock &&
+          other.frDoorLock == frDoorLock &&
+          other.blDoorLock == blDoorLock &&
+          other.brDoorLock == brDoorLock &&
+          other.createdAt == createdAt;
 
   @override
-  Object serialize(
-    Serializers serializers,
-    CarHistoryDTO object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
-  }
+  int get hashCode =>
+      seq.hashCode +
+      terminalSeq.hashCode +
+      carNum.hashCode +
+      status.hashCode +
+      lat.hashCode +
+      lon.hashCode +
+      volt.hashCode +
+      fuel.hashCode +
+      flDoorClose.hashCode +
+      frDoorClose.hashCode +
+      blDoorClose.hashCode +
+      brDoorClose.hashCode +
+      distance.hashCode +
+      speed.hashCode +
+      flDoorLock.hashCode +
+      frDoorLock.hashCode +
+      blDoorLock.hashCode +
+      brDoorLock.hashCode +
+      createdAt.hashCode;
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required CarHistoryDTOBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'seq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.seq = valueDes;
-          break;
-        case r'terminalSeq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.terminalSeq = valueDes;
-          break;
-        case r'carNum':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.carNum = valueDes;
-          break;
-        case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.status = valueDes;
-          break;
-        case r'lat':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.lat = valueDes;
-          break;
-        case r'lon':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.lon = valueDes;
-          break;
-        case r'volt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.volt = valueDes;
-          break;
-        case r'fuel':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.fuel = valueDes;
-          break;
-        case r'flDoorClose':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.flDoorClose = valueDes;
-          break;
-        case r'frDoorClose':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.frDoorClose = valueDes;
-          break;
-        case r'blDoorClose':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.blDoorClose = valueDes;
-          break;
-        case r'brDoorClose':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.brDoorClose = valueDes;
-          break;
-        case r'distance':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.distance = valueDes;
-          break;
-        case r'speed':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.speed = valueDes;
-          break;
-        case r'flDoorLock':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.flDoorLock = valueDes;
-          break;
-        case r'frDoorLock':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.frDoorLock = valueDes;
-          break;
-        case r'blDoorLock':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.blDoorLock = valueDes;
-          break;
-        case r'brDoorLock':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.brDoorLock = valueDes;
-          break;
-        case r'createdAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.createdAt = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+  factory CarHistoryDTO.fromJson(Map<String, dynamic> json) =>
+      _$CarHistoryDTOFromJson(json);
+
+  Map<String, dynamic> toJson() => _$CarHistoryDTOToJson(this);
 
   @override
-  CarHistoryDTO deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = CarHistoryDTOBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

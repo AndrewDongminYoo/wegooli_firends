@@ -1,237 +1,84 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'team_car_connection.g.dart';
 
-/// TeamCarConnection
-///
-/// Properties:
-/// * [seq]
-/// * [teamSeq]
-/// * [carNum]
-/// * [startAt]
-/// * [endAt]
-/// * [createdAt]
-/// * [updatedAt]
-/// * [activeYn]
-@BuiltValue()
-abstract class TeamCarConnection
-    implements Built<TeamCarConnection, TeamCarConnectionBuilder> {
-  @BuiltValueField(wireName: r'seq')
-  int? get seq;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class TeamCarConnection {
+  /// Returns a new [TeamCarConnection] instance.
+  TeamCarConnection({
+    this.seq,
+    this.teamSeq,
+    this.carNum,
+    this.startAt,
+    this.endAt,
+    this.createdAt,
+    this.updatedAt,
+    this.activeYn,
+  });
 
-  @BuiltValueField(wireName: r'teamSeq')
-  int? get teamSeq;
+  @JsonKey(name: r'seq', required: false, includeIfNull: false)
+  final int? seq;
 
-  @BuiltValueField(wireName: r'carNum')
-  String? get carNum;
+  @JsonKey(name: r'teamSeq', required: false, includeIfNull: false)
+  final int? teamSeq;
 
-  @BuiltValueField(wireName: r'startAt')
-  String? get startAt;
+  @JsonKey(name: r'carNum', required: false, includeIfNull: false)
+  final String? carNum;
 
-  @BuiltValueField(wireName: r'endAt')
-  String? get endAt;
+  @JsonKey(name: r'startAt', required: false, includeIfNull: false)
+  final String? startAt;
 
-  @BuiltValueField(wireName: r'createdAt')
-  String? get createdAt;
+  @JsonKey(name: r'endAt', required: false, includeIfNull: false)
+  final String? endAt;
 
-  @BuiltValueField(wireName: r'updatedAt')
-  String? get updatedAt;
+  @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
+  final String? createdAt;
 
-  @BuiltValueField(wireName: r'activeYn')
-  String? get activeYn;
+  @JsonKey(name: r'updatedAt', required: false, includeIfNull: false)
+  final String? updatedAt;
 
-  TeamCarConnection._();
-
-  factory TeamCarConnection([void updates(TeamCarConnectionBuilder b)]) =
-      _$TeamCarConnection;
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(TeamCarConnectionBuilder b) => b;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<TeamCarConnection> get serializer =>
-      _$TeamCarConnectionSerializer();
-}
-
-class _$TeamCarConnectionSerializer
-    implements PrimitiveSerializer<TeamCarConnection> {
-  @override
-  final Iterable<Type> types = const [TeamCarConnection, _$TeamCarConnection];
+  @JsonKey(name: r'activeYn', required: false, includeIfNull: false)
+  final String? activeYn;
 
   @override
-  final String wireName = r'TeamCarConnection';
-
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    TeamCarConnection object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.seq != null) {
-      yield r'seq';
-      yield serializers.serialize(
-        object.seq,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.teamSeq != null) {
-      yield r'teamSeq';
-      yield serializers.serialize(
-        object.teamSeq,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.carNum != null) {
-      yield r'carNum';
-      yield serializers.serialize(
-        object.carNum,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.startAt != null) {
-      yield r'startAt';
-      yield serializers.serialize(
-        object.startAt,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.endAt != null) {
-      yield r'endAt';
-      yield serializers.serialize(
-        object.endAt,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.createdAt != null) {
-      yield r'createdAt';
-      yield serializers.serialize(
-        object.createdAt,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.updatedAt != null) {
-      yield r'updatedAt';
-      yield serializers.serialize(
-        object.updatedAt,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.activeYn != null) {
-      yield r'activeYn';
-      yield serializers.serialize(
-        object.activeYn,
-        specifiedType: const FullType(String),
-      );
-    }
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is TeamCarConnection &&
+          other.seq == seq &&
+          other.teamSeq == teamSeq &&
+          other.carNum == carNum &&
+          other.startAt == startAt &&
+          other.endAt == endAt &&
+          other.createdAt == createdAt &&
+          other.updatedAt == updatedAt &&
+          other.activeYn == activeYn;
 
   @override
-  Object serialize(
-    Serializers serializers,
-    TeamCarConnection object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
-  }
+  int get hashCode =>
+      seq.hashCode +
+      teamSeq.hashCode +
+      carNum.hashCode +
+      startAt.hashCode +
+      endAt.hashCode +
+      createdAt.hashCode +
+      updatedAt.hashCode +
+      activeYn.hashCode;
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required TeamCarConnectionBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'seq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.seq = valueDes;
-          break;
-        case r'teamSeq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.teamSeq = valueDes;
-          break;
-        case r'carNum':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.carNum = valueDes;
-          break;
-        case r'startAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.startAt = valueDes;
-          break;
-        case r'endAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.endAt = valueDes;
-          break;
-        case r'createdAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.createdAt = valueDes;
-          break;
-        case r'updatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.updatedAt = valueDes;
-          break;
-        case r'activeYn':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.activeYn = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+  factory TeamCarConnection.fromJson(Map<String, dynamic> json) =>
+      _$TeamCarConnectionFromJson(json);
+
+  Map<String, dynamic> toJson() => _$TeamCarConnectionToJson(this);
 
   @override
-  TeamCarConnection deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = TeamCarConnectionBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

@@ -3,211 +3,51 @@
 part of 'car_request.dart';
 
 // **************************************************************************
-// BuiltValueGenerator
+// JsonSerializableGenerator
 // **************************************************************************
 
-class _$CarRequest extends CarRequest {
-  @override
-  final int? seq;
-  @override
-  final String? delYn;
-  @override
-  final DateTime? createdAt;
-  @override
-  final DateTime? updatedAt;
-  @override
-  final String? carNum;
-  @override
-  final String? model;
-  @override
-  final String? status;
-  @override
-  final int? seats;
-  @override
-  final String? fuelType;
-  @override
-  final String? segment;
-  @override
-  final int? fee;
+CarRequest _$CarRequestFromJson(Map<String, dynamic> json) => $checkedCreate(
+      'CarRequest',
+      json,
+      ($checkedConvert) {
+        final val = CarRequest(
+          seq: $checkedConvert('seq', (v) => v as int?),
+          delYn: $checkedConvert('delYn', (v) => v as String?),
+          createdAt: $checkedConvert('createdAt',
+              (v) => v == null ? null : DateTime.parse(v as String)),
+          updatedAt: $checkedConvert('updatedAt',
+              (v) => v == null ? null : DateTime.parse(v as String)),
+          carNum: $checkedConvert('carNum', (v) => v as String?),
+          model: $checkedConvert('model', (v) => v as String?),
+          status: $checkedConvert('status', (v) => v as String?),
+          seats: $checkedConvert('seats', (v) => v as int?),
+          fuelType: $checkedConvert('fuelType', (v) => v as String?),
+          segment: $checkedConvert('segment', (v) => v as String?),
+          fee: $checkedConvert('fee', (v) => v as int?),
+        );
+        return val;
+      },
+    );
 
-  factory _$CarRequest([void Function(CarRequestBuilder)? updates]) =>
-      (new CarRequestBuilder()..update(updates))._build();
+Map<String, dynamic> _$CarRequestToJson(CarRequest instance) {
+  final val = <String, dynamic>{};
 
-  _$CarRequest._(
-      {this.seq,
-      this.delYn,
-      this.createdAt,
-      this.updatedAt,
-      this.carNum,
-      this.model,
-      this.status,
-      this.seats,
-      this.fuelType,
-      this.segment,
-      this.fee})
-      : super._();
-
-  @override
-  CarRequest rebuild(void Function(CarRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  CarRequestBuilder toBuilder() => new CarRequestBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is CarRequest &&
-        seq == other.seq &&
-        delYn == other.delYn &&
-        createdAt == other.createdAt &&
-        updatedAt == other.updatedAt &&
-        carNum == other.carNum &&
-        model == other.model &&
-        status == other.status &&
-        seats == other.seats &&
-        fuelType == other.fuelType &&
-        segment == other.segment &&
-        fee == other.fee;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, seq.hashCode);
-    _$hash = $jc(_$hash, delYn.hashCode);
-    _$hash = $jc(_$hash, createdAt.hashCode);
-    _$hash = $jc(_$hash, updatedAt.hashCode);
-    _$hash = $jc(_$hash, carNum.hashCode);
-    _$hash = $jc(_$hash, model.hashCode);
-    _$hash = $jc(_$hash, status.hashCode);
-    _$hash = $jc(_$hash, seats.hashCode);
-    _$hash = $jc(_$hash, fuelType.hashCode);
-    _$hash = $jc(_$hash, segment.hashCode);
-    _$hash = $jc(_$hash, fee.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'CarRequest')
-          ..add('seq', seq)
-          ..add('delYn', delYn)
-          ..add('createdAt', createdAt)
-          ..add('updatedAt', updatedAt)
-          ..add('carNum', carNum)
-          ..add('model', model)
-          ..add('status', status)
-          ..add('seats', seats)
-          ..add('fuelType', fuelType)
-          ..add('segment', segment)
-          ..add('fee', fee))
-        .toString();
-  }
-}
-
-class CarRequestBuilder implements Builder<CarRequest, CarRequestBuilder> {
-  _$CarRequest? _$v;
-
-  int? _seq;
-  int? get seq => _$this._seq;
-  set seq(int? seq) => _$this._seq = seq;
-
-  String? _delYn;
-  String? get delYn => _$this._delYn;
-  set delYn(String? delYn) => _$this._delYn = delYn;
-
-  DateTime? _createdAt;
-  DateTime? get createdAt => _$this._createdAt;
-  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
-
-  DateTime? _updatedAt;
-  DateTime? get updatedAt => _$this._updatedAt;
-  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
-
-  String? _carNum;
-  String? get carNum => _$this._carNum;
-  set carNum(String? carNum) => _$this._carNum = carNum;
-
-  String? _model;
-  String? get model => _$this._model;
-  set model(String? model) => _$this._model = model;
-
-  String? _status;
-  String? get status => _$this._status;
-  set status(String? status) => _$this._status = status;
-
-  int? _seats;
-  int? get seats => _$this._seats;
-  set seats(int? seats) => _$this._seats = seats;
-
-  String? _fuelType;
-  String? get fuelType => _$this._fuelType;
-  set fuelType(String? fuelType) => _$this._fuelType = fuelType;
-
-  String? _segment;
-  String? get segment => _$this._segment;
-  set segment(String? segment) => _$this._segment = segment;
-
-  int? _fee;
-  int? get fee => _$this._fee;
-  set fee(int? fee) => _$this._fee = fee;
-
-  CarRequestBuilder() {
-    CarRequest._defaults(this);
-  }
-
-  CarRequestBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _seq = $v.seq;
-      _delYn = $v.delYn;
-      _createdAt = $v.createdAt;
-      _updatedAt = $v.updatedAt;
-      _carNum = $v.carNum;
-      _model = $v.model;
-      _status = $v.status;
-      _seats = $v.seats;
-      _fuelType = $v.fuelType;
-      _segment = $v.segment;
-      _fee = $v.fee;
-      _$v = null;
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
     }
-    return this;
   }
 
-  @override
-  void replace(CarRequest other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$CarRequest;
-  }
-
-  @override
-  void update(void Function(CarRequestBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  CarRequest build() => _build();
-
-  _$CarRequest _build() {
-    final _$result = _$v ??
-        new _$CarRequest._(
-            seq: seq,
-            delYn: delYn,
-            createdAt: createdAt,
-            updatedAt: updatedAt,
-            carNum: carNum,
-            model: model,
-            status: status,
-            seats: seats,
-            fuelType: fuelType,
-            segment: segment,
-            fee: fee);
-    replace(_$result);
-    return _$result;
-  }
+  writeNotNull('seq', instance.seq);
+  writeNotNull('delYn', instance.delYn);
+  writeNotNull('createdAt', instance.createdAt?.toIso8601String());
+  writeNotNull('updatedAt', instance.updatedAt?.toIso8601String());
+  writeNotNull('carNum', instance.carNum);
+  writeNotNull('model', instance.model);
+  writeNotNull('status', instance.status);
+  writeNotNull('seats', instance.seats);
+  writeNotNull('fuelType', instance.fuelType);
+  writeNotNull('segment', instance.segment);
+  writeNotNull('fee', instance.fee);
+  return val;
 }
-
-// ignore_for_file: deprecated_member_use_from_same_package,type=lint

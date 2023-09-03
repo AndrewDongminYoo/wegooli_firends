@@ -115,11 +115,36 @@ enum StatusCodeEnhanced {
 }
 ```
 
-Out of the box, `json_serializable` supports many common types in the [dart:core](https://api.dart.dev/stable/dart-core/dart-core-library.html) library: [`BigInt`](https://api.dart.dev/stable/dart-core/BigInt-class.html), [`bool`](https://api.dart.dev/stable/dart-core/bool-class.html), [`DateTime`](https://api.dart.dev/stable/dart-core/DateTime-class.html), [`double`](https://api.dart.dev/stable/dart-core/double-class.html), [`Duration`](https://api.dart.dev/stable/dart-core/Duration-class.html), [`Enum`](https://api.dart.dev/stable/dart-core/Enum-class.html), [`int`](https://api.dart.dev/stable/dart-core/int-class.html), [`Iterable`](https://api.dart.dev/stable/dart-core/Iterable-class.html), [`List`](https://api.dart.dev/stable/dart-core/List-class.html), [`Map`](https://api.dart.dev/stable/dart-core/Map-class.html), [`num`](https://api.dart.dev/stable/dart-core/num-class.html), [`Object`](https://api.dart.dev/stable/dart-core/Object-class.html), [`Record`](https://api.dart.dev/stable/dart-core/Record-class.html), [`Set`](https://api.dart.dev/stable/dart-core/Set-class.html), [`String`](https://api.dart.dev/stable/dart-core/String-class.html), [`Uri`](https://api.dart.dev/stable/dart-core/Uri-class.html)
+Out of the box, `json_serializable` supports many common types in the [dart:core](https://api.dart.dev/stable/dart-core/dart-core-library.html) library: [`BigInt`](https://api.dart.dev/stable/dart-core/BigInt-class.html),
+[`bool`](https://api.dart.dev/stable/dart-core/bool-class.html),
+[`DateTime`](https://api.dart.dev/stable/dart-core/DateTime-class.html),
+[`double`](https://api.dart.dev/stable/dart-core/double-class.html),
+[`Duration`](https://api.dart.dev/stable/dart-core/Duration-class.html),
+[`Enum`](https://api.dart.dev/stable/dart-core/Enum-class.html),
+[`int`](https://api.dart.dev/stable/dart-core/int-class.html),
+[`Iterable`](https://api.dart.dev/stable/dart-core/Iterable-class.html),
+[`List`](https://api.dart.dev/stable/dart-core/List-class.html),
+[`Map`](https://api.dart.dev/stable/dart-core/Map-class.html),
+[`num`](https://api.dart.dev/stable/dart-core/num-class.html),
+[`Object`](https://api.dart.dev/stable/dart-core/Object-class.html),
+[`Record`](https://api.dart.dev/stable/dart-core/Record-class.html),
+[`Set`](https://api.dart.dev/stable/dart-core/Set-class.html),
+[`String`](https://api.dart.dev/stable/dart-core/String-class.html),
+[`Uri`](https://api.dart.dev/stable/dart-core/Uri-class.html)
 
-The collection types – [`Iterable`](https://api.dart.dev/stable/dart-core/Iterable-class.html), [`List`](https://api.dart.dev/stable/dart-core/List-class.html), [`Map`](https://api.dart.dev/stable/dart-core/Map-class.html), [`Record`](https://api.dart.dev/stable/dart-core/Record-class.html), [`Set`](https://api.dart.dev/stable/dart-core/Set-class.html) – can contain values of all the above types.
+The collection types – [`Iterable`](https://api.dart.dev/stable/dart-core/Iterable-class.html),
+[`List`](https://api.dart.dev/stable/dart-core/List-class.html),
+[`Map`](https://api.dart.dev/stable/dart-core/Map-class.html),
+[`Record`](https://api.dart.dev/stable/dart-core/Record-class.html),
+[`Set`](https://api.dart.dev/stable/dart-core/Set-class.html) – can contain values of all the above types.
 
-For [`Map`](https://api.dart.dev/stable/dart-core/Map-class.html), the key value must be one of [`BigInt`](https://api.dart.dev/stable/dart-core/BigInt-class.html), [`DateTime`](https://api.dart.dev/stable/dart-core/DateTime-class.html), [`Enum`](https://api.dart.dev/stable/dart-core/Enum-class.html), [`int`](https://api.dart.dev/stable/dart-core/int-class.html), [`Object`](https://api.dart.dev/stable/dart-core/Object-class.html), [`String`](https://api.dart.dev/stable/dart-core/String-class.html), [`Uri`](https://api.dart.dev/stable/dart-core/Uri-class.html)
+For [`Map`](https://api.dart.dev/stable/dart-core/Map-class.html), the key value must be one of [`BigInt`](https://api.dart.dev/stable/dart-core/BigInt-class.html),
+[`DateTime`](https://api.dart.dev/stable/dart-core/DateTime-class.html),
+[`Enum`](https://api.dart.dev/stable/dart-core/Enum-class.html),
+[`int`](https://api.dart.dev/stable/dart-core/int-class.html),
+[`Object`](https://api.dart.dev/stable/dart-core/Object-class.html),
+[`String`](https://api.dart.dev/stable/dart-core/String-class.html),
+[`Uri`](https://api.dart.dev/stable/dart-core/Uri-class.html)
 
 ## Custom types and custom encoding [#](https://pub.dev/packages/json_serializable#custom-types-and-custom-encoding)
 

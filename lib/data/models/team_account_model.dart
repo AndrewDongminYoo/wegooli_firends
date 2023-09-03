@@ -1,219 +1,78 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'team_account_model.g.dart';
 
-/// TeamAccountModel
-///
-/// Properties:
-/// * [accountId]
-/// * [color]
-/// * [nickname]
-/// * [profilePicture]
-/// * [useYn]
-/// * [joinedAt]
-/// * [leavedAt]
-@BuiltValue()
-abstract class TeamAccountModel
-    implements Built<TeamAccountModel, TeamAccountModelBuilder> {
-  @BuiltValueField(wireName: r'accountId')
-  String? get accountId;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class TeamAccountModel {
+  /// Returns a new [TeamAccountModel] instance.
+  TeamAccountModel({
+    this.accountId,
+    this.color,
+    this.nickname,
+    this.profilePicture,
+    this.useYn,
+    this.joinedAt,
+    this.leavedAt,
+  });
 
-  @BuiltValueField(wireName: r'color')
-  String? get color;
+  @JsonKey(name: r'accountId', required: false, includeIfNull: false)
+  final String? accountId;
 
-  @BuiltValueField(wireName: r'nickname')
-  String? get nickname;
+  @JsonKey(name: r'color', required: false, includeIfNull: false)
+  final String? color;
 
-  @BuiltValueField(wireName: r'profilePicture')
-  String? get profilePicture;
+  @JsonKey(name: r'nickname', required: false, includeIfNull: false)
+  final String? nickname;
 
-  @BuiltValueField(wireName: r'useYn')
-  String? get useYn;
+  @JsonKey(name: r'profilePicture', required: false, includeIfNull: false)
+  final String? profilePicture;
 
-  @BuiltValueField(wireName: r'joinedAt')
-  String? get joinedAt;
+  @JsonKey(name: r'useYn', required: false, includeIfNull: false)
+  final String? useYn;
 
-  @BuiltValueField(wireName: r'leavedAt')
-  String? get leavedAt;
+  @JsonKey(name: r'joinedAt', required: false, includeIfNull: false)
+  final String? joinedAt;
 
-  TeamAccountModel._();
-
-  factory TeamAccountModel([void updates(TeamAccountModelBuilder b)]) =
-      _$TeamAccountModel;
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(TeamAccountModelBuilder b) => b;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<TeamAccountModel> get serializer =>
-      _$TeamAccountModelSerializer();
-}
-
-class _$TeamAccountModelSerializer
-    implements PrimitiveSerializer<TeamAccountModel> {
-  @override
-  final Iterable<Type> types = const [TeamAccountModel, _$TeamAccountModel];
+  @JsonKey(name: r'leavedAt', required: false, includeIfNull: false)
+  final String? leavedAt;
 
   @override
-  final String wireName = r'TeamAccountModel';
-
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    TeamAccountModel object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.accountId != null) {
-      yield r'accountId';
-      yield serializers.serialize(
-        object.accountId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.color != null) {
-      yield r'color';
-      yield serializers.serialize(
-        object.color,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.nickname != null) {
-      yield r'nickname';
-      yield serializers.serialize(
-        object.nickname,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.profilePicture != null) {
-      yield r'profilePicture';
-      yield serializers.serialize(
-        object.profilePicture,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.useYn != null) {
-      yield r'useYn';
-      yield serializers.serialize(
-        object.useYn,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.joinedAt != null) {
-      yield r'joinedAt';
-      yield serializers.serialize(
-        object.joinedAt,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.leavedAt != null) {
-      yield r'leavedAt';
-      yield serializers.serialize(
-        object.leavedAt,
-        specifiedType: const FullType(String),
-      );
-    }
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is TeamAccountModel &&
+          other.accountId == accountId &&
+          other.color == color &&
+          other.nickname == nickname &&
+          other.profilePicture == profilePicture &&
+          other.useYn == useYn &&
+          other.joinedAt == joinedAt &&
+          other.leavedAt == leavedAt;
 
   @override
-  Object serialize(
-    Serializers serializers,
-    TeamAccountModel object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
-  }
+  int get hashCode =>
+      accountId.hashCode +
+      color.hashCode +
+      nickname.hashCode +
+      profilePicture.hashCode +
+      useYn.hashCode +
+      joinedAt.hashCode +
+      leavedAt.hashCode;
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required TeamAccountModelBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'accountId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.accountId = valueDes;
-          break;
-        case r'color':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.color = valueDes;
-          break;
-        case r'nickname':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.nickname = valueDes;
-          break;
-        case r'profilePicture':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.profilePicture = valueDes;
-          break;
-        case r'useYn':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.useYn = valueDes;
-          break;
-        case r'joinedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.joinedAt = valueDes;
-          break;
-        case r'leavedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.leavedAt = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+  factory TeamAccountModel.fromJson(Map<String, dynamic> json) =>
+      _$TeamAccountModelFromJson(json);
+
+  Map<String, dynamic> toJson() => _$TeamAccountModelToJson(this);
 
   @override
-  TeamAccountModel deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = TeamAccountModelBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

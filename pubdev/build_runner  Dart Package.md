@@ -7,13 +7,13 @@ author:
 
 # build_runner | Dart Package
 
-Standalone generator and watcher for Dart using [`package:build`](https://pub.dev/packages/build).
+[`package:build`](https://pub.dev/packages/build)를 사용하는 독립 실행형 Dart용 생성기 및 감시기.
 [![Issues related to build_runner](https://img.shields.io/github/issues-raw/dart-lang/build/package%3A%20build_runner.svg)](https://github.com/dart-lang/build/labels/package%3A%20build_runner)
 [![Pub Package Version](https://img.shields.io/pub/v/build_runner.svg)](https://pub.dev/packages/build_runner)
 [![Latest Dartdocs](https://img.shields.io/badge/dartdocs-latest-blue.svg)](https://pub.dev/documentation/build_runner/latest)
 [![Join the chat on Gitter](https://badges.gitter.im/dart-lang/build.svg)](https://gitter.im/dart-lang/build)
 
-The `build_runner` package provides a concrete way of generating files using Dart code. Files are always generated directly on disk, and rebuilds are _incremental_ - inspired by tools such as [Bazel](https://bazel.build/).
+`build_runner` 패키지는 Dart 코드를 사용하여 파일을 생성하는 구체적인 방법을 제공합니다. 파일은 항상 디스크에 직접 생성되며, 리빌드는 [Bazel](https://bazel.build/)과 같은 도구에서 영감을 받아 _incremental_ 으로 이루어집니다.
 
 > **NOTE**: Are you a user of this package? You may be interested in simplified user-facing documentation, such as our [getting started guide](https://goo.gl/b9o2j6).
 
@@ -27,68 +27,69 @@ The `build_runner` package provides a concrete way of generating files using Dar
 - [Contributing](https://pub.dev/packages/build_runner#contributing)
   - [Testing](https://pub.dev/packages/build_runner#testing)
 
-This package is intended to support development of Dart projects with [`package:build`](https://pub.dev/packages/build). In general, put it under [dev_dependencies](https://dart.dev/tools/pub/dependencies#dev-dependencies), in your [`pubspec.yaml`](https://dart.dev/tools/pub/pubspec).
+이 패키지는 [`package:build`](https://pub.dev/packages/build)로 Dart 프로젝트 개발을 지원하기 위한 것입니다. 일반적으로 [dev_dependencies](https://dart.dev/tools/pub/dependencies#dev-dependencies),
+[`pubspec.yaml`](https://dart.dev/tools/pub/pubspec) 아래에 넣으세요.
 
-```dart
+```yaml
 dev_dependencies:
   build_runner:
 ```
 
-When the packages providing `Builder`s are configured with a `build.yaml` file they are designed to be consumed using an generated build script. Most builders should need little or no configuration, see the documentation provided with the Builder to decide whether the build needs to be customized. If it does you may also provide a `build.yaml` with the configuration. See the `package:build_config` README for more information on this file.
+`Builder`를 제공하는 패키지는 생성된 빌드 스크립트를 사용하여 사용하도록 설계되어 `build.yaml` 파일로 구성됩니다. 대부분의 빌더는 구성이 거의 또는 전혀 필요하지 않으므로 빌더와 함께 제공된 설명서를 참조하여 빌드를 사용자 지정해야 하는지 여부를 결정하세요. 필요한 경우 구성과 함께 `build.yaml`을 제공할 수도 있습니다. 이 파일에 대한 자세한 내용은 `package:build_config` README를 참조하세요.
 
-To have web code compiled to js add a `dev_dependency` on `build_web_compilers`.
+웹 코드가 js로 컴파일되도록 하려면 `build_web_compilers`를 `dev_dependency`에 추가하세요.
 
 ## Built-in Commands [#](https://pub.dev/packages/build_runner#built-in-commands)
 
-The `build_runner` package exposes a binary by the same name, which can be invoked using `dart run build_runner <command>`.
+`build_runner` 패키지는 같은 이름의 바이너리를 노출하며, `dart run build_runner <command>`를 사용하여 호출할 수 있습니다.
 
-The available commands are `build`, `watch`, `serve`, and `test`.
+사용 가능한 명령은 `build`, `watch`, `serve`, `test`입니다.
 
-- `build`: Runs a single build and exits.
-- `watch`: Runs a persistent build server that watches the files system for edits and does rebuilds as necessary.
-- `serve`: Same as `watch`, but runs a development server as well.
+- `build`: 단일 빌드를 실행하고 종료합니다.
+- `watch`: 파일 시스템에서 편집 내용을 감시하고 필요에 따라 리빌드를 수행하는 영구 빌드 서버를 실행합니다.
+- `serve`: `watch`와 동일하지만 개발 서버도 실행합니다.
   - By default this serves the `web` and `test` directories, on port `8080` and `8081` respectively. See below for how to configure this.
-- `test`: Runs a single build, creates a merged output directory, and then runs `dart run test --precompiled <merged-output-dir>`. See below for instructions on passing custom args to the test command.
+- `test`: 단일 빌드를 실행하고 병합된 출력 디렉터리를 생성한 다음 `dart run test --precompiled <merged-output-dir>`를 실행합니다. 테스트 명령에 사용자 지정 인수를 전달하는 방법은 아래를 참조하세요.
 
 ### Command Line Options
 
-All the above commands support the following arguments:
+위의 모든 명령은 다음 인수를 지원합니다:
 
-- `--help`: Print usage information for the command.
-- `--delete-conflicting-outputs`: Assume conflicting outputs in the users package are from previous builds, and skip the user prompt that would usually be provided.
-- `--[no-]fail-on-severe`: Whether to consider the build a failure on an error logged. By default this is false.
-- `--build-filter`: Build filters allow you to choose explicitly which files to build instead of building entire directories. See further documentation on this feature [here](https://pub.dev/packages/build_runner#partial_builds).
+- `--help`: 명령에 대한 사용 정보를 인쇄합니다.
+- `--delete-conflicting-outputs`: 사용자 패키지의 충돌하는 출력이 이전 빌드에서 나온 것으로 가정하고 일반적으로 제공되는 사용자 프롬프트를 건너뜁니다.
+- `--[no-]fail-on-severe`: 오류가 기록된 경우 빌드를 실패로 간주할지 여부. 기본적으로 이 옵션은 거짓입니다.
+- `--build-filter`: 빌드 필터를 사용하면 전체 디렉터리를 빌드하는 대신 빌드할 파일을 명시적으로 선택할 수 있습니다. 이 기능에 대한 자세한 설명서는 [여기](https://pub.dev/packages/build_runner#partial_builds)를 참조하세요.
 
-Some commands also have additional options:
+일부 명령에는 추가 옵션도 있습니다:
 
 #### serve
 
-- `--hostname`: The host to run the server on.
-- `--live-reload`: Enables automatic page reloading on rebuilds.
+- `--hostname`: 서버를 실행할 호스트입니다.
+- `--live-reload`: 재빌드 시 페이지 자동 재로드를 활성화합니다.
 
-Trailing args of the form `<directory>:<port>` are supported to customize what directories are served, and on what ports.
+어떤 디렉터리와 어떤 포트에서 서비스를 제공할지 사용자 지정하기 위해 `<directory>:<port>` 형식의 후행 인수가 지원됩니다.
 
-For example to serve the `example` and `web` directories on ports 8000 and 8001 you would do `dart run build_runner serve example:8000 web:8001`.
+예를 들어 포트 8000 및 8001에서 `example` 및 `web` 디렉터리를 제공하려면 `dart run build_runner serve example:8000 web:8001`을 실행하면 됩니다.
 
 ##### test
 
-The test command will forward any arguments after an empty `--` arg to the `dart run test` command.
+테스트 명령은 빈 `--` 인수 뒤의 모든 인수를 `dart run test` 명령으로 전달합니다.
 
-For example if you wanted to pass `-p chrome` you would do `dart run build_runner test -- -p chrome`.
+예를 들어 `-p chrome`을 전달하려면 `dart run build_runner test -- -p chrome`을 사용하면 됩니다.
 
-Valid inputs follow the general dart package rules. You can read any files under the top level `lib` folder any package dependency, and you can read all files from the current package.
+유효한 입력은 일반적인 dart 패키지 규칙을 따릅니다. 최상위 `lib` 폴더 아래의 모든 파일은 패키지 종속성에 관계없이 읽을 수 있으며, 현재 패키지의 모든 파일을 읽을 수 있습니다.
 
-In general it is best to be as specific as possible with your `InputSet`s, because all matching files will be checked against a `Builder`'s [`buildExtensions`](https://pub.dev/documentation/build/latest/build/Builder/buildExtensions.html) - see [outputs](https://pub.dev/packages/build_runner#outputs) for more information.
+일반적으로 모든 일치하는 파일은 `Builder`의 [`buildExtensions`]와 비교하여 검사되므로 `InputSet`을 최대한 구체적으로 작성하는 것이 가장 좋습니다.(https://pub.dev/documentation/build/latest/build/Builder/buildExtensions.html) - 자세한 내용은 [출력](https://pub.dev/packages/build_runner#outputs)을 참조하세요.
 
-- You may output files anywhere in the current package.
+- 현재 패키지의 어느 위치에서나 파일을 출력할 수 있습니다.
 
-> **NOTE**: When a `BuilderApplication` specifies `hideOutput: true` it may output under the `lib` folder of _any_ package you depend on.
+> **NOTE**: `BuilderApplication`이 `hideOutput: true`를 지정하면 의존하는 _any_ 패키지의 `lib` 폴더 아래에 출력할 수 있습니다.
 
-- Builders are not allowed to overwrite existing files, only create new ones.
-- Outputs from previous builds will not be treated as inputs to later ones.
-- You may use a previous `BuilderApplications`'s outputs as an input to a later action.
+- 빌더는 기존 파일을 덮어쓸 수 없으며 새 파일만 만들 수 있습니다.
+- 이전 빌드의 출력은 이후 빌드의 입력으로 취급되지 않습니다.
+- 이전 `BuilderApplications`의 출력을 이후 작업의 입력으로 사용할 수 있습니다.
 
-This package creates a top level `.dart_tool` folder in your package, which should not be submitted to your source control repository. You can see [our own `.gitignore`](https://github.com/dart-lang/build/blob/main/.gitignore) as an example.
+이 패키지는 패키지에 최상위 `.dart_tool` 폴더를 생성하며, 이 폴더는 소스 제어 저장소에 제출해서는 안 됩니다. 예시로 [자체 `.gitignore`](https://github.com/dart-lang/build/blob/main/.gitignore)를 참조하세요.
 
 ```dart
 # Files generated by dart tools
@@ -96,43 +97,43 @@ This package creates a top level `.dart_tool` folder in your package, which shou
 .dart_tool
 ```
 
-When it comes to _generated_ files it is generally best to not submit them to source control, but a specific `Builder` may provide a recommendation otherwise.
+_generated_ 생성된 파일은 일반적으로 소스 제어에 커밋하지 않는 것이 가장 좋지만, 특정 `Builder`가 달리 권장할 수 있습니다.
 
-It should be noted that if you do submit generated files to your repo then when you change branches or merge in changes you may get a warning on your next build about declared outputs that already exist. This will be followed up with a prompt to delete those files. You can type `l` to list the files, and then type `y` to delete them if everything looks correct. If you think something is wrong you can type `n` to abandon the build without taking any action.
+생성된 파일을 리포지토리에 제출하면 브랜치를 변경하거나 변경 사항을 병합할 때 다음 빌드에서 이미 존재하는 선언된 출력에 대한 경고가 표시될 수 있다는 점에 유의해야 합니다. 그러면 해당 파일을 삭제하라는 메시지가 표시됩니다. `l`을 입력하여 파일을 나열한 다음 `y`를 입력하여 모든 것이 올바르게 보이면 삭제할 수 있습니다. 뭔가 잘못되었다고 생각되면 `n`을 입력하여 아무 조치도 취하지 않고 빌드를 중단할 수 있습니다.
 
-In general generated files **should** be published with your package, but this may not always be the case. Some `Builder`s may provide a recommendation for this as well.
+일반적으로 생성된 파일은 패키지와 함께 게시되어야 하지만 **항상 그렇지는** 않을 수 있습니다. 일부 `Builder`는 이에 대한 권장 사항도 제공할 수 있습니다.
 
-If the generated script does not do everything you need it's possible to manually write one. With this approach every package which _uses_ a [`Builder`](https://pub.dev/documentation/build/latest/build/Builder-class.html) must have it's own script, they cannot be reused from other packages. A package which defines a [`Builder`](https://pub.dev/documentation/build/latest/build/Builder-class.html) may have an example you can reference, but a unique script must be written for the consuming packages as well. You can reference the generated script at `.dart_tool/build/entrypoint/build.dart` for an example.
+생성된 스크립트가 필요한 모든 기능을 수행하지 않는 경우 수동으로 스크립트를 작성할 수 있습니다. 이 접근 방식을 사용하면 [`Builder`](https://pub.dev/documentation/build/latest/build/Builder-class.html)를 _사용하는_ 모든 패키지는 자체 스크립트를 가져야 하며 다른 패키지에서 재사용할 수 없습니다. [`Builder`](https://pub.dev/documentation/build/latest/build/Builder-class.html)를 정의하는 패키지에는 참조할 수 있는 예제가 있을 수 있지만, 이를 사용하는 패키지에 대해서도 고유한 스크립트를 작성해야 합니다. 생성된 스크립트의 예는 `.dart_tool/build/entrypoint/build.dart`에서 참조할 수 있습니다.
 
-Your script should the [**`run`**](https://pub.dev/documentation/build_runner/latest/build_runner/run.html) functions defined in this library.
+스크립트는 이 라이브러리에 정의된 [**`run`**](https://pub.dev/documentation/build_runner/latest/build_runner/run.html) 함수를 사용해야 합니다.
 
-[`run`](https://pub.dev/documentation/build_runner/latest/build_runner/run.html) has a required parameter which is a `List<BuilderApplication>`. These correspond to the `BuilderDefinition` class from `package:build_config`. See `apply` and `applyToRoot` to create instances of this class. These will be translated into actions by crawling through dependencies. The order of this list is important. Each Builder may read the generated outputs of any Builder that ran on a package earlier in the dependency graph, but for the package it is running on it may only read the generated outputs from Builders earlier in the list of `BuilderApplication`s.
+[`run`](https://pub.dev/documentation/build_runner/latest/build_runner/run.html)에는 필수 매개변수인 `List<BuilderApplication>`이 있습니다. 이는 `package:build_config`의 `BuilderDefinition` 클래스에 해당합니다. 이 클래스의 인스턴스를 생성하려면 `apply` 및 `applyToRoot`를 참조하십시오. 이 인스턴스는 의존성을 크롤링하여 액션으로 변환됩니다. 이 목록의 순서는 중요합니다. 각 빌더는 종속성 그래프에서 패키지에서 실행된 모든 빌더의 생성된 출력을 읽을 수 있지만, 자신이 실행 중인 패키지의 경우 `BuilderApplication` 목록의 앞쪽에 있는 빌더에서 생성된 출력만 읽을 수 있습니다.
 
-**NOTE**: Any time you change your build script (or any of its dependencies), the next build will be a full rebuild. This is because the system has no way of knowing how that change may have affected the outputs.
+**참고**: 빌드 스크립트(또는 그 종속성)를 변경할 때마다 다음 빌드는 전체 재빌드가 됩니다. 이는 시스템에서 해당 변경 사항이 출력에 어떤 영향을 미쳤는지 알 수 없기 때문입니다.
 
-We welcome a diverse set of contributions, including, but not limited to:
+다음과 같은 다양한 기여를 환영합니다:
 
 - [Filing bugs and feature requests](https://github.com/dart-lang/build/issues/new)
 - [Send a pull request](https://github.com/dart-lang/build/pulls)
 - Or, create something awesome using this API and share with us and others!
 
-For the stability of the API and existing users, consider opening an issue first before implementing a large new feature or breaking an API. For smaller changes (like documentation, minor bug fixes), just send a pull request.
+API와 기존 사용자의 안정성을 위해 대규모의 새로운 기능을 구현하거나 API를 중단하기 전에 먼저 이슈를 여는 것을 고려하세요. 문서화, 사소한 버그 수정과 같은 작은 변경 사항의 경우 풀 리퀘스트를 보내세요.
 
-All pull requests are validated against CI, and must pass. The `build_runner` package lives in a mono repository with other `build` packages, and _all_ of the following checks must pass for _each_ package.
+모든 풀 리퀘스트는 CI에 대해 유효성을 검사하며 반드시 통과해야 합니다. `build_runner` 패키지는 다른 `build` 패키지와 함께 모노 리포지토리에 있으며, _각각의_ 패키지에 대해 다음 검사 중 _모두_ 통과해야 합니다.
 
-Ensure code passes all our [analyzer checks](https://github.com/dart-lang/build/blob/main/analysis_options.yaml):
+코드가 모든 [분석기 검사](https://github.com/dart-lang/build/blob/main/analysis_options.yaml)를 통과하는지 확인합니다:
 
 ```dart
 dart analyze .
 ```
 
-Ensure all code is formatted with the latest [dev-channel SDK](https://dart.dev/get-dart).
+모든 코드가 최신 [dev-channel SDK](https://dart.dev/get-dart)로 포맷되었는지 확인합니다.
 
 ```dart
 dart format .
 ```
 
-Run all of our unit tests:
+모든 단위 테스트를 실행합니다:
 
 ```dart
 dart run test
@@ -146,7 +147,7 @@ dart run test
 
 ### Metadata
 
-A build system for Dart code generation and modular compilation.
+Dart 코드 생성 및 모듈식 컴파일을 위한 빌드 시스템입니다.
 
 [Repository (GitHub)](https://github.com/dart-lang/build/tree/master/build_runner)
 [View/report issues](https://github.com/dart-lang/build/issues)
@@ -162,7 +163,40 @@ A build system for Dart code generation and modular compilation.
 
 ### Dependencies
 
-[analyzer](https://pub.dev/packages/analyzer ">=4.4.0 <7.0.0"), [args](https://pub.dev/packages/args "^2.0.0"), [async](https://pub.dev/packages/async "^2.5.0"), [build](https://pub.dev/packages/build ">=2.1.0 <2.5.0"), [build_config](https://pub.dev/packages/build_config ">=1.1.0 <1.2.0"), [build_daemon](https://pub.dev/packages/build_daemon "^4.0.0"), [build_resolvers](https://pub.dev/packages/build_resolvers "^2.0.0"), [build_runner_core](https://pub.dev/packages/build_runner_core "^7.2.0"), [code_builder](https://pub.dev/packages/code_builder "^4.2.0"), [collection](https://pub.dev/packages/collection "^1.15.0"), [crypto](https://pub.dev/packages/crypto "^3.0.0"), [dart_style](https://pub.dev/packages/dart_style "^2.0.0"), [frontend_server_client](https://pub.dev/packages/frontend_server_client "^3.0.0"), [glob](https://pub.dev/packages/glob "^2.0.0"), [graphs](https://pub.dev/packages/graphs "^2.2.0"), [http_multi_server](https://pub.dev/packages/http_multi_server "^3.0.0"), [io](https://pub.dev/packages/io "^1.0.0"), [js](https://pub.dev/packages/js "^0.6.3"), [logging](https://pub.dev/packages/logging "^1.0.0"), [meta](https://pub.dev/packages/meta "^1.3.0"), [mime](https://pub.dev/packages/mime "^1.0.0"), [package_config](https://pub.dev/packages/package_config "^2.0.0"), [path](https://pub.dev/packages/path "^1.8.0"), [pool](https://pub.dev/packages/pool "^1.5.0"), [pub_semver](https://pub.dev/packages/pub_semver "^2.0.0"), [pubspec_parse](https://pub.dev/packages/pubspec_parse "^1.0.0"), [shelf](https://pub.dev/packages/shelf "^1.0.0"), [shelf_web_socket](https://pub.dev/packages/shelf_web_socket "^1.0.0"), [stack_trace](https://pub.dev/packages/stack_trace "^1.10.0"), [stream_transform](https://pub.dev/packages/stream_transform "^2.0.0"), [timing](https://pub.dev/packages/timing "^1.0.0"), [watcher](https://pub.dev/packages/watcher "^1.0.0"), [web_socket_channel](https://pub.dev/packages/web_socket_channel "^2.0.0"), [yaml](https://pub.dev/packages/yaml "^3.0.0")
+[analyzer](https://pub.dev/packages/analyzer ">=4.4.0 <7.0.0"),
+[args](https://pub.dev/packages/args "^2.0.0"),
+[async](https://pub.dev/packages/async "^2.5.0"),
+[build](https://pub.dev/packages/build ">=2.1.0 <2.5.0"),
+[build_config](https://pub.dev/packages/build_config ">=1.1.0 <1.2.0"),
+[build_daemon](https://pub.dev/packages/build_daemon "^4.0.0"),
+[build_resolvers](https://pub.dev/packages/build_resolvers "^2.0.0"),
+[build_runner_core](https://pub.dev/packages/build_runner_core "^7.2.0"),
+[code_builder](https://pub.dev/packages/code_builder "^4.2.0"),
+[collection](https://pub.dev/packages/collection "^1.15.0"),
+[crypto](https://pub.dev/packages/crypto "^3.0.0"),
+[dart_style](https://pub.dev/packages/dart_style "^2.0.0"),
+[frontend_server_client](https://pub.dev/packages/frontend_server_client "^3.0.0"),
+[glob](https://pub.dev/packages/glob "^2.0.0"),
+[graphs](https://pub.dev/packages/graphs "^2.2.0"),
+[http_multi_server](https://pub.dev/packages/http_multi_server "^3.0.0"),
+[io](https://pub.dev/packages/io "^1.0.0"),
+[js](https://pub.dev/packages/js "^0.6.3"),
+[logging](https://pub.dev/packages/logging "^1.0.0"),
+[meta](https://pub.dev/packages/meta "^1.3.0"),
+[mime](https://pub.dev/packages/mime "^1.0.0"),
+[package_config](https://pub.dev/packages/package_config "^2.0.0"),
+[path](https://pub.dev/packages/path "^1.8.0"),
+[pool](https://pub.dev/packages/pool "^1.5.0"),
+[pub_semver](https://pub.dev/packages/pub_semver "^2.0.0"),
+[pubspec_parse](https://pub.dev/packages/pubspec_parse "^1.0.0"),
+[shelf](https://pub.dev/packages/shelf "^1.0.0"),
+[shelf_web_socket](https://pub.dev/packages/shelf_web_socket "^1.0.0"),
+[stack_trace](https://pub.dev/packages/stack_trace "^1.10.0"),
+[stream_transform](https://pub.dev/packages/stream_transform "^2.0.0"),
+[timing](https://pub.dev/packages/timing "^1.0.0"),
+[watcher](https://pub.dev/packages/watcher "^1.0.0"),
+[web_socket_channel](https://pub.dev/packages/web_socket_channel "^2.0.0"),
+[yaml](https://pub.dev/packages/yaml "^3.0.0")
 
 ### More
 

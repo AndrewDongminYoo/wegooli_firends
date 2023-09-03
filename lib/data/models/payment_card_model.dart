@@ -1,327 +1,114 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'payment_card_model.g.dart';
 
-/// PaymentCardModel
-///
-/// Properties:
-/// * [seq]
-/// * [delYn]
-/// * [createdAt]
-/// * [updatedAt]
-/// * [memberSeq]
-/// * [cardNumber]
-/// * [defaultYn]
-/// * [password]
-/// * [rrn]
-/// * [crn]
-/// * [expirationMonth]
-/// * [expirationYear]
-/// * [billingKey]
-@BuiltValue()
-abstract class PaymentCardModel
-    implements Built<PaymentCardModel, PaymentCardModelBuilder> {
-  @BuiltValueField(wireName: r'seq')
-  int? get seq;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class PaymentCardModel {
+  /// Returns a new [PaymentCardModel] instance.
+  PaymentCardModel({
+    this.seq,
+    this.delYn,
+    this.createdAt,
+    this.updatedAt,
+    this.memberSeq,
+    this.cardNumber,
+    this.defaultYn,
+    this.password,
+    this.rrn,
+    this.crn,
+    this.expirationMonth,
+    this.expirationYear,
+    this.billingKey,
+  });
 
-  @BuiltValueField(wireName: r'delYn')
-  String? get delYn;
+  @JsonKey(name: r'seq', required: false, includeIfNull: false)
+  final int? seq;
 
-  @BuiltValueField(wireName: r'createdAt')
-  DateTime? get createdAt;
+  @JsonKey(name: r'delYn', required: false, includeIfNull: false)
+  final String? delYn;
 
-  @BuiltValueField(wireName: r'updatedAt')
-  DateTime? get updatedAt;
+  @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
+  final DateTime? createdAt;
 
-  @BuiltValueField(wireName: r'memberSeq')
-  int? get memberSeq;
+  @JsonKey(name: r'updatedAt', required: false, includeIfNull: false)
+  final DateTime? updatedAt;
 
-  @BuiltValueField(wireName: r'cardNumber')
-  String? get cardNumber;
+  @JsonKey(name: r'memberSeq', required: false, includeIfNull: false)
+  final int? memberSeq;
 
-  @BuiltValueField(wireName: r'defaultYn')
-  String? get defaultYn;
+  @JsonKey(name: r'cardNumber', required: false, includeIfNull: false)
+  final String? cardNumber;
 
-  @BuiltValueField(wireName: r'password')
-  String? get password;
+  @JsonKey(name: r'defaultYn', required: false, includeIfNull: false)
+  final String? defaultYn;
 
-  @BuiltValueField(wireName: r'rrn')
-  String? get rrn;
+  @JsonKey(name: r'password', required: false, includeIfNull: false)
+  final String? password;
 
-  @BuiltValueField(wireName: r'crn')
-  String? get crn;
+  @JsonKey(name: r'rrn', required: false, includeIfNull: false)
+  final String? rrn;
 
-  @BuiltValueField(wireName: r'expirationMonth')
-  String? get expirationMonth;
+  @JsonKey(name: r'crn', required: false, includeIfNull: false)
+  final String? crn;
 
-  @BuiltValueField(wireName: r'expirationYear')
-  String? get expirationYear;
+  @JsonKey(name: r'expirationMonth', required: false, includeIfNull: false)
+  final String? expirationMonth;
 
-  @BuiltValueField(wireName: r'billingKey')
-  String? get billingKey;
+  @JsonKey(name: r'expirationYear', required: false, includeIfNull: false)
+  final String? expirationYear;
 
-  PaymentCardModel._();
-
-  factory PaymentCardModel([void updates(PaymentCardModelBuilder b)]) =
-      _$PaymentCardModel;
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(PaymentCardModelBuilder b) => b;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<PaymentCardModel> get serializer =>
-      _$PaymentCardModelSerializer();
-}
-
-class _$PaymentCardModelSerializer
-    implements PrimitiveSerializer<PaymentCardModel> {
-  @override
-  final Iterable<Type> types = const [PaymentCardModel, _$PaymentCardModel];
+  @JsonKey(name: r'billingKey', required: false, includeIfNull: false)
+  final String? billingKey;
 
   @override
-  final String wireName = r'PaymentCardModel';
-
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    PaymentCardModel object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.seq != null) {
-      yield r'seq';
-      yield serializers.serialize(
-        object.seq,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.delYn != null) {
-      yield r'delYn';
-      yield serializers.serialize(
-        object.delYn,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.createdAt != null) {
-      yield r'createdAt';
-      yield serializers.serialize(
-        object.createdAt,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.updatedAt != null) {
-      yield r'updatedAt';
-      yield serializers.serialize(
-        object.updatedAt,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.memberSeq != null) {
-      yield r'memberSeq';
-      yield serializers.serialize(
-        object.memberSeq,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.cardNumber != null) {
-      yield r'cardNumber';
-      yield serializers.serialize(
-        object.cardNumber,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.defaultYn != null) {
-      yield r'defaultYn';
-      yield serializers.serialize(
-        object.defaultYn,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.password != null) {
-      yield r'password';
-      yield serializers.serialize(
-        object.password,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.rrn != null) {
-      yield r'rrn';
-      yield serializers.serialize(
-        object.rrn,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.crn != null) {
-      yield r'crn';
-      yield serializers.serialize(
-        object.crn,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.expirationMonth != null) {
-      yield r'expirationMonth';
-      yield serializers.serialize(
-        object.expirationMonth,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.expirationYear != null) {
-      yield r'expirationYear';
-      yield serializers.serialize(
-        object.expirationYear,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.billingKey != null) {
-      yield r'billingKey';
-      yield serializers.serialize(
-        object.billingKey,
-        specifiedType: const FullType(String),
-      );
-    }
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is PaymentCardModel &&
+          other.seq == seq &&
+          other.delYn == delYn &&
+          other.createdAt == createdAt &&
+          other.updatedAt == updatedAt &&
+          other.memberSeq == memberSeq &&
+          other.cardNumber == cardNumber &&
+          other.defaultYn == defaultYn &&
+          other.password == password &&
+          other.rrn == rrn &&
+          other.crn == crn &&
+          other.expirationMonth == expirationMonth &&
+          other.expirationYear == expirationYear &&
+          other.billingKey == billingKey;
 
   @override
-  Object serialize(
-    Serializers serializers,
-    PaymentCardModel object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
-  }
+  int get hashCode =>
+      seq.hashCode +
+      delYn.hashCode +
+      createdAt.hashCode +
+      updatedAt.hashCode +
+      memberSeq.hashCode +
+      cardNumber.hashCode +
+      defaultYn.hashCode +
+      password.hashCode +
+      rrn.hashCode +
+      crn.hashCode +
+      expirationMonth.hashCode +
+      expirationYear.hashCode +
+      billingKey.hashCode;
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required PaymentCardModelBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'seq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.seq = valueDes;
-          break;
-        case r'delYn':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.delYn = valueDes;
-          break;
-        case r'createdAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.createdAt = valueDes;
-          break;
-        case r'updatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.updatedAt = valueDes;
-          break;
-        case r'memberSeq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.memberSeq = valueDes;
-          break;
-        case r'cardNumber':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.cardNumber = valueDes;
-          break;
-        case r'defaultYn':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.defaultYn = valueDes;
-          break;
-        case r'password':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.password = valueDes;
-          break;
-        case r'rrn':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.rrn = valueDes;
-          break;
-        case r'crn':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.crn = valueDes;
-          break;
-        case r'expirationMonth':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.expirationMonth = valueDes;
-          break;
-        case r'expirationYear':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.expirationYear = valueDes;
-          break;
-        case r'billingKey':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.billingKey = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+  factory PaymentCardModel.fromJson(Map<String, dynamic> json) =>
+      _$PaymentCardModelFromJson(json);
+
+  Map<String, dynamic> toJson() => _$PaymentCardModelToJson(this);
 
   @override
-  PaymentCardModel deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = PaymentCardModelBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

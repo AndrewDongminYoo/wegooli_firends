@@ -10,7 +10,6 @@ import '/core/app_export.dart';
 
 class LoadingDialog {
   static bool isProgressVisible = false;
-  /// `Lottie` 애니메이션 파일의 경로를  `lottiePath` 변수에 할당
   static String lottiePath = Assets.lotties.customLoader.path;
 
   /// 로티 애니메이션과 함께 로딩 모달을 표시합니다.

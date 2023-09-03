@@ -3,92 +3,32 @@
 part of 'service_car_detail_request.dart';
 
 // **************************************************************************
-// BuiltValueGenerator
+// JsonSerializableGenerator
 // **************************************************************************
 
-class _$ServiceCarDetailRequest extends ServiceCarDetailRequest {
-  @override
-  final String? serviceSeq;
+ServiceCarDetailRequest _$ServiceCarDetailRequestFromJson(
+        Map<String, dynamic> json) =>
+    $checkedCreate(
+      'ServiceCarDetailRequest',
+      json,
+      ($checkedConvert) {
+        final val = ServiceCarDetailRequest(
+          serviceSeq: $checkedConvert('serviceSeq', (v) => v as String?),
+        );
+        return val;
+      },
+    );
 
-  factory _$ServiceCarDetailRequest(
-          [void Function(ServiceCarDetailRequestBuilder)? updates]) =>
-      (new ServiceCarDetailRequestBuilder()..update(updates))._build();
+Map<String, dynamic> _$ServiceCarDetailRequestToJson(
+    ServiceCarDetailRequest instance) {
+  final val = <String, dynamic>{};
 
-  _$ServiceCarDetailRequest._({this.serviceSeq}) : super._();
-
-  @override
-  ServiceCarDetailRequest rebuild(
-          void Function(ServiceCarDetailRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  ServiceCarDetailRequestBuilder toBuilder() =>
-      new ServiceCarDetailRequestBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is ServiceCarDetailRequest && serviceSeq == other.serviceSeq;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, serviceSeq.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'ServiceCarDetailRequest')
-          ..add('serviceSeq', serviceSeq))
-        .toString();
-  }
-}
-
-class ServiceCarDetailRequestBuilder
-    implements
-        Builder<ServiceCarDetailRequest, ServiceCarDetailRequestBuilder> {
-  _$ServiceCarDetailRequest? _$v;
-
-  String? _serviceSeq;
-  String? get serviceSeq => _$this._serviceSeq;
-  set serviceSeq(String? serviceSeq) => _$this._serviceSeq = serviceSeq;
-
-  ServiceCarDetailRequestBuilder() {
-    ServiceCarDetailRequest._defaults(this);
-  }
-
-  ServiceCarDetailRequestBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _serviceSeq = $v.serviceSeq;
-      _$v = null;
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
     }
-    return this;
   }
 
-  @override
-  void replace(ServiceCarDetailRequest other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$ServiceCarDetailRequest;
-  }
-
-  @override
-  void update(void Function(ServiceCarDetailRequestBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  ServiceCarDetailRequest build() => _build();
-
-  _$ServiceCarDetailRequest _build() {
-    final _$result =
-        _$v ?? new _$ServiceCarDetailRequest._(serviceSeq: serviceSeq);
-    replace(_$result);
-    return _$result;
-  }
+  writeNotNull('serviceSeq', instance.serviceSeq);
+  return val;
 }
-
-// ignore_for_file: deprecated_member_use_from_same_package,type=lint

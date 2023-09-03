@@ -44,8 +44,7 @@ class _RegisteredCreditCardListState extends State<RegisteredCreditCardList> {
                   Obx(
                     () => ListView.builder(
                         itemBuilder: (_, int index) {
-                          final paymentCard =
-                              controller.paymentCards[index];
+                          final paymentCard = controller.paymentCards[index];
                           return Padding(
                               padding: getPadding(bottom: 10),
                               child: Row(
@@ -58,14 +57,12 @@ class _RegisteredCreditCardListState extends State<RegisteredCreditCardList> {
                                         value: paymentCard.cardNumber ?? 'dd',
                                         groupValue: paymentCard.defaultYn == 'Y'
                                             ? paymentCard.cardNumber
-                                            : controller
-                                                .selected.value,
+                                            : controller.selected.value,
                                         textStyle: theme.textTheme.bodyLarge!,
                                         onChange: (String value) {
                                           // print(
                                           //     'first option selected : $value');
-                                          controller.selected.value =
-                                              value;
+                                          controller.selected.value = value;
                                         }),
                                     CustomImageView(
                                         svgPath: Assets.svg.imgClose.path,

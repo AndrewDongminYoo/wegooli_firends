@@ -20,12 +20,11 @@ author:
 
 [#](https://pub.dev/packages/animated_toggle_switch#if-you-like-this-package-please-leave-a-like-there-on-pubdevhttpspubdevpackagesanimated_toggle_switch-and-star-on-githubhttpsgithubcomsplashbyteanimated_toggle_switch)
 
-Simple and animated switch with multiple choices and smooth loading animation. It's an easy way if you don't want to use something like a `DropDownMenuButton`.
-`LTR` and `RTL` are both supported.
+여러 선택지와 부드러운 로딩 애니메이션이 있는 간단하고 애니메이션이 있는 스위치입니다. `DropDownMenuButton`과 같은 것을 사용하고 싶지 않다면 쉬운 방법입니다. `LTR` 및 `RTL`이 모두 지원됩니다.
 [Switches without an (initial) selection](https://pub.dev/packages/animated_toggle_switch#simple-rolling-animation-with-nullable-selection) are also possible.
-Most builder arguments of `AnimatedToggleSwitch` have a standard and a custom version. This ensures that you can get started easily and still customize a lot if necessary.
+`AnimatedToggleSwitch`의 대부분의 빌더 인수는 표준 버전과 사용자 정의 버전이 있습니다. 이를 통해 쉽게 시작하고 필요한 경우 많은 부분을 커스터마이징할 수 있습니다.
 
-For a slider with a similar look, you can check out [action_slider](https://pub.dev/packages/action_slider).
+비슷한 모양의 슬라이더는 [action_slider](https://pub.dev/packages/action_slider)에서 확인할 수 있습니다.
 
 ![usage](https://user-images.githubusercontent.com/43761463/114942384-c1200d00-9e44-11eb-9904-3cb1d7296da4.gif)
 
@@ -64,7 +63,7 @@ Modified `AnimatedToggleSwitch.size()`
 ![animated_toggle_switch_example_7](https://user-images.githubusercontent.com/43761463/161432823-6cf3c855-2a9a-4f4a-9e5c-2951c4166f49.gif)
 ![animated_toggle_switch_example_8](https://user-images.githubusercontent.com/43761463/161432826-4b0c3e57-eed7-4567-8e7e-31b8a2ba6bee.gif)
 
-Easy to use and highly customizable.
+사용하기 쉽고 사용자 정의가 가능합니다.
 
 ```dart
 AnimatedToggleSwitch<int>.rolling(
@@ -76,8 +75,8 @@ AnimatedToggleSwitch<int>.rolling(
 )
 ```
 
-To use the loading animation, you simply have to return a `Future` in `onChanged` or `onTap`. You can alternatively control the loading manually with the `loading` parameter.
-Hence, to disable the loading animation, `loading: false` must be set.
+로딩 애니메이션을 사용하려면 `onChanged` 또는 `onTap`에서 `Future`를 반환하기만 하면 됩니다. 또는 `loading` 매개 변수를 사용하여 로딩을 수동으로 제어 할 수 있습니다.
+따라서 로딩 애니메이션을 비활성화하려면 `loading: false`를 설정해야 합니다.
 
 ```dart
 AnimatedToggleSwitch<int>.rolling(
@@ -93,7 +92,7 @@ AnimatedToggleSwitch<int>.rolling(
 )
 ```
 
-To use this feature, you simply have to set `allowUnlistedValues` to `true`.
+이 기능을 사용하려면 `allowUnlistedValues`를 `true`로 설정하기만 하면 됩니다.
 
 ```dart
 AnimatedToggleSwitch<int?>.rolling(

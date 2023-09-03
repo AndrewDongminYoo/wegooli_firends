@@ -1,187 +1,67 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'billing_key_request_model.g.dart';
 
-/// BillingKeyRequestModel
-///
-/// Properties:
-/// * [cardExpirationMonth]
-/// * [cardExpirationYear]
-/// * [cardNumber]
-/// * [customerIdentityNumber]
-/// * [customerKey]
-@BuiltValue()
-abstract class BillingKeyRequestModel
-    implements Built<BillingKeyRequestModel, BillingKeyRequestModelBuilder> {
-  @BuiltValueField(wireName: r'cardExpirationMonth')
-  String? get cardExpirationMonth;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class BillingKeyRequestModel {
+  /// Returns a new [BillingKeyRequestModel] instance.
+  BillingKeyRequestModel({
+    this.cardExpirationMonth,
+    this.cardExpirationYear,
+    this.cardNumber,
+    this.customerIdentityNumber,
+    this.customerKey,
+  });
 
-  @BuiltValueField(wireName: r'cardExpirationYear')
-  String? get cardExpirationYear;
+  @JsonKey(name: r'cardExpirationMonth', required: false, includeIfNull: false)
+  final String? cardExpirationMonth;
 
-  @BuiltValueField(wireName: r'cardNumber')
-  String? get cardNumber;
+  @JsonKey(name: r'cardExpirationYear', required: false, includeIfNull: false)
+  final String? cardExpirationYear;
 
-  @BuiltValueField(wireName: r'customerIdentityNumber')
-  String? get customerIdentityNumber;
+  @JsonKey(name: r'cardNumber', required: false, includeIfNull: false)
+  final String? cardNumber;
 
-  @BuiltValueField(wireName: r'customerKey')
-  String? get customerKey;
+  @JsonKey(
+      name: r'customerIdentityNumber', required: false, includeIfNull: false)
+  final String? customerIdentityNumber;
 
-  BillingKeyRequestModel._();
-
-  factory BillingKeyRequestModel(
-          [void updates(BillingKeyRequestModelBuilder b)]) =
-      _$BillingKeyRequestModel;
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(BillingKeyRequestModelBuilder b) => b;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<BillingKeyRequestModel> get serializer =>
-      _$BillingKeyRequestModelSerializer();
-}
-
-class _$BillingKeyRequestModelSerializer
-    implements PrimitiveSerializer<BillingKeyRequestModel> {
-  @override
-  final Iterable<Type> types = const [
-    BillingKeyRequestModel,
-    _$BillingKeyRequestModel
-  ];
+  @JsonKey(name: r'customerKey', required: false, includeIfNull: false)
+  final String? customerKey;
 
   @override
-  final String wireName = r'BillingKeyRequestModel';
-
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    BillingKeyRequestModel object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.cardExpirationMonth != null) {
-      yield r'cardExpirationMonth';
-      yield serializers.serialize(
-        object.cardExpirationMonth,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.cardExpirationYear != null) {
-      yield r'cardExpirationYear';
-      yield serializers.serialize(
-        object.cardExpirationYear,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.cardNumber != null) {
-      yield r'cardNumber';
-      yield serializers.serialize(
-        object.cardNumber,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.customerIdentityNumber != null) {
-      yield r'customerIdentityNumber';
-      yield serializers.serialize(
-        object.customerIdentityNumber,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.customerKey != null) {
-      yield r'customerKey';
-      yield serializers.serialize(
-        object.customerKey,
-        specifiedType: const FullType(String),
-      );
-    }
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is BillingKeyRequestModel &&
+          other.cardExpirationMonth == cardExpirationMonth &&
+          other.cardExpirationYear == cardExpirationYear &&
+          other.cardNumber == cardNumber &&
+          other.customerIdentityNumber == customerIdentityNumber &&
+          other.customerKey == customerKey;
 
   @override
-  Object serialize(
-    Serializers serializers,
-    BillingKeyRequestModel object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
-  }
+  int get hashCode =>
+      cardExpirationMonth.hashCode +
+      cardExpirationYear.hashCode +
+      cardNumber.hashCode +
+      customerIdentityNumber.hashCode +
+      customerKey.hashCode;
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required BillingKeyRequestModelBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'cardExpirationMonth':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.cardExpirationMonth = valueDes;
-          break;
-        case r'cardExpirationYear':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.cardExpirationYear = valueDes;
-          break;
-        case r'cardNumber':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.cardNumber = valueDes;
-          break;
-        case r'customerIdentityNumber':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.customerIdentityNumber = valueDes;
-          break;
-        case r'customerKey':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.customerKey = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+  factory BillingKeyRequestModel.fromJson(Map<String, dynamic> json) =>
+      _$BillingKeyRequestModelFromJson(json);
+
+  Map<String, dynamic> toJson() => _$BillingKeyRequestModelToJson(this);
 
   @override
-  BillingKeyRequestModel deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = BillingKeyRequestModelBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

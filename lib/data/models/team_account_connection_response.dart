@@ -1,140 +1,49 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 // 🌎 Project imports:
-import '/lib.dart';
+import '/data/models/team_account_model.dart';
 
 part 'team_account_connection_response.g.dart';
 
-/// TeamAccountConnectionResponse
-///
-/// Properties:
-/// * [teamSeq]
-/// * [account]
-@BuiltValue()
-abstract class TeamAccountConnectionResponse
-    implements
-        Built<TeamAccountConnectionResponse,
-            TeamAccountConnectionResponseBuilder> {
-  @BuiltValueField(wireName: r'teamSeq')
-  int? get teamSeq;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class TeamAccountConnectionResponse {
+  /// Returns a new [TeamAccountConnectionResponse] instance.
+  TeamAccountConnectionResponse({
+    this.teamSeq,
+    this.account,
+  });
 
-  @BuiltValueField(wireName: r'account')
-  BuiltList<TeamAccountModel>? get account;
+  @JsonKey(name: r'teamSeq', required: false, includeIfNull: false)
+  final int? teamSeq;
 
-  TeamAccountConnectionResponse._();
-
-  factory TeamAccountConnectionResponse(
-          [void updates(TeamAccountConnectionResponseBuilder b)]) =
-      _$TeamAccountConnectionResponse;
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(TeamAccountConnectionResponseBuilder b) => b;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<TeamAccountConnectionResponse> get serializer =>
-      _$TeamAccountConnectionResponseSerializer();
-}
-
-class _$TeamAccountConnectionResponseSerializer
-    implements PrimitiveSerializer<TeamAccountConnectionResponse> {
-  @override
-  final Iterable<Type> types = const [
-    TeamAccountConnectionResponse,
-    _$TeamAccountConnectionResponse
-  ];
+  @JsonKey(name: r'account', required: false, includeIfNull: false)
+  final List<TeamAccountModel>? account;
 
   @override
-  final String wireName = r'TeamAccountConnectionResponse';
-
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    TeamAccountConnectionResponse object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.teamSeq != null) {
-      yield r'teamSeq';
-      yield serializers.serialize(
-        object.teamSeq,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.account != null) {
-      yield r'account';
-      yield serializers.serialize(
-        object.account,
-        specifiedType: const FullType(BuiltList, [FullType(TeamAccountModel)]),
-      );
-    }
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is TeamAccountConnectionResponse &&
+          other.teamSeq == teamSeq &&
+          other.account == account;
 
   @override
-  Object serialize(
-    Serializers serializers,
-    TeamAccountConnectionResponse object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
-  }
+  int get hashCode => teamSeq.hashCode + account.hashCode;
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required TeamAccountConnectionResponseBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'teamSeq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.teamSeq = valueDes;
-          break;
-        case r'account':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(TeamAccountModel)]),
-          ) as BuiltList<TeamAccountModel>;
-          result.account.replace(valueDes);
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+  factory TeamAccountConnectionResponse.fromJson(Map<String, dynamic> json) =>
+      _$TeamAccountConnectionResponseFromJson(json);
+
+  Map<String, dynamic> toJson() => _$TeamAccountConnectionResponseToJson(this);
 
   @override
-  TeamAccountConnectionResponse deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = TeamAccountConnectionResponseBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

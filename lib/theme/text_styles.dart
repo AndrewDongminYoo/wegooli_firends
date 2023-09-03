@@ -30,7 +30,8 @@ class CustomTextStyles {
       .copyWith(color: theme.colorScheme.onPrimaryContainer);
   static TextStyle get bodyMediumBlack900 =>
       theme.textTheme.bodyMedium!.copyWith(color: appTheme.black900);
-  static TextStyle get bodyMediumBluegray900 => theme.textTheme.bodyMedium!.copyWith(
+  static TextStyle get bodyMediumBluegray900 =>
+      theme.textTheme.bodyMedium!.copyWith(
         color: appTheme.blueGray900,
         fontSize: getFontSize(14),
         fontWeight: FontWeight.w300,
@@ -111,15 +112,18 @@ class CustomTextStyles {
       theme.textTheme.titleMedium!.copyWith(fontSize: getFontSize(16));
   static TextStyle get titleMedium18 =>
       theme.textTheme.titleMedium!.copyWith(fontSize: getFontSize(18));
-  static TextStyle get titleMediumBlack900 => theme.textTheme.titleMedium!.copyWith(
+  static TextStyle get titleMediumBlack900 =>
+      theme.textTheme.titleMedium!.copyWith(
         color: appTheme.black900,
         fontSize: getFontSize(18),
       );
-  static TextStyle get titleMediumBlack90018 => theme.textTheme.titleMedium!.copyWith(
+  static TextStyle get titleMediumBlack90018 =>
+      theme.textTheme.titleMedium!.copyWith(
         color: appTheme.black900,
         fontSize: getFontSize(18),
       );
-  static TextStyle get titleMediumBluegray900 => theme.textTheme.titleMedium!.copyWith(
+  static TextStyle get titleMediumBluegray900 =>
+      theme.textTheme.titleMedium!.copyWith(
         color: appTheme.blueGray900,
         fontSize: getFontSize(18),
       );
@@ -130,17 +134,20 @@ class CustomTextStyles {
       );
   static TextStyle get titleMediumOnPrimary => theme.textTheme.titleMedium!
       .copyWith(color: theme.colorScheme.onPrimary.withOpacity(0.4));
-  static TextStyle get titleMediumOnPrimary16 => theme.textTheme.titleMedium!.copyWith(
+  static TextStyle get titleMediumOnPrimary16 =>
+      theme.textTheme.titleMedium!.copyWith(
         color: theme.colorScheme.onPrimary.withOpacity(0.4),
         fontSize: getFontSize(16),
       );
-  static TextStyle get titleMediumOnPrimary18 => theme.textTheme.titleMedium!.copyWith(
+  static TextStyle get titleMediumOnPrimary18 =>
+      theme.textTheme.titleMedium!.copyWith(
         color: theme.colorScheme.onPrimary.withOpacity(0.4),
         fontSize: getFontSize(18),
       );
   static TextStyle get titleMediumOnPrimary_1 => theme.textTheme.titleMedium!
       .copyWith(color: theme.colorScheme.onPrimary.withOpacity(0.4));
-  static TextStyle get titleSmallBlack900 => theme.textTheme.titleSmall!.copyWith(
+  static TextStyle get titleSmallBlack900 =>
+      theme.textTheme.titleSmall!.copyWith(
         color: appTheme.black900,
         fontWeight: FontWeight.w500,
       );
@@ -149,7 +156,8 @@ class CustomTextStyles {
           .copyWith(color: theme.colorScheme.onPrimary);
   static TextStyle get titleSmallOnPrimary =>
       theme.textTheme.titleSmall!.copyWith(color: theme.colorScheme.onPrimary);
-  static TextStyle get titleSmallOnPrimaryMedium => theme.textTheme.titleSmall!.copyWith(
+  static TextStyle get titleSmallOnPrimaryMedium =>
+      theme.textTheme.titleSmall!.copyWith(
         color: theme.colorScheme.onPrimary,
         fontWeight: FontWeight.w500,
       );

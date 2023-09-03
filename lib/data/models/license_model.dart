@@ -1,324 +1,114 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'license_model.g.dart';
 
-/// LicenseModel
-///
-/// Properties:
-/// * [seq]
-/// * [delYn]
-/// * [createdAt]
-/// * [updatedAt]
-/// * [memberSeq]
-/// * [koreanYn]
-/// * [licenseClass]
-/// * [licenseArea]
-/// * [licenseYear]
-/// * [licenseNum]
-/// * [expiredDate]
-/// * [issuedDate]
-/// * [signature]
-@BuiltValue()
-abstract class LicenseModel
-    implements Built<LicenseModel, LicenseModelBuilder> {
-  @BuiltValueField(wireName: r'seq')
-  int? get seq;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class LicenseModel {
+  /// Returns a new [LicenseModel] instance.
+  LicenseModel({
+    this.seq,
+    this.delYn,
+    this.createdAt,
+    this.updatedAt,
+    this.memberSeq,
+    this.koreanYn,
+    this.licenseClass,
+    this.licenseArea,
+    this.licenseYear,
+    this.licenseNum,
+    this.expiredDate,
+    this.issuedDate,
+    this.signature,
+  });
 
-  @BuiltValueField(wireName: r'delYn')
-  String? get delYn;
+  @JsonKey(name: r'seq', required: false, includeIfNull: false)
+  final int? seq;
 
-  @BuiltValueField(wireName: r'createdAt')
-  DateTime? get createdAt;
+  @JsonKey(name: r'delYn', required: false, includeIfNull: false)
+  final String? delYn;
 
-  @BuiltValueField(wireName: r'updatedAt')
-  DateTime? get updatedAt;
+  @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
+  final DateTime? createdAt;
 
-  @BuiltValueField(wireName: r'memberSeq')
-  int? get memberSeq;
+  @JsonKey(name: r'updatedAt', required: false, includeIfNull: false)
+  final DateTime? updatedAt;
 
-  @BuiltValueField(wireName: r'koreanYn')
-  String? get koreanYn;
+  @JsonKey(name: r'memberSeq', required: false, includeIfNull: false)
+  final int? memberSeq;
 
-  @BuiltValueField(wireName: r'licenseClass')
-  String? get licenseClass;
+  @JsonKey(name: r'koreanYn', required: false, includeIfNull: false)
+  final String? koreanYn;
 
-  @BuiltValueField(wireName: r'licenseArea')
-  String? get licenseArea;
+  @JsonKey(name: r'licenseClass', required: false, includeIfNull: false)
+  final String? licenseClass;
 
-  @BuiltValueField(wireName: r'licenseYear')
-  String? get licenseYear;
+  @JsonKey(name: r'licenseArea', required: false, includeIfNull: false)
+  final String? licenseArea;
 
-  @BuiltValueField(wireName: r'licenseNum')
-  String? get licenseNum;
+  @JsonKey(name: r'licenseYear', required: false, includeIfNull: false)
+  final String? licenseYear;
 
-  @BuiltValueField(wireName: r'expiredDate')
-  String? get expiredDate;
+  @JsonKey(name: r'licenseNum', required: false, includeIfNull: false)
+  final String? licenseNum;
 
-  @BuiltValueField(wireName: r'issuedDate')
-  String? get issuedDate;
+  @JsonKey(name: r'expiredDate', required: false, includeIfNull: false)
+  final String? expiredDate;
 
-  @BuiltValueField(wireName: r'signature')
-  String? get signature;
+  @JsonKey(name: r'issuedDate', required: false, includeIfNull: false)
+  final String? issuedDate;
 
-  LicenseModel._();
-
-  factory LicenseModel([void updates(LicenseModelBuilder b)]) = _$LicenseModel;
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(LicenseModelBuilder b) => b;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<LicenseModel> get serializer => _$LicenseModelSerializer();
-}
-
-class _$LicenseModelSerializer implements PrimitiveSerializer<LicenseModel> {
-  @override
-  final Iterable<Type> types = const [LicenseModel, _$LicenseModel];
+  @JsonKey(name: r'signature', required: false, includeIfNull: false)
+  final String? signature;
 
   @override
-  final String wireName = r'LicenseModel';
-
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    LicenseModel object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.seq != null) {
-      yield r'seq';
-      yield serializers.serialize(
-        object.seq,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.delYn != null) {
-      yield r'delYn';
-      yield serializers.serialize(
-        object.delYn,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.createdAt != null) {
-      yield r'createdAt';
-      yield serializers.serialize(
-        object.createdAt,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.updatedAt != null) {
-      yield r'updatedAt';
-      yield serializers.serialize(
-        object.updatedAt,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.memberSeq != null) {
-      yield r'memberSeq';
-      yield serializers.serialize(
-        object.memberSeq,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.koreanYn != null) {
-      yield r'koreanYn';
-      yield serializers.serialize(
-        object.koreanYn,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.licenseClass != null) {
-      yield r'licenseClass';
-      yield serializers.serialize(
-        object.licenseClass,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.licenseArea != null) {
-      yield r'licenseArea';
-      yield serializers.serialize(
-        object.licenseArea,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.licenseYear != null) {
-      yield r'licenseYear';
-      yield serializers.serialize(
-        object.licenseYear,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.licenseNum != null) {
-      yield r'licenseNum';
-      yield serializers.serialize(
-        object.licenseNum,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.expiredDate != null) {
-      yield r'expiredDate';
-      yield serializers.serialize(
-        object.expiredDate,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.issuedDate != null) {
-      yield r'issuedDate';
-      yield serializers.serialize(
-        object.issuedDate,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.signature != null) {
-      yield r'signature';
-      yield serializers.serialize(
-        object.signature,
-        specifiedType: const FullType(String),
-      );
-    }
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is LicenseModel &&
+          other.seq == seq &&
+          other.delYn == delYn &&
+          other.createdAt == createdAt &&
+          other.updatedAt == updatedAt &&
+          other.memberSeq == memberSeq &&
+          other.koreanYn == koreanYn &&
+          other.licenseClass == licenseClass &&
+          other.licenseArea == licenseArea &&
+          other.licenseYear == licenseYear &&
+          other.licenseNum == licenseNum &&
+          other.expiredDate == expiredDate &&
+          other.issuedDate == issuedDate &&
+          other.signature == signature;
 
   @override
-  Object serialize(
-    Serializers serializers,
-    LicenseModel object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
-  }
+  int get hashCode =>
+      seq.hashCode +
+      delYn.hashCode +
+      createdAt.hashCode +
+      updatedAt.hashCode +
+      memberSeq.hashCode +
+      koreanYn.hashCode +
+      licenseClass.hashCode +
+      licenseArea.hashCode +
+      licenseYear.hashCode +
+      licenseNum.hashCode +
+      expiredDate.hashCode +
+      issuedDate.hashCode +
+      signature.hashCode;
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required LicenseModelBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'seq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.seq = valueDes;
-          break;
-        case r'delYn':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.delYn = valueDes;
-          break;
-        case r'createdAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.createdAt = valueDes;
-          break;
-        case r'updatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.updatedAt = valueDes;
-          break;
-        case r'memberSeq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.memberSeq = valueDes;
-          break;
-        case r'koreanYn':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.koreanYn = valueDes;
-          break;
-        case r'licenseClass':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.licenseClass = valueDes;
-          break;
-        case r'licenseArea':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.licenseArea = valueDes;
-          break;
-        case r'licenseYear':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.licenseYear = valueDes;
-          break;
-        case r'licenseNum':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.licenseNum = valueDes;
-          break;
-        case r'expiredDate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.expiredDate = valueDes;
-          break;
-        case r'issuedDate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.issuedDate = valueDes;
-          break;
-        case r'signature':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.signature = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+  factory LicenseModel.fromJson(Map<String, dynamic> json) =>
+      _$LicenseModelFromJson(json);
+
+  Map<String, dynamic> toJson() => _$LicenseModelToJson(this);
 
   @override
-  LicenseModel deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = LicenseModelBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

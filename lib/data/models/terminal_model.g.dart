@@ -3,284 +3,64 @@
 part of 'terminal_model.dart';
 
 // **************************************************************************
-// BuiltValueGenerator
+// JsonSerializableGenerator
 // **************************************************************************
 
-class _$TerminalModel extends TerminalModel {
-  @override
-  final int? seq;
-  @override
-  final String? delYn;
-  @override
-  final DateTime? createdAt;
-  @override
-  final DateTime? updatedAt;
-  @override
-  final String? carNum;
-  @override
-  final String? phoneNumber;
-  @override
-  final String? status;
-  @override
-  final int? seats;
-  @override
-  final String? model;
-  @override
-  final String? volt;
-  @override
-  final String? fuelType;
-  @override
-  final String? fuel;
-  @override
-  final String? segment;
-  @override
-  final String? accountId;
-  @override
-  final int? teamSeq;
-  @override
-  final String? carImage;
-  @override
-  final String? carNickName;
+TerminalModel _$TerminalModelFromJson(Map<String, dynamic> json) =>
+    $checkedCreate(
+      'TerminalModel',
+      json,
+      ($checkedConvert) {
+        final val = TerminalModel(
+          seq: $checkedConvert('seq', (v) => v as int?),
+          delYn: $checkedConvert('delYn', (v) => v as String?),
+          createdAt: $checkedConvert('createdAt',
+              (v) => v == null ? null : DateTime.parse(v as String)),
+          updatedAt: $checkedConvert('updatedAt',
+              (v) => v == null ? null : DateTime.parse(v as String)),
+          carNum: $checkedConvert('carNum', (v) => v as String?),
+          phoneNumber: $checkedConvert('phoneNumber', (v) => v as String?),
+          status: $checkedConvert('status', (v) => v as String?),
+          seats: $checkedConvert('seats', (v) => v as int?),
+          model: $checkedConvert('model', (v) => v as String?),
+          volt: $checkedConvert('volt', (v) => v as String?),
+          fuelType: $checkedConvert('fuelType', (v) => v as String?),
+          fuel: $checkedConvert('fuel', (v) => v as String?),
+          segment: $checkedConvert('segment', (v) => v as String?),
+          accountId: $checkedConvert('accountId', (v) => v as String?),
+          teamSeq: $checkedConvert('teamSeq', (v) => v as int?),
+          carImage: $checkedConvert('carImage', (v) => v as String?),
+          carNickName: $checkedConvert('carNickName', (v) => v as String?),
+        );
+        return val;
+      },
+    );
 
-  factory _$TerminalModel([void Function(TerminalModelBuilder)? updates]) =>
-      (new TerminalModelBuilder()..update(updates))._build();
+Map<String, dynamic> _$TerminalModelToJson(TerminalModel instance) {
+  final val = <String, dynamic>{};
 
-  _$TerminalModel._(
-      {this.seq,
-      this.delYn,
-      this.createdAt,
-      this.updatedAt,
-      this.carNum,
-      this.phoneNumber,
-      this.status,
-      this.seats,
-      this.model,
-      this.volt,
-      this.fuelType,
-      this.fuel,
-      this.segment,
-      this.accountId,
-      this.teamSeq,
-      this.carImage,
-      this.carNickName})
-      : super._();
-
-  @override
-  TerminalModel rebuild(void Function(TerminalModelBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  TerminalModelBuilder toBuilder() => new TerminalModelBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is TerminalModel &&
-        seq == other.seq &&
-        delYn == other.delYn &&
-        createdAt == other.createdAt &&
-        updatedAt == other.updatedAt &&
-        carNum == other.carNum &&
-        phoneNumber == other.phoneNumber &&
-        status == other.status &&
-        seats == other.seats &&
-        model == other.model &&
-        volt == other.volt &&
-        fuelType == other.fuelType &&
-        fuel == other.fuel &&
-        segment == other.segment &&
-        accountId == other.accountId &&
-        teamSeq == other.teamSeq &&
-        carImage == other.carImage &&
-        carNickName == other.carNickName;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, seq.hashCode);
-    _$hash = $jc(_$hash, delYn.hashCode);
-    _$hash = $jc(_$hash, createdAt.hashCode);
-    _$hash = $jc(_$hash, updatedAt.hashCode);
-    _$hash = $jc(_$hash, carNum.hashCode);
-    _$hash = $jc(_$hash, phoneNumber.hashCode);
-    _$hash = $jc(_$hash, status.hashCode);
-    _$hash = $jc(_$hash, seats.hashCode);
-    _$hash = $jc(_$hash, model.hashCode);
-    _$hash = $jc(_$hash, volt.hashCode);
-    _$hash = $jc(_$hash, fuelType.hashCode);
-    _$hash = $jc(_$hash, fuel.hashCode);
-    _$hash = $jc(_$hash, segment.hashCode);
-    _$hash = $jc(_$hash, accountId.hashCode);
-    _$hash = $jc(_$hash, teamSeq.hashCode);
-    _$hash = $jc(_$hash, carImage.hashCode);
-    _$hash = $jc(_$hash, carNickName.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'TerminalModel')
-          ..add('seq', seq)
-          ..add('delYn', delYn)
-          ..add('createdAt', createdAt)
-          ..add('updatedAt', updatedAt)
-          ..add('carNum', carNum)
-          ..add('phoneNumber', phoneNumber)
-          ..add('status', status)
-          ..add('seats', seats)
-          ..add('model', model)
-          ..add('volt', volt)
-          ..add('fuelType', fuelType)
-          ..add('fuel', fuel)
-          ..add('segment', segment)
-          ..add('accountId', accountId)
-          ..add('teamSeq', teamSeq)
-          ..add('carImage', carImage)
-          ..add('carNickName', carNickName))
-        .toString();
-  }
-}
-
-class TerminalModelBuilder
-    implements Builder<TerminalModel, TerminalModelBuilder> {
-  _$TerminalModel? _$v;
-
-  int? _seq;
-  int? get seq => _$this._seq;
-  set seq(int? seq) => _$this._seq = seq;
-
-  String? _delYn;
-  String? get delYn => _$this._delYn;
-  set delYn(String? delYn) => _$this._delYn = delYn;
-
-  DateTime? _createdAt;
-  DateTime? get createdAt => _$this._createdAt;
-  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
-
-  DateTime? _updatedAt;
-  DateTime? get updatedAt => _$this._updatedAt;
-  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
-
-  String? _carNum;
-  String? get carNum => _$this._carNum;
-  set carNum(String? carNum) => _$this._carNum = carNum;
-
-  String? _phoneNumber;
-  String? get phoneNumber => _$this._phoneNumber;
-  set phoneNumber(String? phoneNumber) => _$this._phoneNumber = phoneNumber;
-
-  String? _status;
-  String? get status => _$this._status;
-  set status(String? status) => _$this._status = status;
-
-  int? _seats;
-  int? get seats => _$this._seats;
-  set seats(int? seats) => _$this._seats = seats;
-
-  String? _model;
-  String? get model => _$this._model;
-  set model(String? model) => _$this._model = model;
-
-  String? _volt;
-  String? get volt => _$this._volt;
-  set volt(String? volt) => _$this._volt = volt;
-
-  String? _fuelType;
-  String? get fuelType => _$this._fuelType;
-  set fuelType(String? fuelType) => _$this._fuelType = fuelType;
-
-  String? _fuel;
-  String? get fuel => _$this._fuel;
-  set fuel(String? fuel) => _$this._fuel = fuel;
-
-  String? _segment;
-  String? get segment => _$this._segment;
-  set segment(String? segment) => _$this._segment = segment;
-
-  String? _accountId;
-  String? get accountId => _$this._accountId;
-  set accountId(String? accountId) => _$this._accountId = accountId;
-
-  int? _teamSeq;
-  int? get teamSeq => _$this._teamSeq;
-  set teamSeq(int? teamSeq) => _$this._teamSeq = teamSeq;
-
-  String? _carImage;
-  String? get carImage => _$this._carImage;
-  set carImage(String? carImage) => _$this._carImage = carImage;
-
-  String? _carNickName;
-  String? get carNickName => _$this._carNickName;
-  set carNickName(String? carNickName) => _$this._carNickName = carNickName;
-
-  TerminalModelBuilder() {
-    TerminalModel._defaults(this);
-  }
-
-  TerminalModelBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _seq = $v.seq;
-      _delYn = $v.delYn;
-      _createdAt = $v.createdAt;
-      _updatedAt = $v.updatedAt;
-      _carNum = $v.carNum;
-      _phoneNumber = $v.phoneNumber;
-      _status = $v.status;
-      _seats = $v.seats;
-      _model = $v.model;
-      _volt = $v.volt;
-      _fuelType = $v.fuelType;
-      _fuel = $v.fuel;
-      _segment = $v.segment;
-      _accountId = $v.accountId;
-      _teamSeq = $v.teamSeq;
-      _carImage = $v.carImage;
-      _carNickName = $v.carNickName;
-      _$v = null;
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
     }
-    return this;
   }
 
-  @override
-  void replace(TerminalModel other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$TerminalModel;
-  }
-
-  @override
-  void update(void Function(TerminalModelBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  TerminalModel build() => _build();
-
-  _$TerminalModel _build() {
-    final _$result = _$v ??
-        new _$TerminalModel._(
-            seq: seq,
-            delYn: delYn,
-            createdAt: createdAt,
-            updatedAt: updatedAt,
-            carNum: carNum,
-            phoneNumber: phoneNumber,
-            status: status,
-            seats: seats,
-            model: model,
-            volt: volt,
-            fuelType: fuelType,
-            fuel: fuel,
-            segment: segment,
-            accountId: accountId,
-            teamSeq: teamSeq,
-            carImage: carImage,
-            carNickName: carNickName);
-    replace(_$result);
-    return _$result;
-  }
+  writeNotNull('seq', instance.seq);
+  writeNotNull('delYn', instance.delYn);
+  writeNotNull('createdAt', instance.createdAt?.toIso8601String());
+  writeNotNull('updatedAt', instance.updatedAt?.toIso8601String());
+  writeNotNull('carNum', instance.carNum);
+  writeNotNull('phoneNumber', instance.phoneNumber);
+  writeNotNull('status', instance.status);
+  writeNotNull('seats', instance.seats);
+  writeNotNull('model', instance.model);
+  writeNotNull('volt', instance.volt);
+  writeNotNull('fuelType', instance.fuelType);
+  writeNotNull('fuel', instance.fuel);
+  writeNotNull('segment', instance.segment);
+  writeNotNull('accountId', instance.accountId);
+  writeNotNull('teamSeq', instance.teamSeq);
+  writeNotNull('carImage', instance.carImage);
+  writeNotNull('carNickName', instance.carNickName);
+  return val;
 }
-
-// ignore_for_file: deprecated_member_use_from_same_package,type=lint

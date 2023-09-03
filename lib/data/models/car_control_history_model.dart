@@ -1,223 +1,78 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'car_control_history_model.g.dart';
 
-/// CarControlHistoryModel
-///
-/// Properties:
-/// * [seq]
-/// * [createdAt]
-/// * [terminalSeq]
-/// * [carNum]
-/// * [accountId]
-/// * [context]
-/// * [successYn]
-@BuiltValue()
-abstract class CarControlHistoryModel
-    implements Built<CarControlHistoryModel, CarControlHistoryModelBuilder> {
-  @BuiltValueField(wireName: r'seq')
-  int? get seq;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class CarControlHistoryModel {
+  /// Returns a new [CarControlHistoryModel] instance.
+  CarControlHistoryModel({
+    this.seq,
+    this.createdAt,
+    this.terminalSeq,
+    this.carNum,
+    this.accountId,
+    this.context,
+    this.successYn,
+  });
 
-  @BuiltValueField(wireName: r'createdAt')
-  DateTime? get createdAt;
+  @JsonKey(name: r'seq', required: false, includeIfNull: false)
+  final int? seq;
 
-  @BuiltValueField(wireName: r'terminalSeq')
-  int? get terminalSeq;
+  @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
+  final DateTime? createdAt;
 
-  @BuiltValueField(wireName: r'carNum')
-  String? get carNum;
+  @JsonKey(name: r'terminalSeq', required: false, includeIfNull: false)
+  final int? terminalSeq;
 
-  @BuiltValueField(wireName: r'accountId')
-  String? get accountId;
+  @JsonKey(name: r'carNum', required: false, includeIfNull: false)
+  final String? carNum;
 
-  @BuiltValueField(wireName: r'context')
-  String? get context;
+  @JsonKey(name: r'accountId', required: false, includeIfNull: false)
+  final String? accountId;
 
-  @BuiltValueField(wireName: r'successYn')
-  String? get successYn;
+  @JsonKey(name: r'context', required: false, includeIfNull: false)
+  final String? context;
 
-  CarControlHistoryModel._();
-
-  factory CarControlHistoryModel(
-          [void updates(CarControlHistoryModelBuilder b)]) =
-      _$CarControlHistoryModel;
-
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(CarControlHistoryModelBuilder b) => b;
-
-  @BuiltValueSerializer(custom: true)
-  static Serializer<CarControlHistoryModel> get serializer =>
-      _$CarControlHistoryModelSerializer();
-}
-
-class _$CarControlHistoryModelSerializer
-    implements PrimitiveSerializer<CarControlHistoryModel> {
-  @override
-  final Iterable<Type> types = const [
-    CarControlHistoryModel,
-    _$CarControlHistoryModel
-  ];
+  @JsonKey(name: r'successYn', required: false, includeIfNull: false)
+  final String? successYn;
 
   @override
-  final String wireName = r'CarControlHistoryModel';
-
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    CarControlHistoryModel object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.seq != null) {
-      yield r'seq';
-      yield serializers.serialize(
-        object.seq,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.createdAt != null) {
-      yield r'createdAt';
-      yield serializers.serialize(
-        object.createdAt,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.terminalSeq != null) {
-      yield r'terminalSeq';
-      yield serializers.serialize(
-        object.terminalSeq,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.carNum != null) {
-      yield r'carNum';
-      yield serializers.serialize(
-        object.carNum,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.accountId != null) {
-      yield r'accountId';
-      yield serializers.serialize(
-        object.accountId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.context != null) {
-      yield r'context';
-      yield serializers.serialize(
-        object.context,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.successYn != null) {
-      yield r'successYn';
-      yield serializers.serialize(
-        object.successYn,
-        specifiedType: const FullType(String),
-      );
-    }
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is CarControlHistoryModel &&
+          other.seq == seq &&
+          other.createdAt == createdAt &&
+          other.terminalSeq == terminalSeq &&
+          other.carNum == carNum &&
+          other.accountId == accountId &&
+          other.context == context &&
+          other.successYn == successYn;
 
   @override
-  Object serialize(
-    Serializers serializers,
-    CarControlHistoryModel object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
-  }
+  int get hashCode =>
+      seq.hashCode +
+      createdAt.hashCode +
+      terminalSeq.hashCode +
+      carNum.hashCode +
+      accountId.hashCode +
+      context.hashCode +
+      successYn.hashCode;
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required CarControlHistoryModelBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'seq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.seq = valueDes;
-          break;
-        case r'createdAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.createdAt = valueDes;
-          break;
-        case r'terminalSeq':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.terminalSeq = valueDes;
-          break;
-        case r'carNum':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.carNum = valueDes;
-          break;
-        case r'accountId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.accountId = valueDes;
-          break;
-        case r'context':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.context = valueDes;
-          break;
-        case r'successYn':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.successYn = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+  factory CarControlHistoryModel.fromJson(Map<String, dynamic> json) =>
+      _$CarControlHistoryModelFromJson(json);
+
+  Map<String, dynamic> toJson() => _$CarControlHistoryModelToJson(this);
 
   @override
-  CarControlHistoryModel deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = CarControlHistoryModelBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
 }

@@ -989,6 +989,78 @@ abstract class Localized {
   /// In ko, this message translates to:
   /// **'우편번호'**
   String get zipCode;
+
+  /// bottom_app_bar 위젯을 위한 텍스트
+  ///
+  /// In ko, this message translates to:
+  /// **'하단 앱 바'**
+  String get bottomAppBar;
+
+  /// bottom_app_bar 위젯을 위한 텍스트
+  ///
+  /// In ko, this message translates to:
+  /// **'하단 앱 바'**
+  String get bottomAppBarTitle;
+
+  /// bottom_app_bar 위젯을 위한 텍스트
+  ///
+  /// In ko, this message translates to:
+  /// **'노치'**
+  String get bottomAppBarNotch;
+
+  /// bottom_app_bar 위젯을 위한 텍스트
+  ///
+  /// In ko, this message translates to:
+  /// **'플로팅 작업 버튼 위치'**
+  String get bottomAppBarPosition;
+
+  /// bottom_app_bar 위젯을 위한 텍스트
+  ///
+  /// In ko, this message translates to:
+  /// **'도킹됨 - 끝'**
+  String get bottomAppBarPositionDockedEnd;
+
+  /// bottom_app_bar 위젯을 위한 텍스트
+  ///
+  /// In ko, this message translates to:
+  /// **'도킹됨 - 중앙'**
+  String get bottomAppBarPositionDockedCenter;
+
+  /// bottom_app_bar 위젯을 위한 텍스트
+  ///
+  /// In ko, this message translates to:
+  /// **'플로팅 - 끝'**
+  String get bottomAppBarPositionFloatingEnd;
+
+  /// bottom_app_bar 위젯을 위한 텍스트
+  ///
+  /// In ko, this message translates to:
+  /// **'플로팅 - 중앙'**
+  String get bottomAppBarPositionFloatingCenter;
+
+  /// bottom_app_bar 위젯을 위한 텍스트
+  ///
+  /// In ko, this message translates to:
+  /// **'검색'**
+  String get starterAppTooltipSearch;
+
+  /// bottom_app_bar 위젯을 위한 텍스트
+  ///
+  /// In ko, this message translates to:
+  /// **'즐겨찾기'**
+  String get starterAppTooltipFavorite;
+
+  /// bottom_app_bar 위젯을 위한 텍스트
+  ///
+  /// In ko, this message translates to:
+  /// **'플로팅 작업 버튼'**
+  String get floatingButtonTitle;
+
+  /// bottom_app_bar 위젯을 위한 텍스트
+  ///
+  /// In ko, this message translates to:
+  /// **'만들기'**
+  String get buttonTextCreate;
 }
 
 class _LocalizedDelegate extends LocalizationsDelegate<Localized> {

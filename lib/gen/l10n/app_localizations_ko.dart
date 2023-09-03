@@ -461,4 +461,40 @@ class LocalizedKo extends Localized {
 
   @override
   String get zipCode => '우편번호';
+
+  @override
+  String get bottomAppBar => '하단 앱 바';
+
+  @override
+  String get bottomAppBarTitle => '하단 앱 바';
+
+  @override
+  String get bottomAppBarNotch => '노치';
+
+  @override
+  String get bottomAppBarPosition => '플로팅 작업 버튼 위치';
+
+  @override
+  String get bottomAppBarPositionDockedEnd => '도킹됨 - 끝';
+
+  @override
+  String get bottomAppBarPositionDockedCenter => '도킹됨 - 중앙';
+
+  @override
+  String get bottomAppBarPositionFloatingEnd => '플로팅 - 끝';
+
+  @override
+  String get bottomAppBarPositionFloatingCenter => '플로팅 - 중앙';
+
+  @override
+  String get starterAppTooltipSearch => '검색';
+
+  @override
+  String get starterAppTooltipFavorite => '즐겨찾기';
+
+  @override
+  String get floatingButtonTitle => '플로팅 작업 버튼';
+
+  @override
+  String get buttonTextCreate => '만들기';
 }

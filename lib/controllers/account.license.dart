@@ -8,21 +8,24 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 class LicenseController extends GetxController {
+  final wegooli = WegooliFriends.client;
   static LicenseController get to => Get.isRegistered<LicenseController>()
       ? Get.find<LicenseController>()
       : Get.put(LicenseController());
-  TextEditingController frontNumberController = TextEditingController();
-  TextEditingController expDateController = TextEditingController();
-  TextEditingController backNumberController = TextEditingController();
+  /// 운전면허증 일련번호
+  TextEditingController licenseNumbers = TextEditingController();
+  /// 운전면허증 만료일자
+  TextEditingController expirationDate = TextEditingController();
+  /// 운전면허증 최초발급년도
+  TextEditingController firstIssueYear = TextEditingController();
 
-  Rx<List<SelectionPopupModel>> dropdownItemList = Rx([
+  Rx<List<SelectionPopupModel>> licenseTypes = Rx([
     SelectionPopupModel(id: 1, title: '1종 보통면허'),
     SelectionPopupModel(id: 2, title: '2종 보통면허'),
     SelectionPopupModel(id: 3, title: '1종 대형면허'),
     SelectionPopupModel(id: 4, title: '2종 오토면허')
   ]);
-
-  Rx<List<SelectionPopupModel>> dropdownItemList1 = Rx([
+  Rx<List<SelectionPopupModel>> licenseRegions = Rx([
     SelectionPopupModel(id: 1, title: '강원'),
     SelectionPopupModel(id: 2, title: '경기'),
     SelectionPopupModel(id: 3, title: '경기남부'),
@@ -42,8 +45,7 @@ class LicenseController extends GetxController {
     SelectionPopupModel(id: 17, title: '충남'),
     SelectionPopupModel(id: 18, title: '충북')
   ]);
-
-  Rx<List<SelectionPopupModel>> dropdownItemList2 = Rx([
+  Rx<List<SelectionPopupModel>> yearOfLicenseIssuance = Rx([
     SelectionPopupModel(id: 1, title: '11'),
     SelectionPopupModel(id: 2, title: '12'),
     SelectionPopupModel(id: 3, title: '13'),
@@ -64,8 +66,43 @@ class LicenseController extends GetxController {
     SelectionPopupModel(id: 18, title: '28')
   ]);
 
-  final api = WegooliFriends.client.getLicenseControllerApi();
-  bool get licenseInputSucceed => true;
+  bool _licenseInputSucceed = true;
+  bool get licenseInputSucceed => _licenseInputSucceed;
+  Future<int> inputLicenseInput() async {
+    final api = wegooli.getLicenseControllerApi();
+    final licenseRequest = (LicenseRequestBuilder()
+          ..seq = 2
+          ..delYn = 'N'
+          ..memberSeq = 23
+          ..koreanYn = 'Y'
+          ..licenseClass = ''
+          ..licenseArea = ''
+          ..licenseYear = '21'
+          ..licenseNum = ''
+          ..expiredDate = ''
+          ..issuedDate = ''
+          ..signature = ''
+          ..delYn = 'N'
+          ..createdAt = ''
+          ..updatedAt = ''
+        )
+        .build();
+    var valid = await api.isValidLicense(licenseRequest: licenseRequest);
+    if (!valid.data!) {
+      _licenseInputSucceed = false;
+      return 0;
+    }
+    var success = await api.insertLicense(licenseRequest: licenseRequest);
+    if (success.data != null) {
+      _licenseInputSucceed = true;
+      return success.data!;
+    } else {
+      _licenseInputSucceed = false;
+      print(success.data);
+      return -1;
+    }
+  }
+
   // api.insertLicense
   // api.selectLicense
   // api.selectLicenseList
@@ -74,8 +111,8 @@ class LicenseController extends GetxController {
   @override
   void onClose() {
     super.onClose();
-    frontNumberController.dispose();
-    expDateController.dispose();
-    backNumberController.dispose();
+    licenseNumbers.dispose();
+    expirationDate.dispose();
+    firstIssueYear.dispose();
   }
 }

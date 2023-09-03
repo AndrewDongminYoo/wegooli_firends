@@ -23,16 +23,7 @@ class AcceptTerms extends GetWidget<AccountAgreementController> {
     return SafeArea(
         child: Scaffold(
             backgroundColor: theme.colorScheme.onPrimaryContainer,
-            appBar: CustomAppBar(
-                leadingWidth: getHorizontalSize(42),
-                leading: AppbarImage(
-                    svgPath: Assets.svg.imgArrowLeft.path,
-                    margin: getMargin(left: 24, top: 19, bottom: 18),
-                    onTap: () {
-                      onTapArrowleftone();
-                    }),
-                centerTitle: true,
-                title: AppbarTitle(text: l10ns.acceptTerms)),
+            appBar: CustomAppBar.getDefaultAppBar(l10ns.acceptTerms),
             body: SizedBox(
                 width: mediaQueryData.size.width,
                 child: SingleChildScrollView(
@@ -188,16 +179,8 @@ class AcceptTerms extends GetWidget<AccountAgreementController> {
                 margin: getMargin(left: 24, right: 28, bottom: 41),
                 decoration: AppDecoration.shadow,
                 child: CustomElevatedButton(
-                    text: "동의 완료",
+                    text: l10ns.acceptanceComplete,
                     buttonStyle: CustomButtonStyles.fillAmberA200C26,
                     buttonTextStyle: CustomTextStyles.titleMediumOnPrimary))));
-  }
-
-  /// Navigates to the previous screen.
-  ///
-  /// When the action is triggered, this function uses the [Get] package to
-  /// navigate to the previous screen in the navigation stack.
-  onTapArrowleftone() {
-    Get.back();
   }
 }

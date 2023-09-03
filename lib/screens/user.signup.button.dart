@@ -13,7 +13,7 @@ class AcceptTermsNextButton extends GetWidget<AccountAgreementController> {
     return Container(
         margin: getMargin(left: 16, right: 16, bottom: 29),
         child: CustomElevatedButton(
-            text: "동의 완료",
+            text: l10ns.acceptanceComplete,
             buttonStyle: CustomButtonStyles.fillPrimaryC26.copyWith(
                 fixedSize: MaterialStateProperty.all<Size>(
                     Size(double.maxFinite, getVerticalSize(52)))),

@@ -5,15 +5,23 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 class AccountAgreementController extends GetxController {
+  final wegooli = WegooliFriends.client;
   static AccountAgreementController get to =>
       Get.isRegistered<AccountAgreementController>()
           ? Get.find<AccountAgreementController>()
           : Get.put(AccountAgreementController());
-  Rx<Account> userAgreement = Account().obs;
-  RxList<AccountAgreementModel> accountAgreement =
-      RxList<AccountAgreementModel>();
-  // RxList<AccountAgreementRequest> accountAgreementRequestList =
-  //     RxList<AccountAgreementRequest>();
+
+  Rx<Account> _userAgreement = Account().obs;
+  Rx<Account> get userAgreement => _userAgreement;
+  set userAgreement(Rx<Account> value) {
+    _userAgreement = value;
+  }
+
+  RxList<AccountAgreementModel> _accountAgreement = RxList<AccountAgreementModel>();
+  RxList<AccountAgreementModel> get accountAgreement => _accountAgreement;
+  set accountAgreement(RxList<AccountAgreementModel> value) {
+    _accountAgreement = value;
+  }
 
   RxBool isAcceptedTerm0 = false.obs;
   RxBool isAcceptedTerm1 = false.obs;

@@ -10,7 +10,6 @@ import '/core/app_export.dart';
 class RegisterLicense extends GetWidget<LicenseController> {
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
     return SafeArea(
         child: Scaffold(
             resizeToAvoidBottomInset: false,
@@ -36,13 +35,13 @@ class RegisterLicense extends GetWidget<LicenseController> {
                                 hintText: l10ns.pleaseSelectYourLicenseType,
                                 margin: getMargin(top: 4),
                                 textStyle: CustomTextStyles.bodyLargeGray500,
-                                items: controller.dropdownItemList.value,
+                                items: controller.licenseTypes.value,
                                 filled: true,
                                 fillColor: theme.colorScheme.onPrimaryContainer,
                                 contentPadding:
                                     getPadding(left: 10, top: 14, bottom: 14),
                                 onChanged: (SelectionPopupModel value) {
-                                  controller.dropdownItemList.onSelected(value);
+                                  controller.licenseTypes.onSelected(value);
                                 })
                           ]),
                       Padding(
@@ -76,7 +75,7 @@ class RegisterLicense extends GetWidget<LicenseController> {
                                                   textStyle: CustomTextStyles
                                                       .bodyLargeGray500,
                                                   items: controller
-                                                      .dropdownItemList1.value,
+                                                      .licenseRegions.value,
                                                   filled: true,
                                                   fillColor: theme.colorScheme
                                                       .onPrimaryContainer,
@@ -87,7 +86,7 @@ class RegisterLicense extends GetWidget<LicenseController> {
                                                   onChanged:
                                                       (SelectionPopupModel
                                                           value) {
-                                                    controller.dropdownItemList1
+                                                    controller.licenseRegions
                                                         .onSelected(value);
                                                   })
                                             ]))),
@@ -104,19 +103,19 @@ class RegisterLicense extends GetWidget<LicenseController> {
                                         textStyle:
                                             CustomTextStyles.bodyLargeGray500,
                                         items:
-                                            controller.dropdownItemList2.value,
+                                            controller.yearOfLicenseIssuance.value,
                                         filled: true,
                                         fillColor: theme
                                             .colorScheme.onPrimaryContainer,
                                         contentPadding: getPadding(
                                             left: 10, top: 14, bottom: 14),
                                         onChanged: (SelectionPopupModel value) {
-                                          controller.dropdownItemList2
+                                          controller.yearOfLicenseIssuance
                                               .onSelected(value);
                                         }))
                               ])),
                       CustomTextFormField(
-                          controller: controller.frontNumberController,
+                          controller: controller.licenseNumbers,
                           margin: getMargin(top: 10),
                           contentPadding: getPadding(
                               left: 12, top: 14, right: 12, bottom: 14),
@@ -134,9 +133,9 @@ class RegisterLicense extends GetWidget<LicenseController> {
                               children: [
                                 CustomInputLabel(
                                     labelText:
-                                        l10ns.eligibilityPeriodExpirationDate),
+                                        l10ns.eligibilityPeriodTestExpirationDate),
                                 CustomTextFormField(
-                                    controller: controller.expDateController,
+                                    controller: controller.expirationDate,
                                     margin: getMargin(top: 4),
                                     contentPadding: getPadding(
                                         left: 12,
@@ -146,7 +145,7 @@ class RegisterLicense extends GetWidget<LicenseController> {
                                     textStyle:
                                         CustomTextStyles.bodyLargeGray50003,
                                     hintText: l10ns
-                                        .enterYourAptitudePeriodTestExpirationDate,
+                                        .enterYourEligibilityPeriodTestExpirationDate,
                                     hintStyle:
                                         CustomTextStyles.bodyLargeGray50003,
                                     textInputAction: TextInputAction.next,
@@ -163,7 +162,7 @@ class RegisterLicense extends GetWidget<LicenseController> {
                                 CustomInputLabel(
                                     labelText: l10ns.licenseIssueDate),
                                 CustomTextFormField(
-                                    controller: controller.backNumberController,
+                                    controller: controller.firstIssueYear,
                                     margin: getMargin(top: 4),
                                     contentPadding: getPadding(
                                         left: 12,

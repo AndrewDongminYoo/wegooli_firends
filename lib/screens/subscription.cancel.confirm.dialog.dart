@@ -11,7 +11,6 @@ import '/core/app_export.dart';
 class UnsubscriptionConfirmWarnDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
     return Container(
         width: getHorizontalSize(328),
         decoration: AppDecoration.fillOnPrimaryContainer
@@ -36,8 +35,8 @@ class UnsubscriptionConfirmWarnDialog extends StatelessWidget {
                             width: getSize(15),
                             margin: getMargin(top: 3, bottom: 3),
                             onTap: () {
-                              onTapImgClose();
-                            })
+                              Get.back();
+                            }),
                       ])),
               Container(
                   width: getHorizontalSize(278),
@@ -71,13 +70,5 @@ class UnsubscriptionConfirmWarnDialog extends StatelessWidget {
                             buttonTextStyle: theme.textTheme.titleMedium!)
                       ]))
             ]));
-  }
-
-  /// Navigates to the previous screen.
-  ///
-  /// When the action is triggered, this function uses the [Get] library to
-  /// navigate to the previous screen in the navigation stack.
-  onTapImgClose() {
-    Get.back();
   }
 }

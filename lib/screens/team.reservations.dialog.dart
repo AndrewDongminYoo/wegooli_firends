@@ -11,7 +11,6 @@ import '/core/app_export.dart';
 class ReservationsCheckingPageDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
     return SingleChildScrollView(
         child: Container(
             margin: getMargin(left: 16, right: 16, bottom: 288),
@@ -44,7 +43,7 @@ class ReservationsCheckingPageDialog extends StatelessWidget {
                                 width: getSize(13),
                                 margin: getMargin(bottom: 15),
                                 onTap: () {
-                                  onTapImgClose();
+                                  Get.back();
                                 })
                           ])),
                   Padding(
@@ -252,13 +251,5 @@ class ReservationsCheckingPageDialog extends StatelessWidget {
                                     CustomTextStyles.bodySmallBlack900)
                           ]))
                 ])));
-  }
-
-  /// Navigates to the previous screen.
-  ///
-  /// When the action is triggered, this function uses the [Get] library to
-  /// navigate to the previous screen in the navigation stack.
-  onTapImgClose() {
-    Get.back();
   }
 }

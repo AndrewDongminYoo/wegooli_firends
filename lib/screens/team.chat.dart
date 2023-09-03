@@ -14,11 +14,9 @@ import 'package:sendbird_sdk/sendbird_sdk.dart';
 import '/core/app_export.dart';
 
 // ignore: must_be_immutable
-class DashChatWithFriendsPage extends GetView<ConnectionController> {
+class DashChatWithFriendsPage extends GetWidget<ConnectionController> {
   @override
   Widget build(BuildContext context) {
-
-
     return SafeArea(
         child: Scaffold(
             resizeToAvoidBottomInset: false,
@@ -59,7 +57,8 @@ class DashChatWithFriendsPage extends GetView<ConnectionController> {
                     },
                     leading: <Widget>[
                       IconButton(
-                          icon: Icon(Icons.camera_alt, color: Color(0xFF000000)),
+                          icon:
+                              Icon(Icons.camera_alt, color: Color(0xFF000000)),
                           onPressed: () async {
                             await controller.getImage(ImageSource.gallery);
                           })
@@ -69,9 +68,8 @@ class DashChatWithFriendsPage extends GetView<ConnectionController> {
                         fillColor: Color(0x33A4A8AF),
                         filled: true,
                         hintText: '채팅을 입력해주세요😃',
-                        hintStyle: TextStyle(
-                            color: Color(0xFF91969D),
-                            fontSize: 15),
+                        hintStyle:
+                            TextStyle(color: Color(0xFF91969D), fontSize: 15),
                         constraints:
                             BoxConstraints.expand(height: getVerticalSize(36)),
                         contentPadding: EdgeInsets.symmetric(horizontal: 20),

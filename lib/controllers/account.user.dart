@@ -143,16 +143,15 @@ class UserController extends GetxController {
     final api = wegooli.getUserControllerApi();
 
     try {
-      final response = await api.login(
-          id: username.text, password: password.text);
+      final response =
+          await api.login(id: username.text, password: password.text);
       print('response : ${response}');
       var result = response.data?.result;
       if (result == null) {
         print(
             'something is wrong!!! login API returns $result, ${response.data?.resultCode}');
         Get.dialog(Center(
-            child: Assets.lotties.xInCircle.lottie(
-                height: 250, width: 250)));
+            child: Assets.lotties.xInCircle.lottie(height: 250, width: 250)));
         isAuthenticated.value = false;
         return;
       }
@@ -218,8 +217,8 @@ class UserController extends GetxController {
     BuiltList<TeamAccountConnectionResponse>? teams = response.data;
     if (teams != null && teams.isNotEmpty) {
       // TODO: 현재는 Team이 1개만 존재한다고 가정하기 때문에 첫번째 Team 정보로만 연결한다.
-      teams.first.account?.forEach((it) =>
-          !members.contains(it) ? members.add(it) : null);
+      teams.first.account
+          ?.forEach((it) => !members.contains(it) ? members.add(it) : null);
     }
     // print('members : ${members.length}');
     print('members : ${members.toString()}');
@@ -228,5 +227,4 @@ class UserController extends GetxController {
   void logOut() {
     wegooli.getUserControllerApi().logOut();
   }
-
 }

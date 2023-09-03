@@ -7,6 +7,7 @@ import '/core/app_export.dart';
 GlobalDataController _global = GlobalDataController.to;
 
 class GlobalDataController extends GetxController {
+  final wegooli = WegooliFriends.client;
   static GlobalDataController get to => Get.isRegistered<GlobalDataController>()
       ? Get.find<GlobalDataController>()
       : Get.put(GlobalDataController());

@@ -70,9 +70,9 @@ class ConfirmDialog extends StatelessWidget {
                       shape: MaterialStatePropertyAll(RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(Radius.zero))),
                       foregroundColor:
-                          MaterialStateProperty.all<Color>(Colors.black),
-                      backgroundColor: MaterialStatePropertyAll<Color>(
-                          Color.fromRGBO(186, 188, 195, 1)),
+                          MaterialStateProperty.all<Color>(Color(0xFF000000)),
+                      backgroundColor:
+                          MaterialStatePropertyAll<Color>(Color(0xFFBABCC3)),
                       fixedSize: MaterialStateProperty.all<Size>(
                           Size(getSize(164), getSize(52))))),
               TextButton(
@@ -91,9 +91,9 @@ class ConfirmDialog extends StatelessWidget {
                       padding: MaterialStatePropertyAll(EdgeInsets.zero),
                       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                       foregroundColor:
-                          MaterialStateProperty.all<Color>(Colors.black),
-                      backgroundColor: MaterialStatePropertyAll<Color>(
-                          Color.fromRGBO(255, 225, 66, 1)),
+                          MaterialStateProperty.all<Color>(Color(0xFF000000)),
+                      backgroundColor:
+                          MaterialStatePropertyAll<Color>(Color(0xFFFFE142)),
                       fixedSize: MaterialStateProperty.all<Size>(
                           Size(getSize(164), getSize(52))))),
             ],

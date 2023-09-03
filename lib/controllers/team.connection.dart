@@ -8,6 +8,7 @@ import 'package:sendbird_sdk/sendbird_sdk.dart';
 import '/core/app_export.dart';
 
 class ConnectionController extends GetxController with ChannelEventHandler {
+  final wegooli = WegooliFriends.client;
   static ConnectionController get to => Get.isRegistered<ConnectionController>()
       ? Get.find<ConnectionController>()
       : Get.put(ConnectionController());

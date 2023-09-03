@@ -345,7 +345,7 @@ class ControlButton extends StatelessWidget {
           }
         },
         style: ButtonStyle(
-          overlayColor: MaterialStateProperty.all(Color(0x00000000)),
+          overlayColor: MaterialStateProperty.all(Colors.transparent),
           padding: MaterialStateProperty.all(EdgeInsets.all(0)),
           side: MaterialStateProperty.all(BorderSide(
             color: Color(0x18000000),
@@ -370,7 +370,7 @@ class ControlButton extends StatelessWidget {
           backgroundColor: MaterialStateProperty.resolveWith((states) {
             // If the button is pressed, return green, otherwise blue
             if (states.contains(MaterialState.pressed)) {
-              return Color(0x00000000);
+              return Colors.transparent;
             }
             return Color(0xFFFFFFFF);
           }),
@@ -387,7 +387,7 @@ class ControlButton extends StatelessWidget {
           padding: getPadding(),
           margin: getMargin(),
           decoration: BoxDecoration(
-            color: Color(0x00000000),
+            color: Colors.transparent,
             shape: BoxShape.circle,
             border: Border.all(color: Color(0x18000000), width: 1),
           ),
@@ -396,7 +396,7 @@ class ControlButton extends StatelessWidget {
               svgPath: svgPath,
               height: getSize(46),
               width: getSize(46),
-              color: Color(0x00000000),
+              color: Colors.transparent,
             ),
             Padding(
               padding: getPadding(top: 3),

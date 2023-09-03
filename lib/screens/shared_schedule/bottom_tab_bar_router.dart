@@ -13,6 +13,7 @@ class BottomTabRouterBar extends StatelessWidget {
     return CustomBottomBar(onChanged: (BottomBarEnum type) {
       Future<dynamic>? navigateToCurrentRoute(BottomBarEnum type) {
         print('type ${type.toString()}');
+
         /// Handling route based on bottom click actions
         String getCurrentRoute(BottomBarEnum type) {
           switch (type) {
@@ -26,6 +27,7 @@ class BottomTabRouterBar extends StatelessWidget {
               return AppRoutes.sharedSchedule;
           }
         }
+
         print('getCurrentRoute(type): ${getCurrentRoute(type)}');
         return Get.toNamed(getCurrentRoute(type));
       }
@@ -33,6 +35,7 @@ class BottomTabRouterBar extends StatelessWidget {
       navigateToCurrentRoute(type);
     });
   }
+
   /// Handling page based on route
   Widget getCurrentPage(String currentRoute) {
     switch (currentRoute) {

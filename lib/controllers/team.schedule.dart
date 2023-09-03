@@ -20,24 +20,27 @@ class ScheduleController extends GetxController {
   }
 
   /// [Map]을 사용하기로 한 경우, [LinkedHashMap]를 사용하는 것이 권장됩니다.
-  LinkedHashMap<DateTime, List<Schedule>>? _events = LinkedHashMap<DateTime, List<Schedule>>();
-  LinkedHashMap<DateTime, List<Schedule>> get events => _events ?? LinkedHashMap<DateTime, List<Schedule>>(
-    equals: isSameDay,
-    hashCode: getHashCode,
-  )..addAll(eventSource);
+  LinkedHashMap<DateTime, List<Schedule>>? _events =
+      LinkedHashMap<DateTime, List<Schedule>>();
+  LinkedHashMap<DateTime, List<Schedule>> get events => _events ??
+      LinkedHashMap<DateTime, List<Schedule>>(
+        equals: isSameDay,
+        hashCode: getHashCode,
+      )
+    ..addAll(eventSource);
 
-  Map<DateTime, List<Schedule>> get eventSource => Map.fromIterable(List.generate(50, (index) => index),
-    key: (item) => DateTime.utc(firstDay.year, firstDay.month, item * 5),
-    value: (item) => List.generate(item % 4 + 1,
-        (index) => Schedule(accountId: '사용자 $item | ${index + 1}')))
-  ..addAll({
-    kToday: [
-      // TODO: 실제 데이터로 변경
-      Schedule(accountId: l10ns.name2),
-      Schedule(accountId: l10ns.name3),
-    ],
-  });
-
+  Map<DateTime, List<Schedule>> get eventSource =>
+      Map.fromIterable(List.generate(50, (index) => index),
+          key: (item) => DateTime.utc(firstDay.year, firstDay.month, item * 5),
+          value: (item) => List.generate(item % 4 + 1,
+              (index) => Schedule(accountId: '사용자 $item | ${index + 1}')))
+        ..addAll({
+          kToday: [
+            // TODO: 실제 데이터로 변경
+            Schedule(accountId: l10ns.name2),
+            Schedule(accountId: l10ns.name3),
+          ],
+        });
 
   DateTime? _firstDay;
   DateTime get firstDay =>

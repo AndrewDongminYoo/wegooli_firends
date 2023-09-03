@@ -17,11 +17,7 @@ class CurrencyInputFormatter extends TextInputFormatter {
   });
 
   static final NumberFormat formatter = NumberFormat.currency(
-        locale: "ko-KR",
-        name: "KRW",
-        symbol: "₩",
-        decimalDigits: 0
-  );
+      locale: "ko-KR", name: "KRW", symbol: "₩", decimalDigits: 0);
 
   @override
   TextEditingValue formatEditUpdate(

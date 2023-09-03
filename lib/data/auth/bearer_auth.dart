@@ -19,7 +19,7 @@ class BearerAuthInterceptor extends AuthInterceptor {
       if (token != null) {
         options.headers['Authorization'] = 'Bearer ${token}';
         break;
-        /// TODO: 토큰이 존재하지 않으면..?
+        // TODO: 토큰이 존재하지 않으면..?
       } else {
         if (!info.containsKey('name')) {
           continue;

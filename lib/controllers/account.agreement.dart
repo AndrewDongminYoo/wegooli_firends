@@ -17,7 +17,8 @@ class AccountAgreementController extends GetxController {
     _userAgreement = value;
   }
 
-  RxList<AccountAgreementModel> _accountAgreement = RxList<AccountAgreementModel>();
+  RxList<AccountAgreementModel> _accountAgreement =
+      RxList<AccountAgreementModel>();
   RxList<AccountAgreementModel> get accountAgreement => _accountAgreement;
   set accountAgreement(RxList<AccountAgreementModel> value) {
     _accountAgreement = value;

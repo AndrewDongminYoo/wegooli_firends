@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 // ignore: must_be_immutable
-class SendingInvitationLog extends GetView<VehicleController> {
+class SendingInvitationLog extends GetWidget<VehicleController> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(

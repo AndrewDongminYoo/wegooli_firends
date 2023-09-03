@@ -1,5 +1,6 @@
 // 📦 Package imports:
-import 'package:geolocator/geolocator.dart' show Geolocator, LocationAccuracy, LocationPermission, Position;
+import 'package:geolocator/geolocator.dart'
+    show Geolocator, LocationAccuracy, LocationPermission, Position;
 
 /// 기기의 현재 위치를 확인합니다.
 ///
@@ -27,8 +28,7 @@ Future<Position> determinePosition() async {
 
   if (permission == LocationPermission.deniedForever) {
     /// 권한은 영구적으로 거부되며 적절하게 처리됩니다.
-    return Future.error(
-      '위치 권한이 영구적으로 거부되어 권한을 요청할 수 없습니다.');
+    return Future.error('위치 권한이 영구적으로 거부되어 권한을 요청할 수 없습니다.');
   }
 
   LocationAccuracy accuracy = LocationAccuracy.bestForNavigation;

@@ -245,7 +245,7 @@ try {
 [[Back to README]](../README.md)
 
 > selectLicenseList
-> BuiltList<LicenseModel> selectLicenseList(request)
+> List<LicenseModel> selectLicenseList(request)
 
 ### Example
 
@@ -274,7 +274,7 @@ try {
 
 ### Return type
 
-[**BuiltList&lt;LicenseModel&gt;**](LicenseModel.md)
+[**List&lt;LicenseModel&gt;**](LicenseModel.md)
 
 ### Authorization
 
@@ -332,7 +332,7 @@ This endpoint does not need any parameter.
 [[Back to README]](../README.md)
 
 > updateLicense
-> bool updateLicense(seq, licenseRequest)
+> bool updateLicense(licenseRequest, seq)
 
 ### Example
 
@@ -343,11 +343,11 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getLicenseControllerApi();
-final int seq = 56;
 final LicenseRequest licenseRequest;
+final int seq = 56;
 
 try {
-    final response = api.updateLicense(seq, licenseRequest);
+    final response = api.updateLicense(licenseRequest, seq);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling LicenseControllerApi->updateLicense: $e\n');
@@ -358,8 +358,8 @@ try {
 
 | Name               | Type                                    | Description | Notes |
 | ------------------ | --------------------------------------- | ----------- | ----- |
-| **seq**            | **int**                                 |             |
 | **licenseRequest** | [**LicenseRequest**](LicenseRequest.md) |             |
+| **seq**            | **int**                                 |             |
 
 ### Return type
 

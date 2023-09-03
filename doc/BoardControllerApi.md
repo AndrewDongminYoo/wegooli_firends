@@ -111,7 +111,7 @@ try {
 [[Back to README]](../README.md)
 
 > insertAnswer
-> int insertAnswer(seq, qnA)
+> int insertAnswer(qnA, seq)
 
 ### Example
 
@@ -122,11 +122,11 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getBoardControllerApi();
-final int seq = 56;
 final QnA qnA;
+final int seq = 56;
 
 try {
-    final response = api.insertAnswer(seq, qnA);
+    final response = api.insertAnswer(qnA, seq);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling BoardControllerApi->insertAnswer: $e\n');
@@ -137,8 +137,8 @@ try {
 
 | Name    | Type              | Description | Notes |
 | ------- | ----------------- | ----------- | ----- |
-| **seq** | **int**           |             |
 | **qnA** | [**QnA**](QnA.md) |             |
+| **seq** | **int**           |             |
 
 ### Return type
 
@@ -293,7 +293,7 @@ try {
 [[Back to README]](../README.md)
 
 > selectQnAList
-> BuiltList<QnA> selectQnAList(request)
+> List<QnA> selectQnAList(request)
 
 ### Example
 
@@ -322,7 +322,7 @@ try {
 
 ### Return type
 
-[**BuiltList&lt;QnA&gt;**](QnA.md)
+[**List&lt;QnA&gt;**](QnA.md)
 
 ### Authorization
 
@@ -338,7 +338,7 @@ try {
 [[Back to README]](../README.md)
 
 > updateAnswer
-> int updateAnswer(seq, qnA)
+> int updateAnswer(qnA, seq)
 
 ### Example
 
@@ -349,11 +349,11 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getBoardControllerApi();
-final int seq = 56;
 final QnA qnA;
+final int seq = 56;
 
 try {
-    final response = api.updateAnswer(seq, qnA);
+    final response = api.updateAnswer(qnA, seq);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling BoardControllerApi->updateAnswer: $e\n');
@@ -364,8 +364,8 @@ try {
 
 | Name    | Type              | Description | Notes |
 | ------- | ----------------- | ----------- | ----- |
-| **seq** | **int**           |             |
 | **qnA** | [**QnA**](QnA.md) |             |
+| **seq** | **int**           |             |
 
 ### Return type
 
@@ -385,7 +385,7 @@ try {
 [[Back to README]](../README.md)
 
 > updateQuestion
-> int updateQuestion(seq, qnA)
+> int updateQuestion(qnA, seq)
 
 ### Example
 
@@ -396,11 +396,11 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getBoardControllerApi();
-final int seq = 56;
 final QnA qnA;
+final int seq = 56;
 
 try {
-    final response = api.updateQuestion(seq, qnA);
+    final response = api.updateQuestion(qnA, seq);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling BoardControllerApi->updateQuestion: $e\n');
@@ -411,8 +411,8 @@ try {
 
 | Name    | Type              | Description | Notes |
 | ------- | ----------------- | ----------- | ----- |
-| **seq** | **int**           |             |
 | **qnA** | [**QnA**](QnA.md) |             |
+| **seq** | **int**           |             |
 
 ### Return type
 

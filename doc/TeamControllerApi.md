@@ -63,7 +63,7 @@ try {
 [[Back to README]](../README.md)
 
 > insertTeam
-> JsonObject insertTeam(teamRequest)
+> Object insertTeam(teamRequest)
 
 ### Example
 
@@ -92,7 +92,7 @@ try {
 
 ### Return type
 
-[**JsonObject**](JsonObject.md)
+**Object**
 
 ### Authorization
 
@@ -198,7 +198,7 @@ try {
 [[Back to README]](../README.md)
 
 > selectTeamList
-> BuiltList<TeamModel> selectTeamList(accountId, name, delYn, startCreatedAt, endCreatedAt, startUpdatedAt, endUpdatedAt, contract)
+> List<TeamModel> selectTeamList(accountId, name, delYn, startCreatedAt, endCreatedAt, startUpdatedAt, endUpdatedAt, contract)
 
 ### Example
 
@@ -241,7 +241,7 @@ try {
 
 ### Return type
 
-[**BuiltList&lt;TeamModel&gt;**](TeamModel.md)
+[**List&lt;TeamModel&gt;**](TeamModel.md)
 
 ### Authorization
 
@@ -257,7 +257,7 @@ try {
 [[Back to README]](../README.md)
 
 > updateTeam
-> String updateTeam(teamSeq, teamRequest)
+> String updateTeam(teamRequest, teamSeq)
 
 ### Example
 
@@ -268,11 +268,11 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getTeamControllerApi();
-final int teamSeq = 56;
 final TeamRequest teamRequest;
+final int teamSeq = 56;
 
 try {
-    final response = api.updateTeam(teamSeq, teamRequest);
+    final response = api.updateTeam(teamRequest, teamSeq);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling TeamControllerApi->updateTeam: $e\n');
@@ -283,8 +283,8 @@ try {
 
 | Name            | Type                              | Description | Notes |
 | --------------- | --------------------------------- | ----------- | ----- |
-| **teamSeq**     | **int**                           |             |
 | **teamRequest** | [**TeamRequest**](TeamRequest.md) |             |
+| **teamSeq**     | **int**                           |             |
 
 ### Return type
 

@@ -13,7 +13,7 @@ All URIs are relative to *http://13.209.6.245:8089*
 | [**callTest**](TestControllerApi.md#calltest) | **GET** /test/test |
 
 > callTest
-> JsonObject callTest(model)
+> Object callTest(model)
 
 ### Example
 
@@ -42,7 +42,7 @@ try {
 
 ### Return type
 
-[**JsonObject**](JsonObject.md)
+**Object**
 
 ### Authorization
 

@@ -152,7 +152,7 @@ try {
 [[Back to README]](../README.md)
 
 > selectPaymentCardList
-> BuiltList<PaymentCardModel> selectPaymentCardList(memberSeq, cardNumber, defaultYn, delYn, startCreatedAt, endCreatedAt, startUpdatedAt, endUpdatedAt, password, rrn, crn, expirationMonth, expirationYear)
+> List<PaymentCardModel> selectPaymentCardList(memberSeq, cardNumber, defaultYn, delYn, startCreatedAt, endCreatedAt, startUpdatedAt, endUpdatedAt, password, rrn, crn, expirationMonth, expirationYear)
 
 ### Example
 
@@ -205,7 +205,7 @@ try {
 
 ### Return type
 
-[**BuiltList&lt;PaymentCardModel&gt;**](PaymentCardModel.md)
+[**List&lt;PaymentCardModel&gt;**](PaymentCardModel.md)
 
 ### Authorization
 
@@ -221,7 +221,7 @@ try {
 [[Back to README]](../README.md)
 
 > updatePaymentCard
-> String updatePaymentCard(seq, paymentCardRequest)
+> String updatePaymentCard(paymentCardRequest, seq)
 
 ### Example
 
@@ -232,11 +232,11 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getPaymentCardControllerApi();
-final int seq = 56;
 final PaymentCardRequest paymentCardRequest;
+final int seq = 56;
 
 try {
-    final response = api.updatePaymentCard(seq, paymentCardRequest);
+    final response = api.updatePaymentCard(paymentCardRequest, seq);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling PaymentCardControllerApi->updatePaymentCard: $e\n');
@@ -247,8 +247,8 @@ try {
 
 | Name                   | Type                                            | Description | Notes |
 | ---------------------- | ----------------------------------------------- | ----------- | ----- |
-| **seq**                | **int**                                         |             |
 | **paymentCardRequest** | [**PaymentCardRequest**](PaymentCardRequest.md) |             |
+| **seq**                | **int**                                         |             |
 
 ### Return type
 

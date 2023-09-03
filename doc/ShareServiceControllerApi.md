@@ -15,7 +15,7 @@ All URIs are relative to *http://13.209.6.245:8089*
 | [**setServiceLeader**](ShareServiceControllerApi.md#setserviceleader)           | **GET** /setServiceLeader      |
 
 > getShareService
-> BuiltList<ShareServiceModel> getShareService(request)
+> List<ShareServiceModel> getShareService(request)
 
 ### Example
 
@@ -44,7 +44,7 @@ try {
 
 ### Return type
 
-[**BuiltList&lt;ShareServiceModel&gt;**](ShareServiceModel.md)
+[**List&lt;ShareServiceModel&gt;**](ShareServiceModel.md)
 
 ### Authorization
 

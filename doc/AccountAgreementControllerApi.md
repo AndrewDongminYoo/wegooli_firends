@@ -156,7 +156,7 @@ try {
 [[Back to README]](../README.md)
 
 > selectAccountAgreementList
-> BuiltList<AccountAgreementModel> selectAccountAgreementList(classification, accountId, agreeYn, startCreatedAt, endCreatedAt, startUpdatedAt, endUpdatedAt)
+> List<AccountAgreementModel> selectAccountAgreementList(classification, accountId, agreeYn, startCreatedAt, endCreatedAt, startUpdatedAt, endUpdatedAt)
 
 ### Example
 
@@ -197,7 +197,7 @@ try {
 
 ### Return type
 
-[**BuiltList&lt;AccountAgreementModel&gt;**](AccountAgreementModel.md)
+[**List&lt;AccountAgreementModel&gt;**](AccountAgreementModel.md)
 
 ### Authorization
 

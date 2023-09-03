@@ -150,7 +150,7 @@ try {
 [[Back to README]](../README.md)
 
 > selectCarList
-> BuiltList<CarModel> selectCarList(request)
+> List<CarModel> selectCarList(request)
 
 ### Example
 
@@ -179,7 +179,7 @@ try {
 
 ### Return type
 
-[**BuiltList&lt;CarModel&gt;**](CarModel.md)
+[**List&lt;CarModel&gt;**](CarModel.md)
 
 ### Authorization
 
@@ -195,7 +195,7 @@ try {
 [[Back to README]](../README.md)
 
 > updateCar
-> updateCar(carNum, carRequest)
+> updateCar(carRequest, carNum)
 
 ### Example
 
@@ -206,11 +206,11 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getCarControllerApi();
-final String carNum = carNum_example;
 final CarRequest carRequest;
+final String carNum = carNum_example;
 
 try {
-    api.updateCar(carNum, carRequest);
+    api.updateCar(carRequest, carNum);
 } catch on DioException (e) {
     print('Exception when calling CarControllerApi->updateCar: $e\n');
 }
@@ -220,8 +220,8 @@ try {
 
 | Name           | Type                            | Description | Notes |
 | -------------- | ------------------------------- | ----------- | ----- |
-| **carNum**     | **String**                      |             |
 | **carRequest** | [**CarRequest**](CarRequest.md) |             |
+| **carNum**     | **String**                      |             |
 
 ### Return type
 

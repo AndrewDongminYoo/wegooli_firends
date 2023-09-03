@@ -12,7 +12,7 @@ All URIs are relative to *http://13.209.6.245:8089*
 | ---------------------------------------------------------------------------- | -------------------------------- | ----------- |
 | [**carLogTop**](MetisControllerApi.md#carlogtop)                             | **GET** /metis/history/carLogTop |
 | [**history**](MetisControllerApi.md#history)                                 | **GET** /metis/history           |
-| [**received**](MetisControllerApi.md#received)                               | **GET** /metis/m2m/digiparts     |
+| [**receivced**](MetisControllerApi.md#receivced)                             | **GET** /metis/m2m/digiparts     |
 | [**receiveTerminalResponse**](MetisControllerApi.md#receiveterminalresponse) | **GET** /metis/digiparts         |
 
 > carLogTop
@@ -61,7 +61,7 @@ try {
 [[Back to README]](../README.md)
 
 > history
-> BuiltList<CarHistoryDTO> history(carNum)
+> List<CarHistoryDTO> history(carNum)
 
 ### Example
 
@@ -90,7 +90,7 @@ try {
 
 ### Return type
 
-[**BuiltList&lt;CarHistoryDTO&gt;**](CarHistoryDTO.md)
+[**List&lt;CarHistoryDTO&gt;**](CarHistoryDTO.md)
 
 ### Authorization
 
@@ -105,8 +105,8 @@ try {
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-> received
-> String received()
+> receivced
+> String receivced()
 
 ### Example
 
@@ -119,10 +119,10 @@ import 'package:wegooli_friends/api.dart';
 final api = WegooliFriends().getMetisControllerApi();
 
 try {
-    final response = api.received();
+    final response = api.receivced();
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling MetisControllerApi->received: $e\n');
+    print('Exception when calling MetisControllerApi->receivced: $e\n');
 }
 ```
 

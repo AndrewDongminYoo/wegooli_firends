@@ -199,7 +199,7 @@ try {
 [[Back to README]](../README.md)
 
 > selectTeamAccountList
-> BuiltList<TeamAccountConnectionResponse> selectTeamAccountList(teamSeq, accountId, startJoinedAt, endJoinedAt, startLeavedAt, endLeavedAt, isLeaved)
+> List<TeamAccountConnectionResponse> selectTeamAccountList(teamSeq, accountId, startJoinedAt, endJoinedAt, startLeavedAt, endLeavedAt, isLeaved)
 
 ### Example
 
@@ -240,7 +240,7 @@ try {
 
 ### Return type
 
-[**BuiltList&lt;TeamAccountConnectionResponse&gt;**](TeamAccountConnectionResponse.md)
+[**List&lt;TeamAccountConnectionResponse&gt;**](TeamAccountConnectionResponse.md)
 
 ### Authorization
 

@@ -342,7 +342,7 @@ try {
 [[Back to README]](../README.md)
 
 > selectNoticeList
-> BuiltList<Notice> selectNoticeList(request)
+> List<Notice> selectNoticeList(request)
 
 ### Example
 
@@ -371,7 +371,7 @@ try {
 
 ### Return type
 
-[**BuiltList&lt;Notice&gt;**](Notice.md)
+[**List&lt;Notice&gt;**](Notice.md)
 
 ### Authorization
 
@@ -432,7 +432,7 @@ try {
 [[Back to README]](../README.md)
 
 > selectPushList
-> BuiltList<Push> selectPushList(request)
+> List<Push> selectPushList(request)
 
 ### Example
 
@@ -461,7 +461,7 @@ try {
 
 ### Return type
 
-[**BuiltList&lt;Push&gt;**](Push.md)
+[**List&lt;Push&gt;**](Push.md)
 
 ### Authorization
 
@@ -522,7 +522,7 @@ try {
 [[Back to README]](../README.md)
 
 > selectSmsList
-> BuiltList<Sms> selectSmsList(request)
+> List<Sms> selectSmsList(request)
 
 ### Example
 
@@ -551,7 +551,7 @@ try {
 
 ### Return type
 
-[**BuiltList&lt;Sms&gt;**](Sms.md)
+[**List&lt;Sms&gt;**](Sms.md)
 
 ### Authorization
 
@@ -567,7 +567,7 @@ try {
 [[Back to README]](../README.md)
 
 > updateNotice
-> int updateNotice(seq, notice)
+> int updateNotice(notice, seq)
 
 ### Example
 
@@ -578,11 +578,11 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getNoticeControllerApi();
-final int seq = 56;
 final Notice notice;
+final int seq = 56;
 
 try {
-    final response = api.updateNotice(seq, notice);
+    final response = api.updateNotice(notice, seq);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling NoticeControllerApi->updateNotice: $e\n');
@@ -593,8 +593,8 @@ try {
 
 | Name       | Type                    | Description | Notes |
 | ---------- | ----------------------- | ----------- | ----- |
-| **seq**    | **int**                 |             |
 | **notice** | [**Notice**](Notice.md) |             |
+| **seq**    | **int**                 |             |
 
 ### Return type
 
@@ -614,7 +614,7 @@ try {
 [[Back to README]](../README.md)
 
 > updatePush
-> int updatePush(seq, push)
+> int updatePush(push, seq)
 
 ### Example
 
@@ -625,11 +625,11 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getNoticeControllerApi();
-final int seq = 56;
 final Push push;
+final int seq = 56;
 
 try {
-    final response = api.updatePush(seq, push);
+    final response = api.updatePush(push, seq);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling NoticeControllerApi->updatePush: $e\n');
@@ -640,8 +640,8 @@ try {
 
 | Name     | Type                | Description | Notes |
 | -------- | ------------------- | ----------- | ----- |
-| **seq**  | **int**             |             |
 | **push** | [**Push**](Push.md) |             |
+| **seq**  | **int**             |             |
 
 ### Return type
 
@@ -661,7 +661,7 @@ try {
 [[Back to README]](../README.md)
 
 > updateSms
-> int updateSms(seq, sms)
+> int updateSms(sms, seq)
 
 ### Example
 
@@ -672,11 +672,11 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getNoticeControllerApi();
-final int seq = 56;
 final Sms sms;
+final int seq = 56;
 
 try {
-    final response = api.updateSms(seq, sms);
+    final response = api.updateSms(sms, seq);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling NoticeControllerApi->updateSms: $e\n');
@@ -687,8 +687,8 @@ try {
 
 | Name    | Type              | Description | Notes |
 | ------- | ----------------- | ----------- | ----- |
-| **seq** | **int**           |             |
 | **sms** | [**Sms**](Sms.md) |             |
+| **seq** | **int**           |             |
 
 ### Return type
 

@@ -105,7 +105,7 @@ try {
 [[Back to README]](../README.md)
 
 > selectTerminalList
-> BuiltList<TerminalModel> selectTerminalList(request)
+> List<TerminalModel> selectTerminalList(request)
 
 ### Example
 
@@ -134,7 +134,7 @@ try {
 
 ### Return type
 
-[**BuiltList&lt;TerminalModel&gt;**](TerminalModel.md)
+[**List&lt;TerminalModel&gt;**](TerminalModel.md)
 
 ### Authorization
 
@@ -150,7 +150,7 @@ try {
 [[Back to README]](../README.md)
 
 > updateTerminal
-> updateTerminal(seq, terminalUpdateRequest)
+> updateTerminal(terminalUpdateRequest, seq)
 
 ### Example
 
@@ -161,11 +161,11 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getTerminalControllerApi();
-final int seq = 56;
 final TerminalUpdateRequest terminalUpdateRequest;
+final int seq = 56;
 
 try {
-    api.updateTerminal(seq, terminalUpdateRequest);
+    api.updateTerminal(terminalUpdateRequest, seq);
 } catch on DioException (e) {
     print('Exception when calling TerminalControllerApi->updateTerminal: $e\n');
 }
@@ -175,8 +175,8 @@ try {
 
 | Name                      | Type                                                  | Description | Notes |
 | ------------------------- | ----------------------------------------------------- | ----------- | ----- |
-| **seq**                   | **int**                                               |             |
 | **terminalUpdateRequest** | [**TerminalUpdateRequest**](TerminalUpdateRequest.md) |             |
+| **seq**                   | **int**                                               |             |
 
 ### Return type
 

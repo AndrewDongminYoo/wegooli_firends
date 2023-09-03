@@ -150,7 +150,7 @@ try {
 [[Back to README]](../README.md)
 
 > selectScheduleList
-> BuiltList<ScheduleModel> selectScheduleList(teamSeq, accountId, startAt, endAt)
+> List<ScheduleModel> selectScheduleList(teamSeq, accountId, startAt, endAt)
 
 ### Example
 
@@ -185,7 +185,7 @@ try {
 
 ### Return type
 
-[**BuiltList&lt;ScheduleModel&gt;**](ScheduleModel.md)
+[**List&lt;ScheduleModel&gt;**](ScheduleModel.md)
 
 ### Authorization
 
@@ -201,7 +201,7 @@ try {
 [[Back to README]](../README.md)
 
 > updateSchedule
-> updateSchedule(seq, scheduleRequest)
+> updateSchedule(scheduleRequest, seq)
 
 ### Example
 
@@ -212,11 +212,11 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getScheduleControllerApi();
-final int seq = 56;
 final ScheduleRequest scheduleRequest;
+final int seq = 56;
 
 try {
-    api.updateSchedule(seq, scheduleRequest);
+    api.updateSchedule(scheduleRequest, seq);
 } catch on DioException (e) {
     print('Exception when calling ScheduleControllerApi->updateSchedule: $e\n');
 }
@@ -226,8 +226,8 @@ try {
 
 | Name                | Type                                      | Description | Notes |
 | ------------------- | ----------------------------------------- | ----------- | ----- |
-| **seq**             | **int**                                   |             |
 | **scheduleRequest** | [**ScheduleRequest**](ScheduleRequest.md) |             |
+| **seq**             | **int**                                   |             |
 
 ### Return type
 

@@ -342,7 +342,7 @@ try {
 [[Back to README]](../README.md)
 
 > selectUserList
-> BuiltList<SelectUserDTO> selectUserList(request)
+> List<SelectUserDTO> selectUserList(request)
 
 ### Example
 
@@ -371,7 +371,7 @@ try {
 
 ### Return type
 
-[**BuiltList&lt;SelectUserDTO&gt;**](SelectUserDTO.md)
+[**List&lt;SelectUserDTO&gt;**](SelectUserDTO.md)
 
 ### Authorization
 
@@ -522,7 +522,7 @@ try {
 [[Back to README]](../README.md)
 
 > updateUser
-> bool updateUser(memberSeq, accountId, userDTO)
+> bool updateUser(userDTO, memberSeq, accountId)
 
 ### Example
 
@@ -533,12 +533,12 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getUserControllerApi();
+final UserDTO userDTO;
 final int memberSeq = 56;
 final String accountId = accountId_example;
-final UserDTO userDTO;
 
 try {
-    final response = api.updateUser(memberSeq, accountId, userDTO);
+    final response = api.updateUser(userDTO, memberSeq, accountId);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling UserControllerApi->updateUser: $e\n');
@@ -549,9 +549,9 @@ try {
 
 | Name          | Type                      | Description | Notes |
 | ------------- | ------------------------- | ----------- | ----- |
+| **userDTO**   | [**UserDTO**](UserDTO.md) |             |
 | **memberSeq** | **int**                   |             |
 | **accountId** | **String**                |             |
-| **userDTO**   | [**UserDTO**](UserDTO.md) |             |
 
 ### Return type
 

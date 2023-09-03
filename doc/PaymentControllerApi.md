@@ -18,7 +18,7 @@ All URIs are relative to *http://13.209.6.245:8089*
 | [**start**](PaymentControllerApi.md#start)                       | **GET** /payments/start                     |
 
 > cancelPayment
-> String cancelPayment(paymentKey, cancelRequestModel)
+> String cancelPayment(cancelRequestModel, paymentKey)
 
 ### Example
 
@@ -29,11 +29,11 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getPaymentControllerApi();
-final String paymentKey = paymentKey_example;
 final CancelRequestModel cancelRequestModel;
+final String paymentKey = paymentKey_example;
 
 try {
-    final response = api.cancelPayment(paymentKey, cancelRequestModel);
+    final response = api.cancelPayment(cancelRequestModel, paymentKey);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling PaymentControllerApi->cancelPayment: $e\n');
@@ -44,8 +44,8 @@ try {
 
 | Name                   | Type                                            | Description | Notes |
 | ---------------------- | ----------------------------------------------- | ----------- | ----- |
-| **paymentKey**         | **String**                                      |             |
 | **cancelRequestModel** | [**CancelRequestModel**](CancelRequestModel.md) |             |
+| **paymentKey**         | **String**                                      |             |
 
 ### Return type
 
@@ -65,7 +65,7 @@ try {
 [[Back to README]](../README.md)
 
 > createBillingKey
-> String createBillingKey(accountId, billingKeyRequestModel)
+> String createBillingKey(billingKeyRequestModel, accountId)
 
 ### Example
 
@@ -76,11 +76,11 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getPaymentControllerApi();
-final String accountId = accountId_example;
 final BillingKeyRequestModel billingKeyRequestModel;
+final String accountId = accountId_example;
 
 try {
-    final response = api.createBillingKey(accountId, billingKeyRequestModel);
+    final response = api.createBillingKey(billingKeyRequestModel, accountId);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling PaymentControllerApi->createBillingKey: $e\n');
@@ -91,8 +91,8 @@ try {
 
 | Name                       | Type                                                    | Description | Notes |
 | -------------------------- | ------------------------------------------------------- | ----------- | ----- |
-| **accountId**              | **String**                                              |             |
 | **billingKeyRequestModel** | [**BillingKeyRequestModel**](BillingKeyRequestModel.md) |             |
+| **accountId**              | **String**                                              |             |
 
 ### Return type
 
@@ -157,7 +157,7 @@ try {
 [[Back to README]](../README.md)
 
 > getPaymentList
-> BuiltList<PaymentModel> getPaymentList(paymentKey, status, lastTransactionKey, orderId, orderName, startRequestedAt, endRequestedAt)
+> List<PaymentModel> getPaymentList(paymentKey, status, lastTransactionKey, orderId, orderName, startRequestedAt, endRequestedAt)
 
 ### Example
 
@@ -198,7 +198,7 @@ try {
 
 ### Return type
 
-[**BuiltList&lt;PaymentModel&gt;**](PaymentModel.md)
+[**List&lt;PaymentModel&gt;**](PaymentModel.md)
 
 ### Authorization
 
@@ -214,7 +214,7 @@ try {
 [[Back to README]](../README.md)
 
 > payByBillingKey
-> String payByBillingKey(billingKey, payBillingRequestModel)
+> String payByBillingKey(payBillingRequestModel, billingKey)
 
 ### Example
 
@@ -225,11 +225,11 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getPaymentControllerApi();
-final String billingKey = billingKey_example;
 final PayBillingRequestModel payBillingRequestModel;
+final String billingKey = billingKey_example;
 
 try {
-    final response = api.payByBillingKey(billingKey, payBillingRequestModel);
+    final response = api.payByBillingKey(payBillingRequestModel, billingKey);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling PaymentControllerApi->payByBillingKey: $e\n');
@@ -240,8 +240,8 @@ try {
 
 | Name                       | Type                                                    | Description | Notes |
 | -------------------------- | ------------------------------------------------------- | ----------- | ----- |
-| **billingKey**             | **String**                                              |             |
 | **payBillingRequestModel** | [**PayBillingRequestModel**](PayBillingRequestModel.md) |             |
+| **billingKey**             | **String**                                              |             |
 
 ### Return type
 

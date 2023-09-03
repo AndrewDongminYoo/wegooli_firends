@@ -107,7 +107,7 @@ try {
 [[Back to README]](../README.md)
 
 > selectDeviceControlHistoryList
-> BuiltList<CarControlHistoryModel> selectDeviceControlHistoryList(request)
+> List<CarControlHistoryModel> selectDeviceControlHistoryList(request)
 
 ### Example
 
@@ -136,7 +136,7 @@ try {
 
 ### Return type
 
-[**BuiltList&lt;CarControlHistoryModel&gt;**](CarControlHistoryModel.md)
+[**List&lt;CarControlHistoryModel&gt;**](CarControlHistoryModel.md)
 
 ### Authorization
 

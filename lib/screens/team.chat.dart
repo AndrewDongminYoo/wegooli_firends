@@ -81,7 +81,8 @@ class DashChatWithFriendsPage extends GetWidget<ConnectionController> {
                 messageListOptions: MessageListOptions(onLoadEarlier: () async {
                   await Future.delayed(const Duration(seconds: 3));
                 }),
-                typingUsers: <ChatUser>[])));
+                typingUsers: <ChatUser>[]),
+            bottomNavigationBar: BottomTabRouterBar()));
   }
 }
 

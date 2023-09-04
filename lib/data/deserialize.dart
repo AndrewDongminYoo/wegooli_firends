@@ -28,6 +28,9 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
     case 'AccountAgreementRequest':
       return AccountAgreementRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'AuthApiResponse':
+      return AuthApiResponse.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'ApiResponseObject':
       return ApiResponseObject.fromJson(value as Map<String, dynamic>)
           as ReturnType;

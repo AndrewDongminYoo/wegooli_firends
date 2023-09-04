@@ -144,72 +144,61 @@ class UserController extends GetxController {
       final response =
           await api.login(id: username.text, password: password.text);
       print('response : ${response}');
-      var result = response.data?.result;
+      Result? result = response.data?.result;
+      String? bearerToken;
       if (result == null) {
-        print(
-            'something is wrong!!! login API returns $result, ${response.data?.resultCode}');
+        print('`login()` 반환값: $result, ${response.data?.resultCode}');
         Get.dialog(Center(
             child: Assets.lotties.xInCircle.lottie(height: 250, width: 250)));
         isAuthenticated.value = false;
-        return;
+        bearerToken = PrefUtils.storage.getToken();
+      } else {
+        bearerToken = result.token as String;
       }
-      Map<String, dynamic>? jsonObj = result as Map<String, dynamic>?;
-      if (jsonObj!.containsKey('token')) {
-        String? token = jsonObj['token'] as String?;
-        if (token != null) {
-          List<String> splitToken = token.split(' ');
-          print('splitToken: $splitToken[1]');
-          PrefUtils.storage.setData('token', splitToken[1]);
-          Map<String, dynamic> payload = parseJwtPayLoad(splitToken[1]);
-          currentUser.value = UserDTO.fromJson(payload);
-          isAuthenticated.value = true;
-          await findMembers();
-        } else {
-          isAuthenticated.value = false;
-        }
+      // BEARER prefix 분리.
+      String token = bearerToken.split(' ').last;
+      print('token: ${token}');
+      // BEARER prefix 제거
+      var payload = JwtDecoder.decode(token);
+      currentUser.value = UserDTO.fromJson(payload);
+      if (JwtDecoder.isExpired(token)) {
+        print('❌ 만료된 토큰입니다.');
+        isAuthenticated.value = false;
+        /// refreshToken API Call!!
+      } else {
+        print('✅ 유효한 토큰입니다.');
+        isAuthenticated.value = true;
       }
-      // Logger.log("response : ${response.data?.result?.toString()}");
-      // return true;
+      PrefUtils.storage.setToken(token);
+      await findMembers();
     } on DioException catch (e) {
       isAuthenticated.value = false;
       switch (e.type) {
         case DioExceptionType.connectionError:
-          print(e.message ?? "Unknown connection error occurred");
+          print(e.message ?? "연결 오류가 발생했습니다.");
           break;
         default:
+          print(e.message ?? e.toString());
       }
-      print("DioException when calling UserControllerApi->login: $e\n");
+      print("`login()` 호출 중 DioException 발생: $e\n");
     } on Exception catch (e) {
       isAuthenticated.value = false;
-      print("Exception when calling UserControllerApi->login: $e\n");
-    } finally {
-      // return false;
+      print("`login()` 호출 중 Exception 발생: $e\n");
     }
-    // id, pwd 확인해서 로그인 성공하면 true 아니면 false.
   }
 
   Future<void> findMembers() async {
-    String token = PrefUtils.storage.getData('token');
+    String token = PrefUtils.storage.getToken();
     final api = wegooli.getTeamAccountConnectionControllerApi();
     print('token : $token');
-    Map<String, dynamic> extra = <String, dynamic>{
-      'secure': <Map<String, String>>[
-        {
-          'type': 'http',
-          'scheme': 'bearer',
-          'name': token,
-        },
-      ],
-    };
-    final response = await api.selectTeamAccountList(extra: extra);
+    final response = await api.selectTeamAccountList();
     print('response : $response');
     List<TeamAccountConnectionResponse>? teams = response.data;
     if (teams != null && teams.isNotEmpty) {
-      // TODO: 현재는 Team이 1개만 존재한다고 가정하기 때문에 첫번째 Team 정보로만 연결한다.
+      // NOTE: 현재는 Team이 1개만 존재한다고 가정하기 때문에 첫번째 Team 정보로만 연결한다.
       teams.first.account
           ?.forEach((it) => !members.contains(it) ? members.add(it) : null);
     }
-    // print('members : ${members.length}');
     print('members : ${members.toString()}');
   }
 

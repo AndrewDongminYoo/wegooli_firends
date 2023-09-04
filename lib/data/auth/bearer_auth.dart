@@ -2,6 +2,7 @@
 import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
+import '/core/utils/pref_utils.dart';
 import '/data/auth/auth_interceptor.dart';
 
 class BearerAuthInterceptor extends AuthInterceptor {
@@ -14,22 +15,18 @@ class BearerAuthInterceptor extends AuthInterceptor {
   ) {
     final authInfo = getAuthInfo(options,
         (secure) => secure['type'] == 'http' && secure['scheme'] == 'bearer');
+    String? token;
     for (final info in authInfo) {
-      final token = tokens[info['name']];
+      token = tokens[info['name']];
       if (token != null) {
+        PrefUtils.storage.setToken(token!);
         options.headers['Authorization'] = 'Bearer ${token}';
         break;
-        // TODO: 토큰이 존재하지 않으면..?
-      } else {
-        if (!info.containsKey('name')) {
-          continue;
-        } else {
-          String value = info['name'] as String;
-          tokens.addAll({value: value});
-          // print('tokens : $tokens \n');
-          options.headers['Authorization'] = 'Bearer ${info['name']}';
-        }
       }
+    }
+    if (token == null) {
+      token = PrefUtils.storage.getToken();
+      options.headers['Authorization'] = 'Bearer ${token}';
     }
     super.onRequest(options, handler);
   }

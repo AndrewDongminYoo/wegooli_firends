@@ -18,7 +18,7 @@ void main() {
     //
     // 사용자 정보 기반 JWT를 발급함
     //
-    //Future<ApiResponseObject> generateToken(UserDetailsDTO userDetailsDTO) async
+    //Future<AuthApiResponse> generateToken(UserDetailsDTO userDetailsDTO) async
     test('test generateToken', () async {
       // TODO
     });

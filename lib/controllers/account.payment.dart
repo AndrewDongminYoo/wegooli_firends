@@ -23,9 +23,8 @@ class PaymentCardController extends GetxController {
   bool get cardInputSucceed => false;
   final userController = UserController.to;
   String _token = '';
-
   String get token {
-    _token = PrefUtils.storage.getData('token');
+    _token = PrefUtils.storage.getToken();
     if (_token.isEmpty) {
       return _token;
     } else {
@@ -33,44 +32,19 @@ class PaymentCardController extends GetxController {
       return _token;
     }
   }
-
   set token(String value) {
     _token = value;
   }
 
-  late Map<String, dynamic> extra = <String, dynamic>{
-    'secure': <Map<String, String>>[
-      {
-        'type': 'http',
-        'scheme': 'bearer',
-        'name': token,
-      },
-    ],
-  };
-
   RxList<PaymentCardModel> _paymentCards = <PaymentCardModel>[].obs;
   RxList<PaymentCardModel> get paymentCards => _paymentCards;
   // Rx<PaymentCardModel> paymentCard = PaymentCardModel().obs;
-  // RxList<PaymentCardModel> paymentCards = RxList.of([
-  //   (PaymentCardModelBuilder()
-  //         ..seq = 2
-  //         ..delYn = 'N'
-  //         // ..createdAt='2023-08-16 10:45:09.000Z'
-  //         // ..updatedAt='2023-08-31 13:51:37.000Z'
-  //         ..memberSeq = 23
-  //         ..cardNumber = '4028571329721815'
-  //         ..defaultYn = 'Y'
-  //         ..password = '80'
-  //         ..rrn = '930607')
-  //       .build(),
-  // ]);
+  // RxList<PaymentCardModel> paymentCards = RxList.of([PaymentCardModel()]);
   // RxList<PaymentCardModel> get paymentCards => _paymentCards.obs;
 
   @override
   void onInit() async {
     super.onInit();
-    // ever(paymentCards, (val) => print('Changed : $val'));
-    // await retrieveCards();
   }
 
   @override
@@ -86,7 +60,7 @@ class PaymentCardController extends GetxController {
     if (userController.currentUser.value.memberSeq != null) {
       final paymentCardControllerApi = wegooli.getPaymentCardControllerApi();
       final response = await paymentCardControllerApi.selectPaymentCardList(
-          memberSeq: userController.currentUser.value.memberSeq!, extra: extra);
+          memberSeq: userController.currentUser.value.memberSeq!);
       print('response => ${response.data}');
       if (response.data != null) {
         _paymentCards.clear();

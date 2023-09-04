@@ -16,7 +16,7 @@ class TeamAccountModel {
   TeamAccountModel({
     this.accountId,
     this.color,
-    this.nickname,
+    this.nickName,
     this.profilePicture,
     this.useYn,
     this.joinedAt,
@@ -29,8 +29,8 @@ class TeamAccountModel {
   @JsonKey(name: r'color', required: false, includeIfNull: false)
   final String? color;
 
-  @JsonKey(name: r'nickname', required: false, includeIfNull: false)
-  final String? nickname;
+  @JsonKey(name: r'nickName', required: false, includeIfNull: false)
+  final String? nickName;
 
   @JsonKey(name: r'profilePicture', required: false, includeIfNull: false)
   final String? profilePicture;
@@ -50,7 +50,7 @@ class TeamAccountModel {
       other is TeamAccountModel &&
           other.accountId == accountId &&
           other.color == color &&
-          other.nickname == nickname &&
+          other.nickName == nickName &&
           other.profilePicture == profilePicture &&
           other.useYn == useYn &&
           other.joinedAt == joinedAt &&
@@ -60,7 +60,7 @@ class TeamAccountModel {
   int get hashCode =>
       accountId.hashCode +
       color.hashCode +
-      nickname.hashCode +
+      nickName.hashCode +
       profilePicture.hashCode +
       useYn.hashCode +
       joinedAt.hashCode +

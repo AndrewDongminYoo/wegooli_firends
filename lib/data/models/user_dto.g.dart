@@ -27,7 +27,7 @@ UserDTO _$UserDTOFromJson(Map<String, dynamic> json) => $checkedCreate(
           memberSeq: $checkedConvert('memberSeq', (v) => v as int?),
           password: $checkedConvert('password', (v) => v as String?),
           delimit: $checkedConvert('delimit', (v) => v as String?),
-          nickname: $checkedConvert('nickname', (v) => v as String?),
+          nickName: $checkedConvert('nickName', (v) => v as String?),
           profilePicture:
               $checkedConvert('profilePicture', (v) => v as String?),
           deleteAt: $checkedConvert('deleteAt', (v) => v as String?),
@@ -64,7 +64,7 @@ Map<String, dynamic> _$UserDTOToJson(UserDTO instance) {
   writeNotNull('memberSeq', instance.memberSeq);
   writeNotNull('password', instance.password);
   writeNotNull('delimit', instance.delimit);
-  writeNotNull('nickname', instance.nickname);
+  writeNotNull('nickName', instance.nickName);
   writeNotNull('profilePicture', instance.profilePicture);
   writeNotNull('deleteAt', instance.deleteAt);
   writeNotNull('color', instance.color);

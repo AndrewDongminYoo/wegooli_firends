@@ -10,6 +10,7 @@ import '/core/app_export.dart';
 
 class RegisterCreditCard extends GetWidget<PaymentCardController> {
   final paymentCardController = PaymentCardController.to;
+  final userController = UserController.to;
 
   @override
   Widget build(BuildContext context) {
@@ -91,7 +92,9 @@ class RegisterCreditCard extends GetWidget<PaymentCardController> {
                                     labelText:
                                         l10ns.socialSecurityNumberFirstDigit),
                                 CustomTextFormField(
-                                    enabled: false,
+                                    enabled: userController.birthDay.text.length > 0
+                                        ? false
+                                        : true,
                                     margin: getMargin(top: 4),
                                     contentPadding: getPadding(
                                         left: 12,
@@ -105,7 +108,7 @@ class RegisterCreditCard extends GetWidget<PaymentCardController> {
                                       LengthLimitingTextInputFormatter(6),
                                     ],
                                     initialValue:
-                                        UserController.to.birthDay.text,
+                                        userController.birthDay.text,
                                     textInputAction: TextInputAction.next,
                                     filled: true,
                                     fillColor:

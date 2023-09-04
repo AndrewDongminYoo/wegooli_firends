@@ -38,7 +38,7 @@ class UserDetailsDTO {
     this.email,
     this.sex,
     this.birthDay,
-    this.nickname,
+    this.nickName,
     this.profilePicture,
     this.add1,
     this.createdAt,
@@ -109,8 +109,8 @@ class UserDetailsDTO {
   @JsonKey(name: r'birthDay', required: false, includeIfNull: false)
   final String? birthDay;
 
-  @JsonKey(name: r'nickname', required: false, includeIfNull: false)
-  final String? nickname;
+  @JsonKey(name: r'nickName', required: false, includeIfNull: false)
+  final String? nickName;
 
   @JsonKey(name: r'profilePicture', required: false, includeIfNull: false)
   final String? profilePicture;
@@ -161,7 +161,7 @@ class UserDetailsDTO {
           other.email == email &&
           other.sex == sex &&
           other.birthDay == birthDay &&
-          other.nickname == nickname &&
+          other.nickName == nickName &&
           other.profilePicture == profilePicture &&
           other.add1 == add1 &&
           other.createdAt == createdAt &&
@@ -193,7 +193,7 @@ class UserDetailsDTO {
       email.hashCode +
       sex.hashCode +
       birthDay.hashCode +
-      nickname.hashCode +
+      nickName.hashCode +
       profilePicture.hashCode +
       add1.hashCode +
       createdAt.hashCode +

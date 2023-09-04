@@ -21,7 +21,7 @@ class UserController extends GetxController {
   TextEditingController username = TextEditingController();
   TextEditingController password = TextEditingController();
   TextEditingController postCode = TextEditingController();
-  TextEditingController nickname = TextEditingController();
+  TextEditingController nickName = TextEditingController();
   TextEditingController fullName = TextEditingController();
   TextEditingController birthDay = TextEditingController();
   TextEditingController socialId = TextEditingController();
@@ -115,7 +115,7 @@ class UserController extends GetxController {
       detailAddress.text.length > 0 &&
       emailAddress.text.isEmail &&
       password.text.length > 0 &&
-      nickname.text.length > 0 &&
+      nickName.text.length > 0 &&
       rePassword.text.length > 0 &&
       (password.text == rePassword.text);
 
@@ -134,7 +134,7 @@ class UserController extends GetxController {
     emailAddress.dispose();
     password.dispose();
     rePassword.dispose();
-    nickname.dispose();
+    nickName.dispose();
   }
 
   Future<void> authorize() async {
@@ -160,10 +160,12 @@ class UserController extends GetxController {
       print('token: ${token}');
       // BEARER prefix 제거
       var payload = JwtDecoder.decode(token);
-      currentUser.value = UserDTO.fromJson(payload);
+      print('payload : ${payload}');
+      currentUser(UserDTO.fromJson(payload));
       if (JwtDecoder.isExpired(token)) {
         print('❌ 만료된 토큰입니다.');
         isAuthenticated.value = false;
+
         /// refreshToken API Call!!
       } else {
         print('✅ 유효한 토큰입니다.');
@@ -175,10 +177,14 @@ class UserController extends GetxController {
       isAuthenticated.value = false;
       print(switch (e.type) {
         DioExceptionType.connectionError => e.message ?? "연결 오류가 발생했습니다.",
-        DioExceptionType.connectionTimeout => e.message ?? '요청 연결이 5000ms보다 오래 걸렸습니다.',
-        DioExceptionType.sendTimeout => e.message ?? '요청이 데이터를 전송하는 데 timeout 보다 오래 걸렸습니다.',
-        DioExceptionType.receiveTimeout => e.message ?? '데이터를 받는 데 3000ms 보다 오래 걸렸습니다.',
-        DioExceptionType.badCertificate => e.message ?? '요청에 잘못된 인가 코드를 사용했습니다.',
+        DioExceptionType.connectionTimeout =>
+          e.message ?? '요청 연결이 5000ms보다 오래 걸렸습니다.',
+        DioExceptionType.sendTimeout =>
+          e.message ?? '요청이 데이터를 전송하는 데 timeout 보다 오래 걸렸습니다.',
+        DioExceptionType.receiveTimeout =>
+          e.message ?? '데이터를 받는 데 3000ms 보다 오래 걸렸습니다.',
+        DioExceptionType.badCertificate =>
+          e.message ?? '요청에 잘못된 인가 코드를 사용했습니다.',
         DioExceptionType.badResponse => e.message ?? '요청에서 잘못된 상태 코드를 반환했습니다.',
         DioExceptionType.cancel => e.message ?? '요청이 취소되었습니다.',
         DioExceptionType.unknown => e.stackTrace,

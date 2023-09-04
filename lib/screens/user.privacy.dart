@@ -38,17 +38,23 @@ class ProfileInfoPage extends GetWidget<UserController> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(l10ns.nickname,
+                        Text(
+                            controller.currentUser.value.nickName ??
+                                l10ns.nickName,
                             // overflow: TextOverflow.ellipsis,
                             // textAlign: TextAlign.left,
                             style: CustomTextStyles.titleMedium18.copyWith(
                                 letterSpacing: getHorizontalSize(0.04))),
-                        Text('010-1234-5678',
+                        Text(
+                            controller.currentUser.value.phoneNumber ??
+                                '010-1234-5678',
                             // overflow: TextOverflow.ellipsis,
                             // textAlign: TextAlign.left,
                             style: theme.textTheme.bodyLarge!.copyWith(
                                 letterSpacing: getHorizontalSize(0.03))),
-                        Text('abc@gmail.com',
+                        Text(
+                            controller.currentUser.value.email ??
+                                'abc@gmail.com',
                             // overflow: TextOverflow.ellipsis,
                             // textAlign: TextAlign.left,
                             style: theme.textTheme.bodyLarge!.copyWith(

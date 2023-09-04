@@ -37,7 +37,7 @@ class VehicleController extends GetxController {
     final whoDriving =
         members.firstWhereOrNull((it) => it.accountId == accountId);
     print('team.vehicle.dart#L39 ${whoDriving} is Driving');
-    driverName.text = whoDriving?.nickname ?? '';
+    driverName.text = whoDriving?.nickName ?? '';
   }
 
   bool compose(ScheduleModel schedule) {

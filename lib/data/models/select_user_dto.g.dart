@@ -23,7 +23,7 @@ SelectUserDTO _$SelectUserDTOFromJson(Map<String, dynamic> json) =>
           birthday: $checkedConvert('birthday', (v) => v as String?),
           sex: $checkedConvert('sex', (v) => v as String?),
           delimit: $checkedConvert('delimit', (v) => v as String?),
-          nickname: $checkedConvert('nickname', (v) => v as String?),
+          nickName: $checkedConvert('nickName', (v) => v as String?),
           profilePicture:
               $checkedConvert('profilePicture', (v) => v as String?),
           color: $checkedConvert('color', (v) => v as String?),
@@ -65,7 +65,7 @@ Map<String, dynamic> _$SelectUserDTOToJson(SelectUserDTO instance) {
   writeNotNull('birthday', instance.birthday);
   writeNotNull('sex', instance.sex);
   writeNotNull('delimit', instance.delimit);
-  writeNotNull('nickname', instance.nickname);
+  writeNotNull('nickName', instance.nickName);
   writeNotNull('profilePicture', instance.profilePicture);
   writeNotNull('color', instance.color);
   writeNotNull('deleteAt', instance.deleteAt);

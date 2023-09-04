@@ -7,9 +7,9 @@ import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
 import '/data/deserialize.dart';
-import '/data/models/team_account_connection_model.dart';
-import '/data/models/team_account_connection_request.dart';
-import '/data/models/team_account_connection_response.dart';
+import '/data/model/team_account_connection_model.dart';
+import '/data/model/team_account_connection_request.dart';
+import '/data/model/team_account_connection_response.dart';
 
 class TeamAccountConnectionControllerApi {
   final Dio _dio;

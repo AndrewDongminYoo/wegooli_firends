@@ -2,7 +2,7 @@
 import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
-import '/data/auth/auth_interceptor.dart';
+import '/data/auth/auth.dart';
 
 class ApiKeyAuthInterceptor extends AuthInterceptor {
   final Map<String, String> apiKeys = {};

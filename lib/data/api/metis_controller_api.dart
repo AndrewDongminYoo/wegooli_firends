@@ -7,8 +7,8 @@ import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
 import '/data/deserialize.dart';
-import '/data/models/car_history_dto.dart';
-import '/data/models/device_control_result_dto.dart';
+import '/data/model/car_history_dto.dart';
+import '/data/model/device_control_result_dto.dart';
 
 class MetisControllerApi {
   final Dio _dio;

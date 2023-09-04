@@ -7,13 +7,13 @@ import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
 import '/data/deserialize.dart';
-import '/data/models/account.dart';
-import '/data/models/api_response_object.dart';
-import '/data/models/auth_api_response.dart';
-import '/data/models/member.dart';
-import '/data/models/select_user_dto.dart';
-import '/data/models/user_details_dto.dart';
-import '/data/models/user_dto.dart';
+import '/data/model/account.dart';
+import '/data/model/api_response_object.dart';
+import '/data/model/auth_api_response.dart';
+import '/data/model/member.dart';
+import '/data/model/select_user_dto.dart';
+import '/data/model/user_details_dto.dart';
+import '/data/model/user_dto.dart';
 
 class UserControllerApi {
   final Dio _dio;

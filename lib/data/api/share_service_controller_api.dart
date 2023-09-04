@@ -7,11 +7,11 @@ import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
 import '/data/deserialize.dart';
-import '/data/models/leader_set_request.dart';
-import '/data/models/service_car_detail_request.dart';
-import '/data/models/service_detail.dart';
-import '/data/models/share_service_model.dart';
-import '/data/models/share_service_request.dart';
+import '/data/model/leader_set_request.dart';
+import '/data/model/service_car_detail_request.dart';
+import '/data/model/service_detail.dart';
+import '/data/model/share_service_model.dart';
+import '/data/model/share_service_request.dart';
 
 class ShareServiceControllerApi {
   final Dio _dio;

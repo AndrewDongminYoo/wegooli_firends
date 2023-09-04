@@ -7,8 +7,8 @@ import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
 import '/data/deserialize.dart';
-import '/data/models/account_agreement_model.dart';
-import '/data/models/account_agreement_request.dart';
+import '/data/model/account_agreement_model.dart';
+import '/data/model/account_agreement_request.dart';
 
 class AccountAgreementControllerApi {
   final Dio _dio;

@@ -4,8 +4,8 @@
 import 'package:json_annotation/json_annotation.dart';
 
 // 🌎 Project imports:
-import '/data/models/device_option.dart';
-import '/data/models/user_sub_info.dart';
+import '/data/model/device_option.dart';
+import '/data/model/user_sub_info.dart';
 
 part 'service_detail.g.dart';
 

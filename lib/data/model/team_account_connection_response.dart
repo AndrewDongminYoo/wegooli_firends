@@ -4,7 +4,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
 // 🌎 Project imports:
-import '/data/models/team_account_model.dart';
+import '/data/model/team_account_model.dart';
 
 part 'team_account_connection_response.g.dart';
 

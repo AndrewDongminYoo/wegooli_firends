@@ -19,4 +19,7 @@ README.md
 pubspec.yaml
 analysis_options.yaml
 # Auth 인터셉터는 이미 만들어짐.
-lib/data/auth/auth.dart
+.gitignore
+swagger
+build.yaml
+lib/wegooli_friends.dart

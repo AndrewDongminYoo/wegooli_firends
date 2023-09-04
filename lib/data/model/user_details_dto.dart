@@ -4,8 +4,8 @@
 import 'package:json_annotation/json_annotation.dart';
 
 // 🌎 Project imports:
-import '/data/models/granted_authority.dart';
-import '/data/models/user_dto.dart';
+import '/data/model/granted_authority.dart';
+import '/data/model/user_dto.dart';
 
 part 'user_details_dto.g.dart';
 

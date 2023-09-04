@@ -8,7 +8,7 @@ import 'package:table_calendar/table_calendar.dart';
 import '/core/app_export.dart';
 
 /// 스케쥴 이벤트의 예시입니다.
-/// [/data/models/schedule_model.dart] 참조
+/// [/data/model/schedule_model.dart] 참조
 class Schedule {
   int? seq = 0;
   int? teamSeq = 0;

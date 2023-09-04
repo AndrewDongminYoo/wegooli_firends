@@ -7,10 +7,10 @@ import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
 import '/data/deserialize.dart';
-import '/data/models/billing_key_request_model.dart';
-import '/data/models/cancel_request_model.dart';
-import '/data/models/pay_billing_request_model.dart';
-import '/data/models/payment_model.dart';
+import '/data/model/billing_key_request_model.dart';
+import '/data/model/cancel_request_model.dart';
+import '/data/model/pay_billing_request_model.dart';
+import '/data/model/payment_model.dart';
 
 class PaymentControllerApi {
   final Dio _dio;

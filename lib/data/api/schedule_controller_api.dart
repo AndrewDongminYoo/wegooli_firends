@@ -7,8 +7,8 @@ import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
 import '/data/deserialize.dart';
-import '/data/models/schedule_model.dart';
-import '/data/models/schedule_request.dart';
+import '/data/model/schedule_model.dart';
+import '/data/model/schedule_request.dart';
 
 class ScheduleControllerApi {
   final Dio _dio;

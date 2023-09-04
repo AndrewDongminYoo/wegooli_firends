@@ -7,9 +7,9 @@ import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
 import '/data/deserialize.dart';
-import '/data/models/terminal_model.dart';
-import '/data/models/terminal_request.dart';
-import '/data/models/terminal_update_request.dart';
+import '/data/model/terminal_model.dart';
+import '/data/model/terminal_request.dart';
+import '/data/model/terminal_update_request.dart';
 
 class TerminalControllerApi {
   final Dio _dio;

@@ -3,7 +3,7 @@ import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
 import '/core/utils/pref_utils.dart';
-import '/data/auth/auth_interceptor.dart';
+import '/data/auth/auth.dart';
 
 class BearerAuthInterceptor extends AuthInterceptor {
   final Map<String, String> tokens = {};

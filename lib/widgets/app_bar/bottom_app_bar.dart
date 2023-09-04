@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 // 🌎 Project imports:
-import 'package:wegooli_friends/core/app_export.dart';
+import '/core/app_export.dart';
 
 /// `BottomAppBarDemo` 클래스는 플로팅 작업 버튼의 가시성, 하단 앱 바 노치의 가시성, 플로팅 작업 버튼의 위치 등 하단 앱 바 데모의 상태와 UI를 관리하는 상태 저장 위젯입니다.
 class BottomAppBarDemo extends StatefulWidget {
@@ -179,30 +179,29 @@ class _DemoBottomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final localizations = Localized.of(context)!;
     return Semantics(
       sortKey: const OrdinalSortKey(1),
       container: true,
-      label: localizations.bottomAppBar,
+      label: l10ns.bottomAppBar,
       child: BottomAppBar(
         shape: shape,
         child: IconTheme(
-          data: IconThemeData(color: Theme.of(context).colorScheme.onPrimary),
+          data: IconThemeData(color: theme.colorScheme.onPrimary),
           child: Row(
             children: [
               IconButton(
-                tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+                tooltip: l10ns.openAppDrawerTooltip,
                 icon: const Icon(Icons.menu),
                 onPressed: () {},
               ),
               if (centerLocations.contains(fabLocation)) const Spacer(),
               IconButton(
-                tooltip: localizations.starterAppTooltipSearch,
+                tooltip: l10ns.starterAppTooltipSearch,
                 icon: const Icon(Icons.search),
                 onPressed: () {},
               ),
               IconButton(
-                tooltip: localizations.starterAppTooltipFavorite,
+                tooltip: l10ns.starterAppTooltipFavorite,
                 icon: const Icon(Icons.favorite),
                 onPressed: () {},
               )

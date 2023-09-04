@@ -256,6 +256,9 @@ class LocalizedKo extends Localized {
   String get numberOfPeople => '인원';
 
   @override
+  String get openAppDrawerTooltip => '탐색 메뉴 열기';
+
+  @override
   String get openDoor => '문열기';
 
   @override

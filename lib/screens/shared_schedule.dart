@@ -1,13 +1,17 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:get/get.dart';
-
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
-class TeamScheduleShare extends GetWidget<ScheduleController> {
+class TeamScheduleShare extends StatefulWidget {
+  @override
+  State<TeamScheduleShare> createState() => _TeamScheduleShareState();
+}
+
+class _TeamScheduleShareState extends State<TeamScheduleShare> {
+  ScheduleController controller = ScheduleController.to;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(

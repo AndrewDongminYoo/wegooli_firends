@@ -342,6 +342,10 @@
   "@numberOfPeople": {
     "description": "차량을 함께 사용하는 팀의 초대된 인원 수 (최대 4명)"
   },
+  "openAppDrawerTooltip": "탐색 메뉴 열기",
+  "@openAppDrawerTooltip": {
+    "description": "네비게이션 메뉴를 열 수 있는 앱 드로어 버튼 위의 툴팁"
+  },
   "openDoor": "문열기",
   "@openDoor": {
     "description": "스마트키 버튼 중 하나."

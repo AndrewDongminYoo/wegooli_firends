@@ -1,14 +1,18 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:get/get.dart';
-
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
 // ignore: must_be_immutable
-class SharedCalendar extends GetWidget<ScheduleController> {
+class SharedCalendar extends StatefulWidget {
+  @override
+  State<SharedCalendar> createState() => _SharedCalendarState();
+}
+
+class _SharedCalendarState extends State<SharedCalendar> {
+  ScheduleController controller = ScheduleController.to;
+
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);

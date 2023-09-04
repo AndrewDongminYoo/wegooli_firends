@@ -588,6 +588,12 @@ abstract class Localized {
   /// **'인원'**
   String get numberOfPeople;
 
+  /// 네비게이션 메뉴를 열 수 있는 앱 드로어 버튼 위의 툴팁
+  ///
+  /// In ko, this message translates to:
+  /// **'탐색 메뉴 열기'**
+  String get openAppDrawerTooltip;
+
   /// 스마트키 버튼 중 하나.
   ///
   /// In ko, this message translates to:

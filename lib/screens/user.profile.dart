@@ -75,7 +75,7 @@ class MyProfilePage extends GetWidget<UserController> {
                     ),
                     Container(
                       width: mediaQueryData.size.width,
-                      color: Color(0xFFFF6F00),
+                      // color: Color(0xFFFF6F00),
                       child: Column(children: [
                         ListItem(
                             svgPath: Assets.svg.imgEdit.path,

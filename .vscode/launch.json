@@ -26,13 +26,35 @@
       "name": "wegooli_friends (profile mode)",
       "request": "launch",
       "type": "dart",
-      "flutterMode": "profile"
+      "flutterPlatform": "default",
+      "flutterMode": "profile",
+      "console": "debugConsole",
+      "args": [
+        "--target=lib/main.dart",
+        "--hot",
+        "--ignore-deprecation",
+        "--route=/shared_schedule",
+        "--verbose"
+      ],
+      "openDevTools": "performance",
+      "program": "lib/main.dart"
     },
     {
       "name": "wegooli_friends (release mode)",
       "request": "launch",
       "type": "dart",
-      "flutterMode": "release"
+      "flutterPlatform": "default",
+      "flutterMode": "release",
+      "console": "debugConsole",
+      "args": [
+        "--target=lib/main.dart",
+        "--hot",
+        "--ignore-deprecation",
+        "--route=/shared_schedule",
+        "--verbose"
+      ],
+      "openDevTools": "network",
+      "program": "lib/main.dart"
     }
   ]
 }

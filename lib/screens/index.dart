@@ -102,7 +102,7 @@ class GatewayScreen extends StatelessWidget {
                             routeDestination: AppRoutes.noSubscription,
                             routeName: l10ns.subscriptionInfoNoService),
                         RouteItem(
-                            routeDestination: AppRoutes.smartKeyAvailable,
+                            routeDestination: AppRoutes.carSmartKey,
                             routeName: l10ns.smartKeyAvailable),
                         RouteModal(
                             dialog: alertDialog,

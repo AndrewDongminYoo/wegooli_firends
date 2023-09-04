@@ -23,7 +23,7 @@ class AppRoutes {
   static const String reservationsCheck = '/reservations_check';
   static const String sendingInvitation = '/sending_invitation';
   static const String sharedSchedule = '/shared_schedule';
-  static const String smartKeyAvailable = '/smart_key_available';
+  static const String carSmartKey = '/smart_key';
   static const String splashScreen = '/splash_screen';
   static const String unsubscribeConfirm = '/unsubscribe_confirm';
   static const String unsubscribeWarn = '/unsubscribe_warn';
@@ -117,7 +117,7 @@ class AppRoutes {
     ),
     GetPage(
       bindings: [TeamCommunityBinding()],
-      name: smartKeyAvailable,
+      name: carSmartKey,
       page: () => SmartKeyAvailablePage(),
     ),
     GetPage(

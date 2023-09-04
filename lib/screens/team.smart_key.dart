@@ -9,7 +9,14 @@ import 'package:url_launcher/url_launcher_string.dart';
 import '/core/app_export.dart';
 
 // ignore: must_be_immutable
-class SmartKeyAvailablePage extends GetWidget<VehicleController> {
+class SmartKeyAvailablePage extends StatefulWidget {
+  @override
+  State<SmartKeyAvailablePage> createState() => _SmartKeyAvailablePageState();
+}
+
+class _SmartKeyAvailablePageState extends State<SmartKeyAvailablePage> {
+  final VehicleController controller = VehicleController.to;
+
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
@@ -25,92 +32,88 @@ class SmartKeyAvailablePage extends GetWidget<VehicleController> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Obx(
-                  () => Padding(
+                Padding(
                     padding: getPadding(
                       left: 16,
                       right: 16,
                     ),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        CustomImageView(
-                          imagePath: Assets.images.imgCarMorUrban.path,
-                          height: getVerticalSize(92),
-                          width: getHorizontalSize(139),
-                        ),
-                        Padding(
-                          padding: getPadding(
-                            top: 8,
-                            bottom: 18,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          CustomImageView(
+                            imagePath: Assets.images.imgCarMorUrban.path,
+                            height: getVerticalSize(92),
+                            width: getHorizontalSize(139),
                           ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Text(
-                                controller.terminalDevice.model ??
-                                    l10ns.carMorning,
-                                overflow: TextOverflow.ellipsis,
-                                textAlign: TextAlign.left,
-                                style: theme.textTheme.titleMedium!.copyWith(
-                                  letterSpacing: getHorizontalSize(0.03),
-                                ),
+                          Padding(
+                              padding: getPadding(
+                                top: 8,
+                                bottom: 18,
                               ),
-                              Padding(
-                                padding: getPadding(top: 4),
-                                child: Text(
-                                  controller.terminalDevice.carNum ??
-                                      l10ns.licensePlatePlaceholder,
-                                  overflow: TextOverflow.ellipsis,
-                                  textAlign: TextAlign.left,
-                                  style: CustomTextStyles.bodySmallOnPrimary
-                                      .copyWith(
-                                          letterSpacing:
-                                              getHorizontalSize(0.02)),
-                                ),
-                              ),
-                              Padding(
-                                padding: getPadding(top: 1),
-                                child: Row(
+                              child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
-                                    FuelStatus(),
-                                    Padding(
-                                      padding: getPadding(
-                                        left: 5,
-                                        top: 7,
-                                        bottom: 1,
+                                    Text(
+                                      controller.terminalDevice.model ??
+                                          l10ns.carMorning,
+                                      overflow: TextOverflow.ellipsis,
+                                      textAlign: TextAlign.left,
+                                      style:
+                                          theme.textTheme.titleMedium!.copyWith(
+                                        letterSpacing: getHorizontalSize(0.03),
                                       ),
+                                    ),
+                                    Padding(
+                                      padding: getPadding(top: 4),
                                       child: Text(
-                                        l10ns.remainingFuelLevel(
-                                            controller.fuelType,
-                                            controller.fuel + '%'),
+                                        controller.terminalDevice.carNum ??
+                                            l10ns.licensePlatePlaceholder,
                                         overflow: TextOverflow.ellipsis,
                                         textAlign: TextAlign.left,
-                                        style:
-                                            theme.textTheme.bodySmall!.copyWith(
-                                          letterSpacing:
-                                              getHorizontalSize(0.02),
-                                        ),
+                                        style: CustomTextStyles
+                                            .bodySmallOnPrimary
+                                            .copyWith(
+                                                letterSpacing:
+                                                    getHorizontalSize(0.02)),
                                       ),
                                     ),
-                                    ArrowRight(
-                                      onTap: () {
-                                        Get.toNamed(AppRoutes.carStatusInfo);
-                                      },
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+                                    Padding(
+                                        padding: getPadding(top: 1),
+                                        child: Row(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              FuelStatus(),
+                                              Padding(
+                                                padding: getPadding(
+                                                  left: 5,
+                                                  top: 7,
+                                                  bottom: 1,
+                                                ),
+                                                child: Text(
+                                                  l10ns.remainingFuelLevel(
+                                                      controller.fuelType,
+                                                      controller.fuel + '%'),
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
+                                                  textAlign: TextAlign.left,
+                                                  style: theme
+                                                      .textTheme.bodySmall!
+                                                      .copyWith(
+                                                    letterSpacing:
+                                                        getHorizontalSize(0.02),
+                                                  ),
+                                                ),
+                                              ),
+                                              ArrowRight(onTap: () {
+                                                Get.toNamed(
+                                                    AppRoutes.carStatusInfo);
+                                              })
+                                            ]))
+                                  ]))
+                        ])),
                 Padding(
                   padding: getPadding(top: 6),
                   child: Row(
@@ -243,37 +246,6 @@ class SmartKeyAvailablePage extends GetWidget<VehicleController> {
                                 ),
                               ],
                             ),
-                            Align(
-                              alignment: Alignment.bottomRight,
-                              child: CustomIconButton(
-                                height: getVerticalSize(70),
-                                width: getHorizontalSize(70),
-                                margin: getMargin(right: 22, top: 30),
-                                decoration: BoxDecoration(
-                                    color: Color(0xFFFFE142),
-                                    shape: BoxShape.circle),
-                                onTap: () => launchUrlString('tel:15666560'),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    CustomImageView(
-                                      svgPath: Assets.svg.imgEdit.path,
-                                      color: Color(0xFF000000),
-                                      width: 22.5,
-                                      height: 22.5,
-                                      margin: getMargin(bottom: 3),
-                                    ),
-                                    Text(
-                                      l10ns.reportAnIncident,
-                                      style: TextStyle(
-                                        color: Color(0xFF000000),
-                                        fontSize: 12,
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ),
                           ],
                         ),
                       ),
@@ -286,7 +258,44 @@ class SmartKeyAvailablePage extends GetWidget<VehicleController> {
             ),
           ),
         ),
+        floatingActionButton: FloatingYellowButton(),
         bottomNavigationBar: BottomTabRouterBar(),
+      ),
+    );
+  }
+}
+
+class FloatingYellowButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Align(
+      alignment: Alignment.bottomRight,
+      child: CustomIconButton(
+        height: getVerticalSize(70),
+        width: getHorizontalSize(70),
+        margin: getMargin(right: 22, top: 30),
+        decoration:
+            BoxDecoration(color: Color(0xFFFFE142), shape: BoxShape.circle),
+        onTap: () => launchUrlString('tel:15666560'),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CustomImageView(
+              svgPath: Assets.svg.imgEdit.path,
+              color: Color(0xFF000000),
+              width: 22.5,
+              height: 22.5,
+              margin: getMargin(bottom: 3),
+            ),
+            Text(
+              l10ns.reportAnIncident,
+              style: TextStyle(
+                color: Color(0xFF000000),
+                fontSize: 12,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

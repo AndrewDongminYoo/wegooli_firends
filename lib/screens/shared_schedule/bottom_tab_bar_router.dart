@@ -20,7 +20,7 @@ class BottomTabRouterBar extends StatelessWidget {
             case BottomBarEnum.dashChat:
               return AppRoutes.chatWithTeam;
             case BottomBarEnum.smartKey:
-              return AppRoutes.smartKeyAvailable;
+              return AppRoutes.carSmartKey;
             case BottomBarEnum.profile:
               return AppRoutes.myProfile;
             default:
@@ -41,7 +41,7 @@ class BottomTabRouterBar extends StatelessWidget {
     switch (currentRoute) {
       case AppRoutes.chatWithTeam:
         return DashChatWithFriendsPage();
-      case AppRoutes.smartKeyAvailable:
+      case AppRoutes.carSmartKey:
         return SmartKeyAvailablePage();
       case AppRoutes.myProfile:
         return MyProfilePage();

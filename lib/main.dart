@@ -41,9 +41,9 @@ class MyApp extends StatelessWidget {
         title: '위굴리 프렌즈',
         initialBinding: InitialBindings(),
         logWriterCallback: (String text, {bool isError = false}) =>
-            isError ? Logger.log(text) : print(text),
+            isError ? Logger.log(text) : print('[DEBUG] $text'),
         navigatorObservers: [MyApp.routeObserver],
-        initialRoute: AppRoutes.appGateway,
+        initialRoute: AppRoutes.splashScreen,
         getPages: AppRoutes.pages);
   }
 }

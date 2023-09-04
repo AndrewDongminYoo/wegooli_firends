@@ -29,6 +29,7 @@ class ConnectionController extends GetxController with ChannelEventHandler {
   // ignore: unused_field
   XFile? image; //TODO: ImagePicker로 가져온 결과물을 담아서 보낸다.
   final ImagePicker picker = ImagePicker();
+
   @override
   void onInit() {
     SendbirdSdk().addChannelEventHandler("dashchat", this);
@@ -53,7 +54,7 @@ class ConnectionController extends GetxController with ChannelEventHandler {
       messages.value = await channel!.getMessagesByTimestamp(
           DateTime.now().millisecondsSinceEpoch * 1000, MessageListParams());
     } catch (e) {
-      print(e);
+      print('ConnectionController.loadSendBird()-> $e');
     }
   }
 

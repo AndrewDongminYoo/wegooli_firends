@@ -9,7 +9,7 @@ import 'package:dio/dio.dart';
 import '/data/models/terminal_model.dart';
 import '/data/models/terminal_request.dart';
 import '/data/models/terminal_update_request.dart';
-import '/src/deserialize.dart';
+import '/data/deserialize.dart';
 
 class TerminalControllerApi {
   final Dio _dio;

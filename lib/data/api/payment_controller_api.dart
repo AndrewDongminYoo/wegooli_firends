@@ -10,7 +10,7 @@ import '/data/models/billing_key_request_model.dart';
 import '/data/models/cancel_request_model.dart';
 import '/data/models/pay_billing_request_model.dart';
 import '/data/models/payment_model.dart';
-import '/src/deserialize.dart';
+import '/data/deserialize.dart';
 
 class PaymentControllerApi {
   final Dio _dio;

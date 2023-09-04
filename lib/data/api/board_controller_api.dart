@@ -7,7 +7,7 @@ import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
 import '/data/models/qn_a.dart';
-import '/src/deserialize.dart';
+import '/data/deserialize.dart';
 
 class BoardControllerApi {
   final Dio _dio;

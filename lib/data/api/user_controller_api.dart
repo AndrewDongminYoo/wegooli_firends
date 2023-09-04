@@ -12,7 +12,7 @@ import '/data/models/member.dart';
 import '/data/models/select_user_dto.dart';
 import '/data/models/user_details_dto.dart';
 import '/data/models/user_dto.dart';
-import '/src/deserialize.dart';
+import '/data/deserialize.dart';
 
 class UserControllerApi {
   final Dio _dio;

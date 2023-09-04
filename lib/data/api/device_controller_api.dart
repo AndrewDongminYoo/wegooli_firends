@@ -7,7 +7,7 @@ import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
 import '/data/models/car_control_history_model.dart';
-import '/src/deserialize.dart';
+import '/data/deserialize.dart';
 
 class DeviceControllerApi {
   final Dio _dio;

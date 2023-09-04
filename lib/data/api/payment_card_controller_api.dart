@@ -8,7 +8,7 @@ import 'package:dio/dio.dart';
 // 🌎 Project imports:
 import '/data/models/payment_card_model.dart';
 import '/data/models/payment_card_request.dart';
-import '/src/deserialize.dart';
+import '/data/deserialize.dart';
 
 class PaymentCardControllerApi {
   final Dio _dio;

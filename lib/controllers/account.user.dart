@@ -1,6 +1,3 @@
-// 🎯 Dart imports:
-import 'dart:collection';
-
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
@@ -156,8 +153,8 @@ class UserController extends GetxController {
         isAuthenticated.value = false;
         return;
       }
-      LinkedHashMap? jsonObj = result as LinkedHashMap;
-      if (jsonObj.containsKey('token')) {
+      Map<String, dynamic>? jsonObj = result as Map<String, dynamic>?;
+      if (jsonObj!.containsKey('token')) {
         String? token = jsonObj['token'] as String?;
         if (token != null) {
           List<String> splitToken = token.split(' ');

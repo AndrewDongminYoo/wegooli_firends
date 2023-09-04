@@ -11,7 +11,7 @@ import '/data/models/service_car_detail_request.dart';
 import '/data/models/service_detail.dart';
 import '/data/models/share_service_model.dart';
 import '/data/models/share_service_request.dart';
-import '/src/deserialize.dart';
+import '/data/deserialize.dart';
 
 class ShareServiceControllerApi {
   final Dio _dio;

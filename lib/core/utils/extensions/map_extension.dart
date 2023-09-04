@@ -1,6 +1,6 @@
 /// 확장 [MapKeyExtension] 문은 Dart의 [Map] 클래스에 대해 `$type:ForKey`이라는 확장을 정의합니다.
 /// 이 확장을 사용하면 [Map] 클래스에서 키에 상응하는 값을 원하는 타입으로 변형해 획득하는 추가 기능을 가질 수 있습니다.
-extension MapKeyExtension on Map {
+extension MapKeyExtension on Map<dynamic, dynamic> {
   /// 주어진 키에 대한 정수 값을 반환하며 키를 찾을 수 없는 경우 선택적 기본값을 반환
   ///
   /// @param [String] key 검색하려는 정수 값의 키를 나타내는 문자열

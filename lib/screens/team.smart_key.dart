@@ -454,7 +454,7 @@ class FuelStatus extends GetView<VehicleController> {
 }
 
 class ArrowLeft extends StatelessWidget {
-  final Function()? onTap;
+  final void Function()? onTap;
   ArrowLeft({super.key, this.onTap});
   @override
   Widget build(BuildContext context) {
@@ -468,7 +468,7 @@ class ArrowLeft extends StatelessWidget {
 }
 
 class ArrowRight extends StatelessWidget {
-  final Function()? onTap;
+  final void Function()? onTap;
   ArrowRight({super.key, this.onTap});
   @override
   Widget build(BuildContext context) {

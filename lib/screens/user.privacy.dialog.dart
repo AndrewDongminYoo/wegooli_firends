@@ -19,7 +19,7 @@ class ConfirmDialog extends StatelessWidget {
   final String cancelText;
   final String confirmText;
   final bool disableCloseBtn;
-  final Function()? confirmFunc;
+  final void Function()? confirmFunc;
   @override
   Widget build(BuildContext context) {
     return AlertDialog(

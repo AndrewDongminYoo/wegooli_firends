@@ -6,8 +6,8 @@ import 'dart:convert';
 import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
-import '/data/models/test_model.dart';
 import '/data/deserialize.dart';
+import '/data/models/test_model.dart';
 
 class TestControllerApi {
   final Dio _dio;

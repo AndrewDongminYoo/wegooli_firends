@@ -6,9 +6,9 @@ import 'dart:convert';
 import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
+import '/data/deserialize.dart';
 import '/data/models/team_model.dart';
 import '/data/models/team_request.dart';
-import '/data/deserialize.dart';
 
 class TeamControllerApi {
   final Dio _dio;

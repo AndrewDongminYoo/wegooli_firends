@@ -24,12 +24,14 @@ class _BottomAppBarDemoState extends State<BottomAppBarDemo>
   final RestorableInt _currentFabLocation = RestorableInt(0);
 
   @override
+
   /// `restorationId` [getter] 메소드는 `BottomAppBarDemo` 위젯의 상태 복원을 위한 고유 식별자를 제공하는 데 사용됩니다.
   /// 이 식별자는 앱을 닫았다가 다시 열 때 위젯의 상태를 저장하고 복원하는 데 사용됩니다.
   /// 고유한 복원 ID를 제공함으로써 프레임워크는 위젯이 제거되었다가 위젯 트리에 다시 추가된 경우에도 위젯의 상태를 올바르게 복원할 수 있습니다.
   String get restorationId => 'bottom_app_bar_demo';
 
   @override
+
   /// 이 함수는 복원 버킷과 초기 복원인지 여부를 나타내는 플래그를 사용하여 객체의 상태를 복원
   ///
   /// Args:
@@ -211,4 +213,3 @@ class _DemoBottomAppBar extends StatelessWidget {
     );
   }
 }
-

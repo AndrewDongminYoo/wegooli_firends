@@ -31,7 +31,8 @@ class ScheduleController extends GetxController {
 
   Map<DateTime, List<Schedule>> get eventSource =>
       Map.fromIterable(List<int>.generate(50, (index) => index),
-          key: (item) => DateTime.utc(firstDay.year, firstDay.month, (item * 5) as int),
+          key: (item) =>
+              DateTime.utc(firstDay.year, firstDay.month, (item * 5) as int),
           value: (item) => List.generate((item % 4 + 1) as int,
               (index) => Schedule(accountId: '사용자 $item | ${index + 1}')))
         ..addAll({

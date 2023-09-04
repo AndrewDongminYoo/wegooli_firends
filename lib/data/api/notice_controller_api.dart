@@ -6,10 +6,10 @@ import 'dart:convert';
 import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
+import '/data/deserialize.dart';
 import '/data/models/notice.dart';
 import '/data/models/push.dart';
 import '/data/models/sms.dart';
-import '/data/deserialize.dart';
 
 class NoticeControllerApi {
   final Dio _dio;

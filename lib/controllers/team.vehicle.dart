@@ -12,7 +12,7 @@ class VehicleController extends GetxController {
   static VehicleController get to => Get.isRegistered<VehicleController>()
       ? Get.find<VehicleController>()
       : Get.put(VehicleController());
-  final String token = PrefUtils.storage.getData('token');
+  final String token = PrefUtils.storage.getToken();
 
   @override
   void onInit() async {

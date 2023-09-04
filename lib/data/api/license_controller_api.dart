@@ -6,9 +6,9 @@ import 'dart:convert';
 import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
+import '/data/deserialize.dart';
 import '/data/models/license_model.dart';
 import '/data/models/license_request.dart';
-import '/data/deserialize.dart';
 
 class LicenseControllerApi {
   final Dio _dio;

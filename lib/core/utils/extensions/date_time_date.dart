@@ -29,8 +29,9 @@ class Date implements Comparable<Date> {
   }
 
   @override
+
   /// 현재 [Date] 개체를 다른 [Date] 개체와 비교
-  /// 
+  ///
   /// Args:
   ///   other [Date]: 비교할 다른 Date 클래스 객체
   int compareTo(Date other) {

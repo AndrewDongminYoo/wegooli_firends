@@ -6,8 +6,8 @@ import 'dart:convert';
 import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
-import '/data/models/qn_a.dart';
 import '/data/deserialize.dart';
+import '/data/models/qn_a.dart';
 
 class BoardControllerApi {
   final Dio _dio;

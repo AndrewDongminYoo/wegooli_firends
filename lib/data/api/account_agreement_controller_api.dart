@@ -6,9 +6,9 @@ import 'dart:convert';
 import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
+import '/data/deserialize.dart';
 import '/data/models/account_agreement_model.dart';
 import '/data/models/account_agreement_request.dart';
-import '/data/deserialize.dart';
 
 class AccountAgreementControllerApi {
   final Dio _dio;

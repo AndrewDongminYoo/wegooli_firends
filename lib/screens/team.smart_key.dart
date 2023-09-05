@@ -259,6 +259,10 @@ class _SmartKeyAvailablePageState extends State<SmartKeyAvailablePage> {
           ),
         ),
         floatingActionButton: FloatingYellowButton(),
+        bottomNavigationBar:
+            CustomBottomNavBar(onChanged: (BottomBarEnum type) {
+          Get.toNamed(getCurrentRoute(type));
+        }),
       ),
     );
   }

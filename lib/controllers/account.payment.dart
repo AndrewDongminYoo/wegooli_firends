@@ -23,7 +23,13 @@ class PaymentCardController extends GetxController {
   bool get cardInputSucceed => false;
   final userController = UserController.to;
   String? _token;
-  String get token => _token ?? PrefUtils.storage.getToken();
+
+  String? get token => _token;
+
+  set token(String? value) {
+    _token = value;
+  }
+  // String get token => _token ?? PrefUtils.storage.getToken();
 
   RxList<PaymentCardModel> _paymentCards = <PaymentCardModel>[].obs;
   RxList<PaymentCardModel> get paymentCards => _paymentCards;

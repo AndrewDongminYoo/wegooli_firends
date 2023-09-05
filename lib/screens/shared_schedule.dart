@@ -34,7 +34,8 @@ class _TeamScheduleShareState extends State<TeamScheduleShare> {
           child: const Icon(Icons.add),
         ),
       ),
-      bottomNavigationBar: CustomBottomNavBar(onChanged: (BottomBarEnum type) {
+      bottomNavigationBar: CustomBottomNavBar(
+        onChanged: (BottomBarEnum type) {
         Get.toNamed(getCurrentRoute(type), id: 1);
       }),
     );

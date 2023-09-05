@@ -13,7 +13,7 @@ class VehicleController extends GetxController {
   static VehicleController get to => Get.isRegistered<VehicleController>()
       ? Get.find<VehicleController>()
       : Get.put(VehicleController());
-  final String token = PrefUtils.storage.getToken();
+  // final String token = PrefUtils.storage.getToken();
   final userController = UserController.to;
   late Rx<SubscriptionModel> subscriptionModel = SubscriptionModel().obs;
   late Rx<CarManagementModel> carManagementModel = CarManagementModel().obs;

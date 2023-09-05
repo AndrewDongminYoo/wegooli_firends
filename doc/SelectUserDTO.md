@@ -21,7 +21,7 @@ import 'package:wegooli_friends/api.dart';
 | **birthday**         | **String** |             | [optional] |
 | **sex**              | **String** |             | [optional] |
 | **delimit**          | **String** |             | [optional] |
-| **nickName**         | **String** |             | [optional] |
+| **nickname**         | **String** |             | [optional] |
 | **profilePicture**   | **String** |             | [optional] |
 | **color**            | **String** |             | [optional] |
 | **deleteAt**         | **String** |             | [optional] |

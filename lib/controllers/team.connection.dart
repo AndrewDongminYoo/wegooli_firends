@@ -83,7 +83,7 @@ class ConnectionController extends GetxController with ChannelEventHandler {
       _chatUser = ChatUser(
         id: model.accountId as String,
         lastName: '',
-        firstName: model.nickName,
+        firstName: model.nickname,
         profileImage: model.profilePicture ?? "",
       );
     }

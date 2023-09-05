@@ -26,7 +26,7 @@ class SelectUserDto extends Equatable {
     this.birthday,
     this.sex,
     this.delimit,
-    this.nickName,
+    this.nickname,
     this.profilePicture,
     this.color,
     this.deleteAt,
@@ -69,8 +69,8 @@ class SelectUserDto extends Equatable {
   @JsonKey(name: r'delimit', required: false, includeIfNull: false)
   final String? delimit;
 
-  @JsonKey(name: r'nickName', required: false, includeIfNull: false)
-  final String? nickName;
+  @JsonKey(name: r'nickname', required: false, includeIfNull: false)
+  final String? nickname;
 
   @JsonKey(name: r'profilePicture', required: false, includeIfNull: false)
   final String? profilePicture;

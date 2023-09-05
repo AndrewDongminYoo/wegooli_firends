@@ -9,10 +9,13 @@ import '/core/app_export.dart';
 
 // ignore: must_be_immutable
 class UnsubscriptionConfirmWarnDialog extends StatelessWidget {
+  final vehicleController = VehicleController.to;
   @override
   Widget build(BuildContext context) {
     return Container(
         width: getHorizontalSize(328),
+        padding: getPadding(all: 0),
+        margin: getMargin(all: 0),
         decoration: AppDecoration.fillOnPrimaryContainer
             .copyWith(borderRadius: BorderRadiusStyle.circleBorder10),
         child: Column(
@@ -53,21 +56,43 @@ class UnsubscriptionConfirmWarnDialog extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         CustomElevatedButton(
-                            text: l10ns.cancel,
-                            buttonStyle: CustomButtonStyles.fillGray400B10
-                                .copyWith(
-                                    fixedSize: MaterialStateProperty.all<Size>(
-                                        Size(getHorizontalSize(164),
-                                            getVerticalSize(52)))),
-                            buttonTextStyle: theme.textTheme.titleMedium!),
+                          width: (context.width / 2) - 19,
+                          height: 52,
+                          text: l10ns.cancel,
+                          buttonStyle: CustomButtonStyles.fillGray400B10
+                              .copyWith(
+                                  shape: MaterialStateProperty.all<
+                                          RoundedRectangleBorder>(
+                                      RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.only(
+                                              bottomLeft:
+                                                  Radius.circular(10)))),
+                                  fixedSize: MaterialStateProperty.all<Size>(
+                                      Size(getHorizontalSize(164),
+                                          getVerticalSize(52)))),
+                          buttonTextStyle: theme.textTheme.titleMedium!,
+                          onTap: () => Get.back(),
+                        ),
                         CustomElevatedButton(
-                            text: l10ns.cancel,
+                            width: (context.width / 2) - 19,
+                            height: 52,
+                            text: '해지하기',
                             buttonStyle: CustomButtonStyles.fillPrimaryBR10
                                 .copyWith(
+                                    shape: MaterialStateProperty.all<
+                                            RoundedRectangleBorder>(
+                                        RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.only(
+                                                bottomRight:
+                                                    Radius.circular(10)))),
                                     fixedSize: MaterialStateProperty.all<Size>(
                                         Size(getHorizontalSize(164),
                                             getVerticalSize(52)))),
-                            buttonTextStyle: theme.textTheme.titleMedium!)
+                            buttonTextStyle: theme.textTheme.titleMedium!,
+                            onTap: () async {
+                              await vehicleController.unsubscribe();
+                              Get.toNamed(AppRoutes.upcomingUnsubscription);
+                            })
                       ]))
             ]));
   }

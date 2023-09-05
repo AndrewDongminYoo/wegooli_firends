@@ -39,7 +39,7 @@ class UserDetailsDTO extends Equatable {
     this.email,
     this.sex,
     this.birthDay,
-    this.nickName,
+    this.nickname,
     this.profilePicture,
     this.add1,
     this.createdAt,
@@ -110,8 +110,8 @@ class UserDetailsDTO extends Equatable {
   @JsonKey(name: r'birthDay', required: false, includeIfNull: false)
   final String? birthDay;
 
-  @JsonKey(name: r'nickName', required: false, includeIfNull: false)
-  final String? nickName;
+  @JsonKey(name: r'nickname', required: false, includeIfNull: false)
+  final String? nickname;
 
   @JsonKey(name: r'profilePicture', required: false, includeIfNull: false)
   final String? profilePicture;

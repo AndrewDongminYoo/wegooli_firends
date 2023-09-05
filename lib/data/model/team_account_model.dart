@@ -17,7 +17,7 @@ class TeamAccountModel extends Equatable {
   TeamAccountModel({
     this.accountId,
     this.color,
-    this.nickName,
+    this.nickname,
     this.profilePicture,
     this.useYn,
     this.joinedAt,
@@ -30,8 +30,8 @@ class TeamAccountModel extends Equatable {
   @JsonKey(name: r'color', required: false, includeIfNull: false)
   final String? color;
 
-  @JsonKey(name: r'nickName', required: false, includeIfNull: false)
-  final String? nickName;
+  @JsonKey(name: r'nickname', required: false, includeIfNull: false)
+  final String? nickname;
 
   @JsonKey(name: r'profilePicture', required: false, includeIfNull: false)
   final String? profilePicture;

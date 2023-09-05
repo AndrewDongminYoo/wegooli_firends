@@ -12,7 +12,7 @@ import 'package:wegooli_friends/api.dart';
 | ------------------ | ---------- | ----------- | ---------- |
 | **accountId**      | **String** |             | [optional] |
 | **color**          | **String** |             | [optional] |
-| **nickName**       | **String** |             | [optional] |
+| **nickname**       | **String** |             | [optional] |
 | **profilePicture** | **String** |             | [optional] |
 | **useYn**          | **String** |             | [optional] |
 | **joinedAt**       | **String** |             | [optional] |

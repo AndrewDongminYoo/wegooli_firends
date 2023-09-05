@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 
 // 📦 Package imports:
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
+import 'package:wegooli_friends/data/model/submit_withdrawal_model.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
@@ -44,7 +46,7 @@ class VehicleController extends GetxController {
     final whoDriving =
         members.firstWhereOrNull((it) => it.accountId == accountId);
     print('team.vehicle.dart#L39 ${whoDriving} is Driving');
-    driverName.text = whoDriving?.nickName ?? '';
+    driverName.text = whoDriving?.nickname ?? '';
   }
 
   bool compose(ScheduleModel schedule) {
@@ -168,7 +170,7 @@ class VehicleController extends GetxController {
     return response.data;
   }
 
-  Future selectSubscriptionInfo() async {
+  Future<void> selectSubscriptionInfo() async {
     final currentUser = userController.currentUser.value;
     // TODO jwt payload에서는 userId로 넘어오는데...id로 파싱해서 안됨...
     print('response : selectSubscriptionInfo::currentUser ${currentUser}');
@@ -184,5 +186,50 @@ class VehicleController extends GetxController {
     }
     print('response.data!.first; ${response.data!.first}');
     subscriptionModel.value = response.data!.first;
+  }
+
+  Future<void> unsubscribe() async {
+    final currentUser = userController.currentUser.value;
+    final teamInfo = userController.teams[0];
+    if (currentUser.id == null || teamInfo.teamSeq == null) {
+      return;
+    }
+    SubmitWithdrawalModel submitWithdrawalModel = new SubmitWithdrawalModel(
+        accountId: currentUser.id,
+        date: DateTime.now().toString(),
+        teamSeq: teamInfo.teamSeq!);
+    await wegooli
+        .getSubscriptionControllerApi()
+        .submitWithdrawal(submitWithdrawalModel: submitWithdrawalModel);
+    await selectSubscriptionInfo();
+  }
+
+  Future<void> subscribe() async {
+    final currentUser = userController.currentUser.value;
+    final teamInfo = userController.teams[0];
+    if (currentUser.id == null || teamInfo.teamSeq == null) {
+      return;
+    }
+    SubmitWithdrawalModel submitWithdrawalModel = new SubmitWithdrawalModel(
+        accountId: currentUser.id, date: null, teamSeq: teamInfo.teamSeq!);
+    await wegooli
+        .getSubscriptionControllerApi()
+        .submitWithdrawal(submitWithdrawalModel: submitWithdrawalModel);
+    await selectSubscriptionInfo();
+  }
+
+  String calcDate() {
+    if (subscriptionModel.value.createdAt == null) {
+      return '-';
+    }
+    if (subscriptionModel.value.withdrawalAt != null) {
+      return subscriptionModel.value.withdrawalAt!.substring(0, 10);
+    } else {
+      DateTime current = DateTime.now();
+      DateTime parsedDate = DateTime.parse(subscriptionModel.value.createdAt!);
+      DateTime modifiedDate =
+          DateTime(current.year, parsedDate.month + 1, parsedDate.day);
+      return DateFormat('yyyy-MM-dd').format(modifiedDate);
+    }
   }
 }

@@ -42,7 +42,7 @@ class MyProfilePage extends GetWidget<UserController> {
                             children: [
                               Text(
                                   controller.currentUser.value.nickname ??
-                                      l10ns.nickName,
+                                      l10ns.nickname,
                                   // overflow: TextOverflow.ellipsis,
                                   // textAlign: TextAlign.left,
                                   style: CustomTextStyles.titleMedium18

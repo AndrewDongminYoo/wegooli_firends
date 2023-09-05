@@ -1,5 +1,6 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 // 📦 Package imports:
 import 'package:get/get_state_manager/get_state_manager.dart';
@@ -8,31 +9,33 @@ import 'package:get/get_state_manager/get_state_manager.dart';
 import '/core/app_export.dart';
 
 class UnsubscriptionConfirm extends GetWidget<UserController> {
+  final vehicleController = VehicleController.to;
   @override
   Widget build(BuildContext context) {
     DateTime expireDate =
-        DateTime.tryParse(controller.carConnection.endAt ?? '') ??
-            DateTime.now();
+        DateTime.tryParse(vehicleController.calcDate()) ?? DateTime.now();
     return SafeArea(
         child: Scaffold(
       backgroundColor: theme.colorScheme.onPrimaryContainer,
       appBar: CustomAppBar.getDefaultAppBar(l10ns.scheduleAnUnsubscribe),
-      body: Container(
-          width: double.maxFinite,
+      body: SingleChildScrollView(
+          // width: mediaQueryData.size.width,
           padding: getPadding(left: 16, top: 52, right: 16, bottom: 52),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               CustomImageView(
-                  imagePath: Assets.images.imgCrying.path,
-                  height: getVerticalSize(123),
-                  width: getHorizontalSize(184)),
+                imagePath: Assets.images.imgGooli5.path,
+                height: getVerticalSize(130),
+                width: getHorizontalSize(157),
+                fit: BoxFit.cover,
+              ),
               Container(
                   width: getHorizontalSize(179),
                   margin: getMargin(top: 50),
                   child: Text(
                       l10ns.areYouSureYouWantToUnsubscribe(
-                          controller.currentUser.value.userNm ?? l10ns.name4),
+                          controller.currentUser.value.nickname ?? '닉네임'),
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.center,
@@ -50,24 +53,39 @@ class UnsubscriptionConfirm extends GetWidget<UserController> {
               Padding(
                   padding: getPadding(top: 87, bottom: 5),
                   child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         CustomElevatedButton(
+                            width: 104,
+                            height: 52,
                             text: l10ns.cancel,
                             buttonStyle: CustomButtonStyles.fillGray400C26
                                 .copyWith(
                                     fixedSize: MaterialStateProperty.all<Size>(
                                         Size(getHorizontalSize(104),
                                             getVerticalSize(52)))),
-                            buttonTextStyle: CustomTextStyles.titleMedium18),
+                            buttonTextStyle: CustomTextStyles.titleMedium18,
+                            onTap: () => Get.back()),
                         CustomElevatedButton(
-                            text: l10ns.cancelingASubscription,
-                            buttonStyle: CustomButtonStyles.fillPrimaryC26
-                                .copyWith(
-                                    fixedSize: MaterialStateProperty.all<Size>(
-                                        Size(getHorizontalSize(216),
-                                            getVerticalSize(52)))),
-                            buttonTextStyle: CustomTextStyles.titleMedium18)
+                          width: 216,
+                          height: 52,
+                          text: l10ns.cancelingASubscription,
+                          buttonStyle: CustomButtonStyles.fillPrimaryC26
+                              .copyWith(
+                                  fixedSize: MaterialStateProperty.all<Size>(
+                                      Size(getHorizontalSize(216),
+                                          getVerticalSize(52)))),
+                          buttonTextStyle: CustomTextStyles.titleMedium18,
+                          onTap: () {
+                            Widget alertDialog = AlertDialog(
+                                backgroundColor: Colors.transparent,
+                                contentPadding: EdgeInsets.zero,
+                                insetPadding: EdgeInsets.only(left: 0),
+                                content: UnsubscriptionConfirmWarnDialog());
+                            Get.dialog(alertDialog);
+                            // vehicleController.unsubscribe();
+                          },
+                        )
                       ]))
             ],
           )),

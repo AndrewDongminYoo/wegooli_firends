@@ -24,7 +24,7 @@ class Account extends Equatable {
     this.createdAt,
     this.updatedAt,
     this.color,
-    this.nickName,
+    this.nickname,
     this.profilePicture,
   });
 
@@ -55,8 +55,8 @@ class Account extends Equatable {
   @JsonKey(name: r'color', required: false, includeIfNull: false)
   final String? color;
 
-  @JsonKey(name: r'nickName', required: false, includeIfNull: false)
-  final String? nickName;
+  @JsonKey(name: r'nickname', required: false, includeIfNull: false)
+  final String? nickname;
 
   @JsonKey(name: r'profilePicture', required: false, includeIfNull: false)
   final String? profilePicture;

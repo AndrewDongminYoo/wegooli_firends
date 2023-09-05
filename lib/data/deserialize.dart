@@ -103,6 +103,9 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
     case 'ShareServiceModel':
       return ShareServiceModel.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'SubscriptionModel':
+      return SubscriptionModel.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'ShareServiceRequest':
       return ShareServiceRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;

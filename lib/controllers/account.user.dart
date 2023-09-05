@@ -21,7 +21,7 @@ class UserController extends GetxController {
   TextEditingController username = TextEditingController();
   TextEditingController password = TextEditingController();
   TextEditingController postCode = TextEditingController();
-  TextEditingController nickname = TextEditingController();
+  TextEditingController nickName = TextEditingController();
   TextEditingController fullName = TextEditingController();
   TextEditingController birthDay = TextEditingController();
   TextEditingController socialId = TextEditingController();
@@ -45,6 +45,13 @@ class UserController extends GetxController {
   RxList<TeamAccountModel> get members => _members;
   set members(RxList<TeamAccountModel> value) {
     _members = value;
+  }
+
+  RxList<TeamAccountConnectionResponse> _teams =
+      RxList<TeamAccountConnectionResponse>([]);
+  RxList<TeamAccountConnectionResponse> get teams => _teams;
+  set teams(RxList<TeamAccountConnectionResponse> value) {
+    _teams = value;
   }
 
   TeamCarConnection _carConnection = TeamCarConnection();
@@ -115,7 +122,7 @@ class UserController extends GetxController {
       detailAddress.text.length > 0 &&
       emailAddress.text.isEmail &&
       password.text.length > 0 &&
-      nickname.text.length > 0 &&
+      nickName.text.length > 0 &&
       rePassword.text.length > 0 &&
       (password.text == rePassword.text);
 
@@ -134,7 +141,7 @@ class UserController extends GetxController {
     emailAddress.dispose();
     password.dispose();
     rePassword.dispose();
-    nickname.dispose();
+    nickName.dispose();
   }
 
   Future<void> authorize() async {
@@ -160,10 +167,12 @@ class UserController extends GetxController {
       print('token: ${token}');
       // BEARER prefix 제거
       var payload = JwtDecoder.decode(token);
-      currentUser.value = UserDTO.fromJson(payload);
+      print('payload : ${payload}');
+      currentUser(UserDTO.fromJson(payload));
       if (JwtDecoder.isExpired(token)) {
         print('❌ 만료된 토큰입니다.');
         isAuthenticated.value = false;
+
         /// refreshToken API Call!!
       } else {
         print('✅ 유효한 토큰입니다.');
@@ -175,10 +184,14 @@ class UserController extends GetxController {
       isAuthenticated.value = false;
       print(switch (e.type) {
         DioExceptionType.connectionError => e.message ?? "연결 오류가 발생했습니다.",
-        DioExceptionType.connectionTimeout => e.message ?? '요청 연결이 5000ms보다 오래 걸렸습니다.',
-        DioExceptionType.sendTimeout => e.message ?? '요청이 데이터를 전송하는 데 timeout 보다 오래 걸렸습니다.',
-        DioExceptionType.receiveTimeout => e.message ?? '데이터를 받는 데 3000ms 보다 오래 걸렸습니다.',
-        DioExceptionType.badCertificate => e.message ?? '요청에 잘못된 인가 코드를 사용했습니다.',
+        DioExceptionType.connectionTimeout =>
+          e.message ?? '요청 연결이 5000ms보다 오래 걸렸습니다.',
+        DioExceptionType.sendTimeout =>
+          e.message ?? '요청이 데이터를 전송하는 데 timeout 보다 오래 걸렸습니다.',
+        DioExceptionType.receiveTimeout =>
+          e.message ?? '데이터를 받는 데 3000ms 보다 오래 걸렸습니다.',
+        DioExceptionType.badCertificate =>
+          e.message ?? '요청에 잘못된 인가 코드를 사용했습니다.',
         DioExceptionType.badResponse => e.message ?? '요청에서 잘못된 상태 코드를 반환했습니다.',
         DioExceptionType.cancel => e.message ?? '요청이 취소되었습니다.',
         DioExceptionType.unknown => e.stackTrace,
@@ -191,16 +204,21 @@ class UserController extends GetxController {
   }
 
   Future<void> findMembers() async {
-    String token = PrefUtils.storage.getToken();
     final api = wegooli.getTeamAccountConnectionControllerApi();
-    print('token : $token');
-    final response = await api.selectTeamAccountList();
+    final response = await api.selectTeamAccountList(
+      accountId: _currentUser.value.id,
+    );
     print('response : $response');
-    List<TeamAccountConnectionResponse>? teams = response.data;
-    if (teams != null && teams.isNotEmpty) {
+    List<TeamAccountConnectionResponse>? teamList = response.data;
+    if (teamList != null && teamList.isNotEmpty) {
+      teams(teamList);
       // NOTE: 현재는 Team이 1개만 존재한다고 가정하기 때문에 첫번째 Team 정보로만 연결한다.
-      teams.first.account
-          ?.forEach((it) => !members.contains(it) ? members.add(it) : null);
+      // teams.first.account
+      //     ?.forEach((it) => !members.contains(it) ? members.add(it) : null);
+      List<TeamAccountModel>? accountList = teams.first.account;
+      if (accountList != null && accountList.isNotEmpty) {
+        members(teams.first.account!);
+      }
     }
     print('members : ${members.toString()}');
   }

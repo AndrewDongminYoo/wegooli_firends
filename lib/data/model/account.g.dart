@@ -20,7 +20,7 @@ Account _$AccountFromJson(Map<String, dynamic> json) => $checkedCreate(
           createdAt: $checkedConvert('createdAt', (v) => v as String?),
           updatedAt: $checkedConvert('updatedAt', (v) => v as String?),
           color: $checkedConvert('color', (v) => v as String?),
-          nickname: $checkedConvert('nickname', (v) => v as String?),
+          nickName: $checkedConvert('nickName', (v) => v as String?),
           profilePicture:
               $checkedConvert('profilePicture', (v) => v as String?),
         );
@@ -46,7 +46,7 @@ Map<String, dynamic> _$AccountToJson(Account instance) {
   writeNotNull('createdAt', instance.createdAt);
   writeNotNull('updatedAt', instance.updatedAt);
   writeNotNull('color', instance.color);
-  writeNotNull('nickname', instance.nickname);
+  writeNotNull('nickName', instance.nickName);
   writeNotNull('profilePicture', instance.profilePicture);
   return val;
 }

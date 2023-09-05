@@ -1,4 +1,3 @@
-// 🌎 Project imports:
 import 'app_localizations.dart';
 
 /// The translations for Korean (`ko`).
@@ -24,8 +23,8 @@ class LocalizedKo extends Localized {
   String get alphanumericSpecialCharacterCombination612Characters => '영문/숫자/특수문자 조합 (6~12자)';
 
   @override
-  String areYouSureYouWantToUnsubscribe(String nickname) {
-    return '$nickname님 정말로 구독을\n해지하시겠습니까?';
+  String areYouSureYouWantToUnsubscribe(String nickName) {
+    return '$nickName님 정말로 구독을\n해지하시겠습니까?';
   }
 
   @override
@@ -250,7 +249,7 @@ class LocalizedKo extends Localized {
   String get name4 => '김희영';
 
   @override
-  String get nickname => '닉네임';
+  String get nickName => '닉네임';
 
   @override
   String get numberOfPeople => '인원';

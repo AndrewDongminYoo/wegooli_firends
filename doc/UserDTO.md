@@ -26,7 +26,7 @@ import 'package:wegooli_friends/api.dart';
 | **memberSeq**      | **int**    |             | [optional] |
 | **password**       | **String** |             | [optional] |
 | **delimit**        | **String** |             | [optional] |
-| **nickname**       | **String** |             | [optional] |
+| **nickName**       | **String** |             | [optional] |
 | **profilePicture** | **String** |             | [optional] |
 | **deleteAt**       | **String** |             | [optional] |
 | **color**          | **String** |             | [optional] |

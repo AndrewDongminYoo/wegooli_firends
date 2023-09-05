@@ -47,6 +47,7 @@ export 'data/api/notice_controller_api.dart';
 export 'data/api/payment_card_controller_api.dart';
 export 'data/api/payment_controller_api.dart';
 export 'data/api/schedule_controller_api.dart';
+export 'data/api/subscription_controller_api.dart';
 export 'data/api/share_service_controller_api.dart';
 export 'data/api/team_account_connection_controller_api.dart';
 export 'data/api/team_car_connection_controller_api.dart';

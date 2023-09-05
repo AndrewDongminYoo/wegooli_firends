@@ -26,11 +26,11 @@
   "@alphanumericSpecialCharacterCombination612Characters": {
     "description": ""
   },
-  "areYouSureYouWantToUnsubscribe": "{nickname}님 정말로 구독을\n해지하시겠습니까?",
+  "areYouSureYouWantToUnsubscribe": "{nickName}님 정말로 구독을\n해지하시겠습니까?",
   "@areYouSureYouWantToUnsubscribe": {
-    "description": "The question at the bottom to confirm 'Warning'.$nickname is user's nickname or name",
+    "description": "The question at the bottom to confirm 'Warning'.$nickName is user's nickName or name",
     "placeholders": {
-      "nickname": {
+      "nickName": {
         "example": "람구리",
         "type": "String"
       }
@@ -334,8 +334,8 @@
   "@name4": {
     "description": "TODO: 이름 예시. 프로덕션 앱에 나가면 안됨!!"
   },
-  "nickname": "닉네임",
-  "@nickname": {
+  "nickName": "닉네임",
+  "@nickName": {
     "description": "별명 또는 사용자 정의 닉네임"
   },
   "numberOfPeople": "인원",

@@ -41,7 +41,7 @@ UserDetailsDTO _$UserDetailsDTOFromJson(Map<String, dynamic> json) =>
           email: $checkedConvert('email', (v) => v as String?),
           sex: $checkedConvert('sex', (v) => v as String?),
           birthDay: $checkedConvert('birthDay', (v) => v as String?),
-          nickname: $checkedConvert('nickname', (v) => v as String?),
+          nickName: $checkedConvert('nickName', (v) => v as String?),
           profilePicture:
               $checkedConvert('profilePicture', (v) => v as String?),
           add1: $checkedConvert('add1', (v) => v as String?),
@@ -89,7 +89,7 @@ Map<String, dynamic> _$UserDetailsDTOToJson(UserDetailsDTO instance) {
   writeNotNull('email', instance.email);
   writeNotNull('sex', instance.sex);
   writeNotNull('birthDay', instance.birthDay);
-  writeNotNull('nickname', instance.nickname);
+  writeNotNull('nickName', instance.nickName);
   writeNotNull('profilePicture', instance.profilePicture);
   writeNotNull('add1', instance.add1);
   writeNotNull('createdAt', instance.createdAt);

@@ -79,7 +79,7 @@ class RegisterZipCode extends GetWidget<UserController> {
     var row5 = Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Padding(
           padding: getPadding(top: 2),
-          child: Text(l10ns.nickname,
+          child: Text(l10ns.nickName,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.left,
               style: theme.textTheme.titleMedium!
@@ -335,7 +335,7 @@ class RegisterZipCode extends GetWidget<UserController> {
                                 row5,
                                 Obx(() => CustomTextFormField(
                                     textInputType: TextInputType.emailAddress,
-                                    controller: controller.nickname,
+                                    controller: controller.nickName,
                                     margin: getMargin(top: 4),
                                     contentPadding: getPadding(
                                         left: 12,

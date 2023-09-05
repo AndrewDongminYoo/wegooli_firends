@@ -208,9 +208,8 @@ class CarStatusInformation extends GetWidget<VehicleController> {
                           ),
                         ),
                         Text(
-                          (controller.terminalDevice.updatedAt ??
-                                  DateTime(2023, 08, 01))
-                              .format(),
+                          controller.carManagementModel.value.oilCheckDate ??
+                              '-',
                           textAlign: TextAlign.right,
                           style: TextStyle(
                             color: Color(0xFF222222),
@@ -238,9 +237,8 @@ class CarStatusInformation extends GetWidget<VehicleController> {
                           ),
                         ),
                         Text(
-                          (controller.terminalDevice.updatedAt ??
-                                  DateTime(2023, 08, 01))
-                              .format(),
+                          controller.carManagementModel.value.tireCheckDate ??
+                              '-',
                           textAlign: TextAlign.right,
                           style: TextStyle(
                             color: Color(0xFF222222),
@@ -268,7 +266,8 @@ class CarStatusInformation extends GetWidget<VehicleController> {
                           ),
                         ),
                         Text(
-                          controller.terminalDevice.status ?? l10ns.good,
+                          controller.carManagementModel.value.batteryStatus ??
+                              l10ns.good,
                           textAlign: TextAlign.right,
                           style: TextStyle(
                             color: Color(0xFF222222),

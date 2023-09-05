@@ -228,4 +228,8 @@ class UserController extends GetxController {
   void logOut() {
     wegooli.getUserControllerApi().logOut();
   }
+
+  int? getTeamSeq() {
+    return teams.first.teamSeq;
+  }
 }

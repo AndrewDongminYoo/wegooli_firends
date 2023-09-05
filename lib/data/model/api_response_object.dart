@@ -1,39 +1,29 @@
-// ignore_for_file: unused_element
-
 // 📦 Package imports:
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
+// 🌎 Project imports:
+import 'result.dart';
+
 part 'api_response_object.g.dart';
 
-@JsonSerializable(
-  checked: true,
-  createToJson: true,
-  disallowUnrecognizedKeys: false,
-  explicitToJson: true,
-)
+@JsonSerializable()
 class ApiResponseObject extends Equatable {
-  /// Returns a new [ApiResponseObject] instance.
-  ApiResponseObject({
-    this.result,
-    this.resultCode,
-    this.resultMsg,
-  });
+  const ApiResponseObject({this.result, this.resultCode, this.resultMsg});
 
-  @JsonKey(name: r'result', required: false, includeIfNull: false)
-  final Object? result;
-
-  @JsonKey(name: r'resultCode', required: false, includeIfNull: false)
+  final Result? result;
   final int? resultCode;
+  final dynamic resultMsg;
 
-  @JsonKey(name: r'resultMsg', required: false, includeIfNull: false)
-  final String? resultMsg;
-
-  factory ApiResponseObject.fromJson(Map<String, dynamic> json) =>
-      _$ApiResponseObjectFromJson(json);
+  factory ApiResponseObject.fromJson(Map<String, dynamic> json) {
+    return _$ApiResponseObjectFromJson(json);
+  }
 
   Map<String, dynamic> toJson() => _$ApiResponseObjectToJson(this);
 
   @override
   bool get stringify => true;
+
+  @override
+  List<Object?> get props => [result, resultCode, resultMsg];
 }

@@ -68,9 +68,10 @@
     "*.arb": "json",
     ".openapi-generator-ignore": "ignore"
   },
-  "jsonToDart.codeGenerator": "Freezed",
+  "jsonToDart.codeGenerator": "JSON",
   "jsonToDart.equality": "Equatable",
   "jsonToDart.sortConstructorsFirst": true,
   "jsonToDart.toString": "Auto",
-  "jsonToDart.fastMode": true
+  "jsonToDart.fastMode": true,
+  "jsonToDart.targetDirectory.path": "/lib/data/"
 }

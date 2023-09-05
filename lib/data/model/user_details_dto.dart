@@ -5,8 +5,8 @@ import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 // 🌎 Project imports:
-import '/data/manual/user_dto.dart';
 import '/data/model/granted_authority.dart';
+import '/data/model/user_dto.dart';
 
 part 'user_details_dto.g.dart';
 

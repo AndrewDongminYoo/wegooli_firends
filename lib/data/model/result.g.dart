@@ -10,6 +10,10 @@ Result _$ResultFromJson(Map<String, dynamic> json) => $checkedCreate(
       'Result',
       json,
       ($checkedConvert) {
+        $checkKeys(
+          json,
+          allowedKeys: const ['token'],
+        );
         final val = Result(
           token: $checkedConvert('token', (v) => v as String?),
         );

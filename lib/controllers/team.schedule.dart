@@ -1,5 +1,6 @@
 // 🎯 Dart imports:
 import 'dart:collection';
+import 'dart:ui';
 
 // 📦 Package imports:
 import 'package:get/get.dart';
@@ -12,7 +13,7 @@ final kToday = DateTime.now();
 
 class ScheduleController extends GetxController {
   final wegooli = WegooliFriends.client;
-
+  final userController = UserController.to;
   DateTime _focusedDay = kToday;
   DateTime get focusedDay => _focusedDay;
   set focusedDay(DateTime value) {
@@ -30,7 +31,7 @@ class ScheduleController extends GetxController {
     ..addAll(eventSource);
 
   Map<DateTime, List<Schedule>> get eventSource =>
-      Map.fromIterable(List<int>.generate(50, (index) => index),
+      Map.fromIterable(List<int>.generate(0, (index) => index),
           key: (item) =>
               DateTime.utc(firstDay.year, firstDay.month, (item * 5) as int),
           value: (item) => List.generate((item % 4 + 1) as int,
@@ -38,10 +39,16 @@ class ScheduleController extends GetxController {
         ..addAll({
           kToday: [
             // TODO: 실제 데이터로 변경
-            Schedule(accountId: l10ns.name2),
-            Schedule(accountId: l10ns.name3),
+            // Schedule(accountId: l10ns.name2),
+            // Schedule(accountId: l10ns.name3),
           ],
         });
+
+  @override
+  void onInit() async {
+    eventSource.addAll({kToday: await retrieveSchedules()});
+    super.onInit();
+  }
 
   DateTime? _firstDay;
   DateTime get firstDay =>
@@ -73,4 +80,49 @@ class ScheduleController extends GetxController {
   CalendarFormat calendarFormat = CalendarFormat.month;
   RangeSelectionMode rangeSelectionMode = RangeSelectionMode
       .toggledOff; // Can be toggled on/off by long pressing a date
+
+  Color? getColor(String accountId) {
+    String? hexColor = userController.members
+        .firstWhereOrNull((member) => member.accountId == accountId)
+        ?.color
+        ?.substring(1);
+    if (hexColor == null) {
+      return null;
+    }
+    // Color type이 다름
+    // return colorFromHex(hex);
+    final rgb = colorFromHex(hexColor).toRgbColor();
+    return Color.fromRGBO(rgb.r.toInt(), rgb.g.toInt(), rgb.b.toInt(), 0);
+  }
+
+  Future<List<Schedule>> retrieveSchedules() async {
+    if (userController.teams.isEmpty) {
+      return List.empty();
+    }
+    int? teamSeq = userController.teams[0].teamSeq;
+    if (teamSeq == null) {
+      return List.empty();
+    }
+    final response = await wegooli
+        .getScheduleControllerApi()
+        .selectScheduleList(teamSeq: teamSeq);
+    final schedules = response.data;
+    if (schedules == null) {
+      return List.empty();
+    }
+    print('schedules $schedules');
+    return schedules
+        .map((it) => Schedule(
+              accountId: it.accountId!,
+              seq: it.seq,
+              teamSeq: it.teamSeq,
+              delYn: it.delYn,
+              startAt: it.startAt,
+              endAt: it.endAt,
+              createdAt: it.createdAt,
+              updatedAt: it.updatedAt,
+              highlightColor: getColor(it.accountId!),
+            ))
+        .toList();
+  }
 }

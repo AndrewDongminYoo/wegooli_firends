@@ -40,4 +40,6 @@ class PayBillingRequestModel extends Equatable {
 
   @override
   bool get stringify => true;
+  @override
+  List<Object?> get props => ['amount', 'customerKey', 'orderId', 'orderName'];
 }

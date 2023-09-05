@@ -45,4 +45,11 @@ class BillingKeyRequestModel extends Equatable {
 
   @override
   bool get stringify => true;
+  @override
+  List<Object?> get props => [
+        'cardExpirationMonth',
+        'cardExpirationYear',
+        'cardNumber',
+        'customerKey'
+      ];
 }

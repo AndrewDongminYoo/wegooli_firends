@@ -52,4 +52,14 @@ class CarControlHistoryModel extends Equatable {
 
   @override
   bool get stringify => true;
+  @override
+  List<Object?> get props => [
+        'seq',
+        'createdAt',
+        'terminalSeq',
+        'carNum',
+        'accountId',
+        'context',
+        'successYn'
+      ];
 }

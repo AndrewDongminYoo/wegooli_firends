@@ -92,4 +92,24 @@ class TerminalModel extends Equatable {
 
   @override
   bool get stringify => true;
+  @override
+  List<Object?> get props => [
+        'seq',
+        'delYn',
+        'createdAt',
+        'updatedAt',
+        'carNum',
+        'phoneNumber',
+        'status',
+        'seats',
+        'model',
+        'volt',
+        'fuelType',
+        'fuel',
+        'segment',
+        'accountId',
+        'teamSeq',
+        'carImage',
+        'carNickName'
+      ];
 }

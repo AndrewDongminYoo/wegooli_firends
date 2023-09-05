@@ -76,4 +76,20 @@ class LicenseRequest extends Equatable {
 
   @override
   bool get stringify => true;
+  @override
+  List<Object?> get props => [
+        'seq',
+        'memberSeq',
+        'koreanYn',
+        'licenseClass',
+        'licenseArea',
+        'licenseYear',
+        'licenseNum',
+        'expiredDate',
+        'issuedDate',
+        'signature',
+        'delYn',
+        'createdAt',
+        'updatedAt'
+      ];
 }

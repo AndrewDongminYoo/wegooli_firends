@@ -59,4 +59,16 @@ class Sms extends Equatable {
 
   @override
   bool get stringify => true;
+  @override
+  List<Object?> get props => [
+        'seq',
+        'delYn',
+        'createdAt',
+        'updatedAt',
+        'title',
+        'content',
+        'file',
+        'bm',
+        'createdBy'
+      ];
 }

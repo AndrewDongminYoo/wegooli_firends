@@ -100,4 +100,26 @@ class CarHistoryDTO extends Equatable {
 
   @override
   bool get stringify => true;
+  @override
+  List<Object?> get props => [
+        'seq',
+        'terminalSeq',
+        'carNum',
+        'status',
+        'lat',
+        'lon',
+        'volt',
+        'fuel',
+        'flDoorClose',
+        'frDoorClose',
+        'blDoorClose',
+        'brDoorClose',
+        'distance',
+        'speed',
+        'flDoorLock',
+        'frDoorLock',
+        'blDoorLock',
+        'brDoorLock',
+        'createdAt'
+      ];
 }

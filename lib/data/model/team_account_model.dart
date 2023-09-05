@@ -52,4 +52,14 @@ class TeamAccountModel extends Equatable {
 
   @override
   bool get stringify => true;
+  @override
+  List<Object?> get props => [
+        'accountId',
+        'color',
+        'nickName',
+        'profilePicture',
+        'useYn',
+        'joinedAt',
+        'leavedAt'
+      ];
 }

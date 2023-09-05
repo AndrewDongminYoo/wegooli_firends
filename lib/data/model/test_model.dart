@@ -68,4 +68,18 @@ class TestModel extends Equatable {
 
   @override
   bool get stringify => true;
+  @override
+  List<Object?> get props => [
+        'seq',
+        'postYn',
+        'title',
+        'cont',
+        'viewCnt',
+        'busiRegNum',
+        'bmId',
+        'delYn',
+        'groupNo',
+        'test1',
+        'test2'
+      ];
 }

@@ -42,7 +42,7 @@ class UserDto extends Equatable {
 
   @override
   bool get stringify => true;
-
+  @override
   @override
   List<Object?> get props {
     return [

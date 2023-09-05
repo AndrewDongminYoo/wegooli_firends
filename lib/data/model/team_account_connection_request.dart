@@ -40,4 +40,6 @@ class TeamAccountConnectionRequest extends Equatable {
 
   @override
   bool get stringify => true;
+  @override
+  List<Object?> get props => ['teamSeq', 'accountId', 'joinedAt', 'leavedAt'];
 }

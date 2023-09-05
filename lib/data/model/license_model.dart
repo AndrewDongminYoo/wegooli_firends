@@ -76,4 +76,20 @@ class LicenseModel extends Equatable {
 
   @override
   bool get stringify => true;
+  @override
+  List<Object?> get props => [
+        'seq',
+        'delYn',
+        'createdAt',
+        'updatedAt',
+        'memberSeq',
+        'koreanYn',
+        'licenseClass',
+        'licenseArea',
+        'licenseYear',
+        'licenseNum',
+        'expiredDate',
+        'issuedDate',
+        'signature'
+      ];
 }

@@ -59,4 +59,35 @@ class Notice extends Equatable {
 
   @override
   bool get stringify => true;
+  @override
+  List<Object?> get props => [
+        'userDto',
+        'authorities',
+        'name',
+        'id',
+        'enabled',
+        'color',
+        'password',
+        'delYn',
+        'memberSeq',
+        'seq',
+        'username',
+        'delimit',
+        'updatedAt',
+        'customerKey',
+        'phoneNumber',
+        'add2',
+        'zipCode',
+        'email',
+        'sex',
+        'birthDay',
+        'nickName',
+        'profilePicture',
+        'add1',
+        'createdAt',
+        'deleteAt',
+        'activeYn',
+        'accountNonExpired',
+        'accountNonLocked'
+      ];
 }

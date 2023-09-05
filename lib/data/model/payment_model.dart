@@ -100,4 +100,26 @@ class PaymentModel extends Equatable {
 
   @override
   bool get stringify => true;
+  @override
+  List<Object?> get props => [
+        'paymentKey',
+        'status',
+        'lastTransactionKey',
+        'orderId',
+        'orderName',
+        'requestedAt',
+        'approvedAt',
+        'cancelReason',
+        'canceledAt',
+        'cancelAmount',
+        'type',
+        'currency',
+        'totalAmount',
+        'balanceAmount',
+        'suppliedAmount',
+        'vat',
+        'taxFreeAmount',
+        'taxExemptionAmount',
+        'method'
+      ];
 }

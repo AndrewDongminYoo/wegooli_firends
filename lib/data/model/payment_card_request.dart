@@ -60,4 +60,16 @@ class PaymentCardRequest extends Equatable {
 
   @override
   bool get stringify => true;
+  @override
+  List<Object?> get props => [
+        'memberSeq',
+        'cardNumber',
+        'defaultYn',
+        'password',
+        'rrn',
+        'crn',
+        'expirationMonth',
+        'expirationYear',
+        'billingKey'
+      ];
 }

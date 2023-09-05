@@ -34,7 +34,7 @@
     "memberSeq": 1,
     "nickname": "테스트",
     "userEmail": "andrew@wegooli.com",
-    "r@id": "test",
+    "id": "test",
     "add2": "16th 1604th",
     "add1": "Seoul, Kangnam-gu, Yeoksam-dong 602 Sam Bldg",
     "sub": "1",
@@ -44,7 +44,7 @@
     "__className": "api_response_object",
     "__path": "/lib/data/model/",
     "result": {
-      "token": "BEARER eyJyZWdEYXRlIjoxNjkzODkxMjIzMjcyLCJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhY3RpdmVZbiI6IlkiLCJ1c2VyTm0iOiJhYWEiLCJwaG9uZU51bWJlciI6ImFzZGZhcyIsImNvbG9yIjoiI0I0MzJCRSIsIm1lbWJlclNlcSI6MSwibmlja25hbWUiOiLthYzsiqTtirgiLCJ1c2VyRW1haWwiOiJhd2VzZmF3ZSIsImlkIjoidGVzdCIsImFkZDIiOiIyMjIiLCJhZGQxIjoiMTExIiwic3ViIjoiMSIsImV4cCI6MTY5MzkyMDAyM30._6YyfTC9PNVNowSdtVx08dhcM4pDqH2XhCsvR0OfsJM"
+      "token": "BEARER asdasdas.asdasdas.adsasdas"
     },
     "resultCode": 200,
     "resultMsg": null
@@ -52,6 +52,6 @@
   {
     "__className": "result",
     "__path": "/lib/data/model/",
-    "token": "BEARER eyJyZWdEYXRlIjoxNjkzODkxMjIzMjcyLCJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhY3RpdmVZbiI6IlkiLCJ1c2VyTm0iOiJhYWEiLCJwaG9uZU51bWJlciI6ImFzZGZhcyIsImNvbG9yIjoiI0I0MzJCRSIsIm1lbWJlclNlcSI6MSwibmlja25hbWUiOiLthYzsiqTtirgiLCJ1c2VyRW1haWwiOiJhd2VzZmF3ZSIsImlkIjoidGVzdCIsImFkZDIiOiIyMjIiLCJhZGQxIjoiMTExIiwic3ViIjoiMSIsImV4cCI6MTY5MzkyMDAyM30._6YyfTC9PNVNowSdtVx08dhcM4pDqH2XhCsvR0OfsJM"
+    "token": "BEARER asdasdas.asdasdas.adsasdas"
   }
 ]

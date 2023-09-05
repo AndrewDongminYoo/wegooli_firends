@@ -71,4 +71,19 @@ class QnA extends Equatable {
 
   @override
   bool get stringify => true;
+  @override
+  List<Object?> get props => [
+        'seq',
+        'delYn',
+        'createdAt',
+        'updatedAt',
+        'category',
+        'title',
+        'content',
+        'file',
+        'answer',
+        'status',
+        'createdBy',
+        'answeredAt'
+      ];
 }

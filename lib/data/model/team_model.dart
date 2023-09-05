@@ -56,4 +56,15 @@ class TeamModel extends Equatable {
 
   @override
   bool get stringify => true;
+  @override
+  List<Object?> get props => [
+        'seq',
+        'delYn',
+        'createdAt',
+        'updatedAt',
+        'accountId',
+        'teamCode',
+        'name',
+        'contract'
+      ];
 }

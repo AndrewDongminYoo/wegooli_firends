@@ -56,4 +56,15 @@ class ScheduleRequest extends Equatable {
 
   @override
   bool get stringify => true;
+  @override
+  List<Object?> get props => [
+        'seq',
+        'delYn',
+        'createdAt',
+        'updatedAt',
+        'teamSeq',
+        'accountId',
+        'startAt',
+        'endAt'
+      ];
 }

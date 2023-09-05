@@ -68,4 +68,18 @@ class CarRequest extends Equatable {
 
   @override
   bool get stringify => true;
+  @override
+  List<Object?> get props => [
+        'seq',
+        'delYn',
+        'createdAt',
+        'updatedAt',
+        'carNum',
+        'model',
+        'status',
+        'seats',
+        'fuelType',
+        'segment',
+        'fee'
+      ];
 }

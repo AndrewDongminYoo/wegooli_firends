@@ -32,4 +32,6 @@ class DeviceOption extends Equatable {
 
   @override
   bool get stringify => true;
+  @override
+  List<Object?> get props => ['seq', 'optName'];
 }

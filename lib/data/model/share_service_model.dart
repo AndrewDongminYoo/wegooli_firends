@@ -64,4 +64,17 @@ class ShareServiceModel extends Equatable {
 
   @override
   bool get stringify => true;
+  @override
+  List<Object?> get props => [
+        'shareServiceSeq',
+        'serviceName',
+        'serviceDes',
+        'carSeq',
+        'carName',
+        'carImg',
+        'monthlyPay',
+        'personalPay',
+        'nowSub',
+        'maxSub'
+      ];
 }

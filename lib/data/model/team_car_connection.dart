@@ -56,4 +56,15 @@ class TeamCarConnection extends Equatable {
 
   @override
   bool get stringify => true;
+  @override
+  List<Object?> get props => [
+        'seq',
+        'teamSeq',
+        'carNum',
+        'startAt',
+        'endAt',
+        'createdAt',
+        'updatedAt',
+        'activeYn'
+      ];
 }

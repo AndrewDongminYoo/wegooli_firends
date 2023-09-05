@@ -13,6 +13,8 @@ class VehicleController extends GetxController {
       ? Get.find<VehicleController>()
       : Get.put(VehicleController());
   final String token = PrefUtils.storage.getToken();
+  final userController = UserController.to;
+  Rx<SubscriptionModel> subscriptionModel = SubscriptionModel().obs;
 
   @override
   void onInit() async {
@@ -29,11 +31,13 @@ class VehicleController extends GetxController {
     bool using = scheduleList.data!.any(compose);
     availableNow.value = using;
     print('done : $using');
+    await selectSubscriptionInfo();
+
     super.onInit();
   }
 
   void getClient(String? accountId) {
-    final List<TeamAccountModel> members = UserController.to.members;
+    final List<TeamAccountModel> members = userController.members;
     final whoDriving =
         members.firstWhereOrNull((it) => it.accountId == accountId);
     print('team.vehicle.dart#L39 ${whoDriving} is Driving');
@@ -65,6 +69,7 @@ class VehicleController extends GetxController {
       return _terminalDevice!;
     }
   }
+
   set terminalDevice(TerminalModel value) {
     _terminalDevice = value;
   }
@@ -158,5 +163,23 @@ class VehicleController extends GetxController {
         carNum: terminalDevice.carNum as String);
     print('response : ${response}');
     return response.data;
+  }
+
+  Future selectSubscriptionInfo() async {
+    final currentUser = userController.currentUser.value;
+    // TODO jwt payload에서는 userId로 넘어오는데...id로 파싱해서 안됨...
+    print('response : selectSubscriptionInfo::currentUser ${currentUser}');
+    final teamInfo = userController.teams[0];
+    if (currentUser.id == null || teamInfo.teamSeq == null) {
+      return;
+    }
+    final subscriptionControllerApi = wegooli.getSubscriptionControllerApi();
+    final response = await subscriptionControllerApi.selectSubscriptionInfo(
+        accountId: currentUser.id!, teamSeq: teamInfo.teamSeq!);
+    if (response.data == null) {
+      return;
+    }
+    print('response.data!.first; ${response.data!.first}');
+    subscriptionModel.value = response.data!.first;
   }
 }

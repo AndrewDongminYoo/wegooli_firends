@@ -47,6 +47,13 @@ class UserController extends GetxController {
     _members = value;
   }
 
+  RxList<TeamAccountConnectionResponse> _teams =
+      RxList<TeamAccountConnectionResponse>([]);
+  RxList<TeamAccountConnectionResponse> get teams => _teams;
+  set teams(RxList<TeamAccountConnectionResponse> value) {
+    _teams = value;
+  }
+
   TeamCarConnection _carConnection = TeamCarConnection();
   TeamCarConnection get carConnection => _carConnection;
   set carConnection(TeamCarConnection value) {
@@ -197,16 +204,21 @@ class UserController extends GetxController {
   }
 
   Future<void> findMembers() async {
-    String token = PrefUtils.storage.getToken();
     final api = wegooli.getTeamAccountConnectionControllerApi();
-    print('token : $token');
-    final response = await api.selectTeamAccountList();
+    final response = await api.selectTeamAccountList(
+      accountId: _currentUser.value.id,
+    );
     print('response : $response');
-    List<TeamAccountConnectionResponse>? teams = response.data;
-    if (teams != null && teams.isNotEmpty) {
+    List<TeamAccountConnectionResponse>? teamList = response.data;
+    if (teamList != null && teamList.isNotEmpty) {
+      teams(teamList);
       // NOTE: 현재는 Team이 1개만 존재한다고 가정하기 때문에 첫번째 Team 정보로만 연결한다.
-      teams.first.account
-          ?.forEach((it) => !members.contains(it) ? members.add(it) : null);
+      // teams.first.account
+      //     ?.forEach((it) => !members.contains(it) ? members.add(it) : null);
+      List<TeamAccountModel>? accountList = teams.first.account;
+      if (accountList != null && accountList.isNotEmpty) {
+        members(teams.first.account!);
+      }
     }
     print('members : ${members.toString()}');
   }

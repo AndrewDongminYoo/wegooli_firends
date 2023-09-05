@@ -418,7 +418,7 @@ class UserControllerApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
+    final _queryParameters = <String, String>{
       r'id': id,
       r'password': password,
     };

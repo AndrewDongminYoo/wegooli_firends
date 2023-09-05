@@ -1,25 +1,27 @@
-// 🎯 Dart imports:
-import 'dart:async';
-import 'dart:convert';
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
 
-// 📦 Package imports:
+import 'dart:async';
+
+// ignore: unused_import
+import 'dart:convert';
+import 'package:wegooli_friends/data/deserialize.dart';
 import 'package:dio/dio.dart';
 
-// 🌎 Project imports:
-import '/data/deserialize.dart';
-import '/data/models/team_account_connection_model.dart';
-import '/data/models/team_account_connection_request.dart';
-import '/data/models/team_account_connection_response.dart';
+import 'package:wegooli_friends/data/model/car_management_model.dart';
 
-class TeamAccountConnectionControllerApi {
+class CarManagementControllerApi {
+
   final Dio _dio;
 
-  const TeamAccountConnectionControllerApi(this._dio);
+  const CarManagementControllerApi(this._dio);
 
-  /// deleteTeamAccount
+  /// deleteCarManagement
+  /// 
   ///
   /// Parameters:
-  /// * [seq]
+  /// * [seq] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -27,9 +29,9 @@ class TeamAccountConnectionControllerApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [String] as data
+  /// Returns a [Future] containing a [Response] with a [bool] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<String>> deleteTeamAccount({
+  Future<Response<bool>> deleteCarManagement({ 
     required int seq,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -38,8 +40,7 @@ class TeamAccountConnectionControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/team/account/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
+    final _path = r'/car/management/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -66,13 +67,11 @@ class TeamAccountConnectionControllerApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    String? _responseData;
+    bool? _responseData;
 
     try {
-      final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<String, String>(rawData, 'String', growable: true);
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<bool, bool>(rawData, 'bool', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -83,7 +82,7 @@ class TeamAccountConnectionControllerApi {
       );
     }
 
-    return Response<String>(
+    return Response<bool>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -95,10 +94,11 @@ class TeamAccountConnectionControllerApi {
     );
   }
 
-  /// insertTeamAccount
+  /// insertCarManagement
+  /// 
   ///
   /// Parameters:
-  /// * [teamAccountConnectionRequest]
+  /// * [carManagementModel] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -106,10 +106,10 @@ class TeamAccountConnectionControllerApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [String] as data
+  /// Returns a [Future] containing a [Response] with a [int] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<String>> insertTeamAccount({
-    required TeamAccountConnectionRequest teamAccountConnectionRequest,
+  Future<Response<int>> insertCarManagement({ 
+    required CarManagementModel carManagementModel,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -117,7 +117,7 @@ class TeamAccountConnectionControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/team/account';
+    final _path = r'/car/management';
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -140,10 +140,10 @@ class TeamAccountConnectionControllerApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = jsonEncode(teamAccountConnectionRequest);
-    } catch (error, stackTrace) {
+_bodyData=jsonEncode(carManagementModel);
+    } catch(error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
+         requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -162,13 +162,11 @@ class TeamAccountConnectionControllerApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    String? _responseData;
+    int? _responseData;
 
     try {
-      final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<String, String>(rawData, 'String', growable: true);
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<int, int>(rawData, 'int', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -179,7 +177,7 @@ class TeamAccountConnectionControllerApi {
       );
     }
 
-    return Response<String>(
+    return Response<int>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -191,11 +189,11 @@ class TeamAccountConnectionControllerApi {
     );
   }
 
-  /// inviteTeamAccount
+  /// selectCarManagement
+  /// 
   ///
   /// Parameters:
-  /// * [accountId]
-  /// * [code]
+  /// * [seq] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -203,90 +201,9 @@ class TeamAccountConnectionControllerApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [String] as data
+  /// Returns a [Future] containing a [Response] with a [CarManagementModel] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<String>> inviteTeamAccount({
-    required String accountId,
-    required String code,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/team/account/{accountId}/{code}'
-        .replaceAll('{' r'accountId' '}', accountId.toString())
-        .replaceAll('{' r'code' '}', code.toString());
-    final _options = Options(
-      method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'jwtAuth',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
-
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    String? _responseData;
-
-    try {
-      final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<String, String>(rawData, 'String', growable: true);
-    } catch (error, stackTrace) {
-      throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    return Response<String>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
-  }
-
-  /// selectTeamAccount
-  ///
-  /// Parameters:
-  /// * [seq]
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future] containing a [Response] with a [TeamAccountConnectionModel] as data
-  /// Throws [DioException] if API call or serialization fails
-  Future<Response<TeamAccountConnectionModel>> selectTeamAccount({
+  Future<Response<CarManagementModel>> selectCarManagement({ 
     required int seq,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -295,8 +212,7 @@ class TeamAccountConnectionControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/team/account/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
+    final _path = r'/car/management/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -323,15 +239,11 @@ class TeamAccountConnectionControllerApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    TeamAccountConnectionModel? _responseData;
+    CarManagementModel? _responseData;
 
     try {
-      final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<TeamAccountConnectionModel, TeamAccountConnectionModel>(
-              rawData, 'TeamAccountConnectionModel',
-              growable: true);
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<CarManagementModel, CarManagementModel>(rawData, 'CarManagementModel', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -342,7 +254,7 @@ class TeamAccountConnectionControllerApi {
       );
     }
 
-    return Response<TeamAccountConnectionModel>(
+    return Response<CarManagementModel>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -354,16 +266,11 @@ class TeamAccountConnectionControllerApi {
     );
   }
 
-  /// selectTeamAccountList
+  /// selectCarManagementList
+  /// 
   ///
   /// Parameters:
-  /// * [teamSeq]
-  /// * [accountId]
-  /// * [startJoinedAt]
-  /// * [endJoinedAt]
-  /// * [startLeavedAt]
-  /// * [endLeavedAt]
-  /// * [isLeaved]
+  /// * [request] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -371,16 +278,10 @@ class TeamAccountConnectionControllerApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [List<TeamAccountConnectionResponse>] as data
+  /// Returns a [Future] containing a [Response] with a [List<CarManagementModel>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<List<TeamAccountConnectionResponse>>> selectTeamAccountList({
-    int? teamSeq,
-    String? accountId,
-    String? startJoinedAt,
-    String? endJoinedAt,
-    String? startLeavedAt,
-    String? endLeavedAt,
-    String? isLeaved,
+  Future<Response<List<CarManagementModel>>> selectCarManagementList({ 
+    required CarManagementModel request,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -388,7 +289,7 @@ class TeamAccountConnectionControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/team/account';
+    final _path = r'/car/management';
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -408,13 +309,7 @@ class TeamAccountConnectionControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (teamSeq != null) r'teamSeq': teamSeq,
-      if (accountId != null) r'accountId': accountId,
-      if (startJoinedAt != null) r'startJoinedAt': startJoinedAt,
-      if (endJoinedAt != null) r'endJoinedAt': endJoinedAt,
-      if (startLeavedAt != null) r'startLeavedAt': startLeavedAt,
-      if (endLeavedAt != null) r'endLeavedAt': endLeavedAt,
-      if (isLeaved != null) r'isLeaved': isLeaved,
+      r'request': request,
     };
 
     final _response = await _dio.request<Object>(
@@ -426,17 +321,11 @@ class TeamAccountConnectionControllerApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<TeamAccountConnectionResponse>? _responseData;
+    List<CarManagementModel>? _responseData;
 
     try {
-      final rawData = _response.data;
-      print('AAA : rawData : ${rawData}');
-      _responseData = rawData == null
-          ? null
-          : deserialize<List<TeamAccountConnectionResponse>,
-                  TeamAccountConnectionResponse>(
-              rawData, 'List<TeamAccountConnectionResponse>',
-              growable: true);
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<List<CarManagementModel>, CarManagementModel>(rawData, 'List<CarManagementModel>', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -447,7 +336,7 @@ class TeamAccountConnectionControllerApi {
       );
     }
 
-    return Response<List<TeamAccountConnectionResponse>>(
+    return Response<List<CarManagementModel>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -458,4 +347,102 @@ class TeamAccountConnectionControllerApi {
       extra: _response.extra,
     );
   }
+
+  /// updateCarManagement
+  /// 
+  ///
+  /// Parameters:
+  /// * [carManagementModel] 
+  /// * [seq] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [int] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<int>> updateCarManagement({ 
+    required CarManagementModel carManagementModel,
+    required int seq,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/car/management/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
+    final _options = Options(
+      method: r'PUT',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'jwtAuth',
+          },
+        ],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+_bodyData=jsonEncode(carManagementModel);
+    } catch(error, stackTrace) {
+      throw DioException(
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    int? _responseData;
+
+    try {
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<int, int>(rawData, 'int', growable: true);
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<int>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
 }

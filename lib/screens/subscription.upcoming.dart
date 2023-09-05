@@ -54,23 +54,30 @@ class UpcomingUnsubscription extends GetWidget<VehicleController> {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Text(l10ns.carMorning,
+                                  Obx(() => Text(
+                                      controller.subscriptionModel.value
+                                              .carModel ??
+                                          '모델',
                                       overflow: TextOverflow.ellipsis,
                                       textAlign: TextAlign.left,
                                       style: CustomTextStyles.titleMedium18
                                           .copyWith(
                                               letterSpacing:
-                                                  getHorizontalSize(0.04))),
-                                  Padding(
+                                                  getHorizontalSize(0.04)))),
+                                  Obx(() => Padding(
                                       padding: getPadding(top: 5, bottom: 1),
-                                      child: Text(l10ns.licensePlatePlaceholder,
+                                      child: Text(
+                                          controller.subscriptionModel.value
+                                                  .carNumber ??
+                                              '12가 3456',
                                           overflow: TextOverflow.ellipsis,
                                           textAlign: TextAlign.left,
                                           style: CustomTextStyles
                                               .bodySmallOnPrimary
                                               .copyWith(
                                                   letterSpacing:
-                                                      getHorizontalSize(0.02))))
+                                                      getHorizontalSize(
+                                                          0.02)))))
                                 ])),
                         Padding(
                             padding: getPadding(left: 9, top: 14, right: 9),
@@ -85,13 +92,14 @@ class UpcomingUnsubscription extends GetWidget<VehicleController> {
                                           .copyWith(
                                               letterSpacing:
                                                   getHorizontalSize(0.03))),
-                                  Text(controller.subMonthlyPrice,
+                                  Obx(() => Text(
+                                      "${controller.subscriptionModel.value.fee} 원",
                                       overflow: TextOverflow.ellipsis,
                                       textAlign: TextAlign.left,
                                       style: theme.textTheme.bodyLarge!
                                           .copyWith(
                                               letterSpacing:
-                                                  getHorizontalSize(0.03)))
+                                                  getHorizontalSize(0.03))))
                                 ])),
                         Padding(
                             padding: getPadding(left: 9, top: 3, right: 9),
@@ -106,13 +114,14 @@ class UpcomingUnsubscription extends GetWidget<VehicleController> {
                                           .copyWith(
                                               letterSpacing:
                                                   getHorizontalSize(0.03))),
-                                  Text("2023.07.01~2023.08.01",
+                                  Obx(() => Text(
+                                      '${controller.subscriptionModel.value.createdAt?.substring(0,10)}~${controller.subscriptionModel.value.endAt?.substring(0, 10)}',
                                       overflow: TextOverflow.ellipsis,
                                       textAlign: TextAlign.left,
                                       style: theme.textTheme.bodyLarge!
                                           .copyWith(
                                               letterSpacing:
-                                                  getHorizontalSize(0.03)))
+                                                  getHorizontalSize(0.03))))
                                 ])),
                         Padding(
                             padding: getPadding(left: 9, top: 3, right: 9),
@@ -127,13 +136,14 @@ class UpcomingUnsubscription extends GetWidget<VehicleController> {
                                           .copyWith(
                                               letterSpacing:
                                                   getHorizontalSize(0.03))),
-                                  Text('2023.08.20',
+                                  Obx(() => Text(
+                                      '${controller.subscriptionModel.value.withdrawalAt}',
                                       overflow: TextOverflow.ellipsis,
                                       textAlign: TextAlign.left,
                                       style: theme.textTheme.bodyLarge!
                                           .copyWith(
                                               letterSpacing:
-                                                  getHorizontalSize(0.03)))
+                                                  getHorizontalSize(0.03))))
                                 ])),
                         CustomElevatedButton(
                             width: getHorizontalSize(160),

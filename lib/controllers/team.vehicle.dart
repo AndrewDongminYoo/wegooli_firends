@@ -15,28 +15,18 @@ class VehicleController extends GetxController {
       : Get.put(VehicleController());
   final String token = PrefUtils.storage.getToken();
   final userController = UserController.to;
-  Rx<SubscriptionModel> subscriptionModel = SubscriptionModel().obs;
-
+  late Rx<SubscriptionModel> subscriptionModel;
+  late Rx<CarManagementModel> carManagementModel;
+  late int? teamSeq;
+  late UserDto currentUser;
   @override
   void onInit() async {
-    final teamInfo = userController.teams[0];
-    if (teamInfo.teamSeq == null) {
-      return;
-    }
-    final terminalApi = wegooli.getTerminalControllerApi();
-    final terminal = await terminalApi.selectTerminal(seq: teamInfo.teamSeq!);
-    print('team.vehicle.dart#L22 terminal.data : ${terminal.data}');
-    terminalDevice = terminal.data ?? TerminalModel();
-    final scheduleApi = wegooli.getScheduleControllerApi();
-    final scheduleList = await scheduleApi.selectScheduleList(
-      teamSeq: ScheduleRequest().teamSeq,
-    );
-    print('team.vehicle.dart#L28 scheduleList.data : ${scheduleList.data}');
-    bool using = scheduleList.data!.any(compose);
-    availableNow.value = using;
-    print('done : $using');
+    currentUser = userController.currentUser.value;
+    teamSeq = userController.getTeamSeq();
+    await retrieveInfo();
+    await retrieveSchedule();
     await selectSubscriptionInfo();
-
+    await retrieveManagement();
     super.onInit();
   }
 
@@ -170,16 +160,12 @@ class VehicleController extends GetxController {
   }
 
   Future<void> selectSubscriptionInfo() async {
-    final currentUser = userController.currentUser.value;
-    // TODO jwt payload에서는 userId로 넘어오는데...id로 파싱해서 안됨...
-    print('response : selectSubscriptionInfo::currentUser ${currentUser}');
-    final teamInfo = userController.teams[0];
-    if (currentUser.id == null || teamInfo.teamSeq == null) {
+    if (currentUser.id == null || teamSeq == null) {
       return;
     }
     final subscriptionControllerApi = wegooli.getSubscriptionControllerApi();
     final response = await subscriptionControllerApi.selectSubscriptionInfo(
-        accountId: currentUser.id!, teamSeq: teamInfo.teamSeq!);
+        accountId: currentUser.id!, teamSeq: teamSeq!);
     if (response.data == null) {
       return;
     }
@@ -188,15 +174,13 @@ class VehicleController extends GetxController {
   }
 
   Future<void> unsubscribe() async {
-    final currentUser = userController.currentUser.value;
-    final teamInfo = userController.teams[0];
-    if (teamInfo.teamSeq == null) {
+    if (currentUser.id == null || teamSeq == null) {
       return;
     }
     SubmitWithdrawalModel submitWithdrawalModel = new SubmitWithdrawalModel(
-        accountId: currentUser.id,
+        accountId: currentUser.id!,
         date: DateTime.now().toString(),
-        teamSeq: teamInfo.teamSeq!);
+        teamSeq: teamSeq!);
     await wegooli
         .getSubscriptionControllerApi()
         .submitWithdrawal(submitWithdrawalModel: submitWithdrawalModel);
@@ -204,13 +188,11 @@ class VehicleController extends GetxController {
   }
 
   Future<void> subscribe() async {
-    final currentUser = userController.currentUser.value;
-    final teamInfo = userController.teams[0];
-    if (currentUser.id == null || teamInfo.teamSeq == null) {
+    if (currentUser.id == null || teamSeq == null) {
       return;
     }
     SubmitWithdrawalModel submitWithdrawalModel = new SubmitWithdrawalModel(
-        accountId: currentUser.id!, date: null, teamSeq: teamInfo.teamSeq!);
+        accountId: currentUser.id!, date: null, teamSeq: teamSeq!);
     await wegooli
         .getSubscriptionControllerApi()
         .submitWithdrawal(submitWithdrawalModel: submitWithdrawalModel);
@@ -230,5 +212,42 @@ class VehicleController extends GetxController {
           DateTime(current.year, parsedDate.month + 1, parsedDate.day);
       return DateFormat('yyyy-MM-dd').format(modifiedDate);
     }
+  }
+
+  Future<void> retrieveManagement() async {
+    if (teamSeq == null) {
+      return;
+    }
+    final response = await wegooli
+        .getCarManagementControllerApi()
+        .selectCarManagement(seq: teamSeq!);
+    CarManagementModel? carManagement = response.data;
+    if (carManagement == null) {
+      return;
+    }
+    carManagementModel.value = carManagement;
+  }
+
+  Future<void> retrieveInfo() async {
+    if (teamSeq == null) {
+      return;
+    }
+    final terminalApi = wegooli.getTerminalControllerApi();
+    final terminal = await terminalApi.selectTerminal(seq: teamSeq!);
+    print('team.vehicle.dart#L22 terminal.data : ${terminal.data}');
+    terminalDevice = terminal.data ?? TerminalModel();
+  }
+
+  Future<void> retrieveSchedule() async {
+    if (teamSeq == null) {
+      return;
+    }
+    final scheduleApi = wegooli.getScheduleControllerApi();
+    final scheduleList =
+        await scheduleApi.selectScheduleList(teamSeq: teamSeq!);
+    print('team.vehicle.dart#L28 scheduleList.data : ${scheduleList.data}');
+    bool using = scheduleList.data!.any(compose);
+    availableNow.value = using;
+    print('done : $using');
   }
 }

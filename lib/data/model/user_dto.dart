@@ -1,4 +1,3 @@
-// 📦 Package imports:
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -15,6 +14,7 @@ class UserDto extends Equatable {
     this.nickname,
     this.userEmail,
     this.id,
+    this.birthday,
     this.add2,
     this.add1,
     this.sub,
@@ -29,6 +29,7 @@ class UserDto extends Equatable {
   final String? nickname;
   final String? userEmail;
   final String? id;
+  final String? birthday;
   final String? add2;
   final String? add1;
   final String? sub;
@@ -42,6 +43,7 @@ class UserDto extends Equatable {
 
   @override
   bool get stringify => true;
+
   @override
   List<Object?> get props {
     return [
@@ -53,6 +55,7 @@ class UserDto extends Equatable {
       nickname,
       userEmail,
       id,
+      birthday,
       add2,
       add1,
       sub,

@@ -21,6 +21,7 @@ UserDto _$UserDtoFromJson(Map<String, dynamic> json) => $checkedCreate(
             'nickname',
             'userEmail',
             'id',
+            'birthday',
             'add2',
             'add1',
             'sub',
@@ -36,6 +37,7 @@ UserDto _$UserDtoFromJson(Map<String, dynamic> json) => $checkedCreate(
           nickname: $checkedConvert('nickname', (v) => v as String?),
           userEmail: $checkedConvert('userEmail', (v) => v as String?),
           id: $checkedConvert('id', (v) => v as String?),
+          birthday: $checkedConvert('birthday', (v) => v as String?),
           add2: $checkedConvert('add2', (v) => v as String?),
           add1: $checkedConvert('add1', (v) => v as String?),
           sub: $checkedConvert('sub', (v) => v as String?),
@@ -62,6 +64,7 @@ Map<String, dynamic> _$UserDtoToJson(UserDto instance) {
   writeNotNull('nickname', instance.nickname);
   writeNotNull('userEmail', instance.userEmail);
   writeNotNull('id', instance.id);
+  writeNotNull('birthday', instance.birthday);
   writeNotNull('add2', instance.add2);
   writeNotNull('add1', instance.add1);
   writeNotNull('sub', instance.sub);

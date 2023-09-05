@@ -142,7 +142,6 @@ export 'screens/registration/sms_validation_form.dart';
 export 'screens/registration/social_number_input.dart';
 export 'screens/shared_schedule.dart';
 export 'screens/shared_schedule/add_schedule_button.dart';
-export 'screens/shared_schedule/bottom_tab_bar_router.dart';
 export 'screens/shared_schedule/calendar.dart';
 export 'screens/shared_schedule/calendar_body.dart';
 export 'screens/shared_schedule/calendar_builders.dart';

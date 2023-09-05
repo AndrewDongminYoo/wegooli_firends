@@ -48,66 +48,75 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: getVerticalSize(65),
-        decoration: BoxDecoration(
-            border: Border(
-                top: BorderSide(
-                    color: appTheme.blueGray30033,
-                    width: getHorizontalSize(1)))),
-        child: Obx(
-          () => BottomNavigationBar(
-            backgroundColor: Colors.transparent,
-            showSelectedLabels: false,
-            showUnselectedLabels: false,
-            selectedFontSize: 0,
-            elevation: 0,
-            currentIndex: selectedIndex.value,
-            type: BottomNavigationBarType.fixed,
-            items: List.generate(bottomMenuList.length, (index) {
-              return BottomNavigationBarItem(
-                  icon: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        CustomImageView(
-                            svgPath: bottomMenuList[index].iconPath,
-                            height: getSize(24),
-                            width: getSize(24),
-                            color: appTheme.gray400),
-                        Padding(
-                            padding: getPadding(top: 4),
-                            child: Text(bottomMenuList[index].title ?? "",
-                                style: CustomTextStyles.bodySmallInter10Gray400
-                                    .copyWith(color: appTheme.gray400)))
-                      ]),
-                  activeIcon: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      CustomImageView(
-                          svgPath: bottomMenuList[index].activeIconPath,
-                          height: getSize(24),
-                          width: getSize(24),
-                          color: theme.colorScheme.onPrimary),
-                      Padding(
-                        padding: getPadding(top: 4),
-                        child: Text(
-                          bottomMenuList[index].title ?? "",
-                          style: CustomTextStyles.bodySmallInterOnPrimary,
-                        ),
-                      ),
-                    ],
-                  ),
-                  label: '');
-            }),
-            onTap: (index) {
-              selectedIndex.value = index;
-              widget.onChanged?.call(bottomMenuList[index].type);
-            },
+      height: getVerticalSize(65),
+      decoration: BoxDecoration(
+        border: Border(
+          top: BorderSide(
+            color: appTheme.blueGray30033,
+            width: getHorizontalSize(1),
           ),
-        ));
+        ),
+      ),
+      child: Obx(
+        () => BottomNavigationBar(
+          backgroundColor: Colors.transparent,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          selectedFontSize: 0,
+          elevation: 0,
+          currentIndex: selectedIndex.value,
+          type: BottomNavigationBarType.fixed,
+          items: List.generate(bottomMenuList.length, (index) {
+            return BottomNavigationBarItem(
+              icon: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    CustomImageView(
+                        svgPath: bottomMenuList[index].iconPath,
+                        height: getSize(24),
+                        width: getSize(24),
+                        color: appTheme.gray400),
+                    Padding(
+                      padding: getPadding(top: 4),
+                      child: Text(
+                        bottomMenuList[index].title ?? "",
+                        style: CustomTextStyles.bodySmallInter10Gray400
+                            .copyWith(color: appTheme.gray400),
+                      ),
+                    )
+                  ]),
+              activeIcon: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  CustomImageView(
+                    svgPath: bottomMenuList[index].activeIconPath,
+                    height: getSize(24),
+                    width: getSize(24),
+                    color: theme.colorScheme.onPrimary,
+                  ),
+                  Padding(
+                    padding: getPadding(top: 4),
+                    child: Text(
+                      bottomMenuList[index].title ?? "",
+                      style: CustomTextStyles.bodySmallInterOnPrimary,
+                    ),
+                  ),
+                ],
+              ),
+              label: '',
+            );
+          }),
+          onTap: (index) {
+            selectedIndex.value = index;
+            Get.toNamed(getCurrentRoute(bottomMenuList[index].type));
+          },
+        ),
+      ),
+    );
   }
 }
 

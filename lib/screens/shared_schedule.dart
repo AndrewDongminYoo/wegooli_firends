@@ -2,6 +2,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/semantics.dart';
 
+// 📦 Package imports:
+import 'package:get/get.dart';
+
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
@@ -15,20 +18,51 @@ class _TeamScheduleShareState extends State<TeamScheduleShare> {
 
   @override
   Widget build(BuildContext context) {
-    return CustomBottomAppBarLayout(
-        body: SharedCalendar(),
-        floatingActionButton: Semantics(
-          container: true,
-          sortKey: const OrdinalSortKey(0),
-          child: FloatingActionButton(
-            onPressed: () {},
-            tooltip: l10ns.buttonTextCreate,
-            child: const Icon(Icons.add),
-          ),
+    return Scaffold(
+      body: Navigator(
+          key: Get.nestedKey(1),
+          initialRoute: AppRoutes.sharedSchedule,
+          onGenerateRoute: (routeSetting) => GetPageRoute(
+              page: () => getCurrentPage(routeSetting.name!),
+              transition: Transition.noTransition)),
+      floatingActionButton: Semantics(
+        container: true,
+        sortKey: const OrdinalSortKey(0),
+        child: FloatingActionButton(
+          onPressed: () {},
+          tooltip: l10ns.buttonTextCreate,
+          child: const Icon(Icons.add),
         ),
-        bottomNavigationBar: CustomBottomAppBar(
-          floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
-          notchedShape: const CircularNotchedRectangle(),
-        ));
+      ),
+      bottomNavigationBar: CustomBottomNavBar(onChanged: (BottomBarEnum type) {
+        Get.toNamed(getCurrentRoute(type), id: 1);
+      }),
+    );
+  }
+}
+
+String getCurrentRoute(BottomBarEnum type) {
+  switch (type) {
+    case BottomBarEnum.dashChat:
+      return AppRoutes.chatWithTeam;
+    case BottomBarEnum.smartKey:
+      return AppRoutes.carSmartKey;
+    case BottomBarEnum.profile:
+      return AppRoutes.myProfile;
+    default:
+      return AppRoutes.sharedSchedule;
+  }
+}
+
+Widget getCurrentPage(String currentRoute) {
+  switch (currentRoute) {
+    case AppRoutes.chatWithTeam:
+      return DashChatWithFriendsPage();
+    case AppRoutes.carSmartKey:
+      return SmartKeyAvailablePage();
+    case AppRoutes.myProfile:
+      return MyProfilePage();
+    default:
+      return SharedCalendar();
   }
 }

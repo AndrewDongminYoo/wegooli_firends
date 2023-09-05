@@ -259,7 +259,6 @@ class _SmartKeyAvailablePageState extends State<SmartKeyAvailablePage> {
           ),
         ),
         floatingActionButton: FloatingYellowButton(),
-        bottomNavigationBar: BottomTabRouterBar(),
       ),
     );
   }

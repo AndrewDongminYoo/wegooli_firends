@@ -18,71 +18,75 @@ class DashChatWithFriendsPage extends GetWidget<ConnectionController> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        child: Scaffold(
-            resizeToAvoidBottomInset: false,
-            backgroundColor: theme.colorScheme.onPrimaryContainer,
-            appBar: CustomAppBar.getFriendsTypoAppBar(),
-            body: DashChat(
-                currentUser: controller.chatUser,
-                messages: controller.chatMessages,
-                onSend: controller.onSendChatMessage,
-                messageOptions: MessageOptions(
-                    messageDecorationBuilder:
-                        (message, previousMessage, nextMessage) =>
-                            BoxDecoration(
-                                color: message.user.id ==
-                                        UserController.to.currentUser.value.id
-                                    ? Color(0xFFFFE142)
-                                    : Color(0x33A4A8AF),
-                                borderRadius: BorderRadius.circular(15)),
-                    // borderRadius: 18.0,
-                    textColor: Color(0xFF222222),
-                    containerColor: Color(0x33A4A8AF),
-                    currentUserTextColor: Color(0xFF222222),
-                    currentUserContainerColor: Color(0xFFFFE142),
-                    timeFontSize: 12,
-                    showTime: false,
-                    showOtherUsersName: true),
-                inputOptions: InputOptions(
-                    sendOnEnter: true,
-                    alwaysShowSend: true,
-                    sendButtonBuilder: (Function onSend) {
-                      return IconButton(
-                          icon: Icon(Icons.send),
-                          onPressed: () {
-                            onSend();
-                          },
-                          color: Color(0xFF000000),
-                          iconSize: 24);
+      child: Scaffold(
+        resizeToAvoidBottomInset: false,
+        backgroundColor: theme.colorScheme.onPrimaryContainer,
+        appBar: CustomAppBar.getFriendsTypoAppBar(),
+        body: DashChat(
+          currentUser: controller.chatUser,
+          messages: controller.chatMessages,
+          onSend: controller.onSendChatMessage,
+          messageOptions: MessageOptions(
+              messageDecorationBuilder:
+                  (message, previousMessage, nextMessage) => BoxDecoration(
+                      color: message.user.id ==
+                              UserController.to.currentUser.value.id
+                          ? Color(0xFFFFE142)
+                          : Color(0x33A4A8AF),
+                      borderRadius: BorderRadius.circular(15)),
+              // borderRadius: 18.0,
+              textColor: Color(0xFF222222),
+              containerColor: Color(0x33A4A8AF),
+              currentUserTextColor: Color(0xFF222222),
+              currentUserContainerColor: Color(0xFFFFE142),
+              timeFontSize: 12,
+              showTime: false,
+              showOtherUsersName: true),
+          inputOptions: InputOptions(
+              sendOnEnter: true,
+              alwaysShowSend: true,
+              sendButtonBuilder: (Function onSend) {
+                return IconButton(
+                    icon: Icon(Icons.send),
+                    onPressed: () {
+                      onSend();
                     },
-                    leading: <Widget>[
-                      IconButton(
-                          icon:
-                              Icon(Icons.camera_alt, color: Color(0xFF000000)),
-                          onPressed: () async {
-                            await controller.getImage(ImageSource.gallery);
-                          })
-                    ],
-                    cursorStyle: CursorStyle(color: const Color(0xFF000000)),
-                    inputDecoration: InputDecoration(
-                        fillColor: Color(0x33A4A8AF),
-                        filled: true,
-                        hintText: '채팅을 입력해주세요😃',
-                        hintStyle:
-                            TextStyle(color: Color(0xFF91969D), fontSize: 15),
-                        constraints:
-                            BoxConstraints.expand(height: getVerticalSize(36)),
-                        contentPadding: EdgeInsets.symmetric(horizontal: 20),
-                        border: OutlineInputBorder(
-                            borderRadius:
-                                const BorderRadius.all(Radius.circular(15)),
-                            borderSide: BorderSide.none,
-                            gapPadding: 0))),
-                messageListOptions: MessageListOptions(onLoadEarlier: () async {
-                  await Future.delayed(const Duration(seconds: 3));
-                }),
-                typingUsers: <ChatUser>[]),
-            bottomNavigationBar: BottomTabRouterBar()));
+                    color: Color(0xFF000000),
+                    iconSize: 24);
+              },
+              leading: <Widget>[
+                IconButton(
+                    icon: Icon(
+                      Icons.camera_alt,
+                      color: Color(0xFF000000),
+                    ),
+                    onPressed: () async {
+                      await controller.getImage(ImageSource.gallery);
+                    })
+              ],
+              cursorStyle: CursorStyle(color: const Color(0xFF000000)),
+              inputDecoration: InputDecoration(
+                  fillColor: Color(0x33A4A8AF),
+                  filled: true,
+                  hintText: '채팅을 입력해주세요😃',
+                  hintStyle: TextStyle(color: Color(0xFF91969D), fontSize: 15),
+                  constraints: BoxConstraints.expand(
+                    height: getVerticalSize(36),
+                  ),
+                  contentPadding: EdgeInsets.symmetric(horizontal: 20),
+                  border: OutlineInputBorder(
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(15),
+                      ),
+                      borderSide: BorderSide.none,
+                      gapPadding: 0))),
+          messageListOptions: MessageListOptions(onLoadEarlier: () async {
+            await Future.delayed(const Duration(seconds: 3));
+          }),
+          typingUsers: <ChatUser>[],
+        ),
+      ),
+    );
   }
 }
 

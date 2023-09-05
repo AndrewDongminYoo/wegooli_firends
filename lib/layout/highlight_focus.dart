@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-/// [HighlightFocus] is a helper widget for giving a child focus allowing tab-navigation.
-/// Wrap your widget as [child] of a [HighlightFocus] widget.
+/// [HighlightFocus]는 탭 탐색을 허용하는 하위 포커스를 제공하는 도우미 위젯입니다.
+/// 위젯을 [HighlightFocus] 위젯의 자식 위젯으로 래핑합니다.
 class HighlightFocus extends StatefulWidget {
   const HighlightFocus({
     super.key,

@@ -279,8 +279,8 @@ class CopyableTextFieldWithShortcuts extends StatelessWidget {
   }
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class DemoApp extends StatelessWidget {
+  const DemoApp({super.key});
 
   static const String title = 'Shortcuts and Actions Demo';
 
@@ -293,4 +293,4 @@ class MyApp extends StatelessWidget {
   }
 }
 
-void main(List<String> args) => runApp(MyApp());
+// void main(List<String> args) => runApp(DemoApp());

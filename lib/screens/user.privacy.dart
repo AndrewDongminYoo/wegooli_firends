@@ -39,7 +39,7 @@ class ProfileInfoPage extends GetWidget<UserController> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                            controller.currentUser.value.nickName ??
+                            controller.currentUser.value.nickname ??
                                 l10ns.nickName,
                             // overflow: TextOverflow.ellipsis,
                             // textAlign: TextAlign.left,
@@ -53,7 +53,7 @@ class ProfileInfoPage extends GetWidget<UserController> {
                             style: theme.textTheme.bodyLarge!.copyWith(
                                 letterSpacing: getHorizontalSize(0.03))),
                         Text(
-                            controller.currentUser.value.email ??
+                            controller.currentUser.value.userEmail ??
                                 'abc@gmail.com',
                             // overflow: TextOverflow.ellipsis,
                             // textAlign: TextAlign.left,

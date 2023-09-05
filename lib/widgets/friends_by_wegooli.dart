@@ -1,9 +1,6 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:get/get.dart';
-
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
@@ -34,8 +31,6 @@ class FriendsByWegooli extends StatelessWidget {
                           .titleSmallNanumSquareRoundOnPrimary
                           .copyWith(letterSpacing: getHorizontalSize(0.03))),
                   CustomImageView(
-                      onTap: () =>
-                          Get.dialog(AlertDialog(title: Text('Hello World!!'))),
                       svgPath: Assets.svg.imgWegooliBlueGray900.path,
                       fit: BoxFit.fitWidth,
                       height: getVerticalSize(11),

@@ -2,9 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-// 📦 Package imports:
-import 'package:get/get.dart';
-
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
@@ -71,19 +68,19 @@ class CustomTextFormField extends StatelessWidget {
     return alignment != null
         ? Align(
             alignment: alignment ?? Alignment.center,
-            child: textFormFieldWidget)
-        : textFormFieldWidget;
+            child: textFormFieldWidget(context))
+        : textFormFieldWidget(context);
   }
 
-  Widget get textFormFieldWidget => Container(
+  Widget textFormFieldWidget(BuildContext context) => Container(
       width: width ?? double.maxFinite,
       margin: margin,
       child: TextFormField(
+          canRequestFocus: true,
           obscuringCharacter: obscureChar,
           inputFormatters: inputFormatters,
           obscureText: obscureText!,
           controller: controller,
-          focusNode: focusNode ?? FocusNode(),
           autofocus: autofocus!,
           style: textStyle ?? CustomTextStyles.bodyLargeGray50002,
           textInputAction: textInputAction,
@@ -92,7 +89,8 @@ class CustomTextFormField extends StatelessWidget {
           decoration: decoration,
           validator: validator,
           enabled: enabled,
-          onEditingComplete: () => FocusScope.of(Get.context!).nextFocus(),
+          readOnly: !enabled!,
+          onEditingComplete: () => FocusScope.of(context).nextFocus(),
           initialValue: initialValue));
   InputDecoration get decoration => InputDecoration(
         hintText: hintText ?? "",

@@ -27,6 +27,7 @@ class LoginWithIdAndPassword extends GetWidget<UserController> {
               FriendsByWegooli(),
               CustomTextFormField(
                   controller: controller.username,
+                  textInputType: TextInputType.emailAddress,
                   margin: getMargin(top: 40),
                   contentPadding:
                       getPadding(left: 12, top: 14, right: 12, bottom: 14),
@@ -35,6 +36,7 @@ class LoginWithIdAndPassword extends GetWidget<UserController> {
                   hintStyle: CustomTextStyles.bodyLargeGray50003,
                   textInputAction: TextInputAction.next,
                   filled: true,
+                  autofocus: true,
                   fillColor: theme.colorScheme.onPrimaryContainer),
               Obx(() => CustomTextFormField(
                   controller: controller.password,
@@ -66,15 +68,7 @@ class LoginWithIdAndPassword extends GetWidget<UserController> {
                       fixedSize: MaterialStateProperty.all<Size>(
                           Size(double.maxFinite, getVerticalSize(52)))),
                   buttonTextStyle: CustomTextStyles.titleMedium18,
-                  onTap: () async {
-                    await controller.authorize();
-                    if (isAuthenticated) {
-                      Get.toNamed(AppRoutes.sharedSchedule);
-                    } else {
-                      controller.username.text = "";
-                      controller.password.text = "";
-                    }
-                  }),
+                  onTap: onSubmit),
               Padding(
                   padding: getPadding(top: 57),
                   child: Text(l10ns.youHaveNoAccount,
@@ -97,5 +91,15 @@ class LoginWithIdAndPassword extends GetWidget<UserController> {
             ],
           )),
     ));
+  }
+
+  void onSubmit() async {
+    await controller.authorize();
+    if (isAuthenticated) {
+      Get.toNamed(AppRoutes.sharedSchedule);
+    } else {
+      controller.username.clear();
+      controller.password.clear();
+    }
   }
 }

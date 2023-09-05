@@ -35,9 +35,9 @@ class UserController extends GetxController {
     SelectionPopupModel(id: 019, title: "LG"),
   ];
 
-  Rx<UserDTO> _currentUser = UserDTO().obs;
-  Rx<UserDTO> get currentUser => _currentUser;
-  set currentUser(Rx<UserDTO> value) {
+  Rx<UserDto> _currentUser = UserDto().obs;
+  Rx<UserDto> get currentUser => _currentUser;
+  set currentUser(Rx<UserDto> value) {
     _currentUser = value;
   }
 
@@ -146,29 +146,31 @@ class UserController extends GetxController {
 
   Future<void> authorize() async {
     final api = wegooli.getUserControllerApi();
-
     try {
+      print('user.username: ${username.text}\nuser.password: ${password.text}');
       final response =
           await api.login(id: username.text, password: password.text);
       print('response : ${response}');
       Result? result = response.data?.result;
-      String? bearerToken;
+      String bearerToken = '';
+      String token = '';
       if (result == null) {
         print('`login()` 반환값: $result, ${response.data?.resultCode}');
         Get.dialog(Center(
             child: Assets.lotties.xInCircle.lottie(height: 250, width: 250)));
         isAuthenticated.value = false;
-        bearerToken = PrefUtils.storage.getToken();
+        throw CustomException('로그인 실패');
       } else {
         bearerToken = result.token as String;
+        // BEARER prefix 분리.
+        token = bearerToken.split(' ').last;
       }
-      // BEARER prefix 분리.
-      String token = bearerToken.split(' ').last;
       print('token: ${token}');
       // BEARER prefix 제거
       var payload = JwtDecoder.decode(token);
-      print('payload : ${payload}');
-      currentUser(UserDTO.fromJson(payload));
+      print(
+          'payload: ${payload}'); //'{"name": "My Awesome App", "iat": 1548094400}'
+      currentUser.value = UserDto.fromJson(payload);
       if (JwtDecoder.isExpired(token)) {
         print('❌ 만료된 토큰입니다.');
         isAuthenticated.value = false;
@@ -177,9 +179,10 @@ class UserController extends GetxController {
       } else {
         print('✅ 유효한 토큰입니다.');
         isAuthenticated.value = true;
+        PrefUtils.storage.setToken(token);
+        await findMembers();
+        return;
       }
-      PrefUtils.storage.setToken(token);
-      await findMembers();
     } on DioException catch (e) {
       isAuthenticated.value = false;
       print(switch (e.type) {
@@ -194,7 +197,8 @@ class UserController extends GetxController {
           e.message ?? '요청에 잘못된 인가 코드를 사용했습니다.',
         DioExceptionType.badResponse => e.message ?? '요청에서 잘못된 상태 코드를 반환했습니다.',
         DioExceptionType.cancel => e.message ?? '요청이 취소되었습니다.',
-        DioExceptionType.unknown => e.stackTrace,
+        DioExceptionType.unknown =>
+          'message: ${e.message}\nerror: ${e.error}\ntrace: ${e.stackTrace}',
       });
       print("`login()` 호출 중 DioException 발생: $e\n");
     } on Exception catch (e) {
@@ -205,9 +209,7 @@ class UserController extends GetxController {
 
   Future<void> findMembers() async {
     final api = wegooli.getTeamAccountConnectionControllerApi();
-    final response = await api.selectTeamAccountList(
-      accountId: _currentUser.value.id,
-    );
+    final response = await api.selectTeamAccountList();
     print('response : $response');
     List<TeamAccountConnectionResponse>? teamList = response.data;
     if (teamList != null && teamList.isNotEmpty) {

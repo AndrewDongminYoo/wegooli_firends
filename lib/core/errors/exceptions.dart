@@ -14,6 +14,20 @@ class NoInternetException implements Exception {
 
   @override
   String toString() {
-    return _message;
+    String? message = this._message;
+    return 'Exception: $message';
+  }
+}
+
+class CustomException implements Exception {
+  final dynamic message;
+
+  CustomException([this.message]);
+
+  @override
+  String toString() {
+    Object? message = this.message;
+    if (message == null) return 'Exception';
+    return 'Exception: $message';
   }
 }

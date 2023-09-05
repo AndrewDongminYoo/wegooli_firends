@@ -89,6 +89,7 @@ export 'data/model/push.dart';
 export 'data/model/qn_a.dart';
 export 'data/model/result.dart';
 export 'data/model/schedule_model.dart';
+export 'data/model/subscription_model.dart';
 export 'data/model/schedule_request.dart';
 export 'data/model/select_user_dto.dart';
 export 'data/model/service_car_detail_request.dart';

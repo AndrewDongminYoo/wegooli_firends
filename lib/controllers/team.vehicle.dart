@@ -18,9 +18,12 @@ class VehicleController extends GetxController {
 
   @override
   void onInit() async {
+    final teamInfo = userController.teams[0];
+    if (teamInfo.teamSeq == null) {
+      return;
+    }
     final terminalApi = wegooli.getTerminalControllerApi();
-    final terminal =
-        await terminalApi.selectTerminal(seq: 2); // FIXME: hard-coded 2.
+    final terminal = await terminalApi.selectTerminal(seq: teamInfo.teamSeq!);
     print('team.vehicle.dart#L22 terminal.data : ${terminal.data}');
     terminalDevice = terminal.data ?? TerminalModel();
     final scheduleApi = wegooli.getScheduleControllerApi();

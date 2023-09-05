@@ -6,8 +6,8 @@ import 'dart:convert';
 import 'package:dio/dio.dart';
 // 🌎 Project imports:
 import '/data/deserialize.dart';
-import '/data/models/submit_withdrawal_model.dart';
-import '/data/models/subscription_model.dart';
+import '/data/model/submit_withdrawal_model.dart';
+import '/data/model/subscription_model.dart';
 
 class SubscriptionControllerApi {
   final Dio _dio;

@@ -1,31 +1,37 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
 class MembersList extends StatelessWidget {
-  const MembersList({
-    super.key,
-  });
+  final userController = UserController.to;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
         padding: getPadding(left: 16, top: 12),
-        child: Row(children: [
-          MemberAvatar(
-              name: l10ns.name2,
-              avatarImagePath: Assets.images.imgAvatar2.path,
-              personalColor: '#FFCC08'),
-          MemberAvatar(
-              name: l10ns.name3,
-              avatarImagePath: Assets.images.imgAvatar3.path,
-              personalColor: '#FF7134'),
-          MemberAvatar(
-              name: l10ns.name4,
-              avatarImagePath: Assets.images.imgAvatar4.path,
-              personalColor: '#7951EA')
-        ]));
+        child: Expanded(
+            child: SizedBox(
+                height: 100,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Obx(
+                      () => ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (_, int index) {
+                            final member = userController.members[index];
+                            return MemberAvatar(
+                                name: member.nickname ?? '-',
+                                avatarImagePath: Assets.images.imgAvatar2.path,
+                                personalColor: member.color ?? '#FFCC08');
+                          },
+                          itemCount: userController.members.length,
+                          shrinkWrap: true),
+                    )
+                  ],
+                ))));
   }
 }

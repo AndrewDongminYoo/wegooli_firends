@@ -40,7 +40,7 @@ class CalendarBody extends GetView<ScheduleController> {
                 child: TableCalendar<Schedule>(
                   calendarFormat: controller.calendarFormat,
                   daysOfWeekHeight: 30,
-                  eventLoader: (day) => controller.events[day] ?? [],
+                  eventLoader: (day) => controller.eventSource[day] ?? [],
                   firstDay: controller.firstDay,
                   focusedDay: controller.focusedDay,
                   lastDay: controller.lastDay,

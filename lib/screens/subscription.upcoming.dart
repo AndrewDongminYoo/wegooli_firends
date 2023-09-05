@@ -14,7 +14,7 @@ class UpcomingUnsubscription extends GetWidget<VehicleController> {
         child: Scaffold(
             backgroundColor: theme.colorScheme.onPrimaryContainer,
             appBar: CustomAppBar.getDefaultAppBar(l10ns.subscriptionInformation,
-                onTapLeading: () => Get.toNamed(AppRoutes.myProfile)),
+                onTapLeading: () => goMyProfile()),
             body: Obx(
               () => controller.subscriptionModel.value.carModel == null
                   ? Container(

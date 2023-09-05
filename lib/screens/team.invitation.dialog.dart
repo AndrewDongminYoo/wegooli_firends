@@ -41,7 +41,7 @@ class SendingInvitationLog extends GetWidget<VehicleController> {
                                 width: getSize(13),
                                 margin: getMargin(bottom: 15),
                                 onTap: () {
-                                  Get.back();
+                                  goBack();
                                 })
                           ])),
                   CustomTextFormField(

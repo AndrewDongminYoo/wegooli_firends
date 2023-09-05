@@ -1,9 +1,6 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:get/get.dart';
-
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
@@ -43,7 +40,7 @@ class ReservationsCheckingPageDialog extends StatelessWidget {
                                 width: getSize(13),
                                 margin: getMargin(bottom: 15),
                                 onTap: () {
-                                  Get.back();
+                                  goBack();
                                 })
                           ])),
                   Padding(

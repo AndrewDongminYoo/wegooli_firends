@@ -28,7 +28,7 @@ class SplashLoading extends StatelessWidget {
                         width: Get.width,
                         child: CustomImageView(
                           onTap: () {
-                            Get.toNamed(AppRoutes.idPwLogin);
+                            goIdPwLogin();
                           },
                           imagePath: Assets.images.imgGooli1.path,
                           fit: BoxFit.fitWidth,

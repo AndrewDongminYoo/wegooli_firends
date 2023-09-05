@@ -64,7 +64,7 @@ class UnsubscriptionConfirm extends GetWidget<UserController> {
                                         Size(getHorizontalSize(104),
                                             getVerticalSize(52)))),
                             buttonTextStyle: CustomTextStyles.titleMedium18,
-                            onTap: () => Get.back()),
+                            onTap: () => goBack()),
                         CustomElevatedButton(
                           width: 216,
                           height: 52,

@@ -28,7 +28,7 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                   alignment: Alignment.centerRight,
                   margin: getMargin(right: 16),
                   onTap: () {
-                    Get.back();
+                    goBack();
                   }),
               Align(
                   alignment: Alignment.centerLeft,

@@ -81,19 +81,19 @@ class MyProfilePage extends GetWidget<UserController> {
                             svgPath: Assets.svg.imgEdit.path,
                             text: l10ns.personalInfo,
                             onTap: () {
-                              Get.toNamed(AppRoutes.profileInfoPage);
+                              goProfileInfoPage();
                             }),
                         ListItem(
                             svgPath: Assets.svg.imgInformation.path,
                             text: l10ns.subscriptionInformation,
                             onTap: () {
-                              Get.toNamed(AppRoutes.upcomingUnsubscription);
+                              goUpcomingUnsubscription();
                             }),
                         ListItem(
                             svgPath: Assets.svg.imgCreditCard.path,
                             text: l10ns.cardRegistration,
                             onTap: () {
-                              Get.toNamed(AppRoutes.registeredCardList);
+                              goRegisteredCardList();
                             }),
                       ]),
                     ),

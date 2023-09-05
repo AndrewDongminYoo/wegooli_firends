@@ -149,10 +149,10 @@ class RegisterCreditCard extends GetWidget<PaymentCardController> {
                       // TODO 카드 검증 필요함.
                       await controller.registerCard();
                       if (paymentCardController.paymentCards.length == 0) {
-                        Get.toNamed(AppRoutes.registerSuccess);
+                        goRegisterSuccess();
                       } else {
                         // TODO 카드 등록 로직
-                        Get.back();
+                        goBack();
                       }
                     }))));
   }

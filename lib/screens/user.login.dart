@@ -86,7 +86,7 @@ class LoginWithIdAndPassword extends GetWidget<UserController> {
                   onTap: () {
                     // 해당 탭은 dialog로 변경 예정
                     // onTapSignUpAcceptTerms();
-                    Get.toNamed(AppRoutes.phoneAuth);
+                    goPhoneAuth();
                   }),
             ],
           )),
@@ -96,7 +96,7 @@ class LoginWithIdAndPassword extends GetWidget<UserController> {
   void onSubmit() async {
     await controller.authorize();
     if (isAuthenticated) {
-      Get.toNamed(AppRoutes.sharedSchedule);
+      goSharedSchedule();
     } else {
       controller.username.clear();
       controller.password.clear();

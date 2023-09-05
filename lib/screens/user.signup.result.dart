@@ -112,7 +112,7 @@ class RegisterSuccess extends GetWidget<UserController> {
                             Size(double.maxFinite, getVerticalSize(52)))),
                     buttonTextStyle: CustomTextStyles.titleMedium18,
                     onTap: () {
-                      Get.toNamed(AppRoutes.sharedSchedule);
+                      goSharedSchedule();
                     }))));
   }
 }

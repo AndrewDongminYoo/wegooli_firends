@@ -1,3 +1,4 @@
+// 🌎 Project imports:
 import 'app_localizations.dart';
 
 /// The translations for Korean (`ko`).
@@ -86,6 +87,12 @@ class LocalizedKo extends Localized {
 
   @override
   String get checkYourAppUI => '아래 데모 화면에서 앱의 UI를 확인하세요.';
+
+  @override
+  String get dashChatWithFriendsPage => '[Page] 팀 채팅하기';
+
+  @override
+  String get profileInfoPage => '[Page] 마이페이지 / 내 정보보기';
 
   @override
   String get confirm => '확인';
@@ -364,9 +371,6 @@ class LocalizedKo extends Localized {
   String get smartKeyAvailable => '[Page] 스마트키 (사용가능)';
 
   @override
-  String get smartKeyNotAvailable => '[Page] 스마트키 (사용중)';
-
-  @override
   String get socialSecurityNumberFirstDigit => '주민등록번호 앞자리';
 
   @override
@@ -424,9 +428,6 @@ class LocalizedKo extends Localized {
 
   @override
   String get upcomingUnsubscriptionInfo => '[Page] 예정된 구독 취소 정보';
-
-  @override
-  String get upcomingUnsubscriptionView => '[Page] 예정된 구독 취소 보기';
 
   @override
   String get useOfPersonalInfoForMarketing => '마케팅 목적 개인정보 수집/이용 (선택)';

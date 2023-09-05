@@ -38,7 +38,7 @@ class UnsubscriptionConfirmWarnDialog extends StatelessWidget {
                             width: getSize(15),
                             margin: getMargin(top: 3, bottom: 3),
                             onTap: () {
-                              Get.back();
+                              goBack();
                             }),
                       ])),
               Container(
@@ -71,7 +71,7 @@ class UnsubscriptionConfirmWarnDialog extends StatelessWidget {
                                       Size(getHorizontalSize(164),
                                           getVerticalSize(52)))),
                           buttonTextStyle: theme.textTheme.titleMedium!,
-                          onTap: () => Get.back(),
+                          onTap: () => goBack(),
                         ),
                         CustomElevatedButton(
                             width: (context.width / 2) - 19,
@@ -91,7 +91,7 @@ class UnsubscriptionConfirmWarnDialog extends StatelessWidget {
                             buttonTextStyle: theme.textTheme.titleMedium!,
                             onTap: () async {
                               await vehicleController.unsubscribe();
-                              Get.toNamed(AppRoutes.upcomingUnsubscription);
+                              goUpcomingUnsubscription();
                             })
                       ]))
             ]));

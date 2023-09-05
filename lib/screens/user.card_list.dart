@@ -87,7 +87,7 @@ class _RegisteredCreditCardListState extends State<RegisteredCreditCardList> {
                             Size(double.maxFinite, getVerticalSize(52)))),
                     buttonTextStyle: CustomTextStyles.titleMedium18,
                     onTap: () {
-                      Get.toNamed(AppRoutes.registerCreditCard);
+                      goRegisterCreditCard();
                     }),
               ),
             ],

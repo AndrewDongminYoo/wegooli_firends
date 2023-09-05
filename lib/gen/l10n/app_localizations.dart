@@ -1,10 +1,15 @@
+// 🎯 Dart imports:
 import 'dart:async';
 
+// 🐦 Flutter imports:
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
+
+// 📦 Package imports:
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart' as intl;
 
+// 🌎 Project imports:
 import 'app_localizations_ko.dart';
 
 /// Callers can lookup localized strings with an instance of Localized
@@ -252,6 +257,18 @@ abstract class Localized {
   /// In ko, this message translates to:
   /// **'아래 데모 화면에서 앱의 UI를 확인하세요.'**
   String get checkYourAppUI;
+
+  /// [Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨.
+  ///
+  /// In ko, this message translates to:
+  /// **'[Page] 팀 채팅하기'**
+  String get dashChatWithFriendsPage;
+
+  /// [Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨.
+  ///
+  /// In ko, this message translates to:
+  /// **'[Page] 마이페이지 / 내 정보보기'**
+  String get profileInfoPage;
 
   /// 알겠습니다/승인합니다/동의합니다/확인했습니다.
   ///
@@ -793,12 +810,6 @@ abstract class Localized {
   /// **'[Page] 스마트키 (사용가능)'**
   String get smartKeyAvailable;
 
-  /// [Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨.
-  ///
-  /// In ko, this message translates to:
-  /// **'[Page] 스마트키 (사용중)'**
-  String get smartKeyNotAvailable;
-
   /// 주민등록번호 앞자리 입력 헬프 텍스트 6자리 YYMMDD
   ///
   /// In ko, this message translates to:
@@ -912,12 +923,6 @@ abstract class Localized {
   /// In ko, this message translates to:
   /// **'[Page] 예정된 구독 취소 정보'**
   String get upcomingUnsubscriptionInfo;
-
-  /// [Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨.
-  ///
-  /// In ko, this message translates to:
-  /// **'[Page] 예정된 구독 취소 보기'**
-  String get upcomingUnsubscriptionView;
 
   /// 이용 약관 항목 중 하나
   ///

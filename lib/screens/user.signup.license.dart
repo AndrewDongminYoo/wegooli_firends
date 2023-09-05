@@ -197,6 +197,6 @@ class RegisterLicense extends GetWidget<LicenseController> {
   }
 
   onRegisterCreditCard() {
-    Get.toNamed(AppRoutes.registerCreditCard);
+    goRegisterCreditCard();
   }
 }

@@ -10,7 +10,7 @@ import '/core/app_export.dart';
 class BottomTabRouterBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return CustomBottomBar(onChanged: (BottomBarEnum type) {
+    return CustomBottomNavBar(onChanged: (BottomBarEnum type) {
       Future<dynamic>? navigateToCurrentRoute(BottomBarEnum type) {
         print('type ${type.toString()}');
 

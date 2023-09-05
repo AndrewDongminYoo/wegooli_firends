@@ -29,5 +29,5 @@ class GrantedAuthority extends Equatable {
   @override
   bool get stringify => true;
   @override
-  List<Object?> get props => ['authority'];
+  List<Object?> get props => [authority];
 }

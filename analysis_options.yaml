@@ -7,7 +7,14 @@
 
 # The following line activates a set of recommended lints for Flutter apps,
 # packages, and plugins designed to encourage good coding practices.
-include: package:flutter_lints/flutter.yaml
+include:
+  - package:leancode_lint/analysis_options.yaml
+  - package:flutter_lints/flutter.yaml
+rules:
+  inference_failure_on_function_invocation: true
+  inference_failure_on_function_return_type: true
+  inference_failure_on_instance_creation: true
+  strict_raw_type: true
 
 linter:
   # The lint rules applied to this project can be customized in the
@@ -31,8 +38,8 @@ linter:
   rules:
     ### Error rules ###
     # 이러한 규칙은 코드에서 발생할 수 있는 오류 및 기타 실수를 식별합니다.
-    always_use_package_imports: false # [🔧] "lib/"에 있는 파일에 대한 상대 임포트를 피하세요.
-    avoid_dynamic_calls: false # "dynamic" 대상에서 메서드 호출이나 속성 액세스를 피하세요.
+    always_use_package_imports: true # [🔧] "lib/"에 있는 파일에 대한 상대 임포트를 피하세요.
+    avoid_dynamic_calls: true # "dynamic" 대상에서 메서드 호출이나 속성 액세스를 피하세요.
     avoid_empty_else: true # [🔰,🔵,🦩,🔧] 빈 else 문을 사용하지 마세요.
     avoid_print: false # [🦩,🔧] 프로덕션 코드에서 "print" 호출을 피하세요.
     avoid_relative_lib_imports: true # [🔰,🔵,🦩,🔧] "lib/"에 있는 파일에 대한 상대 임포트를 피합니다.
@@ -91,7 +98,6 @@ linter:
     avoid_equals_and_hash_code_on_mutable_classes: true # '@immutable'으로 표시되지 않은 클래스에 == 연산자 및 해시코드를 오버로드하지 마세요.
     avoid_escaping_inner_quotes: # [🔧] 주변 따옴표를 변환하여 내부 따옴표를 이스케이프하지 마세요.
       ignore_for_file:
-        - lib/l10n/*.dart
         - lib/gen/*.dart # must be ignored for items generated from arb files
     avoid_field_initializers_in_const_classes: false # 생성자 클래스에서 필드 이니셜라이저를 피하세요.
     avoid_final_parameters: true # 파라미터 선언에 파이널을 사용하지 마세요.
@@ -179,9 +185,9 @@ linter:
     prefer_equal_for_default_values: true # [removed,🔵,🦩] 명명된 파라미터를 기본값과 구분하려면 "="를 사용합니다.
     prefer_expression_function_bodies: true # [🔧] 본문이 단일 반환 문인 짧은 멤버에는 =>를 사용합니다.
     prefer_final_fields: true # [🔵,🦩,🔧] private 필드는 final 필드일 수 있습니다.
-    prefer_final_in_for_each: false # [🔧] 참조가 재할당되지 않는 경우 for-loop 변수 선언에 final을 선호합니다.
-    prefer_final_locals: false # [🔧] 재할당되지 않은 경우 로컬 변수 선언에 final을 선호합니다.
-    prefer_final_parameters: false # [🔧] 재할당되지 않은 경우 파라미터 선언에 final 선언을 선호합니다.
+    prefer_final_in_for_each: true # [🔧] 참조가 재할당되지 않는 경우 for-loop 변수 선언에 final을 선호합니다.
+    prefer_final_locals: true # [🔧] 재할당되지 않은 경우 로컬 변수 선언에 final을 선호합니다.
+    prefer_final_parameters: true # [🔧] 재할당되지 않은 경우 파라미터 선언에 final 선언을 선호합니다.
     prefer_for_elements_to_map_fromIterable: true # [🔵,🦩,🔧] 이터러블에서 맵을 작성할 때 "for" 요소를 선호합니다.
     prefer_foreach: true # 모든 요소에만 함수를 적용하려면 "forEach"를 사용합니다.
     prefer_function_declarations_over_variables: true # [🔵,🦩,🔧] 함수 선언을 사용하여 함수를 이름에 바인딩합니다.
@@ -240,8 +246,9 @@ linter:
     unnecessary_string_escapes: true # [🔵,🦩,🔧] 문자열에서 불필요한 백슬래시를 제거합니다.
     unnecessary_string_interpolations: true # [🔵,🦩,🔧] 불필요한 문자열 보간.
     unnecessary_this: true # [🔵,🦩,🔧] 섀도잉을 피하지 않는 한 "this"으로 멤버에 접근하지 마세요.
-    unnecessary_to_list_in_spreads: false # [🔧] 스프레드에 불필요한 toList().
+    unnecessary_to_list_in_spreads: true # [🔧] 스프레드에 불필요한 toList().
     unreachable_from_main: true # [🔧] 실행 라이브러리에서 도달할 수 없는 최상위 멤버.
+    unused_import: true
     use_colored_box: true # "ColoredBox"를 사용하세요.
     use_decorated_box: true # [🔧] "DecoratedBox"를 사용하십시오.
     use_enums: true # [🔧] 열거형처럼 동작하는 클래스 대신 열거형을 사용합니다.
@@ -270,9 +277,8 @@ linter:
 
 analyzer:
   language:
-    # strict-casts: true
-    # strict-raw-types: true
-    unused_import: true
+    strict-casts: false
+    strict-raw-types: false
   errors:
     # allow self-reference to deprecated members (we do this because otherwise we have
     # to annotate every member in every test, assert, etc, when we deprecate something)

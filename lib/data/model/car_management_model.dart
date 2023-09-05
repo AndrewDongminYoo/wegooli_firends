@@ -55,16 +55,17 @@ class CarManagementModel extends Equatable {
   Map<String, dynamic> toJson() => _$CarManagementModelToJson(this);
 
   @override
-  List<Object?> get props {
-    return [
-      seq,
-      carNum,
-      oilCheckDate,
-      tireCheckDate,
-      batteryStatus,
-      createdBy,
-      createdAt,
-      updatedAt,
-    ];
-  }
+  List<Object?> get props => [
+        'seq',
+        'carNum',
+        'oilCheckDate',
+        'tireCheckDate',
+        'batteryStatus',
+        'createdBy',
+        'createdAt',
+        'updatedAt'
+      ];
+
+  @override
+  bool? get stringify => true;
 }

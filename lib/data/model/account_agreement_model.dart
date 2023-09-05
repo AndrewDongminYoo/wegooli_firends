@@ -46,5 +46,5 @@ class AccountAgreementModel extends Equatable {
   bool get stringify => true;
   @override
   List<Object?> get props =>
-      ['classification', 'accountId', 'agreeYn', 'createdAt', 'updatedAt'];
+      [classification, accountId, agreeYn, createdAt, updatedAt];
 }

@@ -8,12 +8,18 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 // ignore: must_be_immutable
-class CustomBottomBar extends StatelessWidget {
-  CustomBottomBar({
+class CustomBottomNavBar extends StatefulWidget {
+  CustomBottomNavBar({
     Key? key,
     this.onChanged,
   }) : super(key: key);
 
+  Function(BottomBarEnum)? onChanged;
+  @override
+  State<CustomBottomNavBar> createState() => _CustomBottomNavBarState();
+}
+
+class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
   RxInt selectedIndex = 0.obs;
 
   List<BottomMenuModel> bottomMenuList = [
@@ -38,8 +44,6 @@ class CustomBottomBar extends StatelessWidget {
         title: l10ns.myPage,
         type: BottomBarEnum.profile)
   ];
-
-  Function(BottomBarEnum)? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -100,7 +104,7 @@ class CustomBottomBar extends StatelessWidget {
             }),
             onTap: (index) {
               selectedIndex.value = index;
-              onChanged?.call(bottomMenuList[index].type);
+              widget.onChanged?.call(bottomMenuList[index].type);
             },
           ),
         ));

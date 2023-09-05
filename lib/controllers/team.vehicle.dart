@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 // 📦 Package imports:
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:wegooli_friends/data/model/submit_withdrawal_model.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';

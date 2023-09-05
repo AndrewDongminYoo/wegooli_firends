@@ -45,6 +45,5 @@ class TeamAccountConnectionModel extends Equatable {
   @override
   bool get stringify => true;
   @override
-  List<Object?> get props =>
-      ['seq', 'teamSeq', 'accountId', 'joinedAt', 'leavedAt'];
+  List<Object?> get props => [seq, teamSeq, accountId, joinedAt, leavedAt];
 }

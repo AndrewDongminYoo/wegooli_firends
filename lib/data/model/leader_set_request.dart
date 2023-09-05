@@ -37,5 +37,5 @@ class LeaderSetRequest extends Equatable {
   @override
   bool get stringify => true;
   @override
-  List<Object?> get props => ['userId', 'serviceSeq', 'maxSub'];
+  List<Object?> get props => [userId, serviceSeq, maxSub];
 }

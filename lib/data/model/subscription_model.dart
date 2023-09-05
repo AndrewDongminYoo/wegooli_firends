@@ -63,18 +63,18 @@ class SubscriptionModel extends Equatable {
   Map<String, dynamic> toJson() => _$SubscriptionModelToJson(this);
 
   @override
-  List<Object?> get props {
-    return [
-      accountId,
-      teamSeq,
-      teamName,
-      carNumber,
-      carModel,
-      carNickname,
-      fee,
-      createdAt,
-      endAt,
-      withdrawalAt,
-    ];
-  }
+  bool get stringify => true;
+  @override
+  List<Object?> get props => [
+        'accountId',
+        'teamSeq',
+        'teamName',
+        'carNumber',
+        'carModel',
+        'carNickname',
+        'fee',
+        'createdAt',
+        'endAt',
+        'withdrawalAt',
+      ];
 }

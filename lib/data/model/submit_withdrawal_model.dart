@@ -35,11 +35,7 @@ class SubmitWithdrawalModel extends Equatable {
   Map<String, dynamic> toJson() => _$SubmitWithdrawalModelToJson(this);
 
   @override
-  List<Object?> get props {
-    return [
-      accountId,
-      date,
-      teamSeq,
-    ];
-  }
+  bool get stringify => true;
+  @override
+  List<Object?> get props => [accountId, date, teamSeq];
 }

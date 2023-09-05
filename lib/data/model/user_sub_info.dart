@@ -41,5 +41,5 @@ class UserSubInfo extends Equatable {
   @override
   bool get stringify => true;
   @override
-  List<Object?> get props => ['userId', 'serviceSeq', 'weekInfo', 'timeInfo'];
+  List<Object?> get props => [userId, serviceSeq, weekInfo, timeInfo];
 }

@@ -14,7 +14,7 @@ TeamAccountModel _$TeamAccountModelFromJson(Map<String, dynamic> json) =>
         final val = TeamAccountModel(
           accountId: $checkedConvert('accountId', (v) => v as String?),
           color: $checkedConvert('color', (v) => v as String?),
-          nickName: $checkedConvert('nickName', (v) => v as String?),
+          nickname: $checkedConvert('nickname', (v) => v as String?),
           profilePicture:
               $checkedConvert('profilePicture', (v) => v as String?),
           useYn: $checkedConvert('useYn', (v) => v as String?),
@@ -36,7 +36,7 @@ Map<String, dynamic> _$TeamAccountModelToJson(TeamAccountModel instance) {
 
   writeNotNull('accountId', instance.accountId);
   writeNotNull('color', instance.color);
-  writeNotNull('nickName', instance.nickName);
+  writeNotNull('nickname', instance.nickname);
   writeNotNull('profilePicture', instance.profilePicture);
   writeNotNull('useYn', instance.useYn);
   writeNotNull('joinedAt', instance.joinedAt);

@@ -30,7 +30,7 @@ class UserDTO {
     this.memberSeq,
     this.password,
     this.delimit,
-    this.nickName,
+    this.nickname,
     this.profilePicture,
     this.deleteAt,
     this.color,
@@ -86,8 +86,8 @@ class UserDTO {
   @JsonKey(name: r'delimit', required: false, includeIfNull: false)
   final String? delimit;
 
-  @JsonKey(name: r'nickName', required: false, includeIfNull: false)
-  final String? nickName;
+  @JsonKey(name: r'nickname', required: false, includeIfNull: false)
+  final String? nickname;
 
   @JsonKey(name: r'profilePicture', required: false, includeIfNull: false)
   final String? profilePicture;
@@ -124,7 +124,7 @@ class UserDTO {
           other.memberSeq == memberSeq &&
           other.password == password &&
           other.delimit == delimit &&
-          other.nickName == nickName &&
+          other.nickname == nickname &&
           other.profilePicture == profilePicture &&
           other.deleteAt == deleteAt &&
           other.color == color &&
@@ -149,7 +149,7 @@ class UserDTO {
       memberSeq.hashCode +
       password.hashCode +
       delimit.hashCode +
-      nickName.hashCode +
+      nickname.hashCode +
       profilePicture.hashCode +
       deleteAt.hashCode +
       color.hashCode +

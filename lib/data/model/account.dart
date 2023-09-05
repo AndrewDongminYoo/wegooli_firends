@@ -23,7 +23,7 @@ class Account {
     this.createdAt,
     this.updatedAt,
     this.color,
-    this.nickName,
+    this.nickname,
     this.profilePicture,
   });
 
@@ -54,8 +54,8 @@ class Account {
   @JsonKey(name: r'color', required: false, includeIfNull: false)
   final String? color;
 
-  @JsonKey(name: r'nickName', required: false, includeIfNull: false)
-  final String? nickName;
+  @JsonKey(name: r'nickname', required: false, includeIfNull: false)
+  final String? nickname;
 
   @JsonKey(name: r'profilePicture', required: false, includeIfNull: false)
   final String? profilePicture;
@@ -73,7 +73,7 @@ class Account {
           other.createdAt == createdAt &&
           other.updatedAt == updatedAt &&
           other.color == color &&
-          other.nickName == nickName &&
+          other.nickname == nickname &&
           other.profilePicture == profilePicture;
 
   @override
@@ -87,7 +87,7 @@ class Account {
       createdAt.hashCode +
       updatedAt.hashCode +
       color.hashCode +
-      nickName.hashCode +
+      nickname.hashCode +
       profilePicture.hashCode;
 
   factory Account.fromJson(Map<String, dynamic> json) =>

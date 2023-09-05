@@ -127,11 +127,11 @@ abstract class Localized {
   /// **'영문/숫자/특수문자 조합 (6~12자)'**
   String get alphanumericSpecialCharacterCombination612Characters;
 
-  /// The question at the bottom to confirm 'Warning'.$nickName is user's nickName or name
+  /// The question at the bottom to confirm 'Warning'.$nickname is user's nickname or name
   ///
   /// In ko, this message translates to:
-  /// **'{nickName}님 정말로 구독을\n해지하시겠습니까?'**
-  String areYouSureYouWantToUnsubscribe(String nickName);
+  /// **'{nickname}님 정말로 구독을\n해지하시겠습니까?'**
+  String areYouSureYouWantToUnsubscribe(String nickname);
 
   ///
   ///
@@ -575,7 +575,7 @@ abstract class Localized {
   ///
   /// In ko, this message translates to:
   /// **'닉네임'**
-  String get nickName;
+  String get nickname;
 
   /// 차량을 함께 사용하는 팀의 초대된 인원 수 (최대 4명)
   ///

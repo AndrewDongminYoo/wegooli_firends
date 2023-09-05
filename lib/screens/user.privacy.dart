@@ -39,8 +39,8 @@ class ProfileInfoPage extends GetWidget<UserController> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                            controller.currentUser.value.nickName ??
-                                l10ns.nickName,
+                            controller.currentUser.value.nickname ??
+                                l10ns.nickname,
                             // overflow: TextOverflow.ellipsis,
                             // textAlign: TextAlign.left,
                             style: CustomTextStyles.titleMedium18.copyWith(

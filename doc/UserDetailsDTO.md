@@ -30,7 +30,7 @@ import 'package:wegooli_friends/api.dart';
 | **email**                 | **String**                                              |             | [optional] |
 | **sex**                   | **String**                                              |             | [optional] |
 | **birthDay**              | **String**                                              |             | [optional] |
-| **nickName**              | **String**                                              |             | [optional] |
+| **nickname**              | **String**                                              |             | [optional] |
 | **profilePicture**        | **String**                                              |             | [optional] |
 | **add1**                  | **String**                                              |             | [optional] |
 | **createdAt**             | **String**                                              |             | [optional] |

@@ -19,7 +19,7 @@ import 'package:wegooli_friends/api.dart';
 | **createdAt**      | **String** |             | [optional] |
 | **updatedAt**      | **String** |             | [optional] |
 | **color**          | **String** |             | [optional] |
-| **nickName**       | **String** |             | [optional] |
+| **nickname**       | **String** |             | [optional] |
 | **profilePicture** | **String** |             | [optional] |
 
 [[Back to Model list]](../README.md#documentation-for-models)

@@ -25,7 +25,7 @@ class SelectUserDTO {
     this.birthday,
     this.sex,
     this.delimit,
-    this.nickName,
+    this.nickname,
     this.profilePicture,
     this.color,
     this.deleteAt,
@@ -68,8 +68,8 @@ class SelectUserDTO {
   @JsonKey(name: r'delimit', required: false, includeIfNull: false)
   final String? delimit;
 
-  @JsonKey(name: r'nickName', required: false, includeIfNull: false)
-  final String? nickName;
+  @JsonKey(name: r'nickname', required: false, includeIfNull: false)
+  final String? nickname;
 
   @JsonKey(name: r'profilePicture', required: false, includeIfNull: false)
   final String? profilePicture;
@@ -107,7 +107,7 @@ class SelectUserDTO {
           other.birthday == birthday &&
           other.sex == sex &&
           other.delimit == delimit &&
-          other.nickName == nickName &&
+          other.nickname == nickname &&
           other.profilePicture == profilePicture &&
           other.color == color &&
           other.deleteAt == deleteAt &&
@@ -129,7 +129,7 @@ class SelectUserDTO {
       birthday.hashCode +
       sex.hashCode +
       delimit.hashCode +
-      nickName.hashCode +
+      nickname.hashCode +
       profilePicture.hashCode +
       color.hashCode +
       deleteAt.hashCode +

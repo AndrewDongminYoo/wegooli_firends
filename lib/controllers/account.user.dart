@@ -21,7 +21,7 @@ class UserController extends GetxController {
   TextEditingController username = TextEditingController();
   TextEditingController password = TextEditingController();
   TextEditingController postCode = TextEditingController();
-  TextEditingController nickName = TextEditingController();
+  TextEditingController nickname = TextEditingController();
   TextEditingController fullName = TextEditingController();
   TextEditingController birthDay = TextEditingController();
   TextEditingController socialId = TextEditingController();
@@ -122,7 +122,7 @@ class UserController extends GetxController {
       detailAddress.text.length > 0 &&
       emailAddress.text.isEmail &&
       password.text.length > 0 &&
-      nickName.text.length > 0 &&
+      nickname.text.length > 0 &&
       rePassword.text.length > 0 &&
       (password.text == rePassword.text);
 
@@ -141,7 +141,7 @@ class UserController extends GetxController {
     emailAddress.dispose();
     password.dispose();
     rePassword.dispose();
-    nickName.dispose();
+    nickname.dispose();
   }
 
   Future<void> authorize() async {

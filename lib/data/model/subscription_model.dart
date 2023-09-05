@@ -1,6 +1,7 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'subscription_model.g.dart';
@@ -60,4 +61,20 @@ class SubscriptionModel extends Equatable {
       _$SubscriptionModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$SubscriptionModelToJson(this);
+
+  @override
+  List<Object?> get props {
+    return [
+      accountId,
+      teamSeq,
+      teamName,
+      carNumber,
+      carModel,
+      carNickname,
+      fee,
+      createdAt,
+      endAt,
+      withdrawalAt,
+    ];
+  }
 }

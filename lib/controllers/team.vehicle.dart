@@ -175,12 +175,12 @@ class VehicleController extends GetxController {
     // TODO jwt payload에서는 userId로 넘어오는데...id로 파싱해서 안됨...
     print('response : selectSubscriptionInfo::currentUser ${currentUser}');
     final teamInfo = userController.teams[0];
-    if (teamInfo.teamSeq == null) {
+    if (currentUser.id == null || teamInfo.teamSeq == null) {
       return;
     }
     final subscriptionControllerApi = wegooli.getSubscriptionControllerApi();
     final response = await subscriptionControllerApi.selectSubscriptionInfo(
-        accountId: currentUser.id, teamSeq: teamInfo.teamSeq!);
+        accountId: currentUser.id!, teamSeq: teamInfo.teamSeq!);
     if (response.data == null) {
       return;
     }
@@ -207,11 +207,11 @@ class VehicleController extends GetxController {
   Future<void> subscribe() async {
     final currentUser = userController.currentUser.value;
     final teamInfo = userController.teams[0];
-    if (teamInfo.teamSeq == null) {
+    if (currentUser.id == null || teamInfo.teamSeq == null) {
       return;
     }
     SubmitWithdrawalModel submitWithdrawalModel = new SubmitWithdrawalModel(
-        accountId: currentUser.id, date: null, teamSeq: teamInfo.teamSeq!);
+        accountId: currentUser.id!, date: null, teamSeq: teamInfo.teamSeq!);
     await wegooli
         .getSubscriptionControllerApi()
         .submitWithdrawal(submitWithdrawalModel: submitWithdrawalModel);

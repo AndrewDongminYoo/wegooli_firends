@@ -1,6 +1,7 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'submit_withdrawal_model.g.dart';
@@ -32,4 +33,13 @@ class SubmitWithdrawalModel extends Equatable {
       _$SubmitWithdrawalModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$SubmitWithdrawalModelToJson(this);
+
+  @override
+  List<Object?> get props {
+    return [
+      accountId,
+      date,
+      teamSeq,
+    ];
+  }
 }

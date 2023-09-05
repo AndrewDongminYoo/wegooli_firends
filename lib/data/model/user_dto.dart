@@ -28,7 +28,7 @@ class UserDto extends Equatable {
   final int? memberSeq;
   final String? nickname;
   final String? userEmail;
-  final String id;
+  final String? id;
   final String? add2;
   final String? add1;
   final String? sub;
@@ -42,7 +42,6 @@ class UserDto extends Equatable {
 
   @override
   bool get stringify => true;
-  @override
   @override
   List<Object?> get props {
     return [

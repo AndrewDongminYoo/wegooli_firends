@@ -82,6 +82,15 @@ extension MapKeyExtension on Map<dynamic, dynamic> {
     }
   }
 
+  R getOrDefault<T, R>(T key, R defaultValue) {
+    final value = this[key];
+    if (value is R) {
+      return value;
+    } else {
+      return defaultValue;
+    }
+  }
+
   /// 이 객체 속성의 키=값 쌍으로 구성된 URL 쿼리 문자열을 반환합니다.
   /// 유효한 값이 있는 속성 값만 쿼리 문자열에 포함됩니다.
   String toQueryString() {

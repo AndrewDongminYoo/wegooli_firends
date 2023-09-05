@@ -23,31 +23,55 @@ class ScheduleController extends GetxController {
   /// [Map]을 사용하기로 한 경우, [LinkedHashMap]를 사용하는 것이 권장됩니다.
   LinkedHashMap<DateTime, List<Schedule>>? _events =
       LinkedHashMap<DateTime, List<Schedule>>();
-  LinkedHashMap<DateTime, List<Schedule>> get events => _events ??
+  LinkedHashMap<DateTime, List<Schedule>> get events =>
+      _events ??
       LinkedHashMap<DateTime, List<Schedule>>(
         equals: isSameDay,
         hashCode: getHashCode,
-      )
-    ..addAll(eventSource);
+      );
+  // ..addAll(eventSource);
 
-  Map<DateTime, List<Schedule>> get eventSource =>
-      Map.fromIterable(List<int>.generate(0, (index) => index),
-          key: (item) =>
-              DateTime.utc(firstDay.year, firstDay.month, (item * 5) as int),
-          value: (item) => List.generate((item % 4 + 1) as int,
-              (index) => Schedule(accountId: '사용자 $item | ${index + 1}')))
-        ..addAll({
-          kToday: [
-            // TODO: 실제 데이터로 변경
-            // Schedule(accountId: l10ns.name2),
-            // Schedule(accountId: l10ns.name3),
-          ],
-        });
+  // Map<DateTime, List<Schedule>> get eventSource =>
+  //     Map.fromIterable(List<int>.generate(10, (index) => index),
+  //         key: (item) =>
+  //             DateTime.utc(firstDay.year, firstDay.month, (item * 5) as int),
+  //         value: (item) => List.generate((item % 4 + 1) as int,
+  //             (index) => Schedule(accountId: '사용자 $item | ${index + 1}')))
+  //       ..addAll({
+  //         kToday: [
+  //           // TODO: 실제 데이터로 변경
+  //           Schedule(accountId: l10ns.name2),
+  //           Schedule(accountId: l10ns.name3),
+  //         ],
+  //       });
 
+  RxMap<DateTime, List<Schedule>> _eventSource = RxMap.of({});
+  Map<DateTime, List<Schedule>> get eventSource => _eventSource;
   @override
   void onInit() async {
-    eventSource.addAll({kToday: await retrieveSchedules()});
+    // eventSource.clear();
     super.onInit();
+    final schedules = await retrieveSchedules();
+    // _eventSource = Map<DateTime, List<Schedule>>.fromIterable(schedules,
+    //     key: (it) => DateTime.parse(it.startAt), value: (it) => it);
+    // Map<DateTime, List<Schedule>> _eventSource = Map.of({});
+    for (Schedule schedule in schedules) {
+      DateTime startDate = DateTime.parse(schedule.startAt!);
+      DateTime endDate = DateTime.parse(schedule.endAt!);
+      int diffDays = endDate.difference(startDate).inDays;
+      for (var i = 0; i < diffDays; i++) {
+        DateTime key = startDate.add(Duration(days: i));
+        List<Schedule> value = _eventSource.getOrDefault(key, []);
+        value.add(schedule);
+        _eventSource.addIf(true, key.toUtc(), value);
+        print('eventSource Add : \nkey:${key.toUtc()}\nvalue:$value');
+      }
+    }
+    // events.addAll(_eventSource);
+    // print('_eventSource : $_eventSource');
+    print('_eventSource : $_eventSource');
+    // eventSource.addAll({kToday: await retrieveSchedules()});
+  
   }
 
   DateTime? _firstDay;

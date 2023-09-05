@@ -145,7 +145,9 @@ class RegisterCreditCard extends GetWidget<PaymentCardController> {
                         fixedSize: MaterialStateProperty.all<Size>(
                             Size(double.maxFinite, getVerticalSize(52)))),
                     buttonTextStyle: CustomTextStyles.titleMedium18,
-                    onTap: () {
+                    onTap: () async {
+                      // TODO 카드 검증 필요함.
+                      await controller.registerCard();
                       if (paymentCardController.paymentCards.length == 0) {
                         Get.toNamed(AppRoutes.registerSuccess);
                       } else {

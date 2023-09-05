@@ -57,4 +57,21 @@ class PaymentCardController extends GetxController {
       }
     }
   }
+
+  Future<String> registerCard() async {
+    PaymentCardRequest paymentCardRequest = PaymentCardRequest(
+        // memberSeq: team이 없는데 어캐넣음 ??
+        cardNumber: this.creditCardId.text,
+        //  defaultYn: 'Y',
+        password: this.cardPassword.text,
+        rrn: this.birthNumber6.text,
+        expirationMonth: this.expirationDT.text.substring(0, 2),
+        expirationYear: this.expirationDT.text.substring(2));
+
+    final response = await wegooli
+        .getPaymentCardControllerApi()
+        .insertPaymentCard(paymentCardRequest: paymentCardRequest);
+    print('response.data : ${response.data}');
+    return response.data ?? 'false';
+  }
 }

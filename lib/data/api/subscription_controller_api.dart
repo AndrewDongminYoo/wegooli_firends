@@ -4,6 +4,7 @@ import 'dart:convert';
 
 // 📦 Package imports:
 import 'package:dio/dio.dart';
+
 // 🌎 Project imports:
 import '/data/deserialize.dart';
 import '/data/model/submit_withdrawal_model.dart';
@@ -15,7 +16,6 @@ class SubscriptionControllerApi {
   const SubscriptionControllerApi(this._dio);
 
   /// selectSubscriptionInfo
-  ///
   ///
   /// Parameters:
   /// * [accountId]
@@ -100,7 +100,6 @@ class SubscriptionControllerApi {
   }
 
   /// submitWithdrawal
-  ///
   ///
   /// Parameters:
   /// * [submitWithdrawalModel]

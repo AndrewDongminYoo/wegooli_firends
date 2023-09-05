@@ -13,6 +13,7 @@
     "jeroen-meijer.pubspec-assist",
     "everettjf.pubspec-dependency-search",
     "pflannery.vscode-versionlens",
-    "nash.awesome-flutter-snippets"
+    "nash.awesome-flutter-snippets",
+    "hirantha.json-to-dart"
   ]
 }

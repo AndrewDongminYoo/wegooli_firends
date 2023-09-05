@@ -67,5 +67,10 @@
   "files.associations": {
     "*.arb": "json",
     ".openapi-generator-ignore": "ignore"
-  }
+  },
+  "jsonToDart.codeGenerator": "Freezed",
+  "jsonToDart.equality": "Equatable",
+  "jsonToDart.sortConstructorsFirst": true,
+  "jsonToDart.toString": "Auto",
+  "jsonToDart.fastMode": true
 }

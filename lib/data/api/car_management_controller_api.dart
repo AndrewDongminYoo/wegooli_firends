@@ -1,27 +1,23 @@
-//
-// AUTO-GENERATED FILE, DO NOT MODIFY!
-//
-
+// 🎯 Dart imports:
 import 'dart:async';
-
-// ignore: unused_import
 import 'dart:convert';
-import 'package:wegooli_friends/data/deserialize.dart';
+
+// 📦 Package imports:
 import 'package:dio/dio.dart';
 
-import 'package:wegooli_friends/data/model/car_management_model.dart';
+// 🌎 Project imports:
+import '/data/deserialize.dart';
+import '/data/model/car_management_model.dart';
 
 class CarManagementControllerApi {
-
   final Dio _dio;
 
   const CarManagementControllerApi(this._dio);
 
   /// deleteCarManagement
-  /// 
   ///
   /// Parameters:
-  /// * [seq] 
+  /// * [seq]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -31,7 +27,7 @@ class CarManagementControllerApi {
   ///
   /// Returns a [Future] containing a [Response] with a [bool] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<bool>> deleteCarManagement({ 
+  Future<Response<bool>> deleteCarManagement({
     required int seq,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -40,7 +36,8 @@ class CarManagementControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/car/management/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
+    final _path =
+        r'/car/management/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -70,8 +67,10 @@ class CarManagementControllerApi {
     bool? _responseData;
 
     try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<bool, bool>(rawData, 'bool', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<bool, bool>(rawData, 'bool', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -95,10 +94,9 @@ _responseData = rawData == null ? null : deserialize<bool, bool>(rawData, 'bool'
   }
 
   /// insertCarManagement
-  /// 
   ///
   /// Parameters:
-  /// * [carManagementModel] 
+  /// * [carManagementModel]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -108,7 +106,7 @@ _responseData = rawData == null ? null : deserialize<bool, bool>(rawData, 'bool'
   ///
   /// Returns a [Future] containing a [Response] with a [int] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<int>> insertCarManagement({ 
+  Future<Response<int>> insertCarManagement({
     required CarManagementModel carManagementModel,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -140,10 +138,10 @@ _responseData = rawData == null ? null : deserialize<bool, bool>(rawData, 'bool'
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(carManagementModel);
-    } catch(error, stackTrace) {
+      _bodyData = jsonEncode(carManagementModel);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -165,8 +163,10 @@ _bodyData=jsonEncode(carManagementModel);
     int? _responseData;
 
     try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<int, int>(rawData, 'int', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<int, int>(rawData, 'int', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -190,10 +190,9 @@ _responseData = rawData == null ? null : deserialize<int, int>(rawData, 'int', g
   }
 
   /// selectCarManagement
-  /// 
   ///
   /// Parameters:
-  /// * [seq] 
+  /// * [seq]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -203,7 +202,7 @@ _responseData = rawData == null ? null : deserialize<int, int>(rawData, 'int', g
   ///
   /// Returns a [Future] containing a [Response] with a [CarManagementModel] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<CarManagementModel>> selectCarManagement({ 
+  Future<Response<CarManagementModel>> selectCarManagement({
     required int seq,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -212,7 +211,8 @@ _responseData = rawData == null ? null : deserialize<int, int>(rawData, 'int', g
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/car/management/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
+    final _path =
+        r'/car/management/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -242,8 +242,12 @@ _responseData = rawData == null ? null : deserialize<int, int>(rawData, 'int', g
     CarManagementModel? _responseData;
 
     try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<CarManagementModel, CarManagementModel>(rawData, 'CarManagementModel', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<CarManagementModel, CarManagementModel>(
+              rawData, 'CarManagementModel',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -267,10 +271,9 @@ _responseData = rawData == null ? null : deserialize<CarManagementModel, CarMana
   }
 
   /// selectCarManagementList
-  /// 
   ///
   /// Parameters:
-  /// * [request] 
+  /// * [request]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -280,7 +283,7 @@ _responseData = rawData == null ? null : deserialize<CarManagementModel, CarMana
   ///
   /// Returns a [Future] containing a [Response] with a [List<CarManagementModel>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<List<CarManagementModel>>> selectCarManagementList({ 
+  Future<Response<List<CarManagementModel>>> selectCarManagementList({
     required CarManagementModel request,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -324,8 +327,12 @@ _responseData = rawData == null ? null : deserialize<CarManagementModel, CarMana
     List<CarManagementModel>? _responseData;
 
     try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<List<CarManagementModel>, CarManagementModel>(rawData, 'List<CarManagementModel>', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<List<CarManagementModel>, CarManagementModel>(
+              rawData, 'List<CarManagementModel>',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -349,11 +356,10 @@ _responseData = rawData == null ? null : deserialize<List<CarManagementModel>, C
   }
 
   /// updateCarManagement
-  /// 
   ///
   /// Parameters:
-  /// * [carManagementModel] 
-  /// * [seq] 
+  /// * [carManagementModel]
+  /// * [seq]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -363,7 +369,7 @@ _responseData = rawData == null ? null : deserialize<List<CarManagementModel>, C
   ///
   /// Returns a [Future] containing a [Response] with a [int] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<int>> updateCarManagement({ 
+  Future<Response<int>> updateCarManagement({
     required CarManagementModel carManagementModel,
     required int seq,
     CancelToken? cancelToken,
@@ -373,7 +379,8 @@ _responseData = rawData == null ? null : deserialize<List<CarManagementModel>, C
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/car/management/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
+    final _path =
+        r'/car/management/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
     final _options = Options(
       method: r'PUT',
       headers: <String, dynamic>{
@@ -396,10 +403,10 @@ _responseData = rawData == null ? null : deserialize<List<CarManagementModel>, C
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(carManagementModel);
-    } catch(error, stackTrace) {
+      _bodyData = jsonEncode(carManagementModel);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
+        requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
@@ -421,8 +428,10 @@ _bodyData=jsonEncode(carManagementModel);
     int? _responseData;
 
     try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<int, int>(rawData, 'int', growable: true);
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<int, int>(rawData, 'int', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -444,5 +453,4 @@ _responseData = rawData == null ? null : deserialize<int, int>(rawData, 'int', g
       extra: _response.extra,
     );
   }
-
 }

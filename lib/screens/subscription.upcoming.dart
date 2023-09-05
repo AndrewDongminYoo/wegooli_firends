@@ -115,7 +115,7 @@ class UpcomingUnsubscription extends GetWidget<VehicleController> {
                                               letterSpacing:
                                                   getHorizontalSize(0.03))),
                                   Obx(() => Text(
-                                      '${controller.subscriptionModel.value.createdAt?.substring(0,10)}~${controller.subscriptionModel.value.endAt?.substring(0, 10)}',
+                                      '${controller.subscriptionModel.value.createdAt?.substring(0, 10)}~${controller.subscriptionModel.value.endAt?.substring(0, 10)}',
                                       overflow: TextOverflow.ellipsis,
                                       textAlign: TextAlign.left,
                                       style: theme.textTheme.bodyLarge!

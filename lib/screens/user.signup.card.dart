@@ -92,9 +92,10 @@ class RegisterCreditCard extends GetWidget<PaymentCardController> {
                                     labelText:
                                         l10ns.socialSecurityNumberFirstDigit),
                                 CustomTextFormField(
-                                    enabled: userController.birthDay.text.length > 0
-                                        ? false
-                                        : true,
+                                    enabled:
+                                        userController.birthDay.text.length > 0
+                                            ? false
+                                            : true,
                                     margin: getMargin(top: 4),
                                     contentPadding: getPadding(
                                         left: 12,
@@ -107,8 +108,7 @@ class RegisterCreditCard extends GetWidget<PaymentCardController> {
                                     inputFormatters: [
                                       LengthLimitingTextInputFormatter(6),
                                     ],
-                                    initialValue:
-                                        userController.birthDay.text,
+                                    initialValue: userController.birthDay.text,
                                     textInputAction: TextInputAction.next,
                                     filled: true,
                                     fillColor:

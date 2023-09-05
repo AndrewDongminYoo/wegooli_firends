@@ -20,7 +20,7 @@ class ValidatePhoneCompleteButton extends GetWidget<UserController> {
             buttonTextStyle: CustomTextStyles.titleMedium18,
             onTap: () {
               if (controller.isValidatedPhone) {
-                Get.toNamed(AppRoutes.registerZipCode);
+                goRegisterZipCode();
               }
             }));
   }

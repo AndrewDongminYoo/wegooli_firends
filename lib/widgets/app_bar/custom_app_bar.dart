@@ -1,9 +1,6 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:get/route_manager.dart';
-
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
@@ -76,7 +73,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             svgPath: Assets.svg.imgArrowLeft.path,
             margin: getMargin(left: 16, top: 19, bottom: 16),
             onTap: () {
-              onTapLeading != null ? onTapLeading.call() : Get.back();
+              onTapLeading != null ? onTapLeading.call() : goBack();
             }),
         centerTitle: true,
         title: AppbarTitle(text: titleText ?? "FRIENDS"));

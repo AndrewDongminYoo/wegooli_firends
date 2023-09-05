@@ -125,6 +125,7 @@ export 'layout/highlight_focus.dart';
 export 'layout/image_placeholder.dart';
 export 'layout/letter_spacing.dart';
 export 'routes/app_routes.dart';
+export 'routes/navigators.dart';
 export 'screens/app_gateway/app_navigation_title.dart';
 export 'screens/app_gateway/check_ui_message.dart';
 export 'screens/app_gateway/open_dialog.dart';

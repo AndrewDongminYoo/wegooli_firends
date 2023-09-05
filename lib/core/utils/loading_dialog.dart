@@ -33,7 +33,7 @@ class LoadingDialog {
   /// 모달을 숨기면 [isProgressVisible] 플래그가 `false`로 설정됩니다.
   static void hideProgressDialog() {
     if (isProgressVisible) {
-      Get.back();
+      goBack();
     }
     isProgressVisible = false;
   }

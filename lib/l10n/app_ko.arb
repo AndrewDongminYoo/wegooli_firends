@@ -116,6 +116,14 @@
   "@checkYourAppUI": {
     "description": "디버그를 위한 게이트웨이 스크린 안내 문구"
   },
+  "dashChatWithFriendsPage": "[Page] 팀 채팅하기",
+  "@dashChatWithFriendsPage": {
+    "description": "[Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨."
+  },
+  "profileInfoPage": "[Page] 마이페이지 / 내 정보보기",
+  "@profileInfoPage": {
+    "description": "[Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨."
+  },
   "confirm": "확인",
   "@confirm": {
     "description": "알겠습니다/승인합니다/동의합니다/확인했습니다."
@@ -498,10 +506,6 @@
   "@smartKeyAvailable": {
     "description": "[Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨."
   },
-  "smartKeyNotAvailable": "[Page] 스마트키 (사용중)",
-  "@smartKeyNotAvailable": {
-    "description": "[Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨."
-  },
   "socialSecurityNumberFirstDigit": "주민등록번호 앞자리",
   "@socialSecurityNumberFirstDigit": {
     "description": "주민등록번호 앞자리 입력 헬프 텍스트 6자리 YYMMDD"
@@ -590,10 +594,6 @@
   },
   "upcomingUnsubscriptionInfo": "[Page] 예정된 구독 취소 정보",
   "@upcomingUnsubscriptionInfo": {
-    "description": "[Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨."
-  },
-  "upcomingUnsubscriptionView": "[Page] 예정된 구독 취소 보기",
-  "@upcomingUnsubscriptionView": {
     "description": "[Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨."
   },
   "useOfPersonalInfoForMarketing": "마케팅 목적 개인정보 수집/이용 (선택)",

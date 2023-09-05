@@ -205,13 +205,13 @@ Obx(() => Text("${controller.name}"));
 
 That's all. It's _that_ simple.
 
-**See an more in-depth explanation of state management [here](https://github.com/jonataslaw/getx/blob/main/documentation/en_US/state_management.md). There you will see more examples and also the difference between the simple state manager and the reactive state manager**
+**상태 관리에 대한 자세한 설명은 [여기](https://github.com/jonataslaw/getx/blob/main/documentation/en_US/state_management.md)를 참조하세요. 더 많은 예제와 단순 상태 관리자와 반응형 상태 관리자의 차이점도 확인할 수 있습니다.**
 
-You will get a good idea of GetX power.
+GetX의 강점을 잘 알 수 있을 것입니다.
 
-If you are going to use routes/snackbars/dialogs/bottomsheets without context, GetX is excellent for you too, just see it:
+컨텍스트 없이 routes/snackbars/dialogs/bottomsheets를 사용하려는 경우에도 `GetX`는 매우 유용합니다:
 
-Add "Get" before your MaterialApp, turning it into GetMaterialApp
+`MaterialApp` 앞에 `Get`을 추가하여 `GetMaterialApp`으로 바꿉니다.
 
 ```dart
 GetMaterialApp( // Before: MaterialApp(
@@ -219,39 +219,39 @@ GetMaterialApp( // Before: MaterialApp(
 )
 ```
 
-Navigate to a new screen:
+새 화면으로 이동합니다:
 
 ```dart
 
 Get.to(NextScreen());
 ```
 
-Navigate to new screen with name. See more details on named routes [here](https://github.com/jonataslaw/getx/blob/main/documentation/en_US/route_management.md#navigation-with-named-routes)
+이름이 지정된 새 화면으로 이동합니다. 명명된 경로에 대한 자세한 내용은 [여기](https://github.com/jonataslaw/getx/blob/main/documentation/en_US/route_management.md#navigation-with-named-routes)를 참조하세요.
 
 ```dart
 
 Get.toNamed('/details');
 ```
 
-To close snackbars, dialogs, bottomsheets, or anything you would normally close with Navigator.pop(context);
+이전 화면으로 돌아가려고 하거나, 스낵바, 대화 상자, 바텀시트 등 일반적으로 닫을 수 있는 모든 것을 닫으려면 `Navigator.pop(context)`와 거의 동일한 기능을 제공하는 `Get.back()`명령어를 사용합니다.
 
 ```dart
 Get.back();
 ```
 
-To go to the next screen and no option to go back to the previous screen (for use in SplashScreens, login screens, etc.)
+다음 화면으로 이동하고 이전 화면으로 돌아가는 옵션이 없는 경우(스플래시 화면, 로그인 화면 등에서 사용)
 
 ```dart
 Get.off(NextScreen());
 ```
 
-To go to the next screen and cancel all previous routes (useful in shopping carts, polls, and tests)
+다음 화면으로 이동하고 이전 경로를 모두 취소하려면(장바구니, 설문조사 및 테스트에서 유용).
 
 ```dart
 Get.offAll(NextScreen());
 ```
 
-Noticed that you didn't have to use context to do any of these things? That's one of the biggest advantages of using Get route management. With this, you can execute all these methods from within your controller class, without worries.
+이러한 작업을 수행하기 위해 빌드 컨텍스트를 사용할 필요가 없다는 사실을 눈치채셨나요? 이것이 바로 경로 관리 가져오기 기능의 가장 큰 장점 중 하나입니다. 이를 사용하면 컨트롤러 클래스 내에서 이러한 모든 메서드를 걱정 없이 실행할 수 있습니다.
 
 **Get works with named routes and also offers lower-level control over your routes! There is in-depth documentation [here](https://github.com/jonataslaw/getx/blob/main/documentation/en_US/route_management.md)**
 

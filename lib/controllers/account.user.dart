@@ -221,7 +221,7 @@ class UserController extends GetxController {
       if (teamSeq == null) {
         return;
       }
-      final response2 = await api.selectTeamAccountList(teamSeq: teamSeq!);
+      final response2 = await api.selectTeamAccountList(teamSeq: teamSeq);
       List<TeamAccountConnectionResponse>? teamList = response2.data;
       if (teamList != null && teamList.isNotEmpty) {
         teams(teamList);

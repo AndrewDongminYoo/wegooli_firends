@@ -2,9 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-// 📦 Package imports:
-import 'package:get/get.dart';
-
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
@@ -43,25 +40,25 @@ class _CustomBottomAppBarState extends State<CustomBottomAppBar> {
                 icon: Assets.svg.imgCalOnPrimary.svg(),
                 selectedIcon: Assets.svg.imgCalOnPrimary.svg(),
                 tooltip: l10ns.schedule,
-                onPressed: () => Get.toNamed(AppRoutes.sharedSchedule),
+                onPressed: goSharedSchedule,
               ),
               IconButton(
                 icon: Assets.svg.imgChatGray400.svg(),
                 selectedIcon: Assets.svg.imgChatGray400.svg(),
                 tooltip: l10ns.chat,
-                onPressed: () => Get.toNamed(AppRoutes.chatWithTeam),
+                onPressed: goChatWithTeam,
               ),
               IconButton(
                 icon: Assets.svg.imgKeyGray400.svg(),
                 selectedIcon: Assets.svg.imgKeyGray400.svg(),
                 tooltip: l10ns.smartKey,
-                onPressed: () => Get.toNamed(AppRoutes.carSmartKey),
+                onPressed: goCarSmartKey,
               ),
               IconButton(
                 icon: Assets.svg.imgUser2.svg(),
                 selectedIcon: Assets.svg.imgUser2.svg(),
                 tooltip: l10ns.myPage,
-                onPressed: () => Get.toNamed(AppRoutes.myProfile),
+                onPressed: goMyProfile,
               ),
             ],
           ),

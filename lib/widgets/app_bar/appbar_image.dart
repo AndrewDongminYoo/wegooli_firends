@@ -1,9 +1,6 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:get/route_manager.dart';
-
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
@@ -26,7 +23,7 @@ class AppbarImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
         onTap: () {
-          onTap != null ? onTap!() : Get.back();
+          onTap != null ? onTap!() : goBack();
         },
         child: Padding(
             padding: margin ?? EdgeInsets.zero,

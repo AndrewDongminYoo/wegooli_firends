@@ -14,7 +14,7 @@ class UserDto extends Equatable {
     this.memberSeq,
     this.nickname,
     this.userEmail,
-    required this.id,
+    this.id,
     this.add2,
     this.add1,
     this.sub,

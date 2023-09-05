@@ -8,7 +8,7 @@ import 'package:dio/dio.dart';
 // 🌎 Project imports:
 import '/data/deserialize.dart';
 import '/data/model/account.dart';
-import '/data/model/auth_api_response.dart';
+import '/data/model/api_response_object.dart';
 import '/data/model/member.dart';
 import '/data/model/result.dart';
 import '/data/model/select_user_dto.dart';
@@ -116,9 +116,9 @@ class UserControllerApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [AuthApiResponse] as data
+  /// Returns a [Future] containing a [Response] with a [ApiResponseObject] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<AuthApiResponse>> generateToken({
+  Future<Response<ApiResponseObject>> generateToken({
     required UserDetailsDTO userDetailsDTO,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -172,14 +172,14 @@ class UserControllerApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    AuthApiResponse? _responseData;
+    ApiResponseObject? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null
           ? null
-          : deserialize<AuthApiResponse, AuthApiResponse>(
-              rawResponse, 'AuthApiResponse',
+          : deserialize<ApiResponseObject, ApiResponseObject>(
+              rawResponse, 'ApiResponseObject',
               growable: true);
     } catch (error, stackTrace) {
       throw DioException(
@@ -191,7 +191,7 @@ class UserControllerApi {
       );
     }
 
-    return Response<AuthApiResponse>(
+    return Response<ApiResponseObject>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -387,9 +387,9 @@ class UserControllerApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [AuthApiResponse] as data
+  /// Returns a [Future] containing a [Response] with a [ApiResponseObject] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<AuthApiResponse>> login({
+  Future<Response<ApiResponseObject>> login({
     required String id,
     required String password,
     CancelToken? cancelToken,
@@ -432,14 +432,14 @@ class UserControllerApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    AuthApiResponse? _responseData;
+    ApiResponseObject? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null
           ? null
-          : deserialize<AuthApiResponse, AuthApiResponse>(
-              rawResponse, 'AuthApiResponse',
+          : deserialize<ApiResponseObject, ApiResponseObject>(
+              rawResponse, 'ApiResponseObject',
               growable: true);
     } catch (error, stackTrace) {
       throw DioException(
@@ -451,7 +451,7 @@ class UserControllerApi {
       );
     }
 
-    return Response<AuthApiResponse>(
+    return Response<ApiResponseObject>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

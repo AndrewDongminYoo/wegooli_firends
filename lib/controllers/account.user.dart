@@ -154,7 +154,7 @@ class UserController extends GetxController {
       Result? result = response.data?.result;
       String bearerToken = '';
       String token = '';
-      if (result == null) {
+      if (result == null || result.token == null) {
         print('`login()` 반환값: $result, ${response.data?.resultCode}');
         Get.dialog(Center(
             child: Assets.lotties.xInCircle.lottie(height: 250, width: 250)));

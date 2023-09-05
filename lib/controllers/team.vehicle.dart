@@ -191,7 +191,7 @@ class VehicleController extends GetxController {
   Future<void> unsubscribe() async {
     final currentUser = userController.currentUser.value;
     final teamInfo = userController.teams[0];
-    if (currentUser.id == null || teamInfo.teamSeq == null) {
+    if (teamInfo.teamSeq == null) {
       return;
     }
     SubmitWithdrawalModel submitWithdrawalModel = new SubmitWithdrawalModel(
@@ -207,7 +207,7 @@ class VehicleController extends GetxController {
   Future<void> subscribe() async {
     final currentUser = userController.currentUser.value;
     final teamInfo = userController.teams[0];
-    if (currentUser.id == null || teamInfo.teamSeq == null) {
+    if (teamInfo.teamSeq == null) {
       return;
     }
     SubmitWithdrawalModel submitWithdrawalModel = new SubmitWithdrawalModel(

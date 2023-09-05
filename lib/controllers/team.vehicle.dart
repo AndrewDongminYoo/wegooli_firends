@@ -15,10 +15,10 @@ class VehicleController extends GetxController {
       : Get.put(VehicleController());
   final String token = PrefUtils.storage.getToken();
   final userController = UserController.to;
-  late Rx<SubscriptionModel> subscriptionModel;
-  late Rx<CarManagementModel> carManagementModel;
-  late int? teamSeq;
-  late UserDto currentUser;
+  late Rx<SubscriptionModel> subscriptionModel = SubscriptionModel().obs;
+  late Rx<CarManagementModel> carManagementModel = CarManagementModel().obs;
+  late int? teamSeq = null;
+  late UserDto currentUser = UserDto();
   @override
   void onInit() async {
     currentUser = userController.currentUser.value;

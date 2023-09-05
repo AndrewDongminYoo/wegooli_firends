@@ -1,6 +1,7 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'car_history_dto.g.dart';
@@ -11,7 +12,7 @@ part 'car_history_dto.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class CarHistoryDTO {
+class CarHistoryDTO extends Equatable {
   /// Returns a new [CarHistoryDTO] instance.
   CarHistoryDTO({
     this.seq,
@@ -92,59 +93,11 @@ class CarHistoryDTO {
   @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
   final String? createdAt;
 
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is CarHistoryDTO &&
-          other.seq == seq &&
-          other.terminalSeq == terminalSeq &&
-          other.carNum == carNum &&
-          other.status == status &&
-          other.lat == lat &&
-          other.lon == lon &&
-          other.volt == volt &&
-          other.fuel == fuel &&
-          other.flDoorClose == flDoorClose &&
-          other.frDoorClose == frDoorClose &&
-          other.blDoorClose == blDoorClose &&
-          other.brDoorClose == brDoorClose &&
-          other.distance == distance &&
-          other.speed == speed &&
-          other.flDoorLock == flDoorLock &&
-          other.frDoorLock == frDoorLock &&
-          other.blDoorLock == blDoorLock &&
-          other.brDoorLock == brDoorLock &&
-          other.createdAt == createdAt;
-
-  @override
-  int get hashCode =>
-      seq.hashCode +
-      terminalSeq.hashCode +
-      carNum.hashCode +
-      status.hashCode +
-      lat.hashCode +
-      lon.hashCode +
-      volt.hashCode +
-      fuel.hashCode +
-      flDoorClose.hashCode +
-      frDoorClose.hashCode +
-      blDoorClose.hashCode +
-      brDoorClose.hashCode +
-      distance.hashCode +
-      speed.hashCode +
-      flDoorLock.hashCode +
-      frDoorLock.hashCode +
-      blDoorLock.hashCode +
-      brDoorLock.hashCode +
-      createdAt.hashCode;
-
   factory CarHistoryDTO.fromJson(Map<String, dynamic> json) =>
       _$CarHistoryDTOFromJson(json);
 
   Map<String, dynamic> toJson() => _$CarHistoryDTOToJson(this);
 
   @override
-  String toString() {
-    return toJson().toString();
-  }
+  bool get stringify => true;
 }

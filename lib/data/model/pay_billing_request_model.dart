@@ -1,6 +1,7 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'pay_billing_request_model.g.dart';
@@ -11,7 +12,7 @@ part 'pay_billing_request_model.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class PayBillingRequestModel {
+class PayBillingRequestModel extends Equatable {
   /// Returns a new [PayBillingRequestModel] instance.
   PayBillingRequestModel({
     this.amount,
@@ -32,29 +33,11 @@ class PayBillingRequestModel {
   @JsonKey(name: r'orderName', required: false, includeIfNull: false)
   final String? orderName;
 
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is PayBillingRequestModel &&
-          other.amount == amount &&
-          other.customerKey == customerKey &&
-          other.orderId == orderId &&
-          other.orderName == orderName;
-
-  @override
-  int get hashCode =>
-      amount.hashCode +
-      customerKey.hashCode +
-      orderId.hashCode +
-      orderName.hashCode;
-
   factory PayBillingRequestModel.fromJson(Map<String, dynamic> json) =>
       _$PayBillingRequestModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$PayBillingRequestModelToJson(this);
 
   @override
-  String toString() {
-    return toJson().toString();
-  }
+  bool get stringify => true;
 }

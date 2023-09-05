@@ -1,6 +1,7 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'device_option.g.dart';
@@ -11,7 +12,7 @@ part 'device_option.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class DeviceOption {
+class DeviceOption extends Equatable {
   /// Returns a new [DeviceOption] instance.
   DeviceOption({
     this.seq,
@@ -24,21 +25,11 @@ class DeviceOption {
   @JsonKey(name: r'optName', required: false, includeIfNull: false)
   final String? optName;
 
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is DeviceOption && other.seq == seq && other.optName == optName;
-
-  @override
-  int get hashCode => seq.hashCode + optName.hashCode;
-
   factory DeviceOption.fromJson(Map<String, dynamic> json) =>
       _$DeviceOptionFromJson(json);
 
   Map<String, dynamic> toJson() => _$DeviceOptionToJson(this);
 
   @override
-  String toString() {
-    return toJson().toString();
-  }
+  bool get stringify => true;
 }

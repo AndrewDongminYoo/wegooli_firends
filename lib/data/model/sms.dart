@@ -1,6 +1,7 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'sms.g.dart';
@@ -11,7 +12,7 @@ part 'sms.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class Sms {
+class Sms extends Equatable {
   /// Returns a new [Sms] instance.
   Sms({
     this.seq,
@@ -52,38 +53,10 @@ class Sms {
   @JsonKey(name: r'createdBy', required: false, includeIfNull: false)
   final String? createdBy;
 
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is Sms &&
-          other.seq == seq &&
-          other.delYn == delYn &&
-          other.createdAt == createdAt &&
-          other.updatedAt == updatedAt &&
-          other.title == title &&
-          other.content == content &&
-          other.file == file &&
-          other.bm == bm &&
-          other.createdBy == createdBy;
-
-  @override
-  int get hashCode =>
-      seq.hashCode +
-      delYn.hashCode +
-      createdAt.hashCode +
-      updatedAt.hashCode +
-      title.hashCode +
-      content.hashCode +
-      file.hashCode +
-      bm.hashCode +
-      createdBy.hashCode;
-
   factory Sms.fromJson(Map<String, dynamic> json) => _$SmsFromJson(json);
 
   Map<String, dynamic> toJson() => _$SmsToJson(this);
 
   @override
-  String toString() {
-    return toJson().toString();
-  }
+  bool get stringify => true;
 }

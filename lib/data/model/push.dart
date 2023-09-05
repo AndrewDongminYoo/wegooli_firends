@@ -1,6 +1,7 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'push.g.dart';
@@ -11,7 +12,7 @@ part 'push.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class Push {
+class Push extends Equatable {
   /// Returns a new [Push] instance.
   Push({
     this.seq,
@@ -52,38 +53,10 @@ class Push {
   @JsonKey(name: r'createdBy', required: false, includeIfNull: false)
   final String? createdBy;
 
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is Push &&
-          other.seq == seq &&
-          other.delYn == delYn &&
-          other.createdAt == createdAt &&
-          other.updatedAt == updatedAt &&
-          other.title == title &&
-          other.content == content &&
-          other.link == link &&
-          other.bm == bm &&
-          other.createdBy == createdBy;
-
-  @override
-  int get hashCode =>
-      seq.hashCode +
-      delYn.hashCode +
-      createdAt.hashCode +
-      updatedAt.hashCode +
-      title.hashCode +
-      content.hashCode +
-      link.hashCode +
-      bm.hashCode +
-      createdBy.hashCode;
-
   factory Push.fromJson(Map<String, dynamic> json) => _$PushFromJson(json);
 
   Map<String, dynamic> toJson() => _$PushToJson(this);
 
   @override
-  String toString() {
-    return toJson().toString();
-  }
+  bool get stringify => true;
 }

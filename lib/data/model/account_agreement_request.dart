@@ -1,6 +1,7 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'account_agreement_request.g.dart';
@@ -11,7 +12,7 @@ part 'account_agreement_request.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class AccountAgreementRequest {
+class AccountAgreementRequest extends Equatable {
   /// Returns a new [AccountAgreementRequest] instance.
   AccountAgreementRequest({
     this.classification,
@@ -28,25 +29,11 @@ class AccountAgreementRequest {
   @JsonKey(name: r'agreeYn', required: false, includeIfNull: false)
   final String? agreeYn;
 
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is AccountAgreementRequest &&
-          other.classification == classification &&
-          other.accountId == accountId &&
-          other.agreeYn == agreeYn;
-
-  @override
-  int get hashCode =>
-      classification.hashCode + accountId.hashCode + agreeYn.hashCode;
-
   factory AccountAgreementRequest.fromJson(Map<String, dynamic> json) =>
       _$AccountAgreementRequestFromJson(json);
 
   Map<String, dynamic> toJson() => _$AccountAgreementRequestToJson(this);
 
   @override
-  String toString() {
-    return toJson().toString();
-  }
+  bool get stringify => true;
 }

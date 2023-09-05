@@ -16,7 +16,7 @@ UserDetailsDTO _$UserDetailsDTOFromJson(Map<String, dynamic> json) =>
               'userDto',
               (v) => v == null
                   ? null
-                  : UserDTO.fromJson(v as Map<String, dynamic>)),
+                  : UserDto.fromJson(v as Map<String, dynamic>)),
           authorities: $checkedConvert(
               'authorities',
               (v) => (v as List<dynamic>?)

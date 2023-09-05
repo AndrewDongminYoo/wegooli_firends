@@ -1,6 +1,7 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'license_model.g.dart';
@@ -11,7 +12,7 @@ part 'license_model.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class LicenseModel {
+class LicenseModel extends Equatable {
   /// Returns a new [LicenseModel] instance.
   LicenseModel({
     this.seq,
@@ -68,47 +69,11 @@ class LicenseModel {
   @JsonKey(name: r'signature', required: false, includeIfNull: false)
   final String? signature;
 
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is LicenseModel &&
-          other.seq == seq &&
-          other.delYn == delYn &&
-          other.createdAt == createdAt &&
-          other.updatedAt == updatedAt &&
-          other.memberSeq == memberSeq &&
-          other.koreanYn == koreanYn &&
-          other.licenseClass == licenseClass &&
-          other.licenseArea == licenseArea &&
-          other.licenseYear == licenseYear &&
-          other.licenseNum == licenseNum &&
-          other.expiredDate == expiredDate &&
-          other.issuedDate == issuedDate &&
-          other.signature == signature;
-
-  @override
-  int get hashCode =>
-      seq.hashCode +
-      delYn.hashCode +
-      createdAt.hashCode +
-      updatedAt.hashCode +
-      memberSeq.hashCode +
-      koreanYn.hashCode +
-      licenseClass.hashCode +
-      licenseArea.hashCode +
-      licenseYear.hashCode +
-      licenseNum.hashCode +
-      expiredDate.hashCode +
-      issuedDate.hashCode +
-      signature.hashCode;
-
   factory LicenseModel.fromJson(Map<String, dynamic> json) =>
       _$LicenseModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$LicenseModelToJson(this);
 
   @override
-  String toString() {
-    return toJson().toString();
-  }
+  bool get stringify => true;
 }

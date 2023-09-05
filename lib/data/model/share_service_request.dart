@@ -1,6 +1,7 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'share_service_request.g.dart';
@@ -11,7 +12,7 @@ part 'share_service_request.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class ShareServiceRequest {
+class ShareServiceRequest extends Equatable {
   /// Returns a new [ShareServiceRequest] instance.
   ShareServiceRequest({
     this.startMonthlyAmount,
@@ -24,23 +25,11 @@ class ShareServiceRequest {
   @JsonKey(name: r'endMonthlyAmount', required: false, includeIfNull: false)
   final String? endMonthlyAmount;
 
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is ShareServiceRequest &&
-          other.startMonthlyAmount == startMonthlyAmount &&
-          other.endMonthlyAmount == endMonthlyAmount;
-
-  @override
-  int get hashCode => startMonthlyAmount.hashCode + endMonthlyAmount.hashCode;
-
   factory ShareServiceRequest.fromJson(Map<String, dynamic> json) =>
       _$ShareServiceRequestFromJson(json);
 
   Map<String, dynamic> toJson() => _$ShareServiceRequestToJson(this);
 
   @override
-  String toString() {
-    return toJson().toString();
-  }
+  bool get stringify => true;
 }

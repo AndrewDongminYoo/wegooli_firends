@@ -1,6 +1,7 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'select_user_dto.g.dart';
@@ -11,9 +12,9 @@ part 'select_user_dto.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class SelectUserDTO {
-  /// Returns a new [SelectUserDTO] instance.
-  SelectUserDTO({
+class SelectUserDto extends Equatable {
+  /// Returns a new [SelectUserDto] instance.
+  SelectUserDto({
     this.id,
     this.memberSeq,
     this.name,
@@ -92,59 +93,11 @@ class SelectUserDTO {
   @JsonKey(name: r'createdAt_account', required: false, includeIfNull: false)
   final String? createdAtAccount;
 
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is SelectUserDTO &&
-          other.id == id &&
-          other.memberSeq == memberSeq &&
-          other.name == name &&
-          other.add1 == add1 &&
-          other.add2 == add2 &&
-          other.zipCode == zipCode &&
-          other.phoneNumber == phoneNumber &&
-          other.email == email &&
-          other.birthday == birthday &&
-          other.sex == sex &&
-          other.delimit == delimit &&
-          other.nickName == nickName &&
-          other.profilePicture == profilePicture &&
-          other.color == color &&
-          other.deleteAt == deleteAt &&
-          other.delYnMember == delYnMember &&
-          other.delYnAccount == delYnAccount &&
-          other.createdAtMember == createdAtMember &&
-          other.createdAtAccount == createdAtAccount;
+  factory SelectUserDto.fromJson(Map<String, dynamic> json) =>
+      _$SelectUserDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$SelectUserDtoToJson(this);
 
   @override
-  int get hashCode =>
-      id.hashCode +
-      memberSeq.hashCode +
-      name.hashCode +
-      add1.hashCode +
-      add2.hashCode +
-      zipCode.hashCode +
-      phoneNumber.hashCode +
-      email.hashCode +
-      birthday.hashCode +
-      sex.hashCode +
-      delimit.hashCode +
-      nickName.hashCode +
-      profilePicture.hashCode +
-      color.hashCode +
-      deleteAt.hashCode +
-      delYnMember.hashCode +
-      delYnAccount.hashCode +
-      createdAtMember.hashCode +
-      createdAtAccount.hashCode;
-
-  factory SelectUserDTO.fromJson(Map<String, dynamic> json) =>
-      _$SelectUserDTOFromJson(json);
-
-  Map<String, dynamic> toJson() => _$SelectUserDTOToJson(this);
-
-  @override
-  String toString() {
-    return toJson().toString();
-  }
+  bool get stringify => true;
 }

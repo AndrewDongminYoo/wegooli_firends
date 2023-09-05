@@ -4,15 +4,20 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'result.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
 class Result extends Equatable {
+  @JsonKey(name: r'token', required: false, includeIfNull: false)
   final String? token;
 
-  const Result({this.token});
+  /// Returns a new [Result] instance.
+  Result({this.token});
 
-  factory Result.fromJson(Map<String, dynamic> json) {
-    return _$ResultFromJson(json);
-  }
+  factory Result.fromJson(Map<String, dynamic> json) => _$ResultFromJson(json);
 
   Map<String, dynamic> toJson() => _$ResultToJson(this);
 

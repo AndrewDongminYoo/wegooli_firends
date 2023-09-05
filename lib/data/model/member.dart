@@ -1,6 +1,7 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'member.g.dart';
@@ -11,7 +12,7 @@ part 'member.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class Member {
+class Member extends Equatable {
   /// Returns a new [Member] instance.
   Member({
     this.seq,
@@ -64,44 +65,10 @@ class Member {
   @JsonKey(name: r'updatedAt', required: false, includeIfNull: false)
   final String? updatedAt;
 
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is Member &&
-          other.seq == seq &&
-          other.name == name &&
-          other.add1 == add1 &&
-          other.add2 == add2 &&
-          other.zipCode == zipCode &&
-          other.phoneNumber == phoneNumber &&
-          other.email == email &&
-          other.birthDay == birthDay &&
-          other.sex == sex &&
-          other.delYn == delYn &&
-          other.createdAt == createdAt &&
-          other.updatedAt == updatedAt;
-
-  @override
-  int get hashCode =>
-      seq.hashCode +
-      name.hashCode +
-      add1.hashCode +
-      add2.hashCode +
-      zipCode.hashCode +
-      phoneNumber.hashCode +
-      email.hashCode +
-      birthDay.hashCode +
-      sex.hashCode +
-      delYn.hashCode +
-      createdAt.hashCode +
-      updatedAt.hashCode;
-
   factory Member.fromJson(Map<String, dynamic> json) => _$MemberFromJson(json);
 
   Map<String, dynamic> toJson() => _$MemberToJson(this);
 
   @override
-  String toString() {
-    return toJson().toString();
-  }
+  bool get stringify => true;
 }

@@ -1,6 +1,7 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'payment_card_model.g.dart';
@@ -11,7 +12,7 @@ part 'payment_card_model.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class PaymentCardModel {
+class PaymentCardModel extends Equatable {
   /// Returns a new [PaymentCardModel] instance.
   PaymentCardModel({
     this.seq,
@@ -68,47 +69,11 @@ class PaymentCardModel {
   @JsonKey(name: r'billingKey', required: false, includeIfNull: false)
   final String? billingKey;
 
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is PaymentCardModel &&
-          other.seq == seq &&
-          other.delYn == delYn &&
-          other.createdAt == createdAt &&
-          other.updatedAt == updatedAt &&
-          other.memberSeq == memberSeq &&
-          other.cardNumber == cardNumber &&
-          other.defaultYn == defaultYn &&
-          other.password == password &&
-          other.rrn == rrn &&
-          other.crn == crn &&
-          other.expirationMonth == expirationMonth &&
-          other.expirationYear == expirationYear &&
-          other.billingKey == billingKey;
-
-  @override
-  int get hashCode =>
-      seq.hashCode +
-      delYn.hashCode +
-      createdAt.hashCode +
-      updatedAt.hashCode +
-      memberSeq.hashCode +
-      cardNumber.hashCode +
-      defaultYn.hashCode +
-      password.hashCode +
-      rrn.hashCode +
-      crn.hashCode +
-      expirationMonth.hashCode +
-      expirationYear.hashCode +
-      billingKey.hashCode;
-
   factory PaymentCardModel.fromJson(Map<String, dynamic> json) =>
       _$PaymentCardModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$PaymentCardModelToJson(this);
 
   @override
-  String toString() {
-    return toJson().toString();
-  }
+  bool get stringify => true;
 }

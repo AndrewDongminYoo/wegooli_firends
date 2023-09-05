@@ -1,6 +1,7 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 // 🌎 Project imports:
@@ -15,7 +16,7 @@ part 'user_details_dto.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class UserDetailsDTO {
+class UserDetailsDTO extends Equatable {
   /// Returns a new [UserDetailsDTO] instance.
   UserDetailsDTO({
     this.userDto,
@@ -50,7 +51,7 @@ class UserDetailsDTO {
   });
 
   @JsonKey(name: r'userDto', required: false, includeIfNull: false)
-  final UserDTO? userDto;
+  final UserDto? userDto;
 
   @JsonKey(name: r'authorities', required: false, includeIfNull: false)
   final List<GrantedAuthority>? authorities;
@@ -137,79 +138,11 @@ class UserDetailsDTO {
       name: r'credentialsNonExpired', required: false, includeIfNull: false)
   final bool? credentialsNonExpired;
 
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is UserDetailsDTO &&
-          other.userDto == userDto &&
-          other.authorities == authorities &&
-          other.name == name &&
-          other.id == id &&
-          other.enabled == enabled &&
-          other.color == color &&
-          other.password == password &&
-          other.delYn == delYn &&
-          other.memberSeq == memberSeq &&
-          other.seq == seq &&
-          other.username == username &&
-          other.delimit == delimit &&
-          other.updatedAt == updatedAt &&
-          other.customerKey == customerKey &&
-          other.phoneNumber == phoneNumber &&
-          other.add2 == add2 &&
-          other.zipCode == zipCode &&
-          other.email == email &&
-          other.sex == sex &&
-          other.birthDay == birthDay &&
-          other.nickName == nickName &&
-          other.profilePicture == profilePicture &&
-          other.add1 == add1 &&
-          other.createdAt == createdAt &&
-          other.deleteAt == deleteAt &&
-          other.activeYn == activeYn &&
-          other.accountNonExpired == accountNonExpired &&
-          other.accountNonLocked == accountNonLocked &&
-          other.credentialsNonExpired == credentialsNonExpired;
-
-  @override
-  int get hashCode =>
-      userDto.hashCode +
-      authorities.hashCode +
-      name.hashCode +
-      id.hashCode +
-      enabled.hashCode +
-      color.hashCode +
-      password.hashCode +
-      delYn.hashCode +
-      memberSeq.hashCode +
-      seq.hashCode +
-      username.hashCode +
-      delimit.hashCode +
-      updatedAt.hashCode +
-      customerKey.hashCode +
-      phoneNumber.hashCode +
-      add2.hashCode +
-      zipCode.hashCode +
-      email.hashCode +
-      sex.hashCode +
-      birthDay.hashCode +
-      nickName.hashCode +
-      profilePicture.hashCode +
-      add1.hashCode +
-      createdAt.hashCode +
-      deleteAt.hashCode +
-      activeYn.hashCode +
-      accountNonExpired.hashCode +
-      accountNonLocked.hashCode +
-      credentialsNonExpired.hashCode;
-
   factory UserDetailsDTO.fromJson(Map<String, dynamic> json) =>
       _$UserDetailsDTOFromJson(json);
 
   Map<String, dynamic> toJson() => _$UserDetailsDTOToJson(this);
 
   @override
-  String toString() {
-    return toJson().toString();
-  }
+  bool get stringify => true;
 }

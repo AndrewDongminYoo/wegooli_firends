@@ -1,6 +1,7 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'account_agreement_model.g.dart';
@@ -11,7 +12,7 @@ part 'account_agreement_model.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class AccountAgreementModel {
+class AccountAgreementModel extends Equatable {
   /// Returns a new [AccountAgreementModel] instance.
   AccountAgreementModel({
     this.classification,
@@ -36,31 +37,11 @@ class AccountAgreementModel {
   @JsonKey(name: r'updatedAt', required: false, includeIfNull: false)
   final String? updatedAt;
 
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is AccountAgreementModel &&
-          other.classification == classification &&
-          other.accountId == accountId &&
-          other.agreeYn == agreeYn &&
-          other.createdAt == createdAt &&
-          other.updatedAt == updatedAt;
-
-  @override
-  int get hashCode =>
-      classification.hashCode +
-      accountId.hashCode +
-      agreeYn.hashCode +
-      createdAt.hashCode +
-      updatedAt.hashCode;
-
   factory AccountAgreementModel.fromJson(Map<String, dynamic> json) =>
       _$AccountAgreementModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$AccountAgreementModelToJson(this);
 
   @override
-  String toString() {
-    return toJson().toString();
-  }
+  bool get stringify => true;
 }

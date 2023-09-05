@@ -1,6 +1,7 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'qn_a.g.dart';
@@ -11,7 +12,7 @@ part 'qn_a.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class QnA {
+class QnA extends Equatable {
   /// Returns a new [QnA] instance.
   QnA({
     this.seq,
@@ -64,44 +65,10 @@ class QnA {
   @JsonKey(name: r'answeredAt', required: false, includeIfNull: false)
   final DateTime? answeredAt;
 
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is QnA &&
-          other.seq == seq &&
-          other.delYn == delYn &&
-          other.createdAt == createdAt &&
-          other.updatedAt == updatedAt &&
-          other.category == category &&
-          other.title == title &&
-          other.content == content &&
-          other.file == file &&
-          other.answer == answer &&
-          other.status == status &&
-          other.createdBy == createdBy &&
-          other.answeredAt == answeredAt;
-
-  @override
-  int get hashCode =>
-      seq.hashCode +
-      delYn.hashCode +
-      createdAt.hashCode +
-      updatedAt.hashCode +
-      category.hashCode +
-      title.hashCode +
-      content.hashCode +
-      file.hashCode +
-      answer.hashCode +
-      status.hashCode +
-      createdBy.hashCode +
-      answeredAt.hashCode;
-
   factory QnA.fromJson(Map<String, dynamic> json) => _$QnAFromJson(json);
 
   Map<String, dynamic> toJson() => _$QnAToJson(this);
 
   @override
-  String toString() {
-    return toJson().toString();
-  }
+  bool get stringify => true;
 }

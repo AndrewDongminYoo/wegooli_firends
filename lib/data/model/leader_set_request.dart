@@ -1,6 +1,7 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'leader_set_request.g.dart';
@@ -11,7 +12,7 @@ part 'leader_set_request.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class LeaderSetRequest {
+class LeaderSetRequest extends Equatable {
   /// Returns a new [LeaderSetRequest] instance.
   LeaderSetRequest({
     this.userId,
@@ -28,24 +29,11 @@ class LeaderSetRequest {
   @JsonKey(name: r'maxSub', required: false, includeIfNull: false)
   final String? maxSub;
 
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is LeaderSetRequest &&
-          other.userId == userId &&
-          other.serviceSeq == serviceSeq &&
-          other.maxSub == maxSub;
-
-  @override
-  int get hashCode => userId.hashCode + serviceSeq.hashCode + maxSub.hashCode;
-
   factory LeaderSetRequest.fromJson(Map<String, dynamic> json) =>
       _$LeaderSetRequestFromJson(json);
 
   Map<String, dynamic> toJson() => _$LeaderSetRequestToJson(this);
 
   @override
-  String toString() {
-    return toJson().toString();
-  }
+  bool get stringify => true;
 }

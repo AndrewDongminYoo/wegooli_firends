@@ -1,6 +1,7 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'terminal_request.g.dart';
@@ -11,7 +12,7 @@ part 'terminal_request.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class TerminalRequest {
+class TerminalRequest extends Equatable {
   /// Returns a new [TerminalRequest] instance.
   TerminalRequest({
     this.seq,
@@ -44,35 +45,11 @@ class TerminalRequest {
   @JsonKey(name: r'status', required: false, includeIfNull: false)
   final String? status;
 
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is TerminalRequest &&
-          other.seq == seq &&
-          other.delYn == delYn &&
-          other.createdAt == createdAt &&
-          other.updatedAt == updatedAt &&
-          other.carNum == carNum &&
-          other.phoneNumber == phoneNumber &&
-          other.status == status;
-
-  @override
-  int get hashCode =>
-      seq.hashCode +
-      delYn.hashCode +
-      createdAt.hashCode +
-      updatedAt.hashCode +
-      carNum.hashCode +
-      phoneNumber.hashCode +
-      status.hashCode;
-
   factory TerminalRequest.fromJson(Map<String, dynamic> json) =>
       _$TerminalRequestFromJson(json);
 
   Map<String, dynamic> toJson() => _$TerminalRequestToJson(this);
 
   @override
-  String toString() {
-    return toJson().toString();
-  }
+  bool get stringify => true;
 }

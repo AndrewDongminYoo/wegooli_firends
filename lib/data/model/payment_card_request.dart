@@ -1,6 +1,7 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'payment_card_request.g.dart';
@@ -11,7 +12,7 @@ part 'payment_card_request.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class PaymentCardRequest {
+class PaymentCardRequest extends Equatable {
   /// Returns a new [PaymentCardRequest] instance.
   PaymentCardRequest({
     this.memberSeq,
@@ -52,39 +53,11 @@ class PaymentCardRequest {
   @JsonKey(name: r'billingKey', required: false, includeIfNull: false)
   final String? billingKey;
 
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is PaymentCardRequest &&
-          other.memberSeq == memberSeq &&
-          other.cardNumber == cardNumber &&
-          other.defaultYn == defaultYn &&
-          other.password == password &&
-          other.rrn == rrn &&
-          other.crn == crn &&
-          other.expirationMonth == expirationMonth &&
-          other.expirationYear == expirationYear &&
-          other.billingKey == billingKey;
-
-  @override
-  int get hashCode =>
-      memberSeq.hashCode +
-      cardNumber.hashCode +
-      defaultYn.hashCode +
-      password.hashCode +
-      rrn.hashCode +
-      crn.hashCode +
-      expirationMonth.hashCode +
-      expirationYear.hashCode +
-      billingKey.hashCode;
-
   factory PaymentCardRequest.fromJson(Map<String, dynamic> json) =>
       _$PaymentCardRequestFromJson(json);
 
   Map<String, dynamic> toJson() => _$PaymentCardRequestToJson(this);
 
   @override
-  String toString() {
-    return toJson().toString();
-  }
+  bool get stringify => true;
 }

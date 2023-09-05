@@ -7,17 +7,28 @@ import 'result.dart';
 
 part 'auth_api_response.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
 class AuthApiResponse extends Equatable {
+  @JsonKey(name: r'result', required: false, includeIfNull: false)
   final Result? result;
+  @JsonKey(name: r'resultCode', required: false, includeIfNull: false)
   final int? resultCode;
+  @JsonKey(name: r'resultMsg', required: false, includeIfNull: false)
   final dynamic resultMsg;
 
-  const AuthApiResponse({this.result, this.resultCode, this.resultMsg});
-
-  factory AuthApiResponse.fromJson(Map<String, dynamic> json) {
-    return _$AuthApiResponseFromJson(json);
-  }
+  /// Returns a new [AuthApiResponse] instance.
+  AuthApiResponse({
+    this.result,
+    this.resultCode,
+    this.resultMsg,
+  });
+  factory AuthApiResponse.fromJson(Map<String, dynamic> json) =>
+      _$AuthApiResponseFromJson(json);
 
   Map<String, dynamic> toJson() => _$AuthApiResponseToJson(this);
 

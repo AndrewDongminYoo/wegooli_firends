@@ -1,6 +1,7 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'terminal_model.g.dart';
@@ -11,7 +12,7 @@ part 'terminal_model.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class TerminalModel {
+class TerminalModel extends Equatable {
   /// Returns a new [TerminalModel] instance.
   TerminalModel({
     this.seq,
@@ -84,55 +85,11 @@ class TerminalModel {
   @JsonKey(name: r'carNickName', required: false, includeIfNull: false)
   final String? carNickName;
 
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is TerminalModel &&
-          other.seq == seq &&
-          other.delYn == delYn &&
-          other.createdAt == createdAt &&
-          other.updatedAt == updatedAt &&
-          other.carNum == carNum &&
-          other.phoneNumber == phoneNumber &&
-          other.status == status &&
-          other.seats == seats &&
-          other.model == model &&
-          other.volt == volt &&
-          other.fuelType == fuelType &&
-          other.fuel == fuel &&
-          other.segment == segment &&
-          other.accountId == accountId &&
-          other.teamSeq == teamSeq &&
-          other.carImage == carImage &&
-          other.carNickName == carNickName;
-
-  @override
-  int get hashCode =>
-      seq.hashCode +
-      delYn.hashCode +
-      createdAt.hashCode +
-      updatedAt.hashCode +
-      carNum.hashCode +
-      phoneNumber.hashCode +
-      status.hashCode +
-      seats.hashCode +
-      model.hashCode +
-      volt.hashCode +
-      fuelType.hashCode +
-      fuel.hashCode +
-      segment.hashCode +
-      accountId.hashCode +
-      teamSeq.hashCode +
-      carImage.hashCode +
-      carNickName.hashCode;
-
   factory TerminalModel.fromJson(Map<String, dynamic> json) =>
       _$TerminalModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$TerminalModelToJson(this);
 
   @override
-  String toString() {
-    return toJson().toString();
-  }
+  bool get stringify => true;
 }

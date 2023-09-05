@@ -1,6 +1,7 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'schedule_request.g.dart';
@@ -11,7 +12,7 @@ part 'schedule_request.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class ScheduleRequest {
+class ScheduleRequest extends Equatable {
   /// Returns a new [ScheduleRequest] instance.
   ScheduleRequest({
     this.seq,
@@ -48,37 +49,11 @@ class ScheduleRequest {
   @JsonKey(name: r'endAt', required: false, includeIfNull: false)
   final String? endAt;
 
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is ScheduleRequest &&
-          other.seq == seq &&
-          other.delYn == delYn &&
-          other.createdAt == createdAt &&
-          other.updatedAt == updatedAt &&
-          other.teamSeq == teamSeq &&
-          other.accountId == accountId &&
-          other.startAt == startAt &&
-          other.endAt == endAt;
-
-  @override
-  int get hashCode =>
-      seq.hashCode +
-      delYn.hashCode +
-      createdAt.hashCode +
-      updatedAt.hashCode +
-      teamSeq.hashCode +
-      accountId.hashCode +
-      startAt.hashCode +
-      endAt.hashCode;
-
   factory ScheduleRequest.fromJson(Map<String, dynamic> json) =>
       _$ScheduleRequestFromJson(json);
 
   Map<String, dynamic> toJson() => _$ScheduleRequestToJson(this);
 
   @override
-  String toString() {
-    return toJson().toString();
-  }
+  bool get stringify => true;
 }

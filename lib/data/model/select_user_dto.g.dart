@@ -6,12 +6,12 @@ part of 'select_user_dto.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-SelectUserDTO _$SelectUserDTOFromJson(Map<String, dynamic> json) =>
+SelectUserDto _$SelectUserDtoFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      'SelectUserDTO',
+      'SelectUserDto',
       json,
       ($checkedConvert) {
-        final val = SelectUserDTO(
+        final val = SelectUserDto(
           id: $checkedConvert('id', (v) => v as String?),
           memberSeq: $checkedConvert('memberSeq', (v) => v as int?),
           name: $checkedConvert('name', (v) => v as String?),
@@ -45,7 +45,7 @@ SelectUserDTO _$SelectUserDTOFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$SelectUserDTOToJson(SelectUserDTO instance) {
+Map<String, dynamic> _$SelectUserDtoToJson(SelectUserDto instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {

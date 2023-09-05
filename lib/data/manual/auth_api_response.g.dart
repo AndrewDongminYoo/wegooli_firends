@@ -11,10 +11,6 @@ AuthApiResponse _$AuthApiResponseFromJson(Map<String, dynamic> json) =>
       'AuthApiResponse',
       json,
       ($checkedConvert) {
-        $checkKeys(
-          json,
-          allowedKeys: const ['result', 'resultCode', 'resultMsg'],
-        );
         final val = AuthApiResponse(
           result: $checkedConvert(
               'result',

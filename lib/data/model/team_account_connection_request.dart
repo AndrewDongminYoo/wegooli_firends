@@ -1,6 +1,7 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'team_account_connection_request.g.dart';
@@ -11,7 +12,7 @@ part 'team_account_connection_request.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class TeamAccountConnectionRequest {
+class TeamAccountConnectionRequest extends Equatable {
   /// Returns a new [TeamAccountConnectionRequest] instance.
   TeamAccountConnectionRequest({
     this.teamSeq,
@@ -32,29 +33,11 @@ class TeamAccountConnectionRequest {
   @JsonKey(name: r'leavedAt', required: false, includeIfNull: false)
   final String? leavedAt;
 
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is TeamAccountConnectionRequest &&
-          other.teamSeq == teamSeq &&
-          other.accountId == accountId &&
-          other.joinedAt == joinedAt &&
-          other.leavedAt == leavedAt;
-
-  @override
-  int get hashCode =>
-      teamSeq.hashCode +
-      accountId.hashCode +
-      joinedAt.hashCode +
-      leavedAt.hashCode;
-
   factory TeamAccountConnectionRequest.fromJson(Map<String, dynamic> json) =>
       _$TeamAccountConnectionRequestFromJson(json);
 
   Map<String, dynamic> toJson() => _$TeamAccountConnectionRequestToJson(this);
 
   @override
-  String toString() {
-    return toJson().toString();
-  }
+  bool get stringify => true;
 }

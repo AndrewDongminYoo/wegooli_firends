@@ -1,6 +1,7 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'team_car_connection.g.dart';
@@ -11,7 +12,7 @@ part 'team_car_connection.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class TeamCarConnection {
+class TeamCarConnection extends Equatable {
   /// Returns a new [TeamCarConnection] instance.
   TeamCarConnection({
     this.seq,
@@ -48,37 +49,11 @@ class TeamCarConnection {
   @JsonKey(name: r'activeYn', required: false, includeIfNull: false)
   final String? activeYn;
 
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is TeamCarConnection &&
-          other.seq == seq &&
-          other.teamSeq == teamSeq &&
-          other.carNum == carNum &&
-          other.startAt == startAt &&
-          other.endAt == endAt &&
-          other.createdAt == createdAt &&
-          other.updatedAt == updatedAt &&
-          other.activeYn == activeYn;
-
-  @override
-  int get hashCode =>
-      seq.hashCode +
-      teamSeq.hashCode +
-      carNum.hashCode +
-      startAt.hashCode +
-      endAt.hashCode +
-      createdAt.hashCode +
-      updatedAt.hashCode +
-      activeYn.hashCode;
-
   factory TeamCarConnection.fromJson(Map<String, dynamic> json) =>
       _$TeamCarConnectionFromJson(json);
 
   Map<String, dynamic> toJson() => _$TeamCarConnectionToJson(this);
 
   @override
-  String toString() {
-    return toJson().toString();
-  }
+  bool get stringify => true;
 }

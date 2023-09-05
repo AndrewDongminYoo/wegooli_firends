@@ -7,13 +7,14 @@ import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
 import '/data/deserialize.dart';
+import '/data/manual/auth_api_response.dart';
+import '/data/manual/result.dart';
+import '/data/manual/user_dto.dart';
 import '/data/model/account.dart';
 import '/data/model/api_response_object.dart';
-import '/data/model/auth_api_response.dart';
 import '/data/model/member.dart';
 import '/data/model/select_user_dto.dart';
 import '/data/model/user_details_dto.dart';
-import '/data/model/user_dto.dart';
 
 class UserControllerApi {
   final Dio _dio;
@@ -466,7 +467,7 @@ class UserControllerApi {
   /// signup
   ///
   /// Parameters:
-  /// * [userDTO]
+  /// * [userDto]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -477,7 +478,7 @@ class UserControllerApi {
   /// Returns a [Future] containing a [Response] with a [String] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<String>> signup({
-    required UserDTO userDTO,
+    required UserDto userDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -508,7 +509,7 @@ class UserControllerApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = jsonEncode(userDTO);
+      _bodyData = jsonEncode(userDto);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -812,10 +813,10 @@ class UserControllerApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [List<SelectUserDTO>] as data
+  /// Returns a [Future] containing a [Response] with a [List<SelectUserDto>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<List<SelectUserDTO>>> selectUserList({
-    required SelectUserDTO request,
+  Future<Response<List<SelectUserDto>>> selectUserList({
+    required SelectUserDto request,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -855,14 +856,14 @@ class UserControllerApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<SelectUserDTO>? _responseData;
+    List<SelectUserDto>? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null
           ? null
-          : deserialize<List<SelectUserDTO>, SelectUserDTO>(
-              rawResponse, 'List<SelectUserDTO>',
+          : deserialize<List<SelectUserDto>, SelectUserDto>(
+              rawResponse, 'List<SelectUserDto>',
               growable: true);
     } catch (error, stackTrace) {
       throw DioException(
@@ -874,7 +875,7 @@ class UserControllerApi {
       );
     }
 
-    return Response<List<SelectUserDTO>>(
+    return Response<List<SelectUserDto>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -889,7 +890,7 @@ class UserControllerApi {
   /// signIn
   ///
   /// Parameters:
-  /// * [userDTO]
+  /// * [userDto]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -900,7 +901,7 @@ class UserControllerApi {
   /// Returns a [Future] containing a [Response] with a [int] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<int>> signIn({
-    UserDTO? userDTO,
+    UserDto? userDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -931,7 +932,7 @@ class UserControllerApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = jsonEncode(userDTO);
+      _bodyData = jsonEncode(userDto);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -985,7 +986,7 @@ class UserControllerApi {
   /// updateUser
   ///
   /// Parameters:
-  /// * [userDTO]
+  /// * [userDto]
   /// * [memberSeq]
   /// * [accountId]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -998,7 +999,7 @@ class UserControllerApi {
   /// Returns a [Future] containing a [Response] with a [bool] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<bool>> updateUser({
-    required UserDTO userDTO,
+    required UserDto userDto,
     required int memberSeq,
     required String accountId,
     CancelToken? cancelToken,
@@ -1036,7 +1037,7 @@ class UserControllerApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = jsonEncode(userDTO);
+      _bodyData = jsonEncode(userDto);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(

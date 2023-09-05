@@ -1,6 +1,7 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'car_control_history_model.g.dart';
@@ -11,7 +12,7 @@ part 'car_control_history_model.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class CarControlHistoryModel {
+class CarControlHistoryModel extends Equatable {
   /// Returns a new [CarControlHistoryModel] instance.
   CarControlHistoryModel({
     this.seq,
@@ -44,35 +45,11 @@ class CarControlHistoryModel {
   @JsonKey(name: r'successYn', required: false, includeIfNull: false)
   final String? successYn;
 
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is CarControlHistoryModel &&
-          other.seq == seq &&
-          other.createdAt == createdAt &&
-          other.terminalSeq == terminalSeq &&
-          other.carNum == carNum &&
-          other.accountId == accountId &&
-          other.context == context &&
-          other.successYn == successYn;
-
-  @override
-  int get hashCode =>
-      seq.hashCode +
-      createdAt.hashCode +
-      terminalSeq.hashCode +
-      carNum.hashCode +
-      accountId.hashCode +
-      context.hashCode +
-      successYn.hashCode;
-
   factory CarControlHistoryModel.fromJson(Map<String, dynamic> json) =>
       _$CarControlHistoryModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$CarControlHistoryModelToJson(this);
 
   @override
-  String toString() {
-    return toJson().toString();
-  }
+  bool get stringify => true;
 }

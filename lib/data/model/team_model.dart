@@ -1,6 +1,7 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'team_model.g.dart';
@@ -11,7 +12,7 @@ part 'team_model.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class TeamModel {
+class TeamModel extends Equatable {
   /// Returns a new [TeamModel] instance.
   TeamModel({
     this.seq,
@@ -48,37 +49,11 @@ class TeamModel {
   @JsonKey(name: r'contract', required: false, includeIfNull: false)
   final String? contract;
 
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is TeamModel &&
-          other.seq == seq &&
-          other.delYn == delYn &&
-          other.createdAt == createdAt &&
-          other.updatedAt == updatedAt &&
-          other.accountId == accountId &&
-          other.teamCode == teamCode &&
-          other.name == name &&
-          other.contract == contract;
-
-  @override
-  int get hashCode =>
-      seq.hashCode +
-      delYn.hashCode +
-      createdAt.hashCode +
-      updatedAt.hashCode +
-      accountId.hashCode +
-      teamCode.hashCode +
-      name.hashCode +
-      contract.hashCode;
-
   factory TeamModel.fromJson(Map<String, dynamic> json) =>
       _$TeamModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$TeamModelToJson(this);
 
   @override
-  String toString() {
-    return toJson().toString();
-  }
+  bool get stringify => true;
 }

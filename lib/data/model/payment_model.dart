@@ -1,6 +1,7 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'payment_model.g.dart';
@@ -11,7 +12,7 @@ part 'payment_model.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class PaymentModel {
+class PaymentModel extends Equatable {
   /// Returns a new [PaymentModel] instance.
   PaymentModel({
     this.paymentKey,
@@ -92,59 +93,11 @@ class PaymentModel {
   @JsonKey(name: r'method', required: false, includeIfNull: false)
   final String? method;
 
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is PaymentModel &&
-          other.paymentKey == paymentKey &&
-          other.status == status &&
-          other.lastTransactionKey == lastTransactionKey &&
-          other.orderId == orderId &&
-          other.orderName == orderName &&
-          other.requestedAt == requestedAt &&
-          other.approvedAt == approvedAt &&
-          other.cancelReason == cancelReason &&
-          other.canceledAt == canceledAt &&
-          other.cancelAmount == cancelAmount &&
-          other.type == type &&
-          other.currency == currency &&
-          other.totalAmount == totalAmount &&
-          other.balanceAmount == balanceAmount &&
-          other.suppliedAmount == suppliedAmount &&
-          other.vat == vat &&
-          other.taxFreeAmount == taxFreeAmount &&
-          other.taxExemptionAmount == taxExemptionAmount &&
-          other.method == method;
-
-  @override
-  int get hashCode =>
-      paymentKey.hashCode +
-      status.hashCode +
-      lastTransactionKey.hashCode +
-      orderId.hashCode +
-      orderName.hashCode +
-      requestedAt.hashCode +
-      approvedAt.hashCode +
-      cancelReason.hashCode +
-      canceledAt.hashCode +
-      cancelAmount.hashCode +
-      type.hashCode +
-      currency.hashCode +
-      totalAmount.hashCode +
-      balanceAmount.hashCode +
-      suppliedAmount.hashCode +
-      vat.hashCode +
-      taxFreeAmount.hashCode +
-      taxExemptionAmount.hashCode +
-      method.hashCode;
-
   factory PaymentModel.fromJson(Map<String, dynamic> json) =>
       _$PaymentModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$PaymentModelToJson(this);
 
   @override
-  String toString() {
-    return toJson().toString();
-  }
+  bool get stringify => true;
 }

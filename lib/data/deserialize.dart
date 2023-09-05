@@ -85,14 +85,16 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
       return Push.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'QnA':
       return QnA.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'Result':
+      return Result.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'ScheduleModel':
       return ScheduleModel.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'ScheduleRequest':
       return ScheduleRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
-    case 'SelectUserDTO':
-      return SelectUserDTO.fromJson(value as Map<String, dynamic>)
+    case 'SelectUserDto':
+      return SelectUserDto.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'ServiceCarDetailRequest':
       return ServiceCarDetailRequest.fromJson(value as Map<String, dynamic>)
@@ -141,8 +143,8 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
           as ReturnType;
     case 'TestModel':
       return TestModel.fromJson(value as Map<String, dynamic>) as ReturnType;
-    case 'UserDTO':
-      return UserDTO.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'UserDto':
+      return UserDto.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'UserDetailsDTO':
       return UserDetailsDTO.fromJson(value as Map<String, dynamic>)
           as ReturnType;

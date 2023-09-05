@@ -1,6 +1,7 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'license_request.g.dart';
@@ -11,7 +12,7 @@ part 'license_request.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class LicenseRequest {
+class LicenseRequest extends Equatable {
   /// Returns a new [LicenseRequest] instance.
   LicenseRequest({
     this.seq,
@@ -68,47 +69,11 @@ class LicenseRequest {
   @JsonKey(name: r'updatedAt', required: false, includeIfNull: false)
   final String? updatedAt;
 
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is LicenseRequest &&
-          other.seq == seq &&
-          other.memberSeq == memberSeq &&
-          other.koreanYn == koreanYn &&
-          other.licenseClass == licenseClass &&
-          other.licenseArea == licenseArea &&
-          other.licenseYear == licenseYear &&
-          other.licenseNum == licenseNum &&
-          other.expiredDate == expiredDate &&
-          other.issuedDate == issuedDate &&
-          other.signature == signature &&
-          other.delYn == delYn &&
-          other.createdAt == createdAt &&
-          other.updatedAt == updatedAt;
-
-  @override
-  int get hashCode =>
-      seq.hashCode +
-      memberSeq.hashCode +
-      koreanYn.hashCode +
-      licenseClass.hashCode +
-      licenseArea.hashCode +
-      licenseYear.hashCode +
-      licenseNum.hashCode +
-      expiredDate.hashCode +
-      issuedDate.hashCode +
-      signature.hashCode +
-      delYn.hashCode +
-      createdAt.hashCode +
-      updatedAt.hashCode;
-
   factory LicenseRequest.fromJson(Map<String, dynamic> json) =>
       _$LicenseRequestFromJson(json);
 
   Map<String, dynamic> toJson() => _$LicenseRequestToJson(this);
 
   @override
-  String toString() {
-    return toJson().toString();
-  }
+  bool get stringify => true;
 }

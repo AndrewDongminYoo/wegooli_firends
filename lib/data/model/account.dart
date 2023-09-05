@@ -1,6 +1,7 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'account.g.dart';
@@ -11,7 +12,7 @@ part 'account.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class Account {
+class Account extends Equatable {
   /// Returns a new [Account] instance.
   Account({
     this.id,
@@ -60,43 +61,11 @@ class Account {
   @JsonKey(name: r'profilePicture', required: false, includeIfNull: false)
   final String? profilePicture;
 
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is Account &&
-          other.id == id &&
-          other.memberSeq == memberSeq &&
-          other.password == password &&
-          other.delimit == delimit &&
-          other.delYn == delYn &&
-          other.deleteAt == deleteAt &&
-          other.createdAt == createdAt &&
-          other.updatedAt == updatedAt &&
-          other.color == color &&
-          other.nickName == nickName &&
-          other.profilePicture == profilePicture;
-
-  @override
-  int get hashCode =>
-      id.hashCode +
-      memberSeq.hashCode +
-      password.hashCode +
-      delimit.hashCode +
-      delYn.hashCode +
-      deleteAt.hashCode +
-      createdAt.hashCode +
-      updatedAt.hashCode +
-      color.hashCode +
-      nickName.hashCode +
-      profilePicture.hashCode;
-
   factory Account.fromJson(Map<String, dynamic> json) =>
       _$AccountFromJson(json);
 
   Map<String, dynamic> toJson() => _$AccountToJson(this);
 
   @override
-  String toString() {
-    return toJson().toString();
-  }
+  bool get stringify => true;
 }

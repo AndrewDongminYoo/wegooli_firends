@@ -1,6 +1,7 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'device_control_result_dto.g.dart';
@@ -11,7 +12,7 @@ part 'device_control_result_dto.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class DeviceControlResultDTO {
+class DeviceControlResultDTO extends Equatable {
   /// Returns a new [DeviceControlResultDTO] instance.
   DeviceControlResultDTO({
     this.userId,
@@ -136,81 +137,11 @@ class DeviceControlResultDTO {
   @JsonKey(name: r'nsdur', required: false, includeIfNull: false)
   final String? nsdur;
 
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is DeviceControlResultDTO &&
-          other.userId == userId &&
-          other.terTelNum == terTelNum &&
-          other.t42 == t42 &&
-          other.t5 == t5 &&
-          other.t0 == t0 &&
-          other.t1 == t1 &&
-          other.t2 == t2 &&
-          other.t3 == t3 &&
-          other.t4 == t4 &&
-          other.t6 == t6 &&
-          other.t7 == t7 &&
-          other.t8 == t8 &&
-          other.t9 == t9 &&
-          other.t10 == t10 &&
-          other.t11 == t11 &&
-          other.t12 == t12 &&
-          other.t14 == t14 &&
-          other.t15 == t15 &&
-          other.t16 == t16 &&
-          other.t17 == t17 &&
-          other.t18 == t18 &&
-          other.t19 == t19 &&
-          other.t20 == t20 &&
-          other.t21 == t21 &&
-          other.t22 == t22 &&
-          other.t41 == t41 &&
-          other.t51 == t51 &&
-          other.t61 == t61 &&
-          other.ucp == ucp &&
-          other.nsdur == nsdur;
-
-  @override
-  int get hashCode =>
-      userId.hashCode +
-      terTelNum.hashCode +
-      t42.hashCode +
-      t5.hashCode +
-      t0.hashCode +
-      t1.hashCode +
-      t2.hashCode +
-      t3.hashCode +
-      t4.hashCode +
-      t6.hashCode +
-      t7.hashCode +
-      t8.hashCode +
-      t9.hashCode +
-      t10.hashCode +
-      t11.hashCode +
-      t12.hashCode +
-      t14.hashCode +
-      t15.hashCode +
-      t16.hashCode +
-      t17.hashCode +
-      t18.hashCode +
-      t19.hashCode +
-      t20.hashCode +
-      t21.hashCode +
-      t22.hashCode +
-      t41.hashCode +
-      t51.hashCode +
-      t61.hashCode +
-      ucp.hashCode +
-      nsdur.hashCode;
-
   factory DeviceControlResultDTO.fromJson(Map<String, dynamic> json) =>
       _$DeviceControlResultDTOFromJson(json);
 
   Map<String, dynamic> toJson() => _$DeviceControlResultDTOToJson(this);
 
   @override
-  String toString() {
-    return toJson().toString();
-  }
+  bool get stringify => true;
 }

@@ -1,6 +1,7 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'share_service_model.g.dart';
@@ -11,7 +12,7 @@ part 'share_service_model.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class ShareServiceModel {
+class ShareServiceModel extends Equatable {
   /// Returns a new [ShareServiceModel] instance.
   ShareServiceModel({
     this.shareServiceSeq,
@@ -56,41 +57,11 @@ class ShareServiceModel {
   @JsonKey(name: r'maxSub', required: false, includeIfNull: false)
   final String? maxSub;
 
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is ShareServiceModel &&
-          other.shareServiceSeq == shareServiceSeq &&
-          other.serviceName == serviceName &&
-          other.serviceDes == serviceDes &&
-          other.carSeq == carSeq &&
-          other.carName == carName &&
-          other.carImg == carImg &&
-          other.monthlyPay == monthlyPay &&
-          other.personalPay == personalPay &&
-          other.nowSub == nowSub &&
-          other.maxSub == maxSub;
-
-  @override
-  int get hashCode =>
-      shareServiceSeq.hashCode +
-      serviceName.hashCode +
-      serviceDes.hashCode +
-      carSeq.hashCode +
-      carName.hashCode +
-      carImg.hashCode +
-      monthlyPay.hashCode +
-      personalPay.hashCode +
-      nowSub.hashCode +
-      maxSub.hashCode;
-
   factory ShareServiceModel.fromJson(Map<String, dynamic> json) =>
       _$ShareServiceModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$ShareServiceModelToJson(this);
 
   @override
-  String toString() {
-    return toJson().toString();
-  }
+  bool get stringify => true;
 }

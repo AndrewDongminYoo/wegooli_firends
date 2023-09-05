@@ -1,6 +1,7 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'test_model.g.dart';
@@ -11,7 +12,7 @@ part 'test_model.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class TestModel {
+class TestModel extends Equatable {
   /// Returns a new [TestModel] instance.
   TestModel({
     this.seq,
@@ -60,43 +61,11 @@ class TestModel {
   @JsonKey(name: r'test2', required: false, includeIfNull: false)
   final String? test2;
 
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is TestModel &&
-          other.seq == seq &&
-          other.postYn == postYn &&
-          other.title == title &&
-          other.cont == cont &&
-          other.viewCnt == viewCnt &&
-          other.busiRegNum == busiRegNum &&
-          other.bmId == bmId &&
-          other.delYn == delYn &&
-          other.groupNo == groupNo &&
-          other.test1 == test1 &&
-          other.test2 == test2;
-
-  @override
-  int get hashCode =>
-      seq.hashCode +
-      postYn.hashCode +
-      title.hashCode +
-      cont.hashCode +
-      viewCnt.hashCode +
-      busiRegNum.hashCode +
-      bmId.hashCode +
-      delYn.hashCode +
-      groupNo.hashCode +
-      test1.hashCode +
-      test2.hashCode;
-
   factory TestModel.fromJson(Map<String, dynamic> json) =>
       _$TestModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$TestModelToJson(this);
 
   @override
-  String toString() {
-    return toJson().toString();
-  }
+  bool get stringify => true;
 }

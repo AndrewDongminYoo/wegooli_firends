@@ -46,7 +46,7 @@ class CarStatusInformation extends GetWidget<VehicleController> {
                       child: Text(
                         l10ns.basicInfo,
                         style: const TextStyle(
-                          color: Color(0xFF222222),
+                          color: const Color(0xFF222222),
                           fontSize: 18,
                           fontFamily: FontFamily.pretendard,
                           fontWeight: FontWeight.w700,
@@ -61,7 +61,7 @@ class CarStatusInformation extends GetWidget<VehicleController> {
                         Text(
                           l10ns.modelName,
                           style: const TextStyle(
-                            color: Color(0x66222222),
+                            color: const Color(0x66222222),
                             fontSize: 16,
                             fontFamily: FontFamily.pretendard,
                             fontWeight: FontWeight.w400,
@@ -73,7 +73,7 @@ class CarStatusInformation extends GetWidget<VehicleController> {
                           controller.terminalDevice.model ?? l10ns.carMorning,
                           textAlign: TextAlign.right,
                           style: const TextStyle(
-                            color: Color(0xFF222222),
+                            color: const Color(0xFF222222),
                             fontSize: 16,
                             fontFamily: FontFamily.pretendard,
                             fontWeight: FontWeight.w400,
@@ -89,7 +89,7 @@ class CarStatusInformation extends GetWidget<VehicleController> {
                         Text(
                           l10ns.carType,
                           style: const TextStyle(
-                            color: Color(0x66222222),
+                            color: const Color(0x66222222),
                             fontSize: 16,
                             fontFamily: FontFamily.pretendard,
                             fontWeight: FontWeight.w400,
@@ -101,7 +101,7 @@ class CarStatusInformation extends GetWidget<VehicleController> {
                           controller.terminalDevice.segment ?? l10ns.segmentB,
                           textAlign: TextAlign.right,
                           style: const TextStyle(
-                            color: Color(0xFF222222),
+                            color: const Color(0xFF222222),
                             fontSize: 16,
                             fontFamily: FontFamily.pretendard,
                             fontWeight: FontWeight.w400,
@@ -117,7 +117,7 @@ class CarStatusInformation extends GetWidget<VehicleController> {
                         Text(
                           l10ns.fuel,
                           style: const TextStyle(
-                            color: Color(0x66222222),
+                            color: const Color(0x66222222),
                             fontSize: 16,
                             fontFamily: FontFamily.pretendard,
                             fontWeight: FontWeight.w400,
@@ -129,7 +129,7 @@ class CarStatusInformation extends GetWidget<VehicleController> {
                           controller.terminalDevice.fuelType ?? l10ns.gasoline,
                           textAlign: TextAlign.right,
                           style: const TextStyle(
-                            color: Color(0xFF222222),
+                            color: const Color(0xFF222222),
                             fontSize: 16,
                             fontFamily: FontFamily.pretendard,
                             fontWeight: FontWeight.w400,
@@ -145,7 +145,7 @@ class CarStatusInformation extends GetWidget<VehicleController> {
                         Text(
                           l10ns.numberOfPeople,
                           style: const TextStyle(
-                            color: Color(0x66222222),
+                            color: const Color(0x66222222),
                             fontSize: 16,
                             fontFamily: FontFamily.pretendard,
                             fontWeight: FontWeight.w400,
@@ -157,7 +157,7 @@ class CarStatusInformation extends GetWidget<VehicleController> {
                           l10ns.seater(controller.terminalDevice.seats ?? 0),
                           textAlign: TextAlign.right,
                           style: const TextStyle(
-                            color: Color(0xFF222222),
+                            color: const Color(0xFF222222),
                             fontSize: 16,
                             fontFamily: FontFamily.pretendard,
                             fontWeight: FontWeight.w400,
@@ -185,7 +185,7 @@ class CarStatusInformation extends GetWidget<VehicleController> {
                       child: Text(
                         l10ns.maintenanceStatus,
                         style: const TextStyle(
-                          color: Color(0xFF222222),
+                          color: const Color(0xFF222222),
                           fontSize: 18,
                           fontFamily: FontFamily.pretendard,
                           fontWeight: FontWeight.w700,
@@ -200,7 +200,7 @@ class CarStatusInformation extends GetWidget<VehicleController> {
                         Text(
                           l10ns.engineOilChangedDate,
                           style: const TextStyle(
-                            color: Color(0x66222222),
+                            color: const Color(0x66222222),
                             fontSize: 16,
                             fontFamily: FontFamily.pretendard,
                             fontWeight: FontWeight.w400,
@@ -213,7 +213,7 @@ class CarStatusInformation extends GetWidget<VehicleController> {
                               '-',
                           textAlign: TextAlign.right,
                           style: const TextStyle(
-                            color: Color(0xFF222222),
+                            color: const Color(0xFF222222),
                             fontSize: 16,
                             fontFamily: FontFamily.pretendard,
                             fontWeight: FontWeight.w400,
@@ -229,7 +229,7 @@ class CarStatusInformation extends GetWidget<VehicleController> {
                         Text(
                           l10ns.tireInspectionDate,
                           style: const TextStyle(
-                            color: Color(0x66222222),
+                            color: const Color(0x66222222),
                             fontSize: 16,
                             fontFamily: FontFamily.pretendard,
                             fontWeight: FontWeight.w400,
@@ -242,7 +242,7 @@ class CarStatusInformation extends GetWidget<VehicleController> {
                               '-',
                           textAlign: TextAlign.right,
                           style: const TextStyle(
-                            color: Color(0xFF222222),
+                            color: const Color(0xFF222222),
                             fontSize: 16,
                             fontFamily: FontFamily.pretendard,
                             fontWeight: FontWeight.w400,
@@ -258,7 +258,7 @@ class CarStatusInformation extends GetWidget<VehicleController> {
                         Text(
                           l10ns.batteryStatus,
                           style: const TextStyle(
-                            color: Color(0x66222222),
+                            color: const Color(0x66222222),
                             fontSize: 16,
                             fontFamily: FontFamily.pretendard,
                             fontWeight: FontWeight.w400,
@@ -271,7 +271,7 @@ class CarStatusInformation extends GetWidget<VehicleController> {
                               l10ns.good,
                           textAlign: TextAlign.right,
                           style: const TextStyle(
-                            color: Color(0xFF222222),
+                            color: const Color(0xFF222222),
                             fontSize: 16,
                             fontFamily: FontFamily.pretendard,
                             fontWeight: FontWeight.w400,

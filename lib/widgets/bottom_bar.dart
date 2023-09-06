@@ -24,25 +24,25 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
 
   List<BottomMenuModel> bottomMenuList = [
     BottomMenuModel(
-        iconPath: Assets.svg.imgCalOnPrimary.path,
-        activeIconPath: Assets.svg.imgCalOnPrimary.path,
-        title: l10ns.schedule,
-      ),
+      iconPath: Assets.svg.imgCalOnPrimary.path,
+      activeIconPath: Assets.svg.imgCalOnPrimary.path,
+      title: l10ns.schedule,
+    ),
     BottomMenuModel(
-        iconPath: Assets.svg.imgChatGray400.path,
-        activeIconPath: Assets.svg.imgChatGray400.path,
-        title: l10ns.chat,
-      ),
+      iconPath: Assets.svg.imgChatGray400.path,
+      activeIconPath: Assets.svg.imgChatGray400.path,
+      title: l10ns.chat,
+    ),
     BottomMenuModel(
-        iconPath: Assets.svg.imgKeyGray400.path,
-        activeIconPath: Assets.svg.imgKeyGray400.path,
-        title: l10ns.smartKey,
-      ),
+      iconPath: Assets.svg.imgKeyGray400.path,
+      activeIconPath: Assets.svg.imgKeyGray400.path,
+      title: l10ns.smartKey,
+    ),
     BottomMenuModel(
-        iconPath: Assets.svg.imgUser2.path,
-        activeIconPath: Assets.svg.imgUser2.path,
-        title: l10ns.myPage,
-      )
+      iconPath: Assets.svg.imgUser2.path,
+      activeIconPath: Assets.svg.imgUser2.path,
+      title: l10ns.myPage,
+    )
   ];
 
   @override
@@ -123,7 +123,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
               default:
                 destination = AppRoutes.sharedSchedule;
             }
-            setState((){
+            setState(() {
               selectedIndex.value = index;
             });
             Get.toNamed(destination, id: widget.id);

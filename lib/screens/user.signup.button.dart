@@ -18,7 +18,11 @@ class AcceptTermsNextButton extends GetWidget<AccountAgreementController> {
             text: l10ns.acceptanceComplete,
             buttonStyle: CustomButtonStyles.fillPrimaryC26.copyWith(
                 fixedSize: MaterialStateProperty.all<Size>(
-                    Size(double.maxFinite, getVerticalSize(52)))),
+              Size(
+                double.maxFinite,
+                getVerticalSize(52),
+              ),
+            )),
             buttonTextStyle: CustomTextStyles.titleMedium18,
             onTap: () {
               if (controller.isAllTermsAccepted.value) {

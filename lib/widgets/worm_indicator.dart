@@ -29,7 +29,7 @@ class _SmoothIndicatorsState extends State<SmoothIndicators> {
                 child: Center(
                     child: Text(
                   "Page $index",
-                  style: const TextStyle(color: Color(0xFF3F51B5)),
+                  style: const TextStyle(color: const Color(0xFF3F51B5)),
                 )),
               ),
             ));
@@ -55,7 +55,7 @@ class _SmoothIndicatorsState extends State<SmoothIndicators> {
                 padding: EdgeInsets.only(top: 24, bottom: 12),
                 child: Text(
                   'Worm',
-                  style: TextStyle(color: Color(0x89000000)),
+                  style: TextStyle(color: const Color(0x89000000)),
                 ),
               ),
               SmoothPageIndicator(
@@ -71,7 +71,7 @@ class _SmoothIndicatorsState extends State<SmoothIndicators> {
                 padding: EdgeInsets.only(top: 16, bottom: 8),
                 child: Text(
                   'Jumping Dot',
-                  style: TextStyle(color: Color(0x89000000)),
+                  style: TextStyle(color: const Color(0x89000000)),
                 ),
               ),
               SmoothPageIndicator(
@@ -88,7 +88,7 @@ class _SmoothIndicatorsState extends State<SmoothIndicators> {
                 padding: EdgeInsets.only(top: 16, bottom: 12),
                 child: Text(
                   'Scrolling Dots',
-                  style: TextStyle(color: Color(0x89000000)),
+                  style: TextStyle(color: const Color(0x89000000)),
                 ),
               ),
               SmoothPageIndicator(
@@ -107,7 +107,7 @@ class _SmoothIndicatorsState extends State<SmoothIndicators> {
                 padding: EdgeInsets.only(top: 16, bottom: 16),
                 child: Text(
                   'Customizable Effect',
-                  style: TextStyle(color: Color(0x89000000)),
+                  style: TextStyle(color: const Color(0x89000000)),
                 ),
               ),
               Container(
@@ -126,7 +126,7 @@ class _SmoothIndicatorsState extends State<SmoothIndicators> {
                       // dotBorder: DotBorder(
                       //   padding: 2,
                       //   width: 2,
-                      //   color: Color(0xFF3F51B5),
+                      //   color: const Color(0xFF3F51B5),
                       // ),
                     ),
                     dotDecoration: DotDecoration(
@@ -136,7 +136,7 @@ class _SmoothIndicatorsState extends State<SmoothIndicators> {
                       // dotBorder: DotBorder(
                       //   padding: 2,
                       //   width: 2,
-                      //   color: Color(0xFF9E9E9E),
+                      //   color: const Color(0xFF9E9E9E),
                       // ),
                       // borderRadius: BorderRadius.only(
                       //     topLeft: Radius.circular(2),
@@ -162,10 +162,10 @@ class _SmoothIndicatorsState extends State<SmoothIndicators> {
 }
 
 const colors = [
-  Color(0xFFF44336),
-  Color(0xFF4CAF50),
-  Color(0xFF69F0AE),
-  Color(0xFFFFD740),
-  Color(0xFF2196F3),
-  Color(0xFFFFC107),
+  const Color(0xFFF44336),
+  const Color(0xFF4CAF50),
+  const Color(0xFF69F0AE),
+  const Color(0xFFFFD740),
+  const Color(0xFF2196F3),
+  const Color(0xFFFFC107),
 ];

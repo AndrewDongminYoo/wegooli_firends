@@ -31,7 +31,6 @@ class PaymentCardController extends GetxController {
   // RxList<PaymentCardModel> paymentCards = RxList.of([PaymentCardModel()]);
   // RxList<PaymentCardModel> get paymentCards => _paymentCards.obs;
 
-
   @override
   void onClose() {
     super.onClose();

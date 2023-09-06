@@ -12,7 +12,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 class CustomImageView extends StatelessWidget {
   /// a [CustomImageView] it can be used for showing any type of images
   /// it will shows the placeholder image if image is not found on network image
-  CustomImageView({super.key, 
+  CustomImageView({
+    super.key,
     this.height = 18,
     this.width = 18,
     this.url,
@@ -127,8 +128,8 @@ class CustomImageView extends StatelessWidget {
               height: 30,
               width: 30,
               child: LinearProgressIndicator(
-                color: Color(0xFFEEEEEE),
-                backgroundColor: Color(0xFFF5F5F5),
+                color: const Color(0xFFEEEEEE),
+                backgroundColor: const Color(0xFFF5F5F5),
               )),
           errorWidget: (context, url, error) => Image.asset(
                 placeHolder,

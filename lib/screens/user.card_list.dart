@@ -86,7 +86,11 @@ class _RegisteredCreditCardListState extends State<RegisteredCreditCardList> {
                     // margin: getMargin(top: 30, bottom: 20),
                     buttonStyle: CustomButtonStyles.fillPrimaryC26.copyWith(
                         fixedSize: MaterialStateProperty.all<Size>(
-                            Size(double.maxFinite, getVerticalSize(52)))),
+                      Size(
+                        double.maxFinite,
+                        getVerticalSize(52),
+                      ),
+                    )),
                     buttonTextStyle: CustomTextStyles.titleMedium18,
                     onTap: () {
                       goRegisterCreditCard();

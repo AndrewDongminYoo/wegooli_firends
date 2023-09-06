@@ -62,8 +62,8 @@ class _LoginWithIdAndPasswordState extends State<LoginWithIdAndPassword> {
                       controller: controller.username,
                       textInputType: TextInputType.emailAddress,
                       margin: getMargin(top: 40),
-                      contentPadding: getPadding(
-                          left: 12, top: 14, right: 12, bottom: 14),
+                      contentPadding:
+                          getPadding(left: 12, top: 14, right: 12, bottom: 14),
                       textStyle: CustomTextStyles.bodyLargeGray50003,
                       hintText: l10ns.id,
                       hintStyle: CustomTextStyles.bodyLargeGray50003,
@@ -98,33 +98,43 @@ class _LoginWithIdAndPasswordState extends State<LoginWithIdAndPassword> {
                         suffixConstraints:
                             BoxConstraints(maxHeight: getVerticalSize(48)),
                         filled: true,
-                        validator: (value) =>
-                            value != null && value.isNotEmpty
-                                ? null
-                                : '필수 입력 항목입니다.',
+                        validator: (value) => value != null && value.isNotEmpty
+                            ? null
+                            : '필수 입력 항목입니다.',
                       )),
                   CustomElevatedButton(
                       text: l10ns.signIn,
                       margin: getMargin(top: 30),
                       buttonStyle: CustomButtonStyles.fillPrimaryC26.copyWith(
                           fixedSize: MaterialStateProperty.all<Size>(
-                              Size(double.maxFinite, getVerticalSize(52)))),
+                        Size(
+                          double.maxFinite,
+                          getVerticalSize(52),
+                        ),
+                      )),
                       buttonTextStyle: CustomTextStyles.titleMedium18,
                       onTap: onSubmit),
                   Padding(
                       padding: getPadding(top: 57),
-                      child: Text(l10ns.youHaveNoAccount,
-                          overflow: TextOverflow.ellipsis,
-                          textAlign: TextAlign.left,
-                          style: theme.textTheme.bodyLarge!.copyWith(
-                              letterSpacing: getHorizontalSize(0.03)))),
+                      child: Text(
+                        l10ns.youHaveNoAccount,
+                        overflow: TextOverflow.ellipsis,
+                        textAlign: TextAlign.left,
+                        style: theme.textTheme.bodyLarge!.copyWith(
+                          letterSpacing: getHorizontalSize(0.03),
+                        ),
+                      )),
                   CustomElevatedButton(
                     text: l10ns.signUp,
                     width: double.infinity,
                     margin: getMargin(top: 11, bottom: 5),
                     buttonStyle: CustomButtonStyles.fillPrimaryC26.copyWith(
                         fixedSize: MaterialStateProperty.all<Size>(
-                            Size(double.maxFinite, getVerticalSize(52)))),
+                      Size(
+                        double.maxFinite,
+                        getVerticalSize(52),
+                      ),
+                    )),
                     buttonTextStyle: CustomTextStyles.titleMedium18,
                     onTap: () {
                       // 해당 탭은 dialog로 변경 예정

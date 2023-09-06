@@ -19,11 +19,14 @@ class SubscriptionInfoNoService extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               const Spacer(),
-              Text(l10ns.haveNoAnySubscriptionInfo,
-                  overflow: TextOverflow.ellipsis,
-                  textAlign: TextAlign.left,
-                  style: CustomTextStyles.titleMediumBlack900
-                      .copyWith(letterSpacing: getHorizontalSize(0.04)))
+              Text(
+                l10ns.haveNoAnySubscriptionInfo,
+                overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.left,
+                style: CustomTextStyles.titleMediumBlack900.copyWith(
+                  letterSpacing: getHorizontalSize(0.04),
+                ),
+              )
             ],
           )),
     ));

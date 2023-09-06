@@ -64,7 +64,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '599714471577',
     projectId: 'wegooli-friends',
     storageBucket: 'wegooli-friends.appspot.com',
-    iosClientId: '599714471577-1n98u34fhl45msv8vg9s521p87836r6s.apps.googleusercontent.com',
+    iosClientId:
+        '599714471577-1n98u34fhl45msv8vg9s521p87836r6s.apps.googleusercontent.com',
     iosBundleId: 'com.wegooli.friends',
   );
 
@@ -74,7 +75,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '599714471577',
     projectId: 'wegooli-friends',
     storageBucket: 'wegooli-friends.appspot.com',
-    iosClientId: '599714471577-p5s9qoaj46o3qf8ls2pg4drbo647ei3m.apps.googleusercontent.com',
+    iosClientId:
+        '599714471577-p5s9qoaj46o3qf8ls2pg4drbo647ei3m.apps.googleusercontent.com',
     iosBundleId: 'com.radius.wegooliFriends.RunnerTests',
   );
 }

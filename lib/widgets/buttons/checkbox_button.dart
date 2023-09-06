@@ -58,7 +58,8 @@ class CustomCheckboxButton extends StatelessWidget {
           child:
               (isRightCheck ?? false) ? rightSideCheckbox : leftSideCheckbox));
   Widget get leftSideCheckbox => Row(children: [
-        Padding(padding: const EdgeInsets.only(right: 8), child: checkboxWidget),
+        Padding(
+            padding: const EdgeInsets.only(right: 8), child: checkboxWidget),
         isExpandedText ? Expanded(child: textWidget) : textWidget,
       ]);
   Widget get rightSideCheckbox =>

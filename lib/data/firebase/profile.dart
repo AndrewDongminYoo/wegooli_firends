@@ -65,7 +65,8 @@ class _ProfilePageState extends State<ProfilePage> {
 
   void _onNameChanged() {
     setState(() {
-      if (controller.username.text == user.displayName || controller.username.text.isEmpty) {
+      if (controller.username.text == user.displayName ||
+          controller.username.text.isEmpty) {
         showSaveButton = false;
       } else {
         showSaveButton = true;
@@ -223,7 +224,8 @@ class _ProfilePageState extends State<ProfilePage> {
                               String verificationId,
                               int? resendToken,
                             ) async {
-                              final smsCode = await controller.sendVerificationCode();
+                              final smsCode =
+                                  await controller.sendVerificationCode();
                               if (smsCode != null) {
                                 // Create a PhoneAuthCredential with the code
                                 final credential = PhoneAuthProvider.credential(

@@ -12,7 +12,7 @@ class AppbarImage extends StatelessWidget {
   Function? onTap;
 
   AppbarImage({
-    super.key, 
+    super.key,
     this.imagePath,
     this.svgPath = 'assets/svg/arrow_back.svg',
     this.margin,

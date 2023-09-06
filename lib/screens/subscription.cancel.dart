@@ -10,7 +10,7 @@ import '/core/app_export.dart';
 class UnsubscriptionConfirm extends GetWidget<UserController> {
   final vehicleController = VehicleController.to;
 
- UnsubscriptionConfirm({super.key});
+  UnsubscriptionConfirm({super.key});
   @override
   Widget build(BuildContext context) {
     DateTime expireDate =
@@ -35,22 +35,26 @@ class UnsubscriptionConfirm extends GetWidget<UserController> {
                   width: getHorizontalSize(179),
                   margin: getMargin(top: 50),
                   child: Text(
-                      l10ns.areYouSureYouWantToUnsubscribe(
-                          controller.currentUser.value.nickname ?? '닉네임'),
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      textAlign: TextAlign.center,
-                      style: CustomTextStyles.titleMediumBlack900
-                          .copyWith(letterSpacing: getHorizontalSize(0.04)))),
+                    l10ns.areYouSureYouWantToUnsubscribe(
+                        controller.currentUser.value.nickname ?? '닉네임'),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    textAlign: TextAlign.center,
+                    style: CustomTextStyles.titleMediumBlack900.copyWith(
+                      letterSpacing: getHorizontalSize(0.04),
+                    ),
+                  )),
               Padding(
                   padding: getPadding(top: 23),
                   child: Text(
-                      l10ns.subscriptionsWillBeCanceledAfter(
-                          expireDate.year, expireDate.month, expireDate.day),
-                      overflow: TextOverflow.ellipsis,
-                      textAlign: TextAlign.left,
-                      style: CustomTextStyles.bodyLargeBlack900
-                          .copyWith(letterSpacing: getHorizontalSize(0.03)))),
+                    l10ns.subscriptionsWillBeCanceledAfter(
+                        expireDate.year, expireDate.month, expireDate.day),
+                    overflow: TextOverflow.ellipsis,
+                    textAlign: TextAlign.left,
+                    style: CustomTextStyles.bodyLargeBlack900.copyWith(
+                      letterSpacing: getHorizontalSize(0.03),
+                    ),
+                  )),
               Padding(
                   padding: getPadding(top: 87, bottom: 5),
                   child: Row(
@@ -60,22 +64,28 @@ class UnsubscriptionConfirm extends GetWidget<UserController> {
                             width: 104,
                             height: 52,
                             text: l10ns.cancel,
-                            buttonStyle: CustomButtonStyles.fillGray400C26
-                                .copyWith(
+                            buttonStyle:
+                                CustomButtonStyles.fillGray400C26.copyWith(
                                     fixedSize: MaterialStateProperty.all<Size>(
-                                        Size(getHorizontalSize(104),
-                                            getVerticalSize(52)))),
+                              Size(
+                                getHorizontalSize(104),
+                                getVerticalSize(52),
+                              ),
+                            )),
                             buttonTextStyle: CustomTextStyles.titleMedium18,
                             onTap: () => goBack()),
                         CustomElevatedButton(
                           width: 216,
                           height: 52,
                           text: l10ns.cancelingASubscription,
-                          buttonStyle: CustomButtonStyles.fillPrimaryC26
-                              .copyWith(
+                          buttonStyle:
+                              CustomButtonStyles.fillPrimaryC26.copyWith(
                                   fixedSize: MaterialStateProperty.all<Size>(
-                                      Size(getHorizontalSize(216),
-                                          getVerticalSize(52)))),
+                            Size(
+                              getHorizontalSize(216),
+                              getVerticalSize(52),
+                            ),
+                          )),
                           buttonTextStyle: CustomTextStyles.titleMedium18,
                           onTap: () {
                             Widget alertDialog = AlertDialog(

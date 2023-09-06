@@ -18,41 +18,6 @@ import 'package:google_sign_in/google_sign_in.dart';
 import '/controllers/account.user.dart';
 import 'main.dart';
 
-typedef OAuthSignIn = void Function();
-
-// If set to true, the app will request notification permissions to use
-// silent verification for SMS MFA instead of Recaptcha.
-const withSilentVerificationSMSMFA = true;
-
-/// Helper class to show a snackbar using the passed context.
-class ScaffoldSnackbar {
-  // ignore: public_member_api_docs
-  ScaffoldSnackbar(this._context);
-
-  /// The scaffold of current context.
-  factory ScaffoldSnackbar.of(BuildContext context) {
-    return ScaffoldSnackbar(context);
-  }
-
-  final BuildContext _context;
-
-  /// Helper method to show a SnackBar.
-  void show(String message) {
-    ScaffoldMessenger.of(_context)
-      ..hideCurrentSnackBar()
-      ..showSnackBar(
-        SnackBar(
-          content: Text(message),
-          behavior: SnackBarBehavior.floating,
-        ),
-      );
-  }
-}
-
-/// The mode of the current auth session, either [AuthMode.login] or [AuthMode.register].
-// ignore: public_member_api_docs
-enum AuthMode { login, register, phone }
-
 extension on AuthMode {
   String get label => this == AuthMode.login
       ? 'Sign in'
@@ -361,14 +326,12 @@ class _AuthGateState extends State<AuthGate> {
         verificationFailed: print,
         codeSent: (String verificationId, int? resendToken) async {
           final smsCode = await getSmsCodeFromUser(context);
-
           if (smsCode != null) {
             // Create a PhoneAuthCredential with the code
             final credential = PhoneAuthProvider.credential(
               verificationId: verificationId,
               smsCode: smsCode,
             );
-
             try {
               await e.resolver.resolveSignIn(
                 PhoneMultiFactorGenerator.getAssertion(

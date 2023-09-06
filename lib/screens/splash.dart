@@ -16,28 +16,30 @@ class SplashLoading extends StatelessWidget {
 
     return SafeArea(
         child: Scaffold(
-            appBar: CustomAppBar(height: getVerticalSize(53), leadingWidth: 34),
-            backgroundColor: theme.colorScheme.primary,
-            body: Container(
-                width: mediaQueryData.size.width,
-                padding: getPadding(left: 81, top: 169, right: 81),
-                child: Column(
-                  children: [
-                    const FriendsByWegooli(),
-                    Container(
-                        alignment: Alignment.center,
-                        margin: EdgeInsets.only(top: getVerticalSize(44)),
-                        width: Get.width,
-                        child: CustomImageView(
-                          onTap: () {
-                            goIdPwLogin();
-                          },
-                          imagePath: Assets.images.imgGooli1.path,
-                          fit: BoxFit.fitWidth,
-                          height: getVerticalSize(93),
-                          width: getHorizontalSize(166),
-                        ))
-                  ],
-                ))));
+      appBar: CustomAppBar(height: getVerticalSize(53), leadingWidth: 34),
+      backgroundColor: theme.colorScheme.primary,
+      body: Container(
+        width: mediaQueryData.size.width,
+        padding: getPadding(left: 81, top: 169, right: 81),
+        child: Column(
+          children: [
+            const FriendsByWegooli(),
+            Container(
+                alignment: Alignment.center,
+                margin: EdgeInsets.only(top: getVerticalSize(44)),
+                width: Get.width,
+                child: CustomImageView(
+                  onTap: () {
+                    goIdPwLogin();
+                  },
+                  imagePath: Assets.images.imgGooli1.path,
+                  fit: BoxFit.fitWidth,
+                  height: getVerticalSize(93),
+                  width: getHorizontalSize(166),
+                ))
+          ],
+        ),
+      ),
+    ));
   }
 }

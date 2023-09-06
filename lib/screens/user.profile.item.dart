@@ -32,9 +32,12 @@ class ListItem extends StatelessWidget {
                   width: getSize(24),
                   margin: getMargin(right: 10),
                 ),
-                Text(text,
-                    style: theme.textTheme.bodyLarge!
-                        .copyWith(letterSpacing: getHorizontalSize(0.03))),
+                Text(
+                  text,
+                  style: theme.textTheme.bodyLarge!.copyWith(
+                    letterSpacing: getHorizontalSize(0.03),
+                  ),
+                ),
               ],
             ),
             CustomImageView(

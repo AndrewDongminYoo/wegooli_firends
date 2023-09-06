@@ -7,7 +7,7 @@ import '/core/app_export.dart';
 
 class CustomBottomAppBar extends StatefulWidget {
   const CustomBottomAppBar({
-    super.key, 
+    super.key,
     required this.floatingActionButtonLocation,
     this.notchedShape,
   });

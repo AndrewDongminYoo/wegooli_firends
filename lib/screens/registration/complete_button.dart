@@ -18,7 +18,11 @@ class ValidatePhoneCompleteButton extends GetWidget<UserController> {
             text: l10ns.authenticationComplete,
             buttonStyle: CustomButtonStyles.fillPrimaryC26.copyWith(
                 fixedSize: MaterialStateProperty.all<Size>(
-                    Size(double.maxFinite, getVerticalSize(52)))),
+              Size(
+                double.maxFinite,
+                getVerticalSize(52),
+              ),
+            )),
             buttonTextStyle: CustomTextStyles.titleMedium18,
             onTap: () {
               if (controller.isValidatedPhone) {

@@ -26,47 +26,47 @@ class SMSValidationForm extends StatefulWidget {
 class _SMSValidationFormState extends State<SMSValidationForm> {
   String error = '';
   Future<void> phoneAuth() async {
-      if (kIsWeb) {
-        final confirmationResult =
-            await auth.signInWithPhoneNumber(widget.controller.phoneNum.text);
-        final smsCode = await widget.controller.sendVerificationCode();
-        if (smsCode != null) {
-          await confirmationResult.confirm(smsCode);
-        }
-      } else {
-        await auth.verifyPhoneNumber(
-          phoneNumber: widget.controller.phoneNum.text,
-          verificationCompleted: (_) {},
-          verificationFailed: (e) {
-            setState(() {
-              error = '${e.message}';
-            });
-          },
-          codeSent: (String verificationId, int? resendToken) async {
-            final smsCode = await widget.controller.sendVerificationCode();
-            if (smsCode != null) {
-              // Create a PhoneAuthCredential with the code
-              final credential = PhoneAuthProvider.credential(
-                verificationId: verificationId,
-                smsCode: smsCode,
-              );
-              try {
-                // Sign the user in (or link) with the credential
-                await auth.signInWithCredential(credential);
-              } on FirebaseAuthException catch (e) {
-                setState(() {
-                  error = e.message ?? '';
-                });
-              }
-            }
-          },
-          codeAutoRetrievalTimeout: (e) {
-            setState(() {
-              error = e;
-            });
-          },
-        );
+    if (kIsWeb) {
+      final confirmationResult =
+          await auth.signInWithPhoneNumber(widget.controller.phoneNum.text);
+      final smsCode = await widget.controller.sendVerificationCode();
+      if (smsCode != null) {
+        await confirmationResult.confirm(smsCode);
       }
+    } else {
+      await auth.verifyPhoneNumber(
+        phoneNumber: widget.controller.phoneNum.text,
+        verificationCompleted: (_) {},
+        verificationFailed: (e) {
+          setState(() {
+            error = '${e.message}';
+          });
+        },
+        codeSent: (String verificationId, int? resendToken) async {
+          final smsCode = await widget.controller.sendVerificationCode();
+          if (smsCode != null) {
+            // Create a PhoneAuthCredential with the code
+            final credential = PhoneAuthProvider.credential(
+              verificationId: verificationId,
+              smsCode: smsCode,
+            );
+            try {
+              // Sign the user in (or link) with the credential
+              await auth.signInWithCredential(credential);
+            } on FirebaseAuthException catch (e) {
+              setState(() {
+                error = e.message ?? '';
+              });
+            }
+          }
+        },
+        codeAutoRetrievalTimeout: (e) {
+          setState(() {
+            error = e;
+          });
+        },
+      );
+    }
   }
 
   @override
@@ -126,7 +126,11 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
                         margin: getMargin(top: 10),
                         buttonStyle: CustomButtonStyles.fillPrimaryC5.copyWith(
                             fixedSize: MaterialStateProperty.all<Size>(
-                                Size(double.maxFinite, getVerticalSize(48)))),
+                          Size(
+                            double.maxFinite,
+                            getVerticalSize(48),
+                          ),
+                        )),
                         buttonTextStyle: theme.textTheme.titleMedium!)),
               ]),
               Row(

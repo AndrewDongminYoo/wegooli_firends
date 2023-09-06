@@ -28,6 +28,7 @@ class SocialSecurity7NumberInput extends StatelessWidget {
           LengthLimitingTextInputFormatter(7)
         ],
         focusNode: focusNode,
+
         /// 특정한 글자를 '*' 대신 사용할 수 있도록 구현 (obscureText가 true인 경우에 한하여 기능이 동작한다.)
         obscureChar: '○',
         obscureText: true,

@@ -12,14 +12,17 @@ class AppNavigationTitle extends StatelessWidget {
     return Align(
         alignment: Alignment.centerLeft,
         child: Padding(
-            padding: getPadding(left: 20, top: 10, right: 20, bottom: 10),
-            child: Text("App Navigation",
-                overflow: TextOverflow.ellipsis,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: appTheme.black900,
-                    fontSize: getFontSize(20),
-                    fontFamily: FontFamily.nanumSquareRound,
-                    fontWeight: FontWeight.w400))));
+          padding: getPadding(left: 20, top: 10, right: 20, bottom: 10),
+          child: Text(
+            "App Navigation",
+            overflow: TextOverflow.ellipsis,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+                color: appTheme.black900,
+                fontSize: getFontSize(20),
+                fontFamily: FontFamily.nanumSquareRound,
+                fontWeight: FontWeight.w400),
+          ),
+        ));
   }
 }

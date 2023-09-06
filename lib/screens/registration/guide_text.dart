@@ -14,11 +14,14 @@ class CustomGuideText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-      Text(text,
-          overflow: TextOverflow.ellipsis,
-          textAlign: TextAlign.left,
-          style: CustomTextStyles.bodySmallErrorContainer
-              .copyWith(letterSpacing: getHorizontalSize(0.04)))
+      Text(
+        text,
+        overflow: TextOverflow.ellipsis,
+        textAlign: TextAlign.left,
+        style: CustomTextStyles.bodySmallErrorContainer.copyWith(
+          letterSpacing: getHorizontalSize(0.04),
+        ),
+      )
     ]);
   }
 }

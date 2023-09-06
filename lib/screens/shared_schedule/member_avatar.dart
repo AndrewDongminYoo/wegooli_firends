@@ -21,33 +21,38 @@ class MemberAvatar extends StatelessWidget {
         padding: getPadding(left: 15),
         child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
           Card(
-              clipBehavior: Clip.antiAlias,
-              elevation: 0,
-              margin: const EdgeInsets.all(0),
-              shape: RoundedRectangleBorder(
+            clipBehavior: Clip.antiAlias,
+            elevation: 0,
+            margin: const EdgeInsets.all(0),
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadiusStyle.circleBorder25),
+            child: Container(
+              height: getSize(50),
+              width: getSize(50),
+              padding: getPadding(all: 4),
+              decoration: AppDecoration.fillDeepPurple.copyWith(
+                  color: ColorUtils.stringToColor(personalColor),
                   borderRadius: BorderRadiusStyle.circleBorder25),
-              child: Container(
-                  height: getSize(50),
-                  width: getSize(50),
-                  padding: getPadding(all: 4),
-                  decoration: AppDecoration.fillDeepPurple.copyWith(
-                      color: ColorUtils.stringToColor(personalColor),
-                      borderRadius: BorderRadiusStyle.circleBorder25),
-                  child: Stack(children: [
-                    CustomImageView(
-                        imagePath: avatarImagePath,
-                        height: getSize(42),
-                        width: getSize(42),
-                        radius: BorderRadius.circular(getHorizontalSize(21)),
-                        alignment: Alignment.center),
-                  ]))),
+              child: Stack(children: [
+                CustomImageView(
+                    imagePath: avatarImagePath,
+                    height: getSize(42),
+                    width: getSize(42),
+                    radius: BorderRadius.circular(getHorizontalSize(21)),
+                    alignment: Alignment.center),
+              ]),
+            ),
+          ),
           Padding(
               padding: getPadding(top: 4),
-              child: Text(name,
-                  overflow: TextOverflow.ellipsis,
-                  textAlign: TextAlign.left,
-                  style: theme.textTheme.bodySmall!
-                      .copyWith(letterSpacing: getHorizontalSize(0.02)))),
+              child: Text(
+                name,
+                overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.left,
+                style: theme.textTheme.bodySmall!.copyWith(
+                  letterSpacing: getHorizontalSize(0.02),
+                ),
+              )),
         ]));
   }
 }

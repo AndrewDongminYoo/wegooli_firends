@@ -34,33 +34,35 @@ class CalendarBody extends GetView<ScheduleController> {
     return Padding(
         padding: getPadding(all: 16),
         child: Container(
-            padding: getPadding(all: 16),
-            decoration: AppDecoration.outline
-                .copyWith(borderRadius: BorderRadiusStyle.circleBorder10),
-            child: Align(
-                alignment: Alignment.center,
-                child: TableCalendar<Schedule>(
-                  calendarFormat: controller.calendarFormat,
-                  daysOfWeekHeight: 30,
-                  eventLoader: (day) => controller.eventSource[day] ?? [],
-                  firstDay: controller.firstDay,
-                  focusedDay: controller.focusedDay,
-                  lastDay: controller.lastDay,
-                  locale: const Locale('ko', 'KR').toString(),
-                  rangeEndDay: controller.rangeEnd,
-                  rangeSelectionMode: controller.rangeSelectionMode,
-                  rangeStartDay: controller.rangeStart,
-                  selectedDayPredicate: (day) =>
-                      isSameDay(controller.selectedDay, day),
-                  startingDayOfWeek: StartingDayOfWeek.sunday,
-                  daysOfWeekStyle: daysOfWeekStyle,
-                  calendarStyle: calendarStyle,
-                  headerStyle: headerStyle,
-                  onDaySelected: _onDaySelected,
-                  onRangeSelected: _onRangeSelected,
-                  onFormatChanged: _onFormatChanged,
-                  onPageChanged: _onPageChanged,
-                ))));
+          padding: getPadding(all: 16),
+          decoration: AppDecoration.outline
+              .copyWith(borderRadius: BorderRadiusStyle.circleBorder10),
+          child: Align(
+            alignment: Alignment.center,
+            child: TableCalendar<Schedule>(
+              calendarFormat: controller.calendarFormat,
+              daysOfWeekHeight: 30,
+              eventLoader: (day) => controller.eventSource[day] ?? [],
+              firstDay: controller.firstDay,
+              focusedDay: controller.focusedDay,
+              lastDay: controller.lastDay,
+              locale: const Locale('ko', 'KR').toString(),
+              rangeEndDay: controller.rangeEnd,
+              rangeSelectionMode: controller.rangeSelectionMode,
+              rangeStartDay: controller.rangeStart,
+              selectedDayPredicate: (day) =>
+                  isSameDay(controller.selectedDay, day),
+              startingDayOfWeek: StartingDayOfWeek.sunday,
+              daysOfWeekStyle: daysOfWeekStyle,
+              calendarStyle: calendarStyle,
+              headerStyle: headerStyle,
+              onDaySelected: _onDaySelected,
+              onRangeSelected: _onRangeSelected,
+              onFormatChanged: _onFormatChanged,
+              onPageChanged: _onPageChanged,
+            ),
+          ),
+        ));
   }
 
   void _onPageChanged(DateTime focusedDay) {

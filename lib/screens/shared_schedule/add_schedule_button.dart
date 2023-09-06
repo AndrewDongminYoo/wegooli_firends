@@ -14,7 +14,11 @@ class AddScheduleButton extends StatelessWidget {
         margin: getMargin(left: 16, top: 30, right: 16),
         buttonStyle: CustomButtonStyles.fillPrimaryC26.copyWith(
             fixedSize: MaterialStateProperty.all<Size>(
-                Size(double.maxFinite, getVerticalSize(52)))),
+          Size(
+            double.maxFinite,
+            getVerticalSize(52),
+          ),
+        )),
         buttonTextStyle: CustomTextStyles.titleMedium18,
         alignment: Alignment.center);
   }

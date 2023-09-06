@@ -12,14 +12,17 @@ class CheckYourAppUIMessage extends StatelessWidget {
     return Align(
         alignment: Alignment.centerLeft,
         child: Padding(
-            padding: getPadding(left: 20),
-            child: Text(l10ns.checkYourAppUI,
-                overflow: TextOverflow.ellipsis,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: appTheme.blueGray400,
-                    fontSize: getFontSize(16),
-                    fontFamily: FontFamily.nanumSquareRound,
-                    fontWeight: FontWeight.w400))));
+          padding: getPadding(left: 20),
+          child: Text(
+            l10ns.checkYourAppUI,
+            overflow: TextOverflow.ellipsis,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+                color: appTheme.blueGray400,
+                fontSize: getFontSize(16),
+                fontFamily: FontFamily.nanumSquareRound,
+                fontWeight: FontWeight.w400),
+          ),
+        ));
   }
 }

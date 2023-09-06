@@ -243,8 +243,6 @@ analyzer:
     strict-casts: false
     strict-raw-types: false
   errors:
-    # allow self-reference to deprecated members (we do this because otherwise we have
-    # to annotate every member in every test, assert, etc, when we deprecate something)
     avoid_function_literals_in_foreach_calls: error # [🔵,🦩,🔧] 함수 리터럴에 "forEach"를 사용하지 마세요.
     avoid_print: ignore # [🦩,🔧] 프로덕션 코드에서 "print" 호출을 피하세요.
     avoid_returning_null_for_void: error # [❕] 반환 타입이 부울, 더블, 인트 또는 숫자인 멤버에서 "null"을 반환하지 마세요.

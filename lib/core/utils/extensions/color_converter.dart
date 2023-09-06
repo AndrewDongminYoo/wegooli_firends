@@ -1,3 +1,6 @@
+// 🐦 Flutter imports:
+import 'package:flutter/material.dart' as material;
+
 // 📦 Package imports:
 import 'package:color/color.dart';
 
@@ -77,6 +80,15 @@ Map<int, String> accentSwatchFromPrimaryHex(String primaryHex) {
 }
 
 extension on Color {
+  // ignore: unused_element
+  material.Color toMaterial(int? alpha) {
+    return material.Color.fromARGB(
+        (alpha ?? 255),
+        (toRgbColor().r * 255 / 255).floor(),
+        (toRgbColor().g * 255 / 255).floor(),
+        (toRgbColor().b * 255 / 255).floor());
+  }
+
   /// 이 함수는 접두사가 `0xFF`인 16진수 색상 값의 문자열 표현을 반환
   ///
   /// @return [String] `0xFFRRGGBB` 형식의 16진수 색상 값을 나타내는 문자열입니다.

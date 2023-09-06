@@ -89,43 +89,12 @@ class _AuthGateState extends State<AuthGate> {
   }
 
   late Map<Buttons, OAuthSignIn> authButtons;
-
   @override
   void initState() {
     super.initState();
-
     if (withSilentVerificationSMSMFA && !kIsWeb) {
       FirebaseMessaging messaging = FirebaseMessaging.instance;
       messaging.requestPermission();
-    }
-
-    if (!kIsWeb && Platform.isMacOS) {
-      authButtons = {
-        Buttons.Apple: () => _handleMultiFactorException(
-              _signInWithApple,
-            ),
-      };
-    } else {
-      authButtons = {
-        Buttons.Apple: () => _handleMultiFactorException(
-              _signInWithApple,
-            ),
-        Buttons.Google: () => _handleMultiFactorException(
-              _signInWithGoogle,
-            ),
-        Buttons.GitHub: () => _handleMultiFactorException(
-              _signInWithGitHub,
-            ),
-        Buttons.Microsoft: () => _handleMultiFactorException(
-              _signInWithMicrosoft,
-            ),
-        Buttons.Twitter: () => _handleMultiFactorException(
-              _signInWithTwitter,
-            ),
-        Buttons.Yahoo: () => _handleMultiFactorException(
-              _signInWithYahoo,
-            ),
-      };
     }
   }
 
@@ -208,7 +177,7 @@ class _AuthGateState extends State<AuthGate> {
                             TextFormField(
                               controller: phoneController,
                               decoration: const InputDecoration(
-                                hintText: '+12345678910',
+                                hintText: '+821035661857',
                                 labelText: 'Phone number',
                                 border: OutlineInputBorder(),
                               ),
@@ -236,31 +205,6 @@ class _AuthGateState extends State<AuthGate> {
                             onPressed: _resetPassword,
                             child: const Text('Forgot password?'),
                           ),
-                          ...authButtons.keys
-                              .map(
-                                (button) => Padding(
-                                  padding:
-                                      const EdgeInsets.symmetric(vertical: 5),
-                                  child: AnimatedSwitcher(
-                                    duration: const Duration(milliseconds: 200),
-                                    child: isLoading
-                                        ? Container(
-                                            color: Colors.grey[200],
-                                            height: 50,
-                                            width: double.infinity,
-                                          )
-                                        : SizedBox(
-                                            width: double.infinity,
-                                            height: 50,
-                                            child: SignInButton(
-                                              button,
-                                              onPressed: authButtons[button]!,
-                                            ),
-                                          ),
-                                  ),
-                                ),
-                              )
-                              .toList(),
                           SizedBox(
                             width: double.infinity,
                             height: 50,
@@ -315,21 +259,6 @@ class _AuthGateState extends State<AuthGate> {
                                 ],
                               ),
                             ),
-                          const SizedBox(height: 10),
-                          RichText(
-                            text: TextSpan(
-                              style: Theme.of(context).textTheme.bodyLarge,
-                              children: [
-                                const TextSpan(text: 'Or '),
-                                TextSpan(
-                                  text: 'continue as guest',
-                                  style: const TextStyle(color: Colors.blue),
-                                  recognizer: TapGestureRecognizer()
-                                    ..onTap = _anonymousAuth,
-                                ),
-                              ],
-                            ),
-                          ),
                         ],
                       ),
                     ),

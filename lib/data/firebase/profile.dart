@@ -230,8 +230,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               String verificationId,
                               int? resendToken,
                             ) async {
-                              final smsCode = await getSmsCodeFromUser(context);
-
+                              final smsCode = await sendVerificationCode(context);
                               if (smsCode != null) {
                                 // Create a PhoneAuthCredential with the code
                                 final credential = PhoneAuthProvider.credential(
@@ -355,14 +354,14 @@ class _ProfilePageState extends State<ProfilePage> {
           actions: [
             ElevatedButton(
               onPressed: () {
-                Navigator.of(context).pop();
+                goBack();
               },
               child: const Text('Update'),
             ),
             OutlinedButton(
               onPressed: () {
                 photoURL = null;
-                Navigator.of(context).pop();
+                goBack();
               },
               child: const Text('Cancel'),
             ),

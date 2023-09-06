@@ -9,10 +9,11 @@ class NameTextInput extends StatelessWidget {
   const NameTextInput({
     super.key,
     required this.controller,
+    required this.focusNode,
   });
 
   final UserController controller;
-
+  final FocusNode focusNode;
   @override
   Widget build(BuildContext context) {
     return CustomTextFormField(
@@ -27,6 +28,7 @@ class NameTextInput extends StatelessWidget {
           /// 테스트를 위해 입력할 수 있는 글자를 제한해 봄. 숫자 입력 못하게 함.
           FilteringTextInputFormatter.allow(RegExp(r'[A-Za-z가-힣ㄱ-ㅎ, ]+'))
         ],
+        focusNode: focusNode,
         filled: true,
         fillColor: theme.colorScheme.onPrimaryContainer);
   }

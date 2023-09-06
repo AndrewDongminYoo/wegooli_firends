@@ -108,6 +108,7 @@ class RegisterCreditCard extends GetWidget<PaymentCardController> {
                                     inputFormatters: [
                                       LengthLimitingTextInputFormatter(6),
                                     ],
+                                    controller: userController.birthDay,
                                     initialValue: userController.birthDay.text,
                                     textInputAction: TextInputAction.next,
                                     filled: true,

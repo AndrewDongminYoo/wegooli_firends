@@ -9,10 +9,11 @@ class Birthday6NumberInput extends StatelessWidget {
   const Birthday6NumberInput({
     super.key,
     required this.controller,
+    required this.focusNode,
   });
 
   final UserController controller;
-
+  final FocusNode focusNode;
   @override
   Widget build(BuildContext context) {
     return CustomTextFormField(
@@ -24,6 +25,7 @@ class Birthday6NumberInput extends StatelessWidget {
           FilteringTextInputFormatter.singleLineFormatter,
           LengthLimitingTextInputFormatter(6)
         ],
+        focusNode: focusNode,
         textInputType: TextInputType.number,
         contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),
         textStyle: CustomTextStyles.bodyLargeGray50003,

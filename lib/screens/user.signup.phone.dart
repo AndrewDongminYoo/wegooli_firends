@@ -8,6 +8,10 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 class ValidatePhone extends GetWidget<UserController> {
+  final _nameText = FocusNode();
+  final _birthday = FocusNode();
+  final _socialId = FocusNode();
+  final _phoneNum = FocusNode();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -26,7 +30,7 @@ class ValidatePhone extends GetWidget<UserController> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             CustomInputLabel(labelText: l10ns.name),
-                            NameTextInput(controller: controller)
+                            NameTextInput(controller: controller, focusNode: _nameText)
                           ]),
                       Padding(
                           padding: getPadding(top: 26, bottom: 7),
@@ -43,16 +47,16 @@ class ValidatePhone extends GetWidget<UserController> {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Birthday6NumberInput(
-                                          controller: controller),
+                                          controller: controller, focusNode: _birthday),
                                       Text("-", style: TextStyle(fontSize: 24)),
                                       SocialSecurity7NumberInput(
-                                          controller: controller),
+                                          controller: controller, focusNode: _socialId),
                                     ]),
                                 CustomGuideText(
                                     text: l10ns
                                         .subscriptionsAreRestrictedToThoseUnderTheAgeOf26),
                               ])),
-                      SMSValidationForm(controller: controller)
+                      SMSValidationForm(controller: controller, focusNode: _phoneNum)
                     ])),
             bottomNavigationBar: ValidatePhoneCompleteButton()));
   }

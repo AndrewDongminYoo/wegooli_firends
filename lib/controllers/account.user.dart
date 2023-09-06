@@ -89,17 +89,47 @@ class UserController extends GetxController {
     return DateTime.now().add(Duration(minutes: 3));
   }
 
-  void sendVerificationCode() {
+  Future<String?> sendVerificationCode(BuildContext context) async {
+    String? smsCode;
+    // Update the UI - wait for the user to enter the SMS code
     if (phoneCarriers != null && phoneNum.text.isNotEmpty) {
       isWaitingOtpCode.value = true;
-      print('인증번호가 발송되었습니다.');
-      // TODO: 휴대폰 인증 로직이 필요합니다.
-      // 숫자 n개 리턴하는 동작 서버에서 실행.
-      // 정확한 숫자 클라이언트에서 보관하고 있거나,
-      // 서버에서만 가지고 있다가 클라이언트에서 인증 확인 시에 비교 처리
-    } else {
-      Get.dialog(Text('어림도없다'));
+      await showDialog<String>(
+        context: context,
+        barrierDismissible: false,
+        builder: (context) {
+          return AlertDialog(
+            title: const Text('SMS code:'),
+            actions: [
+              ElevatedButton(
+                onPressed: () {
+                  goBack();
+                },
+                child: const Text('Sign in'),
+              ),
+              OutlinedButton(
+                onPressed: () {
+                  smsCode = null;
+                  goBack();
+                },
+                child: const Text('Cancel'),
+              ),
+            ],
+            content: Container(
+              padding: const EdgeInsets.all(20),
+              child: TextField(
+                onChanged: (value) {
+                  smsCode = value;
+                },
+                textAlign: TextAlign.center,
+                autofocus: true,
+              ),
+            ),
+          );
+        },
+      );
     }
+    return smsCode;
   }
 
   void verificaticonIsExpired() {

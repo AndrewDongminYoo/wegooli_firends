@@ -10,6 +10,7 @@ class CustomElevatedButton extends BaseButton {
     this.decoration,
     this.leftIcon,
     this.rightIcon,
+    this.isLoading,
     EdgeInsets? margin,
     VoidCallback? onTap,
     ButtonStyle? buttonStyle,
@@ -33,6 +34,7 @@ class CustomElevatedButton extends BaseButton {
   final BoxDecoration? decoration;
   final Widget? leftIcon;
   final Widget? rightIcon;
+  final bool? isLoading;
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +52,15 @@ class CustomElevatedButton extends BaseButton {
       decoration: decoration,
       child: ElevatedButton(
           style: buttonStyle,
-          onPressed: isDisabled ?? false ? null : onTap ?? () {},
+          onPressed: () {
+            if (isDisabled ?? false) {
+              return null;
+            } else if (isLoading ?? false) {
+              return null;
+            } else {
+              onTap!();
+            }
+          },
           child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,

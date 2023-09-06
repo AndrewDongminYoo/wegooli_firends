@@ -15,6 +15,7 @@ import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 // 🌎 Project imports:
+import '/controllers/account.user.dart';
 import 'main.dart';
 
 typedef OAuthSignIn = void Function();
@@ -70,16 +71,11 @@ class AuthGate extends StatefulWidget {
 }
 
 class _AuthGateState extends State<AuthGate> {
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
-  TextEditingController phoneController = TextEditingController();
-
+  UserController controller = UserController.to;
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   String error = '';
   String verificationId = '';
-
   AuthMode mode = AuthMode.login;
-
   bool isLoading = false;
 
   void setIsLoading() {
@@ -88,7 +84,6 @@ class _AuthGateState extends State<AuthGate> {
     });
   }
 
-  late Map<Buttons, OAuthSignIn> authButtons;
   @override
   void initState() {
     super.initState();
@@ -146,7 +141,7 @@ class _AuthGateState extends State<AuthGate> {
                             Column(
                               children: [
                                 TextFormField(
-                                  controller: emailController,
+                                  controller: controller.emailAddress,
                                   decoration: const InputDecoration(
                                     hintText: 'Email',
                                     border: OutlineInputBorder(),
@@ -160,7 +155,7 @@ class _AuthGateState extends State<AuthGate> {
                                 ),
                                 const SizedBox(height: 20),
                                 TextFormField(
-                                  controller: passwordController,
+                                  controller: controller.password,
                                   obscureText: true,
                                   decoration: const InputDecoration(
                                     hintText: 'Password',
@@ -175,7 +170,7 @@ class _AuthGateState extends State<AuthGate> {
                             ),
                           if (mode == AuthMode.phone)
                             TextFormField(
-                              controller: phoneController,
+                              controller: controller.password,
                               decoration: const InputDecoration(
                                 hintText: '+821035661857',
                                 labelText: 'Phone number',
@@ -281,7 +276,7 @@ class _AuthGateState extends State<AuthGate> {
           actions: [
             TextButton(
               onPressed: () {
-                goBack();
+                Navigator.of(context).pop(true);
               },
               child: const Text('Send'),
             ),
@@ -403,13 +398,13 @@ class _AuthGateState extends State<AuthGate> {
     if (formKey.currentState?.validate() ?? false) {
       if (mode == AuthMode.login) {
         await auth.signInWithEmailAndPassword(
-          email: emailController.text,
-          password: passwordController.text,
+          email: controller.emailAddress.text,
+          password: controller.password.text,
         );
       } else if (mode == AuthMode.register) {
         await auth.createUserWithEmailAndPassword(
-          email: emailController.text,
-          password: passwordController.text,
+          email: controller.emailAddress.text,
+          password: controller.password.text,
         );
       } else {
         await _phoneAuth();
@@ -425,7 +420,7 @@ class _AuthGateState extends State<AuthGate> {
     } else {
       if (kIsWeb) {
         final confirmationResult =
-            await auth.signInWithPhoneNumber(phoneController.text);
+            await auth.signInWithPhoneNumber(controller.password.text);
         final smsCode = await getSmsCodeFromUser(context);
 
         if (smsCode != null) {
@@ -433,7 +428,7 @@ class _AuthGateState extends State<AuthGate> {
         }
       } else {
         await auth.verifyPhoneNumber(
-          phoneNumber: phoneController.text,
+          phoneNumber: controller.password.text,
           verificationCompleted: (_) {},
           verificationFailed: (e) {
             setState(() {
@@ -558,14 +553,14 @@ Future<String?> getSmsCodeFromUser(BuildContext context) async {
         actions: [
           ElevatedButton(
             onPressed: () {
-              goBack();
+              Navigator.of(context).pop(true);
             },
             child: const Text('Sign in'),
           ),
           OutlinedButton(
             onPressed: () {
               smsCode = null;
-              goBack();
+              Navigator.of(context).pop(false);
             },
             child: const Text('Cancel'),
           ),
@@ -635,14 +630,14 @@ Future<String?> getTotpFromUser(
         actions: [
           ElevatedButton(
             onPressed: () {
-              goBack();
+              Navigator.of(context).pop(true);
             },
             child: const Text('Sign in'),
           ),
           OutlinedButton(
             onPressed: () {
               smsCode = null;
-              goBack();
+              Navigator.of(context).pop(false);
             },
             child: const Text('Cancel'),
           ),

@@ -10,6 +10,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 // 🌎 Project imports:
+import '/controllers/account.user.dart';
 import 'auth.dart';
 import 'main.dart';
 
@@ -28,22 +29,17 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+  final controller = UserController.to;
   late User user;
-  late TextEditingController controller;
-  final phoneController = TextEditingController();
-
   String? photoURL;
-
   bool showSaveButton = false;
   bool isLoading = false;
 
   @override
   void initState() {
     user = auth.currentUser!;
-    controller = TextEditingController(text: user.displayName);
-
-    controller.addListener(_onNameChanged);
-
+    controller.username.text = user.displayName ?? '';
+    controller.username.addListener(_onNameChanged);
     auth.userChanges().listen((event) {
       if (event != null && mounted) {
         setState(() {
@@ -51,16 +47,13 @@ class _ProfilePageState extends State<ProfilePage> {
         });
       }
     });
-
     log(user.toString());
-
     super.initState();
   }
 
   @override
   void dispose() {
-    controller.removeListener(_onNameChanged);
-
+    controller.username.removeListener(_onNameChanged);
     super.dispose();
   }
 
@@ -72,7 +65,7 @@ class _ProfilePageState extends State<ProfilePage> {
 
   void _onNameChanged() {
     setState(() {
-      if (controller.text == user.displayName || controller.text.isEmpty) {
+      if (controller.username.text == user.displayName || controller.username.text.isEmpty) {
         showSaveButton = false;
       } else {
         showSaveButton = true;
@@ -84,7 +77,7 @@ class _ProfilePageState extends State<ProfilePage> {
   List get userProviders => user.providerData.map((e) => e.providerId).toList();
 
   Future updateDisplayName() async {
-    await user.updateDisplayName(controller.text);
+    await user.updateDisplayName(controller.username.text);
 
     setState(() {
       showSaveButton = false;
@@ -143,10 +136,10 @@ class _ProfilePageState extends State<ProfilePage> {
                           ),
                         ],
                       ),
-                      const SizedBox(height: _smallSize),
+                      const SizedBox(height: 20.0),
                       TextField(
                         textAlign: TextAlign.center,
-                        controller: controller,
+                        controller: controller.username,
                         decoration: const InputDecoration(
                           border: InputBorder.none,
                           floatingLabelBehavior: FloatingLabelBehavior.never,
@@ -159,7 +152,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         ),
                       ),
                       Text(user.email ?? user.phoneNumber ?? 'User'),
-                      const SizedBox(height: _smallSize),
+                      const SizedBox(height: 20.0),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -210,7 +203,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         child: const Text('Revoke Apple auth token'),
                       ),
                       TextFormField(
-                        controller: phoneController,
+                        controller: controller.phoneNum,
                         decoration: const InputDecoration(
                           icon: Icon(Icons.phone),
                           hintText: '+33612345678',
@@ -223,14 +216,14 @@ class _ProfilePageState extends State<ProfilePage> {
                           final session = await user.multiFactor.getSession();
                           await auth.verifyPhoneNumber(
                             multiFactorSession: session,
-                            phoneNumber: phoneController.text,
+                            phoneNumber: controller.phoneNum.text,
                             verificationCompleted: (_) {},
                             verificationFailed: print,
                             codeSent: (
                               String verificationId,
                               int? resendToken,
                             ) async {
-                              final smsCode = await sendVerificationCode(context);
+                              final smsCode = await controller.sendVerificationCode();
                               if (smsCode != null) {
                                 // Create a PhoneAuthCredential with the code
                                 final credential = PhoneAuthProvider.credential(
@@ -354,14 +347,14 @@ class _ProfilePageState extends State<ProfilePage> {
           actions: [
             ElevatedButton(
               onPressed: () {
-                goBack();
+                Navigator.of(context).pop(true);
               },
               child: const Text('Update'),
             ),
             OutlinedButton(
               onPressed: () {
                 photoURL = null;
-                goBack();
+                Navigator.of(context).pop(false);
               },
               child: const Text('Cancel'),
             ),

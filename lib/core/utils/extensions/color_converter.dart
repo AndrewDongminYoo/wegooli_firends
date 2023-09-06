@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart' as material;
 
 // 📦 Package imports:
-// ignore: depend_on_referenced_packages
 import 'package:color/color.dart';
 
 /// e.g.

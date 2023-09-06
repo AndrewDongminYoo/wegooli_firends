@@ -97,8 +97,7 @@ class ProfileInfoPage extends GetWidget<UserController> {
                               cancelText: l10ns.cancel,
                               confirmText: l10ns.withdrawal,
                               confirmFunc: () {
-                                // TODO
-                                // globalController로 사용자 정보 옮긴 뒤 해당 id 이용해서 회원 탈퇴 진행.
+                                // TODO globalController로 사용자 정보 옮긴 뒤 해당 id 이용해서 회원 탈퇴 진행.
                                 // api.signout(id: );
                               },
                             ));

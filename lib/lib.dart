@@ -113,7 +113,7 @@ export 'data/model/test_model.dart';
 export 'data/model/user_details_dto.dart';
 export 'data/model/user_dto.dart';
 export 'data/model/user_sub_info.dart';
-export 'firebase_options.dart';
+export 'data/firebase/firebase_options.dart';
 export 'gen/assets.gen.dart';
 export 'gen/colors.gen.dart';
 export 'gen/fonts.gen.dart';

@@ -176,7 +176,6 @@ export 'screens/user.signup.dart';
 export 'screens/user.signup.license.dart';
 export 'screens/user.signup.phone.dart';
 export 'screens/user.signup.result.dart';
-export 'services/auth.dart';
 export 'theme/app_decoration.dart';
 export 'theme/button_styles.dart';
 export 'theme/color_names.dart';

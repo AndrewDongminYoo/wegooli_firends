@@ -23,9 +23,9 @@ class ColorUtils {
   ///  [int] - 색상 표현을 위해 계산된 해시 값입니다.
   static int _hash(String value) {
     int hash = 0;
-    value.runes.forEach((code) {
+    for (int code in value.runes) {
       hash = code + ((hash << 5) - hash);
-    });
+    }
     return hash;
   }
 

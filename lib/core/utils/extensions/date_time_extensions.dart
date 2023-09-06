@@ -23,6 +23,6 @@ extension DateTimeExtension on DateTime {
   ///   past [DateTime]: 과거 특정 시점
   ///   then [DateTime]: 미래 특정 날짜
   bool isBetween(DateTime past, DateTime then) {
-    return !this.isAfter(then) && !this.isBefore(past);
+    return !isAfter(then) && !isBefore(past);
   }
 }

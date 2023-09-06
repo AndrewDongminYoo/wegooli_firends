@@ -17,10 +17,6 @@ const withSilentVerificationSMSMFA = true;
 // ignore: public_member_api_docs
 enum AuthMode { login, register }
 
-extension on AuthMode {
-  String get label => this == AuthMode.login ? '로그인하기' : '회원가입하기';
-}
-
 /// Firebase를 사용한 다양한 로그인 흐름에 대한 엔트리포인트 예제입니다.
 class LoginWithIdAndPassword extends StatefulWidget {
   @override

@@ -24,7 +24,7 @@ class ProfilePage extends StatefulWidget {
 
   @override
   // ignore: library_private_types_in_public_api
-  _ProfilePageState createState() => _ProfilePageState();
+  State<ProfilePage> createState() => _ProfilePageState();
 }
 
 class _ProfilePageState extends State<ProfilePage> {
@@ -143,7 +143,7 @@ class _ProfilePageState extends State<ProfilePage> {
                           ),
                         ],
                       ),
-                      const SizedBox(height: 10),
+                      const SizedBox(height: _smallSize),
                       TextField(
                         textAlign: TextAlign.center,
                         controller: controller,
@@ -159,7 +159,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         ),
                       ),
                       Text(user.email ?? user.phoneNumber ?? 'User'),
-                      const SizedBox(height: 10),
+                      const SizedBox(height: _smallSize),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [

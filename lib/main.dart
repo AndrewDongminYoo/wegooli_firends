@@ -38,7 +38,7 @@ Future<void> main() async {
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
       .then((value) {
     Logger.init(kReleaseMode ? LogMode.live : LogMode.debug);
-    initializeDateFormatting().then((_) => runApp(MyApp()));
+    initializeDateFormatting().then((_) => runApp(const MyApp()));
   });
 }
 
@@ -48,6 +48,8 @@ Future<void> main() async {
 class MyApp extends StatelessWidget {
   static final RouteObserver<PageRoute> routeObserver =
       RouteObserver<PageRoute>();
+
+  const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(

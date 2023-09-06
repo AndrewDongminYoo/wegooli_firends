@@ -41,38 +41,40 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-      apiKey: 'AIzaSyA39vYg1nXwRh2Gs6ReH-4ybl5aUfQH90g',
-      appId: '1:599714471577:web:39ecc9911a1c7bad51e208',
-      messagingSenderId: '599714471577',
-      projectId: 'wegooli-friends',
-      authDomain: 'wegooli-friends.firebaseapp.com',
-      storageBucket: 'wegooli-friends.appspot.com',
-      measurementId: 'G-70CQC082CG');
+    apiKey: 'AIzaSyA39vYg1nXwRh2Gs6ReH-4ybl5aUfQH90g',
+    appId: '1:599714471577:web:39ecc9911a1c7bad51e208',
+    messagingSenderId: '599714471577',
+    projectId: 'wegooli-friends',
+    authDomain: 'wegooli-friends.firebaseapp.com',
+    storageBucket: 'wegooli-friends.appspot.com',
+    measurementId: 'G-70CQC082CG',
+  );
 
   static const FirebaseOptions android = FirebaseOptions(
-      apiKey: 'AIzaSyBz3CBx4MFp_dnxSZSakAq-OFP4nhhFV-Y',
-      appId: '1:599714471577:android:285b172998ea40d051e208',
-      messagingSenderId: '599714471577',
-      projectId: 'wegooli-friends',
-      storageBucket: 'wegooli-friends.appspot.com');
+    apiKey: 'AIzaSyBz3CBx4MFp_dnxSZSakAq-OFP4nhhFV-Y',
+    appId: '1:599714471577:android:285b172998ea40d051e208',
+    messagingSenderId: '599714471577',
+    projectId: 'wegooli-friends',
+    storageBucket: 'wegooli-friends.appspot.com',
+  );
 
   static const FirebaseOptions ios = FirebaseOptions(
-      apiKey: 'AIzaSyDrxNf4neI_iQNdFqU8fgqvg1DOPG9IthY',
-      appId: '1:599714471577:ios:8e60449ec667961551e208',
-      messagingSenderId: '599714471577',
-      projectId: 'wegooli-friends',
-      storageBucket: 'wegooli-friends.appspot.com',
-      iosClientId:
-          '599714471577-1n98u34fhl45msv8vg9s521p87836r6s.apps.googleusercontent.com',
-      iosBundleId: 'com.wegooli.friends');
+    apiKey: 'AIzaSyDrxNf4neI_iQNdFqU8fgqvg1DOPG9IthY',
+    appId: '1:599714471577:ios:8e60449ec667961551e208',
+    messagingSenderId: '599714471577',
+    projectId: 'wegooli-friends',
+    storageBucket: 'wegooli-friends.appspot.com',
+    iosClientId: '599714471577-1n98u34fhl45msv8vg9s521p87836r6s.apps.googleusercontent.com',
+    iosBundleId: 'com.wegooli.friends',
+  );
 
   static const FirebaseOptions macos = FirebaseOptions(
-      apiKey: 'AIzaSyDrxNf4neI_iQNdFqU8fgqvg1DOPG9IthY',
-      appId: '1:599714471577:ios:c902dd991420f49d51e208',
-      messagingSenderId: '599714471577',
-      projectId: 'wegooli-friends',
-      storageBucket: 'wegooli-friends.appspot.com',
-      iosClientId:
-          '599714471577-p5s9qoaj46o3qf8ls2pg4drbo647ei3m.apps.googleusercontent.com',
-      iosBundleId: 'com.radius.wegooliFriends.RunnerTests');
+    apiKey: 'AIzaSyDrxNf4neI_iQNdFqU8fgqvg1DOPG9IthY',
+    appId: '1:599714471577:ios:c902dd991420f49d51e208',
+    messagingSenderId: '599714471577',
+    projectId: 'wegooli-friends',
+    storageBucket: 'wegooli-friends.appspot.com',
+    iosClientId: '599714471577-p5s9qoaj46o3qf8ls2pg4drbo647ei3m.apps.googleusercontent.com',
+    iosBundleId: 'com.radius.wegooliFriends.RunnerTests',
+  );
 }

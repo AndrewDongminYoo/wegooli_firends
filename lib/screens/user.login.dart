@@ -96,6 +96,7 @@ class LoginWithIdAndPassword extends GetWidget<UserController> {
   void onSubmit() async {
     await controller.authorize();
     if (isAuthenticated) {
+      controller.schedules(await controller.retrieveSchedules());
       Get.toNamed(AppRoutes.sharedSchedule);
     } else {
       controller.username.clear();

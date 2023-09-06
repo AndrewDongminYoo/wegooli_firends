@@ -11,10 +11,10 @@ import '/core/app_export.dart';
 class CustomBottomNavBar extends StatefulWidget {
   CustomBottomNavBar({
     Key? key,
-    this.onChanged,
+    required this.id,
   }) : super(key: key);
 
-  Function(BottomBarEnum)? onChanged;
+  int id;
   @override
   State<CustomBottomNavBar> createState() => _CustomBottomNavBarState();
 }
@@ -27,22 +27,22 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
         iconPath: Assets.svg.imgCalOnPrimary.path,
         activeIconPath: Assets.svg.imgCalOnPrimary.path,
         title: l10ns.schedule,
-        type: BottomBarEnum.sharedSchedule),
+      ),
     BottomMenuModel(
         iconPath: Assets.svg.imgChatGray400.path,
         activeIconPath: Assets.svg.imgChatGray400.path,
         title: l10ns.chat,
-        type: BottomBarEnum.dashChat),
+      ),
     BottomMenuModel(
         iconPath: Assets.svg.imgKeyGray400.path,
         activeIconPath: Assets.svg.imgKeyGray400.path,
         title: l10ns.smartKey,
-        type: BottomBarEnum.smartKey),
+      ),
     BottomMenuModel(
         iconPath: Assets.svg.imgUser2.path,
         activeIconPath: Assets.svg.imgUser2.path,
         title: l10ns.myPage,
-        type: BottomBarEnum.profile)
+      )
   ];
 
   @override
@@ -63,7 +63,8 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
           showSelectedLabels: false,
           showUnselectedLabels: false,
           selectedFontSize: 0,
-          elevation: 0,
+          unselectedFontSize: 12.0,
+          elevation: 1,
           currentIndex: selectedIndex.value,
           type: BottomNavigationBarType.fixed,
           items: List.generate(bottomMenuList.length, (index) {
@@ -110,9 +111,22 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
               label: '',
             );
           }),
-          onTap: (index) {
-            selectedIndex.value = index;
-            Get.toNamed(getCurrentRoute(bottomMenuList[index].type));
+          onTap: (int index) {
+            String destination;
+            switch (index) {
+              case 1:
+                destination = AppRoutes.chatWithTeam;
+              case 2:
+                destination = AppRoutes.carSmartKey;
+              case 3:
+                destination = AppRoutes.myProfile;
+              default:
+                destination = AppRoutes.sharedSchedule;
+            }
+            setState((){
+              selectedIndex.value = index;
+            });
+            Get.toNamed(destination, id: widget.id);
           },
         ),
       ),
@@ -120,23 +134,14 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
   }
 }
 
-enum BottomBarEnum {
-  sharedSchedule,
-  dashChat,
-  smartKey,
-  profile,
-}
-
 class BottomMenuModel {
   BottomMenuModel({
     required this.iconPath,
     required this.activeIconPath,
     this.title,
-    required this.type,
   });
 
   String iconPath;
   String activeIconPath;
   String? title;
-  BottomBarEnum type;
 }

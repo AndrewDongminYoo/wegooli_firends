@@ -101,9 +101,7 @@ class MyProfilePage extends GetWidget<UserController> {
                     ),
                   ],
                 )),
-            bottomNavigationBar:
-                CustomBottomNavBar(onChanged: (BottomBarEnum type) {
-              Get.toNamed(getCurrentRoute(type));
-            })));
+        ),
+    );
   }
 }

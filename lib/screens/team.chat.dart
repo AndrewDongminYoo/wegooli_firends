@@ -88,10 +88,7 @@ class DashChatWithFriendsPage extends GetWidget<ConnectionController> {
             }),
             typingUsers: const <ChatUser>[],
           ),
-          bottomNavigationBar:
-              CustomBottomNavBar(onChanged: (BottomBarEnum type) {
-            Get.toNamed(getCurrentRoute(type), id: 1);
-          })),
+          ),
     );
   }
 }

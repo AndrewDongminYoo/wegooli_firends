@@ -113,7 +113,7 @@ class AppRoutes {
     GetPage(
       bindings: [TeamCommunityBinding()],
       name: sharedSchedule,
-      page: () => const TeamScheduleShare(),
+      page: () => const MainApplication(),
     ),
     GetPage(
       bindings: [TeamCommunityBinding()],

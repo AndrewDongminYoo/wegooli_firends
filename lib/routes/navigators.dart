@@ -11,6 +11,7 @@ import '/core/app_export.dart';
 dynamic goBack() => Get.back();
 dynamic popWithValue(BuildContext context, dynamic value) =>
     Navigator.pop(context, value);
+
 /// `Navigation.pushNamed()`의 단축 명령입니다.
 /// 글로벌 라우터에 등록되어 있는 새로운 페이지를 스택에 푸시합니다.
 /// [BuildContext] 없이 비즈니스 로직에서 호출할 수 있다는 장점이 있습니다.
@@ -38,9 +39,11 @@ Future<dynamic>? goPhoneAuth() => Get.toNamed(AppRoutes.phoneAuth);
 // [Page] 마이페이지 / 내 정보보기
 Future<dynamic>? goProfileInfoPage() => Get.toNamed(AppRoutes.profileInfoPage);
 // [Page] 신용카드 등록
-Future<dynamic>? goRegisterCreditCard() => Get.toNamed(AppRoutes.registerCreditCard);
+Future<dynamic>? goRegisterCreditCard() =>
+    Get.toNamed(AppRoutes.registerCreditCard);
 // [Page] 카드 관리 페이지
-Future<dynamic>? goRegisteredCardList() => Get.toNamed(AppRoutes.registeredCardList);
+Future<dynamic>? goRegisteredCardList() =>
+    Get.toNamed(AppRoutes.registeredCardList);
 // [Page] 운전면허증 등록
 Future<dynamic>? goRegisterLicense() => Get.toNamed(AppRoutes.registerLicense);
 // [Page] 입력/가입 성공
@@ -52,16 +55,20 @@ Future<dynamic>? goSharedSchedule() => Get.toNamed(AppRoutes.sharedSchedule);
 // [Page] 스플래시 화면
 Future<dynamic>? goSplashScreen() => Get.toNamed(AppRoutes.splashScreen);
 // [Page] 예정된 구독 취소 정보
-Future<dynamic>? goUpcomingUnsubscription() => Get.toNamed(AppRoutes.upcomingUnsubscription);
+Future<dynamic>? goUpcomingUnsubscription() =>
+    Get.toNamed(AppRoutes.upcomingUnsubscription);
 
 // [BottomSheet] 예약 날짜 선택기
-Future<dynamic>? goBookDatetimePicker() => Get.bottomSheet(DatetimePickerBottomSheet());
+Future<dynamic>? goBookDatetimePicker() =>
+    Get.bottomSheet(DatetimePickerBottomSheet());
 
 // [PopupDialog] 예약 확인 페이지
-Future<dynamic>? goReservationsCheck() => Get.dialog(ReservationsCheckingPageDialog());
+Future<dynamic>? goReservationsCheck() =>
+    Get.dialog(ReservationsCheckingPageDialog());
 // [PopupDialog] 팀 초대하기
 Future<dynamic>? goSendingInvitation() => Get.dialog(SendingInvitationLog());
 // [PopupDialog] 구독 해지
 Future<dynamic>? goUnsubscribeConfirm() => Get.dialog(UnsubscriptionConfirm());
 // [PopupDialog] 구독 취소 확인 경고
-Future<dynamic>? goUnsubscribeWarn() => Get.dialog(UnsubscriptionConfirmWarnDialog());
+Future<dynamic>? goUnsubscribeWarn() =>
+    Get.dialog(UnsubscriptionConfirmWarnDialog());

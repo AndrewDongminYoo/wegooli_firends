@@ -71,7 +71,6 @@ class ScheduleController extends GetxController {
     // print('_eventSource : $_eventSource');
     print('_eventSource : $_eventSource');
     // eventSource.addAll({kToday: await retrieveSchedules()});
-  
   }
 
   DateTime? _firstDay;

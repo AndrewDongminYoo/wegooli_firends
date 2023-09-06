@@ -47,6 +47,7 @@
   "dart.flutterWebRenderer": "auto",
   "dart.openDevTools": "flutter",
   "dart.previewFlutterUiGuides": true,
+  "dart.previewFlutterUiGuidesCustomTracking": true,
   "dart.showInspectorNotificationsForWidgetErrors": false,
   "dart.updateImportsOnRename": true,
   "dartBarrelFileGenerator.excludeDirList": [
@@ -68,10 +69,17 @@
     "*.arb": "json",
     ".openapi-generator-ignore": "ignore"
   },
+  "jsonToDart.avoidDynamicTypes": false,
   "jsonToDart.codeGenerator": "JSON",
+  "jsonToDart.copyWith": true,
   "jsonToDart.equality": "Equatable",
-  "jsonToDart.sortConstructorsFirst": true,
-  "jsonToDart.toString": "Auto",
   "jsonToDart.fastMode": true,
-  "jsonToDart.targetDirectory.path": "/lib/data/"
+  "jsonToDart.immutable": true,
+  "jsonToDart.json.codecs": true,
+  "jsonToDart.nullSafety": true,
+  "jsonToDart.primaryConfiguration": true,
+  "jsonToDart.runBuilder": false,
+  "jsonToDart.sortConstructorsFirst": true,
+  "jsonToDart.targetDirectory.path": "/lib/data/",
+  "jsonToDart.toString": "Auto"
 }

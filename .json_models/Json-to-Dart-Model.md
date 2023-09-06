@@ -1,4 +1,4 @@
-> 프로페셔널하게 JSON 데이터를 Dart 클래스로 변환하는 방법
+# JsonToDart: 프로페셔널하게 JSON 데이터를 Dart 클래스로 변환하는 방법
 
 JSON 문자열이 주어지면 이 라이브러리는 `jsonc` 및 `json`을 제너레이트하기 때문에 안전한 방식으로 JSON을 파싱하고 생성하는 데 필요한 모든 Dart 클래스를 생성합니다. 또한 [Flutter의 documentation 권장 사항](https://flutter.io/json/#serializing-json-manually-using-dartconvert) 및 [이펙티브 다트: 스타일](https://dart.dev/guides/language/effective-dart/style)에 따라 Flutter 친화적인 모델 클래스를 생성하도록 설계되었습니다. **Json을 수동으로 직렬화하는 방법**과 **Freezed** 및 **Json Serializable**과 같은 코드 생성 라이브러리를 사용하여 JSON을 직렬화하는 방법을 모두 지원합니다.
 

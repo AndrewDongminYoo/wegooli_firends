@@ -1,0 +1,11 @@
+{
+  "__className": "api_response_object",
+  "__path": "/lib/data/model/",
+  "result": {
+    "__className": "result",
+    "__path": "/lib/data/model/",
+    "token": "BEARER asdasdas.asdasdas.adsasdas"
+  },
+  "resultCode": 200,
+  "resultMsg": null
+}

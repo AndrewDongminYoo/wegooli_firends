@@ -66,7 +66,8 @@ Future<dynamic>? goBookDatetimePicker() =>
 Future<dynamic>? goReservationsCheck() =>
     Get.dialog(const ReservationsCheckingPageDialog());
 // [PopupDialog] 팀 초대하기
-Future<dynamic>? goSendingInvitation() => Get.dialog(const SendingInvitationLog());
+Future<dynamic>? goSendingInvitation() =>
+    Get.dialog(const SendingInvitationLog());
 // [PopupDialog] 구독 해지
 Future<dynamic>? goUnsubscribeConfirm() => Get.dialog(UnsubscriptionConfirm());
 // [PopupDialog] 구독 취소 확인 경고

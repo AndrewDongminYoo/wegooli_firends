@@ -1,6 +1,5 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:flutter/semantics.dart';
 
 // 📦 Package imports:
 import 'package:get/get.dart';
@@ -43,25 +42,6 @@ class _MainApplicationState extends State<MainApplication> {
             );
           }),
       bottomNavigationBar: CustomBottomNavBar(id: id),
-    );
-  }
-}
-
-class SemanticFloatingButton extends StatelessWidget {
-  const SemanticFloatingButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Semantics(
-      container: true,
-      sortKey: const OrdinalSortKey(0),
-      child: FloatingActionButton(
-        onPressed: () {},
-        tooltip: l10ns.buttonTextCreate,
-        child: const Icon(Icons.add),
-      ),
     );
   }
 }

@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import '/core/app_export.dart';
 
 class SubscriptionInfoNoService extends StatelessWidget {
+  const SubscriptionInfoNoService({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -16,7 +18,7 @@ class SubscriptionInfoNoService extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Spacer(),
+              const Spacer(),
               Text(l10ns.haveNoAnySubscriptionInfo,
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.left,

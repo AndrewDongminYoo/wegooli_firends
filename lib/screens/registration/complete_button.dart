@@ -8,6 +8,8 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 class ValidatePhoneCompleteButton extends GetWidget<UserController> {
+  const ValidatePhoneCompleteButton({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(

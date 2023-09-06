@@ -12,6 +12,8 @@ class ValidatePhone extends GetWidget<UserController> {
   final _birthday = FocusNode();
   final _socialId = FocusNode();
   final _phoneNum = FocusNode();
+
+  ValidatePhone({super.key});
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -48,7 +50,7 @@ class ValidatePhone extends GetWidget<UserController> {
                                     children: [
                                       Birthday6NumberInput(
                                           controller: controller, focusNode: _birthday),
-                                      Text("-", style: TextStyle(fontSize: 24)),
+                                      const Text("-", style: TextStyle(fontSize: 24)),
                                       SocialSecurity7NumberInput(
                                           controller: controller, focusNode: _socialId),
                                     ]),
@@ -58,6 +60,6 @@ class ValidatePhone extends GetWidget<UserController> {
                               ])),
                       SMSValidationForm(controller: controller, focusNode: _phoneNum)
                     ])),
-            bottomNavigationBar: ValidatePhoneCompleteButton()));
+            bottomNavigationBar: const ValidatePhoneCompleteButton()));
   }
 }

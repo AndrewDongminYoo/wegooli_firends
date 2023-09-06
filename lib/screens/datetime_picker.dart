@@ -9,6 +9,8 @@ import '/core/app_export.dart';
 
 // ignore: must_be_immutable
 class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
+  const DatetimePickerBottomSheet({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -56,7 +58,7 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                             textAlign: TextAlign.left,
                             style: theme.textTheme.titleMedium!.copyWith(
                                 letterSpacing: getHorizontalSize(0.03))),
-                        Spacer(),
+                        const Spacer(),
                         Text("8.1 화 16:00",
                             overflow: TextOverflow.ellipsis,
                             textAlign: TextAlign.left,

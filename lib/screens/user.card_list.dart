@@ -8,6 +8,8 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 class RegisteredCreditCardList extends StatefulWidget {
+  const RegisteredCreditCardList({super.key});
+
   @override
   State<RegisteredCreditCardList> createState() =>
       _RegisteredCreditCardListState();
@@ -28,9 +30,9 @@ class _RegisteredCreditCardListState extends State<RegisteredCreditCardList> {
     return SafeArea(
         child: Scaffold(
       // backgroundColor: theme.colorScheme.onPrimaryContainer,
-      backgroundColor: Color(0xFFFFC107),
+      backgroundColor: const Color(0xFFFFC107),
       appBar: CustomAppBar.getDefaultAppBar(l10ns.cardRegistration),
-      body: Container(
+      body: SizedBox(
           width: mediaQueryData.size.width,
           height: mediaQueryData.size.height,
           // padding: getPadding(left: 16, top: 24, right: 16, bottom: 24),
@@ -38,7 +40,7 @@ class _RegisteredCreditCardListState extends State<RegisteredCreditCardList> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Container(
-                color: Color(0xFFFFB300),
+                color: const Color(0xFFFFB300),
                 padding: getPadding(top: 20, bottom: 20, left: 16, right: 16),
                 child: Column(children: [
                   Obx(
@@ -77,7 +79,7 @@ class _RegisteredCreditCardListState extends State<RegisteredCreditCardList> {
                 ]),
               ),
               Container(
-                color: Color(0xFFFFA000),
+                color: const Color(0xFFFFA000),
                 padding: getPadding(top: 20, bottom: 20, left: 16, right: 16),
                 child: CustomElevatedButton(
                     text: l10ns.cardAdditions,

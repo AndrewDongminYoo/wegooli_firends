@@ -1,5 +1,5 @@
 // 🎯 Dart imports:
-import 'dart:math' as Math;
+import 'dart:math' as math;
 
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
@@ -52,7 +52,7 @@ class ColorParser {
   ///
   /// here the alpha is fully opaque [255]
   ColorParser.rgb(int r, int g, int b) {
-    this._color = Color.fromARGB(255, r, g, b);
+    _color = Color.fromARGB(255, r, g, b);
     _calculateFromRGB();
   }
 
@@ -63,7 +63,7 @@ class ColorParser {
   /// g = green value [0-255]
   /// b = blue value [0-255]
   ColorParser.argb(int a, int r, int g, int b) {
-    this._color = Color.fromARGB(a, r, g, b);
+    _color = Color.fromARGB(a, r, g, b);
     _calculateFromRGB();
   }
 
@@ -74,26 +74,26 @@ class ColorParser {
   /// b = blue value [0-255]
   /// o = opacity as double, with 0.0 being transparent and 1.0 being fully opaque.
   ColorParser.rgbo(int r, int g, int b, double o) {
-    this._color = Color.fromRGBO(r, g, b, o);
+    _color = Color.fromRGBO(r, g, b, o);
     _calculateFromRGB();
   }
 
   /// get the object of this class using material color
   ColorParser.color(Color color) {
-    this._color = color;
+    _color = color;
     _calculateFromRGB();
   }
 
   /// get the object of this class using int value of color
   ColorParser.value(int value) {
-    this._color = Color(value);
+    _color = Color(value);
     _calculateFromRGB();
   }
 
   /// get the object of this class using hex color code
   ColorParser.hex(String hexCode) {
     bool startsWithHash = hexCode.startsWith("#");
-    this._color = new Color(int.parse(
+    _color = Color(int.parse(
             hexCode.substring(startsWithHash ? 1 : 0, startsWithHash ? 7 : 6),
             radix: 16) +
         0xFF000000);
@@ -127,8 +127,8 @@ class ColorParser {
     num g = green / 255;
     num b = blue / 255;
 
-    num max = Math.max(Math.max(r, g), b);
-    num min = Math.min(Math.min(r, g), b);
+    num max = math.max(math.max(r, g), b);
+    num min = math.min(math.min(r, g), b);
     num chroma = max - min;
     if (chroma == 0) {
       h = 0;
@@ -204,7 +204,7 @@ class ColorParser {
     num g = green / 255;
     num b = blue / 255;
 
-    num max = Math.max(Math.max(r, g), b);
+    num max = math.max(math.max(r, g), b);
     k = 1 - max;
     if (k == 1) {
       c = 0;
@@ -224,22 +224,22 @@ class ColorParser {
       hue = hue - 360;
     }
     if (hue < 60) {
-      return "R" + (hue / 0.6).round().toString();
+      return "R${(hue / 0.6).round()}";
     }
     if (hue < 120) {
-      return "Y" + ((hue - 60) / 0.6).round().toString();
+      return "Y${((hue - 60) / 0.6).round()}";
     }
     if (hue < 180) {
-      return "G" + ((hue - 120) / 0.6).round().toString();
+      return "G${((hue - 120) / 0.6).round()}";
     }
     if (hue < 240) {
-      return "C" + ((hue - 180) / 0.6).round().toString();
+      return "C${((hue - 180) / 0.6).round()}";
     }
     if (hue < 300) {
-      return "B" + ((hue - 240) / 0.6).round().toString();
+      return "B${((hue - 240) / 0.6).round()}";
     }
     if (hue < 360) {
-      return "M" + ((hue - 300) / 0.6).round().toString();
+      return "M${((hue - 300) / 0.6).round()}";
     }
 
     return "";
@@ -401,7 +401,7 @@ class ColorParser {
   String _intToHex(int value) {
     String hex = value.toRadixString(16);
     while (hex.length < 2) {
-      hex = "0" + hex;
+      hex = "0$hex";
     }
     return hex;
   }

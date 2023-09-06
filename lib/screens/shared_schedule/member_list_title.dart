@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import '/core/app_export.dart';
 
 class MemberListTitle extends StatelessWidget {
+  const MemberListTitle({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Padding(

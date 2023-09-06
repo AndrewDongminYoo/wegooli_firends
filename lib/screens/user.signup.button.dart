@@ -8,6 +8,8 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 class AcceptTermsNextButton extends GetWidget<AccountAgreementController> {
+  const AcceptTermsNextButton({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(

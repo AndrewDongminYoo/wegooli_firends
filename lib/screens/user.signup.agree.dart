@@ -8,6 +8,8 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 class AcceptTerms extends GetWidget<AccountAgreementController> {
+  const AcceptTerms({super.key});
+
   void checkAll(bool value) {
     controller.isAcceptedTerm1.value = value;
     controller.isAcceptedTerm2.value = value;

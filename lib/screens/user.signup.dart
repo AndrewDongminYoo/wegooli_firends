@@ -10,6 +10,8 @@ import 'package:kpostal/kpostal.dart';
 import '/core/app_export.dart';
 
 class RegisterZipCode extends GetWidget<UserController> {
+  const RegisterZipCode({super.key});
+
   @override
   Widget build(BuildContext context) {
     var row = Row(crossAxisAlignment: CrossAxisAlignment.start, children: [

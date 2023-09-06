@@ -9,6 +9,8 @@ import '/core/app_export.dart';
 
 // ignore: must_be_immutable
 class SendingInvitationLog extends GetWidget<VehicleController> {
+  const SendingInvitationLog({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(

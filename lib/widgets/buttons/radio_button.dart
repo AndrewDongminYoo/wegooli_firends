@@ -66,15 +66,15 @@ class CustomRadioButton extends StatelessWidget {
               : leftSideRadioButton));
   Widget get leftSideRadioButton => Row(children: [
         Padding(
-            child: radioButtonWidget,
-            padding: padding ?? EdgeInsets.only(right: 8)),
+            padding: padding ?? const EdgeInsets.only(right: 8),
+            child: radioButtonWidget),
         textWidget,
       ]);
   Widget get rightSideRadioButton =>
       Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
         textWidget,
         Padding(
-            padding: padding ?? EdgeInsets.only(left: 8),
+            padding: padding ?? const EdgeInsets.only(left: 8),
             child: radioButtonWidget),
       ]);
   Widget get textWidget => Text(text ?? "",
@@ -89,10 +89,10 @@ class CustomRadioButton extends StatelessWidget {
             if (states.contains(MaterialState.selected)) {
               return theme.colorScheme.primary;
             } else {
-              return Color(0xFFB9BCC3);
+              return const Color(0xFFB9BCC3);
             }
           }),
-          visualDensity: VisualDensity(vertical: -4, horizontal: -4),
+          visualDensity: const VisualDensity(vertical: -4, horizontal: -4),
           value: value ?? "",
           groupValue: groupValue,
           onChanged: (value) {

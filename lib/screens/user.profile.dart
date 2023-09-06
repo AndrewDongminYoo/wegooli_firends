@@ -8,6 +8,8 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 class MyProfilePage extends GetWidget<UserController> {
+  const MyProfilePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
@@ -15,7 +17,7 @@ class MyProfilePage extends GetWidget<UserController> {
         child: Scaffold(
             backgroundColor: theme.colorScheme.onPrimaryContainer,
             appBar: CustomAppBar.getFriendsTypoAppBar(),
-            body: Container(
+            body: SizedBox(
                 width: mediaQueryData.size.width,
                 height: mediaQueryData.size.height,
                 // color: Color(0xFFFFC107),
@@ -71,9 +73,9 @@ class MyProfilePage extends GetWidget<UserController> {
                     Container(
                       height: getVerticalSize(8),
                       width: mediaQueryData.size.width,
-                      color: Color(0xFFF6F7F7),
+                      color: const Color(0xFFF6F7F7),
                     ),
-                    Container(
+                    SizedBox(
                       width: mediaQueryData.size.width,
                       // color: Color(0xFFFF6F00),
                       child: Column(children: [

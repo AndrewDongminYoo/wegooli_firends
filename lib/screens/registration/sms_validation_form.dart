@@ -29,7 +29,7 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
       if (kIsWeb) {
         final confirmationResult =
             await auth.signInWithPhoneNumber(widget.controller.phoneNum.text);
-        final smsCode = await widget.controller.sendVerificationCode(context);
+        final smsCode = await widget.controller.sendVerificationCode();
         if (smsCode != null) {
           await confirmationResult.confirm(smsCode);
         }
@@ -43,7 +43,7 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
             });
           },
           codeSent: (String verificationId, int? resendToken) async {
-            final smsCode = await widget.controller.sendVerificationCode(context);
+            final smsCode = await widget.controller.sendVerificationCode();
             if (smsCode != null) {
               // Create a PhoneAuthCredential with the code
               final credential = PhoneAuthProvider.credential(
@@ -120,7 +120,7 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
                 Expanded(
                     child: CustomElevatedButton(
                         onTap: () {
-                          widget.controller.sendVerificationCode(context);
+                          widget.controller.sendVerificationCode();
                         },
                         text: l10ns.sendAuthorizationNumber,
                         margin: getMargin(top: 10),

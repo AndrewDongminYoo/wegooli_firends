@@ -31,7 +31,7 @@ class CustomInputLabel extends StatelessWidget {
                   textAlign: TextAlign.left,
                   style: theme.textTheme.titleSmall!
                       .copyWith(letterSpacing: getHorizontalSize(0.06)))
-              : Text('')))
+              : const Text('')))
     ]);
   }
 }

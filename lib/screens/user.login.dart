@@ -19,6 +19,8 @@ enum AuthMode { login, register }
 
 /// Firebase를 사용한 다양한 로그인 흐름에 대한 엔트리포인트 예제입니다.
 class LoginWithIdAndPassword extends StatefulWidget {
+  const LoginWithIdAndPassword({super.key});
+
   @override
   State<LoginWithIdAndPassword> createState() => _LoginWithIdAndPasswordState();
 }
@@ -57,7 +59,7 @@ class _LoginWithIdAndPasswordState extends State<LoginWithIdAndPassword> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    FriendsByWegooli(),
+                    const FriendsByWegooli(),
                     CustomTextFormField(
                         controller: controller.username,
                         textInputType: TextInputType.emailAddress,

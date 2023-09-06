@@ -8,6 +8,8 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 class RegisterLicense extends GetWidget<LicenseController> {
+  const RegisterLicense({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(

@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import '/core/app_export.dart';
 
 class CustomIconButton extends StatelessWidget {
-  CustomIconButton({
+  const CustomIconButton({
     Key? key,
     this.alignment,
     this.margin,
@@ -40,7 +40,7 @@ class CustomIconButton extends StatelessWidget {
           height: height ?? 0,
           width: width ?? 0,
           child: IconButton(
-              visualDensity: VisualDensity(vertical: -4, horizontal: -4),
+              visualDensity: const VisualDensity(vertical: -4, horizontal: -4),
               padding: EdgeInsets.zero,
               icon: Container(
                   alignment: Alignment.center,
@@ -55,7 +55,7 @@ class CustomIconButton extends StatelessWidget {
                                 color: appTheme.black900.withOpacity(0.1),
                                 spreadRadius: getHorizontalSize(2),
                                 blurRadius: getHorizontalSize(2),
-                                offset: Offset(2, 2)),
+                                offset: const Offset(2, 2)),
                           ]),
                   child: child),
               onPressed: onTap)));

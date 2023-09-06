@@ -11,18 +11,10 @@ class AccountAgreementController extends GetxController {
           ? Get.find<AccountAgreementController>()
           : Get.put(AccountAgreementController());
 
-  Rx<Account> _userAgreement = Account().obs;
-  Rx<Account> get userAgreement => _userAgreement;
-  set userAgreement(Rx<Account> value) {
-    _userAgreement = value;
-  }
+  Rx<Account> userAgreement = Account().obs;
 
-  RxList<AccountAgreementModel> _accountAgreement =
+  RxList<AccountAgreementModel> accountAgreement =
       RxList<AccountAgreementModel>();
-  RxList<AccountAgreementModel> get accountAgreement => _accountAgreement;
-  set accountAgreement(RxList<AccountAgreementModel> value) {
-    _accountAgreement = value;
-  }
 
   RxBool isAcceptedTerm0 = false.obs;
   RxBool isAcceptedTerm1 = false.obs;

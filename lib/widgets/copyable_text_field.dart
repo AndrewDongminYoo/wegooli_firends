@@ -38,7 +38,7 @@ class _CopyableTextFieldState extends State<CopyableTextField> {
           body: Center(
             child: Row(
               children: <Widget>[
-                SizedBox.shrink(),
+                const SizedBox.shrink(),
                 Expanded(
                     child: CustomTextFormField(
                   controller: controller,
@@ -109,7 +109,7 @@ class _CopyableTextFieldState extends State<CopyableTextField> {
                       foregroundColor: theme.colorScheme.onSecondary,
                       backgroundColor: theme.colorScheme.primary,
                     )),
-                SizedBox.shrink(),
+                const SizedBox.shrink(),
               ],
             ),
           ),
@@ -262,16 +262,18 @@ class PasteAction extends Action<PasteIntent> {
 /// 최상위 애플리케이션 클래스입니다.
 /// 여기에 정의된 단축키는 위젯마다 다르게 수행될 수는 있지만 기본적으로 전체 앱에 적용됩니다.
 class CopyableTextFieldWithShortcuts extends StatelessWidget {
+  const CopyableTextFieldWithShortcuts({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Shortcuts(
       shortcuts: <ShortcutActivator, Intent>{
-        SingleActivator(LogicalKeyboardKey.escape): const ClearIntent(),
-        SingleActivator(LogicalKeyboardKey.keyC, meta: true):
+        const SingleActivator(LogicalKeyboardKey.escape): const ClearIntent(),
+        const SingleActivator(LogicalKeyboardKey.keyC, meta: true):
             const CopyIntent(),
-        SingleActivator(LogicalKeyboardKey.keyV, meta: true):
+        const SingleActivator(LogicalKeyboardKey.keyV, meta: true):
             const PasteIntent(),
-        SingleActivator(LogicalKeyboardKey.keyA, meta: true):
+        const SingleActivator(LogicalKeyboardKey.keyA, meta: true):
             const SelectAllIntent(),
         LogicalKeySet(LogicalKeyboardKey.keyC, LogicalKeyboardKey.shift,
             LogicalKeyboardKey.meta): const CopyAllIntent(),
@@ -288,7 +290,7 @@ class DemoApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: title,
       home: CopyableTextFieldWithShortcuts(),
     );

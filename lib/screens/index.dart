@@ -9,22 +9,24 @@ class GatewayScreen extends StatelessWidget {
   Widget alertDialog = AlertDialog(
       backgroundColor: Colors.transparent,
       contentPadding: EdgeInsets.zero,
-      insetPadding: EdgeInsets.only(left: 0),
+      insetPadding: EdgeInsets.zero,
       content: UnsubscriptionConfirmWarnDialog());
 
-  Widget openInvitationModal = AlertDialog(
+  Widget openInvitationModal = const AlertDialog(
       backgroundColor: Colors.transparent,
       contentPadding: EdgeInsets.zero,
-      insetPadding: const EdgeInsets.only(left: 0),
+      insetPadding: EdgeInsets.zero,
       content: SendingInvitationLog());
 
-  Widget openCheckReservations = AlertDialog(
+  Widget openCheckReservations = const AlertDialog(
       backgroundColor: Colors.transparent,
       contentPadding: EdgeInsets.zero,
-      insetPadding: const EdgeInsets.only(left: 0),
+      insetPadding: EdgeInsets.zero,
       content: ReservationsCheckingPageDialog());
 
-  Widget openDateTimePicker = DatetimePickerBottomSheet();
+  Widget openDateTimePicker = const DatetimePickerBottomSheet();
+
+  GatewayScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -41,8 +43,8 @@ class GatewayScreen extends StatelessWidget {
                   child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        AppNavigationTitle(),
-                        CheckYourAppUIMessage(),
+                        const AppNavigationTitle(),
+                        const CheckYourAppUIMessage(),
                         Padding(
                             padding: getPadding(top: 5),
                             child: Divider(

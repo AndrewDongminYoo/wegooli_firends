@@ -8,6 +8,8 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 class SplashLoading extends StatelessWidget {
+  const SplashLoading({super.key});
+
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
@@ -21,7 +23,7 @@ class SplashLoading extends StatelessWidget {
                 padding: getPadding(left: 81, top: 169, right: 81),
                 child: Column(
                   children: [
-                    FriendsByWegooli(),
+                    const FriendsByWegooli(),
                     Container(
                         alignment: Alignment.center,
                         margin: EdgeInsets.only(top: getVerticalSize(44)),

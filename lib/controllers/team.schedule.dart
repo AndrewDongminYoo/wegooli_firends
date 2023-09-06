@@ -14,17 +14,9 @@ final kToday = DateTime.now();
 class ScheduleController extends GetxController {
   final wegooli = WegooliFriends.client;
   final userController = UserController.to;
-  DateTime _focusedDay = kToday;
-  DateTime get focusedDay => _focusedDay;
-  set focusedDay(DateTime value) {
-    _focusedDay = value;
-  }
+  DateTime focusedDay = kToday;
 
-  /// [Map]을 사용하기로 한 경우, [LinkedHashMap]를 사용하는 것이 권장됩니다.
-  LinkedHashMap<DateTime, List<Schedule>>? _events =
-      LinkedHashMap<DateTime, List<Schedule>>();
   LinkedHashMap<DateTime, List<Schedule>> get events =>
-      _events ??
       LinkedHashMap<DateTime, List<Schedule>>(
         equals: isSameDay,
         hashCode: getHashCode,
@@ -45,7 +37,7 @@ class ScheduleController extends GetxController {
   //         ],
   //       });
 
-  RxMap<DateTime, List<Schedule>> _eventSource = RxMap.of({});
+  final RxMap<DateTime, List<Schedule>> _eventSource = RxMap.of({});
   Map<DateTime, List<Schedule>> get eventSource => _eventSource;
   @override
   void onInit() async {

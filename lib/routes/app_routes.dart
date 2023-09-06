@@ -38,37 +38,37 @@ class AppRoutes {
     GetPage(
       name: acceptTerms,
       bindings: [UserAccountBinding()],
-      page: () => AcceptTerms(),
+      page: () => const AcceptTerms(),
     ),
     GetPage(
       bindings: [TeamCommunityBinding()],
       name: bookDatetimePicker,
-      page: () => DatetimePickerBottomSheet(),
+      page: () => const DatetimePickerBottomSheet(),
     ),
     GetPage(
       bindings: [TeamCommunityBinding()],
       name: carStatusInfo,
-      page: () => CarStatusInformation(),
+      page: () => const CarStatusInformation(),
     ),
     GetPage(
       bindings: [TeamCommunityBinding()],
       name: chatWithTeam,
-      page: () => DashChatWithFriendsPage(),
+      page: () => const DashChatWithFriendsPage(),
     ),
     GetPage(
       bindings: [UserAccountBinding()],
       name: idPwLogin,
-      page: () => LoginWithIdAndPassword(),
+      page: () => const LoginWithIdAndPassword(),
     ),
     GetPage(
       bindings: [UserAccountBinding()],
       name: myProfile,
-      page: () => MyProfilePage(),
+      page: () => const MyProfilePage(),
     ),
     GetPage(
       bindings: [TeamCommunityBinding()],
       name: noSubscription,
-      page: () => SubscriptionInfoNoService(),
+      page: () => const SubscriptionInfoNoService(),
     ),
     GetPage(
       bindings: [UserAccountBinding()],
@@ -83,47 +83,47 @@ class AppRoutes {
     GetPage(
       bindings: [UserAccountBinding()],
       name: registeredCardList,
-      page: () => RegisteredCreditCardList(),
+      page: () => const RegisteredCreditCardList(),
     ),
     GetPage(
       bindings: [UserAccountBinding()],
       name: registerLicense,
-      page: () => RegisterLicense(),
+      page: () => const RegisterLicense(),
     ),
     GetPage(
       bindings: [UserAccountBinding()],
       name: registerSuccess,
-      page: () => RegisterSuccess(),
+      page: () => const RegisterSuccess(),
     ),
     GetPage(
       bindings: [UserAccountBinding()],
       name: registerZipCode,
-      page: () => RegisterZipCode(),
+      page: () => const RegisterZipCode(),
     ),
     GetPage(
       bindings: [TeamCommunityBinding()],
       name: reservationsCheck,
-      page: () => ReservationsCheckingPageDialog(),
+      page: () => const ReservationsCheckingPageDialog(),
     ),
     GetPage(
       bindings: [TeamCommunityBinding()],
       name: sendingInvitation,
-      page: () => SendingInvitationLog(),
+      page: () => const SendingInvitationLog(),
     ),
     GetPage(
       bindings: [TeamCommunityBinding()],
       name: sharedSchedule,
-      page: () => TeamScheduleShare(),
+      page: () => const TeamScheduleShare(),
     ),
     GetPage(
       bindings: [TeamCommunityBinding()],
       name: carSmartKey,
-      page: () => SmartKeyAvailablePage(),
+      page: () => const SmartKeyAvailablePage(),
     ),
     GetPage(
       bindings: [UserAccountBinding()],
       name: splashScreen,
-      page: () => SplashLoading(),
+      page: () => const SplashLoading(),
     ),
     GetPage(
       bindings: [TeamCommunityBinding()],
@@ -138,17 +138,17 @@ class AppRoutes {
     GetPage(
       bindings: [TeamCommunityBinding()],
       name: upcomingUnsubscription,
-      page: () => UpcomingUnsubscription(),
+      page: () => const UpcomingUnsubscription(),
     ),
     GetPage(
       bindings: [UserAccountBinding()],
       name: myProfile,
-      page: () => MyProfilePage(),
+      page: () => const MyProfilePage(),
     ),
     GetPage(
       bindings: [UserAccountBinding()],
       name: profileInfoPage,
-      page: () => ProfileInfoPage(),
+      page: () => const ProfileInfoPage(),
     ),
     GetPage(
       bindings: [UserAccountBinding()],

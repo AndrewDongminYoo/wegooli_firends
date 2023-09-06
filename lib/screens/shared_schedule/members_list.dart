@@ -10,6 +10,8 @@ import '/core/app_export.dart';
 class MembersList extends StatelessWidget {
   final userController = UserController.to;
 
+  MembersList({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Padding(

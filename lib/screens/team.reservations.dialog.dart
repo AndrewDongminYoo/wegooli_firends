@@ -6,6 +6,8 @@ import '/core/app_export.dart';
 
 // ignore: must_be_immutable
 class ReservationsCheckingPageDialog extends StatelessWidget {
+  const ReservationsCheckingPageDialog({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -58,7 +60,7 @@ class ReservationsCheckingPageDialog extends StatelessWidget {
                                         Card(
                                             clipBehavior: Clip.antiAlias,
                                             elevation: 0,
-                                            margin: EdgeInsets.all(0),
+                                            margin: const EdgeInsets.all(0),
                                             color: theme.colorScheme.primary,
                                             shape: RoundedRectangleBorder(
                                                 borderRadius: BorderRadiusStyle
@@ -111,7 +113,7 @@ class ReservationsCheckingPageDialog extends StatelessWidget {
                                             Card(
                                                 clipBehavior: Clip.antiAlias,
                                                 elevation: 0,
-                                                margin: EdgeInsets.all(0),
+                                                margin: const EdgeInsets.all(0),
                                                 color: appTheme.deepOrangeA200,
                                                 shape: RoundedRectangleBorder(
                                                     borderRadius:
@@ -170,7 +172,7 @@ class ReservationsCheckingPageDialog extends StatelessWidget {
                                             Card(
                                                 clipBehavior: Clip.antiAlias,
                                                 elevation: 0,
-                                                margin: EdgeInsets.all(0),
+                                                margin: const EdgeInsets.all(0),
                                                 color: appTheme.deepPurpleA200,
                                                 shape: RoundedRectangleBorder(
                                                     borderRadius:

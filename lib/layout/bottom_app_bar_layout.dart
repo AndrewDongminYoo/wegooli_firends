@@ -37,7 +37,7 @@ class _CustomBottomAppBarLayoutState extends State<CustomBottomAppBarLayout>
   final RestorableBool _showFab = RestorableBool(true);
   final RestorableBool _showNotch = RestorableBool(true);
   final RestorableInt _currentFabLocation = RestorableInt(0);
-  final void Function() onPressedActionButton = () {};
+  void Function() get onPressedActionButton => () {};
 
   /// `restorationId` [getter] 메소드는 `CustomBottomAppBarPage` 위젯의 상태 복원을 위한 고유 식별자를 제공하는 데 사용됩니다.
   /// 이 식별자는 앱을 닫았다가 다시 열 때 위젯의 상태를 저장하고 복원하는 데 사용됩니다.

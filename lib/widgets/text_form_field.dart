@@ -6,7 +6,7 @@ import 'package:flutter/services.dart';
 import '/core/app_export.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  CustomTextFormField({
+  const CustomTextFormField({
     Key? key,
     this.alignment,
     this.autofillHints,
@@ -103,19 +103,19 @@ class CustomTextFormField extends StatelessWidget {
         prefixIconConstraints: prefixConstraints,
         suffixIcon: suffix,
         suffixIconConstraints: suffixConstraints,
-        fillColor: enabled != true ? Color(0x33A4A8AF) : fillColor,
+        fillColor: enabled != true ? const Color(0x33A4A8AF) : fillColor,
         filled: enabled != true ? true : filled,
         isDense: true,
         contentPadding: contentPadding ??
             getPadding(left: 12, top: 14, right: 12, bottom: 14),
         counterText: "",
-        border: borderDecoration ?? createBorderSide(Color(0xFFB9BCC3)),
-        enabledBorder: borderDecoration ?? createBorderSide(Color(0xFFB9BCC3)),
-        focusedBorder: borderDecoration ?? createBorderSide(Color(0xFFFFE041)),
-        disabledBorder: borderDecoration ?? createBorderSide(Color(0xFFB9BCC3)),
-        errorBorder: borderDecoration ?? createBorderSide(Color(0xFFDB4646)),
+        border: borderDecoration ?? createBorderSide(const Color(0xFFB9BCC3)),
+        enabledBorder: borderDecoration ?? createBorderSide(const Color(0xFFB9BCC3)),
+        focusedBorder: borderDecoration ?? createBorderSide(const Color(0xFFFFE041)),
+        disabledBorder: borderDecoration ?? createBorderSide(const Color(0xFFB9BCC3)),
+        errorBorder: borderDecoration ?? createBorderSide(const Color(0xFFDB4646)),
         focusedErrorBorder:
-            borderDecoration ?? createBorderSide(Color(0xFFFFE041)),
+            borderDecoration ?? createBorderSide(const Color(0xFFFFE041)),
       );
 }
 
@@ -127,7 +127,7 @@ extension TextFormFieldStyleHelper on CustomTextFormField {
       borderRadius: BorderRadius.circular(getHorizontalSize(5)),
       borderSide: BorderSide(color: theme.colorScheme.onError, width: 1));
   static OutlineInputBorder get fillOnPrimary =>
-      OutlineInputBorder(borderSide: BorderSide.none);
+      const OutlineInputBorder(borderSide: BorderSide.none);
   static OutlineInputBorder get fillPrimary => OutlineInputBorder(
       borderRadius: BorderRadius.circular(getHorizontalSize(5)),
       borderSide: BorderSide.none);

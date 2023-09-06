@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
@@ -102,6 +104,6 @@ EdgeInsets getMarginOrPadding({
 extension on double {
   /// Return a [double] value with formatted according to provided fractionDigits
   double toDoubleValue({int fractionDigits = 2}) {
-    return double.parse(this.toStringAsFixed(fractionDigits));
+    return double.parse(toStringAsFixed(fractionDigits));
   }
 }

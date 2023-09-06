@@ -39,12 +39,12 @@ class ConfirmDialog extends StatelessWidget {
           title
         ],
       ),
-      titleTextStyle: TextStyle(
+      titleTextStyle: const TextStyle(
           fontSize: 18,
           fontWeight: FontWeight.w700,
           fontFamily: FontFamily.pretendard),
       insetPadding: EdgeInsets.symmetric(horizontal: getHorizontalSize(16)),
-      contentTextStyle: TextStyle(
+      contentTextStyle: const TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.w400,
           fontFamily: FontFamily.pretendard),
@@ -53,49 +53,49 @@ class ConfirmDialog extends StatelessWidget {
       actionsPadding: getPadding(all: 0),
       actionsOverflowButtonSpacing: null,
       actions: <Widget>[
-        Container(
+        SizedBox(
           width: getSize(328),
           height: getSize(52),
           child: Row(
             children: [
               TextButton(
                   onPressed: () =>
-                      Navigator.pop(context, false), // passing false
-                  child: Text(cancelText,
-                      style: TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 16,
-                          fontFamily: FontFamily.pretendard)),
+                      Navigator.pop(context, false),
                   style: ButtonStyle(
-                      shape: MaterialStatePropertyAll(RoundedRectangleBorder(
+                      shape: const MaterialStatePropertyAll(RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(Radius.zero))),
                       foregroundColor:
-                          MaterialStateProperty.all<Color>(Color(0xFF000000)),
+                          MaterialStateProperty.all<Color>(const Color(0xFF000000)),
                       backgroundColor:
-                          MaterialStatePropertyAll<Color>(Color(0xFFBABCC3)),
+                          const MaterialStatePropertyAll<Color>(Color(0xFFBABCC3)),
                       fixedSize: MaterialStateProperty.all<Size>(
-                          Size(getSize(164), getSize(52))))),
+                          Size(getSize(164), getSize(52)))), // passing false
+                  child: Text(cancelText,
+                      style: const TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontSize: 16,
+                          fontFamily: FontFamily.pretendard))),
               TextButton(
                   onPressed: () {
                     if (confirmFunc != null) {
                       confirmFunc!();
                     }
                     Navigator.pop(context, false);
-                  }, // passing true
-                  child: Text(confirmText,
-                      style: TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 16,
-                          fontFamily: FontFamily.pretendard)),
+                  },
                   style: ButtonStyle(
-                      padding: MaterialStatePropertyAll(EdgeInsets.zero),
+                      padding: const MaterialStatePropertyAll(EdgeInsets.zero),
                       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                       foregroundColor:
-                          MaterialStateProperty.all<Color>(Color(0xFF000000)),
+                          MaterialStateProperty.all<Color>(const Color(0xFF000000)),
                       backgroundColor:
-                          MaterialStatePropertyAll<Color>(Color(0xFFFFE142)),
+                          const MaterialStatePropertyAll<Color>(Color(0xFFFFE142)),
                       fixedSize: MaterialStateProperty.all<Size>(
-                          Size(getSize(164), getSize(52))))),
+                          Size(getSize(164), getSize(52)))), // passing true
+                  child: Text(confirmText,
+                      style: const TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontSize: 16,
+                          fontFamily: FontFamily.pretendard))),
             ],
           ),
         ),

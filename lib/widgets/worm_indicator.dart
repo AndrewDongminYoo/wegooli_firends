@@ -5,8 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class SmoothIndicators extends StatefulWidget {
+  const SmoothIndicators({super.key});
+
   @override
-  _SmoothIndicatorsState createState() => _SmoothIndicatorsState();
+  State<SmoothIndicators> createState() => _SmoothIndicatorsState();
 }
 
 class _SmoothIndicatorsState extends State<SmoothIndicators> {
@@ -19,15 +21,15 @@ class _SmoothIndicatorsState extends State<SmoothIndicators> {
         (index) => Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16),
-                color: Color(0xFFE0E0E0),
+                color: const Color(0xFFE0E0E0),
               ),
-              margin: EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-              child: Container(
+              margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+              child: SizedBox(
                 height: 280,
                 child: Center(
                     child: Text(
                   "Page $index",
-                  style: TextStyle(color: Color(0xFF3F51B5)),
+                  style: const TextStyle(color: Color(0xFF3F51B5)),
                 )),
               ),
             ));
@@ -38,7 +40,7 @@ class _SmoothIndicatorsState extends State<SmoothIndicators> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               SizedBox(
                 height: 240,
                 child: PageView.builder(
@@ -49,8 +51,8 @@ class _SmoothIndicatorsState extends State<SmoothIndicators> {
                   },
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 24, bottom: 12),
+              const Padding(
+                padding: EdgeInsets.only(top: 24, bottom: 12),
                 child: Text(
                   'Worm',
                   style: TextStyle(color: Color(0x89000000)),
@@ -65,27 +67,25 @@ class _SmoothIndicatorsState extends State<SmoothIndicators> {
                   type: WormType.thinUnderground,
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 16, bottom: 8),
+              const Padding(
+                padding: EdgeInsets.only(top: 16, bottom: 8),
                 child: Text(
                   'Jumping Dot',
                   style: TextStyle(color: Color(0x89000000)),
                 ),
               ),
-              Container(
-                child: SmoothPageIndicator(
-                  controller: controller,
-                  count: pages.length,
-                  effect: JumpingDotEffect(
-                    dotHeight: 16,
-                    dotWidth: 16,
-                    jumpScale: .7,
-                    verticalOffset: 15,
-                  ),
+              SmoothPageIndicator(
+                controller: controller,
+                count: pages.length,
+                effect: const JumpingDotEffect(
+                  dotHeight: 16,
+                  dotWidth: 16,
+                  jumpScale: .7,
+                  verticalOffset: 15,
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 16, bottom: 12),
+              const Padding(
+                padding: EdgeInsets.only(top: 16, bottom: 12),
                 child: Text(
                   'Scrolling Dots',
                   style: TextStyle(color: Color(0x89000000)),
@@ -94,7 +94,7 @@ class _SmoothIndicatorsState extends State<SmoothIndicators> {
               SmoothPageIndicator(
                   controller: controller,
                   count: pages.length,
-                  effect: ScrollingDotsEffect(
+                  effect: const ScrollingDotsEffect(
                     activeStrokeWidth: 2.6,
                     activeDotScale: 1.3,
                     maxVisibleDots: 5,
@@ -103,15 +103,15 @@ class _SmoothIndicatorsState extends State<SmoothIndicators> {
                     dotHeight: 12,
                     dotWidth: 12,
                   )),
-              Padding(
-                padding: const EdgeInsets.only(top: 16, bottom: 16),
+              const Padding(
+                padding: EdgeInsets.only(top: 16, bottom: 16),
                 child: Text(
                   'Customizable Effect',
                   style: TextStyle(color: Color(0x89000000)),
                 ),
               ),
               Container(
-                color: Color(0x66F44336),
+                color: const Color(0x66F44336),
                 child: SmoothPageIndicator(
                   controller: controller,
                   count: pages.length,
@@ -119,7 +119,7 @@ class _SmoothIndicatorsState extends State<SmoothIndicators> {
                     activeDotDecoration: DotDecoration(
                       width: 32,
                       height: 12,
-                      color: Color(0xFF3F51B5),
+                      color: const Color(0xFF3F51B5),
                       rotationAngle: 180,
                       verticalOffset: -10,
                       borderRadius: BorderRadius.circular(24),
@@ -132,7 +132,7 @@ class _SmoothIndicatorsState extends State<SmoothIndicators> {
                     dotDecoration: DotDecoration(
                       width: 24,
                       height: 12,
-                      color: Color(0xFF9E9E9E),
+                      color: const Color(0xFF9E9E9E),
                       // dotBorder: DotBorder(
                       //   padding: 2,
                       //   width: 2,
@@ -161,7 +161,7 @@ class _SmoothIndicatorsState extends State<SmoothIndicators> {
   }
 }
 
-final colors = const [
+const colors = [
   Color(0xFFF44336),
   Color(0xFF4CAF50),
   Color(0xFF69F0AE),

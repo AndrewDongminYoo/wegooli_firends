@@ -9,12 +9,12 @@ class NoInternetException implements Exception {
   late String _message;
 
   NoInternetException([String message = 'NoInternetException Occurred']) {
-    this._message = message;
+    _message = message;
   }
 
   @override
   String toString() {
-    String? message = this._message;
+    String? message = _message;
     return 'Exception: $message';
   }
 }

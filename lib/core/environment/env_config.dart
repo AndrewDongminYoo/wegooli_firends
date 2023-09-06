@@ -7,7 +7,7 @@ class EnvConfig {
   late BaseEnvConfig config;
 
   void initConfig({Environment? environment}) {
-    config = _getConfig(environment ?? null);
+    config = _getConfig(environment);
   }
 
   BaseEnvConfig _getConfig([Environment? environment]) {

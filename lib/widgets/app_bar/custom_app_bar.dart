@@ -6,7 +6,7 @@ import '/core/app_export.dart';
 
 // ignore: must_be_immutable
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  CustomAppBar({
+  const CustomAppBar({
     Key? key,
     this.height,
     this.styleType,
@@ -56,7 +56,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                         color: appTheme.blueGray30033,
                         width: getHorizontalSize(1.0)))));
       default:
-        return SizedBox.shrink();
+        return const SizedBox.shrink();
     }
   }
 

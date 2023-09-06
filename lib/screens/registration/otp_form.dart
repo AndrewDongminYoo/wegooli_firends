@@ -11,7 +11,7 @@ class OtpForm extends StatefulWidget {
   final int length;
   final Function(String) callBack;
   @override
-  _OtpFormState createState() => _OtpFormState();
+  State<OtpForm> createState() => _OtpFormState();
 }
 
 class _OtpFormState extends State<OtpForm> {
@@ -36,7 +36,7 @@ class _OtpFormState extends State<OtpForm> {
         },
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: _pins.map((_pin) => PinCodeWrapper(pin: _pin)).toList(),
+          children: _pins.map((pin) => PinCodeWrapper(pin: pin)).toList(),
         ),
       ),
     );

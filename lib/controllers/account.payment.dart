@@ -22,25 +22,15 @@ class PaymentCardController extends GetxController {
 
   bool get cardInputSucceed => false;
   final userController = UserController.to;
-  String? _token;
-
-  String? get token => _token;
-
-  set token(String? value) {
-    _token = value;
-  }
+  String? token;
   // String get token => _token ?? PrefUtils.storage.getToken();
 
-  RxList<PaymentCardModel> _paymentCards = <PaymentCardModel>[].obs;
+  final RxList<PaymentCardModel> _paymentCards = <PaymentCardModel>[].obs;
   RxList<PaymentCardModel> get paymentCards => _paymentCards;
   // Rx<PaymentCardModel> paymentCard = PaymentCardModel().obs;
   // RxList<PaymentCardModel> paymentCards = RxList.of([PaymentCardModel()]);
   // RxList<PaymentCardModel> get paymentCards => _paymentCards.obs;
 
-  @override
-  void onInit() async {
-    super.onInit();
-  }
 
   @override
   void onClose() {
@@ -67,12 +57,12 @@ class PaymentCardController extends GetxController {
   Future<String> registerCard() async {
     PaymentCardRequest paymentCardRequest = PaymentCardRequest(
         // memberSeq: team이 없는데 어캐넣음 ??
-        cardNumber: this.creditCardId.text,
+        cardNumber: creditCardId.text,
         //  defaultYn: 'Y',
-        password: this.cardPassword.text,
-        rrn: this.birthNumber6.text,
-        expirationMonth: this.expirationDT.text.substring(0, 2),
-        expirationYear: this.expirationDT.text.substring(2));
+        password: cardPassword.text,
+        rrn: birthNumber6.text,
+        expirationMonth: expirationDT.text.substring(0, 2),
+        expirationYear: expirationDT.text.substring(2));
 
     final response = await wegooli
         .getPaymentCardControllerApi()

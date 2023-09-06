@@ -9,6 +9,8 @@ import 'package:table_calendar/table_calendar.dart';
 import '/core/app_export.dart';
 
 class CalendarBody extends GetView<ScheduleController> {
+  const CalendarBody({super.key});
+
   void _onDaySelected(DateTime selectedDay, DateTime focusedDay) {
     if (!isSameDay(controller.selectedDay, selectedDay)) {
       controller.selectedDay = selectedDay;
@@ -44,7 +46,7 @@ class CalendarBody extends GetView<ScheduleController> {
                   firstDay: controller.firstDay,
                   focusedDay: controller.focusedDay,
                   lastDay: controller.lastDay,
-                  locale: Locale('ko', 'KR').toString(),
+                  locale: const Locale('ko', 'KR').toString(),
                   rangeEndDay: controller.rangeEnd,
                   rangeSelectionMode: controller.rangeSelectionMode,
                   rangeStartDay: controller.rangeStart,

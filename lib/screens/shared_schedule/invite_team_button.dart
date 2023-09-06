@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import '/core/app_export.dart';
 
 class InviteTeamButton extends StatelessWidget {
+  const InviteTeamButton({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -15,7 +17,7 @@ class InviteTeamButton extends StatelessWidget {
               width: 48,
               padding: getPadding(all: 13),
               child: CustomImageView(
-                  svgPath: Assets.svg.imgGrid.path, color: Color(0xFFFFFFFF))),
+                  svgPath: Assets.svg.imgGrid.path, color: const Color(0xFFFFFFFF))),
           Padding(
               padding: getPadding(top: 6),
               child: Text(l10ns.invite,

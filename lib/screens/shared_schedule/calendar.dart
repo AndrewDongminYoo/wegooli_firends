@@ -6,6 +6,8 @@ import '/core/app_export.dart';
 
 // ignore: must_be_immutable
 class SharedCalendar extends StatefulWidget {
+  const SharedCalendar({super.key});
+
   @override
   State<SharedCalendar> createState() => _SharedCalendarState();
 }
@@ -30,12 +32,12 @@ class _SharedCalendarState extends State<SharedCalendar> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    MemberListTitle(),
+                    const MemberListTitle(),
                     MembersList(),
-                    GrayHorizonSeparator(),
-                    CalendarTitle(),
-                    CalendarBody(),
-                    AddScheduleButton(),
+                    const GrayHorizonSeparator(),
+                    const CalendarTitle(),
+                    const CalendarBody(),
+                    const AddScheduleButton(),
                   ],
                 )),
           )),

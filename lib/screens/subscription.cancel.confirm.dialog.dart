@@ -10,6 +10,8 @@ import '/core/app_export.dart';
 // ignore: must_be_immutable
 class UnsubscriptionConfirmWarnDialog extends StatelessWidget {
   final vehicleController = VehicleController.to;
+
+   UnsubscriptionConfirmWarnDialog({super.key});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -63,7 +65,7 @@ class UnsubscriptionConfirmWarnDialog extends StatelessWidget {
                               .copyWith(
                                   shape: MaterialStateProperty.all<
                                           RoundedRectangleBorder>(
-                                      RoundedRectangleBorder(
+                                      const RoundedRectangleBorder(
                                           borderRadius: BorderRadius.only(
                                               bottomLeft:
                                                   Radius.circular(10)))),
@@ -81,7 +83,7 @@ class UnsubscriptionConfirmWarnDialog extends StatelessWidget {
                                 .copyWith(
                                     shape: MaterialStateProperty.all<
                                             RoundedRectangleBorder>(
-                                        RoundedRectangleBorder(
+                                        const RoundedRectangleBorder(
                                             borderRadius: BorderRadius.only(
                                                 bottomRight:
                                                     Radius.circular(10)))),

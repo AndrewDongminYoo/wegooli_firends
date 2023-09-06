@@ -9,6 +9,8 @@ import '/core/app_export.dart';
 
 class UnsubscriptionConfirm extends GetWidget<UserController> {
   final vehicleController = VehicleController.to;
+
+ UnsubscriptionConfirm({super.key});
   @override
   Widget build(BuildContext context) {
     DateTime expireDate =
@@ -79,7 +81,7 @@ class UnsubscriptionConfirm extends GetWidget<UserController> {
                             Widget alertDialog = AlertDialog(
                                 backgroundColor: Colors.transparent,
                                 contentPadding: EdgeInsets.zero,
-                                insetPadding: EdgeInsets.only(left: 0),
+                                insetPadding: EdgeInsets.zero,
                                 content: UnsubscriptionConfirmWarnDialog());
                             Get.dialog(alertDialog);
                             // vehicleController.unsubscribe();

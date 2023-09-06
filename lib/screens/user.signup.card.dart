@@ -11,6 +11,7 @@ import '/core/app_export.dart';
 class RegisterCreditCard extends GetWidget<PaymentCardController> {
   final paymentCardController = PaymentCardController.to;
   final userController = UserController.to;
+  RegisterCreditCard({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -93,7 +94,7 @@ class RegisterCreditCard extends GetWidget<PaymentCardController> {
                                         l10ns.socialSecurityNumberFirstDigit),
                                 CustomTextFormField(
                                     enabled:
-                                        userController.birthDay.text.length > 0
+                                        userController.birthDay.text.isNotEmpty
                                             ? false
                                             : true,
                                     margin: getMargin(top: 4),
@@ -149,7 +150,7 @@ class RegisterCreditCard extends GetWidget<PaymentCardController> {
                     onTap: () async {
                       // TODO 카드 검증 필요함.
                       await controller.registerCard();
-                      if (paymentCardController.paymentCards.length == 0) {
+                      if (paymentCardController.paymentCards.isEmpty) {
                         goRegisterSuccess();
                       } else {
                         // TODO 카드 등록 로직

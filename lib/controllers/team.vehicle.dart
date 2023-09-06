@@ -17,8 +17,8 @@ class VehicleController extends GetxController {
   final userController = UserController.to;
   late Rx<SubscriptionModel> subscriptionModel = SubscriptionModel().obs;
   late Rx<CarManagementModel> carManagementModel = CarManagementModel().obs;
-  late int? teamSeq = null;
-  late UserDto currentUser = UserDto();
+  late int? teamSeq;
+  late UserDto currentUser = const UserDto();
   @override
   void onInit() async {
     currentUser = userController.currentUser.value;
@@ -34,7 +34,7 @@ class VehicleController extends GetxController {
     final List<TeamAccountModel> members = userController.members;
     final whoDriving =
         members.firstWhereOrNull((it) => it.accountId == accountId);
-    print('team.vehicle.dart#L39 ${whoDriving} is Driving');
+    print('team.vehicle.dart#L39 $whoDriving is Driving');
     driverName.text = whoDriving?.nickname ?? '';
   }
 
@@ -43,10 +43,10 @@ class VehicleController extends GetxController {
     if (schedule.startAt == null || schedule.endAt == null) {
       return false;
     } else {
-      DateTime _last = DateTime.parse(schedule.startAt!);
-      DateTime _later = DateTime.parse(schedule.endAt!);
-      DateTime _now = DateTime.now();
-      return _now.isBetween(_last, _later);
+      DateTime last = DateTime.parse(schedule.startAt!);
+      DateTime later = DateTime.parse(schedule.endAt!);
+      DateTime now = DateTime.now();
+      return now.isBetween(last, later);
     }
   }
 
@@ -112,12 +112,7 @@ class VehicleController extends GetxController {
     }
   }
 
-  ServiceDetail? _serviceDetail;
-  ServiceDetail? get serviceDetail => _serviceDetail;
-  set serviceDetail(ServiceDetail? value) {
-    _serviceDetail = value;
-  }
-
+  ServiceDetail? serviceDetail;
   RxBool availableNow = false.obs;
 
   @override
@@ -131,7 +126,7 @@ class VehicleController extends GetxController {
     final deviceControllerApi = wegooli.getDeviceControllerApi();
     final response = await deviceControllerApi.doorOpen(
         carNum: terminalDevice.carNum as String);
-    print('response : ${response}');
+    print('response : $response');
     return response.data;
   }
 
@@ -139,7 +134,7 @@ class VehicleController extends GetxController {
     final deviceControllerApi = wegooli.getDeviceControllerApi();
     final response = await deviceControllerApi.doorClose(
         carNum: terminalDevice.carNum as String);
-    print('response : ${response}');
+    print('response : $response');
     return response.data;
   }
 
@@ -147,7 +142,7 @@ class VehicleController extends GetxController {
     final deviceControllerApi = wegooli.getDeviceControllerApi();
     final response = await deviceControllerApi.turnOnHorn(
         carNum: terminalDevice.carNum as String);
-    print('response : ${response}');
+    print('response : $response');
     return response.data;
   }
 
@@ -155,7 +150,7 @@ class VehicleController extends GetxController {
     final deviceControllerApi = wegooli.getDeviceControllerApi();
     final response = await deviceControllerApi.turnOnEmergencyLight(
         carNum: terminalDevice.carNum as String);
-    print('response : ${response}');
+    print('response : $response');
     return response.data;
   }
 
@@ -177,7 +172,7 @@ class VehicleController extends GetxController {
     if (currentUser.id == null || teamSeq == null) {
       return;
     }
-    SubmitWithdrawalModel submitWithdrawalModel = new SubmitWithdrawalModel(
+    SubmitWithdrawalModel submitWithdrawalModel = SubmitWithdrawalModel(
         accountId: currentUser.id!,
         date: DateTime.now().toString(),
         teamSeq: teamSeq!);
@@ -191,7 +186,7 @@ class VehicleController extends GetxController {
     if (currentUser.id == null || teamSeq == null) {
       return;
     }
-    SubmitWithdrawalModel submitWithdrawalModel = new SubmitWithdrawalModel(
+    SubmitWithdrawalModel submitWithdrawalModel = SubmitWithdrawalModel(
         accountId: currentUser.id!, date: null, teamSeq: teamSeq!);
     await wegooli
         .getSubscriptionControllerApi()

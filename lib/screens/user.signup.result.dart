@@ -9,6 +9,8 @@ import '/core/app_export.dart';
 
 // ignore: must_be_immutable
 class RegisterSuccess extends GetWidget<UserController> {
+  const RegisterSuccess({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(

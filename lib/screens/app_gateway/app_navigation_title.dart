@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import '/core/app_export.dart';
 
 class AppNavigationTitle extends StatelessWidget {
+  const AppNavigationTitle({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Align(

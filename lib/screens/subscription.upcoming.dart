@@ -8,6 +8,8 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 class UpcomingUnsubscription extends GetWidget<VehicleController> {
+  const UpcomingUnsubscription({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -26,7 +28,7 @@ class UpcomingUnsubscription extends GetWidget<VehicleController> {
                               imagePath: Assets.images.imgGooli4.path,
                               width: 120,
                               height: 177),
-                          Text(
+                          const Text(
                             '구독 정보가 없습니다.',
                             textAlign: TextAlign.center,
                             style: TextStyle(

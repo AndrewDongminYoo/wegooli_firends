@@ -36,6 +36,6 @@ extension SelectedObservable on Rx<List<SelectionPopupModel>> {
         element.isSelected = true;
       }
     }
-    this.refresh();
+    refresh();
   }
 }

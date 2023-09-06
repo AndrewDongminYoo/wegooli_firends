@@ -46,7 +46,7 @@ class CustomButtonStyles {
           borderRadius: BorderRadius.circular(getHorizontalSize(26.00))));
   static ButtonStyle get fillPrimaryB10 => ElevatedButton.styleFrom(
         backgroundColor: theme.colorScheme.primary,
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(bottom: Radius.circular(10))),
       );
   static ButtonStyle get fillPrimaryB26 => ElevatedButton.styleFrom(
@@ -58,12 +58,12 @@ class CustomButtonStyles {
       );
   static ButtonStyle get fillPrimaryBL10 => ElevatedButton.styleFrom(
         backgroundColor: theme.colorScheme.primary,
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10))),
       );
   static ButtonStyle get fillPrimaryBR10 => ElevatedButton.styleFrom(
         backgroundColor: theme.colorScheme.primary,
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(bottomRight: Radius.circular(10))),
       );
   // text button style

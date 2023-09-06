@@ -35,30 +35,11 @@ class UserController extends GetxController {
     SelectionPopupModel(id: 019, title: "LG"),
   ];
 
-  Rx<UserDto> _currentUser = UserDto().obs;
-  Rx<UserDto> get currentUser => _currentUser;
-  set currentUser(Rx<UserDto> value) {
-    _currentUser = value;
-  }
-
-  RxList<TeamAccountModel> _members = RxList<TeamAccountModel>([]);
-  RxList<TeamAccountModel> get members => _members;
-  set members(RxList<TeamAccountModel> value) {
-    _members = value;
-  }
-
-  RxList<TeamAccountConnectionResponse> _teams =
+  Rx<UserDto> currentUser = const UserDto().obs;
+  RxList<TeamAccountModel> members = RxList<TeamAccountModel>([]);
+  RxList<TeamAccountConnectionResponse> teams =
       RxList<TeamAccountConnectionResponse>([]);
-  RxList<TeamAccountConnectionResponse> get teams => _teams;
-  set teams(RxList<TeamAccountConnectionResponse> value) {
-    _teams = value;
-  }
-
-  TeamCarConnection _carConnection = TeamCarConnection();
-  TeamCarConnection get carConnection => _carConnection;
-  set carConnection(TeamCarConnection value) {
-    _carConnection = value;
-  }
+  TeamCarConnection carConnection = TeamCarConnection();
 
   RxBool isAuthenticated = false.obs;
   RxBool isShowPassword = false.obs;
@@ -86,16 +67,16 @@ class UserController extends GetxController {
   }
 
   DateTime verificaticonExpireTime() {
-    return DateTime.now().add(Duration(minutes: 3));
+    return DateTime.now().add(const Duration(minutes: 3));
   }
 
-  Future<String?> sendVerificationCode(BuildContext context) async {
+  Future<String?> sendVerificationCode() async {
     String? smsCode;
     // Update the UI - wait for the user to enter the SMS code
     if (phoneCarriers != null && phoneNum.text.isNotEmpty) {
       isWaitingOtpCode.value = true;
       await showDialog<String>(
-        context: context,
+        context: Get.context!,
         barrierDismissible: false,
         builder: (context) {
           return AlertDialog(
@@ -147,13 +128,13 @@ class UserController extends GetxController {
   }
 
   bool get isValid =>
-      postCode.text.length > 0 &&
-      primaryAddress.text.length > 0 &&
-      detailAddress.text.length > 0 &&
+      postCode.text.isNotEmpty &&
+      primaryAddress.text.isNotEmpty &&
+      detailAddress.text.isNotEmpty &&
       emailAddress.text.isEmail &&
-      password.text.length > 0 &&
-      nickname.text.length > 0 &&
-      rePassword.text.length > 0 &&
+      password.text.isNotEmpty &&
+      nickname.text.isNotEmpty &&
+      rePassword.text.isNotEmpty &&
       (password.text == rePassword.text);
 
   @override
@@ -180,7 +161,7 @@ class UserController extends GetxController {
       print('user.username: ${username.text}\nuser.password: ${password.text}');
       final response =
           await api.login(id: username.text, password: password.text);
-      print('response : ${response}');
+      print('response : $response');
       Result? result = response.data?.result;
       String bearerToken = '';
       String token = '';
@@ -195,11 +176,11 @@ class UserController extends GetxController {
         // BEARER prefix 분리.
         token = bearerToken.split(' ').last;
       }
-      print('token: ${token}');
+      print('token: $token');
       // BEARER prefix 제거
       var payload = JwtDecoder.decode(token);
-      print(
-          'payload: ${payload}'); //'{"name": "My Awesome App", "iat": 1548094400}'
+      //'{"name": "My Awesome App", "iat": 1548094400}'
+      print('payload: $payload');
       currentUser.value = UserDto.fromJson(payload);
       if (JwtDecoder.isExpired(token)) {
         print('❌ 만료된 토큰입니다.');
@@ -245,9 +226,9 @@ class UserController extends GetxController {
     final response =
         await api.selectTeamAccountList(accountId: currentUser.value.id!);
     // print('findMembers : $response');
-    List<TeamAccountConnectionResponse>? _teamList = response.data;
-    if (_teamList != null && _teamList.isNotEmpty) {
-      int? teamSeq = _teamList.firstOrNull?.teamSeq;
+    List<TeamAccountConnectionResponse>? teamList0 = response.data;
+    if (teamList0 != null && teamList0.isNotEmpty) {
+      int? teamSeq = teamList0.firstOrNull?.teamSeq;
       if (teamSeq == null) {
         return;
       }

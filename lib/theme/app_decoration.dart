@@ -31,7 +31,7 @@ class AppDecoration {
             color: appTheme.black900.withOpacity(0.1),
             spreadRadius: getHorizontalSize(2),
             blurRadius: getHorizontalSize(2),
-            offset: Offset(
+            offset: const Offset(
               2,
               2,
             ),
@@ -69,7 +69,7 @@ class AppDecoration {
             color: appTheme.black900.withOpacity(0.1),
             spreadRadius: getHorizontalSize(2),
             blurRadius: getHorizontalSize(2),
-            offset: Offset(
+            offset: const Offset(
               2,
               2,
             ),

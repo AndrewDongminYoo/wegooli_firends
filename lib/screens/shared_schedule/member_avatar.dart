@@ -23,7 +23,7 @@ class MemberAvatar extends StatelessWidget {
           Card(
               clipBehavior: Clip.antiAlias,
               elevation: 0,
-              margin: EdgeInsets.all(0),
+              margin: const EdgeInsets.all(0),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadiusStyle.circleBorder25),
               child: Container(

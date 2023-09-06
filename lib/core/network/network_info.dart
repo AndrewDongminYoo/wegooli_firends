@@ -14,7 +14,7 @@ class NetworkInfo implements NetworkInfoI {
   Connectivity connectivity;
 
   NetworkInfo(this.connectivity) {
-    connectivity = this.connectivity;
+    connectivity = connectivity;
   }
 
   /// checks internet is connected or not

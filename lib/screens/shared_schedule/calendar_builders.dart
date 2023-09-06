@@ -28,26 +28,26 @@ Widget? selectedBuilder(
 Widget? rangeStartBuilder(
     BuildContext context, DateTime day, DateTime focusedDay) {
   return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 1),
-      child: Text(day.day.toString(),
-          style: TextStyle(
-              color: Color(0xFF2196F3))), // Example: Display custom text
-      decoration: BoxDecoration(
+      margin: const EdgeInsets.symmetric(horizontal: 1), // Example: Display custom text
+      decoration: const BoxDecoration(
           // borderRadius: BorderRadius.horizontal(left: Radius.circular(10))
           color: Color(0x7EFFFFFF),
-          shape: BoxShape.circle));
+          shape: BoxShape.circle),
+      child: Text(day.day.toString(),
+          style: const TextStyle(
+              color: Color(0xFF2196F3))));
 }
 
 /// 현재 범위 선택의 끝인 일 셀에 대한 사용자 지정 빌더입니다.
 Widget? rangeEndBuilder(
     BuildContext context, DateTime day, DateTime focusedDay) {
   return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 1),
-      child: Text(day.day.toString(),
-          style: TextStyle(
-              color: Color(0xFF2196F3))), // Example: Display custom text
+      margin: const EdgeInsets.symmetric(horizontal: 1), // Example: Display custom text
       decoration:
-          BoxDecoration(color: Color(0x4BFFFFFF), shape: BoxShape.circle));
+          const BoxDecoration(color: Color(0x4BFFFFFF), shape: BoxShape.circle),
+      child: Text(day.day.toString(),
+          style: const TextStyle(
+              color: Color(0xFF2196F3))));
 }
 
 /// 현재 선택된 범위 내에 있는 요일 셀에 대한 사용자 지정 빌더입니다.
@@ -88,14 +88,14 @@ Widget? defaultBuilder(
 Widget? rangeHighlightBuilder(
     BuildContext context, DateTime day, bool isWithinRange) {
   return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 1),
-      child: Text(day.day.toString(),
-          style: TextStyle(
-              color: Color(0xFF2196F3))), // Example: Display custom text
-      decoration: BoxDecoration(
+      margin: const EdgeInsets.symmetric(horizontal: 1), // Example: Display custom text
+      decoration: const BoxDecoration(
           // borderRadius: BorderRadius.circular(10))
           color: Color(0x4BFFFFFF),
-          shape: BoxShape.circle));
+          shape: BoxShape.circle),
+      child: Text(day.day.toString(),
+          style: const TextStyle(
+              color: Color(0xFF2196F3))));
 }
 
 /// [singleMarker]에 대한 사용자 지정 빌더. 각 마커는 요일 셀 위의 [행]에 표시됩니다.
@@ -107,7 +107,7 @@ Widget? singleMarkerBuilder(
   return Container(
       width: 3,
       height: 3,
-      margin: EdgeInsets.only(bottom: 10),
+      margin: const EdgeInsets.only(bottom: 10),
       alignment: Alignment.topCenter,
       decoration: BoxDecoration(
           shape: BoxShape.circle,
@@ -141,7 +141,7 @@ Widget? weekNumberBuilder(BuildContext context, int weekNumber) {
   return null;
 }
 
-CalendarBuilders<Schedule> builders = CalendarBuilders(
+CalendarBuilders<Schedule> builders = const CalendarBuilders(
     defaultBuilder: defaultBuilder,
     disabledBuilder: disabledBuilder,
     dowBuilder: dowBuilder,

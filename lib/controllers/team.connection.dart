@@ -104,7 +104,7 @@ class ConnectionController extends GetxController with ChannelEventHandler {
   }
 
   Future<void> onSendChatMessage(ChatMessage newMessage) async {
-    final sentMessage = await channel!.sendUserMessageWithText(newMessage.text);
+    final sentMessage = channel!.sendUserMessageWithText(newMessage.text);
     return messages.insert(0, sentMessage);
   }
 }

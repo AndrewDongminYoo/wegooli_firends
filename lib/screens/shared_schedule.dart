@@ -9,6 +9,8 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 class TeamScheduleShare extends StatefulWidget {
+  const TeamScheduleShare({super.key});
+
   @override
   State<TeamScheduleShare> createState() => _TeamScheduleShareState();
 }
@@ -59,12 +61,12 @@ String getCurrentRoute(BottomBarEnum type) {
 Widget getCurrentPage(String currentRoute) {
   switch (currentRoute) {
     case AppRoutes.chatWithTeam:
-      return DashChatWithFriendsPage();
+      return const DashChatWithFriendsPage();
     case AppRoutes.carSmartKey:
-      return SmartKeyAvailablePage();
+      return const SmartKeyAvailablePage();
     case AppRoutes.myProfile:
-      return MyProfilePage();
+      return const MyProfilePage();
     default:
-      return SharedCalendar();
+      return const SharedCalendar();
   }
 }

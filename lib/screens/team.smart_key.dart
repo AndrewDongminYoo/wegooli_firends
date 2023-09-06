@@ -10,6 +10,8 @@ import '/core/app_export.dart';
 
 // ignore: must_be_immutable
 class SmartKeyAvailablePage extends StatefulWidget {
+  const SmartKeyAvailablePage({super.key});
+
   @override
   State<SmartKeyAvailablePage> createState() => _SmartKeyAvailablePageState();
 }
@@ -85,7 +87,7 @@ class _SmartKeyAvailablePageState extends State<SmartKeyAvailablePage> {
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
                                             children: [
-                                              FuelStatus(),
+                                              const FuelStatus(),
                                               Padding(
                                                 padding: getPadding(
                                                   left: 5,
@@ -95,7 +97,7 @@ class _SmartKeyAvailablePageState extends State<SmartKeyAvailablePage> {
                                                 child: Text(
                                                   l10ns.remainingFuelLevel(
                                                       controller.fuelType,
-                                                      controller.fuel + '%'),
+                                                      '${controller.fuel}%'),
                                                   overflow:
                                                       TextOverflow.ellipsis,
                                                   textAlign: TextAlign.left,
@@ -171,12 +173,12 @@ class _SmartKeyAvailablePageState extends State<SmartKeyAvailablePage> {
                     width: mediaQueryData.size.width,
                     margin: getMargin(top: 31),
                     decoration: BoxDecoration(color: appTheme.gray100)),
-                Container(
+                SizedBox(
                   width: mediaQueryData.size.width,
                   child: Stack(
                     alignment: Alignment.center,
                     children: [
-                      Container(
+                      SizedBox(
                         // height: mediaQueryData.size.height,
                         width: mediaQueryData.size.width,
                         child: Column(
@@ -250,7 +252,7 @@ class _SmartKeyAvailablePageState extends State<SmartKeyAvailablePage> {
                         ),
                       ),
                       // 사용중일 때 화면 가리기용
-                      if (controller.availableNow.value) UntouchableMask(),
+                      if (controller.availableNow.value) const UntouchableMask(),
                     ],
                   ),
                 ),
@@ -258,7 +260,7 @@ class _SmartKeyAvailablePageState extends State<SmartKeyAvailablePage> {
             ),
           ),
         ),
-        floatingActionButton: FloatingYellowButton(),
+        floatingActionButton: const FloatingYellowButton(),
         bottomNavigationBar:
             CustomBottomNavBar(onChanged: (BottomBarEnum type) {
           Get.toNamed(getCurrentRoute(type));
@@ -269,6 +271,8 @@ class _SmartKeyAvailablePageState extends State<SmartKeyAvailablePage> {
 }
 
 class FloatingYellowButton extends StatelessWidget {
+  const FloatingYellowButton({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Align(
@@ -278,21 +282,21 @@ class FloatingYellowButton extends StatelessWidget {
         width: getHorizontalSize(70),
         margin: getMargin(right: 22, top: 30),
         decoration:
-            BoxDecoration(color: Color(0xFFFFE142), shape: BoxShape.circle),
+            const BoxDecoration(color: Color(0xFFFFE142), shape: BoxShape.circle),
         onTap: () => launchUrlString('tel:15666560'),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CustomImageView(
               svgPath: Assets.svg.imgEdit.path,
-              color: Color(0xFF000000),
+              color: const Color(0xFF000000),
               width: 22.5,
               height: 22.5,
               margin: getMargin(bottom: 3),
             ),
             Text(
               l10ns.reportAnIncident,
-              style: TextStyle(
+              style: const TextStyle(
                 color: Color(0xFF000000),
                 fontSize: 12,
               ),
@@ -305,25 +309,27 @@ class FloatingYellowButton extends StatelessWidget {
 }
 
 class UntouchableMask extends GetView<VehicleController> {
+  const UntouchableMask({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
       height: mediaQueryData.size.height - getVerticalSize(200),
       width: mediaQueryData.size.width,
-      decoration: BoxDecoration(color: Color(0x33A4A8AF)),
+      decoration: const BoxDecoration(color: Color(0x33A4A8AF)),
       child: Center(
         child: Container(
           alignment: Alignment.center,
           width: getHorizontalSize(180),
           height: getVerticalSize(44),
           decoration: BoxDecoration(
-              color: Color(0x66222222),
+              color: const Color(0x66222222),
               borderRadius: BorderRadius.circular(100)),
           child: Text(
             controller.availableNow.value
                 ? l10ns.hongGilDongIsUsingIt(controller.driverName.text)
                 : l10ns.available,
-            style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 16),
+            style: const TextStyle(color: Color(0xFFFFFFFF), fontSize: 16),
           ),
         ),
       ),
@@ -349,7 +355,7 @@ class ControlButton extends StatelessWidget {
           width: 120,
           height: 120,
           decoration:
-              BoxDecoration(color: Color(0xFFFFE142), shape: BoxShape.circle)),
+              const BoxDecoration(color: Color(0xFFFFE142), shape: BoxShape.circle)),
       ElevatedButton(
         onPressed: () {
           if (onTap != null) {
@@ -358,20 +364,20 @@ class ControlButton extends StatelessWidget {
         },
         style: ButtonStyle(
           overlayColor: MaterialStateProperty.all(Colors.transparent),
-          padding: MaterialStateProperty.all(EdgeInsets.all(0)),
+          padding: MaterialStateProperty.all(const EdgeInsets.all(0)),
           side: MaterialStateProperty.all(BorderSide(
-            color: Color(0x18000000),
+            color: const Color(0x18000000),
             width: getHorizontalSize(1.0),
           )),
-          fixedSize: MaterialStateProperty.all(Size(130, 130)),
-          shape: MaterialStateProperty.all(CircleBorder(
+          fixedSize: MaterialStateProperty.all(const Size(130, 130)),
+          shape: MaterialStateProperty.all(const CircleBorder(
             side: BorderSide(
               // color: Color(0x18000000),
               color: Color(0x33A4A8AF),
               width: 1,
             ),
           )),
-          shadowColor: MaterialStateProperty.all(Color(0x18000000)),
+          shadowColor: MaterialStateProperty.all(const Color(0x18000000)),
           // [
           //   BoxShadow(
           //     color: Color(0x18000000),
@@ -384,13 +390,13 @@ class ControlButton extends StatelessWidget {
             if (states.contains(MaterialState.pressed)) {
               return Colors.transparent;
             }
-            return Color(0xFFFFFFFF);
+            return const Color(0xFFFFFFFF);
           }),
           textStyle: MaterialStateProperty.resolveWith((states) {
             if (states.contains(MaterialState.pressed)) {
-              return TextStyle(fontSize: 16);
+              return const TextStyle(fontSize: 16);
             }
-            return TextStyle(fontSize: 16);
+            return const TextStyle(fontSize: 16);
           }),
         ),
         child: Container(
@@ -401,7 +407,7 @@ class ControlButton extends StatelessWidget {
           decoration: BoxDecoration(
             color: Colors.transparent,
             shape: BoxShape.circle,
-            border: Border.all(color: Color(0x18000000), width: 1),
+            border: Border.all(color: const Color(0x18000000), width: 1),
           ),
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
             CustomImageView(
@@ -427,6 +433,8 @@ class ControlButton extends StatelessWidget {
 }
 
 class FuelStatus extends GetView<VehicleController> {
+  const FuelStatus({super.key});
+
   @override
   Widget build(BuildContext context) {
     return getGasImg(level: controller.level).svg(
@@ -467,7 +475,7 @@ class FuelStatus extends GetView<VehicleController> {
 
 class ArrowLeft extends StatelessWidget {
   final void Function()? onTap;
-  ArrowLeft({super.key, this.onTap});
+  const ArrowLeft({super.key, this.onTap});
   @override
   Widget build(BuildContext context) {
     return CustomImageView(
@@ -481,7 +489,7 @@ class ArrowLeft extends StatelessWidget {
 
 class ArrowRight extends StatelessWidget {
   final void Function()? onTap;
-  ArrowRight({super.key, this.onTap});
+  const ArrowRight({super.key, this.onTap});
   @override
   Widget build(BuildContext context) {
     return CustomImageView(

@@ -9,6 +9,7 @@ class CustomTextFormField extends StatelessWidget {
   CustomTextFormField({
     Key? key,
     this.alignment,
+    this.autofillHints,
     this.autofocus = true,
     this.enabled = true,
     this.filled = false,
@@ -25,7 +26,6 @@ class CustomTextFormField extends StatelessWidget {
     this.maxLines,
     this.hintText,
     this.initialValue,
-    this.controller,
     this.textInputAction = TextInputAction.next,
     this.textInputType = TextInputType.text,
     this.hintStyle,
@@ -34,10 +34,12 @@ class CustomTextFormField extends StatelessWidget {
     this.suffix,
     this.inputFormatters = const [],
     this.obscureChar = '*',
+    required this.controller,
   }) : super(key: key);
 
   final Alignment? alignment;
   final bool? autofocus;
+  final List<String>? autofillHints;
   final bool? enabled;
   final bool? filled;
   final bool? obscureText;
@@ -82,6 +84,8 @@ class CustomTextFormField extends StatelessWidget {
           obscureText: obscureText!,
           controller: controller,
           autofocus: autofocus!,
+          focusNode: focusNode,
+          autofillHints: autofillHints ?? [],
           style: textStyle ?? CustomTextStyles.bodyLargeGray50002,
           textInputAction: textInputAction,
           keyboardType: textInputType,

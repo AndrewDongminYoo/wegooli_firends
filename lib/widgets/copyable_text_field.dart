@@ -14,6 +14,7 @@ class CopyableTextField extends StatefulWidget {
 
 class _CopyableTextFieldState extends State<CopyableTextField> {
   late TextEditingController controller = TextEditingController();
+  final focusNode = FocusNode();
 
   @override
   void dispose() {
@@ -41,6 +42,7 @@ class _CopyableTextFieldState extends State<CopyableTextField> {
                 Expanded(
                     child: CustomTextFormField(
                   controller: controller,
+                  focusNode: focusNode,
                   filled: true,
                   enabled: true,
                   hintText: "xxxx-xxxx-xxxx-xxxx",

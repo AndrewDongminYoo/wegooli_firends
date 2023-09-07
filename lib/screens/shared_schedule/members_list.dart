@@ -21,19 +21,23 @@ class MembersList extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Obx(
-                  () => ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemBuilder: (_, int index) {
-                        final member = userController.members[index];
-                        return MemberAvatar(
-                            name: member.nickname ?? '-',
-                            avatarImagePath: Assets.images.imgAvatar2.path,
-                            personalColor: member.color ?? '#FFCC08');
-                      },
-                      itemCount: userController.members.length,
-                      shrinkWrap: true),
-                )
+                if (userController.members.length - 1 > 0)
+                  Obx(
+                    () => ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (_, int index) {
+                          final currentUser = userController.currentUser.value;
+                          final member = userController.members
+                              .where((it) => currentUser.id != it.accountId)
+                              .toList()[index];
+                          return MemberAvatar(
+                              name: member.nickname ?? '-',
+                              avatarImagePath: Assets.images.imgAvatar2.path,
+                              personalColor: member.color ?? '#FFCC08');
+                        },
+                        itemCount: userController.members.length - 1,
+                        shrinkWrap: true),
+                  ),
               ],
             )));
   }

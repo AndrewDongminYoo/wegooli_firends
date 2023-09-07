@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 // 📦 Package imports:
 import 'package:get/get.dart';
+import 'package:wegooli_friends/screens/team.invitation.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
@@ -15,14 +16,19 @@ class MainApplication extends StatefulWidget {
 }
 
 class _MainApplicationState extends State<MainApplication> {
+  final userController = UserController.to;
+
   @override
   Widget build(BuildContext context) {
+    print('userController.teams.length ${userController.teams.length}');
     final id = 1;
     final navigatorKey = Get.nestedKey(id);
     return Scaffold(
       body: Navigator(
           key: navigatorKey,
-          initialRoute: AppRoutes.sharedSchedule,
+          initialRoute: userController.teams.length > 0
+              ? AppRoutes.sharedSchedule
+              : AppRoutes.teamInvitation,
           onGenerateRoute: (settings) {
             late Widget page;
             switch (settings.name) {
@@ -32,6 +38,8 @@ class _MainApplicationState extends State<MainApplication> {
                 page = const SmartKeyAvailablePage();
               case AppRoutes.myProfile:
                 page = const MyProfilePage();
+              case AppRoutes.teamInvitation:
+                page = TeamInvitation();
               default:
                 page = const SharedCalendar();
             }

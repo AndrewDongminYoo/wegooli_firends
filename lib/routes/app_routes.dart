@@ -28,6 +28,7 @@ class AppRoutes {
   static const String unsubscribeConfirm = '/unsubscribe_confirm';
   static const String unsubscribeWarn = '/unsubscribe_warn';
   static const String upcomingUnsubscription = '/upcoming_unsubscription';
+  static const String teamInvitation = '/team_invitation';
 
   static List<GetPage> pages = [
     GetPage(
@@ -107,11 +108,6 @@ class AppRoutes {
     ),
     GetPage(
       bindings: [TeamCommunityBinding()],
-      name: sendingInvitation,
-      page: () => const SendingInvitationLog(),
-    ),
-    GetPage(
-      bindings: [TeamCommunityBinding()],
       name: sharedSchedule,
       page: () => const MainApplication(),
     ),
@@ -152,8 +148,13 @@ class AppRoutes {
     ),
     GetPage(
       bindings: [UserAccountBinding()],
+      name: teamInvitation,
+      page: () => TeamInvitation(),
+    ),
+    GetPage(
+      bindings: [UserAccountBinding()],
       name: appGateway,
       page: () => GatewayScreen(),
-    )
+    ),
   ];
 }

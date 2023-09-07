@@ -116,10 +116,11 @@ Widget? rangeHighlightBuilder(
 /// [singleMarkerBuilder]가 지정되지 않은 경우 기본 이벤트 마커가 표시됩니다([CalendarStyle]로 사용자 지정 가능).
 Widget? singleMarkerBuilder(
     BuildContext context, DateTime day, Schedule event) {
+  // print('day ${day} , schedule: ${event.highlightColor}');
   return Container(
-    width: 3,
-    height: 3,
-    margin: const EdgeInsets.only(bottom: 10),
+    width: 5,
+    height: 5,
+    margin: EdgeInsets.only(right: 3),
     alignment: Alignment.topCenter,
     decoration: BoxDecoration(
       shape: BoxShape.circle,
@@ -163,7 +164,7 @@ CalendarBuilders<Schedule> builders = const CalendarBuilders(
     markerBuilder: markerBuilder,
     outsideBuilder: outsideBuilder,
     rangeEndBuilder: rangeEndBuilder,
-    rangeHighlightBuilder: rangeHighlightBuilder,
+    // rangeHighlightBuilder: rangeHighlightBuilder,
     rangeStartBuilder: rangeStartBuilder,
     selectedBuilder: selectedBuilder,
     singleMarkerBuilder: singleMarkerBuilder,

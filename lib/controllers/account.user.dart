@@ -236,28 +236,21 @@ class UserController extends GetxController {
       return;
     }
     final response =
-        await api.selectTeamAccountList(accountId: currentUser.value.id!);
-    // print('findMembers : $response');
-    List<TeamAccountConnectionResponse>? teamList0 = response.data;
-    if (teamList0 != null && teamList0.isNotEmpty) {
-      int? teamSeq = teamList0.firstOrNull?.teamSeq;
-      if (teamSeq == null) {
-        return;
-      }
-      final response2 = await api.selectTeamAccountList(teamSeq: teamSeq);
-      List<TeamAccountConnectionResponse>? teamList = response2.data;
-      if (teamList != null && teamList.isNotEmpty) {
-        teams(teamList);
-        // NOTE: 현재는 Team이 1개만 존재한다고 가정하기 때문에 첫번째 Team 정보로만 연결한다.
-        // teams.first.account
-        //     ?.forEach((it) => !members.contains(it) ? members.add(it) : null);
-        List<TeamAccountModel>? accountList = teams.first.account;
-        if (accountList != null && accountList.isNotEmpty) {
-          members(teams.first.account!
-              .where((member) => currentUser.value.id! != member.accountId)
-              .toList());
-          // print('findMembers : ${teams.first.account}');
-        }
+        await api.selectTeamAccountList(accountId: currentUser.value.id!, isLeaved: 'N');
+    print('findMembers : $response');
+    List<TeamAccountConnectionResponse>? teamList = response.data;
+
+    if (teamList != null && teamList.isNotEmpty) {
+      teams(teamList);
+      // NOTE: 현재는 Team이 1개만 존재한다고 가정하기 때문에 첫번째 Team 정보로만 연결한다.
+      // teams.first.account
+      //     ?.forEach((it) => !members.contains(it) ? members.add(it) : null);
+      List<TeamAccountModel>? accountList = teams.first.account;
+      if (accountList != null && accountList.isNotEmpty) {
+        members(teams.first.account!
+            // .where((member) => currentUser.value.id! != member.accountId)
+            .toList());
+        // print('findMembers : ${teams.first.account}');
       }
     }
     print('members : ${members.toString()}');
@@ -268,7 +261,7 @@ class UserController extends GetxController {
   }
 
   int? getTeamSeq() {
-    return teams.first.teamSeq;
+    return teams.firstOrNull?.teamSeq;
   }
 
   Future<List<Schedule>> retrieveSchedules() async {
@@ -305,14 +298,13 @@ class UserController extends GetxController {
   Color? getColor(String accountId) {
     String? hexColor = members
         .firstWhereOrNull((member) => member.accountId == accountId)
-        ?.color
-        ?.substring(1);
+        ?.color;
+    // print('accountId $accountId hexColor: $hexColor');
     if (hexColor == null) {
       return null;
     }
     // Color type이 다름
     // return colorFromHex(hex);
-    final rgb = colorFromHex(hexColor).toRgbColor();
-    return Color.fromRGBO(rgb.r.toInt(), rgb.g.toInt(), rgb.b.toInt(), 0);
+    return Color(int.parse(colorFromHex(hexColor).toString(), radix: 16));
   }
 }

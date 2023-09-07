@@ -1,5 +1,6 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 // 📦 Package imports:
 import 'package:get/get.dart';
@@ -54,20 +55,23 @@ class SendingInvitationLog extends GetWidget<VehicleController> {
                   contentPadding:
                       getPadding(left: 12, top: 14, right: 12, bottom: 14),
                   filled: true,
-                  enabled: false,
+                  enabled: true,
                   textStyle: CustomTextStyles.bodyLargeGray50003,
                   hintStyle: CustomTextStyles.bodyLargeGray50003,
                   fillColor: theme.colorScheme.onPrimaryContainer),
               CustomElevatedButton(
-                  onTap: () {
-                    /// FIXME: controller.invitation.text 값을 클립보드에 복사 / 또는 공유 모달 띄우기
-                    Get.dialog(
-                      AlertDialog(
-                        title: Text(controller.invitation.text),
-                      ),
-                    );
+                  onTap: () async {
+                    // Clipboard.setData(
+                    // ClipboardData(text: controller.invitation.text));
+                    // Get.dialog(
+                    //   AlertDialog(
+                    //     title: Text('복사 완료.'),
+                    //   ),
+                    // );
+                    await controller.joinTeam();
+                    goBack();
                   },
-                  text: l10ns.copy,
+                  text: l10ns.confirm,
                   margin: getMargin(top: 25),
                   buttonStyle: CustomButtonStyles.fillPrimaryB10.copyWith(
                       fixedSize: MaterialStateProperty.all<Size>(

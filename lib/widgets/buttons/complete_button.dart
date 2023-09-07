@@ -1,14 +1,12 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:get/get.dart';
-
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
-class ValidatePhoneCompleteButton extends GetWidget<UserController> {
-  const ValidatePhoneCompleteButton({super.key});
+class ValidatePhoneCompleteButton extends StatelessWidget {
+  const ValidatePhoneCompleteButton({super.key, required this.controller});
+  final UserController controller;
 
   @override
   Widget build(BuildContext context) {

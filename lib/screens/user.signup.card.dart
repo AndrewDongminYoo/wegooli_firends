@@ -10,7 +10,10 @@ import '/core/app_export.dart';
 class RegisterCreditCard extends GetWidget<PaymentCardController> {
   final paymentCardController = PaymentCardController.to;
   final userController = UserController.to;
-  final _birthday = FocusNode();
+  final birthday = FocusNode();
+  final cardNums = FocusNode();
+  final cardPins = FocusNode();
+  final expMonth = FocusNode();
   RegisterCreditCard({super.key});
 
   @override
@@ -49,7 +52,10 @@ class RegisterCreditCard extends GetWidget<PaymentCardController> {
                       CustomInputLabel(
                           labelText: l10ns.socialSecurityNumberFirstDigit),
                       BirthdayNumberFormField(
-                                  controller: userController, focusNode: _birthday, readonly: false),
+                        controller: userController,
+                        focusNode: birthday,
+                        readonly: true,
+                      )
                     ])),
             Padding(
                 padding: getPadding(top: 29, bottom: 5),

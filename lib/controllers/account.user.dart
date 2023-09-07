@@ -59,20 +59,6 @@ class UserController extends GetxController {
   RxBool isWaitingOtpCode = false.obs;
   RxBool verifyCodeExpire = false.obs;
 
-  // UserControllerApi api = wegooli.getUserControllerApi();
-  // await api.checkId();
-  // await api.generateToken();
-  // await api.getUserDetail();
-  // await api.login();
-  // await api.logOut();
-  // await api.selectAccount();
-  // await api.selectMember();
-  // await api.selectUserList();
-  // await api.signIn();
-  // await api.signOut();
-  // await api.signup();
-  // await api.updateUser();
-
   bool get isValidatedPhone {
     // TODO: 휴대폰 인증 로직이 필요합니다.
     return true;

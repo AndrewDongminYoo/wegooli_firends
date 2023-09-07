@@ -1,4 +1,3 @@
-export 'controllers/account.agreement.dart';
 export 'controllers/account.dart';
 export 'controllers/account.license.dart';
 export 'controllers/account.payment.dart';

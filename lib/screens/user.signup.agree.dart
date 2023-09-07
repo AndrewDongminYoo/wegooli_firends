@@ -1,22 +1,54 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:get/get.dart';
-
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
-class AcceptTerms extends GetWidget<AccountAgreementController> {
+class AcceptTerms extends StatefulWidget {
   const AcceptTerms({super.key});
+  @override
+  State<AcceptTerms> createState() => _AcceptTermsState();
+}
+
+class _AcceptTermsState extends State<AcceptTerms> {
+  Account userAgreement = Account();
+  List<AccountAgreementModel> accountAgreement = [];
+
+  bool isAcceptedTerm0 = false;
+  bool isAcceptedTerm1 = false;
+  bool isAcceptedTerm2 = false;
+  bool isAcceptedTerm3 = false;
+  bool isAcceptedTerm4 = false;
+  bool isAcceptedTerm5 = false;
+  bool isAcceptedTerm6 = false;
+
+  bool get isAllTermsAccepted {
+    return (isAcceptedTerm0 &&
+        isAcceptedTerm1 &&
+        isAcceptedTerm2 &&
+        isAcceptedTerm3 &&
+        isAcceptedTerm4 &&
+        isAcceptedTerm5 &&
+        isAcceptedTerm6);
+  }
+
+  set isAllTermsAccepted(bool e) {
+    isAcceptedTerm0 = e;
+    isAcceptedTerm1 = e;
+    isAcceptedTerm2 = e;
+    isAcceptedTerm3 = e;
+    isAcceptedTerm4 = e;
+    isAcceptedTerm5 = e;
+    isAcceptedTerm6 = e;
+  }
 
   void checkAll(bool value) {
-    controller.isAcceptedTerm1.value = value;
-    controller.isAcceptedTerm2.value = value;
-    controller.isAcceptedTerm3.value = value;
-    controller.isAcceptedTerm4.value = value;
-    controller.isAcceptedTerm5.value = value;
-    controller.isAcceptedTerm6.value = value;
+    isAcceptedTerm1 = value;
+    isAcceptedTerm2 = value;
+    isAcceptedTerm3 = value;
+    isAcceptedTerm4 = value;
+    isAcceptedTerm5 = value;
+    isAcceptedTerm6 = value;
   }
 
   @override
@@ -45,9 +77,9 @@ class AcceptTerms extends GetWidget<AccountAgreementController> {
                             () => CustomCheckboxButton(
                                 alignment: Alignment.center,
                                 text: l10ns.acceptAll,
-                                value: controller.isAllTermsAccepted.value,
+                                value: isAllTermsAccepted,
                                 onChange: (value) {
-                                  controller.isAllTermsAccepted.value = value;
+                                  isAllTermsAccepted = value;
                                 }),
                           ),
                         )),
@@ -58,9 +90,9 @@ class AcceptTerms extends GetWidget<AccountAgreementController> {
                             children: [
                               Obx(() => CustomCheckboxButton(
                                   text: l10ns.termsOfServiceRequiredAgreement,
-                                  value: controller.isAcceptedTerm0.value,
+                                  value: isAcceptedTerm0,
                                   onChange: (value) {
-                                    controller.isAcceptedTerm0.value = value;
+                                    isAcceptedTerm0 = value;
                                   })),
                               CustomImageView(
                                   svgPath: Assets.svg.imgArrowLeft.path,
@@ -75,9 +107,9 @@ class AcceptTerms extends GetWidget<AccountAgreementController> {
                             children: [
                               Obx(() => CustomCheckboxButton(
                                   text: l10ns.privacyPolicyRequiredConsent,
-                                  value: controller.isAcceptedTerm1.value,
+                                  value: isAcceptedTerm1,
                                   onChange: (value) {
-                                    controller.isAcceptedTerm1.value = value;
+                                    isAcceptedTerm1 = value;
                                   })),
                               CustomImageView(
                                   svgPath: Assets.svg.imgArrowLeft.path,
@@ -93,9 +125,9 @@ class AcceptTerms extends GetWidget<AccountAgreementController> {
                               Obx(() => CustomCheckboxButton(
                                   text:
                                       l10ns.carRentalTermsAndConditionsRequired,
-                                  value: controller.isAcceptedTerm2.value,
+                                  value: isAcceptedTerm2,
                                   onChange: (value) {
-                                    controller.isAcceptedTerm2.value = value;
+                                    isAcceptedTerm2 = value;
                                   })),
                               CustomImageView(
                                   svgPath: Assets.svg.imgArrowLeft.path,
@@ -110,9 +142,9 @@ class AcceptTerms extends GetWidget<AccountAgreementController> {
                             children: [
                               Obx(() => CustomCheckboxButton(
                                   text: l10ns.locationBasedServicesTerms,
-                                  value: controller.isAcceptedTerm3.value,
+                                  value: isAcceptedTerm3,
                                   onChange: (value) {
-                                    controller.isAcceptedTerm3.value = value;
+                                    isAcceptedTerm3 = value;
                                   })),
                               CustomImageView(
                                   svgPath: Assets.svg.imgArrowLeft.path,
@@ -128,9 +160,9 @@ class AcceptTerms extends GetWidget<AccountAgreementController> {
                               () => CustomCheckboxButton(
                                   text: l10ns
                                       .consentToCollectionAndUseOfVehicleLocationInfo,
-                                  value: controller.isAcceptedTerm4.value,
+                                  value: isAcceptedTerm4,
                                   onChange: (value) {
-                                    controller.isAcceptedTerm4.value = value;
+                                    isAcceptedTerm4 = value;
                                   }),
                             ),
                           ),
@@ -147,9 +179,9 @@ class AcceptTerms extends GetWidget<AccountAgreementController> {
                             child: Obx(
                               () => CustomCheckboxButton(
                                   text: l10ns.useOfPersonalInfoForMarketing,
-                                  value: controller.isAcceptedTerm5.value,
+                                  value: isAcceptedTerm5,
                                   onChange: (value) {
-                                    controller.isAcceptedTerm5.value = value;
+                                    isAcceptedTerm5 = value;
                                   }),
                             ),
                           ),

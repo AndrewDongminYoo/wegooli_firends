@@ -77,12 +77,14 @@ class LicenseController extends GetxController {
   Future<int> inputLicenseInput() async {
     final api = wegooli.getLicenseControllerApi();
     final licenseRequest = LicenseRequest();
-    Response<bool> valid = await api.isValidLicense(licenseRequest: licenseRequest);
+    Response<bool> valid =
+        await api.isValidLicense(licenseRequest: licenseRequest);
     if (!valid.data!) {
       _licenseInputSucceed = false;
       return 0;
     }
-    Response<int> success = await api.insertLicense(licenseRequest: licenseRequest);
+    Response<int> success =
+        await api.insertLicense(licenseRequest: licenseRequest);
     if (success.data != null) {
       _licenseInputSucceed = true;
       return success.data!;
@@ -92,11 +94,6 @@ class LicenseController extends GetxController {
       return -1;
     }
   }
-
-  // api.insertLicense
-  // api.selectLicense
-  // api.selectLicenseList
-  // api.selectServiceStop
 
   @override
   void onClose() {

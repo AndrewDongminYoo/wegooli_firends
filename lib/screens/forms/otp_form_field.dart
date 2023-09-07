@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class OtpForm extends StatefulWidget {
-  const OtpForm({
+class OtpFormField extends StatefulWidget {
+  const OtpFormField({
     super.key,
     required this.length,
     required this.callBack,
@@ -11,10 +11,10 @@ class OtpForm extends StatefulWidget {
   final int length;
   final Function(String) callBack;
   @override
-  State<OtpForm> createState() => _OtpFormState();
+  State<OtpFormField> createState() => _OtpFormFieldState();
 }
 
-class _OtpFormState extends State<OtpForm> {
+class _OtpFormFieldState extends State<OtpFormField> {
   List<TextEditingController> _pins = [];
 
   @override

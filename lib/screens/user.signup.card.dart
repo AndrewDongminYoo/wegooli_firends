@@ -1,6 +1,5 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 // 📦 Package imports:
 import 'package:get/get.dart';
@@ -29,23 +28,7 @@ class RegisterCreditCard extends GetWidget<PaymentCardController> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   CustomInputLabel(labelText: l10ns.cardNumber),
-                  CustomTextFormField(
-                      controller: controller.creditCardId,
-                      margin: getMargin(top: 4),
-                      contentPadding:
-                          getPadding(left: 12, top: 14, right: 12, bottom: 14),
-                      textStyle: CustomTextStyles.bodyLargeGray50003,
-                      hintStyle: CustomTextStyles.bodyLargeGray50003,
-                      inputFormatters: <TextInputFormatter>[
-                        SeperateTextFormatter(
-                            sample: 'XXXX XXXX XXXX XXXX', separator: ' '),
-                        LengthLimitingTextInputFormatter(19),
-                        FilteringTextInputFormatter.allow(r'[0-9 ]'),
-                      ],
-                      hintText: "0000\t0000\t0000\t0000",
-                      textInputAction: TextInputAction.next,
-                      filled: true,
-                      fillColor: theme.colorScheme.onPrimaryContainer)
+                  CreditCardFormField(controller: controller)
                 ]),
             Padding(
                 padding: getPadding(top: 29),
@@ -54,23 +37,7 @@ class RegisterCreditCard extends GetWidget<PaymentCardController> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       CustomInputLabel(labelText: l10ns.expirationDate),
-                      CustomTextFormField(
-                          controller: controller.expirationDT,
-                          margin: getMargin(top: 4),
-                          contentPadding: getPadding(
-                              left: 12, top: 14, right: 12, bottom: 14),
-                          textStyle: CustomTextStyles.bodyLargeGray50003,
-                          hintStyle: CustomTextStyles.bodyLargeGray50003,
-                          hintText: "MM/YY",
-                          inputFormatters: [
-                            SeperateTextFormatter(
-                                sample: 'XX/XX', separator: '/'),
-                            LengthLimitingTextInputFormatter(5),
-                            FilteringTextInputFormatter.allow(r'[0-9/]'),
-                          ],
-                          textInputAction: TextInputAction.next,
-                          filled: true,
-                          fillColor: theme.colorScheme.onPrimaryContainer)
+                      CardExpMonthYearFormField(controller: controller)
                     ])),
             Padding(
                 padding: getPadding(top: 29),
@@ -80,23 +47,7 @@ class RegisterCreditCard extends GetWidget<PaymentCardController> {
                     children: [
                       CustomInputLabel(
                           labelText: l10ns.socialSecurityNumberFirstDigit),
-                      CustomTextFormField(
-                          enabled: userController.birthDay.text.isNotEmpty
-                              ? false
-                              : true,
-                          margin: getMargin(top: 4),
-                          contentPadding: getPadding(
-                              left: 12, top: 14, right: 12, bottom: 14),
-                          textStyle: CustomTextStyles.bodyLargeGray50003,
-                          hintText: "YYMMDD",
-                          inputFormatters: [
-                            LengthLimitingTextInputFormatter(6),
-                          ],
-                          controller: userController.birthDay,
-                          initialValue: userController.birthDay.text,
-                          textInputAction: TextInputAction.next,
-                          filled: true,
-                          fillColor: theme.colorScheme.onPrimaryContainer)
+                      ReadOnlyBirthDayFormField(userController: userController)
                     ])),
             Padding(
                 padding: getPadding(top: 29, bottom: 5),
@@ -106,15 +57,7 @@ class RegisterCreditCard extends GetWidget<PaymentCardController> {
                     children: [
                       CustomInputLabel(
                           labelText: l10ns.first2DigitsOfCardPassword),
-                      CustomTextFormField(
-                          controller: controller.cardPassword,
-                          inputFormatters: [
-                            LengthLimitingTextInputFormatter(2),
-                            FilteringTextInputFormatter.digitsOnly
-                          ],
-                          margin: getMargin(top: 4),
-                          filled: true,
-                          fillColor: theme.colorScheme.onPrimaryContainer)
+                      CardPinNumberFormField(controller: controller)
                     ]))
           ])),
       bottomNavigationBar: Container(

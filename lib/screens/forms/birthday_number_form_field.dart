@@ -5,8 +5,8 @@ import 'package:flutter/services.dart';
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
-class SocialSecurity7NumberInput extends StatelessWidget {
-  const SocialSecurity7NumberInput({
+class BirthdayNumberFormField extends StatelessWidget {
+  const BirthdayNumberFormField({
     super.key,
     required this.controller,
     required this.focusNode,
@@ -14,30 +14,25 @@ class SocialSecurity7NumberInput extends StatelessWidget {
 
   final UserController controller;
   final FocusNode focusNode;
-
   @override
   Widget build(BuildContext context) {
-    return CustomTextFormField(
+    return Obx(() => CustomTextFormField(
         width: getHorizontalSize(158),
-        controller: controller.socialId,
+        controller: controller.birthDay,
         margin: getMargin(top: 4),
-        contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),
         inputFormatters: [
           FilteringTextInputFormatter.digitsOnly,
           FilteringTextInputFormatter.singleLineFormatter,
-          LengthLimitingTextInputFormatter(7)
+          LengthLimitingTextInputFormatter(6)
         ],
         focusNode: focusNode,
-
-        /// 특정한 글자를 '*' 대신 사용할 수 있도록 구현 (obscureText가 true인 경우에 한하여 기능이 동작한다.)
-        obscureChar: '○',
-        obscureText: true,
         textInputType: TextInputType.number,
+        contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),
         textStyle: CustomTextStyles.bodyLargeGray50003,
-        hintText: "●●●●●●●",
+        hintText: "YYMMDD",
         hintStyle: CustomTextStyles.bodyLargeGray50003,
         textInputAction: TextInputAction.next,
         filled: true,
-        fillColor: theme.colorScheme.onPrimaryContainer);
+        fillColor: theme.colorScheme.onPrimaryContainer));
   }
 }

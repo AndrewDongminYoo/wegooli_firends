@@ -63,17 +63,7 @@ class RegisterSuccess extends GetWidget<UserController> {
                                       ),
                                     )),
                               ]),
-                          CustomTextFormField(
-                              textInputType: TextInputType.visiblePassword,
-                              controller: controller.inviteCode,
-                              margin: getMargin(top: 4),
-                              contentPadding: getPadding(
-                                  left: 12, top: 14, right: 12, bottom: 14),
-                              textStyle: CustomTextStyles.bodyLargeGray50003,
-                              hintText: l10ns.invitationCode,
-                              hintStyle: CustomTextStyles.bodyLargeGray50003,
-                              filled: true,
-                              fillColor: theme.colorScheme.onPrimaryContainer),
+                          InviteCodeFormField(controller: controller),
                           Column(
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,

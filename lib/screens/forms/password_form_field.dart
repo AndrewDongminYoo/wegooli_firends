@@ -1,8 +1,11 @@
 // 🐦 Flutter imports:
-
 import 'package:flutter/material.dart';
+
+// 📦 Package imports:
 import 'package:get/get.dart';
-import 'package:wegooli_friends/lib.dart';
+
+// 🌎 Project imports:
+import '/lib.dart';
 
 class PasswordFormField extends StatelessWidget {
   const PasswordFormField({
@@ -17,16 +20,14 @@ class PasswordFormField extends StatelessWidget {
     return Obx(() => CustomTextFormField(
           controller: controller.password,
           margin: getMargin(top: 12),
-          contentPadding: getPadding(
-              left: 12, top: 14, right: 12, bottom: 14),
+          contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),
           textStyle: CustomTextStyles.bodyLargeGray50003,
           hintText: l10ns.password,
           obscureText: controller.isShowPassword.isFalse,
           hintStyle: CustomTextStyles.bodyLargeGray50003,
           fillColor: theme.colorScheme.onPrimaryContainer,
           suffix: Container(
-              margin: getMargin(
-                  left: 30, top: 12, right: 10, bottom: 12),
+              margin: getMargin(left: 30, top: 12, right: 10, bottom: 12),
               child: CustomImageView(
                   svgPath: controller.isShowPassword.value
                       ? Assets.svg.imgEyeOpened.path
@@ -34,12 +35,10 @@ class PasswordFormField extends StatelessWidget {
                   onTap: () {
                     controller.isShowPassword.toggle();
                   })),
-          suffixConstraints:
-              BoxConstraints(maxHeight: getVerticalSize(48)),
+          suffixConstraints: BoxConstraints(maxHeight: getVerticalSize(48)),
           filled: true,
-          validator: (value) => value != null && value.isNotEmpty
-              ? null
-              : '필수 입력 항목입니다.',
+          validator: (value) =>
+              value != null && value.isNotEmpty ? null : '필수 입력 항목입니다.',
         ));
   }
 }

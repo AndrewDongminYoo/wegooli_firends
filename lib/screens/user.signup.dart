@@ -1,6 +1,5 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 // 📦 Package imports:
 import 'package:get/get.dart';
@@ -143,32 +142,7 @@ class RegisterZipCode extends GetWidget<UserController> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         row4,
-                        CustomTextFormField(
-                            enabled: false,
-                            textInputType: TextInputType.number,
-                            width: getHorizontalSize(160),
-                            controller: controller.postCode,
-                            margin: getMargin(top: 4),
-                            contentPadding: getPadding(
-                                left: 12, top: 14, right: 12, bottom: 14),
-                            validator: (String? value) {
-                              if (value == null || value.isEmpty) {
-                                return l10ns.yourZipCodeIsRequired;
-                              } else if (value.isNumericOnly) {
-                                return value;
-                              }
-                              return null;
-                            },
-                            textStyle: CustomTextStyles.bodyLargeGray50003,
-                            hintText: l10ns.zipCode,
-                            hintStyle: CustomTextStyles.bodyLargeGray50003,
-                            textInputAction: TextInputAction.next,
-                            filled: true,
-                            inputFormatters: [
-                              LengthLimitingTextInputFormatter(6),
-                              FilteringTextInputFormatter.digitsOnly,
-                            ],
-                            fillColor: theme.colorScheme.onPrimaryContainer)
+                        PostCodeFormField(controller: controller)
                       ]),
                 ),
               ),
@@ -200,31 +174,8 @@ class RegisterZipCode extends GetWidget<UserController> {
                         );
                       }))
             ]),
-            CustomTextFormField(
-                enabled: false,
-                textInputType: TextInputType.streetAddress,
-                controller: controller.primaryAddress,
-                margin: getMargin(top: 10),
-                contentPadding:
-                    getPadding(left: 12, top: 14, right: 12, bottom: 14),
-                textStyle: CustomTextStyles.bodyLargeGray50003,
-                hintText: l10ns.primaryAddress,
-                hintStyle: CustomTextStyles.bodyLargeGray50003,
-                textInputAction: TextInputAction.next,
-                filled: true,
-                fillColor: theme.colorScheme.onPrimaryContainer),
-            CustomTextFormField(
-                textInputType: TextInputType.streetAddress,
-                controller: controller.detailAddress,
-                margin: getMargin(top: 10),
-                contentPadding:
-                    getPadding(left: 12, top: 14, right: 12, bottom: 14),
-                textStyle: CustomTextStyles.bodyLargeGray50003,
-                hintText: "동·호수 등 상세 주소",
-                hintStyle: CustomTextStyles.bodyLargeGray50003,
-                textInputAction: TextInputAction.next,
-                filled: true,
-                fillColor: theme.colorScheme.onPrimaryContainer),
+            PrimaryAddressFormField(controller: controller),
+            DetailAddressFormField(controller: controller),
             Padding(
                 padding: getPadding(top: 27),
                 child: Column(
@@ -232,17 +183,7 @@ class RegisterZipCode extends GetWidget<UserController> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       row3,
-                      CustomTextFormField(
-                          textInputType: TextInputType.emailAddress,
-                          controller: controller.emailAddress,
-                          margin: getMargin(top: 4),
-                          contentPadding: getPadding(
-                              left: 12, top: 14, right: 12, bottom: 14),
-                          textStyle: CustomTextStyles.bodyLargeGray50003,
-                          hintText: l10ns.enterEmailAddress,
-                          hintStyle: CustomTextStyles.bodyLargeGray50003,
-                          filled: true,
-                          fillColor: theme.colorScheme.onPrimaryContainer)
+                      EmailAddressFormField0(controller: controller)
                     ])),
             Padding(
                 padding: getPadding(top: 27),
@@ -251,31 +192,7 @@ class RegisterZipCode extends GetWidget<UserController> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       row2,
-                      Obx(() => CustomTextFormField(
-                          textInputType: TextInputType.emailAddress,
-                          controller: controller.password,
-                          margin: getMargin(top: 4),
-                          contentPadding: getPadding(
-                              left: 12, top: 14, right: 12, bottom: 14),
-                          textStyle: CustomTextStyles.bodyLargeGray50003,
-                          hintText: l10ns
-                              .alphanumericSpecialCharacterCombination612Characters,
-                          obscureText: controller.isShowPassword.isFalse,
-                          hintStyle: CustomTextStyles.bodyLargeGray50003,
-                          suffix: Container(
-                              margin: getMargin(
-                                  left: 30, top: 12, right: 10, bottom: 12),
-                              child: CustomImageView(
-                                  svgPath: controller.isShowPassword.value
-                                      ? Assets.svg.imgEyeOpened.path
-                                      : Assets.svg.imgEyeCrossedOut.path,
-                                  onTap: () {
-                                    controller.isShowPassword.toggle();
-                                  })),
-                          suffixConstraints:
-                              BoxConstraints(maxHeight: getVerticalSize(48)),
-                          filled: true,
-                          fillColor: theme.colorScheme.onPrimaryContainer)),
+                      PasswordInputFormField(controller: controller),
                     ])),
             Padding(
                 padding: getPadding(top: 27),
@@ -284,31 +201,7 @@ class RegisterZipCode extends GetWidget<UserController> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       row,
-                      Obx(() => CustomTextFormField(
-                          textInputType: TextInputType.emailAddress,
-                          controller: controller.rePassword,
-                          margin: getMargin(top: 4),
-                          contentPadding: getPadding(
-                              left: 12, top: 14, right: 12, bottom: 14),
-                          textStyle: CustomTextStyles.bodyLargeGray50003,
-                          hintText: l10ns.confirmPassword,
-                          obscureText: controller.isShowConfirmPassword.isFalse,
-                          hintStyle: CustomTextStyles.bodyLargeGray50003,
-                          suffix: Container(
-                              margin: getMargin(
-                                  left: 30, top: 12, right: 10, bottom: 12),
-                              child: CustomImageView(
-                                  svgPath:
-                                      controller.isShowConfirmPassword.value
-                                          ? Assets.svg.imgEyeOpened.path
-                                          : Assets.svg.imgEyeCrossedOut.path,
-                                  onTap: () {
-                                    controller.isShowConfirmPassword.toggle();
-                                  })),
-                          suffixConstraints:
-                              BoxConstraints(maxHeight: getVerticalSize(48)),
-                          filled: true,
-                          fillColor: theme.colorScheme.onPrimaryContainer)),
+                      PasswordConfirmFormField(controller: controller),
                     ])),
             Padding(
                 padding: getPadding(top: 27),
@@ -317,18 +210,7 @@ class RegisterZipCode extends GetWidget<UserController> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       row5,
-                      Obx(() => CustomTextFormField(
-                          textInputType: TextInputType.emailAddress,
-                          controller: controller.nickname,
-                          margin: getMargin(top: 4),
-                          contentPadding: getPadding(
-                              left: 12, top: 14, right: 12, bottom: 14),
-                          textStyle: CustomTextStyles.bodyLargeGray50003,
-                          hintText: l10ns.enterANicknameUpTo10Characters,
-                          obscureText: controller.isShowConfirmPassword.isFalse,
-                          hintStyle: CustomTextStyles.bodyLargeGray50003,
-                          filled: true,
-                          fillColor: theme.colorScheme.onPrimaryContainer)),
+                      NickNameFormField(controller: controller),
                     ]))
           ])),
       bottomNavigationBar: Container(

@@ -92,17 +92,7 @@ class RegisterLicense extends GetWidget<LicenseController> {
                             controller.yearOfLicenseIssuance.onSelected(value);
                           }))
                 ])),
-            CustomTextFormField(
-                controller: controller.licenseNumbers,
-                margin: getMargin(top: 10),
-                contentPadding:
-                    getPadding(left: 12, top: 14, right: 12, bottom: 14),
-                textStyle: CustomTextStyles.bodyLargeGray50003,
-                hintText: l10ns.pleaseEnterYourLicenseNumbersOnly,
-                hintStyle: CustomTextStyles.bodyLargeGray50003,
-                textInputAction: TextInputAction.next,
-                filled: true,
-                fillColor: theme.colorScheme.onPrimaryContainer),
+            LicenseNumbersFormField(controller: controller),
             Padding(
                 padding: getPadding(top: 26),
                 child: Column(
@@ -111,18 +101,7 @@ class RegisterLicense extends GetWidget<LicenseController> {
                     children: [
                       CustomInputLabel(
                           labelText: l10ns.eligibilityPeriodTestExpirationDate),
-                      CustomTextFormField(
-                          controller: controller.expirationDate,
-                          margin: getMargin(top: 4),
-                          contentPadding: getPadding(
-                              left: 12, top: 14, right: 12, bottom: 14),
-                          textStyle: CustomTextStyles.bodyLargeGray50003,
-                          hintText: l10ns
-                              .enterYourEligibilityPeriodTestExpirationDate,
-                          hintStyle: CustomTextStyles.bodyLargeGray50003,
-                          textInputAction: TextInputAction.next,
-                          filled: true,
-                          fillColor: theme.colorScheme.onPrimaryContainer)
+                      LicenseExpDateFormField(controller: controller)
                     ])),
             Padding(
                 padding: getPadding(top: 26, bottom: 5),
@@ -131,17 +110,7 @@ class RegisterLicense extends GetWidget<LicenseController> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       CustomInputLabel(labelText: l10ns.licenseIssueDate),
-                      CustomTextFormField(
-                          controller: controller.firstIssueYear,
-                          margin: getMargin(top: 4),
-                          contentPadding: getPadding(
-                              left: 12, top: 14, right: 12, bottom: 14),
-                          textStyle: CustomTextStyles.bodyLargeGray50003,
-                          hintText:
-                              l10ns.pleaseEnterYourLicenseIssueDateOnlyNumbers,
-                          hintStyle: CustomTextStyles.bodyLargeGray50003,
-                          filled: true,
-                          fillColor: theme.colorScheme.onPrimaryContainer)
+                      LicenseIssuedDateFormField(controller: controller)
                     ]))
           ])),
       bottomNavigationBar: Container(

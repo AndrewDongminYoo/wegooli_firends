@@ -31,7 +31,8 @@ class ValidatePhone extends GetWidget<UserController> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     CustomInputLabel(labelText: l10ns.name),
-                    NameTextInput(controller: controller, focusNode: _nameText)
+                    KoreanNameFormField(
+                        controller: controller, focusNode: _nameText)
                   ]),
               Padding(
                   padding: getPadding(top: 26, bottom: 7),
@@ -45,17 +46,18 @@ class ValidatePhone extends GetWidget<UserController> {
                         Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Birthday6NumberInput(
+                              BirthdayNumberFormField(
                                   controller: controller, focusNode: _birthday),
                               const Text("-", style: TextStyle(fontSize: 24)),
-                              SocialSecurity7NumberInput(
+                              SocialSecurityNumberFormField(
                                   controller: controller, focusNode: _socialId),
                             ]),
                         CustomGuideText(
                             text: l10ns
                                 .subscriptionsAreRestrictedToThoseUnderTheAgeOf26),
                       ])),
-              SMSValidationForm(controller: controller, focusNode: _phoneNum)
+              SMSValidationFormScreen(
+                  controller: controller, focusNode: _phoneNum)
             ])),
         bottomNavigationBar: const ValidatePhoneCompleteButton(),
       ),

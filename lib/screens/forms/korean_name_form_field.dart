@@ -5,8 +5,8 @@ import 'package:flutter/services.dart';
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
-class NameTextInput extends StatelessWidget {
-  const NameTextInput({
+class KoreanNameFormField extends StatelessWidget {
+  const KoreanNameFormField({
     super.key,
     required this.controller,
     required this.focusNode,
@@ -16,7 +16,7 @@ class NameTextInput extends StatelessWidget {
   final FocusNode focusNode;
   @override
   Widget build(BuildContext context) {
-    return CustomTextFormField(
+    return Obx(() => CustomTextFormField(
         controller: controller.fullName,
         margin: getMargin(top: 4),
         contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),
@@ -30,6 +30,6 @@ class NameTextInput extends StatelessWidget {
         ],
         focusNode: focusNode,
         filled: true,
-        fillColor: theme.colorScheme.onPrimaryContainer);
+        fillColor: theme.colorScheme.onPrimaryContainer));
   }
 }

@@ -159,7 +159,7 @@ class UserController extends GetxController {
       print('user.username: ${username.text}\nuser.password: ${password.text}');
       final response =
           await api.login(id: username.text, password: password.text);
-      print('response : $response');
+      // print('response : $response');
       Result? result = response.data?.result;
       String bearerToken = '';
       String token = '';
@@ -222,7 +222,7 @@ class UserController extends GetxController {
       return;
     }
     final response = await api.selectTeamAccountList(
-        accountId: currentUser.value.id!, isLeaved: 'N');
+        accountId: currentUser.value.id!, isLeaved: 'false');
     print('findMembers : $response');
     List<TeamAccountConnectionResponse>? teamList = response.data;
 

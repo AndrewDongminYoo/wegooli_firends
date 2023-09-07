@@ -16,7 +16,8 @@ import 'package:google_sign_in/google_sign_in.dart';
 
 // 🌎 Project imports:
 import '/controllers/account.user.dart';
-import 'main.dart';
+import '/lib.dart';
+import 'package:wegooli_friends/main.dart';
 
 extension on AuthMode {
   String get label => this == AuthMode.login

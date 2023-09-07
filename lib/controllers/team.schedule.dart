@@ -3,6 +3,7 @@ import 'dart:collection';
 import 'dart:ui';
 
 // 📦 Package imports:
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:table_calendar/table_calendar.dart';
 
@@ -16,12 +17,15 @@ class ScheduleController extends GetxController {
   final userController = UserController.to;
   DateTime focusedDay = kToday;
 
-  LinkedHashMap<DateTime, List<Schedule>> get events =>
+  /// [Map]을 사용하기로 한 경우, [LinkedHashMap]를 사용하는 것이 권장됩니다.
+  LinkedHashMap<DateTime, List<Schedule>>? _events =
+      LinkedHashMap<DateTime, List<Schedule>>();
+  LinkedHashMap<DateTime, List<Schedule>> get events => _events ??
       LinkedHashMap<DateTime, List<Schedule>>(
         equals: isSameDay,
         hashCode: getHashCode,
-      );
-  // ..addAll(eventSource);
+      )
+    ..addAll(eventSource);
 
   // Map<DateTime, List<Schedule>> get eventSource =>
   //     Map.fromIterable(List<int>.generate(10, (index) => index),
@@ -37,33 +41,32 @@ class ScheduleController extends GetxController {
   //         ],
   //       });
 
-  final RxMap<DateTime, List<Schedule>> _eventSource = RxMap.of({});
-  Map<DateTime, List<Schedule>> get eventSource => _eventSource;
+  RxMap<DateTime, List<Schedule>> _eventSource = RxMap.of({});
+  RxMap<DateTime, List<Schedule>> get eventSource => _eventSource;
+
   @override
-  void onInit() async {
-    // eventSource.clear();
+  void onInit() {
+    // print('AAA : ScheduleController.onInit() 🔥');
+    makeEventSource();
+    // ever(_eventSource,
+    //     (_) => print('AAA : _eventSource has changed 🔥 ${_eventSource}'));
     super.onInit();
-    final schedules = await retrieveSchedules();
-    // _eventSource = Map<DateTime, List<Schedule>>.fromIterable(schedules,
-    //     key: (it) => DateTime.parse(it.startAt), value: (it) => it);
-    // Map<DateTime, List<Schedule>> _eventSource = Map.of({});
-    for (Schedule schedule in schedules) {
-      DateTime startDate = DateTime.parse(schedule.startAt!);
-      DateTime endDate = DateTime.parse(schedule.endAt!);
-      int diffDays = endDate.difference(startDate).inDays;
-      for (var i = 0; i < diffDays; i++) {
-        DateTime key = startDate.add(Duration(days: i));
-        List<Schedule> value = _eventSource.getOrDefault(key, []);
-        value.add(schedule);
-        _eventSource.addIf(true, key.toUtc(), value);
-        print('eventSource Add : \nkey:${key.toUtc()}\nvalue:$value');
-      }
-    }
-    // events.addAll(_eventSource);
-    // print('_eventSource : $_eventSource');
-    print('_eventSource : $_eventSource');
-    // eventSource.addAll({kToday: await retrieveSchedules()});
   }
+
+  // @override
+  // void onReady() async {
+  //   print('AAA : [ready]ScheduleController.onInit() 🔥');
+  //   _eventSource.clear();
+  //   await makeEventSource();
+  //   ever(
+  //       _eventSource,
+  //       (_) =>
+  //           print('AAA : [ready]_eventSource has changed 🔥 ${_eventSource}'));
+
+  //   super.onInit();
+  //   // 1프레임 이후 (ui를 그리는 작업은 여기에)
+  //   super.onReady();
+  // }
 
   DateTime? _firstDay;
   DateTime get firstDay =>
@@ -96,48 +99,39 @@ class ScheduleController extends GetxController {
   RangeSelectionMode rangeSelectionMode = RangeSelectionMode
       .toggledOff; // Can be toggled on/off by long pressing a date
 
-  Color? getColor(String accountId) {
-    String? hexColor = userController.members
-        .firstWhereOrNull((member) => member.accountId == accountId)
-        ?.color
-        ?.substring(1);
-    if (hexColor == null) {
-      return null;
-    }
-    // Color type이 다름
-    // return colorFromHex(hex);
-    final rgb = colorFromHex(hexColor).toRgbColor();
-    return Color.fromRGBO(rgb.r.toInt(), rgb.g.toInt(), rgb.b.toInt(), 0);
-  }
+  // List<Schedule> eventLoader(DateTime dateTime) {
+  //   print('events[dateTime] ${_eventSource.getOrDefault(dateTime, [])}');
+  //   // return events.getOrDefault(dateTime, []);
+  //   return _eventSource.getOrDefault(dateTime, []);
+  // }
 
-  Future<List<Schedule>> retrieveSchedules() async {
-    if (userController.teams.isEmpty) {
-      return List.empty();
+  void makeEventSource() {
+    // final schedules = await retrieveSchedules();
+    final schedules = userController.schedules;
+    Map<DateTime, List<Schedule>> localEventSource = Map.of({});
+    for (Schedule schedule in schedules) {
+      DateTime startDate = DateTime.parse(schedule.startAt!);
+      DateTime endDate = DateTime.parse(schedule.endAt!);
+      int diffDays = endDate.difference(startDate).inDays;
+      for (var i = 0; i < diffDays; i++) {
+        DateTime key = startDate.add(Duration(days: i));
+        List<Schedule> value = localEventSource.getOrDefault(key, []);
+        value.add(schedule);
+        localEventSource.addIf(
+            true,
+            DateTime(key.year, key.month, key.day, key.hour, key.minute),
+            value);
+        // print('eventSource Add : \nkey:${key}\nvalue:$value');
+      }
     }
-    int? teamSeq = userController.teams[0].teamSeq;
-    if (teamSeq == null) {
-      return List.empty();
-    }
-    final response = await wegooli
-        .getScheduleControllerApi()
-        .selectScheduleList(teamSeq: teamSeq);
-    final schedules = response.data;
-    if (schedules == null) {
-      return List.empty();
-    }
-    print('schedules $schedules');
-    return schedules
-        .map((it) => Schedule(
-              accountId: it.accountId!,
-              seq: it.seq,
-              teamSeq: it.teamSeq,
-              delYn: it.delYn,
-              startAt: it.startAt,
-              endAt: it.endAt,
-              createdAt: it.createdAt,
-              updatedAt: it.updatedAt,
-              highlightColor: getColor(it.accountId!),
-            ))
-        .toList();
+    _eventSource(localEventSource);
+    // _eventSource.value = localEventSource;
+    // _eventSource.refresh();
+    // _eventSource.assignAll(localEventSource);
+    print('AAA : 🔥 makeEventSource');
+    // for (var eventSource in localEventSource.entries) {
+    //   _eventSource.update(eventSource.key, (value) => eventSource.value,
+    //       ifAbsent: () => eventSource.value);
+    // }
   }
 }

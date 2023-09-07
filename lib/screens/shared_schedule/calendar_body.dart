@@ -1,5 +1,6 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 // 📦 Package imports:
 import 'package:get/get_state_manager/src/simple/get_view.dart';
@@ -10,6 +11,43 @@ import '/core/app_export.dart';
 
 class CalendarBody extends GetView<ScheduleController> {
   const CalendarBody({super.key});
+  @override
+  Widget build(BuildContext context) {
+    // print('controller.eventSource => ${controller.eventSource}');
+    return Padding(
+        padding: getPadding(all: 16),
+        child: Container(
+            padding: getPadding(all: 16),
+            decoration: AppDecoration.outline
+                .copyWith(borderRadius: BorderRadiusStyle.circleBorder10),
+            child: Align(
+                alignment: Alignment.center,
+                child: TableCalendar<Schedule>(
+                  calendarFormat: controller.calendarFormat,
+                  daysOfWeekHeight: 30,
+                  // eventLoader: (day) => controller.eventSource[day] ?? [],
+                  eventLoader: _eventLoader,
+                  firstDay: controller.firstDay,
+                  focusedDay: controller.focusedDay,
+                  lastDay: controller.lastDay,
+                  locale: Locale('ko', 'KR').toString(),
+                  rangeEndDay: controller.rangeEnd,
+                  rangeSelectionMode: controller.rangeSelectionMode,
+                  rangeStartDay: controller.rangeStart,
+                  selectedDayPredicate: (day) =>
+                      isSameDay(controller.selectedDay, day),
+                  startingDayOfWeek: StartingDayOfWeek.sunday,
+                  daysOfWeekStyle: daysOfWeekStyle,
+                  calendarStyle: calendarStyle,
+                  headerStyle: headerStyle,
+                  onDaySelected: _onDaySelected,
+                  onRangeSelected: _onRangeSelected,
+                  onFormatChanged: _onFormatChanged,
+                  onPageChanged: _onPageChanged,
+                )
+                // Obx(() => )
+                )));
+  }
 
   void _onDaySelected(DateTime selectedDay, DateTime focusedDay) {
     if (!isSameDay(controller.selectedDay, selectedDay)) {
@@ -29,42 +67,6 @@ class CalendarBody extends GetView<ScheduleController> {
     controller.rangeSelectionMode = RangeSelectionMode.toggledOn;
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-        padding: getPadding(all: 16),
-        child: Container(
-          padding: getPadding(all: 16),
-          decoration: AppDecoration.outline
-              .copyWith(borderRadius: BorderRadiusStyle.circleBorder10),
-          child: Align(
-            alignment: Alignment.center,
-            child: TableCalendar<Schedule>(
-              calendarFormat: controller.calendarFormat,
-              daysOfWeekHeight: 30,
-              eventLoader: (day) => controller.eventSource[day] ?? [],
-              firstDay: controller.firstDay,
-              focusedDay: controller.focusedDay,
-              lastDay: controller.lastDay,
-              locale: const Locale('ko', 'KR').toString(),
-              rangeEndDay: controller.rangeEnd,
-              rangeSelectionMode: controller.rangeSelectionMode,
-              rangeStartDay: controller.rangeStart,
-              selectedDayPredicate: (day) =>
-                  isSameDay(controller.selectedDay, day),
-              startingDayOfWeek: StartingDayOfWeek.sunday,
-              daysOfWeekStyle: daysOfWeekStyle,
-              calendarStyle: calendarStyle,
-              headerStyle: headerStyle,
-              onDaySelected: _onDaySelected,
-              onRangeSelected: _onRangeSelected,
-              onFormatChanged: _onFormatChanged,
-              onPageChanged: _onPageChanged,
-            ),
-          ),
-        ));
-  }
-
   void _onPageChanged(DateTime focusedDay) {
     controller.focusedDay = focusedDay;
   }
@@ -73,5 +75,15 @@ class CalendarBody extends GetView<ScheduleController> {
     if (controller.calendarFormat != format) {
       controller.calendarFormat = format;
     }
+  }
+
+  List<Schedule> _eventLoader(DateTime key) {
+    print('AAA : 🔥  _eventLoader');
+    // controller.makeEventSource();
+    // print(
+    //     'AAA : Events[${DateTime(key.year, key.month, key.day, key.hour, key.minute)}] ${controller.events.getOrDefault(DateTime(key.year, key.month, key.day), [])}');
+    // print('AAA : EventSource ${controller.eventSource.getOrDefault(datetime, [])}');
+    return controller.events.getOrDefault(
+        DateTime(key.year, key.month, key.day, key.hour, key.minute), []);
   }
 }

@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 // 📦 Package imports:
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:wegooli_friends/main.dart';
 
 // 🌎 Project imports:
 import 'auth.dart';
 import 'firebase_options.dart';
 import 'profile.dart';
+import '/lib.dart';
 
 class AuthExampleApp extends StatelessWidget {
   const AuthExampleApp({Key? key}) : super(key: key);

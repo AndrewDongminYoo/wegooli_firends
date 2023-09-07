@@ -36,7 +36,19 @@ class UserController extends GetxController {
   ];
 
   Rx<UserDto> currentUser = const UserDto().obs;
-  RxList<TeamAccountModel> members = RxList<TeamAccountModel>([]);
+
+  RxList<TeamAccountModel> _members = RxList<TeamAccountModel>([]);
+  RxList<TeamAccountModel> get members => _members;
+  set members(RxList<TeamAccountModel> value) {
+    _members = value;
+  }
+
+  RxList<Schedule> _schedules = RxList<Schedule>.of([]);
+  RxList<Schedule> get schedules => _schedules;
+  set schedules(RxList<Schedule> value) {
+    _schedules = value;
+  }
+
   RxList<TeamAccountConnectionResponse> teams =
       RxList<TeamAccountConnectionResponse>([]);
   TeamCarConnection carConnection = TeamCarConnection();
@@ -257,5 +269,50 @@ class UserController extends GetxController {
 
   int? getTeamSeq() {
     return teams.first.teamSeq;
+  }
+
+  Future<List<Schedule>> retrieveSchedules() async {
+    if (teams.isEmpty) {
+      return List.empty();
+    }
+    int? teamSeq = getTeamSeq();
+    if (teamSeq == null) {
+      return List.empty();
+    }
+    final response = await wegooli
+        .getScheduleControllerApi()
+        .selectScheduleList(teamSeq: teamSeq);
+    final schedules = response.data;
+    if (schedules == null) {
+      return List.empty();
+    }
+    // print('schedules $schedules');
+    return schedules
+        .map((it) => Schedule(
+              accountId: it.accountId!,
+              seq: it.seq,
+              teamSeq: it.teamSeq,
+              delYn: it.delYn,
+              startAt: it.startAt,
+              endAt: it.endAt,
+              createdAt: it.createdAt,
+              updatedAt: it.updatedAt,
+              highlightColor: getColor(it.accountId!),
+            ))
+        .toList();
+  }
+
+  Color? getColor(String accountId) {
+    String? hexColor = members
+        .firstWhereOrNull((member) => member.accountId == accountId)
+        ?.color
+        ?.substring(1);
+    if (hexColor == null) {
+      return null;
+    }
+    // Color type이 다름
+    // return colorFromHex(hex);
+    final rgb = colorFromHex(hexColor).toRgbColor();
+    return Color.fromRGBO(rgb.r.toInt(), rgb.g.toInt(), rgb.b.toInt(), 0);
   }
 }

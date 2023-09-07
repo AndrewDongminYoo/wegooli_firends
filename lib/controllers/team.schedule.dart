@@ -71,15 +71,10 @@ class ScheduleController extends GetxController {
     for (Schedule schedule in schedules) {
       DateTime startDate = DateTime.parse(schedule.startAt!);
       DateTime endDate = DateTime.parse(schedule.endAt!);
-      int diffDays = endDate.difference(startDate).inDays;
-      for (int i = 0; i < diffDays; i++) {
-        DateTime key = startDate.add(Duration(days: i));
-        List<Schedule> value = localEventSource.getOrDefault(key, []);
+      for (DateTime key in daysInRange(startDate, endDate)){
+        List<Schedule> value = localEventSource.getOrDefault(normalizeDateTime(key), []);
         value.add(schedule);
-        localEventSource.addIf(
-            true,
-            DateTime(key.year, key.month, key.day, key.hour, key.minute),
-            value);
+        localEventSource.addIf(true, normalizeDateTime(key), value);
         // print('eventSource Add : \nkey:${key}\nvalue:$value');
       }
     }

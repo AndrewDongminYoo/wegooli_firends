@@ -38,6 +38,7 @@ class MembersList extends StatelessWidget {
                         itemCount: userController.members.length - 1,
                         shrinkWrap: true),
                   ),
+                  InviteTeamButton(),
               ],
             )));
   }

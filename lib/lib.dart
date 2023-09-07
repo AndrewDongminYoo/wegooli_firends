@@ -187,6 +187,7 @@ export 'screens/team.chat.dart';
 export 'screens/team.invitation.dialog.dart';
 export 'screens/team.invitation.dart';
 export 'screens/team.reservations.dialog.dart';
+export 'screens/team.reservations.item.dart';
 export 'screens/team.smart_key.dart';
 export 'screens/user.card_list.dart';
 export 'screens/user.login.dart';

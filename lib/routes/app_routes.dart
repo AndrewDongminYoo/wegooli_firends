@@ -104,7 +104,7 @@ class AppRoutes {
     GetPage(
       bindings: [TeamCommunityBinding()],
       name: reservationsCheck,
-      page: () => const ReservationsCheckingPageDialog(),
+      page: () => ReservationsCheckingPageDialog(),
     ),
     GetPage(
       bindings: [TeamCommunityBinding()],

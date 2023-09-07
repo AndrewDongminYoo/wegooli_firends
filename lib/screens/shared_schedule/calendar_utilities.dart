@@ -56,3 +56,7 @@ int getWeekdayNumber(StartingDayOfWeek weekday) {
 DateTime normalizeDate(DateTime date) {
   return DateTime.utc(date.year, date.month, date.day);
 }
+
+DateTime normalizeDateTime(DateTime date) {
+  return DateTime.utc(date.year, date.month, date.day, date.hour, date.minute);
+}

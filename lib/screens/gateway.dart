@@ -18,7 +18,7 @@ class GatewayScreen extends StatelessWidget {
       insetPadding: EdgeInsets.zero,
       content: SendingInvitationLog());
 
-  Widget openCheckReservations = const AlertDialog(
+  Widget openCheckReservations = AlertDialog(
       backgroundColor: Colors.transparent,
       contentPadding: EdgeInsets.zero,
       insetPadding: EdgeInsets.zero,

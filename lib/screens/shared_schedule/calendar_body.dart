@@ -1,9 +1,8 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 // 📦 Package imports:
-import 'package:get/get_state_manager/src/simple/get_view.dart';
+import 'package:get/get.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 // 🌎 Project imports:

@@ -15,16 +15,12 @@ import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 // 🌎 Project imports:
-import '/controllers/account.user.dart';
 import '/lib.dart';
-import 'package:wegooli_friends/main.dart';
+import '/main.dart';
+import 'main.dart';
 
 extension on AuthMode {
-  String get label => this == AuthMode.login
-      ? 'Sign in'
-      : this == AuthMode.phone
-          ? 'Sign in'
-          : 'Register';
+  String get label => this == AuthMode.login ? 'Sign in' : 'Register';
 }
 
 /// Entrypoint example for various sign-in flows with Firebase.
@@ -103,50 +99,6 @@ class _AuthGateState extends State<AuthGate> {
                             ),
                           ),
                           const SizedBox(height: 20),
-                          if (mode != AuthMode.phone)
-                            Column(
-                              children: [
-                                TextFormField(
-                                  controller: controller.emailAddress,
-                                  decoration: const InputDecoration(
-                                    hintText: 'Email',
-                                    border: OutlineInputBorder(),
-                                  ),
-                                  keyboardType: TextInputType.emailAddress,
-                                  autofillHints: const [AutofillHints.email],
-                                  validator: (value) =>
-                                      value != null && value.isNotEmpty
-                                          ? null
-                                          : 'Required',
-                                ),
-                                const SizedBox(height: 20),
-                                TextFormField(
-                                  controller: controller.password,
-                                  obscureText: true,
-                                  decoration: const InputDecoration(
-                                    hintText: 'Password',
-                                    border: OutlineInputBorder(),
-                                  ),
-                                  validator: (value) =>
-                                      value != null && value.isNotEmpty
-                                          ? null
-                                          : 'Required',
-                                ),
-                              ],
-                            ),
-                          if (mode == AuthMode.phone)
-                            TextFormField(
-                              controller: controller.password,
-                              decoration: const InputDecoration(
-                                hintText: '+821035661857',
-                                labelText: 'Phone number',
-                                border: OutlineInputBorder(),
-                              ),
-                              validator: (value) =>
-                                  value != null && value.isNotEmpty
-                                      ? null
-                                      : 'Required',
-                            ),
                           const SizedBox(height: 20),
                           SizedBox(
                             width: double.infinity,
@@ -166,60 +118,7 @@ class _AuthGateState extends State<AuthGate> {
                             onPressed: _resetPassword,
                             child: const Text('Forgot password?'),
                           ),
-                          SizedBox(
-                            width: double.infinity,
-                            height: 50,
-                            child: OutlinedButton(
-                              onPressed: isLoading
-                                  ? null
-                                  : () {
-                                      if (mode != AuthMode.phone) {
-                                        setState(() {
-                                          mode = AuthMode.phone;
-                                        });
-                                      } else {
-                                        setState(() {
-                                          mode = AuthMode.login;
-                                        });
-                                      }
-                                    },
-                              child: isLoading
-                                  ? const CircularProgressIndicator.adaptive()
-                                  : Text(
-                                      mode != AuthMode.phone
-                                          ? 'Sign in with Phone Number'
-                                          : 'Sign in with Email and Password',
-                                    ),
-                            ),
-                          ),
                           const SizedBox(height: 20),
-                          if (mode != AuthMode.phone)
-                            RichText(
-                              text: TextSpan(
-                                style: Theme.of(context).textTheme.bodyLarge,
-                                children: [
-                                  TextSpan(
-                                    text: mode == AuthMode.login
-                                        ? "Don't have an account? "
-                                        : 'You have an account? ',
-                                  ),
-                                  TextSpan(
-                                    text: mode == AuthMode.login
-                                        ? 'Register now'
-                                        : 'Click to login',
-                                    style: const TextStyle(color: Colors.blue),
-                                    recognizer: TapGestureRecognizer()
-                                      ..onTap = () {
-                                        setState(() {
-                                          mode = mode == AuthMode.login
-                                              ? AuthMode.register
-                                              : AuthMode.login;
-                                        });
-                                      },
-                                  ),
-                                ],
-                              ),
-                            ),
                         ],
                       ),
                     ),
@@ -377,55 +276,49 @@ class _AuthGateState extends State<AuthGate> {
   }
 
   Future<void> _phoneAuth() async {
-    if (mode != AuthMode.phone) {
-      setState(() {
-        mode = AuthMode.phone;
-      });
-    } else {
-      if (kIsWeb) {
-        final confirmationResult =
-            await auth.signInWithPhoneNumber(controller.password.text);
-        final smsCode = await getSmsCodeFromUser(context);
+    if (kIsWeb) {
+      final confirmationResult =
+          await auth.signInWithPhoneNumber(controller.password.text);
+      final smsCode = await getSmsCodeFromUser(context);
 
-        if (smsCode != null) {
-          await confirmationResult.confirm(smsCode);
-        }
-      } else {
-        await auth.verifyPhoneNumber(
-          phoneNumber: controller.password.text,
-          verificationCompleted: (_) {},
-          verificationFailed: (e) {
-            setState(() {
-              error = '${e.message}';
-            });
-          },
-          codeSent: (String verificationId, int? resendToken) async {
-            final smsCode = await getSmsCodeFromUser(context);
-
-            if (smsCode != null) {
-              // Create a PhoneAuthCredential with the code
-              final credential = PhoneAuthProvider.credential(
-                verificationId: verificationId,
-                smsCode: smsCode,
-              );
-
-              try {
-                // Sign the user in (or link) with the credential
-                await auth.signInWithCredential(credential);
-              } on FirebaseAuthException catch (e) {
-                setState(() {
-                  error = e.message ?? '';
-                });
-              }
-            }
-          },
-          codeAutoRetrievalTimeout: (e) {
-            setState(() {
-              error = e;
-            });
-          },
-        );
+      if (smsCode != null) {
+        await confirmationResult.confirm(smsCode);
       }
+    } else {
+      await auth.verifyPhoneNumber(
+        phoneNumber: controller.password.text,
+        verificationCompleted: (_) {},
+        verificationFailed: (e) {
+          setState(() {
+            error = '${e.message}';
+          });
+        },
+        codeSent: (String verificationId, int? resendToken) async {
+          final smsCode = await getSmsCodeFromUser(context);
+
+          if (smsCode != null) {
+            // Create a PhoneAuthCredential with the code
+            final credential = PhoneAuthProvider.credential(
+              verificationId: verificationId,
+              smsCode: smsCode,
+            );
+
+            try {
+              // Sign the user in (or link) with the credential
+              await auth.signInWithCredential(credential);
+            } on FirebaseAuthException catch (e) {
+              setState(() {
+                error = e.message ?? '';
+              });
+            }
+          }
+        },
+        codeAutoRetrievalTimeout: (e) {
+          setState(() {
+            error = e;
+          });
+        },
+      );
     }
   }
 

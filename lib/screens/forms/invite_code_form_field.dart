@@ -14,7 +14,7 @@ class InviteCodeFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Obx(() => CustomTextFormField(
+    return CustomTextFormField(
         textInputType: TextInputType.visiblePassword,
         controller: controller.inviteCode,
         margin: getMargin(top: 4),
@@ -23,6 +23,6 @@ class InviteCodeFormField extends StatelessWidget {
         hintText: l10ns.invitationCode,
         hintStyle: CustomTextStyles.bodyLargeGray50003,
         filled: true,
-        fillColor: theme.colorScheme.onPrimaryContainer));
+        fillColor: theme.colorScheme.onPrimaryContainer);
   }
 }

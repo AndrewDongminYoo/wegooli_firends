@@ -18,7 +18,7 @@ class PostCodeFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Obx(() => CustomTextFormField(
+    return CustomTextFormField(
         enabled: false,
         textInputType: TextInputType.number,
         width: getHorizontalSize(160),
@@ -42,6 +42,6 @@ class PostCodeFormField extends StatelessWidget {
           LengthLimitingTextInputFormatter(6),
           FilteringTextInputFormatter.digitsOnly,
         ],
-        fillColor: theme.colorScheme.onPrimaryContainer));
+        fillColor: theme.colorScheme.onPrimaryContainer);
   }
 }

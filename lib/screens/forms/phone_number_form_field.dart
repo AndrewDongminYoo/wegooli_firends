@@ -14,7 +14,7 @@ class PhoneNumberFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Obx(() => CustomTextFormField(
+    return CustomTextFormField(
         width: getHorizontalSize(216),
         controller: controller.phoneNum,
         margin: getMargin(top: 4),
@@ -28,6 +28,6 @@ class PhoneNumberFormField extends StatelessWidget {
         hintStyle: CustomTextStyles.bodyLargeGray50003,
         textInputAction: TextInputAction.next,
         filled: true,
-        fillColor: theme.colorScheme.onPrimaryContainer));
+        fillColor: theme.colorScheme.onPrimaryContainer);
   }
 }

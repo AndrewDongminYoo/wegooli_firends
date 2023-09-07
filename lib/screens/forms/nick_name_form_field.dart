@@ -17,7 +17,7 @@ class NickNameFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Obx(() => CustomTextFormField(
+    return CustomTextFormField(
         textInputType: TextInputType.emailAddress,
         controller: controller.nickname,
         margin: getMargin(top: 4),
@@ -27,6 +27,6 @@ class NickNameFormField extends StatelessWidget {
         obscureText: controller.isShowConfirmPassword.isFalse,
         hintStyle: CustomTextStyles.bodyLargeGray50003,
         filled: true,
-        fillColor: theme.colorScheme.onPrimaryContainer));
+        fillColor: theme.colorScheme.onPrimaryContainer);
   }
 }

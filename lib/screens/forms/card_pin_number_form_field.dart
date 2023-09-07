@@ -15,7 +15,7 @@ class CardPinNumberFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Obx(() => CustomTextFormField(
+    return CustomTextFormField(
         controller: controller.cardPassword,
         inputFormatters: [
           LengthLimitingTextInputFormatter(2),
@@ -23,6 +23,6 @@ class CardPinNumberFormField extends StatelessWidget {
         ],
         margin: getMargin(top: 4),
         filled: true,
-        fillColor: theme.colorScheme.onPrimaryContainer));
+        fillColor: theme.colorScheme.onPrimaryContainer);
   }
 }

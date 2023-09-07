@@ -14,7 +14,7 @@ class DetailAddressFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Obx(() => CustomTextFormField(
+    return CustomTextFormField(
         textInputType: TextInputType.streetAddress,
         controller: controller.detailAddress,
         margin: getMargin(top: 10),
@@ -24,6 +24,6 @@ class DetailAddressFormField extends StatelessWidget {
         hintStyle: CustomTextStyles.bodyLargeGray50003,
         textInputAction: TextInputAction.next,
         filled: true,
-        fillColor: theme.colorScheme.onPrimaryContainer));
+        fillColor: theme.colorScheme.onPrimaryContainer);
   }
 }

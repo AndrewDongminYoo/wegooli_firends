@@ -14,7 +14,7 @@ class EmailAddressFormField0 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Obx(() => CustomTextFormField(
+    return CustomTextFormField(
         textInputType: TextInputType.emailAddress,
         controller: controller.emailAddress,
         margin: getMargin(top: 4),
@@ -23,6 +23,6 @@ class EmailAddressFormField0 extends StatelessWidget {
         hintText: l10ns.enterEmailAddress,
         hintStyle: CustomTextStyles.bodyLargeGray50003,
         filled: true,
-        fillColor: theme.colorScheme.onPrimaryContainer));
+        fillColor: theme.colorScheme.onPrimaryContainer);
   }
 }

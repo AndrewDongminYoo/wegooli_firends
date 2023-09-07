@@ -14,7 +14,7 @@ class PrimaryAddressFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Obx(() => CustomTextFormField(
+    return CustomTextFormField(
         enabled: false,
         textInputType: TextInputType.streetAddress,
         controller: controller.primaryAddress,
@@ -25,6 +25,6 @@ class PrimaryAddressFormField extends StatelessWidget {
         hintStyle: CustomTextStyles.bodyLargeGray50003,
         textInputAction: TextInputAction.next,
         filled: true,
-        fillColor: theme.colorScheme.onPrimaryContainer));
+        fillColor: theme.colorScheme.onPrimaryContainer);
   }
 }

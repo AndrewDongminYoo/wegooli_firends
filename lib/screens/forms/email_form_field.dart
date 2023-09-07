@@ -14,7 +14,7 @@ class EmailFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Obx(() => CustomTextFormField(
+    return CustomTextFormField(
         controller: controller.username,
         textInputType: TextInputType.emailAddress,
         margin: getMargin(top: 40),
@@ -28,6 +28,6 @@ class EmailFormField extends StatelessWidget {
         validator: (value) =>
             value != null && value.isNotEmpty ? null : '필수 입력 항목입니다.',
         autofocus: true,
-        fillColor: theme.colorScheme.onPrimaryContainer));
+        fillColor: theme.colorScheme.onPrimaryContainer);
   }
 }

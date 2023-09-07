@@ -17,22 +17,21 @@ class InvitationCodeCopyFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Obx(() => CustomTextFormField(
-          controller: controller,
-          focusNode: focusNode,
-          filled: true,
-          enabled: true,
-          hintText: "xxxx-xxxx-xxxx-xxxx",
-          contentPadding: getPadding(all: 14),
-          inputFormatters: <TextInputFormatter>[
-            SeperateTextFormatter(
-                sample: 'XXXX-XXXX-XXXX-XXXX', separator: '-'),
-            LengthLimitingTextInputFormatter(19),
-            FilteringTextInputFormatter.allow(r'[0-9a-zA-Z\-]'),
-          ],
-          textStyle: CustomTextStyles.bodyLargeGray50003,
-          hintStyle: CustomTextStyles.bodyLargeGray50003,
-          fillColor: theme.colorScheme.onPrimaryContainer,
-        ));
+    return CustomTextFormField(
+      controller: controller,
+      focusNode: focusNode,
+      filled: true,
+      enabled: true,
+      hintText: "xxxx-xxxx-xxxx-xxxx",
+      contentPadding: getPadding(all: 14),
+      inputFormatters: <TextInputFormatter>[
+        SeperateTextFormatter(sample: 'XXXX-XXXX-XXXX-XXXX', separator: '-'),
+        LengthLimitingTextInputFormatter(19),
+        FilteringTextInputFormatter.allow(r'[0-9a-zA-Z\-]'),
+      ],
+      textStyle: CustomTextStyles.bodyLargeGray50003,
+      hintStyle: CustomTextStyles.bodyLargeGray50003,
+      fillColor: theme.colorScheme.onPrimaryContainer,
+    );
   }
 }

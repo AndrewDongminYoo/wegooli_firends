@@ -15,7 +15,7 @@ class CreditCardFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Obx(() => CustomTextFormField(
+    return CustomTextFormField(
         controller: controller.creditCardId,
         margin: getMargin(top: 4),
         contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),
@@ -29,6 +29,6 @@ class CreditCardFormField extends StatelessWidget {
         hintText: "0000\t0000\t0000\t0000",
         textInputAction: TextInputAction.next,
         filled: true,
-        fillColor: theme.colorScheme.onPrimaryContainer));
+        fillColor: theme.colorScheme.onPrimaryContainer);
   }
 }

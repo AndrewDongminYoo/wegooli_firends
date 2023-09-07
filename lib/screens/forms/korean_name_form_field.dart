@@ -16,7 +16,7 @@ class KoreanNameFormField extends StatelessWidget {
   final FocusNode focusNode;
   @override
   Widget build(BuildContext context) {
-    return Obx(() => CustomTextFormField(
+    return CustomTextFormField(
         controller: controller.fullName,
         margin: getMargin(top: 4),
         contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),
@@ -30,6 +30,6 @@ class KoreanNameFormField extends StatelessWidget {
         ],
         focusNode: focusNode,
         filled: true,
-        fillColor: theme.colorScheme.onPrimaryContainer));
+        fillColor: theme.colorScheme.onPrimaryContainer);
   }
 }

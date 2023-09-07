@@ -14,7 +14,7 @@ class InvitationCodeFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Obx(() => CustomTextFormField(
+    return CustomTextFormField(
         controller: controller.invitation,
         hintText: "xxxx-xxxx-xxxx-xxxx",
         margin: getMargin(left: 25, top: 17, right: 25),
@@ -23,6 +23,6 @@ class InvitationCodeFormField extends StatelessWidget {
         enabled: false,
         textStyle: CustomTextStyles.bodyLargeGray50003,
         hintStyle: CustomTextStyles.bodyLargeGray50003,
-        fillColor: theme.colorScheme.onPrimaryContainer));
+        fillColor: theme.colorScheme.onPrimaryContainer);
   }
 }

@@ -14,7 +14,7 @@ class LicenseNumbersFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Obx(() => CustomTextFormField(
+    return CustomTextFormField(
         controller: controller.licenseNumbers,
         margin: getMargin(top: 10),
         contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),
@@ -23,6 +23,6 @@ class LicenseNumbersFormField extends StatelessWidget {
         hintStyle: CustomTextStyles.bodyLargeGray50003,
         textInputAction: TextInputAction.next,
         filled: true,
-        fillColor: theme.colorScheme.onPrimaryContainer));
+        fillColor: theme.colorScheme.onPrimaryContainer);
   }
 }

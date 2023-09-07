@@ -19,7 +19,7 @@ class BirthdayNumberFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Obx(() => CustomTextFormField(
+    return CustomTextFormField(
         initialValue: controller.birthDay.text,
         width: getHorizontalSize(158),
         controller: controller.birthDay,
@@ -38,6 +38,6 @@ class BirthdayNumberFormField extends StatelessWidget {
         hintStyle: CustomTextStyles.bodyLargeGray50003,
         textInputAction: TextInputAction.next,
         filled: true,
-        fillColor: theme.colorScheme.onPrimaryContainer));
+        fillColor: theme.colorScheme.onPrimaryContainer);
   }
 }

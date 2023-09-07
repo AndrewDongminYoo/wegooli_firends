@@ -12,7 +12,7 @@ class Date implements Comparable<Date> {
 
   /// 현재 날짜
   static Date now({bool utc = false}) {
-    var now = DateTime.now();
+    DateTime now = DateTime.now();
     if (utc) {
       now = now.toUtc();
     }

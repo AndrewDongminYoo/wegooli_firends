@@ -2,7 +2,10 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
-import 'package:get/get.dart';
+import 'package:dio/src/response.dart';
+import 'package:get/get_rx/get_rx.dart';
+import 'package:get/get_state_manager/src/simple/get_controllers.dart';
+import 'package:get/instance_manager.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
@@ -74,12 +77,12 @@ class LicenseController extends GetxController {
   Future<int> inputLicenseInput() async {
     final api = wegooli.getLicenseControllerApi();
     final licenseRequest = LicenseRequest();
-    var valid = await api.isValidLicense(licenseRequest: licenseRequest);
+    Response<bool> valid = await api.isValidLicense(licenseRequest: licenseRequest);
     if (!valid.data!) {
       _licenseInputSucceed = false;
       return 0;
     }
-    var success = await api.insertLicense(licenseRequest: licenseRequest);
+    Response<int> success = await api.insertLicense(licenseRequest: licenseRequest);
     if (success.data != null) {
       _licenseInputSucceed = true;
       return success.data!;

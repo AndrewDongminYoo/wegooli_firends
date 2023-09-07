@@ -12,22 +12,22 @@ class GlobalDataController extends GetxController {
       ? Get.find<GlobalDataController>()
       : Get.put(GlobalDataController());
 
-  var account = Account().obs;
-  var serviceDetail = ServiceDetail().obs;
-  var teamAccountModel = TeamAccountModel().obs;
-  var teamCarConnection = TeamCarConnection().obs;
-  var userDetailInfo = UserDetailsDTO().obs;
-  var accountAgreementModelList = RxList<AccountAgreementModel>();
-  var carControlHistoryModelList = RxList<CarControlHistoryModel>();
-  var carHistoryDtoList = RxList<CarHistoryDTO>();
-  var licenseModelList = RxList<LicenseModel>();
-  var paymentCardModelList = RxList<PaymentCardModel>();
-  var scheduleModelList = RxList<ScheduleModel>();
-  var shareServiceModelList = RxList<ShareServiceModel>();
-  var teamAccountConnectionModelList = RxList<TeamAccountConnectionModel>();
-  var teamModelList = RxList<TeamModel>();
-  var terminalModelList = RxList<TerminalModel>();
-  var testModelList = RxList<TestModel>();
+  Rx<Account> account = Account().obs;
+  Rx<ServiceDetail> serviceDetail = ServiceDetail().obs;
+  Rx<TeamAccountModel> teamAccountModel = TeamAccountModel().obs;
+  Rx<TeamCarConnection> teamCarConnection = TeamCarConnection().obs;
+  Rx<UserDetailsDTO> userDetailInfo = UserDetailsDTO().obs;
+  RxList<AccountAgreementModel> accountAgreementModelList = RxList<AccountAgreementModel>();
+  RxList<CarControlHistoryModel> carControlHistoryModelList = RxList<CarControlHistoryModel>();
+  RxList<CarHistoryDTO> carHistoryDtoList = RxList<CarHistoryDTO>();
+  RxList<LicenseModel> licenseModelList = RxList<LicenseModel>();
+  RxList<PaymentCardModel> paymentCardModelList = RxList<PaymentCardModel>();
+  RxList<ScheduleModel> scheduleModelList = RxList<ScheduleModel>();
+  RxList<ShareServiceModel> shareServiceModelList = RxList<ShareServiceModel>();
+  RxList<TeamAccountConnectionModel> teamAccountConnectionModelList = RxList<TeamAccountConnectionModel>();
+  RxList<TeamModel> teamModelList = RxList<TeamModel>();
+  RxList<TerminalModel> terminalModelList = RxList<TerminalModel>();
+  RxList<TestModel> testModelList = RxList<TestModel>();
 
   static GlobalDataController global() {
     return _global;

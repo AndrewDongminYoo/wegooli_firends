@@ -72,7 +72,7 @@ double getResponsiveFontSize(BuildContext context,
     {double? fontSize, double? max}) {
   max ??= 100;
 
-  var responsiveSize = min(
+  double responsiveSize = min(
       screenWidthFraction(context, dividedBy: 10) * ((fontSize ?? 100) / 100),
       max);
 

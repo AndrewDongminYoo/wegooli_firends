@@ -41,6 +41,8 @@ class CustomTextFormField extends StatelessWidget {
   final bool? autofocus;
   final List<String>? autofillHints;
   final bool? enabled;
+
+  /// [true]이면 데코레이션 컨테이너가 [fillColor]로 채워집니다.
   final bool? filled;
   final bool? obscureText;
   final BoxConstraints? prefixConstraints;

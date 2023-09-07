@@ -155,7 +155,6 @@ export 'screens/forms/nick_name_form_field.dart';
 export 'screens/forms/otp_form_field.dart';
 export 'screens/forms/password_confirm_form_field.dart';
 export 'screens/forms/password_form_field.dart';
-export 'screens/forms/password_input_form_field.dart';
 export 'screens/forms/phone_number_form_field.dart';
 export 'screens/forms/post_code_form_field.dart';
 export 'screens/forms/primary_address_form_field.dart';

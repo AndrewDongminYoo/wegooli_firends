@@ -42,8 +42,8 @@ double getVerticalSize(double px) {
 
 /// 이 메서드는 이미지 높이와 너비의 최소 픽셀을 설정하는 데 사용됩니다.
 double getSize(double px) {
-  var height = getVerticalSize(px);
-  var width = getHorizontalSize(px);
+  double height = getVerticalSize(px);
+  double width = getHorizontalSize(px);
   if (height < width) {
     return height.toDoubleValue();
   } else {

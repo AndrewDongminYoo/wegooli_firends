@@ -59,7 +59,7 @@ class UserController extends GetxController {
   RxBool isWaitingOtpCode = false.obs;
   RxBool verifyCodeExpire = false.obs;
 
-  // var api = wegooli.getUserControllerApi();
+  // UserControllerApi api = wegooli.getUserControllerApi();
   // await api.checkId();
   // await api.generateToken();
   // await api.getUserDetail();
@@ -190,7 +190,7 @@ class UserController extends GetxController {
       }
       print('token: $token');
       // BEARER prefix 제거
-      var payload = JwtDecoder.decode(token);
+      Map<String, dynamic> payload = JwtDecoder.decode(token);
       //'{"name": "My Awesome App", "iat": 1548094400}'
       print('payload: $payload');
       currentUser.value = UserDto.fromJson(payload);

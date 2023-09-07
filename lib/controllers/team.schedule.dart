@@ -71,7 +71,7 @@ class ScheduleController extends GetxController {
       DateTime startDate = DateTime.parse(schedule.startAt!);
       DateTime endDate = DateTime.parse(schedule.endAt!);
       int diffDays = endDate.difference(startDate).inDays;
-      for (var i = 0; i < diffDays; i++) {
+      for (int i = 0; i < diffDays; i++) {
         DateTime key = startDate.add(Duration(days: i));
         List<Schedule> value = localEventSource.getOrDefault(key, []);
         value.add(schedule);

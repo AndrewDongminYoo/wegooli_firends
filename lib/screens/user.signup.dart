@@ -13,116 +13,6 @@ class RegisterZipCode extends GetWidget<UserController> {
 
   @override
   Widget build(BuildContext context) {
-    var row = Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      Padding(
-          padding: getPadding(top: 2),
-          child: Text(
-            l10ns.confirmPassword,
-            overflow: TextOverflow.ellipsis,
-            textAlign: TextAlign.left,
-            style: theme.textTheme.titleMedium!.copyWith(
-              letterSpacing: getHorizontalSize(0.03),
-            ),
-          )),
-      Padding(
-          padding: getPadding(left: 5, bottom: 5),
-          child: Text(
-            "*",
-            overflow: TextOverflow.ellipsis,
-            textAlign: TextAlign.left,
-            style: theme.textTheme.titleSmall!.copyWith(
-              letterSpacing: getHorizontalSize(0.06),
-            ),
-          ))
-    ]);
-    var row2 = Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      Padding(
-          padding: getPadding(top: 2),
-          child: Text(
-            l10ns.password,
-            overflow: TextOverflow.ellipsis,
-            textAlign: TextAlign.left,
-            style: theme.textTheme.titleMedium!.copyWith(
-              letterSpacing: getHorizontalSize(0.03),
-            ),
-          )),
-      Padding(
-          padding: getPadding(left: 5, bottom: 5),
-          child: Text(
-            "*",
-            overflow: TextOverflow.ellipsis,
-            textAlign: TextAlign.left,
-            style: theme.textTheme.titleSmall!.copyWith(
-              letterSpacing: getHorizontalSize(0.06),
-            ),
-          ))
-    ]);
-    var row3 = Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      Padding(
-          padding: getPadding(top: 2),
-          child: Text(
-            l10ns.id,
-            overflow: TextOverflow.ellipsis,
-            textAlign: TextAlign.left,
-            style: theme.textTheme.titleMedium!.copyWith(
-              letterSpacing: getHorizontalSize(0.03),
-            ),
-          )),
-      Padding(
-          padding: getPadding(left: 5, bottom: 5),
-          child: Text(
-            "*",
-            overflow: TextOverflow.ellipsis,
-            textAlign: TextAlign.left,
-            style: theme.textTheme.titleSmall!.copyWith(
-              letterSpacing: getHorizontalSize(0.06),
-            ),
-          ))
-    ]);
-    var row4 = Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      Padding(
-          padding: getPadding(top: 2),
-          child: Text(
-            l10ns.homeAddress,
-            overflow: TextOverflow.ellipsis,
-            textAlign: TextAlign.left,
-            style: theme.textTheme.titleMedium!.copyWith(
-              letterSpacing: getHorizontalSize(0.03),
-            ),
-          )),
-      Padding(
-          padding: getPadding(left: 5, bottom: 5),
-          child: Text(
-            "*",
-            overflow: TextOverflow.ellipsis,
-            textAlign: TextAlign.left,
-            style: theme.textTheme.titleSmall!.copyWith(
-              letterSpacing: getHorizontalSize(0.06),
-            ),
-          ))
-    ]);
-    var row5 = Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      Padding(
-          padding: getPadding(top: 2),
-          child: Text(
-            l10ns.nickname,
-            overflow: TextOverflow.ellipsis,
-            textAlign: TextAlign.left,
-            style: theme.textTheme.titleMedium!.copyWith(
-              letterSpacing: getHorizontalSize(0.03),
-            ),
-          )),
-      Padding(
-          padding: getPadding(left: 5, bottom: 5),
-          child: Text(
-            "*",
-            overflow: TextOverflow.ellipsis,
-            textAlign: TextAlign.left,
-            style: theme.textTheme.titleSmall!.copyWith(
-              letterSpacing: getHorizontalSize(0.06),
-            ),
-          ))
-    ]);
     return SafeArea(
         child: Scaffold(
       resizeToAvoidBottomInset: false,
@@ -141,7 +31,7 @@ class RegisterZipCode extends GetWidget<UserController> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        row4,
+                        CustomInputLabel(labelText: l10ns.homeAddress),
                         PostCodeFormField(controller: controller)
                       ]),
                 ),
@@ -182,7 +72,7 @@ class RegisterZipCode extends GetWidget<UserController> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      row3,
+                      CustomInputLabel(labelText: l10ns.id),
                       EmailAddressFormField0(controller: controller)
                     ])),
             Padding(
@@ -191,8 +81,8 @@ class RegisterZipCode extends GetWidget<UserController> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      row2,
-                      PasswordInputFormField(controller: controller),
+                      CustomInputLabel(labelText: l10ns.password),
+                      PasswordFormField(controller: controller, authMode: AuthMode.register),
                     ])),
             Padding(
                 padding: getPadding(top: 27),
@@ -200,7 +90,7 @@ class RegisterZipCode extends GetWidget<UserController> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      row,
+                      CustomInputLabel(labelText: l10ns.confirmPassword),
                       PasswordConfirmFormField(controller: controller),
                     ])),
             Padding(
@@ -209,7 +99,7 @@ class RegisterZipCode extends GetWidget<UserController> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      row5,
+                      CustomInputLabel(labelText: l10ns.nickname),
                       NickNameFormField(controller: controller),
                     ]))
           ])),

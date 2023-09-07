@@ -14,7 +14,7 @@ const withSilentVerificationSMSMFA = true;
 
 /// 현재 인증 세션의 모드([AuthMode.login] 또는 [AuthMode.register] 중 하나)입니다.
 // ignore: public_member_api_docs
-enum AuthMode { login, register, phone }
+enum AuthMode { login, register }
 
 /// Firebase를 사용한 다양한 로그인 흐름에 대한 엔트리포인트 예제입니다.
 class LoginWithIdAndPassword extends StatefulWidget {
@@ -58,7 +58,7 @@ class _LoginWithIdAndPasswordState extends State<LoginWithIdAndPassword> {
                 children: [
                   const FriendsByWegooli(),
                   EmailFormField(controller: controller),
-                  PasswordFormField(controller: controller),
+                  PasswordFormField(controller: controller, authMode: AuthMode.login),
                   CustomElevatedButton(
                       text: l10ns.signIn,
                       margin: getMargin(top: 30),

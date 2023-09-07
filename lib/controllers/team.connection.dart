@@ -9,21 +9,14 @@ import '/core/app_export.dart';
 
 class ConnectionController extends GetxController with ChannelEventHandler {
   final wegooli = WegooliFriends.client;
+  final userController = UserController.to;
   static ConnectionController get to => Get.isRegistered<ConnectionController>()
       ? Get.find<ConnectionController>()
       : Get.put(ConnectionController());
 
-  RxString phoneNumber = ''.obs;
-  Rx<Account> account = Account().obs;
-  Rx<UserDetailsDTO> userDetailInfo = UserDetailsDTO().obs;
-
-  final RxString appId = ''.obs; // Sendbird application id
-  final RxString userId = ''.obs; // Unique user id for the buyer
-  final RxList<String> otherUserIds =
-      RxList<String>(); // Unique user id for the seller(s)
-  RxList<BaseMessage> messages = RxList<BaseMessage>();
-  ChatUser? _chatUser;
-  List<ChatMessage> chatMessages = <ChatMessage>[];
+  final RxString appId =
+      '36FB6EA9-27A7-44F1-9696-72E1E21033B6'.obs; // Sendbird application id
+  RxList<BaseMessage> _messages = RxList<BaseMessage>();
   GroupChannel? channel;
 
   // ignore: unused_field
@@ -33,7 +26,14 @@ class ConnectionController extends GetxController with ChannelEventHandler {
   @override
   void onInit() {
     SendbirdSdk().addChannelEventHandler("dashchat", this);
-    loadSendbird(appId.value, userId.value, otherUserIds);
+    String? userId = userController.currentUser.value.id;
+    if (userId != null) {
+      List<String> otherUserIds = userController.members
+          .where((member) => member.accountId! != userId)
+          .map((member) => member.accountId!)
+          .toList();
+      loadSendbird(appId.value, userId, otherUserIds);
+    }
     super.onInit();
   }
 
@@ -51,7 +51,7 @@ class ConnectionController extends GetxController with ChannelEventHandler {
       // Get the GroupChannel between the specified users
       channel = await getChannelBetween(userId, otherUserIds);
       // Retrieve any existing messages from the GroupChannel
-      messages.value = await channel!.getMessagesByTimestamp(
+      _messages.value = await channel!.getMessagesByTimestamp(
           DateTime.now().millisecondsSinceEpoch * 1000, MessageListParams());
     } catch (e) {
       print('ConnectionController.loadSendBird()-> $e');
@@ -69,42 +69,67 @@ class ConnectionController extends GetxController with ChannelEventHandler {
 
   @override
   void onMessageReceived(BaseChannel channel, BaseMessage message) {
-    messages.insert(0, message);
+    _messages.insert(0, message);
   }
 
-  set asChatUser(User? user) {
+  ChatUser asDashChatUser(User? user) {
     // If no Sendbird user, return an empty ChatUser object
     if (user == null) {
-      _chatUser =
-          ChatUser(id: "", lastName: "", firstName: "", profileImage: "");
+      return ChatUser(id: "", lastName: "", firstName: "", profileImage: "");
     } else {
-      TeamAccountModel model = UserController.to.members
-          .firstWhere((it) => user.userId == it.accountId);
-      _chatUser = ChatUser(
-        id: model.accountId as String,
+      return ChatUser(
+        id: user.userId,
         lastName: '',
-        firstName: model.nickname,
-        profileImage: model.profilePicture ?? "",
+        firstName: user.nickname,
+        profileImage: user.profileUrl ?? "",
       );
     }
   }
 
-  ChatUser get chatUser => _chatUser ?? ChatUser(id: account.value.id ?? '');
-
-  List<ChatMessage> asDashChatMessages(List<BaseMessage> messages) {
-    chatMessages = messages
+  List<ChatMessage> asDashChatMessages() {
+    return _messages
         .map((sendBirdMessage) => ChatMessage(
             text: sendBirdMessage.message,
-            user: chatUser,
+            user: asDashChatUser(sendBirdMessage.sender),
             createdAt:
                 DateTime.fromMillisecondsSinceEpoch(sendBirdMessage.createdAt)))
         .toList();
-    chatMessages.sort((a, b) => b.createdAt.compareTo(a.createdAt));
-    return chatMessages;
   }
 
   void onSendChatMessage(ChatMessage newMessage) {
     final sentMessage = channel!.sendUserMessageWithText(newMessage.text);
-    return messages.insert(0, sentMessage);
+    return _messages.insert(0, sentMessage);
+  }
+
+  Future<User> connectWithSendbird(
+    String appId,
+    String userId,
+  ) async {
+    try {
+      final sendbird = SendbirdSdk(appId: appId);
+      final user = await sendbird.connect(userId);
+      return user;
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  Future<GroupChannel> getChannelBetween(
+    String currentUserId,
+    List<String> otherUserIds,
+  ) async {
+    try {
+      final query = GroupChannelListQuery()
+        ..userIdsExactlyIn = otherUserIds
+        ..limit = 1;
+      final channels = await query.loadNext();
+      if (channels.isEmpty) {
+        return GroupChannel.createChannel(
+            GroupChannelParams()..userIds = [currentUserId] + otherUserIds);
+      }
+      return channels[0];
+    } catch (e) {
+      rethrow;
+    }
   }
 }

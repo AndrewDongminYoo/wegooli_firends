@@ -51,8 +51,14 @@ class ConnectionController extends GetxController with ChannelEventHandler {
       // Get the GroupChannel between the specified users
       channel = await getChannelBetween(userId, otherUserIds);
       // Retrieve any existing messages from the GroupChannel
+      MessageListParams messageListParams = new MessageListParams();
+      messageListParams.previousResultSize = 100;
+      messageListParams.reverse = true;
+      messageListParams.messageType = MessageTypeFilter.all;
+      messageListParams.isInclusive = true;
+      messageListParams.includeReactions = true;
       _messages.value = await channel!.getMessagesByTimestamp(
-          DateTime.now().millisecondsSinceEpoch * 1000, MessageListParams());
+          DateTime.now().millisecondsSinceEpoch * 1000, messageListParams);
     } catch (e) {
       print('ConnectionController.loadSendBird()-> $e');
     }
@@ -87,13 +93,15 @@ class ConnectionController extends GetxController with ChannelEventHandler {
   }
 
   List<ChatMessage> asDashChatMessages() {
-    return _messages
+    final messages = _messages
         .map((sendBirdMessage) => ChatMessage(
             text: sendBirdMessage.message,
             user: asDashChatUser(sendBirdMessage.sender),
             createdAt:
                 DateTime.fromMillisecondsSinceEpoch(sendBirdMessage.createdAt)))
         .toList();
+    // messages.sort((a, b) => b.createdAt.compareTo(a.createdAt));
+    return messages;
   }
 
   void onSendChatMessage(ChatMessage newMessage) {

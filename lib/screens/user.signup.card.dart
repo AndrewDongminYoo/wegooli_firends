@@ -7,14 +7,26 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
-class RegisterCreditCard extends GetWidget<PaymentCardController> {
-  final paymentCardController = PaymentCardController.to;
-  final userController = UserController.to;
-  final birthday = FocusNode();
-  final cardNums = FocusNode();
-  final cardPins = FocusNode();
-  final expMonth = FocusNode();
+class RegisterCreditCard extends StatefulWidget {
+
   RegisterCreditCard({super.key});
+
+  @override
+  State<RegisterCreditCard> createState() => _RegisterCreditCardState();
+}
+
+class _RegisterCreditCardState extends State<RegisterCreditCard> {
+  final controller = PaymentCardController.to;
+
+  final userController = UserController.to;
+
+  final birthday = FocusNode();
+
+  final cardNums = FocusNode();
+
+  final cardPins = FocusNode();
+
+  final expMonth = FocusNode();
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +66,7 @@ class RegisterCreditCard extends GetWidget<PaymentCardController> {
                       BirthdayNumberFormField(
                         controller: userController,
                         focusNode: birthday,
-                        readonly: true,
+                        readonly: !userController.birthDay.text.isEmpty,
                       )
                     ])),
             Padding(
@@ -85,7 +97,7 @@ class RegisterCreditCard extends GetWidget<PaymentCardController> {
             onTap: () async {
               // TODO 카드 검증 필요함.
               await controller.registerCard();
-              if (paymentCardController.paymentCards.isEmpty) {
+              if (controller.paymentCards.isEmpty) {
                 goRegisterSuccess();
               } else {
                 // TODO 카드 등록 로직

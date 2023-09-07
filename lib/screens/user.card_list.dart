@@ -27,7 +27,7 @@ class _RegisteredCreditCardListState extends State<RegisteredCreditCardList> {
     return SafeArea(
         child: Scaffold(
       // backgroundColor: theme.colorScheme.onPrimaryContainer,
-      backgroundColor: const Color(0xFFFFC107),
+      // backgroundColor: const Color(0xFFFFC107),
       appBar: CustomAppBar.getDefaultAppBar(l10ns.cardRegistration),
       body: SizedBox(
           width: mediaQueryData.size.width,
@@ -37,7 +37,7 @@ class _RegisteredCreditCardListState extends State<RegisteredCreditCardList> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Container(
-                color: const Color(0xFFFFB300),
+                // color: const Color(0xFFFFB300),
                 padding: getPadding(top: 20, bottom: 20, left: 16, right: 16),
                 child: Column(children: [
                   Obx(
@@ -76,7 +76,7 @@ class _RegisteredCreditCardListState extends State<RegisteredCreditCardList> {
                 ]),
               ),
               Container(
-                color: const Color(0xFFFFA000),
+                // color: const Color(0xFFFFA000),
                 padding: getPadding(top: 20, bottom: 20, left: 16, right: 16),
                 child: CustomElevatedButton(
                     text: l10ns.cardAdditions,

@@ -107,7 +107,7 @@ class UnsubscriptionConfirmWarnDialog extends StatelessWidget {
                             buttonTextStyle: theme.textTheme.titleMedium!,
                             onTap: () async {
                               await vehicleController.unsubscribe();
-                              goUpcomingUnsubscription();
+                              await goUpcomingUnsubscription();
                             })
                       ]))
             ]));

@@ -60,7 +60,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
       ),
       child: Obx(
         () => BottomNavigationBar(
-          backgroundColor: Colors.transparent,
+          // backgroundColor: Colors.transparent,
           showSelectedLabels: false,
           showUnselectedLabels: false,
           selectedFontSize: 0,

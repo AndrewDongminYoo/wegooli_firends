@@ -20,7 +20,8 @@ class BirthdayNumberFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomTextFormField(
-        initialValue: controller.birthDay.text,
+        initialValue:
+            controller.birthDay.text.isEmpty ? null : controller.birthDay.text,
         width: getHorizontalSize(158),
         controller: controller.birthDay,
         enabled: readonly ? false : true,

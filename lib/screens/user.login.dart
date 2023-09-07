@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 
 // 📦 Package imports:
 import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:get/get.dart';
 
 // 🌎 Project imports:
 import '/lib.dart';
@@ -58,50 +57,8 @@ class _LoginWithIdAndPasswordState extends State<LoginWithIdAndPassword> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const FriendsByWegooli(),
-                  CustomTextFormField(
-                      controller: controller.username,
-                      textInputType: TextInputType.emailAddress,
-                      margin: getMargin(top: 40),
-                      contentPadding:
-                          getPadding(left: 12, top: 14, right: 12, bottom: 14),
-                      textStyle: CustomTextStyles.bodyLargeGray50003,
-                      hintText: l10ns.id,
-                      hintStyle: CustomTextStyles.bodyLargeGray50003,
-                      textInputAction: TextInputAction.next,
-                      filled: true,
-                      autofillHints: const [AutofillHints.email],
-                      validator: (value) => value != null && value.isNotEmpty
-                          ? null
-                          : '필수 입력 항목입니다.',
-                      autofocus: true,
-                      fillColor: theme.colorScheme.onPrimaryContainer),
-                  Obx(() => CustomTextFormField(
-                        controller: controller.password,
-                        margin: getMargin(top: 12),
-                        contentPadding: getPadding(
-                            left: 12, top: 14, right: 12, bottom: 14),
-                        textStyle: CustomTextStyles.bodyLargeGray50003,
-                        hintText: l10ns.password,
-                        obscureText: controller.isShowPassword.isFalse,
-                        hintStyle: CustomTextStyles.bodyLargeGray50003,
-                        fillColor: theme.colorScheme.onPrimaryContainer,
-                        suffix: Container(
-                            margin: getMargin(
-                                left: 30, top: 12, right: 10, bottom: 12),
-                            child: CustomImageView(
-                                svgPath: controller.isShowPassword.value
-                                    ? Assets.svg.imgEyeOpened.path
-                                    : Assets.svg.imgEyeCrossedOut.path,
-                                onTap: () {
-                                  controller.isShowPassword.toggle();
-                                })),
-                        suffixConstraints:
-                            BoxConstraints(maxHeight: getVerticalSize(48)),
-                        filled: true,
-                        validator: (value) => value != null && value.isNotEmpty
-                            ? null
-                            : '필수 입력 항목입니다.',
-                      )),
+                  EmailFormField(controller: controller),
+                  PasswordFormField(controller: controller),
                   CustomElevatedButton(
                       text: l10ns.signIn,
                       margin: getMargin(top: 30),

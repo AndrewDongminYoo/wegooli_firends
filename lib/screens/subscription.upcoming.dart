@@ -236,8 +236,7 @@ class UpcomingUnsubscription extends GetWidget<VehicleController> {
                                     controller.subscriptionModel.value
                                                 .withdrawalAt ==
                                             null
-                                        ? Get.toNamed(
-                                            AppRoutes.unsubscribeConfirm)
+                                        ? goUnsubscribeConfirm()
                                         : controller.subscribe();
                                   },
                                 )

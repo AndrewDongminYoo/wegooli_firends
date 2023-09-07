@@ -1,9 +1,6 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:get/get.dart';
-
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
@@ -109,8 +106,7 @@ class _SmartKeyAvailablePageState extends State<SmartKeyAvailablePage> {
                                                 ),
                                               ),
                                               ArrowRight(onTap: () {
-                                                Get.toNamed(
-                                                    AppRoutes.carStatusInfo);
+                                                goCarStatusInfo();
                                               })
                                             ]))
                                   ]))
@@ -171,7 +167,7 @@ class _SmartKeyAvailablePageState extends State<SmartKeyAvailablePage> {
                     height: getVerticalSize(8),
                     width: mediaQueryData.size.width,
                     margin: getMargin(top: 31),
-                    decoration: BoxDecoration(color: appTheme.gray100)),
+                    decoration: AppDecoration.fillGray100),
                 SizedBox(
                   width: mediaQueryData.size.width,
                   child: Stack(

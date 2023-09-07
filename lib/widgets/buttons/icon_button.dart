@@ -46,17 +46,8 @@ class CustomIconButton extends StatelessWidget {
                   alignment: Alignment.center,
                   padding: padding ?? EdgeInsets.zero,
                   decoration: decoration ??
-                      BoxDecoration(
-                          color: theme.colorScheme.onPrimaryContainer,
-                          borderRadius:
-                              BorderRadius.circular(getHorizontalSize(12)),
-                          boxShadow: [
-                            BoxShadow(
-                                color: appTheme.black900.withOpacity(0.1),
-                                spreadRadius: getHorizontalSize(2),
-                                blurRadius: getHorizontalSize(2),
-                                offset: const Offset(2, 2)),
-                          ]),
+                      AppDecoration.outlineBlack.copyWith(
+                          borderRadius: BorderRadiusStyle.circleBorder12),
                   child: child),
               onPressed: onTap)));
 }

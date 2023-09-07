@@ -8,6 +8,8 @@ class AppDecoration {
   // Fill decorations
   static BoxDecoration get fillBlueGray =>
       BoxDecoration(color: appTheme.blueGray30033);
+  static BoxDecoration get fillGray100 =>
+      BoxDecoration(color: appTheme.gray100);
   static BoxDecoration get fillGray10001 =>
       BoxDecoration(color: appTheme.gray10001);
   static BoxDecoration get fillDeepOrange =>
@@ -84,6 +86,8 @@ class BorderRadiusStyle {
       BorderRadius.circular(getHorizontalSize(5));
   static BorderRadius get circleBorder10 =>
       BorderRadius.circular(getHorizontalSize(10));
+  static BorderRadius get circleBorder12 =>
+      BorderRadius.circular(getHorizontalSize(12));
   static BorderRadius get circleBorder21 =>
       BorderRadius.circular(getHorizontalSize(21));
   static BorderRadius get circleBorder25 =>

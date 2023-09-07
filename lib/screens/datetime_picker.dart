@@ -50,7 +50,7 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                   height: getVerticalSize(8),
                   width: double.maxFinite,
                   margin: getMargin(top: 16),
-                  decoration: BoxDecoration(color: appTheme.gray100)),
+                  decoration: AppDecoration.fillGray100),
               Padding(
                   padding: getPadding(left: 16, top: 18),
                   child: Row(
@@ -226,7 +226,7 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                   height: getVerticalSize(8),
                   width: double.maxFinite,
                   margin: getMargin(top: 41),
-                  decoration: BoxDecoration(color: appTheme.gray100)),
+                  decoration: AppDecoration.fillGray100),
               Padding(
                   padding: getPadding(left: 16, top: 18, right: 16),
                   child: Row(
@@ -257,7 +257,7 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                   height: getVerticalSize(8),
                   width: double.maxFinite,
                   margin: getMargin(top: 17),
-                  decoration: BoxDecoration(color: appTheme.gray100)),
+                  decoration: AppDecoration.fillGray100),
               Padding(
                   padding: getPadding(left: 16, top: 24, bottom: 14),
                   child: Row(

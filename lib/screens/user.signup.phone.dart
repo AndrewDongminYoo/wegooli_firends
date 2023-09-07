@@ -47,7 +47,7 @@ class ValidatePhone extends GetWidget<UserController> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               BirthdayNumberFormField(
-                                  controller: controller, focusNode: _birthday),
+                                  controller: controller, focusNode: _birthday, readonly: false),
                               const Text("-", style: TextStyle(fontSize: 24)),
                               SocialSecurityNumberFormField(
                                   controller: controller, focusNode: _socialId),

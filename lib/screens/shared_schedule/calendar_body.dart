@@ -13,7 +13,6 @@ class CalendarBody extends GetView<ScheduleController> {
   const CalendarBody({super.key});
   @override
   Widget build(BuildContext context) {
-    // print('controller.eventSource => ${controller.eventSource}');
     return Padding(
         padding: getPadding(all: 16),
         child: Container(
@@ -25,7 +24,6 @@ class CalendarBody extends GetView<ScheduleController> {
                 child: TableCalendar<Schedule>(
                   calendarFormat: controller.calendarFormat,
                   daysOfWeekHeight: 30,
-                  // eventLoader: (day) => controller.eventSource[day] ?? [],
                   eventLoader: _eventLoader,
                   firstDay: controller.firstDay,
                   focusedDay: controller.focusedDay,
@@ -44,9 +42,7 @@ class CalendarBody extends GetView<ScheduleController> {
                   onRangeSelected: _onRangeSelected,
                   onFormatChanged: _onFormatChanged,
                   onPageChanged: _onPageChanged,
-                )
-                // Obx(() => )
-                )));
+                ))));
   }
 
   void _onDaySelected(DateTime selectedDay, DateTime focusedDay) {
@@ -78,11 +74,6 @@ class CalendarBody extends GetView<ScheduleController> {
   }
 
   List<Schedule> _eventLoader(DateTime key) {
-    print('AAA : 🔥  _eventLoader');
-    // controller.makeEventSource();
-    // print(
-    //     'AAA : Events[${DateTime(key.year, key.month, key.day, key.hour, key.minute)}] ${controller.events.getOrDefault(DateTime(key.year, key.month, key.day), [])}');
-    // print('AAA : EventSource ${controller.eventSource.getOrDefault(datetime, [])}');
     return controller.events.getOrDefault(
         DateTime(key.year, key.month, key.day, key.hour, key.minute), []);
   }

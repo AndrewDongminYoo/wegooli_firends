@@ -10,15 +10,20 @@ class BirthdayNumberFormField extends StatelessWidget {
     super.key,
     required this.controller,
     required this.focusNode,
+    required this.readonly,
   });
 
   final UserController controller;
   final FocusNode focusNode;
+  final bool readonly;
+
   @override
   Widget build(BuildContext context) {
     return Obx(() => CustomTextFormField(
+        initialValue: controller.birthDay.text,
         width: getHorizontalSize(158),
         controller: controller.birthDay,
+        enabled: readonly ? false : true,
         margin: getMargin(top: 4),
         inputFormatters: [
           FilteringTextInputFormatter.digitsOnly,

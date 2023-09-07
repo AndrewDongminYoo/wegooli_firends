@@ -82,7 +82,8 @@ class RegisterZipCode extends GetWidget<UserController> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       CustomInputLabel(labelText: l10ns.password),
-                      PasswordFormField(controller: controller, authMode: AuthMode.register),
+                      PasswordFormField(
+                          controller: controller, authMode: AuthMode.register),
                     ])),
             Padding(
                 padding: getPadding(top: 27),

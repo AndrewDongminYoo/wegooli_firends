@@ -25,8 +25,8 @@ class PasswordFormField extends StatelessWidget {
           contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),
           textStyle: CustomTextStyles.bodyLargeGray50003,
           hintText: authMode == AuthMode.register
-            ? l10ns.alphanumericSpecialCharacterCombination612Characters
-            : l10ns.password,
+              ? l10ns.alphanumericSpecialCharacterCombination612Characters
+              : l10ns.password,
           obscureText: controller.isShowPassword.isFalse,
           hintStyle: CustomTextStyles.bodyLargeGray50003,
           fillColor: theme.colorScheme.onPrimaryContainer,

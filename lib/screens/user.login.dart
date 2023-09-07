@@ -58,7 +58,8 @@ class _LoginWithIdAndPasswordState extends State<LoginWithIdAndPassword> {
                 children: [
                   const FriendsByWegooli(),
                   EmailFormField(controller: controller),
-                  PasswordFormField(controller: controller, authMode: AuthMode.login),
+                  PasswordFormField(
+                      controller: controller, authMode: AuthMode.login),
                   CustomElevatedButton(
                       text: l10ns.signIn,
                       margin: getMargin(top: 30),

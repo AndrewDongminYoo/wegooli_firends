@@ -49,15 +49,21 @@ class SendingInvitationLog extends GetWidget<VehicleController> {
                       ])),
               InvitationCodeFormField(controller: controller),
               CustomElevatedButton(
-                  onTap: () {
-                    /// FIXME: controller.invitation.text 값을 클립보드에 복사 / 또는 공유 모달 띄우기
-                    Get.dialog(
-                      AlertDialog(
-                        title: Text(controller.invitation.text),
-                      ),
-                    );
+                  onTap: () async {
+                    // Clipboard.setData(
+                    // ClipboardData(text: controller.invitation.text));
+                    // Get.dialog(
+                    //   AlertDialog(
+                    //     title: Text('복사 완료.'),
+                    //   ),
+                    // );
+                    if (await controller.joinTeam()) {
+                      Get.to(() => const SharedCalendar());
+                    } else {
+                      goBack();
+                    }
                   },
-                  text: l10ns.copy,
+                  text: l10ns.confirm,
                   margin: getMargin(top: 25),
                   buttonStyle: CustomButtonStyles.fillPrimaryB10.copyWith(
                       fixedSize: MaterialStateProperty.all<Size>(

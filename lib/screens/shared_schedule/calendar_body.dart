@@ -41,6 +41,7 @@ class CalendarBody extends GetView<ScheduleController> {
                   onRangeSelected: _onRangeSelected,
                   onFormatChanged: _onFormatChanged,
                   onPageChanged: _onPageChanged,
+                  calendarBuilders: builders,
                 ))));
   }
 

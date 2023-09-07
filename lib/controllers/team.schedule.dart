@@ -66,6 +66,7 @@ class ScheduleController extends GetxController {
       .toggledOff; // Can be toggled on/off by long pressing a date
   void makeEventSource() {
     final schedules = userController.schedules;
+    // print('schedules $schedules');
     Map<DateTime, List<Schedule>> localEventSource = Map.of({});
     for (Schedule schedule in schedules) {
       DateTime startDate = DateTime.parse(schedule.startAt!);

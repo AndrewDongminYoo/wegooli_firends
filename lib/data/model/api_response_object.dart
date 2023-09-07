@@ -21,6 +21,18 @@ class ApiResponseObject extends Equatable {
 
   Map<String, dynamic> toJson() => _$ApiResponseObjectToJson(this);
 
+  ApiResponseObject copyWith({
+    Result? result,
+    int? resultCode,
+    dynamic resultMsg,
+  }) {
+    return ApiResponseObject(
+      result: result ?? this.result,
+      resultCode: resultCode ?? this.resultCode,
+      resultMsg: resultMsg ?? this.resultMsg,
+    );
+  }
+
   @override
   bool get stringify => true;
 

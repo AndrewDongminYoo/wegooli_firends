@@ -25,7 +25,9 @@ Color colorFromHex(String hexColor) {
   if (hexColor.length == 6) {
     hexColor = 'FF$hexColor';
   }
-  return Color.hex('0x$hexColor');
+  // 0x 제거하고 넣을 것 !
+  // return Color.hex('0x${hexColor}');
+  return Color.hex(hexColor);
 }
 
 /// [Material Design Color Generator](https://github.com/mbitson/mcg)

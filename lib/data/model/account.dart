@@ -81,5 +81,6 @@ class Account extends Equatable {
         'color',
         'nickName',
         'profilePicture'
+            'delimit',
       ];
 }

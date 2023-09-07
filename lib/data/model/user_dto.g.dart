@@ -25,7 +25,8 @@ UserDto _$UserDtoFromJson(Map<String, dynamic> json) => $checkedCreate(
             'add2',
             'add1',
             'sub',
-            'exp'
+            'exp',
+            'delimit'
           ],
         );
         final val = UserDto(
@@ -42,6 +43,7 @@ UserDto _$UserDtoFromJson(Map<String, dynamic> json) => $checkedCreate(
           add1: $checkedConvert('add1', (v) => v as String?),
           sub: $checkedConvert('sub', (v) => v as String?),
           exp: $checkedConvert('exp', (v) => v as int?),
+          delimit: $checkedConvert('delimit', (v) => v as String?),
         );
         return val;
       },
@@ -69,5 +71,6 @@ Map<String, dynamic> _$UserDtoToJson(UserDto instance) {
   writeNotNull('add1', instance.add1);
   writeNotNull('sub', instance.sub);
   writeNotNull('exp', instance.exp);
+  writeNotNull('delimit', instance.delimit);
   return val;
 }

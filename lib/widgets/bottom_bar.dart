@@ -20,6 +20,7 @@ class CustomBottomNavBar extends StatefulWidget {
 }
 
 class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
+  final userController = UserController.to;
   RxInt selectedIndex = 0.obs;
 
   List<BottomMenuModel> bottomMenuList = [
@@ -121,7 +122,9 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
               case 3:
                 destination = AppRoutes.myProfile;
               default:
-                destination = AppRoutes.sharedSchedule;
+                destination = userController.teams.length > 0
+                    ? AppRoutes.sharedSchedule
+                    : AppRoutes.teamInvitation;
             }
             setState(() {
               selectedIndex.value = index;

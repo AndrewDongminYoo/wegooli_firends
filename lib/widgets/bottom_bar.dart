@@ -128,9 +128,12 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
             }
             setState(() {
               selectedIndex.value = index;
+              selectedIndex.refresh();
             });
             Get.toNamed(destination,
-                id: widget.id, arguments: bottomMenuList[index]);
+                id: widget.id,
+                arguments: bottomMenuList[index],
+                preventDuplicates: false);
           },
         ),
       ),

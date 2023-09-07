@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 
 // 📦 Package imports:
 import 'package:get/get.dart';
-import 'package:wegooli_friends/screens/team.invitation.dart';
 
 // 🌎 Project imports:
+import 'package:wegooli_friends/screens/team.invitation.dart';
 import '/core/app_export.dart';
 
 class MainApplication extends StatefulWidget {

@@ -8,13 +8,13 @@ import 'package:flutter/material.dart';
 import 'package:collection/collection.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:wegooli_friends/main.dart';
 
 // 🌎 Project imports:
+import 'package:wegooli_friends/main.dart';
 import '/controllers/account.user.dart';
+import '/lib.dart';
 import 'auth.dart';
 import 'main.dart';
-import '/lib.dart';
 
 /// Displayed as a profile image if the user doesn't have one.
 const placeholderImage =

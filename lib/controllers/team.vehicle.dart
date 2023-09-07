@@ -246,11 +246,14 @@ class VehicleController extends GetxController {
     print('done : $using');
   }
 
-  Future<void> joinTeam() async {
+  Future<bool> joinTeam() async {
     final api = wegooli.getTeamAccountConnectionControllerApi();
     String? accountId = currentUser.id;
     if (accountId != null && invitation.text.length == 10) {
-      api.inviteTeamAccount(accountId: accountId, code: invitation.text);
+      final response = await api.inviteTeamAccount(
+          accountId: accountId, code: invitation.text);
+      return response.data == 'success';
     }
+    return false;
   }
 }

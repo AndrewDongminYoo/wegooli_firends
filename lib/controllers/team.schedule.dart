@@ -2,8 +2,10 @@
 import 'dart:collection';
 import 'dart:ui';
 
-// 📦 Package imports:
+// 🐦 Flutter imports:
 import 'package:flutter/widgets.dart';
+
+// 📦 Package imports:
 import 'package:get/get.dart';
 import 'package:table_calendar/table_calendar.dart';
 

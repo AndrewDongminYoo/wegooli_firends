@@ -68,8 +68,11 @@ class SendingInvitationLog extends GetWidget<VehicleController> {
                     //     title: Text('복사 완료.'),
                     //   ),
                     // );
-                    await controller.joinTeam();
-                    goBack();
+                    if (await controller.joinTeam()) {
+                      Get.to(() => const SharedCalendar());
+                    } else {
+                      goBack();
+                    }
                   },
                   text: l10ns.confirm,
                   margin: getMargin(top: 25),

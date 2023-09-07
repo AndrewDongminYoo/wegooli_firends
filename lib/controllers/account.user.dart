@@ -235,8 +235,8 @@ class UserController extends GetxController {
     if (currentUser.value.id == null) {
       return;
     }
-    final response =
-        await api.selectTeamAccountList(accountId: currentUser.value.id!, isLeaved: 'N');
+    final response = await api.selectTeamAccountList(
+        accountId: currentUser.value.id!, isLeaved: 'N');
     print('findMembers : $response');
     List<TeamAccountConnectionResponse>? teamList = response.data;
 

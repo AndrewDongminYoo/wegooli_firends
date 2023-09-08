@@ -17,11 +17,18 @@ class FloatingYellowButton extends StatelessWidget {
       child: CustomIconButton(
         height: getVerticalSize(70),
         width: getHorizontalSize(70),
-        margin: getMargin(right: 22, top: 30),
+        margin: getMargin(right: 22),
         decoration: const BoxDecoration(
-          color: const Color(0xFFFFE142),
-          shape: BoxShape.circle,
-        ),
+            color: const Color(0xFFFFE142),
+            shape: BoxShape.circle,
+            boxShadow: [
+              BoxShadow(
+                color: Color(0x19000000),
+                blurRadius: 10,
+                offset: Offset(2, 2),
+                spreadRadius: 0,
+              ),
+            ]),
         onTap: () => launchUrlString('tel:15666560'),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -29,8 +36,8 @@ class FloatingYellowButton extends StatelessWidget {
             CustomImageView(
               svgPath: Assets.svg.imgEdit.path,
               color: const Color(0xFF000000),
-              width: 22.5,
-              height: 22.5,
+              width: 30,
+              height: 30,
               margin: getMargin(bottom: 3),
             ),
             Text(

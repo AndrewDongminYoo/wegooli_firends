@@ -39,15 +39,8 @@ class UserController extends GetxController {
 
   RxList<TeamAccountModel> _members = RxList<TeamAccountModel>([]);
   RxList<TeamAccountModel> get members => _members;
-  set members(RxList<TeamAccountModel> value) {
-    _members = value;
-  }
-
   RxList<Schedule> _schedules = RxList<Schedule>.of([]);
   RxList<Schedule> get schedules => _schedules;
-  set schedules(RxList<Schedule> value) {
-    _schedules = value;
-  }
 
   RxList<TeamAccountConnectionResponse> teams =
       RxList<TeamAccountConnectionResponse>([]);
@@ -58,61 +51,55 @@ class UserController extends GetxController {
   RxBool isShowConfirmPassword = false.obs;
   RxBool isWaitingOtpCode = false.obs;
   RxBool verifyCodeExpire = false.obs;
-
-  bool get isValidatedPhone {
-    // TODO: 휴대폰 인증 로직이 필요합니다.
-    return true;
-  }
+  bool _isValidatedPhone = false;
+  bool get isValidatedPhone => _isValidatedPhone;
 
   DateTime verificaticonExpireTime() {
     return DateTime.now().add(const Duration(minutes: 3));
   }
 
   Future<String?> sendVerificationCode() async {
-    String? smsCode;
     // Update the UI - wait for the user to enter the SMS code
     if (phoneCarriers != null && phoneNum.text.isNotEmpty) {
       isWaitingOtpCode.value = true;
-      await showDialog<String>(
+      return await showDialog<String>(
         context: Get.context!,
         barrierDismissible: false,
         builder: (context) {
           return AlertDialog(
-            title: const Text('SMS code:'),
-            actions: [
-              ElevatedButton(
-                onPressed: () {
-                  goBack();
-                },
-                child: const Text('Sign in'),
-              ),
-              OutlinedButton(
-                onPressed: () {
-                  smsCode = null;
-                  goBack();
-                },
-                child: const Text('Cancel'),
-              ),
-            ],
-            content: Container(
-              padding: const EdgeInsets.all(20),
-              child: TextField(
-                onChanged: (value) {
-                  smsCode = value;
-                },
-                textAlign: TextAlign.center,
-                autofocus: true,
-              ),
-            ),
-          );
+              title: const Text('SMS code:'),
+              actions: [
+                ElevatedButton(
+                  onPressed: () {
+                    popWithValue<String?>(context, pinCodes.text);
+                  },
+                  child: const Text('Sign in'),
+                ),
+                OutlinedButton(
+                  onPressed: () {
+                    pinCodes.clear();
+                    popWithValue<String?>(context, null);
+                  },
+                  child: const Text('Cancel'),
+                ),
+              ],
+              content: Container(
+                  padding: const EdgeInsets.all(20),
+                  child: VerificationCodeFormField(controller: this)));
         },
       );
+    } else {
+      Get.showSnackbar(GetSnackBar(title: '번호가 정확하지 않습니다.'));
+      return null;
     }
-    return smsCode;
+  }
+
+  void verificationSuccess() {
+    _isValidatedPhone = true;
   }
 
   void verificaticonIsExpired() {
-    print('verificationCodeHasExpired called!!!');
+    print('[Auth] 휴대폰 인증 코드 만료');
     verifyCodeExpire.value = true;
     // TODO: 다음 로직들 실행
     // 1. 기존 인증번호 코드 무효화 (서버에 타임아웃 전달)
@@ -121,7 +108,7 @@ class UserController extends GetxController {
   }
 
   void setDropdownItem(SelectionPopupModel value) {
-    print('Selected Drop down value ==> ${value.title}');
+    print('Dropdown Selected ==> ${value.title}');
     phoneCarriers = value;
   }
 
@@ -290,7 +277,7 @@ class UserController extends GetxController {
       return null;
     }
     // Color type이 다름
-    // return colorFromHex(hex);
+    // return colorFromHex(hexColor).toMaterial(255);
     return Color(int.parse(colorFromHex(hexColor).toString(), radix: 16));
   }
 }

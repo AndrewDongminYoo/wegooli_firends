@@ -13,7 +13,7 @@ class ArrowRight extends StatelessWidget {
         onTap: onTap,
         svgPath: Assets.svg.imgArrowRight.path,
         height: getSize(18),
-        width: getSize(18),
-        margin: getMargin(left: 54, top: 2, bottom: 4, right: 16));
+        width: getSize(10),
+        margin: getMargin(left: 38, top: 2, bottom: 4, right: 16));
   }
 }

@@ -225,13 +225,12 @@ class _ProfilePageState extends State<ProfilePage> {
                               String verificationId,
                               int? resendToken,
                             ) async {
-                              final smsCode =
-                                  await controller.sendVerificationCode();
-                              if (smsCode != null) {
+                              await controller.sendVerificationCode();
+                              if (controller.pinCodes.text.isNotEmpty) {
                                 // Create a PhoneAuthCredential with the code
                                 final credential = PhoneAuthProvider.credential(
                                   verificationId: verificationId,
-                                  smsCode: smsCode,
+                                  smsCode: controller.pinCodes.text,
                                 );
 
                                 try {
@@ -350,14 +349,14 @@ class _ProfilePageState extends State<ProfilePage> {
           actions: [
             ElevatedButton(
               onPressed: () {
-                Navigator.of(context).pop(true);
+                popWithValue(context, true);
               },
               child: const Text('Update'),
             ),
             OutlinedButton(
               onPressed: () {
                 photoURL = null;
-                Navigator.of(context).pop(false);
+                popWithValue(context, false);
               },
               child: const Text('Cancel'),
             ),

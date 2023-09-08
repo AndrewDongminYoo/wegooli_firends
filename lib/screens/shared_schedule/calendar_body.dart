@@ -52,12 +52,7 @@ class CalendarBody extends GetView<ScheduleController> {
       controller.rangeStart = null; // Important to clean those
       controller.rangeEnd = null;
       controller.rangeSelectionMode = RangeSelectionMode.toggledOff;
-      Widget openCheckReservations = AlertDialog(
-          backgroundColor: Colors.transparent,
-          contentPadding: EdgeInsets.zero,
-          insetPadding: EdgeInsets.zero,
-          content: ReservationsCheckingPageDialog(selectedDay: selectedDay));
-      Get.dialog(openCheckReservations);
+      goReservationsCheck();
     }
   }
 

@@ -1,16 +1,12 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:get/get.dart';
-
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
 class MembersList extends StatelessWidget {
-  final userController = UserController.to;
-
-  MembersList({super.key});
+  const MembersList({super.key, required this.controller});
+  final UserController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -21,13 +17,13 @@ class MembersList extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                if (userController.members.length - 1 > 0)
+                if (controller.members.length - 1 > 0)
                   Obx(
                     () => ListView.builder(
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (_, int index) {
-                          final currentUser = userController.currentUser.value;
-                          final member = userController.members
+                          final currentUser = controller.currentUser.value;
+                          final member = controller.members
                               .where((it) => currentUser.id != it.accountId)
                               .toList()[index];
                           return MemberAvatar(
@@ -35,7 +31,7 @@ class MembersList extends StatelessWidget {
                               avatarImagePath: Assets.images.imgAvatar2.path,
                               personalColor: member.color ?? '#FFCC08');
                         },
-                        itemCount: userController.members.length - 1,
+                        itemCount: controller.members.length - 1,
                         shrinkWrap: true),
                   ),
                   InviteTeamButton(),

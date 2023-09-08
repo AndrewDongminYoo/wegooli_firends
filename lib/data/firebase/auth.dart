@@ -141,7 +141,7 @@ class _AuthGateState extends State<AuthGate> {
           actions: [
             TextButton(
               onPressed: () {
-                Navigator.of(context).pop(true);
+                popWithValue(context, true);
               },
               child: const Text('Send'),
             ),
@@ -410,14 +410,14 @@ Future<String?> getSmsCodeFromUser(BuildContext context) async {
         actions: [
           ElevatedButton(
             onPressed: () {
-              Navigator.of(context).pop(true);
+              popWithValue(context, true);
             },
             child: const Text('Sign in'),
           ),
           OutlinedButton(
             onPressed: () {
               smsCode = null;
-              Navigator.of(context).pop(false);
+              popWithValue(context, false);
             },
             child: const Text('Cancel'),
           ),
@@ -487,14 +487,14 @@ Future<String?> getTotpFromUser(
         actions: [
           ElevatedButton(
             onPressed: () {
-              Navigator.of(context).pop(true);
+              popWithValue(context, true);
             },
             child: const Text('Sign in'),
           ),
           OutlinedButton(
             onPressed: () {
               smsCode = null;
-              Navigator.of(context).pop(false);
+              popWithValue(context, false);
             },
             child: const Text('Cancel'),
           ),

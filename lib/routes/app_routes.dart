@@ -26,7 +26,6 @@ class AppRoutes {
   static const String carSmartKey = '/smart_key';
   static const String splashScreen = '/splash_screen';
   static const String unsubscribeConfirm = '/unsubscribe_confirm';
-  static const String unsubscribeWarn = '/unsubscribe_warn';
   static const String upcomingUnsubscription = '/upcoming_unsubscription';
   static const String teamInvitation = '/team_invitation';
 
@@ -125,11 +124,6 @@ class AppRoutes {
       bindings: [TeamCommunityBinding()],
       name: unsubscribeConfirm,
       page: () => UnsubscriptionConfirm(),
-    ),
-    GetPage(
-      page: () => UnsubscriptionConfirmWarnDialog(),
-      bindings: [TeamCommunityBinding()],
-      name: unsubscribeWarn,
     ),
     GetPage(
       bindings: [TeamCommunityBinding()],

@@ -9,8 +9,8 @@ import 'package:get/route_manager.dart' show Get;
 import '/core/app_export.dart';
 
 dynamic goBack() => Get.back();
-dynamic popWithValue(BuildContext context, dynamic value) =>
-    Navigator.pop(context, value);
+dynamic popWithValue<T>(BuildContext context, T value) =>
+    Navigator.pop<T>(context, value);
 
 /// `Navigation.pushNamed()`의 단축 명령입니다.
 /// 글로벌 라우터에 등록되어 있는 새로운 페이지를 스택에 푸시합니다.
@@ -54,8 +54,10 @@ Future<dynamic>? goRegisterZipCode() => Get.toNamed(AppRoutes.registerZipCode);
 Future<dynamic>? goSharedSchedule() => Get.toNamed(AppRoutes.sharedSchedule);
 // [Page] 스플래시 화면
 Future<dynamic>? goSplashScreen() => Get.toNamed(AppRoutes.splashScreen);
+// [Page] 구독 해지
+Future<dynamic>? goUnsubscribeConfirm() => Get.toNamed(AppRoutes.unsubscribeConfirm);
 // [Page] 예정된 구독 취소 정보
-Future<dynamic>? goUpcomingUnsubscription() =>
+Future<dynamic>? goUnsubscribeInfo() =>
     Get.toNamed(AppRoutes.upcomingUnsubscription);
 
 // [BottomSheet] 예약 날짜 선택기
@@ -64,12 +66,8 @@ Future<dynamic>? goBookDatetimePicker() =>
 
 // [PopupDialog] 예약 확인 페이지
 Future<dynamic>? goReservationsCheck() =>
-    Get.dialog(ReservationsCheckingPageDialog());
+    Get.dialog(const ReservationsCheckingPageDialog());
 // [PopupDialog] 팀 초대하기
 Future<dynamic>? goSendingInvitation() =>
-    Get.dialog(const SendingInvitationLog());
-// [PopupDialog] 구독 해지
-Future<dynamic>? goUnsubscribeConfirm() => Get.dialog(UnsubscriptionConfirm());
+    Get.dialog(const SendingInvitationDialog());
 // [PopupDialog] 구독 취소 확인 경고
-Future<dynamic>? goUnsubscribeWarn() =>
-    Get.dialog(UnsubscriptionConfirmWarnDialog());

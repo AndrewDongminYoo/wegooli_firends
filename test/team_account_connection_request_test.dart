@@ -29,6 +29,5 @@ void main() {
     test('to test the property `leavedAt`', () async {
       // TODO
     });
-
   });
 }

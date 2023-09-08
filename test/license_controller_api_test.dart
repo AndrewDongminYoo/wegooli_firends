@@ -43,6 +43,5 @@ void main() {
     test('test updateLicense', () async {
       // TODO
     });
-
   });
 }

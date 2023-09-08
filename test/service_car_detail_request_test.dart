@@ -14,6 +14,5 @@ void main() {
     test('to test the property `serviceSeq`', () async {
       // TODO
     });
-
   });
 }

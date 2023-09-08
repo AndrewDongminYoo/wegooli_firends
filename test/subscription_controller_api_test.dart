@@ -18,6 +18,5 @@ void main() {
     test('test submitWithdrawal', () async {
       // TODO
     });
-
   });
 }

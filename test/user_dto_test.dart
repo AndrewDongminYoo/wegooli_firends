@@ -119,6 +119,5 @@ void main() {
     test('to test the property `customerKey`', () async {
       // TODO
     });
-
   });
 }

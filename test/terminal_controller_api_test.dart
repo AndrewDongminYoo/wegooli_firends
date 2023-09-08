@@ -28,6 +28,5 @@ void main() {
     test('test updateTerminal', () async {
       // TODO
     });
-
   });
 }

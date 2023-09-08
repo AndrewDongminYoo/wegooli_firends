@@ -79,6 +79,5 @@ void main() {
     test('to test the property `carNickName`', () async {
       // TODO
     });
-
   });
 }

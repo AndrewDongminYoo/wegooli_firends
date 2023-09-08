@@ -33,6 +33,5 @@ void main() {
     test('test updatePaymentCard', () async {
       // TODO
     });
-
   });
 }

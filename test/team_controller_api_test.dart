@@ -38,6 +38,5 @@ void main() {
     test('test updateTeam', () async {
       // TODO
     });
-
   });
 }

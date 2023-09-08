@@ -64,6 +64,5 @@ void main() {
     test('to test the property `profilePicture`', () async {
       // TODO
     });
-
   });
 }

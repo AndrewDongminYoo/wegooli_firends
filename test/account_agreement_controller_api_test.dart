@@ -17,15 +17,11 @@ void main() {
 
       // Act
       await api.deleteAccountAgreement(
-        classification: classification,
-        accountId: accountId
-      );
+          classification: classification, accountId: accountId);
 
       // Assert
-      expect(
-        dio.requests.first.path,
-        '/account/agreement/$classification/$accountId'
-      );
+      expect(dio.requests.first.path,
+          '/account/agreement/$classification/$accountId');
     });
 
     test('deleteAccountAgreement throws error', () async {
@@ -58,6 +54,5 @@ void main() {
     test('test updateAccountAgreement', () async {
       // TODO
     });
-
   });
 }

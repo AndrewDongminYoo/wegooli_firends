@@ -47,6 +47,5 @@ void main() {
     test('test signup', () async {
       // TODO
     });
-
   });
 }

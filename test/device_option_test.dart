@@ -19,6 +19,5 @@ void main() {
     test('to test the property `optName`', () async {
       // TODO
     });
-
   });
 }

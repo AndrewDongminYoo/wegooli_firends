@@ -584,7 +584,7 @@
   "@unsubscribeCancel": {
     "description": "구독 해지 신청 이후, 다음 결제일까지 서비스를 계속 사용할 수 있으며, 이때 해지 예약을 취소할 수도 있음"
   },
-  "unsubscriptionConfirm": "[PopupDialog] 구독 해지",
+  "unsubscriptionConfirm": "[Page] 구독 해지",
   "@unsubscriptionConfirm": {
     "description": "[PopupDialog]는 원활한 개발을 위한 게이트웨이 모달 띄우기 버튼에 사용됨."
   },

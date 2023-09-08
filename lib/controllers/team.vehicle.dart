@@ -13,16 +13,27 @@ class VehicleController extends GetxController {
   static VehicleController get to => Get.isRegistered<VehicleController>()
       ? Get.find<VehicleController>()
       : Get.put(VehicleController());
-  // final String token = PrefUtils.storage.getToken();
-  final userController = UserController.to;
   late Rx<SubscriptionModel> subscriptionModel = SubscriptionModel().obs;
   late Rx<CarManagementModel> carManagementModel = CarManagementModel().obs;
-  late int? teamSeq;
-  late UserDto currentUser = const UserDto();
+
+  /// late init from UserController values.
+  late int? _teamSeq;
+  int? get teamSeq => _teamSeq;
+  late UserDto _currentUser = const UserDto();
+  UserDto get currentUser => _currentUser;
+  late String _nickname = '위굴리';
+  String get nickname => _nickname;
+  late List<TeamAccountModel> _members = [];
+  List<TeamAccountModel> get members => _members;
+
   @override
   void onInit() async {
-    currentUser = userController.currentUser.value;
-    teamSeq = userController.getTeamSeq();
+    final userController = UserController.to;
+    _currentUser = userController.currentUser.value;
+    _teamSeq = userController.getTeamSeq();
+    _members = userController.members;
+    _nickname =
+        _currentUser.nickname != null ? _currentUser.nickname! : _nickname;
     await retrieveInfo();
     await retrieveSchedule();
     await selectSubscriptionInfo();
@@ -31,10 +42,9 @@ class VehicleController extends GetxController {
   }
 
   void getClient(String? accountId) {
-    final List<TeamAccountModel> members = userController.members;
     final whoDriving =
         members.firstWhereOrNull((it) => it.accountId == accountId);
-    print('team.vehicle.dart#L39 $whoDriving is Driving');
+    print('team.vehicle.dart#L48 $whoDriving is Driving');
     driverName.text = whoDriving?.nickname ?? '';
   }
 
@@ -64,10 +74,6 @@ class VehicleController extends GetxController {
     }
   }
 
-  set terminalDevice(TerminalModel value) {
-    _terminalDevice = value;
-  }
-
   /// 현재 차량의 잔여 연료량
   String get fuel => terminalDevice.fuel ?? '0';
 
@@ -84,7 +90,6 @@ class VehicleController extends GetxController {
 
   /// 현재 차량의 잔여 연료 레벨 (0~10).
   int get level => int.parse(fuel) ~/ 10;
-
   ShareServiceModel? _sharingService;
   ShareServiceModel get sharingService {
     if (_sharingService == null) {
@@ -92,10 +97,6 @@ class VehicleController extends GetxController {
     } else {
       return _sharingService!;
     }
-  }
-
-  set sharingService(ShareServiceModel value) {
-    _sharingService = value;
   }
 
   Rx<int>? _subMonthlyPrice;
@@ -180,6 +181,7 @@ class VehicleController extends GetxController {
         .getSubscriptionControllerApi()
         .submitWithdrawal(submitWithdrawalModel: submitWithdrawalModel);
     await selectSubscriptionInfo();
+    await goUnsubscribeInfo();
   }
 
   Future<void> subscribe() async {
@@ -229,8 +231,8 @@ class VehicleController extends GetxController {
     }
     final terminalApi = wegooli.getTerminalControllerApi();
     final terminal = await terminalApi.selectTerminal(seq: teamSeq!);
-    print('team.vehicle.dart#L22 terminal.data : ${terminal.data}');
-    terminalDevice = terminal.data ?? TerminalModel();
+    print('team.vehicle.dart#L230 terminal.data : ${terminal.data}');
+    _terminalDevice = terminal.data ?? TerminalModel();
   }
 
   Future<void> retrieveSchedule() async {
@@ -240,18 +242,17 @@ class VehicleController extends GetxController {
     final scheduleApi = wegooli.getScheduleControllerApi();
     final scheduleList =
         await scheduleApi.selectScheduleList(teamSeq: teamSeq!);
-    print('team.vehicle.dart#L28 scheduleList.data : ${scheduleList.data}');
+    print('team.vehicle.dart#L241 scheduleList.data : ${scheduleList.data}');
     bool using = scheduleList.data!.any(compose);
-    availableNow.value = using;
     print('done : $using');
+    availableNow.value = using;
   }
 
   Future<bool> joinTeam() async {
     final api = wegooli.getTeamAccountConnectionControllerApi();
     String? accountId = currentUser.id;
     if (accountId != null && invitation.text.length == 10) {
-      print(
-          'joinTeam() accountId : $accountId | invitation : ${invitation.text}');
+      print('joinTeam() accountId: $accountId |invitation: ${invitation.text}');
       final response = await api.inviteTeamAccount(
           accountId: accountId, code: invitation.text);
       return response.data == 'success';

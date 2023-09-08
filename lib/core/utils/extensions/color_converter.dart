@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart' as material;
 
 // 📦 Package imports:
-import 'package:color/color.dart';
+import 'package:color/color.dart' as dart;
 
 /// e.g.
 ///   0xBB1122 -> #BB1122
@@ -19,15 +19,15 @@ String hexFromColor(String hexColor) {
 /// 이 함수는 16진수 색상 코드를 Dart 코드에서 사용할 수 있는 형식으로 변환
 ///
 /// @param [String] hexColor - 시작 부분에 '#' 기호가 있거나 없는 16진수 형식의 색상을 나타내는 문자열입니다.
-/// @return [Color] - RR은 빨간색 값, GG는 녹색 값, BB는 파란색 값, AA는 색상의 알파 값(투명도)을 나타내는 `0xRRGGBBAA` 형식의 16진수 색상 코드 문자열 표현입니다.
-Color colorFromHex(String hexColor) {
+/// @return [dart.Color] - RR은 빨간색 값, GG는 녹색 값, BB는 파란색 값, AA는 색상의 알파 값(투명도)을 나타내는 `0xRRGGBBAA` 형식의 16진수 색상 코드 문자열 표현입니다.
+dart.Color colorFromHex(String hexColor) {
   hexColor = hexColor.toUpperCase().replaceFirst('#', '');
   if (hexColor.length == 6) {
     hexColor = 'FF$hexColor';
   }
   // 0x 제거하고 넣을 것 !
   // return Color.hex('0x${hexColor}');
-  return Color.hex(hexColor);
+  return dart.Color.hex(hexColor);
 }
 
 /// [Material Design Color Generator](https://github.com/mbitson/mcg)
@@ -38,8 +38,8 @@ Color colorFromHex(String hexColor) {
 /// @return `Map<int, String>` - 주어진 primaryHex 색상에서 생성된 색상 견본을 나타내는 정수 키 및 문자열 값의 맵입니다.
 ///   키는 50에서 900 범위의 색상 음영을 나타내고 값은 해당 색상을 16진수 형식으로 나타냅니다.
 Map<int, String> swatchFromPrimaryHex(String primaryHex) {
-  final primary = Color.hex(primaryHex);
-  final baseLight = Color.hex('ffffff');
+  final primary = dart.Color.hex(primaryHex);
+  final baseLight = dart.Color.hex('ffffff');
   final baseDark = primary * primary;
   return {
     50: _mix(baseLight, primary, 12).toHexString(),
@@ -62,7 +62,7 @@ Map<int, String> swatchFromPrimaryHex(String primaryHex) {
 /// @return [Map<int, String>] 16진수 문자열 형식으로 지정된 기본 색상에서 생성된 강조 색상 맵입니다.
 ///   지도의 키는 강조 색상 음영(100, 200, 400, 700)을 나타내고 값은 해당하는 16진수 색상 코드입니다.
 Map<int, String> accentSwatchFromPrimaryHex(String primaryHex) {
-  final primary = Color.hex(primaryHex);
+  final primary = dart.Color.hex(primaryHex);
   final baseDark = primary * primary;
   final baseTriad = primary.tetrad();
   return {
@@ -81,7 +81,7 @@ Map<int, String> accentSwatchFromPrimaryHex(String primaryHex) {
   };
 }
 
-extension on Color {
+extension on dart.Color {
   // ignore: unused_element
   material.Color toMaterial(int? alpha) {
     return material.Color.fromARGB(
@@ -108,8 +108,8 @@ extension on Color {
   /// @return [Color] - 두 `Color` 객체의 RGB 값을 곱한 결과인 새로운 `Color` 객체를 반환합니다.
   ///   두 색상의 RGB 값을 곱한 후 255로 나눈 값을 `floor()` 메서드를 사용하여 가장 가까운 정수로 내림합니다.
   ///   결과 RGB 값은 `Color`를 사용하여 새로운 `Color` 개체를 만드는 데 사용됩니다.
-  Color operator *(Color other) {
-    return Color.rgb(
+  dart.Color operator *(dart.Color other) {
+    return dart.Color.rgb(
         (toRgbColor().r * other.toRgbColor().r / 255).floor(),
         (toRgbColor().g * other.toRgbColor().g / 255).floor(),
         (toRgbColor().b * other.toRgbColor().b / 255).floor());
@@ -120,13 +120,13 @@ extension on Color {
   ///
   /// @return [List<Color>] - 원래 색상과 원래 색상으로 4색 구성표를 형성하는 다른 세 가지 색상을 포함하는 네 가지 색상 목록입니다.
   ///   세 가지 추가 색상은 HSL 색상 공간에서 원래 색상의 색조 값에 90, 180 및 270도를 추가하여 생성됩니다.
-  List<Color> tetrad() {
+  List<dart.Color> tetrad() {
     final hsl = toHslColor();
     return [
       this,
-      Color.hsl((hsl.h + 90) % 360, hsl.s, hsl.l),
-      Color.hsl((hsl.h + 180) % 360, hsl.s, hsl.l),
-      Color.hsl((hsl.h + 270) % 360, hsl.s, hsl.l),
+      dart.Color.hsl((hsl.h + 90) % 360, hsl.s, hsl.l),
+      dart.Color.hsl((hsl.h + 180) % 360, hsl.s, hsl.l),
+      dart.Color.hsl((hsl.h + 270) % 360, hsl.s, hsl.l),
     ];
   }
 
@@ -140,12 +140,13 @@ extension on Color {
   ///   50%는 50% 회색이지만 여전히 색상을 볼 수 있습니다.
   ///   0%는 완전히 회색이며 더 이상 색상을 볼 수 없습니다.
   /// @return [Color] - `saturate` 메서드는 지정된 `amount`(0%에서 100% 사이의 백분율 값)만큼 채도 값이 증가한 `Color` 개체를 반환.
-  Color saturate(int amount) {
+  // ignore: unused_element
+  dart.Color saturate(int amount) {
     assert(amount >= 0 && amount <= 100,
         'Amount should be a percentage value from 0% to 100%.');
     final hsl = toHslColor();
     final s = (hsl.s + amount).clamp(0, 100);
-    return Color.hsl(hsl.h, s, hsl.l);
+    return dart.Color.hsl(hsl.h, s, hsl.l);
   }
 
   /// https://github.com/bgrins/TinyColor/blob/master/tinycolor.js#L592
@@ -154,12 +155,12 @@ extension on Color {
   /// @param [int] amount - amount 매개변수는 색상을 밝게 해야 하는 백분율 양을 나타내는 정수 값입니다.
   ///   0에서 100 사이의 값이어야 합니다.
   /// @return `Color` - `lighten` 메서드는 지정된 양만큼 밝기가 증가한 새 색상을 나타내는 `Color` 개체를 반환
-  Color lighten(int amount) {
+  dart.Color lighten(int amount) {
     assert(amount >= 0 && amount <= 100,
         'Amount should be a percentage value from 0% to 100%.');
     final hsl = toHslColor();
     final l = (hsl.l + amount).clamp(0, 100);
-    return Color.hsl(hsl.h, hsl.s, l);
+    return dart.Color.hsl(hsl.h, hsl.s, l);
   }
 }
 
@@ -173,9 +174,9 @@ extension on Color {
 ///   여기서 0은 첫번째 색상만 사용하고 100은 두 번째 색상만 사용함을 의미
 /// @return `Color` - 제공된 양에 따라 두 가지 입력 색상의 혼합을 나타내는 Color 객체.
 ///   결과 색상은 혼합에서 두 번째 색상의 백분율을 결정하는 양과 함께 두 입력 색상의 혼합
-Color _mix(
-  Color color1,
-  Color color2,
+dart.Color _mix(
+  dart.Color color1,
+  dart.Color color2,
   int amount,
 ) {
   assert(amount >= 0 && amount <= 100,
@@ -183,6 +184,6 @@ Color _mix(
   final p = amount / 100;
   final c1 = color1.toRgbColor();
   final c2 = color2.toRgbColor();
-  return Color.rgb(((c2.r - c1.r) * p + c1.r).round(),
+  return dart.Color.rgb(((c2.r - c1.r) * p + c1.r).round(),
       ((c2.g - c1.g) * p + c1.g).round(), ((c2.b - c1.b) * p + c1.b).round());
 }

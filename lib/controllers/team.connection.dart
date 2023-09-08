@@ -9,13 +9,12 @@ import '/core/app_export.dart';
 
 class ConnectionController extends GetxController with ChannelEventHandler {
   final wegooli = WegooliFriends.client;
-  final userController = UserController.to;
   static ConnectionController get to => Get.isRegistered<ConnectionController>()
       ? Get.find<ConnectionController>()
       : Get.put(ConnectionController());
 
-  final RxString appId =
-      '36FB6EA9-27A7-44F1-9696-72E1E21033B6'.obs; // Sendbird application id
+  final String appId =
+      '36FB6EA9-27A7-44F1-9696-72E1E21033B6'; // Sendbird application id
   RxList<BaseMessage> _messages = RxList<BaseMessage>();
   GroupChannel? channel;
 
@@ -26,13 +25,14 @@ class ConnectionController extends GetxController with ChannelEventHandler {
   @override
   void onInit() {
     SendbirdSdk().addChannelEventHandler("dashchat", this);
+    final userController = UserController.to;
     String? userId = userController.currentUser.value.id;
     if (userId != null) {
       List<String> otherUserIds = userController.members
           .where((member) => member.accountId! != userId)
           .map((member) => member.accountId!)
           .toList();
-      loadSendbird(appId.value, userId, otherUserIds);
+      loadSendbird(appId, userId, otherUserIds);
     }
     super.onInit();
   }

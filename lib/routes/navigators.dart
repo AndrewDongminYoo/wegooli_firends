@@ -55,7 +55,8 @@ Future<dynamic>? goSharedSchedule() => Get.toNamed(AppRoutes.sharedSchedule);
 // [Page] 스플래시 화면
 Future<dynamic>? goSplashScreen() => Get.toNamed(AppRoutes.splashScreen);
 // [Page] 구독 해지
-Future<dynamic>? goUnsubscribeConfirm() => Get.toNamed(AppRoutes.unsubscribeConfirm);
+Future<dynamic>? goUnsubscribeConfirm() =>
+    Get.toNamed(AppRoutes.unsubscribeConfirm);
 // [Page] 예정된 구독 취소 정보
 Future<dynamic>? goUnsubscribeInfo() =>
     Get.toNamed(AppRoutes.upcomingUnsubscription);

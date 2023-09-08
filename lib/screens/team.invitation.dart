@@ -1,17 +1,12 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:get/get.dart';
-
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
 // ignore: must_be_immutable
 class TeamInvitation extends StatelessWidget {
   TeamInvitation({super.key});
-  UserController controller = UserController.to;
-  VehicleController vehicleController = VehicleController.to;
 
   @override
   Widget build(BuildContext context) {
@@ -62,13 +57,7 @@ class TeamInvitation extends StatelessWidget {
                       )),
                       buttonTextStyle: CustomTextStyles.titleMedium18,
                       onTap: () {
-                        // goSendingInvitation();
-                        Widget openInvitationModal = const AlertDialog(
-                            backgroundColor: Colors.transparent,
-                            contentPadding: EdgeInsets.zero,
-                            insetPadding: EdgeInsets.zero,
-                            content: SendingInvitationLog());
-                        Get.dialog(openInvitationModal);
+                        goSendingInvitation();
                       },
                     ),
                   ],

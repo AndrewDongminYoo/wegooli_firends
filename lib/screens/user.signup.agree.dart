@@ -11,9 +11,8 @@ class AcceptTerms extends StatefulWidget {
 }
 
 class _AcceptTermsState extends State<AcceptTerms> {
-  Account userAgreement = Account();
-  List<AccountAgreementModel> accountAgreement = [];
-
+  List<AccountAgreementModel> accountAgreement =
+      List.generate(7, (index) => AccountAgreementModel(agreeYn: 'N'));
   bool isAcceptedTerm0 = false;
   bool isAcceptedTerm1 = false;
   bool isAcceptedTerm2 = false;
@@ -21,15 +20,17 @@ class _AcceptTermsState extends State<AcceptTerms> {
   bool isAcceptedTerm4 = false;
   bool isAcceptedTerm5 = false;
   bool isAcceptedTerm6 = false;
+  bool _isAllTermsAccepted = false;
 
   bool get isAllTermsAccepted {
-    return (isAcceptedTerm0 &&
+    if (isAcceptedTerm0 &&
         isAcceptedTerm1 &&
         isAcceptedTerm2 &&
         isAcceptedTerm3 &&
         isAcceptedTerm4 &&
         isAcceptedTerm5 &&
-        isAcceptedTerm6);
+        isAcceptedTerm6) _isAllTermsAccepted = true;
+    return _isAllTermsAccepted;
   }
 
   set isAllTermsAccepted(bool e) {
@@ -40,6 +41,7 @@ class _AcceptTermsState extends State<AcceptTerms> {
     isAcceptedTerm4 = e;
     isAcceptedTerm5 = e;
     isAcceptedTerm6 = e;
+    _isAllTermsAccepted = true;
   }
 
   void checkAll(bool value) {
@@ -190,18 +192,22 @@ class _AcceptTermsState extends State<AcceptTerms> {
                               height: getSize(18),
                               width: getSize(18),
                               margin: getMargin(left: 40, bottom: 2)),
-                        ]))
+                        ])),
+                    Container(
+                      margin: getMargin(left: 24, right: 28, bottom: 41),
+                      decoration: AppDecoration.shadow,
+                      child: CustomElevatedButton(
+                        text: l10ns.acceptanceComplete,
+                        buttonStyle: CustomButtonStyles.fillAmberA200C26,
+                        buttonTextStyle: CustomTextStyles.titleMediumOnPrimary,
+                        onTap: () {
+                          goPhoneAuth();
+                        },
+                      ),
+                    )
                   ],
                 )),
           )),
-      bottomNavigationBar: Container(
-        margin: getMargin(left: 24, right: 28, bottom: 41),
-        decoration: AppDecoration.shadow,
-        child: CustomElevatedButton(
-            text: l10ns.acceptanceComplete,
-            buttonStyle: CustomButtonStyles.fillAmberA200C26,
-            buttonTextStyle: CustomTextStyles.titleMediumOnPrimary),
-      ),
     ));
   }
 }

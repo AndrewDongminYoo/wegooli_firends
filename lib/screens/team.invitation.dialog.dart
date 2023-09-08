@@ -8,12 +8,20 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 // ignore: must_be_immutable
-class SendingInvitationLog extends GetWidget<VehicleController> {
-  const SendingInvitationLog({super.key});
+class SendingInvitationDialog extends StatefulWidget {
+  const SendingInvitationDialog({super.key});
+  @override
+  State<SendingInvitationDialog> createState() =>
+      _SendingInvitationDialogState();
+}
+
+class _SendingInvitationDialogState extends State<SendingInvitationDialog> {
+  final controller = VehicleController.to;
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return AlertDialog(
+        content: SingleChildScrollView(
       child: Container(
         margin: getMargin(left: 16, right: 16, bottom: 323),
         decoration: AppDecoration.fillOnPrimaryContainer
@@ -50,13 +58,6 @@ class SendingInvitationLog extends GetWidget<VehicleController> {
               InvitationCodeFormField(controller: controller),
               CustomElevatedButton(
                   onTap: () async {
-                    // Clipboard.setData(
-                    // ClipboardData(text: controller.invitation.text));
-                    // Get.dialog(
-                    //   AlertDialog(
-                    //     title: Text('복사 완료.'),
-                    //   ),
-                    // );
                     if (await controller.joinTeam()) {
                       Get.to(() => const SharedCalendar());
                     } else {
@@ -75,6 +76,6 @@ class SendingInvitationLog extends GetWidget<VehicleController> {
                   buttonTextStyle: theme.textTheme.titleMedium!)
             ]),
       ),
-    );
+    ));
   }
 }

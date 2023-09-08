@@ -40,9 +40,12 @@ class _SmartKeyAvailablePageState extends State<SmartKeyAvailablePage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           CustomImageView(
-                            imagePath: Assets.images.imgCarMorUrban.path,
+                            imagePath: controller.terminalDevice.carImage ??
+                                Assets.images.imgCarNewRay.path,
                             height: getVerticalSize(92),
-                            width: getHorizontalSize(139),
+                            margin: getMargin(left: 10),
+                            width: getHorizontalSize(129),
+                            fit: BoxFit.fitWidth,
                           ),
                           Padding(
                               padding: getPadding(
@@ -55,7 +58,7 @@ class _SmartKeyAvailablePageState extends State<SmartKeyAvailablePage> {
                                   children: [
                                     Text(
                                       controller.terminalDevice.model ??
-                                          l10ns.carMorning,
+                                          l10ns.carRayGen3,
                                       overflow: TextOverflow.ellipsis,
                                       textAlign: TextAlign.left,
                                       style:

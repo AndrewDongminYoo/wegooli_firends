@@ -14,7 +14,6 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-        child: SingleChildScrollView(
       child: Container(
           padding: getPadding(top: 16, bottom: 16),
           decoration: AppDecoration.fillOnPrimaryContainer
@@ -289,6 +288,6 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                       ]))
             ],
           )),
-    ));
+    );
   }
 }

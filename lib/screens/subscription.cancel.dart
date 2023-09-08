@@ -7,14 +7,12 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
-class UnsubscriptionConfirm extends GetWidget<UserController> {
-  final vehicleController = VehicleController.to;
-
+class UnsubscriptionConfirm extends GetWidget<VehicleController> {
   UnsubscriptionConfirm({super.key});
   @override
   Widget build(BuildContext context) {
     DateTime expireDate =
-        DateTime.tryParse(vehicleController.calcDate()) ?? DateTime.now();
+        DateTime.tryParse(controller.calcDate()) ?? DateTime.now();
     return SafeArea(
         child: Scaffold(
       backgroundColor: theme.colorScheme.onPrimaryContainer,
@@ -36,7 +34,7 @@ class UnsubscriptionConfirm extends GetWidget<UserController> {
                   margin: getMargin(top: 50),
                   child: Text(
                     l10ns.areYouSureYouWantToUnsubscribe(
-                        controller.currentUser.value.nickname ?? '닉네임'),
+                        controller.currentUser.nickname ?? '닉네임'),
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     textAlign: TextAlign.center,
@@ -88,13 +86,9 @@ class UnsubscriptionConfirm extends GetWidget<UserController> {
                           )),
                           buttonTextStyle: CustomTextStyles.titleMedium18,
                           onTap: () {
-                            Widget alertDialog = AlertDialog(
-                                backgroundColor: Colors.transparent,
-                                contentPadding: EdgeInsets.zero,
-                                insetPadding: EdgeInsets.zero,
-                                content: UnsubscriptionConfirmWarnDialog());
-                            Get.dialog(alertDialog);
-                            // vehicleController.unsubscribe();
+                            Get.dialog(UnsubscriptionConfirmWarnDialog(
+                                controller: controller));
+                            // controller.unsubscribe();
                           },
                         )
                       ]))

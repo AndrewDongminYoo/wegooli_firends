@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import '/core/app_export.dart';
 
 class RegisterCreditCard extends StatefulWidget {
-
   RegisterCreditCard({super.key});
 
   @override

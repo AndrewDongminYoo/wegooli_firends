@@ -6,24 +6,8 @@ import '/core/app_export.dart';
 
 // ignore: must_be_immutable
 class GatewayScreen extends StatelessWidget {
-  Widget alertDialog = AlertDialog(
-      backgroundColor: Colors.transparent,
-      contentPadding: EdgeInsets.zero,
-      insetPadding: EdgeInsets.zero,
-      content: UnsubscriptionConfirmWarnDialog());
-
-  Widget openInvitationModal = const AlertDialog(
-      backgroundColor: Colors.transparent,
-      contentPadding: EdgeInsets.zero,
-      insetPadding: EdgeInsets.zero,
-      content: SendingInvitationLog());
-
-  Widget openCheckReservations = AlertDialog(
-      backgroundColor: Colors.transparent,
-      contentPadding: EdgeInsets.zero,
-      insetPadding: EdgeInsets.zero,
-      content: ReservationsCheckingPageDialog());
-
+  Widget openInvitationModal = const SendingInvitationDialog();
+  Widget openCheckReservations = const ReservationsCheckingPageDialog();
   Widget openDateTimePicker = const DatetimePickerBottomSheet();
 
   GatewayScreen({super.key});
@@ -106,9 +90,6 @@ class GatewayScreen extends StatelessWidget {
                         RouteItem(
                             routeDestination: AppRoutes.carSmartKey,
                             routeName: l10ns.smartKeyAvailable),
-                        RouteModal(
-                            dialog: alertDialog,
-                            dialogTitle: l10ns.unsubscriptionConfirmWarn),
                         RouteModal(
                             dialog: openInvitationModal,
                             dialogTitle: l10ns.sendingCrewInvitation),

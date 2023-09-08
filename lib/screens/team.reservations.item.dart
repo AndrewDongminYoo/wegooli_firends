@@ -45,8 +45,8 @@ class TeamReservationsItem extends StatelessWidget {
           Container(
             width: 278,
             height: 75,
-            padding: getPadding(left:10),
-            margin: getMargin(all:0),
+            padding: getPadding(left: 10),
+            margin: getMargin(all: 0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -56,7 +56,7 @@ class TeamReservationsItem extends StatelessWidget {
                   style: TextStyle(
                     color: Color(0xFF222222),
                     fontSize: 12,
-                    fontFamily: 'Pretendard',
+                    fontFamily: FontFamily.pretendard,
                     fontWeight: FontWeight.w400,
                     height: 1.50,
                     letterSpacing: 0.02,
@@ -82,7 +82,7 @@ class TeamReservationsItem extends StatelessWidget {
                               style: TextStyle(
                                 color: Color(0xFF222222),
                                 fontSize: 16,
-                                fontFamily: 'Pretendard',
+                                fontFamily: FontFamily.pretendard,
                                 fontWeight: FontWeight.w400,
                                 height: 1.50,
                                 letterSpacing: 0.03,

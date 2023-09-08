@@ -17,7 +17,7 @@ class UserController extends GetxController {
   TextEditingController detailAddress = TextEditingController();
   TextEditingController emailAddress = TextEditingController();
   TextEditingController rePassword = TextEditingController();
-  TextEditingController inviteCode = TextEditingController();
+  TextEditingController invitation = TextEditingController();
   TextEditingController username = TextEditingController();
   TextEditingController password = TextEditingController();
   TextEditingController postCode = TextEditingController();
@@ -30,9 +30,12 @@ class UserController extends GetxController {
 
   SelectionPopupModel? phoneCarriers;
   List<SelectionPopupModel> telecoms = [
-    SelectionPopupModel(id: 011, title: "SKT"),
-    SelectionPopupModel(id: 016, title: "KT"),
-    SelectionPopupModel(id: 019, title: "LG"),
+    SelectionPopupModel(id: 01, title: "SKT"),
+    SelectionPopupModel(id: 02, title: "KT"),
+    SelectionPopupModel(id: 03, title: "LG U+"),
+    SelectionPopupModel(id: 04, title: "SKT 알뜰폰"),
+    SelectionPopupModel(id: 05, title: "KT 알뜰폰"),
+    SelectionPopupModel(id: 06, title: "LG U+ 알뜰폰"),
   ];
 
   Rx<UserDto> currentUser = const UserDto().obs;

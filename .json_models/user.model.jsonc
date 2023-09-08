@@ -1,0 +1,23 @@
+{
+  "__className": "user.model",
+  "__path": "/lib/data/custom/",
+  "username": "AndrewDongminYoo",
+  "nickname": "donminzzi",
+  "birthDay": "940812",
+  "socialId": "1795971",
+  "creditCardId": "5735650564015635",
+  "cardPassword": "1234",
+  "primaryAddress": "서울, 강남구 역삼동 602번지",
+  "emailAddress": "ydm2790@naver.com",
+  "detailAddress": "16층 1604호",
+  "expirationDate": "0628",
+  "firstIssueYear": "18",
+  "fullName": "유동민",
+  "invitation": "X9dPKoRFlp",
+  "licenseNumbers": "서울18123456",
+  "password": "1234",
+  "rePassword": "1234",
+  "phoneNum": "+821035661857",
+  "pinCodes": "0911",
+  "postCode": "70351"
+}

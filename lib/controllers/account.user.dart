@@ -238,7 +238,8 @@ class UserController extends GetxController {
   }
 
   Future<bool> signOut() async {
-    final response = await wegooli.getUserControllerApi().signOut(id: currentUser.value.id!);
+    final response =
+        await wegooli.getUserControllerApi().signOut(id: currentUser.value.id!);
     return response.data == 'success';
   }
 

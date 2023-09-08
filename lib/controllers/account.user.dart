@@ -229,8 +229,14 @@ class UserController extends GetxController {
     print('members : ${members.toString()}');
   }
 
-  void logOut() {
-    wegooli.getUserControllerApi().logOut();
+  Future<bool> logOut() async {
+    final response = await wegooli.getUserControllerApi().logOut();
+    return response.data == 'logOut';
+  }
+
+  Future<bool> signOut() async {
+    final response = await wegooli.getUserControllerApi().signOut(id: currentUser.value.id!);
+    return response.data == 'success';
   }
 
   int? getTeamSeq() {

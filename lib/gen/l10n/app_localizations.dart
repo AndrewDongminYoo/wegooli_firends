@@ -952,7 +952,7 @@ abstract class Localized {
   /// 가입 해지 모달 안내 문구2
   ///
   /// In ko, this message translates to:
-  /// **'위굴리 프렌즈의 회원 탈퇴 요청하시겠습니까? 회원 탈퇴는 7일간 진행되며 7일 후엔 완전히 삭제됩니다.'**
+  /// **'위굴리 프렌즈의 회원 탈퇴하시겠습니까?'**
   String get wouldYouLikeToRequestToBeRemovedFromWegooliFriends;
 
   /// 가입 해지 모달 안내 문구1

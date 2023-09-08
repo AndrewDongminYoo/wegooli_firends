@@ -99,8 +99,10 @@ class ProfileInfoPage extends GetWidget<UserController> {
                             ),
                           )),
                           buttonTextStyle: CustomTextStyles.titleMedium18,
-                          onTap: () {
-                            controller.logOut();
+                          onTap: () async {
+                            if (await controller.logOut()) {
+                              goIdPwLogin();
+                            }
                           }),
                       TextButton(
                         onPressed: () {
@@ -110,9 +112,11 @@ class ProfileInfoPage extends GetWidget<UserController> {
                                 .wouldYouLikeToRequestToBeRemovedFromWegooliFriends),
                             cancelText: l10ns.cancel,
                             confirmText: l10ns.withdrawal,
-                            confirmFunc: () {
+                            confirmFunc: () async {
                               // TODO globalController로 사용자 정보 옮긴 뒤 해당 id 이용해서 회원 탈퇴 진행.
-                              // api.signout(id: );
+                              if (await controller.signOut()) {
+                                goIdPwLogin();
+                              }
                             },
                           ));
                         },

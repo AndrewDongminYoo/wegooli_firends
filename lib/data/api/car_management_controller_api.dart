@@ -250,13 +250,14 @@ class CarManagementControllerApi {
               growable: true);
     } catch (error, stackTrace) {
       print('error ${error}');
-      throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
+      // TODO
+      // throw DioException(
+      //   requestOptions: _response.requestOptions,
+      //   response: _response,
+      //   type: DioExceptionType.unknown,
+      //   error: error,
+      //   stackTrace: stackTrace,
+      // );
     }
 
     return Response<CarManagementModel>(

@@ -444,7 +444,7 @@ class LocalizedKo extends Localized {
   String get withdrawingMember => '회원 탈퇴';
 
   @override
-  String get wouldYouLikeToRequestToBeRemovedFromWegooliFriends => '위굴리 프렌즈의 회원 탈퇴 요청하시겠습니까? 회원 탈퇴는 7일간 진행되며 7일 후엔 완전히 삭제됩니다.';
+  String get wouldYouLikeToRequestToBeRemovedFromWegooliFriends => '위굴리 프렌즈의 회원 탈퇴하시겠습니까?';
 
   @override
   String get youCanCancelAnytime => '해지 시 위굴리 프렌즈의 모든 혜택을 잃게 됩니다. 남은 기간 내에 해지를 취소하실 수 있습니다.';

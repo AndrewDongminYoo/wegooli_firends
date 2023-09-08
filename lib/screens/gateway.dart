@@ -7,7 +7,7 @@ import '/core/app_export.dart';
 // ignore: must_be_immutable
 class GatewayScreen extends StatelessWidget {
   Widget openInvitationModal = const SendingInvitationDialog();
-  Widget openCheckReservations = const ReservationsCheckingPageDialog();
+  Widget openCheckReservations = ReservationsCheckingPageDialog();
   Widget openDateTimePicker = const DatetimePickerBottomSheet();
 
   GatewayScreen({super.key});

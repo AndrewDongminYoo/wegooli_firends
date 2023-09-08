@@ -5,37 +5,32 @@ import 'package:flutter/material.dart';
 import '/core/app_export.dart';
 
 // ignore: must_be_immutable
-class ReservationsCheckingPageDialog extends StatefulWidget {
+class ReservationsCheckingPageDialog extends StatelessWidget {
   final DateTime? selectedDay;
-  const ReservationsCheckingPageDialog({super.key, this.selectedDay});
+  ReservationsCheckingPageDialog({super.key, this.selectedDay});
 
-  @override
-  State<ReservationsCheckingPageDialog> createState() =>
-      _ReservationsCheckingPageDialogState();
-}
-
-class _ReservationsCheckingPageDialogState
-    extends State<ReservationsCheckingPageDialog> {
   final userController = UserController.to;
+
   List<Schedule> findBySelectedDay() {
-    if (widget.selectedDay == null) {
+    if (selectedDay == null) {
       return List.empty();
     }
 
     return userController.schedules.where((schedule) {
-      if (widget.selectedDay == null) {
+      if (selectedDay == null) {
         return false;
       }
       DateTime start = DateTime.parse(schedule.startAt!);
       DateTime end = DateTime.parse(schedule.endAt!);
-      return isDateWithinRange(start, end, widget.selectedDay!);
+      return isDateWithinRange(start, end, selectedDay!);
     }).toList();
   }
 
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
-    return SingleChildScrollView(
+    return AlertDialog(
+        content: SingleChildScrollView(
       child: Container(
         width: mediaQueryData.size.width,
         margin: getMargin(left: 16, right: 16, bottom: 288),
@@ -91,6 +86,6 @@ class _ReservationsCheckingPageDialogState
               ),
             ]),
       ),
-    );
+    ));
   }
 }

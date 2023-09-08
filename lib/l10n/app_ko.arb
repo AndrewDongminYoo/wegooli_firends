@@ -616,7 +616,7 @@
   "@withdrawingMember": {
     "description": "사용자 가입 해지"
   },
-  "wouldYouLikeToRequestToBeRemovedFromWegooliFriends": "위굴리 프렌즈의 회원 탈퇴 요청하시겠습니까? 회원 탈퇴는 7일간 진행되며 7일 후엔 완전히 삭제됩니다.",
+  "wouldYouLikeToRequestToBeRemovedFromWegooliFriends": "위굴리 프렌즈의 회원 탈퇴하시겠습니까?",
   "@wouldYouLikeToRequestToBeRemovedFromWegooliFriends": {
     "description": "가입 해지 모달 안내 문구2"
   },

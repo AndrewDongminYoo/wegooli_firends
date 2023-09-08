@@ -21,7 +21,10 @@ class _SendingInvitationDialogState extends State<SendingInvitationDialog> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-        content: SingleChildScrollView(
+      backgroundColor: Colors.transparent,
+      contentPadding: EdgeInsets.zero,
+      insetPadding: EdgeInsets.zero,
+      content: SingleChildScrollView(
       child: Container(
         margin: getMargin(left: 16, right: 16, bottom: 323),
         decoration: AppDecoration.fillOnPrimaryContainer

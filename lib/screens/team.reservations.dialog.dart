@@ -30,6 +30,9 @@ class ReservationsCheckingPageDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
     return AlertDialog(
+      backgroundColor: Colors.transparent,
+      contentPadding: EdgeInsets.zero,
+      insetPadding: EdgeInsets.zero,
         content: SingleChildScrollView(
       child: Container(
         width: mediaQueryData.size.width,

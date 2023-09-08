@@ -42,7 +42,7 @@ int getHashCode(DateTime key) {
 
 /// [first] 부터 [last]까지의 [DateTime]의 목록을 반환합니다.
 List<DateTime> daysInRange(DateTime first, DateTime last) {
-  final dayCount = last.difference(first).inDays + 1;
+  final dayCount = last.difference(first).inDays;
   return List.generate(dayCount,
       (index) => DateTime.utc(first.year, first.month, first.day + index));
 }
@@ -59,4 +59,8 @@ DateTime normalizeDate(DateTime date) {
 
 DateTime normalizeDateTime(DateTime date) {
   return DateTime.utc(date.year, date.month, date.day, date.hour, date.minute);
+}
+
+bool isDateWithinRange(DateTime start, DateTime end, DateTime selectedDate) {
+  return start.isBefore(selectedDate) && end.isAfter(selectedDate);
 }

@@ -249,6 +249,7 @@ class CarManagementControllerApi {
               rawData, 'CarManagementModel',
               growable: true);
     } catch (error, stackTrace) {
+      print('error ${error}');
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,

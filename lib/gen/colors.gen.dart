@@ -7,9 +7,8 @@
 // ignore_for_file: type=lint
 // ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal,deprecated_member_use
 
-// 🐦 Flutter imports:
-import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:flutter/material.dart';
 
 class ColorConstant {
   ColorConstant._();

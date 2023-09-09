@@ -1,6 +1,7 @@
 {
   "cSpell.ignorePaths": [
     ".git/objects",
+    ".gitignore",
     ".vscode",
     "lib/theme/color_names.dart",
     "package.json",

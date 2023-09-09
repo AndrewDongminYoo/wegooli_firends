@@ -44,7 +44,7 @@ class VehicleController extends GetxController {
   void getClient(String? accountId) {
     final whoDriving =
         members.firstWhereOrNull((it) => it.accountId == accountId);
-    print('team.vehicle.dart#L48 $whoDriving is Driving');
+    print('team.vehicle.dart#L48 ${whoDriving?.nickname} is Driving');
     driverName.text = whoDriving?.nickname ?? '';
   }
 

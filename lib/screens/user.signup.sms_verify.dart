@@ -7,7 +7,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
-import '/data/firebase/initialize.dart';
 
 class SMSValidationFormScreen extends StatefulWidget {
   const SMSValidationFormScreen({

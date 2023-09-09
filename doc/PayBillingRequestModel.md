@@ -14,6 +14,7 @@ import 'package:wegooli_friends/api.dart';
 | **customerKey** | **String** |             | [optional] |
 | **orderId**     | **String** |             | [optional] |
 | **orderName**   | **String** |             | [optional] |
+| **accountId**   | **String** |             | [optional] |
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

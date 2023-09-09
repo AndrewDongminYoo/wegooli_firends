@@ -4,12 +4,12 @@ import 'package:test/test.dart';
 // 🌎 Project imports:
 import 'package:wegooli_friends/lib.dart';
 
-// tests for UserDTO
+// tests for UserDto
 void main() {
   final instance = UserDTOBuilder();
   // TODO add properties to the builder and call build()
 
-  group(UserDTO, () {
+  group(UserDto, () {
     // int seq
     test('to test the property `seq`', () async {
       // TODO

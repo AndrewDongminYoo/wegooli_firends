@@ -26,7 +26,7 @@ import 'package:wegooli_friends/api.dart';
 | **accountId**   | **String**                  |             | [optional] |
 | **teamSeq**     | **int**                     |             | [optional] |
 | **carImage**    | **String**                  |             | [optional] |
-| **carNickName** | **String**                  |             | [optional] |
+| **carNickname** | **String**                  |             | [optional] |
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

@@ -23,6 +23,7 @@ import 'package:wegooli_friends/api.dart';
 | **expirationMonth** | **String**                  |             | [optional] |
 | **expirationYear**  | **String**                  |             | [optional] |
 | **billingKey**      | **String**                  |             | [optional] |
+| **customerKey**     | **String**                  |             | [optional] |
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

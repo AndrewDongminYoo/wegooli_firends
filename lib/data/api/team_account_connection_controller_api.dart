@@ -430,7 +430,6 @@ class TeamAccountConnectionControllerApi {
 
     try {
       final rawData = _response.data;
-      print('AAA : rawData1 : ${rawData}');
       _responseData = rawData == null
           ? null
           : deserialize<List<TeamAccountConnectionResponse>,
@@ -438,14 +437,13 @@ class TeamAccountConnectionControllerApi {
               rawData, 'List<TeamAccountConnectionResponse>',
               growable: true);
     } catch (error, stackTrace) {
-      // throw DioException(
-      //   requestOptions: _response.requestOptions,
-      //   response: _response,
-      //   type: DioExceptionType.unknown,
-      //   error: error,
-      //   stackTrace: stackTrace,
-      // );
-      _responseData = List.empty();
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<List<TeamAccountConnectionResponse>>(

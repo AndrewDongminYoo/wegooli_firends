@@ -43,6 +43,9 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
     case 'CarHistoryDTO':
       return CarHistoryDTO.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'CarManagementModel':
+      return CarManagementModel.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'CarModel':
       return CarModel.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'CarRequest':
@@ -54,6 +57,12 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
       return DeviceOption.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'GrantedAuthority':
       return GrantedAuthority.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'InsertCarManagementRequest':
+      return InsertCarManagementRequest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'InsertLicenseRequest':
+      return InsertLicenseRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'LeaderSetRequest':
       return LeaderSetRequest.fromJson(value as Map<String, dynamic>)
@@ -67,6 +76,30 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
       return Member.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'Notice':
       return Notice.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'OperatorCarModel':
+      return OperatorCarModel.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'OperatorCarRequest':
+      return OperatorCarRequest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'OperatorTeamAccountDetail':
+      return OperatorTeamAccountDetail.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'OperatorTeamDetail':
+      return OperatorTeamDetail.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'OperatorTeamModel':
+      return OperatorTeamModel.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'OperatorTeamRequest':
+      return OperatorTeamRequest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'OperatorUserModel':
+      return OperatorUserModel.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'OperatorUserRequest':
+      return OperatorUserRequest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'PayBillingRequestModel':
       return PayBillingRequestModel.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -82,13 +115,14 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
       return Push.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'QnA':
       return QnA.fromJson(value as Map<String, dynamic>) as ReturnType;
-    case 'Result':
-      return Result.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'ScheduleModel':
       return ScheduleModel.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'ScheduleRequest':
       return ScheduleRequest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'SelectCarManagementRequest':
+      return SelectCarManagementRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'SelectUserDto':
       return SelectUserDto.fromJson(value as Map<String, dynamic>)
@@ -102,14 +136,17 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
     case 'ShareServiceModel':
       return ShareServiceModel.fromJson(value as Map<String, dynamic>)
           as ReturnType;
-    case 'SubscriptionModel':
-      return SubscriptionModel.fromJson(value as Map<String, dynamic>)
-          as ReturnType;
     case 'ShareServiceRequest':
       return ShareServiceRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'Sms':
       return Sms.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'SubmitWithdrawalModel':
+      return SubmitWithdrawalModel.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'SubscriptionModel':
+      return SubscriptionModel.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'TeamAccountConnectionModel':
       return TeamAccountConnectionModel.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -140,6 +177,12 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
           as ReturnType;
     case 'TestModel':
       return TestModel.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'UpdateCarManagementRequest':
+      return UpdateCarManagementRequest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'UpdateLicenseRequest':
+      return UpdateLicenseRequest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'UserDto':
       return UserDto.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'UserDetailsDTO':
@@ -147,6 +190,9 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
           as ReturnType;
     case 'UserSubInfo':
       return UserSubInfo.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'ValidLicenseRequest':
+      return ValidLicenseRequest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     default:
       RegExpMatch? match;
 

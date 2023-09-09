@@ -110,7 +110,7 @@ try {
 [[Back to README]](../README.md)
 
 > insertLicense
-> int insertLicense(licenseRequest)
+> int insertLicense(insertLicenseRequest)
 
 ### Example
 
@@ -121,10 +121,10 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getLicenseControllerApi();
-final LicenseRequest licenseRequest;
+final InsertLicenseRequest insertLicenseRequest;
 
 try {
-    final response = api.insertLicense(licenseRequest);
+    final response = api.insertLicense(insertLicenseRequest);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling LicenseControllerApi->insertLicense: $e\n');
@@ -133,9 +133,9 @@ try {
 
 ### Parameters
 
-| Name               | Type                                    | Description | Notes |
-| ------------------ | --------------------------------------- | ----------- | ----- |
-| **licenseRequest** | [**LicenseRequest**](LicenseRequest.md) |             |
+| Name                     | Type                                                | Description | Notes |
+| ------------------------ | --------------------------------------------------- | ----------- | ----- |
+| **insertLicenseRequest** | [**InsertLicenseRequest**](InsertLicenseRequest.md) |             |
 
 ### Return type
 
@@ -155,7 +155,7 @@ try {
 [[Back to README]](../README.md)
 
 > isValidLicense
-> bool isValidLicense(licenseRequest)
+> bool isValidLicense(validLicenseRequest)
 
 ### Example
 
@@ -166,10 +166,10 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getLicenseControllerApi();
-final LicenseRequest licenseRequest;
+final ValidLicenseRequest validLicenseRequest;
 
 try {
-    final response = api.isValidLicense(licenseRequest);
+    final response = api.isValidLicense(validLicenseRequest);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling LicenseControllerApi->isValidLicense: $e\n');
@@ -178,9 +178,9 @@ try {
 
 ### Parameters
 
-| Name               | Type                                    | Description | Notes |
-| ------------------ | --------------------------------------- | ----------- | ----- |
-| **licenseRequest** | [**LicenseRequest**](LicenseRequest.md) |             |
+| Name                    | Type                                              | Description | Notes |
+| ----------------------- | ------------------------------------------------- | ----------- | ----- |
+| **validLicenseRequest** | [**ValidLicenseRequest**](ValidLicenseRequest.md) |             |
 
 ### Return type
 
@@ -332,7 +332,7 @@ This endpoint does not need any parameter.
 [[Back to README]](../README.md)
 
 > updateLicense
-> bool updateLicense(licenseRequest, seq)
+> int updateLicense(updateLicenseRequest, seq)
 
 ### Example
 
@@ -343,11 +343,11 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getLicenseControllerApi();
-final LicenseRequest licenseRequest;
+final UpdateLicenseRequest updateLicenseRequest;
 final int seq = 56;
 
 try {
-    final response = api.updateLicense(licenseRequest, seq);
+    final response = api.updateLicense(updateLicenseRequest, seq);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling LicenseControllerApi->updateLicense: $e\n');
@@ -356,14 +356,14 @@ try {
 
 ### Parameters
 
-| Name               | Type                                    | Description | Notes |
-| ------------------ | --------------------------------------- | ----------- | ----- |
-| **licenseRequest** | [**LicenseRequest**](LicenseRequest.md) |             |
-| **seq**            | **int**                                 |             |
+| Name                     | Type                                                | Description | Notes |
+| ------------------------ | --------------------------------------------------- | ----------- | ----- |
+| **updateLicenseRequest** | [**UpdateLicenseRequest**](UpdateLicenseRequest.md) |             |
+| **seq**                  | **int**                                             |             |
 
 ### Return type
 
-**bool**
+**int**
 
 ### Authorization
 

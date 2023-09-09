@@ -10,7 +10,7 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(UserDetailsDTO, () {
-    // UserDTO userDto
+    // UserDto userDto
     test('to test the property `userDto`', () async {
       // TODO
     });

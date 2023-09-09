@@ -23,6 +23,9 @@ All URIs are relative to *http://13.209.6.245:8089*
 
 ```dart
 import 'package:wegooli_friends/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getCarManagementControllerApi();
 final int seq = 56;
@@ -59,18 +62,21 @@ try {
 [[Back to README]](../README.md)
 
 > insertCarManagement
-> int insertCarManagement(carManagementModel)
+> int insertCarManagement(insertCarManagementRequest)
 
 ### Example
 
 ```dart
 import 'package:wegooli_friends/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getCarManagementControllerApi();
-final CarManagementModel carManagementModel;
+final InsertCarManagementRequest insertCarManagementRequest;
 
 try {
-    final response = api.insertCarManagement(carManagementModel);
+    final response = api.insertCarManagement(insertCarManagementRequest);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling CarManagementControllerApi->insertCarManagement: $e\n');
@@ -79,9 +85,9 @@ try {
 
 ### Parameters
 
-| Name                   | Type                                            | Description | Notes |
-| ---------------------- | ----------------------------------------------- | ----------- | ----- |
-| **carManagementModel** | [**CarManagementModel**](CarManagementModel.md) |             |
+| Name                           | Type                                                            | Description | Notes |
+| ------------------------------ | --------------------------------------------------------------- | ----------- | ----- |
+| **insertCarManagementRequest** | [**InsertCarManagementRequest**](InsertCarManagementRequest.md) |             |
 
 ### Return type
 
@@ -107,6 +113,9 @@ try {
 
 ```dart
 import 'package:wegooli_friends/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getCarManagementControllerApi();
 final int seq = 56;
@@ -149,9 +158,12 @@ try {
 
 ```dart
 import 'package:wegooli_friends/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getCarManagementControllerApi();
-final CarManagementModel request;
+final SelectCarManagementRequest request;
 
 try {
     final response = api.selectCarManagementList(request);
@@ -163,9 +175,9 @@ try {
 
 ### Parameters
 
-| Name        | Type                          | Description | Notes |
-| ----------- | ----------------------------- | ----------- | ----- |
-| **request** | [**CarManagementModel**](.md) |             |
+| Name        | Type                                  | Description | Notes |
+| ----------- | ------------------------------------- | ----------- | ----- |
+| **request** | [**SelectCarManagementRequest**](.md) |             |
 
 ### Return type
 
@@ -185,19 +197,22 @@ try {
 [[Back to README]](../README.md)
 
 > updateCarManagement
-> int updateCarManagement(carManagementModel, seq)
+> int updateCarManagement(updateCarManagementRequest, seq)
 
 ### Example
 
 ```dart
 import 'package:wegooli_friends/api.dart';
+// TODO Configure HTTP basic authorization: jwtAuth
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
+//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getCarManagementControllerApi();
-final CarManagementModel carManagementModel;
+final UpdateCarManagementRequest updateCarManagementRequest;
 final int seq = 56;
 
 try {
-    final response = api.updateCarManagement(carManagementModel, seq);
+    final response = api.updateCarManagement(updateCarManagementRequest, seq);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling CarManagementControllerApi->updateCarManagement: $e\n');
@@ -206,10 +221,10 @@ try {
 
 ### Parameters
 
-| Name                   | Type                                            | Description | Notes |
-| ---------------------- | ----------------------------------------------- | ----------- | ----- |
-| **carManagementModel** | [**CarManagementModel**](CarManagementModel.md) |             |
-| **seq**                | **int**                                         |             |
+| Name                           | Type                                                            | Description | Notes |
+| ------------------------------ | --------------------------------------------------------------- | ----------- | ----- |
+| **updateCarManagementRequest** | [**UpdateCarManagementRequest**](UpdateCarManagementRequest.md) |             |
+| **seq**                        | **int**                                                         |             |
 
 ### Return type
 

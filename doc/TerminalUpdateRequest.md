@@ -17,7 +17,7 @@ import 'package:wegooli_friends/api.dart';
 | **carNum**      | **String**                  |             | [optional] |
 | **phoneNumber** | **String**                  |             | [optional] |
 | **status**      | **String**                  |             | [optional] |
-| **carNickName** | **String**                  |             | [optional] |
+| **carNickname** | **String**                  |             | [optional] |
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

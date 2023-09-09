@@ -7,8 +7,11 @@ import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
 import '/data/deserialize.dart';
+import '/data/model/insert_license_request.dart';
 import '/data/model/license_model.dart';
 import '/data/model/license_request.dart';
+import '/data/model/update_license_request.dart';
+import '/data/model/valid_license_request.dart';
 
 class LicenseControllerApi {
   final Dio _dio;
@@ -175,7 +178,7 @@ class LicenseControllerApi {
   /// insertLicense
   ///
   /// Parameters:
-  /// * [licenseRequest]
+  /// * [insertLicenseRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -186,7 +189,7 @@ class LicenseControllerApi {
   /// Returns a [Future] containing a [Response] with a [int] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<int>> insertLicense({
-    required LicenseRequest licenseRequest,
+    required InsertLicenseRequest insertLicenseRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -217,7 +220,7 @@ class LicenseControllerApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = jsonEncode(licenseRequest);
+      _bodyData = jsonEncode(insertLicenseRequest);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -271,7 +274,7 @@ class LicenseControllerApi {
   /// isValidLicense
   ///
   /// Parameters:
-  /// * [licenseRequest]
+  /// * [validLicenseRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -282,7 +285,7 @@ class LicenseControllerApi {
   /// Returns a [Future] containing a [Response] with a [bool] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<bool>> isValidLicense({
-    required LicenseRequest licenseRequest,
+    required ValidLicenseRequest validLicenseRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -313,7 +316,7 @@ class LicenseControllerApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = jsonEncode(licenseRequest);
+      _bodyData = jsonEncode(validLicenseRequest);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -607,7 +610,7 @@ class LicenseControllerApi {
   /// updateLicense
   ///
   /// Parameters:
-  /// * [licenseRequest]
+  /// * [updateLicenseRequest]
   /// * [seq]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -616,10 +619,10 @@ class LicenseControllerApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [bool] as data
+  /// Returns a [Future] containing a [Response] with a [int] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<bool>> updateLicense({
-    required LicenseRequest licenseRequest,
+  Future<Response<int>> updateLicense({
+    required UpdateLicenseRequest updateLicenseRequest,
     required int seq,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -651,7 +654,7 @@ class LicenseControllerApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = jsonEncode(licenseRequest);
+      _bodyData = jsonEncode(updateLicenseRequest);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -673,13 +676,13 @@ class LicenseControllerApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    bool? _responseData;
+    int? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<bool, bool>(rawData, 'bool', growable: true);
+          : deserialize<int, int>(rawData, 'int', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -690,7 +693,7 @@ class LicenseControllerApi {
       );
     }
 
-    return Response<bool>(
+    return Response<int>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

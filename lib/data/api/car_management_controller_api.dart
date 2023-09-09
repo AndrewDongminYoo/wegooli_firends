@@ -8,6 +8,9 @@ import 'package:dio/dio.dart';
 // 🌎 Project imports:
 import '/data/deserialize.dart';
 import '/data/model/car_management_model.dart';
+import '/data/model/insert_car_management_request.dart';
+import '/data/model/select_car_management_request.dart';
+import '/data/model/update_car_management_request.dart';
 
 class CarManagementControllerApi {
   final Dio _dio;
@@ -96,7 +99,7 @@ class CarManagementControllerApi {
   /// insertCarManagement
   ///
   /// Parameters:
-  /// * [carManagementModel]
+  /// * [insertCarManagementRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -107,7 +110,7 @@ class CarManagementControllerApi {
   /// Returns a [Future] containing a [Response] with a [int] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<int>> insertCarManagement({
-    required CarManagementModel carManagementModel,
+    required InsertCarManagementRequest insertCarManagementRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -138,7 +141,7 @@ class CarManagementControllerApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = jsonEncode(carManagementModel);
+      _bodyData = jsonEncode(insertCarManagementRequest);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -249,15 +252,13 @@ class CarManagementControllerApi {
               rawData, 'CarManagementModel',
               growable: true);
     } catch (error, stackTrace) {
-      print('error ${error}');
-      // TODO
-      // throw DioException(
-      //   requestOptions: _response.requestOptions,
-      //   response: _response,
-      //   type: DioExceptionType.unknown,
-      //   error: error,
-      //   stackTrace: stackTrace,
-      // );
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<CarManagementModel>(
@@ -286,7 +287,7 @@ class CarManagementControllerApi {
   /// Returns a [Future] containing a [Response] with a [List<CarManagementModel>] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<List<CarManagementModel>>> selectCarManagementList({
-    required CarManagementModel request,
+    required SelectCarManagementRequest request,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -360,7 +361,7 @@ class CarManagementControllerApi {
   /// updateCarManagement
   ///
   /// Parameters:
-  /// * [carManagementModel]
+  /// * [updateCarManagementRequest]
   /// * [seq]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -372,7 +373,7 @@ class CarManagementControllerApi {
   /// Returns a [Future] containing a [Response] with a [int] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<int>> updateCarManagement({
-    required CarManagementModel carManagementModel,
+    required UpdateCarManagementRequest updateCarManagementRequest,
     required int seq,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -405,7 +406,7 @@ class CarManagementControllerApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = jsonEncode(carManagementModel);
+      _bodyData = jsonEncode(updateCarManagementRequest);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(

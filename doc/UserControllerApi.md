@@ -18,7 +18,6 @@ All URIs are relative to *http://13.209.6.245:8089*
 | [**selectAccount**](UserControllerApi.md#selectaccount)   | **GET** /auth/user/account/{id} |
 | [**selectMember**](UserControllerApi.md#selectmember)     | **GET** /auth/user/member/{seq} |
 | [**selectUserList**](UserControllerApi.md#selectuserlist) | **GET** /auth/user              |
-| [**signIn**](UserControllerApi.md#signin)                 | **POST** /auth/signin           |
 | [**signOut**](UserControllerApi.md#signout)               | **GET** /auth/signout           |
 | [**signup**](UserControllerApi.md#signup)                 | **POST** /auth/signup           |
 | [**updateUser**](UserControllerApi.md#updateuser)         | **PUT** /auth/user              |
@@ -386,51 +385,6 @@ try {
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-> signIn
-> int signIn(userDTO)
-
-### Example
-
-```dart
-import 'package:wegooli_friends/api.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
-
-final api = WegooliFriends().getUserControllerApi();
-final UserDTO userDTO;
-
-try {
-    final response = api.signIn(userDTO);
-    print(response);
-} catch on DioException (e) {
-    print('Exception when calling UserControllerApi->signIn: $e\n');
-}
-```
-
-### Parameters
-
-| Name        | Type                      | Description | Notes      |
-| ----------- | ------------------------- | ----------- | ---------- |
-| **userDTO** | [**UserDTO**](UserDTO.md) |             | [optional] |
-
-### Return type
-
-**int**
-
-### Authorization
-
-[jwtAuth](../README.md#jwtAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: "/"
-
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
 > signOut
 > bool signOut(id)
 
@@ -477,7 +431,7 @@ try {
 [[Back to README]](../README.md)
 
 > signup
-> String signup(userDTO)
+> UserDto signup(userDto)
 
 ### Example
 
@@ -488,10 +442,10 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getUserControllerApi();
-final UserDTO userDTO;
+final UserDto userDto;
 
 try {
-    final response = api.signup(userDTO);
+    final response = api.signup(userDto);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling UserControllerApi->signup: $e\n');
@@ -502,11 +456,11 @@ try {
 
 | Name        | Type                      | Description | Notes |
 | ----------- | ------------------------- | ----------- | ----- |
-| **userDTO** | [**UserDTO**](UserDTO.md) |             |
+| **userDto** | [**UserDto**](UserDto.md) |             |
 
 ### Return type
 
-**String**
+[**UserDto**](UserDto.md)
 
 ### Authorization
 
@@ -522,7 +476,7 @@ try {
 [[Back to README]](../README.md)
 
 > updateUser
-> bool updateUser(userDTO, memberSeq, accountId)
+> bool updateUser(userDto, memberSeq, accountId)
 
 ### Example
 
@@ -533,12 +487,12 @@ import 'package:wegooli_friends/api.dart';
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = WegooliFriends().getUserControllerApi();
-final UserDTO userDTO;
+final UserDto userDto;
 final int memberSeq = 56;
 final String accountId = accountId_example;
 
 try {
-    final response = api.updateUser(userDTO, memberSeq, accountId);
+    final response = api.updateUser(userDto, memberSeq, accountId);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling UserControllerApi->updateUser: $e\n');
@@ -549,7 +503,7 @@ try {
 
 | Name          | Type                      | Description | Notes |
 | ------------- | ------------------------- | ----------- | ----- |
-| **userDTO**   | [**UserDTO**](UserDTO.md) |             |
+| **userDto**   | [**UserDto**](UserDto.md) |             |
 | **memberSeq** | **int**                   |             |
 | **accountId** | **String**                |             |
 

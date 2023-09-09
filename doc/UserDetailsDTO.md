@@ -10,21 +10,23 @@ import 'package:wegooli_friends/api.dart';
 
 | Name                      | Type                                                    | Description | Notes      |
 | ------------------------- | ------------------------------------------------------- | ----------- | ---------- |
-| **userDto**               | [**UserDTO**](UserDTO.md)                               |             | [optional] |
+| **userDto**               | [**UserDto**](UserDto.md)                               |             | [optional] |
 | **authorities**           | [**List&lt;GrantedAuthority&gt;**](GrantedAuthority.md) |             | [optional] |
 | **name**                  | **String**                                              |             | [optional] |
 | **id**                    | **String**                                              |             | [optional] |
 | **enabled**               | **bool**                                                |             | [optional] |
 | **color**                 | **String**                                              |             | [optional] |
 | **password**              | **String**                                              |             | [optional] |
-| **delYn**                 | **String**                                              |             | [optional] |
 | **memberSeq**             | **int**                                                 |             | [optional] |
-| **seq**                   | **int**                                                 |             | [optional] |
-| **username**              | **String**                                              |             | [optional] |
-| **delimit**               | **String**                                              |             | [optional] |
-| **updatedAt**             | **String**                                              |             | [optional] |
 | **customerKey**           | **String**                                              |             | [optional] |
+| **seq**                   | **int**                                                 |             | [optional] |
+| **delimit**               | **String**                                              |             | [optional] |
+| **delYn**                 | **String**                                              |             | [optional] |
+| **updatedAt**             | **String**                                              |             | [optional] |
+| **activeYn**              | **String**                                              |             | [optional] |
+| **createdAt**             | **String**                                              |             | [optional] |
 | **phoneNumber**           | **String**                                              |             | [optional] |
+| **add1**                  | **String**                                              |             | [optional] |
 | **add2**                  | **String**                                              |             | [optional] |
 | **zipCode**               | **String**                                              |             | [optional] |
 | **email**                 | **String**                                              |             | [optional] |
@@ -32,10 +34,8 @@ import 'package:wegooli_friends/api.dart';
 | **birthDay**              | **String**                                              |             | [optional] |
 | **nickname**              | **String**                                              |             | [optional] |
 | **profilePicture**        | **String**                                              |             | [optional] |
-| **add1**                  | **String**                                              |             | [optional] |
-| **createdAt**             | **String**                                              |             | [optional] |
+| **username**              | **String**                                              |             | [optional] |
 | **deleteAt**              | **String**                                              |             | [optional] |
-| **activeYn**              | **String**                                              |             | [optional] |
 | **accountNonExpired**     | **bool**                                                |             | [optional] |
 | **accountNonLocked**      | **bool**                                                |             | [optional] |
 | **credentialsNonExpired** | **bool**                                                |             | [optional] |

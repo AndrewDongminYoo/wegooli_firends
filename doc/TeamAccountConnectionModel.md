@@ -15,6 +15,7 @@ import 'package:wegooli_friends/api.dart';
 | **accountId** | **String** |             | [optional] |
 | **joinedAt**  | **String** |             | [optional] |
 | **leavedAt**  | **String** |             | [optional] |
+| **activeYn**  | **String** |             | [optional] |
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

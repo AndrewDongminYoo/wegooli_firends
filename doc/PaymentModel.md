@@ -29,6 +29,7 @@ import 'package:wegooli_friends/api.dart';
 | **taxFreeAmount**      | **int**    |             | [optional] |
 | **taxExemptionAmount** | **int**    |             | [optional] |
 | **method**             | **String** |             | [optional] |
+| **accountId**          | **String** |             | [optional] |
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

@@ -185,6 +185,8 @@ class VehicleController extends GetxController {
   }
 
   Future<void> subscribe() async {
+    print('currentUser.id ${currentUser.id}');
+    print('teamSeq ${teamSeq}');
     if (currentUser.id == null || teamSeq == null) {
       return;
     }

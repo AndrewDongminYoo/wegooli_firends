@@ -185,19 +185,22 @@ class UpcomingUnsubscription extends GetWidget<VehicleController> {
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
                                         children: [
-                                          Text(
-                                            controller.subscriptionModel.value
-                                                        .withdrawalAt ==
-                                                    null
-                                                ? '결제 예정일'
-                                                : l10ns.expectedUnsubscribeDate,
-                                            overflow: TextOverflow.ellipsis,
-                                            textAlign: TextAlign.left,
-                                            style: CustomTextStyles
-                                                .bodyLargeOnPrimary
-                                                .copyWith(
-                                              letterSpacing:
-                                                  getHorizontalSize(0.03),
+                                          Obx(
+                                            () => Text(
+                                              controller.subscriptionModel.value
+                                                          .withdrawalAt ==
+                                                      null
+                                                  ? '결제 예정일'
+                                                  : l10ns
+                                                      .expectedUnsubscribeDate,
+                                              overflow: TextOverflow.ellipsis,
+                                              textAlign: TextAlign.left,
+                                              style: CustomTextStyles
+                                                  .bodyLargeOnPrimary
+                                                  .copyWith(
+                                                letterSpacing:
+                                                    getHorizontalSize(0.03),
+                                              ),
                                             ),
                                           ),
                                           Obx(() => Text(

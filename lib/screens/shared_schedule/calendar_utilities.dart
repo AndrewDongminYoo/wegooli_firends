@@ -58,7 +58,8 @@ DateTime normalizeDate(DateTime date) {
 }
 
 DateTime normalizeDateTime(DateTime date) {
-  return DateTime.utc(date.year, date.month, date.day, date.hour, date.minute);
+  // return DateTime.utc(date.year, date.month, date.day, date.hour, date.minute);
+  return DateTime.utc(date.year, date.month, date.day, date.hour);
 }
 
 bool isDateWithinRange(DateTime start, DateTime end, DateTime selectedDate) {

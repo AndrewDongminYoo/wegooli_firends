@@ -3,12 +3,25 @@ import 'dart:collection';
 
 // 📦 Package imports:
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
 final kToday = DateTime.now();
+
+class Item {
+  String title;
+  DateTime date;
+  bool isExpanded;
+
+  Item({
+    required this.title,
+    required this.date,
+    this.isExpanded = false,
+  });
+}
 
 class ScheduleController extends GetxController {
   final wegooli = WegooliFriends.client;
@@ -44,15 +57,29 @@ class ScheduleController extends GetxController {
   DateTime? rangeEnd;
   DateTime? rangeStart;
   DateTime? selectedDay;
+
+  RxList<Item> items = RxList.of([
+    Item(
+      title: '예약시간',
+      // DateTime reservationTime = DateTime.now();
+      date: DateTime.now(),
+      isExpanded: true,
+    ),
+    // Add more items here
+    Item(
+      title: '반납시간',
+      // DateTime returnTime = DateTime.now();
+      date: DateTime.now().add(Duration(hours: 2)),
+      isExpanded: false,
+    ),
+  ]);
+
+  DateTime get reservationTime => items[0].date;
+  DateTime get returnTime => items[1].date;
+
   static ScheduleController get to => Get.isRegistered<ScheduleController>()
       ? Get.find<ScheduleController>()
       : Get.put(ScheduleController());
-
-  Rx<List<SelectionPopupModel>> dropdownItemList = Rx([
-    SelectionPopupModel(id: 1, title: "Item One"),
-    SelectionPopupModel(id: 2, title: "Item Two"),
-    SelectionPopupModel(id: 3, title: "Item Three")
-  ]);
 
   CalendarFormat calendarFormat = CalendarFormat.month;
   RangeSelectionMode rangeSelectionMode = RangeSelectionMode
@@ -76,5 +103,50 @@ class ScheduleController extends GetxController {
       }
     }
     _eventSource(localEventSource);
+  }
+
+  List<Item> initItem() {
+    return List.of([
+      Item(
+        title: '예약시간',
+        // DateTime reservationTime = DateTime.now();
+        date: DateTime.now(),
+        isExpanded: true,
+      ),
+      // Add more items here
+      Item(
+        title: '반납시간',
+        // DateTime returnTime = DateTime.now();
+        date: DateTime.now().add(Duration(hours: 2)),
+        isExpanded: false,
+      )
+    ]);
+  }
+
+  Future<void> addSchedule() async {
+    final userController = UserController.to;
+    String? accountId = userController.currentUser.value.id;
+    int? teamSeq = userController.getTeamSeq();
+    if (accountId == null || teamSeq == null) {
+      return;
+    }
+
+    var formatter = DateFormat('yyyy-MM-dd HH:mm:ss');
+    var scheduleRequest = ScheduleRequest(
+      accountId: accountId,
+      teamSeq: teamSeq,
+      startAt: formatter.format(reservationTime),
+      endAt: formatter.format(returnTime),
+    );
+    print('scheduleRequest ${scheduleRequest.toString()}');
+    final response = await wegooli
+        .getScheduleControllerApi()
+        .registSchedule(scheduleRequest: scheduleRequest);
+    print('regist ${response}');
+    items.value = initItem();
+    items.refresh();
+    userController.schedules(await userController.retrieveSchedules());
+    makeEventSource();
+    goBack();
   }
 }

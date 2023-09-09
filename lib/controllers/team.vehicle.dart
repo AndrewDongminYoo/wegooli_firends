@@ -165,7 +165,7 @@ class VehicleController extends GetxController {
     if (response.data == null) {
       return;
     }
-    print('response.data!.first; ${response.data!.first}');
+    print('구독정보; ${response.data!.first}');
     subscriptionModel.value = response.data!.first;
   }
 
@@ -175,7 +175,7 @@ class VehicleController extends GetxController {
     }
     SubmitWithdrawalModel submitWithdrawalModel = SubmitWithdrawalModel(
         accountId: currentUser.id!,
-        date: DateTime.now().toString(),
+        date: subscriptionModel.value.endAt,
         teamSeq: teamSeq!);
     await wegooli
         .getSubscriptionControllerApi()

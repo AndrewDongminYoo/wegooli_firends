@@ -10,40 +10,30 @@ UserDto _$UserDtoFromJson(Map<String, dynamic> json) => $checkedCreate(
       'UserDto',
       json,
       ($checkedConvert) {
-        $checkKeys(
-          json,
-          allowedKeys: const [
-            'activeYn',
-            'userNm',
-            'phoneNumber',
-            'color',
-            'memberSeq',
-            'nickname',
-            'userEmail',
-            'id',
-            'birthday',
-            'add2',
-            'add1',
-            'sub',
-            'exp',
-            'delimit'
-          ],
-        );
         final val = UserDto(
-          activeYn: $checkedConvert('activeYn', (v) => v as String?),
-          userNm: $checkedConvert('userNm', (v) => v as String?),
-          phoneNumber: $checkedConvert('phoneNumber', (v) => v as String?),
-          color: $checkedConvert('color', (v) => v as String?),
-          memberSeq: $checkedConvert('memberSeq', (v) => v as int?),
-          nickname: $checkedConvert('nickname', (v) => v as String?),
-          userEmail: $checkedConvert('userEmail', (v) => v as String?),
-          id: $checkedConvert('id', (v) => v as String?),
-          birthday: $checkedConvert('birthday', (v) => v as String?),
-          add2: $checkedConvert('add2', (v) => v as String?),
+          seq: $checkedConvert('seq', (v) => v as int?),
+          name: $checkedConvert('name', (v) => v as String?),
           add1: $checkedConvert('add1', (v) => v as String?),
-          sub: $checkedConvert('sub', (v) => v as String?),
-          exp: $checkedConvert('exp', (v) => v as int?),
+          add2: $checkedConvert('add2', (v) => v as String?),
+          zipCode: $checkedConvert('zipCode', (v) => v as String?),
+          phoneNumber: $checkedConvert('phoneNumber', (v) => v as String?),
+          email: $checkedConvert('email', (v) => v as String?),
+          birthDay: $checkedConvert('birthDay', (v) => v as String?),
+          sex: $checkedConvert('sex', (v) => v as String?),
+          delYn: $checkedConvert('delYn', (v) => v as String?),
+          createdAt: $checkedConvert('createdAt', (v) => v as String?),
+          updatedAt: $checkedConvert('updatedAt', (v) => v as String?),
+          id: $checkedConvert('id', (v) => v as String?),
+          memberSeq: $checkedConvert('memberSeq', (v) => v as int?),
+          password: $checkedConvert('password', (v) => v as String?),
           delimit: $checkedConvert('delimit', (v) => v as String?),
+          nickname: $checkedConvert('nickname', (v) => v as String?),
+          profilePicture:
+              $checkedConvert('profilePicture', (v) => v as String?),
+          deleteAt: $checkedConvert('deleteAt', (v) => v as String?),
+          color: $checkedConvert('color', (v) => v as String?),
+          customerKey: $checkedConvert('customerKey', (v) => v as String?),
+          activeYn: $checkedConvert('activeYn', (v) => v as String?),
         );
         return val;
       },
@@ -58,19 +48,27 @@ Map<String, dynamic> _$UserDtoToJson(UserDto instance) {
     }
   }
 
-  writeNotNull('activeYn', instance.activeYn);
-  writeNotNull('userNm', instance.userNm);
+  writeNotNull('name', instance.name);
   writeNotNull('phoneNumber', instance.phoneNumber);
   writeNotNull('color', instance.color);
   writeNotNull('memberSeq', instance.memberSeq);
   writeNotNull('nickname', instance.nickname);
-  writeNotNull('userEmail', instance.userEmail);
+  writeNotNull('email', instance.email);
   writeNotNull('id', instance.id);
-  writeNotNull('birthday', instance.birthday);
+  writeNotNull('birthDay', instance.birthDay);
   writeNotNull('add2', instance.add2);
   writeNotNull('add1', instance.add1);
-  writeNotNull('sub', instance.sub);
-  writeNotNull('exp', instance.exp);
   writeNotNull('delimit', instance.delimit);
+  writeNotNull('seq', instance.seq);
+  writeNotNull('zipCode', instance.zipCode);
+  writeNotNull('sex', instance.sex);
+  writeNotNull('delYn', instance.delYn);
+  writeNotNull('createdAt', instance.createdAt);
+  writeNotNull('updatedAt', instance.updatedAt);
+  writeNotNull('password', instance.password);
+  writeNotNull('profilePicture', instance.profilePicture);
+  writeNotNull('deleteAt', instance.deleteAt);
+  writeNotNull('customerKey', instance.customerKey);
+  writeNotNull('activeYn', instance.activeYn);
   return val;
 }

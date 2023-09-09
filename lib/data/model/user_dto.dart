@@ -4,79 +4,86 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'user_dto.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
 class UserDto extends Equatable {
+  /// Returns a new [UserDto] instance.
   const UserDto({
-    this.activeYn,
-    this.userNm,
-    this.phoneNumber,
-    this.color,
-    this.memberSeq,
-    this.nickname,
-    this.userEmail,
-    this.id,
-    this.birthday,
-    this.add2,
+    this.seq,
+    this.name,
     this.add1,
-    this.sub,
-    this.exp,
+    this.add2,
+    this.zipCode,
+    this.phoneNumber,
+    this.email,
+    this.birthDay,
+    this.sex,
+    this.delYn,
+    this.createdAt,
+    this.updatedAt,
+    this.id,
+    this.memberSeq,
+    this.password,
     this.delimit,
+    this.nickname,
+    this.profilePicture,
+    this.deleteAt,
+    this.color,
+    this.customerKey,
+    this.activeYn,
   });
-
-  final String? activeYn;
-  final String? userNm;
+  @JsonKey(name: r'name', required: false, includeIfNull: false)
+  final String? name;
+  @JsonKey(name: r'phoneNumber', required: false, includeIfNull: false)
   final String? phoneNumber;
+  @JsonKey(name: r'color', required: false, includeIfNull: false)
   final String? color;
+  @JsonKey(name: r'memberSeq', required: false, includeIfNull: false)
   final int? memberSeq;
+  @JsonKey(name: r'nickname', required: false, includeIfNull: false)
   final String? nickname;
-  final String? userEmail;
+  @JsonKey(name: r'email', required: false, includeIfNull: false)
+  final String? email;
+  @JsonKey(name: r'id', required: false, includeIfNull: false)
   final String? id;
-  final String? birthday;
+  @JsonKey(name: r'birthDay', required: false, includeIfNull: false)
+  final String? birthDay;
+  @JsonKey(name: r'add2', required: false, includeIfNull: false)
   final String? add2;
+  @JsonKey(name: r'add1', required: false, includeIfNull: false)
   final String? add1;
-  final String? sub;
-  final int? exp;
+  @JsonKey(name: r'delimit', required: false, includeIfNull: false)
   final String? delimit;
+  @JsonKey(name: r'seq', required: false, includeIfNull: false)
+  final int? seq;
+  @JsonKey(name: r'zipCode', required: false, includeIfNull: false)
+  final String? zipCode;
+  @JsonKey(name: r'sex', required: false, includeIfNull: false)
+  final String? sex;
+  @JsonKey(name: r'delYn', required: false, includeIfNull: false)
+  final String? delYn;
+  @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
+  final String? createdAt;
+  @JsonKey(name: r'updatedAt', required: false, includeIfNull: false)
+  final String? updatedAt;
+  @JsonKey(name: r'password', required: false, includeIfNull: false)
+  final String? password;
+  @JsonKey(name: r'profilePicture', required: false, includeIfNull: false)
+  final String? profilePicture;
+  @JsonKey(name: r'deleteAt', required: false, includeIfNull: false)
+  final String? deleteAt;
+  @JsonKey(name: r'customerKey', required: false, includeIfNull: false)
+  final String? customerKey;
+  @JsonKey(name: r'activeYn', required: false, includeIfNull: false)
+  final String? activeYn;
 
-  factory UserDto.fromJson(Map<String, dynamic> json) {
-    return _$UserDtoFromJson(json);
-  }
-
+  factory UserDto.fromJson(Map<String, dynamic> json) =>
+      _$UserDtoFromJson(json);
   Map<String, dynamic> toJson() => _$UserDtoToJson(this);
-
-  UserDto copyWith({
-    String? activeYn,
-    String? userNm,
-    String? phoneNumber,
-    String? color,
-    int? memberSeq,
-    String? nickname,
-    String? userEmail,
-    String? id,
-    String? birthday,
-    String? add2,
-    String? add1,
-    String? sub,
-    int? exp,
-    String? delimit,
-  }) {
-    return UserDto(
-      activeYn: activeYn ?? this.activeYn,
-      userNm: userNm ?? this.userNm,
-      phoneNumber: phoneNumber ?? this.phoneNumber,
-      color: color ?? this.color,
-      memberSeq: memberSeq ?? this.memberSeq,
-      nickname: nickname ?? this.nickname,
-      userEmail: userEmail ?? this.userEmail,
-      id: id ?? this.id,
-      birthday: birthday ?? this.birthday,
-      add2: add2 ?? this.add2,
-      add1: add1 ?? this.add1,
-      sub: sub ?? this.sub,
-      exp: exp ?? this.exp,
-      delimit: delimit ?? this.delimit,
-    );
-  }
 
   @override
   bool get stringify => true;
@@ -84,20 +91,28 @@ class UserDto extends Equatable {
   @override
   List<Object?> get props {
     return [
-      activeYn,
-      userNm,
-      phoneNumber,
-      color,
-      memberSeq,
-      nickname,
-      userEmail,
-      id,
-      birthday,
-      add2,
+      seq,
+      name,
       add1,
-      sub,
-      exp,
+      add2,
+      zipCode,
+      phoneNumber,
+      email,
+      birthDay,
+      sex,
+      delYn,
+      createdAt,
+      updatedAt,
+      id,
+      memberSeq,
+      password,
       delimit,
+      nickname,
+      profilePicture,
+      deleteAt,
+      color,
+      customerKey,
+      activeYn,
     ];
   }
 }

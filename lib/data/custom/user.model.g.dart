@@ -12,54 +12,27 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
       ($checkedConvert) {
         $checkKeys(
           json,
-          allowedKeys: const [
-            'username',
-            'nickname',
-            'birthDay',
-            'socialId',
-            'creditCardId',
-            'cardPassword',
-            'primaryAddress',
-            'emailAddress',
-            'detailAddress',
-            'expirationDate',
-            'firstIssueYear',
-            'fullName',
-            'invitation',
-            'licenseNumbers',
-            'password',
-            'rePassword',
-            'phoneNum',
-            'pinCodes',
-            'postCode'
-          ],
+          requiredKeys: const ['id'],
         );
         final val = User(
-          username: $checkedConvert('username', (v) => v as String?),
+          name: $checkedConvert('userNm', (v) => v as String?),
+          phoneNumber: $checkedConvert('phoneNumber', (v) => v as String?),
+          color: $checkedConvert('color', (v) => v as String?),
+          memberSeq: $checkedConvert('memberSeq', (v) => v as int?),
           nickname: $checkedConvert('nickname', (v) => v as String?),
-          birthDay: $checkedConvert('birthDay', (v) => v as String?),
-          socialId: $checkedConvert('socialId', (v) => v as String?),
-          creditCardId: $checkedConvert('creditCardId', (v) => v as String?),
-          cardPassword: $checkedConvert('cardPassword', (v) => v as String?),
-          primaryAddress:
-              $checkedConvert('primaryAddress', (v) => v as String?),
-          emailAddress: $checkedConvert('emailAddress', (v) => v as String?),
-          detailAddress: $checkedConvert('detailAddress', (v) => v as String?),
-          expirationDate:
-              $checkedConvert('expirationDate', (v) => v as String?),
-          firstIssueYear:
-              $checkedConvert('firstIssueYear', (v) => v as String?),
-          fullName: $checkedConvert('fullName', (v) => v as String?),
-          invitation: $checkedConvert('invitation', (v) => v as String?),
-          licenseNumbers:
-              $checkedConvert('licenseNumbers', (v) => v as String?),
-          password: $checkedConvert('password', (v) => v as String?),
-          rePassword: $checkedConvert('rePassword', (v) => v as String?),
-          phoneNum: $checkedConvert('phoneNum', (v) => v as String?),
-          pinCodes: $checkedConvert('pinCodes', (v) => v as String?),
-          postCode: $checkedConvert('postCode', (v) => v as String?),
+          email: $checkedConvert('userEmail', (v) => v as String?),
+          id: $checkedConvert('id', (v) => v as String?),
+          birthDay: $checkedConvert('birthday', (v) => v as String?),
+          add2: $checkedConvert('add2', (v) => v as String?),
+          add1: $checkedConvert('add1', (v) => v as String?),
+          delimit: $checkedConvert('delimit', (v) => v as String?),
         );
         return val;
+      },
+      fieldKeyMap: const {
+        'name': 'userNm',
+        'email': 'userEmail',
+        'birthDay': 'birthday'
       },
     );
 
@@ -72,24 +45,16 @@ Map<String, dynamic> _$UserToJson(User instance) {
     }
   }
 
-  writeNotNull('username', instance.username);
+  writeNotNull('userNm', instance.name);
+  writeNotNull('phoneNumber', instance.phoneNumber);
+  writeNotNull('color', instance.color);
+  writeNotNull('memberSeq', instance.memberSeq);
   writeNotNull('nickname', instance.nickname);
-  writeNotNull('birthDay', instance.birthDay);
-  writeNotNull('socialId', instance.socialId);
-  writeNotNull('creditCardId', instance.creditCardId);
-  writeNotNull('cardPassword', instance.cardPassword);
-  writeNotNull('primaryAddress', instance.primaryAddress);
-  writeNotNull('emailAddress', instance.emailAddress);
-  writeNotNull('detailAddress', instance.detailAddress);
-  writeNotNull('expirationDate', instance.expirationDate);
-  writeNotNull('firstIssueYear', instance.firstIssueYear);
-  writeNotNull('fullName', instance.fullName);
-  writeNotNull('invitation', instance.invitation);
-  writeNotNull('licenseNumbers', instance.licenseNumbers);
-  writeNotNull('password', instance.password);
-  writeNotNull('rePassword', instance.rePassword);
-  writeNotNull('phoneNum', instance.phoneNum);
-  writeNotNull('pinCodes', instance.pinCodes);
-  writeNotNull('postCode', instance.postCode);
+  writeNotNull('userEmail', instance.email);
+  writeNotNull('id', instance.id);
+  writeNotNull('birthday', instance.birthDay);
+  writeNotNull('add2', instance.add2);
+  writeNotNull('add1', instance.add1);
+  writeNotNull('delimit', instance.delimit);
   return val;
 }

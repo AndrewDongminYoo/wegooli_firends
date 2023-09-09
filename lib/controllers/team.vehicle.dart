@@ -7,6 +7,7 @@ import 'package:intl/intl.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
+import '/data/custom/user.model.dart';
 
 class VehicleController extends GetxController {
   final wegooli = WegooliFriends.client;
@@ -19,8 +20,8 @@ class VehicleController extends GetxController {
   /// late init from UserController values.
   late int? _teamSeq;
   int? get teamSeq => _teamSeq;
-  late UserDto _currentUser = const UserDto();
-  UserDto get currentUser => _currentUser;
+  late User _currentUser = const User();
+  User get currentUser => _currentUser;
   late String _nickname = '위굴리';
   String get nickname => _nickname;
   late List<TeamAccountModel> _members = [];

@@ -62,7 +62,7 @@ class MyProfilePage extends GetWidget<UserController> {
                             ),
                           ),
                           Text(
-                            controller.currentUser.value.userEmail ??
+                            controller.currentUser.value.email ??
                                 'abc@gmail.com',
                             // overflow: TextOverflow.ellipsis,
                             // textAlign: TextAlign.left,

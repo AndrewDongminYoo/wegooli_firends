@@ -4,95 +4,79 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'user.model.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
 class User extends Equatable {
   const User({
-    this.username,
+    this.name,
+    this.phoneNumber,
+    this.color,
+    this.memberSeq,
     this.nickname,
+    this.email,
+    this.id,
     this.birthDay,
-    this.socialId,
-    this.creditCardId,
-    this.cardPassword,
-    this.primaryAddress,
-    this.emailAddress,
-    this.detailAddress,
-    this.expirationDate,
-    this.firstIssueYear,
-    this.fullName,
-    this.invitation,
-    this.licenseNumbers,
-    this.password,
-    this.rePassword,
-    this.phoneNum,
-    this.pinCodes,
-    this.postCode,
+    this.add2,
+    this.add1,
+    this.delimit,
   });
 
-  final String? username;
+  @JsonKey(name: r'userNm', required: false, includeIfNull: false)
+  final String? name;
+  @JsonKey(name: r'phoneNumber', required: false, includeIfNull: false)
+  final String? phoneNumber;
+  @JsonKey(name: r'color', required: false, includeIfNull: false)
+  final String? color;
+  @JsonKey(name: r'memberSeq', required: false, includeIfNull: false)
+  final int? memberSeq;
+  @JsonKey(name: r'nickname', required: false, includeIfNull: false)
   final String? nickname;
+  @JsonKey(name: r'userEmail', required: false, includeIfNull: false)
+  final String? email;
+  @JsonKey(name: r'id', required: true, includeIfNull: false)
+  final String? id;
+  @JsonKey(name: r'birthday', required: false, includeIfNull: false)
   final String? birthDay;
-  final String? socialId;
-  final String? creditCardId;
-  final String? cardPassword;
-  final String? primaryAddress;
-  final String? emailAddress;
-  final String? detailAddress;
-  final String? expirationDate;
-  final String? firstIssueYear;
-  final String? fullName;
-  final String? invitation;
-  final String? licenseNumbers;
-  final String? password;
-  final String? rePassword;
-  final String? phoneNum;
-  final String? pinCodes;
-  final String? postCode;
+  @JsonKey(name: r'add2', required: false, includeIfNull: false)
+  final String? add2;
+  @JsonKey(name: r'add1', required: false, includeIfNull: false)
+  final String? add1;
+  @JsonKey(name: r'delimit', required: false, includeIfNull: false)
+  final String? delimit;
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 
   Map<String, dynamic> toJson() => _$UserToJson(this);
 
   User copyWith({
-    String? username,
+    String? name,
+    String? phoneNumber,
+    String? color,
+    int? memberSeq,
     String? nickname,
+    String? email,
+    String? id,
     String? birthDay,
-    String? socialId,
-    String? creditCardId,
-    String? cardPassword,
-    String? primaryAddress,
-    String? emailAddress,
-    String? detailAddress,
-    String? expirationDate,
-    String? firstIssueYear,
-    String? fullName,
-    String? invitation,
-    String? licenseNumbers,
-    String? password,
-    String? rePassword,
-    String? phoneNum,
-    String? pinCodes,
-    String? postCode,
+    String? add2,
+    String? add1,
+    String? delimit,
   }) {
     return User(
-      username: username ?? this.username,
+      name: name ?? this.name,
+      phoneNumber: phoneNumber ?? this.phoneNumber,
+      color: color ?? this.color,
+      memberSeq: memberSeq ?? this.memberSeq,
       nickname: nickname ?? this.nickname,
+      email: email ?? this.email,
+      id: id ?? this.id,
       birthDay: birthDay ?? this.birthDay,
-      socialId: socialId ?? this.socialId,
-      creditCardId: creditCardId ?? this.creditCardId,
-      cardPassword: cardPassword ?? this.cardPassword,
-      primaryAddress: primaryAddress ?? this.primaryAddress,
-      emailAddress: emailAddress ?? this.emailAddress,
-      detailAddress: detailAddress ?? this.detailAddress,
-      expirationDate: expirationDate ?? this.expirationDate,
-      firstIssueYear: firstIssueYear ?? this.firstIssueYear,
-      fullName: fullName ?? this.fullName,
-      invitation: invitation ?? this.invitation,
-      licenseNumbers: licenseNumbers ?? this.licenseNumbers,
-      password: password ?? this.password,
-      rePassword: rePassword ?? this.rePassword,
-      phoneNum: phoneNum ?? this.phoneNum,
-      pinCodes: pinCodes ?? this.pinCodes,
-      postCode: postCode ?? this.postCode,
+      add2: add2 ?? this.add2,
+      add1: add1 ?? this.add1,
+      delimit: delimit ?? this.delimit,
     );
   }
 
@@ -102,25 +86,17 @@ class User extends Equatable {
   @override
   List<Object?> get props {
     return [
-      username,
+      name,
+      phoneNumber,
+      color,
+      memberSeq,
       nickname,
+      email,
+      id,
       birthDay,
-      socialId,
-      creditCardId,
-      cardPassword,
-      primaryAddress,
-      emailAddress,
-      detailAddress,
-      expirationDate,
-      firstIssueYear,
-      fullName,
-      invitation,
-      licenseNumbers,
-      password,
-      rePassword,
-      phoneNum,
-      pinCodes,
-      postCode,
+      add2,
+      add1,
+      delimit,
     ];
   }
 }

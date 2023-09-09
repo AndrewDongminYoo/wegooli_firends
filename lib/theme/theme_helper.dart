@@ -10,7 +10,7 @@ import '/core/app_export.dart';
 /// Helper class for managing themes and colors.
 class ThemeHelper {
   //  The current app theme
-  final _appTheme = PrefUtils().getThemeData();
+  final _appTheme = PrefUtils.getThemeData();
 
 // A map of custom color themes supported by the app
   final Map<String, PrimaryColors> _supportedCustomColor = {
@@ -24,7 +24,7 @@ class ThemeHelper {
 
   /// Changes the app theme to [newTheme].
   void changeTheme(String newTheme) {
-    PrefUtils().setThemeData(newTheme);
+    PrefUtils.setThemeData(newTheme);
     Get.forceAppUpdate();
   }
 

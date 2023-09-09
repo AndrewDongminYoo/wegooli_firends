@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
+import '/data/custom/user.model.dart';
 
 class UserController extends GetxController {
   final wegooli = WegooliFriends.client;
@@ -38,8 +39,7 @@ class UserController extends GetxController {
     SelectionPopupModel(id: 06, title: "LG U+ 알뜰폰"),
   ];
 
-  Rx<UserDto> currentUser = const UserDto().obs;
-
+  Rx<User> currentUser = const User().obs;
   RxList<TeamAccountModel> _members = RxList<TeamAccountModel>([]);
   RxList<TeamAccountModel> get members => _members;
   RxList<Schedule> _schedules = RxList<Schedule>.of([]);
@@ -169,18 +169,16 @@ class UserController extends GetxController {
       Map<String, dynamic> payload = JwtDecoder.decode(token);
       //'{"name": "My Awesome App", "iat": 1548094400}'
       print('payload: $payload');
-      currentUser.value = UserDto.fromJson(payload);
-      if (JwtDecoder.isExpired(token)) {
-        print('❌ 만료된 토큰입니다.');
-        isAuthenticated.value = false;
-
-        /// refreshToken API Call!!
-      } else {
+      if (!JwtDecoder.isExpired(token)) {
+        currentUser.value = User.fromJson(payload);
         print('✅ 유효한 토큰입니다.');
         isAuthenticated.value = true;
-        PrefUtils.storage.setToken(token);
+        PrefUtils.setToken(token);
         await findMembers();
         return;
+      } else {
+        print('❌ 만료된 토큰입니다.');
+        isAuthenticated.value = false;
       }
     } on DioException catch (e) {
       isAuthenticated.value = false;
@@ -197,7 +195,7 @@ class UserController extends GetxController {
         DioExceptionType.badResponse => e.message ?? '요청에서 잘못된 상태 코드를 반환했습니다.',
         DioExceptionType.cancel => e.message ?? '요청이 취소되었습니다.',
         DioExceptionType.unknown =>
-          'message: ${e.message}\nerror: ${e.error}\ntrace: ${e.stackTrace}',
+          'message: ${e.message}\nerror: ${e.error}\nresponseData: ${e.response!.data}',
       });
       print("`login()` 호출 중 DioException 발생: $e\n");
     } on Exception catch (e) {

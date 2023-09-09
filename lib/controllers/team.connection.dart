@@ -1,5 +1,6 @@
 // 📦 Package imports:
 import 'package:dash_chat_2/dash_chat_2.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:sendbird_sdk/sendbird_sdk.dart';
@@ -13,8 +14,7 @@ class ConnectionController extends GetxController with ChannelEventHandler {
       ? Get.find<ConnectionController>()
       : Get.put(ConnectionController());
 
-  final String appId =
-      '36FB6EA9-27A7-44F1-9696-72E1E21033B6'; // Sendbird application id
+  final String appId = DotEnv().get('SENDBIRD_APPKEY', fallback: '');
   RxList<BaseMessage> _messages = RxList<BaseMessage>();
   GroupChannel? channel;
 
@@ -27,6 +27,7 @@ class ConnectionController extends GetxController with ChannelEventHandler {
     SendbirdSdk().addChannelEventHandler("dashchat", this);
     final userController = UserController.to;
     String? userId = userController.currentUser.value.id;
+    print('appId: $appId, userId: $userId');
     if (userId != null) {
       List<String> otherUserIds = userController.members
           .where((member) => member.accountId! != userId)

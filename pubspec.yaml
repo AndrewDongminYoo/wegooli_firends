@@ -28,15 +28,11 @@ dependencies:
   adaptive_breakpoints: ^0.1.6
   barcode_widget: ^2.0.4
   cached_network_image: ^3.2.3
-  carousel_slider: ^4.2.1
   collection: ^1.17.2
+  color: ^3.0.0
   connectivity_plus: ^4.0.2
-  cookie_jar: ^4.0.8
-  crypto: ^3.0.3
-  cupertino_icons: ^1.0.5
   dash_chat_2: ^0.0.17
   dio: ^5.3.2
-  dio_cookie_manager: ^3.1.0+1
   dual_screen: ^1.0.4
   equatable: ^2.0.5
   firebase_auth: ^4.9.0
@@ -46,14 +42,10 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_dotenv: ^5.1.0
-  flutter_gen: ^5.3.1
-  flutter_inappwebview: ^5.7.2+3
   flutter_localizations:
     sdk: flutter
-  flutter_lorem: ^2.0.0
   flutter_signin_button: ^2.0.0
   flutter_svg: ^2.0.7
-  flutter_svg_provider: ^1.0.4
   flutter_timer_countdown: ^1.0.5
   geolocator: ^10.0.0
   get: ^4.6.5
@@ -62,18 +54,13 @@ dependencies:
   intl: any
   json_annotation: ^4.8.1
   json_serializable: ^6.7.1
-  just_the_tooltip: ^0.0.12
   kpostal: ^0.5.1
   lottie: ^2.6.0
-  one_of: ">=1.5.0 <2.0.0"
-  one_of_serializer: ^1.5.0
-  path_provider: ^2.1.0
   sendbird_sdk: ^3.2.17
   shared_preferences: ^2.2.0
   smooth_page_indicator: ^1.1.0
   table_calendar: ^3.0.9
   timeago: ^3.5.0
-  toggle_switch: ^2.1.0
   url_launcher: ^6.1.0
 
 dev_dependencies:
@@ -81,6 +68,7 @@ dev_dependencies:
   build_web_compilers: ^4.0.3
   flutter_driver:
     sdk: flutter
+  flutter_gen: ^5.3.1
   flutter_gen_runner: ^5.3.1
   flutter_launcher_icons: ^0.13.1
   # 아래 "flutter_lints" 패키지에는 좋은 코딩 관행을 장려하기 위한 권장 린트 세트가 포함되어 있음.

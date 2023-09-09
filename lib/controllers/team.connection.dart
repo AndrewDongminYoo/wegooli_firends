@@ -29,11 +29,16 @@ class ConnectionController extends GetxController with ChannelEventHandler {
     String? userId = userController.currentUser.value.id;
     print('appId: $appId, userId: $userId');
     if (userId != null) {
-      List<String> otherUserIds = userController.members
-          .where((member) => member.accountId! != userId)
+      List<String> otherMembers = userController.members
           .map((member) => member.accountId!)
+          .where((id) => id != userId)
           .toList();
-      loadSendbird(appId, userId, otherUserIds);
+      if (otherMembers.isNotEmpty) {
+        loadSendbird(appId, userId, otherMembers);
+      } else {
+        // TODO: 채팅할 멤버가 없는 경우 동작 수행
+        goBack();
+      }
     }
     super.onInit();
   }
@@ -52,12 +57,12 @@ class ConnectionController extends GetxController with ChannelEventHandler {
       // Get the GroupChannel between the specified users
       channel = await getChannelBetween(userId, otherUserIds);
       // Retrieve any existing messages from the GroupChannel
-      MessageListParams messageListParams = new MessageListParams();
-      messageListParams.previousResultSize = 100;
-      messageListParams.reverse = true;
-      messageListParams.messageType = MessageTypeFilter.all;
-      messageListParams.isInclusive = true;
-      messageListParams.includeReactions = true;
+      MessageListParams messageListParams = new MessageListParams()
+        ..previousResultSize = 100
+        ..reverse = true
+        ..messageType = MessageTypeFilter.all
+        ..isInclusive = true
+        ..includeReactions = true;
       _messages.value = await channel!.getMessagesByTimestamp(
           DateTime.now().millisecondsSinceEpoch * 1000, messageListParams);
     } catch (e) {

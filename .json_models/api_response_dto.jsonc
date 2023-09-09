@@ -5,5 +5,7 @@
     "token": "BEARER asdasdas.asdasdas.adsasdas"
   },
   "resultCode": 200,
-  "resultMsg": null
+  "resultMsg": null,
+  "failMsg": "로그인 정보가 일치하지 않습니다.",
+  "userInfo": null
 }

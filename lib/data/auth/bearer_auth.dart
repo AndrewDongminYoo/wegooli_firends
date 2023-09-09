@@ -13,9 +13,9 @@ class BearerAuthInterceptor extends AuthInterceptor {
     RequestOptions options,
     RequestInterceptorHandler handler,
   ) {
+    /// [{type: 'http', scheme: 'bearer', name: 'jwtAuth'}];
     final authInfo = getAuthInfo(options,
         (secure) => secure['type'] == 'http' && secure['scheme'] == 'bearer');
-    print('authInfo: $authInfo');
     String? token;
     for (final info in authInfo) {
       final _token = tokens[info['name']];

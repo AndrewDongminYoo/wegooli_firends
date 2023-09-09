@@ -62,8 +62,7 @@ class ProfileInfoPage extends GetWidget<UserController> {
                           ),
                         ),
                         Text(
-                          controller.currentUser.value.email ??
-                              'abc@gmail.com',
+                          controller.currentUser.value.email ?? 'abc@gmail.com',
                           // overflow: TextOverflow.ellipsis,
                           // textAlign: TextAlign.left,
                           style: theme.textTheme.bodyLarge!.copyWith(

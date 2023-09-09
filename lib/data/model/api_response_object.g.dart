@@ -13,7 +13,13 @@ ApiResponseObject _$ApiResponseObjectFromJson(Map<String, dynamic> json) =>
       ($checkedConvert) {
         $checkKeys(
           json,
-          allowedKeys: const ['result', 'resultCode', 'resultMsg'],
+          allowedKeys: const [
+            'result',
+            'resultCode',
+            'resultMsg',
+            'failMsg',
+            'userInfo'
+          ],
         );
         final val = ApiResponseObject(
           result: $checkedConvert(
@@ -23,6 +29,8 @@ ApiResponseObject _$ApiResponseObjectFromJson(Map<String, dynamic> json) =>
                   : Result.fromJson(v as Map<String, dynamic>)),
           resultCode: $checkedConvert('resultCode', (v) => v as int?),
           resultMsg: $checkedConvert('resultMsg', (v) => v),
+          failMsg: $checkedConvert('failMsg', (v) => v as String?),
+          userInfo: $checkedConvert('userInfo', (v) => v),
         );
         return val;
       },
@@ -40,5 +48,7 @@ Map<String, dynamic> _$ApiResponseObjectToJson(ApiResponseObject instance) {
   writeNotNull('result', instance.result?.toJson());
   writeNotNull('resultCode', instance.resultCode);
   writeNotNull('resultMsg', instance.resultMsg);
+  writeNotNull('failMsg', instance.failMsg);
+  writeNotNull('userInfo', instance.userInfo);
   return val;
 }

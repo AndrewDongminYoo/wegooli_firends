@@ -6,8 +6,6 @@ import 'package:flutter/services.dart';
 // 📦 Package imports:
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_crashlytics/firebase_crashlytics.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
 import 'package:intl/date_symbol_data_local.dart';
@@ -41,19 +39,7 @@ Future<void> main() async {
 
   /// 지정된 [FirebaseApp]을 사용하여 인스턴스를 반환합니다.
   /// 지속성(persistence)은 웹에서만 사용할 수 있으며 다른 플랫폼에서는 지원되지 않습니다.
-  if (kIsWeb) {
-    // For example https://en.wikipedia.org/wiki/Web_storage#Local_and_session_storage
-    auth = FirebaseAuth.instanceFor(app: app, persistence: Persistence.LOCAL);
-  } else {
-    auth = FirebaseAuth.instanceFor(app: app);
-  }
-
-  /// 필요하지 않을 때 [MethodChannelFirebaseCrashlytics]를 생성하거나 사용자가 앱을 지정하기 전에
-  /// 기본 앱으로 인스턴스를 생성하지 않도록 [FirebaseCrashlyticsPlatform]의 인스턴스를 캐시하고 느리게 로드합니다.
-  FirebaseCrashlytics crashlytics = FirebaseCrashlytics.instance;
-  FlutterError.onError = (FlutterErrorDetails error) {
-    crashlytics.recordFlutterFatalError(error);
-  };
+  auth = FirebaseAuth.instanceFor(app: app);
 
   /// 로컬에서 실행 중인 인증 에뮬레이터를 가리키도록 이 인스턴스를 변경합니다.
   ///
@@ -66,26 +52,26 @@ Future<void> main() async {
     await auth.useAuthEmulator('localhost', 9099);
   }
 
-  FirebaseMessaging.instance.getInitialMessage().then((value) => {
-        if (value != null) {print(value.notification?.body)}
-      });
-
-  /// 애플리케이션이 종료된 상태에서 [RemoteMessage]([Notification] 포함)를 통해 열렸으면 반환되고, 그렇지 않으면 `null`이 됩니다.
-  /// [RemoteMessage]가 소비되면, [RemoteMessage]는 제거되고 [getInitialMessage]에 대한 추가 호출은 `null`이 됩니다.
-  /// 이는 특정 알림 상호 작용이 특정 목적(예: 채팅 메시지, 특정 화면 열기 등)으로 앱을 열어야 하는지 여부를 결정하는 데 사용해야 합니다.
-  FirebaseMessaging.instance.getInitialMessage();
-
-  // Pass all uncaught asynchronous errors that aren't handled by the Flutter framework to Crashlytics
+  /// 루트 분리에서 처리되지 않은 오류가 발생할 때 호출되는 콜백입니다.
+  /// 이 콜백은 오류를 처리한 경우 `true`를 반환해야 합니다. 그렇지 않으면 `false`를 반환해야 하며,
+  /// 특정 플랫폼 임베딩에서 `Settings::unhandled_exception_callback`을 통해 구성한 대로 stderr에 인쇄하는 등의 폴백 메커니즘이 사용됩니다.
+  /// 이 콜백을 호출한 후 VM 또는 프로세스가 종료되거나 응답하지 않을 수 있습니다.
+  /// 콜백을 호출하기 전에 VM 또는 프로세스가 종료되거나 응답하지 않는 예외에 대해서는 콜백이 호출되지 않습니다.
+  /// 이 콜백은 루트 격리의 하위 격리에서 발생하는 오류에 의해 직접 호출되지 않습니다.
+  /// 새 격리를 생성하는 프로그램은 해당 격리에서 오류를 수신하고 루트 격리에 오류를 전달해야 합니다.
   PlatformDispatcher.instance.onError = (error, stack) {
-    crashlytics.recordError(error, stack, fatal: true);
+    /// 필요하지 않을 때 [MethodChannelFirebaseCrashlytics]를 생성하거나 사용자가 앱을 지정하기 전에
+    /// 기본 앱으로 인스턴스를 생성하지 않도록 [FirebaseCrashlyticsPlatform]의 인스턴스를 캐시하고 느리게 로드합니다.
+    // ! FirebaseCrashlytics.instance.pluginConstants['isCrashlyticsCollectionEnabled'] = false;
+    // * FirebaseCrashlytics.instance.setCrashlyticsCollectionEnabled('false');
+    // FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
     return true;
   };
 
   runApp(const MyApp());
 }
 
-/// 애플리케이션의 진입 점.
-///
+/// 애플리케이션 엔트리포인트.
 /// [MaterialApp]을 반환합니다.
 class MyApp extends StatelessWidget {
   static final RouteObserver<PageRoute> routeObserver =

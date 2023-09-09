@@ -84,7 +84,6 @@ gen-external-apklibs
 .pub/
 /build/
 coverage/
-lib/generated_plugin_registrant.dart
 
 # Android related
 **/android/**/gradle-wrapper.jar

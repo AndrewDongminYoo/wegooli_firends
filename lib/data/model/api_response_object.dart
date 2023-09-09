@@ -9,11 +9,19 @@ part 'api_response_object.g.dart';
 
 @JsonSerializable()
 class ApiResponseObject extends Equatable {
-  const ApiResponseObject({this.result, this.resultCode, this.resultMsg});
+  const ApiResponseObject({
+    this.result,
+    this.resultCode,
+    this.resultMsg,
+    this.failMsg,
+    this.userInfo,
+  });
 
   final Result? result;
   final int? resultCode;
   final dynamic resultMsg;
+  final String? failMsg;
+  final dynamic userInfo;
 
   factory ApiResponseObject.fromJson(Map<String, dynamic> json) {
     return _$ApiResponseObjectFromJson(json);
@@ -25,11 +33,15 @@ class ApiResponseObject extends Equatable {
     Result? result,
     int? resultCode,
     dynamic resultMsg,
+    String? failMsg,
+    dynamic userInfo,
   }) {
     return ApiResponseObject(
       result: result ?? this.result,
       resultCode: resultCode ?? this.resultCode,
       resultMsg: resultMsg ?? this.resultMsg,
+      failMsg: failMsg ?? this.failMsg,
+      userInfo: userInfo ?? this.userInfo,
     );
   }
 
@@ -37,5 +49,13 @@ class ApiResponseObject extends Equatable {
   bool get stringify => true;
 
   @override
-  List<Object?> get props => [result, resultCode, resultMsg];
+  List<Object?> get props {
+    return [
+      result,
+      resultCode,
+      resultMsg,
+      failMsg,
+      userInfo,
+    ];
+  }
 }

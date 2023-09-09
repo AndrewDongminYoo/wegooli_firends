@@ -71,7 +71,7 @@ AnimatedToggleSwitch<int>.rolling(
   values: [0, 1, 2, 3],
   onChanged: (i) => setState(() => value = i),
   iconBuilder: iconBuilder,
-  ... // many more parameters available
+  ... // 더 많은 매개변수 사용 가능
 )
 ```
 
@@ -86,9 +86,9 @@ AnimatedToggleSwitch<int>.rolling(
     setState(() => value = i);
     await Future.delayed(Duration(seconds: 3));
   },
-  loading: false, // for deactivating loading animation
+  loading: false, // 로딩 애니메이션 비활성화
   iconBuilder: iconBuilder,
-  ... // many more parameters available
+  ... // 더 많은 매개변수 사용 가능
 )
 ```
 
@@ -97,11 +97,11 @@ AnimatedToggleSwitch<int>.rolling(
 ```dart
 AnimatedToggleSwitch<int?>.rolling(
    allowUnlistedValues: true,
-   current: nullableValue, // no selection if nullableValue is not contained in values
+   current: nullableValue, // nullableValue가 값에 포함되지 않은 경우 선택 없음
    values: const [0, 1, 2, 3],
    onChanged: (i) => setState(() => nullableValue = i),
    iconBuilder: iconBuilder,
-   indicatorAppearingBuilder: ..., // appearing animation is fully customizable (optional)
+   indicatorAppearingBuilder: ..., // 표시되는 애니메이션은 완전히 사용자 정의 가능 (선택 사항)
 )
 ```
 
@@ -109,11 +109,11 @@ AnimatedToggleSwitch<int?>.rolling(
 CustomAnimatedToggleSwitch<int>(
   current: value,
   values: [0, 1, 2, 3],
-  wrapperBuilder: ..., // the builder for the wrapper around the whole switch
-  iconBuilder: ..., // the builder for the icons
-  foregroundIndicatorBuilder: ..., // a builder for an indicator in front of the icons
-  backgroundIndicatorBuilder: ..., // a builder for an indicator behind the icons
-  ... // many more parameters available
+  wrapperBuilder: ..., // 전체 스위치를 감싸는 래퍼의 빌더
+  iconBuilder: ..., // 아이콘의 빌더
+  foregroundIndicatorBuilder: ..., // 아이콘 앞의 인디케이터 빌더
+  backgroundIndicatorBuilder: ..., // 아이콘 뒤의 인디케이터 빌더
+  ... // 더 많은 매개 변수 사용 가능
 )
 ```
 

@@ -10,7 +10,7 @@ author:
 ![Pub Version](https://img.shields.io/pub/v/awesome_select)
 ![GitHub](https://img.shields.io/github/license/akbarpulatov/flutter_smart_select)
 
-SmartSelect allows you to easily convert your usual form select or dropdown into dynamic page, popup dialog, or sliding bottom sheet with various choices input such as radio, checkbox, switch, chips, or even custom input. Supports single and multiple choice. Inspired by Smart Select component from [Framework7](https://framework7.io/).
+스마트 셀렉트를 사용하면 라디오, 체크박스, 스위치, 칩 또는 사용자 지정 입력과 같은 다양한 선택 항목 입력을 통해 일반적인 양식 선택 또는 드롭다운을 동적 페이지, 팝업 대화상자 또는 슬라이딩 하단 시트로 쉽게 변환할 수 있습니다. 단수 및 다중 선택 지원. [프레임워크7](https://framework7.io/)의 스마트 셀렉트 컴포넌트에서 영감을 얻었습니다.
 
 - 스타일 구성 또는 위젯 빌더를 사용하여 모달 위젯의 모든 부분(헤더, 바닥글, 검색창, 확인 버튼, 검색창 토글)을 사용자 지정할 수 있습니다.
 - 확인 전 유효성 검사
@@ -113,32 +113,32 @@ SmartSelect allows you to easily convert your usual form select or dropdown into
 - 모든 `List`에서 선택 항목 빌드
 - 쉬운 비동기 선택 항목로드
 
-For a complete usage, please see the [example](https://pub.dev/packages/smart_select#-example-tab-).
+전체 사용법은 [예제](https://pub.dev/packages/smart_select#-example-tab-)를 참조하세요.
 
-To read more about classes and other references used by `smart_select`, see the [API Reference](https://pub.dev/documentation/smart_select/latest/).
+`smart_select`에서 사용하는 클래스 및 기타 참조에 대한 자세한 내용은 [API 레퍼런스](https://pub.dev/documentation/smart_select/latest/)를 참조하세요.
 
 ```dart
-// available configuration for single choice
+// 단일 선택에 사용 가능한 구성
 SmartSelect<T>.single({
 
-  // The primary content of the widget.
-  // Used in trigger widget and header option
+  // 위젯의 기본 콘텐츠입니다.
+  // 트리거 위젯 및 헤더 옵션에 사용됩니다.
   String title,
 
-  // The text displayed when the value is null
+  // 값이 null일 때 표시되는 텍스트
   String placeholder = 'Select one',
 
-  // The current value of the single choice widget.
+  // 단일 선택 위젯의 현재 값입니다.
   required T value,
 
-  // Called when single choice value changed
+  // 단일 선택 항목 값이 변경될 때 호출됩니다.
   required ValueChanged<S2SingleState<T>> onChange,
 
-  // choice item list
+  // 선택 항목 목록
   List<S2Choice<T>> choiceItems,
 
-  // other available configuration
-  // explained below
+  // 기타 사용 가능한 구성
+  // 아래 설명
   ...,
   ...,
 
@@ -146,7 +146,7 @@ SmartSelect<T>.single({
 ```
 
 ```dart
-// simple usage
+// 간단한 사용법
 
 String value = 'flutter';
 List<S2Choice<String>> options = [
@@ -167,27 +167,27 @@ Widget build(BuildContext context) {
 ```
 
 ```dart
-// available configuration for multiple choice
+// 객관식에 사용 가능한 구성
 SmartSelect<T>.multiple({
 
-  // The primary content of the widget.
-  // Used in trigger widget and header option
+  // 위젯의 기본 콘텐츠입니다.
+  // 트리거 위젯 및 헤더 옵션에 사용됩니다.
   String title,
 
-  // The text displayed when the value is null
+  // 값이 null일 때 표시되는 텍스트
   String placeholder = 'Select one',
 
-  // The current value of the single choice widget.
+  // 객관식 위젯의 현재 값입니다.
   required List<T> value,
 
-  // Called when single choice value changed
+  // 단일 선택 값이 변경될 때 호출됩니다.
   required ValueChanged<S2MultiState<T>> onChange,
 
-  // choice item list
+  // 선택 항목 목록
   List<S2Choice<T>> choiceItems,
 
-  // other available configuration
-  // explained below
+  // 기타 사용 가능한 구성은
+  // 아래 설명을 참조하세요.
   ...,
   ...,
 
@@ -195,7 +195,7 @@ SmartSelect<T>.multiple({
 ```
 
 ```dart
-// a simple usage
+// 간단한 사용법
 
 List<int> value = [2];
 List<S2Choice<int>> frameworks = [
@@ -216,24 +216,24 @@ Widget build(BuildContext context) {
 ```
 
 ```dart
-// configuration
+// 구성
 SmartSelect<T>.[single|multiple]({
 
-  // other configuration
+  // 기타 구성
   ...,
   ...,
 
-  // choice item list
+  // 선택 항목 목록
   List<S2Choice<T>> choiceItems,
 
-  // other configuration
+  // 기타 구성
   ...,
   ...,
 
 });
 ```
 
-`choiceItems` can be input directly as in the example below, more info about `S2Choice` can be found on the [API Reference](https://pub.dev/documentation/smart_select/latest/smart_select/S2Choice-class.html)
+`선택항목`은 아래 예시와 같이 직접 입력할 수 있으며, `S2Choice`에 대한 자세한 내용은 [API Reference](https://pub.dev/documentation/smart_select/latest/smart_select/S2Choice-class.html)에서 확인할 수 있습니다.
 
 ```dart
 SmartSelect<T>.[single|multiple](
@@ -247,7 +247,7 @@ SmartSelect<T>.[single|multiple](
 );
 ```
 
-`choiceItems` also can be created from any list using helper provided by this package, like the example below
+`선택 항목`은 아래 예제와 같이 이 패키지에서 제공하는 도우미를 사용하여 모든 목록에서 생성할 수도 있습니다.
 
 ```dart
 List<Map<String, String>> days = [
@@ -271,368 +271,368 @@ SmartSelect<String>.[single|multiple](
 );
 ```
 
-Please follow these [example](https://github.com/davigmacode/flutter_smart_select/blob/main/example/lib/features_option/option_async.dart)
+다음 [예제](https://github.com/davigmacode/flutter_smart_select/blob/main/example/lib/features_option/option_async.dart)를 따르세요.
 
-More info about `S2ModalConfig` can be found on the [API Reference](https://pub.dev/documentation/smart_select/latest/smart_select/S2ModalConfig-class.html)
+S2ModalConfig`에 대한 자세한 내용은 [API Reference](https://pub.dev/documentation/smart_select/latest/smart_select/S2ModalConfig-class.html)에서 확인할 수 있습니다.
 
 ```dart
-// available configuration
+// 사용 가능한 구성
 SmartSelect<T>.[single|multiple]({
 
-  // other configuration
+  // 기타 구성
   ...,
   ...,
 
-  // Modal validation of single choice widget
+  // 단일 선택 위젯의 모달 유효성 검사
   ValidationCallback<T> modalValidation,
 
-  // Modal configuration
+  // 모달 구성
   S2ModalConfig modalConfig,
 
-  // Configure modal style
-  // shortcut to [modalConfig.style]
+  // 모달 스타일 구성
+  // [modalConfig.style] 단축어
   S2ModalStyle modalStyle,
 
-  // Configure modal header style
-  // shortcut to [modalConfig.headerStyle]
+  // 모달 헤더 스타일 구성
+  // 모달 헤더 스타일 구성 [modalConfig.headerStyle] 단축어
   S2ModalHeaderStyle modalHeaderStyle,
 
-  // Modal type to display choices
-  // shortcut to [modalConfig.type]
+  // 선택 항목을 표시할 모달 유형
+  // [modalConfig.type] 단축어
   S2ModalType modalType,
 
-  // Use different title with the trigger widget title
-  // shortcut to [modalConfig.title]
+  // 트리거 위젯 제목에 다른 제목 사용
+  // [modalConfig.title] 단축어
   String modalTitle,
 
-  // Whether the option list need to confirm
-  // to return the changed value
-  // shortcut to [modalConfig.useConfirm]
+  // 옵션 목록에서 변경된 값을 반환하기 위해
+  // 변경된 값을 반환하기 위해
+  // [modalConfig.useConfirm] 단축어
   bool modalConfirm,
 
-  // Whether the options list modal use header or not
-  // shortcut to [modalConfig.useHeader]
+  // 옵션 목록 모달 사용 헤더를 사용할지 여부
+  // [modalConfig.useHeader] 단축어
   bool modalHeader,
 
-  // Whether the option list is filterable or not
-  // shortcut to [modalConfig.useFilter]
+  // 옵션 목록의 필터링 가능 여부
+  // [modalConfig.useFilter] 단축어
   bool modalFilter,
 
-  // Whether the filter is autocomplete or need confirmation
-  // shortcut to [modalConfig.filterAuto]
+  // 필터의 자동 완성 여부 또는 확인 필요 여부
+  // [modalConfig.filterAuto] 단축어
   bool modalFilterAuto,
 
-  // Custom searchbar hint
-  // shortcut to [modalConfig.filterHint]
+  // 사용자 지정 검색창 힌트
+  // [modalConfig.filterHint]에 대한 단축어
   String modalFilterHint,
 
-  // other configuration
+  // 기타 구성
   ...,
   ...,
 
 });
 ```
 
-By default SmartSelect will open choices modal in full page. You can change it by changing with this value:
+기본적으로 SmartSelect는 전체 페이지에서 선택 모달을 엽니다. 이 값으로 변경하여 변경할 수 있습니다:
 
 ```dart
-// Available option
+// 사용 가능한 옵션
 enum S2ModalType {
 
-  // open in full page
+  // 전체 페이지에서 열기
   fullPage,
 
-  // open in popup dialog
+  // 팝업 대화 상자에서 열기
   popupDialog,
 
-  // open in sliding bottom sheet
+  // 슬라이딩 하단 시트에서 열기
   bottomSheet,
 
 }
 ```
 
 ```dart
-// Available option to configure modal style
+// 모달 스타일 구성에 사용 가능한 옵션
 S2ModalStyle({
 
-  // Modal border shape
-  // used in popup dialog and bottom sheet
+  // 모달 테두리 모양
+  // 팝업 대화 상자 및 하단 시트에서 사용
   ShapeBorder shape,
 
-  // Modal elevation
-  // used in popup dialog and bottom sheet
+  // 모달 높이
+  // 팝업 대화 상자 및 하단 시트에 사용
   double elevation,
 
-  // Modal background color
+  // 모달 배경색
   Color backgroundColor,
 
-  // Modal clip behavior
+  // 모달 클립 동작
   Clip clipBehavior,
 
 })
 ```
 
 ```dart
-// Available option to configure modal header style
+// 모달 헤더 스타일을 구성하는 데 사용할 수 있는 옵션
 S2ModalHeaderStyle({
 
-  // Header border shape
+  // 헤더 테두리 모양
   ShapeBorder shape,
 
-  // Header elevation
+  // 헤더 높이
   double elevation,
 
-  // Header background color
+  // 헤더 배경색
   Color backgroundColor,
 
-  // Header brightness
+  // 헤더 밝기
   Brightness brightness,
 
-  // Whether the header title is centered
+  // 헤더 제목이 중앙에 있는지 여부
   bool centerTitle,
 
-  // Whether the header use automaticallyImplyLeading or not
+  // 헤더에 자동 임플리딩 사용 여부
   bool useLeading,
 
-  // Header text style
-  // used by title and search field
+  // 헤더 텍스트 스타일
+  // 제목 및 검색 필드에 사용되는 스타일
   TextStyle textStyle,
 
-  // Header icon theme
+  // 헤더 아이콘 테마
   IconThemeData iconTheme,
 
-  // Header actions icon theme
+  // 헤더 작업 아이콘 테마
   IconThemeData actionsIconTheme,
 
 })
 ```
 
-More info about `S2ChoiceConfig` can be found on the [API Reference](https://pub.dev/documentation/smart_select/latest/smart_select/S2ChoiceConfig-class.html)
+`S2ChoiceConfig`에 대한 자세한 내용은 [API 레퍼런스](https://pub.dev/documentation/smart_select/latest/smart_select/S2ChoiceConfig-class.html)에서 확인할 수 있습니다.
 
 ```dart
-// Available option to configure choices
+// 선택 사항을 구성하는 데 사용할 수 있는 옵션
 SmartSelect<T>.[single|multiple]({
 
-  // other configuration
+  // 기타 구성
   ...,
   ...,
 
-  // choice configuration
+  // 선택 항목 구성
   S2ChoiceConfig choiceConfig,
 
-  // configure choice style
-  // shortcut to [choiceConfig.style]
+  // 선택 스타일 구성
+  // [choiceConfig.style] 단축어
   S2ChoiceStyle choiceStyle,
 
-  // configure choices group header style
-  // shortcut to [choiceConfig.headerStyle]
+  // 선택 항목 그룹 헤더 스타일 구성
+  // [choiceConfig.headerStyle] 단축어
   S2ChoiceHeaderStyle choiceHeaderStyle,
 
-  // choice widget type
-  // shortcut to [choiceConfig.type]
+  // 선택 위젯 유형
+  // 선택 위젯 유형 [choiceConfig.type]에 대한 단축어
   S2ChoiceType choiceType,
 
-  // choice layout to display items
-  // shortcut to [choiceConfig.layout]
+  // 항목을 표시할 선택 레이아웃
+  // [choiceConfig.layout] 단축어
   S2ChoiceLayout choiceLayout,
 
-  // choice list scroll direction
-  // currently only support when
-  // [layout] is [S2ChoiceLayout.wrap]
-  // shortcut to [choiceConfig.direction]
+  // 선택 목록 스크롤 방향
+  // 현재 다음과 같은 경우에만 지원
+  // [레이아웃]이 [S2ChoiceLayout.wrap]인 경우
+  // [choiceConfig.direction]에 대한 단축어
   Axis choiceDirection,
 
-  // Whether the choices list is grouped
-  // shortcut to [choiceConfig.isGrouped]
+  // 선택 목록의 그룹화 여부
+  // 선택 목록이 그룹화되어 있는지 여부 [choiceConfig.isGrouped] 단축어
   bool choiceGrouped,
 
-  // Whether the choices item use divider or not
-  // shortcut to [choiceConfig.useDivider]
+  // 선택 항목에 디바이더 사용 여부
+  // 선택 항목의 디바이더 사용 여부 [choiceConfig.useDivider] 단축어
   bool choiceDivider,
 
-  // For grid choice layout
-  // shortcut to [choiceConfig.gridDelegate]
+  // 그리드 선택 레이아웃의 경우
+  // 선택 항목 레이아웃의 경우 [choiceConfig.gridDelegate] 단축어
   SliverGridDelegate choiceGrid,
 
-  // other configuration
+  // 기타 구성
   ...,
   ...,
 
 });
 ```
 
-By default SmartSelect will use `radios` for single choice and `checkboxes` for multiple choice, but it can change by changing with this value:
+기본적으로 SmartSelect는 단답형에는 `라디오`를, 객관식에는 `체크박스`를 사용하지만 다음 enum 값으로 변경하여 변경할 수 있습니다:
 
 ```dart
-// Type of choice input
+// 선택 항목 입력 유형
 enum S2ChoiceType {
 
-  // use radio widget
-  // for single choice
+  // 라디오 위젯 사용
+  // 단일 선택의 경우
   radios,
 
-  // use checkbox widget
-  // for multiple choice
+  // 체크박스 위젯 사용
+  // 다중 선택의 경우
   checkboxes,
 
-  // use switch widget
-  // for multiple choice
+  // 스위치 위젯 사용
+  // 객관식용
   switches,
 
-  // use chip widget
-  // for single and multiple choice
+  // 칩 위젯 사용
+  // 단답형 및 객관식용
   chips,
 
 }
 ```
 
-By default SmartSelect will use `list`, but it can change by changing with this value:
+기본적으로 SmartSelect는 `list`를 사용하지만 이 값으로 변경하여 변경할 수 있습니다:
 
 ```dart
-// Layout of choice item
+// 선택 항목의 레이아웃
 enum S2ChoiceLayout {
 
-  // use list view widget
+  // 목록 보기 위젯 사용
   list,
 
-  // use wrap view widget
+  // 줄 바꿈 보기 위젯 사용
   wrap,
 
-  // use grid view widget
+  // 그리드 보기 위젯 사용
   grid,
 
 }
 ```
 
 ```dart
-// Available option to configure choice style
+// 선택 스타일 구성에 사용할 수 있는 옵션
 S2ChoiceStyle({
 
-  // How much space to place between children in a run in the main axis.
-  // When use [SmartSelectChoiceType.chips] or [useWrap] is [true]
+  // 주축의 실행에서 자식 사이에 배치할 간격입니다.
+  // [SmartSelectChoiceType.chips] 또는 [useWrap]을 [true]로 사용하는 경우
   double spacing,
 
-  // How much space to place between the runs themselves in the cross axis.
-  // When use [SmartSelectChoiceType.chips] or [useWrap] is [true]
+  // 십자 축에서 실행 자체 사이에 배치할 간격입니다.
+  // [SmartSelectChoiceType.chips] 또는 [useWrap]이 [true]인 경우
   double runSpacing,
 
-  // choices wrapper padding
+  // 선택 항목 래퍼 패딩
   EdgeInsetsGeometry wrapperPadding,
 
-  // Choices item padding
+  // 선택 항목 패딩
   EdgeInsetsGeometry padding,
 
-  // choices item title style
+  // 선택 항목 제목 스타일
   TextStyle titleStyle,
 
-  // choices item subtitle style
+  // 선택 항목 자막 스타일
   TextStyle subtitleStyle,
 
-  // whether the chips use checkmark or not
+  // 칩이 체크 표시를 사용할지 여부
   bool showCheckmark,
 
-  // Where to place the control in widgets that use
-  // [ListTile] to position a control next to a label.
+  // 목록 타일을 사용하는 위젯에서 컨트롤을 배치할 위치
+  // [ListTile]을 사용하여 레이블 옆에 컨트롤을 배치합니다.
   S2ChoiceControl control,
 
-  // Highlight color
+  // 강조 색상
   Color highlightColor,
 
-  // Primary color of selected choice item
+  // 선택된 선택 항목의 기본 색상
   Color activeColor,
 
-  // Primary color of unselected choice item
+  // 선택되지 않은 선택 항목의 기본 색상
   Color color,
 
-  // Secondary color of selected choice item
+  // 선택된 선택 항목의 보조 색상
   Color activeAccentColor,
 
-  // Secondary color of unselected choice item
+  // 선택되지 않은 선택 항목의 보조 색상
   Color accentColor,
 
-  // Brightness for selected Chip
+  // 선택한 칩의 밝기
   Brightness activeBrightness,
 
-  // Brightness for unselected Chip
+  // 선택되지 않은 칩의 밝기
   Brightness brightness,
 
-  // Opacity for selected Chip border, only effect when
-  // [activeBrightness] is [Brightness.light]
+  // 선택한 칩 테두리의 불투명도, 다음과 같은 경우에만 효과
+  // [activeBrightness]가 [Brightness.light]인 경우에만 적용됩니다.
   double activeBorderOpacity,
 
-  // Opacity for unselected chip border, only effect when
-  // [brightness] is [Brightness.light]
+  // 선택되지 않은 칩 테두리의 불투명도, 다음과 같은 경우에만 적용됩니다.
+  // [Brightness]가 [Brightness.light]인 경우에만 효과 있음
   double borderOpacity,
 
-  // Shape clip behavior
+  // 모양 클립 동작
   Clip clipBehavior,
 
 })
 ```
 
 ```dart
-// Available option to configure choices group header widget style
+// 선택 그룹 헤더 위젯 스타일을 구성하는 데 사용할 수 있는 옵션
 S2ChoiceHeaderStyle({
 
-  // Group header background color
+  // 그룹 헤더 배경색
   Color backgroundColor,
 
-  // Highlight color
+  // 하이라이트 색상
   Color highlightColor,
 
-  // Group header text style
+  // 그룹 헤더 텍스트 스타일
   TextStyle textStyle,
 
-  // Group header padding
+  // 그룹 헤더 패딩
   EdgeInsetsGeometry padding,
 
-  // Group header height
+  // 그룹 헤더 높이
   double height,
 
 })
 ```
 
 ```dart
-// available builder configuration
-// for single choice
+// 사용 가능한 빌더 구성
+// 단일 선택
 SmartSelect<T>.single({
 
-  // other configuration
+  // 기타 구성
   ...,
   ...,
 
-  // Builder collection of single choice widget
+  // 단일 선택 위젯의 빌더 컬렉션
   S2SingleBuilder<T> builder,
 
-  // Builder for custom tile widget
-  // shortcut to [builder.tile]
+  // 사용자 지정 타일 위젯용 빌더
+  // [builder.tile] 단축어
   S2WidgetBuilder<S2SingleState<T>> tileBuilder,
 
-  // Builder for custom modal widget
-  // shortcut to [builder.modal]
+  // 사용자 정의 모달 위젯용 빌더
+  // [builder.modal] 단축어
   S2WidgetBuilder<S2SingleState<T>> modalBuilder,
 
-  // Builder for custom modal header widget
-  // shortcut to [builder.modalHeader]
+  // 사용자 정의 모달 헤더 위젯용 빌더
+  // [builder.modalHeader] 단축어
   S2WidgetBuilder<S2SingleState<T>> modalHeaderBuilder,
 
-  // Builder for custom modal actions widget
-  // shortcut to [builder.modalActions]
+  // 사용자 지정 모달 작업 위젯용 빌더
+  // [builder.modalActions] 단축어
   S2ListWidgetBuilder<S2SingleState<T>> modalActionsBuilder,
 
-  // Builder for custom modal confirm action widget
-  // shortcut to [builder.modalConfirm]
+  // 사용자 지정 모달 확인 작업 위젯용 빌더
+  // [builder.modalConfirm] 단축어
   S2WidgetBuilder<S2SingleState<T>> modalConfirmBuilder,
 
-  // Builder for divider widget between header, body, and footer modal
-  // shortcut to [builder.modalDivider]
+  // 머리글, 본문, 바닥글 모달 사이의 디바이더 위젯용 빌더
+  // [builder.modalDivider] 단축어
   S2WidgetBuilder<S2SingleState<T>> modalDividerBuilder,
 
-  // Builder for custom footer widget
-  // shortcut to [builder.modalFooter]
+  // 사용자 정의 푸터 위젯용 빌더
+  // [builder.modalFooter] 단축어
   S2WidgetBuilder<S2SingleState<T>> modalFooterBuilder,
 
-  // other configuration
+  // 기타 구성
   ...,
   ...,
 
@@ -640,46 +640,46 @@ SmartSelect<T>.single({
 ```
 
 ```dart
-// available builder configuration
-// for multiple choice
+// 사용 가능한 빌더 구성
+// 객관식
 SmartSelect<T>.multiple({
 
-  // other configuration
+  // 기타 구성
   ...,
   ...,
 
-  // Builder collection of single choice widget
+  // 단일 선택 위젯의 빌더 모음
   S2MultiBuilder<T> builder,
 
-  // Builder for custom tile widget
-  // shortcut to [builder.tile]
+  // 사용자 지정 타일 위젯용 빌더
+  // [builder.tile] 단축어
   S2WidgetBuilder<S2MultiState<T>> tileBuilder,
 
-  // Builder for custom modal widget
-  // shortcut to [builder.modal]
+  // 사용자 지정 모달 위젯용 빌더
+  // [builder.modal] 단축어
   S2WidgetBuilder<S2MultiState<T>> modalBuilder,
 
-  // Builder for custom modal header widget
-  // shortcut to [builder.modalHeader]
+  // 사용자 정의 모달 헤더 위젯용 빌더
+  // [builder.modalHeader] 단축어
   S2WidgetBuilder<S2MultiState<T>> modalHeaderBuilder,
 
-  // Builder for custom modal actions widget
-  // shortcut to [builder.modalActions]
+  // 사용자 지정 모달 작업 위젯용 빌더
+  // [builder.modalActions] 단축어
   S2ListWidgetBuilder<S2MultiState<T>> modalActionsBuilder,
 
-  // Builder for custom modal confirm action widget
-  // shortcut to [builder.modalConfirm]
+  // 사용자 지정 모달 확인 작업 위젯용 빌더
+  // [builder.modalConfirm] 단축어
   S2WidgetBuilder<S2MultiState<T>> modalConfirmBuilder,
 
-  // Builder for divider widget between header, body, and footer modal
-  // shortcut to [builder.modalDivider]
+  // 머리글, 본문, 바닥글 모달 사이의 디바이더 위젯용 빌더
+  // [builder.modalDivider] 단축어
   S2WidgetBuilder<S2MultiState<T>> modalDividerBuilder,
 
-  // Builder for custom footer widget
-  // shortcut to [builder.modalFooter]
+  // 사용자 정의 푸터 위젯용 빌더
+  // [builder.modalFooter] 단축어
   S2WidgetBuilder<S2MultiState<T>> modalFooterBuilder,
 
-  // other configuration
+  // 기타 구성
   ...,
   ...,
 
@@ -687,54 +687,54 @@ SmartSelect<T>.multiple({
 ```
 
 ```dart
-// another builder configuration
+// 다른 빌더 구성
 SmartSelect<T>.[single|multiple]({
 
-  // other configuration
+  // 기타 구성
   ...,
   ...,
 
-  // Builder for modal filter widget
-  // shortcut to [builder.modalFilter]
+  // 모달 필터 위젯용 빌더
+  // [builder.modalFilter] 단축어
   S2WidgetBuilder<S2Filter> modalFilterBuilder,
 
-  // Builder for modal filter toggle widget
-  // shortcut to [builder.modalFilterToggle]
+  // 모달 필터 토글 위젯용 빌더
+  // [builder.modalFilterToggle] 단축어
   S2WidgetBuilder<S2Filter> modalFilterToggleBuilder,
 
-  // Builder for each custom choices item widget
-  // shortcut to [builder.choice]
+  // 각 사용자 지정 선택 항목 위젯용 빌더
+  // [builder.choice] 단축어
   S2ChoiceBuilder<T> choiceBuilder,
 
-  // Builder for each custom choices item title widget
-  // shortcut to [builder.choiceTitle]
+  // 각 사용자 지정 선택 항목 제목 위젯의 빌더
+  // [builder.choiceTitle] 단축어
   S2ChoiceBuilder<T> choiceTitleBuilder,
 
-  // Builder for each custom choices item subtitle widget
-  // shortcut to [builder.choiceSubtitle]
+  // 각 사용자 지정 선택 항목 자막 위젯용 빌더
+  // [builder.choiceSubtitle] 단축어
   S2ChoiceBuilder<T> choiceSubtitleBuilder,
 
-  // Builder for each custom choices item secondary widget
-  // shortcut to [builder.choiceSecondary]
+  // 각 사용자 지정 선택 항목의 빌더 보조 위젯
+  // [builder.choiceSecondary] 단축어
   S2ChoiceBuilder<T> choiceSecondaryBuilder,
 
-  /// Builder for custom divider widget between choices item
-  // shortcut to [builder.choiceDivider]
+  /// 선택 항목 사이의 사용자 지정 구분선 위젯 빌더
+  // [builder.choiceDivider] 단축어
   IndexedWidgetBuilder choiceDividerBuilder,
 
-  // Builder for custom empty display
-  // shortcut to [builder.choiceEmpty]
+  // 사용자 지정 빈 디스플레이용 빌더
+  // [builder.choiceEmpty] 단축어
   S2WidgetBuilder<String> choiceEmptyBuilder,
 
-  // A widget builder for custom choices group
-  // shortcut to [builder.choiceGroup]
+  // 사용자 지정 선택 그룹용 위젯 빌더
+  // [builder.choiceGroup]에 대한 단축어
   S2ChoiceGroupBuilder choiceGroupBuilder,
 
-  // A widget builder for custom header choices group
-  // shortcut to [builder.choiceHeader]
+  // 사용자 정의 헤더 선택 그룹용 위젯 빌더
+  // [builder.choiceHeader]에 대한 단축어
   S2ChoiceHeaderBuilder choiceHeaderBuilder,
 
-  // other configuration
+  // 기타 구성
   ...,
   ...,
 
@@ -742,59 +742,59 @@ SmartSelect<T>.[single|multiple]({
 ```
 
 ```dart
-// Default tile/trigger widget
+// 기본 타일/트리거 위젯
 S2Tile<T>({
 
-  // The value of the selected option.
+  // 선택한 옵션의 값입니다.
   String value,
 
-  // The primary content of the list tile.
+  // 목록 타일의 기본 콘텐츠입니다.
   Widget title,
 
-  // A widget to display before the title.
-  // Typically an [Icon] or a [CircleAvatar] widget.
+  // 제목 앞에 표시할 위젯입니다.
+  // 일반적으로 [아이콘] 또는 [원형 아바타] 위젯입니다.
   Widget leading,
 
-  // A widget to display after the title.
-  // Typically an [Icon] widget.
+  // 제목 뒤에 표시할 위젯입니다.
+  // 일반적으로 [아이콘] 위젯입니다.
   Widget trailing,
 
-  // Whether this list tile is intended to display loading stats.
+  // 이 목록 타일에 로딩 통계를 표시할지 여부입니다.
   bool isLoading,
 
-  // String text used as loading text
+  // 로딩 텍스트로 사용되는 문자열 텍스트
   String loadingText,
 
-  // Whether this list tile is intended to display two lines of text.
+  // 이 목록 타일에 두 줄의 텍스트를 표시할지 여부입니다.
   bool isTwoLine,
 
-  // Whether this list tile is interactive.
+  // 이 목록 타일이 대화형인지 여부입니다.
   bool enabled,
 
-  // If this tile is also [enabled] then icons and text are rendered with the same color.
+  // 이 타일도 [활성화됨]인 경우 아이콘과 텍스트가 동일한 색상으로 렌더링됩니다.
   bool selected,
 
-  // Whether this list tile is part of a vertically dense list.
+  // 이 목록 타일이 세로로 밀집된 목록의 일부인지 여부입니다.
   bool dense,
 
-  // Whether the [value] is displayed or not
+  // [값]이 표시되는지 여부
   bool hideValue,
 
-  // The tile's internal padding.
+  // 타일의 내부 패딩.
   EdgeInsetsGeometry padding,
 
-  // Called when the user taps this list tile.
+  // 사용자가 이 목록 타일을 탭할 때 호출됩니다.
   GestureTapCallback onTap,
 
-  // widget to display below the tile
-  // usually used to display chips with S2TileChips
+  // 타일 아래에 표시할 위젯
+  // 일반적으로 S2TileChips로 칩을 표시하는 데 사용됩니다.
   Widget body,
 
 })
 ```
 
 ```dart
-// usage example
+// 사용 예시
 SmartSelect<T>.single(
   ...,
   ...,
@@ -808,7 +808,7 @@ SmartSelect<T>.single(
   },
 );
 
-// usage example from state
+// 상태에서의 사용 예
 SmartSelect<T>.multiple(
   ...,
   ...,
@@ -822,62 +822,62 @@ SmartSelect<T>.multiple(
 ```
 
 ```dart
-// Chips tile/trigger widget
+// 칩 타일/트리거 위젯
 S2TileChips({
 
-  // List of value of the selected choices.
+  // 선택한 선택 항목의 값 목록입니다.
   int chipLength,
 
-  // Widget builder for chip label item
+  // 칩 라벨 항목용 위젯 빌더
   IndexedWidgetBuilder chipLabelBuilder,
 
-  // Widget builder for chip avatar item
+  // 칩 아바타 항목용 위젯 빌더
   IndexedWidgetBuilder chipAvatarBuilder,
 
-  // Widget builder for chip item
+  // 칩 항목용 위젯 빌더
   IndexedWidgetBuilder chipBuilder,
 
-  // Called when the user delete the chip item.
+  // 사용자가 칩 항목을 삭제할 때 호출됩니다.
   ValueChanged<int> chipOnDelete,
 
-  // Chip color
+  // 칩 색상
   Color chipColor,
 
-  // Chip border opacity
+  // 칩 테두리 불투명도
   double chipBorderOpacity,
 
-  // Chip brightness
+  // 칩 밝기
   Brightness chipBrightness,
 
-  // Chip delete button color
+  // 칩 삭제 버튼 색상
   Color chipDeleteColor,
 
-  // Chip delete button icon
+  // 칩 삭제 버튼 아이콘
   Icon chipDeleteIcon,
 
-  // Chip spacing
+  // 칩 간격
   double chipSpacing,
 
-  // Chip run spacing
+  // 칩 실행 간격
   double chipRunSpacing,
 
-  // Chip shape border
+  // 칩 모양 테두리
   ShapeBorder chipShape,
 
-  // The [Widget] displayed when the [values] is null
+  // [값]이 null일 때 표시되는 [위젯]
   Widget placeholder,
 
-  // Whether the chip list is scrollable or not
+  // 칩 목록의 스크롤 가능 여부
   bool scrollable,
 
-  // Chip list padding
+  // 칩 목록 패딩
   EdgeInsetsGeometry padding,
 
 })
 ```
 
 ```dart
-/// usage example
+/// 사용 예
 SmartSelect<String>.multiple(
   ...,
   ...,
@@ -908,26 +908,24 @@ SmartSelect<String>.multiple(
 );
 ```
 
-```dart
+```plaintext
 Copyright (c) 2021 Akbar Pulatov
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+이에 따라 본 소프트웨어의 사본을 취득하는 모든 사람에게 본 소프트웨어의 사본을
+이 소프트웨어 및 관련 문서 파일 ("소프트웨어")의 사본을 얻는 사람에게 무료로 부여됩니다.
+제한 없이 소프트웨어를 사용할 수 있는 권한을 포함하되 이에 국한되지 않습니다.
+사용, 복사, 수정, 병합, 게시, 배포, 재라이선스 및/또는 판매할 수 있는 권리
+소프트웨어의 사본 및 소프트웨어가 제공된 사람에게 허용하는 것
+다음 조건에 따라 그렇게 할 수 있도록 허용합니다:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+위의 저작권 고지 및 본 허가 고지는 모든 사본 또는 상당 부분에 포함되어야 합니다.
+소프트웨어의 사본 또는 상당 부분.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+소프트웨어는 명시적이든 묵시적이든 어떠한 종류의 보증도 없이 "있는 그대로" 제공됩니다.
+상품성에 대한 보증을 포함하되 이에 국한되지 않는 묵시적 보증,
+특정 목적에의 적합성 및 비침해.
+어떠한 경우에도 저자 또는 저작권 소유자는 어떠한 청구, 손해 또는 기타에 대해서도 책임을 지지 않습니다.
+계약, 불법 행위 또는 기타 소송에서 발생하는 책임, 소프트웨어 또는 소프트웨어의 사용 또는 기타 거래로 인해 또는 이와 관련하여 발생하는 청구, 손해, 기타 책임은 전적으로 사용자에게 있습니다.
 ```
 
 [awesome_select | Flutter Package](https://pub.dev/packages/awesome_select)

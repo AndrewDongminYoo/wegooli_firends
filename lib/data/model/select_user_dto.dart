@@ -100,26 +100,27 @@ class SelectUserDto extends Equatable {
 
   @override
   bool get stringify => true;
+
   @override
   List<Object?> get props => [
-        'id',
-        'memberSeq',
-        'name',
-        'add1',
-        'add2',
-        'zipCode',
-        'phoneNumber',
-        'email',
-        'birthday',
-        'sex',
-        'delimit',
-        'nickName',
-        'profilePicture',
-        'color',
-        'deleteAt',
-        'delYn_member',
-        'delYn_account',
-        'createdAt_member',
-        'createdAt_account'
+        id,
+        memberSeq,
+        name,
+        add1,
+        add2,
+        zipCode,
+        phoneNumber,
+        email,
+        birthday,
+        sex,
+        delimit,
+        nickname,
+        profilePicture,
+        color,
+        deleteAt,
+        delYnMember,
+        delYnAccount,
+        createdAtMember,
+        createdAtAccount,
       ];
 }

@@ -52,14 +52,15 @@ class TerminalRequest extends Equatable {
 
   @override
   bool get stringify => true;
+
   @override
   List<Object?> get props => [
-        'seq',
-        'delYn',
-        'createdAt',
-        'updatedAt',
-        'carNum',
-        'phoneNumber',
-        'status'
+        seq,
+        delYn,
+        createdAt,
+        updatedAt,
+        carNum,
+        phoneNumber,
+        status,
       ];
 }

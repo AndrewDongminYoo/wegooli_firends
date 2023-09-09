@@ -71,19 +71,20 @@ class Member extends Equatable {
 
   @override
   bool get stringify => true;
+
   @override
   List<Object?> get props => [
-        'seq',
-        'name',
-        'add1',
-        'add2',
-        'zipCode',
-        'phoneNumber',
-        'email',
-        'birthDay',
-        'sex',
-        'delYn',
-        'createdAt',
-        'updatedAt'
+        seq,
+        name,
+        add1,
+        add2,
+        zipCode,
+        phoneNumber,
+        email,
+        birthDay,
+        sex,
+        delYn,
+        createdAt,
+        updatedAt,
       ];
 }

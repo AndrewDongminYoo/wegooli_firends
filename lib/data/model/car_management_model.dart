@@ -56,14 +56,14 @@ class CarManagementModel extends Equatable {
 
   @override
   List<Object?> get props => [
-        'seq',
-        'carNum',
-        'oilCheckDate',
-        'tireCheckDate',
-        'batteryStatus',
-        'createdBy',
-        'createdAt',
-        'updatedAt'
+        seq,
+        carNum,
+        oilCheckDate,
+        tireCheckDate,
+        batteryStatus,
+        createdBy,
+        createdAt,
+        updatedAt,
       ];
 
   @override

@@ -72,18 +72,19 @@ class ServiceDetail extends Equatable {
 
   @override
   bool get stringify => true;
+
   @override
   List<Object?> get props => [
-        'shareServiceSeq',
-        'carName',
-        'carMadeCom',
-        'type',
-        'fulName',
-        'gearType',
-        'maxRide',
-        'distanceDriven',
-        'carOpt',
-        'carOptList',
-        'userSubInfoList'
+        shareServiceSeq,
+        carName,
+        carMadeCom,
+        type,
+        fulName,
+        gearType,
+        maxRide,
+        distanceDriven,
+        carOpt,
+        carOptList,
+        userSubInfoList,
       ];
 }

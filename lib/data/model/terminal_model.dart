@@ -82,8 +82,8 @@ class TerminalModel extends Equatable {
   @JsonKey(name: r'carImage', required: false, includeIfNull: false)
   final String? carImage;
 
-  @JsonKey(name: r'carNickName', required: false, includeIfNull: false)
-  final String? carNickName;
+  @JsonKey(name: r'carNickname', required: false, includeIfNull: false)
+  final String? carNickname;
 
   factory TerminalModel.fromJson(Map<String, dynamic> json) =>
       _$TerminalModelFromJson(json);
@@ -92,6 +92,7 @@ class TerminalModel extends Equatable {
 
   @override
   bool get stringify => true;
+
   @override
   List<Object?> get props => [
         seq,

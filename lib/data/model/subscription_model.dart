@@ -64,17 +64,18 @@ class SubscriptionModel extends Equatable {
 
   @override
   bool get stringify => true;
+
   @override
   List<Object?> get props => [
-        'accountId',
-        'teamSeq',
-        'teamName',
-        'carNumber',
-        'carModel',
-        'carNickname',
-        'fee',
-        'createdAt',
-        'endAt',
-        'withdrawalAt',
+        accountId,
+        teamSeq,
+        teamName,
+        carNumber,
+        carModel,
+        carNickname,
+        fee,
+        createdAt,
+        endAt,
+        withdrawalAt,
       ];
 }

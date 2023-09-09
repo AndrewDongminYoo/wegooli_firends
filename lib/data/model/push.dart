@@ -59,16 +59,17 @@ class Push extends Equatable {
 
   @override
   bool get stringify => true;
+
   @override
   List<Object?> get props => [
-        'seq',
-        'delYn',
-        'createdAt',
-        'updatedAt',
-        'title',
-        'content',
-        'link',
-        'bm',
-        'createdBy'
+        seq,
+        delYn,
+        createdAt,
+        updatedAt,
+        title,
+        content,
+        link,
+        bm,
+        createdBy,
       ];
 }

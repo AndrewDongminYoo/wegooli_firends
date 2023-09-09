@@ -15,18 +15,13 @@ class BearerAuthInterceptor extends AuthInterceptor {
   ) {
     final authInfo = getAuthInfo(options,
         (secure) => secure['type'] == 'http' && secure['scheme'] == 'bearer');
-    String? token;
     for (final info in authInfo) {
-      token = tokens[info['name']];
+      final String? token = tokens[info['name']];
       if (token != null) {
         PrefUtils.storage.setToken(token!);
         options.headers['Authorization'] = 'Bearer ${token}';
         break;
       }
-    }
-    if (token == null) {
-      token = PrefUtils.storage.getToken();
-      options.headers['Authorization'] = 'Bearer ${token}';
     }
     super.onRequest(options, handler);
   }

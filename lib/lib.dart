@@ -99,6 +99,7 @@ export 'data/model/payment_card_request.dart';
 export 'data/model/payment_model.dart';
 export 'data/model/push.dart';
 export 'data/model/qn_a.dart';
+export 'data/model/result.dart';
 export 'data/model/schedule_model.dart';
 export 'data/model/schedule_request.dart';
 export 'data/model/select_car_management_request.dart';

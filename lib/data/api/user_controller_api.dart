@@ -535,7 +535,8 @@ class UserControllerApi {
       final rawResponse = _response.data;
       _responseData = rawResponse == null
           ? null
-          : deserialize<UserDto, UserDto>(rawResponse, 'UserDto', growable: true);
+          : deserialize<UserDto, UserDto>(rawResponse, 'UserDto',
+              growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

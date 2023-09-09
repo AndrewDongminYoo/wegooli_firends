@@ -47,12 +47,12 @@ class CalendarBody extends GetView<ScheduleController> {
 
   void _onDaySelected(DateTime selectedDay, DateTime focusedDay) {
     if (!isSameDay(controller.selectedDay, selectedDay)) {
-      controller.selectedDay = selectedDay;
+      // controller.selectedDay = selectedDay;
       controller.focusedDay = focusedDay;
       controller.rangeStart = null; // Important to clean those
       controller.rangeEnd = null;
       controller.rangeSelectionMode = RangeSelectionMode.toggledOff;
-      goReservationsCheck();
+      goReservationsCheck(selectedDay);
     }
   }
 

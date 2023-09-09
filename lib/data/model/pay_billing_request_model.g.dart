@@ -17,6 +17,7 @@ PayBillingRequestModel _$PayBillingRequestModelFromJson(
           customerKey: $checkedConvert('customerKey', (v) => v as String?),
           orderId: $checkedConvert('orderId', (v) => v as String?),
           orderName: $checkedConvert('orderName', (v) => v as String?),
+          accountId: $checkedConvert('accountId', (v) => v as String?),
         );
         return val;
       },
@@ -36,5 +37,6 @@ Map<String, dynamic> _$PayBillingRequestModelToJson(
   writeNotNull('customerKey', instance.customerKey);
   writeNotNull('orderId', instance.orderId);
   writeNotNull('orderName', instance.orderName);
+  writeNotNull('accountId', instance.accountId);
   return val;
 }

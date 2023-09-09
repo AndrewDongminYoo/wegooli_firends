@@ -18,6 +18,7 @@ TeamAccountConnectionModel _$TeamAccountConnectionModelFromJson(
           accountId: $checkedConvert('accountId', (v) => v as String?),
           joinedAt: $checkedConvert('joinedAt', (v) => v as String?),
           leavedAt: $checkedConvert('leavedAt', (v) => v as String?),
+          activeYn: $checkedConvert('activeYn', (v) => v as String?),
         );
         return val;
       },
@@ -38,5 +39,6 @@ Map<String, dynamic> _$TeamAccountConnectionModelToJson(
   writeNotNull('accountId', instance.accountId);
   writeNotNull('joinedAt', instance.joinedAt);
   writeNotNull('leavedAt', instance.leavedAt);
+  writeNotNull('activeYn', instance.activeYn);
   return val;
 }

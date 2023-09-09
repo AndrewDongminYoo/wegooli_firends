@@ -31,7 +31,7 @@ class TerminalModel extends Equatable {
     this.accountId,
     this.teamSeq,
     this.carImage,
-    this.carNickName,
+    this.carNickname,
   });
 
   @JsonKey(name: r'seq', required: false, includeIfNull: false)
@@ -94,22 +94,22 @@ class TerminalModel extends Equatable {
   bool get stringify => true;
   @override
   List<Object?> get props => [
-        'seq',
-        'delYn',
-        'createdAt',
-        'updatedAt',
-        'carNum',
-        'phoneNumber',
-        'status',
-        'seats',
-        'model',
-        'volt',
-        'fuelType',
-        'fuel',
-        'segment',
-        'accountId',
-        'teamSeq',
-        'carImage',
-        'carNickName'
+        seq,
+        delYn,
+        createdAt,
+        updatedAt,
+        carNum,
+        phoneNumber,
+        status,
+        seats,
+        model,
+        volt,
+        fuelType,
+        fuel,
+        segment,
+        accountId,
+        teamSeq,
+        carImage,
+        carNickname
       ];
 }

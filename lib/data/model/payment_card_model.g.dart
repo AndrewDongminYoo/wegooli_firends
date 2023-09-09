@@ -29,6 +29,7 @@ PaymentCardModel _$PaymentCardModelFromJson(Map<String, dynamic> json) =>
           expirationYear:
               $checkedConvert('expirationYear', (v) => v as String?),
           billingKey: $checkedConvert('billingKey', (v) => v as String?),
+          customerKey: $checkedConvert('customerKey', (v) => v as String?),
         );
         return val;
       },
@@ -56,5 +57,6 @@ Map<String, dynamic> _$PaymentCardModelToJson(PaymentCardModel instance) {
   writeNotNull('expirationMonth', instance.expirationMonth);
   writeNotNull('expirationYear', instance.expirationYear);
   writeNotNull('billingKey', instance.billingKey);
+  writeNotNull('customerKey', instance.customerKey);
   return val;
 }

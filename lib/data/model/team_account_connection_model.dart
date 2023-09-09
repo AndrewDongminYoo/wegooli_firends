@@ -20,6 +20,7 @@ class TeamAccountConnectionModel extends Equatable {
     this.accountId,
     this.joinedAt,
     this.leavedAt,
+    this.activeYn,
   });
 
   @JsonKey(name: r'seq', required: false, includeIfNull: false)
@@ -37,6 +38,9 @@ class TeamAccountConnectionModel extends Equatable {
   @JsonKey(name: r'leavedAt', required: false, includeIfNull: false)
   final String? leavedAt;
 
+  @JsonKey(name: r'activeYn', required: false, includeIfNull: false)
+  final String? accountId;
+
   factory TeamAccountConnectionModel.fromJson(Map<String, dynamic> json) =>
       _$TeamAccountConnectionModelFromJson(json);
 
@@ -45,5 +49,6 @@ class TeamAccountConnectionModel extends Equatable {
   @override
   bool get stringify => true;
   @override
-  List<Object?> get props => [seq, teamSeq, accountId, joinedAt, leavedAt];
+  List<Object?> get props =>
+      [seq, teamSeq, accountId, joinedAt, leavedAt, activeYn];
 }

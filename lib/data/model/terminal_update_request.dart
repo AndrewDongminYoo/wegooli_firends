@@ -22,7 +22,7 @@ class TerminalUpdateRequest extends Equatable {
     this.carNum,
     this.phoneNumber,
     this.status,
-    this.carNickName,
+    this.carNickname,
   });
 
   @JsonKey(name: r'seq', required: false, includeIfNull: false)
@@ -46,8 +46,8 @@ class TerminalUpdateRequest extends Equatable {
   @JsonKey(name: r'status', required: false, includeIfNull: false)
   final String? status;
 
-  @JsonKey(name: r'carNickName', required: false, includeIfNull: false)
-  final String? carNickName;
+  @JsonKey(name: r'carNickname', required: false, includeIfNull: false)
+  final String? carNickname;
 
   factory TerminalUpdateRequest.fromJson(Map<String, dynamic> json) =>
       _$TerminalUpdateRequestFromJson(json);
@@ -58,13 +58,13 @@ class TerminalUpdateRequest extends Equatable {
   bool get stringify => true;
   @override
   List<Object?> get props => [
-        'seq',
-        'delYn',
-        'createdAt',
-        'updatedAt',
-        'carNum',
-        'phoneNumber',
-        'status',
-        'carNickName'
+        seq,
+        delYn,
+        createdAt,
+        updatedAt,
+        carNum,
+        phoneNumber,
+        status,
+        carNickname,
       ];
 }

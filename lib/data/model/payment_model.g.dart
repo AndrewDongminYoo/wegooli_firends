@@ -33,6 +33,7 @@ PaymentModel _$PaymentModelFromJson(Map<String, dynamic> json) =>
           taxExemptionAmount:
               $checkedConvert('taxExemptionAmount', (v) => v as int?),
           method: $checkedConvert('method', (v) => v as String?),
+          accountId: $checkedConvert('accountId', (v) => v as String?),
         );
         return val;
       },
@@ -66,5 +67,6 @@ Map<String, dynamic> _$PaymentModelToJson(PaymentModel instance) {
   writeNotNull('taxFreeAmount', instance.taxFreeAmount);
   writeNotNull('taxExemptionAmount', instance.taxExemptionAmount);
   writeNotNull('method', instance.method);
+  writeNotNull('accountId', instance.accountId);
   return val;
 }

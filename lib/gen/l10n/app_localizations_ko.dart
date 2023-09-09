@@ -1,3 +1,4 @@
+// 🌎 Project imports:
 import 'app_localizations.dart';
 
 /// The translations for Korean (`ko`).

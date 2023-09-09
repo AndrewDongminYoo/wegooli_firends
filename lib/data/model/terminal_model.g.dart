@@ -30,7 +30,7 @@ TerminalModel _$TerminalModelFromJson(Map<String, dynamic> json) =>
           accountId: $checkedConvert('accountId', (v) => v as String?),
           teamSeq: $checkedConvert('teamSeq', (v) => v as int?),
           carImage: $checkedConvert('carImage', (v) => v as String?),
-          carNickName: $checkedConvert('carNickName', (v) => v as String?),
+          carNickname: $checkedConvert('carNickname', (v) => v as String?),
         );
         return val;
       },
@@ -61,6 +61,6 @@ Map<String, dynamic> _$TerminalModelToJson(TerminalModel instance) {
   writeNotNull('accountId', instance.accountId);
   writeNotNull('teamSeq', instance.teamSeq);
   writeNotNull('carImage', instance.carImage);
-  writeNotNull('carNickName', instance.carNickName);
+  writeNotNull('carNickname', instance.carNickname);
   return val;
 }

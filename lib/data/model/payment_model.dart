@@ -34,6 +34,7 @@ class PaymentModel extends Equatable {
     this.taxFreeAmount,
     this.taxExemptionAmount,
     this.method,
+    this.accountId,
   });
 
   @JsonKey(name: r'paymentKey', required: false, includeIfNull: false)
@@ -93,6 +94,9 @@ class PaymentModel extends Equatable {
   @JsonKey(name: r'method', required: false, includeIfNull: false)
   final String? method;
 
+  @JsonKey(name: r'accountId', required: false, includeIfNull: false)
+  final String? accountId;
+
   factory PaymentModel.fromJson(Map<String, dynamic> json) =>
       _$PaymentModelFromJson(json);
 
@@ -102,24 +106,25 @@ class PaymentModel extends Equatable {
   bool get stringify => true;
   @override
   List<Object?> get props => [
-        'paymentKey',
-        'status',
-        'lastTransactionKey',
-        'orderId',
-        'orderName',
-        'requestedAt',
-        'approvedAt',
-        'cancelReason',
-        'canceledAt',
-        'cancelAmount',
-        'type',
-        'currency',
-        'totalAmount',
-        'balanceAmount',
-        'suppliedAmount',
-        'vat',
-        'taxFreeAmount',
-        'taxExemptionAmount',
-        'method'
+        paymentKey,
+        status,
+        lastTransactionKey,
+        orderId,
+        orderName,
+        requestedAt,
+        approvedAt,
+        cancelReason,
+        canceledAt,
+        cancelAmount,
+        type,
+        currency,
+        totalAmount,
+        balanceAmount,
+        suppliedAmount,
+        vat,
+        taxFreeAmount,
+        taxExemptionAmount,
+        method,
+        accountId,
       ];
 }

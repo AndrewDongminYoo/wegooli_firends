@@ -216,7 +216,7 @@ Future<void> main() async {
 - [TerminalModel](doc/TerminalModel.md)
 - [TerminalRequest](doc/TerminalRequest.md)
 - [TestModel](doc/TestModel.md)
-- [UserDTO](doc/UserDTO.md)
+- [UserDto](doc/UserDto.md)
 - [UserDetailsDTO](doc/UserDetailsDTO.md)
 - [UserSubInfo](doc/UserSubInfo.md)
 

@@ -67,7 +67,9 @@ Future<dynamic>? goBookDatetimePicker() =>
 
 // [PopupDialog] 예약 확인 페이지
 Future<dynamic>? goReservationsCheck(DateTime selectedDay) =>
-    Get.dialog(ReservationsCheckingPageDialog(selectedDay: selectedDay,));
+    Get.dialog(ReservationsCheckingPageDialog(
+      selectedDay: selectedDay,
+    ));
 // [PopupDialog] 팀 초대하기
 Future<dynamic>? goSendingInvitation() =>
     Get.dialog(const SendingInvitationDialog());

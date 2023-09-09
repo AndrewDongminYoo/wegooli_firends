@@ -19,6 +19,7 @@ class PayBillingRequestModel extends Equatable {
     this.customerKey,
     this.orderId,
     this.orderName,
+    this.accountId,
   });
 
   @JsonKey(name: r'amount', required: false, includeIfNull: false)
@@ -33,6 +34,9 @@ class PayBillingRequestModel extends Equatable {
   @JsonKey(name: r'orderName', required: false, includeIfNull: false)
   final String? orderName;
 
+  @JsonKey(name: r'accountId', required: false, includeIfNull: false)
+  final String? accountId;
+
   factory PayBillingRequestModel.fromJson(Map<String, dynamic> json) =>
       _$PayBillingRequestModelFromJson(json);
 
@@ -41,5 +45,6 @@ class PayBillingRequestModel extends Equatable {
   @override
   bool get stringify => true;
   @override
-  List<Object?> get props => [amount, customerKey, orderId, orderName];
+  List<Object?> get props =>
+      [amount, customerKey, orderId, orderName, accountId];
 }

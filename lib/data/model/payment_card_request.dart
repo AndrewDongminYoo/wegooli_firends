@@ -24,6 +24,7 @@ class PaymentCardRequest extends Equatable {
     this.expirationMonth,
     this.expirationYear,
     this.billingKey,
+    this.accountId,
   });
 
   @JsonKey(name: r'memberSeq', required: false, includeIfNull: false)
@@ -53,6 +54,9 @@ class PaymentCardRequest extends Equatable {
   @JsonKey(name: r'billingKey', required: false, includeIfNull: false)
   final String? billingKey;
 
+  @JsonKey(name: r'accountId', required: false, includeIfNull: false)
+  final String? accountId;
+
   factory PaymentCardRequest.fromJson(Map<String, dynamic> json) =>
       _$PaymentCardRequestFromJson(json);
 
@@ -62,14 +66,15 @@ class PaymentCardRequest extends Equatable {
   bool get stringify => true;
   @override
   List<Object?> get props => [
-        'memberSeq',
-        'cardNumber',
-        'defaultYn',
-        'password',
-        'rrn',
-        'crn',
-        'expirationMonth',
-        'expirationYear',
-        'billingKey'
+        memberSeq,
+        cardNumber,
+        defaultYn,
+        password,
+        rrn,
+        crn,
+        expirationMonth,
+        expirationYear,
+        billingKey,
+        accountId,
       ];
 }

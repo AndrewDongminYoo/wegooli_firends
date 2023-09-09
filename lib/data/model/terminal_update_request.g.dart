@@ -22,7 +22,7 @@ TerminalUpdateRequest _$TerminalUpdateRequestFromJson(
           carNum: $checkedConvert('carNum', (v) => v as String?),
           phoneNumber: $checkedConvert('phoneNumber', (v) => v as String?),
           status: $checkedConvert('status', (v) => v as String?),
-          carNickName: $checkedConvert('carNickName', (v) => v as String?),
+          carNickname: $checkedConvert('carNickname', (v) => v as String?),
         );
         return val;
       },
@@ -45,6 +45,6 @@ Map<String, dynamic> _$TerminalUpdateRequestToJson(
   writeNotNull('carNum', instance.carNum);
   writeNotNull('phoneNumber', instance.phoneNumber);
   writeNotNull('status', instance.status);
-  writeNotNull('carNickName', instance.carNickName);
+  writeNotNull('carNickname', instance.carNickname);
   return val;
 }

@@ -1,4 +1,5 @@
 // 🐦 Flutter imports:
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
@@ -10,13 +11,13 @@ class CustomElevatedButton extends BaseButton {
     this.decoration,
     this.leftIcon,
     this.rightIcon,
-    this.isLoading,
+    this.isDisabled = false,
+    this.isLoading = false,
     EdgeInsets? margin,
     VoidCallback? onTap,
     ButtonStyle? buttonStyle,
     Alignment? alignment,
     TextStyle? buttonTextStyle,
-    bool? isDisabled,
     double? height,
     double? width,
     required String text,
@@ -34,7 +35,8 @@ class CustomElevatedButton extends BaseButton {
   final BoxDecoration? decoration;
   final Widget? leftIcon;
   final Widget? rightIcon;
-  final bool? isLoading;
+  final bool isLoading;
+  final bool isDisabled;
 
   @override
   Widget build(BuildContext context) {
@@ -46,28 +48,37 @@ class CustomElevatedButton extends BaseButton {
   }
 
   Widget get buildElevatedButtonWidget => Container(
-      height: height ?? getVerticalSize(52),
-      width: width ?? double.maxFinite,
-      margin: margin,
-      decoration: decoration,
-      child: ElevatedButton(
-          style: buttonStyle,
-          onPressed: () {
-            if (isDisabled ?? false) {
-              return;
-            } else if (isLoading ?? false) {
-              return;
-            } else {
-              onTap!();
-            }
-          },
-          child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                leftIcon ?? const SizedBox.shrink(),
-                Text(text,
-                    style: buttonTextStyle ?? CustomTextStyles.titleMedium18),
-                rightIcon ?? const SizedBox.shrink(),
-              ])));
+        height: height ?? getVerticalSize(52),
+        width: width ?? double.maxFinite,
+        margin: margin,
+        decoration: decoration,
+        child: ElevatedButton(
+            style: buttonStyle ??
+                CustomButtonStyles.fillPrimaryC26.copyWith(
+                    fixedSize: MaterialStateProperty.all<Size>(
+                  Size(
+                    double.maxFinite,
+                    getVerticalSize(52),
+                  ),
+                )),
+            onPressed: () {
+              if (isDisabled || isLoading) {
+                return;
+              } else {
+                onTap!();
+              }
+            },
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  leftIcon ?? const SizedBox.shrink(),
+                  (isLoading)
+                      ? CupertinoActivityIndicator(
+                          color: appTheme.gray700, radius: 14)
+                      : Text(text,
+                          style: buttonTextStyle ??
+                              CustomTextStyles.titleMedium18),
+                  rightIcon ?? const SizedBox.shrink(),
+                ])));
 }

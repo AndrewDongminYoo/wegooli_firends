@@ -90,6 +90,9 @@ class GatewayScreen extends StatelessWidget {
                         RouteItem(
                             routeDestination: AppRoutes.carSmartKey,
                             routeName: l10ns.smartKeyAvailable),
+                        RouteItem(
+                            routeDestination: AppRoutes.myProfile,
+                            routeName: l10ns.myProfileScreen),
                         RouteModal(
                             dialog: openInvitationModal,
                             dialogTitle: l10ns.sendingCrewInvitation),
@@ -99,9 +102,6 @@ class GatewayScreen extends StatelessWidget {
                         RouteModal(
                             bottomSheet: openDateTimePicker,
                             dialogTitle: l10ns.reservationDatetimePicker),
-                        RouteItem(
-                            routeDestination: AppRoutes.myProfile,
-                            routeName: l10ns.myProfileScreen),
                       ],
                     )),
               ))

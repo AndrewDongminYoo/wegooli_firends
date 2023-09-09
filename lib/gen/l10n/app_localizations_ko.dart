@@ -324,6 +324,11 @@ class LocalizedKo extends Localized {
   String get reportAnIncident => '사고 접수';
 
   @override
+  String reservationTotalPeriod(int totalReservationTime, String reservationStartTime, String reservationEndTime) {
+    return '총 $totalReservationTime시간 이용\n$reservationStartTime ~ $reservationEndTime';
+  }
+
+  @override
   String get reservationDatetimePicker => '[BottomSheet] 예약 날짜 선택기';
 
   @override

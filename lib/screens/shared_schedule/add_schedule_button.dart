@@ -12,13 +12,7 @@ class AddScheduleButton extends StatelessWidget {
     return CustomElevatedButton(
         text: l10ns.addAnSchedule,
         margin: getMargin(left: 16, top: 30, right: 16),
-        buttonStyle: CustomButtonStyles.fillPrimaryC5.copyWith(
-            fixedSize: MaterialStateProperty.all<Size>(
-          Size(
-            double.maxFinite,
-            getVerticalSize(52),
-          ),
-        )),
+        buttonStyle: CustomButtonStyles.fillPrimaryC5,
         buttonTextStyle: CustomTextStyles.titleMedium18,
         alignment: Alignment.center,
         onTap: () => goBookDatetimePicker());

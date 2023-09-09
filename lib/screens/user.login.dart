@@ -52,6 +52,14 @@ class _LoginWithIdAndPasswordState extends State<LoginWithIdAndPassword> {
   }
 
   @override
+  void dispose() {
+    /// 아이디와 비밀번호는 로그인 페이지에서 벗어나면 초기화되어야 함.
+    controller.username.dispose();
+    controller.password.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: FocusScope.of(context).unfocus,
@@ -77,13 +85,7 @@ class _LoginWithIdAndPasswordState extends State<LoginWithIdAndPassword> {
                   CustomElevatedButton(
                       text: l10ns.signIn,
                       margin: getMargin(top: 30),
-                      buttonStyle: CustomButtonStyles.fillPrimaryC26.copyWith(
-                          fixedSize: MaterialStateProperty.all<Size>(
-                        Size(
-                          double.maxFinite,
-                          getVerticalSize(52),
-                        ),
-                      )),
+                      buttonStyle: CustomButtonStyles.fillPrimaryC26,
                       buttonTextStyle: CustomTextStyles.titleMedium18,
                       onTap: onSubmit),
                   Padding(
@@ -100,13 +102,7 @@ class _LoginWithIdAndPasswordState extends State<LoginWithIdAndPassword> {
                     text: l10ns.signUp,
                     width: double.infinity,
                     margin: getMargin(top: 11, bottom: 5),
-                    buttonStyle: CustomButtonStyles.fillPrimaryC26.copyWith(
-                        fixedSize: MaterialStateProperty.all<Size>(
-                      Size(
-                        double.maxFinite,
-                        getVerticalSize(52),
-                      ),
-                    )),
+                    buttonStyle: CustomButtonStyles.fillPrimaryC26,
                     buttonTextStyle: CustomTextStyles.titleMedium18,
                     onTap: () {
                       // 해당 탭은 dialog로 변경 예정

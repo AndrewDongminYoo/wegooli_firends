@@ -111,13 +111,7 @@ class RegisterZipCode extends GetWidget<UserController> {
             text: l10ns.filledIn,
             // TODO disabled일 때 스타일 정의하기
             // isDisabled: !controller.isValid,
-            buttonStyle: CustomButtonStyles.fillPrimaryC26.copyWith(
-                fixedSize: MaterialStateProperty.all<Size>(
-              Size(
-                double.maxFinite,
-                getVerticalSize(52),
-              ),
-            )),
+            buttonStyle: CustomButtonStyles.fillPrimaryC26,
             buttonTextStyle: CustomTextStyles.titleMedium18,
             onTap: () {
               if (controller.isValid) {

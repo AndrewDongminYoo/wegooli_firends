@@ -90,13 +90,7 @@ class ProfileInfoPage extends GetWidget<UserController> {
                           text: l10ns.signOut,
                           margin: getMargin(top: 30, bottom: 20),
                           buttonStyle:
-                              CustomButtonStyles.fillPrimaryC26.copyWith(
-                                  fixedSize: MaterialStateProperty.all<Size>(
-                            Size(
-                              double.maxFinite,
-                              getVerticalSize(52),
-                            ),
-                          )),
+                              CustomButtonStyles.fillPrimaryC26,
                           buttonTextStyle: CustomTextStyles.titleMedium18,
                           onTap: () async {
                             if (await controller.logOut()) {

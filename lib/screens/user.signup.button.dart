@@ -19,13 +19,7 @@ class _AcceptTermsNextButtonState extends State<AcceptTermsNextButton> {
         child: CustomElevatedButton(
             isDisabled: !widget.enabled,
             text: l10ns.acceptanceComplete,
-            buttonStyle: CustomButtonStyles.fillPrimaryC26.copyWith(
-                fixedSize: MaterialStateProperty.all<Size>(
-              Size(
-                double.maxFinite,
-                getVerticalSize(52),
-              ),
-            )),
+            buttonStyle: CustomButtonStyles.fillPrimaryC26,
             buttonTextStyle: CustomTextStyles.titleMedium18,
             onTap: widget.enabled ? () => goPhoneAuth() : null));
   }

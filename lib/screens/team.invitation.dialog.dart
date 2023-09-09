@@ -70,13 +70,7 @@ class _SendingInvitationDialogState extends State<SendingInvitationDialog> {
                       },
                       text: l10ns.confirm,
                       margin: getMargin(top: 25),
-                      buttonStyle: CustomButtonStyles.fillPrimaryB10.copyWith(
-                          fixedSize: MaterialStateProperty.all<Size>(
-                        Size(
-                          double.maxFinite,
-                          getVerticalSize(52),
-                        ),
-                      )),
+                      buttonStyle: CustomButtonStyles.fillPrimaryB10,
                       buttonTextStyle: theme.textTheme.titleMedium!)
                 ]),
           ),

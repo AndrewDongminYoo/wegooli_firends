@@ -44,7 +44,11 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                       width: mediaQueryData.size.width,
                       padding: getPadding(left: 16, top: 16),
                       child: Text(
-                        '총 ${controller.returnTime.difference(controller.reservationTime).inHours}시간 이용\n${formatting(controller.reservationTime)} ~ ${formatting(controller.returnTime)}',
+                        l10ns.reservationTotalPeriod(
+                          controller.returnTime.difference(controller.reservationTime).inHours,
+                          formatting(controller.reservationTime),
+                          formatting(controller.returnTime),
+                        ),
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.left,

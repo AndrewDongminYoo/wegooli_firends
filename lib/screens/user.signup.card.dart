@@ -82,13 +82,7 @@ class _RegisterCreditCardState extends State<RegisterCreditCard> {
         child: CustomElevatedButton(
             // TODO disabled 일때 스타일 정의하기
             text: l10ns.register,
-            buttonStyle: CustomButtonStyles.fillPrimaryC26.copyWith(
-                fixedSize: MaterialStateProperty.all<Size>(
-              Size(
-                double.maxFinite,
-                getVerticalSize(52),
-              ),
-            )),
+            buttonStyle: CustomButtonStyles.fillPrimaryC26,
             buttonTextStyle: CustomTextStyles.titleMedium18,
             onTap: () async {
               // TODO 카드 검증 필요함.

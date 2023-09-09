@@ -440,6 +440,26 @@
   "@reportAnIncident": {
     "description": "사고 발생 후 운영센터 또는 고객센터와 연결하는 등의 기능이 있는 텍스트 버튼 텍스트"
   },
+  "reservationTotalPeriod": "총 {totalReservationTime}시간 이용\n{reservationStartTime} ~ {reservationEndTime}",
+  "@reservationTotalPeriod": {
+    "description": "총 이용 예약 시간",
+    "placeholders": {
+      "totalReservationTime": {
+        "example": "2",
+        "type": "int"
+      },
+      "reservationStartTime": {
+        "description": "M/d (E) HH:mm",
+        "example": "8.1 화 16:00",
+        "type": "String"
+      },
+      "reservationEndTime": {
+        "description": "M/d (E) HH:mm",
+        "example": "8.1 화 20:00",
+        "type": "String"
+      }
+    }
+  },
   "reservationDatetimePicker": "[BottomSheet] 예약 날짜 선택기",
   "@reservationDatetimePicker": {
     "description": "[BottomSheet]는 원활한 개발을 위한 게이트웨이 바텀시트 띄우기 버튼에 사용됨."

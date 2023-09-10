@@ -6,7 +6,7 @@ import 'package:wegooli_friends/lib.dart';
 
 /// tests for TestControllerApi
 void main() {
-  final instance = WegooliFriends().getTestControllerApi();
+  final api = WegooliFriends().getTestControllerApi();
 
   group(TestControllerApi, () {
     //Future<JsonObject> callTest(TestModel model) async

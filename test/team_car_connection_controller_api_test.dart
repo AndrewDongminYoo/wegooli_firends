@@ -6,7 +6,7 @@ import 'package:wegooli_friends/lib.dart';
 
 /// tests for TeamCarConnectionControllerApi
 void main() {
-  final instance = WegooliFriends().getTeamCarConnectionControllerApi();
+  final api = WegooliFriends().getTeamCarConnectionControllerApi();
 
   group(TeamCarConnectionControllerApi, () {
     //Future<String> teamCarConnection(TeamCarConnection teamCarConnection) async

@@ -6,7 +6,7 @@ import 'package:wegooli_friends/lib.dart';
 
 /// tests for MetisControllerApi
 void main() {
-  final instance = WegooliFriends().getMetisControllerApi();
+  final api = WegooliFriends().getMetisControllerApi();
 
   group(MetisControllerApi, () {
     //Future<CarHistoryDTO> carLogTop(String carNum) async

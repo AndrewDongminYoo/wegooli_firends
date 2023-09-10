@@ -2,11 +2,11 @@
 import 'package:test/test.dart';
 
 // 🌎 Project imports:
-import 'package:wegooli_friends/wegooli_friends.dart';
+import 'package:wegooli_friends/lib.dart';
 
 /// tests for SubscriptionControllerApi
 void main() {
-  final instance = WegooliFriends().getSubscriptionControllerApi();
+  final api = WegooliFriends().getSubscriptionControllerApi();
 
   group(SubscriptionControllerApi, () {
     //Future<List<SubscriptionModel>> selectSubscriptionInfo(String accountId, int teamSeq) async

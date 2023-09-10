@@ -7,13 +7,14 @@
 
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 // 📦 Package imports:
 import 'package:flutter_test/flutter_test.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import 'package:wegooli_friends/core/app_export.dart';
+import 'package:wegooli_friends/lib.dart';
 import 'package:wegooli_friends/main.dart';
 
 void main() {
@@ -22,7 +23,7 @@ void main() {
     main();
 
     // Assert
-    expect(Get.isPrepared<EnvConfig>(), true);
+    expect(Get.isPrepared<PrefUtils>(), true);
   });
 
   test('configures orientations', () async {
@@ -30,11 +31,14 @@ void main() {
     TestWidgetsFlutterBinding.ensureInitialized();
 
     // Act
-    await main();
+    main();
 
     // Assert
-    expect(WidgetsBinding.instance.window.physicalSize.aspectRatio,
-        DeviceOrientation.portraitUp.aspectRatio);
+    expect(
+      MediaQueryData.fromView(
+        TestWidgetsFlutterBinding.instance.platformDispatcher.views.first).orientation,
+      DeviceOrientation.portraitUp,
+    );
   });
 
   test('runs app', () async {
@@ -42,7 +46,7 @@ void main() {
     TestWidgetsFlutterBinding.ensureInitialized();
 
     // Act
-    await main();
+    main();
 
     // Assert
     expect(Get.isRegistered<MyApp>(), true);

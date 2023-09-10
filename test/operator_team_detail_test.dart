@@ -2,11 +2,11 @@
 import 'package:test/test.dart';
 
 // 🌎 Project imports:
-import 'package:wegooli_friends/wegooli_friends.dart';
+import 'package:wegooli_friends/lib.dart';
 
 // tests for OperatorTeamDetail
 void main() {
-  final OperatorTeamDetail? instance = /* OperatorTeamDetail(...) */ null;
+  const OperatorTeamDetail? instance = /* OperatorTeamDetail(...) */ null;
   // TODO add properties to the entity
 
   group(OperatorTeamDetail, () {

@@ -49,7 +49,7 @@ class AppRoutes {
     GetPage(
       bindings: [UserAccountBinding(), TeamCommunityBinding()],
       name: appGateway,
-      page: () => GatewayScreen(),
+      page: GatewayScreen.new,
     ),
     GetPage(
       name: acceptTerms,
@@ -69,12 +69,12 @@ class AppRoutes {
     GetPage(
       bindings: [UserAccountBinding()],
       name: phoneAuth,
-      page: () => ValidatePhone(),
+      page: ValidatePhone.new,
     ),
     GetPage(
       bindings: [UserAccountBinding()],
       name: registerCreditCard,
-      page: () => RegisterCreditCard(),
+      page: RegisterCreditCard.new,
     ),
     GetPage(
       bindings: [UserAccountBinding()],
@@ -114,12 +114,12 @@ class AppRoutes {
     GetPage(
       bindings: [UserAccountBinding()],
       name: teamInvitation,
-      page: () => TeamInvitation(),
+      page: TeamInvitation.new,
     ),
     GetPage(
       bindings: [UserAccountBinding()],
       name: appGateway,
-      page: () => GatewayScreen(),
+      page: GatewayScreen.new,
     ),
     GetPage(
       bindings: [TeamCommunityBinding()],
@@ -144,7 +144,7 @@ class AppRoutes {
     GetPage(
       bindings: [TeamCommunityBinding()],
       name: reservationsCheck,
-      page: () => ReservationsCheckingPageDialog(),
+      page: ReservationsCheckingPageDialog.new,
     ),
     GetPage(
       bindings: [TeamCommunityBinding()],
@@ -159,7 +159,7 @@ class AppRoutes {
     GetPage(
       bindings: [TeamCommunityBinding()],
       name: unsubscribeConfirm,
-      page: () => UnsubscriptionConfirm(),
+      page: UnsubscriptionConfirm.new,
     ),
     GetPage(
       bindings: [TeamCommunityBinding()],

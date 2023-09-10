@@ -6,7 +6,7 @@ import 'package:wegooli_friends/lib.dart';
 
 /// tests for BoardControllerApi
 void main() {
-  final instance = WegooliFriends().getBoardControllerApi();
+  final api = WegooliFriends().getBoardControllerApi();
 
   group(BoardControllerApi, () {
     //Future<bool> deleteAnswer(int seq) async

@@ -2,11 +2,11 @@
 import 'package:test/test.dart';
 
 // 🌎 Project imports:
-import 'package:wegooli_friends/wegooli_friends.dart';
+import 'package:wegooli_friends/lib.dart';
 
 // tests for UpdateCarManagementRequest
 void main() {
-  final UpdateCarManagementRequest?
+  const UpdateCarManagementRequest?
       instance = /* UpdateCarManagementRequest(...) */ null;
   // TODO add properties to the entity
 

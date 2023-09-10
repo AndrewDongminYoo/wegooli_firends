@@ -4,11 +4,11 @@ import 'dart:math';
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-const double _tinySize = 5.0;
-const double _smallSize = 10.0;
-const double _mediumSize = 25.0;
-const double _largeSize = 50.0;
-const double _massiveSize = 120.0;
+const double _tinySize = 5;
+const double _smallSize = 10;
+const double _mediumSize = 25;
+const double _largeSize = 50;
+const double _massiveSize = 120;
 
 const Widget horizontalSpaceTiny = SizedBox(width: _tinySize);
 const Widget horizontalSpaceSmall = SizedBox(width: _smallSize);
@@ -24,7 +24,7 @@ const Widget verticalSpaceMassive = SizedBox(height: _massiveSize);
 Widget spacedDivider = const Column(
   children: <Widget>[
     verticalSpaceMedium,
-    Divider(color: Colors.blueGrey, height: 5.0),
+    Divider(color: Colors.blueGrey, height: 5),
     verticalSpaceMedium,
   ],
 );
@@ -72,7 +72,7 @@ double getResponsiveFontSize(BuildContext context,
     {double? fontSize, double? max}) {
   max ??= 100;
 
-  double responsiveSize = min(
+  final double responsiveSize = min(
       screenWidthFraction(context, dividedBy: 10) * ((fontSize ?? 100) / 100),
       max);
 

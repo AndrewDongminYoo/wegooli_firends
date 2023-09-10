@@ -1,4 +1,5 @@
 // 📦 Package imports:
+import 'package:dio/dio.dart';
 import 'package:test/test.dart';
 
 // 🌎 Project imports:
@@ -6,14 +7,15 @@ import 'package:wegooli_friends/lib.dart';
 
 /// tests for AccountAgreementControllerApi
 void main() {
-  final instance = WegooliFriends().getAccountAgreementControllerApi();
+  final _dio = Dio();
+  final api = WegooliFriends(dio: _dio).getAccountAgreementControllerApi();
 
   group(AccountAgreementControllerApi, () {
     //Future<String> deleteAccountAgreement(String classification, String accountId) async
     test('test deleteAccountAgreement', () async {
       // Arrange
-      final classification = 'classification';
-      final accountId = 'accountId';
+      const classification = 'classification';
+      const accountId = 'accountId';
 
       // Act
       await api.deleteAccountAgreement(
@@ -26,7 +28,8 @@ void main() {
 
     test('deleteAccountAgreement throws error', () async {
       // Arrange
-      dio.response = Response(statusCode: 500);
+      dio.response =
+          Response(statusCode: 500, requestOptions: RequestOptions());
 
       // Act & Assert
       expect(

@@ -2,11 +2,11 @@
 import 'package:test/test.dart';
 
 // 🌎 Project imports:
-import 'package:wegooli_friends/wegooli_friends.dart';
+import 'package:wegooli_friends/lib.dart';
 
 /// tests for CarManagementControllerApi
 void main() {
-  final instance = WegooliFriends().getCarManagementControllerApi();
+  final api = WegooliFriends().getCarManagementControllerApi();
 
   group(CarManagementControllerApi, () {
     //Future<bool> deleteCarManagement(int seq) async

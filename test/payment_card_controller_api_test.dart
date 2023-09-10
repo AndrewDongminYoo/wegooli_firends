@@ -6,7 +6,7 @@ import 'package:wegooli_friends/lib.dart';
 
 /// tests for PaymentCardControllerApi
 void main() {
-  final instance = WegooliFriends().getPaymentCardControllerApi();
+  final api = WegooliFriends().getPaymentCardControllerApi();
 
   group(PaymentCardControllerApi, () {
     //Future<String> deletePaymentCard(int seq) async

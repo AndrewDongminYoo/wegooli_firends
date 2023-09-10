@@ -6,7 +6,7 @@ import 'package:wegooli_friends/lib.dart';
 
 /// tests for NoticeControllerApi
 void main() {
-  final instance = WegooliFriends().getNoticeControllerApi();
+  final api = WegooliFriends().getNoticeControllerApi();
 
   group(NoticeControllerApi, () {
     //Future<int> deleteNotice(int seq) async

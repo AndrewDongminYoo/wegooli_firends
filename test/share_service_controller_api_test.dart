@@ -6,7 +6,7 @@ import 'package:wegooli_friends/lib.dart';
 
 /// tests for ShareServiceControllerApi
 void main() {
-  final instance = WegooliFriends().getShareServiceControllerApi();
+  final api = WegooliFriends().getShareServiceControllerApi();
 
   group(ShareServiceControllerApi, () {
     //Future<BuiltList<ShareServiceModel>> getShareService(ShareServiceRequest request) async

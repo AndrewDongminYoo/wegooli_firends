@@ -6,7 +6,7 @@ import 'package:wegooli_friends/lib.dart';
 
 /// tests for UserControllerApi
 void main() {
-  final instance = WegooliFriends().getUserControllerApi();
+  final api = WegooliFriends().getUserControllerApi();
 
   group(UserControllerApi, () {
     //Future<String> checkId(String id) async

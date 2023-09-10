@@ -2,11 +2,11 @@
 import 'package:test/test.dart';
 
 // 🌎 Project imports:
-import 'package:wegooli_friends/wegooli_friends.dart';
+import 'package:wegooli_friends/lib.dart';
 
 // tests for ValidLicenseRequest
 void main() {
-  final ValidLicenseRequest? instance = /* ValidLicenseRequest(...) */ null;
+  const ValidLicenseRequest? instance = /* ValidLicenseRequest(...) */ null;
   // TODO add properties to the entity
 
   group(ValidLicenseRequest, () {

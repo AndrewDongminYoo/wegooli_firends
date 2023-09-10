@@ -12,24 +12,24 @@ class CustomButtonStyles {
   static ButtonStyle get fillAmberA200C5 => ElevatedButton.styleFrom(
       backgroundColor: appTheme.amberA200.withOpacity(0.2),
       shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(getHorizontalSize(5.00))));
+          borderRadius: BorderRadius.circular(getHorizontalSize(5))));
   static ButtonStyle get fillAmberA200C26 => ElevatedButton.styleFrom(
       backgroundColor: appTheme.amberA200.withOpacity(0.2),
       shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(getHorizontalSize(26.00))));
+          borderRadius: BorderRadius.circular(getHorizontalSize(26))));
   static ButtonStyle get fillGray400C5 => ElevatedButton.styleFrom(
       backgroundColor: appTheme.gray400,
       shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(getHorizontalSize(5.00))));
+          borderRadius: BorderRadius.circular(getHorizontalSize(5))));
   static ButtonStyle get fillGray400C26 => ElevatedButton.styleFrom(
       backgroundColor: appTheme.gray400,
       shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(getHorizontalSize(26.00))));
+          borderRadius: BorderRadius.circular(getHorizontalSize(26))));
   static ButtonStyle get fillGray400B10 => ElevatedButton.styleFrom(
         backgroundColor: appTheme.gray400,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
-              bottom: Radius.circular(getHorizontalSize(10.00))),
+              bottom: Radius.circular(getHorizontalSize(10))),
         ),
       );
   static ButtonStyle get fillOnPrimaryC22 => ElevatedButton.styleFrom(
@@ -39,11 +39,11 @@ class CustomButtonStyles {
   static ButtonStyle get fillPrimaryC5 => ElevatedButton.styleFrom(
       backgroundColor: theme.colorScheme.primary,
       shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(getHorizontalSize(5.00))));
+          borderRadius: BorderRadius.circular(getHorizontalSize(5))));
   static ButtonStyle get fillPrimaryC26 => ElevatedButton.styleFrom(
       backgroundColor: theme.colorScheme.primary,
       shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(getHorizontalSize(26.00))));
+          borderRadius: BorderRadius.circular(getHorizontalSize(26))));
   static ButtonStyle get fillPrimaryB10 => ElevatedButton.styleFrom(
         backgroundColor: theme.colorScheme.primary,
         shape: const RoundedRectangleBorder(
@@ -53,7 +53,7 @@ class CustomButtonStyles {
         backgroundColor: theme.colorScheme.primary,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
-              bottom: Radius.circular(getHorizontalSize(26.00))),
+              bottom: Radius.circular(getHorizontalSize(26))),
         ),
       );
   static ButtonStyle get fillPrimaryBL10 => ElevatedButton.styleFrom(

@@ -6,7 +6,7 @@ import 'package:wegooli_friends/lib.dart';
 
 /// tests for CarControllerApi
 void main() {
-  final instance = WegooliFriends().getCarControllerApi();
+  final api = WegooliFriends().getCarControllerApi();
 
   group(CarControllerApi, () {
     //Future deleteCar(String carNum) async

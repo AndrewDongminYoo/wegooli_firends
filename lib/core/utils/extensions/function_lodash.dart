@@ -35,21 +35,20 @@ extension on Function {
 }
 
 class FunctionProxy {
+  /// `FunctionProxy` 클래스의 생성자입니다.
+  /// `Function?` 유형의 `target`과 `int?` 유형의 `timeout`이라는 두 가지 매개변수.
+  /// 라인 `timeout = timeout ?? 500;`은 timeout의 디폴트 값이 500밀리초 임을 나타냅니다.
+  FunctionProxy(this.target, {int? timeout}) : timeout = timeout ?? 500;
   static final Map<String, bool> _funcThrottle = {};
   static final Map<String, Timer> _funcDebounce = {};
   final Function? target;
 
   final int timeout;
 
-  /// `FunctionProxy` 클래스의 생성자입니다.
-  /// `Function?` 유형의 `target`과 `int?` 유형의 `timeout`이라는 두 가지 매개변수.
-  /// 라인 `timeout = timeout ?? 500;`은 timeout의 디폴트 값이 500밀리초 임을 나타냅니다.
-  FunctionProxy(this.target, {int? timeout}) : timeout = timeout ?? 500;
-
   /// 스로틀 기능은 특정 작업을 수행할 수 있는 속도를 제한하는 데 사용됩니다.
-  void throttle() async {
-    String key = hashCode.toString();
-    bool enable = _funcThrottle[key] ?? true;
+  Future<void> throttle() async {
+    final key = hashCode.toString();
+    final enable = _funcThrottle[key] ?? true;
     if (enable) {
       _funcThrottle[key] = false;
       try {
@@ -65,8 +64,8 @@ class FunctionProxy {
   /// 이 함수는 스로틀 맵에 동일한 해시 코드를 가진 다른 함수가 없는 경우 대상 함수를 실행합니다.
   /// 또한 타임아웃 함수를 스로틀 맵에 추가하여 지정된 타임아웃이 지나면 스로틀 맵에서 제거합니다.
   void throttleWithTimeout() {
-    String key = hashCode.toString();
-    bool enable = _funcThrottle[key] ?? true;
+    final key = hashCode.toString();
+    final enable = _funcThrottle[key] ?? true;
     if (enable) {
       _funcThrottle[key] = false;
       Timer(Duration(milliseconds: timeout), () {
@@ -81,11 +80,11 @@ class FunctionProxy {
   /// 이 함수는 제한 시간 내에 여러 번 호출할 수 있지만 제한 시간이 끝날 때만 호출됩니다.
   /// 이 함수는 타이머를 취소하고 함수가 호출되는 것을 방지하기 위해 호출할 수 있는 함수를 반환합니다.
   void debounce() {
-    String key = hashCode.toString();
-    Timer? timer = _funcDebounce[key];
+    final key = hashCode.toString();
+    var timer = _funcDebounce[key];
     timer?.cancel();
     timer = Timer(Duration(milliseconds: timeout), () {
-      Timer? t = _funcDebounce.remove(key);
+      final t = _funcDebounce.remove(key);
       t?.cancel();
       target?.call();
     });

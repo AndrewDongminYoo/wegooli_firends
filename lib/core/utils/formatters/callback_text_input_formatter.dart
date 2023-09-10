@@ -27,12 +27,12 @@ class CallbackTextInputFormatter extends FilteringTextInputFormatter {
     if (inputtingCallback == null) {
       return;
     }
-    bool valid = true;
+    var valid = true;
     if (newValue.text.isNotEmpty) {
-      final Iterable<Match> matches = filterPattern.allMatches(newValue.text);
+      final matches = filterPattern.allMatches(newValue.text);
       if (allow) {
-        int totalLength = 0;
-        for (var element in matches) {
+        var totalLength = 0;
+        for (final element in matches) {
           totalLength += max(element.end - element.start, 1);
         }
         valid = totalLength == newValue.text.length;
@@ -45,7 +45,7 @@ class CallbackTextInputFormatter extends FilteringTextInputFormatter {
 
   static CallbackTextInputFormatter businessNumber(
       {required void Function(bool valid) inputtingCallback}) {
-    return CallbackTextInputFormatter(RegExp(r'[0-9]'),
+    return CallbackTextInputFormatter(RegExp('[0-9]'),
         allow: true, inputtingCallback: inputtingCallback);
   }
 

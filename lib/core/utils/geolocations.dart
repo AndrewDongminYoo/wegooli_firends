@@ -31,7 +31,7 @@ Future<Position> determinePosition() async {
     return Future.error('위치 권한이 영구적으로 거부되어 권한을 요청할 수 없습니다.');
   }
 
-  LocationAccuracy accuracy = LocationAccuracy.bestForNavigation;
+  const accuracy = LocationAccuracy.bestForNavigation;
 
   /// 여기에 도달하면(`whenInUse` 또는 `always`) 권한이 부여되고 디바이스 위치에 계속 액세스할 수 있습니다.
   /// 디바이스의 현재 위치를 조회하려면 `getCurrentPosition` 메서드를 호출하기만 하면 됩니다.
@@ -40,5 +40,5 @@ Future<Position> determinePosition() async {
   /// - `timeLimit`: 현재 위치를 획득할 수 있는 최대 시간입니다.
   ///   시간 제한을 초과하면 [TimeOutException]이 발생하고 호출이 취소됩니다.
   ///   기본적으로 제한은 설정되어 있지 않습니다.
-  return await Geolocator.getCurrentPosition(desiredAccuracy: accuracy);
+  return Geolocator.getCurrentPosition(desiredAccuracy: accuracy);
 }

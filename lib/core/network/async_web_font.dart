@@ -8,9 +8,9 @@ import 'package:dio/dio.dart';
 ///
 /// @param [String] fontFamily 로드할 글꼴 모음의 이름을 나타내는 문자열
 /// @param [List<String>] urls 로드해야 하는 글꼴 파일을 가리키는 URL 목록
-void loadFont(String fontFamily, List<String> urls) async {
-  FontLoader fontLoader = FontLoader(fontFamily);
-  for (String e in urls) {
+Future<void> loadFont(String fontFamily, List<String> urls) async {
+  final fontLoader = FontLoader(fontFamily);
+  for (final e in urls) {
     fontLoader.addFont(_fetchFont(e));
   }
   await fontLoader.load();
@@ -21,8 +21,8 @@ void loadFont(String fontFamily, List<String> urls) async {
 /// @param [String] url - 가져올 글꼴 파일의 URL을 나타내는 문자열
 Future<ByteData> _fetchFont(String url) async {
   try {
-    Uri uri = Uri.parse(url);
-    Options options = Options(responseType: ResponseType.bytes);
+    final uri = Uri.parse(url);
+    final options = Options(responseType: ResponseType.bytes);
     final dioClient = Dio();
     final response = await dioClient.getUri<Uint8List>(uri, options: options);
     if (response.statusCode == 200) {

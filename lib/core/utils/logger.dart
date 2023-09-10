@@ -16,7 +16,7 @@ class Logger {
   /// [StackTrace] 개체에는 호출 스택의 프레임을 나타내는 [StackTraceFrame] 개체 목록이 포함되어 있습니다.
   static void log(dynamic data, {StackTrace? stackTrace}) {
     if (_logMode == LogMode.debug) {
-      print("Error: $data$stackTrace");
+      print('Error: $data$stackTrace');
     }
   }
 }

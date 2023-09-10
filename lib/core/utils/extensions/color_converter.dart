@@ -85,7 +85,7 @@ extension on dart.Color {
   // ignore: unused_element
   material.Color toMaterial(int? alpha) {
     return material.Color.fromARGB(
-        (alpha ?? 255),
+        alpha ?? 255,
         (toRgbColor().r * 255 / 255).floor(),
         (toRgbColor().g * 255 / 255).floor(),
         (toRgbColor().b * 255 / 255).floor());

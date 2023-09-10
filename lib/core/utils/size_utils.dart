@@ -24,26 +24,26 @@ num get _width {
 
 /// 이 메서드는 디바이스 뷰포트 높이를 가져오는 데 사용됩니다.
 num get _height {
-  num statusBar = mediaQueryData.viewPadding.top;
-  num bottomBar = mediaQueryData.viewPadding.bottom;
-  num screenHeight = mediaQueryData.size.height - statusBar - bottomBar;
+  final num statusBar = mediaQueryData.viewPadding.top;
+  final num bottomBar = mediaQueryData.viewPadding.bottom;
+  final num screenHeight = mediaQueryData.size.height - statusBar - bottomBar;
   return screenHeight;
 }
 
 /// 이 메서드는 뷰포트 너비에 따라 화면 또는 위젯의 패딩/여백(왼쪽 및 오른쪽) 및 너비를 설정하는 데 사용됩니다.
 double getHorizontalSize(double px) {
-  return ((px * _width) / FIGMA_DESIGN_WIDTH);
+  return (px * _width) / FIGMA_DESIGN_WIDTH;
 }
 
 /// 이 메서드는 뷰포트 높이에 따라 화면 또는 위젯의 패딩/여백(위쪽 및 아래쪽) 및 높이를 설정하는 데 사용됩니다.
 double getVerticalSize(double px) {
-  return ((px * _height) / (FIGMA_DESIGN_HEIGHT - FIGMA_DESIGN_STATUS_BAR));
+  return (px * _height) / (FIGMA_DESIGN_HEIGHT - FIGMA_DESIGN_STATUS_BAR);
 }
 
 /// 이 메서드는 이미지 높이와 너비의 최소 픽셀을 설정하는 데 사용됩니다.
 double getSize(double px) {
-  double height = getVerticalSize(px);
-  double width = getHorizontalSize(px);
+  final height = getVerticalSize(px);
+  final width = getHorizontalSize(px);
   if (height < width) {
     return height.toDoubleValue();
   } else {

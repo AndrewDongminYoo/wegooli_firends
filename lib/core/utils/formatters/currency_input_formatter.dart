@@ -6,18 +6,17 @@ import 'package:intl/intl.dart';
 
 /// [CurrentInputFormatter] 클래스는 입력 형식을 통화로 지정하는 `Dart`의 [TextInputFormatter]의 하위 클래스
 class CurrencyInputFormatter extends TextInputFormatter {
+  const CurrencyInputFormatter({
+    this.locale = 'ko-KR',
+    this.name = 'KRW',
+    this.decimalDigits = 0,
+  });
   final String locale;
   final String name;
   final int decimalDigits;
 
-  const CurrencyInputFormatter({
-    this.locale = "ko-KR",
-    this.name = "KRW",
-    this.decimalDigits = 0,
-  });
-
   static final NumberFormat formatter = NumberFormat.currency(
-      locale: "ko-KR", name: "KRW", symbol: "₩", decimalDigits: 0);
+      locale: 'ko-KR', name: 'KRW', symbol: '₩', decimalDigits: 0);
 
   @override
   TextEditingValue formatEditUpdate(
@@ -25,7 +24,7 @@ class CurrencyInputFormatter extends TextInputFormatter {
     if (newValue.selection.baseOffset == 0) {
       return newValue;
     }
-    String newText = format(newValue.text,
+    final newText = format(newValue.text,
         locale: locale, name: name, decimalDigits: decimalDigits);
     return newValue.copyWith(
         text: newText,
@@ -38,11 +37,11 @@ class CurrencyInputFormatter extends TextInputFormatter {
     String? name,
     int? decimalDigits,
   }) {
-    double? doubleValue = double.tryParse(value);
+    final doubleValue = double.tryParse(value);
     if (doubleValue == null) {
       return value;
     }
-    String newText = formatter.format(doubleValue);
+    final newText = formatter.format(doubleValue);
     return newText;
   }
 
@@ -55,7 +54,7 @@ class CurrencyInputFormatter extends TextInputFormatter {
     if (value.isEmpty) {
       return value;
     }
-    String result = value
+    final result = value
         .replaceAll(formatter.currencySymbol, '')
         .replaceAll(formatter.negativePrefix, '')
         .replaceAll(formatter.positivePrefix, '')

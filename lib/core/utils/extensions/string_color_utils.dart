@@ -22,8 +22,8 @@ class ColorUtils {
   /// Returns:
   ///  [int] - 색상 표현을 위해 계산된 해시 값입니다.
   static int _hash(String value) {
-    int hash = 0;
-    for (int code in value.runes) {
+    var hash = 0;
+    for (final code in value.runes) {
       hash = code + ((hash << 5) - hash);
     }
     return hash;
@@ -52,8 +52,8 @@ class ColorUtils {
   /// Returns:
   ///  [String] - 16진수 색상 값을 나타내는 문자열입니다.
   static String toHexString(String value) {
-    String c = (_hash(value) & 0x00FFFFFF).toRadixString(16).toUpperCase();
-    return "0xFF00000".substring(0, 10 - c.length) + c;
+    final c = (_hash(value) & 0x00FFFFFF).toRadixString(16).toUpperCase();
+    return '0xFF00000'.substring(0, 10 - c.length) + c;
   }
 
   /// 문자열을 정수 색상 값으로 변환합니다.
@@ -66,8 +66,8 @@ class ColorUtils {
   /// Returns:
   /// [String] - 색상 값을 나타내는 정수입니다.
   static int toHexInteger(String value) {
-    String c = (_hash(value) & 0x00FFFFFF).toRadixString(16).toUpperCase();
-    String hex = "FF00000".substring(0, 8 - c.length) + c;
+    final c = (_hash(value) & 0x00FFFFFF).toRadixString(16).toUpperCase();
+    final hex = 'FF00000'.substring(0, 8 - c.length) + c;
     return int.parse(hex, radix: 16);
   }
 }

@@ -1,5 +1,6 @@
 /// [DateTime]과 [Date] 형식을 구분하기 위한 그레고리력 날짜입니다.
 class Date implements Comparable<Date> {
+  Date(this.year, this.month, this.day);
   final int year;
 
   /// 매년 첫달은 1입니다.
@@ -8,11 +9,9 @@ class Date implements Comparable<Date> {
   /// 매월 첫날은 1입니다.
   final int day;
 
-  Date(this.year, this.month, this.day);
-
   /// 현재 날짜
   static Date now({bool utc = false}) {
-    DateTime now = DateTime.now();
+    var now = DateTime.now();
     if (utc) {
       now = now.toUtc();
     }
@@ -35,7 +34,7 @@ class Date implements Comparable<Date> {
   /// Args:
   ///   other [Date]: 비교할 다른 Date 클래스 객체
   int compareTo(Date other) {
-    int d = year.compareTo(other.year);
+    var d = year.compareTo(other.year);
     if (d != 0) {
       return d;
     }

@@ -2,19 +2,18 @@
 import 'package:flutter/services.dart';
 
 class SeperateTextFormatter extends TextInputFormatter {
-  final String sample;
-  final String separator;
-
   SeperateTextFormatter({
     required this.sample,
     required this.separator,
   });
+  final String sample;
+  final String separator;
 
   @override
   TextEditingValue formatEditUpdate(
       TextEditingValue oldValue, TextEditingValue newValue) {
-    final String newText = newValue.text;
-    final String oldText = oldValue.text;
+    final newText = newValue.text;
+    final oldText = oldValue.text;
 
     if (newText.isEmpty || newText.length < oldText.length) {
       return newValue;
@@ -26,7 +25,7 @@ class SeperateTextFormatter extends TextInputFormatter {
       // add seperator
       if (newText.length < sample.length &&
           sample[newText.length] == separator) {
-        final String text = '$newText$separator';
+        final text = '$newText$separator';
         return TextEditingValue(
             text: text,
             selection: TextSelection.collapsed(offset: text.length));

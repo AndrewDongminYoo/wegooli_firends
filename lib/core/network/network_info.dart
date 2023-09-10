@@ -11,11 +11,10 @@ abstract class NetworkInfoI {
 }
 
 class NetworkInfo implements NetworkInfoI {
-  Connectivity connectivity;
-
   NetworkInfo(this.connectivity) {
     connectivity = connectivity;
   }
+  Connectivity connectivity;
 
   /// checks internet is connected or not
   /// returns [true] if internet is connected

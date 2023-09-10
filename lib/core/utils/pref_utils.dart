@@ -5,24 +5,23 @@ import 'package:get/instance_manager.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class PrefUtils {
+  PrefUtils() {
+    SharedPreferences.getInstance().then((value) {
+      Get.put<SharedPreferences>(value);
+      _storage = value;
+    });
+  }
   static SharedPreferences? _storage;
-  static final String _themeData = 'WEGOOLI_THEME_DATA';
-  static final String _tokenData = 'WEGOOLI_TOKEN_DATA';
-  static final String _phoneData = 'WEGOOLI_PHONE_DATA';
-  static final String _tokenIsEmpty = 'Token is not given.';
+  static const String _themeData = 'WEGOOLI_THEME_DATA';
+  static const String _tokenData = 'WEGOOLI_TOKEN_DATA';
+  static const String _phoneData = 'WEGOOLI_PHONE_DATA';
+  static const String _tokenIsEmpty = 'Token is not given.';
 
   static SharedPreferences get storage {
     if (_storage == null) {
       return Get.find<SharedPreferences>();
     }
     return _storage!;
-  }
-
-  PrefUtils() {
-    SharedPreferences.getInstance().then((value) {
-      Get.put<SharedPreferences>(value);
-      _storage = value;
-    });
   }
 
   /// will clear all the data stored in preference

@@ -1,4 +1,20 @@
 class OverlayRequest<T> {
+  OverlayRequest({
+    this.showIconInMainButton,
+    this.showIconInSecondaryButton,
+    this.showIconInAdditionalButton,
+    this.title,
+    this.description,
+    this.hasImage,
+    this.imageUrl,
+    this.mainButtonTitle,
+    this.secondaryButtonTitle,
+    this.additionalButtonTitle,
+    this.takesInput,
+    this.data,
+    this.variant,
+  });
+
   /// 대화 상자의 제목
   final String? title;
 
@@ -38,22 +54,6 @@ class OverlayRequest<T> {
 
   /// UI에 전달할 추가 데이터
   final T? data;
-
-  OverlayRequest({
-    this.showIconInMainButton,
-    this.showIconInSecondaryButton,
-    this.showIconInAdditionalButton,
-    this.title,
-    this.description,
-    this.hasImage,
-    this.imageUrl,
-    this.mainButtonTitle,
-    this.secondaryButtonTitle,
-    this.additionalButtonTitle,
-    this.takesInput,
-    this.data,
-    this.variant,
-  });
 }
 
 class DialogRequest<T> extends OverlayRequest<T> {

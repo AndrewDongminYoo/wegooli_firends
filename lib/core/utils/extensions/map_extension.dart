@@ -24,9 +24,7 @@ extension MapKeyExtension on Map<dynamic, dynamic> {
   /// 키를 찾을 수 없거나 키와 연결된 값이 double 유형이 아닌 경우 반환할 기본값을 지정
   double? doubleForKey(String key, {double? defaultValue}) {
     final value = this[key];
-    if (value is double) {
-      return value;
-    } else if (value is int) {
+    if (value is int || value is double) {
       return value.toDouble();
     } else if (value is String) {
       return double.tryParse(value) ?? defaultValue;
@@ -94,7 +92,7 @@ extension MapKeyExtension on Map<dynamic, dynamic> {
   /// 이 객체 속성의 키=값 쌍으로 구성된 URL 쿼리 문자열을 반환합니다.
   /// 유효한 값이 있는 속성 값만 쿼리 문자열에 포함됩니다.
   String toQueryString() {
-    final List<String> query = [];
+    final query = <String>[];
     for (final key in keys) {
       final value = this[key];
       if (value != null) {

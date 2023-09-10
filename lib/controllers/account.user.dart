@@ -2,17 +2,17 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
-import 'package:dio/dio.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
 class UserController extends GetxController {
-  final wegooli = WegooliFriends.client;
+  final _service = UserAccountService();
   static UserController get to => Get.isRegistered<UserController>()
       ? Get.find<UserController>()
       : Get.put(UserController());
+
   TextEditingController primaryAddress = TextEditingController();
   TextEditingController detailAddress = TextEditingController();
   TextEditingController emailAddress = TextEditingController();
@@ -28,7 +28,7 @@ class UserController extends GetxController {
   TextEditingController pinCodes = TextEditingController();
   TextEditingController phoneNum = TextEditingController();
 
-  SelectionPopupModel? phoneCarriers;
+  SelectionPopupModel? telecom;
   List<SelectionPopupModel> telecoms = [
     SelectionPopupModel(id: 01, title: 'SKT'),
     SelectionPopupModel(id: 02, title: 'KT'),
@@ -62,7 +62,7 @@ class UserController extends GetxController {
 
   Future<String?> sendVerificationCode() async {
     // Update the UI - wait for the user to enter the SMS code
-    if (phoneCarriers != null && phoneNum.text.isNotEmpty) {
+    if (telecom != null && phoneNum.text.isNotEmpty) {
       isWaitingOtpCode.value = true;
       return showDialog<String>(
         context: Get.context!,
@@ -111,7 +111,7 @@ class UserController extends GetxController {
 
   void setDropdownItem(SelectionPopupModel value) {
     print('Dropdown Selected ==> ${value.title}');
-    phoneCarriers = value;
+    telecom = value;
   }
 
   bool get isValid =>
@@ -143,105 +143,31 @@ class UserController extends GetxController {
   }
 
   Future<void> authorize() async {
-    final api = wegooli.getUserControllerApi();
-    try {
-      print('user.username: ${username.text}\nuser.password: ${password.text}');
-      final response =
-          await api.login(id: username.text, password: password.text);
-      // print('response : $response');
-      final result = response.data?.result;
-      var bearerToken = '';
-      var token = '';
-      if (result == null || result.token == null) {
-        print('`login()` 반환값: $result, ${response.data?.resultCode}');
-        await Get.dialog(Center(
-            child: Assets.lotties.xInCircle.lottie(height: 250, width: 250)));
-        isAuthenticated.value = false;
-        throw CustomException('로그인 실패');
-      } else {
-        bearerToken = result.token!;
-        // BEARER prefix 분리.
-        token = bearerToken.split(' ').last;
-      }
-      print('token: $token');
-      // BEARER prefix 제거
-      final payload = JwtDecoder.decode(token);
-      //'{"name": "My Awesome App", "iat": 1548094400}'
-      print('payload: $payload');
-      if (!JwtDecoder.isExpired(token)) {
-        currentUser.value = User.fromJson(payload);
-        print('✅ 유효한 토큰입니다.');
-        isAuthenticated.value = true;
-        await PrefUtils.setToken(token);
-        await findMembers();
-        return;
-      } else {
-        print('❌ 만료된 토큰입니다.');
-        isAuthenticated.value = false;
-      }
-    } on DioException catch (e) {
-      isAuthenticated.value = false;
-      print(switch (e.type) {
-        DioExceptionType.connectionError => e.message ?? '연결 오류가 발생했습니다.',
-        DioExceptionType.connectionTimeout =>
-          e.message ?? '요청 연결이 5000ms보다 오래 걸렸습니다.',
-        DioExceptionType.sendTimeout =>
-          e.message ?? '요청이 데이터를 전송하는 데 timeout 보다 오래 걸렸습니다.',
-        DioExceptionType.receiveTimeout =>
-          e.message ?? '데이터를 받는 데 3000ms 보다 오래 걸렸습니다.',
-        DioExceptionType.badCertificate =>
-          e.message ?? '요청에 잘못된 인가 코드를 사용했습니다.',
-        DioExceptionType.badResponse => e.message ?? '요청에서 잘못된 상태 코드를 반환했습니다.',
-        DioExceptionType.cancel => e.message ?? '요청이 취소되었습니다.',
-        DioExceptionType.unknown =>
-          'message: ${e.message}\nerror: ${e.error}\nresponseData: ${e.response?.data}',
-      });
-      print('`login()` 호출 중 DioException 발생: $e\n');
-    } on Exception catch (e) {
-      isAuthenticated.value = false;
-      print('`login()` 호출 중 Exception 발생: $e\n');
+    print('user.username: ${username.text}\nuser.password: ${password.text}');
+    final userLike = await _service.login(username.text, password.text);
+    if (userLike != null) {
+      currentUser.value = userLike;
     }
   }
 
   Future<void> findMembers() async {
-    final api = wegooli.getTeamAccountConnectionControllerApi();
     if (currentUser.value.id == null) {
       return;
     }
-    final response = await api.selectTeamAccountList(
-        accountId: currentUser.value.id, isLeaved: 'false');
-    print('findMembers : $response');
-    final teamList = response.data;
-
-    if (teamList != null && teamList.isNotEmpty) {
-      teams(teamList);
-      // NOTE: 현재는 Team이 1개만 존재한다고 가정하기 때문에 첫번째 Team 정보로만 연결한다.
-      // teams.first.account
-      //     ?.forEach((it) => !members.contains(it) ? members.add(it) : null);
-      final accountList = teams.first.account;
-      if (accountList != null && accountList.isNotEmpty) {
-        members(teams.first.account!
-            // .where((member) => currentUser.value.id! != member.accountId)
-            .toList());
-        // print('findMembers : ${teams.first.account}');
-      }
-    }
+    final members =
+        await TeamAccountService().findMembers(currentUser.value.id);
     print('members : $members');
   }
 
   Future<bool> logOut() async {
-    final response = await wegooli.getUserControllerApi().logOut();
-    return response.data == 'logOut';
+    return await _service.logOut();
   }
 
   Future<bool> signOut() async {
-    final response =
-        await wegooli.getUserControllerApi().signOut(id: currentUser.value.id!);
-    return response.data!;
-  }
-
-  int? getTeamSeq() {
-    return teams.firstOrNull?.teamSeq;
+    if (currentUser.value.id == null) {
+      return false;
+    }
+    return await _service.signOut(currentUser.value.id!);
   }
 
   Future<List<Schedule>> retrieveSchedules() async {
@@ -252,48 +178,19 @@ class UserController extends GetxController {
     if (teamSeq == null) {
       return List.empty();
     }
-    final response = await wegooli
-        .getScheduleControllerApi()
-        .selectScheduleList(teamSeq: teamSeq);
-    final schedules = response.data;
-    if (schedules == null) {
-      return List.empty();
-    }
-    // print('schedules $schedules');
-    return schedules
-        .map((it) => Schedule(
-              accountId: it.accountId!,
-              seq: it.seq,
-              teamSeq: it.teamSeq,
-              delYn: it.delYn,
-              startAt: it.startAt,
-              endAt: it.endAt,
-              createdAt: it.createdAt,
-              updatedAt: it.updatedAt,
-              highlightColor: it.highlightColor,
-            ))
-        .toList();
+    return await ReservationsService().retrieveSchedules(teamSeq);
+  }
+
+  int? getTeamSeq() {
+    return teams.firstOrNull?.teamSeq;
   }
 
   Future<void> deleteSchedule(int seq) async {
     try {
-      await wegooli.getScheduleControllerApi().deleteSchedule(seq: seq);
+      await ReservationsService().deleteSchedule(seq);
       return popWithValue(Get.context!, true);
     } catch (e) {
       return popWithValue(Get.context!, false);
-    }
-  }
-}
-
-extension on ScheduleModel {
-  Color get highlightColor {
-    if (accountId == null) {
-      return AppStyledPaint.carStatusNormal;
-    } else {
-      final color = UserController.to._members
-          .firstWhere((element) => element.accountId == accountId)
-          .color;
-      return Color(int.parse(colorFromHex(color!).toString(), radix: 16));
     }
   }
 }

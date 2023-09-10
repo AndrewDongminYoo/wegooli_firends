@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 class PaymentCardController extends GetxController {
-  final wegooli = WegooliFriends.client;
+  final _service = PaymentCardService();
   static PaymentCardController get to =>
       Get.isRegistered<PaymentCardController>()
           ? Get.find<PaymentCardController>()
@@ -19,10 +19,6 @@ class PaymentCardController extends GetxController {
   TextEditingController birthNumber6 = TextEditingController();
   TextEditingController cardPassword = TextEditingController();
   Rx<String> selected = ''.obs;
-
-  bool get cardInputSucceed => false;
-  final userController = UserController.to;
-  String? token;
 
   final RxList<PaymentCardModel> _paymentCards = <PaymentCardModel>[].obs;
   RxList<PaymentCardModel> get paymentCards => _paymentCards;
@@ -37,30 +33,32 @@ class PaymentCardController extends GetxController {
   }
 
   Future<void> retrieveCards() async {
-    if (userController.currentUser.value.memberSeq != null) {
-      final paymentCardControllerApi = wegooli.getPaymentCardControllerApi();
-      final response = await paymentCardControllerApi.selectPaymentCardList(
-          memberSeq: userController.currentUser.value.memberSeq);
-      print('response => ${response.data}');
-      if (response.data != null) {
-        _paymentCards.clear();
-        _paymentCards.addAll(response.data!.toList());
-      }
-    }
+    final userController = UserController.to;
+    final data =
+        await _service.loadCreditCardList(userController.currentUser.value);
+    _paymentCards.clear();
+    _paymentCards.addAll(data);
   }
 
-  Future<String> registerCard() async {
-    final paymentCardRequest = PaymentCardRequest(
-        cardNumber: creditCardId.text,
-        password: cardPassword.text,
-        rrn: birthNumber6.text,
-        expirationMonth: expirationDT.text.substring(0, 2),
-        expirationYear: expirationDT.text.substring(2));
-
-    final response = await wegooli
-        .getPaymentCardControllerApi()
-        .insertPaymentCard(paymentCardRequest: paymentCardRequest);
-    print('response.data : ${response.data}');
-    return response.data ?? 'false';
+  Future<void> registerCard() async {
+    await _service
+        .registerCard(creditCardId.text, cardPassword.text, birthNumber6.text,
+            expirationDT.text.substring(0, 2), expirationDT.text.substring(2))
+        .then((result) {
+      if (result != 'true') {
+        Get.dialog(AlertDialog(
+          title: const Text('결제수단 등록'),
+          content: const Text('결제수단 등록에 실패하였습니다.\n 다시 확인해주세요.'),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () => Get.back(),
+              child: const Text('예'),
+            ),
+          ],
+        ));
+      } else {
+        goRegisterSuccess();
+      }
+    });
   }
 }

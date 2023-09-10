@@ -8,8 +8,9 @@ import 'package:sendbird_sdk/sendbird_sdk.dart';
 // 🌎 Project imports:
 import '/core/app_export.dart' hide User;
 
+/// [ConnectionController] 클래스는 Sendbird 채팅 서비스와의 연결 및 통신을 관리하고,
+/// 이벤트와 메시지를 처리하며, 채팅 메시지를 보내고 받는 방법을 제공하는 역할을 담당 (내부 API와 연결되어 있지 않음).
 class ConnectionController extends GetxController with ChannelEventHandler {
-  final wegooli = WegooliFriends.client;
   static ConnectionController get to => Get.isRegistered<ConnectionController>()
       ? Get.find<ConnectionController>()
       : Get.put(ConnectionController());

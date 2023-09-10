@@ -10,18 +10,16 @@ import 'package:get/instance_manager.dart';
 import '/core/app_export.dart';
 
 class LicenseController extends GetxController {
-  final wegooli = WegooliFriends.client;
+  final _service = LicenseCardService();
   static LicenseController get to => Get.isRegistered<LicenseController>()
       ? Get.find<LicenseController>()
       : Get.put(LicenseController());
 
-  /// 운전면허증 일련번호
+  // 운전면허증 일련번호
   TextEditingController licenseNumbers = TextEditingController();
-
-  /// 운전면허증 만료일자
+  // 운전면허증 만료일자
   TextEditingController expirationDate = TextEditingController();
-
-  /// 운전면허증 최초발급년도
+  // 운전면허증 최초발급년도
   TextEditingController firstIssueYear = TextEditingController();
 
   Rx<List<SelectionPopupModel>> licenseTypes = Rx([
@@ -74,23 +72,7 @@ class LicenseController extends GetxController {
   bool _licenseInputSucceed = true;
   bool get licenseInputSucceed => _licenseInputSucceed;
   Future<int> inputLicenseInput() async {
-    final api = wegooli.getLicenseControllerApi();
-    final validReq = ValidLicenseRequest();
-    final insetReq = InsertLicenseRequest();
-    final valid = await api.isValidLicense(validLicenseRequest: validReq);
-    if (!valid.data!) {
-      _licenseInputSucceed = false;
-      return 0;
-    }
-    final success = await api.insertLicense(insertLicenseRequest: insetReq);
-    if (success.data != null) {
-      _licenseInputSucceed = true;
-      return success.data!;
-    } else {
-      _licenseInputSucceed = false;
-      print(success.data);
-      return -1;
-    }
+    return await _service.registerDrivingLicense();
   }
 
   @override

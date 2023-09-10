@@ -3,7 +3,6 @@ import 'dart:collection';
 
 // 📦 Package imports:
 import 'package:get/get.dart';
-import 'package:intl/intl.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 // 🌎 Project imports:
@@ -23,7 +22,6 @@ class Item {
 }
 
 class ScheduleController extends GetxController {
-  final wegooli = WegooliFriends.client;
   DateTime focusedDay = kToday;
 
   /// [Map]을 사용하기로 한 경우, [LinkedHashMap]를 사용하는 것이 권장됩니다.
@@ -83,6 +81,8 @@ class ScheduleController extends GetxController {
       ? Get.find<ScheduleController>()
       : Get.put(ScheduleController());
 
+  final _service = ReservationsService();
+
   CalendarFormat calendarFormat = CalendarFormat.month;
   RangeSelectionMode rangeSelectionMode = RangeSelectionMode
       .toggledOff; // Can be toggled on/off by long pressing a date
@@ -131,21 +131,7 @@ class ScheduleController extends GetxController {
     if (accountId == null || teamSeq == null) {
       return;
     }
-
-    final formatter = DateFormat('yyyy-MM-dd HH:mm:ss');
-    final scheduleRequest = ScheduleRequest(
-      accountId: accountId,
-      teamSeq: teamSeq,
-      startAt: formatter.format(reservationTime),
-      endAt: formatter.format(returnTime),
-    );
-    print('scheduleRequest $scheduleRequest');
-    final response = await wegooli
-        .getScheduleControllerApi()
-        .registSchedule(scheduleRequest: scheduleRequest);
-    print('regist $response');
-    items.value = initItem();
-    items.refresh();
+    await _service.addSchedule(accountId, teamSeq, reservationTime, returnTime);
     userController.schedules(await userController.retrieveSchedules());
     makeEventSource();
     goBack();

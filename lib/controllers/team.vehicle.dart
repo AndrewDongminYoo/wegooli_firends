@@ -9,10 +9,13 @@ import 'package:intl/intl.dart';
 import '/core/app_export.dart';
 
 class VehicleController extends GetxController {
-  final wegooli = WegooliFriends.client;
   static VehicleController get to => Get.isRegistered<VehicleController>()
       ? Get.find<VehicleController>()
       : Get.put(VehicleController());
+
+  final _manage = CarManagementService();
+  final _service = SubscriptionService();
+
   late Rx<SubscriptionModel> subscriptionModel = SubscriptionModel().obs;
   late Rx<CarManagementModel> carManagementModel = CarManagementModel().obs;
 
@@ -36,7 +39,7 @@ class VehicleController extends GetxController {
         _currentUser.nickname != null ? _currentUser.nickname! : _nickname;
     await retrieveInfo();
     await retrieveSchedule();
-    await selectSubscriptionInfo();
+    await getSubscription();
     await retrieveManagement();
     super.onInit();
   }
@@ -48,7 +51,7 @@ class VehicleController extends GetxController {
     driverName.text = whoDriving?.nickname ?? '';
   }
 
-  bool compose(ScheduleModel schedule) {
+  bool compose(Schedule schedule) {
     getClient(schedule.accountId);
     if (schedule.startAt == null || schedule.endAt == null) {
       return false;
@@ -124,49 +127,28 @@ class VehicleController extends GetxController {
   }
 
   Future<bool?> openDoor() async {
-    final deviceControllerApi = wegooli.getDeviceControllerApi();
-    final response =
-        await deviceControllerApi.doorOpen(carNum: terminalDevice.carNum!);
-    print('response : $response');
-    return response.data;
+    return await _manage.openDoor(terminalDevice.carNum!);
   }
 
   Future<bool?> closeDoor() async {
-    final deviceControllerApi = wegooli.getDeviceControllerApi();
-    final response =
-        await deviceControllerApi.doorClose(carNum: terminalDevice.carNum!);
-    print('response : $response');
-    return response.data;
+    return await _manage.closeDoor(terminalDevice.carNum!);
   }
 
   Future<bool?> horn() async {
-    final deviceControllerApi = wegooli.getDeviceControllerApi();
-    final response =
-        await deviceControllerApi.turnOnHorn(carNum: terminalDevice.carNum!);
-    print('response : $response');
-    return response.data;
+    return await _manage.horn(terminalDevice.carNum!);
   }
 
   Future<bool?> emergencyLight() async {
-    final deviceControllerApi = wegooli.getDeviceControllerApi();
-    final response = await deviceControllerApi.turnOnEmergencyLight(
-        carNum: terminalDevice.carNum!);
-    print('response : $response');
-    return response.data;
+    return await _manage.emergencyLight(terminalDevice.carNum!);
   }
 
-  Future<void> selectSubscriptionInfo() async {
+  Future<void> getSubscription() async {
     if (currentUser.id == null || teamSeq == null) {
       return;
     }
-    final subscriptionControllerApi = wegooli.getSubscriptionControllerApi();
-    final response = await subscriptionControllerApi.selectSubscriptionInfo(
-        accountId: currentUser.id!, teamSeq: teamSeq!);
-    if (response.data == null) {
-      return;
-    }
-    print('구독정보; ${response.data!.first}');
-    subscriptionModel.value = response.data!.first;
+    final response = await _service.loadSubscriptions(currentUser.id!, teamSeq!);
+    print('구독정보; ${response.first}');
+    subscriptionModel.value = response.first;
   }
 
   Future<void> unsubscribe() async {
@@ -177,10 +159,8 @@ class VehicleController extends GetxController {
         accountId: currentUser.id,
         date: subscriptionModel.value.endAt,
         teamSeq: teamSeq);
-    await wegooli
-        .getSubscriptionControllerApi()
-        .submitWithdrawal(submitWithdrawalModel: submitWithdrawalModel);
-    await selectSubscriptionInfo();
+    await _service.submitWithdrawal(submitWithdrawalModel);
+    await getSubscription();
     await goUnsubscribeInfo();
   }
 
@@ -192,10 +172,8 @@ class VehicleController extends GetxController {
     }
     final submitWithdrawalModel =
         SubmitWithdrawalModel(accountId: currentUser.id, teamSeq: teamSeq);
-    await wegooli
-        .getSubscriptionControllerApi()
-        .submitWithdrawal(submitWithdrawalModel: submitWithdrawalModel);
-    await selectSubscriptionInfo();
+    await _service.submitWithdrawal(submitWithdrawalModel);
+    await getSubscription();
   }
 
   String calcDate() {
@@ -217,46 +195,31 @@ class VehicleController extends GetxController {
     if (teamSeq == null) {
       return;
     }
-    final response = await wegooli
-        .getCarManagementControllerApi()
-        .selectCarManagement(seq: teamSeq!);
-    final carManagement = response.data;
-    if (carManagement == null) {
-      return;
-    }
+    final carManagement = await _manage.selectCarManagement(teamSeq!);
     carManagementModel.value = carManagement;
   }
 
   Future<void> retrieveInfo() async {
-    if (teamSeq == null) {
-      return;
-    }
-    final terminalApi = wegooli.getTerminalControllerApi();
-    final terminal = await terminalApi.selectTerminal(seq: teamSeq!);
-    print('team.vehicle.dart#L230 terminal.data : ${terminal.data}');
-    _terminalDevice = terminal.data ?? TerminalModel();
+    _terminalDevice = await _manage.retrieveInfo(teamSeq);
   }
 
   Future<void> retrieveSchedule() async {
     if (teamSeq == null) {
       return;
     }
-    final scheduleApi = wegooli.getScheduleControllerApi();
-    final scheduleList = await scheduleApi.selectScheduleList(teamSeq: teamSeq);
-    print('team.vehicle.dart#L241 scheduleList.data : ${scheduleList.data}');
-    final using = scheduleList.data!.any(compose);
-    print('done : $using');
-    availableNow.value = using;
+    final scheduleList =
+        await ReservationsService().retrieveSchedules(teamSeq!);
+    print('team.vehicle.dart#L241 scheduleList.data : ${scheduleList}');
+    final onUsing = scheduleList.any(compose);
+    availableNow.value = onUsing;
   }
 
   Future<bool> joinTeam() async {
-    final api = wegooli.getTeamAccountConnectionControllerApi();
     final accountId = currentUser.id;
     if (accountId != null && invitation.text.length == 10) {
       print('joinTeam() accountId: $accountId |invitation: ${invitation.text}');
-      final response = await api.inviteTeamAccount(
-          accountId: accountId, code: invitation.text);
-      return response.data == 'success';
+      return await TeamAccountService()
+          .inviteTeamAccount(accountId, invitation.text);
     }
     return false;
   }

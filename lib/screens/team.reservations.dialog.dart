@@ -4,25 +4,24 @@ import 'package:flutter/material.dart';
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
-// ignore: must_be_immutable
 class ReservationsCheckingPageDialog extends StatelessWidget {
-  ReservationsCheckingPageDialog({super.key, this.selectedDay});
+  ReservationsCheckingPageDialog({super.key, DateTime? selectedDay})
+      : _selectedDay = selectedDay;
 
-  final DateTime? selectedDay;
+  final DateTime? _selectedDay;
   final controller = UserController.to;
 
-  List<Schedule> findBySelectedDay() {
-    if (selectedDay == null) {
+  List<Schedule> get selectedDay {
+    if (_selectedDay == null) {
       return List.empty();
     }
-
     return controller.schedules.where((schedule) {
-      if (selectedDay == null) {
+      if (_selectedDay == null) {
         return false;
       }
-      DateTime start = DateTime.parse(schedule.startAt!);
-      DateTime end = DateTime.parse(schedule.endAt!);
-      return isDateWithinRange(start, end, selectedDay!);
+      final start = DateTime.parse(schedule.startAt!);
+      final end = DateTime.parse(schedule.endAt!);
+      return isDateWithinRange(start, end, _selectedDay!);
     }).toList();
   }
 
@@ -43,7 +42,6 @@ class ReservationsCheckingPageDialog extends StatelessWidget {
             child: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Align(
                       alignment: Alignment.centerRight,
@@ -52,12 +50,10 @@ class ReservationsCheckingPageDialog extends StatelessWidget {
                           height: getSize(13),
                           width: getSize(13),
                           margin: getMargin(bottom: 15),
-                          onTap: () {
-                            goBack();
-                          })),
+                          onTap: goBack)),
                   Padding(
                     padding: getPadding(bottom: 20),
-                    child: Text(
+                    child: const Text(
                       '일정 확인',
                       style: TextStyle(
                         color: Color(0xFF222222),
@@ -69,24 +65,14 @@ class ReservationsCheckingPageDialog extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Obx(
-                    () => ListView.builder(
-                        itemBuilder: (_, int index) {
-                          final currentUser = controller.currentUser.value;
-                          Schedule schedule = findBySelectedDay()[index];
-                          bool isOwner = schedule.accountId == currentUser.id;
-                          Color? color =
-                              controller.getColor(schedule.accountId);
-                          return TeamReservationsItem(
-                            color: color,
-                            schedule: schedule,
-                            isOwner: isOwner,
-                            margin: getMargin(bottom: 10),
-                          );
-                        },
-                        itemCount: findBySelectedDay().length,
-                        shrinkWrap: true),
-                  ),
+                  StreamBuilder<Schedule>(
+                      stream: Stream.fromIterable(selectedDay),
+                      builder: (context, snapshot) {
+                        return TeamReservationsItem(
+                          schedule: snapshot.data!,
+                          controller: controller,
+                        );
+                      }),
                 ]),
           ),
         ));

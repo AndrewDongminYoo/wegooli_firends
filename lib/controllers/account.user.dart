@@ -270,21 +270,25 @@ class UserController extends GetxController {
               endAt: it.endAt,
               createdAt: it.createdAt,
               updatedAt: it.updatedAt,
-              highlightColor: getColor(it.accountId!),
+              highlightColor: it.highlightColor,
             ))
         .toList();
   }
 
-  Color? getColor(String accountId) {
-    final hexColor = members
-        .firstWhereOrNull((member) => member.accountId == accountId)
-        ?.color;
-    // print('accountId $accountId hexColor: $hexColor');
-    if (hexColor == null) {
-      return null;
+  Future<void> deleteSchedule(int seq) {
+    return wegooli.getScheduleControllerApi().deleteSchedule(seq: seq);
+  }
+}
+
+extension on ScheduleModel {
+  Color get highlightColor {
+    if (accountId == null) {
+      return AppStyledPaint.carStatusNormal;
+    } else {
+      final color = UserController.to._members
+          .firstWhere((element) => element.accountId == accountId)
+          .color;
+      return Color(int.parse(colorFromHex(color!).toString(), radix: 16));
     }
-    // Color type이 다름
-    // return colorFromHex(hexColor).toMaterial(255);
-    return Color(int.parse(colorFromHex(hexColor).toString(), radix: 16));
   }
 }

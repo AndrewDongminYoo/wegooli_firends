@@ -15,7 +15,6 @@ class MembersList extends StatelessWidget {
         child: SizedBox(
             height: 100,
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 if (controller.members.length - 1 > 0)
                   Obx(
@@ -34,7 +33,7 @@ class MembersList extends StatelessWidget {
                         itemCount: controller.members.length - 1,
                         shrinkWrap: true),
                   ),
-                InviteTeamButton(),
+                const InviteTeamButton(),
               ],
             )));
   }

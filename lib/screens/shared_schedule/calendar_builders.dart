@@ -32,12 +32,12 @@ Widget? rangeStartBuilder(
           horizontal: 1), // Example: Display custom text
       decoration: const BoxDecoration(
           // borderRadius: BorderRadius.horizontal(left: Radius.circular(10))
-          color: const Color(0x7EFFFFFF),
+          color: Color(0x7EFFFFFF),
           shape: BoxShape.circle),
       child: Text(
         day.day.toString(),
         style: const TextStyle(
-          color: const Color(0xFF2196F3),
+          color: Color(0xFF2196F3),
         ),
       ));
 }
@@ -48,12 +48,12 @@ Widget? rangeEndBuilder(
   return Container(
       margin: const EdgeInsets.symmetric(
           horizontal: 1), // Example: Display custom text
-      decoration: const BoxDecoration(
-          color: const Color(0x4BFFFFFF), shape: BoxShape.circle),
+      decoration:
+          const BoxDecoration(color: Color(0x4BFFFFFF), shape: BoxShape.circle),
       child: Text(
         day.day.toString(),
         style: const TextStyle(
-          color: const Color(0xFF2196F3),
+          color: Color(0xFF2196F3),
         ),
       ));
 }
@@ -100,12 +100,12 @@ Widget? rangeHighlightBuilder(
           horizontal: 1), // Example: Display custom text
       decoration: const BoxDecoration(
           // borderRadius: BorderRadius.circular(10))
-          color: const Color(0x4BFFFFFF),
+          color: Color(0x4BFFFFFF),
           shape: BoxShape.circle),
       child: Text(
         day.day.toString(),
         style: const TextStyle(
-          color: const Color(0xFF2196F3),
+          color: Color(0xFF2196F3),
         ),
       ));
 }
@@ -120,7 +120,7 @@ Widget? singleMarkerBuilder(
   return Container(
     width: 5,
     height: 5,
-    margin: EdgeInsets.only(right: 3),
+    margin: const EdgeInsets.only(right: 3),
     alignment: Alignment.topCenter,
     decoration: BoxDecoration(
       shape: BoxShape.circle,

@@ -10,6 +10,17 @@ import '/core/app_export.dart';
 /// 스케쥴 이벤트의 예시입니다.
 /// [/data/model/schedule_model.dart] 참조
 class Schedule {
+  Schedule({
+    required this.accountId,
+    required this.highlightColor,
+    this.seq,
+    this.teamSeq,
+    this.delYn,
+    this.startAt,
+    this.endAt,
+    this.createdAt,
+    this.updatedAt,
+  });
   int? seq = 0;
   int? teamSeq = 0;
   String? delYn = 'N';
@@ -18,19 +29,7 @@ class Schedule {
   String? endAt = kToday.toString();
   DateTime? createdAt = DateTime.now();
   DateTime? updatedAt = DateTime.now();
-  Color? highlightColor;
-
-  Schedule({
-    required this.accountId,
-    this.seq,
-    this.teamSeq,
-    this.delYn,
-    this.startAt,
-    this.endAt,
-    this.createdAt,
-    this.updatedAt,
-    this.highlightColor,
-  });
+  Color highlightColor;
 
   @override
   String toString() => accountId;

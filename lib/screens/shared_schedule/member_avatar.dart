@@ -19,11 +19,11 @@ class MemberAvatar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
         padding: getPadding(left: 15),
-        child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
+        child: Column(children: [
           Card(
             clipBehavior: Clip.antiAlias,
             elevation: 0,
-            margin: const EdgeInsets.all(0),
+            margin: EdgeInsets.zero,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadiusStyle.circleBorder25),
             child: Container(

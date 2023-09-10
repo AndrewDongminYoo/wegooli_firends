@@ -1,5 +1,5 @@
-// 🐦 Flutter imports:
-import 'package:flutter/material.dart' as material;
+// 🎯 Dart imports:
+import 'dart:ui' as material;
 
 // 📦 Package imports:
 import 'package:color/color.dart' as dart;
@@ -81,7 +81,13 @@ Map<int, String> accentSwatchFromPrimaryHex(String primaryHex) {
   };
 }
 
-extension on dart.Color {
+extension MaterialColor on material.Color {
+  material.Color parsePaint(dart.Color color) {
+    return material.Color(int.parse(color.toString(), radix: 16));
+  }
+}
+
+extension DartColor on dart.Color {
   // ignore: unused_element
   material.Color toMaterial(int? alpha) {
     return material.Color.fromARGB(

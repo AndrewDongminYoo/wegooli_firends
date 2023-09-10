@@ -19,30 +19,28 @@ class CalendarBody extends GetView<ScheduleController> {
             decoration: AppDecoration.outline
                 .copyWith(borderRadius: BorderRadiusStyle.circleBorder10),
             child: Align(
-                alignment: Alignment.center,
                 child: TableCalendar<Schedule>(
-                  calendarFormat: controller.calendarFormat,
-                  daysOfWeekHeight: 30,
-                  eventLoader: _eventLoader,
-                  firstDay: controller.firstDay,
-                  focusedDay: controller.focusedDay,
-                  lastDay: controller.lastDay,
-                  locale: Locale('ko', 'KR').toString(),
-                  rangeEndDay: controller.rangeEnd,
-                  rangeSelectionMode: controller.rangeSelectionMode,
-                  rangeStartDay: controller.rangeStart,
-                  selectedDayPredicate: (day) =>
-                      isSameDay(controller.selectedDay, day),
-                  startingDayOfWeek: StartingDayOfWeek.sunday,
-                  daysOfWeekStyle: daysOfWeekStyle,
-                  calendarStyle: calendarStyle,
-                  headerStyle: headerStyle,
-                  onDaySelected: _onDaySelected,
-                  onRangeSelected: _onRangeSelected,
-                  onFormatChanged: _onFormatChanged,
-                  onPageChanged: _onPageChanged,
-                  calendarBuilders: builders,
-                ))));
+              calendarFormat: controller.calendarFormat,
+              daysOfWeekHeight: 30,
+              eventLoader: _eventLoader,
+              firstDay: controller.firstDay,
+              focusedDay: controller.focusedDay,
+              lastDay: controller.lastDay,
+              locale: const Locale('ko', 'KR').toString(),
+              rangeEndDay: controller.rangeEnd,
+              rangeSelectionMode: controller.rangeSelectionMode,
+              rangeStartDay: controller.rangeStart,
+              selectedDayPredicate: (day) =>
+                  isSameDay(controller.selectedDay, day),
+              daysOfWeekStyle: daysOfWeekStyle,
+              calendarStyle: calendarStyle,
+              headerStyle: headerStyle,
+              onDaySelected: _onDaySelected,
+              onRangeSelected: _onRangeSelected,
+              onFormatChanged: _onFormatChanged,
+              onPageChanged: _onPageChanged,
+              calendarBuilders: builders,
+            ))));
   }
 
   void _onDaySelected(DateTime selectedDay, DateTime focusedDay) {

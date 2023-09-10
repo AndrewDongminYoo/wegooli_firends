@@ -267,19 +267,3 @@ class CopyableTextFieldWithShortcuts extends StatelessWidget {
     );
   }
 }
-
-class DemoApp extends StatelessWidget {
-  const DemoApp({super.key});
-
-  static const String title = 'Shortcuts and Actions Demo';
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: title,
-      home: CopyableTextFieldWithShortcuts(),
-    );
-  }
-}
-
-// void main(List<String> args) => runApp(DemoApp());

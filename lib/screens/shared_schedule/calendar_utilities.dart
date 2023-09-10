@@ -12,7 +12,6 @@ import '/core/app_export.dart';
 class Schedule {
   Schedule({
     required this.accountId,
-    required this.highlightColor,
     this.seq,
     this.teamSeq,
     this.delYn,
@@ -29,10 +28,26 @@ class Schedule {
   String? endAt = kToday.toString();
   DateTime? createdAt = DateTime.now();
   DateTime? updatedAt = DateTime.now();
-  Color highlightColor;
+  Color get highlightColor {
+    final color = UserController.to.members
+        .firstWhere((element) => element.accountId == accountId)
+        .color;
+    return Color(int.parse(colorFromHex(color!).toString(), radix: 16));
+  }
 
   @override
   String toString() => accountId;
+
+  static Schedule fromModel(ScheduleModel it) => Schedule(
+        accountId: it.accountId!,
+        seq: it.seq,
+        teamSeq: it.teamSeq,
+        delYn: it.delYn,
+        startAt: it.startAt,
+        endAt: it.endAt,
+        createdAt: it.createdAt,
+        updatedAt: it.updatedAt,
+      );
 }
 
 int getHashCode(DateTime key) {

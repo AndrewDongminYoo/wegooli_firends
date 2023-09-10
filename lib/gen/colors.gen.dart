@@ -44,6 +44,15 @@ class ColorConstant {
   /// Color: #7951ea
   static const Color actionSecondaryDefault = Color(0xFF7951EA);
 
+  /// Color: #38dd66
+  static const Color carStatusAble = Color(0xFF38DD66);
+
+  /// Color: #ff9a3d
+  static const Color carStatusNormal = Color(0xFFFF9A3D);
+
+  /// Color: #e92222
+  static const Color carStatusUnable = Color(0xFFE92222);
+
   /// Color: #222222
   static const Color fontColorBlack = Color(0xFF222222);
 
@@ -59,12 +68,30 @@ class ColorConstant {
   /// Color: #ffffff
   static const Color fontColorWhite = Color(0xFFFFFFFF);
 
+  /// Color: #484848
+  static const Color greyGrey10 = Color(0xFF484848);
+
+  /// Color: #000000
+  static const Color labelColorLightPrimary = Color(0xFF000000);
+
+  /// Color: #09101d
+  static const Color neutralBlack = Color(0xFF09101D);
+
+  /// Color: #ffffff
+  static const Color neutralWhite = Color(0xFFFFFFFF);
+
+  /// Color: #000000
+  static const Color planBlack000 = Color(0xFF000000);
+
+  /// Color: #ffffff
+  static const Color planBlackFff = Color(0xFFFFFFFF);
+
+  /// Color: #666666
+  static const Color planGrey666 = Color(0xFF666666);
+
+  /// Color: #eeeeee
+  static const Color planGreyEee = Color(0xFFEEEEEE);
+
   /// Color: #f6f7f7
   static const Color separationBar = Color(0xFFF6F7F7);
-
-  /// Color: #38dd66
-  static const Color statusStatusAble = Color(0xFF38DD66);
-
-  /// Color: #e92222
-  static const Color statusStatusUnable = Color(0xFFE92222);
 }

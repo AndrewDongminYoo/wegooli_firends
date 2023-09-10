@@ -15,7 +15,8 @@ class UntouchableMask extends GetView<VehicleController> {
     return Container(
       height: mediaQueryData.size.height - getVerticalSize(200),
       width: mediaQueryData.size.width,
-      decoration: const BoxDecoration(color: ColorConstant.actionNeutralDisabled),
+      decoration:
+          const BoxDecoration(color: ColorConstant.actionNeutralDisabled),
       child: Center(
         child: Container(
           alignment: Alignment.center,
@@ -28,7 +29,8 @@ class UntouchableMask extends GetView<VehicleController> {
             controller.availableNow.value
                 ? l10ns.hongGilDongIsUsingIt(controller.driverName.text)
                 : l10ns.available,
-            style: const TextStyle(color: ColorConstant.fontColorWhite, fontSize: 16),
+            style: const TextStyle(
+                color: ColorConstant.fontColorWhite, fontSize: 16),
           ),
         ),
       ),

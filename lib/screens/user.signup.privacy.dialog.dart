@@ -94,8 +94,8 @@ class ConfirmDialog extends StatelessWidget {
                   tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                   foregroundColor:
                       MaterialStateProperty.all<Color>(const Color(0xFF000000)),
-                  backgroundColor:
-                      const MaterialStatePropertyAll<Color>(ColorConstant.actionPrimaryDefault),
+                  backgroundColor: const MaterialStatePropertyAll<Color>(
+                      ColorConstant.actionPrimaryDefault),
                   fixedSize: MaterialStateProperty.all<Size>(
                     Size(
                       getSize(164),

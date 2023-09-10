@@ -48,13 +48,7 @@ class _TeamReservationsItemState extends State<TeamReservationsItem> {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
         ),
-        shadows: const [
-          BoxShadow(
-            color: Color(0x19000000),
-            blurRadius: 10,
-            offset: Offset(2, 2),
-          ),
-        ],
+        shadows: AppDecoration.shadows,
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,

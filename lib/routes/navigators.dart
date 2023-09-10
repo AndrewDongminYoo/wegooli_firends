@@ -46,8 +46,9 @@ Future<dynamic>? goRegisteredCardList() =>
     Get.toNamed(AppRoutes.registeredCardList);
 // [Page] 운전면허증 등록
 Future<dynamic>? goRegisterLicense() => Get.toNamed(AppRoutes.registerLicense);
-// [Page] 입력/가입 성공
-Future<dynamic>? goRegisterSuccess() => Get.toNamed(AppRoutes.registerSuccess);
+// [Page] 입력/가입 성공 <다시 돌아올 수 없어야..?>
+Future<dynamic>? goRegisterSuccess() =>
+    Get.offAllNamed(AppRoutes.registerSuccess);
 // [Page] 주소 검색/등록
 Future<dynamic>? goRegisterZipCode() => Get.toNamed(AppRoutes.registerZipCode);
 // [Page] 팀 스케줄 공유

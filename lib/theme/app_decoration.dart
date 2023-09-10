@@ -64,24 +64,18 @@ class AppDecoration {
       );
 
   // Shadow decorations
-  static BoxDecoration get shadow => BoxDecoration(
-        color: theme.colorScheme.onPrimaryContainer,
-        boxShadow: [
-          BoxShadow(
-            color: appTheme.black900.withOpacity(0.1),
-            spreadRadius: getHorizontalSize(2),
-            blurRadius: getHorizontalSize(2),
-            offset: const Offset(
-              2,
-              2,
-            ),
-          ),
-        ],
-      );
+  static List<BoxShadow> get shadows => const [
+    BoxShadow(color: Color(0x16000000), blurRadius: 10, offset: Offset(2, 2)),
+  ];
+
+  static List<BoxShadow> get tightElevation3 => const [
+    BoxShadow(color: Color(0x38000000), blurRadius: 6, offset: Offset(0, 2)),
+  ];
   static BoxDecoration get minimal => BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadiusStyle.circleBorder65,
-          border: Border.all(width: 0.5, color: ColorConstant.actionNeutralDisabled));
+      color: Colors.white,
+      borderRadius: BorderRadiusStyle.circleBorder65,
+      border:
+          Border.all(width: 0.5, color: ColorConstant.actionNeutralDisabled));
 }
 
 class BorderRadiusStyle {

@@ -13,7 +13,10 @@ class SignUpAcceptTermsNextButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: getMargin(left: 24, right: 28, bottom: 41),
-      decoration: AppDecoration.shadow,
+      decoration: BoxDecoration(
+        color: theme.colorScheme.onPrimaryContainer,
+        boxShadow: AppDecoration.shadows,
+      ),
       child: CustomElevatedButton(
         text: l10ns.acceptanceComplete,
         buttonStyle: CustomButtonStyles.fillAmberA200C26,

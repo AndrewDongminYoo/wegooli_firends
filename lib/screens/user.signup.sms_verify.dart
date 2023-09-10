@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 // 🌎 Project imports:
-import '/main.dart';
 import '/lib.dart';
+import '/main.dart';
 
 class SMSValidationFormScreen extends StatefulWidget {
   const SMSValidationFormScreen({

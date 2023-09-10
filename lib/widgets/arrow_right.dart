@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import '/core/app_export.dart';
 
 class ArrowRight extends StatelessWidget {
-  final void Function()? onTap;
   const ArrowRight({super.key, this.onTap});
+  final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return CustomImageView(

@@ -80,7 +80,7 @@ class CustomDropDown extends StatelessWidget {
             onChanged!(value!);
           }));
   InputDecoration get decoration => InputDecoration(
-      hintText: hintText ?? "",
+      hintText: hintText ?? '',
       hintStyle: hintStyle ?? CustomTextStyles.bodyLargeGray500,
       prefixIcon: prefix,
       prefixIconConstraints: prefixConstraints,
@@ -93,13 +93,12 @@ class CustomDropDown extends StatelessWidget {
           contentPadding ?? getPadding(left: 10, top: 14, bottom: 14),
       border: borderDecoration ??
           OutlineInputBorder(
-              borderSide: BorderSide(color: appTheme.blueGray30033, width: 1)),
+              borderSide: BorderSide(color: appTheme.blueGray30033)),
       enabledBorder: borderDecoration ??
           OutlineInputBorder(
-              borderSide: BorderSide(color: appTheme.blueGray30033, width: 1)),
+              borderSide: BorderSide(color: appTheme.blueGray30033)),
       focusedBorder: borderDecoration ??
           OutlineInputBorder(
               borderRadius: BorderRadius.circular(getHorizontalSize(4)),
-              borderSide:
-                  BorderSide(color: theme.colorScheme.onError, width: 1)));
+              borderSide: BorderSide(color: theme.colorScheme.onError)));
 }

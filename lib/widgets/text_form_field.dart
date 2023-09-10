@@ -80,7 +80,6 @@ class CustomTextFormField extends StatelessWidget {
       width: width ?? double.maxFinite,
       margin: margin,
       child: TextFormField(
-          canRequestFocus: true,
           obscuringCharacter: obscureChar,
           inputFormatters: inputFormatters,
           obscureText: obscureText!,
@@ -99,7 +98,7 @@ class CustomTextFormField extends StatelessWidget {
           onEditingComplete: () => FocusScope.of(context).nextFocus(),
           initialValue: initialValue));
   InputDecoration get decoration => InputDecoration(
-        hintText: hintText ?? "",
+        hintText: hintText ?? '',
         hintStyle: hintStyle ?? CustomTextStyles.bodyLargeGray50002,
         prefixIcon: prefix,
         prefixIconConstraints: prefixConstraints,
@@ -110,7 +109,7 @@ class CustomTextFormField extends StatelessWidget {
         isDense: true,
         contentPadding: contentPadding ??
             getPadding(left: 12, top: 14, right: 12, bottom: 14),
-        counterText: "",
+        counterText: '',
         border: borderDecoration ?? createBorderSide(const Color(0xFFB9BCC3)),
         enabledBorder:
             borderDecoration ?? createBorderSide(const Color(0xFFB9BCC3)),
@@ -131,7 +130,7 @@ extension TextFormFieldStyleHelper on CustomTextFormField {
       UnderlineInputBorder(borderSide: BorderSide(color: appTheme.gray300));
   static OutlineInputBorder get outlineOnErrorTL5 => OutlineInputBorder(
       borderRadius: BorderRadius.circular(getHorizontalSize(5)),
-      borderSide: BorderSide(color: theme.colorScheme.onError, width: 1));
+      borderSide: BorderSide(color: theme.colorScheme.onError));
   static OutlineInputBorder get fillOnPrimary =>
       const OutlineInputBorder(borderSide: BorderSide.none);
   static OutlineInputBorder get fillPrimary => OutlineInputBorder(
@@ -147,7 +146,6 @@ InputBorder createBorderSide(Color borderColor, {double radius = 5.0}) {
     borderRadius: BorderRadius.circular(getHorizontalSize(radius)),
     borderSide: BorderSide(
       color: borderColor,
-      width: 1,
     ),
   );
 }

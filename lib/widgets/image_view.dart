@@ -8,7 +8,6 @@ import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-// ignore: must_be_immutable
 class CustomImageView extends StatelessWidget {
   /// a [CustomImageView] it can be used for showing any type of images
   /// it will shows the placeholder image if image is not found on network image
@@ -29,28 +28,28 @@ class CustomImageView extends StatelessWidget {
     this.border,
     this.placeHolder = 'assets/images/image_not_found.png',
   });
-  double? height;
-  double? width;
+  final double? height;
+  final double? width;
 
   ///[imagePath] is required parameter for showing png,jpg,etc image
-  String? imagePath;
+  final String? imagePath;
 
   ///[svgPath] is required parameter for showing svg image
-  String? svgPath;
+  final String? svgPath;
 
   ///[url] is required parameter for fetching network image
-  String? url;
+  final String? url;
 
   ///[file] is required parameter for fetching image file
-  File? file;
-  Color? color;
-  BoxFit? fit;
+  final File? file;
+  final Color? color;
+  final BoxFit? fit;
   final String placeHolder;
-  Alignment? alignment;
-  EdgeInsetsGeometry? margin;
-  VoidCallback? onTap;
-  BorderRadius? radius;
-  BoxBorder? border;
+  final Alignment? alignment;
+  final EdgeInsetsGeometry? margin;
+  final VoidCallback? onTap;
+  final BorderRadius? radius;
+  final BoxBorder? border;
 
   @override
   Widget build(BuildContext context) {
@@ -128,8 +127,8 @@ class CustomImageView extends StatelessWidget {
               height: 30,
               width: 30,
               child: LinearProgressIndicator(
-                color: const Color(0xFFEEEEEE),
-                backgroundColor: const Color(0xFFF5F5F5),
+                color: Color(0xFFEEEEEE),
+                backgroundColor: Color(0xFFF5F5F5),
               )),
           errorWidget: (context, url, error) => Image.asset(
                 placeHolder,

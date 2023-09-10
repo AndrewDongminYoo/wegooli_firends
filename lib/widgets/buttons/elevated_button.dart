@@ -36,6 +36,8 @@ class CustomElevatedButton extends BaseButton {
   final Widget? leftIcon;
   final Widget? rightIcon;
   final bool isLoading;
+
+  @override
   final bool isDisabled;
 
   @override
@@ -48,37 +50,26 @@ class CustomElevatedButton extends BaseButton {
   }
 
   Widget get buildElevatedButtonWidget => Container(
-        height: height ?? getVerticalSize(52),
-        width: width ?? double.maxFinite,
-        margin: margin,
-        decoration: decoration,
-        child: ElevatedButton(
-            style: buttonStyle ??
-                CustomButtonStyles.fillPrimaryC26.copyWith(
-                    fixedSize: MaterialStateProperty.all<Size>(
-                  Size(
-                    double.maxFinite,
-                    getVerticalSize(52),
-                  ),
-                )),
-            onPressed: () {
-              if (isDisabled || isLoading) {
-                return;
-              } else {
-                onTap!();
-              }
-            },
-            child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  leftIcon ?? const SizedBox.shrink(),
-                  (isLoading)
-                      ? CupertinoActivityIndicator(
-                          color: appTheme.gray700, radius: 14)
-                      : Text(text,
-                          style: buttonTextStyle ??
-                              CustomTextStyles.titleMedium18),
-                  rightIcon ?? const SizedBox.shrink(),
-                ])));
+      height: height ?? getVerticalSize(52),
+      width: width ?? double.maxFinite,
+      margin: margin,
+      decoration: decoration,
+      child: ElevatedButton(
+          style: buttonStyle ?? CustomButtonStyles.fillPrimaryC26,
+          onPressed: () {
+            if (isDisabled || isLoading) {
+              return;
+            } else {
+              onTap!();
+            }
+          },
+          child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+            leftIcon ?? const SizedBox.shrink(),
+            if (isLoading)
+              CupertinoActivityIndicator(color: appTheme.gray700, radius: 14)
+            else
+              Text(text,
+                  style: buttonTextStyle ?? CustomTextStyles.titleMedium18),
+            rightIcon ?? const SizedBox.shrink(),
+          ])));
 }

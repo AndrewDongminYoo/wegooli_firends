@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
-// ignore: must_be_immutable
 class CustomSwitch extends StatelessWidget {
   CustomSwitch({
     Key? key,
@@ -18,15 +17,10 @@ class CustomSwitch extends StatelessWidget {
   }) : super(key: key);
 
   final Alignment? alignment;
-
-  bool? value;
-
+  final bool? value;
   final Function(bool) onChange;
-
   final double? width;
-
   final double? height;
-
   final EdgeInsetsGeometry? margin;
 
   @override
@@ -47,7 +41,5 @@ class CustomSwitch extends StatelessWidget {
       trackColor: theme.colorScheme.onPrimaryContainer,
       thumbColor: theme.colorScheme.onError,
       activeColor: theme.colorScheme.primary,
-      onChanged: (value) {
-        onChange(value);
-      });
+      onChanged: onChange);
 }

@@ -7,14 +7,13 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
-// ignore: must_be_immutable
 class CustomBottomNavBar extends StatefulWidget {
   CustomBottomNavBar({
     Key? key,
     required this.id,
   }) : super(key: key);
 
-  int id;
+  final int id;
   @override
   State<CustomBottomNavBar> createState() => _CustomBottomNavBarState();
 }
@@ -43,7 +42,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
       iconPath: Assets.svg.imgUser2.path,
       activeIconPath: Assets.svg.imgUser2.path,
       title: l10ns.myPage,
-    )
+    ),
   ];
 
   @override
@@ -64,35 +63,28 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
           showSelectedLabels: false,
           showUnselectedLabels: false,
           selectedFontSize: 0,
-          unselectedFontSize: 12.0,
           elevation: 1,
           currentIndex: selectedIndex.value,
           type: BottomNavigationBarType.fixed,
           items: List.generate(bottomMenuList.length, (index) {
             return BottomNavigationBarItem(
-              icon: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    CustomImageView(
-                        svgPath: bottomMenuList[index].iconPath,
-                        height: getSize(24),
-                        width: getSize(24),
-                        color: appTheme.gray400),
-                    Padding(
-                      padding: getPadding(top: 4),
-                      child: Text(
-                        bottomMenuList[index].title ?? "",
-                        style: CustomTextStyles.bodySmallInter10Gray400
-                            .copyWith(color: appTheme.gray400),
-                      ),
-                    )
-                  ]),
+              icon: Column(mainAxisSize: MainAxisSize.min, children: [
+                CustomImageView(
+                    svgPath: bottomMenuList[index].iconPath,
+                    height: getSize(24),
+                    width: getSize(24),
+                    color: appTheme.gray400),
+                Padding(
+                  padding: getPadding(top: 4),
+                  child: Text(
+                    bottomMenuList[index].title ?? '',
+                    style: CustomTextStyles.bodySmallInter10Gray400
+                        .copyWith(color: appTheme.gray400),
+                  ),
+                ),
+              ]),
               activeIcon: Column(
                 mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   CustomImageView(
                     svgPath: bottomMenuList[index].activeIconPath,
@@ -103,7 +95,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
                   Padding(
                     padding: getPadding(top: 4),
                     child: Text(
-                      bottomMenuList[index].title ?? "",
+                      bottomMenuList[index].title ?? '',
                       style: CustomTextStyles.bodySmallInterOnPrimary,
                     ),
                   ),
@@ -122,7 +114,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
               case 3:
                 destination = AppRoutes.myProfile;
               default:
-                destination = userController.teams.length > 0
+                destination = userController.teams.isNotEmpty
                     ? AppRoutes.sharedSchedule
                     : AppRoutes.teamInvitation;
             }

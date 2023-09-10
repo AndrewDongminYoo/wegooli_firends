@@ -5,13 +5,13 @@ import 'package:flutter/material.dart';
 import '/core/app_export.dart';
 
 class CustomInputLabel extends StatelessWidget {
-  final bool isRequired;
-  final String labelText;
   const CustomInputLabel({
     this.isRequired = true,
     required this.labelText,
     super.key,
   });
+  final bool isRequired;
+  final String labelText;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class CustomInputLabel extends StatelessWidget {
         padding: getPadding(left: 2, bottom: 5),
         child: (isRequired
             ? Text(
-                "*",
+                '*',
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.left,
                 style: theme.textTheme.titleSmall!.copyWith(
@@ -38,7 +38,7 @@ class CustomInputLabel extends StatelessWidget {
                 ),
               )
             : const Text('')),
-      )
+      ),
     ]);
   }
 }

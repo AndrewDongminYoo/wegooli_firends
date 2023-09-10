@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
-// ignore: must_be_immutable
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({
     Key? key,
@@ -29,7 +28,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
         elevation: 0,
-        toolbarHeight: height ?? getVerticalSize(55.0),
+        toolbarHeight: height ?? getVerticalSize(55),
         automaticallyImplyLeading: false,
         backgroundColor: Colors.transparent,
         flexibleSpace: _getStyle(),
@@ -43,18 +42,18 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Size get preferredSize =>
-      Size(mediaQueryData.size.width, height ?? getVerticalSize(55.0));
+      Size(mediaQueryData.size.width, height ?? getVerticalSize(55));
   Widget _getStyle() {
     switch (styleType) {
       case Style.bgOutline:
         return Container(
-            height: getVerticalSize(45.0),
+            height: getVerticalSize(45),
             width: double.maxFinite,
             decoration: BoxDecoration(
                 border: Border(
                     bottom: BorderSide(
                         color: appTheme.blueGray30033,
-                        width: getHorizontalSize(1.0)))));
+                        width: getHorizontalSize(1)))));
       default:
         return const SizedBox.shrink();
     }
@@ -76,7 +75,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               onTapLeading != null ? onTapLeading.call() : goBack();
             }),
         centerTitle: true,
-        title: AppbarTitle(text: titleText ?? "FRIENDS"));
+        title: AppbarTitle(text: titleText ?? 'FRIENDS'));
   }
 
   static CustomAppBar getFriendsTypoAppBar() {

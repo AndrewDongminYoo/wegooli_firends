@@ -13,7 +13,7 @@ class FriendsByWegooli extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text("FRIENDS",
+        Text('FRIENDS',
             overflow: TextOverflow.ellipsis,
             textAlign: TextAlign.left,
             style: theme.textTheme.displayMedium!.copyWith(
@@ -24,7 +24,7 @@ class FriendsByWegooli extends StatelessWidget {
             child: Padding(
                 padding: getPadding(right: 68),
                 child: Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-                  Text("By",
+                  Text('By',
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.left,
                       style: CustomTextStyles

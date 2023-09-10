@@ -108,7 +108,7 @@ class _CopyableTextFieldState extends State<CopyableTextField> {
 class LoggingShortcutManager extends ShortcutManager {
   @override
   KeyEventResult handleKeypress(BuildContext context, RawKeyEvent event) {
-    final KeyEventResult result = super.handleKeypress(context, event);
+    final result = super.handleKeypress(context, event);
     if (result == KeyEventResult.handled) {
       print('Handled shortcut $event in $context');
     }
@@ -162,7 +162,7 @@ class CopyAction extends Action<CopyIntent> {
 
   @override
   Object? invoke(covariant CopyIntent intent) {
-    final String selectedString = controller.text.substring(
+    final selectedString = controller.text.substring(
       controller.selection.baseOffset,
       controller.selection.extentOffset,
     );
@@ -214,7 +214,7 @@ class CopyAllAction extends Action<CopyAllIntent> {
       extentOffset: controller.text.length,
       affinity: controller.selection.affinity,
     );
-    final String selectedString = controller.text.substring(
+    final selectedString = controller.text.substring(
       controller.selection.baseOffset,
       controller.selection.extentOffset,
     );
@@ -237,7 +237,7 @@ class PasteAction extends Action<PasteIntent> {
 
   @override
   Object? invoke(covariant PasteIntent intent) async {
-    ClipboardData? copied = await Clipboard.getData(Clipboard.kTextPlain);
+    final copied = await Clipboard.getData(Clipboard.kTextPlain);
     controller.text += copied?.text ?? '';
     print('$copied is Pasted!!');
     return null;

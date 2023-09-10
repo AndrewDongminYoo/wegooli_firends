@@ -4,13 +4,7 @@ import 'package:flutter/material.dart';
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
-// ignore: must_be_immutable
 class AppbarImage extends StatelessWidget {
-  String? imagePath;
-  String? svgPath;
-  EdgeInsetsGeometry? margin;
-  Function? onTap;
-
   AppbarImage({
     super.key,
     this.imagePath,
@@ -18,6 +12,10 @@ class AppbarImage extends StatelessWidget {
     this.margin,
     this.onTap,
   });
+  final String? imagePath;
+  final String? svgPath;
+  final EdgeInsetsGeometry? margin;
+  final Function? onTap;
 
   @override
   Widget build(BuildContext context) {

@@ -90,7 +90,7 @@ class CustomSearchView extends StatelessWidget {
           decoration: decoration,
           validator: validator));
   InputDecoration get decoration => InputDecoration(
-      hintText: hintText ?? "",
+      hintText: hintText ?? '',
       hintStyle: hintStyle ?? CustomTextStyles.bodyLargeGray50002,
       prefixIcon: prefix,
       prefixIconConstraints: prefixConstraints,
@@ -99,8 +99,7 @@ class CustomSearchView extends StatelessWidget {
               padding: EdgeInsets.only(right: getHorizontalSize(15)),
               child: IconButton(
                   onPressed: () => controller!.clear(),
-                  icon:
-                      const Icon(Icons.clear, color: const Color(0xFF757575)))),
+                  icon: const Icon(Icons.clear, color: Color(0xFF757575)))),
       suffixIconConstraints: suffixConstraints,
       isDense: true,
       contentPadding:
@@ -110,16 +109,13 @@ class CustomSearchView extends StatelessWidget {
       border: borderDecoration ??
           OutlineInputBorder(
               borderRadius: BorderRadius.circular(getHorizontalSize(5)),
-              borderSide:
-                  BorderSide(color: theme.colorScheme.onError, width: 1)),
+              borderSide: BorderSide(color: theme.colorScheme.onError)),
       enabledBorder: borderDecoration ??
           OutlineInputBorder(
               borderRadius: BorderRadius.circular(getHorizontalSize(5)),
-              borderSide:
-                  BorderSide(color: theme.colorScheme.onError, width: 1)),
+              borderSide: BorderSide(color: theme.colorScheme.onError)),
       focusedBorder: borderDecoration ??
           OutlineInputBorder(
               borderRadius: BorderRadius.circular(getHorizontalSize(5)),
-              borderSide:
-                  BorderSide(color: theme.colorScheme.onError, width: 1)));
+              borderSide: BorderSide(color: theme.colorScheme.onError)));
 }

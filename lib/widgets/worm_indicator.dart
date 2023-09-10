@@ -12,7 +12,7 @@ class SmoothIndicators extends StatefulWidget {
 }
 
 class _SmoothIndicatorsState extends State<SmoothIndicators> {
-  final controller = PageController(viewportFraction: 0.8, keepPage: true);
+  final controller = PageController(viewportFraction: 0.8);
 
   @override
   Widget build(BuildContext context) {
@@ -28,8 +28,8 @@ class _SmoothIndicatorsState extends State<SmoothIndicators> {
                 height: 280,
                 child: Center(
                     child: Text(
-                  "Page $index",
-                  style: const TextStyle(color: const Color(0xFF3F51B5)),
+                  'Page $index',
+                  style: const TextStyle(color: Color(0xFF3F51B5)),
                 )),
               ),
             ));
@@ -38,7 +38,6 @@ class _SmoothIndicatorsState extends State<SmoothIndicators> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               const SizedBox(height: 16),
               SizedBox(
@@ -55,15 +54,13 @@ class _SmoothIndicatorsState extends State<SmoothIndicators> {
                 padding: EdgeInsets.only(top: 24, bottom: 12),
                 child: Text(
                   'Worm',
-                  style: TextStyle(color: const Color(0x89000000)),
+                  style: TextStyle(color: Color(0x89000000)),
                 ),
               ),
               SmoothPageIndicator(
                 controller: controller,
                 count: pages.length,
                 effect: const WormEffect(
-                  dotHeight: 16,
-                  dotWidth: 16,
                   type: WormType.thinUnderground,
                 ),
               ),
@@ -71,15 +68,13 @@ class _SmoothIndicatorsState extends State<SmoothIndicators> {
                 padding: EdgeInsets.only(top: 16, bottom: 8),
                 child: Text(
                   'Jumping Dot',
-                  style: TextStyle(color: const Color(0x89000000)),
+                  style: TextStyle(color: Color(0x89000000)),
                 ),
               ),
               SmoothPageIndicator(
                 controller: controller,
                 count: pages.length,
                 effect: const JumpingDotEffect(
-                  dotHeight: 16,
-                  dotWidth: 16,
                   jumpScale: .7,
                   verticalOffset: 15,
                 ),
@@ -88,7 +83,7 @@ class _SmoothIndicatorsState extends State<SmoothIndicators> {
                 padding: EdgeInsets.only(top: 16, bottom: 12),
                 child: Text(
                   'Scrolling Dots',
-                  style: TextStyle(color: const Color(0x89000000)),
+                  style: TextStyle(color: Color(0x89000000)),
                 ),
               ),
               SmoothPageIndicator(
@@ -96,8 +91,6 @@ class _SmoothIndicatorsState extends State<SmoothIndicators> {
                   count: pages.length,
                   effect: const ScrollingDotsEffect(
                     activeStrokeWidth: 2.6,
-                    activeDotScale: 1.3,
-                    maxVisibleDots: 5,
                     radius: 8,
                     spacing: 10,
                     dotHeight: 12,
@@ -107,7 +100,7 @@ class _SmoothIndicatorsState extends State<SmoothIndicators> {
                 padding: EdgeInsets.only(top: 16, bottom: 16),
                 child: Text(
                   'Customizable Effect',
-                  style: TextStyle(color: const Color(0x89000000)),
+                  style: TextStyle(color: Color(0x89000000)),
                 ),
               ),
               Container(
@@ -144,15 +137,14 @@ class _SmoothIndicatorsState extends State<SmoothIndicators> {
                       //     bottomLeft: Radius.circular(16),
                       //     bottomRight: Radius.circular(2)),
                       borderRadius: BorderRadius.circular(16),
-                      verticalOffset: 0,
                     ),
-                    spacing: 6.0,
+                    spacing: 6,
                     // activeColorOverride: (i) => colors[i],
                     inActiveColorOverride: (i) => colors[i],
                   ),
                 ),
               ),
-              const SizedBox(height: 32.0),
+              const SizedBox(height: 32),
             ],
           ),
         ),
@@ -162,10 +154,10 @@ class _SmoothIndicatorsState extends State<SmoothIndicators> {
 }
 
 const colors = [
-  const Color(0xFFF44336),
-  const Color(0xFF4CAF50),
-  const Color(0xFF69F0AE),
-  const Color(0xFFFFD740),
-  const Color(0xFF2196F3),
-  const Color(0xFFFFC107),
+  Color(0xFFF44336),
+  Color(0xFF4CAF50),
+  Color(0xFF69F0AE),
+  Color(0xFFFFD740),
+  Color(0xFF2196F3),
+  Color(0xFFFFC107),
 ];

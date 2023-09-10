@@ -8,11 +8,11 @@ class BaseButton extends StatelessWidget {
     this.onTap,
     this.buttonStyle,
     this.buttonTextStyle,
-    this.isDisabled,
     this.height,
     this.width,
     this.margin,
     this.alignment,
+    this.isDisabled = false,
   }) : super(key: key);
 
   final String text;

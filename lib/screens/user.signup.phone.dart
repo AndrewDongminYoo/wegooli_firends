@@ -8,12 +8,11 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 class ValidatePhone extends GetWidget<UserController> {
+  ValidatePhone({super.key});
   final _nameText = FocusNode();
   final _birthday = FocusNode();
   final _socialId = FocusNode();
   final _phoneNum = FocusNode();
-
-  ValidatePhone({super.key});
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -24,22 +23,17 @@ class ValidatePhone extends GetWidget<UserController> {
         body: Container(
             width: double.maxFinite,
             padding: getPadding(left: 16, top: 32, right: 16, bottom: 32),
-            child:
-                Column(mainAxisAlignment: MainAxisAlignment.start, children: [
-              Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    CustomInputLabel(labelText: l10ns.name),
-                    KoreanNameFormField(
-                        controller: controller, focusNode: _nameText)
-                  ]),
+            child: Column(children: [
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                CustomInputLabel(labelText: l10ns.name),
+                KoreanNameFormField(
+                    controller: controller, focusNode: _nameText),
+              ]),
               Padding(
                   padding: getPadding(top: 26, bottom: 7),
                   child: Column(
                       mainAxisSize: MainAxisSize.min,
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         CustomInputLabel(
                             labelText: l10ns.digitOf13SocialSecurityNumber),
@@ -51,7 +45,7 @@ class ValidatePhone extends GetWidget<UserController> {
                                 focusNode: _birthday,
                                 readonly: false,
                               ),
-                              const Text("-", style: TextStyle(fontSize: 24)),
+                              const Text('-', style: TextStyle(fontSize: 24)),
                               SocialSecurityNumberFormField(
                                   controller: controller, focusNode: _socialId),
                             ]),
@@ -60,7 +54,7 @@ class ValidatePhone extends GetWidget<UserController> {
                                 .subscriptionsAreRestrictedToThoseUnderTheAgeOf26),
                       ])),
               SMSValidationFormScreen(
-                  controller: controller, focusNode: _phoneNum)
+                  controller: controller, focusNode: _phoneNum),
             ])),
         bottomNavigationBar:
             ValidatePhoneCompleteButton(controller: controller),

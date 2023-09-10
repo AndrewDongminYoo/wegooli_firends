@@ -21,8 +21,7 @@ class InvitationCodeCopyFormField extends StatelessWidget {
       controller: controller,
       focusNode: focusNode,
       filled: true,
-      enabled: true,
-      hintText: "xxxx-xxxx-xxxx-xxxx",
+      hintText: 'xxxx-xxxx-xxxx-xxxx',
       contentPadding: getPadding(all: 14),
       inputFormatters: <TextInputFormatter>[
         SeperateTextFormatter(sample: 'XXXX-XXXX-XXXX-XXXX', separator: '-'),

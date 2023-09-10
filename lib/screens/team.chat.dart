@@ -13,7 +13,6 @@ import 'package:sendbird_sdk/sendbird_sdk.dart';
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
-// ignore: must_be_immutable
 class DashChatWithFriendsPage extends GetWidget<ConnectionController> {
   const DashChatWithFriendsPage({super.key});
 
@@ -34,17 +33,15 @@ class DashChatWithFriendsPage extends GetWidget<ConnectionController> {
                       (message, previousMessage, nextMessage) => BoxDecoration(
                           color: message.user.id ==
                                   UserController.to.currentUser.value.id
-                              ? const Color(0xFFFFE142)
-                              : const Color(0x33A4A8AF),
+                              ? ColorConstant.actionPrimaryDefault
+                              : ColorConstant.actionNeutralDisabled,
                           borderRadius: BorderRadius.circular(15)),
                   // borderRadius: 18.0,
-                  textColor: const Color(0xFF222222),
-                  containerColor: const Color(0x33A4A8AF),
-                  currentUserTextColor: const Color(0xFF222222),
-                  currentUserContainerColor: const Color(0xFFFFE142),
-                  timeFontSize: 12,
-                  showTime: false,
-                  showOtherUsersName: true),
+                  textColor: ColorConstant.fontColorBlack,
+                  containerColor: ColorConstant.actionNeutralDisabled,
+                  currentUserTextColor: ColorConstant.fontColorBlack,
+                  currentUserContainerColor: ColorConstant.actionPrimaryDefault,
+                  timeFontSize: 12),
               inputOptions: InputOptions(
                 sendOnEnter: true,
                 alwaysShowSend: true,
@@ -61,19 +58,19 @@ class DashChatWithFriendsPage extends GetWidget<ConnectionController> {
                   IconButton(
                       icon: const Icon(
                         Icons.camera_alt,
-                        color: const Color(0xFF000000),
+                        color: Color(0xFF000000),
                       ),
                       onPressed: () async {
                         await controller.getImage(ImageSource.gallery);
-                      })
+                      }),
                 ],
-                cursorStyle: const CursorStyle(color: const Color(0xFF000000)),
+                cursorStyle: const CursorStyle(color: Color(0xFF000000)),
                 inputDecoration: InputDecoration(
-                  fillColor: const Color(0x33A4A8AF),
+                  fillColor: ColorConstant.actionNeutralDisabled,
                   filled: true,
                   hintText: '채팅을 입력해주세요😃',
-                  hintStyle: const TextStyle(
-                      color: const Color(0xFF91969D), fontSize: 15),
+                  hintStyle:
+                      const TextStyle(color: Color(0xFF91969D), fontSize: 15),
                   constraints: BoxConstraints.expand(
                     height: getVerticalSize(36),
                   ),

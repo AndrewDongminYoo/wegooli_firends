@@ -31,8 +31,7 @@ class EmailAddressFormField extends StatelessWidget {
         inputFormatters: [
           FilteringTextInputFormatter.allow(
               // RegExp(r'[a-zA-Z0-9@!@.#]+$'),
-              RegExp(r'[a-zA-Z0-9]+\.*[a-zA-Z0-9]*@+[a-z]+.[a-z]+$')
-          )
+              RegExp(r'[a-zA-Z0-9]+\.*[a-zA-Z0-9]*@+[a-z]+.[a-z]+$'))
         ],
         validator: (value) {
           if (value == null) {

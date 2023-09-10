@@ -34,66 +34,46 @@ class _RegisterCreditCardState extends State<RegisterCreditCard> {
       body: Container(
           width: double.maxFinite,
           padding: getPadding(left: 16, top: 35, right: 16, bottom: 35),
-          child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
-            Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  CustomInputLabel(labelText: l10ns.cardNumber),
-                  CreditCardFormField(controller: controller)
-                ]),
+          child: Column(children: [
+            Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              CustomInputLabel(labelText: l10ns.cardNumber),
+              CreditCardFormField(controller: controller),
+            ]),
             Padding(
                 padding: getPadding(top: 29),
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       CustomInputLabel(labelText: l10ns.expirationDate),
-                      CardExpMonthYearFormField(controller: controller)
+                      CardExpMonthYearFormField(controller: controller),
                     ])),
             Padding(
                 padding: getPadding(top: 29),
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       CustomInputLabel(
                           labelText: l10ns.socialSecurityNumberFirstDigit),
                       BirthdayNumberFormField(
                         controller: userController,
                         focusNode: birthday,
-                        readonly: !userController.birthDay.text.isEmpty,
-                      )
+                        readonly: userController.birthDay.text.isNotEmpty,
+                      ),
                     ])),
             Padding(
                 padding: getPadding(top: 29, bottom: 5),
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       CustomInputLabel(
                           labelText: l10ns.first2DigitsOfCardPassword),
-                      CardPinNumberFormField(controller: controller)
-                    ]))
+                      CardPinNumberFormField(controller: controller),
+                    ])),
           ])),
       bottomNavigationBar: Container(
         margin: getMargin(left: 16, right: 16, bottom: 29),
         // decoration: AppDecoration.shadow,
-        child: CustomElevatedButton(
-            // TODO disabled 일때 스타일 정의하기
-            text: l10ns.register,
-            buttonStyle: CustomButtonStyles.fillPrimaryC26,
-            buttonTextStyle: CustomTextStyles.titleMedium18,
-            onTap: () async {
-              // TODO 카드 검증 필요함.
-              await controller.registerCard();
-              if (controller.paymentCards.isEmpty) {
-                goRegisterSuccess();
-              } else {
-                // TODO 카드 등록 로직
-                goBack();
-              }
-            }),
+        child: RegisterCardButton(controller: controller),
       ),
     ));
   }

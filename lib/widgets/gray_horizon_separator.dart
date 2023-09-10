@@ -6,7 +6,7 @@ class GrayHorizonSeparator extends Divider {
     Key? key,
     double? borderWidth = 8.0,
     double? gapHeight = 21.0,
-    Color? color = const Color(0XFFF6F7F7),
+    Color? color = const Color(0xFFF6F7F7),
     double? leftMargin = 0.0,
     double? rightMargin = 0.0,
   }) : super(

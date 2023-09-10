@@ -21,7 +21,6 @@ class LicenseNumbersFormField extends StatelessWidget {
         textStyle: CustomTextStyles.bodyLargeGray50003,
         hintText: l10ns.pleaseEnterYourLicenseNumbersOnly,
         hintStyle: CustomTextStyles.bodyLargeGray50003,
-        textInputAction: TextInputAction.next,
         filled: true,
         fillColor: theme.colorScheme.onPrimaryContainer);
   }

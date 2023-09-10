@@ -8,29 +8,22 @@ import 'package:intl/intl.dart';
 import '/core/app_export.dart';
 
 class TeamReservationsItem extends StatefulWidget {
-  final Color? color;
-  final Schedule schedule;
-  final bool isOwner;
-  final EdgeInsets? margin;
-
   TeamReservationsItem({
     super.key,
-    this.color = null,
     required this.schedule,
-    this.isOwner = false,
-    this.margin = null,
+    required this.controller,
   });
-
+  final Schedule schedule;
+  final UserController controller;
   @override
   State<TeamReservationsItem> createState() => _TeamReservationsItemState();
 }
 
 class _TeamReservationsItemState extends State<TeamReservationsItem> {
   bool isToggleOn = false;
-  final api = WegooliFriends.client.getScheduleControllerApi();
-  String formatering() {
-    DateTime start = DateTime.parse(widget.schedule.startAt!);
-    DateTime end = DateTime.parse(widget.schedule.endAt!);
+  String formatering(schedule) {
+    final start = DateTime.parse(widget.schedule.startAt!);
+    final end = DateTime.parse(widget.schedule.endAt!);
     final formatter = DateFormat('M/d (E) HH:mm', 'ko');
     return '${formatter.format(start)} ~ ${formatter.format(end)}';
   }
@@ -43,8 +36,11 @@ class _TeamReservationsItemState extends State<TeamReservationsItem> {
 
   @override
   Widget build(BuildContext context) {
+    final color = widget.schedule.highlightColor;
+    final isOwner =
+        widget.schedule.accountId == widget.controller.currentUser.value.id;
     return Container(
-      margin: widget.margin,
+      margin: getMargin(bottom: 10),
       width: getHorizontalSize(288),
       height: isToggleOn ? getVerticalSize(115) : getVerticalSize(75),
       decoration: ShapeDecoration(
@@ -52,25 +48,23 @@ class _TeamReservationsItemState extends State<TeamReservationsItem> {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
         ),
-        shadows: [
+        shadows: const [
           BoxShadow(
             color: Color(0x19000000),
             blurRadius: 10,
             offset: Offset(2, 2),
-            spreadRadius: 0,
-          )
+          ),
         ],
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
             width: getHorizontalSize(10),
             decoration: ShapeDecoration(
-              color: widget.color,
-              shape: RoundedRectangleBorder(
+              color: color,
+              shape: const RoundedRectangleBorder(
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(10),
                   bottomLeft: Radius.circular(10),
@@ -88,8 +82,8 @@ class _TeamReservationsItemState extends State<TeamReservationsItem> {
               children: [
                 Text(
                   widget.schedule.accountId,
-                  style: TextStyle(
-                    color: Color(0xFF222222),
+                  style: const TextStyle(
+                    color: ColorConstant.fontColorBlack,
                     fontSize: 12,
                     fontFamily: FontFamily.pretendard,
                     fontWeight: FontWeight.w400,
@@ -97,7 +91,6 @@ class _TeamReservationsItemState extends State<TeamReservationsItem> {
                     letterSpacing: 0.02,
                   ),
                 ),
-                // const SizedBox(height: 3),
                 Container(
                   width: getHorizontalSize(278),
                   height: getVerticalSize(24),
@@ -105,22 +98,20 @@ class _TeamReservationsItemState extends State<TeamReservationsItem> {
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Container(
                           child: Text(
                         // '8/16 (수) 15:20 ~ 8/17(목) 14:00',
-                        formatering(),
-                        style: TextStyle(
-                          color: Color(0xFF222222),
+                        formatering(widget.schedule),
+                        style: const TextStyle(
+                          color: ColorConstant.fontColorBlack,
                           fontSize: 16,
                           fontFamily: FontFamily.pretendard,
                           fontWeight: FontWeight.w400,
-                          // height: 1.50,
                           letterSpacing: 0.03,
                         ),
                       )),
-                      if (widget.isOwner)
+                      if (isOwner)
                         CustomImageView(
                             svgPath: isToggleOn
                                 ? Assets.svg.imgArrowUp.path
@@ -128,76 +119,27 @@ class _TeamReservationsItemState extends State<TeamReservationsItem> {
                             height: getSize(16),
                             width: getSize(16),
                             onTap: () {
-                              if (widget.isOwner) {
+                              if (isOwner) {
                                 toggle();
                               }
                             }),
                     ],
                   ),
                 ),
-                if (widget.isOwner && isToggleOn)
-                  Container(
+                if (isOwner && isToggleOn)
+                  SizedBox(
                     width: getHorizontalSize(278),
                     child: Row(
                         mainAxisSize: MainAxisSize.min,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          CustomElevatedButton(
-                            width: getHorizontalSize(124),
-                            height: getVerticalSize(28),
-                            margin: getMargin(right: 10),
-                            text: '수정',
-                            buttonTextStyle: TextStyle(
-                              color: Color(0xFF5D5D5D),
-                              fontSize: 12,
-                              fontFamily: FontFamily.pretendard,
-                              fontWeight: FontWeight.w400,
-                              // height: 1.50,
-                              letterSpacing: 0.02,
-                            ),
-                            buttonStyle: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all<Color>(
-                                Colors.white,
-                              ),
-                            ),
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(100),
-                                border: Border.all(
-                                    width: 0.50, color: Color(0x33A4A8AF))),
-                            onTap: () {
-                              // TODO 수정하기
-                            },
-                          ),
-                          CustomElevatedButton(
-                            width: getHorizontalSize(124),
-                            height: getVerticalSize(28),
-                            text: '삭제',
-                            buttonStyle: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all<Color>(
-                                Colors.white,
-                              ),
-                            ),
-                            buttonTextStyle: TextStyle(
-                              color: Color(0xFF5D5D5D),
-                              fontSize: 12,
-                              fontFamily: FontFamily.pretendard,
-                              fontWeight: FontWeight.w400,
-                              // height: 1.50,
-                              letterSpacing: 0.02,
-                            ),
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(100),
-                                border: Border.all(
-                                    width: 0.50, color: Color(0x33A4A8AF))),
-                            onTap: () {
-                              api.deleteSchedule(seq: widget.schedule.seq!);
-                              goBack();
-                            },
+                          const ScheduleEditButton(),
+                          ScheduleDeleteButton(
+                            controller: widget.controller,
+                            schedule: widget.schedule,
                           ),
                         ]),
-                  )
+                  ),
               ],
             ),
           ),

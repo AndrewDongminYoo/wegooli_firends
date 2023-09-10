@@ -23,8 +23,7 @@ class _RegisteredCreditCardListState extends State<RegisteredCreditCardList> {
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
-    return SafeArea(
+        return SafeArea(
         child: Scaffold(
       // backgroundColor: theme.colorScheme.onPrimaryContainer,
       // backgroundColor: const Color(0xFFFFC107),
@@ -34,7 +33,6 @@ class _RegisteredCreditCardListState extends State<RegisteredCreditCardList> {
           height: mediaQueryData.size.height,
           // padding: getPadding(left: 16, top: 24, right: 16, bottom: 24),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Container(
                 // color: const Color(0xFFFFB300),
@@ -57,7 +55,7 @@ class _RegisteredCreditCardListState extends State<RegisteredCreditCardList> {
                                         groupValue: paymentCard.defaultYn == 'Y'
                                             ? paymentCard.cardNumber
                                             : controller.selected.value,
-                                        textStyle: theme.textTheme.bodyLarge!,
+                                        textStyle: theme.textTheme.bodyLarge,
                                         onChange: (String value) {
                                           // print(
                                           //     'first option selected : $value');
@@ -72,20 +70,13 @@ class _RegisteredCreditCardListState extends State<RegisteredCreditCardList> {
                         },
                         itemCount: controller.paymentCards.length,
                         shrinkWrap: true),
-                  )
+                  ),
                 ]),
               ),
               Container(
                 // color: const Color(0xFFFFA000),
                 padding: getPadding(top: 20, bottom: 20, left: 16, right: 16),
-                child: CustomElevatedButton(
-                    text: l10ns.cardAdditions,
-                    // margin: getMargin(top: 30, bottom: 20),
-                    buttonStyle: CustomButtonStyles.fillPrimaryC26,
-                    buttonTextStyle: CustomTextStyles.titleMedium18,
-                    onTap: () {
-                      goRegisterCreditCard();
-                    }),
+                child: const AddCreditCardButton(),
               ),
             ],
           )),

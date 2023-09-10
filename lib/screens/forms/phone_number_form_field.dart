@@ -23,10 +23,9 @@ class PhoneNumberFormField extends StatelessWidget {
         inputFormatters: [
           SeperateTextFormatter(sample: 'XXX-XXXX-XXXX', separator: '-'),
         ],
-        hintText: "010-1234-5678",
+        hintText: '010-1234-5678',
         textStyle: CustomTextStyles.bodyLargeGray50003,
         hintStyle: CustomTextStyles.bodyLargeGray50003,
-        textInputAction: TextInputAction.next,
         filled: true,
         fillColor: theme.colorScheme.onPrimaryContainer);
   }

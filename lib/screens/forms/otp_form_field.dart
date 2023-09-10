@@ -27,7 +27,6 @@ class _OtpFormFieldState extends State<OtpFormField> {
   Widget build(BuildContext context) {
     return Form(
       child: RawKeyboardListener(
-        autofocus: false,
         focusNode: FocusNode(canRequestFocus: false),
         onKey: (event) {
           if (event.isKeyPressed(LogicalKeyboardKey.backspace)) {
@@ -75,7 +74,7 @@ class PinCodeInput extends StatelessWidget {
       autofocus: true,
       controller: controller,
       inputFormatters: <TextInputFormatter>[
-        FilteringTextInputFormatter.digitsOnly
+        FilteringTextInputFormatter.digitsOnly,
       ],
       onSaved: (pin1) {},
       onChanged: (value) {
@@ -85,7 +84,7 @@ class PinCodeInput extends StatelessWidget {
       },
       keyboardType: TextInputType.number,
       maxLength: 1,
-      decoration: const InputDecoration(counterText: ""),
+      decoration: const InputDecoration(counterText: ''),
       textAlign: TextAlign.center,
     );
   }

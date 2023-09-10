@@ -7,7 +7,6 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
-// ignore: must_be_immutable
 class RegisterSuccess extends GetWidget<UserController> {
   const RegisterSuccess({super.key});
 
@@ -46,7 +45,6 @@ class RegisterSuccess extends GetWidget<UserController> {
                     padding: getPadding(top: 27),
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -65,7 +63,6 @@ class RegisterSuccess extends GetWidget<UserController> {
                               ]),
                           InviteCodeFormField(controller: controller),
                           Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
@@ -87,7 +84,7 @@ class RegisterSuccess extends GetWidget<UserController> {
                                       .copyWith(
                                     letterSpacing: getHorizontalSize(0.04),
                                   ),
-                                )
+                                ),
                               ]),
                         ])),
                 // Spacer(),
@@ -96,13 +93,7 @@ class RegisterSuccess extends GetWidget<UserController> {
       ),
       bottomNavigationBar: Container(
         margin: getMargin(left: 16, right: 16, bottom: 29),
-        child: CustomElevatedButton(
-            text: l10ns.getStarted,
-            buttonStyle: CustomButtonStyles.fillPrimaryC26,
-            buttonTextStyle: CustomTextStyles.titleMedium18,
-            onTap: () {
-              goSharedSchedule();
-            }),
+        child: const SignUpFinishButton(),
       ),
     ));
   }

@@ -36,7 +36,7 @@ class ConfirmDialog extends StatelessWidget {
                   margin: getMargin(right: 16),
                   onTap: () => Navigator.pop(context),
                 )),
-          title
+          title,
         ],
       ),
       titleTextStyle: const TextStyle(
@@ -51,7 +51,6 @@ class ConfirmDialog extends StatelessWidget {
       content:
           SingleChildScrollView(child: ListBody(children: <Widget>[content])),
       actionsPadding: getPadding(all: 0),
-      actionsOverflowButtonSpacing: null,
       actions: <Widget>[
         SizedBox(
           width: getSize(328),
@@ -62,14 +61,12 @@ class ConfirmDialog extends StatelessWidget {
                 onPressed: () => Navigator.pop(context, false),
                 style: ButtonStyle(
                   shape: const MaterialStatePropertyAll(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.zero),
-                    ),
+                    RoundedRectangleBorder(),
                   ),
                   foregroundColor:
                       MaterialStateProperty.all<Color>(const Color(0xFF000000)),
-                  backgroundColor: const MaterialStatePropertyAll<Color>(
-                      const Color(0xFFBABCC3)),
+                  backgroundColor:
+                      const MaterialStatePropertyAll<Color>(Color(0xFFBABCC3)),
                   fixedSize: MaterialStateProperty.all<Size>(
                     Size(
                       getSize(164),
@@ -97,8 +94,8 @@ class ConfirmDialog extends StatelessWidget {
                   tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                   foregroundColor:
                       MaterialStateProperty.all<Color>(const Color(0xFF000000)),
-                  backgroundColor: const MaterialStatePropertyAll<Color>(
-                      const Color(0xFFFFE142)),
+                  backgroundColor:
+                      const MaterialStatePropertyAll<Color>(ColorConstant.actionPrimaryDefault),
                   fixedSize: MaterialStateProperty.all<Size>(
                     Size(
                       getSize(164),

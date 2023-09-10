@@ -11,7 +11,7 @@ class UnsubscriptionConfirm extends GetWidget<VehicleController> {
   UnsubscriptionConfirm({super.key});
   @override
   Widget build(BuildContext context) {
-    DateTime expireDate =
+    final expireDate =
         DateTime.tryParse(controller.calcDate()) ?? DateTime.now();
     return SafeArea(
         child: Scaffold(
@@ -21,7 +21,6 @@ class UnsubscriptionConfirm extends GetWidget<VehicleController> {
           // width: mediaQueryData.size.width,
           padding: getPadding(left: 16, top: 52, right: 16, bottom: 52),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               CustomImageView(
                 imagePath: Assets.images.imgGooli5.path,
@@ -58,40 +57,10 @@ class UnsubscriptionConfirm extends GetWidget<VehicleController> {
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        CustomElevatedButton(
-                            width: 104,
-                            height: 52,
-                            text: l10ns.cancel,
-                            buttonStyle:
-                                CustomButtonStyles.fillGray400C26.copyWith(
-                                    fixedSize: MaterialStateProperty.all<Size>(
-                              Size(
-                                getHorizontalSize(104),
-                                getVerticalSize(52),
-                              ),
-                            )),
-                            buttonTextStyle: CustomTextStyles.titleMedium18,
-                            onTap: () => goBack()),
-                        CustomElevatedButton(
-                          width: 216,
-                          height: 52,
-                          text: l10ns.cancelingASubscription,
-                          buttonStyle:
-                              CustomButtonStyles.fillPrimaryC26.copyWith(
-                                  fixedSize: MaterialStateProperty.all<Size>(
-                            Size(
-                              getHorizontalSize(216),
-                              getVerticalSize(52),
-                            ),
-                          )),
-                          buttonTextStyle: CustomTextStyles.titleMedium18,
-                          onTap: () {
-                            Get.dialog(UnsubscriptionConfirmWarnDialog(
-                                controller: controller));
-                            // controller.unsubscribe();
-                          },
-                        )
-                      ]))
+                        const CancelButton(plural: false),
+                        UnsubscribeButton(
+                            controller: controller, plural: false),
+                      ])),
             ],
           )),
     ));

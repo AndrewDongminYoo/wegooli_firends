@@ -275,8 +275,13 @@ class UserController extends GetxController {
         .toList();
   }
 
-  Future<void> deleteSchedule(int seq) {
-    return wegooli.getScheduleControllerApi().deleteSchedule(seq: seq);
+  Future<void> deleteSchedule(int seq) async {
+    try {
+      await wegooli.getScheduleControllerApi().deleteSchedule(seq: seq);
+      return popWithValue(Get.context!, true);
+    } catch (e) {
+      return popWithValue(Get.context!, false);
+    }
   }
 }
 

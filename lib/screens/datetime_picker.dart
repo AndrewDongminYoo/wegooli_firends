@@ -10,7 +10,6 @@ import 'package:intl/intl.dart';
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
-// ignore: must_be_immutable
 class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
   const DatetimePickerBottomSheet({super.key});
   String formatting(DateTime date) {
@@ -27,7 +26,6 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
               .copyWith(borderRadius: BorderRadiusStyle.customBorderT10),
           child: Column(
             mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               CustomImageView(
                   svgPath: Assets.svg.imgCloseGray400Sharp.path,
@@ -35,9 +33,7 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                   width: getSize(13),
                   alignment: Alignment.centerRight,
                   margin: getMargin(right: 16),
-                  onTap: () {
-                    goBack();
-                  }),
+                  onTap: goBack),
               Align(
                   alignment: Alignment.centerLeft,
                   child: Container(
@@ -45,7 +41,9 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                       padding: getPadding(left: 16, top: 16),
                       child: Text(
                         l10ns.reservationTotalPeriod(
-                          controller.returnTime.difference(controller.reservationTime).inHours,
+                          controller.returnTime
+                              .difference(controller.reservationTime)
+                              .inHours,
                           formatting(controller.reservationTime),
                           formatting(controller.returnTime),
                         ),
@@ -75,7 +73,7 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                         // backgroundColor: Colors.amber,
                         headerBuilder: (context, isOpen) {
                           return Padding(
-                              padding: EdgeInsets.all(15),
+                              padding: const EdgeInsets.all(15),
                               child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -111,13 +109,12 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                         body: Container(
                           height: 200,
                           alignment: Alignment.center,
-                          padding: EdgeInsets.all(20),
+                          padding: const EdgeInsets.all(20),
                           // color: Colors.redAccent[100],
                           width: double.infinity,
                           child: CupertinoDatePicker(
                             backgroundColor: CupertinoColors.systemBackground
                                 .resolveFrom(context),
-                            mode: CupertinoDatePickerMode.dateAndTime,
                             initialDateTime: item.date,
                             onDateTimeChanged: (newDateTime) {
                               // print('newDateTime: $newDateTime');
@@ -134,38 +131,10 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      CustomElevatedButton(
-                          width: getHorizontalSize(104),
-                          height: getVerticalSize(52),
-                          text: l10ns.cancel,
-                          buttonStyle:
-                              CustomButtonStyles.fillGray400C26.copyWith(
-                                  fixedSize: MaterialStateProperty.all<Size>(
-                            Size(
-                              getHorizontalSize(104),
-                              getVerticalSize(52),
-                            ),
-                          )),
-                          buttonTextStyle: CustomTextStyles.titleMedium18,
-                          onTap: () => goBack()),
-                      CustomElevatedButton(
-                          width: getHorizontalSize(216),
-                          height: getVerticalSize(52),
-                          onTap: () {
-                            controller.addSchedule();
-                          },
-                          text: l10ns.confirm,
-                          buttonStyle:
-                              CustomButtonStyles.fillPrimaryC26.copyWith(
-                                  fixedSize: MaterialStateProperty.all<Size>(
-                            Size(
-                              getHorizontalSize(216),
-                              getVerticalSize(52),
-                            ),
-                          )),
-                          buttonTextStyle: theme.textTheme.titleMedium!)
+                      const CancelButton(plural: false),
+                      AddScheduleConfirmButton(controller: controller),
                     ],
-                  ))
+                  )),
             ],
           )),
     );

@@ -161,93 +161,93 @@ class TextThemes {
 class ColorSchemes {
   static const primaryColorScheme = ColorScheme.light(
     //  Primary colors
-    primary: Color(0XFFFFE041),
-    primaryContainer: Color(0XFFEF1010),
-    secondary: Color(0XFFEF1010),
-    secondaryContainer: Color(0XFFFFE041),
-    tertiary: Color(0XFFEF1010),
-    tertiaryContainer: Color(0XFFFFE041),
+    primary: Color(0xFFFFE041),
+    primaryContainer: Color(0xFFEF1010),
+    secondary: Color(0xFFEF1010),
+    secondaryContainer: Color(0xFFFFE041),
+    tertiary: Color(0xFFEF1010),
+    tertiaryContainer: Color(0xFFFFE041),
 
     //  Background colors
-    background: Color(0XFFEF1010),
+    background: Color(0xFFEF1010),
 
     //  Surface colors
-    surface: Color(0XFFEF1010),
-    surfaceTint: Color(0XFF222222),
-    surfaceVariant: Color(0XFFFFE041),
+    surface: Color(0xFFEF1010),
+    surfaceTint: Color(0xFF222222),
+    surfaceVariant: Color(0xFFFFE041),
 
     //  Error colors
-    error: Color(0XFF222222),
-    errorContainer: Color(0XFF82838D),
-    onError: Color(0XFFFFCC08),
-    onErrorContainer: Color(0XFF222222),
+    error: Color(0xFF222222),
+    errorContainer: Color(0xFF82838D),
+    onError: Color(0xFFFFCC08),
+    onErrorContainer: Color(0xFF222222),
 
     //  On colors(text colors)
-    onBackground: Color(0XFFFFFFFF),
-    onInverseSurface: Color(0XFFFFCC08),
-    onPrimary: Color(0XFF222222),
-    onPrimaryContainer: Color(0XFFFFFFFF),
-    onSecondary: Color(0XFFFFFFFF),
-    onSecondaryContainer: Color(0XFF222222),
-    onTertiary: Color(0XFFFFFFFF),
-    onTertiaryContainer: Color(0XFF222222),
+    onBackground: Color(0xFFFFFFFF),
+    onInverseSurface: Color(0xFFFFCC08),
+    onPrimary: Color(0xFF222222),
+    onPrimaryContainer: Color(0xFFFFFFFF),
+    onSecondary: Color(0xFFFFFFFF),
+    onSecondaryContainer: Color(0xFF222222),
+    onTertiary: Color(0xFFFFFFFF),
+    onTertiaryContainer: Color(0xFF222222),
 
     //  Other colors
-    outline: Color(0XFF222222),
-    outlineVariant: Color(0XFFEF1010),
-    scrim: Color(0XFFEF1010),
-    shadow: Color(0XFF222222),
+    outline: Color(0xFF222222),
+    outlineVariant: Color(0xFFEF1010),
+    scrim: Color(0xFFEF1010),
+    shadow: Color(0xFF222222),
 
     //  Inverse colors
-    inversePrimary: Color(0XFFEF1010),
-    inverseSurface: Color(0XFF222222),
+    inversePrimary: Color(0xFFEF1010),
+    inverseSurface: Color(0xFF222222),
 
     //  Pending colors
-    onSurface: Color(0XFFFFFFFF),
-    onSurfaceVariant: Color(0XFF222222),
+    onSurface: Color(0xFFFFFFFF),
+    onSurfaceVariant: Color(0xFF222222),
   );
 }
 
 /// Class containing custom colors for a primary theme.
 class PrimaryColors {
   //  Amber
-  Color get amberA200 => const Color(0XFFFFE142);
-  Color get amberA20033 => const Color(0X33FFE142);
+  Color get amberA200 => const Color(0xFFFFE142);
+  Color get amberA20033 => const Color(0x33FFE142);
 
   //  Black
-  Color get black900 => const Color(0XFF000000);
+  Color get black900 => const Color(0xFF000000);
 
   //  BlueGray
-  Color get blueGray30033 => const Color(0X33A4A8AF);
-  Color get blueGray400 => const Color(0XFF888888);
-  Color get blueGray900 => const Color(0XFF323232);
+  Color get blueGray30033 => const Color(0x33A4A8AF);
+  Color get blueGray400 => const Color(0xFF888888);
+  Color get blueGray900 => const Color(0xFF323232);
 
   //  DeepOrange
-  Color get deepOrangeA200 => const Color(0XFFFF7034);
+  Color get deepOrangeA200 => const Color(0xFFFF7034);
 
   //  DeepPurple
-  Color get deepPurpleA200 => const Color(0XFF7850E9);
+  Color get deepPurpleA200 => const Color(0xFF7850E9);
 
   //  Gray
-  Color get gray100 => const Color(0XFFF6F7F7);
-  Color get gray10001 => const Color(0XFFF5F5F5);
-  Color get gray200 => const Color(0XFFEEEEEE);
-  Color get gray300 => const Color(0XFFE6E6E6);
-  Color get gray400 => const Color(0XFFB9BCC3);
-  Color get gray500 => const Color(0XFF8F9199);
-  Color get gray50001 => const Color(0XFF91969D);
-  Color get gray50002 => const Color(0XFF91959D);
-  Color get gray50003 => const Color(0XFF8E9199);
-  Color get gray700 => const Color(0XFF666666);
-  Color get gray70001 => const Color(0XFF5D5D5D);
-  Color get gray800 => const Color(0XFF474747);
+  Color get gray100 => const Color(0xFFF6F7F7);
+  Color get gray10001 => const Color(0xFFF5F5F5);
+  Color get gray200 => const Color(0xFFEEEEEE);
+  Color get gray300 => const Color(0xFFE6E6E6);
+  Color get gray400 => const Color(0xFFB9BCC3);
+  Color get gray500 => const Color(0xFF8F9199);
+  Color get gray50001 => const Color(0xFF91969D);
+  Color get gray50002 => const Color(0xFF91959D);
+  Color get gray50003 => const Color(0xFF8E9199);
+  Color get gray700 => const Color(0xFF666666);
+  Color get gray70001 => const Color(0xFF5D5D5D);
+  Color get gray800 => const Color(0xFF474747);
 
   //  Green
-  Color get green500 => const Color(0XFF38DD66);
+  Color get green500 => const Color(0xFF38DD66);
 
   //  Red
-  Color get red600 => const Color(0XFFDB4646);
-  Color get red700 => const Color(0XFFE82121);
+  Color get red600 => const Color(0xFFDB4646);
+  Color get red700 => const Color(0xFFE82121);
 }
 
 PrimaryColors get appTheme => ThemeHelper().themeColor();

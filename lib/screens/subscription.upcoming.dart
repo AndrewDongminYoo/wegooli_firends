@@ -16,7 +16,7 @@ class UpcomingUnsubscription extends GetWidget<VehicleController> {
       child: Scaffold(
         backgroundColor: theme.colorScheme.onPrimaryContainer,
         appBar: CustomAppBar.getDefaultAppBar(l10ns.subscriptionInformation,
-            onTapLeading: () => goMyProfile()),
+            onTapLeading: goMyProfile),
         body: Obx(
           () => controller.subscriptionModel.value.carModel == null
               ? Container(
@@ -47,7 +47,6 @@ class UpcomingUnsubscription extends GetWidget<VehicleController> {
                   padding: getPadding(left: 16, top: 24, right: 16, bottom: 24),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Padding(
                           padding: getPadding(left: 2),
@@ -116,7 +115,7 @@ class UpcomingUnsubscription extends GetWidget<VehicleController> {
                                                   letterSpacing:
                                                       getHorizontalSize(0.02),
                                                 ),
-                                              )))
+                                              ))),
                                         ])),
                                 Padding(
                                     padding:
@@ -137,7 +136,7 @@ class UpcomingUnsubscription extends GetWidget<VehicleController> {
                                             ),
                                           ),
                                           Obx(() => Text(
-                                                "${controller.subscriptionModel.value.fee} 원",
+                                                '${controller.subscriptionModel.value.fee} 원',
                                                 overflow: TextOverflow.ellipsis,
                                                 textAlign: TextAlign.left,
                                                 style: theme
@@ -146,7 +145,7 @@ class UpcomingUnsubscription extends GetWidget<VehicleController> {
                                                   letterSpacing:
                                                       getHorizontalSize(0.03),
                                                 ),
-                                              ))
+                                              )),
                                         ])),
                                 Padding(
                                     padding:
@@ -176,7 +175,7 @@ class UpcomingUnsubscription extends GetWidget<VehicleController> {
                                                   letterSpacing:
                                                       getHorizontalSize(0.03),
                                                 ),
-                                              ))
+                                              )),
                                         ])),
                                 Padding(
                                     padding:
@@ -213,37 +212,11 @@ class UpcomingUnsubscription extends GetWidget<VehicleController> {
                                                   letterSpacing:
                                                       getHorizontalSize(0.03),
                                                 ),
-                                              ))
+                                              )),
                                         ])),
-                                CustomElevatedButton(
-                                  width: getHorizontalSize(160),
-                                  height: getVerticalSize(48),
-                                  text: controller.subscriptionModel.value
-                                              .withdrawalAt ==
-                                          null
-                                      ? '해지하기'
-                                      : l10ns.unsubscribeCancel,
-                                  margin: getMargin(left: 9, top: 21, right: 9),
-                                  buttonStyle: CustomButtonStyles.fillPrimaryC5
-                                      .copyWith(
-                                          fixedSize:
-                                              MaterialStateProperty.all<Size>(
-                                    Size(
-                                      getHorizontalSize(160),
-                                      getVerticalSize(48),
-                                    ),
-                                  )),
-                                  buttonTextStyle: theme.textTheme.titleMedium!,
-                                  alignment: Alignment.centerRight,
-                                  onTap: () {
-                                    controller.subscriptionModel.value
-                                                .withdrawalAt ==
-                                            null
-                                        ? goUnsubscribeConfirm()
-                                        : controller.subscribe();
-                                  },
-                                )
-                              ]))
+                                UnsubscribeConfirmButton(
+                                    controller: controller),
+                              ])),
                     ],
                   )),
         ),

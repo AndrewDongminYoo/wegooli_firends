@@ -20,12 +20,12 @@ class _MainApplicationState extends State<MainApplication> {
   @override
   Widget build(BuildContext context) {
     print('userController.teams.length ${userController.teams.length}');
-    final id = 1;
+    const id = 1;
     final navigatorKey = Get.nestedKey(id);
     return Scaffold(
       body: Navigator(
           key: navigatorKey,
-          initialRoute: userController.teams.length > 0
+          initialRoute: userController.teams.isNotEmpty
               ? AppRoutes.sharedSchedule
               : AppRoutes.teamInvitation,
           onGenerateRoute: (settings) {

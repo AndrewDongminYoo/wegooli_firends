@@ -18,7 +18,7 @@ class InviteTeamButton extends StatelessWidget {
             padding: getPadding(all: 13),
             child: CustomImageView(
               svgPath: Assets.svg.imgGrid.path,
-              color: const Color(0xFFFFFFFF),
+              color: ColorConstant.fontColorWhite,
             ),
           ),
           Padding(

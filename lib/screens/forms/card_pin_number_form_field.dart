@@ -19,7 +19,7 @@ class CardPinNumberFormField extends StatelessWidget {
         controller: controller.cardPassword,
         inputFormatters: [
           LengthLimitingTextInputFormatter(2),
-          FilteringTextInputFormatter.digitsOnly
+          FilteringTextInputFormatter.digitsOnly,
         ],
         margin: getMargin(top: 4),
         filled: true,

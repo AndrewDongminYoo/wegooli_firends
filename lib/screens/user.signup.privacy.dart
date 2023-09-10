@@ -12,8 +12,7 @@ class ProfileInfoPage extends GetWidget<UserController> {
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
-    return SafeArea(
+        return SafeArea(
         child: Scaffold(
       backgroundColor: theme.colorScheme.onPrimaryContainer,
       appBar: CustomAppBar.getDefaultAppBar(l10ns.myInfo),
@@ -22,7 +21,6 @@ class ProfileInfoPage extends GetWidget<UserController> {
           height: mediaQueryData.size.height,
           // color: const Color(0xFFFFC107),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Container(
                 // color: const Color(0xFFFFB300),
@@ -40,7 +38,6 @@ class ProfileInfoPage extends GetWidget<UserController> {
                       ),
                     ),
                     Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
@@ -82,45 +79,11 @@ class ProfileInfoPage extends GetWidget<UserController> {
               Expanded(
                   child: Padding(
                 padding: getPadding(left: 16, right: 16),
-                child: Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      CustomElevatedButton(
-                          text: l10ns.signOut,
-                          margin: getMargin(top: 30, bottom: 20),
-                          buttonStyle:
-                              CustomButtonStyles.fillPrimaryC26,
-                          buttonTextStyle: CustomTextStyles.titleMedium18,
-                          onTap: () async {
-                            if (await controller.logOut()) {
-                              goIdPwLogin();
-                            }
-                          }),
-                      TextButton(
-                        onPressed: () {
-                          Get.dialog(ConfirmDialog(
-                            title: Text(l10ns.withdrawingMember),
-                            content: Text(l10ns
-                                .wouldYouLikeToRequestToBeRemovedFromWegooliFriends),
-                            cancelText: l10ns.cancel,
-                            confirmText: l10ns.withdrawal,
-                            confirmFunc: () async {
-                              // TODO globalController로 사용자 정보 옮긴 뒤 해당 id 이용해서 회원 탈퇴 진행.
-                              if (await controller.signOut()) {
-                                goIdPwLogin();
-                              }
-                            },
-                          ));
-                        },
-                        child: Text(
-                          l10ns.withdrawingMember,
-                          style: const TextStyle(
-                              color: const Color(0x66222222),
-                              decoration: TextDecoration.underline),
-                        ),
-                      ),
-                    ]),
+                child:
+                    Column(mainAxisAlignment: MainAxisAlignment.end, children: [
+                  LogOutButton(controller: controller),
+                  SignOutButton(controller: controller),
+                ]),
               )),
             ],
           )),

@@ -14,7 +14,7 @@ class AppNavigationTitle extends StatelessWidget {
         child: Padding(
           padding: getPadding(left: 20, top: 10, right: 20, bottom: 10),
           child: Text(
-            "App Navigation",
+            'App Navigation',
             overflow: TextOverflow.ellipsis,
             textAlign: TextAlign.center,
             style: TextStyle(

@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
-// ignore: must_be_immutable
 class SmartKeyAvailablePage extends StatefulWidget {
   const SmartKeyAvailablePage({super.key});
 
@@ -17,8 +16,7 @@ class _SmartKeyAvailablePageState extends State<SmartKeyAvailablePage> {
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
-    return SafeArea(
+        return SafeArea(
       child: Scaffold(
         backgroundColor: theme.colorScheme.onPrimaryContainer,
         appBar: CustomAppBar.getFriendsTypoAppBar(),
@@ -28,7 +26,6 @@ class _SmartKeyAvailablePageState extends State<SmartKeyAvailablePage> {
           child: SingleChildScrollView(
             padding: getPadding(top: 24),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Padding(
                     padding: getPadding(
@@ -54,7 +51,6 @@ class _SmartKeyAvailablePageState extends State<SmartKeyAvailablePage> {
                               ),
                               child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
                                     Text(
                                       controller.terminalDevice.model ??
@@ -108,11 +104,10 @@ class _SmartKeyAvailablePageState extends State<SmartKeyAvailablePage> {
                                                   ),
                                                 ),
                                               ),
-                                              ArrowRight(onTap: () {
-                                                goCarStatusInfo();
-                                              })
-                                            ]))
-                                  ]))
+                                              const ArrowRight(
+                                                  onTap: goCarStatusInfo),
+                                            ])),
+                                  ])),
                         ])),
                 Padding(
                   padding: getPadding(top: 6),
@@ -129,7 +124,7 @@ class _SmartKeyAvailablePageState extends State<SmartKeyAvailablePage> {
                       Padding(
                         padding: getPadding(left: 5),
                         child: Text(
-                          "|",
+                          '|',
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.left,
                           style: CustomTextStyles.bodySmallOnPrimary

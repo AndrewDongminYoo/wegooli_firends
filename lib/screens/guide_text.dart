@@ -13,7 +13,7 @@ class CustomGuideText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+    return Row(children: [
       Text(
         text,
         overflow: TextOverflow.ellipsis,
@@ -21,7 +21,7 @@ class CustomGuideText extends StatelessWidget {
         style: CustomTextStyles.bodySmallErrorContainer.copyWith(
           letterSpacing: getHorizontalSize(0.04),
         ),
-      )
+      ),
     ]);
   }
 }

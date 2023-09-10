@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
-// ignore: must_be_immutable
 class SharedCalendar extends StatefulWidget {
   const SharedCalendar({super.key});
 
@@ -17,8 +16,7 @@ class _SharedCalendarState extends State<SharedCalendar> {
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
-    return SafeArea(
+        return SafeArea(
         child: Scaffold(
       backgroundColor: theme.colorScheme.onPrimaryContainer,
       appBar: CustomAppBar.getFriendsTypoAppBar(),
@@ -30,7 +28,6 @@ class _SharedCalendarState extends State<SharedCalendar> {
                 padding: getPadding(bottom: 5),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     const MemberListTitle(),
                     MembersList(controller: controller),

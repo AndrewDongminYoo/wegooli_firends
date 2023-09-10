@@ -19,7 +19,7 @@ class FloatingYellowButton extends StatelessWidget {
         width: getHorizontalSize(70),
         margin: getMargin(right: 22),
         decoration: const BoxDecoration(
-            color: Color(0xFFFFE142),
+            color: ColorConstant.actionPrimaryDefault,
             shape: BoxShape.circle,
             boxShadow: [
               BoxShadow(

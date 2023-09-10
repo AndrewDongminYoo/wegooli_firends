@@ -55,8 +55,7 @@ class _AcceptTermsState extends State<AcceptTerms> {
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
-    return SafeArea(
+        return SafeArea(
         child: Scaffold(
       backgroundColor: theme.colorScheme.onPrimaryContainer,
       appBar: CustomAppBar.getDefaultAppBar(l10ns.acceptTerms),
@@ -68,13 +67,11 @@ class _AcceptTermsState extends State<AcceptTerms> {
                 padding: getPadding(left: 23, right: 23, bottom: 5),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     SizedBox(
                         height: getVerticalSize(20),
                         width: getHorizontalSize(126),
                         child: Align(
-                          alignment: Alignment.center,
                           child: Obx(
                             () => CustomCheckboxButton(
                                 alignment: Alignment.center,
@@ -100,7 +97,7 @@ class _AcceptTermsState extends State<AcceptTerms> {
                                   svgPath: Assets.svg.imgArrowLeft.path,
                                   height: getSize(18),
                                   width: getSize(18),
-                                  margin: getMargin(bottom: 2))
+                                  margin: getMargin(bottom: 2)),
                             ])),
                     Padding(
                         padding: getPadding(top: 14),
@@ -117,7 +114,7 @@ class _AcceptTermsState extends State<AcceptTerms> {
                                   svgPath: Assets.svg.imgArrowLeft.path,
                                   height: getSize(18),
                                   width: getSize(18),
-                                  margin: getMargin(bottom: 2))
+                                  margin: getMargin(bottom: 2)),
                             ])),
                     Padding(
                         padding: getPadding(top: 14),
@@ -135,7 +132,7 @@ class _AcceptTermsState extends State<AcceptTerms> {
                                   svgPath: Assets.svg.imgArrowLeft.path,
                                   height: getSize(18),
                                   width: getSize(18),
-                                  margin: getMargin(bottom: 2))
+                                  margin: getMargin(bottom: 2)),
                             ])),
                     Padding(
                         padding: getPadding(top: 14),
@@ -152,7 +149,7 @@ class _AcceptTermsState extends State<AcceptTerms> {
                                   svgPath: Assets.svg.imgArrowLeft.path,
                                   height: getSize(18),
                                   width: getSize(18),
-                                  margin: getMargin(bottom: 2))
+                                  margin: getMargin(bottom: 2)),
                             ])),
                     Padding(
                         padding: getPadding(top: 14),
@@ -193,18 +190,7 @@ class _AcceptTermsState extends State<AcceptTerms> {
                               width: getSize(18),
                               margin: getMargin(left: 40, bottom: 2)),
                         ])),
-                    Container(
-                      margin: getMargin(left: 24, right: 28, bottom: 41),
-                      decoration: AppDecoration.shadow,
-                      child: CustomElevatedButton(
-                        text: l10ns.acceptanceComplete,
-                        buttonStyle: CustomButtonStyles.fillAmberA200C26,
-                        buttonTextStyle: CustomTextStyles.titleMediumOnPrimary,
-                        onTap: () {
-                          goPhoneAuth();
-                        },
-                      ),
-                    )
+                    const SignUpAcceptTermsNextButton(),
                   ],
                 )),
           )),

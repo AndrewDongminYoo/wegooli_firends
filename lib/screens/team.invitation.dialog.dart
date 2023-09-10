@@ -1,13 +1,9 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:get/get.dart';
-
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
-// ignore: must_be_immutable
 class SendingInvitationDialog extends StatefulWidget {
   const SendingInvitationDialog({super.key});
   @override
@@ -55,23 +51,10 @@ class _SendingInvitationDialogState extends State<SendingInvitationDialog> {
                                 height: getSize(13),
                                 width: getSize(13),
                                 margin: getMargin(bottom: 15),
-                                onTap: () {
-                                  goBack();
-                                })
+                                onTap: goBack),
                           ])),
                   InvitationCodeFormField(controller: controller),
-                  CustomElevatedButton(
-                      onTap: () async {
-                        if (await controller.joinTeam()) {
-                          Get.to(() => const SharedCalendar());
-                        } else {
-                          goBack();
-                        }
-                      },
-                      text: l10ns.confirm,
-                      margin: getMargin(top: 25),
-                      buttonStyle: CustomButtonStyles.fillPrimaryB10,
-                      buttonTextStyle: theme.textTheme.titleMedium!)
+                  ConfirmInvitationButton(controller: controller),
                 ]),
           ),
         ));

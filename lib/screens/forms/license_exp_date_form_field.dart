@@ -21,7 +21,6 @@ class LicenseExpDateFormField extends StatelessWidget {
         textStyle: CustomTextStyles.bodyLargeGray50003,
         hintText: l10ns.enterYourEligibilityPeriodTestExpirationDate,
         hintStyle: CustomTextStyles.bodyLargeGray50003,
-        textInputAction: TextInputAction.next,
         filled: true,
         fillColor: theme.colorScheme.onPrimaryContainer);
   }

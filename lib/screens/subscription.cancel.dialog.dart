@@ -1,13 +1,9 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:get/get.dart';
-
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
-// ignore: must_be_immutable
 class UnsubscriptionConfirmWarnDialog extends SimpleDialog {
   const UnsubscriptionConfirmWarnDialog({super.key, required this.controller});
 
@@ -46,9 +42,7 @@ class UnsubscriptionConfirmWarnDialog extends SimpleDialog {
                               height: getSize(15),
                               width: getSize(15),
                               margin: getMargin(top: 3, bottom: 3),
-                              onTap: () {
-                                goBack();
-                              }),
+                              onTap: goBack),
                         ])),
                 Container(
                     width: getHorizontalSize(278),
@@ -67,53 +61,10 @@ class UnsubscriptionConfirmWarnDialog extends SimpleDialog {
                     child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          CustomElevatedButton(
-                            width: (context.width / 2) - 19,
-                            height: 52,
-                            text: l10ns.cancel,
-                            buttonStyle: CustomButtonStyles.fillGray400B10
-                                .copyWith(
-                                    shape: MaterialStateProperty.all<
-                                            RoundedRectangleBorder>(
-                                        const RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.only(
-                                        bottomLeft: Radius.circular(10),
-                                      ),
-                                    )),
-                                    fixedSize: MaterialStateProperty.all<Size>(
-                                      Size(
-                                        getHorizontalSize(164),
-                                        getVerticalSize(52),
-                                      ),
-                                    )),
-                            buttonTextStyle: theme.textTheme.titleMedium!,
-                            onTap: () => goBack(),
-                          ),
-                          CustomElevatedButton(
-                              width: (context.width / 2) - 19,
-                              height: 52,
-                              text: '해지하기',
-                              buttonStyle: CustomButtonStyles.fillPrimaryBR10
-                                  .copyWith(
-                                      shape: MaterialStateProperty.all<
-                                              RoundedRectangleBorder>(
-                                          const RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.only(
-                                          bottomRight: Radius.circular(10),
-                                        ),
-                                      )),
-                                      fixedSize:
-                                          MaterialStateProperty.all<Size>(
-                                        Size(
-                                          getHorizontalSize(164),
-                                          getVerticalSize(52),
-                                        ),
-                                      )),
-                              buttonTextStyle: theme.textTheme.titleMedium!,
-                              onTap: () async {
-                                await controller.unsubscribe();
-                              })
-                        ]))
+                          const CancelButton(plural: true),
+                          UnsubscribeButton(
+                              controller: controller, plural: true),
+                        ])),
               ])),
     );
   }

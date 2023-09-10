@@ -78,6 +78,10 @@ class AppDecoration {
           ),
         ],
       );
+  static BoxDecoration get minimal => BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadiusStyle.circleBorder65,
+          border: Border.all(width: 0.5, color: ColorConstant.actionNeutralDisabled));
 }
 
 class BorderRadiusStyle {

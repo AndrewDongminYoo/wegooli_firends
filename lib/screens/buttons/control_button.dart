@@ -27,7 +27,7 @@ class ControlButton extends StatelessWidget {
       fixedSize: MaterialStateProperty.all(const Size(130, 130)),
       shape: MaterialStateProperty.all(const CircleBorder(
         side: BorderSide(
-          color: Color(0x33A4A8AF),
+          color: ColorConstant.actionNeutralDisabled,
         ),
       )),
       shadowColor: MaterialStateProperty.all(const Color(0x18000000)),
@@ -35,7 +35,7 @@ class ControlButton extends StatelessWidget {
         if (states.contains(MaterialState.pressed)) {
           return Colors.transparent;
         }
-        return const Color(0xFFFFFFFF);
+        return ColorConstant.fontColorWhite;
       }),
       textStyle: MaterialStateProperty.resolveWith((states) {
         if (states.contains(MaterialState.pressed)) {
@@ -49,7 +49,7 @@ class ControlButton extends StatelessWidget {
           width: 120,
           height: 120,
           decoration: const BoxDecoration(
-            color: Color(0xFFFFE142),
+            color: ColorConstant.actionPrimaryDefault,
             shape: BoxShape.circle,
           )),
       ElevatedButton(

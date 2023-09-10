@@ -4,14 +4,12 @@ import 'package:flutter/material.dart';
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
-// ignore: must_be_immutable
 class TeamInvitation extends StatelessWidget {
   TeamInvitation({super.key});
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
-    return SafeArea(
+        return SafeArea(
         child: Scaffold(
       backgroundColor: theme.colorScheme.onPrimaryContainer,
       appBar: CustomAppBar.getFriendsTypoAppBar(),
@@ -22,8 +20,6 @@ class TeamInvitation extends StatelessWidget {
             child: Padding(
                 padding: getPadding(right: 16, left: 16),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     CustomImageView(
                       imagePath: Assets.images.imgGooli4.path,
@@ -31,7 +27,7 @@ class TeamInvitation extends StatelessWidget {
                       width: getSize(120),
                       fit: BoxFit.fitWidth,
                     ),
-                    Text(
+                    const Text(
                       '팀에 가입하고 이용해주세요.',
                       textAlign: TextAlign.center,
                       style: TextStyle(
@@ -43,23 +39,7 @@ class TeamInvitation extends StatelessWidget {
                         letterSpacing: 0.04,
                       ),
                     ),
-                    CustomElevatedButton(
-                      text: '초대코드 입력',
-                      width: mediaQueryData.size.width,
-                      height: getSize(52),
-                      margin: getMargin(top: 30),
-                      buttonStyle: CustomButtonStyles.fillPrimaryC26.copyWith(
-                          fixedSize: MaterialStateProperty.all<Size>(
-                        Size(
-                          mediaQueryData.size.width,
-                          getVerticalSize(52),
-                        ),
-                      )),
-                      buttonTextStyle: CustomTextStyles.titleMedium18,
-                      onTap: () {
-                        goSendingInvitation();
-                      },
-                    ),
+                    const InsertInvitationCodeButton(),
                   ],
                 )),
           )),

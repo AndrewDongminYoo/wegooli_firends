@@ -16,7 +16,6 @@ class SubscriptionInfoNoService extends StatelessWidget {
       body: SizedBox(
           width: double.maxFinite,
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               const Spacer(),
               Text(
@@ -26,7 +25,7 @@ class SubscriptionInfoNoService extends StatelessWidget {
                 style: CustomTextStyles.titleMediumBlack900.copyWith(
                   letterSpacing: getHorizontalSize(0.04),
                 ),
-              )
+              ),
             ],
           )),
     ));

@@ -36,7 +36,8 @@ void main() {
     // Assert
     expect(
       MediaQueryData.fromView(
-        TestWidgetsFlutterBinding.instance.platformDispatcher.views.first).orientation,
+              TestWidgetsFlutterBinding.instance.platformDispatcher.views.first)
+          .orientation,
       DeviceOrientation.portraitUp,
     );
   });

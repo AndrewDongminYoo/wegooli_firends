@@ -20,28 +20,11 @@ class RegisterLicense extends GetWidget<LicenseController> {
       body: Container(
           width: double.maxFinite,
           padding: getPadding(left: 16, top: 32, right: 16, bottom: 32),
-          child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
-            Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  CustomInputLabel(labelText: l10ns.licenseType),
-                  CustomDropDown(
-                      icon: Container(
-                          margin: getMargin(left: 30, right: 10),
-                          child: CustomImageView(
-                              svgPath: Assets.svg.imgCaretDown.path)),
-                      hintText: l10ns.pleaseSelectYourLicenseType,
-                      margin: getMargin(top: 4),
-                      textStyle: CustomTextStyles.bodyLargeGray500,
-                      items: controller.licenseTypes.value,
-                      filled: true,
-                      fillColor: theme.colorScheme.onPrimaryContainer,
-                      contentPadding: getPadding(left: 10, top: 14, bottom: 14),
-                      onChanged: (SelectionPopupModel value) {
-                        controller.licenseTypes.onSelected(value);
-                      })
-                ]),
+          child: Column(children: [
+            Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              CustomInputLabel(labelText: l10ns.licenseType),
+              LicenseTypeDropdown(controller: controller),
+            ]),
             Padding(
                 padding: getPadding(top: 26),
                 child:
@@ -51,85 +34,35 @@ class RegisterLicense extends GetWidget<LicenseController> {
                       padding: getPadding(right: 4),
                       child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             CustomInputLabel(labelText: l10ns.licenseType),
-                            CustomDropDown(
-                                width: getHorizontalSize(160),
-                                icon: Container(
-                                    margin: getMargin(left: 30, right: 10),
-                                    child: CustomImageView(
-                                        svgPath: Assets.svg.imgCaretDown.path)),
-                                hintText: l10ns.region,
-                                margin: getMargin(top: 4),
-                                textStyle: CustomTextStyles.bodyLargeGray500,
-                                items: controller.licenseRegions.value,
-                                filled: true,
-                                fillColor: theme.colorScheme.onPrimaryContainer,
-                                contentPadding:
-                                    getPadding(left: 10, top: 14, bottom: 14),
-                                onChanged: (SelectionPopupModel value) {
-                                  controller.licenseRegions.onSelected(value);
-                                })
+                            LicenseRegionDropdown(controller: controller),
                           ]),
                     ),
                   ),
                   Expanded(
-                      child: CustomDropDown(
-                          icon: Container(
-                              margin: getMargin(left: 30, right: 10),
-                              child: CustomImageView(
-                                  svgPath: Assets.svg.imgCaretDown.path)),
-                          hintText: "11",
-                          margin: getMargin(left: 4, top: 27),
-                          textStyle: CustomTextStyles.bodyLargeGray500,
-                          items: controller.yearOfLicenseIssuance.value,
-                          filled: true,
-                          fillColor: theme.colorScheme.onPrimaryContainer,
-                          contentPadding:
-                              getPadding(left: 10, top: 14, bottom: 14),
-                          onChanged: (SelectionPopupModel value) {
-                            controller.yearOfLicenseIssuance.onSelected(value);
-                          }))
+                      child: LicenseIssuedYearDropdown(controller: controller)),
                 ])),
             LicenseNumbersFormField(controller: controller),
             Padding(
                 padding: getPadding(top: 26),
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       CustomInputLabel(
                           labelText: l10ns.eligibilityPeriodTestExpirationDate),
-                      LicenseExpDateFormField(controller: controller)
+                      LicenseExpDateFormField(controller: controller),
                     ])),
             Padding(
                 padding: getPadding(top: 26, bottom: 5),
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       CustomInputLabel(labelText: l10ns.licenseIssueDate),
-                      LicenseIssuedDateFormField(controller: controller)
-                    ]))
+                      LicenseIssuedDateFormField(controller: controller),
+                    ])),
           ])),
-      bottomNavigationBar: Container(
-        margin: getMargin(left: 15, right: 17, bottom: 29),
-        // decoration: AppDecoration.shadow,
-        child: CustomElevatedButton(
-            text: l10ns.registrationComplete,
-            buttonStyle: CustomButtonStyles.fillPrimaryC26,
-            buttonTextStyle: CustomTextStyles.titleMedium18,
-            onTap: () {
-              if (controller.licenseInputSucceed) {
-                onRegisterCreditCard();
-              }
-            }),
-      ),
+      bottomNavigationBar: SignUpLicenseNextButton(controller: controller),
     ));
-  }
-
-  onRegisterCreditCard() {
-    goRegisterCreditCard();
   }
 }

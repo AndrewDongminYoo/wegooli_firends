@@ -7,8 +7,7 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
-// ignore: must_be_immutable
-class RouteModal extends StatelessWidget {
+class RouteModal extends StatefulWidget {
   RouteModal({
     super.key,
     this.dialog,
@@ -17,27 +16,32 @@ class RouteModal extends StatelessWidget {
   }) : super() {
     assert(!(dialog == null && bottomSheet == null));
   }
-  Widget? dialog;
-  Widget? bottomSheet;
+  final Widget? dialog;
+  final Widget? bottomSheet;
   final String dialogTitle;
 
+  @override
+  State<RouteModal> createState() => _RouteModalState();
+}
+
+class _RouteModalState extends State<RouteModal> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        dialog != null
-            ? Get.dialog(dialog!)
-            : Get.bottomSheet(bottomSheet!, isScrollControlled: true);
+        widget.dialog != null
+            ? Get.dialog(widget.dialog!)
+            : Get.bottomSheet(widget.bottomSheet!, isScrollControlled: true);
       },
       child: Container(
         decoration: AppDecoration.fillOnSecondary,
-        child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
+        child: Column(children: [
           Align(
               alignment: Alignment.centerLeft,
               child: Padding(
                 padding: getPadding(left: 20, top: 10, right: 20, bottom: 10),
                 child: Text(
-                  dialogTitle,
+                  widget.dialogTitle,
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -52,7 +56,7 @@ class RouteModal extends StatelessWidget {
               child: Divider(
                   height: getVerticalSize(1),
                   thickness: getVerticalSize(1),
-                  color: appTheme.blueGray400))
+                  color: appTheme.blueGray400)),
         ]),
       ),
     );

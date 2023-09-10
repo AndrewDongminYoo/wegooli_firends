@@ -12,11 +12,9 @@ class SplashLoading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
-
     return SafeArea(
         child: Scaffold(
-      appBar: CustomAppBar(height: getVerticalSize(53), leadingWidth: 34),
+      appBar: CustomAppBar.getDefaultAppBar(''),
       backgroundColor: theme.colorScheme.primary,
       body: Container(
         width: mediaQueryData.size.width,
@@ -29,14 +27,12 @@ class SplashLoading extends StatelessWidget {
                 margin: EdgeInsets.only(top: getVerticalSize(44)),
                 width: Get.width,
                 child: CustomImageView(
-                  onTap: () {
-                    goIdPwLogin();
-                  },
+                  onTap: goIdPwLogin,
                   imagePath: Assets.images.imgGooli1.path,
                   fit: BoxFit.fitWidth,
                   height: getVerticalSize(93),
                   width: getHorizontalSize(166),
-                ))
+                )),
           ],
         ),
       ),

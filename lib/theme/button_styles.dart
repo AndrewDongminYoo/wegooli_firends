@@ -66,6 +66,9 @@ class CustomButtonStyles {
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(bottomRight: Radius.circular(10))),
       );
+  static ButtonStyle get fillWhite => ElevatedButton.styleFrom(
+        backgroundColor: theme.colorScheme.onPrimaryContainer,
+      );
   // text button style
   static ButtonStyle get none => ButtonStyle(
         backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),

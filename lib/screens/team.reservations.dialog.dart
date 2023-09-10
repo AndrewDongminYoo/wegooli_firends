@@ -27,8 +27,7 @@ class ReservationsCheckingPageDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
-    return AlertDialog(
+        return AlertDialog(
         backgroundColor: Colors.transparent,
         contentPadding: EdgeInsets.zero,
         insetPadding: EdgeInsets.zero,
@@ -56,7 +55,7 @@ class ReservationsCheckingPageDialog extends StatelessWidget {
                     child: const Text(
                       '일정 확인',
                       style: TextStyle(
-                        color: Color(0xFF222222),
+                        color: ColorConstant.fontColorBlack,
                         fontSize: 18,
                         fontFamily: FontFamily.pretendard,
                         fontWeight: FontWeight.w700,

@@ -5,15 +5,15 @@ import 'package:flutter/material.dart';
 import '/core/app_export.dart';
 
 class ListItem extends StatelessWidget {
-  final String svgPath;
-  final String text;
-  final Function()? onTap;
   const ListItem({
     super.key,
     required this.svgPath,
     required this.text,
     this.onTap,
   });
+  final String svgPath;
+  final String text;
+  final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {

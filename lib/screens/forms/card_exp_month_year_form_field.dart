@@ -21,13 +21,12 @@ class CardExpMonthYearFormField extends StatelessWidget {
         contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),
         textStyle: CustomTextStyles.bodyLargeGray50003,
         hintStyle: CustomTextStyles.bodyLargeGray50003,
-        hintText: "MM/YY",
+        hintText: 'MM/YY',
         inputFormatters: [
           SeperateTextFormatter(sample: 'XX/XX', separator: '/'),
           LengthLimitingTextInputFormatter(5),
-          FilteringTextInputFormatter.allow(r'[0-9/]'),
+          FilteringTextInputFormatter.allow('[0-9/]'),
         ],
-        textInputAction: TextInputAction.next,
         filled: true,
         fillColor: theme.colorScheme.onPrimaryContainer);
   }

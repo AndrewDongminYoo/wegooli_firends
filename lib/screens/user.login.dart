@@ -78,9 +78,9 @@ class _LoginWithIdAndPasswordState extends State<LoginWithIdAndPassword> {
               child: Column(
                 children: [
                   const FriendsByWegooli(),
-                  EmailAddressFormField(controller: controller, authMode: authMode),
-                  PasswordFormField(
+                  EmailAddressFormField(
                       controller: controller, authMode: authMode),
+                  PasswordFormField(controller: controller, authMode: authMode),
                   GoSignInButton(controller: controller),
                   Padding(
                       padding: getPadding(top: 57),

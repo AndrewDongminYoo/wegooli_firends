@@ -25,7 +25,7 @@ class SocialSecurityNumberFormField extends StatelessWidget {
       inputFormatters: [
         FilteringTextInputFormatter.digitsOnly,
         FilteringTextInputFormatter.singleLineFormatter,
-        LengthLimitingTextInputFormatter(7)
+        LengthLimitingTextInputFormatter(7),
       ],
       focusNode: focusNode,
 
@@ -34,9 +34,8 @@ class SocialSecurityNumberFormField extends StatelessWidget {
       obscureText: true,
       textInputType: TextInputType.number,
       textStyle: CustomTextStyles.bodyLargeGray50003,
-      hintText: "●●●●●●●",
+      hintText: '●●●●●●●',
       hintStyle: CustomTextStyles.bodyLargeGray50003,
-      textInputAction: TextInputAction.next,
       filled: true,
       fillColor: theme.colorScheme.onPrimaryContainer,
     );

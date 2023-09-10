@@ -24,10 +24,9 @@ class CreditCardFormField extends StatelessWidget {
         inputFormatters: <TextInputFormatter>[
           SeperateTextFormatter(sample: 'XXXX XXXX XXXX XXXX', separator: ' '),
           LengthLimitingTextInputFormatter(19),
-          FilteringTextInputFormatter.allow(r'[0-9 ]'),
+          FilteringTextInputFormatter.allow('[0-9 ]'),
         ],
-        hintText: "0000\t0000\t0000\t0000",
-        textInputAction: TextInputAction.next,
+        hintText: '0000\t0000\t0000\t0000',
         filled: true,
         fillColor: theme.colorScheme.onPrimaryContainer);
   }

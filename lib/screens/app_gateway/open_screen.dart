@@ -8,14 +8,13 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 class RouteItem extends StatelessWidget {
-  final String routeDestination;
-  final String routeName;
-
   const RouteItem({
     super.key,
     required this.routeDestination,
     required this.routeName,
   });
+  final String routeDestination;
+  final String routeName;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +24,7 @@ class RouteItem extends StatelessWidget {
       },
       child: Container(
         decoration: AppDecoration.fillOnSecondary,
-        child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
+        child: Column(children: [
           Align(
               alignment: Alignment.centerLeft,
               child: Padding(
@@ -46,7 +45,7 @@ class RouteItem extends StatelessWidget {
               child: Divider(
                   height: getVerticalSize(1),
                   thickness: getVerticalSize(1),
-                  color: appTheme.blueGray400))
+                  color: appTheme.blueGray400)),
         ]),
       ),
     );

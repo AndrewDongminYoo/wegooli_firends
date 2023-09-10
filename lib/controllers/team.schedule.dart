@@ -12,15 +12,14 @@ import '/core/app_export.dart';
 final kToday = DateTime.now();
 
 class Item {
-  String title;
-  DateTime date;
-  bool isExpanded;
-
   Item({
     required this.title,
     required this.date,
     this.isExpanded = false,
   });
+  String title;
+  DateTime date;
+  bool isExpanded;
 }
 
 class ScheduleController extends GetxController {
@@ -28,16 +27,20 @@ class ScheduleController extends GetxController {
   DateTime focusedDay = kToday;
 
   /// [Map]을 사용하기로 한 경우, [LinkedHashMap]를 사용하는 것이 권장됩니다.
-  LinkedHashMap<DateTime, List<Schedule>>? _events =
+  final LinkedHashMap<DateTime, List<Schedule>> _events =
       LinkedHashMap<DateTime, List<Schedule>>();
-  LinkedHashMap<DateTime, List<Schedule>> get events => _events ??
-      LinkedHashMap<DateTime, List<Schedule>>(
+  LinkedHashMap<DateTime, List<Schedule>> get events {
+    if (_events.isEmpty) {
+      return LinkedHashMap<DateTime, List<Schedule>>(
         equals: isSameDay,
         hashCode: getHashCode,
-      )
-    ..addAll(eventSource);
+      )..addAll(eventSource);
+    } else {
+      return _events;
+    }
+  }
 
-  RxMap<DateTime, List<Schedule>> _eventSource = RxMap.of({});
+  final RxMap<DateTime, List<Schedule>> _eventSource = RxMap.of({});
   RxMap<DateTime, List<Schedule>> get eventSource => _eventSource;
 
   @override
@@ -69,8 +72,7 @@ class ScheduleController extends GetxController {
     Item(
       title: '반납시간',
       // DateTime returnTime = DateTime.now();
-      date: DateTime.now().add(Duration(hours: 2)),
-      isExpanded: false,
+      date: DateTime.now().add(const Duration(hours: 2)),
     ),
   ]);
 
@@ -90,13 +92,13 @@ class ScheduleController extends GetxController {
     /// 주어진 코드에서 `userController`는 `UserController` 클래스의 인스턴스입니다.
     /// `UserController` 클래스의 `schedules` 속성에 액세스하는 데 사용됩니다.
     /// `schedules` 속성은 `ScheduleController` 클래스의 `localEventSource` 맵을 채우는 데 사용됩니다.
-    Map<DateTime, List<Schedule>> localEventSource = Map.of({});
-    for (Schedule schedule in schedules) {
-      DateTime startDate = DateTime.parse(schedule.startAt!);
-      DateTime endDate = DateTime.parse(schedule.endAt!);
-      for (DateTime key in daysInRange(startDate, endDate)) {
-        List<Schedule> value =
-            localEventSource.getOrDefault(normalizeDateTime(key), []);
+    final localEventSource = Map<DateTime, List<Schedule>>.of({});
+    for (final schedule in schedules) {
+      final startDate = DateTime.parse(schedule.startAt!);
+      final endDate = DateTime.parse(schedule.endAt!);
+      for (final key in daysInRange(startDate, endDate)) {
+        final value =
+            localEventSource.getOrDefault(normalizeDateTime(key), <Schedule>[]);
         value.add(schedule);
         localEventSource.addIf(true, normalizeDateTime(key), value);
         // print('eventSource Add : \nkey:${key}\nvalue:$value');
@@ -117,32 +119,31 @@ class ScheduleController extends GetxController {
       Item(
         title: '반납시간',
         // DateTime returnTime = DateTime.now();
-        date: DateTime.now().add(Duration(hours: 2)),
-        isExpanded: false,
-      )
+        date: DateTime.now().add(const Duration(hours: 2)),
+      ),
     ]);
   }
 
   Future<void> addSchedule() async {
     final userController = UserController.to;
-    String? accountId = userController.currentUser.value.id;
-    int? teamSeq = userController.getTeamSeq();
+    final accountId = userController.currentUser.value.id;
+    final teamSeq = userController.getTeamSeq();
     if (accountId == null || teamSeq == null) {
       return;
     }
 
-    var formatter = DateFormat('yyyy-MM-dd HH:mm:ss');
-    var scheduleRequest = ScheduleRequest(
+    final formatter = DateFormat('yyyy-MM-dd HH:mm:ss');
+    final scheduleRequest = ScheduleRequest(
       accountId: accountId,
       teamSeq: teamSeq,
       startAt: formatter.format(reservationTime),
       endAt: formatter.format(returnTime),
     );
-    print('scheduleRequest ${scheduleRequest.toString()}');
+    print('scheduleRequest $scheduleRequest');
     final response = await wegooli
         .getScheduleControllerApi()
         .registSchedule(scheduleRequest: scheduleRequest);
-    print('regist ${response}');
+    print('regist $response');
     items.value = initItem();
     items.refresh();
     userController.schedules(await userController.retrieveSchedules());

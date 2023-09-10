@@ -7,8 +7,8 @@ import '/core/app_export.dart';
 class TeamCommunityBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => ConnectionController());
-    Get.lazyPut(() => VehicleController());
-    Get.lazyPut(() => ScheduleController());
+    Get.lazyPut(ConnectionController.new);
+    Get.lazyPut(VehicleController.new);
+    Get.lazyPut(ScheduleController.new);
   }
 }

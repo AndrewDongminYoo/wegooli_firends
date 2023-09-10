@@ -31,18 +31,18 @@ class UserController extends GetxController {
 
   SelectionPopupModel? phoneCarriers;
   List<SelectionPopupModel> telecoms = [
-    SelectionPopupModel(id: 01, title: "SKT"),
-    SelectionPopupModel(id: 02, title: "KT"),
-    SelectionPopupModel(id: 03, title: "LG U+"),
-    SelectionPopupModel(id: 04, title: "SKT 알뜰폰"),
-    SelectionPopupModel(id: 05, title: "KT 알뜰폰"),
-    SelectionPopupModel(id: 06, title: "LG U+ 알뜰폰"),
+    SelectionPopupModel(id: 01, title: 'SKT'),
+    SelectionPopupModel(id: 02, title: 'KT'),
+    SelectionPopupModel(id: 03, title: 'LG U+'),
+    SelectionPopupModel(id: 04, title: 'SKT 알뜰폰'),
+    SelectionPopupModel(id: 05, title: 'KT 알뜰폰'),
+    SelectionPopupModel(id: 06, title: 'LG U+ 알뜰폰'),
   ];
 
   Rx<User> currentUser = const User().obs;
-  RxList<TeamAccountModel> _members = RxList<TeamAccountModel>([]);
+  final RxList<TeamAccountModel> _members = RxList<TeamAccountModel>([]);
   RxList<TeamAccountModel> get members => _members;
-  RxList<Schedule> _schedules = RxList<Schedule>.of([]);
+  final RxList<Schedule> _schedules = RxList<Schedule>.of([]);
   RxList<Schedule> get schedules => _schedules;
 
   RxList<TeamAccountConnectionResponse> teams =
@@ -65,7 +65,7 @@ class UserController extends GetxController {
     // Update the UI - wait for the user to enter the SMS code
     if (phoneCarriers != null && phoneNum.text.isNotEmpty) {
       isWaitingOtpCode.value = true;
-      return await showDialog<String>(
+      return showDialog<String>(
         context: Get.context!,
         barrierDismissible: false,
         builder: (context) {
@@ -92,7 +92,7 @@ class UserController extends GetxController {
         },
       );
     } else {
-      Get.showSnackbar(GetSnackBar(title: '번호가 정확하지 않습니다.'));
+      Get.showSnackbar(const GetSnackBar(title: '번호가 정확하지 않습니다.'));
       return null;
     }
   }
@@ -150,30 +150,30 @@ class UserController extends GetxController {
       final response =
           await api.login(id: username.text, password: password.text);
       // print('response : $response');
-      Result? result = response.data?.result;
-      String bearerToken = '';
-      String token = '';
+      final result = response.data?.result;
+      var bearerToken = '';
+      var token = '';
       if (result == null || result.token == null) {
         print('`login()` 반환값: $result, ${response.data?.resultCode}');
-        Get.dialog(Center(
+        await Get.dialog(Center(
             child: Assets.lotties.xInCircle.lottie(height: 250, width: 250)));
         isAuthenticated.value = false;
         throw CustomException('로그인 실패');
       } else {
-        bearerToken = result.token as String;
+        bearerToken = result.token!;
         // BEARER prefix 분리.
         token = bearerToken.split(' ').last;
       }
       print('token: $token');
       // BEARER prefix 제거
-      Map<String, dynamic> payload = JwtDecoder.decode(token);
+      final payload = JwtDecoder.decode(token);
       //'{"name": "My Awesome App", "iat": 1548094400}'
       print('payload: $payload');
       if (!JwtDecoder.isExpired(token)) {
         currentUser.value = User.fromJson(payload);
         print('✅ 유효한 토큰입니다.');
         isAuthenticated.value = true;
-        PrefUtils.setToken(token);
+        await PrefUtils.setToken(token);
         await findMembers();
         return;
       } else {
@@ -183,7 +183,7 @@ class UserController extends GetxController {
     } on DioException catch (e) {
       isAuthenticated.value = false;
       print(switch (e.type) {
-        DioExceptionType.connectionError => e.message ?? "연결 오류가 발생했습니다.",
+        DioExceptionType.connectionError => e.message ?? '연결 오류가 발생했습니다.',
         DioExceptionType.connectionTimeout =>
           e.message ?? '요청 연결이 5000ms보다 오래 걸렸습니다.',
         DioExceptionType.sendTimeout =>
@@ -195,12 +195,12 @@ class UserController extends GetxController {
         DioExceptionType.badResponse => e.message ?? '요청에서 잘못된 상태 코드를 반환했습니다.',
         DioExceptionType.cancel => e.message ?? '요청이 취소되었습니다.',
         DioExceptionType.unknown =>
-          'message: ${e.message}\nerror: ${e.error}\nresponseData: ${e.response!.data}',
+          'message: ${e.message}\nerror: ${e.error}\nresponseData: ${e.response?.data}',
       });
-      print("`login()` 호출 중 DioException 발생: $e\n");
+      print('`login()` 호출 중 DioException 발생: $e\n');
     } on Exception catch (e) {
       isAuthenticated.value = false;
-      print("`login()` 호출 중 Exception 발생: $e\n");
+      print('`login()` 호출 중 Exception 발생: $e\n');
     }
   }
 
@@ -210,16 +210,16 @@ class UserController extends GetxController {
       return;
     }
     final response = await api.selectTeamAccountList(
-        accountId: currentUser.value.id!, isLeaved: 'false');
+        accountId: currentUser.value.id, isLeaved: 'false');
     print('findMembers : $response');
-    List<TeamAccountConnectionResponse>? teamList = response.data;
+    final teamList = response.data;
 
     if (teamList != null && teamList.isNotEmpty) {
       teams(teamList);
       // NOTE: 현재는 Team이 1개만 존재한다고 가정하기 때문에 첫번째 Team 정보로만 연결한다.
       // teams.first.account
       //     ?.forEach((it) => !members.contains(it) ? members.add(it) : null);
-      List<TeamAccountModel>? accountList = teams.first.account;
+      final accountList = teams.first.account;
       if (accountList != null && accountList.isNotEmpty) {
         members(teams.first.account!
             // .where((member) => currentUser.value.id! != member.accountId)
@@ -227,7 +227,7 @@ class UserController extends GetxController {
         // print('findMembers : ${teams.first.account}');
       }
     }
-    print('members : ${members.toString()}');
+    print('members : $members');
   }
 
   Future<bool> logOut() async {
@@ -238,7 +238,7 @@ class UserController extends GetxController {
   Future<bool> signOut() async {
     final response =
         await wegooli.getUserControllerApi().signOut(id: currentUser.value.id!);
-    return response.data == 'success';
+    return response.data!;
   }
 
   int? getTeamSeq() {
@@ -249,7 +249,7 @@ class UserController extends GetxController {
     if (teams.isEmpty) {
       return List.empty();
     }
-    int? teamSeq = getTeamSeq();
+    final teamSeq = getTeamSeq();
     if (teamSeq == null) {
       return List.empty();
     }
@@ -277,7 +277,7 @@ class UserController extends GetxController {
   }
 
   Color? getColor(String accountId) {
-    String? hexColor = members
+    final hexColor = members
         .firstWhereOrNull((member) => member.accountId == accountId)
         ?.color;
     // print('accountId $accountId hexColor: $hexColor');

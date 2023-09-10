@@ -18,7 +18,7 @@ class PaymentCardController extends GetxController {
   TextEditingController expirationDT = TextEditingController();
   TextEditingController birthNumber6 = TextEditingController();
   TextEditingController cardPassword = TextEditingController();
-  Rx<String> selected = "".obs;
+  Rx<String> selected = ''.obs;
 
   bool get cardInputSucceed => false;
   final userController = UserController.to;
@@ -40,7 +40,7 @@ class PaymentCardController extends GetxController {
     if (userController.currentUser.value.memberSeq != null) {
       final paymentCardControllerApi = wegooli.getPaymentCardControllerApi();
       final response = await paymentCardControllerApi.selectPaymentCardList(
-          memberSeq: userController.currentUser.value.memberSeq!);
+          memberSeq: userController.currentUser.value.memberSeq);
       print('response => ${response.data}');
       if (response.data != null) {
         _paymentCards.clear();
@@ -50,7 +50,7 @@ class PaymentCardController extends GetxController {
   }
 
   Future<String> registerCard() async {
-    PaymentCardRequest paymentCardRequest = PaymentCardRequest(
+    final paymentCardRequest = PaymentCardRequest(
         cardNumber: creditCardId.text,
         password: cardPassword.text,
         rrn: birthNumber6.text,

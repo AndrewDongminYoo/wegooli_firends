@@ -15,7 +15,7 @@ class ConnectionController extends GetxController with ChannelEventHandler {
       : Get.put(ConnectionController());
 
   final String appId = DotEnv().get('SENDBIRD_APPKEY', fallback: '');
-  RxList<BaseMessage> _messages = RxList<BaseMessage>();
+  final RxList<BaseMessage> _messages = RxList<BaseMessage>();
   GroupChannel? channel;
 
   // ignore: unused_field
@@ -24,12 +24,12 @@ class ConnectionController extends GetxController with ChannelEventHandler {
 
   @override
   void onInit() {
-    SendbirdSdk().addChannelEventHandler("dashchat", this);
+    SendbirdSdk().addChannelEventHandler('dashchat', this);
     final userController = UserController.to;
-    String? userId = userController.currentUser.value.id;
+    final userId = userController.currentUser.value.id;
     print('appId: $appId, userId: $userId');
     if (userId != null) {
-      List<String> otherMembers = userController.members
+      final otherMembers = userController.members
           .map((member) => member.accountId!)
           .where((id) => id != userId)
           .toList();
@@ -45,11 +45,10 @@ class ConnectionController extends GetxController with ChannelEventHandler {
 
   @override
   void onClose() {
-    SendbirdSdk().removeChannelEventHandler("dashchat");
-    super.onClose;
+    SendbirdSdk().removeChannelEventHandler('dashchat');
   }
 
-  void loadSendbird(
+  Future<void> loadSendbird(
       String appId, String userId, List<String> otherUserIds) async {
     try {
       // Init & connect with Sendbird
@@ -57,7 +56,7 @@ class ConnectionController extends GetxController with ChannelEventHandler {
       // Get the GroupChannel between the specified users
       channel = await getChannelBetween(userId, otherUserIds);
       // Retrieve any existing messages from the GroupChannel
-      MessageListParams messageListParams = new MessageListParams()
+      final messageListParams = MessageListParams()
         ..previousResultSize = 100
         ..reverse = true
         ..messageType = MessageTypeFilter.all
@@ -73,7 +72,7 @@ class ConnectionController extends GetxController with ChannelEventHandler {
   // TODO 추가 구현 필요.
   Future<void> getImage(ImageSource imageSource) async {
     //pickedFile에 ImagePicker로 가져온 이미지가 담긴다.
-    final XFile? pickedFile = await picker.pickImage(source: imageSource);
+    final pickedFile = await picker.pickImage(source: imageSource);
     if (pickedFile != null) {
       image = XFile(pickedFile.path); //가져온 이미지를 image에 저장
     }
@@ -87,13 +86,13 @@ class ConnectionController extends GetxController with ChannelEventHandler {
   ChatUser asDashChatUser(User? user) {
     // If no Sendbird user, return an empty ChatUser object
     if (user == null) {
-      return ChatUser(id: "", lastName: "", firstName: "", profileImage: "");
+      return ChatUser(id: '', lastName: '', firstName: '', profileImage: '');
     } else {
       return ChatUser(
         id: user.userId,
         lastName: '',
         firstName: user.nickname,
-        profileImage: user.profileUrl ?? "",
+        profileImage: user.profileUrl ?? '',
       );
     }
   }

@@ -20,13 +20,13 @@ bool shouldUseFirebaseEmulator = false;
 
 late final FirebaseApp app;
 late final FirebaseAuth auth;
-final Locale locale = const Locale('ko');
+const Locale locale = Locale('ko');
 
 // initialize app
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  dotenv.load(fileName: '.env');
-  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+  await dotenv.load();
+  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   Logger.init(kReleaseMode ? LogMode.live : LogMode.debug);
   await initializeDateFormatting();
   timeago.setLocaleMessages('ko', timeago.KoMessages());
@@ -74,13 +74,12 @@ Future<void> main() async {
 /// 애플리케이션 엔트리포인트.
 /// [MaterialApp]을 반환합니다.
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
   static final RouteObserver<PageRoute> routeObserver =
       RouteObserver<PageRoute>();
-
-  const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    var initialRoute = AppRoutes.splashScreen;
+    const initialRoute = AppRoutes.splashScreen;
     return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         theme: theme,
@@ -107,7 +106,7 @@ Widget _errorWidgetBuilder(dynamic context, Widget? child) {
   if (child is Scaffold || child is Navigator) {
     error = Scaffold(body: Center(child: error));
   }
-  ErrorWidget.builder = ((details) => error);
+  ErrorWidget.builder = (details) => error;
   if (child != null) return child;
-  throw ('에러 위젯이 래핑할 자식 위젯이 없습니다.');
+  throw CustomException('에러 위젯이 래핑할 자식 위젯이 없습니다.');
 }

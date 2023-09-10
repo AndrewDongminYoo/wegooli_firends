@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
-import 'package:dio/src/response.dart';
 import 'package:get/get_rx/get_rx.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:get/instance_manager.dart';
@@ -29,7 +28,7 @@ class LicenseController extends GetxController {
     SelectionPopupModel(id: 1, title: '1종 보통면허'),
     SelectionPopupModel(id: 2, title: '2종 보통면허'),
     SelectionPopupModel(id: 3, title: '1종 대형면허'),
-    SelectionPopupModel(id: 4, title: '2종 오토면허')
+    SelectionPopupModel(id: 4, title: '2종 오토면허'),
   ]);
   Rx<List<SelectionPopupModel>> licenseRegions = Rx([
     SelectionPopupModel(id: 11, title: '서울', value: '서울지방경찰청:[강남,도봉,서부,강서]'),
@@ -49,7 +48,7 @@ class LicenseController extends GetxController {
     SelectionPopupModel(id: 25, title: '대전', value: '대전지방경찰청:[대전]'),
     SelectionPopupModel(id: 26, title: '울산', value: '울산지방경찰청:[울산]'),
     SelectionPopupModel(id: 28, title: '경기북부', value: '경기북부지방경찰청:[의정부]'),
-    SelectionPopupModel(id: null, title: '세종', value: '세종지방경찰청:[없음]'),
+    SelectionPopupModel(title: '세종', value: '세종지방경찰청:[없음]'),
   ]);
   Rx<List<SelectionPopupModel>> yearOfLicenseIssuance = Rx([
     SelectionPopupModel(id: 11, title: '11'),
@@ -69,7 +68,7 @@ class LicenseController extends GetxController {
     SelectionPopupModel(id: 25, title: '25'),
     SelectionPopupModel(id: 26, title: '26'),
     SelectionPopupModel(id: 27, title: '27'),
-    SelectionPopupModel(id: 28, title: '28')
+    SelectionPopupModel(id: 28, title: '28'),
   ]);
 
   bool _licenseInputSucceed = true;
@@ -78,14 +77,12 @@ class LicenseController extends GetxController {
     final api = wegooli.getLicenseControllerApi();
     final validReq = ValidLicenseRequest();
     final insetReq = InsertLicenseRequest();
-    Response<bool> valid =
-        await api.isValidLicense(validLicenseRequest: validReq);
+    final valid = await api.isValidLicense(validLicenseRequest: validReq);
     if (!valid.data!) {
       _licenseInputSucceed = false;
       return 0;
     }
-    Response<int> success =
-        await api.insertLicense(insertLicenseRequest: insetReq);
+    final success = await api.insertLicense(insertLicenseRequest: insetReq);
     if (success.data != null) {
       _licenseInputSucceed = true;
       return success.data!;

@@ -28,7 +28,7 @@ class VehicleController extends GetxController {
   List<TeamAccountModel> get members => _members;
 
   @override
-  void onInit() async {
+  Future<void> onInit() async {
     final userController = UserController.to;
     _currentUser = userController.currentUser.value;
     _teamSeq = userController.getTeamSeq();
@@ -54,9 +54,9 @@ class VehicleController extends GetxController {
     if (schedule.startAt == null || schedule.endAt == null) {
       return false;
     } else {
-      DateTime last = DateTime.parse(schedule.startAt!);
-      DateTime later = DateTime.parse(schedule.endAt!);
-      DateTime now = DateTime.now();
+      final last = DateTime.parse(schedule.startAt!);
+      final later = DateTime.parse(schedule.endAt!);
+      final now = DateTime.now();
       return now.isBetween(last, later);
     }
   }
@@ -126,24 +126,24 @@ class VehicleController extends GetxController {
 
   Future<bool?> openDoor() async {
     final deviceControllerApi = wegooli.getDeviceControllerApi();
-    final response = await deviceControllerApi.doorOpen(
-        carNum: terminalDevice.carNum as String);
+    final response =
+        await deviceControllerApi.doorOpen(carNum: terminalDevice.carNum!);
     print('response : $response');
     return response.data;
   }
 
   Future<bool?> closeDoor() async {
     final deviceControllerApi = wegooli.getDeviceControllerApi();
-    final response = await deviceControllerApi.doorClose(
-        carNum: terminalDevice.carNum as String);
+    final response =
+        await deviceControllerApi.doorClose(carNum: terminalDevice.carNum!);
     print('response : $response');
     return response.data;
   }
 
   Future<bool?> horn() async {
     final deviceControllerApi = wegooli.getDeviceControllerApi();
-    final response = await deviceControllerApi.turnOnHorn(
-        carNum: terminalDevice.carNum as String);
+    final response =
+        await deviceControllerApi.turnOnHorn(carNum: terminalDevice.carNum!);
     print('response : $response');
     return response.data;
   }
@@ -151,7 +151,7 @@ class VehicleController extends GetxController {
   Future<bool?> emergencyLight() async {
     final deviceControllerApi = wegooli.getDeviceControllerApi();
     final response = await deviceControllerApi.turnOnEmergencyLight(
-        carNum: terminalDevice.carNum as String);
+        carNum: terminalDevice.carNum!);
     print('response : $response');
     return response.data;
   }
@@ -174,10 +174,10 @@ class VehicleController extends GetxController {
     if (currentUser.id == null || teamSeq == null) {
       return;
     }
-    SubmitWithdrawalModel submitWithdrawalModel = SubmitWithdrawalModel(
-        accountId: currentUser.id!,
+    final submitWithdrawalModel = SubmitWithdrawalModel(
+        accountId: currentUser.id,
         date: subscriptionModel.value.endAt,
-        teamSeq: teamSeq!);
+        teamSeq: teamSeq);
     await wegooli
         .getSubscriptionControllerApi()
         .submitWithdrawal(submitWithdrawalModel: submitWithdrawalModel);
@@ -187,12 +187,12 @@ class VehicleController extends GetxController {
 
   Future<void> subscribe() async {
     print('currentUser.id ${currentUser.id}');
-    print('teamSeq ${teamSeq}');
+    print('teamSeq $teamSeq');
     if (currentUser.id == null || teamSeq == null) {
       return;
     }
-    SubmitWithdrawalModel submitWithdrawalModel = SubmitWithdrawalModel(
-        accountId: currentUser.id!, date: null, teamSeq: teamSeq!);
+    final submitWithdrawalModel =
+        SubmitWithdrawalModel(accountId: currentUser.id, teamSeq: teamSeq);
     await wegooli
         .getSubscriptionControllerApi()
         .submitWithdrawal(submitWithdrawalModel: submitWithdrawalModel);
@@ -206,9 +206,9 @@ class VehicleController extends GetxController {
     if (subscriptionModel.value.withdrawalAt != null) {
       return subscriptionModel.value.withdrawalAt!.substring(0, 10);
     } else {
-      DateTime current = DateTime.now();
-      DateTime parsedDate = DateTime.parse(subscriptionModel.value.createdAt!);
-      DateTime modifiedDate =
+      final current = DateTime.now();
+      final parsedDate = DateTime.parse(subscriptionModel.value.createdAt!);
+      final modifiedDate =
           DateTime(current.year, parsedDate.month + 1, parsedDate.day);
       return DateFormat('yyyy-MM-dd').format(modifiedDate);
     }
@@ -221,7 +221,7 @@ class VehicleController extends GetxController {
     final response = await wegooli
         .getCarManagementControllerApi()
         .selectCarManagement(seq: teamSeq!);
-    CarManagementModel? carManagement = response.data;
+    final carManagement = response.data;
     if (carManagement == null) {
       return;
     }
@@ -243,17 +243,16 @@ class VehicleController extends GetxController {
       return;
     }
     final scheduleApi = wegooli.getScheduleControllerApi();
-    final scheduleList =
-        await scheduleApi.selectScheduleList(teamSeq: teamSeq!);
+    final scheduleList = await scheduleApi.selectScheduleList(teamSeq: teamSeq);
     print('team.vehicle.dart#L241 scheduleList.data : ${scheduleList.data}');
-    bool using = scheduleList.data!.any(compose);
+    final using = scheduleList.data!.any(compose);
     print('done : $using');
     availableNow.value = using;
   }
 
   Future<bool> joinTeam() async {
     final api = wegooli.getTeamAccountConnectionControllerApi();
-    String? accountId = currentUser.id;
+    final accountId = currentUser.id;
     if (accountId != null && invitation.text.length == 10) {
       print('joinTeam() accountId: $accountId |invitation: ${invitation.text}');
       final response = await api.inviteTeamAccount(

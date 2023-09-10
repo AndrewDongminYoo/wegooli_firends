@@ -7,7 +7,6 @@ import 'package:intl/intl.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
-import '/data/custom/user.model.dart';
 
 class VehicleController extends GetxController {
   final wegooli = WegooliFriends.client;

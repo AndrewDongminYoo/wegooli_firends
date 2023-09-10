@@ -32,13 +32,8 @@ class _LoginWithIdAndPasswordState extends State<LoginWithIdAndPassword> {
   void initState() {
     super.initState();
 
-    /// 애플리케이션이 종료된 상태에서 [RemoteMessage]([Notification] 포함)를 통해 열렸으면 반환되고, 그렇지 않으면 `null`이 됩니다.
-    /// [RemoteMessage]가 소비되면, [RemoteMessage]는 제거되고 [getInitialMessage]에 대한 추가 호출은 `null`이 됩니다.
-    /// 이는 특정 알림 상호 작용이 특정 목적(예: 채팅 메시지, 특정 화면 열기 등)으로 앱을 열어야 하는지 여부를 결정하는 데 사용해야 합니다.
-    FirebaseMessaging.instance.getInitialMessage();
-
+    final messaging = FirebaseMessaging.instance;
     if (withSilentVerificationSMSMFA && !kIsWeb) {
-      FirebaseMessaging messaging = FirebaseMessaging.instance;
       /// 사용자에게 alert 권한을 요청하는 메시지를 표시합니다.
       ///
       ///  - iOS에서는 사용자에게 권한을 요청하는 대화 상자가 표시됩니다.
@@ -49,6 +44,11 @@ class _LoginWithIdAndPasswordState extends State<LoginWithIdAndPassword> {
       ///  - 웹에서는 네이티브 브라우저 API를 사용하여 사용자에게 권한을 요청하는 팝업이 표시됩니다.
       messaging.requestPermission();
     }
+
+    /// 애플리케이션이 종료된 상태에서 [RemoteMessage]([Notification] 포함)를 통해 열렸으면 반환되고, 그렇지 않으면 `null`이 됩니다.
+    /// [RemoteMessage]가 소비되면, [RemoteMessage]는 제거되고 [getInitialMessage]에 대한 추가 호출은 `null`이 됩니다.
+    /// 이는 특정 알림 상호 작용이 특정 목적(예: 채팅 메시지, 특정 화면 열기 등)으로 앱을 열어야 하는지 여부를 결정하는 데 사용해야 합니다.
+    FirebaseMessaging.instance.getInitialMessage();
   }
 
   @override
@@ -61,6 +61,7 @@ class _LoginWithIdAndPasswordState extends State<LoginWithIdAndPassword> {
 
   @override
   Widget build(BuildContext context) {
+    final authMode = AuthMode.login;
     return GestureDetector(
       onTap: FocusScope.of(context).unfocus,
       child: SafeArea(
@@ -75,19 +76,12 @@ class _LoginWithIdAndPasswordState extends State<LoginWithIdAndPassword> {
               key: formKey,
               autovalidateMode: AutovalidateMode.onUserInteraction,
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const FriendsByWegooli(),
-                  EmailFormField(controller: controller),
+                  EmailAddressFormField(controller: controller, authMode: authMode),
                   PasswordFormField(
-                      controller: controller, authMode: AuthMode.login),
-                  CustomElevatedButton(
-                      text: l10ns.signIn,
-                      margin: getMargin(top: 30),
-                      buttonStyle: CustomButtonStyles.fillPrimaryC26,
-                      buttonTextStyle: CustomTextStyles.titleMedium18,
-                      onTap: onSubmit),
+                      controller: controller, authMode: authMode),
+                  GoSignInButton(controller: controller),
                   Padding(
                       padding: getPadding(top: 57),
                       child: Text(
@@ -98,18 +92,7 @@ class _LoginWithIdAndPasswordState extends State<LoginWithIdAndPassword> {
                           letterSpacing: getHorizontalSize(0.03),
                         ),
                       )),
-                  CustomElevatedButton(
-                    text: l10ns.signUp,
-                    width: double.infinity,
-                    margin: getMargin(top: 11, bottom: 5),
-                    buttonStyle: CustomButtonStyles.fillPrimaryC26,
-                    buttonTextStyle: CustomTextStyles.titleMedium18,
-                    onTap: () {
-                      // 해당 탭은 dialog로 변경 예정
-                      // onTapSignUpAcceptTerms();
-                      goPhoneAuth();
-                    },
-                  ),
+                  const GoSignUpButton(),
                 ],
               ),
             )),
@@ -117,11 +100,11 @@ class _LoginWithIdAndPasswordState extends State<LoginWithIdAndPassword> {
     );
   }
 
-  void onSubmit() async {
+  Future<void> onSubmit() async {
     await controller.authorize();
     if (isAuthenticated) {
       controller.schedules(await controller.retrieveSchedules());
-      goSharedSchedule();
+      await goSharedSchedule();
     } else {
       controller.username.clear();
       controller.password.clear();

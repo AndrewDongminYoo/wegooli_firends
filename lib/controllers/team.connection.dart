@@ -6,7 +6,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:sendbird_sdk/sendbird_sdk.dart';
 
 // 🌎 Project imports:
-import '/core/app_export.dart';
+import '/core/app_export.dart' hide User;
 
 class ConnectionController extends GetxController with ChannelEventHandler {
   final wegooli = WegooliFriends.client;

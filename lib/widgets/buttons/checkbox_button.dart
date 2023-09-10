@@ -80,15 +80,18 @@ class _CustomCheckboxButtonState extends State<CustomCheckboxButton> {
                     textWidget,
                 ])));
 
-  Widget get textWidget => Text(widget.text ?? '',
-      textAlign: widget.textAlignment ?? TextAlign.center,
-      style: widget.textStyle ?? theme.textTheme.bodyLarge);
+  Widget get textWidget => Text(
+        widget.text ?? '',
+        textAlign: widget.textAlignment ?? TextAlign.center,
+        style: widget.textStyle ?? theme.textTheme.bodyLarge,
+      );
 
   Widget get checkboxWidget => SizedBox(
-      height: widget.iconSize,
-      width: widget.iconSize,
+      height: widget.iconSize ?? getHorizontalSize(20.00),
+      width: widget.iconSize ?? getHorizontalSize(20.00),
       child: Checkbox(
           activeColor: ColorConstant.actionPrimaryPressed,
+          checkColor: ColorConstant.actionPrimaryInverted,
           visualDensity: const VisualDensity(vertical: -4, horizontal: -4),
           value: widget.value ?? false,
           onChanged: (value) {

@@ -290,7 +290,7 @@
   "@loginValidatePhoneAuth": {
     "description": "[Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨."
   },
-  "loginWithIdAndPassword": "[Page] ID/PASSWORD 로그인",
+  "loginWithIdAndPassword": "[Page] 사용자 로그인",
   "@loginWithIdAndPassword": {
     "description": "[Page]는 원활한 개발을 위한 게이트웨이 스크린의 네비게이션 버튼에 사용됨."
   },

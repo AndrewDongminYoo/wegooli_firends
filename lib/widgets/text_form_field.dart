@@ -104,7 +104,8 @@ class CustomTextFormField extends StatelessWidget {
         prefixIconConstraints: prefixConstraints,
         suffixIcon: suffix,
         suffixIconConstraints: suffixConstraints,
-        fillColor: enabled != true ? ColorConstant.actionNeutralDisabled : fillColor,
+        fillColor:
+            enabled != true ? ColorConstant.actionNeutralDisabled : fillColor,
         filled: enabled != true ? true : filled,
         isDense: true,
         contentPadding: contentPadding ??

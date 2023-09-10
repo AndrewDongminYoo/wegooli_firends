@@ -28,11 +28,6 @@ class EmailAddressFormField extends StatelessWidget {
         hintStyle: CustomTextStyles.bodyLargeGray50003,
         filled: true,
         autofillHints: const [AutofillHints.username],
-        inputFormatters: [
-          FilteringTextInputFormatter.allow(
-              // RegExp(r'[a-zA-Z0-9@!@.#]+$'),
-              RegExp(r'[a-zA-Z0-9]+\.*[a-zA-Z0-9]*@+[a-z]+.[a-z]+$')),
-        ],
         validator: (value) {
           if (value == null) {
             return '필수 입력 항목입니다.';

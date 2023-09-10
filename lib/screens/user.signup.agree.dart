@@ -29,7 +29,9 @@ class _AcceptTermsState extends State<AcceptTerms> {
         isAcceptedTerm3 &&
         isAcceptedTerm4 &&
         isAcceptedTerm5 &&
-        isAcceptedTerm6) _isAllTermsAccepted = true;
+        isAcceptedTerm6) {
+      _isAllTermsAccepted = true;
+    }
     return _isAllTermsAccepted;
   }
 

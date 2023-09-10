@@ -59,20 +59,26 @@ class _CustomCheckboxButtonState extends State<CustomCheckboxButton> {
           width: widget.width,
           margin: widget.margin ?? EdgeInsets.zero,
           child: (widget.isRightCheck ?? false)
-              ? rightSideCheckbox
-              : leftSideCheckbox));
-
-  Widget get leftSideCheckbox => Row(children: [
-        Padding(
-            padding: const EdgeInsets.only(right: 8), child: checkboxWidget),
-        if (widget.isExpandedText) Expanded(child: textWidget) else textWidget,
-      ]);
-
-  Widget get rightSideCheckbox =>
-      Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-        if (widget.isExpandedText) Expanded(child: textWidget) else textWidget,
-        Padding(padding: const EdgeInsets.only(left: 8), child: checkboxWidget),
-      ]);
+              ? Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                      if (widget.isExpandedText)
+                        Expanded(child: textWidget)
+                      else
+                        textWidget,
+                      Padding(
+                          padding: const EdgeInsets.only(left: 8),
+                          child: checkboxWidget),
+                    ])
+              : Row(children: [
+                  Padding(
+                      padding: const EdgeInsets.only(right: 8),
+                      child: checkboxWidget),
+                  if (widget.isExpandedText)
+                    Expanded(child: textWidget)
+                  else
+                    textWidget,
+                ])));
 
   Widget get textWidget => Text(widget.text ?? '',
       textAlign: widget.textAlignment ?? TextAlign.center,
@@ -82,6 +88,7 @@ class _CustomCheckboxButtonState extends State<CustomCheckboxButton> {
       height: widget.iconSize,
       width: widget.iconSize,
       child: Checkbox(
+          activeColor: ColorConstant.actionPrimaryPressed,
           visualDensity: const VisualDensity(vertical: -4, horizontal: -4),
           value: widget.value ?? false,
           onChanged: (value) {

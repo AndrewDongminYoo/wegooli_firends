@@ -6,6 +6,8 @@ import 'package:intl/intl.dart';
 import '/lib.dart';
 
 class ReservationsService extends GetConnect {
+  @override
+  String get baseUrl => WegooliFriends.basePath;
   final scheduleApi = wegooli.getScheduleControllerApi();
 
   Future<List<Schedule>> retrieveSchedules(int teamSeq) async {
@@ -15,7 +17,7 @@ class ReservationsService extends GetConnect {
       return List.empty();
     }
     // print('schedules $schedules');
-    return schedules.map((schedule) => Schedule.fromModel(schedule)).toList();
+    return schedules.map(Schedule.fromModel).toList();
   }
 
   Future<void> deleteSchedule(int seq) async {

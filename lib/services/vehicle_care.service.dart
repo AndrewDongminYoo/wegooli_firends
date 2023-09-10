@@ -5,6 +5,8 @@ import 'package:get/get_connect/connect.dart' show GetConnect;
 import '/lib.dart';
 
 class CarManagementService extends GetConnect {
+  @override
+  String get baseUrl => WegooliFriends.basePath;
   final deviceApi = wegooli.getDeviceControllerApi();
   final statusApi = wegooli.getCarManagementControllerApi();
   final terminalApi = wegooli.getTerminalControllerApi();

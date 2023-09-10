@@ -12,7 +12,7 @@ class RegisterZipCode extends GetWidget<UserController> {
 
   @override
   Widget build(BuildContext context) {
-    final authMode = AuthMode.register;
+    const authMode = AuthMode.register;
     return SafeArea(
         child: Scaffold(
       resizeToAvoidBottomInset: false,

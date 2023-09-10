@@ -5,9 +5,11 @@ import 'package:get/get_connect/connect.dart' show GetConnect;
 import '/lib.dart';
 
 class TeamAccountService extends GetConnect {
+  @override
+  String get baseUrl => WegooliFriends.basePath;
   final api = wegooli.getTeamAccountConnectionControllerApi();
 
-  Future<List<TeamAccountModel>> findMembers(accountId) async {
+  Future<List<TeamAccountModel>> findMembers(String accountId) async {
     final response = await api.selectTeamAccountList(
         accountId: accountId, isLeaved: 'false');
     print('findMembers : $response');

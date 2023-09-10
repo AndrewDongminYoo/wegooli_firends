@@ -10,7 +10,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 // 🌎 Project imports:
-import '/lib.dart';
+import '/lib.dart' hide User;
 import '/main.dart';
 
 /// Displayed as a profile image if the user doesn't have one.

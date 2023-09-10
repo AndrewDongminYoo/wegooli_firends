@@ -6,6 +6,7 @@ import '/core/app_export.dart';
 
 class CommonButton extends CustomElevatedButton {
   CommonButton({
+    super.key,
     required String title,
     required VoidCallback onTap,
   }) : super(

@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 // 🌎 Project imports:
-import '/lib.dart';
+import '/lib.dart' hide User;
 import '/main.dart';
 
 class AuthExampleApp extends StatelessWidget {

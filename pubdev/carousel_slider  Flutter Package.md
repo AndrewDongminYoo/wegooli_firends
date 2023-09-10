@@ -42,7 +42,7 @@ CarouselSlider(
           decoration: BoxDecoration(
             color: Colors.amber
           ),
-          child: Text('text $i', style: TextStyle(fontSize: 16.0),)
+          child: Text('text $i', style: TextStyle(fontSize: 16.0))
         );
       },
     );

@@ -127,19 +127,19 @@ class VehicleController extends GetxController {
   }
 
   Future<bool?> openDoor() async {
-    return await _manage.openDoor(terminalDevice.carNum!);
+    return _manage.openDoor(terminalDevice.carNum!);
   }
 
   Future<bool?> closeDoor() async {
-    return await _manage.closeDoor(terminalDevice.carNum!);
+    return _manage.closeDoor(terminalDevice.carNum!);
   }
 
   Future<bool?> horn() async {
-    return await _manage.horn(terminalDevice.carNum!);
+    return _manage.horn(terminalDevice.carNum!);
   }
 
   Future<bool?> emergencyLight() async {
-    return await _manage.emergencyLight(terminalDevice.carNum!);
+    return _manage.emergencyLight(terminalDevice.carNum!);
   }
 
   Future<void> getSubscription() async {
@@ -209,7 +209,7 @@ class VehicleController extends GetxController {
     }
     final scheduleList =
         await ReservationsService().retrieveSchedules(teamSeq!);
-    print('team.vehicle.dart#L241 scheduleList.data : ${scheduleList}');
+    print('team.vehicle.dart#L241 scheduleList.data : $scheduleList');
     final onUsing = scheduleList.any(compose);
     availableNow.value = onUsing;
   }
@@ -218,7 +218,7 @@ class VehicleController extends GetxController {
     final accountId = currentUser.id;
     if (accountId != null && invitation.text.length == 10) {
       print('joinTeam() accountId: $accountId |invitation: ${invitation.text}');
-      return await TeamAccountService()
+      return TeamAccountService()
           .inviteTeamAccount(accountId, invitation.text);
     }
     return false;

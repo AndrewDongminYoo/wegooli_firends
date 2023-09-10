@@ -21,10 +21,11 @@ class TeamReservationsItem extends StatefulWidget {
 
 class _TeamReservationsItemState extends State<TeamReservationsItem> {
   bool isToggleOn = false;
-  String formatering(schedule) {
-    final start = DateTime.parse(widget.schedule.startAt!);
-    final end = DateTime.parse(widget.schedule.endAt!);
+  String formatering(Schedule schedule) {
+    final start = DateTime.parse(schedule.startAt!);
+    final end = DateTime.parse(schedule.endAt!);
     final formatter = DateFormat('M/d (E) HH:mm', 'ko');
+    // '8/16 (수) 15:20 ~ 8/17(목) 14:00'
     return '${formatter.format(start)} ~ ${formatter.format(end)}';
   }
 
@@ -93,18 +94,16 @@ class _TeamReservationsItemState extends State<TeamReservationsItem> {
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Container(
-                          child: Text(
-                        // '8/16 (수) 15:20 ~ 8/17(목) 14:00',
+                      Text(
                         formatering(widget.schedule),
                         style: const TextStyle(
-                          color: ColorConstant.fontColorBlack,
-                          fontSize: 16,
-                          fontFamily: FontFamily.pretendard,
-                          fontWeight: FontWeight.w400,
-                          letterSpacing: 0.03,
+                      color: ColorConstant.fontColorBlack,
+                      fontSize: 16,
+                      fontFamily: FontFamily.pretendard,
+                      fontWeight: FontWeight.w400,
+                      letterSpacing: 0.03,
                         ),
-                      )),
+                      ),
                       if (isOwner)
                         CustomImageView(
                             svgPath: isToggleOn

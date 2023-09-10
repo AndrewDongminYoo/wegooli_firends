@@ -5,6 +5,8 @@ import 'package:get/get_connect/connect.dart' show GetConnect;
 import '/lib.dart';
 
 class PaymentCardService extends GetConnect {
+  @override
+  String get baseUrl => WegooliFriends.basePath;
   final client = wegooli.getPaymentCardControllerApi();
   Future<List<PaymentCardModel>> loadCreditCardList(User currentUser) async {
     if (currentUser.memberSeq != null) {
@@ -18,11 +20,11 @@ class PaymentCardService extends GetConnect {
   }
 
   Future<String> registerCard(
-    creditCardId,
-    cardPassword,
-    birthNumber6,
-    expDateMonth,
-    expDateYears,
+    String creditCardId,
+    String cardPassword,
+    String birthNumber6,
+    String expDateMonth,
+    String expDateYears,
   ) async {
     final newCard = PaymentCardRequest(
       cardNumber: creditCardId,

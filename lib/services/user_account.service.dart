@@ -9,11 +9,13 @@ import 'package:get/get.dart';
 import '/lib.dart';
 
 class UserAccountService extends GetConnect {
+  @override
+  String get baseUrl => WegooliFriends.basePath;
   final api = wegooli.getUserControllerApi();
 
   Future<User?> login(String username, String password) async {
     try {
-      print('user.username: ${username}\nuser.password: ${password}');
+      print('user.username: $username\nuser.password: $password');
       final response = await api.login(id: username, password: password);
       // print('response : $response');
       final result = response.data?.result;
@@ -50,7 +52,7 @@ class UserAccountService extends GetConnect {
   }
 
   void printDioException(DioException e) {
-    String message = switch (e.type) {
+    final message = switch (e.type) {
       DioExceptionType.connectionError => e.message ?? '연결 오류가 발생했습니다.',
       DioExceptionType.connectionTimeout =>
         e.message ?? '요청 연결이 5000ms보다 오래 걸렸습니다.',

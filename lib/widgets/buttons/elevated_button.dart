@@ -38,6 +38,7 @@ class CustomElevatedButton extends BaseButton {
   final bool isLoading;
 
   @override
+  // ignore: overridden_fields
   final bool isDisabled;
 
   @override

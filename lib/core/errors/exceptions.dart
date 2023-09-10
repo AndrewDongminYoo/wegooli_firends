@@ -25,7 +25,9 @@ class CustomException implements Exception {
   @override
   String toString() {
     final Object? message = this.message;
-    if (message == null) return 'Exception';
+    if (message == null) {
+      return 'Exception';
+    }
     return 'Exception: $message';
   }
 }

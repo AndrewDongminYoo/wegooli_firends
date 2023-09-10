@@ -5,6 +5,7 @@ import 'package:get/get_connect/connect.dart' show GetConnect;
 import '/lib.dart';
 
 class LicenseCardService extends GetConnect {
+  @override
   String get baseUrl => WegooliFriends.basePath;
   final api = wegooli.getLicenseControllerApi();
 

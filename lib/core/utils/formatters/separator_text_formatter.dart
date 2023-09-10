@@ -21,7 +21,9 @@ class SeperateTextFormatter extends TextInputFormatter {
 
     if (newText.length > oldText.length) {
       // max length
-      if (newText.length > sample.length) return oldValue;
+      if (newText.length > sample.length) {
+        return oldValue;
+      }
       // add seperator
       if (newText.length < sample.length &&
           sample[newText.length] == separator) {

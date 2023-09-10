@@ -83,7 +83,9 @@ class AppNetworkResponseException<OriginalException extends Exception, DataType>
   /// ```
   bool validateStatusCode(bool Function(int statusCode) evaluator) {
     final statusCode = this.statusCode;
-    if (statusCode == null) return false;
+    if (statusCode == null) {
+      return false;
+    }
     return evaluator(statusCode);
   }
 }

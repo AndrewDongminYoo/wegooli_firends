@@ -4,7 +4,7 @@
 bool isValidPassword(String? inputString, {bool isRequired = false}) {
   var isInputStringValid = false;
 
-  if ((inputString == null ? true : inputString.isEmpty) && !isRequired) {
+  if ((inputString == null || inputString.isEmpty) && !isRequired) {
     isInputStringValid = true;
   }
 
@@ -24,7 +24,7 @@ bool isValidPassword(String? inputString, {bool isRequired = false}) {
 bool isValidEmail(String? inputString, {bool isRequired = false}) {
   var isInputStringValid = false;
 
-  if ((inputString == null ? true : inputString.isEmpty) && !isRequired) {
+  if ((inputString == null || inputString.isEmpty) && !isRequired) {
     isInputStringValid = true;
   }
 
@@ -44,7 +44,7 @@ bool isValidEmail(String? inputString, {bool isRequired = false}) {
 bool isText(String? inputString, {bool isRequired = false}) {
   var isInputStringValid = false;
 
-  if ((inputString == null ? true : inputString.isEmpty) && !isRequired) {
+  if ((inputString == null || inputString.isEmpty) && !isRequired) {
     isInputStringValid = true;
   }
 
@@ -66,7 +66,7 @@ bool isNumeric(
 }) {
   var isInputStringValid = false;
 
-  if (!isRequired && (inputString == null ? true : inputString.isEmpty)) {
+  if (!isRequired && (inputString == null || inputString.isEmpty)) {
     isInputStringValid = true;
   }
 
@@ -85,12 +85,14 @@ bool isNumeric(
 bool isValidPhone(String? inputString, {bool isRequired = false}) {
   var isInputStringValid = false;
 
-  if ((inputString == null ? true : inputString.isEmpty) && !isRequired) {
+  if ((inputString == null || inputString.isEmpty) && !isRequired) {
     isInputStringValid = true;
   }
 
   if (inputString != null) {
-    if (inputString.length > 16 || inputString.length < 6) return false;
+    if (inputString.length > 16 || inputString.length < 6) {
+      return false;
+    }
 
     const pattern = r'^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$';
 

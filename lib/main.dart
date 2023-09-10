@@ -107,6 +107,9 @@ Widget _errorWidgetBuilder(dynamic context, Widget? child) {
     error = Scaffold(body: Center(child: error));
   }
   ErrorWidget.builder = (details) => error;
-  if (child != null) return child;
-  throw CustomException('에러 위젯이 래핑할 자식 위젯이 없습니다.');
+  if (child != null) {
+    return child;
+  } else {
+    throw CustomException('에러 위젯이 래핑할 자식 위젯이 없습니다.');
+  }
 }

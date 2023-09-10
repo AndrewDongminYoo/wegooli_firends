@@ -61,7 +61,7 @@ class _LoginWithIdAndPasswordState extends State<LoginWithIdAndPassword> {
 
   @override
   Widget build(BuildContext context) {
-    final authMode = AuthMode.login;
+    const authMode = AuthMode.login;
     return GestureDetector(
       onTap: FocusScope.of(context).unfocus,
       child: SafeArea(

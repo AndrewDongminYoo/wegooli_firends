@@ -20,7 +20,7 @@ class LoadingDialog {
   /// 로딩 모달이 이미 표시된 경우 이 메서드는 아무 작업도 수행하지 않습니다.
   /// 모달에 사용되는 로티 애니메이션은 [wegooliLogo] 변수로 지정된 파일에서 로드됩니다.
   /// 이 메서드는 Get 패키지를 사용하여 모달을 표시합니다.
-  static void showProgressDialog({isCancellable = false}) {
+  static void showProgressDialog({bool isCancellable = false}) {
     if (!isProgressVisible) {
       Get.dialog(
           Center(child: Lottie.asset(wegooliLogo, height: 250, width: 250)));

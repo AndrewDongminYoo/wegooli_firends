@@ -69,10 +69,10 @@ class LicenseController extends GetxController {
     SelectionPopupModel(id: 28, title: '28'),
   ]);
 
-  bool _licenseInputSucceed = true;
+  final bool _licenseInputSucceed = true;
   bool get licenseInputSucceed => _licenseInputSucceed;
   Future<int> inputLicenseInput() async {
-    return await _service.registerDrivingLicense();
+    return _service.registerDrivingLicense();
   }
 
   @override

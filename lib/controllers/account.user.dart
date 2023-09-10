@@ -155,19 +155,19 @@ class UserController extends GetxController {
       return;
     }
     final members =
-        await TeamAccountService().findMembers(currentUser.value.id);
+        await TeamAccountService().findMembers(currentUser.value.id!);
     print('members : $members');
   }
 
   Future<bool> logOut() async {
-    return await _service.logOut();
+    return _service.logOut();
   }
 
   Future<bool> signOut() async {
     if (currentUser.value.id == null) {
       return false;
     }
-    return await _service.signOut(currentUser.value.id!);
+    return _service.signOut(currentUser.value.id!);
   }
 
   Future<List<Schedule>> retrieveSchedules() async {
@@ -178,7 +178,7 @@ class UserController extends GetxController {
     if (teamSeq == null) {
       return List.empty();
     }
-    return await ReservationsService().retrieveSchedules(teamSeq);
+    return ReservationsService().retrieveSchedules(teamSeq);
   }
 
   int? getTeamSeq() {

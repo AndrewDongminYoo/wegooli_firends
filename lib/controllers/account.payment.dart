@@ -51,7 +51,7 @@ class PaymentCardController extends GetxController {
           content: const Text('결제수단 등록에 실패하였습니다.\n 다시 확인해주세요.'),
           actions: <Widget>[
             TextButton(
-              onPressed: () => Get.back(),
+              onPressed: goBack,
               child: const Text('예'),
             ),
           ],

@@ -35,7 +35,7 @@ class UnsubscribeButton extends StatelessWidget {
           await controller.unsubscribe();
         } else {
           /// 요청 전, 취소를 확인하는 다이얼로그를 생성하여 보여줌
-          Get.dialog(UnsubscriptionConfirmWarnDialog(controller: controller));
+          await Get.dialog(UnsubscriptionConfirmWarnDialog(controller: controller));
         }
       },
     );

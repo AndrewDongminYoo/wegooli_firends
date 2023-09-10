@@ -91,5 +91,6 @@
   "jsonToDart.runBuilder": false,
   "jsonToDart.sortConstructorsFirst": true,
   "jsonToDart.targetDirectory.path": "/lib/data/",
-  "jsonToDart.toString": "Auto"
+  "jsonToDart.toString": "Auto",
+  "css.lint.unknownProperties": "ignore"
 }

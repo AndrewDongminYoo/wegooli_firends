@@ -21,6 +21,6 @@ class _AcceptTermsNextButtonState extends State<AcceptTermsNextButton> {
             text: l10ns.acceptanceComplete,
             buttonStyle: CustomButtonStyles.fillPrimaryC26,
             buttonTextStyle: CustomTextStyles.titleMedium18,
-            onTap: widget.enabled ? () => goPhoneAuth() : null));
+            onTap: widget.enabled ? goPhoneAuth : null));
   }
 }

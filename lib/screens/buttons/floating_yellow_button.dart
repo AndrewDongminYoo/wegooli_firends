@@ -19,14 +19,13 @@ class FloatingYellowButton extends StatelessWidget {
         width: getHorizontalSize(70),
         margin: getMargin(right: 22),
         decoration: const BoxDecoration(
-            color: const Color(0xFFFFE142),
+            color: Color(0xFFFFE142),
             shape: BoxShape.circle,
             boxShadow: [
               BoxShadow(
                 color: Color(0x19000000),
                 blurRadius: 10,
                 offset: Offset(2, 2),
-                spreadRadius: 0,
               ),
             ]),
         onTap: () => launchUrlString('tel:15666560'),
@@ -44,14 +43,14 @@ class FloatingYellowButton extends StatelessWidget {
               l10ns.reportAnIncident,
               textAlign: TextAlign.center,
               style: const TextStyle(
-                color: const Color(0xFF000000),
+                color: Color(0xFF000000),
                 fontSize: 12,
                 fontFamily: FontFamily.pretendard,
                 fontWeight: FontWeight.w400,
                 height: 1.50,
                 letterSpacing: 0.02,
               ),
-            )
+            ),
           ],
         ),
       ),

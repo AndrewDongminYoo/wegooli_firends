@@ -11,7 +11,7 @@ class InviteTeamButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
         padding: getPadding(left: 15),
-        child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
+        child: Column(children: [
           CustomIconButton(
             height: 48,
             width: 48,

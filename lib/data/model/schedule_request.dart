@@ -25,32 +25,32 @@ class ScheduleRequest extends Equatable {
     this.endAt,
   });
 
-  @JsonKey(name: r'seq', required: false, includeIfNull: false)
-  final int? seq;
-
-  @JsonKey(name: r'delYn', required: false, includeIfNull: false)
-  final String? delYn;
-
-  @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
-  final DateTime? createdAt;
-
-  @JsonKey(name: r'updatedAt', required: false, includeIfNull: false)
-  final DateTime? updatedAt;
-
-  @JsonKey(name: r'teamSeq', required: false, includeIfNull: false)
-  final int? teamSeq;
-
-  @JsonKey(name: r'accountId', required: false, includeIfNull: false)
-  final String? accountId;
-
-  @JsonKey(name: r'startAt', required: false, includeIfNull: false)
-  final String? startAt;
-
-  @JsonKey(name: r'endAt', required: false, includeIfNull: false)
-  final String? endAt;
-
   factory ScheduleRequest.fromJson(Map<String, dynamic> json) =>
       _$ScheduleRequestFromJson(json);
+
+  @JsonKey(name: 'seq', required: false, includeIfNull: false)
+  final int? seq;
+
+  @JsonKey(name: 'delYn', required: false, includeIfNull: false)
+  final String? delYn;
+
+  @JsonKey(name: 'createdAt', required: false, includeIfNull: false)
+  final DateTime? createdAt;
+
+  @JsonKey(name: 'updatedAt', required: false, includeIfNull: false)
+  final DateTime? updatedAt;
+
+  @JsonKey(name: 'teamSeq', required: false, includeIfNull: false)
+  final int? teamSeq;
+
+  @JsonKey(name: 'accountId', required: false, includeIfNull: false)
+  final String? accountId;
+
+  @JsonKey(name: 'startAt', required: false, includeIfNull: false)
+  final String? startAt;
+
+  @JsonKey(name: 'endAt', required: false, includeIfNull: false)
+  final String? endAt;
 
   Map<String, dynamic> toJson() => _$ScheduleRequestToJson(this);
 

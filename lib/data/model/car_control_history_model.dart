@@ -24,29 +24,29 @@ class CarControlHistoryModel extends Equatable {
     this.successYn,
   });
 
-  @JsonKey(name: r'seq', required: false, includeIfNull: false)
-  final int? seq;
-
-  @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
-  final DateTime? createdAt;
-
-  @JsonKey(name: r'terminalSeq', required: false, includeIfNull: false)
-  final int? terminalSeq;
-
-  @JsonKey(name: r'carNum', required: false, includeIfNull: false)
-  final String? carNum;
-
-  @JsonKey(name: r'accountId', required: false, includeIfNull: false)
-  final String? accountId;
-
-  @JsonKey(name: r'context', required: false, includeIfNull: false)
-  final String? context;
-
-  @JsonKey(name: r'successYn', required: false, includeIfNull: false)
-  final String? successYn;
-
   factory CarControlHistoryModel.fromJson(Map<String, dynamic> json) =>
       _$CarControlHistoryModelFromJson(json);
+
+  @JsonKey(name: 'seq', required: false, includeIfNull: false)
+  final int? seq;
+
+  @JsonKey(name: 'createdAt', required: false, includeIfNull: false)
+  final DateTime? createdAt;
+
+  @JsonKey(name: 'terminalSeq', required: false, includeIfNull: false)
+  final int? terminalSeq;
+
+  @JsonKey(name: 'carNum', required: false, includeIfNull: false)
+  final String? carNum;
+
+  @JsonKey(name: 'accountId', required: false, includeIfNull: false)
+  final String? accountId;
+
+  @JsonKey(name: 'context', required: false, includeIfNull: false)
+  final String? context;
+
+  @JsonKey(name: 'successYn', required: false, includeIfNull: false)
+  final String? successYn;
 
   Map<String, dynamic> toJson() => _$CarControlHistoryModelToJson(this);
 

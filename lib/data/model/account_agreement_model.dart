@@ -22,23 +22,23 @@ class AccountAgreementModel extends Equatable {
     this.updatedAt,
   });
 
-  @JsonKey(name: r'classification', required: false, includeIfNull: false)
-  final String? classification;
-
-  @JsonKey(name: r'accountId', required: false, includeIfNull: false)
-  final String? accountId;
-
-  @JsonKey(name: r'agreeYn', required: false, includeIfNull: false)
-  final String? agreeYn;
-
-  @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
-  final String? createdAt;
-
-  @JsonKey(name: r'updatedAt', required: false, includeIfNull: false)
-  final String? updatedAt;
-
   factory AccountAgreementModel.fromJson(Map<String, dynamic> json) =>
       _$AccountAgreementModelFromJson(json);
+
+  @JsonKey(name: 'classification', required: false, includeIfNull: false)
+  final String? classification;
+
+  @JsonKey(name: 'accountId', required: false, includeIfNull: false)
+  final String? accountId;
+
+  @JsonKey(name: 'agreeYn', required: false, includeIfNull: false)
+  final String? agreeYn;
+
+  @JsonKey(name: 'createdAt', required: false, includeIfNull: false)
+  final String? createdAt;
+
+  @JsonKey(name: 'updatedAt', required: false, includeIfNull: false)
+  final String? updatedAt;
 
   Map<String, dynamic> toJson() => _$AccountAgreementModelToJson(this);
 

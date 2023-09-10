@@ -10,9 +10,8 @@ import '/data/deserialize.dart';
 import '/data/model/qn_a.dart';
 
 class BoardControllerApi {
-  final Dio _dio;
-
   const BoardControllerApi(this._dio);
+  final Dio _dio;
 
   /// deleteAnswer
   ///
@@ -37,9 +36,9 @@ class BoardControllerApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path =
-        r'/board/qna/{seq}/answer'.replaceAll('{' r'seq' '}', seq.toString());
+        '/board/qna/{seq}/answer'.replaceAll('{' 'seq' '}', seq.toString());
     final _options = Options(
-      method: r'DELETE',
+      method: 'DELETE',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -68,14 +67,12 @@ class BoardControllerApi {
 
     try {
       final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<bool, bool>(rawData, 'bool', growable: true);
+      _responseData =
+          rawData == null ? null : deserialize<bool, bool>(rawData, 'bool');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -116,9 +113,9 @@ class BoardControllerApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path =
-        r'/board/qna/{seq}/question'.replaceAll('{' r'seq' '}', seq.toString());
+        '/board/qna/{seq}/question'.replaceAll('{' 'seq' '}', seq.toString());
     final _options = Options(
-      method: r'DELETE',
+      method: 'DELETE',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -147,14 +144,12 @@ class BoardControllerApi {
 
     try {
       final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<bool, bool>(rawData, 'bool', growable: true);
+      _responseData =
+          rawData == null ? null : deserialize<bool, bool>(rawData, 'bool');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -197,9 +192,9 @@ class BoardControllerApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path =
-        r'/board/qna/{seq}/answer'.replaceAll('{' r'seq' '}', seq.toString());
+        '/board/qna/{seq}/answer'.replaceAll('{' 'seq' '}', seq.toString());
     final _options = Options(
-      method: r'POST',
+      method: 'POST',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -227,7 +222,6 @@ class BoardControllerApi {
           _dio.options,
           _path,
         ),
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -246,14 +240,12 @@ class BoardControllerApi {
 
     try {
       final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<int, int>(rawData, 'int', growable: true);
+      _responseData =
+          rawData == null ? null : deserialize<int, int>(rawData, 'int');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -293,9 +285,9 @@ class BoardControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/board/qna/question';
+    const _path = '/board/qna/question';
     final _options = Options(
-      method: r'POST',
+      method: 'POST',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -323,7 +315,6 @@ class BoardControllerApi {
           _dio.options,
           _path,
         ),
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -342,14 +333,12 @@ class BoardControllerApi {
 
     try {
       final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<int, int>(rawData, 'int', growable: true);
+      _responseData =
+          rawData == null ? null : deserialize<int, int>(rawData, 'int');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -389,9 +378,9 @@ class BoardControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/board/qna/count';
+    const _path = '/board/qna/count';
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -409,7 +398,7 @@ class BoardControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'request': request,
+      'request': request,
     };
 
     final _response = await _dio.request<Object>(
@@ -425,14 +414,12 @@ class BoardControllerApi {
 
     try {
       final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<int, int>(rawData, 'int', growable: true);
+      _responseData =
+          rawData == null ? null : deserialize<int, int>(rawData, 'int');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -472,10 +459,9 @@ class BoardControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/board/qna/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
+    final _path = '/board/qna/{seq}'.replaceAll('{' 'seq' '}', seq.toString());
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -504,14 +490,12 @@ class BoardControllerApi {
 
     try {
       final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<QnA, QnA>(rawData, 'QnA', growable: true);
+      _responseData =
+          rawData == null ? null : deserialize<QnA, QnA>(rawData, 'QnA');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -551,9 +535,9 @@ class BoardControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/board/qna';
+    const _path = '/board/qna';
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -571,7 +555,7 @@ class BoardControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'request': request,
+      'request': request,
     };
 
     final _response = await _dio.request<Object>(
@@ -589,12 +573,11 @@ class BoardControllerApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<QnA>, QnA>(rawData, 'List<QnA>', growable: true);
+          : deserialize<List<QnA>, QnA>(rawData, 'List<QnA>');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -637,9 +620,9 @@ class BoardControllerApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path =
-        r'/board/qna/{seq}/answer'.replaceAll('{' r'seq' '}', seq.toString());
+        '/board/qna/{seq}/answer'.replaceAll('{' 'seq' '}', seq.toString());
     final _options = Options(
-      method: r'PUT',
+      method: 'PUT',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -667,7 +650,6 @@ class BoardControllerApi {
           _dio.options,
           _path,
         ),
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -686,14 +668,12 @@ class BoardControllerApi {
 
     try {
       final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<int, int>(rawData, 'int', growable: true);
+      _responseData =
+          rawData == null ? null : deserialize<int, int>(rawData, 'int');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -736,9 +716,9 @@ class BoardControllerApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path =
-        r'/board/qna/{seq}/question'.replaceAll('{' r'seq' '}', seq.toString());
+        '/board/qna/{seq}/question'.replaceAll('{' 'seq' '}', seq.toString());
     final _options = Options(
-      method: r'PUT',
+      method: 'PUT',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -766,7 +746,6 @@ class BoardControllerApi {
           _dio.options,
           _path,
         ),
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -785,14 +764,12 @@ class BoardControllerApi {
 
     try {
       final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<int, int>(rawData, 'int', growable: true);
+      _responseData =
+          rawData == null ? null : deserialize<int, int>(rawData, 'int');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );

@@ -11,9 +11,8 @@ import '/data/model/payment_card_model.dart';
 import '/data/model/payment_card_request.dart';
 
 class PaymentCardControllerApi {
-  final Dio _dio;
-
   const PaymentCardControllerApi(this._dio);
+  final Dio _dio;
 
   /// deletePaymentCard
   ///
@@ -38,9 +37,9 @@ class PaymentCardControllerApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path =
-        r'/payment/card/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
+        '/payment/card/{seq}'.replaceAll('{' 'seq' '}', seq.toString());
     final _options = Options(
-      method: r'DELETE',
+      method: 'DELETE',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -71,12 +70,11 @@ class PaymentCardControllerApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<String, String>(rawData, 'String', growable: true);
+          : deserialize<String, String>(rawData, 'String');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -116,9 +114,9 @@ class PaymentCardControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/payment/card';
+    const _path = '/payment/card';
     final _options = Options(
-      method: r'POST',
+      method: 'POST',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -146,7 +144,6 @@ class PaymentCardControllerApi {
           _dio.options,
           _path,
         ),
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -167,12 +164,11 @@ class PaymentCardControllerApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<String, String>(rawData, 'String', growable: true);
+          : deserialize<String, String>(rawData, 'String');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -213,9 +209,9 @@ class PaymentCardControllerApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path =
-        r'/payment/card/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
+        '/payment/card/{seq}'.replaceAll('{' 'seq' '}', seq.toString());
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -247,13 +243,11 @@ class PaymentCardControllerApi {
       _responseData = rawData == null
           ? null
           : deserialize<PaymentCardModel, PaymentCardModel>(
-              rawData, 'PaymentCardModel',
-              growable: true);
+              rawData, 'PaymentCardModel');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -317,9 +311,9 @@ class PaymentCardControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/payment/card';
+    const _path = '/payment/card';
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -337,19 +331,19 @@ class PaymentCardControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (memberSeq != null) r'memberSeq': memberSeq,
-      if (cardNumber != null) r'cardNumber': cardNumber,
-      if (defaultYn != null) r'defaultYn': defaultYn,
-      if (delYn != null) r'delYn': delYn,
-      if (startCreatedAt != null) r'startCreatedAt': startCreatedAt,
-      if (endCreatedAt != null) r'endCreatedAt': endCreatedAt,
-      if (startUpdatedAt != null) r'startUpdatedAt': startUpdatedAt,
-      if (endUpdatedAt != null) r'endUpdatedAt': endUpdatedAt,
-      if (password != null) r'password': password,
-      if (rrn != null) r'rrn': rrn,
-      if (crn != null) r'crn': crn,
-      if (expirationMonth != null) r'expirationMonth': expirationMonth,
-      if (expirationYear != null) r'expirationYear': expirationYear,
+      if (memberSeq != null) 'memberSeq': memberSeq,
+      if (cardNumber != null) 'cardNumber': cardNumber,
+      if (defaultYn != null) 'defaultYn': defaultYn,
+      if (delYn != null) 'delYn': delYn,
+      if (startCreatedAt != null) 'startCreatedAt': startCreatedAt,
+      if (endCreatedAt != null) 'endCreatedAt': endCreatedAt,
+      if (startUpdatedAt != null) 'startUpdatedAt': startUpdatedAt,
+      if (endUpdatedAt != null) 'endUpdatedAt': endUpdatedAt,
+      if (password != null) 'password': password,
+      if (rrn != null) 'rrn': rrn,
+      if (crn != null) 'crn': crn,
+      if (expirationMonth != null) 'expirationMonth': expirationMonth,
+      if (expirationYear != null) 'expirationYear': expirationYear,
     };
 
     final _response = await _dio.request<Object>(
@@ -368,13 +362,11 @@ class PaymentCardControllerApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<PaymentCardModel>, PaymentCardModel>(
-              rawData, 'List<PaymentCardModel>',
-              growable: true);
+              rawData, 'List<PaymentCardModel>');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -417,9 +409,9 @@ class PaymentCardControllerApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path =
-        r'/payment/card/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
+        '/payment/card/{seq}'.replaceAll('{' 'seq' '}', seq.toString());
     final _options = Options(
-      method: r'PUT',
+      method: 'PUT',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -447,7 +439,6 @@ class PaymentCardControllerApi {
           _dio.options,
           _path,
         ),
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -468,12 +459,11 @@ class PaymentCardControllerApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<String, String>(rawData, 'String', growable: true);
+          : deserialize<String, String>(rawData, 'String');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );

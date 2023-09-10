@@ -34,59 +34,59 @@ class TerminalModel extends Equatable {
     this.carNickname,
   });
 
-  @JsonKey(name: r'seq', required: false, includeIfNull: false)
-  final int? seq;
-
-  @JsonKey(name: r'delYn', required: false, includeIfNull: false)
-  final String? delYn;
-
-  @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
-  final DateTime? createdAt;
-
-  @JsonKey(name: r'updatedAt', required: false, includeIfNull: false)
-  final DateTime? updatedAt;
-
-  @JsonKey(name: r'carNum', required: false, includeIfNull: false)
-  final String? carNum;
-
-  @JsonKey(name: r'phoneNumber', required: false, includeIfNull: false)
-  final String? phoneNumber;
-
-  @JsonKey(name: r'status', required: false, includeIfNull: false)
-  final String? status;
-
-  @JsonKey(name: r'seats', required: false, includeIfNull: false)
-  final int? seats;
-
-  @JsonKey(name: r'model', required: false, includeIfNull: false)
-  final String? model;
-
-  @JsonKey(name: r'volt', required: false, includeIfNull: false)
-  final String? volt;
-
-  @JsonKey(name: r'fuelType', required: false, includeIfNull: false)
-  final String? fuelType;
-
-  @JsonKey(name: r'fuel', required: false, includeIfNull: false)
-  final String? fuel;
-
-  @JsonKey(name: r'segment', required: false, includeIfNull: false)
-  final String? segment;
-
-  @JsonKey(name: r'accountId', required: false, includeIfNull: false)
-  final String? accountId;
-
-  @JsonKey(name: r'teamSeq', required: false, includeIfNull: false)
-  final int? teamSeq;
-
-  @JsonKey(name: r'carImage', required: false, includeIfNull: false)
-  final String? carImage;
-
-  @JsonKey(name: r'carNickname', required: false, includeIfNull: false)
-  final String? carNickname;
-
   factory TerminalModel.fromJson(Map<String, dynamic> json) =>
       _$TerminalModelFromJson(json);
+
+  @JsonKey(name: 'seq', required: false, includeIfNull: false)
+  final int? seq;
+
+  @JsonKey(name: 'delYn', required: false, includeIfNull: false)
+  final String? delYn;
+
+  @JsonKey(name: 'createdAt', required: false, includeIfNull: false)
+  final DateTime? createdAt;
+
+  @JsonKey(name: 'updatedAt', required: false, includeIfNull: false)
+  final DateTime? updatedAt;
+
+  @JsonKey(name: 'carNum', required: false, includeIfNull: false)
+  final String? carNum;
+
+  @JsonKey(name: 'phoneNumber', required: false, includeIfNull: false)
+  final String? phoneNumber;
+
+  @JsonKey(name: 'status', required: false, includeIfNull: false)
+  final String? status;
+
+  @JsonKey(name: 'seats', required: false, includeIfNull: false)
+  final int? seats;
+
+  @JsonKey(name: 'model', required: false, includeIfNull: false)
+  final String? model;
+
+  @JsonKey(name: 'volt', required: false, includeIfNull: false)
+  final String? volt;
+
+  @JsonKey(name: 'fuelType', required: false, includeIfNull: false)
+  final String? fuelType;
+
+  @JsonKey(name: 'fuel', required: false, includeIfNull: false)
+  final String? fuel;
+
+  @JsonKey(name: 'segment', required: false, includeIfNull: false)
+  final String? segment;
+
+  @JsonKey(name: 'accountId', required: false, includeIfNull: false)
+  final String? accountId;
+
+  @JsonKey(name: 'teamSeq', required: false, includeIfNull: false)
+  final int? teamSeq;
+
+  @JsonKey(name: 'carImage', required: false, includeIfNull: false)
+  final String? carImage;
+
+  @JsonKey(name: 'carNickname', required: false, includeIfNull: false)
+  final String? carNickname;
 
   Map<String, dynamic> toJson() => _$TerminalModelToJson(this);
 
@@ -111,6 +111,6 @@ class TerminalModel extends Equatable {
         accountId,
         teamSeq,
         carImage,
-        carNickname
+        carNickname,
       ];
 }

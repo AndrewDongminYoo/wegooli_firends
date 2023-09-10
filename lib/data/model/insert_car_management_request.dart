@@ -20,46 +20,26 @@ class InsertCarManagementRequest {
     this.createdBy,
   });
 
-  @JsonKey(name: r'seq', required: false, includeIfNull: false)
-  final int? seq;
-
-  @JsonKey(name: r'carNum', required: false, includeIfNull: false)
-  final String? carNum;
-
-  @JsonKey(name: r'oilCheckDate', required: false, includeIfNull: false)
-  final String? oilCheckDate;
-
-  @JsonKey(name: r'tireCheckDate', required: false, includeIfNull: false)
-  final String? tireCheckDate;
-
-  @JsonKey(name: r'batteryStatus', required: false, includeIfNull: false)
-  final String? batteryStatus;
-
-  @JsonKey(name: r'createdBy', required: false, includeIfNull: false)
-  final String? createdBy;
-
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is InsertCarManagementRequest &&
-          other.seq == seq &&
-          other.carNum == carNum &&
-          other.oilCheckDate == oilCheckDate &&
-          other.tireCheckDate == tireCheckDate &&
-          other.batteryStatus == batteryStatus &&
-          other.createdBy == createdBy;
-
-  @override
-  int get hashCode =>
-      seq.hashCode +
-      carNum.hashCode +
-      oilCheckDate.hashCode +
-      tireCheckDate.hashCode +
-      batteryStatus.hashCode +
-      createdBy.hashCode;
-
   factory InsertCarManagementRequest.fromJson(Map<String, dynamic> json) =>
       _$InsertCarManagementRequestFromJson(json);
+
+  @JsonKey(name: 'seq', required: false, includeIfNull: false)
+  final int? seq;
+
+  @JsonKey(name: 'carNum', required: false, includeIfNull: false)
+  final String? carNum;
+
+  @JsonKey(name: 'oilCheckDate', required: false, includeIfNull: false)
+  final String? oilCheckDate;
+
+  @JsonKey(name: 'tireCheckDate', required: false, includeIfNull: false)
+  final String? tireCheckDate;
+
+  @JsonKey(name: 'batteryStatus', required: false, includeIfNull: false)
+  final String? batteryStatus;
+
+  @JsonKey(name: 'createdBy', required: false, includeIfNull: false)
+  final String? createdBy;
 
   Map<String, dynamic> toJson() => _$InsertCarManagementRequestToJson(this);
 

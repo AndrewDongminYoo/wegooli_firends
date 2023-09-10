@@ -25,30 +25,30 @@ class User extends Equatable {
     this.delimit,
   });
 
-  @JsonKey(name: r'userNm', required: false, includeIfNull: false)
-  final String? name;
-  @JsonKey(name: r'phoneNumber', required: false, includeIfNull: false)
-  final String? phoneNumber;
-  @JsonKey(name: r'color', required: false, includeIfNull: false)
-  final String? color;
-  @JsonKey(name: r'memberSeq', required: false, includeIfNull: false)
-  final int? memberSeq;
-  @JsonKey(name: r'nickname', required: false, includeIfNull: false)
-  final String? nickname;
-  @JsonKey(name: r'userEmail', required: false, includeIfNull: false)
-  final String? email;
-  @JsonKey(name: r'id', required: true, includeIfNull: false)
-  final String? id;
-  @JsonKey(name: r'birthday', required: false, includeIfNull: false)
-  final String? birthDay;
-  @JsonKey(name: r'add2', required: false, includeIfNull: false)
-  final String? add2;
-  @JsonKey(name: r'add1', required: false, includeIfNull: false)
-  final String? add1;
-  @JsonKey(name: r'delimit', required: false, includeIfNull: false)
-  final String? delimit;
-
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
+
+  @JsonKey(name: 'userNm', required: false, includeIfNull: false)
+  final String? name;
+  @JsonKey(name: 'phoneNumber', required: false, includeIfNull: false)
+  final String? phoneNumber;
+  @JsonKey(name: 'color', required: false, includeIfNull: false)
+  final String? color;
+  @JsonKey(name: 'memberSeq', required: false, includeIfNull: false)
+  final int? memberSeq;
+  @JsonKey(name: 'nickname', required: false, includeIfNull: false)
+  final String? nickname;
+  @JsonKey(name: 'userEmail', required: false, includeIfNull: false)
+  final String? email;
+  @JsonKey(name: 'id', required: true, includeIfNull: false)
+  final String? id;
+  @JsonKey(name: 'birthday', required: false, includeIfNull: false)
+  final String? birthDay;
+  @JsonKey(name: 'add2', required: false, includeIfNull: false)
+  final String? add2;
+  @JsonKey(name: 'add1', required: false, includeIfNull: false)
+  final String? add1;
+  @JsonKey(name: 'delimit', required: false, includeIfNull: false)
+  final String? delimit;
 
   Map<String, dynamic> toJson() => _$UserToJson(this);
 

@@ -21,20 +21,20 @@ class TeamAccountConnectionRequest extends Equatable {
     this.leavedAt,
   });
 
-  @JsonKey(name: r'teamSeq', required: false, includeIfNull: false)
-  final int? teamSeq;
-
-  @JsonKey(name: r'accountId', required: false, includeIfNull: false)
-  final String? accountId;
-
-  @JsonKey(name: r'joinedAt', required: false, includeIfNull: false)
-  final String? joinedAt;
-
-  @JsonKey(name: r'leavedAt', required: false, includeIfNull: false)
-  final String? leavedAt;
-
   factory TeamAccountConnectionRequest.fromJson(Map<String, dynamic> json) =>
       _$TeamAccountConnectionRequestFromJson(json);
+
+  @JsonKey(name: 'teamSeq', required: false, includeIfNull: false)
+  final int? teamSeq;
+
+  @JsonKey(name: 'accountId', required: false, includeIfNull: false)
+  final String? accountId;
+
+  @JsonKey(name: 'joinedAt', required: false, includeIfNull: false)
+  final String? joinedAt;
+
+  @JsonKey(name: 'leavedAt', required: false, includeIfNull: false)
+  final String? leavedAt;
 
   Map<String, dynamic> toJson() => _$TeamAccountConnectionRequestToJson(this);
 

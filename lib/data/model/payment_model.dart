@@ -37,68 +37,68 @@ class PaymentModel extends Equatable {
     this.accountId,
   });
 
-  @JsonKey(name: r'paymentKey', required: false, includeIfNull: false)
-  final String? paymentKey;
-
-  @JsonKey(name: r'status', required: false, includeIfNull: false)
-  final String? status;
-
-  @JsonKey(name: r'lastTransactionKey', required: false, includeIfNull: false)
-  final String? lastTransactionKey;
-
-  @JsonKey(name: r'orderId', required: false, includeIfNull: false)
-  final String? orderId;
-
-  @JsonKey(name: r'orderName', required: false, includeIfNull: false)
-  final String? orderName;
-
-  @JsonKey(name: r'requestedAt', required: false, includeIfNull: false)
-  final String? requestedAt;
-
-  @JsonKey(name: r'approvedAt', required: false, includeIfNull: false)
-  final String? approvedAt;
-
-  @JsonKey(name: r'cancelReason', required: false, includeIfNull: false)
-  final String? cancelReason;
-
-  @JsonKey(name: r'canceledAt', required: false, includeIfNull: false)
-  final String? canceledAt;
-
-  @JsonKey(name: r'cancelAmount', required: false, includeIfNull: false)
-  final int? cancelAmount;
-
-  @JsonKey(name: r'type', required: false, includeIfNull: false)
-  final String? type;
-
-  @JsonKey(name: r'currency', required: false, includeIfNull: false)
-  final String? currency;
-
-  @JsonKey(name: r'totalAmount', required: false, includeIfNull: false)
-  final int? totalAmount;
-
-  @JsonKey(name: r'balanceAmount', required: false, includeIfNull: false)
-  final int? balanceAmount;
-
-  @JsonKey(name: r'suppliedAmount', required: false, includeIfNull: false)
-  final int? suppliedAmount;
-
-  @JsonKey(name: r'vat', required: false, includeIfNull: false)
-  final int? vat;
-
-  @JsonKey(name: r'taxFreeAmount', required: false, includeIfNull: false)
-  final int? taxFreeAmount;
-
-  @JsonKey(name: r'taxExemptionAmount', required: false, includeIfNull: false)
-  final int? taxExemptionAmount;
-
-  @JsonKey(name: r'method', required: false, includeIfNull: false)
-  final String? method;
-
-  @JsonKey(name: r'accountId', required: false, includeIfNull: false)
-  final String? accountId;
-
   factory PaymentModel.fromJson(Map<String, dynamic> json) =>
       _$PaymentModelFromJson(json);
+
+  @JsonKey(name: 'paymentKey', required: false, includeIfNull: false)
+  final String? paymentKey;
+
+  @JsonKey(name: 'status', required: false, includeIfNull: false)
+  final String? status;
+
+  @JsonKey(name: 'lastTransactionKey', required: false, includeIfNull: false)
+  final String? lastTransactionKey;
+
+  @JsonKey(name: 'orderId', required: false, includeIfNull: false)
+  final String? orderId;
+
+  @JsonKey(name: 'orderName', required: false, includeIfNull: false)
+  final String? orderName;
+
+  @JsonKey(name: 'requestedAt', required: false, includeIfNull: false)
+  final String? requestedAt;
+
+  @JsonKey(name: 'approvedAt', required: false, includeIfNull: false)
+  final String? approvedAt;
+
+  @JsonKey(name: 'cancelReason', required: false, includeIfNull: false)
+  final String? cancelReason;
+
+  @JsonKey(name: 'canceledAt', required: false, includeIfNull: false)
+  final String? canceledAt;
+
+  @JsonKey(name: 'cancelAmount', required: false, includeIfNull: false)
+  final int? cancelAmount;
+
+  @JsonKey(name: 'type', required: false, includeIfNull: false)
+  final String? type;
+
+  @JsonKey(name: 'currency', required: false, includeIfNull: false)
+  final String? currency;
+
+  @JsonKey(name: 'totalAmount', required: false, includeIfNull: false)
+  final int? totalAmount;
+
+  @JsonKey(name: 'balanceAmount', required: false, includeIfNull: false)
+  final int? balanceAmount;
+
+  @JsonKey(name: 'suppliedAmount', required: false, includeIfNull: false)
+  final int? suppliedAmount;
+
+  @JsonKey(name: 'vat', required: false, includeIfNull: false)
+  final int? vat;
+
+  @JsonKey(name: 'taxFreeAmount', required: false, includeIfNull: false)
+  final int? taxFreeAmount;
+
+  @JsonKey(name: 'taxExemptionAmount', required: false, includeIfNull: false)
+  final int? taxExemptionAmount;
+
+  @JsonKey(name: 'method', required: false, includeIfNull: false)
+  final String? method;
+
+  @JsonKey(name: 'accountId', required: false, includeIfNull: false)
+  final String? accountId;
 
   Map<String, dynamic> toJson() => _$PaymentModelToJson(this);
 

@@ -27,38 +27,38 @@ class SubscriptionModel extends Equatable {
     this.withdrawalAt,
   });
 
-  @JsonKey(name: r'accountId', required: false, includeIfNull: false)
-  final String? accountId;
-
-  @JsonKey(name: r'teamSeq', required: false, includeIfNull: false)
-  final int? teamSeq;
-
-  @JsonKey(name: r'teamName', required: false, includeIfNull: false)
-  final String? teamName;
-
-  @JsonKey(name: r'carNumber', required: false, includeIfNull: false)
-  final String? carNumber;
-
-  @JsonKey(name: r'carModel', required: false, includeIfNull: false)
-  final String? carModel;
-
-  @JsonKey(name: r'carNickname', required: false, includeIfNull: false)
-  final String? carNickname;
-
-  @JsonKey(name: r'fee', required: false, includeIfNull: false)
-  final String? fee;
-
-  @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
-  final String? createdAt;
-
-  @JsonKey(name: r'endAt', required: false, includeIfNull: false)
-  final String? endAt;
-
-  @JsonKey(name: r'withdrawalAt', required: false, includeIfNull: false)
-  final String? withdrawalAt;
-
   factory SubscriptionModel.fromJson(Map<String, dynamic> json) =>
       _$SubscriptionModelFromJson(json);
+
+  @JsonKey(name: 'accountId', required: false, includeIfNull: false)
+  final String? accountId;
+
+  @JsonKey(name: 'teamSeq', required: false, includeIfNull: false)
+  final int? teamSeq;
+
+  @JsonKey(name: 'teamName', required: false, includeIfNull: false)
+  final String? teamName;
+
+  @JsonKey(name: 'carNumber', required: false, includeIfNull: false)
+  final String? carNumber;
+
+  @JsonKey(name: 'carModel', required: false, includeIfNull: false)
+  final String? carModel;
+
+  @JsonKey(name: 'carNickname', required: false, includeIfNull: false)
+  final String? carNickname;
+
+  @JsonKey(name: 'fee', required: false, includeIfNull: false)
+  final String? fee;
+
+  @JsonKey(name: 'createdAt', required: false, includeIfNull: false)
+  final String? createdAt;
+
+  @JsonKey(name: 'endAt', required: false, includeIfNull: false)
+  final String? endAt;
+
+  @JsonKey(name: 'withdrawalAt', required: false, includeIfNull: false)
+  final String? withdrawalAt;
 
   Map<String, dynamic> toJson() => _$SubscriptionModelToJson(this);
 

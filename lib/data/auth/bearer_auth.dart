@@ -20,15 +20,15 @@ class BearerAuthInterceptor extends AuthInterceptor {
     for (final info in authInfo) {
       final _token = tokens[info['name']];
       if (_token != null) {
-        token = _token!;
-        PrefUtils.setToken(token!);
-        options.headers['Authorization'] = 'Bearer ${token}';
+        token = _token;
+        PrefUtils.setToken(token);
+        options.headers['Authorization'] = 'Bearer $token';
         break;
       }
     }
     if (token == null) {
       token = PrefUtils.getToken();
-      options.headers['Authorization'] = 'Bearer ${token}';
+      options.headers['Authorization'] = 'Bearer $token';
     }
     super.onRequest(options, handler);
   }

@@ -28,41 +28,41 @@ class Account extends Equatable {
     this.profilePicture,
   });
 
-  @JsonKey(name: r'id', required: false, includeIfNull: false)
-  final String? id;
-
-  @JsonKey(name: r'memberSeq', required: false, includeIfNull: false)
-  final int? memberSeq;
-
-  @JsonKey(name: r'password', required: false, includeIfNull: false)
-  final String? password;
-
-  @JsonKey(name: r'delimit', required: false, includeIfNull: false)
-  final String? delimit;
-
-  @JsonKey(name: r'delYn', required: false, includeIfNull: false)
-  final String? delYn;
-
-  @JsonKey(name: r'deleteAt', required: false, includeIfNull: false)
-  final String? deleteAt;
-
-  @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
-  final String? createdAt;
-
-  @JsonKey(name: r'updatedAt', required: false, includeIfNull: false)
-  final String? updatedAt;
-
-  @JsonKey(name: r'color', required: false, includeIfNull: false)
-  final String? color;
-
-  @JsonKey(name: r'nickname', required: false, includeIfNull: false)
-  final String? nickname;
-
-  @JsonKey(name: r'profilePicture', required: false, includeIfNull: false)
-  final String? profilePicture;
-
   factory Account.fromJson(Map<String, dynamic> json) =>
       _$AccountFromJson(json);
+
+  @JsonKey(name: 'id', required: false, includeIfNull: false)
+  final String? id;
+
+  @JsonKey(name: 'memberSeq', required: false, includeIfNull: false)
+  final int? memberSeq;
+
+  @JsonKey(name: 'password', required: false, includeIfNull: false)
+  final String? password;
+
+  @JsonKey(name: 'delimit', required: false, includeIfNull: false)
+  final String? delimit;
+
+  @JsonKey(name: 'delYn', required: false, includeIfNull: false)
+  final String? delYn;
+
+  @JsonKey(name: 'deleteAt', required: false, includeIfNull: false)
+  final String? deleteAt;
+
+  @JsonKey(name: 'createdAt', required: false, includeIfNull: false)
+  final String? createdAt;
+
+  @JsonKey(name: 'updatedAt', required: false, includeIfNull: false)
+  final String? updatedAt;
+
+  @JsonKey(name: 'color', required: false, includeIfNull: false)
+  final String? color;
+
+  @JsonKey(name: 'nickname', required: false, includeIfNull: false)
+  final String? nickname;
+
+  @JsonKey(name: 'profilePicture', required: false, includeIfNull: false)
+  final String? profilePicture;
 
   Map<String, dynamic> toJson() => _$AccountToJson(this);
 

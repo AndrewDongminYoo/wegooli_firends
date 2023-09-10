@@ -28,41 +28,41 @@ class CarRequest extends Equatable {
     this.fee,
   });
 
-  @JsonKey(name: r'seq', required: false, includeIfNull: false)
-  final int? seq;
-
-  @JsonKey(name: r'delYn', required: false, includeIfNull: false)
-  final String? delYn;
-
-  @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
-  final DateTime? createdAt;
-
-  @JsonKey(name: r'updatedAt', required: false, includeIfNull: false)
-  final DateTime? updatedAt;
-
-  @JsonKey(name: r'carNum', required: false, includeIfNull: false)
-  final String? carNum;
-
-  @JsonKey(name: r'model', required: false, includeIfNull: false)
-  final String? model;
-
-  @JsonKey(name: r'status', required: false, includeIfNull: false)
-  final String? status;
-
-  @JsonKey(name: r'seats', required: false, includeIfNull: false)
-  final int? seats;
-
-  @JsonKey(name: r'fuelType', required: false, includeIfNull: false)
-  final String? fuelType;
-
-  @JsonKey(name: r'segment', required: false, includeIfNull: false)
-  final String? segment;
-
-  @JsonKey(name: r'fee', required: false, includeIfNull: false)
-  final int? fee;
-
   factory CarRequest.fromJson(Map<String, dynamic> json) =>
       _$CarRequestFromJson(json);
+
+  @JsonKey(name: 'seq', required: false, includeIfNull: false)
+  final int? seq;
+
+  @JsonKey(name: 'delYn', required: false, includeIfNull: false)
+  final String? delYn;
+
+  @JsonKey(name: 'createdAt', required: false, includeIfNull: false)
+  final DateTime? createdAt;
+
+  @JsonKey(name: 'updatedAt', required: false, includeIfNull: false)
+  final DateTime? updatedAt;
+
+  @JsonKey(name: 'carNum', required: false, includeIfNull: false)
+  final String? carNum;
+
+  @JsonKey(name: 'model', required: false, includeIfNull: false)
+  final String? model;
+
+  @JsonKey(name: 'status', required: false, includeIfNull: false)
+  final String? status;
+
+  @JsonKey(name: 'seats', required: false, includeIfNull: false)
+  final int? seats;
+
+  @JsonKey(name: 'fuelType', required: false, includeIfNull: false)
+  final String? fuelType;
+
+  @JsonKey(name: 'segment', required: false, includeIfNull: false)
+  final String? segment;
+
+  @JsonKey(name: 'fee', required: false, includeIfNull: false)
+  final int? fee;
 
   Map<String, dynamic> toJson() => _$CarRequestToJson(this);
 

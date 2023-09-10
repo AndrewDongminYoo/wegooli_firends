@@ -27,38 +27,38 @@ class ShareServiceModel extends Equatable {
     this.maxSub,
   });
 
-  @JsonKey(name: r'shareServiceSeq', required: false, includeIfNull: false)
-  final int? shareServiceSeq;
-
-  @JsonKey(name: r'serviceName', required: false, includeIfNull: false)
-  final String? serviceName;
-
-  @JsonKey(name: r'serviceDes', required: false, includeIfNull: false)
-  final String? serviceDes;
-
-  @JsonKey(name: r'carSeq', required: false, includeIfNull: false)
-  final String? carSeq;
-
-  @JsonKey(name: r'carName', required: false, includeIfNull: false)
-  final String? carName;
-
-  @JsonKey(name: r'carImg', required: false, includeIfNull: false)
-  final String? carImg;
-
-  @JsonKey(name: r'monthlyPay', required: false, includeIfNull: false)
-  final String? monthlyPay;
-
-  @JsonKey(name: r'personalPay', required: false, includeIfNull: false)
-  final String? personalPay;
-
-  @JsonKey(name: r'nowSub', required: false, includeIfNull: false)
-  final String? nowSub;
-
-  @JsonKey(name: r'maxSub', required: false, includeIfNull: false)
-  final String? maxSub;
-
   factory ShareServiceModel.fromJson(Map<String, dynamic> json) =>
       _$ShareServiceModelFromJson(json);
+
+  @JsonKey(name: 'shareServiceSeq', required: false, includeIfNull: false)
+  final int? shareServiceSeq;
+
+  @JsonKey(name: 'serviceName', required: false, includeIfNull: false)
+  final String? serviceName;
+
+  @JsonKey(name: 'serviceDes', required: false, includeIfNull: false)
+  final String? serviceDes;
+
+  @JsonKey(name: 'carSeq', required: false, includeIfNull: false)
+  final String? carSeq;
+
+  @JsonKey(name: 'carName', required: false, includeIfNull: false)
+  final String? carName;
+
+  @JsonKey(name: 'carImg', required: false, includeIfNull: false)
+  final String? carImg;
+
+  @JsonKey(name: 'monthlyPay', required: false, includeIfNull: false)
+  final String? monthlyPay;
+
+  @JsonKey(name: 'personalPay', required: false, includeIfNull: false)
+  final String? personalPay;
+
+  @JsonKey(name: 'nowSub', required: false, includeIfNull: false)
+  final String? nowSub;
+
+  @JsonKey(name: 'maxSub', required: false, includeIfNull: false)
+  final String? maxSub;
 
   Map<String, dynamic> toJson() => _$ShareServiceModelToJson(this);
 
@@ -75,6 +75,6 @@ class ShareServiceModel extends Equatable {
         'monthlyPay',
         'personalPay',
         'nowSub',
-        'maxSub'
+        'maxSub',
       ];
 }

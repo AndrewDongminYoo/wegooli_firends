@@ -1,6 +1,5 @@
 // 🎯 Dart imports:
 import 'dart:async';
-import 'dart:convert';
 
 // 📦 Package imports:
 import 'package:dio/dio.dart';
@@ -16,9 +15,8 @@ import '/data/model/operator_user_model.dart';
 import '/data/model/operator_user_request.dart';
 
 class OperatorPageControllerApi {
-  final Dio _dio;
-
   const OperatorPageControllerApi(this._dio);
+  final Dio _dio;
 
   /// selectOperatorCarList
   ///
@@ -42,9 +40,9 @@ class OperatorPageControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/operator/car';
+    const _path = '/operator/car';
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -62,7 +60,7 @@ class OperatorPageControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'request': request,
+      'request': request,
     };
 
     final _response = await _dio.request<Object>(
@@ -81,13 +79,11 @@ class OperatorPageControllerApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<OperatorCarModel>, OperatorCarModel>(
-              rawData, 'List<OperatorCarModel>',
-              growable: true);
+              rawData, 'List<OperatorCarModel>');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -127,9 +123,9 @@ class OperatorPageControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/operator/team';
+    const _path = '/operator/team';
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -147,7 +143,7 @@ class OperatorPageControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'request': request,
+      'request': request,
     };
 
     final _response = await _dio.request<Object>(
@@ -166,13 +162,11 @@ class OperatorPageControllerApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<OperatorTeamModel>, OperatorTeamModel>(
-              rawData, 'List<OperatorTeamModel>',
-              growable: true);
+              rawData, 'List<OperatorTeamModel>');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -212,9 +206,9 @@ class OperatorPageControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/operator/user';
+    const _path = '/operator/user';
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -232,7 +226,7 @@ class OperatorPageControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'request': request,
+      'request': request,
     };
 
     final _response = await _dio.request<Object>(
@@ -251,13 +245,11 @@ class OperatorPageControllerApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<OperatorUserModel>, OperatorUserModel>(
-              rawData, 'List<OperatorUserModel>',
-              growable: true);
+              rawData, 'List<OperatorUserModel>');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -297,9 +289,9 @@ class OperatorPageControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/operator/team/detail';
+    const _path = '/operator/team/detail';
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -317,7 +309,7 @@ class OperatorPageControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'teamSeq': teamSeq,
+      'teamSeq': teamSeq,
     };
 
     final _response = await _dio.request<Object>(
@@ -336,13 +328,11 @@ class OperatorPageControllerApi {
       _responseData = rawData == null
           ? null
           : deserialize<OperatorTeamDetail, OperatorTeamDetail>(
-              rawData, 'OperatorTeamDetail',
-              growable: true);
+              rawData, 'OperatorTeamDetail');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );

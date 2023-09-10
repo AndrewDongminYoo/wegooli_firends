@@ -23,26 +23,26 @@ class TeamAccountConnectionModel extends Equatable {
     this.activeYn,
   });
 
-  @JsonKey(name: r'seq', required: false, includeIfNull: false)
-  final int? seq;
-
-  @JsonKey(name: r'teamSeq', required: false, includeIfNull: false)
-  final int? teamSeq;
-
-  @JsonKey(name: r'accountId', required: false, includeIfNull: false)
-  final String? accountId;
-
-  @JsonKey(name: r'joinedAt', required: false, includeIfNull: false)
-  final String? joinedAt;
-
-  @JsonKey(name: r'leavedAt', required: false, includeIfNull: false)
-  final String? leavedAt;
-
-  @JsonKey(name: r'activeYn', required: false, includeIfNull: false)
-  final String? activeYn;
-
   factory TeamAccountConnectionModel.fromJson(Map<String, dynamic> json) =>
       _$TeamAccountConnectionModelFromJson(json);
+
+  @JsonKey(name: 'seq', required: false, includeIfNull: false)
+  final int? seq;
+
+  @JsonKey(name: 'teamSeq', required: false, includeIfNull: false)
+  final int? teamSeq;
+
+  @JsonKey(name: 'accountId', required: false, includeIfNull: false)
+  final String? accountId;
+
+  @JsonKey(name: 'joinedAt', required: false, includeIfNull: false)
+  final String? joinedAt;
+
+  @JsonKey(name: 'leavedAt', required: false, includeIfNull: false)
+  final String? leavedAt;
+
+  @JsonKey(name: 'activeYn', required: false, includeIfNull: false)
+  final String? activeYn;
 
   Map<String, dynamic> toJson() => _$TeamAccountConnectionModelToJson(this);
 

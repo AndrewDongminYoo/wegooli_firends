@@ -1,6 +1,5 @@
 // 🎯 Dart imports:
 import 'dart:async';
-import 'dart:convert';
 
 // 📦 Package imports:
 import 'package:dio/dio.dart';
@@ -11,9 +10,8 @@ import '/data/model/car_history_dto.dart';
 import '/data/model/device_control_result_dto.dart';
 
 class MetisControllerApi {
-  final Dio _dio;
-
   const MetisControllerApi(this._dio);
+  final Dio _dio;
 
   /// carLogTop
   ///
@@ -37,9 +35,9 @@ class MetisControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/metis/history/carLogTop';
+    const _path = '/metis/history/carLogTop';
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -57,7 +55,7 @@ class MetisControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'carNum': carNum,
+      'carNum': carNum,
     };
 
     final _response = await _dio.request<Object>(
@@ -75,13 +73,11 @@ class MetisControllerApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<CarHistoryDTO, CarHistoryDTO>(rawData, 'CarHistoryDTO',
-              growable: true);
+          : deserialize<CarHistoryDTO, CarHistoryDTO>(rawData, 'CarHistoryDTO');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -121,9 +117,9 @@ class MetisControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/metis/history';
+    const _path = '/metis/history';
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -141,7 +137,7 @@ class MetisControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (carNum != null) r'carNum': carNum,
+      if (carNum != null) 'carNum': carNum,
     };
 
     final _response = await _dio.request<Object>(
@@ -160,13 +156,11 @@ class MetisControllerApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<CarHistoryDTO>, CarHistoryDTO>(
-              rawData, 'List<CarHistoryDTO>',
-              growable: true);
+              rawData, 'List<CarHistoryDTO>');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -204,9 +198,9 @@ class MetisControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/metis/m2m/digiparts';
+    const _path = '/metis/m2m/digiparts';
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -237,12 +231,11 @@ class MetisControllerApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<String, String>(rawData, 'String', growable: true);
+          : deserialize<String, String>(rawData, 'String');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -282,9 +275,9 @@ class MetisControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/metis/digiparts';
+    const _path = '/metis/digiparts';
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -302,7 +295,7 @@ class MetisControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'dto': dto,
+      'dto': dto,
     };
 
     final _response = await _dio.request<Object>(
@@ -320,12 +313,11 @@ class MetisControllerApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<String, String>(rawData, 'String', growable: true);
+          : deserialize<String, String>(rawData, 'String');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );

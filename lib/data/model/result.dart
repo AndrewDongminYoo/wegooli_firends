@@ -8,11 +8,11 @@ part 'result.g.dart';
 class Result extends Equatable {
   const Result({this.token});
 
-  final String? token;
-
   factory Result.fromJson(Map<String, dynamic> json) {
     return _$ResultFromJson(json);
   }
+
+  final String? token;
 
   Map<String, dynamic> toJson() => _$ResultToJson(this);
 

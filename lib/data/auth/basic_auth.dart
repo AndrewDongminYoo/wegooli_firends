@@ -8,10 +8,9 @@ import 'package:dio/dio.dart';
 import '/data/auth/auth.dart';
 
 class BasicAuthInfo {
+  const BasicAuthInfo(this.username, this.password);
   final String username;
   final String password;
-
-  const BasicAuthInfo(this.username, this.password);
 }
 
 class BasicAuthInterceptor extends AuthInterceptor {
@@ -28,7 +27,7 @@ class BasicAuthInterceptor extends AuthInterceptor {
             (secure['type'] == 'http' && secure['scheme'] == 'basic') ||
             secure['type'] == 'basic');
     for (final info in metadataAuthInfo) {
-      final authName = info['name'] as String;
+      final authName = info['name']!;
       final basicAuthInfo = authInfo[authName];
       if (basicAuthInfo != null) {
         final basicAuth =

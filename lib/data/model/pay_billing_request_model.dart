@@ -22,23 +22,23 @@ class PayBillingRequestModel extends Equatable {
     this.accountId,
   });
 
-  @JsonKey(name: r'amount', required: false, includeIfNull: false)
-  final int? amount;
-
-  @JsonKey(name: r'customerKey', required: false, includeIfNull: false)
-  final String? customerKey;
-
-  @JsonKey(name: r'orderId', required: false, includeIfNull: false)
-  final String? orderId;
-
-  @JsonKey(name: r'orderName', required: false, includeIfNull: false)
-  final String? orderName;
-
-  @JsonKey(name: r'accountId', required: false, includeIfNull: false)
-  final String? accountId;
-
   factory PayBillingRequestModel.fromJson(Map<String, dynamic> json) =>
       _$PayBillingRequestModelFromJson(json);
+
+  @JsonKey(name: 'amount', required: false, includeIfNull: false)
+  final int? amount;
+
+  @JsonKey(name: 'customerKey', required: false, includeIfNull: false)
+  final String? customerKey;
+
+  @JsonKey(name: 'orderId', required: false, includeIfNull: false)
+  final String? orderId;
+
+  @JsonKey(name: 'orderName', required: false, includeIfNull: false)
+  final String? orderName;
+
+  @JsonKey(name: 'accountId', required: false, includeIfNull: false)
+  final String? accountId;
 
   Map<String, dynamic> toJson() => _$PayBillingRequestModelToJson(this);
 

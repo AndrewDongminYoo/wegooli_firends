@@ -1,6 +1,5 @@
 // 🎯 Dart imports:
 import 'dart:async';
-import 'dart:convert';
 
 // 📦 Package imports:
 import 'package:dio/dio.dart';
@@ -10,9 +9,8 @@ import '/data/deserialize.dart';
 import '/data/model/car_control_history_model.dart';
 
 class DeviceControllerApi {
-  final Dio _dio;
-
   const DeviceControllerApi(this._dio);
+  final Dio _dio;
 
   /// doorClose
   ///
@@ -36,9 +34,9 @@ class DeviceControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/control/door/close';
+    const _path = '/control/door/close';
     final _options = Options(
-      method: r'PUT',
+      method: 'PUT',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -56,7 +54,7 @@ class DeviceControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'carNum': carNum,
+      'carNum': carNum,
     };
 
     final _response = await _dio.request<Object>(
@@ -72,14 +70,12 @@ class DeviceControllerApi {
 
     try {
       final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<bool, bool>(rawData, 'bool', growable: true);
+      _responseData =
+          rawData == null ? null : deserialize<bool, bool>(rawData, 'bool');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -119,9 +115,9 @@ class DeviceControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/control/door/open';
+    const _path = '/control/door/open';
     final _options = Options(
-      method: r'PUT',
+      method: 'PUT',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -139,7 +135,7 @@ class DeviceControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'carNum': carNum,
+      'carNum': carNum,
     };
 
     final _response = await _dio.request<Object>(
@@ -155,14 +151,12 @@ class DeviceControllerApi {
 
     try {
       final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<bool, bool>(rawData, 'bool', growable: true);
+      _responseData =
+          rawData == null ? null : deserialize<bool, bool>(rawData, 'bool');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -203,9 +197,9 @@ class DeviceControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/control/history/list';
+    const _path = '/control/history/list';
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -223,7 +217,7 @@ class DeviceControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'request': request,
+      'request': request,
     };
 
     final _response = await _dio.request<Object>(
@@ -242,13 +236,11 @@ class DeviceControllerApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<CarControlHistoryModel>, CarControlHistoryModel>(
-              rawData, 'List<CarControlHistoryModel>',
-              growable: true);
+              rawData, 'List<CarControlHistoryModel>');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -288,9 +280,9 @@ class DeviceControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/control/light';
+    const _path = '/control/light';
     final _options = Options(
-      method: r'PUT',
+      method: 'PUT',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -308,7 +300,7 @@ class DeviceControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'carNum': carNum,
+      'carNum': carNum,
     };
 
     final _response = await _dio.request<Object>(
@@ -324,14 +316,12 @@ class DeviceControllerApi {
 
     try {
       final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<bool, bool>(rawData, 'bool', growable: true);
+      _responseData =
+          rawData == null ? null : deserialize<bool, bool>(rawData, 'bool');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -371,9 +361,9 @@ class DeviceControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/control/horn';
+    const _path = '/control/horn';
     final _options = Options(
-      method: r'PUT',
+      method: 'PUT',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -391,7 +381,7 @@ class DeviceControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'carNum': carNum,
+      'carNum': carNum,
     };
 
     final _response = await _dio.request<Object>(
@@ -407,14 +397,12 @@ class DeviceControllerApi {
 
     try {
       final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<bool, bool>(rawData, 'bool', growable: true);
+      _responseData =
+          rawData == null ? null : deserialize<bool, bool>(rawData, 'bool');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );

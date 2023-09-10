@@ -12,9 +12,8 @@ import '/data/model/push.dart';
 import '/data/model/sms.dart';
 
 class NoticeControllerApi {
-  final Dio _dio;
-
   const NoticeControllerApi(this._dio);
+  final Dio _dio;
 
   /// deleteNotice
   ///
@@ -38,9 +37,9 @@ class NoticeControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/notice/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
+    final _path = '/notice/{seq}'.replaceAll('{' 'seq' '}', seq.toString());
     final _options = Options(
-      method: r'DELETE',
+      method: 'DELETE',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -69,14 +68,12 @@ class NoticeControllerApi {
 
     try {
       final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<int, int>(rawData, 'int', growable: true);
+      _responseData =
+          rawData == null ? null : deserialize<int, int>(rawData, 'int');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -117,9 +114,9 @@ class NoticeControllerApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path =
-        r'/notice/push/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
+        '/notice/push/{seq}'.replaceAll('{' 'seq' '}', seq.toString());
     final _options = Options(
-      method: r'DELETE',
+      method: 'DELETE',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -148,14 +145,12 @@ class NoticeControllerApi {
 
     try {
       final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<int, int>(rawData, 'int', growable: true);
+      _responseData =
+          rawData == null ? null : deserialize<int, int>(rawData, 'int');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -195,10 +190,9 @@ class NoticeControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/notice/sms/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
+    final _path = '/notice/sms/{seq}'.replaceAll('{' 'seq' '}', seq.toString());
     final _options = Options(
-      method: r'DELETE',
+      method: 'DELETE',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -227,14 +221,12 @@ class NoticeControllerApi {
 
     try {
       final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<int, int>(rawData, 'int', growable: true);
+      _responseData =
+          rawData == null ? null : deserialize<int, int>(rawData, 'int');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -274,9 +266,9 @@ class NoticeControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/notice';
+    const _path = '/notice';
     final _options = Options(
-      method: r'POST',
+      method: 'POST',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -304,7 +296,6 @@ class NoticeControllerApi {
           _dio.options,
           _path,
         ),
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -323,14 +314,12 @@ class NoticeControllerApi {
 
     try {
       final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<int, int>(rawData, 'int', growable: true);
+      _responseData =
+          rawData == null ? null : deserialize<int, int>(rawData, 'int');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -370,9 +359,9 @@ class NoticeControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/notice/push';
+    const _path = '/notice/push';
     final _options = Options(
-      method: r'POST',
+      method: 'POST',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -400,7 +389,6 @@ class NoticeControllerApi {
           _dio.options,
           _path,
         ),
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -419,14 +407,12 @@ class NoticeControllerApi {
 
     try {
       final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<int, int>(rawData, 'int', growable: true);
+      _responseData =
+          rawData == null ? null : deserialize<int, int>(rawData, 'int');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -466,9 +452,9 @@ class NoticeControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/notice/sms';
+    const _path = '/notice/sms';
     final _options = Options(
-      method: r'POST',
+      method: 'POST',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -496,7 +482,6 @@ class NoticeControllerApi {
           _dio.options,
           _path,
         ),
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -515,14 +500,12 @@ class NoticeControllerApi {
 
     try {
       final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<int, int>(rawData, 'int', growable: true);
+      _responseData =
+          rawData == null ? null : deserialize<int, int>(rawData, 'int');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -562,9 +545,9 @@ class NoticeControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/notice/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
+    final _path = '/notice/{seq}'.replaceAll('{' 'seq' '}', seq.toString());
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -595,12 +578,11 @@ class NoticeControllerApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Notice, Notice>(rawData, 'Notice', growable: true);
+          : deserialize<Notice, Notice>(rawData, 'Notice');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -640,9 +622,9 @@ class NoticeControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/notice';
+    const _path = '/notice';
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -660,7 +642,7 @@ class NoticeControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'request': request,
+      'request': request,
     };
 
     final _response = await _dio.request<Object>(
@@ -678,13 +660,11 @@ class NoticeControllerApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<Notice>, Notice>(rawData, 'List<Notice>',
-              growable: true);
+          : deserialize<List<Notice>, Notice>(rawData, 'List<Notice>');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -725,9 +705,9 @@ class NoticeControllerApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path =
-        r'/notice/push/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
+        '/notice/push/{seq}'.replaceAll('{' 'seq' '}', seq.toString());
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -756,14 +736,12 @@ class NoticeControllerApi {
 
     try {
       final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<Push, Push>(rawData, 'Push', growable: true);
+      _responseData =
+          rawData == null ? null : deserialize<Push, Push>(rawData, 'Push');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -803,9 +781,9 @@ class NoticeControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/notice/push';
+    const _path = '/notice/push';
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -823,7 +801,7 @@ class NoticeControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'request': request,
+      'request': request,
     };
 
     final _response = await _dio.request<Object>(
@@ -841,13 +819,11 @@ class NoticeControllerApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<Push>, Push>(rawData, 'List<Push>',
-              growable: true);
+          : deserialize<List<Push>, Push>(rawData, 'List<Push>');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -887,10 +863,9 @@ class NoticeControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/notice/sms/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
+    final _path = '/notice/sms/{seq}'.replaceAll('{' 'seq' '}', seq.toString());
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -919,14 +894,12 @@ class NoticeControllerApi {
 
     try {
       final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<Sms, Sms>(rawData, 'Sms', growable: true);
+      _responseData =
+          rawData == null ? null : deserialize<Sms, Sms>(rawData, 'Sms');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -966,9 +939,9 @@ class NoticeControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/notice/sms';
+    const _path = '/notice/sms';
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -986,7 +959,7 @@ class NoticeControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'request': request,
+      'request': request,
     };
 
     final _response = await _dio.request<Object>(
@@ -1004,12 +977,11 @@ class NoticeControllerApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<Sms>, Sms>(rawData, 'List<Sms>', growable: true);
+          : deserialize<List<Sms>, Sms>(rawData, 'List<Sms>');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -1051,9 +1023,9 @@ class NoticeControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/notice/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
+    final _path = '/notice/{seq}'.replaceAll('{' 'seq' '}', seq.toString());
     final _options = Options(
-      method: r'PUT',
+      method: 'PUT',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -1081,7 +1053,6 @@ class NoticeControllerApi {
           _dio.options,
           _path,
         ),
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -1100,14 +1071,12 @@ class NoticeControllerApi {
 
     try {
       final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<int, int>(rawData, 'int', growable: true);
+      _responseData =
+          rawData == null ? null : deserialize<int, int>(rawData, 'int');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -1150,9 +1119,9 @@ class NoticeControllerApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path =
-        r'/notice/push/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
+        '/notice/push/{seq}'.replaceAll('{' 'seq' '}', seq.toString());
     final _options = Options(
-      method: r'PUT',
+      method: 'PUT',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -1180,7 +1149,6 @@ class NoticeControllerApi {
           _dio.options,
           _path,
         ),
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -1199,14 +1167,12 @@ class NoticeControllerApi {
 
     try {
       final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<int, int>(rawData, 'int', growable: true);
+      _responseData =
+          rawData == null ? null : deserialize<int, int>(rawData, 'int');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -1248,10 +1214,9 @@ class NoticeControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/notice/sms/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
+    final _path = '/notice/sms/{seq}'.replaceAll('{' 'seq' '}', seq.toString());
     final _options = Options(
-      method: r'PUT',
+      method: 'PUT',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -1279,7 +1244,6 @@ class NoticeControllerApi {
           _dio.options,
           _path,
         ),
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -1298,14 +1262,12 @@ class NoticeControllerApi {
 
     try {
       final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<int, int>(rawData, 'int', growable: true);
+      _responseData =
+          rawData == null ? null : deserialize<int, int>(rawData, 'int');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );

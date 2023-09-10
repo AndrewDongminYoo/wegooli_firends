@@ -32,41 +32,41 @@ class ServiceDetail extends Equatable {
     this.userSubInfoList,
   });
 
-  @JsonKey(name: r'shareServiceSeq', required: false, includeIfNull: false)
-  final String? shareServiceSeq;
-
-  @JsonKey(name: r'carName', required: false, includeIfNull: false)
-  final String? carName;
-
-  @JsonKey(name: r'carMadeCom', required: false, includeIfNull: false)
-  final String? carMadeCom;
-
-  @JsonKey(name: r'type', required: false, includeIfNull: false)
-  final String? type;
-
-  @JsonKey(name: r'fulName', required: false, includeIfNull: false)
-  final String? fulName;
-
-  @JsonKey(name: r'gearType', required: false, includeIfNull: false)
-  final String? gearType;
-
-  @JsonKey(name: r'maxRide', required: false, includeIfNull: false)
-  final String? maxRide;
-
-  @JsonKey(name: r'distanceDriven', required: false, includeIfNull: false)
-  final String? distanceDriven;
-
-  @JsonKey(name: r'carOpt', required: false, includeIfNull: false)
-  final String? carOpt;
-
-  @JsonKey(name: r'carOptList', required: false, includeIfNull: false)
-  final List<DeviceOption>? carOptList;
-
-  @JsonKey(name: r'userSubInfoList', required: false, includeIfNull: false)
-  final List<UserSubInfo>? userSubInfoList;
-
   factory ServiceDetail.fromJson(Map<String, dynamic> json) =>
       _$ServiceDetailFromJson(json);
+
+  @JsonKey(name: 'shareServiceSeq', required: false, includeIfNull: false)
+  final String? shareServiceSeq;
+
+  @JsonKey(name: 'carName', required: false, includeIfNull: false)
+  final String? carName;
+
+  @JsonKey(name: 'carMadeCom', required: false, includeIfNull: false)
+  final String? carMadeCom;
+
+  @JsonKey(name: 'type', required: false, includeIfNull: false)
+  final String? type;
+
+  @JsonKey(name: 'fulName', required: false, includeIfNull: false)
+  final String? fulName;
+
+  @JsonKey(name: 'gearType', required: false, includeIfNull: false)
+  final String? gearType;
+
+  @JsonKey(name: 'maxRide', required: false, includeIfNull: false)
+  final String? maxRide;
+
+  @JsonKey(name: 'distanceDriven', required: false, includeIfNull: false)
+  final String? distanceDriven;
+
+  @JsonKey(name: 'carOpt', required: false, includeIfNull: false)
+  final String? carOpt;
+
+  @JsonKey(name: 'carOptList', required: false, includeIfNull: false)
+  final List<DeviceOption>? carOptList;
+
+  @JsonKey(name: 'userSubInfoList', required: false, includeIfNull: false)
+  final List<UserSubInfo>? userSubInfoList;
 
   Map<String, dynamic> toJson() => _$ServiceDetailToJson(this);
 

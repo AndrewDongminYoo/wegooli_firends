@@ -11,9 +11,8 @@ import '/data/model/submit_withdrawal_model.dart';
 import '/data/model/subscription_model.dart';
 
 class SubscriptionControllerApi {
-  final Dio _dio;
-
   const SubscriptionControllerApi(this._dio);
+  final Dio _dio;
 
   /// selectSubscriptionInfo
   ///
@@ -39,11 +38,11 @@ class SubscriptionControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/subscription/{accountId}/{teamSeq}'
-        .replaceAll('{' r'accountId' '}', accountId.toString())
-        .replaceAll('{' r'teamSeq' '}', teamSeq.toString());
+    final _path = '/subscription/{accountId}/{teamSeq}'
+        .replaceAll('{' 'accountId' '}', accountId)
+        .replaceAll('{' 'teamSeq' '}', teamSeq.toString());
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -75,13 +74,11 @@ class SubscriptionControllerApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<SubscriptionModel>, SubscriptionModel>(
-              rawData, 'List<SubscriptionModel>',
-              growable: true);
+              rawData, 'List<SubscriptionModel>');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -121,9 +118,9 @@ class SubscriptionControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/subscription';
+    const _path = '/subscription';
     final _options = Options(
-      method: r'PUT',
+      method: 'PUT',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -151,7 +148,6 @@ class SubscriptionControllerApi {
           _dio.options,
           _path,
         ),
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -172,12 +168,11 @@ class SubscriptionControllerApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<String, String>(rawData, 'String', growable: true);
+          : deserialize<String, String>(rawData, 'String');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );

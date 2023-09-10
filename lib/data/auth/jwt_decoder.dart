@@ -15,9 +15,9 @@ class JwtDecoder {
   /// Args:
   ///   token (String): JWT(JSON 웹 토큰)를 나타내는 문자열
   static Map<String, dynamic> decode(String token) {
-    final splitToken = token.split("."); // Split the token by '.'
+    final splitToken = token.split('.'); // Split the token by '.'
     if (splitToken.length != 3) {
-      throw FormatException('Invalid token');
+      throw const FormatException('Invalid token');
     }
     try {
       // 페이로드는 항상 인덱스 1입니다. (Bearer 프리픽스 제거)
@@ -37,7 +37,7 @@ class JwtDecoder {
       // 디코딩된 페이로드를 반환합니다.
       return decodedPayload as Map<String, dynamic>;
     } catch (error) {
-      throw FormatException('Invalid payload');
+      throw const FormatException('Invalid payload');
     }
   }
 

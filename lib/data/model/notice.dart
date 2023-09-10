@@ -26,34 +26,34 @@ class Notice extends Equatable {
     this.createdBy,
   });
 
-  @JsonKey(name: r'seq', required: false, includeIfNull: false)
+  factory Notice.fromJson(Map<String, dynamic> json) => _$NoticeFromJson(json);
+
+  @JsonKey(name: 'seq', required: false, includeIfNull: false)
   final int? seq;
 
-  @JsonKey(name: r'delYn', required: false, includeIfNull: false)
+  @JsonKey(name: 'delYn', required: false, includeIfNull: false)
   final String? delYn;
 
-  @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
+  @JsonKey(name: 'createdAt', required: false, includeIfNull: false)
   final DateTime? createdAt;
 
-  @JsonKey(name: r'updatedAt', required: false, includeIfNull: false)
+  @JsonKey(name: 'updatedAt', required: false, includeIfNull: false)
   final DateTime? updatedAt;
 
-  @JsonKey(name: r'title', required: false, includeIfNull: false)
+  @JsonKey(name: 'title', required: false, includeIfNull: false)
   final String? title;
 
-  @JsonKey(name: r'content', required: false, includeIfNull: false)
+  @JsonKey(name: 'content', required: false, includeIfNull: false)
   final String? content;
 
-  @JsonKey(name: r'file', required: false, includeIfNull: false)
+  @JsonKey(name: 'file', required: false, includeIfNull: false)
   final String? file;
 
-  @JsonKey(name: r'bm', required: false, includeIfNull: false)
+  @JsonKey(name: 'bm', required: false, includeIfNull: false)
   final String? bm;
 
-  @JsonKey(name: r'createdBy', required: false, includeIfNull: false)
+  @JsonKey(name: 'createdBy', required: false, includeIfNull: false)
   final String? createdBy;
-
-  factory Notice.fromJson(Map<String, dynamic> json) => _$NoticeFromJson(json);
 
   Map<String, dynamic> toJson() => _$NoticeToJson(this);
 

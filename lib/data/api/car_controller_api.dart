@@ -11,9 +11,8 @@ import '/data/model/car_model.dart';
 import '/data/model/car_request.dart';
 
 class CarControllerApi {
-  final Dio _dio;
-
   const CarControllerApi(this._dio);
+  final Dio _dio;
 
   /// deleteCar
   ///
@@ -37,10 +36,9 @@ class CarControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/car/delete/{carNum}'
-        .replaceAll('{' r'carNum' '}', carNum.toString());
+    final _path = '/car/delete/{carNum}'.replaceAll('{' 'carNum' '}', carNum);
     final _options = Options(
-      method: r'PUT',
+      method: 'PUT',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -90,9 +88,9 @@ class CarControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/car/regist';
+    const _path = '/car/regist';
     final _options = Options(
-      method: r'POST',
+      method: 'POST',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -120,7 +118,6 @@ class CarControllerApi {
           _dio.options,
           _path,
         ),
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -160,10 +157,9 @@ class CarControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/car/detail/{carNum}'
-        .replaceAll('{' r'carNum' '}', carNum.toString());
+    final _path = '/car/detail/{carNum}'.replaceAll('{' 'carNum' '}', carNum);
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -194,13 +190,11 @@ class CarControllerApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<CarModel, CarModel>(rawData, 'CarModel',
-              growable: true);
+          : deserialize<CarModel, CarModel>(rawData, 'CarModel');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -240,9 +234,9 @@ class CarControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/car/list';
+    const _path = '/car/list';
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -260,7 +254,7 @@ class CarControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'request': request,
+      'request': request,
     };
 
     final _response = await _dio.request<Object>(
@@ -278,13 +272,11 @@ class CarControllerApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<CarModel>, CarModel>(rawData, 'List<CarModel>',
-              growable: true);
+          : deserialize<List<CarModel>, CarModel>(rawData, 'List<CarModel>');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -326,10 +318,9 @@ class CarControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/car/update/{carNum}'
-        .replaceAll('{' r'carNum' '}', carNum.toString());
+    final _path = '/car/update/{carNum}'.replaceAll('{' 'carNum' '}', carNum);
     final _options = Options(
-      method: r'PUT',
+      method: 'PUT',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -357,7 +348,6 @@ class CarControllerApi {
           _dio.options,
           _path,
         ),
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );

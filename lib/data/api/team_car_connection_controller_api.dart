@@ -10,9 +10,8 @@ import '/data/deserialize.dart';
 import '/data/model/team_car_connection.dart';
 
 class TeamCarConnectionControllerApi {
-  final Dio _dio;
-
   const TeamCarConnectionControllerApi(this._dio);
+  final Dio _dio;
 
   /// teamCarConnection
   ///
@@ -36,9 +35,9 @@ class TeamCarConnectionControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/team/car/teamCarConnection';
+    const _path = '/team/car/teamCarConnection';
     final _options = Options(
-      method: r'PUT',
+      method: 'PUT',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -66,7 +65,6 @@ class TeamCarConnectionControllerApi {
           _dio.options,
           _path,
         ),
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -87,12 +85,11 @@ class TeamCarConnectionControllerApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<String, String>(rawData, 'String', growable: true);
+          : deserialize<String, String>(rawData, 'String');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -132,9 +129,9 @@ class TeamCarConnectionControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/team/car/teamCarDisConnection';
+    const _path = '/team/car/teamCarDisConnection';
     final _options = Options(
-      method: r'PUT',
+      method: 'PUT',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -162,7 +159,6 @@ class TeamCarConnectionControllerApi {
           _dio.options,
           _path,
         ),
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -183,12 +179,11 @@ class TeamCarConnectionControllerApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<String, String>(rawData, 'String', growable: true);
+          : deserialize<String, String>(rawData, 'String');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );

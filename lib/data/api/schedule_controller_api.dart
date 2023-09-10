@@ -11,9 +11,8 @@ import '/data/model/schedule_model.dart';
 import '/data/model/schedule_request.dart';
 
 class ScheduleControllerApi {
-  final Dio _dio;
-
   const ScheduleControllerApi(this._dio);
+  final Dio _dio;
 
   /// deleteSchedule
   ///
@@ -38,9 +37,9 @@ class ScheduleControllerApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path =
-        r'/schedule/delete/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
+        '/schedule/delete/{seq}'.replaceAll('{' 'seq' '}', seq.toString());
     final _options = Options(
-      method: r'PUT',
+      method: 'PUT',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -90,9 +89,9 @@ class ScheduleControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/schedule/regist';
+    const _path = '/schedule/regist';
     final _options = Options(
-      method: r'POST',
+      method: 'POST',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -120,7 +119,6 @@ class ScheduleControllerApi {
           _dio.options,
           _path,
         ),
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -161,9 +159,9 @@ class ScheduleControllerApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path =
-        r'/schedule/detail/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
+        '/schedule/detail/{seq}'.replaceAll('{' 'seq' '}', seq.toString());
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -194,13 +192,11 @@ class ScheduleControllerApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<ScheduleModel, ScheduleModel>(rawData, 'ScheduleModel',
-              growable: true);
+          : deserialize<ScheduleModel, ScheduleModel>(rawData, 'ScheduleModel');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -246,9 +242,9 @@ class ScheduleControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/schedule/list';
+    const _path = '/schedule/list';
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -266,10 +262,10 @@ class ScheduleControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (teamSeq != null) r'teamSeq': teamSeq,
-      if (accountId != null) r'accountId': accountId,
-      if (startAt != null) r'startAt': startAt,
-      if (endAt != null) r'endAt': endAt,
+      if (teamSeq != null) 'teamSeq': teamSeq,
+      if (accountId != null) 'accountId': accountId,
+      if (startAt != null) 'startAt': startAt,
+      if (endAt != null) 'endAt': endAt,
     };
 
     final _response = await _dio.request<Object>(
@@ -288,13 +284,11 @@ class ScheduleControllerApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<ScheduleModel>, ScheduleModel>(
-              rawData, 'List<ScheduleModel>',
-              growable: true);
+              rawData, 'List<ScheduleModel>');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -337,9 +331,9 @@ class ScheduleControllerApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path =
-        r'/schedule/update/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
+        '/schedule/update/{seq}'.replaceAll('{' 'seq' '}', seq.toString());
     final _options = Options(
-      method: r'PUT',
+      method: 'PUT',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -367,7 +361,6 @@ class ScheduleControllerApi {
           _dio.options,
           _path,
         ),
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );

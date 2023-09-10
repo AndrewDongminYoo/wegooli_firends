@@ -21,20 +21,20 @@ class UserSubInfo extends Equatable {
     this.timeInfo,
   });
 
-  @JsonKey(name: r'userId', required: false, includeIfNull: false)
-  final String? userId;
-
-  @JsonKey(name: r'serviceSeq', required: false, includeIfNull: false)
-  final String? serviceSeq;
-
-  @JsonKey(name: r'weekInfo', required: false, includeIfNull: false)
-  final String? weekInfo;
-
-  @JsonKey(name: r'timeInfo', required: false, includeIfNull: false)
-  final String? timeInfo;
-
   factory UserSubInfo.fromJson(Map<String, dynamic> json) =>
       _$UserSubInfoFromJson(json);
+
+  @JsonKey(name: 'userId', required: false, includeIfNull: false)
+  final String? userId;
+
+  @JsonKey(name: 'serviceSeq', required: false, includeIfNull: false)
+  final String? serviceSeq;
+
+  @JsonKey(name: 'weekInfo', required: false, includeIfNull: false)
+  final String? weekInfo;
+
+  @JsonKey(name: 'timeInfo', required: false, includeIfNull: false)
+  final String? timeInfo;
 
   Map<String, dynamic> toJson() => _$UserSubInfoToJson(this);
 

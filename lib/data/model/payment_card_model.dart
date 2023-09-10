@@ -31,50 +31,50 @@ class PaymentCardModel extends Equatable {
     this.customerKey,
   });
 
-  @JsonKey(name: r'seq', required: false, includeIfNull: false)
-  final int? seq;
-
-  @JsonKey(name: r'delYn', required: false, includeIfNull: false)
-  final String? delYn;
-
-  @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
-  final DateTime? createdAt;
-
-  @JsonKey(name: r'updatedAt', required: false, includeIfNull: false)
-  final DateTime? updatedAt;
-
-  @JsonKey(name: r'memberSeq', required: false, includeIfNull: false)
-  final int? memberSeq;
-
-  @JsonKey(name: r'cardNumber', required: false, includeIfNull: false)
-  final String? cardNumber;
-
-  @JsonKey(name: r'defaultYn', required: false, includeIfNull: false)
-  final String? defaultYn;
-
-  @JsonKey(name: r'password', required: false, includeIfNull: false)
-  final String? password;
-
-  @JsonKey(name: r'rrn', required: false, includeIfNull: false)
-  final String? rrn;
-
-  @JsonKey(name: r'crn', required: false, includeIfNull: false)
-  final String? crn;
-
-  @JsonKey(name: r'expirationMonth', required: false, includeIfNull: false)
-  final String? expirationMonth;
-
-  @JsonKey(name: r'expirationYear', required: false, includeIfNull: false)
-  final String? expirationYear;
-
-  @JsonKey(name: r'billingKey', required: false, includeIfNull: false)
-  final String? billingKey;
-
-  @JsonKey(name: r'customerKey', required: false, includeIfNull: false)
-  final String? customerKey;
-
   factory PaymentCardModel.fromJson(Map<String, dynamic> json) =>
       _$PaymentCardModelFromJson(json);
+
+  @JsonKey(name: 'seq', required: false, includeIfNull: false)
+  final int? seq;
+
+  @JsonKey(name: 'delYn', required: false, includeIfNull: false)
+  final String? delYn;
+
+  @JsonKey(name: 'createdAt', required: false, includeIfNull: false)
+  final DateTime? createdAt;
+
+  @JsonKey(name: 'updatedAt', required: false, includeIfNull: false)
+  final DateTime? updatedAt;
+
+  @JsonKey(name: 'memberSeq', required: false, includeIfNull: false)
+  final int? memberSeq;
+
+  @JsonKey(name: 'cardNumber', required: false, includeIfNull: false)
+  final String? cardNumber;
+
+  @JsonKey(name: 'defaultYn', required: false, includeIfNull: false)
+  final String? defaultYn;
+
+  @JsonKey(name: 'password', required: false, includeIfNull: false)
+  final String? password;
+
+  @JsonKey(name: 'rrn', required: false, includeIfNull: false)
+  final String? rrn;
+
+  @JsonKey(name: 'crn', required: false, includeIfNull: false)
+  final String? crn;
+
+  @JsonKey(name: 'expirationMonth', required: false, includeIfNull: false)
+  final String? expirationMonth;
+
+  @JsonKey(name: 'expirationYear', required: false, includeIfNull: false)
+  final String? expirationYear;
+
+  @JsonKey(name: 'billingKey', required: false, includeIfNull: false)
+  final String? billingKey;
+
+  @JsonKey(name: 'customerKey', required: false, includeIfNull: false)
+  final String? customerKey;
 
   Map<String, dynamic> toJson() => _$PaymentCardModelToJson(this);
 

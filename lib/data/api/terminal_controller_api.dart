@@ -12,9 +12,8 @@ import '/data/model/terminal_request.dart';
 import '/data/model/terminal_update_request.dart';
 
 class TerminalControllerApi {
-  final Dio _dio;
-
   const TerminalControllerApi(this._dio);
+  final Dio _dio;
 
   /// registTerminal
   ///
@@ -38,9 +37,9 @@ class TerminalControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/terminal/regist';
+    const _path = '/terminal/regist';
     final _options = Options(
-      method: r'POST',
+      method: 'POST',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -68,7 +67,6 @@ class TerminalControllerApi {
           _dio.options,
           _path,
         ),
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -109,9 +107,9 @@ class TerminalControllerApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path =
-        r'/terminal/detail/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
+        '/terminal/detail/{seq}'.replaceAll('{' 'seq' '}', seq.toString());
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -143,13 +141,11 @@ class TerminalControllerApi {
       print('AAA : rawData $rawData');
       _responseData = rawData == null
           ? null
-          : deserialize<TerminalModel, TerminalModel>(rawData, 'TerminalModel',
-              growable: true);
+          : deserialize<TerminalModel, TerminalModel>(rawData, 'TerminalModel');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -189,9 +185,9 @@ class TerminalControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/terminal/list';
+    const _path = '/terminal/list';
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -209,7 +205,7 @@ class TerminalControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'request': request,
+      'request': request,
     };
 
     final _response = await _dio.request<Object>(
@@ -228,13 +224,11 @@ class TerminalControllerApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<TerminalModel>, TerminalModel>(
-              rawData, 'List<TerminalModel>',
-              growable: true);
+              rawData, 'List<TerminalModel>');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -277,9 +271,9 @@ class TerminalControllerApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path =
-        r'/terminal/update/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
+        '/terminal/update/{seq}'.replaceAll('{' 'seq' '}', seq.toString());
     final _options = Options(
-      method: r'PUT',
+      method: 'PUT',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -307,7 +301,6 @@ class TerminalControllerApi {
           _dio.options,
           _path,
         ),
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );

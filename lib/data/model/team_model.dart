@@ -30,50 +30,50 @@ class TeamModel extends Equatable {
     this.add2,
     this.zipCode,
   });
-
-  @JsonKey(name: r'seq', required: false, includeIfNull: false)
-  final int? seq;
-
-  @JsonKey(name: r'delYn', required: false, includeIfNull: false)
-  final String? delYn;
-
-  @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
-  final DateTime? createdAt;
-
-  @JsonKey(name: r'updatedAt', required: false, includeIfNull: false)
-  final DateTime? updatedAt;
-
-  @JsonKey(name: r'accountId', required: false, includeIfNull: false)
-  final String? accountId;
-
-  @JsonKey(name: r'teamCode', required: false, includeIfNull: false)
-  final String? teamCode;
-
-  @JsonKey(name: r'name', required: false, includeIfNull: false)
-  final String? name;
-
-  @JsonKey(name: r'contract', required: false, includeIfNull: false)
-  final String? contract;
-
-  @JsonKey(name: r'carNickname', required: false, includeIfNull: false)
-  final String? carNickname;
-
-  @JsonKey(name: r'lat', required: false, includeIfNull: false)
-  final String? lat;
-
-  @JsonKey(name: r'lon', required: false, includeIfNull: false)
-  final String? lon;
-
-  @JsonKey(name: r'add1', required: false, includeIfNull: false)
-  final String? add1;
-
-  @JsonKey(name: r'add2', required: false, includeIfNull: false)
-  final String? add2;
-
-  @JsonKey(name: r'zipCode', required: false, includeIfNull: false)
-  final String? zipCode;
   factory TeamModel.fromJson(Map<String, dynamic> json) =>
       _$TeamModelFromJson(json);
+
+  @JsonKey(name: 'seq', required: false, includeIfNull: false)
+  final int? seq;
+
+  @JsonKey(name: 'delYn', required: false, includeIfNull: false)
+  final String? delYn;
+
+  @JsonKey(name: 'createdAt', required: false, includeIfNull: false)
+  final DateTime? createdAt;
+
+  @JsonKey(name: 'updatedAt', required: false, includeIfNull: false)
+  final DateTime? updatedAt;
+
+  @JsonKey(name: 'accountId', required: false, includeIfNull: false)
+  final String? accountId;
+
+  @JsonKey(name: 'teamCode', required: false, includeIfNull: false)
+  final String? teamCode;
+
+  @JsonKey(name: 'name', required: false, includeIfNull: false)
+  final String? name;
+
+  @JsonKey(name: 'contract', required: false, includeIfNull: false)
+  final String? contract;
+
+  @JsonKey(name: 'carNickname', required: false, includeIfNull: false)
+  final String? carNickname;
+
+  @JsonKey(name: 'lat', required: false, includeIfNull: false)
+  final String? lat;
+
+  @JsonKey(name: 'lon', required: false, includeIfNull: false)
+  final String? lon;
+
+  @JsonKey(name: 'add1', required: false, includeIfNull: false)
+  final String? add1;
+
+  @JsonKey(name: 'add2', required: false, includeIfNull: false)
+  final String? add2;
+
+  @JsonKey(name: 'zipCode', required: false, includeIfNull: false)
+  final String? zipCode;
 
   Map<String, dynamic> toJson() => _$TeamModelToJson(this);
 

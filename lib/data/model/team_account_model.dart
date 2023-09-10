@@ -24,29 +24,29 @@ class TeamAccountModel extends Equatable {
     this.leavedAt,
   });
 
-  @JsonKey(name: r'accountId', required: false, includeIfNull: false)
-  final String? accountId;
-
-  @JsonKey(name: r'color', required: false, includeIfNull: false)
-  final String? color;
-
-  @JsonKey(name: r'nickname', required: false, includeIfNull: false)
-  final String? nickname;
-
-  @JsonKey(name: r'profilePicture', required: false, includeIfNull: false)
-  final String? profilePicture;
-
-  @JsonKey(name: r'useYn', required: false, includeIfNull: false)
-  final String? useYn;
-
-  @JsonKey(name: r'joinedAt', required: false, includeIfNull: false)
-  final String? joinedAt;
-
-  @JsonKey(name: r'leavedAt', required: false, includeIfNull: false)
-  final String? leavedAt;
-
   factory TeamAccountModel.fromJson(Map<String, dynamic> json) =>
       _$TeamAccountModelFromJson(json);
+
+  @JsonKey(name: 'accountId', required: false, includeIfNull: false)
+  final String? accountId;
+
+  @JsonKey(name: 'color', required: false, includeIfNull: false)
+  final String? color;
+
+  @JsonKey(name: 'nickname', required: false, includeIfNull: false)
+  final String? nickname;
+
+  @JsonKey(name: 'profilePicture', required: false, includeIfNull: false)
+  final String? profilePicture;
+
+  @JsonKey(name: 'useYn', required: false, includeIfNull: false)
+  final String? useYn;
+
+  @JsonKey(name: 'joinedAt', required: false, includeIfNull: false)
+  final String? joinedAt;
+
+  @JsonKey(name: 'leavedAt', required: false, includeIfNull: false)
+  final String? leavedAt;
 
   Map<String, dynamic> toJson() => _$TeamAccountModelToJson(this);
 

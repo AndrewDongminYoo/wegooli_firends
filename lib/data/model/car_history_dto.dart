@@ -36,65 +36,65 @@ class CarHistoryDTO extends Equatable {
     this.createdAt,
   });
 
-  @JsonKey(name: r'seq', required: false, includeIfNull: false)
-  final int? seq;
-
-  @JsonKey(name: r'terminalSeq', required: false, includeIfNull: false)
-  final int? terminalSeq;
-
-  @JsonKey(name: r'carNum', required: false, includeIfNull: false)
-  final String? carNum;
-
-  @JsonKey(name: r'status', required: false, includeIfNull: false)
-  final String? status;
-
-  @JsonKey(name: r'lat', required: false, includeIfNull: false)
-  final String? lat;
-
-  @JsonKey(name: r'lon', required: false, includeIfNull: false)
-  final String? lon;
-
-  @JsonKey(name: r'volt', required: false, includeIfNull: false)
-  final int? volt;
-
-  @JsonKey(name: r'fuel', required: false, includeIfNull: false)
-  final int? fuel;
-
-  @JsonKey(name: r'flDoorClose', required: false, includeIfNull: false)
-  final String? flDoorClose;
-
-  @JsonKey(name: r'frDoorClose', required: false, includeIfNull: false)
-  final String? frDoorClose;
-
-  @JsonKey(name: r'blDoorClose', required: false, includeIfNull: false)
-  final String? blDoorClose;
-
-  @JsonKey(name: r'brDoorClose', required: false, includeIfNull: false)
-  final String? brDoorClose;
-
-  @JsonKey(name: r'distance', required: false, includeIfNull: false)
-  final int? distance;
-
-  @JsonKey(name: r'speed', required: false, includeIfNull: false)
-  final int? speed;
-
-  @JsonKey(name: r'flDoorLock', required: false, includeIfNull: false)
-  final String? flDoorLock;
-
-  @JsonKey(name: r'frDoorLock', required: false, includeIfNull: false)
-  final String? frDoorLock;
-
-  @JsonKey(name: r'blDoorLock', required: false, includeIfNull: false)
-  final String? blDoorLock;
-
-  @JsonKey(name: r'brDoorLock', required: false, includeIfNull: false)
-  final String? brDoorLock;
-
-  @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
-  final String? createdAt;
-
   factory CarHistoryDTO.fromJson(Map<String, dynamic> json) =>
       _$CarHistoryDTOFromJson(json);
+
+  @JsonKey(name: 'seq', required: false, includeIfNull: false)
+  final int? seq;
+
+  @JsonKey(name: 'terminalSeq', required: false, includeIfNull: false)
+  final int? terminalSeq;
+
+  @JsonKey(name: 'carNum', required: false, includeIfNull: false)
+  final String? carNum;
+
+  @JsonKey(name: 'status', required: false, includeIfNull: false)
+  final String? status;
+
+  @JsonKey(name: 'lat', required: false, includeIfNull: false)
+  final String? lat;
+
+  @JsonKey(name: 'lon', required: false, includeIfNull: false)
+  final String? lon;
+
+  @JsonKey(name: 'volt', required: false, includeIfNull: false)
+  final int? volt;
+
+  @JsonKey(name: 'fuel', required: false, includeIfNull: false)
+  final int? fuel;
+
+  @JsonKey(name: 'flDoorClose', required: false, includeIfNull: false)
+  final String? flDoorClose;
+
+  @JsonKey(name: 'frDoorClose', required: false, includeIfNull: false)
+  final String? frDoorClose;
+
+  @JsonKey(name: 'blDoorClose', required: false, includeIfNull: false)
+  final String? blDoorClose;
+
+  @JsonKey(name: 'brDoorClose', required: false, includeIfNull: false)
+  final String? brDoorClose;
+
+  @JsonKey(name: 'distance', required: false, includeIfNull: false)
+  final int? distance;
+
+  @JsonKey(name: 'speed', required: false, includeIfNull: false)
+  final int? speed;
+
+  @JsonKey(name: 'flDoorLock', required: false, includeIfNull: false)
+  final String? flDoorLock;
+
+  @JsonKey(name: 'frDoorLock', required: false, includeIfNull: false)
+  final String? frDoorLock;
+
+  @JsonKey(name: 'blDoorLock', required: false, includeIfNull: false)
+  final String? blDoorLock;
+
+  @JsonKey(name: 'brDoorLock', required: false, includeIfNull: false)
+  final String? brDoorLock;
+
+  @JsonKey(name: 'createdAt', required: false, includeIfNull: false)
+  final String? createdAt;
 
   Map<String, dynamic> toJson() => _$CarHistoryDTOToJson(this);
 

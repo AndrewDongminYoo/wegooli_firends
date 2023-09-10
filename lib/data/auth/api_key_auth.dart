@@ -12,9 +12,9 @@ class ApiKeyAuthInterceptor extends AuthInterceptor {
     final authInfo =
         getAuthInfo(options, (secure) => secure['type'] == 'apiKey');
     for (final info in authInfo) {
-      final authName = info['name'] as String;
-      final authKeyName = info['keyName'] as String;
-      final authWhere = info['where'] as String;
+      final authName = info['name']!;
+      final authKeyName = info['keyName']!;
+      final authWhere = info['where']!;
       final apiKey = apiKeys[authName];
       if (apiKey != null) {
         if (authWhere == 'query') {

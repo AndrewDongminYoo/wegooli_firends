@@ -18,11 +18,11 @@ class GrantedAuthority extends Equatable {
     this.authority,
   });
 
-  @JsonKey(name: r'authority', required: false, includeIfNull: false)
-  final String? authority;
-
   factory GrantedAuthority.fromJson(Map<String, dynamic> json) =>
       _$GrantedAuthorityFromJson(json);
+
+  @JsonKey(name: 'authority', required: false, includeIfNull: false)
+  final String? authority;
 
   Map<String, dynamic> toJson() => _$GrantedAuthorityToJson(this);
 

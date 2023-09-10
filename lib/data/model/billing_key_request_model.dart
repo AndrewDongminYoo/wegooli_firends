@@ -22,24 +22,24 @@ class BillingKeyRequestModel extends Equatable {
     this.customerKey,
   });
 
-  @JsonKey(name: r'cardExpirationMonth', required: false, includeIfNull: false)
+  factory BillingKeyRequestModel.fromJson(Map<String, dynamic> json) =>
+      _$BillingKeyRequestModelFromJson(json);
+
+  @JsonKey(name: 'cardExpirationMonth', required: false, includeIfNull: false)
   final String? cardExpirationMonth;
 
-  @JsonKey(name: r'cardExpirationYear', required: false, includeIfNull: false)
+  @JsonKey(name: 'cardExpirationYear', required: false, includeIfNull: false)
   final String? cardExpirationYear;
 
-  @JsonKey(name: r'cardNumber', required: false, includeIfNull: false)
+  @JsonKey(name: 'cardNumber', required: false, includeIfNull: false)
   final String? cardNumber;
 
   @JsonKey(
-      name: r'customerIdentityNumber', required: false, includeIfNull: false)
+      name: 'customerIdentityNumber', required: false, includeIfNull: false)
   final String? customerIdentityNumber;
 
-  @JsonKey(name: r'customerKey', required: false, includeIfNull: false)
+  @JsonKey(name: 'customerKey', required: false, includeIfNull: false)
   final String? customerKey;
-
-  factory BillingKeyRequestModel.fromJson(Map<String, dynamic> json) =>
-      _$BillingKeyRequestModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$BillingKeyRequestModelToJson(this);
 

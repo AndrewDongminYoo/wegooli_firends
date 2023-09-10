@@ -20,17 +20,17 @@ class LeaderSetRequest extends Equatable {
     this.maxSub,
   });
 
-  @JsonKey(name: r'userId', required: false, includeIfNull: false)
-  final String? userId;
-
-  @JsonKey(name: r'serviceSeq', required: false, includeIfNull: false)
-  final String? serviceSeq;
-
-  @JsonKey(name: r'maxSub', required: false, includeIfNull: false)
-  final String? maxSub;
-
   factory LeaderSetRequest.fromJson(Map<String, dynamic> json) =>
       _$LeaderSetRequestFromJson(json);
+
+  @JsonKey(name: 'userId', required: false, includeIfNull: false)
+  final String? userId;
+
+  @JsonKey(name: 'serviceSeq', required: false, includeIfNull: false)
+  final String? serviceSeq;
+
+  @JsonKey(name: 'maxSub', required: false, includeIfNull: false)
+  final String? maxSub;
 
   Map<String, dynamic> toJson() => _$LeaderSetRequestToJson(this);
 

@@ -27,38 +27,38 @@ class PaymentCardRequest extends Equatable {
     this.accountId,
   });
 
-  @JsonKey(name: r'memberSeq', required: false, includeIfNull: false)
-  final int? memberSeq;
-
-  @JsonKey(name: r'cardNumber', required: false, includeIfNull: false)
-  final String? cardNumber;
-
-  @JsonKey(name: r'defaultYn', required: false, includeIfNull: false)
-  final String? defaultYn;
-
-  @JsonKey(name: r'password', required: false, includeIfNull: false)
-  final String? password;
-
-  @JsonKey(name: r'rrn', required: false, includeIfNull: false)
-  final String? rrn;
-
-  @JsonKey(name: r'crn', required: false, includeIfNull: false)
-  final String? crn;
-
-  @JsonKey(name: r'expirationMonth', required: false, includeIfNull: false)
-  final String? expirationMonth;
-
-  @JsonKey(name: r'expirationYear', required: false, includeIfNull: false)
-  final String? expirationYear;
-
-  @JsonKey(name: r'billingKey', required: false, includeIfNull: false)
-  final String? billingKey;
-
-  @JsonKey(name: r'accountId', required: false, includeIfNull: false)
-  final String? accountId;
-
   factory PaymentCardRequest.fromJson(Map<String, dynamic> json) =>
       _$PaymentCardRequestFromJson(json);
+
+  @JsonKey(name: 'memberSeq', required: false, includeIfNull: false)
+  final int? memberSeq;
+
+  @JsonKey(name: 'cardNumber', required: false, includeIfNull: false)
+  final String? cardNumber;
+
+  @JsonKey(name: 'defaultYn', required: false, includeIfNull: false)
+  final String? defaultYn;
+
+  @JsonKey(name: 'password', required: false, includeIfNull: false)
+  final String? password;
+
+  @JsonKey(name: 'rrn', required: false, includeIfNull: false)
+  final String? rrn;
+
+  @JsonKey(name: 'crn', required: false, includeIfNull: false)
+  final String? crn;
+
+  @JsonKey(name: 'expirationMonth', required: false, includeIfNull: false)
+  final String? expirationMonth;
+
+  @JsonKey(name: 'expirationYear', required: false, includeIfNull: false)
+  final String? expirationYear;
+
+  @JsonKey(name: 'billingKey', required: false, includeIfNull: false)
+  final String? billingKey;
+
+  @JsonKey(name: 'accountId', required: false, includeIfNull: false)
+  final String? accountId;
 
   Map<String, dynamic> toJson() => _$PaymentCardRequestToJson(this);
 

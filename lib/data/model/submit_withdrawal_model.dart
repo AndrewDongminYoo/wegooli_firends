@@ -20,17 +20,17 @@ class SubmitWithdrawalModel extends Equatable {
     this.teamSeq,
   });
 
-  @JsonKey(name: r'accountId', required: false, includeIfNull: false)
-  final String? accountId;
-
-  @JsonKey(name: r'date', required: false, includeIfNull: false)
-  final String? date;
-
-  @JsonKey(name: r'teamSeq', required: false, includeIfNull: false)
-  final int? teamSeq;
-
   factory SubmitWithdrawalModel.fromJson(Map<String, dynamic> json) =>
       _$SubmitWithdrawalModelFromJson(json);
+
+  @JsonKey(name: 'accountId', required: false, includeIfNull: false)
+  final String? accountId;
+
+  @JsonKey(name: 'date', required: false, includeIfNull: false)
+  final String? date;
+
+  @JsonKey(name: 'teamSeq', required: false, includeIfNull: false)
+  final int? teamSeq;
 
   Map<String, dynamic> toJson() => _$SubmitWithdrawalModelToJson(this);
 

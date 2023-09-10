@@ -47,98 +47,98 @@ class DeviceControlResultDTO extends Equatable {
     this.nsdur,
   });
 
-  @JsonKey(name: r'userId', required: false, includeIfNull: false)
-  final String? userId;
-
-  @JsonKey(name: r'terTelNum', required: false, includeIfNull: false)
-  final String? terTelNum;
-
-  @JsonKey(name: r't42', required: false, includeIfNull: false)
-  final String? t42;
-
-  @JsonKey(name: r't5', required: false, includeIfNull: false)
-  final String? t5;
-
-  @JsonKey(name: r't0', required: false, includeIfNull: false)
-  final String? t0;
-
-  @JsonKey(name: r't1', required: false, includeIfNull: false)
-  final String? t1;
-
-  @JsonKey(name: r't2', required: false, includeIfNull: false)
-  final String? t2;
-
-  @JsonKey(name: r't3', required: false, includeIfNull: false)
-  final String? t3;
-
-  @JsonKey(name: r't4', required: false, includeIfNull: false)
-  final String? t4;
-
-  @JsonKey(name: r't6', required: false, includeIfNull: false)
-  final String? t6;
-
-  @JsonKey(name: r't7', required: false, includeIfNull: false)
-  final String? t7;
-
-  @JsonKey(name: r't8', required: false, includeIfNull: false)
-  final String? t8;
-
-  @JsonKey(name: r't9', required: false, includeIfNull: false)
-  final String? t9;
-
-  @JsonKey(name: r't10', required: false, includeIfNull: false)
-  final String? t10;
-
-  @JsonKey(name: r't11', required: false, includeIfNull: false)
-  final String? t11;
-
-  @JsonKey(name: r't12', required: false, includeIfNull: false)
-  final String? t12;
-
-  @JsonKey(name: r't14', required: false, includeIfNull: false)
-  final String? t14;
-
-  @JsonKey(name: r't15', required: false, includeIfNull: false)
-  final String? t15;
-
-  @JsonKey(name: r't16', required: false, includeIfNull: false)
-  final String? t16;
-
-  @JsonKey(name: r't17', required: false, includeIfNull: false)
-  final String? t17;
-
-  @JsonKey(name: r't18', required: false, includeIfNull: false)
-  final String? t18;
-
-  @JsonKey(name: r't19', required: false, includeIfNull: false)
-  final String? t19;
-
-  @JsonKey(name: r't20', required: false, includeIfNull: false)
-  final String? t20;
-
-  @JsonKey(name: r't21', required: false, includeIfNull: false)
-  final String? t21;
-
-  @JsonKey(name: r't22', required: false, includeIfNull: false)
-  final String? t22;
-
-  @JsonKey(name: r't41', required: false, includeIfNull: false)
-  final String? t41;
-
-  @JsonKey(name: r't51', required: false, includeIfNull: false)
-  final String? t51;
-
-  @JsonKey(name: r't61', required: false, includeIfNull: false)
-  final String? t61;
-
-  @JsonKey(name: r'ucp', required: false, includeIfNull: false)
-  final String? ucp;
-
-  @JsonKey(name: r'nsdur', required: false, includeIfNull: false)
-  final String? nsdur;
-
   factory DeviceControlResultDTO.fromJson(Map<String, dynamic> json) =>
       _$DeviceControlResultDTOFromJson(json);
+
+  @JsonKey(name: 'userId', required: false, includeIfNull: false)
+  final String? userId;
+
+  @JsonKey(name: 'terTelNum', required: false, includeIfNull: false)
+  final String? terTelNum;
+
+  @JsonKey(name: 't42', required: false, includeIfNull: false)
+  final String? t42;
+
+  @JsonKey(name: 't5', required: false, includeIfNull: false)
+  final String? t5;
+
+  @JsonKey(name: 't0', required: false, includeIfNull: false)
+  final String? t0;
+
+  @JsonKey(name: 't1', required: false, includeIfNull: false)
+  final String? t1;
+
+  @JsonKey(name: 't2', required: false, includeIfNull: false)
+  final String? t2;
+
+  @JsonKey(name: 't3', required: false, includeIfNull: false)
+  final String? t3;
+
+  @JsonKey(name: 't4', required: false, includeIfNull: false)
+  final String? t4;
+
+  @JsonKey(name: 't6', required: false, includeIfNull: false)
+  final String? t6;
+
+  @JsonKey(name: 't7', required: false, includeIfNull: false)
+  final String? t7;
+
+  @JsonKey(name: 't8', required: false, includeIfNull: false)
+  final String? t8;
+
+  @JsonKey(name: 't9', required: false, includeIfNull: false)
+  final String? t9;
+
+  @JsonKey(name: 't10', required: false, includeIfNull: false)
+  final String? t10;
+
+  @JsonKey(name: 't11', required: false, includeIfNull: false)
+  final String? t11;
+
+  @JsonKey(name: 't12', required: false, includeIfNull: false)
+  final String? t12;
+
+  @JsonKey(name: 't14', required: false, includeIfNull: false)
+  final String? t14;
+
+  @JsonKey(name: 't15', required: false, includeIfNull: false)
+  final String? t15;
+
+  @JsonKey(name: 't16', required: false, includeIfNull: false)
+  final String? t16;
+
+  @JsonKey(name: 't17', required: false, includeIfNull: false)
+  final String? t17;
+
+  @JsonKey(name: 't18', required: false, includeIfNull: false)
+  final String? t18;
+
+  @JsonKey(name: 't19', required: false, includeIfNull: false)
+  final String? t19;
+
+  @JsonKey(name: 't20', required: false, includeIfNull: false)
+  final String? t20;
+
+  @JsonKey(name: 't21', required: false, includeIfNull: false)
+  final String? t21;
+
+  @JsonKey(name: 't22', required: false, includeIfNull: false)
+  final String? t22;
+
+  @JsonKey(name: 't41', required: false, includeIfNull: false)
+  final String? t41;
+
+  @JsonKey(name: 't51', required: false, includeIfNull: false)
+  final String? t51;
+
+  @JsonKey(name: 't61', required: false, includeIfNull: false)
+  final String? t61;
+
+  @JsonKey(name: 'ucp', required: false, includeIfNull: false)
+  final String? ucp;
+
+  @JsonKey(name: 'nsdur', required: false, includeIfNull: false)
+  final String? nsdur;
 
   Map<String, dynamic> toJson() => _$DeviceControlResultDTOToJson(this);
 

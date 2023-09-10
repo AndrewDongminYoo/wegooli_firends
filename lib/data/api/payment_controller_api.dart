@@ -13,9 +13,8 @@ import '/data/model/pay_billing_request_model.dart';
 import '/data/model/payment_model.dart';
 
 class PaymentControllerApi {
-  final Dio _dio;
-
   const PaymentControllerApi(this._dio);
+  final Dio _dio;
 
   /// cancelPayment
   ///
@@ -41,10 +40,10 @@ class PaymentControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/payments/cancel/{paymentKey}'
-        .replaceAll('{' r'paymentKey' '}', paymentKey.toString());
+    final _path = '/payments/cancel/{paymentKey}'
+        .replaceAll('{' 'paymentKey' '}', paymentKey);
     final _options = Options(
-      method: r'POST',
+      method: 'POST',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -72,7 +71,6 @@ class PaymentControllerApi {
           _dio.options,
           _path,
         ),
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -93,12 +91,11 @@ class PaymentControllerApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<String, String>(rawData, 'String', growable: true);
+          : deserialize<String, String>(rawData, 'String');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -140,10 +137,10 @@ class PaymentControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/payments/billing/card/{accountId}'
-        .replaceAll('{' r'accountId' '}', accountId.toString());
+    final _path = '/payments/billing/card/{accountId}'
+        .replaceAll('{' 'accountId' '}', accountId);
     final _options = Options(
-      method: r'POST',
+      method: 'POST',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -171,7 +168,6 @@ class PaymentControllerApi {
           _dio.options,
           _path,
         ),
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -192,12 +188,11 @@ class PaymentControllerApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<String, String>(rawData, 'String', growable: true);
+          : deserialize<String, String>(rawData, 'String');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -237,10 +232,10 @@ class PaymentControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/payments/{paymentKey}'
-        .replaceAll('{' r'paymentKey' '}', paymentKey.toString());
+    final _path =
+        '/payments/{paymentKey}'.replaceAll('{' 'paymentKey' '}', paymentKey);
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -271,13 +266,11 @@ class PaymentControllerApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<PaymentModel, PaymentModel>(rawData, 'PaymentModel',
-              growable: true);
+          : deserialize<PaymentModel, PaymentModel>(rawData, 'PaymentModel');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -329,9 +322,9 @@ class PaymentControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/payments';
+    const _path = '/payments';
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -349,13 +342,13 @@ class PaymentControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (paymentKey != null) r'paymentKey': paymentKey,
-      if (status != null) r'status': status,
-      if (lastTransactionKey != null) r'lastTransactionKey': lastTransactionKey,
-      if (orderId != null) r'orderId': orderId,
-      if (orderName != null) r'orderName': orderName,
-      if (startRequestedAt != null) r'startRequestedAt': startRequestedAt,
-      if (endRequestedAt != null) r'endRequestedAt': endRequestedAt,
+      if (paymentKey != null) 'paymentKey': paymentKey,
+      if (status != null) 'status': status,
+      if (lastTransactionKey != null) 'lastTransactionKey': lastTransactionKey,
+      if (orderId != null) 'orderId': orderId,
+      if (orderName != null) 'orderName': orderName,
+      if (startRequestedAt != null) 'startRequestedAt': startRequestedAt,
+      if (endRequestedAt != null) 'endRequestedAt': endRequestedAt,
     };
 
     final _response = await _dio.request<Object>(
@@ -374,13 +367,11 @@ class PaymentControllerApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<PaymentModel>, PaymentModel>(
-              rawData, 'List<PaymentModel>',
-              growable: true);
+              rawData, 'List<PaymentModel>');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -422,10 +413,10 @@ class PaymentControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/payments/billing/{billingKey}'
-        .replaceAll('{' r'billingKey' '}', billingKey.toString());
+    final _path = '/payments/billing/{billingKey}'
+        .replaceAll('{' 'billingKey' '}', billingKey);
     final _options = Options(
-      method: r'POST',
+      method: 'POST',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -453,7 +444,6 @@ class PaymentControllerApi {
           _dio.options,
           _path,
         ),
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -474,12 +464,11 @@ class PaymentControllerApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<String, String>(rawData, 'String', growable: true);
+          : deserialize<String, String>(rawData, 'String');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -517,9 +506,9 @@ class PaymentControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/payments/start';
+    const _path = '/payments/start';
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -550,12 +539,11 @@ class PaymentControllerApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<String, String>(rawData, 'String', growable: true);
+          : deserialize<String, String>(rawData, 'String');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );

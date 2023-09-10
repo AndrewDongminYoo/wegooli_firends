@@ -29,43 +29,43 @@ class Member extends Equatable {
     this.updatedAt,
   });
 
-  @JsonKey(name: r'seq', required: false, includeIfNull: false)
+  factory Member.fromJson(Map<String, dynamic> json) => _$MemberFromJson(json);
+
+  @JsonKey(name: 'seq', required: false, includeIfNull: false)
   final int? seq;
 
-  @JsonKey(name: r'name', required: false, includeIfNull: false)
+  @JsonKey(name: 'name', required: false, includeIfNull: false)
   final String? name;
 
-  @JsonKey(name: r'add1', required: false, includeIfNull: false)
+  @JsonKey(name: 'add1', required: false, includeIfNull: false)
   final String? add1;
 
-  @JsonKey(name: r'add2', required: false, includeIfNull: false)
+  @JsonKey(name: 'add2', required: false, includeIfNull: false)
   final String? add2;
 
-  @JsonKey(name: r'zipCode', required: false, includeIfNull: false)
+  @JsonKey(name: 'zipCode', required: false, includeIfNull: false)
   final String? zipCode;
 
-  @JsonKey(name: r'phoneNumber', required: false, includeIfNull: false)
+  @JsonKey(name: 'phoneNumber', required: false, includeIfNull: false)
   final String? phoneNumber;
 
-  @JsonKey(name: r'email', required: false, includeIfNull: false)
+  @JsonKey(name: 'email', required: false, includeIfNull: false)
   final String? email;
 
-  @JsonKey(name: r'birthDay', required: false, includeIfNull: false)
+  @JsonKey(name: 'birthDay', required: false, includeIfNull: false)
   final String? birthDay;
 
-  @JsonKey(name: r'sex', required: false, includeIfNull: false)
+  @JsonKey(name: 'sex', required: false, includeIfNull: false)
   final String? sex;
 
-  @JsonKey(name: r'delYn', required: false, includeIfNull: false)
+  @JsonKey(name: 'delYn', required: false, includeIfNull: false)
   final String? delYn;
 
-  @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
+  @JsonKey(name: 'createdAt', required: false, includeIfNull: false)
   final String? createdAt;
 
-  @JsonKey(name: r'updatedAt', required: false, includeIfNull: false)
+  @JsonKey(name: 'updatedAt', required: false, includeIfNull: false)
   final String? updatedAt;
-
-  factory Member.fromJson(Map<String, dynamic> json) => _$MemberFromJson(json);
 
   Map<String, dynamic> toJson() => _$MemberToJson(this);
 

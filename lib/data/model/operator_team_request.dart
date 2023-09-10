@@ -21,41 +21,23 @@ class OperatorTeamRequest {
     this.name,
   });
 
-  @JsonKey(name: r'startAt', required: false, includeIfNull: false)
-  final String? startAt;
-
-  @JsonKey(name: r'endAt', required: false, includeIfNull: false)
-  final String? endAt;
-
-  @JsonKey(name: r'contract', required: false, includeIfNull: false)
-  final String? contract;
-
-  @JsonKey(name: r'address', required: false, includeIfNull: false)
-  final String? address;
-
-  @JsonKey(name: r'name', required: false, includeIfNull: false)
-  final String? name;
-
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is OperatorTeamRequest &&
-          other.startAt == startAt &&
-          other.endAt == endAt &&
-          other.contract == contract &&
-          other.address == address &&
-          other.name == name;
-
-  @override
-  int get hashCode =>
-      startAt.hashCode +
-      endAt.hashCode +
-      contract.hashCode +
-      address.hashCode +
-      name.hashCode;
-
   factory OperatorTeamRequest.fromJson(Map<String, dynamic> json) =>
       _$OperatorTeamRequestFromJson(json);
+
+  @JsonKey(name: 'startAt', required: false, includeIfNull: false)
+  final String? startAt;
+
+  @JsonKey(name: 'endAt', required: false, includeIfNull: false)
+  final String? endAt;
+
+  @JsonKey(name: 'contract', required: false, includeIfNull: false)
+  final String? contract;
+
+  @JsonKey(name: 'address', required: false, includeIfNull: false)
+  final String? address;
+
+  @JsonKey(name: 'name', required: false, includeIfNull: false)
+  final String? name;
 
   Map<String, dynamic> toJson() => _$OperatorTeamRequestToJson(this);
 

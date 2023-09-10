@@ -22,14 +22,14 @@ class TeamAccountConnectionResponse extends Equatable {
     this.account,
   });
 
-  @JsonKey(name: r'teamSeq', required: false, includeIfNull: false)
-  final int? teamSeq;
-
-  @JsonKey(name: r'account', required: false, includeIfNull: false)
-  final List<TeamAccountModel>? account;
-
   factory TeamAccountConnectionResponse.fromJson(Map<String, dynamic> json) =>
       _$TeamAccountConnectionResponseFromJson(json);
+
+  @JsonKey(name: 'teamSeq', required: false, includeIfNull: false)
+  final int? teamSeq;
+
+  @JsonKey(name: 'account', required: false, includeIfNull: false)
+  final List<TeamAccountModel>? account;
 
   Map<String, dynamic> toJson() => _$TeamAccountConnectionResponseToJson(this);
 

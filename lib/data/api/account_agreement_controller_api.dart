@@ -11,9 +11,8 @@ import '/data/model/account_agreement_model.dart';
 import '/data/model/account_agreement_request.dart';
 
 class AccountAgreementControllerApi {
-  final Dio _dio;
-
   const AccountAgreementControllerApi(this._dio);
+  final Dio _dio;
 
   /// deleteAccountAgreement
   ///
@@ -39,11 +38,11 @@ class AccountAgreementControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/account/agreement/{classification}/{accountId}'
-        .replaceAll('{' r'classification' '}', classification.toString())
-        .replaceAll('{' r'accountId' '}', accountId.toString());
+    final _path = '/account/agreement/{classification}/{accountId}'
+        .replaceAll('{' 'classification' '}', classification)
+        .replaceAll('{' 'accountId' '}', accountId);
     final _options = Options(
-      method: r'DELETE',
+      method: 'DELETE',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -74,12 +73,11 @@ class AccountAgreementControllerApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<String, String>(rawData, 'String', growable: true);
+          : deserialize<String, String>(rawData, 'String');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -119,9 +117,9 @@ class AccountAgreementControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/account/agreement';
+    const _path = '/account/agreement';
     final _options = Options(
-      method: r'POST',
+      method: 'POST',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -149,7 +147,6 @@ class AccountAgreementControllerApi {
           _dio.options,
           _path,
         ),
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -170,12 +167,11 @@ class AccountAgreementControllerApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<String, String>(rawData, 'String', growable: true);
+          : deserialize<String, String>(rawData, 'String');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -217,11 +213,11 @@ class AccountAgreementControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/account/agreement/{classification}/{accountId}'
-        .replaceAll('{' r'classification' '}', classification.toString())
-        .replaceAll('{' r'accountId' '}', accountId.toString());
+    final _path = '/account/agreement/{classification}/{accountId}'
+        .replaceAll('{' 'classification' '}', classification)
+        .replaceAll('{' 'accountId' '}', accountId);
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -253,13 +249,11 @@ class AccountAgreementControllerApi {
       _responseData = rawData == null
           ? null
           : deserialize<AccountAgreementModel, AccountAgreementModel>(
-              rawData, 'AccountAgreementModel',
-              growable: true);
+              rawData, 'AccountAgreementModel');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -311,9 +305,9 @@ class AccountAgreementControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/account/agreement';
+    const _path = '/account/agreement';
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -331,13 +325,13 @@ class AccountAgreementControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (classification != null) r'classification': classification,
-      if (accountId != null) r'accountId': accountId,
-      if (agreeYn != null) r'agreeYn': agreeYn,
-      if (startCreatedAt != null) r'startCreatedAt': startCreatedAt,
-      if (endCreatedAt != null) r'endCreatedAt': endCreatedAt,
-      if (startUpdatedAt != null) r'startUpdatedAt': startUpdatedAt,
-      if (endUpdatedAt != null) r'endUpdatedAt': endUpdatedAt,
+      if (classification != null) 'classification': classification,
+      if (accountId != null) 'accountId': accountId,
+      if (agreeYn != null) 'agreeYn': agreeYn,
+      if (startCreatedAt != null) 'startCreatedAt': startCreatedAt,
+      if (endCreatedAt != null) 'endCreatedAt': endCreatedAt,
+      if (startUpdatedAt != null) 'startUpdatedAt': startUpdatedAt,
+      if (endUpdatedAt != null) 'endUpdatedAt': endUpdatedAt,
     };
 
     final _response = await _dio.request<Object>(
@@ -356,13 +350,11 @@ class AccountAgreementControllerApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<AccountAgreementModel>, AccountAgreementModel>(
-              rawData, 'List<AccountAgreementModel>',
-              growable: true);
+              rawData, 'List<AccountAgreementModel>');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -402,9 +394,9 @@ class AccountAgreementControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/account/agreement';
+    const _path = '/account/agreement';
     final _options = Options(
-      method: r'PUT',
+      method: 'PUT',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -432,7 +424,6 @@ class AccountAgreementControllerApi {
           _dio.options,
           _path,
         ),
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -453,12 +444,11 @@ class AccountAgreementControllerApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<String, String>(rawData, 'String', growable: true);
+          : deserialize<String, String>(rawData, 'String');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );

@@ -20,17 +20,17 @@ class AccountAgreementRequest extends Equatable {
     this.agreeYn,
   });
 
-  @JsonKey(name: r'classification', required: false, includeIfNull: false)
-  final String? classification;
-
-  @JsonKey(name: r'accountId', required: false, includeIfNull: false)
-  final String? accountId;
-
-  @JsonKey(name: r'agreeYn', required: false, includeIfNull: false)
-  final String? agreeYn;
-
   factory AccountAgreementRequest.fromJson(Map<String, dynamic> json) =>
       _$AccountAgreementRequestFromJson(json);
+
+  @JsonKey(name: 'classification', required: false, includeIfNull: false)
+  final String? classification;
+
+  @JsonKey(name: 'accountId', required: false, includeIfNull: false)
+  final String? accountId;
+
+  @JsonKey(name: 'agreeYn', required: false, includeIfNull: false)
+  final String? agreeYn;
 
   Map<String, dynamic> toJson() => _$AccountAgreementRequestToJson(this);
 

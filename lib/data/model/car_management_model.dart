@@ -25,32 +25,32 @@ class CarManagementModel extends Equatable {
     this.updatedAt,
   });
 
-  @JsonKey(name: r'seq', required: false, includeIfNull: false)
-  final int? seq;
-
-  @JsonKey(name: r'carNum', required: false, includeIfNull: false)
-  final String? carNum;
-
-  @JsonKey(name: r'oilCheckDate', required: false, includeIfNull: false)
-  final String? oilCheckDate;
-
-  @JsonKey(name: r'tireCheckDate', required: false, includeIfNull: false)
-  final String? tireCheckDate;
-
-  @JsonKey(name: r'batteryStatus', required: false, includeIfNull: false)
-  final String? batteryStatus;
-
-  @JsonKey(name: r'createdBy', required: false, includeIfNull: false)
-  final String? createdBy;
-
-  @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
-  final DateTime? createdAt;
-
-  @JsonKey(name: r'updatedAt', required: false, includeIfNull: false)
-  final DateTime? updatedAt;
-
   factory CarManagementModel.fromJson(Map<String, dynamic> json) =>
       _$CarManagementModelFromJson(json);
+
+  @JsonKey(name: 'seq', required: false, includeIfNull: false)
+  final int? seq;
+
+  @JsonKey(name: 'carNum', required: false, includeIfNull: false)
+  final String? carNum;
+
+  @JsonKey(name: 'oilCheckDate', required: false, includeIfNull: false)
+  final String? oilCheckDate;
+
+  @JsonKey(name: 'tireCheckDate', required: false, includeIfNull: false)
+  final String? tireCheckDate;
+
+  @JsonKey(name: 'batteryStatus', required: false, includeIfNull: false)
+  final String? batteryStatus;
+
+  @JsonKey(name: 'createdBy', required: false, includeIfNull: false)
+  final String? createdBy;
+
+  @JsonKey(name: 'createdAt', required: false, includeIfNull: false)
+  final DateTime? createdAt;
+
+  @JsonKey(name: 'updatedAt', required: false, includeIfNull: false)
+  final DateTime? updatedAt;
 
   Map<String, dynamic> toJson() => _$CarManagementModelToJson(this);
 

@@ -30,47 +30,47 @@ class LicenseModel extends Equatable {
     this.signature,
   });
 
-  @JsonKey(name: r'seq', required: false, includeIfNull: false)
-  final int? seq;
-
-  @JsonKey(name: r'delYn', required: false, includeIfNull: false)
-  final String? delYn;
-
-  @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
-  final DateTime? createdAt;
-
-  @JsonKey(name: r'updatedAt', required: false, includeIfNull: false)
-  final DateTime? updatedAt;
-
-  @JsonKey(name: r'memberSeq', required: false, includeIfNull: false)
-  final int? memberSeq;
-
-  @JsonKey(name: r'koreanYn', required: false, includeIfNull: false)
-  final String? koreanYn;
-
-  @JsonKey(name: r'licenseClass', required: false, includeIfNull: false)
-  final String? licenseClass;
-
-  @JsonKey(name: r'licenseArea', required: false, includeIfNull: false)
-  final String? licenseArea;
-
-  @JsonKey(name: r'licenseYear', required: false, includeIfNull: false)
-  final String? licenseYear;
-
-  @JsonKey(name: r'licenseNum', required: false, includeIfNull: false)
-  final String? licenseNum;
-
-  @JsonKey(name: r'expiredDate', required: false, includeIfNull: false)
-  final String? expiredDate;
-
-  @JsonKey(name: r'issuedDate', required: false, includeIfNull: false)
-  final String? issuedDate;
-
-  @JsonKey(name: r'signature', required: false, includeIfNull: false)
-  final String? signature;
-
   factory LicenseModel.fromJson(Map<String, dynamic> json) =>
       _$LicenseModelFromJson(json);
+
+  @JsonKey(name: 'seq', required: false, includeIfNull: false)
+  final int? seq;
+
+  @JsonKey(name: 'delYn', required: false, includeIfNull: false)
+  final String? delYn;
+
+  @JsonKey(name: 'createdAt', required: false, includeIfNull: false)
+  final DateTime? createdAt;
+
+  @JsonKey(name: 'updatedAt', required: false, includeIfNull: false)
+  final DateTime? updatedAt;
+
+  @JsonKey(name: 'memberSeq', required: false, includeIfNull: false)
+  final int? memberSeq;
+
+  @JsonKey(name: 'koreanYn', required: false, includeIfNull: false)
+  final String? koreanYn;
+
+  @JsonKey(name: 'licenseClass', required: false, includeIfNull: false)
+  final String? licenseClass;
+
+  @JsonKey(name: 'licenseArea', required: false, includeIfNull: false)
+  final String? licenseArea;
+
+  @JsonKey(name: 'licenseYear', required: false, includeIfNull: false)
+  final String? licenseYear;
+
+  @JsonKey(name: 'licenseNum', required: false, includeIfNull: false)
+  final String? licenseNum;
+
+  @JsonKey(name: 'expiredDate', required: false, includeIfNull: false)
+  final String? expiredDate;
+
+  @JsonKey(name: 'issuedDate', required: false, includeIfNull: false)
+  final String? issuedDate;
+
+  @JsonKey(name: 'signature', required: false, includeIfNull: false)
+  final String? signature;
 
   Map<String, dynamic> toJson() => _$LicenseModelToJson(this);
 

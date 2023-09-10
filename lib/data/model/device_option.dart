@@ -19,14 +19,14 @@ class DeviceOption extends Equatable {
     this.optName,
   });
 
-  @JsonKey(name: r'seq', required: false, includeIfNull: false)
-  final int? seq;
-
-  @JsonKey(name: r'optName', required: false, includeIfNull: false)
-  final String? optName;
-
   factory DeviceOption.fromJson(Map<String, dynamic> json) =>
       _$DeviceOptionFromJson(json);
+
+  @JsonKey(name: 'seq', required: false, includeIfNull: false)
+  final int? seq;
+
+  @JsonKey(name: 'optName', required: false, includeIfNull: false)
+  final String? optName;
 
   Map<String, dynamic> toJson() => _$DeviceOptionToJson(this);
 

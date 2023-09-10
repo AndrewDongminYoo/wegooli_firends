@@ -29,43 +29,43 @@ class QnA extends Equatable {
     this.answeredAt,
   });
 
-  @JsonKey(name: r'seq', required: false, includeIfNull: false)
+  factory QnA.fromJson(Map<String, dynamic> json) => _$QnAFromJson(json);
+
+  @JsonKey(name: 'seq', required: false, includeIfNull: false)
   final int? seq;
 
-  @JsonKey(name: r'delYn', required: false, includeIfNull: false)
+  @JsonKey(name: 'delYn', required: false, includeIfNull: false)
   final String? delYn;
 
-  @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
+  @JsonKey(name: 'createdAt', required: false, includeIfNull: false)
   final DateTime? createdAt;
 
-  @JsonKey(name: r'updatedAt', required: false, includeIfNull: false)
+  @JsonKey(name: 'updatedAt', required: false, includeIfNull: false)
   final DateTime? updatedAt;
 
-  @JsonKey(name: r'category', required: false, includeIfNull: false)
+  @JsonKey(name: 'category', required: false, includeIfNull: false)
   final String? category;
 
-  @JsonKey(name: r'title', required: false, includeIfNull: false)
+  @JsonKey(name: 'title', required: false, includeIfNull: false)
   final String? title;
 
-  @JsonKey(name: r'content', required: false, includeIfNull: false)
+  @JsonKey(name: 'content', required: false, includeIfNull: false)
   final String? content;
 
-  @JsonKey(name: r'file', required: false, includeIfNull: false)
+  @JsonKey(name: 'file', required: false, includeIfNull: false)
   final String? file;
 
-  @JsonKey(name: r'answer', required: false, includeIfNull: false)
+  @JsonKey(name: 'answer', required: false, includeIfNull: false)
   final String? answer;
 
-  @JsonKey(name: r'status', required: false, includeIfNull: false)
+  @JsonKey(name: 'status', required: false, includeIfNull: false)
   final String? status;
 
-  @JsonKey(name: r'createdBy', required: false, includeIfNull: false)
+  @JsonKey(name: 'createdBy', required: false, includeIfNull: false)
   final String? createdBy;
 
-  @JsonKey(name: r'answeredAt', required: false, includeIfNull: false)
+  @JsonKey(name: 'answeredAt', required: false, includeIfNull: false)
   final DateTime? answeredAt;
-
-  factory QnA.fromJson(Map<String, dynamic> json) => _$QnAFromJson(json);
 
   Map<String, dynamic> toJson() => _$QnAToJson(this);
 
@@ -84,6 +84,6 @@ class QnA extends Equatable {
         'answer',
         'status',
         'createdBy',
-        'answeredAt'
+        'answeredAt',
       ];
 }

@@ -12,8 +12,6 @@ import 'package:google_sign_in/google_sign_in.dart';
 // 🌎 Project imports:
 import '/lib.dart';
 import '/main.dart';
-import 'auth.dart';
-import 'main.dart';
 
 /// Displayed as a profile image if the user doesn't have one.
 const placeholderImage =
@@ -138,7 +136,7 @@ class _ProfilePageState extends State<ProfilePage> {
                           ),
                         ],
                       ),
-                      const SizedBox(height: 20.0),
+                      const SizedBox(height: 20),
                       TextField(
                         textAlign: TextAlign.center,
                         controller: controller.username,
@@ -154,7 +152,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         ),
                       ),
                       Text(user.email ?? user.phoneNumber ?? 'User'),
-                      const SizedBox(height: 20.0),
+                      const SizedBox(height: 20),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [

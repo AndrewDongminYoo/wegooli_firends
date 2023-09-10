@@ -14,9 +14,8 @@ import '/data/model/update_license_request.dart';
 import '/data/model/valid_license_request.dart';
 
 class LicenseControllerApi {
-  final Dio _dio;
-
   const LicenseControllerApi(this._dio);
+  final Dio _dio;
 
   /// deleteLicense
   ///
@@ -40,9 +39,9 @@ class LicenseControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/license/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
+    final _path = '/license/{seq}'.replaceAll('{' 'seq' '}', seq.toString());
     final _options = Options(
-      method: r'DELETE',
+      method: 'DELETE',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -71,14 +70,12 @@ class LicenseControllerApi {
 
     try {
       final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<bool, bool>(rawData, 'bool', growable: true);
+      _responseData =
+          rawData == null ? null : deserialize<bool, bool>(rawData, 'bool');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -118,10 +115,10 @@ class LicenseControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/license/member/{memberSeq}'
-        .replaceAll('{' r'memberSeq' '}', memberSeq.toString());
+    final _path = '/license/member/{memberSeq}'
+        .replaceAll('{' 'memberSeq' '}', memberSeq.toString());
     final _options = Options(
-      method: r'DELETE',
+      method: 'DELETE',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -150,14 +147,12 @@ class LicenseControllerApi {
 
     try {
       final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<bool, bool>(rawData, 'bool', growable: true);
+      _responseData =
+          rawData == null ? null : deserialize<bool, bool>(rawData, 'bool');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -197,9 +192,9 @@ class LicenseControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/license';
+    const _path = '/license';
     final _options = Options(
-      method: r'POST',
+      method: 'POST',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -227,7 +222,6 @@ class LicenseControllerApi {
           _dio.options,
           _path,
         ),
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -246,14 +240,12 @@ class LicenseControllerApi {
 
     try {
       final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<int, int>(rawData, 'int', growable: true);
+      _responseData =
+          rawData == null ? null : deserialize<int, int>(rawData, 'int');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -293,9 +285,9 @@ class LicenseControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/license/verify';
+    const _path = '/license/verify';
     final _options = Options(
-      method: r'POST',
+      method: 'POST',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -323,7 +315,6 @@ class LicenseControllerApi {
           _dio.options,
           _path,
         ),
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -342,14 +333,12 @@ class LicenseControllerApi {
 
     try {
       final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<bool, bool>(rawData, 'bool', growable: true);
+      _responseData =
+          rawData == null ? null : deserialize<bool, bool>(rawData, 'bool');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -389,9 +378,9 @@ class LicenseControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/license/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
+    final _path = '/license/{seq}'.replaceAll('{' 'seq' '}', seq.toString());
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -422,13 +411,11 @@ class LicenseControllerApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<LicenseModel, LicenseModel>(rawData, 'LicenseModel',
-              growable: true);
+          : deserialize<LicenseModel, LicenseModel>(rawData, 'LicenseModel');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -468,9 +455,9 @@ class LicenseControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/license/list';
+    const _path = '/license/list';
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -488,7 +475,7 @@ class LicenseControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'request': request,
+      'request': request,
     };
 
     final _response = await _dio.request<Object>(
@@ -507,13 +494,11 @@ class LicenseControllerApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<LicenseModel>, LicenseModel>(
-              rawData, 'List<LicenseModel>',
-              growable: true);
+              rawData, 'List<LicenseModel>');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -551,9 +536,9 @@ class LicenseControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/license/stop';
+    const _path = '/license/stop';
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -582,14 +567,12 @@ class LicenseControllerApi {
 
     try {
       final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<bool, bool>(rawData, 'bool', growable: true);
+      _responseData =
+          rawData == null ? null : deserialize<bool, bool>(rawData, 'bool');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -631,9 +614,9 @@ class LicenseControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/license/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
+    final _path = '/license/{seq}'.replaceAll('{' 'seq' '}', seq.toString());
     final _options = Options(
-      method: r'PUT',
+      method: 'PUT',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -661,7 +644,6 @@ class LicenseControllerApi {
           _dio.options,
           _path,
         ),
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -680,14 +662,12 @@ class LicenseControllerApi {
 
     try {
       final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<int, int>(rawData, 'int', growable: true);
+      _responseData =
+          rawData == null ? null : deserialize<int, int>(rawData, 'int');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );

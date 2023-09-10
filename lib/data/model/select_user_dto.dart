@@ -36,65 +36,65 @@ class SelectUserDto extends Equatable {
     this.createdAtAccount,
   });
 
-  @JsonKey(name: r'id', required: false, includeIfNull: false)
-  final String? id;
-
-  @JsonKey(name: r'memberSeq', required: false, includeIfNull: false)
-  final int? memberSeq;
-
-  @JsonKey(name: r'name', required: false, includeIfNull: false)
-  final String? name;
-
-  @JsonKey(name: r'add1', required: false, includeIfNull: false)
-  final String? add1;
-
-  @JsonKey(name: r'add2', required: false, includeIfNull: false)
-  final String? add2;
-
-  @JsonKey(name: r'zipCode', required: false, includeIfNull: false)
-  final String? zipCode;
-
-  @JsonKey(name: r'phoneNumber', required: false, includeIfNull: false)
-  final String? phoneNumber;
-
-  @JsonKey(name: r'email', required: false, includeIfNull: false)
-  final String? email;
-
-  @JsonKey(name: r'birthday', required: false, includeIfNull: false)
-  final String? birthday;
-
-  @JsonKey(name: r'sex', required: false, includeIfNull: false)
-  final String? sex;
-
-  @JsonKey(name: r'delimit', required: false, includeIfNull: false)
-  final String? delimit;
-
-  @JsonKey(name: r'nickname', required: false, includeIfNull: false)
-  final String? nickname;
-
-  @JsonKey(name: r'profilePicture', required: false, includeIfNull: false)
-  final String? profilePicture;
-
-  @JsonKey(name: r'color', required: false, includeIfNull: false)
-  final String? color;
-
-  @JsonKey(name: r'deleteAt', required: false, includeIfNull: false)
-  final String? deleteAt;
-
-  @JsonKey(name: r'delYn_member', required: false, includeIfNull: false)
-  final String? delYnMember;
-
-  @JsonKey(name: r'delYn_account', required: false, includeIfNull: false)
-  final String? delYnAccount;
-
-  @JsonKey(name: r'createdAt_member', required: false, includeIfNull: false)
-  final String? createdAtMember;
-
-  @JsonKey(name: r'createdAt_account', required: false, includeIfNull: false)
-  final String? createdAtAccount;
-
   factory SelectUserDto.fromJson(Map<String, dynamic> json) =>
       _$SelectUserDtoFromJson(json);
+
+  @JsonKey(name: 'id', required: false, includeIfNull: false)
+  final String? id;
+
+  @JsonKey(name: 'memberSeq', required: false, includeIfNull: false)
+  final int? memberSeq;
+
+  @JsonKey(name: 'name', required: false, includeIfNull: false)
+  final String? name;
+
+  @JsonKey(name: 'add1', required: false, includeIfNull: false)
+  final String? add1;
+
+  @JsonKey(name: 'add2', required: false, includeIfNull: false)
+  final String? add2;
+
+  @JsonKey(name: 'zipCode', required: false, includeIfNull: false)
+  final String? zipCode;
+
+  @JsonKey(name: 'phoneNumber', required: false, includeIfNull: false)
+  final String? phoneNumber;
+
+  @JsonKey(name: 'email', required: false, includeIfNull: false)
+  final String? email;
+
+  @JsonKey(name: 'birthday', required: false, includeIfNull: false)
+  final String? birthday;
+
+  @JsonKey(name: 'sex', required: false, includeIfNull: false)
+  final String? sex;
+
+  @JsonKey(name: 'delimit', required: false, includeIfNull: false)
+  final String? delimit;
+
+  @JsonKey(name: 'nickname', required: false, includeIfNull: false)
+  final String? nickname;
+
+  @JsonKey(name: 'profilePicture', required: false, includeIfNull: false)
+  final String? profilePicture;
+
+  @JsonKey(name: 'color', required: false, includeIfNull: false)
+  final String? color;
+
+  @JsonKey(name: 'deleteAt', required: false, includeIfNull: false)
+  final String? deleteAt;
+
+  @JsonKey(name: 'delYn_member', required: false, includeIfNull: false)
+  final String? delYnMember;
+
+  @JsonKey(name: 'delYn_account', required: false, includeIfNull: false)
+  final String? delYnAccount;
+
+  @JsonKey(name: 'createdAt_member', required: false, includeIfNull: false)
+  final String? createdAtMember;
+
+  @JsonKey(name: 'createdAt_account', required: false, includeIfNull: false)
+  final String? createdAtAccount;
 
   Map<String, dynamic> toJson() => _$SelectUserDtoToJson(this);
 

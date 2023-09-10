@@ -13,9 +13,8 @@ import '/data/model/select_car_management_request.dart';
 import '/data/model/update_car_management_request.dart';
 
 class CarManagementControllerApi {
-  final Dio _dio;
-
   const CarManagementControllerApi(this._dio);
+  final Dio _dio;
 
   /// deleteCarManagement
   ///
@@ -40,9 +39,9 @@ class CarManagementControllerApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path =
-        r'/car/management/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
+        '/car/management/{seq}'.replaceAll('{' 'seq' '}', seq.toString());
     final _options = Options(
-      method: r'DELETE',
+      method: 'DELETE',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -71,14 +70,12 @@ class CarManagementControllerApi {
 
     try {
       final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<bool, bool>(rawData, 'bool', growable: true);
+      _responseData =
+          rawData == null ? null : deserialize<bool, bool>(rawData, 'bool');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -118,9 +115,9 @@ class CarManagementControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/car/management';
+    const _path = '/car/management';
     final _options = Options(
-      method: r'POST',
+      method: 'POST',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -148,7 +145,6 @@ class CarManagementControllerApi {
           _dio.options,
           _path,
         ),
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -167,14 +163,12 @@ class CarManagementControllerApi {
 
     try {
       final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<int, int>(rawData, 'int', growable: true);
+      _responseData =
+          rawData == null ? null : deserialize<int, int>(rawData, 'int');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -215,9 +209,9 @@ class CarManagementControllerApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path =
-        r'/car/management/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
+        '/car/management/{seq}'.replaceAll('{' 'seq' '}', seq.toString());
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -249,13 +243,11 @@ class CarManagementControllerApi {
       _responseData = rawData == null
           ? null
           : deserialize<CarManagementModel, CarManagementModel>(
-              rawData, 'CarManagementModel',
-              growable: true);
+              rawData, 'CarManagementModel');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -295,9 +287,9 @@ class CarManagementControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/car/management';
+    const _path = '/car/management';
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -315,7 +307,7 @@ class CarManagementControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'request': request,
+      'request': request,
     };
 
     final _response = await _dio.request<Object>(
@@ -334,13 +326,11 @@ class CarManagementControllerApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<CarManagementModel>, CarManagementModel>(
-              rawData, 'List<CarManagementModel>',
-              growable: true);
+              rawData, 'List<CarManagementModel>');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -383,9 +373,9 @@ class CarManagementControllerApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path =
-        r'/car/management/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
+        '/car/management/{seq}'.replaceAll('{' 'seq' '}', seq.toString());
     final _options = Options(
-      method: r'PUT',
+      method: 'PUT',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -413,7 +403,6 @@ class CarManagementControllerApi {
           _dio.options,
           _path,
         ),
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -432,14 +421,12 @@ class CarManagementControllerApi {
 
     try {
       final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<int, int>(rawData, 'int', growable: true);
+      _responseData =
+          rawData == null ? null : deserialize<int, int>(rawData, 'int');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );

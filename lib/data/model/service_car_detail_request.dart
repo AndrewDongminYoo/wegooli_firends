@@ -18,11 +18,11 @@ class ServiceCarDetailRequest extends Equatable {
     this.serviceSeq,
   });
 
-  @JsonKey(name: r'serviceSeq', required: false, includeIfNull: false)
-  final String? serviceSeq;
-
   factory ServiceCarDetailRequest.fromJson(Map<String, dynamic> json) =>
       _$ServiceCarDetailRequestFromJson(json);
+
+  @JsonKey(name: 'serviceSeq', required: false, includeIfNull: false)
+  final String? serviceSeq;
 
   Map<String, dynamic> toJson() => _$ServiceCarDetailRequestToJson(this);
 

@@ -15,9 +15,8 @@ import '/data/model/user_details_dto.dart';
 import '/data/model/user_dto.dart';
 
 class UserControllerApi {
-  final Dio _dio;
-
   const UserControllerApi(this._dio);
+  final Dio _dio;
 
   /// 아이디 중복체크
   /// 가입된 아이디가 있는지 검증
@@ -42,9 +41,9 @@ class UserControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/auth/checkId';
+    const _path = '/auth/checkId';
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -62,7 +61,7 @@ class UserControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'id': id,
+      'id': id,
     };
 
     final _response = await _dio.request<Object>(
@@ -80,12 +79,11 @@ class UserControllerApi {
       final rawResponse = _response.data;
       _responseData = rawResponse == null
           ? null
-          : deserialize<String, String>(rawResponse, 'String', growable: true);
+          : deserialize<String, String>(rawResponse, 'String');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -126,9 +124,9 @@ class UserControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/auth/generateToken';
+    const _path = '/auth/generateToken';
     final _options = Options(
-      method: r'POST',
+      method: 'POST',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -156,7 +154,6 @@ class UserControllerApi {
           _dio.options,
           _path,
         ),
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -178,13 +175,11 @@ class UserControllerApi {
       _responseData = rawResponse == null
           ? null
           : deserialize<ApiResponseObject, ApiResponseObject>(
-              rawResponse, 'ApiResponseObject',
-              growable: true);
+              rawResponse, 'ApiResponseObject');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -224,9 +219,9 @@ class UserControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/auth/getUserDetail';
+    const _path = '/auth/getUserDetail';
     final _options = Options(
-      method: r'POST',
+      method: 'POST',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -254,7 +249,6 @@ class UserControllerApi {
           _dio.options,
           _path,
         ),
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -275,12 +269,11 @@ class UserControllerApi {
       final rawResponse = _response.data;
       _responseData = rawResponse == null
           ? null
-          : deserialize<String, String>(rawResponse, 'String', growable: true);
+          : deserialize<String, String>(rawResponse, 'String');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -318,9 +311,9 @@ class UserControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/auth/logout';
+    const _path = '/auth/logout';
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -351,12 +344,11 @@ class UserControllerApi {
       final rawResponse = _response.data;
       _responseData = rawResponse == null
           ? null
-          : deserialize<String, String>(rawResponse, 'String', growable: true);
+          : deserialize<String, String>(rawResponse, 'String');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -398,9 +390,9 @@ class UserControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/auth/login';
+    const _path = '/auth/login';
     final _options = Options(
-      method: r'POST',
+      method: 'POST',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -418,8 +410,8 @@ class UserControllerApi {
     );
 
     final _queryParameters = <String, String>{
-      r'id': id,
-      r'password': password,
+      'id': id,
+      'password': password,
     };
 
     final _response = await _dio.request<Object>(
@@ -438,13 +430,11 @@ class UserControllerApi {
       _responseData = rawResponse == null
           ? null
           : deserialize<ApiResponseObject, ApiResponseObject>(
-              rawResponse, 'ApiResponseObject',
-              growable: true);
+              rawResponse, 'ApiResponseObject');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -484,9 +474,9 @@ class UserControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/auth/signup';
+    const _path = '/auth/signup';
     final _options = Options(
-      method: r'POST',
+      method: 'POST',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -514,7 +504,6 @@ class UserControllerApi {
           _dio.options,
           _path,
         ),
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -535,13 +524,11 @@ class UserControllerApi {
       final rawResponse = _response.data;
       _responseData = rawResponse == null
           ? null
-          : deserialize<UserDto, UserDto>(rawResponse, 'UserDto',
-              growable: true);
+          : deserialize<UserDto, UserDto>(rawResponse, 'UserDto');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -581,9 +568,9 @@ class UserControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/auth/signout';
+    const _path = '/auth/signout';
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -601,7 +588,7 @@ class UserControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'id': id,
+      'id': id,
     };
 
     final _response = await _dio.request<Object>(
@@ -619,12 +606,11 @@ class UserControllerApi {
       final rawResponse = _response.data;
       _responseData = rawResponse == null
           ? null
-          : deserialize<bool, bool>(rawResponse, 'bool', growable: true);
+          : deserialize<bool, bool>(rawResponse, 'bool');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -664,10 +650,9 @@ class UserControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path =
-        r'/auth/user/account/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _path = '/auth/user/account/{id}'.replaceAll('{' 'id' '}', id);
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -698,13 +683,11 @@ class UserControllerApi {
       final rawResponse = _response.data;
       _responseData = rawResponse == null
           ? null
-          : deserialize<Account, Account>(rawResponse, 'Account',
-              growable: true);
+          : deserialize<Account, Account>(rawResponse, 'Account');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -745,9 +728,9 @@ class UserControllerApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path =
-        r'/auth/user/member/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
+        '/auth/user/member/{seq}'.replaceAll('{' 'seq' '}', seq.toString());
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -778,12 +761,11 @@ class UserControllerApi {
       final rawResponse = _response.data;
       _responseData = rawResponse == null
           ? null
-          : deserialize<Member, Member>(rawResponse, 'Member', growable: true);
+          : deserialize<Member, Member>(rawResponse, 'Member');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -823,9 +805,9 @@ class UserControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/auth/user';
+    const _path = '/auth/user';
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -843,7 +825,7 @@ class UserControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'request': request,
+      'request': request,
     };
 
     final _response = await _dio.request<Object>(
@@ -862,13 +844,11 @@ class UserControllerApi {
       _responseData = rawResponse == null
           ? null
           : deserialize<List<SelectUserDto>, SelectUserDto>(
-              rawResponse, 'List<SelectUserDto>',
-              growable: true);
+              rawResponse, 'List<SelectUserDto>');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -912,9 +892,9 @@ class UserControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/auth/user';
+    const _path = '/auth/user';
     final _options = Options(
-      method: r'PUT',
+      method: 'PUT',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -933,8 +913,8 @@ class UserControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'memberSeq': memberSeq,
-      r'accountId': accountId,
+      'memberSeq': memberSeq,
+      'accountId': accountId,
     };
 
     dynamic _bodyData;
@@ -948,7 +928,6 @@ class UserControllerApi {
           _path,
           queryParameters: _queryParameters,
         ),
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -970,12 +949,11 @@ class UserControllerApi {
       final rawResponse = _response.data;
       _responseData = rawResponse == null
           ? null
-          : deserialize<bool, bool>(rawResponse, 'bool', growable: true);
+          : deserialize<bool, bool>(rawResponse, 'bool');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );

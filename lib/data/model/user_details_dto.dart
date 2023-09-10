@@ -50,96 +50,95 @@ class UserDetailsDTO extends Equatable {
     this.credentialsNonExpired,
   });
 
-  @JsonKey(name: r'userDto', required: false, includeIfNull: false)
-  final UserDto? userDto;
-
-  @JsonKey(name: r'authorities', required: false, includeIfNull: false)
-  final List<GrantedAuthority>? authorities;
-
-  @JsonKey(name: r'name', required: false, includeIfNull: false)
-  final String? name;
-
-  @JsonKey(name: r'id', required: false, includeIfNull: false)
-  final String? id;
-
-  @JsonKey(name: r'enabled', required: false, includeIfNull: false)
-  final bool? enabled;
-
-  @JsonKey(name: r'color', required: false, includeIfNull: false)
-  final String? color;
-
-  @JsonKey(name: r'password', required: false, includeIfNull: false)
-  final String? password;
-
-  @JsonKey(name: r'delYn', required: false, includeIfNull: false)
-  final String? delYn;
-
-  @JsonKey(name: r'memberSeq', required: false, includeIfNull: false)
-  final int? memberSeq;
-
-  @JsonKey(name: r'seq', required: false, includeIfNull: false)
-  final int? seq;
-
-  @JsonKey(name: r'username', required: false, includeIfNull: false)
-  final String? username;
-
-  @JsonKey(name: r'delimit', required: false, includeIfNull: false)
-  final String? delimit;
-
-  @JsonKey(name: r'updatedAt', required: false, includeIfNull: false)
-  final String? updatedAt;
-
-  @JsonKey(name: r'customerKey', required: false, includeIfNull: false)
-  final String? customerKey;
-
-  @JsonKey(name: r'phoneNumber', required: false, includeIfNull: false)
-  final String? phoneNumber;
-
-  @JsonKey(name: r'add2', required: false, includeIfNull: false)
-  final String? add2;
-
-  @JsonKey(name: r'zipCode', required: false, includeIfNull: false)
-  final String? zipCode;
-
-  @JsonKey(name: r'email', required: false, includeIfNull: false)
-  final String? email;
-
-  @JsonKey(name: r'sex', required: false, includeIfNull: false)
-  final String? sex;
-
-  @JsonKey(name: r'birthDay', required: false, includeIfNull: false)
-  final String? birthDay;
-
-  @JsonKey(name: r'nickname', required: false, includeIfNull: false)
-  final String? nickname;
-
-  @JsonKey(name: r'profilePicture', required: false, includeIfNull: false)
-  final String? profilePicture;
-
-  @JsonKey(name: r'add1', required: false, includeIfNull: false)
-  final String? add1;
-
-  @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
-  final String? createdAt;
-
-  @JsonKey(name: r'deleteAt', required: false, includeIfNull: false)
-  final String? deleteAt;
-
-  @JsonKey(name: r'activeYn', required: false, includeIfNull: false)
-  final String? activeYn;
-
-  @JsonKey(name: r'accountNonExpired', required: false, includeIfNull: false)
-  final bool? accountNonExpired;
-
-  @JsonKey(name: r'accountNonLocked', required: false, includeIfNull: false)
-  final bool? accountNonLocked;
-
-  @JsonKey(
-      name: r'credentialsNonExpired', required: false, includeIfNull: false)
-  final bool? credentialsNonExpired;
-
   factory UserDetailsDTO.fromJson(Map<String, dynamic> json) =>
       _$UserDetailsDTOFromJson(json);
+
+  @JsonKey(name: 'userDto', required: false, includeIfNull: false)
+  final UserDto? userDto;
+
+  @JsonKey(name: 'authorities', required: false, includeIfNull: false)
+  final List<GrantedAuthority>? authorities;
+
+  @JsonKey(name: 'name', required: false, includeIfNull: false)
+  final String? name;
+
+  @JsonKey(name: 'id', required: false, includeIfNull: false)
+  final String? id;
+
+  @JsonKey(name: 'enabled', required: false, includeIfNull: false)
+  final bool? enabled;
+
+  @JsonKey(name: 'color', required: false, includeIfNull: false)
+  final String? color;
+
+  @JsonKey(name: 'password', required: false, includeIfNull: false)
+  final String? password;
+
+  @JsonKey(name: 'delYn', required: false, includeIfNull: false)
+  final String? delYn;
+
+  @JsonKey(name: 'memberSeq', required: false, includeIfNull: false)
+  final int? memberSeq;
+
+  @JsonKey(name: 'seq', required: false, includeIfNull: false)
+  final int? seq;
+
+  @JsonKey(name: 'username', required: false, includeIfNull: false)
+  final String? username;
+
+  @JsonKey(name: 'delimit', required: false, includeIfNull: false)
+  final String? delimit;
+
+  @JsonKey(name: 'updatedAt', required: false, includeIfNull: false)
+  final String? updatedAt;
+
+  @JsonKey(name: 'customerKey', required: false, includeIfNull: false)
+  final String? customerKey;
+
+  @JsonKey(name: 'phoneNumber', required: false, includeIfNull: false)
+  final String? phoneNumber;
+
+  @JsonKey(name: 'add2', required: false, includeIfNull: false)
+  final String? add2;
+
+  @JsonKey(name: 'zipCode', required: false, includeIfNull: false)
+  final String? zipCode;
+
+  @JsonKey(name: 'email', required: false, includeIfNull: false)
+  final String? email;
+
+  @JsonKey(name: 'sex', required: false, includeIfNull: false)
+  final String? sex;
+
+  @JsonKey(name: 'birthDay', required: false, includeIfNull: false)
+  final String? birthDay;
+
+  @JsonKey(name: 'nickname', required: false, includeIfNull: false)
+  final String? nickname;
+
+  @JsonKey(name: 'profilePicture', required: false, includeIfNull: false)
+  final String? profilePicture;
+
+  @JsonKey(name: 'add1', required: false, includeIfNull: false)
+  final String? add1;
+
+  @JsonKey(name: 'createdAt', required: false, includeIfNull: false)
+  final String? createdAt;
+
+  @JsonKey(name: 'deleteAt', required: false, includeIfNull: false)
+  final String? deleteAt;
+
+  @JsonKey(name: 'activeYn', required: false, includeIfNull: false)
+  final String? activeYn;
+
+  @JsonKey(name: 'accountNonExpired', required: false, includeIfNull: false)
+  final bool? accountNonExpired;
+
+  @JsonKey(name: 'accountNonLocked', required: false, includeIfNull: false)
+  final bool? accountNonLocked;
+
+  @JsonKey(name: 'credentialsNonExpired', required: false, includeIfNull: false)
+  final bool? credentialsNonExpired;
 
   Map<String, dynamic> toJson() => _$UserDetailsDTOToJson(this);
 

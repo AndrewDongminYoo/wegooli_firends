@@ -23,33 +23,20 @@ class OperatorTeamDetail {
     this.accountList,
   });
 
-  @JsonKey(name: r'model', required: false, includeIfNull: false)
-  final String? model;
-
-  @JsonKey(name: r'fee', required: false, includeIfNull: false)
-  final String? fee;
-
-  @JsonKey(name: r'contactAt', required: false, includeIfNull: false)
-  final String? contactAt;
-
-  @JsonKey(name: r'accountList', required: false, includeIfNull: false)
-  final List<OperatorTeamAccountDetail>? accountList;
-
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is OperatorTeamDetail &&
-          other.model == model &&
-          other.fee == fee &&
-          other.contactAt == contactAt &&
-          other.accountList == accountList;
-
-  @override
-  int get hashCode =>
-      model.hashCode + fee.hashCode + contactAt.hashCode + accountList.hashCode;
-
   factory OperatorTeamDetail.fromJson(Map<String, dynamic> json) =>
       _$OperatorTeamDetailFromJson(json);
+
+  @JsonKey(name: 'model', required: false, includeIfNull: false)
+  final String? model;
+
+  @JsonKey(name: 'fee', required: false, includeIfNull: false)
+  final String? fee;
+
+  @JsonKey(name: 'contactAt', required: false, includeIfNull: false)
+  final String? contactAt;
+
+  @JsonKey(name: 'accountList', required: false, includeIfNull: false)
+  final List<OperatorTeamAccountDetail>? accountList;
 
   Map<String, dynamic> toJson() => _$OperatorTeamDetailToJson(this);
 

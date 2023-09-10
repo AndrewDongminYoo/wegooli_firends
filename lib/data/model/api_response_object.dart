@@ -17,15 +17,15 @@ class ApiResponseObject extends Equatable {
     this.userInfo,
   });
 
+  factory ApiResponseObject.fromJson(Map<String, dynamic> json) {
+    return _$ApiResponseObjectFromJson(json);
+  }
+
   final Result? result;
   final int? resultCode;
   final dynamic resultMsg;
   final String? failMsg;
   final dynamic userInfo;
-
-  factory ApiResponseObject.fromJson(Map<String, dynamic> json) {
-    return _$ApiResponseObjectFromJson(json);
-  }
 
   Map<String, dynamic> toJson() => _$ApiResponseObjectToJson(this);
 

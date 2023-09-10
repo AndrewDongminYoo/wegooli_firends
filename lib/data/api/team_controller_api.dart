@@ -11,9 +11,8 @@ import '/data/model/team_model.dart';
 import '/data/model/team_request.dart';
 
 class TeamControllerApi {
-  final Dio _dio;
-
   const TeamControllerApi(this._dio);
+  final Dio _dio;
 
   /// deleteTeam
   ///
@@ -38,9 +37,9 @@ class TeamControllerApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path =
-        r'/team/{teamSeq}'.replaceAll('{' r'teamSeq' '}', teamSeq.toString());
+        '/team/{teamSeq}'.replaceAll('{' 'teamSeq' '}', teamSeq.toString());
     final _options = Options(
-      method: r'DELETE',
+      method: 'DELETE',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -71,12 +70,11 @@ class TeamControllerApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<String, String>(rawData, 'String', growable: true);
+          : deserialize<String, String>(rawData, 'String');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -116,9 +114,9 @@ class TeamControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/team';
+    const _path = '/team';
     final _options = Options(
-      method: r'POST',
+      method: 'POST',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -146,7 +144,6 @@ class TeamControllerApi {
           _dio.options,
           _path,
         ),
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -167,12 +164,11 @@ class TeamControllerApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Object, Object>(rawData, 'Object', growable: true);
+          : deserialize<Object, Object>(rawData, 'Object');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -213,9 +209,9 @@ class TeamControllerApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path =
-        r'/team/{teamSeq}'.replaceAll('{' r'teamSeq' '}', teamSeq.toString());
+        '/team/{teamSeq}'.replaceAll('{' 'teamSeq' '}', teamSeq.toString());
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -246,13 +242,11 @@ class TeamControllerApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<TeamModel, TeamModel>(rawData, 'TeamModel',
-              growable: true);
+          : deserialize<TeamModel, TeamModel>(rawData, 'TeamModel');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -292,10 +286,10 @@ class TeamControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/team/code/{teamCode}'
-        .replaceAll('{' r'teamCode' '}', teamCode.toString());
+    final _path =
+        '/team/code/{teamCode}'.replaceAll('{' 'teamCode' '}', teamCode);
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -326,13 +320,11 @@ class TeamControllerApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<TeamModel, TeamModel>(rawData, 'TeamModel',
-              growable: true);
+          : deserialize<TeamModel, TeamModel>(rawData, 'TeamModel');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -386,9 +378,9 @@ class TeamControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/team';
+    const _path = '/team';
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -406,14 +398,14 @@ class TeamControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (accountId != null) r'accountId': accountId,
-      if (name != null) r'name': name,
-      if (delYn != null) r'delYn': delYn,
-      if (startCreatedAt != null) r'startCreatedAt': startCreatedAt,
-      if (endCreatedAt != null) r'endCreatedAt': endCreatedAt,
-      if (startUpdatedAt != null) r'startUpdatedAt': startUpdatedAt,
-      if (endUpdatedAt != null) r'endUpdatedAt': endUpdatedAt,
-      if (contract != null) r'contract': contract,
+      if (accountId != null) 'accountId': accountId,
+      if (name != null) 'name': name,
+      if (delYn != null) 'delYn': delYn,
+      if (startCreatedAt != null) 'startCreatedAt': startCreatedAt,
+      if (endCreatedAt != null) 'endCreatedAt': endCreatedAt,
+      if (startUpdatedAt != null) 'startUpdatedAt': startUpdatedAt,
+      if (endUpdatedAt != null) 'endUpdatedAt': endUpdatedAt,
+      if (contract != null) 'contract': contract,
     };
 
     final _response = await _dio.request<Object>(
@@ -431,13 +423,11 @@ class TeamControllerApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<TeamModel>, TeamModel>(rawData, 'List<TeamModel>',
-              growable: true);
+          : deserialize<List<TeamModel>, TeamModel>(rawData, 'List<TeamModel>');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -480,9 +470,9 @@ class TeamControllerApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path =
-        r'/team/{teamSeq}'.replaceAll('{' r'teamSeq' '}', teamSeq.toString());
+        '/team/{teamSeq}'.replaceAll('{' 'teamSeq' '}', teamSeq.toString());
     final _options = Options(
-      method: r'PUT',
+      method: 'PUT',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -510,7 +500,6 @@ class TeamControllerApi {
           _dio.options,
           _path,
         ),
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -531,12 +520,11 @@ class TeamControllerApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<String, String>(rawData, 'String', growable: true);
+          : deserialize<String, String>(rawData, 'String');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );

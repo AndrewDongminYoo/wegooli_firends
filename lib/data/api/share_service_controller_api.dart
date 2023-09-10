@@ -1,6 +1,5 @@
 // 🎯 Dart imports:
 import 'dart:async';
-import 'dart:convert';
 
 // 📦 Package imports:
 import 'package:dio/dio.dart';
@@ -14,9 +13,8 @@ import '/data/model/share_service_model.dart';
 import '/data/model/share_service_request.dart';
 
 class ShareServiceControllerApi {
-  final Dio _dio;
-
   const ShareServiceControllerApi(this._dio);
+  final Dio _dio;
 
   /// getShareService
   ///
@@ -40,9 +38,9 @@ class ShareServiceControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/getShareService';
+    const _path = '/getShareService';
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -60,7 +58,7 @@ class ShareServiceControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'request': request,
+      'request': request,
     };
 
     final _response = await _dio.request<Object>(
@@ -79,13 +77,11 @@ class ShareServiceControllerApi {
       _responseData = rawData == null
           ? null
           : deserialize<List<ShareServiceModel>, ShareServiceModel>(
-              rawData, 'List<ShareServiceModel>',
-              growable: true);
+              rawData, 'List<ShareServiceModel>');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -125,9 +121,9 @@ class ShareServiceControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/getShareServiceDetail';
+    const _path = '/getShareServiceDetail';
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -145,7 +141,7 @@ class ShareServiceControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'request': request,
+      'request': request,
     };
 
     final _response = await _dio.request<Object>(
@@ -163,13 +159,11 @@ class ShareServiceControllerApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<ServiceDetail, ServiceDetail>(rawData, 'ServiceDetail',
-              growable: true);
+          : deserialize<ServiceDetail, ServiceDetail>(rawData, 'ServiceDetail');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -209,9 +203,9 @@ class ShareServiceControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/setServiceLeader';
+    const _path = '/setServiceLeader';
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -229,7 +223,7 @@ class ShareServiceControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'request': request,
+      'request': request,
     };
 
     final _response = await _dio.request<Object>(
@@ -247,12 +241,11 @@ class ShareServiceControllerApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<String, String>(rawData, 'String', growable: true);
+          : deserialize<String, String>(rawData, 'String');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );

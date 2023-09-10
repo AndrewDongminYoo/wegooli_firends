@@ -18,11 +18,11 @@ class CancelRequestModel extends Equatable {
     this.cancelReason,
   });
 
-  @JsonKey(name: r'cancelReason', required: false, includeIfNull: false)
-  final String? cancelReason;
-
   factory CancelRequestModel.fromJson(Map<String, dynamic> json) =>
       _$CancelRequestModelFromJson(json);
+
+  @JsonKey(name: 'cancelReason', required: false, includeIfNull: false)
+  final String? cancelReason;
 
   Map<String, dynamic> toJson() => _$CancelRequestModelToJson(this);
 

@@ -1,6 +1,5 @@
 // 🎯 Dart imports:
 import 'dart:async';
-import 'dart:convert';
 
 // 📦 Package imports:
 import 'package:dio/dio.dart';
@@ -10,9 +9,8 @@ import '/data/deserialize.dart';
 import '/data/model/test_model.dart';
 
 class TestControllerApi {
-  final Dio _dio;
-
   const TestControllerApi(this._dio);
+  final Dio _dio;
 
   /// callTest
   ///
@@ -36,9 +34,9 @@ class TestControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/test/test';
+    const _path = '/test/test';
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -56,7 +54,7 @@ class TestControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'model': model,
+      'model': model,
     };
 
     final _response = await _dio.request<Object>(
@@ -74,12 +72,11 @@ class TestControllerApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<Object, Object>(rawData, 'Object', growable: true);
+          : deserialize<Object, Object>(rawData, 'Object');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );

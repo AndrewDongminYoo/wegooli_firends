@@ -25,32 +25,32 @@ class TerminalUpdateRequest extends Equatable {
     this.carNickname,
   });
 
-  @JsonKey(name: r'seq', required: false, includeIfNull: false)
-  final int? seq;
-
-  @JsonKey(name: r'delYn', required: false, includeIfNull: false)
-  final String? delYn;
-
-  @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
-  final DateTime? createdAt;
-
-  @JsonKey(name: r'updatedAt', required: false, includeIfNull: false)
-  final DateTime? updatedAt;
-
-  @JsonKey(name: r'carNum', required: false, includeIfNull: false)
-  final String? carNum;
-
-  @JsonKey(name: r'phoneNumber', required: false, includeIfNull: false)
-  final String? phoneNumber;
-
-  @JsonKey(name: r'status', required: false, includeIfNull: false)
-  final String? status;
-
-  @JsonKey(name: r'carNickname', required: false, includeIfNull: false)
-  final String? carNickname;
-
   factory TerminalUpdateRequest.fromJson(Map<String, dynamic> json) =>
       _$TerminalUpdateRequestFromJson(json);
+
+  @JsonKey(name: 'seq', required: false, includeIfNull: false)
+  final int? seq;
+
+  @JsonKey(name: 'delYn', required: false, includeIfNull: false)
+  final String? delYn;
+
+  @JsonKey(name: 'createdAt', required: false, includeIfNull: false)
+  final DateTime? createdAt;
+
+  @JsonKey(name: 'updatedAt', required: false, includeIfNull: false)
+  final DateTime? updatedAt;
+
+  @JsonKey(name: 'carNum', required: false, includeIfNull: false)
+  final String? carNum;
+
+  @JsonKey(name: 'phoneNumber', required: false, includeIfNull: false)
+  final String? phoneNumber;
+
+  @JsonKey(name: 'status', required: false, includeIfNull: false)
+  final String? status;
+
+  @JsonKey(name: 'carNickname', required: false, includeIfNull: false)
+  final String? carNickname;
 
   Map<String, dynamic> toJson() => _$TerminalUpdateRequestToJson(this);
 

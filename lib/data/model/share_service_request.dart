@@ -19,14 +19,14 @@ class ShareServiceRequest extends Equatable {
     this.endMonthlyAmount,
   });
 
-  @JsonKey(name: r'startMonthlyAmount', required: false, includeIfNull: false)
-  final String? startMonthlyAmount;
-
-  @JsonKey(name: r'endMonthlyAmount', required: false, includeIfNull: false)
-  final String? endMonthlyAmount;
-
   factory ShareServiceRequest.fromJson(Map<String, dynamic> json) =>
       _$ShareServiceRequestFromJson(json);
+
+  @JsonKey(name: 'startMonthlyAmount', required: false, includeIfNull: false)
+  final String? startMonthlyAmount;
+
+  @JsonKey(name: 'endMonthlyAmount', required: false, includeIfNull: false)
+  final String? endMonthlyAmount;
 
   Map<String, dynamic> toJson() => _$ShareServiceRequestToJson(this);
 

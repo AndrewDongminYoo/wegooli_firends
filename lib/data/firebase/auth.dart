@@ -1,9 +1,5 @@
-// 🎯 Dart imports:
-import 'dart:io';
-
 // 🐦 Flutter imports:
 import 'package:flutter/foundation.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
@@ -11,13 +7,10 @@ import 'package:barcode_widget/barcode_widget.dart';
 import 'package:collection/collection.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:flutter_signin_button/flutter_signin_button.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 
 // 🌎 Project imports:
 import '/lib.dart';
 import '/main.dart';
-import 'main.dart';
 
 extension on AuthMode {
   String get label => this == AuthMode.login ? 'Sign in' : 'Register';
@@ -50,7 +43,7 @@ class _AuthGateState extends State<AuthGate> {
   void initState() {
     super.initState();
     if (withSilentVerificationSMSMFA && !kIsWeb) {
-      FirebaseMessaging messaging = FirebaseMessaging.instance;
+      final messaging = FirebaseMessaging.instance;
       messaging.requestPermission();
     }
   }
@@ -170,24 +163,6 @@ class _AuthGateState extends State<AuthGate> {
       } catch (e) {
         ScaffoldSnackbar.of(context).show('Error resetting');
       }
-    }
-  }
-
-  Future<void> _anonymousAuth() async {
-    setIsLoading();
-
-    try {
-      await auth.signInAnonymously();
-    } on FirebaseAuthException catch (e) {
-      setState(() {
-        error = '${e.message}';
-      });
-    } catch (e) {
-      setState(() {
-        error = '$e';
-      });
-    } finally {
-      setIsLoading();
     }
   }
 
@@ -319,80 +294,6 @@ class _AuthGateState extends State<AuthGate> {
           });
         },
       );
-    }
-  }
-
-  Future<void> _signInWithGoogle() async {
-    // Trigger the authentication flow
-    final googleUser = await GoogleSignIn().signIn();
-
-    // Obtain the auth details from the request
-    final googleAuth = await googleUser?.authentication;
-
-    if (googleAuth != null) {
-      // Create a new credential
-      final credential = GoogleAuthProvider.credential(
-        accessToken: googleAuth.accessToken,
-        idToken: googleAuth.idToken,
-      );
-
-      // Once signed in, return the UserCredential
-      await auth.signInWithCredential(credential);
-    }
-  }
-
-  Future<void> _signInWithTwitter() async {
-    TwitterAuthProvider twitterProvider = TwitterAuthProvider();
-
-    if (kIsWeb) {
-      await auth.signInWithPopup(twitterProvider);
-    } else {
-      await auth.signInWithProvider(twitterProvider);
-    }
-  }
-
-  Future<void> _signInWithApple() async {
-    final appleProvider = AppleAuthProvider();
-    appleProvider.addScope('email');
-
-    if (kIsWeb) {
-      // Once signed in, return the UserCredential
-      await auth.signInWithPopup(appleProvider);
-    } else {
-      final userCred = await auth.signInWithProvider(appleProvider);
-      AuthGate.appleAuthorizationCode =
-          userCred.additionalUserInfo?.authorizationCode;
-    }
-  }
-
-  Future<void> _signInWithYahoo() async {
-    final yahooProvider = YahooAuthProvider();
-
-    if (kIsWeb) {
-      // Once signed in, return the UserCredential
-      await auth.signInWithPopup(yahooProvider);
-    } else {
-      await auth.signInWithProvider(yahooProvider);
-    }
-  }
-
-  Future<void> _signInWithGitHub() async {
-    final githubProvider = GithubAuthProvider();
-
-    if (kIsWeb) {
-      await auth.signInWithPopup(githubProvider);
-    } else {
-      await auth.signInWithProvider(githubProvider);
-    }
-  }
-
-  Future<void> _signInWithMicrosoft() async {
-    final microsoftProvider = MicrosoftAuthProvider();
-
-    if (kIsWeb) {
-      await auth.signInWithPopup(microsoftProvider);
-    } else {
-      await auth.signInWithProvider(microsoftProvider);
     }
   }
 }

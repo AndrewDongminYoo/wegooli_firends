@@ -12,9 +12,8 @@ import '/data/model/team_account_connection_request.dart';
 import '/data/model/team_account_connection_response.dart';
 
 class TeamAccountConnectionControllerApi {
-  final Dio _dio;
-
   const TeamAccountConnectionControllerApi(this._dio);
+  final Dio _dio;
 
   /// deleteTeamAccount
   ///
@@ -39,9 +38,9 @@ class TeamAccountConnectionControllerApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path =
-        r'/team/account/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
+        '/team/account/{seq}'.replaceAll('{' 'seq' '}', seq.toString());
     final _options = Options(
-      method: r'DELETE',
+      method: 'DELETE',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -72,12 +71,11 @@ class TeamAccountConnectionControllerApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<String, String>(rawData, 'String', growable: true);
+          : deserialize<String, String>(rawData, 'String');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -117,9 +115,9 @@ class TeamAccountConnectionControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/team/account';
+    const _path = '/team/account';
     final _options = Options(
-      method: r'POST',
+      method: 'POST',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -147,7 +145,6 @@ class TeamAccountConnectionControllerApi {
           _dio.options,
           _path,
         ),
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -168,12 +165,11 @@ class TeamAccountConnectionControllerApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<String, String>(rawData, 'String', growable: true);
+          : deserialize<String, String>(rawData, 'String');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -215,11 +211,11 @@ class TeamAccountConnectionControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/team/account/{accountId}/{code}'
-        .replaceAll('{' r'accountId' '}', accountId.toString())
-        .replaceAll('{' r'code' '}', code.toString());
+    final _path = '/team/account/{accountId}/{code}'
+        .replaceAll('{' 'accountId' '}', accountId)
+        .replaceAll('{' 'code' '}', code);
     final _options = Options(
-      method: r'PUT',
+      method: 'PUT',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -250,12 +246,11 @@ class TeamAccountConnectionControllerApi {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<String, String>(rawData, 'String', growable: true);
+          : deserialize<String, String>(rawData, 'String');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -296,9 +291,9 @@ class TeamAccountConnectionControllerApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path =
-        r'/team/account/{seq}'.replaceAll('{' r'seq' '}', seq.toString());
+        '/team/account/{seq}'.replaceAll('{' 'seq' '}', seq.toString());
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -330,13 +325,11 @@ class TeamAccountConnectionControllerApi {
       _responseData = rawData == null
           ? null
           : deserialize<TeamAccountConnectionModel, TeamAccountConnectionModel>(
-              rawData, 'TeamAccountConnectionModel',
-              growable: true);
+              rawData, 'TeamAccountConnectionModel');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -388,9 +381,9 @@ class TeamAccountConnectionControllerApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/team/account';
+    const _path = '/team/account';
     final _options = Options(
-      method: r'GET',
+      method: 'GET',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -408,13 +401,13 @@ class TeamAccountConnectionControllerApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (teamSeq != null) r'teamSeq': teamSeq,
-      if (accountId != null) r'accountId': accountId,
-      if (startJoinedAt != null) r'startJoinedAt': startJoinedAt,
-      if (endJoinedAt != null) r'endJoinedAt': endJoinedAt,
-      if (startLeavedAt != null) r'startLeavedAt': startLeavedAt,
-      if (endLeavedAt != null) r'endLeavedAt': endLeavedAt,
-      if (isLeaved != null) r'isLeaved': isLeaved,
+      if (teamSeq != null) 'teamSeq': teamSeq,
+      if (accountId != null) 'accountId': accountId,
+      if (startJoinedAt != null) 'startJoinedAt': startJoinedAt,
+      if (endJoinedAt != null) 'endJoinedAt': endJoinedAt,
+      if (startLeavedAt != null) 'startLeavedAt': startLeavedAt,
+      if (endLeavedAt != null) 'endLeavedAt': endLeavedAt,
+      if (isLeaved != null) 'isLeaved': isLeaved,
     };
 
     final _response = await _dio.request<Object>(
@@ -434,13 +427,11 @@ class TeamAccountConnectionControllerApi {
           ? null
           : deserialize<List<TeamAccountConnectionResponse>,
                   TeamAccountConnectionResponse>(
-              rawData, 'List<TeamAccountConnectionResponse>',
-              growable: true);
+              rawData, 'List<TeamAccountConnectionResponse>');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );

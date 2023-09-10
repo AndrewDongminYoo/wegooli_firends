@@ -600,6 +600,10 @@
   "@turnOnHazardLights": {
     "description": "스마트키 버튼 중 하나. 특수 상황에 사용."
   },
+  "unsubscribe": "해지하기",
+  "@unsubscribe": {
+    "description": "구독 해지 신청 이후, 다음 결제일까지 서비스를 계속 사용할 수 있으며, 이때 해지 예약을 취소할 수도 있음"
+  },
   "unsubscribeCancel": "해지 취소",
   "@unsubscribeCancel": {
     "description": "구독 해지 신청 이후, 다음 결제일까지 서비스를 계속 사용할 수 있으며, 이때 해지 예약을 취소할 수도 있음"

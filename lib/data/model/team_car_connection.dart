@@ -25,32 +25,32 @@ class TeamCarConnection extends Equatable {
     this.activeYn,
   });
 
-  @JsonKey(name: r'seq', required: false, includeIfNull: false)
-  final int? seq;
-
-  @JsonKey(name: r'teamSeq', required: false, includeIfNull: false)
-  final int? teamSeq;
-
-  @JsonKey(name: r'carNum', required: false, includeIfNull: false)
-  final String? carNum;
-
-  @JsonKey(name: r'startAt', required: false, includeIfNull: false)
-  final String? startAt;
-
-  @JsonKey(name: r'endAt', required: false, includeIfNull: false)
-  final String? endAt;
-
-  @JsonKey(name: r'createdAt', required: false, includeIfNull: false)
-  final String? createdAt;
-
-  @JsonKey(name: r'updatedAt', required: false, includeIfNull: false)
-  final String? updatedAt;
-
-  @JsonKey(name: r'activeYn', required: false, includeIfNull: false)
-  final String? activeYn;
-
   factory TeamCarConnection.fromJson(Map<String, dynamic> json) =>
       _$TeamCarConnectionFromJson(json);
+
+  @JsonKey(name: 'seq', required: false, includeIfNull: false)
+  final int? seq;
+
+  @JsonKey(name: 'teamSeq', required: false, includeIfNull: false)
+  final int? teamSeq;
+
+  @JsonKey(name: 'carNum', required: false, includeIfNull: false)
+  final String? carNum;
+
+  @JsonKey(name: 'startAt', required: false, includeIfNull: false)
+  final String? startAt;
+
+  @JsonKey(name: 'endAt', required: false, includeIfNull: false)
+  final String? endAt;
+
+  @JsonKey(name: 'createdAt', required: false, includeIfNull: false)
+  final String? createdAt;
+
+  @JsonKey(name: 'updatedAt', required: false, includeIfNull: false)
+  final String? updatedAt;
+
+  @JsonKey(name: 'activeYn', required: false, includeIfNull: false)
+  final String? activeYn;
 
   Map<String, dynamic> toJson() => _$TeamCarConnectionToJson(this);
 

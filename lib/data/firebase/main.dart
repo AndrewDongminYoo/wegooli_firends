@@ -1,16 +1,14 @@
 // 🐦 Flutter imports:
+
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 
 // 🌎 Project imports:
 import '/lib.dart';
 import '/main.dart';
-import 'auth.dart';
-import 'firebase_options.dart';
-import 'profile.dart';
 
 class AuthExampleApp extends StatelessWidget {
   const AuthExampleApp({Key? key}) : super(key: key);

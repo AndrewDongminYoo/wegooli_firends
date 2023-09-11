@@ -28,22 +28,25 @@ class RegisterLicense extends GetWidget<LicenseController> {
               ]),
               Padding(
                   padding: getPadding(top: 26),
-                  child:
-                      Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                    Expanded(
-                      child: Padding(
-                        padding: getPadding(right: 4),
-                        child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              CustomInputLabel(labelText: l10ns.licenseType),
-                              LicenseRegionDropdown(controller: controller),
-                            ]),
-                      ),
-                    ),
-                    Expanded(
-                        child: LicenseIssuedYearDropdown(controller: controller)),
-                  ])),
+                  child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Expanded(
+                          child: Padding(
+                            padding: getPadding(right: 4),
+                            child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  CustomInputLabel(
+                                      labelText: l10ns.licenseType),
+                                  LicenseRegionDropdown(controller: controller),
+                                ]),
+                          ),
+                        ),
+                        Expanded(
+                            child: LicenseIssuedYearDropdown(
+                                controller: controller)),
+                      ])),
               LicenseNumbersFormField(controller: controller),
               Padding(
                   padding: getPadding(top: 26),
@@ -51,7 +54,8 @@ class RegisterLicense extends GetWidget<LicenseController> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         CustomInputLabel(
-                            labelText: l10ns.eligibilityPeriodTestExpirationDate),
+                            labelText:
+                                l10ns.eligibilityPeriodTestExpirationDate),
                         LicenseExpDateFormField(controller: controller),
                       ])),
               Padding(

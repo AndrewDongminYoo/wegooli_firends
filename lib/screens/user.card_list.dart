@@ -53,9 +53,10 @@ class _RegisteredCreditCardListState extends State<RegisteredCreditCardList> {
                                           text: paymentCard.cardNumber ?? 'dd',
                                           iconSize: getHorizontalSize(20),
                                           value: paymentCard.cardNumber ?? 'dd',
-                                          groupValue: paymentCard.defaultYn == 'Y'
-                                              ? paymentCard.cardNumber
-                                              : controller.selected.value,
+                                          groupValue:
+                                              paymentCard.defaultYn == 'Y'
+                                                  ? paymentCard.cardNumber
+                                                  : controller.selected.value,
                                           textStyle: theme.textTheme.bodyLarge,
                                           onChange: (String value) {
                                             // print(

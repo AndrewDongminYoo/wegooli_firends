@@ -98,5 +98,4 @@ class _LoginWithIdAndPasswordState extends State<LoginWithIdAndPassword> {
       ),
     ));
   }
-
 }

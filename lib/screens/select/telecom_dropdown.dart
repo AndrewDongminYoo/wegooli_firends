@@ -14,15 +14,14 @@ class TelecomDropdown extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var telecoms = controller.telecoms;
     return CustomDropDown(
-        width: getHorizontalSize(110),
+        width: getHorizontalSize(120),
         icon: Icon(Icons.arrow_drop_down, color: appTheme.gray50003),
         // `initialValue`가 `true`인 경우 `hintText`는 보이지 않습니다.
         hintText: l10ns.telecomCarrier,
         initialValue: true,
         margin: getMargin(top: 4),
-        items: telecoms,
+        items: controller.telecoms,
         filled: true,
         textStyle: CustomTextStyles.bodyLargeGray500,
         fillColor: theme.colorScheme.onPrimaryContainer,

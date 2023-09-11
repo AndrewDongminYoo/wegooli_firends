@@ -69,64 +69,66 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                   },
                   // animationDuration: Duration(seconds: 1),
                   elevation: 1,
-                  children: controller.items.mapIndexed((index, item) {
-                    return ExpansionPanel(
-                        // backgroundColor: Colors.amber,
-                        headerBuilder: (context, isOpen) {
-                          return Padding(
-                              padding: const EdgeInsets.all(15),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    item.title,
-                                    style: TextStyle(
-                                      color: Color(
-                                          isOpen ? 0xFF222222 : 0x66222222),
-                                      fontSize: 16,
-                                      fontFamily: FontFamily.pretendard,
-                                      fontWeight: FontWeight.w700,
-                                      height: 1.50,
-                                      letterSpacing: 0.03,
+                  children: controller.items.mapIndexed(
+                    (index, item) {
+                      return ExpansionPanel(
+                          // backgroundColor: Colors.amber,
+                          headerBuilder: (context, isOpen) {
+                            return Padding(
+                                padding: const EdgeInsets.all(15),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      item.title,
+                                      style: TextStyle(
+                                        color: Color(
+                                            isOpen ? 0xFF222222 : 0x66222222),
+                                        fontSize: 16,
+                                        fontFamily: FontFamily.pretendard,
+                                        fontWeight: FontWeight.w700,
+                                        height: 1.50,
+                                        letterSpacing: 0.03,
+                                      ),
                                     ),
-                                  ),
-                                  Text(
-                                    formatting(item.date),
-                                    textAlign: TextAlign.right,
-                                    style: TextStyle(
-                                      color: Color(
-                                          isOpen ? 0xFF222222 : 0x66222222),
-                                      fontSize: 16,
-                                      fontFamily: FontFamily.pretendard,
-                                      fontWeight: FontWeight.w700,
-                                      height: 1.50,
-                                      letterSpacing: 0.03,
+                                    Text(
+                                      formatting(item.date),
+                                      textAlign: TextAlign.right,
+                                      style: TextStyle(
+                                        color: Color(
+                                            isOpen ? 0xFF222222 : 0x66222222),
+                                        fontSize: 16,
+                                        fontFamily: FontFamily.pretendard,
+                                        fontWeight: FontWeight.w700,
+                                        height: 1.50,
+                                        letterSpacing: 0.03,
+                                      ),
                                     ),
-                                  ),
-                                ],
-                              ));
-                        },
-                        body: Container(
-                          height: getVerticalSize(200),
-                          alignment: Alignment.center,
-                          padding: const EdgeInsets.all(20),
-                          // color: Colors.redAccent[100],
-                          width: double.infinity,
-                          child: CupertinoDatePicker(
-                            backgroundColor: CupertinoColors.systemBackground
-                                .resolveFrom(context),
-                            mode: CupertinoDatePickerMode.dateAndTime,
-                            initialDateTime: item.date,
-                            onDateTimeChanged: (newDateTime) {
-                              // print('newDateTime: $newDateTime');
-                              controller.items[index].date = newDateTime;
-                              controller.items.refresh();
-                            },
+                                  ],
+                                ));
+                          },
+                          body: Container(
+                            height: getVerticalSize(200),
+                            alignment: Alignment.center,
+                            padding: const EdgeInsets.all(20),
+                            // color: Colors.redAccent[100],
+                            width: double.infinity,
+                            child: CupertinoDatePicker(
+                              backgroundColor: CupertinoColors.systemBackground
+                                  .resolveFrom(context),
+                              mode: CupertinoDatePickerMode.dateAndTime,
+                              initialDateTime: item.date,
+                              onDateTimeChanged: (newDateTime) {
+                                // print('newDateTime: $newDateTime');
+                                controller.items[index].date = newDateTime;
+                                controller.items.refresh();
+                              },
+                            ),
                           ),
-                        ),
-                        isExpanded: item.isExpanded);
-                  },).toList())),
+                          isExpanded: item.isExpanded);
+                    },
+                  ).toList())),
               Container(
                   height: getVerticalSize(106),
                   padding: getPadding(left: 16, right: 16),

@@ -48,7 +48,8 @@ class ValidatePhone extends GetWidget<UserController> {
                                 ),
                                 const Text('-', style: TextStyle(fontSize: 24)),
                                 SocialSecurityNumberFormField(
-                                    controller: controller, focusNode: _socialId),
+                                    controller: controller,
+                                    focusNode: _socialId),
                               ]),
                           CustomGuideText(
                               text: l10ns

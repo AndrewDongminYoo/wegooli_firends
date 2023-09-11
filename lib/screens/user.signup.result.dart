@@ -56,9 +56,10 @@ class RegisterSuccess extends GetWidget<UserController> {
                                         l10ns.optionalInvitaionCode,
                                         overflow: TextOverflow.ellipsis,
                                         textAlign: TextAlign.left,
-                                        style:
-                                            theme.textTheme.titleMedium!.copyWith(
-                                          letterSpacing: getHorizontalSize(0.03),
+                                        style: theme.textTheme.titleMedium!
+                                            .copyWith(
+                                          letterSpacing:
+                                              getHorizontalSize(0.03),
                                         ),
                                       )),
                                 ]),

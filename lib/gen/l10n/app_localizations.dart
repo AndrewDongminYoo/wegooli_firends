@@ -64,7 +64,8 @@ import 'app_localizations_ko.dart';
 /// be consistent with the languages listed in the Localized.supportedLocales
 /// property.
 abstract class Localized {
-  Localized(String locale) : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+  Localized(String locale)
+      : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
@@ -84,7 +85,8 @@ abstract class Localized {
   /// Additional delegates can be added by appending to this list in
   /// MaterialApp. This list does not have to be used at all if a custom list
   /// of delegates is preferred or required.
-  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates = <LocalizationsDelegate<dynamic>>[
+  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates =
+      <LocalizationsDelegate<dynamic>>[
     delegate,
     GlobalMaterialLocalizations.delegate,
     GlobalCupertinoLocalizations.delegate,
@@ -92,9 +94,7 @@ abstract class Localized {
   ];
 
   /// A list of this localizations delegate's supported locales.
-  static const List<Locale> supportedLocales = <Locale>[
-    Locale('ko')
-  ];
+  static const List<Locale> supportedLocales = <Locale>[Locale('ko')];
 
   /// 모든 약관에 동의합니다.
   ///
@@ -724,7 +724,8 @@ abstract class Localized {
   ///
   /// In ko, this message translates to:
   /// **'총 {totalReservationTime}시간 이용\n{reservationStartTime} ~ {reservationEndTime}'**
-  String reservationTotalPeriod(int totalReservationTime, String reservationStartTime, String reservationEndTime);
+  String reservationTotalPeriod(int totalReservationTime,
+      String reservationStartTime, String reservationEndTime);
 
   /// [BottomSheet]는 원활한 개발을 위한 게이트웨이 바텀시트 띄우기 버튼에 사용됨.
   ///
@@ -1090,24 +1091,23 @@ class _LocalizedDelegate extends LocalizationsDelegate<Localized> {
   }
 
   @override
-  bool isSupported(Locale locale) => <String>['ko'].contains(locale.languageCode);
+  bool isSupported(Locale locale) =>
+      <String>['ko'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_LocalizedDelegate old) => false;
 }
 
 Localized lookupLocalized(Locale locale) {
-
-
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
-    case 'ko': return LocalizedKo();
+    case 'ko':
+      return LocalizedKo();
   }
 
   throw FlutterError(
-    'Localized.delegate failed to load unsupported locale "$locale". This is likely '
-    'an issue with the localizations generation tool. Please file an issue '
-    'on GitHub with a reproducible sample app and the gen-l10n configuration '
-    'that was used.'
-  );
+      'Localized.delegate failed to load unsupported locale "$locale". This is likely '
+      'an issue with the localizations generation tool. Please file an issue '
+      'on GitHub with a reproducible sample app and the gen-l10n configuration '
+      'that was used.');
 }

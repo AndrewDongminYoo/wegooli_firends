@@ -2,10 +2,11 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
-import 'package:url_launcher/url_launcher_string.dart';
+import 'package:get/get.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
+import '/screens/terms_of_use.dart';
 
 class AcceptTerms extends StatefulWidget {
   const AcceptTerms({super.key});
@@ -15,29 +16,36 @@ class AcceptTerms extends StatefulWidget {
 
 class _AcceptTermsState extends State<AcceptTerms> {
   List<Agreement> acceptTerms = [
-    Agreement(title: '[필수] 개인정보 처리방침', url: ''),
-    Agreement(title: '[필수] 개인 위치정보 처리 방침', url: ''),
-    Agreement(title: '[필수] 서비스이용약관', url: ''),
-    Agreement(title: '[필수] 위치기반서비스 이용약관', url: ''),
-    Agreement(title: '[필수] 자동차대여 표준약관', url: ''),
-    Agreement(title: '[필수] 차량 위치정보 수집이용 제공동의', url: ''),
-    Agreement(title: '[선택] 마케팅 목적 개인정보 수집이용', url: '', required: false),
+    Agreement(title: '[필수] 개인정보 처리방침', markdown: privacy_policy),
+    Agreement(title: '[필수] 개인 위치정보 처리 방침', markdown: location_data),
+    Agreement(title: '[필수] 서비스이용약관', markdown: terms_of_service),
+    Agreement(title: '[필수] 위치기반서비스 이용약관', markdown: location_based),
+    Agreement(title: '[필수] 자동차대여 표준약관', markdown: car_rental_term),
+    Agreement(title: '[필수] 차량 위치정보 수집이용 제공동의', markdown: vehicle_location),
+    Agreement(
+        title: '[선택] 마케팅 목적 개인정보 수집이용',
+        markdown: marketing_purpose,
+        required: false),
   ];
 
   List<bool> agreements = List<bool>.filled(7, false);
-  bool get _getAllTermsAccepted {
+  Duration delay = const Duration(milliseconds: 100);
+  bool get getAllTermsAccepted {
     return agreements.every((term) => term);
   }
 
-  void _setAllTermsAccepted(bool? value) async {
-    var delay = const Duration(milliseconds: 100);
-    for (int i = 0; i < agreements.length; i++) {
-      if (acceptTerms[i].required) {
+  // 전체 항목 동의
+  void setAllTermsAccepted(bool? value) async {
+    if (!getAllTermsAccepted) {
+      for (int i = 0; i < agreements.length; i++) {
+        // if (acceptTerms[i].required) {
         await Future.delayed(delay);
         setState(() {
           agreements[i] = value!;
         });
       }
+    } else {
+      agreements = List<bool>.filled(7, false);
     }
   }
 
@@ -64,8 +72,8 @@ class _AcceptTermsState extends State<AcceptTerms> {
                             child: CustomCheckboxButton(
                               alignment: Alignment.center,
                               text: l10ns.acceptAll,
-                              value: _getAllTermsAccepted,
-                              onChange: _setAllTermsAccepted,
+                              value: getAllTermsAccepted,
+                              onChange: setAllTermsAccepted,
                             ),
                           )),
                       ListView.builder(
@@ -108,29 +116,31 @@ class _AgreementItemState extends State<AgreementItem> {
   @override
   Widget build(BuildContext context) {
     var term = widget.terms[widget.index];
-    var agree = widget.values[widget.index];
     return Padding(
         padding: getPadding(top: 14),
         child: Unfocused(
           child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                CustomCheckboxButton(
-                    text: term.title,
-                    value: agree,
-                    onChange: (value) {
-                      setState(() {
-                        widget.values[widget.index] = value;
-                      });
-                    }),
-                CustomImageView(
-                    svgPath: Assets.svg.imgArrowRight.path,
-                    height: getSize(18),
-                    width: getSize(18),
-                    margin: getMargin(bottom: 2),
-                    onTap: () => launchUrlString(term.url)),
-              ],
-            ),
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              CustomCheckboxButton(
+                  text: term.title,
+                  value: widget.values[widget.index],
+                  onChange: (bool value) {
+                    setState(() {
+                      widget.values[widget.index] = value;
+                    });
+                  }),
+              CustomImageView(
+                  svgPath: Assets.svg.imgArrowRight.path,
+                  height: getSize(18),
+                  width: getSize(18),
+                  margin: getMargin(bottom: 2),
+                  onTap: () => Get.to(() {
+                        return TermsOfUseView(
+                            content: term.markdown, title: term.title);
+                      })),
+            ],
+          ),
         ));
   }
 }
@@ -138,11 +148,11 @@ class _AgreementItemState extends State<AgreementItem> {
 class Agreement {
   const Agreement({
     required this.title,
-    required this.url,
+    required this.markdown,
     this.required = true,
   });
 
   final String title;
-  final String url;
   final bool required;
+  final String markdown;
 }

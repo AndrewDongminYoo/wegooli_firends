@@ -76,5 +76,4 @@ Future<dynamic>? goSendingInvitation() =>
     Get.dialog(const SendingInvitationDialog());
 
 // [Page] 소속 된 팀이 없을 경우 보여줄 페이지
-Future<dynamic>? goTeamInvitation() =>
-    Get.toNamed(AppRoutes.teamInvitation);
+Future<dynamic>? goTeamInvitation() => Get.toNamed(AppRoutes.teamInvitation);

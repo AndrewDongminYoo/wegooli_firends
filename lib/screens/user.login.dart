@@ -100,14 +100,4 @@ class _LoginWithIdAndPasswordState extends State<LoginWithIdAndPassword> {
     );
   }
 
-  Future<void> onSubmit() async {
-    await controller.authorize();
-    if (isAuthenticated) {
-      controller.schedules(await controller.retrieveSchedules());
-      await goSharedSchedule();
-    } else {
-      controller.username.clear();
-      controller.password.clear();
-    }
-  }
 }

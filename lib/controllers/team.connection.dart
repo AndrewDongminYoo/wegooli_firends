@@ -15,7 +15,7 @@ class ConnectionController extends GetxController with ChannelEventHandler {
       ? Get.find<ConnectionController>()
       : Get.put(ConnectionController());
 
-  final String appId = DotEnv().get('SENDBIRD_APPKEY', fallback: '');
+  final String appId = dotenv.get('SENDBIRD_APPKEY');
   final RxList<BaseMessage> _messages = RxList<BaseMessage>();
   GroupChannel? channel;
 
@@ -34,11 +34,13 @@ class ConnectionController extends GetxController with ChannelEventHandler {
           .map((member) => member.accountId!)
           .where((id) => id != userId)
           .toList();
+      print('otherMembers is $otherMembers');
       if (otherMembers.isNotEmpty) {
         loadSendbird(appId, userId, otherMembers);
       } else {
         // TODO: 채팅할 멤버가 없는 경우 동작 수행
-        goBack();
+        // goTeamInvitation();
+        // goSharedSchedule();
       }
     }
     super.onInit();

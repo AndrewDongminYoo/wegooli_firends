@@ -33,7 +33,7 @@ class VehicleController extends GetxController {
   Future<void> onInit() async {
     final userController = UserController.to;
     _currentUser = userController.currentUser.value;
-    _teamSeq = userController.getTeamSeq();
+    _teamSeq = userController.firstTeamSeq;
     _members = userController.members;
     _nickname =
         _currentUser.nickname != null ? _currentUser.nickname! : _nickname;

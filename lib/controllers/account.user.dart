@@ -9,6 +9,8 @@ import '/core/app_export.dart';
 
 class UserController extends GetxController {
   final _service = UserAccountService();
+  final _teamAccountService = TeamAccountService();
+  final _reservationsService = ReservationsService();
   static UserController get to => Get.isRegistered<UserController>()
       ? Get.find<UserController>()
       : Get.put(UserController());
@@ -44,8 +46,11 @@ class UserController extends GetxController {
   final RxList<Schedule> _schedules = RxList<Schedule>.of([]);
   RxList<Schedule> get schedules => _schedules;
 
-  RxList<TeamAccountConnectionResponse> teams =
-      RxList<TeamAccountConnectionResponse>([]);
+  final RxList<TeamAccountConnectionResponse> _teams =
+      RxList<TeamAccountConnectionResponse>.of([]);
+  RxList<TeamAccountConnectionResponse> get teams => _teams;
+  int? get firstTeamSeq => teams.firstOrNull?.teamSeq;
+
   TeamCarConnection carConnection = TeamCarConnection();
 
   RxBool isAuthenticated = false.obs;
@@ -145,16 +150,38 @@ class UserController extends GetxController {
   Future<void> authorize() async {
     print('user.username: ${username.text}\nuser.password: ${password.text}');
     final userLike = await _service.login(username.text, password.text);
-    currentUser.value = userLike;
+    if (userLike != null) {
+      currentUser(userLike);
+      isAuthenticated(true);
+    }
   }
 
-  Future<void> findMembers() async {
-    if (currentUser.value.id == null) {
+  Future<void> preProcessor() async {
+    final accountId = currentUser.value.id;
+    if (accountId == null) {
       return;
     }
-    final members =
-        await TeamAccountService().findMembers(currentUser.value.id!);
-    print('members : $members');
+    _teams(await _teamAccountService.findTeams(accountId));
+    // print('_teams : $_teams');
+    _members(getMembers());
+    // print('_members : $_members');
+    _schedules(await retrieveSchedules(firstTeamSeq));
+    // print('_schedules : $_schedules');
+    goSharedSchedule();
+  }
+
+  TeamAccountConnectionResponse? getFirstTeamOrNull() {
+    return teams.firstOrNull;
+  }
+
+  List<TeamAccountModel> getMembers() {
+    final team = getFirstTeamOrNull();
+    final members = team?.account;
+    if (members == null) {
+      return List.empty();
+    }
+    // print('getMembers() : $members');
+    return members;
   }
 
   Future<bool> logOut() async {
@@ -168,24 +195,16 @@ class UserController extends GetxController {
     return _service.signOut(currentUser.value.id!);
   }
 
-  Future<List<Schedule>> retrieveSchedules() async {
-    if (teams.isEmpty) {
-      return List.empty();
-    }
-    final teamSeq = getTeamSeq();
+  Future<List<Schedule>> retrieveSchedules(int? teamSeq) async {
     if (teamSeq == null) {
       return List.empty();
     }
-    return ReservationsService().retrieveSchedules(teamSeq);
-  }
-
-  int? getTeamSeq() {
-    return teams.firstOrNull?.teamSeq;
+    return _reservationsService.retrieveSchedules(teamSeq);
   }
 
   Future<void> deleteSchedule(int seq) async {
     try {
-      await ReservationsService().deleteSchedule(seq);
+      await _reservationsService.deleteSchedule(seq);
       return popWithValue(Get.context!, true);
     } catch (e) {
       return popWithValue(Get.context!, false);

@@ -14,7 +14,6 @@ class GoSignInButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isAuthenticated = controller.isAuthenticated.value;
     return CustomElevatedButton(
         text: l10ns.signIn,
         margin: getMargin(top: 30),
@@ -22,9 +21,8 @@ class GoSignInButton extends StatelessWidget {
         buttonTextStyle: CustomTextStyles.titleMedium18,
         onTap: () async {
           await controller.authorize();
-          if (isAuthenticated) {
-            controller.schedules(await controller.retrieveSchedules());
-            await goSharedSchedule();
+          if (controller.isAuthenticated.value) {
+            await controller.preProcessor();
           } else {
             controller.username.clear();
             controller.password.clear();

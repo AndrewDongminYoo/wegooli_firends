@@ -19,7 +19,7 @@ class _MainApplicationState extends State<MainApplication> {
 
   @override
   Widget build(BuildContext context) {
-    print('userController.teams.length ${userController.teams.length}');
+    // print('userController.teams.length ${userController.teams.length}');
     const id = 1;
     final navigatorKey = Get.nestedKey(id);
     return Scaffold(

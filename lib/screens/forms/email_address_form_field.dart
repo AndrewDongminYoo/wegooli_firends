@@ -27,15 +27,15 @@ class EmailAddressFormField extends StatelessWidget {
         hintStyle: CustomTextStyles.bodyLargeGray50003,
         filled: true,
         autofillHints: const [AutofillHints.username],
-        validator: (value) {
-          if (value == null) {
-            return '필수 입력 항목입니다.';
-          } else if (!isValidEmail(value)) {
-            return '이메일 형식을 정확히 입력해주세요.';
-          } else {
-            return null;
-          }
-        },
+        // validator: (value) {
+        //   if (value == null) {
+        //     return '필수 입력 항목입니다.';
+        //   } else if (!isValidEmail(value)) {
+        //     return '이메일 형식을 정확히 입력해주세요.';
+        //   } else {
+        //     return null;
+        //   }
+        // },
         fillColor: theme.colorScheme.onPrimaryContainer);
   }
 }

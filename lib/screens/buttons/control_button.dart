@@ -9,22 +9,19 @@ class ControlButton extends StatelessWidget {
     required this.svgPath,
     required this.text,
     this.onTap,
+    this.margin,
     super.key,
   });
   final String svgPath;
   final String text;
   final Function? onTap;
-
+  final EdgeInsets? margin;
   @override
   Widget build(BuildContext context) {
     var smartKeyButtonStyle = ButtonStyle(
-      overlayColor: MaterialStateProperty.all(Colors.transparent),
       padding: MaterialStateProperty.all(EdgeInsets.zero),
-      side: MaterialStateProperty.all(BorderSide(
-        color: const Color(0x18000000),
-        width: getHorizontalSize(1),
-      )),
-      fixedSize: MaterialStateProperty.all(const Size(130, 130)),
+      fixedSize: MaterialStateProperty.all(
+          Size(getHorizontalSize(120), getVerticalSize(120))),
       shape: MaterialStateProperty.all(const CircleBorder(
         side: BorderSide(
           color: ColorConstant.actionNeutralDisabled,
@@ -33,9 +30,16 @@ class ControlButton extends StatelessWidget {
       shadowColor: MaterialStateProperty.all(const Color(0x18000000)),
       backgroundColor: MaterialStateProperty.resolveWith((states) {
         if (states.contains(MaterialState.pressed)) {
+          return ColorConstant.actionPrimaryDefault;
+        } else if (states.contains(MaterialState.disabled)) {
+          return ColorConstant.actionNeutralDisabled;
+        } else if (states.contains(MaterialState.focused)) {
+          return ColorConstant.actionPrimaryDefault;
+        } else {
           return Colors.transparent;
         }
-        return ColorConstant.fontColorWhite;
+        // return ColorConstant.fontColorWhite;
+        // return Colors.white;
       }),
       textStyle: MaterialStateProperty.resolveWith((states) {
         if (states.contains(MaterialState.pressed)) {
@@ -44,53 +48,62 @@ class ControlButton extends StatelessWidget {
         return const TextStyle(fontSize: 16);
       }),
     );
-    return Stack(alignment: Alignment.center, children: [
-      Container(
-          width: 120,
-          height: 120,
-          decoration: const BoxDecoration(
-            color: ColorConstant.actionPrimaryDefault,
-            shape: BoxShape.circle,
-          )),
-      ElevatedButton(
-        onPressed: () {
-          if (onTap != null) {
-            onTap!();
-          }
-        },
-        style: smartKeyButtonStyle,
-        child: Container(
-          width: 120,
-          height: 120,
-          padding: getPadding(),
-          margin: getMargin(),
-          decoration: BoxDecoration(
-            color: Colors.transparent,
-            shape: BoxShape.circle,
-            border: Border.all(color: const Color(0x18000000)),
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              CustomImageView(
-                svgPath: svgPath,
-                height: getSize(46),
-                width: getSize(46),
-                color: Colors.transparent,
-              ),
-              Padding(
-                padding: getPadding(top: 3),
-                child: Text(
-                  text,
-                  textAlign: TextAlign.center,
-                  style: theme.textTheme.titleMedium!
-                      .copyWith(letterSpacing: getHorizontalSize(0.03)),
+    return Container(
+        margin: margin,
+        child: Stack(alignment: Alignment.center, children: [
+          Container(
+              width: getHorizontalSize(130),
+              height: getVerticalSize(130),
+              decoration: ShapeDecoration(
+                  color: Colors.white,
+                  shape: CircleBorder(),
+                  shadows: [
+                    BoxShadow(
+                      color: Color(0x19000000),
+                      blurRadius: 10,
+                      offset: Offset(2, 2),
+                      spreadRadius: 0,
+                    )
+                  ])),
+          ElevatedButton(
+            // statesController: controller,
+            onPressed: () {
+              if (onTap != null) {
+                onTap!();
+              }
+            },
+            style: smartKeyButtonStyle,
+            child: Container(
+              width: getHorizontalSize(120),
+              height: getVerticalSize(120),
+              decoration: ShapeDecoration(
+                // color: Colors.white,
+                shape: CircleBorder(
+                  side: BorderSide(width: 0.50, color: Color(0x33A4A8AF)),
                 ),
               ),
-            ],
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CustomImageView(
+                    svgPath: svgPath,
+                    height: getVerticalSize(46),
+                    width: getHorizontalSize(46),
+                    // color: Colors.transparent,
+                  ),
+                  Padding(
+                    padding: getPadding(top: 3),
+                    child: Text(
+                      text,
+                      textAlign: TextAlign.center,
+                      style: theme.textTheme.titleMedium!
+                          .copyWith(letterSpacing: getHorizontalSize(0.03)),
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ),
-        ),
-      ),
-    ]);
+        ]));
   }
 }

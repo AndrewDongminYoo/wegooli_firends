@@ -17,7 +17,9 @@ class InsertInvitationCodeButton extends StatelessWidget {
       margin: getMargin(top: 30),
       buttonStyle: CustomButtonStyles.fillPrimaryC26,
       buttonTextStyle: CustomTextStyles.titleMedium18,
-      onTap: goSendingInvitation,
+      onTap: () async {
+        await goSendingInvitation();
+      },
     );
   }
 }

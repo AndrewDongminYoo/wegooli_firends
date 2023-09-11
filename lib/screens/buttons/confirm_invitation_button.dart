@@ -8,12 +8,13 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 class ConfirmInvitationButton extends StatelessWidget {
-  const ConfirmInvitationButton({
+  ConfirmInvitationButton({
     super.key,
     required this.controller,
   });
 
   final VehicleController controller;
+  final UserController _userController = UserController.to;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,14 @@ class ConfirmInvitationButton extends StatelessWidget {
         onTap: () async {
           print('ConfirmInvitationButton');
           if (await controller.joinTeam()) {
-            await Get.to(() => const SharedCalendar());
+            // await Get.to(() => const SharedCalendar());
+            // await goSharedSchedule();
+            // goBack();
+            // Get.offNamedUntil(AppRoutes.sharedSchedule,
+            //     (route) => Get.currentRoute == AppRoutes.idPwLogin);
+            // await _userController.authorize();
+            Get.close(2);
+            // await _userController.preProcessor();
           } else {
             goBack();
           }

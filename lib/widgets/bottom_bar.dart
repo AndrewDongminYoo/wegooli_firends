@@ -108,9 +108,13 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
             String destination;
             switch (index) {
               case 1:
-                destination = AppRoutes.chatWithTeam;
+                destination = userController.teams.isNotEmpty
+                    ? AppRoutes.chatWithTeam
+                    : AppRoutes.teamInvitation;
               case 2:
-                destination = AppRoutes.carSmartKey;
+                destination = userController.teams.isNotEmpty
+                    ? AppRoutes.carSmartKey
+                    : AppRoutes.teamInvitation;
               case 3:
                 destination = AppRoutes.myProfile;
               default:

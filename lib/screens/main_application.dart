@@ -27,6 +27,7 @@ class _MainApplicationState extends State<MainApplication> {
           key: navigatorKey,
           initialRoute: userController.teams.isNotEmpty
               ? AppRoutes.sharedSchedule
+              // : AppRoutes.sharedSchedule,
               : AppRoutes.teamInvitation,
           onGenerateRoute: (settings) {
             late Widget page;
@@ -36,7 +37,7 @@ class _MainApplicationState extends State<MainApplication> {
               case AppRoutes.carSmartKey:
                 page = const SmartKeyAvailablePage();
               case AppRoutes.myProfile:
-                page = const MyProfilePage();
+                page = MyProfilePage();
               case AppRoutes.teamInvitation:
                 page = TeamInvitation();
               default:

@@ -22,8 +22,7 @@ class GoSignInButton extends StatelessWidget {
         onTap: () async {
           await controller.authorize();
           if (controller.isAuthenticated.value) {
-            controller.schedules(await controller.retrieveSchedules());
-            await goSharedSchedule();
+            await controller.preProcessor();
           } else {
             controller.username.clear();
             controller.password.clear();

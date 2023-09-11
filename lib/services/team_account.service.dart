@@ -1,4 +1,5 @@
 // 📦 Package imports:
+import 'package:dio/dio.dart';
 import 'package:get/get_connect/connect.dart' show GetConnect;
 
 // 🌎 Project imports:
@@ -9,21 +10,48 @@ class TeamAccountService extends GetConnect {
   String get baseUrl => WegooliFriends.basePath;
   final api = wegooli.getTeamAccountConnectionControllerApi();
 
-  Future<List<TeamAccountModel>> findMembers(String accountId) async {
-    final response = await api.selectTeamAccountList(
-        accountId: accountId, isLeaved: 'false');
-    print('findMembers : $response');
-    final teamList = response.data;
-    if (teamList != null && teamList.isNotEmpty) {
-      // NOTE: 현재는 Team이 1개만 존재한다고 가정하기 때문에 첫번째 Team 정보로만 연결한다.
-      // teamList.first.account
-      //     ?.forEach((it) => !members.contains(it) ? members.add(it) : null);
-      final accountList = teamList.first.account;
-      if (accountList != null && accountList.isNotEmpty) {
-        return teamList.first.account!.toList();
-      }
+  Future<List<TeamAccountConnectionResponse>> findTeams(
+      String accountId) async {
+    try {
+      final response = await api.selectTeamAccountList(
+          accountId: accountId, isLeaved: 'false');
+      // print('findTeams : ${response.data}');
+      return response.data!;
+    } on DioException catch (e) {
+      print('`findTeams()` 호출 중 DioException 발생: $e\n');
+    } on Exception catch (e) {
+      print('`findTeams()` 호출 중 Exception 발생: $e\n');
     }
-    return [TeamAccountModel(accountId: accountId)];
+    return List.empty();
+  }
+
+  Future<TeamAccountConnectionResponse?> findFirstTeamOrNull(
+      String accountId) async {
+    try {
+      final teams = await findTeams(accountId);
+      // print('findFirstTeamOrNull : ${teams.firstOrNull}');
+      return teams.firstOrNull;
+    } on DioException catch (e) {
+      print('`findFirstTeamOrNull()` 호출 중 DioException 발생: $e\n');
+    } on Exception catch (e) {
+      print('`findFirstTeamOrNull()` 호출 중 Exception 발생: $e\n');
+    }
+    return null;
+  }
+
+  Future<List<TeamAccountModel>> findMembers(String accountId) async {
+    try {
+      final teamOrNull = await findFirstTeamOrNull(accountId);
+      // print('findMembers : ${teamOrNull?.account}');
+      return teamOrNull == null
+          ? List.empty()
+          : teamOrNull.account ?? List.empty();
+    } on DioException catch (e) {
+      print('`findMembers()` 호출 중 DioException 발생: $e\n');
+    } on Exception catch (e) {
+      print('`findMembers()` 호출 중 Exception 발생: $e\n');
+    }
+    return List.empty();
   }
 
   Future<bool> inviteTeamAccount(String accountId, String inviteCode) async {

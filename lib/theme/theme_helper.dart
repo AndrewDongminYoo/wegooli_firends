@@ -169,7 +169,7 @@ class ColorSchemes {
     tertiaryContainer: Color(0xFFFFE041),
 
     //  Background colors
-    background: Color(0xFFEF1010),
+    background: Color(0xFFFFFFFF),
 
     //  Surface colors
     surface: Color(0xFFEF1010),

@@ -24,7 +24,9 @@ class CancelButton extends StatelessWidget {
       buttonTextStyle: plural
           ? CustomTextStyles.titleMedium16
           : CustomTextStyles.titleMedium18,
-      onTap: popWithValue(context, false),
+      onTap: () {
+        popWithValue(context, false);
+      },
     );
   }
 }

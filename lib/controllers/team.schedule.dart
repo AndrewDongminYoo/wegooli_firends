@@ -65,7 +65,7 @@ class ScheduleController extends GetxController {
       title: '예약시간',
       // DateTime reservationTime = DateTime.now();
       date: DateTime.now(),
-      isExpanded: true,
+      isExpanded: false,
     ),
     // Add more items here
     Item(

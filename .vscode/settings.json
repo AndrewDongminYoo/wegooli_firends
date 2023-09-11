@@ -18,6 +18,7 @@
     "*.lock"
   ],
   "cSpell.words": [
+    "ADID",
     "ARGB",
     "Bodymovin",
     "bools",
@@ -28,6 +29,7 @@
     "GLLO",
     "gooli",
     "HWBA",
+    "IDFA",
     "interps",
     "kapi",
     "Kpostal",

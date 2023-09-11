@@ -1,3 +1,6 @@
+/// '[Required] location_based_service_terms_of_use'
+/// '[필수] 위치 기반 서비스 이용 약관'
+const location_based_service_terms_of_use = """
 # 위치기반서비스 이용약관
 
 제1조 (목적)
@@ -212,4 +215,5 @@
 
 2. 성 명: 이대령
 
-3. 연 락 처 : 1566-6560
+2. 연 락 처 : 1566-6560
+""";

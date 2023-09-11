@@ -272,8 +272,8 @@ analyzer:
     unnecessary_this: error # [🔵,🦩,🔧] 섀도잉을 피하지 않는 한 "this"으로 멤버에 접근하지 마세요.
     use_build_context_synchronously: info # [🧪 ,🦩] 비동기 갭에 걸쳐 빌드 컨텍스트를 사용하지 마세요.
     use_key_in_widget_constructors: error # [🦩,🔧] 위젯 생성자에서 키를 사용합니다.
+    use_named_constants: error # 명명된 상수를 사용합니다. (예: EdgeInsets.all(0.0) 대신 EdgeInsets.zero를 사용합니다.)
     use_rethrow_when_possible: error # [🔵,🦩,🔧] 잡힌 예외를 다시 던지려면 다시 던지기를 사용합니다.
   exclude: # DIFFERENT FROM FLUTTER/FLUTTER
     # Fixture depends on dart:ui and raises false positives.
-    - lib/gen/*.dart
     - test/*.dart

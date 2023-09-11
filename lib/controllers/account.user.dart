@@ -70,7 +70,7 @@ class UserController extends GetxController {
   Future<String?> sendVerificationCode() async {
     // Update the UI - wait for the user to enter the SMS code
     PhoneAuthCredential? credential;
-    print('${telecom!.title} | +82 ${phoneNum.text}');
+    print('${telecom!.title}| +82 ${phoneNum.text}');
     if (telecom != null && phoneNum.text.isNotEmpty) {
       isWaitingOtpCode.value = true;
       var phoneNumber =

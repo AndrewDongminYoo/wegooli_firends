@@ -20,42 +20,44 @@ class ValidatePhone extends GetWidget<UserController> {
         resizeToAvoidBottomInset: false,
         backgroundColor: theme.colorScheme.onPrimaryContainer,
         appBar: CustomAppBar.getDefaultAppBar(l10ns.authenticateYourself),
-        body: Container(
-            width: double.maxFinite,
-            padding: getPadding(left: 16, top: 32, right: 16, bottom: 32),
-            child: Column(children: [
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                CustomInputLabel(labelText: l10ns.name),
-                KoreanNameFormField(
-                    controller: controller, focusNode: _nameText),
-              ]),
-              Padding(
-                  padding: getPadding(top: 26, bottom: 7),
-                  child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        CustomInputLabel(
-                            labelText: l10ns.digitOf13SocialSecurityNumber),
-                        Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              BirthdayNumberFormField(
-                                controller: controller,
-                                focusNode: _birthday,
-                                readonly: false,
-                              ),
-                              const Text('-', style: TextStyle(fontSize: 24)),
-                              SocialSecurityNumberFormField(
-                                  controller: controller, focusNode: _socialId),
-                            ]),
-                        CustomGuideText(
-                            text: l10ns
-                                .subscriptionsAreRestrictedToThoseUnderTheAgeOf26),
-                      ])),
-              SMSValidationFormScreen(
-                  controller: controller, focusNode: _phoneNum),
-            ])),
+        body: Unfocused(
+          child: Container(
+              width: double.maxFinite,
+              padding: getPadding(left: 16, top: 32, right: 16, bottom: 32),
+              child: Column(children: [
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                  CustomInputLabel(labelText: l10ns.name),
+                  KoreanNameFormField(
+                      controller: controller, focusNode: _nameText),
+                ]),
+                Padding(
+                    padding: getPadding(top: 26, bottom: 7),
+                    child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          CustomInputLabel(
+                              labelText: l10ns.digitOf13SocialSecurityNumber),
+                          Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                BirthdayNumberFormField(
+                                  controller: controller,
+                                  focusNode: _birthday,
+                                  readonly: false,
+                                ),
+                                const Text('-', style: TextStyle(fontSize: 24)),
+                                SocialSecurityNumberFormField(
+                                    controller: controller, focusNode: _socialId),
+                              ]),
+                          CustomGuideText(
+                              text: l10ns
+                                  .subscriptionsAreRestrictedToThoseUnderTheAgeOf26),
+                        ])),
+                SMSValidationFormScreen(
+                    controller: controller, focusNode: _phoneNum),
+              ])),
+        ),
         bottomNavigationBar:
             ValidatePhoneCompleteButton(controller: controller),
       ),

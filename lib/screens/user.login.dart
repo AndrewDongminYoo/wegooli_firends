@@ -62,13 +62,12 @@ class _LoginWithIdAndPasswordState extends State<LoginWithIdAndPassword> {
   @override
   Widget build(BuildContext context) {
     const authMode = AuthMode.login;
-    return GestureDetector(
-      onTap: FocusScope.of(context).unfocus,
-      child: SafeArea(
-          child: Scaffold(
-        resizeToAvoidBottomInset: false,
-        backgroundColor: theme.colorScheme.onPrimaryContainer,
-        body: Container(
+    return SafeArea(
+        child: Scaffold(
+      resizeToAvoidBottomInset: false,
+      backgroundColor: theme.colorScheme.onPrimaryContainer,
+      body: Unfocused(
+        child: Container(
             width: double.maxFinite,
             alignment: Alignment.center,
             padding: getPadding(left: 16, top: 58, right: 16, bottom: 58),
@@ -96,8 +95,8 @@ class _LoginWithIdAndPasswordState extends State<LoginWithIdAndPassword> {
                 ],
               ),
             )),
-      )),
-    );
+      ),
+    ));
   }
 
 }

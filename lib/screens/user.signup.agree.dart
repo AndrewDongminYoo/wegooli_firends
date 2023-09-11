@@ -47,40 +47,42 @@ class _AcceptTermsState extends State<AcceptTerms> {
         child: Scaffold(
       backgroundColor: theme.colorScheme.onPrimaryContainer,
       appBar: CustomAppBar.getDefaultAppBar(l10ns.acceptTerms),
-      body: SizedBox(
-          width: mediaQueryData.size.width,
-          child: SingleChildScrollView(
-            padding: getPadding(top: 29),
-            child: Padding(
-                padding: getPadding(left: 16, right: 16, bottom: 5),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                        height: getVerticalSize(20),
-                        width: getHorizontalSize(126),
-                        child: Align(
-                          child: CustomCheckboxButton(
-                            alignment: Alignment.center,
-                            text: l10ns.acceptAll,
-                            value: _getAllTermsAccepted,
-                            onChange: _setAllTermsAccepted,
-                          ),
-                        )),
-                    ListView.builder(
-                        physics: const NeverScrollableScrollPhysics(),
-                        shrinkWrap: true,
-                        itemCount: acceptTerms.length,
-                        itemBuilder: (BuildContext context, int index) {
-                          return AgreementItem(
-                            index: index,
-                            values: agreements,
-                            terms: acceptTerms,
-                          );
-                        }),
-                  ],
-                )),
-          )),
+      body: Unfocused(
+        child: SizedBox(
+            width: mediaQueryData.size.width,
+            child: SingleChildScrollView(
+              padding: getPadding(top: 29),
+              child: Padding(
+                  padding: getPadding(left: 16, right: 16, bottom: 5),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                          height: getVerticalSize(20),
+                          width: getHorizontalSize(126),
+                          child: Align(
+                            child: CustomCheckboxButton(
+                              alignment: Alignment.center,
+                              text: l10ns.acceptAll,
+                              value: _getAllTermsAccepted,
+                              onChange: _setAllTermsAccepted,
+                            ),
+                          )),
+                      ListView.builder(
+                          physics: const NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
+                          itemCount: acceptTerms.length,
+                          itemBuilder: (BuildContext context, int index) {
+                            return AgreementItem(
+                              index: index,
+                              values: agreements,
+                              terms: acceptTerms,
+                            );
+                          }),
+                    ],
+                  )),
+            )),
+      ),
       bottomNavigationBar: const SignUpAcceptTermsNextButton(),
     ));
   }
@@ -109,24 +111,26 @@ class _AgreementItemState extends State<AgreementItem> {
     var agree = widget.values[widget.index];
     return Padding(
         padding: getPadding(top: 14),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            CustomCheckboxButton(
-                text: term.title,
-                value: agree,
-                onChange: (value) {
-                  setState(() {
-                    widget.values[widget.index] = value;
-                  });
-                }),
-            CustomImageView(
-                svgPath: Assets.svg.imgArrowRight.path,
-                height: getSize(18),
-                width: getSize(18),
-                margin: getMargin(bottom: 2),
-                onTap: () => launchUrlString(term.url)),
-          ],
+        child: Unfocused(
+          child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                CustomCheckboxButton(
+                    text: term.title,
+                    value: agree,
+                    onChange: (value) {
+                      setState(() {
+                        widget.values[widget.index] = value;
+                      });
+                    }),
+                CustomImageView(
+                    svgPath: Assets.svg.imgArrowRight.path,
+                    height: getSize(18),
+                    width: getSize(18),
+                    margin: getMargin(bottom: 2),
+                    onTap: () => launchUrlString(term.url)),
+              ],
+            ),
         ));
   }
 }

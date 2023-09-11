@@ -7,7 +7,6 @@ import 'package:firebase_auth/firebase_auth.dart' hide User;
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '/main.dart';
 import '/core/app_export.dart';
 
 class UserController extends GetxController {

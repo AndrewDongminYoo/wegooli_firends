@@ -38,22 +38,6 @@ User _$UserFromJson(Map json) => $checkedCreate(
       },
     );
 
-const _$UserFieldMap = <String, String>{
-  'name': 'userNm',
-  'phoneNumber': 'phoneNumber',
-  'color': 'color',
-  'memberSeq': 'memberSeq',
-  'nickname': 'nickname',
-  'email': 'userEmail',
-  'id': 'id',
-  'birthDay': 'birthday',
-  'add2': 'add2',
-  'add1': 'add1',
-  'delimit': 'delimit',
-  'exp': 'exp',
-  'sub': 'sub',
-};
-
 Map<String, dynamic> _$UserToJson(User instance) {
   final val = <String, dynamic>{};
 

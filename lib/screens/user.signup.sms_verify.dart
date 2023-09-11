@@ -1,4 +1,6 @@
 // 🐦 Flutter imports:
+import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
@@ -19,6 +21,16 @@ class SMSValidationFormScreen extends StatefulWidget {
 
 class _SMSValidationFormScreenState extends State<SMSValidationFormScreen> {
   String error = '';
+
+  @override
+  void initState() {
+    super.initState();
+    if (withSilentVerificationSMSMFA && !kIsWeb) {
+      FirebaseMessaging messaging = FirebaseMessaging.instance;
+      messaging.requestPermission();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(

@@ -8,7 +8,6 @@ part 'user.model.g.dart';
   checked: true,
   anyMap: true,
   createToJson: true,
-  createFieldMap: true,
   createFactory: true,
   disallowUnrecognizedKeys: false,
   explicitToJson: false,

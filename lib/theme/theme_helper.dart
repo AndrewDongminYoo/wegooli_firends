@@ -172,7 +172,8 @@ class ColorSchemes {
     background: Color(0xFFFFFFFF),
 
     //  Surface colors
-    surface: Color(0xFFEF1010),
+    // surface: Color(0xFFEF1010),
+    surface: Color(0xFFFFFFFF),
     surfaceTint: Color(0xFF222222),
     surfaceVariant: Color(0xFFFFE041),
 

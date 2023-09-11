@@ -19,7 +19,7 @@ class PhoneNumberFormField extends StatelessWidget {
         controller: controller.phoneNum,
         margin: getMargin(top: 4),
         textInputType: TextInputType.phone,
-        contentPadding: getPadding(left: 12, right: 12, top: 14, bottom: 14),
+        contentPadding: getPadding(all: 12),
         inputFormatters: [
           SeperateTextFormatter(sample: 'XXX-XXXX-XXXX', separator: '-'),
         ],

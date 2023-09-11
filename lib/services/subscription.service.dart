@@ -10,11 +10,13 @@ class SubscriptionService extends GetConnect {
   final api = wegooli.getSubscriptionControllerApi();
 
   Future<String?> submitWithdrawal(SubmitWithdrawalModel withdraw) async {
-    final response = await api.submitWithdrawal(submitWithdrawalModel: withdraw);
+    final response =
+        await api.submitWithdrawal(submitWithdrawalModel: withdraw);
     return response.data;
   }
 
-  Future<List<SubscriptionModel>> loadSubscriptions(String accountId, int teamSeq) async {
+  Future<List<SubscriptionModel>> loadSubscriptions(
+      String accountId, int teamSeq) async {
     final response = await api.selectSubscriptionInfo(
         accountId: accountId, teamSeq: teamSeq);
     return response.data ?? <SubscriptionModel>[];

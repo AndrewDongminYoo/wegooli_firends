@@ -65,12 +65,14 @@ class AppDecoration {
 
   // Shadow decorations
   static List<BoxShadow> get shadows => const [
-    BoxShadow(color: Color(0x16000000), blurRadius: 10, offset: Offset(2, 2)),
-  ];
+        BoxShadow(
+            color: Color(0x16000000), blurRadius: 10, offset: Offset(2, 2)),
+      ];
 
   static List<BoxShadow> get tightElevation3 => const [
-    BoxShadow(color: Color(0x38000000), blurRadius: 6, offset: Offset(0, 2)),
-  ];
+        BoxShadow(
+            color: Color(0x38000000), blurRadius: 6, offset: Offset(0, 2)),
+      ];
   static BoxDecoration get minimal => BoxDecoration(
       color: Colors.white,
       borderRadius: BorderRadiusStyle.circleBorder65,

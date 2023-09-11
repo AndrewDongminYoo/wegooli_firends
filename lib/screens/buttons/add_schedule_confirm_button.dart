@@ -16,7 +16,10 @@ class AddScheduleConfirmButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomElevatedButton(
         width: getHorizontalSize(216),
-        onTap: controller.addSchedule,
+        onTap: () {
+          print('AddScheduleConfirmButton');
+          controller.addSchedule();
+        },
         text: l10ns.confirm,
         buttonStyle: CustomButtonStyles.fillPrimaryC26,
         buttonTextStyle: theme.textTheme.titleMedium);

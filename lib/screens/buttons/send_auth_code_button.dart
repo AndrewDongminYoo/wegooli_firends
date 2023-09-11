@@ -9,19 +9,22 @@ class SendAuthCodeButton extends StatelessWidget {
     super.key,
     required this.controller,
   });
-
   final UserController controller;
 
+  /// '인증번호 발송'
   @override
   Widget build(BuildContext context) {
     return Expanded(
         child: CustomElevatedButton(
-            onTap: controller.sendVerificationCode,
             height: getVerticalSize(48),
             width: double.maxFinite,
             text: l10ns.sendAuthorizationNumber,
             margin: getMargin(top: 10),
             buttonStyle: CustomButtonStyles.fillPrimaryC5,
-            buttonTextStyle: theme.textTheme.titleMedium));
+            buttonTextStyle: theme.textTheme.titleMedium,
+            onTap: () {
+              controller.sendVerificationCode();
+              FocusScope.of(context).unfocus();
+            }));
   }
 }

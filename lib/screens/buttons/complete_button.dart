@@ -13,7 +13,7 @@ class ValidatePhoneCompleteButton extends StatelessWidget {
     return Container(
         margin: getMargin(left: 16, right: 16, bottom: 29),
         child: CustomElevatedButton(
-            text: l10ns.authenticationComplete,
+            text: l10ns.authenticationComplete, // '인증 완료'
             buttonStyle: CustomButtonStyles.fillPrimaryC26,
             buttonTextStyle: CustomTextStyles.titleMedium18,
             onTap: () {

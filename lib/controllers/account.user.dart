@@ -1,14 +1,17 @@
 // 🐦 Flutter imports:
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
+import 'package:firebase_auth/firebase_auth.dart' hide User;
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
+import '/main.dart';
 import '/core/app_export.dart';
 
 class UserController extends GetxController {
-  final _service = UserAccountService();
+  var _service = UserAccountService();
   static UserController get to => Get.isRegistered<UserController>()
       ? Get.find<UserController>()
       : Get.put(UserController());
@@ -62,36 +65,65 @@ class UserController extends GetxController {
 
   Future<String?> sendVerificationCode() async {
     // Update the UI - wait for the user to enter the SMS code
+    PhoneAuthCredential? credential;
+    print('${telecom!.title} | +82 ${phoneNum.text}');
     if (telecom != null && phoneNum.text.isNotEmpty) {
       isWaitingOtpCode.value = true;
-      return showDialog<String>(
-        context: Get.context!,
-        barrierDismissible: false,
-        builder: (context) {
-          return AlertDialog(
-              title: const Text('SMS code:'),
-              actions: [
-                ElevatedButton(
-                  onPressed: () {
-                    popWithValue<String?>(context, pinCodes.text);
-                  },
-                  child: const Text('Sign in'),
-                ),
-                OutlinedButton(
-                  onPressed: () {
-                    pinCodes.clear();
-                    popWithValue<String?>(context, null);
-                  },
-                  child: const Text('Cancel'),
-                ),
-              ],
-              content: Container(
-                  padding: const EdgeInsets.all(20),
-                  child: VerificationCodeFormField(controller: this)));
-        },
-      );
+      var phoneNumber =
+          '+82 ${phoneNum.text.replaceAll('-', ' ').substring(1)}';
+      if (!kIsWeb) {
+        await auth.verifyPhoneNumber(
+          phoneNumber: phoneNumber,
+          // Android 기기의 SMS 코드 자동 처리.
+          verificationCompleted: (PhoneAuthCredential _credential) {
+            credential = _credential;
+            verificationSuccess();
+            verifyCodeExpire.value = false;
+            isWaitingOtpCode.value = false;
+          },
+          // 잘못된 전화번호나 SMS 할당량 초과 여부 등의 실패 이벤트
+          verificationFailed: (FirebaseAuthException e) {
+            Get.showSnackbar(
+                const GetSnackBar(title: '휴대폰 인증과정에서 오류가 발생했습니다.'));
+            isWaitingOtpCode.value = false;
+            verifyCodeExpire.value = true;
+            Future.delayed(const Duration(seconds: 5))
+              ..then((value) => verifyCodeExpire.value = false);
+          },
+          // Firebase에서 기기로 코드가 전송된 경우를 처리하며 사용자에게 코드를 입력하라는 메시지를 표시하는 데 사용
+          codeSent: (String verificationId, int? resendToken) {
+            Get.showSnackbar(const GetSnackBar(
+                title: '입력한 휴대폰으로 전송된 인증 SMS를 확인해주세요.',
+                message: '3분내 입력하지 않을 경우 인증코드가 만료됩니다.'));
+          },
+          // 자동 SMS 코드 처리에 실패한 경우 시간 초과를 처리
+          codeAutoRetrievalTimeout: (String verificationId) {
+            verifyCodeExpire.value = true;
+            Get.showSnackbar(
+                const GetSnackBar(title: '입력한 휴대폰으로 전송된 인증 SMS를 확인해주세요.'));
+          },
+        );
+      } else {
+        var confirmationResult = await auth.signInWithPhoneNumber(phoneNumber);
+        print('confirmationResult: $confirmationResult');
+        var smsCode = pinCodes.text;
+        print('smsCode: $smsCode');
+        var _credential = await confirmationResult.confirm(smsCode);
+        credential = _credential.credential as PhoneAuthCredential?;
+        verificationSuccess();
+        verifyCodeExpire.value = false;
+        isWaitingOtpCode.value = false;
+      }
+      print('verificationId : ${credential!.verificationId}');
+      print('smsCode : ${credential!.smsCode}');
+      print('accessToken : ${credential!.accessToken}');
+      print('providerId : ${credential!.providerId}');
+      print('signInMethod : ${credential!.signInMethod}');
+      print('token : ${credential!.token}');
+      return credential!.verificationId;
     } else {
       Get.showSnackbar(const GetSnackBar(title: '번호가 정확하지 않습니다.'));
+      print('Error during Phone number verification');
       return null;
     }
   }
@@ -114,7 +146,7 @@ class UserController extends GetxController {
     telecom = value;
   }
 
-  bool get isValid =>
+  bool get addressInputCompleted =>
       postCode.text.isNotEmpty &&
       primaryAddress.text.isNotEmpty &&
       detailAddress.text.isNotEmpty &&
@@ -144,7 +176,7 @@ class UserController extends GetxController {
 
   Future<void> authorize() async {
     print('user.username: ${username.text}\nuser.password: ${password.text}');
-    final userLike = await _service.login(username.text, password.text);
+    var userLike = await _service.login(username.text, password.text);
     currentUser.value = userLike;
   }
 
@@ -152,8 +184,7 @@ class UserController extends GetxController {
     if (currentUser.value.id == null) {
       return;
     }
-    final members =
-        await TeamAccountService().findMembers(currentUser.value.id!);
+    var members = await TeamAccountService().findMembers(currentUser.value.id!);
     print('members : $members');
   }
 
@@ -172,7 +203,7 @@ class UserController extends GetxController {
     if (teams.isEmpty) {
       return List.empty();
     }
-    final teamSeq = getTeamSeq();
+    var teamSeq = getTeamSeq();
     if (teamSeq == null) {
       return List.empty();
     }

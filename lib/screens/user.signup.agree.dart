@@ -105,7 +105,7 @@ class AgreementItem extends StatefulWidget {
 class _AgreementItemState extends State<AgreementItem> {
   @override
   Widget build(BuildContext context) {
-    final term = widget.terms[widget.index];
+    var term = widget.terms[widget.index];
     var agree = widget.values[widget.index];
     return Padding(
         padding: getPadding(top: 14),

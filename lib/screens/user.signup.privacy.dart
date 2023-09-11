@@ -12,7 +12,7 @@ class ProfileInfoPage extends GetWidget<UserController> {
 
   @override
   Widget build(BuildContext context) {
-        return SafeArea(
+    return SafeArea(
         child: Scaffold(
       backgroundColor: theme.colorScheme.onPrimaryContainer,
       appBar: CustomAppBar.getDefaultAppBar(l10ns.myInfo),

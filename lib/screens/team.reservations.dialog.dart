@@ -27,7 +27,7 @@ class ReservationsCheckingPageDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-        return AlertDialog(
+    return AlertDialog(
         backgroundColor: Colors.transparent,
         contentPadding: EdgeInsets.zero,
         insetPadding: EdgeInsets.zero,

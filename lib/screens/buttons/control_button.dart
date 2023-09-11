@@ -17,7 +17,7 @@ class ControlButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final smartKeyButtonStyle = ButtonStyle(
+    var smartKeyButtonStyle = ButtonStyle(
       overlayColor: MaterialStateProperty.all(Colors.transparent),
       padding: MaterialStateProperty.all(EdgeInsets.zero),
       side: MaterialStateProperty.all(BorderSide(

@@ -37,8 +37,8 @@ class _TeamReservationsItemState extends State<TeamReservationsItem> {
 
   @override
   Widget build(BuildContext context) {
-    final color = widget.schedule.highlightColor;
-    final isOwner =
+    var color = widget.schedule.highlightColor;
+    var isOwner =
         widget.schedule.accountId == widget.controller.currentUser.value.id;
     return Container(
       margin: getMargin(bottom: 10),
@@ -97,11 +97,11 @@ class _TeamReservationsItemState extends State<TeamReservationsItem> {
                       Text(
                         formatering(widget.schedule),
                         style: const TextStyle(
-                      color: ColorConstant.fontColorBlack,
-                      fontSize: 16,
-                      fontFamily: FontFamily.pretendard,
-                      fontWeight: FontWeight.w400,
-                      letterSpacing: 0.03,
+                          color: ColorConstant.fontColorBlack,
+                          fontSize: 16,
+                          fontFamily: FontFamily.pretendard,
+                          fontWeight: FontWeight.w400,
+                          letterSpacing: 0.03,
                         ),
                       ),
                       if (isOwner)

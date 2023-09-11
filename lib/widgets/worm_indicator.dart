@@ -16,7 +16,7 @@ class _SmoothIndicatorsState extends State<SmoothIndicators> {
 
   @override
   Widget build(BuildContext context) {
-    final pages = List.generate(
+    var pages = List.generate(
         6,
         (index) => Container(
               decoration: BoxDecoration(

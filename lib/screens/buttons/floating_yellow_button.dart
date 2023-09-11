@@ -19,10 +19,10 @@ class FloatingYellowButton extends StatelessWidget {
         width: getHorizontalSize(70),
         margin: getMargin(right: 22),
         decoration: BoxDecoration(
-            color: ColorConstant.actionPrimaryDefault,
-            shape: BoxShape.circle,
-            boxShadow: AppDecoration.shadows,
-          ),
+          color: ColorConstant.actionPrimaryDefault,
+          shape: BoxShape.circle,
+          boxShadow: AppDecoration.shadows,
+        ),
         onTap: () => launchUrlString('tel:15666560'),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -35,7 +35,7 @@ class FloatingYellowButton extends StatelessWidget {
               margin: getMargin(bottom: 3),
             ),
             Text(
-              l10ns.reportAnIncident,
+              l10ns.reportAnIncident, // '사고 접수'
               textAlign: TextAlign.center,
               style: const TextStyle(
                 color: Color(0xFF000000),

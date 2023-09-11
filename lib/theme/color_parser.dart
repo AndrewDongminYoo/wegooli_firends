@@ -246,54 +246,67 @@ class ColorParser {
   Color? getColor() {
     return _color;
   }
+
   // get RGB
   List<int> toRGB() {
     return [_color!.red, _color!.green, _color!.blue];
   }
+
   // RGB string
   String toRGBString() {
     return 'rgb(${_color!.red}, ${_color!.green}, ${_color!.blue})';
   }
+
   // get RGB with alpha
   List<int> toRGBA() {
     return [_color!.red, _color!.green, _color!.blue, _color!.alpha];
   }
+
   // RGB string with alpha
   String toRGBAString() {
     return 'rgba(${_color!.red}, ${_color!.green}, ${_color!.blue}, ${_color!.alpha})';
   }
+
   // get HWB
   List<num?> toHWB() {
     return [_hue, _whiteness, _blackness];
   }
+
   // HWB string
   String toHWBString() {
     return 'hwb($_hue, ${(_whiteness! * 100).round()}%, ${(_blackness! * 100).round()}%)';
   }
+
   // HWB string decimal
   String toHWBDecimal() {
     return 'hwb($_hue, $_whiteness, $_blackness)';
   }
+
   // get HWB with alpha
   List<num?> toHWBA() {
     return [_hue, _whiteness, _blackness, _color!.alpha];
   }
+
   // HWB string with alpha
   String toHWBAString() {
     return 'hwba($_hue, ${(_whiteness! * 100).round()}%, ${(_blackness! * 100).round()}%, ${_color!.alpha})';
   }
+
   // get HSL
   List<num?> toHSL() {
     return [_hue, _sat, _lightness];
   }
+
   // HSL string
   String toHSLString() {
     return 'hsl($_hue, ${(_sat! * 100).round()}%, ${(_lightness! * 100).round()}%)';
   }
+
   // HSL string decimal
   String toHSLDecimal() {
     return 'hsl($_hue, $_sat, $_lightness)';
   }
+
   // get HSL with alpha
   List<num?> toHSLA() {
     return [
@@ -303,22 +316,27 @@ class ColorParser {
       _color!.alpha,
     ];
   }
+
   // HSL string with alpha
   String toHSLAString() {
     return 'hsla($_hue, ${(_sat! * 100).round()}%, ${(_lightness! * 100).round()}%, ${_color!.alpha})';
   }
+
   // getCMYK
   List<num?> toCMYK() {
     return [_cyan, _magenta, _yellow, _black];
   }
+
   // CMYK string
   String toCMYKString() {
     return 'cmyk(${(_cyan! * 100).round()}%, ${(_magenta! * 100).round()}%, ${(_yellow! * 100).round()}%, ${(_black! * 100).round()}%)';
   }
+
   // CMYK string decimal
   String toCMYKDecimal() {
     return 'cmyk($_cyan, $_magenta, $_yellow, $_black)';
   }
+
   // get CMYK with alpha
   List<num?> toCMYKA() {
     return [
@@ -329,26 +347,32 @@ class ColorParser {
       _color!.alpha,
     ];
   }
+
   // get NCOL
   List<dynamic> toNcol() {
     return [_ncol, _whiteness, _blackness];
   }
+
   // NCOL string
   String toNcolString() {
     return '$_ncol, ${(_whiteness! * 100).round()}%, ${(_blackness! * 100).round()}%';
   }
+
   // NCOL string decimal
   String toNcolDecimal() {
     return '$_ncol, $_whiteness, $_blackness';
   }
+
   // get NCOL with alpha
   List<dynamic> toNcolA() {
     return [_ncol, _whiteness, _blackness, _color!.alpha];
   }
+
   // NCOL string with alpha
   String toNcolAString() {
     return '$_ncol, ${(_whiteness! * 100).round()}%, ${(_blackness! * 100).round()}%, ${_color!.alpha}';
   }
+
   // get color name
   String? toName() {
     final colorCodes = colorNames.keys.toList();
@@ -364,10 +388,12 @@ class ColorParser {
 
     return '';
   }
+
   // hex string
   String toHex() {
     return '#${_intToHex(_color!.red)}${_intToHex(_color!.green)}${_intToHex(_color!.blue)}';
   }
+
   // convert int value to hex
   String _intToHex(int value) {
     var hex = value.toRadixString(16);

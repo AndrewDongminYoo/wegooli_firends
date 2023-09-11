@@ -11,8 +11,7 @@ class UnsubscriptionConfirm extends GetWidget<VehicleController> {
   UnsubscriptionConfirm({super.key});
   @override
   Widget build(BuildContext context) {
-    final expireDate =
-        DateTime.tryParse(controller.calcDate()) ?? DateTime.now();
+    var expireDate = DateTime.tryParse(controller.calcDate()) ?? DateTime.now();
     return SafeArea(
         child: Scaffold(
       backgroundColor: theme.colorScheme.onPrimaryContainer,

@@ -16,7 +16,7 @@ class _SmartKeyAvailablePageState extends State<SmartKeyAvailablePage> {
 
   @override
   Widget build(BuildContext context) {
-        return SafeArea(
+    return SafeArea(
       child: Scaffold(
         backgroundColor: theme.colorScheme.onPrimaryContainer,
         appBar: CustomAppBar.getFriendsTypoAppBar(),

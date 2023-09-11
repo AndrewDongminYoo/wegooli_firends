@@ -14,12 +14,12 @@ class CustomElevatedButton extends BaseButton {
     this.isDisabled = false,
     this.isLoading = false,
     EdgeInsets? margin,
-    VoidCallback? onTap,
     ButtonStyle? buttonStyle,
     Alignment? alignment,
     TextStyle? buttonTextStyle,
     double? height,
     double? width,
+    required VoidCallback? onTap,
     required String text,
   }) : super(
             text: text,

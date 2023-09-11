@@ -61,9 +61,11 @@ class CustomDropDown extends StatelessWidget {
 
   Widget get dropDownWidget => Container(
       width: width ?? double.maxFinite,
+      height: getVerticalSize(52),
       margin: margin,
       child: DropdownButtonFormField<SelectionPopupModel>(
           focusNode: focusNode ?? FocusNode(),
+          itemHeight: getVerticalSize(50),
           icon: icon,
           autofocus: autofocus!,
           style: textStyle ?? CustomTextStyles.bodyLargeGray500,
@@ -89,16 +91,13 @@ class CustomDropDown extends StatelessWidget {
       fillColor: fillColor,
       filled: filled,
       isDense: true,
-      contentPadding:
-          contentPadding ?? getPadding(left: 10, top: 14, bottom: 14),
+      contentPadding: contentPadding ?? getPadding(all: 10),
       border: borderDecoration ??
-          OutlineInputBorder(
-              borderSide: BorderSide(color: appTheme.blueGray30033)),
+          OutlineInputBorder(borderSide: BorderSide(color: appTheme.gray400)),
       enabledBorder: borderDecoration ??
-          OutlineInputBorder(
-              borderSide: BorderSide(color: appTheme.blueGray30033)),
+          OutlineInputBorder(borderSide: BorderSide(color: appTheme.gray400)),
       focusedBorder: borderDecoration ??
           OutlineInputBorder(
               borderRadius: BorderRadius.circular(getHorizontalSize(4)),
-              borderSide: BorderSide(color: theme.colorScheme.onError)));
+              borderSide: BorderSide(color: appTheme.gray400)));
 }

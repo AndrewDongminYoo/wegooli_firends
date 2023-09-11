@@ -37,7 +37,7 @@ class _MainApplicationState extends State<MainApplication> {
               case AppRoutes.carSmartKey:
                 page = const SmartKeyAvailablePage();
               case AppRoutes.myProfile:
-                page = const MyProfilePage();
+                page = MyProfilePage();
               case AppRoutes.teamInvitation:
                 page = TeamInvitation();
               default:

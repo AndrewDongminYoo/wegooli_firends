@@ -64,7 +64,7 @@ class AppRoutes {
     GetPage(
       bindings: [UserAccountBinding()],
       name: myProfile,
-      page: () => const MyProfilePage(),
+      page: () => MyProfilePage(),
     ),
     GetPage(
       bindings: [UserAccountBinding()],
@@ -100,11 +100,6 @@ class AppRoutes {
       bindings: [UserAccountBinding()],
       name: splashScreen,
       page: () => const SplashLoading(),
-    ),
-    GetPage(
-      bindings: [UserAccountBinding()],
-      name: myProfile,
-      page: () => const MyProfilePage(),
     ),
     GetPage(
       bindings: [UserAccountBinding()],

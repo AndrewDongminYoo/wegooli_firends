@@ -162,6 +162,7 @@ class VehicleController extends GetxController {
         teamSeq: teamSeq);
     await _service.submitWithdrawal(submitWithdrawalModel);
     await getSubscription();
+    Get.close(2);
     await goUnsubscribeInfo();
   }
 

@@ -8,7 +8,8 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 class MyProfilePage extends GetWidget<UserController> {
-  const MyProfilePage({super.key});
+  final vehicleController = VehicleController.to;
+  MyProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,8 @@ class MyProfilePage extends GetWidget<UserController> {
                   Container(
                     // color: const Color(0xFFFFB300),
                     height: getVerticalSize(105),
-                    padding: getPadding(top: 20, bottom: 20, left: 16, right: 16),
+                    padding:
+                        getPadding(top: 20, bottom: 20, left: 16, right: 16),
                     child: Row(
                       children: [
                         CustomImageView(
@@ -92,7 +94,13 @@ class MyProfilePage extends GetWidget<UserController> {
                           svgPath: Assets.svg.imgInformation.path,
                           text: l10ns.subscriptionInformation,
                           onTap: () {
-                            goUnsubscribeInfo();
+                            if (vehicleController
+                                    .subscriptionModel.value.carModel ==
+                                null) {
+                              goNoSubscription();
+                            } else {
+                              goUnsubscribeInfo();
+                            }
                           }),
                       ListItem(
                           svgPath: Assets.svg.imgCreditCard.path,

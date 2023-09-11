@@ -146,7 +146,8 @@ class VehicleController extends GetxController {
     if (currentUser.id == null || teamSeq == null) {
       return;
     }
-    final response = await _service.loadSubscriptions(currentUser.id!, teamSeq!);
+    final response =
+        await _service.loadSubscriptions(currentUser.id!, teamSeq!);
     print('구독정보; ${response.first}');
     subscriptionModel.value = response.first;
   }
@@ -218,8 +219,7 @@ class VehicleController extends GetxController {
     final accountId = currentUser.id;
     if (accountId != null && invitation.text.length == 10) {
       print('joinTeam() accountId: $accountId |invitation: ${invitation.text}');
-      return TeamAccountService()
-          .inviteTeamAccount(accountId, invitation.text);
+      return TeamAccountService().inviteTeamAccount(accountId, invitation.text);
     }
     return false;
   }

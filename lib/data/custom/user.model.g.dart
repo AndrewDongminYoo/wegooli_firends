@@ -6,7 +6,7 @@ part of 'user.model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
+User _$UserFromJson(Map json) => $checkedCreate(
       'User',
       json,
       ($checkedConvert) {
@@ -26,6 +26,8 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
           add2: $checkedConvert('add2', (v) => v as String?),
           add1: $checkedConvert('add1', (v) => v as String?),
           delimit: $checkedConvert('delimit', (v) => v as String?),
+          exp: $checkedConvert('exp', (v) => v as int?),
+          sub: $checkedConvert('sub', (v) => v as String?),
         );
         return val;
       },
@@ -35,6 +37,22 @@ User _$UserFromJson(Map<String, dynamic> json) => $checkedCreate(
         'birthDay': 'birthday'
       },
     );
+
+const _$UserFieldMap = <String, String>{
+  'name': 'userNm',
+  'phoneNumber': 'phoneNumber',
+  'color': 'color',
+  'memberSeq': 'memberSeq',
+  'nickname': 'nickname',
+  'email': 'userEmail',
+  'id': 'id',
+  'birthDay': 'birthday',
+  'add2': 'add2',
+  'add1': 'add1',
+  'delimit': 'delimit',
+  'exp': 'exp',
+  'sub': 'sub',
+};
 
 Map<String, dynamic> _$UserToJson(User instance) {
   final val = <String, dynamic>{};
@@ -56,5 +74,7 @@ Map<String, dynamic> _$UserToJson(User instance) {
   writeNotNull('add2', instance.add2);
   writeNotNull('add1', instance.add1);
   writeNotNull('delimit', instance.delimit);
+  writeNotNull('exp', instance.exp);
+  writeNotNull('sub', instance.sub);
   return val;
 }

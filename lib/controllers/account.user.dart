@@ -145,9 +145,7 @@ class UserController extends GetxController {
   Future<void> authorize() async {
     print('user.username: ${username.text}\nuser.password: ${password.text}');
     final userLike = await _service.login(username.text, password.text);
-    if (userLike != null) {
-      currentUser.value = userLike;
-    }
+    currentUser.value = userLike;
   }
 
   Future<void> findMembers() async {

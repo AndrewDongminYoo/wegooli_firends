@@ -13,7 +13,7 @@ class UserAccountService extends GetConnect {
   String get baseUrl => WegooliFriends.basePath;
   final api = wegooli.getUserControllerApi();
 
-  Future<User?> login(String username, String password) async {
+  Future<User> login(String username, String password) async {
     try {
       print('user.username: $username\nuser.password: $password');
       final response = await api.login(id: username, password: password);
@@ -48,7 +48,8 @@ class UserAccountService extends GetConnect {
     } on Exception catch (e) {
       print('`login()` 호출 중 Exception 발생: $e\n');
     }
-    return null;
+    print('로그인 함수 null 반환');
+    return User();
   }
 
   void printDioException(DioException e) {

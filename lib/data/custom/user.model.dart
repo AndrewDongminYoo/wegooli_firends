@@ -6,9 +6,12 @@ part 'user.model.g.dart';
 
 @JsonSerializable(
   checked: true,
+  anyMap: true,
   createToJson: true,
+  createFieldMap: true,
+  createFactory: true,
   disallowUnrecognizedKeys: false,
-  explicitToJson: true,
+  explicitToJson: false,
 )
 class User extends Equatable {
   const User({
@@ -23,6 +26,8 @@ class User extends Equatable {
     this.add2,
     this.add1,
     this.delimit,
+    this.exp,
+    this.sub,
   });
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
@@ -49,6 +54,10 @@ class User extends Equatable {
   final String? add1;
   @JsonKey(name: 'delimit', required: false, includeIfNull: false)
   final String? delimit;
+  @JsonKey(name: 'exp', required: false, includeIfNull: false)
+  final int? exp;
+  @JsonKey(name: 'sub', required: false, includeIfNull: false)
+  final String? sub;
 
   Map<String, dynamic> toJson() => _$UserToJson(this);
 
@@ -64,6 +73,8 @@ class User extends Equatable {
     String? add2,
     String? add1,
     String? delimit,
+    int? exp,
+    String? sub,
   }) {
     return User(
       name: name ?? this.name,
@@ -77,6 +88,8 @@ class User extends Equatable {
       add2: add2 ?? this.add2,
       add1: add1 ?? this.add1,
       delimit: delimit ?? this.delimit,
+      exp: exp ?? this.exp,
+      sub: sub ?? this.sub,
     );
   }
 
@@ -97,6 +110,8 @@ class User extends Equatable {
       add2,
       add1,
       delimit,
+      exp,
+      sub,
     ];
   }
 }

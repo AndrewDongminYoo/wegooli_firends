@@ -22,6 +22,7 @@ class Item {
 }
 
 class ScheduleController extends GetxController {
+  final userController = UserController.to;
   DateTime focusedDay = kToday;
 
   /// [Map]을 사용하기로 한 경우, [LinkedHashMap]를 사용하는 것이 권장됩니다.
@@ -64,7 +65,7 @@ class ScheduleController extends GetxController {
       title: '예약시간',
       // DateTime reservationTime = DateTime.now();
       date: DateTime.now(),
-      isExpanded: true,
+      isExpanded: false,
     ),
     // Add more items here
     Item(
@@ -125,7 +126,6 @@ class ScheduleController extends GetxController {
   }
 
   Future<void> addSchedule() async {
-    final userController = UserController.to;
     final accountId = userController.currentUser.value.id;
     final teamSeq = userController.firstTeamSeq;
     if (accountId == null || teamSeq == null) {

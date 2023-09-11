@@ -19,21 +19,22 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return SafeArea(
+        child: SingleChildScrollView(
       child: Container(
-          padding: getPadding(top: 16, bottom: 16),
+          padding: getPadding(top: 20),
           decoration: AppDecoration.fillOnPrimaryContainer
               .copyWith(borderRadius: BorderRadiusStyle.customBorderT10),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              CustomImageView(
-                  svgPath: Assets.svg.imgCloseGray400Sharp.path,
-                  height: getSize(13),
-                  width: getSize(13),
-                  alignment: Alignment.centerRight,
-                  margin: getMargin(right: 16),
-                  onTap: goBack),
+              // CustomImageView(
+              //     svgPath: Assets.svg.imgCloseGray400Sharp.path,
+              //     height: getSize(13),
+              //     width: getSize(13),
+              //     alignment: Alignment.centerRight,
+              //     margin: getMargin(right: 16),
+              //     onTap: goBack),
               Align(
                   alignment: Alignment.centerLeft,
                   child: Container(
@@ -107,7 +108,7 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                               ));
                         },
                         body: Container(
-                          height: 200,
+                          height: getVerticalSize(200),
                           alignment: Alignment.center,
                           padding: const EdgeInsets.all(20),
                           // color: Colors.redAccent[100],
@@ -115,6 +116,7 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                           child: CupertinoDatePicker(
                             backgroundColor: CupertinoColors.systemBackground
                                 .resolveFrom(context),
+                            mode: CupertinoDatePickerMode.dateAndTime,
                             initialDateTime: item.date,
                             onDateTimeChanged: (newDateTime) {
                               // print('newDateTime: $newDateTime');
@@ -124,19 +126,19 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                           ),
                         ),
                         isExpanded: item.isExpanded);
-                  }).toList())),
+                  },).toList())),
               Container(
                   height: getVerticalSize(106),
                   padding: getPadding(left: 16, right: 16),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const CancelButton(plural: false),
+                      CancelButton(plural: false),
                       AddScheduleConfirmButton(controller: controller),
                     ],
                   )),
             ],
           )),
-    );
+    ));
   }
 }

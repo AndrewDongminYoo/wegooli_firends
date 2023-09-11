@@ -12,9 +12,6 @@ class ReservationsCheckingPageDialog extends StatelessWidget {
   final controller = UserController.to;
 
   List<Schedule> get selectedDay {
-    if (_selectedDay == null) {
-      return List.empty();
-    }
     return controller.schedules.where((schedule) {
       if (_selectedDay == null) {
         return false;
@@ -67,10 +64,19 @@ class ReservationsCheckingPageDialog extends StatelessWidget {
                   StreamBuilder<Schedule>(
                       stream: Stream.fromIterable(selectedDay),
                       builder: (context, snapshot) {
-                        return TeamReservationsItem(
-                          schedule: snapshot.data!,
-                          controller: controller,
-                        );
+                        if (snapshot.data == null) {
+                          return Container(
+                            margin: getMargin(bottom: 10),
+                            width: getHorizontalSize(288),
+                            height: getVerticalSize(75),
+                            child: Text('일정 없음'),
+                          );
+                        } else {
+                          return TeamReservationsItem(
+                            schedule: snapshot.data!,
+                            controller: controller,
+                          );
+                        }
                       }),
                 ]),
           ),

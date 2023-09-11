@@ -15,8 +15,7 @@ class UpcomingUnsubscription extends GetWidget<VehicleController> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: theme.colorScheme.onPrimaryContainer,
-        appBar: CustomAppBar.getDefaultAppBar(l10ns.subscriptionInformation,
-            onTapLeading: goMyProfile),
+        appBar: CustomAppBar.getDefaultAppBar(l10ns.subscriptionInformation),
         body: Obx(
           () => controller.subscriptionModel.value.carModel == null
               ? Container(

@@ -166,89 +166,67 @@ class _SmartKeyAvailablePageState extends State<SmartKeyAvailablePage> {
                     width: mediaQueryData.size.width,
                     margin: getMargin(top: 31),
                     decoration: AppDecoration.fillGray100),
-                SizedBox(
-                  width: mediaQueryData.size.width,
-                  child: Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      SizedBox(
-                        // height: mediaQueryData.size.height,
-                        width: mediaQueryData.size.width,
-                        child: Column(
-                          children: [
-                            Align(
-                              alignment: Alignment.centerLeft,
-                              child: Padding(
-                                padding: getPadding(left: 16, top: 21),
-                                child: Text(
-                                  l10ns.smartKey,
-                                  overflow: TextOverflow.ellipsis,
-                                  textAlign: TextAlign.left,
-                                  style: CustomTextStyles.titleMediumBlack900
-                                      .copyWith(
-                                    letterSpacing: getHorizontalSize(0.04),
-                                  ),
+                Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Expanded(
+                      // height: mediaQueryData.size.height,
+                      // width: mediaQueryData.size.width,
+                      child: Column(
+                        children: [
+                          Align(
+                            alignment: Alignment.centerLeft,
+                            child: Padding(
+                              padding: getPadding(left: 16, top: 21),
+                              child: Text(
+                                l10ns.smartKey,
+                                overflow: TextOverflow.ellipsis,
+                                textAlign: TextAlign.left,
+                                style: CustomTextStyles.titleMediumBlack900
+                                    .copyWith(
+                                  letterSpacing: getHorizontalSize(0.04),
                                 ),
                               ),
                             ),
-                            Column(
-                              children: [
-                                Padding(
-                                  padding: getPadding(
-                                      // left: 40,
-                                      top: 22),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Container(
-                                        margin: getMargin(right: 20),
-                                        child: ControlButton(
-                                          text: l10ns.openDoor,
-                                          svgPath: Assets.svg.imgUnlocked.path,
-                                          onTap: controller.openDoor,
-                                        ),
-                                      ),
-                                      ControlButton(
-                                        text: l10ns.lockTheDoor,
-                                        svgPath: Assets.svg.imgLocked.path,
-                                        onTap: controller.closeDoor,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Padding(
-                                  padding: getPadding(
-                                      // left: 40,
-                                      top: 20),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Container(
-                                        margin: getMargin(right: 20),
-                                        child: ControlButton(
-                                          text: l10ns.turnOnHazardLights,
-                                          svgPath: Assets.svg.imgTriangle.path,
-                                          onTap: controller.emergencyLight,
-                                        ),
-                                      ),
-                                      ControlButton(
-                                        text: l10ns.honkTheHorn,
-                                        svgPath: Assets.svg.imgCampaign.path,
-                                        onTap: controller.horn,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              ControlButton(
+                                margin: getMargin(right: 20),
+                                text: l10ns.openDoor,
+                                svgPath: Assets.svg.imgUnlocked.path,
+                                onTap: controller.openDoor,
+                              ),
+                              ControlButton(
+                                text: l10ns.lockTheDoor,
+                                svgPath: Assets.svg.imgLocked.path,
+                                onTap: controller.closeDoor,
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              ControlButton(
+                                margin: getMargin(right: 20),
+                                text: l10ns.turnOnHazardLights,
+                                svgPath: Assets.svg.imgTriangle.path,
+                                onTap: controller.emergencyLight,
+                              ),
+                              ControlButton(
+                                text: l10ns.honkTheHorn,
+                                svgPath: Assets.svg.imgCampaign.path,
+                                onTap: controller.horn,
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
-                      // 사용중일 때 화면 가리기용
-                      if (controller.availableNow.value)
-                        const UntouchableMask(),
-                    ],
-                  ),
+                    ),
+                    // 사용중일 때 화면 가리기용
+                    if (controller.availableNow.value) const UntouchableMask(),
+                  ],
                 ),
               ],
             ),

@@ -1,5 +1,5 @@
 name: wegooli_friends
-version: 1.0.0
+version: 1.0.0+5
 description: Wegooli Friends 프로젝트
 
 # 다음 줄은 `flutter pub publish`를 사용하여 패키지가 실수로 pub.dev에 게시되는 것을 방지함.
@@ -31,7 +31,7 @@ dependencies:
   collection: ^1.17.2
   color: ^3.0.0
   connectivity_plus: ^4.0.2
-  dash_chat_2: ^0.0.17
+  dash_chat_2: ^0.0.18
   dio: ^5.3.2
   dual_screen: ^1.0.4
   equatable: ^2.0.5
@@ -44,7 +44,7 @@ dependencies:
   flutter_dotenv: ^5.1.0
   flutter_localizations:
     sdk: flutter
-  flutter_markdown: ^0.6.17
+  flutter_markdown: ^0.6.17+2
   flutter_signin_button: ^2.0.0
   flutter_svg: ^2.0.7
   flutter_timer_countdown: ^1.0.5

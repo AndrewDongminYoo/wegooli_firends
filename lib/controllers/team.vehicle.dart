@@ -53,7 +53,7 @@ class VehicleController extends GetxController {
 
   bool compose(Schedule schedule) {
     getClient(schedule.accountId);
-    if (schedule.startAt == null || schedule.endAt == null) {
+    if (schedule.startAt == null || schedule.endAt == null || schedule.accountId == currentUser.id) {
       return false;
     } else {
       final last = DateTime.parse(schedule.startAt!);

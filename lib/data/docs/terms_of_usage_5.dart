@@ -1,5 +1,5 @@
 /// '[Required] standard_terms_of_car_rental'                                       '[필수] 자동차 대여 표준 약관'
-final standard_terms_of_car_rental = """
+final car_rental_term = """
 # 자동차대여 표준약관
 
 | 표준약관 제10064호 |

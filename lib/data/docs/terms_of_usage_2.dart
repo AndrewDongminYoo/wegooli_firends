@@ -1,5 +1,5 @@
 /// '[Required] personal_location_data_processing_policy'                           '[필수] 위치 정보 처리 방침'
-const personal_location_data_processing_policy = """
+const location_data = """
 # 개인위치정보 처리방침
 
 ㈜위굴리(이하 "회사"라 한다)는 이용자의 개인위치정보를 중요시하며, 위치정보의 보호 및 이용 등에 관한 법률을 준수하고 있습니다.

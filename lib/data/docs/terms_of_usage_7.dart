@@ -1,6 +1,6 @@
 /// '[Optional] use_of_personal_information_collection_for_marketing_purposes'
 /// '[선택] 마케팅 목적 개인 정보 수집 이용'
-const use_of_personal_information_collection_for_marketing_purposes = """
+const marketing_purpose = """
 # 마케팅 목적 개인정보 수집/이용 (선택)
 
 동의를 거부할 수 있으며, 거부 시에는 신규서비스 및 이벤트 혜택안내를 받으실 수 없습니다.

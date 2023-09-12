@@ -19,7 +19,7 @@ void main() {
       // TODO
     });
 
-    //Future<BuiltList<CarControlHistoryModel>> selectDeviceControlHistoryList(CarControlHistoryModel request) async
+    //Future<List<CarControlHistoryModel>> selectDeviceControlHistoryList(CarControlHistoryModel request) async
     test('test selectDeviceControlHistoryList', () async {
       // TODO
     });

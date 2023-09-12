@@ -48,7 +48,7 @@ void main() {
       // TODO
     });
 
-    //Future<BuiltList<AccountAgreementModel>> selectAccountAgreementList({ String classification, String accountId, String agreeYn, String startCreatedAt, String endCreatedAt, String startUpdatedAt, String endUpdatedAt }) async
+    //Future<List<AccountAgreementModel>> selectAccountAgreementList({ String classification, String accountId, String agreeYn, String startCreatedAt, String endCreatedAt, String startUpdatedAt, String endUpdatedAt }) async
     test('test selectAccountAgreementList', () async {
       // TODO
     });

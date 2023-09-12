@@ -14,7 +14,7 @@ void main() {
       // TODO
     });
 
-    //Future<BuiltList<CarHistoryDTO>> history({ String carNum }) async
+    //Future<List<CarHistoryDTO>> history({ String carNum }) async
     test('test history', () async {
       // TODO
     });

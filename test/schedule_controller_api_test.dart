@@ -24,7 +24,7 @@ void main() {
       // TODO
     });
 
-    //Future<BuiltList<ScheduleModel>> selectScheduleList({ int teamSeq, String accountId, String startAt, String endAt }) async
+    //Future<List<ScheduleModel>> selectScheduleList({ int teamSeq, String accountId, String startAt, String endAt }) async
     test('test selectScheduleList', () async {
       // TODO
     });

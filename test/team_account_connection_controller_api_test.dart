@@ -29,7 +29,7 @@ void main() {
       // TODO
     });
 
-    //Future<BuiltList<TeamAccountConnectionResponse>> selectTeamAccountList({ int teamSeq, String accountId, String startJoinedAt, String endJoinedAt, String startLeavedAt, String endLeavedAt, String isLeaved }) async
+    //Future<List<TeamAccountConnectionResponse>> selectTeamAccountList({ int teamSeq, String accountId, String startJoinedAt, String endJoinedAt, String startLeavedAt, String endLeavedAt, String isLeaved }) async
     test('test selectTeamAccountList', () async {
       // TODO
     });

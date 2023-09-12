@@ -44,7 +44,7 @@ void main() {
       // TODO
     });
 
-    //Future<BuiltList<Notice>> selectNoticeList(Notice request) async
+    //Future<List<Notice>> selectNoticeList(Notice request) async
     test('test selectNoticeList', () async {
       // TODO
     });
@@ -54,7 +54,7 @@ void main() {
       // TODO
     });
 
-    //Future<BuiltList<Push>> selectPushList(Push request) async
+    //Future<List<Push>> selectPushList(Push request) async
     test('test selectPushList', () async {
       // TODO
     });
@@ -64,7 +64,7 @@ void main() {
       // TODO
     });
 
-    //Future<BuiltList<Sms>> selectSmsList(Sms request) async
+    //Future<List<Sms>> selectSmsList(Sms request) async
     test('test selectSmsList', () async {
       // TODO
     });

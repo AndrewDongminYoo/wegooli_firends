@@ -24,7 +24,7 @@ void main() {
       // TODO
     });
 
-    //Future<BuiltList<CarModel>> selectCarList(CarRequest request) async
+    //Future<List<CarModel>> selectCarList(CarRequest request) async
     test('test selectCarList', () async {
       // TODO
     });

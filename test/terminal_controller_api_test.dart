@@ -19,7 +19,7 @@ void main() {
       // TODO
     });
 
-    //Future<BuiltList<TerminalModel>> selectTerminalList(TerminalRequest request) async
+    //Future<List<TerminalModel>> selectTerminalList(TerminalRequest request) async
     test('test selectTerminalList', () async {
       // TODO
     });

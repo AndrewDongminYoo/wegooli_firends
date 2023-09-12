@@ -39,7 +39,7 @@ void main() {
       // TODO
     });
 
-    //Future<BuiltList<QnA>> selectQnAList(QnA request) async
+    //Future<List<QnA>> selectQnAList(QnA request) async
     test('test selectQnAList', () async {
       // TODO
     });

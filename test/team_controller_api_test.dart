@@ -29,7 +29,7 @@ void main() {
       // TODO
     });
 
-    //Future<BuiltList<TeamModel>> selectTeamList({ String accountId, String name, String delYn, String startCreatedAt, String endCreatedAt, String startUpdatedAt, String endUpdatedAt, String contract }) async
+    //Future<List<TeamModel>> selectTeamList({ String accountId, String name, String delYn, String startCreatedAt, String endCreatedAt, String startUpdatedAt, String endUpdatedAt, String contract }) async
     test('test selectTeamList', () async {
       // TODO
     });

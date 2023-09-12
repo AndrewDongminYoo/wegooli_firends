@@ -24,7 +24,7 @@ void main() {
       // TODO
     });
 
-    //Future<BuiltList<PaymentCardModel>> selectPaymentCardList({ int memberSeq, String cardNumber, String defaultYn, String delYn, String startCreatedAt, String endCreatedAt, String startUpdatedAt, String endUpdatedAt, String password, String rrn, String crn }) async
+    //Future<List<PaymentCardModel>> selectPaymentCardList({ int memberSeq, String cardNumber, String defaultYn, String delYn, String startCreatedAt, String endCreatedAt, String startUpdatedAt, String endUpdatedAt, String password, String rrn, String crn }) async
     test('test selectPaymentCardList', () async {
       // TODO
     });

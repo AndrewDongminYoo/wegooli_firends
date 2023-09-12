@@ -24,7 +24,7 @@ void main() {
       // TODO
     });
 
-    //Future<BuiltList<PaymentModel>> getPaymentList({ String paymentKey, String status, String lastTransactionKey, String orderId, String orderName, String startRequestedAt, String endRequestedAt }) async
+    //Future<List<PaymentModel>> getPaymentList({ String paymentKey, String status, String lastTransactionKey, String orderId, String orderName, String startRequestedAt, String endRequestedAt }) async
     test('test getPaymentList', () async {
       // TODO
     });

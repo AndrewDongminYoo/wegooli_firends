@@ -29,7 +29,7 @@ void main() {
       // TODO
     });
 
-    //Future<BuiltList<LicenseModel>> selectLicenseList(LicenseRequest request) async
+    //Future<List<LicenseModel>> selectLicenseList(LicenseRequest request) async
     test('test selectLicenseList', () async {
       // TODO
     });

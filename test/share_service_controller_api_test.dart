@@ -9,7 +9,7 @@ void main() {
   final api = WegooliFriends().getShareServiceControllerApi();
 
   group(ShareServiceControllerApi, () {
-    //Future<BuiltList<ShareServiceModel>> getShareService(ShareServiceRequest request) async
+    //Future<List<ShareServiceModel>> getShareService(ShareServiceRequest request) async
     test('test getShareService', () async {
       // TODO
     });

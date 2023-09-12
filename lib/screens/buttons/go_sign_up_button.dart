@@ -17,7 +17,7 @@ class GoSignUpButton extends StatelessWidget {
       margin: getMargin(top: 11, bottom: 5),
       buttonStyle: CustomButtonStyles.fillPrimaryC26,
       buttonTextStyle: CustomTextStyles.titleMedium18,
-      onTap: goPhoneAuth,
+      onTap: goAcceptTerms,
     );
   }
 }

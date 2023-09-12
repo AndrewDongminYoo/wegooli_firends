@@ -10,6 +10,45 @@ import '/core/app_export.dart';
 class SplashLoading extends StatelessWidget {
   const SplashLoading({super.key});
 
+  final wholeRoutes = const [
+    /// 애플리케이션 홈
+    AppRoutes.home,
+
+    /// 디버그용 게이트웨이 화면
+    AppRoutes.appGateway,
+
+    /// 로그인 및 가입 관련
+    AppRoutes.idPwLogin,
+    AppRoutes.acceptTerms,
+    AppRoutes.phoneAuth,
+    AppRoutes.registerCreditCard,
+    AppRoutes.registerLicense,
+    AppRoutes.registerSuccess,
+    AppRoutes.registerZipCode,
+
+    /// 캘린더 관련
+    AppRoutes.sharedSchedule,
+    AppRoutes.teamInvitation,
+    AppRoutes.bookDatetimePicker,
+    AppRoutes.reservationsCheck,
+
+    /// 센드버드 채팅 관련
+    AppRoutes.chatWithTeam,
+
+    /// 스마트키 관련
+    AppRoutes.carSmartKey,
+    AppRoutes.carStatusInfo,
+
+    /// 마이페이지 관련
+    AppRoutes.registeredCardList,
+    AppRoutes.sendingInvitation,
+    AppRoutes.myProfile,
+    AppRoutes.profileInfoPage,
+    AppRoutes.noSubscription,
+    AppRoutes.unsubscribeConfirm,
+    AppRoutes.upcomingUnsubscription,
+  ];
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(

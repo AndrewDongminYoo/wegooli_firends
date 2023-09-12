@@ -14,37 +14,62 @@ class AcceptTerms extends StatefulWidget {
 }
 
 class _AcceptTermsState extends State<AcceptTerms> {
+  final controller = UserController.to;
   List<Agreement> acceptTerms = [
-    Agreement(title: '[필수] 개인정보 처리방침', markdown: privacy_policy),
-    Agreement(title: '[필수] 개인 위치정보 처리 방침', markdown: location_data),
-    Agreement(title: '[필수] 서비스이용약관', markdown: terms_of_service),
-    Agreement(title: '[필수] 위치기반서비스 이용약관', markdown: location_based),
-    Agreement(title: '[필수] 자동차대여 표준약관', markdown: car_rental_term),
-    Agreement(title: '[필수] 차량 위치정보 수집이용 제공동의', markdown: vehicle_location),
     Agreement(
-        title: '[선택] 마케팅 목적 개인정보 수집이용',
-        markdown: marketing_purpose,
-        required: false),
+      accepted: false,
+      title: '[필수] 개인정보 처리방침',
+      markdown: privacy_policy,
+    ),
+    Agreement(
+      accepted: false,
+      title: '[필수] 개인 위치정보 처리 방침',
+      markdown: location_data,
+    ),
+    Agreement(
+      accepted: false,
+      title: '[필수] 서비스이용약관',
+      markdown: terms_of_service,
+    ),
+    Agreement(
+      accepted: false,
+      title: '[필수] 위치기반서비스 이용약관',
+      markdown: location_based,
+    ),
+    Agreement(
+      accepted: false,
+      title: '[필수] 자동차대여 표준약관',
+      markdown: car_rental_term,
+    ),
+    Agreement(
+      accepted: false,
+      title: '[필수] 차량 위치정보 수집이용 제공동의',
+      markdown: vehicle_location,
+    ),
+    Agreement(
+      accepted: false,
+      title: '[선택] 마케팅 목적 개인정보 수집이용',
+      markdown: marketing_purpose,
+      required: false,
+    ),
   ];
-
-  List<bool> agreements = List<bool>.filled(7, false);
   Duration delay = const Duration(milliseconds: 100);
   bool get getAllTermsAccepted {
-    return agreements.every((term) => term);
+    return acceptTerms.every((term) => term.accepted);
   }
 
   // 전체 항목 동의
   void setAllTermsAccepted(bool? value) async {
     if (!getAllTermsAccepted) {
-      for (int i = 0; i < agreements.length; i++) {
-        // if (acceptTerms[i].required) {
+      for (int i = 0; i < acceptTerms.length; i++) {
+        // if (acceptTerms[i].required) // 필수항목만
         await Future.delayed(delay);
         setState(() {
-          agreements[i] = value!;
+          acceptTerms[i].accepted = value!;
         });
       }
     } else {
-      agreements = List<bool>.filled(7, false);
+      acceptTerms.map((term) => term.accepted = value!);
     }
   }
 
@@ -82,7 +107,6 @@ class _AcceptTermsState extends State<AcceptTerms> {
                           itemBuilder: (BuildContext context, int index) {
                             return AgreementItem(
                               index: index,
-                              values: agreements,
                               terms: acceptTerms,
                             );
                           }),
@@ -90,7 +114,9 @@ class _AcceptTermsState extends State<AcceptTerms> {
                   )),
             )),
       ),
-      bottomNavigationBar: const SignUpAcceptTermsNextButton(),
+      bottomNavigationBar: SignUpAcceptTermsNextButton(
+          acceptTerms: acceptTerms,
+          controller: controller),
     ));
   }
 }
@@ -98,13 +124,11 @@ class _AcceptTermsState extends State<AcceptTerms> {
 class AgreementItem extends StatefulWidget {
   AgreementItem({
     Key? key,
-    required this.values,
     required this.index,
     required this.terms,
   }) : super(key: key);
 
   final int index;
-  final List<bool> values;
   final List<Agreement> terms;
 
   @override
@@ -123,10 +147,10 @@ class _AgreementItemState extends State<AgreementItem> {
             children: [
               CustomCheckboxButton(
                   text: term.title,
-                  value: widget.values[widget.index],
+                  value: term.accepted,
                   onChange: (bool value) {
                     setState(() {
-                      widget.values[widget.index] = value;
+                      term.accepted = value;
                     });
                   }),
               CustomImageView(
@@ -145,13 +169,15 @@ class _AgreementItemState extends State<AgreementItem> {
 }
 
 class Agreement {
-  const Agreement({
+  Agreement({
     required this.title,
     required this.markdown,
+    required this.accepted,
     this.required = true,
   });
 
   final String title;
   final bool required;
   final String markdown;
+  bool accepted;
 }

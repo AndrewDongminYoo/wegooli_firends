@@ -243,6 +243,19 @@ class UserController extends GetxController {
     }
   }
 
+  acceptanceComplete(List<Agreement> agreements) {
+    agreements.map(toAccountAgreementModel).toList();
+    // _service.sendAcceptanceRequest();
+  }
+
+  AccountAgreementModel toAccountAgreementModel(Agreement e) {
+    return AccountAgreementModel(
+      classification: currentUser.value.id,
+      accountId: e.title,
+      agreeYn: e.accepted ? 'Y' : 'N',
+    );
+  }
+
   Future<String?> getTeamCode() async {
     if (firstTeamSeq == null) {
       return null;

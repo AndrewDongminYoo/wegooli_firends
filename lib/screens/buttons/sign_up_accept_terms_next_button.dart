@@ -7,7 +7,11 @@ import '/core/app_export.dart';
 class SignUpAcceptTermsNextButton extends StatelessWidget {
   const SignUpAcceptTermsNextButton({
     super.key,
+    required this.controller,
+    required this.acceptTerms,
   });
+  final UserController controller;
+  final List<Agreement> acceptTerms;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +25,7 @@ class SignUpAcceptTermsNextButton extends StatelessWidget {
           text: l10ns.acceptanceComplete,
           buttonStyle: CustomButtonStyles.fillPrimaryC5,
           buttonTextStyle: CustomTextStyles.titleMedium18,
-          onTap: goPhoneAuth,
+          onTap: () => controller.acceptanceComplete(acceptTerms),
         ));
   }
 }

@@ -72,8 +72,8 @@ Future<dynamic>? goReservationsCheck(DateTime selectedDay) =>
       selectedDay: selectedDay,
     ));
 // [PopupDialog] 팀 초대하기
-Future<dynamic>? goSendingInvitation() =>
-    Get.dialog(const SendingInvitationDialog());
+Future<dynamic>? goSendingInvitation({bool? copyMode}) =>
+    Get.dialog(SendingInvitationDialog(copyMode: copyMode ?? false));
 
 // [Page] 소속 된 팀이 없을 경우 보여줄 페이지
 Future<dynamic>? goTeamInvitation() => Get.toNamed(AppRoutes.teamInvitation);

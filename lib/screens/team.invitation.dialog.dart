@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 import '/core/app_export.dart';
 
 class SendingInvitationDialog extends StatefulWidget {
-  const SendingInvitationDialog({super.key});
+  const SendingInvitationDialog({super.key, this.copyMode = false});
+  final bool copyMode;
   @override
   State<SendingInvitationDialog> createState() =>
       _SendingInvitationDialogState();
@@ -13,6 +14,18 @@ class SendingInvitationDialog extends StatefulWidget {
 
 class _SendingInvitationDialogState extends State<SendingInvitationDialog> {
   final controller = VehicleController.to;
+  final userController = UserController.to;
+
+  @override
+  void initState() {
+    userController.getTeamCode().then((teamCode) {
+      print('AAA : teamCode : $teamCode');
+      if (teamCode != null) {
+        controller.invitation.text = teamCode;
+      }
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -53,8 +66,11 @@ class _SendingInvitationDialogState extends State<SendingInvitationDialog> {
                                 margin: getMargin(bottom: 15),
                                 onTap: goBack),
                           ])),
-                  InvitationCodeFormField(controller: controller),
-                  ConfirmInvitationButton(controller: controller),
+                  InvitationCodeFormField(
+                      controller: controller, readOnly: widget.copyMode),
+                  widget.copyMode
+                      ? CopyInvitationButton(controller: controller)
+                      : ConfirmInvitationButton(controller: controller),
                 ]),
           ),
         ));

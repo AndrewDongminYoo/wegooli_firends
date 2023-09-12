@@ -13,27 +13,27 @@ class MembersList extends StatelessWidget {
     return Padding(
         padding: getPadding(left: 16, top: 12),
         child: SizedBox(
-            height: 100,
+            height: getVerticalSize(100),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                if (controller.members.length - 1 > 0)
-                  Obx(
-                    () => ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemBuilder: (_, int index) {
-                          final currentUser = controller.currentUser.value;
-                          final member = controller.members
-                              .where((it) => currentUser.id != it.accountId)
-                              .toList()[index];
-                          return MemberAvatar(
-                              name: member.nickname ?? '-',
-                              avatarImagePath: Assets.images.imgAvatar2.path,
-                              personalColor: member.color ?? '#FFCC08');
-                        },
-                        itemCount: controller.members.length - 1,
-                        shrinkWrap: true),
-                  ),
-                const InviteTeamButton(),
+                StreamBuilder<TeamAccountModel>(
+                    stream: Stream.fromIterable(controller.members),
+                    builder: (_, snapshot) {
+                      final currentUser = controller.currentUser.value;
+                      final member = snapshot.data;
+                      if (member == null ||
+                          currentUser.id == member.accountId) {
+                        return Container();
+                      } else {
+                        return MemberAvatar(
+                            name: member.nickname ?? '-',
+                            avatarImagePath: Assets.images.imgAvatar2.path,
+                            personalColor: member.color ?? '#FFCC08');
+                      }
+                    }),
+                InviteTeamButton(),
               ],
             )));
   }

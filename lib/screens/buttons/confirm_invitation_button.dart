@@ -22,14 +22,7 @@ class ConfirmInvitationButton extends StatelessWidget {
         onTap: () async {
           print('ConfirmInvitationButton');
           if (await controller.joinTeam()) {
-            // await Get.to(() => const SharedCalendar());
-            // await goSharedSchedule();
-            // goBack();
-            // Get.offNamedUntil(AppRoutes.sharedSchedule,
-            //     (route) => Get.currentRoute == AppRoutes.idPwLogin);
-            // await _userController.authorize();
             Get.close(2);
-            // await _userController.preProcessor();
           } else {
             goBack();
           }

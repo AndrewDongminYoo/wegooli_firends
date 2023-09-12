@@ -243,9 +243,7 @@ class ColorParser {
   }
 
   // get the Color
-  Color? getColor() {
-    return _color;
-  }
+  Color? get color => _color;
 
   // get RGB
   List<int> toRGB() {

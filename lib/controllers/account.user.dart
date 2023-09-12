@@ -10,10 +10,10 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 class UserController extends GetxController {
-  final _service = UserAccountService();
-  final _teamAccountService = TeamAccountService();
-  final _teamService = TeamService();
-  final _reservationsService = ReservationsService();
+  final UserAccountService _service = UserAccountService();
+  final TeamAccountService _teamAccountService = TeamAccountService();
+  final ReservationsService _reservationsService = ReservationsService();
+  final TeamService _teamService = TeamService();
   static UserController get to => Get.isRegistered<UserController>()
       ? Get.find<UserController>()
       : Get.put(UserController());
@@ -55,7 +55,6 @@ class UserController extends GetxController {
 
   Rx<User> currentUser = const User().obs;
   final RxList<TeamAccountModel> _members = RxList<TeamAccountModel>([]);
-  RxList<TeamAccountModel> get members => _members;
   final RxList<Schedule> _schedules = RxList<Schedule>.of([]);
   RxList<Schedule> get schedules => _schedules;
 
@@ -76,7 +75,7 @@ class UserController extends GetxController {
     print('${telecom!.title}| +82 ${phoneNum.text}');
     if (telecom != null && phoneNum.text.isNotEmpty) {
       oneTimeCode = Verify.Waiting;
-      var phoneNumber =
+      final phoneNumber =
           '+82 ${phoneNum.text.replaceAll('-', ' ').substring(1)}';
       if (!kIsWeb) {
         await auth.verifyPhoneNumber(
@@ -92,7 +91,7 @@ class UserController extends GetxController {
                 const GetSnackBar(title: '휴대폰 인증과정에서 오류가 발생했습니다.'));
             oneTimeCode = Verify.Failure;
             Future.delayed(const Duration(seconds: 5))
-              ..then((value) => oneTimeCode = Verify.Expired);
+                .then((value) => oneTimeCode = Verify.Expired);
           },
           // Firebase에서 기기로 코드가 전송된 경우를 처리하며 사용자에게 코드를 입력하라는 메시지를 표시하는 데 사용
           codeSent: (String verificationId, int? resendToken) {
@@ -108,11 +107,11 @@ class UserController extends GetxController {
           },
         );
       } else {
-        var confirmationResult = await auth.signInWithPhoneNumber(phoneNumber);
-        print('confirmationResult: $confirmationResult');
-        var smsCode = pinCodes.text;
+        final confirmResult = await auth.signInWithPhoneNumber(phoneNumber);
+        print('confirmationResult: $confirmResult');
+        final smsCode = pinCodes.text;
         print('smsCode: $smsCode');
-        var _credential = await confirmationResult.confirm(smsCode);
+        final _credential = await confirmResult.confirm(smsCode);
         credential = _credential.credential as PhoneAuthCredential?;
         oneTimeCode = Verify.Success;
       }
@@ -220,25 +219,18 @@ class UserController extends GetxController {
     }
     _teams(await _teamAccountService.findTeams(accountId));
     // print('_teams : $_teams');
-    _members(getMembers());
+    _members(members);
     // print('_members : $_members');
     _schedules(await retrieveSchedules(firstTeamSeq));
     // print('_schedules : $_schedules');
-    goSharedSchedule();
+    await goSharedSchedule();
   }
 
-  TeamAccountConnectionResponse? getFirstTeamOrNull() {
-    return teams.firstOrNull;
-  }
+  TeamAccountConnectionResponse? get firstTeamsOrNull => teams.firstOrNull;
 
-  List<TeamAccountModel> getMembers() {
-    final team = getFirstTeamOrNull();
-    final members = team?.account;
-    if (members == null) {
-      return List.empty();
-    }
-    // print('getMembers() : $members');
-    return members;
+  List<TeamAccountModel> get members {
+    final team = firstTeamsOrNull;
+    return team?.account ?? [];
   }
 
   Future<List<Schedule>> retrieveSchedules(int? teamSeq) async {

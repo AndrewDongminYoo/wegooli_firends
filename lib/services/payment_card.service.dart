@@ -7,7 +7,7 @@ import '/lib.dart';
 class PaymentCardService extends GetConnect {
   @override
   GetHttpClient get httpClient => wegooli;
-  final client = wegooli.getPaymentCardControllerApi();
+  final client = wegooli.paymentCardApi;
   Future<List<PaymentCardModel>> loadCreditCardList(User currentUser) async {
     if (currentUser.memberSeq != null) {
       final response =

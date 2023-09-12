@@ -7,9 +7,9 @@ import '/lib.dart';
 class CarManagementService extends GetConnect {
   @override
   GetHttpClient get httpClient => wegooli;
-  final deviceApi = wegooli.getDeviceControllerApi();
-  final statusApi = wegooli.getCarManagementControllerApi();
-  final terminalApi = wegooli.getTerminalControllerApi();
+  final deviceApi = wegooli.deviceApi;
+  final statusApi = wegooli.carManagementApi;
+  final terminalApi = wegooli.terminalApi;
 
   Future<CarManagementModel> selectCarManagement(int teamSeq) async {
     final response = await statusApi.selectCarManagement(seq: teamSeq);

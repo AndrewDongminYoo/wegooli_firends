@@ -17,7 +17,7 @@ class MemberAvatar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: getVerticalSize(71),
       // width: getHorizontalSize(50),
       child: Column(children: [
@@ -42,7 +42,7 @@ class MemberAvatar extends StatelessWidget {
           name,
           overflow: TextOverflow.ellipsis,
           textAlign: TextAlign.left,
-          style: TextStyle(
+          style: const TextStyle(
             color: Color(0xFF222222),
             fontSize: 12,
             fontFamily: FontFamily.pretendard,

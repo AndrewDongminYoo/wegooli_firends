@@ -11,7 +11,7 @@ import '/lib.dart';
 class UserAccountService extends GetConnect {
   @override
   GetHttpClient get httpClient => wegooli;
-  final api = wegooli.getUserControllerApi();
+  final api = wegooli.userApi;
 
   Future<User?> login(String username, String password) async {
     try {

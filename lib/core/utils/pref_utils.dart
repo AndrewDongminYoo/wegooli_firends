@@ -45,9 +45,7 @@ class PrefUtils {
     return setData(_themeData, value);
   }
 
-  static String getThemeData() {
-    return getData(_themeData, defaultValue: 'primary');
-  }
+  static String get themeData => getData(_themeData, defaultValue: 'primary');
 
   static String getToken() {
     final token = getData(_tokenData, defaultValue: _tokenIsEmpty);
@@ -64,11 +62,9 @@ class PrefUtils {
     return setData(_tokenData, token);
   }
 
-  static String getPhoneNumber() {
-    return getData(_phoneData, defaultValue: '+821012345678');
-  }
+  static String get phoneNumber =>
+      getData(_phoneData, defaultValue: '+821012345678');
 
-  static Future<bool> setPhoneNumber(String phoneNumber) {
-    return setData(_phoneData, phoneNumber);
-  }
+  static set phoneNumber(String phoneNumber) =>
+      setData(_phoneData, phoneNumber);
 }

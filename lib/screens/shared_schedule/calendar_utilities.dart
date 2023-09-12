@@ -20,6 +20,18 @@ class Schedule {
     this.createdAt,
     this.updatedAt,
   });
+  Schedule.fromModel(ScheduleModel model)
+      : this(
+          accountId: model.accountId!,
+          seq: model.seq,
+          teamSeq: model.teamSeq,
+          delYn: model.delYn,
+          startAt: model.startAt,
+          endAt: model.endAt,
+          createdAt: model.createdAt,
+          updatedAt: model.updatedAt,
+        );
+
   int? seq = 0;
   int? teamSeq = 0;
   String? delYn = 'N';
@@ -37,17 +49,6 @@ class Schedule {
 
   @override
   String toString() => accountId;
-
-  static Schedule fromModel(ScheduleModel it) => Schedule(
-        accountId: it.accountId!,
-        seq: it.seq,
-        teamSeq: it.teamSeq,
-        delYn: it.delYn,
-        startAt: it.startAt,
-        endAt: it.endAt,
-        createdAt: it.createdAt,
-        updatedAt: it.updatedAt,
-      );
 }
 
 int getHashCode(DateTime key) {

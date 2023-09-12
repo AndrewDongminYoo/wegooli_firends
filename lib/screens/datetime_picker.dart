@@ -117,7 +117,6 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                             child: CupertinoDatePicker(
                               backgroundColor: CupertinoColors.systemBackground
                                   .resolveFrom(context),
-                              mode: CupertinoDatePickerMode.dateAndTime,
                               initialDateTime: item.date,
                               onDateTimeChanged: (newDateTime) {
                                 // print('newDateTime: $newDateTime');
@@ -135,7 +134,7 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      CancelButton(plural: false),
+                      const CancelButton(plural: false),
                       AddScheduleConfirmButton(controller: controller),
                     ],
                   )),

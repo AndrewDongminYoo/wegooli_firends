@@ -8,7 +8,7 @@ import '/lib.dart';
 class TeamService extends GetConnect {
   @override
   GetHttpClient get httpClient => wegooli;
-  final api = wegooli.getTeamControllerApi();
+  final api = wegooli.teamApi;
 
   Future<TeamModel?> findTeamBySeqOrNull(int teamSeq) async {
     try {

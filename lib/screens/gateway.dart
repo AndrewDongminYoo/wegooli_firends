@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import '/core/app_export.dart';
 
 class GatewayScreen extends StatelessWidget {
-  GatewayScreen({super.key});
+  const GatewayScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -85,7 +85,7 @@ class GatewayScreen extends StatelessWidget {
                             dialog: const SendingInvitationDialog(),
                             dialogTitle: l10ns.sendingCrewInvitation),
                         RouteModal(
-                            dialog: ReservationsCheckingPageDialog(),
+                            dialog: const ReservationsCheckingPageDialog(),
                             dialogTitle: l10ns.reservationsCheckingPage),
                         RouteModal(
                             bottomSheet: const DatetimePickerBottomSheet(),

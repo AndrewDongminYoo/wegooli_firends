@@ -7,7 +7,7 @@ import '/lib.dart';
 class LicenseCardService extends GetConnect {
   @override
   GetHttpClient get httpClient => wegooli;
-  final api = wegooli.getLicenseControllerApi();
+  final api = wegooli.licenseApi;
 
   Future<int> registerDrivingLicense() async {
     final validReq = ValidLicenseRequest();

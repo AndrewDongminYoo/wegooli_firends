@@ -1,6 +1,9 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+// 🌎 Project imports:
+import '/theme/theme_helper.dart';
+
 class WideScreenVisible extends StatelessWidget {
   const WideScreenVisible({
     super.key,
@@ -15,14 +18,14 @@ class WideScreenVisible extends StatelessWidget {
       child: Expanded(
         child: Container(
           height: double.infinity,
-          color: Theme.of(context).colorScheme.primary,
+          color: theme.colorScheme.primary,
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   'Firebase 인증 데스크탑',
-                  style: Theme.of(context).textTheme.headlineMedium,
+                  style: theme.textTheme.headlineMedium,
                 ),
               ],
             ),

@@ -10,7 +10,7 @@ class CopyInvitationButton extends StatelessWidget {
     super.key,
     required this.controller,
   });
-  final controller;
+  final UserController controller;
 
   @override
   Widget build(BuildContext context) {

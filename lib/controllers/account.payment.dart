@@ -46,13 +46,13 @@ class PaymentCardController extends GetxController {
             expirationDT.text.substring(0, 2), expirationDT.text.substring(2))
         .then((result) {
       if (result != 'true') {
-        Get.dialog(AlertDialog(
-          title: const Text('결제수단 등록'),
-          content: const Text('결제수단 등록에 실패하였습니다.\n 다시 확인해주세요.'),
+        Get.dialog(const AlertDialog(
+          title: Text('결제수단 등록'),
+          content: Text('결제수단 등록에 실패하였습니다.\n 다시 확인해주세요.'),
           actions: <Widget>[
             TextButton(
               onPressed: goBack,
-              child: const Text('예'),
+              child: Text('예'),
             ),
           ],
         ));

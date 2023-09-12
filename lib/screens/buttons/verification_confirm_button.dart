@@ -29,7 +29,6 @@ class VerificationConfirmButton extends StatelessWidget {
             Get.showSnackbar(GetSnackBar(
                 title: 'OTP 인증',
                 message: 'OTP 코드 인증에 성공했습니다!',
-                snackPosition: SnackPosition.BOTTOM,
                 duration: const Duration(seconds: 5),
                 backgroundColor: theme.colorScheme.error,
                 icon: const Icon(

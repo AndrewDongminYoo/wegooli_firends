@@ -15,7 +15,6 @@ import 'package:get/get.dart';
 
 // 🌎 Project imports:
 import 'package:wegooli_friends/lib.dart';
-import 'package:wegooli_friends/main.dart';
 
 void main() {
   test('initializes Get bindings', () {

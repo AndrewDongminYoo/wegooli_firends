@@ -16,6 +16,17 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.actions,
   }) : super(key: key);
 
+  CustomAppBar.getFriendsTypoAppBar({Key? key})
+      : this(
+            key: key,
+            height: getVerticalSize(45),
+            centerTitle: true,
+            title: CustomImageView(
+                height: getVerticalSize(17),
+                width: getHorizontalSize(88),
+                svgPath: Assets.svg.imgFriendsTypo.path),
+            styleType: Style.bgOutline);
+
   final double? height;
   final Style? styleType;
   final double? leadingWidth;
@@ -62,8 +73,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   static AppBar minimalAppBar(
     String? titleText, {
     void Function()? onTapLeading,
-  }) {
-    return AppBar(
+  }) =>
+      AppBar(
         toolbarHeight: getVerticalSize(52),
         automaticallyImplyLeading: false,
         backgroundColor: Colors.transparent,
@@ -71,38 +82,25 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         title: AppbarTitle(text: titleText ?? 'FRIENDS'),
         titleSpacing: 0,
         centerTitle: true,
-       );
-  }
+      );
 
   static CustomAppBar getDefaultAppBar(
     String? titleText, {
     void Function()? onTapLeading,
-  }) {
-    return CustomAppBar(
-        height: getVerticalSize(53),
-        leadingWidth: 34,
-        leading: CustomImageView(
-            height: getSize(18),
-            width: getSize(18),
-            svgPath: Assets.svg.imgArrowLeft.path,
-            margin: getMargin(left: 16, top: 19, bottom: 16),
-            onTap: () {
-              onTapLeading != null ? onTapLeading.call() : goBack();
-            }),
-        centerTitle: true,
-        title: AppbarTitle(text: titleText ?? 'FRIENDS'));
-  }
-
-  static CustomAppBar getFriendsTypoAppBar() {
-    return CustomAppBar(
-        height: getVerticalSize(45),
-        centerTitle: true,
-        title: CustomImageView(
-            height: getVerticalSize(17),
-            width: getHorizontalSize(88),
-            svgPath: Assets.svg.imgFriendsTypo.path),
-        styleType: Style.bgOutline);
-  }
+  }) =>
+      CustomAppBar(
+          height: getVerticalSize(53),
+          leadingWidth: 34,
+          leading: CustomImageView(
+              height: getSize(18),
+              width: getSize(18),
+              svgPath: Assets.svg.imgArrowLeft.path,
+              margin: getMargin(left: 16, top: 19, bottom: 16),
+              onTap: () {
+                onTapLeading != null ? onTapLeading.call() : goBack();
+              }),
+          centerTitle: true,
+          title: AppbarTitle(text: titleText ?? 'FRIENDS'));
 }
 
 enum Style {

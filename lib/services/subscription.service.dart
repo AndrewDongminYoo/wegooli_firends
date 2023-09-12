@@ -7,7 +7,7 @@ import '/lib.dart';
 class SubscriptionService extends GetConnect {
   @override
   GetHttpClient get httpClient => wegooli;
-  final api = wegooli.getSubscriptionControllerApi();
+  final api = wegooli.subscriptionApi;
 
   Future<String?> submitWithdrawal(SubmitWithdrawalModel withdraw) async {
     final response =

@@ -8,7 +8,7 @@ import '/lib.dart';
 class ReservationsService extends GetConnect {
   @override
   GetHttpClient get httpClient => wegooli;
-  final scheduleApi = wegooli.getScheduleControllerApi();
+  final scheduleApi = wegooli.scheduleApi;
 
   Future<List<Schedule>> retrieveSchedules(int teamSeq) async {
     final response = await scheduleApi.selectScheduleList(teamSeq: teamSeq);

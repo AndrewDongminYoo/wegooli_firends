@@ -15,8 +15,6 @@ class MembersList extends StatelessWidget {
         child: SizedBox(
             height: getVerticalSize(100),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 StreamBuilder<TeamAccountModel>(
                     stream: Stream.fromIterable(controller.members),

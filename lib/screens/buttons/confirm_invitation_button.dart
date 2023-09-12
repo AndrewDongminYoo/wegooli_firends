@@ -14,10 +14,10 @@ class ConfirmInvitationButton extends StatelessWidget {
   });
 
   final VehicleController controller;
-  final UserController _userController = UserController.to;
 
   @override
   Widget build(BuildContext context) {
+    // final _userController = UserController.to;
     return CustomElevatedButton(
         onTap: () async {
           print('ConfirmInvitationButton');

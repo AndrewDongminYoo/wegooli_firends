@@ -15,7 +15,6 @@ class RegisterCardButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomElevatedButton(
-        // TODO disabled 일때 스타일 정의하기
         text: l10ns.register,
         buttonStyle: CustomButtonStyles.fillPrimaryC26,
         buttonTextStyle: CustomTextStyles.titleMedium18,

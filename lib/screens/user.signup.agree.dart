@@ -6,7 +6,6 @@ import 'package:get/get.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
-import '/screens/terms_of_use.dart';
 
 class AcceptTerms extends StatefulWidget {
   const AcceptTerms({super.key});

@@ -1,12 +1,12 @@
 // 📦 Package imports:
-import 'package:get/get_connect/connect.dart' show GetConnect;
+import 'package:get/get_connect.dart';
 
 // 🌎 Project imports:
 import '/lib.dart';
 
 class CarManagementService extends GetConnect {
   @override
-  String get baseUrl => WegooliFriends.basePath;
+  GetHttpClient get httpClient => wegooli;
   final deviceApi = wegooli.getDeviceControllerApi();
   final statusApi = wegooli.getCarManagementControllerApi();
   final terminalApi = wegooli.getTerminalControllerApi();

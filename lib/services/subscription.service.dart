@@ -1,12 +1,12 @@
 // 📦 Package imports:
-import 'package:get/get_connect/connect.dart' show GetConnect;
+import 'package:get/get_connect.dart';
 
 // 🌎 Project imports:
 import '/lib.dart';
 
 class SubscriptionService extends GetConnect {
   @override
-  String get baseUrl => WegooliFriends.basePath;
+  GetHttpClient get httpClient => wegooli;
   final api = wegooli.getSubscriptionControllerApi();
 
   Future<String?> submitWithdrawal(SubmitWithdrawalModel withdraw) async {

@@ -1,12 +1,12 @@
 // 📦 Package imports:
-import 'package:get/get_connect/connect.dart' show GetConnect;
+import 'package:get/get_connect.dart';
 
 // 🌎 Project imports:
 import '/lib.dart';
 
 class PaymentCardService extends GetConnect {
   @override
-  String get baseUrl => WegooliFriends.basePath;
+  GetHttpClient get httpClient => wegooli;
   final client = wegooli.getPaymentCardControllerApi();
   Future<List<PaymentCardModel>> loadCreditCardList(User currentUser) async {
     if (currentUser.memberSeq != null) {

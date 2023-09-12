@@ -1,13 +1,13 @@
 // 📦 Package imports:
 import 'package:dio/dio.dart';
-import 'package:get/get_connect/connect.dart' show GetConnect;
+import 'package:get/get_connect.dart';
 
 // 🌎 Project imports:
 import '/lib.dart';
 
 class TeamAccountService extends GetConnect {
   @override
-  String get baseUrl => WegooliFriends.basePath;
+  GetHttpClient get httpClient => wegooli;
   final api = wegooli.getTeamAccountConnectionControllerApi();
 
   Future<List<TeamAccountConnectionResponse>> findTeams(

@@ -10,7 +10,7 @@ import '/lib.dart';
 
 class UserAccountService extends GetConnect {
   @override
-  String get baseUrl => WegooliFriends.basePath;
+  GetHttpClient get httpClient => wegooli;
   final api = wegooli.getUserControllerApi();
 
   Future<User?> login(String username, String password) async {

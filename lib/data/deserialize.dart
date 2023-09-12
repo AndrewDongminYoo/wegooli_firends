@@ -223,5 +223,5 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
       }
       break;
   }
-  throw Exception('Cannot deserialize');
+  throw CustomException('$targetType에 대한 데이터를 역직렬화하지 못했습니다.\n$value');
 }

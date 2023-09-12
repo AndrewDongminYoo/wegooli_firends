@@ -48,10 +48,8 @@ class ConfirmDialog extends StatelessWidget {
           fontSize: 16,
           fontWeight: FontWeight.w400,
           fontFamily: FontFamily.pretendard),
-      content: SingleChildScrollView(
-          child: ListBody(children: <Widget>[
-        content
-      ])),
+      content:
+          SingleChildScrollView(child: ListBody(children: <Widget>[content])),
       actionsPadding: getPadding(all: 0),
       actions: <Widget>[
         SizedBox(

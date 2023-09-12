@@ -78,7 +78,7 @@ class _AcceptTermsState extends State<AcceptTerms> {
     return SafeArea(
         child: Scaffold(
       backgroundColor: theme.colorScheme.onPrimaryContainer,
-      appBar: CustomAppBar.getDefaultAppBar(l10ns.acceptTerms),
+      appBar: CustomAppBar.minimalAppBar(l10ns.acceptTerms),
       body: Unfocused(
         child: SizedBox(
             width: mediaQueryData.size.width,
@@ -115,8 +115,7 @@ class _AcceptTermsState extends State<AcceptTerms> {
             )),
       ),
       bottomNavigationBar: SignUpAcceptTermsNextButton(
-          acceptTerms: acceptTerms,
-          controller: controller),
+          acceptTerms: acceptTerms, controller: controller),
     ));
   }
 }

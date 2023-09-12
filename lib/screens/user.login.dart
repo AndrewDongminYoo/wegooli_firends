@@ -22,25 +22,16 @@ class LoginWithIdAndPassword extends StatefulWidget {
 class _LoginWithIdAndPasswordState extends State<LoginWithIdAndPassword> {
   UserController controller = UserController.to;
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  bool get isAuthenticated => controller.verifyCodeStatus == Verify.Success;
+  bool get isAuthenticated => controller.oneTimeCode == Verify.Success;
   @override
   void initState() {
     super.initState();
-
     final messaging = FirebaseMessaging.instance;
 
     /// 애플리케이션이 종료된 상태에서 [RemoteMessage]([Notification] 포함)를 통해 열렸으면 반환되고, 그렇지 않으면 `null`이 됩니다.
     /// [RemoteMessage]가 소비되면, [RemoteMessage]는 제거되고 [getInitialMessage]에 대한 추가 호출은 `null`이 됩니다.
     /// 이는 특정 알림 상호 작용이 특정 목적(예: 채팅 메시지, 특정 화면 열기 등)으로 앱을 열어야 하는지 여부를 결정하는 데 사용해야 합니다.
     messaging.getInitialMessage();
-  }
-
-  @override
-  void dispose() {
-    /// 아이디와 비밀번호는 로그인 페이지에서 벗어나면 초기화되어야 함.
-    controller.username.dispose();
-    controller.password.dispose();
-    super.dispose();
   }
 
   @override
@@ -57,7 +48,6 @@ class _LoginWithIdAndPasswordState extends State<LoginWithIdAndPassword> {
             padding: getPadding(left: 16, top: 58, right: 16, bottom: 58),
             child: Form(
               key: formKey,
-              autovalidateMode: AutovalidateMode.onUserInteraction,
               child: Column(
                 children: [
                   const FriendsByWegooli(),

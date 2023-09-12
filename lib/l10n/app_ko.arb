@@ -506,9 +506,13 @@
   "@signIn": {
     "description": "서비스에 접속하기"
   },
-  "signOut": "로그아웃",
-  "@signOut": {
+  "logOut": "로그아웃",
+  "@logOut": {
     "description": "서비스 접속 종료하기"
+  },
+  "signOut": "회원탈퇴",
+  "@signOut": {
+    "description": "사용자 가입 해지"
   },
   "signUp": "회원가입",
   "@signUp": {
@@ -631,10 +635,6 @@
   "viewSchedules": "일정 확인",
   "@viewSchedules": {
     "description": "차량 이용 일정 확인하기"
-  },
-  "withdrawal": "탈퇴",
-  "@withdrawal": {
-    "description": "사용자 가입 해지"
   },
   "withdrawingMember": "회원 탈퇴",
   "@withdrawingMember": {

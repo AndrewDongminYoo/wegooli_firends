@@ -24,9 +24,8 @@ class SignOutButton extends StatelessWidget {
           content:
               Text(l10ns.wouldYouLikeToRequestToBeRemovedFromWegooliFriends),
           cancelText: l10ns.cancel,
-          confirmText: l10ns.withdrawal,
+          confirmText: l10ns.signOut,
           confirmFunc: () async {
-            // TODO globalController로 사용자 정보 옮긴 뒤 해당 id 이용해서 회원 탈퇴 진행.
             if (await controller.signOut()) {
               await goIdPwLogin();
             }

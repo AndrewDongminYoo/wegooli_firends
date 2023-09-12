@@ -31,7 +31,7 @@ class EmailAddressFormField extends StatelessWidget {
       validator: (value) {
         if (value == null) {
           return '필수 입력 항목입니다.';
-        } else if (!isValidEmail(value)) {
+        } else if (!isTestId(value) && !isValidEmail(value)) {
           return '이메일 형식을 정확히 입력해주세요.';
         } else {
           return null;
@@ -39,4 +39,8 @@ class EmailAddressFormField extends StatelessWidget {
       },
     );
   }
+}
+
+bool isTestId(String value) {
+  return value.startsWith(r'test');
 }

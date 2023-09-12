@@ -59,6 +59,21 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     }
   }
 
+  static AppBar minimalAppBar(
+    String? titleText, {
+    void Function()? onTapLeading,
+  }) {
+    return AppBar(
+        toolbarHeight: getVerticalSize(52),
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.transparent,
+        leadingWidth: 0,
+        title: AppbarTitle(text: titleText ?? 'FRIENDS'),
+        titleSpacing: 0,
+        centerTitle: true,
+       );
+  }
+
   static CustomAppBar getDefaultAppBar(
     String? titleText, {
     void Function()? onTapLeading,

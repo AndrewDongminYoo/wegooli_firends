@@ -64,7 +64,7 @@ class UserController extends GetxController {
   RxList<TeamAccountConnectionResponse> get teams => _teams;
   int? get firstTeamSeq => teams.firstOrNull?.teamSeq;
 
-  Verify verifyCodeStatus = Verify.Waiting;
+  Verify oneTimeCode = Verify.Waiting;
 
   DateTime verificaticonExpireTime() {
     return DateTime.now().add(const Duration(minutes: 3));
@@ -75,7 +75,7 @@ class UserController extends GetxController {
     PhoneAuthCredential? credential;
     print('${telecom!.title}| +82 ${phoneNum.text}');
     if (telecom != null && phoneNum.text.isNotEmpty) {
-      verifyCodeStatus = Verify.Waiting;
+      oneTimeCode = Verify.Waiting;
       var phoneNumber =
           '+82 ${phoneNum.text.replaceAll('-', ' ').substring(1)}';
       if (!kIsWeb) {
@@ -84,15 +84,15 @@ class UserController extends GetxController {
           // Android 기기의 SMS 코드 자동 처리.
           verificationCompleted: (PhoneAuthCredential _credential) {
             credential = _credential;
-            verifyCodeStatus = Verify.Success;
+            oneTimeCode = Verify.Success;
           },
           // 잘못된 전화번호나 SMS 할당량 초과 여부 등의 실패 이벤트
           verificationFailed: (FirebaseAuthException e) {
             Get.showSnackbar(
                 const GetSnackBar(title: '휴대폰 인증과정에서 오류가 발생했습니다.'));
-            verifyCodeStatus = Verify.Failure;
+            oneTimeCode = Verify.Failure;
             Future.delayed(const Duration(seconds: 5))
-              ..then((value) => verifyCodeStatus = Verify.Expired);
+              ..then((value) => oneTimeCode = Verify.Expired);
           },
           // Firebase에서 기기로 코드가 전송된 경우를 처리하며 사용자에게 코드를 입력하라는 메시지를 표시하는 데 사용
           codeSent: (String verificationId, int? resendToken) {
@@ -102,7 +102,7 @@ class UserController extends GetxController {
           },
           // 자동 SMS 코드 처리에 실패한 경우 시간 초과를 처리
           codeAutoRetrievalTimeout: (String verificationId) {
-            verifyCodeStatus = Verify.Expired;
+            oneTimeCode = Verify.Expired;
             Get.showSnackbar(
                 const GetSnackBar(title: '입력한 휴대폰으로 전송된 인증 SMS를 확인해주세요.'));
           },
@@ -114,7 +114,7 @@ class UserController extends GetxController {
         print('smsCode: $smsCode');
         var _credential = await confirmationResult.confirm(smsCode);
         credential = _credential.credential as PhoneAuthCredential?;
-        verifyCodeStatus = Verify.Success;
+        oneTimeCode = Verify.Success;
       }
       print('verificationId : ${credential!.verificationId}');
       print('smsCode : ${credential!.smsCode}');
@@ -132,7 +132,7 @@ class UserController extends GetxController {
 
   void verificaticonIsExpired() {
     print('[Auth] 휴대폰 인증 코드 만료');
-    verifyCodeStatus = Verify.Expired;
+    oneTimeCode = Verify.Expired;
     // TODO: 다음 로직들 실행
     // 1. 기존 인증번호 코드 무효화 (서버에 타임아웃 전달)
     // 2. 사용자에게 알림 창으로 타임아웃 사실 알림. 재발송 버튼 실행 유도.
@@ -190,13 +190,27 @@ class UserController extends GetxController {
     nickname.dispose();
   }
 
-  Future<void> authorize() async {
-    print('user.username: ${username.text}\nuser.password: ${password.text}');
-    final userLike = await _service.login(username.text, password.text);
+  /// 로그인
+  Future<void> signIn() async {
+    print('username: ${emailAddress.text}\npassword: ${password.text}');
+    final userLike = await _service.login(emailAddress.text, password.text);
     if (userLike != null) {
       currentUser(userLike);
-      verifyCodeStatus = Verify.Success;
+      oneTimeCode = Verify.Success;
     }
+  }
+
+  /// 로그아웃
+  Future<bool> logOut() async {
+    return _service.logOut();
+  }
+
+  /// 회원탈퇴
+  Future<bool> signOut() async {
+    if (currentUser.value.id == null) {
+      return false;
+    }
+    return _service.signOut(currentUser.value.id!);
   }
 
   Future<void> preProcessor() async {
@@ -225,17 +239,6 @@ class UserController extends GetxController {
     }
     // print('getMembers() : $members');
     return members;
-  }
-
-  Future<bool> logOut() async {
-    return _service.logOut();
-  }
-
-  Future<bool> signOut() async {
-    if (currentUser.value.id == null) {
-      return false;
-    }
-    return _service.signOut(currentUser.value.id!);
   }
 
   Future<List<Schedule>> retrieveSchedules(int? teamSeq) async {

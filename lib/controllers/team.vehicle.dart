@@ -36,7 +36,7 @@ class VehicleController extends GetxController {
     _teamSeq = userController.firstTeamSeq;
     _members = userController.members;
     _nickname =
-        _currentUser.nickname != null ? _currentUser.nickname! : _nickname;    
+        _currentUser.nickname != null ? _currentUser.nickname! : _nickname;
     await retrieveInfo();
     await retrieveSchedule();
     await getSubscription();
@@ -53,7 +53,9 @@ class VehicleController extends GetxController {
 
   bool compose(Schedule schedule) {
     getClient(schedule.accountId);
-    if (schedule.startAt == null || schedule.endAt == null || schedule.accountId == currentUser.id) {
+    if (schedule.startAt == null ||
+        schedule.endAt == null ||
+        schedule.accountId == currentUser.id) {
       return false;
     } else {
       final last = DateTime.parse(schedule.startAt!);

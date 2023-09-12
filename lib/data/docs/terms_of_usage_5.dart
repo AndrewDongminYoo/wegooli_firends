@@ -1,5 +1,7 @@
-/// '[Required] standard_terms_of_car_rental'                                       '[필수] 자동차 대여 표준 약관'
-final car_rental_term = """
+/// '[Required] standard_terms_of_car_rental'
+/// '[필수] 자동차 대여 표준 약관'
+// ignore_for_file: unnecessary_string_escapes
+const car_rental_term = '''
 # 자동차대여 표준약관
 
 | 표준약관 제10064호 |
@@ -585,5 +587,4 @@ final car_rental_term = """
 ② 회사는 제1항에 의하여 고객이 부담할 손해액을 정하는 경우 동종차량의 대여요금 등을 감안한 객관적인 산정자료를 제시하여야 합니다.
 
 ③ 회사가 제2항에 의한 객관적인 산정자료를 제시하지 않는 경우 고객은 수리기간 또는 재구매 및 등록에 소요되는 기간에 해당하는 대여요금의 50%를 부담하여야 합니다. 이때 대여요금은 수리기간 또는 재구매 및 등록에 소요되는 기간에 해당하는 일일대여요금을 기준으로 산정한다.
-
-""";
+''';

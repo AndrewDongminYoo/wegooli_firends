@@ -1,5 +1,6 @@
 /// '[Required] terms_of_service'
 /// '[필수] 서비스 이용 약관'
+// ignore_for_file: unnecessary_string_escapes
 const terms_of_service = """
 # 이용약관
 

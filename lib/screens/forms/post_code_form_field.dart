@@ -20,6 +20,7 @@ class PostCodeFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomTextFormField(
         enabled: false,
+        autofillHints: [AutofillHints.postalCode],
         textInputType: TextInputType.number,
         width: getHorizontalSize(160),
         controller: controller.postCode,

@@ -18,14 +18,10 @@ class SignUpFilledInButton extends StatelessWidget {
       margin: getMargin(left: 16, right: 16, bottom: 29),
       child: CustomElevatedButton(
           text: l10ns.filledIn,
-          isDisabled: !controller.addressInputCompleted,
+          isDisabled: !controller.registerZipCodeCompleted,
           buttonStyle: CustomButtonStyles.fillPrimaryC26,
           buttonTextStyle: CustomTextStyles.titleMedium18,
-          onTap: () {
-            if (controller.addressInputCompleted) {
-              goRegisterLicense();
-            }
-          }),
+          onTap: goRegisterLicense),
     );
   }
 }

@@ -24,8 +24,8 @@ class VerificationConfirmButton extends StatelessWidget {
         buttonStyle: CustomButtonStyles.fillPrimaryC5,
         buttonTextStyle: theme.textTheme.titleMedium,
         onTap: () async {
-          print('VerificationConfirmButton ${controller.isValidatedPhone}');
-          if (controller.isValidatedPhone) {
+          print('VerificationConfirmButton ${controller.phoneAuthCompleted}');
+          if (controller.phoneAuthCompleted) {
             Get.showSnackbar(GetSnackBar(
                 title: 'OTP 인증',
                 message: 'OTP 코드 인증에 성공했습니다!',

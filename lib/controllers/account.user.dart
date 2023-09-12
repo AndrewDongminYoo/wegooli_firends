@@ -18,22 +18,32 @@ class UserController extends GetxController {
       ? Get.find<UserController>()
       : Get.put(UserController());
 
-  TextEditingController primaryAddress = TextEditingController();
-  TextEditingController detailAddress = TextEditingController();
-  TextEditingController emailAddress = TextEditingController();
-  TextEditingController rePassword = TextEditingController();
-  TextEditingController invitation = TextEditingController();
+  /// 로그인 - 아이디, 비밀번호
   TextEditingController username = TextEditingController();
-  TextEditingController password = TextEditingController();
-  TextEditingController postCode = TextEditingController();
-  TextEditingController nickname = TextEditingController();
-  TextEditingController fullName = TextEditingController();
+  // TextEditingController password = TextEditingController();
+
+  /// 회원가입[1] - 이름, 주민등록번호, 통신사, 핸드폰번호, 인증번호
+  TextEditingController realName = TextEditingController(); // 한국이름
   TextEditingController birthDay = TextEditingController();
   TextEditingController socialId = TextEditingController();
-  TextEditingController pinCodes = TextEditingController();
   TextEditingController phoneNum = TextEditingController();
+  SelectionPopupModel? telecom; // 통신사 (DropdownSelectionData)
+  TextEditingController pinCodes = TextEditingController();
 
-  SelectionPopupModel? telecom;
+  /// 회원가입[2] - 집주소, 이메일주소, 비밀번호, 닉네임
+  TextEditingController postCode = TextEditingController();
+  TextEditingController primaryAddress = TextEditingController();
+  TextEditingController detailAddress = TextEditingController();
+  TextEditingController emailAddress =
+      TextEditingController(); // 이메일 (아이디로 사용예정)
+  TextEditingController password =
+      TextEditingController(); // 사용 후 반드시 dispose할 것 (여러 페이지에서 사용될 것으로 예상)
+  TextEditingController rePassword = TextEditingController();
+  TextEditingController nickname = TextEditingController();
+
+  /// 회원가입[3] - 초대코드 입력
+  TextEditingController invitation = TextEditingController();
+
   List<SelectionPopupModel> telecoms = [
     SelectionPopupModel(id: 01, title: 'SKT'),
     SelectionPopupModel(id: 02, title: 'KT'),
@@ -54,15 +64,7 @@ class UserController extends GetxController {
   RxList<TeamAccountConnectionResponse> get teams => _teams;
   int? get firstTeamSeq => teams.firstOrNull?.teamSeq;
 
-  TeamCarConnection carConnection = TeamCarConnection();
-
-  RxBool isAuthenticated = false.obs;
-  RxBool isShowPassword = false.obs;
-  RxBool isShowConfirmPassword = false.obs;
-  RxBool isWaitingOtpCode = false.obs;
-  RxBool verifyCodeExpire = false.obs;
-  bool _isValidatedPhone = false;
-  bool get isValidatedPhone => _isValidatedPhone;
+  Verify verifyCodeStatus = Verify.Waiting;
 
   DateTime verificaticonExpireTime() {
     return DateTime.now().add(const Duration(minutes: 3));
@@ -73,7 +75,7 @@ class UserController extends GetxController {
     PhoneAuthCredential? credential;
     print('${telecom!.title}| +82 ${phoneNum.text}');
     if (telecom != null && phoneNum.text.isNotEmpty) {
-      isWaitingOtpCode.value = true;
+      verifyCodeStatus = Verify.Waiting;
       var phoneNumber =
           '+82 ${phoneNum.text.replaceAll('-', ' ').substring(1)}';
       if (!kIsWeb) {
@@ -82,18 +84,15 @@ class UserController extends GetxController {
           // Android 기기의 SMS 코드 자동 처리.
           verificationCompleted: (PhoneAuthCredential _credential) {
             credential = _credential;
-            verificationSuccess();
-            verifyCodeExpire.value = false;
-            isWaitingOtpCode.value = false;
+            verifyCodeStatus = Verify.Success;
           },
           // 잘못된 전화번호나 SMS 할당량 초과 여부 등의 실패 이벤트
           verificationFailed: (FirebaseAuthException e) {
             Get.showSnackbar(
                 const GetSnackBar(title: '휴대폰 인증과정에서 오류가 발생했습니다.'));
-            isWaitingOtpCode.value = false;
-            verifyCodeExpire.value = true;
+            verifyCodeStatus = Verify.Failure;
             Future.delayed(const Duration(seconds: 5))
-              ..then((value) => verifyCodeExpire.value = false);
+              ..then((value) => verifyCodeStatus = Verify.Expired);
           },
           // Firebase에서 기기로 코드가 전송된 경우를 처리하며 사용자에게 코드를 입력하라는 메시지를 표시하는 데 사용
           codeSent: (String verificationId, int? resendToken) {
@@ -103,7 +102,7 @@ class UserController extends GetxController {
           },
           // 자동 SMS 코드 처리에 실패한 경우 시간 초과를 처리
           codeAutoRetrievalTimeout: (String verificationId) {
-            verifyCodeExpire.value = true;
+            verifyCodeStatus = Verify.Expired;
             Get.showSnackbar(
                 const GetSnackBar(title: '입력한 휴대폰으로 전송된 인증 SMS를 확인해주세요.'));
           },
@@ -115,9 +114,7 @@ class UserController extends GetxController {
         print('smsCode: $smsCode');
         var _credential = await confirmationResult.confirm(smsCode);
         credential = _credential.credential as PhoneAuthCredential?;
-        verificationSuccess();
-        verifyCodeExpire.value = false;
-        isWaitingOtpCode.value = false;
+        verifyCodeStatus = Verify.Success;
       }
       print('verificationId : ${credential!.verificationId}');
       print('smsCode : ${credential!.smsCode}');
@@ -133,13 +130,9 @@ class UserController extends GetxController {
     }
   }
 
-  void verificationSuccess() {
-    _isValidatedPhone = true;
-  }
-
   void verificaticonIsExpired() {
     print('[Auth] 휴대폰 인증 코드 만료');
-    verifyCodeExpire.value = true;
+    verifyCodeStatus = Verify.Expired;
     // TODO: 다음 로직들 실행
     // 1. 기존 인증번호 코드 무효화 (서버에 타임아웃 전달)
     // 2. 사용자에게 알림 창으로 타임아웃 사실 알림. 재발송 버튼 실행 유도.
@@ -151,20 +144,38 @@ class UserController extends GetxController {
     telecom = value;
   }
 
-  bool get addressInputCompleted =>
+  bool get idPwLoginCompleted => false;
+  bool get acceptTermsCompleted => false;
+  bool get phoneAuthCompleted =>
+      username.text.isNotEmpty &&
+      birthDay.text.isNotEmpty &&
+      birthDay.text.isNumericOnly &&
+      socialId.text.isNotEmpty &&
+      socialId.text.isNumericOnly &&
+      phoneNum.text.isNotEmpty &&
+      isValidPhone(phoneNum.text) &&
+      pinCodes.text.isNotEmpty &&
+      pinCodes.text.isNumericOnly &&
+      pinCodes.text.length == 6;
+
+  bool get registerCreditCardCompleted => false;
+  bool get registerLicenseCompleted => false;
+  bool get registerSuccessCompleted => false;
+  bool get registerZipCodeCompleted =>
       postCode.text.isNotEmpty &&
       primaryAddress.text.isNotEmpty &&
       detailAddress.text.isNotEmpty &&
       emailAddress.text.isEmail &&
+      isValidEmail(emailAddress.text) &&
       password.text.isNotEmpty &&
-      nickname.text.isNotEmpty &&
       rePassword.text.isNotEmpty &&
+      nickname.text.isNotEmpty &&
       (password.text == rePassword.text);
 
   @override
   void onClose() {
     super.onClose();
-    fullName.dispose();
+    realName.dispose();
     birthDay.dispose();
     socialId.dispose();
     phoneNum.dispose();
@@ -184,7 +195,7 @@ class UserController extends GetxController {
     final userLike = await _service.login(username.text, password.text);
     if (userLike != null) {
       currentUser(userLike);
-      isAuthenticated(true);
+      verifyCodeStatus = Verify.Success;
     }
   }
 
@@ -263,4 +274,11 @@ class UserController extends GetxController {
     final teamModel = await _teamService.findTeamBySeqOrNull(firstTeamSeq!);
     return teamModel?.teamCode;
   }
+}
+
+enum Verify {
+  Waiting,
+  Expired,
+  Success,
+  Failure,
 }

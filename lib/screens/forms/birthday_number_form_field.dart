@@ -26,6 +26,7 @@ class BirthdayNumberFormField extends StatelessWidget {
         controller: controller.birthDay,
         enabled: readonly ? false : true,
         margin: getMargin(top: 4),
+        autofillHints: [AutofillHints.birthday],
         inputFormatters: [
           FilteringTextInputFormatter.digitsOnly,
           FilteringTextInputFormatter.singleLineFormatter,

@@ -22,7 +22,7 @@ class LoginWithIdAndPassword extends StatefulWidget {
 class _LoginWithIdAndPasswordState extends State<LoginWithIdAndPassword> {
   UserController controller = UserController.to;
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  bool get isAuthenticated => controller.isAuthenticated.value;
+  bool get isAuthenticated => controller.verifyCodeStatus == Verify.Success;
   @override
   void initState() {
     super.initState();

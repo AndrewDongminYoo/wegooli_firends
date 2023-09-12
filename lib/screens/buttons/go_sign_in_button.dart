@@ -21,7 +21,7 @@ class GoSignInButton extends StatelessWidget {
         buttonTextStyle: CustomTextStyles.titleMedium18,
         onTap: () async {
           await controller.authorize();
-          if (controller.isAuthenticated.value) {
+          if (controller.verifyCodeStatus == Verify.Success) {
             await controller.preProcessor();
           } else {
             controller.username.clear();

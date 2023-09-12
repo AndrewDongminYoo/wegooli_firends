@@ -18,6 +18,7 @@ class DetailAddressFormField extends StatelessWidget {
         textInputType: TextInputType.streetAddress,
         controller: controller.detailAddress,
         margin: getMargin(top: 10),
+        autofillHints: [AutofillHints.fullStreetAddress],
         contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),
         textStyle: CustomTextStyles.bodyLargeGray50003,
         hintText: '동·호수 등 상세 주소',

@@ -17,8 +17,9 @@ class KoreanNameFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomTextFormField(
-        controller: controller.fullName,
+        controller: controller.realName,
         margin: getMargin(top: 4),
+        autofillHints: [AutofillHints.newUsername],
         contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),
         textStyle: CustomTextStyles.bodyLargeNotoSansKRGray700,
         hintStyle: CustomTextStyles.bodyLargeGray50003,

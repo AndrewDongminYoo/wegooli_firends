@@ -30,13 +30,14 @@ class VerificationCodeFormField extends StatelessWidget {
       contentPadding: getPadding(left: 14, top: 14, bottom: 14),
       textStyle: CustomTextStyles.bodyLargeGray500,
       hintStyle: CustomTextStyles.bodyLargeGray500,
+      autofillHints: [AutofillHints.oneTimeCode],
       suffixConstraints: BoxConstraints(maxHeight: getVerticalSize(48)),
       filled: true,
       fillColor: theme.colorScheme.onPrimaryContainer,
       suffix: Padding(
         padding: getPadding(left: 30, top: 12, right: 10, bottom: 12),
         child: Obx(() {
-          final isWaitingOtpCode = controller.isWaitingOtpCode.value;
+          final isWaitingOtpCode = controller.verifyCodeStatus == Verify.Waiting;
           if (isWaitingOtpCode) {
             return TimerCountdown(
               spacerWidth: 0,

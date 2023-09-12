@@ -11,11 +11,37 @@ class UnsubscriptionConfirmWarnDialog extends SimpleDialog {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      backgroundColor: Colors.transparent,
+      surfaceTintColor: Colors.white,
       contentPadding: EdgeInsets.zero,
       insetPadding: EdgeInsets.zero,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      title: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Align(
+              alignment: Alignment.topRight,
+              child: CustomImageView(
+                svgPath: Assets.svg.imgCloseBtn.path,
+                width: getHorizontalSize(15),
+                height: getVerticalSize(15),
+                onTap: () => Navigator.pop(context),
+              )),
+          Text(
+            l10ns.scheduleAnUnsubscribe,
+            overflow: TextOverflow.ellipsis,
+            textAlign: TextAlign.left,
+            style: CustomTextStyles.titleMedium18.copyWith(
+              letterSpacing: getHorizontalSize(0.04),
+            ),
+          ),
+        ],
+      ),
+      titleTextStyle: const TextStyle(
+          fontSize: 18,
+          fontWeight: FontWeight.w700,
+          fontFamily: FontFamily.pretendard),
       content: Container(
-          width: getHorizontalSize(328),
+          width: getHorizontalSize(307),
           padding: getPadding(all: 0),
           margin: getMargin(all: 0),
           decoration: AppDecoration.fillOnPrimaryContainer
@@ -24,29 +50,9 @@ class UnsubscriptionConfirmWarnDialog extends SimpleDialog {
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Padding(
-                    padding: getPadding(left: 25, top: 21, right: 25),
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            l10ns.scheduleAnUnsubscribe,
-                            overflow: TextOverflow.ellipsis,
-                            textAlign: TextAlign.left,
-                            style: CustomTextStyles.titleMedium18.copyWith(
-                              letterSpacing: getHorizontalSize(0.04),
-                            ),
-                          ),
-                          CustomImageView(
-                              svgPath: Assets.svg.imgCloseGray400Round.path,
-                              height: getSize(15),
-                              width: getSize(15),
-                              margin: getMargin(top: 3, bottom: 3),
-                              onTap: goBack),
-                        ])),
                 Container(
                     width: getHorizontalSize(278),
-                    margin: getMargin(left: 25, top: 38, right: 25),
+                    margin: getMargin(left: 25, top: 15, right: 25),
                     child: Text(
                       l10ns.youCanCancelAnytime,
                       maxLines: 3,

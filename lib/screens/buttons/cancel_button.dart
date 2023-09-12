@@ -15,11 +15,13 @@ class CancelButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomElevatedButton(
-      width: plural ? getHorizontalSize(161) : getHorizontalSize(104),
+      width: plural ? getHorizontalSize(145) : getHorizontalSize(104),
       height: getVerticalSize(52),
       text: l10ns.cancel,
       buttonStyle: plural
-          ? CustomButtonStyles.fillPrimaryBL10
+          ? CustomButtonStyles.fillPrimaryBL10.copyWith(
+            backgroundColor: MaterialStatePropertyAll(Color(0xFFB9BCC3)),
+          )
           : CustomButtonStyles.fillGray400C26,
       buttonTextStyle: plural
           ? CustomTextStyles.titleMedium16

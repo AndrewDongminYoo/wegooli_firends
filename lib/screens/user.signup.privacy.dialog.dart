@@ -23,6 +23,8 @@ class ConfirmDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      surfaceTintColor: Colors.white,
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -31,9 +33,8 @@ class ConfirmDialog extends StatelessWidget {
                 alignment: Alignment.topRight,
                 child: CustomImageView(
                   svgPath: Assets.svg.imgCloseBtn.path,
-                  width: getSize(18),
-                  height: getSize(18),
-                  margin: getMargin(right: 16),
+                  width: getHorizontalSize(15),
+                  height: getVerticalSize(15),
                   onTap: () => Navigator.pop(context),
                 )),
           title,
@@ -43,73 +44,34 @@ class ConfirmDialog extends StatelessWidget {
           fontSize: 18,
           fontWeight: FontWeight.w700,
           fontFamily: FontFamily.pretendard),
-      insetPadding: EdgeInsets.symmetric(horizontal: getHorizontalSize(16)),
       contentTextStyle: const TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.w400,
           fontFamily: FontFamily.pretendard),
-      content:
-          SingleChildScrollView(child: ListBody(children: <Widget>[content])),
+      content: SingleChildScrollView(
+          child: ListBody(children: <Widget>[
+        content
+      ])),
       actionsPadding: getPadding(all: 0),
       actions: <Widget>[
         SizedBox(
-          width: getSize(328),
-          height: getSize(52),
+          width: getHorizontalSize(328),
+          height: getVerticalSize(52),
           child: Row(
             children: [
-              TextButton(
-                onPressed: () => Navigator.pop(context, false),
-                style: ButtonStyle(
-                  shape: const MaterialStatePropertyAll(
-                    RoundedRectangleBorder(),
-                  ),
-                  foregroundColor:
-                      MaterialStateProperty.all<Color>(const Color(0xFF000000)),
-                  backgroundColor:
-                      const MaterialStatePropertyAll<Color>(Color(0xFFBABCC3)),
-                  fixedSize: MaterialStateProperty.all<Size>(
-                    Size(
-                      getSize(164),
-                      getSize(52),
-                    ),
-                  ),
-                ), // passing false
-                child: Text(
-                  cancelText,
-                  style: const TextStyle(
-                      fontWeight: FontWeight.w700,
-                      fontSize: 16,
-                      fontFamily: FontFamily.pretendard),
-                ),
-              ),
-              TextButton(
-                onPressed: () {
+              const CancelButton(plural: true),
+              CustomElevatedButton(
+                width: getHorizontalSize(145),
+                height: getVerticalSize(52),
+                text: confirmText,
+                buttonStyle: CustomButtonStyles.fillPrimaryBR10,
+                buttonTextStyle: CustomTextStyles.titleMedium16,
+                onTap: () {
                   if (confirmFunc != null) {
                     confirmFunc!();
                   }
                   Navigator.pop(context, false);
                 },
-                style: ButtonStyle(
-                  padding: const MaterialStatePropertyAll(EdgeInsets.zero),
-                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                  foregroundColor:
-                      MaterialStateProperty.all<Color>(const Color(0xFF000000)),
-                  backgroundColor: const MaterialStatePropertyAll<Color>(
-                      ColorConstant.actionPrimaryDefault),
-                  fixedSize: MaterialStateProperty.all<Size>(
-                    Size(
-                      getSize(164),
-                      getSize(52),
-                    ),
-                  ),
-                ), // passing true
-                child: Text(
-                  confirmText,
-                  style: const TextStyle(
-                      fontWeight: FontWeight.w700,
-                      fontSize: 16,
-                      fontFamily: FontFamily.pretendard),
-                ),
               ),
             ],
           ),

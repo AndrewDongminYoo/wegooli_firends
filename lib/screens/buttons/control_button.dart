@@ -18,7 +18,7 @@ class ControlButton extends StatelessWidget {
   final EdgeInsets? margin;
   @override
   Widget build(BuildContext context) {
-    var smartKeyButtonStyle = ButtonStyle(
+    final smartKeyButtonStyle = ButtonStyle(
       padding: MaterialStateProperty.all(EdgeInsets.zero),
       fixedSize: MaterialStateProperty.all(
           Size(getHorizontalSize(120), getVerticalSize(120))),
@@ -54,7 +54,7 @@ class ControlButton extends StatelessWidget {
           Container(
               width: getHorizontalSize(130),
               height: getVerticalSize(130),
-              decoration: ShapeDecoration(
+              decoration: const ShapeDecoration(
                   color: Colors.white,
                   shape: CircleBorder(),
                   shadows: [
@@ -62,21 +62,20 @@ class ControlButton extends StatelessWidget {
                       color: Color(0x19000000),
                       blurRadius: 10,
                       offset: Offset(2, 2),
-                      spreadRadius: 0,
                     )
                   ])),
           ElevatedButton(
             // statesController: controller,
             onPressed: () {
               if (onTap != null) {
-                onTap!();
+                onTap?.call();
               }
             },
             style: smartKeyButtonStyle,
             child: Container(
               width: getHorizontalSize(120),
               height: getVerticalSize(120),
-              decoration: ShapeDecoration(
+              decoration: const ShapeDecoration(
                 // color: Colors.white,
                 shape: CircleBorder(
                   side: BorderSide(width: 0.50, color: Color(0x33A4A8AF)),

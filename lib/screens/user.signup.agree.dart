@@ -59,9 +59,9 @@ class _AcceptTermsState extends State<AcceptTerms> {
   }
 
   // 전체 항목 동의
-  void setAllTermsAccepted(bool? value) async {
+  Future<void> setAllTermsAccepted(bool? value) async {
     if (!getAllTermsAccepted) {
-      for (int i = 0; i < acceptTerms.length; i++) {
+      for (var i = 0; i < acceptTerms.length; i++) {
         // if (acceptTerms[i].required) // 필수항목만
         await Future.delayed(delay);
         setState(() {
@@ -137,7 +137,7 @@ class AgreementItem extends StatefulWidget {
 class _AgreementItemState extends State<AgreementItem> {
   @override
   Widget build(BuildContext context) {
-    var term = widget.terms[widget.index];
+    final term = widget.terms[widget.index];
     return Padding(
         padding: getPadding(top: 14),
         child: Unfocused(

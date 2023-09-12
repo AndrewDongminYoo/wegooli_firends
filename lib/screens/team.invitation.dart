@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import '/core/app_export.dart';
 
 class TeamInvitation extends StatelessWidget {
-  TeamInvitation({super.key});
+  const TeamInvitation({super.key});
 
   @override
   Widget build(BuildContext context) {

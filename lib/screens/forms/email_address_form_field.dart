@@ -16,7 +16,7 @@ class EmailAddressFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var isLogin = authMode == AuthMode.login;
+    final isLogin = authMode == AuthMode.login;
     return CustomTextFormField(
       controller: controller.emailAddress,
       textInputType: TextInputType.emailAddress,
@@ -42,5 +42,5 @@ class EmailAddressFormField extends StatelessWidget {
 }
 
 bool isTestId(String value) {
-  return value.startsWith(r'test');
+  return value.startsWith('test');
 }

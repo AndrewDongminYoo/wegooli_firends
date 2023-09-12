@@ -8,11 +8,11 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 class MyProfilePage extends GetWidget<UserController> {
-  final vehicleController = VehicleController.to;
-  MyProfilePage({super.key});
+  const MyProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final vehicleController = VehicleController.to;
     return SafeArea(
       child: Scaffold(
         backgroundColor: theme.colorScheme.onPrimaryContainer,

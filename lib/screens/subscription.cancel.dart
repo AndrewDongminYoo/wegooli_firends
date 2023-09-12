@@ -8,10 +8,11 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 class UnsubscriptionConfirm extends GetWidget<VehicleController> {
-  UnsubscriptionConfirm({super.key});
+  const UnsubscriptionConfirm({super.key});
   @override
   Widget build(BuildContext context) {
-    var expireDate = DateTime.tryParse(controller.calcDate()) ?? DateTime.now();
+    final expireDate =
+        DateTime.tryParse(controller.calcDate()) ?? DateTime.now();
     return SafeArea(
         child: Scaffold(
       backgroundColor: theme.colorScheme.onPrimaryContainer,

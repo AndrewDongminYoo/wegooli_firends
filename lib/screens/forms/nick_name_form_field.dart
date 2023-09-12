@@ -16,7 +16,7 @@ class NickNameFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomTextFormField(
       textInputType: TextInputType.name,
-      autofillHints: [AutofillHints.nickname],
+      autofillHints: const [AutofillHints.nickname],
       controller: controller.nickname,
       margin: getMargin(top: 4),
       contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),

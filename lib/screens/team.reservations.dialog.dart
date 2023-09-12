@@ -5,25 +5,20 @@ import 'package:flutter/material.dart';
 import '/core/app_export.dart';
 
 class ReservationsCheckingPageDialog extends StatelessWidget {
-  ReservationsCheckingPageDialog({super.key, DateTime? selectedDay})
-      : _selectedDay = selectedDay;
+  const ReservationsCheckingPageDialog({super.key, this.selectedDay});
+  final DateTime? selectedDay;
 
-  final DateTime? _selectedDay;
-  final controller = UserController.to;
-
-  List<Schedule> get selectedDay {
-    return controller.schedules.where((schedule) {
-      if (_selectedDay == null) {
+  @override
+  Widget build(BuildContext context) {
+    final controller = UserController.to;
+    final schedules = controller.schedules.where((schedule) {
+      if (selectedDay == null) {
         return false;
       }
       final start = DateTime.parse(schedule.startAt!);
       final end = DateTime.parse(schedule.endAt!);
-      return isDateWithinRange(start, end, _selectedDay!);
+      return isDateWithinRange(start, end, selectedDay!);
     }).toList();
-  }
-
-  @override
-  Widget build(BuildContext context) {
     return AlertDialog(
         backgroundColor: Colors.transparent,
         contentPadding: EdgeInsets.zero,
@@ -62,14 +57,14 @@ class ReservationsCheckingPageDialog extends StatelessWidget {
                     ),
                   ),
                   StreamBuilder<Schedule>(
-                      stream: Stream.fromIterable(selectedDay),
+                      stream: Stream.fromIterable(schedules),
                       builder: (context, snapshot) {
                         if (snapshot.data == null) {
                           return Container(
                             margin: getMargin(bottom: 10),
                             width: getHorizontalSize(288),
                             height: getVerticalSize(75),
-                            child: Text('일정 없음'),
+                            child: const Text('일정 없음'),
                           );
                         } else {
                           return TeamReservationsItem(

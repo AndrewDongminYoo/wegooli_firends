@@ -17,7 +17,7 @@ class PrimaryAddressFormField extends StatelessWidget {
     return CustomTextFormField(
         enabled: false,
         textInputType: TextInputType.streetAddress,
-        autofillHints: [AutofillHints.addressCityAndState],
+        autofillHints: const [AutofillHints.addressCityAndState],
         hintText: l10ns.primaryAddress,
         controller: controller.primaryAddress,
         margin: getMargin(top: 10),

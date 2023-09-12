@@ -103,6 +103,7 @@ class MyApp extends StatelessWidget {
 
 Widget _errorWidgetBuilder(dynamic context, Widget? child) {
   Widget error = CustomImageView(imagePath: Assets.images.imgAcorn.path);
+
   /// `child` 위젯이 `Scaffold` 또는 `Navigator`의 인스턴스인지 확인
   /// `error` 위젯을 가운데에 위치하는 Scaffold로 대체.
   /// * 위젯 트리 구축 중 발생하는 오류를 처리하고, 오류 발생 시 대체 UI를 제공.
@@ -113,9 +114,66 @@ Widget _errorWidgetBuilder(dynamic context, Widget? child) {
   if (child != null) {
     return child;
   } else {
-    Get.showSnackbar(GetSnackBar(
+    Get.showSnackbar(const GetSnackBar(
         backgroundColor: Colors.red,
         message: '예상치 못한 오류가 발생했습니다.\n 개발자에게 알려주세요 🙈'));
     throw CustomException('📵');
   }
+}
+
+Route<dynamic>? onGenerateRoute(RouteSettings settings) {
+  late Widget page;
+  switch (settings.name) {
+    case AppRoutes.home:
+      if (kDebugMode || kProfileMode) {
+        page = const GatewayScreen();
+      } else {
+        page = const SplashLoading();
+      }
+    case AppRoutes.appGateway:
+      page = const GatewayScreen();
+    case AppRoutes.idPwLogin:
+      page = const LoginWithIdAndPassword();
+    case AppRoutes.acceptTerms:
+      page = const AcceptTerms();
+    case AppRoutes.phoneAuth:
+      page = const ValidatePhone();
+    case AppRoutes.registerCreditCard:
+      page = const RegisterCreditCard();
+    case AppRoutes.registerLicense:
+      page = const RegisterLicense();
+    case AppRoutes.registerZipCode:
+      page = const RegisterZipCode();
+    case AppRoutes.registerSuccess:
+      page = const RegisterSuccess();
+    case AppRoutes.sharedSchedule:
+      page = const MainApplication();
+    case AppRoutes.teamInvitation:
+      page = const TeamInvitation();
+    case AppRoutes.bookDatetimePicker:
+      page = const DatetimePickerBottomSheet();
+    case AppRoutes.reservationsCheck:
+      page = const ReservationsCheckingPageDialog();
+    case AppRoutes.chatWithTeam:
+      page = const DashChatWithFriendsPage();
+    case AppRoutes.carSmartKey:
+      page = const SmartKeyAvailablePage();
+    case AppRoutes.carStatusInfo:
+      page = const CarStatusInformation();
+    case AppRoutes.registeredCardList:
+      page = const RegisteredCreditCardList();
+    case AppRoutes.myProfile:
+      page = const MyProfilePage();
+    case AppRoutes.profileInfoPage:
+      page = const ProfileInfoPage();
+    case AppRoutes.noSubscription:
+      page = const SubscriptionInfoNoService();
+    case AppRoutes.unsubscribeConfirm:
+      page = const UnsubscriptionConfirm();
+    case AppRoutes.upcomingUnsubscription:
+      page = const UpcomingUnsubscription();
+    default: // Do nothing if there is no route defined for the action
+      return null;
+  }
+  return GetPageRoute<dynamic>(page: () => page);
 }

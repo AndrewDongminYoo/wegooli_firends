@@ -38,7 +38,6 @@ class AppRoutes {
 
   /// 마이페이지 관련
   static const String registeredCardList = '/registered_card_list';
-  static const String sendingInvitation = '/sending_invitation';
   static const String myProfile = '/my_profile';
   static const String profileInfoPage = '/profile_info';
   static const String noSubscription = '/no_subscription';
@@ -64,7 +63,7 @@ class AppRoutes {
     GetPage(
       bindings: [UserAccountBinding()],
       name: myProfile,
-      page: () => MyProfilePage(),
+      page: MyProfilePage.new,
     ),
     GetPage(
       bindings: [UserAccountBinding()],

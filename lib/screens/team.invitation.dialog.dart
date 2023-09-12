@@ -68,9 +68,10 @@ class _SendingInvitationDialogState extends State<SendingInvitationDialog> {
                           ])),
                   InvitationCodeFormField(
                       controller: controller, readOnly: widget.copyMode),
-                  widget.copyMode
-                      ? CopyInvitationButton(controller: controller)
-                      : ConfirmInvitationButton(controller: controller),
+                  if (widget.copyMode)
+                    CopyInvitationButton(controller: userController)
+                  else
+                    ConfirmInvitationButton(controller: controller),
                 ]),
           ),
         ));

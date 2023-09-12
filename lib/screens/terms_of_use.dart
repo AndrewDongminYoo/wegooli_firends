@@ -18,7 +18,7 @@ class TermsOfUseView extends StatefulWidget {
   final String content;
 
   @override
-  _TermsOfUseViewState createState() => _TermsOfUseViewState();
+  State<TermsOfUseView> createState() => _TermsOfUseViewState();
 }
 
 class _TermsOfUseViewState extends State<TermsOfUseView> {
@@ -31,10 +31,9 @@ class _TermsOfUseViewState extends State<TermsOfUseView> {
       ),
       body: Markdown(
         controller: controller,
-        selectable: false,
         data: widget.content,
         styleSheetTheme: MarkdownStyleSheetBaseTheme.material,
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         padding: getPadding(all: 20),
       ),
     );

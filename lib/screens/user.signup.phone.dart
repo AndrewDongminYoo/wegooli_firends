@@ -8,13 +8,13 @@ import 'package:get/get.dart';
 import '/core/app_export.dart';
 
 class ValidatePhone extends GetWidget<UserController> {
-  ValidatePhone({super.key});
-  final _nameText = FocusNode();
-  final _birthday = FocusNode();
-  final _socialId = FocusNode();
-  final _phoneNum = FocusNode();
+  const ValidatePhone({super.key});
   @override
   Widget build(BuildContext context) {
+    final _nameText = FocusNode();
+    final _birthday = FocusNode();
+    final _socialId = FocusNode();
+    final _phoneNum = FocusNode();
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
@@ -28,7 +28,9 @@ class ValidatePhone extends GetWidget<UserController> {
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                   CustomInputLabel(labelText: l10ns.name),
                   KoreanNameFormField(
-                      controller: controller, focusNode: _nameText),
+                    controller: controller,
+                    focusNode: _nameText,
+                  ),
                 ]),
                 Padding(
                     padding: getPadding(top: 26, bottom: 7),
@@ -48,15 +50,18 @@ class ValidatePhone extends GetWidget<UserController> {
                                 ),
                                 const Text('-', style: TextStyle(fontSize: 24)),
                                 SocialSecurityNumberFormField(
-                                    controller: controller,
-                                    focusNode: _socialId),
+                                  controller: controller,
+                                  focusNode: _socialId,
+                                ),
                               ]),
                           CustomGuideText(
                               text: l10ns
                                   .subscriptionsAreRestrictedToThoseUnderTheAgeOf26),
                         ])),
                 SMSValidationFormScreen(
-                    controller: controller, focusNode: _phoneNum),
+                  controller: controller,
+                  focusNode: _phoneNum,
+                ),
               ])),
         ),
         bottomNavigationBar:

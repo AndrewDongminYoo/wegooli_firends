@@ -83,7 +83,6 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         theme: theme,
-        darkTheme: ThemeData.dark(useMaterial3: true),
         builder: _errorWidgetBuilder,
         defaultTransition: Transition.cupertino,
         navigatorKey: Get.key,
@@ -97,6 +96,7 @@ class MyApp extends StatelessWidget {
             isError ? Logger.log(text) : print('[DEBUG] $text'),
         navigatorObservers: [MyApp.routeObserver],
         initialRoute: initialRoute,
+        // onGenerateRoute: onGenerateRoute,
         getPages: AppRoutes.pages);
   }
 }

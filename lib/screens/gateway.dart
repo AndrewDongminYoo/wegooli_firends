@@ -43,9 +43,6 @@ class GatewayScreen extends StatelessWidget {
                             routeDestination: AppRoutes.idPwLogin,
                             routeName: l10ns.loginWithIdAndPassword),
                         RouteItem(
-                            routeDestination: AppRoutes.acceptTerms,
-                            routeName: l10ns.signupAcceptTerms),
-                        RouteItem(
                             routeDestination: AppRoutes.phoneAuth,
                             routeName: l10ns.loginValidatePhoneAuth),
                         RouteItem(
@@ -93,6 +90,9 @@ class GatewayScreen extends StatelessWidget {
                         RouteModal(
                             bottomSheet: const DatetimePickerBottomSheet(),
                             dialogTitle: l10ns.reservationDatetimePicker),
+                        RouteModal(
+                            bottomSheet: const AcceptTerms(),
+                            dialogTitle: l10ns.signupAcceptTerms),
                       ],
                     )),
               )),

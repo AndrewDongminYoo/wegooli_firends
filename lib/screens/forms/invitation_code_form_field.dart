@@ -8,13 +8,15 @@ class InvitationCodeFormField extends StatelessWidget {
   const InvitationCodeFormField({
     super.key,
     required this.controller,
+    this.readOnly = false,
   });
 
   final VehicleController controller;
-
+  final bool readOnly;
   @override
   Widget build(BuildContext context) {
     return CustomTextFormField(
+        enabled: !readOnly,
         controller: controller.invitation,
         hintText: 'xxxx-xxxx-xxxx-xxxx',
         margin: getMargin(left: 25, top: 17, right: 25),

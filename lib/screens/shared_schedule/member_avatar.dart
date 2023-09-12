@@ -17,42 +17,41 @@ class MemberAvatar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-        padding: getPadding(left: 15),
-        child: Column(children: [
-          Card(
-            clipBehavior: Clip.antiAlias,
-            elevation: 0,
-            margin: EdgeInsets.zero,
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadiusStyle.circleBorder25),
-            child: Container(
-              height: getSize(50),
-              width: getSize(50),
-              padding: getPadding(all: 4),
-              decoration: AppDecoration.fillDeepPurple.copyWith(
-                  color: ColorUtils.stringToColor(personalColor),
-                  borderRadius: BorderRadiusStyle.circleBorder25),
-              child: Stack(children: [
-                CustomImageView(
-                    imagePath: avatarImagePath,
-                    height: getSize(42),
-                    width: getSize(42),
-                    radius: BorderRadius.circular(getHorizontalSize(21)),
-                    alignment: Alignment.center),
-              ]),
-            ),
+    return Container(
+      height: getVerticalSize(71),
+      // width: getHorizontalSize(50),
+      child: Column(children: [
+        Container(
+          height: getSize(50),
+          width: getSize(50),
+          margin: getMargin(bottom: 3),
+          alignment: Alignment.center,
+          // padding: getPadding(all: 4),
+          decoration: AppDecoration.fillDeepPurple.copyWith(
+            color: ColorUtils.stringToColor(personalColor),
+            borderRadius: BorderRadius.circular(32),
           ),
-          Padding(
-              padding: getPadding(top: 4),
-              child: Text(
-                name,
-                overflow: TextOverflow.ellipsis,
-                textAlign: TextAlign.left,
-                style: theme.textTheme.bodySmall!.copyWith(
-                  letterSpacing: getHorizontalSize(0.02),
-                ),
-              )),
-        ]));
+          child: CustomImageView(
+              imagePath: avatarImagePath,
+              height: getSize(42),
+              width: getSize(42),
+              radius: BorderRadius.circular(32),
+              alignment: Alignment.center),
+        ),
+        Text(
+          name,
+          overflow: TextOverflow.ellipsis,
+          textAlign: TextAlign.left,
+          style: TextStyle(
+            color: Color(0xFF222222),
+            fontSize: 12,
+            fontFamily: FontFamily.pretendard,
+            fontWeight: FontWeight.w400,
+            height: 1.50,
+            letterSpacing: 0.02,
+          ),
+        )
+      ]),
+    );
   }
 }

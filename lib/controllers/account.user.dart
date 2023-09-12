@@ -12,6 +12,7 @@ import '/core/app_export.dart';
 class UserController extends GetxController {
   final _service = UserAccountService();
   final _teamAccountService = TeamAccountService();
+  final _teamService = TeamService();
   final _reservationsService = ReservationsService();
   static UserController get to => Get.isRegistered<UserController>()
       ? Get.find<UserController>()
@@ -240,5 +241,13 @@ class UserController extends GetxController {
     } catch (e) {
       return popWithValue(Get.context!, false);
     }
+  }
+
+  Future<String?> getTeamCode() async {
+    if (firstTeamSeq == null) {
+      return null;
+    }
+    final teamModel = await _teamService.findTeamBySeqOrNull(firstTeamSeq!);
+    return teamModel?.teamCode;
   }
 }

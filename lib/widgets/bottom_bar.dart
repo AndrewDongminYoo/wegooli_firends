@@ -24,23 +24,23 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
 
   List<BottomMenuModel> bottomMenuList = [
     BottomMenuModel(
-      iconPath: Assets.svg.imgCalOnPrimary.path,
+      iconPath: Assets.svg.imgCalGray500.path,
       activeIconPath: Assets.svg.imgCalOnPrimary.path,
       title: l10ns.schedule,
     ),
     BottomMenuModel(
       iconPath: Assets.svg.imgChatGray400.path,
-      activeIconPath: Assets.svg.imgChatGray400.path,
+      activeIconPath: Assets.svg.imgChatOnPrimary.path,
       title: l10ns.chat,
     ),
     BottomMenuModel(
       iconPath: Assets.svg.imgKeyGray400.path,
-      activeIconPath: Assets.svg.imgKeyGray400.path,
+      activeIconPath: Assets.svg.imgKeyBlueGray900.path,
       title: l10ns.smartKey,
     ),
     BottomMenuModel(
       iconPath: Assets.svg.imgUser2.path,
-      activeIconPath: Assets.svg.imgUser2.path,
+      activeIconPath: Assets.svg.imgUser3.path,
       title: l10ns.myPage,
     ),
   ];

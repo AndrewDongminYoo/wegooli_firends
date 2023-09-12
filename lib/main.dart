@@ -102,7 +102,10 @@ class MyApp extends StatelessWidget {
 }
 
 Widget _errorWidgetBuilder(dynamic context, Widget? child) {
-  Widget error = const Text('알 수 없는 에러 발생');
+  Widget error = CustomImageView(imagePath: Assets.images.imgAcorn.path);
+  /// `child` 위젯이 `Scaffold` 또는 `Navigator`의 인스턴스인지 확인
+  /// `error` 위젯을 가운데에 위치하는 Scaffold로 대체.
+  /// * 위젯 트리 구축 중 발생하는 오류를 처리하고, 오류 발생 시 대체 UI를 제공.
   if (child is Scaffold || child is Navigator) {
     error = Scaffold(body: Center(child: error));
   }
@@ -110,6 +113,9 @@ Widget _errorWidgetBuilder(dynamic context, Widget? child) {
   if (child != null) {
     return child;
   } else {
-    throw CustomException('에러 위젯이 래핑할 자식 위젯이 없습니다.');
+    Get.showSnackbar(GetSnackBar(
+        backgroundColor: Colors.red,
+        message: '예상치 못한 오류가 발생했습니다.\n 개발자에게 알려주세요 🙈'));
+    throw CustomException('📵');
   }
 }

@@ -38,26 +38,26 @@ class _CustomBottomAppBarState extends State<CustomBottomAppBar> {
           child: Row(
             children: [
               IconButton(
-                icon: Assets.svg.imgCalOnPrimary.svg(),
+                icon: Assets.svg.imgCalGray500.svg(),
                 selectedIcon: Assets.svg.imgCalOnPrimary.svg(),
                 tooltip: l10ns.schedule,
                 onPressed: goSharedSchedule,
               ),
               IconButton(
-                icon: Assets.svg.imgChatGray400.svg(),
-                selectedIcon: Assets.svg.imgChatGray400.svg(),
+                icon: Assets.svg.imgChatGray500.svg(),
+                selectedIcon: Assets.svg.imgChatOnPrimary.svg(),
                 tooltip: l10ns.chat,
                 onPressed: goChatWithTeam,
               ),
               IconButton(
                 icon: Assets.svg.imgKeyGray400.svg(),
-                selectedIcon: Assets.svg.imgKeyGray400.svg(),
+                selectedIcon: Assets.svg.imgKeyBlueGray900.svg(),
                 tooltip: l10ns.smartKey,
                 onPressed: goCarSmartKey,
               ),
               IconButton(
                 icon: Assets.svg.imgUser2.svg(),
-                selectedIcon: Assets.svg.imgUser2.svg(),
+                selectedIcon: Assets.svg.imgUser3.svg(),
                 tooltip: l10ns.myPage,
                 onPressed: goMyProfile,
               ),

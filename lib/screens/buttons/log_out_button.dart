@@ -15,7 +15,7 @@ class LogOutButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomElevatedButton(
-        text: l10ns.signOut,
+        text: l10ns.logOut,
         margin: getMargin(top: 30, bottom: 20),
         buttonStyle: CustomButtonStyles.fillPrimaryC26,
         buttonTextStyle: CustomTextStyles.titleMedium18,

@@ -31,41 +31,51 @@ class ProfileInfoPage extends GetWidget<UserController> {
                     children: [
                       CustomImageView(
                         margin: getMargin(right: 16),
-                        imagePath: Assets.images.imgAvatar5.path,
+                        imagePath: Assets.images.imgAvatar1.path,
                         height: getSize(65),
                         width: getSize(65),
-                        radius: BorderRadius.circular(
-                          getHorizontalSize(40),
-                        ),
+                        radius: BorderRadius.circular(40),
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            controller.currentUser.value.nickname ??
-                                l10ns.nickname,
-                            // overflow: TextOverflow.ellipsis,
-                            // textAlign: TextAlign.left,
-                            style: CustomTextStyles.titleMedium18.copyWith(
-                              letterSpacing: getHorizontalSize(0.04),
+                          Container(
+                            margin: getMargin(bottom: 5),
+                            child: Text(
+                              controller.currentUser.value.nickname ??
+                                  l10ns.nickname,
+                              style: TextStyle(
+                                color: Color(0xFF222222),
+                                fontSize: 16,
+                                fontFamily: FontFamily.pretendard,
+                                fontWeight: FontWeight.w700,
+                                height: 1.50,
+                                letterSpacing: 0.03,
+                              ),
                             ),
                           ),
                           Text(
                             controller.currentUser.value.phoneNumber ??
                                 '010-1234-5678',
-                            // overflow: TextOverflow.ellipsis,
-                            // textAlign: TextAlign.left,
-                            style: theme.textTheme.bodyLarge!.copyWith(
-                              letterSpacing: getHorizontalSize(0.03),
+                            style: TextStyle(
+                              color: Color(0x66222222),
+                              fontSize: 12,
+                              fontFamily: FontFamily.pretendard,
+                              fontWeight: FontWeight.w400,
+                              height: 1.50,
+                              letterSpacing: 0.02,
                             ),
                           ),
                           Text(
                             controller.currentUser.value.email ??
                                 'abc@gmail.com',
-                            // overflow: TextOverflow.ellipsis,
-                            // textAlign: TextAlign.left,
-                            style: theme.textTheme.bodyLarge!.copyWith(
-                              letterSpacing: getHorizontalSize(0.03),
+                            style: TextStyle(
+                              color: Color(0x66222222),
+                              fontSize: 12,
+                              fontFamily: FontFamily.pretendard,
+                              fontWeight: FontWeight.w400,
+                              height: 1.50,
+                              letterSpacing: 0.02,
                             ),
                           ),
                         ],

@@ -13,8 +13,7 @@ class UnsubscriptionConfirm extends GetWidget<VehicleController> {
   Widget build(BuildContext context) {
     final expireDate =
         DateTime.tryParse(controller.calcDate()) ?? DateTime.now();
-    return SafeArea(
-        child: Scaffold(
+    return Scaffold(
       backgroundColor: theme.colorScheme.onPrimaryContainer,
       appBar: CustomAppBar.getDefaultAppBar(l10ns.scheduleAnUnsubscribe),
       body: SingleChildScrollView(
@@ -63,6 +62,6 @@ class UnsubscriptionConfirm extends GetWidget<VehicleController> {
                       ])),
             ],
           )),
-    ));
+    );
   }
 }

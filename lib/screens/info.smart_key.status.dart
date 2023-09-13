@@ -12,8 +12,7 @@ class CarStatusInformation extends GetWidget<VehicleController> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Scaffold(
+    return Scaffold(
       backgroundColor: theme.colorScheme.onPrimaryContainer,
       appBar: CustomAppBar.getDefaultAppBar(l10ns.carStatusInformation),
       body: SizedBox(
@@ -277,6 +276,6 @@ class CarStatusInformation extends GetWidget<VehicleController> {
               ),
             ],
           )),
-    ));
+    );
   }
 }

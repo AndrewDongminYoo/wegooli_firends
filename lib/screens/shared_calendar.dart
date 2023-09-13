@@ -16,8 +16,7 @@ class _SharedCalendarState extends State<SharedCalendar> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Scaffold(
+    return Scaffold(
       backgroundColor: theme.colorScheme.onPrimaryContainer,
       appBar: CustomAppBar.getFriendsTypoAppBar(),
       body: SizedBox(
@@ -38,6 +37,6 @@ class _SharedCalendarState extends State<SharedCalendar> {
                   ],
                 )),
           )),
-    ));
+    );
   }
 }

@@ -26,8 +26,7 @@ class _RegisterCreditCardState extends State<RegisterCreditCard> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Scaffold(
+    return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: theme.colorScheme.onPrimaryContainer,
       appBar: CustomAppBar.getDefaultAppBar(l10ns.cardRegistration),
@@ -77,6 +76,6 @@ class _RegisterCreditCardState extends State<RegisterCreditCard> {
         // decoration: AppDecoration.shadow,
         child: RegisterCardButton(controller: controller),
       ),
-    ));
+    );
   }
 }

@@ -12,8 +12,7 @@ class RegisterLicense extends GetWidget<LicenseController> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Scaffold(
+    return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: theme.colorScheme.onPrimaryContainer,
       appBar: CustomAppBar.getDefaultAppBar(l10ns.driverSLicenseRegistration),
@@ -69,6 +68,6 @@ class RegisterLicense extends GetWidget<LicenseController> {
             ])),
       ),
       bottomNavigationBar: SignUpLicenseNextButton(controller: controller),
-    ));
+    );
   }
 }

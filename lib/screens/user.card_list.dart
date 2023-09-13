@@ -23,8 +23,7 @@ class _RegisteredCreditCardListState extends State<RegisteredCreditCardList> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Scaffold(
+    return Scaffold(
       // backgroundColor: theme.colorScheme.onPrimaryContainer,
       // backgroundColor: const Color(0xFFFFC107),
       appBar: CustomAppBar.getDefaultAppBar(l10ns.cardRegistration),
@@ -83,6 +82,6 @@ class _RegisteredCreditCardListState extends State<RegisteredCreditCardList> {
               ],
             )),
       ),
-    ));
+    );
   }
 }

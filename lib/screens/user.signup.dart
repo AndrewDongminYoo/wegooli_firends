@@ -13,8 +13,7 @@ class RegisterZipCode extends GetWidget<UserController> {
   @override
   Widget build(BuildContext context) {
     const authMode = AuthMode.register;
-    return SafeArea(
-        child: Scaffold(
+    return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: theme.colorScheme.onPrimaryContainer,
       appBar: CustomAppBar.getDefaultAppBar(l10ns.signUp),
@@ -76,6 +75,6 @@ class RegisterZipCode extends GetWidget<UserController> {
             ])),
       ),
       bottomNavigationBar: SignUpFilledInButton(controller: controller),
-    ));
+    );
   }
 }

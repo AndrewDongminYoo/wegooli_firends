@@ -75,8 +75,7 @@ class _AcceptTermsState extends State<AcceptTerms> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Scaffold(
+    return Scaffold(
       backgroundColor: theme.colorScheme.onPrimaryContainer,
       appBar: CustomAppBar.minimalAppBar(l10ns.acceptTerms),
       body: Unfocused(
@@ -116,7 +115,7 @@ class _AcceptTermsState extends State<AcceptTerms> {
       ),
       bottomNavigationBar: SignUpAcceptTermsNextButton(
           acceptTerms: acceptTerms, controller: controller),
-    ));
+    );
   }
 }
 

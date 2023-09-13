@@ -13,53 +13,51 @@ class MyProfilePage extends GetWidget<UserController> {
   @override
   Widget build(BuildContext context) {
     final vehicleController = VehicleController.to;
-    return SafeArea(
-      child: Scaffold(
-        resizeToAvoidBottomInset: false,
-        backgroundColor: theme.colorScheme.onPrimaryContainer,
-        appBar: CustomAppBar.getFriendsTypoAppBar(),
-        body: Unfocused(
-          child: SizedBox(
-              width: mediaQueryData.size.width,
-              // height: mediaQueryData.size.height,
-              // color: const Color(0xFFFFC107),
-              child: Column(
-                children: [
-                  MyProfileSection(controller: controller),
-                  const GrayHorizonSeparator(),
-                  SizedBox(
-                    width: mediaQueryData.size.width,
-                    // color: const Color(0xFFFF6F00),
-                    child: Column(children: [
-                      ListItem(
-                          svgPath: Assets.svg.imgEdit.path,
-                          text: l10ns.personalInfo,
-                          onTap: () {
-                            goProfileInfoPage();
-                          }),
-                      ListItem(
-                          svgPath: Assets.svg.imgInformation.path,
-                          text: l10ns.subscriptionInformation,
-                          onTap: () {
-                            if (vehicleController
-                                    .subscriptionModel.value.carModel ==
-                                null) {
-                              goNoSubscription();
-                            } else {
-                              goUnsubscribeInfo();
-                            }
-                          }),
-                      ListItem(
-                          svgPath: Assets.svg.imgCreditCard.path,
-                          text: l10ns.cardRegistration,
-                          onTap: () {
-                            goRegisteredCardList();
-                          }),
-                    ]),
-                  ),
-                ],
-              )),
-        ),
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+      backgroundColor: theme.colorScheme.onPrimaryContainer,
+      appBar: CustomAppBar.getFriendsTypoAppBar(),
+      body: Unfocused(
+        child: SizedBox(
+            width: mediaQueryData.size.width,
+            // height: mediaQueryData.size.height,
+            // color: const Color(0xFFFFC107),
+            child: Column(
+              children: [
+                MyProfileSection(controller: controller),
+                const GrayHorizonSeparator(),
+                SizedBox(
+                  width: mediaQueryData.size.width,
+                  // color: const Color(0xFFFF6F00),
+                  child: Column(children: [
+                    ListItem(
+                        svgPath: Assets.svg.imgEdit.path,
+                        text: l10ns.personalInfo,
+                        onTap: () {
+                          goProfileInfoPage();
+                        }),
+                    ListItem(
+                        svgPath: Assets.svg.imgInformation.path,
+                        text: l10ns.subscriptionInformation,
+                        onTap: () {
+                          if (vehicleController
+                                  .subscriptionModel.value.carModel ==
+                              null) {
+                            goNoSubscription();
+                          } else {
+                            goUnsubscribeInfo();
+                          }
+                        }),
+                    ListItem(
+                        svgPath: Assets.svg.imgCreditCard.path,
+                        text: l10ns.cardRegistration,
+                        onTap: () {
+                          goRegisteredCardList();
+                        }),
+                  ]),
+                ),
+              ],
+            )),
       ),
     );
   }

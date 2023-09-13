@@ -326,22 +326,6 @@
   "@name": {
     "description": "사용자의 이름"
   },
-  "name1": "람구리",
-  "@name1": {
-    "description": "TODO: 이름 예시. 프로덕션 앱에 나가면 안됨!!"
-  },
-  "name2": "김영희",
-  "@name2": {
-    "description": "TODO: 이름 예시. 프로덕션 앱에 나가면 안됨!!"
-  },
-  "name3": "홍길동",
-  "@name3": {
-    "description": "TODO: 이름 예시. 프로덕션 앱에 나가면 안됨!!"
-  },
-  "name4": "김희영",
-  "@name4": {
-    "description": "TODO: 이름 예시. 프로덕션 앱에 나가면 안됨!!"
-  },
   "nickname": "닉네임",
   "@nickname": {
     "description": "별명 또는 사용자 정의 닉네임"

@@ -13,6 +13,9 @@ class FontFamily {
   /// Font family: CookieRun
   static const String cookieRun = 'CookieRun';
 
+  /// Font family: CustomIcons
+  static const String customIcons = 'CustomIcons';
+
   /// Font family: Inter
   static const String inter = 'Inter';
 

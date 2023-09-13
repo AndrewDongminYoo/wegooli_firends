@@ -23,7 +23,7 @@ class CalendarBody extends GetView<ScheduleController> {
             child: Align(
                 child: TableCalendar<Schedule>(
               shouldFillViewport: true,
-              calendarFormat: controller.calendarFormat,
+              calendarFormat: CalendarFormat.month,
               daysOfWeekHeight: 30,
               eventLoader: _eventLoader,
               firstDay: controller.firstDay,
@@ -66,7 +66,7 @@ class CalendarBody extends GetView<ScheduleController> {
   }
 
   void _onPageChanged(DateTime focusedDay) {
-    controller.focusedDay = focusedDay;
+    // controller.focusedDay = focusedDay;
   }
 
   void _onFormatChanged(CalendarFormat format) {

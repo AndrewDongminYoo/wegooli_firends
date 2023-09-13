@@ -620,8 +620,8 @@ class NoticeControllerApi {
   ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future] containing a [Response] with a [List<Notice>] as data
-  /// Throws [DioException] if API call or serialization fails
+  /// [List<Notice>] 타입 [Response]을 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<List<Notice>>> selectNoticeList({
     required SelectNoticeRequest request,
     CancelToken? cancelToken,
@@ -779,8 +779,8 @@ class NoticeControllerApi {
   ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future] containing a [Response] with a [List<Push>] as data
-  /// Throws [DioException] if API call or serialization fails
+  /// [List<Push>] 타입 [Response]을 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<List<Push>>> selectPushList({
     required SelectPushRequest request,
     CancelToken? cancelToken,
@@ -937,8 +937,8 @@ class NoticeControllerApi {
   ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future] containing a [Response] with a [List<Sms>] as data
-  /// Throws [DioException] if API call or serialization fails
+  /// [List<Sms>] 타입 [Response]을 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<List<Sms>>> selectSmsList({
     required SelectSmsRequest request,
     CancelToken? cancelToken,

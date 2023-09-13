@@ -25,8 +25,8 @@ class CarControllerApi {
   ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future]
-  /// Throws [DioException] if API call or serialization fails
+  /// [Response<void>]를 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<void>> deleteCar({
     required String carNum,
     CancelToken? cancelToken,
@@ -77,8 +77,8 @@ class CarControllerApi {
   ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future]
-  /// Throws [DioException] if API call or serialization fails
+  /// [Response<void>]를 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<void>> registCar({
     required CarRequest carRequest,
     CancelToken? cancelToken,
@@ -223,8 +223,8 @@ class CarControllerApi {
   ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future] containing a [Response] with a [List<CarModel>] as data
-  /// Throws [DioException] if API call or serialization fails
+  /// [List<CarModel>] 타입 [Response]을 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<List<CarModel>>> selectCarList({
     required CarRequest request,
     CancelToken? cancelToken,
@@ -306,8 +306,8 @@ class CarControllerApi {
   ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future]
-  /// Throws [DioException] if API call or serialization fails
+  /// [Response<void>]를 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<void>> updateCar({
     required CarRequest carRequest,
     required String carNum,

@@ -29,8 +29,8 @@ class OperatorPageControllerApi {
   ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future] containing a [Response] with a [List<OperatorCarModel>] as data
-  /// Throws [DioException] if API call or serialization fails
+  /// [List<OperatorCarModel>] 타입 [Response]을 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<List<OperatorCarModel>>> selectOperatorCarList({
     required OperatorCarRequest request,
     CancelToken? cancelToken,
@@ -112,8 +112,8 @@ class OperatorPageControllerApi {
   ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future] containing a [Response] with a [List<OperatorTeamModel>] as data
-  /// Throws [DioException] if API call or serialization fails
+  /// [List<OperatorTeamModel>] 타입 [Response]을 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<List<OperatorTeamModel>>> selectOperatorTeamList({
     required OperatorTeamRequest request,
     CancelToken? cancelToken,
@@ -195,8 +195,8 @@ class OperatorPageControllerApi {
   ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future] containing a [Response] with a [List<OperatorUserModel>] as data
-  /// Throws [DioException] if API call or serialization fails
+  /// [List<OperatorUserModel>] 타입 [Response]을 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<List<OperatorUserModel>>> selectOperatorUserList({
     required OperatorUserRequest request,
     CancelToken? cancelToken,

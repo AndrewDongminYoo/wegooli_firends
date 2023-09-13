@@ -12,7 +12,7 @@ All URIs are relative to *http://13.209.6.245:8089*
 | ---------------------------------------------------------------------------- | -------------------------------- | ----------- |
 | [**carLogTop**](MetisControllerApi.md#carlogtop)                             | **GET** /metis/history/carLogTop |
 | [**history**](MetisControllerApi.md#history)                                 | **GET** /metis/history           |
-| [**receivced**](MetisControllerApi.md#receivced)                             | **GET** /metis/m2m/digiparts     |
+| [**received**](MetisControllerApi.md#received)                               | **GET** /metis/m2m/digiparts     |
 | [**receiveTerminalResponse**](MetisControllerApi.md#receiveterminalresponse) | **GET** /metis/digiparts         |
 
 > carLogTop
@@ -105,8 +105,8 @@ try {
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-> receivced
-> String receivced()
+> received
+> String received()
 
 ### Example
 
@@ -119,10 +119,10 @@ import 'package:wegooli_friends/lib.dart';
 final api = wegooli.metisApi;
 
 try {
-    final response = api.receivced();
+    final response = api.received();
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling MetisControllerApi->receivced: $e\n');
+    print('Exception when calling MetisControllerApi->received: $e\n');
 }
 ```
 

@@ -795,8 +795,8 @@ class UserControllerApi {
   ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future] containing a [Response] with a [List<SelectUserDto>] as data
-  /// Throws [DioException] if API call or serialization fails
+  /// [List<SelectUserDto>] 타입 [Response]을 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<List<SelectUserDto>>> selectUserList({
     required SelectUserRequest request,
     CancelToken? cancelToken,

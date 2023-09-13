@@ -77,8 +77,7 @@ class MyProfileSection extends StatelessWidget {
     return Container(
       // color: const Color(0xFFFFB300),
       height: getVerticalSize(105),
-      padding:
-          getPadding(top: 20, bottom: 20, left: 16, right: 16),
+      padding: getPadding(top: 20, bottom: 20, left: 16, right: 16),
       child: Row(
         children: [
           CustomImageView(
@@ -94,7 +93,7 @@ class MyProfileSection extends StatelessWidget {
               Container(
                 margin: getMargin(bottom: 5),
                 child: Text(
-                  controller.currentUser.nickname,
+                  controller.currentUser.nickname!,
                   style: TextStyle(
                     color: Color(0xFF222222),
                     fontSize: 14,
@@ -106,7 +105,7 @@ class MyProfileSection extends StatelessWidget {
                 ),
               ),
               Text(
-                controller.currentUser.phoneNumber,
+                controller.currentUser.phoneNumber!,
                 style: TextStyle(
                   color: Color(0x66222222),
                   fontSize: 12,
@@ -117,7 +116,7 @@ class MyProfileSection extends StatelessWidget {
                 ),
               ),
               Text(
-                controller.currentUser.email,
+                controller.currentUser.email!,
                 style: TextStyle(
                   color: Color(0x66222222),
                   fontSize: 10,

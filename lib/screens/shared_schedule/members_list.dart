@@ -19,7 +19,7 @@ class MembersList extends StatelessWidget {
                 StreamBuilder<TeamAccountModel>(
                     stream: Stream.fromIterable(controller.members),
                     builder: (_, snapshot) {
-                      final currentUser = controller.currentUser.value;
+                      final currentUser = controller.currentUser;
                       final member = snapshot.data;
                       if (member == null ||
                           currentUser.id == member.accountId) {

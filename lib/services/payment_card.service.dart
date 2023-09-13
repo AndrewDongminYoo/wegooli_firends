@@ -9,14 +9,10 @@ class PaymentCardService extends GetConnect {
   GetHttpClient get httpClient => wegooli;
   final client = wegooli.paymentCardApi;
   Future<List<PaymentCardModel>> loadCreditCardList(User currentUser) async {
-    if (currentUser.memberSeq != null) {
-      final response =
-          await client.selectPaymentCardList(memberSeq: currentUser.memberSeq);
-      print('load payment card list... ${response.data}');
-      return response.data ?? <PaymentCardModel>[];
-    } else {
-      return <PaymentCardModel>[];
-    }
+    final response =
+        await client.selectPaymentCardList(memberSeq: currentUser.memberSeq);
+    print('load payment card list... ${response.data}');
+    return response.data ?? <PaymentCardModel>[];
   }
 
   Future<String> registerCard(

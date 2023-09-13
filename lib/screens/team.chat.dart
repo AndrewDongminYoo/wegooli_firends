@@ -32,7 +32,7 @@ class DashChatWithFriendsPage extends GetWidget<ConnectionController> {
                   messageDecorationBuilder:
                       (message, previousMessage, nextMessage) => BoxDecoration(
                           color: message.user.id ==
-                                  UserController.to.currentUser.value.id
+                                  UserController.to.currentUser.id
                               ? ColorConstant.actionPrimaryDefault
                               : ColorConstant.actionNeutralDisabled,
                           borderRadius: BorderRadius.circular(15)),

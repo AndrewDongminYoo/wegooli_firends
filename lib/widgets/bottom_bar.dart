@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 // 📦 Package imports:
 import 'package:get/get.dart';
-import 'package:wegooli_friends/core/utils/custom_icons.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';

@@ -27,21 +27,19 @@ class ConnectionController extends GetxController with ChannelEventHandler {
   void onInit() {
     SendbirdSdk().addChannelEventHandler('dashchat', this);
     final userController = UserController.to;
-    final userId = userController.currentUser.value.id;
+    final userId = userController.currentUser.id;
     print('appId: $appId, userId: $userId');
-    if (userId != null) {
-      final otherMembers = userController.members
-          .map((member) => member.accountId!)
-          .where((id) => id != userId)
-          .toList();
-      print('otherMembers is $otherMembers');
-      if (otherMembers.isNotEmpty) {
-        loadSendbird(appId, userId, otherMembers);
-      } else {
-        // TODO: 채팅할 멤버가 없는 경우 동작 수행
-        // goTeamInvitation();
-        // goSharedSchedule();
-      }
+    final otherMembers = userController.members
+        .map((member) => member.accountId!)
+        .where((id) => id != userId)
+        .toList();
+    print('otherMembers is $otherMembers');
+    if (otherMembers.isNotEmpty) {
+      loadSendbird(appId, userId!, otherMembers);
+    } else {
+      // TODO: 채팅할 멤버가 없는 경우 동작 수행
+      // goTeamInvitation();
+      // goSharedSchedule();
     }
     super.onInit();
   }

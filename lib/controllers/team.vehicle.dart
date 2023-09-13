@@ -22,7 +22,7 @@ class VehicleController extends GetxController {
   /// late init from UserController values.
   late int? _teamSeq;
   int? get teamSeq => _teamSeq;
-  late User _currentUser = const User();
+  late User _currentUser;
   User get currentUser => _currentUser;
   late String _nickname = '위굴리';
   String get nickname => _nickname;
@@ -32,11 +32,10 @@ class VehicleController extends GetxController {
   @override
   Future<void> onInit() async {
     final userController = UserController.to;
-    _currentUser = userController.currentUser.value;
+    _currentUser = userController.currentUser;
     _teamSeq = userController.firstTeamSeq;
     _members = userController.members;
-    _nickname =
-        _currentUser.nickname != null ? _currentUser.nickname! : _nickname;
+    _nickname = _currentUser.nickname!;
     await retrieveInfo();
     await retrieveSchedule();
     await getSubscription();
@@ -145,7 +144,7 @@ class VehicleController extends GetxController {
   }
 
   Future<void> getSubscription() async {
-    if (currentUser.id == null || teamSeq == null) {
+    if (teamSeq == null) {
       return;
     }
     final response =
@@ -155,7 +154,7 @@ class VehicleController extends GetxController {
   }
 
   Future<void> unsubscribe() async {
-    if (currentUser.id == null || teamSeq == null) {
+    if (teamSeq == null) {
       return;
     }
     final submitWithdrawalModel = SubmitWithdrawalModel(
@@ -171,7 +170,7 @@ class VehicleController extends GetxController {
   Future<void> subscribe() async {
     print('currentUser.id ${currentUser.id}');
     print('teamSeq $teamSeq');
-    if (currentUser.id == null || teamSeq == null) {
+    if (teamSeq == null) {
       return;
     }
     final submitWithdrawalModel =
@@ -220,9 +219,10 @@ class VehicleController extends GetxController {
 
   Future<bool> joinTeam() async {
     final accountId = currentUser.id;
-    if (accountId != null && invitation.text.length == 10) {
+    if (invitation.text.length == 10) {
       print('joinTeam() accountId: $accountId |invitation: ${invitation.text}');
-      return TeamAccountService().inviteTeamAccount(accountId, invitation.text);
+      return TeamAccountService()
+          .inviteTeamAccount(accountId!, invitation.text);
     }
     return false;
   }

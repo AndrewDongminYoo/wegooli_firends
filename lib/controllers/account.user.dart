@@ -53,7 +53,21 @@ class UserController extends GetxController {
     SelectionPopupModel(id: 06, title: 'LG U+ 알뜰폰'),
   ];
 
-  Rx<User> currentUser = const User().obs;
+  User currentUser = const User(
+    name: '유동민',
+    phoneNumber: '010-3566-1857',
+    memberSeq: 12,
+    color: '#ff5722',
+    nickname: 'donminzzi',
+    email: 'andrew@wegooli.com',
+    delimit: 'personal',
+    id: 'test2',
+    birthDay: '940812',
+    add2: '16층 1604호',
+    add1: '서울, 강남구 역삼동 602번지',
+    sub: '23',
+    exp: 1698764406,
+  );
   final RxList<TeamAccountModel> _members = RxList<TeamAccountModel>([]);
   final RxList<Schedule> _schedules = RxList<Schedule>.of([]);
   RxList<Schedule> get schedules => _schedules;
@@ -131,11 +145,8 @@ class UserController extends GetxController {
 
   void verificaticonIsExpired() {
     print('[Auth] 휴대폰 인증 코드 만료');
+    Get.showSnackbar(const GetSnackBar(title: '인증코드가 만료되었습니다.'));
     oneTimeCode = Verify.Expired;
-    // TODO: 다음 로직들 실행
-    // 1. 기존 인증번호 코드 무효화 (서버에 타임아웃 전달)
-    // 2. 사용자에게 알림 창으로 타임아웃 사실 알림. 재발송 버튼 실행 유도.
-    // 3. 재발송 버튼 실행 시까지 인풋창 비활성화를 통해 더블 전송을 예방함.
   }
 
   void setDropdownItem(SelectionPopupModel value) {
@@ -194,7 +205,7 @@ class UserController extends GetxController {
     print('username: ${emailAddress.text}\npassword: ${password.text}');
     final userLike = await _service.login(emailAddress.text, password.text);
     if (userLike != null) {
-      currentUser(userLike);
+      currentUser = userLike;
       oneTimeCode = Verify.Success;
     }
   }
@@ -205,19 +216,11 @@ class UserController extends GetxController {
   }
 
   /// 회원탈퇴
-  Future<bool> signOut() async {
-    if (currentUser.value.id == null) {
-      return false;
-    }
-    return _service.signOut(currentUser.value.id!);
-  }
+  Future<bool> signOut() async => _service.signOut(currentUser.id!);
 
   Future<void> preProcessor() async {
-    final accountId = currentUser.value.id;
-    if (accountId == null) {
-      return;
-    }
-    _teams(await _teamAccountService.findTeams(accountId));
+    final accountId = currentUser.id;
+    _teams(await _teamAccountService.findTeams(accountId!));
     // print('_teams : $_teams');
     _members(members);
     // print('_members : $_members');
@@ -256,7 +259,7 @@ class UserController extends GetxController {
 
   AccountAgreementRequest toAccountAgreementModel(Agreement e) {
     return AccountAgreementRequest(
-      classification: currentUser.value.id,
+      classification: currentUser.id,
       accountId: e.title,
       agreeYn: e.accepted ? 'Y' : 'N',
     );

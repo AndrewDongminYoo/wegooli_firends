@@ -161,6 +161,7 @@ flutter:
         - asset: assets/fonts/Roboto-Regular.ttf
         - asset: assets/fonts/Roboto-Thin.ttf
           weight: 400
+    # https://www.fluttericon.com/
     - family: CustomIcons
       fonts:
         - asset: assets/fonts/CustomIcons.ttf

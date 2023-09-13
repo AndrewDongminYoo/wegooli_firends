@@ -125,12 +125,13 @@ class ScheduleController extends GetxController {
   }
 
   Future<void> addSchedule() async {
-    final accountId = userController.currentUser.value.id;
+    final accountId = userController.currentUser.id;
     final teamSeq = userController.firstTeamSeq;
-    if (accountId == null || teamSeq == null) {
+    if (teamSeq == null) {
       return;
     }
-    await _service.addSchedule(accountId, teamSeq, reservationTime, returnTime);
+    await _service.addSchedule(
+        accountId!, teamSeq, reservationTime, returnTime);
     userController.schedules(await userController.retrieveSchedules(teamSeq));
     makeEventSource();
     goBack();

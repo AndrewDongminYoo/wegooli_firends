@@ -34,8 +34,7 @@ class PaymentCardController extends GetxController {
 
   Future<void> retrieveCards() async {
     final userController = UserController.to;
-    final data =
-        await _service.loadCreditCardList(userController.currentUser.value);
+    final data = await _service.loadCreditCardList(userController.currentUser);
     _paymentCards.clear();
     _paymentCards.addAll(data);
   }

@@ -33,7 +33,7 @@ class UnsubscriptionConfirm extends GetWidget<VehicleController> {
                   margin: getMargin(top: 50),
                   child: Text(
                     l10ns.areYouSureYouWantToUnsubscribe(
-                        controller.currentUser.nickname ?? '닉네임'),
+                        controller.currentUser.nickname!),
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     textAlign: TextAlign.center,

@@ -39,7 +39,7 @@ class _TeamReservationsItemState extends State<TeamReservationsItem> {
   Widget build(BuildContext context) {
     final color = widget.schedule.highlightColor;
     final isOwner =
-        widget.schedule.accountId == widget.controller.currentUser.value.id;
+        widget.schedule.accountId == widget.controller.currentUser.id;
     return Container(
       margin: getMargin(bottom: 10),
       width: getHorizontalSize(288),

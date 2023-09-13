@@ -144,8 +144,6 @@ extension TextFormFieldStyleHelper on CustomTextFormField {
 InputBorder createBorderSide(Color borderColor, {double radius = 5.0}) {
   return OutlineInputBorder(
     borderRadius: BorderRadius.circular(getHorizontalSize(radius)),
-    borderSide: BorderSide(
-      color: borderColor,
-    ),
+    borderSide: BorderSide(color: borderColor),
   );
 }

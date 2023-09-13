@@ -6,7 +6,7 @@ import 'package:wegooli_friends/lib.dart';
 
 /// tests for ScheduleControllerApi
 void main() {
-  final api = WegooliFriends().getScheduleControllerApi();
+  final api = wegooli.scheduleApi;
 
   group(ScheduleControllerApi, () {
     //Future deleteSchedule(int seq) async

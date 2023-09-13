@@ -22,9 +22,8 @@ class CustomInputLabel extends StatelessWidget {
             labelText,
             overflow: TextOverflow.ellipsis,
             textAlign: TextAlign.left,
-            style: theme.textTheme.titleMedium!.copyWith(
-              letterSpacing: getHorizontalSize(0.03),
-            ),
+            style: theme.textTheme.titleMedium!
+                .copyWith(letterSpacing: getHorizontalSize(0.03)),
           )),
       Padding(
         padding: getPadding(left: 2, bottom: 5),
@@ -33,9 +32,8 @@ class CustomInputLabel extends StatelessWidget {
                 '*',
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.left,
-                style: theme.textTheme.titleSmall!.copyWith(
-                  letterSpacing: getHorizontalSize(0.06),
-                ),
+                style: theme.textTheme.titleSmall!
+                    .copyWith(letterSpacing: getHorizontalSize(0.06)),
               )
             : const Text('')),
       ),

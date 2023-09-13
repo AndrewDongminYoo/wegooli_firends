@@ -6,7 +6,7 @@ import 'package:wegooli_friends/lib.dart';
 
 /// tests for UserControllerApi
 void main() {
-  final api = WegooliFriends().getUserControllerApi();
+  final api = wegooli.userApi;
 
   group(UserControllerApi, () {
     //Future<String> checkId(String id) async
@@ -18,7 +18,7 @@ void main() {
     //
     // 사용자 정보 기반 JWT를 발급함
     //
-    //Future<ApiResponseObject> generateToken(UserDetailsDTO userDetailsDTO) async
+    //Future<ApiResponseObject> generateToken(UserDetailsDto userDetailsDto) async
     test('test generateToken', () async {
       // TODO
     });

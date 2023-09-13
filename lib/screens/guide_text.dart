@@ -18,9 +18,8 @@ class CustomGuideText extends StatelessWidget {
         text,
         overflow: TextOverflow.ellipsis,
         textAlign: TextAlign.left,
-        style: CustomTextStyles.bodySmallErrorContainer.copyWith(
-          letterSpacing: getHorizontalSize(0.04),
-        ),
+        style: CustomTextStyles.bodySmallErrorContainer
+            .copyWith(letterSpacing: getHorizontalSize(0.04)),
       ),
     ]);
   }

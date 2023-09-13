@@ -18,16 +18,16 @@ class BoardControllerApi {
   /// deleteAnswer
   ///
   /// Parameters:
-  /// * [seq]
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///   [seq]
+  ///   [cancelToken] - 작업을 취소하는 데 사용할 수 있는 [CancelToken].
+  ///   [headers] - 요청에 헤더를 추가하는 데 사용할 수 있음.
+  ///   [extras] - 요청에 플래그를 추가하는 데 사용 가능.
+  ///   [validateStatus] - 응답의 HTTP 상태를 기반으로 요청 성공 여부를 판단하는 데 사용할 수 있는 [ValidateStatus] 콜백.
+  ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
+  ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future] containing a [Response] with a [bool] as data
-  /// Throws [DioException] if API call or serialization fails
+  /// [bool] 타입 [Response]을 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<bool>> deleteAnswer({
     required int seq,
     CancelToken? cancelToken,
@@ -95,16 +95,16 @@ class BoardControllerApi {
   /// deleteQuestion
   ///
   /// Parameters:
-  /// * [seq]
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///   [seq]
+  ///   [cancelToken] - 작업을 취소하는 데 사용할 수 있는 [CancelToken].
+  ///   [headers] - 요청에 헤더를 추가하는 데 사용할 수 있음.
+  ///   [extras] - 요청에 플래그를 추가하는 데 사용 가능.
+  ///   [validateStatus] - 응답의 HTTP 상태를 기반으로 요청 성공 여부를 판단하는 데 사용할 수 있는 [ValidateStatus] 콜백.
+  ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
+  ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future] containing a [Response] with a [bool] as data
-  /// Throws [DioException] if API call or serialization fails
+  /// [bool] 타입 [Response]을 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<bool>> deleteQuestion({
     required int seq,
     CancelToken? cancelToken,
@@ -172,17 +172,17 @@ class BoardControllerApi {
   /// insertAnswer
   ///
   /// Parameters:
-  /// * [body]
-  /// * [seq]
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///   [body]
+  ///   [seq]
+  ///   [cancelToken] - 작업을 취소하는 데 사용할 수 있는 [CancelToken].
+  ///   [headers] - 요청에 헤더를 추가하는 데 사용할 수 있음.
+  ///   [extras] - 요청에 플래그를 추가하는 데 사용 가능.
+  ///   [validateStatus] - 응답의 HTTP 상태를 기반으로 요청 성공 여부를 판단하는 데 사용할 수 있는 [ValidateStatus] 콜백.
+  ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
+  ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future] containing a [Response] with a [int] as data
-  /// Throws [DioException] if API call or serialization fails
+  /// [int] 타입 [Response]을 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<int>> insertAnswer({
     required String body,
     required int seq,
@@ -268,16 +268,16 @@ class BoardControllerApi {
   /// insertQuestion
   ///
   /// Parameters:
-  /// * [questionRequest]
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///   [questionRequest]
+  ///   [cancelToken] - 작업을 취소하는 데 사용할 수 있는 [CancelToken].
+  ///   [headers] - 요청에 헤더를 추가하는 데 사용할 수 있음.
+  ///   [extras] - 요청에 플래그를 추가하는 데 사용 가능.
+  ///   [validateStatus] - 응답의 HTTP 상태를 기반으로 요청 성공 여부를 판단하는 데 사용할 수 있는 [ValidateStatus] 콜백.
+  ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
+  ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future] containing a [Response] with a [int] as data
-  /// Throws [DioException] if API call or serialization fails
+  /// [int] 타입 [Response]을 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<int>> insertQuestion({
     required QuestionRequest questionRequest,
     CancelToken? cancelToken,
@@ -361,16 +361,16 @@ class BoardControllerApi {
   /// selectCountQnA
   ///
   /// Parameters:
-  /// * [request]
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///   [request]
+  ///   [cancelToken] - 작업을 취소하는 데 사용할 수 있는 [CancelToken].
+  ///   [headers] - 요청에 헤더를 추가하는 데 사용할 수 있음.
+  ///   [extras] - 요청에 플래그를 추가하는 데 사용 가능.
+  ///   [validateStatus] - 응답의 HTTP 상태를 기반으로 요청 성공 여부를 판단하는 데 사용할 수 있는 [ValidateStatus] 콜백.
+  ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
+  ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future] containing a [Response] with a [int] as data
-  /// Throws [DioException] if API call or serialization fails
+  /// [int] 타입 [Response]을 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<int>> selectCountQnA({
     required SelectQnARequest request,
     CancelToken? cancelToken,
@@ -442,16 +442,16 @@ class BoardControllerApi {
   /// selectQnA
   ///
   /// Parameters:
-  /// * [seq]
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///   [seq]
+  ///   [cancelToken] - 작업을 취소하는 데 사용할 수 있는 [CancelToken].
+  ///   [headers] - 요청에 헤더를 추가하는 데 사용할 수 있음.
+  ///   [extras] - 요청에 플래그를 추가하는 데 사용 가능.
+  ///   [validateStatus] - 응답의 HTTP 상태를 기반으로 요청 성공 여부를 판단하는 데 사용할 수 있는 [ValidateStatus] 콜백.
+  ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
+  ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future] containing a [Response] with a [QnA] as data
-  /// Throws [DioException] if API call or serialization fails
+  /// [QnA] 타입 [Response]을 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<QnA>> selectQnA({
     required int seq,
     CancelToken? cancelToken,
@@ -518,13 +518,13 @@ class BoardControllerApi {
   /// selectQnAList
   ///
   /// Parameters:
-  /// * [request]
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///   [request]
+  ///   [cancelToken] - 작업을 취소하는 데 사용할 수 있는 [CancelToken].
+  ///   [headers] - 요청에 헤더를 추가하는 데 사용할 수 있음.
+  ///   [extras] - 요청에 플래그를 추가하는 데 사용 가능.
+  ///   [validateStatus] - 응답의 HTTP 상태를 기반으로 요청 성공 여부를 판단하는 데 사용할 수 있는 [ValidateStatus] 콜백.
+  ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
+  ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
   /// Returns a [Future] containing a [Response] with a [List<QnA>] as data
   /// Throws [DioException] if API call or serialization fails
@@ -600,17 +600,17 @@ class BoardControllerApi {
   /// updateAnswer
   ///
   /// Parameters:
-  /// * [body]
-  /// * [seq]
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///   [body]
+  ///   [seq]
+  ///   [cancelToken] - 작업을 취소하는 데 사용할 수 있는 [CancelToken].
+  ///   [headers] - 요청에 헤더를 추가하는 데 사용할 수 있음.
+  ///   [extras] - 요청에 플래그를 추가하는 데 사용 가능.
+  ///   [validateStatus] - 응답의 HTTP 상태를 기반으로 요청 성공 여부를 판단하는 데 사용할 수 있는 [ValidateStatus] 콜백.
+  ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
+  ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future] containing a [Response] with a [int] as data
-  /// Throws [DioException] if API call or serialization fails
+  /// [int] 타입 [Response]을 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<int>> updateAnswer({
     required String body,
     required int seq,
@@ -696,17 +696,17 @@ class BoardControllerApi {
   /// updateQuestion
   ///
   /// Parameters:
-  /// * [questionRequest]
-  /// * [seq]
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///   [questionRequest]
+  ///   [seq]
+  ///   [cancelToken] - 작업을 취소하는 데 사용할 수 있는 [CancelToken].
+  ///   [headers] - 요청에 헤더를 추가하는 데 사용할 수 있음.
+  ///   [extras] - 요청에 플래그를 추가하는 데 사용 가능.
+  ///   [validateStatus] - 응답의 HTTP 상태를 기반으로 요청 성공 여부를 판단하는 데 사용할 수 있는 [ValidateStatus] 콜백.
+  ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
+  ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future] containing a [Response] with a [int] as data
-  /// Throws [DioException] if API call or serialization fails
+  /// [int] 타입 [Response]을 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<int>> updateQuestion({
     required QuestionRequest questionRequest,
     required int seq,

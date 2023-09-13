@@ -6,7 +6,7 @@ import 'package:wegooli_friends/lib.dart';
 
 /// tests for CarManagementControllerApi
 void main() {
-  final api = WegooliFriends().getCarManagementControllerApi();
+  final api = wegooli.carManagementApi;
 
   group(CarManagementControllerApi, () {
     //Future<bool> deleteCarManagement(int seq) async

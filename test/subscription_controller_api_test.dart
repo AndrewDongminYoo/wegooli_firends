@@ -6,7 +6,7 @@ import 'package:wegooli_friends/lib.dart';
 
 /// tests for SubscriptionControllerApi
 void main() {
-  final api = WegooliFriends().getSubscriptionControllerApi();
+  final api = wegooli.subscriptionApi;
 
   group(SubscriptionControllerApi, () {
     //Future<List<SubscriptionModel>> selectSubscriptionInfo(String accountId, int teamSeq) async

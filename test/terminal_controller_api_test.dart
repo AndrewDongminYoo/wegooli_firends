@@ -6,7 +6,7 @@ import 'package:wegooli_friends/lib.dart';
 
 /// tests for TerminalControllerApi
 void main() {
-  final api = WegooliFriends().getTerminalControllerApi();
+  final api = wegooli.terminalApi;
 
   group(TerminalControllerApi, () {
     //Future registTerminal(TerminalRequest terminalRequest) async

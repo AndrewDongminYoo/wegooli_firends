@@ -20,16 +20,16 @@ class LicenseControllerApi {
   /// deleteLicense
   ///
   /// Parameters:
-  /// * [seq]
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///   [seq]
+  ///   [cancelToken] - 작업을 취소하는 데 사용할 수 있는 [CancelToken].
+  ///   [headers] - 요청에 헤더를 추가하는 데 사용할 수 있음.
+  ///   [extras] - 요청에 플래그를 추가하는 데 사용 가능.
+  ///   [validateStatus] - 응답의 HTTP 상태를 기반으로 요청 성공 여부를 판단하는 데 사용할 수 있는 [ValidateStatus] 콜백.
+  ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
+  ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future] containing a [Response] with a [bool] as data
-  /// Throws [DioException] if API call or serialization fails
+  /// [bool] 타입 [Response]을 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<bool>> deleteLicense({
     required int seq,
     CancelToken? cancelToken,
@@ -96,16 +96,16 @@ class LicenseControllerApi {
   /// deleteLicenseByMemberSeq
   ///
   /// Parameters:
-  /// * [memberSeq]
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///   [memberSeq]
+  ///   [cancelToken] - 작업을 취소하는 데 사용할 수 있는 [CancelToken].
+  ///   [headers] - 요청에 헤더를 추가하는 데 사용할 수 있음.
+  ///   [extras] - 요청에 플래그를 추가하는 데 사용 가능.
+  ///   [validateStatus] - 응답의 HTTP 상태를 기반으로 요청 성공 여부를 판단하는 데 사용할 수 있는 [ValidateStatus] 콜백.
+  ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
+  ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future] containing a [Response] with a [bool] as data
-  /// Throws [DioException] if API call or serialization fails
+  /// [bool] 타입 [Response]을 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<bool>> deleteLicenseByMemberSeq({
     required int memberSeq,
     CancelToken? cancelToken,
@@ -173,16 +173,16 @@ class LicenseControllerApi {
   /// insertLicense
   ///
   /// Parameters:
-  /// * [insertLicenseRequest]
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///   [insertLicenseRequest]
+  ///   [cancelToken] - 작업을 취소하는 데 사용할 수 있는 [CancelToken].
+  ///   [headers] - 요청에 헤더를 추가하는 데 사용할 수 있음.
+  ///   [extras] - 요청에 플래그를 추가하는 데 사용 가능.
+  ///   [validateStatus] - 응답의 HTTP 상태를 기반으로 요청 성공 여부를 판단하는 데 사용할 수 있는 [ValidateStatus] 콜백.
+  ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
+  ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future] containing a [Response] with a [int] as data
-  /// Throws [DioException] if API call or serialization fails
+  /// [int] 타입 [Response]을 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<int>> insertLicense({
     required InsertLicenseRequest insertLicenseRequest,
     CancelToken? cancelToken,
@@ -266,16 +266,16 @@ class LicenseControllerApi {
   /// isValidLicense
   ///
   /// Parameters:
-  /// * [validLicenseRequest]
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///   [validLicenseRequest]
+  ///   [cancelToken] - 작업을 취소하는 데 사용할 수 있는 [CancelToken].
+  ///   [headers] - 요청에 헤더를 추가하는 데 사용할 수 있음.
+  ///   [extras] - 요청에 플래그를 추가하는 데 사용 가능.
+  ///   [validateStatus] - 응답의 HTTP 상태를 기반으로 요청 성공 여부를 판단하는 데 사용할 수 있는 [ValidateStatus] 콜백.
+  ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
+  ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future] containing a [Response] with a [bool] as data
-  /// Throws [DioException] if API call or serialization fails
+  /// [bool] 타입 [Response]을 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<bool>> isValidLicense({
     required ValidLicenseRequest validLicenseRequest,
     CancelToken? cancelToken,
@@ -359,16 +359,16 @@ class LicenseControllerApi {
   /// selectLicense
   ///
   /// Parameters:
-  /// * [seq]
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///   [seq]
+  ///   [cancelToken] - 작업을 취소하는 데 사용할 수 있는 [CancelToken].
+  ///   [headers] - 요청에 헤더를 추가하는 데 사용할 수 있음.
+  ///   [extras] - 요청에 플래그를 추가하는 데 사용 가능.
+  ///   [validateStatus] - 응답의 HTTP 상태를 기반으로 요청 성공 여부를 판단하는 데 사용할 수 있는 [ValidateStatus] 콜백.
+  ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
+  ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future] containing a [Response] with a [LicenseModel] as data
-  /// Throws [DioException] if API call or serialization fails
+  /// [LicenseModel] 타입 [Response]을 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<LicenseModel>> selectLicense({
     required int seq,
     CancelToken? cancelToken,
@@ -436,13 +436,13 @@ class LicenseControllerApi {
   /// selectLicenseList
   ///
   /// Parameters:
-  /// * [request]
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///   [request]
+  ///   [cancelToken] - 작업을 취소하는 데 사용할 수 있는 [CancelToken].
+  ///   [headers] - 요청에 헤더를 추가하는 데 사용할 수 있음.
+  ///   [extras] - 요청에 플래그를 추가하는 데 사용 가능.
+  ///   [validateStatus] - 응답의 HTTP 상태를 기반으로 요청 성공 여부를 판단하는 데 사용할 수 있는 [ValidateStatus] 콜백.
+  ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
+  ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
   /// Returns a [Future] containing a [Response] with a [List<LicenseModel>] as data
   /// Throws [DioException] if API call or serialization fails
@@ -519,15 +519,15 @@ class LicenseControllerApi {
   /// selectServiceStop
   ///
   /// Parameters:
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///   [cancelToken] - 작업을 취소하는 데 사용할 수 있는 [CancelToken].
+  ///   [headers] - 요청에 헤더를 추가하는 데 사용할 수 있음.
+  ///   [extras] - 요청에 플래그를 추가하는 데 사용 가능.
+  ///   [validateStatus] - 응답의 HTTP 상태를 기반으로 요청 성공 여부를 판단하는 데 사용할 수 있는 [ValidateStatus] 콜백.
+  ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
+  ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future] containing a [Response] with a [bool] as data
-  /// Throws [DioException] if API call or serialization fails
+  /// [bool] 타입 [Response]을 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<bool>> selectServiceStop({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -593,17 +593,17 @@ class LicenseControllerApi {
   /// updateLicense
   ///
   /// Parameters:
-  /// * [updateLicenseRequest]
-  /// * [seq]
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///   [updateLicenseRequest]
+  ///   [seq]
+  ///   [cancelToken] - 작업을 취소하는 데 사용할 수 있는 [CancelToken].
+  ///   [headers] - 요청에 헤더를 추가하는 데 사용할 수 있음.
+  ///   [extras] - 요청에 플래그를 추가하는 데 사용 가능.
+  ///   [validateStatus] - 응답의 HTTP 상태를 기반으로 요청 성공 여부를 판단하는 데 사용할 수 있는 [ValidateStatus] 콜백.
+  ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
+  ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future] containing a [Response] with a [int] as data
-  /// Throws [DioException] if API call or serialization fails
+  /// [int] 타입 [Response]을 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<int>> updateLicense({
     required UpdateLicenseRequest updateLicenseRequest,
     required int seq,

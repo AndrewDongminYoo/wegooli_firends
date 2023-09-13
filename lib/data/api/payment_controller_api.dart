@@ -19,17 +19,17 @@ class PaymentControllerApi {
   /// cancelPayment
   ///
   /// Parameters:
-  /// * [cancelRequestModel]
-  /// * [paymentKey]
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///   [cancelRequestModel]
+  ///   [paymentKey]
+  ///   [cancelToken] - 작업을 취소하는 데 사용할 수 있는 [CancelToken].
+  ///   [headers] - 요청에 헤더를 추가하는 데 사용할 수 있음.
+  ///   [extras] - 요청에 플래그를 추가하는 데 사용 가능.
+  ///   [validateStatus] - 응답의 HTTP 상태를 기반으로 요청 성공 여부를 판단하는 데 사용할 수 있는 [ValidateStatus] 콜백.
+  ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
+  ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future] containing a [Response] with a [String] as data
-  /// Throws [DioException] if API call or serialization fails
+  /// [String] 타입 [Response]을 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<String>> cancelPayment({
     required CancelRequestModel cancelRequestModel,
     required String paymentKey,
@@ -116,17 +116,17 @@ class PaymentControllerApi {
   /// createBillingKey
   ///
   /// Parameters:
-  /// * [billingKeyRequestModel]
-  /// * [accountId]
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///   [billingKeyRequestModel]
+  ///   [accountId]
+  ///   [cancelToken] - 작업을 취소하는 데 사용할 수 있는 [CancelToken].
+  ///   [headers] - 요청에 헤더를 추가하는 데 사용할 수 있음.
+  ///   [extras] - 요청에 플래그를 추가하는 데 사용 가능.
+  ///   [validateStatus] - 응답의 HTTP 상태를 기반으로 요청 성공 여부를 판단하는 데 사용할 수 있는 [ValidateStatus] 콜백.
+  ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
+  ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future] containing a [Response] with a [String] as data
-  /// Throws [DioException] if API call or serialization fails
+  /// [String] 타입 [Response]을 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<String>> createBillingKey({
     required BillingKeyRequestModel billingKeyRequestModel,
     required String accountId,
@@ -213,16 +213,16 @@ class PaymentControllerApi {
   /// getPayment
   ///
   /// Parameters:
-  /// * [paymentKey]
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///   [paymentKey]
+  ///   [cancelToken] - 작업을 취소하는 데 사용할 수 있는 [CancelToken].
+  ///   [headers] - 요청에 헤더를 추가하는 데 사용할 수 있음.
+  ///   [extras] - 요청에 플래그를 추가하는 데 사용 가능.
+  ///   [validateStatus] - 응답의 HTTP 상태를 기반으로 요청 성공 여부를 판단하는 데 사용할 수 있는 [ValidateStatus] 콜백.
+  ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
+  ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future] containing a [Response] with a [PaymentModel] as data
-  /// Throws [DioException] if API call or serialization fails
+  /// [PaymentModel] 타입 [Response]을 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<PaymentModel>> getPayment({
     required String paymentKey,
     CancelToken? cancelToken,
@@ -291,19 +291,19 @@ class PaymentControllerApi {
   /// getPaymentList
   ///
   /// Parameters:
-  /// * [paymentKey]
-  /// * [status]
-  /// * [lastTransactionKey]
-  /// * [orderId]
-  /// * [orderName]
-  /// * [startRequestedAt]
-  /// * [endRequestedAt]
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///   [paymentKey]
+  ///   [status]
+  ///   [lastTransactionKey]
+  ///   [orderId]
+  ///   [orderName]
+  ///   [startRequestedAt]
+  ///   [endRequestedAt]
+  ///   [cancelToken] - 작업을 취소하는 데 사용할 수 있는 [CancelToken].
+  ///   [headers] - 요청에 헤더를 추가하는 데 사용할 수 있음.
+  ///   [extras] - 요청에 플래그를 추가하는 데 사용 가능.
+  ///   [validateStatus] - 응답의 HTTP 상태를 기반으로 요청 성공 여부를 판단하는 데 사용할 수 있는 [ValidateStatus] 콜백.
+  ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
+  ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
   /// Returns a [Future] containing a [Response] with a [List<PaymentModel>] as data
   /// Throws [DioException] if API call or serialization fails
@@ -392,17 +392,17 @@ class PaymentControllerApi {
   /// payByBillingKey
   ///
   /// Parameters:
-  /// * [payBillingRequestModel]
-  /// * [billingKey]
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///   [payBillingRequestModel]
+  ///   [billingKey]
+  ///   [cancelToken] - 작업을 취소하는 데 사용할 수 있는 [CancelToken].
+  ///   [headers] - 요청에 헤더를 추가하는 데 사용할 수 있음.
+  ///   [extras] - 요청에 플래그를 추가하는 데 사용 가능.
+  ///   [validateStatus] - 응답의 HTTP 상태를 기반으로 요청 성공 여부를 판단하는 데 사용할 수 있는 [ValidateStatus] 콜백.
+  ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
+  ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future] containing a [Response] with a [String] as data
-  /// Throws [DioException] if API call or serialization fails
+  /// [String] 타입 [Response]을 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<String>> payByBillingKey({
     required PayBillingRequestModel payBillingRequestModel,
     required String billingKey,
@@ -489,15 +489,15 @@ class PaymentControllerApi {
   /// start
   ///
   /// Parameters:
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///   [cancelToken] - 작업을 취소하는 데 사용할 수 있는 [CancelToken].
+  ///   [headers] - 요청에 헤더를 추가하는 데 사용할 수 있음.
+  ///   [extras] - 요청에 플래그를 추가하는 데 사용 가능.
+  ///   [validateStatus] - 응답의 HTTP 상태를 기반으로 요청 성공 여부를 판단하는 데 사용할 수 있는 [ValidateStatus] 콜백.
+  ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
+  ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future] containing a [Response] with a [String] as data
-  /// Throws [DioException] if API call or serialization fails
+  /// [String] 타입 [Response]을 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<String>> start({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,

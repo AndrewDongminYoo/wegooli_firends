@@ -6,7 +6,7 @@ import 'package:wegooli_friends/lib.dart';
 
 /// tests for PaymentControllerApi
 void main() {
-  final api = WegooliFriends().getPaymentControllerApi();
+  final api = wegooli.paymentApi;
 
   group(PaymentControllerApi, () {
     //Future<String> cancelPayment(String paymentKey, CancelRequestModel cancelRequestModel) async

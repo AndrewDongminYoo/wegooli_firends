@@ -11,6 +11,8 @@ import '/data/model/account.dart';
 import '/data/model/api_response_object.dart';
 import '/data/model/member.dart';
 import '/data/model/select_user_dto.dart';
+import '/data/model/select_user_request.dart';
+import '/data/model/update_user_request.dart';
 import '/data/model/user_details_dto.dart';
 import '/data/model/user_dto.dart';
 
@@ -19,19 +21,18 @@ class UserControllerApi {
   final Dio _dio;
 
   /// 아이디 중복체크
-  /// 가입된 아이디가 있는지 검증
   ///
   /// Parameters:
-  /// * [id]
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///   [id]
+  ///   [cancelToken] - 작업을 취소하는 데 사용할 수 있는 [CancelToken].
+  ///   [headers] - 요청에 헤더를 추가하는 데 사용할 수 있음.
+  ///   [extras] - 요청에 플래그를 추가하는 데 사용 가능.
+  ///   [validateStatus] - 응답의 HTTP 상태를 기반으로 요청 성공 여부를 판단하는 데 사용할 수 있는 [ValidateStatus] 콜백.
+  ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
+  ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future] containing a [Response] with a [String] as data
-  /// Throws [DioException] if API call or serialization fails
+  /// [String] 타입 [Response]을 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<String>> checkId({
     required String id,
     CancelToken? cancelToken,
@@ -105,18 +106,18 @@ class UserControllerApi {
   /// 사용자 정보 기반 JWT를 발급함
   ///
   /// Parameters:
-  /// * [userDetailsDTO]
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///   [userDetailsDto]
+  ///   [cancelToken] - 작업을 취소하는 데 사용할 수 있는 [CancelToken].
+  ///   [headers] - 요청에 헤더를 추가하는 데 사용할 수 있음.
+  ///   [extras] - 요청에 플래그를 추가하는 데 사용 가능.
+  ///   [validateStatus] - 응답의 HTTP 상태를 기반으로 요청 성공 여부를 판단하는 데 사용할 수 있는 [ValidateStatus] 콜백.
+  ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
+  ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future] containing a [Response] with a [ApiResponseObject] as data
-  /// Throws [DioException] if API call or serialization fails
+  /// [ApiResponseObject] 타입 [Response]을 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<ApiResponseObject>> generateToken({
-    required UserDetailsDTO userDetailsDTO,
+    required UserDetailsDto userDetailsDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -147,7 +148,7 @@ class UserControllerApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = jsonEncode(userDetailsDTO);
+      _bodyData = jsonEncode(userDetailsDto);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -197,19 +198,19 @@ class UserControllerApi {
     );
   }
 
-  /// getUserDetail
+  /// 사용자 정보 조회
   ///
   /// Parameters:
-  /// * [account]
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///   [account]
+  ///   [cancelToken] - 작업을 취소하는 데 사용할 수 있는 [CancelToken].
+  ///   [headers] - 요청에 헤더를 추가하는 데 사용할 수 있음.
+  ///   [extras] - 요청에 플래그를 추가하는 데 사용 가능.
+  ///   [validateStatus] - 응답의 HTTP 상태를 기반으로 요청 성공 여부를 판단하는 데 사용할 수 있는 [ValidateStatus] 콜백.
+  ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
+  ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future] containing a [Response] with a [String] as data
-  /// Throws [DioException] if API call or serialization fails
+  /// [String] 타입 [Response]을 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<String>> getUserDetail({
     required Account account,
     CancelToken? cancelToken,
@@ -291,18 +292,18 @@ class UserControllerApi {
     );
   }
 
-  /// 로그아웃
+  /// 로그아웃 (토큰 삭제)
   ///
   /// Parameters:
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///   [cancelToken] - 작업을 취소하는 데 사용할 수 있는 [CancelToken].
+  ///   [headers] - 요청에 헤더를 추가하는 데 사용할 수 있음.
+  ///   [extras] - 요청에 플래그를 추가하는 데 사용 가능.
+  ///   [validateStatus] - 응답의 HTTP 상태를 기반으로 요청 성공 여부를 판단하는 데 사용할 수 있는 [ValidateStatus] 콜백.
+  ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
+  ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future] containing a [Response] with a [String] as data
-  /// Throws [DioException] if API call or serialization fails
+  /// [String] 타입 [Response]을 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<String>> logOut({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -313,7 +314,7 @@ class UserControllerApi {
   }) async {
     const _path = '/auth/logout';
     final _options = Options(
-      method: 'GET',
+      method: 'POST',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -366,20 +367,20 @@ class UserControllerApi {
     );
   }
 
-  /// 로그인 (토큰발급)
+  /// 로그인 (토큰 발급)
   ///
   /// Parameters:
-  /// * [id]
-  /// * [password]
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///   [id]
+  ///   [password]
+  ///   [cancelToken] - 작업을 취소하는 데 사용할 수 있는 [CancelToken].
+  ///   [headers] - 요청에 헤더를 추가하는 데 사용할 수 있음.
+  ///   [extras] - 요청에 플래그를 추가하는 데 사용 가능.
+  ///   [validateStatus] - 응답의 HTTP 상태를 기반으로 요청 성공 여부를 판단하는 데 사용할 수 있는 [ValidateStatus] 콜백.
+  ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
+  ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future] containing a [Response] with a [ApiResponseObject] as data
-  /// Throws [DioException] if API call or serialization fails
+  /// [ApiResponseObject] 타입 [Response]을 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<ApiResponseObject>> login({
     required String id,
     required String password,
@@ -452,19 +453,19 @@ class UserControllerApi {
     );
   }
 
-  /// signup
+  /// 회원 가입
   ///
   /// Parameters:
-  /// * [userDto]
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///   [userDto]
+  ///   [cancelToken] - 작업을 취소하는 데 사용할 수 있는 [CancelToken].
+  ///   [headers] - 요청에 헤더를 추가하는 데 사용할 수 있음.
+  ///   [extras] - 요청에 플래그를 추가하는 데 사용 가능.
+  ///   [validateStatus] - 응답의 HTTP 상태를 기반으로 요청 성공 여부를 판단하는 데 사용할 수 있는 [ValidateStatus] 콜백.
+  ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
+  ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future] containing a [Response] with a [UserDto] as data
-  /// Throws [DioException] if API call or serialization fails
+  /// [UserDto] 타입 [Response]을 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<UserDto>> signup({
     required UserDto userDto,
     CancelToken? cancelToken,
@@ -546,19 +547,19 @@ class UserControllerApi {
     );
   }
 
-  /// signOut
+  /// 회원 탈퇴
   ///
   /// Parameters:
-  /// * [id]
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///   [id]
+  ///   [cancelToken] - 작업을 취소하는 데 사용할 수 있는 [CancelToken].
+  ///   [headers] - 요청에 헤더를 추가하는 데 사용할 수 있음.
+  ///   [extras] - 요청에 플래그를 추가하는 데 사용 가능.
+  ///   [validateStatus] - 응답의 HTTP 상태를 기반으로 요청 성공 여부를 판단하는 데 사용할 수 있는 [ValidateStatus] 콜백.
+  ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
+  ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future] containing a [Response] with a [bool] as data
-  /// Throws [DioException] if API call or serialization fails
+  /// [bool] 타입 [Response]을 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<bool>> signOut({
     required String id,
     CancelToken? cancelToken,
@@ -628,19 +629,19 @@ class UserControllerApi {
     );
   }
 
-  /// selectAccount
+  /// 계정 GET
   ///
   /// Parameters:
-  /// * [id]
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///   [id]
+  ///   [cancelToken] - 작업을 취소하는 데 사용할 수 있는 [CancelToken].
+  ///   [headers] - 요청에 헤더를 추가하는 데 사용할 수 있음.
+  ///   [extras] - 요청에 플래그를 추가하는 데 사용 가능.
+  ///   [validateStatus] - 응답의 HTTP 상태를 기반으로 요청 성공 여부를 판단하는 데 사용할 수 있는 [ValidateStatus] 콜백.
+  ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
+  ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future] containing a [Response] with a [Account] as data
-  /// Throws [DioException] if API call or serialization fails
+  /// [Account] 타입 [Response]을 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<Account>> selectAccount({
     required String id,
     CancelToken? cancelToken,
@@ -705,19 +706,19 @@ class UserControllerApi {
     );
   }
 
-  /// selectMember
+  /// 회원 GET
   ///
   /// Parameters:
-  /// * [seq]
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///   [seq]
+  ///   [cancelToken] - 작업을 취소하는 데 사용할 수 있는 [CancelToken].
+  ///   [headers] - 요청에 헤더를 추가하는 데 사용할 수 있음.
+  ///   [extras] - 요청에 플래그를 추가하는 데 사용 가능.
+  ///   [validateStatus] - 응답의 HTTP 상태를 기반으로 요청 성공 여부를 판단하는 데 사용할 수 있는 [ValidateStatus] 콜백.
+  ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
+  ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future] containing a [Response] with a [Member] as data
-  /// Throws [DioException] if API call or serialization fails
+  /// [Member] 타입 [Response]을 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<Member>> selectMember({
     required int seq,
     CancelToken? cancelToken,
@@ -783,21 +784,21 @@ class UserControllerApi {
     );
   }
 
-  /// selectUserList
+  /// 사용자 목록 GET
   ///
   /// Parameters:
-  /// * [request]
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///   [request]
+  ///   [cancelToken] - 작업을 취소하는 데 사용할 수 있는 [CancelToken].
+  ///   [headers] - 요청에 헤더를 추가하는 데 사용할 수 있음.
+  ///   [extras] - 요청에 플래그를 추가하는 데 사용 가능.
+  ///   [validateStatus] - 응답의 HTTP 상태를 기반으로 요청 성공 여부를 판단하는 데 사용할 수 있는 [ValidateStatus] 콜백.
+  ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
+  ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
   /// Returns a [Future] containing a [Response] with a [List<SelectUserDto>] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<List<SelectUserDto>>> selectUserList({
-    required SelectUserDto request,
+    required SelectUserRequest request,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -866,23 +867,23 @@ class UserControllerApi {
     );
   }
 
-  /// updateUser
+  /// 사용자 업데이트
   ///
   /// Parameters:
-  /// * [userDto]
-  /// * [memberSeq]
-  /// * [accountId]
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///   [updateUserRequest]
+  ///   [memberSeq]
+  ///   [accountId]
+  ///   [cancelToken] - 작업을 취소하는 데 사용할 수 있는 [CancelToken].
+  ///   [headers] - 요청에 헤더를 추가하는 데 사용할 수 있음.
+  ///   [extras] - 요청에 플래그를 추가하는 데 사용 가능.
+  ///   [validateStatus] - 응답의 HTTP 상태를 기반으로 요청 성공 여부를 판단하는 데 사용할 수 있는 [ValidateStatus] 콜백.
+  ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
+  ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future] containing a [Response] with a [bool] as data
-  /// Throws [DioException] if API call or serialization fails
+  /// [bool] 타입 [Response]을 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<bool>> updateUser({
-    required UserDto userDto,
+    required UpdateUserRequest updateUserRequest,
     required int memberSeq,
     required String accountId,
     CancelToken? cancelToken,
@@ -920,7 +921,7 @@ class UserControllerApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = jsonEncode(userDto);
+      _bodyData = jsonEncode(updateUserRequest);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(

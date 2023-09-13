@@ -18,16 +18,16 @@ class TeamAccountConnectionControllerApi {
   /// deleteTeamAccount
   ///
   /// Parameters:
-  /// * [seq]
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///   [seq]
+  ///   [cancelToken] - 작업을 취소하는 데 사용할 수 있는 [CancelToken].
+  ///   [headers] - 요청에 헤더를 추가하는 데 사용할 수 있음.
+  ///   [extras] - 요청에 플래그를 추가하는 데 사용 가능.
+  ///   [validateStatus] - 응답의 HTTP 상태를 기반으로 요청 성공 여부를 판단하는 데 사용할 수 있는 [ValidateStatus] 콜백.
+  ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
+  ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future] containing a [Response] with a [String] as data
-  /// Throws [DioException] if API call or serialization fails
+  /// [String] 타입 [Response]을 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<String>> deleteTeamAccount({
     required int seq,
     CancelToken? cancelToken,
@@ -96,16 +96,16 @@ class TeamAccountConnectionControllerApi {
   /// insertTeamAccount
   ///
   /// Parameters:
-  /// * [teamAccountConnectionRequest]
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///   [teamAccountConnectionRequest]
+  ///   [cancelToken] - 작업을 취소하는 데 사용할 수 있는 [CancelToken].
+  ///   [headers] - 요청에 헤더를 추가하는 데 사용할 수 있음.
+  ///   [extras] - 요청에 플래그를 추가하는 데 사용 가능.
+  ///   [validateStatus] - 응답의 HTTP 상태를 기반으로 요청 성공 여부를 판단하는 데 사용할 수 있는 [ValidateStatus] 콜백.
+  ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
+  ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future] containing a [Response] with a [String] as data
-  /// Throws [DioException] if API call or serialization fails
+  /// [String] 타입 [Response]을 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<String>> insertTeamAccount({
     required TeamAccountConnectionRequest teamAccountConnectionRequest,
     CancelToken? cancelToken,
@@ -190,17 +190,17 @@ class TeamAccountConnectionControllerApi {
   /// inviteTeamAccount
   ///
   /// Parameters:
-  /// * [accountId]
-  /// * [code]
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///   [accountId]
+  ///   [code]
+  ///   [cancelToken] - 작업을 취소하는 데 사용할 수 있는 [CancelToken].
+  ///   [headers] - 요청에 헤더를 추가하는 데 사용할 수 있음.
+  ///   [extras] - 요청에 플래그를 추가하는 데 사용 가능.
+  ///   [validateStatus] - 응답의 HTTP 상태를 기반으로 요청 성공 여부를 판단하는 데 사용할 수 있는 [ValidateStatus] 콜백.
+  ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
+  ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future] containing a [Response] with a [String] as data
-  /// Throws [DioException] if API call or serialization fails
+  /// [String] 타입 [Response]을 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<String>> inviteTeamAccount({
     required String accountId,
     required String code,
@@ -271,16 +271,16 @@ class TeamAccountConnectionControllerApi {
   /// selectTeamAccount
   ///
   /// Parameters:
-  /// * [seq]
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///   [seq]
+  ///   [cancelToken] - 작업을 취소하는 데 사용할 수 있는 [CancelToken].
+  ///   [headers] - 요청에 헤더를 추가하는 데 사용할 수 있음.
+  ///   [extras] - 요청에 플래그를 추가하는 데 사용 가능.
+  ///   [validateStatus] - 응답의 HTTP 상태를 기반으로 요청 성공 여부를 판단하는 데 사용할 수 있는 [ValidateStatus] 콜백.
+  ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
+  ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
-  /// Returns a [Future] containing a [Response] with a [TeamAccountConnectionModel] as data
-  /// Throws [DioException] if API call or serialization fails
+  /// [TeamAccountConnectionModel] 타입 [Response]을 포함하는 [Future] 반환.
+  /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
   Future<Response<TeamAccountConnectionModel>> selectTeamAccount({
     required int seq,
     CancelToken? cancelToken,
@@ -350,19 +350,19 @@ class TeamAccountConnectionControllerApi {
   /// selectTeamAccountList
   ///
   /// Parameters:
-  /// * [teamSeq]
-  /// * [accountId]
-  /// * [startJoinedAt]
-  /// * [endJoinedAt]
-  /// * [startLeavedAt]
-  /// * [endLeavedAt]
-  /// * [isLeaved]
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///   [teamSeq]
+  ///   [accountId]
+  ///   [startJoinedAt]
+  ///   [endJoinedAt]
+  ///   [startLeavedAt]
+  ///   [endLeavedAt]
+  ///   [isLeaved]
+  ///   [cancelToken] - 작업을 취소하는 데 사용할 수 있는 [CancelToken].
+  ///   [headers] - 요청에 헤더를 추가하는 데 사용할 수 있음.
+  ///   [extras] - 요청에 플래그를 추가하는 데 사용 가능.
+  ///   [validateStatus] - 응답의 HTTP 상태를 기반으로 요청 성공 여부를 판단하는 데 사용할 수 있는 [ValidateStatus] 콜백.
+  ///   [onSendProgress] - 전송 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
+  ///   [onReceiveProgress] - 수신 진행률을 가져오는 데 사용할 수 있는 [ProgressCallback].
   ///
   /// Returns a [Future] containing a [Response] with a [List<TeamAccountConnectionResponse>] as data
   /// Throws [DioException] if API call or serialization fails

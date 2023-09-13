@@ -6,7 +6,7 @@ import 'package:wegooli_friends/lib.dart';
 
 /// tests for DeviceControllerApi
 void main() {
-  final api = WegooliFriends().getDeviceControllerApi();
+  final api = wegooli.deviceApi;
 
   group(DeviceControllerApi, () {
     //Future<bool> doorClose(String carNum) async

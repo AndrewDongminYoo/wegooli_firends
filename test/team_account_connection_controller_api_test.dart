@@ -6,7 +6,7 @@ import 'package:wegooli_friends/lib.dart';
 
 /// tests for TeamAccountConnectionControllerApi
 void main() {
-  final api = WegooliFriends().getTeamAccountConnectionControllerApi();
+  final api = wegooli.teamAccountConnectionApi;
 
   group(TeamAccountConnectionControllerApi, () {
     //Future<String> deleteTeamAccount(int seq) async

@@ -6,7 +6,7 @@ import 'package:wegooli_friends/lib.dart';
 
 /// tests for LicenseControllerApi
 void main() {
-  final api = WegooliFriends().getLicenseControllerApi();
+  final api = wegooli.licenseApi;
 
   group(LicenseControllerApi, () {
     //Future<bool> deleteLicense(int seq) async

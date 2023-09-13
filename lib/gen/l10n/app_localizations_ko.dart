@@ -1,4 +1,3 @@
-// 🌎 Project imports:
 import 'app_localizations.dart';
 
 /// The translations for Korean (`ko`).
@@ -21,8 +20,7 @@ class LocalizedKo extends Localized {
   String get addressSearch => '주소 검색';
 
   @override
-  String get alphanumericSpecialCharacterCombination612Characters =>
-      '영문/숫자/특수문자 조합 (6~12자)';
+  String get alphanumericSpecialCharacterCombination612Characters => '영문/숫자/특수문자 조합 (6~12자)';
 
   @override
   String areYouSureYouWantToUnsubscribe(String nickname) {
@@ -102,8 +100,7 @@ class LocalizedKo extends Localized {
   String get confirmPassword => '비밀번호 확인';
 
   @override
-  String get consentToCollectionAndUseOfVehicleLocationInfo =>
-      '차량 위치정보의 수집 이용 제공 동의 (필수)';
+  String get consentToCollectionAndUseOfVehicleLocationInfo => '차량 위치정보의 수집 이용 제공 동의 (필수)';
 
   @override
   String get copy => '복사하기';
@@ -133,8 +130,7 @@ class LocalizedKo extends Localized {
   String get enterEmailAddress => '이메일 주소 입력';
 
   @override
-  String get enterYourEligibilityPeriodTestExpirationDate =>
-      '적성기간 만료일(숫자만)을 입력해주세요.';
+  String get enterYourEligibilityPeriodTestExpirationDate => '적성기간 만료일(숫자만)을 입력해주세요.';
 
   @override
   String get enterYourInvitationCode => '리더에게 받은 초대코드를 입력하세요.';
@@ -283,8 +279,7 @@ class LocalizedKo extends Localized {
   String get personalInfo => '개인 정보';
 
   @override
-  String get pleaseEnterYourLicenseIssueDateOnlyNumbers =>
-      '면허발급일자(숫자만)를 입력해주세요.';
+  String get pleaseEnterYourLicenseIssueDateOnlyNumbers => '면허발급일자(숫자만)를 입력해주세요.';
 
   @override
   String get pleaseEnterYourLicenseNumbersOnly => '면허증번호(숫자만)를 입력해주세요.';
@@ -328,8 +323,7 @@ class LocalizedKo extends Localized {
   String get reportAnIncident => '사고 접수';
 
   @override
-  String reservationTotalPeriod(int totalReservationTime,
-      String reservationStartTime, String reservationEndTime) {
+  String reservationTotalPeriod(int totalReservationTime, String reservationStartTime, String reservationEndTime) {
     return '총 $totalReservationTime시간 이용\n$reservationStartTime ~ $reservationEndTime';
   }
 
@@ -402,8 +396,7 @@ class LocalizedKo extends Localized {
   String get subscriptionInformation => '구독 정보';
 
   @override
-  String get subscriptionsAreRestrictedToThoseUnderTheAgeOf26 =>
-      '· 만 26세 미만은 가입이 제한됩니다.';
+  String get subscriptionsAreRestrictedToThoseUnderTheAgeOf26 => '· 만 26세 미만은 가입이 제한됩니다.';
 
   @override
   String subscriptionsWillBeCanceledAfter(int y, int m, int d) {
@@ -459,12 +452,10 @@ class LocalizedKo extends Localized {
   String get withdrawingMember => '회원 탈퇴';
 
   @override
-  String get wouldYouLikeToRequestToBeRemovedFromWegooliFriends =>
-      '위굴리 프렌즈의 회원 탈퇴하시겠습니까?';
+  String get wouldYouLikeToRequestToBeRemovedFromWegooliFriends => '위굴리 프렌즈의 회원 탈퇴하시겠습니까?';
 
   @override
-  String get youCanCancelAnytime =>
-      '해지 시 위굴리 프렌즈의 모든 혜택을 잃게 됩니다. 남은 기간 내에 해지를 취소하실 수 있습니다.';
+  String get youCanCancelAnytime => '해지 시 위굴리 프렌즈의 모든 혜택을 잃게 됩니다. 남은 기간 내에 해지를 취소하실 수 있습니다.';
 
   @override
   String get youCanJoinTheTeamRightAway => '바로 팀에 들어갈 수 있습니다.';

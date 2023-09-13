@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 // 📦 Package imports:
 import 'package:get/get.dart';
+import 'package:wegooli_friends/core/utils/custom_icons.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
@@ -24,30 +25,28 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
 
   List<BottomMenuModel> bottomMenuList = [
     BottomMenuModel(
-      iconPath: Assets.svg.imgCalGray500.path,
-      activeIconPath: Assets.svg.imgCalOnPrimary.path,
+      iconData: CustomIcons.calendar_full,
       title: l10ns.schedule,
     ),
     BottomMenuModel(
-      iconPath: Assets.svg.imgChatGray400.path,
-      activeIconPath: Assets.svg.imgChatOnPrimary.path,
+      iconData: Icons.chat,
       title: l10ns.chat,
     ),
     BottomMenuModel(
-      iconPath: Assets.svg.imgKeyGray400.path,
-      activeIconPath: Assets.svg.imgKeyBlueGray900.path,
+      iconData: CustomIcons.key,
       title: l10ns.smartKey,
     ),
     BottomMenuModel(
-      iconPath: Assets.svg.imgUser2.path,
-      activeIconPath: Assets.svg.imgUser3.path,
+      iconData: CustomIcons.user,
       title: l10ns.myPage,
     ),
   ];
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SafeArea(
+        child: Container(
+      width: mediaQueryData.size.width,
       height: getVerticalSize(65),
       decoration: BoxDecoration(
         border: Border(
@@ -59,49 +58,29 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
       ),
       child: Obx(
         () => BottomNavigationBar(
-          // backgroundColor: Colors.transparent,
-          showSelectedLabels: false,
-          showUnselectedLabels: false,
-          selectedFontSize: 0,
-          elevation: 1,
+          showSelectedLabels: true,
+          showUnselectedLabels: true,
+          selectedFontSize: getFontSize(10),
+          unselectedFontSize: getFontSize(10),
+          elevation: 0,
+          iconSize: getSize(20),
           currentIndex: selectedIndex.value,
           type: BottomNavigationBarType.fixed,
+          selectedItemColor: theme.colorScheme.onPrimary,
+          unselectedItemColor: appTheme.gray400,
+          selectedIconTheme:
+              IconThemeData(color: theme.colorScheme.onPrimary), // 선택된 아이콘 스타일
+          unselectedIconTheme: IconThemeData(color: appTheme.gray400),
+          selectedLabelStyle: CustomTextStyles.bodySmallInterOnPrimary,
+          unselectedLabelStyle: CustomTextStyles.bodySmallInter10Gray400
+              .copyWith(color: appTheme.gray400),
           items: List.generate(bottomMenuList.length, (index) {
             return BottomNavigationBarItem(
-              icon: Column(mainAxisSize: MainAxisSize.min, children: [
-                CustomImageView(
-                    svgPath: bottomMenuList[index].iconPath,
-                    height: getSize(24),
-                    width: getSize(24),
-                    color: appTheme.gray400),
-                Padding(
-                  padding: getPadding(top: 4),
-                  child: Text(
-                    bottomMenuList[index].title ?? '',
-                    style: CustomTextStyles.bodySmallInter10Gray400
-                        .copyWith(color: appTheme.gray400),
-                  ),
-                ),
-              ]),
-              activeIcon: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  CustomImageView(
-                    svgPath: bottomMenuList[index].activeIconPath,
-                    height: getSize(24),
-                    width: getSize(24),
-                    color: theme.colorScheme.onPrimary,
-                  ),
-                  Padding(
-                    padding: getPadding(top: 4),
-                    child: Text(
-                      bottomMenuList[index].title ?? '',
-                      style: CustomTextStyles.bodySmallInterOnPrimary,
-                    ),
-                  ),
-                ],
-              ),
-              label: '',
+              icon: Container(
+                  margin: getMargin(bottom: 5),
+                  child:
+                      Icon(bottomMenuList[index].iconData, size: getSize(20))),
+              label: bottomMenuList[index].title ?? '',
             );
           }),
           onTap: (int index) {
@@ -126,7 +105,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
               selectedIndex.value = index;
               selectedIndex.refresh();
             });
-            print('widget.id ${widget.id}');
+            // print('widget.id ${widget.id}');
             Get.toNamed(destination,
                 id: widget.id,
                 arguments: bottomMenuList[index],
@@ -134,18 +113,16 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
           },
         ),
       ),
-    );
+    ));
   }
 }
 
 class BottomMenuModel {
   BottomMenuModel({
-    required this.iconPath,
-    required this.activeIconPath,
+    required this.iconData,
     this.title,
   });
 
-  String iconPath;
-  String activeIconPath;
+  IconData iconData;
   String? title;
 }

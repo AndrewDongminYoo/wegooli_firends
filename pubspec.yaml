@@ -161,7 +161,9 @@ flutter:
         - asset: assets/fonts/Roboto-Regular.ttf
         - asset: assets/fonts/Roboto-Thin.ttf
           weight: 400
-
+    - family: CustomIcons
+      fonts:
+        - asset: assets/fonts/CustomIcons.ttf
 # flutter_gen_runner는 자산, 폰트, 색상 등을 위한 Flutter 코드 생성기로, 문자열 기반 API를 없애줌.
 # String 기반으로 자산 경로를 사용하는 것은 안전하지 않음.
 # build_runner와 FlutterGen을 패키지의 pubspec.yaml 파일에 추가하고,

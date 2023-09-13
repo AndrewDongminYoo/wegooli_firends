@@ -13,14 +13,17 @@ class CalendarBody extends GetView<ScheduleController> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: getPadding(all: 16),
+        padding: getPadding(all: 15),
         child: Container(
-            padding: getPadding(all: 16),
+            padding: getPadding(left: 20, right: 20, bottom: 20),
+            width: getHorizontalSize(330),
+            height: getVerticalSize(284),
             decoration: AppDecoration.outline
                 .copyWith(borderRadius: BorderRadiusStyle.circleBorder10),
             child: Align(
                 child: TableCalendar<Schedule>(
-              calendarFormat: controller.calendarFormat,
+              shouldFillViewport: true,
+              calendarFormat: CalendarFormat.month,
               daysOfWeekHeight: 30,
               eventLoader: _eventLoader,
               firstDay: controller.firstDay,
@@ -63,7 +66,7 @@ class CalendarBody extends GetView<ScheduleController> {
   }
 
   void _onPageChanged(DateTime focusedDay) {
-    controller.focusedDay = focusedDay;
+    // controller.focusedDay = focusedDay;
   }
 
   void _onFormatChanged(CalendarFormat format) {

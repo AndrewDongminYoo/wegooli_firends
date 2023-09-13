@@ -1,5 +1,5 @@
 name: wegooli_friends
-version: 1.0.0+5
+version: 1.0.0+7
 description: Wegooli Friends 프로젝트
 
 # 다음 줄은 `flutter pub publish`를 사용하여 패키지가 실수로 pub.dev에 게시되는 것을 방지함.
@@ -230,8 +230,9 @@ analyzer:
 
 # 아이콘 생성 원할 시, dart run flutter_launcher_icons:main
 flutter_launcher_icons:
-  image_path: assets/icons/GLLO.jpg
+  image_path: assets/icons/WegooliFriends.png
   ios: true
+  remove_alpha_ios: true
   android: ic_launcher
   min_sdk_android: 21
   web:

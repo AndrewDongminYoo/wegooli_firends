@@ -1,6 +1,6 @@
 {
   "name": "wegoolifriendapp",
-  "version": "1.0.0",
+  "version": "1.0.0+7",
   "description": "```bash flutter run ```",
   "directories": {
     "lib": "lib"
@@ -21,7 +21,7 @@
     "build-aab": "flutter build appbundle",
     "build-apk": "flutter build apk --split-per-abi",
     "build-ios": "flutter build ios",
-    "build-ipa": "flutter build ipa",
+    "build-ipa": "flutter build ipa --build-number=$1 --build-name=$2 --release --tree-shake-icons",
     "dev:cal": "flutter run --debug --device-id chrome --web-hostname localhost --target=lib/main.dart --hot --ignore-deprecation",
     "dev": "flutter run --debug --device-id chrome --web-renderer canvaskit --web-hostname localhost",
     "install": "flutter pub get",

@@ -1,6 +1,7 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'select_car_management_request.g.dart';
@@ -11,7 +12,7 @@ part 'select_car_management_request.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class SelectCarManagementRequest {
+class SelectCarManagementRequest extends Equatable {
   /// Returns a new [SelectCarManagementRequest] instance.
   SelectCarManagementRequest({
     this.seq,
@@ -50,7 +51,16 @@ class SelectCarManagementRequest {
   Map<String, dynamic> toJson() => _$SelectCarManagementRequestToJson(this);
 
   @override
-  String toString() {
-    return toJson().toString();
-  }
+  bool get stringify => true;
+
+  @override
+  List<Object?> get props => [
+        seq,
+        carNum,
+        oilCheckDate,
+        tireCheckDate,
+        batteryStatus,
+        createdBy,
+        createdAt,
+      ];
 }

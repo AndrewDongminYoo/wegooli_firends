@@ -249,13 +249,13 @@ class UserController extends GetxController {
     }
   }
 
-  acceptanceComplete(List<Agreement> agreements) {
-    agreements.map(toAccountAgreementModel).toList();
-    // _service.sendAcceptanceRequest();
+  Future<String> acceptanceComplete(List<Agreement> agreements) {
+    final request = agreements.map(toAccountAgreementModel).toList();
+    return _service.sendAcceptanceRequest(request);
   }
 
-  AccountAgreementModel toAccountAgreementModel(Agreement e) {
-    return AccountAgreementModel(
+  AccountAgreementRequest toAccountAgreementModel(Agreement e) {
+    return AccountAgreementRequest(
       classification: currentUser.value.id,
       accountId: e.title,
       agreeYn: e.accepted ? 'Y' : 'N',

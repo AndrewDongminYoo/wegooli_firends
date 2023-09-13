@@ -1,6 +1,7 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'operator_team_account_detail.g.dart';
@@ -11,7 +12,7 @@ part 'operator_team_account_detail.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class OperatorTeamAccountDetail {
+class OperatorTeamAccountDetail extends Equatable {
   /// Returns a new [OperatorTeamAccountDetail] instance.
   OperatorTeamAccountDetail({
     this.name,
@@ -70,7 +71,21 @@ class OperatorTeamAccountDetail {
   Map<String, dynamic> toJson() => _$OperatorTeamAccountDetailToJson(this);
 
   @override
-  String toString() {
-    return toJson().toString();
-  }
+  bool get stringify => true;
+
+  @override
+  List<Object?> get props => [
+        name,
+        teamName,
+        email,
+        phoneNumber,
+        add1,
+        add2,
+        sex,
+        age,
+        signDate,
+        monthlyPay,
+        licenseYn,
+        paymentCardYn,
+      ];
 }

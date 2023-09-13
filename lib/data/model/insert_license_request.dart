@@ -1,6 +1,7 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'insert_license_request.g.dart';
@@ -11,7 +12,7 @@ part 'insert_license_request.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class InsertLicenseRequest {
+class InsertLicenseRequest extends Equatable {
   /// Returns a new [InsertLicenseRequest] instance.
   InsertLicenseRequest({
     this.seq,
@@ -62,7 +63,19 @@ class InsertLicenseRequest {
   Map<String, dynamic> toJson() => _$InsertLicenseRequestToJson(this);
 
   @override
-  String toString() {
-    return toJson().toString();
-  }
+  bool get stringify => true;
+
+  @override
+  List<Object?> get props => [
+        seq,
+        memberSeq,
+        koreanYn,
+        licenseClass,
+        licenseArea,
+        licenseYear,
+        licenseNum,
+        expiredDate,
+        issuedDate,
+        signature,
+      ];
 }

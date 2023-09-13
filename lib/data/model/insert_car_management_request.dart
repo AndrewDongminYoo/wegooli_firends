@@ -1,4 +1,7 @@
+// ignore_for_file: unused_element
+
 // 📦 Package imports:
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'insert_car_management_request.g.dart';
@@ -9,7 +12,7 @@ part 'insert_car_management_request.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class InsertCarManagementRequest {
+class InsertCarManagementRequest extends Equatable {
   /// Returns a new [InsertCarManagementRequest] instance.
   InsertCarManagementRequest({
     this.seq,
@@ -44,7 +47,15 @@ class InsertCarManagementRequest {
   Map<String, dynamic> toJson() => _$InsertCarManagementRequestToJson(this);
 
   @override
-  String toString() {
-    return toJson().toString();
-  }
+  bool get stringify => true;
+
+  @override
+  List<Object?> get props => [
+        seq,
+        carNum,
+        oilCheckDate,
+        tireCheckDate,
+        batteryStatus,
+        createdBy,
+      ];
 }

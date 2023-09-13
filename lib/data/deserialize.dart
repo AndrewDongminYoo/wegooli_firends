@@ -40,8 +40,8 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
     case 'CarControlHistoryModel':
       return CarControlHistoryModel.fromJson(value as Map<String, dynamic>)
           as ReturnType;
-    case 'CarHistoryDTO':
-      return CarHistoryDTO.fromJson(value as Map<String, dynamic>)
+    case 'CarHistoryDto':
+      return CarHistoryDto.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'CarManagementModel':
       return CarManagementModel.fromJson(value as Map<String, dynamic>)
@@ -50,8 +50,8 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
       return CarModel.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'CarRequest':
       return CarRequest.fromJson(value as Map<String, dynamic>) as ReturnType;
-    case 'DeviceControlResultDTO':
-      return DeviceControlResultDTO.fromJson(value as Map<String, dynamic>)
+    case 'DeviceControlResultDto':
+      return DeviceControlResultDto.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'DeviceOption':
       return DeviceOption.fromJson(value as Map<String, dynamic>) as ReturnType;
@@ -63,6 +63,15 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
           as ReturnType;
     case 'InsertLicenseRequest':
       return InsertLicenseRequest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'InsertNoticeRequest':
+      return InsertNoticeRequest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'InsertPushRequest':
+      return InsertPushRequest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'InsertSmsRequest':
+      return InsertSmsRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'LeaderSetRequest':
       return LeaderSetRequest.fromJson(value as Map<String, dynamic>)
@@ -115,6 +124,9 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
       return Push.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'QnA':
       return QnA.fromJson(value as Map<String, dynamic>) as ReturnType;
+    case 'QuestionRequest':
+      return QuestionRequest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'ScheduleModel':
       return ScheduleModel.fromJson(value as Map<String, dynamic>)
           as ReturnType;
@@ -124,8 +136,23 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
     case 'SelectCarManagementRequest':
       return SelectCarManagementRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'SelectNoticeRequest':
+      return SelectNoticeRequest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'SelectPushRequest':
+      return SelectPushRequest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'SelectQnARequest':
+      return SelectQnARequest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'SelectSmsRequest':
+      return SelectSmsRequest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'SelectUserDto':
       return SelectUserDto.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'SelectUserRequest':
+      return SelectUserRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'ServiceCarDetailRequest':
       return ServiceCarDetailRequest.fromJson(value as Map<String, dynamic>)
@@ -183,10 +210,22 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
     case 'UpdateLicenseRequest':
       return UpdateLicenseRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'UpdateNoticeRequest':
+      return UpdateNoticeRequest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'UpdatePushRequest':
+      return UpdatePushRequest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'UpdateSmsRequest':
+      return UpdateSmsRequest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
+    case 'UpdateUserRequest':
+      return UpdateUserRequest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'UserDto':
       return UserDto.fromJson(value as Map<String, dynamic>) as ReturnType;
-    case 'UserDetailsDTO':
-      return UserDetailsDTO.fromJson(value as Map<String, dynamic>)
+    case 'UserDetailsDto':
+      return UserDetailsDto.fromJson(value as Map<String, dynamic>)
           as ReturnType;
     case 'UserSubInfo':
       return UserSubInfo.fromJson(value as Map<String, dynamic>) as ReturnType;

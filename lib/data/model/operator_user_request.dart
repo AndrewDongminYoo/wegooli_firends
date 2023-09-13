@@ -1,6 +1,7 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'operator_user_request.g.dart';
@@ -11,7 +12,7 @@ part 'operator_user_request.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class OperatorUserRequest {
+class OperatorUserRequest extends Equatable {
   /// Returns a new [OperatorUserRequest] instance.
   OperatorUserRequest({
     this.startAt,
@@ -46,7 +47,15 @@ class OperatorUserRequest {
   Map<String, dynamic> toJson() => _$OperatorUserRequestToJson(this);
 
   @override
-  String toString() {
-    return toJson().toString();
-  }
+  bool get stringify => true;
+
+  @override
+  List<Object?> get props => [
+        startAt,
+        endAt,
+        contract,
+        address,
+        accountId,
+        content,
+      ];
 }

@@ -8,7 +8,6 @@ part 'user.model.g.dart';
   checked: true,
   anyMap: true,
   createToJson: true,
-  createFactory: true,
   disallowUnrecognizedKeys: false,
   explicitToJson: false,
 )
@@ -61,14 +60,14 @@ class User extends Equatable {
   Map<String, dynamic> toJson() => _$UserToJson(this);
 
   User copyWith({
-    String? name,
+    String? userNm,
     String? phoneNumber,
     String? color,
     int? memberSeq,
     String? nickname,
-    String? email,
+    String? userEmail,
     String? id,
-    String? birthDay,
+    String? birthday,
     String? add2,
     String? add1,
     String? delimit,
@@ -76,14 +75,14 @@ class User extends Equatable {
     String? sub,
   }) {
     return User(
-      name: name ?? this.name,
+      name: userNm ?? name,
       phoneNumber: phoneNumber ?? this.phoneNumber,
       color: color ?? this.color,
       memberSeq: memberSeq ?? this.memberSeq,
       nickname: nickname ?? this.nickname,
-      email: email ?? this.email,
+      email: userEmail ?? email,
       id: id ?? this.id,
-      birthDay: birthDay ?? this.birthDay,
+      birthDay: birthday ?? birthDay,
       add2: add2 ?? this.add2,
       add1: add1 ?? this.add1,
       delimit: delimit ?? this.delimit,

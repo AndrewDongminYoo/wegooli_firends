@@ -60,21 +60,22 @@ class ShareServiceModel extends Equatable {
   @JsonKey(name: 'maxSub', required: false, includeIfNull: false)
   final String? maxSub;
 
+  @override
+  List<Object?> get props => [
+        shareServiceSeq,
+        serviceName,
+        serviceDes,
+        carSeq,
+        carName,
+        carImg,
+        monthlyPay,
+        personalPay,
+        nowSub,
+        maxSub,
+      ];
+
   Map<String, dynamic> toJson() => _$ShareServiceModelToJson(this);
 
   @override
   bool get stringify => true;
-  @override
-  List<Object?> get props => [
-        'shareServiceSeq',
-        'serviceName',
-        'serviceDes',
-        'carSeq',
-        'carName',
-        'carImg',
-        'monthlyPay',
-        'personalPay',
-        'nowSub',
-        'maxSub',
-      ];
 }

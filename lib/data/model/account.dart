@@ -64,11 +64,6 @@ class Account extends Equatable {
   @JsonKey(name: 'profilePicture', required: false, includeIfNull: false)
   final String? profilePicture;
 
-  Map<String, dynamic> toJson() => _$AccountToJson(this);
-
-  @override
-  bool get stringify => true;
-
   @override
   List<Object?> get props => [
         id,
@@ -82,6 +77,10 @@ class Account extends Equatable {
         color,
         nickname,
         profilePicture,
-        delimit,
       ];
+
+  Map<String, dynamic> toJson() => _$AccountToJson(this);
+
+  @override
+  bool get stringify => true;
 }

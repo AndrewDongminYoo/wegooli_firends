@@ -1,6 +1,7 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'operator_car_request.g.dart';
@@ -11,7 +12,7 @@ part 'operator_car_request.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class OperatorCarRequest {
+class OperatorCarRequest extends Equatable {
   /// Returns a new [OperatorCarRequest] instance.
   OperatorCarRequest({
     this.contract,
@@ -34,7 +35,12 @@ class OperatorCarRequest {
   Map<String, dynamic> toJson() => _$OperatorCarRequestToJson(this);
 
   @override
-  String toString() {
-    return toJson().toString();
-  }
+  bool get stringify => true;
+
+  @override
+  List<Object?> get props => [
+        contract,
+        address,
+        carNum,
+      ];
 }

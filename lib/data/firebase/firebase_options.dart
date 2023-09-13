@@ -42,8 +42,7 @@ class DefaultFirebaseOptions {
         );
       default:
         throw UnsupportedError(
-          '이 플랫폼에서는 DefaultFirebaseOptions가 지원되지 않습니다. - ',
-        );
+            '이 플랫폼에서는 DefaultFirebaseOptions가 지원되지 않습니다. - ');
     }
   }
 

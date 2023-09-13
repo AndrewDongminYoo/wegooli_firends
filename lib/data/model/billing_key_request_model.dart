@@ -41,16 +41,17 @@ class BillingKeyRequestModel extends Equatable {
   @JsonKey(name: 'customerKey', required: false, includeIfNull: false)
   final String? customerKey;
 
-  Map<String, dynamic> toJson() => _$BillingKeyRequestModelToJson(this);
-
-  @override
-  bool get stringify => true;
-
   @override
   List<Object?> get props => [
         cardExpirationMonth,
         cardExpirationYear,
         cardNumber,
+        customerIdentityNumber,
         customerKey,
       ];
+
+  Map<String, dynamic> toJson() => _$BillingKeyRequestModelToJson(this);
+
+  @override
+  bool get stringify => true;
 }

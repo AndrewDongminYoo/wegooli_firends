@@ -4,7 +4,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'qn_a.g.dart';
+part 'select_qn_a_request.g.dart';
 
 @JsonSerializable(
   checked: true,
@@ -12,36 +12,20 @@ part 'qn_a.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class QnA extends Equatable {
-  /// Returns a new [QnA] instance.
-  QnA({
-    this.seq,
-    this.delYn,
-    this.createdAt,
-    this.updatedAt,
+class SelectQnARequest extends Equatable {
+  /// Returns a new [SelectQnARequest] instance.
+  SelectQnARequest({
     this.category,
     this.title,
     this.content,
-    this.file,
     this.answer,
     this.status,
     this.createdBy,
-    this.answeredAt,
+    this.delYn,
   });
 
-  factory QnA.fromJson(Map<String, dynamic> json) => _$QnAFromJson(json);
-
-  @JsonKey(name: 'seq', required: false, includeIfNull: false)
-  final int? seq;
-
-  @JsonKey(name: 'delYn', required: false, includeIfNull: false)
-  final String? delYn;
-
-  @JsonKey(name: 'createdAt', required: false, includeIfNull: false)
-  final DateTime? createdAt;
-
-  @JsonKey(name: 'updatedAt', required: false, includeIfNull: false)
-  final DateTime? updatedAt;
+  factory SelectQnARequest.fromJson(Map<String, dynamic> json) =>
+      _$SelectQnARequestFromJson(json);
 
   @JsonKey(name: 'category', required: false, includeIfNull: false)
   final String? category;
@@ -52,9 +36,6 @@ class QnA extends Equatable {
   @JsonKey(name: 'content', required: false, includeIfNull: false)
   final String? content;
 
-  @JsonKey(name: 'file', required: false, includeIfNull: false)
-  final String? file;
-
   @JsonKey(name: 'answer', required: false, includeIfNull: false)
   final String? answer;
 
@@ -64,27 +45,22 @@ class QnA extends Equatable {
   @JsonKey(name: 'createdBy', required: false, includeIfNull: false)
   final String? createdBy;
 
-  @JsonKey(name: 'answeredAt', required: false, includeIfNull: false)
-  final DateTime? answeredAt;
-
-  Map<String, dynamic> toJson() => _$QnAToJson(this);
-
-  @override
-  bool get stringify => true;
+  @JsonKey(name: 'delYn', required: false, includeIfNull: false)
+  final String? delYn;
 
   @override
   List<Object?> get props => [
-        seq,
-        delYn,
-        createdAt,
-        updatedAt,
         category,
         title,
         content,
-        file,
         answer,
         status,
         createdBy,
-        answeredAt,
+        delYn,
       ];
+
+  Map<String, dynamic> toJson() => _$SelectQnARequestToJson(this);
+
+  @override
+  bool get stringify => true;
 }

@@ -30,11 +30,7 @@ class CarStatusInformation extends GetWidget<VehicleController> {
                     height: getVerticalSize(132),
                     width: getHorizontalSize(200),
                   )),
-              Container(
-                height: getVerticalSize(8),
-                width: mediaQueryData.size.width,
-                color: const Color(0xFFF6F7F7),
-              ),
+              const GrayHorizonSeparator(),
               Container(
                 padding: getPadding(left: 16, top: 20, bottom: 20, right: 16),
                 child: Column(
@@ -169,11 +165,7 @@ class CarStatusInformation extends GetWidget<VehicleController> {
                   ],
                 ),
               ),
-              Container(
-                height: getVerticalSize(8),
-                width: mediaQueryData.size.width,
-                color: const Color(0xFFF6F7F7),
-              ),
+              const GrayHorizonSeparator(),
               Container(
                 padding: getPadding(left: 16, top: 20, bottom: 20, right: 16),
                 child: Column(

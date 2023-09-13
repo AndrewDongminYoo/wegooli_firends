@@ -12,9 +12,9 @@ part 'car_history_dto.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class CarHistoryDTO extends Equatable {
-  /// Returns a new [CarHistoryDTO] instance.
-  CarHistoryDTO({
+class CarHistoryDto extends Equatable {
+  /// Returns a new [CarHistoryDto] instance.
+  CarHistoryDto({
     this.seq,
     this.terminalSeq,
     this.carNum,
@@ -36,8 +36,8 @@ class CarHistoryDTO extends Equatable {
     this.createdAt,
   });
 
-  factory CarHistoryDTO.fromJson(Map<String, dynamic> json) =>
-      _$CarHistoryDTOFromJson(json);
+  factory CarHistoryDto.fromJson(Map<String, dynamic> json) =>
+      _$CarHistoryDtoFromJson(json);
 
   @JsonKey(name: 'seq', required: false, includeIfNull: false)
   final int? seq;
@@ -96,11 +96,6 @@ class CarHistoryDTO extends Equatable {
   @JsonKey(name: 'createdAt', required: false, includeIfNull: false)
   final String? createdAt;
 
-  Map<String, dynamic> toJson() => _$CarHistoryDTOToJson(this);
-
-  @override
-  bool get stringify => true;
-
   @override
   List<Object?> get props => [
         seq,
@@ -123,4 +118,9 @@ class CarHistoryDTO extends Equatable {
         brDoorLock,
         createdAt,
       ];
+
+  Map<String, dynamic> toJson() => _$CarHistoryDtoToJson(this);
+
+  @override
+  bool get stringify => true;
 }

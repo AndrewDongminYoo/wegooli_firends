@@ -8,6 +8,8 @@ import 'package:dio/dio.dart';
 // 🌎 Project imports:
 import '/data/deserialize.dart';
 import '/data/model/qn_a.dart';
+import '/data/model/question_request.dart';
+import '/data/model/select_qn_a_request.dart';
 
 class BoardControllerApi {
   const BoardControllerApi(this._dio);
@@ -170,7 +172,7 @@ class BoardControllerApi {
   /// insertAnswer
   ///
   /// Parameters:
-  /// * [qnA]
+  /// * [body]
   /// * [seq]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -182,7 +184,7 @@ class BoardControllerApi {
   /// Returns a [Future] containing a [Response] with a [int] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<int>> insertAnswer({
-    required QnA qnA,
+    required String body,
     required int seq,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -215,7 +217,7 @@ class BoardControllerApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = jsonEncode(qnA);
+      _bodyData = jsonEncode(body);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -266,7 +268,7 @@ class BoardControllerApi {
   /// insertQuestion
   ///
   /// Parameters:
-  /// * [qnA]
+  /// * [questionRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -277,7 +279,7 @@ class BoardControllerApi {
   /// Returns a [Future] containing a [Response] with a [int] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<int>> insertQuestion({
-    required QnA qnA,
+    required QuestionRequest questionRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -308,7 +310,7 @@ class BoardControllerApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = jsonEncode(qnA);
+      _bodyData = jsonEncode(questionRequest);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -370,7 +372,7 @@ class BoardControllerApi {
   /// Returns a [Future] containing a [Response] with a [int] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<int>> selectCountQnA({
-    required QnA request,
+    required SelectQnARequest request,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -527,7 +529,7 @@ class BoardControllerApi {
   /// Returns a [Future] containing a [Response] with a [List<QnA>] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<List<QnA>>> selectQnAList({
-    required QnA request,
+    required SelectQnARequest request,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -598,7 +600,7 @@ class BoardControllerApi {
   /// updateAnswer
   ///
   /// Parameters:
-  /// * [qnA]
+  /// * [body]
   /// * [seq]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -610,7 +612,7 @@ class BoardControllerApi {
   /// Returns a [Future] containing a [Response] with a [int] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<int>> updateAnswer({
-    required QnA qnA,
+    required String body,
     required int seq,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -643,7 +645,7 @@ class BoardControllerApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = jsonEncode(qnA);
+      _bodyData = jsonEncode(body);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -694,7 +696,7 @@ class BoardControllerApi {
   /// updateQuestion
   ///
   /// Parameters:
-  /// * [qnA]
+  /// * [questionRequest]
   /// * [seq]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -706,7 +708,7 @@ class BoardControllerApi {
   /// Returns a [Future] containing a [Response] with a [int] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<int>> updateQuestion({
-    required QnA qnA,
+    required QuestionRequest questionRequest,
     required int seq,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -739,7 +741,7 @@ class BoardControllerApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = jsonEncode(qnA);
+      _bodyData = jsonEncode(questionRequest);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(

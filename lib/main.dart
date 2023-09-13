@@ -34,8 +34,7 @@ Future<void> main() async {
   // 관련 문제를 참조하십시오 : https://github.com/flutter/flutter/issues/96391
   // 앱과 인증을 저장하여 이름이 지정된 인스턴스로 테스트를보다 쉽게 테스트 할 수 있습니다.
   app = await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+      options: DefaultFirebaseOptions.currentPlatform);
 
   /// 지정된 [FirebaseApp]을 사용하여 인스턴스를 반환합니다.
   /// 지속성(persistence)은 웹에서만 사용할 수 있으며 다른 플랫폼에서는 지원되지 않습니다.

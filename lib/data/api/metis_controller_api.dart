@@ -24,9 +24,9 @@ class MetisControllerApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [CarHistoryDTO] as data
+  /// Returns a [Future] containing a [Response] with a [CarHistoryDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<CarHistoryDTO>> carLogTop({
+  Future<Response<CarHistoryDto>> carLogTop({
     required String carNum,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -67,13 +67,13 @@ class MetisControllerApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    CarHistoryDTO? _responseData;
+    CarHistoryDto? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<CarHistoryDTO, CarHistoryDTO>(rawData, 'CarHistoryDTO');
+          : deserialize<CarHistoryDto, CarHistoryDto>(rawData, 'CarHistoryDto');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -83,7 +83,7 @@ class MetisControllerApi {
       );
     }
 
-    return Response<CarHistoryDTO>(
+    return Response<CarHistoryDto>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -106,9 +106,9 @@ class MetisControllerApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [List<CarHistoryDTO>] as data
+  /// Returns a [Future] containing a [Response] with a [List<CarHistoryDto>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<List<CarHistoryDTO>>> history({
+  Future<Response<List<CarHistoryDto>>> history({
     String? carNum,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -149,14 +149,14 @@ class MetisControllerApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<CarHistoryDTO>? _responseData;
+    List<CarHistoryDto>? _responseData;
 
     try {
       final rawData = _response.data;
       _responseData = rawData == null
           ? null
-          : deserialize<List<CarHistoryDTO>, CarHistoryDTO>(
-              rawData, 'List<CarHistoryDTO>');
+          : deserialize<List<CarHistoryDto>, CarHistoryDto>(
+              rawData, 'List<CarHistoryDto>');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -166,7 +166,7 @@ class MetisControllerApi {
       );
     }
 
-    return Response<List<CarHistoryDTO>>(
+    return Response<List<CarHistoryDto>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -267,7 +267,7 @@ class MetisControllerApi {
   /// Returns a [Future] containing a [Response] with a [String] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<String>> receiveTerminalResponse({
-    required DeviceControlResultDTO dto,
+    required DeviceControlResultDto dto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,

@@ -22,6 +22,7 @@ OperatorTeamModel _$OperatorTeamModelFromJson(Map<String, dynamic> json) =>
           fee: $checkedConvert('fee', (v) => v as String?),
           startAt: $checkedConvert('startAt', (v) => v as String?),
           endAt: $checkedConvert('endAt', (v) => v as String?),
+          seq: $checkedConvert('seq', (v) => v as int?),
         );
         return val;
       },
@@ -46,5 +47,6 @@ Map<String, dynamic> _$OperatorTeamModelToJson(OperatorTeamModel instance) {
   writeNotNull('fee', instance.fee);
   writeNotNull('startAt', instance.startAt);
   writeNotNull('endAt', instance.endAt);
+  writeNotNull('seq', instance.seq);
   return val;
 }

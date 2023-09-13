@@ -48,26 +48,26 @@ Map<String, dynamic> _$UserDtoToJson(UserDto instance) {
     }
   }
 
-  writeNotNull('name', instance.name);
-  writeNotNull('phoneNumber', instance.phoneNumber);
-  writeNotNull('color', instance.color);
-  writeNotNull('memberSeq', instance.memberSeq);
-  writeNotNull('nickname', instance.nickname);
-  writeNotNull('email', instance.email);
-  writeNotNull('id', instance.id);
-  writeNotNull('birthDay', instance.birthDay);
-  writeNotNull('add2', instance.add2);
-  writeNotNull('add1', instance.add1);
-  writeNotNull('delimit', instance.delimit);
   writeNotNull('seq', instance.seq);
+  writeNotNull('name', instance.name);
+  writeNotNull('add1', instance.add1);
+  writeNotNull('add2', instance.add2);
   writeNotNull('zipCode', instance.zipCode);
+  writeNotNull('phoneNumber', instance.phoneNumber);
+  writeNotNull('email', instance.email);
+  writeNotNull('birthDay', instance.birthDay);
   writeNotNull('sex', instance.sex);
   writeNotNull('delYn', instance.delYn);
   writeNotNull('createdAt', instance.createdAt);
   writeNotNull('updatedAt', instance.updatedAt);
+  writeNotNull('id', instance.id);
+  writeNotNull('memberSeq', instance.memberSeq);
   writeNotNull('password', instance.password);
+  writeNotNull('delimit', instance.delimit);
+  writeNotNull('nickname', instance.nickname);
   writeNotNull('profilePicture', instance.profilePicture);
   writeNotNull('deleteAt', instance.deleteAt);
+  writeNotNull('color', instance.color);
   writeNotNull('customerKey', instance.customerKey);
   writeNotNull('activeYn', instance.activeYn);
   return val;

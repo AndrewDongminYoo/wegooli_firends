@@ -18,6 +18,7 @@ class SubmitWithdrawalModel extends Equatable {
     this.accountId,
     this.date,
     this.teamSeq,
+    this.seq,
   });
 
   factory SubmitWithdrawalModel.fromJson(Map<String, dynamic> json) =>
@@ -32,10 +33,19 @@ class SubmitWithdrawalModel extends Equatable {
   @JsonKey(name: 'teamSeq', required: false, includeIfNull: false)
   final int? teamSeq;
 
+  @JsonKey(name: 'seq', required: false, includeIfNull: false)
+  final int? seq;
+
+  @override
+  List<Object?> get props => [
+        accountId,
+        date,
+        teamSeq,
+        seq,
+      ];
+
   Map<String, dynamic> toJson() => _$SubmitWithdrawalModelToJson(this);
 
   @override
   bool get stringify => true;
-  @override
-  List<Object?> get props => [accountId, date, teamSeq];
 }

@@ -12,9 +12,9 @@ part 'device_control_result_dto.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class DeviceControlResultDTO extends Equatable {
-  /// Returns a new [DeviceControlResultDTO] instance.
-  DeviceControlResultDTO({
+class DeviceControlResultDto extends Equatable {
+  /// Returns a new [DeviceControlResultDto] instance.
+  DeviceControlResultDto({
     this.userId,
     this.terTelNum,
     this.t42,
@@ -47,8 +47,8 @@ class DeviceControlResultDTO extends Equatable {
     this.nsdur,
   });
 
-  factory DeviceControlResultDTO.fromJson(Map<String, dynamic> json) =>
-      _$DeviceControlResultDTOFromJson(json);
+  factory DeviceControlResultDto.fromJson(Map<String, dynamic> json) =>
+      _$DeviceControlResultDtoFromJson(json);
 
   @JsonKey(name: 'userId', required: false, includeIfNull: false)
   final String? userId;
@@ -140,11 +140,6 @@ class DeviceControlResultDTO extends Equatable {
   @JsonKey(name: 'nsdur', required: false, includeIfNull: false)
   final String? nsdur;
 
-  Map<String, dynamic> toJson() => _$DeviceControlResultDTOToJson(this);
-
-  @override
-  bool get stringify => true;
-
   @override
   List<Object?> get props => [
         userId,
@@ -178,4 +173,9 @@ class DeviceControlResultDTO extends Equatable {
         ucp,
         nsdur,
       ];
+
+  Map<String, dynamic> toJson() => _$DeviceControlResultDtoToJson(this);
+
+  @override
+  bool get stringify => true;
 }

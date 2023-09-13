@@ -138,7 +138,6 @@ class TerminalControllerApi {
 
     try {
       final rawData = _response.data;
-      print('AAA : rawData $rawData');
       _responseData = rawData == null
           ? null
           : deserialize<TerminalModel, TerminalModel>(rawData, 'TerminalModel');

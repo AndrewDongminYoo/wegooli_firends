@@ -6,12 +6,12 @@ part of 'car_history_dto.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-CarHistoryDTO _$CarHistoryDTOFromJson(Map<String, dynamic> json) =>
+CarHistoryDto _$CarHistoryDtoFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      'CarHistoryDTO',
+      'CarHistoryDto',
       json,
       ($checkedConvert) {
-        final val = CarHistoryDTO(
+        final val = CarHistoryDto(
           seq: $checkedConvert('seq', (v) => v as int?),
           terminalSeq: $checkedConvert('terminalSeq', (v) => v as int?),
           carNum: $checkedConvert('carNum', (v) => v as String?),
@@ -36,7 +36,7 @@ CarHistoryDTO _$CarHistoryDTOFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$CarHistoryDTOToJson(CarHistoryDTO instance) {
+Map<String, dynamic> _$CarHistoryDtoToJson(CarHistoryDto instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {

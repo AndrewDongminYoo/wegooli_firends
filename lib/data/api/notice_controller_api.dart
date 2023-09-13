@@ -7,9 +7,18 @@ import 'package:dio/dio.dart';
 
 // 🌎 Project imports:
 import '/data/deserialize.dart';
+import '/data/model/insert_notice_request.dart';
+import '/data/model/insert_push_request.dart';
+import '/data/model/insert_sms_request.dart';
 import '/data/model/notice.dart';
 import '/data/model/push.dart';
+import '/data/model/select_notice_request.dart';
+import '/data/model/select_push_request.dart';
+import '/data/model/select_sms_request.dart';
 import '/data/model/sms.dart';
+import '/data/model/update_notice_request.dart';
+import '/data/model/update_push_request.dart';
+import '/data/model/update_sms_request.dart';
 
 class NoticeControllerApi {
   const NoticeControllerApi(this._dio);
@@ -247,7 +256,7 @@ class NoticeControllerApi {
   /// insertNotice
   ///
   /// Parameters:
-  /// * [notice]
+  /// * [insertNoticeRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -258,7 +267,7 @@ class NoticeControllerApi {
   /// Returns a [Future] containing a [Response] with a [int] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<int>> insertNotice({
-    required Notice notice,
+    required InsertNoticeRequest insertNoticeRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -289,7 +298,7 @@ class NoticeControllerApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = jsonEncode(notice);
+      _bodyData = jsonEncode(insertNoticeRequest);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -340,7 +349,7 @@ class NoticeControllerApi {
   /// insertPush
   ///
   /// Parameters:
-  /// * [push]
+  /// * [insertPushRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -351,7 +360,7 @@ class NoticeControllerApi {
   /// Returns a [Future] containing a [Response] with a [int] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<int>> insertPush({
-    required Push push,
+    required InsertPushRequest insertPushRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -382,7 +391,7 @@ class NoticeControllerApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = jsonEncode(push);
+      _bodyData = jsonEncode(insertPushRequest);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -433,7 +442,7 @@ class NoticeControllerApi {
   /// insertSms
   ///
   /// Parameters:
-  /// * [sms]
+  /// * [insertSmsRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -444,7 +453,7 @@ class NoticeControllerApi {
   /// Returns a [Future] containing a [Response] with a [int] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<int>> insertSms({
-    required Sms sms,
+    required InsertSmsRequest insertSmsRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -475,7 +484,7 @@ class NoticeControllerApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = jsonEncode(sms);
+      _bodyData = jsonEncode(insertSmsRequest);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -614,7 +623,7 @@ class NoticeControllerApi {
   /// Returns a [Future] containing a [Response] with a [List<Notice>] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<List<Notice>>> selectNoticeList({
-    required Notice request,
+    required SelectNoticeRequest request,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -773,7 +782,7 @@ class NoticeControllerApi {
   /// Returns a [Future] containing a [Response] with a [List<Push>] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<List<Push>>> selectPushList({
-    required Push request,
+    required SelectPushRequest request,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -931,7 +940,7 @@ class NoticeControllerApi {
   /// Returns a [Future] containing a [Response] with a [List<Sms>] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<List<Sms>>> selectSmsList({
-    required Sms request,
+    required SelectSmsRequest request,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -1002,7 +1011,7 @@ class NoticeControllerApi {
   /// updateNotice
   ///
   /// Parameters:
-  /// * [notice]
+  /// * [updateNoticeRequest]
   /// * [seq]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -1014,7 +1023,7 @@ class NoticeControllerApi {
   /// Returns a [Future] containing a [Response] with a [int] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<int>> updateNotice({
-    required Notice notice,
+    required UpdateNoticeRequest updateNoticeRequest,
     required int seq,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -1046,7 +1055,7 @@ class NoticeControllerApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = jsonEncode(notice);
+      _bodyData = jsonEncode(updateNoticeRequest);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -1097,7 +1106,7 @@ class NoticeControllerApi {
   /// updatePush
   ///
   /// Parameters:
-  /// * [push]
+  /// * [updatePushRequest]
   /// * [seq]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -1109,7 +1118,7 @@ class NoticeControllerApi {
   /// Returns a [Future] containing a [Response] with a [int] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<int>> updatePush({
-    required Push push,
+    required UpdatePushRequest updatePushRequest,
     required int seq,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -1142,7 +1151,7 @@ class NoticeControllerApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = jsonEncode(push);
+      _bodyData = jsonEncode(updatePushRequest);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -1193,7 +1202,7 @@ class NoticeControllerApi {
   /// updateSms
   ///
   /// Parameters:
-  /// * [sms]
+  /// * [updateSmsRequest]
   /// * [seq]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -1205,7 +1214,7 @@ class NoticeControllerApi {
   /// Returns a [Future] containing a [Response] with a [int] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<int>> updateSms({
-    required Sms sms,
+    required UpdateSmsRequest updateSmsRequest,
     required int seq,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -1237,7 +1246,7 @@ class NoticeControllerApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = jsonEncode(sms);
+      _bodyData = jsonEncode(updateSmsRequest);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(

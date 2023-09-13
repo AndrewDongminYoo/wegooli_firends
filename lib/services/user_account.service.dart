@@ -12,6 +12,7 @@ class UserAccountService extends GetConnect {
   @override
   GetHttpClient get httpClient => wegooli;
   final api = wegooli.userApi;
+  final api2 = wegooli.accountAgreementApi;
 
   Future<User?> login(String username, String password) async {
     try {
@@ -77,6 +78,13 @@ class UserAccountService extends GetConnect {
 
   Future<bool> signOut(String accountId) async {
     final response = await api.signOut(id: accountId);
+    return response.data!;
+  }
+
+  Future<String> sendAcceptanceRequest(
+      List<AccountAgreementRequest> request) async {
+    final response =
+        await api2.insertAccountAgreementList(accountAgreementRequest: request);
     return response.data!;
   }
 }

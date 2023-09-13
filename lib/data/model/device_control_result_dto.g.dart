@@ -6,13 +6,13 @@ part of 'device_control_result_dto.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-DeviceControlResultDTO _$DeviceControlResultDTOFromJson(
+DeviceControlResultDto _$DeviceControlResultDtoFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      'DeviceControlResultDTO',
+      'DeviceControlResultDto',
       json,
       ($checkedConvert) {
-        final val = DeviceControlResultDTO(
+        final val = DeviceControlResultDto(
           userId: $checkedConvert('userId', (v) => v as String?),
           terTelNum: $checkedConvert('terTelNum', (v) => v as String?),
           t42: $checkedConvert('t42', (v) => v as String?),
@@ -48,8 +48,8 @@ DeviceControlResultDTO _$DeviceControlResultDTOFromJson(
       },
     );
 
-Map<String, dynamic> _$DeviceControlResultDTOToJson(
-    DeviceControlResultDTO instance) {
+Map<String, dynamic> _$DeviceControlResultDtoToJson(
+    DeviceControlResultDto instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {

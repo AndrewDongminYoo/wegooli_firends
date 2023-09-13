@@ -1,6 +1,7 @@
 // ignore_for_file: unused_element
 
 // 📦 Package imports:
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'operator_team_model.g.dart';
@@ -11,7 +12,7 @@ part 'operator_team_model.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class OperatorTeamModel {
+class OperatorTeamModel extends Equatable {
   /// Returns a new [OperatorTeamModel] instance.
   OperatorTeamModel({
     this.teamName,
@@ -24,6 +25,7 @@ class OperatorTeamModel {
     this.fee,
     this.startAt,
     this.endAt,
+    this.seq,
   });
 
   factory OperatorTeamModel.fromJson(Map<String, dynamic> json) =>
@@ -59,10 +61,26 @@ class OperatorTeamModel {
   @JsonKey(name: 'endAt', required: false, includeIfNull: false)
   final String? endAt;
 
+  @JsonKey(name: 'seq', required: false, includeIfNull: false)
+  final int? seq;
+
+  @override
+  List<Object?> get props => [
+        teamName,
+        add1,
+        add2,
+        memberCount,
+        model,
+        carNum,
+        contract,
+        fee,
+        startAt,
+        endAt,
+        seq,
+      ];
+
   Map<String, dynamic> toJson() => _$OperatorTeamModelToJson(this);
 
   @override
-  String toString() {
-    return toJson().toString();
-  }
+  bool get stringify => true;
 }

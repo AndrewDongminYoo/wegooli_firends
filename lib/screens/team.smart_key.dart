@@ -37,10 +37,11 @@ class _SmartKeyAvailablePageState extends State<SmartKeyAvailablePage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           CustomImageView(
-                            imagePath: controller.terminalDevice.carImage ??
-                                Assets.images.imgCarNewRay.path,
+                            // TODO 백엔드 이미지 저장이 완료되야 쓸수있을 듯... 
+                            // imagePath: controller.terminalDevice.carImage ??
+                            //     Assets.images.imgCarNewRay.path,
+                            imagePath: Assets.images.imgCarNewRay.path,
                             height: getVerticalSize(92),
-                            margin: getMargin(left: 10),
                             width: getHorizontalSize(129),
                             fit: BoxFit.fitWidth,
                           ),

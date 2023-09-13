@@ -25,11 +25,11 @@ CalendarStyle calendarStyle = CalendarStyle(
 );
 
 HeaderStyle headerStyle = HeaderStyle(
-  headerMargin: getMargin(left: 10, right: 10),
+  headerMargin: getMargin(left: 10, right: 10, top: 0),
   titleCentered: true,
   formatButtonVisible: false,
-  leftChevronIcon: const Icon(Icons.keyboard_arrow_left),
-  rightChevronIcon: const Icon(Icons.keyboard_arrow_right),
+  leftChevronIcon: const Icon(Icons.keyboard_arrow_left, color: Colors.black),
+  rightChevronIcon: const Icon(Icons.keyboard_arrow_right, color: Colors.black),
   titleTextStyle: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
 );
 

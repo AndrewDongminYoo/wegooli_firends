@@ -3,7 +3,7 @@
 ## Load the API package
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 ```
 
 All URIs are relative to *http://13.209.6.245:8089*
@@ -21,12 +21,12 @@ All URIs are relative to *http://13.209.6.245:8089*
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getTerminalControllerApi();
+final api = wegooli.terminalApi;
 final TerminalRequest terminalRequest;
 
 try {
@@ -65,12 +65,12 @@ void (empty response body)
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getTerminalControllerApi();
+final api = wegooli.terminalApi;
 final int seq = 56;
 
 try {
@@ -110,12 +110,12 @@ try {
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getTerminalControllerApi();
+final api = wegooli.terminalApi;
 final TerminalRequest request;
 
 try {
@@ -155,12 +155,12 @@ try {
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getTerminalControllerApi();
+final api = wegooli.terminalApi;
 final TerminalUpdateRequest terminalUpdateRequest;
 final int seq = 56;
 

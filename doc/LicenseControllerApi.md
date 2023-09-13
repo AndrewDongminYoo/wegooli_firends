@@ -3,7 +3,7 @@
 ## Load the API package
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 ```
 
 All URIs are relative to *http://13.209.6.245:8089*
@@ -25,12 +25,12 @@ All URIs are relative to *http://13.209.6.245:8089*
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getLicenseControllerApi();
+final api = wegooli.licenseApi;
 final int seq = 56;
 
 try {
@@ -70,12 +70,12 @@ try {
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getLicenseControllerApi();
+final api = wegooli.licenseApi;
 final int memberSeq = 56;
 
 try {
@@ -115,12 +115,12 @@ try {
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getLicenseControllerApi();
+final api = wegooli.licenseApi;
 final InsertLicenseRequest insertLicenseRequest;
 
 try {
@@ -160,12 +160,12 @@ try {
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getLicenseControllerApi();
+final api = wegooli.licenseApi;
 final ValidLicenseRequest validLicenseRequest;
 
 try {
@@ -205,12 +205,12 @@ try {
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getLicenseControllerApi();
+final api = wegooli.licenseApi;
 final int seq = 56;
 
 try {
@@ -250,12 +250,12 @@ try {
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getLicenseControllerApi();
+final api = wegooli.licenseApi;
 final LicenseRequest request;
 
 try {
@@ -295,12 +295,12 @@ try {
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getLicenseControllerApi();
+final api = wegooli.licenseApi;
 
 try {
     final response = api.selectServiceStop();
@@ -337,12 +337,12 @@ This endpoint does not need any parameter.
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getLicenseControllerApi();
+final api = wegooli.licenseApi;
 final UpdateLicenseRequest updateLicenseRequest;
 final int seq = 56;
 

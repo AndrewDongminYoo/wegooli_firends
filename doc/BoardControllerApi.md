@@ -3,7 +3,7 @@
 ## Load the API package
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 ```
 
 All URIs are relative to *http://13.209.6.245:8089*
@@ -26,12 +26,12 @@ All URIs are relative to *http://13.209.6.245:8089*
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getBoardControllerApi();
+final api = wegooli.boardApi;
 final int seq = 56;
 
 try {
@@ -71,12 +71,12 @@ try {
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getBoardControllerApi();
+final api = wegooli.boardApi;
 final int seq = 56;
 
 try {
@@ -111,22 +111,22 @@ try {
 [[Back to README]](../README.md)
 
 > insertAnswer
-> int insertAnswer(qnA, seq)
+> int insertAnswer(body, seq)
 
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getBoardControllerApi();
-final QnA qnA;
+final api = wegooli.boardApi;
+final String body = body_example;
 final int seq = 56;
 
 try {
-    final response = api.insertAnswer(qnA, seq);
+    final response = api.insertAnswer(body, seq);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling BoardControllerApi->insertAnswer: $e\n');
@@ -135,10 +135,10 @@ try {
 
 ### Parameters
 
-| Name    | Type              | Description | Notes |
-| ------- | ----------------- | ----------- | ----- |
-| **qnA** | [**QnA**](QnA.md) |             |
-| **seq** | **int**           |             |
+| Name     | Type       | Description | Notes |
+| -------- | ---------- | ----------- | ----- |
+| **body** | **String** |             |
+| **seq**  | **int**    |             |
 
 ### Return type
 
@@ -158,21 +158,21 @@ try {
 [[Back to README]](../README.md)
 
 > insertQuestion
-> int insertQuestion(qnA)
+> int insertQuestion(questionRequest)
 
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getBoardControllerApi();
-final QnA qnA;
+final api = wegooli.boardApi;
+final QuestionRequest questionRequest;
 
 try {
-    final response = api.insertQuestion(qnA);
+    final response = api.insertQuestion(questionRequest);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling BoardControllerApi->insertQuestion: $e\n');
@@ -181,9 +181,9 @@ try {
 
 ### Parameters
 
-| Name    | Type              | Description | Notes |
-| ------- | ----------------- | ----------- | ----- |
-| **qnA** | [**QnA**](QnA.md) |             |
+| Name                | Type                                      | Description | Notes |
+| ------------------- | ----------------------------------------- | ----------- | ----- |
+| **questionRequest** | [**QuestionRequest**](QuestionRequest.md) |             |
 
 ### Return type
 
@@ -208,13 +208,13 @@ try {
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getBoardControllerApi();
-final QnA request;
+final api = wegooli.boardApi;
+final SelectQnARequest request;
 
 try {
     final response = api.selectCountQnA(request);
@@ -226,9 +226,9 @@ try {
 
 ### Parameters
 
-| Name        | Type           | Description | Notes |
-| ----------- | -------------- | ----------- | ----- |
-| **request** | [**QnA**](.md) |             |
+| Name        | Type                        | Description | Notes |
+| ----------- | --------------------------- | ----------- | ----- |
+| **request** | [**SelectQnARequest**](.md) |             |
 
 ### Return type
 
@@ -253,12 +253,12 @@ try {
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getBoardControllerApi();
+final api = wegooli.boardApi;
 final int seq = 56;
 
 try {
@@ -298,13 +298,13 @@ try {
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getBoardControllerApi();
-final QnA request;
+final api = wegooli.boardApi;
+final SelectQnARequest request;
 
 try {
     final response = api.selectQnAList(request);
@@ -316,9 +316,9 @@ try {
 
 ### Parameters
 
-| Name        | Type           | Description | Notes |
-| ----------- | -------------- | ----------- | ----- |
-| **request** | [**QnA**](.md) |             |
+| Name        | Type                        | Description | Notes |
+| ----------- | --------------------------- | ----------- | ----- |
+| **request** | [**SelectQnARequest**](.md) |             |
 
 ### Return type
 
@@ -338,22 +338,22 @@ try {
 [[Back to README]](../README.md)
 
 > updateAnswer
-> int updateAnswer(qnA, seq)
+> int updateAnswer(body, seq)
 
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getBoardControllerApi();
-final QnA qnA;
+final api = wegooli.boardApi;
+final String body = body_example;
 final int seq = 56;
 
 try {
-    final response = api.updateAnswer(qnA, seq);
+    final response = api.updateAnswer(body, seq);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling BoardControllerApi->updateAnswer: $e\n');
@@ -362,10 +362,10 @@ try {
 
 ### Parameters
 
-| Name    | Type              | Description | Notes |
-| ------- | ----------------- | ----------- | ----- |
-| **qnA** | [**QnA**](QnA.md) |             |
-| **seq** | **int**           |             |
+| Name     | Type       | Description | Notes |
+| -------- | ---------- | ----------- | ----- |
+| **body** | **String** |             |
+| **seq**  | **int**    |             |
 
 ### Return type
 
@@ -385,22 +385,22 @@ try {
 [[Back to README]](../README.md)
 
 > updateQuestion
-> int updateQuestion(qnA, seq)
+> int updateQuestion(questionRequest, seq)
 
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getBoardControllerApi();
-final QnA qnA;
+final api = wegooli.boardApi;
+final QuestionRequest questionRequest;
 final int seq = 56;
 
 try {
-    final response = api.updateQuestion(qnA, seq);
+    final response = api.updateQuestion(questionRequest, seq);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling BoardControllerApi->updateQuestion: $e\n');
@@ -409,10 +409,10 @@ try {
 
 ### Parameters
 
-| Name    | Type              | Description | Notes |
-| ------- | ----------------- | ----------- | ----- |
-| **qnA** | [**QnA**](QnA.md) |             |
-| **seq** | **int**           |             |
+| Name                | Type                                      | Description | Notes |
+| ------------------- | ----------------------------------------- | ----------- | ----- |
+| **questionRequest** | [**QuestionRequest**](QuestionRequest.md) |             |
+| **seq**             | **int**                                   |             |
 
 ### Return type
 

@@ -3,7 +3,7 @@
 ## Load the API package
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 ```
 
 All URIs are relative to *http://13.209.6.245:8089*
@@ -23,12 +23,12 @@ All URIs are relative to *http://13.209.6.245:8089*
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getPaymentControllerApi();
+final api = wegooli.paymentApi;
 final CancelRequestModel cancelRequestModel;
 final String paymentKey = paymentKey_example;
 
@@ -70,12 +70,12 @@ try {
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getPaymentControllerApi();
+final api = wegooli.paymentApi;
 final BillingKeyRequestModel billingKeyRequestModel;
 final String accountId = accountId_example;
 
@@ -117,12 +117,12 @@ try {
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getPaymentControllerApi();
+final api = wegooli.paymentApi;
 final String paymentKey = paymentKey_example;
 
 try {
@@ -162,12 +162,12 @@ try {
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getPaymentControllerApi();
+final api = wegooli.paymentApi;
 final String paymentKey = paymentKey_example;
 final String status = status_example;
 final String lastTransactionKey = lastTransactionKey_example;
@@ -219,12 +219,12 @@ try {
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getPaymentControllerApi();
+final api = wegooli.paymentApi;
 final PayBillingRequestModel payBillingRequestModel;
 final String billingKey = billingKey_example;
 
@@ -266,12 +266,12 @@ try {
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getPaymentControllerApi();
+final api = wegooli.paymentApi;
 
 try {
     final response = api.start();

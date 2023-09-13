@@ -3,7 +3,7 @@
 ## Load the model package
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 ```
 
 ## Properties
@@ -20,6 +20,7 @@ import 'package:wegooli_friends/api.dart';
 | **fee**         | **String** |             | [optional] |
 | **startAt**     | **String** |             | [optional] |
 | **endAt**       | **String** |             | [optional] |
+| **seq**         | **int**    |             | [optional] |
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

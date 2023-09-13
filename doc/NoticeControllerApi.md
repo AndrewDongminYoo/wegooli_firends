@@ -3,7 +3,7 @@
 ## Load the API package
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 ```
 
 All URIs are relative to *http://13.209.6.245:8089*
@@ -32,12 +32,12 @@ All URIs are relative to *http://13.209.6.245:8089*
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getNoticeControllerApi();
+final api = wegooli.noticeApi;
 final int seq = 56;
 
 try {
@@ -77,12 +77,12 @@ try {
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getNoticeControllerApi();
+final api = wegooli.noticeApi;
 final int seq = 56;
 
 try {
@@ -122,12 +122,12 @@ try {
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getNoticeControllerApi();
+final api = wegooli.noticeApi;
 final int seq = 56;
 
 try {
@@ -162,21 +162,21 @@ try {
 [[Back to README]](../README.md)
 
 > insertNotice
-> int insertNotice(notice)
+> int insertNotice(insertNoticeRequest)
 
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getNoticeControllerApi();
-final Notice notice;
+final api = wegooli.noticeApi;
+final InsertNoticeRequest insertNoticeRequest;
 
 try {
-    final response = api.insertNotice(notice);
+    final response = api.insertNotice(insertNoticeRequest);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling NoticeControllerApi->insertNotice: $e\n');
@@ -185,9 +185,9 @@ try {
 
 ### Parameters
 
-| Name       | Type                    | Description | Notes |
-| ---------- | ----------------------- | ----------- | ----- |
-| **notice** | [**Notice**](Notice.md) |             |
+| Name                    | Type                                              | Description | Notes |
+| ----------------------- | ------------------------------------------------- | ----------- | ----- |
+| **insertNoticeRequest** | [**InsertNoticeRequest**](InsertNoticeRequest.md) |             |
 
 ### Return type
 
@@ -207,21 +207,21 @@ try {
 [[Back to README]](../README.md)
 
 > insertPush
-> int insertPush(push)
+> int insertPush(insertPushRequest)
 
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getNoticeControllerApi();
-final Push push;
+final api = wegooli.noticeApi;
+final InsertPushRequest insertPushRequest;
 
 try {
-    final response = api.insertPush(push);
+    final response = api.insertPush(insertPushRequest);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling NoticeControllerApi->insertPush: $e\n');
@@ -230,9 +230,9 @@ try {
 
 ### Parameters
 
-| Name     | Type                | Description | Notes |
-| -------- | ------------------- | ----------- | ----- |
-| **push** | [**Push**](Push.md) |             |
+| Name                  | Type                                          | Description | Notes |
+| --------------------- | --------------------------------------------- | ----------- | ----- |
+| **insertPushRequest** | [**InsertPushRequest**](InsertPushRequest.md) |             |
 
 ### Return type
 
@@ -252,21 +252,21 @@ try {
 [[Back to README]](../README.md)
 
 > insertSms
-> int insertSms(sms)
+> int insertSms(insertSmsRequest)
 
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getNoticeControllerApi();
-final Sms sms;
+final api = wegooli.noticeApi;
+final InsertSmsRequest insertSmsRequest;
 
 try {
-    final response = api.insertSms(sms);
+    final response = api.insertSms(insertSmsRequest);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling NoticeControllerApi->insertSms: $e\n');
@@ -275,9 +275,9 @@ try {
 
 ### Parameters
 
-| Name    | Type              | Description | Notes |
-| ------- | ----------------- | ----------- | ----- |
-| **sms** | [**Sms**](Sms.md) |             |
+| Name                 | Type                                        | Description | Notes |
+| -------------------- | ------------------------------------------- | ----------- | ----- |
+| **insertSmsRequest** | [**InsertSmsRequest**](InsertSmsRequest.md) |             |
 
 ### Return type
 
@@ -302,12 +302,12 @@ try {
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getNoticeControllerApi();
+final api = wegooli.noticeApi;
 final int seq = 56;
 
 try {
@@ -347,13 +347,13 @@ try {
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getNoticeControllerApi();
-final Notice request;
+final api = wegooli.noticeApi;
+final SelectNoticeRequest request;
 
 try {
     final response = api.selectNoticeList(request);
@@ -365,9 +365,9 @@ try {
 
 ### Parameters
 
-| Name        | Type              | Description | Notes |
-| ----------- | ----------------- | ----------- | ----- |
-| **request** | [**Notice**](.md) |             |
+| Name        | Type                           | Description | Notes |
+| ----------- | ------------------------------ | ----------- | ----- |
+| **request** | [**SelectNoticeRequest**](.md) |             |
 
 ### Return type
 
@@ -392,12 +392,12 @@ try {
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getNoticeControllerApi();
+final api = wegooli.noticeApi;
 final int seq = 56;
 
 try {
@@ -437,13 +437,13 @@ try {
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getNoticeControllerApi();
-final Push request;
+final api = wegooli.noticeApi;
+final SelectPushRequest request;
 
 try {
     final response = api.selectPushList(request);
@@ -455,9 +455,9 @@ try {
 
 ### Parameters
 
-| Name        | Type            | Description | Notes |
-| ----------- | --------------- | ----------- | ----- |
-| **request** | [**Push**](.md) |             |
+| Name        | Type                         | Description | Notes |
+| ----------- | ---------------------------- | ----------- | ----- |
+| **request** | [**SelectPushRequest**](.md) |             |
 
 ### Return type
 
@@ -482,12 +482,12 @@ try {
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getNoticeControllerApi();
+final api = wegooli.noticeApi;
 final int seq = 56;
 
 try {
@@ -527,13 +527,13 @@ try {
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getNoticeControllerApi();
-final Sms request;
+final api = wegooli.noticeApi;
+final SelectSmsRequest request;
 
 try {
     final response = api.selectSmsList(request);
@@ -545,9 +545,9 @@ try {
 
 ### Parameters
 
-| Name        | Type           | Description | Notes |
-| ----------- | -------------- | ----------- | ----- |
-| **request** | [**Sms**](.md) |             |
+| Name        | Type                        | Description | Notes |
+| ----------- | --------------------------- | ----------- | ----- |
+| **request** | [**SelectSmsRequest**](.md) |             |
 
 ### Return type
 
@@ -567,22 +567,22 @@ try {
 [[Back to README]](../README.md)
 
 > updateNotice
-> int updateNotice(notice, seq)
+> int updateNotice(updateNoticeRequest, seq)
 
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getNoticeControllerApi();
-final Notice notice;
+final api = wegooli.noticeApi;
+final UpdateNoticeRequest updateNoticeRequest;
 final int seq = 56;
 
 try {
-    final response = api.updateNotice(notice, seq);
+    final response = api.updateNotice(updateNoticeRequest, seq);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling NoticeControllerApi->updateNotice: $e\n');
@@ -591,10 +591,10 @@ try {
 
 ### Parameters
 
-| Name       | Type                    | Description | Notes |
-| ---------- | ----------------------- | ----------- | ----- |
-| **notice** | [**Notice**](Notice.md) |             |
-| **seq**    | **int**                 |             |
+| Name                    | Type                                              | Description | Notes |
+| ----------------------- | ------------------------------------------------- | ----------- | ----- |
+| **updateNoticeRequest** | [**UpdateNoticeRequest**](UpdateNoticeRequest.md) |             |
+| **seq**                 | **int**                                           |             |
 
 ### Return type
 
@@ -614,22 +614,22 @@ try {
 [[Back to README]](../README.md)
 
 > updatePush
-> int updatePush(push, seq)
+> int updatePush(updatePushRequest, seq)
 
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getNoticeControllerApi();
-final Push push;
+final api = wegooli.noticeApi;
+final UpdatePushRequest updatePushRequest;
 final int seq = 56;
 
 try {
-    final response = api.updatePush(push, seq);
+    final response = api.updatePush(updatePushRequest, seq);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling NoticeControllerApi->updatePush: $e\n');
@@ -638,10 +638,10 @@ try {
 
 ### Parameters
 
-| Name     | Type                | Description | Notes |
-| -------- | ------------------- | ----------- | ----- |
-| **push** | [**Push**](Push.md) |             |
-| **seq**  | **int**             |             |
+| Name                  | Type                                          | Description | Notes |
+| --------------------- | --------------------------------------------- | ----------- | ----- |
+| **updatePushRequest** | [**UpdatePushRequest**](UpdatePushRequest.md) |             |
+| **seq**               | **int**                                       |             |
 
 ### Return type
 
@@ -661,22 +661,22 @@ try {
 [[Back to README]](../README.md)
 
 > updateSms
-> int updateSms(sms, seq)
+> int updateSms(updateSmsRequest, seq)
 
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getNoticeControllerApi();
-final Sms sms;
+final api = wegooli.noticeApi;
+final UpdateSmsRequest updateSmsRequest;
 final int seq = 56;
 
 try {
-    final response = api.updateSms(sms, seq);
+    final response = api.updateSms(updateSmsRequest, seq);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling NoticeControllerApi->updateSms: $e\n');
@@ -685,10 +685,10 @@ try {
 
 ### Parameters
 
-| Name    | Type              | Description | Notes |
-| ------- | ----------------- | ----------- | ----- |
-| **sms** | [**Sms**](Sms.md) |             |
-| **seq** | **int**           |             |
+| Name                 | Type                                        | Description | Notes |
+| -------------------- | ------------------------------------------- | ----------- | ----- |
+| **updateSmsRequest** | [**UpdateSmsRequest**](UpdateSmsRequest.md) |             |
+| **seq**              | **int**                                     |             |
 
 ### Return type
 

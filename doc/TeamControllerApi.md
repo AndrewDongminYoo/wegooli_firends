@@ -3,7 +3,7 @@
 ## Load the API package
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 ```
 
 All URIs are relative to *http://13.209.6.245:8089*
@@ -23,12 +23,12 @@ All URIs are relative to *http://13.209.6.245:8089*
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getTeamControllerApi();
+final api = wegooli.teamApi;
 final int teamSeq = 56;
 
 try {
@@ -68,12 +68,12 @@ try {
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getTeamControllerApi();
+final api = wegooli.teamApi;
 final TeamRequest teamRequest;
 
 try {
@@ -113,12 +113,12 @@ try {
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getTeamControllerApi();
+final api = wegooli.teamApi;
 final int teamSeq = 56;
 
 try {
@@ -158,12 +158,12 @@ try {
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getTeamControllerApi();
+final api = wegooli.teamApi;
 final String teamCode = teamCode_example;
 
 try {
@@ -198,17 +198,17 @@ try {
 [[Back to README]](../README.md)
 
 > selectTeamList
-> List<TeamModel> selectTeamList(accountId, name, delYn, startCreatedAt, endCreatedAt, startUpdatedAt, endUpdatedAt, contract)
+> List<TeamModel> selectTeamList(accountId, name, delYn, startCreatedAt, endCreatedAt, startUpdatedAt, endUpdatedAt, contract, carNickname, lat, lon, add1, add2, zipCode)
 
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getTeamControllerApi();
+final api = wegooli.teamApi;
 final String accountId = accountId_example;
 final String name = name_example;
 final String delYn = delYn_example;
@@ -217,9 +217,15 @@ final String endCreatedAt = endCreatedAt_example;
 final String startUpdatedAt = startUpdatedAt_example;
 final String endUpdatedAt = endUpdatedAt_example;
 final String contract = contract_example;
+final String carNickname = carNickname_example;
+final String lat = lat_example;
+final String lon = lon_example;
+final String add1 = add1_example;
+final String add2 = add2_example;
+final String zipCode = zipCode_example;
 
 try {
-    final response = api.selectTeamList(accountId, name, delYn, startCreatedAt, endCreatedAt, startUpdatedAt, endUpdatedAt, contract);
+    final response = api.selectTeamList(accountId, name, delYn, startCreatedAt, endCreatedAt, startUpdatedAt, endUpdatedAt, contract, carNickname, lat, lon, add1, add2, zipCode);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling TeamControllerApi->selectTeamList: $e\n');
@@ -238,6 +244,12 @@ try {
 | **startUpdatedAt** | **String** |             | [optional] |
 | **endUpdatedAt**   | **String** |             | [optional] |
 | **contract**       | **String** |             | [optional] |
+| **carNickname**    | **String** |             | [optional] |
+| **lat**            | **String** |             | [optional] |
+| **lon**            | **String** |             | [optional] |
+| **add1**           | **String** |             | [optional] |
+| **add2**           | **String** |             | [optional] |
+| **zipCode**        | **String** |             | [optional] |
 
 ### Return type
 
@@ -262,12 +274,12 @@ try {
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getTeamControllerApi();
+final api = wegooli.teamApi;
 final TeamRequest teamRequest;
 final int teamSeq = 56;
 

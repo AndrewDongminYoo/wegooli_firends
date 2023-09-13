@@ -3,7 +3,7 @@
 ## Load the API package
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 ```
 
 All URIs are relative to *http://13.209.6.245:8089*
@@ -16,18 +16,17 @@ All URIs are relative to *http://13.209.6.245:8089*
 | [**teamDetail**](OperatorPageControllerApi.md#teamdetail)                         | **GET** /operator/team/detail |
 
 > selectOperatorCarList
->
 > List<OperatorCarModel> selectOperatorCarList(request)
 
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getOperatorPageControllerApi();
+final api = wegooli.operatorPageApi;
 final OperatorCarRequest request;
 
 try {
@@ -62,18 +61,17 @@ try {
 [[Back to README]](../README.md)
 
 > selectOperatorTeamList
->
 > List<OperatorTeamModel> selectOperatorTeamList(request)
 
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getOperatorPageControllerApi();
+final api = wegooli.operatorPageApi;
 final OperatorTeamRequest request;
 
 try {
@@ -108,18 +106,17 @@ try {
 [[Back to README]](../README.md)
 
 > selectOperatorUserList
->
 > List<OperatorUserModel> selectOperatorUserList(request)
 
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getOperatorPageControllerApi();
+final api = wegooli.operatorPageApi;
 final OperatorUserRequest request;
 
 try {
@@ -154,18 +151,17 @@ try {
 [[Back to README]](../README.md)
 
 > teamDetail
->
 > OperatorTeamDetail teamDetail(teamSeq)
 
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getOperatorPageControllerApi();
+final api = wegooli.operatorPageApi;
 final int teamSeq = 56;
 
 try {

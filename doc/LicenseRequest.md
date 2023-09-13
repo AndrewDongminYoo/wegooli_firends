@@ -3,7 +3,7 @@
 ## Load the model package
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 ```
 
 ## Properties

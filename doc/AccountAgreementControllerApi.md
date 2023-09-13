@@ -3,7 +3,7 @@
 ## Load the API package
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 ```
 
 All URIs are relative to *http://13.209.6.245:8089*
@@ -12,6 +12,7 @@ All URIs are relative to *http://13.209.6.245:8089*
 | --------------------------------------------------------------------------------------------- | ---------------------------------------------------------- | ----------- |
 | [**deleteAccountAgreement**](AccountAgreementControllerApi.md#deleteaccountagreement)         | **DELETE** /account/agreement/{classification}/{accountId} |
 | [**insertAccountAgreement**](AccountAgreementControllerApi.md#insertaccountagreement)         | **POST** /account/agreement                                |
+| [**insertAccountAgreementList**](AccountAgreementControllerApi.md#insertaccountagreementlist) | **POST** /account/agreement/insertList                     |
 | [**selectAccountAgreement**](AccountAgreementControllerApi.md#selectaccountagreement)         | **GET** /account/agreement/{classification}/{accountId}    |
 | [**selectAccountAgreementList**](AccountAgreementControllerApi.md#selectaccountagreementlist) | **GET** /account/agreement                                 |
 | [**updateAccountAgreement**](AccountAgreementControllerApi.md#updateaccountagreement)         | **PUT** /account/agreement                                 |
@@ -22,12 +23,12 @@ All URIs are relative to *http://13.209.6.245:8089*
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getAccountAgreementControllerApi();
+final api = wegooli.accountAgreementApi;
 final String classification = classification_example;
 final String accountId = accountId_example;
 
@@ -69,12 +70,12 @@ try {
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getAccountAgreementControllerApi();
+final api = wegooli.accountAgreementApi;
 final AccountAgreementRequest accountAgreementRequest;
 
 try {
@@ -114,12 +115,12 @@ try {
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getAccountAgreementControllerApi();
+final api = wegooli.accountAgreementApi;
 final String classification = classification_example;
 final String accountId = accountId_example;
 
@@ -161,12 +162,12 @@ try {
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getAccountAgreementControllerApi();
+final api = wegooli.accountAgreementApi;
 final String classification = classification_example;
 final String accountId = accountId_example;
 final String agreeYn = agreeYn_example;
@@ -218,12 +219,12 @@ try {
 ### Example
 
 ```dart
-import 'package:wegooli_friends/api.dart';
+import 'package:wegooli_friends/lib.dart';
 // TODO Configure HTTP basic authorization: jwtAuth
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
 //defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
-final api = WegooliFriends().getAccountAgreementControllerApi();
+final api = wegooli.accountAgreementApi;
 final AccountAgreementRequest accountAgreementRequest;
 
 try {

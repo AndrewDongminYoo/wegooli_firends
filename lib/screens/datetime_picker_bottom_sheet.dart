@@ -45,8 +45,12 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                           controller.returnTime
                               .difference(controller.reservationTime)
                               .inHours,
-                          formatting(controller.reservationTime),
-                          formatting(controller.returnTime),
+                          formatting(controller.reservationTime.add(Duration(
+                              minutes: 10 -
+                                  controller.reservationTime.minute % 10))),
+                          formatting(controller.returnTime.add(Duration(
+                              minutes:
+                                  10 - controller.returnTime.minute % 10))),
                         ),
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
@@ -86,27 +90,37 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                                         color: isOpen
                                             ? ColorConstant.fontBlack
                                             : ColorConstant.fontBlackDisabled,
-                                        fontSize: 16,
+                                        fontSize: getFontSize(16),
                                         fontFamily: FontFamily.pretendard,
                                         fontWeight: FontWeight.w700,
                                         height: 1.50,
                                         letterSpacing: 0.03,
                                       ),
                                     ),
-                                    Text(
-                                      formatting(item.date),
-                                      textAlign: TextAlign.right,
-                                      style: TextStyle(
-                                        color: isOpen
-                                            ? ColorConstant.fontBlack
-                                            : ColorConstant.fontBlackDisabled,
-                                        fontSize: 16,
-                                        fontFamily: FontFamily.pretendard,
-                                        fontWeight: FontWeight.w700,
-                                        height: 1.50,
-                                        letterSpacing: 0.03,
-                                      ),
-                                    ),
+                                    TextButton(
+                                        onPressed: () {
+                                          controller.items[index].isExpanded =
+                                              !controller
+                                                  .items[index].isExpanded;
+                                          controller.items.refresh();
+                                        },
+                                        child: Text(
+                                          formatting(item.date.add(Duration(
+                                              minutes:
+                                                  10 - item.date.minute % 10))),
+                                          textAlign: TextAlign.right,
+                                          style: TextStyle(
+                                            color: isOpen
+                                                ? ColorConstant.fontBlack
+                                                : ColorConstant
+                                                    .fontBlackDisabled,
+                                            fontSize: getFontSize(16),
+                                            fontFamily: FontFamily.pretendard,
+                                            fontWeight: FontWeight.w700,
+                                            height: 1.50,
+                                            letterSpacing: 0.03,
+                                          ),
+                                        )),
                                   ],
                                 ));
                           },
@@ -114,12 +128,13 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                             height: getVerticalSize(200),
                             alignment: Alignment.center,
                             padding: const EdgeInsets.all(20),
-                            // color: Colors.redAccent[100],
                             width: double.infinity,
                             child: CupertinoDatePicker(
+                              minuteInterval: 10,
                               backgroundColor: CupertinoColors.systemBackground
                                   .resolveFrom(context),
-                              initialDateTime: item.date,
+                              initialDateTime: item.date.add(Duration(
+                                  minutes: 10 - item.date.minute % 10)),
                               onDateTimeChanged: (newDateTime) {
                                 // print('newDateTime: $newDateTime');
                                 controller.items[index].date = newDateTime;

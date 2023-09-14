@@ -20,7 +20,7 @@ class SignOutButton extends StatelessWidget {
     return TextButton(
       onPressed: () {
         Get.dialog(ConfirmDialog(
-          title: Text(l10ns.withdrawingMember),
+          title: l10ns.withdrawingMember,
           content:
               Text(l10ns.wouldYouLikeToRequestToBeRemovedFromWegooliFriends),
           cancelText: l10ns.cancel,

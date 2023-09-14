@@ -14,6 +14,14 @@ class UserController extends GetxController {
   final TeamAccountService _teamAccountService = TeamAccountService();
   final ReservationsService _reservationsService = ReservationsService();
   final TeamService _teamService = TeamService();
+  List<Term> terms = [
+    Term(agree: false, title: '개인정보 처리방침', body: privacy_policy),
+    Term(agree: false, title: '개인 위치정보 처리 방침', body: location_data),
+    Term(agree: false, title: '위치기반서비스 이용약관', body: location_based),
+    Term(agree: false, title: '자동차대여 표준약관', body: car_rental_term),
+    Term(agree: false, title: '차량 위치정보 수집이용 제공동의', body: car_location),
+    Term(agree: false, title: '마케팅 목적 개인정보 수집이용', body: marketing, opt: true),
+  ];
   static UserController get to => Get.isRegistered<UserController>()
       ? Get.find<UserController>()
       : Get.put(UserController());
@@ -71,7 +79,7 @@ class UserController extends GetxController {
   final RxList<TeamAccountModel> _members = RxList<TeamAccountModel>([]);
   final RxList<Schedule> _schedules = RxList<Schedule>.of([]);
   RxList<Schedule> get schedules => _schedules;
-
+  List<AccountAgreementRequest> agreement = [];
   final RxList<TeamAccountConnectionResponse> _teams =
       RxList<TeamAccountConnectionResponse>.of([]);
   RxList<TeamAccountConnectionResponse> get teams => _teams;
@@ -252,16 +260,22 @@ class UserController extends GetxController {
     }
   }
 
-  Future<String> acceptanceComplete(List<Agreement> agreements) {
-    final request = agreements.map(toAccountAgreementModel).toList();
-    return _service.sendAcceptanceRequest(request);
+  Future<void> acceptanceComplete() async {
+    agreement = terms.map((Term t) => toAccountAgreementModel(t)).toList();
+    print(agreement);
+    try {
+      await _service.sendAcceptanceRequest(agreement);
+    } catch (e) {
+      print('Send Acceptance Request 등록 실패\n $e');
+      PrefUtils.saveAgreements(terms);
+    }
+    goPhoneAuth();
   }
 
-  AccountAgreementRequest toAccountAgreementModel(Agreement e) {
+  AccountAgreementRequest toAccountAgreementModel(Term e) {
     return AccountAgreementRequest(
-      classification: currentUser.id,
-      accountId: e.title,
-      agreeYn: e.accepted ? 'Y' : 'N',
+      classification: e.title,
+      agreeYn: e.agree ? 'Y' : 'N',
     );
   }
 

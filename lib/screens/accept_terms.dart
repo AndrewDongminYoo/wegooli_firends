@@ -15,61 +15,19 @@ class AcceptTerms extends StatefulWidget {
 
 class _AcceptTermsState extends State<AcceptTerms> {
   final controller = UserController.to;
-  List<Agreement> acceptTerms = [
-    Agreement(
-      accepted: false,
-      title: '[필수] 개인정보 처리방침',
-      markdown: privacy_policy,
-    ),
-    Agreement(
-      accepted: false,
-      title: '[필수] 개인 위치정보 처리 방침',
-      markdown: location_data,
-    ),
-    Agreement(
-      accepted: false,
-      title: '[필수] 서비스이용약관',
-      markdown: terms_of_service,
-    ),
-    Agreement(
-      accepted: false,
-      title: '[필수] 위치기반서비스 이용약관',
-      markdown: location_based,
-    ),
-    Agreement(
-      accepted: false,
-      title: '[필수] 자동차대여 표준약관',
-      markdown: car_rental_term,
-    ),
-    Agreement(
-      accepted: false,
-      title: '[필수] 차량 위치정보 수집이용 제공동의',
-      markdown: vehicle_location,
-    ),
-    Agreement(
-      accepted: false,
-      title: '[선택] 마케팅 목적 개인정보 수집이용',
-      markdown: marketing_purpose,
-      required: false,
-    ),
-  ];
   Duration delay = const Duration(milliseconds: 100);
   bool get getAllTermsAccepted {
-    return acceptTerms.every((term) => term.accepted);
+    return controller.terms.every((term) => term.agree);
   }
 
   // 전체 항목 동의
   Future<void> setAllTermsAccepted(bool? value) async {
-    if (!getAllTermsAccepted) {
-      for (var i = 0; i < acceptTerms.length; i++) {
-        // if (acceptTerms[i].required) // 필수항목만
-        await Future.delayed(delay);
-        setState(() {
-          acceptTerms[i].accepted = value!;
-        });
-      }
-    } else {
-      acceptTerms.map((term) => term.accepted = value!);
+    for (var i = 0; i < controller.terms.length; i++) {
+      // if (acceptTerms[i].required) // 필수항목만
+      await Future.delayed(delay);
+      setState(() {
+        controller.terms[i].agree = value!;
+      });
     }
   }
 
@@ -102,11 +60,11 @@ class _AcceptTermsState extends State<AcceptTerms> {
                       ListView.builder(
                           physics: const NeverScrollableScrollPhysics(),
                           shrinkWrap: true,
-                          itemCount: acceptTerms.length,
+                          itemCount: controller.terms.length,
                           itemBuilder: (BuildContext context, int index) {
                             return AgreementItem(
                               index: index,
-                              terms: acceptTerms,
+                              terms: controller.terms,
                             );
                           }),
                     ],
@@ -114,7 +72,8 @@ class _AcceptTermsState extends State<AcceptTerms> {
             )),
       ),
       bottomNavigationBar: SignUpAcceptTermsNextButton(
-          acceptTerms: acceptTerms, controller: controller),
+        controller: controller,
+      ),
     );
   }
 }
@@ -127,7 +86,7 @@ class AgreementItem extends StatefulWidget {
   }) : super(key: key);
 
   final int index;
-  final List<Agreement> terms;
+  final List<Term> terms;
 
   @override
   State<AgreementItem> createState() => _AgreementItemState();
@@ -145,37 +104,38 @@ class _AgreementItemState extends State<AgreementItem> {
             children: [
               CustomCheckboxButton(
                   text: term.title,
-                  value: term.accepted,
+                  value: term.agree,
                   onChange: (bool value) {
                     setState(() {
-                      term.accepted = value;
+                      term.agree = value;
                     });
                   }),
               CustomImageView(
-                  svgPath: Assets.svg.imgArrowRight.path,
-                  height: getSize(18),
-                  width: getSize(18),
-                  margin: getMargin(bottom: 2),
-                  onTap: () => Get.to(() {
-                        return TermsOfUseView(
-                            content: term.markdown, title: term.title);
-                      })),
+                svgPath: Assets.svg.imgArrowRight.path,
+                height: getSize(18),
+                width: getSize(18),
+                margin: getMargin(bottom: 2),
+                onTap: () => Get.toNamed(
+                  AppRoutes.acceptTermsDetail,
+                  arguments: {'page': '${widget.index}'},
+                ),
+              ),
             ],
           ),
         ));
   }
 }
 
-class Agreement {
-  Agreement({
+class Term {
+  Term({
     required this.title,
-    required this.markdown,
-    required this.accepted,
-    this.required = true,
+    required this.body,
+    required this.agree,
+    this.opt = false,
   });
 
   final String title;
-  final bool required;
-  final String markdown;
-  bool accepted;
+  final bool opt;
+  final String body;
+  bool agree;
 }

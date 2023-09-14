@@ -1,7 +1,7 @@
 /// '[Required] vehicle_location_information_collection_and_use_agreement'
 /// '[필수] 차량 위치 정보 수집 이용 제공 동의'
 // ignore_for_file: unnecessary_string_escapes
-const vehicle_location = '''
+const car_location = '''
 # 차량 위치정보의 수집 이용 제공 동의
 
 ## 제1조 위치정보 수집장치 확인

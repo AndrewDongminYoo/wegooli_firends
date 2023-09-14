@@ -15,18 +15,19 @@ class CallbackTextInputFormatter extends FilteringTextInputFormatter {
   });
 
   CallbackTextInputFormatter.businessNumber(
-      {required void Function(bool valid) inputtingCallback}): this(RegExp('[0-9]'),
-        allow: true, inputtingCallback: inputtingCallback);
+      {required void Function(bool valid) inputtingCallback})
+      : this(RegExp('[0-9]'),
+            allow: true, inputtingCallback: inputtingCallback);
 
   CallbackTextInputFormatter.name(
-      {required void Function(bool valid) inputtingCallback}): this(
-        RegExp(r"""[₩0-9~!@#\$%^&*()_+`\-={}|\[\]\:";'<>?,./]"""),
-        allow: false,
-        inputtingCallback: inputtingCallback);
+      {required void Function(bool valid) inputtingCallback})
+      : this(RegExp(r"""[₩0-9~!@#\$%^&*()_+`\-={}|\[\]\:";'<>?,./]"""),
+            allow: false, inputtingCallback: inputtingCallback);
 
   CallbackTextInputFormatter.phone(
-      {required void Function(bool valid) inputtingCallback}): this(RegExp(r'[0-9\-]'),
-        allow: true, inputtingCallback: inputtingCallback);
+      {required void Function(bool valid) inputtingCallback})
+      : this(RegExp(r'[0-9\-]'),
+            allow: true, inputtingCallback: inputtingCallback);
 
   void Function(bool valid)? inputtingCallback;
 

@@ -80,7 +80,7 @@ class MyApp extends StatelessWidget {
       RouteObserver<PageRoute>();
   @override
   Widget build(BuildContext context) {
-    const initialRoute = AppRoutes.splashScreen;
+    const initialRoute = AppRoutes.home;
     return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         theme: theme,
@@ -97,7 +97,7 @@ class MyApp extends StatelessWidget {
             isError ? console.log(text) : print('[DEBUG] $text'),
         navigatorObservers: [MyApp.routeObserver],
         initialRoute: initialRoute,
-        // onGenerateRoute: onGenerateRoute,
+        onGenerateRoute: onGenerateRoute,
         getPages: AppRoutes.pages);
   }
 }
@@ -139,6 +139,8 @@ Route<dynamic>? onGenerateRoute(RouteSettings settings) {
       page = const AcceptTerms();
     case AppRoutes.phoneAuth:
       page = const ValidatePhone();
+    case AppRoutes.acceptTermsDetail:
+      page = const TermsOfUseView();
     case AppRoutes.registerCreditCard:
       page = const RegisterCreditCard();
     case AppRoutes.registerLicense:

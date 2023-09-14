@@ -4,6 +4,9 @@
 import 'package:get/instance_manager.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+// 🌎 Project imports:
+import '/lib.dart';
+
 class PrefUtils {
   PrefUtils() {
     SharedPreferences.getInstance().then((value) {
@@ -14,6 +17,7 @@ class PrefUtils {
   static SharedPreferences? _storage;
   static const String _tokenData = 'WEGOOLI_TOKEN_DATA';
   static const String _phoneData = 'WEGOOLI_PHONE_DATA';
+  static const String _termsOfUseData = 'TERMS_OF_USE';
   static const String _tokenIsEmpty = 'Token is not given.';
 
   static SharedPreferences get storage {
@@ -60,4 +64,9 @@ class PrefUtils {
 
   static set phoneNumber(String phoneNumber) =>
       setData(_phoneData, phoneNumber);
+
+  static void saveAgreements(List<Term> agreement) {
+    final cache = agreement.map((a) => '${a.title}: ${a.agree ? 'Y' : 'N'}');
+    storage.setStringList(_termsOfUseData, cache.toList());
+  }
 }

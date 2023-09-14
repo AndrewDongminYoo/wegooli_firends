@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 // 📦 Package imports:
 import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:get/get.dart';
 
 // 🌎 Project imports:
 import '/lib.dart';
@@ -10,29 +11,36 @@ import '/lib.dart';
 class TermsOfUseView extends StatefulWidget {
   const TermsOfUseView({
     Key? key,
-    required this.content,
-    required this.title,
+    this.index,
   }) : super(key: key);
-
-  final String title;
-  final String content;
-
+  final int? index;
   @override
   State<TermsOfUseView> createState() => _TermsOfUseViewState();
 }
 
 class _TermsOfUseViewState extends State<TermsOfUseView> {
-  final controller = ScrollController();
+  final controller = UserController();
+  final scroll = ScrollController();
   @override
   Widget build(BuildContext context) {
+    print(Get.arguments);
+    int index;
+    if (Get.arguments['page'] != null) {
+      index = int.parse(Get.arguments['page']);
+    } else if (widget.index != null) {
+      index = widget.index!.toInt();
+    } else {
+      index = 0;
+    }
+    Term? term = controller.terms[index];
+    String title = term.opt ? '[선택] ' : '[필수] ' + term.title;
+    String content = term.body;
     return Scaffold(
-      appBar: AppBar(
-        title: CustomAppBar.getDefaultAppBar(widget.title),
-      ),
+      appBar: CustomAppBar.getDefaultAppBar(title),
       body: Markdown(
-        controller: controller,
-        data: widget.content,
-        styleSheetTheme: MarkdownStyleSheetBaseTheme.material,
+        controller: scroll,
+        data: content,
+        styleSheetTheme: MarkdownStyleSheetBaseTheme.cupertino,
         physics: const BouncingScrollPhysics(),
         padding: getPadding(all: 20),
       ),

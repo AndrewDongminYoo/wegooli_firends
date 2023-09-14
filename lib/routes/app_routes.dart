@@ -17,6 +17,7 @@ class AppRoutes {
   /// 로그인 및 가입 관련
   static const String idPwLogin = '/id_pw_login';
   static const String acceptTerms = '/accept_terms';
+  static const String acceptTermsDetail = '/terms_of_use';
   static const String phoneAuth = '/phone_auth';
   static const String registerCreditCard = '/register_credit_card';
   static const String registerLicense = '/register_license';
@@ -54,6 +55,11 @@ class AppRoutes {
       name: acceptTerms,
       bindings: [UserAccountBinding()],
       page: () => const AcceptTerms(),
+    ),
+    GetPage(
+      name: acceptTermsDetail,
+      bindings: [UserAccountBinding()],
+      page: () => TermsOfUseView(),
     ),
     GetPage(
       bindings: [UserAccountBinding()],

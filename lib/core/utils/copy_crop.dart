@@ -4,8 +4,7 @@
 import 'package:image/image.dart' show Image, Pixel;
 
 /// Returns a cropped copy of [src].
-Image copyCrop(
-  Image src,
+Image copyCrop(Image src,
     {required int x,
     required int y,
     required int width,

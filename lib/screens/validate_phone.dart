@@ -14,7 +14,6 @@ class ValidatePhone extends GetWidget<UserController> {
     final _nameText = FocusNode();
     final _birthday = FocusNode();
     final _socialId = FocusNode();
-    final _phoneNum = FocusNode();
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
@@ -57,9 +56,8 @@ class ValidatePhone extends GetWidget<UserController> {
                             text: l10ns
                                 .subscriptionsAreRestrictedToThoseUnderTheAgeOf26),
                       ])),
-              SMSValidationFormScreen(
+              SMSValidationForm(
                 controller: controller,
-                focusNode: _phoneNum,
               ),
             ])),
       ),

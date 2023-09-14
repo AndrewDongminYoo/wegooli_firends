@@ -59,7 +59,7 @@ class ConfirmDialog extends StatelessWidget {
                       ])),
               Container(
                 alignment: Alignment.centerLeft,
-                margin: getMargin(left:20, top:15, right:20, bottom: 30),
+                margin: getMargin(left: 20, top: 15, right: 20, bottom: 30),
                 child: content,
               ),
               Row(

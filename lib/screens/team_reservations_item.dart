@@ -68,7 +68,7 @@ class _TeamReservationsItemState extends State<TeamReservationsItem> {
             ),
           ),
           Container(
-            width: getHorizontalSize(278),
+            width: getHorizontalSize(268),
             height: isToggleOn ? getVerticalSize(115) : getVerticalSize(75),
             padding: getPadding(left: 10, right: 10, top: 15, bottom: 15),
             child: Column(
@@ -77,9 +77,9 @@ class _TeamReservationsItemState extends State<TeamReservationsItem> {
               children: [
                 Text(
                   widget.schedule.accountId,
-                  style: const TextStyle(
+                  style: TextStyle(
                     color: ColorConstant.fontBlack,
-                    fontSize: 12,
+                    fontSize: getFontSize(12),
                     fontFamily: FontFamily.pretendard,
                     fontWeight: FontWeight.w400,
                     // height: 1.50,
@@ -87,7 +87,7 @@ class _TeamReservationsItemState extends State<TeamReservationsItem> {
                   ),
                 ),
                 Container(
-                  width: getHorizontalSize(278),
+                  width: getHorizontalSize(268),
                   height: getVerticalSize(24),
                   margin: getMargin(bottom: isToggleOn ? 10 : 0),
                   child: Row(
@@ -96,9 +96,9 @@ class _TeamReservationsItemState extends State<TeamReservationsItem> {
                     children: [
                       Text(
                         formatering(widget.schedule),
-                        style: const TextStyle(
+                        style: TextStyle(
                           color: ColorConstant.fontBlack,
-                          fontSize: 16,
+                          fontSize: getFontSize(16),
                           fontFamily: FontFamily.pretendard,
                           fontWeight: FontWeight.w400,
                           letterSpacing: 0.03,
@@ -121,7 +121,7 @@ class _TeamReservationsItemState extends State<TeamReservationsItem> {
                 ),
                 if (isOwner && isToggleOn)
                   SizedBox(
-                    width: getHorizontalSize(278),
+                    width: getHorizontalSize(268),
                     child: Row(
                         mainAxisSize: MainAxisSize.min,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,

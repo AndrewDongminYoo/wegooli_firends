@@ -14,7 +14,7 @@ class ConfirmDialog extends StatelessWidget {
       this.disableCloseBtn = false,
       this.confirmFunc});
 
-  final Text title;
+  final String title;
   final Text content;
   final String cancelText;
   final String confirmText;
@@ -23,58 +23,65 @@ class ConfirmDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-      surfaceTintColor: Colors.white,
-      title: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          if (!disableCloseBtn)
-            Align(
-                alignment: Alignment.topRight,
-                child: CustomImageView(
-                  svgPath: Assets.svg.imgCloseBtn.path,
-                  width: getHorizontalSize(15),
-                  height: getVerticalSize(15),
-                  onTap: () => Navigator.pop(context),
-                )),
-          title,
-        ],
-      ),
-      titleTextStyle: const TextStyle(
-          fontSize: 18,
-          fontWeight: FontWeight.w700,
-          fontFamily: FontFamily.pretendard),
-      contentTextStyle: const TextStyle(
-          fontSize: 16,
-          fontWeight: FontWeight.w400,
-          fontFamily: FontFamily.pretendard),
-      content:
-          SingleChildScrollView(child: ListBody(children: <Widget>[content])),
-      actionsPadding: getPadding(all: 0),
-      actions: <Widget>[
-        SizedBox(
-          width: getHorizontalSize(328),
-          height: getVerticalSize(52),
-          child: Row(
+      contentPadding: EdgeInsets.zero,
+      // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      // surfaceTintColor: Colors.white,
+      content: Container(
+        decoration: AppDecoration.fillOnPrimaryContainer
+            .copyWith(borderRadius: BorderRadiusStyle.circleBorder10),
+        child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              const CancelButton(plural: true),
-              CustomElevatedButton(
-                width: getHorizontalSize(145),
-                height: getVerticalSize(52),
-                text: confirmText,
-                buttonStyle: CustomButtonStyles.fillPrimaryBR10,
-                buttonTextStyle: CustomTextStyles.titleMedium16,
-                onTap: () {
-                  if (confirmFunc != null) {
-                    confirmFunc?.call();
-                  }
-                  Navigator.pop(context, false);
-                },
+              Padding(
+                  padding: getPadding(left: 20, top: 15, right: 20),
+                  child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                            padding: getPadding(top: 6),
+                            child: Text(
+                              title,
+                              overflow: TextOverflow.ellipsis,
+                              textAlign: TextAlign.left,
+                              style: CustomTextStyles.titleMedium18.copyWith(
+                                letterSpacing: 0.04,
+                              ),
+                            )),
+                        if (!disableCloseBtn)
+                          CustomImageView(
+                              svgPath: Assets.svg.imgCloseGray400Sharp.path,
+                              height: getSize(13),
+                              width: getSize(13),
+                              margin: getMargin(bottom: 15),
+                              onTap: goBack),
+                      ])),
+              Container(
+                alignment: Alignment.centerLeft,
+                margin: getMargin(left:20, top:15, right:20, bottom: 30),
+                child: content,
               ),
-            ],
-          ),
-        ),
-      ],
+              Row(
+                children: [
+                  const CancelButton(plural: true),
+                  CustomElevatedButton(
+                    width: getHorizontalSize(145),
+                    height: getVerticalSize(52),
+                    text: confirmText,
+                    buttonStyle: CustomButtonStyles.fillPrimaryBR10,
+                    buttonTextStyle: CustomTextStyles.titleMedium16,
+                    onTap: () {
+                      if (confirmFunc != null) {
+                        confirmFunc?.call();
+                      }
+                      Navigator.pop(context, false);
+                    },
+                  ),
+                ],
+              )
+            ]),
+      ),
     );
   }
 }

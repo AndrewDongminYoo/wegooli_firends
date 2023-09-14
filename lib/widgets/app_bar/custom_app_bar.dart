@@ -60,14 +60,16 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         elevation: 0,
         toolbarHeight: height ?? getVerticalSize(55),
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.white,
+        scrolledUnderElevation: 0,
         flexibleSpace: _getStyle(),
         leadingWidth: leadingWidth ?? 0,
         leading: leading,
         title: title,
         titleSpacing: 0,
         centerTitle: centerTitle ?? false,
-        actions: actions);
+        actions: actions,
+        );
   }
 
   @override
@@ -96,7 +98,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       AppBar(
         toolbarHeight: getVerticalSize(52),
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.white,
+        scrolledUnderElevation: 0,
         leadingWidth: 0,
         title: AppbarTitle(text: titleText ?? 'FRIENDS'),
         titleSpacing: 0,

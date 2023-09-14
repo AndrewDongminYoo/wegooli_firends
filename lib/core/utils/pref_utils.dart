@@ -12,7 +12,6 @@ class PrefUtils {
     });
   }
   static SharedPreferences? _storage;
-  static const String _themeData = 'WEGOOLI_THEME_DATA';
   static const String _tokenData = 'WEGOOLI_TOKEN_DATA';
   static const String _phoneData = 'WEGOOLI_PHONE_DATA';
   static const String _tokenIsEmpty = 'Token is not given.';
@@ -40,12 +39,6 @@ class PrefUtils {
       return defaultValue ?? '';
     }
   }
-
-  static Future<bool> setThemeData(String value) {
-    return setData(_themeData, value);
-  }
-
-  static String get themeData => getData(_themeData, defaultValue: 'primary');
 
   static String getToken() {
     final token = getData(_tokenData, defaultValue: _tokenIsEmpty);

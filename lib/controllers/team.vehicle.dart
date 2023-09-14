@@ -1,6 +1,3 @@
-// 🐦 Flutter imports:
-import 'package:flutter/material.dart';
-
 // 📦 Package imports:
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
@@ -47,7 +44,7 @@ class VehicleController extends GetxController {
     final whoDriving =
         members.firstWhereOrNull((it) => it.accountId == accountId);
     print('team.vehicle.dart#L48 ${whoDriving?.nickname} is Driving');
-    driverName.text = whoDriving?.nickname ?? '';
+    driverName = whoDriving?.nickname ?? '';
   }
 
   bool compose(Schedule schedule) {
@@ -65,8 +62,7 @@ class VehicleController extends GetxController {
   }
 
   // Text Input Controllers
-  TextEditingController driverName = TextEditingController();
-  TextEditingController invitation = TextEditingController();
+  String driverName = '다른 팀원';
 
   // Domain Specific Model
   TerminalModel? _terminalDevice;
@@ -123,8 +119,6 @@ class VehicleController extends GetxController {
   @override
   void onClose() {
     super.onClose();
-    driverName.dispose();
-    invitation.dispose();
   }
 
   Future<bool?> openDoor() async {
@@ -218,6 +212,8 @@ class VehicleController extends GetxController {
   }
 
   Future<bool> joinTeam() async {
+    final userController = UserController.to;
+    final invitation = userController.invitation;
     final accountId = currentUser.id;
     if (invitation.text.length == 10) {
       print('joinTeam() accountId: $accountId |invitation: ${invitation.text}');

@@ -18,14 +18,14 @@ class PaymentCardService extends GetConnect {
   Future<String> registerCard(
     String creditCardId,
     String cardPassword,
-    String birthNumber6,
+    String birthDayNums,
     String expDateMonth,
     String expDateYears,
   ) async {
     final newCard = PaymentCardRequest(
       cardNumber: creditCardId,
       password: cardPassword,
-      rrn: birthNumber6,
+      rrn: birthDayNums,
       expirationMonth: expDateMonth,
       expirationYear: expDateYears,
     );

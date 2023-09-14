@@ -21,7 +21,7 @@ class _SendingInvitationDialogState extends State<SendingInvitationDialog> {
     userController.getTeamCode().then((teamCode) {
       print('AAA : teamCode : $teamCode');
       if (teamCode != null) {
-        controller.invitation.text = teamCode;
+        userController.invitation.text = teamCode;
       }
     });
     super.initState();
@@ -62,7 +62,7 @@ class _SendingInvitationDialogState extends State<SendingInvitationDialog> {
                             onTap: goBack),
                       ])),
               InvitationCodeFormField(
-                  controller: controller, readOnly: widget.copyMode),
+                  controller: userController, readOnly: widget.copyMode),
               if (widget.copyMode)
                 CopyInvitationButton(controller: userController)
               else

@@ -55,37 +55,23 @@ class PinCodeWrapper extends StatelessWidget {
     return SizedBox(
       height: 20,
       width: 20,
-      child: PinCodeInput(pin: controller),
-    );
-  }
-}
-
-class PinCodeInput extends StatelessWidget {
-  const PinCodeInput({
-    super.key,
-    required TextEditingController pin,
-  }) : controller = pin;
-
-  final TextEditingController controller;
-
-  @override
-  Widget build(BuildContext context) {
-    return TextFormField(
-      autofocus: true,
-      controller: controller,
-      inputFormatters: <TextInputFormatter>[
-        FilteringTextInputFormatter.digitsOnly,
-      ],
-      onSaved: (pin1) {},
-      onChanged: (value) {
-        if (value.length == 1) {
-          FocusScope.of(context).nextFocus();
-        }
-      },
-      keyboardType: TextInputType.number,
-      maxLength: 1,
-      decoration: const InputDecoration(counterText: ''),
-      textAlign: TextAlign.center,
+      child: TextFormField(
+        autofocus: true,
+        controller: controller,
+        inputFormatters: <TextInputFormatter>[
+          FilteringTextInputFormatter.digitsOnly,
+        ],
+        onSaved: (pin1) {},
+        onChanged: (value) {
+          if (value.length == 1) {
+            FocusScope.of(context).nextFocus();
+          }
+        },
+        keyboardType: TextInputType.number,
+        maxLength: 1,
+        decoration: const InputDecoration(counterText: ''),
+        textAlign: TextAlign.center,
+      ),
     );
   }
 }

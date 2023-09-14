@@ -16,7 +16,7 @@ class CreditCardFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomTextFormField(
-        controller: controller.creditCardId,
+        controller: controller.creditCardNum,
         margin: getMargin(top: 4),
         contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),
         textStyle: CustomTextStyles.bodyLargeGray50003,

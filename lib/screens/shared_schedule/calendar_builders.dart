@@ -118,14 +118,9 @@ Widget? singleMarkerBuilder(
     alignment: Alignment.topCenter,
     decoration: BoxDecoration(
       shape: BoxShape.circle,
-      color: getColorEachMembersPersonalColor(event),
+      color: event.highlightColor,
     ),
   );
-}
-
-Color? getColorEachMembersPersonalColor(Schedule event) {
-  return event.highlightColor;
-  // TODO: 각 멤버별 색상으로 달력의 마커 표시해야 함.
 }
 
 /// 이벤트 마커용 커스텀 빌더. 각 요일 셀에 고유한 마커 UI를 제공하는 데 사용합니다.

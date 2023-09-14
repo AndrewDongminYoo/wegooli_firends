@@ -11,7 +11,7 @@ class InvitationCodeFormField extends StatelessWidget {
     this.readOnly = false,
   });
 
-  final VehicleController controller;
+  final UserController controller;
   final bool readOnly;
   @override
   Widget build(BuildContext context) {

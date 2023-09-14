@@ -1,4 +1,5 @@
 // 🐦 Flutter imports:
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -9,7 +10,7 @@ import 'package:flutter_timer_countdown/flutter_timer_countdown.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '/lib.dart';
+import '/lib.dart' hide User;
 
 /// true로 설정하면 앱에서 리캡차 대신 SMS MFA에 대한
 /// 자동 인증을 사용할 수 있도록 알림 권한을 요청합니다.
@@ -42,6 +43,34 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
       ///  - 웹에서는 네이티브 브라우저 API를 사용하여 사용자에게 권한을 요청하는 팝업이 표시됩니다.
       FirebaseMessaging.instance.requestPermission();
     }
+  }
+
+  StreamBuilder<User?> handleAuth() {
+    return StreamBuilder(
+        stream: FirebaseAuth.instance.authStateChanges(),
+        builder: (BuildContext context, snapshot) {
+          if (snapshot.hasData) {
+            return SharedCalendar();
+          } else {
+            return LoginWithIdAndPassword();
+          }
+        });
+  }
+
+  //Sign out
+  signOut() {
+    FirebaseAuth.instance.signOut();
+  }
+
+  //SignIn
+  signIn(AuthCredential authCreds) {
+    FirebaseAuth.instance.signInWithCredential(authCreds);
+  }
+
+  signInWithOTP(smsCode, verId) {
+    AuthCredential authCreds =
+        PhoneAuthProvider.credential(verificationId: verId, smsCode: smsCode);
+    signIn(authCreds);
   }
 
   @override
@@ -85,6 +114,7 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
                 width: getHorizontalSize(160),
                 hintText: '000000',
                 controller: controller.pinCodes,
+                textInputType: TextInputType.phone,
                 inputFormatters: <TextInputFormatter>[
                   FilteringTextInputFormatter.digitsOnly,
                   LengthLimitingTextInputFormatter(6),

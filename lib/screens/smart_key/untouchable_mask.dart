@@ -25,7 +25,7 @@ class UntouchableMask extends GetView<VehicleController> {
                 borderRadius: BorderRadius.circular(100)),
             child: Text(
               controller.availableNow.value
-                  ? l10ns.hongGilDongIsUsingIt(controller.driverName.text)
+                  ? l10ns.hongGilDongIsUsingIt(controller.driverName)
                   : l10ns.available,
               style: const TextStyle(color: Colors.white, fontSize: 16),
             ),

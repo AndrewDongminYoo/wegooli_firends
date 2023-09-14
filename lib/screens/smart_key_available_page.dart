@@ -148,7 +148,7 @@ class _SmartKeyAvailablePageState extends State<SmartKeyAvailablePage> {
                       child: Text(
                         controller.availableNow.value
                             ? l10ns.hongGilDongIsUsingIt(
-                                controller.driverName.text)
+                                controller.driverName)
                             : l10ns.available,
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.left,

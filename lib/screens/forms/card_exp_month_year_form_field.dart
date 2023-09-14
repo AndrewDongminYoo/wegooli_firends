@@ -29,6 +29,6 @@ class CardExpMonthYearFormField extends StatelessWidget {
           FilteringTextInputFormatter.allow('[0-9/]'),
         ],
         filled: true,
-        fillColor: theme.colorScheme.onPrimaryContainer);
+        fillColor: Colors.white);
   }
 }

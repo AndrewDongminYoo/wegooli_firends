@@ -78,7 +78,7 @@ class _TeamReservationsItemState extends State<TeamReservationsItem> {
                 Text(
                   widget.schedule.accountId,
                   style: const TextStyle(
-                    color: ColorConstant.fontColorBlack,
+                    color: ColorConstant.fontBlack,
                     fontSize: 12,
                     fontFamily: FontFamily.pretendard,
                     fontWeight: FontWeight.w400,
@@ -97,7 +97,7 @@ class _TeamReservationsItemState extends State<TeamReservationsItem> {
                       Text(
                         formatering(widget.schedule),
                         style: const TextStyle(
-                          color: ColorConstant.fontColorBlack,
+                          color: ColorConstant.fontBlack,
                           fontSize: 16,
                           fontFamily: FontFamily.pretendard,
                           fontWeight: FontWeight.w400,

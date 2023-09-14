@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 // 🌎 Project imports:
-import '/theme/theme_helper.dart';
+import '/gen/colors.gen.dart';
 
 /// [HighlightFocus]는 탭 탐색을 허용하는 하위 포커스를 제공하는 도우미 위젯입니다.
 /// 위젯을 [HighlightFocus] 위젯의 자식 위젯으로 래핑합니다.
@@ -54,8 +54,8 @@ class _HighlightFocusState extends State<HighlightFocus> {
   @override
   Widget build(BuildContext context) {
     final highlightColor =
-        widget.highlightColor ?? theme.colorScheme.primary.withOpacity(0.5);
-    final borderColor = widget.borderColor ?? theme.colorScheme.onPrimary;
+        widget.highlightColor ?? ColorConstant.wegooli.withOpacity(0.5);
+    final borderColor = widget.borderColor ?? ColorConstant.fontBlack;
     final highlightedDecoration = BoxDecoration(
       color: highlightColor,
       border: Border.all(

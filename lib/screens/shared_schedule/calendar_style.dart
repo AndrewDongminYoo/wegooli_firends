@@ -34,8 +34,8 @@ HeaderStyle headerStyle = HeaderStyle(
 );
 
 DaysOfWeekStyle daysOfWeekStyle = const DaysOfWeekStyle(
-  weekdayStyle: TextStyle(
-      color: Color(0xFF000000), fontWeight: FontWeight.bold, fontSize: 14),
+  weekdayStyle:
+      TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 14),
   weekendStyle: TextStyle(
       color: Color(0xFFEF5350), fontWeight: FontWeight.bold, fontSize: 14),
 );

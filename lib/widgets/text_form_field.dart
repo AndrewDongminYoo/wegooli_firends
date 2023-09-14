@@ -104,23 +104,23 @@ class CustomTextFormField extends StatelessWidget {
         prefixIconConstraints: prefixConstraints,
         suffixIcon: suffix,
         suffixIconConstraints: suffixConstraints,
-        fillColor: enabled != true ? const Color(0x33A4A8AF) : fillColor,
+        fillColor: enabled != true ? appTheme.blueGray30033 : fillColor,
         filled: enabled != true ? true : filled,
         isDense: true,
         contentPadding: contentPadding ??
             getPadding(left: 12, top: 14, right: 12, bottom: 14),
         counterText: '',
-        border: borderDecoration ?? createBorderSide(const Color(0xFFB9BCC3)),
+        border: borderDecoration ?? createBorderSide(appTheme.gray400),
         enabledBorder:
-            borderDecoration ?? createBorderSide(const Color(0xFFB9BCC3)),
+            borderDecoration ?? createBorderSide(appTheme.gray400),
         focusedBorder:
-            borderDecoration ?? createBorderSide(const Color(0xFFFFE041)),
+            borderDecoration ?? createBorderSide(ColorConstant.wegooli),
         disabledBorder:
-            borderDecoration ?? createBorderSide(const Color(0xFFB9BCC3)),
+            borderDecoration ?? createBorderSide(appTheme.gray400),
         errorBorder:
-            borderDecoration ?? createBorderSide(const Color(0xFFDB4646)),
+            borderDecoration ?? createBorderSide(appTheme.red600),
         focusedErrorBorder:
-            borderDecoration ?? createBorderSide(const Color(0xFFFFE041)),
+            borderDecoration ?? createBorderSide(ColorConstant.wegooli),
       );
 }
 
@@ -130,7 +130,7 @@ extension TextFormFieldStyleHelper on CustomTextFormField {
       UnderlineInputBorder(borderSide: BorderSide(color: appTheme.gray300));
   static OutlineInputBorder get outlineOnErrorTL5 => OutlineInputBorder(
       borderRadius: BorderRadius.circular(getHorizontalSize(5)),
-      borderSide: BorderSide(color: theme.colorScheme.onError));
+      borderSide: BorderSide(color: appTheme.supernova));
   static OutlineInputBorder get fillOnPrimary =>
       const OutlineInputBorder(borderSide: BorderSide.none);
   static OutlineInputBorder get fillPrimary => OutlineInputBorder(

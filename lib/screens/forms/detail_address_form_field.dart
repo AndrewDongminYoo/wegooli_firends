@@ -24,6 +24,6 @@ class DetailAddressFormField extends StatelessWidget {
         hintText: '동·호수 등 상세 주소',
         hintStyle: CustomTextStyles.bodyLargeGray50003,
         filled: true,
-        fillColor: theme.colorScheme.onPrimaryContainer);
+        fillColor: Colors.white);
   }
 }

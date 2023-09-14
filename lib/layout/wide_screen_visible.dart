@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
+import '/gen/colors.gen.dart';
 import '/theme/theme_helper.dart';
 
 class WideScreenVisible extends StatelessWidget {
@@ -18,7 +19,7 @@ class WideScreenVisible extends StatelessWidget {
       child: Expanded(
         child: Container(
           height: double.infinity,
-          color: theme.colorScheme.primary,
+          color: ColorConstant.wegooli,
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,

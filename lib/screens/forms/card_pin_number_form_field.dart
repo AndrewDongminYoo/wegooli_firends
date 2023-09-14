@@ -24,6 +24,6 @@ class CardPinNumberFormField extends StatelessWidget {
         ],
         margin: getMargin(top: 4),
         filled: true,
-        fillColor: theme.colorScheme.onPrimaryContainer);
+        fillColor: Colors.white);
   }
 }

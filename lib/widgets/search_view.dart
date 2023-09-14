@@ -109,13 +109,13 @@ class CustomSearchView extends StatelessWidget {
       border: borderDecoration ??
           OutlineInputBorder(
               borderRadius: BorderRadius.circular(getHorizontalSize(5)),
-              borderSide: BorderSide(color: theme.colorScheme.onError)),
+              borderSide: BorderSide(color: appTheme.supernova)),
       enabledBorder: borderDecoration ??
           OutlineInputBorder(
               borderRadius: BorderRadius.circular(getHorizontalSize(5)),
-              borderSide: BorderSide(color: theme.colorScheme.onError)),
+              borderSide: BorderSide(color: appTheme.supernova)),
       focusedBorder: borderDecoration ??
           OutlineInputBorder(
               borderRadius: BorderRadius.circular(getHorizontalSize(5)),
-              borderSide: BorderSide(color: theme.colorScheme.onError)));
+              borderSide: BorderSide(color: appTheme.supernova)));
 }

@@ -10,7 +10,7 @@ class SubscriptionInfoNoService extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: theme.colorScheme.onPrimaryContainer,
+        backgroundColor: Colors.white,
         appBar: CustomAppBar.getDefaultAppBar(l10ns.subscriptionInformation),
         body: Container(
             alignment: Alignment.topCenter,

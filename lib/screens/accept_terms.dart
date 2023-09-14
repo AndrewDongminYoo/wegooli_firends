@@ -76,7 +76,7 @@ class _AcceptTermsState extends State<AcceptTerms> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: theme.colorScheme.onPrimaryContainer,
+      backgroundColor: Colors.white,
       appBar: CustomAppBar.minimalAppBar(l10ns.acceptTerms),
       body: Unfocused(
         child: SizedBox(

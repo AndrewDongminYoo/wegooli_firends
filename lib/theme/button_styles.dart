@@ -33,41 +33,41 @@ class CustomButtonStyles {
         ),
       );
   static ButtonStyle get fillOnPrimaryC22 => ElevatedButton.styleFrom(
-        backgroundColor: theme.colorScheme.onPrimary.withOpacity(0.4),
+        backgroundColor: ColorConstant.fontBlack.withOpacity(0.4),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(22)),
       );
   static ButtonStyle get fillPrimaryC5 => ElevatedButton.styleFrom(
-      backgroundColor: theme.colorScheme.primary,
+      backgroundColor: ColorConstant.wegooli,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(getHorizontalSize(5))));
   static ButtonStyle get fillPrimaryC26 => ElevatedButton.styleFrom(
-      backgroundColor: theme.colorScheme.primary,
+      backgroundColor: ColorConstant.wegooli,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(getHorizontalSize(26))));
   static ButtonStyle get fillPrimaryB10 => ElevatedButton.styleFrom(
-        backgroundColor: theme.colorScheme.primary,
+        backgroundColor: ColorConstant.wegooli,
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(bottom: Radius.circular(10))),
       );
   static ButtonStyle get fillPrimaryB26 => ElevatedButton.styleFrom(
-        backgroundColor: theme.colorScheme.primary,
+        backgroundColor: ColorConstant.wegooli,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
               bottom: Radius.circular(getHorizontalSize(26))),
         ),
       );
   static ButtonStyle get fillPrimaryBL10 => ElevatedButton.styleFrom(
-        backgroundColor: theme.colorScheme.primary,
+        backgroundColor: ColorConstant.wegooli,
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10))),
       );
   static ButtonStyle get fillPrimaryBR10 => ElevatedButton.styleFrom(
-        backgroundColor: theme.colorScheme.primary,
+        backgroundColor: ColorConstant.wegooli,
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(bottomRight: Radius.circular(10))),
       );
   static ButtonStyle get fillWhite => ElevatedButton.styleFrom(
-        backgroundColor: theme.colorScheme.onPrimaryContainer,
+        backgroundColor: Colors.white,
       );
   // text button style
   static ButtonStyle get none => ButtonStyle(

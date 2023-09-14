@@ -39,6 +39,6 @@ class BirthdayNumberFormField extends StatelessWidget {
         hintText: 'YYMMDD',
         hintStyle: CustomTextStyles.bodyLargeGray50003,
         filled: true,
-        fillColor: theme.colorScheme.onPrimaryContainer);
+        fillColor: Colors.white);
   }
 }

@@ -20,7 +20,7 @@ class DashChatWithFriendsPage extends GetWidget<ConnectionController> {
   Widget build(BuildContext context) {
     return Scaffold(
         resizeToAvoidBottomInset: false,
-        backgroundColor: theme.colorScheme.onPrimaryContainer,
+        backgroundColor: Colors.white,
         appBar: CustomAppBar.getFriendsTypoAppBar(),
         body: Obx(
           () => DashChat(
@@ -32,14 +32,14 @@ class DashChatWithFriendsPage extends GetWidget<ConnectionController> {
                     (message, previousMessage, nextMessage) => BoxDecoration(
                         color:
                             message.user.id == UserController.to.currentUser.id
-                                ? ColorConstant.actionPrimaryDefault
-                                : ColorConstant.actionNeutralDisabled,
+                                ? ColorConstant.primaryDefault
+                                : ColorConstant.neutralDisabled,
                         borderRadius: BorderRadius.circular(15)),
                 // borderRadius: 18.0,
-                textColor: ColorConstant.fontColorBlack,
-                containerColor: ColorConstant.actionNeutralDisabled,
-                currentUserTextColor: ColorConstant.fontColorBlack,
-                currentUserContainerColor: ColorConstant.actionPrimaryDefault,
+                textColor: ColorConstant.fontBlack,
+                containerColor: ColorConstant.neutralDisabled,
+                currentUserTextColor: ColorConstant.fontBlack,
+                currentUserContainerColor: ColorConstant.primaryDefault,
                 timeFontSize: 12),
             inputOptions: InputOptions(
               sendOnEnter: true,
@@ -50,26 +50,26 @@ class DashChatWithFriendsPage extends GetWidget<ConnectionController> {
                     onPressed: () {
                       onSend();
                     },
-                    color: const Color(0xFF000000),
+                    color: Colors.black,
                     iconSize: 24);
               },
               leading: <Widget>[
                 IconButton(
                     icon: const Icon(
                       Icons.camera_alt,
-                      color: Color(0xFF000000),
+                      color: Colors.black,
                     ),
                     onPressed: () async {
                       await controller.getImage(ImageSource.gallery);
                     }),
               ],
-              cursorStyle: const CursorStyle(color: Color(0xFF000000)),
+              cursorStyle: CursorStyle(color: Colors.black),
               inputDecoration: InputDecoration(
-                fillColor: ColorConstant.actionNeutralDisabled,
+                fillColor: ColorConstant.neutralDisabled,
                 filled: true,
                 hintText: '채팅을 입력해주세요😃',
                 hintStyle:
-                    const TextStyle(color: Color(0xFF91969D), fontSize: 15),
+                    TextStyle(color: appTheme.gray50001, fontSize: 15),
                 constraints: BoxConstraints.expand(
                   height: getVerticalSize(36),
                 ),

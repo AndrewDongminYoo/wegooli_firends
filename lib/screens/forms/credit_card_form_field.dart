@@ -29,6 +29,6 @@ class CreditCardFormField extends StatelessWidget {
         ],
         hintText: '0000\t0000\t0000\t0000',
         filled: true,
-        fillColor: theme.colorScheme.onPrimaryContainer);
+        fillColor: Colors.white);
   }
 }

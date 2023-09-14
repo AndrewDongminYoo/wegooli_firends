@@ -49,8 +49,8 @@ class _CopyableTextFieldState extends State<CopyableTextField> {
                   onPressed: Actions.handler<ClearIntent>(
                       context, const ClearIntent()),
                   style: ElevatedButton.styleFrom(
-                    foregroundColor: theme.colorScheme.onSecondary,
-                    backgroundColor: theme.colorScheme.primary,
+                    foregroundColor: Colors.white,
+                    backgroundColor: ColorConstant.wegooli,
                   ),
                 ),
                 ElevatedButton.icon(
@@ -59,8 +59,8 @@ class _CopyableTextFieldState extends State<CopyableTextField> {
                   onPressed:
                       Actions.handler<CopyIntent>(context, const CopyIntent()),
                   style: ElevatedButton.styleFrom(
-                    foregroundColor: theme.colorScheme.onSecondary,
-                    backgroundColor: theme.colorScheme.primary,
+                    foregroundColor: Colors.white,
+                    backgroundColor: ColorConstant.wegooli,
                   ),
                 ),
                 ElevatedButton.icon(
@@ -69,8 +69,8 @@ class _CopyableTextFieldState extends State<CopyableTextField> {
                   onPressed: Actions.handler<PasteIntent>(
                       context, const PasteIntent()),
                   style: ElevatedButton.styleFrom(
-                    foregroundColor: theme.colorScheme.onSecondary,
-                    backgroundColor: theme.colorScheme.primary,
+                    foregroundColor: Colors.white,
+                    backgroundColor: ColorConstant.wegooli,
                   ),
                 ),
                 ElevatedButton.icon(
@@ -80,8 +80,8 @@ class _CopyableTextFieldState extends State<CopyableTextField> {
                   onPressed: Actions.handler<SelectAllIntent>(
                       context, const SelectAllIntent()),
                   style: ElevatedButton.styleFrom(
-                    foregroundColor: theme.colorScheme.onSecondary,
-                    backgroundColor: theme.colorScheme.primary,
+                    foregroundColor: Colors.white,
+                    backgroundColor: ColorConstant.wegooli,
                   ),
                 ),
                 ElevatedButton.icon(
@@ -91,8 +91,8 @@ class _CopyableTextFieldState extends State<CopyableTextField> {
                     onPressed: Actions.handler<CopyAllIntent>(
                         context, const CopyAllIntent()),
                     style: ElevatedButton.styleFrom(
-                      foregroundColor: theme.colorScheme.onSecondary,
-                      backgroundColor: theme.colorScheme.primary,
+                      foregroundColor: Colors.white,
+                      backgroundColor: ColorConstant.wegooli,
                     )),
                 const SizedBox.shrink(),
               ],

@@ -18,12 +18,12 @@ class InviteTeamButton extends StatelessWidget {
             width: getSize(50),
             // padding: getPadding(all: 13),
             decoration: BoxDecoration(
-              color: const Color(0xFFB9BCC3),
+              color: appTheme.gray400,
               borderRadius: BorderRadius.circular(32),
             ),
             child: CustomImageView(
               svgPath: Assets.svg.imgGrid.path,
-              color: ColorConstant.fontColorWhite,
+              color: Colors.white,
             ),
             onTap: () async {
               await goSendingInvitation(copyMode: true);
@@ -34,7 +34,7 @@ class InviteTeamButton extends StatelessWidget {
             overflow: TextOverflow.ellipsis,
             textAlign: TextAlign.left,
             style: const TextStyle(
-              color: Color(0xFF222222),
+              color: ColorConstant.fontBlack,
               fontSize: 12,
               fontFamily: FontFamily.pretendard,
               fontWeight: FontWeight.w400,

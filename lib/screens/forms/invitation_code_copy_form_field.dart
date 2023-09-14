@@ -30,7 +30,7 @@ class InvitationCodeCopyFormField extends StatelessWidget {
       ],
       textStyle: CustomTextStyles.bodyLargeGray50003,
       hintStyle: CustomTextStyles.bodyLargeGray50003,
-      fillColor: theme.colorScheme.onPrimaryContainer,
+      fillColor: Colors.white,
     );
   }
 }

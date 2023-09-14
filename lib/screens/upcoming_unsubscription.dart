@@ -13,7 +13,7 @@ class UpcomingUnsubscription extends GetWidget<VehicleController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: theme.colorScheme.onPrimaryContainer,
+        backgroundColor: Colors.white,
         appBar: CustomAppBar.getDefaultAppBar(l10ns.subscriptionInformation),
         body: Container(
             width: double.maxFinite,

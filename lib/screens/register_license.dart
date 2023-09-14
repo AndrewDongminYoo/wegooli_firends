@@ -14,7 +14,7 @@ class RegisterLicense extends GetWidget<LicenseController> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: theme.colorScheme.onPrimaryContainer,
+      backgroundColor: Colors.white,
       appBar: CustomAppBar.getDefaultAppBar(l10ns.driverSLicenseRegistration),
       body: Unfocused(
         child: Container(

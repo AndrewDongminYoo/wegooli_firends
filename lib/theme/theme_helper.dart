@@ -18,9 +18,7 @@ class ThemeHelper {
   };
 
 // A map of color schemes supported by the app
-  final Map<String, ColorScheme> _supportedColorScheme = {
-    'primary': ColorSchemes.primaryColorScheme,
-  };
+  final Map<String, ColorScheme> _supportedColorScheme = {};
 
   /// Changes the app theme to [newTheme].
   void changeTheme(String newTheme) {
@@ -47,16 +45,14 @@ class ThemeHelper {
           '$_appTheme is not found.Make sure you have added this theme class in JSON Try running flutter pub run build_runner');
     }
     // return theme from map
-    final colorScheme =
-        _supportedColorScheme[_appTheme] ?? ColorSchemes.primaryColorScheme;
+    final colorScheme = _supportedColorScheme[_appTheme];
     return ThemeData(
       useMaterial3: true,
       visualDensity: VisualDensity.standard,
       colorScheme: colorScheme,
-      textTheme: TextThemes.textTheme(colorScheme),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          backgroundColor: colorScheme.primary,
+          backgroundColor: ColorConstant.wegooli,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(26),
           ),
@@ -70,9 +66,9 @@ class ThemeHelper {
       radioTheme: RadioThemeData(
         fillColor: MaterialStateColor.resolveWith((states) {
           if (states.contains(MaterialState.selected)) {
-            return appTheme.gray400;
+            return Color(0xFFB9BCC3);
           }
-          return colorScheme.onSurface;
+          return Colors.white;
         }),
         visualDensity: const VisualDensity(
           vertical: -4,
@@ -82,9 +78,9 @@ class ThemeHelper {
       checkboxTheme: CheckboxThemeData(
         fillColor: MaterialStateColor.resolveWith((states) {
           if (states.contains(MaterialState.selected)) {
-            return appTheme.gray400;
+            return Color(0xFFB9BCC3);
           }
-          return colorScheme.onSurface;
+          return Colors.white;
         }),
         side: const BorderSide(),
         visualDensity: const VisualDensity(
@@ -93,11 +89,11 @@ class ThemeHelper {
         ),
       ),
       floatingActionButtonTheme:
-          FloatingActionButtonThemeData(backgroundColor: colorScheme.primary),
+          FloatingActionButtonThemeData(backgroundColor: ColorConstant.wegooli),
       dividerTheme: DividerThemeData(
         thickness: 1,
         space: 1,
-        color: colorScheme.primary,
+        color: ColorConstant.wegooli,
       ),
     );
   }
@@ -107,43 +103,43 @@ class ThemeHelper {
 class TextThemes {
   static TextTheme textTheme(ColorScheme colorScheme) => TextTheme(
         bodyLarge: TextStyle(
-          color: colorScheme.onPrimary,
+          color: ColorConstant.fontBlack,
           fontSize: getFontSize(16),
           fontFamily: FontFamily.pretendard,
           fontWeight: FontWeight.w400,
         ),
         bodyMedium: TextStyle(
-          color: colorScheme.onPrimary,
+          color: ColorConstant.fontBlack,
           fontSize: getFontSize(15),
           fontFamily: FontFamily.pretendard,
           fontWeight: FontWeight.w400,
         ),
         bodySmall: TextStyle(
-          color: colorScheme.onPrimary,
+          color: ColorConstant.fontBlack,
           fontSize: getFontSize(12),
           fontFamily: FontFamily.pretendard,
           fontWeight: FontWeight.w400,
         ),
         displayMedium: TextStyle(
-          color: colorScheme.onPrimary,
+          color: ColorConstant.fontBlack,
           fontSize: getFontSize(50),
           fontFamily: FontFamily.cookieRun,
           fontWeight: FontWeight.w900,
         ),
         headlineSmall: TextStyle(
-          color: appTheme.black900,
+          color: Colors.black,
           fontSize: getFontSize(24),
           fontFamily: FontFamily.pretendard,
           fontWeight: FontWeight.w700,
         ),
         titleMedium: TextStyle(
-          color: colorScheme.onPrimary,
+          color: ColorConstant.fontBlack,
           fontSize: getFontSize(18),
           fontFamily: FontFamily.pretendard,
           fontWeight: FontWeight.w700,
         ),
         titleSmall: TextStyle(
-          color: appTheme.red600,
+          color: Color(0xFFDB4646),
           fontSize: getFontSize(14),
           fontFamily: FontFamily.pretendard,
           fontWeight: FontWeight.w700,
@@ -151,61 +147,30 @@ class TextThemes {
       );
 }
 
-/// Class containing the supported color schemes.
-class ColorSchemes {
-  static const primaryColorScheme = ColorScheme.light(
-    //  Primary colors
-    primary: Color(0xFFFFE041),
-    primaryContainer: Color(0xFFEF1010),
-    secondary: Color(0xFFEF1010),
-    secondaryContainer: Color(0xFFFFE041),
-    tertiary: Color(0xFFEF1010),
-    tertiaryContainer: Color(0xFFFFE041),
-    surfaceTint: Color(0xFF222222),
-    surfaceVariant: Color(0xFFFFE041),
-
-    //  Error colors
-    error: Color(0xFF222222),
-    errorContainer: Color(0xFF82838D),
-    onError: Color(0xFFFFCC08),
-    onErrorContainer: Color(0xFF222222),
-
-    //  On colors(text colors)
-    onBackground: Color(0xFFFFFFFF),
-    onInverseSurface: Color(0xFFFFCC08),
-    onPrimary: Color(0xFF222222),
-    onPrimaryContainer: Color(0xFFFFFFFF),
-    onSecondary: Color(0xFFFFFFFF),
-    onSecondaryContainer: Color(0xFF222222),
-    onTertiary: Color(0xFFFFFFFF),
-    onTertiaryContainer: Color(0xFF222222),
-
-    //  Other colors
-    outline: Color(0xFF222222),
-    outlineVariant: Color(0xFFEF1010),
-    scrim: Color(0xFFEF1010),
-    shadow: Color(0xFF222222),
-
-    //  Inverse colors
-    inversePrimary: Color(0xFFEF1010),
-    inverseSurface: Color(0xFF222222),
-
-    //  Pending colors
-    onSurface: Color(0xFFFFFFFF),
-    onSurfaceVariant: Color(0xFF222222),
-  );
-}
-
 /// Class containing custom colors for a primary theme.
 class PrimaryColors {
   //  Amber
   Color get amberA200 => const Color(0xFFFFE142);
   Color get amberA20033 => const Color(0x33FFE142);
+  Color get amber100 => const Color(0xFFFFECB3);
+  Color get amber200 => const Color(0xFFFFE082);
+  Color get amber300 => const Color(0xFFFFD54F);
+  Color get amber400 => const Color(0xFFFFCA28);
+  Color get amber500 => const Color(0xFFFFC107);
+  Color get amber600 => const Color(0xFFFFB300);
+  Color get amber700 => const Color(0xFFFFA000);
+  Color get amber800 => const Color(0xFFFF8F00);
+  Color get supernova => const Color(0xFFFFCC08); // #FFCC08
 
   //  Black
-  Color get black900 => const Color(0xFF000000);
+  Color get black => const Color(0xFF000000);
+  Color get black87 => const Color(0xDD000000);
+  Color get black54 => const Color(0x89000000);
+  Color get black45 => const Color(0x73000000);
+  Color get black38 => const Color(0x60000000);
+  Color get black27 => const Color(0x42000000);
+  Color get black12 => const Color(0x1F000000);
 
-  //  BlueGray
   Color get blueGray30033 => const Color(0x33A4A8AF);
   Color get blueGray400 => const Color(0xFF888888);
   Color get blueGray900 => const Color(0xFF323232);
@@ -218,7 +183,7 @@ class PrimaryColors {
 
   //  Gray
   Color get gray100 => const Color(0xFFF6F7F7);
-  Color get gray10001 => const Color(0xFFF5F5F5);
+  Color get grey100 => const Color(0xFFF5F5F5);
   Color get gray200 => const Color(0xFFEEEEEE);
   Color get gray300 => const Color(0xFFE6E6E6);
   Color get gray400 => const Color(0xFFB9BCC3);
@@ -232,6 +197,7 @@ class PrimaryColors {
 
   //  Green
   Color get green500 => const Color(0xFF38DD66);
+  Color get green400 => const Color(0xFF66BB6A);
 
   //  Red
   Color get red600 => const Color(0xFFDB4646);

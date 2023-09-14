@@ -40,7 +40,7 @@ class _LoginWithIdAndPasswordState extends State<LoginWithIdAndPassword> {
     return SafeArea(
         child: Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: theme.colorScheme.onPrimaryContainer,
+      backgroundColor: Colors.white,
       body: Unfocused(
         child: Container(
             width: double.maxFinite,

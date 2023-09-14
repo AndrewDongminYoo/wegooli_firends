@@ -24,7 +24,7 @@ class TelecomDropdown extends StatelessWidget {
         items: controller.telecoms,
         filled: true,
         textStyle: CustomTextStyles.bodyLargeGray500,
-        fillColor: theme.colorScheme.onPrimaryContainer,
+        fillColor: Colors.white,
         contentPadding: getPadding(left: 10, right: 5, top: 14, bottom: 14),
         onChanged: (SelectionPopupModel value) {
           controller.setDropdownItem(value);

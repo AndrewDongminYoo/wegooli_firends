@@ -39,7 +39,7 @@ class PasswordFormField extends StatelessWidget {
             margin: getMargin(left: 30, top: 12, right: 10, bottom: 12),
             child: ShowPasswordToggle(show: isShowPassword)),
         suffixConstraints: BoxConstraints(maxHeight: getVerticalSize(48)),
-        fillColor: theme.colorScheme.onPrimaryContainer,
+        fillColor: Colors.white,
         filled: true,
         validator: (value) =>
             value == null || value.isEmpty ? '필수 입력 항목입니다.' : null,
@@ -74,7 +74,7 @@ class PasswordConfirmFormField extends StatelessWidget {
               child: ShowPasswordToggle(show: isShowConfirmPassword)),
           suffixConstraints: BoxConstraints(maxHeight: getVerticalSize(48)),
           filled: true,
-          fillColor: theme.colorScheme.onPrimaryContainer,
+          fillColor: Colors.white,
         ));
   }
 }

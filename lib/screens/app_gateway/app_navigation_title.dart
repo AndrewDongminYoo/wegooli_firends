@@ -18,7 +18,7 @@ class AppNavigationTitle extends StatelessWidget {
             overflow: TextOverflow.ellipsis,
             textAlign: TextAlign.center,
             style: TextStyle(
-                color: appTheme.black900,
+                color: Colors.black,
                 fontSize: getFontSize(20),
                 fontFamily: FontFamily.nanumSquareRound,
                 fontWeight: FontWeight.w400),

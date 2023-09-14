@@ -33,7 +33,7 @@ class VerificationCodeFormField extends StatelessWidget {
       autofillHints: const [AutofillHints.oneTimeCode],
       suffixConstraints: BoxConstraints(maxHeight: getVerticalSize(48)),
       filled: true,
-      fillColor: theme.colorScheme.onPrimaryContainer,
+      fillColor: Colors.white,
       suffix: Padding(
         padding: getPadding(left: 30, top: 12, right: 10, bottom: 12),
         child: Obx(() {

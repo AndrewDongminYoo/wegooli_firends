@@ -34,7 +34,7 @@ class RouteItem extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                      color: appTheme.black900,
+                      color: Colors.black,
                       fontSize: getFontSize(20),
                       fontFamily: FontFamily.roboto,
                       fontWeight: FontWeight.w400),

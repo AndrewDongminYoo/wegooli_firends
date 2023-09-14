@@ -19,7 +19,7 @@ class FloatingYellowButton extends StatelessWidget {
         width: getHorizontalSize(70),
         margin: getMargin(right: 22),
         decoration: BoxDecoration(
-          color: ColorConstant.actionPrimaryDefault,
+          color: ColorConstant.primaryDefault,
           shape: BoxShape.circle,
           boxShadow: AppDecoration.shadows,
         ),
@@ -29,7 +29,7 @@ class FloatingYellowButton extends StatelessWidget {
           children: [
             CustomImageView(
               svgPath: Assets.svg.imgEdit.path,
-              color: const Color(0xFF000000),
+              color: Colors.black,
               width: 30,
               height: 30,
               margin: getMargin(bottom: 3),
@@ -38,7 +38,7 @@ class FloatingYellowButton extends StatelessWidget {
               l10ns.reportAnIncident, // '사고 접수'
               textAlign: TextAlign.center,
               style: const TextStyle(
-                color: Color(0xFF000000),
+                color: Colors.black,
                 fontSize: 12,
                 fontFamily: FontFamily.pretendard,
                 fontWeight: FontWeight.w400,

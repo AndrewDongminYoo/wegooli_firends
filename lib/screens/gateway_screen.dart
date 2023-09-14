@@ -11,7 +11,7 @@ class GatewayScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      backgroundColor: theme.colorScheme.onSecondary,
+      backgroundColor: Colors.white,
       body: SizedBox(
           width: getHorizontalSize(375),
           child: Column(
@@ -26,7 +26,7 @@ class GatewayScreen extends StatelessWidget {
                         child: Divider(
                             height: getVerticalSize(1),
                             thickness: getVerticalSize(1),
-                            color: appTheme.black900)),
+                            color: Colors.black)),
                   ])),
               Expanded(
                   child: SingleChildScrollView(

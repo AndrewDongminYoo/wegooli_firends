@@ -23,7 +23,7 @@ class NickNameFormField extends StatelessWidget {
       textStyle: CustomTextStyles.bodyLargeGray50003,
       hintStyle: CustomTextStyles.bodyLargeGray50003,
       hintText: l10ns.enterANicknameUpTo10Characters,
-      fillColor: theme.colorScheme.onPrimaryContainer,
+      fillColor: Colors.white,
       filled: true,
     );
   }

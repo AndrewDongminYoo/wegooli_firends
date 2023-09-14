@@ -15,7 +15,7 @@ class RegisterZipCode extends GetWidget<UserController> {
     const authMode = AuthMode.register;
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: theme.colorScheme.onPrimaryContainer,
+      backgroundColor: Colors.white,
       appBar: CustomAppBar.getDefaultAppBar(l10ns.signUp),
       body: Unfocused(
         child: SingleChildScrollView(

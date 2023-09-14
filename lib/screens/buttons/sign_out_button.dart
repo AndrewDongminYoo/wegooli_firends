@@ -35,7 +35,8 @@ class SignOutButton extends StatelessWidget {
       child: Text(
         l10ns.withdrawingMember,
         style: const TextStyle(
-            color: Color(0x66222222), decoration: TextDecoration.underline),
+            color: ColorConstant.fontBlackDisabled,
+            decoration: TextDecoration.underline),
       ),
     );
   }

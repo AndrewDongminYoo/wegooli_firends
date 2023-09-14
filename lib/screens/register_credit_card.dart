@@ -28,7 +28,7 @@ class _RegisterCreditCardState extends State<RegisterCreditCard> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: theme.colorScheme.onPrimaryContainer,
+      backgroundColor: Colors.white,
       appBar: CustomAppBar.getDefaultAppBar(l10ns.cardRegistration),
       body: Unfocused(
         child: Container(

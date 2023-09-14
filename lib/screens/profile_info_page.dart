@@ -13,13 +13,13 @@ class ProfileInfoPage extends GetWidget<UserController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: theme.colorScheme.onPrimaryContainer,
+      backgroundColor: Colors.white,
       appBar: CustomAppBar.getDefaultAppBar(l10ns.myInfo),
       body: Unfocused(
         child: SizedBox(
             width: mediaQueryData.size.width,
             height: mediaQueryData.size.height,
-            // color: const Color(0xFFFFC107),
+            // color: appTheme.amber500,
             child: Column(
               children: [
                 MyProfileSection(controller: controller),

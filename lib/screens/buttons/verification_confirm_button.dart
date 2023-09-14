@@ -30,7 +30,7 @@ class VerificationConfirmButton extends StatelessWidget {
                 title: 'OTP 인증',
                 message: 'OTP 코드 인증에 성공했습니다!',
                 duration: const Duration(seconds: 5),
-                backgroundColor: theme.colorScheme.error,
+                backgroundColor: ColorConstant.fontBlack,
                 icon: const Icon(
                   Icons.message_rounded,
                   color: Colors.white,

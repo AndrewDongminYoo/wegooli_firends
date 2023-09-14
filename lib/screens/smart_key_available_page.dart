@@ -17,7 +17,7 @@ class _SmartKeyAvailablePageState extends State<SmartKeyAvailablePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: theme.colorScheme.onPrimaryContainer,
+      backgroundColor: Colors.white,
       appBar: CustomAppBar.getFriendsTypoAppBar(),
       body: SizedBox(
         width: mediaQueryData.size.width,

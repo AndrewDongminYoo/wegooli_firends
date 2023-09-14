@@ -2,8 +2,7 @@
 import 'package:flutter/cupertino.dart' show CupertinoSwitch;
 import 'package:flutter/material.dart';
 
-// 🌎 Project imports:
-import '/core/app_export.dart';
+import '/lib.dart';
 
 class CustomSwitch extends StatelessWidget {
   CustomSwitch({
@@ -38,8 +37,8 @@ class CustomSwitch extends StatelessWidget {
   /// 토글 기능 쿠퍼티노 스타일로 통일
   Widget get switchWidget => CupertinoSwitch(
       value: value ?? false,
-      trackColor: theme.colorScheme.onPrimaryContainer,
-      thumbColor: theme.colorScheme.onError,
-      activeColor: theme.colorScheme.primary,
+      trackColor: Colors.white,
+      thumbColor: appTheme.supernova,
+      activeColor: ColorConstant.wegooli,
       onChanged: onChange);
 }

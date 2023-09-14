@@ -47,7 +47,7 @@ class ReservationsCheckingPageDialog extends StatelessWidget {
                     child: const Text(
                       '일정 확인',
                       style: TextStyle(
-                        color: ColorConstant.fontColorBlack,
+                        color: ColorConstant.fontBlack,
                         fontSize: 18,
                         fontFamily: FontFamily.pretendard,
                         fontWeight: FontWeight.w700,

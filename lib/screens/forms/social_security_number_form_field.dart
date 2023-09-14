@@ -37,7 +37,7 @@ class SocialSecurityNumberFormField extends StatelessWidget {
       hintText: '●●●●●●●',
       hintStyle: CustomTextStyles.bodyLargeGray50003,
       filled: true,
-      fillColor: theme.colorScheme.onPrimaryContainer,
+      fillColor: Colors.white,
     );
   }
 }

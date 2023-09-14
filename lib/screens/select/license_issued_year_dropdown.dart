@@ -23,7 +23,7 @@ class LicenseIssuedYearDropdown extends StatelessWidget {
         textStyle: CustomTextStyles.bodyLargeGray500,
         items: controller.yearOfLicenseIssuance.value,
         filled: true,
-        fillColor: theme.colorScheme.onPrimaryContainer,
+        fillColor: Colors.white,
         contentPadding: getPadding(left: 10, top: 14, bottom: 14),
         onChanged: (SelectionPopupModel value) {
           controller.yearOfLicenseIssuance.onSelected(value);

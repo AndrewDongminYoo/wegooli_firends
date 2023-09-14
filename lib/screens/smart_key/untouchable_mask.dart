@@ -14,22 +14,20 @@ class UntouchableMask extends GetView<VehicleController> {
   Widget build(BuildContext context) {
     return Container(
         height: mediaQueryData.size.height - getVerticalSize(270),
-        decoration:
-            const BoxDecoration(color: ColorConstant.actionNeutralDisabled),
+        decoration: const BoxDecoration(color: ColorConstant.neutralDisabled),
         child: Center(
           child: Container(
             alignment: Alignment.center,
             width: getHorizontalSize(180),
             height: getVerticalSize(44),
             decoration: BoxDecoration(
-                color: const Color(0x66222222),
+                color: ColorConstant.fontBlackDisabled,
                 borderRadius: BorderRadius.circular(100)),
             child: Text(
               controller.availableNow.value
                   ? l10ns.hongGilDongIsUsingIt(controller.driverName.text)
                   : l10ns.available,
-              style: const TextStyle(
-                  color: ColorConstant.fontColorWhite, fontSize: 16),
+              style: const TextStyle(color: Colors.white, fontSize: 16),
             ),
           ),
         ));

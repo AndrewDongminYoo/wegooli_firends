@@ -81,7 +81,7 @@ class _CustomBottomAppBarLayoutState extends State<CustomBottomAppBarLayout>
         appBar: widget.appBar,
         body: widget.body,
         floatingActionButton: widget.floatingActionButton,
-        backgroundColor: theme.colorScheme.onPrimaryContainer,
+        backgroundColor: Colors.white,
         floatingActionButtonLocation: widget.floatingActionButtonLocation,
         bottomNavigationBar: widget.bottomNavigationBar,
       ),

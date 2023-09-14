@@ -90,8 +90,8 @@ class _CustomCheckboxButtonState extends State<CustomCheckboxButton> {
       height: widget.iconSize ?? getHorizontalSize(20),
       width: widget.iconSize ?? getHorizontalSize(20),
       child: Checkbox(
-          activeColor: ColorConstant.actionPrimaryPressed,
-          checkColor: ColorConstant.actionPrimaryInverted,
+          activeColor: ColorConstant.primaryPressed,
+          checkColor: ColorConstant.primaryInverted,
           visualDensity: const VisualDensity(vertical: -4, horizontal: -4),
           value: widget.value ?? false,
           onChanged: (value) {

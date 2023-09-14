@@ -24,8 +24,8 @@ class _RegisteredCreditCardListState extends State<RegisteredCreditCardList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: theme.colorScheme.onPrimaryContainer,
-      // backgroundColor: const Color(0xFFFFC107),
+      // backgroundColor: Colors.white,
+      // backgroundColor: appTheme.amber500,
       appBar: CustomAppBar.getDefaultAppBar(l10ns.cardRegistration),
       body: Unfocused(
         child: SizedBox(
@@ -35,7 +35,7 @@ class _RegisteredCreditCardListState extends State<RegisteredCreditCardList> {
             child: Column(
               children: [
                 Container(
-                  // color: const Color(0xFFFFB300),
+                  // color: appTheme.amber600,
                   padding: getPadding(top: 20, bottom: 20, left: 16, right: 16),
                   child: Column(children: [
                     Obx(
@@ -75,7 +75,7 @@ class _RegisteredCreditCardListState extends State<RegisteredCreditCardList> {
                   ]),
                 ),
                 Container(
-                  // color: const Color(0xFFFFA000),
+                  // color: appTheme.amber700,
                   padding: getPadding(top: 20, bottom: 20, left: 16, right: 16),
                   child: const AddCreditCardButton(),
                 ),

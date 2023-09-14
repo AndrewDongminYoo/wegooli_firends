@@ -24,6 +24,6 @@ class InvitationCodeFormField extends StatelessWidget {
         filled: true,
         textStyle: CustomTextStyles.bodyLargeGray50003,
         hintStyle: CustomTextStyles.bodyLargeGray50003,
-        fillColor: theme.colorScheme.onPrimaryContainer);
+        fillColor: Colors.white);
   }
 }

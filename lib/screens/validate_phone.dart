@@ -17,7 +17,7 @@ class ValidatePhone extends GetWidget<UserController> {
     final _phoneNum = FocusNode();
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: theme.colorScheme.onPrimaryContainer,
+      backgroundColor: Colors.white,
       appBar: CustomAppBar.getDefaultAppBar(l10ns.authenticateYourself),
       body: Unfocused(
         child: Container(

@@ -14,7 +14,7 @@ class UnsubscriptionConfirm extends GetWidget<VehicleController> {
     final expireDate =
         DateTime.tryParse(controller.calcDate()) ?? DateTime.now();
     return Scaffold(
-      backgroundColor: theme.colorScheme.onPrimaryContainer,
+      backgroundColor: Colors.white,
       appBar: CustomAppBar.getDefaultAppBar(l10ns.scheduleAnUnsubscribe),
       body: SingleChildScrollView(
           // width: mediaQueryData.size.width,

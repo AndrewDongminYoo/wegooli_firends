@@ -83,8 +83,9 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                                     Text(
                                       item.title,
                                       style: TextStyle(
-                                        color: Color(
-                                            isOpen ? 0xFF222222 : 0x66222222),
+                                        color: isOpen
+                                            ? ColorConstant.fontBlack
+                                            : ColorConstant.fontBlackDisabled,
                                         fontSize: 16,
                                         fontFamily: FontFamily.pretendard,
                                         fontWeight: FontWeight.w700,
@@ -96,8 +97,9 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                                       formatting(item.date),
                                       textAlign: TextAlign.right,
                                       style: TextStyle(
-                                        color: Color(
-                                            isOpen ? 0xFF222222 : 0x66222222),
+                                        color: isOpen
+                                            ? ColorConstant.fontBlack
+                                            : ColorConstant.fontBlackDisabled,
                                         fontSize: 16,
                                         fontFamily: FontFamily.pretendard,
                                         fontWeight: FontWeight.w700,

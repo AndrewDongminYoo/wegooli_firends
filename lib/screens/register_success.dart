@@ -14,7 +14,7 @@ class RegisterSuccess extends GetWidget<UserController> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      backgroundColor: theme.colorScheme.onPrimaryContainer,
+      backgroundColor: Colors.white,
       body: Unfocused(
         child: Container(
           // width: double.maxFinite,

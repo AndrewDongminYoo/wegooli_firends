@@ -22,6 +22,6 @@ class LicenseIssuedDateFormField extends StatelessWidget {
         hintText: l10ns.pleaseEnterYourLicenseIssueDateOnlyNumbers,
         hintStyle: CustomTextStyles.bodyLargeGray50003,
         filled: true,
-        fillColor: theme.colorScheme.onPrimaryContainer);
+        fillColor: Colors.white);
   }
 }

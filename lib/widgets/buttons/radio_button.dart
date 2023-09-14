@@ -95,12 +95,12 @@ class _CustomRadioButtonState extends State<CustomRadioButton> {
       height: widget.iconSize ?? getHorizontalSize(20),
       width: widget.iconSize ?? getHorizontalSize(20),
       child: Radio<String>(
-          // activeColor: const Color(0xFFFFE041),
+          // activeColor: ColorConstant.wegooli,
           fillColor: MaterialStateColor.resolveWith((states) {
             if (states.contains(MaterialState.selected)) {
-              return theme.colorScheme.primary;
+              return ColorConstant.wegooli;
             } else {
-              return const Color(0xFFB9BCC3);
+              return appTheme.gray400;
             }
           }),
           visualDensity: const VisualDensity(vertical: -4, horizontal: -4),

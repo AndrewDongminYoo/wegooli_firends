@@ -20,7 +20,7 @@ class EmailAddressFormField extends StatelessWidget {
     return CustomTextFormField(
       controller: controller.emailAddress,
       textInputType: TextInputType.emailAddress,
-      fillColor: theme.colorScheme.onPrimaryContainer,
+      fillColor: Colors.white,
       margin: isLogin ? getMargin(top: 40) : getMargin(top: 4),
       contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),
       textStyle: CustomTextStyles.bodyLargeGray50003,

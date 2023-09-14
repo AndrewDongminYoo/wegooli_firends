@@ -24,22 +24,20 @@ class ControlButton extends StatelessWidget {
           Size(getHorizontalSize(120), getVerticalSize(120))),
       shape: MaterialStateProperty.all(const CircleBorder(
         side: BorderSide(
-          color: ColorConstant.actionNeutralDisabled,
+          color: ColorConstant.neutralDisabled,
         ),
       )),
       shadowColor: MaterialStateProperty.all(const Color(0x18000000)),
       backgroundColor: MaterialStateProperty.resolveWith((states) {
         if (states.contains(MaterialState.pressed)) {
-          return ColorConstant.actionPrimaryDefault;
+          return ColorConstant.primaryDefault;
         } else if (states.contains(MaterialState.disabled)) {
-          return ColorConstant.actionNeutralDisabled;
+          return ColorConstant.neutralDisabled;
         } else if (states.contains(MaterialState.focused)) {
-          return ColorConstant.actionPrimaryDefault;
+          return ColorConstant.primaryDefault;
         } else {
           return Colors.transparent;
         }
-        // return ColorConstant.fontColorWhite;
-        // return Colors.white;
       }),
       textStyle: MaterialStateProperty.resolveWith((states) {
         if (states.contains(MaterialState.pressed)) {
@@ -75,10 +73,10 @@ class ControlButton extends StatelessWidget {
             child: Container(
               width: getHorizontalSize(120),
               height: getVerticalSize(120),
-              decoration: const ShapeDecoration(
+              decoration: ShapeDecoration(
                 // color: Colors.white,
                 shape: CircleBorder(
-                  side: BorderSide(width: 0.50, color: Color(0x33A4A8AF)),
+                  side: BorderSide(width: 0.50, color: appTheme.blueGray30033),
                 ),
               ),
               child: Column(

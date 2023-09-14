@@ -10,27 +10,27 @@ class AppDecoration {
       BoxDecoration(color: appTheme.blueGray30033);
   static BoxDecoration get fillGray100 =>
       BoxDecoration(color: appTheme.gray100);
-  static BoxDecoration get fillGray10001 =>
-      BoxDecoration(color: appTheme.gray10001);
+  static BoxDecoration get fillGrey100 =>
+      BoxDecoration(color: appTheme.grey100);
   static BoxDecoration get fillDeepOrange =>
       BoxDecoration(color: appTheme.deepOrangeA200);
   static BoxDecoration get fillDeepPurple =>
       BoxDecoration(color: appTheme.deepPurpleA200);
   static BoxDecoration get fillOnPrimaryContainer =>
-      BoxDecoration(color: theme.colorScheme.onPrimaryContainer);
+      BoxDecoration(color: Colors.white);
   static BoxDecoration get fillOnSecondary =>
-      BoxDecoration(color: theme.colorScheme.onSecondary);
+      BoxDecoration(color: Colors.white);
   static BoxDecoration get fillOnPrimary =>
-      BoxDecoration(color: theme.colorScheme.onPrimary);
+      BoxDecoration(color: ColorConstant.fontBlack);
   static BoxDecoration get fillPrimary =>
-      BoxDecoration(color: theme.colorScheme.primary);
+      BoxDecoration(color: ColorConstant.wegooli);
 
   // Outline decorations
   static BoxDecoration get outlineBlack => BoxDecoration(
-        color: theme.colorScheme.primary,
+        color: ColorConstant.wegooli,
         boxShadow: [
           BoxShadow(
-            color: appTheme.black900.withOpacity(0.1),
+            color: Colors.black.withOpacity(0.1),
             spreadRadius: getHorizontalSize(2),
             blurRadius: getHorizontalSize(2),
             offset: const Offset(
@@ -49,14 +49,14 @@ class AppDecoration {
         ),
       );
   static BoxDecoration get outlineBluegray30033 => BoxDecoration(
-        color: theme.colorScheme.onPrimaryContainer,
+        color: Colors.white,
         border: Border.all(
           color: appTheme.blueGray30033,
           width: getHorizontalSize(1),
         ),
       );
   static BoxDecoration get outline => BoxDecoration(
-        color: theme.colorScheme.onPrimaryContainer,
+        color: Colors.white,
         border: Border.all(
           color: appTheme.gray400,
           width: getHorizontalSize(1),
@@ -76,8 +76,7 @@ class AppDecoration {
   static BoxDecoration get minimal => BoxDecoration(
       color: Colors.white,
       borderRadius: BorderRadiusStyle.circleBorder65,
-      border:
-          Border.all(width: 0.5, color: ColorConstant.actionNeutralDisabled));
+      border: Border.all(width: 0.5, color: ColorConstant.neutralDisabled));
 }
 
 class BorderRadiusStyle {

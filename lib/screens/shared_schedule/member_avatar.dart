@@ -43,7 +43,7 @@ class MemberAvatar extends StatelessWidget {
           overflow: TextOverflow.ellipsis,
           textAlign: TextAlign.left,
           style: const TextStyle(
-            color: Color(0xFF222222),
+            color: ColorConstant.fontBlack,
             fontSize: 12,
             fontFamily: FontFamily.pretendard,
             fontWeight: FontWeight.w400,

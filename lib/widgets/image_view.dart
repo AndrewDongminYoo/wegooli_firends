@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 // 📦 Package imports:
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:wegooli_friends/lib.dart';
 
 class CustomImageView extends StatelessWidget {
   /// a [CustomImageView] it can be used for showing any type of images
@@ -123,12 +124,12 @@ class CustomImageView extends StatelessWidget {
           fit: fit,
           imageUrl: url!,
           color: color,
-          placeholder: (context, url) => const SizedBox(
+          placeholder: (context, url) => SizedBox(
               height: 30,
               width: 30,
               child: LinearProgressIndicator(
-                color: Color(0xFFEEEEEE),
-                backgroundColor: Color(0xFFF5F5F5),
+                color: appTheme.gray200,
+                backgroundColor: appTheme.grey100,
               )),
           errorWidget: (context, url, error) => Image.asset(
                 placeHolder,

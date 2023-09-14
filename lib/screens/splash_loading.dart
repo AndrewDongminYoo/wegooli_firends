@@ -14,7 +14,7 @@ class SplashLoading extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      backgroundColor: theme.colorScheme.primary,
+      backgroundColor: ColorConstant.wegooli,
       body: Unfocused(
         child: FutureBuilder(
 

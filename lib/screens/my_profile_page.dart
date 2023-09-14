@@ -15,13 +15,13 @@ class MyProfilePage extends GetWidget<UserController> {
     final vehicleController = VehicleController.to;
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: theme.colorScheme.onPrimaryContainer,
+      backgroundColor: Colors.white,
       appBar: CustomAppBar.getFriendsTypoAppBar(),
       body: Unfocused(
         child: SizedBox(
             width: mediaQueryData.size.width,
             // height: mediaQueryData.size.height,
-            // color: const Color(0xFFFFC107),
+            // color: appTheme.amber500,
             child: Column(
               children: [
                 MyProfileSection(controller: controller),
@@ -73,7 +73,7 @@ class MyProfileSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // color: const Color(0xFFFFB300),
+      // color: appTheme.amber600,
       height: getVerticalSize(105),
       padding: getPadding(top: 20, bottom: 20, left: 16, right: 16),
       child: Row(
@@ -93,7 +93,7 @@ class MyProfileSection extends StatelessWidget {
                 child: Text(
                   controller.currentUser.nickname!,
                   style: TextStyle(
-                    color: Color(0xFF222222),
+                    color: ColorConstant.fontBlack,
                     fontSize: 14,
                     fontFamily: FontFamily.pretendard,
                     fontWeight: FontWeight.w700,
@@ -105,7 +105,7 @@ class MyProfileSection extends StatelessWidget {
               Text(
                 controller.currentUser.phoneNumber!,
                 style: TextStyle(
-                  color: Color(0x66222222),
+                  color: ColorConstant.fontBlackDisabled,
                   fontSize: 12,
                   fontFamily: FontFamily.pretendard,
                   fontWeight: FontWeight.w400,
@@ -116,7 +116,7 @@ class MyProfileSection extends StatelessWidget {
               Text(
                 controller.currentUser.email!,
                 style: TextStyle(
-                  color: Color(0x66222222),
+                  color: ColorConstant.fontBlackDisabled,
                   fontSize: 10,
                   fontFamily: FontFamily.pretendard,
                   fontWeight: FontWeight.w400,

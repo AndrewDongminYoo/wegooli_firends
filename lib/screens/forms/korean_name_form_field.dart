@@ -30,6 +30,6 @@ class KoreanNameFormField extends StatelessWidget {
         ],
         focusNode: focusNode,
         filled: true,
-        fillColor: theme.colorScheme.onPrimaryContainer);
+        fillColor: Colors.white);
   }
 }

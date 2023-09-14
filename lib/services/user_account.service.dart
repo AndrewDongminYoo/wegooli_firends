@@ -71,13 +71,15 @@ class UserAccountService extends GetConnect {
     print(message);
   }
 
-  Future<bool> logOut() async {
+  Future<void> logOut() async {
     final response = await api.logOut();
-    return response.data == 'logOut';
+    print('response: $response');
+    print('response.data: ${response.data}');
   }
 
   Future<bool> signOut(String accountId) async {
     final response = await api.signOut(id: accountId);
+    print('response: $response');
     return response.data!;
   }
 
@@ -85,6 +87,7 @@ class UserAccountService extends GetConnect {
       List<AccountAgreementRequest> request) async {
     final response =
         await api2.insertAccountAgreementList(accountAgreementRequest: request);
+    print('response: $response');
     return response.data!;
   }
 }

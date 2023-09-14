@@ -219,8 +219,14 @@ class UserController extends GetxController {
   }
 
   /// 로그아웃
-  Future<bool> logOut() async {
-    return _service.logOut();
+  Future<void> logOut() async {
+    await _service.logOut();
+    await Future.delayed(
+      const Duration(seconds: 2),
+      () => Get.delete<UserController>(),
+    );
+    await PrefUtils.clearAll();
+    await goIdPwLogin();
   }
 
   /// 회원탈퇴

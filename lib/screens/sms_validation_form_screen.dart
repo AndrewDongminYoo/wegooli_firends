@@ -6,7 +6,6 @@ import 'package:flutter/services.dart';
 
 // 📦 Package imports:
 import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:flutter_timer_countdown/flutter_timer_countdown.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
@@ -28,6 +27,10 @@ class SMSValidationForm extends StatefulWidget {
 
 class _SMSValidationFormState extends State<SMSValidationForm> {
   String error = '';
+  bool codeSent = false;
+  String phoneNo = '';
+  String verificationId = '';
+  String smsCode = '';
 
   @override
   void initState() {
@@ -47,7 +50,7 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
 
   StreamBuilder<User?> handleAuth() {
     return StreamBuilder(
-        stream: FirebaseAuth.instance.authStateChanges(),
+        stream: auth.authStateChanges(),
         builder: (BuildContext context, snapshot) {
           if (snapshot.hasData) {
             return SharedCalendar();
@@ -58,16 +61,16 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
   }
 
   //Sign out
-  signOut() {
-    FirebaseAuth.instance.signOut();
+  Future<void> signOut() async {
+    await auth.signOut();
   }
 
   //SignIn
-  signIn(AuthCredential authCreds) {
-    FirebaseAuth.instance.signInWithCredential(authCreds);
+  Future<UserCredential> signIn(AuthCredential authCreds) async {
+    return auth.signInWithCredential(authCreds);
   }
 
-  signInWithOTP(smsCode, verId) {
+  Future<void> signInWithOTP(String smsCode, String verId) async {
     AuthCredential authCreds =
         PhoneAuthProvider.credential(verificationId: verId, smsCode: smsCode);
     signIn(authCreds);
@@ -130,25 +133,9 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
                 fillColor: Colors.white,
                 suffix: Padding(
                   padding: getPadding(left: 30, top: 12, right: 10, bottom: 12),
-                  child: Obx(() {
-                    final isWaitingOtpCode =
-                        controller.oneTimeCode == Verify.Waiting;
-                    if (isWaitingOtpCode) {
-                      return TimerCountdown(
-                        spacerWidth: 0,
-                        enableDescriptions: false,
-                        colonsTextStyle: CustomTextStyles.bodyLargeGray50003
-                            .copyWith(letterSpacing: getHorizontalSize(0.03)),
-                        timeTextStyle: CustomTextStyles.bodyLargeGray50003
-                            .copyWith(letterSpacing: getHorizontalSize(0.03)),
-                        format: CountDownTimerFormat.minutesSeconds,
-                        endTime: controller.verificaticonExpireTime(),
-                        onEnd: controller.verificaticonIsExpired,
-                      );
-                    } else {
-                      return const SizedBox.shrink();
-                    }
-                  }),
+                  child: controller.oneTimeCode == Verify.Waiting && codeSent
+                    ? Text('waiting..')
+                    : const SizedBox.shrink(),
                 ),
               ),
               CustomElevatedButton(

@@ -745,6 +745,12 @@ abstract class Localized {
   /// **'인증번호 발송'**
   String get sendAuthorizationNumber;
 
+  /// 휴대폰 인증번호 재발송 요청하는 버튼 텍스트
+  ///
+  /// In ko, this message translates to:
+  /// **'인증번호 재발송'**
+  String get resendAuthorizationNumber;
+
   /// [PopupDialog]는 원활한 개발을 위한 게이트웨이 모달 띄우기 버튼에 사용됨.
   ///
   /// In ko, this message translates to:

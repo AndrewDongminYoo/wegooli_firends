@@ -345,6 +345,9 @@ class LocalizedKo extends Localized {
   String get sendAuthorizationNumber => '인증번호 발송';
 
   @override
+  String get resendAuthorizationNumber => '인증번호 재발송';
+
+  @override
   String get sendingCrewInvitation => '[PopupDialog] 팀 초대하기';
 
   @override

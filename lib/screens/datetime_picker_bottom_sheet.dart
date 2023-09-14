@@ -61,7 +61,7 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                       ))),
               Container(
                   height: getVerticalSize(8),
-                  width: double.maxFinite,
+                  width: mediaQueryData.size.width,
                   margin: getMargin(top: 16),
                   decoration: AppDecoration.fillGray100),
               Obx(() => ExpansionPanelList(
@@ -140,6 +140,9 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                                 controller.items[index].date = newDateTime;
                                 controller.items.refresh();
                               },
+                              minimumDate: index == 1
+                                  ? controller.reservationTime
+                                  : null,
                             ),
                           ),
                           isExpanded: item.isExpanded);

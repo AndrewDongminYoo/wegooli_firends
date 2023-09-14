@@ -66,7 +66,7 @@ class ThemeHelper {
       radioTheme: RadioThemeData(
         fillColor: MaterialStateColor.resolveWith((states) {
           if (states.contains(MaterialState.selected)) {
-            return Color(0xFFB9BCC3);
+            return appTheme.gray400;
           }
           return Colors.white;
         }),
@@ -78,7 +78,7 @@ class ThemeHelper {
       checkboxTheme: CheckboxThemeData(
         fillColor: MaterialStateColor.resolveWith((states) {
           if (states.contains(MaterialState.selected)) {
-            return Color(0xFFB9BCC3);
+            return appTheme.gray400;
           }
           return Colors.white;
         }),
@@ -88,9 +88,9 @@ class ThemeHelper {
           horizontal: -4,
         ),
       ),
-      floatingActionButtonTheme:
-          FloatingActionButtonThemeData(backgroundColor: ColorConstant.wegooli),
-      dividerTheme: DividerThemeData(
+      floatingActionButtonTheme: const FloatingActionButtonThemeData(
+          backgroundColor: ColorConstant.wegooli),
+      dividerTheme: const DividerThemeData(
         thickness: 1,
         space: 1,
         color: ColorConstant.wegooli,
@@ -139,7 +139,7 @@ class TextThemes {
           fontWeight: FontWeight.w700,
         ),
         titleSmall: TextStyle(
-          color: Color(0xFFDB4646),
+          color: appTheme.red600,
           fontSize: getFontSize(14),
           fontFamily: FontFamily.pretendard,
           fontWeight: FontWeight.w700,
@@ -150,20 +150,20 @@ class TextThemes {
 /// Class containing custom colors for a primary theme.
 class PrimaryColors {
   //  Amber
-  Color get amberA200 => const Color(0xFFFFE142);
+  Color get amberA200 => const Color(0xFFFFE142); // #FFE142
   Color get amberA20033 => const Color(0x33FFE142);
-  Color get amber100 => const Color(0xFFFFECB3);
-  Color get amber200 => const Color(0xFFFFE082);
-  Color get amber300 => const Color(0xFFFFD54F);
-  Color get amber400 => const Color(0xFFFFCA28);
-  Color get amber500 => const Color(0xFFFFC107);
-  Color get amber600 => const Color(0xFFFFB300);
-  Color get amber700 => const Color(0xFFFFA000);
-  Color get amber800 => const Color(0xFFFF8F00);
+  Color get amber100 => const Color(0xFFFFECB3); // #FFECB3
+  Color get amber200 => const Color(0xFFFFE082); // #FFE082
+  Color get amber300 => const Color(0xFFFFD54F); // #FFD54F
+  Color get amber400 => const Color(0xFFFFCA28); // #FFCA28
+  Color get amber500 => const Color(0xFFFFC107); // #FFC107
+  Color get amber600 => const Color(0xFFFFB300); // #FFB300
+  Color get amber700 => const Color(0xFFFFA000); // #FFA000
+  Color get amber800 => const Color(0xFFFF8F00); // #FF8F00
   Color get supernova => const Color(0xFFFFCC08); // #FFCC08
 
   //  Black
-  Color get black => const Color(0xFF000000);
+  Color get black => const Color(0xFF000000); // #000000
   Color get black87 => const Color(0xDD000000);
   Color get black54 => const Color(0x89000000);
   Color get black45 => const Color(0x73000000);
@@ -172,36 +172,36 @@ class PrimaryColors {
   Color get black12 => const Color(0x1F000000);
 
   Color get blueGray30033 => const Color(0x33A4A8AF);
-  Color get blueGray400 => const Color(0xFF888888);
-  Color get blueGray900 => const Color(0xFF323232);
+  Color get blueGray400 => const Color(0xFF888888); // #888888
+  Color get blueGray900 => const Color(0xFF323232); // #323232
 
   //  DeepOrange
-  Color get deepOrangeA200 => const Color(0xFFFF7034);
+  Color get deepOrangeA200 => const Color(0xFFFF7034); // #FF7034
 
   //  DeepPurple
-  Color get deepPurpleA200 => const Color(0xFF7850E9);
+  Color get deepPurpleA200 => const Color(0xFF7850E9); // #7850E9
 
   //  Gray
-  Color get gray100 => const Color(0xFFF6F7F7);
-  Color get grey100 => const Color(0xFFF5F5F5);
-  Color get gray200 => const Color(0xFFEEEEEE);
-  Color get gray300 => const Color(0xFFE6E6E6);
-  Color get gray400 => const Color(0xFFB9BCC3);
-  Color get gray500 => const Color(0xFF8F9199);
-  Color get gray50001 => const Color(0xFF91969D);
-  Color get gray50002 => const Color(0xFF91959D);
-  Color get gray50003 => const Color(0xFF8E9199);
-  Color get gray700 => const Color(0xFF666666);
-  Color get gray70001 => const Color(0xFF5D5D5D);
-  Color get gray800 => const Color(0xFF474747);
+  Color get gray100 => const Color(0xFFF6F7F7); // #F6F7F7
+  Color get grey100 => const Color(0xFFF5F5F5); // #F5F5F5
+  Color get gray200 => const Color(0xFFEEEEEE); // #EEEEEE
+  Color get gray300 => const Color(0xFFE6E6E6); // #E6E6E6
+  Color get gray400 => const Color(0xFFB9BCC3); // #B9BCC3
+  Color get gray500 => const Color(0xFF8F9199); // #8F9199
+  Color get gray50001 => const Color(0xFF91969D); // #91969D
+  Color get gray50002 => const Color(0xFF91959D); // #91959D
+  Color get gray50003 => const Color(0xFF8E9199); // #8E9199
+  Color get gray700 => const Color(0xFF666666); // #666666
+  Color get gray70001 => const Color(0xFF5D5D5D); // #5D5D5D
+  Color get gray800 => const Color(0xFF474747); // #474747
 
   //  Green
-  Color get green500 => const Color(0xFF38DD66);
-  Color get green400 => const Color(0xFF66BB6A);
+  Color get green500 => const Color(0xFF38DD66); // #38DD66
+  Color get green400 => const Color(0xFF66BB6A); // #66BB6A
 
   //  Red
-  Color get red600 => const Color(0xFFDB4646);
-  Color get red700 => const Color(0xFFE82121);
+  Color get red600 => const Color(0xFFDB4646); // #DB4646
+  Color get red700 => const Color(0xFFE82121); // #E82121
 }
 
 PrimaryColors get appTheme => ThemeHelper().themeColor;

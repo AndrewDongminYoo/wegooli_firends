@@ -13,9 +13,8 @@ class RouteModal extends StatefulWidget {
     this.dialog,
     this.bottomSheet,
     required this.dialogTitle,
-  }) : super() {
-    assert(!(dialog == null && bottomSheet == null));
-  }
+  }) : assert(!(dialog == null && bottomSheet == null));
+
   final Widget? dialog;
   final Widget? bottomSheet;
   final String dialogTitle;

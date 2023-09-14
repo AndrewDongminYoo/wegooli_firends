@@ -66,7 +66,7 @@ class ConfirmDialog extends StatelessWidget {
                 buttonTextStyle: CustomTextStyles.titleMedium16,
                 onTap: () {
                   if (confirmFunc != null) {
-                    confirmFunc!();
+                    confirmFunc?.call();
                   }
                   Navigator.pop(context, false);
                 },

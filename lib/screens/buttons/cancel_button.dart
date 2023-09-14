@@ -20,8 +20,7 @@ class CancelButton extends StatelessWidget {
       text: l10ns.cancel,
       buttonStyle: plural
           ? CustomButtonStyles.fillPrimaryBL10.copyWith(
-              backgroundColor:
-                  MaterialStatePropertyAll(appTheme.gray400),
+              backgroundColor: MaterialStatePropertyAll(appTheme.gray400),
             )
           : CustomButtonStyles.fillGray400C26,
       buttonTextStyle: plural

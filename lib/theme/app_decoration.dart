@@ -17,13 +17,13 @@ class AppDecoration {
   static BoxDecoration get fillDeepPurple =>
       BoxDecoration(color: appTheme.deepPurpleA200);
   static BoxDecoration get fillOnPrimaryContainer =>
-      BoxDecoration(color: Colors.white);
+      const BoxDecoration(color: Colors.white);
   static BoxDecoration get fillOnSecondary =>
-      BoxDecoration(color: Colors.white);
+      const BoxDecoration(color: Colors.white);
   static BoxDecoration get fillOnPrimary =>
-      BoxDecoration(color: ColorConstant.fontBlack);
+      const BoxDecoration(color: ColorConstant.fontBlack);
   static BoxDecoration get fillPrimary =>
-      BoxDecoration(color: ColorConstant.wegooli);
+      const BoxDecoration(color: ColorConstant.wegooli);
 
   // Outline decorations
   static BoxDecoration get outlineBlack => BoxDecoration(

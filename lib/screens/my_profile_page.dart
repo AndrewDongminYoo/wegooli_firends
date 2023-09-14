@@ -92,7 +92,7 @@ class MyProfileSection extends StatelessWidget {
                 margin: getMargin(bottom: 5),
                 child: Text(
                   controller.currentUser.nickname!,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: ColorConstant.fontBlack,
                     fontSize: 14,
                     fontFamily: FontFamily.pretendard,
@@ -104,7 +104,7 @@ class MyProfileSection extends StatelessWidget {
               ),
               Text(
                 controller.currentUser.phoneNumber!,
-                style: TextStyle(
+                style: const TextStyle(
                   color: ColorConstant.fontBlackDisabled,
                   fontSize: 12,
                   fontFamily: FontFamily.pretendard,
@@ -115,7 +115,7 @@ class MyProfileSection extends StatelessWidget {
               ),
               Text(
                 controller.currentUser.email!,
-                style: TextStyle(
+                style: const TextStyle(
                   color: ColorConstant.fontBlackDisabled,
                   fontSize: 10,
                   fontFamily: FontFamily.pretendard,

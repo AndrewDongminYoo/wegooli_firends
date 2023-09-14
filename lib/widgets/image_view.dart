@@ -7,7 +7,9 @@ import 'package:flutter/material.dart';
 // 📦 Package imports:
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:wegooli_friends/lib.dart';
+
+// 🌎 Project imports:
+import '/lib.dart';
 
 class CustomImageView extends StatelessWidget {
   /// a [CustomImageView] it can be used for showing any type of images

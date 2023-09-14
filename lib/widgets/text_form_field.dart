@@ -111,14 +111,11 @@ class CustomTextFormField extends StatelessWidget {
             getPadding(left: 12, top: 14, right: 12, bottom: 14),
         counterText: '',
         border: borderDecoration ?? createBorderSide(appTheme.gray400),
-        enabledBorder:
-            borderDecoration ?? createBorderSide(appTheme.gray400),
+        enabledBorder: borderDecoration ?? createBorderSide(appTheme.gray400),
         focusedBorder:
             borderDecoration ?? createBorderSide(ColorConstant.wegooli),
-        disabledBorder:
-            borderDecoration ?? createBorderSide(appTheme.gray400),
-        errorBorder:
-            borderDecoration ?? createBorderSide(appTheme.red600),
+        disabledBorder: borderDecoration ?? createBorderSide(appTheme.gray400),
+        errorBorder: borderDecoration ?? createBorderSide(appTheme.red600),
         focusedErrorBorder:
             borderDecoration ?? createBorderSide(ColorConstant.wegooli),
       );

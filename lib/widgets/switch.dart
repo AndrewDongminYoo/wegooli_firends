@@ -2,6 +2,7 @@
 import 'package:flutter/cupertino.dart' show CupertinoSwitch;
 import 'package:flutter/material.dart';
 
+// 🌎 Project imports:
 import '/lib.dart';
 
 class CustomSwitch extends StatelessWidget {

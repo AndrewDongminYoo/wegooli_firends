@@ -16,6 +16,25 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.actions,
   }) : super(key: key);
 
+  CustomAppBar.getDefaultAppBar(
+    String? titleText, {
+    Key? key,
+    void Function()? onTapLeading,
+  }) : this(
+            key: key,
+            height: getVerticalSize(53),
+            leadingWidth: 34,
+            leading: CustomImageView(
+                height: getSize(18),
+                width: getSize(18),
+                svgPath: Assets.svg.imgArrowLeft.path,
+                margin: getMargin(left: 16, top: 19, bottom: 16),
+                onTap: () {
+                  onTapLeading != null ? onTapLeading.call() : goBack();
+                }),
+            centerTitle: true,
+            title: AppbarTitle(text: titleText ?? 'FRIENDS'));
+
   CustomAppBar.getFriendsTypoAppBar({Key? key})
       : this(
             key: key,
@@ -83,24 +102,6 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         titleSpacing: 0,
         centerTitle: true,
       );
-
-  static CustomAppBar getDefaultAppBar(
-    String? titleText, {
-    void Function()? onTapLeading,
-  }) =>
-      CustomAppBar(
-          height: getVerticalSize(53),
-          leadingWidth: 34,
-          leading: CustomImageView(
-              height: getSize(18),
-              width: getSize(18),
-              svgPath: Assets.svg.imgArrowLeft.path,
-              margin: getMargin(left: 16, top: 19, bottom: 16),
-              onTap: () {
-                onTapLeading != null ? onTapLeading.call() : goBack();
-              }),
-          centerTitle: true,
-          title: AppbarTitle(text: titleText ?? 'FRIENDS'));
 }
 
 enum Style {

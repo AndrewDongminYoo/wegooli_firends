@@ -14,6 +14,20 @@ class CallbackTextInputFormatter extends FilteringTextInputFormatter {
     this.inputtingCallback,
   });
 
+  CallbackTextInputFormatter.businessNumber(
+      {required void Function(bool valid) inputtingCallback}): this(RegExp('[0-9]'),
+        allow: true, inputtingCallback: inputtingCallback);
+
+  CallbackTextInputFormatter.name(
+      {required void Function(bool valid) inputtingCallback}): this(
+        RegExp(r"""[₩0-9~!@#\$%^&*()_+`\-={}|\[\]\:";'<>?,./]"""),
+        allow: false,
+        inputtingCallback: inputtingCallback);
+
+  CallbackTextInputFormatter.phone(
+      {required void Function(bool valid) inputtingCallback}): this(RegExp(r'[0-9\-]'),
+        allow: true, inputtingCallback: inputtingCallback);
+
   void Function(bool valid)? inputtingCallback;
 
   @override
@@ -41,25 +55,5 @@ class CallbackTextInputFormatter extends FilteringTextInputFormatter {
       }
     }
     inputtingCallback!(valid);
-  }
-
-  static CallbackTextInputFormatter businessNumber(
-      {required void Function(bool valid) inputtingCallback}) {
-    return CallbackTextInputFormatter(RegExp('[0-9]'),
-        allow: true, inputtingCallback: inputtingCallback);
-  }
-
-  static CallbackTextInputFormatter name(
-      {required void Function(bool valid) inputtingCallback}) {
-    return CallbackTextInputFormatter(
-        RegExp(r"""[₩0-9~!@#\$%^&*()_+`\-={}|\[\]\:";'<>?,./]"""),
-        allow: false,
-        inputtingCallback: inputtingCallback);
-  }
-
-  static CallbackTextInputFormatter phone(
-      {required void Function(bool valid) inputtingCallback}) {
-    return CallbackTextInputFormatter(RegExp(r'[0-9\-]'),
-        allow: true, inputtingCallback: inputtingCallback);
   }
 }

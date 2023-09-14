@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 
 // 📦 Package imports:
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:wegooli_friends/theme/theme_helper.dart';
+
+// 🌎 Project imports:
+import '/theme/theme_helper.dart';
 
 class SmoothIndicators extends StatefulWidget {
   const SmoothIndicators({super.key});
@@ -52,7 +54,7 @@ class _SmoothIndicatorsState extends State<SmoothIndicators> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 24, bottom: 12),
+                padding: const EdgeInsets.only(top: 24, bottom: 12),
                 child: Text(
                   'Worm',
                   style: TextStyle(color: appTheme.black54),
@@ -66,7 +68,7 @@ class _SmoothIndicatorsState extends State<SmoothIndicators> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 16, bottom: 8),
+                padding: const EdgeInsets.only(top: 16, bottom: 8),
                 child: Text(
                   'Jumping Dot',
                   style: TextStyle(color: appTheme.black54),
@@ -81,7 +83,7 @@ class _SmoothIndicatorsState extends State<SmoothIndicators> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 16, bottom: 12),
+                padding: const EdgeInsets.only(top: 16, bottom: 12),
                 child: Text(
                   'Scrolling Dots',
                   style: TextStyle(color: appTheme.black54),
@@ -98,7 +100,7 @@ class _SmoothIndicatorsState extends State<SmoothIndicators> {
                     dotWidth: 12,
                   )),
               Padding(
-                padding: EdgeInsets.only(top: 16, bottom: 16),
+                padding: const EdgeInsets.only(top: 16, bottom: 16),
                 child: Text(
                   'Customizable Effect',
                   style: TextStyle(color: appTheme.black54),
@@ -155,10 +157,10 @@ class _SmoothIndicatorsState extends State<SmoothIndicators> {
 }
 
 List<Color> colors = [
-  Color(0xFFF44336),
-  Color(0xFF4CAF50),
-  Color(0xFF69F0AE),
-  Color(0xFFFFD740),
-  Color(0xFF2196F3),
+  const Color(0xFFF44336),
+  const Color(0xFF4CAF50),
+  const Color(0xFF69F0AE),
+  const Color(0xFFFFD740),
+  const Color(0xFF2196F3),
   appTheme.amber500,
 ];

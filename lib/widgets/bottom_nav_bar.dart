@@ -67,8 +67,8 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
           type: BottomNavigationBarType.fixed,
           selectedItemColor: ColorConstant.fontBlack,
           unselectedItemColor: appTheme.gray400,
-          selectedIconTheme:
-              IconThemeData(color: ColorConstant.fontBlack), // 선택된 아이콘 스타일
+          selectedIconTheme: const IconThemeData(
+              color: ColorConstant.fontBlack), // 선택된 아이콘 스타일
           unselectedIconTheme: IconThemeData(color: appTheme.gray400),
           selectedLabelStyle: CustomTextStyles.bodySmallInterOnPrimary,
           unselectedLabelStyle: CustomTextStyles.bodySmallInter10Gray400

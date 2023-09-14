@@ -1,8 +1,11 @@
+// ignore_for_file: depend_on_referenced_packages
+
 // 📦 Package imports:
 import 'package:image/image.dart' show Image, Pixel;
 
 /// Returns a cropped copy of [src].
-Image copyCrop(Image src,
+Image copyCrop(
+  Image src,
     {required int x,
     required int y,
     required int width,
@@ -10,8 +13,8 @@ Image copyCrop(Image src,
     num radius = 0,
     bool antialias = true}) {
   // Make sure crop rectangle is within the range of the src image.
-  x = x.clamp(0, src.width - 1).toInt();
-  y = y.clamp(0, src.height - 1).toInt();
+  x = x.clamp(0, src.width - 1);
+  y = y.clamp(0, src.height - 1);
   if (x + width > src.width) {
     width = src.width - x;
   }
@@ -88,7 +91,7 @@ Image copyCrop(Image src,
         }
       }
     } else {
-      for (Pixel p in dst) {
+      for (final p in dst) {
         p.set(frame.getPixel(x + p.x, y + p.y));
       }
     }

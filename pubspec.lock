@@ -1164,6 +1164,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.5.1"
+  preset:
+    dependency: "direct main"
+    description:
+      name: preset
+      sha256: "91a8ada5f751493bf3e1fb2567ca27b1d99b4c3152418a7076531a329b041109"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.3+6"
   process:
     dependency: transitive
     description:
@@ -1196,6 +1204,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.3"
+  qp_xt:
+    dependency: transitive
+    description:
+      name: qp_xt
+      sha256: c856b8c11312923dead9913c6ab2e8d6f5c5cd919f3dadae8b0cc649d0d5fb8d
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.2+10"
   qr:
     dependency: transitive
     description:

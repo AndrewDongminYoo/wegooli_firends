@@ -63,13 +63,12 @@ class DashChatWithFriendsPage extends GetWidget<ConnectionController> {
                       await controller.getImage(ImageSource.gallery);
                     }),
               ],
-              cursorStyle: CursorStyle(color: Colors.black),
+              cursorStyle: const CursorStyle(color: Colors.black),
               inputDecoration: InputDecoration(
                 fillColor: ColorConstant.neutralDisabled,
                 filled: true,
                 hintText: '채팅을 입력해주세요😃',
-                hintStyle:
-                    TextStyle(color: appTheme.gray50001, fontSize: 15),
+                hintStyle: TextStyle(color: appTheme.gray50001, fontSize: 15),
                 constraints: BoxConstraints.expand(
                   height: getVerticalSize(36),
                 ),

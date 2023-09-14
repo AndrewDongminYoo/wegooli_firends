@@ -34,7 +34,7 @@ class _CustomBottomAppBarState extends State<CustomBottomAppBar> {
       child: BottomAppBar(
         shape: widget.notchedShape,
         child: IconTheme(
-          data: IconThemeData(color: ColorConstant.fontBlack),
+          data: const IconThemeData(color: ColorConstant.fontBlack),
           child: Row(
             children: [
               IconButton(

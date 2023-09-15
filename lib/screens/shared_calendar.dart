@@ -12,8 +12,6 @@ class SharedCalendar extends StatefulWidget {
 }
 
 class _SharedCalendarState extends State<SharedCalendar> {
-  final controller = UserController.to;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,13 +25,13 @@ class _SharedCalendarState extends State<SharedCalendar> {
                 padding: getPadding(bottom: 5),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const MemberListTitle(),
-                    MembersList(controller: controller),
-                    const GrayHorizonSeparator(),
-                    const CalendarTitle(),
-                    const AddScheduleButton(),
-                    const CalendarBody(),
+                  children: const [
+                    MemberListTitle(),
+                    MembersList(),
+                    GrayHorizonSeparator(),
+                    CalendarTitle(),
+                    AddScheduleButton(),
+                    CalendarBody(),
                   ],
                 )),
           )),

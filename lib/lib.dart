@@ -24,7 +24,6 @@ export 'core/utils/extensions/string_color_utils.dart';
 export 'core/utils/formatters/callback_text_input_formatter.dart';
 export 'core/utils/formatters/currency_input_formatter.dart';
 export 'core/utils/formatters/separator_text_formatter.dart';
-export 'core/utils/geolocations.dart';
 export 'core/utils/initial_bindings.dart';
 export 'core/utils/loading_dialog.dart';
 export 'core/utils/localization.dart';

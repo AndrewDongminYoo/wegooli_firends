@@ -91,7 +91,8 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
     return phoneCredential;
   }
 
-  Future<UserCredential?> actCodeSent(String? smsCode, String verificationId) async {
+  Future<UserCredential?> actCodeSent(
+      String? smsCode, String verificationId) async {
     if (smsCode != null) {
       // Create a PhoneAuthCredential with the code
       AuthCredential? phoneCredential = PhoneAuthProvider.credential(
@@ -132,7 +133,7 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
     _sec = (rest.inSeconds % 60).toString().padLeft(2, '0');
     rest = Duration(seconds: rest.inSeconds - 1);
     setState(() {
-      if(rest.inSeconds <= 0){
+      if (rest.inSeconds <= 0) {
         _timer!.cancel();
       }
     });
@@ -201,7 +202,7 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
                 suffix: Padding(
                   padding: getPadding(left: 30, top: 12, right: 10, bottom: 12),
                   child: controller.oneTimeCode == Verify.Waiting && codeSent
-                      ? Text('$_min:$_sec')
+                      ? Text('$_min:$_sec', style: theme.textTheme.labelSmall)
                       : const SizedBox.shrink(),
                 ),
               ),
@@ -211,9 +212,7 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
                   margin: getMargin(top: 10),
                   buttonStyle: CustomButtonStyles.fillPrimaryC5,
                   buttonTextStyle: theme.textTheme.titleMedium,
-                  onTap: () async {
-                    actCodeSent(smsCode, _verificationId);
-                  }),
+                  onTap: () async => actCodeSent(smsCode, _verificationId)),
             ],
           ),
         ],

@@ -5,11 +5,11 @@ import 'package:flutter/material.dart';
 import '/core/app_export.dart';
 
 class MembersList extends StatelessWidget {
-  const MembersList({super.key, required this.controller});
-  final UserController controller;
+  const MembersList({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = UserController.to;
     return Padding(
         padding: getPadding(left: 16, top: 12),
         child: SizedBox(

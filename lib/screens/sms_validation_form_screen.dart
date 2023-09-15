@@ -1,3 +1,6 @@
+// 🎯 Dart imports:
+import 'dart:async';
+
 // 🐦 Flutter imports:
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -26,11 +29,15 @@ class SMSValidationForm extends StatefulWidget {
 }
 
 class _SMSValidationFormState extends State<SMSValidationForm> {
-  String error = '';
+  final controller = UserController.to;
+  UserCredential? user;
+  Duration rest = Duration(minutes: 3);
+  String? smsCode;
+  Timer? _timer;
+  String _verificationId = '';
   bool codeSent = false;
-  String phoneNo = '';
-  String verificationId = '';
-  String smsCode = '';
+  String _min = '';
+  String _sec = '';
 
   @override
   void initState() {
@@ -48,37 +55,97 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
     }
   }
 
-  StreamBuilder<User?> handleAuth() {
-    return StreamBuilder(
-        stream: auth.authStateChanges(),
-        builder: (BuildContext context, snapshot) {
-          if (snapshot.hasData) {
-            return SharedCalendar();
-          } else {
-            return LoginWithIdAndPassword();
-          }
+  Future<AuthCredential?> phoneAuth(String phoneNum) async {
+    AuthCredential? phoneCredential;
+    final phoneNumber = '+82 ${phoneNum.replaceAll('-', ' ').substring(1)}';
+    if (kIsWeb) {
+      final confirmationResult = await auth.signInWithPhoneNumber(phoneNumber);
+      final smsCode = await getSmsCodeFromUser(context);
+      if (smsCode != null) {
+        await confirmationResult.confirm(smsCode);
+      }
+    } else {
+      await auth.verifyPhoneNumber(
+        phoneNumber: phoneNumber,
+        // Android 기기의 SMS 코드 자동 처리.
+        verificationCompleted: (PhoneAuthCredential _credential) {
+          phoneCredential = _credential;
+        },
+        // 잘못된 전화번호나 SMS 할당량 초과 여부 등의 실패 이벤트
+        verificationFailed: (FirebaseAuthException e) {
+          Get.showSnackbar(const GetSnackBar(title: '휴대폰 인증과정에서 오류가 발생했습니다.'));
+        },
+        // Firebase에서 기기로 코드가 전송된 경우를 처리하며 사용자에게 코드를 입력하라는 메시지를 표시하는 데 사용
+        codeSent: (String verificationId, int? resendToken) async {
+          final smsCode = await getSmsCodeFromUser(context);
+          user = await actCodeSent(smsCode, verificationId);
+        },
+        // 자동 SMS 코드 처리에 실패한 경우 시간 초과를 처리
+        codeAutoRetrievalTimeout: (String verificationId) {
+          _verificationId = verificationId;
+          Get.showSnackbar(
+              const GetSnackBar(title: '휴대폰 인증과정에서 시간초과가 발생했습니다.'));
+        },
+      );
+    }
+    return phoneCredential;
+  }
+
+  Future<UserCredential?> actCodeSent(String? smsCode, String verificationId) async {
+    if (smsCode != null) {
+      // Create a PhoneAuthCredential with the code
+      AuthCredential? phoneCredential = PhoneAuthProvider.credential(
+        verificationId: verificationId,
+        smsCode: smsCode,
+      );
+      try {
+        // Sign the user in (or link) with the credential
+        return auth.signInWithCredential(phoneCredential);
+      } on FirebaseAuthException catch (e) {
+        setState(() {
+          _verificationId = e.message ?? '휴대폰 인증과정에서 오류가 발생했습니다.';
         });
+      }
+    }
+    return null;
   }
 
-  //Sign out
-  Future<void> signOut() async {
-    await auth.signOut();
+  Future<String?> getSmsCodeFromUser(BuildContext context) async {
+    Duration seconds = Duration(seconds: rest.inSeconds);
+    _timer = Timer.periodic(seconds, (timer) => tick());
+    Get.showSnackbar(const GetSnackBar(
+        title: '입력한 휴대폰으로 전송된 인증 코드를 확인해주세요.',
+        message: '3분내 입력하지 않을 경우 인증코드가 만료됩니다.'));
+    if (smsCode == null) {
+      setState(() {
+        codeSent = true;
+        _verificationId = '인증 코드를 입력해주세요';
+      });
+      return null;
+    } else {
+      return smsCode;
+    }
   }
 
-  //SignIn
-  Future<UserCredential> signIn(AuthCredential authCreds) async {
-    return auth.signInWithCredential(authCreds);
-  }
-
-  Future<void> signInWithOTP(String smsCode, String verId) async {
-    AuthCredential authCreds =
-        PhoneAuthProvider.credential(verificationId: verId, smsCode: smsCode);
-    signIn(authCreds);
+  tick() {
+    _min = (rest.inSeconds / 60).floor().toString().padLeft(2, '0');
+    _sec = (rest.inSeconds % 60).toString().padLeft(2, '0');
+    rest = Duration(seconds: rest.inSeconds - 1);
+    setState(() {
+      if(rest.inSeconds <= 0){
+        _timer!.cancel();
+      }
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     final controller = widget.controller;
+    controller.pinCodes.addListener(() {
+      if (controller.pinCodes.text.length == 6) {
+        smsCode = controller.pinCodes.text;
+      }
+    });
     return Padding(
       padding: getPadding(top: 6),
       child: Column(
@@ -105,7 +172,7 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
                       buttonStyle: CustomButtonStyles.fillPrimaryC5,
                       buttonTextStyle: theme.textTheme.titleMedium,
                       onTap: () {
-                        controller.sendVerificationCode();
+                        phoneAuth(controller.phoneNum.text);
                         FocusScope.of(context).unfocus();
                       })),
             ],
@@ -115,7 +182,7 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
             children: [
               CustomTextFormField(
                 width: getHorizontalSize(160),
-                hintText: '000000',
+                hintText: _verificationId,
                 controller: controller.pinCodes,
                 textInputType: TextInputType.phone,
                 inputFormatters: <TextInputFormatter>[
@@ -134,7 +201,7 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
                 suffix: Padding(
                   padding: getPadding(left: 30, top: 12, right: 10, bottom: 12),
                   child: controller.oneTimeCode == Verify.Waiting && codeSent
-                      ? Text('waiting..')
+                      ? Text('$_min:$_sec')
                       : const SizedBox.shrink(),
                 ),
               ),
@@ -145,19 +212,7 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
                   buttonStyle: CustomButtonStyles.fillPrimaryC5,
                   buttonTextStyle: theme.textTheme.titleMedium,
                   onTap: () async {
-                    print(
-                        'VerificationConfirmButton ${controller.phoneAuthCompleted}');
-                    if (controller.phoneAuthCompleted) {
-                      Get.showSnackbar(const GetSnackBar(
-                          title: 'OTP 인증',
-                          message: 'OTP 코드 인증에 성공했습니다!',
-                          duration: Duration(seconds: 5),
-                          backgroundColor: ColorConstant.fontBlack,
-                          icon: Icon(
-                            Icons.message_rounded,
-                            color: Colors.white,
-                          )));
-                    }
+                    actCodeSent(smsCode, _verificationId);
                   }),
             ],
           ),

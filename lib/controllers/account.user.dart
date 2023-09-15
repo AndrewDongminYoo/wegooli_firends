@@ -1,9 +1,7 @@
 // 🐦 Flutter imports:
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
-import 'package:firebase_auth/firebase_auth.dart' hide User;
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
@@ -62,20 +60,13 @@ class UserController extends GetxController {
   ];
 
   User currentUser = const User(
-    name: '유동민',
     phoneNumber: '010-3566-1857',
-    memberSeq: 12,
-    color: '#ff5722',
-    nickname: 'donminzzi',
-    email: 'andrew@wegooli.com',
-    delimit: 'personal',
-    id: 'test2',
-    birthDay: '940812',
-    add2: '16층 1604호',
-    add1: '서울, 강남구 역삼동 602번지',
-    sub: '23',
-    exp: 1698764406,
+    memberSeq: 0,
+    nickname: 'wegooli',
+    email: 'test@wegooli.com',
+    id: 'test',
   );
+
   final RxList<TeamAccountModel> _members = RxList<TeamAccountModel>([]);
   final RxList<Schedule> _schedules = RxList<Schedule>.of([]);
   RxList<Schedule> get schedules => _schedules;
@@ -86,76 +77,6 @@ class UserController extends GetxController {
   int? get firstTeamSeq => teams.firstOrNull?.teamSeq;
 
   Verify oneTimeCode = Verify.Waiting;
-
-  DateTime verificaticonExpireTime() {
-    return DateTime.now().add(const Duration(minutes: 3));
-  }
-
-  Future<String?> sendVerificationCode() async {
-    // Update the UI - wait for the user to enter the SMS code
-    PhoneAuthCredential? credential;
-    print('${telecom!.title}| +82 ${phoneNum.text}');
-    if (telecom != null && phoneNum.text.isNotEmpty) {
-      oneTimeCode = Verify.Waiting;
-      final phoneNumber =
-          '+82 ${phoneNum.text.replaceAll('-', ' ').substring(1)}';
-      if (!kIsWeb) {
-        await auth.verifyPhoneNumber(
-          phoneNumber: phoneNumber,
-          // Android 기기의 SMS 코드 자동 처리.
-          verificationCompleted: (PhoneAuthCredential _credential) {
-            credential = _credential;
-            oneTimeCode = Verify.Success;
-          },
-          // 잘못된 전화번호나 SMS 할당량 초과 여부 등의 실패 이벤트
-          verificationFailed: (FirebaseAuthException e) {
-            Get.showSnackbar(
-                const GetSnackBar(title: '휴대폰 인증과정에서 오류가 발생했습니다.'));
-            oneTimeCode = Verify.Failure;
-            Future.delayed(const Duration(seconds: 5))
-                .then((value) => oneTimeCode = Verify.Expired);
-          },
-          // Firebase에서 기기로 코드가 전송된 경우를 처리하며 사용자에게 코드를 입력하라는 메시지를 표시하는 데 사용
-          codeSent: (String verificationId, int? resendToken) {
-            Get.showSnackbar(const GetSnackBar(
-                title: '입력한 휴대폰으로 전송된 인증 SMS를 확인해주세요.',
-                message: '3분내 입력하지 않을 경우 인증코드가 만료됩니다.'));
-          },
-          // 자동 SMS 코드 처리에 실패한 경우 시간 초과를 처리
-          codeAutoRetrievalTimeout: (String verificationId) {
-            oneTimeCode = Verify.Expired;
-            Get.showSnackbar(
-                const GetSnackBar(title: '입력한 휴대폰으로 전송된 인증 SMS를 확인해주세요.'));
-          },
-        );
-      } else {
-        final confirmResult = await auth.signInWithPhoneNumber(phoneNumber);
-        print('confirmationResult: $confirmResult');
-        final smsCode = pinCodes.text;
-        print('smsCode: $smsCode');
-        final _credential = await confirmResult.confirm(smsCode);
-        credential = _credential.credential as PhoneAuthCredential?;
-        oneTimeCode = Verify.Success;
-      }
-      print('verificationId : ${credential!.verificationId}');
-      print('smsCode : ${credential!.smsCode}');
-      print('accessToken : ${credential!.accessToken}');
-      print('providerId : ${credential!.providerId}');
-      print('signInMethod : ${credential!.signInMethod}');
-      print('token : ${credential!.token}');
-      return credential!.verificationId;
-    } else {
-      Get.showSnackbar(const GetSnackBar(title: '번호가 정확하지 않습니다.'));
-      print('Error during Phone number verification');
-      return null;
-    }
-  }
-
-  void verificaticonIsExpired() {
-    print('[Auth] 휴대폰 인증 코드 만료');
-    Get.showSnackbar(const GetSnackBar(title: '인증코드가 만료되었습니다.'));
-    oneTimeCode = Verify.Expired;
-  }
 
   void setDropdownItem(SelectionPopupModel value) {
     print('Dropdown Selected ==> ${value.title}');
@@ -235,9 +156,6 @@ class UserController extends GetxController {
   Future<void> preProcessor() async {
     final accountId = currentUser.id;
     _teams(await _teamAccountService.findTeams(accountId!));
-    // print('_teams : $_teams');
-    _members(members);
-    // print('_members : $_members');
     _schedules(await retrieveSchedules(firstTeamSeq));
     // print('_schedules : $_schedules');
     await goSharedSchedule();
@@ -247,7 +165,9 @@ class UserController extends GetxController {
 
   List<TeamAccountModel> get members {
     final team = firstTeamsOrNull;
-    return team?.account ?? [];
+    _members(team?.account ?? []);
+    // print('_members : $_members');
+    return _members.toList();
   }
 
   Future<List<Schedule>> retrieveSchedules(int? teamSeq) async {

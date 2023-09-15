@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 // 🌎 Project imports:
 import '/lib.dart';
 
-class GoSignInButton extends StatelessWidget {
-  const GoSignInButton({
+class AuthSignInButton extends StatelessWidget {
+  const AuthSignInButton({
     super.key,
     required this.controller,
   });
@@ -21,7 +21,7 @@ class GoSignInButton extends StatelessWidget {
         buttonTextStyle: CustomTextStyles.titleMedium18,
         onTap: () async {
           await controller.signIn();
-          if (controller.oneTimeCode == Verify.Success) {
+          if (controller.state == SignUp.SUCCESS) {
             await controller.preProcessor();
           } else {
             controller.username.clear();

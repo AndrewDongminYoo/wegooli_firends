@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 // 🌎 Project imports:
 import '/lib.dart';
 
-class EmailAddressFormField extends StatelessWidget {
-  const EmailAddressFormField({
+class UserMailFormField extends StatelessWidget {
+  const UserMailFormField({
     super.key,
     required this.controller,
     required this.authMode,

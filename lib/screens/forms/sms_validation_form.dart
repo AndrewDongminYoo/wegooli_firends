@@ -31,10 +31,11 @@ class SMSValidationForm extends StatefulWidget {
 class _SMSValidationFormState extends State<SMSValidationForm> {
   final controller = UserController.to;
   UserCredential? user;
-  Duration rest = Duration(minutes: 3);
+  Duration rest = const Duration(minutes: 3);
+  String _verificationId = '';
   String? smsCode;
   Timer? _timer;
-  String _verificationId = '';
+  String _error = '';
   bool codeSent = false;
   String _min = '';
   String _sec = '';
@@ -60,7 +61,7 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
     final phoneNumber = '+82 ${phoneNum.replaceAll('-', ' ').substring(1)}';
     if (kIsWeb) {
       final confirmationResult = await auth.signInWithPhoneNumber(phoneNumber);
-      final smsCode = await getSmsCodeFromUser(context);
+      final smsCode = await getSmsCodeFromUser();
       if (smsCode != null) {
         await confirmationResult.confirm(smsCode);
       }
@@ -69,19 +70,25 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
         phoneNumber: phoneNumber,
         // Android 기기의 SMS 코드 자동 처리.
         verificationCompleted: (PhoneAuthCredential _credential) {
+          print('_credential: $_credential');
           phoneCredential = _credential;
         },
         // 잘못된 전화번호나 SMS 할당량 초과 여부 등의 실패 이벤트
         verificationFailed: (FirebaseAuthException e) {
-          Get.showSnackbar(const GetSnackBar(title: '휴대폰 인증과정에서 오류가 발생했습니다.'));
+          _error = e.message ?? '휴대폰 인증과정에서 오류가 발생했습니다.';
+          Get.showSnackbar(GetSnackBar(title: _error));
         },
         // Firebase에서 기기로 코드가 전송된 경우를 처리하며 사용자에게 코드를 입력하라는 메시지를 표시하는 데 사용
         codeSent: (String verificationId, int? resendToken) async {
-          final smsCode = await getSmsCodeFromUser(context);
-          user = await actCodeSent(smsCode, verificationId);
+          print('verificationId: $verificationId');
+          print('resendToken: $resendToken');
+          final smsCode = await getSmsCodeFromUser();
+          _verificationId = verificationId;
+          user = await actCodeSent(smsCode, _verificationId);
         },
         // 자동 SMS 코드 처리에 실패한 경우 시간 초과를 처리
         codeAutoRetrievalTimeout: (String verificationId) {
+          print('verificationId: $verificationId');
           _verificationId = verificationId;
           Get.showSnackbar(
               const GetSnackBar(title: '휴대폰 인증과정에서 시간초과가 발생했습니다.'));
@@ -93,9 +100,11 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
 
   Future<UserCredential?> actCodeSent(
       String? smsCode, String verificationId) async {
+    print('smsCode: $smsCode');
+    print('verificationId: $verificationId');
     if (smsCode != null) {
       // Create a PhoneAuthCredential with the code
-      AuthCredential? phoneCredential = PhoneAuthProvider.credential(
+      final AuthCredential phoneCredential = PhoneAuthProvider.credential(
         verificationId: verificationId,
         smsCode: smsCode,
       );
@@ -104,15 +113,15 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
         return auth.signInWithCredential(phoneCredential);
       } on FirebaseAuthException catch (e) {
         setState(() {
-          _verificationId = e.message ?? '휴대폰 인증과정에서 오류가 발생했습니다.';
+          _error = e.message ?? '휴대폰 인증과정에서 오류가 발생했습니다.';
         });
       }
     }
     return null;
   }
 
-  Future<String?> getSmsCodeFromUser(BuildContext context) async {
-    Duration seconds = Duration(seconds: rest.inSeconds);
+  Future<String?> getSmsCodeFromUser() async {
+    final seconds = Duration(seconds: rest.inSeconds);
     _timer = Timer.periodic(seconds, (timer) => tick());
     Get.showSnackbar(const GetSnackBar(
         title: '입력한 휴대폰으로 전송된 인증 코드를 확인해주세요.',
@@ -120,7 +129,7 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
     if (smsCode == null) {
       setState(() {
         codeSent = true;
-        _verificationId = '인증 코드를 입력해주세요';
+        _error = '인증 코드를 입력해주세요';
       });
       return null;
     } else {
@@ -128,7 +137,7 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
     }
   }
 
-  tick() {
+  void tick() {
     _min = (rest.inSeconds / 60).floor().toString().padLeft(2, '0');
     _sec = (rest.inSeconds % 60).toString().padLeft(2, '0');
     rest = Duration(seconds: rest.inSeconds - 1);
@@ -183,7 +192,7 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
             children: [
               CustomTextFormField(
                 width: getHorizontalSize(160),
-                hintText: _verificationId,
+                hintText: '000000',
                 controller: controller.pinCodes,
                 textInputType: TextInputType.phone,
                 inputFormatters: <TextInputFormatter>[
@@ -201,7 +210,7 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
                 fillColor: Colors.white,
                 suffix: Padding(
                   padding: getPadding(left: 30, top: 12, right: 10, bottom: 12),
-                  child: controller.oneTimeCode == Verify.Waiting && codeSent
+                  child: controller.state == SignUp.WAITING && codeSent
                       ? Text('$_min:$_sec', style: theme.textTheme.labelSmall)
                       : const SizedBox.shrink(),
                 ),

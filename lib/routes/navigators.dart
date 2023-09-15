@@ -1,5 +1,6 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 // 📦 Package imports:
 import 'package:get/get_navigation/src/extension_navigation.dart';
@@ -64,7 +65,8 @@ Future<dynamic>? goUnsubscribeInfo() =>
 
 // [BottomSheet] 예약 날짜 선택기
 Future<dynamic>? goBookDatetimePicker() =>
-    Get.bottomSheet(const DatetimePickerBottomSheet());
+    Get.bottomSheet(const DatetimePickerBottomSheet(),
+        ignoreSafeArea: false, isScrollControlled: true);
 
 // [PopupDialog] 예약 확인 페이지
 Future<dynamic>? goReservationsCheck(DateTime selectedDay) =>
@@ -77,3 +79,8 @@ Future<dynamic>? goSendingInvitation({bool? copyMode}) =>
 
 // [Page] 소속 된 팀이 없을 경우 보여줄 페이지
 Future<dynamic>? goTeamInvitation() => Get.toNamed(AppRoutes.teamInvitation);
+
+void showSnackBar(String title, String content) => Get.snackbar(title, content,
+    colorText: ColorConstant.white,
+    backgroundColor: ColorConstant.primaryDefault,
+    snackPosition: SnackPosition.BOTTOM);

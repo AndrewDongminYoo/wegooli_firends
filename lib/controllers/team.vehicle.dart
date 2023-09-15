@@ -149,7 +149,7 @@ class VehicleController extends GetxController {
     }
     final submitWithdrawalModel = SubmitWithdrawalModel(
         accountId: currentUser.id,
-        date: subscriptionModel.value.endAt,
+        leavedAt: subscriptionModel.value.endAt,
         teamSeq: teamSeq);
     await _service.submitWithdrawal(submitWithdrawalModel);
     await getSubscription();
@@ -170,14 +170,14 @@ class VehicleController extends GetxController {
   }
 
   String calcDate() {
-    if (subscriptionModel.value.createdAt == null) {
+    if (subscriptionModel.value.startAt == null) {
       return '-';
     }
     if (subscriptionModel.value.withdrawalAt != null) {
       return subscriptionModel.value.withdrawalAt!.substring(0, 10);
     } else {
       final current = DateTime.now();
-      final parsedDate = DateTime.parse(subscriptionModel.value.createdAt!);
+      final parsedDate = DateTime.parse(subscriptionModel.value.startAt!);
       final modifiedDate =
           DateTime(current.year, parsedDate.month + 1, parsedDate.day);
       return DateFormat('yyyy-MM-dd').format(modifiedDate);

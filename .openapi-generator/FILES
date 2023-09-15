@@ -89,6 +89,7 @@ doc/UpdateNoticeRequest.md
 doc/UpdatePushRequest.md
 doc/UpdateSmsRequest.md
 doc/UpdateUserRequest.md
+doc/UploadImageRequest.md
 doc/UserControllerApi.md
 doc/UserDto.md
 doc/UserDetailsDto.md
@@ -193,6 +194,7 @@ lib/data/model/update_notice_request.dart
 lib/data/model/update_push_request.dart
 lib/data/model/update_sms_request.dart
 lib/data/model/update_user_request.dart
+lib/data/model/upload_image_request.dart
 lib/data/model/user_details_dto.dart
 lib/data/model/user_dto.dart
 lib/data/model/user_sub_info.dart

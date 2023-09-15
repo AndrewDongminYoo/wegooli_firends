@@ -222,6 +222,9 @@ ReturnType deserialize<ReturnType, BaseType>(dynamic value, String targetType,
     case 'UpdateUserRequest':
       return UpdateUserRequest.fromJson(value as Map<String, dynamic>)
           as ReturnType;
+    case 'UploadImageRequest':
+      return UploadImageRequest.fromJson(value as Map<String, dynamic>)
+          as ReturnType;
     case 'UserDto':
       return UserDto.fromJson(value as Map<String, dynamic>) as ReturnType;
     case 'UserDetailsDto':

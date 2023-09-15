@@ -74,7 +74,7 @@ class UnsubscriptionUpcoming extends GetWidget<VehicleController> {
                                         padding: getPadding(top: 5, bottom: 1),
                                         child: Text(
                                           controller.subscriptionModel.value
-                                                  .carNumber ??
+                                                  .carNum ??
                                               '12가 3456',
                                           overflow: TextOverflow.ellipsis,
                                           textAlign: TextAlign.left,
@@ -128,7 +128,7 @@ class UnsubscriptionUpcoming extends GetWidget<VehicleController> {
                                       ),
                                     ),
                                     Obx(() => Text(
-                                          '${controller.subscriptionModel.value.createdAt?.substring(0, 10)}~${controller.subscriptionModel.value.endAt?.substring(0, 10)}',
+                                          '${controller.subscriptionModel.value.startAt?.substring(0, 10)}~${controller.subscriptionModel.value.endAt?.substring(0, 10)}',
                                           overflow: TextOverflow.ellipsis,
                                           textAlign: TextAlign.left,
                                           style: theme.textTheme.bodyLarge!

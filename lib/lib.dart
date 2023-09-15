@@ -143,6 +143,7 @@ export 'data/model/update_notice_request.dart';
 export 'data/model/update_push_request.dart';
 export 'data/model/update_sms_request.dart';
 export 'data/model/update_user_request.dart';
+export 'data/model/upload_image_request.dart';
 export 'data/model/user_details_dto.dart';
 export 'data/model/user_dto.dart';
 export 'data/model/user_sub_info.dart';

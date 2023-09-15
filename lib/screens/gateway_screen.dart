@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
-import '/core/app_export.dart';
+import '/lib.dart';
 
 class GatewayScreen extends StatelessWidget {
   const GatewayScreen({super.key});
@@ -19,8 +19,8 @@ class GatewayScreen extends StatelessWidget {
               Container(
                   decoration: AppDecoration.fillOnSecondary,
                   child: Column(children: [
-                    const AppNavigationTitle(),
-                    const CheckYourAppUIMessage(),
+                    const GatewayTitle(),
+                    const CheckYourAppUI(),
                     Padding(
                         padding: getPadding(top: 5),
                         child: Divider(

@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 // 🌎 Project imports:
-import '/core/app_export.dart';
+import '/lib.dart';
 
 class FloatingYellowButton extends StatelessWidget {
   const FloatingYellowButton({super.key});

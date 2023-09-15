@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '/core/app_export.dart';
+import '/lib.dart';
 
 class SplashLoading extends StatelessWidget {
   const SplashLoading({super.key});
@@ -48,7 +48,7 @@ class SplashLoading extends StatelessWidget {
                 case ConnectionState.done:
                 case ConnectionState.none:
                 default:
-                  return const LoginWithIdAndPassword();
+                  return const LoginPage();
               }
               return ErrorWidget(
                   snapshot.hasError ? snapshot.error! : snapshot.data!);

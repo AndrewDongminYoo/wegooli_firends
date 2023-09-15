@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
-import '/core/app_export.dart';
+import '/lib.dart';
 
 class CustomDropDown extends StatelessWidget {
   const CustomDropDown({

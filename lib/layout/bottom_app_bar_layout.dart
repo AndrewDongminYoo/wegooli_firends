@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 // 🌎 Project imports:
-import '/core/app_export.dart';
+import '/lib.dart';
 
 /// `CustomBottomAppBarLayout` 클래스는 플로팅 작업 버튼의 가시성, 하단 앱 바 노치의 가시성, 플로팅 작업 버튼의 위치 등 하단 앱 바 데모의 상태와 UI를 관리하는 상태 저장 위젯입니다.
 class CustomBottomAppBarLayout extends StatefulWidget {

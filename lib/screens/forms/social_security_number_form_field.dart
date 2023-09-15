@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 // 🌎 Project imports:
-import '/core/app_export.dart';
+import '/lib.dart';
 
 class SocialSecurityNumberFormField extends StatelessWidget {
   const SocialSecurityNumberFormField({

@@ -1,6 +1,6 @@
 // 📦 Package imports:
 import 'package:dio/dio.dart';
-import 'package:get/get_connect.dart';
+import 'package:get/get.dart';
 
 // 🌎 Project imports:
 import '/lib.dart';

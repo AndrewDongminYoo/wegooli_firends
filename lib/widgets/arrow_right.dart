@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
-import '/core/app_export.dart';
+import '/lib.dart';
 
 class ArrowRight extends StatelessWidget {
   const ArrowRight({super.key, this.onTap});

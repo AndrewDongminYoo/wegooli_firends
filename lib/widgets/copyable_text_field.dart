@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 // 🌎 Project imports:
-import '/core/app_export.dart';
+import '/lib.dart';
 
 /// 모든 텍스트를 선택하고 선택한 텍스트를 클립보드에 복사하는 버튼이 있는 텍스트 필드입니다.
 class CopyableTextField extends StatefulWidget {

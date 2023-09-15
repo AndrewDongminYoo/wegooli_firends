@@ -11,7 +11,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:sendbird_sdk/sendbird_sdk.dart';
 
 // 🌎 Project imports:
-import '/core/app_export.dart';
+import '/lib.dart';
 
 class DashChatWithFriendsPage extends GetWidget<ConnectionController> {
   const DashChatWithFriendsPage({super.key});
@@ -45,10 +45,10 @@ class DashChatWithFriendsPage extends GetWidget<ConnectionController> {
               sendOnEnter: true,
               alwaysShowSend: true,
               sendButtonBuilder: (void Function() onSend) => IconButton(
-                    icon: const Icon(Icons.send),
-                    onPressed: onSend,
-                    color: Colors.black,
-                    iconSize: 24),
+                  icon: const Icon(Icons.send),
+                  onPressed: onSend,
+                  color: Colors.black,
+                  iconSize: 24),
               leading: <Widget>[
                 IconButton(
                     icon: const Icon(

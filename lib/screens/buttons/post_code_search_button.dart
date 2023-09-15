@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:kpostal/kpostal.dart';
 
 // 🌎 Project imports:
-import '/core/app_export.dart';
+import '/lib.dart';
 
 class PostCodeSearchButton extends StatelessWidget {
   const PostCodeSearchButton({

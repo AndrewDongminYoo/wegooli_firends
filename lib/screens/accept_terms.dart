@@ -1,11 +1,8 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:get/get.dart';
-
 // 🌎 Project imports:
-import '/core/app_export.dart';
+import '/lib.dart';
 
 class AcceptTerms extends StatefulWidget {
   const AcceptTerms({super.key});
@@ -76,66 +73,4 @@ class _AcceptTermsState extends State<AcceptTerms> {
       ),
     );
   }
-}
-
-class AgreementItem extends StatefulWidget {
-  AgreementItem({
-    Key? key,
-    required this.index,
-    required this.terms,
-  }) : super(key: key);
-
-  final int index;
-  final List<Term> terms;
-
-  @override
-  State<AgreementItem> createState() => _AgreementItemState();
-}
-
-class _AgreementItemState extends State<AgreementItem> {
-  @override
-  Widget build(BuildContext context) {
-    final term = widget.terms[widget.index];
-    return Padding(
-        padding: getPadding(top: 14),
-        child: Unfocused(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              CustomCheckboxButton(
-                  text: term.title,
-                  value: term.agree,
-                  onChange: (bool value) {
-                    setState(() {
-                      term.agree = value;
-                    });
-                  }),
-              CustomImageView(
-                svgPath: Assets.svg.imgArrowRight.path,
-                height: getSize(18),
-                width: getSize(18),
-                margin: getMargin(bottom: 2),
-                onTap: () => Get.toNamed(
-                  AppRoutes.acceptTermsDetail,
-                  arguments: {'page': '${widget.index}'},
-                ),
-              ),
-            ],
-          ),
-        ));
-  }
-}
-
-class Term {
-  Term({
-    required this.title,
-    required this.body,
-    required this.agree,
-    this.opt = false,
-  });
-
-  final String title;
-  final bool opt;
-  final String body;
-  bool agree;
 }

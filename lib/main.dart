@@ -12,7 +12,7 @@ import 'package:intl/date_symbol_data_local.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
 // 🌎 Project imports:
-import 'core/app_export.dart';
+import 'lib.dart';
 
 /// Firebase 로컬 에뮬레이터가 로컬에서 실행 중이어야 합니다.
 /// See https://firebase.flutter.dev/docs/auth/start/#optional-prototype-and-test-with-firebase-local-emulator-suite

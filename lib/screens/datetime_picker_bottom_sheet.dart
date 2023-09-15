@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
 // 🌎 Project imports:
-import '/core/app_export.dart';
+import '/lib.dart';
 
 class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
   const DatetimePickerBottomSheet({super.key});

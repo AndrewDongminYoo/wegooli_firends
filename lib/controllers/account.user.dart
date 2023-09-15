@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '/core/app_export.dart';
+import '/lib.dart';
 
 class UserController extends GetxController {
   final UserAccountService _service = UserAccountService();
@@ -237,4 +237,18 @@ enum SignUp {
   EXPIRED,
   SUCCESS,
   FAILURE,
+}
+
+class Term {
+  Term({
+    required this.title,
+    required this.body,
+    required this.agree,
+    this.opt = false,
+  });
+
+  final String title;
+  final bool opt;
+  final String body;
+  bool agree;
 }

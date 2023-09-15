@@ -2,7 +2,7 @@
 import 'package:flutter/cupertino.dart';
 
 // 🌎 Project imports:
-import '/core/app_export.dart';
+import '/lib.dart';
 
 class AddScheduleConfirmButton extends StatelessWidget {
   const AddScheduleConfirmButton({

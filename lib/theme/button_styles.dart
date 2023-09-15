@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
-import '/core/app_export.dart';
+import '/lib.dart';
 
 /// A class that offers pre-defined button styles for customizing button appearance.
 /// C: circular radius

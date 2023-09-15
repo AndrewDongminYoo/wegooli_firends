@@ -2,7 +2,7 @@
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '/core/app_export.dart';
+import '/lib.dart';
 
 class AppRoutes {
   /// 애플리케이션 홈
@@ -59,12 +59,12 @@ class AppRoutes {
     GetPage(
       name: acceptTermsDetail,
       bindings: [UserAccountBinding()],
-      page: TermsOfUseView.new,
+      page: AcceptTermsDetail.new,
     ),
     GetPage(
       bindings: [UserAccountBinding()],
       name: idPwLogin,
-      page: () => const LoginWithIdAndPassword(),
+      page: () => const LoginPage(),
     ),
     GetPage(
       bindings: [UserAccountBinding()],
@@ -74,7 +74,7 @@ class AppRoutes {
     GetPage(
       bindings: [UserAccountBinding()],
       name: phoneAuth,
-      page: ValidatePhone.new,
+      page: RegisterPhone.new,
     ),
     GetPage(
       bindings: [UserAccountBinding()],
@@ -84,7 +84,7 @@ class AppRoutes {
     GetPage(
       bindings: [UserAccountBinding()],
       name: registeredCardList,
-      page: () => const RegisteredCreditCardList(),
+      page: () => const MyProfileCardList(),
     ),
     GetPage(
       bindings: [UserAccountBinding()],
@@ -109,7 +109,7 @@ class AppRoutes {
     GetPage(
       bindings: [UserAccountBinding()],
       name: profileInfoPage,
-      page: () => const ProfileInfoPage(),
+      page: () => const MyProfileDetail(),
     ),
     GetPage(
       bindings: [UserAccountBinding()],
@@ -129,7 +129,7 @@ class AppRoutes {
     GetPage(
       bindings: [TeamCommunityBinding()],
       name: carStatusInfo,
-      page: () => const CarStatusInformation(),
+      page: () => const CarStatusDetail(),
     ),
     GetPage(
       bindings: [TeamCommunityBinding()],
@@ -139,7 +139,7 @@ class AppRoutes {
     GetPage(
       bindings: [TeamCommunityBinding()],
       name: noSubscription,
-      page: () => const SubscriptionInfoNoService(),
+      page: () => const NoSubscription(),
     ),
     GetPage(
       bindings: [TeamCommunityBinding()],
@@ -149,12 +149,12 @@ class AppRoutes {
     GetPage(
       bindings: [TeamCommunityBinding()],
       name: home,
-      page: () => const MainApplication(),
+      page: () => const MainPage(),
     ),
     GetPage(
       bindings: [TeamCommunityBinding()],
       name: carSmartKey,
-      page: () => const SmartKeyAvailablePage(),
+      page: () => const CarStatusPage(),
     ),
     GetPage(
       bindings: [TeamCommunityBinding()],
@@ -164,7 +164,7 @@ class AppRoutes {
     GetPage(
       bindings: [TeamCommunityBinding()],
       name: upcomingUnsubscription,
-      page: () => const UpcomingUnsubscription(),
+      page: () => const UnsubscriptionUpcoming(),
     ),
   ];
 }

@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 // 🌎 Project imports:
-import '/core/app_export.dart';
+import '/lib.dart';
 
 final kToday = DateTime.now();
 
@@ -31,6 +31,7 @@ class ScheduleController extends GetxController {
       : Get.put(ScheduleController());
 
   DateTime focusedDay = kToday;
+
   /// [Map]을 사용하기로 한 경우, [LinkedHashMap]를 사용하는 것이 권장됩니다.
   final LinkedHashMap<DateTime, List<Schedule>> _events =
       LinkedHashMap<DateTime, List<Schedule>>();
@@ -84,7 +85,6 @@ class ScheduleController extends GetxController {
 
   DateTime get reservationTime => items[0].date;
   DateTime get returnTime => items[1].date;
-
 
   CalendarFormat calendarFormat = CalendarFormat.month;
   RangeSelectionMode rangeSelectionMode = RangeSelectionMode

@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '/core/app_export.dart';
+import '/lib.dart';
 
 dynamic goBack() => Get.back();
 dynamic popWithValue<T>(BuildContext context, T value) =>

@@ -24,7 +24,7 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-// TODO
+            // TODO
             Align(
                 alignment: Alignment.centerLeft,
                 child: Container(
@@ -33,23 +33,22 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                     padding: getPadding(left: 16, top: 16),
                     decoration: BoxDecoration(
                         color: Colors.white,
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(10),
-                          topRight: Radius.circular(10),
+                        borderRadius: const BorderRadius.vertical(
+                          top: Radius.circular(10),
                         ),
                         border: Border(
                           top: BorderSide(
                               width: getVerticalSize(1),
-                              color: Color(0xFFF6F7F7)),
+                              color: ColorConstant.separationBar),
                           right: BorderSide(
                               width: getVerticalSize(1),
-                              color: Color(0xFFF6F7F7)),
+                              color: ColorConstant.separationBar),
                           left: BorderSide(
                               width: getVerticalSize(1),
-                              color: Color(0xFFF6F7F7)),
+                              color: ColorConstant.separationBar),
                           bottom: BorderSide(
                               width: getVerticalSize(8),
-                              color: Color(0xFFF6F7F7)),
+                              color: ColorConstant.separationBar),
                         )),
                     child: Obx(() => Text(
                           l10ns.reservationTotalPeriod(
@@ -71,7 +70,7 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                               fontSize: getFontSize(18)),
                         )))),
             Obx(() => ExpansionPanelList(
-                dividerColor: Color(0xFFF6F7F7),
+                dividerColor: ColorConstant.separationBar,
                 materialGapSize: getSize(0),
                 expansionCallback: (panelIndex, nextState) {
                   print('panelIndex: $panelIndex &isExpanded: $nextState');
@@ -199,145 +198,11 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     const CancelButton(plural: false),
+                    // TODO: 일정을 등록할 때와 수정할 때 각각 상황에 따라 동작
                     AddScheduleConfirmButton(controller: controller),
                   ],
                 )),
           ],
         ));
-    // return SafeArea(
-    //     child: Container(
-    //         height: getVerticalSize(664),
-    //         padding: getPadding(top: 20),
-    //         decoration: AppDecoration.fillOnPrimaryContainer
-    //             .copyWith(borderRadius: BorderRadiusStyle.customBorderT10),
-    //         child: Column(
-    //           mainAxisSize: MainAxisSize.min,
-    //           children: [
-    //             Align(
-    //                 alignment: Alignment.centerLeft,
-    //                 child: Container(
-    //                     width: mediaQueryData.size.width,
-    //                     padding: getPadding(left: 16, top: 16),
-    //                     child: Text(
-    //                       l10ns.reservationTotalPeriod(
-    //                         controller.returnTime
-    //                             .difference(controller.reservationTime)
-    //                             .inHours,
-    //                         formatting(controller.reservationTime.add(Duration(
-    //                             minutes: 10 -
-    //                                 controller.reservationTime.minute % 10))),
-    //                         formatting(controller.returnTime.add(Duration(
-    //                             minutes:
-    //                                 10 - controller.returnTime.minute % 10))),
-    //                       ),
-    //                       maxLines: 2,
-    //                       overflow: TextOverflow.ellipsis,
-    //                       textAlign: TextAlign.left,
-    //                       style: CustomTextStyles.titleMediumBlack900.copyWith(
-    //                         letterSpacing: getHorizontalSize(0.04),
-    //                       ),
-    //                     ))),
-    //             Container(
-    //                 height: getVerticalSize(8),
-    //                 width: mediaQueryData.size.width,
-    //                 margin: getMargin(top: 16),
-    //                 decoration: AppDecoration.fillGray100),
-    //             Obx(() => ExpansionPanelList(
-    //                 materialGapSize: getSize(8),
-    //                 expansionCallback: (panelIndex, isExpanded) {
-    //                   print('panelIndex: $panelIndex &isExpanded: $isExpanded');
-    //                   controller.items[panelIndex].isExpanded = isExpanded;
-    //                   controller.items.refresh();
-    //                 },
-    //                 // animationDuration: Duration(seconds: 1),
-    //                 elevation: 1,
-    //                 children: controller.items.mapIndexed(
-    //                   (index, item) {
-    //                     return ExpansionPanel(
-    //                         // backgroundColor: Colors.amber,
-    //                         headerBuilder: (context, isOpen) {
-    //                           return Padding(
-    //                               padding: const EdgeInsets.all(15),
-    //                               child: Row(
-    //                                 mainAxisAlignment:
-    //                                     MainAxisAlignment.spaceBetween,
-    //                                 children: [
-    //                                   Text(
-    //                                     item.title,
-    //                                     style: TextStyle(
-    //                                       color: isOpen
-    //                                           ? ColorConstant.fontBlack
-    //                                           : ColorConstant.fontBlackDisabled,
-    //                                       fontSize: getFontSize(16),
-    //                                       fontFamily: FontFamily.pretendard,
-    //                                       fontWeight: FontWeight.w700,
-    //                                       height: 1.50,
-    //                                       letterSpacing: 0.03,
-    //                                     ),
-    //                                   ),
-    //                                   TextButton(
-    //                                       onPressed: () {
-    //                                         controller.items[index].isExpanded =
-    //                                             !controller
-    //                                                 .items[index].isExpanded;
-    //                                         controller.items.refresh();
-    //                                       },
-    //                                       child: Text(
-    //                                         formatting(item.date.add(Duration(
-    //                                             minutes: 10 -
-    //                                                 item.date.minute % 10))),
-    //                                         textAlign: TextAlign.right,
-    //                                         style: TextStyle(
-    //                                           color: isOpen
-    //                                               ? ColorConstant.fontBlack
-    //                                               : ColorConstant
-    //                                                   .fontBlackDisabled,
-    //                                           fontSize: getFontSize(16),
-    //                                           fontFamily: FontFamily.pretendard,
-    //                                           fontWeight: FontWeight.w700,
-    //                                           height: 1.50,
-    //                                           letterSpacing: 0.03,
-    //                                         ),
-    //                                       )),
-    //                                 ],
-    //                               ));
-    //                         },
-    //                         body: Container(
-    //                           height: getVerticalSize(200),
-    //                           alignment: Alignment.center,
-    //                           padding: const EdgeInsets.all(20),
-    //                           width: double.infinity,
-    //                           child: CupertinoDatePicker(
-    //                             minuteInterval: 10,
-    //                             backgroundColor: CupertinoColors
-    //                                 .systemBackground
-    //                                 .resolveFrom(context),
-    //                             initialDateTime: item.date.add(Duration(
-    //                                 minutes: 10 - item.date.minute % 10)),
-    //                             onDateTimeChanged: (newDateTime) {
-    //                               // print('newDateTime: $newDateTime');
-    //                               controller.items[index].date = newDateTime;
-    //                               controller.items.refresh();
-    //                             },
-    //                             minimumDate: index == 1
-    //                                 ? controller.reservationTime
-    //                                 : null,
-    //                           ),
-    //                         ),
-    //                         isExpanded: item.isExpanded);
-    //                   },
-    //                 ).toList())),
-    //             Container(
-    //                 height: getVerticalSize(106),
-    //                 padding: getPadding(left: 16, right: 16),
-    //                 child: Row(
-    //                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    //                   children: [
-    //                     const CancelButton(plural: false),
-    //                     AddScheduleConfirmButton(controller: controller),
-    //                   ],
-    //                 )),
-    //           ],
-    //         )));
   }
 }

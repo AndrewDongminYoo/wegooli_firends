@@ -23,9 +23,9 @@ class _SharedCalendarState extends State<SharedCalendar> {
             padding: getPadding(top: 21),
             child: Padding(
                 padding: getPadding(bottom: 5),
-                child: Column(
+                child: const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
+                  children: [
                     MemberListTitle(),
                     MembersList(),
                     GrayHorizonSeparator(),

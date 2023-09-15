@@ -145,12 +145,6 @@ class ColorSchemes {
     secondaryContainer: ColorConstant.wegooli,
     tertiary: ColorConstant.primaryInverted,
     tertiaryContainer: ColorConstant.wegooli,
-
-    // Background colors
-    background: ColorConstant.primaryInverted,
-
-    // Surface colors
-    surface: ColorConstant.primaryInverted,
     surfaceTint: ColorConstant.fontBlack,
     surfaceVariant: ColorConstant.wegooli,
 

@@ -1,6 +1,9 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+// 📦 Package imports:
+import 'package:get/get.dart';
+
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
@@ -16,12 +19,12 @@ class ScheduleEditButton extends StatelessWidget {
       height: getVerticalSize(28),
       margin: getMargin(right: 10),
       text: '수정',
-      buttonStyle: CustomButtonStyles.fillWhite
-          .copyWith(surfaceTintColor: MaterialStatePropertyAll(Colors.white)),
+      buttonStyle: CustomButtonStyles.fillWhite.copyWith(
+          surfaceTintColor: const MaterialStatePropertyAll(Colors.white)),
       buttonTextStyle: CustomTextStyles.bodySmallPretendardGray70001,
       decoration: AppDecoration.minimal,
       onTap: () {
-        // TODO 수정하기
+        Get.bottomSheet(const DatetimePickerBottomSheet());
       },
     );
   }

@@ -22,7 +22,6 @@ class LoginWithIdAndPassword extends StatefulWidget {
 class _LoginWithIdAndPasswordState extends State<LoginWithIdAndPassword> {
   UserController controller = UserController.to;
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  bool get isAuthenticated => controller.oneTimeCode == Verify.Success;
   @override
   void initState() {
     super.initState();
@@ -51,10 +50,9 @@ class _LoginWithIdAndPasswordState extends State<LoginWithIdAndPassword> {
               child: Column(
                 children: [
                   const FriendsByWegooli(),
-                  EmailAddressFormField(
-                      controller: controller, authMode: authMode),
+                  UserMailFormField(controller: controller, authMode: authMode),
                   PasswordFormField(controller: controller, authMode: authMode),
-                  GoSignInButton(controller: controller),
+                  AuthSignInButton(controller: controller),
                   Padding(
                       padding: getPadding(top: 57),
                       child: Text(

@@ -21,7 +21,7 @@ class ReservationsCheckingPageDialog extends StatelessWidget {
     }).toList();
     return AlertDialog(
         contentPadding: EdgeInsets.zero,
-        insetPadding: EdgeInsets.all(20),
+        insetPadding: const EdgeInsets.all(20),
         content: SingleChildScrollView(
           child: Container(
             width: getHorizontalSize(330),

@@ -29,12 +29,6 @@ class _TeamReservationsItemState extends State<TeamReservationsItem> {
     return '${formatter.format(start)} ~ ${formatter.format(end)}';
   }
 
-  void toggle() {
-    setState(() {
-      isToggleOn = !isToggleOn;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     final color = widget.schedule.highlightColor;
@@ -113,7 +107,9 @@ class _TeamReservationsItemState extends State<TeamReservationsItem> {
                             width: getSize(16),
                             onTap: () {
                               if (isOwner) {
-                                toggle();
+                                setState(() {
+                                  isToggleOn = !isToggleOn;
+                                });
                               }
                             }),
                     ],

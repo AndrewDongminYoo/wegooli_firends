@@ -44,7 +44,7 @@ class RegisterZipCode extends GetWidget<UserController> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         CustomInputLabel(labelText: l10ns.id),
-                        EmailAddressFormField(
+                        UserMailFormField(
                             controller: controller, authMode: authMode),
                       ])),
               Padding(

@@ -80,7 +80,6 @@ class MyApp extends StatelessWidget {
       RouteObserver<PageRoute>();
   @override
   Widget build(BuildContext context) {
-    const initialRoute = AppRoutes.home;
     return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         theme: theme,
@@ -96,8 +95,8 @@ class MyApp extends StatelessWidget {
         logWriterCallback: (String text, {bool isError = false}) =>
             isError ? console.log(text) : print('[DEBUG] $text'),
         navigatorObservers: [MyApp.routeObserver],
-        initialRoute: initialRoute,
-        onGenerateRoute: onGenerateRoute,
+        initialRoute: AppRoutes.home,
+        // onGenerateRoute: onGenerateRoute,
         getPages: AppRoutes.pages);
   }
 }
@@ -123,60 +122,10 @@ Widget _errorWidgetBuilder(dynamic context, Widget? child) {
 }
 
 Route<dynamic>? onGenerateRoute(RouteSettings settings) {
-  late Widget page;
-  switch (settings.name) {
-    case AppRoutes.home:
-      if (kDebugMode || kProfileMode) {
-        page = const GatewayScreen();
-      } else {
-        page = const SplashLoading();
-      }
-    case AppRoutes.appGateway:
-      page = const GatewayScreen();
-    case AppRoutes.idPwLogin:
-      page = const LoginWithIdAndPassword();
-    case AppRoutes.acceptTerms:
-      page = const AcceptTerms();
-    case AppRoutes.phoneAuth:
-      page = const ValidatePhone();
-    case AppRoutes.acceptTermsDetail:
-      page = const TermsOfUseView();
-    case AppRoutes.registerCreditCard:
-      page = const RegisterCreditCard();
-    case AppRoutes.registerLicense:
-      page = const RegisterLicense();
-    case AppRoutes.registerZipCode:
-      page = const RegisterZipCode();
-    case AppRoutes.registerSuccess:
-      page = const RegisterSuccess();
-    case AppRoutes.sharedSchedule:
-      page = const MainApplication();
-    case AppRoutes.teamInvitation:
-      page = const TeamInvitation();
-    case AppRoutes.bookDatetimePicker:
-      page = const DatetimePickerBottomSheet();
-    case AppRoutes.reservationsCheck:
-      page = const ReservationsCheckingPageDialog();
-    case AppRoutes.chatWithTeam:
-      page = const DashChatWithFriendsPage();
-    case AppRoutes.carSmartKey:
-      page = const SmartKeyAvailablePage();
-    case AppRoutes.carStatusInfo:
-      page = const CarStatusInformation();
-    case AppRoutes.registeredCardList:
-      page = const RegisteredCreditCardList();
-    case AppRoutes.myProfile:
-      page = const MyProfilePage();
-    case AppRoutes.profileInfoPage:
-      page = const ProfileInfoPage();
-    case AppRoutes.noSubscription:
-      page = const SubscriptionInfoNoService();
-    case AppRoutes.unsubscribeConfirm:
-      page = const UnsubscriptionConfirm();
-    case AppRoutes.upcomingUnsubscription:
-      page = const UpcomingUnsubscription();
-    default: // Do nothing if there is no route defined for the action
-      return null;
-  }
-  return GetPageRoute<dynamic>(page: () => page);
+  final page = getPages(settings);
+  return GetPageRoute<dynamic>(
+    settings: settings,
+    page: () => page,
+    transition: Transition.noTransition,
+  );
 }

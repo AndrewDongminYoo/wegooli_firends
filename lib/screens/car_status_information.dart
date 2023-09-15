@@ -24,7 +24,6 @@ class CarStatusInformation extends GetWidget<VehicleController> {
               Container(
                   padding: getPadding(left: 80, top: 13, bottom: 20, right: 80),
                   child: CustomImageView(
-                    // TODO controller.terminalDevice.carImg 로 대체해야함!!
                     imagePath: Assets.images.imgCarSpark.path,
                     height: getVerticalSize(132),
                     width: getHorizontalSize(200),

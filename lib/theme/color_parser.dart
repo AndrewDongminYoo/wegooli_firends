@@ -216,10 +216,9 @@ class ColorParser {
   }
 
   /// calculate Ncol from hue
-  String _hueToNcol(num hue) {
-    while (hue >= 360) {
-      hue = hue - 360;
-    }
+  String _hueToNcol(num _hue) {
+    final hue = _hue >= 360 ? _hue ~/ 360 : _hue;
+
     if (hue < 60) {
       return 'R${(hue / 0.6).round()}';
     }

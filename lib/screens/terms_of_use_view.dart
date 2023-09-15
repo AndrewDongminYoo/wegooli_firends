@@ -28,13 +28,13 @@ class _TermsOfUseViewState extends State<TermsOfUseView> {
     if (Get.arguments['page'] != null) {
       index = int.parse(Get.arguments['page']);
     } else if (widget.index != null) {
-      index = widget.index!.toInt();
+      index = widget.index!;
     } else {
       index = 0;
     }
-    Term? term = controller.terms[index];
-    String title = term.opt ? '[선택] ' : '[필수] ' + term.title;
-    String content = term.body;
+    final term = controller.terms[index];
+    final title = "[${term.opt ? '선택' : '필수'}] ${term.title}";
+    final content = term.body;
     return Scaffold(
       appBar: CustomAppBar.getDefaultAppBar(title),
       body: Markdown(

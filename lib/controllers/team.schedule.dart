@@ -116,7 +116,7 @@ class ScheduleController extends GetxController {
         // DateTime reservationTime = DateTime.now();
         date: DateTime.now()
             .add(Duration(minutes: 10 - DateTime.now().minute % 10)),
-        isExpanded: true,
+        // isExpanded: true,
       ),
       // Add more items here
       Item(
@@ -136,8 +136,22 @@ class ScheduleController extends GetxController {
     }
     await _service.addSchedule(
         accountId!, teamSeq, reservationTime, returnTime);
-    userController.schedules(await userController.retrieveSchedules(teamSeq));
-    makeEventSource();
-    goBack();
+    // userController.schedules(await userController.retrieveSchedules(teamSeq));
+    // makeEventSource();
+    final localEventSource = Map<DateTime, List<Schedule>>.of({});
+    final schedule = Schedule(
+      accountId: accountId,
+      teamSeq: teamSeq,
+      startAt: reservationTime.toString(),
+      endAt: returnTime.toString(),
+    );
+
+    for (final key in daysInRange(reservationTime, returnTime)) {
+      final value =
+          localEventSource.getOrDefault(normalizeDateTime(key), <Schedule>[]);
+      value.add(schedule);
+      localEventSource.addIf(true, normalizeDateTime(key), value);
+    }
+    _eventSource.addAll(localEventSource);
   }
 }

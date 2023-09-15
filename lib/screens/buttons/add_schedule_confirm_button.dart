@@ -19,6 +19,7 @@ class AddScheduleConfirmButton extends StatelessWidget {
         onTap: () {
           print('AddScheduleConfirmButton');
           controller.addSchedule();
+          Navigator.pop(context);
         },
         text: l10ns.confirm,
         buttonStyle: CustomButtonStyles.fillPrimaryC26,

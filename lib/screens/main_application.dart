@@ -15,7 +15,7 @@ class MainApplication extends StatefulWidget {
 }
 
 class _MainApplicationState extends State<MainApplication> {
-  final userController = UserController.to;
+  final user = UserController.to;
 
   @override
   Widget build(BuildContext context) {
@@ -24,31 +24,53 @@ class _MainApplicationState extends State<MainApplication> {
     return Scaffold(
       body: Navigator(
           key: navigatorKey,
-          initialRoute: userController.teams.isNotEmpty
+          initialRoute: user.teams.isNotEmpty
               ? AppRoutes.sharedSchedule
-              : AppRoutes.sharedSchedule,
-          // : AppRoutes.teamInvitation,
-          onGenerateRoute: (settings) {
-            late Widget page;
-            switch (settings.name) {
-              case AppRoutes.chatWithTeam:
-                page = const DashChatWithFriendsPage();
-              case AppRoutes.carSmartKey:
-                page = const SmartKeyAvailablePage();
-              case AppRoutes.myProfile:
-                page = const MyProfilePage();
-              case AppRoutes.teamInvitation:
-                page = const TeamInvitation();
-              default:
-                page = const SharedCalendar();
-            }
+              : AppRoutes.teamInvitation,
+          onGenerateRoute: (RouteSettings settings) {
             return GetPageRoute(
               settings: settings,
-              page: () => page,
+              page: () => getBody(settings),
               transition: Transition.noTransition,
             );
           }),
       bottomNavigationBar: CustomBottomNavBar(id: id),
     );
+  }
+
+  Widget getBody(RouteSettings settings) {
+    if (!user.isAuthenticated) {
+      return const LoginWithIdAndPassword();
+    }
+    switch (settings.name) {
+      case AppRoutes.sharedSchedule:
+        return const SharedCalendar();
+      case AppRoutes.teamInvitation:
+        return const TeamInvitation();
+      case AppRoutes.bookDatetimePicker:
+        return const DatetimePickerBottomSheet();
+      case AppRoutes.reservationsCheck:
+        return const ReservationsCheckingPageDialog();
+      case AppRoutes.chatWithTeam:
+        return const DashChatWithFriendsPage();
+      case AppRoutes.carSmartKey:
+        return const SmartKeyAvailablePage();
+      case AppRoutes.carStatusInfo:
+        return const CarStatusInformation();
+      case AppRoutes.registeredCardList:
+        return const RegisteredCreditCardList();
+      case AppRoutes.myProfile:
+        return const MyProfilePage();
+      case AppRoutes.profileInfoPage:
+        return const ProfileInfoPage();
+      case AppRoutes.noSubscription:
+        return const SubscriptionInfoNoService();
+      case AppRoutes.unsubscribeConfirm:
+        return const UnsubscriptionConfirm();
+      case AppRoutes.upcomingUnsubscription:
+        return const UpcomingUnsubscription();
+      default:
+        return const SharedCalendar();
+    }
   }
 }

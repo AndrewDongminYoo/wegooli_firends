@@ -102,6 +102,9 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
       String? smsCode, String verificationId) async {
     print('smsCode: $smsCode');
     print('verificationId: $verificationId');
+    if (_timer != null) {
+      _timer!.cancel();
+    }
     if (smsCode != null) {
       // Create a PhoneAuthCredential with the code
       final AuthCredential phoneCredential = PhoneAuthProvider.credential(

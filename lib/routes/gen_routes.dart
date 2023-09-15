@@ -7,7 +7,23 @@ import '/lib.dart';
 
 Widget getPages(RouteSettings settings) {
   final controller = UserController.to;
-  var page = switch (settings.name) {
+  StatefulWidget checkAuth(String? name) => !controller.isAuthenticated
+      ? const LoginWithIdAndPassword()
+      : const MainApplication();
+  final page = switch (settings.name) {
+    AppRoutes.bookDatetimePicker => checkAuth(settings.name),
+    AppRoutes.carSmartKey => checkAuth(settings.name),
+    AppRoutes.carStatusInfo => checkAuth(settings.name),
+    AppRoutes.chatWithTeam => checkAuth(settings.name),
+    AppRoutes.myProfile => checkAuth(settings.name),
+    AppRoutes.noSubscription => checkAuth(settings.name),
+    AppRoutes.profileInfoPage => checkAuth(settings.name),
+    AppRoutes.registeredCardList => checkAuth(settings.name),
+    AppRoutes.reservationsCheck => checkAuth(settings.name),
+    AppRoutes.sharedSchedule => checkAuth(settings.name),
+    AppRoutes.teamInvitation => checkAuth(settings.name),
+    AppRoutes.unsubscribeConfirm => checkAuth(settings.name),
+    AppRoutes.upcomingUnsubscription => checkAuth(settings.name),
     AppRoutes.appGateway => const GatewayScreen(),
     AppRoutes.idPwLogin => const LoginWithIdAndPassword(),
     AppRoutes.acceptTerms => const AcceptTerms(),
@@ -17,42 +33,9 @@ Widget getPages(RouteSettings settings) {
     AppRoutes.registerLicense => const RegisterLicense(),
     AppRoutes.registerZipCode => const RegisterZipCode(),
     AppRoutes.registerSuccess => const RegisterSuccess(),
-    AppRoutes.sharedSchedule => const MainApplication(),
-    AppRoutes.teamInvitation => const TeamInvitation(),
-    AppRoutes.bookDatetimePicker => const DatetimePickerBottomSheet(),
-    AppRoutes.reservationsCheck => const ReservationsCheckingPageDialog(),
-    AppRoutes.chatWithTeam => const DashChatWithFriendsPage(),
-    AppRoutes.carSmartKey => const SmartKeyAvailablePage(),
-    AppRoutes.carStatusInfo => const CarStatusInformation(),
-    AppRoutes.registeredCardList => const RegisteredCreditCardList(),
-    AppRoutes.myProfile => const MyProfilePage(),
-    AppRoutes.profileInfoPage => const ProfileInfoPage(),
-    AppRoutes.noSubscription => const SubscriptionInfoNoService(),
-    AppRoutes.unsubscribeConfirm => const UnsubscriptionConfirm(),
-    AppRoutes.upcomingUnsubscription => const UpcomingUnsubscription(),
     _ => (kDebugMode || kProfileMode)
         ? const GatewayScreen()
         : const SplashLoading(),
   };
-  if (!controller.isAuthenticated && settings.name != null) {
-    final need = [
-      AppRoutes.sharedSchedule,
-      AppRoutes.teamInvitation,
-      AppRoutes.bookDatetimePicker,
-      AppRoutes.reservationsCheck,
-      AppRoutes.chatWithTeam,
-      AppRoutes.carSmartKey,
-      AppRoutes.carStatusInfo,
-      AppRoutes.registeredCardList,
-      AppRoutes.myProfile,
-      AppRoutes.profileInfoPage,
-      AppRoutes.noSubscription,
-      AppRoutes.unsubscribeConfirm,
-      AppRoutes.upcomingUnsubscription,
-    ];
-    if (need.contains(settings.name)) {
-      page = const LoginWithIdAndPassword();
-    }
-  }
   return page;
 }

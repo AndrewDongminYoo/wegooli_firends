@@ -44,15 +44,11 @@ class DashChatWithFriendsPage extends GetWidget<ConnectionController> {
             inputOptions: InputOptions(
               sendOnEnter: true,
               alwaysShowSend: true,
-              sendButtonBuilder: (Function onSend) {
-                return IconButton(
+              sendButtonBuilder: (void Function() onSend) => IconButton(
                     icon: const Icon(Icons.send),
-                    onPressed: () {
-                      onSend();
-                    },
+                    onPressed: onSend,
                     color: Colors.black,
-                    iconSize: 24);
-              },
+                    iconSize: 24),
               leading: <Widget>[
                 IconButton(
                     icon: const Icon(

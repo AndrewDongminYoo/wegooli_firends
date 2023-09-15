@@ -1,5 +1,5 @@
 name: wegooli_friends
-version: 1.0.0+7
+version: 1.0.0+8
 description: Wegooli Friends 프로젝트
 
 # 다음 줄은 `flutter pub publish`를 사용하여 패키지가 실수로 pub.dev에 게시되는 것을 방지함.
@@ -47,7 +47,6 @@ dependencies:
   flutter_markdown: ^0.6.17+2
   flutter_svg: ^2.0.7
   font_awesome_flutter: ^9.2.0
-  geolocator: ^10.0.0
   get: ^4.6.5
   image_picker: ^1.0.4
   intl: any

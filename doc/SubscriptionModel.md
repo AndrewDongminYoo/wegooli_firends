@@ -13,11 +13,11 @@ import 'package:wegooli_friends/lib.dart';
 | **accountId**    | **String** |             | [optional] |
 | **teamSeq**      | **int**    |             | [optional] |
 | **teamName**     | **String** |             | [optional] |
-| **carNumber**    | **String** |             | [optional] |
+| **carNum**       | **String** |             | [optional] |
 | **carModel**     | **String** |             | [optional] |
 | **carNickname**  | **String** |             | [optional] |
 | **fee**          | **String** |             | [optional] |
-| **createdAt**    | **String** |             | [optional] |
+| **startAt**      | **String** |             | [optional] |
 | **endAt**        | **String** |             | [optional] |
 | **withdrawalAt** | **String** |             | [optional] |
 

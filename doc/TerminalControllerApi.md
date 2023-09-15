@@ -22,9 +22,6 @@ All URIs are relative to *http://13.209.6.245:8089*
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.terminalApi;
 final TerminalRequest terminalRequest;
@@ -66,9 +63,6 @@ void (empty response body)
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.terminalApi;
 final int seq = 56;
@@ -111,9 +105,6 @@ try {
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.terminalApi;
 final TerminalRequest request;
@@ -156,9 +147,6 @@ try {
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.terminalApi;
 final TerminalUpdateRequest terminalUpdateRequest;

@@ -8,13 +8,14 @@ import 'package:wegooli_friends/lib.dart';
 
 All URIs are relative to *http://13.209.6.245:8089*
 
-| Method                                                 | HTTP request                 | Description |
-| ------------------------------------------------------ | ---------------------------- | ----------- |
-| [**deleteCar**](CarControllerApi.md#deletecar)         | **PUT** /car/delete/{carNum} |
-| [**registCar**](CarControllerApi.md#registcar)         | **POST** /car/regist         |
-| [**selectCar**](CarControllerApi.md#selectcar)         | **GET** /car/detail/{carNum} |
-| [**selectCarList**](CarControllerApi.md#selectcarlist) | **GET** /car/list            |
-| [**updateCar**](CarControllerApi.md#updatecar)         | **PUT** /car/update/{carNum} |
+| Method                                                 | HTTP request                  | Description |
+| ------------------------------------------------------ | ----------------------------- | ----------- |
+| [**deleteCar**](CarControllerApi.md#deletecar)         | **PUT** /car/delete/{carNum}  |
+| [**registCar**](CarControllerApi.md#registcar)         | **POST** /car/regist          |
+| [**selectCar**](CarControllerApi.md#selectcar)         | **GET** /car/detail/{carNum}  |
+| [**selectCarList**](CarControllerApi.md#selectcarlist) | **GET** /car/list             |
+| [**updateCar**](CarControllerApi.md#updatecar)         | **PUT** /car/update/{carNum}  |
+| [**uploadImage**](CarControllerApi.md#uploadimage)     | **POST** /car/upload/{carNum} |
 
 > deleteCar
 > deleteCar(carNum)
@@ -23,9 +24,6 @@ All URIs are relative to *http://13.209.6.245:8089*
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.carApi;
 final String carNum = carNum_example;
@@ -67,9 +65,6 @@ void (empty response body)
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.carApi;
 final CarRequest carRequest;
@@ -111,9 +106,6 @@ void (empty response body)
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.carApi;
 final String carNum = carNum_example;
@@ -156,9 +148,6 @@ try {
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.carApi;
 final CarRequest request;
@@ -201,9 +190,6 @@ try {
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.carApi;
 final CarRequest carRequest;
@@ -235,6 +221,50 @@ void (empty response body)
 
 - **Content-Type**: application/json
 - **Accept**: Not defined
+
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+> uploadImage
+> String uploadImage(uploadImageRequest, carNum)
+
+### Example
+
+```dart
+import 'package:wegooli_friends/lib.dart';
+
+final api = wegooli.carApi;
+final UploadImageRequest uploadImageRequest;
+final String carNum = carNum_example;
+
+try {
+    final response = api.uploadImage(uploadImageRequest, carNum);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling CarControllerApi->uploadImage: $e\n');
+}
+```
+
+### Parameters
+
+| Name                   | Type                                            | Description | Notes |
+| ---------------------- | ----------------------------------------------- | ----------- | ----- |
+| **uploadImageRequest** | [**UploadImageRequest**](UploadImageRequest.md) |             |
+| **carNum**             | **String**                                      |             |
+
+### Return type
+
+**String**
+
+### Authorization
+
+[jwtAuth](../README.md#jwtAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: "/"
 
 [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

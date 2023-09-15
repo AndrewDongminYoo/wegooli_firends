@@ -17,7 +17,7 @@ import 'package:wegooli_friends/lib.dart';
 | **zipCode**     | **String** |             | [optional] |
 | **phoneNumber** | **String** |             | [optional] |
 | **email**       | **String** |             | [optional] |
-| **birthDay**    | **String** |             | [optional] |
+| **birthday**    | **String** |             | [optional] |
 | **sex**         | **String** |             | [optional] |
 | **delYn**       | **String** |             | [optional] |
 | **createdAt**   | **String** |             | [optional] |

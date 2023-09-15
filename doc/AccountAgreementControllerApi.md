@@ -24,9 +24,6 @@ All URIs are relative to *http://13.209.6.245:8089*
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.accountAgreementApi;
 final String classification = classification_example;
@@ -71,9 +68,6 @@ try {
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.accountAgreementApi;
 final AccountAgreementRequest accountAgreementRequest;
@@ -109,6 +103,48 @@ try {
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
+> insertAccountAgreementList
+> String insertAccountAgreementList(accountAgreementRequest)
+
+### Example
+
+```dart
+import 'package:wegooli_friends/lib.dart';
+
+final api = wegooli.accountAgreementApi;
+final List<AccountAgreementRequest> accountAgreementRequest;
+
+try {
+    final response = api.insertAccountAgreementList(accountAgreementRequest);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AccountAgreementControllerApi->insertAccountAgreementList: $e\n');
+}
+```
+
+### Parameters
+
+| Name                        | Type                                                                  | Description | Notes |
+| --------------------------- | --------------------------------------------------------------------- | ----------- | ----- |
+| **accountAgreementRequest** | [**List&lt;AccountAgreementRequest&gt;**](AccountAgreementRequest.md) |             |
+
+### Return type
+
+**String**
+
+### Authorization
+
+[jwtAuth](../README.md#jwtAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: "/"
+
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
 > selectAccountAgreement
 > AccountAgreementModel selectAccountAgreement(classification, accountId)
 
@@ -116,9 +152,6 @@ try {
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.accountAgreementApi;
 final String classification = classification_example;
@@ -163,9 +196,6 @@ try {
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.accountAgreementApi;
 final String classification = classification_example;
@@ -220,9 +250,6 @@ try {
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.accountAgreementApi;
 final AccountAgreementRequest accountAgreementRequest;

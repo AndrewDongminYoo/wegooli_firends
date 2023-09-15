@@ -10,10 +10,10 @@ import 'package:wegooli_friends/lib.dart';
 
 | Name          | Type       | Description | Notes      |
 | ------------- | ---------- | ----------- | ---------- |
-| **accountId** | **String** |             | [optional] |
-| **date**      | **String** |             | [optional] |
-| **teamSeq**   | **int**    |             | [optional] |
 | **seq**       | **int**    |             | [optional] |
+| **accountId** | **String** |             | [optional] |
+| **leavedAt**  | **String** |             | [optional] |
+| **teamSeq**   | **int**    |             | [optional] |
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

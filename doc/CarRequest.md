@@ -16,6 +16,7 @@ import 'package:wegooli_friends/lib.dart';
 | **updatedAt** | [**DateTime**](DateTime.md) |             | [optional] |
 | **carNum**    | **String**                  |             | [optional] |
 | **model**     | **String**                  |             | [optional] |
+| **carImage**  | **String**                  |             | [optional] |
 | **status**    | **String**                  |             | [optional] |
 | **seats**     | **int**                     |             | [optional] |
 | **fuelType**  | **String**                  |             | [optional] |

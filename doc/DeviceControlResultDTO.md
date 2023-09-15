@@ -13,9 +13,9 @@ import 'package:wegooli_friends/lib.dart';
 | **userId**    | **String** |             | [optional] |
 | **terTelNum** | **String** |             | [optional] |
 | **t42**       | **String** |             | [optional] |
+| **t1**        | **String** |             | [optional] |
 | **t5**        | **String** |             | [optional] |
 | **t0**        | **String** |             | [optional] |
-| **t1**        | **String** |             | [optional] |
 | **t2**        | **String** |             | [optional] |
 | **t3**        | **String** |             | [optional] |
 | **t4**        | **String** |             | [optional] |

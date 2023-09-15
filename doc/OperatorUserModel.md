@@ -20,8 +20,8 @@ import 'package:wegooli_friends/lib.dart';
 | **sex**           | **String** |             | [optional] |
 | **rrn**           | **String** |             | [optional] |
 | **createdAt**     | **String** |             | [optional] |
-| **isLicense**     | **String** |             | [optional] |
-| **isPaymentCard** | **String** |             | [optional] |
+| **licenseYn**     | **String** |             | [optional] |
+| **paymentCardYn** | **String** |             | [optional] |
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

@@ -33,9 +33,6 @@ All URIs are relative to *http://13.209.6.245:8089*
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.noticeApi;
 final int seq = 56;
@@ -78,9 +75,6 @@ try {
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.noticeApi;
 final int seq = 56;
@@ -123,9 +117,6 @@ try {
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.noticeApi;
 final int seq = 56;
@@ -168,9 +159,6 @@ try {
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.noticeApi;
 final InsertNoticeRequest insertNoticeRequest;
@@ -213,9 +201,6 @@ try {
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.noticeApi;
 final InsertPushRequest insertPushRequest;
@@ -258,9 +243,6 @@ try {
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.noticeApi;
 final InsertSmsRequest insertSmsRequest;
@@ -303,9 +285,6 @@ try {
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.noticeApi;
 final int seq = 56;
@@ -348,9 +327,6 @@ try {
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.noticeApi;
 final SelectNoticeRequest request;
@@ -393,9 +369,6 @@ try {
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.noticeApi;
 final int seq = 56;
@@ -438,9 +411,6 @@ try {
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.noticeApi;
 final SelectPushRequest request;
@@ -483,9 +453,6 @@ try {
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.noticeApi;
 final int seq = 56;
@@ -528,9 +495,6 @@ try {
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.noticeApi;
 final SelectSmsRequest request;
@@ -573,9 +537,6 @@ try {
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.noticeApi;
 final UpdateNoticeRequest updateNoticeRequest;
@@ -620,9 +581,6 @@ try {
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.noticeApi;
 final UpdatePushRequest updatePushRequest;
@@ -667,9 +625,6 @@ try {
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.noticeApi;
 final UpdateSmsRequest updateSmsRequest;

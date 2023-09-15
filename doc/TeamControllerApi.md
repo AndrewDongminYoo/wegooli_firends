@@ -24,9 +24,6 @@ All URIs are relative to *http://13.209.6.245:8089*
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.teamApi;
 final int teamSeq = 56;
@@ -69,9 +66,6 @@ try {
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.teamApi;
 final TeamRequest teamRequest;
@@ -114,9 +108,6 @@ try {
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.teamApi;
 final int teamSeq = 56;
@@ -159,9 +150,6 @@ try {
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.teamApi;
 final String teamCode = teamCode_example;
@@ -204,9 +192,6 @@ try {
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.teamApi;
 final String accountId = accountId_example;
@@ -275,9 +260,6 @@ try {
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.teamApi;
 final TeamRequest teamRequest;

@@ -8,19 +8,20 @@ import 'package:wegooli_friends/lib.dart';
 
 All URIs are relative to *http://13.209.6.245:8089*
 
-| Method                                                    | HTTP request                    | Description |
-| --------------------------------------------------------- | ------------------------------- | ----------- |
-| [**checkId**](UserControllerApi.md#checkid)               | **GET** /auth/checkId           |
-| [**generateToken**](UserControllerApi.md#generatetoken)   | **POST** /auth/generateToken    | 토큰 발급   |
-| [**getUserDetail**](UserControllerApi.md#getuserdetail)   | **POST** /auth/getUserDetail    |
-| [**logOut**](UserControllerApi.md#logout)                 | **POST** /auth/logout           |
-| [**login**](UserControllerApi.md#login)                   | **POST** /auth/login            |
-| [**selectAccount**](UserControllerApi.md#selectaccount)   | **GET** /auth/user/account/{id} |
-| [**selectMember**](UserControllerApi.md#selectmember)     | **GET** /auth/user/member/{seq} |
-| [**selectUserList**](UserControllerApi.md#selectuserlist) | **GET** /auth/user              |
-| [**signOut**](UserControllerApi.md#signout)               | **GET** /auth/signout           |
-| [**signup**](UserControllerApi.md#signup)                 | **POST** /auth/signup           |
-| [**updateUser**](UserControllerApi.md#updateuser)         | **PUT** /auth/user              |
+| Method                                                    | HTTP request                      | Description |
+| --------------------------------------------------------- | --------------------------------- | ----------- |
+| [**checkId**](UserControllerApi.md#checkid)               | **GET** /auth/checkId             |
+| [**generateToken**](UserControllerApi.md#generatetoken)   | **POST** /auth/generateToken      | 토큰 발급   |
+| [**getUserDetail**](UserControllerApi.md#getuserdetail)   | **POST** /auth/getUserDetail      |
+| [**logOut**](UserControllerApi.md#logout)                 | **POST** /auth/logout             |
+| [**login**](UserControllerApi.md#login)                   | **POST** /auth/login              |
+| [**selectAccount**](UserControllerApi.md#selectaccount)   | **GET** /auth/user/account/{id}   |
+| [**selectMember**](UserControllerApi.md#selectmember)     | **GET** /auth/user/member/{seq}   |
+| [**selectUserList**](UserControllerApi.md#selectuserlist) | **GET** /auth/user                |
+| [**signOut**](UserControllerApi.md#signout)               | **GET** /auth/signout             |
+| [**signup**](UserControllerApi.md#signup)                 | **POST** /auth/signup             |
+| [**updateUser**](UserControllerApi.md#updateuser)         | **PUT** /auth/user                |
+| [**uploadImage1**](UserControllerApi.md#uploadimage1)     | **POST** /auth/upload/{accountId} |
 
 > checkId
 > String checkId(id)
@@ -29,9 +30,6 @@ All URIs are relative to *http://13.209.6.245:8089*
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.userApi;
 final String id = id_example;
@@ -78,9 +76,6 @@ try {
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.userApi;
 final UserDetailsDto userDetailsDto;
@@ -123,9 +118,6 @@ try {
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.userApi;
 final Account account;
@@ -168,9 +160,6 @@ try {
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.userApi;
 
@@ -210,9 +199,6 @@ This endpoint does not need any parameter.
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.userApi;
 final String id = id_example;
@@ -257,9 +243,6 @@ try {
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.userApi;
 final String id = id_example;
@@ -302,9 +285,6 @@ try {
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.userApi;
 final int seq = 56;
@@ -347,9 +327,6 @@ try {
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.userApi;
 final SelectUserRequest request;
@@ -392,9 +369,6 @@ try {
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.userApi;
 final String id = id_example;
@@ -437,9 +411,6 @@ try {
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.userApi;
 final UserDto userDto;
@@ -482,9 +453,6 @@ try {
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.userApi;
 final UpdateUserRequest updateUserRequest;
@@ -510,6 +478,50 @@ try {
 ### Return type
 
 **bool**
+
+### Authorization
+
+[jwtAuth](../README.md#jwtAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: "/"
+
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+> uploadImage1
+> String uploadImage1(uploadImageRequest, accountId)
+
+### Example
+
+```dart
+import 'package:wegooli_friends/lib.dart';
+
+final api = wegooli.userApi;
+final UploadImageRequest uploadImageRequest;
+final String accountId = accountId_example;
+
+try {
+    final response = api.uploadImage1(uploadImageRequest, accountId);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling UserControllerApi->uploadImage1: $e\n');
+}
+```
+
+### Parameters
+
+| Name                   | Type                                            | Description | Notes |
+| ---------------------- | ----------------------------------------------- | ----------- | ----- |
+| **uploadImageRequest** | [**UploadImageRequest**](UploadImageRequest.md) |             |
+| **accountId**          | **String**                                      |             |
+
+### Return type
+
+**String**
 
 ### Authorization
 

@@ -12,7 +12,7 @@ All URIs are relative to *http://13.209.6.245:8089*
 | ---------------------------------------------------------------------------- | -------------------------------- | ----------- |
 | [**carLogTop**](MetisControllerApi.md#carlogtop)                             | **GET** /metis/history/carLogTop |
 | [**history**](MetisControllerApi.md#history)                                 | **GET** /metis/history           |
-| [**received**](MetisControllerApi.md#received)                               | **GET** /metis/m2m/digiparts     |
+| [**receivced**](MetisControllerApi.md#receivced)                             | **GET** /metis/m2m/digiparts     |
 | [**receiveTerminalResponse**](MetisControllerApi.md#receiveterminalresponse) | **GET** /metis/digiparts         |
 
 > carLogTop
@@ -22,9 +22,6 @@ All URIs are relative to *http://13.209.6.245:8089*
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.metisApi;
 final String carNum = carNum_example;
@@ -67,9 +64,6 @@ try {
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.metisApi;
 final String carNum = carNum_example;
@@ -105,24 +99,21 @@ try {
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
-> received
-> String received()
+> receivced
+> String receivced()
 
 ### Example
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.metisApi;
 
 try {
-    final response = api.received();
+    final response = api.receivced();
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling MetisControllerApi->received: $e\n');
+    print('Exception when calling MetisControllerApi->receivced: $e\n');
 }
 ```
 
@@ -154,9 +145,6 @@ This endpoint does not need any parameter.
 
 ```dart
 import 'package:wegooli_friends/lib.dart';
-// TODO Configure HTTP basic authorization: jwtAuth
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').username = 'YOUR_USERNAME'
-//defaultApiClient.getAuthentication<HttpBasicAuth>('jwtAuth').password = 'YOUR_PASSWORD';
 
 final api = wegooli.metisApi;
 final DeviceControlResultDto dto;

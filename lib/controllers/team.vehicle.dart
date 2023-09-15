@@ -6,6 +6,7 @@ import 'package:intl/intl.dart';
 import '/core/app_export.dart';
 
 class VehicleController extends GetxController {
+  // ignore: prefer_constructors_over_static_methods
   static VehicleController get to => Get.isRegistered<VehicleController>()
       ? Get.find<VehicleController>()
       : Get.put(VehicleController());
@@ -115,11 +116,6 @@ class VehicleController extends GetxController {
 
   ServiceDetail? serviceDetail;
   RxBool availableNow = false.obs;
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
 
   Future<bool?> openDoor() async {
     return _manage.openDoor(terminalDevice.carNum!);

@@ -11,6 +11,7 @@ import '/core/app_export.dart' hide User;
 /// [ConnectionController] 클래스는 Sendbird 채팅 서비스와의 연결 및 통신을 관리하고,
 /// 이벤트와 메시지를 처리하며, 채팅 메시지를 보내고 받는 방법을 제공하는 역할을 담당 (내부 API와 연결되어 있지 않음).
 class ConnectionController extends GetxController with ChannelEventHandler {
+  // ignore: prefer_constructors_over_static_methods
   static ConnectionController get to => Get.isRegistered<ConnectionController>()
       ? Get.find<ConnectionController>()
       : Get.put(ConnectionController());
@@ -72,10 +73,10 @@ class ConnectionController extends GetxController with ChannelEventHandler {
 
   // TODO 추가 구현 필요.
   Future<void> getImage(ImageSource imageSource) async {
-    //pickedFile에 ImagePicker로 가져온 이미지가 담긴다.
+    // pickedFile에 ImagePicker로 가져온 이미지가 담긴다.
     final pickedFile = await picker.pickImage(source: imageSource);
     if (pickedFile != null) {
-      image = XFile(pickedFile.path); //가져온 이미지를 image에 저장
+      image = XFile(pickedFile.path); // 가져온 이미지를 image에 저장
     }
   }
 

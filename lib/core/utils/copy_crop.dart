@@ -22,7 +22,8 @@ Image copyCrop(Image src,
   }
 
   if (radius > 0 && src.hasPalette) {
-    src = src.convert(numChannels: src.numChannels);
+    // ignore: parameter_assignments
+    src = src.convert();
   }
 
   Image? firstFrame;

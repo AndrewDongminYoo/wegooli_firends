@@ -59,7 +59,7 @@ class AppRoutes {
     GetPage(
       name: acceptTermsDetail,
       bindings: [UserAccountBinding()],
-      page: () => TermsOfUseView(),
+      page: TermsOfUseView.new,
     ),
     GetPage(
       bindings: [UserAccountBinding()],

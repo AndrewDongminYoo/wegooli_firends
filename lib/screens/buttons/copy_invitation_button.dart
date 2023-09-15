@@ -2,6 +2,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+// 📦 Package imports:
+import 'package:get/get.dart';
+
 // 🌎 Project imports:
 import '/core/app_export.dart';
 
@@ -17,7 +20,8 @@ class CopyInvitationButton extends StatelessWidget {
     return CustomElevatedButton(
         onTap: () {
           Clipboard.setData(ClipboardData(text: controller.invitation.text));
-          showSnackBar('복사 완료', controller.invitation.text);
+          Get.showSnackbar(
+              GetSnackBar(title: '복사 완료', message: controller.invitation.text));
         },
         text: '복사하기',
         margin: getMargin(top: 25),

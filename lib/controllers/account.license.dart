@@ -11,6 +11,7 @@ import '/core/app_export.dart';
 
 class LicenseController extends GetxController {
   final _service = LicenseCardService();
+  // ignore: prefer_constructors_over_static_methods
   static LicenseController get to => Get.isRegistered<LicenseController>()
       ? Get.find<LicenseController>()
       : Get.put(LicenseController());

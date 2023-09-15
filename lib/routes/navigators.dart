@@ -77,8 +77,3 @@ Future<dynamic>? goSendingInvitation({bool? copyMode}) =>
 
 // [Page] 소속 된 팀이 없을 경우 보여줄 페이지
 Future<dynamic>? goTeamInvitation() => Get.toNamed(AppRoutes.teamInvitation);
-
-void showSnackBar(String title, String content) => Get.snackbar(title, content,
-    colorText: ColorConstant.white,
-    backgroundColor: ColorConstant.primaryDefault,
-    snackPosition: SnackPosition.BOTTOM);

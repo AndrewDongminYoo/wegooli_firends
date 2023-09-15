@@ -12,6 +12,12 @@ class UserController extends GetxController {
   final TeamAccountService _teamAccountService = TeamAccountService();
   final ReservationsService _reservationsService = ReservationsService();
   final TeamService _teamService = TeamService();
+
+  // ignore: prefer_constructors_over_static_methods
+  static UserController get to => Get.isRegistered<UserController>()
+      ? Get.find<UserController>()
+      : Get.put(UserController());
+
   List<Term> terms = [
     Term(agree: false, title: '개인정보 처리방침', body: privacy_policy),
     Term(agree: false, title: '개인 위치정보 처리 방침', body: location_data),
@@ -20,9 +26,6 @@ class UserController extends GetxController {
     Term(agree: false, title: '차량 위치정보 수집이용 제공동의', body: car_location),
     Term(agree: false, title: '마케팅 목적 개인정보 수집이용', body: marketing, opt: true),
   ];
-  static UserController get to => Get.isRegistered<UserController>()
-      ? Get.find<UserController>()
-      : Get.put(UserController());
 
   /// 로그인 - 아이디, 비밀번호
   TextEditingController username = TextEditingController();
@@ -60,12 +63,24 @@ class UserController extends GetxController {
   ];
 
   User currentUser = const User(
-    phoneNumber: '010-3566-1857',
+    phoneNumber: '',
     memberSeq: 0,
-    nickname: 'wegooli',
-    email: 'test@wegooli.com',
-    id: 'test',
+    nickname: '',
+    email: '',
+    id: '',
   );
+
+  bool get isAuthenticated =>
+      currentUser.id != null &&
+      currentUser.id!.isNotEmpty &&
+      currentUser.memberSeq != null &&
+      currentUser.memberSeq!.isGreaterThan(0) &&
+      currentUser.nickname != null &&
+      currentUser.nickname!.isNotEmpty &&
+      currentUser.email != null &&
+      currentUser.email!.isNotEmpty &&
+      currentUser.phoneNumber != null &&
+      currentUser.phoneNumber!.isNotEmpty;
 
   final RxList<TeamAccountModel> _members = RxList<TeamAccountModel>([]);
   final RxList<Schedule> _schedules = RxList<Schedule>.of([]);
@@ -76,7 +91,7 @@ class UserController extends GetxController {
   RxList<TeamAccountConnectionResponse> get teams => _teams;
   int? get firstTeamSeq => teams.firstOrNull?.teamSeq;
 
-  Verify oneTimeCode = Verify.Waiting;
+  SignUp state = SignUp.WAITING;
 
   void setDropdownItem(SelectionPopupModel value) {
     print('Dropdown Selected ==> ${value.title}');
@@ -135,8 +150,9 @@ class UserController extends GetxController {
     final userLike = await _service.login(emailAddress.text, password.text);
     if (userLike != null) {
       currentUser = userLike;
-      oneTimeCode = Verify.Success;
+      state = SignUp.SUCCESS;
     }
+    return Get.forceAppUpdate();
   }
 
   /// 로그아웃
@@ -151,13 +167,15 @@ class UserController extends GetxController {
   }
 
   /// 회원탈퇴
-  Future<bool> signOut() async => _service.signOut(currentUser.id!);
+  Future<bool> signOut() async {
+    await PrefUtils.clearAll();
+    return _service.signOut(currentUser.id!);
+  }
 
   Future<void> preProcessor() async {
     final accountId = currentUser.id;
     _teams(await _teamAccountService.findTeams(accountId!));
     _schedules(await retrieveSchedules(firstTeamSeq));
-    // print('_schedules : $_schedules');
     await goSharedSchedule();
   }
 
@@ -187,7 +205,7 @@ class UserController extends GetxController {
   }
 
   Future<void> acceptanceComplete() async {
-    agreement = terms.map((Term t) => toAccountAgreementModel(t)).toList();
+    agreement = terms.map(toAccountAgreementModel).toList();
     print(agreement);
     try {
       await _service.sendAcceptanceRequest(agreement);
@@ -195,7 +213,7 @@ class UserController extends GetxController {
       print('Send Acceptance Request 등록 실패\n $e');
       PrefUtils.saveAgreements(terms);
     }
-    goPhoneAuth();
+    await goPhoneAuth();
   }
 
   AccountAgreementRequest toAccountAgreementModel(Term e) {
@@ -214,9 +232,9 @@ class UserController extends GetxController {
   }
 }
 
-enum Verify {
-  Waiting,
-  Expired,
-  Success,
-  Failure,
+enum SignUp {
+  WAITING,
+  EXPIRED,
+  SUCCESS,
+  FAILURE,
 }

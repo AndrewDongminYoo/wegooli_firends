@@ -9,6 +9,7 @@ import '/core/app_export.dart';
 
 class PaymentCardController extends GetxController {
   final _service = PaymentCardService();
+  // ignore: prefer_constructors_over_static_methods
   static PaymentCardController get to =>
       Get.isRegistered<PaymentCardController>()
           ? Get.find<PaymentCardController>()

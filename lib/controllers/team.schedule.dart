@@ -22,9 +22,15 @@ class Item {
 }
 
 class ScheduleController extends GetxController {
+  final _service = ReservationsService();
   final userController = UserController.to;
-  DateTime focusedDay = kToday;
 
+  // ignore: prefer_constructors_over_static_methods
+  static ScheduleController get to => Get.isRegistered<ScheduleController>()
+      ? Get.find<ScheduleController>()
+      : Get.put(ScheduleController());
+
+  DateTime focusedDay = kToday;
   /// [Map]을 사용하기로 한 경우, [LinkedHashMap]를 사용하는 것이 권장됩니다.
   final LinkedHashMap<DateTime, List<Schedule>> _events =
       LinkedHashMap<DateTime, List<Schedule>>();
@@ -79,11 +85,6 @@ class ScheduleController extends GetxController {
   DateTime get reservationTime => items[0].date;
   DateTime get returnTime => items[1].date;
 
-  static ScheduleController get to => Get.isRegistered<ScheduleController>()
-      ? Get.find<ScheduleController>()
-      : Get.put(ScheduleController());
-
-  final _service = ReservationsService();
 
   CalendarFormat calendarFormat = CalendarFormat.month;
   RangeSelectionMode rangeSelectionMode = RangeSelectionMode

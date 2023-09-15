@@ -13,46 +13,40 @@
 
 1. **SafeArea 위젯이란 무엇인가요?**
 
-SafeArea 위젯은 노치로 인해 불필요한 클리핑과 중첩을 방지하여 기본 운영 체제의 침입을 방지하기 위해 기본 레이아웃을 감싸는 데 사용됩니다.
+    SafeArea 위젯은 노치로 인해 불필요한 클리핑과 중첩을 방지하여 기본 운영 체제의 침입을 방지하기 위해 기본 레이아웃을 감싸는 데 사용됩니다.
 
-2\. **SafeArea 위젯은 어떻게 구현하나요?
+2. **SafeArea 위젯은 어떻게 구현하나요?**
 
-```dart
-class SafeAreaWidget extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        top: true,
-        bottom: true,
-        left: true,
-        right: true,
-        minimum: EdgeInsets.all(16.0),
-        maintainBottomViewPadding: true,
-        child: Text('The is the safe area widget demo'),
-      ),
-    );
-  }
-}
-```
+    ```dart
+    class SafeAreaWidget extends StatelessWidget {
+      @override
+      Widget build(BuildContext context) {
+        return Scaffold(
+          body: SafeArea(
+            top: true,
+            bottom: true,
+            left: true,
+            right: true,
+            minimum: EdgeInsets.all(16.0),
+            maintainBottomViewPadding: true,
+            child: Text('The is the safe area widget demo'),
+          ),
+        );
+      }
+    }
+    ```
 
-모든 위젯을 SafeArea 위젯으로 감싸면 메인 Scaffold도 SafeArea 위젯으로 감쌀 수 있으며, 특히 아이폰용 디자인 시 운영체제로 인해 상단과 하단 클리핑이 나타나지 않도록 Scaffold를 SafeArea 위젯으로 감싸는 것이 필요합니다.
+    모든 위젯을 SafeArea 위젯으로 감싸면 메인 Scaffold도 SafeArea 위젯으로 감쌀 수 있으며, 특히 아이폰용 디자인 시 운영체제로 인해 상단과 하단 클리핑이 나타나지 않도록 Scaffold를 SafeArea 위젯으로 감싸는 것이 필요합니다.
 
-기본적으로 _상단, 하단, 좌측, 우측은_ true이며, _최소_ 기본 패딩은 사용자가 직접 값을 추가하여 변경할 수 있습니다. 마지막 속성인 maintainBottomViewPadding(기본값은 false)은 기본적으로 사용자가 소프트 키보드를 통해 입력이 필요한 위젯을 사용할 때 SafeArea이 아래 패딩을 유지하여 아래에 흰색 영역이 표시되고 키보드가 그 위에 위치하여 아래 패딩을 유지한다는 것을 의미합니다.
+    기본적으로 _상단, 하단, 좌측, 우측은_ true이며, _최소_ 기본 패딩은 사용자가 직접 값을 추가하여 변경할 수 있습니다. 마지막 속성인 maintainBottomViewPadding(기본값은 false)은 기본적으로 사용자가 소프트 키보드를 통해 입력이 필요한 위젯을 사용할 때 SafeArea이 아래 패딩을 유지하여 아래에 흰색 영역이 표시되고 키보드가 그 위에 위치하여 아래 패딩을 유지한다는 것을 의미합니다.
 
-3\. **팁**
+3. **팁**
 
 이 글을 쓰기 시작할 때 인터넷에 퍼져있는 정보를 조금씩 다룰 것이라고 말했듯이 위젯도 실험 해보고 다음과 같은 결과를 얻었습니다.
 
 1. Scaffold를 SafeArea로 감싸고 배경색을 사용하는 경우 전체 화면이 동일한 색상으로 덮이지 않으며, 아이폰의 경우 상단과 하단이 잘리고 안드로이드 폰의 경우 화면 상단 부분이 잘리고 기본 시스템 색상이 적용됩니다. 따라서 안전 영역 위젯을 사용하는 방법과 위치는 UI에 영향을 미치므로 반드시 확인하세요.
+
 2. Scaffold를 기본 위젯으로 사용하고 있고 Scaffold에 앱바를 추가한 경우 SafeArea 위젯을 사용할 필요가 없습니다. 앱바 위젯이 화면 상단을 관리합니다. 그래도 화면 하단에 있는 위젯으로 세이프 영역을 감싸고 싶을 수 있습니다.
-
-**이상입니다!
-
-> 제 글을 읽어주셔서 감사드리며, 이번 글도 첫 글이니 마음에 드셨다면 아래에 댓글을 남겨주시고 격려의 박수를 보내주세요. 트위터, 페이스북, 인스타그램에서 친구, 가족, 동료, 지인들과 이 기사를 공유하세요.... 감사합니다! 😁
-
-그 말과 함께 **** [**_Cup of Coffee ☕️_**](http://paypal.me/murtazasulaihi) **_와 함께 저를 응원할 수도 있습니다._**
-
 ![miro.medium.com](https://miro.medium.com/v2/resize:fit:1400/1*AuT0GXEd7j21RI6uXlxYTQ.png)
 
 [https://www.twitter.com/FlutterComm](https://www.twitter.com/FlutterComm)

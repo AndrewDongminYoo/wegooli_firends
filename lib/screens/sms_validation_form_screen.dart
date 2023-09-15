@@ -1,10 +1,10 @@
 // 🐦 Flutter imports:
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 // 📦 Package imports:
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:get/get.dart';
 
@@ -134,8 +134,8 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
                 suffix: Padding(
                   padding: getPadding(left: 30, top: 12, right: 10, bottom: 12),
                   child: controller.oneTimeCode == Verify.Waiting && codeSent
-                    ? Text('waiting..')
-                    : const SizedBox.shrink(),
+                      ? Text('waiting..')
+                      : const SizedBox.shrink(),
                 ),
               ),
               CustomElevatedButton(

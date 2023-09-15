@@ -1,5 +1,3 @@
-// ignore_for_file: unused_element
-
 // 📦 Package imports:
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -22,7 +20,7 @@ class Member extends Equatable {
     this.zipCode,
     this.phoneNumber,
     this.email,
-    this.birthDay,
+    this.birthday,
     this.sex,
     this.delYn,
     this.createdAt,
@@ -52,8 +50,8 @@ class Member extends Equatable {
   @JsonKey(name: 'email', required: false, includeIfNull: false)
   final String? email;
 
-  @JsonKey(name: 'birthDay', required: false, includeIfNull: false)
-  final String? birthDay;
+  @JsonKey(name: 'birthday', required: false, includeIfNull: false)
+  final String? birthday;
 
   @JsonKey(name: 'sex', required: false, includeIfNull: false)
   final String? sex;
@@ -81,10 +79,10 @@ class Member extends Equatable {
         zipCode,
         phoneNumber,
         email,
-        birthDay,
+        birthday,
         sex,
         delYn,
         createdAt,
-        updatedAt,
+        updatedAt
       ];
 }

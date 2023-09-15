@@ -13,10 +13,10 @@ SubmitWithdrawalModel _$SubmitWithdrawalModelFromJson(
       json,
       ($checkedConvert) {
         final val = SubmitWithdrawalModel(
-          accountId: $checkedConvert('accountId', (v) => v as String?),
-          date: $checkedConvert('date', (v) => v as String?),
-          teamSeq: $checkedConvert('teamSeq', (v) => v as int?),
           seq: $checkedConvert('seq', (v) => v as int?),
+          accountId: $checkedConvert('accountId', (v) => v as String?),
+          leavedAt: $checkedConvert('leavedAt', (v) => v as String?),
+          teamSeq: $checkedConvert('teamSeq', (v) => v as int?),
         );
         return val;
       },
@@ -32,9 +32,9 @@ Map<String, dynamic> _$SubmitWithdrawalModelToJson(
     }
   }
 
-  writeNotNull('accountId', instance.accountId);
-  writeNotNull('date', instance.date);
-  writeNotNull('teamSeq', instance.teamSeq);
   writeNotNull('seq', instance.seq);
+  writeNotNull('accountId', instance.accountId);
+  writeNotNull('leavedAt', instance.leavedAt);
+  writeNotNull('teamSeq', instance.teamSeq);
   return val;
 }

@@ -1,5 +1,3 @@
-// ignore_for_file: unused_element
-
 // 📦 Package imports:
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -25,8 +23,8 @@ class OperatorUserModel extends Equatable {
     this.sex,
     this.rrn,
     this.createdAt,
-    this.isLicense,
-    this.isPaymentCard,
+    this.licenseYn,
+    this.paymentCardYn,
   });
 
   factory OperatorUserModel.fromJson(Map<String, dynamic> json) =>
@@ -62,11 +60,11 @@ class OperatorUserModel extends Equatable {
   @JsonKey(name: 'createdAt', required: false, includeIfNull: false)
   final String? createdAt;
 
-  @JsonKey(name: 'isLicense', required: false, includeIfNull: false)
-  final String? isLicense;
+  @JsonKey(name: 'licenseYn', required: false, includeIfNull: false)
+  final String? licenseYn;
 
-  @JsonKey(name: 'isPaymentCard', required: false, includeIfNull: false)
-  final String? isPaymentCard;
+  @JsonKey(name: 'paymentCardYn', required: false, includeIfNull: false)
+  final String? paymentCardYn;
 
   Map<String, dynamic> toJson() => _$OperatorUserModelToJson(this);
 
@@ -85,7 +83,7 @@ class OperatorUserModel extends Equatable {
         sex,
         rrn,
         createdAt,
-        isLicense,
-        isPaymentCard,
+        licenseYn,
+        paymentCardYn
       ];
 }

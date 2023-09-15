@@ -1,5 +1,3 @@
-// ignore_for_file: unused_element
-
 // 📦 Package imports:
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -21,6 +19,7 @@ class CarModel extends Equatable {
     this.updatedAt,
     this.carNum,
     this.model,
+    this.carImage,
     this.status,
     this.seats,
     this.fuelType,
@@ -48,6 +47,9 @@ class CarModel extends Equatable {
 
   @JsonKey(name: 'model', required: false, includeIfNull: false)
   final String? model;
+
+  @JsonKey(name: 'carImage', required: false, includeIfNull: false)
+  final String? carImage;
 
   @JsonKey(name: 'status', required: false, includeIfNull: false)
   final String? status;
@@ -77,10 +79,10 @@ class CarModel extends Equatable {
         updatedAt,
         carNum,
         model,
+        carImage,
         status,
         seats,
         fuelType,
         segment,
-        fee,
-      ];
+        fee];
 }

@@ -22,8 +22,8 @@ OperatorUserModel _$OperatorUserModelFromJson(Map<String, dynamic> json) =>
           sex: $checkedConvert('sex', (v) => v as String?),
           rrn: $checkedConvert('rrn', (v) => v as String?),
           createdAt: $checkedConvert('createdAt', (v) => v as String?),
-          isLicense: $checkedConvert('isLicense', (v) => v as String?),
-          isPaymentCard: $checkedConvert('isPaymentCard', (v) => v as String?),
+          licenseYn: $checkedConvert('licenseYn', (v) => v as String?),
+          paymentCardYn: $checkedConvert('paymentCardYn', (v) => v as String?),
         );
         return val;
       },
@@ -48,7 +48,7 @@ Map<String, dynamic> _$OperatorUserModelToJson(OperatorUserModel instance) {
   writeNotNull('sex', instance.sex);
   writeNotNull('rrn', instance.rrn);
   writeNotNull('createdAt', instance.createdAt);
-  writeNotNull('isLicense', instance.isLicense);
-  writeNotNull('isPaymentCard', instance.isPaymentCard);
+  writeNotNull('licenseYn', instance.licenseYn);
+  writeNotNull('paymentCardYn', instance.paymentCardYn);
   return val;
 }

@@ -1,5 +1,3 @@
-// ignore_for_file: unused_element
-
 // 📦 Package imports:
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -18,9 +16,9 @@ class DeviceControlResultDto extends Equatable {
     this.userId,
     this.terTelNum,
     this.t42,
+    this.t1,
     this.t5,
     this.t0,
-    this.t1,
     this.t2,
     this.t3,
     this.t4,
@@ -59,14 +57,14 @@ class DeviceControlResultDto extends Equatable {
   @JsonKey(name: 't42', required: false, includeIfNull: false)
   final String? t42;
 
+  @JsonKey(name: 't1', required: false, includeIfNull: false)
+  final String? t1;
+
   @JsonKey(name: 't5', required: false, includeIfNull: false)
   final String? t5;
 
   @JsonKey(name: 't0', required: false, includeIfNull: false)
   final String? t0;
-
-  @JsonKey(name: 't1', required: false, includeIfNull: false)
-  final String? t1;
 
   @JsonKey(name: 't2', required: false, includeIfNull: false)
   final String? t2;
@@ -140,14 +138,19 @@ class DeviceControlResultDto extends Equatable {
   @JsonKey(name: 'nsdur', required: false, includeIfNull: false)
   final String? nsdur;
 
+  Map<String, dynamic> toJson() => _$DeviceControlResultDtoToJson(this);
+
+  @override
+  bool get stringify => true;
+
   @override
   List<Object?> get props => [
         userId,
         terTelNum,
         t42,
+        t1,
         t5,
         t0,
-        t1,
         t2,
         t3,
         t4,
@@ -171,11 +174,5 @@ class DeviceControlResultDto extends Equatable {
         t51,
         t61,
         ucp,
-        nsdur,
-      ];
-
-  Map<String, dynamic> toJson() => _$DeviceControlResultDtoToJson(this);
-
-  @override
-  bool get stringify => true;
+        nsdur];
 }

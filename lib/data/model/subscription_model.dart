@@ -1,5 +1,3 @@
-// ignore_for_file: unused_element
-
 // 📦 Package imports:
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -18,11 +16,11 @@ class SubscriptionModel extends Equatable {
     this.accountId,
     this.teamSeq,
     this.teamName,
-    this.carNumber,
+    this.carNum,
     this.carModel,
     this.carNickname,
     this.fee,
-    this.createdAt,
+    this.startAt,
     this.endAt,
     this.withdrawalAt,
   });
@@ -39,8 +37,8 @@ class SubscriptionModel extends Equatable {
   @JsonKey(name: 'teamName', required: false, includeIfNull: false)
   final String? teamName;
 
-  @JsonKey(name: 'carNumber', required: false, includeIfNull: false)
-  final String? carNumber;
+  @JsonKey(name: 'carNum', required: false, includeIfNull: false)
+  final String? carNum;
 
   @JsonKey(name: 'carModel', required: false, includeIfNull: false)
   final String? carModel;
@@ -51,8 +49,8 @@ class SubscriptionModel extends Equatable {
   @JsonKey(name: 'fee', required: false, includeIfNull: false)
   final String? fee;
 
-  @JsonKey(name: 'createdAt', required: false, includeIfNull: false)
-  final String? createdAt;
+  @JsonKey(name: 'startAt', required: false, includeIfNull: false)
+  final String? startAt;
 
   @JsonKey(name: 'endAt', required: false, includeIfNull: false)
   final String? endAt;
@@ -70,12 +68,12 @@ class SubscriptionModel extends Equatable {
         accountId,
         teamSeq,
         teamName,
-        carNumber,
+        carNum,
         carModel,
         carNickname,
         fee,
-        createdAt,
+        startAt,
         endAt,
-        withdrawalAt,
+        withdrawalAt
       ];
 }

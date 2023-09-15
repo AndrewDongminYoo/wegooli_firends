@@ -19,6 +19,7 @@ CarModel _$CarModelFromJson(Map<String, dynamic> json) => $checkedCreate(
               (v) => v == null ? null : DateTime.parse(v as String)),
           carNum: $checkedConvert('carNum', (v) => v as String?),
           model: $checkedConvert('model', (v) => v as String?),
+          carImage: $checkedConvert('carImage', (v) => v as String?),
           status: $checkedConvert('status', (v) => v as String?),
           seats: $checkedConvert('seats', (v) => v as int?),
           fuelType: $checkedConvert('fuelType', (v) => v as String?),
@@ -44,6 +45,7 @@ Map<String, dynamic> _$CarModelToJson(CarModel instance) {
   writeNotNull('updatedAt', instance.updatedAt?.toIso8601String());
   writeNotNull('carNum', instance.carNum);
   writeNotNull('model', instance.model);
+  writeNotNull('carImage', instance.carImage);
   writeNotNull('status', instance.status);
   writeNotNull('seats', instance.seats);
   writeNotNull('fuelType', instance.fuelType);

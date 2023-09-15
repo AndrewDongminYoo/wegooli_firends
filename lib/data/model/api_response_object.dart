@@ -7,8 +7,14 @@ import 'result.dart';
 
 part 'api_response_object.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: true,
+  explicitToJson: true,
+)
 class ApiResponseObject extends Equatable {
+  /// Returns a new [ApiResponseObject] instance.
   const ApiResponseObject({
     this.result,
     this.resultCode,
@@ -17,14 +23,18 @@ class ApiResponseObject extends Equatable {
     this.userInfo,
   });
 
-  factory ApiResponseObject.fromJson(Map<String, dynamic> json) {
-    return _$ApiResponseObjectFromJson(json);
-  }
+  factory ApiResponseObject.fromJson(Map<String, dynamic> json) =>
+      _$ApiResponseObjectFromJson(json);
 
+  @JsonKey(name: 'result', required: false, includeIfNull: false)
   final Result? result;
+  @JsonKey(name: 'resultCode', required: false, includeIfNull: false)
   final int? resultCode;
+  @JsonKey(name: 'resultMsg', required: false, includeIfNull: false)
   final dynamic resultMsg;
+  @JsonKey(name: 'failMsg', required: false, includeIfNull: false)
   final String? failMsg;
+  @JsonKey(name: 'userInfo', required: false, includeIfNull: false)
   final dynamic userInfo;
 
   Map<String, dynamic> toJson() => _$ApiResponseObjectToJson(this);

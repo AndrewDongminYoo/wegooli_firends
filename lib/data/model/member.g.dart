@@ -18,7 +18,7 @@ Member _$MemberFromJson(Map<String, dynamic> json) => $checkedCreate(
           zipCode: $checkedConvert('zipCode', (v) => v as String?),
           phoneNumber: $checkedConvert('phoneNumber', (v) => v as String?),
           email: $checkedConvert('email', (v) => v as String?),
-          birthDay: $checkedConvert('birthDay', (v) => v as String?),
+          birthday: $checkedConvert('birthday', (v) => v as String?),
           sex: $checkedConvert('sex', (v) => v as String?),
           delYn: $checkedConvert('delYn', (v) => v as String?),
           createdAt: $checkedConvert('createdAt', (v) => v as String?),
@@ -44,7 +44,7 @@ Map<String, dynamic> _$MemberToJson(Member instance) {
   writeNotNull('zipCode', instance.zipCode);
   writeNotNull('phoneNumber', instance.phoneNumber);
   writeNotNull('email', instance.email);
-  writeNotNull('birthDay', instance.birthDay);
+  writeNotNull('birthday', instance.birthday);
   writeNotNull('sex', instance.sex);
   writeNotNull('delYn', instance.delYn);
   writeNotNull('createdAt', instance.createdAt);

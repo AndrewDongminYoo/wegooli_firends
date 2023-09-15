@@ -16,9 +16,9 @@ DeviceControlResultDto _$DeviceControlResultDtoFromJson(
           userId: $checkedConvert('userId', (v) => v as String?),
           terTelNum: $checkedConvert('terTelNum', (v) => v as String?),
           t42: $checkedConvert('t42', (v) => v as String?),
+          t1: $checkedConvert('t1', (v) => v as String?),
           t5: $checkedConvert('t5', (v) => v as String?),
           t0: $checkedConvert('t0', (v) => v as String?),
-          t1: $checkedConvert('t1', (v) => v as String?),
           t2: $checkedConvert('t2', (v) => v as String?),
           t3: $checkedConvert('t3', (v) => v as String?),
           t4: $checkedConvert('t4', (v) => v as String?),
@@ -61,9 +61,9 @@ Map<String, dynamic> _$DeviceControlResultDtoToJson(
   writeNotNull('userId', instance.userId);
   writeNotNull('terTelNum', instance.terTelNum);
   writeNotNull('t42', instance.t42);
+  writeNotNull('t1', instance.t1);
   writeNotNull('t5', instance.t5);
   writeNotNull('t0', instance.t0);
-  writeNotNull('t1', instance.t1);
   writeNotNull('t2', instance.t2);
   writeNotNull('t3', instance.t3);
   writeNotNull('t4', instance.t4);

@@ -28,32 +28,32 @@ UserDetailsDto _$UserDetailsDtoFromJson(Map<String, dynamic> json) =>
           enabled: $checkedConvert('enabled', (v) => v as bool?),
           color: $checkedConvert('color', (v) => v as String?),
           password: $checkedConvert('password', (v) => v as String?),
+          username: $checkedConvert('username', (v) => v as String?),
+          seq: $checkedConvert('seq', (v) => v as int?),
           memberSeq: $checkedConvert('memberSeq', (v) => v as int?),
           delYn: $checkedConvert('delYn', (v) => v as String?),
           customerKey: $checkedConvert('customerKey', (v) => v as String?),
-          seq: $checkedConvert('seq', (v) => v as int?),
           delimit: $checkedConvert('delimit', (v) => v as String?),
           updatedAt: $checkedConvert('updatedAt', (v) => v as String?),
           activeYn: $checkedConvert('activeYn', (v) => v as String?),
           createdAt: $checkedConvert('createdAt', (v) => v as String?),
           phoneNumber: $checkedConvert('phoneNumber', (v) => v as String?),
-          username: $checkedConvert('username', (v) => v as String?),
-          birthDay: $checkedConvert('birthDay', (v) => v as String?),
           nickname: $checkedConvert('nickname', (v) => v as String?),
-          profilePicture:
-              $checkedConvert('profilePicture', (v) => v as String?),
           add1: $checkedConvert('add1', (v) => v as String?),
           add2: $checkedConvert('add2', (v) => v as String?),
           zipCode: $checkedConvert('zipCode', (v) => v as String?),
-          email: $checkedConvert('email', (v) => v as String?),
           sex: $checkedConvert('sex', (v) => v as String?),
+          birthday: $checkedConvert('birthday', (v) => v as String?),
+          profilePicture:
+              $checkedConvert('profilePicture', (v) => v as String?),
+          email: $checkedConvert('email', (v) => v as String?),
+          deleteAt: $checkedConvert('deleteAt', (v) => v as String?),
+          credentialsNonExpired:
+              $checkedConvert('credentialsNonExpired', (v) => v as bool?),
           accountNonExpired:
               $checkedConvert('accountNonExpired', (v) => v as bool?),
           accountNonLocked:
               $checkedConvert('accountNonLocked', (v) => v as bool?),
-          credentialsNonExpired:
-              $checkedConvert('credentialsNonExpired', (v) => v as bool?),
-          deleteAt: $checkedConvert('deleteAt', (v) => v as String?),
         );
         return val;
       },
@@ -76,27 +76,27 @@ Map<String, dynamic> _$UserDetailsDtoToJson(UserDetailsDto instance) {
   writeNotNull('enabled', instance.enabled);
   writeNotNull('color', instance.color);
   writeNotNull('password', instance.password);
+  writeNotNull('username', instance.username);
+  writeNotNull('seq', instance.seq);
   writeNotNull('memberSeq', instance.memberSeq);
   writeNotNull('delYn', instance.delYn);
   writeNotNull('customerKey', instance.customerKey);
-  writeNotNull('seq', instance.seq);
   writeNotNull('delimit', instance.delimit);
   writeNotNull('updatedAt', instance.updatedAt);
   writeNotNull('activeYn', instance.activeYn);
   writeNotNull('createdAt', instance.createdAt);
   writeNotNull('phoneNumber', instance.phoneNumber);
-  writeNotNull('username', instance.username);
-  writeNotNull('birthDay', instance.birthDay);
   writeNotNull('nickname', instance.nickname);
-  writeNotNull('profilePicture', instance.profilePicture);
   writeNotNull('add1', instance.add1);
   writeNotNull('add2', instance.add2);
   writeNotNull('zipCode', instance.zipCode);
-  writeNotNull('email', instance.email);
   writeNotNull('sex', instance.sex);
+  writeNotNull('birthday', instance.birthday);
+  writeNotNull('profilePicture', instance.profilePicture);
+  writeNotNull('email', instance.email);
+  writeNotNull('deleteAt', instance.deleteAt);
+  writeNotNull('credentialsNonExpired', instance.credentialsNonExpired);
   writeNotNull('accountNonExpired', instance.accountNonExpired);
   writeNotNull('accountNonLocked', instance.accountNonLocked);
-  writeNotNull('credentialsNonExpired', instance.credentialsNonExpired);
-  writeNotNull('deleteAt', instance.deleteAt);
   return val;
 }

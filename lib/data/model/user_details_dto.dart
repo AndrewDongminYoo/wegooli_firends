@@ -1,5 +1,3 @@
-// ignore_for_file: unused_element
-
 // 📦 Package imports:
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -26,28 +24,28 @@ class UserDetailsDto extends Equatable {
     this.enabled,
     this.color,
     this.password,
+    this.username,
+    this.seq,
     this.memberSeq,
     this.delYn,
     this.customerKey,
-    this.seq,
     this.delimit,
     this.updatedAt,
     this.activeYn,
     this.createdAt,
     this.phoneNumber,
-    this.username,
-    this.birthDay,
     this.nickname,
-    this.profilePicture,
     this.add1,
     this.add2,
     this.zipCode,
-    this.email,
     this.sex,
+    this.birthday,
+    this.profilePicture,
+    this.email,
+    this.deleteAt,
+    this.credentialsNonExpired,
     this.accountNonExpired,
     this.accountNonLocked,
-    this.credentialsNonExpired,
-    this.deleteAt,
   });
 
   factory UserDetailsDto.fromJson(Map<String, dynamic> json) =>
@@ -74,6 +72,12 @@ class UserDetailsDto extends Equatable {
   @JsonKey(name: 'password', required: false, includeIfNull: false)
   final String? password;
 
+  @JsonKey(name: 'username', required: false, includeIfNull: false)
+  final String? username;
+
+  @JsonKey(name: 'seq', required: false, includeIfNull: false)
+  final int? seq;
+
   @JsonKey(name: 'memberSeq', required: false, includeIfNull: false)
   final int? memberSeq;
 
@@ -82,9 +86,6 @@ class UserDetailsDto extends Equatable {
 
   @JsonKey(name: 'customerKey', required: false, includeIfNull: false)
   final String? customerKey;
-
-  @JsonKey(name: 'seq', required: false, includeIfNull: false)
-  final int? seq;
 
   @JsonKey(name: 'delimit', required: false, includeIfNull: false)
   final String? delimit;
@@ -101,17 +102,8 @@ class UserDetailsDto extends Equatable {
   @JsonKey(name: 'phoneNumber', required: false, includeIfNull: false)
   final String? phoneNumber;
 
-  @JsonKey(name: 'username', required: false, includeIfNull: false)
-  final String? username;
-
-  @JsonKey(name: 'birthDay', required: false, includeIfNull: false)
-  final String? birthDay;
-
   @JsonKey(name: 'nickname', required: false, includeIfNull: false)
   final String? nickname;
-
-  @JsonKey(name: 'profilePicture', required: false, includeIfNull: false)
-  final String? profilePicture;
 
   @JsonKey(name: 'add1', required: false, includeIfNull: false)
   final String? add1;
@@ -122,11 +114,23 @@ class UserDetailsDto extends Equatable {
   @JsonKey(name: 'zipCode', required: false, includeIfNull: false)
   final String? zipCode;
 
+  @JsonKey(name: 'sex', required: false, includeIfNull: false)
+  final String? sex;
+
+  @JsonKey(name: 'birthday', required: false, includeIfNull: false)
+  final String? birthday;
+
+  @JsonKey(name: 'profilePicture', required: false, includeIfNull: false)
+  final String? profilePicture;
+
   @JsonKey(name: 'email', required: false, includeIfNull: false)
   final String? email;
 
-  @JsonKey(name: 'sex', required: false, includeIfNull: false)
-  final String? sex;
+  @JsonKey(name: 'deleteAt', required: false, includeIfNull: false)
+  final String? deleteAt;
+
+  @JsonKey(name: 'credentialsNonExpired', required: false, includeIfNull: false)
+  final bool? credentialsNonExpired;
 
   @JsonKey(name: 'accountNonExpired', required: false, includeIfNull: false)
   final bool? accountNonExpired;
@@ -134,11 +138,10 @@ class UserDetailsDto extends Equatable {
   @JsonKey(name: 'accountNonLocked', required: false, includeIfNull: false)
   final bool? accountNonLocked;
 
-  @JsonKey(name: 'credentialsNonExpired', required: false, includeIfNull: false)
-  final bool? credentialsNonExpired;
+  Map<String, dynamic> toJson() => _$UserDetailsDtoToJson(this);
 
-  @JsonKey(name: 'deleteAt', required: false, includeIfNull: false)
-  final String? deleteAt;
+  @override
+  bool get stringify => true;
 
   @override
   List<Object?> get props => [
@@ -149,32 +152,27 @@ class UserDetailsDto extends Equatable {
         enabled,
         color,
         password,
+        username,
+        seq,
         memberSeq,
         delYn,
         customerKey,
-        seq,
         delimit,
         updatedAt,
         activeYn,
         createdAt,
         phoneNumber,
-        username,
-        birthDay,
         nickname,
-        profilePicture,
         add1,
         add2,
         zipCode,
-        email,
         sex,
-        accountNonExpired,
-        accountNonLocked,
-        credentialsNonExpired,
+        birthday,
+        profilePicture,
+        email,
         deleteAt,
+        credentialsNonExpired,
+        accountNonExpired,
+        accountNonLocked
       ];
-
-  Map<String, dynamic> toJson() => _$UserDetailsDtoToJson(this);
-
-  @override
-  bool get stringify => true;
 }

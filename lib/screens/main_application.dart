@@ -27,8 +27,8 @@ class _MainApplicationState extends State<MainApplication> {
           key: navigatorKey,
           initialRoute: userController.teams.isNotEmpty
               ? AppRoutes.sharedSchedule
-              // : AppRoutes.sharedSchedule,
-              : AppRoutes.teamInvitation,
+              : AppRoutes.sharedSchedule,
+              // : AppRoutes.teamInvitation,
           onGenerateRoute: (settings) {
             late Widget page;
             switch (settings.name) {

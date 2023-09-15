@@ -64,13 +64,15 @@ class ScheduleController extends GetxController {
     Item(
       title: '예약시간',
       // DateTime reservationTime = DateTime.now();
-      date: DateTime.now(),
+      date: DateTime.now()
+          .add(Duration(minutes: 10 - DateTime.now().minute % 10)),
     ),
     // Add more items here
     Item(
       title: '반납시간',
       // DateTime returnTime = DateTime.now();
-      date: DateTime.now().add(const Duration(hours: 2)),
+      date: DateTime.now()
+          .add(Duration(hours: 2, minutes: 10 - DateTime.now().minute % 10)),
     ),
   ]);
 
@@ -112,14 +114,16 @@ class ScheduleController extends GetxController {
       Item(
         title: '예약시간',
         // DateTime reservationTime = DateTime.now();
-        date: DateTime.now(),
+        date: DateTime.now()
+            .add(Duration(minutes: 10 - DateTime.now().minute % 10)),
         isExpanded: true,
       ),
       // Add more items here
       Item(
         title: '반납시간',
         // DateTime returnTime = DateTime.now();
-        date: DateTime.now().add(const Duration(hours: 2)),
+        date: DateTime.now()
+            .add(Duration(hours: 2, minutes: 10 - DateTime.now().minute % 10)),
       ),
     ]);
   }

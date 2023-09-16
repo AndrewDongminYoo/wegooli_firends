@@ -91,7 +91,18 @@ class UserController extends GetxController {
   RxList<TeamAccountConnectionResponse> get teams => _teams;
   int? get firstTeamSeq => teams.firstOrNull?.teamSeq;
 
-  SignUp state = SignUp.WAITING;
+  @protected
+  SignUp _state = SignUp.WAITING;
+
+  SignUp get state {
+    print('get state: $_state');
+    return _state;
+  }
+
+  set state(SignUp value) {
+    print('set state: $_state -> $value');
+    _state = value;
+  }
 
   void setDropdownItem(SelectionPopupModel value) {
     print('Dropdown Selected ==> ${value.title}');

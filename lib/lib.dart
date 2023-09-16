@@ -69,6 +69,7 @@ export 'data/docs/terms_of_usage_4.dart';
 export 'data/docs/terms_of_usage_5.dart';
 export 'data/docs/terms_of_usage_6.dart';
 export 'data/docs/terms_of_usage_7.dart';
+export 'data/firebase/auth_exceptions.dart';
 export 'data/firebase/firebase_options.dart';
 export 'data/model/account.dart';
 export 'data/model/account_agreement_model.dart';

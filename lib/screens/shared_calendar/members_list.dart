@@ -27,7 +27,7 @@ class MembersList extends StatelessWidget {
                       } else {
                         return MemberAvatar(
                             name: member.nickname ?? '-',
-                            avatarImagePath: Assets.images.imgAvatar2.path,
+                            avatarImagePath: Assets.images.placeholder02.path,
                             personalColor: member.color ?? '#FFCC08');
                       }
                     }),

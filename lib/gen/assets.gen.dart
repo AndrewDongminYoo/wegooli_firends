@@ -15,6 +15,67 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lottie/lottie.dart';
 
+class $AssetsCarsGen {
+  const $AssetsCarsGen();
+
+  /// File path: assets/cars/ev6-gt_s_klm.png
+  AssetGenImage get ev6GtSKlm =>
+      const AssetGenImage('assets/cars/ev6-gt_s_klm.png');
+
+  /// File path: assets/cars/ev6_s_glb.png
+  AssetGenImage get ev6SGlb => const AssetGenImage('assets/cars/ev6_s_glb.png');
+
+  /// File path: assets/cars/ev9_s_ism.png
+  AssetGenImage get ev9SIsm => const AssetGenImage('assets/cars/ev9_s_ism.png');
+
+  /// File path: assets/cars/k3-gt_s_cr5.png
+  AssetGenImage get k3GtSCr5 =>
+      const AssetGenImage('assets/cars/k3-gt_s_cr5.png');
+
+  /// File path: assets/cars/k3_s_m4b.png
+  AssetGenImage get k3SM4b => const AssetGenImage('assets/cars/k3_s_m4b.png');
+
+  /// File path: assets/cars/k5_s_agt.png
+  AssetGenImage get k5SAgt => const AssetGenImage('assets/cars/k5_s_agt.png');
+
+  /// File path: assets/cars/k8_s_klg.png
+  AssetGenImage get k8SKlg => const AssetGenImage('assets/cars/k8_s_klg.png');
+
+  /// File path: assets/cars/k9_s_d9b.png
+  AssetGenImage get k9SD9b => const AssetGenImage('assets/cars/k9_s_d9b.png');
+
+  /// File path: assets/cars/niro-ev_s_swp.png
+  AssetGenImage get niroEvSSwp =>
+      const AssetGenImage('assets/cars/niro-ev_s_swp.png');
+
+  /// File path: assets/cars/niro-plus_s_m7g.png
+  AssetGenImage get niroPlusSM7g =>
+      const AssetGenImage('assets/cars/niro-plus_s_m7g.png');
+
+  /// File path: assets/cars/ray-ev_s_eu3.png
+  AssetGenImage get rayEvSEu3 =>
+      const AssetGenImage('assets/cars/ray-ev_s_eu3.png');
+
+  /// File path: assets/cars/ray_s_m9y.png
+  AssetGenImage get raySM9y => const AssetGenImage('assets/cars/ray_s_m9y.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [
+        ev6GtSKlm,
+        ev6SGlb,
+        ev9SIsm,
+        k3GtSCr5,
+        k3SM4b,
+        k5SAgt,
+        k8SKlg,
+        k9SD9b,
+        niroEvSSwp,
+        niroPlusSM7g,
+        rayEvSEu3,
+        raySM9y
+      ];
+}
+
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
@@ -25,50 +86,6 @@ class $AssetsImagesGen {
   /// File path: assets/images/img_acorn.png
   AssetGenImage get imgAcorn =>
       const AssetGenImage('assets/images/img_acorn.png');
-
-  /// File path: assets/images/img_avatar_1.png
-  AssetGenImage get imgAvatar1 =>
-      const AssetGenImage('assets/images/img_avatar_1.png');
-
-  /// File path: assets/images/img_avatar_2.png
-  AssetGenImage get imgAvatar2 =>
-      const AssetGenImage('assets/images/img_avatar_2.png');
-
-  /// File path: assets/images/img_avatar_3.png
-  AssetGenImage get imgAvatar3 =>
-      const AssetGenImage('assets/images/img_avatar_3.png');
-
-  /// File path: assets/images/img_avatar_4.png
-  AssetGenImage get imgAvatar4 =>
-      const AssetGenImage('assets/images/img_avatar_4.png');
-
-  /// File path: assets/images/img_avatar_5.png
-  AssetGenImage get imgAvatar5 =>
-      const AssetGenImage('assets/images/img_avatar_5.png');
-
-  /// File path: assets/images/img_car_all_new_k3.png
-  AssetGenImage get imgCarAllNewK3 =>
-      const AssetGenImage('assets/images/img_car_all_new_k3.png');
-
-  /// File path: assets/images/img_car_all_new_mo.png
-  AssetGenImage get imgCarAllNewMo =>
-      const AssetGenImage('assets/images/img_car_all_new_mo.png');
-
-  /// File path: assets/images/img_car_mor_urban.png
-  AssetGenImage get imgCarMorUrban =>
-      const AssetGenImage('assets/images/img_car_mor_urban.png');
-
-  /// File path: assets/images/img_car_new_ray.png
-  AssetGenImage get imgCarNewRay =>
-      const AssetGenImage('assets/images/img_car_new_ray.png');
-
-  /// File path: assets/images/img_car_spark.png
-  AssetGenImage get imgCarSpark =>
-      const AssetGenImage('assets/images/img_car_spark.png');
-
-  /// File path: assets/images/img_crying.png
-  AssetGenImage get imgCrying =>
-      const AssetGenImage('assets/images/img_crying.png');
 
   /// File path: assets/images/img_gooli_0.png
   AssetGenImage get imgGooli0 =>
@@ -94,10 +111,6 @@ class $AssetsImagesGen {
   AssetGenImage get imgGooli5 =>
       const AssetGenImage('assets/images/img_gooli_5.png');
 
-  /// File path: assets/images/img_logo_gllo.png
-  AssetGenImage get imgLogoGllo =>
-      const AssetGenImage('assets/images/img_logo_gllo.png');
-
   /// File path: assets/images/img_wegooli_title.png
   AssetGenImage get imgWegooliTitle =>
       const AssetGenImage('assets/images/img_wegooli_title.png');
@@ -122,24 +135,12 @@ class $AssetsImagesGen {
   List<AssetGenImage> get values => [
         imageNotFound,
         imgAcorn,
-        imgAvatar1,
-        imgAvatar2,
-        imgAvatar3,
-        imgAvatar4,
-        imgAvatar5,
-        imgCarAllNewK3,
-        imgCarAllNewMo,
-        imgCarMorUrban,
-        imgCarNewRay,
-        imgCarSpark,
-        imgCrying,
         imgGooli0,
         imgGooli1,
         imgGooli2,
         imgGooli3,
         imgGooli4,
         imgGooli5,
-        imgLogoGllo,
         imgWegooliTitle,
         placeholder01,
         placeholder02,
@@ -474,6 +475,7 @@ class $AssetsSvgGasGen {
 class Assets {
   Assets._();
 
+  static const $AssetsCarsGen cars = $AssetsCarsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
   static const $AssetsLottiesGen lotties = $AssetsLottiesGen();
   static const $AssetsSvgGen svg = $AssetsSvgGen();

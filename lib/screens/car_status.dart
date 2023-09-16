@@ -38,8 +38,8 @@ class _CarStatusPageState extends State<CarStatusPage> {
                         CustomImageView(
                           // TODO 백엔드 이미지 저장이 완료되야 쓸수있을 듯...
                           // imagePath: controller.terminalDevice.carImage ??
-                          //     Assets.images.imgCarNewRay.path,
-                          imagePath: Assets.images.imgCarNewRay.path,
+                          //     Assets.cars.rayQM9y.path,
+                          imagePath: Assets.cars.rayEvSEu3.path,
                           height: getVerticalSize(92),
                           width: getHorizontalSize(129),
                           fit: BoxFit.fitWidth,

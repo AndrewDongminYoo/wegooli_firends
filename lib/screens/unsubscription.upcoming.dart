@@ -42,7 +42,7 @@ class UnsubscriptionUpcoming extends GetWidget<VehicleController> {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           CustomImageView(
-                            imagePath: Assets.images.imgCarAllNewMo.path,
+                            imagePath: Assets.cars.niroEvSSwp.path,
                             height: getVerticalSize(96),
                             width: getHorizontalSize(167),
                           ),

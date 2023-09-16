@@ -96,6 +96,7 @@ flutter:
   assets:
     - .env
     - assets/
+    - assets/cars/
     - assets/images/
     - assets/lotties/
     - assets/svg/

@@ -21,7 +21,7 @@ class MyProfileSection extends StatelessWidget {
         children: [
           CustomImageView(
             margin: getMargin(right: 16),
-            imagePath: Assets.images.imgAvatar1.path,
+            imagePath: Assets.images.placeholder01.path,
             height: getSize(65),
             width: getSize(65),
             radius: BorderRadius.circular(40),

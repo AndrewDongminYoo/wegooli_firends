@@ -24,7 +24,7 @@ class CarStatusDetail extends GetWidget<VehicleController> {
               Container(
                   padding: getPadding(left: 80, top: 13, bottom: 20, right: 80),
                   child: CustomImageView(
-                    imagePath: Assets.images.imgCarSpark.path,
+                    imagePath: Assets.cars.niroEvSSwp.path,
                     height: getVerticalSize(132),
                     width: getHorizontalSize(200),
                   )),

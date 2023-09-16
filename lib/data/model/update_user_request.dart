@@ -1,5 +1,3 @@
-// ignore_for_file: unused_element
-
 // 📦 Package imports:
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -76,6 +74,11 @@ class UpdateUserRequest extends Equatable {
   @JsonKey(name: 'color', required: false, includeIfNull: false)
   final String? color;
 
+  Map<String, dynamic> toJson() => _$UpdateUserRequestToJson(this);
+
+  @override
+  bool get stringify => true;
+
   @override
   List<Object?> get props => [
         seq,
@@ -93,9 +96,4 @@ class UpdateUserRequest extends Equatable {
         profilePicture,
         color,
       ];
-
-  Map<String, dynamic> toJson() => _$UpdateUserRequestToJson(this);
-
-  @override
-  bool get stringify => true;
 }

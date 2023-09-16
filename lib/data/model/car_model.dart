@@ -84,5 +84,6 @@ class CarModel extends Equatable {
         seats,
         fuelType,
         segment,
-        fee];
+        fee,
+      ];
 }

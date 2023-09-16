@@ -1,5 +1,3 @@
-// ignore_for_file: unused_element
-
 // 📦 Package imports:
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -36,16 +34,11 @@ class SelectPushRequest extends Equatable {
   @JsonKey(name: 'delYn', required: false, includeIfNull: false)
   final String? delYn;
 
-  @override
-  List<Object?> get props => [
-        title,
-        content,
-        bm,
-        delYn,
-      ];
-
   Map<String, dynamic> toJson() => _$SelectPushRequestToJson(this);
 
   @override
   bool get stringify => true;
+
+  @override
+  List<Object?> get props => [title, content, bm, delYn];
 }

@@ -1,5 +1,3 @@
-// ignore_for_file: unused_element
-
 // 📦 Package imports:
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -38,9 +36,5 @@ class OperatorCarRequest extends Equatable {
   bool get stringify => true;
 
   @override
-  List<Object?> get props => [
-        contract,
-        address,
-        carNum,
-      ];
+  List<Object?> get props => [contract, address, carNum];
 }

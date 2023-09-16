@@ -1,0 +1,2 @@
+#!/bin/sh
+git whatchanged --pretty=format:"# %H%h%nAuthor: %an <%ae>%nDate:   %cd%nMSG:    %s%n%n    %b" --date=iso8601-strict --diff-filter=MUDRA --name-status | sed -r 's/A\t/Added     /g; s/M\t/Modified  /g; s/D\t/Deleted   /g; s/U\t/Unmerged  /g; s/R100\t/Renamed   /g; s/R0\d+\t/Relocated /g;' > CHANGELOG

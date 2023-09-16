@@ -1,5 +1,3 @@
-// ignore_for_file: unused_element
-
 // 📦 Package imports:
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -58,14 +56,6 @@ class ScheduleModel extends Equatable {
   bool get stringify => true;
 
   @override
-  List<Object?> get props => [
-        seq,
-        delYn,
-        createdAt,
-        updatedAt,
-        teamSeq,
-        accountId,
-        startAt,
-        endAt,
-      ];
+  List<Object?> get props =>
+      [seq, delYn, createdAt, updatedAt, teamSeq, accountId, startAt, endAt];
 }

@@ -1,5 +1,3 @@
-// ignore_for_file: unused_element
-
 // 📦 Package imports:
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -96,6 +94,11 @@ class CarHistoryDto extends Equatable {
   @JsonKey(name: 'createdAt', required: false, includeIfNull: false)
   final String? createdAt;
 
+  Map<String, dynamic> toJson() => _$CarHistoryDtoToJson(this);
+
+  @override
+  bool get stringify => true;
+
   @override
   List<Object?> get props => [
         seq,
@@ -118,9 +121,4 @@ class CarHistoryDto extends Equatable {
         brDoorLock,
         createdAt,
       ];
-
-  Map<String, dynamic> toJson() => _$CarHistoryDtoToJson(this);
-
-  @override
-  bool get stringify => true;
 }

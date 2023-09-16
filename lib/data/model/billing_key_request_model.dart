@@ -1,5 +1,3 @@
-// ignore_for_file: unused_element
-
 // 📦 Package imports:
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -41,6 +39,11 @@ class BillingKeyRequestModel extends Equatable {
   @JsonKey(name: 'customerKey', required: false, includeIfNull: false)
   final String? customerKey;
 
+  Map<String, dynamic> toJson() => _$BillingKeyRequestModelToJson(this);
+
+  @override
+  bool get stringify => true;
+
   @override
   List<Object?> get props => [
         cardExpirationMonth,
@@ -49,9 +52,4 @@ class BillingKeyRequestModel extends Equatable {
         customerIdentityNumber,
         customerKey,
       ];
-
-  Map<String, dynamic> toJson() => _$BillingKeyRequestModelToJson(this);
-
-  @override
-  bool get stringify => true;
 }

@@ -1,5 +1,3 @@
-// ignore_for_file: unused_element
-
 // 📦 Package imports:
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -45,10 +43,5 @@ class OperatorTeamDetail extends Equatable {
   bool get stringify => true;
 
   @override
-  List<Object?> get props => [
-        model,
-        fee,
-        contactAt,
-        accountList,
-      ];
+  List<Object?> get props => [model, fee, contactAt, accountList];
 }

@@ -134,6 +134,6 @@ class UserDto extends Equatable {
         deleteAt,
         color,
         customerKey,
-        activeYn
+        activeYn,
       ];
 }

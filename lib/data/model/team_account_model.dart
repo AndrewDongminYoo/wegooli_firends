@@ -1,5 +1,3 @@
-// ignore_for_file: unused_element
-
 // 📦 Package imports:
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -54,13 +52,6 @@ class TeamAccountModel extends Equatable {
   bool get stringify => true;
 
   @override
-  List<Object?> get props => [
-        accountId,
-        color,
-        nickname,
-        profilePicture,
-        useYn,
-        joinedAt,
-        leavedAt,
-      ];
+  List<Object?> get props =>
+      [accountId, color, nickname, profilePicture, useYn, joinedAt, leavedAt];
 }

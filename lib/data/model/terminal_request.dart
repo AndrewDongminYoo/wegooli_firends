@@ -1,5 +1,3 @@
-// ignore_for_file: unused_element
-
 // 📦 Package imports:
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -54,13 +52,6 @@ class TerminalRequest extends Equatable {
   bool get stringify => true;
 
   @override
-  List<Object?> get props => [
-        seq,
-        delYn,
-        createdAt,
-        updatedAt,
-        carNum,
-        phoneNumber,
-        status,
-      ];
+  List<Object?> get props =>
+      [seq, delYn, createdAt, updatedAt, carNum, phoneNumber, status];
 }

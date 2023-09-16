@@ -74,6 +74,6 @@ class SubscriptionModel extends Equatable {
         fee,
         startAt,
         endAt,
-        withdrawalAt
+        withdrawalAt,
       ];
 }

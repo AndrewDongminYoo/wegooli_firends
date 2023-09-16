@@ -84,5 +84,6 @@ class CarRequest extends Equatable {
         seats,
         fuelType,
         segment,
-        fee];
+        fee,
+      ];
 }

@@ -1,5 +1,3 @@
-// ignore_for_file: unused_element
-
 // 📦 Package imports:
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -48,19 +46,12 @@ class SelectQnARequest extends Equatable {
   @JsonKey(name: 'delYn', required: false, includeIfNull: false)
   final String? delYn;
 
-  @override
-  List<Object?> get props => [
-        category,
-        title,
-        content,
-        answer,
-        status,
-        createdBy,
-        delYn,
-      ];
-
   Map<String, dynamic> toJson() => _$SelectQnARequestToJson(this);
 
   @override
   bool get stringify => true;
+
+  @override
+  List<Object?> get props =>
+      [category, title, content, answer, status, createdBy, delYn];
 }

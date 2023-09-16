@@ -173,6 +173,6 @@ class UserDetailsDto extends Equatable {
         deleteAt,
         credentialsNonExpired,
         accountNonExpired,
-        accountNonLocked
+        accountNonLocked,
       ];
 }

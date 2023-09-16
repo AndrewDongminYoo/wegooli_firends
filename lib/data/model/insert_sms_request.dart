@@ -1,5 +1,3 @@
-// ignore_for_file: unused_element
-
 // 📦 Package imports:
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -44,18 +42,11 @@ class InsertSmsRequest extends Equatable {
   @JsonKey(name: 'createdBy', required: false, includeIfNull: false)
   final String? createdBy;
 
-  @override
-  List<Object?> get props => [
-        seq,
-        title,
-        content,
-        file,
-        bm,
-        createdBy,
-      ];
-
   Map<String, dynamic> toJson() => _$InsertSmsRequestToJson(this);
 
   @override
   bool get stringify => true;
+
+  @override
+  List<Object?> get props => [seq, title, content, file, bm, createdBy];
 }

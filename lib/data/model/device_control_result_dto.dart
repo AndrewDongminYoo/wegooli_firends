@@ -174,5 +174,6 @@ class DeviceControlResultDto extends Equatable {
         t51,
         t61,
         ucp,
-        nsdur];
+        nsdur,
+      ];
 }

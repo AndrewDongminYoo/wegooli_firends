@@ -1,5 +1,3 @@
-// ignore_for_file: unused_element
-
 // 📦 Package imports:
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -30,6 +28,7 @@ class TeamModel extends Equatable {
     this.add2,
     this.zipCode,
   });
+
   factory TeamModel.fromJson(Map<String, dynamic> json) =>
       _$TeamModelFromJson(json);
 
@@ -79,6 +78,7 @@ class TeamModel extends Equatable {
 
   @override
   bool get stringify => true;
+
   @override
   List<Object?> get props => [
         seq,

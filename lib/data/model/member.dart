@@ -83,6 +83,6 @@ class Member extends Equatable {
         sex,
         delYn,
         createdAt,
-        updatedAt
+        updatedAt,
       ];
 }

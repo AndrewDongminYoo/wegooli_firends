@@ -1,5 +1,3 @@
-// ignore_for_file: unused_element
-
 // 📦 Package imports:
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -44,6 +42,7 @@ class AccountAgreementModel extends Equatable {
 
   @override
   bool get stringify => true;
+
   @override
   List<Object?> get props =>
       [classification, accountId, agreeYn, createdAt, updatedAt];

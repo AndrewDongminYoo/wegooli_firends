@@ -84,6 +84,6 @@ class OperatorUserModel extends Equatable {
         rrn,
         createdAt,
         licenseYn,
-        paymentCardYn
+        paymentCardYn,
       ];
 }

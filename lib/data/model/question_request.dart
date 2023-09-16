@@ -1,5 +1,3 @@
-// ignore_for_file: unused_element
-
 // 📦 Package imports:
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -40,17 +38,11 @@ class QuestionRequest extends Equatable {
   @JsonKey(name: 'file', required: false, includeIfNull: false)
   final String? file;
 
-  @override
-  List<Object?> get props => [
-        seq,
-        category,
-        title,
-        content,
-        file,
-      ];
-
   Map<String, dynamic> toJson() => _$QuestionRequestToJson(this);
 
   @override
   bool get stringify => true;
+
+  @override
+  List<Object?> get props => [seq, category, title, content, file];
 }

@@ -1,5 +1,3 @@
-// ignore_for_file: unused_element
-
 // 📦 Package imports:
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -60,6 +58,11 @@ class ShareServiceModel extends Equatable {
   @JsonKey(name: 'maxSub', required: false, includeIfNull: false)
   final String? maxSub;
 
+  Map<String, dynamic> toJson() => _$ShareServiceModelToJson(this);
+
+  @override
+  bool get stringify => true;
+
   @override
   List<Object?> get props => [
         shareServiceSeq,
@@ -73,9 +76,4 @@ class ShareServiceModel extends Equatable {
         nowSub,
         maxSub,
       ];
-
-  Map<String, dynamic> toJson() => _$ShareServiceModelToJson(this);
-
-  @override
-  bool get stringify => true;
 }

@@ -1,5 +1,3 @@
-// ignore_for_file: unused_element
-
 // 📦 Package imports:
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -64,6 +62,11 @@ class OperatorTeamModel extends Equatable {
   @JsonKey(name: 'seq', required: false, includeIfNull: false)
   final int? seq;
 
+  Map<String, dynamic> toJson() => _$OperatorTeamModelToJson(this);
+
+  @override
+  bool get stringify => true;
+
   @override
   List<Object?> get props => [
         teamName,
@@ -78,9 +81,4 @@ class OperatorTeamModel extends Equatable {
         endAt,
         seq,
       ];
-
-  Map<String, dynamic> toJson() => _$OperatorTeamModelToJson(this);
-
-  @override
-  bool get stringify => true;
 }

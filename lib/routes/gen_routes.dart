@@ -8,7 +8,7 @@ import '/lib.dart';
 Widget getPages(RouteSettings settings) {
   final controller = UserController.to;
   StatefulWidget checkAuth(String? name) =>
-      !controller.isAuthenticated ? const LoginPage() : const MainPage();
+      !controller.isAuthenticated ? const MainPage() : const LoginPage();
   final page = switch (settings.name) {
     AppRoutes.bookDatetimePicker => checkAuth(settings.name),
     AppRoutes.carSmartKey => checkAuth(settings.name),

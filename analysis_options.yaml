@@ -29,251 +29,83 @@ linter:
   # [🧪 experimental] : 실험적인 린터
   # [❕ removed/deprecated] : 더이상 지원하지 않는/않을 예정인 린터
   rules:
-    ### Error rules ###
-    # 이러한 규칙은 코드에서 발생할 수 있는 오류 및 기타 실수를 식별합니다.
-    always_use_package_imports: true # [🔧] "lib/"에 있는 파일에 대한 상대 임포트를 피하세요.
-    avoid_dynamic_calls: true # "dynamic" 대상에서 메서드 호출이나 속성 액세스를 피하세요.
-    avoid_empty_else: true # [🔰,🔵,🦩,🔧] 빈 else 문을 사용하지 마세요.
-    avoid_relative_lib_imports: true # [🔰,🔵,🦩,🔧] "lib/"에 있는 파일에 대한 상대 임포트를 피합니다.
-    avoid_returning_null_for_future: true # [deprecated,🔧] future에 대해 "null"을 반환하지 마세요.
-    avoid_slow_async_io: true # 느린 비동기 "dart:io" 메서드는 피하세요.
-    avoid_type_to_string: true # 결과가 축소될 수 있으므로 프로덕션 코드에서 .toString()을 사용하지 마세요.
-    avoid_types_as_parameter_names: true # [🔰,🔵,🦩,🔧] 타입을 파라미터 이름으로 사용하지 마세요.
-    avoid_web_libraries_in_flutter: true # [🦩] Flutter 웹 플러그인 패키지 외부에서 웹 전용 라이브러리를 사용하지 마세요.
-    cancel_subscriptions: true # dart.async.StreamSubscription의 인스턴스를 취소(제거)해야 합니다.
-    close_sinks: true # "dart.core.Sink"의 인스턴스를 사용 후에는 닫아야 합니다.
-    collection_methods_unrelated_type: true # [🔰,🔵,🦩] 관련 없는 타입의 인수를 사용하여 다양한 컬렉션 메서드를 호출합니다.
-    comment_references: false # 문서 주석의 범위 식별자에서만 참조하세요.
-    control_flow_in_finally: true # [🔵,🦩] 제어문에서 finally 플로우를 피합니다.
-    deprecated_member_use_from_same_package: true # 더 이상 사용되지 않는(deprecated된) 요소는 선언된 패키지 내에서 사용하지 마세요.
-    diagnostic_describe_all_properties: false # [🔧] 디버그 메서드에서 모든 공용 프로퍼티를 참조하세요.
-    discarded_futures: false # [🔧] 비동기 블록에서 비동기 함수를 호출하지 마세요.
-    empty_statements: true # [🔵,🦩,🔧] 빈 문 "{}"을 피합니다.
-    hash_and_equals: true # [🔰,🔵,🦩,🔧] "hash"를 오버라이딩할 경우 항상 "=="를 오버라이딩하세요.
-    implicit_reopen: true # [🧪 ,🔧] 암시적으로 클래스를 다시 열지 마세요.
-    invalid_case_patterns: true # [🧪 ,🔧] Dart 3.0에서 유효한 사용 case 표현식을 사용합니다.
-    invariant_booleans: true # [❕] 조건은 무조건 "true" 또는 "false"로 평가해서는 안 됩니다.
-    iterable_contains_unrelated_type: true # [❕] 관련 없는 타입의 참조와 함께 "Iterable.contains"를 호출하는 경우.
-    list_remove_unrelated_type: true # [❕] 관련 없는 타입의 참조와 함께 "remove"를 호출합니다.
-    literal_only_boolean_expressions: true # 리터럴로만 구성된 부울 표현식.
-    no_adjacent_strings_in_list: true # 목록에 인접한 문자열을 사용하지 마세요.
-    no_duplicate_case_values: true # [🔰,🔵,🦩,🔧] 같은 값의 케이스를 두 개 이상 사용하지 않습니다.
-    no_logic_in_create_state: true # [🦩] createState에 로직을 넣지 않습니다.
-    no_self_assignments: true # 변수를 self에 할당하지 마세요.
-    no_wildcard_variable_uses: true # 와일드카드 파라미터나 변수를 사용하지 마세요.
-    prefer_relative_imports: true # [🔧] "lib/"에 있는 파일에 대한 상대 임포트를 선호합니다.
-    prefer_void_to_null: true # [🔵,🦩,🔧] 무효화를 원하지 않는 것이 확실하지 않는 한 Null 타입을 사용하지 마세요.
-    test_types_in_equals: true # 연산자 ==(객체 기타)에서 타입 인수를 테스트합니다.
-    throw_in_finally: true # finally 블록에서 "throw"를 사용하지 마세요.
-    unnecessary_statements: true # 불필요한 문을 사용하지 마세요.
-    unrelated_type_equality_checks: true # [🔰,🔵,🦩] 관련 없는 타입의 참조와 함께 등호 연산자 "==" 호출.
-    unsafe_html: true # 안전하지 않은 HTML API를 피하세요.
-    valid_regexps: true # [🔰,🔵,🦩] 유효한 정규식 구문을 사용합니다.
-
-    ### Style rules
-    # 주로 [Dart 스타일 가이드](https://dart.dev/effective-dart/style)에서 파생된 스타일 개선 가이드의 확장입니다.
-    always_declare_return_types: false # [🔧] 메서드 반환 타입을 선언합니다.
-    always_put_control_body_on_new_line: false # [🔧] 제어 구조 표현식을 해당 문에서 분리합니다.
-    always_put_required_named_parameters_first: false # [🔧] 필수 명명된 파라미터를 먼저 넣으세요.
-    always_require_non_null_named_parameters: true # [deprecated,🔧] 기본값 없이 명명된 파라미터에 "@require"를 지정합니다.
-    always_specify_types: false # [🔧] 항상 타입 주석을 지정합니다.
-    annotate_overrides: true # [🔵,🦩,🔧] 오버라이딩된 멤버에 주석을 지정합니다.
-    avoid_annotating_with_dynamic: true # [🔧] 불필요한 dynamic 타입 어노테이션을 달지 마세요.
-    avoid_as: true # [❕] 타입캐스팅을 위해 "as"를 사용하지 마세요.
-    avoid_bool_literals_in_conditional_expressions: false # 조건식 표현식에 부울 리터럴을 사용하지 마세요.
-    avoid_catches_without_on_clauses: false # on 절 없이 캐치를 사용하지 마세요.
-    avoid_catching_errors: true # 오류나 이를 구현하는 타입을 명시적으로 캐치하지 마세요.
-    avoid_classes_with_only_static_members: false # 정적 멤버만 포함하는 클래스를 정의하지 마세요.
-    avoid_double_and_int_checks: false # 이중 및 정수 검사를 피하세요.
-    avoid_equals_and_hash_code_on_mutable_classes: true # '@immutable'으로 표시되지 않은 클래스에 == 연산자 및 해시코드를 오버로드하지 마세요.
-    avoid_escaping_inner_quotes: # [🔧] 주변 따옴표를 변환하여 내부 따옴표를 이스케이프하지 마세요.
-      ignore_for_file:
-        - lib/gen/*.dart # must be ignored for items generated from arb files
-    avoid_field_initializers_in_const_classes: false # 생성자 클래스에서 필드 이니셜라이저를 피하세요.
-    avoid_final_parameters: true # 파라미터 선언에 파이널을 사용하지 마세요.
-    avoid_implementing_value_types: false # 오버라이딩 "=="를 오버라이딩하는 클래스를 구현하지 마세요.
-    avoid_init_to_null: true # [🔵,🦩,🔧] 변수를 명시적으로 널로 초기화하지 마세요.
-    avoid_js_rounded_ints: true # 자바스크립트 반올림 정수를 피하세요.
-    avoid_multiple_declarations_per_line: true # [🔧] 한 줄에 여러 변수를 선언하지 마세요.
-    avoid_null_checks_in_equality_operators: true # [🔵,🦩,🔧] 사용자 정의 == 연산자에서 "null"을 확인하지 마세요.
-    avoid_positional_boolean_parameters: false # 위치 부울 파라미터를 사용하지 마세요.
-    avoid_private_typedef_functions: true # [🔧] private typedef 함수를 사용하지 마십시오.
-    avoid_redundant_argument_values: true # [🔧] 중복된 인수 값을 피하세요.
-    avoid_renaming_method_parameters: true # [🔵,🦩,🔧] 오버라이딩된 메서드의 파라미터 이름을 바꾸지 마세요.
-    avoid_return_types_on_setters: true # [🔵,🦩,🔧] 세터에서 반환 타입을 피하세요.
-    avoid_returning_null: true # [🔵,🦩,🔧] 무효에 대해 "null"을 반환하지 마세요.
-    avoid_returning_this: true # 유창한 인터페이스를 구현하기 위해 메서드에서 this를 반환하지 마세요.
-    avoid_setters_without_getters: true # 게터가 없는 세터는 피하세요.
-    avoid_shadowing_type_parameters: true # [🔰,🔵,🦩] 섀도잉 타입 파라미터를 피하세요.
-    avoid_single_cascade_in_expression_statements: true # [🔵,🦩,🔧] 표현식 문에서 단일 캐스케이드를 사용하지 마세요.
-    avoid_types_on_closure_parameters: false # [🔧] 함수 표현식 파라미터에 타입 주석을 달지 마세요.
-    avoid_unused_constructor_parameters: true # [🔧] 생성자에서 사용하지 않는 파라미터를 정의하지 마세요.
-    avoid_void_async: false # [🔧] 무효를 반환하는 비동기 함수를 사용하지 마세요.
-    camel_case_extensions: true # [🔰,🔵,🦩] UpperCamelCase를 사용하여 확장 이름을 지정합니다.
-    camel_case_types: true # [🔰,🔵,🦩] UpperCamelCase를 사용한 타입 이름 지정.
-    cascade_invocations: false # [🔧] 동일한 참조에서 연속적인 메서드 호출을 캐스케이드합니다.
-    cast_nullable_to_non_nullable: false # [🔧] 널링 가능한 값을 널링 불가능한 타입으로 캐스팅하지 않습니다.
-    combinators_ordering: false # [🔧] 컴비네이터 이름을 알파벳순으로 정렬합니다.
-    conditional_uri_does_not_exist: true # 존재하지 않는 uri를 가르키는 조건부 임포트를 사용하지 않습니다.
-    curly_braces_in_flow_control_structures: true # [🔰,🔵,🦩,🔧] 모든 흐름 제어 구조에 중괄호를 사용합니다.
-    dangling_library_doc_comments: false # [🔧] 라이브러리 지시어에 라이브러리 문서 주석을 첨부합니다.
-    deprecated_consistency: true # 더 이상 사용되지 않는 어노테이션이 누락되었습니다.
-    directives_ordering: true # [🔧] 효과적인 다트 가이드 지시어 정렬 규칙을 준수합니다.
-    do_not_use_environment: true # 환경 선언 변수를 사용하지 마십시오.
-    empty_catches: true # [🔰,🔵,🦩,🔧] 빈 캐치 블록을 사용하지 마세요.
-    empty_constructor_bodies: true # [🔵,🦩,🔧] 빈 생성자 본문에는 "{}" 대신 ";"를 사용합니다.
-    enable_null_safety: true # [❕] 사운드 널 안전을 사용합니다.
-    eol_at_end_of_file: true # [🔧] 파일 끝에 줄 바꿈 한 줄을 넣습니다.
-    exhaustive_cases: true # [🔵,🦩,🔧] 열거형 클래스의 모든 상수에 대해 대/소문자 절을 정의합니다.
-    file_names: true # [🔰,🔵,🦩] "lowercase_with_underscores"를 사용하여 소스 파일 이름을 지정합니다.
-    flutter_style_todos: true # Flutter TODO 형식을 사용합니다: // TODO(메시지 작성자 이름): 메시지, https://URL-to-issue.
-    implementation_imports: true # [🔵,🦩] 다른 패키지에서 구현 파일을 가져오지 마세요.
-    implicit_call_tearoffs: true # [🔰,🔵,🦩,🔧] 객체를 함수로 사용할 때 "call" 메서드를 명시적으로 분리합니다.
-    join_return_with_assignment: true # 가능하면 할당과 함께 반환 문을 조인합니다.
-    leading_newlines_in_multiline_strings: true # [🔧] 여러 줄 문자열은 개행으로 시작합니다.
-    library_annotations: true # [🔧] 라이브러리 지시어에 라이브러리 어노테이션을 첨부합니다.
-    library_names: true # [🔵,🦩] "lowercase_with_underscores"를 사용하여 라이브러리 이름을 지정합니다.
-    lines_longer_than_80_chars: false # 80자를 초과하는 줄은 피합니다.
-    matching_super_parameters: true # 일치하는 수퍼 파라미터 이름을 사용합니다.
-    missing_whitespace_between_adjacent_strings: true # 인접한 문자열 사이에 공백이 없습니다.
-    no_default_cases: false # [🧪 ] 기본 대소문자 컨벤션을 사용하지 않습니다.
-    no_leading_underscores_for_library_prefixes: true # [🔵,🦩,🔧] 라이브러리 접두사에 선행 언더스코어를 사용하지 마세요.
-    no_literal_bool_comparisons: true # [🔧] 부울을 부울 리터럴과 비교하지 마세요.
-    no_runtimeType_toString: true # 런타임 타입에서 toString()을 호출하지 마세요.
-    non_constant_identifier_names: true # [🔰,🔵,🦩,🔧] 소문자를 사용하여 상수가 아닌 식별자의 이름을 지정합니다.
-    noop_primitive_operations: true # [🔧] 원시 연산자를 사용하지 않습니다.
-    null_check_on_nullable_type_parameter: true # [🔰,🔵,🦩,🔧] 잠재적인 널 가능 타입 파라미터에 대해 널 검사를 사용하지 마세요.
-    null_closures: true # [🔵,🦩,🔧] 클로저가 예상되는 인자로 "null"을 전달하지 마세요.
-    omit_local_variable_types: true # [🔧] 지역 변수에 대한 타입 어노테이션을 생략합니다.
-    one_member_abstracts: true # 간단한 함수로 충분할 때 멤버가 하나뿐인 추상 클래스를 정의하지 마세요.
-    only_throw_errors: true # 예외 또는 오류를 확장하는 클래스의 인스턴스만 throw 할 수 있습니다.
-    overridden_fields: true # [🔵,🦩] 필드를 오버라이딩하지 마세요.
-    package_api_docs: true # 모든 공개 API에 대해 문서 주석을 제공하세요.
-    package_prefixed_library_names: true # [🔰,🔵,🦩] 라이브러리 이름 앞에 패키지 이름과 점으로 구분된 경로를 붙입니다.
-    parameter_assignments: false # 함수나 메서드의 파라미터에 대한 참조를 재할당하지 마세요.
-    prefer_adjacent_string_concatenation: true # [🔵,🦩,🔧] 인접한 문자열을 사용하여 문자열 리터럴을 연결합니다.
-    prefer_asserts_in_initializer_lists: true # 이니셜라이저 목록에 어설션을 넣는 것을 선호합니다.
-    prefer_asserts_with_message: true # 메시지와 함께 어설트를 사용해야 합니다.
-    prefer_bool_in_asserts: true # [❕] 어설션 조건으로 부울을 사용하는 것을 선호합니다.
-    prefer_collection_literals: true # [🔵,🦩,🔧] 가능하면 컬렉션 리터럴을 사용합니다.
-    prefer_conditional_assignment: true # [🔵,🦩,🔧] 널을 테스트하는 것보다 "??="를 사용하는 것을 선호합니다.
-    prefer_constructors_over_static_methods: false # 인스턴스 생성 시 정적 메서드 대신 생성자를 정의하는 것을 선호합니다.
-    prefer_contains: true # [🔵,🦩,🔧] "리스트" 및 "스트링" 인스턴스에 포함(contains)을 사용합니다.
-    prefer_double_quotes: false # [🔧] 이스케이프 시퀀스가 필요하지 않은 경우 큰따옴표를 선호합니다.
-    prefer_equal_for_default_values: true # [removed,🔵,🦩] 명명된 파라미터를 기본값과 구분하려면 "="를 사용합니다.
-    prefer_expression_function_bodies: true # [🔧] 본문이 단일 반환 문인 짧은 멤버에는 =>를 사용합니다.
-    prefer_final_in_for_each: true # [🔧] 참조가 재할당되지 않는 경우 for-loop 변수 선언에 final을 선호합니다.
-    prefer_final_locals: true # [🔧] 재할당되지 않은 경우 로컬 변수 선언에 final을 선호합니다.
-    prefer_final_parameters: true # [🔧] 재할당되지 않은 경우 파라미터 선언에 final 선언을 선호합니다.
-    prefer_for_elements_to_map_fromIterable: true # [🔵,🦩,🔧] 이터러블에서 맵을 작성할 때 "for" 요소를 선호합니다.
-    prefer_foreach: true # 모든 요소에만 함수를 적용하려면 "forEach"를 사용합니다.
-    prefer_generic_function_type_aliases: true # [🔰,🔵,🦩,🔧] 일반 함수 타입 별칭을 선호합니다.
-    prefer_if_elements_to_conditional_expressions: true # [🔧] 가능하면 조건 표현식보다 if 요소를 선호합니다.
-    prefer_if_null_operators: true # [🔵,🦩,🔧] IF NULL 연산자를 사용하는 것을 선호합니다.
-    prefer_initializing_formals: true # [🔵,🦩,🔧] 가능하면 초기화 포뮬러를 사용합니다.
-    prefer_inlined_adds: true # [🔵,🦩,🔧] 가능한 경우 인라인 목록 항목 선언을 사용합니다.
-    prefer_int_literals: false # [🔧] 이중 리터럴보다 정숫값 리터럴을 선호합니다.
-    prefer_is_not_empty: true # [🔰,🔵,🦩,🔧] 이터러블 및 맵에는 "isNotEmpty"를 사용합니다.
-    prefer_is_not_operator: true # [🔵,🦩,🔧] is! 연산자를 선호합니다.
-    prefer_iterable_whereType: true # [🔰,🔵,🦩,🔧] 이터러블에 "whereType"을 선호합니다.
-    prefer_mixin: true # 믹스인 사용을 선호합니다.
-    prefer_null_aware_method_calls: true # 널 인식 메서드 호출을 선호합니다.
-    prefer_null_aware_operators: true # [🔵,🦩,🔧] 널 인식 연산자 사용을 선호합니다.
-    prefer_single_quotes: true # [🔧] 작은따옴표가 포함된 문자열(e.g. I'm)에만 큰따옴표를 사용합니다.
-    prefer_spread_collections: true # [🔵,🦩,🔧] 가능하면 스프레드 컬렉션을 사용합니다.
-    prefer_typing_uninitialized_variables: true # [🔰,🔵,🦩,🔧] 초기화되지 않은 변수 및 필드 입력을 선호합니다.
-    provide_deprecation_message: true # [🔰,🔵,🦩] Deprecated("message")를 통해 사용 중단 메시지를 제공합니다.
-    public_member_api_docs: false # 모든 공용 멤버를 문서화하세요.
-    recursive_getters: true # [🔵,🦩] 속성 게터는 재귀적으로 반환합니다.
-    require_trailing_commas: false # [🔧] 모든 함수 호출 및 선언에 후행 쉼표를 사용하세요.
-    sized_box_shrink_expand: true # 명명된 생성자를 축소 및 확장하는 SizedBox를 사용합니다.
-    slash_for_doc_comments: true # [🔵,🦩,🔧] 문서 주석에는 ///를 사용하는 것을 선호합니다.
-    sort_constructors_first: false # [🔧] 생성자 선언을 다른 멤버보다 먼저 정렬합니다.
-    sort_unnamed_constructors_first: true # [🔧] 이름이 지정되지 않은 생성자 선언을 먼저 정렬합니다.
-    super_goes_last: true # [❕] 생성자 초기화 목록에서 "super" 호출을 마지막에 배치합니다.
-    tighten_type_of_initializing_formals: true # 초기화 형식의 타입을 강화합니다.
-    type_annotate_public_apis: false # [🔧] 공용 API에 주석을 입력합니다.
-    type_init_formals: true # [🔵,🦩,🔧] 초기화 포뮬러에 주석을 달지 마세요.
-    type_literal_in_constant_pattern: true # [🔧] 타입 리터럴과 함께 상수 패턴을 사용하지 마세요.
-    unawaited_futures: false # [🔧] "Future" 결과가 "async"인 함수 본문은 "await"으로 처리하거나 "dart:async"를 사용하여 "unawaited"으로 표시해야 합니다..
-    unnecessary_await_in_return: true # 리턴값으로 불필요한 await 키워드는 사용하지 마세요.
-    unnecessary_breaks: true # [🔧] 중단이 암시된 경우 명시적 "break"를 사용하지 마세요.
-    unnecessary_constructor_name: true # [🔵,🦩,🔧] 불필요한 "new" 생성자 이름.
-    unnecessary_final: true # [🔧] 불가피하지 않은 경우 지역 변수에 "final"을 사용하지 마세요.
-    unnecessary_lambdas: true # [🔧] 불가피하지 않은 경우 람다를 만들지 마세요.
-    unnecessary_late: true # [🔵,🦩,🔧] 필요하지 않은 경우 "late" 수정자를 지정하지 마세요.
-    unnecessary_library_directive: true # [🔧] 문서 주석이나 어노테이션이 없는 한 라이브러리 지시어를 사용하지 마세요.
-    unnecessary_null_aware_assignments: true # [🔵,🦩,🔧] 널 인식 할당에 널을 사용하지 마세요.
-    unnecessary_null_aware_operator_on_extension_on_nullable: true # 널 가능 타입의 확장에 불필요한 널 인식 연산자.
-    unnecessary_null_checks: true # [🧪 ,🔧] 불필요한 널 검사.
-    unnecessary_nullable_for_final_variable_declarations: true # [🔵,🦩,🔧] 널이 아닌 값으로 초기화된 final 변수에는 널이 아닌 타입을 사용하세요.
-    unnecessary_parenthesis: true # [🔧] 불필요한 괄호는 제거할 수 있습니다.
-    unnecessary_raw_strings: true # [🔧] 불필요한 원시 문자열.
-    unnecessary_string_escapes: true # [🔵,🦩,🔧] 문자열에서 불필요한 백슬래시를 제거합니다.
-    unnecessary_string_interpolations: true # [🔵,🦩,🔧] 불필요한 문자열 보간.
-    unnecessary_to_list_in_spreads: true # [🔧] 스프레드에 불필요한 toList().
-    unreachable_from_main: true # [🔧] 실행 라이브러리에서 도달할 수 없는 최상위 멤버.
-    unused_import: true
-    use_colored_box: true # "ColoredBox"를 사용하세요.
-    use_decorated_box: true # [🔧] "DecoratedBox"를 사용하십시오.
-    use_enums: true # [🔧] 열거형처럼 동작하는 클래스 대신 열거형을 사용합니다.
-    use_full_hex_values_for_flutter_colors: true # [🦩,🔧] 색을 인스턴스화할 때 8자리 16진수(0xFFFFFFFF)를 선호합니다.
-    use_function_type_syntax_for_parameters: true # [🔵,🦩,🔧] 파라미터에는 일반 함수형 구문을 사용합니다.
-    use_if_null_to_convert_nulls_to_bools: true # if-null 연산자를 사용하여 널을 부울로 변환합니다.
-    use_is_even_rather_than_modulo: true # "initValue % 2"의 결과를 확인하는 대신 "intValue.isOdd/isEven"을 선호합니다.
-    use_late_for_private_fields_and_variables: true # [🧪 ] 널링할 수 없는 타입의 private 멤버에는 late를 사용합니다.
-    use_named_constants: true # 미리 정의된 명명된 상수를 사용합니다.
-    use_raw_strings: false # [🔧] 이스케이프를 피하려면 원시 문자열을 사용합니다.
-    use_setters_to_change_properties: false # 개념적으로 속성을 변경하는 연산에는 세터를 사용합니다.
-    use_string_buffers: true # 문자열 버퍼를 사용하여 문자열을 구성합니다.
-    use_string_in_part_of_directives: true # [🔰,🔵,🦩,🔧] 지시문의 일부에 문자열을 사용합니다.
-    use_super_parameters: true # [🧪 ,🔧] 가능하면 슈퍼 이니셜라이저 파라미터를 사용합니다.
-    use_test_throws_matchers: true # fail() 대신 throwsA 일치자를 사용합니다.
-    use_to_and_as_if_applicable: true # 해당되는 경우 메서드 이름을 to/_to 또는 as/_as로 시작합니다.
-    void_checks: true # [🔰,🔵,🦩] void를 명시적으로 할당하지 마세요.
-
-    # Pub Rules
-    # 이 규칙은 [펍 패키지](https://dart.dev/guides/packages) 설정과 관련하여 발생할 수 있는 문제를 식별합니다.
-    package_names: true # [🔵,🦩] 패키지 이름에 "lowercase_with_underscores"를 사용합니다.
-    secure_pubspec_urls: true # "pubspec.yaml"에서 보안 URL을 사용합니다.
-    sort_pub_dependencies: false # 펍 의존성을 알파벳순으로 정렬합니다.
+    # 코드가 너무 장황해지며, 재할당을 사전에 막을 수 있는 `parameter_assignments` 규칙을 사용할때에는 그다지 큰 문제가 되지 않습니다.
+    prefer_final_parameters: false
+    parameter_assignments: true
+    # 개인적인 취향입니다. 가독성이 떨어진다고 생각.
+    cascade_invocations: false
+    # `prefer_single_quotes`와 충돌합니다. 작은 따옴표를 사용하겠습니다.
+    # 작은 따옴표는 입력하기 쉽고 가독성을 떨어뜨리지 않습니다.
+    prefer_double_quotes: false
+    prefer_single_quotes: true
+    # `omit_local_variable_types` 및 기타 규칙과 충돌합니다.
+    # Dart 가이드라인에 따라 코드를 더 읽기 쉽게 만들기 위해
+    # 불필요한 타이핑은 피하고 싶습니다.
+    # https://dart.dev/guides/language/effective-dart/design#avoid-type-annotating-initialized-local-variables 참조
+    always_specify_types: false
+    omit_local_variable_types: true
+    # `prefer_final_locals`와 호환되지 않음
+    # 변경 불가능한 지역 변수를 사용하면 대규모 구현에서 더 예측할 수 있습니다.
+    unnecessary_final: false
+    prefer_final_locals: true
+    # 단일 리턴을 가진 `build` 메서드가 있을 수 있는 Flutter의 경우,
+    # `body`가 충분히 가치가 있을 만큼 복잡합니다.
+    prefer_expression_function_bodies: false
+    # 일부 위젯에서 사용하는 `Key key`와 `@required Widget child`를
+    # 마지막에 배치하는 규칙과 충돌합니다.
+    always_put_required_named_parameters_first: false
+    # `as`는 잘 사용한다면 그렇게 나쁘지 않습니다(특히 곧 출시될 널러블 타입의 경우).
+    # 명시적 예외는 암시적 예외보다 낫습니다.
+    avoid_as: false
+    # 이 프로젝트는 Flutter 스타일의 todo를 사용하지 않습니다.
+    flutter_style_todos: false
+    # on 구문을 사용하기에는 너무 복잡한 경우,
+    # 자발적으로 모든 예외를 캐치해야 하는 상황이 많습니다.
+    avoid_catches_without_on_clauses: false
+    # 때때로 적당한 길이의 코드를 강제로 두 개로 나누어 가독성을 떨어뜨립니다.
+    # 80자 제한을 지키려고 노력하는 한, 그보다 약간 긴 코드는 괜찮습니다.
+    lines_longer_than_80_chars: false
+    # `implicit-dynamic` 비활성화와 충돌
+    avoid_annotating_with_dynamic: false
+    # "lib/"에 있는 파일에 대한 상대 임포트를 선호합니다.
+    prefer_relative_imports: true
+    # `prefer_relative_imports`와 충돌합니다.
+    always_use_package_imports: false
+    # 그렇지 않으면 `missing_return`과 충돌하므로 NNBD를 사용할 때까지 지금은 비활성화합니다.
+    no_default_cases: false
+    # False positive가 너무 많음. 널 검사 단언문에는 메시지가 필요하지 않습니다.
+    prefer_asserts_with_message: false
+    # `context.select`로 번거로움
+    avoid_types_on_closure_parameters: false
+    # False positive가 너무 많음. (builders, widget 그래프 테스트 등)
+    diagnostic_describe_all_properties: false
+    # False positive가 너무 많음. (setter 유형 함수)
+    avoid_positional_boolean_parameters: false
+    # Provider에게는 해당 없음
+    prefer_const_constructors_in_immutables: false
+    # 모든 API 멤버에 대한 문서 설명이 필요하지 않은 경우가 많습니다.
+    public_member_api_docs: false
+    # 런타임 환경에 콘솔에 너무 많은 데이터를 노출하는 것은 좋지 않지만, 나중에 삭제해도 늦지 않습니다.
+    avoid_print: false
+    # 필수 후행 쉼표 누락 - 가로로 너무 긴 코드 만큼, 줄바꿈이 너무 많은 코드도 가독성이 낮아집니다.
+    require_trailing_commas: false
+    # '다이나믹' 대상에 대한 메서드 호출 또는 속성 액세스. 대상에 타입을 지정해 보세요.
+    avoid_dynamic_calls: false
+    # 도큐먼트 코멘트에 참조된 이름에 대한 임포트를 추가 - 불필요합니다.
+    comment_references: false
+    # 지시어 섹션을 알파벳순으로 정렬합니다. 지시문을 정렬해 보세요.
+    directives_ordering: false
+    # 믹스인 타입만만 'with' 구문에서 사용되어야 합니다.
+    prefer_mixin: false
+    # 클래스는 인스턴스 멤버를 정의해야 합니다. 인스턴스 동작을 추가하거나 멤버를 클래스 밖으로 이동해 보세요.
+    avoid_classes_with_only_static_members: false
+    # 상수 이름이 소문자 식별자가 아닙니다. 다트 스타일 가이드를 따르도록 이름을 변경해 보세요.
+    constant_identifier_names: false
 
 analyzer:
-  language:
-    strict-casts: false
-    strict-raw-types: false
-  errors:
-    avoid_function_literals_in_foreach_calls: error # [🔵,🦩,🔧] 함수 리터럴에 "forEach"를 사용하지 마세요.
-    avoid_print: ignore # [🦩,🔧] 프로덕션 코드에서 "print" 호출을 피하세요.
-    avoid_returning_null_for_void: error # [❕] 반환 타입이 부울, 더블, 인트 또는 숫자인 멤버에서 "null"을 반환하지 마세요.
-    avoid_unnecessary_containers: error # [🦩,🔧] 불필요한 컨테이너를 피하세요.
-    await_only_futures: error # [🔰,🔵,🦩,🔧] 미래만 기다립니다.
-    constant_identifier_names: info # [🔵,🦩,🔧] 상수 이름에는 lowerCamelCase를 사용하는 것을 선호합니다.
-    depend_on_referenced_packages: error # [🔰,🔵,🦩] (직접 의존하지 않고 간접적으로) 참조된 패키지에 의존하지 않습니다.
-    library_prefixes: error # [🔵,🦩] 라이브러리 접두사를 지정할 때는 "lowercase_with_underscores"를 사용합니다.
-    library_private_types_in_public_api: error # [🔵,🦩] 공용 API에서 private 타입을 사용하지 마세요.
-    no_leading_underscores_for_local_identifiers: error # [🔵,🦩,🔧] 로컬 식별자에 선행 밑줄을 사용하지 마세요.
-    prefer_const_constructors_in_immutables: error # [🦩,🔧] 상수 생성자가 있는 "const"를 선호합니다.
-    prefer_const_constructors: error # [🦩,🔧] "@immutable" 클래스에서 생성자 선언을 선호합니다.
-    prefer_const_declarations: error # [🦩,🔧] 선언 시 "final"보다 "const"를 선호합니다.
-    prefer_const_literals_to_create_immutables: error # [🦩,🔧] immutable 클래스에서 생성자 파라미터로 상수 리터럴을 선호합니다.
-    prefer_final_fields: error # [🔵,🦩,🔧] private 필드는 final 필드일 수 있습니다.
-    prefer_function_declarations_over_variables: error # [🔵,🦩,🔧] 함수 선언을 사용하여 함수를 이름에 바인딩합니다.
-    prefer_interpolation_to_compose_strings: error # [🔵,🦩,🔧] 보간을 사용하여 문자열과 값을 구성합니다.
-    prefer_is_empty: error # [🔰,🔵,🦩,🔧] 이터러블 및 맵에 "isEmpty"를 사용합니다.
-    sized_box_for_whitespace: error # [🦩,🔧] 공백은 SizedBox를 사용합니다.
-    sort_child_properties_last: error # [🦩,🔧] 위젯 인스턴스 생성에서 자식 속성을 마지막에 정렬합니다.
-    unnecessary_brace_in_string_interps: error # [🔵,🦩,🔧] 필요하지 않은 경우 보간에 중괄호를 사용하지 마세요.
-    unnecessary_const: error # [🔵,🦩,🔧] const 키워드를 사용하지 마세요.
-    unnecessary_getters_setters: info # [🔵,🦩,🔧] 안전만을 위해 게터와 세터에서 필드를 감싸지는 마세요.
-    unnecessary_new: error # [🔵,🦩,🔧] 불필요한 새 키워드.
-    unnecessary_null_in_if_null_operators: error # [🔵,🦩,🔧] "IF NULL" 연산자에서 "NULL"을 사용하지 마세요.
-    unnecessary_overrides: error # [🔰,🔵,🦩,🔧] 동일한 파라미터를 가진 슈퍼 메서드 호출을 수행하기 위해 메서드를 오버라이딩하지 마세요.
-    unnecessary_this: error # [🔵,🦩,🔧] 섀도잉을 피하지 않는 한 "this"으로 멤버에 접근하지 마세요.
-    use_build_context_synchronously: info # [🧪 ,🦩] 비동기 갭에 걸쳐 빌드 컨텍스트를 사용하지 마세요.
-    use_key_in_widget_constructors: error # [🦩,🔧] 위젯 생성자에서 키를 사용합니다.
-    use_named_constants: error # 명명된 상수를 사용합니다. (예: EdgeInsets.all(0.0) 대신 EdgeInsets.zero를 사용합니다.)
-    use_rethrow_when_possible: error # [🔵,🦩,🔧] 잡힌 예외를 다시 던지려면 다시 던지기를 사용합니다.
-  exclude: # DIFFERENT FROM FLUTTER/FLUTTER
+   # DIFFERENT FROM FLUTTER/FLUTTER
+  exclude:
     # Fixture depends on dart:ui and raises false positives.
     - test/*.dart
+  errors:
+    included_file_warning: ignore

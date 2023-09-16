@@ -20,6 +20,7 @@ class CustomCheckboxButton extends StatefulWidget {
     this.textStyle,
     this.textAlignment,
     this.isExpandedText = false,
+    this.textTouchable = true,
   }) : super(key: key);
 
   final BoxDecoration? decoration;
@@ -35,6 +36,7 @@ class CustomCheckboxButton extends StatefulWidget {
   final TextStyle? textStyle;
   final TextAlign? textAlignment;
   final bool isExpandedText;
+  final bool textTouchable;
 
   @override
   State<CustomCheckboxButton> createState() => _CustomCheckboxButtonState();
@@ -80,10 +82,14 @@ class _CustomCheckboxButtonState extends State<CustomCheckboxButton> {
                     textWidget,
                 ])));
 
-  Widget get textWidget => Text(
-        widget.text ?? '',
-        textAlign: widget.textAlignment ?? TextAlign.center,
-        style: widget.textStyle ?? theme.textTheme.bodyLarge,
+  Widget get textWidget => InkWell(
+        onTap: () =>
+            widget.textTouchable ? widget.onChange(!widget.value!) : null,
+        child: Text(
+          widget.text ?? '',
+          textAlign: widget.textAlignment ?? TextAlign.center,
+          style: widget.textStyle ?? theme.textTheme.bodyLarge,
+        ),
       );
 
   Widget get checkboxWidget => SizedBox(

@@ -30,11 +30,11 @@ class SocialSecurityNumberFormField extends StatelessWidget {
       focusNode: focusNode,
 
       /// 특정한 글자를 '*' 대신 사용할 수 있도록 구현 (obscureText가 true인 경우에 한하여 기능이 동작한다.)
-      obscureChar: '○',
+      obscureChar: '●',
       obscureText: true,
       textInputType: TextInputType.number,
       textStyle: CustomTextStyles.bodyLargeGray50003,
-      hintText: '●●●●●●●',
+      hintText: '○○○○○○○',
       hintStyle: CustomTextStyles.bodyLargeGray50003,
       filled: true,
       fillColor: Colors.white,

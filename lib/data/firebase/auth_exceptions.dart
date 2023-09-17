@@ -15,8 +15,7 @@ final authExceptions = {
   'invalid-creation-time': '생성 시간이 올바른 UTC 날짜 문자열이어야 합니다.',
   'invalid-credential':
       'Admin SDK 인증에 사용된 사용자 인증 정보로는 원하는 작업을 수행할 수 없습니다.\ncreateCustomToken() 및 verifyIdToken()과 같은 특정 인증 메서드는 갱신 토큰이나 애플리케이션 기본 사용자 인증 정보와는 달리 사용자 인증 정보 인증서로 SDK를 초기화해야 합니다.\n사용자 인증 정보 인증서로 Admin SDK를 인증하는 방법은 SDK 초기화 문서를 참조하세요.',
-  'invalid-disabled-field':
-      'disabled 사용자 속성에 제공된 값이 잘못되었습니다.\n이 값은 부울이어야 합니다.',
+  'invalid-disabled-field': 'disabled 사용자 속성에 제공된 값이 잘못되었습니다.\n이 값은 부울이어야 합니다.',
   'invalid-display-name':
       'displayName 사용자 속성에 제공된 값이 잘못되었습니다.\n이 값은 비어 있지 않은 문자열이어야 합니다.',
   'invalid-dynamic-link-domain':
@@ -42,22 +41,18 @@ final authExceptions = {
   'invalid-password-salt': '비밀번호 솔트가 올바른 바이트 버퍼여야 합니다.',
   'invalid-phone-number':
       'phoneNumber에 제공된 값이 잘못되었습니다.\n이 값은 E.164 표준과 호환되는 비어 있지 않은 식별자 문자열이어야 합니다.',
-  'invalid-photo-url':
-      'photoURL 사용자 속성에 제공된 값이 잘못되었습니다.\n이 값은 문자열 URL이어야 합니다.',
+  'invalid-photo-url': 'photoURL 사용자 속성에 제공된 값이 잘못되었습니다.\n이 값은 문자열 URL이어야 합니다.',
   'invalid-provider-data': 'providerData가 올바른 UserInfo 객체 배열이어야 합니다.',
   'invalid-provider-id': 'providerId가 지원되는 올바른 제공업체 식별자 문자열이어야 합니다.',
-  'invalid-oauth-responsetype':
-      '정확히 하나의 OAuth responseType만 true로 설정해야 합니다.',
+  'invalid-oauth-responsetype': '정확히 하나의 OAuth responseType만 true로 설정해야 합니다.',
   'invalid-session-cookie-duration':
       '세션 쿠키 기간이 5분에서 2주 사이의 올바른 밀리초 단위 숫자여야 합니다.',
   'invalid-uid': '제공된 uid는 128자(영문 기준) 이하의 비어 있지 않은 문자열이어야 합니다.',
   'invalid-user-import': '가져올 사용자 레코드가 잘못되었습니다.',
   'maximum-user-count-exceeded': '가져올 수 있는 최대 사용자 수를 초과했습니다.',
-  'missing-android-pkg-name':
-      'Android 앱을 설치해야 할 경우 Android 패키지 이름을 제공해야 합니다.',
+  'missing-android-pkg-name': 'Android 앱을 설치해야 할 경우 Android 패키지 이름을 제공해야 합니다.',
   'missing-continue-uri': '요청에 올바른 연결 URL을 제공해야 합니다.',
-  'missing-hash-algorithm':
-      '비밀번호 해시를 사용해 사용자를 가져오려면 해싱 알고리즘 및 매개변수를 제공해야 합니다.',
+  'missing-hash-algorithm': '비밀번호 해시를 사용해 사용자를 가져오려면 해싱 알고리즘 및 매개변수를 제공해야 합니다.',
   'missing-ios-bundle-id': '요청에 번들 ID가 누락되었습니다.',
   'missing-uid': '현재 작업에 uid 식별자가 필요합니다.',
   'missing-oauth-client-secret':

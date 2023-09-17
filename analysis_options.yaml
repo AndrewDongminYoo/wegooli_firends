@@ -103,7 +103,7 @@ linter:
     constant_identifier_names: false
 
 analyzer:
-   # DIFFERENT FROM FLUTTER/FLUTTER
+  # DIFFERENT FROM FLUTTER/FLUTTER
   exclude:
     # Fixture depends on dart:ui and raises false positives.
     - test/*.dart

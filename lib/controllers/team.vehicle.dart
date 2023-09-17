@@ -69,7 +69,16 @@ class VehicleController extends GetxController {
   TerminalModel? _terminalDevice;
   TerminalModel get terminalDevice {
     if (_terminalDevice == null) {
-      return TerminalModel();
+      retrieveInfo();
+      return TerminalModel(
+        carNum: '', // 12가 3456
+        fuelType: 'gasHybrid',
+        fuel: '', // 0-100
+        model: '', // l10ns.carRayGen3
+        carImage: '', // Assets.cars.raySM9y.path,
+        segment: '', // l10ns.segmentB
+        seats: 4,
+      );
     } else {
       return _terminalDevice!;
     }
@@ -77,13 +86,21 @@ class VehicleController extends GetxController {
 
   /// 현재 차량의 잔여 연료량
   String get fuel => terminalDevice.fuel ?? '0';
-
   /// 현재 차량의 연료 유형 (gasHybrid, gasoline,...)
   String get fuelType {
     print('fuel type: ${terminalDevice.fuelType}');
     switch (terminalDevice.fuelType) {
+      case 'gasolineLPG':
+        return '바이퓨얼';
       case 'gasHybrid':
         return '가솔린+전기';
+      case 'dieselHybrid':
+        return '디젤+전기';
+      case 'electricity':
+        return '전기';
+      case 'diesel':
+        return '경유';
+      case 'gasoline':
       default:
         return '휘발유';
     }

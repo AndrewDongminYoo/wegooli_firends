@@ -107,5 +107,6 @@ analyzer:
   exclude:
     # Fixture depends on dart:ui and raises false positives.
     - test/*.dart
+    - lib/gen/l10n/app_localizations.dart
   errors:
     included_file_warning: ignore

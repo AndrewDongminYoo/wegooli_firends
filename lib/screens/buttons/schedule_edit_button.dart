@@ -33,8 +33,11 @@ class ScheduleEditButton extends StatelessWidget {
         items[1].date = DateTime.parse(schedule.endAt!);
         scheduleController.items(items);
         scheduleController.items.refresh();
-        Get.bottomSheet(DatetimePickerBottomSheet(isEditMode: true, scheduleId: schedule.seq),
-            ignoreSafeArea: false, isScrollControlled: true);
+        Get.bottomSheet(
+            DatetimePickerBottomSheet(
+                isEditMode: true, scheduleId: schedule.seq),
+            ignoreSafeArea: false,
+            isScrollControlled: true);
       },
     );
   }

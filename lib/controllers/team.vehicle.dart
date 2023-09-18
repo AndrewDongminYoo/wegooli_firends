@@ -86,6 +86,7 @@ class VehicleController extends GetxController {
 
   /// 현재 차량의 잔여 연료량
   String get fuel => terminalDevice.fuel ?? '0';
+
   /// 현재 차량의 연료 유형 (gasHybrid, gasoline,...)
   String get fuelType {
     print('fuel type: ${terminalDevice.fuelType}');

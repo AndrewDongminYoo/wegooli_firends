@@ -1,6 +1,3 @@
-// 🎯 Dart imports:
-import 'dart:collection';
-
 // 📦 Package imports:
 import 'package:get/get.dart';
 import 'package:table_calendar/table_calendar.dart';
@@ -31,20 +28,6 @@ class ScheduleController extends GetxController {
       : Get.put(ScheduleController());
 
   DateTime focusedDay = kToday;
-
-  // /// [Map]을 사용하기로 한 경우, [LinkedHashMap]를 사용하는 것이 권장됩니다.
-  // final LinkedHashMap<DateTime, List<Schedule>> _events =
-  //     LinkedHashMap<DateTime, List<Schedule>>();
-  // LinkedHashMap<DateTime, List<Schedule>> get events {
-  //   if (_events.isEmpty) {
-  //     return LinkedHashMap<DateTime, List<Schedule>>(
-  //       equals: isSameDay,
-  //       hashCode: getHashCode,
-  //     )..addAll(eventSource);
-  //   } else {
-  //     return _events;
-  //   }
-  // }
 
   final RxMap<DateTime, List<Schedule>> eventSource = RxMap.of({});
 
@@ -161,7 +144,6 @@ class ScheduleController extends GetxController {
 
   Future<void> updateSchedule(int scheduleId) async {
     print('updateSchedule');
-    final accountId = userController.currentUser.id;
     final teamSeq = userController.firstTeamSeq;
     if (teamSeq == null) {
       return;

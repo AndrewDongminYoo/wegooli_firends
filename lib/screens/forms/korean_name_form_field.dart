@@ -12,12 +12,12 @@ class KoreanNameFormField extends StatelessWidget {
     required this.focusNode,
   });
 
-  final UserController controller;
+  final TextEditingController controller;
   final FocusNode focusNode;
   @override
   Widget build(BuildContext context) {
     return CustomTextFormField(
-        controller: controller.realName,
+        controller: controller,
         margin: getMargin(top: 4),
         autofillHints: const [AutofillHints.newUsername],
         contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),

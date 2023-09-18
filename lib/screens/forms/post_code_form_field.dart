@@ -14,7 +14,7 @@ class PostCodeFormField extends StatelessWidget {
     required this.controller,
   });
 
-  final UserController controller;
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class PostCodeFormField extends StatelessWidget {
         autofillHints: const [AutofillHints.postalCode],
         textInputType: TextInputType.number,
         width: getHorizontalSize(160),
-        controller: controller.postCode,
+        controller: controller,
         margin: getMargin(top: 4),
         contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),
         validator: (String? value) {

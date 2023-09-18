@@ -12,14 +12,14 @@ class SocialSecurityNumberFormField extends StatelessWidget {
     required this.focusNode,
   });
 
-  final UserController controller;
+  final TextEditingController controller;
   final FocusNode focusNode;
 
   @override
   Widget build(BuildContext context) {
     return CustomTextFormField(
       width: getHorizontalSize(158),
-      controller: controller.socialId,
+      controller: controller,
       margin: getMargin(top: 4),
       contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),
       maxLength: 7,

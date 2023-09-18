@@ -62,7 +62,8 @@ class _SendingInvitationDialogState extends State<SendingInvitationDialog> {
                             onTap: goBack),
                       ])),
               InvitationCodeFormField(
-                  controller: userController, readOnly: widget.copyMode),
+                  controller: userController.invitation,
+                  readOnly: widget.copyMode),
               if (widget.copyMode)
                 CopyInvitationButton(controller: userController)
               else

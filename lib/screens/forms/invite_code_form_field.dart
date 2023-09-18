@@ -10,13 +10,13 @@ class InviteCodeFormField extends StatelessWidget {
     required this.controller,
   });
 
-  final UserController controller;
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
     return CustomTextFormField(
         textInputType: TextInputType.visiblePassword,
-        controller: controller.invitation,
+        controller: controller,
         margin: getMargin(top: 4),
         contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),
         textStyle: CustomTextStyles.bodyLargeGray50003,

@@ -13,7 +13,7 @@ class BirthdayNumberFormField extends StatelessWidget {
     required this.readonly,
   });
 
-  final UserController controller;
+  final TextEditingController controller;
   final FocusNode focusNode;
   final bool readonly;
 
@@ -21,7 +21,7 @@ class BirthdayNumberFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomTextFormField(
         width: getHorizontalSize(158),
-        controller: controller.birthDay,
+        controller: controller,
         enabled: !readonly,
         margin: getMargin(top: 4),
         autofillHints: const [AutofillHints.birthday],

@@ -10,12 +10,12 @@ class LicenseIssuedDateFormField extends StatelessWidget {
     required this.controller,
   });
 
-  final LicenseController controller;
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
     return CustomTextFormField(
-        controller: controller.firstIssueYear,
+        controller: controller,
         margin: getMargin(top: 4),
         contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),
         textStyle: CustomTextStyles.bodyLargeGray50003,

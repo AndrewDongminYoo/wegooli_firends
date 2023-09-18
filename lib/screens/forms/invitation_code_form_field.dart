@@ -11,13 +11,13 @@ class InvitationCodeFormField extends StatelessWidget {
     this.readOnly = false,
   });
 
-  final UserController controller;
+  final TextEditingController controller;
   final bool readOnly;
   @override
   Widget build(BuildContext context) {
     return CustomTextFormField(
         enabled: !readOnly,
-        controller: controller.invitation,
+        controller: controller,
         hintText: 'xxxx-xxxx-xxxx-xxxx',
         margin: getMargin(left: 25, top: 17, right: 25),
         contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),

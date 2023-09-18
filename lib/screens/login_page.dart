@@ -50,8 +50,10 @@ class _LoginPageState extends State<LoginPage> {
               child: Column(
                 children: [
                   const FriendsByWegooli(),
-                  UserMailFormField(controller: controller, authMode: authMode),
-                  PasswordFormField(controller: controller, authMode: authMode),
+                  UserMailFormField(
+                      controller: controller.emailAddress, authMode: authMode),
+                  PasswordFormField(
+                      controller: controller.password, authMode: authMode),
                   AuthSignInButton(controller: controller),
                   Padding(
                       padding: getPadding(top: 57),

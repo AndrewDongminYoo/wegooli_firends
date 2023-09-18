@@ -182,7 +182,7 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 TelecomDropdown(controller: widget.controller),
-                PhoneNumberFormField(controller: widget.controller),
+                PhoneNumberFormField(controller: widget.controller.phoneNum),
               ],
             ),
             Row(

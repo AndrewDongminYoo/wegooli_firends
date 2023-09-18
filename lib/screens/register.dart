@@ -26,7 +26,7 @@ class RegisterPhone extends GetWidget<UserController> {
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                 CustomInputLabel(labelText: l10ns.name),
                 KoreanNameFormField(
-                  controller: controller,
+                  controller: controller.realName,
                   focusNode: _nameText,
                 ),
               ]),
@@ -42,13 +42,13 @@ class RegisterPhone extends GetWidget<UserController> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               BirthdayNumberFormField(
-                                controller: controller,
+                                controller: controller.birthDay,
                                 focusNode: _birthday,
                                 readonly: false,
                               ),
                               const Text('-', style: TextStyle(fontSize: 24)),
                               SocialSecurityNumberFormField(
-                                controller: controller,
+                                controller: controller.socialId,
                                 focusNode: _socialId,
                               ),
                             ]),

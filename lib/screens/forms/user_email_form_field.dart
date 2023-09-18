@@ -11,14 +11,14 @@ class UserMailFormField extends StatelessWidget {
     required this.authMode,
   });
 
-  final UserController controller;
+  final TextEditingController controller;
   final AuthMode authMode;
 
   @override
   Widget build(BuildContext context) {
     final isLogin = authMode == AuthMode.login;
     return CustomTextFormField(
-      controller: controller.emailAddress,
+      controller: controller,
       textInputType: TextInputType.emailAddress,
       fillColor: Colors.white,
       margin: isLogin ? getMargin(top: 40) : getMargin(top: 4),

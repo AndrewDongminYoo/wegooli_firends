@@ -11,12 +11,12 @@ class CardPinNumberFormField extends StatelessWidget {
     required this.controller,
   });
 
-  final PaymentCardController controller;
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
     return CustomTextFormField(
-        controller: controller.creditCardPin,
+        controller: controller,
         autofillHints: const [AutofillHints.creditCardSecurityCode],
         inputFormatters: <TextInputFormatter>[
           FilteringTextInputFormatter.digitsOnly,

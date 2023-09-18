@@ -10,13 +10,13 @@ class DetailAddressFormField extends StatelessWidget {
     required this.controller,
   });
 
-  final UserController controller;
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
     return CustomTextFormField(
         textInputType: TextInputType.streetAddress,
-        controller: controller.detailAddress,
+        controller: controller,
         margin: getMargin(top: 10),
         autofillHints: const [AutofillHints.fullStreetAddress],
         contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),

@@ -10,7 +10,7 @@ class PrimaryAddressFormField extends StatelessWidget {
     required this.controller,
   });
 
-  final UserController controller;
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class PrimaryAddressFormField extends StatelessWidget {
         textInputType: TextInputType.streetAddress,
         autofillHints: const [AutofillHints.addressCityAndState],
         hintText: l10ns.primaryAddress,
-        controller: controller.primaryAddress,
+        controller: controller,
         margin: getMargin(top: 10),
         contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),
         textStyle: CustomTextStyles.bodyLargeGray50003,

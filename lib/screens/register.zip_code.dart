@@ -30,14 +30,14 @@ class RegisterZipCode extends GetWidget<UserController> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           CustomInputLabel(labelText: l10ns.homeAddress),
-                          PostCodeFormField(controller: controller),
+                          PostCodeFormField(controller: controller.postCode),
                         ]),
                   ),
                 ),
                 Expanded(child: PostCodeSearchButton(controller: controller)),
               ]),
-              PrimaryAddressFormField(controller: controller),
-              DetailAddressFormField(controller: controller),
+              PrimaryAddressFormField(controller: controller.primaryAddress),
+              DetailAddressFormField(controller: controller.detailAddress),
               Padding(
                   padding: getPadding(top: 27),
                   child: Column(
@@ -45,7 +45,8 @@ class RegisterZipCode extends GetWidget<UserController> {
                       children: [
                         CustomInputLabel(labelText: l10ns.id),
                         UserMailFormField(
-                            controller: controller, authMode: authMode),
+                            controller: controller.emailAddress,
+                            authMode: authMode),
                       ])),
               Padding(
                   padding: getPadding(top: 27),
@@ -54,7 +55,8 @@ class RegisterZipCode extends GetWidget<UserController> {
                       children: [
                         CustomInputLabel(labelText: l10ns.password),
                         PasswordFormField(
-                            controller: controller, authMode: authMode),
+                            controller: controller.password,
+                            authMode: authMode),
                       ])),
               Padding(
                   padding: getPadding(top: 27),
@@ -62,7 +64,8 @@ class RegisterZipCode extends GetWidget<UserController> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         CustomInputLabel(labelText: l10ns.confirmPassword),
-                        PasswordConfirmFormField(controller: controller),
+                        PasswordConfirmFormField(
+                            controller: controller.rePassword),
                       ])),
               Padding(
                   padding: getPadding(top: 27),
@@ -70,7 +73,7 @@ class RegisterZipCode extends GetWidget<UserController> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         CustomInputLabel(labelText: l10ns.nickname),
-                        NickNameFormField(controller: controller),
+                        NickNameFormField(controller: controller.nickname),
                       ])),
             ])),
       ),

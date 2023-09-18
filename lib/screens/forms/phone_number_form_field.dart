@@ -11,13 +11,13 @@ class PhoneNumberFormField extends StatelessWidget {
     required this.controller,
   });
 
-  final UserController controller;
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
     return CustomTextFormField(
         width: getHorizontalSize(198),
-        controller: controller.phoneNum,
+        controller: controller,
         margin: getMargin(top: 4),
         autofill: true,
         autofillHints: const [AutofillHints.telephoneNumberLocal],

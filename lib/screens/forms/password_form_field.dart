@@ -14,7 +14,7 @@ class PasswordFormField extends StatelessWidget {
     required this.authMode,
   });
 
-  final UserController controller;
+  final TextEditingController controller;
   final AuthMode authMode;
 
   @override
@@ -23,7 +23,7 @@ class PasswordFormField extends StatelessWidget {
     final isSignUp = authMode == AuthMode.register;
     return Obx(() {
       return CustomTextFormField(
-        controller: controller.password,
+        controller: controller,
         margin: getMargin(top: 4),
         contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),
         textStyle: CustomTextStyles.bodyLargeGray50003,
@@ -54,14 +54,14 @@ class PasswordConfirmFormField extends StatelessWidget {
     required this.controller,
   });
 
-  final UserController controller;
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
     final isShowConfirmPassword = false.obs;
     return Obx(() => CustomTextFormField(
           textInputType: TextInputType.emailAddress,
-          controller: controller.rePassword,
+          controller: controller,
           margin: getMargin(top: 4),
           contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),
           textStyle: CustomTextStyles.bodyLargeGray50003,

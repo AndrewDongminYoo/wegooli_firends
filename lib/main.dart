@@ -95,7 +95,7 @@ class MyApp extends StatelessWidget {
         logWriterCallback: (String text, {bool isError = false}) =>
             isError ? console.log(text) : print('[DEBUG] $text'),
         navigatorObservers: [MyApp.routeObserver],
-        initialRoute: AppRoutes.idPwLogin,
+        initialRoute: AppRoutes.splashScreen,
         onGenerateRoute: onGenerateRoute,
         getPages: AppRoutes.pages);
   }

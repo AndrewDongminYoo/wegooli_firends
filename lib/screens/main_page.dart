@@ -21,6 +21,7 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     const id = 1;
     final navigatorKey = Get.nestedKey(id);
+    print('user.currentUser.id ${user.currentUser.id}');
     return Scaffold(
       body: Navigator(
         key: navigatorKey,

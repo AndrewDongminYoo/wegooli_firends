@@ -7,7 +7,10 @@ import '/lib.dart';
 class GoSignUpButton extends StatelessWidget {
   const GoSignUpButton({
     super.key,
+    required this.controller,
   });
+
+  final UserController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +20,11 @@ class GoSignUpButton extends StatelessWidget {
       margin: getMargin(top: 11, bottom: 5),
       buttonStyle: CustomButtonStyles.fillPrimaryC26,
       buttonTextStyle: CustomTextStyles.titleMedium18,
-      onTap: goAcceptTerms,
+      onTap: () async {
+        controller.username.clear();
+        controller.password.clear();
+        await goAcceptTerms();
+      },
     );
   }
 }

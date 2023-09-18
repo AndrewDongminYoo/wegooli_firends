@@ -153,6 +153,10 @@ class ScheduleController extends GetxController {
       localEventSource.addIf(true, normalizeDateTime(key), value);
     }
     eventSource.addAll(localEventSource);
+    eventSource.refresh();
+    // TODO 주의 필요.
+    await Get.forceAppUpdate();
+    items(initItem());
   }
 
   Future<void> updateSchedule(int scheduleId) async {
@@ -172,21 +176,5 @@ class ScheduleController extends GetxController {
     // TODO 주의 필요.
     await Get.forceAppUpdate();
     items(initItem());
-
-    // final localEventSource = Map<DateTime, List<Schedule>>.of({});
-    // final schedule = Schedule(
-    //   accountId: accountId,
-    //   teamSeq: teamSeq,
-    //   startAt: reservationTime.toString(),
-    //   endAt: returnTime.toString(),
-    // );
-
-    // for (final key in daysInRange(reservationTime, returnTime)) {
-    //   final value =
-    //       localEventSource.getOrDefault(normalizeDateTime(key), <Schedule>[]);
-    //   value.add(schedule);
-    //   localEventSource.addIf(true, normalizeDateTime(key), value);
-    // }
-    // eventSource.addAll(localEventSource);
   }
 }

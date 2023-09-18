@@ -63,7 +63,7 @@ class _LoginPageState extends State<LoginPage> {
                           letterSpacing: getHorizontalSize(0.03),
                         ),
                       )),
-                  const GoSignUpButton(),
+                  GoSignUpButton(controller: controller),
                 ],
               ),
             )),

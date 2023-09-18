@@ -136,23 +136,23 @@ class ScheduleController extends GetxController {
     }
     await _service.addSchedule(
         accountId!, teamSeq, reservationTime, returnTime);
-    // userController.schedules(await userController.retrieveSchedules(teamSeq));
-    // makeEventSource();
-    final localEventSource = Map<DateTime, List<Schedule>>.of({});
-    final schedule = Schedule(
-      accountId: accountId,
-      teamSeq: teamSeq,
-      startAt: reservationTime.toString(),
-      endAt: returnTime.toString(),
-    );
+    userController.schedules(await userController.retrieveSchedules(teamSeq));
+    makeEventSource();
+    // final localEventSource = Map<DateTime, List<Schedule>>.of({});
+    // final schedule = Schedule(
+    //   accountId: accountId,
+    //   teamSeq: teamSeq,
+    //   startAt: reservationTime.toString(),
+    //   endAt: returnTime.toString(),
+    // );
 
-    for (final key in daysInRange(reservationTime, returnTime)) {
-      final value =
-          localEventSource.getOrDefault(normalizeDateTime(key), <Schedule>[]);
-      value.add(schedule);
-      localEventSource.addIf(true, normalizeDateTime(key), value);
-    }
-    eventSource.addAll(localEventSource);
+    // for (final key in daysInRange(reservationTime, returnTime)) {
+    //   final value =
+    //       localEventSource.getOrDefault(normalizeDateTime(key), <Schedule>[]);
+    //   value.add(schedule);
+    //   localEventSource.addIf(true, normalizeDateTime(key), value);
+    // }
+    // eventSource.addAll(localEventSource);
     eventSource.refresh();
     // TODO 주의 필요.
     await Get.forceAppUpdate();

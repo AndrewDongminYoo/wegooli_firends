@@ -27,8 +27,8 @@ class BirthdayNumberFormField extends StatelessWidget {
         autofillHints: const [AutofillHints.birthday],
         inputFormatters: <TextInputFormatter>[
           FilteringTextInputFormatter.digitsOnly,
-          LengthLimitingTextInputFormatter(6),
         ],
+        maxLength: 6,
         focusNode: focusNode,
         textInputType: TextInputType.number,
         contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),

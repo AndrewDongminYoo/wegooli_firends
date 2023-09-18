@@ -68,9 +68,18 @@ class _AcceptTermsState extends State<AcceptTerms> {
                   )),
             )),
       ),
-      bottomNavigationBar: SignUpAcceptTermsNextButton(
-        controller: controller,
-      ),
+      bottomNavigationBar: Container(
+          margin: getMargin(left: 24, right: 28, bottom: 41),
+          decoration: BoxDecoration(
+            color: Colors.transparent,
+            boxShadow: AppDecoration.shadows,
+          ),
+          child: CustomElevatedButton(
+            text: l10ns.acceptanceComplete,
+            buttonStyle: CustomButtonStyles.fillPrimaryC5,
+            buttonTextStyle: CustomTextStyles.titleMedium18,
+            onTap: controller.acceptanceComplete,
+          )),
     );
   }
 }

@@ -33,7 +33,8 @@ class CustomTextFormField extends StatelessWidget {
     this.textStyle,
     this.prefix,
     this.suffix,
-    this.inputFormatters = const [],
+    this.maxLength,
+    this.inputFormatters,
     this.obscureChar = '*',
     required this.controller,
   }) : super(key: key);
@@ -57,7 +58,8 @@ class CustomTextFormField extends StatelessWidget {
   final FormFieldValidator<String>? validator;
   final InputBorder? borderDecoration;
   final int? maxLines;
-  final List<TextInputFormatter> inputFormatters;
+  final int? maxLength;
+  final List<TextInputFormatter>? inputFormatters;
   final String obscureChar;
   final String? hintText;
   final String? initialValue;
@@ -83,7 +85,8 @@ class CustomTextFormField extends StatelessWidget {
       margin: margin,
       child: TextFormField(
           obscuringCharacter: obscureChar,
-          inputFormatters: inputFormatters,
+          maxLength: maxLength,
+          inputFormatters: inputFormatters ?? [],
           obscureText: obscureText!,
           controller: controller,
           autofocus: autofocus!,

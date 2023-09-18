@@ -28,10 +28,10 @@ class UserMailFormField extends StatelessWidget {
       hintStyle: CustomTextStyles.bodyLargeGray50003,
       filled: true,
       autofillHints: const [AutofillHints.email],
-      validator: (value) {
-        if (value == null) {
+      validator: (email) {
+        if (email == null) {
           return '필수 입력 항목입니다.';
-        } else if (!isTestId(value) && !isValidEmail(value)) {
+        } else if (!isTestId(email) && !isValidEmail(email)) {
           return '이메일 형식을 정확히 입력해주세요.';
         } else {
           return null;

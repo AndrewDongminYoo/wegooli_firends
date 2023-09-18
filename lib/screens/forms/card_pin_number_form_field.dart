@@ -19,9 +19,9 @@ class CardPinNumberFormField extends StatelessWidget {
         controller: controller.creditCardPin,
         autofillHints: const [AutofillHints.creditCardSecurityCode],
         inputFormatters: <TextInputFormatter>[
-          LengthLimitingTextInputFormatter(2),
           FilteringTextInputFormatter.digitsOnly,
         ],
+        maxLength: 2,
         margin: getMargin(top: 4),
         filled: true,
         fillColor: Colors.white);

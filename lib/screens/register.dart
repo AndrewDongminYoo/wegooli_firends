@@ -69,7 +69,16 @@ class RegisterPhone extends GetWidget<UserController> {
               ),
             ])),
       ),
-      bottomNavigationBar: ValidatePhoneCompleteButton(controller: controller),
+      // ValidatePhoneCompleteButton
+      bottomNavigationBar: Container(
+          margin: getMargin(left: 16, right: 16, bottom: 29),
+          child: CustomElevatedButton(
+            text: l10ns.authenticationComplete, // '인증 완료'
+            isDisabled: controller.phoneAuthCompleted,
+            buttonStyle: CustomButtonStyles.fillPrimaryC26,
+            buttonTextStyle: CustomTextStyles.titleMedium18,
+            onTap: goRegisterZipCode,
+          )),
     );
   }
 }

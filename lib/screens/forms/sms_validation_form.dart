@@ -212,9 +212,9 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
                   textInputType: TextInputType.phone,
                   inputFormatters: <TextInputFormatter>[
                     FilteringTextInputFormatter.digitsOnly,
-                    LengthLimitingTextInputFormatter(6),
                   ],
                   margin: getMargin(top: 10),
+                  maxLength: 6,
                   contentPadding: getPadding(left: 14, top: 14, bottom: 14),
                   textStyle: CustomTextStyles.bodyLargeGray500,
                   hintStyle: CustomTextStyles.bodyLargeGray500,
@@ -239,7 +239,8 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
                   buttonTextStyle: theme.textTheme.titleMedium,
                   onTap: () {
                     Get.closeAllSnackbars();
-                    goRegisterCreditCard();
+                    Get.defaultDialog(
+                        title: '휴대폰 인증완료', middleText: 'SMS 인증이 완료되었습니다!');
                   },
                 ),
               ],

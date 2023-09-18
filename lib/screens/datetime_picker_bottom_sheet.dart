@@ -9,7 +9,6 @@ import 'package:intl/intl.dart';
 
 // 🌎 Project imports:
 import '/lib.dart';
-import 'buttons/update_schedule_confirm_button.dart';
 
 class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
   DatetimePickerBottomSheet({
@@ -201,10 +200,29 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                     const CancelButton(plural: false),
                     // TODO: 일정을 등록할 때와 수정할 때 각각 상황에 따라 동작
                     if (isEditMode && scheduleId != null)
-                      UpdateScheduleConfirmButton(
-                          controller: controller, scheduleId: scheduleId!)
+                      CustomElevatedButton(
+                          width: getHorizontalSize(216),
+                          onTap: () {
+                            print(
+                                'UpdateScheduleConfirmButton : scheduleId => $scheduleId');
+                            controller.updateSchedule(scheduleId!);
+                            Navigator.pop(context);
+                          },
+                          // text: l10ns.confirm,
+                          text: '수정',
+                          buttonStyle: CustomButtonStyles.fillPrimaryC26,
+                          buttonTextStyle: theme.textTheme.titleMedium)
                     else
-                      AddScheduleConfirmButton(controller: controller)
+                      CustomElevatedButton(
+                          width: getHorizontalSize(216),
+                          onTap: () {
+                            print('AddScheduleConfirmButton');
+                            controller.addSchedule();
+                            Navigator.pop(context);
+                          },
+                          text: l10ns.confirm,
+                          buttonStyle: CustomButtonStyles.fillPrimaryC26,
+                          buttonTextStyle: theme.textTheme.titleMedium)
                   ],
                 )),
           ],

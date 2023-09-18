@@ -39,9 +39,9 @@ class PostCodeFormField extends StatelessWidget {
         hintStyle: CustomTextStyles.bodyLargeGray50003,
         filled: true,
         inputFormatters: <TextInputFormatter>[
-          LengthLimitingTextInputFormatter(6),
           FilteringTextInputFormatter.digitsOnly,
         ],
+        maxLength: 6,
         fillColor: Colors.white);
   }
 }

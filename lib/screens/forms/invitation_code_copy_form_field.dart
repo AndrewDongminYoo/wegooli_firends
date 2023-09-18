@@ -25,9 +25,9 @@ class InvitationCodeCopyFormField extends StatelessWidget {
       contentPadding: getPadding(all: 14),
       inputFormatters: <TextInputFormatter>[
         SeperateTextFormatter(sample: 'XXXX-XXXX-XXXX-XXXX', separator: '-'),
-        LengthLimitingTextInputFormatter(19),
         FilteringTextInputFormatter.allow(r'[0-9a-zA-Z\-]'),
       ],
+      maxLength: 19,
       textStyle: CustomTextStyles.bodyLargeGray50003,
       hintStyle: CustomTextStyles.bodyLargeGray50003,
       fillColor: Colors.white,

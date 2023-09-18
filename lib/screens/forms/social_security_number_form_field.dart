@@ -22,11 +22,11 @@ class SocialSecurityNumberFormField extends StatelessWidget {
       controller: controller.socialId,
       margin: getMargin(top: 4),
       contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),
+      maxLength: 7,
+      focusNode: focusNode,
       inputFormatters: <TextInputFormatter>[
         FilteringTextInputFormatter.digitsOnly,
-        LengthLimitingTextInputFormatter(7),
       ],
-      focusNode: focusNode,
 
       /// 특정한 글자를 '*' 대신 사용할 수 있도록 구현 (obscureText가 true인 경우에 한하여 기능이 동작한다.)
       obscureChar: '●',

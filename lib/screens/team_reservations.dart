@@ -17,7 +17,10 @@ class ReservationsCheckingPageDialog extends StatelessWidget {
       }
       final start = DateTime.parse(schedule.startAt!);
       final end = DateTime.parse(schedule.endAt!);
-      return isDateWithinRange(start, end, selectedDay!);
+      final isContain = isDateWithinRange(start, end, selectedDay!);
+      // print(
+      //     'start($start), end($end), selectedDay($selectedDay) ::isContain($isContain)');
+      return isContain;
     }).toList();
     return AlertDialog(
         contentPadding: EdgeInsets.zero,
@@ -57,23 +60,13 @@ class ReservationsCheckingPageDialog extends StatelessWidget {
                           ])),
                   Padding(
                       padding: getPadding(left: 20, top: 20, right: 20),
-                      child: StreamBuilder<Schedule>(
-                          stream: Stream.fromIterable(schedules),
-                          builder: (context, snapshot) {
-                            if (snapshot.data == null) {
-                              return Container(
-                                margin: getMargin(bottom: 10),
-                                width: getHorizontalSize(288),
-                                height: getVerticalSize(75),
-                                child: const Text('일정 없음'),
-                              );
-                            } else {
-                              return TeamReservationsItem(
-                                schedule: snapshot.data!,
-                                controller: controller,
-                              );
-                            }
-                          }))
+                      child: Column(
+                        children: List.generate(
+                            schedules.length,
+                            (index) => TeamReservationsItem(
+                                schedule: schedules[index],
+                                controller: controller)),
+                      ))
                 ]),
           ),
         ));

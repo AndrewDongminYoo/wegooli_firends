@@ -24,7 +24,7 @@ class KoreanNameFormField extends StatelessWidget {
         textStyle: CustomTextStyles.bodyLargeNotoSansKRGray700,
         hintStyle: CustomTextStyles.bodyLargeGray50003,
         hintText: l10ns.pleaseEnterYourName,
-        inputFormatters: [
+        inputFormatters: <TextInputFormatter>[
           /// 테스트를 위해 입력할 수 있는 글자를 제한해 봄. 숫자 입력 못하게 함.
           FilteringTextInputFormatter.allow(RegExp('[A-Za-z가-힣ㄱ-ㅎ, ]+')),
         ],

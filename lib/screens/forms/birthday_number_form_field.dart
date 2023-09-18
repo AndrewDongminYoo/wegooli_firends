@@ -20,16 +20,13 @@ class BirthdayNumberFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomTextFormField(
-        initialValue:
-            controller.birthDay.text.isEmpty ? null : controller.birthDay.text,
         width: getHorizontalSize(158),
         controller: controller.birthDay,
         enabled: !readonly,
         margin: getMargin(top: 4),
         autofillHints: const [AutofillHints.birthday],
-        inputFormatters: [
+        inputFormatters: <TextInputFormatter>[
           FilteringTextInputFormatter.digitsOnly,
-          FilteringTextInputFormatter.singleLineFormatter,
           LengthLimitingTextInputFormatter(6),
         ],
         focusNode: focusNode,

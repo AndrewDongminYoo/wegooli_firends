@@ -22,9 +22,8 @@ class SocialSecurityNumberFormField extends StatelessWidget {
       controller: controller.socialId,
       margin: getMargin(top: 4),
       contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),
-      inputFormatters: [
+      inputFormatters: <TextInputFormatter>[
         FilteringTextInputFormatter.digitsOnly,
-        FilteringTextInputFormatter.singleLineFormatter,
         LengthLimitingTextInputFormatter(7),
       ],
       focusNode: focusNode,

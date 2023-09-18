@@ -23,10 +23,8 @@ class CardExpMonthYearFormField extends StatelessWidget {
         hintStyle: CustomTextStyles.bodyLargeGray50003,
         hintText: 'MM/YY',
         autofillHints: const [AutofillHints.creditCardExpirationDate],
-        inputFormatters: [
+        inputFormatters: <TextInputFormatter>[
           SeperateTextFormatter(sample: 'XX/XX', separator: '/'),
-          LengthLimitingTextInputFormatter(5),
-          FilteringTextInputFormatter.allow('[0-9/]'),
         ],
         filled: true,
         fillColor: Colors.white);

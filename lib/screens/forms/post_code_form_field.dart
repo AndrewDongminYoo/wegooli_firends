@@ -38,7 +38,7 @@ class PostCodeFormField extends StatelessWidget {
         hintText: l10ns.zipCode,
         hintStyle: CustomTextStyles.bodyLargeGray50003,
         filled: true,
-        inputFormatters: [
+        inputFormatters: <TextInputFormatter>[
           LengthLimitingTextInputFormatter(6),
           FilteringTextInputFormatter.digitsOnly,
         ],

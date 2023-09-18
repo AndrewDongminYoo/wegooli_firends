@@ -18,7 +18,7 @@ class CardPinNumberFormField extends StatelessWidget {
     return CustomTextFormField(
         controller: controller.creditCardPin,
         autofillHints: const [AutofillHints.creditCardSecurityCode],
-        inputFormatters: [
+        inputFormatters: <TextInputFormatter>[
           LengthLimitingTextInputFormatter(2),
           FilteringTextInputFormatter.digitsOnly,
         ],

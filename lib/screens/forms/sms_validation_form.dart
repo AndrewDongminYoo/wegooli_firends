@@ -32,8 +32,6 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
   final controller = UserController.to;
   UserCredential? user;
   Duration rest = const Duration(minutes: 3);
-  String _verificationId = '';
-  String? smsCode;
   Timer? _timer;
   String _error = '';
   bool codeSent = false;
@@ -72,6 +70,11 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
         if (authExceptions.containsKey(error.code)) {
           output = authExceptions[error.code];
         }
+        print('[에러발생]:\n'
+            'CODE: ${error.code}\n'
+            'MESSAGE: ${error.message}\n'
+            'PLUGIN: ${error.plugin}\n'
+            'STACK: ${error.stackTrace}');
       }
     }
     _error = output ?? '휴대폰 인증과정에서 오류가 발생했습니다.';
@@ -93,17 +96,31 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
         // Android 기기의 SMS 코드 자동 처리.
         verificationCompleted: (PhoneAuthCredential _credential) {
           print('_credential: $_credential');
+          // ANDROID ONLY!
           phoneCredential = _credential;
+
+          // 자동 생성된 자격 증명으로 사용자를 로그인(또는 링크)합니다.
+          auth.signInWithCredential(_credential);
         },
         // 잘못된 전화번호나 SMS 할당량 초과 여부 등의 실패 이벤트
         verificationFailed: verificationFailed,
         // Firebase에서 기기로 코드가 전송된 경우를 처리하며 사용자에게 코드를 입력하라는 메시지를 표시하는 데 사용
         codeSent: (String verificationId, int? resendToken) async {
+          codeSent = true;
           print('verificationId: $verificationId');
           print('resendToken: $resendToken');
           final smsCode = await getSmsCodeFromUser();
-          _verificationId = verificationId;
-          user = await actCodeSent(smsCode, _verificationId);
+          // 인증 코드를 사용하여 PhoneAuthCredential을 만듭니다.
+          if (smsCode != null) {
+            phoneCredential = PhoneAuthProvider.credential(
+                verificationId: verificationId, smsCode: smsCode);
+            // PhoneAuthCredential을 사용하여 사용자를 로그인(또는 링크)합니다.
+            try {
+              await auth.signInWithCredential(phoneCredential!);
+            } on FirebaseException catch (error) {
+              verificationFailed(error);
+            }
+          }
         },
         // 자동 SMS 코드 처리에 실패한 경우 시간 초과를 처리
         codeAutoRetrievalTimeout: (String verificationId) {
@@ -121,51 +138,27 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
     return phoneCredential;
   }
 
-  Future<UserCredential?> actCodeSent(
-      String? smsCode, String verificationId) async {
-    print('smsCode: $smsCode');
-    print('verificationId: $verificationId');
-    if (_timer != null) {
-      _timer!.cancel();
-    }
-    if (smsCode != null) {
-      // Create a PhoneAuthCredential with the code
-      final AuthCredential phoneCredential = PhoneAuthProvider.credential(
-        verificationId: verificationId,
-        smsCode: smsCode,
-      );
-      try {
-        // Sign the user in (or link) with the credential
-        return auth.signInWithCredential(phoneCredential);
-      } on FirebaseAuthException catch (e) {
-        verificationFailed(e);
-      }
-    }
-    return null;
-  }
-
   Future<String?> getSmsCodeFromUser() async {
-    final seconds = Duration(seconds: rest.inSeconds);
-    _timer = Timer.periodic(seconds, (timer) => tick());
+    _timer = Timer.periodic(rest, (timer) => tick());
     Get.showSnackbar(const GetSnackBar(
         title: '입력한 휴대폰으로 전송된 인증 코드를 확인해주세요.',
         message: '3분내 입력하지 않을 경우 인증코드가 만료됩니다.'));
-    if (smsCode == null) {
+    if (controller.pinCodes.text.isEmpty) {
       setState(() {
         codeSent = true;
         _error = '인증 코드를 입력해주세요';
       });
       return null;
     } else {
-      return smsCode;
+      return controller.pinCodes.text;
     }
   }
 
   void tick() {
-    _min = (rest.inSeconds / 60).floor().toString().padLeft(2, '0');
-    _sec = (rest.inSeconds % 60).toString().padLeft(2, '0');
-    rest = Duration(seconds: rest.inSeconds - 1);
     setState(() {
+      _min = (rest.inSeconds / 60).floor().toString().padLeft(2, '0');
+      _sec = (rest.inSeconds % 60).toString().padLeft(2, '0');
+      rest = Duration(seconds: rest.inSeconds - 1);
       if (rest.inSeconds <= 0) {
         _timer!.cancel();
       }
@@ -175,11 +168,6 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
   @override
   Widget build(BuildContext context) {
     final controller = widget.controller;
-    controller.pinCodes.addListener(() {
-      if (controller.pinCodes.text.length == 6) {
-        smsCode = controller.pinCodes.text;
-      }
-    });
     return Unfocused(
       child: Padding(
         padding: getPadding(top: 6),
@@ -206,9 +194,9 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
                   margin: getMargin(top: 10),
                   buttonStyle: CustomButtonStyles.fillPrimaryC5,
                   buttonTextStyle: theme.textTheme.titleMedium,
+                  isLoading: codeSent,
                   onTap: () {
                     phoneAuth(controller.phoneNum.text);
-                    FocusScope.of(context).unfocus();
                   },
                 )),
               ],
@@ -243,12 +231,16 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
                   ),
                 ),
                 CustomElevatedButton(
-                    text: l10ns.confirm,
-                    width: getHorizontalSize(160),
-                    margin: getMargin(top: 10),
-                    buttonStyle: CustomButtonStyles.fillPrimaryC5,
-                    buttonTextStyle: theme.textTheme.titleMedium,
-                    onTap: () async => actCodeSent(smsCode, _verificationId)),
+                  text: l10ns.confirm,
+                  width: getHorizontalSize(160),
+                  margin: getMargin(top: 10),
+                  buttonStyle: CustomButtonStyles.fillPrimaryC5,
+                  buttonTextStyle: theme.textTheme.titleMedium,
+                  onTap: () {
+                    Get.closeAllSnackbars();
+                    goRegisterCreditCard();
+                  },
+                ),
               ],
             ),
           ],

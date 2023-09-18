@@ -56,6 +56,25 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
     }
   }
 
+  @override
+  void dispose() {
+    controller.pinCodes.dispose();
+    super.dispose();
+  }
+
+  void firebaseAuthError(Exception error) {
+    String? output;
+    if (error is FirebaseException) {
+      output = error.message;
+      if (error is FirebaseAuthException) {
+        if (authExceptions.containsKey(error.code)) {
+          output = authExceptions[error.code];
+        }
+      }
+    }
+    _error = output ?? '휴대폰 인증과정에서 오류가 발생했습니다.';
+  }
+
   Future<AuthCredential?> phoneAuth(String phoneNum) async {
     AuthCredential? phoneCredential;
     final phoneNumber = '+82 ${phoneNum.replaceAll('-', ' ').substring(1)}';
@@ -75,7 +94,7 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
         },
         // 잘못된 전화번호나 SMS 할당량 초과 여부 등의 실패 이벤트
         verificationFailed: (FirebaseAuthException e) {
-          _error = e.message ?? '휴대폰 인증과정에서 오류가 발생했습니다.';
+          firebaseAuthError(e);
           Get.showSnackbar(GetSnackBar(title: _error));
         },
         // Firebase에서 기기로 코드가 전송된 경우를 처리하며 사용자에게 코드를 입력하라는 메시지를 표시하는 데 사용
@@ -115,9 +134,7 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
         // Sign the user in (or link) with the credential
         return auth.signInWithCredential(phoneCredential);
       } on FirebaseAuthException catch (e) {
-        setState(() {
-          _error = e.message ?? '휴대폰 인증과정에서 오류가 발생했습니다.';
-        });
+        firebaseAuthError(e);
       }
     }
     return null;

@@ -37,6 +37,10 @@ class ReservationsService extends GetConnect {
       teamSeq: teamSeq,
       startAt: formatter.format(startAt),
       endAt: formatter.format(endAt),
+      // startAt: formatter
+      //     .format(startAt.add(Duration(minutes: 10 - startAt.minute % 10))),
+      // endAt: formatter
+      //     .format(endAt.add(Duration(minutes: 10 - endAt.minute % 10))),
     );
     print('scheduleRequest $scheduleRequest');
     final response =

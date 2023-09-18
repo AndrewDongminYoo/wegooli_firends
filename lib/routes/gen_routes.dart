@@ -2,39 +2,51 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+// 📦 Package imports:
+import 'package:get/get.dart';
+
 // 🌎 Project imports:
 import '/lib.dart';
 
-Widget getPages(RouteSettings settings) {
-  final controller = UserController.to;
-  StatefulWidget checkAuth(String? name) =>
-      !controller.isAuthenticated ? const MainPage() : const LoginPage();
-  final page = switch (settings.name) {
-    AppRoutes.bookDatetimePicker => checkAuth(settings.name),
-    AppRoutes.carSmartKey => checkAuth(settings.name),
-    AppRoutes.carStatusInfo => checkAuth(settings.name),
-    AppRoutes.chatWithTeam => checkAuth(settings.name),
-    AppRoutes.myProfile => checkAuth(settings.name),
-    AppRoutes.noSubscription => checkAuth(settings.name),
-    AppRoutes.profileInfoPage => checkAuth(settings.name),
-    AppRoutes.registeredCardList => checkAuth(settings.name),
-    AppRoutes.reservationsCheck => checkAuth(settings.name),
-    AppRoutes.sharedSchedule => checkAuth(settings.name),
-    AppRoutes.teamInvitation => checkAuth(settings.name),
-    AppRoutes.unsubscribeConfirm => checkAuth(settings.name),
-    AppRoutes.upcomingUnsubscription => checkAuth(settings.name),
-    AppRoutes.appGateway => const GatewayScreen(),
-    AppRoutes.idPwLogin => const LoginPage(),
-    AppRoutes.acceptTerms => const AcceptTerms(),
-    AppRoutes.phoneAuth => const RegisterPhone(),
-    AppRoutes.acceptTermsDetail => const AcceptTermsDetail(),
-    AppRoutes.registerCreditCard => const RegisterCreditCard(),
-    AppRoutes.registerLicense => const RegisterLicense(),
-    AppRoutes.registerZipCode => const RegisterZipCode(),
-    AppRoutes.registerSuccess => const RegisterSuccess(),
-    _ => (kDebugMode || kProfileMode)
-        ? const GatewayScreen()
-        : const SplashLoading(),
-  };
-  return page;
+Route<dynamic>? onGenerateRoute(RouteSettings settings) {
+  final users = UserController.to;
+  Widget page;
+  if (!users.isAuthenticated) {
+    page = switch (settings.name) {
+      AppRoutes.appGateway => const GatewayScreen(),
+      AppRoutes.idPwLogin => const LoginPage(),
+      AppRoutes.acceptTerms => const AcceptTerms(),
+      AppRoutes.phoneAuth => const RegisterPhone(),
+      AppRoutes.acceptTermsDetail => const AcceptTermsDetail(),
+      AppRoutes.registerCreditCard => const RegisterCreditCard(),
+      AppRoutes.registerLicense => const RegisterLicense(),
+      AppRoutes.registerZipCode => const RegisterZipCode(),
+      AppRoutes.registerSuccess => const RegisterSuccess(),
+      _ => (kDebugMode || kProfileMode)
+          ? const GatewayScreen()
+          : const SplashLoading(),
+    };
+  } else {
+    page = switch (settings.name) {
+      AppRoutes.sharedSchedule => const SharedCalendar(),
+      AppRoutes.teamInvitation => const TeamInvitation(),
+      AppRoutes.bookDatetimePicker => DatetimePickerBottomSheet(),
+      AppRoutes.reservationsCheck => const ReservationsCheckingPageDialog(),
+      AppRoutes.chatWithTeam => const DashChatWithFriendsPage(),
+      AppRoutes.carSmartKey => const CarStatusPage(),
+      AppRoutes.carStatusInfo => const CarStatusDetail(),
+      AppRoutes.registeredCardList => const MyProfileCardList(),
+      AppRoutes.myProfile => const MyProfilePage(),
+      AppRoutes.profileInfoPage => const MyProfileDetail(),
+      AppRoutes.noSubscription => const NoSubscription(),
+      AppRoutes.unsubscribeConfirm => const UnsubscriptionConfirm(),
+      AppRoutes.upcomingUnsubscription => const UnsubscriptionUpcoming(),
+      _ => const SharedCalendar(),
+    };
+  }
+  return GetPageRoute<dynamic>(
+    settings: settings,
+    page: () => page,
+    transition: Transition.native,
+  );
 }

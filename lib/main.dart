@@ -95,7 +95,7 @@ class MyApp extends StatelessWidget {
         logWriterCallback: (String text, {bool isError = false}) =>
             isError ? console.log(text) : print('[DEBUG] $text'),
         navigatorObservers: [MyApp.routeObserver],
-        initialRoute: AppRoutes.home,
+        initialRoute: AppRoutes.idPwLogin,
         onGenerateRoute: onGenerateRoute,
         getPages: AppRoutes.pages);
   }
@@ -120,13 +120,4 @@ Widget _errorWidgetBuilder(dynamic context, Widget? child) {
         message: '예상치 못한 오류가 발생했습니다.\n 개발자에게 알려주세요 🙈'));
     throw CustomException('📵');
   }
-}
-
-Route<dynamic>? onGenerateRoute(RouteSettings settings) {
-  final page = getPages(settings);
-  return GetPageRoute<dynamic>(
-    settings: settings,
-    page: () => page,
-    transition: Transition.noTransition,
-  );
 }

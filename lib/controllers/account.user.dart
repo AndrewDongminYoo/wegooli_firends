@@ -53,15 +53,6 @@ class UserController extends GetxController {
   /// 회원가입[3] - 초대코드 입력
   TextEditingController invitation = TextEditingController();
 
-  List<SelectionPopupModel> telecoms = [
-    SelectionPopupModel(id: 01, title: 'SKT'),
-    SelectionPopupModel(id: 02, title: 'KT'),
-    SelectionPopupModel(id: 03, title: 'LG U+'),
-    SelectionPopupModel(id: 04, title: 'SKT 알뜰폰'),
-    SelectionPopupModel(id: 05, title: 'KT 알뜰폰'),
-    SelectionPopupModel(id: 06, title: 'LG U+ 알뜰폰'),
-  ];
-
   User currentUser = const User(
     phoneNumber: '',
     memberSeq: 0,

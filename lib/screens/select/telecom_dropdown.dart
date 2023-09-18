@@ -14,6 +14,14 @@ class TelecomDropdown extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final telecoms = [
+      SelectionPopupModel(id: 01, title: 'SKT'),
+      SelectionPopupModel(id: 02, title: 'KT'),
+      SelectionPopupModel(id: 03, title: 'LG U+'),
+      SelectionPopupModel(id: 04, title: 'SKT 알뜰폰'),
+      SelectionPopupModel(id: 05, title: 'KT 알뜰폰'),
+      SelectionPopupModel(id: 06, title: 'LG U+ 알뜰폰'),
+    ];
     return CustomDropDown(
         width: getHorizontalSize(128),
         icon: Icon(Icons.arrow_drop_down, color: appTheme.gray50003, size: 14),
@@ -21,7 +29,7 @@ class TelecomDropdown extends StatelessWidget {
         hintText: l10ns.telecomCarrier,
         initialValue: true,
         margin: getMargin(top: 4),
-        items: controller.telecoms,
+        items: telecoms,
         filled: true,
         textStyle: CustomTextStyles.bodyLargeGray500,
         fillColor: Colors.white,

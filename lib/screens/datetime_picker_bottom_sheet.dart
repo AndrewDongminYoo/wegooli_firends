@@ -9,9 +9,12 @@ import 'package:intl/intl.dart';
 
 // 🌎 Project imports:
 import '/lib.dart';
+import 'buttons/update_schedule_confirm_button.dart';
 
 class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
-  const DatetimePickerBottomSheet({super.key});
+  DatetimePickerBottomSheet({super.key, this.isEditMode = false, this.scheduleId});
+  final bool isEditMode;
+  final int? scheduleId;
   String formatting(DateTime date) {
     final formatter = DateFormat('M/d (E) HH:mm', 'ko');
     return formatter.format(date);
@@ -185,7 +188,8 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                                   // TODO 생각처럼 안되네요 ㅋㅋㅋ 개선 필요 !!
                                   // minimumDate:
                                   //     index == 1 ? controller.items[0].date : DateTime.now(),
-                                  minimumDate: DateTime.now(),
+                                  minimumDate:
+                                      isEditMode ? null : DateTime.now(),
                                 ))),
                         isExpanded: controller.items[index].isExpanded);
                   },
@@ -199,7 +203,10 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                   children: [
                     const CancelButton(plural: false),
                     // TODO: 일정을 등록할 때와 수정할 때 각각 상황에 따라 동작
-                    AddScheduleConfirmButton(controller: controller),
+                    if (isEditMode && scheduleId != null)
+                      UpdateScheduleConfirmButton(controller: controller, scheduleId: scheduleId!)
+                    else
+                      AddScheduleConfirmButton(controller: controller)
                   ],
                 )),
           ],

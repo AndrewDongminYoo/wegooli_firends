@@ -10,10 +10,14 @@ import '/lib.dart';
 class ScheduleEditButton extends StatelessWidget {
   const ScheduleEditButton({
     super.key,
+    required this.schedule,
   });
+
+  final Schedule schedule;
 
   @override
   Widget build(BuildContext context) {
+    final scheduleController = ScheduleController.to;
     return CustomElevatedButton(
       width: getHorizontalSize(114),
       height: getVerticalSize(28),
@@ -24,7 +28,13 @@ class ScheduleEditButton extends StatelessWidget {
       buttonTextStyle: CustomTextStyles.bodySmallPretendardGray70001,
       decoration: AppDecoration.minimal,
       onTap: () {
-        Get.bottomSheet(const DatetimePickerBottomSheet());
+        final items = scheduleController.initItem();
+        items[0].date = DateTime.parse(schedule.startAt!);
+        items[1].date = DateTime.parse(schedule.endAt!);
+        scheduleController.items(items);
+        scheduleController.items.refresh();
+        Get.bottomSheet(DatetimePickerBottomSheet(isEditMode: true, scheduleId: schedule.seq),
+            ignoreSafeArea: false, isScrollControlled: true);
       },
     );
   }

@@ -124,7 +124,7 @@ class AppRoutes {
     GetPage(
       bindings: [TeamCommunityBinding()],
       name: bookDatetimePicker,
-      page: () => const DatetimePickerBottomSheet(),
+      page: () => DatetimePickerBottomSheet(),
     ),
     GetPage(
       bindings: [TeamCommunityBinding()],

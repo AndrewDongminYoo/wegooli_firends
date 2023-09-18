@@ -122,7 +122,9 @@ class _TeamReservationsItemState extends State<TeamReservationsItem> {
                         mainAxisSize: MainAxisSize.min,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const ScheduleEditButton(),
+                          ScheduleEditButton(
+                            schedule: widget.schedule,
+                          ),
                           ScheduleDeleteButton(
                             controller: widget.controller,
                             schedule: widget.schedule,

@@ -79,7 +79,12 @@ class _MyProfileCardListState extends State<MyProfileCardList> {
                 Container(
                   // color: appTheme.amber700,
                   padding: getPadding(top: 20, bottom: 20, left: 16, right: 16),
-                  child: const AddCreditCardButton(),
+                  child: CustomElevatedButton(
+                    text: l10ns.cardAdditions,
+                    buttonStyle: CustomButtonStyles.fillPrimaryC26,
+                    buttonTextStyle: CustomTextStyles.titleMedium18,
+                    onTap: goRegisterCreditCard,
+                  ),
                 ),
               ],
             )),

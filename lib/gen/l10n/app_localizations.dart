@@ -65,7 +65,7 @@ import 'app_localizations_ko.dart';
 /// property.
 abstract class Localized {
   Localized(String locale)
-      : localeName = intl.Intl.canonicalizedLocale(locale);
+      : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 

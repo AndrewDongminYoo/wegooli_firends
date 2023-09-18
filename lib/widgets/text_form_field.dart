@@ -9,6 +9,7 @@ class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField({
     Key? key,
     this.alignment,
+    this.autofill,
     this.autofillHints,
     this.autofocus = true,
     this.enabled = true,
@@ -37,13 +38,14 @@ class CustomTextFormField extends StatelessWidget {
     required this.controller,
   }) : super(key: key);
 
-  final Alignment? alignment;
   final bool? autofocus;
-  final List<String>? autofillHints;
+  final bool? autofill;
   final bool? enabled;
+  final bool? filled;
+  final Alignment? alignment;
+  final List<String>? autofillHints;
 
   /// [true]이면 데코레이션 컨테이너가 [fillColor]로 채워집니다.
-  final bool? filled;
   final bool? obscureText;
   final BoxConstraints? prefixConstraints;
   final BoxConstraints? suffixConstraints;
@@ -87,6 +89,9 @@ class CustomTextFormField extends StatelessWidget {
           autofocus: autofocus!,
           focusNode: focusNode,
           autofillHints: autofillHints ?? [],
+          autovalidateMode: (autofill ?? false)
+              ? AutovalidateMode.always
+              : AutovalidateMode.onUserInteraction,
           style: textStyle ?? CustomTextStyles.bodyLargeGray50002,
           textInputAction: textInputAction,
           keyboardType: textInputType,

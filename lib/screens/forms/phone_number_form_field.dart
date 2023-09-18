@@ -19,7 +19,8 @@ class PhoneNumberFormField extends StatelessWidget {
         width: getHorizontalSize(198),
         controller: controller.phoneNum,
         margin: getMargin(top: 4),
-        autofillHints: const [AutofillHints.telephoneNumber],
+        autofill: true,
+        autofillHints: const [AutofillHints.telephoneNumberLocal],
         textInputType: TextInputType.phone,
         contentPadding: getPadding(all: 12),
         inputFormatters: <TextInputFormatter>[

@@ -63,9 +63,11 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
   }
 
   void verificationFailed(Exception error) {
+    var title = '전화번호 인증 오류';
     String? output;
     if (error is FirebaseException) {
       output = error.message;
+      title = error.code;
       if (error is FirebaseAuthException) {
         if (authExceptions.containsKey(error.code)) {
           output = authExceptions[error.code];
@@ -73,6 +75,7 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
       }
     }
     _error = output ?? '휴대폰 인증과정에서 오류가 발생했습니다.';
+    Get.showSnackbar(GetSnackBar(title: title, message: _error));
   }
 
   Future<AuthCredential?> phoneAuth(String phoneNum) async {
@@ -93,10 +96,7 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
           phoneCredential = _credential;
         },
         // 잘못된 전화번호나 SMS 할당량 초과 여부 등의 실패 이벤트
-        verificationFailed: (FirebaseAuthException e) {
-          verificationFailed(e);
-          Get.showSnackbar(GetSnackBar(title: _error));
-        },
+        verificationFailed: verificationFailed,
         // Firebase에서 기기로 코드가 전송된 경우를 처리하며 사용자에게 코드를 입력하라는 메시지를 표시하는 데 사용
         codeSent: (String verificationId, int? resendToken) async {
           print('verificationId: $verificationId');
@@ -107,10 +107,14 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
         },
         // 자동 SMS 코드 처리에 실패한 경우 시간 초과를 처리
         codeAutoRetrievalTimeout: (String verificationId) {
-          print('verificationId: $verificationId');
-          _verificationId = verificationId;
-          Get.showSnackbar(
-              const GetSnackBar(title: '휴대폰 인증과정에서 시간초과가 발생했습니다.'));
+          controller.pinCodes.clear();
+          if (_timer != null) {
+            _timer!.cancel();
+          }
+          print('timeout.verificationId: $verificationId');
+          Get.showSnackbar(const GetSnackBar(
+              title: 'CodeAutoRetrievalTimeout',
+              message: '휴대폰 인증과정에서 시간초과가 발생했습니다.'));
         },
       );
     }

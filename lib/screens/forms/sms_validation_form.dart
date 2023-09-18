@@ -62,7 +62,7 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
     super.dispose();
   }
 
-  void firebaseAuthError(Exception error) {
+  void verificationFailed(Exception error) {
     String? output;
     if (error is FirebaseException) {
       output = error.message;
@@ -94,7 +94,7 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
         },
         // 잘못된 전화번호나 SMS 할당량 초과 여부 등의 실패 이벤트
         verificationFailed: (FirebaseAuthException e) {
-          firebaseAuthError(e);
+          verificationFailed(e);
           Get.showSnackbar(GetSnackBar(title: _error));
         },
         // Firebase에서 기기로 코드가 전송된 경우를 처리하며 사용자에게 코드를 입력하라는 메시지를 표시하는 데 사용
@@ -134,7 +134,7 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
         // Sign the user in (or link) with the credential
         return auth.signInWithCredential(phoneCredential);
       } on FirebaseAuthException catch (e) {
-        firebaseAuthError(e);
+        verificationFailed(e);
       }
     }
     return null;
@@ -176,75 +176,79 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
         smsCode = controller.pinCodes.text;
       }
     });
-    return Padding(
-      padding: getPadding(top: 6),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          CustomInputLabel(
-            labelText: l10ns.cellPhoneInformation,
-          ), // '휴대폰 정보'
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              TelecomDropdown(controller: widget.controller),
-              PhoneNumberFormField(controller: widget.controller),
-            ],
-          ),
-          Row(
-            children: [
-              Expanded(
-                  child: CustomElevatedButton(
-                      height: getVerticalSize(48),
-                      width: double.maxFinite,
-                      text: l10ns.sendAuthorizationNumber,
-                      margin: getMargin(top: 10),
-                      buttonStyle: CustomButtonStyles.fillPrimaryC5,
-                      buttonTextStyle: theme.textTheme.titleMedium,
-                      onTap: () {
-                        phoneAuth(controller.phoneNum.text);
-                        FocusScope.of(context).unfocus();
-                      })),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              CustomTextFormField(
-                width: getHorizontalSize(160),
-                hintText: '000000',
-                controller: controller.pinCodes,
-                textInputType: TextInputType.phone,
-                inputFormatters: <TextInputFormatter>[
-                  FilteringTextInputFormatter.digitsOnly,
-                  LengthLimitingTextInputFormatter(6),
-                ],
-                margin: getMargin(top: 10),
-                contentPadding: getPadding(left: 14, top: 14, bottom: 14),
-                textStyle: CustomTextStyles.bodyLargeGray500,
-                hintStyle: CustomTextStyles.bodyLargeGray500,
-                autofillHints: const [AutofillHints.oneTimeCode],
-                suffixConstraints:
-                    BoxConstraints(maxHeight: getVerticalSize(48)),
-                filled: true,
-                fillColor: Colors.white,
-                suffix: Padding(
-                  padding: getPadding(left: 30, top: 12, right: 10, bottom: 12),
-                  child: controller.state == SignUp.WAITING && codeSent
-                      ? Text('$_min:$_sec', style: theme.textTheme.labelSmall)
-                      : const SizedBox.shrink(),
-                ),
-              ),
-              CustomElevatedButton(
-                  text: l10ns.confirm,
-                  width: getHorizontalSize(160),
+    return Unfocused(
+      child: Padding(
+        padding: getPadding(top: 6),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            CustomInputLabel(
+              labelText: l10ns.cellPhoneInformation,
+            ), // '휴대폰 정보'
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TelecomDropdown(controller: widget.controller),
+                PhoneNumberFormField(controller: widget.controller),
+              ],
+            ),
+            Row(
+              children: [
+                Expanded(
+                    child: CustomElevatedButton(
+                  height: getVerticalSize(48),
+                  width: double.maxFinite,
+                  text: l10ns.sendAuthorizationNumber,
                   margin: getMargin(top: 10),
                   buttonStyle: CustomButtonStyles.fillPrimaryC5,
                   buttonTextStyle: theme.textTheme.titleMedium,
-                  onTap: () async => actCodeSent(smsCode, _verificationId)),
-            ],
-          ),
-        ],
+                  onTap: () {
+                    phoneAuth(controller.phoneNum.text);
+                    FocusScope.of(context).unfocus();
+                  },
+                )),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                CustomTextFormField(
+                  width: getHorizontalSize(160),
+                  hintText: '000000',
+                  controller: controller.pinCodes,
+                  textInputType: TextInputType.phone,
+                  inputFormatters: <TextInputFormatter>[
+                    FilteringTextInputFormatter.digitsOnly,
+                    LengthLimitingTextInputFormatter(6),
+                  ],
+                  margin: getMargin(top: 10),
+                  contentPadding: getPadding(left: 14, top: 14, bottom: 14),
+                  textStyle: CustomTextStyles.bodyLargeGray500,
+                  hintStyle: CustomTextStyles.bodyLargeGray500,
+                  autofillHints: const [AutofillHints.oneTimeCode],
+                  suffixConstraints:
+                      BoxConstraints(maxHeight: getVerticalSize(48)),
+                  filled: true,
+                  fillColor: Colors.white,
+                  suffix: Padding(
+                    padding:
+                        getPadding(left: 30, top: 12, right: 10, bottom: 12),
+                    child: controller.state == SignUp.WAITING && codeSent
+                        ? Text('$_min:$_sec', style: theme.textTheme.labelSmall)
+                        : const SizedBox.shrink(),
+                  ),
+                ),
+                CustomElevatedButton(
+                    text: l10ns.confirm,
+                    width: getHorizontalSize(160),
+                    margin: getMargin(top: 10),
+                    buttonStyle: CustomButtonStyles.fillPrimaryC5,
+                    buttonTextStyle: theme.textTheme.titleMedium,
+                    onTap: () async => actCodeSent(smsCode, _verificationId)),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

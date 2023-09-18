@@ -58,12 +58,8 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                             controller.returnTime
                                 .difference(controller.reservationTime)
                                 .inHours,
-                            formatting(controller.reservationTime.add(Duration(
-                                minutes: 10 -
-                                    controller.reservationTime.minute % 10))),
-                            formatting(controller.returnTime.add(Duration(
-                                minutes:
-                                    10 - controller.returnTime.minute % 10))),
+                            formatting(controller.reservationTime),
+                            formatting(controller.returnTime),
                           ),
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
@@ -140,9 +136,7 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                                         controller.items.refresh();
                                       },
                                       child: Text(
-                                        formatting(item.date.add(Duration(
-                                            minutes:
-                                                10 - item.date.minute % 10))),
+                                        formatting(item.date),
                                         textAlign: TextAlign.right,
                                         style: TextStyle(
                                           color: isOpen
@@ -178,8 +172,7 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                                   backgroundColor: CupertinoColors
                                       .systemBackground
                                       .resolveFrom(context),
-                                  initialDateTime: item.date.add(Duration(
-                                      minutes: 10 - item.date.minute % 10)),
+                                  initialDateTime: item.date,
                                   onDateTimeChanged: (newDateTime) {
                                     // print('newDateTime: $newDateTime');
                                     controller.items[index].date = newDateTime;

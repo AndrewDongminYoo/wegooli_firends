@@ -39,9 +39,6 @@ class _MainPageState extends State<MainPage> {
   }
 
   Widget getBody(RouteSettings settings) {
-    if (!user.isAuthenticated) {
-      return const LoginPage();
-    }
     switch (settings.name) {
       case AppRoutes.sharedSchedule:
         return const SharedCalendar();

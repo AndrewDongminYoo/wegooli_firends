@@ -141,6 +141,7 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
   Future<String?> getSmsCodeFromUser() async {
     _timer = Timer.periodic(rest, (timer) => tick());
     Get.showSnackbar(const GetSnackBar(
+        showProgressIndicator: true,
         title: '입력한 휴대폰으로 전송된 인증 코드를 확인해주세요.',
         message: '3분내 입력하지 않을 경우 인증코드가 만료됩니다.'));
     if (controller.pinCodes.text.isEmpty) {

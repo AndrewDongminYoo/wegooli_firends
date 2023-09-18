@@ -21,12 +21,13 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     const id = 1;
     final navigatorKey = Get.nestedKey(id);
+    print('user.currentUser.id ${user.currentUser.id}');
     return Scaffold(
       body: Navigator(
           key: navigatorKey,
           initialRoute: user.teams.isNotEmpty
-              ? AppRoutes.sharedSchedule
-              : AppRoutes.teamInvitation,
+                  ? AppRoutes.sharedSchedule
+                  : AppRoutes.teamInvitation,
           onGenerateRoute: (RouteSettings settings) {
             return GetPageRoute(
               settings: settings,
@@ -67,7 +68,7 @@ class _MainPageState extends State<MainPage> {
       case AppRoutes.upcomingUnsubscription:
         return const UnsubscriptionUpcoming();
       default:
-        return const SharedCalendar();
+        return const LoginPage();
     }
   }
 }

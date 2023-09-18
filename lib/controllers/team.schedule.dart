@@ -32,22 +32,21 @@ class ScheduleController extends GetxController {
 
   DateTime focusedDay = kToday;
 
-  /// [Map]을 사용하기로 한 경우, [LinkedHashMap]를 사용하는 것이 권장됩니다.
-  final LinkedHashMap<DateTime, List<Schedule>> _events =
-      LinkedHashMap<DateTime, List<Schedule>>();
-  LinkedHashMap<DateTime, List<Schedule>> get events {
-    if (_events.isEmpty) {
-      return LinkedHashMap<DateTime, List<Schedule>>(
-        equals: isSameDay,
-        hashCode: getHashCode,
-      )..addAll(eventSource);
-    } else {
-      return _events;
-    }
-  }
+  // /// [Map]을 사용하기로 한 경우, [LinkedHashMap]를 사용하는 것이 권장됩니다.
+  // final LinkedHashMap<DateTime, List<Schedule>> _events =
+  //     LinkedHashMap<DateTime, List<Schedule>>();
+  // LinkedHashMap<DateTime, List<Schedule>> get events {
+  //   if (_events.isEmpty) {
+  //     return LinkedHashMap<DateTime, List<Schedule>>(
+  //       equals: isSameDay,
+  //       hashCode: getHashCode,
+  //     )..addAll(eventSource);
+  //   } else {
+  //     return _events;
+  //   }
+  // }
 
-  final RxMap<DateTime, List<Schedule>> _eventSource = RxMap.of({});
-  RxMap<DateTime, List<Schedule>> get eventSource => _eventSource;
+  final RxMap<DateTime, List<Schedule>> eventSource = RxMap.of({});
 
   @override
   void onInit() {
@@ -107,7 +106,7 @@ class ScheduleController extends GetxController {
         // print('eventSource Add : \nkey:${key}\nvalue:$value');
       }
     }
-    _eventSource(localEventSource);
+    eventSource(localEventSource);
   }
 
   List<Item> initItem() {
@@ -153,6 +152,41 @@ class ScheduleController extends GetxController {
       value.add(schedule);
       localEventSource.addIf(true, normalizeDateTime(key), value);
     }
-    _eventSource.addAll(localEventSource);
+    eventSource.addAll(localEventSource);
+  }
+
+  Future<void> updateSchedule(int scheduleId) async {
+    print('updateSchedule');
+    final accountId = userController.currentUser.id;
+    final teamSeq = userController.firstTeamSeq;
+    if (teamSeq == null) {
+      return;
+    }
+
+    await _service.updateSchedule(scheduleId, reservationTime, returnTime);
+    // TODO 기존 아이템 목록에서 제거하고 업데이트된 항목으로 반영.
+    userController.schedules(await userController.retrieveSchedules(teamSeq));
+    eventSource.clear();
+    makeEventSource();
+    eventSource.refresh();
+    // TODO 주의 필요.
+    await Get.forceAppUpdate();
+    items(initItem());
+
+    // final localEventSource = Map<DateTime, List<Schedule>>.of({});
+    // final schedule = Schedule(
+    //   accountId: accountId,
+    //   teamSeq: teamSeq,
+    //   startAt: reservationTime.toString(),
+    //   endAt: returnTime.toString(),
+    // );
+
+    // for (final key in daysInRange(reservationTime, returnTime)) {
+    //   final value =
+    //       localEventSource.getOrDefault(normalizeDateTime(key), <Schedule>[]);
+    //   value.add(schedule);
+    //   localEventSource.addIf(true, normalizeDateTime(key), value);
+    // }
+    // eventSource.addAll(localEventSource);
   }
 }

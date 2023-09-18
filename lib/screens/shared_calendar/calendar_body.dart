@@ -75,6 +75,6 @@ class CalendarBody extends GetView<ScheduleController> {
   }
 
   List<Schedule> _eventLoader(DateTime key) {
-    return controller.events.getOrDefault(normalizeDateTime(key), []);
+    return controller.eventSource.getOrDefault(normalizeDateTime(key), []);
   }
 }

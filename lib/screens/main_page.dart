@@ -48,7 +48,7 @@ class _MainPageState extends State<MainPage> {
       case AppRoutes.teamInvitation:
         return const TeamInvitation();
       case AppRoutes.bookDatetimePicker:
-        return const DatetimePickerBottomSheet();
+        return DatetimePickerBottomSheet();
       case AppRoutes.reservationsCheck:
         return const ReservationsCheckingPageDialog();
       case AppRoutes.chatWithTeam:

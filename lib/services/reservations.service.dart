@@ -44,4 +44,16 @@ class ReservationsService extends GetConnect {
     print('새로운 스케줄을 등록했습니다. ${response.statusCode}');
     return response.data;
   }
+
+  Future<void> updateSchedule(
+      int scheduleId, DateTime startAt, DateTime endAt) async {
+    final formatter = DateFormat('yyyy-MM-dd HH:mm:ss');
+    final scheduleRequest = ScheduleRequest(
+      startAt: formatter.format(startAt),
+      endAt: formatter.format(endAt),
+    );
+    print('scheduleRequest $scheduleRequest');
+    await scheduleApi.updateSchedule(
+        seq: scheduleId, scheduleRequest: scheduleRequest);
+  }
 }

@@ -92,7 +92,7 @@ class _TeamReservationsItemState extends State<TeamReservationsItem> {
                         formatering(widget.schedule),
                         style: TextStyle(
                           color: ColorConstant.fontBlack,
-                          fontSize: getFontSize(16),
+                          fontSize: getFontSize(14),
                           fontFamily: FontFamily.pretendard,
                           fontWeight: FontWeight.w400,
                           letterSpacing: 0.03,

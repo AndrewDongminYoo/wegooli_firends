@@ -1,5 +1,5 @@
 name: wegooli_friends
-version: 1.0.0+8
+version: 1.0.0+9
 description: Wegooli Friends 프로젝트
 
 # 다음 줄은 `flutter pub publish`를 사용하여 패키지가 실수로 pub.dev에 게시되는 것을 방지함.

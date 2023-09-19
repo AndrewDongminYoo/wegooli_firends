@@ -13,6 +13,7 @@ export 'core/network/async_web_font.dart';
 export 'core/network/network_info.dart';
 export 'core/utils/copy_crop.dart';
 export 'core/utils/custom_icons.dart';
+export 'core/utils/device_info.dart';
 export 'core/utils/extensions/color_converter.dart';
 export 'core/utils/extensions/date_time_date.dart';
 export 'core/utils/extensions/date_time_extensions.dart';

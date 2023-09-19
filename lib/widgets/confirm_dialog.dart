@@ -52,8 +52,8 @@ class ConfirmDialog extends StatelessWidget {
                         if (!disableCloseBtn)
                           CustomImageView(
                               svgPath: Assets.svg.imgCloseGray400Sharp.path,
-                              height: getSize(13),
-                              width: getSize(13),
+                              height: 13.adaptSize,
+                              width: 13.adaptSize,
                               margin: getMargin(bottom: 15),
                               onTap: goBack),
                       ])),
@@ -66,8 +66,8 @@ class ConfirmDialog extends StatelessWidget {
                 children: [
                   const CancelButton(plural: true),
                   CustomElevatedButton(
-                    width: getHorizontalSize(145),
-                    height: getVerticalSize(52),
+                    width: 145.h,
+                    height: 52.v,
                     text: confirmText,
                     buttonStyle: CustomButtonStyles.fillPrimaryBR10,
                     buttonTextStyle: CustomTextStyles.titleMedium16,

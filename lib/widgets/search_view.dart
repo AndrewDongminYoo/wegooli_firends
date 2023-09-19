@@ -96,7 +96,7 @@ class CustomSearchView extends StatelessWidget {
       prefixIconConstraints: prefixConstraints,
       suffixIcon: suffix ??
           Padding(
-              padding: EdgeInsets.only(right: getHorizontalSize(15)),
+              padding: EdgeInsets.only(right: 15.h),
               child: IconButton(
                   onPressed: () => controller!.clear(),
                   icon: const Icon(Icons.clear, color: Color(0xFF757575)))),
@@ -108,14 +108,14 @@ class CustomSearchView extends StatelessWidget {
       filled: filled,
       border: borderDecoration ??
           OutlineInputBorder(
-              borderRadius: BorderRadius.circular(getHorizontalSize(5)),
+              borderRadius: BorderRadius.circular(5.h),
               borderSide: BorderSide(color: appTheme.supernova)),
       enabledBorder: borderDecoration ??
           OutlineInputBorder(
-              borderRadius: BorderRadius.circular(getHorizontalSize(5)),
+              borderRadius: BorderRadius.circular(5.h),
               borderSide: BorderSide(color: appTheme.supernova)),
       focusedBorder: borderDecoration ??
           OutlineInputBorder(
-              borderRadius: BorderRadius.circular(getHorizontalSize(5)),
+              borderRadius: BorderRadius.circular(5.h),
               borderSide: BorderSide(color: appTheme.supernova)));
 }

@@ -62,7 +62,7 @@ class _LoginPageState extends State<LoginPage> {
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.left,
                         style: theme.textTheme.bodyLarge!.copyWith(
-                          letterSpacing: getHorizontalSize(0.03),
+                          letterSpacing: 0.03.h,
                         ),
                       )),
                   GoSignUpButton(controller: controller),

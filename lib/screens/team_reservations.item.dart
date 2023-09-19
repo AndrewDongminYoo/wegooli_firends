@@ -36,8 +36,8 @@ class _TeamReservationsItemState extends State<TeamReservationsItem> {
         widget.schedule.accountId == widget.controller.currentUser.id;
     return Container(
       margin: getMargin(bottom: 10),
-      width: getHorizontalSize(288),
-      height: isToggleOn ? getVerticalSize(115) : getVerticalSize(75),
+      width: 288.h,
+      height: isToggleOn ? 115.v : 75.v,
       decoration: ShapeDecoration(
         color: Colors.white,
         shape: RoundedRectangleBorder(
@@ -50,7 +50,7 @@ class _TeamReservationsItemState extends State<TeamReservationsItem> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            width: getHorizontalSize(10),
+            width: 10.h,
             decoration: ShapeDecoration(
               color: color,
               shape: const RoundedRectangleBorder(
@@ -62,8 +62,8 @@ class _TeamReservationsItemState extends State<TeamReservationsItem> {
             ),
           ),
           Container(
-            width: getHorizontalSize(268),
-            height: isToggleOn ? getVerticalSize(115) : getVerticalSize(75),
+            width: 268.h,
+            height: isToggleOn ? 115.v : 75.v,
             padding: getPadding(left: 10, right: 10, top: 15, bottom: 15),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -73,7 +73,7 @@ class _TeamReservationsItemState extends State<TeamReservationsItem> {
                   widget.schedule.accountId,
                   style: TextStyle(
                     color: ColorConstant.fontBlack,
-                    fontSize: getFontSize(12),
+                    fontSize: 12.fSize,
                     fontFamily: FontFamily.pretendard,
                     fontWeight: FontWeight.w400,
                     // height: 1.50,
@@ -81,8 +81,8 @@ class _TeamReservationsItemState extends State<TeamReservationsItem> {
                   ),
                 ),
                 Container(
-                  width: getHorizontalSize(268),
-                  height: getVerticalSize(24),
+                  width: 268.h,
+                  height: 24.v,
                   margin: getMargin(bottom: isToggleOn ? 10 : 0),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
@@ -92,7 +92,7 @@ class _TeamReservationsItemState extends State<TeamReservationsItem> {
                         formatering(widget.schedule),
                         style: TextStyle(
                           color: ColorConstant.fontBlack,
-                          fontSize: getFontSize(14),
+                          fontSize: 16.fSize,
                           fontFamily: FontFamily.pretendard,
                           fontWeight: FontWeight.w400,
                           letterSpacing: 0.03,
@@ -103,8 +103,8 @@ class _TeamReservationsItemState extends State<TeamReservationsItem> {
                             svgPath: isToggleOn
                                 ? Assets.svg.imgArrowUp.path
                                 : Assets.svg.imgArrowDown.path,
-                            height: getSize(16),
-                            width: getSize(16),
+                            height: 16.adaptSize,
+                            width: 16.adaptSize,
                             onTap: () {
                               if (isOwner) {
                                 setState(() {
@@ -117,7 +117,7 @@ class _TeamReservationsItemState extends State<TeamReservationsItem> {
                 ),
                 if (isOwner && isToggleOn)
                   SizedBox(
-                    width: getHorizontalSize(268),
+                    width: 268.h,
                     child: Row(
                         mainAxisSize: MainAxisSize.min,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -18,12 +18,12 @@ class MemberAvatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: getVerticalSize(71),
-      // width: getHorizontalSize(50),
+      height: 71.v,
+      // width: 50.h,
       child: Column(children: [
         Container(
-          height: getSize(50),
-          width: getSize(50),
+          height: 50.adaptSize,
+          width: 50.adaptSize,
           margin: getMargin(bottom: 3),
           alignment: Alignment.center,
           // padding: getPadding(all: 4),
@@ -33,8 +33,8 @@ class MemberAvatar extends StatelessWidget {
           ),
           child: CustomImageView(
               imagePath: avatarImagePath,
-              height: getSize(42),
-              width: getSize(42),
+              height: 42.adaptSize,
+              width: 42.adaptSize,
               radius: BorderRadius.circular(32),
               alignment: Alignment.center),
         ),

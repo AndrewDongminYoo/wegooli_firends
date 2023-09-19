@@ -20,8 +20,8 @@ class UnsubscribeButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomElevatedButton(
-      width: plural ? getHorizontalSize(145) : getHorizontalSize(216),
-      height: getVerticalSize(52),
+      width: plural ? 145.h : 216.h,
+      height: 52.v,
       text: plural ? l10ns.unsubscribe : l10ns.cancelingASubscription,
       buttonStyle: plural
           ? CustomButtonStyles.fillPrimaryBR10

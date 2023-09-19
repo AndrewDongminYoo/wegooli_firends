@@ -24,14 +24,14 @@ class SplashLoading extends StatelessWidget {
               const FriendsByWegooli(),
               Container(
                   alignment: Alignment.center,
-                  margin: EdgeInsets.only(top: getVerticalSize(44)),
+                  margin: EdgeInsets.only(top: 44.v),
                   width: Get.width,
                   child: CustomImageView(
                     onTap: goIdPwLogin,
                     imagePath: Assets.images.imgGooli1.path,
                     fit: BoxFit.fitWidth,
-                    height: getVerticalSize(93),
-                    width: getHorizontalSize(166),
+                    height: 93.v,
+                    width: 166.h,
                   )),
             ],
           ),

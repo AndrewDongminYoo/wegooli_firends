@@ -26,12 +26,12 @@ class RegisterSuccess extends GetWidget<UserController> {
                 children: [
                   CustomImageView(
                       imagePath: Assets.images.imgGooli0.path,
-                      height: getVerticalSize(109),
-                      width: getHorizontalSize(136),
+                      height: 109.v,
+                      width: 136.h,
                       alignment: Alignment.centerRight,
                       margin: getMargin(right: 87)),
                   Container(
-                      width: getHorizontalSize(153),
+                      width: 153.h,
                       margin: getMargin(top: 36),
                       child: Text(
                         l10ns.yourRegistrationHasBeenCompleted,
@@ -39,7 +39,7 @@ class RegisterSuccess extends GetWidget<UserController> {
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.center,
                         style: theme.textTheme.headlineSmall!.copyWith(
-                          letterSpacing: getHorizontalSize(0.05),
+                          letterSpacing: 0.05.h,
                         ),
                       )),
                   Padding(
@@ -58,8 +58,7 @@ class RegisterSuccess extends GetWidget<UserController> {
                                         textAlign: TextAlign.left,
                                         style: theme.textTheme.titleMedium!
                                             .copyWith(
-                                          letterSpacing:
-                                              getHorizontalSize(0.03),
+                                          letterSpacing: 0.03.h,
                                         ),
                                       )),
                                 ]),
@@ -75,7 +74,7 @@ class RegisterSuccess extends GetWidget<UserController> {
                                     style: CustomTextStyles
                                         .bodySmallErrorContainer
                                         .copyWith(
-                                      letterSpacing: getHorizontalSize(0.04),
+                                      letterSpacing: 0.04.h,
                                     ),
                                   ),
                                   Text(
@@ -85,7 +84,7 @@ class RegisterSuccess extends GetWidget<UserController> {
                                     style: CustomTextStyles
                                         .bodySmallErrorContainer
                                         .copyWith(
-                                      letterSpacing: getHorizontalSize(0.04),
+                                      letterSpacing: 0.04.h,
                                     ),
                                   ),
                                 ]),

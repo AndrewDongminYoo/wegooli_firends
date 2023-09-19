@@ -22,7 +22,7 @@ class PostCodeFormField extends StatelessWidget {
         enabled: false,
         autofillHints: const [AutofillHints.postalCode],
         textInputType: TextInputType.number,
-        width: getHorizontalSize(160),
+        width: 160.h,
         controller: controller,
         margin: getMargin(top: 4),
         contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),

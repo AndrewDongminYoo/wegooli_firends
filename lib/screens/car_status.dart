@@ -21,7 +21,7 @@ class _CarStatusPageState extends State<CarStatusPage> {
       appBar: CustomAppBar.getFriendsTypoAppBar(),
       body: SizedBox(
         width: mediaQueryData.size.width,
-        height: mediaQueryData.size.height - getVerticalSize(45),
+        height: mediaQueryData.size.height - 45.v,
         child: SingleChildScrollView(
           padding: getPadding(top: 24),
           child: Column(
@@ -40,8 +40,8 @@ class _CarStatusPageState extends State<CarStatusPage> {
                           // imagePath: controller.terminalDevice.carImage ??
                           //     Assets.cars.rayQM9y.path,
                           imagePath: Assets.cars.rayEvSEu3.path,
-                          height: getVerticalSize(92),
-                          width: getHorizontalSize(129),
+                          height: 92.v,
+                          width: 129.h,
                           fit: BoxFit.fitWidth,
                         ),
                         Padding(
@@ -59,7 +59,7 @@ class _CarStatusPageState extends State<CarStatusPage> {
                                     textAlign: TextAlign.left,
                                     style:
                                         theme.textTheme.titleMedium!.copyWith(
-                                      letterSpacing: getHorizontalSize(0.03),
+                                      letterSpacing: 0.03.h,
                                     ),
                                   ),
                                   Padding(
@@ -70,9 +70,7 @@ class _CarStatusPageState extends State<CarStatusPage> {
                                       overflow: TextOverflow.ellipsis,
                                       textAlign: TextAlign.left,
                                       style: CustomTextStyles.bodySmallOnPrimary
-                                          .copyWith(
-                                              letterSpacing:
-                                                  getHorizontalSize(0.02)),
+                                          .copyWith(letterSpacing: 0.02.h),
                                     ),
                                   ),
                                   Padding(
@@ -97,8 +95,7 @@ class _CarStatusPageState extends State<CarStatusPage> {
                                                 style: theme
                                                     .textTheme.bodySmall!
                                                     .copyWith(
-                                                  letterSpacing:
-                                                      getHorizontalSize(0.02),
+                                                  letterSpacing: 0.02.h,
                                                 ),
                                               ),
                                             ),
@@ -117,7 +114,7 @@ class _CarStatusPageState extends State<CarStatusPage> {
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.left,
                       style: CustomTextStyles.bodySmallOnPrimary
-                          .copyWith(letterSpacing: getHorizontalSize(0.02)),
+                          .copyWith(letterSpacing: 0.02.h),
                     ),
                     Padding(
                       padding: getPadding(left: 5),
@@ -126,12 +123,12 @@ class _CarStatusPageState extends State<CarStatusPage> {
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.left,
                         style: CustomTextStyles.bodySmallOnPrimary
-                            .copyWith(letterSpacing: getHorizontalSize(0.02)),
+                            .copyWith(letterSpacing: 0.02.h),
                       ),
                     ),
                     Container(
-                      height: getSize(4),
-                      width: getSize(4),
+                      height: 4.adaptSize,
+                      width: 4.adaptSize,
                       margin: getMargin(
                         left: 5,
                         top: 5,
@@ -139,8 +136,7 @@ class _CarStatusPageState extends State<CarStatusPage> {
                       ),
                       decoration: BoxDecoration(
                         color: appTheme.green500,
-                        borderRadius:
-                            BorderRadius.circular(getHorizontalSize(2)),
+                        borderRadius: BorderRadius.circular(2.h),
                       ),
                     ),
                     Padding(
@@ -152,14 +148,14 @@ class _CarStatusPageState extends State<CarStatusPage> {
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.left,
                         style: theme.textTheme.bodySmall!
-                            .copyWith(letterSpacing: getHorizontalSize(0.02)),
+                            .copyWith(letterSpacing: 0.02.h),
                       ),
                     ),
                   ],
                 ),
               ),
               Container(
-                  height: getVerticalSize(8),
+                  height: 8.v,
                   width: mediaQueryData.size.width,
                   margin: getMargin(top: 31),
                   decoration: AppDecoration.fillGray100),
@@ -181,7 +177,7 @@ class _CarStatusPageState extends State<CarStatusPage> {
                               textAlign: TextAlign.left,
                               style:
                                   CustomTextStyles.titleMediumBlack900.copyWith(
-                                letterSpacing: getHorizontalSize(0.04),
+                                letterSpacing: 0.04.h,
                               ),
                             ),
                           ),

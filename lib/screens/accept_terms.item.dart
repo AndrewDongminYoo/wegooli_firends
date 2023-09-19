@@ -41,8 +41,8 @@ class _AgreementItemState extends State<AgreementItem> {
                   }),
               CustomImageView(
                 svgPath: Assets.svg.imgArrowRight.path,
-                height: getSize(18),
-                width: getSize(18),
+                height: 18.adaptSize,
+                width: 18.adaptSize,
                 margin: getMargin(bottom: 2),
                 onTap: () => Get.toNamed(
                   AppRoutes.acceptTermsDetail,

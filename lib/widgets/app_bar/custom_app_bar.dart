@@ -22,11 +22,11 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     void Function()? onTapLeading,
   }) : this(
             key: key,
-            height: getVerticalSize(53),
+            height: 53.v,
             leadingWidth: 34,
             leading: CustomImageView(
-                height: getSize(18),
-                width: getSize(18),
+                height: 18.adaptSize,
+                width: 18.adaptSize,
                 svgPath: Assets.svg.imgArrowLeft.path,
                 margin: getMargin(left: 16, top: 19, bottom: 16),
                 onTap: () {
@@ -38,11 +38,11 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   CustomAppBar.getFriendsTypoAppBar({Key? key})
       : this(
             key: key,
-            height: getVerticalSize(45),
+            height: 45.v,
             centerTitle: true,
             title: CustomImageView(
-                height: getVerticalSize(17),
-                width: getHorizontalSize(88),
+                height: 17.v,
+                width: 88.h,
                 svgPath: Assets.svg.imgFriendsTypo.path),
             styleType: Style.bgOutline);
 
@@ -58,7 +58,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       elevation: 0,
-      toolbarHeight: height ?? getVerticalSize(55),
+      toolbarHeight: height ?? 55.v,
       automaticallyImplyLeading: false,
       backgroundColor: Colors.white,
       scrolledUnderElevation: 0,
@@ -73,19 +73,32 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize =>
-      Size(mediaQueryData.size.width, height ?? getVerticalSize(55));
+  Size get preferredSize => Size(mediaQueryData.size.width, height ?? 55.v);
   Widget _getStyle() {
     switch (styleType) {
       case Style.bgOutline:
         return Container(
-            height: getVerticalSize(45),
+            height: 45.v,
             width: double.maxFinite,
             decoration: BoxDecoration(
                 border: Border(
                     bottom: BorderSide(
-                        color: appTheme.blueGray30033,
-                        width: getHorizontalSize(1)))));
+                        color: appTheme.blueGray30033, width: 1.h))));
+      case Style.bgOutline_1:
+        return Container(
+            height: 45.v,
+            width: double.maxFinite,
+            decoration: BoxDecoration(
+                color: theme.colorScheme.onPrimaryContainer,
+                border: Border(
+                  bottom: BorderSide(color: appTheme.blueGray30033, width: 1.h),
+                )));
+      case Style.bgFill:
+        return Container(
+            height: 50.v,
+            width: double.maxFinite,
+            decoration:
+                BoxDecoration(color: theme.colorScheme.onPrimaryContainer));
       default:
         return const SizedBox.shrink();
     }
@@ -96,7 +109,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     void Function()? onTapLeading,
   }) =>
       AppBar(
-        toolbarHeight: getVerticalSize(52),
+        toolbarHeight: 52.v,
         automaticallyImplyLeading: false,
         backgroundColor: Colors.white,
         scrolledUnderElevation: 0,
@@ -108,5 +121,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 }
 
 enum Style {
+  bgOutline_1,
   bgOutline,
+  bgFill,
 }

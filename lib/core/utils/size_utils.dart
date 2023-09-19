@@ -1,4 +1,4 @@
-// ignore_for_file: constant_identifier_names
+// ignore_for_file: parameter_assignments
 
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
@@ -18,7 +18,7 @@ const num FIGMA_DESIGN_HEIGHT = 640;
 const num FIGMA_DESIGN_STATUS_BAR = 0;
 
 /// 이 메서드는 디바이스 뷰포트 너비를 가져오는 데 사용됩니다.
-num get _width {
+double get _width {
   return mediaQueryData.size.width;
 }
 
@@ -30,30 +30,31 @@ num get _height {
   return screenHeight;
 }
 
-/// 이 메서드는 뷰포트 너비에 따라 화면 또는 위젯의 패딩/여백(왼쪽 및 오른쪽) 및 너비를 설정하는 데 사용됩니다.
-double getHorizontalSize(double px) {
-  return (px * _width) / FIGMA_DESIGN_WIDTH;
-}
+@Deprecated('Use Extension method h on num')
+double getHorizontalSize(double px) => px.h;
 
-/// 이 메서드는 뷰포트 높이에 따라 화면 또는 위젯의 패딩/여백(위쪽 및 아래쪽) 및 높이를 설정하는 데 사용됩니다.
-double getVerticalSize(double px) {
-  return (px * _height) / (FIGMA_DESIGN_HEIGHT - FIGMA_DESIGN_STATUS_BAR);
-}
+@Deprecated('Use Extension method v on num')
+double getVerticalSize(double px) => px.v;
 
-/// 이 메서드는 이미지 높이와 너비의 최소 픽셀을 설정하는 데 사용됩니다.
-double getSize(double px) {
-  final height = getVerticalSize(px);
-  final width = getHorizontalSize(px);
-  if (height < width) {
-    return height.toDoubleValue();
-  } else {
-    return width.toDoubleValue();
-  }
-}
+@Deprecated('Use Extension method adaptSize on num')
+double getSize(double px) => px.adaptSize;
 
-/// 이 메서드는 뷰포트에 따라 텍스트 폰트 크기를 설정하는 데 사용됩니다.
-double getFontSize(double px) {
-  return getSize(px);
+@Deprecated('Use Extension method fSize on num')
+double getFontSize(double px) => px.fSize;
+
+extension ResponsiveExtension on num {
+  /// 이 메서드는 뷰포트 너비에 따라 화면 또는 위젯의 패딩/여백(왼쪽 및 오른쪽)과 너비를 설정하는 데 사용됩니다.
+  double get h => (this * _width) / FIGMA_DESIGN_WIDTH;
+
+  /// 이 메서드는 뷰포트 높이에 따라 화면 또는 위젯의 패딩/여백(위쪽 및 아래쪽) 및 높이를 설정하는 데 사용됩니다.
+  double get v =>
+      (this * _height) / (FIGMA_DESIGN_HEIGHT - FIGMA_DESIGN_STATUS_BAR);
+
+  /// 이 메서드는 이미지 높이와 너비에서 최소 픽셀을 설정하는 데 사용됩니다.
+  double get adaptSize => v < h ? v.toDoubleValue() : h.toDoubleValue();
+
+  /// 이 메서드는 뷰포트에 따라 텍스트 폰트 크기를 설정하는 데 사용됩니다.
+  double get fSize => adaptSize;
 }
 
 /// 이 메서드는 패딩을 반응형으로 설정하는 데 사용됩니다.
@@ -87,21 +88,32 @@ EdgeInsets getMarginOrPadding({
   double? top,
   double? right,
   double? bottom,
+  double? vertical,
+  double? horizontal,
 }) {
   if (all != null) {
-    left = all;
-    top = all;
-    right = all;
-    bottom = all;
+    left ??= all;
+    top ??= all;
+    right ??= all;
+    bottom ??= all;
+  }
+  if (vertical != null) {
+    top ??= vertical;
+    bottom ??= vertical;
+  }
+  if (horizontal != null) {
+    left ??= horizontal;
+    right ??= horizontal;
   }
   return EdgeInsets.only(
-      left: getHorizontalSize(left ?? 0),
-      top: getVerticalSize(top ?? 0),
-      right: getHorizontalSize(right ?? 0),
-      bottom: getVerticalSize(bottom ?? 0));
+    left: (left ?? 0).h,
+    top: (top ?? 0).v,
+    right: (right ?? 0).h,
+    bottom: (bottom ?? 0).v,
+  );
 }
 
-extension on double {
+extension FormatExtension on double {
   /// Return a [double] value with formatted according to provided fractionDigits
   double toDoubleValue({int fractionDigits = 2}) {
     return double.parse(toStringAsFixed(fractionDigits));

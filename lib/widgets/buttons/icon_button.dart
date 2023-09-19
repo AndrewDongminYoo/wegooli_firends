@@ -40,14 +40,35 @@ class CustomIconButton extends StatelessWidget {
           height: height ?? 0,
           width: width ?? 0,
           child: IconButton(
-              visualDensity: const VisualDensity(vertical: -4, horizontal: -4),
-              padding: EdgeInsets.zero,
-              icon: Container(
-                  alignment: Alignment.center,
-                  padding: padding ?? EdgeInsets.zero,
-                  decoration: decoration ??
-                      AppDecoration.outlineBlack.copyWith(
-                          borderRadius: BorderRadiusStyle.circleBorder12),
-                  child: child),
-              onPressed: onTap)));
+            visualDensity: const VisualDensity(vertical: -4, horizontal: -4),
+            padding: EdgeInsets.zero,
+            icon: Container(
+                alignment: Alignment.center,
+                padding: padding ?? EdgeInsets.zero,
+                decoration: decoration ??
+                    AppDecoration.outlineBlack.copyWith(
+                        borderRadius: BorderRadiusStyle.circleBorder12),
+                child: child),
+            onPressed: onTap,
+          )));
+}
+
+/// Extension on [CustomIconButton] to facilitate inclusion of all types of border style etc
+extension IconButtonStyleHelper on CustomIconButton {
+  static BoxDecoration get fillGray => BoxDecoration(
+        color: appTheme.gray400,
+        borderRadius: BorderRadius.circular(24.h),
+      );
+  static BoxDecoration get outlineBlack => BoxDecoration(
+        color: theme.colorScheme.onPrimaryContainer,
+        borderRadius: BorderRadius.circular(10.h),
+        boxShadow: [
+          BoxShadow(
+            color: appTheme.black.withOpacity(0.1),
+            spreadRadius: 2.h,
+            blurRadius: 2.h,
+            offset: const Offset(2, 2),
+          ),
+        ],
+      );
 }

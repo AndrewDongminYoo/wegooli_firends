@@ -66,7 +66,7 @@ class DashChatWithFriendsPage extends GetWidget<ConnectionController> {
                 hintText: '채팅을 입력해주세요😃',
                 hintStyle: TextStyle(color: appTheme.gray50001, fontSize: 15),
                 constraints: BoxConstraints.expand(
-                  height: getVerticalSize(36),
+                  height: 36.v,
                 ),
                 contentPadding: const EdgeInsets.symmetric(horizontal: 20),
                 border: const OutlineInputBorder(

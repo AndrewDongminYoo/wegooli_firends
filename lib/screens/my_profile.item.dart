@@ -28,22 +28,22 @@ class ListItem extends StatelessWidget {
               children: [
                 CustomImageView(
                   svgPath: svgPath,
-                  height: getSize(24),
-                  width: getSize(24),
+                  height: 24.adaptSize,
+                  width: 24.adaptSize,
                   margin: getMargin(right: 10),
                 ),
                 Text(
                   text,
                   style: theme.textTheme.bodyLarge!.copyWith(
-                    letterSpacing: getHorizontalSize(0.03),
+                    letterSpacing: 0.03.h,
                   ),
                 ),
               ],
             ),
             CustomImageView(
                 svgPath: Assets.svg.imgArrowRight.path,
-                height: getSize(18),
-                width: getSize(18),
+                height: 18.adaptSize,
+                width: 18.adaptSize,
                 margin: getMargin(top: 3, bottom: 3)),
           ],
         ),

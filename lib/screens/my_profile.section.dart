@@ -15,15 +15,15 @@ class MyProfileSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       // color: appTheme.amber600,
-      height: getVerticalSize(105),
+      height: 105.v,
       padding: getPadding(top: 20, bottom: 20, left: 16, right: 16),
       child: Row(
         children: [
           CustomImageView(
             margin: getMargin(right: 16),
             imagePath: Assets.images.placeholder01.path,
-            height: getSize(65),
-            width: getSize(65),
+            height: 65.adaptSize,
+            width: 65.adaptSize,
             radius: BorderRadius.circular(40),
           ),
           Column(

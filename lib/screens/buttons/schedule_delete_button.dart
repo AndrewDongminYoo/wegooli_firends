@@ -17,8 +17,8 @@ class ScheduleDeleteButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomElevatedButton(
-      width: getHorizontalSize(114),
-      height: getVerticalSize(28),
+      width: 114.h,
+      height: 28.v,
       text: '삭제',
       buttonStyle: CustomButtonStyles.fillWhite.copyWith(
           surfaceTintColor: const MaterialStatePropertyAll(Colors.white)),

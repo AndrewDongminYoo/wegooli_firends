@@ -13,7 +13,7 @@ class GatewayScreen extends StatelessWidget {
         child: Scaffold(
       backgroundColor: Colors.white,
       body: SizedBox(
-          width: getHorizontalSize(375),
+          width: 375.h,
           child: Column(
             children: [
               Container(
@@ -24,9 +24,7 @@ class GatewayScreen extends StatelessWidget {
                     Padding(
                         padding: getPadding(top: 5),
                         child: Divider(
-                            height: getVerticalSize(1),
-                            thickness: getVerticalSize(1),
-                            color: Colors.black)),
+                            height: 1.v, thickness: 1.v, color: Colors.black)),
                   ])),
               Expanded(
                   child: SingleChildScrollView(

@@ -28,7 +28,7 @@ class UnsubscriptionUpcoming extends GetWidget<VehicleController> {
                     overflow: TextOverflow.ellipsis,
                     textAlign: TextAlign.left,
                     style: CustomTextStyles.titleMediumBlack900.copyWith(
-                      letterSpacing: getHorizontalSize(0.04),
+                      letterSpacing: 0.04.h,
                     ),
                   )),
               Container(
@@ -42,14 +42,14 @@ class UnsubscriptionUpcoming extends GetWidget<VehicleController> {
                     children: [
                       CustomImageView(
                         imagePath: Assets.cars.niroEvSSwp.path,
-                        height: getVerticalSize(96),
-                        width: getHorizontalSize(167),
+                        height: 96.v,
+                        width: 167.h,
                       ),
                       Padding(
                           padding: getPadding(top: 30),
                           child: Divider(
-                              height: getVerticalSize(1),
-                              thickness: getVerticalSize(1),
+                              height: 1.v,
+                              thickness: 1.v,
                               color: appTheme.blueGray30033)),
                       Padding(
                           padding: getPadding(left: 9, top: 20, right: 9),
@@ -64,7 +64,7 @@ class UnsubscriptionUpcoming extends GetWidget<VehicleController> {
                                       textAlign: TextAlign.left,
                                       style: CustomTextStyles.titleMedium18
                                           .copyWith(
-                                        letterSpacing: getHorizontalSize(0.04),
+                                        letterSpacing: 0.04.h,
                                       ),
                                     )),
                                 Obx(() => Padding(
@@ -77,7 +77,7 @@ class UnsubscriptionUpcoming extends GetWidget<VehicleController> {
                                       textAlign: TextAlign.left,
                                       style: CustomTextStyles.bodySmallOnPrimary
                                           .copyWith(
-                                        letterSpacing: getHorizontalSize(0.02),
+                                        letterSpacing: 0.02.h,
                                       ),
                                     ))),
                               ])),
@@ -92,7 +92,7 @@ class UnsubscriptionUpcoming extends GetWidget<VehicleController> {
                                   textAlign: TextAlign.left,
                                   style: CustomTextStyles.bodyLargeOnPrimary
                                       .copyWith(
-                                    letterSpacing: getHorizontalSize(0.03),
+                                    letterSpacing: 0.03.h,
                                   ),
                                 ),
                                 Obx(() => Text(
@@ -101,7 +101,7 @@ class UnsubscriptionUpcoming extends GetWidget<VehicleController> {
                                       textAlign: TextAlign.left,
                                       style:
                                           theme.textTheme.bodyLarge!.copyWith(
-                                        letterSpacing: getHorizontalSize(0.03),
+                                        letterSpacing: 0.03.h,
                                       ),
                                     )),
                               ])),
@@ -116,7 +116,7 @@ class UnsubscriptionUpcoming extends GetWidget<VehicleController> {
                                   textAlign: TextAlign.left,
                                   style: CustomTextStyles.bodyLargeOnPrimary
                                       .copyWith(
-                                    letterSpacing: getHorizontalSize(0.03),
+                                    letterSpacing: 0.03.h,
                                   ),
                                 ),
                                 Obx(() => Text(
@@ -125,7 +125,7 @@ class UnsubscriptionUpcoming extends GetWidget<VehicleController> {
                                       textAlign: TextAlign.left,
                                       style:
                                           theme.textTheme.bodyLarge!.copyWith(
-                                        letterSpacing: getHorizontalSize(0.03),
+                                        letterSpacing: 0.03.h,
                                       ),
                                     )),
                               ])),
@@ -145,7 +145,7 @@ class UnsubscriptionUpcoming extends GetWidget<VehicleController> {
                                     textAlign: TextAlign.left,
                                     style: CustomTextStyles.bodyLargeOnPrimary
                                         .copyWith(
-                                      letterSpacing: getHorizontalSize(0.03),
+                                      letterSpacing: 0.03.h,
                                     ),
                                   ),
                                 ),
@@ -155,13 +155,13 @@ class UnsubscriptionUpcoming extends GetWidget<VehicleController> {
                                       textAlign: TextAlign.left,
                                       style:
                                           theme.textTheme.bodyLarge!.copyWith(
-                                        letterSpacing: getHorizontalSize(0.03),
+                                        letterSpacing: 0.03.h,
                                       ),
                                     )),
                               ])),
                       CustomElevatedButton(
-                        width: getHorizontalSize(160),
-                        height: getVerticalSize(48),
+                        width: 160.h,
+                        height: 48.v,
                         text: controller.subscriptionModel.value.withdrawalAt ==
                                 null
                             ? l10ns.unsubscribe

@@ -52,7 +52,7 @@ class _MyProfileCardListState extends State<MyProfileCardList> {
                                     children: [
                                       CustomRadioButton(
                                           text: paymentCard.cardNumber ?? 'dd',
-                                          iconSize: getHorizontalSize(20),
+                                          iconSize: 20.h,
                                           value: paymentCard.cardNumber ?? 'dd',
                                           groupValue:
                                               paymentCard.defaultYn == 'Y'
@@ -66,8 +66,8 @@ class _MyProfileCardListState extends State<MyProfileCardList> {
                                           }),
                                       CustomImageView(
                                           svgPath: Assets.svg.imgClose.path,
-                                          height: getSize(18),
-                                          width: getSize(18),
+                                          height: 18.adaptSize,
+                                          width: 18.adaptSize,
                                           margin: getMargin(top: 1, bottom: 1)),
                                     ]));
                           },

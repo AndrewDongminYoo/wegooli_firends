@@ -189,7 +189,7 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
               children: [
                 Expanded(
                     child: CustomElevatedButton(
-                  height: getVerticalSize(48),
+                  height: 48.v,
                   width: double.maxFinite,
                   text: l10ns.sendAuthorizationNumber,
                   margin: getMargin(top: 10),
@@ -206,7 +206,7 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 CustomTextFormField(
-                  width: getHorizontalSize(160),
+                  width: 160.h,
                   hintText: '000000',
                   controller: controller.pinCodes,
                   textInputType: TextInputType.phone,
@@ -219,8 +219,7 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
                   textStyle: CustomTextStyles.bodyLargeGray500,
                   hintStyle: CustomTextStyles.bodyLargeGray500,
                   autofillHints: const [AutofillHints.oneTimeCode],
-                  suffixConstraints:
-                      BoxConstraints(maxHeight: getVerticalSize(48)),
+                  suffixConstraints: BoxConstraints(maxHeight: 48.v),
                   filled: true,
                   fillColor: Colors.white,
                   suffix: Padding(
@@ -233,7 +232,7 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
                 ),
                 CustomElevatedButton(
                   text: l10ns.confirm,
-                  width: getHorizontalSize(160),
+                  width: 160.h,
                   margin: getMargin(top: 10),
                   buttonStyle: CustomButtonStyles.fillPrimaryC5,
                   buttonTextStyle: theme.textTheme.titleMedium,

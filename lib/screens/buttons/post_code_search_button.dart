@@ -19,7 +19,7 @@ class PostCodeSearchButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomElevatedButton(
         text: l10ns.addressSearch,
-        height: getVerticalSize(48),
+        height: 48.v,
         margin: getMargin(left: 4, top: 27),
         buttonStyle: CustomButtonStyles.fillPrimaryC5,
         buttonTextStyle: theme.textTheme.titleMedium,

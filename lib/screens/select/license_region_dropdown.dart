@@ -35,7 +35,7 @@ class LicenseRegionDropdown extends StatelessWidget {
       SelectionPopupModel(title: '세종', value: '세종지방경찰청:[없음]'),
     ];
     return CustomDropDown(
-        width: getHorizontalSize(160),
+        width: 160.h,
         icon: Container(
             margin: getMargin(left: 30, right: 10),
             child: CustomImageView(svgPath: Assets.svg.imgCaretDown.path)),

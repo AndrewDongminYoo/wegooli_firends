@@ -23,12 +23,12 @@ class UnsubscriptionConfirm extends GetWidget<VehicleController> {
             children: [
               CustomImageView(
                 imagePath: Assets.images.imgGooli5.path,
-                height: getVerticalSize(130),
-                width: getHorizontalSize(157),
+                height: 130.v,
+                width: 157.h,
                 fit: BoxFit.cover,
               ),
               Container(
-                  width: getHorizontalSize(179),
+                  width: 179.h,
                   margin: getMargin(top: 50),
                   child: Text(
                     l10ns.areYouSureYouWantToUnsubscribe(
@@ -37,7 +37,7 @@ class UnsubscriptionConfirm extends GetWidget<VehicleController> {
                     overflow: TextOverflow.ellipsis,
                     textAlign: TextAlign.center,
                     style: CustomTextStyles.titleMediumBlack900.copyWith(
-                      letterSpacing: getHorizontalSize(0.04),
+                      letterSpacing: 0.04.h,
                     ),
                   )),
               Padding(
@@ -48,7 +48,7 @@ class UnsubscriptionConfirm extends GetWidget<VehicleController> {
                     overflow: TextOverflow.ellipsis,
                     textAlign: TextAlign.left,
                     style: CustomTextStyles.bodyLargeBlack900.copyWith(
-                      letterSpacing: getHorizontalSize(0.03),
+                      letterSpacing: 0.03.h,
                     ),
                   )),
               Padding(

@@ -56,8 +56,8 @@ class _SendingInvitationDialogState extends State<SendingInvitationDialog> {
                             )),
                         CustomImageView(
                             svgPath: Assets.svg.imgCloseGray400Sharp.path,
-                            height: getSize(13),
-                            width: getSize(13),
+                            height: 13.adaptSize,
+                            width: 13.adaptSize,
                             margin: getMargin(bottom: 15),
                             onTap: goBack),
                       ])),

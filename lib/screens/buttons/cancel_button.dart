@@ -15,8 +15,8 @@ class CancelButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomElevatedButton(
-      width: plural ? getHorizontalSize(145) : getHorizontalSize(104),
-      height: getVerticalSize(52),
+      width: plural ? 145.h : 104.h,
+      height: 52.v,
       text: l10ns.cancel,
       buttonStyle: plural
           ? CustomButtonStyles.fillPrimaryBL10.copyWith(

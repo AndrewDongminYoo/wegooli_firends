@@ -35,7 +35,7 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                 alignment: Alignment.centerLeft,
                 child: Container(
                     width: mediaQueryData.size.width,
-                    height: getVerticalSize(85),
+                    height: 85.v,
                     padding: getPadding(left: 16, top: 16),
                     decoration: BoxDecoration(
                         color: Colors.white,
@@ -44,17 +44,13 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                         ),
                         border: Border(
                           top: BorderSide(
-                              width: getVerticalSize(1),
-                              color: ColorConstant.separationBar),
+                              width: 1.v, color: ColorConstant.separationBar),
                           right: BorderSide(
-                              width: getVerticalSize(1),
-                              color: ColorConstant.separationBar),
+                              width: 1.v, color: ColorConstant.separationBar),
                           left: BorderSide(
-                              width: getVerticalSize(1),
-                              color: ColorConstant.separationBar),
+                              width: 1.v, color: ColorConstant.separationBar),
                           bottom: BorderSide(
-                              width: getVerticalSize(8),
-                              color: ColorConstant.separationBar),
+                              width: 8.v, color: ColorConstant.separationBar),
                         )),
                     child: Obx(() => Text(
                           l10ns.reservationTotalPeriod(
@@ -68,12 +64,11 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.left,
                           style: CustomTextStyles.titleMediumBlack900.copyWith(
-                              letterSpacing: getHorizontalSize(0.04),
-                              fontSize: getFontSize(18)),
+                              letterSpacing: 0.04.h, fontSize: 18.fSize),
                         )))),
             Obx(() => ExpansionPanelList(
                 dividerColor: ColorConstant.separationBar,
-                materialGapSize: getSize(0),
+                materialGapSize: 0.adaptSize,
                 expansionCallback: (panelIndex, nextState) {
                   print('panelIndex: $panelIndex &isExpanded: $nextState');
                   final isOpen = controller.items[panelIndex].isExpanded;
@@ -109,7 +104,7 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                                       color: isOpen
                                           ? ColorConstant.fontBlack
                                           : ColorConstant.fontBlackDisabled,
-                                      fontSize: getFontSize(16),
+                                      fontSize: 16.fSize,
                                       fontFamily: FontFamily.pretendard,
                                       fontWeight: FontWeight.w700,
                                       height: 1.50,
@@ -145,7 +140,7 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                                           color: isOpen
                                               ? ColorConstant.fontBlack
                                               : ColorConstant.fontBlackDisabled,
-                                          fontSize: getFontSize(16),
+                                          fontSize: 16.fSize,
                                           fontFamily: FontFamily.pretendard,
                                           fontWeight: FontWeight.w700,
                                           height: 1.50,
@@ -156,7 +151,7 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                               ));
                         },
                         body: Container(
-                            height: getVerticalSize(100),
+                            height: 100.v,
                             alignment: Alignment.center,
                             // padding: const EdgeInsets.all(20),
                             width: mediaQueryData.size.width,
@@ -165,7 +160,7 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                                   textTheme: CupertinoTextThemeData(
                                     dateTimePickerTextStyle: TextStyle(
                                         color: Colors.black,
-                                        fontSize: getFontSize(16),
+                                        fontSize: 16.fSize,
                                         fontFamily: FontFamily.pretendard),
                                   ),
                                 ),
@@ -192,7 +187,7 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                 ).toList())),
             Container(
                 color: ColorConstant.white,
-                height: getVerticalSize(106),
+                height: 106.v,
                 padding: getPadding(left: 16, right: 16),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -201,7 +196,7 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                     // TODO: 일정을 등록할 때와 수정할 때 각각 상황에 따라 동작
                     if (isEditMode && scheduleId != null)
                       CustomElevatedButton(
-                          width: getHorizontalSize(216),
+                          width: 216.h,
                           onTap: () {
                             print(
                                 'UpdateScheduleConfirmButton : scheduleId => $scheduleId');
@@ -214,7 +209,7 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                           buttonTextStyle: theme.textTheme.titleMedium)
                     else
                       CustomElevatedButton(
-                          width: getHorizontalSize(216),
+                          width: 216.h,
                           onTap: () {
                             print('AddScheduleConfirmButton');
                             controller.addSchedule();

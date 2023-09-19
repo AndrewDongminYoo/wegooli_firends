@@ -38,7 +38,7 @@ class PasswordFormField extends StatelessWidget {
         suffix: Container(
             margin: getMargin(left: 30, top: 12, right: 10, bottom: 12),
             child: ShowPasswordToggle(show: isShowPassword)),
-        suffixConstraints: BoxConstraints(maxHeight: getVerticalSize(48)),
+        suffixConstraints: BoxConstraints(maxHeight: 48.v),
         fillColor: Colors.white,
         filled: true,
         validator: (value) =>
@@ -72,7 +72,7 @@ class PasswordConfirmFormField extends StatelessWidget {
           suffix: Container(
               margin: getMargin(left: 30, top: 12, right: 10, bottom: 12),
               child: ShowPasswordToggle(show: isShowConfirmPassword)),
-          suffixConstraints: BoxConstraints(maxHeight: getVerticalSize(48)),
+          suffixConstraints: BoxConstraints(maxHeight: 48.v),
           filled: true,
           fillColor: Colors.white,
         ));

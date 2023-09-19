@@ -23,7 +23,7 @@ class TelecomDropdown extends StatelessWidget {
       SelectionPopupModel(id: 06, title: 'LG U+ 알뜰폰'),
     ];
     return CustomDropDown(
-        width: getHorizontalSize(128),
+        width: 128.h,
         icon: Icon(Icons.arrow_drop_down, color: appTheme.gray50003, size: 14),
         // `initialValue`가 `true`인 경우 `hintText`는 보이지 않습니다.
         hintText: l10ns.telecomCarrier,

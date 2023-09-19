@@ -38,13 +38,13 @@ class UnsubscriptionConfirmDialog extends SimpleDialog {
                             )),
                         CustomImageView(
                             svgPath: Assets.svg.imgCloseGray400Sharp.path,
-                            height: getSize(13),
-                            width: getSize(13),
+                            height: 13.adaptSize,
+                            width: 13.adaptSize,
                             margin: getMargin(bottom: 15),
                             onTap: goBack),
                       ])),
               Container(
-                  width: getHorizontalSize(278),
+                  width: 278.h,
                   margin: getMargin(left: 25, top: 15, right: 25, bottom: 30),
                   child: Text(
                     l10ns.youCanCancelAnytime,
@@ -52,7 +52,7 @@ class UnsubscriptionConfirmDialog extends SimpleDialog {
                     overflow: TextOverflow.ellipsis,
                     textAlign: TextAlign.justify,
                     style: theme.textTheme.bodyLarge!.copyWith(
-                      letterSpacing: getHorizontalSize(0.03),
+                      letterSpacing: 0.03.h,
                     ),
                   )),
               Row(

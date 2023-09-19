@@ -22,8 +22,8 @@ class TeamInvitation extends StatelessWidget {
                   children: [
                     CustomImageView(
                       imagePath: Assets.images.imgGooli4.path,
-                      height: getSize(177),
-                      width: getSize(120),
+                      height: 177.adaptSize,
+                      width: 120.adaptSize,
                       fit: BoxFit.fitWidth,
                     ),
                     const Text(

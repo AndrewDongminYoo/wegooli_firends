@@ -17,8 +17,7 @@ class FriendsByWegooli extends StatelessWidget {
             overflow: TextOverflow.ellipsis,
             textAlign: TextAlign.left,
             style: theme.textTheme.displayMedium!.copyWith(
-                fontFamily: FontFamily.cookieRun,
-                letterSpacing: getHorizontalSize(0.1))),
+                fontFamily: FontFamily.cookieRun, letterSpacing: 0.1.h)),
         Align(
             alignment: Alignment.centerRight,
             child: Padding(
@@ -29,12 +28,12 @@ class FriendsByWegooli extends StatelessWidget {
                       textAlign: TextAlign.left,
                       style: CustomTextStyles
                           .titleSmallNanumSquareRoundOnPrimary
-                          .copyWith(letterSpacing: getHorizontalSize(0.03))),
+                          .copyWith(letterSpacing: 0.03.h)),
                   CustomImageView(
                       svgPath: Assets.svg.imgWegooliBlueGray900.path,
                       fit: BoxFit.fitWidth,
-                      height: getVerticalSize(11),
-                      width: getHorizontalSize(53),
+                      height: 11.v,
+                      width: 53.h,
                       margin: getMargin(left: 5, bottom: 3)),
                 ]))),
       ],

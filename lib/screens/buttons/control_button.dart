@@ -20,8 +20,7 @@ class ControlButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final smartKeyButtonStyle = ButtonStyle(
       padding: MaterialStateProperty.all(EdgeInsets.zero),
-      fixedSize: MaterialStateProperty.all(
-          Size(getHorizontalSize(120), getVerticalSize(120))),
+      fixedSize: MaterialStateProperty.all(Size(120.h, 120.v)),
       shape: MaterialStateProperty.all(const CircleBorder(
         side: BorderSide(
           color: ColorConstant.neutralDisabled,
@@ -50,8 +49,8 @@ class ControlButton extends StatelessWidget {
         margin: margin,
         child: Stack(alignment: Alignment.center, children: [
           Container(
-              width: getHorizontalSize(130),
-              height: getVerticalSize(130),
+              width: 130.h,
+              height: 130.v,
               decoration: const ShapeDecoration(
                   color: Colors.white,
                   shape: CircleBorder(),
@@ -71,8 +70,8 @@ class ControlButton extends StatelessWidget {
             },
             style: smartKeyButtonStyle,
             child: Container(
-              width: getHorizontalSize(120),
-              height: getVerticalSize(120),
+              width: 120.h,
+              height: 120.v,
               decoration: ShapeDecoration(
                 // color: Colors.white,
                 shape: CircleBorder(
@@ -84,8 +83,8 @@ class ControlButton extends StatelessWidget {
                 children: [
                   CustomImageView(
                     svgPath: svgPath,
-                    height: getVerticalSize(46),
-                    width: getHorizontalSize(46),
+                    height: 46.v,
+                    width: 46.h,
                     // color: Colors.transparent,
                   ),
                   Padding(
@@ -94,7 +93,7 @@ class ControlButton extends StatelessWidget {
                       text,
                       textAlign: TextAlign.center,
                       style: theme.textTheme.titleMedium!
-                          .copyWith(letterSpacing: getHorizontalSize(0.03)),
+                          .copyWith(letterSpacing: 0.03.h),
                     ),
                   ),
                 ],

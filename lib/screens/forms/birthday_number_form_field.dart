@@ -20,7 +20,7 @@ class BirthdayNumberFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomTextFormField(
-        width: getHorizontalSize(158),
+        width: 158.h,
         controller: controller,
         enabled: !readonly,
         margin: getMargin(top: 4),

@@ -35,7 +35,7 @@ class RouteItem extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       color: Colors.black,
-                      fontSize: getFontSize(20),
+                      fontSize: 20.fSize,
                       fontFamily: FontFamily.roboto,
                       fontWeight: FontWeight.w400),
                 ),
@@ -43,9 +43,7 @@ class RouteItem extends StatelessWidget {
           Padding(
               padding: getPadding(top: 5),
               child: Divider(
-                  height: getVerticalSize(1),
-                  thickness: getVerticalSize(1),
-                  color: appTheme.blueGray400)),
+                  height: 1.v, thickness: 1.v, color: appTheme.blueGray400)),
         ]),
       ),
     );

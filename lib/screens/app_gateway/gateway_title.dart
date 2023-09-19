@@ -19,7 +19,7 @@ class GatewayTitle extends StatelessWidget {
             textAlign: TextAlign.center,
             style: TextStyle(
                 color: Colors.black,
-                fontSize: getFontSize(20),
+                fontSize: 20.fSize,
                 fontFamily: FontFamily.nanumSquareRound,
                 fontWeight: FontWeight.w400),
           ),
@@ -42,7 +42,7 @@ class CheckYourAppUI extends StatelessWidget {
             textAlign: TextAlign.center,
             style: TextStyle(
                 color: appTheme.blueGray400,
-                fontSize: getFontSize(16),
+                fontSize: 16.fSize,
                 fontFamily: FontFamily.nanumSquareRound,
                 fontWeight: FontWeight.w400),
           ),

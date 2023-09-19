@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 // 🌎 Project imports:
 import '/lib.dart';
 
-class CustomCheckboxButton extends StatefulWidget {
+// ignore: must_be_immutable
+class CustomCheckboxButton extends StatelessWidget {
   CustomCheckboxButton({
     Key? key,
     required this.onChange,
@@ -27,7 +28,7 @@ class CustomCheckboxButton extends StatefulWidget {
   final Alignment? alignment;
   final bool? isRightCheck;
   final double? iconSize;
-  final bool? value;
+  bool? value;
   final Function(bool) onChange;
   final String? text;
   final double? width;
@@ -39,32 +40,28 @@ class CustomCheckboxButton extends StatefulWidget {
   final bool textTouchable;
 
   @override
-  State<CustomCheckboxButton> createState() => _CustomCheckboxButtonState();
-}
-
-class _CustomCheckboxButtonState extends State<CustomCheckboxButton> {
-  @override
   Widget build(BuildContext context) {
-    return widget.alignment != null
+    return alignment != null
         ? Align(
-            alignment: widget.alignment ?? Alignment.center,
+            alignment: alignment ?? Alignment.center,
             child: buildCheckBoxWidget)
         : buildCheckBoxWidget;
   }
 
   Widget get buildCheckBoxWidget => InkWell(
       onTap: () {
-        widget.onChange(widget.value!);
+        value = !value!;
+        onChange(value!);
       },
       child: Container(
-          decoration: widget.decoration,
-          width: widget.width,
-          margin: widget.margin ?? EdgeInsets.zero,
-          child: (widget.isRightCheck ?? false)
+          decoration: decoration,
+          width: width,
+          margin: margin ?? EdgeInsets.zero,
+          child: (isRightCheck ?? false)
               ? Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                      if (widget.isExpandedText)
+                      if (isExpandedText)
                         Expanded(child: textWidget)
                       else
                         textWidget,
@@ -76,31 +73,28 @@ class _CustomCheckboxButtonState extends State<CustomCheckboxButton> {
                   Padding(
                       padding: const EdgeInsets.only(right: 8),
                       child: checkboxWidget),
-                  if (widget.isExpandedText)
+                  if (isExpandedText)
                     Expanded(child: textWidget)
                   else
                     textWidget,
                 ])));
-
   Widget get textWidget => InkWell(
-        onTap: () =>
-            widget.textTouchable ? widget.onChange(!widget.value!) : null,
+        onTap: () => textTouchable ? onChange(!value!) : null,
         child: Text(
-          widget.text ?? '',
-          textAlign: widget.textAlignment ?? TextAlign.center,
-          style: widget.textStyle ?? theme.textTheme.bodyLarge,
+          text ?? '',
+          textAlign: textAlignment ?? TextAlign.center,
+          style: textStyle ?? theme.textTheme.bodyLarge,
         ),
       );
-
   Widget get checkboxWidget => SizedBox(
-      height: widget.iconSize ?? getHorizontalSize(20),
-      width: widget.iconSize ?? getHorizontalSize(20),
+      height: iconSize ?? 20.h,
+      width: iconSize ?? 20.h,
       child: Checkbox(
           activeColor: ColorConstant.primaryPressed,
           checkColor: ColorConstant.primaryInverted,
           visualDensity: const VisualDensity(vertical: -4, horizontal: -4),
-          value: widget.value ?? false,
+          value: value ?? false,
           onChanged: (value) {
-            widget.onChange(value!);
+            onChange(value!);
           }));
 }

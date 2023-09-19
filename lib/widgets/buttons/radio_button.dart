@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 // 🌎 Project imports:
 import '/lib.dart';
 
-class CustomRadioButton extends StatefulWidget {
+// ignore: must_be_immutable
+class CustomRadioButton extends StatelessWidget {
   CustomRadioButton({
     Key? key,
     required this.onChange,
@@ -28,7 +29,7 @@ class CustomRadioButton extends StatefulWidget {
   final Alignment? alignment;
   final bool? isRightCheck;
   final double? iconSize;
-  final String? value;
+  String? value;
   final String? groupValue;
   final Function(String) onChange;
   final String? text;
@@ -41,41 +42,32 @@ class CustomRadioButton extends StatefulWidget {
   final Color? backgroundColor;
 
   @override
-  State<CustomRadioButton> createState() => _CustomRadioButtonState();
-}
-
-class _CustomRadioButtonState extends State<CustomRadioButton> {
-  @override
   Widget build(BuildContext context) {
-    return widget.alignment != null
+    return alignment != null
         ? Align(
-            alignment: widget.alignment ?? Alignment.center,
+            alignment: alignment ?? Alignment.center,
             child: buildRadioButtonWidget)
         : buildRadioButtonWidget;
   }
 
-  bool get isGradient => widget.gradient != null;
-
-  BoxDecoration get gradientDecoration =>
-      BoxDecoration(gradient: widget.gradient);
-
+  bool get isGradient => gradient != null;
+  BoxDecoration get gradientDecoration => BoxDecoration(gradient: gradient);
   Widget get buildRadioButtonWidget => InkWell(
       onTap: () {
-        widget.onChange(widget.value!);
+        onChange(value!);
       },
       child: Container(
-          decoration: widget.decoration,
-          width: widget.width,
-          margin: widget.margin ?? EdgeInsets.zero,
-          padding: widget.padding,
-          child: (widget.isRightCheck ?? false)
+          decoration: decoration,
+          width: width,
+          margin: margin ?? EdgeInsets.zero,
+          padding: padding,
+          child: (isRightCheck ?? false)
               ? rightSideRadioButton
               : leftSideRadioButton));
 
   Widget get leftSideRadioButton => Row(children: [
         Padding(
-            padding: widget.padding ?? const EdgeInsets.only(right: 8),
-            child: radioButtonWidget),
+            padding: const EdgeInsets.only(right: 8), child: radioButtonWidget),
         textWidget,
       ]);
 
@@ -83,19 +75,15 @@ class _CustomRadioButtonState extends State<CustomRadioButton> {
       Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
         textWidget,
         Padding(
-            padding: widget.padding ?? const EdgeInsets.only(left: 8),
-            child: radioButtonWidget),
+            padding: const EdgeInsets.only(left: 8), child: radioButtonWidget),
       ]);
-
-  Widget get textWidget => Text(widget.text ?? '',
-      textAlign: widget.textAlignment ?? TextAlign.center,
-      style: widget.textStyle ?? theme.textTheme.bodyLarge);
-
+  Widget get textWidget => Text(text ?? '',
+      textAlign: textAlignment ?? TextAlign.center,
+      style: textStyle ?? theme.textTheme.bodyLarge);
   Widget get radioButtonWidget => SizedBox(
-      height: widget.iconSize ?? getHorizontalSize(20),
-      width: widget.iconSize ?? getHorizontalSize(20),
+      height: iconSize ?? 20.h,
+      width: iconSize ?? 20.h,
       child: Radio<String>(
-          // activeColor: ColorConstant.wegooli,
           fillColor: MaterialStateColor.resolveWith((states) {
             if (states.contains(MaterialState.selected)) {
               return ColorConstant.wegooli;
@@ -104,12 +92,11 @@ class _CustomRadioButtonState extends State<CustomRadioButton> {
             }
           }),
           visualDensity: const VisualDensity(vertical: -4, horizontal: -4),
-          value: widget.value ?? '',
-          groupValue: widget.groupValue,
+          value: value ?? '',
+          groupValue: groupValue,
           onChanged: (value) {
-            widget.onChange(value!);
+            onChange(value!);
           }));
-
   BoxDecoration get radioButtonDecoration =>
-      BoxDecoration(color: widget.backgroundColor);
+      BoxDecoration(color: backgroundColor);
 }

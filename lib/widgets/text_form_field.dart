@@ -76,11 +76,11 @@ class CustomTextFormField extends StatelessWidget {
     return alignment != null
         ? Align(
             alignment: alignment ?? Alignment.center,
-            child: textFormFieldWidget(context))
-        : textFormFieldWidget(context);
+            child: textFormFieldWidget)
+        : textFormFieldWidget;
   }
 
-  Widget textFormFieldWidget(BuildContext context) => Container(
+  Widget get textFormFieldWidget => Container(
       width: width ?? double.maxFinite,
       margin: margin,
       child: TextFormField(
@@ -90,7 +90,7 @@ class CustomTextFormField extends StatelessWidget {
           obscureText: obscureText!,
           controller: controller,
           autofocus: autofocus!,
-          focusNode: focusNode,
+          focusNode: focusNode ?? FocusNode(),
           autofillHints: autofillHints ?? [],
           autovalidateMode: (autofill ?? false)
               ? AutovalidateMode.always
@@ -103,7 +103,6 @@ class CustomTextFormField extends StatelessWidget {
           validator: validator,
           enabled: enabled,
           readOnly: !enabled!,
-          onEditingComplete: () => FocusScope.of(context).nextFocus(),
           initialValue: initialValue));
   InputDecoration get decoration => InputDecoration(
         hintText: hintText ?? '',
@@ -112,18 +111,18 @@ class CustomTextFormField extends StatelessWidget {
         prefixIconConstraints: prefixConstraints,
         suffixIcon: suffix,
         suffixIconConstraints: suffixConstraints,
-        fillColor: enabled != true ? appTheme.blueGray30033 : fillColor,
-        filled: enabled != true ? true : filled,
+        fillColor: fillColor ?? appTheme.blueGray30033,
+        filled: filled,
         isDense: true,
         contentPadding: contentPadding ??
-            getPadding(left: 12, top: 14, right: 12, bottom: 14),
+            EdgeInsets.symmetric(horizontal: 12.h, vertical: 14.v),
         counterText: '',
         border: borderDecoration ?? createBorderSide(appTheme.gray400),
         enabledBorder: borderDecoration ?? createBorderSide(appTheme.gray400),
-        focusedBorder:
-            borderDecoration ?? createBorderSide(ColorConstant.wegooli),
         disabledBorder: borderDecoration ?? createBorderSide(appTheme.gray400),
         errorBorder: borderDecoration ?? createBorderSide(appTheme.red600),
+        focusedBorder:
+            borderDecoration ?? createBorderSide(ColorConstant.wegooli),
         focusedErrorBorder:
             borderDecoration ?? createBorderSide(ColorConstant.wegooli),
       );
@@ -131,24 +130,37 @@ class CustomTextFormField extends StatelessWidget {
 
 /// Extension on [CustomTextFormField] to facilitate inclusion of all types of border style etc
 extension TextFormFieldStyleHelper on CustomTextFormField {
-  static UnderlineInputBorder get underLineGray =>
-      UnderlineInputBorder(borderSide: BorderSide(color: appTheme.gray300));
-  static OutlineInputBorder get outlineOnErrorTL5 => OutlineInputBorder(
-      borderRadius: BorderRadius.circular(getHorizontalSize(5)),
-      borderSide: BorderSide(color: appTheme.supernova));
-  static OutlineInputBorder get fillOnPrimary =>
+  static OutlineInputBorder get outlineGrayTL5 => OutlineInputBorder(
+      borderRadius: BorderRadius.circular(5.h),
+      borderSide: BorderSide(color: appTheme.gray400));
+  static OutlineInputBorder get outlineGray1 =>
+      OutlineInputBorder(borderSide: BorderSide(color: appTheme.gray700));
+  static OutlineInputBorder get outlineGray2 =>
+      OutlineInputBorder(borderSide: BorderSide(color: appTheme.gray700));
+  static OutlineInputBorder get outlineGrayTL4 => OutlineInputBorder(
+        borderRadius: BorderRadius.circular(4.h),
+        borderSide: BorderSide(color: appTheme.gray700),
+      );
+  static OutlineInputBorder get fillOnPrimaryContainer =>
       const OutlineInputBorder(borderSide: BorderSide.none);
-  static OutlineInputBorder get fillPrimary => OutlineInputBorder(
-      borderRadius: BorderRadius.circular(getHorizontalSize(5)),
-      borderSide: BorderSide.none);
   static OutlineInputBorder get fillBlueGray => OutlineInputBorder(
-      borderRadius: BorderRadius.circular(getHorizontalSize(18)),
-      borderSide: BorderSide.none);
+      borderRadius: BorderRadius.circular(18.h), borderSide: BorderSide.none);
+  static OutlineInputBorder get outlineBlueGray =>
+      OutlineInputBorder(borderSide: BorderSide(color: appTheme.blueGray200));
+  static OutlineInputBorder get outlineBlueGrayTL3 => OutlineInputBorder(
+      borderRadius: BorderRadius.circular(3.h),
+      borderSide: BorderSide(color: appTheme.blueGray200));
+  static OutlineInputBorder get outlineOnPrimary => OutlineInputBorder(
+      borderRadius: BorderRadius.circular(3.h),
+      borderSide: BorderSide(color: theme.colorScheme.onPrimary));
+  static OutlineInputBorder get outlineBlueGray1 =>
+      OutlineInputBorder(borderSide: BorderSide(color: appTheme.blueGray200));
 }
 
 InputBorder createBorderSide(Color borderColor, {double radius = 5.0}) {
   return OutlineInputBorder(
-    borderRadius: BorderRadius.circular(getHorizontalSize(radius)),
-    borderSide: BorderSide(color: borderColor),
-  );
+      borderRadius: BorderRadius.circular(radius.h),
+      borderSide: BorderSide(
+        color: borderColor,
+      ));
 }

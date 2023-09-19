@@ -44,8 +44,8 @@ class _AcceptTermsState extends State<AcceptTerms> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(
-                          height: getVerticalSize(20),
-                          width: getHorizontalSize(126),
+                          height: 20.v,
+                          width: 126.h,
                           child: Align(
                             child: CustomCheckboxButton(
                               alignment: Alignment.center,

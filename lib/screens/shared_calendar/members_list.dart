@@ -13,7 +13,7 @@ class MembersList extends StatelessWidget {
     return Padding(
         padding: getPadding(left: 16, top: 12),
         child: SizedBox(
-            height: getVerticalSize(100),
+            height: 100.v,
             child: Row(
               children: [
                 StreamBuilder<TeamAccountModel>(

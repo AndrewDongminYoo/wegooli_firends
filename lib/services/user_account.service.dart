@@ -1,6 +1,3 @@
-// 🐦 Flutter imports:
-import 'package:flutter/material.dart';
-
 // 📦 Package imports:
 import 'package:dio/dio.dart';
 import 'package:get/get.dart';
@@ -24,8 +21,10 @@ class UserAccountService extends GetConnect {
       var token = '';
       if (result == null || result.token == null) {
         print('`login()` 반환값: $result, ${response.data?.resultCode}');
-        await Get.dialog(Center(
-            child: Assets.lotties.xInCircle.lottie(height: 250, width: 250)));
+        Get.showSnackbar(const GetSnackBar(
+          title: '로그인',
+          message: '결과 값의 토큰 데이터에 오류가 발생했습니다.',
+        ));
       } else {
         bearerToken = result.token!;
         // BEARER prefix 분리.

@@ -156,16 +156,12 @@ class $AssetsLottiesGen {
   LottieGenImage get customLoader =>
       const LottieGenImage('assets/lotties/custom_loader.json');
 
-  /// File path: assets/lotties/img_gooli_1.json
-  LottieGenImage get imgGooli1 =>
-      const LottieGenImage('assets/lotties/img_gooli_1.json');
-
-  /// File path: assets/lotties/x_in_circle.json
-  LottieGenImage get xInCircle =>
-      const LottieGenImage('assets/lotties/x_in_circle.json');
+  /// File path: assets/lotties/message_bubble.json
+  LottieGenImage get messageBubble =>
+      const LottieGenImage('assets/lotties/message_bubble.json');
 
   /// List of all assets
-  List<LottieGenImage> get values => [customLoader, imgGooli1, xInCircle];
+  List<LottieGenImage> get values => [customLoader, messageBubble];
 }
 
 class $AssetsSvgGen {

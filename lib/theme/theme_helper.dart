@@ -37,11 +37,29 @@ class ThemeHelper {
       visualDensity: VisualDensity.standard,
       colorScheme: colorScheme,
       textTheme: TextThemes.textTheme(colorScheme),
+      scaffoldBackgroundColor: colorScheme.onPrimaryContainer,
+      outlinedButtonTheme: OutlinedButtonThemeData(
+        style: OutlinedButton.styleFrom(
+          backgroundColor: Colors.transparent,
+          side: BorderSide(
+            color: appTheme.blueGray30033,
+            width: 1.h,
+          ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(14.h),
+          ),
+          visualDensity: const VisualDensity(
+            vertical: -4,
+            horizontal: -4,
+          ),
+          padding: EdgeInsets.zero,
+        ),
+      ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           backgroundColor: colorScheme.primary,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(26),
+            borderRadius: BorderRadius.circular(26.h),
           ),
           visualDensity: const VisualDensity(
             vertical: -4,
@@ -92,43 +110,61 @@ class TextThemes {
   static TextTheme textTheme(ColorScheme colorScheme) => TextTheme(
         bodyLarge: TextStyle(
           color: colorScheme.onPrimary,
-          fontSize: getFontSize(16),
+          fontSize: 16.fSize,
           fontFamily: FontFamily.pretendard,
           fontWeight: FontWeight.w400,
         ),
         bodyMedium: TextStyle(
           color: colorScheme.onPrimary,
-          fontSize: getFontSize(15),
+          fontSize: 14.fSize,
           fontFamily: FontFamily.pretendard,
           fontWeight: FontWeight.w400,
         ),
         bodySmall: TextStyle(
           color: colorScheme.onPrimary,
-          fontSize: getFontSize(12),
+          fontSize: 12.fSize,
           fontFamily: FontFamily.pretendard,
           fontWeight: FontWeight.w400,
         ),
         displayMedium: TextStyle(
           color: colorScheme.onPrimary,
-          fontSize: getFontSize(50),
+          fontSize: 50.fSize,
           fontFamily: FontFamily.cookieRun,
           fontWeight: FontWeight.w900,
         ),
+        headlineMedium: TextStyle(
+          color: appTheme.black,
+          fontSize: 26.fSize,
+          fontFamily: FontFamily.pretendard,
+          fontWeight: FontWeight.w700,
+        ),
         headlineSmall: TextStyle(
           color: appTheme.black,
-          fontSize: getFontSize(24),
+          fontSize: 24.fSize,
+          fontFamily: FontFamily.pretendard,
+          fontWeight: FontWeight.w700,
+        ),
+        labelLarge: TextStyle(
+          color: appTheme.red600,
+          fontSize: 12.fSize,
+          fontFamily: FontFamily.pretendard,
+          fontWeight: FontWeight.w500,
+        ),
+        titleLarge: TextStyle(
+          color: appTheme.blueGray900,
+          fontSize: 20.fSize,
           fontFamily: FontFamily.pretendard,
           fontWeight: FontWeight.w700,
         ),
         titleMedium: TextStyle(
           color: colorScheme.onPrimary,
-          fontSize: getFontSize(18),
+          fontSize: 16.fSize,
           fontFamily: FontFamily.pretendard,
           fontWeight: FontWeight.w700,
         ),
         titleSmall: TextStyle(
           color: appTheme.red600,
-          fontSize: getFontSize(14),
+          fontSize: 14.fSize,
           fontFamily: FontFamily.pretendard,
           fontWeight: FontWeight.w700,
         ),
@@ -150,7 +186,7 @@ class ColorSchemes {
 
     // Error colors
     error: ColorConstant.fontBlack,
-    errorContainer: Color(0xFF82838D),
+    errorContainer: Color(0xFF82838D), // #82838D
     onError: ColorConstant.fontErrorMessage,
     onErrorContainer: ColorConstant.fontBlack,
 
@@ -182,7 +218,7 @@ class ColorSchemes {
 
 /// Class containing custom colors for a primary theme.
 class PrimaryColors {
-  //  Amber
+  // Amber
   Color get amberA200 => const Color(0xFFFFE142); // #FFE142
   Color get amberA20033 => const Color(0x33FFE142);
   Color get amber100 => const Color(0xFFFFECB3); // #FFECB3
@@ -195,7 +231,7 @@ class PrimaryColors {
   Color get amber800 => const Color(0xFFFF8F00); // #FF8F00
   Color get supernova => const Color(0xFFFFCC08); // #FFCC08
 
-  //  Black
+  // Black
   Color get black => const Color(0xFF000000); // #000000
   Color get black87 => const Color(0xDD000000);
   Color get black54 => const Color(0x89000000);
@@ -204,37 +240,50 @@ class PrimaryColors {
   Color get black27 => const Color(0x42000000);
   Color get black12 => const Color(0x1F000000);
 
+  // BlueGray
+  Color get blueGray200 => const Color(0xFFB0B2BC); // #B0B2BC
   Color get blueGray30033 => const Color(0x33A4A8AF);
-  Color get blueGray400 => const Color(0xFF888888); // #888888
+  Color get blueGray400 => const Color(0xFF868686); // #868686
+  Color get blueGray40001 => const Color(0xFF888888); // #888888
+  Color get blueGray500 => const Color(0xFF747A8C); // #747A8C
+  Color get blueGray700 => const Color(0xFF464A70); // #464A70
   Color get blueGray900 => const Color(0xFF323232); // #323232
 
-  //  DeepOrange
+  // DeepOrange
   Color get deepOrangeA200 => const Color(0xFFFF7034); // #FF7034
 
-  //  DeepPurple
+  // DeepPurple
   Color get deepPurpleA200 => const Color(0xFF7850E9); // #7850E9
+  Color get deepPurpleA20001 => const Color(0xFF6154F7); // #6154F7
 
-  //  Gray
-  Color get gray100 => const Color(0xFFF6F7F7); // #F6F7F7
+  // Gray
+  Color get gray100 => const Color(0xFFF3F3F6); // #F3F3F6
   Color get grey100 => const Color(0xFFF5F5F5); // #F5F5F5
+  Color get gray10001 => const Color(0xFFF3F3F3); // #F3F3F3
+  Color get gray10002 => const Color(0xFFF6F7F7); // #F6F7F7
   Color get gray200 => const Color(0xFFEEEEEE); // #EEEEEE
   Color get gray300 => const Color(0xFFE6E6E6); // #E6E6E6
   Color get gray400 => const Color(0xFFB9BCC3); // #B9BCC3
+  Color get gray50 => const Color(0xFFFAFBFC); // #FAFBFC
   Color get gray500 => const Color(0xFF8F9199); // #8F9199
-  Color get gray50001 => const Color(0xFF91969D); // #91969D
-  Color get gray50002 => const Color(0xFF91959D); // #91959D
-  Color get gray50003 => const Color(0xFF8E9199); // #8E9199
+  Color get gray50001 => const Color(0xFF979797); // #979797
+  Color get gray50002 => const Color(0xFFA6A6A6); // #A6A6A6
+  Color get gray50003 => const Color(0xFF91969D); // #91969D
+  Color get gray50004 => const Color(0xFF91959D); // #91959D
+  Color get gray50005 => const Color(0xFF8E9199); // #8E9199
+  Color get gray5001 => const Color(0xFFF9FAFB); // #F9FAFB
   Color get gray700 => const Color(0xFF666666); // #666666
   Color get gray70001 => const Color(0xFF5D5D5D); // #5D5D5D
   Color get gray800 => const Color(0xFF474747); // #474747
 
-  //  Green
+  // Green
   Color get green500 => const Color(0xFF38DD66); // #38DD66
   Color get green400 => const Color(0xFF66BB6A); // #66BB6A
 
-  //  Red
+  // Red
   Color get red600 => const Color(0xFFDB4646); // #DB4646
   Color get red700 => const Color(0xFFE82121); // #E82121
+  Color get redA700 => const Color(0xFFFF0000); // #FF0000
 }
 
 PrimaryColors get appTheme => ThemeHelper().themeColor;

@@ -27,7 +27,7 @@ class ReservationsCheckingPageDialog extends StatelessWidget {
         insetPadding: const EdgeInsets.all(20),
         content: SingleChildScrollView(
           child: Container(
-            width: getHorizontalSize(330),
+            width: 330.h,
             decoration: AppDecoration.fillOnPrimaryContainer
                 .copyWith(borderRadius: BorderRadiusStyle.circleBorder10),
             child: Column(
@@ -53,8 +53,8 @@ class ReservationsCheckingPageDialog extends StatelessWidget {
                                 )),
                             CustomImageView(
                                 svgPath: Assets.svg.imgCloseGray400Sharp.path,
-                                height: getSize(13),
-                                width: getSize(13),
+                                height: 13.adaptSize,
+                                width: 13.adaptSize,
                                 margin: getMargin(bottom: 15),
                                 onTap: goBack),
                           ])),

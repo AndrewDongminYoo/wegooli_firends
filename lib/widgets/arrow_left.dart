@@ -12,8 +12,8 @@ class ArrowLeft extends StatelessWidget {
     return CustomImageView(
         onTap: onTap,
         svgPath: Assets.svg.imgArrowLeft.path,
-        height: getSize(18),
-        width: getSize(18),
+        height: 18.adaptSize,
+        width: 18.adaptSize,
         margin: getMargin(left: 54, top: 2, bottom: 4));
   }
 }

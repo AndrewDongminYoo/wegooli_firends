@@ -15,8 +15,8 @@ class FloatingYellowButton extends StatelessWidget {
     return Align(
       alignment: Alignment.bottomRight,
       child: CustomIconButton(
-        height: getVerticalSize(70),
-        width: getHorizontalSize(70),
+        height: 70.v,
+        width: 70.h,
         margin: getMargin(right: 22),
         decoration: BoxDecoration(
           color: ColorConstant.primaryDefault,

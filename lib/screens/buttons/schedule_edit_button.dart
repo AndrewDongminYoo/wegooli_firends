@@ -19,8 +19,8 @@ class ScheduleEditButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final scheduleController = ScheduleController.to;
     return CustomElevatedButton(
-      width: getHorizontalSize(114),
-      height: getVerticalSize(28),
+      width: 114.h,
+      height: 28.v,
       margin: getMargin(right: 10),
       text: '수정',
       buttonStyle: CustomButtonStyles.fillWhite.copyWith(

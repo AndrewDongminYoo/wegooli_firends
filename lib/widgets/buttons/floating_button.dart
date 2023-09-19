@@ -41,14 +41,21 @@ class CustomFloatingButton extends StatelessWidget {
   }
 
   Widget get fabWidget => Padding(
-      padding: margin ?? EdgeInsets.zero,
-      child: FloatingActionButton(
+        padding: margin ?? EdgeInsets.zero,
+        child: FloatingActionButton(
           backgroundColor: backgroundColor,
           onPressed: onTap,
           child: Container(
-              alignment: Alignment.center,
-              width: getSize(width ?? 0),
-              height: getSize(height ?? 0),
-              decoration: decoration,
-              child: child)));
+            alignment: Alignment.center,
+            width: width ?? 0,
+            height: height ?? 0,
+            decoration: decoration ??
+                BoxDecoration(
+                  color: theme.colorScheme.primary,
+                  borderRadius: BorderRadius.circular(35.h),
+                ),
+            child: child,
+          ),
+        ),
+      );
 }

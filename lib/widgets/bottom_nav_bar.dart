@@ -46,12 +46,12 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
     return SafeArea(
         child: Container(
       width: mediaQueryData.size.width,
-      height: getVerticalSize(65),
+      height: 65.v,
       decoration: BoxDecoration(
         border: Border(
           top: BorderSide(
             color: appTheme.blueGray30033,
-            width: getHorizontalSize(1),
+            width: 1.h,
           ),
         ),
       ),
@@ -59,10 +59,10 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
         () => BottomNavigationBar(
           showSelectedLabels: true,
           showUnselectedLabels: true,
-          selectedFontSize: getFontSize(10),
-          unselectedFontSize: getFontSize(10),
+          selectedFontSize: 10.fSize,
+          unselectedFontSize: 10.fSize,
           elevation: 0,
-          iconSize: getSize(20),
+          iconSize: 20.adaptSize,
           currentIndex: selectedIndex.value,
           type: BottomNavigationBarType.fixed,
           selectedItemColor: ColorConstant.fontBlack,
@@ -78,7 +78,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
               icon: Container(
                   margin: getMargin(bottom: 5),
                   child:
-                      Icon(bottomMenuList[index].iconData, size: getSize(20))),
+                      Icon(bottomMenuList[index].iconData, size: 20.adaptSize)),
               label: bottomMenuList[index].title ?? '',
             );
           }),

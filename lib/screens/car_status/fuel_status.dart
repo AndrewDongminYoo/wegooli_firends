@@ -14,8 +14,8 @@ class FuelStatus extends GetView<VehicleController> {
   Widget build(BuildContext context) {
     return getGasImg(level: controller.level).svg(
       semanticsLabel: controller.terminalDevice.fuel,
-      height: getSize(24),
-      width: getSize(24),
+      height: 24.adaptSize,
+      width: 24.adaptSize,
     );
   }
 

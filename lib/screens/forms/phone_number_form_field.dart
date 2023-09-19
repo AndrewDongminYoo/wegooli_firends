@@ -16,7 +16,7 @@ class PhoneNumberFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomTextFormField(
-        width: getHorizontalSize(198),
+        width: 198.h,
         controller: controller,
         margin: getMargin(top: 4),
         autofill: true,

@@ -13,13 +13,13 @@ class UntouchableMask extends GetView<VehicleController> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: mediaQueryData.size.height - getVerticalSize(270),
+        height: mediaQueryData.size.height - 270.v,
         decoration: const BoxDecoration(color: ColorConstant.neutralDisabled),
         child: Center(
           child: Container(
             alignment: Alignment.center,
-            width: getHorizontalSize(180),
-            height: getVerticalSize(44),
+            width: 180.h,
+            height: 44.v,
             decoration: BoxDecoration(
                 color: ColorConstant.fontBlackDisabled,
                 borderRadius: BorderRadius.circular(100)),

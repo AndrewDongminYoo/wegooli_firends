@@ -59,8 +59,7 @@ class RegisterPhone extends GetWidget<UserController> {
                             overflow: TextOverflow.ellipsis,
                             textAlign: TextAlign.left,
                             style: CustomTextStyles.bodySmallErrorContainer
-                                .copyWith(
-                                    letterSpacing: getHorizontalSize(0.04)),
+                                .copyWith(letterSpacing: 0.04.h),
                           ),
                         ])
                       ])),

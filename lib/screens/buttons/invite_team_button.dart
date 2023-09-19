@@ -9,13 +9,13 @@ class InviteTeamButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        height: getVerticalSize(71),
-        // width: getHorizontalSize(50),
+        height: 71.v,
+        // width: 50.h,
         child: Column(children: [
           CustomIconButton(
             margin: getMargin(bottom: 3),
-            height: getSize(50),
-            width: getSize(50),
+            height: 50.adaptSize,
+            width: 50.adaptSize,
             // padding: getPadding(all: 13),
             decoration: BoxDecoration(
               color: appTheme.gray400,

@@ -16,8 +16,8 @@ class CalendarBody extends GetView<ScheduleController> {
         padding: getPadding(all: 15),
         child: Container(
             padding: getPadding(left: 20, right: 20, bottom: 20),
-            width: getHorizontalSize(330),
-            height: getVerticalSize(284),
+            width: 330.h,
+            height: 284.v,
             decoration: AppDecoration.outline
                 .copyWith(borderRadius: BorderRadiusStyle.circleBorder10),
             child: Align(

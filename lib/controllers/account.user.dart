@@ -19,12 +19,12 @@ class UserController extends GetxController {
       : Get.put(UserController());
 
   List<Term> terms = [
-    Term(agree: false, title: '개인정보 처리방침', body: privacy_policy),
-    Term(agree: false, title: '개인 위치정보 처리 방침', body: location_data),
-    Term(agree: false, title: '위치기반서비스 이용약관', body: location_based),
-    Term(agree: false, title: '자동차대여 표준약관', body: car_rental_term),
-    Term(agree: false, title: '차량 위치정보 수집이용 제공동의', body: car_location),
-    Term(agree: false, title: '마케팅 목적 개인정보 수집이용', body: marketing, opt: true),
+    Term(agree: false, title: '(필수) 개인정보 처리방침', body: privacy_policy),
+    Term(agree: false, title: '(필수) 개인 위치정보 처리 방침', body: location_data),
+    Term(agree: false, title: '(필수) 위치기반서비스 이용약관', body: location_based),
+    Term(agree: false, title: '(필수) 자동차대여 표준약관', body: car_rental_term),
+    Term(agree: false, title: '(필수) 차량 위치정보 수집이용 제공동의', body: car_location),
+    Term(agree: false, title: '(선택) 마케팅 목적 개인정보 수집이용', body: marketing, opt: true),
   ];
 
   /// 로그인 - 아이디, 비밀번호

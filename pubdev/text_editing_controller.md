@@ -57,20 +57,17 @@ export 'package:flutter/services.dart' show KeyboardInsertedContent, SelectionCh
 // late BuildContext context;
 // late WidgetTester tester;
 
-/// Signature for the callback that reports when the user changes the selection
-/// (including the cursor location).
+/// 사용자가 선택 항목(커서 위치 포함)을 변경할 때 이를 보고하는 콜백에 대한 서명입니다.
 typedef SelectionChangedCallback = void Function(TextSelection selection, SelectionChangedCause? cause);
 
-/// Signature for the callback that reports the app private command results.
+/// 앱 비공개 명령 결과를 보고하는 콜백에 대한 서명입니다.
 typedef AppPrivateCommandCallback = void Function(String, Map<String, dynamic>);
 
-/// Signature for a widget builder that builds a context menu for the given
-/// [EditableTextState].
+/// 지정된 [EditableTextState]에 대한 컨텍스트 메뉴를 빌드하는 위젯 빌더의 서명입니다.
 ///
-/// See also:
+/// 참조:
 ///
-///  * [SelectableRegionContextMenuBuilder], which performs the same role for
-///    [SelectableRegion].
+///  * [SelectableRegion]에 대해 동일한 역할을 수행하는 [SelectableRegionContextMenuBuilder] 참조.
 typedef EditableTextContextMenuBuilder = Widget Function(
   BuildContext context,
   EditableTextState editableTextState,
@@ -89,9 +86,9 @@ const Duration _kCursorBlinkHalfPeriod = Duration(milliseconds: 500);
 // is shown in an obscured text field.
 const int _kObscureShowLatestCharCursorTicks = 3;
 
-/// The default mime types to be used when allowedMimeTypes is not provided.
+/// allowedMimeTypes가 제공되지 않을 때 사용할 기본 마임 유형입니다.
 ///
-/// The default value supports inserting images of any supported format.
+/// 기본값은 지원되는 모든 형식의 이미지 삽입을 지원합니다.
 const List<String> kDefaultContentInsertionMimeTypes = <String>[
   'image/png',
   'image/bmp',
@@ -147,63 +144,41 @@ class _RenderCompositionCallback extends RenderProxyBox {
   }
 }
 
-/// A controller for an editable text field.
+/// 편집 가능한 텍스트 필드를 위한 컨트롤러입니다.
 ///
-/// Whenever the user modifies a text field with an associated
-/// [TextEditingController], the text field updates [value] and the controller
-/// notifies its listeners. Listeners can then read the [text] and [selection]
-/// properties to learn what the user has typed or how the selection has been
-/// updated.
+/// 사용자가 연결된 [TextEditingController]를 사용하여 텍스트 필드를 수정할 때마다 텍스트 필드가 [value]을 업데이트하고 컨트롤러가 리스너에 알립니다. 그러면 리스너는 [text] 및 [selection] 속성을 읽어 사용자가 입력한 내용을 파악할 수 있습니다.
+/// 속성을 읽어 사용자가 입력한 내용이나 선택 항목이 어떻게 업데이트되었는지 확인할 수 있습니다.
 ///
-/// Similarly, if you modify the [text] or [selection] properties, the text
-/// field will be notified and will update itself appropriately.
+/// 마찬가지로, [text] 또는 [selection] 속성을 수정하면 텍스트 필드에 알림이 전송되고 적절하게 업데이트됩니다.
 ///
-/// A [TextEditingController] can also be used to provide an initial value for a
-/// text field. If you build a text field with a controller that already has
-/// [text], the text field will use that text as its initial value.
+/// [TextEditingController]를 사용하여 텍스트 필드의 초기 값을 제공할 수도 있습니다. 이미 [text]가 있는 컨트롤러로 텍스트 필드를 작성하면 텍스트 필드는 해당 텍스트를 초기 값으로 사용합니다.
 ///
-/// The [value] (as well as [text] and [selection]) of this controller can be
-/// updated from within a listener added to this controller. Be aware of
-/// infinite loops since the listener will also be notified of the changes made
-/// from within itself. Modifying the composing region from within a listener
-/// can also have a bad interaction with some input methods. Gboard, for
-/// example, will try to restore the composing region of the text if it was
-/// modified programmatically, creating an infinite loop of communications
-/// between the framework and the input method. Consider using
-/// [TextInputFormatter]s instead for as-you-type text modification.
+/// 이 컨트롤러의 [value](및 [text] 및 [selection])은 이 컨트롤러에 추가된 리스너 내에서 업데이트할 수 있습니다. 리스너 내부에서도 변경 사항을 알 수 있으므로 무한 루프에 주의하세요. 리스너 내에서 작성 영역을 수정하면 일부 입력 메서드와 잘못된 상호 작용이 발생할 수도 있습니다. 예를 들어 Gboard는 텍스트가 프로그래밍 방식으로 수정된 경우 텍스트의 작성 영역을 복원하려고 시도하여 프레임워크와 입력 메서드 간에 무한한 통신 루프를 생성합니다. 입력하는 대로 텍스트를 수정하려면 대신 [TextInputFormatter]를 사용하는 것이 좋습니다.
 ///
-/// If both the [text] or [selection] properties need to be changed, set the
-/// controller's [value] instead.
+/// [text] 또는 [selection] 속성을 모두 변경해야 하는 경우 컨트롤러의 [value]을 대신 설정하세요.
 ///
-/// Remember to [dispose] of the [TextEditingController] when it is no longer
-/// needed. This will ensure we discard any resources used by the object.
-/// {@tool dartpad}
-/// This example creates a [TextField] with a [TextEditingController] whose
-/// change listener forces the entered text to be lower case and keeps the
-/// cursor at the end of the input.
+/// 더 이상 필요하지 않은 경우 [TextEditingController]를 [폐기]하는 것을 잊지 마세요. 이렇게 하면 객체가 사용하는 모든 리소스를 폐기할 수 있습니다.
+/// {도구 다트패드}
+/// 이 예는 입력된 텍스트를 소문자로 강제 변경하고 커서를 입력 끝에 유지하는 변경 리스너가 있는 [TextEditingController]가 있는 [TextField]를 만듭니다.
 ///
-/// ** See code in examples/api/lib/widgets/editable_text/text_editing_controller.0.dart **
+/// ** 예제 코드 참조: examples/api/lib/widgets/editable_text/text_editing_controller.0.dart **
 /// {@end-tool}
 ///
-/// See also:
+/// 참조:
 ///
-///  * [TextField], which is a Material Design text field that can be controlled
-///    with a [TextEditingController].
-///  * [EditableText], which is a raw region of editable text that can be
-///    controlled with a [TextEditingController].
-///  * Learn how to use a [TextEditingController] in one of our [cookbook recipes](https://flutter.dev/docs/cookbook/forms/text-field-changes#2-use-a-texteditingcontroller).
+///  * [TextEditingController]로 제어할 수 있는 머티리얼 디자인 텍스트 필드인 [TextField].
+///  * [EditableText]: [TextEditingController]로 제어할 수 있는 편집 가능한 텍스트의 원시 영역입니다.
+///  * 쿡북 레시피](https://flutter.dev/docs/cookbook/forms/text-field-changes#2-use-a-texteditingcontroller)에서 [TextEditingController] 사용법을 알아보세요.
 class TextEditingController extends ValueNotifier<TextEditingValue> {
-  /// Creates a controller for an editable text field.
+  /// 편집 가능한 텍스트 필드에 대한 컨트롤러를 생성합니다.
   ///
-  /// This constructor treats a null [text] argument as if it were the empty
-  /// string.
+  /// 이 생성자는 널 [text] 인수를 빈 문자열인 것처럼 처리합니다.
   TextEditingController({ String? text })
     : super(text == null ? TextEditingValue.empty : TextEditingValue(text: text));
 
-  /// Creates a controller for an editable text field from an initial [TextEditingValue].
+  /// 초기 [TextEditingValue]로부터 편집 가능한 텍스트 필드에 대한 컨트롤러를 생성합니다.
   ///
-  /// This constructor treats a null [value] argument as if it were
-  /// [TextEditingValue.empty].
+  /// 이 생성자는 널 [value] 인수를 마치 [TextEditingValue.empty]인 것처럼 취급합니다.
   TextEditingController.fromValue(TextEditingValue? value)
     : assert(
         value == null || !value.composing.isValid || value.isComposingRangeValid,
@@ -213,17 +188,14 @@ class TextEditingController extends ValueNotifier<TextEditingValue> {
       ),
       super(value ?? TextEditingValue.empty);
 
-  /// The current string the user is editing.
+  /// 사용자가 편집 중인 현재 문자열입니다.
   String get text => value.text;
-  /// Setting this will notify all the listeners of this [TextEditingController]
-  /// that they need to update (it calls [notifyListeners]). For this reason,
-  /// this value should only be set between frames, e.g. in response to user
-  /// actions, not during the build, layout, or paint phases.
+  /// 이 값을 설정하면 이 [TextEditingController]의 모든 리스너에게 업데이트가 필요하다는 것을 알립니다([notifyListeners] 호출). 이런 이유로
+  /// 이 값은 빌드, 레이아웃 또는 페인트 단계가 아닌 사용자 동작에 대한 응답과 같이 프레임 사이에만 설정해야 합니다.
   ///
-  /// This property can be set from a listener added to this
-  /// [TextEditingController]; however, one should not also set [selection]
-  /// in a separate statement. To change both the [text] and the [selection]
-  /// change the controller's [value].
+  /// 이 속성은 이 [TextEditingController]에 추가된 리스너에서 설정할 수 있지만, 별도의 문에서 [selection]([selection])
+  /// 도 설정해서는 안 됩니다. [text]와 [selection]을 모두 변경하려면 다음과 같이 하세요.
+  /// 컨트롤러의 [value]을 변경합니다.
   set text(String newText) {
     value = value.copyWith(
       text: newText,
@@ -243,10 +215,9 @@ class TextEditingController extends ValueNotifier<TextEditingValue> {
     super.value = newValue;
   }
 
-  /// Builds [TextSpan] from current editing value.
+  /// 현재 편집 값에서 [TextSpan]을 작성합니다.
   ///
-  /// By default makes text in composing range appear as underlined. Descendants
-  /// can override this method to customize appearance of text.
+  /// 기본적으로 작성 범위의 텍스트는 밑줄로 표시됩니다. 자손은 이 메서드를 재정의하여 텍스트의 모양을 사용자 지정할 수 있습니다.
   TextSpan buildTextSpan({required BuildContext context, TextStyle? style , required bool withComposing}) {
     assert(!value.composing.isValid || !withComposing || value.isComposingRangeValid);
     // If the composing range is out of range for the current text, ignore it to
@@ -273,23 +244,19 @@ class TextEditingController extends ValueNotifier<TextEditingValue> {
     );
   }
 
-  /// The currently selected [text].
+  /// 현재 선택된 [text]입니다.
   ///
-  /// If the selection is collapsed, then this property gives the offset of the
-  /// cursor within the text.
+  /// 선택 영역이 축소된 경우 이 속성은 텍스트 내에서 커서의 오프셋을 제공합니다.
   TextSelection get selection => value.selection;
-  /// Setting this will notify all the listeners of this [TextEditingController]
-  /// that they need to update (it calls [notifyListeners]). For this reason,
-  /// this value should only be set between frames, e.g. in response to user
-  /// actions, not during the build, layout, or paint phases.
+  /// 이 프로퍼티를 설정하면 이 [TextEditingController]의 모든 리스너에게
+  /// 의 모든 리스너에게 업데이트가 필요하다는 것을 알립니다([notifyListeners] 호출). 이런 이유로
+  /// 이 값은 빌드, 레이아웃 또는 페인트 단계가 아닌 사용자 동작에 대한 응답과 같이 프레임 사이에만 설정해야 합니다.
   ///
-  /// This property can be set from a listener added to this
-  /// [TextEditingController]; however, one should not also set [text]
-  /// in a separate statement. To change both the [text] and the [selection]
-  /// change the controller's [value].
+  /// 이 속성은 이 [TextEditingController]에 추가된 리스너에서 설정할 수 있지만, 별도의 문에 [text]([text])도 설정해서는 안 됩니다.
+  /// 도 설정해서는 안 됩니다. [text]와 [selection]을 모두 변경하려면 다음과 같이 하세요.
+  /// 컨트롤러의 [value]을 변경합니다.
   ///
-  /// If the new selection is of non-zero length, or is outside the composing
-  /// range, the composing range is cleared.
+  /// 새 선택 영역의 길이가 0이 아니거나 작성 범위를 벗어나는 경우 작성 범위가 지워집니다.
   set selection(TextSelection newSelection) {
     if (!isSelectionWithinTextBounds(newSelection)) {
       throw FlutterError('invalid text selection: $newSelection');
@@ -301,61 +268,53 @@ class TextEditingController extends ValueNotifier<TextEditingValue> {
     value = value.copyWith(selection: newSelection, composing: newComposing);
   }
 
-  /// Set the [value] to empty.
+  /// [value]을 비워 두십시오.
   ///
-  /// After calling this function, [text] will be the empty string and the
-  /// selection will be collapsed at zero offset.
+  /// 이 함수를 호출하면 [text]가 빈 문자열이 되고 선택 영역이 0 오프셋으로 접힙니다.
   ///
-  /// Calling this will notify all the listeners of this [TextEditingController]
-  /// that they need to update (it calls [notifyListeners]). For this reason,
-  /// this method should only be called between frames, e.g. in response to user
-  /// actions, not during the build, layout, or paint phases.
+  /// 이 함수를 호출하면 이 [TextEditingController]의 모든 리스너에게 업데이트가 필요하다는 것을 알립니다([notifyListeners] 호출). 이런 이유로
+  /// 이 메서드는 빌드, 레이아웃 또는 페인트 단계가 아닌 사용자 동작에 대한 응답과 같이 프레임 사이에만 호출해야 합니다.
   void clear() {
     value = const TextEditingValue(selection: TextSelection.collapsed(offset: 0));
   }
 
-  /// Set the composing region to an empty range.
+  /// 작성 영역을 빈 범위로 설정합니다.
   ///
-  /// The composing region is the range of text that is still being composed.
-  /// Calling this function indicates that the user is done composing that
-  /// region.
+  /// 작성 영역은 아직 작성 중인 텍스트의 범위입니다.
+  /// 이 함수를 호출하면 사용자가 해당 영역의 작성이 완료되었음을 나타냅니다.
   ///
-  /// Calling this will notify all the listeners of this [TextEditingController]
-  /// that they need to update (it calls [notifyListeners]). For this reason,
-  /// this method should only be called between frames, e.g. in response to user
-  /// actions, not during the build, layout, or paint phases.
+  /// 이 함수를 호출하면 이 [TextEditingController]의 모든 리스너에게 업데이트가 필요하다는 것을 알립니다([notifyListeners] 호출). 이런 이유로
+  /// 이 메서드는 빌드, 레이아웃 또는 페인트 단계가 아닌 사용자 동작에 대한 응답과 같이 프레임 사이에만 호출해야 합니다.
   void clearComposing() {
     value = value.copyWith(composing: TextRange.empty);
   }
 
-  /// Check that the [selection] is inside of the bounds of [text].
+  /// [선택 영역]이 [text] 범위 안에 있는지 확인합니다.
   bool isSelectionWithinTextBounds(TextSelection selection) {
     return selection.start <= text.length && selection.end <= text.length;
   }
 
-  /// Check that the [selection] is inside of the composing range.
+  /// [선택 영역]이 작성 범위 내에 있는지 확인합니다.
   bool _isSelectionWithinComposingRange(TextSelection selection) {
     return selection.start >= value.composing.start && selection.end <= value.composing.end;
   }
 }
 
-/// Toolbar configuration for [EditableText].
+/// [편집 가능한 텍스트]에 대한 도구 모음 구성.
 ///
-/// Toolbar is a context menu that will show up when user right click or long
-/// press the [EditableText]. It includes several options: cut, copy, paste,
-/// and select all.
+/// 도구 모음은 사용자가 [편집 가능한 텍스트]를 마우스 오른쪽 버튼으로 클릭하거나 길게 누르면 표시되는 컨텍스트 메뉴입니다. 여기에는 잘라내기, 복사, 붙여넣기, 모두 선택 등 여러 옵션이 포함됩니다,
+/// 및 모두 선택.
 ///
-/// [EditableText] and its derived widgets have their own default [ToolbarOptions].
-/// Create a custom [ToolbarOptions] if you want explicit control over the toolbar
-/// option.
+/// [편집 가능한 텍스트] 및 파생 위젯에는 자체 기본 [도구 모음 옵션]이 있습니다.
+/// 도구 모음 옵션을 명시적으로 제어하려면 사용자 지정 [도구 모음 옵션]을 만듭니다.
 @Deprecated(
   'Use `contextMenuBuilder` instead. '
   'This feature was deprecated after v3.3.0-0.5.pre.',
 )
 class ToolbarOptions {
-  /// Create a toolbar configuration with given options.
+  /// 지정된 옵션으로 도구 모음 구성을 만듭니다.
   ///
-  /// All options default to false if they are not explicitly set.
+  /// 모든 옵션은 명시적으로 설정되지 않으면 기본값이 거짓으로 설정됩니다.
   @Deprecated(
     'Use `contextMenuBuilder` instead. '
     'This feature was deprecated after v3.3.0-0.5.pre.',
@@ -367,94 +326,87 @@ class ToolbarOptions {
     this.selectAll = false,
   });
 
-  /// An instance of [ToolbarOptions] with no options enabled.
+  /// 옵션이 활성화되지 않은 [ToolbarOptions]의 인스턴스입니다.
   static const ToolbarOptions empty = ToolbarOptions();
 
-  /// Whether to show copy option in toolbar.
+  /// 도구 모음에 복사 옵션을 표시할지 여부입니다.
   ///
-  /// Defaults to false. Must not be null.
+  /// 기본값은 거짓입니다. null이 아니어야 합니다.
   final bool copy;
 
-  /// Whether to show cut option in toolbar.
+  /// 도구 모음에 잘라내기 옵션을 표시할지 여부입니다.
   ///
-  /// If [EditableText.readOnly] is set to true, cut will be disabled regardless.
+  /// [EditableText.readOnly]가 true로 설정되어 있으면 잘라내기가 비활성화됩니다.
   ///
-  /// Defaults to false. Must not be null.
+  /// 기본값은 거짓입니다. null이 아니어야 합니다.
   final bool cut;
 
-  /// Whether to show paste option in toolbar.
+  /// 도구 모음에 붙여넣기 옵션을 표시할지 여부입니다.
   ///
-  /// If [EditableText.readOnly] is set to true, paste will be disabled regardless.
+  /// [EditableText.readOnly]가 true로 설정되어 있으면 붙여넣기가 비활성화됩니다.
   ///
-  /// Defaults to false. Must not be null.
+  /// 기본값은 거짓입니다. null이 아니어야 합니다.
   final bool paste;
 
-  /// Whether to show select all option in toolbar.
+  /// 도구 모음에 모두 선택 옵션을 표시할지 여부입니다.
   ///
-  /// Defaults to false. Must not be null.
+  /// 기본값은 false입니다. null이 아니어야 합니다.
   final bool selectAll;
 }
 
-/// Configures the ability to insert media content through the soft keyboard.
+/// 소프트 키보드를 통해 미디어 콘텐츠를 삽입하는 기능을 구성합니다.
 ///
-/// The configuration provides a handler for any rich content inserted through
-/// the system input method, and also provides the ability to limit the mime
-/// types of the inserted content.
+/// 이 구성은 시스템 입력 방법을 통해 삽입된 모든 리치 콘텐츠에 대한 핸들러를 제공하며, 삽입된 콘텐츠의 마임 유형을 제한하는 기능도 제공합니다.
 ///
-/// See also:
+/// 참고 항목
 ///
 /// * [EditableText.contentInsertionConfiguration]
 class ContentInsertionConfiguration {
-  /// Creates a content insertion configuration with the specified options.
+  /// 지정된 옵션으로 콘텐츠 삽입 구성을 생성합니다.
   ///
-  /// A handler for inserted content, in the form of [onContentInserted], must
-  /// be supplied.
+  /// 삽입된 콘텐츠에 대한 핸들러는 [onContentInserted] 형식으로 제공되어야 합니다.
   ///
-  /// The allowable mime types of inserted content may also
-  /// be provided via [allowedMimeTypes], which cannot be an empty list.
+  /// 삽입된 콘텐츠의 허용되는 마임 유형은 [allowedMimeTypes]를 통해 제공될 수도 있으며, 이 경우 빈 목록일 수 없습니다.
   ContentInsertionConfiguration({
     required this.onContentInserted,
     this.allowedMimeTypes = kDefaultContentInsertionMimeTypes,
   }) : assert(allowedMimeTypes.isNotEmpty);
 
-  /// Called when a user inserts content through the virtual / on-screen keyboard,
-  /// currently only used on Android.
+  /// 사용자가 가상/온스크린 키보드를 통해 콘텐츠를 삽입할 때 호출됩니다,
+  /// 현재 안드로이드에서만 사용됩니다.
   ///
-  /// [KeyboardInsertedContent] holds the data representing the inserted content.
+  /// [키보드 삽입 콘텐츠]는 삽입된 콘텐츠를 나타내는 데이터를 보유합니다.
   ///
-  /// {@tool dartpad}
+  /// {@tool 다트패드}
   ///
-  /// This example shows how to access the data for inserted content in your
-  /// `TextField`.
+  /// 이 예제는 `TextField`에 삽입된 콘텐츠의 데이터에 접근하는 방법을 보여줍니다.
   ///
-  /// ** See code in examples/api/lib/widgets/editable_text/editable_text.on_content_inserted.0.dart **
+  /// ** 예제 코드 참조: examples/api/lib/widgets/editable_text/editable_text.on_content_inserted.0.dart **
   /// {@end-tool}
   ///
-  /// See also:
+  /// 참조하세요:
   ///
   ///  * <https://developer.android.com/guide/topics/text/image-keyboard>
   final ValueChanged<KeyboardInsertedContent> onContentInserted;
 
   /// {@template flutter.widgets.contentInsertionConfiguration.allowedMimeTypes}
-  /// Used when a user inserts image-based content through the device keyboard,
-  /// currently only used on Android.
+  /// 사용자가 디바이스 키보드를 통해 이미지 기반 콘텐츠를 삽입할 때 사용됩니다,
+  /// 현재 안드로이드에서만 사용됩니다.
   ///
-  /// The passed list of strings will determine which MIME types are allowed to
-  /// be inserted via the device keyboard.
+  /// 전달된 문자열 목록에 따라 디바이스 키보드를 통해 삽입할 수 있는 MIME 유형이 결정됩니다.
   ///
-  /// The default mime types are given by [kDefaultContentInsertionMimeTypes].
-  /// These are all the mime types that are able to be handled and inserted
-  /// from keyboards.
+  /// 기본 밈 유형은 [kDefaultContentInsertionMimeTypes]에 의해 제공됩니다.
+  /// 이는 키보드로 처리하고 삽입할 수 있는 모든 마임 유형입니다.
   ///
-  /// This field cannot be an empty list.
+  /// 이 필드는 빈 목록일 수 없습니다.
   ///
-  /// {@tool dartpad}
-  /// This example shows how to limit image insertion to specific file types.
+  /// {@도구 다트패드}
+  /// 이 예는 이미지 삽입을 특정 파일 유형으로 제한하는 방법을 보여줍니다.
   ///
-  /// ** See code in examples/api/lib/widgets/editable_text/editable_text.on_content_inserted.0.dart **
+  /// ** examples/api/lib/widgets/editable_text/editable_text.on_content_inserted.0.dart의 코드를 참조하세요 **.
   /// {@end-tool}
   ///
-  /// See also:
+  /// 참조하세요:
   ///
   ///  * <https://developer.android.com/guide/topics/text/image-keyboard>
   /// {@endtemplate}
@@ -546,163 +498,123 @@ class _DiscreteKeyFrameSimulation extends Simulation {
   }
 }
 
-/// A basic text input field.
+/// 기본 텍스트 입력 필드입니다.
 ///
-/// This widget interacts with the [TextInput] service to let the user edit the
-/// text it contains. It also provides scrolling, selection, and cursor
-/// movement. This widget does not provide any focus management (e.g.,
-/// tap-to-focus).
+/// 이 위젯은 [TextInput] 서비스와 상호 작용하여 사용자가 포함된 텍스트를 편집할 수 있도록 합니다. 또한 스크롤, 선택 및 커서 이동도 제공합니다. 이 위젯은 포커스 관리 기능을 제공하지 않습니다(예:
+/// 탭하여 초점 맞추기) 기능을 제공하지 않습니다.
 ///
-/// ## Handling User Input
+/// ## 사용자 입력 처리
 ///
-/// Currently the user may change the text this widget contains via keyboard or
-/// the text selection menu. When the user inserted or deleted text, you will be
-/// notified of the change and get a chance to modify the new text value:
+/// 현재 사용자는 키보드 또는 텍스트 선택 메뉴를 통해 이 위젯에 포함된 텍스트를 변경할 수 있습니다. 사용자가 텍스트를 삽입하거나 삭제하면 변경 알림이 표시되고 새 텍스트 값을 수정할 수 있는 기회가 주어집니다:
 ///
-/// * The [inputFormatters] will be first applied to the user input.
+/// * 입력 포맷터]가 먼저 사용자 입력에 적용됩니다.
 ///
-/// * The [controller]'s [TextEditingController.value] will be updated with the
-///   formatted result, and the [controller]'s listeners will be notified.
+/// * 컨트롤러]의 [TextEditingController.value]가 형식이 지정된 결과로 업데이트되고 [컨트롤러]의 리스너에게 알림이 전송됩니다.
 ///
-/// * The [onChanged] callback, if specified, will be called last.
+/// * 지정한 경우 [onChanged] 콜백이 마지막으로 호출됩니다.
 ///
-/// ## Input Actions
+/// 입력 액션 ##
 ///
-/// A [TextInputAction] can be provided to customize the appearance of the
-/// action button on the soft keyboard for Android and iOS. The default action
-/// is [TextInputAction.done].
+/// 안드로이드 및 iOS용 소프트 키보드의 액션 버튼 모양을 커스터마이징하기 위해 [TextInputAction]을 제공할 수 있습니다. 기본 동작은 [TextInputAction.done]입니다.
 ///
-/// Many [TextInputAction]s are common between Android and iOS. However, if a
-/// [textInputAction] is provided that is not supported by the current
-/// platform in debug mode, an error will be thrown when the corresponding
-/// EditableText receives focus. For example, providing iOS's "emergencyCall"
-/// action when running on an Android device will result in an error when in
-/// debug mode. In release mode, incompatible [TextInputAction]s are replaced
-/// either with "unspecified" on Android, or "default" on iOS. Appropriate
-/// [textInputAction]s can be chosen by checking the current platform and then
-/// selecting the appropriate action.
+/// 많은 [TextInputAction]이 안드로이드와 iOS에서 공통적으로 사용됩니다. 그러나 디버그 모드에서 현재 플랫폼에서 지원되지 않는 [textInputAction]이 제공되면 해당 플랫폼의
+/// EditableText가 포커스를 받을 때 오류가 발생합니다. 예를 들어 안드로이드 기기에서 실행할 때 iOS의 "emergencyCall"
+/// 액션을 제공하면 디버그 모드에서 오류가 발생합니다. 릴리스 모드에서 호환되지 않는 [TextInputAction]은 Android에서는 "지정되지 않음"으로, iOS에서는 "기본값"으로 대체됩니다. 현재 플랫폼을 확인한 다음 적절한 액션을 선택하면 적절한 [textInputAction]을 선택할 수 있습니다.
 ///
 /// {@template flutter.widgets.EditableText.lifeCycle}
-/// ## Lifecycle
+/// ## 라이프사이클
 ///
-/// Upon completion of editing, like pressing the "done" button on the keyboard,
-/// two actions take place:
+/// 편집이 완료되면 키보드의 "완료" 버튼을 누르는 것과 같이,
+/// 두 가지 작업이 수행됩니다:
 ///
-///   1st: Editing is finalized. The default behavior of this step includes
-///   an invocation of [onChanged]. That default behavior can be overridden.
-///   See [onEditingComplete] for details.
+///   첫째: 편집이 완료됩니다. 이 단계의 기본 동작에는 [onChanged] 호출이 포함됩니다. 이 기본 동작은 재정의할 수 있습니다.
+///   자세한 내용은 [onEditingComplete]를 참조하세요.
 ///
-///   2nd: [onSubmitted] is invoked with the user's input value.
+///   2차: 사용자의 입력 값으로 [onSubmitted]가 호출됩니다.
 ///
-/// [onSubmitted] can be used to manually move focus to another input widget
-/// when a user finishes with the currently focused input widget.
+/// 사용자가 현재 초점이 맞춰진 입력 위젯을 완료하면 [onSubmitted]를 사용하여 수동으로 다른 입력 위젯으로 포커스를 이동할 수 있습니다.
 ///
-/// When the widget has focus, it will prevent itself from disposing via
-/// [AutomaticKeepAliveClientMixin.wantKeepAlive] in order to avoid losing the
-/// selection. Removing the focus will allow it to be disposed.
+/// 위젯에 포커스가 있으면 선택 항목이 손실되지 않도록 [AutomaticKeepAliveClientMixin.wantKeepAlive]를 통해 위젯이 스스로 처분되지 않도록 합니다. 포커스를 제거하면 위젯이 폐기될 수 있습니다.
 /// {@endtemplate}
 ///
-/// Rather than using this widget directly, consider using [TextField], which
-/// is a full-featured, material-design text input field with placeholder text,
-/// labels, and [Form] integration.
+/// 이 위젯을 직접 사용하는 대신 플레이스홀더 텍스트가 있는 전체 기능의 머티리얼 디자인 텍스트 입력 필드인 [TextField]를 사용하는 것이 좋습니다,
+/// 레이블 및 [양식] 통합 기능이 있는 [텍스트 필드]를 사용하는 것이 좋습니다.
 ///
-/// ## Text Editing [Intent]s and Their Default [Action]s
+/// 텍스트 편집 [인텐트] 및 기본 [액션] ##
 ///
-/// This widget provides default [Action]s for handling common text editing
-/// [Intent]s such as deleting, copying and pasting in the text field. These
-/// [Action]s can be directly invoked using [Actions.invoke] or the
-/// [Actions.maybeInvoke] method. The default text editing keyboard [Shortcuts]
-/// also use these [Intent]s and [Action]s to perform the text editing
-/// operations they are bound to.
+/// 이 위젯은 텍스트 필드에서 삭제, 복사 및 붙여넣기와 같은 일반적인 텍스트 편집 [인텐트]를 처리하기 위한 기본 [액션]을 제공합니다. 이러한 [액션]은 [Actions.invoke] 또는 [Actions.maybeInvoke] 메서드를 사용하여 직접 호출할 수 있습니다. 기본 텍스트 편집 키보드 [바로가기]
+/// 또한 이러한 [Intent]와 [Action]을 사용하여 바인딩된 텍스트 편집 작업을 수행합니다.
 ///
-/// The default handling of a specific [Intent] can be overridden by placing an
-/// [Actions] widget above this widget. See the [Action] class and the
-/// [Action.overridable] constructor for more information on how a pre-defined
-/// overridable [Action] can be overridden.
+/// 이 위젯 위에 [액션] 위젯을 배치하여 특정 [인텐트]의 기본 처리를 재정의할 수 있습니다. 미리 정의된 재정의 가능한 [Action]을 재정의하는 방법에 대한 자세한 내용은 [Action] 클래스 및 [Action.overridable] 생성자를 참조하세요.
 ///
-/// ### Intents for Deleting Text and Their Default Behavior
+/// 텍스트 삭제 인텐트 및 기본 동작 ###
 ///
-/// | **Intent Class**                 | **Default Behavior when there's selected text**      | **Default Behavior when there is a [caret](https://en.wikipedia.org/wiki/Caret_navigation) (The selection is [TextSelection.collapsed])**  |
+/// | **인텐트 클래스** | **선택된 텍스트가 있을 때의 기본 동작** | **[캐럿](https://en.wikipedia.org/wiki/Caret_navigation)이 있을 때의 기본 동작 (선택 항목은 [TextSelection.collapsed])** |
 /// | :------------------------------- | :--------------------------------------------------- | :----------------------------------------------------------------------- |
-/// | [DeleteCharacterIntent]          | Deletes the selected text                            | Deletes the user-perceived character before or after the caret location. |
-/// | [DeleteToNextWordBoundaryIntent] | Deletes the selected text and the word before/after the selection's [TextSelection.extent] position | Deletes from the caret location to the previous or the next word boundary |
-/// | [DeleteToLineBreakIntent]        | Deletes the selected text, and deletes to the start/end of the line from the selection's [TextSelection.extent] position | Deletes from the caret location to the logical start or end of the current line |
+/// | [DeleteCharacterIntent] | 선택된 텍스트를 삭제합니다 | 캐럿 위치 앞 또는 뒤에 사용자가 인식한 문자를 삭제합니다. |
+/// | [DeleteToNextWordBoundaryIntent] | 선택된 텍스트와 선택 영역의 [TextSelection.extent] 위치 앞/뒤의 단어를 삭제합니다 | 캐럿 위치에서 이전 또는 다음 단어 경계까지 삭제합니다 |
+/// | [DeleteToLineBreakIntent] | 선택된 텍스트를 삭제하고 선택 영역의 [TextSelection.extent] 위치에서 줄의 시작/끝으로 삭제합니다 | 캐럿 위치에서 현재 줄의 논리적 시작 또는 끝으로 삭제합니다.
 ///
-/// ### Intents for Moving the [Caret](https://en.wikipedia.org/wiki/Caret_navigation)
+/// ### [캐럿] 이동 인텐트(https://en.wikipedia.org/wiki/Caret_navigation)
 ///
-/// | **Intent Class**                                                                     | **Default Behavior when there's selected text**                  | **Default Behavior when there is a caret ([TextSelection.collapsed])**  |
+/// | **인텐트 클래스** | **선택된 텍스트가 있을 때의 기본 동작** | **캐럿([TextSelection.collapsed])이 있을 때의 기본 동작 ** |
 /// | :----------------------------------------------------------------------------------- | :--------------------------------------------------------------- | :---------------------------------------------------------------------- |
-/// | [ExtendSelectionByCharacterIntent](`collapseSelection: true`)                        | Collapses the selection to the logical start/end of the selection | Moves the caret past the user-perceived character before or after the current caret location. |
-/// | [ExtendSelectionToNextWordBoundaryIntent](`collapseSelection: true`)                 | Collapses the selection to the word boundary before/after the selection's [TextSelection.extent] position | Moves the caret to the previous/next word boundary. |
-/// | [ExtendSelectionToNextWordBoundaryOrCaretLocationIntent](`collapseSelection: true`)  | Collapses the selection to the word boundary before/after the selection's [TextSelection.extent] position, or [TextSelection.base], whichever is closest in the given direction | Moves the caret to the previous/next word boundary. |
-/// | [ExtendSelectionToLineBreakIntent](`collapseSelection: true`)                        | Collapses the selection to the start/end of the line at the selection's [TextSelection.extent] position | Moves the caret to the start/end of the current line .|
-/// | [ExtendSelectionVerticallyToAdjacentLineIntent](`collapseSelection: true`)           | Collapses the selection to the position closest to the selection's [TextSelection.extent], on the previous/next adjacent line | Moves the caret to the closest position on the previous/next adjacent line. |
-/// | [ExtendSelectionVerticallyToAdjacentPageIntent](`collapseSelection: true`)           | Collapses the selection to the position closest to the selection's [TextSelection.extent], on the previous/next adjacent page | Moves the caret to the closest position on the previous/next adjacent page. |
-/// | [ExtendSelectionToDocumentBoundaryIntent](`collapseSelection: true`)                 | Collapses the selection to the start/end of the document | Moves the caret to the start/end of the document. |
+/// | [ExtendSelectionByCharacterIntent](`collapseSelection: true`) | 선택 영역을 선택 영역의 논리적 시작/끝으로 축소합니다 | 캐럿을 현재 캐럿 위치 앞뒤로 사용자가 인식한 문자를 지나서 이동합니다. |
+/// | [ExtendSelectionToNextWordBoundaryIntent](`collapseSelection: true`) | 선택 영역의 [TextSelection.extent] 위치 앞/뒤의 단어 경계로 선택 영역을 축소합니다 | 캐럿을 이전/다음 단어 경계로 이동합니다. |
+/// | [ExtendSelectionToNextWordBoundaryOrCaretLocationIntent](`collapseSelection: true`) | 선택 영역의 [TextSelection.extent] 위치 앞/뒤의 단어 경계 또는 지정된 방향에서 가장 가까운 [TextSelection.base] 위치로 선택 영역을 축소합니다 | 캐럿을 이전/다음 단어 경계로 이동합니다. |
+/// | [ExtendSelectionToLineBreakIntent](`collapseSelection: true`) | 선택 영역의 [TextSelection.extent] 위치에서 줄의 시작/끝으로 선택 영역을 축소합니다 | 캐럿을 현재 줄의 시작/끝으로 이동합니다 .|
+/// | [ExtendSelectionVerticallyToAdjacentLineIntent](`collapseSelection: true`) | 선택 영역을 이전/다음 인접 줄에서 선택 영역의 [TextSelection.extent]에 가장 가까운 위치로 축소합니다 | 캐럿을 이전/다음 인접 줄에서 가장 가까운 위치로 이동합니다. |
+/// | [ExtendSelectionVerticallyToAdjacentPageIntent](`collapseSelection: true`) | 선택 영역을 이전/다음 인접 페이지에서 선택 영역의 [TextSelection.extent]에 가장 가까운 위치로 축소 | 캐럿을 이전/다음 인접 페이지에서 가장 가까운 위치로 이동합니다. |
+/// | [ExtendSelectionToDocumentBoundaryIntent](`collapseSelection: true`) | 선택 영역을 문서의 시작/끝으로 축소 | 캐럿을 문서의 시작/끝으로 이동합니다. |
 ///
-/// #### Intents for Extending the Selection
+/// #### 선택 영역 확장을 위한 인텐트
 ///
-/// | **Intent Class**                                                                     | **Default Behavior when there's selected text**                  | **Default Behavior when there is a caret ([TextSelection.collapsed])**  |
+/// | **인텐트 클래스** | **선택된 텍스트가 있을 때의 기본 동작** | **캐럿이 있을 때의 기본 동작 ([TextSelection.collapsed])** |
 /// | :----------------------------------------------------------------------------------- | :--------------------------------------------------------------- | :---------------------------------------------------------------------- |
-/// | [ExtendSelectionByCharacterIntent](`collapseSelection: false`)                       | Moves the selection's [TextSelection.extent] past the user-perceived character before/after it |
-/// | [ExtendSelectionToNextWordBoundaryIntent](`collapseSelection: false`)                | Moves the selection's [TextSelection.extent] to the previous/next word boundary |
-/// | [ExtendSelectionToNextWordBoundaryOrCaretLocationIntent](`collapseSelection: false`) | Moves the selection's [TextSelection.extent] to the previous/next word boundary, or [TextSelection.base] whichever is closest in the given direction | Moves the selection's [TextSelection.extent] to the previous/next word boundary. |
-/// | [ExtendSelectionToLineBreakIntent](`collapseSelection: false`)                       | Moves the selection's [TextSelection.extent] to the start/end of the line |
-/// | [ExtendSelectionVerticallyToAdjacentLineIntent](`collapseSelection: false`)          | Moves the selection's [TextSelection.extent] to the closest position on the previous/next adjacent line |
-/// | [ExtendSelectionVerticallyToAdjacentPageIntent](`collapseSelection: false`)          | Moves the selection's [TextSelection.extent] to the closest position on the previous/next adjacent page |
-/// | [ExtendSelectionToDocumentBoundaryIntent](`collapseSelection: false`)                | Moves the selection's [TextSelection.extent] to the start/end of the document |
-/// | [SelectAllTextIntent]  | Selects the entire document |
+/// | [ExtendSectionByCharacterIntent](`collapseSelection: false`) | 사용자가 인식한 문자 앞/뒤로 선택 영역의 [TextSelection.extent]를 이동합니다 |
+/// | [ExtendSelectionToNextWordBoundaryIntent](`collapseSelection: false`) | 선택 영역의 [TextSelection.extent]를 이전/다음 단어 경계로 이동 |
+/// | [ExtendSelectionToNextWordBoundaryOrCaretLocationIntent](`collapseSelection: false`) | 선택 영역의 [TextSection.extent]를 이전/다음 단어 경계 또는 주어진 방향에서 가장 가까운 [TextSection.base]로 이동합니다 | 선택 영역의 [TextSection.extent]를 이전/다음 단어 경계로 이동합니다. |
+/// | [ExtendSelectionToLineBreakIntent](`collapseSelection: false`) | 선택 영역의 [TextSelection.extent]를 줄의 시작/끝으로 이동합니다.
+/// | [ExtendSectionVerticallyToAdjacentLineIntent](`collapseSelection: false`) | 선택 영역의 [TextSelection.extent]를 이전/다음 인접한 줄에서 가장 가까운 위치로 이동합니다.
+/// | [ExtendSelectionVerticallyToAdjacentPageIntent](`collapseSelection: false`) | 선택 영역의 [TextSelection.extent]를 이전/다음 인접한 페이지에서 가장 가까운 위치로 이동합니다.
+/// | [ExtendSelectionToDocumentBoundaryIntent](`collapseSelection: false`) | 선택 영역의 [TextSelection.extent]를 문서의 시작/끝으로 이동 |
+/// | [SelectAllTextIntent] | 전체 문서를 선택합니다 |
 ///
-/// ### Other Intents
+/// ### 기타 인텐트
 ///
-/// | **Intent Class**                        | **Default Behavior**                                 |
+/// **인텐트 클래스** | **기본 동작** |
 /// | :-------------------------------------- | :--------------------------------------------------- |
-/// | [DoNothingAndStopPropagationTextIntent] | Does nothing in the input field, and prevents the key event from further propagating in the widget tree. |
-/// | [ReplaceTextIntent]                     | Replaces the current [TextEditingValue] in the input field's [TextEditingController], and triggers all related user callbacks and [TextInputFormatter]s. |
-/// | [UpdateSelectionIntent]                 | Updates the current selection in the input field's [TextEditingController], and triggers the [onSelectionChanged] callback. |
-/// | [CopySelectionTextIntent]               | Copies or cuts the selected text into the clipboard |
-/// | [PasteTextIntent]                       | Inserts the current text in the clipboard after the caret location, or replaces the selected text if the selection is not collapsed. |
+/// | [DoNothingAndStopPropagationTextIntent] | 입력 필드에서 아무것도 하지 않고, 키 이벤트가 위젯 트리에서 더 이상 전파되지 않도록 합니다. |
+/// | [ReplaceTextIntent] | 입력 필드의 [TextEditingController]에서 현재 [TextEditingValue]를 바꾸고 모든 관련 사용자 콜백 및 [TextInputFormatter]를 트리거합니다. |
+/// | [업데이트 선택 의도] | 입력 필드의 [TextEditingController]에서 현재 선택을 업데이트하고 [onSelectionChanged] 콜백을 트리거합니다. |
+/// | [CopySelectionTextIntent] | 선택된 텍스트를 클립보드에 복사하거나 잘라냅니다.
+/// | [PasteTextIntent] | 클립보드의 캐럿 위치 뒤에 현재 텍스트를 삽입하거나 선택 영역이 축소되지 않은 경우 선택한 텍스트를 바꿉니다. |
 ///
-/// ## Gesture Events Handling
+/// ## 제스처 이벤트 처리
 ///
-/// This widget provides rudimentary, platform-agnostic gesture handling for
-/// user actions such as tapping, long-pressing and scrolling when
-/// [rendererIgnoresPointer] is false (false by default). To tightly conform
-/// to the platform behavior with respect to input gestures in text fields, use
-/// [TextField] or [CupertinoTextField]. For custom selection behavior, call
-/// methods such as [RenderEditable.selectPosition],
-/// [RenderEditable.selectWord], etc. programmatically.
+/// 이 위젯은 [rendererIgnoresPointer]가 거짓(기본적으로 거짓)일 때 탭, 길게 누르기, 스크롤과 같은 사용자 동작에 대해 플랫폼에 구애받지 않는 기초적인 제스처 처리를 제공합니다. 텍스트 필드의 입력 제스처와 관련하여 플랫폼 동작을 엄격하게 준수하려면 [TextField] 또는 [CupertinoTextField]를 사용하십시오. 사용자 지정 선택 동작의 경우 [RenderEditable.selectPosition]과 같은 메서드를 호출합니다,
+/// [RenderEditable.selectWord] 등의 메서드를 프로그래밍 방식으로 호출합니다.
 ///
 /// {@template flutter.widgets.editableText.showCaretOnScreen}
-/// ## Keep the caret visible when focused
+/// ## 초점이 맞춰졌을 때 캐럿을 계속 표시
 ///
-/// When focused, this widget will make attempts to keep the text area and its
-/// caret (even when [showCursor] is `false`) visible, on these occasions:
+/// 이 위젯은 초점이 맞춰지면 텍스트 영역과 해당 캐럿([showCursor]가 `false`인 경우에도)을 계속 표시하려고 시도합니다:
 ///
-///  * When the user focuses this text field and it is not [readOnly].
-///  * When the user changes the selection of the text field, or changes the
-///    text when the text field is not [readOnly].
-///  * When the virtual keyboard pops up.
+///  * 사용자가 이 텍스트 필드에 초점을 맞췄지만 [읽기 전용]이 아닌 경우.
+///  * 사용자가 텍스트 필드의 선택을 변경하거나 텍스트 필드가 [읽기 전용]이 아닐 때 텍스트를 변경하는 경우.
+///  * 가상 키보드가 팝업되는 경우.
 /// {@endtemplate}
 ///
 /// {@template flutter.widgets.editableText.accessibility}
-/// ## Troubleshooting Common Accessibility Issues
+/// ## 일반적인 접근성 문제 해결하기
 ///
-/// ### Customizing User Input Accessibility Announcements
+/// ### 사용자 입력 접근성 알림 사용자 지정하기
 ///
-/// To customize user input accessibility announcements triggered by text
-/// changes, use [SemanticsService.announce] to make the desired
-/// accessibility announcement.
+/// 텍스트 변경에 의해 트리거되는 사용자 입력 접근성 알림을 사용자 지정하려면 [SemanticsService.announce]를 사용하여 원하는 접근성 알림을 만듭니다.
 ///
-/// On iOS, the on-screen keyboard may announce the most recent input
-/// incorrectly when a [TextInputFormatter] inserts a thousands separator to
-/// a currency value text field. The following example demonstrates how to
-/// suppress the default accessibility announcements by always announcing
-/// the content of the text field as a US currency value (the `\$` inserts
-/// a dollar sign, the `$newText interpolates the `newText` variable):
+/// iOS에서 [TextInputFormatter]가 통화 값 텍스트 필드에 천 단위 구분 기호를 삽입하면 화면 키보드가 가장 최근 입력을 잘못 발표할 수 있습니다. 다음 예제는 텍스트 필드의 내용을 항상 미국 통화 값으로 알려서 기본 접근성 알림을 억제하는 방법을 보여줍니다(`\$`는 달러 기호를 삽입하고 `$newText` 변수를 보간함):
 ///
-/// ```dart
-/// onChanged: (String newText) {
+/// ```dart onChanged: (String newText) {
 ///   if (newText.isNotEmpty) {
 ///     SemanticsService.announce('\$$newText', Directionality.of(context));
 ///   }
@@ -711,32 +623,26 @@ class _DiscreteKeyFrameSimulation extends Simulation {
 ///
 /// {@endtemplate}
 ///
-/// See also:
+/// 참조:
 ///
-///  * [TextField], which is a full-featured, material-design text input field
-///    with placeholder text, labels, and [Form] integration.
+///  * 플레이스홀더 텍스트, 레이블 및 [양식] 통합 기능을 갖춘 모든 기능을 갖춘 머티리얼 디자인 텍스트 입력 필드인 [텍스트필드].
 class EditableText extends StatefulWidget {
-  /// Creates a basic text input control.
+  /// 기본 텍스트 입력 컨트롤을 만듭니다.
   ///
-  /// The [maxLines] property can be set to null to remove the restriction on
-  /// the number of lines. By default, it is one, meaning this is a single-line
-  /// text field. [maxLines] must be null or greater than zero.
+  /// [maxLines] 속성을 null로 설정하여 줄 수 제한을 제거할 수 있습니다. 기본적으로 이 속성은 1이며, 이는 한 줄 텍스트 필드임을 의미합니다. [maxLines]는 null이거나 0보다 커야 합니다.
   ///
-  /// If [keyboardType] is not set or is null, its value will be inferred from
-  /// [autofillHints], if [autofillHints] is not empty. Otherwise it defaults to
-  /// [TextInputType.text] if [maxLines] is exactly one, and
-  /// [TextInputType.multiline] if [maxLines] is null or greater than one.
+  /// [키보드 유형]이 설정되어 있지 않거나 널인 경우, [자동 채우기 힌트]가 비어 있지 않은 경우 [자동 채우기 힌트]에서 해당 값을 유추합니다. 그렇지 않으면 기본값은 [maxLines]가 정확히 1이면 [TextInputType.text]로, [maxLines]가 null이거나 1보다 크면 [TextInputType.multiline]으로 설정됩니다.
   ///
-  /// The text cursor is not shown if [showCursor] is false or if [showCursor]
-  /// is null (the default) and [readOnly] is true.
+  /// [showCursor]가 거짓이거나 [showCursor][기본값]이 null인 경우 텍스트 커서가 표시되지 않습니다.
+  /// 가 널(기본값)이고 [readOnly]가 참이면 텍스트 커서가 표시되지 않습니다.
   ///
-  /// The [controller], [focusNode], [obscureText], [autocorrect], [autofocus],
-  /// [showSelectionHandles], [enableInteractiveSelection], [forceLine],
-  /// [style], [cursorColor], [cursorOpacityAnimates], [backgroundCursorColor],
-  /// [enableSuggestions], [paintCursorAboveText], [selectionHeightStyle],
-  /// [selectionWidthStyle], [textAlign], [dragStartBehavior], [scrollPadding],
-  /// [dragStartBehavior], [toolbarOptions], [rendererIgnoresPointer],
-  /// [readOnly], and [enableIMEPersonalizedLearning] arguments must not be null.
+  /// [컨트롤러], [포커스 노드], [모호한 텍스트], [자동 수정], [자동 초점],
+  /// [쇼셀렉션 핸들], [활성화대화형선택], [포스라인],
+  /// [스타일], [커서 색상], [커서 투명도 애니메이션], [배경 커서 색상],
+  /// [enableSuggestions], [페인트 커서 위에 텍스트], [선택 높이 스타일],
+  /// [선택 폭 스타일], [텍스트 정렬], [드래그 시작 동작], [스크롤 패딩],
+  /// [드래그 시작 동작], [툴바 옵션], [렌더러 무시 포인터],
+  /// [읽기 전용], [enableIMEPersonalizedLearning] 인수는 null이 아니어야 합니다.
   EditableText({
     super.key,
     required this.controller,
@@ -866,30 +772,27 @@ class EditableText extends StatefulWidget {
            : inputFormatters,
        showCursor = showCursor ?? !readOnly;
 
-  /// Controls the text being edited.
+  /// 편집 중인 텍스트를 제어합니다.
   final TextEditingController controller;
 
-  /// Controls whether this widget has keyboard focus.
+  /// 이 위젯에 키보드 포커스가 있는지 여부를 제어합니다.
   final FocusNode focusNode;
 
   /// {@template flutter.widgets.editableText.obscuringCharacter}
-  /// Character used for obscuring text if [obscureText] is true.
+  /// [obscureText]가 참일 경우 텍스트를 가리는 데 사용되는 문자입니다.
   ///
-  /// Must be only a single character.
+  /// 한 글자만 사용해야 합니다.
   ///
-  /// Defaults to the character U+2022 BULLET (•).
+  /// 기본값은 U+2022 BULLET(-) 문자입니다.
   /// {@endtemplate}
   final String obscuringCharacter;
 
   /// {@template flutter.widgets.editableText.obscureText}
-  /// Whether to hide the text being edited (e.g., for passwords).
+  /// 편집 중인 텍스트를 숨길지 여부(예: 비밀번호).
   ///
-  /// When this is set to true, all the characters in the text field are
-  /// replaced by [obscuringCharacter], and the text in the field cannot be
-  /// copied with copy or cut. If [readOnly] is also true, then the text cannot
-  /// be selected.
+  /// 이 값을 true로 설정하면 텍스트 필드의 모든 문자가 [obscuringCharacter]로 대체되며, 필드의 텍스트는 복사 또는 잘라내기로 복사할 수 없습니다. [읽기 전용]도 참이면 텍스트를 선택할 수 없습니다.
   ///
-  /// Defaults to false. Cannot be null.
+  /// 기본값은 거짓입니다. null일 수 없습니다.
   /// {@endtemplate}
   final bool obscureText;
 
@@ -900,61 +803,55 @@ class EditableText extends StatefulWidget {
   final TextWidthBasis textWidthBasis;
 
   /// {@template flutter.widgets.editableText.readOnly}
-  /// Whether the text can be changed.
+  /// 텍스트를 변경할 수 있는지 여부.
   ///
-  /// When this is set to true, the text cannot be modified
-  /// by any shortcut or keyboard operation. The text is still selectable.
+  /// 이 값을 true로 설정하면 단축키나 키보드 조작으로 텍스트를 수정할 수 없습니다. 텍스트는 계속 선택할 수 있습니다.
   ///
-  /// Defaults to false. Must not be null.
-  /// {@endtemplate}
+  /// 기본값은 false입니다. null이 아니어야 합니다.
+  /// {@END템플릿}
   final bool readOnly;
 
-  /// Whether the text will take the full width regardless of the text width.
+  /// 텍스트 너비에 관계없이 텍스트가 전체 너비를 사용할지 여부입니다.
   ///
-  /// When this is set to false, the width will be based on text width, which
-  /// will also be affected by [textWidthBasis].
+  /// 이 값을 false로 설정하면 너비는 텍스트 너비를 기준으로 하며, [textWidthBasis]의 영향도 받습니다.
   ///
-  /// Defaults to true. Must not be null.
+  /// 기본값은 참입니다. null이 아니어야 합니다.
   ///
-  /// See also:
+  /// 참조
   ///
-  ///  * [textWidthBasis], which controls the calculation of text width.
+  ///  * 텍스트 너비 계산을 제어하는 [textWidthBasis] 참조.
   final bool forceLine;
 
-  /// Configuration of toolbar options.
+  /// 도구 모음 옵션 구성.
   ///
-  /// By default, all options are enabled. If [readOnly] is true, paste and cut
-  /// will be disabled regardless. If [obscureText] is true, cut and copy will
-  /// be disabled regardless. If [readOnly] and [obscureText] are both true,
-  /// select all will also be disabled.
+  /// 기본적으로 모든 옵션이 활성화됩니다. [읽기 전용]이 참이면 붙여넣기 및 잘라내기와 관계없이 비활성화됩니다. [obscureText]가 참이면 잘라내기 및 복사 기능이 비활성화됩니다. [읽기 전용]과 [obscureText]가 모두 참이면,
+  /// 모두 선택도 비활성화됩니다.
   final ToolbarOptions toolbarOptions;
 
-  /// Whether to show selection handles.
+  /// 선택 핸들을 표시할지 여부입니다.
   ///
-  /// When a selection is active, there will be two handles at each side of
-  /// boundary, or one handle if the selection is collapsed. The handles can be
-  /// dragged to adjust the selection.
+  /// 선택 영역이 활성화되면 경계 양쪽에 두 개의 핸들이 표시되고, 선택 영역이 축소된 경우 핸들이 하나 표시됩니다. 핸들을 드래그하여 선택 영역을 조정할 수 있습니다.
   ///
-  /// See also:
+  /// 참조
   ///
-  ///  * [showCursor], which controls the visibility of the cursor.
+  ///  * 커서의 가시성을 제어하는 [showCursor] 참조.
   final bool showSelectionHandles;
 
   /// {@template flutter.widgets.editableText.showCursor}
-  /// Whether to show cursor.
+  /// 커서를 표시할지 여부입니다.
   ///
-  /// The cursor refers to the blinking caret when the [EditableText] is focused.
+  /// 커서는 [편집 가능한 텍스트]에 초점이 맞춰졌을 때 깜박이는 캐럿을 나타냅니다.
   /// {@endtemplate}
   ///
-  /// See also:
+  /// 참조
   ///
-  ///  * [showSelectionHandles], which controls the visibility of the selection handles.
+  ///  * 선택 핸들의 표시 여부를 제어하는 [showSelectionHandles].
   final bool showCursor;
 
   /// {@template flutter.widgets.editableText.autocorrect}
-  /// Whether to enable autocorrection.
+  /// 자동 수정 활성화 여부.
   ///
-  /// Defaults to true. Cannot be null.
+  /// 기본값은 true입니다. null일 수 없습니다.
   /// {@endtemplate}
   final bool autocorrect;
 
@@ -967,38 +864,30 @@ class EditableText extends StatefulWidget {
   /// {@macro flutter.services.TextInputConfiguration.enableSuggestions}
   final bool enableSuggestions;
 
-  /// The text style to use for the editable text.
+  /// 편집 가능한 텍스트에 사용할 텍스트 스타일입니다.
   final TextStyle style;
 
-  /// Controls the undo state of the current editable text.
+  /// 현재 편집 가능한 텍스트의 실행 취소 상태를 제어합니다.
   ///
-  /// If null, this widget will create its own [UndoHistoryController].
+  /// null이면 이 위젯은 자체 [UndoHistoryController]를 생성합니다.
   final UndoHistoryController? undoController;
 
   /// {@template flutter.widgets.editableText.strutStyle}
-  /// The strut style used for the vertical layout.
+  /// 세로 레이아웃에 사용되는 스트럿 스타일입니다.
   ///
-  /// [StrutStyle] is used to establish a predictable vertical layout.
-  /// Since fonts may vary depending on user input and due to font
-  /// fallback, [StrutStyle.forceStrutHeight] is enabled by default
-  /// to lock all lines to the height of the base [TextStyle], provided by
-  /// [style]. This ensures the typed text fits within the allotted space.
+  /// [StrutStyle]은 예측 가능한 세로 레이아웃을 설정하는 데 사용됩니다.
+  /// 글꼴은 사용자 입력 및 글꼴 대체에 따라 달라질 수 있으므로 [StrutStyle.forceStrutHeight]는 기본적으로 활성화되어 모든 줄을 [style]에서 제공하는 기본 [TextStyle]의 높이로 고정합니다. 이렇게 하면 입력한 텍스트가 할당된 공간에 맞도록 보장합니다.
   ///
-  /// If null, the strut used will inherit values from the [style] and will
-  /// have [StrutStyle.forceStrutHeight] set to true. When no [style] is
-  /// passed, the theme's [TextStyle] will be used to generate [strutStyle]
-  /// instead.
+  /// null인 경우 사용되는 스트럿은 [스타일]의 값을 상속하고 [StrutStyle.forceStrutHeight]가 true로 설정됩니다. [스타일]이 전달되지 않으면 테마의 [텍스트 스타일]을 사용하여 [strutStyle] 대신
+  /// 을 생성합니다.
   ///
-  /// To disable strut-based vertical alignment and allow dynamic vertical
-  /// layout based on the glyphs typed, use [StrutStyle.disabled].
+  /// 스트럿 기반 세로 정렬을 비활성화하고 입력한 글리프에 따라 동적 세로 레이아웃을 허용하려면 [StrutStyle.disabled]를 사용합니다.
   ///
-  /// Flutter's strut is based on [typesetting strut](https://en.wikipedia.org/wiki/Strut_(typesetting))
-  /// and CSS's [line-height](https://www.w3.org/TR/CSS2/visudet.html#line-height).
+  /// Flutter의 스트럿은 [조판 스트럿](https://en.wikipedia.org/wiki/Strut_(typesetting))
+  /// 및 CSS의 [line-height](https://www.w3.org/TR/CSS2/visudet.html#line-height)를 기반으로 합니다.
   /// {@endtemplate}
   ///
-  /// Within editable text and text fields, [StrutStyle] will not use its standalone
-  /// default values, and will instead inherit omitted/null properties from the
-  /// [TextStyle] instead. See [StrutStyle.inheritFromTextStyle].
+  /// 편집 가능한 텍스트 및 텍스트 필드 내에서 [StrutStyle]은 독립형 기본값을 사용하지 않고 대신 [TextStyle]에서 생략되거나 null인 속성을 상속합니다. [텍스트 스타일에서 상속받기]를 참조하십시오.
   StrutStyle get strutStyle {
     if (_strutStyle == null) {
       return StrutStyle.fromTextStyle(style, forceStrutHeight: true);
@@ -1008,209 +897,165 @@ class EditableText extends StatefulWidget {
   final StrutStyle? _strutStyle;
 
   /// {@template flutter.widgets.editableText.textAlign}
-  /// How the text should be aligned horizontally.
+  /// 텍스트를 가로로 정렬하는 방법.
   ///
-  /// Defaults to [TextAlign.start] and cannot be null.
+  /// 기본값은 [TextAlign.start]이며 null일 수 없습니다.
   /// {@endtemplate}
   final TextAlign textAlign;
 
   /// {@template flutter.widgets.editableText.textDirection}
-  /// The directionality of the text.
+  /// 텍스트의 방향성.
   ///
-  /// This decides how [textAlign] values like [TextAlign.start] and
-  /// [TextAlign.end] are interpreted.
+  /// 이것은 [TextAlign.start] 및 [TextAlign.end]와 같은 [textAlign] 값이 해석되는 방식을 결정합니다.
   ///
-  /// This is also used to disambiguate how to render bidirectional text. For
-  /// example, if the text is an English phrase followed by a Hebrew phrase,
-  /// in a [TextDirection.ltr] context the English phrase will be on the left
-  /// and the Hebrew phrase to its right, while in a [TextDirection.rtl]
-  /// context, the English phrase will be on the right and the Hebrew phrase on
-  /// its left.
+  /// 또한 양방향 텍스트를 렌더링하는 방법을 명확히 하기 위해 사용됩니다. 예를 들어, 텍스트가 영어 구문 뒤에 히브리어 구문인 경우,
+  /// [TextDirection.ltr] 컨텍스트에서는 영어 구문이 왼쪽에, 히브리어 구문이 오른쪽에 배치되고, [TextDirection.rtl] 컨텍스트에서는 영어 구문이 오른쪽에 배치됩니다.
+  /// 컨텍스트에서는 영어 구문이 오른쪽에, 히브리어 구문이 왼쪽에 표시됩니다.
   ///
-  /// Defaults to the ambient [Directionality], if any.
+  /// 기본값은 주변 [방향성]이 있는 경우 해당 방향성을 사용합니다.
   /// {@endtemplate}
   final TextDirection? textDirection;
 
   /// {@template flutter.widgets.editableText.textCapitalization}
-  /// Configures how the platform keyboard will select an uppercase or
-  /// lowercase keyboard.
+  /// 플랫폼 키보드에서 대문자 또는 소문자 키보드를 선택하는 방법을 구성합니다.
   ///
-  /// Only supports text keyboards, other keyboard types will ignore this
-  /// configuration. Capitalization is locale-aware.
+  /// 텍스트 키보드만 지원하며, 다른 키보드 유형은 이 구성을 무시합니다. 대문자는 로캘을 인식합니다.
   ///
-  /// Defaults to [TextCapitalization.none]. Must not be null.
+  /// 기본값은 [TextCapitalization.none]입니다. null이 아니어야 합니다.
   ///
-  /// See also:
+  /// 참조
   ///
-  ///  * [TextCapitalization], for a description of each capitalization behavior.
+  ///  * 각 대문자 동작에 대한 설명은 [TextCapitalization]을 참조하세요.
   ///
   /// {@endtemplate}
   final TextCapitalization textCapitalization;
 
-  /// Used to select a font when the same Unicode character can
-  /// be rendered differently, depending on the locale.
+  /// 로캘에 따라 동일한 유니코드 문자가 다르게 렌더링될 수 있는 경우 글꼴을 선택하는 데 사용됩니다.
   ///
-  /// It's rarely necessary to set this property. By default its value
-  /// is inherited from the enclosing app with `Localizations.localeOf(context)`.
+  /// 이 속성을 설정할 필요는 거의 없습니다. 기본적으로 이 값은 `Localizations.localeOf(context)`로 둘러싸는 앱에서 상속됩니다.
   ///
-  /// See [RenderEditable.locale] for more information.
+  /// 자세한 내용은 [RenderEditable.locale]을 참조하십시오.
   final Locale? locale;
 
   /// {@template flutter.widgets.editableText.textScaleFactor}
-  /// The number of font pixels for each logical pixel.
+  /// 각 논리적 픽셀에 대한 글꼴 픽셀 수입니다.
   ///
-  /// For example, if the text scale factor is 1.5, text will be 50% larger than
-  /// the specified font size.
+  /// 예를 들어 텍스트 배율이 1.5인 경우 텍스트는 지정된 글꼴 크기보다 50% 더 커집니다.
   ///
-  /// Defaults to the [MediaQueryData.textScaleFactor] obtained from the ambient
-  /// [MediaQuery], or 1.0 if there is no [MediaQuery] in scope.
+  /// 기본값은 주변 [MediaQuery]에서 가져온 [MediaQueryData.textScaleFactor]이며, 범위 내에 [MediaQuery]가 없는 경우 1.0입니다.
   /// {@endtemplate}
   final double? textScaleFactor;
 
-  /// The color to use when painting the cursor.
+  /// 커서를 칠할 때 사용할 색상입니다.
   ///
-  /// Cannot be null.
+  /// 널일 수 없습니다.
   final Color cursorColor;
 
-  /// The color to use when painting the autocorrection Rect.
+  /// 자동 수정 직사각형을 칠할 때 사용할 색상입니다.
   ///
-  /// For [CupertinoTextField]s, the value is set to the ambient
-  /// [CupertinoThemeData.primaryColor] with 20% opacity. For [TextField]s, the
-  /// value is null on non-iOS platforms and the same color used in [CupertinoTextField]
-  /// on iOS.
+  /// [CupertinoTextField]의 경우 이 값은 불투명도가 20%인 주변 [CupertinoThemeData.primaryColor]로 설정됩니다. [TextField]의 경우 iOS 이외의 플랫폼에서는 값이 null이며, iOS에서는 [CupertinoTextField](
+  /// 에 사용된 색상과 동일합니다.
   ///
-  /// Currently the autocorrection Rect only appears on iOS.
+  /// 현재 자동 보정 사각형은 iOS에서만 나타납니다.
   ///
-  /// Defaults to null, which disables autocorrection Rect painting.
+  /// 기본값은 null로, 자동 보정 사각형 페인팅을 비활성화합니다.
   final Color? autocorrectionTextRectColor;
 
-  /// The color to use when painting the background cursor aligned with the text
-  /// while rendering the floating cursor.
+  /// 플로팅 커서를 렌더링하는 동안 텍스트와 정렬된 배경 커서를 칠할 때 사용할 색상입니다.
   ///
-  /// Cannot be null. By default it is the disabled grey color from
+  /// null일 수 없습니다. 기본적으로 비활성화된 회색 색상은
   /// CupertinoColors.
   final Color backgroundCursorColor;
 
   /// {@template flutter.widgets.editableText.maxLines}
-  /// The maximum number of lines to show at one time, wrapping if necessary.
+  /// 한 번에 표시할 최대 줄 수(필요한 경우 줄 바꿈 포함)입니다.
   ///
-  /// This affects the height of the field itself and does not limit the number
-  /// of lines that can be entered into the field.
+  /// 이 값은 필드 자체의 높이에 영향을 주며 필드에 입력할 수 있는 줄 수를 제한하지 않습니다.
   ///
-  /// If this is 1 (the default), the text will not wrap, but will scroll
-  /// horizontally instead.
+  /// 이 값이 1(기본값)이면 텍스트가 줄 바꿈되지 않고 대신 가로로 스크롤됩니다.
   ///
-  /// If this is null, there is no limit to the number of lines, and the text
-  /// container will start with enough vertical space for one line and
-  /// automatically grow to accommodate additional lines as they are entered, up
-  /// to the height of its constraints.
+  /// 이 값이 null이면 줄 수에 제한이 없으며 텍스트 컨테이너는 한 줄을 위한 충분한 세로 공간으로 시작하여 추가 줄이 입력될 때 제약 조건 높이까지 자동으로 확장됩니다.
   ///
-  /// If this is not null, the value must be greater than zero, and it will lock
-  /// the input to the given number of lines and take up enough horizontal space
-  /// to accommodate that number of lines. Setting [minLines] as well allows the
-  /// input to grow and shrink between the indicated range.
+  /// 이 값이 null이 아닌 경우 0보다 커야 하며, 입력이 지정된 줄 수로 고정되고 해당 줄 수를 수용하기에 충분한 가로 공간을 차지합니다. [minLines]도 설정하면 입력이 지정된 범위 사이에서 커지거나 줄어들 수 있습니다.
   ///
-  /// The full set of behaviors possible with [minLines] and [maxLines] are as
-  /// follows. These examples apply equally to [TextField], [TextFormField],
-  /// [CupertinoTextField], and [EditableText].
+  /// [minLines] 및 [maxLines]로 가능한 전체 동작 세트는 다음과 같습니다. 이 예제는 [TextField], [TextFormField]에도 동일하게 적용됩니다,
+  /// [CupertinoTextField] 및 [EditableText]에도 동일하게 적용됩니다.
   ///
-  /// Input that occupies a single line and scrolls horizontally as needed.
-  /// ```dart
-  /// const TextField()
+  /// 한 줄을 차지하고 필요에 따라 가로로 스크롤되는 입력입니다.
+  /// ```다트 const TextField()
   /// ```
   ///
-  /// Input whose height grows from one line up to as many lines as needed for
-  /// the text that was entered. If a height limit is imposed by its parent, it
-  /// will scroll vertically when its height reaches that limit.
-  /// ```dart
-  /// const TextField(maxLines: null)
+  /// 입력한 텍스트의 높이가 한 줄에서 필요한 만큼 한 줄까지 늘어나는 입력입니다. 부모에 의해 높이 제한이 설정된 경우 높이가 제한에 도달하면 세로로 스크롤됩니다.
+  /// ```dart const TextField(maxLines: null)
   /// ```
   ///
-  /// The input's height is large enough for the given number of lines. If
-  /// additional lines are entered the input scrolls vertically.
-  /// ```dart
-  /// const TextField(maxLines: 2)
+  /// 입력의 높이가 주어진 줄 수만큼 충분히 큽니다. 추가로 줄을 입력하면 입력이 세로로 스크롤됩니다.
+  /// ```dart const TextField(maxLines: 2)
   /// ```
   ///
-  /// Input whose height grows with content between a min and max. An infinite
-  /// max is possible with `maxLines: null`.
-  /// ```dart
-  /// const TextField(minLines: 2, maxLines: 4)
+  /// 최소와 최대 사이의 내용에 따라 높이가 커지는 입력입니다. maxLines: null`을 사용하면 무한한 최대값이 가능합니다.
+  /// ```dart const TextField(minLines: 2, maxLines: 4)
   /// ```
   ///
-  /// See also:
+  /// 참조:
   ///
-  ///  * [minLines], which sets the minimum number of lines visible.
+  ///  * 표시되는 최소 줄 수를 설정하는 [minLines] 참조.
   /// {@endtemplate}
-  ///  * [expands], which determines whether the field should fill the height of
-  ///    its parent.
+  ///  * [expands], 필드가 부모의 높이를 채울지 여부를 결정합니다.
   final int? maxLines;
 
   /// {@template flutter.widgets.editableText.minLines}
-  /// The minimum number of lines to occupy when the content spans fewer lines.
+  /// 콘텐츠가 더 적은 줄에 걸쳐 있을 때 차지할 최소 줄 수입니다.
   ///
-  /// This affects the height of the field itself and does not limit the number
-  /// of lines that can be entered into the field.
+  /// 이는 필드 자체의 높이에 영향을 주며 필드에 입력할 수 있는 줄 수를 제한하지 않습니다.
   ///
-  /// If this is null (default), text container starts with enough vertical space
-  /// for one line and grows to accommodate additional lines as they are entered.
+  /// 이 값이 null(기본값)이면 텍스트 컨테이너는 한 줄을 위한 충분한 세로 공간으로 시작하여 입력할 때 추가 줄을 수용할 수 있도록 커집니다.
   ///
-  /// This can be used in combination with [maxLines] for a varying set of behaviors.
+  /// 이 값은 다양한 동작을 위해 [maxLines]와 함께 사용할 수 있습니다.
   ///
-  /// If the value is set, it must be greater than zero. If the value is greater
-  /// than 1, [maxLines] should also be set to either null or greater than
-  /// this value.
+  /// 값을 설정하는 경우 0보다 커야 합니다. 값이 1보다 크면 [maxLines]도 이 값보다 크거나 널로 설정해야 합니다.
   ///
-  /// When [maxLines] is set as well, the height will grow between the indicated
-  /// range of lines. When [maxLines] is null, it will grow as high as needed,
-  /// starting from [minLines].
+  /// [maxLines]도 설정하면 높이가 지정된 선 범위 사이에서 커집니다. [maxLines]가 null이면 필요한 만큼 높이가 증가합니다,
+  /// [minLines]에서 시작하여 필요한 만큼 커집니다.
   ///
-  /// A few examples of behaviors possible with [minLines] and [maxLines] are as follows.
-  /// These apply equally to [TextField], [TextFormField], [CupertinoTextField],
-  /// and [EditableText].
+  /// [minLines] 및 [maxLines]로 가능한 동작의 몇 가지 예는 다음과 같습니다.
+  /// 이는 [TextField], [TextFormField], [CupertinoTextField],
+  /// 및 [EditableText]에도 동일하게 적용됩니다.
   ///
-  /// Input that always occupies at least 2 lines and has an infinite max.
-  /// Expands vertically as needed.
-  /// ```dart
+  /// 항상 2줄 이상을 차지하고 최대 길이가 무한대인 입력입니다.
+  /// 필요에 따라 세로로 확장됩니다.
+  /// ```다트
   /// TextField(minLines: 2)
   /// ```
   ///
-  /// Input whose height starts from 2 lines and grows up to 4 lines at which
-  /// point the height limit is reached. If additional lines are entered it will
-  /// scroll vertically.
-  /// ```dart
-  /// const TextField(minLines:2, maxLines: 4)
+  /// 높이가 2줄에서 시작하여 높이 제한에 도달하는 지점에서 최대 4줄까지 늘어나는 입력입니다. 추가로 줄을 입력하면 세로로 스크롤됩니다.
+  /// ```dart const TextField(minLines:2, maxLines: 4)
   /// ```
   ///
-  /// Defaults to null.
+  /// 기본값은 null입니다.
   ///
-  /// See also:
+  /// 참조:
   ///
-  ///  * [maxLines], which sets the maximum number of lines visible, and has
-  ///    several examples of how minLines and maxLines interact to produce
-  ///    various behaviors.
+  ///  * 표시되는 최대 줄 수를 설정하는 [maxLines], minLines와 maxLines가 상호 작용하여 다양한 동작을 생성하는 방법에 대한 몇 가지 예가 있습니다.
   /// {@endtemplate}
-  ///  * [expands], which determines whether the field should fill the height of
-  ///    its parent.
+  ///  * [expands]는 필드가 부모의 높이를 채울지 여부를 결정합니다.
   final int? minLines;
 
   /// {@template flutter.widgets.editableText.expands}
-  /// Whether this widget's height will be sized to fill its parent.
+  /// 이 위젯의 높이가 부모를 채우도록 크기를 조정할지 여부입니다.
   ///
-  /// If set to true and wrapped in a parent widget like [Expanded] or
-  /// [SizedBox], the input will expand to fill the parent.
+  /// true로 설정하고 [Expanded] 또는 [SizedBox]와 같은 부모 위젯으로 래핑하면 입력이 부모를 채우도록 확장됩니다.
   ///
-  /// [maxLines] and [minLines] must both be null when this is set to true,
-  /// otherwise an error is thrown.
+  /// [maxLines] 및 [minLines]는 참으로 설정할 때 모두 null이어야 합니다,
+  /// 그렇지 않으면 오류가 발생합니다.
   ///
-  /// Defaults to false.
+  /// 기본값은 거짓입니다.
   ///
-  /// See the examples in [maxLines] for the complete picture of how [maxLines],
-  /// [minLines], and [expands] interact to produce various behaviors.
+  /// [maxLines]의 전체 작동 방식은 [maxLines]의 예시를 참조하세요,
+  /// [minLines], [expands]가 어떻게 상호 작용하여 다양한 동작을 생성하는지에 대한 전체 내용은 [maxLines]의 예시를 참조하세요.
   ///
-  /// Input that matches the height of its parent:
-  /// ```dart
-  /// const Expanded(
+  /// 부모의 높이와 일치하는 입력:
+  /// ```dart const Expanded(
   ///   child: TextField(maxLines: null, expands: true),
   /// )
   /// ```
@@ -1218,172 +1063,128 @@ class EditableText extends StatefulWidget {
   final bool expands;
 
   /// {@template flutter.widgets.editableText.autofocus}
-  /// Whether this text field should focus itself if nothing else is already
-  /// focused.
+  /// 이미 초점이 맞춰진 다른 항목이 없을 때 이 텍스트 필드 자체에 초점을 맞출지 여부입니다.
   ///
-  /// If true, the keyboard will open as soon as this text field obtains focus.
-  /// Otherwise, the keyboard is only shown after the user taps the text field.
+  /// true이면 이 텍스트 필드가 포커스를 받자마자 키보드가 열립니다.
+  /// 그렇지 않으면 사용자가 텍스트 필드를 탭한 후에만 키보드가 표시됩니다.
   ///
-  /// Defaults to false. Cannot be null.
-  /// {@endtemplate}
+  /// 기본값은 거짓입니다. null일 수 없습니다.
+  /// {@END템플릿}
   // See https://github.com/flutter/flutter/issues/7035 for the rationale for this
   // keyboard behavior.
   final bool autofocus;
 
-  /// The color to use when painting the selection.
+  /// 선택 영역을 칠할 때 사용할 색상입니다.
   ///
-  /// If this property is null, this widget gets the selection color from the
-  /// [DefaultSelectionStyle].
+  /// 이 속성이 null인 경우 이 위젯은 [DefaultSelectionStyle]에서 선택 색을 가져옵니다.
   ///
-  /// For [CupertinoTextField]s, the value is set to the ambient
-  /// [CupertinoThemeData.primaryColor] with 20% opacity. For [TextField]s, the
-  /// value is set to the ambient [TextSelectionThemeData.selectionColor].
+  /// [CupertinoTextField]의 경우 이 값은 불투명도가 20%인 주변 [CupertinoThemeData.primaryColor]로 설정됩니다. [TextField]의 경우 값은 앰비언트 [TextSelectionThemeData.selectionColor]로 설정됩니다.
   final Color? selectionColor;
 
   /// {@template flutter.widgets.editableText.selectionControls}
-  /// Optional delegate for building the text selection handles and toolbar.
+  /// 텍스트 선택 핸들 및 도구 모음을 빌드하기 위한 선택적 델리게이트입니다.
   ///
-  /// The [EditableText] widget used on its own will not trigger the display
-  /// of the selection toolbar by itself. The toolbar is shown by calling
-  /// [EditableTextState.showToolbar] in response to an appropriate user event.
+  /// 자체적으로 사용되는 [EditableText] 위젯은 자체적으로 선택 도구 모음의 표시를 트리거하지 않습니다. 도구 모음은 적절한 사용자 이벤트에 대한 응답으로 [EditableTextState.showToolbar]를 호출하여 표시됩니다.
   ///
-  /// See also:
+  /// 참고 항목
   ///
-  ///  * [CupertinoTextField], which wraps an [EditableText] and which shows the
-  ///    selection toolbar upon user events that are appropriate on the iOS
-  ///    platform.
-  ///  * [TextField], a Material Design themed wrapper of [EditableText], which
-  ///    shows the selection toolbar upon appropriate user events based on the
-  ///    user's platform set in [ThemeData.platform].
+  ///  * [EditableText]를 래핑하고 iOS 플랫폼에서 적절한 사용자 이벤트에 따라 선택 도구 모음을 표시하는 [CupertinoTextField]는
+  ///    플랫폼에 적합한 사용자 이벤트 시 선택 도구 모음을 표시합니다.
+  ///  * [ThemeData.platform]에 설정된 사용자 플랫폼에 따라 적절한 사용자 이벤트 시 선택 도구 모음을 표시하는 [EditableText]의 머티리얼 디자인 테마 래퍼인 [TextField].
   /// {@endtemplate}
   final TextSelectionControls? selectionControls;
 
   /// {@template flutter.widgets.editableText.keyboardType}
-  /// The type of keyboard to use for editing the text.
+  /// 텍스트 편집에 사용할 키보드 유형입니다.
   ///
-  /// Defaults to [TextInputType.text] if [maxLines] is one and
-  /// [TextInputType.multiline] otherwise.
+  /// [maxLines]가 1이면 기본값은 [TextInputType.text]이고, 그렇지 않으면 [TextInputType.multiline]입니다.
   /// {@endtemplate}
   final TextInputType keyboardType;
 
-  /// The type of action button to use with the soft keyboard.
+  /// 소프트 키보드와 함께 사용할 동작 버튼 유형입니다.
   final TextInputAction? textInputAction;
 
   /// {@template flutter.widgets.editableText.onChanged}
-  /// Called when the user initiates a change to the TextField's
-  /// value: when they have inserted or deleted text.
+  /// 사용자가 텍스트 필드 값을 변경하기 시작할 때, 즉 텍스트를 삽입하거나 삭제했을 때 호출됩니다.
   ///
-  /// This callback doesn't run when the TextField's text is changed
-  /// programmatically, via the TextField's [controller]. Typically it
-  /// isn't necessary to be notified of such changes, since they're
-  /// initiated by the app itself.
+  /// 이 콜백은 텍스트 필드의 [컨트롤러]를 통해 프로그래밍 방식으로 텍스트 필드의 텍스트가 변경될 때는 실행되지 않습니다. 일반적으로 이러한 변경은 앱 자체에서 시작되므로 알림을 받을 필요가 없습니다.
   ///
-  /// To be notified of all changes to the TextField's text, cursor,
-  /// and selection, one can add a listener to its [controller] with
-  /// [TextEditingController.addListener].
+  /// 텍스트 필드의 텍스트, 커서,
+  /// 및 선택 항목에 대한 모든 변경 사항을 알림 받으려면 [TextEditingController.addListener]를 사용하여 [컨트롤러]에 리스너를 추가하면 됩니다.
   ///
-  /// [onChanged] is called before [onSubmitted] when user indicates completion
-  /// of editing, such as when pressing the "done" button on the keyboard. That
-  /// default behavior can be overridden. See [onEditingComplete] for details.
+  /// 키보드의 "완료" 버튼을 누르는 등 사용자가 편집 완료를 표시할 때 [onChanged]가 [onSubmitted] 이전에 호출됩니다. 이 기본 동작은 재정의할 수 있습니다. 자세한 내용은 [onEditingComplete]를 참조하세요.
   ///
-  /// {@tool dartpad}
-  /// This example shows how onChanged could be used to check the TextField's
-  /// current value each time the user inserts or deletes a character.
+  /// {도구 다트패드}
+  /// 이 예는 사용자가 문자를 삽입하거나 삭제할 때마다 TextField의 현재 값을 확인하는 데 onChanged를 사용하는 방법을 보여줍니다.
   ///
-  /// ** See code in examples/api/lib/widgets/editable_text/editable_text.on_changed.0.dart **
+  /// ** 예제 코드 참조: examples/api/lib/widgets/editable_text/editable_text.on_changed.0.dart **
   /// {@end-tool}
+  /// {@end-template}
+  ///
+  /// ## 이모티콘 및 기타 복잡한 문자 처리 {@template flutter.widgets.EditableText.onChanged}
+  /// 복잡한 문자가 포함될 수 있는 사용자 입력 텍스트를 처리할 때는 항상 [characters](https://pub.dev/packages/characters)를 사용하는 것이 중요합니다. 이렇게 하면 확장된 그래프 클러스터와 대리 쌍이 사용자에게 표시될 때 단일 문자로 취급됩니다.
+  ///
+  /// 예를 들어 일부 사용자 입력의 길이를 찾을 때는 `string.characters.length`를 사용합니다. 문자열.길이` 또는 `string.runes.length`를 사용하지 마세요. 복잡한 문자 "👨‍👩‍👦"의 경우 사용자에게 단일 문자로 표시되며, `string.characters.length`는
+  /// 는 직관적으로 1을 반환합니다. 반면에 `string.length`는 8을 반환하고 `string.runes.length`는 5를 반환합니다!
   /// {@endtemplate}
   ///
-  /// ## Handling emojis and other complex characters
-  /// {@template flutter.widgets.EditableText.onChanged}
-  /// It's important to always use
-  /// [characters](https://pub.dev/packages/characters) when dealing with user
-  /// input text that may contain complex characters. This will ensure that
-  /// extended grapheme clusters and surrogate pairs are treated as single
-  /// characters, as they appear to the user.
+  /// 참조
   ///
-  /// For example, when finding the length of some user input, use
-  /// `string.characters.length`. Do NOT use `string.length` or even
-  /// `string.runes.length`. For the complex character "👨‍👩‍👦", this
-  /// appears to the user as a single character, and `string.characters.length`
-  /// intuitively returns 1. On the other hand, `string.length` returns 8, and
-  /// `string.runes.length` returns 5!
-  /// {@endtemplate}
-  ///
-  /// See also:
-  ///
-  ///  * [inputFormatters], which are called before [onChanged]
-  ///    runs and can validate and change ("format") the input value.
+  ///  * [onChanged] 실행 전에 호출되는 [입력 포맷터], 유효성을 검사하고 변경할 수 있습니다.
+  ///    가 실행되기 전에 호출되어 입력 값의 유효성을 검사하고 변경("포맷")할 수 있습니다.
   ///  * [onEditingComplete], [onSubmitted], [onSelectionChanged]:
-  ///    which are more specialized input change notifications.
-  ///  * [TextEditingController], which implements the [Listenable] interface
-  ///    and notifies its listeners on [TextEditingValue] changes.
+  ///    보다 전문화된 입력 변경 알림입니다.
+  ///  * Listenable] 인터페이스를 구현하고 리스너에게 [TextEditingValue] 변경 사항을 알리는 [TextEditingController].
   final ValueChanged<String>? onChanged;
 
   /// {@template flutter.widgets.editableText.onEditingComplete}
-  /// Called when the user submits editable content (e.g., user presses the "done"
-  /// button on the keyboard).
+  /// 사용자가 편집 가능한 콘텐츠를 제출할 때 호출됩니다(예: 사용자가 키보드의 "완료"
+  /// 버튼을 눌렀을 때) 호출됩니다.
   ///
-  /// The default implementation of [onEditingComplete] executes 2 different
-  /// behaviors based on the situation:
+  /// [onEditingComplete]의 기본 구현은 상황에 따라 두 가지 동작을 실행합니다:
   ///
-  ///  - When a completion action is pressed, such as "done", "go", "send", or
-  ///    "search", the user's content is submitted to the [controller] and then
-  ///    focus is given up.
+  ///  - "완료", "이동", "보내기" 또는 "검색"과 같은 완료 동작을 누르면 사용자의 콘텐츠가 [컨트롤러]에 제출된 다음 포커스를 포기합니다.
   ///
-  ///  - When a non-completion action is pressed, such as "next" or "previous",
-  ///    the user's content is submitted to the [controller], but focus is not
-  ///    given up because developers may want to immediately move focus to
-  ///    another input widget within [onSubmitted].
+  ///  - "다음" 또는 "이전"과 같이 완료되지 않은 동작을 누르면,
+  ///    사용자의 콘텐츠가 [컨트롤러]에 제출되지만 개발자가 [onSubmitted] 내의 다른 입력 위젯으로 즉시 포커스를 이동하고 싶을 수 있으므로 포커스는 포기되지 않습니다.
   ///
-  /// Providing [onEditingComplete] prevents the aforementioned default behavior.
+  /// [onEditingComplete]를 제공하면 앞서 언급한 기본 동작을 방지할 수 있습니다.
   /// {@endtemplate}
   final VoidCallback? onEditingComplete;
 
   /// {@template flutter.widgets.editableText.onSubmitted}
-  /// Called when the user indicates that they are done editing the text in the
-  /// field.
+  /// 사용자가 필드에서 텍스트 편집을 완료했음을 표시할 때 호출됩니다.
   ///
-  /// By default, [onSubmitted] is called after [onChanged] when the user
-  /// has finalized editing; or, if the default behavior has been overridden,
-  /// after [onEditingComplete]. See [onEditingComplete] for details.
+  /// 기본적으로 [onSubmitted]는 사용자가 편집을 완료했을 때 또는 기본 동작이 재정의된 경우 [onChanged] 이후에 호출됩니다,
+  /// [onEditingComplete] 이후에 호출됩니다. 자세한 내용은 [onEditingComplete]를 참조하세요.
   ///
-  /// ## Testing
-  /// The following is the recommended way to trigger [onSubmitted] in a test:
+  /// ## 테스트
+  /// 다음은 테스트에서 [onSubmitted]를 트리거하는 권장 방법입니다:
   ///
-  /// ```dart
-  /// await tester.testTextInput.receiveAction(TextInputAction.done);
+  /// ```dart await tester.testTextInput.receiveAction(TextInputAction.done);
   /// ```
   ///
-  /// Sending a `LogicalKeyboardKey.enter` via `tester.sendKeyEvent` will not
-  /// trigger [onSubmitted]. This is because on a real device, the engine
-  /// translates the enter key to a done action, but `tester.sendKeyEvent` sends
-  /// the key to the framework only.
+  /// tester.sendKeyEvent`를 통해 `LogicalKeyboardKey.enter`를 보내면 [onSubmitted]가 트리거되지 않습니다. 실제 기기에서는 엔진이 입력 키를 완료된 동작으로 변환하지만 `tester.sendKeyEvent`는 프레임워크에만 키를 보내기 때문입니다.
   /// {@endtemplate}
   final ValueChanged<String>? onSubmitted;
 
   /// {@template flutter.widgets.editableText.onAppPrivateCommand}
-  /// This is used to receive a private command from the input method.
+  /// 입력 메서드에서 비공개 명령을 수신하는 데 사용됩니다.
   ///
-  /// Called when the result of [TextInputClient.performPrivateCommand] is
-  /// received.
+  /// [TextInputClient.performPrivateCommand]의 결과가 수신될 때 호출됩니다.
   ///
-  /// This can be used to provide domain-specific features that are only known
-  /// between certain input methods and their clients.
+  /// 특정 입력 메서드와 해당 클라이언트 사이에서만 알려진 도메인별 기능을 제공하는 데 사용할 수 있습니다.
   ///
-  /// See also:
+  /// 참조
   ///   * [performPrivateCommand](https://developer.android.com/reference/android/view/inputmethod/InputConnection#performPrivateCommand\(java.lang.String,%20android.os.Bundle\)),
-  ///     which is the Android documentation for performPrivateCommand, used to
-  ///     send a command from the input method.
+  ///     는 입력 메서드에서 명령을 전송하는 데 사용되는 performPrivateCommand에 대한 Android 문서입니다.
   ///   * [sendAppPrivateCommand](https://developer.android.com/reference/android/view/inputmethod/InputMethodManager#sendAppPrivateCommand),
-  ///     which is the Android documentation for sendAppPrivateCommand, used to
-  ///     send a command to the input method.
+  ///     는 입력 메서드에 명령을 전송하는 데 사용되는 sendAppPrivateCommand에 대한 안드로이드 문서입니다.
   /// {@endtemplate}
   final AppPrivateCommandCallback? onAppPrivateCommand;
 
   /// {@template flutter.widgets.editableText.onSelectionChanged}
-  /// Called when the user changes the selection of text (including the cursor
-  /// location).
+  /// 사용자가 텍스트 선택(커서 위치 포함)을 변경할 때 호출됩니다.
   /// {@endtemplate}
   final SelectionChangedCallback? onSelectionChanged;
 
@@ -1391,111 +1192,81 @@ class EditableText extends StatefulWidget {
   final VoidCallback? onSelectionHandleTapped;
 
   /// {@template flutter.widgets.editableText.onTapOutside}
-  /// Called for each tap that occurs outside of the[TextFieldTapRegion] group
-  /// when the text field is focused.
+  /// 텍스트 필드에 포커스가 맞춰졌을 때 [TextFieldTapRegion] 그룹 외부에서 발생하는 각 탭에 대해 호출됩니다.
   ///
-  /// If this is null, [FocusNode.unfocus] will be called on the [focusNode] for
-  /// this text field when a [PointerDownEvent] is received on another part of
-  /// the UI. However, it will not unfocus as a result of mobile application
-  /// touch events (which does not include mouse clicks), to conform with the
-  /// platform conventions. To change this behavior, a callback may be set here
-  /// that operates differently from the default.
+  /// 이것이 null인 경우, UI의 다른 부분에서 [PointerDownEvent]가 수신되면 이 텍스트 필드의 [focusNode]에서 [FocusNode.unfocus]가 호출됩니다. 그러나 플랫폼 규칙을 준수하기 위해 모바일 애플리케이션 터치 이벤트(마우스 클릭은 포함되지 않음)의 결과로 포커스를 해제하지 않습니다. 이 동작을 변경하려면 기본값과 다르게 작동하는 콜백을 여기에 설정할 수 있습니다.
   ///
-  /// When adding additional controls to a text field (for example, a spinner, a
-  /// button that copies the selected text, or modifies formatting), it is
-  /// helpful if tapping on that control doesn't unfocus the text field. In
-  /// order for an external widget to be considered as part of the text field
-  /// for the purposes of tapping "outside" of the field, wrap the control in a
-  /// [TextFieldTapRegion].
+  /// 텍스트 필드에 추가 컨트롤(예: 스피너, 선택한 텍스트를 복사하거나 서식을 수정하는 버튼)을 추가할 때 해당 컨트롤을 탭해도 텍스트 필드의 초점이 해제되지 않는다면 유용합니다. 필드의 "외부"를 탭할 때 외부 위젯이 텍스트 필드의 일부로 간주되도록 하려면 컨트롤을 [TextFieldTapRegion]으로 감싸십시오.
   ///
-  /// The [PointerDownEvent] passed to the function is the event that caused the
-  /// notification. It is possible that the event may occur outside of the
-  /// immediate bounding box defined by the text field, although it will be
-  /// within the bounding box of a [TextFieldTapRegion] member.
+  /// 함수에 전달된 [PointerDownEvent]는 알림을 발생시킨 이벤트입니다. 이벤트가 텍스트 필드에 의해 정의된 경계 상자 외부에서 발생할 수 있지만, [TextFieldTapRegion] 멤버의 경계 상자 내에 있을 수 있습니다.
   /// {@endtemplate}
   ///
   /// {@tool dartpad}
-  /// This example shows how to use a `TextFieldTapRegion` to wrap a set of
-  /// "spinner" buttons that increment and decrement a value in the [TextField]
-  /// without causing the text field to lose keyboard focus.
+  /// 이 예는 `TextFieldTapRegion`을 사용하여 텍스트 필드의 값을 증가 및 감소시키는 "스피너" 버튼 집합을 래핑하는 방법을 보여줍니다.
+  /// 텍스트 필드의 키보드 포커스를 잃지 않고 값을 늘리거나 줄이는 "스피너" 버튼 세트를 래핑하는 방법을 설명합니다.
   ///
-  /// This example includes a generic `SpinnerField<T>` class that you can copy
-  /// into your own project and customize.
+  /// 이 예시에는 여러분의 프로젝트에 복사하여 커스터마이징할 수 있는 일반 `SpinnerField<T>` 클래스가 포함되어 있습니다.
   ///
-  /// ** See code in examples/api/lib/widgets/tap_region/text_field_tap_region.0.dart **
+  /// ** 예제 코드 참조: examples/api/lib/widgets/tap_region/text_field_tap_region.0.dart **
   /// {@end-tool}
   ///
-  /// See also:
+  /// 참조:
   ///
-  ///  * [TapRegion] for how the region group is determined.
+  ///  * 지역 그룹이 결정되는 방법은 [TapRegion] 참조.
   final TapRegionCallback? onTapOutside;
 
   /// {@template flutter.widgets.editableText.inputFormatters}
-  /// Optional input validation and formatting overrides.
+  /// 선택적 입력 유효성 검사 및 서식 오버라이드.
   ///
-  /// Formatters are run in the provided order when the user changes the text
-  /// this widget contains. When this parameter changes, the new formatters will
-  /// not be applied until the next time the user inserts or deletes text.
-  /// Similar to the [onChanged] callback, formatters don't run when the text is
-  /// changed programmatically via [controller].
+  /// 포맷터는 사용자가 이 위젯에 포함된 텍스트를 변경할 때 제공된 순서대로 실행됩니다. 이 매개변수가 변경되면 사용자가 다음에 텍스트를 삽입하거나 삭제할 때까지 새 포맷터가 적용되지 않습니다.
+  /// [onChanged] 콜백과 마찬가지로, [controller]를 통해 프로그래밍 방식으로 텍스트를 변경할 때는 포맷터가 실행되지 않습니다.
   ///
-  /// See also:
+  /// 참조
   ///
-  ///  * [TextEditingController], which implements the [Listenable] interface
-  ///    and notifies its listeners on [TextEditingValue] changes.
+  ///  * 리스너블] 인터페이스를 구현하고 리스너에게 [텍스트 편집 값] 변경 사항을 알리는 [TextEditingController].
   /// {@endtemplate}
   final List<TextInputFormatter>? inputFormatters;
 
-  /// The cursor for a mouse pointer when it enters or is hovering over the
-  /// widget.
+  /// 마우스 포인터가 위젯에 들어가거나 위젯 위에 있을 때 마우스 포인터의 커서입니다.
   ///
-  /// If this property is null, [SystemMouseCursors.text] will be used.
+  /// 이 속성이 null이면 [SystemMouseCursors.text]가 사용됩니다.
   ///
-  /// The [mouseCursor] is the only property of [EditableText] that controls the
-  /// appearance of the mouse pointer. All other properties related to "cursor"
-  /// stands for the text cursor, which is usually a blinking vertical line at
-  /// the editing position.
+  /// [마우스 커서]는 마우스 포인터의 모양을 제어하는 [EditableText]의 유일한 속성입니다. "커서"와 관련된 다른 모든 속성
+  /// 는 텍스트 커서를 나타내며, 일반적으로 편집 위치에서 깜박이는 수직선입니다.
   final MouseCursor? mouseCursor;
 
-  /// If true, the [RenderEditable] created by this widget will not handle
-  /// pointer events, see [RenderEditable] and [RenderEditable.ignorePointer].
+  /// true이면 이 위젯에 의해 생성된 [RenderEditable]은 포인터 이벤트를 처리하지 않습니다([RenderEditable] 및 [RenderEditable.ignorePointer] 참조).
   ///
-  /// This property is false by default.
+  /// 이 속성은 기본적으로 거짓입니다.
   final bool rendererIgnoresPointer;
 
   /// {@template flutter.widgets.editableText.cursorWidth}
-  /// How thick the cursor will be.
+  /// 커서의 두께입니다.
   ///
-  /// Defaults to 2.0.
+  /// 기본값은 2.0입니다.
   ///
-  /// The cursor will draw under the text. The cursor width will extend
-  /// to the right of the boundary between characters for left-to-right text
-  /// and to the left for right-to-left text. This corresponds to extending
-  /// downstream relative to the selected position. Negative values may be used
-  /// to reverse this behavior.
+  /// 커서가 텍스트 아래에 그려집니다. 커서 너비는 왼쪽에서 오른쪽 텍스트의 경우 문자 간 경계선의 오른쪽으로, 오른쪽에서 왼쪽 텍스트의 경우 왼쪽으로 확장됩니다. 이는 선택한 위치를 기준으로 아래쪽으로 확장되는 것에 해당합니다. 음수 값을 사용하면 이 동작을 반전시킬 수 있습니다.
   /// {@endtemplate}
   final double cursorWidth;
 
   /// {@template flutter.widgets.editableText.cursorHeight}
-  /// How tall the cursor will be.
+  /// 커서의 높이입니다.
   ///
-  /// If this property is null, [RenderEditable.preferredLineHeight] will be used.
+  /// 이 프로퍼티가 null이면 [RenderEditable.preferredLineHeight]가 사용됩니다.
   /// {@endtemplate}
   final double? cursorHeight;
 
   /// {@template flutter.widgets.editableText.cursorRadius}
-  /// How rounded the corners of the cursor should be.
+  /// 커서 모서리를 얼마나 둥글게 처리할지 설정합니다.
   ///
-  /// By default, the cursor has no radius.
+  /// 기본적으로 커서에는 반경이 없습니다.
   /// {@endtemplate}
   final Radius? cursorRadius;
 
   /// {@template flutter.widgets.editableText.cursorOpacityAnimates}
-  /// Whether the cursor will animate from fully transparent to fully opaque
-  /// during each cursor blink.
+  /// 커서가 깜박일 때마다 커서가 완전 투명에서 완전 불투명까지 애니메이션을 적용할지 여부입니다.
   ///
-  /// By default, the cursor opacity will animate on iOS platforms and will not
-  /// animate on Android platforms.
+  /// 기본적으로 커서 불투명도는 iOS 플랫폼에서 애니메이션이 적용되며 Android 플랫폼에서는 애니메이션이 적용되지 않습니다.
   /// {@endtemplate}
   final bool cursorOpacityAnimates;
 
@@ -1505,304 +1276,234 @@ class EditableText extends StatefulWidget {
   ///{@macro flutter.rendering.RenderEditable.paintCursorAboveText}
   final bool paintCursorAboveText;
 
-  /// Controls how tall the selection highlight boxes are computed to be.
+  /// 선택 강조 상자의 높이가 계산되는 높이를 제어합니다.
   ///
-  /// See [ui.BoxHeightStyle] for details on available styles.
+  /// 사용 가능한 스타일에 대한 자세한 내용은 [ui.BoxHeightStyle]을 참조하십시오.
   final ui.BoxHeightStyle selectionHeightStyle;
 
-  /// Controls how wide the selection highlight boxes are computed to be.
+  /// 선택 강조 표시 상자의 너비를 계산할지 여부를 제어합니다.
   ///
-  /// See [ui.BoxWidthStyle] for details on available styles.
+  /// 사용 가능한 스타일에 대한 자세한 내용은 [ui.BoxWidthStyle]을 참조하십시오.
   final ui.BoxWidthStyle selectionWidthStyle;
 
-  /// The appearance of the keyboard.
+  /// 키보드 모양.
   ///
-  /// This setting is only honored on iOS devices.
+  /// 이 설정은 iOS 장치에서만 적용됩니다.
   ///
-  /// Defaults to [Brightness.light].
+  /// 기본값은 [밝기.밝기]입니다.
   final Brightness keyboardAppearance;
 
   /// {@template flutter.widgets.editableText.scrollPadding}
-  /// Configures padding to edges surrounding a [Scrollable] when the Textfield scrolls into view.
+  /// 텍스트 필드가 뷰로 스크롤될 때 [스크롤 가능]을 둘러싼 가장자리에 패딩을 구성합니다.
   ///
-  /// When this widget receives focus and is not completely visible (for example scrolled partially
-  /// off the screen or overlapped by the keyboard)
-  /// then it will attempt to make itself visible by scrolling a surrounding [Scrollable], if one is present.
-  /// This value controls how far from the edges of a [Scrollable] the TextField will be positioned after the scroll.
+  /// 이 위젯이 포커스를 받고 완전히 보이지 않는 경우(예: 화면에서 부분적으로 스크롤되었거나 키보드에 의해 겹쳐진 경우)
+  /// 이면 주변에 [스크롤 가능]이 있는 경우 스크롤하여 표시하려고 시도합니다.
+  /// 이 값은 스크롤 후 텍스트 필드가 [스크롤 가능]의 가장자리에서 얼마나 멀리 위치할지를 제어합니다.
   ///
-  /// Defaults to EdgeInsets.all(20.0).
+  /// 기본값은 EdgeInsets.all(20.0)입니다.
   /// {@endtemplate}
   final EdgeInsets scrollPadding;
 
   /// {@template flutter.widgets.editableText.enableInteractiveSelection}
-  /// Whether to enable user interface affordances for changing the
-  /// text selection.
+  /// 텍스트 선택 변경을 위한 사용자 인터페이스 어포던스 활성화 여부입니다.
   ///
-  /// For example, setting this to true will enable features such as
-  /// long-pressing the TextField to select text and show the
-  /// cut/copy/paste menu, and tapping to move the text caret.
+  /// 예를 들어 이 값을 true로 설정하면 텍스트 필드를 길게 눌러 텍스트를 선택하고 잘라내기/복사/붙여넣기 메뉴를 표시하거나 탭하여 텍스트 캐럿을 이동하는 등의 기능이 활성화됩니다.
   ///
-  /// When this is false, the text selection cannot be adjusted by
-  /// the user, text cannot be copied, and the user cannot paste into
-  /// the text field from the clipboard.
+  /// 이 옵션을 false로 설정하면 사용자가 텍스트 선택을 조정할 수 없고, 텍스트를 복사할 수 없으며, 클립보드에서 텍스트 필드에 붙여넣을 수 없습니다.
   ///
-  /// Defaults to true.
-  /// {@endtemplate}
+  /// 기본값은 참입니다.
+  /// {@END템플릿}
   final bool enableInteractiveSelection;
 
-  /// Setting this property to true makes the cursor stop blinking or fading
-  /// on and off once the cursor appears on focus. This property is useful for
-  /// testing purposes.
+  /// 이 속성을 true로 설정하면 커서가 포커스에 표시된 후 커서가 깜박이거나 페이드온 및 페이드오프되지 않습니다. 이 속성은 테스트 목적으로 유용합니다.
   ///
-  /// It does not affect the necessity to focus the EditableText for the cursor
-  /// to appear in the first place.
+  /// 애초에 커서가 나타나기 위해 편집 가능한 텍스트에 초점을 맞출 필요성에는 영향을 주지 않습니다.
   ///
-  /// Defaults to false, resulting in a typical blinking cursor.
+  /// 기본값은 거짓으로 설정되어 일반적인 커서가 깜박입니다.
   static bool debugDeterministicCursor = false;
 
   /// {@macro flutter.widgets.scrollable.dragStartBehavior}
   final DragStartBehavior dragStartBehavior;
 
   /// {@template flutter.widgets.editableText.scrollController}
-  /// The [ScrollController] to use when vertically scrolling the input.
+  /// 입력을 세로로 스크롤할 때 사용할 [스크롤 컨트롤러]입니다.
   ///
-  /// If null, it will instantiate a new ScrollController.
+  /// null이면 새 ScrollController를 인스턴스화합니다.
   ///
-  /// See [Scrollable.controller].
+  /// [Scrollable.controller]를 참조하세요.
   /// {@endtemplate}
   final ScrollController? scrollController;
 
   /// {@template flutter.widgets.editableText.scrollPhysics}
-  /// The [ScrollPhysics] to use when vertically scrolling the input.
+  /// 입력을 세로로 스크롤할 때 사용할 [스크롤 물리]입니다.
   ///
-  /// If not specified, it will behave according to the current platform.
+  /// 지정하지 않으면 현재 플랫폼에 따라 동작합니다.
   ///
-  /// See [Scrollable.physics].
+  /// [Scrollable.physics]를 참조하세요.
   /// {@endtemplate}
   ///
-  /// If an explicit [ScrollBehavior] is provided to [scrollBehavior], the
-  /// [ScrollPhysics] provided by that behavior will take precedence after
-  /// [scrollPhysics].
+  /// [스크롤비헤이비어]에 명시적인 [스크롤비헤이비어]가 제공되면, 해당 비헤이비어가 제공하는 [스크롤피직스]가 [스크롤피직스] 다음에 우선합니다.
   final ScrollPhysics? scrollPhysics;
 
   /// {@template flutter.widgets.editableText.scribbleEnabled}
-  /// Whether iOS 14 Scribble features are enabled for this widget.
+  /// 이 위젯에 iOS 14 스크리블 기능을 활성화할지 여부입니다.
   ///
-  /// Only available on iPads.
+  /// iPad에서만 사용할 수 있습니다.
   ///
-  /// Defaults to true.
+  /// 기본값은 true입니다.
   /// {@endtemplate}
   final bool scribbleEnabled;
 
   /// {@template flutter.widgets.editableText.selectionEnabled}
-  /// Same as [enableInteractiveSelection].
+  /// [enableInteractiveSelection]과 동일합니다.
   ///
-  /// This getter exists primarily for consistency with
-  /// [RenderEditable.selectionEnabled].
+  /// 이 게터는 주로 [RenderEditable.selectionEnabled]와의 일관성을 위해 존재합니다.
   /// {@endtemplate}
   bool get selectionEnabled => enableInteractiveSelection;
 
   /// {@template flutter.widgets.editableText.autofillHints}
-  /// A list of strings that helps the autofill service identify the type of this
-  /// text input.
+  /// 자동 완성 서비스가 이 텍스트 입력의 유형을 식별하는 데 도움이 되는 문자열 목록입니다.
   ///
-  /// When set to null, this text input will not send its autofill information
-  /// to the platform, preventing it from participating in autofills triggered
-  /// by a different [AutofillClient], even if they're in the same
-  /// [AutofillScope]. Additionally, on Android and web, setting this to null
-  /// will disable autofill for this text field.
+  /// null로 설정하면 이 텍스트 입력은 자동 완성 정보를 플랫폼에 전송하지 않으므로 동일한 [AutofillScope]에 있더라도 다른 [AutofillClient]에 의해 트리거된 자동 완성에는 참여하지 못합니다. 또한 Android 및 웹에서 이 값을 null로 설정하면 이 텍스트 필드에 대한 자동 채우기가 비활성화됩니다.
   ///
-  /// The minimum platform SDK version that supports Autofill is API level 26
-  /// for Android, and iOS 10.0 for iOS.
+  /// 자동 완성 기능을 지원하는 최소 플랫폼 SDK 버전은 Android의 경우 API 레벨 26
+  /// 이고, iOS의 경우 iOS 10.0입니다.
   ///
-  /// Defaults to an empty list.
+  /// 기본값은 빈 목록입니다.
   ///
-  /// ### Setting up iOS autofill:
+  /// ### iOS 자동 완성 설정하기:
   ///
-  /// To provide the best user experience and ensure your app fully supports
-  /// password autofill on iOS, follow these steps:
+  /// 최상의 사용자 경험을 제공하고 앱이 iOS에서 비밀번호 자동 완성 기능을 완벽하게 지원하도록 하려면 다음 단계를 따르세요:
   ///
-  /// * Set up your iOS app's
-  ///   [associated domains](https://developer.apple.com/documentation/safariservices/supporting_associated_domains_in_your_app).
-  /// * Some autofill hints only work with specific [keyboardType]s. For example,
-  ///   [AutofillHints.name] requires [TextInputType.name] and [AutofillHints.email]
-  ///   works only with [TextInputType.emailAddress]. Make sure the input field has a
-  ///   compatible [keyboardType]. Empirically, [TextInputType.name] works well
-  ///   with many autofill hints that are predefined on iOS.
+  /// * iOS 앱의 [연결된 도메인](https://developer.apple.com/documentation/safariservices/supporting_associated_domains_in_your_app)을 설정합니다.
+  /// * 일부 자동 완성 힌트는 특정 [키보드 유형]에서만 작동합니다. 예
+  ///   [자동 완성 힌트 이름]은 [텍스트 입력 유형 이름] 및 [자동 완성 힌트 이메일]이 필요합니다.
+  ///   은 [TextInputType.emailAddress]에서만 작동합니다. 입력 필드에 호환되는 [키보드 유형]이 있는지 확인하세요. 경험적으로 [TextInputType.name]은 iOS에 미리 정의된 많은 자동 완성 힌트에서 잘 작동합니다.
   ///
-  /// ### Troubleshooting Autofill
+  /// ### 자동 완성 문제 해결
   ///
-  /// Autofill service providers rely heavily on [autofillHints]. Make sure the
-  /// entries in [autofillHints] are supported by the autofill service currently
-  /// in use (the name of the service can typically be found in your mobile
-  /// device's system settings).
+  /// 자동 완성 서비스 제공업체는 [autofillHints]에 크게 의존합니다. [자동 완성 힌트]의 항목이 현재 사용 중인 자동 완성 서비스에서 지원되는지 확인하세요(서비스 이름은 일반적으로 모바일 디바이스의 시스템 설정에서 찾을 수 있습니다).
   ///
-  /// #### Autofill UI refuses to show up when I tap on the text field
+  /// #### 텍스트 입력란을 탭해도 자동 완성 UI가 표시되지 않습니다.
   ///
-  /// Check the device's system settings and make sure autofill is turned on,
-  /// and there are available credentials stored in the autofill service.
+  /// 디바이스의 시스템 설정을 확인하고 자동 완성 기능이 켜져 있는지 확인하세요,
+  /// 자동 완성 서비스에 사용 가능한 자격 증명이 저장되어 있는지 확인하세요.
   ///
-  /// * iOS password autofill: Go to Settings -> Password, turn on "Autofill
-  ///   Passwords", and add new passwords for testing by pressing the top right
-  ///   "+" button. Use an arbitrary "website" if you don't have associated
-  ///   domains set up for your app. As long as there's at least one password
-  ///   stored, you should be able to see a key-shaped icon in the quick type
-  ///   bar on the software keyboard, when a password related field is focused.
+  /// * iOS 비밀번호 자동 완성: 설정-> 비밀번호로 이동하여 "비밀번호 자동 완성"을 켜고 오른쪽 상단의 "+" 버튼을 눌러 테스트용 새 비밀번호를 추가합니다. 앱에 연결된 도메인이 설정되어 있지 않은 경우 임의의 "웹사이트"를 사용하세요. 비밀번호가 하나 이상 저장되어 있으면 소프트웨어 키보드의 빠른 입력 표시줄에 비밀번호 관련 필드에 초점이 맞춰지면 키 모양의 아이콘이 표시됩니다.
   ///
-  /// * iOS contact information autofill: iOS seems to pull contact info from
-  ///   the Apple ID currently associated with the device. Go to Settings ->
-  ///   Apple ID (usually the first entry, or "Sign in to your iPhone" if you
-  ///   haven't set up one on the device), and fill out the relevant fields. If
-  ///   you wish to test more contact info types, try adding them in Contacts ->
-  ///   My Card.
+  /// * iOS 연락처 정보 자동 입력: iOS는 현재 디바이스와 연결된 Apple ID에서 연락처 정보를 가져오는 것 같습니다. 설정 ->
+  ///   Apple ID(일반적으로 첫 번째 항목, 또는 장치에 설정하지 않은 경우 "iPhone에 로그인")로 이동하여 관련 필드를 채웁니다. 더 많은 연락처 정보 유형을 테스트하려면 연락처 -> 내 카드에서 추가해 보세요.
+  ///   내 카드에서 추가해 보세요.
   ///
-  /// * Android autofill: Go to Settings -> System -> Languages & input ->
-  ///   Autofill service. Enable the autofill service of your choice, and make
-  ///   sure there are available credentials associated with your app.
+  /// * Android 자동 완성: 설정-> 시스템-> 언어 및 입력->
+  ///   자동 완성 서비스로 이동합니다. 원하는 자동 완성 서비스를 활성화하고 앱과 연결된 사용 가능한 자격 증명이 있는지 확인합니다.
   ///
-  /// #### I called `TextInput.finishAutofillContext` but the autofill save
-  /// prompt isn't showing
+  /// #### `TextInput.finishAutofillContext`를 호출했지만 자동 완성 저장 프롬프트가 표시되지 않습니다.
   ///
-  /// * iOS: iOS may not show a prompt or any other visual indication when it
-  ///   saves user password. Go to Settings -> Password and check if your new
-  ///   password is saved. Neither saving password nor auto-generating strong
-  ///   password works without properly setting up associated domains in your
-  ///   app. To set up associated domains, follow the instructions in
-  ///   <https://developer.apple.com/documentation/safariservices/supporting_associated_domains_in_your_app>.
+  /// * iOS: iOS에서는 사용자 비밀번호를 저장할 때 프롬프트나 기타 시각적 표시가 표시되지 않을 수 있습니다. 설정-> 비밀번호로 이동하여 새 비밀번호가 저장되었는지 확인하세요. 앱에서 연결된 도메인을 올바르게 설정하지 않으면 비밀번호 저장이나 강력한 비밀번호 자동 생성이 모두 작동하지 않습니다. 연결 도메인을 설정하려면 <https://developer.apple.com/documentation/safariservices/supporting_associated_domains_in_your_app>의 지침을 따르세요.
   ///
   /// {@endtemplate}
   /// {@macro flutter.services.AutofillConfiguration.autofillHints}
   final Iterable<String>? autofillHints;
 
-  /// The [AutofillClient] that controls this input field's autofill behavior.
+  /// 이 입력 필드의 자동 채우기 동작을 제어하는 [AutofillClient]입니다.
   ///
-  /// When null, this widget's [EditableTextState] will be used as the
-  /// [AutofillClient]. This property may override [autofillHints].
+  /// null인 경우, 이 위젯의 [EditableTextState]가 [AutofillClient]로 사용됩니다. 이 프로퍼티는 [autofillHints]를 재정의할 수 있습니다.
   final AutofillClient? autofillClient;
 
   /// {@macro flutter.material.Material.clipBehavior}
   ///
-  /// Defaults to [Clip.hardEdge].
+  /// 기본값은 [Clip.hardEdge]입니다.
   final Clip clipBehavior;
 
-  /// Restoration ID to save and restore the scroll offset of the
-  /// [EditableText].
+  /// 복원 ID - [편집 가능한 텍스트]의 스크롤 오프셋을 저장하고 복원할 복원 ID입니다.
   ///
-  /// If a restoration id is provided, the [EditableText] will persist its
-  /// current scroll offset and restore it during state restoration.
+  /// 복원 ID가 제공되면 [편집가능 텍스트]는 현재 스크롤 오프셋을 유지하고 상태 복원 중에 복원합니다.
   ///
-  /// The scroll offset is persisted in a [RestorationBucket] claimed from
-  /// the surrounding [RestorationScope] using the provided restoration ID.
+  /// 스크롤 오프셋은 제공된 복원 ID를 사용하여 주변 [복원 범위]에서 클레임된 [복원 버킷]에 유지됩니다.
   ///
-  /// Persisting and restoring the content of the [EditableText] is the
-  /// responsibility of the owner of the [controller], who may use a
-  /// [RestorableTextEditingController] for that purpose.
+  /// [편집 가능한 텍스트]의 내용을 유지하고 복원하는 것은 [컨트롤러] 소유자의 책임이며, [컨트롤러]는 해당 목적으로 [복원 가능한 TextEditingController]를 사용할 수 있습니다.
   ///
-  /// See also:
+  /// 참조:
   ///
-  ///  * [RestorationManager], which explains how state restoration works in
-  ///    Flutter.
+  ///  * Flutter에서 상태 복원이 어떻게 작동하는지 설명하는 [RestorationManager] 참조.
   final String? restorationId;
 
   /// {@template flutter.widgets.shadow.scrollBehavior}
-  /// A [ScrollBehavior] that will be applied to this widget individually.
+  /// 이 위젯에 개별적으로 적용될 [스크롤 비헤이비어]입니다.
   ///
-  /// Defaults to null, wherein the inherited [ScrollBehavior] is copied and
-  /// modified to alter the viewport decoration, like [Scrollbar]s.
+  /// 기본값은 null이며, 상속된 [ScrollBehavior]를 복사 및 수정하여 [스크롤바]와 같은 뷰포트 장식을 변경합니다.
   /// {@endtemplate}
   ///
-  /// [ScrollBehavior]s also provide [ScrollPhysics]. If an explicit
-  /// [ScrollPhysics] is provided in [scrollPhysics], it will take precedence,
-  /// followed by [scrollBehavior], and then the inherited ancestor
-  /// [ScrollBehavior].
+  /// [스크롤비헤이비어]는 [스크롤피직스]도 제공합니다. [스크롤 물리학]에 명시적인 [스크롤 물리학]이 제공되면, [스크롤 물리학]이 우선합니다,
+  /// [스크롤 비헤이비어], 그 다음 상속된 조상 [스크롤 비헤이비어]가 우선합니다.
   ///
-  /// The [ScrollBehavior] of the inherited [ScrollConfiguration] will be
-  /// modified by default to only apply a [Scrollbar] if [maxLines] is greater
-  /// than 1.
+  /// 상속된 [ScrollConfiguration]의 [ScrollBehavior]는 기본적으로 [maxLines]가 1보다 큰 경우에만 [스크롤바]를 적용하도록 수정됩니다.
   final ScrollBehavior? scrollBehavior;
 
   /// {@macro flutter.services.TextInputConfiguration.enableIMEPersonalizedLearning}
   final bool enableIMEPersonalizedLearning;
 
   /// {@template flutter.widgets.editableText.contentInsertionConfiguration}
-  /// Configuration of handler for media content inserted via the system input
-  /// method.
+  /// 시스템 입력 메서드를 통해 삽입된 미디어 콘텐츠에 대한 핸들러 구성입니다.
   ///
-  /// Defaults to null in which case media content insertion will be disabled,
-  /// and the system will display a message informing the user that the text field
-  /// does not support inserting media content.
+  /// 기본값은 null이며, 이 경우 미디어 콘텐츠 삽입이 비활성화됩니다,
+  /// 로 설정하면 시스템에서 텍스트 필드가 미디어 콘텐츠 삽입을 지원하지 않는다는 메시지를 사용자에게 표시합니다.
   ///
-  /// Set [ContentInsertionConfiguration.onContentInserted] to provide a handler.
-  /// Additionally, set [ContentInsertionConfiguration.allowedMimeTypes]
-  /// to limit the allowable mime types for inserted content.
+  /// 핸들러를 제공하려면 [ContentInsertionConfiguration.onContentInserted]를 설정합니다.
+  /// 또한 [ContentInsertionConfiguration.allowedMimeTypes]
+  /// 을 설정하여 삽입된 콘텐츠에 허용되는 마임 유형을 제한합니다.
   ///
-  /// {@tool dartpad}
+  /// {도구 다트패드}
   ///
-  /// This example shows how to access the data for inserted content in your
-  /// `TextField`.
+  /// 이 예는 '텍스트 필드'에 삽입된 콘텐츠의 데이터에 액세스하는 방법을 보여줍니다.
   ///
-  /// ** See code in examples/api/lib/widgets/editable_text/editable_text.on_content_inserted.0.dart **
+  /// ** 예제 코드 참조: examples/api/lib/widgets/editable_text/editable_text.on_content_inserted.0.dart **
   /// {@end-tool}
   ///
-  /// If [contentInsertionConfiguration] is not provided, by default
-  /// an empty list of mime types will be sent to the Flutter Engine.
-  /// A handler function must be provided in order to customize the allowable
-  /// mime types for inserted content.
+  /// [contentInsertionConfiguration]을 제공하지 않으면 기본적으로 빈 마임 유형 목록이 Flutter 엔진으로 전송됩니다.
+  /// 삽입된 콘텐츠에 허용되는 마임 유형을 사용자 지정하려면 핸들러 함수를 제공해야 합니다.
   ///
-  /// If rich content is inserted without a handler, the system will display
-  /// a message informing the user that the current text input does not support
-  /// inserting rich content.
+  /// 핸들러 없이 리치 콘텐츠가 삽입되면 시스템은 현재 텍스트 입력이 리치 콘텐츠 삽입을 지원하지 않는다는 메시지를 사용자에게 표시합니다.
   /// {@endtemplate}
   final ContentInsertionConfiguration? contentInsertionConfiguration;
 
   /// {@template flutter.widgets.EditableText.contextMenuBuilder}
-  /// Builds the text selection toolbar when requested by the user.
+  /// 사용자가 요청할 때 텍스트 선택 툴바를 빌드합니다.
   ///
-  /// `primaryAnchor` is the desired anchor position for the context menu, while
-  /// `secondaryAnchor` is the fallback location if the menu doesn't fit.
+  /// primaryAnchor`는 컨텍스트 메뉴의 원하는 앵커 위치이고, `secondaryAnchor`는 메뉴가 맞지 않을 경우 대체 위치입니다.
   ///
-  /// `buttonItems` represents the buttons that would be built by default for
-  /// this widget.
+  /// buttonItems`는 이 위젯에 대해 기본적으로 빌드되는 버튼을 나타냅니다.
   ///
-  /// {@tool dartpad}
-  /// This example shows how to customize the menu, in this case by keeping the
-  /// default buttons for the platform but modifying their appearance.
+  /// {@tool 다트패드}
+  /// 이 예는 플랫폼의 기본 버튼은 유지하되 모양을 수정하여 메뉴를 사용자 정의하는 방법을 보여줍니다.
   ///
-  /// ** See code in examples/api/lib/material/context_menu/editable_text_toolbar_builder.0.dart **
+  /// ** examples/api/lib/material/context_menu/editable_text_toolbar_builder.0.dart의 코드를 참조하세요 **.
   /// {@end-tool}
   ///
-  /// {@tool dartpad}
-  /// This example shows how to show a custom button only when an email address
-  /// is currently selected.
+  /// {@tool 다트패드}
+  /// 이 예는 이메일 주소가 현재 선택되어 있을 때만 사용자 지정 버튼을 표시하는 방법을 보여줍니다.
   ///
-  /// ** See code in examples/api/lib/material/context_menu/editable_text_toolbar_builder.1.dart **
+  /// ** examples/api/lib/material/context_menu/editable_text_toolbar_builder.1.dart의 코드를 참조하세요.
   /// {@end-tool}
   ///
-  /// See also:
-  ///   * [AdaptiveTextSelectionToolbar], which builds the default text selection
-  ///     toolbar for the current platform, but allows customization of the
-  ///     buttons.
-  ///   * [AdaptiveTextSelectionToolbar.getAdaptiveButtons], which builds the
-  ///     button Widgets for the current platform given
-  ///     [ContextMenuButtonItem]s.
-  ///   * [BrowserContextMenu], which allows the browser's context menu on web
-  ///     to be disabled and Flutter-rendered context menus to appear.
+  /// 참조하세요:
+  ///   * 현재 플랫폼에 대한 기본 텍스트 선택 도구 모음을 빌드하지만 버튼을 사용자 지정할 수 있는 [AdaptiveTextSelectionToolbar].
+  ///   * [ContextMenuButtonItem]이 주어지면 현재 플랫폼에 맞는 버튼 위젯을 빌드하는 [AdaptiveTextSelectionToolbar.getAdaptiveButtons].
+  ///   * 웹에서 브라우저의 컨텍스트 메뉴를 비활성화하고 Flutter 렌더링 컨텍스트 메뉴를 표시할 수 있는 [BrowserContextMenu].
   /// {@endtemplate}
   ///
-  /// If not provided, no context menu will be shown.
+  /// 제공하지 않으면 컨텍스트 메뉴가 표시되지 않습니다.
   final EditableTextContextMenuBuilder? contextMenuBuilder;
 
   /// {@template flutter.widgets.EditableText.spellCheckConfiguration}
-  /// Configuration that details how spell check should be performed.
+  /// 맞춤법 검사 수행 방법을 자세히 설명하는 구성입니다.
   ///
-  /// Specifies the [SpellCheckService] used to spell check text input and the
-  /// [TextStyle] used to style text with misspelled words.
+  /// 텍스트 입력의 맞춤법 검사에 사용되는 [맞춤법 검사 서비스]와 맞춤법이 틀린 단어의 텍스트 스타일에 사용되는 [텍스트 스타일]을 지정합니다.
   ///
-  /// If the [SpellCheckService] is left null, spell check is disabled by
-  /// default unless the [DefaultSpellCheckService] is supported, in which case
-  /// it is used. It is currently supported only on Android and iOS.
+  /// [맞춤법 검사 서비스]를 비워두면 [DefaultSpellCheckService]가 지원되지 않는 한 맞춤법 검사가 기본적으로 비활성화됩니다(이 경우 이 서비스가 사용됨). 현재 Android 및 iOS에서만 지원됩니다.
   ///
-  /// If this configuration is left null, then spell check is disabled by default.
+  /// 이 구성을 null로 남겨두면 맞춤법 검사가 기본적으로 비활성화됩니다.
   /// {@endtemplate}
   final SpellCheckConfiguration? spellCheckConfiguration;
 
@@ -1815,23 +1516,16 @@ class EditableText extends StatefulWidget {
 
   bool get _userSelectionEnabled => enableInteractiveSelection && (!readOnly || !obscureText);
 
-  /// Returns the [ContextMenuButtonItem]s representing the buttons in this
-  /// platform's default selection menu for an editable field.
+  /// 편집 가능한 필드에 대한 이 플랫폼의 기본 선택 메뉴에 있는 버튼을 나타내는 [ContextMenuButtonItem]을 반환합니다.
   ///
-  /// For example, [EditableText] uses this to generate the default buttons for
-  /// its context menu.
+  /// 예를 들어, [EditableText]는 이를 사용하여 컨텍스트 메뉴의 기본 버튼을 생성합니다.
   ///
-  /// See also:
+  /// 참조
   ///
-  /// * [EditableTextState.contextMenuButtonItems], which gives the
-  ///   [ContextMenuButtonItem]s for a specific EditableText.
-  /// * [SelectableRegion.getSelectableButtonItems], which performs a similar
-  ///   role but for content that is selectable but not editable.
-  /// * [AdaptiveTextSelectionToolbar], which builds the toolbar itself, and can
-  ///   take a list of [ContextMenuButtonItem]s with
-  ///   [AdaptiveTextSelectionToolbar.buttonItems].
-  /// * [AdaptiveTextSelectionToolbar.getAdaptiveButtons], which builds the button
-  ///   Widgets for the current platform given [ContextMenuButtonItem]s.
+  /// * 특정 편집 가능한 텍스트에 대한 [컨텍스트 메뉴 버튼 항목]을 제공하는 [EditableTextState.contextMenuButtonItems].
+  /// * 비슷한 역할을 수행하지만 선택 가능하지만 편집할 수 없는 콘텐츠에 대해 [SelectableRegion.getSelectableButtonItems]를 제공합니다.
+  /// * 도구 모음 자체를 빌드하고 [AdaptiveTextSelectionToolbar]와 함께 [ContextMenuButtonItem]의 목록을 가져올 수 있는 [AdaptiveTextSelectionToolbar.buttonItems].
+  /// * [AdaptiveTextSelectionToolbar.getAdaptiveButtons]는 [ContextMenuButtonItem]이 주어진 현재 플랫폼에 대한 버튼 위젯을 빌드합니다.
   static List<ContextMenuButtonItem> getEditableButtonItems({
     required final ClipboardStatus? clipboardStatus,
     required final VoidCallback? onCopy,
@@ -2061,7 +1755,7 @@ class EditableText extends StatefulWidget {
   }
 }
 
-/// State for a [EditableText].
+/// [편집 가능한 텍스트]에 대한 상태입니다.
 class EditableTextState extends State<EditableText> with AutomaticKeepAliveClientMixin<EditableText>, WidgetsBindingObserver, TickerProviderStateMixin<EditableText>, TextSelectionDelegate, TextInputClient implements AutofillClient {
   Timer? _cursorTimer;
   AnimationController get _cursorBlinkOpacityController {
@@ -2075,13 +1769,13 @@ class EditableTextState extends State<EditableText> with AutomaticKeepAliveClien
   final ValueNotifier<bool> _cursorVisibilityNotifier = ValueNotifier<bool>(true);
   final GlobalKey _editableKey = GlobalKey();
 
-  /// Detects whether the clipboard can paste.
+  /// 클립보드에 붙여넣기가 가능한지 여부를 감지합니다.
   final ClipboardStatusNotifier clipboardStatus = ClipboardStatusNotifier();
 
-  /// Detects whether the Live Text input is enabled.
+  /// 라이브 텍스트 입력이 활성화되었는지 여부를 감지합니다.
   ///
-  /// See also:
-  ///  * [LiveText], where the availability of Live Text input can be obtained.
+  /// 참조:
+  ///  * 라이브 텍스트 입력의 사용 가능성을 얻을 수 있는 [LiveText].
   final LiveTextInputStatusNotifier? _liveTextInputStatus =
       kIsWeb ? null : LiveTextInputStatusNotifier();
 
@@ -2109,44 +1803,37 @@ class EditableTextState extends State<EditableText> with AutomaticKeepAliveClien
   late SpellCheckConfiguration _spellCheckConfiguration;
   late TextStyle _style;
 
-  /// Configuration that determines how spell check will be performed.
+  /// 맞춤법 검사 수행 방법을 결정하는 구성입니다.
   ///
-  /// If possible, this configuration will contain a default for the
-  /// [SpellCheckService] if it is not otherwise specified.
+  /// 이 구성에는 달리 지정되지 않은 경우 [맞춤법 검사 서비스]에 대한 기본값이 포함됩니다.
   ///
-  /// See also:
-  ///  * [DefaultSpellCheckService], the spell check service used by default.
+  /// 또한 참조하세요:
+  ///  * 기본적으로 사용되는 맞춤법 검사 서비스인 [DefaultSpellCheckService] 참조.
   @visibleForTesting
   SpellCheckConfiguration get spellCheckConfiguration => _spellCheckConfiguration;
 
-  /// Whether or not spell check is enabled.
+  /// 맞춤법 검사 활성화 여부.
   ///
-  /// Spell check is enabled when a [SpellCheckConfiguration] has been specified
-  /// for the widget.
+  /// 위젯에 [맞춤법 검사 구성]이 지정되어 있으면 맞춤법 검사가 활성화됩니다.
   bool get spellCheckEnabled => _spellCheckConfiguration.spellCheckEnabled;
 
-  /// The most up-to-date spell check results for text input.
+  /// 텍스트 입력에 대한 가장 최신 맞춤법 검사 결과입니다.
   ///
-  /// These results will be updated via calls to spell check through a
-  /// [SpellCheckService] and used by this widget to build the [TextSpan] tree
-  /// for text input and menus for replacement suggestions of misspelled words.
+  /// 이 결과는 [맞춤법 검사 서비스]를 통한 맞춤법 검사 호출을 통해 업데이트되며, 이 위젯에서 텍스트 입력에 대한 [텍스트 스팬] 트리와 철자가 틀린 단어의 대체 제안 메뉴를 구축하는 데 사용됩니다.
   SpellCheckResults? spellCheckResults;
 
   bool get _spellCheckResultsReceived => spellCheckEnabled && spellCheckResults != null && spellCheckResults!.suggestionSpans.isNotEmpty;
 
-  /// Whether to create an input connection with the platform for text editing
-  /// or not.
+  /// 텍스트 편집을 위해 플랫폼과 입력 연결을 만들지 여부입니다.
   ///
-  /// Read-only input fields do not need a connection with the platform since
-  /// there's no need for text editing capabilities (e.g. virtual keyboard).
+  /// 읽기 전용 입력 필드는 텍스트 편집 기능(예: 가상 키보드)이 필요하지 않으므로 플랫폼과 연결할 필요가 없습니다.
   ///
-  /// On the web, we always need a connection because we want some browser
-  /// functionalities to continue to work on read-only input fields like:
+  /// 웹에서는 읽기 전용 입력 필드에서 다음과 같은 일부 브라우저 기능이 계속 작동하기를 원하기 때문에 항상 연결이 필요합니다:
   ///
-  /// - Relevant context menu.
-  /// - cmd/ctrl+c shortcut to copy.
-  /// - cmd/ctrl+a to select all.
-  /// - Changing the selection using a physical keyboard.
+  /// - 관련 컨텍스트 메뉴.
+  /// - 복사하려면 cmd/ctrl+c 단축키를 누르세요.
+  /// - 모두 선택하려면 cmd/ctrl+a를 누르세요.
+  /// - 물리적 키보드를 사용하여 선택 내용 변경하기.
   bool get _shouldCreateInputConnection => kIsWeb || !widget.readOnly;
 
   // The time it takes for the floating cursor to snap to the text aligned
@@ -2246,7 +1933,7 @@ class EditableTextState extends State<EditableText> with AutomaticKeepAliveClien
     return editableWidget.value;
   }
 
-  /// Copy current selection to [Clipboard].
+  /// 현재 선택 항목을 [클립보드]로 복사합니다.
   @override
   void copySelection(SelectionChangedCause cause) {
     final TextSelection selection = textEditingValue.selection;
@@ -2280,7 +1967,7 @@ class EditableTextState extends State<EditableText> with AutomaticKeepAliveClien
     clipboardStatus.update();
   }
 
-  /// Cut current selection to [Clipboard].
+  /// 현재 선택 내용을 [클립보드]로 잘라내기.
   @override
   void cutSelection(SelectionChangedCause cause) {
     if (widget.readOnly || widget.obscureText) {
@@ -2305,7 +1992,7 @@ class EditableTextState extends State<EditableText> with AutomaticKeepAliveClien
     clipboardStatus.update();
   }
 
-  /// Paste text from [Clipboard].
+  /// [클립보드]에서 텍스트 붙여넣기.
   @override
   Future<void> pasteText(SelectionChangedCause cause) async {
     if (widget.readOnly) {
@@ -2344,7 +2031,7 @@ class EditableTextState extends State<EditableText> with AutomaticKeepAliveClien
     }
   }
 
-  /// Select the entire text value.
+  /// 전체 텍스트 값을 선택합니다.
   @override
   void selectAll(SelectionChangedCause cause) {
     if (widget.readOnly && widget.obscureText) {
@@ -2395,14 +2082,11 @@ class EditableTextState extends State<EditableText> with AutomaticKeepAliveClien
     }
   }
 
-  /// Finds specified [SuggestionSpan] that matches the provided index using
-  /// binary search.
+  /// 이진 검색을 사용하여 제공된 인덱스와 일치하는 지정된 [제안 범위]를 찾습니다.
   ///
-  /// See also:
+  /// 또한 참조하세요:
   ///
-  ///  * [SpellCheckSuggestionsToolbar], the Material style spell check
-  ///    suggestions toolbar that uses this method to render the correct
-  ///    suggestions in the toolbar for a misspelled word.
+  ///  * 이 메서드를 사용하여 철자가 틀린 단어에 대해 도구 모음에 올바른 제안을 렌더링하는 머티리얼 스타일 맞춤법 검사 제안 도구 모음인 [SpellCheckSuggestionsToolbar].
   SuggestionSpan? findSuggestionSpanAtCursorIndex(int cursorIndex) {
     if (!_spellCheckResultsReceived
         || spellCheckResults!.suggestionSpans.last.range.end < cursorIndex) {
@@ -2434,10 +2118,9 @@ class EditableTextState extends State<EditableText> with AutomaticKeepAliveClien
     return null;
   }
 
-  /// Infers the [SpellCheckConfiguration] used to perform spell check.
+  /// 맞춤법 검사를 수행하는 데 사용되는 [맞춤법 검사 구성]을 유추합니다.
   ///
-  /// If spell check is enabled, this will try to infer a value for
-  /// the [SpellCheckService] if left unspecified.
+  /// 맞춤법 검사가 활성화된 경우, 지정하지 않은 경우 [맞춤법 검사 서비스]의 값을 유추하려고 시도합니다.
   static SpellCheckConfiguration _inferSpellCheckConfiguration(SpellCheckConfiguration? configuration) {
     final SpellCheckService? spellCheckService = configuration?.spellCheckService;
     final bool spellCheckAutomaticallyDisabled = configuration == null || configuration == const SpellCheckConfiguration.disabled();
@@ -2470,7 +2153,7 @@ class EditableTextState extends State<EditableText> with AutomaticKeepAliveClien
     return configuration.copyWith(spellCheckService: spellCheckService ?? DefaultSpellCheckService());
   }
 
-  /// Returns the [ContextMenuButtonItem]s for the given [ToolbarOptions].
+  /// 주어진 [툴바 옵션]에 대한 [ContextMenuButtonItem]을 반환합니다.
   @Deprecated(
     'Use `contextMenuBuilder` instead of `toolbarOptions`. '
     'This feature was deprecated after v3.3.0-0.5.pre.',
@@ -2512,8 +2195,7 @@ class EditableTextState extends State<EditableText> with AutomaticKeepAliveClien
     ];
   }
 
-  /// Gets the line heights at the start and end of the selection for the given
-  /// [EditableTextState].
+  /// 지정된 [EditableTextState]에 대한 선택 영역의 시작과 끝의 줄 높이를 가져옵니다.
   _GlyphHeights _getGlyphHeights() {
     final TextSelection selection = textEditingValue.selection;
 
@@ -2552,13 +2234,12 @@ class EditableTextState extends State<EditableText> with AutomaticKeepAliveClien
   }
 
   /// {@template flutter.widgets.EditableText.getAnchors}
-  /// Returns the anchor points for the default context menu.
+  /// 기본 컨텍스트 메뉴의 앵커 포인트를 반환합니다.
   /// {@endtemplate}
   ///
-  /// See also:
+  /// 참조
   ///
-  ///  * [contextMenuButtonItems], which provides the [ContextMenuButtonItem]s
-  ///    for the default context menu buttons.
+  ///  * 기본 컨텍스트 메뉴 버튼에 대한 [ContextMenuButtonItems]를 제공하는 [contextMenuButtonItems].
   TextSelectionToolbarAnchors get contextMenuAnchors {
     if (renderEditable.lastSecondaryTapDownPosition != null) {
       return TextSelectionToolbarAnchors(
@@ -2578,22 +2259,16 @@ class EditableTextState extends State<EditableText> with AutomaticKeepAliveClien
     );
   }
 
-  /// Returns the [ContextMenuButtonItem]s representing the buttons in this
-  /// platform's default selection menu for [EditableText].
+  /// 이 플랫폼의 [EditableText]에 대한 기본 선택 메뉴에 있는 버튼을 나타내는 [ContextMenuButtonItem]을 반환합니다.
   ///
-  /// See also:
+  /// 참조
   ///
-  /// * [EditableText.getEditableButtonItems], which performs a similar role,
-  ///   but for any editable field, not just specifically EditableText.
-  /// * [SelectableRegionState.contextMenuButtonItems], which performs a similar
-  ///   role but for content that is selectable but not editable.
-  /// * [contextMenuAnchors], which provides the anchor points for the default
-  ///   context menu.
-  /// * [AdaptiveTextSelectionToolbar], which builds the toolbar itself, and can
-  ///   take a list of [ContextMenuButtonItem]s with
-  ///   [AdaptiveTextSelectionToolbar.buttonItems].
-  /// * [AdaptiveTextSelectionToolbar.getAdaptiveButtons], which builds the
-  ///   button Widgets for the current platform given [ContextMenuButtonItem]s.
+  /// * 비슷한 역할을 수행하는 [EditableText.getEditableButtonItems] 참조,
+  ///   하지만 편집 가능한 모든 필드에 적용되며, 특히 EditableText에만 적용되지 않습니다.
+  /// * 비슷한 역할을 수행하지만 선택 가능하지만 편집할 수 없는 콘텐츠에 대해 [SelectableRegionState.contextMenuButtonItems]가 있습니다.
+  /// * 기본 컨텍스트 메뉴의 앵커 포인트를 제공하는 [contextMenuAnchors].
+  /// * 도구 모음 자체를 빌드하고 [AdaptiveTextSelectionToolbar]와 함께 [ContextMenuButtonItem]의 목록을 가져올 수 있는 [AdaptiveTextSelectionToolbar.buttonItems].
+  /// * [AdaptiveTextSelectionToolbar.getAdaptiveButtons]는 [ContextMenuButtonItem]이 주어지면 현재 플랫폼에 맞는 버튼 위젯을 빌드합니다.
   List<ContextMenuButtonItem> get contextMenuButtonItems {
     return buttonItemsForToolbarOptions() ?? EditableText.getEditableButtonItems(
       clipboardStatus: clipboardStatus.value,
@@ -2798,15 +2473,11 @@ class EditableTextState extends State<EditableText> with AutomaticKeepAliveClien
 
   // TextInputClient implementation:
 
-  /// The last known [TextEditingValue] of the platform text input plugin.
+  /// 플랫폼 텍스트 입력 플러그인의 마지막으로 알려진 [TextEditingValue].
   ///
-  /// This value is updated when the platform text input plugin sends a new
-  /// update via [updateEditingValue], or when [EditableText] calls
-  /// [TextInputConnection.setEditingState] to overwrite the platform text input
-  /// plugin's [TextEditingValue].
+  /// 이 값은 플랫폼 텍스트 입력 플러그인이 [updateEditingValue]를 통해 새 업데이트를 보내거나, [EditableText]가 [TextInputConnection.setEditingState]를 호출하여 플랫폼 텍스트 입력 플러그인의 [TextEditingValue]를 덮어쓸 때 업데이트됩니다.
   ///
-  /// Used in [_updateRemoteEditingValueIfNeeded] to determine whether the
-  /// remote value is outdated and needs updating.
+  /// 원격 값이 오래되어 업데이트가 필요한지 여부를 결정하기 위해 [_updateRemoteEditingValueIfNeeded]에서 사용됩니다.
   TextEditingValue? _lastKnownRemoteTextEditingValue;
 
   @override
@@ -3106,21 +2777,18 @@ class EditableTextState extends State<EditableText> with AutomaticKeepAliveClien
 
   int _batchEditDepth = 0;
 
-  /// Begins a new batch edit, within which new updates made to the text editing
-  /// value will not be sent to the platform text input plugin.
+  /// 텍스트 편집 값에 대한 새로운 업데이트가 플랫폼 텍스트 입력 플러그인으로 전송되지 않는 새 일괄 편집을 시작합니다.
   ///
-  /// Batch edits nest. When the outermost batch edit finishes, [endBatchEdit]
-  /// will attempt to send [currentTextEditingValue] to the text input plugin if
-  /// it detected a change.
+  /// 배치 편집 중첩. 가장 바깥쪽 일괄 편집이 끝나면 [endBatchEdit]
+  /// 는 텍스트 입력 플러그인이 변경 사항을 감지하면 [currentTextEditingValue]를 텍스트 입력 플러그인으로 보내려고 시도합니다.
   void beginBatchEdit() {
     _batchEditDepth += 1;
   }
 
-  /// Ends the current batch edit started by the last call to [beginBatchEdit],
-  /// and send [currentTextEditingValue] to the text input plugin if needed.
+  /// 마지막 [beginBatchEdit] 호출로 시작된 현재 일괄 편집을 종료합니다,
+  /// 그리고 필요한 경우 텍스트 입력 플러그인에 [currentTextEditingValue]를 전송합니다.
   ///
-  /// Throws an error in debug mode if this [EditableText] is not in a batch
-  /// edit.
+  /// 이 [EditableText]가 일괄 편집 중이 아닌 경우 디버그 모드에서 오류를 던집니다.
   void endBatchEdit() {
     _batchEditDepth -= 1;
     assert(
@@ -3204,8 +2872,7 @@ class EditableTextState extends State<EditableText> with AutomaticKeepAliveClien
     return RevealedOffset(rect: rect.shift(unitOffset * offsetDelta), offset: targetOffset);
   }
 
-  /// Whether to send the autofill information to the autofill service. True by
-  /// default.
+  /// 자동 완성 서비스에 자동 완성 정보를 전송할지 여부입니다. 기본값은 참입니다.
   bool get _needsAutofill => _effectiveAutofillClient.textInputConfiguration.autofillConfiguration.enabled;
 
   // Must be called after layout.
@@ -3350,13 +3017,9 @@ class EditableTextState extends State<EditableText> with AutomaticKeepAliveClien
     FocusManager.instance.removeListener(_unflagInternalFocus);
   }
 
-  /// Express interest in interacting with the keyboard.
+  /// 키보드와의 상호 작용에 대한 관심 표현.
   ///
-  /// If this control is already attached to the keyboard, this function will
-  /// request that the keyboard become visible. Otherwise, this function will
-  /// ask the focus system that it become focused. If successful in acquiring
-  /// focus, the control will then attach to the keyboard and request that the
-  /// keyboard become visible.
+  /// 이 컨트롤이 키보드에 이미 연결되어 있는 경우 이 함수는 키보드를 표시하도록 요청합니다. 그렇지 않으면 이 함수는 포커스 시스템에 포커스를 요청합니다. 포커스 획득에 성공하면 컨트롤이 키보드에 부착되고 키보드가 표시되도록 요청합니다.
   void requestKeyboard() {
     if (_hasFocus) {
       _openInputConnection();
@@ -3714,18 +3377,16 @@ class EditableTextState extends State<EditableText> with AutomaticKeepAliveClien
 
   bool get _showBlinkingCursor => _hasFocus && _value.selection.isCollapsed && widget.showCursor && _tickersEnabled;
 
-  /// Whether the blinking cursor is actually visible at this precise moment
-  /// (it's hidden half the time, since it blinks).
+  /// 깜박이는 커서가 실제로 이 정확한 순간에 표시되는지 여부(깜박이기 때문에 절반은 숨겨져 있음).
   @visibleForTesting
   bool get cursorCurrentlyVisible => _cursorBlinkOpacityController.value > 0;
 
-  /// The cursor blink interval (the amount of time the cursor is in the "on"
-  /// state or the "off" state). A complete cursor blink period is twice this
-  /// value (half on, half off).
+  /// 커서 깜박임 간격(커서가 "켜짐" 상태 또는 "꺼짐" 상태에 있는 시간)
+  /// 상태 또는 "꺼짐" 상태에 있는 시간). 완전한 커서 깜박임 간격은 이 값의 두 배입니다(절반 켜짐, 절반 꺼짐).
   @visibleForTesting
   Duration get cursorBlinkInterval => _kCursorBlinkHalfPeriod;
 
-  /// The current status of the text selection handles.
+  /// 텍스트 선택 핸들의 현재 상태입니다.
   @visibleForTesting
   TextSelectionOverlay? get selectionOverlay => _selectionOverlay;
 
@@ -3976,10 +3637,9 @@ class EditableTextState extends State<EditableText> with AutomaticKeepAliveClien
 
   TextDirection get _textDirection => widget.textDirection ?? Directionality.of(context);
 
-  /// The renderer for this widget's descendant.
+  /// 이 위젯의 자손에 대한 렌더러입니다.
   ///
-  /// This property is typically used to notify the renderer of input gestures
-  /// when [RenderEditable.ignorePointer] is true.
+  /// 이 프로퍼티는 일반적으로 [RenderEditable.ignorePointer]가 참일 때 입력 제스처를 렌더러에 알리는 데 사용됩니다.
   late final RenderEditable renderEditable = _editableKey.currentContext!.findRenderObject()! as RenderEditable;
 
   @override
@@ -4022,10 +3682,9 @@ class EditableTextState extends State<EditableText> with AutomaticKeepAliveClien
     renderEditable.showOnScreen(rect: targetOffset.rect);
   }
 
-  /// Shows the selection toolbar at the location of the current cursor.
+  /// 현재 커서 위치에 선택 도구 모음을 표시합니다.
   ///
-  /// Returns `false` if a toolbar couldn't be shown, such as when the toolbar
-  /// is already shown, or when no text selection currently exists.
+  /// 툴바가 이미 표시되어 있거나 현재 텍스트 선택 항목이 없는 경우와 같이 툴바를 표시할 수 없는 경우 `false`를 반환합니다.
   @override
   bool showToolbar() {
     // Web is using native dom elements to enable clipboard functionality of the
@@ -4057,7 +3716,7 @@ class EditableTextState extends State<EditableText> with AutomaticKeepAliveClien
     }
   }
 
-  /// Toggles the visibility of the toolbar.
+  /// 도구 모음의 표시 여부를 토글합니다.
   void toggleToolbar([bool hideHandles = true]) {
     final TextSelectionOverlay selectionOverlay = _selectionOverlay ??= _createSelectionOverlay();
 
@@ -4068,8 +3727,7 @@ class EditableTextState extends State<EditableText> with AutomaticKeepAliveClien
     }
   }
 
-  /// Shows toolbar with spell check suggestions of misspelled words that are
-  /// available for click-and-replace.
+  /// 클릭 후 바꾸기에 사용할 수 있는 철자가 틀린 단어에 대한 맞춤법 검사 제안이 포함된 도구 모음을 표시합니다.
   bool showSpellCheckSuggestionsToolbar() {
     // Spell check suggestions toolbars are intended to be shown on non-web
     // platforms. Additionally, the Cupertino style toolbar can't be drawn on
@@ -4107,14 +3765,13 @@ class EditableTextState extends State<EditableText> with AutomaticKeepAliveClien
     return true;
   }
 
-  /// Shows the magnifier at the position given by `positionToShow`,
-  /// if there is no magnifier visible.
+  /// '위치 표시'에 지정된 위치에 돋보기를 표시합니다,
+  /// 에 지정된 위치에 돋보기를 표시합니다.
   ///
-  /// Updates the magnifier to the position given by `positionToShow`,
-  /// if there is a magnifier visible.
+  /// 돋보기가 표시된 경우 `positionToShow`가 지정한 위치로 돋보기를 업데이트합니다,
+  /// 에 지정된 위치로 돋보기를 업데이트합니다.
   ///
-  /// Does nothing if a magnifier couldn't be shown, such as when the selection
-  /// overlay does not currently exist.
+  /// 선택 오버레이가 현재 존재하지 않는 경우와 같이 돋보기를 표시할 수 없는 경우 아무 작업도 수행하지 않습니다.
   void showMagnifier(Offset positionToShow) {
     if (_selectionOverlay == null) {
       return;
@@ -4127,7 +3784,7 @@ class EditableTextState extends State<EditableText> with AutomaticKeepAliveClien
     }
   }
 
-  /// Hides the magnifier if it is visible.
+  /// 돋보기가 표시된 경우 숨깁니다.
   void hideMagnifier() {
     if (_selectionOverlay == null) {
       return;
@@ -4336,13 +3993,11 @@ class EditableTextState extends State<EditableText> with AutomaticKeepAliveClien
     return Action<T>.overridable(context: context, defaultAction: defaultAction);
   }
 
-  /// Transpose the characters immediately before and after the current
-  /// collapsed selection.
+  /// 현재 접힌 선택 영역 바로 앞과 뒤의 문자를 바꿉니다.
   ///
-  /// When the cursor is at the end of the text, transposes the last two
-  /// characters, if they exist.
+  /// 커서가 텍스트 끝에 있을 때 마지막 두 문자가 있는 경우 해당 문자를 바꿉니다.
   ///
-  /// When the cursor is at the start of the text, does nothing.
+  /// 커서가 텍스트의 시작 부분에 있으면 아무 작업도 수행하지 않습니다.
   void _transposeCharacters(TransposeCharactersIntent intent) {
     if (_value.text.characters.length <= 1
         || !_value.selection.isCollapsed
@@ -4404,8 +4059,7 @@ class EditableTextState extends State<EditableText> with AutomaticKeepAliveClien
     }
   }
 
-  /// Handles [ScrollIntent] by scrolling the [Scrollable] inside of
-  /// [EditableText].
+  /// [편집 가능한 텍스트] 내부의 [스크롤 가능]을 스크롤하여 [스크롤 인텐트]를 처리합니다.
   void _scroll(ScrollIntent intent) {
     if (intent.type != ScrollIncrementType.page) {
       return;
@@ -4436,8 +4090,7 @@ class EditableTextState extends State<EditableText> with AutomaticKeepAliveClien
     _scrollController.jumpTo(destination);
   }
 
-  /// Extend the selection down by page if the `forward` parameter is true, or
-  /// up by page otherwise.
+  /// 앞으로` 매개변수가 참이면 선택 영역을 한 페이지씩 아래로 확장하고, 그렇지 않으면 한 페이지씩 위로 확장합니다.
   void _extendSelectionByPage(ExtendSelectionByPageIntent intent) {
     if (widget.maxLines == 1) {
       return;
@@ -4515,12 +4168,11 @@ class EditableTextState extends State<EditableText> with AutomaticKeepAliveClien
   }
 
 
-  /// The default behavior used if [onTapOutside] is null.
+  /// [onTapOutside]가 null인 경우 사용되는 기본 동작입니다.
   ///
-  /// The `event` argument is the [PointerDownEvent] that caused the notification.
+  /// 이벤트` 인수는 알림을 발생시킨 [포인터다운이벤트]입니다.
   void _defaultOnTapOutside(PointerDownEvent event) {
-    /// The focus dropping behavior is only present on desktop platforms
-    /// and mobile browsers.
+    /// 포커스 드랍 동작은 데스크톱 플랫폼과 모바일 브라우저에만 존재합니다.
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
       case TargetPlatform.iOS:
@@ -4728,10 +4380,10 @@ class EditableTextState extends State<EditableText> with AutomaticKeepAliveClien
     );
   }
 
-  /// Builds [TextSpan] from current editing value.
+  /// 현재 편집 값에서 [TextSpan]을 작성합니다.
   ///
-  /// By default makes text in composing range appear as underlined.
-  /// Descendants can override this method to customize appearance of text.
+  /// 기본적으로 작성 범위에 있는 텍스트는 밑줄이 그어진 상태로 표시됩니다.
+  /// 자손은 이 메서드를 재정의하여 텍스트의 모양을 사용자 지정할 수 있습니다.
   TextSpan buildTextSpan() {
 
     if (widget.obscureText) {
@@ -4968,7 +4620,7 @@ class _Editable extends MultiChildRenderObjectWidget {
 }
 
 @immutable
-class _ScribbleCacheKey  {
+class _ScribbleCacheKey {
   const _ScribbleCacheKey({
     required this.inlineSpan,
     required this.textAlign,
@@ -5110,7 +4762,7 @@ class _ScribblePlaceholder extends WidgetSpan {
     required this.size,
   });
 
-  /// The size of the span, used in place of adding a placeholder size to the [TextPainter].
+  /// 텍스트 범위의 크기로, [텍스트 페인터]에 자리 표시자 크기를 추가하는 대신 사용됩니다.
   final Size size;
 
   @override
@@ -5132,25 +4784,18 @@ class _ScribblePlaceholder extends WidgetSpan {
   }
 }
 
-/// A text boundary that uses code points as logical boundaries.
+/// 코드 포인트를 논리적 경계로 사용하는 텍스트 경계입니다.
 ///
-/// A code point represents a single character. This may be smaller than what is
-/// represented by a user-perceived character, or grapheme. For example, a
-/// single grapheme (in this case a Unicode extended grapheme cluster) like
-/// "👨‍👩‍👦" consists of five code points: the man emoji, a zero
-/// width joiner, the woman emoji, another zero width joiner, and the boy emoji.
-/// The [String] has a length of eight because each emoji consists of two code
-/// units.
+/// 코드 포인트는 단일 문자를 나타냅니다. 이는 사용자가 인식하는 문자 또는 그래프에 의해 표시되는 것보다 작을 수 있습니다. 예를 들어 "👨‍👩‍👦"와 같은 단일 그래프(이 경우 유니코드 확장 그래프 클러스터)는 남자 이모티콘, 너비가 0인 결합자, 여자 이모티콘, 또 다른 너비가 0인 결합자, 소년 이모티콘 등 5개의 코드 포인트로 구성됩니다.
+/// 각 이모티콘은 두 개의 코드 단위로 구성되므로 [문자열]의 길이는 8입니다.
 ///
-/// Code units are the units by which Dart's String class is measured, which is
-/// encoded in UTF-16.
+/// 코드 단위는 Dart의 String 클래스를 측정하는 단위로, UTF-16으로 인코딩됩니다.
 ///
-/// See also:
+/// 참조
 ///
-///  * [String.runes], which deals with code points like this class.
-///  * [String.characters], which deals with graphemes.
-///  * [CharacterBoundary], which is a [TextBoundary] like this class, but whose
-///    boundaries are graphemes instead of code points.
+///  * 이 클래스와 같은 코드 포인트를 다루는 [String.runes].
+///  * [String.characters], 그래프 문자를 다룹니다.
+///  * 이 클래스와 같은 [TextBoundary]이지만 경계가 코드 포인트가 아닌 그래프인 [CharacterBoundary].
 class _CodePointBoundary extends TextBoundary {
   const _CodePointBoundary(this._text);
 
@@ -5443,7 +5088,7 @@ class _CopySelectionAction extends ContextAction<CopySelectionTextIntent> {
   bool get isActionEnabled => state._value.selection.isValid && !state._value.selection.isCollapsed;
 }
 
-/// The start and end glyph heights of some range of text.
+/// 일부 텍스트 범위의 시작 및 끝 글리프 높이입니다.
 @immutable
 class _GlyphHeights {
   const _GlyphHeights({
@@ -5451,10 +5096,10 @@ class _GlyphHeights {
     required this.end,
   });
 
-  /// The glyph height of the first line.
+  /// 첫 번째 줄의 글리프 높이입니다.
   final double start;
 
-  /// The glyph height of the last line.
+  /// 마지막 줄의 글리프 높이입니다.
   final double end;
 }
 ```

@@ -110,3 +110,10 @@ analyzer:
     - lib/gen/l10n/app_localizations.dart
   errors:
     included_file_warning: ignore
+    unused_element: error
+    unused_field: error
+    unused_local_variable: error
+    unused_shown_name: error
+    unused_import: error
+    unused_result: error
+    avoid_unused_constructor_parameters: error

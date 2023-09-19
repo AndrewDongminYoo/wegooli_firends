@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 // 🌎 Project imports:
 import '/lib.dart';
 
+// ignore: must_be_immutable
 class AppbarTitle extends StatelessWidget {
   AppbarTitle({
     Key? key,
@@ -12,9 +13,9 @@ class AppbarTitle extends StatelessWidget {
     this.onTap,
   }) : super(key: key);
 
-  final String text;
-  final EdgeInsetsGeometry? margin;
-  final Function? onTap;
+  String text;
+  EdgeInsetsGeometry? margin;
+  Function? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,8 @@ class AppbarTitle extends StatelessWidget {
         child: Padding(
             padding: margin ?? EdgeInsets.zero,
             child: Text(text,
-                style: CustomTextStyles.titleMedium18
-                    .copyWith(color: ColorConstant.fontBlack))));
+                style: CustomTextStyles.titleMedium18.copyWith(
+                  color: ColorConstant.fontBlack,
+                ))));
   }
 }

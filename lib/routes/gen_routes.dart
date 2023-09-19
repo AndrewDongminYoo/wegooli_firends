@@ -1,5 +1,4 @@
 // 🐦 Flutter imports:
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
@@ -22,9 +21,7 @@ Route<dynamic>? onGenerateRoute(RouteSettings settings) {
       AppRoutes.registerLicense => const RegisterLicense(),
       AppRoutes.registerZipCode => const RegisterZipCode(),
       AppRoutes.registerSuccess => const RegisterSuccess(),
-      _ => (kDebugMode || kProfileMode)
-          ? const GatewayScreen()
-          : const SplashLoading(),
+      _ => const SplashLoading(),
     };
   } else {
     page = switch (settings.name) {
@@ -41,7 +38,7 @@ Route<dynamic>? onGenerateRoute(RouteSettings settings) {
       AppRoutes.noSubscription => const NoSubscription(),
       AppRoutes.unsubscribeConfirm => const UnsubscriptionConfirm(),
       AppRoutes.upcomingUnsubscription => const UnsubscriptionUpcoming(),
-      _ => const SharedCalendar(),
+      _ => const MainPage(),
     };
   }
   return GetPageRoute<dynamic>(

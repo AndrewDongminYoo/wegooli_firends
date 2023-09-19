@@ -21,10 +21,8 @@ class PrefUtils {
   static const String _tokenIsEmpty = 'Token is not given.';
 
   static SharedPreferences get storage {
-    if (_storage == null) {
-      return Get.find<SharedPreferences>();
-    }
-    return _storage!;
+    print('SharedPreference Initialized');
+    return _storage ??= Get.find<SharedPreferences>();
   }
 
   /// will clear all the data stored in preference

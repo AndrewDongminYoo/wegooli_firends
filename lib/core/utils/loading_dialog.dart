@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 // 📦 Package imports:
 import 'package:get/get.dart';
-import 'package:lottie/lottie.dart';
 
 // 🌎 Project imports:
 import '/lib.dart';
@@ -22,8 +21,12 @@ class LoadingDialog {
   /// 이 메서드는 Get 패키지를 사용하여 모달을 표시합니다.
   static void showProgressDialog({bool isCancellable = false}) {
     if (!isProgressVisible) {
-      Get.dialog(
-          Center(child: Lottie.asset(wegooliLogo, height: 250, width: 250)));
+      Get.dialog(const Center(
+          child: CircularProgressIndicator.adaptive(
+        valueColor: AlwaysStoppedAnimation<Color>(
+          Colors.white,
+        ),
+      )));
     }
     isProgressVisible = true;
   }

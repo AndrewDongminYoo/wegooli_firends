@@ -1,3 +1,450 @@
+# da50b40b8348572a3790a1f68e2ef8936a79c8dcda50b40
+Author: Dongmin Yu <ydm2790@gmail.com>
+Date:   2023-09-18T19:13:30+09:00
+MSG:    fix: ⚡️ 텍스트에디팅컨트롤러 리팩토링
+
+Modified  lib/gen/l10n/app_localizations.dart
+Modified  lib/gen/l10n/app_localizations_ko.dart
+Modified  lib/screens/forms/birthday_number_form_field.dart
+Modified  lib/screens/forms/card_exp_month_year_form_field.dart
+Modified  lib/screens/forms/card_pin_number_form_field.dart
+Modified  lib/screens/forms/credit_card_form_field.dart
+Modified  lib/screens/forms/detail_address_form_field.dart
+Modified  lib/screens/forms/invitation_code_form_field.dart
+Modified  lib/screens/forms/invite_code_form_field.dart
+Modified  lib/screens/forms/korean_name_form_field.dart
+Modified  lib/screens/forms/license_exp_date_form_field.dart
+Modified  lib/screens/forms/license_issued_date_form_field.dart
+Modified  lib/screens/forms/license_numbers_form_field.dart
+Modified  lib/screens/forms/nick_name_form_field.dart
+Modified  lib/screens/forms/password_form_field.dart
+Modified  lib/screens/forms/phone_number_form_field.dart
+Modified  lib/screens/forms/post_code_form_field.dart
+Modified  lib/screens/forms/primary_address_form_field.dart
+Modified  lib/screens/forms/sms_validation_form.dart
+Modified  lib/screens/forms/social_security_number_form_field.dart
+Modified  lib/screens/forms/user_email_form_field.dart
+Modified  lib/screens/invitation.dialog.dart
+Modified  lib/screens/login_page.dart
+Modified  lib/screens/register.credit_card.dart
+Modified  lib/screens/register.dart
+Modified  lib/screens/register.license.dart
+Modified  lib/screens/register.success.dart
+Modified  lib/screens/register.zip_code.dart
+
+# 0553299c4cedabf89f0a5d01738273cec535dd010553299
+Author: Dongmin Yu <ydm2790@gmail.com>
+Date:   2023-09-18T18:22:25+09:00
+MSG:    fix: ⚡️ 드롭다운 데이터 수정
+
+Modified  lib/controllers/account.license.dart
+Modified  lib/controllers/account.user.dart
+Modified  lib/screens/select/license_issued_year_dropdown.dart
+Modified  lib/screens/select/license_region_dropdown.dart
+Modified  lib/screens/select/license_type_dropdown.dart
+Modified  lib/screens/select/telecom_dropdown.dart
+
+# a3b64ae21e1789a041779dc7cef4aac279965f18a3b64ae
+Author: Dongmin Yu <ydm2790@gmail.com>
+Date:   2023-09-18T17:48:49+09:00
+MSG:    fix: ⚡️ 일부 파일 삭제 커밋에서 빠진 파일
+
+Modified  lib/gen/l10n/app_localizations.dart
+Modified  lib/screens/my_profile.card_list.dart
+
+# c6dcc66800e05079e11769b5e9b16b9038ac2a6fc6dcc66
+Author: Dongmin Yu <ydm2790@gmail.com>
+Date:   2023-09-18T17:46:16+09:00
+MSG:    fix: ⚡️ Main 라우터 / Auth 라우터 구분
+
+Modified  lib/main.dart
+Modified  lib/routes/gen_routes.dart
+
+# 308c321fe46189dfc4835602dcd46410be0cfa79308c321
+Author: Dongmin Yu <ydm2790@gmail.com>
+Date:   2023-09-18T17:35:41+09:00
+MSG:    fix: ⚡️ 일부 파일 삭제
+
+Modified  lib/lib.dart
+Deleted   lib/screens/buttons/add_credit_card_button.dart
+
+# 33ff96dc43962e5bdc4bef930a30843b574ab20733ff96d
+Author: sa <sa@wegooli.com>
+Date:   2023-09-18T17:28:36+09:00
+MSG:    🎨 Improve structure
+
+    일정 갯수만큼 표시안되는 문제 개선
+
+Modified  lib/screens/shared_calendar/calendar_body.dart
+Modified  lib/screens/shared_calendar/calendar_utilities.dart
+Modified  lib/screens/team_reservations.dart
+
+# 1b5fcb7083f11b1d87bc6d54930db2ca271da3611b5fcb7
+Author: Dongmin Yu <ydm2790@gmail.com>
+Date:   2023-09-18T17:04:51+09:00
+MSG:    fix: ⚡️ 인풋 폼/버튼 코드 수정
+
+Modified  lib/screens/accept_terms.dart
+Deleted   lib/screens/buttons/accept_terms_next_button.dart
+Deleted   lib/screens/buttons/add_schedule_confirm_button.dart
+Deleted   lib/screens/buttons/sign_up_accept_terms_next_button.dart
+Deleted   lib/screens/buttons/sign_up_license_next_button.dart
+Deleted   lib/screens/buttons/unsubscribe_confirm_button.dart
+Deleted   lib/screens/buttons/update_schedule_confirm_button.dart
+Deleted   lib/screens/buttons/validate_phone_complete_button.dart
+Modified  lib/screens/datetime_picker_bottom_sheet.dart
+Modified  lib/screens/forms/birthday_number_form_field.dart
+Modified  lib/screens/forms/card_pin_number_form_field.dart
+Modified  lib/screens/forms/invitation_code_copy_form_field.dart
+Modified  lib/screens/forms/post_code_form_field.dart
+Modified  lib/screens/forms/sms_validation_form.dart
+Modified  lib/screens/forms/social_security_number_form_field.dart
+Modified  lib/screens/forms/user_email_form_field.dart
+Modified  lib/screens/main_page.dart
+Modified  lib/screens/register.dart
+Modified  lib/screens/register.license.dart
+Modified  lib/screens/splash_loading.dart
+Modified  lib/screens/unsubscription.upcoming.dart
+Modified  lib/widgets/text_form_field.dart
+
+# b696ff77c875627e490a62ac27f96ccc5189c6a6b696ff7
+Author: sa <sa@wegooli.com>
+Date:   2023-09-18T16:45:26+09:00
+MSG:    🎨 Improve structure
+
+    일정 추가 시 포함되는 날짜 데이터 포맷 개선
+
+Modified  lib/services/reservations.service.dart
+
+# 1d0fb97482963e7ce921aa33905689cf282c269e1d0fb97
+Author: sa <sa@wegooli.com>
+Date:   2023-09-18T16:15:06+09:00
+MSG:    :pencil2: Fix typos.
+
+    초기 진입 페이지 변경 (home -> splash)
+
+Modified  lib/main.dart
+Modified  lib/screens/main_page.dart
+
+# c1a4d0657794a2ea6c5cdb8de6c106a6e6e03decc1a4d06
+Author: sa <sa@wegooli.com>
+Date:   2023-09-18T16:02:52+09:00
+MSG:    :pencil2: Fix typos.
+
+    회원가입 페이지로 이동하기전에 id,pwd상태값 초기화.
+
+Modified  lib/controllers/team.schedule.dart
+Modified  lib/screens/buttons/go_sign_up_button.dart
+Modified  lib/screens/login_page.dart
+
+# e4efda2a06b960d535d926402c4f3a2815b9beeae4efda2
+Author: Dongmin Yu <ydm2790@gmail.com>
+Date:   2023-09-18T14:56:42+09:00
+MSG:    chore: ✏️ non-critical
+
+Modified  analysis_options.yaml
+Modified  lib/controllers/team.schedule.dart
+Modified  lib/controllers/team.vehicle.dart
+Modified  lib/gen/l10n/app_localizations.dart
+Modified  lib/gen/l10n/app_localizations_ko.dart
+Modified  lib/screens/buttons/schedule_edit_button.dart
+Modified  lib/screens/datetime_picker_bottom_sheet.dart
+Modified  lib/screens/forms/credit_card_form_field.dart
+
+# 81a624e8c4c06280a3c46a42d9da050a3b32d87d81a624e
+Author: Dongmin Yu <ydm2790@gmail.com>
+Date:   2023-09-18T14:49:44+09:00
+MSG:    fix: ⚡️ Main 라우터 / Auth 라우터 구분
+
+Modified  lib/main.dart
+Modified  lib/routes/app_routes.dart
+Modified  lib/screens/forms/sms_validation_form.dart
+Modified  lib/screens/main_page.dart
+
+# 9b6e4f421ab15a75fc851cb58b120b7c0c5d7d6b9b6e4f4
+Author: sa <sa@wegooli.com>
+Date:   2023-09-18T14:49:36+09:00
+MSG:    :pencil2: Fix typos.
+
+    데이터 픽커에서 시간 안맞는 부분 수정
+
+Modified  lib/screens/datetime_picker_bottom_sheet.dart
+
+# 2bfe3096df95267e144d7a7237cf6b45ac6650d42bfe309
+Author: Dongmin Yu <ydm2790@gmail.com>
+Date:   2023-09-18T14:41:12+09:00
+MSG:    fix: ⚡️ SMS 인증 로직 업데이트
+
+Modified  lib/screens/forms/sms_validation_form.dart
+
+# b8f108eaae3fa2efd43c69358c9c2e9fbae9fe05b8f108e
+Author: sa <sa@wegooli.com>
+Date:   2023-09-18T14:25:49+09:00
+MSG:    :mute: Remove logs.
+
+    불필요한 주석 제거.
+
+Modified  lib/controllers/team.schedule.dart
+
+# 461d4cec6526798e9e3ce8d94ce65dd0afdf205e461d4ce
+Author: sa <sa@wegooli.com>
+Date:   2023-09-18T14:21:06+09:00
+MSG:    🎨 Improve structure.
+
+    일정 수정 기능 개선.
+
+Modified  lib/controllers/team.schedule.dart
+Modified  lib/gen/l10n/app_localizations.dart
+Modified  lib/gen/l10n/app_localizations_ko.dart
+Modified  lib/routes/app_routes.dart
+Modified  lib/routes/navigators.dart
+Modified  lib/screens/buttons/schedule_edit_button.dart
+Added     lib/screens/buttons/update_schedule_confirm_button.dart
+Modified  lib/screens/datetime_picker_bottom_sheet.dart
+Modified  lib/screens/gateway_screen.dart
+Modified  lib/screens/main_page.dart
+Modified  lib/screens/shared_calendar/calendar_body.dart
+Modified  lib/screens/team_reservations.item.dart
+Modified  lib/services/reservations.service.dart
+
+# 09c5d3d6bd7220b6cdb664c836ee5869102becc009c5d3d
+Author: Dongmin Yu <ydm2790@gmail.com>
+Date:   2023-09-18T13:02:41+09:00
+MSG:    fix: ⚡️ 전화번호 입력 자동완성 타입 변경
+
+Modified  lib/screens/forms/phone_number_form_field.dart
+Modified  lib/screens/forms/sms_validation_form.dart
+Modified  lib/widgets/text_form_field.dart
+
+# 7954bb4bad872c5515d0ca42959a7589f378dc367954bb4
+Author: Dongmin Yu <ydm2790@gmail.com>
+Date:   2023-09-18T12:46:17+09:00
+MSG:    fix: ⚡️ 키보드 Dismissible 기능 추가
+
+Modified  lib/screens/forms/sms_validation_form.dart
+
+# 6657f2fd8d84c2bc56d23401de0a8c690c5813436657f2f
+Author: Dongmin Yu <ydm2790@gmail.com>
+Date:   2023-09-18T12:35:52+09:00
+MSG:    fix: ⚡️ UIBackgroundModes iOS 추가
+
+    didReceiveRemoteNotification:fetchCompletionHandler
+
+Modified  ios/Runner/Info.plist
+
+# 926421951e0e9c8ff01cbf31ad18d183420746ea9264219
+Author: Dongmin Yu <ydm2790@gmail.com>
+Date:   2023-09-18T12:02:53+09:00
+MSG:    fix: ⚡️ 전화번호 인증 WIP
+
+Modified  lib/screens/forms/sms_validation_form.dart
+
+# a56e8810d3387a6d78d2c09f2515f402959dbf6aa56e881
+Author: Dongmin Yu <ydm2790@gmail.com>
+Date:   2023-09-18T11:54:51+09:00
+MSG:    fix: ⚡️ 주민등록번호 입력폼 오류 수정
+
+Modified  lib/screens/forms/birthday_number_form_field.dart
+Modified  lib/screens/forms/card_exp_month_year_form_field.dart
+Modified  lib/screens/forms/card_pin_number_form_field.dart
+Modified  lib/screens/forms/credit_card_form_field.dart
+Modified  lib/screens/forms/korean_name_form_field.dart
+Modified  lib/screens/forms/phone_number_form_field.dart
+Modified  lib/screens/forms/post_code_form_field.dart
+Modified  lib/screens/forms/social_security_number_form_field.dart
+
+# f75d9c57fcdecb443deae1ed254169945409373ff75d9c5
+Author: Dongmin Yu <ydm2790@gmail.com>
+Date:   2023-09-18T11:50:13+09:00
+MSG:    feat: ✨ iOS 푸시 기능 Entitlements 추가
+
+Modified  ios/Runner.xcodeproj/project.pbxproj
+Added     ios/Runner/Runner.entitlements
+
+# 4a6e49f1b2f1547cacab51b72ce22699de6370054a6e49f
+Author: Dongmin Yu <ydm2790@gmail.com>
+Date:   2023-09-18T11:34:08+09:00
+MSG:    fix: ⚡️ iOS 인증 URL 추가
+
+Modified  ios/Runner/Info.plist
+
+# 88784f56282551562e91d6a7ad9dbaed45e3d3fd88784f5
+Author: Dongmin Yu <ydm2790@gmail.com>
+Date:   2023-09-18T11:09:53+09:00
+MSG:    chore: ✏️ non-critical
+
+Added     gitmoji.md
+Modified  ios/Podfile.lock
+Modified  package.json
+
+# 74cc15a0cba76af34e6fcfba7ef218833ff9e1c274cc15a
+Author: Dongmin Yu <ydm2790@gmail.com>
+Date:   2023-09-17T18:30:52+09:00
+MSG:    feat: 👽️ 연료타입 사전정의
+
+Modified  analysis_options.yaml
+Modified  assets/cars/ev6_s_glb.png
+Modified  assets/cars/ev9_s_ism.png
+Modified  assets/cars/k3-gt_s_cr5.png
+Modified  assets/cars/k3_s_m4b.png
+Modified  assets/cars/k5_s_agt.png
+Modified  assets/cars/k8_s_klg.png
+Modified  assets/cars/k9_s_d9b.png
+Modified  assets/cars/niro-ev_s_swp.png
+Modified  assets/cars/niro-plus_s_m7g.png
+Modified  assets/cars/ray-ev_s_eu3.png
+Modified  assets/cars/ray_s_m9y.png
+Modified  lib/controllers/team.vehicle.dart
+Modified  lib/data/firebase/auth_exceptions.dart
+
+# 28baa201a38148551d7e82c9bf3ed0b49f8e8bfa28baa20
+Author: Dongmin Yu <ydm2790@gmail.com>
+Date:   2023-09-16T21:30:18+09:00
+MSG:    feat: 🛂 update authorization exceptions
+
+Modified  lib/controllers/account.user.dart
+Added     lib/data/firebase/auth_exceptions.dart
+Modified  lib/lib.dart
+
+# 4efa5b6478e374eaa23a3794bda0b912983238d84efa5b6
+Author: Dongmin Yu <ydm2790@gmail.com>
+Date:   2023-09-16T20:20:45+09:00
+MSG:    fix: 🚑️ 로그인 여부에 따른 이니셜 라우팅 실수 수정
+
+Modified  analysis_options.yaml
+Modified  lib/main.dart
+Modified  lib/routes/gen_routes.dart
+
+# d8615fce4b9338521d89dcf7b6a0d85b6de7f548d8615fc
+Author: Dongmin Yu <ydm2790@gmail.com>
+Date:   2023-09-16T19:40:25+09:00
+MSG:    fix: ⚡️ 미팅에서 지적된 부분들 수정 (obscureChar, Checkbox)
+
+Modified  lib/screens/forms/social_security_number_form_field.dart
+Modified  lib/widgets/buttons/checkbox_button.dart
+
+# 6a5596bb3021dd030f49557f9483b84af83667e36a5596b
+Author: Dongmin Yu <ydm2790@gmail.com>
+Date:   2023-09-16T18:41:58+09:00
+MSG:    style: 🎨 사용하지 않는 에셋 이미지 제거
+
+Added     assets/cars/ev6-gt_s_klm.png
+Added     assets/cars/ev6_s_glb.png
+Added     assets/cars/ev9_s_ism.png
+Added     assets/cars/k3-gt_s_cr5.png
+Added     assets/cars/k3_s_m4b.png
+Added     assets/cars/k5_s_agt.png
+Added     assets/cars/k8_s_klg.png
+Added     assets/cars/k9_s_d9b.png
+Added     assets/cars/niro-ev_s_swp.png
+Added     assets/cars/niro-plus_s_m7g.png
+Added     assets/cars/ray-ev_s_eu3.png
+Added     assets/cars/ray_s_m9y.png
+Deleted   assets/images/img_avatar_1.png
+Deleted   assets/images/img_avatar_2.png
+Deleted   assets/images/img_avatar_3.png
+Deleted   assets/images/img_avatar_4.png
+Deleted   assets/images/img_avatar_5.png
+Deleted   assets/images/img_car_all_new_k3.png
+Deleted   assets/images/img_car_all_new_mo.png
+Deleted   assets/images/img_car_mor_urban.png
+Deleted   assets/images/img_car_new_ray.png
+Deleted   assets/images/img_car_spark.png
+Deleted   assets/images/img_crying.png
+Deleted   assets/images/img_logo_gllo.png
+Deleted   gitmoji
+Modified  lib/gen/assets.gen.dart
+Modified  lib/gen/l10n/app_localizations.dart
+Modified  lib/screens/car_status.dart
+Modified  lib/screens/car_status.detail.dart
+Modified  lib/screens/my_profile.section.dart
+Modified  lib/screens/shared_calendar/members_list.dart
+Modified  lib/screens/unsubscription.upcoming.dart
+Modified  pubspec.yaml
+
+# 12751fca98bcb34769e904e9aa267daf656ff83e12751fc
+Author: Dongmin Yu <ydm2790@gmail.com>
+Date:   2023-09-16T13:09:43+09:00
+MSG:    docs: 🔖 Updated Change Logs
+
+Modified  CHANGELOG
+Added     commitlog.sh
+Added     gitmoji
+Modified  lib/data/model/account.dart
+Modified  lib/data/model/account_agreement_model.dart
+Modified  lib/data/model/account_agreement_request.dart
+Modified  lib/data/model/billing_key_request_model.dart
+Modified  lib/data/model/cancel_request_model.dart
+Modified  lib/data/model/car_control_history_model.dart
+Modified  lib/data/model/car_history_dto.dart
+Modified  lib/data/model/car_management_model.dart
+Modified  lib/data/model/car_model.dart
+Modified  lib/data/model/car_request.dart
+Modified  lib/data/model/device_control_result_dto.dart
+Modified  lib/data/model/device_option.dart
+Modified  lib/data/model/granted_authority.dart
+Modified  lib/data/model/insert_car_management_request.dart
+Modified  lib/data/model/insert_license_request.dart
+Modified  lib/data/model/insert_notice_request.dart
+Modified  lib/data/model/insert_push_request.dart
+Modified  lib/data/model/insert_sms_request.dart
+Modified  lib/data/model/leader_set_request.dart
+Modified  lib/data/model/license_model.dart
+Modified  lib/data/model/license_request.dart
+Modified  lib/data/model/member.dart
+Modified  lib/data/model/notice.dart
+Modified  lib/data/model/operator_car_model.dart
+Modified  lib/data/model/operator_car_request.dart
+Modified  lib/data/model/operator_team_account_detail.dart
+Modified  lib/data/model/operator_team_detail.dart
+Modified  lib/data/model/operator_team_model.dart
+Modified  lib/data/model/operator_team_request.dart
+Modified  lib/data/model/operator_user_model.dart
+Modified  lib/data/model/operator_user_request.dart
+Modified  lib/data/model/pay_billing_request_model.dart
+Modified  lib/data/model/payment_card_model.dart
+Modified  lib/data/model/payment_card_request.dart
+Modified  lib/data/model/payment_model.dart
+Modified  lib/data/model/push.dart
+Modified  lib/data/model/qn_a.dart
+Modified  lib/data/model/question_request.dart
+Modified  lib/data/model/schedule_model.dart
+Modified  lib/data/model/schedule_request.dart
+Modified  lib/data/model/select_car_management_request.dart
+Modified  lib/data/model/select_notice_request.dart
+Modified  lib/data/model/select_push_request.dart
+Modified  lib/data/model/select_qn_a_request.dart
+Modified  lib/data/model/select_sms_request.dart
+Modified  lib/data/model/select_user_dto.dart
+Modified  lib/data/model/select_user_request.dart
+Modified  lib/data/model/service_car_detail_request.dart
+Modified  lib/data/model/service_detail.dart
+Modified  lib/data/model/share_service_model.dart
+Modified  lib/data/model/share_service_request.dart
+Modified  lib/data/model/sms.dart
+Modified  lib/data/model/subscription_model.dart
+Modified  lib/data/model/team_account_connection_model.dart
+Modified  lib/data/model/team_account_connection_request.dart
+Modified  lib/data/model/team_account_connection_response.dart
+Modified  lib/data/model/team_account_model.dart
+Modified  lib/data/model/team_car_connection.dart
+Modified  lib/data/model/team_model.dart
+Modified  lib/data/model/team_request.dart
+Modified  lib/data/model/terminal_model.dart
+Modified  lib/data/model/terminal_request.dart
+Modified  lib/data/model/terminal_update_request.dart
+Modified  lib/data/model/test_model.dart
+Modified  lib/data/model/update_car_management_request.dart
+Modified  lib/data/model/update_license_request.dart
+Modified  lib/data/model/update_notice_request.dart
+Modified  lib/data/model/update_push_request.dart
+Modified  lib/data/model/update_sms_request.dart
+Modified  lib/data/model/update_user_request.dart
+Modified  lib/data/model/user_details_dto.dart
+Modified  lib/data/model/user_dto.dart
+Modified  lib/data/model/user_sub_info.dart
+Modified  lib/data/model/valid_license_request.dart
+
 # 8a2975c6e8aa3d6b1fd5e7ff39b4ca9809b8e0818a2975c
 Author: Dongmin Yu <ydm2790@gmail.com>
 Date:   2023-09-16T12:41:29+09:00

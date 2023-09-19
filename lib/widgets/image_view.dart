@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable, deprecated_member_use
+
 // 🎯 Dart imports:
 import 'dart:io';
 
@@ -31,28 +33,28 @@ class CustomImageView extends StatelessWidget {
     this.border,
     this.placeHolder = 'assets/images/image_not_found.png',
   });
-  final double? height;
-  final double? width;
-
-  ///[imagePath] is required parameter for showing png,jpg,etc image
-  final String? imagePath;
-
-  ///[svgPath] is required parameter for showing svg image
-  final String? svgPath;
+  double? height;
+  double? width;
 
   ///[url] is required parameter for fetching network image
-  final String? url;
+  String? url;
+
+  ///[imagePath] is required parameter for showing png,jpg,etc image
+  String? imagePath;
+
+  ///[svgPath] is required parameter for showing svg image
+  String? svgPath;
 
   ///[file] is required parameter for fetching image file
-  final File? file;
-  final Color? color;
-  final BoxFit? fit;
+  File? file;
+  Color? color;
+  BoxFit? fit;
   final String placeHolder;
-  final Alignment? alignment;
-  final EdgeInsetsGeometry? margin;
-  final VoidCallback? onTap;
-  final BorderRadius? radius;
-  final BoxBorder? border;
+  Alignment? alignment;
+  EdgeInsetsGeometry? margin;
+  VoidCallback? onTap;
+  BorderRadius? radius;
+  BoxBorder? border;
 
   @override
   Widget build(BuildContext context) {
@@ -70,7 +72,9 @@ class CustomImageView extends StatelessWidget {
   /// build the image with border radius
   Widget _buildCircleImage() {
     if (radius != null) {
-      return ClipRRect(borderRadius: radius!, child: _buildImageWithBorder());
+      return ClipRRect(
+          borderRadius: radius ?? BorderRadius.zero,
+          child: _buildImageWithBorder());
     } else {
       return _buildImageWithBorder();
     }
@@ -101,6 +105,7 @@ class CustomImageView extends StatelessWidget {
           height: height,
           width: width,
           fit: fit ?? BoxFit.contain,
+          color: color,
         ),
       );
     } else if (imagePath != null && imagePath!.isNotEmpty) {

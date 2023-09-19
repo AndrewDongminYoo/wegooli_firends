@@ -5,9 +5,8 @@ import 'package:flutter/material.dart';
 import '/lib.dart';
 
 class UnsubscriptionConfirmDialog extends SimpleDialog {
-  const UnsubscriptionConfirmDialog({super.key, required this.controller});
+  const UnsubscriptionConfirmDialog({super.key});
 
-  final VehicleController controller;
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
@@ -54,10 +53,10 @@ class UnsubscriptionConfirmDialog extends SimpleDialog {
                       letterSpacing: 0.03.h,
                     ),
                   )),
-              Row(
+              const Row(
                 children: [
-                  const CancelButton(plural: true),
-                  UnsubscribeButton(controller: controller, plural: true),
+                  CancelButton(plural: true),
+                  UnsubscribeButton(plural: true),
                 ],
               )
             ]),

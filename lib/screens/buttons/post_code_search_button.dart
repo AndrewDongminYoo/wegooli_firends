@@ -8,15 +8,11 @@ import 'package:kpostal/kpostal.dart';
 import '/lib.dart';
 
 class PostCodeSearchButton extends StatelessWidget {
-  const PostCodeSearchButton({
-    super.key,
-    required this.controller,
-  });
-
-  final UserController controller;
+  const PostCodeSearchButton({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = UserController.to;
     return CustomElevatedButton(
         text: l10ns.addressSearch,
         height: 48.v,

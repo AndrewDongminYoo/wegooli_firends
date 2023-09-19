@@ -23,7 +23,7 @@ class RegisterLicense extends GetWidget<LicenseController> {
             child: Column(children: [
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                 CustomInputLabel(labelText: l10ns.licenseType),
-                LicenseTypeDropdown(controller: controller),
+                const LicenseTypeDropdown(),
               ]),
               Padding(
                   padding: getPadding(top: 26),
@@ -38,13 +38,11 @@ class RegisterLicense extends GetWidget<LicenseController> {
                                 children: [
                                   CustomInputLabel(
                                       labelText: l10ns.licenseType),
-                                  LicenseRegionDropdown(controller: controller),
+                                  const LicenseRegionDropdown(),
                                 ]),
                           ),
                         ),
-                        Expanded(
-                            child: LicenseIssuedYearDropdown(
-                                controller: controller)),
+                        const Expanded(child: LicenseIssuedYearDropdown()),
                       ])),
               LicenseNumbersFormField(controller: controller.licenseNumbers),
               Padding(

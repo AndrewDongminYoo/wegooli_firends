@@ -5,15 +5,11 @@ import 'package:flutter/material.dart';
 import '/lib.dart';
 
 class LogOutButton extends StatelessWidget {
-  const LogOutButton({
-    super.key,
-    required this.controller,
-  });
-
-  final UserController controller;
+  const LogOutButton({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = UserController.to;
     return CustomElevatedButton(
         text: l10ns.logOut,
         margin: getMargin(top: 30, bottom: 20),

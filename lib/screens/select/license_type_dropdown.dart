@@ -5,12 +5,7 @@ import 'package:flutter/material.dart';
 import '/lib.dart';
 
 class LicenseTypeDropdown extends StatelessWidget {
-  const LicenseTypeDropdown({
-    super.key,
-    required this.controller,
-  });
-
-  final LicenseController controller;
+  const LicenseTypeDropdown({super.key});
 
   @override
   Widget build(BuildContext context) {

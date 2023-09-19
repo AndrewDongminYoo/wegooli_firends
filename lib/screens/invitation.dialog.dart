@@ -65,9 +65,9 @@ class _SendingInvitationDialogState extends State<SendingInvitationDialog> {
                   controller: userController.invitation,
                   readOnly: widget.copyMode),
               if (widget.copyMode)
-                CopyInvitationButton(controller: userController)
+                CopyInvitationButton()
               else
-                ConfirmInvitationButton(controller: controller),
+                const ConfirmInvitationButton(),
             ]),
       ),
     );

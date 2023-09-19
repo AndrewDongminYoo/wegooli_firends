@@ -54,7 +54,7 @@ class _LoginPageState extends State<LoginPage> {
                       controller: controller.emailAddress, authMode: authMode),
                   PasswordFormField(
                       controller: controller.password, authMode: authMode),
-                  AuthSignInButton(controller: controller),
+                  const AuthSignInButton(),
                   Padding(
                       padding: getPadding(top: 57),
                       child: Text(
@@ -65,7 +65,7 @@ class _LoginPageState extends State<LoginPage> {
                           letterSpacing: 0.03.h,
                         ),
                       )),
-                  GoSignUpButton(controller: controller),
+                  const GoSignUpButton(),
                 ],
               ),
             )),

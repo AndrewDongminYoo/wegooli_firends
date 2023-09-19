@@ -52,12 +52,11 @@ class UnsubscriptionConfirm extends GetWidget<VehicleController> {
                   )),
               Padding(
                   padding: getPadding(top: 87, bottom: 5),
-                  child: Row(
+                  child: const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        const CancelButton(plural: false),
-                        UnsubscribeButton(
-                            controller: controller, plural: false),
+                        CancelButton(plural: false),
+                        UnsubscribeButton(plural: false),
                       ])),
             ],
           )),

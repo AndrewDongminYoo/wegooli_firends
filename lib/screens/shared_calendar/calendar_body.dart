@@ -54,7 +54,7 @@ class CalendarBody extends GetView<ScheduleController> {
       controller.rangeSelectionMode = RangeSelectionMode.toggledOff;
       // goReservationsCheck(selectedDay);
     }
-    goReservationsCheck(selectedDay);
+    openReservation(selectedDay);
   }
 
   void _onRangeSelected(DateTime? start, DateTime? end, DateTime focusedDay) {

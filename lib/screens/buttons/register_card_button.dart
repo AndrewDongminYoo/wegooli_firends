@@ -5,15 +5,11 @@ import 'package:flutter/material.dart';
 import '/lib.dart';
 
 class RegisterCardButton extends StatelessWidget {
-  const RegisterCardButton({
-    super.key,
-    required this.controller,
-  });
-
-  final PaymentCardController controller;
+  const RegisterCardButton({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = PaymentCardController.to;
     return CustomElevatedButton(
         text: l10ns.register,
         buttonStyle: CustomButtonStyles.fillPrimaryC26,

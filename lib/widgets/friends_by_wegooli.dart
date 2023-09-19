@@ -5,9 +5,7 @@ import 'package:flutter/material.dart';
 import '/lib.dart';
 
 class FriendsByWegooli extends StatelessWidget {
-  const FriendsByWegooli({
-    super.key,
-  });
+  const FriendsByWegooli({super.key});
 
   @override
   Widget build(BuildContext context) {

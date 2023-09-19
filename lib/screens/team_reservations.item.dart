@@ -125,7 +125,6 @@ class _TeamReservationsItemState extends State<TeamReservationsItem> {
                             schedule: widget.schedule,
                           ),
                           ScheduleDeleteButton(
-                            controller: widget.controller,
                             schedule: widget.schedule,
                           ),
                         ]),

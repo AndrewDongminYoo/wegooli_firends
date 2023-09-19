@@ -33,7 +33,7 @@ class RegisterZipCode extends GetWidget<UserController> {
                         ]),
                   ),
                 ),
-                Expanded(child: PostCodeSearchButton(controller: controller)),
+                const Expanded(child: PostCodeSearchButton()),
               ]),
               PrimaryAddressFormField(controller: controller.primaryAddress),
               DetailAddressFormField(controller: controller.detailAddress),
@@ -76,7 +76,7 @@ class RegisterZipCode extends GetWidget<UserController> {
                       ])),
             ])),
       ),
-      bottomNavigationBar: SignUpFilledInButton(controller: controller),
+      bottomNavigationBar: const SignUpFilledInButton(),
     );
   }
 }

@@ -5,9 +5,7 @@ import 'package:flutter/material.dart';
 import '/lib.dart';
 
 class SignUpFinishButton extends StatelessWidget {
-  const SignUpFinishButton({
-    super.key,
-  });
+  const SignUpFinishButton({super.key});
 
   @override
   Widget build(BuildContext context) {

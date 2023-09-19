@@ -30,9 +30,8 @@ Widget? rangeStartBuilder(
   return Container(
       margin: const EdgeInsets.symmetric(
           horizontal: 1), // Example: Display custom text
-      decoration: const BoxDecoration(
-          color: Color(0x7EFFFFFF),
-          shape: BoxShape.circle),
+      decoration:
+          const BoxDecoration(color: Color(0x7EFFFFFF), shape: BoxShape.circle),
       child: Text(
         day.day.toString(),
         style: const TextStyle(color: Color(0xFF2196F3)),
@@ -93,9 +92,8 @@ Widget? rangeHighlightBuilder(
   return Container(
       margin: const EdgeInsets.symmetric(
           horizontal: 1), // Example: Display custom text
-      decoration: const BoxDecoration(
-          color: Color(0x4BFFFFFF),
-          shape: BoxShape.circle),
+      decoration:
+          const BoxDecoration(color: Color(0x4BFFFFFF), shape: BoxShape.circle),
       child: Text(
         day.day.toString(),
         style: const TextStyle(color: Color(0xFF2196F3)),

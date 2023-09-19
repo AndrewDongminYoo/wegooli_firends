@@ -5,15 +5,11 @@ import 'package:flutter/material.dart';
 import '/lib.dart';
 
 class SignUpFilledInButton extends StatelessWidget {
-  const SignUpFilledInButton({
-    super.key,
-    required this.controller,
-  });
-
-  final UserController controller;
+  const SignUpFilledInButton({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = UserController.to;
     return Container(
       margin: getMargin(left: 16, right: 16, bottom: 29),
       child: CustomElevatedButton(

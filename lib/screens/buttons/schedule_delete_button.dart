@@ -7,15 +7,14 @@ import '/lib.dart';
 class ScheduleDeleteButton extends StatelessWidget {
   const ScheduleDeleteButton({
     super.key,
-    required this.controller,
     required this.schedule,
   });
 
-  final UserController controller;
   final Schedule schedule;
 
   @override
   Widget build(BuildContext context) {
+    final controller = UserController.to;
     return CustomElevatedButton(
       width: 114.h,
       height: 28.v,

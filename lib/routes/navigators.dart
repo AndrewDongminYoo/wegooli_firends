@@ -62,18 +62,21 @@ Future<dynamic>? goUnsubscribeInfo() =>
     Get.toNamed(AppRoutes.upcomingUnsubscription);
 
 // [BottomSheet] 예약 날짜 선택기
-Future<dynamic>? goBookDatetimePicker() =>
+Future<dynamic>? openDatetimePicker() =>
     Get.bottomSheet(DatetimePickerBottomSheet(),
         ignoreSafeArea: false, isScrollControlled: true);
 
 // [PopupDialog] 예약 확인 페이지
-Future<dynamic>? goReservationsCheck(DateTime selectedDay) =>
+Future<dynamic>? openReservation(DateTime selectedDay) =>
     Get.dialog(ReservationsCheckingPageDialog(
       selectedDay: selectedDay,
     ));
 // [PopupDialog] 팀 초대하기
-Future<dynamic>? goSendingInvitation({bool? copyMode}) =>
+Future<dynamic>? openInviteDialog({bool? copyMode}) =>
     Get.dialog(SendingInvitationDialog(copyMode: copyMode ?? false));
+
+Future<dynamic>? confirmUnsubscription() =>
+    Get.dialog(const UnsubscriptionConfirmDialog());
 
 // [Page] 소속 된 팀이 없을 경우 보여줄 페이지
 Future<dynamic>? goTeamInvitation() => Get.toNamed(AppRoutes.teamInvitation);

@@ -5,9 +5,7 @@ import 'package:flutter/material.dart';
 import '/lib.dart';
 
 class InsertInvitationCodeButton extends StatelessWidget {
-  const InsertInvitationCodeButton({
-    super.key,
-  });
+  const InsertInvitationCodeButton({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,9 +15,7 @@ class InsertInvitationCodeButton extends StatelessWidget {
       margin: getMargin(top: 30),
       buttonStyle: CustomButtonStyles.fillPrimaryC26,
       buttonTextStyle: CustomTextStyles.titleMedium18,
-      onTap: () async {
-        await goSendingInvitation();
-      },
+      onTap: openInviteDialog,
     );
   }
 }

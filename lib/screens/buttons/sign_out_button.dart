@@ -8,15 +8,11 @@ import 'package:get/get.dart';
 import '/lib.dart';
 
 class SignOutButton extends StatelessWidget {
-  const SignOutButton({
-    super.key,
-    required this.controller,
-  });
-
-  final UserController controller;
+  const SignOutButton({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = UserController.to;
     return TextButton(
       onPressed: () {
         Get.dialog(ConfirmDialog(

@@ -5,15 +5,11 @@ import 'package:flutter/material.dart';
 import '/lib.dart';
 
 class AuthSignInButton extends StatelessWidget {
-  const AuthSignInButton({
-    super.key,
-    required this.controller,
-  });
-
-  final UserController controller;
+  const AuthSignInButton({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = UserController.to;
     return CustomElevatedButton(
         text: l10ns.signIn,
         margin: getMargin(top: 30),

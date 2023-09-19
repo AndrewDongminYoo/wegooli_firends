@@ -26,11 +26,11 @@ class MyProfileDetail extends GetWidget<UserController> {
                 Expanded(
                     child: Padding(
                   padding: getPadding(left: 16, right: 16),
-                  child: Column(
+                  child: const Column(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        LogOutButton(controller: controller),
-                        SignOutButton(controller: controller),
+                        LogOutButton(),
+                        SignOutButton(),
                       ]),
                 )),
               ],

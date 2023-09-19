@@ -30,9 +30,7 @@ class MyProfilePage extends GetWidget<UserController> {
                     ListItem(
                         svgPath: Assets.svg.imgEdit.path,
                         text: l10ns.personalInfo,
-                        onTap: () {
-                          goProfileInfoPage();
-                        }),
+                        onTap: goProfileInfoPage),
                     ListItem(
                         svgPath: Assets.svg.imgInformation.path,
                         text: l10ns.subscriptionInformation,
@@ -48,9 +46,7 @@ class MyProfilePage extends GetWidget<UserController> {
                     ListItem(
                         svgPath: Assets.svg.imgCreditCard.path,
                         text: l10ns.cardRegistration,
-                        onTap: () {
-                          goRegisteredCardList();
-                        }),
+                        onTap: goRegisteredCardList),
                   ]),
                 ),
               ],

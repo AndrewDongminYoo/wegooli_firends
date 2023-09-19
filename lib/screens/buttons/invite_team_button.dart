@@ -23,9 +23,7 @@ class InviteTeamButton extends StatelessWidget {
               svgPath: Assets.svg.imgGrid.path,
               color: Colors.white,
             ),
-            onTap: () async {
-              await goSendingInvitation(copyMode: true);
-            },
+            onTap: () => openInviteDialog(copyMode: true),
           ),
           Text(
             l10ns.invite,

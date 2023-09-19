@@ -17,6 +17,6 @@ class AddScheduleButton extends StatelessWidget {
                 borderRadius: BorderRadius.circular(100)))),
         buttonTextStyle: CustomTextStyles.titleMedium18,
         alignment: Alignment.center,
-        onTap: goBookDatetimePicker);
+        onTap: openDatetimePicker);
   }
 }

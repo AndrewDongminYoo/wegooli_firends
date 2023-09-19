@@ -5,15 +5,11 @@ import 'package:flutter/material.dart';
 import '/lib.dart';
 
 class TelecomDropdown extends StatelessWidget {
-  const TelecomDropdown({
-    super.key,
-    required this.controller,
-  });
-
-  final UserController controller;
+  const TelecomDropdown({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = UserController.to;
     final telecoms = [
       SelectionPopupModel(id: 01, title: 'SKT'),
       SelectionPopupModel(id: 02, title: 'KT'),

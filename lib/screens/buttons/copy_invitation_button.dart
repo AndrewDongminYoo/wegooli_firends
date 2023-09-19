@@ -9,14 +9,10 @@ import 'package:get/get.dart';
 import '/lib.dart';
 
 class CopyInvitationButton extends StatelessWidget {
-  CopyInvitationButton({
-    super.key,
-    required this.controller,
-  });
-  final UserController controller;
-
+  CopyInvitationButton({super.key});
   @override
   Widget build(BuildContext context) {
+    final controller = UserController.to;
     return CustomElevatedButton(
         onTap: () {
           Clipboard.setData(ClipboardData(text: controller.invitation.text));

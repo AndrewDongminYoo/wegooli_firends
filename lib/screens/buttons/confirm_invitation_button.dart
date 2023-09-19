@@ -8,16 +8,11 @@ import 'package:get/get.dart';
 import '/lib.dart';
 
 class ConfirmInvitationButton extends StatelessWidget {
-  ConfirmInvitationButton({
-    super.key,
-    required this.controller,
-  });
-
-  final VehicleController controller;
+  const ConfirmInvitationButton({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // final _userController = UserController.to;
+    final controller = VehicleController.to;
     return CustomElevatedButton(
         onTap: () async {
           print('ConfirmInvitationButton');

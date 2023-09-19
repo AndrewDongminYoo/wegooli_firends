@@ -5,15 +5,11 @@ import 'package:flutter/material.dart';
 import '/lib.dart';
 
 class GoSignUpButton extends StatelessWidget {
-  const GoSignUpButton({
-    super.key,
-    required this.controller,
-  });
-
-  final UserController controller;
+  const GoSignUpButton({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = UserController.to;
     return CustomElevatedButton(
       text: l10ns.signUp,
       width: double.infinity,

@@ -9,18 +9,13 @@ class GoSignUpButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = UserController.to;
     return CustomElevatedButton(
       text: l10ns.signUp,
       width: double.infinity,
       margin: getMargin(top: 11, bottom: 5),
       buttonStyle: CustomButtonStyles.fillPrimaryC26,
       buttonTextStyle: CustomTextStyles.titleMedium18,
-      onTap: () async {
-        controller.username.clear();
-        controller.password.clear();
-        await goAcceptTerms();
-      },
+      onTap: goAcceptTerms,
     );
   }
 }

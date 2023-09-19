@@ -143,8 +143,6 @@ class ScheduleController extends GetxController {
     // }
     // eventSource.addAll(localEventSource);
     eventSource.refresh();
-    // TODO 주의 필요.
-    await Get.forceAppUpdate();
     items(initItem());
   }
 
@@ -161,8 +159,6 @@ class ScheduleController extends GetxController {
     eventSource.clear();
     makeEventSource();
     eventSource.refresh();
-    // TODO 주의 필요.
-    await Get.forceAppUpdate();
     items(initItem());
   }
 }

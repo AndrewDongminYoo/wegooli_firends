@@ -9,7 +9,6 @@ import '/lib.dart';
 
 class LoadingDialog {
   static bool isProgressVisible = false;
-  static String wegooliLogo = Assets.lotties.customLoader.path;
 
   /// 로티 애니메이션과 함께 로딩 모달을 표시합니다.
   ///

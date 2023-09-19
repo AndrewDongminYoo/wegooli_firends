@@ -96,7 +96,6 @@ class MyApp extends StatelessWidget {
             isError ? console.log(text) : print('[DEBUG] $text'),
         navigatorObservers: [MyApp.routeObserver],
         initialRoute: AppRoutes.splashScreen,
-        onGenerateRoute: onGenerateRoute,
         getPages: AppRoutes.pages);
   }
 }

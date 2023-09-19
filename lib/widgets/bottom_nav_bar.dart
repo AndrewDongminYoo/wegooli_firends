@@ -83,32 +83,22 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
             );
           }),
           onTap: (int index) {
-            String destination;
-            switch (index) {
-              case 1:
-                destination = userController.teams.isNotEmpty
-                    ? AppRoutes.chatWithTeam
-                    : AppRoutes.teamInvitation;
-              case 2:
-                destination = userController.teams.isNotEmpty
-                    ? AppRoutes.carSmartKey
-                    : AppRoutes.teamInvitation;
-              case 3:
-                destination = AppRoutes.myProfile;
-              default:
-                destination = userController.teams.isNotEmpty
-                    ? AppRoutes.sharedSchedule
-                    : AppRoutes.teamInvitation;
-            }
+            final page = switch (index) {
+              1 => AppRoutes.chatWithTeam,
+              2 => AppRoutes.carSmartKey,
+              3 => AppRoutes.myProfile,
+              _ => AppRoutes.sharedSchedule
+            };
             setState(() {
               selectedIndex.value = index;
               selectedIndex.refresh();
             });
             // print('widget.id ${widget.id}');
-            Get.toNamed(destination,
-                id: widget.id,
-                arguments: bottomMenuList[index],
-                preventDuplicates: false);
+            Get.toNamed(
+              page,
+              id: widget.id,
+              arguments: bottomMenuList[index],
+            );
           },
         ),
       ),

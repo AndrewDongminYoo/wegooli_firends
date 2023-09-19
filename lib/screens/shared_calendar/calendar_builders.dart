@@ -31,7 +31,6 @@ Widget? rangeStartBuilder(
       margin: const EdgeInsets.symmetric(
           horizontal: 1), // Example: Display custom text
       decoration: const BoxDecoration(
-          // borderRadius: BorderRadius.horizontal(left: Radius.circular(10))
           color: Color(0x7EFFFFFF),
           shape: BoxShape.circle),
       child: Text(
@@ -95,7 +94,6 @@ Widget? rangeHighlightBuilder(
       margin: const EdgeInsets.symmetric(
           horizontal: 1), // Example: Display custom text
       decoration: const BoxDecoration(
-          // borderRadius: BorderRadius.circular(10))
           color: Color(0x4BFFFFFF),
           shape: BoxShape.circle),
       child: Text(
@@ -153,7 +151,6 @@ CalendarBuilders<Schedule> builders = const CalendarBuilders(
     markerBuilder: markerBuilder,
     outsideBuilder: outsideBuilder,
     rangeEndBuilder: rangeEndBuilder,
-    // rangeHighlightBuilder: rangeHighlightBuilder,
     rangeStartBuilder: rangeStartBuilder,
     selectedBuilder: selectedBuilder,
     singleMarkerBuilder: singleMarkerBuilder,

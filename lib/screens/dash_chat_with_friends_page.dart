@@ -35,7 +35,6 @@ class DashChatWithFriendsPage extends GetWidget<ConnectionController> {
                                 ? ColorConstant.primaryDefault
                                 : ColorConstant.neutralDisabled,
                         borderRadius: BorderRadius.circular(15)),
-                // borderRadius: 18.0,
                 textColor: ColorConstant.fontBlack,
                 containerColor: ColorConstant.neutralDisabled,
                 currentUserTextColor: ColorConstant.fontBlack,

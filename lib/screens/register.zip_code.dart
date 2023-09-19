@@ -19,7 +19,6 @@ class RegisterZipCode extends GetWidget<UserController> {
       appBar: CustomAppBar.getDefaultAppBar(l10ns.signUp),
       body: Unfocused(
         child: SingleChildScrollView(
-            // width: double.maxFinite,
             padding: getPadding(left: 16, top: 22, right: 16, bottom: 22),
             child: Column(children: [
               Row(mainAxisAlignment: MainAxisAlignment.center, children: [

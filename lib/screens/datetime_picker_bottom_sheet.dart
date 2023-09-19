@@ -85,12 +85,10 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                   controller.items[panelIndex].isExpanded = nextState;
                   controller.items.refresh();
                 },
-                // animationDuration: Duration(seconds: 1),
                 elevation: 0,
                 children: controller.items.mapIndexed(
                   (index, item) {
                     return ExpansionPanel(
-                        // backgroundColor: Colors.amber,
                         headerBuilder: (context, isOpen) {
                           return Padding(
                               padding: const EdgeInsets.all(15),
@@ -153,7 +151,6 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                         body: Container(
                             height: 100.v,
                             alignment: Alignment.center,
-                            // padding: const EdgeInsets.all(20),
                             width: mediaQueryData.size.width,
                             child: CupertinoTheme(
                                 data: CupertinoThemeData(
@@ -203,7 +200,6 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                             controller.updateSchedule(scheduleId!);
                             Navigator.pop(context);
                           },
-                          // text: l10ns.confirm,
                           text: '수정',
                           buttonStyle: CustomButtonStyles.fillPrimaryC26,
                           buttonTextStyle: theme.textTheme.titleMedium)

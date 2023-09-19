@@ -17,7 +17,6 @@ class UnsubscriptionConfirm extends GetWidget<VehicleController> {
       backgroundColor: Colors.white,
       appBar: CustomAppBar.getDefaultAppBar(l10ns.scheduleAnUnsubscribe),
       body: SingleChildScrollView(
-          // width: mediaQueryData.size.width,
           padding: getPadding(left: 16, top: 52, right: 16, bottom: 52),
           child: Column(
             children: [

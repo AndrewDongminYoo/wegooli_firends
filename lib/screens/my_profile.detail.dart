@@ -19,7 +19,6 @@ class MyProfileDetail extends GetWidget<UserController> {
         child: SizedBox(
             width: mediaQueryData.size.width,
             height: mediaQueryData.size.height,
-            // color: appTheme.amber500,
             child: Column(
               children: [
                 MyProfileSection(controller: controller),

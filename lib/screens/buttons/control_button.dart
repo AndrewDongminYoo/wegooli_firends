@@ -62,7 +62,6 @@ class ControlButton extends StatelessWidget {
                     )
                   ])),
           ElevatedButton(
-            // statesController: controller,
             onPressed: () {
               if (onTap != null) {
                 onTap?.call();
@@ -73,7 +72,6 @@ class ControlButton extends StatelessWidget {
               width: 120.h,
               height: 120.v,
               decoration: ShapeDecoration(
-                // color: Colors.white,
                 shape: CircleBorder(
                   side: BorderSide(width: 0.50, color: appTheme.blueGray30033),
                 ),
@@ -85,7 +83,6 @@ class ControlButton extends StatelessWidget {
                     svgPath: svgPath,
                     height: 46.v,
                     width: 46.h,
-                    // color: Colors.transparent,
                   ),
                   Padding(
                     padding: getPadding(top: 3),

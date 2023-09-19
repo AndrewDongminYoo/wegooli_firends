@@ -76,7 +76,6 @@ class _TeamReservationsItemState extends State<TeamReservationsItem> {
                     fontSize: 12.fSize,
                     fontFamily: FontFamily.pretendard,
                     fontWeight: FontWeight.w400,
-                    // height: 1.50,
                     letterSpacing: 0.02,
                   ),
                 ),

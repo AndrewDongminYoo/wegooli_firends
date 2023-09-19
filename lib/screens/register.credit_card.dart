@@ -75,7 +75,6 @@ class _RegisterCreditCardState extends State<RegisterCreditCard> {
       ),
       bottomNavigationBar: Container(
         margin: getMargin(left: 16, right: 16, bottom: 29),
-        // decoration: AppDecoration.shadow,
         child: RegisterCardButton(controller: controller),
       ),
     );

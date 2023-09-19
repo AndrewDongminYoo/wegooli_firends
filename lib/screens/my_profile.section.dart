@@ -14,7 +14,6 @@ class MyProfileSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // color: appTheme.amber600,
       height: 105.v,
       padding: getPadding(top: 20, bottom: 20, left: 16, right: 16),
       child: Row(

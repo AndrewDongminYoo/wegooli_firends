@@ -19,14 +19,12 @@ class MemberAvatar extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 71.v,
-      // width: 50.h,
       child: Column(children: [
         Container(
           height: 50.adaptSize,
           width: 50.adaptSize,
           margin: getMargin(bottom: 3),
           alignment: Alignment.center,
-          // padding: getPadding(all: 4),
           decoration: AppDecoration.fillDeepPurple.copyWith(
             color: ColorUtils.stringToColor(personalColor),
             borderRadius: BorderRadius.circular(32),

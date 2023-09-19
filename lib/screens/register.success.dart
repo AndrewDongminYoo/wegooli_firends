@@ -17,12 +17,10 @@ class RegisterSuccess extends GetWidget<UserController> {
       backgroundColor: Colors.white,
       body: Unfocused(
         child: Container(
-          // width: double.maxFinite,
           padding: getPadding(left: 16, right: 16),
           child: Center(
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                // mainAxisSize: MainAxisSize.min,
                 children: [
                   CustomImageView(
                       imagePath: Assets.images.imgGooli0.path,

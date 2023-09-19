@@ -37,8 +37,6 @@ class _CarStatusPageState extends State<CarStatusPage> {
                       children: [
                         CustomImageView(
                           // TODO 백엔드 이미지 저장이 완료되야 쓸수있을 듯...
-                          // imagePath: controller.terminalDevice.carImage ??
-                          //     Assets.cars.rayQM9y.path,
                           imagePath: Assets.cars.rayEvSEu3.path,
                           height: 92.v,
                           width: 129.h,
@@ -163,8 +161,6 @@ class _CarStatusPageState extends State<CarStatusPage> {
                 alignment: Alignment.center,
                 children: [
                   Expanded(
-                    // height: mediaQueryData.size.height,
-                    // width: mediaQueryData.size.width,
                     child: Column(
                       children: [
                         Align(

@@ -47,7 +47,6 @@ class _SmoothIndicatorsState extends State<SmoothIndicators> {
                 height: 240,
                 child: PageView.builder(
                   controller: controller,
-                  // itemCount: pages.length,
                   itemBuilder: (_, index) {
                     return pages[index % pages.length];
                   },
@@ -119,7 +118,6 @@ class _SmoothIndicatorsState extends State<SmoothIndicators> {
                       rotationAngle: 180,
                       verticalOffset: -10,
                       borderRadius: BorderRadius.circular(24),
-                      // dotBorder: DotBorder(
                       //   padding: 2,
                       //   width: 2,
                       //   color: const Color(0xFF3F51B5),
@@ -129,12 +127,10 @@ class _SmoothIndicatorsState extends State<SmoothIndicators> {
                       width: 24,
                       height: 12,
                       color: const Color(0xFF9E9E9E),
-                      // dotBorder: DotBorder(
                       //   padding: 2,
                       //   width: 2,
                       //   color: const Color(0xFF9E9E9E),
                       // ),
-                      // borderRadius: BorderRadius.only(
                       //     topLeft: Radius.circular(2),
                       //     topRight: Radius.circular(16),
                       //     bottomLeft: Radius.circular(16),
@@ -142,7 +138,6 @@ class _SmoothIndicatorsState extends State<SmoothIndicators> {
                       borderRadius: BorderRadius.circular(16),
                     ),
                     spacing: 6,
-                    // activeColorOverride: (i) => colors[i],
                     inActiveColorOverride: (i) => colors[i],
                   ),
                 ),

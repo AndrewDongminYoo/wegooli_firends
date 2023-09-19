@@ -26,18 +26,14 @@ class _MyProfileCardListState extends State<MyProfileCardList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Colors.white,
-      // backgroundColor: appTheme.amber500,
       appBar: CustomAppBar.getDefaultAppBar(l10ns.cardRegistration),
       body: Unfocused(
         child: SizedBox(
             width: mediaQueryData.size.width,
             height: mediaQueryData.size.height,
-            // padding: getPadding(left: 16, top: 24, right: 16, bottom: 24),
             child: Column(
               children: [
                 Container(
-                  // color: appTheme.amber600,
                   padding: getPadding(top: 20, bottom: 20, left: 16, right: 16),
                   child: Column(children: [
                     Obx(
@@ -77,7 +73,6 @@ class _MyProfileCardListState extends State<MyProfileCardList> {
                   ]),
                 ),
                 Container(
-                  // color: appTheme.amber700,
                   padding: getPadding(top: 20, bottom: 20, left: 16, right: 16),
                   child: CustomElevatedButton(
                     text: l10ns.cardAdditions,

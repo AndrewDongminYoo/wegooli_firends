@@ -105,7 +105,6 @@ class ScheduleController extends GetxController {
         // DateTime reservationTime = DateTime.now();
         date: DateTime.now()
             .add(Duration(minutes: 10 - DateTime.now().minute % 10)),
-        // isExpanded: true,
       ),
       // Add more items here
       Item(

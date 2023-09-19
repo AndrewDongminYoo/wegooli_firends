@@ -12,7 +12,6 @@ class UnsubscriptionConfirmDialog extends SimpleDialog {
   Widget build(BuildContext context) {
     return AlertDialog(
       contentPadding: EdgeInsets.zero,
-      // insetPadding: EdgeInsets.all(20),
       content: Container(
         decoration: AppDecoration.fillOnPrimaryContainer
             .copyWith(borderRadius: BorderRadiusStyle.circleBorder10),

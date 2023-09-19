@@ -20,15 +20,12 @@ class MyProfilePage extends GetWidget<UserController> {
       body: Unfocused(
         child: SizedBox(
             width: mediaQueryData.size.width,
-            // height: mediaQueryData.size.height,
-            // color: appTheme.amber500,
             child: Column(
               children: [
                 MyProfileSection(controller: controller),
                 const GrayHorizonSeparator(),
                 SizedBox(
                   width: mediaQueryData.size.width,
-                  // color: const Color(0xFFFF6F00),
                   child: Column(children: [
                     ListItem(
                         svgPath: Assets.svg.imgEdit.path,

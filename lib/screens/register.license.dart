@@ -71,7 +71,6 @@ class RegisterLicense extends GetWidget<LicenseController> {
       ),
       bottomNavigationBar: Container(
         margin: getMargin(left: 15, right: 17, bottom: 29),
-        // decoration: AppDecoration.shadow,
         child: CustomElevatedButton(
             text: l10ns.registrationComplete, // '등록 완료'
             buttonStyle: CustomButtonStyles.fillPrimaryC26,

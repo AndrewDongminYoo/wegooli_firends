@@ -184,8 +184,8 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
                                   // TODO 생각처럼 안되네요 ㅋㅋㅋ 개선 필요 !!
                                   // minimumDate:
                                   //     index == 1 ? controller.items[0].date : DateTime.now(),
-                                  minimumDate:
-                                      isEditMode ? null : DateTime.now(),
+                                  // minimumDate:
+                                  //     isEditMode ? null : DateTime.now(),
                                 ))),
                         isExpanded: controller.items[index].isExpanded);
                   },

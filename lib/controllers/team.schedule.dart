@@ -33,6 +33,7 @@ class ScheduleController extends GetxController {
 
   @override
   void onInit() {
+    // print('AAA : onInit()');
     makeEventSource();
     super.onInit();
   }
@@ -72,13 +73,16 @@ class ScheduleController extends GetxController {
   RangeSelectionMode rangeSelectionMode = RangeSelectionMode
       .toggledOff; // Can be toggled on/off by long pressing a date
   void makeEventSource() {
+    // print('AAA : makeEventSource()');
     final schedules = UserController.to.schedules;
+    // print('AAA : schedule ${schedules.length}');
 
     /// 주어진 코드에서 `userController`는 `UserController` 클래스의 인스턴스입니다.
     /// `UserController` 클래스의 `schedules` 속성에 액세스하는 데 사용됩니다.
     /// `schedules` 속성은 `ScheduleController` 클래스의 `localEventSource` 맵을 채우는 데 사용됩니다.
     final localEventSource = Map<DateTime, List<Schedule>>.of({});
     for (final schedule in schedules) {
+      // print('AAA : schedule $schedule');
       final startDate = DateTime.parse(schedule.startAt!);
       final endDate = DateTime.parse(schedule.endAt!);
       for (final key in daysInRange(startDate, endDate)) {
@@ -89,10 +93,12 @@ class ScheduleController extends GetxController {
         // print('eventSource Add : \nkey:${key}\nvalue:$value');
       }
     }
+    // print('AAA : localEventSource length ${localEventSource.length}');
     eventSource(localEventSource);
   }
 
   List<Item> initItem() {
+    // print('AAA : initItem()');
     return List.of([
       Item(
         title: '예약시간',
@@ -112,6 +118,7 @@ class ScheduleController extends GetxController {
   }
 
   Future<void> addSchedule() async {
+    // print('AAA : addSchedule');
     final accountId = userController.currentUser.id;
     final teamSeq = userController.firstTeamSeq;
     if (teamSeq == null) {
@@ -143,7 +150,7 @@ class ScheduleController extends GetxController {
   }
 
   Future<void> updateSchedule(int scheduleId) async {
-    print('updateSchedule');
+    // print('AAA : updateSchedule');
     final teamSeq = userController.firstTeamSeq;
     if (teamSeq == null) {
       return;

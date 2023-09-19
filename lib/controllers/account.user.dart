@@ -131,19 +131,19 @@ class UserController extends GetxController {
   @override
   void onClose() {
     super.onClose();
-    realName.dispose();
-    birthDay.dispose();
-    socialId.dispose();
-    phoneNum.dispose();
-    pinCodes.dispose();
-    username.dispose();
-    postCode.dispose();
-    primaryAddress.dispose();
-    detailAddress.dispose();
-    emailAddress.dispose();
-    password.dispose();
-    rePassword.dispose();
-    nickname.dispose();
+    realName.clear();
+    birthDay.clear();
+    socialId.clear();
+    phoneNum.clear();
+    pinCodes.clear();
+    username.clear();
+    postCode.clear();
+    primaryAddress.clear();
+    detailAddress.clear();
+    emailAddress.clear();
+    password.clear();
+    rePassword.clear();
+    nickname.clear();
   }
 
   /// 로그인
@@ -160,12 +160,12 @@ class UserController extends GetxController {
   /// 로그아웃
   Future<void> logOut() async {
     await _service.logOut();
-    await Future.delayed(
-      const Duration(seconds: 2),
-      () => Get.delete<UserController>(),
-    );
+    // await Future.delayed(
+    //   const Duration(seconds: 2),
+    //   () => Get.delete<UserController>(),
+    // );
     await PrefUtils.clearAll();
-    await goIdPwLogin();
+    await Get.offAllNamed(AppRoutes.idPwLogin);
   }
 
   /// 회원탈퇴

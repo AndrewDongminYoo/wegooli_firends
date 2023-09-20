@@ -5,9 +5,10 @@ import 'package:flutter/services.dart';
 // 🌎 Project imports:
 import '/lib.dart';
 
+// ignore: must_be_immutable
 class CustomTextFormField extends StatelessWidget {
-  const CustomTextFormField({
-    Key? key,
+  CustomTextFormField({
+    super.key,
     this.alignment,
     this.autofill,
     this.autofillHints,
@@ -37,8 +38,9 @@ class CustomTextFormField extends StatelessWidget {
     this.inputFormatters,
     this.obscureChar = '*',
     this.onChanged,
-    required this.controller,
-  }) : super(key: key);
+    this.controller,
+  }) : assert(onChanged != null || controller != null,
+            'onChanged, controller 하나 이상은 제공하여야 합니다.');
 
   final bool? autofocus;
   final bool? autofill;
@@ -46,6 +48,7 @@ class CustomTextFormField extends StatelessWidget {
   final bool? filled;
   final Alignment? alignment;
   final List<String>? autofillHints;
+  final Function(String)? onChanged;
 
   /// [true]이면 데코레이션 컨테이너가 [fillColor]로 채워집니다.
   final bool? obscureText;
@@ -71,7 +74,6 @@ class CustomTextFormField extends StatelessWidget {
   final TextStyle? textStyle;
   final Widget? prefix;
   final Widget? suffix;
-  final Function()? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -86,30 +88,27 @@ class CustomTextFormField extends StatelessWidget {
       width: width ?? double.maxFinite,
       margin: margin,
       child: TextFormField(
-        obscuringCharacter: obscureChar,
-        maxLength: maxLength,
-        inputFormatters: inputFormatters ?? [],
-        obscureText: obscureText!,
-        controller: controller,
-        autofocus: autofocus!,
-        focusNode: focusNode ?? FocusNode(),
-        autofillHints: autofillHints ?? [],
-        autovalidateMode: (autofill ?? false)
-            ? AutovalidateMode.always
-            : AutovalidateMode.onUserInteraction,
-        style: textStyle ?? CustomTextStyles.bodyLargeGray50002,
-        textInputAction: textInputAction,
-        keyboardType: textInputType,
-        maxLines: maxLines ?? 1,
-        decoration: decoration,
-        validator: validator,
-        enabled: enabled,
-        readOnly: !enabled!,
-        initialValue: initialValue,
-        onChanged: (value) {
-          onChanged?.call();
-        },
-      ));
+          onChanged: onChanged,
+          obscuringCharacter: obscureChar,
+          maxLength: maxLength,
+          inputFormatters: inputFormatters ?? [],
+          obscureText: obscureText!,
+          controller: controller,
+          autofocus: autofocus!,
+          focusNode: focusNode ?? FocusNode(),
+          autofillHints: autofillHints ?? [],
+          autovalidateMode: (autofill ?? false)
+              ? AutovalidateMode.always
+              : AutovalidateMode.onUserInteraction,
+          style: textStyle ?? CustomTextStyles.bodyLargeGray50002,
+          textInputAction: textInputAction,
+          keyboardType: textInputType,
+          maxLines: maxLines ?? 1,
+          decoration: decoration,
+          validator: validator,
+          enabled: enabled,
+          readOnly: !enabled!,
+          initialValue: initialValue));
   InputDecoration get decoration => InputDecoration(
         hintText: hintText ?? '',
         hintStyle: hintStyle ?? CustomTextStyles.bodyLargeGray50002,

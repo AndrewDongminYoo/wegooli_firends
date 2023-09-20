@@ -7,25 +7,29 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/lib.dart';
 
-class PasswordFormField extends StatelessWidget {
-  const PasswordFormField({
+// ignore: must_be_immutable
+class PasswordFormField extends StatefulWidget {
+  PasswordFormField({
     super.key,
-    required this.controller,
+    required this.password,
     required this.authMode,
-    this.onChanged,
   });
 
-  final TextEditingController controller;
+  String password;
   final AuthMode authMode;
-  final Function()? onChanged;
 
+  @override
+  State<PasswordFormField> createState() => _PasswordFormFieldState();
+}
+
+class _PasswordFormFieldState extends State<PasswordFormField> {
   @override
   Widget build(BuildContext context) {
     final isShowPassword = false.obs;
-    final isSignUp = authMode == AuthMode.register;
+    final isSignUp = widget.authMode == AuthMode.register;
     return Obx(() {
       return CustomTextFormField(
-        controller: controller,
+        initialValue: widget.password,
         margin: getMargin(top: 4),
         contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),
         textStyle: CustomTextStyles.bodyLargeGray50003,
@@ -42,31 +46,44 @@ class PasswordFormField extends StatelessWidget {
             child: ShowPasswordToggle(show: isShowPassword)),
         suffixConstraints: BoxConstraints(maxHeight: 48.v),
         fillColor: Colors.white,
+        onChanged: (String _password) {
+          setState(() {
+            widget.password = _password;
+          });
+        },
         filled: true,
-        validator: (value) =>
-            value == null || value.isEmpty ? '필수 입력 항목입니다.' : null,
-        onChanged: onChanged,
+        validator: (password) {
+          if (!isValidPassword(password)) {
+            return '비밀번호 형식을 따라 정확히 입력해주세요.';
+          } else {
+            return null;
+          }
+        },
       );
     });
   }
 }
 
-class PasswordConfirmFormField extends StatelessWidget {
+class PasswordConfirmFormField extends StatefulWidget {
   const PasswordConfirmFormField({
     super.key,
     required this.controller,
-    this.onChanged,
   });
 
-  final TextEditingController controller;
-  final Function()? onChanged;
+  final UserController controller;
 
+  @override
+  State<PasswordConfirmFormField> createState() =>
+      _PasswordConfirmFormFieldState();
+}
+
+class _PasswordConfirmFormFieldState extends State<PasswordConfirmFormField> {
   @override
   Widget build(BuildContext context) {
     final isShowConfirmPassword = false.obs;
     return Obx(() => CustomTextFormField(
           textInputType: TextInputType.emailAddress,
-          controller: controller,
+          controller: widget.controller.rePassword,
           margin: getMargin(top: 4),
           contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),
           textStyle: CustomTextStyles.bodyLargeGray50003,
@@ -80,7 +97,13 @@ class PasswordConfirmFormField extends StatelessWidget {
           suffixConstraints: BoxConstraints(maxHeight: 48.v),
           filled: true,
           fillColor: Colors.white,
-          onChanged: onChanged,
+          validator: (_passwordCheck) {
+            if (_passwordCheck != widget.controller.password) {
+              return '비밀번호와 일치하지 않습니다.';
+            } else {
+              return null;
+            }
+          },
         ));
   }
 }

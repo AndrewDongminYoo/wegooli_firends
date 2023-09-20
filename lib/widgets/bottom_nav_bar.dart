@@ -8,12 +8,8 @@ import 'package:get/get.dart';
 import '/lib.dart';
 
 class CustomBottomNavBar extends StatefulWidget {
-  CustomBottomNavBar({
-    Key? key,
-    required this.id,
-  }) : super(key: key);
+  CustomBottomNavBar({Key? key}) : super(key: key);
 
-  final int id;
   @override
   State<CustomBottomNavBar> createState() => _CustomBottomNavBarState();
 }
@@ -89,15 +85,11 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
               3 => AppRoutes.myProfile,
               _ => AppRoutes.sharedSchedule
             };
-            setState(() {
-              selectedIndex.value = index;
-              selectedIndex.refresh();
-            });
-            // print('widget.id ${widget.id}');
+            selectedIndex(index);
             Get.toNamed(
               page,
-              id: widget.id,
               arguments: bottomMenuList[index],
+              preventDuplicates: false,
             );
           },
         ),

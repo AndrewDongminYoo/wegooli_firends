@@ -1,14 +1,11 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:get/get.dart';
-
 // 🌎 Project imports:
 import '/lib.dart';
 
 class RegisterPhone extends StatefulWidget {
-  RegisterPhone({super.key});
+  const RegisterPhone({super.key});
 
   @override
   State<RegisterPhone> createState() => _RegisterPhoneState();
@@ -35,11 +32,9 @@ class _RegisterPhoneState extends State<RegisterPhone> {
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                 CustomInputLabel(labelText: l10ns.name),
                 KoreanNameFormField(
-                    controller: controller.realName,
-                    focusNode: _nameText,
-                    onChanged: () {
-                      setState(() {});
-                    }),
+                  controller: controller.realName,
+                  focusNode: _nameText,
+                ),
               ]),
               Padding(
                   padding: getPadding(top: 26, bottom: 7),
@@ -53,19 +48,15 @@ class _RegisterPhoneState extends State<RegisterPhone> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               BirthdayNumberFormField(
-                                  controller: controller.birthDay,
-                                  focusNode: _birthday,
-                                  readonly: false,
-                                  onChanged: () {
-                                    setState(() {});
-                                  }),
+                                controller: controller.birthDay,
+                                focusNode: _birthday,
+                                readonly: false,
+                              ),
                               const Text('-', style: TextStyle(fontSize: 24)),
                               SocialSecurityNumberFormField(
-                                  controller: controller.socialId,
-                                  focusNode: _socialId,
-                                  onChanged: () {
-                                    setState(() {});
-                                  }),
+                                controller: controller.socialId,
+                                focusNode: _socialId,
+                              ),
                             ]),
                         Row(children: [
                           Text(
@@ -78,11 +69,7 @@ class _RegisterPhoneState extends State<RegisterPhone> {
                           ),
                         ])
                       ])),
-              SMSValidationForm(
-                  controller: controller,
-                  onChanged: () {
-                    setState(() {});
-                  }),
+              SMSValidationForm(controller: controller),
             ])),
       ),
       // ValidatePhoneCompleteButton

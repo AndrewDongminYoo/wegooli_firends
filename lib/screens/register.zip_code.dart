@@ -1,14 +1,11 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:get/get.dart';
-
 // 🌎 Project imports:
 import '/lib.dart';
 
 class RegisterZipCode extends StatefulWidget {
-  RegisterZipCode({super.key});
+  const RegisterZipCode({super.key});
 
   @override
   State<RegisterZipCode> createState() => _RegisterZipCodeState();
@@ -36,16 +33,14 @@ class _RegisterZipCodeState extends State<RegisterZipCode> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           CustomInputLabel(labelText: l10ns.homeAddress),
-                          PostCodeFormField(
-                              controller: controller.postCode,
-                              onChanged: ()=>setState(() {})),
+                          PostCodeFormField(controller: controller.postCode),
                         ]),
                   ),
                 ),
                 const Expanded(child: PostCodeSearchButton()),
               ]),
-              PrimaryAddressFormField(controller: controller.primaryAddress, onChanged: ()=>setState(() {})),
-              DetailAddressFormField(controller: controller.detailAddress, onChanged: ()=>setState(() {})),
+              PrimaryAddressFormField(controller: controller.primaryAddress),
+              DetailAddressFormField(controller: controller.detailAddress),
               Padding(
                   padding: getPadding(top: 27),
                   child: Column(
@@ -53,10 +48,7 @@ class _RegisterZipCodeState extends State<RegisterZipCode> {
                       children: [
                         CustomInputLabel(labelText: l10ns.id),
                         UserMailFormField(
-                            controller: controller.emailAddress,
-                            authMode: authMode,
-                            onChanged: () => setState(() {})
-                            ),
+                            username: controller.username, authMode: authMode),
                       ])),
               Padding(
                   padding: getPadding(top: 27),
@@ -65,9 +57,7 @@ class _RegisterZipCodeState extends State<RegisterZipCode> {
                       children: [
                         CustomInputLabel(labelText: l10ns.password),
                         PasswordFormField(
-                            controller: controller.password,
-                            authMode: authMode,
-                            onChanged: () => setState(() {})),
+                            password: controller.password, authMode: authMode),
                       ])),
               Padding(
                   padding: getPadding(top: 27),
@@ -76,8 +66,8 @@ class _RegisterZipCodeState extends State<RegisterZipCode> {
                       children: [
                         CustomInputLabel(labelText: l10ns.confirmPassword),
                         PasswordConfirmFormField(
-                            controller: controller.rePassword,
-                            onChanged: () => setState(() {})),
+                          controller: controller,
+                        ),
                       ])),
               Padding(
                   padding: getPadding(top: 27),
@@ -85,8 +75,9 @@ class _RegisterZipCodeState extends State<RegisterZipCode> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         CustomInputLabel(labelText: l10ns.nickname),
-                        NickNameFormField(controller: controller.nickname,
-                            onChanged: () => setState(() {})),
+                        NickNameFormField(
+                          controller: controller.nickname,
+                        ),
                       ])),
             ])),
       ),

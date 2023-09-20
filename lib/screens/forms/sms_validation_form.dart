@@ -22,10 +22,8 @@ class SMSValidationForm extends StatefulWidget {
   const SMSValidationForm({
     super.key,
     required this.controller,
-    this.onChanged,
   });
   final UserController controller;
-  final Function()? onChanged;
   @override
   State<SMSValidationForm> createState() => _SMSValidationFormState();
 }
@@ -62,7 +60,7 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
     super.dispose();
   }
 
-  void verificationFailed(Exception error) {
+  SnackbarController verificationFailed(Exception error) {
     var title = '전화번호 인증 오류';
     String? output;
     if (error is FirebaseException) {
@@ -80,7 +78,11 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
       }
     }
     _error = output ?? '휴대폰 인증과정에서 오류가 발생했습니다.';
-    Get.showSnackbar(GetSnackBar(title: title, message: _error));
+    return Get.showSnackbar(GetSnackBar(
+      title: title,
+      message: _error,
+      duration: const Duration(seconds: 1),
+    ));
   }
 
   Future<AuthCredential?> phoneAuth(String phoneNum) async {
@@ -132,8 +134,10 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
           }
           print('timeout.verificationId: $verificationId');
           Get.showSnackbar(const GetSnackBar(
-              title: 'CodeAutoRetrievalTimeout',
-              message: '휴대폰 인증과정에서 시간초과가 발생했습니다.'));
+            title: 'CodeAutoRetrievalTimeout',
+            message: '휴대폰 인증과정에서 시간초과가 발생했습니다.',
+            duration: Duration(seconds: 1),
+          ));
         },
       );
     }
@@ -142,10 +146,12 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
 
   Future<String?> getSmsCodeFromUser() async {
     _timer = Timer.periodic(rest, (timer) => tick());
-    Get.showSnackbar(const GetSnackBar(
-        showProgressIndicator: true,
-        title: '입력한 휴대폰으로 전송된 인증 코드를 확인해주세요.',
-        message: '3분내 입력하지 않을 경우 인증코드가 만료됩니다.'));
+    Get.showSnackbar(GetSnackBar(
+      showProgressIndicator: true,
+      title: '입력한 휴대폰으로 전송된 인증 코드를 확인해주세요.',
+      message: '3분내 입력하지 않을 경우 인증코드가 만료됩니다.',
+      duration: rest,
+    ));
     if (controller.pinCodes.text.isEmpty) {
       setState(() {
         codeSent = true;
@@ -184,9 +190,7 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const TelecomDropdown(),
-                PhoneNumberFormField(
-                    controller: widget.controller.phoneNum,
-                    onChanged: widget.onChanged),
+                PhoneNumberFormField(controller: widget.controller.phoneNum),
               ],
             ),
             Row(
@@ -233,7 +237,6 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
                         ? Text('$_min:$_sec', style: theme.textTheme.labelSmall)
                         : const SizedBox.shrink(),
                   ),
-                  onChanged: widget.onChanged,
                 ),
                 CustomElevatedButton(
                   text: l10ns.confirm,

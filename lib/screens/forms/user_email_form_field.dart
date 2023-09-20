@@ -4,23 +4,27 @@ import 'package:flutter/material.dart';
 // 🌎 Project imports:
 import '/lib.dart';
 
-class UserMailFormField extends StatelessWidget {
-  const UserMailFormField({
+// ignore: must_be_immutable
+class UserMailFormField extends StatefulWidget {
+  UserMailFormField({
     super.key,
-    required this.controller,
+    required this.username,
     required this.authMode,
-    this.onChanged,
   });
 
-  final TextEditingController controller;
+  String username;
   final AuthMode authMode;
-  final Function()? onChanged;
 
   @override
+  State<UserMailFormField> createState() => _UserMailFormFieldState();
+}
+
+class _UserMailFormFieldState extends State<UserMailFormField> {
+  @override
   Widget build(BuildContext context) {
-    final isLogin = authMode == AuthMode.login;
+    final isLogin = widget.authMode == AuthMode.login;
     return CustomTextFormField(
-      controller: controller,
+      initialValue: widget.username,
       textInputType: TextInputType.emailAddress,
       fillColor: Colors.white,
       margin: isLogin ? getMargin(top: 40) : getMargin(top: 4),
@@ -30,11 +34,13 @@ class UserMailFormField extends StatelessWidget {
       hintStyle: CustomTextStyles.bodyLargeGray50003,
       filled: true,
       autofillHints: const [AutofillHints.email],
-      onChanged: onChanged,
+      onChanged: (String value) {
+        setState(() {
+          widget.username = value;
+        });
+      },
       validator: (email) {
-        if (email == null) {
-          return '필수 입력 항목입니다.';
-        } else if (!isTestId(email) && !isValidEmail(email)) {
+        if (!isValidEmail(email)) {
           return '이메일 형식을 정확히 입력해주세요.';
         } else {
           return null;
@@ -42,8 +48,4 @@ class UserMailFormField extends StatelessWidget {
       },
     );
   }
-}
-
-bool isTestId(String value) {
-  return value.startsWith('test');
 }

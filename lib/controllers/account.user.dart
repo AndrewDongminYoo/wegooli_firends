@@ -37,12 +37,14 @@ class UserController extends GetxController {
   TextEditingController birthDay = TextEditingController();
   TextEditingController socialId = TextEditingController();
   TextEditingController phoneNum = TextEditingController();
-  SelectionPopupModel? telecom; // 통신사 (DropdownSelectionData)
   TextEditingController pinCodes = TextEditingController();
+  String telecom = 'SKT';
 
   /// 회원가입[2] - 집주소, 이메일주소, 비밀번호, 닉네임
-  TextEditingController postCode = TextEditingController(text: kIsWeb ? 'postal code' : null);
-  TextEditingController primaryAddress = TextEditingController(text: kIsWeb ? 'street address' : null);
+  TextEditingController postCode =
+      TextEditingController(text: kIsWeb ? 'postal code' : null);
+  TextEditingController primaryAddress =
+      TextEditingController(text: kIsWeb ? 'street address' : null);
   TextEditingController detailAddress = TextEditingController();
   TextEditingController rePassword = TextEditingController();
   TextEditingController nickname = TextEditingController();
@@ -57,17 +59,7 @@ class UserController extends GetxController {
     email: '',
   );
 
-  bool get isAuthenticated =>
-      currentUser.id != null &&
-      currentUser.id!.isNotEmpty &&
-      currentUser.memberSeq != null &&
-      currentUser.memberSeq!.isGreaterThan(0) &&
-      currentUser.nickname != null &&
-      currentUser.nickname!.isNotEmpty &&
-      currentUser.email != null &&
-      currentUser.email!.isNotEmpty &&
-      currentUser.phoneNumber != null &&
-      currentUser.phoneNumber!.isNotEmpty;
+  bool get isAuthenticated => currentUser.isLoggedIn;
 
   final RxList<TeamAccountModel> _members = RxList<TeamAccountModel>([]);
   final RxList<Schedule> _schedules = RxList<Schedule>.of([]);
@@ -93,11 +85,9 @@ class UserController extends GetxController {
 
   void setDropdownItem(SelectionPopupModel value) {
     print('Dropdown Selected ==> ${value.title}');
-    telecom = value;
+    telecom = value.title;
   }
 
-  bool get idPwLoginCompleted => false;
-  bool get acceptTermsCompleted => false;
   bool get phoneAuthCompleted =>
       realName.text.isNotEmpty &&
       birthDay.text.isNotEmpty &&
@@ -111,8 +101,6 @@ class UserController extends GetxController {
       pinCodes.text.length == 6;
 
   bool get registerCreditCardCompleted => false;
-  bool get registerLicenseCompleted => false;
-  bool get registerSuccessCompleted => false;
   bool get registerZipCodeCompleted =>
       postCode.text.isNotEmpty &&
       primaryAddress.text.isNotEmpty &&
@@ -257,4 +245,20 @@ class Term {
 
 extension YN on bool {
   String get toYN => this ? 'Y' : 'N';
+}
+
+extension UserValidation on User {
+  bool get isLoggedIn =>
+      id != null &&
+      id!.isNotEmpty &&
+      memberSeq != null &&
+      memberSeq!.isGreaterThan(0) &&
+      nickname != null &&
+      nickname!.isNotEmpty &&
+      email != null &&
+      email!.isNotEmpty &&
+      // isValidEmail(email) &&
+      phoneNumber != null &&
+      phoneNumber!.isNotEmpty;
+  // isValidPhone(phoneNumber);
 }

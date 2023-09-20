@@ -9,9 +9,31 @@ class LicenseCardService extends GetConnect {
   GetHttpClient get httpClient => wegooli;
   final api = wegooli.licenseApi;
 
-  Future<int> registerDrivingLicense() async {
-    final validReq = ValidLicenseRequest();
-    final insetReq = InsertLicenseRequest();
+  Future<int> registerDrivingLicense(
+    String licenseClass,
+    String licenseArea,
+    String firstIssueYear,
+    String licenseNumbers,
+    String expirationDate,
+    String issuedDate,
+  ) async {
+    final validReq = ValidLicenseRequest(
+      memberSeq: 0,
+      licenseClass: licenseClass,
+      licenseArea: licenseArea,
+      licenseYear: firstIssueYear,
+      licenseNum: licenseNumbers,
+    );
+    final insetReq = InsertLicenseRequest(
+      memberSeq: 0,
+      koreanYn: 'Y',
+      licenseClass: licenseClass,
+      licenseArea: licenseArea,
+      licenseYear: firstIssueYear,
+      licenseNum: licenseNumbers,
+      expiredDate: expirationDate,
+      issuedDate: issuedDate,
+    );
     final valid = await api.isValidLicense(validLicenseRequest: validReq);
     if (!valid.data!) {
       print('올바른 운전면허 번호가 아닙니다. 운전면허 번호를 확인하세요.');

@@ -10,12 +10,10 @@ class SocialSecurityNumberFormField extends StatelessWidget {
     super.key,
     required this.controller,
     required this.focusNode,
-    this.onChanged,
   });
 
   final TextEditingController controller;
   final FocusNode focusNode;
-  final Function()? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +37,6 @@ class SocialSecurityNumberFormField extends StatelessWidget {
       hintStyle: CustomTextStyles.bodyLargeGray50003,
       filled: true,
       fillColor: Colors.white,
-      onChanged: onChanged,
     );
   }
 }

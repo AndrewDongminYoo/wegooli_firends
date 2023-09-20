@@ -12,12 +12,10 @@ class AgreementItem extends StatefulWidget {
     Key? key,
     required this.index,
     required this.terms,
-    required this.onChange,
   }) : super(key: key);
 
   final int index;
   final List<Term> terms;
-  final dynamic Function(bool) onChange;
 
   @override
   State<AgreementItem> createState() => _AgreementItemState();
@@ -36,7 +34,11 @@ class _AgreementItemState extends State<AgreementItem> {
               CustomCheckboxButton(
                 text: term.title,
                 value: term.agree,
-                onChange: widget.onChange,
+                onChange: (bool value) {
+                  setState(() {
+                    term.agree = value;
+                  });
+                },
               ),
               CustomImageView(
                 svgPath: Assets.svg.imgArrowRight.path,

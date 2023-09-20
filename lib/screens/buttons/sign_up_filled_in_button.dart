@@ -20,9 +20,12 @@ class SignUpFilledInButton extends StatelessWidget {
               : CustomButtonStyles.fillPrimaryC26,
           buttonTextStyle: CustomTextStyles.titleMedium18,
           onTap: () async {
-            if (await controller.signUp()) {
+            try {
+              await controller.signUp();
               await controller.acceptanceComplete();
               await goRegisterLicense();
+            } on Exception catch (e) {
+              printDioException('SignUpFilledInButton.onTap', e);
             }
           }),
     );

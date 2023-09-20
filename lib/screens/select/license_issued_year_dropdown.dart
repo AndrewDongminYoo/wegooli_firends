@@ -9,6 +9,7 @@ class LicenseIssuedYearDropdown extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = LicenseController.to;
     final yearOfLicenseIssuance = [
       SelectionPopupModel(id: 11, title: '11'),
       SelectionPopupModel(id: 12, title: '12'),
@@ -24,10 +25,6 @@ class LicenseIssuedYearDropdown extends StatelessWidget {
       SelectionPopupModel(id: 22, title: '22'),
       SelectionPopupModel(id: 23, title: '23'),
       SelectionPopupModel(id: 24, title: '24'),
-      SelectionPopupModel(id: 25, title: '25'),
-      SelectionPopupModel(id: 26, title: '26'),
-      SelectionPopupModel(id: 27, title: '27'),
-      SelectionPopupModel(id: 28, title: '28'),
     ];
     return CustomDropDown(
         icon: Container(
@@ -40,6 +37,9 @@ class LicenseIssuedYearDropdown extends StatelessWidget {
         filled: true,
         fillColor: Colors.white,
         contentPadding: getPadding(left: 10, top: 14, bottom: 14),
-        onChanged: yearOfLicenseIssuance.onSelected);
+        onChanged: (SelectionPopupModel value) {
+          yearOfLicenseIssuance.onSelected(value);
+          controller.firstIssuedYear = value.title;
+        });
   }
 }

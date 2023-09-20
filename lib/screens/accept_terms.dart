@@ -17,8 +17,11 @@ class _AcceptTermsState extends State<AcceptTerms> {
     return controller.terms.every((term) => term.agree);
   }
 
-  bool get isDisabled =>
-      controller.terms.where((term) => !term.opt).any((term) => !term.agree);
+  bool get allRequiredTermsAccepted {
+    return controller.terms
+        .where((term) => !term.opt)
+        .every((term) => term.agree);
+  }
 
   // 전체 항목 동의
   Future<void> setAllTermsAccepted(bool? value) async {
@@ -64,13 +67,9 @@ class _AcceptTermsState extends State<AcceptTerms> {
                           itemCount: controller.terms.length,
                           itemBuilder: (BuildContext context, int index) {
                             return AgreementItem(
-                                index: index,
-                                terms: controller.terms,
-                                onChange: (value) {
-                                  setState(() {
-                                    controller.terms[index].agree = value;
-                                  });
-                                });
+                              index: index,
+                              terms: controller.terms,
+                            );
                           }),
                     ],
                   )),
@@ -84,8 +83,8 @@ class _AcceptTermsState extends State<AcceptTerms> {
           ),
           child: CustomElevatedButton(
             text: l10ns.acceptanceComplete,
-            isDisabled: isDisabled,
-            buttonStyle: isDisabled
+            isDisabled: allRequiredTermsAccepted,
+            buttonStyle: allRequiredTermsAccepted
                 ? CustomButtonStyles.fillAmberA200C5
                 : CustomButtonStyles.fillPrimaryC5,
             buttonTextStyle: CustomTextStyles.titleMedium18,

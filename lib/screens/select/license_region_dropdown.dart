@@ -9,6 +9,7 @@ class LicenseRegionDropdown extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = LicenseController.to;
     final licenseRegions = [
       SelectionPopupModel(id: 11, title: '서울', value: '서울지방경찰청:[강남,도봉,서부,강서]'),
       SelectionPopupModel(id: 12, title: '부산', value: '부산지방경찰청:[부산북부,부산남부]'),
@@ -43,6 +44,7 @@ class LicenseRegionDropdown extends StatelessWidget {
         contentPadding: getPadding(left: 10, top: 14, bottom: 14),
         onChanged: (SelectionPopupModel value) {
           licenseRegions.onSelected(value);
+          controller.licenseRegion = value.title;
         });
   }
 }

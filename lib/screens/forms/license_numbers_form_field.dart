@@ -15,6 +15,7 @@ class LicenseNumbersFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomTextFormField(
+        maxLength: 9, // 11(또는 서울)-12-345678-90
         controller: controller,
         margin: getMargin(top: 10),
         contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),

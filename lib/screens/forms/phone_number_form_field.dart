@@ -9,11 +9,9 @@ class PhoneNumberFormField extends StatelessWidget {
   const PhoneNumberFormField({
     super.key,
     required this.controller,
-    this.onChanged,
   });
 
   final TextEditingController controller;
-  final Function()? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +31,6 @@ class PhoneNumberFormField extends StatelessWidget {
       hintStyle: CustomTextStyles.bodyLargeGray50003,
       filled: true,
       fillColor: Colors.white,
-      onChanged: onChanged,
     );
   }
 }

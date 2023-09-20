@@ -64,7 +64,7 @@ class PrefUtils {
       setData(_phoneData, phoneNumber);
 
   static void saveAgreements(List<Term> agreement) {
-    final cache = agreement.map((a) => '${a.title}: ${a.agree ? 'Y' : 'N'}');
+    final cache = agreement.map((a) => '${a.name}: ${a.agree.toYN}');
     storage.setStringList(_termsOfUseData, cache.toList());
   }
 }

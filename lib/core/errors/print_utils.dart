@@ -23,7 +23,7 @@ CustomException printDioException(String functionName, Exception e) {
     print('`$functionName()` : $message');
     return CustomException(message);
   } else {
-    print('`findTeams()` 호출 중 Exception 발생: $e\n');
+    print('`$functionName` 호출 중 Exception 발생: $e\n');
     return CustomException(e.toString());
   }
 }

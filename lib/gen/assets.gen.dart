@@ -79,6 +79,10 @@ class $AssetsCarsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/friends_by_wegooli.png
+  AssetGenImage get friendsByWegooli =>
+      const AssetGenImage('assets/images/friends_by_wegooli.png');
+
   /// File path: assets/images/image_not_found.png
   AssetGenImage get imageNotFound =>
       const AssetGenImage('assets/images/image_not_found.png');
@@ -133,6 +137,7 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
+        friendsByWegooli,
         imageNotFound,
         imgAcorn,
         imgGooli0,

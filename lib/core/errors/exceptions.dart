@@ -1,3 +1,6 @@
+// 📦 Package imports:
+import 'package:get/get.dart';
+
 class ServerException implements Exception {}
 
 class CacheException implements Exception {}
@@ -29,5 +32,13 @@ class CustomException implements Exception {
       return 'Exception';
     }
     return 'Exception: $message';
+  }
+
+  SnackbarController showToast() {
+    return Get.showSnackbar(GetSnackBar(
+      title: message,
+      message: message,
+      duration: const Duration(seconds: 1),
+    ));
   }
 }

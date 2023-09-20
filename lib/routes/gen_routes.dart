@@ -15,11 +15,11 @@ Route<dynamic>? onGenerateRoute(RouteSettings settings) {
       AppRoutes.appGateway => const GatewayScreen(),
       AppRoutes.idPwLogin => const LoginPage(),
       AppRoutes.acceptTerms => const AcceptTerms(),
-      AppRoutes.phoneAuth => const RegisterPhone(),
+      AppRoutes.phoneAuth => RegisterPhone(),
       AppRoutes.acceptTermsDetail => const AcceptTermsDetail(),
       AppRoutes.registerCreditCard => const RegisterCreditCard(),
       AppRoutes.registerLicense => const RegisterLicense(),
-      AppRoutes.registerZipCode => const RegisterZipCode(),
+      AppRoutes.registerZipCode => RegisterZipCode(),
       AppRoutes.registerSuccess => const RegisterSuccess(),
       _ => const SplashLoading(),
     };

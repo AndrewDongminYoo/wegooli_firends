@@ -8,9 +8,11 @@ class DetailAddressFormField extends StatelessWidget {
   const DetailAddressFormField({
     super.key,
     required this.controller,
+    this.onChanged,
   });
 
   final TextEditingController controller;
+  final Function()? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +26,7 @@ class DetailAddressFormField extends StatelessWidget {
         hintText: '동·호수 등 상세 주소',
         hintStyle: CustomTextStyles.bodyLargeGray50003,
         filled: true,
-        fillColor: Colors.white);
+        fillColor: Colors.white,
+        onChanged: onChanged);
   }
 }

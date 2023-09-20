@@ -9,10 +9,12 @@ class UserMailFormField extends StatelessWidget {
     super.key,
     required this.controller,
     required this.authMode,
+    this.onChanged,
   });
 
   final TextEditingController controller;
   final AuthMode authMode;
+  final Function()? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +30,7 @@ class UserMailFormField extends StatelessWidget {
       hintStyle: CustomTextStyles.bodyLargeGray50003,
       filled: true,
       autofillHints: const [AutofillHints.email],
+      onChanged: onChanged,
       validator: (email) {
         if (email == null) {
           return '필수 입력 항목입니다.';

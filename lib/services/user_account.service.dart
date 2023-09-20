@@ -90,4 +90,39 @@ class UserAccountService extends GetConnect {
     print('response: $response');
     return response.data!;
   }
+
+  Future<User?> signUp(UserDto userDto) async {
+    try {
+      final response = await api.signup(userDto: userDto);
+      // print('response : $response');
+      final bearerToken = response.data;
+      var token = '';
+      if (bearerToken == null) {
+        await Get.dialog(Center(
+            child: Assets.lotties.xInCircle.lottie(height: 250, width: 250)));
+      } else {
+        // BEARER prefix 분리.
+        token = bearerToken.split(' ').last;
+      }
+      print('token: $token');
+      // BEARER prefix 제거
+      final payload = JwtDecoder.decode(token);
+      //'{"name": "My Awesome App", "iat": 1548094400}'
+      print('payload: $payload');
+      if (!JwtDecoder.isExpired(token)) {
+        print('✅ 유효한 토큰입니다.');
+        await PrefUtils.setToken(token);
+        return User.fromJson(payload);
+      } else {
+        print('❌ 만료된 토큰입니다.');
+      }
+    } on DioException catch (e) {
+      printDioException(e);
+      print('`signUp()` 호출 중 DioException 발생: $e\n');
+    } on Exception catch (e) {
+      print('`signUp()` 호출 중 Exception 발생: $e\n');
+    }
+    print('회원가입 함수 null 반환');
+    return null;
+  }
 }

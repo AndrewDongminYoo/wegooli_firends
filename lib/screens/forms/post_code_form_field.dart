@@ -12,10 +12,11 @@ class PostCodeFormField extends StatelessWidget {
   const PostCodeFormField({
     super.key,
     required this.controller,
+    this.onChanged,
   });
 
   final TextEditingController controller;
-
+  final Function()? onChanged;
   @override
   Widget build(BuildContext context) {
     return CustomTextFormField(
@@ -42,6 +43,7 @@ class PostCodeFormField extends StatelessWidget {
           FilteringTextInputFormatter.digitsOnly,
         ],
         maxLength: 6,
-        fillColor: Colors.white);
+        fillColor: Colors.white,
+        onChanged: onChanged);
   }
 }

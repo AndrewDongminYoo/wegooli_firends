@@ -89,7 +89,7 @@ class _AcceptTermsState extends State<AcceptTerms> {
                 ? CustomButtonStyles.fillAmberA200C5
                 : CustomButtonStyles.fillPrimaryC5,
             buttonTextStyle: CustomTextStyles.titleMedium18,
-            onTap: controller.acceptanceComplete,
+            onTap: goPhoneAuth,
           )),
     );
   }

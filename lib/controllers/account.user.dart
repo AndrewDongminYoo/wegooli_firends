@@ -24,7 +24,11 @@ class UserController extends GetxController {
     Term(agree: false, title: '(필수) 위치기반서비스 이용약관', body: location_based),
     Term(agree: false, title: '(필수) 자동차대여 표준약관', body: car_rental_term),
     Term(agree: false, title: '(필수) 차량 위치정보 수집이용 제공동의', body: car_location),
-    Term(agree: false, title: '(선택) 마케팅 목적 개인정보 수집이용', body: marketing, opt: true),
+    Term(
+        agree: false,
+        title: '(선택) 마케팅 목적 개인정보 수집이용',
+        body: marketing,
+        opt: true),
   ];
 
   /// 로그인 - 아이디, 비밀번호
@@ -103,7 +107,7 @@ class UserController extends GetxController {
   bool get idPwLoginCompleted => false;
   bool get acceptTermsCompleted => false;
   bool get phoneAuthCompleted =>
-      username.text.isNotEmpty &&
+      realName.text.isNotEmpty &&
       birthDay.text.isNotEmpty &&
       birthDay.text.isNumericOnly &&
       socialId.text.isNotEmpty &&
@@ -215,7 +219,29 @@ class UserController extends GetxController {
       print('Send Acceptance Request 등록 실패\n $e');
       PrefUtils.saveAgreements(terms);
     }
-    await goPhoneAuth();
+    // await goPhoneAuth();
+  }
+
+  Future<void> signUp() async {
+    final userDto = UserDto(
+      email: emailAddress.text,
+      nickname: nickname.text,
+      password: password.text,
+      zipCode: postCode.text,
+      add1: primaryAddress.text,
+      add2: detailAddress.text,
+      birthday: birthDay.text,
+      phoneNumber: phoneNum.text,
+      name: realName.text,
+    );
+    print('userDto: $userDto');
+    final userLike = await _service.signUp(userDto);
+    if (userLike != null) {
+      currentUser = userLike;
+      state = SignUp.SUCCESS;
+      await goRegisterLicense();
+    }
+    print('signUp 실패 !!');
   }
 
   AccountAgreementRequest toAccountAgreementModel(Term e) {

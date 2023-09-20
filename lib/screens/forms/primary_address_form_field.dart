@@ -8,10 +8,11 @@ class PrimaryAddressFormField extends StatelessWidget {
   const PrimaryAddressFormField({
     super.key,
     required this.controller,
+    this.onChanged,
   });
 
   final TextEditingController controller;
-
+  final Function()? onChanged;
   @override
   Widget build(BuildContext context) {
     return CustomTextFormField(
@@ -25,6 +26,7 @@ class PrimaryAddressFormField extends StatelessWidget {
         textStyle: CustomTextStyles.bodyLargeGray50003,
         hintStyle: CustomTextStyles.bodyLargeGray50003,
         filled: true,
-        fillColor: Colors.white);
+        fillColor: Colors.white,
+        onChanged: onChanged);
   }
 }

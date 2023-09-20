@@ -5,9 +5,6 @@ import 'package:get/get.dart';
 import '/lib.dart';
 
 class AppRoutes {
-  /// 애플리케이션 홈
-  static const String home = '/';
-
   /// 디버그용 게이트웨이 화면
   static const String appGateway = '/app_gateway';
 
@@ -15,20 +12,21 @@ class AppRoutes {
   static const String splashScreen = '/splash_screen';
 
   /// 로그인 및 가입 관련
-  static const String idPwLogin = '/id_pw_login';
+  static const String idPwLogin = '/login';
+  static const String register = '/register';
   static const String acceptTerms = '/accept_terms';
-  static const String acceptTermsDetail = '/terms_of_use';
-  static const String phoneAuth = '/phone_auth';
-  static const String registerCreditCard = '/register_credit_card';
-  static const String registerLicense = '/register_license';
-  static const String registerSuccess = '/register_success';
-  static const String registerZipCode = '/register_zip_code';
+  static const String acceptTermsDetail = '/terms_detail/:id';
+  static const String phoneAuth = '/phone';
+  static const String registerCreditCard = '/new_card';
+  static const String registerLicense = '/license';
+  static const String registerSuccess = '/success';
+  static const String registerZipCode = '/zip_code';
 
   /// 캘린더 관련
   static const String sharedSchedule = '/shared_schedule';
   static const String teamInvitation = '/team_invitation';
-  static const String bookDatetimePicker = '/book_datetime_picker';
-  static const String reservationsCheck = '/reservations_check';
+  static const String bookDatetimePicker = '/datetime_picker';
+  static const String reservationsCheck = '/reservations';
 
   /// 센드버드 채팅 관련
   static const String chatWithTeam = '/chat_with_team';
@@ -38,18 +36,18 @@ class AppRoutes {
   static const String carStatusInfo = '/car_status_info';
 
   /// 마이페이지 관련
-  static const String registeredCardList = '/registered_card_list';
-  static const String myProfile = '/my_profile';
-  static const String profileInfoPage = '/profile_info';
+  static const String registeredCardList = '/card_list';
+  static const String modifyCreditCard = '/edit_card';
+  static const String myProfile = '/profile';
+  static const String profileInfoPage = '/profile/detail';
   static const String noSubscription = '/no_subscription';
   static const String unsubscribeConfirm = '/unsubscribe_confirm';
-  static const String upcomingUnsubscription = '/upcoming_unsubscription';
+  static const String upcomingUnsubscription = '/unsubscription';
 
   static List<GetPage> pages = [
     GetPage(
-      bindings: [UserAccountBinding(), TeamCommunityBinding()],
       name: appGateway,
-      page: GatewayScreen.new,
+      page: () => const GatewayScreen(),
     ),
     GetPage(
       name: acceptTerms,
@@ -59,7 +57,7 @@ class AppRoutes {
     GetPage(
       name: acceptTermsDetail,
       binding: UserAccountBinding(),
-      page: AcceptTermsDetail.new,
+      page: () => const AcceptTermsDetail(),
     ),
     GetPage(
       binding: UserAccountBinding(),
@@ -69,22 +67,25 @@ class AppRoutes {
     GetPage(
       binding: UserAccountBinding(),
       name: myProfile,
-      page: MyProfilePage.new,
+      page: () => const MyProfilePage(),
+      middlewares: [AuthMiddleware()],
     ),
     GetPage(
       binding: UserAccountBinding(),
       name: phoneAuth,
-      page: RegisterPhone.new,
+      page: () => const RegisterPhone(),
     ),
     GetPage(
       binding: UserAccountBinding(),
       name: registerCreditCard,
-      page: RegisterCreditCard.new,
+      page: () => const RegisterCreditCard(),
+      parameters: const {'type': 'new'},
     ),
     GetPage(
       binding: UserAccountBinding(),
       name: registeredCardList,
       page: () => const MyProfileCardList(),
+      middlewares: [AuthMiddleware()],
     ),
     GetPage(
       binding: UserAccountBinding(),
@@ -99,7 +100,7 @@ class AppRoutes {
     GetPage(
       binding: UserAccountBinding(),
       name: registerZipCode,
-      page: () => RegisterZipCode(),
+      page: () => const RegisterZipCode(),
     ),
     GetPage(
       binding: UserAccountBinding(),
@@ -110,61 +111,74 @@ class AppRoutes {
       binding: UserAccountBinding(),
       name: profileInfoPage,
       page: () => const MyProfileDetail(),
+      middlewares: [AuthMiddleware()],
     ),
     GetPage(
       binding: UserAccountBinding(),
       name: teamInvitation,
-      page: TeamInvitation.new,
+      page: () => const TeamInvitation(),
+      middlewares: [AuthMiddleware()],
     ),
     GetPage(
-      binding: UserAccountBinding(),
-      name: appGateway,
-      page: GatewayScreen.new,
+      binding: TeamCommunityBinding(),
+      name: sharedSchedule,
+      page: () => const SharedCalendar(),
+      middlewares: [AuthMiddleware()],
     ),
     GetPage(
       binding: TeamCommunityBinding(),
       name: bookDatetimePicker,
-      page: DatetimePickerBottomSheet.new,
+      page: () => const DatetimePickerBottomSheet(),
+      middlewares: [AuthMiddleware()],
     ),
     GetPage(
       binding: TeamCommunityBinding(),
       name: carStatusInfo,
       page: () => const CarStatusDetail(),
+      middlewares: [AuthMiddleware()],
     ),
     GetPage(
       binding: TeamCommunityBinding(),
       name: chatWithTeam,
       page: () => const DashChatWithFriendsPage(),
+      middlewares: [AuthMiddleware()],
     ),
     GetPage(
       binding: TeamCommunityBinding(),
       name: noSubscription,
       page: () => const NoSubscription(),
+      middlewares: [AuthMiddleware()],
     ),
     GetPage(
       binding: TeamCommunityBinding(),
       name: reservationsCheck,
-      page: ReservationsCheckingPageDialog.new,
+      page: () => const ReservationsCheckingPageDialog(),
+      middlewares: [AuthMiddleware()],
     ),
     GetPage(
-      binding: TeamCommunityBinding(),
-      name: home,
-      page: () => const MainPage(),
+      binding: UserAccountBinding(),
+      name: modifyCreditCard,
+      page: () => const RegisterCreditCard(),
+      parameters: const {'type': 'edit'},
+      middlewares: [AuthMiddleware()],
     ),
     GetPage(
       binding: TeamCommunityBinding(),
       name: carSmartKey,
       page: () => const CarStatusPage(),
+      middlewares: [AuthMiddleware()],
     ),
     GetPage(
       binding: TeamCommunityBinding(),
       name: unsubscribeConfirm,
-      page: UnsubscriptionConfirm.new,
+      page: () => const UnsubscriptionConfirm(),
+      middlewares: [AuthMiddleware()],
     ),
     GetPage(
       binding: TeamCommunityBinding(),
       name: upcomingUnsubscription,
       page: () => const UnsubscriptionUpcoming(),
+      middlewares: [AuthMiddleware()],
     ),
   ];
 }

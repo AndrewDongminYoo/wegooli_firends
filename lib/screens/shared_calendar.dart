@@ -35,6 +35,7 @@ class _SharedCalendarState extends State<SharedCalendar> {
                   ],
                 )),
           )),
+      bottomNavigationBar: CustomBottomNavBar(),
     );
   }
 }

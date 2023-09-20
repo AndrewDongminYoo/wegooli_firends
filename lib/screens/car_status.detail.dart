@@ -275,6 +275,7 @@ class CarStatusDetail extends GetWidget<VehicleController> {
               ),
             ],
           )),
+      bottomNavigationBar: CustomBottomNavBar(),
     );
   }
 }

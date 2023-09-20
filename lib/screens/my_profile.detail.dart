@@ -36,6 +36,7 @@ class MyProfileDetail extends GetWidget<UserController> {
               ],
             )),
       ),
+      bottomNavigationBar: CustomBottomNavBar(),
     );
   }
 }

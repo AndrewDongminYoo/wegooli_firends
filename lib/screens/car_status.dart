@@ -222,6 +222,7 @@ class _CarStatusPageState extends State<CarStatusPage> {
         ),
       ),
       floatingActionButton: const FloatingYellowButton(),
+      bottomNavigationBar: CustomBottomNavBar(),
     );
   }
 }

@@ -11,7 +11,7 @@ import 'package:intl/intl.dart';
 import '/lib.dart';
 
 class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
-  DatetimePickerBottomSheet({
+  const DatetimePickerBottomSheet({
     super.key,
     this.isEditMode = false,
     this.scheduleId,

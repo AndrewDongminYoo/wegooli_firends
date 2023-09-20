@@ -60,6 +60,7 @@ class UnsubscriptionConfirm extends GetWidget<VehicleController> {
                       ])),
             ],
           )),
+      bottomNavigationBar: CustomBottomNavBar(),
     );
   }
 }

@@ -42,6 +42,7 @@ class TeamInvitation extends StatelessWidget {
                   ],
                 )),
           )),
+      bottomNavigationBar: CustomBottomNavBar(),
     );
   }
 }

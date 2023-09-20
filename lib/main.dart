@@ -114,9 +114,11 @@ Widget _errorWidgetBuilder(dynamic context, Widget? child) {
     return child;
   } else {
     Get.showSnackbar(const GetSnackBar(
-        backgroundColor: Colors.red,
-        title: '글로벌 에러 핸들러 오류',
-        message: '예상치 못한 오류가 발생했습니다.\n 개발자에게 알려주세요 🙈'));
+      backgroundColor: Colors.red,
+      title: '글로벌 에러 핸들러 오류',
+      message: '예상치 못한 오류가 발생했습니다.\n 개발자에게 알려주세요 🙈',
+      duration: Duration(seconds: 1),
+    ));
     throw CustomException('📵');
   }
 }

@@ -86,7 +86,7 @@ class GatewayScreen extends StatelessWidget {
                             dialog: const ReservationsCheckingPageDialog(),
                             dialogTitle: l10ns.reservationsCheckingPage),
                         RouteModal(
-                            bottomSheet: DatetimePickerBottomSheet(),
+                            bottomSheet: const DatetimePickerBottomSheet(),
                             dialogTitle: l10ns.reservationDatetimePicker),
                         RouteModal(
                             bottomSheet: const AcceptTerms(),

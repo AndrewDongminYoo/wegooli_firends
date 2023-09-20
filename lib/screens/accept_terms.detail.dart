@@ -33,13 +33,11 @@ class _AcceptTermsDetailState extends State<AcceptTermsDetail> {
       index = 0;
     }
     final term = controller.terms[index];
-    final title = "[${term.opt ? '선택' : '필수'}] ${term.title}";
-    final content = term.body;
     return Scaffold(
-      appBar: CustomAppBar.getDefaultAppBar(title),
+      appBar: CustomAppBar.getDefaultAppBar(term.title),
       body: Markdown(
         controller: scroll,
-        data: content,
+        data: term.body,
         styleSheetTheme: MarkdownStyleSheetBaseTheme.cupertino,
         physics: const BouncingScrollPhysics(),
         padding: getPadding(all: 20),

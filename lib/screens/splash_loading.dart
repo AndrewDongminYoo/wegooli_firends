@@ -40,8 +40,6 @@ class SplashLoading extends StatelessWidget {
                             child: CustomImageView(
                               onTap: goIdPwLogin,
                               imagePath: Assets.images.imgGooli1.path,
-                              fit: BoxFit.fitWidth,
-                              height: 93.v,
                               width: 166.h,
                             )),
                       ],
@@ -50,7 +48,7 @@ class SplashLoading extends StatelessWidget {
                 // Connected to a terminated asynchronous computation.
                 case ConnectionState.done:
                   snapshot.data!.forEach((key, value) {
-                    print('키: $key, 값: $value');
+                    print('$key => $value');
                   });
                   return const LoginPage();
               }

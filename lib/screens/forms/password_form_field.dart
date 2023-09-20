@@ -12,10 +12,12 @@ class PasswordFormField extends StatelessWidget {
     super.key,
     required this.controller,
     required this.authMode,
+    this.onChanged,
   });
 
   final TextEditingController controller;
   final AuthMode authMode;
+  final Function()? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +45,7 @@ class PasswordFormField extends StatelessWidget {
         filled: true,
         validator: (value) =>
             value == null || value.isEmpty ? '필수 입력 항목입니다.' : null,
+        onChanged: onChanged,
       );
     });
   }
@@ -52,9 +55,11 @@ class PasswordConfirmFormField extends StatelessWidget {
   const PasswordConfirmFormField({
     super.key,
     required this.controller,
+    this.onChanged,
   });
 
   final TextEditingController controller;
+  final Function()? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -75,6 +80,7 @@ class PasswordConfirmFormField extends StatelessWidget {
           suffixConstraints: BoxConstraints(maxHeight: 48.v),
           filled: true,
           fillColor: Colors.white,
+          onChanged: onChanged,
         ));
   }
 }

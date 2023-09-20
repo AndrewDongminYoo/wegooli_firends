@@ -36,6 +36,7 @@ class CustomTextFormField extends StatelessWidget {
     this.maxLength,
     this.inputFormatters,
     this.obscureChar = '*',
+    this.onChanged,
     required this.controller,
   }) : super(key: key);
 
@@ -70,6 +71,7 @@ class CustomTextFormField extends StatelessWidget {
   final TextStyle? textStyle;
   final Widget? prefix;
   final Widget? suffix;
+  final Function()? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -84,26 +86,30 @@ class CustomTextFormField extends StatelessWidget {
       width: width ?? double.maxFinite,
       margin: margin,
       child: TextFormField(
-          obscuringCharacter: obscureChar,
-          maxLength: maxLength,
-          inputFormatters: inputFormatters ?? [],
-          obscureText: obscureText!,
-          controller: controller,
-          autofocus: autofocus!,
-          focusNode: focusNode ?? FocusNode(),
-          autofillHints: autofillHints ?? [],
-          autovalidateMode: (autofill ?? false)
-              ? AutovalidateMode.always
-              : AutovalidateMode.onUserInteraction,
-          style: textStyle ?? CustomTextStyles.bodyLargeGray50002,
-          textInputAction: textInputAction,
-          keyboardType: textInputType,
-          maxLines: maxLines ?? 1,
-          decoration: decoration,
-          validator: validator,
-          enabled: enabled,
-          readOnly: !enabled!,
-          initialValue: initialValue));
+        obscuringCharacter: obscureChar,
+        maxLength: maxLength,
+        inputFormatters: inputFormatters ?? [],
+        obscureText: obscureText!,
+        controller: controller,
+        autofocus: autofocus!,
+        focusNode: focusNode ?? FocusNode(),
+        autofillHints: autofillHints ?? [],
+        autovalidateMode: (autofill ?? false)
+            ? AutovalidateMode.always
+            : AutovalidateMode.onUserInteraction,
+        style: textStyle ?? CustomTextStyles.bodyLargeGray50002,
+        textInputAction: textInputAction,
+        keyboardType: textInputType,
+        maxLines: maxLines ?? 1,
+        decoration: decoration,
+        validator: validator,
+        enabled: enabled,
+        readOnly: !enabled!,
+        initialValue: initialValue,
+        onChanged: (value) {
+          onChanged?.call();
+        },
+      ));
   InputDecoration get decoration => InputDecoration(
         hintText: hintText ?? '',
         hintStyle: hintStyle ?? CustomTextStyles.bodyLargeGray50002,

@@ -17,6 +17,9 @@ class _AcceptTermsState extends State<AcceptTerms> {
     return controller.terms.every((term) => term.agree);
   }
 
+  bool get isDisabled =>
+      controller.terms.where((term) => !term.opt).any((term) => !term.agree);
+
   // 전체 항목 동의
   Future<void> setAllTermsAccepted(bool? value) async {
     for (var i = 0; i < controller.terms.length; i++) {
@@ -30,6 +33,7 @@ class _AcceptTermsState extends State<AcceptTerms> {
 
   @override
   Widget build(BuildContext context) {
+    // print('AAA : isDisabled $isDisabled');
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: CustomAppBar.minimalAppBar(l10ns.acceptTerms),
@@ -60,9 +64,13 @@ class _AcceptTermsState extends State<AcceptTerms> {
                           itemCount: controller.terms.length,
                           itemBuilder: (BuildContext context, int index) {
                             return AgreementItem(
-                              index: index,
-                              terms: controller.terms,
-                            );
+                                index: index,
+                                terms: controller.terms,
+                                onChange: (value) {
+                                  setState(() {
+                                    controller.terms[index].agree = value;
+                                  });
+                                });
                           }),
                     ],
                   )),
@@ -76,9 +84,12 @@ class _AcceptTermsState extends State<AcceptTerms> {
           ),
           child: CustomElevatedButton(
             text: l10ns.acceptanceComplete,
-            buttonStyle: CustomButtonStyles.fillPrimaryC5,
+            isDisabled: isDisabled,
+            buttonStyle: isDisabled
+                ? CustomButtonStyles.fillAmberA200C5
+                : CustomButtonStyles.fillPrimaryC5,
             buttonTextStyle: CustomTextStyles.titleMedium18,
-            onTap: controller.acceptanceComplete,
+            onTap: goPhoneAuth,
           )),
     );
   }

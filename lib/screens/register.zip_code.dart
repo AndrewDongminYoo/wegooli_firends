@@ -7,8 +7,15 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/lib.dart';
 
-class RegisterZipCode extends GetWidget<UserController> {
-  const RegisterZipCode({super.key});
+class RegisterZipCode extends StatefulWidget {
+  RegisterZipCode({super.key});
+
+  @override
+  State<RegisterZipCode> createState() => _RegisterZipCodeState();
+}
+
+class _RegisterZipCodeState extends State<RegisterZipCode> {
+  final controller = UserController.to;
 
   @override
   Widget build(BuildContext context) {
@@ -29,14 +36,16 @@ class RegisterZipCode extends GetWidget<UserController> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           CustomInputLabel(labelText: l10ns.homeAddress),
-                          PostCodeFormField(controller: controller.postCode),
+                          PostCodeFormField(
+                              controller: controller.postCode,
+                              onChanged: ()=>setState(() {})),
                         ]),
                   ),
                 ),
                 const Expanded(child: PostCodeSearchButton()),
               ]),
-              PrimaryAddressFormField(controller: controller.primaryAddress),
-              DetailAddressFormField(controller: controller.detailAddress),
+              PrimaryAddressFormField(controller: controller.primaryAddress, onChanged: ()=>setState(() {})),
+              DetailAddressFormField(controller: controller.detailAddress, onChanged: ()=>setState(() {})),
               Padding(
                   padding: getPadding(top: 27),
                   child: Column(
@@ -45,7 +54,9 @@ class RegisterZipCode extends GetWidget<UserController> {
                         CustomInputLabel(labelText: l10ns.id),
                         UserMailFormField(
                             controller: controller.emailAddress,
-                            authMode: authMode),
+                            authMode: authMode,
+                            onChanged: () => setState(() {})
+                            ),
                       ])),
               Padding(
                   padding: getPadding(top: 27),
@@ -55,7 +66,8 @@ class RegisterZipCode extends GetWidget<UserController> {
                         CustomInputLabel(labelText: l10ns.password),
                         PasswordFormField(
                             controller: controller.password,
-                            authMode: authMode),
+                            authMode: authMode,
+                            onChanged: () => setState(() {})),
                       ])),
               Padding(
                   padding: getPadding(top: 27),
@@ -64,7 +76,8 @@ class RegisterZipCode extends GetWidget<UserController> {
                       children: [
                         CustomInputLabel(labelText: l10ns.confirmPassword),
                         PasswordConfirmFormField(
-                            controller: controller.rePassword),
+                            controller: controller.rePassword,
+                            onChanged: () => setState(() {})),
                       ])),
               Padding(
                   padding: getPadding(top: 27),
@@ -72,7 +85,8 @@ class RegisterZipCode extends GetWidget<UserController> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         CustomInputLabel(labelText: l10ns.nickname),
-                        NickNameFormField(controller: controller.nickname),
+                        NickNameFormField(controller: controller.nickname,
+                            onChanged: () => setState(() {})),
                       ])),
             ])),
       ),

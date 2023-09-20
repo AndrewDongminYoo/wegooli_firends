@@ -22,8 +22,10 @@ class SMSValidationForm extends StatefulWidget {
   const SMSValidationForm({
     super.key,
     required this.controller,
+    this.onChanged,
   });
   final UserController controller;
+  final Function()? onChanged;
   @override
   State<SMSValidationForm> createState() => _SMSValidationFormState();
 }
@@ -182,7 +184,9 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const TelecomDropdown(),
-                PhoneNumberFormField(controller: widget.controller.phoneNum),
+                PhoneNumberFormField(
+                    controller: widget.controller.phoneNum,
+                    onChanged: widget.onChanged),
               ],
             ),
             Row(
@@ -229,6 +233,7 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
                         ? Text('$_min:$_sec', style: theme.textTheme.labelSmall)
                         : const SizedBox.shrink(),
                   ),
+                  onChanged: widget.onChanged,
                 ),
                 CustomElevatedButton(
                   text: l10ns.confirm,
@@ -236,9 +241,9 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
                   margin: getMargin(top: 10),
                   buttonStyle: CustomButtonStyles.fillPrimaryC5,
                   buttonTextStyle: theme.textTheme.titleMedium,
-                  onTap: () {
+                  onTap: () async {
                     Get.closeAllSnackbars();
-                    Get.defaultDialog(
+                    await Get.defaultDialog(
                         title: '휴대폰 인증완료', middleText: 'SMS 인증이 완료되었습니다!');
                   },
                 ),

@@ -11,11 +11,13 @@ class BirthdayNumberFormField extends StatelessWidget {
     required this.controller,
     required this.focusNode,
     required this.readonly,
+    this.onChanged,
   });
 
   final TextEditingController controller;
   final FocusNode focusNode;
   final bool readonly;
+  final Function()? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +38,7 @@ class BirthdayNumberFormField extends StatelessWidget {
         hintText: 'YYMMDD',
         hintStyle: CustomTextStyles.bodyLargeGray50003,
         filled: true,
-        fillColor: Colors.white);
+        fillColor: Colors.white,
+        onChanged: onChanged);
   }
 }

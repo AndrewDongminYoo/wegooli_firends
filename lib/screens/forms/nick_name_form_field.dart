@@ -8,9 +8,11 @@ class NickNameFormField extends StatelessWidget {
   const NickNameFormField({
     super.key,
     required this.controller,
+    this.onChanged,
   });
 
   final TextEditingController controller;
+  final Function()? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +27,7 @@ class NickNameFormField extends StatelessWidget {
       hintText: l10ns.enterANicknameUpTo10Characters,
       fillColor: Colors.white,
       filled: true,
+      onChanged: onChanged,
     );
   }
 }

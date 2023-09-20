@@ -19,12 +19,16 @@ class UserController extends GetxController {
       : Get.put(UserController());
 
   List<Term> terms = [
-    Term(agree: false, title: '개인정보 처리방침', body: privacy_policy),
-    Term(agree: false, title: '개인 위치정보 처리 방침', body: location_data),
-    Term(agree: false, title: '위치기반서비스 이용약관', body: location_based),
-    Term(agree: false, title: '자동차대여 표준약관', body: car_rental_term),
-    Term(agree: false, title: '차량 위치정보 수집이용 제공동의', body: car_location),
-    Term(agree: false, title: '마케팅 목적 개인정보 수집이용', body: marketing, opt: true),
+    Term(agree: false, title: '(필수) 개인정보 처리방침', body: privacy_policy),
+    Term(agree: false, title: '(필수) 개인 위치정보 처리 방침', body: location_data),
+    Term(agree: false, title: '(필수) 위치기반서비스 이용약관', body: location_based),
+    Term(agree: false, title: '(필수) 자동차대여 표준약관', body: car_rental_term),
+    Term(agree: false, title: '(필수) 차량 위치정보 수집이용 제공동의', body: car_location),
+    Term(
+        agree: false,
+        title: '(선택) 마케팅 목적 개인정보 수집이용',
+        body: marketing,
+        opt: true),
   ];
 
   /// 로그인 - 아이디, 비밀번호
@@ -40,8 +44,10 @@ class UserController extends GetxController {
   TextEditingController pinCodes = TextEditingController();
 
   /// 회원가입[2] - 집주소, 이메일주소, 비밀번호, 닉네임
-  TextEditingController postCode = TextEditingController();
-  TextEditingController primaryAddress = TextEditingController();
+  TextEditingController postCode =
+      TextEditingController(); // TODO Web에서 개발할 땐, TextEditingController(text: 'zipCode')
+  TextEditingController primaryAddress =
+      TextEditingController(); // Web에서 개발할 땐, TextEditingController(text: 'add1')
   TextEditingController detailAddress = TextEditingController();
   TextEditingController emailAddress =
       TextEditingController(); // 이메일 (아이디로 사용예정)
@@ -103,7 +109,7 @@ class UserController extends GetxController {
   bool get idPwLoginCompleted => false;
   bool get acceptTermsCompleted => false;
   bool get phoneAuthCompleted =>
-      username.text.isNotEmpty &&
+      realName.text.isNotEmpty &&
       birthDay.text.isNotEmpty &&
       birthDay.text.isNumericOnly &&
       socialId.text.isNotEmpty &&
@@ -117,6 +123,7 @@ class UserController extends GetxController {
   bool get registerCreditCardCompleted => false;
   bool get registerLicenseCompleted => false;
   bool get registerSuccessCompleted => false;
+  // TODO Web에서 개발할땐 postCode, primaryAddress 줄 주석 처리하고 진행할 것
   bool get registerZipCodeCompleted =>
       postCode.text.isNotEmpty &&
       primaryAddress.text.isNotEmpty &&
@@ -207,7 +214,9 @@ class UserController extends GetxController {
   }
 
   Future<void> acceptanceComplete() async {
-    agreement = terms.map(toAccountAgreementModel).toList();
+    agreement = terms
+        .map((term) => toAccountAgreementModel(term, emailAddress.text))
+        .toList();
     print(agreement);
     try {
       await _service.sendAcceptanceRequest(agreement);
@@ -215,12 +224,39 @@ class UserController extends GetxController {
       print('Send Acceptance Request 등록 실패\n $e');
       PrefUtils.saveAgreements(terms);
     }
-    await goPhoneAuth();
+    // await goPhoneAuth();
   }
 
-  AccountAgreementRequest toAccountAgreementModel(Term e) {
+  Future<bool> signUp() async {
+    final userDto = UserDto(
+      email: emailAddress.text,
+      id: emailAddress.text,
+      nickname: nickname.text,
+      password: password.text,
+      zipCode: postCode.text,
+      add1: primaryAddress.text,
+      add2: detailAddress.text,
+      birthday: birthDay.text,
+      phoneNumber: phoneNum.text,
+      name: realName.text,
+      sex: socialId.text.startsWith(RegExp('[13]')) ? 'M' : 'F',
+    );
+    print('userDto: $userDto');
+    final userLike = await _service.signUp(userDto);
+    if (userLike != null) {
+      currentUser = userLike;
+      state = SignUp.SUCCESS;
+      return true;
+    } else {
+      print('signUp 실패 !!');
+      return false;
+    }
+  }
+
+  AccountAgreementRequest toAccountAgreementModel(Term e, String accountId) {
     return AccountAgreementRequest(
       classification: e.title,
+      accountId: accountId,
       agreeYn: e.agree ? 'Y' : 'N',
     );
   }

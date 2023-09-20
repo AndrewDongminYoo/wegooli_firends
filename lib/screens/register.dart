@@ -7,13 +7,22 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/lib.dart';
 
-class RegisterPhone extends GetWidget<UserController> {
-  const RegisterPhone({super.key});
+class RegisterPhone extends StatefulWidget {
+  RegisterPhone({super.key});
+
+  @override
+  State<RegisterPhone> createState() => _RegisterPhoneState();
+}
+
+class _RegisterPhoneState extends State<RegisterPhone> {
+  final controller = UserController.to;
+
   @override
   Widget build(BuildContext context) {
     final _nameText = FocusNode();
     final _birthday = FocusNode();
     final _socialId = FocusNode();
+    print('controller.phoneAuthCompleted ${controller.phoneAuthCompleted}');
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
@@ -26,9 +35,11 @@ class RegisterPhone extends GetWidget<UserController> {
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                 CustomInputLabel(labelText: l10ns.name),
                 KoreanNameFormField(
-                  controller: controller.realName,
-                  focusNode: _nameText,
-                ),
+                    controller: controller.realName,
+                    focusNode: _nameText,
+                    onChanged: () {
+                      setState(() {});
+                    }),
               ]),
               Padding(
                   padding: getPadding(top: 26, bottom: 7),
@@ -42,15 +53,19 @@ class RegisterPhone extends GetWidget<UserController> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               BirthdayNumberFormField(
-                                controller: controller.birthDay,
-                                focusNode: _birthday,
-                                readonly: false,
-                              ),
+                                  controller: controller.birthDay,
+                                  focusNode: _birthday,
+                                  readonly: false,
+                                  onChanged: () {
+                                    setState(() {});
+                                  }),
                               const Text('-', style: TextStyle(fontSize: 24)),
                               SocialSecurityNumberFormField(
-                                controller: controller.socialId,
-                                focusNode: _socialId,
-                              ),
+                                  controller: controller.socialId,
+                                  focusNode: _socialId,
+                                  onChanged: () {
+                                    setState(() {});
+                                  }),
                             ]),
                         Row(children: [
                           Text(
@@ -64,8 +79,10 @@ class RegisterPhone extends GetWidget<UserController> {
                         ])
                       ])),
               SMSValidationForm(
-                controller: controller,
-              ),
+                  controller: controller,
+                  onChanged: () {
+                    setState(() {});
+                  }),
             ])),
       ),
       // ValidatePhoneCompleteButton
@@ -73,8 +90,10 @@ class RegisterPhone extends GetWidget<UserController> {
           margin: getMargin(left: 16, right: 16, bottom: 29),
           child: CustomElevatedButton(
             text: l10ns.authenticationComplete, // '인증 완료'
-            isDisabled: controller.phoneAuthCompleted,
-            buttonStyle: CustomButtonStyles.fillPrimaryC26,
+            isDisabled: !controller.phoneAuthCompleted,
+            buttonStyle: !controller.phoneAuthCompleted
+                ? CustomButtonStyles.fillAmberA200C5
+                : CustomButtonStyles.fillPrimaryC26,
             buttonTextStyle: CustomTextStyles.titleMedium18,
             onTap: goRegisterZipCode,
           )),

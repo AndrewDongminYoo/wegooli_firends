@@ -99,7 +99,7 @@ class AppRoutes {
     GetPage(
       binding: UserAccountBinding(),
       name: registerZipCode,
-      page: () => const RegisterZipCode(),
+      page: () => RegisterZipCode(),
     ),
     GetPage(
       binding: UserAccountBinding(),

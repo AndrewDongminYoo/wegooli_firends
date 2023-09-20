@@ -1,5 +1,4 @@
 // 📦 Package imports:
-import 'package:dio/dio.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
@@ -17,9 +16,8 @@ class TeamAccountService extends GetConnect {
           accountId: accountId, isLeaved: 'false');
       // print('findTeams : ${response.data}');
       return response.data!;
-    } on DioException catch (e) {
-      print('`findTeams()` 호출 중 DioException 발생: $e\n');
     } on Exception catch (e) {
+      printDioException('findTeams', e);
       print('`findTeams()` 호출 중 Exception 발생: $e\n');
     }
     return List.empty();
@@ -31,10 +29,8 @@ class TeamAccountService extends GetConnect {
       final teams = await findTeams(accountId);
       // print('findFirstTeamOrNull : ${teams.firstOrNull}');
       return teams.firstOrNull;
-    } on DioException catch (e) {
-      print('`findFirstTeamOrNull()` 호출 중 DioException 발생: $e\n');
     } on Exception catch (e) {
-      print('`findFirstTeamOrNull()` 호출 중 Exception 발생: $e\n');
+      printDioException('findFirstTeamOrNull', e);
     }
     return null;
   }
@@ -46,10 +42,8 @@ class TeamAccountService extends GetConnect {
       return teamOrNull == null
           ? List.empty()
           : teamOrNull.account ?? List.empty();
-    } on DioException catch (e) {
-      print('`findMembers()` 호출 중 DioException 발생: $e\n');
     } on Exception catch (e) {
-      print('`findMembers()` 호출 중 Exception 발생: $e\n');
+      printDioException('findMembers', e);
     }
     return List.empty();
   }

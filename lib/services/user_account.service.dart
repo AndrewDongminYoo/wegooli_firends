@@ -1,5 +1,7 @@
+// 🎯 Dart imports:
+import 'dart:math';
+
 // 📦 Package imports:
-import 'package:dio/dio.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
@@ -24,6 +26,7 @@ class UserAccountService extends GetConnect {
         Get.showSnackbar(const GetSnackBar(
           title: '로그인',
           message: '결과 값의 토큰 데이터에 오류가 발생했습니다.',
+          duration: Duration(seconds: 1),
         ));
       } else {
         bearerToken = result.token!;
@@ -42,32 +45,44 @@ class UserAccountService extends GetConnect {
       } else {
         print('❌ 만료된 토큰입니다.');
       }
-    } on DioException catch (e) {
-      printDioException(e);
-      print('`login()` 호출 중 DioException 발생: $e\n');
     } on Exception catch (e) {
-      print('`login()` 호출 중 Exception 발생: $e\n');
+      printDioException('login', e);
     }
     print('로그인 함수 null 반환');
     return null;
   }
 
-  void printDioException(DioException e) {
-    final message = switch (e.type) {
-      DioExceptionType.connectionError => e.message ?? '연결 오류가 발생했습니다.',
-      DioExceptionType.connectionTimeout =>
-        e.message ?? '요청 연결이 5000ms보다 오래 걸렸습니다.',
-      DioExceptionType.sendTimeout =>
-        e.message ?? '요청이 데이터를 전송하는 데 timeout 보다 오래 걸렸습니다.',
-      DioExceptionType.receiveTimeout =>
-        e.message ?? '데이터를 받는 데 3000ms 보다 오래 걸렸습니다.',
-      DioExceptionType.badCertificate => e.message ?? '요청에 잘못된 인가 코드를 사용했습니다.',
-      DioExceptionType.badResponse => e.message ?? '요청에서 잘못된 상태 코드를 반환했습니다.',
-      DioExceptionType.cancel => e.message ?? '요청이 취소되었습니다.',
-      DioExceptionType.unknown =>
-        'message: ${e.message}\nerror: ${e.error}\nresponseData: ${e.response?.data}',
-    };
-    print(message);
+  Future<UserDto?> signIn(
+      String realName,
+      String birthDay,
+      String socialId,
+      String phoneNum,
+      String postCode,
+      String primaryAddress,
+      String detailAddress,
+      String emailAddress,
+      String password,
+      String nickname) async {
+    final sex = socialId.startsWith(RegExp('[13]')) ? 'M' : 'F';
+    final i = Random().nextInt(4);
+    final userDto = UserDto(
+      name: realName,
+      add1: primaryAddress,
+      add2: detailAddress,
+      zipCode: postCode,
+      phoneNumber: phoneNum,
+      email: emailAddress,
+      birthday: birthDay,
+      sex: sex,
+      password: password,
+      delimit: 'OPERATOR',
+      nickname: nickname,
+      profilePicture: placeholders[i],
+      color: '#121212',
+      activeYn: true.toYN,
+    );
+    final user = await api.signup(userDto: userDto);
+    return user.data;
   }
 
   Future<void> logOut() async {
@@ -89,4 +104,11 @@ class UserAccountService extends GetConnect {
     print('response: $response');
     return response.data!;
   }
+
+  List<String> placeholders = [
+    Assets.images.placeholder01.path,
+    Assets.images.placeholder02.path,
+    Assets.images.placeholder03.path,
+    Assets.images.placeholder04.path,
+  ];
 }

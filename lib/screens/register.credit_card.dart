@@ -1,6 +1,9 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+// 📦 Package imports:
+import 'package:get/get.dart';
+
 // 🌎 Project imports:
 import '/lib.dart';
 
@@ -13,23 +16,25 @@ class RegisterCreditCard extends StatefulWidget {
 
 class _RegisterCreditCardState extends State<RegisterCreditCard> {
   final controller = PaymentCardController.to;
-
   final userController = UserController.to;
-
   final birthday = FocusNode();
-
   final cardNums = FocusNode();
-
   final cardPins = FocusNode();
-
   final expMonth = FocusNode();
 
   @override
   Widget build(BuildContext context) {
+    print(Get.parameters['type']);
+    String title;
+    if (Get.parameters['type'] == 'edit') {
+      title = '카드 수정';
+    } else {
+      title = l10ns.cardRegistration;
+    }
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
-      appBar: CustomAppBar.getDefaultAppBar(l10ns.cardRegistration),
+      appBar: CustomAppBar.getDefaultAppBar(title),
       body: Unfocused(
         child: Container(
             width: double.maxFinite,

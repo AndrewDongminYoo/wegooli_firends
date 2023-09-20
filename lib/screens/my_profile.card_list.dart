@@ -56,8 +56,6 @@ class _MyProfileCardListState extends State<MyProfileCardList> {
                                                   : controller.selected.value,
                                           textStyle: theme.textTheme.bodyLarge,
                                           onChange: (String value) {
-                                            // print(
-                                            //     'first option selected : $value');
                                             controller.selected.value = value;
                                           }),
                                       CustomImageView(
@@ -78,12 +76,13 @@ class _MyProfileCardListState extends State<MyProfileCardList> {
                     text: l10ns.cardAdditions,
                     buttonStyle: CustomButtonStyles.fillPrimaryC26,
                     buttonTextStyle: CustomTextStyles.titleMedium18,
-                    onTap: goRegisterCreditCard,
+                    onTap: addMoreCreditCard,
                   ),
                 ),
               ],
             )),
       ),
+      bottomNavigationBar: CustomBottomNavBar(),
     );
   }
 }

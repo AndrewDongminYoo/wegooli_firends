@@ -75,7 +75,7 @@ class RegisterLicense extends GetWidget<LicenseController> {
             buttonTextStyle: CustomTextStyles.titleMedium18,
             onTap: () {
               if (controller.licenseInputSucceed) {
-                goRegisterCreditCard();
+                signUpCreditCard();
               }
             }),
       ),

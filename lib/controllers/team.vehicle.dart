@@ -108,7 +108,7 @@ class VehicleController extends GetxController {
   }
 
   /// 현재 차량의 잔여 연료 레벨 (0~10).
-  int get level => int.parse(fuel) ~/ 10;
+  int get level => (int.tryParse(fuel) ?? 0) ~/ 10;
   ShareServiceModel? _sharingService;
   ShareServiceModel get sharingService {
     if (_sharingService == null) {

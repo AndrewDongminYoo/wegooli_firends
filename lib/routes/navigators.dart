@@ -38,8 +38,9 @@ Future<dynamic>? goPhoneAuth() => Get.toNamed(AppRoutes.phoneAuth);
 // [Page] 마이페이지 / 내 정보보기
 Future<dynamic>? goProfileInfoPage() => Get.toNamed(AppRoutes.profileInfoPage);
 // [Page] 신용카드 등록
-Future<dynamic>? goRegisterCreditCard() =>
+Future<dynamic>? signUpCreditCard() =>
     Get.toNamed(AppRoutes.registerCreditCard);
+Future<dynamic>? addMoreCreditCard() => Get.toNamed(AppRoutes.modifyCreditCard);
 // [Page] 카드 관리 페이지
 Future<dynamic>? goRegisteredCardList() =>
     Get.toNamed(AppRoutes.registeredCardList);

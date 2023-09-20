@@ -205,14 +205,13 @@ flutter_gen:
 #   dart run import_sorter:main -e
 import_sorter:
   emojis: true # Optional, defaults to false
-  # ignored_files: # Optional, defaults to []
+  ignored_files: # Optional, defaults to []
   # - /lib/gen/assets.gen.dart
   # - /lib/gen/colors.gen.dart
   # - /lib/gen/fonts.gen.dart
   # - /lib/gen/gen.dart
-  # - /lib/l10n/app_localizations_en.dart
-  # - /lib/l10n/app_localizations_ko.dart
-  # - /lib/l10n/app_localizations.dart
+    - /lib/l10n/app_localizations_ko.dart
+    - /lib/l10n/app_localizations.dart
 
 analyzer:
   errors:

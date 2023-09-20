@@ -44,8 +44,10 @@ class UserController extends GetxController {
   TextEditingController pinCodes = TextEditingController();
 
   /// 회원가입[2] - 집주소, 이메일주소, 비밀번호, 닉네임
-  TextEditingController postCode = TextEditingController();
-  TextEditingController primaryAddress = TextEditingController();
+  TextEditingController postCode =
+      TextEditingController(); // TODO Web에서 개발할 땐, TextEditingController(text: 'zipCode')
+  TextEditingController primaryAddress =
+      TextEditingController(); // Web에서 개발할 땐, TextEditingController(text: 'add1')
   TextEditingController detailAddress = TextEditingController();
   TextEditingController emailAddress =
       TextEditingController(); // 이메일 (아이디로 사용예정)
@@ -121,6 +123,7 @@ class UserController extends GetxController {
   bool get registerCreditCardCompleted => false;
   bool get registerLicenseCompleted => false;
   bool get registerSuccessCompleted => false;
+  // TODO Web에서 개발할땐 postCode, primaryAddress 줄 주석 처리하고 진행할 것
   bool get registerZipCodeCompleted =>
       postCode.text.isNotEmpty &&
       primaryAddress.text.isNotEmpty &&
@@ -211,7 +214,9 @@ class UserController extends GetxController {
   }
 
   Future<void> acceptanceComplete() async {
-    agreement = terms.map(toAccountAgreementModel).toList();
+    agreement = terms
+        .map((term) => toAccountAgreementModel(term, emailAddress.text))
+        .toList();
     print(agreement);
     try {
       await _service.sendAcceptanceRequest(agreement);
@@ -222,9 +227,10 @@ class UserController extends GetxController {
     // await goPhoneAuth();
   }
 
-  Future<void> signUp() async {
+  Future<bool> signUp() async {
     final userDto = UserDto(
       email: emailAddress.text,
+      id: emailAddress.text,
       nickname: nickname.text,
       password: password.text,
       zipCode: postCode.text,
@@ -233,20 +239,24 @@ class UserController extends GetxController {
       birthday: birthDay.text,
       phoneNumber: phoneNum.text,
       name: realName.text,
+      sex: socialId.text.startsWith(RegExp('[13]')) ? 'M' : 'F',
     );
     print('userDto: $userDto');
     final userLike = await _service.signUp(userDto);
     if (userLike != null) {
       currentUser = userLike;
       state = SignUp.SUCCESS;
-      await goRegisterLicense();
+      return true;
+    } else {
+      print('signUp 실패 !!');
+      return false;
     }
-    print('signUp 실패 !!');
   }
 
-  AccountAgreementRequest toAccountAgreementModel(Term e) {
+  AccountAgreementRequest toAccountAgreementModel(Term e, String accountId) {
     return AccountAgreementRequest(
       classification: e.title,
+      accountId: accountId,
       agreeYn: e.agree ? 'Y' : 'N',
     );
   }

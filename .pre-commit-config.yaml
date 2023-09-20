@@ -1,0 +1,9 @@
+repos:
+  - repo: https://github.com/AndrewDongminYoo/dart-pre-commit-hooks
+    rev: 42be0f249458cb073df09e606f714bfc2d6a4496
+    hooks:
+      - id: run-build-runner
+      - id: generate-localization-file
+      - id: run-dart-import-sorter
+      - id: run-dart-fix
+      - id: run-dart-formatter

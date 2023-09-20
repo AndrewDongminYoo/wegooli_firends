@@ -34,7 +34,7 @@
     "format": "yarn fmt:fix && yarn fmt:sort",
     "format:hard": "yarn fmt:fix && yarn fmt:sort && yarn fmt:hard",
     "gen:asset": "dart run build_runner build --delete-conflicting-outputs",
-    "gen:locale": "flutter gen-l10n",
+    "gen:locale": "flutter gen-l10n --arb-dir=lib/l10n --output-class=Localized --output-dir=lib/gen/l10n --output-localization-file=app_localizations.dart --preferred-supported-locales=ko --project-dir=lib --no-synthetic-package --template-arb-file=app_ko.arb --no-use-escaping --format",
     "generate": "yarn gen:asset && yarn gen:locale && yarn fmt:sort",
     "clean": "flutter clean",
     "clean_preinstall": "yarn clean && yarn install && yarn gen:asset && yarn format",

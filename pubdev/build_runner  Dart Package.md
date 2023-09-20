@@ -45,11 +45,14 @@ dev_dependencies:
 
 사용 가능한 명령은 `build`, `watch`, `serve`, `test`입니다.
 
-- `build`: 단일 빌드를 실행하고 종료합니다.
-- `watch`: 파일 시스템에서 편집 내용을 감시하고 필요에 따라 리빌드를 수행하는 영구 빌드 서버를 실행합니다.
-- `serve`: `watch`와 동일하지만 개발 서버도 실행합니다.
-  - By default this serves the `web` and `test` directories, on port `8080` and `8081` respectively. See below for how to configure this.
-- `test`: 단일 빌드를 실행하고 병합된 출력 디렉터리를 생성한 다음 `dart run test --precompiled <merged-output-dir>`를 실행합니다. 테스트 명령에 사용자 지정 인수를 전달하는 방법은 아래를 참조하세요.
+- `run`: 단일 빌드를 실행하고 지정된 인수를 사용하여 Dart 스크립트를 실행합니다.
+- `build`: 지정된 대상에 대해 단일 빌드를 실행한 다음 종료합니다.
+- `clean`: 이전 빌드의 출력을 정리합니다. 출력 디렉터리(`--output`)는 정리하지 않습니다.
+- `doctor`: 빌드 구성이 잘못되었는지 확인합니다.
+- `watch`: 파일 시스템에서 파일 시스템에서 업데이트를 확인하여 필요에 따라 리빌드를 실행하는 영구 빌드 서버를 실행합니다.
+- `serve`: `watch`와 동일하지만 지정된 대상을 제공하는 개발 서버를 실행하고 파일 시스템 업데이트를 기반으로 빌드를 실행합니다.
+  - 기본적으로 포트 `8080` 및 `8081`에서 각각 `web` 및 `test` 디렉터리를 제공합니다. 이를 구성하는 방법은 아래를 참조하세요.
+- `test`: 단일 빌드를 실행하고 병합된 출력 디렉터리를 생성한 다음 컴파일된 에셋을 사용하여 테스트(`dart run test --precompiled <merged-output-dir>`)를 실행합니다. 테스트 명령에 사용자 지정 인수를 전달하는 방법은 아래를 참조하세요.
 
 ### Command Line Options
 
@@ -110,6 +113,20 @@ _generated_ 생성된 파일은 일반적으로 소스 제어에 커밋하지 �
 [`run`](https://pub.dev/documentation/build_runner/latest/build_runner/run.html)에는 필수 매개변수인 `List<BuilderApplication>`이 있습니다. 이는 `package:build_config`의 `BuilderDefinition` 클래스에 해당합니다. 이 클래스의 인스턴스를 생성하려면 `apply` 및 `applyToRoot`를 참조하십시오. 이 인스턴스는 의존성을 크롤링하여 액션으로 변환됩니다. 이 목록의 순서는 중요합니다. 각 빌더는 종속성 그래프에서 패키지에서 실행된 모든 빌더의 생성된 출력을 읽을 수 있지만, 자신이 실행 중인 패키지의 경우 `BuilderApplication` 목록의 앞쪽에 있는 빌더에서 생성된 출력만 읽을 수 있습니다.
 
 **참고**: 빌드 스크립트(또는 그 종속성)를 변경할 때마다 다음 빌드는 전체 재빌드가 됩니다. 이는 시스템에서 해당 변경 사항이 출력에 어떤 영향을 미쳤는지 알 수 없기 때문입니다.
+
+##### run
+
+Usage: build_runner run [build-arguments] <executable> [-- [script-arguments]]
+
+`--low-resources-mode`: 빌드 프로세스에서 사용하는 메모리 양을 줄입니다. 이렇게 하면 빌드 속도가 느려지지만 리소스가 제한된 환경에서는 빌드를 진행할 수 있습니다.
+`--config`: 기본 `build.yaml` 대신 `build.<name>.yaml`을 읽습니다.
+`--[no-]track-performance`: 성능 추적 및 /$perf 페이지를 활성화합니다.
+`--log-performance`: 성능 로그를 기록할 디렉터리는 현재 패키지에 있어야 합니다. `track-performance`를 의미합니다.
+`--output`: 완전히 빌드된 패키지를 복사할 디렉토리. 또는 패키지의 최상위 디렉토리에서 필터링된 빌드 출력을 작성할 디렉토리로 매핑합니다. 예: "web:deploy".
+`--verbose`: 자세한 로깅을 활성화합니다.
+`--[no-]release`: 빌더의 기본값은 릴리스 모드로 빌드합니다.
+`--define`: 빌더에 대한 전역 `옵션` 구성을 키별로 설정합니다.
+`--[no-]symlink`: 출력 디렉터리에 파일을 복사하는 대신 심볼릭 링크합니다.
 
 다음과 같은 다양한 기여를 환영합니다:
 

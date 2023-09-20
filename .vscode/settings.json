@@ -50,28 +50,49 @@
     "xxxkm",
     "Zeplin"
   ],
+  "[dart]": {
+    "editor.indentSize": "tabSize",
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "cSpell.fixSpellingWithRenameProvider": true,
+    "editor.formatOnSave": false,
+    "editor.formatOnType": false,
+    "editor.lightbulb.enabled": true,
+    "editor.selectionHighlight": false,
+    "editor.suggest.preview": true,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "on",
+    "editor.wordBasedSuggestions": true,
+    "editor.wordBasedSuggestionsMode": "allDocuments"
+  },
   "dart.documentation": "full",
   "dart.enableSdkFormatter": true,
   "dart.flutterCreateAndroidLanguage": "kotlin",
   "dart.flutterCreateIOSLanguage": "swift",
-  "dart.flutterCreatePlatforms": ["android", "ios", "macos", "web"],
+  "dart.flutterCreatePlatforms": [
+    "android",
+    "ios",
+    "macos",
+    "web"
+  ],
   "dart.flutterHotReloadOnSave": "all",
   "dart.flutterWebRenderer": "auto",
-  "dart.openDevTools": "flutter",
+  "dart.openDevTools": "always",
   "dart.previewFlutterUiGuides": true,
   "dart.previewFlutterUiGuidesCustomTracking": true,
   "dart.showInspectorNotificationsForWidgetErrors": false,
   "dart.updateImportsOnRename": true,
   "dartBarrelFileGenerator.excludeDirList": [
     "gen",
-    "generated",
-    "binding",
-    "controller",
-    "api"
+    "api",
+    "bloc"
   ],
   "dartBarrelFileGenerator.excludeFreezed": true,
   "dartBarrelFileGenerator.excludeGenerated": true,
   "dartBarrelFileGenerator.skipEmpty": true,
+  "dart.buildRunnerAdditionalArgs": [
+    "--delete-conflicting-outputs"
+  ],
   "docwriter.language": "Korean",
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.patterns": {

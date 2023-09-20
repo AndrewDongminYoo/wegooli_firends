@@ -7,7 +7,7 @@
   "color": "#ff5722",
   "nickname": "donminzzi",
   "userEmail": "andrew@wegooli.com",
-  "delimit": "personal",
+  "delimit": "MEMBER", // OPERATOR, MEMBER, SYSTEM, INTERIM
   "id": "test2",
   "birthday": "940812",
   "add2": "16층 1604호",

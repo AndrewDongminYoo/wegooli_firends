@@ -59,7 +59,7 @@ class RegisterLicense extends GetWidget<LicenseController> {
                                 labelText:
                                     l10ns.eligibilityPeriodTestExpirationDate),
                             LicenseExpDateFormField(
-                                controller: controller.testExpiringDate),
+                                controller: controller.expirationDate),
                           ])),
                   Padding(
                       padding: getPadding(top: 26, bottom: 5),
@@ -68,7 +68,7 @@ class RegisterLicense extends GetWidget<LicenseController> {
                           children: [
                             CustomInputLabel(labelText: l10ns.licenseIssueDate),
                             LicenseIssuedDateFormField(
-                                controller: controller.licenseIssueDate),
+                                controller: controller.firstIssueDate),
                           ])),
                 ]))),
       ),

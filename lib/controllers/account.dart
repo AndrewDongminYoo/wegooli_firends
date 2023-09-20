@@ -9,6 +9,6 @@ class UserAccountBinding extends Bindings {
   void dependencies() {
     Get.lazyPut(LicenseController.new);
     Get.lazyPut(PaymentCardController.new);
-    Get.lazyPut(UserController.new);
+    Get.put(UserController.new);
   }
 }

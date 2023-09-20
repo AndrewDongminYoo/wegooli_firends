@@ -23,7 +23,6 @@ class TelecomDropdown extends StatelessWidget {
         icon: Icon(Icons.arrow_drop_down, color: appTheme.gray50003, size: 14),
         // `initialValue`가 `true`인 경우 `hintText`는 보이지 않습니다.
         hintText: l10ns.telecomCarrier,
-        initialValue: true,
         margin: getMargin(top: 4),
         items: telecoms,
         filled: true,

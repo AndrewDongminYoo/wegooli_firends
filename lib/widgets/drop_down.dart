@@ -13,7 +13,7 @@ class CustomDropDown extends StatelessWidget {
     this.focusNode,
     this.icon,
     this.autofocus = true,
-    this.initialValue = false,
+    this.initialValue,
     this.textStyle,
     this.items,
     this.hintText,
@@ -31,7 +31,7 @@ class CustomDropDown extends StatelessWidget {
   }) : super(key: key);
 
   final Alignment? alignment;
-  final bool initialValue;
+  final SelectionPopupModel? initialValue;
   final bool? autofocus;
   final bool? filled;
   final BoxConstraints? prefixConstraints;
@@ -64,6 +64,7 @@ class CustomDropDown extends StatelessWidget {
       height: 48.v,
       margin: margin,
       child: DropdownButtonFormField<SelectionPopupModel>(
+          value: initialValue,
           focusNode: focusNode ?? FocusNode(),
           icon: icon,
           autofocus: autofocus!,

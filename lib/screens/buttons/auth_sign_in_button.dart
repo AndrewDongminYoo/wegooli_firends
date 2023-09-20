@@ -16,9 +16,9 @@ class AuthSignInButton extends StatelessWidget {
         buttonStyle: CustomButtonStyles.fillPrimaryC26,
         buttonTextStyle: CustomTextStyles.titleMedium18,
         onTap: () async {
-          await controller.login();
-          if (controller.isAuthenticated) {
-            await controller.preProcessor();
+          final currentUser = await controller.login();
+          if (currentUser.id != null) {
+            await goSharedSchedule();
           }
         });
   }

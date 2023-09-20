@@ -16,8 +16,11 @@ class CopyInvitationButton extends StatelessWidget {
     return CustomElevatedButton(
         onTap: () {
           Clipboard.setData(ClipboardData(text: controller.invitation.text));
-          Get.showSnackbar(
-              GetSnackBar(title: '복사 완료', message: controller.invitation.text));
+          Get.showSnackbar(GetSnackBar(
+            title: '복사 완료',
+            message: controller.invitation.text,
+            duration: const Duration(seconds: 1),
+          ));
         },
         text: '복사하기',
         margin: getMargin(top: 25),

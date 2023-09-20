@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
+import 'package:get/get.dart';
 import 'package:kpostal/kpostal.dart';
 
 // 🌎 Project imports:
@@ -20,17 +21,14 @@ class PostCodeSearchButton extends StatelessWidget {
         buttonStyle: CustomButtonStyles.fillPrimaryC5,
         buttonTextStyle: theme.textTheme.titleMedium,
         onTap: () async {
-          await Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (_) => KpostalView(
-                  useLocalServer: true,
-                  localPort: 1024,
-                  callback: (Kpostal result) {
-                    controller.postCode.text = result.postCode;
-                    controller.primaryAddress.text = result.address;
-                  }),
-            ),
+          await Get.to(
+            () => KpostalView(
+                useLocalServer: true,
+                localPort: 1024,
+                callback: (Kpostal result) {
+                  controller.postCode.text = result.postCode;
+                  controller.primaryAddress.text = result.roadAddress;
+                }),
           );
         });
   }

@@ -1,6 +1,6 @@
 /// 비밀번호는
-/// 대문자 1자 이상, 소문자 1자 이상, 숫자 1자 이상, 특수 문자([@#$%^&+=]) 1자 이상이어야 합니다.
-/// 최소 4자 이상의 길이여야 하며, 공백은 허용되지 않습니다.
+/// 대소문자 1자 이상, 숫자 1자 이상, 특수 문자 1자 이상이어야 합니다.
+/// 최소 6자 이상 최대 12자 이하의 길이여야 하며, 공백은 허용되지 않습니다.
 bool isValidPassword(String? inputString, {bool isRequired = false}) {
   var isInputStringValid = false;
 
@@ -10,8 +10,7 @@ bool isValidPassword(String? inputString, {bool isRequired = false}) {
 
   if (inputString != null && inputString.isNotEmpty) {
     const pattern =
-        r'^(?=.*?[A-Z])(?=(.*[a-z]){1,})(?=(.*[\d]){1,})(?=(.*[\W]){1,})(?!.*\s).{8,}$';
-
+        r'^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]).{6,12}$';
     final regExp = RegExp(pattern);
 
     isInputStringValid = regExp.hasMatch(inputString);

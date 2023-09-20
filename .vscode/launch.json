@@ -12,11 +12,9 @@
       "flutterMode": "debug",
       "console": "debugConsole",
       "args": [
-        "--target=lib/main.dart",
         "--hot",
         "--ignore-deprecation",
-        "--route=/shared_schedule",
-        "--verbose"
+        "--route=/shared_schedule"
       ],
       "openDevTools": "logging",
       "program": "lib/main.dart",
@@ -30,11 +28,9 @@
       "flutterMode": "profile",
       "console": "debugConsole",
       "args": [
-        "--target=lib/main.dart",
         "--hot",
         "--ignore-deprecation",
-        "--route=/shared_schedule",
-        "--verbose"
+        "--route=/shared_schedule"
       ],
       "openDevTools": "performance",
       "program": "lib/main.dart"
@@ -47,11 +43,9 @@
       "flutterMode": "release",
       "console": "debugConsole",
       "args": [
-        "--target=lib/main.dart",
         "--hot",
         "--ignore-deprecation",
-        "--route=/shared_schedule",
-        "--verbose"
+        "--route=/shared_schedule"
       ],
       "openDevTools": "network",
       "program": "lib/main.dart"

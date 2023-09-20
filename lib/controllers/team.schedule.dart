@@ -125,25 +125,15 @@ class ScheduleController extends GetxController {
     }
     await _service.addSchedule(
         accountId!, teamSeq, reservationTime, returnTime);
-    userController.schedules(await userController.retrieveSchedules(teamSeq));
+    await refreshSchedules();
     makeEventSource();
-    // final localEventSource = Map<DateTime, List<Schedule>>.of({});
-    // final schedule = Schedule(
-    //   accountId: accountId,
-    //   teamSeq: teamSeq,
-    //   startAt: reservationTime.toString(),
-    //   endAt: returnTime.toString(),
-    // );
-
-    // for (final key in daysInRange(reservationTime, returnTime)) {
-    //   final value =
-    //       localEventSource.getOrDefault(normalizeDateTime(key), <Schedule>[]);
-    //   value.add(schedule);
-    //   localEventSource.addIf(true, normalizeDateTime(key), value);
-    // }
-    // eventSource.addAll(localEventSource);
     eventSource.refresh();
     items(initItem());
+  }
+
+  Future<void> refreshSchedules() async {
+    final newSchedule = await userController.retrieveSchedules();
+    userController.schedules(newSchedule);
   }
 
   Future<void> updateSchedule(int scheduleId) async {
@@ -155,7 +145,7 @@ class ScheduleController extends GetxController {
 
     await _service.updateSchedule(scheduleId, reservationTime, returnTime);
     // TODO 기존 아이템 목록에서 제거하고 업데이트된 항목으로 반영.
-    userController.schedules(await userController.retrieveSchedules(teamSeq));
+    await refreshSchedules();
     eventSource.clear();
     makeEventSource();
     eventSource.refresh();

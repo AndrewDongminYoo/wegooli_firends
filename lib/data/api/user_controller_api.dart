@@ -466,7 +466,7 @@ class UserControllerApi {
   ///
   /// [UserDto] 타입 [Response]을 포함하는 [Future] 반환.
   /// API 호출 또는 직렬화에 실패하면 [DioException] 발생.
-  Future<Response<String>> signup({
+  Future<Response<UserDto>> signup({
     required UserDto userDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -519,13 +519,13 @@ class UserControllerApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    String? _responseData;
+    UserDto? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null
           ? null
-          : deserialize<String, String>(rawResponse, 'String');
+          : deserialize<UserDto, UserDto>(rawResponse, 'UserDto');
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -535,7 +535,7 @@ class UserControllerApi {
       );
     }
 
-    return Response<String>(
+    return Response<UserDto>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

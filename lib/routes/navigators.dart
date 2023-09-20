@@ -64,7 +64,7 @@ Future<dynamic>? goUnsubscribeInfo() =>
 
 // [BottomSheet] 예약 날짜 선택기
 Future<dynamic>? openDatetimePicker() =>
-    Get.bottomSheet(DatetimePickerBottomSheet(),
+    Get.bottomSheet(const DatetimePickerBottomSheet(),
         ignoreSafeArea: false, isScrollControlled: true);
 
 // [PopupDialog] 예약 확인 페이지

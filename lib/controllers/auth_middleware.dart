@@ -21,21 +21,23 @@ class AuthMiddleware extends GetMiddleware {
   /// 이 함수는 반환값이 [RouteSettings]인 경우 새 라우트 셋팅으로 리디렉션하며, [null]을 반환하면 리디렉션이 발생하지 않습니다.
   @override
   RouteSettings? redirect(String? route) {
-    if (!controller.isAuthenticated) {
-      return const RouteSettings(name: AppRoutes.idPwLogin);
-    } else {
+    if (controller.isAuthenticated) {
       return null;
+    } else {
+      return const RouteSettings(name: AppRoutes.idPwLogin);
     }
   }
 
   /// 이 함수는 이 페이지가 호출될 때 호출되며 페이지의 내용을 변경하거나 새 페이지를 생성하는 데 사용할 수 있습니다.
   @override
   GetPage<dynamic>? onPageCalled(GetPage<dynamic>? page) {
-    print('>>> Page ${page?.name} called');
-    print('>>> User ${controller.username} logged');
-    return controller.username.isNotEmpty
-        ? page!.copy(parameters: {'user': controller.username})
-        : page;
+    final username = controller.currentUser.name;
+    if (username != null && username.isNotEmpty) {
+      print('>>> Page ${page?.name} called');
+      print('>>> User "$username" logged-in');
+      return page!.copy(parameters: {'user': username});
+    }
+    return page;
   }
 
   /// 이 함수는 [Bindings]이 초기화되기 직전에 호출됩니다. 여기에서 이 페이지의 [Bindings]을 변경할 수 있습니다.

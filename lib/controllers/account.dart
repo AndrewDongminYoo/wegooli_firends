@@ -7,8 +7,8 @@ import '/lib.dart';
 class UserAccountBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(LicenseController.new);
-    Get.lazyPut(PaymentCardController.new);
-    Get.put(UserController.new);
+    Get.put(LicenseController());
+    Get.put(PaymentCardController());
+    Get.put(UserController());
   }
 }

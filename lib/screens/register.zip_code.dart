@@ -16,7 +16,7 @@ class _RegisterZipCodeState extends State<RegisterZipCode> {
 
   @override
   Widget build(BuildContext context) {
-    const authMode = AuthMode.register;
+    controller.mode = AuthMode.register;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
@@ -47,8 +47,7 @@ class _RegisterZipCodeState extends State<RegisterZipCode> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         CustomInputLabel(labelText: l10ns.id),
-                        UserMailFormField(
-                            username: controller.username, authMode: authMode),
+                        UserMailFormField(controller: controller),
                       ])),
               Padding(
                   padding: getPadding(top: 27),
@@ -56,8 +55,7 @@ class _RegisterZipCodeState extends State<RegisterZipCode> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         CustomInputLabel(labelText: l10ns.password),
-                        PasswordFormField(
-                            password: controller.password, authMode: authMode),
+                        PasswordFormField(controller: controller),
                       ])),
               Padding(
                   padding: getPadding(top: 27),

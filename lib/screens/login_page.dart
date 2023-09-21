@@ -7,10 +7,6 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 // 🌎 Project imports:
 import '/lib.dart';
 
-/// 현재 인증 세션의 모드([AuthMode.login] 또는 [AuthMode.register] 중 하나)입니다.
-// ignore: public_member_api_docs
-enum AuthMode { login, register }
-
 /// Firebase를 사용한 다양한 로그인 흐름에 대한 엔트리포인트 예제입니다.
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -35,7 +31,7 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    const authMode = AuthMode.login;
+    controller.mode = AuthMode.login;
     return SafeArea(
         child: Scaffold(
       resizeToAvoidBottomInset: false,
@@ -50,10 +46,8 @@ class _LoginPageState extends State<LoginPage> {
               child: Column(
                 children: [
                   const FriendsByWegooli(),
-                  UserMailFormField(
-                      username: controller.username, authMode: authMode),
-                  PasswordFormField(
-                      password: controller.password, authMode: authMode),
+                  UserMailFormField(controller: controller),
+                  PasswordFormField(controller: controller),
                   const AuthSignInButton(),
                   Padding(
                       padding: getPadding(top: 57),

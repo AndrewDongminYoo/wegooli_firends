@@ -120,7 +120,7 @@ class AppRoutes {
       middlewares: [AuthMiddleware()],
     ),
     GetPage(
-      binding: TeamCommunityBinding(),
+      bindings: [UserAccountBinding(), TeamCommunityBinding()],
       name: sharedSchedule,
       page: () => const SharedCalendar(),
       middlewares: [AuthMiddleware()],

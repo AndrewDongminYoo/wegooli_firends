@@ -13,6 +13,7 @@ class UserController extends GetxController {
   final TeamAccountService _teamAccountService = TeamAccountService();
   final ReservationsService _reservationsService = ReservationsService();
   final TeamService _teamService = TeamService();
+  AuthMode mode = AuthMode.login;
 
   // ignore: prefer_constructors_over_static_methods
   static UserController get to => Get.isRegistered<UserController>()
@@ -114,18 +115,21 @@ class UserController extends GetxController {
 
   /// 로그인
   Future<User> login() async {
-    print('username: $username\npassword: $password');
+    print('controller.login.username: $username\npassword: $password');
     final user = await _service.login(username, password);
     if (user is User) {
       currentUser = user;
-      teams.value = await findTeams();
-      teams.refresh();
-      schedules.value = await retrieveSchedules();
-      schedules.refresh();
       return user;
     } else {
       throw CustomException('로그인에 실패하였습니다.');
     }
+  }
+
+  Future<void> load() async {
+    teams.value = await findTeams();
+    teams.refresh();
+    schedules.value = await retrieveSchedules();
+    schedules.refresh();
   }
 
   /// 로그아웃
@@ -226,6 +230,10 @@ enum SignUp {
   SUCCESS,
   FAILURE,
 }
+
+/// 현재 인증 세션의 모드([AuthMode.login] 또는 [AuthMode.register] 중 하나)입니다.
+// ignore: public_member_api_docs
+enum AuthMode { login, register }
 
 class Term {
   Term({

@@ -6,14 +6,12 @@ import '/lib.dart';
 
 // ignore: must_be_immutable
 class UserMailFormField extends StatefulWidget {
-  UserMailFormField({
+  const UserMailFormField({
     super.key,
-    required this.username,
-    required this.authMode,
+    required this.controller,
   });
 
-  String username;
-  final AuthMode authMode;
+  final UserController controller;
 
   @override
   State<UserMailFormField> createState() => _UserMailFormFieldState();
@@ -22,9 +20,10 @@ class UserMailFormField extends StatefulWidget {
 class _UserMailFormFieldState extends State<UserMailFormField> {
   @override
   Widget build(BuildContext context) {
-    final isLogin = widget.authMode == AuthMode.login;
+    final controller = widget.controller;
+    final isLogin = controller.mode == AuthMode.login;
     return CustomTextFormField(
-      initialValue: widget.username,
+      initialValue: controller.username,
       textInputType: TextInputType.emailAddress,
       fillColor: Colors.white,
       margin: isLogin ? getMargin(top: 40) : getMargin(top: 4),
@@ -36,7 +35,7 @@ class _UserMailFormFieldState extends State<UserMailFormField> {
       autofillHints: const [AutofillHints.email],
       onChanged: (String value) {
         setState(() {
-          widget.username = value;
+          controller.username = value;
         });
       },
       validator: (email) {

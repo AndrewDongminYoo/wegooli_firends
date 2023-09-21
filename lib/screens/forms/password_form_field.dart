@@ -11,12 +11,10 @@ import '/lib.dart';
 class PasswordFormField extends StatefulWidget {
   PasswordFormField({
     super.key,
-    required this.password,
-    required this.authMode,
+    required this.controller,
   });
 
-  String password;
-  final AuthMode authMode;
+  final UserController controller;
 
   @override
   State<PasswordFormField> createState() => _PasswordFormFieldState();
@@ -25,11 +23,12 @@ class PasswordFormField extends StatefulWidget {
 class _PasswordFormFieldState extends State<PasswordFormField> {
   @override
   Widget build(BuildContext context) {
+    final controller = widget.controller;
     final isShowPassword = false.obs;
-    final isSignUp = widget.authMode == AuthMode.register;
+    final isSignUp = controller.mode == AuthMode.register;
     return Obx(() {
       return CustomTextFormField(
-        initialValue: widget.password,
+        initialValue: controller.password,
         margin: getMargin(top: 4),
         contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),
         textStyle: CustomTextStyles.bodyLargeGray50003,
@@ -48,7 +47,7 @@ class _PasswordFormFieldState extends State<PasswordFormField> {
         fillColor: Colors.white,
         onChanged: (String _password) {
           setState(() {
-            widget.password = _password;
+            controller.password = _password;
           });
         },
         filled: true,

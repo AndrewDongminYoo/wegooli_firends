@@ -1,5 +1,9 @@
 // 🎯 Dart imports:
+import 'dart:async';
 import 'dart:math';
+
+// 🐦 Flutter imports:
+import 'package:flutter/foundation.dart';
 
 // 📦 Package imports:
 import 'package:get/get.dart';
@@ -13,6 +17,35 @@ class UserAccountService extends GetConnect {
   final api = wegooli.userApi;
   final api2 = wegooli.accountAgreementApi;
 
+  @protected
+  String? _token;
+
+  String get token {
+    if (_token != null && _token!.isNotEmpty) {
+      return _token!;
+    } else {
+      final _new = PrefUtils.getToken();
+      if (_new != null && _new.isNotEmpty) {
+        if (JwtDecoder.isExpired(_new)) {
+          api.logOut();
+          throw CustomException('인증이 만료된 사용자입니다. 다시 로그인해주세요.');
+        }
+        _token = _new;
+        return _token!;
+      } else {
+        throw CustomException('로그인을 먼저 진행해 주세요.');
+      }
+    }
+  }
+
+  set token(String value) {
+    if (!JwtDecoder.isExpired(value)) {
+      print('✅ 유효한 토큰입니다.');
+      unawaited(PrefUtils.setToken(value));
+    }
+    _token = value;
+  }
+
   Future<User?> login(String username, String password) async {
     try {
       print('user.username: $username\nuser.password: $password');
@@ -20,7 +53,6 @@ class UserAccountService extends GetConnect {
       // print('response : $response');
       final result = response.data?.result;
       var bearerToken = '';
-      var token = '';
       if (result == null || result.token == null) {
         throw CustomException('결과 값의 토큰 데이터에 오류가 발생했습니다.');
       } else {
@@ -31,29 +63,23 @@ class UserAccountService extends GetConnect {
       print('token: $token');
       // BEARER prefix 제거
       final payload = JwtDecoder.decode(token);
-      print('payload: $payload');
-      if (!JwtDecoder.isExpired(token)) {
-        print('✅ 유효한 토큰입니다.');
-        await PrefUtils.setToken(token);
-        return User.fromJson(payload);
-      } else {
-        throw CustomException('❌ 만료된 토큰입니다.');
-      }
+      return User.fromJson(payload);
     } on Exception catch (e) {
       throw printDioException('login', e);
     }
   }
 
-  Future<void> logOut() async {
+  Future<String> logOut() async {
     final response = await api.logOut();
     print('response: $response');
     print('response.data: ${response.data}');
+    return response.data ?? 'logout failed';
   }
 
   Future<bool> signOut(String accountId) async {
     final response = await api.signOut(id: accountId);
     print('response: $response');
-    return response.data!;
+    return response.data ?? false;
   }
 
   Future<String> sendAcceptanceRequest(
@@ -61,7 +87,7 @@ class UserAccountService extends GetConnect {
     final response =
         await api2.insertAccountAgreementList(accountAgreementRequest: request);
     print('response: $response');
-    return response.data!;
+    return response.data ?? 'accept terms of use failed. do it later, btw.';
   }
 
   List<String> placeholders = [

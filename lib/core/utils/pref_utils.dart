@@ -18,7 +18,6 @@ class PrefUtils {
   static const String _tokenData = 'WEGOOLI_TOKEN_DATA';
   static const String _phoneData = 'WEGOOLI_PHONE_DATA';
   static const String _termsOfUseData = 'TERMS_OF_USE';
-  static const String _tokenIsEmpty = 'Token is not given.';
 
   static SharedPreferences get storage {
     print('SharedPreference Initialized');
@@ -34,17 +33,19 @@ class PrefUtils {
     return storage.setString(key, value);
   }
 
+  static String? getDataOrNull(String key) => storage.getString(key);
+
   static String getData(String key, {String? defaultValue}) {
     try {
-      return storage.getString(key)!;
+      return getDataOrNull(key)!;
     } catch (e) {
       return defaultValue ?? '';
     }
   }
 
-  static String getToken() {
-    final token = getData(_tokenData, defaultValue: _tokenIsEmpty);
-    if (token == _tokenIsEmpty) {
+  static String? getToken() {
+    final token = getDataOrNull(_tokenData);
+    if (token == null || token.isEmpty) {
       print('[pref] get token: empty');
     } else {
       print('[pref] get token: $token');

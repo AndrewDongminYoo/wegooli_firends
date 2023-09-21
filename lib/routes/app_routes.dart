@@ -8,9 +8,6 @@ class AppRoutes {
   /// 디버그용 게이트웨이 화면
   static const String appGateway = '/app_gateway';
 
-  /// 스플래시 스크린
-  static const String splashScreen = '/splash_screen';
-
   /// 로그인 및 가입 관련
   static const String idPwLogin = '/login';
   static const String register = '/register';
@@ -101,11 +98,6 @@ class AppRoutes {
       binding: UserAccountBinding(),
       name: registerZipCode,
       page: () => const RegisterZipCode(),
-    ),
-    GetPage(
-      binding: UserAccountBinding(),
-      name: splashScreen,
-      page: () => const SplashLoading(),
     ),
     GetPage(
       binding: UserAccountBinding(),

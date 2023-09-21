@@ -53,8 +53,6 @@ Future<dynamic>? goRegisterSuccess() =>
 Future<dynamic>? goRegisterZipCode() => Get.toNamed(AppRoutes.registerZipCode);
 // [Page] 팀 스케줄 공유
 Future<dynamic>? goSharedSchedule() => Get.toNamed(AppRoutes.sharedSchedule);
-// [Page] 스플래시 화면
-Future<dynamic>? goSplashScreen() => Get.toNamed(AppRoutes.splashScreen);
 // [Page] 구독 해지
 Future<dynamic>? goUnsubscribeConfirm() =>
     Get.toNamed(AppRoutes.unsubscribeConfirm);

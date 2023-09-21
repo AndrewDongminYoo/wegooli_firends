@@ -7,6 +7,7 @@ import 'package:flutter/foundation.dart';
 
 // 📦 Package imports:
 import 'package:get/get.dart';
+import 'package:get/get_connect/http/src/request/request.dart';
 
 // 🌎 Project imports:
 import '/lib.dart';
@@ -42,6 +43,10 @@ class UserAccountService extends GetConnect {
     if (!JwtDecoder.isExpired(value)) {
       print('✅ 유효한 토큰입니다.');
       unawaited(PrefUtils.setToken(value));
+      httpClient.addRequestModifier((Request request) {
+        request.headers['Authorization'] = 'Bearer $token';
+        return request;
+      });
     }
     _token = value;
   }

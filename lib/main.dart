@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:timeago/timeago.dart' as timeago;
@@ -25,7 +26,7 @@ const Locale locale = Locale('ko');
 
 // initialize app
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+  final binding = WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load();
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   console = Logger();
@@ -69,6 +70,7 @@ Future<void> main() async {
     return true;
   };
 
+  FlutterNativeSplash.preserve(widgetsBinding: binding);
   runApp(const MyApp());
 }
 
@@ -95,13 +97,13 @@ class MyApp extends StatelessWidget {
         logWriterCallback: (String text, {bool isError = false}) =>
             isError ? console.log(text) : print('[DEBUG] $text'),
         navigatorObservers: [MyApp.routeObserver],
-        initialRoute: AppRoutes.splashScreen,
+        initialRoute: AppRoutes.idPwLogin,
         getPages: AppRoutes.pages);
   }
 }
 
 Widget _errorWidgetBuilder(dynamic context, Widget? child) {
-  Widget error = CustomImageView(imagePath: Assets.images.imgAcorn.path);
+  Widget error = CustomImageView(imagePath: Assets.brand.byWegooli.path);
 
   /// `child` 위젯이 `Scaffold` 또는 `Navigator`의 인스턴스인지 확인
   /// `error` 위젯을 가운데에 위치하는 Scaffold로 대체.

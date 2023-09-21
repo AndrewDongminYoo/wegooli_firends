@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 // 📦 Package imports:
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 // 🌎 Project imports:
 import '/lib.dart';
@@ -27,6 +28,7 @@ class _LoginPageState extends State<LoginPage> {
     /// [RemoteMessage]가 소비되면, [RemoteMessage]는 제거되고 [getInitialMessage]에 대한 추가 호출은 `null`이 됩니다.
     /// 이는 특정 알림 상호 작용이 특정 목적(예: 채팅 메시지, 특정 화면 열기 등)으로 앱을 열어야 하는지 여부를 결정하는 데 사용해야 합니다.
     messaging.getInitialMessage();
+    FlutterNativeSplash.remove();
   }
 
   @override

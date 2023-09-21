@@ -1,17 +1,17 @@
 {
   "__className": "user.model",
   "__path": "/lib/data/custom/",
-  "userNm": "유동민",
-  "phoneNumber": "010-3566-1857",
-  "memberSeq": 12,
-  "color": "#ff5722",
-  "nickname": "donminzzi",
-  "userEmail": "andrew@wegooli.com",
-  "delimit": "MEMBER", // OPERATOR, MEMBER, SYSTEM, INTERIM
-  "id": "test2",
-  "birthday": "940812",
-  "add2": "16층 1604호",
-  "add1": "서울, 강남구 역삼동 602번지",
+  "userNm": "홍rrr",
+  "phoneNumber": "010-1234-1235",
+  "memberSeq": 23,
+  "color": "#9DA775",
+  "nickname": "아무거나이거이거저거저거",
+  "userEmail": "test@test.com",
+  "delimit": "OPERATOR", // OPERATOR, MEMBER, SYSTEM, INTERIM
+  "id": "test2@naver.com",
+  "birthday": "930430",
+  "add2": "왕십리",
+  "add1": "성동구",
   "sub": "23",
-  "exp": 1698764406
+  "exp": 4819340180
 }

@@ -105,26 +105,22 @@ final issuedYears = [
 ];
 
 final licenseRegions = [
-  SelectionPopupModel(
-      id: 11, title: '서울', value: '11'), // '서울지방경찰청:[강남,도봉,서부,강서]'
-  SelectionPopupModel(
-      id: 12, title: '부산', value: '12'), // '부산지방경찰청:[부산북부,부산남부]'
-  SelectionPopupModel(
-      id: 13, title: '경기남부', value: '13'), // '경기남부지방경찰청:[안산,용인]'
-  SelectionPopupModel(
-      id: 14, title: '강원', value: '14'), // '강원지방경찰청:[춘천,원주,태백,강릉]'
-  SelectionPopupModel(id: 15, title: '충북', value: '15'), // '충북지방경찰청:[청주,충주]'
-  SelectionPopupModel(id: 16, title: '충남', value: '16'), // '충남지방경찰청:[예산]'
-  SelectionPopupModel(id: 17, title: '전북', value: '17'), // '전북지방경찰청:[전북]'
-  SelectionPopupModel(id: 18, title: '전남', value: '18'), // '전남지방경찰청:[전남,광양]'
-  SelectionPopupModel(id: 19, title: '경북', value: '19'), // '경북지방경찰청:[문경,포항]'
-  SelectionPopupModel(id: 20, title: '경남', value: '20'), // '경남지방경찰청:[마산]'
-  SelectionPopupModel(id: 21, title: '제주', value: '21'), // '제주지방경찰청:[제주]'
-  SelectionPopupModel(id: 22, title: '대구', value: '22'), // '대구지방경찰청:[대구]'
-  SelectionPopupModel(id: 23, title: '인천', value: '23'), // '인천지방경찰청:[인천]'
-  SelectionPopupModel(id: 24, title: '광주', value: '24'), // '광주지방경찰청:[없음]'
-  SelectionPopupModel(id: 25, title: '대전', value: '25'), // '대전지방경찰청:[대전]'
-  SelectionPopupModel(id: 26, title: '울산', value: '26'), // '울산지방경찰청:[울산]'
-  SelectionPopupModel(id: 27, title: '세종', value: '27'), // '세종지방경찰청:[없음]'
-  SelectionPopupModel(id: 28, title: '경기북부', value: '28'), // '경기북부지방경찰청:[의정부]'
+  SelectionPopupModel(id: 11, title: '서울', value: '11'), // [강남,도봉,서부,강서]
+  SelectionPopupModel(id: 12, title: '부산', value: '12'), // [부산북부,부산남부]
+  SelectionPopupModel(id: 13, title: '경기남부', value: '13'), // [안산,용인]
+  SelectionPopupModel(id: 14, title: '강원', value: '14'), // [춘천,원주,태백,강릉]
+  SelectionPopupModel(id: 15, title: '충북', value: '15'), // [청주,충주]
+  SelectionPopupModel(id: 16, title: '충남', value: '16'), // [예산]
+  SelectionPopupModel(id: 17, title: '전북', value: '17'), // [전북]
+  SelectionPopupModel(id: 18, title: '전남', value: '18'), // [전남,광양]
+  SelectionPopupModel(id: 19, title: '경북', value: '19'), // [문경,포항]
+  SelectionPopupModel(id: 20, title: '경남', value: '20'), // [마산]
+  SelectionPopupModel(id: 21, title: '제주', value: '21'), // [제주]
+  SelectionPopupModel(id: 22, title: '대구', value: '22'), // [대구]
+  SelectionPopupModel(id: 23, title: '인천', value: '23'), // [인천]
+  SelectionPopupModel(id: 24, title: '광주', value: '24'), // [없음]
+  SelectionPopupModel(id: 25, title: '대전', value: '25'), // [대전]
+  SelectionPopupModel(id: 26, title: '울산', value: '26'), // [울산]
+  SelectionPopupModel(id: 27, title: '세종', value: '27'), // [없음]
+  SelectionPopupModel(id: 28, title: '경기북부', value: '28'), // [의정부]
 ];

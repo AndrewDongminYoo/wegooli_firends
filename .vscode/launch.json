@@ -11,11 +11,7 @@
       "flutterPlatform": "default",
       "flutterMode": "debug",
       "console": "debugConsole",
-      "args": [
-        "--hot",
-        "--ignore-deprecation",
-        "--route=/shared_schedule"
-      ],
+      "args": ["--hot", "--ignore-deprecation", "--route=/shared_schedule"],
       "openDevTools": "logging",
       "program": "lib/main.dart",
       "suppressWebServerDeviceBrowserLaunch": true
@@ -27,11 +23,7 @@
       "flutterPlatform": "default",
       "flutterMode": "profile",
       "console": "debugConsole",
-      "args": [
-        "--hot",
-        "--ignore-deprecation",
-        "--route=/shared_schedule"
-      ],
+      "args": ["--hot", "--ignore-deprecation", "--route=/shared_schedule"],
       "openDevTools": "performance",
       "program": "lib/main.dart"
     },
@@ -42,11 +34,7 @@
       "flutterPlatform": "default",
       "flutterMode": "release",
       "console": "debugConsole",
-      "args": [
-        "--hot",
-        "--ignore-deprecation",
-        "--route=/shared_schedule"
-      ],
+      "args": ["--hot", "--ignore-deprecation", "--route=/shared_schedule"],
       "openDevTools": "network",
       "program": "lib/main.dart"
     }

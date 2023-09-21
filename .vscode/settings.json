@@ -1,4 +1,19 @@
 {
+  "[dart]": {
+    "cSpell.fixSpellingWithRenameProvider": true,
+    "editor.formatOnSave": false,
+    "editor.formatOnType": false,
+    "editor.indentSize": "tabSize",
+    "editor.insertSpaces": true,
+    "editor.lightbulb.enabled": true,
+    "editor.selectionHighlight": false,
+    "editor.suggest.preview": true,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "on",
+    "editor.tabSize": 2,
+    "editor.wordBasedSuggestions": true,
+    "editor.wordBasedSuggestionsMode": "allDocuments"
+  },
   "cSpell.ignorePaths": [
     ".git/objects",
     ".gitignore",
@@ -50,31 +65,13 @@
     "xxxkm",
     "Zeplin"
   ],
-  "[dart]": {
-    "editor.indentSize": "tabSize",
-    "editor.insertSpaces": true,
-    "editor.tabSize": 2,
-    "cSpell.fixSpellingWithRenameProvider": true,
-    "editor.formatOnSave": false,
-    "editor.formatOnType": false,
-    "editor.lightbulb.enabled": true,
-    "editor.selectionHighlight": false,
-    "editor.suggest.preview": true,
-    "editor.suggestSelection": "first",
-    "editor.tabCompletion": "on",
-    "editor.wordBasedSuggestions": true,
-    "editor.wordBasedSuggestionsMode": "allDocuments"
-  },
+  "css.lint.unknownProperties": "ignore",
+  "dart.buildRunnerAdditionalArgs": ["--delete-conflicting-outputs"],
   "dart.documentation": "full",
   "dart.enableSdkFormatter": true,
   "dart.flutterCreateAndroidLanguage": "kotlin",
   "dart.flutterCreateIOSLanguage": "swift",
-  "dart.flutterCreatePlatforms": [
-    "android",
-    "ios",
-    "macos",
-    "web"
-  ],
+  "dart.flutterCreatePlatforms": ["android", "ios", "macos", "web"],
   "dart.flutterHotReloadOnSave": "all",
   "dart.flutterWebRenderer": "auto",
   "dart.openDevTools": "always",
@@ -82,17 +79,10 @@
   "dart.previewFlutterUiGuidesCustomTracking": true,
   "dart.showInspectorNotificationsForWidgetErrors": false,
   "dart.updateImportsOnRename": true,
-  "dartBarrelFileGenerator.excludeDirList": [
-    "gen",
-    "api",
-    "bloc"
-  ],
+  "dartBarrelFileGenerator.excludeDirList": ["gen", "api", "bloc"],
   "dartBarrelFileGenerator.excludeFreezed": true,
   "dartBarrelFileGenerator.excludeGenerated": true,
   "dartBarrelFileGenerator.skipEmpty": true,
-  "dart.buildRunnerAdditionalArgs": [
-    "--delete-conflicting-outputs"
-  ],
   "docwriter.language": "Korean",
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.patterns": {
@@ -114,6 +104,5 @@
   "jsonToDart.runBuilder": false,
   "jsonToDart.sortConstructorsFirst": true,
   "jsonToDart.targetDirectory.path": "/lib/data/",
-  "jsonToDart.toString": "Auto",
-  "css.lint.unknownProperties": "ignore"
+  "jsonToDart.toString": "Auto"
 }

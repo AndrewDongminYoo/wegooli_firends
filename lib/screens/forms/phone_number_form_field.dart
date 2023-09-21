@@ -6,18 +6,19 @@ import 'package:flutter/services.dart';
 import '/lib.dart';
 
 class PhoneNumberFormField extends StatelessWidget {
-  const PhoneNumberFormField({
-    super.key,
-    required this.controller,
-  });
-
-  final TextEditingController controller;
+  const PhoneNumberFormField({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = UserController.to;
     return CustomTextFormField(
+      initialValue: controller.phoneNumWithHyphen,
+      onChanged: (String value) {
+        if (value.isNotEmpty) {
+          controller.phoneNumWithHyphen = value;
+        }
+      },
       width: 198.h,
-      controller: controller,
       margin: getMargin(top: 4),
       autofill: true,
       autofillHints: const [AutofillHints.telephoneNumberLocal],

@@ -19,7 +19,7 @@ class KoreanNameFormField extends StatelessWidget {
       initialValue: controller.koreanName,
       onChanged: (String value) {
         if (RegExp(r'[가-힣\w+,\-]').hasMatch(value)) {
-          controller.koreanName= value;
+          controller.koreanName = value;
         }
       },
       margin: getMargin(top: 4),

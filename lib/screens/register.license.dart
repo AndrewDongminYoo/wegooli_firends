@@ -48,8 +48,7 @@ class RegisterLicense extends GetWidget<LicenseController> {
                             ),
                             const Expanded(child: LicenseIssuedYearDropdown()),
                           ])),
-                  LicenseNumbersFormField(
-                      controller: controller.licenseNumbers),
+                  const LicenseNumbersFormField(),
                   Padding(
                       padding: getPadding(top: 26),
                       child: Column(
@@ -58,8 +57,7 @@ class RegisterLicense extends GetWidget<LicenseController> {
                             CustomInputLabel(
                                 labelText:
                                     l10ns.eligibilityPeriodTestExpirationDate),
-                            LicenseExpDateFormField(
-                                controller: controller.expirationDate),
+                            const LicenseExpDateFormField(),
                           ])),
                   Padding(
                       padding: getPadding(top: 26, bottom: 5),
@@ -67,8 +65,7 @@ class RegisterLicense extends GetWidget<LicenseController> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             CustomInputLabel(labelText: l10ns.licenseIssueDate),
-                            LicenseIssuedDateFormField(
-                                controller: controller.firstIssueDate),
+                            const LicenseIssuedDateFormField(),
                           ])),
                 ]))),
       ),

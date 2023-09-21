@@ -6,21 +6,18 @@ import 'package:flutter/services.dart';
 import '/lib.dart';
 
 class CardExpMonthYearFormField extends StatelessWidget {
-  const CardExpMonthYearFormField({
-    super.key,
-  });
-
+  const CardExpMonthYearFormField({super.key});
 
   @override
   Widget build(BuildContext context) {
     final controller = PaymentCardController.to;
     return CustomTextFormField(
-      initialValue: controller.creditCardExp,
-      onChanged: (String value) {
-        if (value.isNotEmpty) {
-          controller.creditCardExp = value;
-        }
-      },
+        initialValue: controller.creditCardExp,
+        onChanged: (String value) {
+          if (value.isNotEmpty) {
+            controller.creditCardExp = value;
+          }
+        },
         margin: getMargin(top: 4),
         contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),
         textStyle: CustomTextStyles.bodyLargeGray50003,

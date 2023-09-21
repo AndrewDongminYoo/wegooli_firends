@@ -40,8 +40,7 @@ class _CopyableTextFieldState extends State<CopyableTextField> {
               children: <Widget>[
                 const SizedBox.shrink(),
                 Expanded(
-                    child: InvitationCodeCopyFormField(
-                        controller: controller, focusNode: focusNode)),
+                    child: InvitationCodeCopyFormField(focusNode: focusNode)),
                 ElevatedButton.icon(
                   icon: const Icon(Icons.clear_all_rounded,
                       semanticLabel: 'Clear'),

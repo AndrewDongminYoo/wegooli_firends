@@ -10,7 +10,7 @@ class ReservationsCheckingPageDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = UserController.to;
+    final controller = ScheduleController.to;
     final schedules = controller.schedules.where((schedule) {
       if (selectedDay == null) {
         return false;

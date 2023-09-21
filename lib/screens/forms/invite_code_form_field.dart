@@ -7,16 +7,19 @@ import '/lib.dart';
 class InviteCodeFormField extends StatelessWidget {
   const InviteCodeFormField({
     super.key,
-    required this.controller,
   });
-
-  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
+    final controller = UserController.to;
     return CustomTextFormField(
+        initialValue: controller.invitation,
+        onChanged: (String value) {
+          if (value.isNotEmpty) {
+            controller.invitation = value;
+          }
+        },
         textInputType: TextInputType.visiblePassword,
-        controller: controller,
         margin: getMargin(top: 4),
         contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),
         textStyle: CustomTextStyles.bodyLargeGray50003,

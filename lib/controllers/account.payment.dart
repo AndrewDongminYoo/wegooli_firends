@@ -15,34 +15,24 @@ class PaymentCardController extends GetxController {
           ? Get.find<PaymentCardController>()
           : Get.put(PaymentCardController());
 
-  TextEditingController creditCardNum = TextEditingController();
-  TextEditingController creditCardPin = TextEditingController();
-  TextEditingController creditCardExp = TextEditingController();
-  TextEditingController birthDay = TextEditingController();
+  String? creditCardNum;
+  String? creditCardPin;
+  String? creditCardExp;
+  String? birthDay;
   Rx<String> selected = ''.obs;
 
   final RxList<PaymentCardModel> _paymentCards = <PaymentCardModel>[].obs;
   RxList<PaymentCardModel> get paymentCards => _paymentCards;
 
-  @override
-  void onClose() {
-    super.onClose();
-    creditCardNum.dispose();
-    creditCardExp.dispose();
-    birthDay.dispose();
-    creditCardPin.dispose();
-  }
-
   Future<void> retrieveCards() async {
-    final userController = UserController.to;
-    final data = await _service.loadCreditCardList(userController.currentUser);
+    final data = await _service.loadCreditCardList(goolier);
     _paymentCards(data);
   }
 
   Future<void> registerCard() async {
     await _service
-        .registerCard(creditCardNum.text, creditCardPin.text, birthDay.text,
-            creditCardExp.text.substring(0, 2), creditCardExp.text.substring(2))
+        .registerCard(creditCardNum!, creditCardPin!, birthDay!,
+            creditCardExp!.substring(0, 2), creditCardExp!.substring(2))
         .then((result) {
       if (result != 'true') {
         Get.dialog(const AlertDialog(

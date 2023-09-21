@@ -1,16 +1,14 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:get/get.dart';
-
 // 🌎 Project imports:
 import '/lib.dart';
 
-class UnsubscriptionConfirm extends GetWidget<VehicleController> {
+class UnsubscriptionConfirm extends StatelessWidget {
   const UnsubscriptionConfirm({super.key});
   @override
   Widget build(BuildContext context) {
+    final controller = VehicleController.to;
     final expireDate =
         DateTime.tryParse(controller.calcDate()) ?? DateTime.now();
     return Scaffold(
@@ -30,8 +28,7 @@ class UnsubscriptionConfirm extends GetWidget<VehicleController> {
                   width: 179.h,
                   margin: getMargin(top: 50),
                   child: Text(
-                    l10ns.areYouSureYouWantToUnsubscribe(
-                        controller.currentUser.nickname!),
+                    l10ns.areYouSureYouWantToUnsubscribe(goolier.nickname!),
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     textAlign: TextAlign.center,

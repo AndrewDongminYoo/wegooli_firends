@@ -27,8 +27,14 @@ class _PasswordFormFieldState extends State<PasswordFormField> {
     final isShowPassword = false.obs;
     final isSignUp = controller.mode == AuthMode.register;
     return Obx(() {
+      final controller = UserController.to;
       return CustomTextFormField(
         initialValue: controller.password,
+        onChanged: (String value) {
+          if (value.isNotEmpty) {
+            controller.password = value;
+          }
+        },
         margin: getMargin(top: 4),
         contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),
         textStyle: CustomTextStyles.bodyLargeGray50003,
@@ -45,11 +51,6 @@ class _PasswordFormFieldState extends State<PasswordFormField> {
             child: ShowPasswordToggle(show: isShowPassword)),
         suffixConstraints: BoxConstraints(maxHeight: 48.v),
         fillColor: Colors.white,
-        onChanged: (String _password) {
-          setState(() {
-            controller.password = _password;
-          });
-        },
         filled: true,
         validator: (password) {
           if (!isValidPassword(password)) {
@@ -66,10 +67,7 @@ class _PasswordFormFieldState extends State<PasswordFormField> {
 class PasswordConfirmFormField extends StatefulWidget {
   const PasswordConfirmFormField({
     super.key,
-    required this.controller,
   });
-
-  final UserController controller;
 
   @override
   State<PasswordConfirmFormField> createState() =>
@@ -79,10 +77,14 @@ class PasswordConfirmFormField extends StatefulWidget {
 class _PasswordConfirmFormFieldState extends State<PasswordConfirmFormField> {
   @override
   Widget build(BuildContext context) {
+    final controller = UserController.to;
     final isShowConfirmPassword = false.obs;
     return Obx(() => CustomTextFormField(
           textInputType: TextInputType.emailAddress,
-          controller: widget.controller.rePassword,
+          initialValue: controller.rePassword,
+          onChanged: (String? value) {
+            controller.rePassword = value;
+          },
           margin: getMargin(top: 4),
           contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),
           textStyle: CustomTextStyles.bodyLargeGray50003,
@@ -97,7 +99,7 @@ class _PasswordConfirmFormFieldState extends State<PasswordConfirmFormField> {
           filled: true,
           fillColor: Colors.white,
           validator: (_passwordCheck) {
-            if (_passwordCheck != widget.controller.password) {
+            if (_passwordCheck != controller.password) {
               return '비밀번호와 일치하지 않습니다.';
             } else {
               return null;

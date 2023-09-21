@@ -31,7 +31,7 @@ class AuthMiddleware extends GetMiddleware {
   /// 이 함수는 이 페이지가 호출될 때 호출되며 페이지의 내용을 변경하거나 새 페이지를 생성하는 데 사용할 수 있습니다.
   @override
   GetPage<dynamic>? onPageCalled(GetPage<dynamic>? page) {
-    final username = controller.currentUser.name;
+    final username = goolier.name;
     if (username != null && username.isNotEmpty) {
       print('>>> Page ${page?.name} called');
       print('>>> User "$username" logged-in');

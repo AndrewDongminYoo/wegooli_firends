@@ -37,6 +37,7 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
   bool codeSent = false;
   String _min = '';
   String _sec = '';
+  String pinCodes = '';
 
   @override
   void initState() {
@@ -52,12 +53,6 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
       ///  - 웹에서는 네이티브 브라우저 API를 사용하여 사용자에게 권한을 요청하는 팝업이 표시됩니다.
       FirebaseMessaging.instance.requestPermission();
     }
-  }
-
-  @override
-  void dispose() {
-    controller.pinCodes.dispose();
-    super.dispose();
   }
 
   SnackbarController verificationFailed(Exception error) {
@@ -128,7 +123,7 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
         },
         // 자동 SMS 코드 처리에 실패한 경우 시간 초과를 처리
         codeAutoRetrievalTimeout: (String verificationId) {
-          controller.pinCodes.clear();
+          widget.controller.$configureLifeCycle();
           if (_timer != null) {
             _timer!.cancel();
           }
@@ -152,14 +147,14 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
       message: '3분내 입력하지 않을 경우 인증코드가 만료됩니다.',
       duration: rest,
     ));
-    if (controller.pinCodes.text.isEmpty) {
+    if (pinCodes.isEmpty) {
       setState(() {
         codeSent = true;
         _error = '인증 코드를 입력해주세요';
       });
       return null;
     } else {
-      return controller.pinCodes.text;
+      return pinCodes.trim();
     }
   }
 
@@ -186,11 +181,11 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
             CustomInputLabel(
               labelText: l10ns.cellPhoneInformation,
             ), // '휴대폰 정보'
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const TelecomDropdown(),
-                PhoneNumberFormField(controller: widget.controller.phoneNum),
+                TelecomDropdown(),
+                PhoneNumberFormField(),
               ],
             ),
             Row(
@@ -205,7 +200,7 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
                   buttonTextStyle: theme.textTheme.titleMedium,
                   isLoading: codeSent,
                   onTap: () {
-                    phoneAuth(controller.phoneNum.text);
+                    phoneAuth(controller.phoneNumWithHyphen!);
                   },
                 )),
               ],
@@ -214,9 +209,16 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 CustomTextFormField(
+                  initialValue: pinCodes,
+                  onChanged: (String value) {
+                    setState(() {
+                      if (pinCodes.length <= 6) {
+                        pinCodes = value;
+                      }
+                    });
+                  },
                   width: 160.h,
                   hintText: '000000',
-                  controller: controller.pinCodes,
                   textInputType: TextInputType.phone,
                   inputFormatters: <TextInputFormatter>[
                     FilteringTextInputFormatter.digitsOnly,

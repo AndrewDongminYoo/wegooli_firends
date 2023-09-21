@@ -6,17 +6,18 @@ import 'package:flutter/services.dart';
 import '/lib.dart';
 
 class CardPinNumberFormField extends StatelessWidget {
-  const CardPinNumberFormField({
-    super.key,
-    required this.controller,
-  });
-
-  final TextEditingController controller;
+  const CardPinNumberFormField({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = PaymentCardController.to;
     return CustomTextFormField(
-        controller: controller,
+        initialValue: controller.creditCardPin,
+        onChanged: (String value) {
+          if (value.isNotEmpty) {
+            controller.creditCardPin = value;
+          }
+        },
         autofillHints: const [AutofillHints.creditCardSecurityCode],
         inputFormatters: <TextInputFormatter>[
           FilteringTextInputFormatter.digitsOnly,

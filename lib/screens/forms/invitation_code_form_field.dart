@@ -7,17 +7,21 @@ import '/lib.dart';
 class InvitationCodeFormField extends StatelessWidget {
   const InvitationCodeFormField({
     super.key,
-    required this.controller,
     this.readOnly = false,
   });
 
-  final TextEditingController controller;
   final bool readOnly;
   @override
   Widget build(BuildContext context) {
+    final controller = UserController.to;
     return CustomTextFormField(
+        initialValue: controller.invitation,
+        onChanged: (String value) {
+          if (value.isNotEmpty) {
+            controller.invitation = value;
+          }
+        },
         enabled: !readOnly,
-        controller: controller,
         hintText: 'xxxx-xxxx-xxxx-xxxx',
         margin: getMargin(left: 25, top: 17, right: 25),
         contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),

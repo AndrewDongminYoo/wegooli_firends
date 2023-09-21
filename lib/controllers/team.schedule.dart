@@ -20,7 +20,26 @@ class Item {
 
 class ScheduleController extends GetxController {
   final _service = ReservationsService();
+  final _teamAccount = TeamAccountService();
+  final _teamService = TeamService();
   final userController = UserController.to;
+  AuthMode mode = AuthMode.login;
+
+  final RxList<Schedule> _schedules = RxList<Schedule>.of([]);
+  RxList<Schedule> get schedules => _schedules;
+  final RxList<TeamAccountModel> _members = RxList<TeamAccountModel>([]);
+  final RxList<TeamAccountConnectionResponse> _teams =
+      RxList<TeamAccountConnectionResponse>.of([]);
+  RxList<TeamAccountConnectionResponse> get teams => _teams;
+  int? get firstTeamSeq => teams.firstOrNull?.teamSeq;
+  TeamAccountConnectionResponse? get firstTeamsOrNull => teams.firstOrNull;
+
+  List<TeamAccountModel> get members {
+    final team = firstTeamsOrNull;
+    _members(team?.account ?? []);
+    // print('_members : $_members');
+    return _members.toList();
+  }
 
   // ignore: prefer_constructors_over_static_methods
   static ScheduleController get to => Get.isRegistered<ScheduleController>()
@@ -73,10 +92,6 @@ class ScheduleController extends GetxController {
   RangeSelectionMode rangeSelectionMode = RangeSelectionMode
       .toggledOff; // Can be toggled on/off by long pressing a date
   void makeEventSource() {
-    // print('AAA : makeEventSource()');
-    final schedules = UserController.to.schedules;
-    // print('AAA : schedule ${schedules.length}');
-
     /// 주어진 코드에서 `userController`는 `UserController` 클래스의 인스턴스입니다.
     /// `UserController` 클래스의 `schedules` 속성에 액세스하는 데 사용됩니다.
     /// `schedules` 속성은 `ScheduleController` 클래스의 `localEventSource` 맵을 채우는 데 사용됩니다.
@@ -118,8 +133,8 @@ class ScheduleController extends GetxController {
 
   Future<void> addSchedule() async {
     // print('AAA : addSchedule');
-    final accountId = userController.currentUser.id;
-    final teamSeq = userController.firstTeamSeq;
+    final accountId = goolier.id;
+    final teamSeq = firstTeamSeq;
     if (teamSeq == null) {
       return;
     }
@@ -131,18 +146,48 @@ class ScheduleController extends GetxController {
     items(initItem());
   }
 
-  Future<void> refreshSchedules() async {
-    final newSchedule = await userController.retrieveSchedules();
-    userController.schedules(newSchedule);
+  Future<void> load() async {
+    teams.value = await findTeams();
+    teams.refresh();
+    schedules.value = await retrieveSchedules();
+    schedules.refresh();
   }
 
-  Future<void> updateSchedule(int scheduleId) async {
-    // print('AAA : updateSchedule');
-    final teamSeq = userController.firstTeamSeq;
+  Future<List<TeamAccountConnectionResponse>> findTeams() async {
+    if (userController.isAuthenticated) {
+      print('currentUser : $goolier');
+      return _teamAccount.findTeams(goolier.id!);
+    } else {
+      return <TeamAccountConnectionResponse>[];
+    }
+  }
+
+  Future<List<Schedule>> retrieveSchedules() async {
+    if (firstTeamSeq == null) {
+      return List.empty();
+    } else {
+      return _service.retrieveSchedules(firstTeamSeq!);
+    }
+  }
+
+  Future<String?> getTeamCode() async {
+    if (firstTeamSeq == null) {
+      return null;
+    }
+    final teamModel = await _teamService.findTeamBySeqOrNull(firstTeamSeq!);
+    return teamModel?.teamCode;
+  }
+
+  Future<void> refreshSchedules() async {
+    final teamSeq = firstTeamSeq;
     if (teamSeq == null) {
       return;
     }
+    final newSchedule = await _service.retrieveSchedules(firstTeamSeq!);
+    schedules(newSchedule);
+  }
 
+  Future<void> updateSchedule(int scheduleId) async {
     await _service.updateSchedule(scheduleId, reservationTime, returnTime);
     // TODO 기존 아이템 목록에서 제거하고 업데이트된 항목으로 반영.
     await refreshSchedules();

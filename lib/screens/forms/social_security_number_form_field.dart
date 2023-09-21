@@ -8,18 +8,22 @@ import '/lib.dart';
 class SocialSecurityNumberFormField extends StatelessWidget {
   const SocialSecurityNumberFormField({
     super.key,
-    required this.controller,
     required this.focusNode,
   });
 
-  final TextEditingController controller;
   final FocusNode focusNode;
 
   @override
   Widget build(BuildContext context) {
+    final controller = UserController.to;
     return CustomTextFormField(
+      initialValue: controller.backNumbers,
+      onChanged: (String value) {
+        if (value.isNotEmpty) {
+          controller.backNumbers = value;
+        }
+      },
       width: 158.h,
-      controller: controller,
       margin: getMargin(top: 4),
       contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),
       maxLength: 7,

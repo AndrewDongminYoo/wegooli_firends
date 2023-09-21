@@ -14,7 +14,7 @@ class TeamReservationsItem extends StatefulWidget {
     required this.controller,
   });
   final Schedule schedule;
-  final UserController controller;
+  final ScheduleController controller;
   @override
   State<TeamReservationsItem> createState() => _TeamReservationsItemState();
 }
@@ -32,8 +32,7 @@ class _TeamReservationsItemState extends State<TeamReservationsItem> {
   @override
   Widget build(BuildContext context) {
     final color = widget.schedule.highlightColor;
-    final isOwner =
-        widget.schedule.accountId == widget.controller.currentUser.id;
+    final isOwner = widget.schedule.accountId == goolier.id;
     return Container(
       margin: getMargin(bottom: 10),
       width: 288.h,

@@ -13,7 +13,6 @@ class SendingInvitationDialog extends StatefulWidget {
 }
 
 class _SendingInvitationDialogState extends State<SendingInvitationDialog> {
-  final vehicles = VehicleController.to;
   final schedule = ScheduleController.to;
   final currUser = UserController.to;
 
@@ -62,9 +61,7 @@ class _SendingInvitationDialogState extends State<SendingInvitationDialog> {
                             margin: getMargin(bottom: 15),
                             onTap: goBack),
                       ])),
-              InvitationCodeFormField(
-                  controller: currUser.invitation,
-                  readOnly: widget.copyMode),
+              InvitationCodeFormField(readOnly: widget.copyMode),
               if (widget.copyMode)
                 CopyInvitationButton()
               else

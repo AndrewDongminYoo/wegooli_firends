@@ -1,6 +1,3 @@
-// 🐦 Flutter imports:
-import 'package:flutter/material.dart';
-
 // 📦 Package imports:
 import 'package:get/get.dart';
 
@@ -11,18 +8,17 @@ enum RegionType { STRING, NUMBER }
 
 class LicenseController extends GetxController {
   final _service = LicenseCardService();
-  final userController = UserController.to;
   // ignore: prefer_constructors_over_static_methods
   static LicenseController get to => Get.isRegistered<LicenseController>()
       ? Get.find<LicenseController>()
       : Get.put(LicenseController());
 
   // 운전면허증 일련번호
-  TextEditingController licenseNumbers = TextEditingController();
+  String? licenseNumbers;
   // 운전면허증 만료일자
-  TextEditingController expirationDate = TextEditingController();
+  String? expirationDate;
   // 운전면허증 발급일자
-  TextEditingController firstIssueDate = TextEditingController();
+  String? firstIssueDate;
 
   // 운전면허증 최초발급년도
   SelectionPopupModel? issuedYear; // 올해의 연도보다 높은 숫자일 수 없다.
@@ -30,34 +26,26 @@ class LicenseController extends GetxController {
   SelectionPopupModel? licenseRegion;
 
   bool get licenseInputSucceed =>
-      licenseNumbers.text.isNotEmpty &&
-      expirationDate.text.isNotEmpty &&
-      firstIssueDate.text.isNotEmpty &&
+      licenseNumbers!.isNotEmpty &&
+      expirationDate!.isNotEmpty &&
+      firstIssueDate!.isNotEmpty &&
       issuedYear != null &&
       licenseType != null &&
-      isNumeric(licenseNumbers.text) &&
-      isNumeric(expirationDate.text) &&
-      isNumeric(firstIssueDate.text) &&
+      isNumeric(licenseNumbers) &&
+      isNumeric(expirationDate) &&
+      isNumeric(firstIssueDate) &&
       isNumeric(issuedYear!.title) &&
       licenseTypes.contains(licenseType) &&
       issuedYears.contains(issuedYear) &&
       licenseRegions.contains(licenseRegion);
 
-  @override
-  void onClose() {
-    super.onClose();
-    licenseNumbers.dispose();
-    expirationDate.dispose();
-    firstIssueDate.dispose();
-  }
-
   Future<dynamic> isValidLicense() async {
-    final memberSeq = userController.currentUser.memberSeq;
+    final memberSeq = goolier.memberSeq;
     if (memberSeq == null || memberSeq == 0) {
       return false;
     }
     try {
-      final words = licenseNumbers.text.split('-');
+      final words = licenseNumbers!.split('-');
       final licenseYear = words[0];
       final licenseNum = words[1];
       return _service.isValidLicense(memberSeq, licenseType!.value,
@@ -70,13 +58,13 @@ class LicenseController extends GetxController {
 
   Future<int> registerDrivingLicense() async {
     return _service.registerDrivingLicense(
-        userController.currentUser.memberSeq!,
+        goolier.memberSeq!,
         licenseType!.title,
         licenseRegion!.title,
         issuedYear!.title,
-        licenseNumbers.text,
-        expirationDate.text,
-        firstIssueDate.text);
+        licenseNumbers!,
+        expirationDate!,
+        firstIssueDate!);
   }
 }
 

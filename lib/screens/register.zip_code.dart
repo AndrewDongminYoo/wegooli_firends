@@ -33,14 +33,14 @@ class _RegisterZipCodeState extends State<RegisterZipCode> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           CustomInputLabel(labelText: l10ns.homeAddress),
-                          PostCodeFormField(controller: controller.postCode),
+                          const PostCodeFormField(),
                         ]),
                   ),
                 ),
                 const Expanded(child: PostCodeSearchButton()),
               ]),
-              PrimaryAddressFormField(controller: controller.primaryAddress),
-              DetailAddressFormField(controller: controller.detailAddress),
+              const PrimaryAddressFormField(),
+              const DetailAddressFormField(),
               Padding(
                   padding: getPadding(top: 27),
                   child: Column(
@@ -63,9 +63,7 @@ class _RegisterZipCodeState extends State<RegisterZipCode> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         CustomInputLabel(labelText: l10ns.confirmPassword),
-                        PasswordConfirmFormField(
-                          controller: controller,
-                        ),
+                        const PasswordConfirmFormField(),
                       ])),
               Padding(
                   padding: getPadding(top: 27),
@@ -73,9 +71,7 @@ class _RegisterZipCodeState extends State<RegisterZipCode> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         CustomInputLabel(labelText: l10ns.nickname),
-                        NickNameFormField(
-                          controller: controller.nickname,
-                        ),
+                        const NickNameFormField(),
                       ])),
             ])),
       ),

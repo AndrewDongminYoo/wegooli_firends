@@ -5,10 +5,7 @@ import 'package:flutter/material.dart';
 import '/lib.dart';
 
 class DetailAddressFormField extends StatelessWidget {
-  const DetailAddressFormField({
-    super.key,
-  });
-
+  const DetailAddressFormField({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +14,7 @@ class DetailAddressFormField extends StatelessWidget {
       initialValue: controller.detailAddress,
       onChanged: (String value) {
         if (value.isNotEmpty) {
-          controller.detailAddress= value;
+          controller.detailAddress = value;
         }
       },
       inputFormatters: const [],

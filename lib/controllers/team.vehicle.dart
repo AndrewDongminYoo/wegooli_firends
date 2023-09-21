@@ -17,11 +17,8 @@ class VehicleController extends GetxController {
   late Rx<SubscriptionModel> subscriptionModel = SubscriptionModel().obs;
   late Rx<CarManagementModel> carManagementModel = CarManagementModel().obs;
 
-  /// late init from UserController values.
   late int? _teamSeq;
   int? get teamSeq => _teamSeq;
-  late User _currentUser;
-  User get currentUser => _currentUser;
   late String _nickname = '위굴리';
   String get nickname => _nickname;
   late List<TeamAccountModel> _members = [];
@@ -29,11 +26,10 @@ class VehicleController extends GetxController {
 
   @override
   Future<void> onInit() async {
-    final userController = UserController.to;
-    _currentUser = userController.currentUser;
-    _teamSeq = userController.firstTeamSeq;
-    _members = userController.members;
-    _nickname = _currentUser.nickname!;
+    final controller = ScheduleController.to;
+    _teamSeq = controller.firstTeamSeq;
+    _members = controller.members;
+    _nickname = goolier.nickname!;
     await retrieveInfo();
     await retrieveSchedule();
     await getSubscription();
@@ -52,7 +48,7 @@ class VehicleController extends GetxController {
     getClient(schedule.accountId);
     if (schedule.startAt == null ||
         schedule.endAt == null ||
-        schedule.accountId == currentUser.id) {
+        schedule.accountId == goolier.id) {
       return false;
     } else {
       final last = DateTime.parse(schedule.startAt!);
@@ -155,8 +151,7 @@ class VehicleController extends GetxController {
     if (teamSeq == null) {
       return;
     }
-    final response =
-        await _service.loadSubscriptions(currentUser.id!, teamSeq!);
+    final response = await _service.loadSubscriptions(goolier.id!, teamSeq!);
     print('구독정보; ${response.first}');
     subscriptionModel.value = response.first;
   }
@@ -166,7 +161,7 @@ class VehicleController extends GetxController {
       return;
     }
     final submitWithdrawalModel = SubmitWithdrawalModel(
-        accountId: currentUser.id,
+        accountId: goolier.id,
         leavedAt: subscriptionModel.value.endAt,
         teamSeq: teamSeq);
     await _service.submitWithdrawal(submitWithdrawalModel);
@@ -176,13 +171,13 @@ class VehicleController extends GetxController {
   }
 
   Future<void> subscribe() async {
-    print('currentUser.id ${currentUser.id}');
+    print('user.id ${goolier.id}');
     print('teamSeq $teamSeq');
     if (teamSeq == null) {
       return;
     }
     final submitWithdrawalModel =
-        SubmitWithdrawalModel(accountId: currentUser.id, teamSeq: teamSeq);
+        SubmitWithdrawalModel(accountId: goolier.id, teamSeq: teamSeq);
     await _service.submitWithdrawal(submitWithdrawalModel);
     await getSubscription();
   }
@@ -226,13 +221,12 @@ class VehicleController extends GetxController {
   }
 
   Future<bool> joinTeam() async {
-    final userController = UserController.to;
-    final invitation = userController.invitation;
-    final accountId = currentUser.id;
-    if (invitation.text.length == 10) {
-      print('joinTeam() accountId: $accountId |invitation: ${invitation.text}');
-      return TeamAccountService()
-          .inviteTeamAccount(accountId!, invitation.text);
+    final controller = UserController.to;
+    final invitation = controller.invitation;
+    final accountId = goolier.id;
+    if (invitation!.length == 10) {
+      print('joinTeam() accountId: $accountId |invitation: $invitation');
+      return TeamAccountService().inviteTeamAccount(accountId!, invitation);
     }
     return false;
   }

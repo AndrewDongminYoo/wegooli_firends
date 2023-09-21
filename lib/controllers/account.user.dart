@@ -8,11 +8,11 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/lib.dart';
 
+User goolier = UserController.to.currentUser;
+
 class UserController extends GetxController {
   final UserAccountService _service = UserAccountService();
-  final TeamAccountService _teamAccountService = TeamAccountService();
   final ReservationsService _reservationsService = ReservationsService();
-  final TeamService _teamService = TeamService();
   AuthMode mode = AuthMode.login;
 
   // ignore: prefer_constructors_over_static_methods
@@ -30,28 +30,26 @@ class UserController extends GetxController {
   ];
 
   /// 로그인 - 아이디, 비밀번호
-  String username = '';
-  String password = '';
+  String? username;
+  String? password;
 
   /// 회원가입[1] - 이름, 주민등록번호, 통신사, 핸드폰번호, 인증번호
-  TextEditingController realName = TextEditingController(); // 한국이름
-  TextEditingController birthDay = TextEditingController();
-  TextEditingController socialId = TextEditingController();
-  TextEditingController phoneNum = TextEditingController();
-  TextEditingController pinCodes = TextEditingController();
+  String? koreanName; // 성명 (숫자 NO)
+  String? frontNumbers; // 주민등록번호 앞자리 (6자리)
+  String? backNumbers; // 주민등록번호 뒷자리 (7자리)
+  String? phoneNumWithHyphen; // 전화번호 (010-1234-5678) 13자리
+
   String telecom = 'SKT';
 
   /// 회원가입[2] - 집주소, 이메일주소, 비밀번호, 닉네임
-  TextEditingController postCode =
-      TextEditingController(text: kIsWeb ? 'postal code' : null);
-  TextEditingController primaryAddress =
-      TextEditingController(text: kIsWeb ? 'street address' : null);
-  TextEditingController detailAddress = TextEditingController();
-  TextEditingController rePassword = TextEditingController();
-  TextEditingController nickname = TextEditingController();
+  String? postCode;
+  String? primaryAddress;
+  String? detailAddress;
+  String? rePassword;
+  String? nickname;
 
   /// 회원가입[3] - 초대코드 입력
-  TextEditingController invitation = TextEditingController();
+  String? invitation;
 
   User currentUser = const User(
     phoneNumber: '',
@@ -62,14 +60,20 @@ class UserController extends GetxController {
 
   bool get isAuthenticated => currentUser.isLoggedIn;
 
-  final RxList<TeamAccountModel> _members = RxList<TeamAccountModel>([]);
-  final RxList<Schedule> _schedules = RxList<Schedule>.of([]);
-  RxList<Schedule> get schedules => _schedules;
   List<AccountAgreementRequest> agreement = [];
-  final RxList<TeamAccountConnectionResponse> _teams =
-      RxList<TeamAccountConnectionResponse>.of([]);
-  RxList<TeamAccountConnectionResponse> get teams => _teams;
-  int? get firstTeamSeq => teams.firstOrNull?.teamSeq;
+
+  /// 로그아웃
+  Future<void> logOut() async {
+    await _service.logOut();
+    await PrefUtils.clearAll();
+    await Get.offAllNamed(AppRoutes.idPwLogin);
+  }
+
+  /// 회원탈퇴
+  Future<bool> signOut() async {
+    await PrefUtils.clearAll();
+    return _service.signOut(currentUser.id!);
+  }
 
   @protected
   SignUp _state = SignUp.WAITING;
@@ -89,85 +93,34 @@ class UserController extends GetxController {
     telecom = value.title;
   }
 
-  bool get phoneAuthCompleted =>
-      realName.text.isNotEmpty &&
-      birthDay.text.isNotEmpty &&
-      birthDay.text.isNumericOnly &&
-      socialId.text.isNotEmpty &&
-      socialId.text.isNumericOnly &&
-      phoneNum.text.isNotEmpty &&
-      isValidPhone(phoneNum.text) &&
-      pinCodes.text.isNotEmpty &&
-      pinCodes.text.isNumericOnly &&
-      pinCodes.text.length == 6;
-
   bool get registerCreditCardCompleted => false;
   bool get registerZipCodeCompleted =>
-      postCode.text.isNotEmpty &&
-      primaryAddress.text.isNotEmpty &&
-      detailAddress.text.isNotEmpty &&
-      username.isEmail &&
+      postCode != null &&
+      postCode!.isNotEmpty &&
+      primaryAddress != null &&
+      primaryAddress!.isNotEmpty &&
+      detailAddress != null &&
+      detailAddress!.isNotEmpty &&
+      username != null &&
+      username!.isEmail &&
       isValidEmail(username) &&
-      password.isNotEmpty &&
-      rePassword.text.isNotEmpty &&
-      nickname.text.isNotEmpty &&
-      (password == rePassword.text);
+      password != null &&
+      password!.isNotEmpty &&
+      rePassword != null &&
+      rePassword!.isNotEmpty &&
+      nickname != null &&
+      nickname!.isNotEmpty &&
+      (password == rePassword);
 
   /// 로그인
   Future<User> login() async {
     print('controller.login.username: $username\npassword: $password');
-    final user = await _service.login(username, password);
+    final user = await _service.login(username!, password!);
     if (user is User) {
       currentUser = user;
       return user;
     } else {
       throw CustomException('로그인에 실패하였습니다.');
-    }
-  }
-
-  Future<void> load() async {
-    teams.value = await findTeams();
-    teams.refresh();
-    schedules.value = await retrieveSchedules();
-    schedules.refresh();
-  }
-
-  /// 로그아웃
-  Future<void> logOut() async {
-    await _service.logOut();
-    await PrefUtils.clearAll();
-    await Get.offAllNamed(AppRoutes.idPwLogin);
-  }
-
-  /// 회원탈퇴
-  Future<bool> signOut() async {
-    await PrefUtils.clearAll();
-    return _service.signOut(currentUser.id!);
-  }
-
-  Future<List<TeamAccountConnectionResponse>> findTeams() async {
-    if (isAuthenticated) {
-      print('currentUser : $currentUser');
-      return _teamAccountService.findTeams(currentUser.id!);
-    } else {
-      return <TeamAccountConnectionResponse>[];
-    }
-  }
-
-  TeamAccountConnectionResponse? get firstTeamsOrNull => teams.firstOrNull;
-
-  List<TeamAccountModel> get members {
-    final team = firstTeamsOrNull;
-    _members(team?.account ?? []);
-    // print('_members : $_members');
-    return _members.toList();
-  }
-
-  Future<List<Schedule>> retrieveSchedules() async {
-    if (firstTeamSeq == null) {
-      return List.empty();
-    } else {
-      return _reservationsService.retrieveSchedules(firstTeamSeq!);
     }
   }
 
@@ -195,16 +148,16 @@ class UserController extends GetxController {
   /// 회원가입
   Future<UserDto?> signUp() {
     return _service.signUp(
-      realName.text,
-      birthDay.text,
-      socialId.text,
-      phoneNum.text,
-      postCode.text,
-      primaryAddress.text,
-      detailAddress.text,
-      username,
-      password,
-      nickname.text,
+      koreanName!,
+      frontNumbers!,
+      backNumbers!,
+      phoneNumWithHyphen!,
+      postCode!,
+      primaryAddress!,
+      detailAddress!,
+      username!,
+      password!,
+      nickname!,
     );
   }
 
@@ -213,14 +166,6 @@ class UserController extends GetxController {
       classification: e.name,
       agreeYn: e.agree.toYN,
     );
-  }
-
-  Future<String?> getTeamCode() async {
-    if (firstTeamSeq == null) {
-      return null;
-    }
-    final teamModel = await _teamService.findTeamBySeqOrNull(firstTeamSeq!);
-    return teamModel?.teamCode;
   }
 }
 

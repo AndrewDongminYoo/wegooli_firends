@@ -15,11 +15,9 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  final user = UserController.to;
-
   @override
   Widget build(BuildContext context) {
-    print('user.currentUser.id ${user.currentUser.id}');
+    print('user.id ${goolier.id}');
     return Navigator(
       key: Get.nestedKey(1),
       initialRoute: AppRoutes.sharedSchedule,

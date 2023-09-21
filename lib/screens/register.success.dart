@@ -59,7 +59,7 @@ class RegisterSuccess extends GetWidget<UserController> {
                                     ),
                                   )),
                             ]),
-                        InviteCodeFormField(controller: controller.invitation),
+                        const InviteCodeFormField(),
                         Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [

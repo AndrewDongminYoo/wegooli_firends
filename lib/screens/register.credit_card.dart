@@ -42,7 +42,7 @@ class _RegisterCreditCardState extends State<RegisterCreditCard> {
             child: Column(children: [
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                 CustomInputLabel(labelText: l10ns.cardNumber),
-                CreditCardFormField(controller: controller.creditCardNum),
+                const CreditCardFormField(),
               ]),
               Padding(
                   padding: getPadding(top: 29),
@@ -50,8 +50,7 @@ class _RegisterCreditCardState extends State<RegisterCreditCard> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         CustomInputLabel(labelText: l10ns.expirationDate),
-                        CardExpMonthYearFormField(
-                            controller: controller.creditCardExp),
+                        const CardExpMonthYearFormField(),
                       ])),
               Padding(
                   padding: getPadding(top: 29),
@@ -61,9 +60,8 @@ class _RegisterCreditCardState extends State<RegisterCreditCard> {
                         CustomInputLabel(
                             labelText: l10ns.socialSecurityNumberFirstDigit),
                         BirthdayNumberFormField(
-                          controller: userController.birthDay,
                           focusNode: birthday,
-                          readonly: userController.birthDay.text.isNotEmpty,
+                          readonly: userController.frontNumbers?.length == 6,
                         ),
                       ])),
               Padding(
@@ -73,8 +71,7 @@ class _RegisterCreditCardState extends State<RegisterCreditCard> {
                       children: [
                         CustomInputLabel(
                             labelText: l10ns.first2DigitsOfCardPassword),
-                        CardPinNumberFormField(
-                            controller: controller.creditCardPin),
+                        const CardPinNumberFormField(),
                       ])),
             ])),
       ),

@@ -1,0 +1,8 @@
+app_identifier("com.wegooli.friends") # The bundle identifier of your app
+apple_id("ydm2790@gmail.com") # Your Apple Developer Portal username
+
+itc_team_id("2758800") # App Store Connect Team ID
+team_id("2HK2KR9QKY") # Developer Portal Team ID
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile

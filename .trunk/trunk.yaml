@@ -29,6 +29,9 @@ lint:
       paths:
         - "**/Podfile.lock"
         - pubspec.lock
+        - ios/Gemfile.lock
+        - android/Gemfile.lock
+        - assets/fonts
 
 runtimes:
   enabled:

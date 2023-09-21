@@ -10,7 +10,7 @@ class FriendsByWegooli extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomImageView(
-      imagePath: Assets.images.friendsByWegooli.path,
+      imagePath: Assets.brand.friendsByWegooli.path,
       height: 70.v,
       width: 198.h,
       fit: BoxFit.fill,

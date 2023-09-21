@@ -15,6 +15,29 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lottie/lottie.dart';
 
+class $AssetsBrandGen {
+  const $AssetsBrandGen();
+
+  /// File path: assets/brand/FRIENDS.png
+  AssetGenImage get friends => const AssetGenImage('assets/brand/FRIENDS.png');
+
+  /// File path: assets/brand/by_wegooli.png
+  AssetGenImage get byWegooli =>
+      const AssetGenImage('assets/brand/by_wegooli.png');
+
+  /// File path: assets/brand/friends_by_wegooli.png
+  AssetGenImage get friendsByWegooli =>
+      const AssetGenImage('assets/brand/friends_by_wegooli.png');
+
+  /// File path: assets/brand/img_wegooli_title.png
+  AssetGenImage get imgWegooliTitle =>
+      const AssetGenImage('assets/brand/img_wegooli_title.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values =>
+      [friends, byWegooli, friendsByWegooli, imgWegooliTitle];
+}
+
 class $AssetsCarsGen {
   const $AssetsCarsGen();
 
@@ -79,10 +102,6 @@ class $AssetsCarsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
-  /// File path: assets/images/friends_by_wegooli.png
-  AssetGenImage get friendsByWegooli =>
-      const AssetGenImage('assets/images/friends_by_wegooli.png');
-
   /// File path: assets/images/image_not_found.png
   AssetGenImage get imageNotFound =>
       const AssetGenImage('assets/images/image_not_found.png');
@@ -115,10 +134,6 @@ class $AssetsImagesGen {
   AssetGenImage get imgGooli5 =>
       const AssetGenImage('assets/images/img_gooli_5.png');
 
-  /// File path: assets/images/img_wegooli_title.png
-  AssetGenImage get imgWegooliTitle =>
-      const AssetGenImage('assets/images/img_wegooli_title.png');
-
   /// File path: assets/images/placeholder_01.png
   AssetGenImage get placeholder01 =>
       const AssetGenImage('assets/images/placeholder_01.png');
@@ -137,7 +152,6 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
-        friendsByWegooli,
         imageNotFound,
         imgAcorn,
         imgGooli0,
@@ -146,7 +160,6 @@ class $AssetsImagesGen {
         imgGooli3,
         imgGooli4,
         imgGooli5,
-        imgWegooliTitle,
         placeholder01,
         placeholder02,
         placeholder03,
@@ -476,6 +489,7 @@ class $AssetsSvgGasGen {
 class Assets {
   Assets._();
 
+  static const $AssetsBrandGen brand = $AssetsBrandGen();
   static const $AssetsCarsGen cars = $AssetsCarsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
   static const $AssetsLottiesGen lotties = $AssetsLottiesGen();

@@ -1,0 +1,125 @@
+flutter_native_splash:
+  # 이 패키지는 배경색과 스플래시 이미지로 Flutter의 기본 흰색 기본 스플래시 화면을 커스터마이징하는 네이티브 코드를 생성합니다.
+  # 아래 파라미터를 사용자 정의하고 터미널에서 다음 명령을 실행합니다:
+  # `dart run flutter_native_splash:create`
+  # Flutter의 기본 흰색 스플래시 화면을 복원하려면 터미널에서 다음 명령을 실행합니다:
+  # `dart run flutter_native_splash:remove`
+
+  # `color` or `background_image` is the only required parameter.
+  # `color`을 사용하여 스플래시 화면의 배경을 단색으로 설정합니다.
+  # `background_image`를 사용하여 스플래시 화면의 배경을 png 이미지로 설정합니다.
+  # 그라데이션에 유용합니다. 이미지가 앱 크기에 맞게 늘어납니다. 매개변수는 하나만 사용할 수 있으며, `color`와 `background_image`는 둘 다 설정할 수 없습니다.
+  color: '#FFE142'
+  #background_image: "assets/background.png"
+
+  # 선택적 매개변수는 아래에 나열되어 있습니다.
+  # 매개변수를 활성화하려면 앞의 # 문자를 제거하여 줄의 주석 처리를 해제합니다.
+
+  # `image` 매개변수를 사용하면 스플래시 화면에 사용되는 이미지를 지정할 수 있습니다.
+  # 이미지 파일은 PNG 파일이어야 하며 픽셀 밀도 4배에 맞는 크기여야 합니다.
+  image: assets/images/img_gooli_1.png
+
+  # `branding` 속성을 사용하면 스플래시 화면에서 브랜딩으로 사용되는 이미지를 지정할 수 있습니다.
+  # png 파일이어야 합니다. Android, iOS 및 웹에서 지원됩니다.
+  # Android 12의 경우 아래 Android 12 섹션을 참조하세요.
+  branding: assets/brand/by_wegooli.png
+
+  # `branding_mode`를 화면 하단에 배치하려면 하단, 하단 오른쪽, 하단 왼쪽을 사용할 수 있습니다. 지정하지 않거나 다른 값을 지정하지 않으면 기본값은 하단입니다.
+  branding_mode: bottom
+
+  # color_dark, background_image_dark, image_dark, branding_dark는 기기가 다크 모드일 때 배경과 이미지를 설정하는 매개변수입니다. 지정하지 않으면 앱에서 위의 매개변수를 사용합니다. image_dark 매개변수를 지정하는 경우 color_dark 또는 background_image_dark를 지정해야 합니다. color_dark와 background_image_dark는 둘 다 설정할 수 없습니다.
+  color_dark: "#042a49"
+  #background_image_dark: "assets/dark-background.png"
+  #image_dark: assets/images/img_gooli_1.png
+  #branding_dark: assets/brand/by_wegooli.png
+
+  # 안드로이드 12는 이전 버전과 다르게 스플래시 화면을 처리합니다.
+  # 다음을 참조하세요.
+  # https://developer.android.com/guide/topics/ui/splash-screen
+  # 다음은 안드로이드 12의 특정 파라미터입니다.
+  android_12:
+    # 이미지 파라미터는 스플래시 화면 아이콘 이미지를 설정합니다.
+    # 이 매개변수를 지정하지 않으면 앱의 런처 아이콘이 대신 사용됩니다.
+    # 스플래시 화면은 화면 중앙에 있는 원으로 잘려서 표시됩니다.
+    # 아이콘 배경이 있는 앱 아이콘: 이 아이콘은 960×960픽셀이어야 하며 지름 640픽셀의 원 안에 들어 맞아야 합니다.
+    # 아이콘 배경이 없는 앱 아이콘: 1152×1152픽셀이어야 하며, 지름 768픽셀의 원 안에 들어 맞아야 합니다.
+    image: assets/icons/WegooliFriends.png
+
+    # 스플래시 화면 배경색.
+    color: '#FFE142'
+
+    # 앱 아이콘 배경색.
+    #icon_background_color: "#111111"
+
+    # `branding` 속성을 사용하면 스플래시 화면에서 브랜딩으로 사용되는 이미지를 지정할 수 있습니다.
+    branding: assets/brand/by_wegooli.png
+
+    # image_dark, color_dark, icon_background_color_dark 및 branding_dark는 기기가 어두운 모드일 때 적용되는 값을 설정합니다. 지정하지 않으면 앱에서 위의 매개변수를 사용합니다.
+    #image_dark: assets/images/img_gooli_1.png
+    color_dark: "#042a49"
+    #icon_background_color_dark: "#eeeeee"
+
+  # `android`, `ios` 및 `web` 파라미터를 사용하여 특정 플랫폼에서 스플래시 화면 생성을 비활성화할 수 있습니다.
+  android: false
+  ios: false
+  web: false
+
+  # 플랫폼별 이미지는 다음 파라미터를 사용하여 지정할 수 있으며, 이 경우 해당 파라미터가 해당 파라미터를 재정의합니다.
+  # 이러한 매개변수를 모두 지정하거나 선택하거나 지정하지 않을 수 있습니다:
+  color_android: '#FFE142'
+  color_dark_android: "#042a49"
+  color_ios: '#FFE142'
+  color_dark_ios: "#042a49"
+  color_web: '#FFE142'
+  color_dark_web: "#042a49"
+  #image_android: assets/splash-android.png
+  #image_dark_android: assets/splash-invert-android.png
+  #image_ios: assets/splash-ios.png
+  #image_dark_ios: assets/splash-invert-ios.png
+  #image_web: assets/splash-web.gif
+  #image_dark_web: assets/splash-invert-web.gif
+  #background_image_android: "assets/background-android.png"
+  #background_image_dark_android: "assets/dark-background-android.png"
+  #background_image_ios: "assets/background-ios.png"
+  #background_image_dark_ios: "assets/dark-background-ios.png"
+  #background_image_web: "assets/background-web.png"
+  #background_image_dark_web: "assets/dark-background-web.png"
+  #branding_android: assets/brand-android.png
+  #branding_dark_android: assets/dart_dark-android.png
+  #branding_ios: assets/brand-ios.gif
+  #branding_dark_ios: assets/dart_dark-ios.gif
+
+  # 스플래시 이미지의 위치는 android_gravity, ios_content_mode, web_image_mode 파라미터로 설정할 수 있습니다.
+  # 모두 기본값은 가운데입니다.
+  #
+  # `android_gravity` can be one of the following Android Gravity
+  # (see https://developer.android.com/reference/android/view/Gravity):
+  # bottom, center, center_horizontal, center_vertical, clip_horizontal, clip_vertical, end, fill, fill_horizontal, fill_vertical, left, right, start, or top.
+  android_gravity: center
+  #
+  # ios_content_mode can be one of the following iOS UIView.ContentMode (see
+  # https://developer.apple.com/documentation/uikit/uiview/contentmode): scaleToFill, scaleAspectFit, scaleAspectFill, center, top, bottom, left, right, topLeft, topRight, bottomLeft, or bottomRight.
+  ios_content_mode: center
+  #
+  # `web_image_mode` can be one of the following modes: center, contain, stretch, and cover.
+  web_image_mode: center
+
+  # 화면 방향은 안드로이드에서 `android_screen_orientation` 파라미터를 사용하여 설정할 수 있습니다.
+  # 유효한 매개변수는 여기에서 확인할 수 있습니다:
+  # https://developer.android.com/guide/topics/manifest/activity-element#screen
+  android_screen_orientation: sensorLandscape
+
+  # 알림 표시줄을 숨기려면 전체 화면 매개변수를 사용합니다.
+  # 웹에는 알림 표시줄이 없으므로 웹에서는 효과가 없습니다.
+  # 기본값은 false입니다.
+  # 참고: Android와 달리 iOS에서는 앱이 로드될 때 알림 표시줄이 자동으로 표시되지 않습니다.
+  #       To show the notification bar, add the following code to your Flutter app:
+  #       WidgetsFlutterBinding.ensureInitialized();
+  #       SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: [SystemUiOverlay.bottom, SystemUiOverlay.top], );
+  fullscreen: true
+
+  # info.plist 파일 이름을 변경한 경우 `info_plist_files` 매개변수를 사용하여 파일 이름을 지정할 수 있습니다.
+  # 아래 세 줄에서 # 문자만 제거하고 공백은 제거하지 마세요:
+  #info_plist_files:
+  #  - 'ios/Runner/Info-Debug.plist'
+  #  - 'ios/Runner/Info-Release.plist'

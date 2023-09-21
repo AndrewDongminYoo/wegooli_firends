@@ -41,7 +41,7 @@ class Schedule {
   DateTime? createdAt = DateTime.now();
   DateTime? updatedAt = DateTime.now();
   Color get highlightColor {
-    final color = UserController.to.members
+    final color = ScheduleController.to.members
         .firstWhere((element) => element.accountId == accountId)
         .color;
     return Color(int.parse(colorFromHex(color!).toString(), radix: 16));

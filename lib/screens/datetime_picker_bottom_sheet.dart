@@ -10,7 +10,7 @@ import 'package:intl/intl.dart';
 // 🌎 Project imports:
 import '/lib.dart';
 
-class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
+class DatetimePickerBottomSheet extends StatelessWidget {
   const DatetimePickerBottomSheet({
     super.key,
     this.isEditMode = false,
@@ -25,6 +25,7 @@ class DatetimePickerBottomSheet extends GetWidget<ScheduleController> {
 
   @override
   Widget build(BuildContext context) {
+    final controller = ScheduleController.to;
     return SizedBox(
         height: mediaQueryData.size.height,
         child: Column(

@@ -83,8 +83,8 @@ class _AcceptTermsState extends State<AcceptTerms> {
           ),
           child: CustomElevatedButton(
             text: l10ns.acceptanceComplete,
-            isDisabled: allRequiredTermsAccepted,
-            buttonStyle: allRequiredTermsAccepted
+            isDisabled: !allRequiredTermsAccepted,
+            buttonStyle: !allRequiredTermsAccepted
                 ? CustomButtonStyles.fillAmberA200C5
                 : CustomButtonStyles.fillPrimaryC5,
             buttonTextStyle: CustomTextStyles.titleMedium18,

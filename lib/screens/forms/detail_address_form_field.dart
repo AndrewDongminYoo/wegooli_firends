@@ -7,16 +7,21 @@ import '/lib.dart';
 class DetailAddressFormField extends StatelessWidget {
   const DetailAddressFormField({
     super.key,
-    required this.controller,
   });
 
-  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
+    final controller = UserController.to;
     return CustomTextFormField(
+      initialValue: controller.detailAddress,
+      onChanged: (String value) {
+        if (value.isNotEmpty) {
+          controller.detailAddress= value;
+        }
+      },
+      inputFormatters: const [],
       textInputType: TextInputType.streetAddress,
-      controller: controller,
       margin: getMargin(top: 10),
       autofillHints: const [AutofillHints.fullStreetAddress],
       contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),

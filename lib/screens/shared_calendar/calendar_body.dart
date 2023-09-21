@@ -2,14 +2,14 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
-import 'package:get/get.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 // 🌎 Project imports:
 import '/lib.dart';
 
-class CalendarBody extends GetView<ScheduleController> {
-  const CalendarBody({super.key});
+class CalendarBody extends StatelessWidget {
+  const CalendarBody({super.key, required this.controller});
+  final ScheduleController controller;
   @override
   Widget build(BuildContext context) {
     return Padding(

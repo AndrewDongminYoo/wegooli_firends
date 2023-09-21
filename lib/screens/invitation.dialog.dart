@@ -13,15 +13,16 @@ class SendingInvitationDialog extends StatefulWidget {
 }
 
 class _SendingInvitationDialogState extends State<SendingInvitationDialog> {
-  final controller = VehicleController.to;
-  final userController = UserController.to;
+  final vehicles = VehicleController.to;
+  final schedule = ScheduleController.to;
+  final currUser = UserController.to;
 
   @override
   void initState() {
-    userController.getTeamCode().then((teamCode) {
+    schedule.getTeamCode().then((teamCode) {
       print('AAA : teamCode : $teamCode');
       if (teamCode != null) {
-        userController.invitation.text = teamCode;
+        currUser.invitation = teamCode;
       }
     });
     super.initState();
@@ -62,7 +63,7 @@ class _SendingInvitationDialogState extends State<SendingInvitationDialog> {
                             onTap: goBack),
                       ])),
               InvitationCodeFormField(
-                  controller: userController.invitation,
+                  controller: currUser.invitation,
                   readOnly: widget.copyMode),
               if (widget.copyMode)
                 CopyInvitationButton()

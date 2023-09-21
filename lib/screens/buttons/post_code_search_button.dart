@@ -26,8 +26,8 @@ class PostCodeSearchButton extends StatelessWidget {
                 useLocalServer: true,
                 localPort: 1024,
                 callback: (Kpostal result) {
-                  controller.postCode.text = result.postCode;
-                  controller.primaryAddress.text = result.roadAddress;
+                  controller.postCode = result.postCode;
+                  controller.primaryAddress = result.roadAddress;
                 }),
           );
         });

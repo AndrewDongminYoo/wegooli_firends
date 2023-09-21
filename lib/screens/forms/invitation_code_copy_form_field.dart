@@ -8,17 +8,22 @@ import '/lib.dart';
 class InvitationCodeCopyFormField extends StatelessWidget {
   const InvitationCodeCopyFormField({
     super.key,
-    required this.controller,
     required this.focusNode,
   });
 
-  final TextEditingController controller;
   final FocusNode focusNode;
 
   @override
   Widget build(BuildContext context) {
+    final controller = UserController.to;
     return CustomTextFormField(
-      controller: controller,
+      initialValue: controller.invitation,
+      onChanged: (String value) {
+        if (value.isNotEmpty) {
+          controller.invitation = value;
+        }
+      },
+
       focusNode: focusNode,
       filled: true,
       hintText: 'xxxx-xxxx-xxxx-xxxx',

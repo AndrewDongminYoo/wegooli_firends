@@ -8,20 +8,24 @@ import '/lib.dart';
 class BirthdayNumberFormField extends StatelessWidget {
   const BirthdayNumberFormField({
     super.key,
-    required this.controller,
     required this.focusNode,
     required this.readonly,
   });
 
-  final TextEditingController controller;
   final FocusNode focusNode;
   final bool readonly;
 
   @override
   Widget build(BuildContext context) {
+    final controller = UserController.to;
     return CustomTextFormField(
+      initialValue: controller.frontNumbers,
+      onChanged: (String value) {
+        if (value.length == 6) {
+          controller.frontNumbers = value;
+        }
+      },
       width: 158.h,
-      controller: controller,
       enabled: !readonly,
       margin: getMargin(top: 4),
       autofillHints: const [AutofillHints.birthday],

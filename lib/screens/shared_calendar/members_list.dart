@@ -5,11 +5,11 @@ import 'package:flutter/material.dart';
 import '/lib.dart';
 
 class MembersList extends StatelessWidget {
-  const MembersList({super.key});
+  const MembersList({super.key, required this.controller});
+  final ScheduleController controller;
 
   @override
   Widget build(BuildContext context) {
-    final controller = UserController.to;
     return Padding(
         padding: getPadding(left: 16, top: 12),
         child: SizedBox(
@@ -19,7 +19,7 @@ class MembersList extends StatelessWidget {
                 StreamBuilder<TeamAccountModel>(
                     stream: Stream.fromIterable(controller.members),
                     builder: (_, snapshot) {
-                      final currentUser = controller.currentUser;
+                      final currentUser = UserController.to.currentUser;
                       final member = snapshot.data;
                       if (member == null ||
                           currentUser.id == member.accountId) {

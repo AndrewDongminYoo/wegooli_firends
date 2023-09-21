@@ -1,0 +1,2 @@
+json_key_file("/Users/dongminyu/Desktop/keys/pc-api-6369270664957409959-386-ea5b4771790c.json") # Path to the json secret file - Follow https://docs.fastlane.tools/actions/supply/#setup to get one
+package_name("com.radius.wegooli_friends") # e.g. com.krausefx.app

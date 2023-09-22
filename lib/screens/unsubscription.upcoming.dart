@@ -120,7 +120,7 @@ class UnsubscriptionUpcoming extends GetWidget<VehicleController> {
                                   ),
                                 ),
                                 Obx(() => Text(
-                                      '${controller.subscriptionModel.value.startAt?.substring(0, 10)}~${controller.subscriptionModel.value.endAt?.substring(0, 10)}',
+                                      subscriptionPeriod,
                                       overflow: TextOverflow.ellipsis,
                                       textAlign: TextAlign.left,
                                       style:
@@ -184,4 +184,7 @@ class UnsubscriptionUpcoming extends GetWidget<VehicleController> {
       bottomNavigationBar: CustomBottomNavBar(),
     );
   }
+
+  String get subscriptionPeriod =>
+      '${controller.subscriptionModel.value.startAt?.substring(0, 10)}~${controller.subscriptionModel.value.endAt?.substring(0, 10)}';
 }

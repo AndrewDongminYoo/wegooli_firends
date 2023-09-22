@@ -32,6 +32,7 @@ lint:
         - ios/Gemfile.lock
         - android/Gemfile.lock
         - assets/fonts
+        - assets/lotties
 
 runtimes:
   enabled:

@@ -63,6 +63,18 @@ class UserController extends GetxController {
 
   List<AccountAgreementRequest> agreement = [];
 
+  bool get phoneAuthCompleted =>
+      koreanName.isNotNullOrEmpty &&
+      frontNumbers.isNotNullOrEmpty &&
+      isNumeric(frontNumbers) &&
+      backNumbers.isNotNullOrEmpty &&
+      isNumeric(backNumbers) &&
+      phoneNumWithHyphen.isNotNullOrEmpty &&
+      isValidPhone(phoneNumWithHyphen) &&
+      pinCodes.isNotNullOrEmpty &&
+      isNumeric(pinCodes) &&
+      pinCodes!.length == 6;
+
   /// 로그아웃
   Future<void> logOut() async {
     await _service.logOut();
@@ -97,20 +109,20 @@ class UserController extends GetxController {
   bool get registerCreditCardCompleted => false;
   bool get registerZipCodeCompleted =>
       postCode != null &&
-      postCode!.isNotEmpty &&
+      postCode!.isNotNullOrEmpty &&
       primaryAddress != null &&
-      primaryAddress!.isNotEmpty &&
+      primaryAddress!.isNotNullOrEmpty &&
       detailAddress != null &&
-      detailAddress!.isNotEmpty &&
+      detailAddress!.isNotNullOrEmpty &&
       username != null &&
       username!.isEmail &&
       isValidEmail(username) &&
       password != null &&
-      password!.isNotEmpty &&
+      password!.isNotNullOrEmpty &&
       rePassword != null &&
-      rePassword!.isNotEmpty &&
+      rePassword!.isNotNullOrEmpty &&
       nickname != null &&
-      nickname!.isNotEmpty &&
+      nickname!.isNotNullOrEmpty &&
       (password == rePassword);
 
   /// 로그인
@@ -204,15 +216,15 @@ extension YN on bool {
 extension UserValidation on User {
   bool get isLoggedIn =>
       id != null &&
-      id!.isNotEmpty &&
+      id!.isNotNullOrEmpty &&
       memberSeq != null &&
       memberSeq!.isGreaterThan(0) &&
       nickname != null &&
-      nickname!.isNotEmpty &&
+      nickname!.isNotNullOrEmpty &&
       email != null &&
-      email!.isNotEmpty &&
+      email!.isNotNullOrEmpty &&
       // isValidEmail(email) &&
       phoneNumber != null &&
-      phoneNumber!.isNotEmpty;
+      phoneNumber!.isNotNullOrEmpty;
   // isValidPhone(phoneNumber);
 }

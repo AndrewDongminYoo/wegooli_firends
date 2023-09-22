@@ -14,31 +14,12 @@ class RegisterPhone extends StatefulWidget {
 class _RegisterPhoneState extends State<RegisterPhone> {
   final controller = UserController.to;
 
-  /// 회원가입[1] - 이름, 주민등록번호, 통신사, 핸드폰번호, 인증번호
-  TextEditingController realName = TextEditingController(); // 한국이름
-  TextEditingController birthDay = TextEditingController();
-  TextEditingController socialId = TextEditingController();
-  TextEditingController phoneNum = TextEditingController();
-  TextEditingController pinCodes = TextEditingController();
-
-  bool get phoneAuthCompleted =>
-      realName.text.isNotEmpty &&
-      birthDay.text.isNotEmpty &&
-      isNumeric(birthDay.text) &&
-      socialId.text.isNotEmpty &&
-      isNumeric(socialId.text) &&
-      phoneNum.text.isNotEmpty &&
-      isValidPhone(phoneNum.text) &&
-      pinCodes.text.isNotEmpty &&
-      isNumeric(pinCodes.text) &&
-      pinCodes.text.length == 6;
-
   @override
   Widget build(BuildContext context) {
     final _nameText = FocusNode();
     final _birthday = FocusNode();
     final _socialId = FocusNode();
-    print('controller.phoneAuthCompleted $phoneAuthCompleted');
+    print('controller.phoneAuthCompleted ${controller.phoneAuthCompleted}');
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
@@ -93,8 +74,8 @@ class _RegisterPhoneState extends State<RegisterPhone> {
           margin: getMargin(left: 16, right: 16, bottom: 29),
           child: CustomElevatedButton(
             text: l10ns.authenticationComplete, // '인증 완료'
-            isDisabled: !phoneAuthCompleted,
-            buttonStyle: phoneAuthCompleted
+            isDisabled: !controller.phoneAuthCompleted,
+            buttonStyle: controller.phoneAuthCompleted
                 ? CustomButtonStyles.fillPrimaryC26
                 : CustomButtonStyles.fillAmberA200C5,
             buttonTextStyle: CustomTextStyles.titleMedium18,

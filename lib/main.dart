@@ -21,7 +21,7 @@ bool shouldUseFirebaseEmulator = false;
 
 late final FirebaseApp app;
 late final FirebaseAuth auth;
-late final Logger console;
+late final LoggerColorful console;
 const Locale locale = Locale('ko');
 
 // initialize app
@@ -29,8 +29,8 @@ Future<void> main() async {
   final binding = WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load();
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-  console = Logger();
-  console.logMode = kReleaseMode ? LogMode.live : LogMode.debug;
+  console = LoggerColorful('WEGOOLI');
+  console.colorLevel = kReleaseMode ? {} : console.colorLevel;
   await initializeDateFormatting();
   timeago.setLocaleMessages('ko', timeago.KoMessages());
   // 플러그인의 Google 로그인 기능은 아직 DART에서 초기 설정을 지원하지 않기 때문에 WEB가 아닌 플랫폼에서는 수동 설치를 사용하고 있습니다.
@@ -61,7 +61,7 @@ Future<void> main() async {
   /// 콜백을 호출하기 전에 VM 또는 프로세스가 종료되거나 응답하지 않는 예외에 대해서는 콜백이 호출되지 않습니다.
   /// 이 콜백은 루트 격리의 하위 격리에서 발생하는 오류에 의해 직접 호출되지 않습니다.
   /// 새 격리를 생성하는 프로그램은 해당 격리에서 오류를 수신하고 루트 격리에 오류를 전달해야 합니다.
-  PlatformDispatcher.instance.onError = (error, stack) {
+  ServicesBinding.instance.platformDispatcher.onError = (error, stack) {
     /// 필요하지 않을 때 [MethodChannelFirebaseCrashlytics]를 생성하거나 사용자가 앱을 지정하기 전에
     /// 기본 앱으로 인스턴스를 생성하지 않도록 [FirebaseCrashlyticsPlatform]의 인스턴스를 캐시하고 느리게 로드합니다.
     // ! FirebaseCrashlytics.instance.pluginConstants['isCrashlyticsCollectionEnabled'] = false;
@@ -95,7 +95,7 @@ class MyApp extends StatelessWidget {
         title: '위굴리 프렌즈',
         initialBinding: InitialBindings(),
         logWriterCallback: (String text, {bool isError = false}) =>
-            isError ? console.log(text) : print('[DEBUG] $text'),
+            isError ? console.error(text) : console.info('[DEBUG] $text'),
         navigatorObservers: [MyApp.routeObserver],
         initialRoute: AppRoutes.idPwLogin,
         getPages: AppRoutes.pages);

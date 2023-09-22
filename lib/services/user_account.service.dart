@@ -22,12 +22,12 @@ class UserAccountService extends GetConnect {
   String? _token;
 
   String get token {
-    if (_token != null && _token!.isNotEmpty) {
+    if (_token.isNotNullOrEmpty) {
       return _token!;
     } else {
       final _new = PrefUtils.getToken();
-      if (_new != null && _new.isNotEmpty) {
-        if (JwtDecoder.isExpired(_new)) {
+      if (_new.isNotNullOrEmpty) {
+        if (JwtDecoder.isExpired(_new!)) {
           api.logOut();
           throw CustomException('인증이 만료된 사용자입니다. 다시 로그인해주세요.');
         }

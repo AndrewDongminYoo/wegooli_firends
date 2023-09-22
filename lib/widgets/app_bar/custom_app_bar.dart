@@ -43,7 +43,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             title: CustomImageView(
                 height: 17.v,
                 width: 88.h,
-                svgPath: Assets.svg.imgFriendsTypo.path),
+                fit: BoxFit.contain,
+                svgPath: Assets.brand.friendsByWegooli.path),
             styleType: Style.bgOutline);
 
   final double? height;

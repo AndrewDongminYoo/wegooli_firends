@@ -11,9 +11,9 @@ import '/lib.dart';
 class AcceptTermsDetail extends StatefulWidget {
   const AcceptTermsDetail({
     Key? key,
-    this.index,
+    this.term,
   }) : super(key: key);
-  final int? index;
+  final Term? term;
   @override
   State<AcceptTermsDetail> createState() => _AcceptTermsDetailState();
 }
@@ -24,15 +24,14 @@ class _AcceptTermsDetailState extends State<AcceptTermsDetail> {
   @override
   Widget build(BuildContext context) {
     print(Get.arguments);
-    int index;
+    Term term;
     if (Get.arguments['page'] != null) {
-      index = int.parse(Get.arguments['page']);
-    } else if (widget.index != null) {
-      index = widget.index!;
+      term = Get.arguments['page'];
+    } else if (widget.term != null) {
+      term = widget.term!;
     } else {
-      index = 0;
+      term = controller.terms.first;
     }
-    final term = controller.terms[index];
     return Scaffold(
       appBar: CustomAppBar.getDefaultAppBar(term.title),
       body: Markdown(

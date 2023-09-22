@@ -21,7 +21,7 @@ bool shouldUseFirebaseEmulator = false;
 
 late final FirebaseApp app;
 late final FirebaseAuth auth;
-late final LoggerColorful console;
+final LoggerColorful console = LoggerColorful('WEGOOLI');
 const Locale locale = Locale('ko');
 
 // initialize app
@@ -29,7 +29,6 @@ Future<void> main() async {
   final binding = WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load();
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-  console = LoggerColorful('WEGOOLI');
   console.colorLevel = kReleaseMode ? {} : console.colorLevel;
   await initializeDateFormatting();
   timeago.setLocaleMessages('ko', timeago.KoMessages());

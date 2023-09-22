@@ -19,55 +19,55 @@ class RegisterLicense extends GetWidget<LicenseController> {
       body: Unfocused(
         child: SingleChildScrollView(
             child: Container(
-                width: double.maxFinite,
-                padding: getPadding(left: 16, top: 32, right: 16, bottom: 32),
-                child: Column(children: [
-                  Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        CustomInputLabel(labelText: l10ns.licenseType),
-                        const LicenseTypeDropdown(),
-                      ]),
-                  Padding(
-                      padding: getPadding(top: 26),
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Expanded(
-                              child: Padding(
-                                padding: getPadding(right: 4),
-                                child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      CustomInputLabel(
-                                          labelText: l10ns.licenseType),
-                                      const LicenseRegionDropdown(),
-                                    ]),
-                              ),
-                            ),
-                            const Expanded(child: LicenseIssuedYearDropdown()),
-                          ])),
-                  const LicenseNumbersFormField(),
-                  Padding(
-                      padding: getPadding(top: 26),
-                      child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            CustomInputLabel(
-                                labelText:
-                                    l10ns.eligibilityPeriodTestExpirationDate),
-                            const LicenseExpDateFormField(),
-                          ])),
-                  Padding(
-                      padding: getPadding(top: 26, bottom: 5),
-                      child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            CustomInputLabel(labelText: l10ns.licenseIssueDate),
-                            const LicenseIssuedDateFormField(),
-                          ])),
-                ]))),
+          width: double.maxFinite,
+          padding: getPadding(left: 16, top: 32, right: 16, bottom: 32),
+          child: Column(children: [
+            Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              CustomInputLabel(labelText: l10ns.licenseType),
+              const LicenseTypeDropdown(),
+            ]),
+            Padding(
+              padding: getPadding(top: 26),
+              child:
+                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                Expanded(
+                  child: Padding(
+                    padding: getPadding(right: 4),
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          CustomInputLabel(labelText: l10ns.licenseType),
+                          const LicenseRegionDropdown(),
+                        ]),
+                  ),
+                ),
+                const Expanded(
+                  child: LicenseIssuedYearDropdown(),
+                ),
+              ]),
+            ),
+            const LicenseNumbersFormField(),
+            Padding(
+              padding: getPadding(top: 26),
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    CustomInputLabel(
+                        labelText: l10ns.eligibilityPeriodTestExpirationDate),
+                    const LicenseExpDateFormField(),
+                  ]),
+            ),
+            Padding(
+              padding: getPadding(top: 26, bottom: 5),
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    CustomInputLabel(labelText: l10ns.licenseIssueDate),
+                    const LicenseIssuedDateFormField(),
+                  ]),
+            ),
+          ]),
+        )),
       ),
       bottomNavigationBar: Container(
         margin: getMargin(left: 15, right: 17, bottom: 29),
@@ -76,7 +76,7 @@ class RegisterLicense extends GetWidget<LicenseController> {
             buttonStyle: CustomButtonStyles.fillPrimaryC26,
             buttonTextStyle: CustomTextStyles.titleMedium18,
             onTap: () {
-              if (controller.licenseInputSucceed) {
+              if (controller.licenseInputSucceed()) {
                 signUpCreditCard();
               }
             }),

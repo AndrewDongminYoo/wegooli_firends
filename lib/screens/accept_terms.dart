@@ -13,35 +13,39 @@ class AcceptTerms extends StatefulWidget {
 class _AcceptTermsState extends State<AcceptTerms> {
   final controller = UserController.to;
   Duration delay = const Duration(milliseconds: 100);
-  Iterable<Term> allTerms = [];
-  Iterable<Term> requiredTerms = [];
+  List<Term> allTerms = [];
+  List<Term> requiredTerms = [];
 
   @override
   void initState() {
     allTerms = controller.terms;
-    requiredTerms = allTerms.where((term) => !term.opt);
+    requiredTerms = controller.terms.where((term) => !term.opt).toList();
     super.initState();
   }
 
-  bool get allTermsAccepted {
+  bool allTermsAccepted() {
     return allTerms.every((element) => element.agree);
   }
 
-  bool get allRequiredTermsAccepted {
+  bool allRequiredTermsAccepted() {
     return requiredTerms.every((element) => element.agree);
   }
 
   Future<void> setAllTermsAccepted(bool value) async {
     for (var i = 0; i < allTerms.length; i++) {
       await Future.delayed(delay);
-      allTerms.elementAt(i).agree = value;
+      setState(() {
+        allTerms[i].agree = value;
+      });
     }
   }
 
   Future<void> setAllRequiredTermsAccepted(bool value) async {
     for (var i = 0; i < requiredTerms.length; i++) {
       await Future.delayed(delay);
-      requiredTerms.elementAt(i).agree = value;
+      setState(() {
+        requiredTerms[i].agree = value;
+      });
     }
   }
 
@@ -68,7 +72,7 @@ class _AcceptTermsState extends State<AcceptTerms> {
                           child: CustomCheckboxButton(
                             alignment: Alignment.center,
                             text: l10ns.acceptAll,
-                            value: allTermsAccepted,
+                            value: allTermsAccepted(),
                             onChange: (bool value) {
                               setAllTermsAccepted(value);
                             },
@@ -80,8 +84,12 @@ class _AcceptTermsState extends State<AcceptTerms> {
                         itemCount: controller.terms.length,
                         itemBuilder: (BuildContext context, int index) {
                           return AgreementItem(
-                            index: index,
-                            terms: controller.terms,
+                            term: controller.terms[index],
+                            onChanged: (bool value) {
+                              setState(() {
+                                controller.terms[index].agree = value;
+                              });
+                            },
                           );
                         }),
                   ],
@@ -96,14 +104,20 @@ class _AcceptTermsState extends State<AcceptTerms> {
             boxShadow: AppDecoration.shadows,
           ),
           child: CustomElevatedButton(
-            text: l10ns.acceptanceComplete,
-            isDisabled: !allRequiredTermsAccepted,
-            buttonStyle: allRequiredTermsAccepted
-                ? CustomButtonStyles.fillPrimaryC26
-                : CustomButtonStyles.fillAmberA200C5,
-            buttonTextStyle: CustomTextStyles.titleMedium18,
-            onTap: goPhoneAuth,
-          )),
+              text: l10ns.acceptanceComplete,
+              isDisabled: !allRequiredTermsAccepted(),
+              buttonStyle: allRequiredTermsAccepted()
+                  ? CustomButtonStyles.fillPrimaryC26
+                  : CustomButtonStyles.fillAmberA200C26,
+              buttonTextStyle: CustomTextStyles.titleMedium18,
+              onTap: () async {
+                final denied = controller.terms
+                    .where((t) => t.opt && !t.agree)
+                    .map((e) => e.name)
+                    .toList();
+                print('Denied Optional Terms : $denied');
+                await goPhoneAuth();
+              })),
     );
   }
 }

@@ -1,13 +1,10 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:get/get.dart';
-
 // 🌎 Project imports:
 import '/lib.dart';
 
-class RegisterSuccess extends GetWidget<UserController> {
+class RegisterSuccess extends StatelessWidget {
   const RegisterSuccess({super.key});
 
   @override

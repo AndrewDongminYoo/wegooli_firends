@@ -7,14 +7,9 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/lib.dart';
 
-class MainPage extends StatefulWidget {
+class MainPage extends StatelessWidget {
   const MainPage({super.key});
 
-  @override
-  State<MainPage> createState() => _MainPageState();
-}
-
-class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     print('user.id ${goolier.id}');

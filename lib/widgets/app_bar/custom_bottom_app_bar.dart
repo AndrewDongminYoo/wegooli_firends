@@ -5,7 +5,7 @@ import 'package:flutter/rendering.dart';
 // 🌎 Project imports:
 import '/lib.dart';
 
-class CustomBottomAppBar extends StatefulWidget {
+class CustomBottomAppBar extends StatelessWidget {
   const CustomBottomAppBar({
     super.key,
     required this.floatingActionButtonLocation,
@@ -21,18 +21,13 @@ class CustomBottomAppBar extends StatefulWidget {
   ];
 
   @override
-  State<CustomBottomAppBar> createState() => _CustomBottomAppBarState();
-}
-
-class _CustomBottomAppBarState extends State<CustomBottomAppBar> {
-  @override
   Widget build(BuildContext context) {
     return Semantics(
       sortKey: const OrdinalSortKey(1),
       container: true,
       label: l10ns.bottomAppBar,
       child: BottomAppBar(
-        shape: widget.notchedShape,
+        shape: notchedShape,
         child: IconTheme(
           data: const IconThemeData(color: ColorConstant.fontBlack),
           child: Row(

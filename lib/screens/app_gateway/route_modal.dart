@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/lib.dart';
 
-class RouteModal extends StatefulWidget {
+class RouteModal extends StatelessWidget {
   RouteModal({
     super.key,
     this.dialog,
@@ -20,17 +20,12 @@ class RouteModal extends StatefulWidget {
   final String dialogTitle;
 
   @override
-  State<RouteModal> createState() => _RouteModalState();
-}
-
-class _RouteModalState extends State<RouteModal> {
-  @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        widget.dialog != null
-            ? Get.dialog(widget.dialog!)
-            : Get.bottomSheet(widget.bottomSheet!, isScrollControlled: true);
+        dialog != null
+            ? Get.dialog(dialog!)
+            : Get.bottomSheet(bottomSheet!, isScrollControlled: true);
       },
       child: Container(
         decoration: AppDecoration.fillOnSecondary,
@@ -40,7 +35,7 @@ class _RouteModalState extends State<RouteModal> {
               child: Padding(
                 padding: getPadding(left: 20, top: 10, right: 20, bottom: 10),
                 child: Text(
-                  widget.dialogTitle,
+                  dialogTitle,
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.center,
                   style: TextStyle(

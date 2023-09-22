@@ -13,11 +13,12 @@ import 'package:sendbird_sdk/sendbird_sdk.dart';
 // 🌎 Project imports:
 import '/lib.dart';
 
-class DashChatWithFriendsPage extends GetWidget<ConnectionController> {
+class DashChatWithFriendsPage extends StatelessWidget {
   const DashChatWithFriendsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = ConnectionController();
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,

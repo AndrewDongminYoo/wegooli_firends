@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 import '/lib.dart';
 
 // ignore: must_be_immutable
-class PasswordFormField extends StatefulWidget {
+class PasswordFormField extends StatelessWidget {
   PasswordFormField({
     super.key,
     required this.controller,
@@ -17,13 +17,7 @@ class PasswordFormField extends StatefulWidget {
   final UserController controller;
 
   @override
-  State<PasswordFormField> createState() => _PasswordFormFieldState();
-}
-
-class _PasswordFormFieldState extends State<PasswordFormField> {
-  @override
   Widget build(BuildContext context) {
-    final controller = widget.controller;
     final isShowPassword = false.obs;
     final isSignUp = controller.mode == AuthMode.register;
     return Obx(() {
@@ -52,9 +46,11 @@ class _PasswordFormFieldState extends State<PasswordFormField> {
         suffixConstraints: BoxConstraints(maxHeight: 48.v),
         fillColor: Colors.white,
         filled: true,
-        validator: (password) {
+        validator: (String? password) {
           if (!isValidPassword(password)) {
             return '비밀번호 형식을 따라 정확히 입력해주세요.';
+          } else if (password!.length < 6 || password.length > 12) {
+            return '비밀번호는 6자 이상 12자 이하여야 합니다.';
           } else {
             return null;
           }
@@ -64,23 +60,17 @@ class _PasswordFormFieldState extends State<PasswordFormField> {
   }
 }
 
-class PasswordConfirmFormField extends StatefulWidget {
+class PasswordConfirmFormField extends StatelessWidget {
   const PasswordConfirmFormField({
     super.key,
   });
 
   @override
-  State<PasswordConfirmFormField> createState() =>
-      _PasswordConfirmFormFieldState();
-}
-
-class _PasswordConfirmFormFieldState extends State<PasswordConfirmFormField> {
-  @override
   Widget build(BuildContext context) {
     final controller = UserController.to;
     final isShowConfirmPassword = false.obs;
     return Obx(() => CustomTextFormField(
-          textInputType: TextInputType.emailAddress,
+          textInputType: TextInputType.visiblePassword,
           initialValue: controller.rePassword,
           onChanged: (String? value) {
             controller.rePassword = value;

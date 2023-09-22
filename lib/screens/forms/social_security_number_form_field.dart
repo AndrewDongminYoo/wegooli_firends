@@ -6,12 +6,7 @@ import 'package:flutter/services.dart';
 import '/lib.dart';
 
 class SocialSecurityNumberFormField extends StatelessWidget {
-  const SocialSecurityNumberFormField({
-    super.key,
-    required this.focusNode,
-  });
-
-  final FocusNode focusNode;
+  const SocialSecurityNumberFormField({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +22,6 @@ class SocialSecurityNumberFormField extends StatelessWidget {
       margin: getMargin(top: 4),
       contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),
       maxLength: 7,
-      focusNode: focusNode,
       inputFormatters: <TextInputFormatter>[
         FilteringTextInputFormatter.digitsOnly,
       ],

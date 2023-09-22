@@ -5,9 +5,7 @@ import 'package:flutter/material.dart';
 import '/lib.dart';
 
 class InviteCodeFormField extends StatelessWidget {
-  const InviteCodeFormField({
-    super.key,
-  });
+  const InviteCodeFormField({super.key});
 
   @override
   Widget build(BuildContext context) {

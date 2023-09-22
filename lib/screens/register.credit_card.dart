@@ -17,10 +17,6 @@ class RegisterCreditCard extends StatefulWidget {
 class _RegisterCreditCardState extends State<RegisterCreditCard> {
   final controller = PaymentCardController.to;
   final userController = UserController.to;
-  final birthday = FocusNode();
-  final cardNums = FocusNode();
-  final cardPins = FocusNode();
-  final expMonth = FocusNode();
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +56,6 @@ class _RegisterCreditCardState extends State<RegisterCreditCard> {
                         CustomInputLabel(
                             labelText: l10ns.socialSecurityNumberFirstDigit),
                         BirthdayNumberFormField(
-                          focusNode: birthday,
                           readonly: userController.frontNumbers?.length == 6,
                         ),
                       ])),

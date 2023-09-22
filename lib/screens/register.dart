@@ -16,9 +16,6 @@ class _RegisterPhoneState extends State<RegisterPhone> {
 
   @override
   Widget build(BuildContext context) {
-    final _nameText = FocusNode();
-    final _birthday = FocusNode();
-    final _socialId = FocusNode();
     print('controller.phoneAuthCompleted ${controller.phoneAuthCompleted}');
     return Scaffold(
       resizeToAvoidBottomInset: false,
@@ -31,9 +28,7 @@ class _RegisterPhoneState extends State<RegisterPhone> {
             child: Column(children: [
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                 CustomInputLabel(labelText: l10ns.name),
-                KoreanNameFormField(
-                  focusNode: _nameText,
-                ),
+                const KoreanNameFormField(),
               ]),
               Padding(
                   padding: getPadding(top: 26, bottom: 7),
@@ -43,17 +38,14 @@ class _RegisterPhoneState extends State<RegisterPhone> {
                       children: [
                         CustomInputLabel(
                             labelText: l10ns.digitOf13SocialSecurityNumber),
-                        Row(
+                        const Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               BirthdayNumberFormField(
-                                focusNode: _birthday,
                                 readonly: false,
                               ),
-                              const Text('-', style: TextStyle(fontSize: 24)),
-                              SocialSecurityNumberFormField(
-                                focusNode: _socialId,
-                              ),
+                              Text('-', style: TextStyle(fontSize: 24)),
+                              SocialSecurityNumberFormField(),
                             ]),
                         Row(children: [
                           Text(

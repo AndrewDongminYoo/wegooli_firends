@@ -6,12 +6,8 @@ import 'package:flutter/services.dart';
 import '/lib.dart';
 
 class KoreanNameFormField extends StatelessWidget {
-  const KoreanNameFormField({
-    super.key,
-    required this.focusNode,
-  });
+  const KoreanNameFormField({super.key});
 
-  final FocusNode focusNode;
   @override
   Widget build(BuildContext context) {
     final controller = UserController.to;
@@ -32,7 +28,6 @@ class KoreanNameFormField extends StatelessWidget {
         /// 테스트를 위해 입력할 수 있는 글자를 제한해 봄. 숫자 입력 못하게 함.
         FilteringTextInputFormatter.allow(RegExp('[A-Za-z가-힣ㄱ-ㅎ, ]+')),
       ],
-      focusNode: focusNode,
       filled: true,
       fillColor: Colors.white,
     );

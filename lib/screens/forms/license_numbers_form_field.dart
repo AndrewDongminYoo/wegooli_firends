@@ -5,9 +5,7 @@ import 'package:flutter/material.dart';
 import '/lib.dart';
 
 class LicenseNumbersFormField extends StatelessWidget {
-  const LicenseNumbersFormField({
-    super.key,
-  });
+  const LicenseNumbersFormField({super.key});
 
   @override
   Widget build(BuildContext context) {

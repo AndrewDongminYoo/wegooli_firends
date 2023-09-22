@@ -23,7 +23,6 @@ class InvitationCodeCopyFormField extends StatelessWidget {
           controller.invitation = value;
         }
       },
-      focusNode: focusNode,
       filled: true,
       hintText: 'xxxx-xxxx-xxxx-xxxx',
       contentPadding: getPadding(all: 14),

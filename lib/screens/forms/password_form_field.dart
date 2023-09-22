@@ -61,9 +61,7 @@ class PasswordFormField extends StatelessWidget {
 }
 
 class PasswordConfirmFormField extends StatelessWidget {
-  const PasswordConfirmFormField({
-    super.key,
-  });
+  const PasswordConfirmFormField({super.key});
 
   @override
   Widget build(BuildContext context) {

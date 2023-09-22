@@ -8,11 +8,9 @@ import '/lib.dart';
 class BirthdayNumberFormField extends StatelessWidget {
   const BirthdayNumberFormField({
     super.key,
-    required this.focusNode,
     required this.readonly,
   });
 
-  final FocusNode focusNode;
   final bool readonly;
 
   @override
@@ -33,7 +31,6 @@ class BirthdayNumberFormField extends StatelessWidget {
         FilteringTextInputFormatter.digitsOnly,
       ],
       maxLength: 6,
-      focusNode: focusNode,
       textInputType: TextInputType.number,
       contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),
       textStyle: CustomTextStyles.bodyLargeGray50003,

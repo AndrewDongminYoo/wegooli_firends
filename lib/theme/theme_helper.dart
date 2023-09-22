@@ -220,7 +220,7 @@ class ColorSchemes {
 class PrimaryColors {
   // Amber
   Color get amberA200 => const Color(0xFFFFE142); // #FFE142
-  Color get amberA20033 => const Color(0x33FFE142);
+  Color get amberA20033 => const Color(0xFFFFF9D9); // #33FFE142
   Color get amber100 => const Color(0xFFFFECB3); // #FFECB3
   Color get amber200 => const Color(0xFFFFE082); // #FFE082
   Color get amber300 => const Color(0xFFFFD54F); // #FFD54F
@@ -242,7 +242,7 @@ class PrimaryColors {
 
   // BlueGray
   Color get blueGray200 => const Color(0xFFB0B2BC); // #B0B2BC
-  Color get blueGray30033 => const Color(0x33A4A8AF);
+  Color get blueGray30033 => const Color(0xFFD7DBE2); // #33A4A8AF
   Color get blueGray400 => const Color(0xFF868686); // #868686
   Color get blueGray40001 => const Color(0xFF888888); // #888888
   Color get blueGray500 => const Color(0xFF747A8C); // #747A8C

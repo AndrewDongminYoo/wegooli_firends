@@ -29,8 +29,8 @@ class ColorConstant {
   /// Color: #222222
   static const Color fontBlack = Color(0xFF222222);
 
-  /// Color: #66222222
-  static const Color fontBlackDisabled = Color(0x66222222);
+  /// Color: #828282
+  static const Color fontBlackDisabled = Color(0xFF828282);
 
   /// Color: #dc4747
   static const Color fontErrorMessage = Color(0xFFDC4747);
@@ -47,8 +47,8 @@ class ColorConstant {
   /// Color: #babcc3
   static const Color neutralDefault = Color(0xFFBABCC3);
 
-  /// Color: #33a4a8af
-  static const Color neutralDisabled = Color(0x33A4A8AF);
+  /// Color: #d7dbe2
+  static const Color neutralDisabled = Color(0xFFD7DBE2);
 
   /// Color: #ccffffff
   static const Color neutralInvertedDisabled = Color(0xCCFFFFFF);
@@ -65,8 +65,8 @@ class ColorConstant {
   /// Color: #ffe142
   static const Color primaryDefault = Color(0xFFFFE142);
 
-  /// Color: #33ffe142
-  static const Color primaryDisabled = Color(0x33FFE142);
+  /// Color: #fff9d9
+  static const Color primaryDisabled = Color(0xFFFFF9D9);
 
   /// Color: #ffffff
   static const Color primaryInverted = Color(0xFFFFFFFF);

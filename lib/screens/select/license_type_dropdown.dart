@@ -24,13 +24,14 @@ class LicenseTypeDropdown extends StatelessWidget {
         margin: getMargin(top: 4),
         textStyle: CustomTextStyles.bodyLargeGray500,
         items: licenseTypes,
-        initialValue: controller.licenseType,
         filled: true,
         fillColor: Colors.white,
         contentPadding: getPadding(left: 10, top: 14, bottom: 14),
-        onChanged: (SelectionPopupModel value) {
-          licenseTypes.onSelected(value);
-          controller.licenseType = value;
+        onChanged: (SelectionPopupModel? value) {
+          if (value != null) {
+            licenseTypes.onSelected(value);
+            controller.licenseType = value;
+          }
         });
   }
 }

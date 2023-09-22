@@ -34,3 +34,8 @@ String generateInvitationCode() {
 
   return buffer.toString();
 }
+
+extension StringValidate on String? {
+  bool get isNullOrEmpty => this != null && this!.isEmpty;
+  bool get isNotNullOrEmpty => !isNullOrEmpty;
+}

@@ -19,13 +19,14 @@ class LicenseRegionDropdown extends StatelessWidget {
         margin: getMargin(left: 4, top: 27),
         textStyle: CustomTextStyles.bodyLargeGray500,
         items: licenseRegions,
-        initialValue: controller.licenseRegion,
         filled: true,
         fillColor: Colors.white,
         contentPadding: getPadding(left: 10, top: 14, bottom: 14),
-        onChanged: (SelectionPopupModel value) {
-          licenseRegions.onSelected(value);
-          controller.licenseRegion = value;
+        onChanged: (SelectionPopupModel? value) {
+          if (value != null) {
+            licenseRegions.onSelected(value);
+            controller.licenseRegion = value;
+          }
         });
   }
 }

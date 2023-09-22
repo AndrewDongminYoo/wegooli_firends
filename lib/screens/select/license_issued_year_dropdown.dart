@@ -18,13 +18,14 @@ class LicenseIssuedYearDropdown extends StatelessWidget {
         margin: getMargin(left: 4, top: 27),
         textStyle: CustomTextStyles.bodyLargeGray500,
         items: issuedYears,
-        initialValue: controller.issuedYear,
         filled: true,
         fillColor: Colors.white,
         contentPadding: getPadding(left: 10, top: 14, bottom: 14),
-        onChanged: (SelectionPopupModel value) {
-          issuedYears.onSelected(value);
-          controller.issuedYear = value;
+        onChanged: (SelectionPopupModel? value) {
+          if (value != null) {
+            issuedYears.onSelected(value);
+            controller.issuedYear = value;
+          }
         });
   }
 }

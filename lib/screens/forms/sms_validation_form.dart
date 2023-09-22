@@ -37,7 +37,6 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
   bool codeSent = false;
   String _min = '';
   String _sec = '';
-  String pinCodes = '';
 
   @override
   void initState() {
@@ -123,7 +122,6 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
         },
         // 자동 SMS 코드 처리에 실패한 경우 시간 초과를 처리
         codeAutoRetrievalTimeout: (String verificationId) {
-          widget.controller.$configureLifeCycle();
           if (_timer != null) {
             _timer!.cancel();
           }
@@ -147,14 +145,14 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
       message: '3분내 입력하지 않을 경우 인증코드가 만료됩니다.',
       duration: rest,
     ));
-    if (pinCodes.isEmpty) {
+    if (controller.pinCodes.isNullOrEmpty) {
       setState(() {
         codeSent = true;
         _error = '인증 코드를 입력해주세요';
       });
       return null;
     } else {
-      return pinCodes.trim();
+      return controller.pinCodes!.trim();
     }
   }
 
@@ -209,13 +207,13 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 CustomTextFormField(
-                  initialValue: pinCodes,
+                  initialValue: controller.pinCodes,
                   onChanged: (String value) {
-                    setState(() {
-                      if (pinCodes.length <= 6) {
-                        pinCodes = value;
-                      }
-                    });
+                    if (controller.pinCodes!.length >= 6) {
+                      setState(() {
+                        controller.pinCodes = value;
+                      });
+                    }
                   },
                   width: 160.h,
                   hintText: '000000',
@@ -244,8 +242,8 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
                   text: l10ns.confirm,
                   width: 160.h,
                   margin: getMargin(top: 10),
-                  buttonStyle: CustomButtonStyles.fillPrimaryC5,
-                  buttonTextStyle: theme.textTheme.titleMedium,
+                  buttonStyle: CustomButtonStyles.fillPrimaryC26,
+                  buttonTextStyle: CustomTextStyles.titleMedium18,
                   onTap: () async {
                     Get.closeAllSnackbars();
                     await Get.defaultDialog(

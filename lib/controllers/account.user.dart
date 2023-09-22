@@ -38,6 +38,7 @@ class UserController extends GetxController {
   String? frontNumbers; // 주민등록번호 앞자리 (6자리)
   String? backNumbers; // 주민등록번호 뒷자리 (7자리)
   String? phoneNumWithHyphen; // 전화번호 (010-1234-5678) 13자리
+  String? pinCodes; // 인증번호 6자리
 
   String telecom = 'SKT';
 

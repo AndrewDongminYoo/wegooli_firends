@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 // 🌎 Project imports:
 import '/lib.dart';
 
+/// '해지하기' or '구독 해지하기'
 class UnsubscribeButton extends StatelessWidget {
   const UnsubscribeButton({
     super.key,

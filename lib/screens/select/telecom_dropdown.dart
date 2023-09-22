@@ -21,7 +21,6 @@ class TelecomDropdown extends StatelessWidget {
     return CustomDropDown(
         width: 128.h,
         icon: Icon(Icons.arrow_drop_down, color: appTheme.gray50003, size: 14),
-        // `initialValue`가 `true`인 경우 `hintText`는 보이지 않습니다.
         hintText: l10ns.telecomCarrier,
         margin: getMargin(top: 4),
         items: telecoms,
@@ -29,9 +28,11 @@ class TelecomDropdown extends StatelessWidget {
         textStyle: CustomTextStyles.bodyLargeGray500,
         fillColor: Colors.white,
         contentPadding: getPadding(left: 10, right: 5, top: 14, bottom: 14),
-        onChanged: (SelectionPopupModel value) {
-          telecoms.onSelected(value);
-          controller.telecom = value.title;
+        onChanged: (SelectionPopupModel? value) {
+          if (value != null) {
+            telecoms.onSelected(value);
+            controller.telecom = value.title;
+          }
         });
   }
 }

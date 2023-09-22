@@ -19,10 +19,11 @@ class InvitationCodeFormField extends StatelessWidget {
         onChanged: (String value) {
           if (value.isNotEmpty) {
             controller.invitation = value;
+          } else {
+            controller.invitation = generateInvitationCode();
           }
         },
-        enabled: !readOnly,
-        hintText: 'xxxx-xxxx-xxxx-xxxx',
+        readOnly: readOnly,
         margin: getMargin(left: 25, top: 17, right: 25),
         contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),
         filled: true,

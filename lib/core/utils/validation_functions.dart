@@ -1,6 +1,13 @@
-/// 비밀번호는
-/// 대소문자 1자 이상, 숫자 1자 이상, 특수 문자 1자 이상이어야 합니다.
-/// 최소 6자 이상 최대 12자 이하의 길이여야 하며, 공백은 허용되지 않습니다.
+/// 올바른 비밀번호가 맞는지 확인합니다:
+/// 6자에서 12자 사이여야 합니다.
+/// 하나 이상의 대문자가 포함되어야 합니다.
+/// 하나 이상의 소문자가 포함되어야 합니다.
+/// 하나 이상의 숫자가 포함되어야 합니다.
+/// 하나 이상의 특수 문자[(!@#$&*~)]가 포함되어야 합니다.
+/// 공백은 허용되지 않습니다.
+///
+/// 정규식은 양수선행(lookaheads, [(?=...)])을 사용하여 각 조건을 개별적으로 적용합니다.
+/// 따라서 6~12자 사이의 문자 유형과 길이가 혼합된 강력한 비밀번호의 유효성을 검사할 수 있습니다.
 bool isValidPassword(String? inputString, {bool isRequired = false}) {
   var isInputStringValid = false;
 
@@ -10,7 +17,7 @@ bool isValidPassword(String? inputString, {bool isRequired = false}) {
 
   if (inputString != null && inputString.isNotEmpty) {
     const pattern =
-        r'^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]).{6,12}$';
+        r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{6,12}$';
     final regExp = RegExp(pattern);
 
     isInputStringValid = regExp.hasMatch(inputString);

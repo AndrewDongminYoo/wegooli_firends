@@ -59,21 +59,26 @@ class UserController extends GetxController {
     email: '',
   );
 
-  bool get isAuthenticated => currentUser.isLoggedIn;
+  bool isAuthenticated() => currentUser.isLoggedIn;
 
   List<AccountAgreementRequest> agreement = [];
 
-  bool get phoneAuthCompleted =>
-      koreanName.isNotNullOrEmpty &&
-      frontNumbers.isNotNullOrEmpty &&
-      isNumeric(frontNumbers) &&
-      backNumbers.isNotNullOrEmpty &&
-      isNumeric(backNumbers) &&
-      phoneNumWithHyphen.isNotNullOrEmpty &&
-      isValidPhone(phoneNumWithHyphen) &&
-      pinCodes.isNotNullOrEmpty &&
-      isNumeric(pinCodes) &&
-      pinCodes!.length == 6;
+  bool phoneAuthCompleted() {
+    try {
+      return koreanName.isNotNullOrEmpty &&
+          frontNumbers.isNotNullOrEmpty &&
+          isNumeric(frontNumbers) &&
+          backNumbers.isNotNullOrEmpty &&
+          isNumeric(backNumbers) &&
+          phoneNumWithHyphen.isNotNullOrEmpty &&
+          isValidPhone(phoneNumWithHyphen) &&
+          pinCodes.isNotNullOrEmpty &&
+          isNumeric(pinCodes) &&
+          pinCodes!.length == 6;
+    } catch (e) {
+      return false;
+    }
+  }
 
   /// 로그아웃
   Future<void> logOut() async {
@@ -106,23 +111,17 @@ class UserController extends GetxController {
     telecom = value.title;
   }
 
-  bool get registerCreditCardCompleted => false;
-  bool get registerZipCodeCompleted =>
-      postCode != null &&
-      postCode!.isNotNullOrEmpty &&
-      primaryAddress != null &&
-      primaryAddress!.isNotNullOrEmpty &&
-      detailAddress != null &&
-      detailAddress!.isNotNullOrEmpty &&
+  bool registerCreditCardCompleted() => false;
+  bool registerZipCodeCompleted() =>
+      postCode.isNotNullOrEmpty &&
+      primaryAddress.isNotNullOrEmpty &&
+      detailAddress.isNotNullOrEmpty &&
       username != null &&
       username!.isEmail &&
       isValidEmail(username) &&
-      password != null &&
-      password!.isNotNullOrEmpty &&
-      rePassword != null &&
-      rePassword!.isNotNullOrEmpty &&
-      nickname != null &&
-      nickname!.isNotNullOrEmpty &&
+      password.isNotNullOrEmpty &&
+      rePassword.isNotNullOrEmpty &&
+      nickname.isNotNullOrEmpty &&
       (password == rePassword);
 
   /// 로그인
@@ -151,8 +150,9 @@ class UserController extends GetxController {
     print(agreement);
     try {
       await _service.sendAcceptanceRequest(agreement);
-    } catch (e) {
+    } on Exception catch (e) {
       print('Send Acceptance Request 등록 실패\n $e');
+      printDioException('acceptanceComplete', e);
       PrefUtils.saveAgreements(terms);
     }
     await goPhoneAuth();
@@ -160,18 +160,23 @@ class UserController extends GetxController {
 
   /// 회원가입
   Future<UserDto?> signUp() {
-    return _service.signUp(
-      koreanName!,
-      frontNumbers!,
-      backNumbers!,
-      phoneNumWithHyphen!,
-      postCode!,
-      primaryAddress!,
-      detailAddress!,
-      username!,
-      password!,
-      nickname!,
-    );
+    try {
+      return _service.signUp(
+        koreanName!,
+        frontNumbers!,
+        backNumbers!,
+        phoneNumWithHyphen!,
+        postCode!,
+        primaryAddress!,
+        detailAddress!,
+        username!,
+        password!,
+        nickname!,
+      );
+    } on Exception catch (e) {
+      printDioException('signUp', e);
+      return Future.error(e);
+    }
   }
 
   AccountAgreementRequest toAccountAgreementModel(Term e) {
@@ -214,17 +219,17 @@ extension YN on bool {
 }
 
 extension UserValidation on User {
-  bool get isLoggedIn =>
-      id != null &&
-      id!.isNotNullOrEmpty &&
-      memberSeq != null &&
-      memberSeq!.isGreaterThan(0) &&
-      nickname != null &&
-      nickname!.isNotNullOrEmpty &&
-      email != null &&
-      email!.isNotNullOrEmpty &&
-      // isValidEmail(email) &&
-      phoneNumber != null &&
-      phoneNumber!.isNotNullOrEmpty;
-  // isValidPhone(phoneNumber);
+  bool get isLoggedIn {
+    try {
+      return id.isNotNullOrEmpty &&
+          memberSeq!.isGreaterThan(0) &&
+          nickname.isNotNullOrEmpty &&
+          email.isNotNullOrEmpty &&
+          // isValidEmail(email) &&
+          phoneNumber.isNotNullOrEmpty;
+      // isValidPhone(phoneNumber);
+    } catch (e) {
+      return false;
+    }
+  }
 }

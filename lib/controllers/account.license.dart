@@ -25,19 +25,24 @@ class LicenseController extends GetxController {
   SelectionPopupModel? licenseType; // '1종 보통면허'|'2종 보통면허'|'1종 대형면허'|'2종 오토면허'
   SelectionPopupModel? licenseRegion;
 
-  bool get licenseInputSucceed =>
-      licenseNumbers!.isNotEmpty &&
-      expirationDate!.isNotEmpty &&
-      firstIssueDate!.isNotEmpty &&
-      issuedYear != null &&
-      licenseType != null &&
-      isNumeric(licenseNumbers) &&
-      isNumeric(expirationDate) &&
-      isNumeric(firstIssueDate) &&
-      isNumeric(issuedYear!.title) &&
-      licenseTypes.contains(licenseType) &&
-      issuedYears.contains(issuedYear) &&
-      licenseRegions.contains(licenseRegion);
+  bool licenseInputSucceed() {
+    try {
+      return licenseNumbers.isNotNullOrEmpty &&
+          expirationDate.isNotNullOrEmpty &&
+          firstIssueDate.isNotNullOrEmpty &&
+          issuedYear != null &&
+          licenseType != null &&
+          isNumeric(licenseNumbers) &&
+          isNumeric(expirationDate) &&
+          isNumeric(firstIssueDate) &&
+          isNumeric(issuedYear!.title) &&
+          licenseTypes.contains(licenseType) &&
+          issuedYears.contains(issuedYear) &&
+          licenseRegions.contains(licenseRegion);
+    } on Exception catch (e) {
+      throw printDioException('licenseInputSucceed', e);
+    }
+  }
 
   Future<dynamic> isValidLicense() async {
     final memberSeq = goolier.memberSeq;

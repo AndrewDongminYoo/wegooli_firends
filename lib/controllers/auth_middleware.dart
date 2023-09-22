@@ -21,7 +21,7 @@ class AuthMiddleware extends GetMiddleware {
   /// 이 함수는 반환값이 [RouteSettings]인 경우 새 라우트 셋팅으로 리디렉션하며, [null]을 반환하면 리디렉션이 발생하지 않습니다.
   @override
   RouteSettings? redirect(String? route) {
-    if (controller.isAuthenticated) {
+    if (controller.isAuthenticated()) {
       return null;
     } else {
       return const RouteSettings(name: AppRoutes.idPwLogin);
@@ -32,10 +32,10 @@ class AuthMiddleware extends GetMiddleware {
   @override
   GetPage<dynamic>? onPageCalled(GetPage<dynamic>? page) {
     final username = goolier.name;
-    if (username != null && username.isNotEmpty) {
+    if (username.isNotNullOrEmpty) {
       print('>>> Page ${page?.name} called');
       print('>>> User "$username" logged-in');
-      return page!.copy(parameters: {'user': username});
+      return page!.copy(parameters: {'user': username!});
     }
     return page;
   }

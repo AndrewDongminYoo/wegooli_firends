@@ -154,7 +154,7 @@ class ScheduleController extends GetxController {
   }
 
   Future<List<TeamAccountConnectionResponse>> findTeams() async {
-    if (userController.isAuthenticated) {
+    if (userController.isAuthenticated()) {
       print('currentUser : $goolier');
       return _teamAccount.findTeams(goolier.id!);
     } else {

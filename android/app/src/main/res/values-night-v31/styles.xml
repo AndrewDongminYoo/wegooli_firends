@@ -6,7 +6,7 @@
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
-        <item name="android:windowSplashScreenBackground">#042a49</item>
+        <item name="android:windowSplashScreenBackground">#ffe142</item>
         <item name="android:windowSplashScreenBrandingImage">@drawable/android12branding</item>
         <item name="android:windowSplashScreenAnimatedIcon">@drawable/android12splash</item>
     </style>

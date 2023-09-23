@@ -64,9 +64,18 @@ EdgeInsets getPadding({
   double? top,
   double? right,
   double? bottom,
+  double? vertical,
+  double? horizontal,
 }) {
   return getMarginOrPadding(
-      all: all, left: left, top: top, right: right, bottom: bottom);
+    all: all,
+    left: left,
+    top: top,
+    right: right,
+    bottom: bottom,
+    vertical: vertical,
+    horizontal: horizontal,
+  );
 }
 
 /// 이 메서드는 여백을 반응형으로 설정하는 데 사용됩니다.
@@ -76,9 +85,18 @@ EdgeInsets getMargin({
   double? top,
   double? right,
   double? bottom,
+  double? vertical,
+  double? horizontal,
 }) {
   return getMarginOrPadding(
-      all: all, left: left, top: top, right: right, bottom: bottom);
+    all: all,
+    left: left,
+    top: top,
+    right: right,
+    bottom: bottom,
+    vertical: vertical,
+    horizontal: horizontal,
+  );
 }
 
 /// 이 방법은 패딩이나 여백을 반응형으로 가져오는 데 사용됩니다.

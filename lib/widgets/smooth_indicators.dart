@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 // 🌎 Project imports:
-import '/theme/theme_helper.dart';
+import '/lib.dart';
 
 class SmoothIndicators extends StatefulWidget {
   const SmoothIndicators({super.key});
@@ -26,7 +26,7 @@ class _SmoothIndicatorsState extends State<SmoothIndicators> {
                 borderRadius: BorderRadius.circular(16),
                 color: const Color(0xFFE0E0E0),
               ),
-              margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+              margin: getMargin(horizontal: 10, vertical: 4),
               child: SizedBox(
                 height: 280,
                 child: Center(

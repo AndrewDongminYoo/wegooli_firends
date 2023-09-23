@@ -102,6 +102,10 @@ class $AssetsCarsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/iamport-logo.png
+  AssetGenImage get iamportLogo =>
+      const AssetGenImage('assets/images/iamport-logo.png');
+
   /// File path: assets/images/image_not_found.png
   AssetGenImage get imageNotFound =>
       const AssetGenImage('assets/images/image_not_found.png');
@@ -152,6 +156,7 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
+        iamportLogo,
         imageNotFound,
         imgAcorn,
         imgGooli0,

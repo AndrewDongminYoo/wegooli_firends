@@ -153,7 +153,7 @@ class UserController extends GetxController {
     } on Exception catch (e) {
       print('Send Acceptance Request 등록 실패\n $e');
       printDioException('acceptanceComplete', e);
-      PrefUtils.saveAgreements(terms);
+      await PrefUtils.saveAgreements(terms);
     }
     await goPhoneAuth();
   }

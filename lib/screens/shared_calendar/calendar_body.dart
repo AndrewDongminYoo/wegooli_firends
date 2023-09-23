@@ -8,7 +8,10 @@ import 'package:table_calendar/table_calendar.dart';
 import '/lib.dart';
 
 class CalendarBody extends StatelessWidget {
-  const CalendarBody({super.key, required this.controller});
+  const CalendarBody({
+    super.key,
+    required this.controller,
+  });
   final ScheduleController controller;
   @override
   Widget build(BuildContext context) {

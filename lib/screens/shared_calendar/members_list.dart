@@ -5,7 +5,10 @@ import 'package:flutter/material.dart';
 import '/lib.dart';
 
 class MembersList extends StatelessWidget {
-  const MembersList({super.key, required this.controller});
+  const MembersList({
+    super.key,
+    required this.controller,
+  });
   final ScheduleController controller;
 
   @override
@@ -23,7 +26,7 @@ class MembersList extends StatelessWidget {
                       final member = snapshot.data;
                       if (member == null ||
                           currentUser.id == member.accountId) {
-                        return Container();
+                        return const SizedBox.shrink();
                       } else {
                         return MemberAvatar(
                             name: member.nickname ?? '-',
@@ -31,7 +34,7 @@ class MembersList extends StatelessWidget {
                             personalColor: member.color ?? '#FFCC08');
                       }
                     }),
-                InviteTeamButton(),
+                const InviteTeamButton(),
               ],
             )));
   }

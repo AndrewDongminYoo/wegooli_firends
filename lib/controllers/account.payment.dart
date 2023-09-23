@@ -17,7 +17,8 @@ class PaymentCardController extends GetxController {
 
   String? creditCardNum;
   String? creditCardPin;
-  String? creditCardExp;
+  String? cardExpMonth;
+  String? cardExpYear;
   String? birthDay;
   Rx<String> selected = ''.obs;
 
@@ -29,25 +30,26 @@ class PaymentCardController extends GetxController {
     _paymentCards(data);
   }
 
-  Future<void> registerCard() async {
-    await _service
-        .registerCard(creditCardNum!, creditCardPin!, birthDay!,
-            creditCardExp!.substring(0, 2), creditCardExp!.substring(2))
-        .then((result) {
-      if (result != 'true') {
-        Get.dialog(const AlertDialog(
-          title: Text('결제수단 등록'),
-          content: Text('결제수단 등록에 실패하였습니다.\n 다시 확인해주세요.'),
-          actions: <Widget>[
-            TextButton(
-              onPressed: goBack,
-              child: Text('예'),
-            ),
-          ],
-        ));
-      } else {
-        goRegisterSuccess();
-      }
-    });
+  Future<bool> registerCard() async {
+    final result = await _service.registerCard(
+      creditCardNum!,
+      creditCardPin!,
+      birthDay!,
+      cardExpMonth!,
+      cardExpYear!,
+    );
+    if (result != 'true') {
+      await Get.dialog(const AlertDialog(
+        title: Text('결제수단 등록'),
+        content: Text('결제수단 등록에 실패하였습니다.\n 다시 확인해주세요.'),
+        actions: <Widget>[
+          TextButton(onPressed: goBack, child: Text('예')),
+        ],
+      ));
+      return false;
+    } else {
+      await retrieveCards();
+      return PrefUtils.saveDefaultCard(paymentCards.first);
+    }
   }
 }

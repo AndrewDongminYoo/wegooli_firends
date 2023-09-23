@@ -17,6 +17,7 @@ class PrefUtils {
   static SharedPreferences? _storage;
   static const String _tokenData = 'WEGOOLI_TOKEN_DATA';
   static const String _phoneData = 'WEGOOLI_PHONE_DATA';
+  static const String _paymentInfo = 'CREDIT_CARD_INFO';
   static const String _termsOfUseData = 'TERMS_OF_USE';
 
   static SharedPreferences get storage {
@@ -64,8 +65,12 @@ class PrefUtils {
   static set phoneNumber(String phoneNumber) =>
       setData(_phoneData, phoneNumber);
 
-  static void saveAgreements(List<Term> agreement) {
+  static Future<bool> saveAgreements(List<Term> agreement) {
     final cache = agreement.map((a) => '${a.name}: ${a.agree.toYN}');
-    storage.setStringList(_termsOfUseData, cache.toList());
+    return storage.setStringList(_termsOfUseData, cache.toList());
+  }
+
+  static Future<bool> saveDefaultCard(PaymentCardModel paymentCards) {
+    return setData(_paymentInfo, paymentCards.toString());
   }
 }

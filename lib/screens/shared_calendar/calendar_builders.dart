@@ -28,8 +28,7 @@ Widget? selectedBuilder(
 Widget? rangeStartBuilder(
     BuildContext context, DateTime day, DateTime focusedDay) {
   return Container(
-      margin: const EdgeInsets.symmetric(
-          horizontal: 1), // Example: Display custom text
+      margin: getMarginOrPadding(horizontal: 1), // Example: Display custom text
       decoration:
           const BoxDecoration(color: Color(0x7EFFFFFF), shape: BoxShape.circle),
       child: Text(
@@ -42,8 +41,7 @@ Widget? rangeStartBuilder(
 Widget? rangeEndBuilder(
     BuildContext context, DateTime day, DateTime focusedDay) {
   return Container(
-      margin: const EdgeInsets.symmetric(
-          horizontal: 1), // Example: Display custom text
+      margin: getMarginOrPadding(horizontal: 1), // Example: Display custom text
       decoration:
           const BoxDecoration(color: Color(0x4BFFFFFF), shape: BoxShape.circle),
       child: Text(
@@ -90,8 +88,7 @@ Widget? defaultBuilder(
 Widget? rangeHighlightBuilder(
     BuildContext context, DateTime day, bool isWithinRange) {
   return Container(
-      margin: const EdgeInsets.symmetric(
-          horizontal: 1), // Example: Display custom text
+      margin: getMarginOrPadding(horizontal: 1), // Example: Display custom text
       decoration:
           const BoxDecoration(color: Color(0x4BFFFFFF), shape: BoxShape.circle),
       child: Text(

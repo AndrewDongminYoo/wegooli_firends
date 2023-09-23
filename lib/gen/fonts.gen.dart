@@ -33,4 +33,7 @@ class FontFamily {
 
   /// Font family: SF-Pro-Text
   static const String sFProText = 'SF-Pro-Text';
+
+  /// Font family: SUIT
+  static const String suit = 'SUIT';
 }

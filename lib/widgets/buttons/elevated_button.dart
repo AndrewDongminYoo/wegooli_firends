@@ -13,6 +13,7 @@ class CustomElevatedButton extends BaseButton {
     this.rightIcon,
     this.isDisabled = false,
     this.isLoading = false,
+    this.focusNode,
     EdgeInsets? margin,
     ButtonStyle? buttonStyle,
     Alignment? alignment,
@@ -33,6 +34,7 @@ class CustomElevatedButton extends BaseButton {
             margin: margin);
 
   final BoxDecoration? decoration;
+  final FocusNode? focusNode;
   final Widget? leftIcon;
   final Widget? rightIcon;
   final bool isLoading;
@@ -56,6 +58,7 @@ class CustomElevatedButton extends BaseButton {
       margin: margin,
       decoration: decoration,
       child: ElevatedButton(
+          focusNode: focusNode,
           style: buttonStyle ?? CustomButtonStyles.fillPrimaryC26,
           onPressed: () {
             if (isDisabled || isLoading) {

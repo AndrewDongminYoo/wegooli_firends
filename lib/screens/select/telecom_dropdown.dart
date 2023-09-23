@@ -11,12 +11,12 @@ class TelecomDropdown extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = UserController.to;
     final telecoms = [
-      SelectionPopupModel(id: 01, title: 'SKT'),
-      SelectionPopupModel(id: 02, title: 'KT'),
-      SelectionPopupModel(id: 03, title: 'LG U+'),
-      SelectionPopupModel(id: 04, title: 'SKT 알뜰폰'),
-      SelectionPopupModel(id: 05, title: 'KT 알뜰폰'),
-      SelectionPopupModel(id: 06, title: 'LG U+ 알뜰폰'),
+      SelectionPopupModel(id: 01, title: 'KT', value: MobileCarrier.KT),
+      SelectionPopupModel(id: 02, title: 'LG U+', value: MobileCarrier.LGU),
+      SelectionPopupModel(id: 03, title: 'SKT', value: MobileCarrier.SKT),
+      SelectionPopupModel(id: 04, title: 'LG헬로모바일', value: MobileCarrier.HELLO),
+      SelectionPopupModel(id: 05, title: '티플러스', value: MobileCarrier.KCT),
+      SelectionPopupModel(id: 06, title: 'SK7모바일', value: MobileCarrier.SK7),
     ];
     return CustomDropDown(
         width: 128.h,
@@ -35,4 +35,13 @@ class TelecomDropdown extends StatelessWidget {
           }
         });
   }
+}
+
+enum MobileCarrier {
+  KT, // KT엠모바일
+  LGU, // LG U+
+  SKT, // SKT
+  HELLO, // LG헬로모바일
+  KCT, // 티플러스
+  SK7, // SK7모바일
 }

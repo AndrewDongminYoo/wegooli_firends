@@ -115,9 +115,10 @@ class UserController extends GetxController {
   bool registerZipCodeCompleted() =>
       postCode.isNotNullNorEmpty &&
       primaryAddress.isNotNullNorEmpty &&
-      detailAddress.isNotNullNorEmpty &&
+      // 상세 주소는 생략 허용해도 될 듯. null이 아닌지만 확인.
+      detailAddress != null &&
       username != null &&
-      username!.isEmail &&
+      // GetUtils.isEmail(username!) 대신 직접 구현한 함수로 대체
       isValidEmail(username) &&
       password.isNotNullNorEmpty &&
       rePassword.isNotNullNorEmpty &&

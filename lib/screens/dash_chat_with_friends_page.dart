@@ -67,7 +67,7 @@ class DashChatWithFriendsPage extends StatelessWidget {
               constraints: BoxConstraints.expand(
                 height: 36.v,
               ),
-              contentPadding: const EdgeInsets.symmetric(horizontal: 20),
+              contentPadding: getMarginOrPadding(horizontal: 20),
               border: const OutlineInputBorder(
                   borderRadius: BorderRadius.all(
                     Radius.circular(15),

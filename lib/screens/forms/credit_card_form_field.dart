@@ -27,8 +27,11 @@ class CreditCardFormField extends StatelessWidget {
           } else {
             final valid = CreditCardValidator().validateCCNum(value!);
             if (!valid.isValid) {
+              console.info('why its not valid?: ${valid.message}');
+              console.info('potentially valid?: ${valid.isPotentiallyValid.toYN}');
               return '카드 번호가 올바르지 않습니다.';
             } else {
+              console.info('The creditCardType: ${valid.ccType}');
               return null;
             }
           }

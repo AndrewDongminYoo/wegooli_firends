@@ -45,7 +45,7 @@ class PrefUtils {
 
   static String? getToken() {
     final token = getDataOrNull(_tokenData);
-    if (token == null || token.isEmpty) {
+    if (token.isNullOrEmpty) {
       print('[pref] get token: empty');
     } else {
       print('[pref] get token: $token');

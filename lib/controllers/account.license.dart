@@ -27,9 +27,9 @@ class LicenseController extends GetxController {
 
   bool licenseInputSucceed() {
     try {
-      return licenseNumbers.isNotNullOrEmpty &&
-          expirationDate.isNotNullOrEmpty &&
-          firstIssueDate.isNotNullOrEmpty &&
+      return licenseNumbers.isNotNullNorEmpty &&
+          expirationDate.isNotNullNorEmpty &&
+          firstIssueDate.isNotNullNorEmpty &&
           issuedYear != null &&
           licenseType != null &&
           isNumeric(licenseNumbers) &&

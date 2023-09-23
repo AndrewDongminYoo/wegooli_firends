@@ -25,7 +25,7 @@ class PostCodeFormField extends StatelessWidget {
       margin: getMargin(top: 4),
       contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),
       validator: (String? value) {
-        if (value == null || value.isEmpty) {
+        if (value.isNullOrEmpty) {
           return l10ns.yourZipCodeIsRequired;
         } else if (isNumeric(value)) {
           return value;

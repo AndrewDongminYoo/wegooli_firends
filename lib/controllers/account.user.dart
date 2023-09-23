@@ -65,14 +65,14 @@ class UserController extends GetxController {
 
   bool phoneAuthCompleted() {
     try {
-      return koreanName.isNotNullOrEmpty &&
-          frontNumbers.isNotNullOrEmpty &&
+      return koreanName.isNotNullNorEmpty &&
+          frontNumbers.isNotNullNorEmpty &&
           isNumeric(frontNumbers) &&
-          backNumbers.isNotNullOrEmpty &&
+          backNumbers.isNotNullNorEmpty &&
           isNumeric(backNumbers) &&
-          phoneNumWithHyphen.isNotNullOrEmpty &&
+          phoneNumWithHyphen.isNotNullNorEmpty &&
           isValidPhone(phoneNumWithHyphen) &&
-          pinCodes.isNotNullOrEmpty &&
+          pinCodes.isNotNullNorEmpty &&
           isNumeric(pinCodes) &&
           pinCodes!.length == 6;
     } catch (e) {
@@ -113,15 +113,15 @@ class UserController extends GetxController {
 
   bool registerCreditCardCompleted() => false;
   bool registerZipCodeCompleted() =>
-      postCode.isNotNullOrEmpty &&
-      primaryAddress.isNotNullOrEmpty &&
-      detailAddress.isNotNullOrEmpty &&
+      postCode.isNotNullNorEmpty &&
+      primaryAddress.isNotNullNorEmpty &&
+      detailAddress.isNotNullNorEmpty &&
       username != null &&
       username!.isEmail &&
       isValidEmail(username) &&
-      password.isNotNullOrEmpty &&
-      rePassword.isNotNullOrEmpty &&
-      nickname.isNotNullOrEmpty &&
+      password.isNotNullNorEmpty &&
+      rePassword.isNotNullNorEmpty &&
+      nickname.isNotNullNorEmpty &&
       (password == rePassword);
 
   /// 로그인
@@ -205,7 +205,6 @@ class Term {
     required this.agree,
     this.opt = false,
   });
-
   final String name;
   final bool opt;
   final String body;
@@ -221,13 +220,13 @@ extension YN on bool {
 extension UserValidation on User {
   bool get isLoggedIn {
     try {
-      return id.isNotNullOrEmpty &&
+      return id.isNotNullNorEmpty &&
           memberSeq!.isGreaterThan(0) &&
-          nickname.isNotNullOrEmpty &&
-          email.isNotNullOrEmpty &&
+          nickname.isNotNullNorEmpty &&
+          email.isNotNullNorEmpty &&
           // isValidEmail(email) &&
-          phoneNumber.isNotNullOrEmpty;
-      // isValidPhone(phoneNumber);
+          // isValidPhone(phoneNumber);
+          phoneNumber.isNotNullNorEmpty;
     } catch (e) {
       return false;
     }

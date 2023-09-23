@@ -19,11 +19,15 @@ import '/lib.dart' hide User;
 const withSilentVerificationSMSMFA = true;
 
 class SMSValidationForm extends StatefulWidget {
-  const SMSValidationForm({
+  SMSValidationForm({
     super.key,
     required this.controller,
+    required this.focusNode,
+    required this.nextFocus,
   });
   final UserController controller;
+  final FocusNode focusNode;
+  final FocusNode nextFocus;
   @override
   State<SMSValidationForm> createState() => _SMSValidationFormState();
 }
@@ -207,11 +211,13 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 CustomTextFormField(
+                  focusNode: widget.focusNode,
                   initialValue: controller.pinCodes,
                   onChanged: (String value) {
                     if (controller.pinCodes!.length >= 6) {
                       setState(() {
                         controller.pinCodes = value;
+                        widget.nextFocus.requestFocus();
                       });
                     }
                   },

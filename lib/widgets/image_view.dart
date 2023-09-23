@@ -96,7 +96,7 @@ class CustomImageView extends StatelessWidget {
   }
 
   Widget _buildImageView() {
-    if (svgPath.isNotNullOrEmpty) {
+    if (svgPath.isNotNullNorEmpty) {
       return SizedBox(
         height: height,
         width: width,
@@ -108,7 +108,7 @@ class CustomImageView extends StatelessWidget {
           color: color,
         ),
       );
-    } else if (imagePath.isNotNullOrEmpty) {
+    } else if (imagePath.isNotNullNorEmpty) {
       return Image.asset(
         imagePath!,
         height: height,
@@ -124,7 +124,7 @@ class CustomImageView extends StatelessWidget {
         fit: fit ?? BoxFit.cover,
         color: color,
       );
-    } else if (url.isNotNullOrEmpty) {
+    } else if (url.isNotNullNorEmpty) {
       return CachedNetworkImage(
           height: height,
           width: width,

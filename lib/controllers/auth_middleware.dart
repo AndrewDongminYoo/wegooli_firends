@@ -32,7 +32,7 @@ class AuthMiddleware extends GetMiddleware {
   @override
   GetPage<dynamic>? onPageCalled(GetPage<dynamic>? page) {
     final username = goolier.name;
-    if (username.isNotNullOrEmpty) {
+    if (username.isNotNullNorEmpty) {
       print('>>> Page ${page?.name} called');
       print('>>> User "$username" logged-in');
       return page!.copy(parameters: {'user': username!});

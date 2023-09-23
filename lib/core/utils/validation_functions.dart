@@ -11,16 +11,16 @@
 bool isValidPassword(String? inputString, {bool isRequired = false}) {
   var isInputStringValid = false;
 
-  if ((inputString == null || inputString.isEmpty) && !isRequired) {
+  if ((inputString.isNullOrEmpty) && !isRequired) {
     isInputStringValid = true;
   }
 
-  if (inputString != null && inputString.isNotEmpty) {
+  if (inputString.isNotNullNorEmpty) {
     const pattern =
         r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{6,12}$';
     final regExp = RegExp(pattern);
 
-    isInputStringValid = regExp.hasMatch(inputString);
+    isInputStringValid = regExp.hasMatch(inputString!);
   }
 
   return isInputStringValid;
@@ -30,17 +30,17 @@ bool isValidPassword(String? inputString, {bool isRequired = false}) {
 bool isValidEmail(String? inputString, {bool isRequired = false}) {
   var isInputStringValid = false;
 
-  if ((inputString == null || inputString.isEmpty) && !isRequired) {
+  if ((inputString.isNullOrEmpty) && !isRequired) {
     isInputStringValid = true;
   }
 
-  if (inputString != null && inputString.isNotEmpty) {
+  if (inputString.isNotNullNorEmpty) {
     const pattern =
         r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
 
     final regExp = RegExp(pattern);
 
-    isInputStringValid = regExp.hasMatch(inputString);
+    isInputStringValid = regExp.hasMatch(inputString!);
   }
 
   return isInputStringValid;
@@ -50,7 +50,7 @@ bool isValidEmail(String? inputString, {bool isRequired = false}) {
 bool isText(String? inputString, {bool isRequired = false}) {
   var isInputStringValid = false;
 
-  if ((inputString == null || inputString.isEmpty) && !isRequired) {
+  if ((inputString.isNullOrEmpty) && !isRequired) {
     isInputStringValid = true;
   }
 
@@ -72,16 +72,16 @@ bool isNumeric(
 }) {
   var isInputStringValid = false;
 
-  if (!isRequired && (inputString == null || inputString.isEmpty)) {
+  if (!isRequired && (inputString.isNullOrEmpty)) {
     isInputStringValid = true;
   }
 
-  if (inputString != null && inputString.isNotEmpty) {
+  if (inputString.isNotNullNorEmpty) {
     const pattern = r'^\d+$';
 
     final regExp = RegExp(pattern);
 
-    isInputStringValid = regExp.hasMatch(inputString);
+    isInputStringValid = regExp.hasMatch(inputString!);
   }
 
   return isInputStringValid;
@@ -91,7 +91,7 @@ bool isNumeric(
 bool isValidPhone(String? inputString, {bool isRequired = false}) {
   var isInputStringValid = false;
 
-  if ((inputString == null || inputString.isEmpty) && !isRequired) {
+  if ((inputString.isNullOrEmpty) && !isRequired) {
     isInputStringValid = true;
   }
 
@@ -108,4 +108,9 @@ bool isValidPhone(String? inputString, {bool isRequired = false}) {
   }
 
   return isInputStringValid;
+}
+
+extension StringValidate on String? {
+  bool get isNullOrEmpty => this != null || this!.isEmpty;
+  bool get isNotNullNorEmpty => this is String && this!.isNotEmpty;
 }

@@ -9,19 +9,27 @@ class RegisterPhone extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _realname = FocusNode();
+    final _birthday = FocusNode();
+    final _socialId = FocusNode();
+    final _validate = FocusNode();
+    final _complete = FocusNode();
     final controller = UserController.to;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       appBar: CustomAppBar.getDefaultAppBar(l10ns.authenticateYourself),
-      body: Unfocused(
+      body: UnfocusedForm(
         child: Container(
           width: double.maxFinite,
           padding: getPadding(left: 16, top: 32, right: 16, bottom: 32),
           child: Column(children: [
             Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               CustomInputLabel(labelText: l10ns.name),
-              const KoreanNameFormField(),
+              KoreanNameFormField(
+                focusNode: _realname,
+                nextFocus: _birthday,
+              ),
             ]),
             Padding(
               padding: getPadding(top: 26, bottom: 7),
@@ -31,17 +39,22 @@ class RegisterPhone extends StatelessWidget {
                   children: [
                     CustomInputLabel(
                         labelText: l10ns.digitOf13SocialSecurityNumber),
-                    const Row(
+                    Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           BirthdayNumberFormField(
                             readonly: false,
+                            focusNode: _birthday,
+                            nextFocus: _socialId,
                           ),
-                          Text(
+                          const Text(
                             '-',
                             style: TextStyle(fontSize: 24),
                           ),
-                          SocialSecurityNumberFormField(),
+                          SocialSecurityNumberFormField(
+                            nextFocus: _validate,
+                            focusNode: _socialId,
+                          ),
                         ]),
                     Row(children: [
                       Text(
@@ -54,7 +67,11 @@ class RegisterPhone extends StatelessWidget {
                     ])
                   ]),
             ),
-            SMSValidationForm(controller: controller),
+            SMSValidationForm(
+              controller: controller,
+              focusNode: _validate,
+              nextFocus: _complete,
+            ),
           ]),
         ),
       ),
@@ -62,6 +79,7 @@ class RegisterPhone extends StatelessWidget {
       bottomNavigationBar: Container(
         margin: getMargin(left: 16, right: 16, bottom: 29),
         child: CustomElevatedButton(
+          focusNode: _complete,
           text: l10ns.authenticationComplete, // '인증 완료'
           isDisabled: !controller.phoneAuthCompleted(),
           buttonStyle: controller.phoneAuthCompleted()

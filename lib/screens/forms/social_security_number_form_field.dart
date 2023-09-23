@@ -6,12 +6,18 @@ import 'package:flutter/services.dart';
 import '/lib.dart';
 
 class SocialSecurityNumberFormField extends StatelessWidget {
-  const SocialSecurityNumberFormField({super.key});
-
+  const SocialSecurityNumberFormField({
+    super.key,
+    required this.nextFocus,
+    required this.focusNode,
+  });
+  final FocusNode? focusNode;
+  final FocusNode? nextFocus;
   @override
   Widget build(BuildContext context) {
     final controller = UserController.to;
     return CustomTextFormField(
+      focusNode: focusNode,
       initialValue: controller.backNumbers,
       onChanged: (String value) {
         if (value.isNotEmpty) {

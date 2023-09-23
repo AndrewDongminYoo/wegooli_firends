@@ -6,15 +6,22 @@ import 'package:flutter/services.dart';
 import '/lib.dart';
 
 class KoreanNameFormField extends StatelessWidget {
-  const KoreanNameFormField({super.key});
-
+  const KoreanNameFormField({
+    super.key,
+    required this.focusNode,
+    required this.nextFocus,
+  });
+  final FocusNode? focusNode;
+  final FocusNode? nextFocus;
   @override
   Widget build(BuildContext context) {
     final controller = UserController.to;
+    final regExp = RegExp('[A-Za-z가-힣ㄱ-ㅎ, ]+');
     return CustomTextFormField(
+      focusNode: focusNode,
       initialValue: controller.koreanName,
       onChanged: (String value) {
-        if (RegExp(r'[가-힣\w+,\-]').hasMatch(value)) {
+        if (regExp.hasMatch(value)) {
           controller.koreanName = value;
         }
       },
@@ -26,7 +33,7 @@ class KoreanNameFormField extends StatelessWidget {
       hintText: l10ns.pleaseEnterYourName,
       inputFormatters: <TextInputFormatter>[
         /// 테스트를 위해 입력할 수 있는 글자를 제한해 봄. 숫자 입력 못하게 함.
-        FilteringTextInputFormatter.allow(RegExp('[A-Za-z가-힣ㄱ-ㅎ, ]+')),
+        FilteringTextInputFormatter.allow(regExp),
       ],
       filled: true,
       fillColor: Colors.white,

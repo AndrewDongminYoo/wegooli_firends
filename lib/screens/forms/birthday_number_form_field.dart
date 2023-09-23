@@ -6,31 +6,36 @@ import 'package:flutter/services.dart';
 import '/lib.dart';
 
 class BirthdayNumberFormField extends StatelessWidget {
-  const BirthdayNumberFormField({
+  BirthdayNumberFormField({
     super.key,
     required this.readonly,
+    required this.focusNode,
+    required this.nextFocus,
   });
-
   final bool readonly;
-
+  final FocusNode focusNode;
+  final FocusNode nextFocus;
   @override
   Widget build(BuildContext context) {
     final controller = UserController.to;
+    const maxLength = 6;
     return CustomTextFormField(
+      focusNode: focusNode,
       initialValue: controller.frontNumbers,
       onChanged: (String value) {
-        if (value.length == 6) {
-          controller.frontNumbers = value;
+        if (value.length >= maxLength) {
+          controller.frontNumbers = value.substring(0, maxLength);
+          nextFocus.requestFocus();
         }
       },
       width: 158.h,
-      enabled: !readonly,
+      readOnly: readonly,
       margin: getMargin(top: 4),
       autofillHints: const [AutofillHints.birthday],
       inputFormatters: <TextInputFormatter>[
         FilteringTextInputFormatter.digitsOnly,
       ],
-      maxLength: 6,
+      maxLength: maxLength,
       textInputType: TextInputType.number,
       contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),
       textStyle: CustomTextStyles.bodyLargeGray50003,

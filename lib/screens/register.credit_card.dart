@@ -20,6 +20,9 @@ class _RegisterCreditCardState extends State<RegisterCreditCard> {
 
   @override
   Widget build(BuildContext context) {
+    final _birthday = FocusNode();
+    final _pinCodes = FocusNode();
+    final _complete = FocusNode();
     print(Get.parameters['type']);
     String title;
     if (Get.parameters['type'] == 'edit') {
@@ -31,7 +34,7 @@ class _RegisterCreditCardState extends State<RegisterCreditCard> {
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       appBar: CustomAppBar.getDefaultAppBar(title),
-      body: Unfocused(
+      body: UnfocusedForm(
         child: Container(
             width: double.maxFinite,
             padding: getPadding(left: 16, top: 35, right: 16, bottom: 35),
@@ -56,6 +59,8 @@ class _RegisterCreditCardState extends State<RegisterCreditCard> {
                         CustomInputLabel(
                             labelText: l10ns.socialSecurityNumberFirstDigit),
                         BirthdayNumberFormField(
+                          focusNode: _birthday,
+                          nextFocus: _pinCodes,
                           readonly: userController.frontNumbers?.length == 6,
                         ),
                       ])),
@@ -66,13 +71,16 @@ class _RegisterCreditCardState extends State<RegisterCreditCard> {
                       children: [
                         CustomInputLabel(
                             labelText: l10ns.first2DigitsOfCardPassword),
-                        const CardPinNumberFormField(),
+                        CardPinNumberFormField(
+                          focusNode: _pinCodes,
+                          nextFocus: _complete,
+                        ),
                       ])),
             ])),
       ),
       bottomNavigationBar: Container(
         margin: getMargin(left: 16, right: 16, bottom: 29),
-        child: const RegisterCardButton(),
+        child: RegisterCardButton(focusNode: _complete),
       ),
     );
   }

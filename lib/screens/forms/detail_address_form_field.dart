@@ -12,11 +12,8 @@ class DetailAddressFormField extends StatelessWidget {
     final controller = UserController.to;
     return CustomTextFormField(
       initialValue: controller.detailAddress,
-      onChanged: (String value) {
-        if (value.isNotEmpty) {
-          controller.detailAddress = value;
-        }
-      },
+      onChanged: (String value) => controller.detailAddress = value,
+      validator: (String? v) => v != null ? null : '상세 주소를 입력해주세요.',
       inputFormatters: const [],
       textInputType: TextInputType.streetAddress,
       margin: getMargin(top: 10),

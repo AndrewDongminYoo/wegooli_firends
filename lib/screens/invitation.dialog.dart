@@ -5,7 +5,10 @@ import 'package:flutter/material.dart';
 import '/lib.dart';
 
 class SendingInvitationDialog extends StatefulWidget {
-  const SendingInvitationDialog({super.key, this.copyMode = false});
+  const SendingInvitationDialog({
+    super.key,
+    this.copyMode = false,
+  });
   final bool copyMode;
   @override
   State<SendingInvitationDialog> createState() =>
@@ -63,7 +66,7 @@ class _SendingInvitationDialogState extends State<SendingInvitationDialog> {
                       ])),
               InvitationCodeFormField(readOnly: widget.copyMode),
               if (widget.copyMode)
-                CopyInvitationButton()
+                const CopyInvitationButton()
               else
                 const ConfirmInvitationButton(),
             ]),

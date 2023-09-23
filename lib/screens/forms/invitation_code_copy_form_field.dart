@@ -10,17 +10,31 @@ class InvitationCodeCopyFormField extends StatelessWidget {
     super.key,
     required this.focusNode,
   });
-
   final FocusNode focusNode;
 
   @override
   Widget build(BuildContext context) {
     final controller = UserController.to;
     return CustomTextFormField(
+      focusNode: focusNode,
       initialValue: controller.invitation,
       onChanged: (String value) {
-        if (value.isNotEmpty) {
+        if (value.isNotEmpty && value.length >= 16) {
           controller.invitation = value;
+        }
+      },
+      validator: (String? value) {
+        if (value.isNullOrEmpty) {
+          return '초대 코드를 입력해주세요.';
+        } else {
+          final inviteRegex = RegExp(
+              r'^[0-9a-zA-Z]{4}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{4}$');
+          final valid = inviteRegex.hasMatch(value!);
+          if (!valid) {
+            return '올바른 초대 코드를 입력해주세요';
+          } else {
+            return null;
+          }
         }
       },
       filled: true,

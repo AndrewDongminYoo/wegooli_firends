@@ -36,6 +36,6 @@ String generateInvitationCode() {
 }
 
 extension StringValidate on String? {
-  bool get isNullOrEmpty => this != null && this!.isEmpty;
-  bool get isNotNullOrEmpty => !isNullOrEmpty;
+  bool get isNullOrEmpty => this != null || this!.isEmpty;
+  bool get isNotNullOrEmpty => this != null && this!.isNotEmpty;
 }

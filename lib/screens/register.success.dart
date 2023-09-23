@@ -12,7 +12,7 @@ class RegisterSuccess extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
       backgroundColor: Colors.white,
-      body: Unfocused(
+      body: UnfocusedForm(
         child: Container(
           padding: getPadding(left: 16, right: 16),
           child: Center(

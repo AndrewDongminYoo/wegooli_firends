@@ -21,7 +21,7 @@ class _RegisterZipCodeState extends State<RegisterZipCode> {
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       appBar: CustomAppBar.getDefaultAppBar(l10ns.signUp),
-      body: Unfocused(
+      body: UnfocusedForm(
         child: SingleChildScrollView(
             padding: getPadding(left: 16, top: 22, right: 16, bottom: 22),
             child: Column(children: [

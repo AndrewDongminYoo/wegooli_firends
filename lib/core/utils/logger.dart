@@ -9,8 +9,6 @@ import 'package:logging/logging.dart';
 // 🌎 Project imports:
 import 'ansi_colors.dart';
 
-// 📦 Package imports:
-
 /// 이 클래스는 로깅에 다채로운 색상 기능을 제공합니다.
 class LoggerColorful {
   /// Constructor

@@ -19,3 +19,26 @@ class Unfocused extends Builder {
         );
   final Widget child;
 }
+
+class UnfocusedForm extends Builder {
+  UnfocusedForm({
+    Key? key,
+    this.formKey,
+    required this.child,
+  }) : super(
+          key: key,
+          builder: (BuildContext context) {
+            return GestureDetector(
+              key: key,
+              behavior: HitTestBehavior.translucent,
+              onTap: () => FocusScope.of(context).unfocus(),
+              child: Form(
+                  key: formKey,
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  child: child),
+            );
+          },
+        );
+  final Widget child;
+  final GlobalKey<FormState>? formKey;
+}

@@ -9,7 +9,7 @@ import 'package:get/get.dart';
 import '/lib.dart';
 
 class CopyInvitationButton extends StatelessWidget {
-  CopyInvitationButton({super.key});
+  const CopyInvitationButton({super.key});
   @override
   Widget build(BuildContext context) {
     final controller = UserController.to;

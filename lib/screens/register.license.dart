@@ -16,7 +16,7 @@ class RegisterLicense extends GetWidget<LicenseController> {
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       appBar: CustomAppBar.getDefaultAppBar(l10ns.driverSLicenseRegistration),
-      body: Unfocused(
+      body: UnfocusedForm(
         child: SingleChildScrollView(
             child: Container(
           width: double.maxFinite,

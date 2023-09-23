@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import '/lib.dart';
 
 class InviteTeamButton extends StatelessWidget {
-  InviteTeamButton({super.key});
+  const InviteTeamButton({super.key});
   @override
   Widget build(BuildContext context) {
     return SizedBox(

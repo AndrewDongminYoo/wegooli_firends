@@ -12,7 +12,7 @@ part 'operator_user_request.g.dart';
 )
 class OperatorUserRequest extends Equatable {
   /// Returns a new [OperatorUserRequest] instance.
-  OperatorUserRequest({
+  const OperatorUserRequest({
     this.startAt,
     this.endAt,
     this.contract,

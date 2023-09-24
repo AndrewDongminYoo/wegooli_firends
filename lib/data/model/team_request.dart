@@ -12,7 +12,7 @@ part 'team_request.g.dart';
 )
 class TeamRequest extends Equatable {
   /// Returns a new [TeamRequest] instance.
-  TeamRequest({
+  const TeamRequest({
     this.accountId,
     this.name,
     this.contract,

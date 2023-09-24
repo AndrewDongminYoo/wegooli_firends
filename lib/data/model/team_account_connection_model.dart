@@ -12,7 +12,7 @@ part 'team_account_connection_model.g.dart';
 )
 class TeamAccountConnectionModel extends Equatable {
   /// Returns a new [TeamAccountConnectionModel] instance.
-  TeamAccountConnectionModel({
+  const TeamAccountConnectionModel({
     this.seq,
     this.teamSeq,
     this.accountId,

@@ -12,7 +12,7 @@ part 'license_model.g.dart';
 )
 class LicenseModel extends Equatable {
   /// Returns a new [LicenseModel] instance.
-  LicenseModel({
+  const LicenseModel({
     this.seq,
     this.delYn,
     this.createdAt,

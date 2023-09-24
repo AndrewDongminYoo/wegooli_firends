@@ -12,7 +12,7 @@ part 'share_service_model.g.dart';
 )
 class ShareServiceModel extends Equatable {
   /// Returns a new [ShareServiceModel] instance.
-  ShareServiceModel({
+  const ShareServiceModel({
     this.shareServiceSeq,
     this.serviceName,
     this.serviceDes,

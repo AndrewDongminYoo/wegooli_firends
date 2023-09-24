@@ -12,7 +12,7 @@ part 'operator_team_request.g.dart';
 )
 class OperatorTeamRequest extends Equatable {
   /// Returns a new [OperatorTeamRequest] instance.
-  OperatorTeamRequest({
+  const OperatorTeamRequest({
     this.startAt,
     this.endAt,
     this.contract,

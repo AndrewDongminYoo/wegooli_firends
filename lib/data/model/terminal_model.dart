@@ -12,7 +12,7 @@ part 'terminal_model.g.dart';
 )
 class TerminalModel extends Equatable {
   /// Returns a new [TerminalModel] instance.
-  TerminalModel({
+  const TerminalModel({
     this.seq,
     this.delYn,
     this.createdAt,

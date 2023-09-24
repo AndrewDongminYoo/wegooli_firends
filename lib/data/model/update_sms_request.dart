@@ -12,7 +12,7 @@ part 'update_sms_request.g.dart';
 )
 class UpdateSmsRequest extends Equatable {
   /// Returns a new [UpdateSmsRequest] instance.
-  UpdateSmsRequest({
+  const UpdateSmsRequest({
     this.seq,
     this.title,
     this.content,

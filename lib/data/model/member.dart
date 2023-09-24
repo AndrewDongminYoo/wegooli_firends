@@ -12,7 +12,7 @@ part 'member.g.dart';
 )
 class Member extends Equatable {
   /// Returns a new [Member] instance.
-  Member({
+  const Member({
     this.seq,
     this.name,
     this.add1,

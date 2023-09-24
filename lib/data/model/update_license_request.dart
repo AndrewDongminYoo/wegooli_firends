@@ -12,7 +12,7 @@ part 'update_license_request.g.dart';
 )
 class UpdateLicenseRequest extends Equatable {
   /// Returns a new [UpdateLicenseRequest] instance.
-  UpdateLicenseRequest({
+  const UpdateLicenseRequest({
     this.seq,
     this.koreanYn,
     this.licenseClass,

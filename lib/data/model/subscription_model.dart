@@ -12,7 +12,7 @@ part 'subscription_model.g.dart';
 )
 class SubscriptionModel extends Equatable {
   /// Returns a new [SubscriptionModel] instance.
-  SubscriptionModel({
+  const SubscriptionModel({
     this.accountId,
     this.teamSeq,
     this.teamName,

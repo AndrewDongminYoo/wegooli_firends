@@ -12,7 +12,7 @@ part 'update_push_request.g.dart';
 )
 class UpdatePushRequest extends Equatable {
   /// Returns a new [UpdatePushRequest] instance.
-  UpdatePushRequest({
+  const UpdatePushRequest({
     this.seq,
     this.title,
     this.content,

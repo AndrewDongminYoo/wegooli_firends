@@ -12,7 +12,7 @@ part 'car_control_history_model.g.dart';
 )
 class CarControlHistoryModel extends Equatable {
   /// Returns a new [CarControlHistoryModel] instance.
-  CarControlHistoryModel({
+  const CarControlHistoryModel({
     this.seq,
     this.createdAt,
     this.terminalSeq,

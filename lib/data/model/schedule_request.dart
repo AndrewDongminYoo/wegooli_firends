@@ -12,7 +12,7 @@ part 'schedule_request.g.dart';
 )
 class ScheduleRequest extends Equatable {
   /// Returns a new [ScheduleRequest] instance.
-  ScheduleRequest({
+  const ScheduleRequest({
     this.seq,
     this.delYn,
     this.createdAt,

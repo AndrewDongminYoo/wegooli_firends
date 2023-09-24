@@ -12,7 +12,7 @@ part 'cancel_request_model.g.dart';
 )
 class CancelRequestModel extends Equatable {
   /// Returns a new [CancelRequestModel] instance.
-  CancelRequestModel({
+  const CancelRequestModel({
     this.cancelReason,
   });
 

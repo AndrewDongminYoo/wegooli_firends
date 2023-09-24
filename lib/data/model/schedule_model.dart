@@ -12,7 +12,7 @@ part 'schedule_model.g.dart';
 )
 class ScheduleModel extends Equatable {
   /// Returns a new [ScheduleModel] instance.
-  ScheduleModel({
+  const ScheduleModel({
     this.seq,
     this.delYn,
     this.createdAt,

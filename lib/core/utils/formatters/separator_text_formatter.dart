@@ -2,7 +2,7 @@
 import 'package:flutter/services.dart';
 
 class SeperateTextFormatter extends TextInputFormatter {
-  SeperateTextFormatter({
+  const SeperateTextFormatter({
     required this.sample,
     required this.separator,
   });

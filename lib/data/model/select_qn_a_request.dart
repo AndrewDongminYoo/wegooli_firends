@@ -12,7 +12,7 @@ part 'select_qn_a_request.g.dart';
 )
 class SelectQnARequest extends Equatable {
   /// Returns a new [SelectQnARequest] instance.
-  SelectQnARequest({
+  const SelectQnARequest({
     this.category,
     this.title,
     this.content,

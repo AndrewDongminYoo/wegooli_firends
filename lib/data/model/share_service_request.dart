@@ -12,7 +12,7 @@ part 'share_service_request.g.dart';
 )
 class ShareServiceRequest extends Equatable {
   /// Returns a new [ShareServiceRequest] instance.
-  ShareServiceRequest({
+  const ShareServiceRequest({
     this.startMonthlyAmount,
     this.endMonthlyAmount,
   });

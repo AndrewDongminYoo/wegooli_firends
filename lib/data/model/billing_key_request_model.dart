@@ -12,7 +12,7 @@ part 'billing_key_request_model.g.dart';
 )
 class BillingKeyRequestModel extends Equatable {
   /// Returns a new [BillingKeyRequestModel] instance.
-  BillingKeyRequestModel({
+  const BillingKeyRequestModel({
     this.cardExpirationMonth,
     this.cardExpirationYear,
     this.cardNumber,

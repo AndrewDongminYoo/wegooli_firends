@@ -12,7 +12,7 @@ part 'service_car_detail_request.g.dart';
 )
 class ServiceCarDetailRequest extends Equatable {
   /// Returns a new [ServiceCarDetailRequest] instance.
-  ServiceCarDetailRequest({
+  const ServiceCarDetailRequest({
     this.serviceSeq,
   });
 

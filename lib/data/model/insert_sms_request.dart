@@ -12,7 +12,7 @@ part 'insert_sms_request.g.dart';
 )
 class InsertSmsRequest extends Equatable {
   /// Returns a new [InsertSmsRequest] instance.
-  InsertSmsRequest({
+  const InsertSmsRequest({
     this.seq,
     this.title,
     this.content,

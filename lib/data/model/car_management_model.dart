@@ -12,7 +12,7 @@ part 'car_management_model.g.dart';
 )
 class CarManagementModel extends Equatable {
   /// Returns a new [CarManagementModel] instance.
-  CarManagementModel({
+  const CarManagementModel({
     this.seq,
     this.carNum,
     this.oilCheckDate,

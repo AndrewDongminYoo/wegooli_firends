@@ -12,7 +12,7 @@ part 'account_agreement_model.g.dart';
 )
 class AccountAgreementModel extends Equatable {
   /// Returns a new [AccountAgreementModel] instance.
-  AccountAgreementModel({
+  const AccountAgreementModel({
     this.classification,
     this.accountId,
     this.agreeYn,

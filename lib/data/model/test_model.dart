@@ -12,7 +12,7 @@ part 'test_model.g.dart';
 )
 class TestModel extends Equatable {
   /// Returns a new [TestModel] instance.
-  TestModel({
+  const TestModel({
     this.seq,
     this.postYn,
     this.title,

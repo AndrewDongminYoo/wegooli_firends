@@ -19,7 +19,7 @@
 class AppHttpClientException<OriginalException extends Exception>
     implements Exception {
   /// 지정된 기본 [Exception]를 사용하여 새 애플리케이션 http 클라이언트 예외를 만듦.
-  AppHttpClientException({required this.exception});
+  const AppHttpClientException({required this.exception});
 
   /// 포착된 예외.
   final OriginalException exception;
@@ -41,7 +41,7 @@ enum AppNetworkExceptionReason {
 class AppNetworkException<OriginalException extends Exception>
     extends AppHttpClientException<OriginalException> {
   /// 네트워크 예외를 만듦.
-  AppNetworkException({
+  const AppNetworkException({
     required this.reason,
     required OriginalException exception,
   }) : super(exception: exception);
@@ -54,7 +54,7 @@ class AppNetworkException<OriginalException extends Exception>
 class AppNetworkResponseException<OriginalException extends Exception, DataType>
     extends AppNetworkException<OriginalException> {
   /// 지정된 [statusCode], 원본 [Exception] 및 응답 [data]를 사용하여 새 응답 예외를 만듦.
-  AppNetworkResponseException({
+  const AppNetworkResponseException({
     required OriginalException exception,
     this.statusCode,
     this.data,

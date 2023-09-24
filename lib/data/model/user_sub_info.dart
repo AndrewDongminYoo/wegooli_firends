@@ -12,7 +12,7 @@ part 'user_sub_info.g.dart';
 )
 class UserSubInfo extends Equatable {
   /// Returns a new [UserSubInfo] instance.
-  UserSubInfo({
+  const UserSubInfo({
     this.userId,
     this.serviceSeq,
     this.weekInfo,

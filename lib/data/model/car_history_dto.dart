@@ -12,7 +12,7 @@ part 'car_history_dto.g.dart';
 )
 class CarHistoryDto extends Equatable {
   /// Returns a new [CarHistoryDto] instance.
-  CarHistoryDto({
+  const CarHistoryDto({
     this.seq,
     this.terminalSeq,
     this.carNum,

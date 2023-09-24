@@ -12,7 +12,7 @@ part 'select_push_request.g.dart';
 )
 class SelectPushRequest extends Equatable {
   /// Returns a new [SelectPushRequest] instance.
-  SelectPushRequest({
+  const SelectPushRequest({
     this.title,
     this.content,
     this.bm,

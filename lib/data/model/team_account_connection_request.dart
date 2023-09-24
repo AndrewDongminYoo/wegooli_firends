@@ -12,7 +12,7 @@ part 'team_account_connection_request.g.dart';
 )
 class TeamAccountConnectionRequest extends Equatable {
   /// Returns a new [TeamAccountConnectionRequest] instance.
-  TeamAccountConnectionRequest({
+  const TeamAccountConnectionRequest({
     this.teamSeq,
     this.accountId,
     this.joinedAt,

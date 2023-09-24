@@ -11,7 +11,7 @@ UploadImageRequest _$UploadImageRequestFromJson(Map<String, dynamic> json) =>
       'UploadImageRequest',
       json,
       ($checkedConvert) {
-        final val = UploadImageRequest();
+        const val = UploadImageRequest();
         return val;
       },
     );

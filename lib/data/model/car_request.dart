@@ -12,7 +12,7 @@ part 'car_request.g.dart';
 )
 class CarRequest extends Equatable {
   /// Returns a new [CarRequest] instance.
-  CarRequest({
+  const CarRequest({
     this.seq,
     this.delYn,
     this.createdAt,

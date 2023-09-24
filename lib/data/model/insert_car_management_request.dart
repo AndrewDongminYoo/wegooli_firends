@@ -12,7 +12,7 @@ part 'insert_car_management_request.g.dart';
 )
 class InsertCarManagementRequest extends Equatable {
   /// Returns a new [InsertCarManagementRequest] instance.
-  InsertCarManagementRequest({
+  const InsertCarManagementRequest({
     this.seq,
     this.carNum,
     this.oilCheckDate,

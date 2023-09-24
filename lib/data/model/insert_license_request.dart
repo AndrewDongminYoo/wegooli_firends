@@ -12,7 +12,7 @@ part 'insert_license_request.g.dart';
 )
 class InsertLicenseRequest extends Equatable {
   /// Returns a new [InsertLicenseRequest] instance.
-  InsertLicenseRequest({
+  const InsertLicenseRequest({
     this.seq,
     this.memberSeq,
     this.koreanYn,

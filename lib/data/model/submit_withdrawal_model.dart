@@ -12,7 +12,7 @@ part 'submit_withdrawal_model.g.dart';
 )
 class SubmitWithdrawalModel extends Equatable {
   /// Returns a new [SubmitWithdrawalModel] instance.
-  SubmitWithdrawalModel({
+  const SubmitWithdrawalModel({
     this.seq,
     this.accountId,
     this.leavedAt,

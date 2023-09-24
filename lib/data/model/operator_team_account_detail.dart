@@ -12,7 +12,7 @@ part 'operator_team_account_detail.g.dart';
 )
 class OperatorTeamAccountDetail extends Equatable {
   /// Returns a new [OperatorTeamAccountDetail] instance.
-  OperatorTeamAccountDetail({
+  const OperatorTeamAccountDetail({
     this.name,
     this.teamName,
     this.email,

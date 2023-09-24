@@ -16,7 +16,7 @@ part 'service_detail.g.dart';
 )
 class ServiceDetail extends Equatable {
   /// Returns a new [ServiceDetail] instance.
-  ServiceDetail({
+  const ServiceDetail({
     this.shareServiceSeq,
     this.carName,
     this.carMadeCom,

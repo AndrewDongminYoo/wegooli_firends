@@ -12,7 +12,7 @@ part 'payment_model.g.dart';
 )
 class PaymentModel extends Equatable {
   /// Returns a new [PaymentModel] instance.
-  PaymentModel({
+  const PaymentModel({
     this.paymentKey,
     this.status,
     this.lastTransactionKey,

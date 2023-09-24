@@ -12,7 +12,7 @@ part 'team_model.g.dart';
 )
 class TeamModel extends Equatable {
   /// Returns a new [TeamModel] instance.
-  TeamModel({
+  const TeamModel({
     this.seq,
     this.delYn,
     this.createdAt,

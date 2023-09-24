@@ -16,7 +16,7 @@ part 'user_details_dto.g.dart';
 )
 class UserDetailsDto extends Equatable {
   /// Returns a new [UserDetailsDto] instance.
-  UserDetailsDto({
+  const UserDetailsDto({
     this.userDto,
     this.authorities,
     this.name,

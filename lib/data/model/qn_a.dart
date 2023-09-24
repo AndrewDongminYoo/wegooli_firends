@@ -12,7 +12,7 @@ part 'qn_a.g.dart';
 )
 class QnA extends Equatable {
   /// Returns a new [QnA] instance.
-  QnA({
+  const QnA({
     this.seq,
     this.delYn,
     this.createdAt,

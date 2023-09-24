@@ -12,7 +12,7 @@ part 'team_account_model.g.dart';
 )
 class TeamAccountModel extends Equatable {
   /// Returns a new [TeamAccountModel] instance.
-  TeamAccountModel({
+  const TeamAccountModel({
     this.accountId,
     this.color,
     this.nickname,

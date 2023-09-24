@@ -65,7 +65,10 @@ class JwtDecoder {
     return DateTime.now().isAfter(expirationDate);
   }
 
-  static DateTime? _getDate({required String token, required String claim}) {
+  static DateTime? _getDate({
+    required String token,
+    required String claim,
+  }) {
     final decodedToken = decode(token);
     final expiration = decodedToken[claim] as int?;
     if (expiration == null) {

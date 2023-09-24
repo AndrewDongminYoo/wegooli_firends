@@ -12,7 +12,7 @@ part 'device_option.g.dart';
 )
 class DeviceOption extends Equatable {
   /// Returns a new [DeviceOption] instance.
-  DeviceOption({
+  const DeviceOption({
     this.seq,
     this.optName,
   });

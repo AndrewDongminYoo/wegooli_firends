@@ -12,7 +12,7 @@ part 'pay_billing_request_model.g.dart';
 )
 class PayBillingRequestModel extends Equatable {
   /// Returns a new [PayBillingRequestModel] instance.
-  PayBillingRequestModel({
+  const PayBillingRequestModel({
     this.amount,
     this.customerKey,
     this.orderId,

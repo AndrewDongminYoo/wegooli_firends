@@ -12,7 +12,7 @@ part 'insert_push_request.g.dart';
 )
 class InsertPushRequest extends Equatable {
   /// Returns a new [InsertPushRequest] instance.
-  InsertPushRequest({
+  const InsertPushRequest({
     this.seq,
     this.title,
     this.content,

@@ -12,7 +12,7 @@ part 'account.g.dart';
 )
 class Account extends Equatable {
   /// Returns a new [Account] instance.
-  Account({
+  const Account({
     this.id,
     this.memberSeq,
     this.password,

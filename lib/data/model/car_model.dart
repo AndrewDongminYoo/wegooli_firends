@@ -12,7 +12,7 @@ part 'car_model.g.dart';
 )
 class CarModel extends Equatable {
   /// Returns a new [CarModel] instance.
-  CarModel({
+  const CarModel({
     this.seq,
     this.delYn,
     this.createdAt,

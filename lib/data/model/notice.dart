@@ -12,7 +12,7 @@ part 'notice.g.dart';
 )
 class Notice extends Equatable {
   /// Returns a new [Notice] instance.
-  Notice({
+  const Notice({
     this.seq,
     this.delYn,
     this.createdAt,

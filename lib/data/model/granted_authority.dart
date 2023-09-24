@@ -12,7 +12,7 @@ part 'granted_authority.g.dart';
 )
 class GrantedAuthority extends Equatable {
   /// Returns a new [GrantedAuthority] instance.
-  GrantedAuthority({
+  const GrantedAuthority({
     this.authority,
   });
 

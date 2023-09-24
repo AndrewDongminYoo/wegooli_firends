@@ -1,5 +1,5 @@
 class OverlayRequest<T> {
-  OverlayRequest({
+  const OverlayRequest({
     this.showIconInMainButton,
     this.showIconInSecondaryButton,
     this.showIconInAdditionalButton,
@@ -57,7 +57,7 @@ class OverlayRequest<T> {
 }
 
 class DialogRequest<T> extends OverlayRequest<T> {
-  DialogRequest({
+  const DialogRequest({
     bool? showIconInMainButton,
     bool? showIconInSecondaryButton,
     bool? showIconInAdditionalButton,
@@ -89,7 +89,7 @@ class DialogRequest<T> extends OverlayRequest<T> {
 }
 
 class SheetRequest<T> extends OverlayRequest<T> {
-  SheetRequest({
+  const SheetRequest({
     bool? showIconInMainButton,
     bool? showIconInSecondaryButton,
     bool? showIconInAdditionalButton,

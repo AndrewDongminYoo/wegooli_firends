@@ -15,7 +15,7 @@ part 'team_account_connection_response.g.dart';
 )
 class TeamAccountConnectionResponse extends Equatable {
   /// Returns a new [TeamAccountConnectionResponse] instance.
-  TeamAccountConnectionResponse({
+  const TeamAccountConnectionResponse({
     this.teamSeq,
     this.account,
   });

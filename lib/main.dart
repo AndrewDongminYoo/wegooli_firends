@@ -88,6 +88,7 @@ class _MyAppState extends State<MyApp> {
     super.initState();
     FlutterNativeSplash.remove();
   }
+
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(

@@ -12,7 +12,7 @@ part 'update_user_request.g.dart';
 )
 class UpdateUserRequest extends Equatable {
   /// Returns a new [UpdateUserRequest] instance.
-  UpdateUserRequest({
+  const UpdateUserRequest({
     this.seq,
     this.add1,
     this.add2,

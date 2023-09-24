@@ -12,7 +12,7 @@ part 'account_agreement_request.g.dart';
 )
 class AccountAgreementRequest extends Equatable {
   /// Returns a new [AccountAgreementRequest] instance.
-  AccountAgreementRequest({
+  const AccountAgreementRequest({
     this.classification,
     this.accountId,
     this.agreeYn,

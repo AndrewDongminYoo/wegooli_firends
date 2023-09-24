@@ -12,7 +12,7 @@ part 'insert_notice_request.g.dart';
 )
 class InsertNoticeRequest extends Equatable {
   /// Returns a new [InsertNoticeRequest] instance.
-  InsertNoticeRequest({
+  const InsertNoticeRequest({
     this.seq,
     this.title,
     this.content,

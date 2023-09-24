@@ -12,7 +12,7 @@ part 'question_request.g.dart';
 )
 class QuestionRequest extends Equatable {
   /// Returns a new [QuestionRequest] instance.
-  QuestionRequest({
+  const QuestionRequest({
     this.seq,
     this.category,
     this.title,

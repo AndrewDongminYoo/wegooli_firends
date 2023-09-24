@@ -12,7 +12,7 @@ part 'payment_card_request.g.dart';
 )
 class PaymentCardRequest extends Equatable {
   /// Returns a new [PaymentCardRequest] instance.
-  PaymentCardRequest({
+  const PaymentCardRequest({
     this.memberSeq,
     this.cardNumber,
     this.defaultYn,

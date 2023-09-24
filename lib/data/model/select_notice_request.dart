@@ -12,7 +12,7 @@ part 'select_notice_request.g.dart';
 )
 class SelectNoticeRequest extends Equatable {
   /// Returns a new [SelectNoticeRequest] instance.
-  SelectNoticeRequest({
+  const SelectNoticeRequest({
     this.title,
     this.content,
     this.bm,

@@ -12,7 +12,7 @@ part 'select_sms_request.g.dart';
 )
 class SelectSmsRequest extends Equatable {
   /// Returns a new [SelectSmsRequest] instance.
-  SelectSmsRequest({
+  const SelectSmsRequest({
     this.title,
     this.content,
     this.bm,

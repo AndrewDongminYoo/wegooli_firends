@@ -12,7 +12,7 @@ part 'valid_license_request.g.dart';
 )
 class ValidLicenseRequest extends Equatable {
   /// Returns a new [ValidLicenseRequest] instance.
-  ValidLicenseRequest({
+  const ValidLicenseRequest({
     this.memberSeq,
     this.licenseClass,
     this.licenseArea,

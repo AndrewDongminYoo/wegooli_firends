@@ -12,7 +12,7 @@ part 'select_user_request.g.dart';
 )
 class SelectUserRequest extends Equatable {
   /// Returns a new [SelectUserRequest] instance.
-  SelectUserRequest({
+  const SelectUserRequest({
     this.id,
     this.memberSeq,
     this.name,

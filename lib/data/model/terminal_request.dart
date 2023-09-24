@@ -12,7 +12,7 @@ part 'terminal_request.g.dart';
 )
 class TerminalRequest extends Equatable {
   /// Returns a new [TerminalRequest] instance.
-  TerminalRequest({
+  const TerminalRequest({
     this.seq,
     this.delYn,
     this.createdAt,

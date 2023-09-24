@@ -12,7 +12,7 @@ part 'select_user_dto.g.dart';
 )
 class SelectUserDto extends Equatable {
   /// Returns a new [SelectUserDto] instance.
-  SelectUserDto({
+  const SelectUserDto({
     this.id,
     this.memberSeq,
     this.name,

@@ -13,7 +13,7 @@ part 'upload_image_request.g.dart';
 )
 class UploadImageRequest extends Equatable {
   /// Returns a new [UploadImageRequest] instance.
-  UploadImageRequest({
+  const UploadImageRequest({
     this.file,
   });
 

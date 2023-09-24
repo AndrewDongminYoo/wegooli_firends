@@ -12,7 +12,7 @@ part 'operator_user_model.g.dart';
 )
 class OperatorUserModel extends Equatable {
   /// Returns a new [OperatorUserModel] instance.
-  OperatorUserModel({
+  const OperatorUserModel({
     this.name,
     this.teamName,
     this.accountId,

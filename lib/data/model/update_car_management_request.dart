@@ -12,7 +12,7 @@ part 'update_car_management_request.g.dart';
 )
 class UpdateCarManagementRequest extends Equatable {
   /// Returns a new [UpdateCarManagementRequest] instance.
-  UpdateCarManagementRequest({
+  const UpdateCarManagementRequest({
     this.seq,
     this.carNum,
     this.oilCheckDate,

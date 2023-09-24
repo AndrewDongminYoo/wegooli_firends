@@ -12,7 +12,7 @@ part 'sms.g.dart';
 )
 class Sms extends Equatable {
   /// Returns a new [Sms] instance.
-  Sms({
+  const Sms({
     this.seq,
     this.delYn,
     this.createdAt,

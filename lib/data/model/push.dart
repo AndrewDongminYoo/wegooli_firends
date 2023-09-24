@@ -12,7 +12,7 @@ part 'push.g.dart';
 )
 class Push extends Equatable {
   /// Returns a new [Push] instance.
-  Push({
+  const Push({
     this.seq,
     this.delYn,
     this.createdAt,

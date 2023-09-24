@@ -12,7 +12,7 @@ part 'team_car_connection.g.dart';
 )
 class TeamCarConnection extends Equatable {
   /// Returns a new [TeamCarConnection] instance.
-  TeamCarConnection({
+  const TeamCarConnection({
     this.seq,
     this.teamSeq,
     this.carNum,

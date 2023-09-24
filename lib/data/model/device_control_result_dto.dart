@@ -12,7 +12,7 @@ part 'device_control_result_dto.g.dart';
 )
 class DeviceControlResultDto extends Equatable {
   /// Returns a new [DeviceControlResultDto] instance.
-  DeviceControlResultDto({
+  const DeviceControlResultDto({
     this.userId,
     this.terTelNum,
     this.t42,

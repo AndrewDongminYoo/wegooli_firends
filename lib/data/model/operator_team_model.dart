@@ -12,7 +12,7 @@ part 'operator_team_model.g.dart';
 )
 class OperatorTeamModel extends Equatable {
   /// Returns a new [OperatorTeamModel] instance.
-  OperatorTeamModel({
+  const OperatorTeamModel({
     this.teamName,
     this.add1,
     this.add2,

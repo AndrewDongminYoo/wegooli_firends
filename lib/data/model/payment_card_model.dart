@@ -12,7 +12,7 @@ part 'payment_card_model.g.dart';
 )
 class PaymentCardModel extends Equatable {
   /// Returns a new [PaymentCardModel] instance.
-  PaymentCardModel({
+  const PaymentCardModel({
     this.seq,
     this.delYn,
     this.createdAt,

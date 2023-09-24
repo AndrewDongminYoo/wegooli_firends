@@ -12,7 +12,7 @@ part 'operator_car_request.g.dart';
 )
 class OperatorCarRequest extends Equatable {
   /// Returns a new [OperatorCarRequest] instance.
-  OperatorCarRequest({
+  const OperatorCarRequest({
     this.contract,
     this.address,
     this.carNum,

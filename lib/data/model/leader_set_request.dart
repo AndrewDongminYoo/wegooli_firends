@@ -12,7 +12,7 @@ part 'leader_set_request.g.dart';
 )
 class LeaderSetRequest extends Equatable {
   /// Returns a new [LeaderSetRequest] instance.
-  LeaderSetRequest({
+  const LeaderSetRequest({
     this.userId,
     this.serviceSeq,
     this.maxSub,

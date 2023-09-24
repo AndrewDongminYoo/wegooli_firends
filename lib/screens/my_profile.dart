@@ -52,7 +52,7 @@ class MyProfilePage extends GetWidget<UserController> {
               ],
             )),
       ),
-      bottomNavigationBar: CustomBottomNavBar(),
+      bottomNavigationBar: const CustomBottomNavBar(),
     );
   }
 }

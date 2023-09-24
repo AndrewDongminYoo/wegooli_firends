@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import '/lib.dart';
 
 class RegisterCardButton extends StatelessWidget {
-  RegisterCardButton({
+  const RegisterCardButton({
     super.key,
     required this.focusNode,
   });

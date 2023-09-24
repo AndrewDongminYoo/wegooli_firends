@@ -19,7 +19,7 @@ import '/lib.dart' hide User;
 const withSilentVerificationSMSMFA = true;
 
 class SMSValidationForm extends StatefulWidget {
-  SMSValidationForm({
+  const SMSValidationForm({
     super.key,
     required this.controller,
     required this.focusNode,

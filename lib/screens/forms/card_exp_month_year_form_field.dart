@@ -40,7 +40,7 @@ class CardExpMonthYearFormField extends StatelessWidget {
             }
           }
         },
-        inputFormatters: <TextInputFormatter>[
+        inputFormatters: const <TextInputFormatter>[
           SeperateTextFormatter(sample: 'XX/XX', separator: '/'),
         ],
         filled: true,

@@ -112,7 +112,7 @@ class UserController extends GetxController {
   }
 
   bool registerCreditCardCompleted() => false;
-  bool registerZipCodeCompleted() =>
+  bool get registerZipCodeCompleted =>
       postCode.isNotNullNorEmpty &&
       primaryAddress.isNotNullNorEmpty &&
       // 상세 주소는 생략 허용해도 될 듯. null이 아닌지만 확인.
@@ -127,7 +127,8 @@ class UserController extends GetxController {
 
   /// 로그인
   Future<User> login() async {
-    print('controller.login.username: $username\npassword: $password');
+    print(
+        'controller.login.username: $username\npassword: ${password.obscured}');
     final user = await _service.login(username!, password!);
     if (user is User) {
       currentUser = user;
@@ -176,9 +177,20 @@ class UserController extends GetxController {
         nickname!,
       );
     } on Exception catch (e) {
+      printAllInfo();
       handleException('signUp', e);
       return Future.error(e);
     }
+  }
+
+  void printAllInfo() {
+    print('이름: $koreanName'
+        '주민등록번호:$frontNumbers-$backNumbers'
+        '전화번호: $phoneNumWithHyphen'
+        '주소: ($postCode) $primaryAddress, $detailAddress'
+        '이메일: $username'
+        '비밀번호: ${password.obscured}'
+        '닉네임: $nickname');
   }
 
   AccountAgreementRequest toAccountAgreementModel(Term e) {
@@ -226,11 +238,16 @@ extension UserValidation on User {
           memberSeq!.isGreaterThan(0) &&
           nickname.isNotNullNorEmpty &&
           email.isNotNullNorEmpty &&
-          // isValidEmail(email) &&
-          // isValidPhone(phoneNumber);
-          phoneNumber.isNotNullNorEmpty;
+          isValidEmail(email) &&
+          isValidPhone(phoneNumber);
     } catch (e) {
       return false;
     }
   }
+}
+
+extension on String? {
+  /// 문자열을 마스킹 (psw -> ***)
+  String get obscured =>
+      this == null ? '[empty]' : this!.replaceAll(RegExp('.'), '*');
 }

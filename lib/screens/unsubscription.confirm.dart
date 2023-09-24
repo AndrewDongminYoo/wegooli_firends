@@ -57,7 +57,7 @@ class UnsubscriptionConfirm extends StatelessWidget {
                       ])),
             ],
           )),
-      bottomNavigationBar: CustomBottomNavBar(),
+      bottomNavigationBar: const CustomBottomNavBar(),
     );
   }
 }

@@ -5,24 +5,29 @@ import 'package:flutter/material.dart';
 import '/lib.dart';
 
 class PrimaryAddressFormField extends StatelessWidget {
-  const PrimaryAddressFormField({super.key});
+  const PrimaryAddressFormField({
+    super.key,
+    required this.handler,
+    required this.controller,
+  });
+  final UserController controller;
+  final TextEditingController handler;
 
   @override
   Widget build(BuildContext context) {
-    final controller = UserController.to;
+    handler.addListener(() {
+      if (handler.text.isNotEmpty) {
+        controller.primaryAddress = handler.text;
+      }
+    });
     return CustomTextFormField(
-      initialValue: controller.primaryAddress,
-      onChanged: (String value) {
-        if (value.isNotEmpty) {
-          controller.primaryAddress = value;
-        }
-      },
+      controller: handler,
       enabled: false,
       textInputType: TextInputType.streetAddress,
       autofillHints: const [AutofillHints.addressCityAndState],
       hintText: l10ns.primaryAddress,
       margin: getMargin(top: 10),
-      contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),
+      contentPadding: getPadding(horizontal: 12, vertical: 14),
       textStyle: CustomTextStyles.bodyLargeGray50003,
       hintStyle: CustomTextStyles.bodyLargeGray50003,
       filled: true,

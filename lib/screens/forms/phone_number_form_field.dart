@@ -24,7 +24,7 @@ class PhoneNumberFormField extends StatelessWidget {
       autofillHints: const [AutofillHints.telephoneNumberLocal],
       textInputType: TextInputType.phone,
       contentPadding: getPadding(all: 12),
-      inputFormatters: <TextInputFormatter>[
+      inputFormatters: const <TextInputFormatter>[
         SeperateTextFormatter(sample: 'XXX-XXXX-XXXX', separator: '-'),
       ],
       hintText: '010-1234-5678',

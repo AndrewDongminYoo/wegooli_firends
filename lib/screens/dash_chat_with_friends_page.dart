@@ -82,7 +82,7 @@ class DashChatWithFriendsPage extends StatelessWidget {
           typingUsers: const <ChatUser>[],
         ),
       ),
-      bottomNavigationBar: CustomBottomNavBar(),
+      bottomNavigationBar: const CustomBottomNavBar(),
     );
   }
 }

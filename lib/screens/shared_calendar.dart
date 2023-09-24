@@ -31,7 +31,7 @@ class SharedCalendar extends StatelessWidget {
                   ],
                 )),
           )),
-      bottomNavigationBar: CustomBottomNavBar(),
+      bottomNavigationBar: const CustomBottomNavBar(),
     );
   }
 }

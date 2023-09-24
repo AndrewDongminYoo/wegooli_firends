@@ -6,24 +6,30 @@ import 'package:flutter/services.dart';
 import '/lib.dart';
 
 class PostCodeFormField extends StatelessWidget {
-  const PostCodeFormField({super.key});
+  const PostCodeFormField({
+    super.key,
+    required this.handler,
+    required this.controller,
+  });
+
+  final UserController controller;
+  final TextEditingController handler;
 
   @override
   Widget build(BuildContext context) {
-    final controller = UserController.to;
+    handler.addListener(() {
+      if (handler.text.isNotEmpty) {
+        controller.postCode = handler.text;
+      }
+    });
     return CustomTextFormField(
-      initialValue: controller.postCode,
-      onChanged: (String value) {
-        if (value.isNotEmpty) {
-          controller.postCode = value;
-        }
-      },
+      controller: handler,
       enabled: false,
       autofillHints: const [AutofillHints.postalCode],
       textInputType: TextInputType.number,
       width: 160.h,
       margin: getMargin(top: 4),
-      contentPadding: getPadding(left: 12, top: 14, right: 12, bottom: 14),
+      contentPadding: getPadding(horizontal: 12, vertical: 14),
       validator: (String? value) {
         if (value.isNullOrEmpty) {
           return l10ns.yourZipCodeIsRequired;

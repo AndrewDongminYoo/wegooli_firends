@@ -5,19 +5,25 @@ import 'package:flutter/material.dart';
 import '/lib.dart';
 
 class SignUpFilledInButton extends StatelessWidget {
-  const SignUpFilledInButton({super.key});
+  const SignUpFilledInButton({
+    super.key,
+    required this.controller,
+    required this.focusNode,
+  });
+  final UserController controller;
+  final FocusNode focusNode;
 
   @override
   Widget build(BuildContext context) {
-    final controller = UserController.to;
     return Container(
       margin: getMargin(left: 16, right: 16, bottom: 29),
       child: CustomElevatedButton(
+          focusNode: focusNode,
           text: l10ns.filledIn,
-          isDisabled: !controller.registerZipCodeCompleted(),
-          buttonStyle: !controller.registerZipCodeCompleted()
-              ? CustomButtonStyles.fillAmberA200C26
-              : CustomButtonStyles.fillPrimaryC26,
+          isDisabled: !controller.registerZipCodeCompleted,
+          buttonStyle: controller.registerZipCodeCompleted
+              ? CustomButtonStyles.fillPrimaryC26
+              : CustomButtonStyles.fillAmberA200C26,
           buttonTextStyle: CustomTextStyles.titleMedium18,
           onTap: () async {
             try {

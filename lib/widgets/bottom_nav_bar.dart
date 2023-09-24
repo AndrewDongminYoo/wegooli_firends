@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 import '/lib.dart';
 
 class CustomBottomNavBar extends StatefulWidget {
-  CustomBottomNavBar({Key? key}) : super(key: key);
+  const CustomBottomNavBar({Key? key}) : super(key: key);
 
   @override
   State<CustomBottomNavBar> createState() => _CustomBottomNavBarState();

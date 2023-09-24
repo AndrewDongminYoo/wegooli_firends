@@ -5,12 +5,17 @@ import 'package:flutter/material.dart';
 import '/lib.dart';
 
 class AuthSignInButton extends StatelessWidget {
-  const AuthSignInButton({super.key});
+  const AuthSignInButton({
+    super.key,
+    required this.focusNode,
+  });
+  final FocusNode focusNode;
 
   @override
   Widget build(BuildContext context) {
     final controller = UserController.to;
     return CustomElevatedButton(
+        focusNode: focusNode,
         text: l10ns.signIn,
         margin: getMargin(top: 30),
         buttonStyle: CustomButtonStyles.fillPrimaryC26,

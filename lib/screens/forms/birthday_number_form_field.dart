@@ -6,7 +6,7 @@ import 'package:flutter/services.dart';
 import '/lib.dart';
 
 class BirthdayNumberFormField extends StatelessWidget {
-  BirthdayNumberFormField({
+  const BirthdayNumberFormField({
     super.key,
     required this.readonly,
     required this.focusNode,

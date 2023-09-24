@@ -31,6 +31,9 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+    final focusNode1 = FocusNode();
+    final focusNode2 = FocusNode();
+    final focusNode3 = FocusNode();
     controller.mode = AuthMode.login;
     return SafeArea(
         child: Scaffold(
@@ -46,9 +49,15 @@ class _LoginPageState extends State<LoginPage> {
               child: Column(
                 children: [
                   const FriendsByWegooli(),
-                  UserMailFormField(controller: controller),
-                  PasswordFormField(controller: controller),
-                  const AuthSignInButton(),
+                  UserMailFormField(
+                      focusNode: focusNode1,
+                      nextFocus: focusNode2,
+                      controller: controller),
+                  PasswordFormField(
+                      focusNode: focusNode2,
+                      nextFocus: focusNode3,
+                      controller: controller),
+                  AuthSignInButton(focusNode: focusNode3),
                   Padding(
                       padding: getPadding(top: 57),
                       child: Text(

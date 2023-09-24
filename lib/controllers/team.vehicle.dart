@@ -14,8 +14,8 @@ class VehicleController extends GetxController {
   final _manage = CarManagementService();
   final _service = SubscriptionService();
 
-  late Rx<SubscriptionModel> subscriptionModel = SubscriptionModel().obs;
-  late Rx<CarManagementModel> carManagementModel = CarManagementModel().obs;
+  late Rx<SubscriptionModel> subscriptionModel;
+  late Rx<CarManagementModel> carManagementModel;
 
   late int? _teamSeq;
   int? get teamSeq => _teamSeq;
@@ -66,7 +66,7 @@ class VehicleController extends GetxController {
   TerminalModel get terminalDevice {
     if (_terminalDevice == null) {
       retrieveInfo();
-      return TerminalModel(
+      return const TerminalModel(
         carNum: '', // 12가 3456
         fuelType: 'gasHybrid',
         fuel: '', // 0-100
@@ -108,7 +108,7 @@ class VehicleController extends GetxController {
   ShareServiceModel? _sharingService;
   ShareServiceModel get sharingService {
     if (_sharingService == null) {
-      return ShareServiceModel();
+      return const ShareServiceModel();
     } else {
       return _sharingService!;
     }

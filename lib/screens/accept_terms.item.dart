@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 import '/lib.dart';
 
 class AgreementItem extends StatelessWidget {
-  AgreementItem({
+  const AgreementItem({
     Key? key,
     required this.term,
     required this.onChanged,

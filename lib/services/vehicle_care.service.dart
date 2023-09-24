@@ -14,15 +14,15 @@ class CarManagementService extends GetConnect {
   Future<CarManagementModel> selectCarManagement(int teamSeq) async {
     final response = await statusApi.selectCarManagement(seq: teamSeq);
     final carManagement = response.data;
-    return carManagement ?? CarManagementModel();
+    return carManagement ?? const CarManagementModel();
   }
 
   Future<TerminalModel> retrieveInfo(int? teamSeq) async {
     if (teamSeq == null) {
-      return TerminalModel();
+      return const TerminalModel();
     }
     final terminal = await terminalApi.selectTerminal(seq: teamSeq);
-    return terminal.data ?? TerminalModel();
+    return terminal.data ?? const TerminalModel();
   }
 
   Future<bool> openDoor(String carNumber) async {

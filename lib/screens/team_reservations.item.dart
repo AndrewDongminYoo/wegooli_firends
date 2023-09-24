@@ -8,7 +8,7 @@ import 'package:intl/intl.dart';
 import '/lib.dart';
 
 class TeamReservationsItem extends StatefulWidget {
-  TeamReservationsItem({
+  const TeamReservationsItem({
     super.key,
     required this.schedule,
     required this.controller,

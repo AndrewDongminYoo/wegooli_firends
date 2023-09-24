@@ -82,7 +82,7 @@ class _MyProfileCardListState extends State<MyProfileCardList> {
               ],
             )),
       ),
-      bottomNavigationBar: CustomBottomNavBar(),
+      bottomNavigationBar: const CustomBottomNavBar(),
     );
   }
 }

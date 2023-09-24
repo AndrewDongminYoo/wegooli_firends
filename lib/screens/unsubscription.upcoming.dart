@@ -181,7 +181,7 @@ class UnsubscriptionUpcoming extends GetWidget<VehicleController> {
               ),
             ],
           )),
-      bottomNavigationBar: CustomBottomNavBar(),
+      bottomNavigationBar: const CustomBottomNavBar(),
     );
   }
 

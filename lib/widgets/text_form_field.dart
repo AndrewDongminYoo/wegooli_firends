@@ -11,7 +11,7 @@ import '/lib.dart';
 
 // ignore: must_be_immutable
 class CustomTextFormField extends StatelessWidget {
-  CustomTextFormField({
+  const CustomTextFormField({
     super.key,
     this.alignment,
     this.autofill,
@@ -151,7 +151,7 @@ class CustomTextFormField extends StatelessWidget {
           scribbleEnabled: scribbleEnabled,
           canRequestFocus: canRequestFocus,
           onChanged: onChanged,
-          onEditingComplete: onEditingComplete ?? focusNode?.nextFocus,
+          onEditingComplete: onEditingComplete,
           maxLength: maxLength,
           inputFormatters: inputFormatters ?? [],
           controller: controller,

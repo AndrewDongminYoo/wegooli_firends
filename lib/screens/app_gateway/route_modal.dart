@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 import '/lib.dart';
 
 class RouteModal extends StatelessWidget {
-  RouteModal({
+  const RouteModal({
     super.key,
     this.dialog,
     this.bottomSheet,

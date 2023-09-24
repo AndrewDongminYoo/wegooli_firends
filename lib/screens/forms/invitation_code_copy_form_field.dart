@@ -41,7 +41,8 @@ class InvitationCodeCopyFormField extends StatelessWidget {
       hintText: 'xxxx-xxxx-xxxx-xxxx',
       contentPadding: getPadding(all: 14),
       inputFormatters: <TextInputFormatter>[
-        SeperateTextFormatter(sample: 'XXXX-XXXX-XXXX-XXXX', separator: '-'),
+        const SeperateTextFormatter(
+            sample: 'XXXX-XXXX-XXXX-XXXX', separator: '-'),
         FilteringTextInputFormatter.allow(r'[0-9a-zA-Z\-]'),
       ],
       maxLength: 19,

@@ -1,4 +1,5 @@
 // 🐦 Flutter imports:
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
@@ -9,11 +10,19 @@ import 'package:kpostal/kpostal.dart';
 import '/lib.dart';
 
 class PostCodeSearchButton extends StatelessWidget {
-  const PostCodeSearchButton({super.key});
+  const PostCodeSearchButton({
+    super.key,
+    required this.code,
+    required this.address,
+    required this.controller,
+  });
+
+  final UserController controller;
+  final TextEditingController code;
+  final TextEditingController address;
 
   @override
   Widget build(BuildContext context) {
-    final controller = UserController.to;
     return CustomElevatedButton(
         text: l10ns.addressSearch,
         height: 48.v,
@@ -21,12 +30,21 @@ class PostCodeSearchButton extends StatelessWidget {
         buttonStyle: CustomButtonStyles.fillPrimaryC5,
         buttonTextStyle: theme.textTheme.titleMedium,
         onTap: () async {
-          await Get.to(
-            () => KpostalView(callback: (Kpostal result) {
-              controller.postCode = result.postCode;
-              controller.primaryAddress = result.roadAddress;
-            }),
-          );
+          if (kDebugMode && kIsWeb) {
+            code.text = '06044';
+            address.text = '서울특별시 강남구 학동로3길 9';
+            controller.postCode = '06044';
+            controller.primaryAddress = '서울특별시 강남구 학동로3길 9';
+          } else {
+            await Get.to(
+              () => KpostalView(callback: (Kpostal result) {
+                code.text = result.postCode;
+                address.text = result.roadAddress;
+                controller.postCode = result.postCode;
+                controller.primaryAddress = result.roadAddress;
+              }),
+            );
+          }
         });
   }
 }

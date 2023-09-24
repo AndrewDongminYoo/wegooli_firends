@@ -35,7 +35,7 @@ class NoSubscription extends StatelessWidget {
               ),
             ],
           )),
-      bottomNavigationBar: CustomBottomNavBar(),
+      bottomNavigationBar: const CustomBottomNavBar(),
     );
   }
 }

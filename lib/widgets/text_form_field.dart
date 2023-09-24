@@ -27,6 +27,7 @@ class CustomTextFormField extends StatelessWidget {
     this.margin,
     this.maxLength,
     this.onChanged,
+    this.onEditingComplete,
     this.prefix,
     this.prefixConstraints,
     this.suffix,
@@ -78,6 +79,7 @@ class CustomTextFormField extends StatelessWidget {
   final Alignment? alignment;
   final List<String>? autofillHints;
   final Function(String)? onChanged;
+  final void Function()? onEditingComplete;
 
   final BoxConstraints? prefixConstraints;
   final BoxConstraints? suffixConstraints;
@@ -149,6 +151,7 @@ class CustomTextFormField extends StatelessWidget {
           scribbleEnabled: scribbleEnabled,
           canRequestFocus: canRequestFocus,
           onChanged: onChanged,
+          onEditingComplete: onEditingComplete ?? focusNode?.nextFocus,
           maxLength: maxLength,
           inputFormatters: inputFormatters ?? [],
           controller: controller,

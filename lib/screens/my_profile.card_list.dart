@@ -19,8 +19,8 @@ class _MyProfileCardListState extends State<MyProfileCardList> {
 
   @override
   void initState() {
-    controller.retrieveCards();
     super.initState();
+    controller.retrieveCards();
   }
 
   @override

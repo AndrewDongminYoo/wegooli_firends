@@ -21,13 +21,13 @@ class _SendingInvitationDialogState extends State<SendingInvitationDialog> {
 
   @override
   void initState() {
+    super.initState();
     schedule.getTeamCode().then((teamCode) {
       print('AAA : teamCode : $teamCode');
       if (teamCode != null) {
         currUser.invitation = teamCode;
       }
     });
-    super.initState();
   }
 
   @override

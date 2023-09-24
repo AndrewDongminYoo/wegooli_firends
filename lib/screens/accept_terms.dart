@@ -18,9 +18,9 @@ class _AcceptTermsState extends State<AcceptTerms> {
 
   @override
   void initState() {
+    super.initState();
     allTerms = controller.terms;
     requiredTerms = controller.terms.where((term) => !term.opt).toList();
-    super.initState();
   }
 
   bool allTermsAccepted() {

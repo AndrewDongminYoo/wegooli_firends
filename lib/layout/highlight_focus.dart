@@ -47,8 +47,8 @@ class _HighlightFocusState extends State<HighlightFocus> {
 
   @override
   void initState() {
-    isFocused = false;
     super.initState();
+    isFocused = false;
   }
 
   @override

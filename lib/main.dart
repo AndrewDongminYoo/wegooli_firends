@@ -75,10 +75,19 @@ Future<void> main() async {
 
 /// 애플리케이션 엔트리포인트.
 /// [MaterialApp]을 반환합니다.
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
-  static final RouteObserver<PageRoute> routeObserver =
-      RouteObserver<PageRoute>();
+  static final routeObserver = RouteObserver<PageRoute>();
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  void initState() {
+    super.initState();
+    FlutterNativeSplash.remove();
+  }
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(

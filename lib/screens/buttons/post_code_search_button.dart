@@ -22,13 +22,10 @@ class PostCodeSearchButton extends StatelessWidget {
         buttonTextStyle: theme.textTheme.titleMedium,
         onTap: () async {
           await Get.to(
-            () => KpostalView(
-                useLocalServer: true,
-                localPort: 1024,
-                callback: (Kpostal result) {
-                  controller.postCode = result.postCode;
-                  controller.primaryAddress = result.roadAddress;
-                }),
+            () => KpostalView(callback: (Kpostal result) {
+              controller.postCode = result.postCode;
+              controller.primaryAddress = result.roadAddress;
+            }),
           );
         });
   }

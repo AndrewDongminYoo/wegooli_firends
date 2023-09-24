@@ -214,7 +214,7 @@ class _SMSValidationFormState extends State<SMSValidationForm> {
                   focusNode: widget.focusNode,
                   initialValue: controller.pinCodes,
                   onChanged: (String value) {
-                    if (controller.pinCodes!.length >= 6) {
+                    if (value.length >= 6) {
                       setState(() {
                         controller.pinCodes = value;
                         widget.nextFocus.requestFocus();

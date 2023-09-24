@@ -11,36 +11,36 @@ author:
 [![likes](https://badges.bar/kpostal/likes)](https://pub.dev/packages/kpostal/score)
 
 [![English](https://img.shields.io/badge/Language-English-9cf?style=for-the-badge)](https://github.com/tykann/kpostal/blob/main/README.md)
-[![Korean](https://img.shields.io/badge/Language-Korean-9cf?style=for-the-badge)](https://github.com/tykann/kpostal/blob/main/README.ko-kr.md)
+[![한국어](https://img.shields.io/badge/Language-Korean-9cf?style=for-the-badge)](https://github.com/tykann/kpostal/blob/main/README.ko-kr.md)
 
-Kpostal package can search for Korean postal addresses using [Kakao postcode service](https://postcode.map.daum.net/guide).
-This package is inspired by [Kopo](https://pub.dev/packages/kopo) package that is discontinued.
+[카카오 우편번호 서비스](https://postcode.map.daum.net/guide)를 이용해 한국 우편 주소를 검색할 수 있는 Kpostal 패키지입니다.
+이 패키지는 단종된 [Kopo](https://pub.dev/packages/kopo) 패키지를 모티브로 제작되었습니다.
 
-By default, it uses the Address Search page hosted on Github.
-It's the easiest way to use it.
+기본적으로 깃허브에 호스팅된 주소 검색 페이지를 사용합니다.
+가장 쉽게 사용할 수 있는 방법입니다.
 
-To respond to errors that arise from hosting problems, **it also supports hosting local server.**
+호스팅 문제로 발생하는 오류에 대응하기 위해 **로컬 서버 호스팅도 지원합니다**.
 
-Kpostal also provides latitude, longitude of the address. It uses the free Geocoding services provided by the iOS and Android platforms. This means that there are restrictions to their use. More information can be found in the [Apple documentation for iOS](https://developer.apple.com/documentation/corelocation/clgeocoder) and the [Google documentation for Android](https://developer.android.com/reference/android/location/Geocoder) and the [geocoding](https://pub.dev/packages/geocoding) plugin. **If you use [kakao maps api](https://apis.map.kakao.com/web/guide/), you can also get a kakao geocoding value.**
+Kpostal은 주소의 위도, 경도도 제공합니다. iOS 및 Android 플랫폼에서 제공하는 무료 지오코딩 서비스를 사용합니다. 이는 사용에 제한이 있음을 의미합니다. 자세한 내용은 [iOS용 애플 문서](https://developer.apple.com/documentation/corelocation/clgeocoder), [안드로이드용 구글 문서](https://developer.android.com/reference/android/location/Geocoder) 및 [geocoding](https://pub.dev/packages/geocoding) 플러그인에서 확인할 수 있습니다. **[카카오맵 API](https://apis.map.kakao.com/web/guide/)를 이용하면 카카오 지오코딩 값도 얻을 수 있습니다.**
 
-Support Null-Safety!
+Null-Safety 지원!
 
 ![kpostal](https://tykann.github.io/kpostal/assets/screenshot.png)
 
-Add kpostal to your pubspec.yaml file:
+pubspec.yaml 파일에 kpostal을 추가합니다:
 
 ```yaml
 dependencies:
   kpostal:
 ```
 
-**🧑🏻💻 Neither iOS nor Android requires any action when using default hosting.**
+**🧑🏻💻 기본 호스팅을 사용할 때 iOS나 Android 모두 아무런 조치가 필요하지 않습니다.**
 
-If you use the \[useLocalServer\] option to host a local server, you should make the platform specific settings required for http communication.
+로컬 서버를 호스팅하기 위해 [useLocalServer] 옵션을 사용하는 경우, http 통신에 필요한 플랫폼별 설정을 해야 합니다.
 
-## Android [#](https://pub.dev/packages/kpostal#android)
+## 안드로이드 [#](https://pub.dev/packages/kpostal#android)
 
-Add `android:usesClearextTraffic="true"` to
+android:usesClearextTraffic="true"`를
 
 ```dart
 <application
@@ -54,7 +54,7 @@ Add `android:usesClearextTraffic="true"` to
 </application>
 ```
 
-Add `NSAppTransportSecurity` to info.plist file.
+info.plist 파일에 `NSAppTransportSecurity`를 추가합니다.
 
 ```dart
 <plist version="1.0">
@@ -70,18 +70,18 @@ Add `NSAppTransportSecurity` to info.plist file.
 </plist>
 ```
 
-1. Go to [Kakao Developer Site](https://developers.kakao.com/)
-2. Register developer and create app
-3. Add Web Platform: Select App – \[Platform\] – \[Web Platform Registration\] – Site Domain Registration
-4. Register Site Domain: Select the Web platform, and register Site Domain.
-   - default, use `https://tykann.github.io`
-   - if you use local server, use `http://localhost:{your port, default is 8080}`
-5. Use the JavaScript key at the top of the page as the app key for the map API.
+1. [카카오 개발자 사이트](https://developers.kakao.com/)로 이동합니다.
+2. 개발자 등록 및 앱 생성
+3. 웹 플랫폼 추가를 선택합니다: [앱] - [플랫폼] - [웹 플랫폼 등록] - [사이트 도메인 등록] 선택
+4. 사이트 도메인 등록하기: 웹 플랫폼을 선택하고 사이트 도메인을 등록합니다.
+   - 기본값은 `https://tykann.github.io`을 사용합니다.
+   - 로컬 서버를 사용하는 경우 `http://localhost:{사용자 포트, 기본값은 8080}`을 사용합니다.
+5. 페이지 상단의 자바스크립트 키를 지도 API의 앱 키로 사용합니다.
 
 ```dart
 import 'package:kpostal/kpostal.dart';
 
-// Use callback.
+// 콜백을 사용합니다.
 TextButton(
     onPressed: () async {
         await Navigator.push(context, MaterialPageRoute(
@@ -95,7 +95,7 @@ TextButton(
     child: Text('Search!'),
 ),
 
-// Not use callback.
+// 콜백을 사용하지 않습니다.
 TextButton(
     onPressed: () async {
         Kpostal result = await Navigator.push(context, MaterialPageRoute(builder: (_) => KpostalView()));
@@ -104,11 +104,11 @@ TextButton(
     child: Text('Search!'),
 ),
 
-// Use local server.
+// 로컬 서버를 사용합니다.
 KpostalView(
-    useLocalServer: true, // default is false
-    localPort: 8080, // default is 8080
-    kakaoKey: '{your kakao developer app\'s JS key}' // if not declared, only use platform's geocoding
+    useLocalServer: true, // 기본값은 false입니다.
+    localPort: 8080, // 기본값은 8080입니다.
+    kakaoKey: '{귀사의 카카오 개발자 앱의 JS 키}' // 선언되지 않은 경우 플랫폼의 지오코딩만 사용
     callback: ...
 )
 ```

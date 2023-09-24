@@ -138,6 +138,10 @@ class $AssetsImagesGen {
   AssetGenImage get imgGooli5 =>
       const AssetGenImage('assets/images/img_gooli_5.png');
 
+  /// File path: assets/images/my_wegooli.png
+  AssetGenImage get myWegooli =>
+      const AssetGenImage('assets/images/my_wegooli.png');
+
   /// File path: assets/images/placeholder_01.png
   AssetGenImage get placeholder01 =>
       const AssetGenImage('assets/images/placeholder_01.png');
@@ -165,6 +169,7 @@ class $AssetsImagesGen {
         imgGooli3,
         imgGooli4,
         imgGooli5,
+        myWegooli,
         placeholder01,
         placeholder02,
         placeholder03,

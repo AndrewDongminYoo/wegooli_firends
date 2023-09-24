@@ -1,6 +1,9 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+// 📦 Package imports:
+import 'package:get/get.dart';
+
 // 🌎 Project imports:
 import '/lib.dart';
 
@@ -78,16 +81,18 @@ class RegisterPhone extends StatelessWidget {
       // ValidatePhoneCompleteButton
       bottomNavigationBar: Container(
         margin: getMargin(left: 16, right: 16, bottom: 29),
-        child: CustomElevatedButton(
-          focusNode: _complete,
-          text: l10ns.authenticationComplete, // '인증 완료'
-          isDisabled: !controller.phoneAuthCompleted(),
-          buttonStyle: controller.phoneAuthCompleted()
-              ? CustomButtonStyles.fillPrimaryC26
-              : CustomButtonStyles.fillAmberA200C26,
-          buttonTextStyle: CustomTextStyles.titleMedium18,
-          onTap: goRegisterZipCode,
-        ),
+        child: Obx(() {
+          return CustomElevatedButton(
+            focusNode: _complete,
+            text: l10ns.authenticationComplete, // '인증 완료'
+            isDisabled: !controller.phoneAuthCompleted,
+            buttonStyle: controller.phoneAuthCompleted
+                ? CustomButtonStyles.fillPrimaryC26
+                : CustomButtonStyles.fillAmberA200C26,
+            buttonTextStyle: CustomTextStyles.titleMedium18,
+            onTap: goRegisterZipCode,
+          );
+        }),
       ),
     );
   }

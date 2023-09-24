@@ -63,7 +63,7 @@ class UserController extends GetxController {
 
   List<AccountAgreementRequest> agreement = [];
 
-  bool phoneAuthCompleted() {
+  bool get phoneAuthCompleted {
     try {
       return koreanName.isNotNullNorEmpty &&
           frontNumbers.isNotNullNorEmpty &&

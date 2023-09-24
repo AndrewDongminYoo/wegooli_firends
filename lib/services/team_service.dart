@@ -15,7 +15,7 @@ class TeamService extends GetConnect {
       // print('findTeamBySeq : ${response.data}');
       return response.data!;
     } on Exception catch (e) {
-      printDioException('findTeamBySeqOrNull', e);
+      handleException('findTeamBySeqOrNull', e);
     }
     return null;
   }

@@ -22,7 +22,7 @@ class LicenseRegionDropdown extends StatelessWidget {
         filled: true,
         fillColor: Colors.white,
         contentPadding: getPadding(left: 10, top: 14, bottom: 14),
-        onChanged: (SelectionPopupModel? value) {
+        onChanged: (DropdownData? value) {
           if (value != null) {
             licenseRegions.onSelected(value);
             controller.licenseRegion = value;

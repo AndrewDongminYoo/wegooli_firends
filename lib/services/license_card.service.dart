@@ -36,7 +36,7 @@ class LicenseCardService extends GetConnect {
         throw CustomException('운전면허 번호 등록에 실패했습니다. 다시 시도해주세요.');
       }
     } on Exception catch (e) {
-      printDioException('isValidLicense', e);
+      handleException('isValidLicense', e);
       return -1;
     }
   }
@@ -63,7 +63,7 @@ class LicenseCardService extends GetConnect {
         throw CustomException('운전면허 번호 유효성 검사에 실패했습니다. 다시 시도해주세요.');
       }
     } on Exception catch (e) {
-      printDioException('isValidLicense', e);
+      handleException('isValidLicense', e);
       return false;
     }
   }

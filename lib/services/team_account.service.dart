@@ -17,7 +17,7 @@ class TeamAccountService extends GetConnect {
       // print('findTeams : ${response.data}');
       return response.data!;
     } on Exception catch (e) {
-      printDioException('findTeams', e);
+      handleException('findTeams', e);
       print('`findTeams()` 호출 중 Exception 발생: $e\n');
     }
     return List.empty();
@@ -30,7 +30,7 @@ class TeamAccountService extends GetConnect {
       // print('findFirstTeamOrNull : ${teams.firstOrNull}');
       return teams.firstOrNull;
     } on Exception catch (e) {
-      printDioException('findFirstTeamOrNull', e);
+      handleException('findFirstTeamOrNull', e);
     }
     return null;
   }
@@ -43,7 +43,7 @@ class TeamAccountService extends GetConnect {
           ? List.empty()
           : teamOrNull.account ?? List.empty();
     } on Exception catch (e) {
-      printDioException('findMembers', e);
+      handleException('findMembers', e);
     }
     return List.empty();
   }

@@ -4,7 +4,7 @@ import 'package:dio/dio.dart';
 // 🌎 Project imports:
 import '/lib.dart';
 
-CustomException printDioException(String functionName, Exception e) {
+CustomException handleException(String functionName, Exception e) {
   if (e is DioException) {
     final message = switch (e.type) {
       DioExceptionType.connectionError => e.message ?? '연결 오류가 발생했습니다.',

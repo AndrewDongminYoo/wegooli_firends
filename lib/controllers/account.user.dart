@@ -106,7 +106,7 @@ class UserController extends GetxController {
     _state = value;
   }
 
-  void setDropdownItem(SelectionPopupModel value) {
+  void setDropdownItem(DropdownData value) {
     print('Dropdown Selected ==> ${value.title}');
     telecom = value.title;
   }
@@ -150,10 +150,11 @@ class UserController extends GetxController {
     agreement = terms.map(toAccountAgreementModel).toList();
     print(agreement);
     try {
-      await _service.sendAcceptanceRequest(agreement);
+      final result = await _service.sendAcceptanceRequest(agreement);
+      print('Send Acceptance Request 등록 결과\n: $result');
     } on Exception catch (e) {
       print('Send Acceptance Request 등록 실패\n $e');
-      printDioException('acceptanceComplete', e);
+      handleException('acceptanceComplete', e);
       await PrefUtils.saveAgreements(terms);
     }
     await goPhoneAuth();
@@ -175,7 +176,7 @@ class UserController extends GetxController {
         nickname!,
       );
     } on Exception catch (e) {
-      printDioException('signUp', e);
+      handleException('signUp', e);
       return Future.error(e);
     }
   }

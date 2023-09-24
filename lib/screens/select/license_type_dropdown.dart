@@ -11,10 +11,10 @@ class LicenseTypeDropdown extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = LicenseController.to;
     final licenseTypes = [
-      SelectionPopupModel(id: 1, title: '1종 보통면허'),
-      SelectionPopupModel(id: 2, title: '2종 보통면허'),
-      SelectionPopupModel(id: 3, title: '1종 대형면허'),
-      SelectionPopupModel(id: 4, title: '2종 오토면허'),
+      DropdownData(id: 1, title: '1종 보통면허'),
+      DropdownData(id: 2, title: '2종 보통면허'),
+      DropdownData(id: 3, title: '1종 대형면허'),
+      DropdownData(id: 4, title: '2종 오토면허'),
     ];
     return CustomDropDown(
         icon: Container(
@@ -27,7 +27,7 @@ class LicenseTypeDropdown extends StatelessWidget {
         filled: true,
         fillColor: Colors.white,
         contentPadding: getPadding(left: 10, top: 14, bottom: 14),
-        onChanged: (SelectionPopupModel? value) {
+        onChanged: (DropdownData? value) {
           if (value != null) {
             licenseTypes.onSelected(value);
             controller.licenseType = value;

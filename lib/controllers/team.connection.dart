@@ -11,11 +11,6 @@ import '/lib.dart' hide User;
 /// [ConnectionController] 클래스는 Sendbird 채팅 서비스와의 연결 및 통신을 관리하고,
 /// 이벤트와 메시지를 처리하며, 채팅 메시지를 보내고 받는 방법을 제공하는 역할을 담당 (내부 API와 연결되어 있지 않음).
 class ConnectionController extends GetxController with ChannelEventHandler {
-  // ignore: prefer_constructors_over_static_methods
-  static ConnectionController get to => Get.isRegistered<ConnectionController>()
-      ? Get.find<ConnectionController>()
-      : Get.put(ConnectionController());
-
   final String appId = dotenv.get('SENDBIRD_APPKEY');
   final RxList<BaseMessage> _messages = RxList<BaseMessage>();
   GroupChannel? channel;
@@ -26,21 +21,25 @@ class ConnectionController extends GetxController with ChannelEventHandler {
 
   @override
   void onInit() {
-    SendbirdSdk().addChannelEventHandler('dashchat', this);
-    final controller = ScheduleController.to;
-    final userId = goolier.id;
-    print('appId: $appId, userId: $userId');
-    final otherMembers = controller.members
-        .map((member) => member.accountId!)
-        .where((id) => id != goolier.id)
-        .toList();
-    print('otherMembers is $otherMembers');
-    if (otherMembers.isNotEmpty) {
-      loadSendbird(appId, goolier.id!, otherMembers);
-    } else {
-      // TODO: 채팅할 멤버가 없는 경우 동작 수행
-      // goTeamInvitation();
-      // goSharedSchedule();
+    try {
+      SendbirdSdk().addChannelEventHandler('dashchat', this);
+      final controller = ScheduleController.to;
+      final userId = goolier.id;
+      print('appId: $appId, userId: $userId');
+      final otherMembers = controller.members
+          .map((member) => member.accountId!)
+          .where((id) => id != goolier.id)
+          .toList();
+      print('otherMembers is $otherMembers');
+      if (otherMembers.isNotEmpty) {
+        loadSendbird(appId, goolier.id!, otherMembers);
+      } else {
+        // TODO: 채팅할 멤버가 없는 경우 동작 수행
+        // goTeamInvitation();
+        // goSharedSchedule();
+      }
+    } on Exception catch (e) {
+      handleException('SendbirdSdk init', e);
     }
     super.onInit();
   }

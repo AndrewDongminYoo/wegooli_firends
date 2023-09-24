@@ -11,12 +11,12 @@ class TelecomDropdown extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = UserController.to;
     final telecoms = [
-      SelectionPopupModel(id: 01, title: 'KT', value: MobileCarrier.KT),
-      SelectionPopupModel(id: 02, title: 'LG U+', value: MobileCarrier.LGU),
-      SelectionPopupModel(id: 03, title: 'SKT', value: MobileCarrier.SKT),
-      SelectionPopupModel(id: 04, title: 'LG헬로모바일', value: MobileCarrier.HELLO),
-      SelectionPopupModel(id: 05, title: '티플러스', value: MobileCarrier.KCT),
-      SelectionPopupModel(id: 06, title: 'SK7모바일', value: MobileCarrier.SK7),
+      DropdownData(id: 01, title: 'KT', value: MobileCarrier.KT),
+      DropdownData(id: 02, title: 'LG U+', value: MobileCarrier.LGU),
+      DropdownData(id: 03, title: 'SKT', value: MobileCarrier.SKT),
+      DropdownData(id: 04, title: 'LG헬로모바일', value: MobileCarrier.HELLO),
+      DropdownData(id: 05, title: '티플러스', value: MobileCarrier.KCT),
+      DropdownData(id: 06, title: 'SK7모바일', value: MobileCarrier.SK7),
     ];
     return CustomDropDown(
         width: 128.h,
@@ -28,7 +28,7 @@ class TelecomDropdown extends StatelessWidget {
         textStyle: CustomTextStyles.bodyLargeGray500,
         fillColor: Colors.white,
         contentPadding: getPadding(left: 10, right: 5, top: 14, bottom: 14),
-        onChanged: (SelectionPopupModel? value) {
+        onChanged: (DropdownData? value) {
           if (value != null) {
             telecoms.onSelected(value);
             controller.telecom = value.title;

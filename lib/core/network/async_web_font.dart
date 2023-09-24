@@ -35,7 +35,7 @@ Future<ByteData> _fetchFont(String url) async {
           'Failed to load font with code: ${response.statusCode}, error: ${response.statusMessage}');
     }
   } on Exception catch (e) {
-    throw printDioException('_fetchFont', e);
+    throw handleException('_fetchFont', e);
   } catch (e) {
     throw CustomException(e.toString());
   }

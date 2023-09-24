@@ -25,7 +25,7 @@ class SignUpFilledInButton extends StatelessWidget {
               await controller.acceptanceComplete();
               await goRegisterLicense();
             } on Exception catch (e) {
-              printDioException('SignUpFilledInButton.onTap', e);
+              handleException('SignUpFilledInButton.onTap', e);
             }
           }),
     );

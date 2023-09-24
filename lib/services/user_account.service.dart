@@ -70,15 +70,15 @@ class UserAccountService extends GetConnect {
       final payload = JwtDecoder.decode(token);
       return User.fromJson(payload);
     } on Exception catch (e) {
-      throw printDioException('login', e);
+      throw handleException('login', e);
     }
   }
 
-  Future<String> logOut() async {
+  Future<String?> logOut() async {
     final response = await api.logOut();
     print('response: $response');
     print('response.data: ${response.data}');
-    return response.data ?? 'logout failed';
+    return response.data;
   }
 
   Future<bool> signOut(String accountId) async {
@@ -87,12 +87,12 @@ class UserAccountService extends GetConnect {
     return response.data ?? false;
   }
 
-  Future<String> sendAcceptanceRequest(
+  Future<String?> sendAcceptanceRequest(
       List<AccountAgreementRequest> request) async {
     final response =
         await api2.insertAccountAgreementList(accountAgreementRequest: request);
     print('response: $response');
-    return response.data ?? 'accept terms of use failed. do it later, btw.';
+    return response.data;
   }
 
   List<String> placeholders = [

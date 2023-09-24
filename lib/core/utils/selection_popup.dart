@@ -3,8 +3,8 @@ import 'package:get/get_rx/get_rx.dart';
 
 /// SelectionPopupModel is common model
 /// used for setting data into dropdowns
-class SelectionPopupModel {
-  SelectionPopupModel({
+class DropdownData {
+  DropdownData({
     this.id,
     required this.title,
     this.value,
@@ -16,8 +16,8 @@ class SelectionPopupModel {
   bool isSelected;
 }
 
-extension SelectedModel on List<SelectionPopupModel> {
-  void onSelected(SelectionPopupModel value) {
+extension SelectedModel on List<DropdownData> {
+  void onSelected(DropdownData value) {
     for (final element in this) {
       element.isSelected = false;
       if (element.id == value.id) {
@@ -27,8 +27,8 @@ extension SelectedModel on List<SelectionPopupModel> {
   }
 }
 
-extension SelectedObservable on Rx<List<SelectionPopupModel>> {
-  void onSelected(SelectionPopupModel value) {
+extension SelectedObservable on Rx<List<DropdownData>> {
+  void onSelected(DropdownData value) {
     for (final element in this.value) {
       element.isSelected = false;
       if (element.id == value.id) {

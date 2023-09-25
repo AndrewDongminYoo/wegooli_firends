@@ -4,9 +4,6 @@ import 'package:flutter/material.dart';
 // 📦 Package imports:
 import 'package:get/get.dart';
 
-// 🌎 Project imports:
-import '/lib.dart';
-
 class LoadingDialog {
   static bool isProgressVisible = false;
 
@@ -35,7 +32,7 @@ class LoadingDialog {
   /// 모달을 숨기면 [isProgressVisible] 플래그가 `false`로 설정됩니다.
   static void hideProgressDialog() {
     if (isProgressVisible) {
-      goBack();
+      Get.back();
     }
     isProgressVisible = false;
   }

@@ -1,7 +1,7 @@
 // 📦 Package imports:
 import 'package:get/get_rx/get_rx.dart';
 
-/// SelectionPopupModel is common model
+/// DropdownData is common model
 /// used for setting data into dropdowns
 class DropdownData {
   DropdownData({

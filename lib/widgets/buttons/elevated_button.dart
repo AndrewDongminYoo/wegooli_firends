@@ -32,7 +32,6 @@ class CustomElevatedButton extends BaseButton {
             width: width,
             alignment: alignment,
             margin: margin);
-
   final BoxDecoration? decoration;
   final FocusNode? focusNode;
   final Widget? leftIcon;
@@ -48,7 +47,8 @@ class CustomElevatedButton extends BaseButton {
     return alignment != null
         ? Align(
             alignment: alignment ?? Alignment.center,
-            child: buildElevatedButtonWidget)
+            child: buildElevatedButtonWidget,
+          )
         : buildElevatedButtonWidget;
   }
 
@@ -60,13 +60,7 @@ class CustomElevatedButton extends BaseButton {
       child: ElevatedButton(
           focusNode: focusNode,
           style: buttonStyle ?? CustomButtonStyles.fillPrimaryC26,
-          onPressed: () {
-            if (isDisabled || isLoading) {
-              return;
-            } else {
-              onTap!();
-            }
-          },
+          onPressed: isDisabled ? null : onTap!,
           child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
             leftIcon ?? const SizedBox.shrink(),
             if (isLoading)

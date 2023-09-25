@@ -18,19 +18,12 @@ class CustomFloatingButton extends StatelessWidget {
   }) : super(key: key);
 
   final Alignment? alignment;
-
   final EdgeInsetsGeometry? margin;
-
   final Color? backgroundColor;
-
   final VoidCallback? onTap;
-
   final double? width;
-
   final double? height;
-
   final BoxDecoration? decoration;
-
   final Widget? child;
 
   @override
@@ -51,11 +44,19 @@ class CustomFloatingButton extends StatelessWidget {
             height: height ?? 0,
             decoration: decoration ??
                 BoxDecoration(
-                  color: theme.colorScheme.primary,
-                  borderRadius: BorderRadius.circular(35.h),
+                  color: theme.colorScheme.onPrimaryContainer,
+                  borderRadius: BorderRadius.circular(22.h),
                 ),
             child: child,
           ),
         ),
+      );
+}
+
+/// Extension on [CustomFloatingButton] to facilitate inclusion of all types of border style etc
+extension FloatingButtonStyleHelper on CustomFloatingButton {
+  static BoxDecoration get fillPrimary => BoxDecoration(
+        color: theme.colorScheme.primary,
+        borderRadius: BorderRadius.circular(35.h),
       );
 }

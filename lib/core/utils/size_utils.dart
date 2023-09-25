@@ -30,18 +30,6 @@ num get _height {
   return screenHeight;
 }
 
-@Deprecated('Use Extension method h on num')
-double getHorizontalSize(double px) => px.h;
-
-@Deprecated('Use Extension method v on num')
-double getVerticalSize(double px) => px.v;
-
-@Deprecated('Use Extension method adaptSize on num')
-double getSize(double px) => px.adaptSize;
-
-@Deprecated('Use Extension method fSize on num')
-double getFontSize(double px) => px.fSize;
-
 extension ResponsiveExtension on num {
   /// 이 메서드는 뷰포트 너비에 따라 화면 또는 위젯의 패딩/여백(왼쪽 및 오른쪽)과 너비를 설정하는 데 사용됩니다.
   double get h => (this * _width) / FIGMA_DESIGN_WIDTH;
@@ -67,7 +55,7 @@ EdgeInsets getPadding({
   double? vertical,
   double? horizontal,
 }) {
-  return getMarginOrPadding(
+  return _getEdgeInsets(
     all: all,
     left: left,
     top: top,
@@ -88,7 +76,7 @@ EdgeInsets getMargin({
   double? vertical,
   double? horizontal,
 }) {
-  return getMarginOrPadding(
+  return _getEdgeInsets(
     all: all,
     left: left,
     top: top,
@@ -100,7 +88,7 @@ EdgeInsets getMargin({
 }
 
 /// 이 방법은 패딩이나 여백을 반응형으로 가져오는 데 사용됩니다.
-EdgeInsets getMarginOrPadding({
+EdgeInsets _getEdgeInsets({
   double? all,
   double? left,
   double? top,
@@ -114,21 +102,21 @@ EdgeInsets getMarginOrPadding({
     top ??= all;
     right ??= all;
     bottom ??= all;
-  }
-  if (vertical != null) {
-    top ??= vertical;
-    bottom ??= vertical;
-  }
-  if (horizontal != null) {
-    left ??= horizontal;
-    right ??= horizontal;
+  } else {
+    if (vertical != null) {
+      top ??= vertical;
+      bottom ??= vertical;
+    }
+    if (horizontal != null) {
+      left ??= horizontal;
+      right ??= horizontal;
+    }
   }
   return EdgeInsets.only(
-    left: (left ?? 0).h,
-    top: (top ?? 0).v,
-    right: (right ?? 0).h,
-    bottom: (bottom ?? 0).v,
-  );
+      left: (left ?? 0).h,
+      top: (top ?? 0).v,
+      right: (right ?? 0).h,
+      bottom: (bottom ?? 0).v);
 }
 
 extension on double {

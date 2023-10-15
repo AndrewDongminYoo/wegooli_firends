@@ -1,0 +1,8 @@
+import 'package:equatable/equatable.dart';import 'package:flutter/material.dart';import '/core/app_export.dart';import '../models/listaddphotoalt_item_model.dart';import 'package:wegooli_friends_app/presentation/mypage_contact_us_1_1_contact_us_screen/models/mypage_contact_us_1_1_contact_us_model.dart';part 'mypage_contact_us_1_1_contact_us_event.dart';part 'mypage_contact_us_1_1_contact_us_state.dart';/// A bloc that manages the state of a MypageContactUs11ContactUs according to the event that is dispatched to it.
+class MypageContactUs11ContactUsBloc extends Bloc<MypageContactUs11ContactUsEvent, MypageContactUs11ContactUsState> {MypageContactUs11ContactUsBloc(MypageContactUs11ContactUsState initialState) : super(initialState) { on<MypageContactUs11ContactUsInitialEvent>(_onInitialize); on<ChangeDropDownEvent>(_changeDropDown); }
+
+_changeDropDown(ChangeDropDownEvent event, Emitter<MypageContactUs11ContactUsState> emit, ) { emit(state.copyWith(selectedDropDownValue: event.value)); } 
+List<SelectionPopupModel> fillDropdownItemList() { return [SelectionPopupModel(id: 1, title: "Item One", isSelected: true), SelectionPopupModel(id: 2, title: "Item Two"), SelectionPopupModel(id: 3, title: "Item Three")]; } 
+List<ListaddphotoaltItemModel> fillListaddphotoaltItemList() { return List.generate(5, (index) => ListaddphotoaltItemModel()); } 
+_onInitialize(MypageContactUs11ContactUsInitialEvent event, Emitter<MypageContactUs11ContactUsState> emit, ) async  { emit(state.copyWith(groupSixtyFiveController: TextEditingController())); emit(state.copyWith(mypageContactUs11ContactUsModelObj: state.mypageContactUs11ContactUsModelObj?.copyWith(dropdownItemList: fillDropdownItemList(), listaddphotoaltItemList: fillListaddphotoaltItemList()))); } 
+ }

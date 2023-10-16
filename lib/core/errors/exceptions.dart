@@ -10,7 +10,7 @@ class CacheException implements Exception {}
 
 class NetworkException implements Exception {}
 
-///can be used for throwing [NoInternetException]
+/// can be used for throwing [NoInternetException]
 class NoInternetException implements Exception {
   NoInternetException([String message = 'NoInternetException Occurred']) {
     if (globalMessengerKey.currentState != null) {

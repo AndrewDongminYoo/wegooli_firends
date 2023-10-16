@@ -3,7 +3,7 @@
 part of 'add_an_appointment_end_expanded_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///AddAnAppointmentEndExpanded widget.
+/// AddAnAppointmentEndExpanded widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable
@@ -16,7 +16,7 @@ class AddAnAppointmentEndExpandedInitialEvent
   List<Object?> get props => [];
 }
 
-///event for dropdown selection
+/// event for dropdown selection
 class ChangeDropDownEvent extends AddAnAppointmentEndExpandedEvent {
   ChangeDropDownEvent({required this.value});
 
@@ -28,7 +28,7 @@ class ChangeDropDownEvent extends AddAnAppointmentEndExpandedEvent {
       ];
 }
 
-///event for dropdown selection
+/// event for dropdown selection
 class ChangeDropDown1Event extends AddAnAppointmentEndExpandedEvent {
   ChangeDropDown1Event({required this.value});
 

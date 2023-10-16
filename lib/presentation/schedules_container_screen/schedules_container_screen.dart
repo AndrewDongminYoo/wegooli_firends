@@ -44,7 +44,7 @@ class SchedulesContainerScreen extends StatelessWidget {
     });
   }
 
-  ///Handling page based on route
+  /// Handling page based on route
   Widget getCurrentPage(
     BuildContext context,
     String currentRoute,

@@ -3,7 +3,7 @@
 part of 'schedules_send_invitation_leader_only_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///SchedulesSendInvitationLeaderOnly widget.
+/// SchedulesSendInvitationLeaderOnly widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable

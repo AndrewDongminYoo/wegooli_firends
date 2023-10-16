@@ -3,7 +3,7 @@
 part of 'mypage_contact_us_inquiry_history_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///MyPageContactUsInquiryHistory widget.
+/// MyPageContactUsInquiryHistory widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable

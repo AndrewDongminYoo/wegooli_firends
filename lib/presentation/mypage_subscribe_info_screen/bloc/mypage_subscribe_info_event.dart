@@ -3,7 +3,7 @@
 part of 'mypage_subscribe_info_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///MyPageSubscribeInfo widget.
+/// MyPageSubscribeInfo widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable

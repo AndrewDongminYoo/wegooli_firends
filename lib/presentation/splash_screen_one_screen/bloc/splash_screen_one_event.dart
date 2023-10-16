@@ -3,7 +3,7 @@
 part of 'splash_screen_one_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///SplashScreenOne widget.
+/// SplashScreenOne widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable

@@ -3,7 +3,7 @@
 part of 'k57_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///K57 widget.
+/// K57 widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable

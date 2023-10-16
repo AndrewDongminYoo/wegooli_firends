@@ -3,7 +3,7 @@
 part of 'signup_page_identity_verification_empty_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///SignupPageIdentityVerificationEmpty widget.
+/// SignupPageIdentityVerificationEmpty widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable

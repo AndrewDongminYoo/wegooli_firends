@@ -3,7 +3,7 @@
 part of 'signup_page_identity_verification_terms_bottomsheet_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///SignupPageIdentityVerificationTermsBottomsheet widget.
+/// SignupPageIdentityVerificationTermsBottomsheet widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable

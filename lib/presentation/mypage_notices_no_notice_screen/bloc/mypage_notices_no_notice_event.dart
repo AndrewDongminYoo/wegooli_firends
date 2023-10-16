@@ -3,7 +3,7 @@
 part of 'mypage_notices_no_notice_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///MyPageNoticesNoNotice widget.
+/// MyPageNoticesNoNotice widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable

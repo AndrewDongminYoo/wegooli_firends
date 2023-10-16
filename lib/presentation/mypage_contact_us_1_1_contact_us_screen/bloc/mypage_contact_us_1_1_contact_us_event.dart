@@ -3,7 +3,7 @@
 part of 'mypage_contact_us_1_1_contact_us_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///MyPageContactUs11ContactUs widget.
+/// MyPageContactUs11ContactUs widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable
@@ -16,7 +16,7 @@ class MyPageContactUs11ContactUsInitialEvent
   List<Object?> get props => [];
 }
 
-///event for dropdown selection
+/// event for dropdown selection
 class ChangeDropDownEvent extends MyPageContactUs11ContactUsEvent {
   ChangeDropDownEvent({required this.value});
 

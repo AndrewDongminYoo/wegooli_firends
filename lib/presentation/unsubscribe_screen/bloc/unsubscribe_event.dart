@@ -3,7 +3,7 @@
 part of 'unsubscribe_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///Unsubscribe widget.
+/// Unsubscribe widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable

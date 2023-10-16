@@ -3,7 +3,7 @@
 part of 'k89_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///K89 widget.
+/// K89 widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable
@@ -15,7 +15,7 @@ class K89InitialEvent extends K89Event {
   List<Object?> get props => [];
 }
 
-///Event for changing radio button
+/// Event for changing radio button
 class ChangeRadioButtonEvent extends K89Event {
   ChangeRadioButtonEvent({required this.value});
 
@@ -27,7 +27,7 @@ class ChangeRadioButtonEvent extends K89Event {
       ];
 }
 
-///Event for changing radio button
+/// Event for changing radio button
 class ChangeRadioButton1Event extends K89Event {
   ChangeRadioButton1Event({required this.value});
 

@@ -3,7 +3,7 @@
 part of 'k48_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///K48 widget.
+/// K48 widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable

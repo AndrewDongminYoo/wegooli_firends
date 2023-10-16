@@ -3,7 +3,7 @@
 part of 'frame_34850_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///Frame34850 widget.
+/// Frame34850 widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable
@@ -15,7 +15,7 @@ class Frame34850InitialEvent extends Frame34850Event {
   List<Object?> get props => [];
 }
 
-///Event for changing checkbox
+/// Event for changing checkbox
 class ChangeCheckBoxEvent extends Frame34850Event {
   ChangeCheckBoxEvent({required this.value});
 
@@ -27,7 +27,7 @@ class ChangeCheckBoxEvent extends Frame34850Event {
       ];
 }
 
-///Event for changing checkbox
+/// Event for changing checkbox
 class ChangeCheckBox1Event extends Frame34850Event {
   ChangeCheckBox1Event({required this.value});
 

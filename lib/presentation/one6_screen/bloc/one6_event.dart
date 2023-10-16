@@ -3,7 +3,7 @@
 part of 'one6_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///One6 widget.
+/// One6 widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable

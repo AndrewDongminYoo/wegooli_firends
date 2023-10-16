@@ -3,7 +3,7 @@
 part of 'mypage_contact_us_empty_history_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///MyPageContactUsEmptyHistory widget.
+/// MyPageContactUsEmptyHistory widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable

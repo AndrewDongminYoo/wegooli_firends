@@ -3,7 +3,7 @@
 part of 'schedules_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///Schedules widget.
+/// Schedules widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable

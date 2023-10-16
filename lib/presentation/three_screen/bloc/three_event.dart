@@ -3,7 +3,7 @@
 part of 'three_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///Three widget.
+/// Three widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable
@@ -15,7 +15,7 @@ class ThreeInitialEvent extends ThreeEvent {
   List<Object?> get props => [];
 }
 
-///Event for changing checkbox
+/// Event for changing checkbox
 class ChangeCheckBoxEvent extends ThreeEvent {
   ChangeCheckBoxEvent({required this.value});
 

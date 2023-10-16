@@ -3,7 +3,7 @@
 part of 'k56_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///K56 widget.
+/// K56 widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable
@@ -15,7 +15,7 @@ class K56InitialEvent extends K56Event {
   List<Object?> get props => [];
 }
 
-///Event for changing checkbox
+/// Event for changing checkbox
 class ChangeCheckBoxEvent extends K56Event {
   ChangeCheckBoxEvent({required this.value});
 

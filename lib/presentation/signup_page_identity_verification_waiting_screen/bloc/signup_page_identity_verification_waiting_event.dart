@@ -3,7 +3,7 @@
 part of 'signup_page_identity_verification_waiting_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///SignupPageIdentityVerificationWaiting widget.
+/// SignupPageIdentityVerificationWaiting widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable

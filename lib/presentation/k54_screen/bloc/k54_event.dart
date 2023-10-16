@@ -3,7 +3,7 @@
 part of 'k54_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///K54 widget.
+/// K54 widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable
@@ -15,7 +15,7 @@ class K54InitialEvent extends K54Event {
   List<Object?> get props => [];
 }
 
-///event for dropdown selection
+/// event for dropdown selection
 class ChangeDropDownEvent extends K54Event {
   ChangeDropDownEvent({required this.value});
 
@@ -27,7 +27,7 @@ class ChangeDropDownEvent extends K54Event {
       ];
 }
 
-///event for dropdown selection
+/// event for dropdown selection
 class ChangeDropDown1Event extends K54Event {
   ChangeDropDown1Event({required this.value});
 
@@ -39,7 +39,7 @@ class ChangeDropDown1Event extends K54Event {
       ];
 }
 
-///event for dropdown selection
+/// event for dropdown selection
 class ChangeDropDown2Event extends K54Event {
   ChangeDropDown2Event({required this.value});
 

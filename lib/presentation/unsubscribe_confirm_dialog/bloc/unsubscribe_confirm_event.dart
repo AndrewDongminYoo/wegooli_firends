@@ -3,7 +3,7 @@
 part of 'unsubscribe_confirm_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///UnsubscribeConfirm widget.
+/// UnsubscribeConfirm widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable

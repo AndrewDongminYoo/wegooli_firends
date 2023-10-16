@@ -3,7 +3,7 @@
 part of 'k51_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///K51 widget.
+/// K51 widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable
@@ -15,7 +15,7 @@ class K51InitialEvent extends K51Event {
   List<Object?> get props => [];
 }
 
-///Event for changing checkbox
+/// Event for changing checkbox
 class ChangeCheckBoxEvent extends K51Event {
   ChangeCheckBoxEvent({required this.value});
 
@@ -27,7 +27,7 @@ class ChangeCheckBoxEvent extends K51Event {
       ];
 }
 
-///Event for changing checkbox
+/// Event for changing checkbox
 class ChangeCheckBox1Event extends K51Event {
   ChangeCheckBox1Event({required this.value});
 
@@ -39,7 +39,7 @@ class ChangeCheckBox1Event extends K51Event {
       ];
 }
 
-///Event for changing checkbox
+/// Event for changing checkbox
 class ChangeCheckBox2Event extends K51Event {
   ChangeCheckBox2Event({required this.value});
 
@@ -51,7 +51,7 @@ class ChangeCheckBox2Event extends K51Event {
       ];
 }
 
-///Event for changing checkbox
+/// Event for changing checkbox
 class ChangeCheckBox3Event extends K51Event {
   ChangeCheckBox3Event({required this.value});
 
@@ -63,7 +63,7 @@ class ChangeCheckBox3Event extends K51Event {
       ];
 }
 
-///Event for changing checkbox
+/// Event for changing checkbox
 class ChangeCheckBox4Event extends K51Event {
   ChangeCheckBox4Event({required this.value});
 
@@ -75,7 +75,7 @@ class ChangeCheckBox4Event extends K51Event {
       ];
 }
 
-///Event for changing checkbox
+/// Event for changing checkbox
 class ChangeCheckBox5Event extends K51Event {
   ChangeCheckBox5Event({required this.value});
 
@@ -87,7 +87,7 @@ class ChangeCheckBox5Event extends K51Event {
       ];
 }
 
-///Event for changing checkbox
+/// Event for changing checkbox
 class ChangeCheckBox6Event extends K51Event {
   ChangeCheckBox6Event({required this.value});
 

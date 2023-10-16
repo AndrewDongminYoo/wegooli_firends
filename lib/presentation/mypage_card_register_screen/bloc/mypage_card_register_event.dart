@@ -3,7 +3,7 @@
 part of 'mypage_card_register_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///MyPageCardRegister widget.
+/// MyPageCardRegister widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable

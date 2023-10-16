@@ -3,7 +3,7 @@
 part of 'signup_complete_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///SignupComplete widget.
+/// SignupComplete widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable

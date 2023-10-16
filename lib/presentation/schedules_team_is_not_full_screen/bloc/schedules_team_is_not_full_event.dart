@@ -3,7 +3,7 @@
 part of 'schedules_team_is_not_full_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///SchedulesTeamIsNotFull widget.
+/// SchedulesTeamIsNotFull widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable

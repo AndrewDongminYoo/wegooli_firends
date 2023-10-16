@@ -3,7 +3,7 @@
 part of 'k93_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///K93 widget.
+/// K93 widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable

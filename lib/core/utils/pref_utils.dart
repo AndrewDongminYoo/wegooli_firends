@@ -1,8 +1,5 @@
 //ignore: unused_import
 
-// 🎯 Dart imports:
-import 'dart:convert';
-
 // 📦 Package imports:
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -20,7 +17,7 @@ class PrefUtils {
     print('SharedPreference Initialized');
   }
 
-  ///will clear all the data stored in preference
+  /// will clear all the data stored in preference
   Future<void> clearPreferencesData() async {
     await _sharedPreferences!.clear();
   }

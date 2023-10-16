@@ -22,9 +22,9 @@ class NetworkInfo implements NetworkInfoI {
 
   static final NetworkInfo _networkInfo = NetworkInfo._internal(Connectivity());
 
-  ///checks internet is connected or not
-  ///returns [true] if internet is connected
-  ///else it will return [false]
+  /// checks internet is connected or not
+  /// returns [true] if internet is connected
+  /// else it will return [false]
   @override
   Future<bool> isConnected() async {
     final result = await connectivity.checkConnectivity();

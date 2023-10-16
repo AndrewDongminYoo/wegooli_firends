@@ -3,7 +3,7 @@
 part of 'mypage_contact_us_inquiry_history_expanded_tab_container_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///MyPageContactUsInquiryHistoryExpandedTabContainer widget.
+/// MyPageContactUsInquiryHistoryExpandedTabContainer widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable

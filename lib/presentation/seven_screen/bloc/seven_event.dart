@@ -3,7 +3,7 @@
 part of 'seven_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///Seven widget.
+/// Seven widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable
@@ -15,7 +15,7 @@ class SevenInitialEvent extends SevenEvent {
   List<Object?> get props => [];
 }
 
-///Event for changing password visibility
+/// Event for changing password visibility
 class ChangePasswordVisibilityEvent extends SevenEvent {
   ChangePasswordVisibilityEvent({required this.value});
 

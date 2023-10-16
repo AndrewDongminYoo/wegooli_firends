@@ -3,7 +3,7 @@
 part of 'smart_key_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///SmartKey widget.
+/// SmartKey widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable

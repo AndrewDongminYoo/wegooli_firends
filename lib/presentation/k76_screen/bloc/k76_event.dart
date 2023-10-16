@@ -3,7 +3,7 @@
 part of 'k76_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///K76 widget.
+/// K76 widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable
@@ -15,7 +15,7 @@ class K76InitialEvent extends K76Event {
   List<Object?> get props => [];
 }
 
-///Event for changing switch
+/// Event for changing switch
 class ChangeSwitchEvent extends K76Event {
   ChangeSwitchEvent({required this.value});
 
@@ -27,7 +27,7 @@ class ChangeSwitchEvent extends K76Event {
       ];
 }
 
-///Event for changing switch
+/// Event for changing switch
 class ChangeSwitch1Event extends K76Event {
   ChangeSwitch1Event({required this.value});
 
@@ -39,7 +39,7 @@ class ChangeSwitch1Event extends K76Event {
       ];
 }
 
-///Event for changing switch
+/// Event for changing switch
 class ChangeSwitch2Event extends K76Event {
   ChangeSwitch2Event({required this.value});
 

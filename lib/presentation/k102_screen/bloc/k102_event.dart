@@ -3,7 +3,7 @@
 part of 'k102_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///K102 widget.
+/// K102 widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable
@@ -15,7 +15,7 @@ class K102InitialEvent extends K102Event {
   List<Object?> get props => [];
 }
 
-///Event for changing radio button
+/// Event for changing radio button
 class ChangeRadioButtonEvent extends K102Event {
   ChangeRadioButtonEvent({required this.value});
 
@@ -27,7 +27,7 @@ class ChangeRadioButtonEvent extends K102Event {
       ];
 }
 
-///Event for changing radio button
+/// Event for changing radio button
 class ChangeRadioButton1Event extends K102Event {
   ChangeRadioButton1Event({required this.value});
 

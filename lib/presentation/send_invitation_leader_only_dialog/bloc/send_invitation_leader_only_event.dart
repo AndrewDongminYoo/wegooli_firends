@@ -3,7 +3,7 @@
 part of 'send_invitation_leader_only_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///SendInvitationLeaderOnly widget.
+/// SendInvitationLeaderOnly widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable

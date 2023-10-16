@@ -3,7 +3,7 @@
 part of 'k112_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///K112 widget.
+/// K112 widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable

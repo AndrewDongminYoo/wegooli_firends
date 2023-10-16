@@ -3,7 +3,7 @@
 part of 'k55_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///K55 widget.
+/// K55 widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable
@@ -15,7 +15,7 @@ class K55InitialEvent extends K55Event {
   List<Object?> get props => [];
 }
 
-///event for dropdown selection
+/// event for dropdown selection
 class ChangeDropDownEvent extends K55Event {
   ChangeDropDownEvent({required this.value});
 

@@ -3,7 +3,7 @@
 part of 'k92_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///K92 widget.
+/// K92 widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable
@@ -15,7 +15,7 @@ class K92InitialEvent extends K92Event {
   List<Object?> get props => [];
 }
 
-///event for dropdown selection
+/// event for dropdown selection
 class ChangeDropDownEvent extends K92Event {
   ChangeDropDownEvent({required this.value});
 

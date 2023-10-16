@@ -11,7 +11,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomImageView extends StatelessWidget {
-  ///a [CustomImageView] it can be used for showing any type of images
+  /// a [CustomImageView] it can be used for showing any type of images
   /// it will shows the placeholder image if image is not found on network image
   CustomImageView({
     Key? key,
@@ -74,7 +74,7 @@ class CustomImageView extends StatelessWidget {
     );
   }
 
-  ///build the image with border radius
+  /// build the image with border radius
   dynamic _buildCircleImage() {
     if (radius != null) {
       return ClipRRect(
@@ -86,7 +86,7 @@ class CustomImageView extends StatelessWidget {
     }
   }
 
-  ///build the image with border and border radius style
+  /// build the image with border and border radius style
   Widget _buildImageWithBorder() {
     if (border != null) {
       return Container(

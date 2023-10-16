@@ -3,7 +3,7 @@
 part of 'k88_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///K88 widget.
+/// K88 widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable

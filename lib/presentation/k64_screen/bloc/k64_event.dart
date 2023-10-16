@@ -3,7 +3,7 @@
 part of 'k64_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///K64 widget.
+/// K64 widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable
@@ -15,7 +15,7 @@ class K64InitialEvent extends K64Event {
   List<Object?> get props => [];
 }
 
-///event for dropdown selection
+/// event for dropdown selection
 class ChangeDropDownEvent extends K64Event {
   ChangeDropDownEvent({required this.value});
 
@@ -27,7 +27,7 @@ class ChangeDropDownEvent extends K64Event {
       ];
 }
 
-///event for dropdown selection
+/// event for dropdown selection
 class ChangeDropDown1Event extends K64Event {
   ChangeDropDown1Event({required this.value});
 
@@ -39,7 +39,7 @@ class ChangeDropDown1Event extends K64Event {
       ];
 }
 
-///event for dropdown selection
+/// event for dropdown selection
 class ChangeDropDown2Event extends K64Event {
   ChangeDropDown2Event({required this.value});
 

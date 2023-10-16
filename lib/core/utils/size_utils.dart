@@ -12,14 +12,14 @@ const num FIGMA_DESIGN_WIDTH = 360;
 const num FIGMA_DESIGN_HEIGHT = 640;
 const num FIGMA_DESIGN_STATUS_BAR = 0;
 
-///This extension is used to set padding/margin (for the top and bottom side) & height of the screen or widget according to the Viewport height.
+/// This extension is used to set padding/margin (for the top and bottom side) & height of the screen or widget according to the Viewport height.
 extension ResponsiveExtension on num {
-  ///This method is used to get device viewport width.
+  /// This method is used to get device viewport width.
   double get _width {
     return mediaQueryData.size.width;
   }
 
-  ///This method is used to get device viewport height.
+  /// This method is used to get device viewport height.
   num get _height {
     final num statusBar = mediaQueryData.viewPadding.top;
     final num bottomBar = mediaQueryData.viewPadding.bottom;
@@ -27,21 +27,21 @@ extension ResponsiveExtension on num {
     return screenHeight;
   }
 
-  ///This method is used to set padding/margin (for the left and Right side) & width of the screen or widget according to the Viewport width.
+  /// This method is used to set padding/margin (for the left and Right side) & width of the screen or widget according to the Viewport width.
   double get h => (this * _width) / FIGMA_DESIGN_WIDTH;
 
-  ///This method is used to set padding/margin (for the top and bottom side) & height of the screen or widget according to the Viewport height.
+  /// This method is used to set padding/margin (for the top and bottom side) & height of the screen or widget according to the Viewport height.
   double get v =>
       (this * _height) / (FIGMA_DESIGN_HEIGHT - FIGMA_DESIGN_STATUS_BAR);
 
-  ///This method is used to set smallest px in image height and width
+  /// This method is used to set smallest px in image height and width
   double get adaptSize {
     final height = v;
     final width = h;
     return height < width ? height.toDoubleValue() : width.toDoubleValue();
   }
 
-  ///This method is used to set text font size according to Viewport
+  /// This method is used to set text font size according to Viewport
   double get fSize => adaptSize;
 }
 

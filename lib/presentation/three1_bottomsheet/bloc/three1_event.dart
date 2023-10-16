@@ -3,7 +3,7 @@
 part of 'three1_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///Three1 widget.
+/// Three1 widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable
@@ -15,7 +15,7 @@ class Three1InitialEvent extends Three1Event {
   List<Object?> get props => [];
 }
 
-///event for dropdown selection
+/// event for dropdown selection
 class ChangeDropDownEvent extends Three1Event {
   ChangeDropDownEvent({required this.value});
 
@@ -27,7 +27,7 @@ class ChangeDropDownEvent extends Three1Event {
       ];
 }
 
-///event for dropdown selection
+/// event for dropdown selection
 class ChangeDropDown1Event extends Three1Event {
   ChangeDropDown1Event({required this.value});
 

@@ -3,7 +3,7 @@
 part of 'mypage_profile_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///MyPageProfile widget.
+/// MyPageProfile widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable
@@ -15,7 +15,7 @@ class MyPageProfileInitialEvent extends MyPageProfileEvent {
   List<Object?> get props => [];
 }
 
-///Event for changing switch
+/// Event for changing switch
 class ChangeSwitchEvent extends MyPageProfileEvent {
   ChangeSwitchEvent({required this.value});
 
@@ -27,7 +27,7 @@ class ChangeSwitchEvent extends MyPageProfileEvent {
       ];
 }
 
-///Event for changing switch
+/// Event for changing switch
 class ChangeSwitch1Event extends MyPageProfileEvent {
   ChangeSwitch1Event({required this.value});
 
@@ -39,7 +39,7 @@ class ChangeSwitch1Event extends MyPageProfileEvent {
       ];
 }
 
-///Event for changing switch
+/// Event for changing switch
 class ChangeSwitch2Event extends MyPageProfileEvent {
   ChangeSwitch2Event({required this.value});
 

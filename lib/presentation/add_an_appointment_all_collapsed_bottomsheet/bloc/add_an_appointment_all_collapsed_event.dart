@@ -3,7 +3,7 @@
 part of 'add_an_appointment_all_collapsed_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///AddAnAppointmentAllCollapsed widget.
+/// AddAnAppointmentAllCollapsed widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable
@@ -16,7 +16,7 @@ class AddAnAppointmentAllCollapsedInitialEvent
   List<Object?> get props => [];
 }
 
-///event for dropdown selection
+/// event for dropdown selection
 class ChangeDropDownEvent extends AddAnAppointmentAllCollapsedEvent {
   ChangeDropDownEvent({required this.value});
 

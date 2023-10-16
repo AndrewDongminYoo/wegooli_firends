@@ -3,7 +3,7 @@
 part of 'signup_page_license_register_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///SignupPageLicenseRegister widget.
+/// SignupPageLicenseRegister widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable
@@ -16,7 +16,7 @@ class SignupPageLicenseRegisterInitialEvent
   List<Object?> get props => [];
 }
 
-///event for dropdown selection
+/// event for dropdown selection
 class ChangeDropDownEvent extends SignupPageLicenseRegisterEvent {
   ChangeDropDownEvent({required this.value});
 
@@ -28,7 +28,7 @@ class ChangeDropDownEvent extends SignupPageLicenseRegisterEvent {
       ];
 }
 
-///event for dropdown selection
+/// event for dropdown selection
 class ChangeDropDown1Event extends SignupPageLicenseRegisterEvent {
   ChangeDropDown1Event({required this.value});
 

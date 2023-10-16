@@ -3,7 +3,7 @@
 part of 'two_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///Two widget.
+/// Two widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable

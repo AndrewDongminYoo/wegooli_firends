@@ -3,7 +3,7 @@
 part of 'schedules_view_scheduled_date_scheduler_only_expanded_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///SchedulesViewScheduledDateSchedulerOnlyExpanded widget.
+/// SchedulesViewScheduledDateSchedulerOnlyExpanded widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable
@@ -17,7 +17,7 @@ class SchedulesViewScheduledDateSchedulerOnlyExpandedInitialEvent
   List<Object?> get props => [];
 }
 
-///event for dropdown selection
+/// event for dropdown selection
 class ChangeDropDownEvent
     extends SchedulesViewScheduledDateSchedulerOnlyExpandedEvent {
   ChangeDropDownEvent({required this.value});

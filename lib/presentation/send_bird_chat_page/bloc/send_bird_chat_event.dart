@@ -3,7 +3,7 @@
 part of 'send_bird_chat_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///SendBirdChat widget.
+/// SendBirdChat widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable

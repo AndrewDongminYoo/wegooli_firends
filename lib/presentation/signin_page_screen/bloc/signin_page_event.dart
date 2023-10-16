@@ -3,7 +3,7 @@
 part of 'signin_page_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///SigninPage widget.
+/// SigninPage widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable

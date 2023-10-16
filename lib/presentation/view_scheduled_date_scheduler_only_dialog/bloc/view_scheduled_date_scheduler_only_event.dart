@@ -3,7 +3,7 @@
 part of 'view_scheduled_date_scheduler_only_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///ViewScheduledDateSchedulerOnly widget.
+/// ViewScheduledDateSchedulerOnly widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable

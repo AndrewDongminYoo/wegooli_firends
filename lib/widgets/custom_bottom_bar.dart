@@ -15,8 +15,8 @@ class CustomBottomBarState extends State<CustomBottomBar> {
 
   List<BottomMenuModel> bottomMenuList = [
     BottomMenuModel(
-      icon: ImageConstant.imgNavOnprimary20x20,
-      activeIcon: ImageConstant.imgNavOnprimary20x20,
+      icon: ImageConstant.imgNavOnPrimary20x20,
+      activeIcon: ImageConstant.imgNavOnPrimary20x20,
       title: "lbl115".tr,
       type: BottomBarEnum.tf,
     ),

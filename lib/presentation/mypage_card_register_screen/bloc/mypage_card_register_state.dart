@@ -2,9 +2,9 @@
 
 part of 'mypage_card_register_bloc.dart';
 
-/// Represents the state of MypageCardRegister in the application.
-class MypageCardRegisterState extends Equatable {
-  MypageCardRegisterState({
+/// Represents the state of MyPageCardRegister in the application.
+class MyPageCardRegisterState extends Equatable {
+  MyPageCardRegisterState({
     this.cardnumbervalueController,
     this.expirationdatevController,
     this.zipcodeController,
@@ -20,7 +20,7 @@ class MypageCardRegisterState extends Equatable {
 
   TextEditingController? edittextController;
 
-  MypageCardRegisterModel? mypageCardRegisterModelObj;
+  MyPageCardRegisterModel? mypageCardRegisterModelObj;
 
   @override
   List<Object?> get props => [
@@ -30,14 +30,14 @@ class MypageCardRegisterState extends Equatable {
         edittextController,
         mypageCardRegisterModelObj,
       ];
-  MypageCardRegisterState copyWith({
+  MyPageCardRegisterState copyWith({
     TextEditingController? cardnumbervalueController,
     TextEditingController? expirationdatevController,
     TextEditingController? zipcodeController,
     TextEditingController? edittextController,
-    MypageCardRegisterModel? mypageCardRegisterModelObj,
+    MyPageCardRegisterModel? mypageCardRegisterModelObj,
   }) {
-    return MypageCardRegisterState(
+    return MyPageCardRegisterState(
       cardnumbervalueController:
           cardnumbervalueController ?? this.cardnumbervalueController,
       expirationdatevController:

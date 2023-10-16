@@ -2,9 +2,9 @@
 
 part of 'mypage_contact_us_1_1_contact_us_bloc.dart';
 
-/// Represents the state of MypageContactUs11ContactUs in the application.
-class MypageContactUs11ContactUsState extends Equatable {
-  MypageContactUs11ContactUsState({
+/// Represents the state of MyPageContactUs11ContactUs in the application.
+class MyPageContactUs11ContactUsState extends Equatable {
+  MyPageContactUs11ContactUsState({
     this.groupSixtyFiveController,
     this.selectedDropDownValue,
     this.mypageContactUs11ContactUsModelObj,
@@ -14,7 +14,7 @@ class MypageContactUs11ContactUsState extends Equatable {
 
   SelectionPopupModel? selectedDropDownValue;
 
-  MypageContactUs11ContactUsModel? mypageContactUs11ContactUsModelObj;
+  MyPageContactUs11ContactUsModel? mypageContactUs11ContactUsModelObj;
 
   @override
   List<Object?> get props => [
@@ -22,12 +22,12 @@ class MypageContactUs11ContactUsState extends Equatable {
         selectedDropDownValue,
         mypageContactUs11ContactUsModelObj,
       ];
-  MypageContactUs11ContactUsState copyWith({
+  MyPageContactUs11ContactUsState copyWith({
     TextEditingController? groupSixtyFiveController,
     SelectionPopupModel? selectedDropDownValue,
-    MypageContactUs11ContactUsModel? mypageContactUs11ContactUsModelObj,
+    MyPageContactUs11ContactUsModel? mypageContactUs11ContactUsModelObj,
   }) {
-    return MypageContactUs11ContactUsState(
+    return MyPageContactUs11ContactUsState(
       groupSixtyFiveController:
           groupSixtyFiveController ?? this.groupSixtyFiveController,
       selectedDropDownValue:

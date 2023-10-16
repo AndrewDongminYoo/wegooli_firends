@@ -7,9 +7,7 @@ import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
 
 class Frame466Screen extends StatelessWidget {
   const Frame466Screen({Key? key})
-      : super(
-          key: key,
-        );
+      : super(key: key);
 
   static Widget builder(BuildContext context) {
     return BlocProvider<Frame466Bloc>(
@@ -77,7 +75,7 @@ class Frame466Screen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         CustomImageView(
-                          svgPath: ImageConstant.imgArrowdownOnprimarycontainer,
+                          svgPath: ImageConstant.imgArrowdownOnPrimarycontainer,
                           height: 7.v,
                           width: 14.h,
                         ),
@@ -91,7 +89,7 @@ class Frame466Screen extends StatelessWidget {
                       ],
                     ),
                     CustomImageView(
-                      svgPath: ImageConstant.imgArrowrightOnprimary,
+                      svgPath: ImageConstant.imgArrowrightOnPrimary,
                       height: 18.adaptSize,
                       width: 18.adaptSize,
                       margin: EdgeInsets.only(bottom: 2.v),
@@ -123,7 +121,7 @@ class Frame466Screen extends StatelessWidget {
                       },
                     ),
                     CustomImageView(
-                      svgPath: ImageConstant.imgArrowrightOnprimary,
+                      svgPath: ImageConstant.imgArrowrightOnPrimary,
                       height: 18.adaptSize,
                       width: 18.adaptSize,
                       margin: EdgeInsets.only(bottom: 2.v),
@@ -155,7 +153,7 @@ class Frame466Screen extends StatelessWidget {
                       },
                     ),
                     CustomImageView(
-                      svgPath: ImageConstant.imgArrowrightOnprimary,
+                      svgPath: ImageConstant.imgArrowrightOnPrimary,
                       height: 18.adaptSize,
                       width: 18.adaptSize,
                       margin: EdgeInsets.only(bottom: 2.v),
@@ -189,7 +187,7 @@ class Frame466Screen extends StatelessWidget {
                       ),
                     ),
                     CustomImageView(
-                      svgPath: ImageConstant.imgArrowrightOnprimary,
+                      svgPath: ImageConstant.imgArrowrightOnPrimary,
                       height: 18.adaptSize,
                       width: 18.adaptSize,
                       margin: EdgeInsets.only(
@@ -226,7 +224,7 @@ class Frame466Screen extends StatelessWidget {
                       ),
                     ),
                     CustomImageView(
-                      svgPath: ImageConstant.imgArrowrightOnprimary,
+                      svgPath: ImageConstant.imgArrowrightOnPrimary,
                       height: 18.adaptSize,
                       width: 18.adaptSize,
                       margin: EdgeInsets.only(
@@ -259,7 +257,7 @@ class Frame466Screen extends StatelessWidget {
                       ),
                     ),
                     CustomImageView(
-                      svgPath: ImageConstant.imgArrowrightOnprimary,
+                      svgPath: ImageConstant.imgArrowrightOnPrimary,
                       height: 18.adaptSize,
                       width: 18.adaptSize,
                       margin: EdgeInsets.only(

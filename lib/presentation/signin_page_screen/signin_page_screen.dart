@@ -7,9 +7,7 @@ import 'package:wegooli_friends_app/widgets/custom_text_form_field.dart';
 
 class SigninPageScreen extends StatelessWidget {
   const SigninPageScreen({Key? key})
-      : super(
-          key: key,
-        );
+      : super(key: key);
 
   static Widget builder(BuildContext context) {
     return BlocProvider<SigninPageBloc>(
@@ -38,7 +36,7 @@ class SigninPageScreen extends StatelessWidget {
             children: [
               SizedBox(height: 30.v),
               CustomImageView(
-                svgPath: ImageConstant.imgFriendsOnprimary,
+                svgPath: ImageConstant.imgFriendsOnPrimary,
                 height: 38.v,
                 width: 193.h,
               ),

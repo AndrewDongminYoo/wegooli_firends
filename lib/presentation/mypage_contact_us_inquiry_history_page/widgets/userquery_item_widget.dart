@@ -8,9 +8,7 @@ class UserqueryItemWidget extends StatelessWidget {
   UserqueryItemWidget(
     this.userqueryItemModelObj, {
     Key? key,
-  }) : super(
-          key: key,
-        );
+  }) : super(key: key);
 
   UserqueryItemModel userqueryItemModelObj;
 
@@ -53,7 +51,7 @@ class UserqueryItemWidget extends StatelessWidget {
                 buttonTextStyle: CustomTextStyles.bodySmallGray70001,
               ),
               CustomImageView(
-                svgPath: ImageConstant.imgArrowrightOnprimary,
+                svgPath: ImageConstant.imgArrowrightOnPrimary,
                 height: 18.adaptSize,
                 width: 18.adaptSize,
                 margin: EdgeInsets.only(

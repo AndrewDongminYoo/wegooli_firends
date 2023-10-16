@@ -11,9 +11,7 @@ import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
 // ignore_for_file: must_be_immutable
 class SchedulesPage extends StatelessWidget {
   const SchedulesPage({Key? key})
-      : super(
-          key: key,
-        );
+      : super(key: key);
 
   static Widget builder(BuildContext context) {
     return BlocProvider<SchedulesBloc>(
@@ -200,7 +198,7 @@ class SchedulesPage extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               CustomImageView(
-                                svgPath: ImageConstant.imgArrowrightOnprimary,
+                                svgPath: ImageConstant.imgArrowrightOnPrimary,
                                 height: 18.adaptSize,
                                 width: 18.adaptSize,
                                 margin: EdgeInsets.only(bottom: 1.v),
@@ -210,7 +208,7 @@ class SchedulesPage extends StatelessWidget {
                                 style: theme.textTheme.titleMedium,
                               ),
                               CustomImageView(
-                                svgPath: ImageConstant.imgArrowrightOnprimary,
+                                svgPath: ImageConstant.imgArrowrightOnPrimary,
                                 height: 18.adaptSize,
                                 width: 18.adaptSize,
                                 margin: EdgeInsets.only(bottom: 1.v),

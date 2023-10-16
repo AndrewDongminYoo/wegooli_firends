@@ -7,9 +7,7 @@ class ListviewItemWidget extends StatelessWidget {
   ListviewItemWidget(
     this.listviewItemModelObj, {
     Key? key,
-  }) : super(
-          key: key,
-        );
+  }) : super(key: key);
 
   ListviewItemModel listviewItemModelObj;
 

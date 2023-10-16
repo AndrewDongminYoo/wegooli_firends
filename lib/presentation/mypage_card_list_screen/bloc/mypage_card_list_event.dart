@@ -3,20 +3,20 @@
 part of 'mypage_card_list_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///MypageCardList widget.
+///MyPageCardList widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable
-abstract class MypageCardListEvent extends Equatable {}
+abstract class MyPageCardListEvent extends Equatable {}
 
-/// Event that is dispatched when the MypageCardList widget is first created.
-class MypageCardListInitialEvent extends MypageCardListEvent {
+/// Event that is dispatched when the MyPageCardList widget is first created.
+class MyPageCardListInitialEvent extends MyPageCardListEvent {
   @override
   List<Object?> get props => [];
 }
 
 ///Event for changing radio button
-class ChangeRadioButtonEvent extends MypageCardListEvent {
+class ChangeRadioButtonEvent extends MyPageCardListEvent {
   ChangeRadioButtonEvent({required this.value});
 
   String value;
@@ -28,7 +28,7 @@ class ChangeRadioButtonEvent extends MypageCardListEvent {
 }
 
 ///Event for changing radio button
-class ChangeRadioButton1Event extends MypageCardListEvent {
+class ChangeRadioButton1Event extends MyPageCardListEvent {
   ChangeRadioButton1Event({required this.value});
 
   String value;

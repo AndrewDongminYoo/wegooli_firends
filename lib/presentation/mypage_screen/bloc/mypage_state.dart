@@ -2,18 +2,18 @@
 
 part of 'mypage_bloc.dart';
 
-/// Represents the state of Mypage in the application.
-class MypageState extends Equatable {
-  MypageState({this.mypageModelObj});
+/// Represents the state of MyPage in the application.
+class MyPageState extends Equatable {
+  MyPageState({this.mypageModelObj});
 
-  MypageModel? mypageModelObj;
+  MyPageModel? mypageModelObj;
 
   @override
   List<Object?> get props => [
         mypageModelObj,
       ];
-  MypageState copyWith({MypageModel? mypageModelObj}) {
-    return MypageState(
+  MyPageState copyWith({MyPageModel? mypageModelObj}) {
+    return MyPageState(
       mypageModelObj: mypageModelObj ?? this.mypageModelObj,
     );
   }

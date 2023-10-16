@@ -2,22 +2,22 @@
 
 part of 'mypage_subscribe_info_no_subscription_bloc.dart';
 
-/// Represents the state of MypageSubscribeInfoNoSubscription in the application.
-class MypageSubscribeInfoNoSubscriptionState extends Equatable {
-  MypageSubscribeInfoNoSubscriptionState(
+/// Represents the state of MyPageSubscribeInfoNoSubscription in the application.
+class MyPageSubscribeInfoNoSubscriptionState extends Equatable {
+  MyPageSubscribeInfoNoSubscriptionState(
       {this.mypageSubscribeInfoNoSubscriptionModelObj});
 
-  MypageSubscribeInfoNoSubscriptionModel?
+  MyPageSubscribeInfoNoSubscriptionModel?
       mypageSubscribeInfoNoSubscriptionModelObj;
 
   @override
   List<Object?> get props => [
         mypageSubscribeInfoNoSubscriptionModelObj,
       ];
-  MypageSubscribeInfoNoSubscriptionState copyWith(
-      {MypageSubscribeInfoNoSubscriptionModel?
+  MyPageSubscribeInfoNoSubscriptionState copyWith(
+      {MyPageSubscribeInfoNoSubscriptionModel?
           mypageSubscribeInfoNoSubscriptionModelObj}) {
-    return MypageSubscribeInfoNoSubscriptionState(
+    return MyPageSubscribeInfoNoSubscriptionState(
       mypageSubscribeInfoNoSubscriptionModelObj:
           mypageSubscribeInfoNoSubscriptionModelObj ??
               this.mypageSubscribeInfoNoSubscriptionModelObj,

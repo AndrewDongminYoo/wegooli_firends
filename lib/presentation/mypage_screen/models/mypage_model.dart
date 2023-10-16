@@ -2,9 +2,9 @@
 
 import 'package:equatable/equatable.dart';/// This class defines the variables used in the [mypage_screen],
 /// and is typically used to hold data that is passed between different parts of the application.
-class MypageModel extends Equatable {MypageModel() {  }
+class MyPageModel extends Equatable {MyPageModel() {  }
 
-MypageModel copyWith() { return MypageModel(
-); } 
+MyPageModel copyWith() { return MyPageModel(
+); }
 @override List<Object?> get props => [];
  }

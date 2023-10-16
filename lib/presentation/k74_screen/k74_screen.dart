@@ -10,9 +10,7 @@ import 'package:wegooli_friends_app/widgets/custom_text_form_field.dart';
 
 class K74Screen extends StatelessWidget {
   K74Screen({Key? key})
-      : super(
-          key: key,
-        );
+      : super(key: key);
 
   GlobalKey<NavigatorState> navigatorKey = GlobalKey();
 

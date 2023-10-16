@@ -5,9 +5,7 @@ import 'package:wegooli_friends_app/core/app_export.dart';
 
 class One1Screen extends StatelessWidget {
   const One1Screen({Key? key})
-      : super(
-          key: key,
-        );
+      : super(key: key);
 
   static Widget builder(BuildContext context) {
     return BlocProvider<One1Bloc>(

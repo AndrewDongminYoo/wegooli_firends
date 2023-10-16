@@ -6,21 +6,19 @@ import 'package:wegooli_friends_app/widgets/app_bar/appbar_image.dart';
 import 'package:wegooli_friends_app/widgets/app_bar/custom_app_bar.dart';
 import 'package:wegooli_friends_app/widgets/custom_bottom_bar.dart';
 
-class MypageScreen extends StatelessWidget {
-  MypageScreen({Key? key})
-      : super(
-          key: key,
-        );
+class MyPageScreen extends StatelessWidget {
+  MyPageScreen({Key? key})
+      : super(key: key);
 
   GlobalKey<NavigatorState> navigatorKey = GlobalKey();
 
   static Widget builder(BuildContext context) {
-    return BlocProvider<MypageBloc>(
-      create: (context) => MypageBloc(MypageState(
-        mypageModelObj: MypageModel(),
+    return BlocProvider<MyPageBloc>(
+      create: (context) => MyPageBloc(MyPageState(
+        mypageModelObj: MyPageModel(),
       ))
-        ..add(MypageInitialEvent()),
-      child: MypageScreen(),
+        ..add(MyPageInitialEvent()),
+      child: MyPageScreen(),
     );
   }
 
@@ -28,7 +26,7 @@ class MypageScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
 
-    return BlocBuilder<MypageBloc, MypageState>(
+    return BlocBuilder<MyPageBloc, MyPageState>(
       builder: (context, state) {
         return SafeArea(
           child: Scaffold(
@@ -132,7 +130,7 @@ class MypageScreen extends StatelessWidget {
                                   Spacer(),
                                   CustomImageView(
                                     svgPath:
-                                        ImageConstant.imgArrowrightOnprimary,
+                                        ImageConstant.imgArrowrightOnPrimary,
                                     height: 18.adaptSize,
                                     width: 18.adaptSize,
                                     margin: EdgeInsets.symmetric(vertical: 3.v),
@@ -167,7 +165,7 @@ class MypageScreen extends StatelessWidget {
                                   Spacer(),
                                   CustomImageView(
                                     svgPath:
-                                        ImageConstant.imgArrowrightOnprimary,
+                                        ImageConstant.imgArrowrightOnPrimary,
                                     height: 18.adaptSize,
                                     width: 18.adaptSize,
                                     margin: EdgeInsets.symmetric(vertical: 3.v),
@@ -202,7 +200,7 @@ class MypageScreen extends StatelessWidget {
                                   Spacer(),
                                   CustomImageView(
                                     svgPath:
-                                        ImageConstant.imgArrowrightOnprimary,
+                                        ImageConstant.imgArrowrightOnPrimary,
                                     height: 18.adaptSize,
                                     width: 18.adaptSize,
                                     margin: EdgeInsets.symmetric(vertical: 3.v),

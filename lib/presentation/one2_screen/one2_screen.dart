@@ -8,9 +8,7 @@ import 'package:wegooli_friends_app/widgets/custom_bottom_bar.dart';
 
 class One2Screen extends StatelessWidget {
   One2Screen({Key? key})
-      : super(
-          key: key,
-        );
+      : super(key: key);
 
   GlobalKey<NavigatorState> navigatorKey = GlobalKey();
 
@@ -132,7 +130,7 @@ class One2Screen extends StatelessWidget {
                                   Spacer(),
                                   CustomImageView(
                                     svgPath:
-                                        ImageConstant.imgArrowrightOnprimary,
+                                        ImageConstant.imgArrowrightOnPrimary,
                                     height: 18.adaptSize,
                                     width: 18.adaptSize,
                                     margin: EdgeInsets.symmetric(vertical: 3.v),
@@ -167,7 +165,7 @@ class One2Screen extends StatelessWidget {
                                   Spacer(),
                                   CustomImageView(
                                     svgPath:
-                                        ImageConstant.imgArrowrightOnprimary,
+                                        ImageConstant.imgArrowrightOnPrimary,
                                     height: 18.adaptSize,
                                     width: 18.adaptSize,
                                     margin: EdgeInsets.symmetric(vertical: 3.v),
@@ -202,7 +200,7 @@ class One2Screen extends StatelessWidget {
                                   Spacer(),
                                   CustomImageView(
                                     svgPath:
-                                        ImageConstant.imgArrowrightOnprimary,
+                                        ImageConstant.imgArrowrightOnPrimary,
                                     height: 18.adaptSize,
                                     width: 18.adaptSize,
                                     margin: EdgeInsets.symmetric(vertical: 3.v),

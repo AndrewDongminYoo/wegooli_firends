@@ -13,9 +13,7 @@ import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
 
 class K72Screen extends StatelessWidget {
   K72Screen({Key? key})
-      : super(
-          key: key,
-        );
+      : super(key: key);
 
   GlobalKey<NavigatorState> navigatorKey = GlobalKey();
 
@@ -150,7 +148,7 @@ class K72Screen extends StatelessWidget {
                                   children: [
                                     CustomImageView(
                                       svgPath:
-                                          ImageConstant.imgArrowrightOnprimary,
+                                          ImageConstant.imgArrowrightOnPrimary,
                                       height: 18.adaptSize,
                                       width: 18.adaptSize,
                                       margin: EdgeInsets.only(bottom: 1.v),
@@ -161,7 +159,7 @@ class K72Screen extends StatelessWidget {
                                     ),
                                     CustomImageView(
                                       svgPath:
-                                          ImageConstant.imgArrowrightOnprimary,
+                                          ImageConstant.imgArrowrightOnPrimary,
                                       height: 18.adaptSize,
                                       width: 18.adaptSize,
                                       margin: EdgeInsets.only(bottom: 1.v),

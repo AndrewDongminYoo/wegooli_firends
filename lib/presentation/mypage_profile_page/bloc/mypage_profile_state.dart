@@ -2,16 +2,16 @@
 
 part of 'mypage_profile_bloc.dart';
 
-/// Represents the state of MypageProfile in the application.
-class MypageProfileState extends Equatable {
-  MypageProfileState({
+/// Represents the state of MyPageProfile in the application.
+class MyPageProfileState extends Equatable {
+  MyPageProfileState({
     this.isSelectedSwitch = false,
     this.isSelectedSwitch1 = false,
     this.isSelectedSwitch2 = false,
     this.mypageProfileModelObj,
   });
 
-  MypageProfileModel? mypageProfileModelObj;
+  MyPageProfileModel? mypageProfileModelObj;
 
   bool isSelectedSwitch;
 
@@ -26,13 +26,13 @@ class MypageProfileState extends Equatable {
         isSelectedSwitch2,
         mypageProfileModelObj,
       ];
-  MypageProfileState copyWith({
+  MyPageProfileState copyWith({
     bool? isSelectedSwitch,
     bool? isSelectedSwitch1,
     bool? isSelectedSwitch2,
-    MypageProfileModel? mypageProfileModelObj,
+    MyPageProfileModel? mypageProfileModelObj,
   }) {
-    return MypageProfileState(
+    return MyPageProfileState(
       isSelectedSwitch: isSelectedSwitch ?? this.isSelectedSwitch,
       isSelectedSwitch1: isSelectedSwitch1 ?? this.isSelectedSwitch1,
       isSelectedSwitch2: isSelectedSwitch2 ?? this.isSelectedSwitch2,

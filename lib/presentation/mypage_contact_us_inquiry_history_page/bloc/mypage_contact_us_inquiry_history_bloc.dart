@@ -6,18 +6,18 @@ import 'package:wegooli_friends_app/presentation/mypage_contact_us_inquiry_histo
 part 'mypage_contact_us_inquiry_history_event.dart';
 part 'mypage_contact_us_inquiry_history_state.dart';
 
-/// A bloc that manages the state of a MypageContactUsInquiryHistory according to the event that is dispatched to it.
-class MypageContactUsInquiryHistoryBloc extends Bloc<
-    MypageContactUsInquiryHistoryEvent, MypageContactUsInquiryHistoryState> {
-  MypageContactUsInquiryHistoryBloc(
-      MypageContactUsInquiryHistoryState initialState)
+/// A bloc that manages the state of a MyPageContactUsInquiryHistory according to the event that is dispatched to it.
+class MyPageContactUsInquiryHistoryBloc extends Bloc<
+    MyPageContactUsInquiryHistoryEvent, MyPageContactUsInquiryHistoryState> {
+  MyPageContactUsInquiryHistoryBloc(
+      MyPageContactUsInquiryHistoryState initialState)
       : super(initialState) {
-    on<MypageContactUsInquiryHistoryInitialEvent>(_onInitialize);
+    on<MyPageContactUsInquiryHistoryInitialEvent>(_onInitialize);
   }
 
   _onInitialize(
-    MypageContactUsInquiryHistoryInitialEvent event,
-    Emitter<MypageContactUsInquiryHistoryState> emit,
+    MyPageContactUsInquiryHistoryInitialEvent event,
+    Emitter<MyPageContactUsInquiryHistoryState> emit,
   ) async {
     emit(state.copyWith(
         mypageContactUsInquiryHistoryModelObj:

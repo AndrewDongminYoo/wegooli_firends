@@ -8,9 +8,7 @@ import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
 // ignore_for_file: must_be_immutable
 class K51Bottomsheet extends StatelessWidget {
   const K51Bottomsheet({Key? key})
-      : super(
-          key: key,
-        );
+      : super(key: key);
 
   static Widget builder(BuildContext context) {
     return BlocProvider<K51Bloc>(
@@ -91,7 +89,7 @@ class K51Bottomsheet extends StatelessWidget {
                     },
                   ),
                   CustomImageView(
-                    svgPath: ImageConstant.imgArrowrightOnprimary,
+                    svgPath: ImageConstant.imgArrowrightOnPrimary,
                     height: 18.adaptSize,
                     width: 18.adaptSize,
                     margin: EdgeInsets.only(bottom: 2.v),
@@ -123,7 +121,7 @@ class K51Bottomsheet extends StatelessWidget {
                     },
                   ),
                   CustomImageView(
-                    svgPath: ImageConstant.imgArrowrightOnprimary,
+                    svgPath: ImageConstant.imgArrowrightOnPrimary,
                     height: 18.adaptSize,
                     width: 18.adaptSize,
                     margin: EdgeInsets.only(bottom: 2.v),
@@ -155,7 +153,7 @@ class K51Bottomsheet extends StatelessWidget {
                     },
                   ),
                   CustomImageView(
-                    svgPath: ImageConstant.imgArrowrightOnprimary,
+                    svgPath: ImageConstant.imgArrowrightOnPrimary,
                     height: 18.adaptSize,
                     width: 18.adaptSize,
                     margin: EdgeInsets.only(bottom: 2.v),
@@ -189,7 +187,7 @@ class K51Bottomsheet extends StatelessWidget {
                     ),
                   ),
                   CustomImageView(
-                    svgPath: ImageConstant.imgArrowrightOnprimary,
+                    svgPath: ImageConstant.imgArrowrightOnPrimary,
                     height: 18.adaptSize,
                     width: 18.adaptSize,
                     margin: EdgeInsets.only(
@@ -226,7 +224,7 @@ class K51Bottomsheet extends StatelessWidget {
                     ),
                   ),
                   CustomImageView(
-                    svgPath: ImageConstant.imgArrowrightOnprimary,
+                    svgPath: ImageConstant.imgArrowrightOnPrimary,
                     height: 18.adaptSize,
                     width: 18.adaptSize,
                     margin: EdgeInsets.only(
@@ -263,7 +261,7 @@ class K51Bottomsheet extends StatelessWidget {
                     ),
                   ),
                   CustomImageView(
-                    svgPath: ImageConstant.imgArrowrightOnprimary,
+                    svgPath: ImageConstant.imgArrowrightOnPrimary,
                     height: 18.adaptSize,
                     width: 18.adaptSize,
                     margin: EdgeInsets.only(

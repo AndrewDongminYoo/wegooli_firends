@@ -6,9 +6,7 @@ import 'package:wegooli_friends_app/widgets/custom_bottom_bar.dart';
 
 class K83Screen extends StatelessWidget {
   K83Screen({Key? key})
-      : super(
-          key: key,
-        );
+      : super(key: key);
 
   GlobalKey<NavigatorState> navigatorKey = GlobalKey();
 

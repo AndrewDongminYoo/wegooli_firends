@@ -29,7 +29,7 @@ class ImageConstant {
 
   static String imgGroup = '$imagePath/img_group.svg';
 
-  static String imgNavOnprimary20x20 = '$imagePath/img_nav_onprimary_20x20.svg';
+  static String imgNavOnPrimary20x20 = '$imagePath/img_nav_onprimary_20x20.svg';
 
   static String imgNavBlueGray200 = '$imagePath/img_nav_blue_gray_200.svg';
 
@@ -153,7 +153,7 @@ class ImageConstant {
 
   static String imgSave = '$imagePath/img_save.svg';
 
-  static String imgArrowrightOnprimary =
+  static String imgArrowrightOnPrimary =
       '$imagePath/img_arrowright_onprimary.svg';
 
   static String imgUnlocked = '$imagePath/img_unlocked.svg';
@@ -170,7 +170,7 @@ class ImageConstant {
 
   static String imgNavGray40001 = '$imagePath/img_nav_gray_400_01.svg';
 
-  static String imgNavOnprimary = '$imagePath/img_nav_onprimary.svg';
+  static String imgNavOnPrimary = '$imagePath/img_nav_onprimary.svg';
 
   static String imgNav4 = '$imagePath/img_nav_4.svg';
 
@@ -199,9 +199,9 @@ class ImageConstant {
 
   static String imgEllipse11 = '$imagePath/img_ellipse1_1.png';
 
-  static String imgNavOnprimary24x24 = '$imagePath/img_nav_onprimary_24x24.svg';
+  static String imgNavOnPrimary24x24 = '$imagePath/img_nav_onprimary_24x24.svg';
 
-  static String imgFriendsOnprimary = '$imagePath/img_friends_onprimary.svg';
+  static String imgFriendsOnPrimary = '$imagePath/img_friends_onprimary.svg';
 
   static String imgCaretdown = '$imagePath/img_caretdown.svg';
 
@@ -271,7 +271,7 @@ class ImageConstant {
   static String imgArrowdownGray5000230x30 =
       '$imagePath/img_arrowdown_gray_500_02_30x30.svg';
 
-  static String imgArrowdownOnprimarycontainer =
+  static String imgArrowdownOnPrimarycontainer =
       '$imagePath/img_arrowdown_onprimarycontainer.svg';
 
   static String imgLayer2Onerrorcontainer133x98 =

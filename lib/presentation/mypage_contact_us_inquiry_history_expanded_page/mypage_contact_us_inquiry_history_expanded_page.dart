@@ -6,41 +6,39 @@ import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
 import 'package:wegooli_friends_app/widgets/custom_outlined_button.dart';
 
 // ignore_for_file: must_be_immutable
-class MypageContactUsInquiryHistoryExpandedPage extends StatefulWidget {
-  const MypageContactUsInquiryHistoryExpandedPage({Key? key})
-      : super(
-          key: key,
-        );
+class MyPageContactUsInquiryHistoryExpandedPage extends StatefulWidget {
+  const MyPageContactUsInquiryHistoryExpandedPage({Key? key})
+      : super(key: key);
 
   @override
-  MypageContactUsInquiryHistoryExpandedPageState createState() =>
-      MypageContactUsInquiryHistoryExpandedPageState();
+  MyPageContactUsInquiryHistoryExpandedPageState createState() =>
+      MyPageContactUsInquiryHistoryExpandedPageState();
   static Widget builder(BuildContext context) {
-    return BlocProvider<MypageContactUsInquiryHistoryExpandedBloc>(
-      create: (context) => MypageContactUsInquiryHistoryExpandedBloc(
-          MypageContactUsInquiryHistoryExpandedState(
+    return BlocProvider<MyPageContactUsInquiryHistoryExpandedBloc>(
+      create: (context) => MyPageContactUsInquiryHistoryExpandedBloc(
+          MyPageContactUsInquiryHistoryExpandedState(
         mypageContactUsInquiryHistoryExpandedModelObj:
-            MypageContactUsInquiryHistoryExpandedModel(),
+            MyPageContactUsInquiryHistoryExpandedModel(),
       ))
-        ..add(MypageContactUsInquiryHistoryExpandedInitialEvent()),
-      child: MypageContactUsInquiryHistoryExpandedPage(),
+        ..add(MyPageContactUsInquiryHistoryExpandedInitialEvent()),
+      child: MyPageContactUsInquiryHistoryExpandedPage(),
     );
   }
 }
 
-class MypageContactUsInquiryHistoryExpandedPageState
-    extends State<MypageContactUsInquiryHistoryExpandedPage>
+class MyPageContactUsInquiryHistoryExpandedPageState
+    extends State<MyPageContactUsInquiryHistoryExpandedPage>
     with
         AutomaticKeepAliveClientMixin<
-            MypageContactUsInquiryHistoryExpandedPage> {
+            MyPageContactUsInquiryHistoryExpandedPage> {
   @override
   bool get wantKeepAlive => true;
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
 
-    return BlocBuilder<MypageContactUsInquiryHistoryExpandedBloc,
-        MypageContactUsInquiryHistoryExpandedState>(
+    return BlocBuilder<MyPageContactUsInquiryHistoryExpandedBloc,
+        MyPageContactUsInquiryHistoryExpandedState>(
       builder: (context, state) {
         return SafeArea(
           child: Scaffold(
@@ -93,7 +91,7 @@ class MypageContactUsInquiryHistoryExpandedPageState
                                   ),
                                   CustomImageView(
                                     svgPath:
-                                        ImageConstant.imgArrowrightOnprimary,
+                                        ImageConstant.imgArrowrightOnPrimary,
                                     height: 18.adaptSize,
                                     width: 18.adaptSize,
                                     margin: EdgeInsets.only(
@@ -155,7 +153,7 @@ class MypageContactUsInquiryHistoryExpandedPageState
                                     ),
                                     CustomImageView(
                                       svgPath:
-                                          ImageConstant.imgArrowrightOnprimary,
+                                          ImageConstant.imgArrowrightOnPrimary,
                                       height: 18.adaptSize,
                                       width: 18.adaptSize,
                                       margin: EdgeInsets.only(
@@ -286,7 +284,7 @@ class MypageContactUsInquiryHistoryExpandedPageState
                                           ),
                                           CustomImageView(
                                             svgPath: ImageConstant
-                                                .imgArrowrightOnprimary,
+                                                .imgArrowrightOnPrimary,
                                             height: 18.adaptSize,
                                             width: 18.adaptSize,
                                             margin: EdgeInsets.only(

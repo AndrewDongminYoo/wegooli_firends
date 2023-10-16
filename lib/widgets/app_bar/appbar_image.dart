@@ -9,9 +9,7 @@ class AppbarImage extends StatelessWidget {
     this.svgPath,
     this.margin,
     this.onTap,
-  }) : super(
-          key: key,
-        );
+  }) : super(key: key);
 
   String? imagePath;
 

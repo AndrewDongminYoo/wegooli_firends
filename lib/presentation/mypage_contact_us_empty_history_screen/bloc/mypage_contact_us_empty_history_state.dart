@@ -2,19 +2,19 @@
 
 part of 'mypage_contact_us_empty_history_bloc.dart';
 
-/// Represents the state of MypageContactUsEmptyHistory in the application.
-class MypageContactUsEmptyHistoryState extends Equatable {
-  MypageContactUsEmptyHistoryState({this.mypageContactUsEmptyHistoryModelObj});
+/// Represents the state of MyPageContactUsEmptyHistory in the application.
+class MyPageContactUsEmptyHistoryState extends Equatable {
+  MyPageContactUsEmptyHistoryState({this.mypageContactUsEmptyHistoryModelObj});
 
-  MypageContactUsEmptyHistoryModel? mypageContactUsEmptyHistoryModelObj;
+  MyPageContactUsEmptyHistoryModel? mypageContactUsEmptyHistoryModelObj;
 
   @override
   List<Object?> get props => [
         mypageContactUsEmptyHistoryModelObj,
       ];
-  MypageContactUsEmptyHistoryState copyWith(
-      {MypageContactUsEmptyHistoryModel? mypageContactUsEmptyHistoryModelObj}) {
-    return MypageContactUsEmptyHistoryState(
+  MyPageContactUsEmptyHistoryState copyWith(
+      {MyPageContactUsEmptyHistoryModel? mypageContactUsEmptyHistoryModelObj}) {
+    return MyPageContactUsEmptyHistoryState(
       mypageContactUsEmptyHistoryModelObj:
           mypageContactUsEmptyHistoryModelObj ??
               this.mypageContactUsEmptyHistoryModelObj,

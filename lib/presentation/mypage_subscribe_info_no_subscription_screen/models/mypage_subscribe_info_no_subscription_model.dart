@@ -2,9 +2,9 @@
 
 import 'package:equatable/equatable.dart';/// This class defines the variables used in the [mypage_subscribe_info_no_subscription_screen],
 /// and is typically used to hold data that is passed between different parts of the application.
-class MypageSubscribeInfoNoSubscriptionModel extends Equatable {MypageSubscribeInfoNoSubscriptionModel() {  }
+class MyPageSubscribeInfoNoSubscriptionModel extends Equatable {MyPageSubscribeInfoNoSubscriptionModel() {  }
 
-MypageSubscribeInfoNoSubscriptionModel copyWith() { return MypageSubscribeInfoNoSubscriptionModel(
-); } 
+MyPageSubscribeInfoNoSubscriptionModel copyWith() { return MyPageSubscribeInfoNoSubscriptionModel(
+); }
 @override List<Object?> get props => [];
  }

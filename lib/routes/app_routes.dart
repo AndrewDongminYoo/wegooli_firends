@@ -299,8 +299,8 @@ class AppRoutes {
   static Map<String, WidgetBuilder> get routes => {
         smartKeyDetailsScreen: SmartKeyDetailsScreen.builder,
         signupCompleteScreen: SignupCompleteScreen.builder,
-        mypageNoticesOneScreen: MypageNoticesOneScreen.builder,
-        mypageNoticesNoNoticeScreen: MypageNoticesNoNoticeScreen.builder,
+        mypageNoticesOneScreen: MyPageNoticesOneScreen.builder,
+        mypageNoticesNoNoticeScreen: MyPageNoticesNoNoticeScreen.builder,
         schedulesContainerScreen: SchedulesContainerScreen.builder,
         signinPageScreen: SigninPageScreen.builder,
         signupPageIdentityVerificationTermsBottomsheetScreen:
@@ -325,23 +325,23 @@ class AppRoutes {
         schedulesTeamIsNotFullScreen: SchedulesTeamIsNotFullScreen.builder,
         schedulesTeamIsFullScreen: SchedulesTeamIsFullScreen.builder,
         smartKeyScreen: SmartKeyScreen.builder,
-        mypageScreen: MypageScreen.builder,
+        mypageScreen: MyPageScreen.builder,
         gasIndicatorIconScreen: GasIndicatorIconScreen.builder,
-        mypageCardListScreen: MypageCardListScreen.builder,
+        mypageCardListScreen: MyPageCardListScreen.builder,
         smartKeyAnotherIsCurrentlyUsingScreen:
             SmartKeyAnotherIsCurrentlyUsingScreen.builder,
         mypageSubscribeInfoNoSubscriptionScreen:
-            MypageSubscribeInfoNoSubscriptionScreen.builder,
-        mypageSubscribeInfoScreen: MypageSubscribeInfoScreen.builder,
+            MyPageSubscribeInfoNoSubscriptionScreen.builder,
+        mypageSubscribeInfoScreen: MyPageSubscribeInfoScreen.builder,
         mypageContactUsEmptyHistoryScreen:
-            MypageContactUsEmptyHistoryScreen.builder,
+            MyPageContactUsEmptyHistoryScreen.builder,
         mypageContactUsInquiryHistoryExpandedTabContainerScreen:
-            MypageContactUsInquiryHistoryExpandedTabContainerScreen.builder,
+            MyPageContactUsInquiryHistoryExpandedTabContainerScreen.builder,
         unsubscribeScreen: UnsubscribeScreen.builder,
-        mypageCardRegisterScreen: MypageCardRegisterScreen.builder,
-        mypageNoticesScreen: MypageNoticesScreen.builder,
+        mypageCardRegisterScreen: MyPageCardRegisterScreen.builder,
+        mypageNoticesScreen: MyPageNoticesScreen.builder,
         mypageContactUs11ContactUsScreen:
-            MypageContactUs11ContactUsScreen.builder,
+            MyPageContactUs11ContactUsScreen.builder,
         expiringSubscriptionsScreen: ExpiringSubscriptionsScreen.builder,
         k48Screen: K48Screen.builder,
         k49Screen: K49Screen.builder,

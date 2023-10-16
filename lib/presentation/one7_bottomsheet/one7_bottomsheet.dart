@@ -8,9 +8,7 @@ import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
 // ignore_for_file: must_be_immutable
 class One7Bottomsheet extends StatelessWidget {
   const One7Bottomsheet({Key? key})
-      : super(
-          key: key,
-        );
+      : super(key: key);
 
   static Widget builder(BuildContext context) {
     return BlocProvider<One7Bloc>(
@@ -85,7 +83,7 @@ class One7Bottomsheet extends StatelessWidget {
                     style: theme.textTheme.titleMedium,
                   ),
                   CustomImageView(
-                    svgPath: ImageConstant.imgArrowrightOnprimary,
+                    svgPath: ImageConstant.imgArrowrightOnPrimary,
                     height: 18.adaptSize,
                     width: 18.adaptSize,
                     margin: EdgeInsets.only(left: 10.h),
@@ -259,7 +257,7 @@ class One7Bottomsheet extends StatelessWidget {
                         icon: Container(
                           margin: EdgeInsets.only(left: 10.h),
                           child: CustomImageView(
-                            svgPath: ImageConstant.imgArrowrightOnprimary,
+                            svgPath: ImageConstant.imgArrowrightOnPrimary,
                           ),
                         ),
                         hintText: "lbl_8_1_18_00".tr,

@@ -7,9 +7,7 @@ class UserageItemWidget extends StatelessWidget {
   UserageItemWidget(
     this.userageItemModelObj, {
     Key? key,
-  }) : super(
-          key: key,
-        );
+  }) : super(key: key);
 
   UserageItemModel userageItemModelObj;
 

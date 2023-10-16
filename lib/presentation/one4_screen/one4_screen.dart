@@ -7,9 +7,7 @@ import 'package:wegooli_friends_app/widgets/custom_outlined_button.dart';
 
 class One4Screen extends StatelessWidget {
   One4Screen({Key? key})
-      : super(
-          key: key,
-        );
+      : super(key: key);
 
   GlobalKey<NavigatorState> navigatorKey = GlobalKey();
 

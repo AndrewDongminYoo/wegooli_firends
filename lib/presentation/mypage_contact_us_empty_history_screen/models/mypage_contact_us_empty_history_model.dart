@@ -2,9 +2,9 @@
 
 import 'package:equatable/equatable.dart';/// This class defines the variables used in the [mypage_contact_us_empty_history_screen],
 /// and is typically used to hold data that is passed between different parts of the application.
-class MypageContactUsEmptyHistoryModel extends Equatable {MypageContactUsEmptyHistoryModel() {  }
+class MyPageContactUsEmptyHistoryModel extends Equatable {MyPageContactUsEmptyHistoryModel() {  }
 
-MypageContactUsEmptyHistoryModel copyWith() { return MypageContactUsEmptyHistoryModel(
-); } 
+MyPageContactUsEmptyHistoryModel copyWith() { return MyPageContactUsEmptyHistoryModel(
+); }
 @override List<Object?> get props => [];
  }

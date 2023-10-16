@@ -12,9 +12,7 @@ class CustomIconButton extends StatelessWidget {
     this.decoration,
     this.child,
     this.onTap,
-  }) : super(
-          key: key,
-        );
+  }) : super(key: key);
 
   final Alignment? alignment;
 

@@ -6,9 +6,7 @@ import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
 
 class SignupCompleteScreen extends StatelessWidget {
   const SignupCompleteScreen({Key? key})
-      : super(
-          key: key,
-        );
+      : super(key: key);
 
   static Widget builder(BuildContext context) {
     return BlocProvider<SignupCompleteBloc>(

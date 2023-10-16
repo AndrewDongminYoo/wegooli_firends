@@ -5,9 +5,7 @@ import 'package:wegooli_friends_app/core/app_export.dart';
 
 class SplashScreenOneScreen extends StatelessWidget {
   const SplashScreenOneScreen({Key? key})
-      : super(
-          key: key,
-        );
+      : super(key: key);
 
   static Widget builder(BuildContext context) {
     return BlocProvider<SplashScreenOneBloc>(
@@ -58,7 +56,7 @@ class SplashScreenOneScreen extends StatelessWidget {
                           child: Column(
                             children: [
                               CustomImageView(
-                                svgPath: ImageConstant.imgFriendsOnprimary,
+                                svgPath: ImageConstant.imgFriendsOnPrimary,
                                 height: 33.v,
                                 width: 172.h,
                               ),

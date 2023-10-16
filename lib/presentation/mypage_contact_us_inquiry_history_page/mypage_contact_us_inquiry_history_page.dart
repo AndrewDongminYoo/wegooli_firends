@@ -6,31 +6,29 @@ import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 
 // ignore_for_file: must_be_immutable
-class MypageContactUsInquiryHistoryPage extends StatefulWidget {
-  const MypageContactUsInquiryHistoryPage({Key? key})
-      : super(
-          key: key,
-        );
+class MyPageContactUsInquiryHistoryPage extends StatefulWidget {
+  const MyPageContactUsInquiryHistoryPage({Key? key})
+      : super(key: key);
 
   @override
-  MypageContactUsInquiryHistoryPageState createState() =>
-      MypageContactUsInquiryHistoryPageState();
+  MyPageContactUsInquiryHistoryPageState createState() =>
+      MyPageContactUsInquiryHistoryPageState();
   static Widget builder(BuildContext context) {
-    return BlocProvider<MypageContactUsInquiryHistoryBloc>(
+    return BlocProvider<MyPageContactUsInquiryHistoryBloc>(
       create: (context) =>
-          MypageContactUsInquiryHistoryBloc(MypageContactUsInquiryHistoryState(
+          MyPageContactUsInquiryHistoryBloc(MyPageContactUsInquiryHistoryState(
         mypageContactUsInquiryHistoryModelObj:
-            MypageContactUsInquiryHistoryModel(),
+            MyPageContactUsInquiryHistoryModel(),
       ))
-            ..add(MypageContactUsInquiryHistoryInitialEvent()),
-      child: MypageContactUsInquiryHistoryPage(),
+            ..add(MyPageContactUsInquiryHistoryInitialEvent()),
+      child: MyPageContactUsInquiryHistoryPage(),
     );
   }
 }
 
-class MypageContactUsInquiryHistoryPageState
-    extends State<MypageContactUsInquiryHistoryPage>
-    with AutomaticKeepAliveClientMixin<MypageContactUsInquiryHistoryPage> {
+class MyPageContactUsInquiryHistoryPageState
+    extends State<MyPageContactUsInquiryHistoryPage>
+    with AutomaticKeepAliveClientMixin<MyPageContactUsInquiryHistoryPage> {
   @override
   bool get wantKeepAlive => true;
   @override
@@ -43,9 +41,9 @@ class MypageContactUsInquiryHistoryPageState
           width: double.maxFinite,
           decoration: AppDecoration.fillOnPrimaryContainer,
           child: BlocSelector<
-              MypageContactUsInquiryHistoryBloc,
-              MypageContactUsInquiryHistoryState,
-              MypageContactUsInquiryHistoryModel?>(
+              MyPageContactUsInquiryHistoryBloc,
+              MyPageContactUsInquiryHistoryState,
+              MyPageContactUsInquiryHistoryModel?>(
             selector: (state) => state.mypageContactUsInquiryHistoryModelObj,
             builder: (context, mypageContactUsInquiryHistoryModelObj) {
               return ListView.separated(

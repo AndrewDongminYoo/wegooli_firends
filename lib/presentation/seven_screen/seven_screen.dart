@@ -8,9 +8,7 @@ import 'package:wegooli_friends_app/widgets/custom_text_form_field.dart';
 
 class SevenScreen extends StatelessWidget {
   SevenScreen({Key? key})
-      : super(
-          key: key,
-        );
+      : super(key: key);
 
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 

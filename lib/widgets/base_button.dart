@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
 
 class BaseButton extends StatelessWidget {
   BaseButton({
@@ -13,9 +12,7 @@ class BaseButton extends StatelessWidget {
     this.width,
     this.margin,
     this.alignment,
-  }) : super(
-          key: key,
-        );
+  }) : super(key: key);
 
   final String text;
 

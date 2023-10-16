@@ -2,19 +2,19 @@
 
 part of 'mypage_subscribe_info_bloc.dart';
 
-/// Represents the state of MypageSubscribeInfo in the application.
-class MypageSubscribeInfoState extends Equatable {
-  MypageSubscribeInfoState({this.mypageSubscribeInfoModelObj});
+/// Represents the state of MyPageSubscribeInfo in the application.
+class MyPageSubscribeInfoState extends Equatable {
+  MyPageSubscribeInfoState({this.mypageSubscribeInfoModelObj});
 
-  MypageSubscribeInfoModel? mypageSubscribeInfoModelObj;
+  MyPageSubscribeInfoModel? mypageSubscribeInfoModelObj;
 
   @override
   List<Object?> get props => [
         mypageSubscribeInfoModelObj,
       ];
-  MypageSubscribeInfoState copyWith(
-      {MypageSubscribeInfoModel? mypageSubscribeInfoModelObj}) {
-    return MypageSubscribeInfoState(
+  MyPageSubscribeInfoState copyWith(
+      {MyPageSubscribeInfoModel? mypageSubscribeInfoModelObj}) {
+    return MyPageSubscribeInfoState(
       mypageSubscribeInfoModelObj:
           mypageSubscribeInfoModelObj ?? this.mypageSubscribeInfoModelObj,
     );

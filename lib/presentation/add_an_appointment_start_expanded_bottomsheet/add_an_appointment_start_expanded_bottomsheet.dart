@@ -8,9 +8,7 @@ import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
 // ignore_for_file: must_be_immutable
 class AddAnAppointmentStartExpandedBottomsheet extends StatelessWidget {
   const AddAnAppointmentStartExpandedBottomsheet({Key? key})
-      : super(
-          key: key,
-        );
+      : super(key: key);
 
   static Widget builder(BuildContext context) {
     return BlocProvider<AddAnAppointmentStartExpandedBloc>(
@@ -93,7 +91,7 @@ class AddAnAppointmentStartExpandedBottomsheet extends StatelessWidget {
                         icon: Container(
                           margin: EdgeInsets.only(left: 10.h),
                           child: CustomImageView(
-                            svgPath: ImageConstant.imgArrowrightOnprimary,
+                            svgPath: ImageConstant.imgArrowrightOnPrimary,
                           ),
                         ),
                         hintText: "lbl_8_1_16_00".tr,
@@ -138,7 +136,7 @@ class AddAnAppointmentStartExpandedBottomsheet extends StatelessWidget {
                     style: theme.textTheme.titleMedium,
                   ),
                   CustomImageView(
-                    svgPath: ImageConstant.imgArrowrightOnprimary,
+                    svgPath: ImageConstant.imgArrowrightOnPrimary,
                     height: 18.adaptSize,
                     width: 18.adaptSize,
                     margin: EdgeInsets.only(left: 10.h),

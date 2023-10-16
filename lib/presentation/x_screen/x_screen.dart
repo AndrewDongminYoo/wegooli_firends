@@ -9,9 +9,7 @@ import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
 
 class XScreen extends StatelessWidget {
   XScreen({Key? key})
-      : super(
-          key: key,
-        );
+      : super(key: key);
 
   GlobalKey<NavigatorState> navigatorKey = GlobalKey();
 

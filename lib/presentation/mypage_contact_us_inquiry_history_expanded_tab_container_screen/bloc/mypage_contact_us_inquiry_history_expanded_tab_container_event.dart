@@ -3,16 +3,16 @@
 part of 'mypage_contact_us_inquiry_history_expanded_tab_container_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///MypageContactUsInquiryHistoryExpandedTabContainer widget.
+///MyPageContactUsInquiryHistoryExpandedTabContainer widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable
-abstract class MypageContactUsInquiryHistoryExpandedTabContainerEvent
+abstract class MyPageContactUsInquiryHistoryExpandedTabContainerEvent
     extends Equatable {}
 
-/// Event that is dispatched when the MypageContactUsInquiryHistoryExpandedTabContainer widget is first created.
-class MypageContactUsInquiryHistoryExpandedTabContainerInitialEvent
-    extends MypageContactUsInquiryHistoryExpandedTabContainerEvent {
+/// Event that is dispatched when the MyPageContactUsInquiryHistoryExpandedTabContainer widget is first created.
+class MyPageContactUsInquiryHistoryExpandedTabContainerInitialEvent
+    extends MyPageContactUsInquiryHistoryExpandedTabContainerEvent {
   @override
   List<Object?> get props => [];
 }

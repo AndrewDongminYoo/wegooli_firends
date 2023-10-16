@@ -8,9 +8,7 @@ import 'package:wegooli_friends_app/widgets/custom_bottom_bar.dart';
 
 class SmartKeyScreen extends StatelessWidget {
   SmartKeyScreen({Key? key})
-      : super(
-          key: key,
-        );
+      : super(key: key);
 
   GlobalKey<NavigatorState> navigatorKey = GlobalKey();
 
@@ -105,7 +103,7 @@ class SmartKeyScreen extends StatelessWidget {
                                             ),
                                             CustomImageView(
                                               svgPath: ImageConstant
-                                                  .imgArrowrightOnprimary,
+                                                  .imgArrowrightOnPrimary,
                                               height: 18.adaptSize,
                                               width: 18.adaptSize,
                                               margin: EdgeInsets.only(

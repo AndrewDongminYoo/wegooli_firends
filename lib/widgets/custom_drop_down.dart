@@ -24,9 +24,7 @@ class CustomDropDown extends StatelessWidget {
     this.filled = false,
     this.validator,
     this.onChanged,
-  }) : super(
-          key: key,
-        );
+  }) : super(key: key);
 
   final Alignment? alignment;
 

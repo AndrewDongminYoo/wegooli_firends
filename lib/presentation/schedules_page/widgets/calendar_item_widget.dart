@@ -7,9 +7,7 @@ class CalendarItemWidget extends StatelessWidget {
   CalendarItemWidget(
     this.calendarItemModelObj, {
     Key? key,
-  }) : super(
-          key: key,
-        );
+  }) : super(key: key);
 
   CalendarItemModel calendarItemModelObj;
 

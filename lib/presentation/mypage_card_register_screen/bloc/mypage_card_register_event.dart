@@ -3,14 +3,14 @@
 part of 'mypage_card_register_bloc.dart';
 
 /// Abstract class for all events that can be dispatched from the
-///MypageCardRegister widget.
+///MyPageCardRegister widget.
 ///
 /// Events must be immutable and implement the [Equatable] interface.
 @immutable
-abstract class MypageCardRegisterEvent extends Equatable {}
+abstract class MyPageCardRegisterEvent extends Equatable {}
 
-/// Event that is dispatched when the MypageCardRegister widget is first created.
-class MypageCardRegisterInitialEvent extends MypageCardRegisterEvent {
+/// Event that is dispatched when the MyPageCardRegister widget is first created.
+class MyPageCardRegisterInitialEvent extends MyPageCardRegisterEvent {
   @override
   List<Object?> get props => [];
 }

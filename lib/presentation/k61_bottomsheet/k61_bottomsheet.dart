@@ -8,9 +8,7 @@ import 'package:wegooli_friends_app/widgets/custom_outlined_button.dart';
 // ignore_for_file: must_be_immutable
 class K61Bottomsheet extends StatelessWidget {
   const K61Bottomsheet({Key? key})
-      : super(
-          key: key,
-        );
+      : super(key: key);
 
   static Widget builder(BuildContext context) {
     return BlocProvider<K61Bloc>(

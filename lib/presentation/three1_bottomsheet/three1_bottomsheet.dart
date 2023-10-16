@@ -8,9 +8,7 @@ import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
 // ignore_for_file: must_be_immutable
 class Three1Bottomsheet extends StatelessWidget {
   const Three1Bottomsheet({Key? key})
-      : super(
-          key: key,
-        );
+      : super(key: key);
 
   static Widget builder(BuildContext context) {
     return BlocProvider<Three1Bloc>(
@@ -87,7 +85,7 @@ class Three1Bottomsheet extends StatelessWidget {
                         icon: Container(
                           margin: EdgeInsets.only(left: 10.h),
                           child: CustomImageView(
-                            svgPath: ImageConstant.imgArrowrightOnprimary,
+                            svgPath: ImageConstant.imgArrowrightOnPrimary,
                           ),
                         ),
                         hintText: "lbl_8_1_16_00".tr,
@@ -132,7 +130,7 @@ class Three1Bottomsheet extends StatelessWidget {
                         icon: Container(
                           margin: EdgeInsets.only(left: 10.h),
                           child: CustomImageView(
-                            svgPath: ImageConstant.imgArrowrightOnprimary,
+                            svgPath: ImageConstant.imgArrowrightOnPrimary,
                           ),
                         ),
                         hintText: "lbl_8_1_18_00".tr,

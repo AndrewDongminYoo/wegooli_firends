@@ -10,9 +10,7 @@ import 'package:wegooli_friends_app/widgets/custom_text_form_field.dart';
 // ignore_for_file: must_be_immutable
 class SendBirdChatPage extends StatelessWidget {
   const SendBirdChatPage({Key? key})
-      : super(
-          key: key,
-        );
+      : super(key: key);
 
   static Widget builder(BuildContext context) {
     return BlocProvider<SendBirdChatBloc>(

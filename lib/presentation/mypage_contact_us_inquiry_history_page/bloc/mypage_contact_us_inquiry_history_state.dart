@@ -2,21 +2,21 @@
 
 part of 'mypage_contact_us_inquiry_history_bloc.dart';
 
-/// Represents the state of MypageContactUsInquiryHistory in the application.
-class MypageContactUsInquiryHistoryState extends Equatable {
-  MypageContactUsInquiryHistoryState(
+/// Represents the state of MyPageContactUsInquiryHistory in the application.
+class MyPageContactUsInquiryHistoryState extends Equatable {
+  MyPageContactUsInquiryHistoryState(
       {this.mypageContactUsInquiryHistoryModelObj});
 
-  MypageContactUsInquiryHistoryModel? mypageContactUsInquiryHistoryModelObj;
+  MyPageContactUsInquiryHistoryModel? mypageContactUsInquiryHistoryModelObj;
 
   @override
   List<Object?> get props => [
         mypageContactUsInquiryHistoryModelObj,
       ];
-  MypageContactUsInquiryHistoryState copyWith(
-      {MypageContactUsInquiryHistoryModel?
+  MyPageContactUsInquiryHistoryState copyWith(
+      {MyPageContactUsInquiryHistoryModel?
           mypageContactUsInquiryHistoryModelObj}) {
-    return MypageContactUsInquiryHistoryState(
+    return MyPageContactUsInquiryHistoryState(
       mypageContactUsInquiryHistoryModelObj:
           mypageContactUsInquiryHistoryModelObj ??
               this.mypageContactUsInquiryHistoryModelObj,

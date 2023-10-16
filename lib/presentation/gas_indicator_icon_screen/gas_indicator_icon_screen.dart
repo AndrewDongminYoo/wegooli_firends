@@ -8,9 +8,7 @@ import 'package:wegooli_friends_app/widgets/app_bar/custom_app_bar.dart';
 
 class GasIndicatorIconScreen extends StatelessWidget {
   const GasIndicatorIconScreen({Key? key})
-      : super(
-          key: key,
-        );
+      : super(key: key);
 
   static Widget builder(BuildContext context) {
     return BlocProvider<GasIndicatorIconBloc>(

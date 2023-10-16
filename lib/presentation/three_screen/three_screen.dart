@@ -7,9 +7,7 @@ import 'package:wegooli_friends_app/widgets/custom_checkbox_button.dart';
 
 class ThreeScreen extends StatelessWidget {
   ThreeScreen({Key? key})
-      : super(
-          key: key,
-        );
+      : super(key: key);
 
   GlobalKey<NavigatorState> navigatorKey = GlobalKey();
 

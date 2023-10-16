@@ -2,15 +2,15 @@
 
 part of 'mypage_card_list_bloc.dart';
 
-/// Represents the state of MypageCardList in the application.
-class MypageCardListState extends Equatable {
-  MypageCardListState({
+/// Represents the state of MyPageCardList in the application.
+class MyPageCardListState extends Equatable {
+  MyPageCardListState({
     this.radioGroup = "",
     this.radioGroup1 = "",
     this.mypageCardListModelObj,
   });
 
-  MypageCardListModel? mypageCardListModelObj;
+  MyPageCardListModel? mypageCardListModelObj;
 
   String radioGroup;
 
@@ -22,12 +22,12 @@ class MypageCardListState extends Equatable {
         radioGroup1,
         mypageCardListModelObj,
       ];
-  MypageCardListState copyWith({
+  MyPageCardListState copyWith({
     String? radioGroup,
     String? radioGroup1,
-    MypageCardListModel? mypageCardListModelObj,
+    MyPageCardListModel? mypageCardListModelObj,
   }) {
-    return MypageCardListState(
+    return MyPageCardListState(
       radioGroup: radioGroup ?? this.radioGroup,
       radioGroup1: radioGroup1 ?? this.radioGroup1,
       mypageCardListModelObj:

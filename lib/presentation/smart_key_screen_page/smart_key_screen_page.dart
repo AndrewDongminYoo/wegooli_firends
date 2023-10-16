@@ -8,9 +8,7 @@ import 'package:wegooli_friends_app/widgets/app_bar/custom_app_bar.dart';
 // ignore_for_file: must_be_immutable
 class SmartKeyScreenPage extends StatelessWidget {
   const SmartKeyScreenPage({Key? key})
-      : super(
-          key: key,
-        );
+      : super(key: key);
 
   static Widget builder(BuildContext context) {
     return BlocProvider<SmartKeyScreenBloc>(
@@ -96,7 +94,7 @@ class SmartKeyScreenPage extends StatelessWidget {
                                       ),
                                       CustomImageView(
                                         svgPath: ImageConstant
-                                            .imgArrowrightOnprimary,
+                                            .imgArrowrightOnPrimary,
                                         height: 18.adaptSize,
                                         width: 18.adaptSize,
                                         margin: EdgeInsets.only(

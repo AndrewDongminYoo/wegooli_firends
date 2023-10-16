@@ -5,9 +5,7 @@ import 'package:wegooli_friends_app/core/app_export.dart';
 
 class K48Screen extends StatelessWidget {
   const K48Screen({Key? key})
-      : super(
-          key: key,
-        );
+      : super(key: key);
 
   static Widget builder(BuildContext context) {
     return BlocProvider<K48Bloc>(

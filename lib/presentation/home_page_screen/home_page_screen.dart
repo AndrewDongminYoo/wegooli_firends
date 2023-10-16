@@ -8,10 +8,8 @@ import 'package:wegooli_friends_app/widgets/app_bar/custom_app_bar.dart';
 import 'package:wegooli_friends_app/widgets/custom_bottom_bar.dart';
 
 class HomePageScreen extends StatelessWidget {
-  HomePageScreen({Key? key})
-      : super(
-          key: key,
-        );
+    HomePageScreen({Key? key})
+      : super(key: key);
 
   GlobalKey<NavigatorState> navigatorKey = GlobalKey();
 

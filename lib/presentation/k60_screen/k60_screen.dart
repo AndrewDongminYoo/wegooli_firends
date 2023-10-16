@@ -7,9 +7,7 @@ import 'package:wegooli_friends_app/widgets/custom_text_form_field.dart';
 
 class K60Screen extends StatelessWidget {
   const K60Screen({Key? key})
-      : super(
-          key: key,
-        );
+      : super(key: key);
 
   static Widget builder(BuildContext context) {
     return BlocProvider<K60Bloc>(

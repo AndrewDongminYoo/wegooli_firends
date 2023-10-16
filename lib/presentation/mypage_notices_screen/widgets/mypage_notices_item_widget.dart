@@ -3,15 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 
 // ignore: must_be_immutable
-class MypageNoticesItemWidget extends StatelessWidget {
-  MypageNoticesItemWidget(
+class MyPageNoticesItemWidget extends StatelessWidget {
+  MyPageNoticesItemWidget(
     this.mypageNoticesItemModelObj, {
     Key? key,
-  }) : super(
-          key: key,
-        );
+  }) : super(key: key);
 
-  MypageNoticesItemModel mypageNoticesItemModelObj;
+  MyPageNoticesItemModel mypageNoticesItemModelObj;
 
   @override
   Widget build(BuildContext context) {

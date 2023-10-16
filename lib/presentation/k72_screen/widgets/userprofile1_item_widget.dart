@@ -7,9 +7,7 @@ class Userprofile1ItemWidget extends StatelessWidget {
   Userprofile1ItemWidget(
     this.userprofile1ItemModelObj, {
     Key? key,
-  }) : super(
-          key: key,
-        );
+  }) : super(key: key);
 
   Userprofile1ItemModel userprofile1ItemModelObj;
 

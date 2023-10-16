@@ -8,9 +8,7 @@ class ListaddphotoaltItemWidget extends StatelessWidget {
   ListaddphotoaltItemWidget(
     this.listaddphotoaltItemModelObj, {
     Key? key,
-  }) : super(
-          key: key,
-        );
+  }) : super(key: key);
 
   ListaddphotoaltItemModel listaddphotoaltItemModelObj;
 

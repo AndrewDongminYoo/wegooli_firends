@@ -6,9 +6,7 @@ import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
 
 class K57Screen extends StatelessWidget {
   const K57Screen({Key? key})
-      : super(
-          key: key,
-        );
+      : super(key: key);
 
   static Widget builder(BuildContext context) {
     return BlocProvider<K57Bloc>(

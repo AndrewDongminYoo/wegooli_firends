@@ -2,22 +2,22 @@
 
 part of 'mypage_contact_us_inquiry_history_expanded_tab_container_bloc.dart';
 
-/// Represents the state of MypageContactUsInquiryHistoryExpandedTabContainer in the application.
-class MypageContactUsInquiryHistoryExpandedTabContainerState extends Equatable {
-  MypageContactUsInquiryHistoryExpandedTabContainerState(
+/// Represents the state of MyPageContactUsInquiryHistoryExpandedTabContainer in the application.
+class MyPageContactUsInquiryHistoryExpandedTabContainerState extends Equatable {
+  MyPageContactUsInquiryHistoryExpandedTabContainerState(
       {this.mypageContactUsInquiryHistoryExpandedTabContainerModelObj});
 
-  MypageContactUsInquiryHistoryExpandedTabContainerModel?
+  MyPageContactUsInquiryHistoryExpandedTabContainerModel?
       mypageContactUsInquiryHistoryExpandedTabContainerModelObj;
 
   @override
   List<Object?> get props => [
         mypageContactUsInquiryHistoryExpandedTabContainerModelObj,
       ];
-  MypageContactUsInquiryHistoryExpandedTabContainerState copyWith(
-      {MypageContactUsInquiryHistoryExpandedTabContainerModel?
+  MyPageContactUsInquiryHistoryExpandedTabContainerState copyWith(
+      {MyPageContactUsInquiryHistoryExpandedTabContainerModel?
           mypageContactUsInquiryHistoryExpandedTabContainerModelObj}) {
-    return MypageContactUsInquiryHistoryExpandedTabContainerState(
+    return MyPageContactUsInquiryHistoryExpandedTabContainerState(
       mypageContactUsInquiryHistoryExpandedTabContainerModelObj:
           mypageContactUsInquiryHistoryExpandedTabContainerModelObj ??
               this.mypageContactUsInquiryHistoryExpandedTabContainerModelObj,

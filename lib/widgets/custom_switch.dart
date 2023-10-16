@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 
 class CustomSwitch extends StatelessWidget {
@@ -11,9 +10,7 @@ class CustomSwitch extends StatelessWidget {
     this.width,
     this.height,
     this.margin,
-  }) : super(
-          key: key,
-        );
+  }) : super(key: key);
 
   final Alignment? alignment;
 

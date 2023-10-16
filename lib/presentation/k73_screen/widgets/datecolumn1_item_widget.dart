@@ -7,9 +7,7 @@ class Datecolumn1ItemWidget extends StatelessWidget {
   Datecolumn1ItemWidget(
     this.datecolumn1ItemModelObj, {
     Key? key,
-  }) : super(
-          key: key,
-        );
+  }) : super(key: key);
 
   Datecolumn1ItemModel datecolumn1ItemModelObj;
 

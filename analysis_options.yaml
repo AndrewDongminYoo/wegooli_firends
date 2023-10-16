@@ -7,21 +7,115 @@
 
 # The following line activates a set of recommended lints for Flutter apps,
 # packages, and plugins designed to encourage good coding practices.
-include: package:flutter_lints/flutter.yaml
+include: all_lint_rules.yaml
 
 linter:
   # The lint rules applied to this project can be customized in the
   # section below to disable rules from the `package:flutter_lints/flutter.yaml`
   # included above or to enable additional rules. A list of all available lints
-  # and their documentation is published at https://dart.dev/lints.
+  # and their documentation is published at
+  # https://dart-lang.github.io/linter/lints/index.html.
   #
   # Instead of disabling a lint rule for the entire project in the
   # section below, it can also be suppressed for a single line of code
   # or a specific dart file by using the `// ignore: name_of_lint` and
   # `// ignore_for_file: name_of_lint` syntax on the line or in the file
   # producing the lint.
+
+  # [🔰 core] : 다트 내장 린터
+  # [🔵 recommend] : 플러터 공식 추천 린터
+  # [🦩 flutter] : 플러터에만 해당되는 린터 설정
+  # [🔧 fixable] : dart fix --apply 가능한 린터
+  # [🧪 experimental] : 실험적인 린터
+  # [❕ removed/deprecated] : 더이상 지원하지 않는/않을 예정인 린터
   rules:
-    # avoid_print: false  # Uncomment to disable the `avoid_print` rule
-    # prefer_single_quotes: true  # Uncomment to enable the `prefer_single_quotes` rule
-# Additional information about this file can be found at
-# https://dart.dev/guides/language/analysis-options
+    # 코드가 너무 장황해지며, 재할당을 사전에 막을 수 있는 `parameter_assignments` 규칙을 사용할때에는 그다지 큰 문제가 되지 않습니다.
+    prefer_final_parameters: false
+    parameter_assignments: true
+    # 개인적인 취향입니다. 가독성이 떨어진다고 생각.
+    cascade_invocations: false
+    # `prefer_single_quotes`와 충돌합니다. 작은 따옴표를 사용하겠습니다.
+    # 작은 따옴표는 입력하기 쉽고 가독성을 떨어뜨리지 않습니다.
+    prefer_double_quotes: false
+    prefer_single_quotes: true
+    # `omit_local_variable_types` 및 기타 규칙과 충돌합니다.
+    # Dart 가이드라인에 따라 코드를 더 읽기 쉽게 만들기 위해
+    # 불필요한 타이핑은 피하고 싶습니다.
+    # https://dart.dev/guides/language/effective-dart/design#avoid-type-annotating-initialized-local-variables 참조
+    always_specify_types: false
+    omit_local_variable_types: true
+    # `prefer_final_locals`와 호환되지 않음
+    # 변경 불가능한 지역 변수를 사용하면 대규모 구현에서 더 예측할 수 있습니다.
+    unnecessary_final: false
+    prefer_final_locals: true
+    # 단일 리턴을 가진 `build` 메서드가 있을 수 있는 Flutter의 경우,
+    # `body`가 충분히 가치가 있을 만큼 복잡합니다.
+    prefer_expression_function_bodies: false
+    # 일부 위젯에서 사용하는 `Key key`와 `@required Widget child`를
+    # 마지막에 배치하는 규칙과 충돌합니다.
+    always_put_required_named_parameters_first: false
+    # `as`는 잘 사용한다면 그렇게 나쁘지 않습니다(특히 곧 출시될 널러블 타입의 경우).
+    # 명시적 예외는 암시적 예외보다 낫습니다.
+    avoid_as: false
+    # 이 프로젝트는 Flutter 스타일의 todo를 사용하지 않습니다.
+    flutter_style_todos: false
+    # on 구문을 사용하기에는 너무 복잡한 경우,
+    # 자발적으로 모든 예외를 캐치해야 하는 상황이 많습니다.
+    avoid_catches_without_on_clauses: false
+    # 때때로 적당한 길이의 코드를 강제로 두 개로 나누어 가독성을 떨어뜨립니다.
+    # 80자 제한을 지키려고 노력하는 한, 그보다 약간 긴 코드는 괜찮습니다.
+    lines_longer_than_80_chars: false
+    # `implicit-dynamic` 비활성화와 충돌
+    avoid_annotating_with_dynamic: false
+    # "lib/"에 있는 파일에 대한 상대 임포트를 선호합니다.
+    prefer_relative_imports: false
+    # `prefer_relative_imports`와 충돌합니다.
+    always_use_package_imports: true
+    # 그렇지 않으면 `missing_return`과 충돌하므로 NNBD를 사용할 때까지 지금은 비활성화합니다.
+    no_default_cases: false
+    # False positive가 너무 많음. 널 검사 단언문에는 메시지가 필요하지 않습니다.
+    prefer_asserts_with_message: false
+    # `context.select`로 번거로움
+    avoid_types_on_closure_parameters: false
+    # False positive가 너무 많음. (builders, widget 그래프 테스트 등)
+    diagnostic_describe_all_properties: false
+    # False positive가 너무 많음. (setter 유형 함수)
+    avoid_positional_boolean_parameters: false
+    # Provider에게는 해당 없음
+    prefer_const_constructors_in_immutables: false
+    # 모든 API 멤버에 대한 문서 설명이 필요하지 않은 경우가 많습니다.
+    public_member_api_docs: false
+    # 런타임 환경에 콘솔에 너무 많은 데이터를 노출하는 것은 좋지 않지만, 나중에 삭제해도 늦지 않습니다.
+    avoid_print: false
+    # 필수 후행 쉼표 누락 - 가로로 너무 긴 코드 만큼, 줄바꿈이 너무 많은 코드도 가독성이 낮아집니다.
+    require_trailing_commas: false
+    # '다이나믹' 대상에 대한 메서드 호출 또는 속성 액세스. 대상에 타입을 지정해 보세요.
+    avoid_dynamic_calls: false
+    # 도큐먼트 코멘트에 참조된 이름에 대한 임포트를 추가 - 불필요합니다.
+    comment_references: false
+    # 지시어 섹션을 알파벳순으로 정렬합니다. 지시문을 정렬해 보세요.
+    directives_ordering: false
+    # 믹스인 타입만만 'with' 구문에서 사용되어야 합니다.
+    prefer_mixin: false
+    # 클래스는 인스턴스 멤버를 정의해야 합니다. 인스턴스 동작을 추가하거나 멤버를 클래스 밖으로 이동해 보세요.
+    avoid_classes_with_only_static_members: false
+    # 상수 이름이 소문자 식별자가 아닙니다. 다트 스타일 가이드를 따르도록 이름을 변경해 보세요.
+    constant_identifier_names: false
+    # GoRouter context 네비게이션 사용을 위해 false
+    use_build_context_synchronously: false
+
+analyzer:
+  # DIFFERENT FROM FLUTTER/FLUTTER
+  exclude:
+    # Fixture depends on dart:ui and raises false positives.
+    - test/*.dart
+    - lib/l10n/app_localizations.dart
+  errors:
+    included_file_warning: ignore
+    unused_element: error
+    unused_field: error
+    unused_local_variable: error
+    unused_shown_name: error
+    unused_import: error
+    unused_result: error
+    avoid_unused_constructor_parameters: error

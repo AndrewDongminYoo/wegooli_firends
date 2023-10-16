@@ -2,19 +2,19 @@
 
 part of 'mypage_notices_no_notice_bloc.dart';
 
-/// Represents the state of MypageNoticesNoNotice in the application.
-class MypageNoticesNoNoticeState extends Equatable {
-  MypageNoticesNoNoticeState({this.mypageNoticesNoNoticeModelObj});
+/// Represents the state of MyPageNoticesNoNotice in the application.
+class MyPageNoticesNoNoticeState extends Equatable {
+  MyPageNoticesNoNoticeState({this.mypageNoticesNoNoticeModelObj});
 
-  MypageNoticesNoNoticeModel? mypageNoticesNoNoticeModelObj;
+  MyPageNoticesNoNoticeModel? mypageNoticesNoNoticeModelObj;
 
   @override
   List<Object?> get props => [
         mypageNoticesNoNoticeModelObj,
       ];
-  MypageNoticesNoNoticeState copyWith(
-      {MypageNoticesNoNoticeModel? mypageNoticesNoNoticeModelObj}) {
-    return MypageNoticesNoNoticeState(
+  MyPageNoticesNoNoticeState copyWith(
+      {MyPageNoticesNoNoticeModel? mypageNoticesNoNoticeModelObj}) {
+    return MyPageNoticesNoNoticeState(
       mypageNoticesNoNoticeModelObj:
           mypageNoticesNoNoticeModelObj ?? this.mypageNoticesNoNoticeModelObj,
     );

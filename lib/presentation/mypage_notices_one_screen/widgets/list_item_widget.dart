@@ -7,9 +7,7 @@ class ListItemWidget extends StatelessWidget {
   ListItemWidget(
     this.listItemModelObj, {
     Key? key,
-  }) : super(
-          key: key,
-        );
+  }) : super(key: key);
 
   ListItemModel listItemModelObj;
 

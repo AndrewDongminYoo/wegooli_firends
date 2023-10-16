@@ -2,9 +2,9 @@
 
 import 'package:equatable/equatable.dart';/// This class defines the variables used in the [mypage_card_register_screen],
 /// and is typically used to hold data that is passed between different parts of the application.
-class MypageCardRegisterModel extends Equatable {MypageCardRegisterModel() {  }
+class MyPageCardRegisterModel extends Equatable {MyPageCardRegisterModel() {  }
 
-MypageCardRegisterModel copyWith() { return MypageCardRegisterModel(
-); } 
+MyPageCardRegisterModel copyWith() { return MyPageCardRegisterModel(
+); }
 @override List<Object?> get props => [];
  }

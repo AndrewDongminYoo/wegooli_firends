@@ -9,9 +9,7 @@ import 'package:wegooli_friends_app/widgets/custom_outlined_button.dart';
 
 class K84Screen extends StatelessWidget {
   K84Screen({Key? key})
-      : super(
-          key: key,
-        );
+      : super(key: key);
 
   GlobalKey<NavigatorState> navigatorKey = GlobalKey();
 

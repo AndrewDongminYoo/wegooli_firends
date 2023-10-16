@@ -11,7 +11,7 @@ class SendBirdChatBloc extends Bloc<SendBirdChatEvent, SendBirdChatState> {
     on<SendBirdChatInitialEvent>(_onInitialize);
   }
 
-  _onInitialize(
+  Future<void> _onInitialize(
     SendBirdChatInitialEvent event,
     Emitter<SendBirdChatState> emit,
   ) async {

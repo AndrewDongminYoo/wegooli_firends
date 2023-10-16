@@ -13,7 +13,7 @@ class Frame34850Bloc extends Bloc<Frame34850Event, Frame34850State> {
     on<ChangeCheckBox1Event>(_changeCheckBox1);
   }
 
-  _changeCheckBox(
+  void _changeCheckBox(
     ChangeCheckBoxEvent event,
     Emitter<Frame34850State> emit,
   ) {
@@ -22,7 +22,7 @@ class Frame34850Bloc extends Bloc<Frame34850Event, Frame34850State> {
     ));
   }
 
-  _changeCheckBox1(
+  void _changeCheckBox1(
     ChangeCheckBox1Event event,
     Emitter<Frame34850State> emit,
   ) {
@@ -31,7 +31,7 @@ class Frame34850Bloc extends Bloc<Frame34850Event, Frame34850State> {
     ));
   }
 
-  _onInitialize(
+  Future<void> _onInitialize(
     Frame34850InitialEvent event,
     Emitter<Frame34850State> emit,
   ) async {

@@ -1,26 +1,26 @@
 name: wegooli_friends_app
 description: A new Flutter project.
 version: 1.0.0+1
-environment: 
-  sdk: '>=2.12.0 <3.0.0'
-dependencies: 
-  flutter: 
-    sdk: flutter
-  flutter_localizations: 
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+dependencies:
+  cached_network_image: ^3.2.1
+  connectivity_plus: ^5.0.1
+  equatable: ^2.0.0
+  flutter:
     sdk: flutter
   flutter_bloc: ^8.0.0
-  connectivity_plus: ^2.3.6
-  shared_preferences: ^2.0.15
-  cached_network_image: ^3.2.1
-  flutter_svg: ^1.1.6
-  equatable: ^2.0.0
-  lottie: 1.2.1
-  flutter_svg_provider: ^1.0.3
-dev_dependencies: 
-  flutter_test: 
+  flutter_localizations:
     sdk: flutter
-flutter: 
-  assets: 
+  flutter_svg: ^2.0.7
+  flutter_svg_provider: ^1.0.3
+  lottie: ^2.6.0
+  shared_preferences: ^2.0.15
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+flutter:
+  assets:
     - assets/
     - assets/images/
     - assets/lottieFiles/

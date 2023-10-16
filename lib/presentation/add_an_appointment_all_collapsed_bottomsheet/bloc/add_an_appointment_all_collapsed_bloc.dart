@@ -15,7 +15,7 @@ class AddAnAppointmentAllCollapsedBloc extends Bloc<
     on<ChangeDropDownEvent>(_changeDropDown);
   }
 
-  _onInitialize(
+  Future<void> _onInitialize(
     AddAnAppointmentAllCollapsedInitialEvent event,
     Emitter<AddAnAppointmentAllCollapsedState> emit,
   ) async {
@@ -26,7 +26,7 @@ class AddAnAppointmentAllCollapsedBloc extends Bloc<
     )));
   }
 
-  _changeDropDown(
+  void _changeDropDown(
     ChangeDropDownEvent event,
     Emitter<AddAnAppointmentAllCollapsedState> emit,
   ) {

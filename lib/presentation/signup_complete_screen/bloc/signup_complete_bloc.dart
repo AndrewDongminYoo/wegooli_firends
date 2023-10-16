@@ -12,7 +12,7 @@ class SignupCompleteBloc
     on<SignupCompleteInitialEvent>(_onInitialize);
   }
 
-  _onInitialize(
+  Future<void> _onInitialize(
     SignupCompleteInitialEvent event,
     Emitter<SignupCompleteState> emit,
   ) async {}

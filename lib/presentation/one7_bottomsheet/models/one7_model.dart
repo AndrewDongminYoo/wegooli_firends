@@ -8,6 +8,6 @@ List<SelectionPopupModel> dropdownItemList;
 
 One7Model copyWith({List<SelectionPopupModel>? dropdownItemList}) { return One7Model(
 dropdownItemList : dropdownItemList ?? this.dropdownItemList,
-); } 
+); }
 @override List<Object?> get props => [dropdownItemList];
  }

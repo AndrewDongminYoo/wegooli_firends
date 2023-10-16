@@ -5,6 +5,6 @@ import 'package:equatable/equatable.dart';/// This class defines the variables u
 class SplashScreenOneModel extends Equatable {SplashScreenOneModel();
 
 SplashScreenOneModel copyWith() { return SplashScreenOneModel(
-); } 
+); }
 @override List<Object?> get props => [];
  }

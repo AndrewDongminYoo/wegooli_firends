@@ -5,6 +5,6 @@ import 'package:equatable/equatable.dart';/// This class defines the variables u
 class SchedulesViewScheduledDateSchedulerOnlyModel extends Equatable {SchedulesViewScheduledDateSchedulerOnlyModel();
 
 SchedulesViewScheduledDateSchedulerOnlyModel copyWith() { return SchedulesViewScheduledDateSchedulerOnlyModel(
-); } 
+); }
 @override List<Object?> get props => [];
  }

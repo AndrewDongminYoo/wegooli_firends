@@ -11,7 +11,7 @@ class Two1Bloc extends Bloc<Two1Event, Two1State> {
     on<Two1InitialEvent>(_onInitialize);
   }
 
-  _onInitialize(
+  Future<void> _onInitialize(
     Two1InitialEvent event,
     Emitter<Two1State> emit,
   ) async {}

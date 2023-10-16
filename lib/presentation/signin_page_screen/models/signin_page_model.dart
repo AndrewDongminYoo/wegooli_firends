@@ -5,6 +5,6 @@ import 'package:equatable/equatable.dart';/// This class defines the variables u
 class SigninPageModel extends Equatable {SigninPageModel();
 
 SigninPageModel copyWith() { return SigninPageModel(
-); } 
+); }
 @override List<Object?> get props => [];
  }

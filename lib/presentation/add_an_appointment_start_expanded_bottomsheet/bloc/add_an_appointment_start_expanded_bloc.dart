@@ -15,7 +15,7 @@ class AddAnAppointmentStartExpandedBloc extends Bloc<
     on<ChangeDropDownEvent>(_changeDropDown);
   }
 
-  _onInitialize(
+  Future<void> _onInitialize(
     AddAnAppointmentStartExpandedInitialEvent event,
     Emitter<AddAnAppointmentStartExpandedState> emit,
   ) async {
@@ -26,7 +26,7 @@ class AddAnAppointmentStartExpandedBloc extends Bloc<
     )));
   }
 
-  _changeDropDown(
+  void _changeDropDown(
     ChangeDropDownEvent event,
     Emitter<AddAnAppointmentStartExpandedState> emit,
   ) {

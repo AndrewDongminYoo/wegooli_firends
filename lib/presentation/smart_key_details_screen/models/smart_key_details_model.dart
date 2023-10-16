@@ -5,6 +5,6 @@ import 'package:equatable/equatable.dart';/// This class defines the variables u
 class SmartKeyDetailsModel extends Equatable {SmartKeyDetailsModel();
 
 SmartKeyDetailsModel copyWith() { return SmartKeyDetailsModel(
-); } 
+); }
 @override List<Object?> get props => [];
  }

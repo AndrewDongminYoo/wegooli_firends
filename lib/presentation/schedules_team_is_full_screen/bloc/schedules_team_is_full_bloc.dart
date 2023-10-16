@@ -14,7 +14,7 @@ class SchedulesTeamIsFullBloc
     on<SchedulesTeamIsFullInitialEvent>(_onInitialize);
   }
 
-  _onInitialize(
+  Future<void> _onInitialize(
     SchedulesTeamIsFullInitialEvent event,
     Emitter<SchedulesTeamIsFullState> emit,
   ) async {

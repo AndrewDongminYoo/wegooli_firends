@@ -1,9 +1,8 @@
-//ignore: unused_import    
+//ignore: unused_import
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class PrefUtils {
-
   PrefUtils() {
     // init();
     SharedPreferences.getInstance().then((value) {
@@ -34,4 +33,3 @@ class PrefUtils {
     }
   }
 }
-    

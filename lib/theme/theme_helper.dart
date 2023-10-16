@@ -94,7 +94,7 @@ class ThemeHelper {
           return colorScheme.onSurface;
         }),
         side: const BorderSide(
-          
+
         ),
         visualDensity: const VisualDensity(
           vertical: -4,

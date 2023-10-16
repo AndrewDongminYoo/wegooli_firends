@@ -5,6 +5,6 @@ import 'package:equatable/equatable.dart';/// This class defines the variables u
 class K113Model extends Equatable {K113Model();
 
 K113Model copyWith() { return K113Model(
-); } 
+); }
 @override List<Object?> get props => [];
  }

@@ -5,6 +5,6 @@ import 'package:equatable/equatable.dart';/// This class defines the variables u
 class Frame466Model extends Equatable {Frame466Model();
 
 Frame466Model copyWith() { return Frame466Model(
-); } 
+); }
 @override List<Object?> get props => [];
  }

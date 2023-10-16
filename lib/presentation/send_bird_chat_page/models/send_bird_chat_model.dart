@@ -5,6 +5,6 @@ import 'package:equatable/equatable.dart';/// This class defines the variables u
 class SendBirdChatModel extends Equatable {SendBirdChatModel();
 
 SendBirdChatModel copyWith() { return SendBirdChatModel(
-); } 
+); }
 @override List<Object?> get props => [];
  }

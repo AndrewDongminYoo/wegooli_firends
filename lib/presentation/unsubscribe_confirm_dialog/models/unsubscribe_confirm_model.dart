@@ -5,6 +5,6 @@ import 'package:equatable/equatable.dart';/// This class defines the variables u
 class UnsubscribeConfirmModel extends Equatable {UnsubscribeConfirmModel();
 
 UnsubscribeConfirmModel copyWith() { return UnsubscribeConfirmModel(
-); } 
+); }
 @override List<Object?> get props => [];
  }

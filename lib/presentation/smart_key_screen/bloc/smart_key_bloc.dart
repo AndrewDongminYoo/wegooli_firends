@@ -11,7 +11,7 @@ class SmartKeyBloc extends Bloc<SmartKeyEvent, SmartKeyState> {
     on<SmartKeyInitialEvent>(_onInitialize);
   }
 
-  _onInitialize(
+  Future<void> _onInitialize(
     SmartKeyInitialEvent event,
     Emitter<SmartKeyState> emit,
   ) async {}

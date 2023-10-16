@@ -12,7 +12,7 @@ class K73Bloc extends Bloc<K73Event, K73State> {
     on<K73InitialEvent>(_onInitialize);
   }
 
-  _onInitialize(
+  Future<void> _onInitialize(
     K73InitialEvent event,
     Emitter<K73State> emit,
   ) async {

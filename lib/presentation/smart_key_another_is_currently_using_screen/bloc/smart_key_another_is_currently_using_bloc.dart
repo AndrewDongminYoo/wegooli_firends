@@ -15,7 +15,7 @@ class SmartKeyAnotherIsCurrentlyUsingBloc extends Bloc<
     on<SmartKeyAnotherIsCurrentlyUsingInitialEvent>(_onInitialize);
   }
 
-  _onInitialize(
+  Future<void> _onInitialize(
     SmartKeyAnotherIsCurrentlyUsingInitialEvent event,
     Emitter<SmartKeyAnotherIsCurrentlyUsingState> emit,
   ) async {}

@@ -18,7 +18,7 @@ class K61Bloc extends Bloc<K61Event, K61State> {
     on<ChangeCheckBox6Event>(_changeCheckBox6);
   }
 
-  _changeCheckBox(
+  void _changeCheckBox(
     ChangeCheckBoxEvent event,
     Emitter<K61State> emit,
   ) {
@@ -27,7 +27,7 @@ class K61Bloc extends Bloc<K61Event, K61State> {
     ));
   }
 
-  _changeCheckBox1(
+  void _changeCheckBox1(
     ChangeCheckBox1Event event,
     Emitter<K61State> emit,
   ) {
@@ -36,7 +36,7 @@ class K61Bloc extends Bloc<K61Event, K61State> {
     ));
   }
 
-  _changeCheckBox2(
+  void _changeCheckBox2(
     ChangeCheckBox2Event event,
     Emitter<K61State> emit,
   ) {
@@ -45,7 +45,7 @@ class K61Bloc extends Bloc<K61Event, K61State> {
     ));
   }
 
-  _changeCheckBox3(
+  void _changeCheckBox3(
     ChangeCheckBox3Event event,
     Emitter<K61State> emit,
   ) {
@@ -54,7 +54,7 @@ class K61Bloc extends Bloc<K61Event, K61State> {
     ));
   }
 
-  _changeCheckBox4(
+  void _changeCheckBox4(
     ChangeCheckBox4Event event,
     Emitter<K61State> emit,
   ) {
@@ -63,7 +63,7 @@ class K61Bloc extends Bloc<K61Event, K61State> {
     ));
   }
 
-  _changeCheckBox5(
+  void _changeCheckBox5(
     ChangeCheckBox5Event event,
     Emitter<K61State> emit,
   ) {
@@ -72,7 +72,7 @@ class K61Bloc extends Bloc<K61Event, K61State> {
     ));
   }
 
-  _changeCheckBox6(
+  void _changeCheckBox6(
     ChangeCheckBox6Event event,
     Emitter<K61State> emit,
   ) {
@@ -81,7 +81,7 @@ class K61Bloc extends Bloc<K61Event, K61State> {
     ));
   }
 
-  _onInitialize(
+  Future<void> _onInitialize(
     K61InitialEvent event,
     Emitter<K61State> emit,
   ) async {

@@ -4,8 +4,8 @@ class UserprofileItemModel {
     this.userName,
     this.id,
   }) {
-    userName = userName ?? "홍길동";
-    id = id ?? "";
+    userName = userName ?? '홍길동';
+    id = id ?? '';
   }
 
   String? userName;

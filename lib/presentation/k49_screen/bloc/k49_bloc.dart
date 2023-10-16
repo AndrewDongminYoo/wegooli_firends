@@ -11,7 +11,7 @@ class K49Bloc extends Bloc<K49Event, K49State> {
     on<K49InitialEvent>(_onInitialize);
   }
 
-  _onInitialize(
+  Future<void> _onInitialize(
     K49InitialEvent event,
     Emitter<K49State> emit,
   ) async {}

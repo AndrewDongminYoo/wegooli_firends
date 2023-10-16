@@ -17,7 +17,7 @@ class ProgressDialogUtils {
   /// If the progress dialog is already visible, this method does nothing.
   /// The Lottie animation used in the dialog is loaded from a file specified by the [lottiePath] variable.
   /// This method uses the `showDialog` function from the Flutter framework to display the dialog.
-  static void showProgressDialog({isCancellable = false}) {
+  static void showProgressDialog({bool isCancellable = false}) {
     if (!isProgressVisible &&
         NavigatorService.navigatorKey.currentState?.overlay?.context != null) {
       showDialog(

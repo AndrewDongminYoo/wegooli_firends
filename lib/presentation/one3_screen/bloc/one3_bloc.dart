@@ -11,7 +11,7 @@ class One3Bloc extends Bloc<One3Event, One3State> {
     on<One3InitialEvent>(_onInitialize);
   }
 
-  _onInitialize(
+  Future<void> _onInitialize(
     One3InitialEvent event,
     Emitter<One3State> emit,
   ) async {

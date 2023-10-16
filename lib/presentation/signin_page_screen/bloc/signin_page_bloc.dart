@@ -11,7 +11,7 @@ class SigninPageBloc extends Bloc<SigninPageEvent, SigninPageState> {
     on<SigninPageInitialEvent>(_onInitialize);
   }
 
-  _onInitialize(
+  Future<void> _onInitialize(
     SigninPageInitialEvent event,
     Emitter<SigninPageState> emit,
   ) async {

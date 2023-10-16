@@ -8,6 +8,6 @@ List<SelectionPopupModel> dropdownItemList;
 
 Two2Model copyWith({List<SelectionPopupModel>? dropdownItemList}) { return Two2Model(
 dropdownItemList : dropdownItemList ?? this.dropdownItemList,
-); } 
+); }
 @override List<Object?> get props => [dropdownItemList];
  }

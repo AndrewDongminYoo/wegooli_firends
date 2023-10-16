@@ -11,7 +11,7 @@ class HomePageBloc extends Bloc<HomePageEvent, HomePageState> {
     on<HomePageInitialEvent>(_onInitialize);
   }
 
-  _onInitialize(
+  Future<void> _onInitialize(
     HomePageInitialEvent event,
     Emitter<HomePageState> emit,
   ) async {}

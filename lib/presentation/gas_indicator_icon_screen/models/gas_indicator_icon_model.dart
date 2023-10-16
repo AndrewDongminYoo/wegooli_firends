@@ -5,6 +5,6 @@ import 'package:equatable/equatable.dart';/// This class defines the variables u
 class GasIndicatorIconModel extends Equatable {GasIndicatorIconModel();
 
 GasIndicatorIconModel copyWith() { return GasIndicatorIconModel(
-); } 
+); }
 @override List<Object?> get props => [];
  }

@@ -1,6 +1,6 @@
 
 abstract class Failure {
-  
+
 }
 
 // General failures

@@ -45,7 +45,7 @@ class ListviewItemWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      listviewItemModelObj.Txt!,
+                      listviewItemModelObj.name!,
                       overflow: TextOverflow.ellipsis,
                       style: theme.textTheme.bodySmall,
                     ),

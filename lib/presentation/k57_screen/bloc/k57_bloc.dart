@@ -11,7 +11,7 @@ class K57Bloc extends Bloc<K57Event, K57State> {
     on<K57InitialEvent>(_onInitialize);
   }
 
-  _onInitialize(
+  Future<void> _onInitialize(
     K57InitialEvent event,
     Emitter<K57State> emit,
   ) async {}

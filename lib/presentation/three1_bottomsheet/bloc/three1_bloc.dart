@@ -13,7 +13,7 @@ class Three1Bloc extends Bloc<Three1Event, Three1State> {
     on<ChangeDropDown1Event>(_changeDropDown1);
   }
 
-  _onInitialize(
+  Future<void> _onInitialize(
     Three1InitialEvent event,
     Emitter<Three1State> emit,
   ) async {
@@ -24,7 +24,7 @@ class Three1Bloc extends Bloc<Three1Event, Three1State> {
     )));
   }
 
-  _changeDropDown(
+  void _changeDropDown(
     ChangeDropDownEvent event,
     Emitter<Three1State> emit,
   ) {
@@ -33,7 +33,7 @@ class Three1Bloc extends Bloc<Three1Event, Three1State> {
     ));
   }
 
-  _changeDropDown1(
+  void _changeDropDown1(
     ChangeDropDown1Event event,
     Emitter<Three1State> emit,
   ) {

@@ -11,7 +11,7 @@ class K83Bloc extends Bloc<K83Event, K83State> {
     on<K83InitialEvent>(_onInitialize);
   }
 
-  _onInitialize(
+  Future<void> _onInitialize(
     K83InitialEvent event,
     Emitter<K83State> emit,
   ) async {}

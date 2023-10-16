@@ -15,7 +15,7 @@ class MyPageContactUsInquiryHistoryBloc extends Bloc<
     on<MyPageContactUsInquiryHistoryInitialEvent>(_onInitialize);
   }
 
-  _onInitialize(
+  Future<void> _onInitialize(
     MyPageContactUsInquiryHistoryInitialEvent event,
     Emitter<MyPageContactUsInquiryHistoryState> emit,
   ) async {

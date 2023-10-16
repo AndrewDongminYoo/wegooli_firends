@@ -12,7 +12,7 @@ class SmartKeyScreenBloc
     on<SmartKeyScreenInitialEvent>(_onInitialize);
   }
 
-  _onInitialize(
+  Future<void> _onInitialize(
     SmartKeyScreenInitialEvent event,
     Emitter<SmartKeyScreenState> emit,
   ) async {}

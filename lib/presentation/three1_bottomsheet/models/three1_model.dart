@@ -11,6 +11,6 @@ List<SelectionPopupModel> dropdownItemList1;
 Three1Model copyWith({List<SelectionPopupModel>? dropdownItemList, List<SelectionPopupModel>? dropdownItemList1, }) { return Three1Model(
 dropdownItemList : dropdownItemList ?? this.dropdownItemList,
 dropdownItemList1 : dropdownItemList1 ?? this.dropdownItemList1,
-); } 
+); }
 @override List<Object?> get props => [dropdownItemList,dropdownItemList1];
  }

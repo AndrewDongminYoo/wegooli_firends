@@ -8,6 +8,6 @@ List<CalendarItemModel> calendarItemList;
 
 SchedulesModel copyWith({List<CalendarItemModel>? calendarItemList}) { return SchedulesModel(
 calendarItemList : calendarItemList ?? this.calendarItemList,
-); } 
+); }
 @override List<Object?> get props => [calendarItemList];
  }

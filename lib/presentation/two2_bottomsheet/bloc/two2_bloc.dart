@@ -12,7 +12,7 @@ class Two2Bloc extends Bloc<Two2Event, Two2State> {
     on<ChangeDropDownEvent>(_changeDropDown);
   }
 
-  _onInitialize(
+  Future<void> _onInitialize(
     Two2InitialEvent event,
     Emitter<Two2State> emit,
   ) async {
@@ -22,7 +22,7 @@ class Two2Bloc extends Bloc<Two2Event, Two2State> {
     )));
   }
 
-  _changeDropDown(
+  void _changeDropDown(
     ChangeDropDownEvent event,
     Emitter<Two2State> emit,
   ) {

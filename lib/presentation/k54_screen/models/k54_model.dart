@@ -14,6 +14,6 @@ K54Model copyWith({List<SelectionPopupModel>? dropdownItemList, List<SelectionPo
 dropdownItemList : dropdownItemList ?? this.dropdownItemList,
 dropdownItemList1 : dropdownItemList1 ?? this.dropdownItemList1,
 dropdownItemList2 : dropdownItemList2 ?? this.dropdownItemList2,
-); } 
+); }
 @override List<Object?> get props => [dropdownItemList,dropdownItemList1,dropdownItemList2];
  }

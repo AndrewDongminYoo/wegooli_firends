@@ -11,7 +11,7 @@ class K93Bloc extends Bloc<K93Event, K93State> {
     on<K93InitialEvent>(_onInitialize);
   }
 
-  _onInitialize(
+  Future<void> _onInitialize(
     K93InitialEvent event,
     Emitter<K93State> emit,
   ) async {}

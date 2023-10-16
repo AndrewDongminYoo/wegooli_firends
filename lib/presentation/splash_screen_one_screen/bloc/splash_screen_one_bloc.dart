@@ -12,7 +12,7 @@ class SplashScreenOneBloc
     on<SplashScreenOneInitialEvent>(_onInitialize);
   }
 
-  _onInitialize(
+  Future<void> _onInitialize(
     SplashScreenOneInitialEvent event,
     Emitter<SplashScreenOneState> emit,
   ) async {}

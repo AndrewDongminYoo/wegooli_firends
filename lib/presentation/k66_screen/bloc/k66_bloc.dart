@@ -11,7 +11,7 @@ class K66Bloc extends Bloc<K66Event, K66State> {
     on<K66InitialEvent>(_onInitialize);
   }
 
-  _onInitialize(
+  Future<void> _onInitialize(
     K66InitialEvent event,
     Emitter<K66State> emit,
   ) async {}

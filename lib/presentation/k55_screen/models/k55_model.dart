@@ -8,6 +8,6 @@ List<SelectionPopupModel> dropdownItemList;
 
 K55Model copyWith({List<SelectionPopupModel>? dropdownItemList}) { return K55Model(
 dropdownItemList : dropdownItemList ?? this.dropdownItemList,
-); } 
+); }
 @override List<Object?> get props => [dropdownItemList];
  }

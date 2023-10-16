@@ -8,6 +8,6 @@ List<Userprofile2ItemModel> userprofile2ItemList;
 
 K84Model copyWith({List<Userprofile2ItemModel>? userprofile2ItemList}) { return K84Model(
 userprofile2ItemList : userprofile2ItemList ?? this.userprofile2ItemList,
-); } 
+); }
 @override List<Object?> get props => [userprofile2ItemList];
  }

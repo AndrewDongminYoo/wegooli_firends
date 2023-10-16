@@ -13,7 +13,7 @@ class GasIndicatorIconBloc
     on<GasIndicatorIconInitialEvent>(_onInitialize);
   }
 
-  _onInitialize(
+  Future<void> _onInitialize(
     GasIndicatorIconInitialEvent event,
     Emitter<GasIndicatorIconState> emit,
   ) async {}

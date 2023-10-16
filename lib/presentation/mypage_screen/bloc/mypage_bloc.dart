@@ -11,7 +11,7 @@ class MyPageBloc extends Bloc<MyPageEvent, MyPageState> {
     on<MyPageInitialEvent>(_onInitialize);
   }
 
-  _onInitialize(
+  Future<void> _onInitialize(
     MyPageInitialEvent event,
     Emitter<MyPageState> emit,
   ) async {}

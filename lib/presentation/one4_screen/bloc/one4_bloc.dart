@@ -11,7 +11,7 @@ class One4Bloc extends Bloc<One4Event, One4State> {
     on<One4InitialEvent>(_onInitialize);
   }
 
-  _onInitialize(
+  Future<void> _onInitialize(
     One4InitialEvent event,
     Emitter<One4State> emit,
   ) async {}

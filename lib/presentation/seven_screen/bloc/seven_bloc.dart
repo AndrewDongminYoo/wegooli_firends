@@ -12,7 +12,7 @@ class SevenBloc extends Bloc<SevenEvent, SevenState> {
     on<ChangePasswordVisibilityEvent>(_changePasswordVisibility);
   }
 
-  _changePasswordVisibility(
+  void _changePasswordVisibility(
     ChangePasswordVisibilityEvent event,
     Emitter<SevenState> emit,
   ) {
@@ -21,7 +21,7 @@ class SevenBloc extends Bloc<SevenEvent, SevenState> {
     ));
   }
 
-  _onInitialize(
+  Future<void> _onInitialize(
     SevenInitialEvent event,
     Emitter<SevenState> emit,
   ) async {

@@ -5,6 +5,6 @@ import 'package:equatable/equatable.dart';/// This class defines the variables u
 class XModel extends Equatable {XModel();
 
 XModel copyWith() { return XModel(
-); } 
+); }
 @override List<Object?> get props => [];
  }

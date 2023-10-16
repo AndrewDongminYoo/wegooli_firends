@@ -3,7 +3,7 @@ import 'package:wegooli_friends_app/core/app_export.dart';
 import 'package:wegooli_friends_app/widgets/base_button.dart';
 
 class CustomOutlinedButton extends BaseButton {
-  CustomOutlinedButton({Key? key, 
+  CustomOutlinedButton({Key? key,
     this.decoration,
     this.leftIcon,
     this.rightIcon,

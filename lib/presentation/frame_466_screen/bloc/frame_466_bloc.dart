@@ -17,7 +17,7 @@ class Frame466Bloc extends Bloc<Frame466Event, Frame466State> {
     on<ChangeCheckBox5Event>(_changeCheckBox5);
   }
 
-  _changeCheckBox(
+  void _changeCheckBox(
     ChangeCheckBoxEvent event,
     Emitter<Frame466State> emit,
   ) {
@@ -26,7 +26,7 @@ class Frame466Bloc extends Bloc<Frame466Event, Frame466State> {
     ));
   }
 
-  _changeCheckBox1(
+  void _changeCheckBox1(
     ChangeCheckBox1Event event,
     Emitter<Frame466State> emit,
   ) {
@@ -35,7 +35,7 @@ class Frame466Bloc extends Bloc<Frame466Event, Frame466State> {
     ));
   }
 
-  _changeCheckBox2(
+  void _changeCheckBox2(
     ChangeCheckBox2Event event,
     Emitter<Frame466State> emit,
   ) {
@@ -44,7 +44,7 @@ class Frame466Bloc extends Bloc<Frame466Event, Frame466State> {
     ));
   }
 
-  _changeCheckBox3(
+  void _changeCheckBox3(
     ChangeCheckBox3Event event,
     Emitter<Frame466State> emit,
   ) {
@@ -53,7 +53,7 @@ class Frame466Bloc extends Bloc<Frame466Event, Frame466State> {
     ));
   }
 
-  _changeCheckBox4(
+  void _changeCheckBox4(
     ChangeCheckBox4Event event,
     Emitter<Frame466State> emit,
   ) {
@@ -62,7 +62,7 @@ class Frame466Bloc extends Bloc<Frame466Event, Frame466State> {
     ));
   }
 
-  _changeCheckBox5(
+  void _changeCheckBox5(
     ChangeCheckBox5Event event,
     Emitter<Frame466State> emit,
   ) {
@@ -71,7 +71,7 @@ class Frame466Bloc extends Bloc<Frame466Event, Frame466State> {
     ));
   }
 
-  _onInitialize(
+  Future<void> _onInitialize(
     Frame466InitialEvent event,
     Emitter<Frame466State> emit,
   ) async {

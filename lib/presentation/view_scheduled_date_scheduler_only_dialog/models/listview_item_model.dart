@@ -1,14 +1,14 @@
 /// This class is used in the [listview_item_widget] screen.
 class ListviewItemModel {
   ListviewItemModel({
-    this.Txt,
+    this.name,
     this.id,
   }) {
-    Txt = Txt ?? "홍길동";
-    id = id ?? "";
+    name = name ?? '홍길동';
+    id = id ?? '';
   }
 
-  String? Txt;
+  String? name;
 
   String? id;
 }

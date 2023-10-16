@@ -5,6 +5,6 @@ import 'package:equatable/equatable.dart';/// This class defines the variables u
 class SchedulesContainerModel extends Equatable {SchedulesContainerModel();
 
 SchedulesContainerModel copyWith() { return SchedulesContainerModel(
-); } 
+); }
 @override List<Object?> get props => [];
  }

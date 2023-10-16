@@ -12,7 +12,7 @@ class One7Bloc extends Bloc<One7Event, One7State> {
     on<ChangeDropDownEvent>(_changeDropDown);
   }
 
-  _onInitialize(
+  Future<void> _onInitialize(
     One7InitialEvent event,
     Emitter<One7State> emit,
   ) async {
@@ -22,7 +22,7 @@ class One7Bloc extends Bloc<One7Event, One7State> {
     )));
   }
 
-  _changeDropDown(
+  void _changeDropDown(
     ChangeDropDownEvent event,
     Emitter<One7State> emit,
   ) {

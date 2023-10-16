@@ -5,6 +5,6 @@ import 'package:equatable/equatable.dart';/// This class defines the variables u
 class SignupPagePersonalInfoFormZipCodeModel extends Equatable {SignupPagePersonalInfoFormZipCodeModel();
 
 SignupPagePersonalInfoFormZipCodeModel copyWith() { return SignupPagePersonalInfoFormZipCodeModel(
-); } 
+); }
 @override List<Object?> get props => [];
  }

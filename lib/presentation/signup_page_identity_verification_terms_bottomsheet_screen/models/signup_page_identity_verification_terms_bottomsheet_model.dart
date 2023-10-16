@@ -5,6 +5,6 @@ import 'package:equatable/equatable.dart';/// This class defines the variables u
 class SignupPageIdentityVerificationTermsBottomsheetModel extends Equatable {SignupPageIdentityVerificationTermsBottomsheetModel();
 
 SignupPageIdentityVerificationTermsBottomsheetModel copyWith() { return SignupPageIdentityVerificationTermsBottomsheetModel(
-); } 
+); }
 @override List<Object?> get props => [];
  }

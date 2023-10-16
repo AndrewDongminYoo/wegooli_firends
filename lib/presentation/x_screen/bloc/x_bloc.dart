@@ -11,7 +11,7 @@ class XBloc extends Bloc<XEvent, XState> {
     on<XInitialEvent>(_onInitialize);
   }
 
-  _onInitialize(
+  Future<void> _onInitialize(
     XInitialEvent event,
     Emitter<XState> emit,
   ) async {}

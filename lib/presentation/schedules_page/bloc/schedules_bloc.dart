@@ -12,7 +12,7 @@ class SchedulesBloc extends Bloc<SchedulesEvent, SchedulesState> {
     on<SchedulesInitialEvent>(_onInitialize);
   }
 
-  _onInitialize(
+  Future<void> _onInitialize(
     SchedulesInitialEvent event,
     Emitter<SchedulesState> emit,
   ) async {

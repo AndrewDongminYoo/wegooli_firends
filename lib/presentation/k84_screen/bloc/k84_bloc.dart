@@ -12,7 +12,7 @@ class K84Bloc extends Bloc<K84Event, K84State> {
     on<K84InitialEvent>(_onInitialize);
   }
 
-  _onInitialize(
+  Future<void> _onInitialize(
     K84InitialEvent event,
     Emitter<K84State> emit,
   ) async {

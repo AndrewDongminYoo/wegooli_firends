@@ -5,6 +5,6 @@ import 'package:equatable/equatable.dart';/// This class defines the variables u
 class HomePageModel extends Equatable {HomePageModel();
 
 HomePageModel copyWith() { return HomePageModel(
-); } 
+); }
 @override List<Object?> get props => [];
  }

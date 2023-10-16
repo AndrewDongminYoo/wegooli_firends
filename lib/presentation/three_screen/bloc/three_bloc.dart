@@ -12,7 +12,7 @@ class ThreeBloc extends Bloc<ThreeEvent, ThreeState> {
     on<ChangeCheckBoxEvent>(_changeCheckBox);
   }
 
-  _changeCheckBox(
+  void _changeCheckBox(
     ChangeCheckBoxEvent event,
     Emitter<ThreeState> emit,
   ) {
@@ -21,7 +21,7 @@ class ThreeBloc extends Bloc<ThreeEvent, ThreeState> {
     ));
   }
 
-  _onInitialize(
+  Future<void> _onInitialize(
     ThreeInitialEvent event,
     Emitter<ThreeState> emit,
   ) async {

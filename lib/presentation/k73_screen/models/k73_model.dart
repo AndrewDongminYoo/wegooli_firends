@@ -8,6 +8,6 @@ List<Datecolumn1ItemModel> datecolumn1ItemList;
 
 K73Model copyWith({List<Datecolumn1ItemModel>? datecolumn1ItemList}) { return K73Model(
 datecolumn1ItemList : datecolumn1ItemList ?? this.datecolumn1ItemList,
-); } 
+); }
 @override List<Object?> get props => [datecolumn1ItemList];
  }

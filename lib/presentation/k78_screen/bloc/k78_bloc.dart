@@ -11,7 +11,7 @@ class K78Bloc extends Bloc<K78Event, K78State> {
     on<K78InitialEvent>(_onInitialize);
   }
 
-  _onInitialize(
+  Future<void> _onInitialize(
     K78InitialEvent event,
     Emitter<K78State> emit,
   ) async {}

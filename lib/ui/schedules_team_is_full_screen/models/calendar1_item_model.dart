@@ -1,7 +1,6 @@
 // 📦 Package imports:
 import 'package:get/get.dart';
 
-/// This class is used in the [calendar1_item_widget] screen.
 class Calendar1ItemModel {
   Calendar1ItemModel({
     this.day1,

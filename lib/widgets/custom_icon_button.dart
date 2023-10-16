@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
-import '/theme/theme_helper.dart';
 
 class CustomIconButton extends StatelessWidget {
   CustomIconButton({
@@ -55,7 +54,7 @@ class CustomIconButton extends StatelessWidget {
               padding: padding ?? EdgeInsets.zero,
               decoration: decoration ??
                   BoxDecoration(
-                    color: appTheme.blueGray600,
+                    color: const Color(0xFF4D598D),
                     borderRadius: BorderRadius.circular(1.h),
                   ),
               child: child,
@@ -69,11 +68,11 @@ class CustomIconButton extends StatelessWidget {
 /// Extension on [CustomIconButton] to facilitate inclusion of all types of border style etc
 extension IconButtonStyleHelper on CustomIconButton {
   static BoxDecoration get fillGray => BoxDecoration(
-        color: appTheme.gray400,
+        color: const Color(0xFFB9BCC3),
         borderRadius: BorderRadius.circular(24.h),
       );
   static BoxDecoration get fillBlueGrayTL5 => BoxDecoration(
-        color: appTheme.blueGray30033,
+        color: const Color(0x33A4A8AF),
         borderRadius: BorderRadius.circular(5.h),
       );
 }

@@ -9,7 +9,6 @@ import '../schedules_page/widgets/calendar_item_widget.dart';
 import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
 import '/theme/app_decoration.dart';
-import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_image_1.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
@@ -57,7 +56,9 @@ class SchedulesPage extends StatelessWidget {
                           children: [
                             Text(
                               'lbl51'.tr,
-                              style: CustomTextStyles.titleMedium18,
+                              style: defaultTextTheme.titleMedium!.copyWith(
+                                fontSize: 18.fSize,
+                              ),
                             ),
                             SizedBox(height: 12.v),
                             Row(
@@ -75,7 +76,7 @@ class SchedulesPage extends StatelessWidget {
                                     SizedBox(height: 4.v),
                                     Text(
                                       'lbl3'.tr,
-                                      style: theme.textTheme.bodySmall,
+                                      style: defaultTextTheme.bodySmall,
                                     ),
                                   ],
                                 ),
@@ -95,7 +96,7 @@ class SchedulesPage extends StatelessWidget {
                                       SizedBox(height: 4.v),
                                       Text(
                                         'lbl11'.tr,
-                                        style: theme.textTheme.bodySmall,
+                                        style: defaultTextTheme.bodySmall,
                                       ),
                                     ],
                                   ),
@@ -115,7 +116,7 @@ class SchedulesPage extends StatelessWidget {
                                       SizedBox(height: 4.v),
                                       Text(
                                         'lbl12'.tr,
-                                        style: theme.textTheme.bodySmall,
+                                        style: defaultTextTheme.bodySmall,
                                       ),
                                     ],
                                   ),
@@ -142,7 +143,7 @@ class SchedulesPage extends StatelessWidget {
                               SizedBox(height: 4.v),
                               Text(
                                 'lbl12'.tr,
-                                style: theme.textTheme.bodySmall,
+                                style: defaultTextTheme.bodySmall,
                               ),
                             ],
                           ),
@@ -154,8 +155,8 @@ class SchedulesPage extends StatelessWidget {
                   Container(
                     height: 8.v,
                     width: double.maxFinite,
-                    decoration: BoxDecoration(
-                      color: appTheme.gray10001,
+                    decoration: const BoxDecoration(
+                      color: Color(0xFFF6F7F7),
                     ),
                   ),
                   Padding(
@@ -165,7 +166,9 @@ class SchedulesPage extends StatelessWidget {
                     ),
                     child: Text(
                       'lbl26'.tr,
-                      style: CustomTextStyles.titleMedium18,
+                      style: defaultTextTheme.titleMedium!.copyWith(
+                        fontSize: 18.fSize,
+                      ),
                     ),
                   ),
                   CustomElevatedButton(
@@ -188,7 +191,11 @@ class SchedulesPage extends StatelessWidget {
                         horizontal: 25.h,
                         vertical: 22.v,
                       ),
-                      decoration: AppDecoration.outlineBluegray30033.copyWith(
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: const Color(0x33A4A8AF),
+                          width: 1.h,
+                        ),
                         borderRadius: BorderRadiusStyle.roundedBorder10,
                       ),
                       child: Column(
@@ -206,7 +213,7 @@ class SchedulesPage extends StatelessWidget {
                               ),
                               Text(
                                 'lbl_2023_8'.tr,
-                                style: theme.textTheme.titleMedium,
+                                style: defaultTextTheme.titleMedium,
                               ),
                               CustomImageView(
                                 svgPath: ImageConstant.imgArrowleft,

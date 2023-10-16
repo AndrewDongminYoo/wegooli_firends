@@ -8,7 +8,6 @@ import 'package:get/get.dart';
 import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
 import '/theme/app_decoration.dart';
-import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/custom_image_view.dart';
 import 'controller/schedules_view_scheduled_date_scheduler_only_controller.dart';
@@ -27,20 +26,25 @@ class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
         child: Container(
             margin: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 238.v),
             padding: EdgeInsets.all(20.h),
-            decoration: AppDecoration.shadow
-                .copyWith(borderRadius: BorderRadiusStyle.roundedBorder10),
+            decoration: BoxDecoration(
+                color: defaultColors.onPrimaryContainer,
+                borderRadius: BorderRadiusStyle.roundedBorder10),
             child: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   CustomImageView(
-                      svgPath: ImageConstant.imgClose,
-                      height: 15.adaptSize,
-                      width: 15.adaptSize,
-                      alignment: Alignment.centerRight,
-                      onTap: Get.back),
+                    svgPath: ImageConstant.imgClose,
+                    height: 15.adaptSize,
+                    width: 15.adaptSize,
+                    alignment: Alignment.centerRight,
+                    onTap: Get.back,
+                  ),
                   SizedBox(height: 6.v),
-                  Text('lbl10'.tr, style: CustomTextStyles.titleMedium18),
+                  Text('lbl10'.tr,
+                      style: defaultTextTheme.titleMedium!.copyWith(
+                        fontSize: 18.fSize,
+                      )),
                   SizedBox(height: 22.v),
                   SizedBox(
                       height: 75.v,
@@ -51,12 +55,11 @@ class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
                                 height: 75.v,
                                 width: 288.h,
                                 decoration: BoxDecoration(
-                                    color: theme.colorScheme.onPrimaryContainer,
+                                    color: defaultColors.onPrimaryContainer,
                                     borderRadius: BorderRadius.circular(10.h),
                                     boxShadow: [
                                       BoxShadow(
-                                          color: appTheme.black900
-                                              .withOpacity(0.1),
+                                          color: Colors.black.withOpacity(0.1),
                                           spreadRadius: 2.h,
                                           blurRadius: 2.h,
                                           offset: const Offset(2, 2))
@@ -69,7 +72,7 @@ class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
                                             .colorScheme.onPrimaryContainer,
                                         valueColor:
                                             AlwaysStoppedAnimation<Color>(
-                                                theme.colorScheme.primary))))),
+                                                defaultColors.primary))))),
                         Align(
                             child: SizedBox(
                                 height: 43.v,
@@ -81,7 +84,7 @@ class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
                                           alignment: Alignment.topLeft,
                                           child: Text('lbl3'.tr,
                                               style:
-                                                  theme.textTheme.bodySmall)),
+                                                  defaultTextTheme.bodySmall)),
                                       Align(
                                           alignment: Alignment.bottomCenter,
                                           child: Row(
@@ -108,7 +111,7 @@ class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
                                               children: [
                                             Text('lbl3'.tr,
                                                 style:
-                                                    theme.textTheme.bodySmall),
+                                                    defaultTextTheme.bodySmall),
                                             SizedBox(height: 7.v),
                                             Row(children: [
                                               Text('msg_8_16_15_20'.tr,
@@ -135,12 +138,11 @@ class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
                                 height: 75.v,
                                 width: 288.h,
                                 decoration: BoxDecoration(
-                                    color: theme.colorScheme.onPrimaryContainer,
+                                    color: defaultColors.onPrimaryContainer,
                                     borderRadius: BorderRadius.circular(10.h),
                                     boxShadow: [
                                       BoxShadow(
-                                          color: appTheme.black900
-                                              .withOpacity(0.1),
+                                          color: Colors.black.withOpacity(0.1),
                                           spreadRadius: 2.h,
                                           blurRadius: 2.h,
                                           offset: const Offset(2, 2))
@@ -165,10 +167,10 @@ class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text('lbl3'.tr,
-                                          style: theme.textTheme.bodySmall),
+                                          style: defaultTextTheme.bodySmall),
                                       SizedBox(height: 8.v),
                                       Text('msg_8_16_15_20'.tr,
-                                          style: theme.textTheme.bodyLarge)
+                                          style: defaultTextTheme.bodyLarge)
                                     ])))
                       ])),
                   SizedBox(height: 10.v),
@@ -181,12 +183,11 @@ class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
                                 height: 75.v,
                                 width: 288.h,
                                 decoration: BoxDecoration(
-                                    color: theme.colorScheme.onPrimaryContainer,
+                                    color: defaultColors.onPrimaryContainer,
                                     borderRadius: BorderRadius.circular(10.h),
                                     boxShadow: [
                                       BoxShadow(
-                                          color: appTheme.black900
-                                              .withOpacity(0.1),
+                                          color: Colors.black.withOpacity(0.1),
                                           spreadRadius: 2.h,
                                           blurRadius: 2.h,
                                           offset: const Offset(2, 2))
@@ -198,8 +199,8 @@ class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
                                         backgroundColor: theme
                                             .colorScheme.onPrimaryContainer,
                                         valueColor:
-                                            AlwaysStoppedAnimation<Color>(
-                                                appTheme.deepPurpleA200))))),
+                                            const AlwaysStoppedAnimation<Color>(
+                                                Color(0xFF7850E9)))))),
                         Align(
                             alignment: Alignment.centerLeft,
                             child: Padding(
@@ -210,21 +211,13 @@ class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text('lbl3'.tr,
-                                          style: theme.textTheme.bodySmall),
+                                          style: defaultTextTheme.bodySmall),
                                       SizedBox(height: 8.v),
                                       Text('msg_8_16_15_20'.tr,
-                                          style: theme.textTheme.bodyLarge)
+                                          style: defaultTextTheme.bodyLarge)
                                     ])))
                       ])),
                   SizedBox(height: 10.v)
                 ])));
-  }
-
-  /// Navigates to the previous screen.
-  ///
-  /// When the action is triggered, this function uses the [Get] package to
-  /// navigate to the previous screen in the navigation stack.
-  void onTapImgCloseone() {
-    Get.back();
   }
 }

@@ -7,9 +7,6 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
-import '/theme/app_decoration.dart';
-import '/theme/custom_button_style.dart';
-import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/custom_elevated_button.dart';
 import '/widgets/custom_image_view.dart';
@@ -53,12 +50,15 @@ class ContactUsInquiryHistoryExpandedPage extends StatelessWidget {
                                 children: [
                                   Text(
                                     'msg14'.tr,
-                                    style: theme.textTheme.titleSmall,
+                                    style: defaultTextTheme.titleSmall,
                                   ),
                                   SizedBox(height: 3.v),
                                   Text(
                                     'lbl_2023_08_23'.tr,
-                                    style: CustomTextStyles.bodySmallOnPrimary,
+                                    style: defaultTextTheme.bodySmall!.copyWith(
+                                      color: defaultColors.onPrimary
+                                          .withOpacity(0.4),
+                                    ),
                                   ),
                                 ],
                               ),
@@ -107,13 +107,16 @@ class ContactUsInquiryHistoryExpandedPage extends StatelessWidget {
                                   children: [
                                     Text(
                                       'msg14'.tr,
-                                      style: theme.textTheme.titleSmall,
+                                      style: defaultTextTheme.titleSmall,
                                     ),
                                     SizedBox(height: 3.v),
                                     Text(
                                       'lbl_2023_08_23'.tr,
                                       style:
-                                          CustomTextStyles.bodySmallOnPrimary,
+                                          defaultTextTheme.bodySmall!.copyWith(
+                                        color: defaultColors.onPrimary
+                                            .withOpacity(0.4),
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -150,7 +153,7 @@ class ContactUsInquiryHistoryExpandedPage extends StatelessWidget {
                               'msg15'.tr,
                               maxLines: 8,
                               overflow: TextOverflow.ellipsis,
-                              style: theme.textTheme.bodySmall!.copyWith(
+                              style: defaultTextTheme.bodySmall!.copyWith(
                                 height: 1.50,
                               ),
                             ),
@@ -173,7 +176,7 @@ class ContactUsInquiryHistoryExpandedPage extends StatelessWidget {
                                   padding: EdgeInsets.only(left: 5.h),
                                   child: Text(
                                     'lbl141'.tr,
-                                    style: theme.textTheme.titleSmall,
+                                    style: defaultTextTheme.titleSmall,
                                   ),
                                 ),
                               ],
@@ -191,7 +194,7 @@ class ContactUsInquiryHistoryExpandedPage extends StatelessWidget {
                                 'msg16'.tr,
                                 maxLines: 6,
                                 overflow: TextOverflow.ellipsis,
-                                style: theme.textTheme.bodySmall!.copyWith(
+                                style: defaultTextTheme.bodySmall!.copyWith(
                                   height: 1.50,
                                 ),
                               ),
@@ -227,13 +230,16 @@ class ContactUsInquiryHistoryExpandedPage extends StatelessWidget {
                                         children: [
                                           Text(
                                             'msg14'.tr,
-                                            style: theme.textTheme.titleSmall,
+                                            style: defaultTextTheme.titleSmall,
                                           ),
                                           SizedBox(height: 3.v),
                                           Text(
                                             'lbl_2023_08_23'.tr,
-                                            style: CustomTextStyles
-                                                .bodySmallOnPrimary,
+                                            style: defaultTextTheme.bodySmall!
+                                                .copyWith(
+                                              color: defaultColors.onPrimary
+                                                  .withOpacity(0.4),
+                                            ),
                                           ),
                                         ],
                                       ),
@@ -271,12 +277,33 @@ class ContactUsInquiryHistoryExpandedPage extends StatelessWidget {
                                 horizontal: 16.h,
                                 vertical: 29.v,
                               ),
-                              decoration: AppDecoration.outlineBlack,
+                              decoration: BoxDecoration(
+                                color: defaultColors.onPrimaryContainer,
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(0.1),
+                                    spreadRadius: 2.h,
+                                    blurRadius: 2.h,
+                                    offset: const Offset(
+                                      2,
+                                      2,
+                                    ),
+                                  ),
+                                ],
+                              ),
                               child: CustomElevatedButton(
                                 text: 'lbl138'.tr,
-                                buttonStyle: CustomButtonStyles.fillGrayTL261,
+                                buttonStyle: ElevatedButton.styleFrom(
+                                  backgroundColor: const Color(0xFFF3F3F6),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(26.h),
+                                  ),
+                                ),
                                 buttonTextStyle:
-                                    CustomTextStyles.titleMediumBluegray200,
+                                    defaultTextTheme.titleMedium!.copyWith(
+                                  color: const Color(0xFFB0B2BC),
+                                  fontSize: 18.fSize,
+                                ),
                               ),
                             ),
                           ),

@@ -9,7 +9,6 @@ import '../controller/contact_us_inquiry_history_controller.dart';
 import '../models/list_item_model.dart';
 import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
-import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/custom_image_view.dart';
 import '/widgets/custom_outlined_button.dart';
@@ -43,12 +42,14 @@ class ListItemWidget extends StatelessWidget {
                 children: [
                   Text(
                     'msg14'.tr,
-                    style: theme.textTheme.titleSmall,
+                    style: defaultTextTheme.titleSmall,
                   ),
                   SizedBox(height: 3.v),
                   Text(
                     'lbl_2023_08_23'.tr,
-                    style: CustomTextStyles.bodySmallOnPrimary,
+                    style: defaultTextTheme.bodySmall!.copyWith(
+                      color: defaultColors.onPrimary.withOpacity(0.4),
+                    ),
                   ),
                 ],
               ),

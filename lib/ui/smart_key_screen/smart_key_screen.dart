@@ -8,7 +8,6 @@ import 'package:get/get.dart';
 import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
 import '/theme/app_decoration.dart';
-import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_image_1.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
@@ -16,7 +15,6 @@ import '/widgets/custom_bottom_bar.dart';
 import '/widgets/custom_image_view.dart';
 import 'controller/smart_key_controller.dart';
 
-// ignore_for_file: must_be_immutable
 class SmartKeyScreen extends GetWidget<SmartKeyController> {
   const SmartKeyScreen({Key? key}) : super(key: key);
 
@@ -66,13 +64,16 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                                   children: [
                                     Text(
                                       'lbl112'.tr,
-                                      style: theme.textTheme.titleMedium,
+                                      style: defaultTextTheme.titleMedium,
                                     ),
                                     SizedBox(height: 4.v),
                                     Text(
                                       'lbl_12_3456'.tr,
                                       style:
-                                          CustomTextStyles.bodySmallOnPrimary,
+                                          defaultTextTheme.bodySmall!.copyWith(
+                                        color: defaultColors.onPrimary
+                                            .withOpacity(0.4),
+                                      ),
                                     ),
                                     SizedBox(height: 1.v),
                                     Row(
@@ -91,7 +92,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                                           ),
                                           child: Text(
                                             'lbl_402'.tr,
-                                            style: theme.textTheme.bodySmall,
+                                            style: defaultTextTheme.bodySmall,
                                           ),
                                         ),
                                         CustomImageView(
@@ -117,13 +118,18 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                           children: [
                             Text(
                               'lbl113'.tr,
-                              style: CustomTextStyles.bodySmallOnPrimary,
+                              style: defaultTextTheme.bodySmall!.copyWith(
+                                color: defaultColors.onPrimary.withOpacity(0.4),
+                              ),
                             ),
                             Padding(
                               padding: EdgeInsets.only(left: 5.h),
                               child: Text(
                                 'lbl114'.tr,
-                                style: CustomTextStyles.bodySmallOnPrimary,
+                                style: defaultTextTheme.bodySmall!.copyWith(
+                                  color:
+                                      defaultColors.onPrimary.withOpacity(0.4),
+                                ),
                               ),
                             ),
                             Container(
@@ -135,7 +141,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                                 bottom: 5.v,
                               ),
                               decoration: BoxDecoration(
-                                color: appTheme.green500,
+                                color: const Color(0xFF38DD66),
                                 borderRadius: BorderRadius.circular(
                                   2.h,
                                 ),
@@ -145,7 +151,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                               padding: EdgeInsets.only(left: 2.h),
                               child: Text(
                                 'lbl115'.tr,
-                                style: theme.textTheme.bodySmall,
+                                style: defaultTextTheme.bodySmall,
                               ),
                             ),
                           ],
@@ -154,8 +160,8 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                         Container(
                           height: 8.v,
                           width: double.maxFinite,
-                          decoration: BoxDecoration(
-                            color: appTheme.gray10001,
+                          decoration: const BoxDecoration(
+                            color: Color(0xFFF6F7F7),
                           ),
                         ),
                         Align(
@@ -167,7 +173,10 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                             ),
                             child: Text(
                               'lbl116'.tr,
-                              style: CustomTextStyles.titleMediumBlack900,
+                              style: defaultTextTheme.titleMedium!.copyWith(
+                                color: Colors.black,
+                                fontSize: 18.fSize,
+                              ),
                             ),
                           ),
                         ),
@@ -189,8 +198,21 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                                     Align(
                                       child: Container(
                                         padding: EdgeInsets.all(5.h),
-                                        decoration:
-                                            AppDecoration.outlineBlack.copyWith(
+                                        decoration: BoxDecoration(
+                                          color: theme
+                                              .colorScheme.onPrimaryContainer,
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color:
+                                                  Colors.black.withOpacity(0.1),
+                                              spreadRadius: 2.h,
+                                              blurRadius: 2.h,
+                                              offset: const Offset(
+                                                2,
+                                                2,
+                                              ),
+                                            ),
+                                          ],
                                           borderRadius:
                                               BorderRadiusStyle.circleBorder65,
                                         ),
@@ -204,7 +226,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                                               60.h,
                                             ),
                                             border: Border.all(
-                                              color: appTheme.blueGray30033,
+                                              color: const Color(0x33A4A8AF),
                                               width: 1.h,
                                             ),
                                           ),
@@ -228,7 +250,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                                             Text(
                                               'lbl117'.tr,
                                               style:
-                                                  theme.textTheme.titleMedium,
+                                                  defaultTextTheme.titleMedium,
                                             ),
                                           ],
                                         ),
@@ -247,8 +269,21 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                                     Align(
                                       child: Container(
                                         padding: EdgeInsets.all(5.h),
-                                        decoration:
-                                            AppDecoration.outlineBlack.copyWith(
+                                        decoration: BoxDecoration(
+                                          color: theme
+                                              .colorScheme.onPrimaryContainer,
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color:
+                                                  Colors.black.withOpacity(0.1),
+                                              spreadRadius: 2.h,
+                                              blurRadius: 2.h,
+                                              offset: const Offset(
+                                                2,
+                                                2,
+                                              ),
+                                            ),
+                                          ],
                                           borderRadius:
                                               BorderRadiusStyle.circleBorder65,
                                         ),
@@ -262,7 +297,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                                               60.h,
                                             ),
                                             border: Border.all(
-                                              color: appTheme.blueGray30033,
+                                              color: const Color(0x33A4A8AF),
                                               width: 1.h,
                                             ),
                                           ),
@@ -285,7 +320,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                                             Text(
                                               'lbl118'.tr,
                                               style:
-                                                  theme.textTheme.titleMedium,
+                                                  defaultTextTheme.titleMedium,
                                             ),
                                           ],
                                         ),
@@ -315,8 +350,21 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                                     Align(
                                       child: Container(
                                         padding: EdgeInsets.all(5.h),
-                                        decoration:
-                                            AppDecoration.outlineBlack.copyWith(
+                                        decoration: BoxDecoration(
+                                          color: theme
+                                              .colorScheme.onPrimaryContainer,
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color:
+                                                  Colors.black.withOpacity(0.1),
+                                              spreadRadius: 2.h,
+                                              blurRadius: 2.h,
+                                              offset: const Offset(
+                                                2,
+                                                2,
+                                              ),
+                                            ),
+                                          ],
                                           borderRadius:
                                               BorderRadiusStyle.circleBorder65,
                                         ),
@@ -330,7 +378,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                                               60.h,
                                             ),
                                             border: Border.all(
-                                              color: appTheme.blueGray30033,
+                                              color: const Color(0x33A4A8AF),
                                               width: 1.h,
                                             ),
                                           ),
@@ -354,7 +402,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                                             Text(
                                               'lbl119'.tr,
                                               style:
-                                                  theme.textTheme.titleMedium,
+                                                  defaultTextTheme.titleMedium,
                                             ),
                                           ],
                                         ),
@@ -366,7 +414,19 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                               Container(
                                 margin: EdgeInsets.only(left: 20.h),
                                 padding: EdgeInsets.all(5.h),
-                                decoration: AppDecoration.outlineBlack.copyWith(
+                                decoration: BoxDecoration(
+                                  color: defaultColors.onPrimaryContainer,
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.black.withOpacity(0.1),
+                                      spreadRadius: 2.h,
+                                      blurRadius: 2.h,
+                                      offset: const Offset(
+                                        2,
+                                        2,
+                                      ),
+                                    ),
+                                  ],
                                   borderRadius:
                                       BorderRadiusStyle.circleBorder65,
                                 ),
@@ -375,8 +435,11 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                                     horizontal: 37.h,
                                     vertical: 24.v,
                                   ),
-                                  decoration: AppDecoration.outlineBluegray30033
-                                      .copyWith(
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: const Color(0x33A4A8AF),
+                                      width: 1.h,
+                                    ),
                                     borderRadius:
                                         BorderRadiusStyle.circleBorder60,
                                   ),
@@ -391,7 +454,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                                       SizedBox(height: 5.v),
                                       Text(
                                         'lbl120'.tr,
-                                        style: theme.textTheme.titleMedium,
+                                        style: defaultTextTheme.titleMedium,
                                       ),
                                     ],
                                   ),
@@ -412,7 +475,19 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                               horizontal: 12.h,
                               vertical: 11.v,
                             ),
-                            decoration: AppDecoration.outlineBlack9001.copyWith(
+                            decoration: BoxDecoration(
+                              color: defaultColors.primary,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(0.1),
+                                  spreadRadius: 2.h,
+                                  blurRadius: 2.h,
+                                  offset: const Offset(
+                                    2,
+                                    2,
+                                  ),
+                                ),
+                              ],
                               borderRadius: BorderRadiusStyle.circleBorder35,
                             ),
                             child: Column(
@@ -427,7 +502,9 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                                 SizedBox(height: 1.v),
                                 Text(
                                   'lbl121'.tr,
-                                  style: CustomTextStyles.bodySmallBlack900,
+                                  style: defaultTextTheme.bodySmall!.copyWith(
+                                    color: Colors.black,
+                                  ),
                                 ),
                               ],
                             ),

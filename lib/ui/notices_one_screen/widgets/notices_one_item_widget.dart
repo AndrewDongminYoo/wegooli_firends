@@ -8,8 +8,6 @@ import 'package:get/get.dart';
 import '../controller/notices_one_controller.dart';
 import '../models/notices_one_item_model.dart';
 import '/core/utils/size_utils.dart';
-import '/theme/app_decoration.dart';
-import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 
 // ignore: must_be_immutable
@@ -27,7 +25,9 @@ class NoticesOneItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 15.h),
-      decoration: AppDecoration.shadow,
+      decoration: BoxDecoration(
+        color: defaultColors.onPrimaryContainer,
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.end,
@@ -39,7 +39,7 @@ class NoticesOneItemWidget extends StatelessWidget {
             ),
             child: Text(
               'msg2'.tr,
-              style: theme.textTheme.titleSmall,
+              style: defaultTextTheme.titleSmall,
             ),
           ),
           Padding(
@@ -49,7 +49,9 @@ class NoticesOneItemWidget extends StatelessWidget {
             ),
             child: Text(
               'lbl_2023_08_23'.tr,
-              style: CustomTextStyles.bodySmallOnPrimary,
+              style: defaultTextTheme.bodySmall!.copyWith(
+                color: defaultColors.onPrimary.withOpacity(0.4),
+              ),
             ),
           ),
           SizedBox(height: 16.v),

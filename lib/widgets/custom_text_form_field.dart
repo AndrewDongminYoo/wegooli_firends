@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
-import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 
 class CustomTextFormField extends StatelessWidget {
@@ -94,7 +93,7 @@ class CustomTextFormField extends StatelessWidget {
           controller: controller,
           focusNode: focusNode ?? FocusNode(),
           autofocus: autofocus!,
-          style: textStyle ?? theme.textTheme.bodyLarge,
+          style: textStyle ?? defaultTextTheme.bodyLarge,
           obscureText: obscureText!,
           textInputAction: textInputAction,
           keyboardType: textInputType,
@@ -105,33 +104,36 @@ class CustomTextFormField extends StatelessWidget {
       );
   InputDecoration get decoration => InputDecoration(
         hintText: hintText ?? '',
-        hintStyle: hintStyle ?? CustomTextStyles.bodyLargeBluegray200,
+        hintStyle: hintStyle ??
+            defaultTextTheme.bodyLarge!.copyWith(
+              color: const Color(0xFFB0B2BC),
+            ),
         prefixIcon: prefix,
         prefixIconConstraints: prefixConstraints,
         suffixIcon: suffix,
         suffixIconConstraints: suffixConstraints,
         isDense: true,
         contentPadding: contentPadding ?? EdgeInsets.symmetric(vertical: 9.v),
-        fillColor: fillColor ?? theme.colorScheme.onPrimaryContainer,
+        fillColor: fillColor ?? defaultColors.onPrimaryContainer,
         filled: filled,
         border: borderDecoration ??
             OutlineInputBorder(
               borderRadius: BorderRadius.circular(5.h),
-              borderSide: BorderSide(
-                color: appTheme.gray400,
+              borderSide: const BorderSide(
+                color: Color(0xFFB9BCC3),
               ),
             ),
         enabledBorder: borderDecoration ??
             OutlineInputBorder(
               borderRadius: BorderRadius.circular(5.h),
-              borderSide: BorderSide(
-                color: appTheme.gray400,
+              borderSide: const BorderSide(
+                color: Color(0xFFB9BCC3),
               ),
             ),
         focusedBorder: borderDecoration ??
             OutlineInputBorder(
               borderSide: BorderSide(
-                color: theme.colorScheme.primary,
+                color: defaultColors.primary,
               ),
             ),
       );
@@ -145,8 +147,8 @@ extension TextFormFieldStyleHelper on CustomTextFormField {
       );
   static OutlineInputBorder get outlineGrayTL5 => OutlineInputBorder(
         borderRadius: BorderRadius.circular(5.h),
-        borderSide: BorderSide(
-          color: appTheme.gray400,
+        borderSide: const BorderSide(
+          color: Color(0xFFB9BCC3),
         ),
       );
 }

@@ -9,7 +9,7 @@ import '/data/models/dropdown_data.dart';
 import '/ui/contact_us_1_1_contact_us_screen/models/contact_us_1_1_contact_us_model.dart';
 
 class ContactUs11ContactUsController extends GetxController {
-  TextEditingController groupTwentySeveController = TextEditingController();
+  TextEditingController groupTwentySevenController = TextEditingController();
 
   Rx<ContactUs11ContactUsModel> contactUs11ContactUs =
       ContactUs11ContactUsModel().obs;
@@ -19,7 +19,7 @@ class ContactUs11ContactUsController extends GetxController {
   @override
   void onClose() {
     super.onClose();
-    groupTwentySeveController.dispose();
+    groupTwentySevenController.dispose();
   }
 
   void onSelected(dynamic value) {

@@ -8,7 +8,6 @@ import 'package:get/get.dart';
 import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
 import '/theme/app_decoration.dart';
-import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_image.dart';
 import '/widgets/app_bar/appbar_image_2.dart';
@@ -17,7 +16,6 @@ import '/widgets/custom_bottom_bar.dart';
 import '/widgets/custom_image_view.dart';
 import 'controller/home_page_controller.dart';
 
-// ignore_for_file: must_be_immutable
 class HomePageScreen extends GetWidget<HomePageController> {
   const HomePageScreen({Key? key}) : super(key: key);
 
@@ -27,7 +25,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
 
     return SafeArea(
       child: Scaffold(
-        backgroundColor: appTheme.gray50,
+        backgroundColor: const Color(0xFFF8F8F8),
         appBar: CustomAppBar(
           height: 45.v,
           leadingWidth: 64.h,
@@ -57,7 +55,9 @@ class HomePageScreen extends GetWidget<HomePageController> {
                   horizontal: 16.h,
                   vertical: 8.v,
                 ),
-                decoration: AppDecoration.fillLightBlue,
+                decoration: const BoxDecoration(
+                  color: Color(0xFFE5FAFF),
+                ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -71,7 +71,9 @@ class HomePageScreen extends GetWidget<HomePageController> {
                         children: [
                           Text(
                             'lbl98'.tr,
-                            style: CustomTextStyles.bodySmallBlack900,
+                            style: defaultTextTheme.bodySmall!.copyWith(
+                              color: Colors.black,
+                            ),
                           ),
                           SizedBox(height: 4.v),
                           SizedBox(
@@ -80,7 +82,9 @@ class HomePageScreen extends GetWidget<HomePageController> {
                               'msg10'.tr,
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
-                              style: CustomTextStyles.titleSmallBlack900,
+                              style: defaultTextTheme.titleSmall!.copyWith(
+                                color: Colors.black,
+                              ),
                             ),
                           ),
                         ],
@@ -103,13 +107,16 @@ class HomePageScreen extends GetWidget<HomePageController> {
                             alignment: Alignment.bottomRight,
                             child: Container(
                               padding: EdgeInsets.symmetric(horizontal: 8.h),
-                              decoration: AppDecoration.fillBlack.copyWith(
+                              decoration: BoxDecoration(
+                                color: Colors.black.withOpacity(0.4),
                                 borderRadius: BorderRadiusStyle.circleBorder7,
                               ),
                               child: Text(
                                 'lbl_1_32'.tr,
-                                style: CustomTextStyles
-                                    .bodySmallOnPrimaryContainer,
+                                style: defaultTextTheme.bodySmall!.copyWith(
+                                  color: defaultColors.onPrimaryContainer,
+                                  fontSize: 10.fSize,
+                                ),
                               ),
                             ),
                           ),
@@ -130,7 +137,12 @@ class HomePageScreen extends GetWidget<HomePageController> {
                   children: [
                     Container(
                       padding: EdgeInsets.symmetric(horizontal: 10.h),
-                      decoration: AppDecoration.outlineBluegray300332.copyWith(
+                      decoration: BoxDecoration(
+                        color: defaultColors.onPrimaryContainer,
+                        border: Border.all(
+                          color: const Color(0x33A4A8AF),
+                          width: 1.h,
+                        ),
                         borderRadius: BorderRadiusStyle.roundedBorder10,
                       ),
                       child: Column(
@@ -145,8 +157,10 @@ class HomePageScreen extends GetWidget<HomePageController> {
                             ),
                             child: Text(
                               'lbl99'.tr,
-                              style:
-                                  CustomTextStyles.titleMediumNanumSquareRound,
+                              style: defaultTextTheme.titleMedium!.copyWith(
+                                fontFamily: 'NanumSquareRound',
+                                fontWeight: FontWeight.w800,
+                              ),
                             ),
                           ),
                           Padding(
@@ -156,8 +170,11 @@ class HomePageScreen extends GetWidget<HomePageController> {
                             ),
                             child: Text(
                               'lbl100'.tr,
-                              style: CustomTextStyles
-                                  .bodySmallNanumSquareRoundBluegray200,
+                              style: defaultTextTheme.bodySmall!.copyWith(
+                                fontFamily: 'NanumSquareRound',
+                                color: const Color(0xFFB0B2BC),
+                                fontSize: 10.fSize,
+                              ),
                             ),
                           ),
                           SizedBox(height: 34.v),
@@ -173,7 +190,12 @@ class HomePageScreen extends GetWidget<HomePageController> {
                     Container(
                       margin: EdgeInsets.only(left: 16.h),
                       padding: EdgeInsets.symmetric(vertical: 13.v),
-                      decoration: AppDecoration.outlineBluegray300332.copyWith(
+                      decoration: BoxDecoration(
+                        color: defaultColors.onPrimaryContainer,
+                        border: Border.all(
+                          color: const Color(0x33A4A8AF),
+                          width: 1.h,
+                        ),
                         borderRadius: BorderRadiusStyle.roundedBorder10,
                       ),
                       child: Column(
@@ -185,8 +207,10 @@ class HomePageScreen extends GetWidget<HomePageController> {
                             padding: EdgeInsets.only(left: 12.h),
                             child: Text(
                               'lbl101'.tr,
-                              style:
-                                  CustomTextStyles.titleMediumNanumSquareRound,
+                              style: defaultTextTheme.titleMedium!.copyWith(
+                                fontFamily: 'NanumSquareRound',
+                                fontWeight: FontWeight.w800,
+                              ),
                             ),
                           ),
                           Padding(
@@ -196,8 +220,11 @@ class HomePageScreen extends GetWidget<HomePageController> {
                             ),
                             child: Text(
                               'lbl102'.tr,
-                              style: CustomTextStyles
-                                  .bodySmallNanumSquareRoundBluegray200,
+                              style: defaultTextTheme.bodySmall!.copyWith(
+                                fontFamily: 'NanumSquareRound',
+                                color: const Color(0xFFB0B2BC),
+                                fontSize: 10.fSize,
+                              ),
                             ),
                           ),
                           SizedBox(height: 25.v),
@@ -219,7 +246,12 @@ class HomePageScreen extends GetWidget<HomePageController> {
                   horizontal: 12.h,
                   vertical: 15.v,
                 ),
-                decoration: AppDecoration.outlineBluegray300332.copyWith(
+                decoration: BoxDecoration(
+                  color: defaultColors.onPrimaryContainer,
+                  border: Border.all(
+                    color: const Color(0x33A4A8AF),
+                    width: 1.h,
+                  ),
                   borderRadius: BorderRadiusStyle.roundedBorder10,
                 ),
                 child: Row(
@@ -234,15 +266,20 @@ class HomePageScreen extends GetWidget<HomePageController> {
                           Align(
                             child: Text(
                               'lbl103'.tr,
-                              style:
-                                  CustomTextStyles.titleMediumNanumSquareRound,
+                              style: defaultTextTheme.titleMedium!.copyWith(
+                                fontFamily: 'NanumSquareRound',
+                                fontWeight: FontWeight.w800,
+                              ),
                             ),
                           ),
                           SizedBox(height: 4.v),
                           Text(
                             'lbl104'.tr,
-                            style: CustomTextStyles
-                                .bodySmallNanumSquareRoundBluegray200,
+                            style: defaultTextTheme.bodySmall!.copyWith(
+                              fontFamily: 'NanumSquareRound',
+                              color: const Color(0xFFB0B2BC),
+                              fontSize: 10.fSize,
+                            ),
                           ),
                         ],
                       ),

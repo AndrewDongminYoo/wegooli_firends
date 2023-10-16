@@ -7,7 +7,6 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
-import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/custom_image_view.dart';
 
@@ -60,10 +59,10 @@ class CustomBottomBar extends StatelessWidget {
     return Container(
       height: 65.v,
       decoration: BoxDecoration(
-        color: theme.colorScheme.onPrimaryContainer,
+        color: defaultColors.onPrimaryContainer,
         border: Border(
           top: BorderSide(
-            color: appTheme.gray100,
+            color: const Color(0xFFF3F3F6),
             width: 1.h,
           ),
         ),
@@ -86,15 +85,20 @@ class CustomBottomBar extends StatelessWidget {
                     svgPath: bottomMenuList[index].icon,
                     height: 20.adaptSize,
                     width: 20.adaptSize,
-                    color: appTheme.blueGray200,
+                    color: const Color(0xFFB0B2BC),
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: 7.v),
                     child: Text(
                       bottomMenuList[index].title ?? '',
-                      style: CustomTextStyles.bodySmallBluegray200.copyWith(
-                        color: appTheme.blueGray200,
-                      ),
+                      style: defaultTextTheme.bodySmall!
+                          .copyWith(
+                            color: const Color(0xFFB0B2BC),
+                            fontSize: 10.fSize,
+                          )
+                          .copyWith(
+                            color: const Color(0xFFB0B2BC),
+                          ),
                     ),
                   ),
                 ],
@@ -106,15 +110,19 @@ class CustomBottomBar extends StatelessWidget {
                     svgPath: bottomMenuList[index].activeIcon,
                     height: 20.adaptSize,
                     width: 20.adaptSize,
-                    color: theme.colorScheme.onPrimary,
+                    color: defaultColors.onPrimary,
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: 7.v),
                     child: Text(
                       bottomMenuList[index].title ?? '',
-                      style: CustomTextStyles.bodySmall10.copyWith(
-                        color: theme.colorScheme.onPrimary,
-                      ),
+                      style: defaultTextTheme.bodySmall!
+                          .copyWith(
+                            fontSize: 10.fSize,
+                          )
+                          .copyWith(
+                            color: defaultColors.onPrimary,
+                          ),
                     ),
                   ),
                 ],

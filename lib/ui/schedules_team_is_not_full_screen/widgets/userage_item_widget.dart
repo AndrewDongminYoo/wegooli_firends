@@ -8,7 +8,6 @@ import 'package:get/get.dart';
 import '../controller/schedules_team_is_not_full_controller.dart';
 import '../models/userage_item_model.dart';
 import '/core/utils/size_utils.dart';
-import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 
 // ignore: must_be_immutable
@@ -36,7 +35,7 @@ class UserageItemWidget extends StatelessWidget {
               () => Text(
                 userageItem.userDay!.value,
                 overflow: TextOverflow.ellipsis,
-                style: theme.textTheme.titleMedium,
+                style: defaultTextTheme.titleMedium,
               ),
             ),
           ),
@@ -45,7 +44,9 @@ class UserageItemWidget extends StatelessWidget {
             () => Text(
               userageItem.userMonth!.value,
               overflow: TextOverflow.ellipsis,
-              style: CustomTextStyles.bodySmallGray50002,
+              style: defaultTextTheme.bodySmall!.copyWith(
+                color: const Color(0xFF91959D),
+              ),
             ),
           ),
           Padding(
@@ -57,7 +58,7 @@ class UserageItemWidget extends StatelessWidget {
               () => Text(
                 userageItem.userYear!.value,
                 overflow: TextOverflow.ellipsis,
-                style: theme.textTheme.bodySmall,
+                style: defaultTextTheme.bodySmall,
               ),
             ),
           ),
@@ -70,7 +71,7 @@ class UserageItemWidget extends StatelessWidget {
               () => Text(
                 userageItem.thirty!.value,
                 overflow: TextOverflow.ellipsis,
-                style: theme.textTheme.bodySmall,
+                style: defaultTextTheme.bodySmall,
               ),
             ),
           ),
@@ -79,7 +80,7 @@ class UserageItemWidget extends StatelessWidget {
             () => Text(
               userageItem.thirtyone!.value,
               overflow: TextOverflow.ellipsis,
-              style: theme.textTheme.bodySmall,
+              style: defaultTextTheme.bodySmall,
             ),
           ),
           SizedBox(height: 18.v),
@@ -87,7 +88,7 @@ class UserageItemWidget extends StatelessWidget {
             () => Text(
               userageItem.thirtytwo!.value,
               overflow: TextOverflow.ellipsis,
-              style: theme.textTheme.bodySmall,
+              style: defaultTextTheme.bodySmall,
             ),
           ),
         ],

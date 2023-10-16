@@ -8,8 +8,6 @@ import 'package:get/get.dart';
 import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
 import '/theme/app_decoration.dart';
-import '/theme/custom_button_style.dart';
-import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/custom_elevated_button.dart';
 import '/widgets/custom_image_view.dart';
@@ -27,8 +25,9 @@ class UnsubscribeConfirmDialog extends StatelessWidget {
     return SingleChildScrollView(
         child: Container(
             margin: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 267.v),
-            decoration: AppDecoration.shadow
-                .copyWith(borderRadius: BorderRadiusStyle.roundedBorder10),
+            decoration: BoxDecoration(
+                color: defaultColors.onPrimaryContainer,
+                borderRadius: BorderRadiusStyle.roundedBorder10),
             child: Column(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -40,7 +39,9 @@ class UnsubscribeConfirmDialog extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text('lbl34'.tr,
-                                style: CustomTextStyles.titleMedium18),
+                                style: defaultTextTheme.titleMedium!.copyWith(
+                                  fontSize: 18.fSize,
+                                )),
                             CustomImageView(
                                 svgPath: ImageConstant.imgClose,
                                 height: 15.adaptSize,
@@ -56,29 +57,39 @@ class UnsubscribeConfirmDialog extends StatelessWidget {
                           maxLines: 3,
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.justify,
-                          style: theme.textTheme.bodyLarge!
+                          style: defaultTextTheme.bodyLarge!
                               .copyWith(height: 1.50))),
                   SizedBox(height: 20.v),
                   Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                     CustomElevatedButton(
                         width: 164.h,
                         text: 'lbl32'.tr,
-                        buttonStyle: CustomButtonStyles.fillGrayBL10,
-                        buttonTextStyle: theme.textTheme.titleMedium),
+                        buttonStyle: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xFFB9BCC3),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.only(
+                              bottomLeft: Radius.circular(
+                                10.h,
+                              ),
+                            ),
+                          ),
+                        ),
+                        buttonTextStyle: defaultTextTheme.titleMedium),
                     CustomElevatedButton(
                         width: 164.h,
                         text: 'lbl35'.tr,
-                        buttonStyle: CustomButtonStyles.fillPrimaryBR10,
-                        buttonTextStyle: theme.textTheme.titleMedium)
+                        buttonStyle: ElevatedButton.styleFrom(
+                          backgroundColor: defaultColors.primary,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.only(
+                              bottomRight: Radius.circular(
+                                10.h,
+                              ),
+                            ),
+                          ),
+                        ),
+                        buttonTextStyle: defaultTextTheme.titleMedium)
                   ])
                 ])));
-  }
-
-  /// Navigates to the previous screen.
-  ///
-  /// When the action is triggered, this function uses the [Get] package to
-  /// navigate to the previous screen in the navigation stack.
-  void onTapImgCloseone() {
-    Get.back();
   }
 }

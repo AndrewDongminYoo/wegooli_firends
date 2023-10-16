@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '../contact_us_inquiry_history_page/widgets/list_item_widget.dart';
 import '/core/utils/size_utils.dart';
-import '/theme/app_decoration.dart';
+import '/theme/theme_helper.dart';
 import 'controller/contact_us_inquiry_history_controller.dart';
 import 'models/contact_us_inquiry_history_model.dart';
 
@@ -26,7 +26,9 @@ class ContactUsInquiryHistoryPage extends StatelessWidget {
       child: Scaffold(
         body: Container(
           width: double.maxFinite,
-          decoration: AppDecoration.shadow,
+          decoration: BoxDecoration(
+            color: defaultColors.onPrimaryContainer,
+          ),
           child: Obx(
             () => ListView.separated(
               physics: const BouncingScrollPhysics(),

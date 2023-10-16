@@ -12,7 +12,6 @@ import '/widgets/custom_elevated_button.dart';
 import '/widgets/custom_image_view.dart';
 import 'controller/signup_complete_controller.dart';
 
-// ignore_for_file: must_be_immutable
 class SignupCompleteScreen extends GetWidget<SignupCompleteController> {
   const SignupCompleteScreen({Key? key}) : super(key: key);
 
@@ -51,7 +50,7 @@ class SignupCompleteScreen extends GetWidget<SignupCompleteController> {
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
                             textAlign: TextAlign.center,
-                            style: theme.textTheme.headlineSmall!.copyWith(
+                            style: defaultTextTheme.headlineSmall!.copyWith(
                               height: 1.42,
                             ),
                           ),

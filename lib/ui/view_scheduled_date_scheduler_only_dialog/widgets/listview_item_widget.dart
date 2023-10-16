@@ -28,11 +28,24 @@ class ListviewItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: AppDecoration.shadow.copyWith(
+      decoration: BoxDecoration(
+        color: defaultColors.onPrimaryContainer,
         borderRadius: BorderRadiusStyle.roundedBorder10,
       ),
       child: Container(
-        decoration: AppDecoration.outlineBlack.copyWith(
+        decoration: BoxDecoration(
+          color: defaultColors.onPrimaryContainer,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              spreadRadius: 2.h,
+              blurRadius: 2.h,
+              offset: const Offset(
+                2,
+                2,
+              ),
+            ),
+          ],
           borderRadius: BorderRadiusStyle.roundedBorder10,
         ),
         child: Row(
@@ -42,7 +55,7 @@ class ListviewItemWidget extends StatelessWidget {
               height: 75.v,
               width: 9.h,
               decoration: BoxDecoration(
-                color: theme.colorScheme.primary,
+                color: defaultColors.primary,
                 borderRadius: BorderRadius.horizontal(
                   left: Radius.circular(10.h),
                 ),
@@ -62,13 +75,13 @@ class ListviewItemWidget extends StatelessWidget {
                       () => Text(
                         listviewItem.value!.value,
                         overflow: TextOverflow.ellipsis,
-                        style: theme.textTheme.bodySmall,
+                        style: defaultTextTheme.bodySmall,
                       ),
                     ),
                     SizedBox(height: 8.v),
                     Text(
                       'msg_8_16_15_20'.tr,
-                      style: theme.textTheme.bodyLarge,
+                      style: defaultTextTheme.bodyLarge,
                     ),
                   ],
                 ),

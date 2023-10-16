@@ -7,12 +7,10 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
-import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/custom_image_view.dart';
 import 'controller/splash_screen_one_controller.dart';
 
-// ignore_for_file: must_be_immutable
 class SplashScreenOneScreen extends GetWidget<SplashScreenOneController> {
   const SplashScreenOneScreen({Key? key}) : super(key: key);
 
@@ -27,13 +25,13 @@ class SplashScreenOneScreen extends GetWidget<SplashScreenOneController> {
         body: Container(
           width: mediaQueryData.size.width,
           height: mediaQueryData.size.height,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.center,
               end: Alignment.bottomRight,
               colors: [
-                appTheme.yellow600,
-                appTheme.yellow300,
+                Color(0xFFFFDC27),
+                Color(0xFFFFF96D),
               ],
             ),
           ),
@@ -60,8 +58,11 @@ class SplashScreenOneScreen extends GetWidget<SplashScreenOneController> {
                           SizedBox(height: 14.v),
                           Text(
                             'lbl86'.tr,
-                            style: CustomTextStyles
-                                .titleSmallNanumSquareRoundBlack900,
+                            style: defaultTextTheme.titleSmall!.copyWith(
+                              fontFamily: 'NanumSquareRound',
+                              color: Colors.black,
+                              fontWeight: FontWeight.w700,
+                            ),
                           ),
                         ],
                       ),

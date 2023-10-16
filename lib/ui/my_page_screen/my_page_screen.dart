@@ -7,7 +7,6 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
-import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_image_1.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
@@ -15,7 +14,6 @@ import '/widgets/custom_bottom_bar.dart';
 import '/widgets/custom_image_view.dart';
 import 'controller/my_page_controller.dart';
 
-// ignore_for_file: must_be_immutable
 class MyPageScreen extends GetWidget<MyPageController> {
   const MyPageScreen({Key? key}) : super(key: key);
 
@@ -69,19 +67,25 @@ class MyPageScreen extends GetWidget<MyPageController> {
                                     children: [
                                       Text(
                                         'lbl41'.tr,
-                                        style: theme.textTheme.titleMedium,
+                                        style: defaultTextTheme.titleMedium,
                                       ),
                                       SizedBox(height: 7.v),
                                       Text(
                                         'lbl_010_1234_5678'.tr,
-                                        style:
-                                            CustomTextStyles.bodySmallOnPrimary,
+                                        style: defaultTextTheme.bodySmall!
+                                            .copyWith(
+                                          color: defaultColors.onPrimary
+                                              .withOpacity(0.4),
+                                        ),
                                       ),
                                       SizedBox(height: 4.v),
                                       Text(
                                         'msg_abc123_gmail_com'.tr,
-                                        style:
-                                            CustomTextStyles.bodySmallOnPrimary,
+                                        style: defaultTextTheme.bodySmall!
+                                            .copyWith(
+                                          color: defaultColors.onPrimary
+                                              .withOpacity(0.4),
+                                        ),
                                       ),
                                     ],
                                   ),
@@ -94,8 +98,8 @@ class MyPageScreen extends GetWidget<MyPageController> {
                         Container(
                           height: 8.v,
                           width: double.maxFinite,
-                          decoration: BoxDecoration(
-                            color: appTheme.gray10001,
+                          decoration: const BoxDecoration(
+                            color: Color(0xFFF6F7F7),
                           ),
                         ),
                         Padding(
@@ -119,7 +123,7 @@ class MyPageScreen extends GetWidget<MyPageController> {
                                 ),
                                 child: Text(
                                   'lbl122'.tr,
-                                  style: theme.textTheme.bodyLarge,
+                                  style: defaultTextTheme.bodyLarge,
                                 ),
                               ),
                               const Spacer(),
@@ -153,7 +157,7 @@ class MyPageScreen extends GetWidget<MyPageController> {
                                 ),
                                 child: Text(
                                   'lbl123'.tr,
-                                  style: theme.textTheme.bodyLarge,
+                                  style: defaultTextTheme.bodyLarge,
                                 ),
                               ),
                               const Spacer(),
@@ -187,7 +191,7 @@ class MyPageScreen extends GetWidget<MyPageController> {
                                 ),
                                 child: Text(
                                   'lbl124'.tr,
-                                  style: theme.textTheme.bodyLarge,
+                                  style: defaultTextTheme.bodyLarge,
                                 ),
                               ),
                               const Spacer(),

@@ -7,15 +7,12 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
-import '/theme/custom_button_style.dart';
-import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/custom_elevated_button.dart';
 import '/widgets/custom_image_view.dart';
 import '/widgets/custom_text_form_field.dart';
 import 'controller/signin_page_controller.dart';
 
-// ignore_for_file: must_be_immutable
 class SigninPageScreen extends GetWidget<SigninPageController> {
   const SigninPageScreen({Key? key}) : super(key: key);
 
@@ -46,7 +43,7 @@ class SigninPageScreen extends GetWidget<SigninPageController> {
                 children: [
                   Text(
                     'lbl60'.tr,
-                    style: theme.textTheme.bodySmall,
+                    style: defaultTextTheme.bodySmall,
                   ),
                   SizedBox(height: 3.v),
                   CustomTextFormField(
@@ -61,7 +58,7 @@ class SigninPageScreen extends GetWidget<SigninPageController> {
                 children: [
                   Text(
                     'lbl62'.tr,
-                    style: theme.textTheme.bodySmall,
+                    style: defaultTextTheme.bodySmall,
                   ),
                   SizedBox(height: 3.v),
                   CustomTextFormField(
@@ -88,24 +85,33 @@ class SigninPageScreen extends GetWidget<SigninPageController> {
               CustomElevatedButton(
                 height: 48.v,
                 text: 'lbl64'.tr,
-                buttonStyle: CustomButtonStyles.fillPrimaryTL8,
-                buttonTextStyle: CustomTextStyles.titleSmallBold,
+                buttonStyle: ElevatedButton.styleFrom(
+                  backgroundColor: defaultColors.primary,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.h),
+                  ),
+                ),
+                buttonTextStyle: defaultTextTheme.titleSmall!.copyWith(
+                  fontWeight: FontWeight.w700,
+                ),
               ),
               SizedBox(height: 60.v),
               Text(
                 'lbl65'.tr,
-                style: theme.textTheme.bodySmall,
+                style: defaultTextTheme.bodySmall,
               ),
               SizedBox(height: 10.v),
               Text(
                 'lbl66'.tr,
-                style: CustomTextStyles.bodySmallBluegray200_1,
+                style: defaultTextTheme.bodySmall!.copyWith(
+                  color: const Color(0xFFB0B2BC),
+                ),
               ),
               SizedBox(height: 1.v),
               SizedBox(
                 width: 42.h,
-                child: Divider(
-                  color: appTheme.blueGray200,
+                child: const Divider(
+                  color: Color(0xFFB0B2BC),
                 ),
               ),
             ],

@@ -9,7 +9,7 @@ import '../view_scheduled_date_scheduler_only_dialog/widgets/listview_item_widge
 import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
 import '/theme/app_decoration.dart';
-import '/theme/custom_text_style.dart';
+import '/theme/theme_helper.dart';
 import '/widgets/custom_image_view.dart';
 import 'controller/view_scheduled_date_scheduler_only_controller.dart';
 
@@ -27,20 +27,25 @@ class ViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
         child: Container(
             margin: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 238.v),
             padding: EdgeInsets.all(20.h),
-            decoration: AppDecoration.shadow
-                .copyWith(borderRadius: BorderRadiusStyle.roundedBorder10),
+            decoration: BoxDecoration(
+                color: defaultColors.onPrimaryContainer,
+                borderRadius: BorderRadiusStyle.roundedBorder10),
             child: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   CustomImageView(
-                      svgPath: ImageConstant.imgClose,
-                      height: 15.adaptSize,
-                      width: 15.adaptSize,
-                      alignment: Alignment.centerRight,
-                      onTap: Get.back),
+                    svgPath: ImageConstant.imgClose,
+                    height: 15.adaptSize,
+                    width: 15.adaptSize,
+                    alignment: Alignment.centerRight,
+                    onTap: Get.back,
+                  ),
                   SizedBox(height: 6.v),
-                  Text('lbl10'.tr, style: CustomTextStyles.titleMedium18),
+                  Text('lbl10'.tr,
+                      style: defaultTextTheme.titleMedium!.copyWith(
+                        fontSize: 18.fSize,
+                      )),
                   SizedBox(height: 22.v),
                   Obx(() => ListView.separated(
                       physics: const NeverScrollableScrollPhysics(),
@@ -57,13 +62,5 @@ class ViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
                       })),
                   SizedBox(height: 10.v)
                 ])));
-  }
-
-  /// Navigates to the previous screen.
-  ///
-  /// When the action is triggered, this function uses the [Get] package to
-  /// navigate to the previous screen in the navigation stack.
-  void onTapImgCloseone() {
-    Get.back();
   }
 }

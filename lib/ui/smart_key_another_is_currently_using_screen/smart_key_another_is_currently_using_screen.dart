@@ -8,8 +8,6 @@ import 'package:get/get.dart';
 import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
 import '/theme/app_decoration.dart';
-import '/theme/custom_button_style.dart';
-import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_image_1.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
@@ -18,7 +16,6 @@ import '/widgets/custom_elevated_button.dart';
 import '/widgets/custom_image_view.dart';
 import 'controller/smart_key_another_is_currently_using_controller.dart';
 
-// ignore_for_file: must_be_immutable
 class SmartKeyAnotherIsCurrentlyUsingScreen
     extends GetWidget<SmartKeyAnotherIsCurrentlyUsingController> {
   const SmartKeyAnotherIsCurrentlyUsingScreen({Key? key}) : super(key: key);
@@ -67,12 +64,15 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                 children: [
                                   Text(
                                     'lbl112'.tr,
-                                    style: theme.textTheme.titleMedium,
+                                    style: defaultTextTheme.titleMedium,
                                   ),
                                   SizedBox(height: 4.v),
                                   Text(
                                     'lbl_12_3456'.tr,
-                                    style: CustomTextStyles.bodySmallOnPrimary,
+                                    style: defaultTextTheme.bodySmall!.copyWith(
+                                      color: defaultColors.onPrimary
+                                          .withOpacity(0.4),
+                                    ),
                                   ),
                                   SizedBox(height: 1.v),
                                   Row(
@@ -91,7 +91,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                         ),
                                         child: Text(
                                           'lbl_203'.tr,
-                                          style: theme.textTheme.bodySmall,
+                                          style: defaultTextTheme.bodySmall,
                                         ),
                                       ),
                                       CustomImageView(
@@ -117,13 +117,17 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                         children: [
                           Text(
                             'lbl113'.tr,
-                            style: CustomTextStyles.bodySmallOnPrimary,
+                            style: defaultTextTheme.bodySmall!.copyWith(
+                              color: defaultColors.onPrimary.withOpacity(0.4),
+                            ),
                           ),
                           Padding(
                             padding: EdgeInsets.only(left: 5.h),
                             child: Text(
                               'lbl114'.tr,
-                              style: CustomTextStyles.bodySmallOnPrimary,
+                              style: defaultTextTheme.bodySmall!.copyWith(
+                                color: defaultColors.onPrimary.withOpacity(0.4),
+                              ),
                             ),
                           ),
                           Container(
@@ -135,7 +139,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                               bottom: 5.v,
                             ),
                             decoration: BoxDecoration(
-                              color: appTheme.red700,
+                              color: const Color(0xFFE82121),
                               borderRadius: BorderRadius.circular(
                                 2.h,
                               ),
@@ -145,7 +149,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                             padding: EdgeInsets.only(left: 2.h),
                             child: Text(
                               'lbl128'.tr,
-                              style: theme.textTheme.bodySmall,
+                              style: defaultTextTheme.bodySmall,
                             ),
                           ),
                         ],
@@ -166,7 +170,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                           height: 10.v,
                           width: 328.h,
                           decoration: BoxDecoration(
-                            color: appTheme.blueGray30033,
+                            color: const Color(0x33A4A8AF),
                             borderRadius: BorderRadius.circular(
                               5.h,
                             ),
@@ -177,9 +181,9 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                             ),
                             child: LinearProgressIndicator(
                               value: 0.57,
-                              backgroundColor: appTheme.blueGray30033,
+                              backgroundColor: const Color(0x33A4A8AF),
                               valueColor: AlwaysStoppedAnimation<Color>(
-                                theme.colorScheme.primary,
+                                defaultColors.primary,
                               ),
                             ),
                           ),
@@ -196,11 +200,15 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                           children: [
                             Text(
                               'lbl_12_00'.tr,
-                              style: CustomTextStyles.bodySmallOnPrimary,
+                              style: defaultTextTheme.bodySmall!.copyWith(
+                                color: defaultColors.onPrimary.withOpacity(0.4),
+                              ),
                             ),
                             Text(
                               'lbl_13_00'.tr,
-                              style: CustomTextStyles.bodySmallOnPrimary,
+                              style: defaultTextTheme.bodySmall!.copyWith(
+                                color: defaultColors.onPrimary.withOpacity(0.4),
+                              ),
                             ),
                           ],
                         ),
@@ -209,8 +217,8 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                       Container(
                         height: 8.v,
                         width: double.maxFinite,
-                        decoration: BoxDecoration(
-                          color: appTheme.gray10001,
+                        decoration: const BoxDecoration(
+                          color: Color(0xFFF6F7F7),
                         ),
                       ),
                       SizedBox(
@@ -234,8 +242,11 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                       alignment: Alignment.centerLeft,
                                       child: Text(
                                         'lbl116'.tr,
-                                        style: CustomTextStyles
-                                            .titleMediumBlack900,
+                                        style: defaultTextTheme.titleMedium!
+                                            .copyWith(
+                                          color: Colors.black,
+                                          fontSize: 18.fSize,
+                                        ),
                                       ),
                                     ),
                                     Padding(
@@ -257,9 +268,22 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                                   child: Container(
                                                     padding:
                                                         EdgeInsets.all(5.h),
-                                                    decoration: AppDecoration
-                                                        .outlineBlack
-                                                        .copyWith(
+                                                    decoration: BoxDecoration(
+                                                      color: defaultColors
+                                                          .onPrimaryContainer,
+                                                      boxShadow: [
+                                                        BoxShadow(
+                                                          color: const Color(
+                                                                  0xFF000000)
+                                                              .withOpacity(0.1),
+                                                          spreadRadius: 2.h,
+                                                          blurRadius: 2.h,
+                                                          offset: const Offset(
+                                                            2,
+                                                            2,
+                                                          ),
+                                                        ),
+                                                      ],
                                                       borderRadius:
                                                           BorderRadiusStyle
                                                               .circleBorder65,
@@ -268,7 +292,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                                       height: 120.adaptSize,
                                                       width: 120.adaptSize,
                                                       decoration: BoxDecoration(
-                                                        color: theme.colorScheme
+                                                        color: defaultColors
                                                             .onPrimaryContainer,
                                                         borderRadius:
                                                             BorderRadius
@@ -276,8 +300,8 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                                           60.h,
                                                         ),
                                                         border: Border.all(
-                                                          color: appTheme
-                                                              .blueGray30033,
+                                                          color: const Color(
+                                                              0x33A4A8AF),
                                                           width: 1.h,
                                                         ),
                                                       ),
@@ -302,8 +326,9 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                                         SizedBox(height: 5.v),
                                                         Text(
                                                           'lbl117'.tr,
-                                                          style: theme.textTheme
-                                                              .titleMedium,
+                                                          style:
+                                                              defaultTextTheme
+                                                                  .titleMedium,
                                                         ),
                                                       ],
                                                     ),
@@ -323,9 +348,22 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                                   child: Container(
                                                     padding:
                                                         EdgeInsets.all(5.h),
-                                                    decoration: AppDecoration
-                                                        .outlineBlack
-                                                        .copyWith(
+                                                    decoration: BoxDecoration(
+                                                      color: defaultColors
+                                                          .onPrimaryContainer,
+                                                      boxShadow: [
+                                                        BoxShadow(
+                                                          color: const Color(
+                                                                  0xFF000000)
+                                                              .withOpacity(0.1),
+                                                          spreadRadius: 2.h,
+                                                          blurRadius: 2.h,
+                                                          offset: const Offset(
+                                                            2,
+                                                            2,
+                                                          ),
+                                                        ),
+                                                      ],
                                                       borderRadius:
                                                           BorderRadiusStyle
                                                               .circleBorder65,
@@ -334,7 +372,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                                       height: 120.adaptSize,
                                                       width: 120.adaptSize,
                                                       decoration: BoxDecoration(
-                                                        color: theme.colorScheme
+                                                        color: defaultColors
                                                             .onPrimaryContainer,
                                                         borderRadius:
                                                             BorderRadius
@@ -342,8 +380,8 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                                           60.h,
                                                         ),
                                                         border: Border.all(
-                                                          color: appTheme
-                                                              .blueGray30033,
+                                                          color: const Color(
+                                                              0x33A4A8AF),
                                                           width: 1.h,
                                                         ),
                                                       ),
@@ -368,8 +406,9 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                                         SizedBox(height: 5.v),
                                                         Text(
                                                           'lbl118'.tr,
-                                                          style: theme.textTheme
-                                                              .titleMedium,
+                                                          style:
+                                                              defaultTextTheme
+                                                                  .titleMedium,
                                                         ),
                                                       ],
                                                     ),
@@ -400,9 +439,22 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                                   child: Container(
                                                     padding:
                                                         EdgeInsets.all(5.h),
-                                                    decoration: AppDecoration
-                                                        .outlineBlack
-                                                        .copyWith(
+                                                    decoration: BoxDecoration(
+                                                      color: defaultColors
+                                                          .onPrimaryContainer,
+                                                      boxShadow: [
+                                                        BoxShadow(
+                                                          color: const Color(
+                                                                  0xFF000000)
+                                                              .withOpacity(0.1),
+                                                          spreadRadius: 2.h,
+                                                          blurRadius: 2.h,
+                                                          offset: const Offset(
+                                                            2,
+                                                            2,
+                                                          ),
+                                                        ),
+                                                      ],
                                                       borderRadius:
                                                           BorderRadiusStyle
                                                               .circleBorder65,
@@ -411,7 +463,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                                       height: 120.adaptSize,
                                                       width: 120.adaptSize,
                                                       decoration: BoxDecoration(
-                                                        color: theme.colorScheme
+                                                        color: defaultColors
                                                             .onPrimaryContainer,
                                                         borderRadius:
                                                             BorderRadius
@@ -419,8 +471,8 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                                           60.h,
                                                         ),
                                                         border: Border.all(
-                                                          color: appTheme
-                                                              .blueGray30033,
+                                                          color: const Color(
+                                                              0x33A4A8AF),
                                                           width: 1.h,
                                                         ),
                                                       ),
@@ -445,8 +497,9 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                                         SizedBox(height: 14.v),
                                                         Text(
                                                           'lbl119'.tr,
-                                                          style: theme.textTheme
-                                                              .titleMedium,
+                                                          style:
+                                                              defaultTextTheme
+                                                                  .titleMedium,
                                                         ),
                                                       ],
                                                     ),
@@ -458,9 +511,21 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                           Container(
                                             margin: EdgeInsets.only(left: 20.h),
                                             padding: EdgeInsets.all(5.h),
-                                            decoration: AppDecoration
-                                                .outlineBlack
-                                                .copyWith(
+                                            decoration: BoxDecoration(
+                                              color: defaultColors
+                                                  .onPrimaryContainer,
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  color: Colors.black
+                                                      .withOpacity(0.1),
+                                                  spreadRadius: 2.h,
+                                                  blurRadius: 2.h,
+                                                  offset: const Offset(
+                                                    2,
+                                                    2,
+                                                  ),
+                                                ),
+                                              ],
                                               borderRadius: BorderRadiusStyle
                                                   .circleBorder65,
                                             ),
@@ -469,9 +534,12 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                                 horizontal: 37.h,
                                                 vertical: 24.v,
                                               ),
-                                              decoration: AppDecoration
-                                                  .outlineBluegray30033
-                                                  .copyWith(
+                                              decoration: BoxDecoration(
+                                                border: Border.all(
+                                                  color:
+                                                      const Color(0x33A4A8AF),
+                                                  width: 1.h,
+                                                ),
                                                 borderRadius: BorderRadiusStyle
                                                     .circleBorder60,
                                               ),
@@ -507,7 +575,9 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                   horizontal: 16.h,
                                   vertical: 50.v,
                                 ),
-                                decoration: AppDecoration.fillBluegray30033,
+                                decoration: const BoxDecoration(
+                                  color: Color(0x33A4A8AF),
+                                ),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   mainAxisAlignment: MainAxisAlignment.end,
@@ -517,10 +587,18 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                       height: 44.v,
                                       width: 189.h,
                                       text: 'lbl129'.tr,
-                                      buttonStyle:
-                                          CustomButtonStyles.fillOnPrimary,
-                                      buttonTextStyle: CustomTextStyles
-                                          .bodyLargeOnPrimaryContainer,
+                                      buttonStyle: ElevatedButton.styleFrom(
+                                        backgroundColor: defaultColors.onPrimary
+                                            .withOpacity(0.4),
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(22.h),
+                                        ),
+                                      ),
+                                      buttonTextStyle:
+                                          defaultTextTheme.bodyLarge!.copyWith(
+                                        color: defaultColors.onPrimaryContainer,
+                                      ),
                                     ),
                                     SizedBox(height: 122.v),
                                     Align(
@@ -530,9 +608,20 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                           horizontal: 12.h,
                                           vertical: 10.v,
                                         ),
-                                        decoration: AppDecoration
-                                            .outlineBlack9001
-                                            .copyWith(
+                                        decoration: BoxDecoration(
+                                          color: defaultColors.primary,
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color:
+                                                  Colors.black.withOpacity(0.1),
+                                              spreadRadius: 2.h,
+                                              blurRadius: 2.h,
+                                              offset: const Offset(
+                                                2,
+                                                2,
+                                              ),
+                                            ),
+                                          ],
                                           borderRadius:
                                               BorderRadiusStyle.circleBorder35,
                                         ),
@@ -549,8 +638,10 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                             SizedBox(height: 1.v),
                                             Text(
                                               'lbl121'.tr,
-                                              style: CustomTextStyles
-                                                  .bodySmallBlack900,
+                                              style: defaultTextTheme.bodySmall!
+                                                  .copyWith(
+                                                color: Colors.black,
+                                              ),
                                             ),
                                             SizedBox(height: 3.v),
                                           ],

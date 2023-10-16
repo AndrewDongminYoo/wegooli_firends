@@ -35,7 +35,8 @@ class UserprofileItemWidget extends StatelessWidget {
             height: 50.adaptSize,
             width: 50.adaptSize,
             padding: EdgeInsets.all(4.h),
-            decoration: AppDecoration.fillPrimary.copyWith(
+            decoration: BoxDecoration(
+              color: defaultColors.primary,
               borderRadius: BorderRadiusStyle.circleBorder25,
             ),
             child: CustomImageView(
@@ -53,7 +54,7 @@ class UserprofileItemWidget extends StatelessWidget {
             () => Text(
               userprofileItem.userName!.value,
               overflow: TextOverflow.ellipsis,
-              style: theme.textTheme.bodySmall,
+              style: defaultTextTheme.bodySmall,
             ),
           ),
         ],

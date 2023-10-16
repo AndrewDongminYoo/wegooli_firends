@@ -8,8 +8,6 @@ import 'package:get/get.dart';
 import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
 import '/theme/app_decoration.dart';
-import '/theme/custom_button_style.dart';
-import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_image_1.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
@@ -58,7 +56,10 @@ class SendBirdChatPage extends StatelessWidget {
                     alignment: Alignment.centerLeft,
                     child: Text(
                       'lbl107'.tr,
-                      style: CustomTextStyles.titleMediumBlack900,
+                      style: defaultTextTheme.titleMedium!.copyWith(
+                        color: Colors.black,
+                        fontSize: 18.fSize,
+                      ),
                     ),
                   ),
                   SizedBox(height: 22.v),
@@ -66,8 +67,15 @@ class SendBirdChatPage extends StatelessWidget {
                     height: 34.v,
                     width: 95.h,
                     text: 'lbl108'.tr,
-                    buttonStyle: CustomButtonStyles.fillPrimaryTL17,
-                    buttonTextStyle: CustomTextStyles.bodyMedium15,
+                    buttonStyle: ElevatedButton.styleFrom(
+                      backgroundColor: defaultColors.primary,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(17.h),
+                      ),
+                    ),
+                    buttonTextStyle: defaultTextTheme.bodyMedium!.copyWith(
+                      fontSize: 15.fSize,
+                    ),
                   ),
                   Padding(
                     padding: EdgeInsets.only(
@@ -84,7 +92,9 @@ class SendBirdChatPage extends StatelessWidget {
                           ),
                           child: Text(
                             'lbl_12_20_pm'.tr,
-                            style: CustomTextStyles.bodySmallGray400,
+                            style: defaultTextTheme.bodySmall!.copyWith(
+                              color: const Color(0xFFB9BCC3),
+                            ),
                           ),
                         ),
                         Container(
@@ -93,7 +103,8 @@ class SendBirdChatPage extends StatelessWidget {
                             horizontal: 15.h,
                             vertical: 6.v,
                           ),
-                          decoration: AppDecoration.fillPrimary.copyWith(
+                          decoration: BoxDecoration(
+                            color: defaultColors.primary,
                             borderRadius: BorderRadiusStyle.roundedBorder15,
                           ),
                           child: SizedBox(
@@ -103,7 +114,9 @@ class SendBirdChatPage extends StatelessWidget {
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.right,
-                              style: CustomTextStyles.bodyMedium15,
+                              style: defaultTextTheme.bodyMedium!.copyWith(
+                                fontSize: 15.fSize,
+                              ),
                             ),
                           ),
                         ),
@@ -147,7 +160,9 @@ class SendBirdChatPage extends StatelessWidget {
                             children: [
                               Text(
                                 'lbl41'.tr,
-                                style: CustomTextStyles.bodySmallBlack900,
+                                style: defaultTextTheme.bodySmall!.copyWith(
+                                  color: Colors.black,
+                                ),
                               ),
                               Padding(
                                 padding: EdgeInsets.only(
@@ -160,10 +175,19 @@ class SendBirdChatPage extends StatelessWidget {
                                       height: 34.v,
                                       width: 192.h,
                                       text: 'msg12'.tr,
-                                      buttonStyle:
-                                          CustomButtonStyles.fillBlueGrayTL17,
+                                      buttonStyle: ElevatedButton.styleFrom(
+                                        backgroundColor:
+                                            const Color(0x33A4A8AF),
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(17.h),
+                                        ),
+                                      ),
                                       buttonTextStyle:
-                                          CustomTextStyles.bodyMediumBlack900,
+                                          defaultTextTheme.bodyMedium!.copyWith(
+                                        color: Colors.black,
+                                        fontSize: 15.fSize,
+                                      ),
                                     ),
                                     Padding(
                                       padding: EdgeInsets.only(
@@ -172,8 +196,11 @@ class SendBirdChatPage extends StatelessWidget {
                                       ),
                                       child: Text(
                                         'lbl_12_22_pm'.tr,
-                                        style: CustomTextStyles
-                                            .bodySmallInterGray400_1,
+                                        style: defaultTextTheme.bodySmall!
+                                            .copyWith(
+                                          fontFamily: 'Inter',
+                                          color: const Color(0xFFB9BCC3),
+                                        ),
                                       ),
                                     ),
                                   ],
@@ -192,8 +219,10 @@ class SendBirdChatPage extends StatelessWidget {
                                       ),
                                       child: Text(
                                         'lbl_12_25_pm'.tr,
-                                        style:
-                                            CustomTextStyles.bodySmallGray400,
+                                        style: defaultTextTheme.bodySmall!
+                                            .copyWith(
+                                          color: const Color(0xFFB9BCC3),
+                                        ),
                                       ),
                                     ),
                                     CustomElevatedButton(
@@ -201,10 +230,17 @@ class SendBirdChatPage extends StatelessWidget {
                                       width: 168.h,
                                       text: 'lbl109'.tr,
                                       margin: EdgeInsets.only(left: 5.h),
-                                      buttonStyle:
-                                          CustomButtonStyles.fillPrimaryTL17,
+                                      buttonStyle: ElevatedButton.styleFrom(
+                                        backgroundColor: defaultColors.primary,
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(17.h),
+                                        ),
+                                      ),
                                       buttonTextStyle:
-                                          CustomTextStyles.bodyMedium15,
+                                          defaultTextTheme.bodyMedium!.copyWith(
+                                        fontSize: 15.fSize,
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -212,17 +248,26 @@ class SendBirdChatPage extends StatelessWidget {
                               SizedBox(height: 26.v),
                               Text(
                                 'lbl41'.tr,
-                                style: CustomTextStyles.bodySmallBlack900,
+                                style: defaultTextTheme.bodySmall!.copyWith(
+                                  color: Colors.black,
+                                ),
                               ),
                               SizedBox(height: 3.v),
                               CustomElevatedButton(
                                 height: 34.v,
                                 width: 215.h,
                                 text: 'msg13'.tr,
-                                buttonStyle:
-                                    CustomButtonStyles.fillBlueGrayTL17,
+                                buttonStyle: ElevatedButton.styleFrom(
+                                  backgroundColor: const Color(0x33A4A8AF),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(17.h),
+                                  ),
+                                ),
                                 buttonTextStyle:
-                                    CustomTextStyles.bodyMediumBlack900,
+                                    defaultTextTheme.bodyMedium!.copyWith(
+                                  color: Colors.black,
+                                  fontSize: 15.fSize,
+                                ),
                               ),
                               SizedBox(height: 5.v),
                               Row(
@@ -231,10 +276,18 @@ class SendBirdChatPage extends StatelessWidget {
                                     height: 34.v,
                                     width: 138.h,
                                     text: 'lbl110'.tr,
-                                    buttonStyle:
-                                        CustomButtonStyles.fillBlueGrayTL17,
+                                    buttonStyle: ElevatedButton.styleFrom(
+                                      backgroundColor: const Color(0x33A4A8AF),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(17.h),
+                                      ),
+                                    ),
                                     buttonTextStyle:
-                                        CustomTextStyles.bodyMediumBlack900,
+                                        defaultTextTheme.bodyMedium!.copyWith(
+                                      color: Colors.black,
+                                      fontSize: 15.fSize,
+                                    ),
                                   ),
                                   Padding(
                                     padding: EdgeInsets.only(
@@ -243,7 +296,10 @@ class SendBirdChatPage extends StatelessWidget {
                                     ),
                                     child: Text(
                                       'lbl_12_15_pm'.tr,
-                                      style: CustomTextStyles.bodySmallGray400,
+                                      style:
+                                          defaultTextTheme.bodySmall!.copyWith(
+                                        color: const Color(0xFFB9BCC3),
+                                      ),
                                     ),
                                   ),
                                 ],
@@ -269,7 +325,10 @@ class SendBirdChatPage extends StatelessWidget {
                           controller: controller.chatinputoneController,
                           margin: EdgeInsets.only(left: 8.h),
                           hintText: 'lbl111'.tr,
-                          hintStyle: CustomTextStyles.bodyMediumGray50001,
+                          hintStyle: defaultTextTheme.bodyMedium!.copyWith(
+                            color: const Color(0xFF91969D),
+                            fontSize: 15.fSize,
+                          ),
                           textInputAction: TextInputAction.done,
                           contentPadding: EdgeInsets.symmetric(
                             horizontal: 18.h,
@@ -277,7 +336,7 @@ class SendBirdChatPage extends StatelessWidget {
                           ),
                           borderDecoration:
                               TextFormFieldStyleHelper.fillBlueGray,
-                          fillColor: appTheme.blueGray30033,
+                          fillColor: const Color(0x33A4A8AF),
                         ),
                       ),
                       CustomImageView(

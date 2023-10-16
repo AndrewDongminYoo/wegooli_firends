@@ -1,7 +1,6 @@
 // 📦 Package imports:
 import 'package:get/get.dart';
 
-/// This class is used in the [userage_item_widget] screen.
 class UserageItemModel {
   UserageItemModel({
     this.userDay,

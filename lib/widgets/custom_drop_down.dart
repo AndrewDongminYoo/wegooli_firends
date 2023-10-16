@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/data/models/dropdown_data.dart';
-import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 
 class CustomDropDown extends StatelessWidget {
@@ -89,14 +88,20 @@ class CustomDropDown extends StatelessWidget {
           focusNode: focusNode ?? FocusNode(),
           icon: icon,
           autofocus: autofocus!,
-          style: textStyle ?? CustomTextStyles.titleMediumOnPrimary,
+          style: textStyle ??
+              defaultTextTheme.titleMedium!.copyWith(
+                color: defaultColors.onPrimary.withOpacity(0.4),
+              ),
           items: items?.map((DropdownData item) {
             return DropdownMenuItem<DropdownData>(
               value: item,
               child: Text(
                 item.title,
                 overflow: TextOverflow.ellipsis,
-                style: hintStyle ?? CustomTextStyles.bodyLargeBluegray200,
+                style: hintStyle ??
+                    defaultTextTheme.bodyLarge!.copyWith(
+                      color: const Color(0xFFB0B2BC),
+                    ),
               ),
             );
           }).toList(),
@@ -109,7 +114,10 @@ class CustomDropDown extends StatelessWidget {
       );
   InputDecoration get decoration => InputDecoration(
         hintText: hintText ?? '',
-        hintStyle: hintStyle ?? CustomTextStyles.bodyLargeBluegray200,
+        hintStyle: hintStyle ??
+            defaultTextTheme.bodyLarge!.copyWith(
+              color: const Color(0xFFB0B2BC),
+            ),
         prefixIcon: prefix,
         prefixIconConstraints: prefixConstraints,
         suffixIcon: suffix,
@@ -119,22 +127,22 @@ class CustomDropDown extends StatelessWidget {
         fillColor: fillColor,
         filled: filled,
         border: borderDecoration ??
-            OutlineInputBorder(
+            const OutlineInputBorder(
               borderSide: BorderSide(
-                color: appTheme.blueGray200,
+                color: Color(0xFFB0B2BC),
               ),
             ),
         enabledBorder: borderDecoration ??
-            OutlineInputBorder(
+            const OutlineInputBorder(
               borderSide: BorderSide(
-                color: appTheme.blueGray200,
+                color: Color(0xFFB0B2BC),
               ),
             ),
         focusedBorder: borderDecoration ??
             OutlineInputBorder(
               borderRadius: BorderRadius.circular(4.h),
-              borderSide: BorderSide(
-                color: appTheme.gray400,
+              borderSide: const BorderSide(
+                color: Color(0xFFB9BCC3),
               ),
             ),
       );

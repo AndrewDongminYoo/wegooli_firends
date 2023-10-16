@@ -7,9 +7,6 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
-import '/theme/app_decoration.dart';
-import '/theme/custom_button_style.dart';
-import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_image.dart';
 import '/widgets/app_bar/appbar_subtitle.dart';
@@ -33,12 +30,10 @@ class IdentityVerificationWaitingScreen
                 height: 50.v,
                 leadingWidth: 34.h,
                 leading: AppbarImage(
-                    svgPath: ImageConstant.imgArrowleft,
-                    margin:
-                        EdgeInsets.only(left: 16.h, top: 16.v, bottom: 16.v),
-                    onTap: () {
-                      onTapArrowleftone();
-                    }),
+                  svgPath: ImageConstant.imgArrowleft,
+                  margin: EdgeInsets.only(left: 16.h, top: 16.v, bottom: 16.v),
+                  onTap: Get.back,
+                ),
                 centerTitle: true,
                 title: AppbarSubtitle(text: 'lbl'.tr)),
             body: Container(
@@ -48,7 +43,7 @@ class IdentityVerificationWaitingScreen
                   Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('lbl2'.tr, style: theme.textTheme.bodySmall),
+                        Text('lbl2'.tr, style: defaultTextTheme.bodySmall),
                         SizedBox(height: 3.v),
                         CustomTextFormField(
                             controller: controller.nameoneController,
@@ -66,7 +61,7 @@ class IdentityVerificationWaitingScreen
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text('lbl_13'.tr,
-                                      style: theme.textTheme.bodySmall),
+                                      style: defaultTextTheme.bodySmall),
                                   SizedBox(height: 3.v),
                                   CustomTextFormField(
                                       width: 156.h,
@@ -74,8 +69,10 @@ class IdentityVerificationWaitingScreen
                                       hintText: 'lbl_980709'.tr),
                                   SizedBox(height: 3.v),
                                   Text('msg_26'.tr,
-                                      style: CustomTextStyles
-                                          .bodySmallPrimaryContainer)
+                                      style:
+                                          defaultTextTheme.bodySmall!.copyWith(
+                                        color: defaultColors.primaryContainer,
+                                      ))
                                 ])),
                         Align(
                             alignment: Alignment.centerRight,
@@ -85,7 +82,7 @@ class IdentityVerificationWaitingScreen
                                 decoration: BoxDecoration(
                                     border: Border(
                                         bottom: BorderSide(
-                                            color: appTheme.blueGray200,
+                                            color: const Color(0xFFB0B2BC),
                                             width: 1.h))))),
                         Align(
                             alignment: Alignment.topRight,
@@ -99,15 +96,14 @@ class IdentityVerificationWaitingScreen
                                       Padding(
                                           padding: EdgeInsets.only(
                                               top: 10.v, bottom: 8.v),
-                                          child: SizedBox(
+                                          child: const SizedBox(
                                               child: Divider(
-                                                  color:
-                                                      appTheme.blueGray200))),
+                                                  color: Color(0xFFB0B2BC)))),
                                       Padding(
                                           padding: EdgeInsets.only(left: 10.h),
                                           child: Text('lbl_22'.tr,
                                               style:
-                                                  theme.textTheme.bodyLarge)),
+                                                  defaultTextTheme.bodyLarge)),
                                       CustomImageView(
                                           svgPath: ImageConstant.imgGlobe,
                                           height: 7.adaptSize,
@@ -160,7 +156,7 @@ class IdentityVerificationWaitingScreen
                   Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('lbl4'.tr, style: theme.textTheme.bodySmall),
+                        Text('lbl4'.tr, style: defaultTextTheme.bodySmall),
                         SizedBox(height: 3.v),
                         CustomTextFormField(
                             controller: controller.phonenumberoneController,
@@ -171,21 +167,38 @@ class IdentityVerificationWaitingScreen
                   CustomElevatedButton(
                       height: 42.v,
                       text: 'lbl5'.tr,
-                      buttonStyle: CustomButtonStyles.fillBlueGray,
-                      buttonTextStyle:
-                          CustomTextStyles.titleSmallOnPrimaryContainer),
+                      buttonStyle: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0xFF464A70),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8.h),
+                        ),
+                      ),
+                      buttonTextStyle: defaultTextTheme.titleSmall!.copyWith(
+                        color: defaultColors.onPrimaryContainer,
+                        fontWeight: FontWeight.w700,
+                      )),
                   SizedBox(height: 20.v),
                   Container(
                       padding: EdgeInsets.symmetric(vertical: 9.v),
-                      decoration: AppDecoration.outlineBlueGray,
+                      decoration: BoxDecoration(
+                        border: Border(
+                          bottom: BorderSide(
+                            color: const Color(0xFFB0B2BC),
+                            width: 1.h,
+                          ),
+                        ),
+                      ),
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text('lbl6'.tr,
-                                style: CustomTextStyles.bodyLargeBluegray200),
+                                style: defaultTextTheme.bodyLarge!.copyWith(
+                                  color: const Color(0xFFB0B2BC),
+                                )),
                             Text('lbl_3_00'.tr,
-                                style:
-                                    CustomTextStyles.bodyLargePrimaryContainer)
+                                style: defaultTextTheme.bodyLarge!.copyWith(
+                                  color: defaultColors.primaryContainer,
+                                ))
                           ])),
                   SizedBox(height: 5.v)
                 ])),
@@ -193,15 +206,15 @@ class IdentityVerificationWaitingScreen
                 height: 48.v,
                 text: 'lbl7'.tr,
                 margin: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 16.v),
-                buttonStyle: CustomButtonStyles.fillGray,
-                buttonTextStyle: CustomTextStyles.titleSmallBluegray200)));
-  }
-
-  /// Navigates to the previous screen.
-  ///
-  /// When the action is triggered, this function uses the [Get] package to
-  /// navigate to the previous screen in the navigation stack.
-  void onTapArrowleftone() {
-    Get.back();
+                buttonStyle: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xFFF3F3F6),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.h),
+                  ),
+                ),
+                buttonTextStyle: defaultTextTheme.titleSmall!.copyWith(
+                  color: const Color(0xFFB0B2BC),
+                  fontWeight: FontWeight.w700,
+                ))));
   }
 }

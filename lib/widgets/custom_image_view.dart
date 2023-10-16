@@ -31,16 +31,16 @@ class CustomImageView extends StatelessWidget {
     this.placeHolder = 'assets/images/image_not_found.png',
   }) : super(key: key);
 
-  ///[url] is required parameter for fetching network image
+  /// [url] is required parameter for fetching network image
   String? url;
 
-  ///[imagePath] is required parameter for showing png,jpg,etc image
+  /// [imagePath] is required parameter for showing png,jpg,etc image
   String? imagePath;
 
-  ///[svgPath] is required parameter for showing svg image
+  /// [svgPath] is required parameter for showing svg image
   String? svgPath;
 
-  ///[file] is required parameter for fetching image file
+  /// [file] is required parameter for fetching image file
   File? file;
 
   double? height;

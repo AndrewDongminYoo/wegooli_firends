@@ -7,9 +7,7 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
-import '/theme/app_decoration.dart';
-import '/theme/custom_button_style.dart';
-import '/theme/custom_text_style.dart';
+import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_image.dart';
 import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
@@ -25,52 +23,68 @@ class ContactUsEmptyHistoryScreen
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
     return SafeArea(
-        child: Scaffold(
-            appBar: CustomAppBar(
-                leadingWidth: 34.h,
-                leading: AppbarImage(
-                    svgPath: ImageConstant.imgArrowleft,
-                    margin:
-                        EdgeInsets.only(left: 16.h, top: 19.v, bottom: 18.v),
-                    onTap: () {
-                      onTapArrowleftone();
-                    }),
-                centerTitle: true,
-                title: AppbarTitle(text: 'lbl136'.tr)),
-            body: SizedBox(
-                width: double.maxFinite,
-                child: Column(children: [
-                  SizedBox(height: 50.v),
-                  Expanded(
-                      child: SingleChildScrollView(
-                          child: Padding(
-                              padding: EdgeInsets.only(
-                                  left: 105.h, right: 105.h, bottom: 5.v),
-                              child: Column(children: [
-                                CustomImageView(
-                                    imagePath: ImageConstant.img,
-                                    height: 177.v,
-                                    width: 120.h),
-                                SizedBox(height: 21.v),
-                                Text('lbl137'.tr,
-                                    style: CustomTextStyles.titleMediumBlack900)
-                              ]))))
-                ])),
-            bottomNavigationBar: Container(
-                margin: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 29.v),
-                decoration: AppDecoration.outlineBlack,
-                child: CustomElevatedButton(
-                    text: 'lbl138'.tr,
-                    buttonStyle: CustomButtonStyles.fillGrayTL261,
-                    buttonTextStyle:
-                        CustomTextStyles.titleMediumBluegray200))));
-  }
-
-  /// Navigates to the previous screen.
-  ///
-  /// When the action is triggered, this function uses the [Get] package to
-  /// navigate to the previous screen in the navigation stack.
-  void onTapArrowleftone() {
-    Get.back();
+      child: Scaffold(
+        appBar: CustomAppBar(
+            leadingWidth: 34.h,
+            leading: AppbarImage(
+              svgPath: ImageConstant.imgArrowleft,
+              margin: EdgeInsets.only(left: 16.h, top: 19.v, bottom: 18.v),
+              onTap: Get.back,
+            ),
+            centerTitle: true,
+            title: AppbarTitle(text: 'lbl136'.tr)),
+        body: SizedBox(
+            width: double.maxFinite,
+            child: Column(children: [
+              SizedBox(height: 50.v),
+              Expanded(
+                  child: SingleChildScrollView(
+                      child: Padding(
+                          padding: EdgeInsets.only(
+                              left: 105.h, right: 105.h, bottom: 5.v),
+                          child: Column(children: [
+                            CustomImageView(
+                                imagePath: ImageConstant.img,
+                                height: 177.v,
+                                width: 120.h),
+                            SizedBox(height: 21.v),
+                            Text('lbl137'.tr,
+                                style: defaultTextTheme.titleMedium!.copyWith(
+                                  color: Colors.black,
+                                  fontSize: 18.fSize,
+                                ))
+                          ]))))
+            ])),
+        bottomNavigationBar: Container(
+          margin: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 29.v),
+          decoration: BoxDecoration(
+            color: defaultColors.onPrimaryContainer,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.1),
+                spreadRadius: 2.h,
+                blurRadius: 2.h,
+                offset: const Offset(
+                  2,
+                  2,
+                ),
+              ),
+            ],
+          ),
+          child: CustomElevatedButton(
+              text: 'lbl138'.tr,
+              buttonStyle: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFFF3F3F6),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(26.h),
+                ),
+              ),
+              buttonTextStyle: defaultTextTheme.titleMedium!.copyWith(
+                color: const Color(0xFFB0B2BC),
+                fontSize: 18.fSize,
+              )),
+        ),
+      ),
+    );
   }
 }

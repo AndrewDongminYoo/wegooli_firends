@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
-import '/theme/custom_text_style.dart';
+import '/theme/theme_helper.dart';
 import '/widgets/base_button.dart';
 
 class CustomElevatedButton extends BaseButton {
@@ -64,7 +64,10 @@ class CustomElevatedButton extends BaseButton {
               leftIcon ?? const SizedBox.shrink(),
               Text(
                 text,
-                style: buttonTextStyle ?? CustomTextStyles.titleMedium18,
+                style: buttonTextStyle ??
+                    defaultTextTheme.titleMedium!.copyWith(
+                      fontSize: 18.fSize,
+                    ),
               ),
               rightIcon ?? const SizedBox.shrink(),
             ],

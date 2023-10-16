@@ -8,7 +8,6 @@ import 'package:get/get.dart';
 import '../controller/schedules_controller.dart';
 import '../models/calendar_item_model.dart';
 import '/core/utils/size_utils.dart';
-import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 
 // ignore: must_be_immutable
@@ -35,7 +34,7 @@ class CalendarItemWidget extends StatelessWidget {
               () => Text(
                 calendarItem.dayOfWeek!.value,
                 overflow: TextOverflow.ellipsis,
-                style: theme.textTheme.titleMedium,
+                style: defaultTextTheme.titleMedium,
               ),
             ),
           ),
@@ -44,7 +43,9 @@ class CalendarItemWidget extends StatelessWidget {
             () => Text(
               calendarItem.date1!.value,
               overflow: TextOverflow.ellipsis,
-              style: CustomTextStyles.bodySmallGray50002,
+              style: defaultTextTheme.bodySmall!.copyWith(
+                color: const Color(0xFF91959D),
+              ),
             ),
           ),
           Padding(
@@ -56,7 +57,7 @@ class CalendarItemWidget extends StatelessWidget {
               () => Text(
                 calendarItem.date2!.value,
                 overflow: TextOverflow.ellipsis,
-                style: theme.textTheme.bodySmall,
+                style: defaultTextTheme.bodySmall,
               ),
             ),
           ),
@@ -69,7 +70,7 @@ class CalendarItemWidget extends StatelessWidget {
               () => Text(
                 calendarItem.date3!.value,
                 overflow: TextOverflow.ellipsis,
-                style: theme.textTheme.bodySmall,
+                style: defaultTextTheme.bodySmall,
               ),
             ),
           ),
@@ -78,7 +79,7 @@ class CalendarItemWidget extends StatelessWidget {
             () => Text(
               calendarItem.date4!.value,
               overflow: TextOverflow.ellipsis,
-              style: theme.textTheme.bodySmall,
+              style: defaultTextTheme.bodySmall,
             ),
           ),
           SizedBox(height: 18.v),
@@ -86,7 +87,7 @@ class CalendarItemWidget extends StatelessWidget {
             () => Text(
               calendarItem.date5!.value,
               overflow: TextOverflow.ellipsis,
-              style: theme.textTheme.bodySmall,
+              style: defaultTextTheme.bodySmall,
             ),
           ),
         ],

@@ -1,14 +1,16 @@
+import '../../../core/app_export.dart';
+
 /// This class is used in the [listview_item_widget] screen.
 class ListviewItemModel {
   ListviewItemModel({
-    this.name,
+    this.Txt,
     this.id,
   }) {
-    name = name ?? '홍길동';
-    id = id ?? '';
+    Txt = Txt ?? Rx('홍길동');
+    id = id ?? Rx('');
   }
 
-  String? name;
+  Rx<String>? Txt;
 
-  String? id;
+  Rx<String>? id;
 }

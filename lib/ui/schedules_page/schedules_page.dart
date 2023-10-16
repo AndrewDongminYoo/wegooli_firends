@@ -2,28 +2,20 @@
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
+import '../schedules_page/widgets/calendar_item_widget.dart';
 import '/core/app_export.dart';
-import '/ui/schedules_page/bloc/schedules_bloc.dart';
-import '/ui/schedules_page/models/calendar_item_model.dart';
-import '/ui/schedules_page/models/schedules_model.dart';
-import '/ui/schedules_page/widgets/calendar_item_widget.dart';
-import '/widgets/app_bar/appbar_image.dart';
+import '/widgets/app_bar/appbar_image_1.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/custom_elevated_button.dart';
+import 'controller/schedules_controller.dart';
+import 'models/schedules_model.dart';
 
-// ignore_for_file: must_be_immutable
 class SchedulesPage extends StatelessWidget {
-  const SchedulesPage({Key? key}) : super(key: key);
+  SchedulesPage({Key? key})
+      : super(key: key);
 
-  static Widget builder(BuildContext context) {
-    return BlocProvider<SchedulesBloc>(
-      create: (context) => SchedulesBloc(SchedulesState(
-        schedulesModelObj: SchedulesModel(),
-      ))
-        ..add(SchedulesInitialEvent()),
-      child: const SchedulesPage(),
-    );
-  }
+  SchedulesController controller =
+      Get.put(SchedulesController(SchedulesModel().obs));
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +26,7 @@ class SchedulesPage extends StatelessWidget {
         appBar: CustomAppBar(
           height: 45.v,
           centerTitle: true,
-          title: AppbarImage(
+          title: AppbarImage1(
             svgPath: ImageConstant.imgFriends,
           ),
           styleType: Style.bgOutline,
@@ -56,7 +48,7 @@ class SchedulesPage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'lbl55'.tr,
+                              'lbl51'.tr,
                               style: CustomTextStyles.titleMedium18,
                             ),
                             SizedBox(height: 12.v),
@@ -74,7 +66,7 @@ class SchedulesPage extends StatelessWidget {
                                     ),
                                     SizedBox(height: 4.v),
                                     Text(
-                                      'lbl18'.tr,
+                                      'lbl3'.tr,
                                       style: theme.textTheme.bodySmall,
                                     ),
                                   ],
@@ -94,7 +86,7 @@ class SchedulesPage extends StatelessWidget {
                                       ),
                                       SizedBox(height: 4.v),
                                       Text(
-                                        'lbl19'.tr,
+                                        'lbl11'.tr,
                                         style: theme.textTheme.bodySmall,
                                       ),
                                     ],
@@ -114,7 +106,7 @@ class SchedulesPage extends StatelessWidget {
                                       ),
                                       SizedBox(height: 4.v),
                                       Text(
-                                        'lbl20'.tr,
+                                        'lbl12'.tr,
                                         style: theme.textTheme.bodySmall,
                                       ),
                                     ],
@@ -141,7 +133,7 @@ class SchedulesPage extends StatelessWidget {
                               ),
                               SizedBox(height: 4.v),
                               Text(
-                                'lbl20'.tr,
+                                'lbl12'.tr,
                                 style: theme.textTheme.bodySmall,
                               ),
                             ],
@@ -155,7 +147,7 @@ class SchedulesPage extends StatelessWidget {
                     height: 8.v,
                     width: double.maxFinite,
                     decoration: BoxDecoration(
-                      color: appTheme.gray10002,
+                      color: appTheme.gray10001,
                     ),
                   ),
                   Padding(
@@ -164,12 +156,12 @@ class SchedulesPage extends StatelessWidget {
                       top: 21.v,
                     ),
                     child: Text(
-                      'lbl11'.tr,
+                      'lbl26'.tr,
                       style: CustomTextStyles.titleMedium18,
                     ),
                   ),
                   CustomElevatedButton(
-                    text: 'lbl56'.tr,
+                    text: 'lbl52'.tr,
                     margin: EdgeInsets.only(
                       left: 16.h,
                       top: 12.v,
@@ -188,7 +180,7 @@ class SchedulesPage extends StatelessWidget {
                         horizontal: 25.h,
                         vertical: 22.v,
                       ),
-                      decoration: AppDecoration.outlineBlueGray.copyWith(
+                      decoration: AppDecoration.outlineBluegray30033.copyWith(
                         borderRadius: BorderRadiusStyle.roundedBorder10,
                       ),
                       child: Column(
@@ -199,7 +191,7 @@ class SchedulesPage extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               CustomImageView(
-                                svgPath: ImageConstant.imgArrowrightOnPrimary,
+                                svgPath: ImageConstant.imgArrowleft,
                                 height: 18.adaptSize,
                                 width: 18.adaptSize,
                                 margin: EdgeInsets.only(bottom: 1.v),
@@ -209,7 +201,7 @@ class SchedulesPage extends StatelessWidget {
                                 style: theme.textTheme.titleMedium,
                               ),
                               CustomImageView(
-                                svgPath: ImageConstant.imgArrowrightOnPrimary,
+                                svgPath: ImageConstant.imgArrowleft,
                                 height: 18.adaptSize,
                                 width: 18.adaptSize,
                                 margin: EdgeInsets.only(bottom: 1.v),
@@ -218,35 +210,29 @@ class SchedulesPage extends StatelessWidget {
                           ),
                           SizedBox(
                             height: 218.v,
-                            child: BlocSelector<SchedulesBloc, SchedulesState,
-                                SchedulesModel?>(
-                              selector: (state) => state.schedulesModelObj,
-                              builder: (context, schedulesModelObj) {
-                                return ListView.separated(
-                                  padding:
-                                      EdgeInsets.fromLTRB(6.h, 26.v, 10.h, 2.v),
-                                  scrollDirection: Axis.horizontal,
-                                  separatorBuilder: (
-                                    context,
-                                    index,
-                                  ) {
-                                    return SizedBox(
-                                      width: 25.h,
-                                    );
-                                  },
-                                  itemCount: schedulesModelObj
-                                          ?.calendarItemList.length ??
-                                      0,
-                                  itemBuilder: (context, index) {
-                                    final model = schedulesModelObj
-                                            ?.calendarItemList[index] ??
-                                        CalendarItemModel();
-                                    return CalendarItemWidget(
-                                      model,
-                                    );
-                                  },
-                                );
-                              },
+                            child: Obx(
+                              () => ListView.separated(
+                                padding:
+                                    EdgeInsets.fromLTRB(6.h, 26.v, 10.h, 2.v),
+                                scrollDirection: Axis.horizontal,
+                                separatorBuilder: (
+                                  context,
+                                  index,
+                                ) {
+                                  return SizedBox(
+                                    width: 25.h,
+                                  );
+                                },
+                                itemCount: controller.schedulesModelObj.value
+                                    .calendarItemList.value.length,
+                                itemBuilder: (context, index) {
+                                  final model = controller.schedulesModelObj
+                                      .value.calendarItemList.value[index];
+                                  return CalendarItemWidget(
+                                    model,
+                                  );
+                                },
+                              ),
                             ),
                           ),
                         ],

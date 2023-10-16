@@ -2,8 +2,9 @@
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
+import '../controller/schedules_team_is_not_full_controller.dart';
+import '../models/userprofile_item_model.dart';
 import '/core/app_export.dart';
-import '/ui/schedules_team_is_not_full_screen/models/userprofile_item_model.dart';
 
 // ignore: must_be_immutable
 class UserprofileItemWidget extends StatelessWidget {
@@ -13,6 +14,9 @@ class UserprofileItemWidget extends StatelessWidget {
   }) : super(key: key);
 
   UserprofileItemModel userprofileItemModelObj;
+
+  SchedulesTeamIsNotFullController controller =
+      Get.find<SchedulesTeamIsNotFullController>();
 
   @override
   Widget build(BuildContext context) {
@@ -38,10 +42,12 @@ class UserprofileItemWidget extends StatelessWidget {
             ),
           ),
           SizedBox(height: 4.v),
-          Text(
-            userprofileItemModelObj.userName!,
-            overflow: TextOverflow.ellipsis,
-            style: theme.textTheme.bodySmall,
+          Obx(
+            () => Text(
+              userprofileItemModelObj.userName!.value,
+              overflow: TextOverflow.ellipsis,
+              style: theme.textTheme.bodySmall,
+            ),
           ),
         ],
       ),

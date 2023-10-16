@@ -2,8 +2,9 @@
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
+import '../controller/schedules_team_is_full_controller.dart';
+import '../models/calendar1_item_model.dart';
 import '/core/app_export.dart';
-import '/ui/schedules_team_is_full_screen/models/calendar1_item_model.dart';
 
 // ignore: must_be_immutable
 class Calendar1ItemWidget extends StatelessWidget {
@@ -14,6 +15,9 @@ class Calendar1ItemWidget extends StatelessWidget {
 
   Calendar1ItemModel calendar1ItemModelObj;
 
+  SchedulesTeamIsFullController controller =
+      Get.find<SchedulesTeamIsFullController>();
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -23,27 +27,33 @@ class Calendar1ItemWidget extends StatelessWidget {
         children: [
           Align(
             alignment: Alignment.centerLeft,
-            child: Text(
-              calendar1ItemModelObj.dayOne!,
-              overflow: TextOverflow.ellipsis,
-              style: theme.textTheme.titleMedium,
+            child: Obx(
+              () => Text(
+                calendar1ItemModelObj.day1!.value,
+                overflow: TextOverflow.ellipsis,
+                style: theme.textTheme.titleMedium,
+              ),
             ),
           ),
           SizedBox(height: 19.v),
-          Text(
-            calendar1ItemModelObj.dayTwo!,
-            overflow: TextOverflow.ellipsis,
-            style: CustomTextStyles.bodySmallGray50003,
+          Obx(
+            () => Text(
+              calendar1ItemModelObj.day2!.value,
+              overflow: TextOverflow.ellipsis,
+              style: CustomTextStyles.bodySmallGray50002,
+            ),
           ),
           Padding(
             padding: EdgeInsets.only(
               top: 19.v,
               right: 3.h,
             ),
-            child: Text(
-              calendar1ItemModelObj.dayThree!,
-              overflow: TextOverflow.ellipsis,
-              style: theme.textTheme.bodySmall,
+            child: Obx(
+              () => Text(
+                calendar1ItemModelObj.day3!.value,
+                overflow: TextOverflow.ellipsis,
+                style: theme.textTheme.bodySmall,
+              ),
             ),
           ),
           Padding(
@@ -51,23 +61,29 @@ class Calendar1ItemWidget extends StatelessWidget {
               top: 18.v,
               right: 1.h,
             ),
-            child: Text(
-              calendar1ItemModelObj.dayFour!,
+            child: Obx(
+              () => Text(
+                calendar1ItemModelObj.day4!.value,
+                overflow: TextOverflow.ellipsis,
+                style: theme.textTheme.bodySmall,
+              ),
+            ),
+          ),
+          SizedBox(height: 19.v),
+          Obx(
+            () => Text(
+              calendar1ItemModelObj.day5!.value,
               overflow: TextOverflow.ellipsis,
               style: theme.textTheme.bodySmall,
             ),
           ),
-          SizedBox(height: 19.v),
-          Text(
-            calendar1ItemModelObj.dayFive!,
-            overflow: TextOverflow.ellipsis,
-            style: theme.textTheme.bodySmall,
-          ),
           SizedBox(height: 18.v),
-          Text(
-            calendar1ItemModelObj.daySix!,
-            overflow: TextOverflow.ellipsis,
-            style: theme.textTheme.bodySmall,
+          Obx(
+            () => Text(
+              calendar1ItemModelObj.day6!.value,
+              overflow: TextOverflow.ellipsis,
+              style: theme.textTheme.bodySmall,
+            ),
           ),
         ],
       ),

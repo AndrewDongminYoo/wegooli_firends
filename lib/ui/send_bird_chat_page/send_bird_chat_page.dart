@@ -3,26 +3,19 @@ import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
 import '/core/app_export.dart';
-import '/ui/send_bird_chat_page/bloc/send_bird_chat_bloc.dart';
-import '/ui/send_bird_chat_page/models/send_bird_chat_model.dart';
-import '/widgets/app_bar/appbar_image.dart';
+import '/widgets/app_bar/appbar_image_1.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/custom_elevated_button.dart';
 import '/widgets/custom_text_form_field.dart';
+import 'controller/send_bird_chat_controller.dart';
+import 'models/send_bird_chat_model.dart';
 
-// ignore_for_file: must_be_immutable
 class SendBirdChatPage extends StatelessWidget {
-  const SendBirdChatPage({Key? key}) : super(key: key);
+  SendBirdChatPage({Key? key})
+      : super(key: key);
 
-  static Widget builder(BuildContext context) {
-    return BlocProvider<SendBirdChatBloc>(
-      create: (context) => SendBirdChatBloc(SendBirdChatState(
-        sendBirdChatModelObj: SendBirdChatModel(),
-      ))
-        ..add(SendBirdChatInitialEvent()),
-      child: const SendBirdChatPage(),
-    );
-  }
+  SendBirdChatController controller =
+      Get.put(SendBirdChatController(SendBirdChatModel().obs));
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +27,7 @@ class SendBirdChatPage extends StatelessWidget {
         appBar: CustomAppBar(
           height: 45.v,
           centerTitle: true,
-          title: AppbarImage(
+          title: AppbarImage1(
             svgPath: ImageConstant.imgFriends,
           ),
           styleType: Style.bgOutline_1,
@@ -55,18 +48,17 @@ class SendBirdChatPage extends StatelessWidget {
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
-                      'lbl117'.tr,
-                      style: CustomTextStyles.titleMediumBlack90018,
+                      'lbl107'.tr,
+                      style: CustomTextStyles.titleMediumBlack900,
                     ),
                   ),
                   SizedBox(height: 22.v),
                   CustomElevatedButton(
                     height: 34.v,
                     width: 95.h,
-                    text: 'lbl118'.tr,
+                    text: 'lbl108'.tr,
                     buttonStyle: CustomButtonStyles.fillPrimaryTL17,
-                    buttonTextStyle:
-                        CustomTextStyles.bodyMediumPretendardOnPrimary,
+                    buttonTextStyle: CustomTextStyles.bodyMedium15,
                   ),
                   Padding(
                     padding: EdgeInsets.only(
@@ -83,7 +75,7 @@ class SendBirdChatPage extends StatelessWidget {
                           ),
                           child: Text(
                             'lbl_12_20_pm'.tr,
-                            style: CustomTextStyles.bodySmallGray40001,
+                            style: CustomTextStyles.bodySmallGray400,
                           ),
                         ),
                         Container(
@@ -102,8 +94,7 @@ class SendBirdChatPage extends StatelessWidget {
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.right,
-                              style: CustomTextStyles
-                                  .bodyMediumPretendardOnPrimary,
+                              style: CustomTextStyles.bodyMedium15,
                             ),
                           ),
                         ),
@@ -146,7 +137,7 @@ class SendBirdChatPage extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'lbl45'.tr,
+                                'lbl41'.tr,
                                 style: CustomTextStyles.bodySmallBlack900,
                               ),
                               Padding(
@@ -163,7 +154,7 @@ class SendBirdChatPage extends StatelessWidget {
                                       buttonStyle:
                                           CustomButtonStyles.fillBlueGrayTL17,
                                       buttonTextStyle:
-                                          CustomTextStyles.bodyMediumPretendard,
+                                          CustomTextStyles.bodyMediumBlack900,
                                     ),
                                     Padding(
                                       padding: EdgeInsets.only(
@@ -173,7 +164,7 @@ class SendBirdChatPage extends StatelessWidget {
                                       child: Text(
                                         'lbl_12_22_pm'.tr,
                                         style: CustomTextStyles
-                                            .bodySmallInterGray40001_1,
+                                            .bodySmallInterGray400_1,
                                       ),
                                     ),
                                   ],
@@ -193,25 +184,25 @@ class SendBirdChatPage extends StatelessWidget {
                                       child: Text(
                                         'lbl_12_25_pm'.tr,
                                         style:
-                                            CustomTextStyles.bodySmallGray40001,
+                                            CustomTextStyles.bodySmallGray400,
                                       ),
                                     ),
                                     CustomElevatedButton(
                                       height: 34.v,
                                       width: 168.h,
-                                      text: 'lbl119'.tr,
+                                      text: 'lbl109'.tr,
                                       margin: EdgeInsets.only(left: 5.h),
                                       buttonStyle:
                                           CustomButtonStyles.fillPrimaryTL17,
-                                      buttonTextStyle: CustomTextStyles
-                                          .bodyMediumPretendardOnPrimary,
+                                      buttonTextStyle:
+                                          CustomTextStyles.bodyMedium15,
                                     ),
                                   ],
                                 ),
                               ),
                               SizedBox(height: 26.v),
                               Text(
-                                'lbl45'.tr,
+                                'lbl41'.tr,
                                 style: CustomTextStyles.bodySmallBlack900,
                               ),
                               SizedBox(height: 3.v),
@@ -222,7 +213,7 @@ class SendBirdChatPage extends StatelessWidget {
                                 buttonStyle:
                                     CustomButtonStyles.fillBlueGrayTL17,
                                 buttonTextStyle:
-                                    CustomTextStyles.bodyMediumPretendard,
+                                    CustomTextStyles.bodyMediumBlack900,
                               ),
                               SizedBox(height: 5.v),
                               Row(
@@ -230,11 +221,11 @@ class SendBirdChatPage extends StatelessWidget {
                                   CustomElevatedButton(
                                     height: 34.v,
                                     width: 138.h,
-                                    text: 'lbl120'.tr,
+                                    text: 'lbl110'.tr,
                                     buttonStyle:
                                         CustomButtonStyles.fillBlueGrayTL17,
                                     buttonTextStyle:
-                                        CustomTextStyles.bodyMediumPretendard,
+                                        CustomTextStyles.bodyMediumBlack900,
                                   ),
                                   Padding(
                                     padding: EdgeInsets.only(
@@ -243,8 +234,7 @@ class SendBirdChatPage extends StatelessWidget {
                                     ),
                                     child: Text(
                                       'lbl_12_15_pm'.tr,
-                                      style:
-                                          CustomTextStyles.bodySmallGray40001,
+                                      style: CustomTextStyles.bodySmallGray400,
                                     ),
                                   ),
                                 ],
@@ -266,26 +256,19 @@ class SendBirdChatPage extends StatelessWidget {
                         margin: EdgeInsets.symmetric(vertical: 6.v),
                       ),
                       Expanded(
-                        child: BlocSelector<SendBirdChatBloc, SendBirdChatState,
-                            TextEditingController?>(
-                          selector: (state) => state.chatinputoneController,
-                          builder: (context, chatinputoneController) {
-                            return CustomTextFormField(
-                              controller: chatinputoneController,
-                              margin: EdgeInsets.only(left: 8.h),
-                              hintText: 'lbl121'.tr,
-                              hintStyle: CustomTextStyles
-                                  .bodyMediumPretendardGray50001,
-                              textInputAction: TextInputAction.done,
-                              contentPadding: EdgeInsets.symmetric(
-                                horizontal: 18.h,
-                                vertical: 9.v,
-                              ),
-                              borderDecoration:
-                                  TextFormFieldStyleHelper.fillBlueGray,
-                              fillColor: appTheme.blueGray30033,
-                            );
-                          },
+                        child: CustomTextFormField(
+                          controller: controller.chatinputoneController,
+                          margin: EdgeInsets.only(left: 8.h),
+                          hintText: 'lbl111'.tr,
+                          hintStyle: CustomTextStyles.bodyMediumGray50001,
+                          textInputAction: TextInputAction.done,
+                          contentPadding: EdgeInsets.symmetric(
+                            horizontal: 18.h,
+                            vertical: 9.v,
+                          ),
+                          borderDecoration:
+                              TextFormFieldStyleHelper.fillBlueGray,
+                          fillColor: appTheme.blueGray30033,
                         ),
                       ),
                       CustomImageView(

@@ -1,34 +1,36 @@
+import '../../../core/app_export.dart';
+
 /// This class is used in the [calendar1_item_widget] screen.
 class Calendar1ItemModel {
   Calendar1ItemModel({
-    this.dayOne,
-    this.dayTwo,
-    this.dayThree,
-    this.dayFour,
-    this.dayFive,
-    this.daySix,
+    this.day1,
+    this.day2,
+    this.day3,
+    this.day4,
+    this.day5,
+    this.day6,
     this.id,
   }) {
-    dayOne = dayOne ?? '30';
-    dayTwo = dayTwo ?? '30';
-    dayThree = dayThree ?? '6';
-    dayFour = dayFour ?? '13';
-    dayFive = dayFive ?? '20';
-    daySix = daySix ?? '27';
-    id = id ?? '';
+    day1 = day1 ?? Rx('일');
+    day2 = day2 ?? Rx('30');
+    day3 = day3 ?? Rx('6');
+    day4 = day4 ?? Rx('13');
+    day5 = day5 ?? Rx('20');
+    day6 = day6 ?? Rx('27');
+    id = id ?? Rx('');
   }
 
-  String? dayOne;
+  Rx<String>? day1;
 
-  String? dayTwo;
+  Rx<String>? day2;
 
-  String? dayThree;
+  Rx<String>? day3;
 
-  String? dayFour;
+  Rx<String>? day4;
 
-  String? dayFive;
+  Rx<String>? day5;
 
-  String? daySix;
+  Rx<String>? day6;
 
-  String? id;
+  Rx<String>? id;
 }

@@ -1,24 +1,14 @@
 // 🐦 Flutter imports:
+import 'controller/schedules_view_scheduled_date_scheduler_only_controller.dart';
+import '/core/app_export.dart';
 import 'package:flutter/material.dart';
 
-// 🌎 Project imports:
-import '/core/app_export.dart';
-import '/ui/schedules_view_scheduled_date_scheduler_only_dialog/bloc/schedules_view_scheduled_date_scheduler_only_bloc.dart';
-import '/ui/schedules_view_scheduled_date_scheduler_only_dialog/models/schedules_view_scheduled_date_scheduler_only_model.dart';
-
+// ignore_for_file: must_be_immutable
 class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
-  const SchedulesViewScheduledDateSchedulerOnlyDialog({Key? key})
+  SchedulesViewScheduledDateSchedulerOnlyDialog(this.controller, {Key? key})
       : super(key: key);
 
-  static Widget builder(BuildContext context) {
-    return BlocProvider<SchedulesViewScheduledDateSchedulerOnlyBloc>(
-        create: (context) => SchedulesViewScheduledDateSchedulerOnlyBloc(
-            SchedulesViewScheduledDateSchedulerOnlyState(
-                schedulesViewScheduledDateSchedulerOnlyModelObj:
-                    SchedulesViewScheduledDateSchedulerOnlyModel()))
-          ..add(SchedulesViewScheduledDateSchedulerOnlyInitialEvent()),
-        child: const SchedulesViewScheduledDateSchedulerOnlyDialog());
-  }
+  SchedulesViewScheduledDateSchedulerOnlyController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +17,7 @@ class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
         child: Container(
             margin: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 238.v),
             padding: EdgeInsets.all(20.h),
-            decoration: AppDecoration.fillOnPrimaryContainer
+            decoration: AppDecoration.shadow
                 .copyWith(borderRadius: BorderRadiusStyle.roundedBorder10),
             child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -38,11 +28,9 @@ class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
                       height: 15.adaptSize,
                       width: 15.adaptSize,
                       alignment: Alignment.centerRight,
-                      onTap: () {
-                        onTapImgCloseone(context);
-                      }),
+                      onTap: onTapImgCloseone),
                   SizedBox(height: 6.v),
-                  Text('lbl17'.tr, style: CustomTextStyles.titleMedium18),
+                  Text('lbl10'.tr, style: CustomTextStyles.titleMedium18),
                   SizedBox(height: 22.v),
                   SizedBox(
                       height: 75.v,
@@ -81,7 +69,7 @@ class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
                                     children: [
                                       Align(
                                           alignment: Alignment.topLeft,
-                                          child: Text('lbl18'.tr,
+                                          child: Text('lbl3'.tr,
                                               style:
                                                   theme.textTheme.bodySmall)),
                                       Align(
@@ -95,7 +83,7 @@ class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
                                                         .textTheme.bodyLarge),
                                                 CustomImageView(
                                                     svgPath: ImageConstant
-                                                        .imgArrowrightOnPrimary,
+                                                        .imgArrowleft,
                                                     height: 18.adaptSize,
                                                     width: 18.adaptSize,
                                                     margin: EdgeInsets.only(
@@ -108,7 +96,7 @@ class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.start,
                                               children: [
-                                            Text('lbl18'.tr,
+                                            Text('lbl3'.tr,
                                                 style:
                                                     theme.textTheme.bodySmall),
                                             SizedBox(height: 7.v),
@@ -118,7 +106,7 @@ class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
                                                       .textTheme.bodyLarge),
                                               CustomImageView(
                                                   svgPath: ImageConstant
-                                                      .imgArrowrightOnPrimary,
+                                                      .imgArrowleft,
                                                   height: 18.adaptSize,
                                                   width: 18.adaptSize,
                                                   margin: EdgeInsets.only(
@@ -154,8 +142,9 @@ class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
                                         backgroundColor: theme
                                             .colorScheme.onPrimaryContainer,
                                         valueColor:
-                                            AlwaysStoppedAnimation<Color>(
-                                                appTheme.deepOrangeA200))))),
+                                            AlwaysStoppedAnimation<Color>(theme
+                                                .colorScheme
+                                                .errorContainer))))),
                         Align(
                             alignment: Alignment.centerLeft,
                             child: Padding(
@@ -165,7 +154,7 @@ class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text('lbl18'.tr,
+                                      Text('lbl3'.tr,
                                           style: theme.textTheme.bodySmall),
                                       SizedBox(height: 8.v),
                                       Text('msg_8_16_15_20'.tr,
@@ -210,7 +199,7 @@ class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text('lbl18'.tr,
+                                      Text('lbl3'.tr,
                                           style: theme.textTheme.bodySmall),
                                       SizedBox(height: 8.v),
                                       Text('msg_8_16_15_20'.tr,
@@ -223,11 +212,9 @@ class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
 
   /// Navigates to the previous screen.
   ///
-  /// This function takes a [BuildContext] object as a parameter, which is
-  /// used to build the navigation stack. When the action is triggered, this
-  /// function uses the [NavigatorService] to navigate to the previous screen
-  /// in the navigation stack.
-  void onTapImgCloseone(BuildContext context) {
-    NavigatorService.goBack();
+  /// When the action is triggered, this function uses the [Get] package to
+  /// navigate to the previous screen in the navigation stack.
+  onTapImgCloseone() {
+    Get.back();
   }
 }

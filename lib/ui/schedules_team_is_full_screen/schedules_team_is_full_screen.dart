@@ -2,31 +2,19 @@
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
+import '../schedules_team_is_full_screen/widgets/calendar1_item_widget.dart';
 import '/core/app_export.dart';
-import '/ui/schedules_team_is_full_screen/bloc/schedules_team_is_full_bloc.dart';
-import '/ui/schedules_team_is_full_screen/models/calendar1_item_model.dart';
-import '/ui/schedules_team_is_full_screen/models/schedules_team_is_full_model.dart';
-import '/ui/schedules_team_is_full_screen/widgets/calendar1_item_widget.dart';
-import '/widgets/app_bar/appbar_image.dart';
+import '/widgets/app_bar/appbar_image_1.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/custom_bottom_bar.dart';
 import '/widgets/custom_elevated_button.dart';
+import 'controller/schedules_team_is_full_controller.dart';
 
-// ignore: must_be_immutable
-class SchedulesTeamIsFullScreen extends StatelessWidget {
-  SchedulesTeamIsFullScreen({Key? key}) : super(key: key);
-
-  GlobalKey<NavigatorState> navigatorKey = GlobalKey();
-
-  static Widget builder(BuildContext context) {
-    return BlocProvider<SchedulesTeamIsFullBloc>(
-      create: (context) => SchedulesTeamIsFullBloc(SchedulesTeamIsFullState(
-        schedulesTeamIsFullModelObj: SchedulesTeamIsFullModel(),
-      ))
-        ..add(SchedulesTeamIsFullInitialEvent()),
-      child: SchedulesTeamIsFullScreen(),
-    );
-  }
+// ignore_for_file: must_be_immutable
+class SchedulesTeamIsFullScreen
+    extends GetWidget<SchedulesTeamIsFullController> {
+  const SchedulesTeamIsFullScreen({Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +25,7 @@ class SchedulesTeamIsFullScreen extends StatelessWidget {
         appBar: CustomAppBar(
           height: 45.v,
           centerTitle: true,
-          title: AppbarImage(
+          title: AppbarImage1(
             svgPath: ImageConstant.imgFriends,
           ),
           styleType: Style.bgOutline,
@@ -62,7 +50,7 @@ class SchedulesTeamIsFullScreen extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'lbl55'.tr,
+                                    'lbl51'.tr,
                                     style: CustomTextStyles.titleMedium18,
                                   ),
                                   SizedBox(height: 12.v),
@@ -81,7 +69,7 @@ class SchedulesTeamIsFullScreen extends StatelessWidget {
                                           ),
                                           SizedBox(height: 4.v),
                                           Text(
-                                            'lbl18'.tr,
+                                            'lbl3'.tr,
                                             style: theme.textTheme.bodySmall,
                                           ),
                                         ],
@@ -101,7 +89,7 @@ class SchedulesTeamIsFullScreen extends StatelessWidget {
                                             ),
                                             SizedBox(height: 4.v),
                                             Text(
-                                              'lbl19'.tr,
+                                              'lbl11'.tr,
                                               style: theme.textTheme.bodySmall,
                                             ),
                                           ],
@@ -122,7 +110,7 @@ class SchedulesTeamIsFullScreen extends StatelessWidget {
                                             ),
                                             SizedBox(height: 4.v),
                                             Text(
-                                              'lbl20'.tr,
+                                              'lbl12'.tr,
                                               style: theme.textTheme.bodySmall,
                                             ),
                                           ],
@@ -149,7 +137,7 @@ class SchedulesTeamIsFullScreen extends StatelessWidget {
                                     ),
                                     SizedBox(height: 4.v),
                                     Text(
-                                      'lbl20'.tr,
+                                      'lbl12'.tr,
                                       style: theme.textTheme.bodySmall,
                                     ),
                                   ],
@@ -163,7 +151,7 @@ class SchedulesTeamIsFullScreen extends StatelessWidget {
                           height: 8.v,
                           width: double.maxFinite,
                           decoration: BoxDecoration(
-                            color: appTheme.gray10002,
+                            color: appTheme.gray10001,
                           ),
                         ),
                         Padding(
@@ -172,12 +160,12 @@ class SchedulesTeamIsFullScreen extends StatelessWidget {
                             top: 21.v,
                           ),
                           child: Text(
-                            'lbl11'.tr,
+                            'lbl26'.tr,
                             style: CustomTextStyles.titleMedium18,
                           ),
                         ),
                         CustomElevatedButton(
-                          text: 'lbl56'.tr,
+                          text: 'lbl52'.tr,
                           margin: EdgeInsets.only(
                             left: 16.h,
                             top: 12.v,
@@ -196,7 +184,8 @@ class SchedulesTeamIsFullScreen extends StatelessWidget {
                               horizontal: 25.h,
                               vertical: 22.v,
                             ),
-                            decoration: AppDecoration.outlineBlueGray.copyWith(
+                            decoration:
+                                AppDecoration.outlineBluegray30033.copyWith(
                               borderRadius: BorderRadiusStyle.roundedBorder10,
                             ),
                             child: Column(
@@ -208,8 +197,7 @@ class SchedulesTeamIsFullScreen extends StatelessWidget {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     CustomImageView(
-                                      svgPath:
-                                          ImageConstant.imgArrowrightOnPrimary,
+                                      svgPath: ImageConstant.imgArrowleft,
                                       height: 18.adaptSize,
                                       width: 18.adaptSize,
                                       margin: EdgeInsets.only(bottom: 1.v),
@@ -219,8 +207,7 @@ class SchedulesTeamIsFullScreen extends StatelessWidget {
                                       style: theme.textTheme.titleMedium,
                                     ),
                                     CustomImageView(
-                                      svgPath:
-                                          ImageConstant.imgArrowrightOnPrimary,
+                                      svgPath: ImageConstant.imgArrowleft,
                                       height: 18.adaptSize,
                                       width: 18.adaptSize,
                                       margin: EdgeInsets.only(bottom: 1.v),
@@ -229,41 +216,36 @@ class SchedulesTeamIsFullScreen extends StatelessWidget {
                                 ),
                                 SizedBox(
                                   height: 218.v,
-                                  child: BlocSelector<
-                                      SchedulesTeamIsFullBloc,
-                                      SchedulesTeamIsFullState,
-                                      SchedulesTeamIsFullModel?>(
-                                    selector: (state) =>
-                                        state.schedulesTeamIsFullModelObj,
-                                    builder:
-                                        (context, schedulesTeamIsFullModelObj) {
-                                      return ListView.separated(
-                                        padding: EdgeInsets.fromLTRB(
-                                            6.h, 26.v, 10.h, 2.v),
-                                        scrollDirection: Axis.horizontal,
-                                        separatorBuilder: (
-                                          context,
-                                          index,
-                                        ) {
-                                          return SizedBox(
-                                            width: 25.h,
-                                          );
-                                        },
-                                        itemCount: schedulesTeamIsFullModelObj
-                                                ?.calendar1ItemList.length ??
-                                            0,
-                                        itemBuilder: (context, index) {
-                                          final model =
-                                              schedulesTeamIsFullModelObj
-                                                          ?.calendar1ItemList[
-                                                      index] ??
-                                                  Calendar1ItemModel();
-                                          return Calendar1ItemWidget(
-                                            model,
-                                          );
-                                        },
-                                      );
-                                    },
+                                  child: Obx(
+                                    () => ListView.separated(
+                                      padding: EdgeInsets.fromLTRB(
+                                          6.h, 26.v, 10.h, 2.v),
+                                      scrollDirection: Axis.horizontal,
+                                      separatorBuilder: (
+                                        context,
+                                        index,
+                                      ) {
+                                        return SizedBox(
+                                          width: 25.h,
+                                        );
+                                      },
+                                      itemCount: controller
+                                          .schedulesTeamIsFullModelObj
+                                          .value
+                                          .calendar1ItemList
+                                          .value
+                                          .length,
+                                      itemBuilder: (context, index) {
+                                        final model = controller
+                                            .schedulesTeamIsFullModelObj
+                                            .value
+                                            .calendar1ItemList
+                                            .value[index];
+                                        return Calendar1ItemWidget(
+                                          model,
+                                        );
+                                      },
+                                    ),
                                   ),
                                 ),
                               ],

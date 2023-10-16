@@ -2,34 +2,20 @@
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
+import '../schedules_team_is_not_full_screen/widgets/userage_item_widget.dart';
+import '../schedules_team_is_not_full_screen/widgets/userprofile_item_widget.dart';
 import '/core/app_export.dart';
-import '/ui/schedules_team_is_not_full_screen/bloc/schedules_team_is_not_full_bloc.dart';
-import '/ui/schedules_team_is_not_full_screen/models/schedules_team_is_not_full_model.dart';
-import '/ui/schedules_team_is_not_full_screen/models/userage_item_model.dart';
-import '/ui/schedules_team_is_not_full_screen/models/userprofile_item_model.dart';
-import '/ui/schedules_team_is_not_full_screen/widgets/userage_item_widget.dart';
-import '/ui/schedules_team_is_not_full_screen/widgets/userprofile_item_widget.dart';
-import '/widgets/app_bar/appbar_image.dart';
+import '/widgets/app_bar/appbar_image_1.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/custom_bottom_bar.dart';
 import '/widgets/custom_elevated_button.dart';
+import 'controller/schedules_team_is_not_full_controller.dart';
 
-// ignore: must_be_immutable
-class SchedulesTeamIsNotFullScreen extends StatelessWidget {
-  SchedulesTeamIsNotFullScreen({Key? key}) : super(key: key);
-
-  GlobalKey<NavigatorState> navigatorKey = GlobalKey();
-
-  static Widget builder(BuildContext context) {
-    return BlocProvider<SchedulesTeamIsNotFullBloc>(
-      create: (context) =>
-          SchedulesTeamIsNotFullBloc(SchedulesTeamIsNotFullState(
-        schedulesTeamIsNotFullModelObj: SchedulesTeamIsNotFullModel(),
-      ))
-            ..add(SchedulesTeamIsNotFullInitialEvent()),
-      child: SchedulesTeamIsNotFullScreen(),
-    );
-  }
+// ignore_for_file: must_be_immutable
+class SchedulesTeamIsNotFullScreen
+    extends GetWidget<SchedulesTeamIsNotFullController> {
+  const SchedulesTeamIsNotFullScreen({Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +26,7 @@ class SchedulesTeamIsNotFullScreen extends StatelessWidget {
         appBar: CustomAppBar(
           height: 45.v,
           centerTitle: true,
-          title: AppbarImage(
+          title: AppbarImage1(
             svgPath: ImageConstant.imgFriends,
           ),
           styleType: Style.bgOutline_1,
@@ -60,47 +46,45 @@ class SchedulesTeamIsNotFullScreen extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.only(left: 16.h),
                           child: Text(
-                            'lbl55'.tr,
+                            'lbl51'.tr,
                             style: CustomTextStyles.titleMedium18,
                           ),
                         ),
                         SizedBox(
                           height: 81.v,
-                          child: BlocSelector<
-                              SchedulesTeamIsNotFullBloc,
-                              SchedulesTeamIsNotFullState,
-                              SchedulesTeamIsNotFullModel?>(
-                            selector: (state) =>
-                                state.schedulesTeamIsNotFullModelObj,
-                            builder: (context, schedulesTeamIsNotFullModelObj) {
-                              return ListView.separated(
-                                padding: EdgeInsets.only(
-                                  left: 16.h,
-                                  top: 12.v,
-                                  right: 16.h,
-                                ),
-                                scrollDirection: Axis.horizontal,
-                                separatorBuilder: (
-                                  context,
-                                  index,
-                                ) {
-                                  return SizedBox(
-                                    width: 15.h,
-                                  );
-                                },
-                                itemCount: schedulesTeamIsNotFullModelObj
-                                        ?.userprofileItemList.length ??
-                                    0,
-                                itemBuilder: (context, index) {
-                                  final model = schedulesTeamIsNotFullModelObj
-                                          ?.userprofileItemList[index] ??
-                                      UserprofileItemModel();
-                                  return UserprofileItemWidget(
-                                    model,
-                                  );
-                                },
-                              );
-                            },
+                          child: Obx(
+                            () => ListView.separated(
+                              padding: EdgeInsets.only(
+                                left: 16.h,
+                                top: 12.v,
+                                right: 16.h,
+                              ),
+                              scrollDirection: Axis.horizontal,
+                              separatorBuilder: (
+                                context,
+                                index,
+                              ) {
+                                return SizedBox(
+                                  width: 15.h,
+                                );
+                              },
+                              itemCount: controller
+                                  .schedulesTeamIsNotFullModelObj
+                                  .value
+                                  .userprofileItemList
+                                  .value
+                                  .length,
+                              itemBuilder: (context, index) {
+                                final model = controller
+                                    .schedulesTeamIsNotFullModelObj
+                                    .value
+                                    .userprofileItemList
+                                    .value[index];
+                                return UserprofileItemWidget(
+                                  model,
+                                );
+                              },
+                            ),
                           ),
                         ),
                         SizedBox(height: 21.v),
@@ -108,7 +92,7 @@ class SchedulesTeamIsNotFullScreen extends StatelessWidget {
                           height: 8.v,
                           width: double.maxFinite,
                           decoration: BoxDecoration(
-                            color: appTheme.gray10002,
+                            color: appTheme.gray10001,
                           ),
                         ),
                         Padding(
@@ -117,12 +101,12 @@ class SchedulesTeamIsNotFullScreen extends StatelessWidget {
                             top: 21.v,
                           ),
                           child: Text(
-                            'lbl11'.tr,
+                            'lbl26'.tr,
                             style: CustomTextStyles.titleMedium18,
                           ),
                         ),
                         CustomElevatedButton(
-                          text: 'lbl56'.tr,
+                          text: 'lbl52'.tr,
                           margin: EdgeInsets.only(
                             left: 16.h,
                             top: 12.v,
@@ -142,7 +126,7 @@ class SchedulesTeamIsNotFullScreen extends StatelessWidget {
                               vertical: 22.v,
                             ),
                             decoration:
-                                AppDecoration.outlineBluegray300331.copyWith(
+                                AppDecoration.outlineBluegray300332.copyWith(
                               borderRadius: BorderRadiusStyle.roundedBorder10,
                             ),
                             child: Column(
@@ -154,8 +138,7 @@ class SchedulesTeamIsNotFullScreen extends StatelessWidget {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     CustomImageView(
-                                      svgPath:
-                                          ImageConstant.imgArrowrightOnPrimary,
+                                      svgPath: ImageConstant.imgArrowleft,
                                       height: 18.adaptSize,
                                       width: 18.adaptSize,
                                       margin: EdgeInsets.only(bottom: 1.v),
@@ -165,8 +148,7 @@ class SchedulesTeamIsNotFullScreen extends StatelessWidget {
                                       style: theme.textTheme.titleMedium,
                                     ),
                                     CustomImageView(
-                                      svgPath:
-                                          ImageConstant.imgArrowrightOnPrimary,
+                                      svgPath: ImageConstant.imgArrowleft,
                                       height: 18.adaptSize,
                                       width: 18.adaptSize,
                                       margin: EdgeInsets.only(bottom: 1.v),
@@ -175,42 +157,36 @@ class SchedulesTeamIsNotFullScreen extends StatelessWidget {
                                 ),
                                 SizedBox(
                                   height: 218.v,
-                                  child: BlocSelector<
-                                      SchedulesTeamIsNotFullBloc,
-                                      SchedulesTeamIsNotFullState,
-                                      SchedulesTeamIsNotFullModel?>(
-                                    selector: (state) =>
-                                        state.schedulesTeamIsNotFullModelObj,
-                                    builder: (context,
-                                        schedulesTeamIsNotFullModelObj) {
-                                      return ListView.separated(
-                                        padding: EdgeInsets.fromLTRB(
-                                            6.h, 26.v, 10.h, 2.v),
-                                        scrollDirection: Axis.horizontal,
-                                        separatorBuilder: (
-                                          context,
-                                          index,
-                                        ) {
-                                          return SizedBox(
-                                            width: 25.h,
-                                          );
-                                        },
-                                        itemCount:
-                                            schedulesTeamIsNotFullModelObj
-                                                    ?.userageItemList.length ??
-                                                0,
-                                        itemBuilder: (context, index) {
-                                          final model =
-                                              schedulesTeamIsNotFullModelObj
-                                                          ?.userageItemList[
-                                                      index] ??
-                                                  UserageItemModel();
-                                          return UserageItemWidget(
-                                            model,
-                                          );
-                                        },
-                                      );
-                                    },
+                                  child: Obx(
+                                    () => ListView.separated(
+                                      padding: EdgeInsets.fromLTRB(
+                                          6.h, 26.v, 10.h, 2.v),
+                                      scrollDirection: Axis.horizontal,
+                                      separatorBuilder: (
+                                        context,
+                                        index,
+                                      ) {
+                                        return SizedBox(
+                                          width: 25.h,
+                                        );
+                                      },
+                                      itemCount: controller
+                                          .schedulesTeamIsNotFullModelObj
+                                          .value
+                                          .userageItemList
+                                          .value
+                                          .length,
+                                      itemBuilder: (context, index) {
+                                        final model = controller
+                                            .schedulesTeamIsNotFullModelObj
+                                            .value
+                                            .userageItemList
+                                            .value[index];
+                                        return UserageItemWidget(
+                                          model,
+                                        );
+                                      },
+                                    ),
                                   ),
                                 ),
                               ],

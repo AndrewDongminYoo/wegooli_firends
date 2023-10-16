@@ -2,8 +2,9 @@
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
+import '../controller/view_scheduled_date_scheduler_only_controller.dart';
+import '../models/listview_item_model.dart';
 import '/core/app_export.dart';
-import '/ui/view_scheduled_date_scheduler_only_dialog/models/listview_item_model.dart';
 
 // ignore: must_be_immutable
 class ListviewItemWidget extends StatelessWidget {
@@ -14,14 +15,17 @@ class ListviewItemWidget extends StatelessWidget {
 
   ListviewItemModel listviewItemModelObj;
 
+  ViewScheduledDateSchedulerOnlyController controller =
+      Get.find<ViewScheduledDateSchedulerOnlyController>();
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: AppDecoration.fillOnPrimaryContainer.copyWith(
+      decoration: AppDecoration.shadow.copyWith(
         borderRadius: BorderRadiusStyle.roundedBorder10,
       ),
       child: Container(
-        decoration: AppDecoration.shadow.copyWith(
+        decoration: AppDecoration.outlineBlack.copyWith(
           borderRadius: BorderRadiusStyle.roundedBorder10,
         ),
         child: Row(
@@ -47,10 +51,12 @@ class ListviewItemWidget extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      listviewItemModelObj.name!,
-                      overflow: TextOverflow.ellipsis,
-                      style: theme.textTheme.bodySmall,
+                    Obx(
+                      () => Text(
+                        listviewItemModelObj.Txt!.value,
+                        overflow: TextOverflow.ellipsis,
+                        style: theme.textTheme.bodySmall,
+                      ),
                     ),
                     SizedBox(height: 8.v),
                     Text(

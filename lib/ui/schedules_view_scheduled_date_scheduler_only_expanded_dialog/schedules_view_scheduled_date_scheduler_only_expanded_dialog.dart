@@ -1,27 +1,18 @@
 // 🐦 Flutter imports:
-import 'package:flutter/material.dart';
-
-// 🌎 Project imports:
+import 'controller/schedules_view_scheduled_date_scheduler_only_expanded_controller.dart';
 import '/core/app_export.dart';
-import '/ui/schedules_view_scheduled_date_scheduler_only_expanded_dialog/bloc/schedules_view_scheduled_date_scheduler_only_expanded_bloc.dart';
-import '/ui/schedules_view_scheduled_date_scheduler_only_expanded_dialog/models/schedules_view_scheduled_date_scheduler_only_expanded_model.dart';
 import '/widgets/custom_drop_down.dart';
 import '/widgets/custom_outlined_button.dart';
+import 'package:flutter/material.dart';
 
+// ignore_for_file: must_be_immutable
 class SchedulesViewScheduledDateSchedulerOnlyExpandedDialog
     extends StatelessWidget {
-  const SchedulesViewScheduledDateSchedulerOnlyExpandedDialog({Key? key})
+  SchedulesViewScheduledDateSchedulerOnlyExpandedDialog(this.controller,
+      {Key? key})
       : super(key: key);
 
-  static Widget builder(BuildContext context) {
-    return BlocProvider<SchedulesViewScheduledDateSchedulerOnlyExpandedBloc>(
-        create: (context) => SchedulesViewScheduledDateSchedulerOnlyExpandedBloc(
-            SchedulesViewScheduledDateSchedulerOnlyExpandedState(
-                schedulesViewScheduledDateSchedulerOnlyExpandedModelObj:
-                    SchedulesViewScheduledDateSchedulerOnlyExpandedModel()))
-          ..add(SchedulesViewScheduledDateSchedulerOnlyExpandedInitialEvent()),
-        child: const SchedulesViewScheduledDateSchedulerOnlyExpandedDialog());
-  }
+  SchedulesViewScheduledDateSchedulerOnlyExpandedController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +21,7 @@ class SchedulesViewScheduledDateSchedulerOnlyExpandedDialog
         child: Container(
             margin: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 219.v),
             padding: EdgeInsets.all(20.h),
-            decoration: AppDecoration.fillOnPrimaryContainer
+            decoration: AppDecoration.shadow
                 .copyWith(borderRadius: BorderRadiusStyle.roundedBorder10),
             child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -41,11 +32,9 @@ class SchedulesViewScheduledDateSchedulerOnlyExpandedDialog
                       height: 15.adaptSize,
                       width: 15.adaptSize,
                       alignment: Alignment.centerRight,
-                      onTap: () {
-                        onTapImgCloseone(context);
-                      }),
+                      onTap: onTapImgCloseone),
                   SizedBox(height: 6.v),
-                  Text('lbl17'.tr, style: CustomTextStyles.titleMedium18),
+                  Text('lbl10'.tr, style: CustomTextStyles.titleMedium18),
                   SizedBox(height: 22.v),
                   SizedBox(
                       height: 113.v,
@@ -91,45 +80,31 @@ class SchedulesViewScheduledDateSchedulerOnlyExpandedDialog
                                                 Align(
                                                     alignment:
                                                         Alignment.topLeft,
-                                                    child: Text('lbl18'.tr,
+                                                    child: Text('lbl3'.tr,
                                                         style: theme.textTheme
                                                             .bodySmall)),
-                                                BlocSelector<
-                                                        SchedulesViewScheduledDateSchedulerOnlyExpandedBloc,
-                                                        SchedulesViewScheduledDateSchedulerOnlyExpandedState,
-                                                        SchedulesViewScheduledDateSchedulerOnlyExpandedModel?>(
-                                                    selector: (state) => state
-                                                        .schedulesViewScheduledDateSchedulerOnlyExpandedModelObj,
-                                                    builder: (context,
-                                                        schedulesViewScheduledDateSchedulerOnlyExpandedModelObj) {
-                                                      return CustomDropDown(
-                                                          width: 258.h,
-                                                          icon: Container(
-                                                              margin: EdgeInsets.only(
-                                                                  left: 17.h),
-                                                              child: CustomImageView(
-                                                                  svgPath:
-                                                                      ImageConstant
-                                                                          .imgArrowrightOnPrimary)),
-                                                          hintText:
-                                                              'msg_8_16_15_20'
-                                                                  .tr,
-                                                          hintStyle: theme
-                                                              .textTheme
-                                                              .bodyLarge,
-                                                          alignment: Alignment
-                                                              .bottomCenter,
-                                                          items: schedulesViewScheduledDateSchedulerOnlyExpandedModelObj
-                                                                  ?.dropdownItemList ??
-                                                              [],
-                                                          onChanged: (value) {
-                                                            context
-                                                                .read<
-                                                                    SchedulesViewScheduledDateSchedulerOnlyExpandedBloc>()
-                                                                .add(ChangeDropDownEvent(
-                                                                    value:
-                                                                        value));
-                                                          });
+                                                CustomDropDown(
+                                                    width: 258.h,
+                                                    icon: Container(
+                                                        margin: EdgeInsets.only(
+                                                            left: 17.h),
+                                                        child: CustomImageView(
+                                                            svgPath: ImageConstant
+                                                                .imgArrowleft)),
+                                                    hintText:
+                                                        'msg_8_16_15_20'.tr,
+                                                    hintStyle: theme
+                                                        .textTheme.bodyLarge,
+                                                    alignment:
+                                                        Alignment.bottomCenter,
+                                                    items: controller
+                                                        .schedulesViewScheduledDateSchedulerOnlyExpandedModelObj
+                                                        .value
+                                                        .dropdownItemList
+                                                        .value,
+                                                    onChanged: (value) {
+                                                      controller
+                                                          .onSelected(value);
                                                     }),
                                                 Align(
                                                     alignment:
@@ -141,7 +116,7 @@ class SchedulesViewScheduledDateSchedulerOnlyExpandedDialog
                                                             CrossAxisAlignment
                                                                 .start,
                                                         children: [
-                                                          Text('lbl18'.tr,
+                                                          Text('lbl3'.tr,
                                                               style: theme
                                                                   .textTheme
                                                                   .bodySmall),
@@ -161,28 +136,14 @@ class SchedulesViewScheduledDateSchedulerOnlyExpandedDialog
                                           children: [
                                             Expanded(
                                                 child: CustomOutlinedButton(
-                                                    height: 28.v,
                                                     text: 'lbl126'.tr,
                                                     margin: EdgeInsets.only(
-                                                        right: 5.h),
-                                                    buttonStyle:
-                                                        CustomButtonStyles
-                                                            .outlineBlueGray,
-                                                    buttonTextStyle:
-                                                        CustomTextStyles
-                                                            .bodySmallGray70001)),
+                                                        right: 5.h))),
                                             Expanded(
                                                 child: CustomOutlinedButton(
-                                                    height: 28.v,
                                                     text: 'lbl127'.tr,
                                                     margin: EdgeInsets.only(
-                                                        left: 5.h),
-                                                    buttonStyle:
-                                                        CustomButtonStyles
-                                                            .outlineBlueGray,
-                                                    buttonTextStyle:
-                                                        CustomTextStyles
-                                                            .bodySmallGray70001))
+                                                        left: 5.h)))
                                           ])
                                     ])))
                       ])),
@@ -213,8 +174,9 @@ class SchedulesViewScheduledDateSchedulerOnlyExpandedDialog
                                         backgroundColor: theme
                                             .colorScheme.onPrimaryContainer,
                                         valueColor:
-                                            AlwaysStoppedAnimation<Color>(
-                                                appTheme.deepOrangeA200))))),
+                                            AlwaysStoppedAnimation<Color>(theme
+                                                .colorScheme
+                                                .errorContainer))))),
                         Align(
                             alignment: Alignment.centerLeft,
                             child: Padding(
@@ -224,7 +186,7 @@ class SchedulesViewScheduledDateSchedulerOnlyExpandedDialog
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text('lbl18'.tr,
+                                      Text('lbl3'.tr,
                                           style: theme.textTheme.bodySmall),
                                       SizedBox(height: 8.v),
                                       Text('msg_8_16_15_20'.tr,
@@ -269,7 +231,7 @@ class SchedulesViewScheduledDateSchedulerOnlyExpandedDialog
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text('lbl18'.tr,
+                                      Text('lbl3'.tr,
                                           style: theme.textTheme.bodySmall),
                                       SizedBox(height: 8.v),
                                       Text('msg_8_16_15_20'.tr,
@@ -282,11 +244,9 @@ class SchedulesViewScheduledDateSchedulerOnlyExpandedDialog
 
   /// Navigates to the previous screen.
   ///
-  /// This function takes a [BuildContext] object as a parameter, which is
-  /// used to build the navigation stack. When the action is triggered, this
-  /// function uses the [NavigatorService] to navigate to the previous screen
-  /// in the navigation stack.
-  void onTapImgCloseone(BuildContext context) {
-    NavigatorService.goBack();
+  /// When the action is triggered, this function uses the [Get] package to
+  /// navigate to the previous screen in the navigation stack.
+  onTapImgCloseone() {
+    Get.back();
   }
 }

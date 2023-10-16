@@ -67,7 +67,7 @@ What things you need to install the software and how to install them
     │   ├── car_status       - 차량 상태 모니터링 화면
     │   ├── forms            - 애플리케이션의 다양한 폼 (가입, 로그인 등)
     │   ├── select           - 드롭다운 및 라디오 버튼 등 선택 위젯
-    │   └── shared_calenda   - table_calendar 파트 코드들
+    │   └── shared_calendar  - table_calendar 파트 코드들
     ├── services             - 컨트롤러 대신 API 로직 처리하는 서비스 클래스들
     ├── theme                - 앱 테마 및 데코레이션 클래스 포함
     └── widgets              - 비즈니스 관련성 적은, 공통으로 사용되는 위젯 클래스

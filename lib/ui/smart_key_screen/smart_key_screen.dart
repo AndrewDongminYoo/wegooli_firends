@@ -63,12 +63,12 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      'lbl112'.tr,
+                                      '모닝어반',
                                       style: defaultTextTheme.titleMedium,
                                     ),
                                     SizedBox(height: 4.v),
                                     Text(
-                                      'lbl_12_3456'.tr,
+                                      '12가 3456',
                                       style:
                                           defaultTextTheme.bodySmall!.copyWith(
                                         color: defaultColors.onPrimary
@@ -91,7 +91,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                                             top: 9.v,
                                           ),
                                           child: Text(
-                                            'lbl_402'.tr,
+                                            '휘발유 40%',
                                             style: defaultTextTheme.bodySmall,
                                           ),
                                         ),
@@ -117,7 +117,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'lbl113'.tr,
+                              '상태',
                               style: defaultTextTheme.bodySmall!.copyWith(
                                 color: defaultColors.onPrimary.withOpacity(0.4),
                               ),
@@ -125,7 +125,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                             Padding(
                               padding: EdgeInsets.only(left: 5.h),
                               child: Text(
-                                'lbl114'.tr,
+                                '|',
                                 style: defaultTextTheme.bodySmall!.copyWith(
                                   color:
                                       defaultColors.onPrimary.withOpacity(0.4),
@@ -150,7 +150,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                             Padding(
                               padding: EdgeInsets.only(left: 2.h),
                               child: Text(
-                                'lbl115'.tr,
+                                '사용 가능합니다.',
                                 style: defaultTextTheme.bodySmall,
                               ),
                             ),
@@ -172,7 +172,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                               top: 21.v,
                             ),
                             child: Text(
-                              'lbl116'.tr,
+                              '스마트키',
                               style: defaultTextTheme.titleMedium!.copyWith(
                                 color: Colors.black,
                                 fontSize: 18.fSize,
@@ -248,7 +248,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                                             ),
                                             SizedBox(height: 5.v),
                                             Text(
-                                              'lbl117'.tr,
+                                              '문열기',
                                               style:
                                                   defaultTextTheme.titleMedium,
                                             ),
@@ -318,7 +318,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                                             ),
                                             SizedBox(height: 5.v),
                                             Text(
-                                              'lbl118'.tr,
+                                              '문잠금',
                                               style:
                                                   defaultTextTheme.titleMedium,
                                             ),
@@ -400,7 +400,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                                             ),
                                             SizedBox(height: 14.v),
                                             Text(
-                                              'lbl119'.tr,
+                                              '비상등',
                                               style:
                                                   defaultTextTheme.titleMedium,
                                             ),
@@ -453,7 +453,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                                       ),
                                       SizedBox(height: 5.v),
                                       Text(
-                                        'lbl120'.tr,
+                                        '경적',
                                         style: defaultTextTheme.titleMedium,
                                       ),
                                     ],
@@ -501,7 +501,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                                 ),
                                 SizedBox(height: 1.v),
                                 Text(
-                                  'lbl121'.tr,
+                                  '사고 접수',
                                   style: defaultTextTheme.bodySmall!.copyWith(
                                     color: Colors.black,
                                   ),

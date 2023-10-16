@@ -36,7 +36,7 @@ class ContactUs11ContactUsScreen
               onTap: Get.back,
             ),
             centerTitle: true,
-            title: AppbarTitle(text: 'lbl_1_12'.tr)),
+            title: AppbarTitle(text: '1:1 문의하기')),
         body: SizedBox(
             width: double.maxFinite,
             child: Column(children: [
@@ -56,7 +56,7 @@ class ContactUs11ContactUsScreen
                                             svgPath: ImageConstant
                                                 .imgCaretdownGray800)),
                                     margin: EdgeInsets.only(right: 16.h),
-                                    hintText: 'lbl147'.tr,
+                                    hintText: '문의 유형을 선택해주세요.',
                                     hintStyle:
                                         defaultTextTheme.bodyLarge!.copyWith(
                                       color: const Color(0xFF8F9199),
@@ -73,7 +73,7 @@ class ContactUs11ContactUsScreen
                                         controller.groupTwentySevenController,
                                     margin:
                                         EdgeInsets.only(top: 21.v, right: 16.h),
-                                    hintText: 'lbl148'.tr,
+                                    hintText: '내용을 입력해주세요.',
                                     hintStyle:
                                         defaultTextTheme.bodyLarge!.copyWith(
                                       color: const Color(0xFF8E9199),
@@ -83,7 +83,7 @@ class ContactUs11ContactUsScreen
                                     contentPadding: EdgeInsets.symmetric(
                                         horizontal: 12.h, vertical: 14.v)),
                                 SizedBox(height: 21.v),
-                                Text('lbl149'.tr,
+                                Text('이미지 첨부',
                                     style:
                                         defaultTextTheme.titleMedium!.copyWith(
                                       fontSize: 18.fSize,
@@ -140,7 +140,7 @@ class ContactUs11ContactUsScreen
               children: [
                 CustomElevatedButton(
                     width: 104.h,
-                    text: 'lbl32'.tr,
+                    text: '취소',
                     buttonStyle: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFFB9BCC3),
                       shape: RoundedRectangleBorder(
@@ -149,7 +149,7 @@ class ContactUs11ContactUsScreen
                     )),
                 CustomElevatedButton(
                     width: 216.h,
-                    text: 'lbl136'.tr,
+                    text: '문의하기',
                     margin: EdgeInsets.only(left: 8.h))
               ]),
         ),

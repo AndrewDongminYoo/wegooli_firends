@@ -37,7 +37,7 @@ class IdentityVerificationTermsBottomsheetScreen
               onTap: Get.back,
             ),
             centerTitle: true,
-            title: AppbarSubtitle(text: 'lbl'.tr)),
+            title: AppbarSubtitle(text: '본인 인증')),
         body: SizedBox(
           height: 593.v,
           width: double.maxFinite,
@@ -55,19 +55,19 @@ class IdentityVerificationTermsBottomsheetScreen
                           Row(children: [
                             Padding(
                                 padding: EdgeInsets.only(top: 2.v),
-                                child: Text('lbl2'.tr,
+                                child: Text('이름',
                                     style: defaultTextTheme.bodySmall!.copyWith(
                                       color: const Color(0xFF5D5D5D),
                                     ))),
                             Padding(
                                 padding:
                                     EdgeInsets.only(left: 2.h, bottom: 2.v),
-                                child: Text('lbl67'.tr,
+                                child: Text('*',
                                     style: defaultTextTheme.labelLarge))
                           ]),
                           CustomTextFormField(
                               controller: controller.nameinputoneController,
-                              hintText: 'lbl68'.tr,
+                              hintText: '이름을 입력해주세요.',
                               textInputAction: TextInputAction.done)
                         ]),
                     SizedBox(height: 25.v),
@@ -81,7 +81,7 @@ class IdentityVerificationTermsBottomsheetScreen
                                 Row(children: [
                                   Padding(
                                       padding: EdgeInsets.only(top: 2.v),
-                                      child: Text('lbl_13'.tr,
+                                      child: Text('주민등록번호 13자리',
                                           style: defaultTextTheme.bodySmall!
                                               .copyWith(
                                             color: const Color(0xFF5D5D5D),
@@ -89,7 +89,7 @@ class IdentityVerificationTermsBottomsheetScreen
                                   Padding(
                                       padding: EdgeInsets.only(
                                           left: 2.h, bottom: 2.v),
-                                      child: Text('lbl67'.tr,
+                                      child: Text('*',
                                           style: defaultTextTheme.labelLarge))
                                 ]),
                                 Container(
@@ -103,13 +103,13 @@ class IdentityVerificationTermsBottomsheetScreen
                                         ),
                                       ),
                                     ),
-                                    child: Text('lbl_yymmdd'.tr,
+                                    child: Text('YYMMDD',
                                         style: defaultTextTheme.bodyLarge!
                                             .copyWith(
                                           color: const Color(0xFFB0B2BC),
                                         ))),
                                 SizedBox(height: 2.v),
-                                Text('msg_26'.tr,
+                                Text('만 26세 미만은 가입이 제한됩니다.',
                                     style: defaultTextTheme.bodySmall!.copyWith(
                                       color: defaultColors.primaryContainer,
                                     ))
@@ -125,7 +125,7 @@ class IdentityVerificationTermsBottomsheetScreen
                                   ),
                                 ),
                               ),
-                              child: Text('lbl_nnnnnnn'.tr,
+                              child: Text('NNNNNNN',
                                   style: defaultTextTheme.bodyLarge!.copyWith(
                                     color: const Color(0xFFB0B2BC),
                                   )))
@@ -140,7 +140,7 @@ class IdentityVerificationTermsBottomsheetScreen
                                 Row(children: [
                                   Padding(
                                       padding: EdgeInsets.only(top: 2.v),
-                                      child: Text('lbl4'.tr,
+                                      child: Text('휴대폰 정보',
                                           style: defaultTextTheme.bodySmall!
                                               .copyWith(
                                             color: const Color(0xFF5D5D5D),
@@ -148,7 +148,7 @@ class IdentityVerificationTermsBottomsheetScreen
                                   Padding(
                                       padding: EdgeInsets.only(
                                           left: 2.h, bottom: 2.v),
-                                      child: Text('lbl67'.tr,
+                                      child: Text('*',
                                           style: defaultTextTheme.labelLarge))
                                 ]),
                                 Container(
@@ -168,7 +168,7 @@ class IdentityVerificationTermsBottomsheetScreen
                                           Padding(
                                               padding: EdgeInsets.symmetric(
                                                   vertical: 1.v),
-                                              child: Text('lbl69'.tr,
+                                              child: Text('통신사',
                                                   style: theme
                                                       .textTheme.bodyLarge!
                                                       .copyWith(
@@ -195,7 +195,7 @@ class IdentityVerificationTermsBottomsheetScreen
                                   ),
                                 ),
                               ),
-                              child: Text('lbl_010_1234_5678'.tr,
+                              child: Text('010-1234-5678',
                                   style: defaultTextTheme.bodyLarge!.copyWith(
                                     color: const Color(0xFFB0B2BC),
                                   )))
@@ -207,7 +207,7 @@ class IdentityVerificationTermsBottomsheetScreen
                         decoration: BoxDecoration(
                             color: const Color(0xFFF3F3F6),
                             borderRadius: BorderRadiusStyle.roundedBorder10),
-                        child: Text('lbl5'.tr,
+                        child: Text('인증번호 발송',
                             style: defaultTextTheme.titleSmall!.copyWith(
                               color: const Color(0xFFB0B2BC),
                               fontWeight: FontWeight.w700,
@@ -219,7 +219,7 @@ class IdentityVerificationTermsBottomsheetScreen
             CustomElevatedButton(
                 height: 48.v,
                 width: 328.h,
-                text: 'lbl7'.tr,
+                text: '인증하기',
                 margin: EdgeInsets.only(bottom: 16.v),
                 buttonStyle: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFFF3F3F6),
@@ -268,7 +268,7 @@ class IdentityVerificationTermsBottomsheetScreen
                                                   ),
                                                 ),
                                               ),
-                                              child: Text('lbl70'.tr,
+                                              child: Text('이용약관에 동의해주세요.',
                                                   style: theme
                                                       .textTheme.titleMedium)),
                                           Align(
@@ -286,7 +286,7 @@ class IdentityVerificationTermsBottomsheetScreen
                                                   Padding(
                                                       padding: EdgeInsets.only(
                                                           left: 5.h),
-                                                      child: Text('lbl71'.tr,
+                                                      child: Text('전체 동의',
                                                           style:
                                                               defaultTextTheme
                                                                   .bodyMedium))
@@ -312,7 +312,8 @@ class IdentityVerificationTermsBottomsheetScreen
                                                         padding:
                                                             EdgeInsets.only(
                                                                 left: 5.h),
-                                                        child: Text('lbl72'.tr,
+                                                        child: Text(
+                                                            '(필수) 서비스 이용 약관',
                                                             style: theme
                                                                 .textTheme
                                                                 .bodyMedium)),
@@ -352,7 +353,7 @@ class IdentityVerificationTermsBottomsheetScreen
                                                                       left:
                                                                           5.h),
                                                               child: Text(
-                                                                  'lbl73'.tr,
+                                                                  '(필수) 차량 이용 약관',
                                                                   style: theme
                                                                       .textTheme
                                                                       .bodyMedium))
@@ -392,7 +393,7 @@ class IdentityVerificationTermsBottomsheetScreen
                                                                       left:
                                                                           5.h),
                                                               child: Text(
-                                                                  'msg4'.tr,
+                                                                  '(필수) 위치기반서비스 이용 약관',
                                                                   style: theme
                                                                       .textTheme
                                                                       .bodyMedium))
@@ -432,7 +433,7 @@ class IdentityVerificationTermsBottomsheetScreen
                                                                       left:
                                                                           5.h),
                                                               child: Text(
-                                                                  'msg5'.tr,
+                                                                  '(필수) 차량 위치정보의 수집 이용 제공 동의',
                                                                   style: theme
                                                                       .textTheme
                                                                       .bodyMedium))
@@ -472,7 +473,7 @@ class IdentityVerificationTermsBottomsheetScreen
                                                                       left:
                                                                           5.h),
                                                               child: Text(
-                                                                  'msg6'.tr,
+                                                                  '(선택) 마케팅 목적 개인정보 수집/이용',
                                                                   style: theme
                                                                       .textTheme
                                                                       .bodyMedium))
@@ -493,7 +494,7 @@ class IdentityVerificationTermsBottomsheetScreen
                                     ),
                                     child: CustomElevatedButton(
                                         height: 48.v,
-                                        text: 'lbl74'.tr,
+                                        text: '동의합니다',
                                         buttonStyle: ElevatedButton.styleFrom(
                                           backgroundColor:
                                               const Color(0xFFF3F3F6),

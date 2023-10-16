@@ -1,9 +1,6 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:get/get.dart';
-
 // 🌎 Project imports:
 import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
@@ -13,6 +10,8 @@ import '/widgets/custom_drop_down.dart';
 import '/widgets/custom_elevated_button.dart';
 import '/widgets/custom_image_view.dart';
 import 'controller/appointment_all_collapsed_controller.dart';
+
+// 📦 Package imports:
 
 // ignore: must_be_immutable
 class AppointmentAllCollapsedBottomsheet extends StatelessWidget {
@@ -51,7 +50,7 @@ class AppointmentAllCollapsedBottomsheet extends StatelessWidget {
                   top: 33.v,
                 ),
                 child: Text(
-                  'msg_2_8_1_16_00'.tr,
+                  '총 2시간 이용\n8.1 화 16:00 ~ 8.1 화 18:00',
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   style: defaultTextTheme.titleMedium!
@@ -83,12 +82,12 @@ class AppointmentAllCollapsedBottomsheet extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'lbl30'.tr,
+                    '이용시작시간',
                     style: defaultTextTheme.titleMedium,
                   ),
                   const Spacer(),
                   Text(
-                    'lbl_8_1_16_00'.tr,
+                    '8.1 화 16:00',
                     style: defaultTextTheme.titleMedium,
                   ),
                   CustomImageView(
@@ -110,7 +109,7 @@ class AppointmentAllCollapsedBottomsheet extends StatelessWidget {
                 child: Row(
                   children: [
                     Text(
-                      'lbl_8_1'.tr,
+                      '8/1',
                       style: defaultTextTheme.bodyLarge!.copyWith(
                         color: defaultColors.onPrimary.withOpacity(0.4),
                       ),
@@ -118,7 +117,7 @@ class AppointmentAllCollapsedBottomsheet extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.only(left: 81.h),
                       child: Text(
-                        'lbl_152'.tr,
+                        '15',
                         style: defaultTextTheme.bodyLarge!.copyWith(
                           color: defaultColors.onPrimary.withOpacity(0.4),
                         ),
@@ -170,15 +169,15 @@ class AppointmentAllCollapsedBottomsheet extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'lbl_8_2'.tr,
+                    '8/2',
                     style: defaultTextTheme.bodyLarge,
                   ),
                   Text(
-                    'lbl_162'.tr,
+                    '16',
                     style: defaultTextTheme.bodyLarge,
                   ),
                   Text(
-                    'lbl_00'.tr,
+                    '00',
                     style: defaultTextTheme.bodyLarge,
                   ),
                 ],
@@ -227,7 +226,7 @@ class AppointmentAllCollapsedBottomsheet extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text(
-                      'lbl_172'.tr,
+                      '17',
                       style: defaultTextTheme.bodyLarge!.copyWith(
                         color: defaultColors.onPrimary.withOpacity(0.4),
                       ),
@@ -235,7 +234,7 @@ class AppointmentAllCollapsedBottomsheet extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.only(left: 83.h),
                       child: Text(
-                        'lbl_102'.tr,
+                        '10',
                         style: defaultTextTheme.bodyLarge!.copyWith(
                           color: defaultColors.onPrimary.withOpacity(0.4),
                         ),
@@ -263,7 +262,7 @@ class AppointmentAllCollapsedBottomsheet extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'lbl31'.tr,
+                    '반납시간',
                     style: defaultTextTheme.titleMedium!.copyWith(
                       color: defaultColors.onPrimary.withOpacity(0.4),
                     ),
@@ -276,7 +275,7 @@ class AppointmentAllCollapsedBottomsheet extends StatelessWidget {
                         svgPath: ImageConstant.imgArrowleft,
                       ),
                     ),
-                    hintText: 'lbl_8_1_18_00'.tr,
+                    hintText: '8.1 화 18:00',
                     items:
                         controller.appointmentAllCollapsed.value.choices.value,
                     onChanged: (value) {
@@ -301,7 +300,7 @@ class AppointmentAllCollapsedBottomsheet extends StatelessWidget {
                 children: [
                   CustomElevatedButton(
                     width: 104.h,
-                    text: 'lbl32'.tr,
+                    text: '취소',
                     buttonStyle: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFFB9BCC3),
                       shape: RoundedRectangleBorder(
@@ -311,7 +310,7 @@ class AppointmentAllCollapsedBottomsheet extends StatelessWidget {
                   ),
                   CustomElevatedButton(
                     width: 216.h,
-                    text: 'lbl33'.tr,
+                    text: '확인',
                     margin: EdgeInsets.only(left: 8.h),
                   ),
                 ],

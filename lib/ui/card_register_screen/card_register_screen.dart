@@ -32,7 +32,7 @@ class CardRegisterScreen extends GetWidget<CardRegisterController> {
               onTap: Get.back,
             ),
             centerTitle: true,
-            title: AppbarTitle(text: 'lbl124'.tr)),
+            title: AppbarTitle(text: '카드 등록')),
         body: SizedBox(
             width: double.maxFinite,
             child: Column(children: [
@@ -49,13 +49,13 @@ class CardRegisterScreen extends GetWidget<CardRegisterController> {
                                   Row(children: [
                                     Padding(
                                         padding: EdgeInsets.only(top: 2.v),
-                                        child: Text('lbl144'.tr,
+                                        child: Text('카드번호',
                                             style:
                                                 defaultTextTheme.titleMedium)),
                                     Padding(
                                         padding: EdgeInsets.only(
                                             left: 5.h, bottom: 2.v),
-                                        child: Text('lbl67'.tr,
+                                        child: Text('*',
                                             style: defaultTextTheme.titleMedium!
                                                 .copyWith(
                                               color: const Color(0xFFDB4646),
@@ -65,7 +65,7 @@ class CardRegisterScreen extends GetWidget<CardRegisterController> {
                                   CustomTextFormField(
                                       controller:
                                           controller.cardnumbervalueController,
-                                      hintText: 'msg_0000_0000_0000'.tr,
+                                      hintText: '0000  0000  0000  0000',
                                       hintStyle:
                                           defaultTextTheme.bodyLarge!.copyWith(
                                         color: const Color(0xFF8E9199),
@@ -80,13 +80,13 @@ class CardRegisterScreen extends GetWidget<CardRegisterController> {
                                   Row(children: [
                                     Padding(
                                         padding: EdgeInsets.only(top: 2.v),
-                                        child: Text('lbl145'.tr,
+                                        child: Text('유효기간',
                                             style:
                                                 defaultTextTheme.titleMedium)),
                                     Padding(
                                         padding: EdgeInsets.only(
                                             left: 5.h, bottom: 2.v),
-                                        child: Text('lbl67'.tr,
+                                        child: Text('*',
                                             style: defaultTextTheme.titleMedium!
                                                 .copyWith(
                                               color: const Color(0xFFDB4646),
@@ -96,7 +96,7 @@ class CardRegisterScreen extends GetWidget<CardRegisterController> {
                                   CustomTextFormField(
                                       controller:
                                           controller.expirationdatevController,
-                                      hintText: 'lbl_mm_yy'.tr,
+                                      hintText: 'MM/YY',
                                       hintStyle:
                                           defaultTextTheme.bodyLarge!.copyWith(
                                         color: const Color(0xFF8E9199),
@@ -111,13 +111,13 @@ class CardRegisterScreen extends GetWidget<CardRegisterController> {
                                   Row(children: [
                                     Padding(
                                         padding: EdgeInsets.only(top: 2.v),
-                                        child: Text('lbl146'.tr,
+                                        child: Text('주민등록번호 앞자리',
                                             style:
                                                 defaultTextTheme.titleMedium)),
                                     Padding(
                                         padding: EdgeInsets.only(
                                             left: 5.h, bottom: 2.v),
-                                        child: Text('lbl67'.tr,
+                                        child: Text('*',
                                             style: defaultTextTheme.titleMedium!
                                                 .copyWith(
                                               color: const Color(0xFFDB4646),
@@ -126,7 +126,7 @@ class CardRegisterScreen extends GetWidget<CardRegisterController> {
                                   SizedBox(height: 4.v),
                                   CustomTextFormField(
                                       controller: controller.zipcodeController,
-                                      hintText: 'lbl_980709'.tr,
+                                      hintText: '940812',
                                       hintStyle:
                                           defaultTextTheme.bodyLarge!.copyWith(
                                         color: const Color(0xFF8E9199),
@@ -144,13 +144,13 @@ class CardRegisterScreen extends GetWidget<CardRegisterController> {
                                   Row(children: [
                                     Padding(
                                         padding: EdgeInsets.only(top: 2.v),
-                                        child: Text('lbl_23'.tr,
+                                        child: Text('카드 비밀번호 앞 2자리',
                                             style:
                                                 defaultTextTheme.titleMedium)),
                                     Padding(
                                         padding: EdgeInsets.only(
                                             left: 5.h, bottom: 2.v),
-                                        child: Text('lbl67'.tr,
+                                        child: Text('*',
                                             style: defaultTextTheme.titleMedium!
                                                 .copyWith(
                                               color: const Color(0xFFDB4646),
@@ -180,7 +180,7 @@ class CardRegisterScreen extends GetWidget<CardRegisterController> {
             ],
           ),
           child: CustomElevatedButton(
-              text: 'lbl138'.tr,
+              text: '버튼명',
               buttonStyle: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFFF3F3F6),
                 shape: RoundedRectangleBorder(

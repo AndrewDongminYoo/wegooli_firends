@@ -41,7 +41,7 @@ class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
                     onTap: Get.back,
                   ),
                   SizedBox(height: 6.v),
-                  Text('lbl10'.tr,
+                  Text('일정 확인',
                       style: defaultTextTheme.titleMedium!.copyWith(
                         fontSize: 18.fSize,
                       )),
@@ -82,7 +82,7 @@ class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
                                     children: [
                                       Align(
                                           alignment: Alignment.topLeft,
-                                          child: Text('lbl3'.tr,
+                                          child: Text('홍길동',
                                               style:
                                                   defaultTextTheme.bodySmall)),
                                       Align(
@@ -91,7 +91,8 @@ class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
                                               mainAxisAlignment:
                                                   MainAxisAlignment.center,
                                               children: [
-                                                Text('msg_8_16_15_20'.tr,
+                                                Text(
+                                                    '8/16 (수) 15:20 ~ 8/17(목) 14:00',
                                                     style: theme
                                                         .textTheme.bodyLarge),
                                                 CustomImageView(
@@ -109,12 +110,13 @@ class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.start,
                                               children: [
-                                            Text('lbl3'.tr,
+                                            Text('홍길동',
                                                 style:
                                                     defaultTextTheme.bodySmall),
                                             SizedBox(height: 7.v),
                                             Row(children: [
-                                              Text('msg_8_16_15_20'.tr,
+                                              Text(
+                                                  '8/16 (수) 15:20 ~ 8/17(목) 14:00',
                                                   style: theme
                                                       .textTheme.bodyLarge),
                                               CustomImageView(
@@ -166,10 +168,10 @@ class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text('lbl3'.tr,
+                                      Text('홍길동',
                                           style: defaultTextTheme.bodySmall),
                                       SizedBox(height: 8.v),
-                                      Text('msg_8_16_15_20'.tr,
+                                      Text('8/16 (수) 15:20 ~ 8/17(목) 14:00',
                                           style: defaultTextTheme.bodyLarge)
                                     ])))
                       ])),
@@ -210,10 +212,10 @@ class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text('lbl3'.tr,
+                                      Text('홍길동',
                                           style: defaultTextTheme.bodySmall),
                                       SizedBox(height: 8.v),
-                                      Text('msg_8_16_15_20'.tr,
+                                      Text('8/16 (수) 15:20 ~ 8/17(목) 14:00',
                                           style: defaultTextTheme.bodyLarge)
                                     ])))
                       ])),

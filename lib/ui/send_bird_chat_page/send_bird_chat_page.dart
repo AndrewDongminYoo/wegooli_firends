@@ -55,7 +55,7 @@ class SendBirdChatPage extends StatelessWidget {
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
-                      'lbl107'.tr,
+                      '방이름',
                       style: defaultTextTheme.titleMedium!.copyWith(
                         color: Colors.black,
                         fontSize: 18.fSize,
@@ -66,7 +66,7 @@ class SendBirdChatPage extends StatelessWidget {
                   CustomElevatedButton(
                     height: 34.v,
                     width: 95.h,
-                    text: 'lbl108'.tr,
+                    text: '안녕하세요',
                     buttonStyle: ElevatedButton.styleFrom(
                       backgroundColor: defaultColors.primary,
                       shape: RoundedRectangleBorder(
@@ -91,7 +91,7 @@ class SendBirdChatPage extends StatelessWidget {
                             bottom: 1.v,
                           ),
                           child: Text(
-                            'lbl_12_20_pm'.tr,
+                            '12:20 PM',
                             style: defaultTextTheme.bodySmall!.copyWith(
                               color: const Color(0xFFB9BCC3),
                             ),
@@ -110,7 +110,7 @@ class SendBirdChatPage extends StatelessWidget {
                           child: SizedBox(
                             width: 210.h,
                             child: Text(
-                              'msg11'.tr,
+                              '이번 주 주말에 차량 사용하려하는데\n필요하신 분 계신가요?',
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.right,
@@ -159,7 +159,7 @@ class SendBirdChatPage extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'lbl41'.tr,
+                                '닉네임',
                                 style: defaultTextTheme.bodySmall!.copyWith(
                                   color: Colors.black,
                                 ),
@@ -174,7 +174,7 @@ class SendBirdChatPage extends StatelessWidget {
                                     CustomElevatedButton(
                                       height: 34.v,
                                       width: 192.h,
-                                      text: 'msg12'.tr,
+                                      text: '저는 사용 할 필요 없습니다.',
                                       buttonStyle: ElevatedButton.styleFrom(
                                         backgroundColor:
                                             const Color(0x33A4A8AF),
@@ -195,7 +195,7 @@ class SendBirdChatPage extends StatelessWidget {
                                         top: 19.v,
                                       ),
                                       child: Text(
-                                        'lbl_12_22_pm'.tr,
+                                        '12:22 PM',
                                         style: defaultTextTheme.bodySmall!
                                             .copyWith(
                                           fontFamily: 'Inter',
@@ -218,7 +218,7 @@ class SendBirdChatPage extends StatelessWidget {
                                         bottom: 1.v,
                                       ),
                                       child: Text(
-                                        'lbl_12_25_pm'.tr,
+                                        '12:25 PM',
                                         style: defaultTextTheme.bodySmall!
                                             .copyWith(
                                           color: const Color(0xFFB9BCC3),
@@ -228,7 +228,7 @@ class SendBirdChatPage extends StatelessWidget {
                                     CustomElevatedButton(
                                       height: 34.v,
                                       width: 168.h,
-                                      text: 'lbl109'.tr,
+                                      text: '네 깨끗하게 사용할게요',
                                       margin: EdgeInsets.only(left: 5.h),
                                       buttonStyle: ElevatedButton.styleFrom(
                                         backgroundColor: defaultColors.primary,
@@ -247,7 +247,7 @@ class SendBirdChatPage extends StatelessWidget {
                               ),
                               SizedBox(height: 26.v),
                               Text(
-                                'lbl41'.tr,
+                                '닉네임',
                                 style: defaultTextTheme.bodySmall!.copyWith(
                                   color: Colors.black,
                                 ),
@@ -256,7 +256,7 @@ class SendBirdChatPage extends StatelessWidget {
                               CustomElevatedButton(
                                 height: 34.v,
                                 width: 215.h,
-                                text: 'msg13'.tr,
+                                text: '저는 다음주 주말에 쓸거 같아요',
                                 buttonStyle: ElevatedButton.styleFrom(
                                   backgroundColor: const Color(0x33A4A8AF),
                                   shape: RoundedRectangleBorder(
@@ -275,7 +275,7 @@ class SendBirdChatPage extends StatelessWidget {
                                   CustomElevatedButton(
                                     height: 34.v,
                                     width: 138.h,
-                                    text: 'lbl110'.tr,
+                                    text: '조심히 다녀오세요',
                                     buttonStyle: ElevatedButton.styleFrom(
                                       backgroundColor: const Color(0x33A4A8AF),
                                       shape: RoundedRectangleBorder(
@@ -295,7 +295,7 @@ class SendBirdChatPage extends StatelessWidget {
                                       top: 17.v,
                                     ),
                                     child: Text(
-                                      'lbl_12_15_pm'.tr,
+                                      '12:15 PM',
                                       style:
                                           defaultTextTheme.bodySmall!.copyWith(
                                         color: const Color(0xFFB9BCC3),
@@ -324,7 +324,7 @@ class SendBirdChatPage extends StatelessWidget {
                         child: CustomTextFormField(
                           controller: controller.chatinputoneController,
                           margin: EdgeInsets.only(left: 8.h),
-                          hintText: 'lbl111'.tr,
+                          hintText: '채팅을 입력하세요.',
                           hintStyle: defaultTextTheme.bodyMedium!.copyWith(
                             color: const Color(0xFF91969D),
                             fontSize: 15.fSize,

@@ -38,7 +38,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                   onTap: Get.back,
                 ),
                 centerTitle: true,
-                title: AppbarSubtitle(text: 'lbl88'.tr)),
+                title: AppbarSubtitle(text: '운전면허 등록')),
             body: SizedBox(
                 width: double.maxFinite,
                 child: Column(children: [
@@ -135,7 +135,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                                               width: 1.h,
                                                                             ),
                                                                             borderRadius: BorderRadiusStyle.roundedBorder10),
-                                                                        child: Text('lbl_b'.tr,
+                                                                        child: Text('B',
                                                                             style: defaultTextTheme.bodySmall!.copyWith(
                                                                               color: defaultColors.primary,
                                                                               fontSize: 9.fSize,
@@ -162,7 +162,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                                                         width: 1.h,
                                                                                       ),
                                                                                       borderRadius: BorderRadiusStyle.roundedBorder10),
-                                                                                  child: Text('lbl_c'.tr,
+                                                                                  child: Text('C',
                                                                                       style: defaultTextTheme.bodySmall!.copyWith(
                                                                                         color: defaultColors.primary,
                                                                                         fontSize: 9.fSize,
@@ -190,7 +190,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                                           .start,
                                                                   children: [
                                                                     Text(
-                                                                        'lbl89'
+                                                                        '자동차 운전면허증'
                                                                             .tr,
                                                                         style:
                                                                             TextStyle(
@@ -207,7 +207,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                                         height:
                                                                             6.v),
                                                                     Text(
-                                                                        'lbl_11_12_345678_90'
+                                                                        '11-12-345678-90'
                                                                             .tr,
                                                                         style: theme
                                                                             .textTheme
@@ -222,7 +222,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                                         height:
                                                                             11.v),
                                                                     Text(
-                                                                        'lbl3'
+                                                                        '홍길동'
                                                                             .tr,
                                                                         style:
                                                                             TextStyle(
@@ -239,7 +239,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                                         height:
                                                                             1.v),
                                                                     Text(
-                                                                        'lbl_000000_1000000'
+                                                                        '000000-1000000'
                                                                             .tr,
                                                                         style:
                                                                             TextStyle(
@@ -258,7 +258,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                                         child: Container(
                                                                             width: 41.h,
                                                                             margin: EdgeInsets.only(top: 37.v, right: 18.h),
-                                                                            child: Text('msg_20xx_01_01_20xx_12_31'.tr,
+                                                                            child: Text('20XX.01.01\n~20XX.12.31',
                                                                                 maxLines: 2,
                                                                                 overflow: TextOverflow.ellipsis,
                                                                                 textAlign: TextAlign.right,
@@ -275,7 +275,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                                         height:
                                                                             8.v),
                                                                     Text(
-                                                                        'lbl_20xx_01_01'
+                                                                        '20XX.01.01'
                                                                             .tr,
                                                                         style:
                                                                             TextStyle(
@@ -381,7 +381,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                                               1.h,
                                                                         ),
                                                                         borderRadius: BorderRadiusStyle.roundedBorder10),
-                                                                    child: Text('lbl_d'.tr,
+                                                                    child: Text('D',
                                                                         style: defaultTextTheme.bodySmall!.copyWith(
                                                                           color:
                                                                               defaultColors.primary,
@@ -408,7 +408,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                       borderRadius:
                                                           BorderRadiusStyle
                                                               .roundedBorder10),
-                                                  child: Text('lbl_a'.tr,
+                                                  child: Text('A',
                                                       style: theme
                                                           .textTheme.bodySmall!
                                                           .copyWith(
@@ -434,7 +434,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                 Padding(
                                                     padding: EdgeInsets.only(
                                                         left: 19.h),
-                                                    child: Text('lbl90'.tr,
+                                                    child: Text('면허증 종류',
                                                         style: defaultTextTheme
                                                             .bodySmall)),
                                                 SizedBox(height: 3.v),
@@ -445,7 +445,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                         child: CustomImageView(
                                                             svgPath: ImageConstant
                                                                 .imgCaretdown)),
-                                                    hintText: 'lbl91'.tr,
+                                                    hintText: '면허증 종류를 선택하세요.',
                                                     items: controller
                                                         .licenseRegister
                                                         .value
@@ -473,7 +473,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                       borderRadius:
                                                           BorderRadiusStyle
                                                               .roundedBorder10),
-                                                  child: Text('lbl_a'.tr,
+                                                  child: Text('A',
                                                       style: theme
                                                           .textTheme.bodySmall!
                                                           .copyWith(
@@ -510,7 +510,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                                       left:
                                                                           19.h),
                                                               child: Text(
-                                                                  'lbl92'.tr,
+                                                                  '면허증 번호',
                                                                   style: theme
                                                                       .textTheme
                                                                       .bodySmall)),
@@ -538,8 +538,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                                           .spaceBetween,
                                                                   children: [
                                                                     Text(
-                                                                        'lbl93'
-                                                                            .tr,
+                                                                        '지역'.tr,
                                                                         style: theme
                                                                             .textTheme
                                                                             .bodyLarge!
@@ -583,8 +582,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                                     borderRadius:
                                                                         BorderRadiusStyle
                                                                             .roundedBorder10),
-                                                            child: Text(
-                                                                'lbl_b'.tr,
+                                                            child: Text('B',
                                                                 style: theme
                                                                     .textTheme
                                                                     .bodySmall!
@@ -605,7 +603,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                           .imgCaretdown)),
                                               margin: EdgeInsets.only(
                                                   left: 8.h, top: 19.v),
-                                              hintText: 'lbl_112'.tr,
+                                              hintText: '11',
                                               items: controller.licenseRegister
                                                   .value.choices1.value,
                                               onChanged: (value) {
@@ -616,7 +614,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                     controller: controller.tfController,
                                     margin: EdgeInsets.only(
                                         left: 16.h, top: 10.v, right: 16.h),
-                                    hintText: 'msg7'.tr),
+                                    hintText: 'msg7'),
                                 SizedBox(height: 30.v),
                                 SizedBox(
                                     height: 58.v,
@@ -634,14 +632,15 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                 Padding(
                                                     padding: EdgeInsets.only(
                                                         left: 19.h),
-                                                    child: Text('lbl94'.tr,
+                                                    child: Text('적성기간 만료일',
                                                         style: defaultTextTheme
                                                             .bodySmall)),
                                                 SizedBox(height: 3.v),
                                                 CustomTextFormField(
                                                     controller: controller
                                                         .validityperiodiController,
-                                                    hintText: 'msg8'.tr)
+                                                    hintText:
+                                                        '적성기간 만료일(숫자만)을 입력해주세요.')
                                               ])),
                                           Align(
                                               alignment: Alignment.topLeft,
@@ -660,7 +659,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                       borderRadius:
                                                           BorderRadiusStyle
                                                               .roundedBorder10),
-                                                  child: Text('lbl_c'.tr,
+                                                  child: Text('C',
                                                       style: theme
                                                           .textTheme.bodySmall!
                                                           .copyWith(
@@ -686,14 +685,15 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                 Padding(
                                                     padding: EdgeInsets.only(
                                                         left: 19.h),
-                                                    child: Text('lbl95'.tr,
+                                                    child: Text('면허 발급 일자',
                                                         style: defaultTextTheme
                                                             .bodySmall)),
                                                 SizedBox(height: 3.v),
                                                 CustomTextFormField(
                                                     controller: controller
                                                         .oneController,
-                                                    hintText: 'msg9'.tr,
+                                                    hintText:
+                                                        '면허 발급 일자(숫자만)를 입력해주세요.',
                                                     textInputAction:
                                                         TextInputAction.done)
                                               ])),
@@ -714,7 +714,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                       borderRadius:
                                                           BorderRadiusStyle
                                                               .roundedBorder10),
-                                                  child: Text('lbl_d'.tr,
+                                                  child: Text('D',
                                                       style: theme
                                                           .textTheme.bodySmall!
                                                           .copyWith(
@@ -727,7 +727,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                 ])),
             bottomNavigationBar: CustomElevatedButton(
                 height: 48.v,
-                text: 'lbl96'.tr,
+                text: '등록 완료',
                 margin: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 16.v),
                 buttonStyle: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFFF3F3F6),

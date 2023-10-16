@@ -31,7 +31,7 @@ class SubscribeInfoNoSubscriptionScreen
               onTap: Get.back,
             ),
             centerTitle: true,
-            title: AppbarTitle(text: 'lbl123'.tr)),
+            title: AppbarTitle(text: '구독 정보')),
         body: SizedBox(
           width: mediaQueryData.size.width,
           child: SingleChildScrollView(
@@ -45,7 +45,7 @@ class SubscribeInfoNoSubscriptionScreen
                       height: 177.v,
                       width: 120.h),
                   SizedBox(height: 21.v),
-                  Text('lbl130'.tr,
+                  Text('구독 정보가 없습니다.',
                       style: defaultTextTheme.titleMedium!.copyWith(
                         color: Colors.black,
                         fontSize: 18.fSize,

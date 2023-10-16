@@ -33,7 +33,7 @@ class ExpiringSubscriptionsScreen
               onTap: Get.back,
             ),
             centerTitle: true,
-            title: AppbarTitle(text: 'lbl123'.tr)),
+            title: AppbarTitle(text: '구독 정보')),
         body: SizedBox(
           width: mediaQueryData.size.width,
           child: SingleChildScrollView(
@@ -45,7 +45,7 @@ class ExpiringSubscriptionsScreen
                 children: [
                   Padding(
                       padding: EdgeInsets.only(left: 2.h),
-                      child: Text('lbl131'.tr,
+                      child: Text('차량 정보',
                           style: defaultTextTheme.titleMedium!.copyWith(
                             color: Colors.black,
                             fontSize: 18.fSize,
@@ -79,14 +79,14 @@ class ExpiringSubscriptionsScreen
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Text('lbl132'.tr,
+                                      Text('모닝',
                                           style: defaultTextTheme.titleMedium!
                                               .copyWith(
                                             fontSize: 18.fSize,
                                           )),
                                       Padding(
                                           padding: EdgeInsets.only(top: 5.v),
-                                          child: Text('lbl_12_3456'.tr,
+                                          child: Text('12가 3456',
                                               style: defaultTextTheme.bodySmall!
                                                   .copyWith(
                                                 color: defaultColors.onPrimary
@@ -100,13 +100,13 @@ class ExpiringSubscriptionsScreen
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Text('lbl133'.tr,
+                                      Text('월 결제 금액',
                                           style: defaultTextTheme.bodyLarge!
                                               .copyWith(
                                             color: defaultColors.onPrimary
                                                 .withOpacity(0.4),
                                           )),
-                                      Text('lbl_150_000'.tr,
+                                      Text('150,000 원',
                                           style: defaultTextTheme.bodyLarge)
                                     ])),
                             Padding(
@@ -116,13 +116,13 @@ class ExpiringSubscriptionsScreen
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Text('lbl134'.tr,
+                                      Text('구독',
                                           style: defaultTextTheme.bodyLarge!
                                               .copyWith(
                                             color: defaultColors.onPrimary
                                                 .withOpacity(0.4),
                                           )),
-                                      Text('msg_2023_07_01_2023_08_01'.tr,
+                                      Text('2023.07.01~2023.08.01',
                                           style: defaultTextTheme.bodyLarge)
                                     ])),
                             Padding(
@@ -132,19 +132,19 @@ class ExpiringSubscriptionsScreen
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Text('lbl150'.tr,
+                                      Text('해지 예정일',
                                           style: defaultTextTheme.bodyLarge!
                                               .copyWith(
                                             color: defaultColors.onPrimary
                                                 .withOpacity(0.4),
                                           )),
-                                      Text('lbl_2023_08_20'.tr,
+                                      Text('2023.08.20',
                                           style: defaultTextTheme.bodyLarge)
                                     ])),
                             CustomElevatedButton(
                                 height: 48.v,
                                 width: 160.h,
-                                text: 'lbl151'.tr,
+                                text: '해지 취소',
                                 margin: EdgeInsets.only(top: 21.v, right: 9.h),
                                 buttonStyle: ElevatedButton.styleFrom(
                                   backgroundColor: defaultColors.primary,

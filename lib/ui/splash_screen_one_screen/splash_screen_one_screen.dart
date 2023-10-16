@@ -57,7 +57,7 @@ class SplashScreenOneScreen extends GetWidget<SplashScreenOneController> {
                           ),
                           SizedBox(height: 14.v),
                           Text(
-                            'lbl86'.tr,
+                            '우리가 만드는 카셰어링',
                             style: defaultTextTheme.titleSmall!.copyWith(
                               fontFamily: 'NanumSquareRound',
                               color: Colors.black,

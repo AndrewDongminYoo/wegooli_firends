@@ -35,22 +35,21 @@ class IdentityVerificationFilledScreen
               onTap: Get.back,
             ),
             centerTitle: true,
-            title: AppbarSubtitle(text: 'lbl'.tr),
+            title: AppbarSubtitle(text: '본인 인증'),
             styleType: Style.bgFill),
         body: Container(
             width: double.maxFinite,
             padding: EdgeInsets.symmetric(horizontal: 16.h, vertical: 10.v),
             child: Column(children: [
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Text('lbl2'.tr, style: defaultTextTheme.bodySmall),
+                Text('이름', style: defaultTextTheme.bodySmall),
                 SizedBox(height: 3.v),
                 CustomTextFormField(
-                    controller: controller.nameoneController,
-                    hintText: 'lbl3'.tr)
+                    controller: controller.nameoneController, hintText: '홍길동')
               ]),
               SizedBox(height: 30.v),
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Text('lbl_13'.tr, style: defaultTextTheme.bodySmall),
+                Text('주민등록번호 13자리', style: defaultTextTheme.bodySmall),
                 SizedBox(height: 3.v),
                 Container(
                     padding: EdgeInsets.symmetric(vertical: 9.v),
@@ -63,7 +62,7 @@ class IdentityVerificationFilledScreen
                       ),
                     ),
                     child: Row(children: [
-                      Text('lbl_980709'.tr, style: defaultTextTheme.bodyLarge),
+                      Text('940812', style: defaultTextTheme.bodyLarge),
                       const Spacer(),
                       Padding(
                           padding: EdgeInsets.only(top: 10.v, bottom: 6.v),
@@ -71,8 +70,7 @@ class IdentityVerificationFilledScreen
                               child: Divider(color: Color(0xFFB0B2BC)))),
                       Padding(
                           padding: EdgeInsets.only(left: 10.h),
-                          child: Text('lbl_22'.tr,
-                              style: defaultTextTheme.bodyLarge)),
+                          child: Text('2', style: defaultTextTheme.bodyLarge)),
                       CustomImageView(
                           svgPath: ImageConstant.imgGlobe,
                           height: 7.adaptSize,
@@ -110,24 +108,24 @@ class IdentityVerificationFilledScreen
                           margin: EdgeInsets.fromLTRB(4.h, 6.v, 70.h, 6.v))
                     ])),
                 SizedBox(height: 3.v),
-                Text('msg_26'.tr,
+                Text('만 26세 미만은 가입이 제한됩니다.',
                     style: defaultTextTheme.bodySmall!.copyWith(
                       color: defaultColors.primaryContainer,
                     ))
               ]),
               SizedBox(height: 30.v),
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Text('lbl4'.tr, style: defaultTextTheme.bodySmall),
+                Text('휴대폰 정보', style: defaultTextTheme.bodySmall),
                 SizedBox(height: 3.v),
                 CustomTextFormField(
                     controller: controller.phoneinfooneController,
-                    hintText: 'lbl_010_1234_5678'.tr,
+                    hintText: '010-1234-5678',
                     textInputAction: TextInputAction.done)
               ]),
               SizedBox(height: 20.v),
               CustomElevatedButton(
                   height: 42.v,
-                  text: 'lbl5'.tr,
+                  text: '인증번호 발송',
                   buttonStyle: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF464A70),
                     shape: RoundedRectangleBorder(
@@ -147,7 +145,7 @@ class IdentityVerificationFilledScreen
           ),
           child: CustomElevatedButton(
               height: 48.v,
-              text: 'lbl7'.tr,
+              text: '인증하기',
               buttonStyle: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFFF3F3F6),
                 shape: RoundedRectangleBorder(

@@ -35,7 +35,7 @@ class PersonalInfoFormZipCodeScreen
               onTap: Get.back,
             ),
             centerTitle: true,
-            title: AppbarSubtitle(text: 'lbl75'.tr),
+            title: AppbarSubtitle(text: '정보 입력'),
             styleType: Style.bgFill),
         body: SizedBox(
             width: double.maxFinite,
@@ -57,7 +57,7 @@ class PersonalInfoFormZipCodeScreen
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
-                                          Text('lbl76'.tr,
+                                          Text('집주소',
                                               style:
                                                   defaultTextTheme.bodySmall),
                                           SizedBox(height: 3.v),
@@ -65,7 +65,7 @@ class PersonalInfoFormZipCodeScreen
                                               width: 160.h,
                                               controller: controller
                                                   .postalcodeoneController,
-                                              hintText: 'lbl77'.tr)
+                                              hintText: '우편번호')
                                         ],
                                       ),
                                     ),
@@ -73,7 +73,7 @@ class PersonalInfoFormZipCodeScreen
                                   Expanded(
                                       child: CustomElevatedButton(
                                           height: 42.v,
-                                          text: 'lbl78'.tr,
+                                          text: '주소 검색',
                                           margin: EdgeInsets.only(
                                               left: 4.h, top: 15.v),
                                           buttonStyle: ElevatedButton.styleFrom(
@@ -95,35 +95,35 @@ class PersonalInfoFormZipCodeScreen
                             SizedBox(height: 10.v),
                             CustomTextFormField(
                                 controller: controller.defaultaddressController,
-                                hintText: 'lbl79'.tr),
+                                hintText: '기본주소'),
                             SizedBox(height: 10.v),
                             CustomTextFormField(
                                 controller:
                                     controller.detailedaddressController,
-                                hintText: 'lbl80'.tr),
+                                hintText: '동·호수 등 상세 주소'),
                             SizedBox(height: 30.v),
                             Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text('lbl81'.tr,
+                                  Text('아이디',
                                       style: defaultTextTheme.bodySmall),
                                   SizedBox(height: 3.v),
                                   CustomTextFormField(
                                       controller:
                                           controller.emailaddressController,
-                                      hintText: 'lbl82'.tr)
+                                      hintText: '이메일 주소 입력')
                                 ]),
                             SizedBox(height: 30.v),
                             Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text('lbl62'.tr,
+                                  Text('비밀번호',
                                       style: defaultTextTheme.bodySmall),
                                   SizedBox(height: 3.v),
                                   CustomTextFormField(
                                       controller:
                                           controller.eyecrossedoutController,
-                                      hintText: 'msg_6_12'.tr,
+                                      hintText: '영문/숫자/특수문자 조합 (6~12자)',
                                       suffix: Container(
                                           margin: EdgeInsets.only(
                                               left: 30.h,
@@ -139,13 +139,13 @@ class PersonalInfoFormZipCodeScreen
                             Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text('lbl83'.tr,
+                                  Text('비밀번호 확인',
                                       style: defaultTextTheme.bodySmall),
                                   SizedBox(height: 3.v),
                                   CustomTextFormField(
                                       controller:
                                           controller.passwordreentryController,
-                                      hintText: 'lbl84'.tr,
+                                      hintText: '비밀번호 재입력',
                                       suffix: Container(
                                           margin: EdgeInsets.only(
                                               left: 30.h,
@@ -161,13 +161,13 @@ class PersonalInfoFormZipCodeScreen
                             Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text('lbl41'.tr,
+                                  Text('닉네임',
                                       style: defaultTextTheme.bodySmall),
                                   SizedBox(height: 3.v),
                                   CustomTextFormField(
                                       controller:
                                           controller.nicknameinputController,
-                                      hintText: 'lbl_83'.tr,
+                                      hintText: '닉네임 입력 (8자 이내)',
                                       textInputAction: TextInputAction.done)
                                 ])
                           ]))))
@@ -179,7 +179,7 @@ class PersonalInfoFormZipCodeScreen
           ),
           child: CustomElevatedButton(
               height: 48.v,
-              text: 'lbl85'.tr,
+              text: '입력 완료',
               buttonStyle: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFFF3F3F6),
                 shape: RoundedRectangleBorder(

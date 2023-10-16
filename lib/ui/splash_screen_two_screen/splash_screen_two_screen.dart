@@ -41,7 +41,7 @@ class SplashScreenTwoScreen extends GetWidget<SplashScreenTwoController> {
                             child: Column(children: [
                               SizedBox(
                                   width: 128.h,
-                                  child: Text('lbl87'.tr,
+                                  child: Text('우리가\n만드는\n카셰어링',
                                       maxLines: 3,
                                       overflow: TextOverflow.ellipsis,
                                       textAlign: TextAlign.center,

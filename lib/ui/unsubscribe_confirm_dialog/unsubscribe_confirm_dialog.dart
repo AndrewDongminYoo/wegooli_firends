@@ -38,7 +38,7 @@ class UnsubscribeConfirmDialog extends StatelessWidget {
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text('lbl34'.tr,
+                            Text('구독 해지 예약',
                                 style: defaultTextTheme.titleMedium!.copyWith(
                                   fontSize: 18.fSize,
                                 )),
@@ -53,7 +53,8 @@ class UnsubscribeConfirmDialog extends StatelessWidget {
                       width: 278.h,
                       margin:
                           EdgeInsets.only(left: 25.h, top: 38.v, right: 25.h),
-                      child: Text('msg'.tr,
+                      child: Text(
+                          '해지 시 위굴리 프렌즈의 모든 혜택을 잃게 됩니다. 남은 기간 내에 해지를 취소하실 수 있습니다.',
                           maxLines: 3,
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.justify,
@@ -63,7 +64,7 @@ class UnsubscribeConfirmDialog extends StatelessWidget {
                   Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                     CustomElevatedButton(
                         width: 164.h,
-                        text: 'lbl32'.tr,
+                        text: '취소',
                         buttonStyle: ElevatedButton.styleFrom(
                           backgroundColor: const Color(0xFFB9BCC3),
                           shape: RoundedRectangleBorder(
@@ -77,7 +78,7 @@ class UnsubscribeConfirmDialog extends StatelessWidget {
                         buttonTextStyle: defaultTextTheme.titleMedium),
                     CustomElevatedButton(
                         width: 164.h,
-                        text: 'lbl35'.tr,
+                        text: '해지하기',
                         buttonStyle: ElevatedButton.styleFrom(
                           backgroundColor: defaultColors.primary,
                           shape: RoundedRectangleBorder(

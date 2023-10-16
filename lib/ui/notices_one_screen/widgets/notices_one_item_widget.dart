@@ -38,7 +38,7 @@ class NoticesOneItemWidget extends StatelessWidget {
               top: 15.v,
             ),
             child: Text(
-              'msg2'.tr,
+              '[공지] 산모퉁이를 돌아 논가 외딴 우물을 홀로 찾아가선',
               style: defaultTextTheme.titleSmall,
             ),
           ),
@@ -48,7 +48,7 @@ class NoticesOneItemWidget extends StatelessWidget {
               top: 3.v,
             ),
             child: Text(
-              'lbl_2023_08_23'.tr,
+              '2023.08.23',
               style: defaultTextTheme.bodySmall!.copyWith(
                 color: defaultColors.onPrimary.withOpacity(0.4),
               ),

@@ -30,7 +30,7 @@ class NoticesScreen extends GetWidget<NoticesController> {
               onTap: Get.back,
             ),
             centerTitle: true,
-            title: AppbarTitle(text: 'lbl38'.tr)),
+            title: AppbarTitle(text: '공지사항')),
         body: SizedBox(
           width: double.maxFinite,
           child: Column(children: [
@@ -44,9 +44,10 @@ class NoticesScreen extends GetWidget<NoticesController> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('msg2'.tr, style: defaultTextTheme.titleSmall),
+                      Text('[공지] 산모퉁이를 돌아 논가 외딴 우물을 홀로 찾아가선',
+                          style: defaultTextTheme.titleSmall),
                       SizedBox(height: 3.v),
-                      Text('lbl_2023_08_23'.tr,
+                      Text('2023.08.23',
                           style: defaultTextTheme.bodySmall!.copyWith(
                             color: defaultColors.onPrimary.withOpacity(0.4),
                           ))

@@ -37,7 +37,7 @@ class ProfilePage extends StatelessWidget {
               onTap: Get.back,
             ),
             centerTitle: true,
-            title: AppbarTitle(text: 'lbl40'.tr)),
+            title: AppbarTitle(text: '내 정보')),
         body: SizedBox(
           width: mediaQueryData.size.width,
           child: SingleChildScrollView(
@@ -63,13 +63,13 @@ class ProfilePage extends StatelessWidget {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text('lbl41'.tr,
+                                      Text('닉네임',
                                           style: defaultTextTheme.titleMedium!
                                               .copyWith(
                                             fontSize: 18.fSize,
                                           )),
                                       SizedBox(height: 5.v),
-                                      Text('lbl_010_1234_5678'.tr,
+                                      Text('010-1234-5678',
                                           style: defaultTextTheme.bodySmall!
                                               .copyWith(
                                             color: defaultColors.onPrimary
@@ -79,7 +79,7 @@ class ProfilePage extends StatelessWidget {
                             const Spacer(),
                             CustomOutlinedButton(
                                 width: 75.h,
-                                text: 'lbl42'.tr,
+                                text: '프로필 변경',
                                 margin:
                                     EdgeInsets.only(top: 18.v, bottom: 19.v))
                           ])),
@@ -93,7 +93,7 @@ class ProfilePage extends StatelessWidget {
                       alignment: Alignment.centerLeft,
                       child: Padding(
                           padding: EdgeInsets.only(left: 16.h, top: 21.v),
-                          child: Text('lbl43'.tr,
+                          child: Text('가입 정보',
                               style: defaultTextTheme.titleMedium!.copyWith(
                                 fontSize: 18.fSize,
                               )))),
@@ -103,7 +103,7 @@ class ProfilePage extends StatelessWidget {
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text('lbl44'.tr, style: defaultTextTheme.bodyLarge),
+                            Text('개인정보 변경', style: defaultTextTheme.bodyLarge),
                             CustomImageView(
                                 svgPath: ImageConstant.imgArrowleft,
                                 height: 18.adaptSize,
@@ -119,7 +119,7 @@ class ProfilePage extends StatelessWidget {
                       alignment: Alignment.centerLeft,
                       child: Padding(
                           padding: EdgeInsets.only(left: 16.h, top: 21.v),
-                          child: Text('lbl45'.tr,
+                          child: Text('알림',
                               style: defaultTextTheme.titleMedium!.copyWith(
                                 fontSize: 18.fSize,
                               )))),
@@ -129,7 +129,7 @@ class ProfilePage extends StatelessWidget {
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text('lbl46'.tr,
+                            Text('앱 푸시 수신 동의',
                                 style: defaultTextTheme.bodyLarge!.copyWith(
                                   color: Colors.black,
                                 )),
@@ -145,7 +145,7 @@ class ProfilePage extends StatelessWidget {
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text('lbl47'.tr,
+                            Text('메일 수신 동의',
                                 style: defaultTextTheme.bodyLarge!.copyWith(
                                   color: Colors.black,
                                 )),
@@ -161,7 +161,7 @@ class ProfilePage extends StatelessWidget {
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text('lbl_sms'.tr,
+                            Text('SMS 수신 동의',
                                 style: defaultTextTheme.bodyLarge!.copyWith(
                                   color: Colors.black,
                                 )),
@@ -177,7 +177,8 @@ class ProfilePage extends StatelessWidget {
                           width: 270.h,
                           margin: EdgeInsets.only(
                               left: 16.h, top: 22.v, right: 74.h),
-                          child: Text('msg3'.tr,
+                          child: Text(
+                              '· 선택 항목에 동의하지 않아도 서비스 이용은 가능합니다.\n· 수신을 거부하시면 이벤트 관련 안내를 받을 수 없습니다.',
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
                               style: defaultTextTheme.bodySmall!
@@ -198,13 +199,13 @@ class ProfilePage extends StatelessWidget {
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text('lbl48'.tr,
+                            Text('앱 버전',
                                 style: defaultTextTheme.titleMedium!.copyWith(
                                   fontSize: 18.fSize,
                                 )),
                             Padding(
                                 padding: EdgeInsets.only(bottom: 2.v),
-                                child: Text('lbl_1_01'.tr,
+                                child: Text('1.01',
                                     style: defaultTextTheme.bodyLarge))
                           ])),
                   SizedBox(height: 21.v),
@@ -214,11 +215,11 @@ class ProfilePage extends StatelessWidget {
                       decoration:
                           const BoxDecoration(color: Color(0xFFF6F7F7))),
                   CustomElevatedButton(
-                      text: 'lbl49'.tr,
+                      text: '로그아웃',
                       margin:
                           EdgeInsets.only(left: 16.h, top: 20.v, right: 16.h)),
                   SizedBox(height: 21.v),
-                  Text('lbl50'.tr,
+                  Text('회원 탈퇴',
                       style: defaultTextTheme.bodySmall!.copyWith(
                         color: defaultColors.onPrimary.withOpacity(0.4),
                       )),

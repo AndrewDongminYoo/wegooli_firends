@@ -33,7 +33,7 @@ class ContactUsInquiryHistoryExpandedTabContainerScreen
               onTap: Get.back,
             ),
             centerTitle: true,
-            title: AppbarTitle(text: 'lbl136'.tr)),
+            title: AppbarTitle(text: '문의하기')),
         body: SizedBox(
           width: mediaQueryData.size.width,
           child: SingleChildScrollView(
@@ -62,10 +62,10 @@ class ContactUsInquiryHistoryExpandedTabContainerScreen
                           ),
                           child: Column(
                             children: [
-                              Text('lbl142'.tr),
+                              const Text('전체'),
                               Padding(
                                   padding: EdgeInsets.only(top: 5.v),
-                                  child: Text('lbl_102'.tr))
+                                  child: const Text('10'))
                             ],
                           ),
                         ),
@@ -84,10 +84,10 @@ class ContactUsInquiryHistoryExpandedTabContainerScreen
                           ),
                           child: Column(
                             children: [
-                              Text('lbl140'.tr),
+                              const Text('답변 완료'),
                               Padding(
                                   padding: EdgeInsets.only(top: 6.v),
-                                  child: Text('lbl_102'.tr))
+                                  child: const Text('10'))
                             ],
                           ),
                         ),
@@ -105,10 +105,10 @@ class ContactUsInquiryHistoryExpandedTabContainerScreen
                                 ),
                               ),
                               child: Column(children: [
-                                Text('lbl139'.tr),
+                                const Text('처리중'),
                                 Padding(
                                     padding: EdgeInsets.only(top: 5.v),
-                                    child: Text('lbl_102'.tr))
+                                    child: const Text('10'))
                               ])))
                     ])),
             SizedBox(

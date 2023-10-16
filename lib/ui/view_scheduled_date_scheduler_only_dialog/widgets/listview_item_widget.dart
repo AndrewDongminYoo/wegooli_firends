@@ -80,7 +80,7 @@ class ListviewItemWidget extends StatelessWidget {
                     ),
                     SizedBox(height: 8.v),
                     Text(
-                      'msg_8_16_15_20'.tr,
+                      '8/16 (수) 15:20 ~ 8/17(목) 14:00',
                       style: defaultTextTheme.bodyLarge,
                     ),
                   ],

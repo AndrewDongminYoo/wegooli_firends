@@ -50,7 +50,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                       child: Padding(
                           padding: EdgeInsets.symmetric(
                               horizontal: 20.h, vertical: 10.v),
-                          child: Text('lbl_app_navigation'.tr,
+                          child: Text('Gateway',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   color: Colors.black,
@@ -61,7 +61,8 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                       alignment: Alignment.centerLeft,
                       child: Padding(
                           padding: EdgeInsets.only(left: 20.h),
-                          child: Text('msg_check_your_app_s'.tr,
+                          child: Text(
+                              "Check your app's UI from the below demo screens of your app.",
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   color: const Color(0xFF888888),
@@ -91,8 +92,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                              'msg_identity_verification'.tr,
+                                          child: Text('Verification / Waiting',
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                   color: Colors.black,
@@ -122,7 +122,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('msg_send_invitation'.tr,
+                                          child: Text('Send Invitation',
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                   color: Colors.black,
@@ -152,8 +152,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                              'msg_view_scheduled_date'.tr,
+                                          child: Text('View Scheduled Date',
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                   color: Colors.black,
@@ -183,7 +182,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('msg_appointment_all'.tr,
+                                          child: Text('Appointment / Collapsed',
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                   color: Colors.black,
@@ -213,8 +212,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                              'msg_appointment_start'.tr,
+                                          child: Text('Appointment / Start',
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                   color: Colors.black,
@@ -244,7 +242,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('msg_appointment_end'.tr,
+                                          child: Text('Appointment / End',
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                   color: Colors.black,
@@ -274,8 +272,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                              'msg_unsubscribe_confirm'.tr,
+                                          child: Text('Unsubscribe / Confirm',
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                   color: Colors.black,
@@ -305,7 +302,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('lbl_signup_complete'.tr,
+                                          child: Text('SignUp Complete',
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                   color: Colors.black,
@@ -335,7 +332,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('lbl_notices_one'.tr,
+                                          child: Text('Notices',
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                   color: Colors.black,
@@ -365,8 +362,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                              'msg_notices_no_notice'.tr,
+                                          child: Text('No Notice',
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                   color: Colors.black,
@@ -396,8 +392,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                              'msg_schedules_container'.tr,
+                                          child: Text('Schedules - Container',
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                   color: Colors.black,
@@ -427,7 +422,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('msg_schedules_send'.tr,
+                                          child: Text('Send Invitation',
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                   color: Colors.black,
@@ -457,7 +452,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('lbl_signin_page'.tr,
+                                          child: Text('SignIn',
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                   color: Colors.black,
@@ -488,7 +483,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
                                           child: Text(
-                                              'msg_identity_verification2'.tr,
+                                              'Verification / BottomSheet',
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                   color: Colors.black,
@@ -518,8 +513,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                              'msg_identity_verification3'.tr,
+                                          child: Text('Verification / Empty',
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                   color: Colors.black,
@@ -549,8 +543,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                              'msg_identity_verification4'.tr,
+                                          child: Text('Verification / Filled',
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                   color: Colors.black,
@@ -580,8 +573,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                              'msg_personal_info_form'.tr,
+                                          child: Text('Zip Code',
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                   color: Colors.black,
@@ -611,8 +603,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                              'msg_splash_screen_one'.tr,
+                                          child: Text('스플래시스크린 1',
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                   color: Colors.black,
@@ -642,8 +633,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                              'msg_splash_screen_two'.tr,
+                                          child: Text('스플래시스크린 2',
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                   color: Colors.black,
@@ -673,7 +663,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('msg_license_register'.tr,
+                                          child: Text('License Register',
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                   color: Colors.black,
@@ -704,7 +694,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
                                           child: Text(
-                                              'msg_identity_verification5'.tr,
+                                              'Verification / Filled Telecom',
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                   color: Colors.black,
@@ -734,8 +724,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                              'msg_identity_verification6'.tr,
+                                          child: Text('Verification / Waiting',
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                   color: Colors.black,
@@ -765,7 +754,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('lbl_home_page'.tr,
+                                          child: Text('Home',
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                   color: Colors.black,
@@ -795,7 +784,8 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('msg_schedules_team'.tr,
+                                          child: Text(
+                                              'Schedules / Team is not Full',
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                   color: Colors.black,
@@ -825,7 +815,8 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('msg_schedules_team2'.tr,
+                                          child: Text(
+                                              'Schedules / Team is Full',
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                   color: Colors.black,
@@ -855,7 +846,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('lbl_smart_key'.tr,
+                                          child: Text('Smart Key',
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                   color: Colors.black,
@@ -885,7 +876,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('lbl_my_page'.tr,
+                                          child: Text('My Page',
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                   color: Colors.black,
@@ -915,7 +906,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('lbl_card_list'.tr,
+                                          child: Text('Card List',
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                   color: Colors.black,
@@ -945,7 +936,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('msg_schedules_view'.tr,
+                                          child: Text('View Scheduled Date',
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                   color: Colors.black,
@@ -976,7 +967,8 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('msg_schedules_view2'.tr,
+                                          child: Text(
+                                              'View Scheduled Date Expanded',
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                   color: Colors.black,
@@ -1007,7 +999,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
                                           child: Text(
-                                              'msg_smart_key_another'.tr,
+                                              'Another is Currently Using Car',
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                   color: Colors.black,
@@ -1038,7 +1030,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
                                           child: Text(
-                                              'msg_subscribe_info_no'.tr,
+                                              'Subscribe Info (No Subscription)',
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                   color: Colors.black,
@@ -1068,7 +1060,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('lbl_subscribe_info'.tr,
+                                          child: Text('Subscribe Info',
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                   color: Colors.black,
@@ -1098,7 +1090,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('msg_contact_us_empty'.tr,
+                                          child: Text('Empty History',
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                   color: Colors.black,
@@ -1129,8 +1121,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                              'msg_contact_us_inquiry'.tr,
+                                          child: Text('Inquiry History',
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                   color: Colors.black,
@@ -1160,7 +1151,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('lbl_unsubscribe'.tr,
+                                          child: Text('Unsubscribe',
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                   color: Colors.black,
@@ -1190,7 +1181,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('lbl_card_register'.tr,
+                                          child: Text('Card Register',
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                   color: Colors.black,
@@ -1220,7 +1211,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('lbl_notices'.tr,
+                                          child: Text('Notices',
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                   color: Colors.black,
@@ -1250,7 +1241,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('msg_contact_us_1_1'.tr,
+                                          child: Text('1:1 Contact Us',
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                   color: Colors.black,
@@ -1281,7 +1272,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                 horizontal: 20.h,
                                                 vertical: 10.v),
                                             child: Text(
-                                                'msg_expiring_subscriptions'.tr,
+                                                'Expiring Subscriptions',
                                                 textAlign: TextAlign.center,
                                                 style: TextStyle(
                                                     color: Colors.black,

@@ -46,7 +46,7 @@ class SignupCompleteScreen extends GetWidget<SignupCompleteController> {
                         SizedBox(
                           width: 153.h,
                           child: Text(
-                            'lbl36'.tr,
+                            '회원가입이\n완료되었습니다.',
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
                             textAlign: TextAlign.center,
@@ -64,7 +64,7 @@ class SignupCompleteScreen extends GetWidget<SignupCompleteController> {
           ),
         ),
         bottomNavigationBar: CustomElevatedButton(
-          text: 'lbl37'.tr,
+          text: '시작하기',
           margin: EdgeInsets.only(
             left: 16.h,
             right: 16.h,

@@ -66,12 +66,12 @@ class MyPageScreen extends GetWidget<MyPageController> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        'lbl41'.tr,
+                                        '닉네임',
                                         style: defaultTextTheme.titleMedium,
                                       ),
                                       SizedBox(height: 7.v),
                                       Text(
-                                        'lbl_010_1234_5678'.tr,
+                                        '010-1234-5678',
                                         style: defaultTextTheme.bodySmall!
                                             .copyWith(
                                           color: defaultColors.onPrimary
@@ -80,7 +80,7 @@ class MyPageScreen extends GetWidget<MyPageController> {
                                       ),
                                       SizedBox(height: 4.v),
                                       Text(
-                                        'msg_abc123_gmail_com'.tr,
+                                        'ydm2790@gmail.com',
                                         style: defaultTextTheme.bodySmall!
                                             .copyWith(
                                           color: defaultColors.onPrimary
@@ -122,7 +122,7 @@ class MyPageScreen extends GetWidget<MyPageController> {
                                   top: 2.v,
                                 ),
                                 child: Text(
-                                  'lbl122'.tr,
+                                  '개인 정보',
                                   style: defaultTextTheme.bodyLarge,
                                 ),
                               ),
@@ -156,7 +156,7 @@ class MyPageScreen extends GetWidget<MyPageController> {
                                   top: 2.v,
                                 ),
                                 child: Text(
-                                  'lbl123'.tr,
+                                  '구독 정보',
                                   style: defaultTextTheme.bodyLarge,
                                 ),
                               ),
@@ -190,7 +190,7 @@ class MyPageScreen extends GetWidget<MyPageController> {
                                   top: 2.v,
                                 ),
                                 child: Text(
-                                  'lbl124'.tr,
+                                  '카드 등록',
                                   style: defaultTextTheme.bodyLarge,
                                 ),
                               ),

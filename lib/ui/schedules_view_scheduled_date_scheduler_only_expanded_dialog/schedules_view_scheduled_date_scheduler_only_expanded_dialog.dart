@@ -45,7 +45,7 @@ class SchedulesViewScheduledDateSchedulerOnlyExpandedDialog
                     onTap: Get.back,
                   ),
                   SizedBox(height: 6.v),
-                  Text('lbl10'.tr,
+                  Text('일정 확인',
                       style: defaultTextTheme.titleMedium!.copyWith(
                         fontSize: 18.fSize,
                       )),
@@ -93,7 +93,7 @@ class SchedulesViewScheduledDateSchedulerOnlyExpandedDialog
                                                 Align(
                                                     alignment:
                                                         Alignment.topLeft,
-                                                    child: Text('lbl3'.tr,
+                                                    child: Text('홍길동',
                                                         style: defaultTextTheme
                                                             .bodySmall)),
                                                 CustomDropDown(
@@ -105,7 +105,7 @@ class SchedulesViewScheduledDateSchedulerOnlyExpandedDialog
                                                             svgPath: ImageConstant
                                                                 .imgArrowleft)),
                                                     hintText:
-                                                        'msg_8_16_15_20'.tr,
+                                                        '8/16 (수) 15:20 ~ 8/17(목) 14:00',
                                                     hintStyle: theme
                                                         .textTheme.bodyLarge,
                                                     alignment:
@@ -129,13 +129,13 @@ class SchedulesViewScheduledDateSchedulerOnlyExpandedDialog
                                                             CrossAxisAlignment
                                                                 .start,
                                                         children: [
-                                                          Text('lbl3'.tr,
+                                                          Text('홍길동',
                                                               style: theme
                                                                   .textTheme
                                                                   .bodySmall),
                                                           SizedBox(height: 8.v),
                                                           Text(
-                                                              'msg_8_16_15_20'
+                                                              '8/16 (수) 15:20 ~ 8/17(목) 14:00'
                                                                   .tr,
                                                               style: theme
                                                                   .textTheme
@@ -149,12 +149,12 @@ class SchedulesViewScheduledDateSchedulerOnlyExpandedDialog
                                           children: [
                                             Expanded(
                                                 child: CustomOutlinedButton(
-                                                    text: 'lbl126'.tr,
+                                                    text: '수정',
                                                     margin: EdgeInsets.only(
                                                         right: 5.h))),
                                             Expanded(
                                                 child: CustomOutlinedButton(
-                                                    text: 'lbl127'.tr,
+                                                    text: '삭제',
                                                     margin: EdgeInsets.only(
                                                         left: 5.h)))
                                           ])
@@ -198,10 +198,10 @@ class SchedulesViewScheduledDateSchedulerOnlyExpandedDialog
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text('lbl3'.tr,
+                                      Text('홍길동',
                                           style: defaultTextTheme.bodySmall),
                                       SizedBox(height: 8.v),
-                                      Text('msg_8_16_15_20'.tr,
+                                      Text('8/16 (수) 15:20 ~ 8/17(목) 14:00',
                                           style: defaultTextTheme.bodyLarge)
                                     ])))
                       ])),
@@ -242,10 +242,10 @@ class SchedulesViewScheduledDateSchedulerOnlyExpandedDialog
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text('lbl3'.tr,
+                                      Text('홍길동',
                                           style: defaultTextTheme.bodySmall),
                                       SizedBox(height: 8.v),
-                                      Text('msg_8_16_15_20'.tr,
+                                      Text('8/16 (수) 15:20 ~ 8/17(목) 14:00',
                                           style: defaultTextTheme.bodyLarge)
                                     ])))
                       ])),

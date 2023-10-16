@@ -38,7 +38,7 @@ class IdentityVerificationWaitingWithTelecomScreen
               onTap: Get.back,
             ),
             centerTitle: true,
-            title: AppbarSubtitle(text: 'lbl'.tr),
+            title: AppbarSubtitle(text: '본인 인증'),
             styleType: Style.bgFill),
         body: Container(
             width: double.maxFinite,
@@ -46,7 +46,7 @@ class IdentityVerificationWaitingWithTelecomScreen
             child: Column(children: [
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                 Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                  Text('lbl2'.tr, style: defaultTextTheme.bodySmall),
+                  Text('이름', style: defaultTextTheme.bodySmall),
                   CustomImageView(
                       svgPath: ImageConstant.imgLabeltext,
                       height: 5.adaptSize,
@@ -55,14 +55,13 @@ class IdentityVerificationWaitingWithTelecomScreen
                 ]),
                 SizedBox(height: 3.v),
                 CustomTextFormField(
-                    controller: controller.nameoneController,
-                    hintText: 'lbl3'.tr)
+                    controller: controller.nameoneController, hintText: '홍길동')
               ]),
               SizedBox(height: 30.v),
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                   Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                    Text('lbl_13'.tr, style: defaultTextTheme.bodySmall),
+                    Text('주민등록번호 13자리', style: defaultTextTheme.bodySmall),
                     CustomImageView(
                         svgPath: ImageConstant.imgLabeltext,
                         height: 5.adaptSize,
@@ -80,10 +79,9 @@ class IdentityVerificationWaitingWithTelecomScreen
                           ),
                         ),
                       ),
-                      child: Text('lbl_980709'.tr,
-                          style: defaultTextTheme.bodyLarge)),
+                      child: Text('940812', style: defaultTextTheme.bodyLarge)),
                   SizedBox(height: 3.v),
-                  Text('msg_26'.tr,
+                  Text('만 26세 미만은 가입이 제한됩니다.',
                       style: defaultTextTheme.bodySmall!.copyWith(
                         color: defaultColors.primaryContainer,
                       ))
@@ -99,13 +97,13 @@ class IdentityVerificationWaitingWithTelecomScreen
                         ),
                       ),
                     ),
-                    child: Text('lbl97'.tr, style: defaultTextTheme.bodyLarge))
+                    child: Text('*******', style: defaultTextTheme.bodyLarge))
               ]),
               SizedBox(height: 30.v),
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                   Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                    Text('lbl4'.tr, style: defaultTextTheme.bodySmall),
+                    Text('휴대폰 정보', style: defaultTextTheme.bodySmall),
                     CustomImageView(
                         svgPath: ImageConstant.imgLabeltext,
                         height: 5.adaptSize,
@@ -119,7 +117,7 @@ class IdentityVerificationWaitingWithTelecomScreen
                           margin: EdgeInsets.only(left: 30.h),
                           child: CustomImageView(
                               svgPath: ImageConstant.imgCaretdown)),
-                      hintText: 'lbl_kt'.tr,
+                      hintText: 'KT',
                       hintStyle: defaultTextTheme.bodyLarge,
                       items: controller.identityVerificationWaitingWithTelecom
                           .value.choices.value,
@@ -131,13 +129,13 @@ class IdentityVerificationWaitingWithTelecomScreen
                     width: 216.h,
                     controller: controller.phonenumberoneController,
                     margin: EdgeInsets.only(top: 19.v),
-                    hintText: 'lbl_010_1234_5678'.tr,
+                    hintText: '010-1234-5678',
                     textInputAction: TextInputAction.done)
               ]),
               SizedBox(height: 20.v),
               CustomElevatedButton(
                   height: 42.v,
-                  text: 'lbl5'.tr,
+                  text: '인증번호 발송',
                   buttonStyle: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF464A70),
                     shape: RoundedRectangleBorder(
@@ -162,11 +160,11 @@ class IdentityVerificationWaitingWithTelecomScreen
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text('lbl6'.tr,
+                        Text('인증번호 입력',
                             style: defaultTextTheme.bodyLarge!.copyWith(
                               color: const Color(0xFFB0B2BC),
                             )),
-                        Text('lbl_3_00'.tr,
+                        Text('3:00',
                             style: defaultTextTheme.bodyLarge!.copyWith(
                               color: defaultColors.primaryContainer,
                             ))
@@ -180,7 +178,7 @@ class IdentityVerificationWaitingWithTelecomScreen
           ),
           child: CustomElevatedButton(
               height: 48.v,
-              text: 'lbl7'.tr,
+              text: '인증하기',
               buttonStyle: ElevatedButton.styleFrom(
                 backgroundColor: defaultColors.primary,
                 shape: RoundedRectangleBorder(

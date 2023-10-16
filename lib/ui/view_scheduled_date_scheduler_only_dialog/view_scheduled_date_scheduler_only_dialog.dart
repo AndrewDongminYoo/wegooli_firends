@@ -42,7 +42,7 @@ class ViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
                     onTap: Get.back,
                   ),
                   SizedBox(height: 6.v),
-                  Text('lbl10'.tr,
+                  Text('일정 확인',
                       style: defaultTextTheme.titleMedium!.copyWith(
                         fontSize: 18.fSize,
                       )),

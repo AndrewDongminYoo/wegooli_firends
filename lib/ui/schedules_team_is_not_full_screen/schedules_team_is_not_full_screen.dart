@@ -51,7 +51,7 @@ class SchedulesTeamIsNotFullScreen
                         Padding(
                           padding: EdgeInsets.only(left: 16.h),
                           child: Text(
-                            'lbl51'.tr,
+                            '팀원',
                             style: defaultTextTheme.titleMedium!.copyWith(
                               fontSize: 18.fSize,
                             ),
@@ -101,14 +101,14 @@ class SchedulesTeamIsNotFullScreen
                             top: 21.v,
                           ),
                           child: Text(
-                            'lbl26'.tr,
+                            '일정',
                             style: defaultTextTheme.titleMedium!.copyWith(
                               fontSize: 18.fSize,
                             ),
                           ),
                         ),
                         CustomElevatedButton(
-                          text: 'lbl52'.tr,
+                          text: '일정 추가 +',
                           margin: EdgeInsets.only(
                             left: 16.h,
                             top: 12.v,
@@ -150,7 +150,7 @@ class SchedulesTeamIsNotFullScreen
                                       margin: EdgeInsets.only(bottom: 1.v),
                                     ),
                                     Text(
-                                      'lbl_2023_8'.tr,
+                                      '2023년 8월',
                                       style: defaultTextTheme.titleMedium,
                                     ),
                                     CustomImageView(

@@ -42,13 +42,13 @@ class SigninPageScreen extends GetWidget<SigninPageController> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'lbl60'.tr,
+                    '이메일 아이디',
                     style: defaultTextTheme.bodySmall,
                   ),
                   SizedBox(height: 3.v),
                   CustomTextFormField(
                     controller: controller.emailinputoneController,
-                    hintText: 'lbl61'.tr,
+                    hintText: '이메일 입력',
                   ),
                 ],
               ),
@@ -57,13 +57,13 @@ class SigninPageScreen extends GetWidget<SigninPageController> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'lbl62'.tr,
+                    '비밀번호',
                     style: defaultTextTheme.bodySmall,
                   ),
                   SizedBox(height: 3.v),
                   CustomTextFormField(
                     controller: controller.passwordinputController,
-                    hintText: 'lbl63'.tr,
+                    hintText: '비밀번호 입력',
                     textInputAction: TextInputAction.done,
                     suffix: Container(
                       margin: EdgeInsets.only(
@@ -84,7 +84,7 @@ class SigninPageScreen extends GetWidget<SigninPageController> {
               SizedBox(height: 30.v),
               CustomElevatedButton(
                 height: 48.v,
-                text: 'lbl64'.tr,
+                text: '로그인',
                 buttonStyle: ElevatedButton.styleFrom(
                   backgroundColor: defaultColors.primary,
                   shape: RoundedRectangleBorder(
@@ -97,12 +97,12 @@ class SigninPageScreen extends GetWidget<SigninPageController> {
               ),
               SizedBox(height: 60.v),
               Text(
-                'lbl65'.tr,
+                '회원이 아니신가요?',
                 style: defaultTextTheme.bodySmall,
               ),
               SizedBox(height: 10.v),
               Text(
-                'lbl66'.tr,
+                '회원가입',
                 style: defaultTextTheme.bodySmall!.copyWith(
                   color: const Color(0xFFB0B2BC),
                 ),

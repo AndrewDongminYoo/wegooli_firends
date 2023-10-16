@@ -41,12 +41,12 @@ class ListItemWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'msg14'.tr,
+                    '[문의] 우리 애기는 아래발치에서 코올코올. 고양이는 부뜨막에서 가릉가릉,',
                     style: defaultTextTheme.titleSmall,
                   ),
                   SizedBox(height: 3.v),
                   Text(
-                    'lbl_2023_08_23'.tr,
+                    '2023.08.23',
                     style: defaultTextTheme.bodySmall!.copyWith(
                       color: defaultColors.onPrimary.withOpacity(0.4),
                     ),
@@ -55,7 +55,7 @@ class ListItemWidget extends StatelessWidget {
               ),
               CustomOutlinedButton(
                 width: 52.h,
-                text: 'lbl139'.tr,
+                text: '처리중',
                 margin: EdgeInsets.only(
                   left: 42.h,
                   top: 4.v,

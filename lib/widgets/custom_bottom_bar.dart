@@ -23,31 +23,31 @@ class CustomBottomBar extends StatelessWidget {
     BottomMenuModel(
       icon: ImageConstant.imgNavOnPrimary20x20,
       activeIcon: ImageConstant.imgNavOnPrimary20x20,
-      title: 'lbl105'.tr,
+      title: '홈',
       type: BottomBarEnum.tf,
     ),
     BottomMenuModel(
       icon: ImageConstant.imgNavBlueGray200,
       activeIcon: ImageConstant.imgNavBlueGray200,
-      title: 'lbl26'.tr,
+      title: '일정',
       type: BottomBarEnum.tf,
     ),
     BottomMenuModel(
       icon: ImageConstant.imgNavBlueGray20020x20,
       activeIcon: ImageConstant.imgNavBlueGray20020x20,
-      title: 'lbl27'.tr,
+      title: '채팅',
       type: BottomBarEnum.tf,
     ),
     BottomMenuModel(
       icon: ImageConstant.imgNav20x20,
       activeIcon: ImageConstant.imgNav20x20,
-      title: 'lbl28'.tr,
+      title: '스마트 키',
       type: BottomBarEnum.tf,
     ),
     BottomMenuModel(
       icon: ImageConstant.imgNav1,
       activeIcon: ImageConstant.imgNav1,
-      title: 'lbl29'.tr,
+      title: '마이페이지',
       type: BottomBarEnum.tf,
     )
   ];

@@ -55,7 +55,7 @@ class SchedulesPage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'lbl51'.tr,
+                              '팀원',
                               style: defaultTextTheme.titleMedium!.copyWith(
                                 fontSize: 18.fSize,
                               ),
@@ -75,7 +75,7 @@ class SchedulesPage extends StatelessWidget {
                                     ),
                                     SizedBox(height: 4.v),
                                     Text(
-                                      'lbl3'.tr,
+                                      '홍길동',
                                       style: defaultTextTheme.bodySmall,
                                     ),
                                   ],
@@ -95,7 +95,7 @@ class SchedulesPage extends StatelessWidget {
                                       ),
                                       SizedBox(height: 4.v),
                                       Text(
-                                        'lbl11'.tr,
+                                        '김영희',
                                         style: defaultTextTheme.bodySmall,
                                       ),
                                     ],
@@ -115,7 +115,7 @@ class SchedulesPage extends StatelessWidget {
                                       ),
                                       SizedBox(height: 4.v),
                                       Text(
-                                        'lbl12'.tr,
+                                        '김희영',
                                         style: defaultTextTheme.bodySmall,
                                       ),
                                     ],
@@ -142,7 +142,7 @@ class SchedulesPage extends StatelessWidget {
                               ),
                               SizedBox(height: 4.v),
                               Text(
-                                'lbl12'.tr,
+                                '김희영',
                                 style: defaultTextTheme.bodySmall,
                               ),
                             ],
@@ -165,14 +165,14 @@ class SchedulesPage extends StatelessWidget {
                       top: 21.v,
                     ),
                     child: Text(
-                      'lbl26'.tr,
+                      '일정',
                       style: defaultTextTheme.titleMedium!.copyWith(
                         fontSize: 18.fSize,
                       ),
                     ),
                   ),
                   CustomElevatedButton(
-                    text: 'lbl52'.tr,
+                    text: '일정 추가 +',
                     margin: EdgeInsets.only(
                       left: 16.h,
                       top: 12.v,
@@ -212,7 +212,7 @@ class SchedulesPage extends StatelessWidget {
                                 margin: EdgeInsets.only(bottom: 1.v),
                               ),
                               Text(
-                                'lbl_2023_8'.tr,
+                                '2023년 8월',
                                 style: defaultTextTheme.titleMedium,
                               ),
                               CustomImageView(

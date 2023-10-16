@@ -31,7 +31,7 @@ class UnsubscribeScreen extends GetWidget<UnsubscribeController> {
               onTap: Get.back,
             ),
             centerTitle: true,
-            title: AppbarTitle(text: 'lbl34'.tr)),
+            title: AppbarTitle(text: '구독 해지 예약')),
         body: SizedBox(
           width: mediaQueryData.size.width,
           child: SingleChildScrollView(
@@ -47,7 +47,7 @@ class UnsubscribeScreen extends GetWidget<UnsubscribeController> {
                   SizedBox(height: 20.v),
                   SizedBox(
                       width: 179.h,
-                      child: Text('msg17'.tr,
+                      child: Text('(닉네임)님 정말로 구독을\n해지하시겠습니까?',
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.center,
@@ -58,7 +58,7 @@ class UnsubscribeScreen extends GetWidget<UnsubscribeController> {
                               )
                               .copyWith(height: 1.44))),
                   SizedBox(height: 23.v),
-                  Text('msg_2023_8_4'.tr,
+                  Text('2023년 8월 4일 이후에 구독이 해지됩니다.',
                       style: defaultTextTheme.bodyLarge!.copyWith(
                         color: Colors.black,
                       )),
@@ -68,14 +68,14 @@ class UnsubscribeScreen extends GetWidget<UnsubscribeController> {
                       children: [
                         CustomElevatedButton(
                             width: 104.h,
-                            text: 'lbl32'.tr,
+                            text: '취소',
                             buttonStyle: ElevatedButton.styleFrom(
                               backgroundColor: const Color(0xFFB9BCC3),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(26.h),
                               ),
                             )),
-                        CustomElevatedButton(width: 216.h, text: 'lbl143'.tr)
+                        CustomElevatedButton(width: 216.h, text: '구독 해지하기')
                       ])
                 ],
               ),

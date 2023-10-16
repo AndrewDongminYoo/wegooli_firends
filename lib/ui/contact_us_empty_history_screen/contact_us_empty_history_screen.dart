@@ -32,7 +32,7 @@ class ContactUsEmptyHistoryScreen
               onTap: Get.back,
             ),
             centerTitle: true,
-            title: AppbarTitle(text: 'lbl136'.tr)),
+            title: AppbarTitle(text: '문의하기')),
         body: SizedBox(
             width: double.maxFinite,
             child: Column(children: [
@@ -48,7 +48,7 @@ class ContactUsEmptyHistoryScreen
                                 height: 177.v,
                                 width: 120.h),
                             SizedBox(height: 21.v),
-                            Text('lbl137'.tr,
+                            Text('문의내역이 없습니다.',
                                 style: defaultTextTheme.titleMedium!.copyWith(
                                   color: Colors.black,
                                   fontSize: 18.fSize,
@@ -72,7 +72,7 @@ class ContactUsEmptyHistoryScreen
             ],
           ),
           child: CustomElevatedButton(
-              text: 'lbl138'.tr,
+              text: '버튼명',
               buttonStyle: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFFF3F3F6),
                 shape: RoundedRectangleBorder(

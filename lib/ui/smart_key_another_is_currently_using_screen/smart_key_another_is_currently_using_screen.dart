@@ -63,12 +63,12 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'lbl112'.tr,
+                                    '모닝어반',
                                     style: defaultTextTheme.titleMedium,
                                   ),
                                   SizedBox(height: 4.v),
                                   Text(
-                                    'lbl_12_3456'.tr,
+                                    '12가 3456',
                                     style: defaultTextTheme.bodySmall!.copyWith(
                                       color: defaultColors.onPrimary
                                           .withOpacity(0.4),
@@ -90,7 +90,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                           top: 7.v,
                                         ),
                                         child: Text(
-                                          'lbl_203'.tr,
+                                          '휘발유 20%',
                                           style: defaultTextTheme.bodySmall,
                                         ),
                                       ),
@@ -116,7 +116,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            'lbl113'.tr,
+                            '상태',
                             style: defaultTextTheme.bodySmall!.copyWith(
                               color: defaultColors.onPrimary.withOpacity(0.4),
                             ),
@@ -124,7 +124,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                           Padding(
                             padding: EdgeInsets.only(left: 5.h),
                             child: Text(
-                              'lbl114'.tr,
+                              '|',
                               style: defaultTextTheme.bodySmall!.copyWith(
                                 color: defaultColors.onPrimary.withOpacity(0.4),
                               ),
@@ -148,7 +148,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                           Padding(
                             padding: EdgeInsets.only(left: 2.h),
                             child: Text(
-                              'lbl128'.tr,
+                              '홍길동님이 사용중입니다.',
                               style: defaultTextTheme.bodySmall,
                             ),
                           ),
@@ -199,13 +199,13 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'lbl_12_00'.tr,
+                              '12:00',
                               style: defaultTextTheme.bodySmall!.copyWith(
                                 color: defaultColors.onPrimary.withOpacity(0.4),
                               ),
                             ),
                             Text(
-                              'lbl_13_00'.tr,
+                              '13:00',
                               style: defaultTextTheme.bodySmall!.copyWith(
                                 color: defaultColors.onPrimary.withOpacity(0.4),
                               ),
@@ -241,7 +241,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                     Align(
                                       alignment: Alignment.centerLeft,
                                       child: Text(
-                                        'lbl116'.tr,
+                                        '스마트키',
                                         style: defaultTextTheme.titleMedium!
                                             .copyWith(
                                           color: Colors.black,
@@ -325,7 +325,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                                         ),
                                                         SizedBox(height: 5.v),
                                                         Text(
-                                                          'lbl117'.tr,
+                                                          '문열기',
                                                           style:
                                                               defaultTextTheme
                                                                   .titleMedium,
@@ -405,7 +405,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                                         ),
                                                         SizedBox(height: 5.v),
                                                         Text(
-                                                          'lbl118'.tr,
+                                                          '문잠금',
                                                           style:
                                                               defaultTextTheme
                                                                   .titleMedium,
@@ -496,7 +496,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                                         ),
                                                         SizedBox(height: 14.v),
                                                         Text(
-                                                          'lbl119'.tr,
+                                                          '비상등',
                                                           style:
                                                               defaultTextTheme
                                                                   .titleMedium,
@@ -554,7 +554,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                                   ),
                                                   SizedBox(height: 5.v),
                                                   Text(
-                                                    'lbl120'.tr,
+                                                    '경적',
                                                     style: theme
                                                         .textTheme.titleMedium,
                                                   ),
@@ -586,7 +586,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                     CustomElevatedButton(
                                       height: 44.v,
                                       width: 189.h,
-                                      text: 'lbl129'.tr,
+                                      text: '홍길동님이 사용 중 입니다.',
                                       buttonStyle: ElevatedButton.styleFrom(
                                         backgroundColor: defaultColors.onPrimary
                                             .withOpacity(0.4),
@@ -637,7 +637,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                             ),
                                             SizedBox(height: 1.v),
                                             Text(
-                                              'lbl121'.tr,
+                                              '사고 접수',
                                               style: defaultTextTheme.bodySmall!
                                                   .copyWith(
                                                 color: Colors.black,

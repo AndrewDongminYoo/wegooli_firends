@@ -31,7 +31,7 @@ class CardListScreen extends GetWidget<CardListController> {
               onTap: Get.back,
             ),
             centerTitle: true,
-            title: AppbarTitle(text: 'lbl124'.tr)),
+            title: AppbarTitle(text: '카드 등록')),
         body: SizedBox(
           width: mediaQueryData.size.width,
           child: SingleChildScrollView(
@@ -46,8 +46,8 @@ class CardListScreen extends GetWidget<CardListController> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Obx(() => CustomRadioButton(
-                                text: 'lbl_7210'.tr,
-                                value: 'lbl_7210'.tr,
+                                text: '신한 7210 / 개인',
+                                value: '신한 7210 / 개인',
                                 groupValue: controller.radioGroup.value,
                                 onChange: (value) {
                                   controller.radioGroup.value = value;
@@ -63,8 +63,8 @@ class CardListScreen extends GetWidget<CardListController> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Obx(() => CustomRadioButton(
-                                text: 'lbl_1210'.tr,
-                                value: 'lbl_1210'.tr,
+                                text: '신한 1210 / 개인',
+                                value: '신한 1210 / 개인',
                                 groupValue: controller.radioGroup1.value,
                                 onChange: (value) {
                                   controller.radioGroup1.value = value;
@@ -75,7 +75,7 @@ class CardListScreen extends GetWidget<CardListController> {
                                 width: 18.adaptSize)
                           ])),
                   SizedBox(height: 31.v),
-                  CustomElevatedButton(text: 'lbl125'.tr)
+                  CustomElevatedButton(text: '카드 추가')
                 ],
               ),
             ),

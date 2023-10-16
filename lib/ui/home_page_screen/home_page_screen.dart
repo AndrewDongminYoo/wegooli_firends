@@ -70,7 +70,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'lbl98'.tr,
+                            '신규 이벤트',
                             style: defaultTextTheme.bodySmall!.copyWith(
                               color: Colors.black,
                             ),
@@ -79,7 +79,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                           SizedBox(
                             width: 140.h,
                             child: Text(
-                              'msg10'.tr,
+                              '위굴리 프렌즈를 이용하면\n할인 혜택이!',
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
                               style: defaultTextTheme.titleSmall!.copyWith(
@@ -112,7 +112,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                                 borderRadius: BorderRadiusStyle.circleBorder7,
                               ),
                               child: Text(
-                                'lbl_1_32'.tr,
+                                '1/3',
                                 style: defaultTextTheme.bodySmall!.copyWith(
                                   color: defaultColors.onPrimaryContainer,
                                   fontSize: 10.fSize,
@@ -156,7 +156,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                               top: 13.v,
                             ),
                             child: Text(
-                              'lbl99'.tr,
+                              '리더 신청',
                               style: defaultTextTheme.titleMedium!.copyWith(
                                 fontFamily: 'NanumSquareRound',
                                 fontWeight: FontWeight.w800,
@@ -169,7 +169,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                               top: 4.v,
                             ),
                             child: Text(
-                              'lbl100'.tr,
+                              '프렌즈 리더되기',
                               style: defaultTextTheme.bodySmall!.copyWith(
                                 fontFamily: 'NanumSquareRound',
                                 color: const Color(0xFFB0B2BC),
@@ -206,7 +206,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                           Padding(
                             padding: EdgeInsets.only(left: 12.h),
                             child: Text(
-                              'lbl101'.tr,
+                              '같이 쓰기',
                               style: defaultTextTheme.titleMedium!.copyWith(
                                 fontFamily: 'NanumSquareRound',
                                 fontWeight: FontWeight.w800,
@@ -219,7 +219,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                               top: 4.v,
                             ),
                             child: Text(
-                              'lbl102'.tr,
+                              '프렌즈 같이쓰기',
                               style: defaultTextTheme.bodySmall!.copyWith(
                                 fontFamily: 'NanumSquareRound',
                                 color: const Color(0xFFB0B2BC),
@@ -265,7 +265,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                         children: [
                           Align(
                             child: Text(
-                              'lbl103'.tr,
+                              '혼자 쓰기',
                               style: defaultTextTheme.titleMedium!.copyWith(
                                 fontFamily: 'NanumSquareRound',
                                 fontWeight: FontWeight.w800,
@@ -274,7 +274,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                           ),
                           SizedBox(height: 4.v),
                           Text(
-                            'lbl104'.tr,
+                            '장기렌트 문의',
                             style: defaultTextTheme.bodySmall!.copyWith(
                               fontFamily: 'NanumSquareRound',
                               color: const Color(0xFFB0B2BC),

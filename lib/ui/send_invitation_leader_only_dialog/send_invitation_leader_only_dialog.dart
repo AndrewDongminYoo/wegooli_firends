@@ -44,7 +44,7 @@ class SendInvitationLeaderOnlyDialog extends StatelessWidget {
                   ),
                   Padding(
                       padding: EdgeInsets.only(left: 20.h, top: 6.v),
-                      child: Text('lbl8'.tr,
+                      child: Text('초대 코드',
                           style: defaultTextTheme.titleMedium!.copyWith(
                             fontSize: 18.fSize,
                           ))),
@@ -52,7 +52,7 @@ class SendInvitationLeaderOnlyDialog extends StatelessWidget {
                       controller: controller.invitationcodeController,
                       margin:
                           EdgeInsets.only(left: 20.h, top: 22.v, right: 20.h),
-                      hintText: 'msg_qwer_tyui_asdf_zxcv'.tr,
+                      hintText: 'qwer-tyui-asdf-zxcv',
                       hintStyle: defaultTextTheme.bodyLarge!.copyWith(
                         color: const Color(0xFF8E9199),
                       ),
@@ -67,7 +67,7 @@ class SendInvitationLeaderOnlyDialog extends StatelessWidget {
                           EdgeInsets.only(left: 12.h, top: 14.v, bottom: 14.v)),
                   SizedBox(height: 20.v),
                   CustomElevatedButton(
-                      text: 'lbl9'.tr,
+                      text: '복사하기',
                       buttonStyle: ElevatedButton.styleFrom(
                         backgroundColor: defaultColors.primary,
                         shape: RoundedRectangleBorder(

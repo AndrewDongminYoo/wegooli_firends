@@ -35,7 +35,7 @@ class IdentityVerificationWaitingScreen
                   onTap: Get.back,
                 ),
                 centerTitle: true,
-                title: AppbarSubtitle(text: 'lbl'.tr)),
+                title: AppbarSubtitle(text: '본인 인증')),
             body: Container(
                 width: double.maxFinite,
                 padding: EdgeInsets.symmetric(horizontal: 16.h, vertical: 10.v),
@@ -43,11 +43,11 @@ class IdentityVerificationWaitingScreen
                   Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('lbl2'.tr, style: defaultTextTheme.bodySmall),
+                        Text('이름', style: defaultTextTheme.bodySmall),
                         SizedBox(height: 3.v),
                         CustomTextFormField(
                             controller: controller.nameoneController,
-                            hintText: 'lbl3'.tr)
+                            hintText: '홍길동')
                       ]),
                   SizedBox(height: 30.v),
                   SizedBox(
@@ -60,15 +60,15 @@ class IdentityVerificationWaitingScreen
                                 mainAxisSize: MainAxisSize.min,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text('lbl_13'.tr,
+                                  Text('주민등록번호 13자리',
                                       style: defaultTextTheme.bodySmall),
                                   SizedBox(height: 3.v),
                                   CustomTextFormField(
                                       width: 156.h,
                                       controller: controller.zipcodeController,
-                                      hintText: 'lbl_980709'.tr),
+                                      hintText: '940812'),
                                   SizedBox(height: 3.v),
-                                  Text('msg_26'.tr,
+                                  Text('만 26세 미만은 가입이 제한됩니다.',
                                       style:
                                           defaultTextTheme.bodySmall!.copyWith(
                                         color: defaultColors.primaryContainer,
@@ -101,7 +101,7 @@ class IdentityVerificationWaitingScreen
                                                   color: Color(0xFFB0B2BC)))),
                                       Padding(
                                           padding: EdgeInsets.only(left: 10.h),
-                                          child: Text('lbl_22'.tr,
+                                          child: Text('2',
                                               style:
                                                   defaultTextTheme.bodyLarge)),
                                       CustomImageView(
@@ -156,17 +156,17 @@ class IdentityVerificationWaitingScreen
                   Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('lbl4'.tr, style: defaultTextTheme.bodySmall),
+                        Text('휴대폰 정보', style: defaultTextTheme.bodySmall),
                         SizedBox(height: 3.v),
                         CustomTextFormField(
                             controller: controller.phonenumberoneController,
-                            hintText: 'lbl_010_1234_5678'.tr,
+                            hintText: '010-1234-5678',
                             textInputAction: TextInputAction.done)
                       ]),
                   SizedBox(height: 20.v),
                   CustomElevatedButton(
                       height: 42.v,
-                      text: 'lbl5'.tr,
+                      text: '인증번호 발송',
                       buttonStyle: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xFF464A70),
                         shape: RoundedRectangleBorder(
@@ -191,11 +191,11 @@ class IdentityVerificationWaitingScreen
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text('lbl6'.tr,
+                            Text('인증번호 입력',
                                 style: defaultTextTheme.bodyLarge!.copyWith(
                                   color: const Color(0xFFB0B2BC),
                                 )),
-                            Text('lbl_3_00'.tr,
+                            Text('3:00',
                                 style: defaultTextTheme.bodyLarge!.copyWith(
                                   color: defaultColors.primaryContainer,
                                 ))
@@ -204,7 +204,7 @@ class IdentityVerificationWaitingScreen
                 ])),
             bottomNavigationBar: CustomElevatedButton(
                 height: 48.v,
-                text: 'lbl7'.tr,
+                text: '인증하기',
                 margin: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 16.v),
                 buttonStyle: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFFF3F3F6),

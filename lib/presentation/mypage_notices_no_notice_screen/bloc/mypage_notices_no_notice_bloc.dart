@@ -13,7 +13,7 @@ class MyPageNoticesNoNoticeBloc
     on<MyPageNoticesNoNoticeInitialEvent>(_onInitialize);
   }
 
-  void _onInitialize(
+  Future<void> _onInitialize(
     MyPageNoticesNoNoticeInitialEvent event,
     Emitter<MyPageNoticesNoNoticeState> emit,
   ) async {}

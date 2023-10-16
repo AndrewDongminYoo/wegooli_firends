@@ -15,17 +15,17 @@ class SignupPageLicenseRegisterBloc extends Bloc<SignupPageLicenseRegisterEvent,
     on<ChangeDropDown1Event>(_changeDropDown1);
   }
 
-  void _changeDropDown(
+  Future<void> _changeDropDown(
     ChangeDropDownEvent event,
     Emitter<SignupPageLicenseRegisterState> emit,
-  ) {
+  ) async {
     emit(state.copyWith(selectedDropDownValue: event.value));
   }
 
-  void _changeDropDown1(
+  Future<void> _changeDropDown1(
     ChangeDropDown1Event event,
     Emitter<SignupPageLicenseRegisterState> emit,
-  ) {
+  ) async {
     emit(state.copyWith(selectedDropDownValue1: event.value));
   }
 
@@ -45,7 +45,7 @@ class SignupPageLicenseRegisterBloc extends Bloc<SignupPageLicenseRegisterEvent,
     ];
   }
 
-  void _onInitialize(
+  Future<void> _onInitialize(
     SignupPageLicenseRegisterInitialEvent event,
     Emitter<SignupPageLicenseRegisterState> emit,
   ) async {

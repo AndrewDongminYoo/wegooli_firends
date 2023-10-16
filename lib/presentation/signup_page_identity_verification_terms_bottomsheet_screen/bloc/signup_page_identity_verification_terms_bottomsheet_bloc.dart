@@ -16,7 +16,7 @@ class SignupPageIdentityVerificationTermsBottomsheetBloc extends Bloc<
         _onInitialize);
   }
 
-  void _onInitialize(
+  Future<void> _onInitialize(
     SignupPageIdentityVerificationTermsBottomsheetInitialEvent event,
     Emitter<SignupPageIdentityVerificationTermsBottomsheetState> emit,
   ) async {

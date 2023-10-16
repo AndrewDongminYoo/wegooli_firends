@@ -12,14 +12,14 @@ class K56Bloc extends Bloc<K56Event, K56State> {
     on<ChangeCheckBoxEvent>(_changeCheckBox);
   }
 
-  void _changeCheckBox(
+  Future<void> _changeCheckBox(
     ChangeCheckBoxEvent event,
     Emitter<K56State> emit,
-  ) {
+  ) async {
     emit(state.copyWith(tf: event.value));
   }
 
-  void _onInitialize(
+  Future<void> _onInitialize(
     K56InitialEvent event,
     Emitter<K56State> emit,
   ) async {

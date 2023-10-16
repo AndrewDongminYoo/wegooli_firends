@@ -13,7 +13,7 @@ class MyPageCardRegisterBloc
     on<MyPageCardRegisterInitialEvent>(_onInitialize);
   }
 
-  void _onInitialize(
+  Future<void> _onInitialize(
     MyPageCardRegisterInitialEvent event,
     Emitter<MyPageCardRegisterState> emit,
   ) async {

@@ -14,28 +14,28 @@ class K76Bloc extends Bloc<K76Event, K76State> {
     on<ChangeSwitch2Event>(_changeSwitch2);
   }
 
-  void _changeSwitch(
+  Future<void> _changeSwitch(
     ChangeSwitchEvent event,
     Emitter<K76State> emit,
-  ) {
+  ) async {
     emit(state.copyWith(isSelectedSwitch: event.value));
   }
 
-  void _changeSwitch1(
+  Future<void> _changeSwitch1(
     ChangeSwitch1Event event,
     Emitter<K76State> emit,
-  ) {
+  ) async {
     emit(state.copyWith(isSelectedSwitch1: event.value));
   }
 
-  void _changeSwitch2(
+  Future<void> _changeSwitch2(
     ChangeSwitch2Event event,
     Emitter<K76State> emit,
-  ) {
+  ) async {
     emit(state.copyWith(isSelectedSwitch2: event.value));
   }
 
-  void _onInitialize(
+  Future<void> _onInitialize(
     K76InitialEvent event,
     Emitter<K76State> emit,
   ) async {

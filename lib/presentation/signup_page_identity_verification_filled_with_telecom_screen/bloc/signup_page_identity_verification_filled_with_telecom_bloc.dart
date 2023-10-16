@@ -16,7 +16,7 @@ class SignupPageIdentityVerificationFilledWithTelecomBloc extends Bloc<
         _onInitialize);
   }
 
-  void _onInitialize(
+  Future<void> _onInitialize(
     SignupPageIdentityVerificationFilledWithTelecomInitialEvent event,
     Emitter<SignupPageIdentityVerificationFilledWithTelecomState> emit,
   ) async {

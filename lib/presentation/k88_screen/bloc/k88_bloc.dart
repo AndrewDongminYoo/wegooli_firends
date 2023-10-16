@@ -11,7 +11,7 @@ class K88Bloc extends Bloc<K88Event, K88State> {
     on<K88InitialEvent>(_onInitialize);
   }
 
-  void _onInitialize(
+  Future<void> _onInitialize(
     K88InitialEvent event,
     Emitter<K88State> emit,
   ) async {}

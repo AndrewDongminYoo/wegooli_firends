@@ -15,7 +15,7 @@ class SignupPageIdentityVerificationFilledBloc extends Bloc<
     on<SignupPageIdentityVerificationFilledInitialEvent>(_onInitialize);
   }
 
-  void _onInitialize(
+  Future<void> _onInitialize(
     SignupPageIdentityVerificationFilledInitialEvent event,
     Emitter<SignupPageIdentityVerificationFilledState> emit,
   ) async {

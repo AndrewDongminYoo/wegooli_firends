@@ -11,7 +11,7 @@ class K95Bloc extends Bloc<K95Event, K95State> {
     on<K95InitialEvent>(_onInitialize);
   }
 
-  void _onInitialize(
+  Future<void> _onInitialize(
     K95InitialEvent event,
     Emitter<K95State> emit,
   ) async {

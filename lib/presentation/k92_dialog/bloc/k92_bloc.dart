@@ -12,7 +12,7 @@ class K92Bloc extends Bloc<K92Event, K92State> {
     on<ChangeDropDownEvent>(_changeDropDown);
   }
 
-  void _onInitialize(
+  Future<void> _onInitialize(
     K92InitialEvent event,
     Emitter<K92State> emit,
   ) async {
@@ -21,10 +21,10 @@ class K92Bloc extends Bloc<K92Event, K92State> {
             ?.copyWith(dropdownItemList: fillDropdownItemList())));
   }
 
-  void _changeDropDown(
+  Future<void> _changeDropDown(
     ChangeDropDownEvent event,
     Emitter<K92State> emit,
-  ) {
+  ) async {
     emit(state.copyWith(selectedDropDownValue: event.value));
   }
 

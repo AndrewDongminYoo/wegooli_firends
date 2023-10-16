@@ -13,7 +13,7 @@ class SchedulesContainerBloc
     on<SchedulesContainerInitialEvent>(_onInitialize);
   }
 
-  void _onInitialize(
+  Future<void> _onInitialize(
     SchedulesContainerInitialEvent event,
     Emitter<SchedulesContainerState> emit,
   ) async {}

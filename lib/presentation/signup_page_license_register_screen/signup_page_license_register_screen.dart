@@ -65,7 +65,7 @@ class SignupPageLicenseRegisterScreen extends StatelessWidget {
                                                   clipBehavior: Clip.antiAlias,
                                                   elevation: 0,
                                                   margin:
-                                                      const EdgeInsets.all(0),
+                                                      EdgeInsets.zero,
                                                   color: theme.colorScheme
                                                       .onPrimaryContainer,
                                                   shape: RoundedRectangleBorder(

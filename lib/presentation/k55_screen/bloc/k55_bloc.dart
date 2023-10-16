@@ -12,10 +12,10 @@ class K55Bloc extends Bloc<K55Event, K55State> {
     on<ChangeDropDownEvent>(_changeDropDown);
   }
 
-  void _changeDropDown(
+  Future<void> _changeDropDown(
     ChangeDropDownEvent event,
     Emitter<K55State> emit,
-  ) {
+  ) async {
     emit(state.copyWith(selectedDropDownValue: event.value));
   }
 
@@ -27,7 +27,7 @@ class K55Bloc extends Bloc<K55Event, K55State> {
     ];
   }
 
-  void _onInitialize(
+  Future<void> _onInitialize(
     K55InitialEvent event,
     Emitter<K55State> emit,
   ) async {

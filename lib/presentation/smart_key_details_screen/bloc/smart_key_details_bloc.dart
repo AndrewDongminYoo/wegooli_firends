@@ -12,7 +12,7 @@ class SmartKeyDetailsBloc
     on<SmartKeyDetailsInitialEvent>(_onInitialize);
   }
 
-  void _onInitialize(
+  Future<void> _onInitialize(
     SmartKeyDetailsInitialEvent event,
     Emitter<SmartKeyDetailsState> emit,
   ) async {}

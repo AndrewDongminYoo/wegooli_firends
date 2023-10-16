@@ -14,7 +14,7 @@ class MyPageNoticesOneBloc
     on<MyPageNoticesOneInitialEvent>(_onInitialize);
   }
 
-  void _onInitialize(
+  Future<void> _onInitialize(
     MyPageNoticesOneInitialEvent event,
     Emitter<MyPageNoticesOneState> emit,
   ) async {

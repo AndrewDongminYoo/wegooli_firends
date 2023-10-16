@@ -11,7 +11,7 @@ class K65Bloc extends Bloc<K65Event, K65State> {
     on<K65InitialEvent>(_onInitialize);
   }
 
-  void _onInitialize(
+  Future<void> _onInitialize(
     K65InitialEvent event,
     Emitter<K65State> emit,
   ) async {

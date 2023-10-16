@@ -15,7 +15,7 @@ class SchedulesSendInvitationLeaderOnlyBloc extends Bloc<
     on<SchedulesSendInvitationLeaderOnlyInitialEvent>(_onInitialize);
   }
 
-  void _onInitialize(
+  Future<void> _onInitialize(
     SchedulesSendInvitationLeaderOnlyInitialEvent event,
     Emitter<SchedulesSendInvitationLeaderOnlyState> emit,
   ) async {

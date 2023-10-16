@@ -15,10 +15,10 @@ class MyPageContactUs11ContactUsBloc extends Bloc<
     on<ChangeDropDownEvent>(_changeDropDown);
   }
 
-  void _changeDropDown(
+  Future<void> _changeDropDown(
     ChangeDropDownEvent event,
     Emitter<MyPageContactUs11ContactUsState> emit,
-  ) {
+  ) async {
     emit(state.copyWith(selectedDropDownValue: event.value));
   }
 
@@ -34,7 +34,7 @@ class MyPageContactUs11ContactUsBloc extends Bloc<
     return List.generate(5, (index) => ListaddphotoaltItemModel());
   }
 
-  void _onInitialize(
+  Future<void> _onInitialize(
     MyPageContactUs11ContactUsInitialEvent event,
     Emitter<MyPageContactUs11ContactUsState> emit,
   ) async {

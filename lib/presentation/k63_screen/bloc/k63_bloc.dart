@@ -11,7 +11,7 @@ class K63Bloc extends Bloc<K63Event, K63State> {
     on<K63InitialEvent>(_onInitialize);
   }
 
-  void _onInitialize(
+  Future<void> _onInitialize(
     K63InitialEvent event,
     Emitter<K63State> emit,
   ) async {

@@ -11,7 +11,7 @@ class One5Bloc extends Bloc<One5Event, One5State> {
     on<One5InitialEvent>(_onInitialize);
   }
 
-  void _onInitialize(
+  Future<void> _onInitialize(
     One5InitialEvent event,
     Emitter<One5State> emit,
   ) async {}

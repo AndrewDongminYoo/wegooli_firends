@@ -11,7 +11,7 @@ class One6Bloc extends Bloc<One6Event, One6State> {
     on<One6InitialEvent>(_onInitialize);
   }
 
-  void _onInitialize(
+  Future<void> _onInitialize(
     One6InitialEvent event,
     Emitter<One6State> emit,
   ) async {}

@@ -16,7 +16,7 @@ class MyPageContactUsInquiryHistoryExpandedTabContainerBloc extends Bloc<
         _onInitialize);
   }
 
-  void _onInitialize(
+  Future<void> _onInitialize(
     MyPageContactUsInquiryHistoryExpandedTabContainerInitialEvent event,
     Emitter<MyPageContactUsInquiryHistoryExpandedTabContainerState> emit,
   ) async {}

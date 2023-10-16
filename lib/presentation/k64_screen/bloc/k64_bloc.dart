@@ -14,24 +14,24 @@ class K64Bloc extends Bloc<K64Event, K64State> {
     on<ChangeDropDown2Event>(_changeDropDown2);
   }
 
-  void _changeDropDown(
+  Future<void> _changeDropDown(
     ChangeDropDownEvent event,
     Emitter<K64State> emit,
-  ) {
+  ) async {
     emit(state.copyWith(selectedDropDownValue: event.value));
   }
 
-  void _changeDropDown1(
+  Future<void> _changeDropDown1(
     ChangeDropDown1Event event,
     Emitter<K64State> emit,
-  ) {
+  ) async {
     emit(state.copyWith(selectedDropDownValue1: event.value));
   }
 
-  void _changeDropDown2(
+  Future<void> _changeDropDown2(
     ChangeDropDown2Event event,
     Emitter<K64State> emit,
-  ) {
+  ) async {
     emit(state.copyWith(selectedDropDownValue2: event.value));
   }
 
@@ -59,7 +59,7 @@ class K64Bloc extends Bloc<K64Event, K64State> {
     ];
   }
 
-  void _onInitialize(
+  Future<void> _onInitialize(
     K64InitialEvent event,
     Emitter<K64State> emit,
   ) async {

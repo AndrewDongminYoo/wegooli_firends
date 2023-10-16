@@ -17,7 +17,7 @@ class SchedulesViewScheduledDateSchedulerOnlyExpandedBloc extends Bloc<
     on<ChangeDropDownEvent>(_changeDropDown);
   }
 
-  void _onInitialize(
+  Future<void> _onInitialize(
     SchedulesViewScheduledDateSchedulerOnlyExpandedInitialEvent event,
     Emitter<SchedulesViewScheduledDateSchedulerOnlyExpandedState> emit,
   ) async {
@@ -27,10 +27,10 @@ class SchedulesViewScheduledDateSchedulerOnlyExpandedBloc extends Bloc<
             ?.copyWith(dropdownItemList: fillDropdownItemList())));
   }
 
-  void _changeDropDown(
+  Future<void> _changeDropDown(
     ChangeDropDownEvent event,
     Emitter<SchedulesViewScheduledDateSchedulerOnlyExpandedState> emit,
-  ) {
+  ) async {
     emit(state.copyWith(selectedDropDownValue: event.value));
   }
 

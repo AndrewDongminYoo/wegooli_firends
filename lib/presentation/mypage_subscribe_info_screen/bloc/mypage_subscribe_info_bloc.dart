@@ -13,7 +13,7 @@ class MyPageSubscribeInfoBloc
     on<MyPageSubscribeInfoInitialEvent>(_onInitialize);
   }
 
-  void _onInitialize(
+  Future<void> _onInitialize(
     MyPageSubscribeInfoInitialEvent event,
     Emitter<MyPageSubscribeInfoState> emit,
   ) async {}

@@ -35,7 +35,7 @@ class SchedulesContainerScreen extends StatelessWidget {
                   onGenerateRoute: (routeSetting) => PageRouteBuilder(
                       pageBuilder: (ctx, ani, ani1) =>
                           getCurrentPage(context, routeSetting.name!),
-                      transitionDuration: const Duration())),
+                      transitionDuration: Duration.zero)),
               bottomNavigationBar:
                   CustomBottomBar(onChanged: (BottomBarEnum type) {})));
     });

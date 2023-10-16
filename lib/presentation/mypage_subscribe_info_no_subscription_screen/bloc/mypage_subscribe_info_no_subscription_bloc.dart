@@ -15,7 +15,7 @@ class MyPageSubscribeInfoNoSubscriptionBloc extends Bloc<
     on<MyPageSubscribeInfoNoSubscriptionInitialEvent>(_onInitialize);
   }
 
-  void _onInitialize(
+  Future<void> _onInitialize(
     MyPageSubscribeInfoNoSubscriptionInitialEvent event,
     Emitter<MyPageSubscribeInfoNoSubscriptionState> emit,
   ) async {}

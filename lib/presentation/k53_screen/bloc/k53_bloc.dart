@@ -11,7 +11,7 @@ class K53Bloc extends Bloc<K53Event, K53State> {
     on<K53InitialEvent>(_onInitialize);
   }
 
-  void _onInitialize(
+  Future<void> _onInitialize(
     K53InitialEvent event,
     Emitter<K53State> emit,
   ) async {

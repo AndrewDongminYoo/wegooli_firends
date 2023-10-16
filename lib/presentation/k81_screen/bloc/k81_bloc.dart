@@ -11,7 +11,7 @@ class K81Bloc extends Bloc<K81Event, K81State> {
     on<K81InitialEvent>(_onInitialize);
   }
 
-  void _onInitialize(
+  Future<void> _onInitialize(
     K81InitialEvent event,
     Emitter<K81State> emit,
   ) async {

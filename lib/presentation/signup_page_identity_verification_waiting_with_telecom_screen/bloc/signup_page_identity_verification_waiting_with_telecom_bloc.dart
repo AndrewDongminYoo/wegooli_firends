@@ -17,10 +17,10 @@ class SignupPageIdentityVerificationWaitingWithTelecomBloc extends Bloc<
     on<ChangeDropDownEvent>(_changeDropDown);
   }
 
-  void _changeDropDown(
+  Future<void> _changeDropDown(
     ChangeDropDownEvent event,
     Emitter<SignupPageIdentityVerificationWaitingWithTelecomState> emit,
-  ) {
+  ) async {
     emit(state.copyWith(selectedDropDownValue: event.value));
   }
 
@@ -32,7 +32,7 @@ class SignupPageIdentityVerificationWaitingWithTelecomBloc extends Bloc<
     ];
   }
 
-  void _onInitialize(
+  Future<void> _onInitialize(
     SignupPageIdentityVerificationWaitingWithTelecomInitialEvent event,
     Emitter<SignupPageIdentityVerificationWaitingWithTelecomState> emit,
   ) async {

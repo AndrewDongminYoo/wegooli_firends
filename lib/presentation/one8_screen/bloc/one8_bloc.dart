@@ -11,7 +11,7 @@ class One8Bloc extends Bloc<One8Event, One8State> {
     on<One8InitialEvent>(_onInitialize);
   }
 
-  void _onInitialize(
+  Future<void> _onInitialize(
     One8InitialEvent event,
     Emitter<One8State> emit,
   ) async {

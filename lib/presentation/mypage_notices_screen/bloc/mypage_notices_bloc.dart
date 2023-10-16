@@ -12,7 +12,7 @@ class MyPageNoticesBloc extends Bloc<MyPageNoticesEvent, MyPageNoticesState> {
     on<MyPageNoticesInitialEvent>(_onInitialize);
   }
 
-  void _onInitialize(
+  Future<void> _onInitialize(
     MyPageNoticesInitialEvent event,
     Emitter<MyPageNoticesState> emit,
   ) async {

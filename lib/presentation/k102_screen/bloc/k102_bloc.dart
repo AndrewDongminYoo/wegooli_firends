@@ -13,21 +13,21 @@ class K102Bloc extends Bloc<K102Event, K102State> {
     on<ChangeRadioButton1Event>(_changeRadioButton1);
   }
 
-  void _changeRadioButton(
+  Future<void> _changeRadioButton(
     ChangeRadioButtonEvent event,
     Emitter<K102State> emit,
-  ) {
+  ) async {
     emit(state.copyWith(radioGroup: event.value));
   }
 
-  void _changeRadioButton1(
+  Future<void> _changeRadioButton1(
     ChangeRadioButton1Event event,
     Emitter<K102State> emit,
-  ) {
+  ) async {
     emit(state.copyWith(radioGroup1: event.value));
   }
 
-  void _onInitialize(
+  Future<void> _onInitialize(
     K102InitialEvent event,
     Emitter<K102State> emit,
   ) async {

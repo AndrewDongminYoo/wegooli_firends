@@ -15,7 +15,7 @@ class SchedulesViewScheduledDateSchedulerOnlyBloc extends Bloc<
     on<SchedulesViewScheduledDateSchedulerOnlyInitialEvent>(_onInitialize);
   }
 
-  void _onInitialize(
+  Future<void> _onInitialize(
     SchedulesViewScheduledDateSchedulerOnlyInitialEvent event,
     Emitter<SchedulesViewScheduledDateSchedulerOnlyState> emit,
   ) async {}

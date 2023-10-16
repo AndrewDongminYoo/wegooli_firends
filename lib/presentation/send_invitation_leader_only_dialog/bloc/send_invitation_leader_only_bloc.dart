@@ -13,7 +13,7 @@ class SendInvitationLeaderOnlyBloc
     on<SendInvitationLeaderOnlyInitialEvent>(_onInitialize);
   }
 
-  void _onInitialize(
+  Future<void> _onInitialize(
     SendInvitationLeaderOnlyInitialEvent event,
     Emitter<SendInvitationLeaderOnlyState> emit,
   ) async {

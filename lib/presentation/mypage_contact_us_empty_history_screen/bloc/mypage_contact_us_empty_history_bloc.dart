@@ -13,7 +13,7 @@ class MyPageContactUsEmptyHistoryBloc extends Bloc<
     on<MyPageContactUsEmptyHistoryInitialEvent>(_onInitialize);
   }
 
-  void _onInitialize(
+  Future<void> _onInitialize(
     MyPageContactUsEmptyHistoryInitialEvent event,
     Emitter<MyPageContactUsEmptyHistoryState> emit,
   ) async {}

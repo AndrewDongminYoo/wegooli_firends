@@ -14,21 +14,21 @@ class MyPageCardListBloc
     on<ChangeRadioButton1Event>(_changeRadioButton1);
   }
 
-  void _changeRadioButton(
+  Future<void> _changeRadioButton(
     ChangeRadioButtonEvent event,
     Emitter<MyPageCardListState> emit,
-  ) {
+  ) async {
     emit(state.copyWith(radioGroup: event.value));
   }
 
-  void _changeRadioButton1(
+  Future<void> _changeRadioButton1(
     ChangeRadioButton1Event event,
     Emitter<MyPageCardListState> emit,
-  ) {
+  ) async {
     emit(state.copyWith(radioGroup1: event.value));
   }
 
-  void _onInitialize(
+  Future<void> _onInitialize(
     MyPageCardListInitialEvent event,
     Emitter<MyPageCardListState> emit,
   ) async {

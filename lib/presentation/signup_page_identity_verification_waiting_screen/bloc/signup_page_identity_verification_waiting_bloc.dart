@@ -15,7 +15,7 @@ class SignupPageIdentityVerificationWaitingBloc extends Bloc<
     on<SignupPageIdentityVerificationWaitingInitialEvent>(_onInitialize);
   }
 
-  void _onInitialize(
+  Future<void> _onInitialize(
     SignupPageIdentityVerificationWaitingInitialEvent event,
     Emitter<SignupPageIdentityVerificationWaitingState> emit,
   ) async {

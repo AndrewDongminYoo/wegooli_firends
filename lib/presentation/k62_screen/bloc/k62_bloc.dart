@@ -11,7 +11,7 @@ class K62Bloc extends Bloc<K62Event, K62State> {
     on<K62InitialEvent>(_onInitialize);
   }
 
-  void _onInitialize(
+  Future<void> _onInitialize(
     K62InitialEvent event,
     Emitter<K62State> emit,
   ) async {

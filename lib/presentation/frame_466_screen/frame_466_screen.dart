@@ -1,5 +1,5 @@
-import 'bloc/frame_466_bloc.dart';
-import 'models/frame_466_model.dart';
+import 'package:wegooli_friends_app/presentation/frame_466_screen/bloc/frame_466_bloc.dart';
+import 'package:wegooli_friends_app/presentation/frame_466_screen/models/frame_466_model.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 import 'package:wegooli_friends_app/widgets/custom_checkbox_button.dart';
@@ -15,7 +15,7 @@ class Frame466Screen extends StatelessWidget {
         frame466ModelObj: Frame466Model(),
       ))
         ..add(Frame466InitialEvent()),
-      child: Frame466Screen(),
+      child: const Frame466Screen(),
     );
   }
 
@@ -36,7 +36,7 @@ class Frame466Screen extends StatelessWidget {
                 ),
                 decoration: AppDecoration.outlineBluegray30033,
                 child: Text(
-                  "lbl79".tr,
+                  'lbl79'.tr,
                   style: CustomTextStyles.titleMediumBlack90018,
                 ),
               ),
@@ -47,7 +47,7 @@ class Frame466Screen extends StatelessWidget {
                   builder: (context, totalAgreement) {
                     return CustomCheckboxButton(
                       alignment: Alignment.centerLeft,
-                      text: "lbl80".tr,
+                      text: 'lbl80'.tr,
                       value: totalAgreement,
                       margin: EdgeInsets.only(
                         left: 16.h,
@@ -82,7 +82,7 @@ class Frame466Screen extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.only(left: 10.h),
                           child: Text(
-                            "lbl157".tr,
+                            'lbl157'.tr,
                             style: theme.textTheme.bodyLarge,
                           ),
                         ),
@@ -110,7 +110,7 @@ class Frame466Screen extends StatelessWidget {
                       selector: (state) => state.tf,
                       builder: (context, tf) {
                         return CustomCheckboxButton(
-                          text: "lbl158".tr,
+                          text: 'lbl158'.tr,
                           value: tf,
                           onChange: (value) {
                             context
@@ -142,7 +142,7 @@ class Frame466Screen extends StatelessWidget {
                       selector: (state) => state.tf1,
                       builder: (context, tf1) {
                         return CustomCheckboxButton(
-                          text: "lbl159".tr,
+                          text: 'lbl159'.tr,
                           value: tf1,
                           onChange: (value) {
                             context
@@ -175,7 +175,7 @@ class Frame466Screen extends StatelessWidget {
                         selector: (state) => state.tf2,
                         builder: (context, tf2) {
                           return CustomCheckboxButton(
-                            text: "msg19".tr,
+                            text: 'msg19'.tr,
                             value: tf2,
                             onChange: (value) {
                               context
@@ -212,7 +212,7 @@ class Frame466Screen extends StatelessWidget {
                         selector: (state) => state.tf3,
                         builder: (context, tf3) {
                           return CustomCheckboxButton(
-                            text: "msg5".tr,
+                            text: 'msg5'.tr,
                             value: tf3,
                             onChange: (value) {
                               context
@@ -245,7 +245,7 @@ class Frame466Screen extends StatelessWidget {
                         selector: (state) => state.tf4,
                         builder: (context, tf4) {
                           return CustomCheckboxButton(
-                            text: "msg6".tr,
+                            text: 'msg6'.tr,
                             value: tf4,
                             onChange: (value) {
                               context
@@ -279,7 +279,7 @@ class Frame466Screen extends StatelessWidget {
           ),
           decoration: AppDecoration.shadow,
           child: CustomElevatedButton(
-            text: "lbl83".tr,
+            text: 'lbl83'.tr,
             buttonStyle: CustomButtonStyles.fillGrayTL26,
             buttonTextStyle: CustomTextStyles.titleMediumBluegray200,
           ),

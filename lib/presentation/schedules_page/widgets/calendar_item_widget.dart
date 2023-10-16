@@ -1,4 +1,4 @@
-import '../models/calendar_item_model.dart';
+import 'package:wegooli_friends_app/presentation/schedules_page/models/calendar_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 

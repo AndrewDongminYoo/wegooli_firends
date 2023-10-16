@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import '/core/app_export.dart';
+import 'package:wegooli_friends_app/core/app_export.dart';
 import 'package:wegooli_friends_app/presentation/one4_screen/models/one4_model.dart';
 part 'one4_event.dart';
 part 'one4_state.dart';

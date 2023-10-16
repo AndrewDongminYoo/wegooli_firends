@@ -5,8 +5,8 @@ part of 'k89_bloc.dart';
 /// Represents the state of K89 in the application.
 class K89State extends Equatable {
   K89State({
-    this.radioGroup = "",
-    this.radioGroup1 = "",
+    this.radioGroup = '',
+    this.radioGroup1 = '',
     this.k89ModelObj,
   });
 

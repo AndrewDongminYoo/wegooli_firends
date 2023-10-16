@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
-import '../app_export.dart';
+import 'package:wegooli_friends_app/core/app_export.dart';
 
 class ProgressDialogUtils {
   static bool isProgressVisible = false;

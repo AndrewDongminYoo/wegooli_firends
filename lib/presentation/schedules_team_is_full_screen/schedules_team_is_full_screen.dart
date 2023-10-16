@@ -1,7 +1,7 @@
-import '../schedules_team_is_full_screen/widgets/calendar1_item_widget.dart';
-import 'bloc/schedules_team_is_full_bloc.dart';
-import 'models/calendar1_item_model.dart';
-import 'models/schedules_team_is_full_model.dart';
+import 'package:wegooli_friends_app/presentation/schedules_team_is_full_screen/widgets/calendar1_item_widget.dart';
+import 'package:wegooli_friends_app/presentation/schedules_team_is_full_screen/bloc/schedules_team_is_full_bloc.dart';
+import 'package:wegooli_friends_app/presentation/schedules_team_is_full_screen/models/calendar1_item_model.dart';
+import 'package:wegooli_friends_app/presentation/schedules_team_is_full_screen/models/schedules_team_is_full_model.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 import 'package:wegooli_friends_app/widgets/app_bar/appbar_image.dart';
@@ -9,9 +9,9 @@ import 'package:wegooli_friends_app/widgets/app_bar/custom_app_bar.dart';
 import 'package:wegooli_friends_app/widgets/custom_bottom_bar.dart';
 import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
 
+// ignore: must_be_immutable
 class SchedulesTeamIsFullScreen extends StatelessWidget {
-  SchedulesTeamIsFullScreen({Key? key})
-      : super(key: key);
+  SchedulesTeamIsFullScreen({Key? key}) : super(key: key);
 
   GlobalKey<NavigatorState> navigatorKey = GlobalKey();
 
@@ -59,7 +59,7 @@ class SchedulesTeamIsFullScreen extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    "lbl55".tr,
+                                    'lbl55'.tr,
                                     style: CustomTextStyles.titleMedium18,
                                   ),
                                   SizedBox(height: 12.v),
@@ -78,7 +78,7 @@ class SchedulesTeamIsFullScreen extends StatelessWidget {
                                           ),
                                           SizedBox(height: 4.v),
                                           Text(
-                                            "lbl18".tr,
+                                            'lbl18'.tr,
                                             style: theme.textTheme.bodySmall,
                                           ),
                                         ],
@@ -98,7 +98,7 @@ class SchedulesTeamIsFullScreen extends StatelessWidget {
                                             ),
                                             SizedBox(height: 4.v),
                                             Text(
-                                              "lbl19".tr,
+                                              'lbl19'.tr,
                                               style: theme.textTheme.bodySmall,
                                             ),
                                           ],
@@ -119,7 +119,7 @@ class SchedulesTeamIsFullScreen extends StatelessWidget {
                                             ),
                                             SizedBox(height: 4.v),
                                             Text(
-                                              "lbl20".tr,
+                                              'lbl20'.tr,
                                               style: theme.textTheme.bodySmall,
                                             ),
                                           ],
@@ -146,7 +146,7 @@ class SchedulesTeamIsFullScreen extends StatelessWidget {
                                     ),
                                     SizedBox(height: 4.v),
                                     Text(
-                                      "lbl20".tr,
+                                      'lbl20'.tr,
                                       style: theme.textTheme.bodySmall,
                                     ),
                                   ],
@@ -169,12 +169,12 @@ class SchedulesTeamIsFullScreen extends StatelessWidget {
                             top: 21.v,
                           ),
                           child: Text(
-                            "lbl11".tr,
+                            'lbl11'.tr,
                             style: CustomTextStyles.titleMedium18,
                           ),
                         ),
                         CustomElevatedButton(
-                          text: "lbl56".tr,
+                          text: 'lbl56'.tr,
                           margin: EdgeInsets.only(
                             left: 16.h,
                             top: 12.v,
@@ -183,7 +183,6 @@ class SchedulesTeamIsFullScreen extends StatelessWidget {
                           alignment: Alignment.center,
                         ),
                         Align(
-                          alignment: Alignment.center,
                           child: Container(
                             margin: EdgeInsets.only(
                               left: 15.h,
@@ -213,7 +212,7 @@ class SchedulesTeamIsFullScreen extends StatelessWidget {
                                       margin: EdgeInsets.only(bottom: 1.v),
                                     ),
                                     Text(
-                                      "lbl_2023_8".tr,
+                                      'lbl_2023_8'.tr,
                                       style: theme.textTheme.titleMedium,
                                     ),
                                     CustomImageView(
@@ -251,7 +250,7 @@ class SchedulesTeamIsFullScreen extends StatelessWidget {
                                                 ?.calendar1ItemList.length ??
                                             0,
                                         itemBuilder: (context, index) {
-                                          Calendar1ItemModel model =
+                                          final model =
                                               schedulesTeamIsFullModelObj
                                                           ?.calendar1ItemList[
                                                       index] ??

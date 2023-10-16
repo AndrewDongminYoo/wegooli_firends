@@ -1,5 +1,5 @@
-import 'bloc/splash_screen_one_bloc.dart';
-import 'models/splash_screen_one_model.dart';
+import 'package:wegooli_friends_app/presentation/splash_screen_one_screen/bloc/splash_screen_one_bloc.dart';
+import 'package:wegooli_friends_app/presentation/splash_screen_one_screen/models/splash_screen_one_model.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 
@@ -13,7 +13,7 @@ class SplashScreenOneScreen extends StatelessWidget {
         splashScreenOneModelObj: SplashScreenOneModel(),
       ))
         ..add(SplashScreenOneInitialEvent()),
-      child: SplashScreenOneScreen(),
+      child: const SplashScreenOneScreen(),
     );
   }
 
@@ -32,8 +32,8 @@ class SplashScreenOneScreen extends StatelessWidget {
               height: mediaQueryData.size.height,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  begin: Alignment(0, 0),
-                  end: Alignment(1, 1),
+                  begin: const Alignment(0, 0),
+                  end: const Alignment(1, 1),
                   colors: [
                     appTheme.yellow600,
                     appTheme.yellow300,
@@ -62,7 +62,7 @@ class SplashScreenOneScreen extends StatelessWidget {
                               ),
                               SizedBox(height: 14.v),
                               Text(
-                                "lbl96".tr,
+                                'lbl96'.tr,
                                 style: CustomTextStyles
                                     .titleSmallNanumSquareRoundBlack900,
                               ),

@@ -14,20 +14,20 @@ const num FIGMA_DESIGN_STATUS_BAR = 0;
 ///This extension is used to set padding/margin (for the top and bottom side) & height of the screen or widget according to the Viewport height.
 extension ResponsiveExtension on num {
   ///This method is used to get device viewport width.
-  get _width {
+  double get _width {
     return mediaQueryData.size.width;
   }
 
   ///This method is used to get device viewport height.
-  get _height {
-    num statusBar = mediaQueryData.viewPadding.top;
-    num bottomBar = mediaQueryData.viewPadding.bottom;
-    num screenHeight = mediaQueryData.size.height - statusBar - bottomBar;
+  num get _height {
+    final num statusBar = mediaQueryData.viewPadding.top;
+    final num bottomBar = mediaQueryData.viewPadding.bottom;
+    final num screenHeight = mediaQueryData.size.height - statusBar - bottomBar;
     return screenHeight;
   }
 
   ///This method is used to set padding/margin (for the left and Right side) & width of the screen or widget according to the Viewport width.
-  double get h => ((this * _width) / FIGMA_DESIGN_WIDTH);
+  double get h => (this * _width) / FIGMA_DESIGN_WIDTH;
 
   ///This method is used to set padding/margin (for the top and bottom side) & height of the screen or widget according to the Viewport height.
   double get v =>
@@ -35,8 +35,8 @@ extension ResponsiveExtension on num {
 
   ///This method is used to set smallest px in image height and width
   double get adaptSize {
-    var height = v;
-    var width = h;
+    final height = v;
+    final width = h;
     return height < width ? height.toDoubleValue() : width.toDoubleValue();
   }
 
@@ -47,6 +47,6 @@ extension ResponsiveExtension on num {
 extension FormatExtension on double {
   /// Return a [double] value with formatted according to provided fractionDigits
   double toDoubleValue({int fractionDigits = 2}) {
-    return double.parse(this.toStringAsFixed(fractionDigits));
+    return double.parse(toStringAsFixed(fractionDigits));
   }
 }

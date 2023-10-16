@@ -1,5 +1,5 @@
-import 'bloc/k82_bloc.dart';
-import 'models/k82_model.dart';
+import 'package:wegooli_friends_app/presentation/k82_screen/bloc/k82_bloc.dart';
+import 'package:wegooli_friends_app/presentation/k82_screen/models/k82_model.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 import 'package:wegooli_friends_app/widgets/app_bar/appbar_image.dart';
@@ -8,9 +8,9 @@ import 'package:wegooli_friends_app/widgets/app_bar/custom_app_bar.dart';
 import 'package:wegooli_friends_app/widgets/custom_bottom_bar.dart';
 import 'package:wegooli_friends_app/widgets/custom_outlined_button.dart';
 
+// ignore: must_be_immutable
 class K82Screen extends StatelessWidget {
-  K82Screen({Key? key})
-      : super(key: key);
+  K82Screen({Key? key}) : super(key: key);
 
   GlobalKey<NavigatorState> navigatorKey = GlobalKey();
 
@@ -40,7 +40,7 @@ class K82Screen extends StatelessWidget {
               ),
               actions: [
                 AppbarSubtitle(
-                  text: "lbl_friend".tr,
+                  text: 'lbl_friend'.tr,
                   margin: EdgeInsets.fromLTRB(4.h, 13.v, 111.h, 11.v),
                 ),
               ],
@@ -65,9 +65,8 @@ class K82Screen extends StatelessWidget {
                           width: 258.h,
                         ),
                         Align(
-                          alignment: Alignment.center,
                           child: Text(
-                            "lbl173".tr,
+                            'lbl173'.tr,
                             style: CustomTextStyles.bodyLargeNotoSansKRBlack900,
                           ),
                         ),
@@ -76,16 +75,16 @@ class K82Screen extends StatelessWidget {
                   ),
                   SizedBox(height: 10.v),
                   Text(
-                    "lbl173".tr,
+                    'lbl173'.tr,
                     style: CustomTextStyles.bodyLargeNotoSansKRBlack900,
                   ),
                   SizedBox(height: 37.v),
                   CustomOutlinedButton(
-                    text: "lbl192".tr,
+                    text: 'lbl192'.tr,
                   ),
-                  Spacer(),
+                  const Spacer(),
                   CustomOutlinedButton(
-                    text: "lbl136".tr,
+                    text: 'lbl136'.tr,
                   ),
                 ],
               ),

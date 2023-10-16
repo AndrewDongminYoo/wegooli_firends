@@ -1,4 +1,4 @@
-import '../models/userprofile2_item_model.dart';
+import 'package:wegooli_friends_app/presentation/k84_screen/models/userprofile2_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 

@@ -1,5 +1,5 @@
-import 'bloc/k48_bloc.dart';
-import 'models/k48_model.dart';
+import 'package:wegooli_friends_app/presentation/k48_screen/bloc/k48_bloc.dart';
+import 'package:wegooli_friends_app/presentation/k48_screen/models/k48_model.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 
@@ -13,7 +13,7 @@ class K48Screen extends StatelessWidget {
         k48ModelObj: K48Model(),
       ))
         ..add(K48InitialEvent()),
-      child: K48Screen(),
+      child: const K48Screen(),
     );
   }
 
@@ -31,7 +31,7 @@ class K48Screen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "lbl152".tr,
+                    'lbl152'.tr,
                     style: CustomTextStyles.titleMediumBlack900,
                   ),
                   SizedBox(height: 10.v),
@@ -45,20 +45,20 @@ class K48Screen extends StatelessWidget {
                         ),
                         decoration: AppDecoration.outlineRedA,
                         child: Text(
-                          "lbl_asasas".tr,
+                          'lbl_asasas'.tr,
                           style: CustomTextStyles.bodyLargeNotoSansKRGray700,
                         ),
                       ),
                       SizedBox(height: 1.v),
                       Text(
-                        "msg18".tr,
+                        'msg18'.tr,
                         style: CustomTextStyles.bodyLargeNotoSansKRRedA700,
                       ),
                     ],
                   ),
                   SizedBox(height: 43.v),
                   Text(
-                    "lbl153".tr,
+                    'lbl153'.tr,
                     style: CustomTextStyles.titleMediumBlack900,
                   ),
                   SizedBox(height: 10.v),
@@ -72,20 +72,20 @@ class K48Screen extends StatelessWidget {
                         ),
                         decoration: AppDecoration.outlineRedA,
                         child: Text(
-                          "lbl_asasas_efefe".tr,
+                          'lbl_asasas_efefe'.tr,
                           style: CustomTextStyles.bodyLargeNotoSansKRGray700,
                         ),
                       ),
                       SizedBox(height: 1.v),
                       Text(
-                        "msg18".tr,
+                        'msg18'.tr,
                         style: CustomTextStyles.bodyLargeNotoSansKRRedA700,
                       ),
                     ],
                   ),
                   SizedBox(height: 43.v),
                   Text(
-                    "lbl154".tr,
+                    'lbl154'.tr,
                     style: CustomTextStyles.titleMediumBlack900,
                   ),
                   SizedBox(height: 10.v),
@@ -99,20 +99,20 @@ class K48Screen extends StatelessWidget {
                         ),
                         decoration: AppDecoration.outlineRedA,
                         child: Text(
-                          "msg_asasas_naver_com".tr,
+                          'msg_asasas_naver_com'.tr,
                           style: CustomTextStyles.bodyLargeNotoSansKRGray700,
                         ),
                       ),
                       SizedBox(height: 1.v),
                       Text(
-                        "lbl155".tr,
+                        'lbl155'.tr,
                         style: CustomTextStyles.bodyLargeNotoSansKRRedA700,
                       ),
                     ],
                   ),
                   SizedBox(height: 43.v),
                   Text(
-                    "msg_xx".tr,
+                    'msg_xx'.tr,
                     style: CustomTextStyles.titleMediumBlack900,
                   ),
                   SizedBox(height: 9.v),
@@ -123,7 +123,7 @@ class K48Screen extends StatelessWidget {
                     ),
                     decoration: AppDecoration.outlineGray700,
                     child: Text(
-                      "msg_asasas_asasas_co".tr,
+                      'msg_asasas_asasas_co'.tr,
                       style: CustomTextStyles.bodyLargeNotoSansKRGray700,
                     ),
                   ),

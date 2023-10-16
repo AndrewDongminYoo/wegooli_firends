@@ -1,14 +1,14 @@
-import 'bloc/k98_bloc.dart';
-import 'models/k98_model.dart';
+import 'package:wegooli_friends_app/presentation/k98_screen/bloc/k98_bloc.dart';
+import 'package:wegooli_friends_app/presentation/k98_screen/models/k98_model.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 import 'package:wegooli_friends_app/widgets/custom_bottom_bar.dart';
 import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
 import 'package:wegooli_friends_app/widgets/custom_outlined_button.dart';
 
+// ignore: must_be_immutable
 class K98Screen extends StatelessWidget {
-  K98Screen({Key? key})
-      : super(key: key);
+  K98Screen({Key? key}) : super(key: key);
 
   GlobalKey<NavigatorState> navigatorKey = GlobalKey();
 
@@ -53,7 +53,7 @@ class K98Screen extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.only(top: 3.v),
                           child: Text(
-                            "lbl_friend".tr,
+                            'lbl_friend'.tr,
                             style: CustomTextStyles.bodyLargeBluegray900,
                           ),
                         ),
@@ -98,7 +98,7 @@ class K98Screen extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      "lbl214".tr,
+                                      'lbl214'.tr,
                                       style: CustomTextStyles
                                           .titleMediumInterBlack900,
                                     ),
@@ -110,24 +110,22 @@ class K98Screen extends StatelessWidget {
                                               CrossAxisAlignment.start,
                                           children: [
                                             Align(
-                                              alignment: Alignment.center,
                                               child: Text(
-                                                "lbl207".tr,
+                                                'lbl207'.tr,
                                                 style: CustomTextStyles
                                                     .bodyMediumGray600,
                                               ),
                                             ),
                                             SizedBox(height: 4.v),
                                             Text(
-                                              "lbl2".tr,
+                                              'lbl2'.tr,
                                               style: CustomTextStyles
                                                   .bodyMediumGray600,
                                             ),
                                             SizedBox(height: 3.v),
                                             Align(
-                                              alignment: Alignment.center,
                                               child: Text(
-                                                "lbl26".tr,
+                                                'lbl26'.tr,
                                                 style: CustomTextStyles
                                                     .bodyMediumGray600,
                                               ),
@@ -141,7 +139,7 @@ class K98Screen extends StatelessWidget {
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Text(
-                                                "lbl_12_3456".tr,
+                                                'lbl_12_3456'.tr,
                                                 style:
                                                     theme.textTheme.bodyMedium,
                                               ),
@@ -149,7 +147,7 @@ class K98Screen extends StatelessWidget {
                                               Row(
                                                 children: [
                                                   Text(
-                                                    "lbl215".tr,
+                                                    'lbl215'.tr,
                                                     style: theme
                                                         .textTheme.bodyMedium,
                                                   ),
@@ -168,7 +166,7 @@ class K98Screen extends StatelessWidget {
                                               ),
                                               SizedBox(height: 3.v),
                                               Text(
-                                                "lbl_204".tr,
+                                                'lbl_204'.tr,
                                                 style:
                                                     theme.textTheme.bodyMedium,
                                               ),
@@ -185,7 +183,7 @@ class K98Screen extends StatelessWidget {
                         ),
                         SizedBox(height: 17.v),
                         CustomOutlinedButton(
-                          text: "lbl209".tr,
+                          text: 'lbl209'.tr,
                         ),
                       ],
                     ),
@@ -210,7 +208,7 @@ class K98Screen extends StatelessWidget {
                                 Align(
                                   alignment: Alignment.centerLeft,
                                   child: Text(
-                                    "lbl13".tr,
+                                    'lbl13'.tr,
                                     style: CustomTextStyles.titleMediumBlack900,
                                   ),
                                 ),
@@ -237,9 +235,8 @@ class K98Screen extends StatelessWidget {
                                             ),
                                             SizedBox(height: 10.v),
                                             Align(
-                                              alignment: Alignment.center,
                                               child: Text(
-                                                "lbl6".tr,
+                                                'lbl6'.tr,
                                                 style:
                                                     theme.textTheme.labelLarge,
                                               ),
@@ -274,7 +271,7 @@ class K98Screen extends StatelessWidget {
                                             ),
                                             SizedBox(height: 10.v),
                                             Text(
-                                              "lbl7".tr,
+                                              'lbl7'.tr,
                                               style: theme.textTheme.labelLarge,
                                             ),
                                           ],
@@ -324,7 +321,7 @@ class K98Screen extends StatelessWidget {
                                           ),
                                           SizedBox(height: 10.v),
                                           Text(
-                                            "lbl8".tr,
+                                            'lbl8'.tr,
                                             style: theme.textTheme.labelLarge,
                                           ),
                                         ],
@@ -364,7 +361,7 @@ class K98Screen extends StatelessWidget {
                                             ),
                                             SizedBox(height: 12.v),
                                             Text(
-                                              "lbl210".tr,
+                                              'lbl210'.tr,
                                               style: theme.textTheme.labelLarge,
                                             ),
                                           ],
@@ -397,7 +394,7 @@ class K98Screen extends StatelessWidget {
                                             ),
                                             SizedBox(height: 10.v),
                                             Text(
-                                              "lbl9".tr,
+                                              'lbl9'.tr,
                                               style: theme.textTheme.labelLarge,
                                             ),
                                           ],
@@ -411,7 +408,6 @@ class K98Screen extends StatelessWidget {
                           ),
                         ),
                         Align(
-                          alignment: Alignment.center,
                           child: Container(
                             padding: EdgeInsets.symmetric(
                               horizontal: 82.h,
@@ -425,7 +421,7 @@ class K98Screen extends StatelessWidget {
                                 SizedBox(height: 4.v),
                                 CustomElevatedButton(
                                   height: 44.v,
-                                  text: "msg31".tr,
+                                  text: 'msg31'.tr,
                                   buttonStyle: CustomButtonStyles.fillBlack,
                                   buttonTextStyle: CustomTextStyles
                                       .bodyMediumOnPrimaryContainer,

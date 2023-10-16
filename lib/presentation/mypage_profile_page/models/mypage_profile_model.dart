@@ -2,7 +2,7 @@
 
 import 'package:equatable/equatable.dart';/// This class defines the variables used in the [mypage_profile_page],
 /// and is typically used to hold data that is passed between different parts of the application.
-class MyPageProfileModel extends Equatable {MyPageProfileModel() {  }
+class MyPageProfileModel extends Equatable {MyPageProfileModel();
 
 MyPageProfileModel copyWith() { return MyPageProfileModel(
 ); }

@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import '/core/app_export.dart';
-import '../models/userprofile2_item_model.dart';
+import 'package:wegooli_friends_app/core/app_export.dart';
+import 'package:wegooli_friends_app/presentation/k84_screen/models/userprofile2_item_model.dart';
 import 'package:wegooli_friends_app/presentation/k84_screen/models/k84_model.dart';
 part 'k84_event.dart';
 part 'k84_state.dart';

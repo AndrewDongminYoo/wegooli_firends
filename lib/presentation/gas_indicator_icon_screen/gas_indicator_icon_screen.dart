@@ -1,5 +1,5 @@
-import 'bloc/gas_indicator_icon_bloc.dart';
-import 'models/gas_indicator_icon_model.dart';
+import 'package:wegooli_friends_app/presentation/gas_indicator_icon_screen/bloc/gas_indicator_icon_bloc.dart';
+import 'package:wegooli_friends_app/presentation/gas_indicator_icon_screen/models/gas_indicator_icon_model.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 import 'package:wegooli_friends_app/widgets/app_bar/appbar_image.dart';
@@ -16,7 +16,7 @@ class GasIndicatorIconScreen extends StatelessWidget {
         gasIndicatorIconModelObj: GasIndicatorIconModel(),
       ))
         ..add(GasIndicatorIconInitialEvent()),
-      child: GasIndicatorIconScreen(),
+      child: const GasIndicatorIconScreen(),
     );
   }
 
@@ -37,7 +37,7 @@ class GasIndicatorIconScreen extends StatelessWidget {
                     svgPath: ImageConstant.imgFrame34949,
                   ),
                   AppbarSubtitle3(
-                    text: "lbl_0_10".tr,
+                    text: 'lbl_0_10'.tr,
                     margin: EdgeInsets.only(
                       left: 9.h,
                       top: 5.v,
@@ -69,7 +69,7 @@ class GasIndicatorIconScreen extends StatelessWidget {
                             bottom: 5.v,
                           ),
                           child: Text(
-                            "lbl_11_20".tr,
+                            'lbl_11_20'.tr,
                             style: theme.textTheme.bodySmall,
                           ),
                         ),
@@ -92,7 +92,7 @@ class GasIndicatorIconScreen extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.symmetric(vertical: 5.v),
                           child: Text(
-                            "lbl_21_30".tr,
+                            'lbl_21_30'.tr,
                             style: theme.textTheme.bodySmall,
                           ),
                         ),
@@ -115,7 +115,7 @@ class GasIndicatorIconScreen extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.symmetric(vertical: 5.v),
                           child: Text(
-                            "lbl_31_40".tr,
+                            'lbl_31_40'.tr,
                             style: theme.textTheme.bodySmall,
                           ),
                         ),
@@ -138,7 +138,7 @@ class GasIndicatorIconScreen extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.symmetric(vertical: 5.v),
                           child: Text(
-                            "lbl_41_50".tr,
+                            'lbl_41_50'.tr,
                             style: theme.textTheme.bodySmall,
                           ),
                         ),
@@ -161,7 +161,7 @@ class GasIndicatorIconScreen extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.symmetric(vertical: 5.v),
                           child: Text(
-                            "lbl_51_60".tr,
+                            'lbl_51_60'.tr,
                             style: theme.textTheme.bodySmall,
                           ),
                         ),
@@ -184,7 +184,7 @@ class GasIndicatorIconScreen extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.symmetric(vertical: 5.v),
                           child: Text(
-                            "lbl_61_70".tr,
+                            'lbl_61_70'.tr,
                             style: theme.textTheme.bodySmall,
                           ),
                         ),
@@ -207,7 +207,7 @@ class GasIndicatorIconScreen extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.symmetric(vertical: 5.v),
                           child: Text(
-                            "lbl_71_80".tr,
+                            'lbl_71_80'.tr,
                             style: theme.textTheme.bodySmall,
                           ),
                         ),
@@ -230,7 +230,7 @@ class GasIndicatorIconScreen extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.symmetric(vertical: 5.v),
                           child: Text(
-                            "lbl_81_90".tr,
+                            'lbl_81_90'.tr,
                             style: theme.textTheme.bodySmall,
                           ),
                         ),
@@ -249,7 +249,7 @@ class GasIndicatorIconScreen extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.symmetric(vertical: 5.v),
                         child: Text(
-                          "lbl_90_100".tr,
+                          'lbl_90_100'.tr,
                           style: theme.textTheme.bodySmall,
                         ),
                       ),

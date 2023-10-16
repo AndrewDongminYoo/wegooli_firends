@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import '/core/app_export.dart';
+import 'package:wegooli_friends_app/core/app_export.dart';
 import 'package:wegooli_friends_app/presentation/two1_screen/models/two1_model.dart';
 part 'two1_event.dart';
 part 'two1_state.dart';

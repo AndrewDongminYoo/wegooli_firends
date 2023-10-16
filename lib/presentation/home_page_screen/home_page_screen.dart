@@ -1,5 +1,5 @@
-import 'bloc/home_page_bloc.dart';
-import 'models/home_page_model.dart';
+import 'package:wegooli_friends_app/presentation/home_page_screen/bloc/home_page_bloc.dart';
+import 'package:wegooli_friends_app/presentation/home_page_screen/models/home_page_model.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 import 'package:wegooli_friends_app/widgets/app_bar/appbar_image_1.dart';
@@ -7,9 +7,9 @@ import 'package:wegooli_friends_app/widgets/app_bar/appbar_image_2.dart';
 import 'package:wegooli_friends_app/widgets/app_bar/custom_app_bar.dart';
 import 'package:wegooli_friends_app/widgets/custom_bottom_bar.dart';
 
+// ignore: must_be_immutable
 class HomePageScreen extends StatelessWidget {
-    HomePageScreen({Key? key})
-      : super(key: key);
+  HomePageScreen({Key? key}) : super(key: key);
 
   GlobalKey<NavigatorState> navigatorKey = GlobalKey();
 
@@ -74,14 +74,14 @@ class HomePageScreen extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "lbl108".tr,
+                                'lbl108'.tr,
                                 style: CustomTextStyles.bodySmallBlack900,
                               ),
                               SizedBox(height: 4.v),
                               SizedBox(
                                 width: 140.h,
                                 child: Text(
-                                  "msg10".tr,
+                                  'msg10'.tr,
                                   maxLines: 2,
                                   overflow: TextOverflow.ellipsis,
                                   style: CustomTextStyles.titleSmallBlack900,
@@ -113,7 +113,7 @@ class HomePageScreen extends StatelessWidget {
                                         BorderRadiusStyle.circleBorder7,
                                   ),
                                   child: Text(
-                                    "lbl_1_32".tr,
+                                    'lbl_1_32'.tr,
                                     style: CustomTextStyles
                                         .bodySmallOnPrimaryContainer,
                                   ),
@@ -151,7 +151,7 @@ class HomePageScreen extends StatelessWidget {
                                   top: 13.v,
                                 ),
                                 child: Text(
-                                  "lbl109".tr,
+                                  'lbl109'.tr,
                                   style: CustomTextStyles
                                       .titleMediumNanumSquareRound,
                                 ),
@@ -162,7 +162,7 @@ class HomePageScreen extends StatelessWidget {
                                   top: 4.v,
                                 ),
                                 child: Text(
-                                  "lbl110".tr,
+                                  'lbl110'.tr,
                                   style: CustomTextStyles
                                       .bodySmallNanumSquareRoundBluegray200,
                                 ),
@@ -192,7 +192,7 @@ class HomePageScreen extends StatelessWidget {
                               Padding(
                                 padding: EdgeInsets.only(left: 12.h),
                                 child: Text(
-                                  "lbl111".tr,
+                                  'lbl111'.tr,
                                   style: CustomTextStyles
                                       .titleMediumNanumSquareRound,
                                 ),
@@ -203,7 +203,7 @@ class HomePageScreen extends StatelessWidget {
                                   top: 4.v,
                                 ),
                                 child: Text(
-                                  "lbl112".tr,
+                                  'lbl112'.tr,
                                   style: CustomTextStyles
                                       .bodySmallNanumSquareRoundBluegray200,
                                 ),
@@ -240,16 +240,15 @@ class HomePageScreen extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Align(
-                                alignment: Alignment.center,
                                 child: Text(
-                                  "lbl113".tr,
+                                  'lbl113'.tr,
                                   style: CustomTextStyles
                                       .titleMediumNanumSquareRound,
                                 ),
                               ),
                               SizedBox(height: 4.v),
                               Text(
-                                "lbl114".tr,
+                                'lbl114'.tr,
                                 style: CustomTextStyles
                                     .bodySmallNanumSquareRoundBluegray200,
                               ),

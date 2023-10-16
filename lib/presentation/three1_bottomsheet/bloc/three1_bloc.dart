@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import '/core/app_export.dart';
+import 'package:wegooli_friends_app/core/app_export.dart';
 import 'package:wegooli_friends_app/presentation/three1_bottomsheet/models/three1_model.dart';
 part 'three1_event.dart';
 part 'three1_state.dart';
@@ -46,16 +46,16 @@ class Three1Bloc extends Bloc<Three1Event, Three1State> {
     return [
       SelectionPopupModel(
         id: 1,
-        title: "Item One",
+        title: 'Item One',
         isSelected: true,
       ),
       SelectionPopupModel(
         id: 2,
-        title: "Item Two",
+        title: 'Item Two',
       ),
       SelectionPopupModel(
         id: 3,
-        title: "Item Three",
+        title: 'Item Three',
       )
     ];
   }
@@ -64,16 +64,16 @@ class Three1Bloc extends Bloc<Three1Event, Three1State> {
     return [
       SelectionPopupModel(
         id: 1,
-        title: "Item One",
+        title: 'Item One',
         isSelected: true,
       ),
       SelectionPopupModel(
         id: 2,
-        title: "Item Two",
+        title: 'Item Two',
       ),
       SelectionPopupModel(
         id: 3,
-        title: "Item Three",
+        title: 'Item Three',
       )
     ];
   }

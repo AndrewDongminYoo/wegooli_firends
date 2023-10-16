@@ -1,5 +1,5 @@
-import 'bloc/add_an_appointment_start_expanded_bloc.dart';
-import 'models/add_an_appointment_start_expanded_model.dart';
+import 'package:wegooli_friends_app/presentation/add_an_appointment_start_expanded_bottomsheet/bloc/add_an_appointment_start_expanded_bloc.dart';
+import 'package:wegooli_friends_app/presentation/add_an_appointment_start_expanded_bottomsheet/models/add_an_appointment_start_expanded_model.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 import 'package:wegooli_friends_app/widgets/custom_drop_down.dart';
@@ -18,7 +18,7 @@ class AddAnAppointmentStartExpandedBottomsheet extends StatelessWidget {
             AddAnAppointmentStartExpandedModel(),
       ))
             ..add(AddAnAppointmentStartExpandedInitialEvent()),
-      child: AddAnAppointmentStartExpandedBottomsheet(),
+      child: const AddAnAppointmentStartExpandedBottomsheet(),
     );
   }
 
@@ -49,7 +49,7 @@ class AddAnAppointmentStartExpandedBottomsheet extends StatelessWidget {
                   top: 33.v,
                 ),
                 child: Text(
-                  "msg_2_8_1_16_00".tr,
+                  'msg_2_8_1_16_00'.tr,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   style: CustomTextStyles.titleMediumBlack90018.copyWith(
@@ -76,7 +76,7 @@ class AddAnAppointmentStartExpandedBottomsheet extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "lbl34".tr,
+                    'lbl34'.tr,
                     style: CustomTextStyles.titleMediumOnPrimary,
                   ),
                   BlocSelector<
@@ -94,7 +94,7 @@ class AddAnAppointmentStartExpandedBottomsheet extends StatelessWidget {
                             svgPath: ImageConstant.imgArrowrightOnPrimary,
                           ),
                         ),
-                        hintText: "lbl_8_1_16_00".tr,
+                        hintText: 'lbl_8_1_16_00'.tr,
                         items: addAnAppointmentStartExpandedModelObj
                                 ?.dropdownItemList ??
                             [],
@@ -127,12 +127,12 @@ class AddAnAppointmentStartExpandedBottomsheet extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "lbl35".tr,
+                    'lbl35'.tr,
                     style: theme.textTheme.titleMedium,
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Text(
-                    "lbl_8_1_18_00".tr,
+                    'lbl_8_1_18_00'.tr,
                     style: theme.textTheme.titleMedium,
                   ),
                   CustomImageView(
@@ -154,13 +154,13 @@ class AddAnAppointmentStartExpandedBottomsheet extends StatelessWidget {
                 child: Row(
                   children: [
                     Text(
-                      "lbl_8_1".tr,
+                      'lbl_8_1'.tr,
                       style: CustomTextStyles.bodyLargeOnPrimary,
                     ),
                     Padding(
                       padding: EdgeInsets.only(left: 81.h),
                       child: Text(
-                        "lbl_152".tr,
+                        'lbl_152'.tr,
                         style: CustomTextStyles.bodyLargeOnPrimary,
                       ),
                     ),
@@ -210,15 +210,15 @@ class AddAnAppointmentStartExpandedBottomsheet extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "lbl_8_2".tr,
+                    'lbl_8_2'.tr,
                     style: theme.textTheme.bodyLarge,
                   ),
                   Text(
-                    "lbl_162".tr,
+                    'lbl_162'.tr,
                     style: theme.textTheme.bodyLarge,
                   ),
                   Text(
-                    "lbl_00".tr,
+                    'lbl_00'.tr,
                     style: theme.textTheme.bodyLarge,
                   ),
                 ],
@@ -267,13 +267,13 @@ class AddAnAppointmentStartExpandedBottomsheet extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text(
-                      "lbl_172".tr,
+                      'lbl_172'.tr,
                       style: CustomTextStyles.bodyLargeOnPrimary,
                     ),
                     Padding(
                       padding: EdgeInsets.only(left: 83.h),
                       child: Text(
-                        "lbl_102".tr,
+                        'lbl_102'.tr,
                         style: CustomTextStyles.bodyLargeOnPrimary,
                       ),
                     ),
@@ -296,12 +296,12 @@ class AddAnAppointmentStartExpandedBottomsheet extends StatelessWidget {
                 children: [
                   CustomElevatedButton(
                     width: 104.h,
-                    text: "lbl36".tr,
+                    text: 'lbl36'.tr,
                     buttonStyle: CustomButtonStyles.fillGray,
                   ),
                   CustomElevatedButton(
                     width: 216.h,
-                    text: "lbl37".tr,
+                    text: 'lbl37'.tr,
                     margin: EdgeInsets.only(left: 8.h),
                   ),
                 ],

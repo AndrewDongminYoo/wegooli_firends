@@ -2,7 +2,7 @@
 
 import 'package:equatable/equatable.dart';/// This class defines the variables used in the [unsubscribe_screen],
 /// and is typically used to hold data that is passed between different parts of the application.
-class UnsubscribeModel extends Equatable {UnsubscribeModel() {  }
+class UnsubscribeModel extends Equatable {UnsubscribeModel();
 
 UnsubscribeModel copyWith() { return UnsubscribeModel(
 ); } 

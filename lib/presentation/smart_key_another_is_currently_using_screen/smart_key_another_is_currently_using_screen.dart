@@ -1,5 +1,5 @@
-import 'bloc/smart_key_another_is_currently_using_bloc.dart';
-import 'models/smart_key_another_is_currently_using_model.dart';
+import 'package:wegooli_friends_app/presentation/smart_key_another_is_currently_using_screen/bloc/smart_key_another_is_currently_using_bloc.dart';
+import 'package:wegooli_friends_app/presentation/smart_key_another_is_currently_using_screen/models/smart_key_another_is_currently_using_model.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 import 'package:wegooli_friends_app/widgets/app_bar/appbar_image.dart';
@@ -7,9 +7,9 @@ import 'package:wegooli_friends_app/widgets/app_bar/custom_app_bar.dart';
 import 'package:wegooli_friends_app/widgets/custom_bottom_bar.dart';
 import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
 
+// ignore: must_be_immutable
 class SmartKeyAnotherIsCurrentlyUsingScreen extends StatelessWidget {
-  SmartKeyAnotherIsCurrentlyUsingScreen({Key? key})
-      : super(key: key);
+  SmartKeyAnotherIsCurrentlyUsingScreen({Key? key}) : super(key: key);
 
   GlobalKey<NavigatorState> navigatorKey = GlobalKey();
 
@@ -72,12 +72,12 @@ class SmartKeyAnotherIsCurrentlyUsingScreen extends StatelessWidget {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        "lbl".tr,
+                                        'lbl'.tr,
                                         style: theme.textTheme.titleMedium,
                                       ),
                                       SizedBox(height: 4.v),
                                       Text(
-                                        "lbl_12_3456".tr,
+                                        'lbl_12_3456'.tr,
                                         style:
                                             CustomTextStyles.bodySmallOnPrimary,
                                       ),
@@ -98,7 +98,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen extends StatelessWidget {
                                               top: 7.v,
                                             ),
                                             child: Text(
-                                              "lbl_203".tr,
+                                              'lbl_203'.tr,
                                               style: theme.textTheme.bodySmall,
                                             ),
                                           ),
@@ -125,13 +125,13 @@ class SmartKeyAnotherIsCurrentlyUsingScreen extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                "lbl2".tr,
+                                'lbl2'.tr,
                                 style: CustomTextStyles.bodySmallOnPrimary,
                               ),
                               Padding(
                                 padding: EdgeInsets.only(left: 5.h),
                                 child: Text(
-                                  "lbl3".tr,
+                                  'lbl3'.tr,
                                   style: CustomTextStyles.bodySmallOnPrimary,
                                 ),
                               ),
@@ -153,7 +153,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen extends StatelessWidget {
                               Padding(
                                 padding: EdgeInsets.only(left: 2.h),
                                 child: Text(
-                                  "lbl128".tr,
+                                  'lbl128'.tr,
                                   style: theme.textTheme.bodySmall,
                                 ),
                               ),
@@ -204,11 +204,11 @@ class SmartKeyAnotherIsCurrentlyUsingScreen extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  "lbl_12_00".tr,
+                                  'lbl_12_00'.tr,
                                   style: CustomTextStyles.bodySmallOnPrimary,
                                 ),
                                 Text(
-                                  "lbl_13_00".tr,
+                                  'lbl_13_00'.tr,
                                   style: CustomTextStyles.bodySmallOnPrimary,
                                 ),
                               ],
@@ -243,7 +243,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen extends StatelessWidget {
                                         Align(
                                           alignment: Alignment.centerLeft,
                                           child: Text(
-                                            "lbl5".tr,
+                                            'lbl5'.tr,
                                             style: CustomTextStyles
                                                 .titleMediumBlack90018,
                                           ),
@@ -264,8 +264,6 @@ class SmartKeyAnotherIsCurrentlyUsingScreen extends StatelessWidget {
                                                   alignment: Alignment.center,
                                                   children: [
                                                     Align(
-                                                      alignment:
-                                                          Alignment.center,
                                                       child: Container(
                                                         padding:
                                                             EdgeInsets.all(5.h),
@@ -299,8 +297,6 @@ class SmartKeyAnotherIsCurrentlyUsingScreen extends StatelessWidget {
                                                       ),
                                                     ),
                                                     Align(
-                                                      alignment:
-                                                          Alignment.center,
                                                       child: Padding(
                                                         padding: EdgeInsets
                                                             .symmetric(
@@ -322,7 +318,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen extends StatelessWidget {
                                                             SizedBox(
                                                                 height: 5.v),
                                                             Text(
-                                                              "lbl6".tr,
+                                                              'lbl6'.tr,
                                                               style: theme
                                                                   .textTheme
                                                                   .titleMedium,
@@ -343,8 +339,6 @@ class SmartKeyAnotherIsCurrentlyUsingScreen extends StatelessWidget {
                                                   alignment: Alignment.center,
                                                   children: [
                                                     Align(
-                                                      alignment:
-                                                          Alignment.center,
                                                       child: Container(
                                                         padding:
                                                             EdgeInsets.all(5.h),
@@ -378,8 +372,6 @@ class SmartKeyAnotherIsCurrentlyUsingScreen extends StatelessWidget {
                                                       ),
                                                     ),
                                                     Align(
-                                                      alignment:
-                                                          Alignment.center,
                                                       child: Padding(
                                                         padding: EdgeInsets
                                                             .symmetric(
@@ -401,7 +393,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen extends StatelessWidget {
                                                             SizedBox(
                                                                 height: 5.v),
                                                             Text(
-                                                              "lbl7".tr,
+                                                              'lbl7'.tr,
                                                               style: theme
                                                                   .textTheme
                                                                   .titleMedium,
@@ -432,8 +424,6 @@ class SmartKeyAnotherIsCurrentlyUsingScreen extends StatelessWidget {
                                                   alignment: Alignment.center,
                                                   children: [
                                                     Align(
-                                                      alignment:
-                                                          Alignment.center,
                                                       child: Container(
                                                         padding:
                                                             EdgeInsets.all(5.h),
@@ -467,8 +457,6 @@ class SmartKeyAnotherIsCurrentlyUsingScreen extends StatelessWidget {
                                                       ),
                                                     ),
                                                     Align(
-                                                      alignment:
-                                                          Alignment.center,
                                                       child: Padding(
                                                         padding: EdgeInsets
                                                             .symmetric(
@@ -487,7 +475,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen extends StatelessWidget {
                                                             SizedBox(
                                                                 height: 14.v),
                                                             Text(
-                                                              "lbl8".tr,
+                                                              'lbl8'.tr,
                                                               style: theme
                                                                   .textTheme
                                                                   .titleMedium,
@@ -533,7 +521,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen extends StatelessWidget {
                                                       ),
                                                       SizedBox(height: 5.v),
                                                       Text(
-                                                        "lbl9".tr,
+                                                        'lbl9'.tr,
                                                         style: theme.textTheme
                                                             .titleMedium,
                                                       ),
@@ -549,7 +537,6 @@ class SmartKeyAnotherIsCurrentlyUsingScreen extends StatelessWidget {
                                   ),
                                 ),
                                 Align(
-                                  alignment: Alignment.center,
                                   child: Container(
                                     padding: EdgeInsets.symmetric(
                                       horizontal: 16.h,
@@ -564,7 +551,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen extends StatelessWidget {
                                         CustomElevatedButton(
                                           height: 44.v,
                                           width: 189.h,
-                                          text: "lbl129".tr,
+                                          text: 'lbl129'.tr,
                                           buttonStyle:
                                               CustomButtonStyles.fillOnPrimary,
                                           buttonTextStyle: CustomTextStyles
@@ -597,7 +584,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen extends StatelessWidget {
                                                 ),
                                                 SizedBox(height: 1.v),
                                                 Text(
-                                                  "lbl10".tr,
+                                                  'lbl10'.tr,
                                                   style: CustomTextStyles
                                                       .bodySmallBlack900,
                                                 ),

@@ -2,7 +2,7 @@
 
 import 'package:equatable/equatable.dart';/// This class defines the variables used in the [one5_screen],
 /// and is typically used to hold data that is passed between different parts of the application.
-class One5Model extends Equatable {One5Model() {  }
+class One5Model extends Equatable {One5Model();
 
 One5Model copyWith() { return One5Model(
 ); } 

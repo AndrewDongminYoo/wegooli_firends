@@ -1,5 +1,5 @@
-import 'bloc/mypage_contact_us_inquiry_history_expanded_bloc.dart';
-import 'models/mypage_contact_us_inquiry_history_expanded_model.dart';
+import 'package:wegooli_friends_app/presentation/mypage_contact_us_inquiry_history_expanded_page/bloc/mypage_contact_us_inquiry_history_expanded_bloc.dart';
+import 'package:wegooli_friends_app/presentation/mypage_contact_us_inquiry_history_expanded_page/models/mypage_contact_us_inquiry_history_expanded_model.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
@@ -7,8 +7,7 @@ import 'package:wegooli_friends_app/widgets/custom_outlined_button.dart';
 
 // ignore_for_file: must_be_immutable
 class MyPageContactUsInquiryHistoryExpandedPage extends StatefulWidget {
-  const MyPageContactUsInquiryHistoryExpandedPage({Key? key})
-      : super(key: key);
+  const MyPageContactUsInquiryHistoryExpandedPage({Key? key}) : super(key: key);
 
   @override
   MyPageContactUsInquiryHistoryExpandedPageState createState() =>
@@ -21,7 +20,7 @@ class MyPageContactUsInquiryHistoryExpandedPage extends StatefulWidget {
             MyPageContactUsInquiryHistoryExpandedModel(),
       ))
         ..add(MyPageContactUsInquiryHistoryExpandedInitialEvent()),
-      child: MyPageContactUsInquiryHistoryExpandedPage(),
+      child: const MyPageContactUsInquiryHistoryExpandedPage(),
     );
   }
 }
@@ -35,6 +34,7 @@ class MyPageContactUsInquiryHistoryExpandedPageState
   bool get wantKeepAlive => true;
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     mediaQueryData = MediaQuery.of(context);
 
     return BlocBuilder<MyPageContactUsInquiryHistoryExpandedBloc,
@@ -64,12 +64,12 @@ class MyPageContactUsInquiryHistoryExpandedPageState
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        "msg14".tr,
+                                        'msg14'.tr,
                                         style: theme.textTheme.titleSmall,
                                       ),
                                       SizedBox(height: 3.v),
                                       Text(
-                                        "lbl_2023_08_23".tr,
+                                        'lbl_2023_08_23'.tr,
                                         style:
                                             CustomTextStyles.bodySmallOnPrimary,
                                       ),
@@ -78,7 +78,7 @@ class MyPageContactUsInquiryHistoryExpandedPageState
                                   CustomOutlinedButton(
                                     height: 28.v,
                                     width: 52.h,
-                                    text: "lbl139".tr,
+                                    text: 'lbl139'.tr,
                                     margin: EdgeInsets.only(
                                       left: 42.h,
                                       top: 4.v,
@@ -103,7 +103,7 @@ class MyPageContactUsInquiryHistoryExpandedPageState
                                 ],
                               ),
                               SizedBox(height: 17.v),
-                              Divider(),
+                              const Divider(),
                             ],
                           ),
                         ),
@@ -126,12 +126,12 @@ class MyPageContactUsInquiryHistoryExpandedPageState
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          "msg14".tr,
+                                          'msg14'.tr,
                                           style: theme.textTheme.titleSmall,
                                         ),
                                         SizedBox(height: 3.v),
                                         Text(
-                                          "lbl_2023_08_23".tr,
+                                          'lbl_2023_08_23'.tr,
                                           style: CustomTextStyles
                                               .bodySmallOnPrimary,
                                         ),
@@ -140,7 +140,7 @@ class MyPageContactUsInquiryHistoryExpandedPageState
                                     CustomOutlinedButton(
                                       height: 28.v,
                                       width: 65.h,
-                                      text: "lbl140".tr,
+                                      text: 'lbl140'.tr,
                                       margin: EdgeInsets.only(
                                         left: 29.h,
                                         top: 4.v,
@@ -173,7 +173,7 @@ class MyPageContactUsInquiryHistoryExpandedPageState
                                   right: 7.h,
                                 ),
                                 child: Text(
-                                  "msg15".tr,
+                                  'msg15'.tr,
                                   maxLines: 8,
                                   overflow: TextOverflow.ellipsis,
                                   style: theme.textTheme.bodySmall!.copyWith(
@@ -198,7 +198,7 @@ class MyPageContactUsInquiryHistoryExpandedPageState
                                     Padding(
                                       padding: EdgeInsets.only(left: 5.h),
                                       child: Text(
-                                        "lbl141".tr,
+                                        'lbl141'.tr,
                                         style: theme.textTheme.titleSmall,
                                       ),
                                     ),
@@ -206,7 +206,6 @@ class MyPageContactUsInquiryHistoryExpandedPageState
                                 ),
                               ),
                               Align(
-                                alignment: Alignment.center,
                                 child: Container(
                                   width: 302.h,
                                   margin: EdgeInsets.only(
@@ -215,7 +214,7 @@ class MyPageContactUsInquiryHistoryExpandedPageState
                                     right: 7.h,
                                   ),
                                   child: Text(
-                                    "msg16".tr,
+                                    'msg16'.tr,
                                     maxLines: 6,
                                     overflow: TextOverflow.ellipsis,
                                     style: theme.textTheme.bodySmall!.copyWith(
@@ -225,7 +224,7 @@ class MyPageContactUsInquiryHistoryExpandedPageState
                                 ),
                               ),
                               SizedBox(height: 19.v),
-                              Divider(),
+                              const Divider(),
                             ],
                           ),
                         ),
@@ -256,13 +255,13 @@ class MyPageContactUsInquiryHistoryExpandedPageState
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Text(
-                                                "msg14".tr,
+                                                'msg14'.tr,
                                                 style:
                                                     theme.textTheme.titleSmall,
                                               ),
                                               SizedBox(height: 3.v),
                                               Text(
-                                                "lbl_2023_08_23".tr,
+                                                'lbl_2023_08_23'.tr,
                                                 style: CustomTextStyles
                                                     .bodySmallOnPrimary,
                                               ),
@@ -271,7 +270,7 @@ class MyPageContactUsInquiryHistoryExpandedPageState
                                           CustomOutlinedButton(
                                             height: 28.v,
                                             width: 65.h,
-                                            text: "lbl140".tr,
+                                            text: 'lbl140'.tr,
                                             margin: EdgeInsets.only(
                                               left: 29.h,
                                               top: 4.v,
@@ -296,7 +295,7 @@ class MyPageContactUsInquiryHistoryExpandedPageState
                                         ],
                                       ),
                                       SizedBox(height: 17.v),
-                                      Divider(),
+                                      const Divider(),
                                     ],
                                   ),
                                 ),
@@ -310,7 +309,7 @@ class MyPageContactUsInquiryHistoryExpandedPageState
                                   ),
                                   decoration: AppDecoration.shadow,
                                   child: CustomElevatedButton(
-                                    text: "lbl138".tr,
+                                    text: 'lbl138'.tr,
                                     buttonStyle:
                                         CustomButtonStyles.fillGrayTL26,
                                     buttonTextStyle:

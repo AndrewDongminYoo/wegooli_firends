@@ -1,5 +1,5 @@
-import 'bloc/k61_bloc.dart';
-import 'models/k61_model.dart';
+import 'package:wegooli_friends_app/presentation/k61_bottomsheet/bloc/k61_bloc.dart';
+import 'package:wegooli_friends_app/presentation/k61_bottomsheet/models/k61_model.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 import 'package:wegooli_friends_app/widgets/custom_checkbox_button.dart';
@@ -16,7 +16,7 @@ class K61Bottomsheet extends StatelessWidget {
         k61ModelObj: K61Model(),
       ))
         ..add(K61InitialEvent()),
-      child: K61Bottomsheet(),
+      child: const K61Bottomsheet(),
     );
   }
 
@@ -40,7 +40,7 @@ class K61Bottomsheet extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(left: 8.h),
             child: Text(
-              "lbl174".tr,
+              'lbl174'.tr,
               style: CustomTextStyles.titleMediumBlack900,
             ),
           ),
@@ -61,7 +61,7 @@ class K61Bottomsheet extends StatelessWidget {
                           selector: (state) => state.totalAgreement,
                           builder: (context, totalAgreement) {
                             return CustomCheckboxButton(
-                              text: "lbl175".tr,
+                              text: 'lbl175'.tr,
                               value: totalAgreement,
                               padding: EdgeInsets.symmetric(vertical: 1.v),
                               textStyle: CustomTextStyles
@@ -79,7 +79,7 @@ class K61Bottomsheet extends StatelessWidget {
                           selector: (state) => state.serviceAgreemen,
                           builder: (context, serviceAgreemen) {
                             return CustomCheckboxButton(
-                              text: "lbl176".tr,
+                              text: 'lbl176'.tr,
                               value: serviceAgreemen,
                               textStyle: CustomTextStyles
                                   .bodyMediumNotoSansKRGray50002,
@@ -96,7 +96,7 @@ class K61Bottomsheet extends StatelessWidget {
                           selector: (state) => state.privacyAgreemen,
                           builder: (context, privacyAgreemen) {
                             return CustomCheckboxButton(
-                              text: "lbl177".tr,
+                              text: 'lbl177'.tr,
                               value: privacyAgreemen,
                               textStyle: CustomTextStyles
                                   .bodyMediumNotoSansKRGray50002,
@@ -113,7 +113,7 @@ class K61Bottomsheet extends StatelessWidget {
                           selector: (state) => state.rentalAgreement,
                           builder: (context, rentalAgreement) {
                             return CustomCheckboxButton(
-                              text: "lbl178".tr,
+                              text: 'lbl178'.tr,
                               value: rentalAgreement,
                               textStyle: CustomTextStyles
                                   .bodyMediumNotoSansKRGray50002,
@@ -130,7 +130,7 @@ class K61Bottomsheet extends StatelessWidget {
                           selector: (state) => state.locationAgreeme,
                           builder: (context, locationAgreeme) {
                             return CustomCheckboxButton(
-                              text: "msg23".tr,
+                              text: 'msg23'.tr,
                               value: locationAgreeme,
                               textStyle: CustomTextStyles
                                   .bodyMediumNotoSansKRGray50002,
@@ -147,7 +147,7 @@ class K61Bottomsheet extends StatelessWidget {
                           selector: (state) => state.vehicleAgreemen,
                           builder: (context, vehicleAgreemen) {
                             return CustomCheckboxButton(
-                              text: "msg24".tr,
+                              text: 'msg24'.tr,
                               value: vehicleAgreemen,
                               textStyle: CustomTextStyles
                                   .bodyMediumNotoSansKRGray50002,
@@ -163,7 +163,7 @@ class K61Bottomsheet extends StatelessWidget {
                           selector: (state) => state.marketingAgreem,
                           builder: (context, marketingAgreem) {
                             return CustomCheckboxButton(
-                              text: "msg25".tr,
+                              text: 'msg25'.tr,
                               value: marketingAgreem,
                               margin: EdgeInsets.only(
                                 top: 8.v,
@@ -232,7 +232,7 @@ class K61Bottomsheet extends StatelessWidget {
             ),
           ),
           CustomOutlinedButton(
-            text: "lbl179".tr,
+            text: 'lbl179'.tr,
             margin: EdgeInsets.only(
               left: 8.h,
               top: 22.v,

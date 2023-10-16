@@ -1,8 +1,8 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import '/core/app_export.dart';
-import '../models/userprofile1_item_model.dart';
-import '../models/datecolumn_item_model.dart';
+import 'package:wegooli_friends_app/core/app_export.dart';
+import 'package:wegooli_friends_app/presentation/k72_screen/models/userprofile1_item_model.dart';
+import 'package:wegooli_friends_app/presentation/k72_screen/models/datecolumn_item_model.dart';
 import 'package:wegooli_friends_app/presentation/k72_screen/models/k72_model.dart';
 part 'k72_event.dart';
 part 'k72_state.dart';

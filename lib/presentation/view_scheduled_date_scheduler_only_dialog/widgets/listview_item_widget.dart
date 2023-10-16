@@ -1,4 +1,4 @@
-import '../models/listview_item_model.dart';
+import 'package:wegooli_friends_app/presentation/view_scheduled_date_scheduler_only_dialog/models/listview_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 
@@ -51,7 +51,7 @@ class ListviewItemWidget extends StatelessWidget {
                     ),
                     SizedBox(height: 8.v),
                     Text(
-                      "msg_8_16_15_20".tr,
+                      'msg_8_16_15_20'.tr,
                       style: theme.textTheme.bodyLarge,
                     ),
                   ],

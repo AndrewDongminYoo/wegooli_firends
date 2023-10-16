@@ -1,4 +1,4 @@
-import '../models/userquery_item_model.dart';
+import 'package:wegooli_friends_app/presentation/mypage_contact_us_inquiry_history_page/models/userquery_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 import 'package:wegooli_friends_app/widgets/custom_outlined_button.dart';
@@ -28,12 +28,12 @@ class UserqueryItemWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "msg14".tr,
+                    'msg14'.tr,
                     style: theme.textTheme.titleSmall,
                   ),
                   SizedBox(height: 3.v),
                   Text(
-                    "lbl_2023_08_23".tr,
+                    'lbl_2023_08_23'.tr,
                     style: CustomTextStyles.bodySmallOnPrimary,
                   ),
                 ],
@@ -41,7 +41,7 @@ class UserqueryItemWidget extends StatelessWidget {
               CustomOutlinedButton(
                 height: 28.v,
                 width: 52.h,
-                text: "lbl139".tr,
+                text: 'lbl139'.tr,
                 margin: EdgeInsets.only(
                   left: 42.h,
                   top: 4.v,
@@ -63,7 +63,7 @@ class UserqueryItemWidget extends StatelessWidget {
             ],
           ),
           SizedBox(height: 17.v),
-          Divider(),
+          const Divider(),
         ],
       ),
     );

@@ -1,5 +1,5 @@
-import 'bloc/three1_bloc.dart';
-import 'models/three1_model.dart';
+import 'package:wegooli_friends_app/presentation/three1_bottomsheet/bloc/three1_bloc.dart';
+import 'package:wegooli_friends_app/presentation/three1_bottomsheet/models/three1_model.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 import 'package:wegooli_friends_app/widgets/custom_drop_down.dart';
@@ -16,7 +16,7 @@ class Three1Bottomsheet extends StatelessWidget {
         three1ModelObj: Three1Model(),
       ))
         ..add(Three1InitialEvent()),
-      child: Three1Bottomsheet(),
+      child: const Three1Bottomsheet(),
     );
   }
 
@@ -47,7 +47,7 @@ class Three1Bottomsheet extends StatelessWidget {
                   top: 30.v,
                 ),
                 child: Text(
-                  "msg_2_8_1_16_00".tr,
+                  'msg_2_8_1_16_00'.tr,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   style: CustomTextStyles.titleMediumBlack90018.copyWith(
@@ -74,7 +74,7 @@ class Three1Bottomsheet extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "lbl34".tr,
+                    'lbl34'.tr,
                     style: CustomTextStyles.titleMediumOnPrimary,
                   ),
                   BlocSelector<Three1Bloc, Three1State, Three1Model?>(
@@ -88,7 +88,7 @@ class Three1Bottomsheet extends StatelessWidget {
                             svgPath: ImageConstant.imgArrowrightOnPrimary,
                           ),
                         ),
-                        hintText: "lbl_8_1_16_00".tr,
+                        hintText: 'lbl_8_1_16_00'.tr,
                         items: three1ModelObj?.dropdownItemList ?? [],
                         onChanged: (value) {
                           context
@@ -119,7 +119,7 @@ class Three1Bottomsheet extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "lbl35".tr,
+                    'lbl35'.tr,
                     style: CustomTextStyles.titleMediumOnPrimary,
                   ),
                   BlocSelector<Three1Bloc, Three1State, Three1Model?>(
@@ -133,7 +133,7 @@ class Three1Bottomsheet extends StatelessWidget {
                             svgPath: ImageConstant.imgArrowrightOnPrimary,
                           ),
                         ),
-                        hintText: "lbl_8_1_18_00".tr,
+                        hintText: 'lbl_8_1_18_00'.tr,
                         items: three1ModelObj?.dropdownItemList1 ?? [],
                         onChanged: (value) {
                           context
@@ -161,12 +161,12 @@ class Three1Bottomsheet extends StatelessWidget {
                 children: [
                   CustomElevatedButton(
                     width: 104.h,
-                    text: "lbl36".tr,
+                    text: 'lbl36'.tr,
                     buttonStyle: CustomButtonStyles.fillGray,
                   ),
                   CustomElevatedButton(
                     width: 216.h,
-                    text: "lbl37".tr,
+                    text: 'lbl37'.tr,
                     margin: EdgeInsets.only(left: 8.h),
                   ),
                 ],

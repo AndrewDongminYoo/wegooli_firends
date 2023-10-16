@@ -1,5 +1,5 @@
-import 'bloc/k58_bloc.dart';
-import 'models/k58_model.dart';
+import 'package:wegooli_friends_app/presentation/k58_screen/bloc/k58_bloc.dart';
+import 'package:wegooli_friends_app/presentation/k58_screen/models/k58_model.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 
@@ -13,7 +13,7 @@ class K58Screen extends StatelessWidget {
         k58ModelObj: K58Model(),
       ))
         ..add(K58InitialEvent()),
-      child: K58Screen(),
+      child: const K58Screen(),
     );
   }
 
@@ -31,7 +31,7 @@ class K58Screen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "lbl169".tr,
+                    'lbl169'.tr,
                     style: CustomTextStyles.titleMediumBlack900,
                   ),
                   SizedBox(height: 10.v),
@@ -45,20 +45,20 @@ class K58Screen extends StatelessWidget {
                         ),
                         decoration: AppDecoration.outlineRedA,
                         child: Text(
-                          "lbl118".tr,
+                          'lbl118'.tr,
                           style: CustomTextStyles.bodyLargeNotoSansKRGray700,
                         ),
                       ),
                       SizedBox(height: 1.v),
                       Text(
-                        "lbl170".tr,
+                        'lbl170'.tr,
                         style: CustomTextStyles.bodyLargeNotoSansKRRedA700,
                       ),
                     ],
                   ),
                   SizedBox(height: 50.v),
                   Text(
-                    "lbl171".tr,
+                    'lbl171'.tr,
                     style: CustomTextStyles.titleMediumBlack900,
                   ),
                   SizedBox(height: 10.v),
@@ -71,13 +71,13 @@ class K58Screen extends StatelessWidget {
                         ),
                         decoration: AppDecoration.outlineRedA,
                         child: Text(
-                          "lbl118".tr,
+                          'lbl118'.tr,
                           style: CustomTextStyles.bodyLargeNotoSansKRGray700,
                         ),
                       ),
                       SizedBox(height: 4.v),
                       Text(
-                        "lbl172".tr,
+                        'lbl172'.tr,
                         style: CustomTextStyles.bodyLargeNotoSansKRRedA700,
                       ),
                     ],

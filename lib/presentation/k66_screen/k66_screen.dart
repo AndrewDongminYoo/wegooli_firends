@@ -1,5 +1,5 @@
-import 'bloc/k66_bloc.dart';
-import 'models/k66_model.dart';
+import 'package:wegooli_friends_app/presentation/k66_screen/bloc/k66_bloc.dart';
+import 'package:wegooli_friends_app/presentation/k66_screen/models/k66_model.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 import 'package:wegooli_friends_app/widgets/custom_outlined_button.dart';
@@ -14,7 +14,7 @@ class K66Screen extends StatelessWidget {
         k66ModelObj: K66Model(),
       ))
         ..add(K66InitialEvent()),
-      child: K66Screen(),
+      child: const K66Screen(),
     );
   }
 
@@ -48,9 +48,8 @@ class K66Screen extends StatelessWidget {
                           width: 258.h,
                         ),
                         Align(
-                          alignment: Alignment.center,
                           child: Text(
-                            "lbl173".tr,
+                            'lbl173'.tr,
                             style: CustomTextStyles.bodyLargeNotoSansKRBlack900,
                           ),
                         ),
@@ -61,7 +60,7 @@ class K66Screen extends StatelessWidget {
                   SizedBox(
                     width: 169.h,
                     child: Text(
-                      "lbl189".tr,
+                      'lbl189'.tr,
                       maxLines: 3,
                       overflow: TextOverflow.ellipsis,
                       style: theme.textTheme.headlineMedium,
@@ -72,7 +71,7 @@ class K66Screen extends StatelessWidget {
               ),
             ),
             bottomNavigationBar: CustomOutlinedButton(
-              text: "lbl41".tr,
+              text: 'lbl41'.tr,
               margin: EdgeInsets.only(
                 left: 16.h,
                 right: 16.h,

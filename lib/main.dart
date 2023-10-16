@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'core/app_export.dart';
+import 'package:wegooli_friends_app/core/app_export.dart';
 
-var globalMessengerKey = GlobalKey<ScaffoldMessengerState>();
+GlobalKey<ScaffoldMessengerState> globalMessengerKey =
+    GlobalKey<ScaffoldMessengerState>();
 void main() {
   EnvConfig().initConfig();
   WidgetsFlutterBinding.ensureInitialized();
@@ -11,11 +12,13 @@ void main() {
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]),
     PrefUtils().init()
   ]).then((value) {
-    runApp(MyApp());
+    runApp(const MyApp());
   });
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -27,13 +30,13 @@ class MyApp extends StatelessWidget {
               title: 'wegooli_friends_app',
               navigatorKey: NavigatorService.navigatorKey,
               debugShowCheckedModeBanner: false,
-              localizationsDelegates: [
+              localizationsDelegates: const [
                 AppLocalizationDelegate(),
                 GlobalMaterialLocalizations.delegate,
                 GlobalWidgetsLocalizations.delegate,
                 GlobalCupertinoLocalizations.delegate
               ],
-              supportedLocales: [Locale('en', '')],
+              supportedLocales: const [Locale('en', '')],
               initialRoute: AppRoutes.initialRoute,
               routes: AppRoutes.routes);
         }));

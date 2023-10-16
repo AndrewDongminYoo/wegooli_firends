@@ -2,7 +2,7 @@
 
 import 'package:equatable/equatable.dart';/// This class defines the variables used in the [signup_page_identity_verification_waiting_screen],
 /// and is typically used to hold data that is passed between different parts of the application.
-class SignupPageIdentityVerificationWaitingModel extends Equatable {SignupPageIdentityVerificationWaitingModel() {  }
+class SignupPageIdentityVerificationWaitingModel extends Equatable {SignupPageIdentityVerificationWaitingModel();
 
 SignupPageIdentityVerificationWaitingModel copyWith() { return SignupPageIdentityVerificationWaitingModel(
 ); } 

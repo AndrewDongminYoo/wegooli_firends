@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import '/core/app_export.dart';
+import 'package:wegooli_friends_app/core/app_export.dart';
 import 'package:wegooli_friends_app/presentation/signin_page_screen/models/signin_page_model.dart';
 part 'signin_page_event.dart';
 part 'signin_page_state.dart';

@@ -1,9 +1,9 @@
-import '../k72_screen/widgets/datecolumn_item_widget.dart';
-import '../k72_screen/widgets/userprofile1_item_widget.dart';
-import 'bloc/k72_bloc.dart';
-import 'models/datecolumn_item_model.dart';
-import 'models/k72_model.dart';
-import 'models/userprofile1_item_model.dart';
+import 'package:wegooli_friends_app/presentation/k72_screen/widgets/datecolumn_item_widget.dart';
+import 'package:wegooli_friends_app/presentation/k72_screen/widgets/userprofile1_item_widget.dart';
+import 'package:wegooli_friends_app/presentation/k72_screen/bloc/k72_bloc.dart';
+import 'package:wegooli_friends_app/presentation/k72_screen/models/datecolumn_item_model.dart';
+import 'package:wegooli_friends_app/presentation/k72_screen/models/k72_model.dart';
+import 'package:wegooli_friends_app/presentation/k72_screen/models/userprofile1_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 import 'package:wegooli_friends_app/widgets/app_bar/appbar_image.dart';
@@ -11,9 +11,9 @@ import 'package:wegooli_friends_app/widgets/app_bar/custom_app_bar.dart';
 import 'package:wegooli_friends_app/widgets/custom_bottom_bar.dart';
 import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
 
+// ignore: must_be_immutable
 class K72Screen extends StatelessWidget {
-  K72Screen({Key? key})
-      : super(key: key);
+  K72Screen({Key? key}) : super(key: key);
 
   GlobalKey<NavigatorState> navigatorKey = GlobalKey();
 
@@ -56,7 +56,7 @@ class K72Screen extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.only(left: 16.h),
                           child: Text(
-                            "lbl55".tr,
+                            'lbl55'.tr,
                             style: CustomTextStyles.titleMedium18,
                           ),
                         ),
@@ -84,7 +84,7 @@ class K72Screen extends StatelessWidget {
                                     k72ModelObj?.userprofile1ItemList.length ??
                                         0,
                                 itemBuilder: (context, index) {
-                                  Userprofile1ItemModel model = k72ModelObj
+                                  final model = k72ModelObj
                                           ?.userprofile1ItemList[index] ??
                                       Userprofile1ItemModel();
                                   return Userprofile1ItemWidget(
@@ -109,12 +109,12 @@ class K72Screen extends StatelessWidget {
                             top: 21.v,
                           ),
                           child: Text(
-                            "lbl11".tr,
+                            'lbl11'.tr,
                             style: CustomTextStyles.titleMedium18,
                           ),
                         ),
                         CustomElevatedButton(
-                          text: "lbl56".tr,
+                          text: 'lbl56'.tr,
                           margin: EdgeInsets.only(
                             left: 16.h,
                             top: 12.v,
@@ -123,7 +123,6 @@ class K72Screen extends StatelessWidget {
                           alignment: Alignment.center,
                         ),
                         Align(
-                          alignment: Alignment.center,
                           child: Container(
                             margin: EdgeInsets.only(
                               left: 15.h,
@@ -154,7 +153,7 @@ class K72Screen extends StatelessWidget {
                                       margin: EdgeInsets.only(bottom: 1.v),
                                     ),
                                     Text(
-                                      "lbl_2023_8".tr,
+                                      'lbl_2023_8'.tr,
                                       style: theme.textTheme.titleMedium,
                                     ),
                                     CustomImageView(
@@ -188,10 +187,9 @@ class K72Screen extends StatelessWidget {
                                                 ?.datecolumnItemList.length ??
                                             0,
                                         itemBuilder: (context, index) {
-                                          DatecolumnItemModel model =
-                                              k72ModelObj?.datecolumnItemList[
-                                                      index] ??
-                                                  DatecolumnItemModel();
+                                          final model = k72ModelObj
+                                                  ?.datecolumnItemList[index] ??
+                                              DatecolumnItemModel();
                                           return DatecolumnItemWidget(
                                             model,
                                           );

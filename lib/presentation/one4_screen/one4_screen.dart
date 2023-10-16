@@ -1,13 +1,13 @@
-import 'bloc/one4_bloc.dart';
-import 'models/one4_model.dart';
+import 'package:wegooli_friends_app/presentation/one4_screen/bloc/one4_bloc.dart';
+import 'package:wegooli_friends_app/presentation/one4_screen/models/one4_model.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 import 'package:wegooli_friends_app/widgets/custom_bottom_bar.dart';
 import 'package:wegooli_friends_app/widgets/custom_outlined_button.dart';
 
+// ignore: must_be_immutable
 class One4Screen extends StatelessWidget {
-  One4Screen({Key? key})
-      : super(key: key);
+  One4Screen({Key? key}) : super(key: key);
 
   GlobalKey<NavigatorState> navigatorKey = GlobalKey();
 
@@ -52,7 +52,7 @@ class One4Screen extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.only(top: 3.v),
                           child: Text(
-                            "lbl_friend".tr,
+                            'lbl_friend'.tr,
                             style: CustomTextStyles.bodyLargeBluegray900,
                           ),
                         ),
@@ -97,7 +97,7 @@ class One4Screen extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      "lbl_32".tr,
+                                      'lbl_32'.tr,
                                       style: CustomTextStyles
                                           .titleMediumInterBlack900,
                                     ),
@@ -109,24 +109,22 @@ class One4Screen extends StatelessWidget {
                                               CrossAxisAlignment.start,
                                           children: [
                                             Align(
-                                              alignment: Alignment.center,
                                               child: Text(
-                                                "lbl207".tr,
+                                                'lbl207'.tr,
                                                 style: CustomTextStyles
                                                     .bodyMediumGray600,
                                               ),
                                             ),
                                             SizedBox(height: 4.v),
                                             Text(
-                                              "lbl2".tr,
+                                              'lbl2'.tr,
                                               style: CustomTextStyles
                                                   .bodyMediumGray600,
                                             ),
                                             SizedBox(height: 3.v),
                                             Align(
-                                              alignment: Alignment.center,
                                               child: Text(
-                                                "lbl26".tr,
+                                                'lbl26'.tr,
                                                 style: CustomTextStyles
                                                     .bodyMediumGray600,
                                               ),
@@ -140,7 +138,7 @@ class One4Screen extends StatelessWidget {
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Text(
-                                                "lbl_12_3456".tr,
+                                                'lbl_12_3456'.tr,
                                                 style:
                                                     theme.textTheme.bodyMedium,
                                               ),
@@ -148,7 +146,7 @@ class One4Screen extends StatelessWidget {
                                               Row(
                                                 children: [
                                                   Text(
-                                                    "lbl208".tr,
+                                                    'lbl208'.tr,
                                                     style: theme
                                                         .textTheme.bodyMedium,
                                                   ),
@@ -167,7 +165,7 @@ class One4Screen extends StatelessWidget {
                                               ),
                                               SizedBox(height: 3.v),
                                               Text(
-                                                "lbl_204".tr,
+                                                'lbl_204'.tr,
                                                 style:
                                                     theme.textTheme.bodyMedium,
                                               ),
@@ -184,7 +182,7 @@ class One4Screen extends StatelessWidget {
                         ),
                         SizedBox(height: 17.v),
                         CustomOutlinedButton(
-                          text: "lbl209".tr,
+                          text: 'lbl209'.tr,
                         ),
                       ],
                     ),
@@ -197,7 +195,7 @@ class One4Screen extends StatelessWidget {
                         top: 28.v,
                       ),
                       child: Text(
-                        "lbl13".tr,
+                        'lbl13'.tr,
                         style: CustomTextStyles.titleMediumBlack900,
                       ),
                     ),
@@ -224,16 +222,15 @@ class One4Screen extends StatelessWidget {
                               ),
                               SizedBox(height: 10.v),
                               Align(
-                                alignment: Alignment.center,
                                 child: Text(
-                                  "lbl6".tr,
+                                  'lbl6'.tr,
                                   style: theme.textTheme.labelLarge,
                                 ),
                               ),
                             ],
                           ),
                         ),
-                        Spacer(),
+                        const Spacer(),
                         SizedBox(
                           height: 62.v,
                           child: VerticalDivider(
@@ -257,7 +254,7 @@ class One4Screen extends StatelessWidget {
                               ),
                               SizedBox(height: 10.v),
                               Text(
-                                "lbl7".tr,
+                                'lbl7'.tr,
                                 style: theme.textTheme.labelLarge,
                               ),
                             ],
@@ -303,7 +300,7 @@ class One4Screen extends StatelessWidget {
                             ),
                             SizedBox(height: 10.v),
                             Text(
-                              "lbl8".tr,
+                              'lbl8'.tr,
                               style: theme.textTheme.labelLarge,
                             ),
                           ],
@@ -340,7 +337,7 @@ class One4Screen extends StatelessWidget {
                             ),
                             SizedBox(height: 12.v),
                             Text(
-                              "lbl210".tr,
+                              'lbl210'.tr,
                               style: theme.textTheme.labelLarge,
                             ),
                           ],
@@ -372,7 +369,7 @@ class One4Screen extends StatelessWidget {
                             ),
                             SizedBox(height: 10.v),
                             Text(
-                              "lbl9".tr,
+                              'lbl9'.tr,
                               style: theme.textTheme.labelLarge,
                             ),
                           ],

@@ -3,8 +3,7 @@ import 'package:wegooli_friends_app/core/app_export.dart';
 import 'package:wegooli_friends_app/widgets/base_button.dart';
 
 class CustomOutlinedButton extends BaseButton {
-  CustomOutlinedButton({
-    Key? key,
+  CustomOutlinedButton({Key? key, 
     this.decoration,
     this.leftIcon,
     this.rightIcon,
@@ -19,7 +18,7 @@ class CustomOutlinedButton extends BaseButton {
     EdgeInsets? margin,
     required String text,
   }) : super(
-          text: text,
+          key: key, text: text,
           onTap: onTap,
           buttonStyle: buttonStyle,
           isDisabled: isDisabled,
@@ -49,8 +48,8 @@ class CustomOutlinedButton extends BaseButton {
   }
 
   Widget get buildOutlinedButtonWidget => Container(
-        height: this.height ?? 32.v,
-        width: this.width ?? double.maxFinite,
+        height: height ?? 32.v,
+        width: width ?? double.maxFinite,
         margin: margin,
         decoration: decoration,
         child: OutlinedButton(
@@ -58,7 +57,6 @@ class CustomOutlinedButton extends BaseButton {
           onPressed: isDisabled ?? false ? null : onTap ?? () {},
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               leftIcon ?? const SizedBox.shrink(),
               Text(

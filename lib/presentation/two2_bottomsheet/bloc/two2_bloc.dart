@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import '/core/app_export.dart';
+import 'package:wegooli_friends_app/core/app_export.dart';
 import 'package:wegooli_friends_app/presentation/two2_bottomsheet/models/two2_model.dart';
 part 'two2_event.dart';
 part 'two2_state.dart';
@@ -35,16 +35,16 @@ class Two2Bloc extends Bloc<Two2Event, Two2State> {
     return [
       SelectionPopupModel(
         id: 1,
-        title: "Item One",
+        title: 'Item One',
         isSelected: true,
       ),
       SelectionPopupModel(
         id: 2,
-        title: "Item Two",
+        title: 'Item Two',
       ),
       SelectionPopupModel(
         id: 3,
-        title: "Item Three",
+        title: 'Item Three',
       )
     ];
   }

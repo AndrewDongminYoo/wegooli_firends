@@ -1,7 +1,7 @@
-import 'en_us/en_us_translations.dart';
+import 'package:wegooli_friends_app/localization/en_us/en_us_translations.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/cupertino.dart';
-import '../core/app_export.dart';
+import 'package:wegooli_friends_app/core/app_export.dart';
 
 class AppLocalization {
   AppLocalization(this.locale);
@@ -27,8 +27,8 @@ class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalization> {
   bool isSupported(Locale locale) =>
       AppLocalization.languages().contains(locale.languageCode);
 
-  //Returning a SynchronousFuture here because an async "load" operation
-  //cause an async "load" operation
+  //Returning a SynchronousFuture here because an async 'load' operation
+  //cause an async 'load' operation
   @override
   Future<AppLocalization> load(Locale locale) {
     return SynchronousFuture<AppLocalization>(AppLocalization(locale));

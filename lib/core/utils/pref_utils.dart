@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class PrefUtils {
-  static SharedPreferences? _sharedPreferences;
 
   PrefUtils() {
     // init();
@@ -11,6 +10,7 @@ class PrefUtils {
       _sharedPreferences = value;
     });
   }
+  static SharedPreferences? _sharedPreferences;
 
   Future<void> init() async {
     _sharedPreferences ??= await SharedPreferences.getInstance();
@@ -18,8 +18,8 @@ class PrefUtils {
   }
 
   ///will clear all the data stored in preference
-  void clearPreferencesData() async {
-    _sharedPreferences!.clear();
+  Future<void> clearPreferencesData() async {
+    await _sharedPreferences!.clear();
   }
 
   Future<void> setThemeData(String value) {

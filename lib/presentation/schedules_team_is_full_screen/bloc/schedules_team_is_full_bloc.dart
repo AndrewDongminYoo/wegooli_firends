@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import '/core/app_export.dart';
-import '../models/calendar1_item_model.dart';
+import 'package:wegooli_friends_app/core/app_export.dart';
+import 'package:wegooli_friends_app/presentation/schedules_team_is_full_screen/models/calendar1_item_model.dart';
 import 'package:wegooli_friends_app/presentation/schedules_team_is_full_screen/models/schedules_team_is_full_model.dart';
 part 'schedules_team_is_full_event.dart';
 part 'schedules_team_is_full_state.dart';

@@ -5,8 +5,8 @@ part of 'mypage_card_list_bloc.dart';
 /// Represents the state of MyPageCardList in the application.
 class MyPageCardListState extends Equatable {
   MyPageCardListState({
-    this.radioGroup = "",
-    this.radioGroup1 = "",
+    this.radioGroup = '',
+    this.radioGroup1 = '',
     this.mypageCardListModelObj,
   });
 

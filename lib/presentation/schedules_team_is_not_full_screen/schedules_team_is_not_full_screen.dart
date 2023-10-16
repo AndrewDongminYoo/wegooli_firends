@@ -1,9 +1,9 @@
-import '../schedules_team_is_not_full_screen/widgets/userage_item_widget.dart';
-import '../schedules_team_is_not_full_screen/widgets/userprofile_item_widget.dart';
-import 'bloc/schedules_team_is_not_full_bloc.dart';
-import 'models/schedules_team_is_not_full_model.dart';
-import 'models/userage_item_model.dart';
-import 'models/userprofile_item_model.dart';
+import 'package:wegooli_friends_app/presentation/schedules_team_is_not_full_screen/widgets/userage_item_widget.dart';
+import 'package:wegooli_friends_app/presentation/schedules_team_is_not_full_screen/widgets/userprofile_item_widget.dart';
+import 'package:wegooli_friends_app/presentation/schedules_team_is_not_full_screen/bloc/schedules_team_is_not_full_bloc.dart';
+import 'package:wegooli_friends_app/presentation/schedules_team_is_not_full_screen/models/schedules_team_is_not_full_model.dart';
+import 'package:wegooli_friends_app/presentation/schedules_team_is_not_full_screen/models/userage_item_model.dart';
+import 'package:wegooli_friends_app/presentation/schedules_team_is_not_full_screen/models/userprofile_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 import 'package:wegooli_friends_app/widgets/app_bar/appbar_image.dart';
@@ -11,9 +11,9 @@ import 'package:wegooli_friends_app/widgets/app_bar/custom_app_bar.dart';
 import 'package:wegooli_friends_app/widgets/custom_bottom_bar.dart';
 import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
 
+// ignore: must_be_immutable
 class SchedulesTeamIsNotFullScreen extends StatelessWidget {
-  SchedulesTeamIsNotFullScreen({Key? key})
-      : super(key: key);
+  SchedulesTeamIsNotFullScreen({Key? key}) : super(key: key);
 
   GlobalKey<NavigatorState> navigatorKey = GlobalKey();
 
@@ -57,7 +57,7 @@ class SchedulesTeamIsNotFullScreen extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.only(left: 16.h),
                           child: Text(
-                            "lbl55".tr,
+                            'lbl55'.tr,
                             style: CustomTextStyles.titleMedium18,
                           ),
                         ),
@@ -89,10 +89,9 @@ class SchedulesTeamIsNotFullScreen extends StatelessWidget {
                                         ?.userprofileItemList.length ??
                                     0,
                                 itemBuilder: (context, index) {
-                                  UserprofileItemModel model =
-                                      schedulesTeamIsNotFullModelObj
-                                              ?.userprofileItemList[index] ??
-                                          UserprofileItemModel();
+                                  final model = schedulesTeamIsNotFullModelObj
+                                          ?.userprofileItemList[index] ??
+                                      UserprofileItemModel();
                                   return UserprofileItemWidget(
                                     model,
                                   );
@@ -115,12 +114,12 @@ class SchedulesTeamIsNotFullScreen extends StatelessWidget {
                             top: 21.v,
                           ),
                           child: Text(
-                            "lbl11".tr,
+                            'lbl11'.tr,
                             style: CustomTextStyles.titleMedium18,
                           ),
                         ),
                         CustomElevatedButton(
-                          text: "lbl56".tr,
+                          text: 'lbl56'.tr,
                           margin: EdgeInsets.only(
                             left: 16.h,
                             top: 12.v,
@@ -129,7 +128,6 @@ class SchedulesTeamIsNotFullScreen extends StatelessWidget {
                           alignment: Alignment.center,
                         ),
                         Align(
-                          alignment: Alignment.center,
                           child: Container(
                             margin: EdgeInsets.only(
                               left: 15.h,
@@ -160,7 +158,7 @@ class SchedulesTeamIsNotFullScreen extends StatelessWidget {
                                       margin: EdgeInsets.only(bottom: 1.v),
                                     ),
                                     Text(
-                                      "lbl_2023_8".tr,
+                                      'lbl_2023_8'.tr,
                                       style: theme.textTheme.titleMedium,
                                     ),
                                     CustomImageView(
@@ -199,7 +197,7 @@ class SchedulesTeamIsNotFullScreen extends StatelessWidget {
                                                     ?.userageItemList.length ??
                                                 0,
                                         itemBuilder: (context, index) {
-                                          UserageItemModel model =
+                                          final model =
                                               schedulesTeamIsNotFullModelObj
                                                           ?.userageItemList[
                                                       index] ??

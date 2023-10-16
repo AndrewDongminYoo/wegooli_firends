@@ -1,5 +1,5 @@
-import 'bloc/k93_bloc.dart';
-import 'models/k93_model.dart';
+import 'package:wegooli_friends_app/presentation/k93_screen/bloc/k93_bloc.dart';
+import 'package:wegooli_friends_app/presentation/k93_screen/models/k93_model.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 import 'package:wegooli_friends_app/widgets/app_bar/appbar_image.dart';
@@ -7,6 +7,7 @@ import 'package:wegooli_friends_app/widgets/app_bar/custom_app_bar.dart';
 import 'package:wegooli_friends_app/widgets/custom_bottom_bar.dart';
 import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
 
+// ignore: must_be_immutable
 class K93Screen extends StatelessWidget {
   K93Screen({Key? key})
       : super(key: key);
@@ -69,12 +70,12 @@ class K93Screen extends StatelessWidget {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        "lbl".tr,
+                                        'lbl'.tr,
                                         style: theme.textTheme.titleMedium,
                                       ),
                                       SizedBox(height: 4.v),
                                       Text(
-                                        "lbl_12_3456".tr,
+                                        'lbl_12_3456'.tr,
                                         style:
                                             CustomTextStyles.bodySmallOnPrimary,
                                       ),
@@ -95,7 +96,7 @@ class K93Screen extends StatelessWidget {
                                               top: 7.v,
                                             ),
                                             child: Text(
-                                              "lbl_203".tr,
+                                              'lbl_203'.tr,
                                               style: theme.textTheme.bodySmall,
                                             ),
                                           ),
@@ -122,13 +123,13 @@ class K93Screen extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                "lbl2".tr,
+                                'lbl2'.tr,
                                 style: CustomTextStyles.bodySmallOnPrimary,
                               ),
                               Padding(
                                 padding: EdgeInsets.only(left: 5.h),
                                 child: Text(
-                                  "lbl3".tr,
+                                  'lbl3'.tr,
                                   style: CustomTextStyles.bodySmallOnPrimary,
                                 ),
                               ),
@@ -150,7 +151,7 @@ class K93Screen extends StatelessWidget {
                               Padding(
                                 padding: EdgeInsets.only(left: 2.h),
                                 child: Text(
-                                  "lbl128".tr,
+                                  'lbl128'.tr,
                                   style: theme.textTheme.bodySmall,
                                 ),
                               ),
@@ -201,11 +202,11 @@ class K93Screen extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  "lbl_12_00".tr,
+                                  'lbl_12_00'.tr,
                                   style: CustomTextStyles.bodySmallOnPrimary,
                                 ),
                                 Text(
-                                  "lbl_13_00".tr,
+                                  'lbl_13_00'.tr,
                                   style: CustomTextStyles.bodySmallOnPrimary,
                                 ),
                               ],
@@ -240,7 +241,7 @@ class K93Screen extends StatelessWidget {
                                         Align(
                                           alignment: Alignment.centerLeft,
                                           child: Text(
-                                            "lbl5".tr,
+                                            'lbl5'.tr,
                                             style: CustomTextStyles
                                                 .titleMediumBlack90018,
                                           ),
@@ -261,8 +262,6 @@ class K93Screen extends StatelessWidget {
                                                   alignment: Alignment.center,
                                                   children: [
                                                     Align(
-                                                      alignment:
-                                                          Alignment.center,
                                                       child: Container(
                                                         padding:
                                                             EdgeInsets.all(5.h),
@@ -296,8 +295,6 @@ class K93Screen extends StatelessWidget {
                                                       ),
                                                     ),
                                                     Align(
-                                                      alignment:
-                                                          Alignment.center,
                                                       child: Padding(
                                                         padding: EdgeInsets
                                                             .symmetric(
@@ -319,7 +316,7 @@ class K93Screen extends StatelessWidget {
                                                             SizedBox(
                                                                 height: 5.v),
                                                             Text(
-                                                              "lbl6".tr,
+                                                              'lbl6'.tr,
                                                               style: theme
                                                                   .textTheme
                                                                   .titleMedium,
@@ -340,8 +337,6 @@ class K93Screen extends StatelessWidget {
                                                   alignment: Alignment.center,
                                                   children: [
                                                     Align(
-                                                      alignment:
-                                                          Alignment.center,
                                                       child: Container(
                                                         padding:
                                                             EdgeInsets.all(5.h),
@@ -375,8 +370,6 @@ class K93Screen extends StatelessWidget {
                                                       ),
                                                     ),
                                                     Align(
-                                                      alignment:
-                                                          Alignment.center,
                                                       child: Padding(
                                                         padding: EdgeInsets
                                                             .symmetric(
@@ -398,7 +391,7 @@ class K93Screen extends StatelessWidget {
                                                             SizedBox(
                                                                 height: 5.v),
                                                             Text(
-                                                              "lbl7".tr,
+                                                              'lbl7'.tr,
                                                               style: theme
                                                                   .textTheme
                                                                   .titleMedium,
@@ -429,8 +422,6 @@ class K93Screen extends StatelessWidget {
                                                   alignment: Alignment.center,
                                                   children: [
                                                     Align(
-                                                      alignment:
-                                                          Alignment.center,
                                                       child: Container(
                                                         padding:
                                                             EdgeInsets.all(5.h),
@@ -464,8 +455,6 @@ class K93Screen extends StatelessWidget {
                                                       ),
                                                     ),
                                                     Align(
-                                                      alignment:
-                                                          Alignment.center,
                                                       child: Padding(
                                                         padding: EdgeInsets
                                                             .symmetric(
@@ -484,7 +473,7 @@ class K93Screen extends StatelessWidget {
                                                             SizedBox(
                                                                 height: 14.v),
                                                             Text(
-                                                              "lbl8".tr,
+                                                              'lbl8'.tr,
                                                               style: theme
                                                                   .textTheme
                                                                   .titleMedium,
@@ -530,7 +519,7 @@ class K93Screen extends StatelessWidget {
                                                       ),
                                                       SizedBox(height: 5.v),
                                                       Text(
-                                                        "lbl9".tr,
+                                                        'lbl9'.tr,
                                                         style: theme.textTheme
                                                             .titleMedium,
                                                       ),
@@ -546,7 +535,6 @@ class K93Screen extends StatelessWidget {
                                   ),
                                 ),
                                 Align(
-                                  alignment: Alignment.center,
                                   child: Container(
                                     padding: EdgeInsets.symmetric(
                                       horizontal: 16.h,
@@ -561,7 +549,7 @@ class K93Screen extends StatelessWidget {
                                         CustomElevatedButton(
                                           height: 44.v,
                                           width: 189.h,
-                                          text: "lbl129".tr,
+                                          text: 'lbl129'.tr,
                                           buttonStyle:
                                               CustomButtonStyles.fillOnPrimary,
                                           buttonTextStyle: CustomTextStyles
@@ -594,7 +582,7 @@ class K93Screen extends StatelessWidget {
                                                 ),
                                                 SizedBox(height: 1.v),
                                                 Text(
-                                                  "lbl10".tr,
+                                                  'lbl10'.tr,
                                                   style: CustomTextStyles
                                                       .bodySmallBlack900,
                                                 ),

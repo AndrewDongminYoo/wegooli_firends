@@ -1,4 +1,4 @@
-import 'base_env_config.dart';
+import 'package:wegooli_friends_app/core/environment/base_env_config.dart';
 
 class WegooliFriendsEnvConfig extends BaseEnvConfig {
   @override

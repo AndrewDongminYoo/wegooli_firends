@@ -1,7 +1,7 @@
-import '../schedules_page/widgets/calendar_item_widget.dart';
-import 'bloc/schedules_bloc.dart';
-import 'models/calendar_item_model.dart';
-import 'models/schedules_model.dart';
+import 'package:wegooli_friends_app/presentation/schedules_page/widgets/calendar_item_widget.dart';
+import 'package:wegooli_friends_app/presentation/schedules_page/bloc/schedules_bloc.dart';
+import 'package:wegooli_friends_app/presentation/schedules_page/models/calendar_item_model.dart';
+import 'package:wegooli_friends_app/presentation/schedules_page/models/schedules_model.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 import 'package:wegooli_friends_app/widgets/app_bar/appbar_image.dart';
@@ -19,7 +19,7 @@ class SchedulesPage extends StatelessWidget {
         schedulesModelObj: SchedulesModel(),
       ))
         ..add(SchedulesInitialEvent()),
-      child: SchedulesPage(),
+      child: const SchedulesPage(),
     );
   }
 
@@ -54,7 +54,7 @@ class SchedulesPage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "lbl55".tr,
+                              'lbl55'.tr,
                               style: CustomTextStyles.titleMedium18,
                             ),
                             SizedBox(height: 12.v),
@@ -72,7 +72,7 @@ class SchedulesPage extends StatelessWidget {
                                     ),
                                     SizedBox(height: 4.v),
                                     Text(
-                                      "lbl18".tr,
+                                      'lbl18'.tr,
                                       style: theme.textTheme.bodySmall,
                                     ),
                                   ],
@@ -92,7 +92,7 @@ class SchedulesPage extends StatelessWidget {
                                       ),
                                       SizedBox(height: 4.v),
                                       Text(
-                                        "lbl19".tr,
+                                        'lbl19'.tr,
                                         style: theme.textTheme.bodySmall,
                                       ),
                                     ],
@@ -112,7 +112,7 @@ class SchedulesPage extends StatelessWidget {
                                       ),
                                       SizedBox(height: 4.v),
                                       Text(
-                                        "lbl20".tr,
+                                        'lbl20'.tr,
                                         style: theme.textTheme.bodySmall,
                                       ),
                                     ],
@@ -139,7 +139,7 @@ class SchedulesPage extends StatelessWidget {
                               ),
                               SizedBox(height: 4.v),
                               Text(
-                                "lbl20".tr,
+                                'lbl20'.tr,
                                 style: theme.textTheme.bodySmall,
                               ),
                             ],
@@ -162,12 +162,12 @@ class SchedulesPage extends StatelessWidget {
                       top: 21.v,
                     ),
                     child: Text(
-                      "lbl11".tr,
+                      'lbl11'.tr,
                       style: CustomTextStyles.titleMedium18,
                     ),
                   ),
                   CustomElevatedButton(
-                    text: "lbl56".tr,
+                    text: 'lbl56'.tr,
                     margin: EdgeInsets.only(
                       left: 16.h,
                       top: 12.v,
@@ -176,7 +176,6 @@ class SchedulesPage extends StatelessWidget {
                     alignment: Alignment.center,
                   ),
                   Align(
-                    alignment: Alignment.center,
                     child: Container(
                       margin: EdgeInsets.only(
                         left: 15.h,
@@ -204,7 +203,7 @@ class SchedulesPage extends StatelessWidget {
                                 margin: EdgeInsets.only(bottom: 1.v),
                               ),
                               Text(
-                                "lbl_2023_8".tr,
+                                'lbl_2023_8'.tr,
                                 style: theme.textTheme.titleMedium,
                               ),
                               CustomImageView(
@@ -237,7 +236,7 @@ class SchedulesPage extends StatelessWidget {
                                           ?.calendarItemList.length ??
                                       0,
                                   itemBuilder: (context, index) {
-                                    CalendarItemModel model = schedulesModelObj
+                                    final model = schedulesModelObj
                                             ?.calendarItemList[index] ??
                                         CalendarItemModel();
                                     return CalendarItemWidget(

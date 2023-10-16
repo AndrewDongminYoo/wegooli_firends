@@ -1,14 +1,14 @@
-import 'bloc/one3_bloc.dart';
-import 'models/one3_model.dart';
+import 'package:wegooli_friends_app/presentation/one3_screen/bloc/one3_bloc.dart';
+import 'package:wegooli_friends_app/presentation/one3_screen/models/one3_model.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 import 'package:wegooli_friends_app/widgets/custom_bottom_bar.dart';
 import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
 import 'package:wegooli_friends_app/widgets/custom_text_form_field.dart';
 
+// ignore: must_be_immutable
 class One3Screen extends StatelessWidget {
-  One3Screen({Key? key})
-      : super(key: key);
+  One3Screen({Key? key}) : super(key: key);
 
   GlobalKey<NavigatorState> navigatorKey = GlobalKey();
 
@@ -53,7 +53,7 @@ class One3Screen extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.only(top: 3.v),
                       child: Text(
-                        "lbl_friend".tr,
+                        'lbl_friend'.tr,
                         style: CustomTextStyles.bodyLargeBluegray900,
                       ),
                     ),
@@ -66,14 +66,14 @@ class One3Screen extends StatelessWidget {
                   top: 16.v,
                 ),
                 child: Text(
-                  "lbl117".tr,
+                  'lbl117'.tr,
                   style: CustomTextStyles.titleMediumBlack900,
                 ),
               ),
               CustomElevatedButton(
                 height: 38.v,
                 width: 108.h,
-                text: "lbl118".tr,
+                text: 'lbl118'.tr,
                 margin: EdgeInsets.only(
                   top: 8.v,
                   right: 16.h,
@@ -105,7 +105,7 @@ class One3Screen extends StatelessWidget {
                       SizedBox(
                         width: 219.h,
                         child: Text(
-                          "msg11".tr,
+                          'msg11'.tr,
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.right,
@@ -124,13 +124,12 @@ class One3Screen extends StatelessWidget {
                     right: 16.h,
                   ),
                   child: Text(
-                    "lbl_12_20_pm".tr,
+                    'lbl_12_20_pm'.tr,
                     style: CustomTextStyles.bodySmallInterBluegray300,
                   ),
                 ),
               ),
               Align(
-                alignment: Alignment.center,
                 child: Padding(
                   padding: EdgeInsets.only(
                     left: 16.h,
@@ -155,7 +154,7 @@ class One3Screen extends StatelessWidget {
                             ),
                             SizedBox(height: 1.v),
                             Text(
-                              "lbl45".tr,
+                              'lbl45'.tr,
                               style: theme.textTheme.bodyMedium,
                             ),
                           ],
@@ -173,13 +172,13 @@ class One3Screen extends StatelessWidget {
                               CustomElevatedButton(
                                 height: 38.v,
                                 width: 209.h,
-                                text: "msg12".tr,
+                                text: 'msg12'.tr,
                                 buttonStyle: CustomButtonStyles.fillGrayTL19,
-                                buttonTextStyle: theme.textTheme.bodyMedium!,
+                                buttonTextStyle: theme.textTheme.bodyMedium,
                               ),
                               SizedBox(height: 10.v),
                               Text(
-                                "lbl_12_22_pm".tr,
+                                'lbl_12_22_pm'.tr,
                                 style:
                                     CustomTextStyles.bodySmallInterBluegray300,
                               ),
@@ -187,7 +186,7 @@ class One3Screen extends StatelessWidget {
                               CustomElevatedButton(
                                 height: 38.v,
                                 width: 184.h,
-                                text: "lbl119".tr,
+                                text: 'lbl119'.tr,
                                 buttonStyle:
                                     CustomButtonStyles.fillBlueGrayTL19,
                                 buttonTextStyle: CustomTextStyles
@@ -198,7 +197,7 @@ class One3Screen extends StatelessWidget {
                               Align(
                                 alignment: Alignment.centerRight,
                                 child: Text(
-                                  "lbl_12_25_pm".tr,
+                                  'lbl_12_25_pm'.tr,
                                   style: CustomTextStyles
                                       .bodySmallInterBluegray300,
                                 ),
@@ -233,7 +232,7 @@ class One3Screen extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            "lbl45".tr,
+                            'lbl45'.tr,
                             style: theme.textTheme.bodyMedium,
                           ),
                         ],
@@ -250,17 +249,17 @@ class One3Screen extends StatelessWidget {
                           children: [
                             CustomElevatedButton(
                               height: 38.v,
-                              text: "msg13".tr,
+                              text: 'msg13'.tr,
                               buttonStyle: CustomButtonStyles.fillGrayTL19,
-                              buttonTextStyle: theme.textTheme.bodyMedium!,
+                              buttonTextStyle: theme.textTheme.bodyMedium,
                             ),
                             SizedBox(height: 6.v),
                             CustomElevatedButton(
                               height: 38.v,
                               width: 153.h,
-                              text: "lbl120".tr,
+                              text: 'lbl120'.tr,
                               buttonStyle: CustomButtonStyles.fillGrayTL19,
-                              buttonTextStyle: theme.textTheme.bodyMedium!,
+                              buttonTextStyle: theme.textTheme.bodyMedium,
                             ),
                           ],
                         ),
@@ -275,7 +274,7 @@ class One3Screen extends StatelessWidget {
                   top: 10.v,
                 ),
                 child: Text(
-                  "lbl_12_15_pm".tr,
+                  'lbl_12_15_pm'.tr,
                   style: CustomTextStyles.bodySmallInterBluegray300,
                 ),
               ),
@@ -301,7 +300,7 @@ class One3Screen extends StatelessWidget {
                           return CustomTextFormField(
                             controller: inputoneController,
                             margin: EdgeInsets.only(left: 8.h),
-                            hintText: "lbl121".tr,
+                            hintText: 'lbl121'.tr,
                             hintStyle:
                                 CustomTextStyles.bodyMediumPoppinsGray70002,
                             textInputAction: TextInputAction.done,

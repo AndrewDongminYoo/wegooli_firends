@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 
+// ignore: must_be_immutable
 class CustomSwitch extends StatelessWidget {
   CustomSwitch({
     Key? key,
@@ -43,8 +44,6 @@ class CustomSwitch extends StatelessWidget {
         trackColor: theme.colorScheme.onPrimaryContainer,
         thumbColor: appTheme.gray40001,
         activeColor: theme.colorScheme.primary,
-        onChanged: (value) {
-          onChange(value);
-        },
+        onChanged: onChange,
       );
 }

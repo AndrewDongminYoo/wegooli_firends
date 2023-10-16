@@ -1,4 +1,4 @@
-import '../models/list_item_model.dart';
+import 'package:wegooli_friends_app/presentation/mypage_notices_one_screen/models/list_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 
@@ -26,7 +26,7 @@ class ListItemWidget extends StatelessWidget {
               top: 15.v,
             ),
             child: Text(
-              "msg2".tr,
+              'msg2'.tr,
               style: theme.textTheme.titleSmall,
             ),
           ),
@@ -36,12 +36,12 @@ class ListItemWidget extends StatelessWidget {
               top: 3.v,
             ),
             child: Text(
-              "lbl_2023_08_23".tr,
+              'lbl_2023_08_23'.tr,
               style: CustomTextStyles.bodySmallOnPrimary,
             ),
           ),
           SizedBox(height: 16.v),
-          Divider(),
+          const Divider(),
         ],
       ),
     );

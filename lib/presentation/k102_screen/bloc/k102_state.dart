@@ -5,8 +5,8 @@ part of 'k102_bloc.dart';
 /// Represents the state of K102 in the application.
 class K102State extends Equatable {
   K102State({
-    this.radioGroup = "",
-    this.radioGroup1 = "",
+    this.radioGroup = '',
+    this.radioGroup1 = '',
     this.k102ModelObj,
   });
 

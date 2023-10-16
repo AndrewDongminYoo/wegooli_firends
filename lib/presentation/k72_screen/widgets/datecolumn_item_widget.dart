@@ -1,4 +1,4 @@
-import '../models/datecolumn_item_model.dart';
+import 'package:wegooli_friends_app/presentation/k72_screen/models/datecolumn_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 

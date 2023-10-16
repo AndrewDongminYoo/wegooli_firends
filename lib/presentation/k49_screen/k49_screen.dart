@@ -1,5 +1,5 @@
-import 'bloc/k49_bloc.dart';
-import 'models/k49_model.dart';
+import 'package:wegooli_friends_app/presentation/k49_screen/bloc/k49_bloc.dart';
+import 'package:wegooli_friends_app/presentation/k49_screen/models/k49_model.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 
@@ -13,7 +13,7 @@ class K49Screen extends StatelessWidget {
         k49ModelObj: K49Model(),
       ))
         ..add(K49InitialEvent()),
-      child: K49Screen(),
+      child: const K49Screen(),
     );
   }
 
@@ -42,7 +42,7 @@ class K49Screen extends StatelessWidget {
                         child: Column(
                           children: [
                             Text(
-                              "lbl_friends".tr,
+                              'lbl_friends'.tr,
                               style: theme.textTheme.displayMedium,
                             ),
                             SizedBox(height: 189.v),

@@ -1,12 +1,13 @@
-import '../k84_screen/widgets/userprofile2_item_widget.dart';
-import 'bloc/k84_bloc.dart';
-import 'models/k84_model.dart';
-import 'models/userprofile2_item_model.dart';
+import 'package:wegooli_friends_app/presentation/k84_screen/widgets/userprofile2_item_widget.dart';
+import 'package:wegooli_friends_app/presentation/k84_screen/bloc/k84_bloc.dart';
+import 'package:wegooli_friends_app/presentation/k84_screen/models/k84_model.dart';
+import 'package:wegooli_friends_app/presentation/k84_screen/models/userprofile2_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 import 'package:wegooli_friends_app/widgets/custom_bottom_bar.dart';
 import 'package:wegooli_friends_app/widgets/custom_outlined_button.dart';
 
+// ignore: must_be_immutable
 class K84Screen extends StatelessWidget {
   K84Screen({Key? key})
       : super(key: key);
@@ -53,7 +54,7 @@ class K84Screen extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.only(top: 3.v),
                       child: Text(
-                        "lbl_friend".tr,
+                        'lbl_friend'.tr,
                         style: CustomTextStyles.bodyLargeBluegray900,
                       ),
                     ),
@@ -66,7 +67,7 @@ class K84Screen extends StatelessWidget {
                   top: 16.v,
                 ),
                 child: Text(
-                  "lbl55".tr,
+                  'lbl55'.tr,
                   style: CustomTextStyles.titleMediumBlack900,
                 ),
               ),
@@ -92,7 +93,7 @@ class K84Screen extends StatelessWidget {
                       },
                       itemCount: k84ModelObj?.userprofile2ItemList.length ?? 0,
                       itemBuilder: (context, index) {
-                        Userprofile2ItemModel model =
+                        final model =
                             k84ModelObj?.userprofile2ItemList[index] ??
                                 Userprofile2ItemModel();
                         return Userprofile2ItemWidget(
@@ -109,12 +110,11 @@ class K84Screen extends StatelessWidget {
                   top: 20.v,
                 ),
                 child: Text(
-                  "lbl11".tr,
+                  'lbl11'.tr,
                   style: CustomTextStyles.titleMediumBlack900,
                 ),
               ),
               Align(
-                alignment: Alignment.center,
                 child: Container(
                   margin: EdgeInsets.only(
                     left: 16.h,
@@ -150,7 +150,7 @@ class K84Screen extends StatelessWidget {
                               ),
                             ),
                             Text(
-                              "lbl_2023_7".tr,
+                              'lbl_2023_7'.tr,
                               style: CustomTextStyles
                                   .titleMediumRobotoBluegray90001,
                             ),
@@ -228,7 +228,6 @@ class K84Screen extends StatelessWidget {
                                     ),
                                     SizedBox(height: 26.v),
                                     Align(
-                                      alignment: Alignment.center,
                                       child: Container(
                                         height: 3.adaptSize,
                                         width: 3.adaptSize,
@@ -267,7 +266,6 @@ class K84Screen extends StatelessWidget {
                               ),
                             ),
                             Align(
-                              alignment: Alignment.center,
                               child: Padding(
                                 padding: EdgeInsets.only(left: 5.h),
                                 child: Column(
@@ -278,37 +276,37 @@ class K84Screen extends StatelessWidget {
                                           MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
-                                          "lbl57".tr,
+                                          'lbl57'.tr,
                                           style: CustomTextStyles
                                               .bodyMediumRobotoBluegray900,
                                         ),
                                         Text(
-                                          "lbl58".tr,
+                                          'lbl58'.tr,
                                           style: CustomTextStyles
                                               .bodyMediumRobotoBluegray900,
                                         ),
                                         Text(
-                                          "lbl59".tr,
+                                          'lbl59'.tr,
                                           style: CustomTextStyles
                                               .bodyMediumRobotoBluegray900,
                                         ),
                                         Text(
-                                          "lbl60".tr,
+                                          'lbl60'.tr,
                                           style: CustomTextStyles
                                               .bodyMediumRobotoBluegray900,
                                         ),
                                         Text(
-                                          "lbl61".tr,
+                                          'lbl61'.tr,
                                           style: CustomTextStyles
                                               .bodyMediumRobotoBluegray900,
                                         ),
                                         Text(
-                                          "lbl62".tr,
+                                          'lbl62'.tr,
                                           style: CustomTextStyles
                                               .bodyMediumRobotoBluegray900,
                                         ),
                                         Text(
-                                          "lbl63".tr,
+                                          'lbl63'.tr,
                                           style: CustomTextStyles
                                               .bodyMediumRobotoBluegray900,
                                         ),
@@ -324,7 +322,7 @@ class K84Screen extends StatelessWidget {
                                             MainAxisAlignment.center,
                                         children: [
                                           Text(
-                                            "lbl_272".tr,
+                                            'lbl_272'.tr,
                                             style: CustomTextStyles
                                                 .titleSmallRobotoGray40002,
                                           ),
@@ -332,7 +330,7 @@ class K84Screen extends StatelessWidget {
                                             padding:
                                                 EdgeInsets.only(left: 26.h),
                                             child: Text(
-                                              "lbl_282".tr,
+                                              'lbl_282'.tr,
                                               style: CustomTextStyles
                                                   .titleSmallRobotoGray40002,
                                             ),
@@ -341,7 +339,7 @@ class K84Screen extends StatelessWidget {
                                             padding:
                                                 EdgeInsets.only(left: 26.h),
                                             child: Text(
-                                              "lbl_292".tr,
+                                              'lbl_292'.tr,
                                               style: CustomTextStyles
                                                   .titleSmallRobotoGray40002,
                                             ),
@@ -350,7 +348,7 @@ class K84Screen extends StatelessWidget {
                                             padding:
                                                 EdgeInsets.only(left: 26.h),
                                             child: Text(
-                                              "lbl_302".tr,
+                                              'lbl_302'.tr,
                                               style: CustomTextStyles
                                                   .titleSmallRobotoGray40002,
                                             ),
@@ -359,7 +357,7 @@ class K84Screen extends StatelessWidget {
                                             padding:
                                                 EdgeInsets.only(left: 26.h),
                                             child: Text(
-                                              "lbl_312".tr,
+                                              'lbl_312'.tr,
                                               style: CustomTextStyles
                                                   .titleSmallRobotoGray40002,
                                             ),
@@ -368,7 +366,7 @@ class K84Screen extends StatelessWidget {
                                             padding:
                                                 EdgeInsets.only(left: 32.h),
                                             child: Text(
-                                              "lbl_1".tr,
+                                              'lbl_1'.tr,
                                               style: CustomTextStyles
                                                   .titleSmallRobotoBluegray90001,
                                             ),
@@ -377,7 +375,7 @@ class K84Screen extends StatelessWidget {
                                             padding:
                                                 EdgeInsets.only(left: 37.h),
                                             child: Text(
-                                              "lbl_22".tr,
+                                              'lbl_22'.tr,
                                               style: CustomTextStyles
                                                   .titleSmallRobotoBluegray90001,
                                             ),
@@ -396,37 +394,37 @@ class K84Screen extends StatelessWidget {
                                             MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
-                                            "lbl_33".tr,
+                                            'lbl_33'.tr,
                                             style: CustomTextStyles
                                                 .bodyMediumRobotoOnPrimaryContainer,
                                           ),
                                           Text(
-                                            "lbl_43".tr,
+                                            'lbl_43'.tr,
                                             style: CustomTextStyles
                                                 .bodyMediumRobotoOnPrimaryContainer,
                                           ),
                                           Text(
-                                            "lbl_52".tr,
+                                            'lbl_52'.tr,
                                             style: CustomTextStyles
                                                 .bodyMediumRobotoBluegray90001,
                                           ),
                                           Text(
-                                            "lbl_62".tr,
+                                            'lbl_62'.tr,
                                             style: CustomTextStyles
                                                 .bodyMediumRobotoBluegray90001,
                                           ),
                                           Text(
-                                            "lbl_72".tr,
+                                            'lbl_72'.tr,
                                             style: CustomTextStyles
                                                 .bodyMediumRobotoBluegray90001,
                                           ),
                                           Text(
-                                            "lbl_82".tr,
+                                            'lbl_82'.tr,
                                             style: CustomTextStyles
                                                 .titleSmallRobotoBluegray90001,
                                           ),
                                           Text(
-                                            "lbl_92".tr,
+                                            'lbl_92'.tr,
                                             style: CustomTextStyles
                                                 .titleSmallRobotoBluegray90001,
                                           ),
@@ -439,79 +437,37 @@ class K84Screen extends StatelessWidget {
                                           MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
-                                          "lbl_102".tr,
+                                          'lbl_102'.tr,
                                           style: CustomTextStyles
                                               .titleSmallRobotoBluegray90001,
                                         ),
                                         Text(
-                                          "lbl_112".tr,
+                                          'lbl_112'.tr,
                                           style: CustomTextStyles
                                               .titleSmallRobotoBluegray90001,
                                         ),
                                         Text(
-                                          "lbl_122".tr,
+                                          'lbl_122'.tr,
                                           style: CustomTextStyles
                                               .titleSmallRobotoBluegray90001,
                                         ),
                                         Text(
-                                          "lbl_132".tr,
+                                          'lbl_132'.tr,
                                           style: CustomTextStyles
                                               .titleSmallRobotoBluegray90001,
                                         ),
                                         Text(
-                                          "lbl_142".tr,
+                                          'lbl_142'.tr,
                                           style: CustomTextStyles
                                               .titleSmallRobotoBluegray90001,
                                         ),
                                         Text(
-                                          "lbl_152".tr,
+                                          'lbl_152'.tr,
                                           style: CustomTextStyles
                                               .titleSmallRobotoBluegray90001,
                                         ),
                                         Text(
-                                          "lbl_162".tr,
-                                          style: CustomTextStyles
-                                              .titleSmallRobotoBluegray90001,
-                                        ),
-                                      ],
-                                    ),
-                                    SizedBox(height: 17.v),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text(
-                                          "lbl_172".tr,
-                                          style: CustomTextStyles
-                                              .titleSmallRobotoBluegray90001,
-                                        ),
-                                        Text(
-                                          "lbl_182".tr,
-                                          style: CustomTextStyles
-                                              .titleSmallRobotoBluegray90001,
-                                        ),
-                                        Text(
-                                          "lbl_192".tr,
-                                          style: CustomTextStyles
-                                              .titleSmallRobotoBluegray90001,
-                                        ),
-                                        Text(
-                                          "lbl_202".tr,
-                                          style: CustomTextStyles
-                                              .titleSmallRobotoBluegray90001,
-                                        ),
-                                        Text(
-                                          "lbl_212".tr,
-                                          style: CustomTextStyles
-                                              .titleSmallRobotoBluegray90001,
-                                        ),
-                                        Text(
-                                          "lbl_222".tr,
-                                          style: CustomTextStyles
-                                              .titleSmallRobotoBluegray90001,
-                                        ),
-                                        Text(
-                                          "lbl_232".tr,
+                                          'lbl_162'.tr,
                                           style: CustomTextStyles
                                               .titleSmallRobotoBluegray90001,
                                         ),
@@ -523,37 +479,79 @@ class K84Screen extends StatelessWidget {
                                           MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
-                                          "lbl_242".tr,
+                                          'lbl_172'.tr,
                                           style: CustomTextStyles
                                               .titleSmallRobotoBluegray90001,
                                         ),
                                         Text(
-                                          "lbl_252".tr,
+                                          'lbl_182'.tr,
                                           style: CustomTextStyles
                                               .titleSmallRobotoBluegray90001,
                                         ),
                                         Text(
-                                          "lbl_262".tr,
+                                          'lbl_192'.tr,
                                           style: CustomTextStyles
                                               .titleSmallRobotoBluegray90001,
                                         ),
                                         Text(
-                                          "lbl_272".tr,
+                                          'lbl_202'.tr,
                                           style: CustomTextStyles
                                               .titleSmallRobotoBluegray90001,
                                         ),
                                         Text(
-                                          "lbl_282".tr,
+                                          'lbl_212'.tr,
                                           style: CustomTextStyles
                                               .titleSmallRobotoBluegray90001,
                                         ),
                                         Text(
-                                          "lbl_292".tr,
+                                          'lbl_222'.tr,
                                           style: CustomTextStyles
                                               .titleSmallRobotoBluegray90001,
                                         ),
                                         Text(
-                                          "lbl_302".tr,
+                                          'lbl_232'.tr,
+                                          style: CustomTextStyles
+                                              .titleSmallRobotoBluegray90001,
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(height: 17.v),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text(
+                                          'lbl_242'.tr,
+                                          style: CustomTextStyles
+                                              .titleSmallRobotoBluegray90001,
+                                        ),
+                                        Text(
+                                          'lbl_252'.tr,
+                                          style: CustomTextStyles
+                                              .titleSmallRobotoBluegray90001,
+                                        ),
+                                        Text(
+                                          'lbl_262'.tr,
+                                          style: CustomTextStyles
+                                              .titleSmallRobotoBluegray90001,
+                                        ),
+                                        Text(
+                                          'lbl_272'.tr,
+                                          style: CustomTextStyles
+                                              .titleSmallRobotoBluegray90001,
+                                        ),
+                                        Text(
+                                          'lbl_282'.tr,
+                                          style: CustomTextStyles
+                                              .titleSmallRobotoBluegray90001,
+                                        ),
+                                        Text(
+                                          'lbl_292'.tr,
+                                          style: CustomTextStyles
+                                              .titleSmallRobotoBluegray90001,
+                                        ),
+                                        Text(
+                                          'lbl_302'.tr,
                                           style: CustomTextStyles
                                               .titleSmallRobotoBluegray90001,
                                         ),
@@ -571,7 +569,7 @@ class K84Screen extends StatelessWidget {
                 ),
               ),
               CustomOutlinedButton(
-                text: "lbl206".tr,
+                text: 'lbl206'.tr,
                 margin: EdgeInsets.fromLTRB(16.h, 16.v, 16.h, 5.v),
                 alignment: Alignment.center,
               ),

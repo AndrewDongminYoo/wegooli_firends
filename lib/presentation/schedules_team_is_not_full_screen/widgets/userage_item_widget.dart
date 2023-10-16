@@ -1,4 +1,4 @@
-import '../models/userage_item_model.dart';
+import 'package:wegooli_friends_app/presentation/schedules_team_is_not_full_screen/models/userage_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 

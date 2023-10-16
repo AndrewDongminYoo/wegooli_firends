@@ -2,7 +2,7 @@
 
 import 'package:equatable/equatable.dart';/// This class defines the variables used in the [smart_key_screen_page],
 /// and is typically used to hold data that is passed between different parts of the application.
-class SmartKeyScreenModel extends Equatable {SmartKeyScreenModel() {  }
+class SmartKeyScreenModel extends Equatable {SmartKeyScreenModel();
 
 SmartKeyScreenModel copyWith() { return SmartKeyScreenModel(
 ); } 

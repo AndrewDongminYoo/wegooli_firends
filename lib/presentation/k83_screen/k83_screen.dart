@@ -1,12 +1,12 @@
-import 'bloc/k83_bloc.dart';
-import 'models/k83_model.dart';
+import 'package:wegooli_friends_app/presentation/k83_screen/bloc/k83_bloc.dart';
+import 'package:wegooli_friends_app/presentation/k83_screen/models/k83_model.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 import 'package:wegooli_friends_app/widgets/custom_bottom_bar.dart';
 
+// ignore: must_be_immutable
 class K83Screen extends StatelessWidget {
-  K83Screen({Key? key})
-      : super(key: key);
+  K83Screen({Key? key}) : super(key: key);
 
   GlobalKey<NavigatorState> navigatorKey = GlobalKey();
 
@@ -51,7 +51,7 @@ class K83Screen extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.only(top: 3.v),
                           child: Text(
-                            "lbl_friend".tr,
+                            'lbl_friend'.tr,
                             style: CustomTextStyles.bodyLargeBluegray900,
                           ),
                         ),
@@ -73,18 +73,18 @@ class K83Screen extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "lbl45".tr,
+                                'lbl45'.tr,
                                 style: CustomTextStyles.titleMediumBluegray900,
                               ),
                               SizedBox(height: 4.v),
                               Text(
-                                "msg_xxx111_gmail_com".tr,
+                                'msg_xxx111_gmail_com'.tr,
                                 style: CustomTextStyles
                                     .bodyMediumPretendardBluegray900Light,
                               ),
                               SizedBox(height: 1.v),
                               Text(
-                                "lbl_010_1234_5678".tr,
+                                'lbl_010_1234_5678'.tr,
                                 style: CustomTextStyles
                                     .bodyMediumPretendardBluegray900Light,
                               ),
@@ -116,7 +116,7 @@ class K83Screen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "lbl199".tr,
+                          'lbl199'.tr,
                           style:
                               CustomTextStyles.titleMediumBluegray900SemiBold,
                         ),
@@ -139,7 +139,7 @@ class K83Screen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "lbl200".tr,
+                          'lbl200'.tr,
                           style:
                               CustomTextStyles.titleMediumBluegray900SemiBold,
                         ),
@@ -158,7 +158,7 @@ class K83Screen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "lbl188".tr,
+                          'lbl188'.tr,
                           style:
                               CustomTextStyles.titleMediumBluegray900SemiBold,
                         ),

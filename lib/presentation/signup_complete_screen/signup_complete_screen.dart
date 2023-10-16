@@ -1,5 +1,5 @@
-import 'bloc/signup_complete_bloc.dart';
-import 'models/signup_complete_model.dart';
+import 'package:wegooli_friends_app/presentation/signup_complete_screen/bloc/signup_complete_bloc.dart';
+import 'package:wegooli_friends_app/presentation/signup_complete_screen/models/signup_complete_model.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
@@ -14,7 +14,7 @@ class SignupCompleteScreen extends StatelessWidget {
         signupCompleteModelObj: SignupCompleteModel(),
       ))
         ..add(SignupCompleteInitialEvent()),
-      child: SignupCompleteScreen(),
+      child: const SignupCompleteScreen(),
     );
   }
 
@@ -51,7 +51,7 @@ class SignupCompleteScreen extends StatelessWidget {
                             SizedBox(
                               width: 153.h,
                               child: Text(
-                                "lbl40".tr,
+                                'lbl40'.tr,
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
                                 textAlign: TextAlign.center,
@@ -69,7 +69,7 @@ class SignupCompleteScreen extends StatelessWidget {
               ),
             ),
             bottomNavigationBar: CustomElevatedButton(
-              text: "lbl41".tr,
+              text: 'lbl41'.tr,
               margin: EdgeInsets.only(
                 left: 16.h,
                 right: 16.h,

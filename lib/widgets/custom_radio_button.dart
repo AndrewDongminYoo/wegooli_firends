@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 
+// ignore: must_be_immutable
 class CustomRadioButton extends StatelessWidget {
   CustomRadioButton({
     Key? key,
@@ -80,8 +81,8 @@ class CustomRadioButton extends StatelessWidget {
   Widget get leftSideRadioButton => Row(
         children: [
           Padding(
+            padding: const EdgeInsets.only(right: 8),
             child: radioButtonWidget,
-            padding: EdgeInsets.only(right: 8),
           ),
           textWidget,
         ],
@@ -91,13 +92,13 @@ class CustomRadioButton extends StatelessWidget {
         children: [
           textWidget,
           Padding(
-            padding: EdgeInsets.only(left: 8),
+            padding: const EdgeInsets.only(left: 8),
             child: radioButtonWidget,
           ),
         ],
       );
   Widget get textWidget => Text(
-        text ?? "",
+        text ?? '',
         textAlign: textAlignment ?? TextAlign.center,
         style: textStyle ?? theme.textTheme.bodyLarge,
       );
@@ -105,11 +106,11 @@ class CustomRadioButton extends StatelessWidget {
         height: iconSize ?? 20.h,
         width: iconSize ?? 20.h,
         child: Radio<String>(
-          visualDensity: VisualDensity(
+          visualDensity: const VisualDensity(
             vertical: -4,
             horizontal: -4,
           ),
-          value: value ?? "",
+          value: value ?? '',
           groupValue: groupValue,
           onChanged: (value) {
             onChange(value!);

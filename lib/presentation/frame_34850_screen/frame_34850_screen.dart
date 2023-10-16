@@ -1,5 +1,5 @@
-import 'bloc/frame_34850_bloc.dart';
-import 'models/frame_34850_model.dart';
+import 'package:wegooli_friends_app/presentation/frame_34850_screen/bloc/frame_34850_bloc.dart';
+import 'package:wegooli_friends_app/presentation/frame_34850_screen/models/frame_34850_model.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 import 'package:wegooli_friends_app/widgets/custom_checkbox_button.dart';
@@ -15,7 +15,7 @@ class Frame34850Screen extends StatelessWidget {
         frame34850ModelObj: Frame34850Model(),
       ))
         ..add(Frame34850InitialEvent()),
-      child: Frame34850Screen(),
+      child: const Frame34850Screen(),
     );
   }
 
@@ -36,7 +36,7 @@ class Frame34850Screen extends StatelessWidget {
                 ),
                 decoration: AppDecoration.outlineBluegray30033,
                 child: Text(
-                  "lbl79".tr,
+                  'lbl79'.tr,
                   style: CustomTextStyles.titleMediumBlack90018,
                 ),
               ),
@@ -47,7 +47,7 @@ class Frame34850Screen extends StatelessWidget {
                   builder: (context, totalAgreement) {
                     return CustomCheckboxButton(
                       alignment: Alignment.centerLeft,
-                      text: "lbl80".tr,
+                      text: 'lbl80'.tr,
                       value: totalAgreement,
                       margin: EdgeInsets.only(
                         left: 15.h,
@@ -82,7 +82,7 @@ class Frame34850Screen extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.only(left: 10.h),
                           child: Text(
-                            "lbl157".tr,
+                            'lbl157'.tr,
                             style: theme.textTheme.bodyLarge,
                           ),
                         ),
@@ -117,7 +117,7 @@ class Frame34850Screen extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.only(left: 10.h),
                           child: Text(
-                            "lbl158".tr,
+                            'lbl158'.tr,
                             style: theme.textTheme.bodyLarge,
                           ),
                         ),
@@ -152,7 +152,7 @@ class Frame34850Screen extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.only(left: 10.h),
                           child: Text(
-                            "lbl159".tr,
+                            'lbl159'.tr,
                             style: theme.textTheme.bodyLarge,
                           ),
                         ),
@@ -187,7 +187,7 @@ class Frame34850Screen extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.only(left: 10.h),
                           child: Text(
-                            "msg19".tr,
+                            'msg19'.tr,
                             style: theme.textTheme.bodyLarge,
                           ),
                         ),
@@ -224,7 +224,7 @@ class Frame34850Screen extends StatelessWidget {
                           Padding(
                             padding: EdgeInsets.only(left: 10.h),
                             child: Text(
-                              "msg5".tr,
+                              'msg5'.tr,
                               style: theme.textTheme.bodyLarge,
                             ),
                           ),
@@ -254,7 +254,7 @@ class Frame34850Screen extends StatelessWidget {
                         selector: (state) => state.computer,
                         builder: (context, computer) {
                           return CustomCheckboxButton(
-                            text: "msg6".tr,
+                            text: 'msg6'.tr,
                             value: computer,
                             onChange: (value) {
                               context
@@ -288,7 +288,7 @@ class Frame34850Screen extends StatelessWidget {
           ),
           decoration: AppDecoration.shadow,
           child: CustomElevatedButton(
-            text: "lbl83".tr,
+            text: 'lbl83'.tr,
           ),
         ),
       ),

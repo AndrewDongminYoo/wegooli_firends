@@ -6,7 +6,7 @@
 ///  length of at least 4
 /// no white space allowed
 bool isValidPassword(String? inputString, {bool isRequired = false, }) { 
-bool isInputStringValid = false;
+var isInputStringValid = false;
 
 if (!isRequired && (inputString == null ? true : inputString.isEmpty)) {
 
@@ -26,7 +26,7 @@ isInputStringValid = regExp.hasMatch(inputString) ;
 
 return isInputStringValid; } /// Checks if string is email.
 bool isValidEmail(String? inputString, {bool isRequired = false, }) { 
-bool isInputStringValid = false;
+var isInputStringValid = false;
 
 if (!isRequired && (inputString == null ? true : inputString.isEmpty)) {
 

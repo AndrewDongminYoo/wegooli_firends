@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import '/core/app_export.dart';
+import 'package:wegooli_friends_app/core/app_export.dart';
 import 'package:wegooli_friends_app/presentation/one7_bottomsheet/models/one7_model.dart';
 part 'one7_event.dart';
 part 'one7_state.dart';
@@ -35,16 +35,16 @@ class One7Bloc extends Bloc<One7Event, One7State> {
     return [
       SelectionPopupModel(
         id: 1,
-        title: "Item One",
+        title: 'Item One',
         isSelected: true,
       ),
       SelectionPopupModel(
         id: 2,
-        title: "Item Two",
+        title: 'Item Two',
       ),
       SelectionPopupModel(
         id: 3,
-        title: "Item Three",
+        title: 'Item Three',
       )
     ];
   }

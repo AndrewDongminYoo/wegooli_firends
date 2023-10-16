@@ -1,8 +1,8 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import '/core/app_export.dart';
-import '../models/userprofile_item_model.dart';
-import '../models/userage_item_model.dart';
+import 'package:wegooli_friends_app/core/app_export.dart';
+import 'package:wegooli_friends_app/presentation/schedules_team_is_not_full_screen/models/userprofile_item_model.dart';
+import 'package:wegooli_friends_app/presentation/schedules_team_is_not_full_screen/models/userage_item_model.dart';
 import 'package:wegooli_friends_app/presentation/schedules_team_is_not_full_screen/models/schedules_team_is_not_full_model.dart';
 part 'schedules_team_is_not_full_event.dart';
 part 'schedules_team_is_not_full_state.dart';

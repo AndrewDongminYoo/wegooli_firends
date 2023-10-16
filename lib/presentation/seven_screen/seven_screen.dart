@@ -1,5 +1,5 @@
-import 'bloc/seven_bloc.dart';
-import 'models/seven_model.dart';
+import 'package:wegooli_friends_app/presentation/seven_screen/bloc/seven_bloc.dart';
+import 'package:wegooli_friends_app/presentation/seven_screen/models/seven_model.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 import 'package:wegooli_friends_app/core/utils/validation_functions.dart';
@@ -10,7 +10,7 @@ class SevenScreen extends StatelessWidget {
   SevenScreen({Key? key})
       : super(key: key);
 
-  GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   static Widget builder(BuildContext context) {
     return BlocProvider<SevenBloc>(
@@ -47,7 +47,7 @@ class SevenScreen extends StatelessWidget {
                       child: Column(
                         children: [
                           Text(
-                            "lbl_friends".tr,
+                            'lbl_friends'.tr,
                             style: theme.textTheme.displayMedium,
                           ),
                           SizedBox(height: 53.v),
@@ -57,7 +57,7 @@ class SevenScreen extends StatelessWidget {
                             builder: (context, idoneController) {
                               return CustomTextFormField(
                                 controller: idoneController,
-                                hintText: "lbl91".tr,
+                                hintText: 'lbl91'.tr,
                                 hintStyle: CustomTextStyles.bodyLargeGray50004,
                               );
                             },
@@ -67,7 +67,7 @@ class SevenScreen extends StatelessWidget {
                             builder: (context, state) {
                               return CustomTextFormField(
                                 controller: state.passwordoneController,
-                                hintText: "lbl66".tr,
+                                hintText: 'lbl66'.tr,
                                 hintStyle: CustomTextStyles.bodyLargeGray50004,
                                 textInputAction: TextInputAction.done,
                                 textInputType: TextInputType.visiblePassword,
@@ -94,7 +94,7 @@ class SevenScreen extends StatelessWidget {
                                   if (value == null ||
                                       (!isValidPassword(value,
                                           isRequired: true))) {
-                                    return "Please enter valid password";
+                                    return 'Please enter valid password';
                                   }
                                   return null;
                                 },
@@ -109,16 +109,16 @@ class SevenScreen extends StatelessWidget {
                           ),
                           SizedBox(height: 31.v),
                           CustomElevatedButton(
-                            text: "lbl68".tr,
+                            text: 'lbl68'.tr,
                           ),
                           SizedBox(height: 52.v),
                           Text(
-                            "lbl156".tr,
+                            'lbl156'.tr,
                             style: theme.textTheme.bodyLarge,
                           ),
                           SizedBox(height: 11.v),
                           CustomElevatedButton(
-                            text: "lbl70".tr,
+                            text: 'lbl70'.tr,
                           ),
                         ],
                       ),

@@ -54,9 +54,6 @@ linter:
     # 일부 위젯에서 사용하는 `Key key`와 `@required Widget child`를
     # 마지막에 배치하는 규칙과 충돌합니다.
     always_put_required_named_parameters_first: false
-    # `as`는 잘 사용한다면 그렇게 나쁘지 않습니다(특히 곧 출시될 널러블 타입의 경우).
-    # 명시적 예외는 암시적 예외보다 낫습니다.
-    avoid_as: false
     # 이 프로젝트는 Flutter 스타일의 todo를 사용하지 않습니다.
     flutter_style_todos: false
     # on 구문을 사용하기에는 너무 복잡한 경우,

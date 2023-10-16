@@ -18,6 +18,7 @@ class CustomElevatedButton extends BaseButton {
     double? width,
     required String text,
   }) : super(
+          key: key,
           text: text,
           onTap: onTap,
           buttonStyle: buttonStyle,
@@ -46,8 +47,8 @@ class CustomElevatedButton extends BaseButton {
   }
 
   Widget get buildElevatedButtonWidget => Container(
-        height: this.height ?? 52.v,
-        width: this.width ?? double.maxFinite,
+        height: height ?? 52.v,
+        width: width ?? double.maxFinite,
         margin: margin,
         decoration: decoration,
         child: ElevatedButton(
@@ -55,7 +56,6 @@ class CustomElevatedButton extends BaseButton {
           onPressed: isDisabled ?? false ? null : onTap ?? () {},
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               leftIcon ?? const SizedBox.shrink(),
               Text(

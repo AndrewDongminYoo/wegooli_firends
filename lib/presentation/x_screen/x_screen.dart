@@ -1,5 +1,5 @@
-import 'bloc/x_bloc.dart';
-import 'models/x_model.dart';
+import 'package:wegooli_friends_app/presentation/x_screen/bloc/x_bloc.dart';
+import 'package:wegooli_friends_app/presentation/x_screen/models/x_model.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 import 'package:wegooli_friends_app/widgets/app_bar/appbar_image.dart';
@@ -7,9 +7,9 @@ import 'package:wegooli_friends_app/widgets/app_bar/custom_app_bar.dart';
 import 'package:wegooli_friends_app/widgets/custom_bottom_bar.dart';
 import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
 
+// ignore: must_be_immutable
 class XScreen extends StatelessWidget {
-  XScreen({Key? key})
-      : super(key: key);
+  XScreen({Key? key}) : super(key: key);
 
   GlobalKey<NavigatorState> navigatorKey = GlobalKey();
 
@@ -62,12 +62,12 @@ class XScreen extends StatelessWidget {
                             ),
                             SizedBox(height: 41.v),
                             Text(
-                              "lbl191".tr,
+                              'lbl191'.tr,
                               style: CustomTextStyles.titleMediumBlack90018,
                             ),
                             SizedBox(height: 32.v),
                             CustomElevatedButton(
-                              text: "lbl192".tr,
+                              text: 'lbl192'.tr,
                             ),
                             SizedBox(height: 50.v),
                             Align(
@@ -92,7 +92,7 @@ class XScreen extends StatelessWidget {
                                     ),
                                     SizedBox(height: 1.v),
                                     Text(
-                                      "lbl136".tr,
+                                      'lbl136'.tr,
                                       style: CustomTextStyles.bodySmallBlack900,
                                     ),
                                     SizedBox(height: 3.v),

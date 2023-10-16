@@ -1,5 +1,5 @@
-import 'bloc/k57_bloc.dart';
-import 'models/k57_model.dart';
+import 'package:wegooli_friends_app/presentation/k57_screen/bloc/k57_bloc.dart';
+import 'package:wegooli_friends_app/presentation/k57_screen/models/k57_model.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
@@ -14,7 +14,7 @@ class K57Screen extends StatelessWidget {
         k57ModelObj: K57Model(),
       ))
         ..add(K57InitialEvent()),
-      child: K57Screen(),
+      child: const K57Screen(),
     );
   }
 
@@ -51,7 +51,7 @@ class K57Screen extends StatelessWidget {
                             SizedBox(
                               width: 153.h,
                               child: Text(
-                                "lbl40".tr,
+                                'lbl40'.tr,
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
                                 textAlign: TextAlign.center,
@@ -69,7 +69,7 @@ class K57Screen extends StatelessWidget {
               ),
             ),
             bottomNavigationBar: CustomElevatedButton(
-              text: "lbl41".tr,
+              text: 'lbl41'.tr,
               margin: EdgeInsets.only(
                 left: 16.h,
                 right: 16.h,

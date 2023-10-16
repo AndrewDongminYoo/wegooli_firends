@@ -67,8 +67,8 @@ class AppDecoration {
   // Gradient decorations
   static BoxDecoration get gradientYellowToYellow => BoxDecoration(
         gradient: LinearGradient(
-          begin: Alignment(0, 0),
-          end: Alignment(1, 1),
+          begin: const Alignment(0, 0),
+          end: const Alignment(1, 1),
           colors: [
             appTheme.yellow600,
             appTheme.yellow300,
@@ -92,14 +92,14 @@ class AppDecoration {
             color: appTheme.black900.withOpacity(0.1),
             spreadRadius: 2.h,
             blurRadius: 2.h,
-            offset: Offset(
+            offset: const Offset(
               2,
               2,
             ),
           ),
         ],
       );
-  static BoxDecoration get outlineBlack900 => BoxDecoration();
+  static BoxDecoration get outlineBlack900 => const BoxDecoration();
   static BoxDecoration get outlineBlack9001 => BoxDecoration(
         color: theme.colorScheme.onPrimaryContainer,
         border: Border.all(
@@ -244,7 +244,7 @@ class AppDecoration {
             color: appTheme.black900.withOpacity(0.1),
             spreadRadius: 2.h,
             blurRadius: 2.h,
-            offset: Offset(
+            offset: const Offset(
               2,
               2,
             ),

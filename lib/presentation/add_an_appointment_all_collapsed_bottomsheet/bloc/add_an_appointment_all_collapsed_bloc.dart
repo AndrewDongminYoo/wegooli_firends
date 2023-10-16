@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import '/core/app_export.dart';
+import 'package:wegooli_friends_app/core/app_export.dart';
 import 'package:wegooli_friends_app/presentation/add_an_appointment_all_collapsed_bottomsheet/models/add_an_appointment_all_collapsed_model.dart';
 part 'add_an_appointment_all_collapsed_event.dart';
 part 'add_an_appointment_all_collapsed_state.dart';
@@ -39,16 +39,16 @@ class AddAnAppointmentAllCollapsedBloc extends Bloc<
     return [
       SelectionPopupModel(
         id: 1,
-        title: "Item One",
+        title: 'Item One',
         isSelected: true,
       ),
       SelectionPopupModel(
         id: 2,
-        title: "Item Two",
+        title: 'Item Two',
       ),
       SelectionPopupModel(
         id: 3,
-        title: "Item Three",
+        title: 'Item Three',
       )
     ];
   }

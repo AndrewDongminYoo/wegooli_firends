@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 
+// ignore: must_be_immutable
 class CustomBottomBar extends StatefulWidget {
-  CustomBottomBar({this.onChanged});
+  CustomBottomBar({Key? key, this.onChanged}) : super(key: key);
 
   Function(BottomBarEnum)? onChanged;
 
@@ -17,31 +18,31 @@ class CustomBottomBarState extends State<CustomBottomBar> {
     BottomMenuModel(
       icon: ImageConstant.imgNavOnPrimary20x20,
       activeIcon: ImageConstant.imgNavOnPrimary20x20,
-      title: "lbl115".tr,
+      title: 'lbl115'.tr,
       type: BottomBarEnum.tf,
     ),
     BottomMenuModel(
       icon: ImageConstant.imgNavBlueGray200,
       activeIcon: ImageConstant.imgNavBlueGray200,
-      title: "lbl11".tr,
+      title: 'lbl11'.tr,
       type: BottomBarEnum.tf,
     ),
     BottomMenuModel(
       icon: ImageConstant.imgNavBlueGray20020x20,
       activeIcon: ImageConstant.imgNavBlueGray20020x20,
-      title: "lbl12".tr,
+      title: 'lbl12'.tr,
       type: BottomBarEnum.tf,
     ),
     BottomMenuModel(
       icon: ImageConstant.imgNav20x20,
       activeIcon: ImageConstant.imgNav20x20,
-      title: "lbl13".tr,
+      title: 'lbl13'.tr,
       type: BottomBarEnum.tf,
     ),
     BottomMenuModel(
       icon: ImageConstant.imgNav1,
       activeIcon: ImageConstant.imgNav1,
-      title: "lbl14".tr,
+      title: 'lbl14'.tr,
       type: BottomBarEnum.tf,
     )
   ];
@@ -71,7 +72,6 @@ class CustomBottomBarState extends State<CustomBottomBar> {
           return BottomNavigationBarItem(
             icon: Column(
               mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 CustomImageView(
                   svgPath: bottomMenuList[index].icon,
@@ -82,7 +82,7 @@ class CustomBottomBarState extends State<CustomBottomBar> {
                 Padding(
                   padding: EdgeInsets.only(top: 7.v),
                   child: Text(
-                    bottomMenuList[index].title ?? "",
+                    bottomMenuList[index].title ?? '',
                     style: CustomTextStyles.bodySmallBluegray200.copyWith(
                       color: appTheme.blueGray200,
                     ),
@@ -92,7 +92,6 @@ class CustomBottomBarState extends State<CustomBottomBar> {
             ),
             activeIcon: Column(
               mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 CustomImageView(
                   svgPath: bottomMenuList[index].activeIcon,
@@ -103,7 +102,7 @@ class CustomBottomBarState extends State<CustomBottomBar> {
                 Padding(
                   padding: EdgeInsets.only(top: 7.v),
                   child: Text(
-                    bottomMenuList[index].title ?? "",
+                    bottomMenuList[index].title ?? '',
                     style: CustomTextStyles.bodySmall10.copyWith(
                       color: theme.colorScheme.onPrimary,
                     ),
@@ -146,12 +145,14 @@ class BottomMenuModel {
 }
 
 class DefaultWidget extends StatelessWidget {
+  const DefaultWidget({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
-      padding: EdgeInsets.all(10),
-      child: Center(
+      padding: const EdgeInsets.all(10),
+      child: const Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,

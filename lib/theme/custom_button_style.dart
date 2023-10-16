@@ -118,7 +118,6 @@ class CustomButtonStyles {
         backgroundColor: theme.colorScheme.onPrimaryContainer,
         side: BorderSide(
           color: appTheme.blueGray30033,
-          width: 1,
         ),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(14.h),
@@ -128,7 +127,6 @@ class CustomButtonStyles {
         backgroundColor: Colors.transparent,
         side: BorderSide(
           color: appTheme.gray700,
-          width: 1,
         ),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(4.h),

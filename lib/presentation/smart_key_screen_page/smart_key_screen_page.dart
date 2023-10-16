@@ -1,5 +1,5 @@
-import 'bloc/smart_key_screen_bloc.dart';
-import 'models/smart_key_screen_model.dart';
+import 'package:wegooli_friends_app/presentation/smart_key_screen_page/bloc/smart_key_screen_bloc.dart';
+import 'package:wegooli_friends_app/presentation/smart_key_screen_page/models/smart_key_screen_model.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 import 'package:wegooli_friends_app/widgets/app_bar/appbar_image.dart';
@@ -16,7 +16,7 @@ class SmartKeyScreenPage extends StatelessWidget {
         smartKeyScreenModelObj: SmartKeyScreenModel(),
       ))
         ..add(SmartKeyScreenInitialEvent()),
-      child: SmartKeyScreenPage(),
+      child: const SmartKeyScreenPage(),
     );
   }
 
@@ -64,12 +64,12 @@ class SmartKeyScreenPage extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    "lbl".tr,
+                                    'lbl'.tr,
                                     style: theme.textTheme.titleMedium,
                                   ),
                                   SizedBox(height: 4.v),
                                   Text(
-                                    "lbl_12_3456".tr,
+                                    'lbl_12_3456'.tr,
                                     style: CustomTextStyles.bodySmallOnPrimary,
                                   ),
                                   SizedBox(height: 1.v),
@@ -88,7 +88,7 @@ class SmartKeyScreenPage extends StatelessWidget {
                                           top: 9.v,
                                         ),
                                         child: Text(
-                                          "lbl_40".tr,
+                                          'lbl_40'.tr,
                                           style: theme.textTheme.bodySmall,
                                         ),
                                       ),
@@ -115,13 +115,13 @@ class SmartKeyScreenPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            "lbl2".tr,
+                            'lbl2'.tr,
                             style: CustomTextStyles.bodySmallOnPrimary,
                           ),
                           Padding(
                             padding: EdgeInsets.only(left: 5.h),
                             child: Text(
-                              "lbl3".tr,
+                              'lbl3'.tr,
                               style: CustomTextStyles.bodySmallOnPrimary,
                             ),
                           ),
@@ -143,7 +143,7 @@ class SmartKeyScreenPage extends StatelessWidget {
                           Padding(
                             padding: EdgeInsets.only(left: 2.h),
                             child: Text(
-                              "lbl4".tr,
+                              'lbl4'.tr,
                               style: theme.textTheme.bodySmall,
                             ),
                           ),
@@ -165,7 +165,7 @@ class SmartKeyScreenPage extends StatelessWidget {
                             top: 21.v,
                           ),
                           child: Text(
-                            "lbl5".tr,
+                            'lbl5'.tr,
                             style: CustomTextStyles.titleMediumBlack90018,
                           ),
                         ),
@@ -186,7 +186,6 @@ class SmartKeyScreenPage extends StatelessWidget {
                                 alignment: Alignment.center,
                                 children: [
                                   Align(
-                                    alignment: Alignment.center,
                                     child: Container(
                                       padding: EdgeInsets.all(5.h),
                                       decoration: AppDecoration.shadow.copyWith(
@@ -211,7 +210,6 @@ class SmartKeyScreenPage extends StatelessWidget {
                                     ),
                                   ),
                                   Align(
-                                    alignment: Alignment.center,
                                     child: Padding(
                                       padding: EdgeInsets.symmetric(
                                           horizontal: 42.h),
@@ -225,7 +223,7 @@ class SmartKeyScreenPage extends StatelessWidget {
                                           ),
                                           SizedBox(height: 5.v),
                                           Text(
-                                            "lbl6".tr,
+                                            'lbl6'.tr,
                                             style: theme.textTheme.titleMedium,
                                           ),
                                         ],
@@ -243,7 +241,6 @@ class SmartKeyScreenPage extends StatelessWidget {
                                 alignment: Alignment.center,
                                 children: [
                                   Align(
-                                    alignment: Alignment.center,
                                     child: Container(
                                       padding: EdgeInsets.all(5.h),
                                       decoration: AppDecoration.shadow.copyWith(
@@ -268,7 +265,6 @@ class SmartKeyScreenPage extends StatelessWidget {
                                     ),
                                   ),
                                   Align(
-                                    alignment: Alignment.center,
                                     child: Padding(
                                       padding: EdgeInsets.symmetric(
                                           horizontal: 42.h),
@@ -282,7 +278,7 @@ class SmartKeyScreenPage extends StatelessWidget {
                                           ),
                                           SizedBox(height: 5.v),
                                           Text(
-                                            "lbl7".tr,
+                                            'lbl7'.tr,
                                             style: theme.textTheme.titleMedium,
                                           ),
                                         ],
@@ -311,7 +307,6 @@ class SmartKeyScreenPage extends StatelessWidget {
                                 alignment: Alignment.center,
                                 children: [
                                   Align(
-                                    alignment: Alignment.center,
                                     child: Container(
                                       padding: EdgeInsets.all(5.h),
                                       decoration: AppDecoration.shadow.copyWith(
@@ -336,7 +331,6 @@ class SmartKeyScreenPage extends StatelessWidget {
                                     ),
                                   ),
                                   Align(
-                                    alignment: Alignment.center,
                                     child: Padding(
                                       padding: EdgeInsets.symmetric(
                                           horizontal: 42.h),
@@ -350,7 +344,7 @@ class SmartKeyScreenPage extends StatelessWidget {
                                           ),
                                           SizedBox(height: 14.v),
                                           Text(
-                                            "lbl8".tr,
+                                            'lbl8'.tr,
                                             style: theme.textTheme.titleMedium,
                                           ),
                                         ],
@@ -386,7 +380,7 @@ class SmartKeyScreenPage extends StatelessWidget {
                                     ),
                                     SizedBox(height: 5.v),
                                     Text(
-                                      "lbl9".tr,
+                                      'lbl9'.tr,
                                       style: theme.textTheme.titleMedium,
                                     ),
                                   ],
@@ -422,7 +416,7 @@ class SmartKeyScreenPage extends StatelessWidget {
                               ),
                               SizedBox(height: 1.v),
                               Text(
-                                "lbl10".tr,
+                                'lbl10'.tr,
                                 style: CustomTextStyles.bodySmallBlack900,
                               ),
                             ],

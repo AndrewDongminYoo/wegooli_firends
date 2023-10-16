@@ -1,5 +1,5 @@
-import 'bloc/k60_bloc.dart';
-import 'models/k60_model.dart';
+import 'package:wegooli_friends_app/presentation/k60_screen/bloc/k60_bloc.dart';
+import 'package:wegooli_friends_app/presentation/k60_screen/models/k60_model.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 import 'package:wegooli_friends_app/widgets/custom_outlined_button.dart';
@@ -15,7 +15,7 @@ class K60Screen extends StatelessWidget {
         k60ModelObj: K60Model(),
       ))
         ..add(K60InitialEvent()),
-      child: K60Screen(),
+      child: const K60Screen(),
     );
   }
 
@@ -44,9 +44,8 @@ class K60Screen extends StatelessWidget {
                       width: 258.h,
                     ),
                     Align(
-                      alignment: Alignment.center,
                       child: Text(
-                        "lbl173".tr,
+                        'lbl173'.tr,
                         style: CustomTextStyles.bodyLargeNotoSansKRBlack900,
                       ),
                     ),
@@ -59,7 +58,7 @@ class K60Screen extends StatelessWidget {
                 builder: (context, idoneController) {
                   return CustomTextFormField(
                     controller: idoneController,
-                    hintText: "lbl91".tr,
+                    hintText: 'lbl91'.tr,
                     hintStyle: CustomTextStyles.bodyLargeNotoSansKRGray700,
                     contentPadding: EdgeInsets.symmetric(
                       horizontal: 9.h,
@@ -76,7 +75,7 @@ class K60Screen extends StatelessWidget {
                 builder: (context, passwordoneController) {
                   return CustomTextFormField(
                     controller: passwordoneController,
-                    hintText: "lbl66".tr,
+                    hintText: 'lbl66'.tr,
                     hintStyle: CustomTextStyles.bodyLargeNotoSansKRGray700,
                     textInputAction: TextInputAction.done,
                     contentPadding: EdgeInsets.symmetric(
@@ -101,13 +100,13 @@ class K60Screen extends StatelessWidget {
                       borderRadius: BorderRadiusStyle.roundedBorder4,
                     ),
                     child: Text(
-                      "lbl70".tr,
+                      'lbl70'.tr,
                       style: CustomTextStyles.bodyLargeNotoSansKRGray700,
                     ),
                   ),
                   CustomOutlinedButton(
                     width: 156.h,
-                    text: "lbl68".tr,
+                    text: 'lbl68'.tr,
                   ),
                 ],
               ),

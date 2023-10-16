@@ -1,10 +1,11 @@
-import 'bloc/three_bloc.dart';
-import 'models/three_model.dart';
+import 'package:wegooli_friends_app/presentation/three_screen/bloc/three_bloc.dart';
+import 'package:wegooli_friends_app/presentation/three_screen/models/three_model.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 import 'package:wegooli_friends_app/widgets/custom_bottom_bar.dart';
 import 'package:wegooli_friends_app/widgets/custom_checkbox_button.dart';
 
+// ignore: must_be_immutable
 class ThreeScreen extends StatelessWidget {
   ThreeScreen({Key? key})
       : super(key: key);
@@ -50,7 +51,7 @@ class ThreeScreen extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.only(top: 3.v),
                       child: Text(
-                        "lbl_friend".tr,
+                        'lbl_friend'.tr,
                         style: CustomTextStyles.bodyLargeBluegray900,
                       ),
                     ),
@@ -84,12 +85,12 @@ class ThreeScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "lbl45".tr,
+                              'lbl45'.tr,
                               style: CustomTextStyles.titleMediumBluegray900,
                             ),
                             SizedBox(height: 1.v),
                             Text(
-                              "lbl_010_1234_5678".tr,
+                              'lbl_010_1234_5678'.tr,
                               style: CustomTextStyles
                                   .bodyMediumPretendardBluegray900Light,
                             ),
@@ -126,11 +127,11 @@ class ThreeScreen extends StatelessWidget {
                         bottom: 5.v,
                       ),
                       child: Text(
-                        "lbl199".tr,
+                        'lbl199'.tr,
                         style: CustomTextStyles.titleMediumBluegray900SemiBold,
                       ),
                     ),
-                    Spacer(),
+                    const Spacer(),
                     CustomImageView(
                       svgPath: ImageConstant.imgArrowrightBlack900,
                       height: 30.adaptSize,
@@ -152,7 +153,7 @@ class ThreeScreen extends StatelessWidget {
                       selector: (state) => state.subscriptionInf,
                       builder: (context, subscriptionInf) {
                         return CustomCheckboxButton(
-                          text: "lbl200".tr,
+                          text: 'lbl200'.tr,
                           value: subscriptionInf,
                           margin: EdgeInsets.symmetric(vertical: 3.v),
                           padding: EdgeInsets.symmetric(vertical: 1.v),
@@ -192,11 +193,11 @@ class ThreeScreen extends StatelessWidget {
                         bottom: 5.v,
                       ),
                       child: Text(
-                        "lbl188".tr,
+                        'lbl188'.tr,
                         style: CustomTextStyles.titleMediumBluegray900SemiBold,
                       ),
                     ),
-                    Spacer(),
+                    const Spacer(),
                     CustomImageView(
                       svgPath: ImageConstant.imgArrowrightBlack900,
                       height: 30.adaptSize,

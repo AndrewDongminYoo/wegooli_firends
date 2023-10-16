@@ -1,14 +1,14 @@
-import 'bloc/two1_bloc.dart';
-import 'models/two1_model.dart';
+import 'package:wegooli_friends_app/presentation/two1_screen/bloc/two1_bloc.dart';
+import 'package:wegooli_friends_app/presentation/two1_screen/models/two1_model.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 import 'package:wegooli_friends_app/widgets/app_bar/appbar_image.dart';
 import 'package:wegooli_friends_app/widgets/app_bar/custom_app_bar.dart';
 import 'package:wegooli_friends_app/widgets/custom_bottom_bar.dart';
 
+// ignore: must_be_immutable
 class Two1Screen extends StatelessWidget {
-  Two1Screen({Key? key})
-      : super(key: key);
+  Two1Screen({Key? key}) : super(key: key);
 
   GlobalKey<NavigatorState> navigatorKey = GlobalKey();
 
@@ -73,18 +73,18 @@ class Two1Screen extends StatelessWidget {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            "lbl45".tr,
+                                            'lbl45'.tr,
                                             style: theme.textTheme.titleMedium,
                                           ),
                                           SizedBox(height: 7.v),
                                           Text(
-                                            "lbl_010_1234_5678".tr,
+                                            'lbl_010_1234_5678'.tr,
                                             style: CustomTextStyles
                                                 .bodySmallOnPrimary,
                                           ),
                                           SizedBox(height: 4.v),
                                           Text(
-                                            "msg_abc123_gmail_com".tr,
+                                            'msg_abc123_gmail_com'.tr,
                                             style: CustomTextStyles
                                                 .bodySmallOnPrimary,
                                           ),
@@ -123,11 +123,11 @@ class Two1Screen extends StatelessWidget {
                                       top: 2.v,
                                     ),
                                     child: Text(
-                                      "lbl122".tr,
+                                      'lbl122'.tr,
                                       style: theme.textTheme.bodyLarge,
                                     ),
                                   ),
-                                  Spacer(),
+                                  const Spacer(),
                                   CustomImageView(
                                     svgPath:
                                         ImageConstant.imgArrowrightOnPrimary,
@@ -158,11 +158,11 @@ class Two1Screen extends StatelessWidget {
                                       top: 2.v,
                                     ),
                                     child: Text(
-                                      "lbl123".tr,
+                                      'lbl123'.tr,
                                       style: theme.textTheme.bodyLarge,
                                     ),
                                   ),
-                                  Spacer(),
+                                  const Spacer(),
                                   CustomImageView(
                                     svgPath:
                                         ImageConstant.imgArrowrightOnPrimary,
@@ -193,11 +193,11 @@ class Two1Screen extends StatelessWidget {
                                       top: 2.v,
                                     ),
                                     child: Text(
-                                      "lbl124".tr,
+                                      'lbl124'.tr,
                                       style: theme.textTheme.bodyLarge,
                                     ),
                                   ),
-                                  Spacer(),
+                                  const Spacer(),
                                   CustomImageView(
                                     svgPath:
                                         ImageConstant.imgArrowrightOnPrimary,

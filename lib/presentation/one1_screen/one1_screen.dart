@@ -1,5 +1,5 @@
-import 'bloc/one1_bloc.dart';
-import 'models/one1_model.dart';
+import 'package:wegooli_friends_app/presentation/one1_screen/bloc/one1_bloc.dart';
+import 'package:wegooli_friends_app/presentation/one1_screen/models/one1_model.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 
@@ -13,7 +13,7 @@ class One1Screen extends StatelessWidget {
         one1ModelObj: One1Model(),
       ))
         ..add(One1InitialEvent()),
-      child: One1Screen(),
+      child: const One1Screen(),
     );
   }
 
@@ -34,7 +34,6 @@ class One1Screen extends StatelessWidget {
                   alignment: Alignment.center,
                   children: [
                     Align(
-                      alignment: Alignment.center,
                       child: Container(
                         padding: EdgeInsets.all(6.h),
                         decoration: AppDecoration.outlineGray7001,
@@ -46,9 +45,8 @@ class One1Screen extends StatelessWidget {
                       ),
                     ),
                     Align(
-                      alignment: Alignment.center,
                       child: Text(
-                        "lbl173".tr,
+                        'lbl173'.tr,
                         style: CustomTextStyles.bodyLargeNotoSansKRBlack900,
                       ),
                     ),

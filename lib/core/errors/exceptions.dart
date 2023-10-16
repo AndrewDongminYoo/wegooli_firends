@@ -9,15 +9,15 @@ class NetworkException implements Exception {}
 
 ///can be used for throwing [NoInternetException]
 class NoInternetException implements Exception {
-  late String _message;
 
   NoInternetException([String message = 'NoInternetException Occurred']) {
     if (globalMessengerKey.currentState != null) {
       globalMessengerKey.currentState!
           .showSnackBar(SnackBar(content: Text(message)));
     }
-    this._message = message;
+    _message = message;
   }
+  late String _message;
 
   @override
   String toString() {

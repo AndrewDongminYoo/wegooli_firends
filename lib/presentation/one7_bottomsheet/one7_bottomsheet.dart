@@ -1,5 +1,5 @@
-import 'bloc/one7_bloc.dart';
-import 'models/one7_model.dart';
+import 'package:wegooli_friends_app/presentation/one7_bottomsheet/bloc/one7_bloc.dart';
+import 'package:wegooli_friends_app/presentation/one7_bottomsheet/models/one7_model.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 import 'package:wegooli_friends_app/widgets/custom_drop_down.dart';
@@ -16,7 +16,7 @@ class One7Bottomsheet extends StatelessWidget {
         one7ModelObj: One7Model(),
       ))
         ..add(One7InitialEvent()),
-      child: One7Bottomsheet(),
+      child: const One7Bottomsheet(),
     );
   }
 
@@ -47,7 +47,7 @@ class One7Bottomsheet extends StatelessWidget {
                   top: 30.v,
                 ),
                 child: Text(
-                  "msg_2_8_1_16_00".tr,
+                  'msg_2_8_1_16_00'.tr,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   style: CustomTextStyles.titleMediumBlack90018.copyWith(
@@ -74,12 +74,12 @@ class One7Bottomsheet extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "lbl34".tr,
+                    'lbl34'.tr,
                     style: theme.textTheme.titleMedium,
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Text(
-                    "lbl_8_1_16_00".tr,
+                    'lbl_8_1_16_00'.tr,
                     style: theme.textTheme.titleMedium,
                   ),
                   CustomImageView(
@@ -101,13 +101,13 @@ class One7Bottomsheet extends StatelessWidget {
                 child: Row(
                   children: [
                     Text(
-                      "lbl_8_1".tr,
+                      'lbl_8_1'.tr,
                       style: CustomTextStyles.bodyLargeOnPrimary,
                     ),
                     Padding(
                       padding: EdgeInsets.only(left: 81.h),
                       child: Text(
-                        "lbl_152".tr,
+                        'lbl_152'.tr,
                         style: CustomTextStyles.bodyLargeOnPrimary,
                       ),
                     ),
@@ -157,15 +157,15 @@ class One7Bottomsheet extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "lbl_8_2".tr,
+                    'lbl_8_2'.tr,
                     style: theme.textTheme.bodyLarge,
                   ),
                   Text(
-                    "lbl_162".tr,
+                    'lbl_162'.tr,
                     style: theme.textTheme.bodyLarge,
                   ),
                   Text(
-                    "lbl_00".tr,
+                    'lbl_00'.tr,
                     style: theme.textTheme.bodyLarge,
                   ),
                 ],
@@ -214,13 +214,13 @@ class One7Bottomsheet extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text(
-                      "lbl_172".tr,
+                      'lbl_172'.tr,
                       style: CustomTextStyles.bodyLargeOnPrimary,
                     ),
                     Padding(
                       padding: EdgeInsets.only(left: 83.h),
                       child: Text(
-                        "lbl_102".tr,
+                        'lbl_102'.tr,
                         style: CustomTextStyles.bodyLargeOnPrimary,
                       ),
                     ),
@@ -246,7 +246,7 @@ class One7Bottomsheet extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "lbl35".tr,
+                    'lbl35'.tr,
                     style: CustomTextStyles.titleMediumOnPrimary,
                   ),
                   BlocSelector<One7Bloc, One7State, One7Model?>(
@@ -260,7 +260,7 @@ class One7Bottomsheet extends StatelessWidget {
                             svgPath: ImageConstant.imgArrowrightOnPrimary,
                           ),
                         ),
-                        hintText: "lbl_8_1_18_00".tr,
+                        hintText: 'lbl_8_1_18_00'.tr,
                         items: one7ModelObj?.dropdownItemList ?? [],
                         onChanged: (value) {
                           context
@@ -288,12 +288,12 @@ class One7Bottomsheet extends StatelessWidget {
                 children: [
                   CustomElevatedButton(
                     width: 104.h,
-                    text: "lbl36".tr,
+                    text: 'lbl36'.tr,
                     buttonStyle: CustomButtonStyles.fillGray,
                   ),
                   CustomElevatedButton(
                     width: 216.h,
-                    text: "lbl37".tr,
+                    text: 'lbl37'.tr,
                     margin: EdgeInsets.only(left: 8.h),
                   ),
                 ],

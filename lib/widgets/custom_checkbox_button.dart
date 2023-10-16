@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 
+// ignore: must_be_immutable
 class CustomCheckboxButton extends StatelessWidget {
   CustomCheckboxButton({
     Key? key,
@@ -57,7 +58,7 @@ class CustomCheckboxButton extends StatelessWidget {
 
   Widget get buildCheckBoxWidget => InkWell(
         onTap: () {
-          value = !(value!);
+          value = !value!;
           onChange(value!);
         },
         child: Container(
@@ -70,24 +71,24 @@ class CustomCheckboxButton extends StatelessWidget {
   Widget get leftSideCheckbox => Row(
         children: [
           Padding(
+            padding: const EdgeInsets.only(right: 8),
             child: checkboxWidget,
-            padding: EdgeInsets.only(right: 8),
           ),
-          isExpandedText ? Expanded(child: textWidget) : textWidget,
+          if (isExpandedText) Expanded(child: textWidget) else textWidget,
         ],
       );
   Widget get rightSideCheckbox => Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          isExpandedText ? Expanded(child: textWidget) : textWidget,
+          if (isExpandedText) Expanded(child: textWidget) else textWidget,
           Padding(
-            padding: EdgeInsets.only(left: 8),
+            padding: const EdgeInsets.only(left: 8),
             child: checkboxWidget,
           ),
         ],
       );
   Widget get textWidget => Text(
-        text ?? "",
+        text ?? '',
         textAlign: textAlignment ?? TextAlign.center,
         style: textStyle ?? theme.textTheme.bodyLarge,
       );
@@ -95,7 +96,7 @@ class CustomCheckboxButton extends StatelessWidget {
         height: iconSize,
         width: iconSize,
         child: Checkbox(
-          visualDensity: VisualDensity(
+          visualDensity: const VisualDensity(
             vertical: -4,
             horizontal: -4,
           ),

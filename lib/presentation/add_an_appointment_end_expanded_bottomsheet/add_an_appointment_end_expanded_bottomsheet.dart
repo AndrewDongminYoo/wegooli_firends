@@ -1,5 +1,5 @@
-import 'bloc/add_an_appointment_end_expanded_bloc.dart';
-import 'models/add_an_appointment_end_expanded_model.dart';
+import 'package:wegooli_friends_app/presentation/add_an_appointment_end_expanded_bottomsheet/bloc/add_an_appointment_end_expanded_bloc.dart';
+import 'package:wegooli_friends_app/presentation/add_an_appointment_end_expanded_bottomsheet/models/add_an_appointment_end_expanded_model.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 import 'package:wegooli_friends_app/widgets/custom_drop_down.dart';
@@ -17,7 +17,7 @@ class AddAnAppointmentEndExpandedBottomsheet extends StatelessWidget {
         addAnAppointmentEndExpandedModelObj: AddAnAppointmentEndExpandedModel(),
       ))
             ..add(AddAnAppointmentEndExpandedInitialEvent()),
-      child: AddAnAppointmentEndExpandedBottomsheet(),
+      child: const AddAnAppointmentEndExpandedBottomsheet(),
     );
   }
 
@@ -48,7 +48,7 @@ class AddAnAppointmentEndExpandedBottomsheet extends StatelessWidget {
                   top: 33.v,
                 ),
                 child: Text(
-                  "msg_2_8_1_16_00".tr,
+                  'msg_2_8_1_16_00'.tr,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   style: CustomTextStyles.titleMediumBlack90018.copyWith(
@@ -75,7 +75,7 @@ class AddAnAppointmentEndExpandedBottomsheet extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "lbl34".tr,
+                    'lbl34'.tr,
                     style: CustomTextStyles.titleMediumOnPrimary,
                   ),
                   BlocSelector<
@@ -93,7 +93,7 @@ class AddAnAppointmentEndExpandedBottomsheet extends StatelessWidget {
                             svgPath: ImageConstant.imgArrowrightOnPrimary,
                           ),
                         ),
-                        hintText: "lbl_8_1_16_00".tr,
+                        hintText: 'lbl_8_1_16_00'.tr,
                         items: addAnAppointmentEndExpandedModelObj
                                 ?.dropdownItemList ??
                             [],
@@ -126,7 +126,7 @@ class AddAnAppointmentEndExpandedBottomsheet extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "lbl35".tr,
+                    'lbl35'.tr,
                     style: CustomTextStyles.titleMediumOnPrimary,
                   ),
                   BlocSelector<
@@ -144,7 +144,7 @@ class AddAnAppointmentEndExpandedBottomsheet extends StatelessWidget {
                             svgPath: ImageConstant.imgArrowrightOnPrimary,
                           ),
                         ),
-                        hintText: "lbl_8_1_18_00".tr,
+                        hintText: 'lbl_8_1_18_00'.tr,
                         items: addAnAppointmentEndExpandedModelObj
                                 ?.dropdownItemList1 ??
                             [],
@@ -174,12 +174,12 @@ class AddAnAppointmentEndExpandedBottomsheet extends StatelessWidget {
                 children: [
                   CustomElevatedButton(
                     width: 104.h,
-                    text: "lbl36".tr,
+                    text: 'lbl36'.tr,
                     buttonStyle: CustomButtonStyles.fillGray,
                   ),
                   CustomElevatedButton(
                     width: 216.h,
-                    text: "lbl37".tr,
+                    text: 'lbl37'.tr,
                     margin: EdgeInsets.only(left: 8.h),
                   ),
                 ],

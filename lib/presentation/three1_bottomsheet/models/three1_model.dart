@@ -2,7 +2,7 @@
 
 import 'package:equatable/equatable.dart';import 'package:wegooli_friends_app/data/models/selectionPopupModel/selection_popup_model.dart';/// This class defines the variables used in the [three1_bottomsheet],
 /// and is typically used to hold data that is passed between different parts of the application.
-class Three1Model extends Equatable {Three1Model({this.dropdownItemList = const [], this.dropdownItemList1 = const [], }) {  }
+class Three1Model extends Equatable {Three1Model({this.dropdownItemList = const [], this.dropdownItemList1 = const [], });
 
 List<SelectionPopupModel> dropdownItemList;
 

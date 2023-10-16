@@ -1,5 +1,5 @@
-import 'bloc/signin_page_bloc.dart';
-import 'models/signin_page_model.dart';
+import 'package:wegooli_friends_app/presentation/signin_page_screen/bloc/signin_page_bloc.dart';
+import 'package:wegooli_friends_app/presentation/signin_page_screen/models/signin_page_model.dart';
 import 'package:flutter/material.dart';
 import 'package:wegooli_friends_app/core/app_export.dart';
 import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
@@ -15,7 +15,7 @@ class SigninPageScreen extends StatelessWidget {
         signinPageModelObj: SigninPageModel(),
       ))
         ..add(SigninPageInitialEvent()),
-      child: SigninPageScreen(),
+      child: const SigninPageScreen(),
     );
   }
 
@@ -45,7 +45,7 @@ class SigninPageScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "lbl64".tr,
+                    'lbl64'.tr,
                     style: theme.textTheme.bodySmall,
                   ),
                   SizedBox(height: 3.v),
@@ -55,7 +55,7 @@ class SigninPageScreen extends StatelessWidget {
                     builder: (context, emailinputoneController) {
                       return CustomTextFormField(
                         controller: emailinputoneController,
-                        hintText: "lbl65".tr,
+                        hintText: 'lbl65'.tr,
                         contentPadding: EdgeInsets.symmetric(vertical: 9.v),
                         borderDecoration:
                             TextFormFieldStyleHelper.outlineBlueGray,
@@ -70,7 +70,7 @@ class SigninPageScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "lbl66".tr,
+                    'lbl66'.tr,
                     style: theme.textTheme.bodySmall,
                   ),
                   SizedBox(height: 3.v),
@@ -80,7 +80,7 @@ class SigninPageScreen extends StatelessWidget {
                     builder: (context, passwordinputController) {
                       return CustomTextFormField(
                         controller: passwordinputController,
-                        hintText: "lbl67".tr,
+                        hintText: 'lbl67'.tr,
                         textInputAction: TextInputAction.done,
                         suffix: Container(
                           margin: EdgeInsets.only(
@@ -107,18 +107,18 @@ class SigninPageScreen extends StatelessWidget {
               SizedBox(height: 30.v),
               CustomElevatedButton(
                 height: 48.v,
-                text: "lbl68".tr,
+                text: 'lbl68'.tr,
                 buttonStyle: CustomButtonStyles.fillPrimaryTL8,
                 buttonTextStyle: CustomTextStyles.titleSmallBold,
               ),
               SizedBox(height: 60.v),
               Text(
-                "lbl69".tr,
+                'lbl69'.tr,
                 style: theme.textTheme.bodySmall,
               ),
               SizedBox(height: 10.v),
               Text(
-                "lbl70".tr,
+                'lbl70'.tr,
                 style: CustomTextStyles.bodySmallBluegray200_1,
               ),
               SizedBox(height: 1.v),

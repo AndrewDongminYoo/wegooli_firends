@@ -1,7 +1,13 @@
-import 'package:equatable/equatable.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/presentation/splash_screen_one_screen/models/splash_screen_one_model.dart';
+
+// 📦 Package imports:
+import 'package:equatable/equatable.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/splash_screen_one_screen/models/splash_screen_one_model.dart';
+
 part 'splash_screen_one_event.dart';
 part 'splash_screen_one_state.dart';
 

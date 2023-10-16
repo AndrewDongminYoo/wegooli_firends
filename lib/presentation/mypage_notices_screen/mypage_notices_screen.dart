@@ -1,12 +1,15 @@
-import 'package:wegooli_friends_app/presentation/mypage_notices_screen/widgets/mypage_notices_item_widget.dart';
-import 'package:wegooli_friends_app/presentation/mypage_notices_screen/bloc/mypage_notices_bloc.dart';
-import 'package:wegooli_friends_app/presentation/mypage_notices_screen/models/mypage_notices_item_model.dart';
-import 'package:wegooli_friends_app/presentation/mypage_notices_screen/models/mypage_notices_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/appbar_image_1.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/appbar_title.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/custom_app_bar.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/mypage_notices_screen/bloc/mypage_notices_bloc.dart';
+import '/presentation/mypage_notices_screen/models/mypage_notices_item_model.dart';
+import '/presentation/mypage_notices_screen/models/mypage_notices_model.dart';
+import '/presentation/mypage_notices_screen/widgets/mypage_notices_item_widget.dart';
+import '/widgets/app_bar/appbar_image_1.dart';
+import '/widgets/app_bar/appbar_title.dart';
+import '/widgets/app_bar/custom_app_bar.dart';
 
 class MyPageNoticesScreen extends StatelessWidget {
   const MyPageNoticesScreen({Key? key}) : super(key: key);

@@ -1,13 +1,16 @@
-import 'package:wegooli_friends_app/presentation/two_screen/bloc/two_bloc.dart';
-import 'package:wegooli_friends_app/presentation/two_screen/models/two_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/appbar_image_1.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/appbar_subtitle_1.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/custom_app_bar.dart';
-import 'package:wegooli_friends_app/widgets/custom_icon_button.dart';
-import 'package:wegooli_friends_app/widgets/custom_outlined_button.dart';
-import 'package:wegooli_friends_app/widgets/custom_text_form_field.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/two_screen/bloc/two_bloc.dart';
+import '/presentation/two_screen/models/two_model.dart';
+import '/widgets/app_bar/appbar_image_1.dart';
+import '/widgets/app_bar/appbar_subtitle_1.dart';
+import '/widgets/app_bar/custom_app_bar.dart';
+import '/widgets/custom_icon_button.dart';
+import '/widgets/custom_outlined_button.dart';
+import '/widgets/custom_text_form_field.dart';
 
 class TwoScreen extends StatelessWidget {
   const TwoScreen({Key? key}) : super(key: key);

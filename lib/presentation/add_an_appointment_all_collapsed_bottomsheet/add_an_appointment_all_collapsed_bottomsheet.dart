@@ -1,14 +1,16 @@
-import 'package:wegooli_friends_app/presentation/add_an_appointment_all_collapsed_bottomsheet/bloc/add_an_appointment_all_collapsed_bloc.dart';
-import 'package:wegooli_friends_app/presentation/add_an_appointment_all_collapsed_bottomsheet/models/add_an_appointment_all_collapsed_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/widgets/custom_drop_down.dart';
-import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/add_an_appointment_all_collapsed_bottomsheet/bloc/add_an_appointment_all_collapsed_bloc.dart';
+import '/presentation/add_an_appointment_all_collapsed_bottomsheet/models/add_an_appointment_all_collapsed_model.dart';
+import '/widgets/custom_drop_down.dart';
+import '/widgets/custom_elevated_button.dart';
 
 // ignore_for_file: must_be_immutable
 class AddAnAppointmentAllCollapsedBottomsheet extends StatelessWidget {
-  const AddAnAppointmentAllCollapsedBottomsheet({Key? key})
-      : super(key: key);
+  const AddAnAppointmentAllCollapsedBottomsheet({Key? key}) : super(key: key);
 
   static Widget builder(BuildContext context) {
     return BlocProvider<AddAnAppointmentAllCollapsedBloc>(

@@ -1,14 +1,16 @@
-import 'package:wegooli_friends_app/presentation/three1_bottomsheet/bloc/three1_bloc.dart';
-import 'package:wegooli_friends_app/presentation/three1_bottomsheet/models/three1_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/widgets/custom_drop_down.dart';
-import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/three1_bottomsheet/bloc/three1_bloc.dart';
+import '/presentation/three1_bottomsheet/models/three1_model.dart';
+import '/widgets/custom_drop_down.dart';
+import '/widgets/custom_elevated_button.dart';
 
 // ignore_for_file: must_be_immutable
 class Three1Bottomsheet extends StatelessWidget {
-  const Three1Bottomsheet({Key? key})
-      : super(key: key);
+  const Three1Bottomsheet({Key? key}) : super(key: key);
 
   static Widget builder(BuildContext context) {
     return BlocProvider<Three1Bloc>(

@@ -1,7 +1,10 @@
-import 'package:wegooli_friends_app/localization/en_us/en_us_translations.dart';
-import 'package:flutter/foundation.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/cupertino.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
+import 'package:flutter/foundation.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/localization/en_us/en_us_translations.dart';
 
 class AppLocalization {
   AppLocalization(this.locale);

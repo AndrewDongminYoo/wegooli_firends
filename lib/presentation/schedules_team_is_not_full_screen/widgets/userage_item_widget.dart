@@ -1,6 +1,9 @@
-import 'package:wegooli_friends_app/presentation/schedules_team_is_not_full_screen/models/userage_item_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/schedules_team_is_not_full_screen/models/userage_item_model.dart';
 
 // ignore: must_be_immutable
 class UserageItemWidget extends StatelessWidget {

@@ -1,3 +1,4 @@
+// 📦 Package imports:
 import 'package:connectivity_plus/connectivity_plus.dart';
 
 // For checking internet connectivity
@@ -10,7 +11,6 @@ abstract class NetworkInfoI {
 }
 
 class NetworkInfo implements NetworkInfoI {
-
   factory NetworkInfo() {
     return _networkInfo;
   }

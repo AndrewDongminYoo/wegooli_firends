@@ -1,7 +1,10 @@
-import 'package:wegooli_friends_app/presentation/splash_screen_two_screen/bloc/splash_screen_two_bloc.dart';
-import 'package:wegooli_friends_app/presentation/splash_screen_two_screen/models/splash_screen_two_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/splash_screen_two_screen/bloc/splash_screen_two_bloc.dart';
+import '/presentation/splash_screen_two_screen/models/splash_screen_two_model.dart';
 
 class SplashScreenTwoScreen extends StatelessWidget {
   const SplashScreenTwoScreen({Key? key}) : super(key: key);

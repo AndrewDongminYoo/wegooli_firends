@@ -1,14 +1,17 @@
-import 'package:wegooli_friends_app/presentation/k76_screen/bloc/k76_bloc.dart';
-import 'package:wegooli_friends_app/presentation/k76_screen/models/k76_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/appbar_image_1.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/appbar_title.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/custom_app_bar.dart';
-import 'package:wegooli_friends_app/widgets/custom_bottom_bar.dart';
-import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
-import 'package:wegooli_friends_app/widgets/custom_outlined_button.dart';
-import 'package:wegooli_friends_app/widgets/custom_switch.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/k76_screen/bloc/k76_bloc.dart';
+import '/presentation/k76_screen/models/k76_model.dart';
+import '/widgets/app_bar/appbar_image_1.dart';
+import '/widgets/app_bar/appbar_title.dart';
+import '/widgets/app_bar/custom_app_bar.dart';
+import '/widgets/custom_bottom_bar.dart';
+import '/widgets/custom_elevated_button.dart';
+import '/widgets/custom_outlined_button.dart';
+import '/widgets/custom_switch.dart';
 
 // ignore_for_file: must_be_immutable
 class K76Screen extends StatelessWidget {

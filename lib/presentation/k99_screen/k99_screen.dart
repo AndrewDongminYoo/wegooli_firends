@@ -1,11 +1,14 @@
-import 'package:wegooli_friends_app/presentation/k99_screen/bloc/k99_bloc.dart';
-import 'package:wegooli_friends_app/presentation/k99_screen/models/k99_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/appbar_image_1.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/appbar_subtitle_1.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/custom_app_bar.dart';
-import 'package:wegooli_friends_app/widgets/custom_outlined_button.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/k99_screen/bloc/k99_bloc.dart';
+import '/presentation/k99_screen/models/k99_model.dart';
+import '/widgets/app_bar/appbar_image_1.dart';
+import '/widgets/app_bar/appbar_subtitle_1.dart';
+import '/widgets/app_bar/custom_app_bar.dart';
+import '/widgets/custom_outlined_button.dart';
 
 class K99Screen extends StatelessWidget {
   const K99Screen({Key? key}) : super(key: key);

@@ -1,7 +1,10 @@
-import 'package:wegooli_friends_app/presentation/k91_dialog/bloc/k91_bloc.dart';
-import 'package:wegooli_friends_app/presentation/k91_dialog/models/k91_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/k91_dialog/bloc/k91_bloc.dart';
+import '/presentation/k91_dialog/models/k91_model.dart';
 
 class K91Dialog extends StatelessWidget {
   const K91Dialog({Key? key}) : super(key: key);

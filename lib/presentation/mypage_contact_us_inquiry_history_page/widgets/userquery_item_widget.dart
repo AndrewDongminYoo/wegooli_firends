@@ -1,7 +1,10 @@
-import 'package:wegooli_friends_app/presentation/mypage_contact_us_inquiry_history_page/models/userquery_item_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/widgets/custom_outlined_button.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/mypage_contact_us_inquiry_history_page/models/userquery_item_model.dart';
+import '/widgets/custom_outlined_button.dart';
 
 // ignore: must_be_immutable
 class UserqueryItemWidget extends StatelessWidget {

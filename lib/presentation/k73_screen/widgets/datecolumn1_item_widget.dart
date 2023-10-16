@@ -1,6 +1,9 @@
-import 'package:wegooli_friends_app/presentation/k73_screen/models/datecolumn1_item_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/k73_screen/models/datecolumn1_item_model.dart';
 
 // ignore: must_be_immutable
 class Datecolumn1ItemWidget extends StatelessWidget {

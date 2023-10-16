@@ -1,8 +1,11 @@
-import 'package:wegooli_friends_app/presentation/k111_dialog/bloc/k111_bloc.dart';
-import 'package:wegooli_friends_app/presentation/k111_dialog/models/k111_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/k111_dialog/bloc/k111_bloc.dart';
+import '/presentation/k111_dialog/models/k111_model.dart';
+import '/widgets/custom_elevated_button.dart';
 
 class K111Dialog extends StatelessWidget {
   const K111Dialog({Key? key}) : super(key: key);

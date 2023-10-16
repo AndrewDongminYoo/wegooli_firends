@@ -1,9 +1,13 @@
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/widgets/base_button.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/widgets/base_button.dart';
 
 class CustomOutlinedButton extends BaseButton {
-  CustomOutlinedButton({Key? key,
+  CustomOutlinedButton({
+    Key? key,
     this.decoration,
     this.leftIcon,
     this.rightIcon,
@@ -18,7 +22,8 @@ class CustomOutlinedButton extends BaseButton {
     EdgeInsets? margin,
     required String text,
   }) : super(
-          key: key, text: text,
+          key: key,
+          text: text,
           onTap: onTap,
           buttonStyle: buttonStyle,
           isDisabled: isDisabled,

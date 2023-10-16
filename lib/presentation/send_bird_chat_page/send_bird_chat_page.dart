@@ -1,16 +1,18 @@
-import 'package:wegooli_friends_app/presentation/send_bird_chat_page/bloc/send_bird_chat_bloc.dart';
-import 'package:wegooli_friends_app/presentation/send_bird_chat_page/models/send_bird_chat_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/appbar_image.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/custom_app_bar.dart';
-import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
-import 'package:wegooli_friends_app/widgets/custom_text_form_field.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/send_bird_chat_page/bloc/send_bird_chat_bloc.dart';
+import '/presentation/send_bird_chat_page/models/send_bird_chat_model.dart';
+import '/widgets/app_bar/appbar_image.dart';
+import '/widgets/app_bar/custom_app_bar.dart';
+import '/widgets/custom_elevated_button.dart';
+import '/widgets/custom_text_form_field.dart';
 
 // ignore_for_file: must_be_immutable
 class SendBirdChatPage extends StatelessWidget {
-  const SendBirdChatPage({Key? key})
-      : super(key: key);
+  const SendBirdChatPage({Key? key}) : super(key: key);
 
   static Widget builder(BuildContext context) {
     return BlocProvider<SendBirdChatBloc>(

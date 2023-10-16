@@ -1,16 +1,18 @@
-import 'package:wegooli_friends_app/presentation/k84_screen/widgets/userprofile2_item_widget.dart';
-import 'package:wegooli_friends_app/presentation/k84_screen/bloc/k84_bloc.dart';
-import 'package:wegooli_friends_app/presentation/k84_screen/models/k84_model.dart';
-import 'package:wegooli_friends_app/presentation/k84_screen/models/userprofile2_item_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/widgets/custom_bottom_bar.dart';
-import 'package:wegooli_friends_app/widgets/custom_outlined_button.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/k84_screen/bloc/k84_bloc.dart';
+import '/presentation/k84_screen/models/k84_model.dart';
+import '/presentation/k84_screen/models/userprofile2_item_model.dart';
+import '/presentation/k84_screen/widgets/userprofile2_item_widget.dart';
+import '/widgets/custom_bottom_bar.dart';
+import '/widgets/custom_outlined_button.dart';
 
 // ignore: must_be_immutable
 class K84Screen extends StatelessWidget {
-  K84Screen({Key? key})
-      : super(key: key);
+  K84Screen({Key? key}) : super(key: key);
 
   GlobalKey<NavigatorState> navigatorKey = GlobalKey();
 

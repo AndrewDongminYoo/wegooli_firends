@@ -65,9 +65,9 @@ linter:
     # `implicit-dynamic` 비활성화와 충돌
     avoid_annotating_with_dynamic: false
     # "lib/"에 있는 파일에 대한 상대 임포트를 선호합니다.
-    prefer_relative_imports: false
+    prefer_relative_imports: true
     # `prefer_relative_imports`와 충돌합니다.
-    always_use_package_imports: true
+    always_use_package_imports: false
     # 그렇지 않으면 `missing_return`과 충돌하므로 NNBD를 사용할 때까지 지금은 비활성화합니다.
     no_default_cases: false
     # False positive가 너무 많음. 널 검사 단언문에는 메시지가 필요하지 않습니다.

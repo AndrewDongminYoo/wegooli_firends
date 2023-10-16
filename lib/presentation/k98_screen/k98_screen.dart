@@ -1,10 +1,13 @@
-import 'package:wegooli_friends_app/presentation/k98_screen/bloc/k98_bloc.dart';
-import 'package:wegooli_friends_app/presentation/k98_screen/models/k98_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/widgets/custom_bottom_bar.dart';
-import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
-import 'package:wegooli_friends_app/widgets/custom_outlined_button.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/k98_screen/bloc/k98_bloc.dart';
+import '/presentation/k98_screen/models/k98_model.dart';
+import '/widgets/custom_bottom_bar.dart';
+import '/widgets/custom_elevated_button.dart';
+import '/widgets/custom_outlined_button.dart';
 
 // ignore: must_be_immutable
 class K98Screen extends StatelessWidget {

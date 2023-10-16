@@ -1,15 +1,18 @@
-import 'package:wegooli_friends_app/presentation/mypage_contact_us_1_1_contact_us_screen/widgets/listaddphotoalt_item_widget.dart';
-import 'package:wegooli_friends_app/presentation/mypage_contact_us_1_1_contact_us_screen/bloc/mypage_contact_us_1_1_contact_us_bloc.dart';
-import 'package:wegooli_friends_app/presentation/mypage_contact_us_1_1_contact_us_screen/models/listaddphotoalt_item_model.dart';
-import 'package:wegooli_friends_app/presentation/mypage_contact_us_1_1_contact_us_screen/models/mypage_contact_us_1_1_contact_us_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/appbar_image_1.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/appbar_title.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/custom_app_bar.dart';
-import 'package:wegooli_friends_app/widgets/custom_drop_down.dart';
-import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
-import 'package:wegooli_friends_app/widgets/custom_text_form_field.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/mypage_contact_us_1_1_contact_us_screen/bloc/mypage_contact_us_1_1_contact_us_bloc.dart';
+import '/presentation/mypage_contact_us_1_1_contact_us_screen/models/listaddphotoalt_item_model.dart';
+import '/presentation/mypage_contact_us_1_1_contact_us_screen/models/mypage_contact_us_1_1_contact_us_model.dart';
+import '/presentation/mypage_contact_us_1_1_contact_us_screen/widgets/listaddphotoalt_item_widget.dart';
+import '/widgets/app_bar/appbar_image_1.dart';
+import '/widgets/app_bar/appbar_title.dart';
+import '/widgets/app_bar/custom_app_bar.dart';
+import '/widgets/custom_drop_down.dart';
+import '/widgets/custom_elevated_button.dart';
+import '/widgets/custom_text_form_field.dart';
 
 class MyPageContactUs11ContactUsScreen extends StatelessWidget {
   const MyPageContactUs11ContactUsScreen({Key? key}) : super(key: key);

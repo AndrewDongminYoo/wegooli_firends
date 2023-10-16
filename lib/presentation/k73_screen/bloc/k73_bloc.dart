@@ -1,8 +1,14 @@
-import 'package:equatable/equatable.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/presentation/k73_screen/models/datecolumn1_item_model.dart';
-import 'package:wegooli_friends_app/presentation/k73_screen/models/k73_model.dart';
+
+// 📦 Package imports:
+import 'package:equatable/equatable.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/k73_screen/models/datecolumn1_item_model.dart';
+import '/presentation/k73_screen/models/k73_model.dart';
+
 part 'k73_event.dart';
 part 'k73_state.dart';
 

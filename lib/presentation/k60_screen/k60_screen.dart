@@ -1,13 +1,15 @@
-import 'package:wegooli_friends_app/presentation/k60_screen/bloc/k60_bloc.dart';
-import 'package:wegooli_friends_app/presentation/k60_screen/models/k60_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/widgets/custom_outlined_button.dart';
-import 'package:wegooli_friends_app/widgets/custom_text_form_field.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/k60_screen/bloc/k60_bloc.dart';
+import '/presentation/k60_screen/models/k60_model.dart';
+import '/widgets/custom_outlined_button.dart';
+import '/widgets/custom_text_form_field.dart';
 
 class K60Screen extends StatelessWidget {
-  const K60Screen({Key? key})
-      : super(key: key);
+  const K60Screen({Key? key}) : super(key: key);
 
   static Widget builder(BuildContext context) {
     return BlocProvider<K60Bloc>(

@@ -1,29 +1,32 @@
-import 'package:wegooli_friends_app/presentation/app_navigation_screen/bloc/app_navigation_bloc.dart';
-import 'package:wegooli_friends_app/presentation/app_navigation_screen/models/app_navigation_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/presentation/send_invitation_leader_only_dialog/send_invitation_leader_only_dialog.dart';
-import 'package:wegooli_friends_app/presentation/view_scheduled_date_scheduler_only_dialog/view_scheduled_date_scheduler_only_dialog.dart';
-import 'package:wegooli_friends_app/presentation/add_an_appointment_all_collapsed_bottomsheet/add_an_appointment_all_collapsed_bottomsheet.dart';
-import 'package:wegooli_friends_app/presentation/add_an_appointment_start_expanded_bottomsheet/add_an_appointment_start_expanded_bottomsheet.dart';
-import 'package:wegooli_friends_app/presentation/add_an_appointment_end_expanded_bottomsheet/add_an_appointment_end_expanded_bottomsheet.dart';
-import 'package:wegooli_friends_app/presentation/unsubscribe_confirm_dialog/unsubscribe_confirm_dialog.dart';
-import 'package:wegooli_friends_app/presentation/schedules_send_invitation_leader_only_dialog/schedules_send_invitation_leader_only_dialog.dart';
-import 'package:wegooli_friends_app/presentation/schedules_view_scheduled_date_scheduler_only_dialog/schedules_view_scheduled_date_scheduler_only_dialog.dart';
-import 'package:wegooli_friends_app/presentation/schedules_view_scheduled_date_scheduler_only_expanded_dialog/schedules_view_scheduled_date_scheduler_only_expanded_dialog.dart';
-import 'package:wegooli_friends_app/presentation/k51_bottomsheet/k51_bottomsheet.dart';
-import 'package:wegooli_friends_app/presentation/k61_bottomsheet/k61_bottomsheet.dart';
-import 'package:wegooli_friends_app/presentation/k90_dialog/k90_dialog.dart';
-import 'package:wegooli_friends_app/presentation/k91_dialog/k91_dialog.dart';
-import 'package:wegooli_friends_app/presentation/k92_dialog/k92_dialog.dart';
-import 'package:wegooli_friends_app/presentation/k95_dialog/k95_dialog.dart';
-import 'package:wegooli_friends_app/presentation/k96_dialog/k96_dialog.dart';
-import 'package:wegooli_friends_app/presentation/k97_dialog/k97_dialog.dart';
-import 'package:wegooli_friends_app/presentation/one7_bottomsheet/one7_bottomsheet.dart';
-import 'package:wegooli_friends_app/presentation/two2_bottomsheet/two2_bottomsheet.dart';
-import 'package:wegooli_friends_app/presentation/three1_bottomsheet/three1_bottomsheet.dart';
-import 'package:wegooli_friends_app/presentation/k108_bottomsheet/k108_bottomsheet.dart';
-import 'package:wegooli_friends_app/presentation/k111_dialog/k111_dialog.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/add_an_appointment_all_collapsed_bottomsheet/add_an_appointment_all_collapsed_bottomsheet.dart';
+import '/presentation/add_an_appointment_end_expanded_bottomsheet/add_an_appointment_end_expanded_bottomsheet.dart';
+import '/presentation/add_an_appointment_start_expanded_bottomsheet/add_an_appointment_start_expanded_bottomsheet.dart';
+import '/presentation/app_navigation_screen/bloc/app_navigation_bloc.dart';
+import '/presentation/app_navigation_screen/models/app_navigation_model.dart';
+import '/presentation/k108_bottomsheet/k108_bottomsheet.dart';
+import '/presentation/k111_dialog/k111_dialog.dart';
+import '/presentation/k51_bottomsheet/k51_bottomsheet.dart';
+import '/presentation/k61_bottomsheet/k61_bottomsheet.dart';
+import '/presentation/k90_dialog/k90_dialog.dart';
+import '/presentation/k91_dialog/k91_dialog.dart';
+import '/presentation/k92_dialog/k92_dialog.dart';
+import '/presentation/k95_dialog/k95_dialog.dart';
+import '/presentation/k96_dialog/k96_dialog.dart';
+import '/presentation/k97_dialog/k97_dialog.dart';
+import '/presentation/one7_bottomsheet/one7_bottomsheet.dart';
+import '/presentation/schedules_send_invitation_leader_only_dialog/schedules_send_invitation_leader_only_dialog.dart';
+import '/presentation/schedules_view_scheduled_date_scheduler_only_dialog/schedules_view_scheduled_date_scheduler_only_dialog.dart';
+import '/presentation/schedules_view_scheduled_date_scheduler_only_expanded_dialog/schedules_view_scheduled_date_scheduler_only_expanded_dialog.dart';
+import '/presentation/send_invitation_leader_only_dialog/send_invitation_leader_only_dialog.dart';
+import '/presentation/three1_bottomsheet/three1_bottomsheet.dart';
+import '/presentation/two2_bottomsheet/two2_bottomsheet.dart';
+import '/presentation/unsubscribe_confirm_dialog/unsubscribe_confirm_dialog.dart';
+import '/presentation/view_scheduled_date_scheduler_only_dialog/view_scheduled_date_scheduler_only_dialog.dart';
 
 class AppNavigationScreen extends StatelessWidget {
   const AppNavigationScreen({Key? key}) : super(key: key);
@@ -3923,7 +3926,8 @@ class AppNavigationScreen extends StatelessWidget {
   /// The [BuildContext] parameter is used to build the navigation stack.
   /// When the action is triggered, this function uses the [NavigatorService]
   /// to push the named route for the signupPageIdentityVerificationTermsBottomsheetScreen.
-  void onTapSignUpPageIdentityVerificationTermsBottomSheet(BuildContext context) {
+  void onTapSignUpPageIdentityVerificationTermsBottomSheet(
+      BuildContext context) {
     NavigatorService.pushNamed(
       AppRoutes.signupPageIdentityVerificationTermsBottomsheetScreen,
     );
@@ -4011,7 +4015,8 @@ class AppNavigationScreen extends StatelessWidget {
   /// The [BuildContext] parameter is used to build the navigation stack.
   /// When the action is triggered, this function uses the [NavigatorService]
   /// to push the named route for the signupPageIdentityVerificationFilledWithTelecomScreen.
-  void onTapSignUpPageIdentityVerificationFilledwithTelecom(BuildContext context) {
+  void onTapSignUpPageIdentityVerificationFilledwithTelecom(
+      BuildContext context) {
     NavigatorService.pushNamed(
       AppRoutes.signupPageIdentityVerificationFilledWithTelecomScreen,
     );
@@ -4022,7 +4027,8 @@ class AppNavigationScreen extends StatelessWidget {
   /// The [BuildContext] parameter is used to build the navigation stack.
   /// When the action is triggered, this function uses the [NavigatorService]
   /// to push the named route for the signupPageIdentityVerificationWaitingWithTelecomScreen.
-  void onTapSignUpPageIdentityVerificationWaitingwithTelecom(BuildContext context) {
+  void onTapSignUpPageIdentityVerificationWaitingwithTelecom(
+      BuildContext context) {
     NavigatorService.pushNamed(
       AppRoutes.signupPageIdentityVerificationWaitingWithTelecomScreen,
     );
@@ -4127,7 +4133,8 @@ class AppNavigationScreen extends StatelessWidget {
   ///
   /// The custom content widget is created by calling
   /// [SchedulesViewScheduledDateSchedulerOnlyExpandedDialog.builder] method.
-  void onTapSchedulesViewScheduledDateSchedulerOnlyExpanded(BuildContext context) {
+  void onTapSchedulesViewScheduledDateSchedulerOnlyExpanded(
+      BuildContext context) {
     showDialog(
         context: context,
         builder: (_) => AlertDialog(
@@ -4189,7 +4196,8 @@ class AppNavigationScreen extends StatelessWidget {
   /// The [BuildContext] parameter is used to build the navigation stack.
   /// When the action is triggered, this function uses the [NavigatorService]
   /// to push the named route for the mypageContactUsInquiryHistoryExpandedTabContainerScreen.
-  void onTapMyPageContactUsInquiryHistoryExpandedTabContainer(BuildContext context) {
+  void onTapMyPageContactUsInquiryHistoryExpandedTabContainer(
+      BuildContext context) {
     NavigatorService.pushNamed(
       AppRoutes.mypageContactUsInquiryHistoryExpandedTabContainerScreen,
     );

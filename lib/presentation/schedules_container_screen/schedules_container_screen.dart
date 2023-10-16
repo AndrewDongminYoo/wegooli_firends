@@ -1,12 +1,15 @@
-import 'package:wegooli_friends_app/presentation/schedules_container_screen/bloc/schedules_container_bloc.dart';
-import 'package:wegooli_friends_app/presentation/schedules_container_screen/models/schedules_container_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/presentation/mypage_profile_page/mypage_profile_page.dart';
-import 'package:wegooli_friends_app/presentation/schedules_page/schedules_page.dart';
-import 'package:wegooli_friends_app/presentation/send_bird_chat_page/send_bird_chat_page.dart';
-import 'package:wegooli_friends_app/presentation/smart_key_screen_page/smart_key_screen_page.dart';
-import 'package:wegooli_friends_app/widgets/custom_bottom_bar.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/mypage_profile_page/mypage_profile_page.dart';
+import '/presentation/schedules_container_screen/bloc/schedules_container_bloc.dart';
+import '/presentation/schedules_container_screen/models/schedules_container_model.dart';
+import '/presentation/schedules_page/schedules_page.dart';
+import '/presentation/send_bird_chat_page/send_bird_chat_page.dart';
+import '/presentation/smart_key_screen_page/smart_key_screen_page.dart';
+import '/widgets/custom_bottom_bar.dart';
 
 // ignore_for_file: must_be_immutable
 class SchedulesContainerScreen extends StatelessWidget {

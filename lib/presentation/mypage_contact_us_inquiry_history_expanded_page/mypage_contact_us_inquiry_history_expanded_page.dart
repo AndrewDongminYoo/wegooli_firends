@@ -1,9 +1,12 @@
-import 'package:wegooli_friends_app/presentation/mypage_contact_us_inquiry_history_expanded_page/bloc/mypage_contact_us_inquiry_history_expanded_bloc.dart';
-import 'package:wegooli_friends_app/presentation/mypage_contact_us_inquiry_history_expanded_page/models/mypage_contact_us_inquiry_history_expanded_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
-import 'package:wegooli_friends_app/widgets/custom_outlined_button.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/mypage_contact_us_inquiry_history_expanded_page/bloc/mypage_contact_us_inquiry_history_expanded_bloc.dart';
+import '/presentation/mypage_contact_us_inquiry_history_expanded_page/models/mypage_contact_us_inquiry_history_expanded_model.dart';
+import '/widgets/custom_elevated_button.dart';
+import '/widgets/custom_outlined_button.dart';
 
 // ignore_for_file: must_be_immutable
 class MyPageContactUsInquiryHistoryExpandedPage extends StatefulWidget {

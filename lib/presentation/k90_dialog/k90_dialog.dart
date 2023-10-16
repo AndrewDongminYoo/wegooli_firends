@@ -1,9 +1,12 @@
-import 'package:wegooli_friends_app/presentation/k90_dialog/bloc/k90_bloc.dart';
-import 'package:wegooli_friends_app/presentation/k90_dialog/models/k90_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
-import 'package:wegooli_friends_app/widgets/custom_text_form_field.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/k90_dialog/bloc/k90_bloc.dart';
+import '/presentation/k90_dialog/models/k90_model.dart';
+import '/widgets/custom_elevated_button.dart';
+import '/widgets/custom_text_form_field.dart';
 
 class K90Dialog extends StatelessWidget {
   const K90Dialog({Key? key}) : super(key: key);

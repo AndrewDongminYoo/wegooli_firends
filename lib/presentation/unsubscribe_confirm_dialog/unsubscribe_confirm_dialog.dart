@@ -1,8 +1,11 @@
-import 'package:wegooli_friends_app/presentation/unsubscribe_confirm_dialog/bloc/unsubscribe_confirm_bloc.dart';
-import 'package:wegooli_friends_app/presentation/unsubscribe_confirm_dialog/models/unsubscribe_confirm_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/unsubscribe_confirm_dialog/bloc/unsubscribe_confirm_bloc.dart';
+import '/presentation/unsubscribe_confirm_dialog/models/unsubscribe_confirm_model.dart';
+import '/widgets/custom_elevated_button.dart';
 
 class UnsubscribeConfirmDialog extends StatelessWidget {
   const UnsubscribeConfirmDialog({Key? key}) : super(key: key);

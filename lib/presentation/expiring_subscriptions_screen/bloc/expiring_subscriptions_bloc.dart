@@ -1,7 +1,13 @@
-import 'package:equatable/equatable.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/presentation/expiring_subscriptions_screen/models/expiring_subscriptions_model.dart';
+
+// 📦 Package imports:
+import 'package:equatable/equatable.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/expiring_subscriptions_screen/models/expiring_subscriptions_model.dart';
+
 part 'expiring_subscriptions_event.dart';
 part 'expiring_subscriptions_state.dart';
 

@@ -1,10 +1,13 @@
-import 'package:wegooli_friends_app/presentation/mypage_subscribe_info_no_subscription_screen/bloc/mypage_subscribe_info_no_subscription_bloc.dart';
-import 'package:wegooli_friends_app/presentation/mypage_subscribe_info_no_subscription_screen/models/mypage_subscribe_info_no_subscription_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/appbar_image_1.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/appbar_title.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/custom_app_bar.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/mypage_subscribe_info_no_subscription_screen/bloc/mypage_subscribe_info_no_subscription_bloc.dart';
+import '/presentation/mypage_subscribe_info_no_subscription_screen/models/mypage_subscribe_info_no_subscription_model.dart';
+import '/widgets/app_bar/appbar_image_1.dart';
+import '/widgets/app_bar/appbar_title.dart';
+import '/widgets/app_bar/custom_app_bar.dart';
 
 class MyPageSubscribeInfoNoSubscriptionScreen extends StatelessWidget {
   const MyPageSubscribeInfoNoSubscriptionScreen({Key? key}) : super(key: key);

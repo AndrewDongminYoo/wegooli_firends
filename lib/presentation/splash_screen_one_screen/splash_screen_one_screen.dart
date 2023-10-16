@@ -1,11 +1,13 @@
-import 'package:wegooli_friends_app/presentation/splash_screen_one_screen/bloc/splash_screen_one_bloc.dart';
-import 'package:wegooli_friends_app/presentation/splash_screen_one_screen/models/splash_screen_one_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/splash_screen_one_screen/bloc/splash_screen_one_bloc.dart';
+import '/presentation/splash_screen_one_screen/models/splash_screen_one_model.dart';
 
 class SplashScreenOneScreen extends StatelessWidget {
-  const SplashScreenOneScreen({Key? key})
-      : super(key: key);
+  const SplashScreenOneScreen({Key? key}) : super(key: key);
 
   static Widget builder(BuildContext context) {
     return BlocProvider<SplashScreenOneBloc>(

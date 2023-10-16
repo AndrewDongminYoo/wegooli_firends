@@ -1,10 +1,13 @@
-import 'package:wegooli_friends_app/presentation/one3_screen/bloc/one3_bloc.dart';
-import 'package:wegooli_friends_app/presentation/one3_screen/models/one3_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/widgets/custom_bottom_bar.dart';
-import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
-import 'package:wegooli_friends_app/widgets/custom_text_form_field.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/one3_screen/bloc/one3_bloc.dart';
+import '/presentation/one3_screen/models/one3_model.dart';
+import '/widgets/custom_bottom_bar.dart';
+import '/widgets/custom_elevated_button.dart';
+import '/widgets/custom_text_form_field.dart';
 
 // ignore: must_be_immutable
 class One3Screen extends StatelessWidget {

@@ -1,15 +1,18 @@
-import 'package:wegooli_friends_app/presentation/k72_screen/widgets/datecolumn_item_widget.dart';
-import 'package:wegooli_friends_app/presentation/k72_screen/widgets/userprofile1_item_widget.dart';
-import 'package:wegooli_friends_app/presentation/k72_screen/bloc/k72_bloc.dart';
-import 'package:wegooli_friends_app/presentation/k72_screen/models/datecolumn_item_model.dart';
-import 'package:wegooli_friends_app/presentation/k72_screen/models/k72_model.dart';
-import 'package:wegooli_friends_app/presentation/k72_screen/models/userprofile1_item_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/appbar_image.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/custom_app_bar.dart';
-import 'package:wegooli_friends_app/widgets/custom_bottom_bar.dart';
-import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/k72_screen/bloc/k72_bloc.dart';
+import '/presentation/k72_screen/models/datecolumn_item_model.dart';
+import '/presentation/k72_screen/models/k72_model.dart';
+import '/presentation/k72_screen/models/userprofile1_item_model.dart';
+import '/presentation/k72_screen/widgets/datecolumn_item_widget.dart';
+import '/presentation/k72_screen/widgets/userprofile1_item_widget.dart';
+import '/widgets/app_bar/appbar_image.dart';
+import '/widgets/app_bar/custom_app_bar.dart';
+import '/widgets/custom_bottom_bar.dart';
+import '/widgets/custom_elevated_button.dart';
 
 // ignore: must_be_immutable
 class K72Screen extends StatelessWidget {

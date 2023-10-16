@@ -1,7 +1,10 @@
-import 'package:wegooli_friends_app/presentation/schedules_view_scheduled_date_scheduler_only_dialog/bloc/schedules_view_scheduled_date_scheduler_only_bloc.dart';
-import 'package:wegooli_friends_app/presentation/schedules_view_scheduled_date_scheduler_only_dialog/models/schedules_view_scheduled_date_scheduler_only_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/schedules_view_scheduled_date_scheduler_only_dialog/bloc/schedules_view_scheduled_date_scheduler_only_bloc.dart';
+import '/presentation/schedules_view_scheduled_date_scheduler_only_dialog/models/schedules_view_scheduled_date_scheduler_only_model.dart';
 
 class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
   const SchedulesViewScheduledDateSchedulerOnlyDialog({Key? key})

@@ -1,11 +1,14 @@
-import 'package:wegooli_friends_app/presentation/home_page_screen/bloc/home_page_bloc.dart';
-import 'package:wegooli_friends_app/presentation/home_page_screen/models/home_page_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/appbar_image_1.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/appbar_image_2.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/custom_app_bar.dart';
-import 'package:wegooli_friends_app/widgets/custom_bottom_bar.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/home_page_screen/bloc/home_page_bloc.dart';
+import '/presentation/home_page_screen/models/home_page_model.dart';
+import '/widgets/app_bar/appbar_image_1.dart';
+import '/widgets/app_bar/appbar_image_2.dart';
+import '/widgets/app_bar/custom_app_bar.dart';
+import '/widgets/custom_bottom_bar.dart';
 
 // ignore: must_be_immutable
 class HomePageScreen extends StatelessWidget {

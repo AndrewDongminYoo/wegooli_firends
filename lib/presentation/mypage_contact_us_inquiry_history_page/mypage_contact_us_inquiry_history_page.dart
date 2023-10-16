@@ -1,9 +1,12 @@
-import 'package:wegooli_friends_app/presentation/mypage_contact_us_inquiry_history_page/widgets/userquery_item_widget.dart';
-import 'package:wegooli_friends_app/presentation/mypage_contact_us_inquiry_history_page/bloc/mypage_contact_us_inquiry_history_bloc.dart';
-import 'package:wegooli_friends_app/presentation/mypage_contact_us_inquiry_history_page/models/mypage_contact_us_inquiry_history_model.dart';
-import 'package:wegooli_friends_app/presentation/mypage_contact_us_inquiry_history_page/models/userquery_item_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/mypage_contact_us_inquiry_history_page/bloc/mypage_contact_us_inquiry_history_bloc.dart';
+import '/presentation/mypage_contact_us_inquiry_history_page/models/mypage_contact_us_inquiry_history_model.dart';
+import '/presentation/mypage_contact_us_inquiry_history_page/models/userquery_item_model.dart';
+import '/presentation/mypage_contact_us_inquiry_history_page/widgets/userquery_item_widget.dart';
 
 // ignore_for_file: must_be_immutable
 class MyPageContactUsInquiryHistoryPage extends StatefulWidget {

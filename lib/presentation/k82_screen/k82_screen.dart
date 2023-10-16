@@ -1,12 +1,15 @@
-import 'package:wegooli_friends_app/presentation/k82_screen/bloc/k82_bloc.dart';
-import 'package:wegooli_friends_app/presentation/k82_screen/models/k82_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/appbar_image.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/appbar_subtitle.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/custom_app_bar.dart';
-import 'package:wegooli_friends_app/widgets/custom_bottom_bar.dart';
-import 'package:wegooli_friends_app/widgets/custom_outlined_button.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/k82_screen/bloc/k82_bloc.dart';
+import '/presentation/k82_screen/models/k82_model.dart';
+import '/widgets/app_bar/appbar_image.dart';
+import '/widgets/app_bar/appbar_subtitle.dart';
+import '/widgets/app_bar/custom_app_bar.dart';
+import '/widgets/custom_bottom_bar.dart';
+import '/widgets/custom_outlined_button.dart';
 
 // ignore: must_be_immutable
 class K82Screen extends StatelessWidget {

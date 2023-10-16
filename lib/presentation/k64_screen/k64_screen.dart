@@ -1,13 +1,16 @@
-import 'package:wegooli_friends_app/presentation/k64_screen/bloc/k64_bloc.dart';
-import 'package:wegooli_friends_app/presentation/k64_screen/models/k64_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/appbar_image_1.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/appbar_subtitle_1.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/custom_app_bar.dart';
-import 'package:wegooli_friends_app/widgets/custom_drop_down.dart';
-import 'package:wegooli_friends_app/widgets/custom_outlined_button.dart';
-import 'package:wegooli_friends_app/widgets/custom_text_form_field.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/k64_screen/bloc/k64_bloc.dart';
+import '/presentation/k64_screen/models/k64_model.dart';
+import '/widgets/app_bar/appbar_image_1.dart';
+import '/widgets/app_bar/appbar_subtitle_1.dart';
+import '/widgets/app_bar/custom_app_bar.dart';
+import '/widgets/custom_drop_down.dart';
+import '/widgets/custom_outlined_button.dart';
+import '/widgets/custom_text_form_field.dart';
 
 class K64Screen extends StatelessWidget {
   const K64Screen({Key? key}) : super(key: key);

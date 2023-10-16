@@ -1,7 +1,13 @@
-import 'package:equatable/equatable.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/presentation/gas_indicator_icon_screen/models/gas_indicator_icon_model.dart';
+
+// 📦 Package imports:
+import 'package:equatable/equatable.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/gas_indicator_icon_screen/models/gas_indicator_icon_model.dart';
+
 part 'gas_indicator_icon_event.dart';
 part 'gas_indicator_icon_state.dart';
 

@@ -1,14 +1,16 @@
-import 'package:wegooli_friends_app/presentation/k51_bottomsheet/bloc/k51_bloc.dart';
-import 'package:wegooli_friends_app/presentation/k51_bottomsheet/models/k51_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/widgets/custom_checkbox_button.dart';
-import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/k51_bottomsheet/bloc/k51_bloc.dart';
+import '/presentation/k51_bottomsheet/models/k51_model.dart';
+import '/widgets/custom_checkbox_button.dart';
+import '/widgets/custom_elevated_button.dart';
 
 // ignore_for_file: must_be_immutable
 class K51Bottomsheet extends StatelessWidget {
-  const K51Bottomsheet({Key? key})
-      : super(key: key);
+  const K51Bottomsheet({Key? key}) : super(key: key);
 
   static Widget builder(BuildContext context) {
     return BlocProvider<K51Bloc>(

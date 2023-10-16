@@ -1,9 +1,12 @@
-import 'package:wegooli_friends_app/presentation/one4_screen/bloc/one4_bloc.dart';
-import 'package:wegooli_friends_app/presentation/one4_screen/models/one4_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/widgets/custom_bottom_bar.dart';
-import 'package:wegooli_friends_app/widgets/custom_outlined_button.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/one4_screen/bloc/one4_bloc.dart';
+import '/presentation/one4_screen/models/one4_model.dart';
+import '/widgets/custom_bottom_bar.dart';
+import '/widgets/custom_outlined_button.dart';
 
 // ignore: must_be_immutable
 class One4Screen extends StatelessWidget {

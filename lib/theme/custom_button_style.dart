@@ -1,5 +1,8 @@
-import 'package:wegooli_friends_app/core/app_export.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
 
 /// A class that offers pre-defined button styles for customizing button appearance.
 class CustomButtonStyles {

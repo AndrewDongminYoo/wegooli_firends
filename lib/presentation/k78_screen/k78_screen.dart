@@ -1,14 +1,16 @@
-import 'package:wegooli_friends_app/presentation/k78_screen/bloc/k78_bloc.dart';
-import 'package:wegooli_friends_app/presentation/k78_screen/models/k78_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/appbar_image.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/appbar_subtitle_3.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/custom_app_bar.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/k78_screen/bloc/k78_bloc.dart';
+import '/presentation/k78_screen/models/k78_model.dart';
+import '/widgets/app_bar/appbar_image.dart';
+import '/widgets/app_bar/appbar_subtitle_3.dart';
+import '/widgets/app_bar/custom_app_bar.dart';
 
 class K78Screen extends StatelessWidget {
-  const K78Screen({Key? key})
-      : super(key: key);
+  const K78Screen({Key? key}) : super(key: key);
 
   static Widget builder(BuildContext context) {
     return BlocProvider<K78Bloc>(

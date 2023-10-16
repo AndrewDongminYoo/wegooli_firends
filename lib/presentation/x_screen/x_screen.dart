@@ -1,11 +1,14 @@
-import 'package:wegooli_friends_app/presentation/x_screen/bloc/x_bloc.dart';
-import 'package:wegooli_friends_app/presentation/x_screen/models/x_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/appbar_image.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/custom_app_bar.dart';
-import 'package:wegooli_friends_app/widgets/custom_bottom_bar.dart';
-import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/x_screen/bloc/x_bloc.dart';
+import '/presentation/x_screen/models/x_model.dart';
+import '/widgets/app_bar/appbar_image.dart';
+import '/widgets/app_bar/custom_app_bar.dart';
+import '/widgets/custom_bottom_bar.dart';
+import '/widgets/custom_elevated_button.dart';
 
 // ignore: must_be_immutable
 class XScreen extends StatelessWidget {

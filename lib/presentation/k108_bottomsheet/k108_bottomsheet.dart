@@ -1,8 +1,11 @@
-import 'package:wegooli_friends_app/presentation/k108_bottomsheet/bloc/k108_bloc.dart';
-import 'package:wegooli_friends_app/presentation/k108_bottomsheet/models/k108_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/widgets/custom_outlined_button.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/k108_bottomsheet/bloc/k108_bloc.dart';
+import '/presentation/k108_bottomsheet/models/k108_model.dart';
+import '/widgets/custom_outlined_button.dart';
 
 class K108Bottomsheet extends StatelessWidget {
   const K108Bottomsheet({Key? key}) : super(key: key);

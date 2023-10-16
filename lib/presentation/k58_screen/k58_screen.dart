@@ -1,11 +1,13 @@
-import 'package:wegooli_friends_app/presentation/k58_screen/bloc/k58_bloc.dart';
-import 'package:wegooli_friends_app/presentation/k58_screen/models/k58_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/k58_screen/bloc/k58_bloc.dart';
+import '/presentation/k58_screen/models/k58_model.dart';
 
 class K58Screen extends StatelessWidget {
-  const K58Screen({Key? key})
-      : super(key: key);
+  const K58Screen({Key? key}) : super(key: key);
 
   static Widget builder(BuildContext context) {
     return BlocProvider<K58Bloc>(

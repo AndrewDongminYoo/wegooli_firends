@@ -1,12 +1,14 @@
-import 'package:wegooli_friends_app/presentation/k66_screen/bloc/k66_bloc.dart';
-import 'package:wegooli_friends_app/presentation/k66_screen/models/k66_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/widgets/custom_outlined_button.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/k66_screen/bloc/k66_bloc.dart';
+import '/presentation/k66_screen/models/k66_model.dart';
+import '/widgets/custom_outlined_button.dart';
 
 class K66Screen extends StatelessWidget {
-  const K66Screen({Key? key})
-      : super(key: key);
+  const K66Screen({Key? key}) : super(key: key);
 
   static Widget builder(BuildContext context) {
     return BlocProvider<K66Bloc>(

@@ -1,14 +1,16 @@
-import 'package:wegooli_friends_app/presentation/gas_indicator_icon_screen/bloc/gas_indicator_icon_bloc.dart';
-import 'package:wegooli_friends_app/presentation/gas_indicator_icon_screen/models/gas_indicator_icon_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/appbar_image.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/appbar_subtitle_3.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/custom_app_bar.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/gas_indicator_icon_screen/bloc/gas_indicator_icon_bloc.dart';
+import '/presentation/gas_indicator_icon_screen/models/gas_indicator_icon_model.dart';
+import '/widgets/app_bar/appbar_image.dart';
+import '/widgets/app_bar/appbar_subtitle_3.dart';
+import '/widgets/app_bar/custom_app_bar.dart';
 
 class GasIndicatorIconScreen extends StatelessWidget {
-  const GasIndicatorIconScreen({Key? key})
-      : super(key: key);
+  const GasIndicatorIconScreen({Key? key}) : super(key: key);
 
   static Widget builder(BuildContext context) {
     return BlocProvider<GasIndicatorIconBloc>(

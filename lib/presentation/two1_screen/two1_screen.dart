@@ -1,10 +1,13 @@
-import 'package:wegooli_friends_app/presentation/two1_screen/bloc/two1_bloc.dart';
-import 'package:wegooli_friends_app/presentation/two1_screen/models/two1_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/appbar_image.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/custom_app_bar.dart';
-import 'package:wegooli_friends_app/widgets/custom_bottom_bar.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/two1_screen/bloc/two1_bloc.dart';
+import '/presentation/two1_screen/models/two1_model.dart';
+import '/widgets/app_bar/appbar_image.dart';
+import '/widgets/app_bar/custom_app_bar.dart';
+import '/widgets/custom_bottom_bar.dart';
 
 // ignore: must_be_immutable
 class Two1Screen extends StatelessWidget {

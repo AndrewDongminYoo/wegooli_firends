@@ -1,11 +1,13 @@
-import 'package:wegooli_friends_app/presentation/one1_screen/bloc/one1_bloc.dart';
-import 'package:wegooli_friends_app/presentation/one1_screen/models/one1_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/one1_screen/bloc/one1_bloc.dart';
+import '/presentation/one1_screen/models/one1_model.dart';
 
 class One1Screen extends StatelessWidget {
-  const One1Screen({Key? key})
-      : super(key: key);
+  const One1Screen({Key? key}) : super(key: key);
 
   static Widget builder(BuildContext context) {
     return BlocProvider<One1Bloc>(

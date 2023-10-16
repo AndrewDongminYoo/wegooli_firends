@@ -1,12 +1,15 @@
-import 'package:wegooli_friends_app/presentation/mypage_card_list_screen/bloc/mypage_card_list_bloc.dart';
-import 'package:wegooli_friends_app/presentation/mypage_card_list_screen/models/mypage_card_list_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/appbar_image_1.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/appbar_title.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/custom_app_bar.dart';
-import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
-import 'package:wegooli_friends_app/widgets/custom_radio_button.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/mypage_card_list_screen/bloc/mypage_card_list_bloc.dart';
+import '/presentation/mypage_card_list_screen/models/mypage_card_list_model.dart';
+import '/widgets/app_bar/appbar_image_1.dart';
+import '/widgets/app_bar/appbar_title.dart';
+import '/widgets/app_bar/custom_app_bar.dart';
+import '/widgets/custom_elevated_button.dart';
+import '/widgets/custom_radio_button.dart';
 
 class MyPageCardListScreen extends StatelessWidget {
   const MyPageCardListScreen({Key? key}) : super(key: key);

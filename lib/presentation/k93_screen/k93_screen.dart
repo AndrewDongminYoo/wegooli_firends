@@ -1,16 +1,18 @@
-import 'package:wegooli_friends_app/presentation/k93_screen/bloc/k93_bloc.dart';
-import 'package:wegooli_friends_app/presentation/k93_screen/models/k93_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/appbar_image.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/custom_app_bar.dart';
-import 'package:wegooli_friends_app/widgets/custom_bottom_bar.dart';
-import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/k93_screen/bloc/k93_bloc.dart';
+import '/presentation/k93_screen/models/k93_model.dart';
+import '/widgets/app_bar/appbar_image.dart';
+import '/widgets/app_bar/custom_app_bar.dart';
+import '/widgets/custom_bottom_bar.dart';
+import '/widgets/custom_elevated_button.dart';
 
 // ignore: must_be_immutable
 class K93Screen extends StatelessWidget {
-  K93Screen({Key? key})
-      : super(key: key);
+  K93Screen({Key? key}) : super(key: key);
 
   GlobalKey<NavigatorState> navigatorKey = GlobalKey();
 

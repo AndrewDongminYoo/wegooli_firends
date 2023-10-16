@@ -1,15 +1,18 @@
-import 'package:wegooli_friends_app/presentation/schedules_team_is_not_full_screen/widgets/userage_item_widget.dart';
-import 'package:wegooli_friends_app/presentation/schedules_team_is_not_full_screen/widgets/userprofile_item_widget.dart';
-import 'package:wegooli_friends_app/presentation/schedules_team_is_not_full_screen/bloc/schedules_team_is_not_full_bloc.dart';
-import 'package:wegooli_friends_app/presentation/schedules_team_is_not_full_screen/models/schedules_team_is_not_full_model.dart';
-import 'package:wegooli_friends_app/presentation/schedules_team_is_not_full_screen/models/userage_item_model.dart';
-import 'package:wegooli_friends_app/presentation/schedules_team_is_not_full_screen/models/userprofile_item_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/appbar_image.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/custom_app_bar.dart';
-import 'package:wegooli_friends_app/widgets/custom_bottom_bar.dart';
-import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/schedules_team_is_not_full_screen/bloc/schedules_team_is_not_full_bloc.dart';
+import '/presentation/schedules_team_is_not_full_screen/models/schedules_team_is_not_full_model.dart';
+import '/presentation/schedules_team_is_not_full_screen/models/userage_item_model.dart';
+import '/presentation/schedules_team_is_not_full_screen/models/userprofile_item_model.dart';
+import '/presentation/schedules_team_is_not_full_screen/widgets/userage_item_widget.dart';
+import '/presentation/schedules_team_is_not_full_screen/widgets/userprofile_item_widget.dart';
+import '/widgets/app_bar/appbar_image.dart';
+import '/widgets/app_bar/custom_app_bar.dart';
+import '/widgets/custom_bottom_bar.dart';
+import '/widgets/custom_elevated_button.dart';
 
 // ignore: must_be_immutable
 class SchedulesTeamIsNotFullScreen extends StatelessWidget {

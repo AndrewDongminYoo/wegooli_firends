@@ -1,7 +1,11 @@
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+
+// 📦 Package imports:
 import 'package:lottie/lottie.dart';
 
-import 'package:wegooli_friends_app/core/app_export.dart';
+// 🌎 Project imports:
+import '/core/app_export.dart';
 
 class ProgressDialogUtils {
   static bool isProgressVisible = false;

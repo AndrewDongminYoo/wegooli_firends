@@ -1,14 +1,16 @@
-import 'package:wegooli_friends_app/presentation/k61_bottomsheet/bloc/k61_bloc.dart';
-import 'package:wegooli_friends_app/presentation/k61_bottomsheet/models/k61_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/widgets/custom_checkbox_button.dart';
-import 'package:wegooli_friends_app/widgets/custom_outlined_button.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/k61_bottomsheet/bloc/k61_bloc.dart';
+import '/presentation/k61_bottomsheet/models/k61_model.dart';
+import '/widgets/custom_checkbox_button.dart';
+import '/widgets/custom_outlined_button.dart';
 
 // ignore_for_file: must_be_immutable
 class K61Bottomsheet extends StatelessWidget {
-  const K61Bottomsheet({Key? key})
-      : super(key: key);
+  const K61Bottomsheet({Key? key}) : super(key: key);
 
   static Widget builder(BuildContext context) {
     return BlocProvider<K61Bloc>(

@@ -1,13 +1,15 @@
-import 'package:wegooli_friends_app/presentation/frame_34850_screen/bloc/frame_34850_bloc.dart';
-import 'package:wegooli_friends_app/presentation/frame_34850_screen/models/frame_34850_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/widgets/custom_checkbox_button.dart';
-import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/frame_34850_screen/bloc/frame_34850_bloc.dart';
+import '/presentation/frame_34850_screen/models/frame_34850_model.dart';
+import '/widgets/custom_checkbox_button.dart';
+import '/widgets/custom_elevated_button.dart';
 
 class Frame34850Screen extends StatelessWidget {
-  const Frame34850Screen({Key? key})
-      : super(key: key);
+  const Frame34850Screen({Key? key}) : super(key: key);
 
   static Widget builder(BuildContext context) {
     return BlocProvider<Frame34850Bloc>(

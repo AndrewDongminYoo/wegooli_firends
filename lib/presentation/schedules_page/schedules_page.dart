@@ -1,17 +1,19 @@
-import 'package:wegooli_friends_app/presentation/schedules_page/widgets/calendar_item_widget.dart';
-import 'package:wegooli_friends_app/presentation/schedules_page/bloc/schedules_bloc.dart';
-import 'package:wegooli_friends_app/presentation/schedules_page/models/calendar_item_model.dart';
-import 'package:wegooli_friends_app/presentation/schedules_page/models/schedules_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/appbar_image.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/custom_app_bar.dart';
-import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/schedules_page/bloc/schedules_bloc.dart';
+import '/presentation/schedules_page/models/calendar_item_model.dart';
+import '/presentation/schedules_page/models/schedules_model.dart';
+import '/presentation/schedules_page/widgets/calendar_item_widget.dart';
+import '/widgets/app_bar/appbar_image.dart';
+import '/widgets/app_bar/custom_app_bar.dart';
+import '/widgets/custom_elevated_button.dart';
 
 // ignore_for_file: must_be_immutable
 class SchedulesPage extends StatelessWidget {
-  const SchedulesPage({Key? key})
-      : super(key: key);
+  const SchedulesPage({Key? key}) : super(key: key);
 
   static Widget builder(BuildContext context) {
     return BlocProvider<SchedulesBloc>(

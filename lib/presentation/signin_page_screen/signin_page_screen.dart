@@ -1,13 +1,15 @@
-import 'package:wegooli_friends_app/presentation/signin_page_screen/bloc/signin_page_bloc.dart';
-import 'package:wegooli_friends_app/presentation/signin_page_screen/models/signin_page_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
-import 'package:wegooli_friends_app/widgets/custom_text_form_field.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/signin_page_screen/bloc/signin_page_bloc.dart';
+import '/presentation/signin_page_screen/models/signin_page_model.dart';
+import '/widgets/custom_elevated_button.dart';
+import '/widgets/custom_text_form_field.dart';
 
 class SigninPageScreen extends StatelessWidget {
-  const SigninPageScreen({Key? key})
-      : super(key: key);
+  const SigninPageScreen({Key? key}) : super(key: key);
 
   static Widget builder(BuildContext context) {
     return BlocProvider<SigninPageBloc>(

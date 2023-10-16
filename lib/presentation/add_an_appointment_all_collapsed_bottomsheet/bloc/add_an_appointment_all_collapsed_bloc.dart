@@ -1,7 +1,13 @@
-import 'package:equatable/equatable.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/presentation/add_an_appointment_all_collapsed_bottomsheet/models/add_an_appointment_all_collapsed_model.dart';
+
+// 📦 Package imports:
+import 'package:equatable/equatable.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/add_an_appointment_all_collapsed_bottomsheet/models/add_an_appointment_all_collapsed_model.dart';
+
 part 'add_an_appointment_all_collapsed_event.dart';
 part 'add_an_appointment_all_collapsed_state.dart';
 

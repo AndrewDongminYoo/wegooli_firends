@@ -1,9 +1,12 @@
-import 'package:wegooli_friends_app/presentation/k92_dialog/bloc/k92_bloc.dart';
-import 'package:wegooli_friends_app/presentation/k92_dialog/models/k92_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/widgets/custom_drop_down.dart';
-import 'package:wegooli_friends_app/widgets/custom_outlined_button.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/k92_dialog/bloc/k92_bloc.dart';
+import '/presentation/k92_dialog/models/k92_model.dart';
+import '/widgets/custom_drop_down.dart';
+import '/widgets/custom_outlined_button.dart';
 
 class K92Dialog extends StatelessWidget {
   const K92Dialog({Key? key}) : super(key: key);

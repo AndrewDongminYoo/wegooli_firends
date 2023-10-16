@@ -1,5 +1,8 @@
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
 
 /// Helper class for managing themes and colors.
 class ThemeHelper {
@@ -93,9 +96,7 @@ class ThemeHelper {
           }
           return colorScheme.onSurface;
         }),
-        side: const BorderSide(
-
-        ),
+        side: const BorderSide(),
         visualDensity: const VisualDensity(
           vertical: -4,
           horizontal: -4,

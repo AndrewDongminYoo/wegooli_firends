@@ -1,5 +1,6 @@
-import 'package:wegooli_friends_app/core/environment/base_env_config.dart';
-import 'package:wegooli_friends_app/core/environment/wegoolifriends_env_config.dart';
+// 🌎 Project imports:
+import '/core/environment/base_env_config.dart';
+import '/core/environment/wegoolifriends_env_config.dart';
 
 enum Environment { wegooliFriends }
 

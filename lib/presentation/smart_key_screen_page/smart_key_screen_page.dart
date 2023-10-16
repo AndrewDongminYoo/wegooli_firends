@@ -1,14 +1,16 @@
-import 'package:wegooli_friends_app/presentation/smart_key_screen_page/bloc/smart_key_screen_bloc.dart';
-import 'package:wegooli_friends_app/presentation/smart_key_screen_page/models/smart_key_screen_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/appbar_image.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/custom_app_bar.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/smart_key_screen_page/bloc/smart_key_screen_bloc.dart';
+import '/presentation/smart_key_screen_page/models/smart_key_screen_model.dart';
+import '/widgets/app_bar/appbar_image.dart';
+import '/widgets/app_bar/custom_app_bar.dart';
 
 // ignore_for_file: must_be_immutable
 class SmartKeyScreenPage extends StatelessWidget {
-  const SmartKeyScreenPage({Key? key})
-      : super(key: key);
+  const SmartKeyScreenPage({Key? key}) : super(key: key);
 
   static Widget builder(BuildContext context) {
     return BlocProvider<SmartKeyScreenBloc>(

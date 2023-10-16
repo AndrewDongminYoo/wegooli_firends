@@ -1,13 +1,16 @@
-import 'package:wegooli_friends_app/presentation/mypage_profile_page/bloc/mypage_profile_bloc.dart';
-import 'package:wegooli_friends_app/presentation/mypage_profile_page/models/mypage_profile_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/appbar_image_1.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/appbar_title.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/custom_app_bar.dart';
-import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
-import 'package:wegooli_friends_app/widgets/custom_outlined_button.dart';
-import 'package:wegooli_friends_app/widgets/custom_switch.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/mypage_profile_page/bloc/mypage_profile_bloc.dart';
+import '/presentation/mypage_profile_page/models/mypage_profile_model.dart';
+import '/widgets/app_bar/appbar_image_1.dart';
+import '/widgets/app_bar/appbar_title.dart';
+import '/widgets/app_bar/custom_app_bar.dart';
+import '/widgets/custom_elevated_button.dart';
+import '/widgets/custom_outlined_button.dart';
+import '/widgets/custom_switch.dart';
 
 class MyPageProfilePage extends StatelessWidget {
   const MyPageProfilePage({Key? key}) : super(key: key);

@@ -1,14 +1,16 @@
-import 'package:wegooli_friends_app/presentation/two2_bottomsheet/bloc/two2_bloc.dart';
-import 'package:wegooli_friends_app/presentation/two2_bottomsheet/models/two2_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/widgets/custom_drop_down.dart';
-import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/two2_bottomsheet/bloc/two2_bloc.dart';
+import '/presentation/two2_bottomsheet/models/two2_model.dart';
+import '/widgets/custom_drop_down.dart';
+import '/widgets/custom_elevated_button.dart';
 
 // ignore_for_file: must_be_immutable
 class Two2Bottomsheet extends StatelessWidget {
-  const Two2Bottomsheet({Key? key})
-      : super(key: key);
+  const Two2Bottomsheet({Key? key}) : super(key: key);
 
   static Widget builder(BuildContext context) {
     return BlocProvider<Two2Bloc>(

@@ -1,8 +1,11 @@
 // ignore_for_file: must_be_immutable
 
+// 📦 Package imports:
 import 'package:equatable/equatable.dart';
-import 'package:wegooli_friends_app/presentation/schedules_team_is_not_full_screen/models/userprofile_item_model.dart';
-import 'package:wegooli_friends_app/presentation/schedules_team_is_not_full_screen/models/userage_item_model.dart';
+
+// 🌎 Project imports:
+import '/presentation/schedules_team_is_not_full_screen/models/userage_item_model.dart';
+import '/presentation/schedules_team_is_not_full_screen/models/userprofile_item_model.dart';
 
 /// This class defines the variables used in the [schedules_team_is_not_full_screen],
 /// and is typically used to hold data that is passed between different parts of the application.

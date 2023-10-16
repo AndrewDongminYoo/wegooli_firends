@@ -1,16 +1,20 @@
 // ignore_for_file: must_be_immutable
 
+// 🎯 Dart imports:
 import 'dart:io';
 
-import 'package:cached_network_image/cached_network_image.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomImageView extends StatelessWidget {
-
   ///a [CustomImageView] it can be used for showing any type of images
   /// it will shows the placeholder image if image is not found on network image
-  CustomImageView({Key? key,
+  CustomImageView({
+    Key? key,
     this.url,
     this.imagePath,
     this.svgPath,
@@ -26,6 +30,7 @@ class CustomImageView extends StatelessWidget {
     this.border,
     this.placeHolder = 'assets/images/image_not_found.png',
   }) : super(key: key);
+
   ///[url] is required parameter for fetching network image
   String? url;
 

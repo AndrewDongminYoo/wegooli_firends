@@ -1,9 +1,12 @@
-import 'package:wegooli_friends_app/presentation/schedules_send_invitation_leader_only_dialog/bloc/schedules_send_invitation_leader_only_bloc.dart';
-import 'package:wegooli_friends_app/presentation/schedules_send_invitation_leader_only_dialog/models/schedules_send_invitation_leader_only_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
-import 'package:wegooli_friends_app/widgets/custom_text_form_field.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/schedules_send_invitation_leader_only_dialog/bloc/schedules_send_invitation_leader_only_bloc.dart';
+import '/presentation/schedules_send_invitation_leader_only_dialog/models/schedules_send_invitation_leader_only_model.dart';
+import '/widgets/custom_elevated_button.dart';
+import '/widgets/custom_text_form_field.dart';
 
 class SchedulesSendInvitationLeaderOnlyDialog extends StatelessWidget {
   const SchedulesSendInvitationLeaderOnlyDialog({Key? key}) : super(key: key);

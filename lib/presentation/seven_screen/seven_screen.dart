@@ -1,14 +1,16 @@
-import 'package:wegooli_friends_app/presentation/seven_screen/bloc/seven_bloc.dart';
-import 'package:wegooli_friends_app/presentation/seven_screen/models/seven_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/core/utils/validation_functions.dart';
-import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
-import 'package:wegooli_friends_app/widgets/custom_text_form_field.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/core/utils/validation_functions.dart';
+import '/presentation/seven_screen/bloc/seven_bloc.dart';
+import '/presentation/seven_screen/models/seven_model.dart';
+import '/widgets/custom_elevated_button.dart';
+import '/widgets/custom_text_form_field.dart';
 
 class SevenScreen extends StatelessWidget {
-  SevenScreen({Key? key})
-      : super(key: key);
+  SevenScreen({Key? key}) : super(key: key);
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 

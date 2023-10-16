@@ -1,12 +1,14 @@
-import 'package:wegooli_friends_app/presentation/k57_screen/bloc/k57_bloc.dart';
-import 'package:wegooli_friends_app/presentation/k57_screen/models/k57_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/widgets/custom_elevated_button.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/presentation/k57_screen/bloc/k57_bloc.dart';
+import '/presentation/k57_screen/models/k57_model.dart';
+import '/widgets/custom_elevated_button.dart';
 
 class K57Screen extends StatelessWidget {
-  const K57Screen({Key? key})
-      : super(key: key);
+  const K57Screen({Key? key}) : super(key: key);
 
   static Widget builder(BuildContext context) {
     return BlocProvider<K57Bloc>(

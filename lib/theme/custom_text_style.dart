@@ -1,5 +1,8 @@
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
 
 /// A collection of pre-defined text styles for customizing text appearance,
 /// categorized by different font families and weights.
@@ -10,16 +13,19 @@ class CustomTextStyles {
   static TextStyle get bodyLargeBlack900 => theme.textTheme.bodyLarge!.copyWith(
         color: appTheme.black900,
       );
-  static TextStyle get bodyLargeBluegray200 => theme.textTheme.bodyLarge!.copyWith(
+  static TextStyle get bodyLargeBluegray200 =>
+      theme.textTheme.bodyLarge!.copyWith(
         color: appTheme.blueGray200,
       );
-  static TextStyle get bodyLargeBluegray900 => theme.textTheme.bodyLarge!.copyWith(
+  static TextStyle get bodyLargeBluegray900 =>
+      theme.textTheme.bodyLarge!.copyWith(
         color: appTheme.blueGray900,
       );
   static TextStyle get bodyLargeGray500 => theme.textTheme.bodyLarge!.copyWith(
         color: appTheme.gray500,
       );
-  static TextStyle get bodyLargeGray50004 => theme.textTheme.bodyLarge!.copyWith(
+  static TextStyle get bodyLargeGray50004 =>
+      theme.textTheme.bodyLarge!.copyWith(
         color: appTheme.gray50004,
       );
   static TextStyle get bodyLargeNotoSansKRBlack900 =>
@@ -42,16 +48,20 @@ class CustomTextStyles {
       theme.textTheme.bodyLarge!.notoSansKR.copyWith(
         color: appTheme.redA700,
       );
-  static TextStyle get bodyLargeOnPrimary => theme.textTheme.bodyLarge!.copyWith(
+  static TextStyle get bodyLargeOnPrimary =>
+      theme.textTheme.bodyLarge!.copyWith(
         color: theme.colorScheme.onPrimary.withOpacity(0.4),
       );
-  static TextStyle get bodyLargeOnPrimaryContainer => theme.textTheme.bodyLarge!.copyWith(
+  static TextStyle get bodyLargeOnPrimaryContainer =>
+      theme.textTheme.bodyLarge!.copyWith(
         color: theme.colorScheme.onPrimaryContainer,
       );
-  static TextStyle get bodyLargePrimaryContainer => theme.textTheme.bodyLarge!.copyWith(
+  static TextStyle get bodyLargePrimaryContainer =>
+      theme.textTheme.bodyLarge!.copyWith(
         color: theme.colorScheme.primaryContainer,
       );
-  static TextStyle get bodyMediumGray600 => theme.textTheme.bodyMedium!.copyWith(
+  static TextStyle get bodyMediumGray600 =>
+      theme.textTheme.bodyMedium!.copyWith(
         color: appTheme.gray600,
       );
   static TextStyle get bodyMediumNotoSansKR =>
@@ -71,7 +81,8 @@ class CustomTextStyles {
         color: appTheme.gray70002,
         fontSize: 13.fSize,
       );
-  static TextStyle get bodyMediumPretendard => theme.textTheme.bodyMedium!.pretendard;
+  static TextStyle get bodyMediumPretendard =>
+      theme.textTheme.bodyMedium!.pretendard;
   static TextStyle get bodyMediumPretendardBluegray900 =>
       theme.textTheme.bodyMedium!.pretendard.copyWith(
         color: appTheme.blueGray900,
@@ -127,37 +138,47 @@ class CustomTextStyles {
   static TextStyle get bodySmallBlack900 => theme.textTheme.bodySmall!.copyWith(
         color: appTheme.black900,
       );
-  static TextStyle get bodySmallBluegray200 => theme.textTheme.bodySmall!.copyWith(
+  static TextStyle get bodySmallBluegray200 =>
+      theme.textTheme.bodySmall!.copyWith(
         color: appTheme.blueGray200,
         fontSize: 10.fSize,
       );
-  static TextStyle get bodySmallBluegray200_1 => theme.textTheme.bodySmall!.copyWith(
+  static TextStyle get bodySmallBluegray200_1 =>
+      theme.textTheme.bodySmall!.copyWith(
         color: appTheme.blueGray200,
       );
-  static TextStyle get bodySmallBluegray900 => theme.textTheme.bodySmall!.copyWith(
+  static TextStyle get bodySmallBluegray900 =>
+      theme.textTheme.bodySmall!.copyWith(
         color: appTheme.blueGray900,
         fontSize: 10.fSize,
       );
-  static TextStyle get bodySmallBluegray900_1 => theme.textTheme.bodySmall!.copyWith(
+  static TextStyle get bodySmallBluegray900_1 =>
+      theme.textTheme.bodySmall!.copyWith(
         color: appTheme.blueGray900,
       );
-  static TextStyle get bodySmallErrorContainer => theme.textTheme.bodySmall!.copyWith(
+  static TextStyle get bodySmallErrorContainer =>
+      theme.textTheme.bodySmall!.copyWith(
         color: theme.colorScheme.errorContainer,
       );
-  static TextStyle get bodySmallGray40001 => theme.textTheme.bodySmall!.copyWith(
+  static TextStyle get bodySmallGray40001 =>
+      theme.textTheme.bodySmall!.copyWith(
         color: appTheme.gray40001,
       );
-  static TextStyle get bodySmallGray50002 => theme.textTheme.bodySmall!.copyWith(
+  static TextStyle get bodySmallGray50002 =>
+      theme.textTheme.bodySmall!.copyWith(
         color: appTheme.gray50002,
         fontSize: 10.fSize,
       );
-  static TextStyle get bodySmallGray50003 => theme.textTheme.bodySmall!.copyWith(
+  static TextStyle get bodySmallGray50003 =>
+      theme.textTheme.bodySmall!.copyWith(
         color: appTheme.gray50003,
       );
-  static TextStyle get bodySmallGray70001 => theme.textTheme.bodySmall!.copyWith(
+  static TextStyle get bodySmallGray70001 =>
+      theme.textTheme.bodySmall!.copyWith(
         color: appTheme.gray70001,
       );
-  static TextStyle get bodySmallInter => theme.textTheme.bodySmall!.inter.copyWith(
+  static TextStyle get bodySmallInter =>
+      theme.textTheme.bodySmall!.inter.copyWith(
         fontSize: 10.fSize,
       );
   static TextStyle get bodySmallInterBluegray300 =>
@@ -178,10 +199,12 @@ class CustomTextStyles {
         color: appTheme.blueGray200,
         fontSize: 10.fSize,
       );
-  static TextStyle get bodySmallOnPrimary => theme.textTheme.bodySmall!.copyWith(
+  static TextStyle get bodySmallOnPrimary =>
+      theme.textTheme.bodySmall!.copyWith(
         color: theme.colorScheme.onPrimary.withOpacity(0.4),
       );
-  static TextStyle get bodySmallOnPrimaryContainer => theme.textTheme.bodySmall!.copyWith(
+  static TextStyle get bodySmallOnPrimaryContainer =>
+      theme.textTheme.bodySmall!.copyWith(
         color: theme.colorScheme.onPrimaryContainer,
         fontSize: 10.fSize,
       );
@@ -189,11 +212,13 @@ class CustomTextStyles {
         color: theme.colorScheme.primary,
         fontSize: 9.fSize,
       );
-  static TextStyle get bodySmallPrimaryContainer => theme.textTheme.bodySmall!.copyWith(
+  static TextStyle get bodySmallPrimaryContainer =>
+      theme.textTheme.bodySmall!.copyWith(
         color: theme.colorScheme.primaryContainer,
       );
   // Label text style
-  static TextStyle get labelLargeRed60001 => theme.textTheme.labelLarge!.copyWith(
+  static TextStyle get labelLargeRed60001 =>
+      theme.textTheme.labelLarge!.copyWith(
         color: appTheme.red60001,
         fontWeight: FontWeight.w500,
       );
@@ -204,28 +229,34 @@ class CustomTextStyles {
         fontWeight: FontWeight.w400,
       ).sUIT;
   // Title text style
-  static TextStyle get titleLargeBlack900 => theme.textTheme.titleLarge!.copyWith(
+  static TextStyle get titleLargeBlack900 =>
+      theme.textTheme.titleLarge!.copyWith(
         color: appTheme.black900,
         fontSize: 21.fSize,
       );
   static TextStyle get titleMedium18 => theme.textTheme.titleMedium!.copyWith(
         fontSize: 18.fSize,
       );
-  static TextStyle get titleMediumBlack900 => theme.textTheme.titleMedium!.copyWith(
+  static TextStyle get titleMediumBlack900 =>
+      theme.textTheme.titleMedium!.copyWith(
         color: appTheme.black900,
       );
-  static TextStyle get titleMediumBlack90018 => theme.textTheme.titleMedium!.copyWith(
+  static TextStyle get titleMediumBlack90018 =>
+      theme.textTheme.titleMedium!.copyWith(
         color: appTheme.black900,
         fontSize: 18.fSize,
       );
-  static TextStyle get titleMediumBluegray200 => theme.textTheme.titleMedium!.copyWith(
+  static TextStyle get titleMediumBluegray200 =>
+      theme.textTheme.titleMedium!.copyWith(
         color: appTheme.blueGray200,
         fontSize: 18.fSize,
       );
-  static TextStyle get titleMediumBluegray200_1 => theme.textTheme.titleMedium!.copyWith(
+  static TextStyle get titleMediumBluegray200_1 =>
+      theme.textTheme.titleMedium!.copyWith(
         color: appTheme.blueGray200,
       );
-  static TextStyle get titleMediumBluegray900 => theme.textTheme.titleMedium!.copyWith(
+  static TextStyle get titleMediumBluegray900 =>
+      theme.textTheme.titleMedium!.copyWith(
         color: appTheme.blueGray900,
         fontSize: 18.fSize,
         fontWeight: FontWeight.w600,
@@ -254,10 +285,12 @@ class CustomTextStyles {
         color: appTheme.blueGray900,
         fontSize: 18.fSize,
       );
-  static TextStyle get titleMediumOnPrimary => theme.textTheme.titleMedium!.copyWith(
+  static TextStyle get titleMediumOnPrimary =>
+      theme.textTheme.titleMedium!.copyWith(
         color: theme.colorScheme.onPrimary.withOpacity(0.4),
       );
-  static TextStyle get titleMediumRed60001 => theme.textTheme.titleMedium!.copyWith(
+  static TextStyle get titleMediumRed60001 =>
+      theme.textTheme.titleMedium!.copyWith(
         color: appTheme.red60001,
       );
   static TextStyle get titleMediumRobotoBluegray90001 =>
@@ -265,14 +298,17 @@ class CustomTextStyles {
         color: appTheme.blueGray90001,
         fontSize: 17.fSize,
       );
-  static TextStyle get titleSmallBlack900 => theme.textTheme.titleSmall!.copyWith(
+  static TextStyle get titleSmallBlack900 =>
+      theme.textTheme.titleSmall!.copyWith(
         color: appTheme.black900,
       );
-  static TextStyle get titleSmallBluegray200 => theme.textTheme.titleSmall!.copyWith(
+  static TextStyle get titleSmallBluegray200 =>
+      theme.textTheme.titleSmall!.copyWith(
         color: appTheme.blueGray200,
         fontWeight: FontWeight.w700,
       );
-  static TextStyle get titleSmallBluegray900 => theme.textTheme.titleSmall!.copyWith(
+  static TextStyle get titleSmallBluegray900 =>
+      theme.textTheme.titleSmall!.copyWith(
         color: appTheme.blueGray900,
         fontWeight: FontWeight.w600,
       );
@@ -300,7 +336,6 @@ class CustomTextStyles {
 }
 
 extension on TextStyle {
-
   TextStyle get notoSansKR {
     return copyWith(
       fontFamily: 'Noto Sans KR',

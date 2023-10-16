@@ -1,7 +1,10 @@
 // ignore_for_file: must_be_immutable
 
+// 📦 Package imports:
 import 'package:equatable/equatable.dart';
-import 'package:wegooli_friends_app/data/models/selectionPopupModel/selection_popup_model.dart';
+
+// 🌎 Project imports:
+import '/data/models/selectionPopupModel/selection_popup_model.dart';
 
 /// This class defines the variables used in the [add_an_appointment_end_expanded_bottomsheet],
 /// and is typically used to hold data that is passed between different parts of the application.

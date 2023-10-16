@@ -1,13 +1,16 @@
-import 'package:wegooli_friends_app/presentation/k81_screen/bloc/k81_bloc.dart';
-import 'package:wegooli_friends_app/presentation/k81_screen/models/k81_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/core/app_export.dart';
-import 'package:wegooli_friends_app/core/utils/validation_functions.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/appbar_image_1.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/appbar_subtitle_1.dart';
-import 'package:wegooli_friends_app/widgets/app_bar/custom_app_bar.dart';
-import 'package:wegooli_friends_app/widgets/custom_outlined_button.dart';
-import 'package:wegooli_friends_app/widgets/custom_text_form_field.dart';
+
+// 🌎 Project imports:
+import '/core/app_export.dart';
+import '/core/utils/validation_functions.dart';
+import '/presentation/k81_screen/bloc/k81_bloc.dart';
+import '/presentation/k81_screen/models/k81_model.dart';
+import '/widgets/app_bar/appbar_image_1.dart';
+import '/widgets/app_bar/appbar_subtitle_1.dart';
+import '/widgets/app_bar/custom_app_bar.dart';
+import '/widgets/custom_outlined_button.dart';
+import '/widgets/custom_text_form_field.dart';
 
 // ignore_for_file: must_be_immutable
 class K81Screen extends StatelessWidget {

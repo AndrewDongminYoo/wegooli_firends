@@ -1,5 +1,8 @@
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:wegooli_friends_app/main.dart';
+
+// 🌎 Project imports:
+import '/main.dart';
 
 class ServerException implements Exception {}
 
@@ -9,7 +12,6 @@ class NetworkException implements Exception {}
 
 ///can be used for throwing [NoInternetException]
 class NoInternetException implements Exception {
-
   NoInternetException([String message = 'NoInternetException Occurred']) {
     if (globalMessengerKey.currentState != null) {
       globalMessengerKey.currentState!

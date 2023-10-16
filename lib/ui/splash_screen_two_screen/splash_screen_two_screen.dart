@@ -1,7 +1,15 @@
 // 🐦 Flutter imports:
-import 'controller/splash_screen_two_controller.dart';
-import '/core/app_export.dart';
 import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:get/get.dart';
+
+// 🌎 Project imports:
+import '/core/utils/image_constant.dart';
+import '/core/utils/size_utils.dart';
+import '/theme/theme_helper.dart';
+import '/widgets/custom_image_view.dart';
+import 'controller/splash_screen_two_controller.dart';
 
 class SplashScreenTwoScreen extends GetWidget<SplashScreenTwoController> {
   const SplashScreenTwoScreen({Key? key}) : super(key: key);

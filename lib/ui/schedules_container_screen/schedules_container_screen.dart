@@ -1,12 +1,18 @@
 // 🐦 Flutter imports:
-import 'controller/schedules_container_controller.dart';
-import '/core/app_export.dart';
+import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:get/get.dart';
+
+// 🌎 Project imports:
+import '/core/utils/size_utils.dart';
+import '/routes/app_routes.dart';
 import '/ui/profile_page/profile_page.dart';
 import '/ui/schedules_page/schedules_page.dart';
 import '/ui/send_bird_chat_page/send_bird_chat_page.dart';
 import '/ui/smart_key_details_page/smart_key_details_page.dart';
 import '/widgets/custom_bottom_bar.dart';
-import 'package:flutter/material.dart';
+import 'controller/schedules_container_controller.dart';
 
 class SchedulesContainerScreen extends GetWidget<SchedulesContainerController> {
   const SchedulesContainerScreen({Key? key}) : super(key: key);

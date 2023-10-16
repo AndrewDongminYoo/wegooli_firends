@@ -1,6 +1,11 @@
-import '/core/app_export.dart';
-import '/ui/personal_info_form_zip_code_screen/models/personal_info_form_zip_code_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:get/get.dart';
+
+// 🌎 Project imports:
+import '/ui/personal_info_form_zip_code_screen/models/personal_info_form_zip_code_model.dart';
 
 /// A controller class for the PersonalInfoFormZipCodeScreen.
 ///

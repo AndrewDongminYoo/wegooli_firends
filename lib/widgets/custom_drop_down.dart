@@ -2,7 +2,10 @@
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
-import '/core/app_export.dart';
+import '/core/utils/size_utils.dart';
+import '/data/models/dropdown_data.dart';
+import '/theme/custom_text_style.dart';
+import '/theme/theme_helper.dart';
 
 class CustomDropDown extends StatelessWidget {
   CustomDropDown({
@@ -43,7 +46,7 @@ class CustomDropDown extends StatelessWidget {
 
   final TextStyle? textStyle;
 
-  final List<SelectionPopupModel>? items;
+  final List<DropdownData>? items;
 
   final String? hintText;
 
@@ -65,9 +68,9 @@ class CustomDropDown extends StatelessWidget {
 
   final bool? filled;
 
-  final FormFieldValidator<SelectionPopupModel>? validator;
+  final FormFieldValidator<DropdownData>? validator;
 
-  final Function(SelectionPopupModel)? onChanged;
+  final Function(DropdownData)? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -82,13 +85,13 @@ class CustomDropDown extends StatelessWidget {
   Widget get dropDownWidget => Container(
         width: width ?? double.maxFinite,
         margin: margin,
-        child: DropdownButtonFormField<SelectionPopupModel>(
+        child: DropdownButtonFormField<DropdownData>(
           focusNode: focusNode ?? FocusNode(),
           icon: icon,
           autofocus: autofocus!,
           style: textStyle ?? CustomTextStyles.titleMediumOnPrimary,
-          items: items?.map((SelectionPopupModel item) {
-            return DropdownMenuItem<SelectionPopupModel>(
+          items: items?.map((DropdownData item) {
+            return DropdownMenuItem<DropdownData>(
               value: item,
               child: Text(
                 item.title,

@@ -1,4 +1,7 @@
-import '../../../core/app_export.dart';
+// 📦 Package imports:
+import 'package:get/get.dart';
+
+// 🌎 Project imports:
 import 'calendar1_item_model.dart';
 
 /// This class defines the variables used in the [schedules_team_is_full_screen],

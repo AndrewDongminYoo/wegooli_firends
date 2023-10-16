@@ -1,4 +1,7 @@
-import '../../../core/app_export.dart';
+// 📦 Package imports:
+import 'package:get/get.dart';
+
+// 🌎 Project imports:
 import 'list_item_model.dart';
 
 /// This class defines the variables used in the [contact_us_inquiry_history_page],

@@ -1,4 +1,7 @@
-import '../../../core/app_export.dart';
+// 📦 Package imports:
+import 'package:get/get.dart';
+
+// 🌎 Project imports:
 import 'listview_item_model.dart';
 
 /// This class defines the variables used in the [view_scheduled_date_scheduler_only_dialog],

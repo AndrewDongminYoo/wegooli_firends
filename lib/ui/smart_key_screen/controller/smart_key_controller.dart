@@ -1,5 +1,7 @@
+// 📦 Package imports:
+import 'package:get/get.dart';
+
 // 🌎 Project imports:
-import '/core/app_export.dart';
 import '/ui/smart_key_screen/models/smart_key_model.dart';
 
 /// A controller class for the SmartKeyScreen.

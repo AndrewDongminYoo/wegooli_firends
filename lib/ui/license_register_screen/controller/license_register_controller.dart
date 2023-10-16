@@ -1,6 +1,12 @@
-import '/core/app_export.dart';
-import '/ui/license_register_screen/models/license_register_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:get/get.dart';
+
+// 🌎 Project imports:
+import '/data/models/dropdown_data.dart';
+import '/ui/license_register_screen/models/license_register_model.dart';
 
 /// A controller class for the LicenseRegisterScreen.
 ///
@@ -15,9 +21,9 @@ class LicenseRegisterController extends GetxController {
 
   Rx<LicenseRegisterModel> licenseRegisterModelObj = LicenseRegisterModel().obs;
 
-  SelectionPopupModel? selectedDropDownValue;
+  DropdownData? selectedDropDownValue;
 
-  SelectionPopupModel? selectedDropDownValue1;
+  DropdownData? selectedDropDownValue1;
 
   @override
   void onClose() {

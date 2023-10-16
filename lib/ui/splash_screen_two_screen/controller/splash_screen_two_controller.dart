@@ -1,4 +1,8 @@
-import '/core/app_export.dart';
+// 📦 Package imports:
+import 'package:get/get.dart';
+
+// 🌎 Project imports:
+import '/routes/app_routes.dart';
 import '/ui/splash_screen_two_screen/models/splash_screen_two_model.dart';
 
 /// A controller class for the SplashScreenTwoScreen.

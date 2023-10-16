@@ -1,8 +1,10 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+// 📦 Package imports:
+import 'package:get/get.dart';
+
 // 🌎 Project imports:
-import '/core/app_export.dart';
 import '/ui/signin_page_screen/models/signin_page_model.dart';
 
 /// A controller class for the SigninPageScreen.

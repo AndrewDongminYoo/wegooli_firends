@@ -1,10 +1,17 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+// 📦 Package imports:
+import 'package:get/get.dart';
+
 // 🌎 Project imports:
 import '../controller/contact_us_inquiry_history_controller.dart';
 import '../models/list_item_model.dart';
-import '/core/app_export.dart';
+import '/core/utils/image_constant.dart';
+import '/core/utils/size_utils.dart';
+import '/theme/custom_text_style.dart';
+import '/theme/theme_helper.dart';
+import '/widgets/custom_image_view.dart';
 import '/widgets/custom_outlined_button.dart';
 
 // ignore: must_be_immutable

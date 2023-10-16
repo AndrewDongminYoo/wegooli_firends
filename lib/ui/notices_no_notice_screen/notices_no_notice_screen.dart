@@ -1,10 +1,18 @@
 // 🐦 Flutter imports:
-import 'controller/notices_no_notice_controller.dart';
-import '/core/app_export.dart';
+import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:get/get.dart';
+
+// 🌎 Project imports:
+import '/core/utils/image_constant.dart';
+import '/core/utils/size_utils.dart';
+import '/theme/custom_text_style.dart';
 import '/widgets/app_bar/appbar_image.dart';
 import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
-import 'package:flutter/material.dart';
+import '/widgets/custom_image_view.dart';
+import 'controller/notices_no_notice_controller.dart';
 
 class NoticesNoNoticeScreen extends GetWidget<NoticesNoNoticeController> {
   const NoticesNoNoticeScreen({Key? key}) : super(key: key);

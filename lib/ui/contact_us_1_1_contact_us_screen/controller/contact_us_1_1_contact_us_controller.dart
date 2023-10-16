@@ -1,6 +1,12 @@
-import '/core/app_export.dart';
-import '/ui/contact_us_1_1_contact_us_screen/models/contact_us_1_1_contact_us_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:get/get.dart';
+
+// 🌎 Project imports:
+import '/data/models/dropdown_data.dart';
+import '/ui/contact_us_1_1_contact_us_screen/models/contact_us_1_1_contact_us_model.dart';
 
 /// A controller class for the ContactUs11ContactUsScreen.
 ///
@@ -12,7 +18,7 @@ class ContactUs11ContactUsController extends GetxController {
   Rx<ContactUs11ContactUsModel> contactUs11ContactUsModelObj =
       ContactUs11ContactUsModel().obs;
 
-  SelectionPopupModel? selectedDropDownValue;
+  DropdownData? selectedDropDownValue;
 
   @override
   void onClose() {

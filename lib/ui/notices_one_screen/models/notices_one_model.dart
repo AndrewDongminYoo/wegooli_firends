@@ -1,4 +1,7 @@
-import '../../../core/app_export.dart';
+// 📦 Package imports:
+import 'package:get/get.dart';
+
+// 🌎 Project imports:
 import 'notices_one_item_model.dart';
 
 /// This class defines the variables used in the [notices_one_screen],

@@ -1,17 +1,25 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+// 📦 Package imports:
+import 'package:get/get.dart';
+
 // 🌎 Project imports:
-import '/core/app_export.dart';
+import '/core/utils/image_constant.dart';
+import '/core/utils/size_utils.dart';
+import '/theme/app_decoration.dart';
+import '/theme/custom_button_style.dart';
+import '/theme/custom_text_style.dart';
+import '/theme/theme_helper.dart';
 import '/widgets/custom_elevated_button.dart';
+import '/widgets/custom_image_view.dart';
 import '/widgets/custom_outlined_button.dart';
 import 'controller/contact_us_inquiry_history_expanded_controller.dart';
 import 'models/contact_us_inquiry_history_expanded_model.dart';
 
 // ignore: must_be_immutable
 class ContactUsInquiryHistoryExpandedPage extends StatelessWidget {
-  ContactUsInquiryHistoryExpandedPage({Key? key})
-      : super(key: key);
+  ContactUsInquiryHistoryExpandedPage({Key? key}) : super(key: key);
 
   ContactUsInquiryHistoryExpandedController controller = Get.put(
       ContactUsInquiryHistoryExpandedController(

@@ -1,4 +1,7 @@
-import '/core/app_export.dart';
+// 📦 Package imports:
+import 'package:get/get.dart';
+
+// 🌎 Project imports:
 import '/ui/expiring_subscriptions_screen/models/expiring_subscriptions_model.dart';
 
 /// A controller class for the ExpiringSubscriptionsScreen.

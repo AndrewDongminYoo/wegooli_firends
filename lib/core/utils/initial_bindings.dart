@@ -1,5 +1,10 @@
+// 📦 Package imports:
+import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:get/get.dart';
+
 // 🌎 Project imports:
-import '/core/app_export.dart';
+import '/core/network/network_info.dart';
+import '/core/utils/pref_utils.dart';
 import '/data/apiClient/api_client.dart';
 
 class InitialBindings extends Bindings {

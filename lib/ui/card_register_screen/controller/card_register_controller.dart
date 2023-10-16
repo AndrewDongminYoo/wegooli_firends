@@ -1,6 +1,11 @@
-import '/core/app_export.dart';
-import '/ui/card_register_screen/models/card_register_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:get/get.dart';
+
+// 🌎 Project imports:
+import '/ui/card_register_screen/models/card_register_model.dart';
 
 /// A controller class for the CardRegisterScreen.
 ///

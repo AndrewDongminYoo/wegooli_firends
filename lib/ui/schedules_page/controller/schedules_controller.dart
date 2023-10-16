@@ -1,4 +1,7 @@
-import '/core/app_export.dart';
+// 📦 Package imports:
+import 'package:get/get.dart';
+
+// 🌎 Project imports:
 import '/ui/schedules_page/models/schedules_model.dart';
 
 /// A controller class for the SchedulesPage.

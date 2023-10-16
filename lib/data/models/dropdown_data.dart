@@ -1,7 +1,7 @@
-/// SelectionPopupModel is common model
+/// DropdownData is common model
 /// used for setting data into dropdowns
-class SelectionPopupModel {
-  SelectionPopupModel({
+class DropdownData {
+  DropdownData({
     this.id,
     required this.title,
     this.value,

@@ -1,4 +1,8 @@
-import '/core/app_export.dart';
+// 📦 Package imports:
+import 'package:get/get.dart';
+
+// 🌎 Project imports:
+import '/data/models/dropdown_data.dart';
 import '/ui/schedules_view_scheduled_date_scheduler_only_expanded_dialog/models/schedules_view_scheduled_date_scheduler_only_expanded_model.dart';
 
 /// A controller class for the SchedulesViewScheduledDateSchedulerOnlyExpandedDialog.
@@ -11,7 +15,7 @@ class SchedulesViewScheduledDateSchedulerOnlyExpandedController
       schedulesViewScheduledDateSchedulerOnlyExpandedModelObj =
       SchedulesViewScheduledDateSchedulerOnlyExpandedModel().obs;
 
-  SelectionPopupModel? selectedDropDownValue;
+  DropdownData? selectedDropDownValue;
 
   void onSelected(dynamic value) {
     for (final element

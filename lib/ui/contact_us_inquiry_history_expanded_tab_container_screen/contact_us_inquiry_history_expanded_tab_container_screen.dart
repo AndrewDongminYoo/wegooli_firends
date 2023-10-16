@@ -1,12 +1,20 @@
 // 🐦 Flutter imports:
-import 'controller/contact_us_inquiry_history_expanded_tab_container_controller.dart';
-import '/core/app_export.dart';
+import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:get/get.dart';
+
+// 🌎 Project imports:
+import '/core/utils/image_constant.dart';
+import '/core/utils/size_utils.dart';
+import '/theme/app_decoration.dart';
+import '/theme/theme_helper.dart';
 import '/ui/contact_us_inquiry_history_expanded_page/contact_us_inquiry_history_expanded_page.dart';
 import '/ui/contact_us_inquiry_history_page/contact_us_inquiry_history_page.dart';
 import '/widgets/app_bar/appbar_image.dart';
 import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
-import 'package:flutter/material.dart';
+import 'controller/contact_us_inquiry_history_expanded_tab_container_controller.dart';
 
 class ContactUsInquiryHistoryExpandedTabContainerScreen
     extends GetWidget<ContactUsInquiryHistoryExpandedTabContainerController> {

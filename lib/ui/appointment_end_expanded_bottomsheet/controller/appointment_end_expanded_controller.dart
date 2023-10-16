@@ -1,5 +1,8 @@
+// 📦 Package imports:
+import 'package:get/get.dart';
+
 // 🌎 Project imports:
-import '/core/app_export.dart';
+import '/data/models/dropdown_data.dart';
 import '/ui/appointment_end_expanded_bottomsheet/models/appointment_end_expanded_model.dart';
 
 /// A controller class for the AppointmentEndExpandedBottomsheet.
@@ -10,9 +13,9 @@ class AppointmentEndExpandedController extends GetxController {
   Rx<AppointmentEndExpandedModel> appointmentEndExpandedModelObj =
       AppointmentEndExpandedModel().obs;
 
-  SelectionPopupModel? selectedDropDownValue;
+  DropdownData? selectedDropDownValue;
 
-  SelectionPopupModel? selectedDropDownValue1;
+  DropdownData? selectedDropDownValue1;
 
   void onSelected(dynamic value) {
     for (final element

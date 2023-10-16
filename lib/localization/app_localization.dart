@@ -2,7 +2,6 @@
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '/core/app_export.dart';
 import '/localization/en_us/en_us_translations.dart';
 
 class AppLocalization extends Translations {

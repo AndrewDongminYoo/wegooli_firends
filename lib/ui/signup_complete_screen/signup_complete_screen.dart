@@ -1,15 +1,20 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+// 📦 Package imports:
+import 'package:get/get.dart';
+
 // 🌎 Project imports:
-import '/core/app_export.dart';
+import '/core/utils/image_constant.dart';
+import '/core/utils/size_utils.dart';
+import '/theme/theme_helper.dart';
 import '/widgets/custom_elevated_button.dart';
+import '/widgets/custom_image_view.dart';
 import 'controller/signup_complete_controller.dart';
 
 // ignore_for_file: must_be_immutable
 class SignupCompleteScreen extends GetWidget<SignupCompleteController> {
-  const SignupCompleteScreen({Key? key})
-      : super(key: key);
+  const SignupCompleteScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

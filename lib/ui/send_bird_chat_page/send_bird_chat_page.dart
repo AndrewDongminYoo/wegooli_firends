@@ -1,19 +1,27 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+// 📦 Package imports:
+import 'package:get/get.dart';
+
 // 🌎 Project imports:
-import '/core/app_export.dart';
+import '/core/utils/image_constant.dart';
+import '/core/utils/size_utils.dart';
+import '/theme/app_decoration.dart';
+import '/theme/custom_button_style.dart';
+import '/theme/custom_text_style.dart';
+import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_image_1.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/custom_elevated_button.dart';
+import '/widgets/custom_image_view.dart';
 import '/widgets/custom_text_form_field.dart';
 import 'controller/send_bird_chat_controller.dart';
 import 'models/send_bird_chat_model.dart';
 
 // ignore: must_be_immutable
 class SendBirdChatPage extends StatelessWidget {
-  SendBirdChatPage({Key? key})
-      : super(key: key);
+  SendBirdChatPage({Key? key}) : super(key: key);
 
   SendBirdChatController controller =
       Get.put(SendBirdChatController(SendBirdChatModel().obs));

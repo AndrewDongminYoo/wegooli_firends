@@ -1,11 +1,22 @@
 // 🐦 Flutter imports:
-import 'controller/subscribe_info_controller.dart';
-import '/core/app_export.dart';
+import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:get/get.dart';
+
+// 🌎 Project imports:
+import '/core/utils/image_constant.dart';
+import '/core/utils/size_utils.dart';
+import '/theme/app_decoration.dart';
+import '/theme/custom_button_style.dart';
+import '/theme/custom_text_style.dart';
+import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_image.dart';
 import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/custom_elevated_button.dart';
-import 'package:flutter/material.dart';
+import '/widgets/custom_image_view.dart';
+import 'controller/subscribe_info_controller.dart';
 
 class SubscribeInfoScreen extends GetWidget<SubscribeInfoController> {
   const SubscribeInfoScreen({Key? key}) : super(key: key);

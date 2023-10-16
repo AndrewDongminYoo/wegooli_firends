@@ -1,6 +1,12 @@
-import '/core/app_export.dart';
-import '/ui/identity_verification_waiting_with_telecom_screen/models/identity_verification_waiting_with_telecom_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:get/get.dart';
+
+// 🌎 Project imports:
+import '/data/models/dropdown_data.dart';
+import '/ui/identity_verification_waiting_with_telecom_screen/models/identity_verification_waiting_with_telecom_model.dart';
 
 /// A controller class for the IdentityVerificationWaitingWithTelecomScreen.
 ///
@@ -15,7 +21,7 @@ class IdentityVerificationWaitingWithTelecomController extends GetxController {
       identityVerificationWaitingWithTelecomModelObj =
       IdentityVerificationWaitingWithTelecomModel().obs;
 
-  SelectionPopupModel? selectedDropDownValue;
+  DropdownData? selectedDropDownValue;
 
   @override
   void onClose() {

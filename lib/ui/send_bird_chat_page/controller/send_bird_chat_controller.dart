@@ -1,8 +1,10 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+// 📦 Package imports:
+import 'package:get/get.dart';
+
 // 🌎 Project imports:
-import '/core/app_export.dart';
 import '/ui/send_bird_chat_page/models/send_bird_chat_model.dart';
 
 /// A controller class for the SendBirdChatPage.

@@ -1,7 +1,17 @@
 // 🐦 Flutter imports:
-import 'controller/schedules_view_scheduled_date_scheduler_only_controller.dart';
-import '/core/app_export.dart';
 import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:get/get.dart';
+
+// 🌎 Project imports:
+import '/core/utils/image_constant.dart';
+import '/core/utils/size_utils.dart';
+import '/theme/app_decoration.dart';
+import '/theme/custom_text_style.dart';
+import '/theme/theme_helper.dart';
+import '/widgets/custom_image_view.dart';
+import 'controller/schedules_view_scheduled_date_scheduler_only_controller.dart';
 
 // ignore_for_file: must_be_immutable
 class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {

@@ -1,6 +1,11 @@
-import '/core/app_export.dart';
-import '/ui/identity_verification_waiting_screen/models/identity_verification_waiting_model.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:get/get.dart';
+
+// 🌎 Project imports:
+import '/ui/identity_verification_waiting_screen/models/identity_verification_waiting_model.dart';
 
 /// A controller class for the IdentityVerificationWaitingScreen.
 ///

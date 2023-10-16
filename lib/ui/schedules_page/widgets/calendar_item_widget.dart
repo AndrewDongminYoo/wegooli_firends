@@ -1,10 +1,15 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+// 📦 Package imports:
+import 'package:get/get.dart';
+
 // 🌎 Project imports:
 import '../controller/schedules_controller.dart';
 import '../models/calendar_item_model.dart';
-import '/core/app_export.dart';
+import '/core/utils/size_utils.dart';
+import '/theme/custom_text_style.dart';
+import '/theme/theme_helper.dart';
 
 // ignore: must_be_immutable
 class CalendarItemWidget extends StatelessWidget {

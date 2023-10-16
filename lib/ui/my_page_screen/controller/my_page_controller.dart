@@ -1,5 +1,7 @@
+// 📦 Package imports:
+import 'package:get/get.dart';
+
 // 🌎 Project imports:
-import '/core/app_export.dart';
 import '/ui/my_page_screen/models/my_page_model.dart';
 
 /// A controller class for the MyPageScreen.

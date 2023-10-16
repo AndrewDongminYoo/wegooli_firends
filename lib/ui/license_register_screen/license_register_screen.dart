@@ -1,15 +1,26 @@
 // 🐦 Flutter imports:
-import 'controller/license_register_controller.dart';
-import '/core/app_export.dart';
+import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:flutter_svg_provider/flutter_svg_provider.dart' as fs;
+import 'package:get/get.dart';
+
+// 🌎 Project imports:
+import '/core/utils/image_constant.dart';
+import '/core/utils/size_utils.dart';
+import '/theme/app_decoration.dart';
+import '/theme/custom_button_style.dart';
+import '/theme/custom_text_style.dart';
+import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_image.dart';
 import '/widgets/app_bar/appbar_subtitle.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/custom_drop_down.dart';
 import '/widgets/custom_elevated_button.dart';
 import '/widgets/custom_icon_button.dart';
+import '/widgets/custom_image_view.dart';
 import '/widgets/custom_text_form_field.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_svg_provider/flutter_svg_provider.dart' as fs;
+import 'controller/license_register_controller.dart';
 
 class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
   const LicenseRegisterScreen({Key? key}) : super(key: key);
@@ -54,8 +65,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                               child: Card(
                                                   clipBehavior: Clip.antiAlias,
                                                   elevation: 0,
-                                                  margin:
-                                                      EdgeInsets.zero,
+                                                  margin: EdgeInsets.zero,
                                                   color: theme.colorScheme
                                                       .onPrimaryContainer,
                                                   shape: RoundedRectangleBorder(

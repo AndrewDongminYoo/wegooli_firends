@@ -2,7 +2,8 @@
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
-import '/core/app_export.dart';
+import '/core/utils/size_utils.dart';
+import '/widgets/custom_image_view.dart';
 
 // ignore: must_be_immutable
 class AppbarImage2 extends StatelessWidget {

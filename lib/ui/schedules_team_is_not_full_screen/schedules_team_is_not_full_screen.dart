@@ -1,21 +1,28 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+// 📦 Package imports:
+import 'package:get/get.dart';
+
 // 🌎 Project imports:
 import '../schedules_team_is_not_full_screen/widgets/userage_item_widget.dart';
 import '../schedules_team_is_not_full_screen/widgets/userprofile_item_widget.dart';
-import '/core/app_export.dart';
+import '/core/utils/image_constant.dart';
+import '/core/utils/size_utils.dart';
+import '/theme/app_decoration.dart';
+import '/theme/custom_text_style.dart';
+import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_image_1.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/custom_bottom_bar.dart';
 import '/widgets/custom_elevated_button.dart';
+import '/widgets/custom_image_view.dart';
 import 'controller/schedules_team_is_not_full_controller.dart';
 
 // ignore_for_file: must_be_immutable
 class SchedulesTeamIsNotFullScreen
     extends GetWidget<SchedulesTeamIsNotFullController> {
-  const SchedulesTeamIsNotFullScreen({Key? key})
-      : super(key: key);
+  const SchedulesTeamIsNotFullScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

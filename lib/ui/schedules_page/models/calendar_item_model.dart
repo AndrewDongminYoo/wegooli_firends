@@ -1,4 +1,5 @@
-import '../../../core/app_export.dart';
+// 📦 Package imports:
+import 'package:get/get.dart';
 
 /// This class is used in the [calendar_item_widget] screen.
 class CalendarItemModel {

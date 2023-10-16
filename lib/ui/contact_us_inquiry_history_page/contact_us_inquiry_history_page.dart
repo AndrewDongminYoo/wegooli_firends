@@ -1,16 +1,19 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+// 📦 Package imports:
+import 'package:get/get.dart';
+
 // 🌎 Project imports:
 import '../contact_us_inquiry_history_page/widgets/list_item_widget.dart';
-import '/core/app_export.dart';
+import '/core/utils/size_utils.dart';
+import '/theme/app_decoration.dart';
 import 'controller/contact_us_inquiry_history_controller.dart';
 import 'models/contact_us_inquiry_history_model.dart';
 
 // ignore: must_be_immutable
 class ContactUsInquiryHistoryPage extends StatelessWidget {
-  ContactUsInquiryHistoryPage({Key? key})
-      : super(key: key);
+  ContactUsInquiryHistoryPage({Key? key}) : super(key: key);
 
   ContactUsInquiryHistoryController controller = Get.put(
       ContactUsInquiryHistoryController(ContactUsInquiryHistoryModel().obs));

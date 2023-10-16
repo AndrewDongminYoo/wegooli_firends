@@ -1,11 +1,16 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+// 📦 Package imports:
+import 'package:get/get.dart';
+
 // 🌎 Project imports:
 import '../controller/contact_us_1_1_contact_us_controller.dart';
 import '../models/listaddphotoalt_item_model.dart';
-import '/core/app_export.dart';
+import '/core/utils/image_constant.dart';
+import '/core/utils/size_utils.dart';
 import '/widgets/custom_icon_button.dart';
+import '/widgets/custom_image_view.dart';
 
 // ignore: must_be_immutable
 class ListaddphotoaltItemWidget extends StatelessWidget {

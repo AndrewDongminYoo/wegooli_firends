@@ -1,4 +1,7 @@
-import '/core/app_export.dart';
+// 📦 Package imports:
+import 'package:get/get.dart';
+
+// 🌎 Project imports:
 import '/ui/schedules_team_is_not_full_screen/models/schedules_team_is_not_full_model.dart';
 
 /// A controller class for the SchedulesTeamIsNotFullScreen.

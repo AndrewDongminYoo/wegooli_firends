@@ -1,5 +1,7 @@
+// 📦 Package imports:
+import 'package:get/get.dart';
+
 // 🌎 Project imports:
-import '/core/app_export.dart';
 import '/ui/splash_screen_one_screen/models/splash_screen_one_model.dart';
 
 /// A controller class for the SplashScreenOneScreen.

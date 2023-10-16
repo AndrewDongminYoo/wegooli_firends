@@ -1,10 +1,17 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+// 📦 Package imports:
+import 'package:get/get.dart';
+
 // 🌎 Project imports:
 import '../controller/schedules_team_is_not_full_controller.dart';
 import '../models/userprofile_item_model.dart';
-import '/core/app_export.dart';
+import '/core/utils/image_constant.dart';
+import '/core/utils/size_utils.dart';
+import '/theme/app_decoration.dart';
+import '/theme/theme_helper.dart';
+import '/widgets/custom_image_view.dart';
 
 // ignore: must_be_immutable
 class UserprofileItemWidget extends StatelessWidget {

@@ -1,10 +1,19 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+// 📦 Package imports:
+import 'package:get/get.dart';
+
 // 🌎 Project imports:
-import '/core/app_export.dart';
+import '/core/utils/image_constant.dart';
+import '/core/utils/size_utils.dart';
+import '/theme/app_decoration.dart';
+import '/theme/custom_button_style.dart';
+import '/theme/custom_text_style.dart';
+import '/theme/theme_helper.dart';
 import '/widgets/custom_drop_down.dart';
 import '/widgets/custom_elevated_button.dart';
+import '/widgets/custom_image_view.dart';
 import 'controller/appointment_all_collapsed_controller.dart';
 
 // ignore: must_be_immutable

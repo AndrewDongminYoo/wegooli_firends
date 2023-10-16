@@ -1,25 +1,33 @@
 // 🐦 Flutter imports:
-import 'controller/app_navigation_controller.dart';
-import '/core/app_export.dart';
 import 'package:flutter/material.dart';
-import '/ui/send_invitation_leader_only_dialog/send_invitation_leader_only_dialog.dart';
-import '/ui/send_invitation_leader_only_dialog/controller/send_invitation_leader_only_controller.dart';
-import '/ui/view_scheduled_date_scheduler_only_dialog/view_scheduled_date_scheduler_only_dialog.dart';
-import '/ui/view_scheduled_date_scheduler_only_dialog/controller/view_scheduled_date_scheduler_only_controller.dart';
+
+// 📦 Package imports:
+import 'package:get/get.dart';
+
+// 🌎 Project imports:
+import '/core/utils/size_utils.dart';
+import '/routes/app_routes.dart';
+import '/theme/app_decoration.dart';
+import '/theme/theme_helper.dart';
 import '/ui/appointment_all_collapsed_bottomsheet/appointment_all_collapsed_bottomsheet.dart';
 import '/ui/appointment_all_collapsed_bottomsheet/controller/appointment_all_collapsed_controller.dart';
-import '/ui/appointment_start_expanded_bottomsheet/appointment_start_expanded_bottomsheet.dart';
-import '/ui/appointment_start_expanded_bottomsheet/controller/appointment_start_expanded_controller.dart';
 import '/ui/appointment_end_expanded_bottomsheet/appointment_end_expanded_bottomsheet.dart';
 import '/ui/appointment_end_expanded_bottomsheet/controller/appointment_end_expanded_controller.dart';
-import '/ui/unsubscribe_confirm_dialog/unsubscribe_confirm_dialog.dart';
-import '/ui/unsubscribe_confirm_dialog/controller/unsubscribe_confirm_controller.dart';
-import '/ui/schedules_send_invitation_leader_only_dialog/schedules_send_invitation_leader_only_dialog.dart';
+import '/ui/appointment_start_expanded_bottomsheet/appointment_start_expanded_bottomsheet.dart';
+import '/ui/appointment_start_expanded_bottomsheet/controller/appointment_start_expanded_controller.dart';
 import '/ui/schedules_send_invitation_leader_only_dialog/controller/schedules_send_invitation_leader_only_controller.dart';
-import '/ui/schedules_view_scheduled_date_scheduler_only_dialog/schedules_view_scheduled_date_scheduler_only_dialog.dart';
+import '/ui/schedules_send_invitation_leader_only_dialog/schedules_send_invitation_leader_only_dialog.dart';
 import '/ui/schedules_view_scheduled_date_scheduler_only_dialog/controller/schedules_view_scheduled_date_scheduler_only_controller.dart';
-import '/ui/schedules_view_scheduled_date_scheduler_only_expanded_dialog/schedules_view_scheduled_date_scheduler_only_expanded_dialog.dart';
+import '/ui/schedules_view_scheduled_date_scheduler_only_dialog/schedules_view_scheduled_date_scheduler_only_dialog.dart';
 import '/ui/schedules_view_scheduled_date_scheduler_only_expanded_dialog/controller/schedules_view_scheduled_date_scheduler_only_expanded_controller.dart';
+import '/ui/schedules_view_scheduled_date_scheduler_only_expanded_dialog/schedules_view_scheduled_date_scheduler_only_expanded_dialog.dart';
+import '/ui/send_invitation_leader_only_dialog/controller/send_invitation_leader_only_controller.dart';
+import '/ui/send_invitation_leader_only_dialog/send_invitation_leader_only_dialog.dart';
+import '/ui/unsubscribe_confirm_dialog/controller/unsubscribe_confirm_controller.dart';
+import '/ui/unsubscribe_confirm_dialog/unsubscribe_confirm_dialog.dart';
+import '/ui/view_scheduled_date_scheduler_only_dialog/controller/view_scheduled_date_scheduler_only_controller.dart';
+import '/ui/view_scheduled_date_scheduler_only_dialog/view_scheduled_date_scheduler_only_dialog.dart';
+import 'controller/app_navigation_controller.dart';
 
 class AppNavigationScreen extends GetWidget<AppNavigationController> {
   const AppNavigationScreen({Key? key}) : super(key: key);

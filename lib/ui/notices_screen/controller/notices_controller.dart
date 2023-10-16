@@ -1,4 +1,7 @@
-import '/core/app_export.dart';
+// 📦 Package imports:
+import 'package:get/get.dart';
+
+// 🌎 Project imports:
 import '/ui/notices_screen/models/notices_model.dart';
 
 /// A controller class for the NoticesScreen.

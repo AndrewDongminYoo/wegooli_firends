@@ -1,12 +1,23 @@
 // 🐦 Flutter imports:
-import 'controller/identity_verification_waiting_controller.dart';
-import '/core/app_export.dart';
+import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:get/get.dart';
+
+// 🌎 Project imports:
+import '/core/utils/image_constant.dart';
+import '/core/utils/size_utils.dart';
+import '/theme/app_decoration.dart';
+import '/theme/custom_button_style.dart';
+import '/theme/custom_text_style.dart';
+import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_image.dart';
 import '/widgets/app_bar/appbar_subtitle.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/custom_elevated_button.dart';
+import '/widgets/custom_image_view.dart';
 import '/widgets/custom_text_form_field.dart';
-import 'package:flutter/material.dart';
+import 'controller/identity_verification_waiting_controller.dart';
 
 class IdentityVerificationWaitingScreen
     extends GetWidget<IdentityVerificationWaitingController> {

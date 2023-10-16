@@ -1,11 +1,20 @@
 // 🐦 Flutter imports:
+import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:get/get.dart';
+
+// 🌎 Project imports:
 import '../notices_one_screen/widgets/notices_one_item_widget.dart';
-import 'controller/notices_one_controller.dart';
-import '/core/app_export.dart';
+import '/core/utils/image_constant.dart';
+import '/core/utils/size_utils.dart';
+import '/theme/app_decoration.dart';
+import '/theme/custom_text_style.dart';
+import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_image.dart';
 import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
-import 'package:flutter/material.dart';
+import 'controller/notices_one_controller.dart';
 
 class NoticesOneScreen extends GetWidget<NoticesOneController> {
   const NoticesOneScreen({Key? key}) : super(key: key);

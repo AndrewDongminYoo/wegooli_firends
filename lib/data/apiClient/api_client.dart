@@ -1,1 +1,4 @@
-class ApiClient {}
+// 🌎 Project imports:
+import '/core/app_export.dart';
+
+class ApiClient extends GetConnect {}

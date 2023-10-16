@@ -109,25 +109,21 @@ class CustomTextFormField extends StatelessWidget {
         suffixIcon: suffix,
         suffixIconConstraints: suffixConstraints,
         isDense: true,
-        contentPadding: contentPadding ??
-            EdgeInsets.symmetric(
-              horizontal: 8.h,
-              vertical: 14.v,
-            ),
+        contentPadding: contentPadding ?? EdgeInsets.symmetric(vertical: 9.v),
         fillColor: fillColor ?? theme.colorScheme.onPrimaryContainer,
         filled: filled,
         border: borderDecoration ??
             OutlineInputBorder(
               borderRadius: BorderRadius.circular(5.h),
               borderSide: BorderSide(
-                color: appTheme.gray40001,
+                color: appTheme.gray400,
               ),
             ),
         enabledBorder: borderDecoration ??
             OutlineInputBorder(
               borderRadius: BorderRadius.circular(5.h),
               borderSide: BorderSide(
-                color: appTheme.gray40001,
+                color: appTheme.gray400,
               ),
             ),
         focusedBorder: borderDecoration ??
@@ -141,11 +137,6 @@ class CustomTextFormField extends StatelessWidget {
 
 /// Extension on [CustomTextFormField] to facilitate inclusion of all types of border style etc
 extension TextFormFieldStyleHelper on CustomTextFormField {
-  static OutlineInputBorder get outlineBlueGray => OutlineInputBorder(
-        borderSide: BorderSide(
-          color: appTheme.blueGray200,
-        ),
-      );
   static OutlineInputBorder get fillBlueGray => OutlineInputBorder(
         borderRadius: BorderRadius.circular(18.h),
         borderSide: BorderSide.none,
@@ -153,27 +144,7 @@ extension TextFormFieldStyleHelper on CustomTextFormField {
   static OutlineInputBorder get outlineGrayTL5 => OutlineInputBorder(
         borderRadius: BorderRadius.circular(5.h),
         borderSide: BorderSide(
-          color: appTheme.gray40001,
+          color: appTheme.gray400,
         ),
-      );
-  static OutlineInputBorder get outlineGray1 => OutlineInputBorder(
-        borderSide: BorderSide(
-          color: appTheme.gray700,
-        ),
-      );
-  static OutlineInputBorder get outlineGrayTL4 => OutlineInputBorder(
-        borderRadius: BorderRadius.circular(4.h),
-        borderSide: BorderSide(
-          color: appTheme.gray700,
-        ),
-      );
-  static OutlineInputBorder get outlineGray2 => OutlineInputBorder(
-        borderSide: BorderSide(
-          color: appTheme.gray700,
-        ),
-      );
-  static OutlineInputBorder get fillBlueGrayTL18 => OutlineInputBorder(
-        borderRadius: BorderRadius.circular(18.h),
-        borderSide: BorderSide.none,
       );
 }

@@ -5,50 +5,48 @@ import 'package:flutter/material.dart';
 import '/core/app_export.dart';
 
 // ignore: must_be_immutable
-class CustomBottomBar extends StatefulWidget {
-  CustomBottomBar({Key? key, this.onChanged}) : super(key: key);
+class CustomBottomBar extends StatelessWidget {
+  CustomBottomBar({
+    Key? key,
+    this.onChanged,
+  }) : super(key: key);
 
-  Function(BottomBarEnum)? onChanged;
-
-  @override
-  CustomBottomBarState createState() => CustomBottomBarState();
-}
-
-class CustomBottomBarState extends State<CustomBottomBar> {
-  int selectedIndex = 0;
+  RxInt selectedIndex = 0.obs;
 
   List<BottomMenuModel> bottomMenuList = [
     BottomMenuModel(
       icon: ImageConstant.imgNavOnPrimary20x20,
       activeIcon: ImageConstant.imgNavOnPrimary20x20,
-      title: 'lbl115'.tr,
+      title: 'lbl105'.tr,
       type: BottomBarEnum.tf,
     ),
     BottomMenuModel(
       icon: ImageConstant.imgNavBlueGray200,
       activeIcon: ImageConstant.imgNavBlueGray200,
-      title: 'lbl11'.tr,
+      title: 'lbl26'.tr,
       type: BottomBarEnum.tf,
     ),
     BottomMenuModel(
       icon: ImageConstant.imgNavBlueGray20020x20,
       activeIcon: ImageConstant.imgNavBlueGray20020x20,
-      title: 'lbl12'.tr,
+      title: 'lbl27'.tr,
       type: BottomBarEnum.tf,
     ),
     BottomMenuModel(
       icon: ImageConstant.imgNav20x20,
       activeIcon: ImageConstant.imgNav20x20,
-      title: 'lbl13'.tr,
+      title: 'lbl28'.tr,
       type: BottomBarEnum.tf,
     ),
     BottomMenuModel(
       icon: ImageConstant.imgNav1,
       activeIcon: ImageConstant.imgNav1,
-      title: 'lbl14'.tr,
+      title: 'lbl29'.tr,
       type: BottomBarEnum.tf,
     )
   ];
+
+  Function(BottomBarEnum)? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -63,64 +61,65 @@ class CustomBottomBarState extends State<CustomBottomBar> {
           ),
         ),
       ),
-      child: BottomNavigationBar(
-        backgroundColor: Colors.transparent,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        selectedFontSize: 0,
-        elevation: 0,
-        currentIndex: selectedIndex,
-        type: BottomNavigationBarType.fixed,
-        items: List.generate(bottomMenuList.length, (index) {
-          return BottomNavigationBarItem(
-            icon: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                CustomImageView(
-                  svgPath: bottomMenuList[index].icon,
-                  height: 20.adaptSize,
-                  width: 20.adaptSize,
-                  color: appTheme.blueGray200,
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 7.v),
-                  child: Text(
-                    bottomMenuList[index].title ?? '',
-                    style: CustomTextStyles.bodySmallBluegray200.copyWith(
-                      color: appTheme.blueGray200,
+      child: Obx(
+        () => BottomNavigationBar(
+          backgroundColor: Colors.transparent,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          selectedFontSize: 0,
+          elevation: 0,
+          currentIndex: selectedIndex.value,
+          type: BottomNavigationBarType.fixed,
+          items: List.generate(bottomMenuList.length, (index) {
+            return BottomNavigationBarItem(
+              icon: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  CustomImageView(
+                    svgPath: bottomMenuList[index].icon,
+                    height: 20.adaptSize,
+                    width: 20.adaptSize,
+                    color: appTheme.blueGray200,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 7.v),
+                    child: Text(
+                      bottomMenuList[index].title ?? '',
+                      style: CustomTextStyles.bodySmallBluegray200.copyWith(
+                        color: appTheme.blueGray200,
+                      ),
                     ),
                   ),
-                ),
-              ],
-            ),
-            activeIcon: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                CustomImageView(
-                  svgPath: bottomMenuList[index].activeIcon,
-                  height: 20.adaptSize,
-                  width: 20.adaptSize,
-                  color: theme.colorScheme.onPrimary,
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 7.v),
-                  child: Text(
-                    bottomMenuList[index].title ?? '',
-                    style: CustomTextStyles.bodySmall10.copyWith(
-                      color: theme.colorScheme.onPrimary,
+                ],
+              ),
+              activeIcon: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  CustomImageView(
+                    svgPath: bottomMenuList[index].activeIcon,
+                    height: 20.adaptSize,
+                    width: 20.adaptSize,
+                    color: theme.colorScheme.onPrimary,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 7.v),
+                    child: Text(
+                      bottomMenuList[index].title ?? '',
+                      style: CustomTextStyles.bodySmall10.copyWith(
+                        color: theme.colorScheme.onPrimary,
+                      ),
                     ),
                   ),
-                ),
-              ],
-            ),
-            label: '',
-          );
-        }),
-        onTap: (index) {
-          selectedIndex = index;
-          widget.onChanged?.call(bottomMenuList[index].type);
-          setState(() {});
-        },
+                ],
+              ),
+              label: '',
+            );
+          }),
+          onTap: (index) {
+            selectedIndex.value = index;
+            onChanged?.call(bottomMenuList[index].type);
+          },
+        ),
       ),
     );
   }

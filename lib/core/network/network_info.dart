@@ -11,16 +11,10 @@ abstract class NetworkInfoI {
 }
 
 class NetworkInfo implements NetworkInfoI {
-  factory NetworkInfo() {
-    return _networkInfo;
-  }
-
-  NetworkInfo._internal(this.connectivity) {
+  NetworkInfo(this.connectivity) {
     connectivity = connectivity;
   }
   Connectivity connectivity;
-
-  static final NetworkInfo _networkInfo = NetworkInfo._internal(Connectivity());
 
   /// checks internet is connected or not
   /// returns [true] if internet is connected

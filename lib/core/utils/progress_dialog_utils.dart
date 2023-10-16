@@ -20,36 +20,28 @@ class ProgressDialogUtils {
   ///
   /// If the progress dialog is already visible, this method does nothing.
   /// The Lottie animation used in the dialog is loaded from a file specified by the [lottiePath] variable.
-  /// This method uses the `showDialog` function from the Flutter framework to display the dialog.
+  /// This method uses the Get package to display the dialog.
   static void showProgressDialog({bool isCancellable = false}) {
-    if (!isProgressVisible &&
-        NavigatorService.navigatorKey.currentState?.overlay?.context != null) {
-      showDialog(
-        barrierDismissible: isCancellable,
-        context: NavigatorService.navigatorKey.currentState!.overlay!.context,
-        builder: (BuildContext context) {
-          return Center(
-            child: Lottie.asset(
-              lottiePath,
-              height: 250,
-              width: 250,
-            ),
-          );
-        },
+    if (!isProgressVisible) {
+      Get.dialog(
+        Center(
+          child: Lottie.asset(
+            lottiePath,
+            height: 250,
+            width: 250,
+          ),
+        ),
       );
     }
     isProgressVisible = true;
   }
 
   /// Hides the displayed progress dialog.
-  /// If a progress dialog is visible, this function dismisses it by calling Navigator.pop
-  /// with the overlay context obtained from the NavigatorService.navigatorKey.
-  ///
+  /// If a progress dialog is visible, this function dismisses it by calling Get.back().
   /// After hiding the dialog, the isProgressVisible flag is set to false.
   static void hideProgressDialog() {
     if (isProgressVisible) {
-      Navigator.pop(
-          NavigatorService.navigatorKey.currentState!.overlay!.context);
+      Get.back();
     }
     isProgressVisible = false;
   }

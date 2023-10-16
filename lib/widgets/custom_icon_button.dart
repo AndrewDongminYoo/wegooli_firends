@@ -54,8 +54,8 @@ class CustomIconButton extends StatelessWidget {
               padding: padding ?? EdgeInsets.zero,
               decoration: decoration ??
                   BoxDecoration(
-                    color: appTheme.gray40001,
-                    borderRadius: BorderRadius.circular(24.h),
+                    color: appTheme.blueGray600,
+                    borderRadius: BorderRadius.circular(1.h),
                   ),
               child: child,
             ),
@@ -67,22 +67,12 @@ class CustomIconButton extends StatelessWidget {
 
 /// Extension on [CustomIconButton] to facilitate inclusion of all types of border style etc
 extension IconButtonStyleHelper on CustomIconButton {
-  static BoxDecoration get fillBlueGray => BoxDecoration(
-        color: appTheme.blueGray600,
-        borderRadius: BorderRadius.circular(1.h),
+  static BoxDecoration get fillGray => BoxDecoration(
+        color: appTheme.gray400,
+        borderRadius: BorderRadius.circular(24.h),
       );
   static BoxDecoration get fillBlueGrayTL5 => BoxDecoration(
         color: appTheme.blueGray30033,
         borderRadius: BorderRadius.circular(5.h),
-      );
-  static BoxDecoration get outlineGray => BoxDecoration(
-        border: Border.all(
-          color: appTheme.gray50002,
-          width: 1.h,
-        ),
-      );
-  static BoxDecoration get fillOnError => BoxDecoration(
-        color: theme.colorScheme.onError,
-        borderRadius: BorderRadius.circular(17.h),
       );
 }

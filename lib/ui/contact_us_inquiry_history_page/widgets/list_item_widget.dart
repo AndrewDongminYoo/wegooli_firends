@@ -17,11 +17,11 @@ import '/widgets/custom_outlined_button.dart';
 // ignore: must_be_immutable
 class ListItemWidget extends StatelessWidget {
   ListItemWidget(
-    this.listItemModelObj, {
+    this.listItem, {
     Key? key,
   }) : super(key: key);
 
-  ListItemModel listItemModelObj;
+  ListItemModel listItem;
 
   ContactUsInquiryHistoryController controller =
       Get.find<ContactUsInquiryHistoryController>();

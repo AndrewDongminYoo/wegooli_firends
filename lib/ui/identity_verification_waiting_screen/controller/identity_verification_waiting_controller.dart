@@ -7,10 +7,6 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/ui/identity_verification_waiting_screen/models/identity_verification_waiting_model.dart';
 
-/// A controller class for the IdentityVerificationWaitingScreen.
-///
-/// This class manages the state of the IdentityVerificationWaitingScreen, including the
-/// current identityVerificationWaitingModelObj
 class IdentityVerificationWaitingController extends GetxController {
   TextEditingController nameoneController = TextEditingController();
 
@@ -18,7 +14,7 @@ class IdentityVerificationWaitingController extends GetxController {
 
   TextEditingController phonenumberoneController = TextEditingController();
 
-  Rx<IdentityVerificationWaitingModel> identityVerificationWaitingModelObj =
+  Rx<IdentityVerificationWaitingModel> identityVerificationWaiting =
       IdentityVerificationWaitingModel().obs;
 
   @override

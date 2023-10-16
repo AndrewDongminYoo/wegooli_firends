@@ -263,8 +263,8 @@ class AppointmentAllCollapsedBottomsheet extends StatelessWidget {
                       ),
                     ),
                     hintText: 'lbl_8_1_18_00'.tr,
-                    items: controller.appointmentAllCollapsedModelObj.value
-                        .dropdownItemList.value,
+                    items:
+                        controller.appointmentAllCollapsed.value.choices.value,
                     onChanged: (value) {
                       controller.onSelected(value);
                     },

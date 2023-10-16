@@ -91,8 +91,8 @@ class AppointmentStartExpandedBottomsheet extends StatelessWidget {
                       ),
                     ),
                     hintText: 'lbl_8_1_16_00'.tr,
-                    items: controller.appointmentStartExpandedModelObj.value
-                        .dropdownItemList.value,
+                    items:
+                        controller.appointmentStartExpanded.value.choices.value,
                     onChanged: (value) {
                       controller.onSelected(value);
                     },

@@ -39,11 +39,11 @@ class ContactUsInquiryHistoryPage extends StatelessWidget {
                   height: 1.v,
                 );
               },
-              itemCount: controller.contactUsInquiryHistoryModelObj.value
-                  .listItemList.value.length,
+              itemCount: controller
+                  .contactUsInquiryHistory.value.listItemList.value.length,
               itemBuilder: (context, index) {
-                final model = controller.contactUsInquiryHistoryModelObj.value
-                    .listItemList.value[index];
+                final model = controller
+                    .contactUsInquiryHistory.value.listItemList.value[index];
                 return ListItemWidget(
                   model,
                 );

@@ -16,11 +16,11 @@ import '/widgets/custom_image_view.dart';
 // ignore: must_be_immutable
 class UserprofileItemWidget extends StatelessWidget {
   UserprofileItemWidget(
-    this.userprofileItemModelObj, {
+    this.userprofileItem, {
     Key? key,
   }) : super(key: key);
 
-  UserprofileItemModel userprofileItemModelObj;
+  UserprofileItemModel userprofileItem;
 
   SchedulesTeamIsNotFullController controller =
       Get.find<SchedulesTeamIsNotFullController>();
@@ -51,7 +51,7 @@ class UserprofileItemWidget extends StatelessWidget {
           SizedBox(height: 4.v),
           Obx(
             () => Text(
-              userprofileItemModelObj.userName!.value,
+              userprofileItem.userName!.value,
               overflow: TextOverflow.ellipsis,
               style: theme.textTheme.bodySmall,
             ),

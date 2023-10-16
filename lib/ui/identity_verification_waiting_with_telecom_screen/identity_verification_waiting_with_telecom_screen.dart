@@ -134,9 +134,9 @@ class IdentityVerificationWaitingWithTelecomScreen
                                   hintText: 'lbl_kt'.tr,
                                   hintStyle: theme.textTheme.bodyLarge,
                                   items: controller
-                                      .identityVerificationWaitingWithTelecomModelObj
+                                      .identityVerificationWaitingWithTelecom
                                       .value
-                                      .dropdownItemList
+                                      .choices
                                       .value,
                                   onChanged: (value) {
                                     controller.onSelected(value);

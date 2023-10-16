@@ -236,15 +236,11 @@ class SchedulesTeamIsFullScreen
                                           width: 25.h,
                                         );
                                       },
-                                      itemCount: controller
-                                          .schedulesTeamIsFullModelObj
-                                          .value
-                                          .calendar1ItemList
-                                          .value
-                                          .length,
+                                      itemCount: controller.schedulesTeamIsFull
+                                          .value.calendar1ItemList.value.length,
                                       itemBuilder: (context, index) {
                                         final model = controller
-                                            .schedulesTeamIsFullModelObj
+                                            .schedulesTeamIsFull
                                             .value
                                             .calendar1ItemList
                                             .value[index];

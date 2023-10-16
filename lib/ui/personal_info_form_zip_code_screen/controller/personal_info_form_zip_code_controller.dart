@@ -7,10 +7,6 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/ui/personal_info_form_zip_code_screen/models/personal_info_form_zip_code_model.dart';
 
-/// A controller class for the PersonalInfoFormZipCodeScreen.
-///
-/// This class manages the state of the PersonalInfoFormZipCodeScreen, including the
-/// current personalInfoFormZipCodeModelObj
 class PersonalInfoFormZipCodeController extends GetxController {
   TextEditingController postalcodeoneController = TextEditingController();
 
@@ -26,7 +22,7 @@ class PersonalInfoFormZipCodeController extends GetxController {
 
   TextEditingController nicknameinputController = TextEditingController();
 
-  Rx<PersonalInfoFormZipCodeModel> personalInfoFormZipCodeModelObj =
+  Rx<PersonalInfoFormZipCodeModel> personalInfoFormZipCode =
       PersonalInfoFormZipCodeModel().obs;
 
   @override

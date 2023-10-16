@@ -15,11 +15,11 @@ import '/theme/theme_helper.dart';
 // ignore: must_be_immutable
 class NoticesItemWidget extends StatelessWidget {
   NoticesItemWidget(
-    this.noticesItemModelObj, {
+    this.noticesItem, {
     Key? key,
   }) : super(key: key);
 
-  NoticesItemModel noticesItemModelObj;
+  NoticesItemModel noticesItem;
 
   NoticesController controller = Get.find<NoticesController>();
 

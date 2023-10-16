@@ -75,18 +75,11 @@ class SchedulesTeamIsNotFullScreen
                                   width: 15.h,
                                 );
                               },
-                              itemCount: controller
-                                  .schedulesTeamIsNotFullModelObj
-                                  .value
-                                  .userprofileItemList
-                                  .value
-                                  .length,
+                              itemCount: controller.schedulesTeamIsNotFull.value
+                                  .userprofileItemList.value.length,
                               itemBuilder: (context, index) {
-                                final model = controller
-                                    .schedulesTeamIsNotFullModelObj
-                                    .value
-                                    .userprofileItemList
-                                    .value[index];
+                                final model = controller.schedulesTeamIsNotFull
+                                    .value.userprofileItemList.value[index];
                                 return UserprofileItemWidget(
                                   model,
                                 );
@@ -178,14 +171,14 @@ class SchedulesTeamIsNotFullScreen
                                         );
                                       },
                                       itemCount: controller
-                                          .schedulesTeamIsNotFullModelObj
+                                          .schedulesTeamIsNotFull
                                           .value
                                           .userageItemList
                                           .value
                                           .length,
                                       itemBuilder: (context, index) {
                                         final model = controller
-                                            .schedulesTeamIsNotFullModelObj
+                                            .schedulesTeamIsNotFull
                                             .value
                                             .userageItemList
                                             .value[index];

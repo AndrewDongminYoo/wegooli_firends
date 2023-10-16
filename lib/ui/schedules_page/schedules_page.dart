@@ -231,11 +231,11 @@ class SchedulesPage extends StatelessWidget {
                                     width: 25.h,
                                   );
                                 },
-                                itemCount: controller.schedulesModelObj.value
+                                itemCount: controller.schedules.value
                                     .calendarItemList.value.length,
                                 itemBuilder: (context, index) {
-                                  final model = controller.schedulesModelObj
-                                      .value.calendarItemList.value[index];
+                                  final model = controller.schedules.value
+                                      .calendarItemList.value[index];
                                   return CalendarItemWidget(
                                     model,
                                   );

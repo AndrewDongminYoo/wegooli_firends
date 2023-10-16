@@ -108,9 +108,9 @@ class SchedulesViewScheduledDateSchedulerOnlyExpandedDialog
                                                     alignment:
                                                         Alignment.bottomCenter,
                                                     items: controller
-                                                        .schedulesViewScheduledDateSchedulerOnlyExpandedModelObj
+                                                        .schedulesViewScheduledDateSchedulerOnlyExpanded
                                                         .value
-                                                        .dropdownItemList
+                                                        .choices
                                                         .value,
                                                     onChanged: (value) {
                                                       controller

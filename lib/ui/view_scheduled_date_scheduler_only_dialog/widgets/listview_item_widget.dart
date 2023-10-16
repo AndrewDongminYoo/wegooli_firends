@@ -16,11 +16,11 @@ import '/widgets/custom_image_view.dart';
 // ignore: must_be_immutable
 class ListviewItemWidget extends StatelessWidget {
   ListviewItemWidget(
-    this.listviewItemModelObj, {
+    this.listviewItem, {
     Key? key,
   }) : super(key: key);
 
-  ListviewItemModel listviewItemModelObj;
+  ListviewItemModel listviewItem;
 
   ViewScheduledDateSchedulerOnlyController controller =
       Get.find<ViewScheduledDateSchedulerOnlyController>();
@@ -60,7 +60,7 @@ class ListviewItemWidget extends StatelessWidget {
                   children: [
                     Obx(
                       () => Text(
-                        listviewItemModelObj.value!.value,
+                        listviewItem.value!.value,
                         overflow: TextOverflow.ellipsis,
                         style: theme.textTheme.bodySmall,
                       ),

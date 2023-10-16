@@ -311,9 +311,9 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                                 .imgCaretdown)),
                                                     hintText: 'lbl91'.tr,
                                                     items: controller
-                                                        .licenseRegisterModelObj
+                                                        .licenseRegister
                                                         .value
-                                                        .dropdownItemList
+                                                        .choices
                                                         .value,
                                                     onChanged: (value) {
                                                       controller
@@ -430,11 +430,8 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                               margin: EdgeInsets.only(
                                                   left: 8.h, top: 19.v),
                                               hintText: 'lbl_112'.tr,
-                                              items: controller
-                                                  .licenseRegisterModelObj
-                                                  .value
-                                                  .dropdownItemList1
-                                                  .value,
+                                              items: controller.licenseRegister
+                                                  .value.choices1.value,
                                               onChanged: (value) {
                                                 controller.onSelected1(value);
                                               })

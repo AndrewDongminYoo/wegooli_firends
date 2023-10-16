@@ -91,8 +91,8 @@ class AppointmentEndExpandedBottomsheet extends StatelessWidget {
                       ),
                     ),
                     hintText: 'lbl_8_1_16_00'.tr,
-                    items: controller.appointmentEndExpandedModelObj.value
-                        .dropdownItemList.value,
+                    items:
+                        controller.appointmentEndExpanded.value.choices.value,
                     onChanged: (value) {
                       controller.onSelected(value);
                     },
@@ -130,8 +130,8 @@ class AppointmentEndExpandedBottomsheet extends StatelessWidget {
                       ),
                     ),
                     hintText: 'lbl_8_1_18_00'.tr,
-                    items: controller.appointmentEndExpandedModelObj.value
-                        .dropdownItemList1.value,
+                    items:
+                        controller.appointmentEndExpanded.value.choices1.value,
                     onChanged: (value) {
                       controller.onSelected1(value);
                     },

@@ -15,11 +15,11 @@ import '/widgets/custom_image_view.dart';
 // ignore: must_be_immutable
 class ListaddphotoaltItemWidget extends StatelessWidget {
   ListaddphotoaltItemWidget(
-    this.listaddphotoaltItemModelObj, {
+    this.listaddphotoaltItem, {
     Key? key,
   }) : super(key: key);
 
-  ListaddphotoaltItemModel listaddphotoaltItemModelObj;
+  ListaddphotoaltItemModel listaddphotoaltItem;
 
   ContactUs11ContactUsController controller =
       Get.find<ContactUs11ContactUsController>();

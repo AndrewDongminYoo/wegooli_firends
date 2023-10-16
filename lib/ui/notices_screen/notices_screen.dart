@@ -66,11 +66,11 @@ class NoticesScreen extends GetWidget<NoticesController> {
                                         thickness: 1.v,
                                         color: appTheme.blueGray30033)));
                           },
-                          itemCount: controller.noticesModelObj.value
-                              .noticesItemList.value.length,
+                          itemCount: controller
+                              .notices.value.noticesItemList.value.length,
                           itemBuilder: (context, index) {
-                            final model = controller.noticesModelObj.value
-                                .noticesItemList.value[index];
+                            final model = controller
+                                .notices.value.noticesItemList.value[index];
                             return NoticesItemWidget(model);
                           })))
                 ]))));

@@ -63,11 +63,8 @@ class ContactUs11ContactUsScreen
                                         hintText: 'lbl147'.tr,
                                         hintStyle:
                                             CustomTextStyles.bodyLargeGray500,
-                                        items: controller
-                                            .contactUs11ContactUsModelObj
-                                            .value
-                                            .dropdownItemList
-                                            .value,
+                                        items: controller.contactUs11ContactUs
+                                            .value.choices.value,
                                         contentPadding: EdgeInsets.only(
                                             left: 10.h,
                                             top: 14.v,
@@ -106,14 +103,14 @@ class ContactUs11ContactUsScreen
                                                   return SizedBox(width: 5.h);
                                                 },
                                                 itemCount: controller
-                                                    .contactUs11ContactUsModelObj
+                                                    .contactUs11ContactUs
                                                     .value
                                                     .listaddphotoaltItemList
                                                     .value
                                                     .length,
                                                 itemBuilder: (context, index) {
                                                   final model = controller
-                                                      .contactUs11ContactUsModelObj
+                                                      .contactUs11ContactUs
                                                       .value
                                                       .listaddphotoaltItemList
                                                       .value[index];

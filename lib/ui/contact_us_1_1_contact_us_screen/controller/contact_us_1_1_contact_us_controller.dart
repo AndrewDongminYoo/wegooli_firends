@@ -8,17 +8,13 @@ import 'package:get/get.dart';
 import '/data/models/dropdown_data.dart';
 import '/ui/contact_us_1_1_contact_us_screen/models/contact_us_1_1_contact_us_model.dart';
 
-/// A controller class for the ContactUs11ContactUsScreen.
-///
-/// This class manages the state of the ContactUs11ContactUsScreen, including the
-/// current contactUs11ContactUsModelObj
 class ContactUs11ContactUsController extends GetxController {
   TextEditingController groupTwentySeveController = TextEditingController();
 
-  Rx<ContactUs11ContactUsModel> contactUs11ContactUsModelObj =
+  Rx<ContactUs11ContactUsModel> contactUs11ContactUs =
       ContactUs11ContactUsModel().obs;
 
-  DropdownData? selectedDropDownValue;
+  DropdownData? choice;
 
   @override
   void onClose() {
@@ -27,13 +23,12 @@ class ContactUs11ContactUsController extends GetxController {
   }
 
   void onSelected(dynamic value) {
-    for (final element
-        in contactUs11ContactUsModelObj.value.dropdownItemList.value) {
+    for (final element in contactUs11ContactUs.value.choices.value) {
       element.isSelected = false;
       if (element.id == value.id) {
         element.isSelected = true;
       }
     }
-    contactUs11ContactUsModelObj.value.dropdownItemList.refresh();
+    contactUs11ContactUs.value.choices.refresh();
   }
 }

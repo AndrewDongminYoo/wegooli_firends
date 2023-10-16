@@ -7,7 +7,7 @@ import '/data/models/dropdown_data.dart';
 /// This class defines the variables used in the [appointment_end_expanded_bottomsheet],
 /// and is typically used to hold data that is passed between different parts of the application.
 class AppointmentEndExpandedModel {
-  Rx<List<DropdownData>> dropdownItemList = Rx([
+  Rx<List<DropdownData>> choices = Rx([
     DropdownData(
       id: 1,
       title: 'Item One',
@@ -23,7 +23,7 @@ class AppointmentEndExpandedModel {
     )
   ]);
 
-  Rx<List<DropdownData>> dropdownItemList1 = Rx([
+  Rx<List<DropdownData>> choices1 = Rx([
     DropdownData(
       id: 1,
       title: 'Item One',

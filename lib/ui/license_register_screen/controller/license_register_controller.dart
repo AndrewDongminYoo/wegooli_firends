@@ -8,10 +8,6 @@ import 'package:get/get.dart';
 import '/data/models/dropdown_data.dart';
 import '/ui/license_register_screen/models/license_register_model.dart';
 
-/// A controller class for the LicenseRegisterScreen.
-///
-/// This class manages the state of the LicenseRegisterScreen, including the
-/// current licenseRegisterModelObj
 class LicenseRegisterController extends GetxController {
   TextEditingController tfController = TextEditingController();
 
@@ -19,11 +15,11 @@ class LicenseRegisterController extends GetxController {
 
   TextEditingController oneController = TextEditingController();
 
-  Rx<LicenseRegisterModel> licenseRegisterModelObj = LicenseRegisterModel().obs;
+  Rx<LicenseRegisterModel> licenseRegister = LicenseRegisterModel().obs;
 
-  DropdownData? selectedDropDownValue;
+  DropdownData? choice;
 
-  DropdownData? selectedDropDownValue1;
+  DropdownData? choice1;
 
   @override
   void onClose() {
@@ -34,24 +30,22 @@ class LicenseRegisterController extends GetxController {
   }
 
   void onSelected(dynamic value) {
-    for (final element
-        in licenseRegisterModelObj.value.dropdownItemList.value) {
+    for (final element in licenseRegister.value.choices.value) {
       element.isSelected = false;
       if (element.id == value.id) {
         element.isSelected = true;
       }
     }
-    licenseRegisterModelObj.value.dropdownItemList.refresh();
+    licenseRegister.value.choices.refresh();
   }
 
   void onSelected1(dynamic value) {
-    for (final element
-        in licenseRegisterModelObj.value.dropdownItemList1.value) {
+    for (final element in licenseRegister.value.choices1.value) {
       element.isSelected = false;
       if (element.id == value.id) {
         element.isSelected = true;
       }
     }
-    licenseRegisterModelObj.value.dropdownItemList1.refresh();
+    licenseRegister.value.choices1.refresh();
   }
 }

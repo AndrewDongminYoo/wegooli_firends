@@ -48,18 +48,11 @@ class ViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
                       separatorBuilder: (context, index) {
                         return SizedBox(height: 10.v);
                       },
-                      itemCount: controller
-                          .viewScheduledDateSchedulerOnlyModelObj
-                          .value
-                          .listviewItemList
-                          .value
-                          .length,
+                      itemCount: controller.viewScheduledDateSchedulerOnly.value
+                          .listviewItemList.value.length,
                       itemBuilder: (context, index) {
-                        final model = controller
-                            .viewScheduledDateSchedulerOnlyModelObj
-                            .value
-                            .listviewItemList
-                            .value[index];
+                        final model = controller.viewScheduledDateSchedulerOnly
+                            .value.listviewItemList.value[index];
                         return ListviewItemWidget(model);
                       })),
                   SizedBox(height: 10.v)

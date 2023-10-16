@@ -8,7 +8,7 @@ import 'listaddphotoalt_item_model.dart';
 /// This class defines the variables used in the [contact_us_1_1_contact_us_screen],
 /// and is typically used to hold data that is passed between different parts of the application.
 class ContactUs11ContactUsModel {
-  Rx<List<DropdownData>> dropdownItemList = Rx([
+  Rx<List<DropdownData>> choices = Rx([
     DropdownData(
       id: 1,
       title: 'Item One',

@@ -14,11 +14,11 @@ import '/theme/theme_helper.dart';
 // ignore: must_be_immutable
 class UserageItemWidget extends StatelessWidget {
   UserageItemWidget(
-    this.userageItemModelObj, {
+    this.userageItem, {
     Key? key,
   }) : super(key: key);
 
-  UserageItemModel userageItemModelObj;
+  UserageItemModel userageItem;
 
   SchedulesTeamIsNotFullController controller =
       Get.find<SchedulesTeamIsNotFullController>();
@@ -34,7 +34,7 @@ class UserageItemWidget extends StatelessWidget {
             alignment: Alignment.centerLeft,
             child: Obx(
               () => Text(
-                userageItemModelObj.userDay!.value,
+                userageItem.userDay!.value,
                 overflow: TextOverflow.ellipsis,
                 style: theme.textTheme.titleMedium,
               ),
@@ -43,7 +43,7 @@ class UserageItemWidget extends StatelessWidget {
           SizedBox(height: 19.v),
           Obx(
             () => Text(
-              userageItemModelObj.userMonth!.value,
+              userageItem.userMonth!.value,
               overflow: TextOverflow.ellipsis,
               style: CustomTextStyles.bodySmallGray50002,
             ),
@@ -55,7 +55,7 @@ class UserageItemWidget extends StatelessWidget {
             ),
             child: Obx(
               () => Text(
-                userageItemModelObj.userYear!.value,
+                userageItem.userYear!.value,
                 overflow: TextOverflow.ellipsis,
                 style: theme.textTheme.bodySmall,
               ),
@@ -68,7 +68,7 @@ class UserageItemWidget extends StatelessWidget {
             ),
             child: Obx(
               () => Text(
-                userageItemModelObj.thirty!.value,
+                userageItem.thirty!.value,
                 overflow: TextOverflow.ellipsis,
                 style: theme.textTheme.bodySmall,
               ),
@@ -77,7 +77,7 @@ class UserageItemWidget extends StatelessWidget {
           SizedBox(height: 19.v),
           Obx(
             () => Text(
-              userageItemModelObj.thirtyone!.value,
+              userageItem.thirtyone!.value,
               overflow: TextOverflow.ellipsis,
               style: theme.textTheme.bodySmall,
             ),
@@ -85,7 +85,7 @@ class UserageItemWidget extends StatelessWidget {
           SizedBox(height: 18.v),
           Obx(
             () => Text(
-              userageItemModelObj.thirtytwo!.value,
+              userageItem.thirtytwo!.value,
               overflow: TextOverflow.ellipsis,
               style: theme.textTheme.bodySmall,
             ),

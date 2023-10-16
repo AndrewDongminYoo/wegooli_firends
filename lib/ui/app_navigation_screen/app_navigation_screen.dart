@@ -960,7 +960,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                               color: appTheme.blueGray400)
                                         ]))),
                                 GestureDetector(
-                                    onTap: onTapSmartKeyAnotherisCurrentlyUsing,
+                                    onTap: onTapSmartKeyAnotherIsCurrentlyUsing,
                                     child: Container(
                                         decoration:
                                             AppDecoration.fillOnSecondary,
@@ -1261,7 +1261,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
 
   /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the identityVerificationWaitingScreen.
-  onTapIdentityVerificationWaiting() {
+  void onTapIdentityVerificationWaiting() {
     Get.toNamed(
       AppRoutes.identityVerificationWaitingScreen,
     );
@@ -1272,11 +1272,11 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
   /// The [SendInvitationLeaderOnlyDialog] widget is created with a new
   /// instance of the [SendInvitationLeaderOnlyController],
   /// which is obtained using the Get.put() method.
-  onTapSendInvitationLeaderOnly() {
+  void onTapSendInvitationLeaderOnly() {
     Get.dialog(AlertDialog(
       backgroundColor: Colors.transparent,
       contentPadding: EdgeInsets.zero,
-      insetPadding: const EdgeInsets.only(),
+      insetPadding: EdgeInsets.zero,
       content: SendInvitationLeaderOnlyDialog(
         Get.put(
           SendInvitationLeaderOnlyController(),
@@ -1290,11 +1290,11 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
   /// The [ViewScheduledDateSchedulerOnlyDialog] widget is created with a new
   /// instance of the [ViewScheduledDateSchedulerOnlyController],
   /// which is obtained using the Get.put() method.
-  onTapViewScheduledDateSchedulerOnly() {
+  void onTapViewScheduledDateSchedulerOnly() {
     Get.dialog(AlertDialog(
       backgroundColor: Colors.transparent,
       contentPadding: EdgeInsets.zero,
-      insetPadding: const EdgeInsets.only(),
+      insetPadding: EdgeInsets.zero,
       content: ViewScheduledDateSchedulerOnlyDialog(
         Get.put(
           ViewScheduledDateSchedulerOnlyController(),
@@ -1310,7 +1310,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
   /// and is displayed using the [Get.bottomSheet] method with
   /// [isScrollControlled] set to true.
 
-  onTapAppointmentAllCollapsed() {
+  void onTapAppointmentAllCollapsed() {
     Get.bottomSheet(
       AppointmentAllCollapsedBottomsheet(
         Get.put(
@@ -1328,7 +1328,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
   /// and is displayed using the [Get.bottomSheet] method with
   /// [isScrollControlled] set to true.
 
-  onTapAppointmentStartExpanded() {
+  void onTapAppointmentStartExpanded() {
     Get.bottomSheet(
       AppointmentStartExpandedBottomsheet(
         Get.put(
@@ -1346,7 +1346,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
   /// and is displayed using the [Get.bottomSheet] method with
   /// [isScrollControlled] set to true.
 
-  onTapAppointmentEndExpanded() {
+  void onTapAppointmentEndExpanded() {
     Get.bottomSheet(
       AppointmentEndExpandedBottomsheet(
         Get.put(
@@ -1362,11 +1362,11 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
   /// The [UnsubscribeConfirmDialog] widget is created with a new
   /// instance of the [UnsubscribeConfirmController],
   /// which is obtained using the Get.put() method.
-  onTapUnsubscribeConfirm() {
+  void onTapUnsubscribeConfirm() {
     Get.dialog(AlertDialog(
       backgroundColor: Colors.transparent,
       contentPadding: EdgeInsets.zero,
-      insetPadding: const EdgeInsets.only(),
+      insetPadding: EdgeInsets.zero,
       content: UnsubscribeConfirmDialog(
         Get.put(
           UnsubscribeConfirmController(),
@@ -1379,7 +1379,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
 
   /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the signupCompleteScreen.
-  onTapSignUpComplete() {
+  void onTapSignUpComplete() {
     Get.toNamed(
       AppRoutes.signupCompleteScreen,
     );
@@ -1389,7 +1389,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
 
   /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the noticesOneScreen.
-  onTapNoticesOne() {
+  void onTapNoticesOne() {
     Get.toNamed(
       AppRoutes.noticesOneScreen,
     );
@@ -1399,7 +1399,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
 
   /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the noticesNoNoticeScreen.
-  onTapNoticesNoNotice() {
+  void onTapNoticesNoNotice() {
     Get.toNamed(
       AppRoutes.noticesNoNoticeScreen,
     );
@@ -1409,7 +1409,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
 
   /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the schedulesContainerScreen.
-  onTapSchedulesContainer() {
+  void onTapSchedulesContainer() {
     Get.toNamed(
       AppRoutes.schedulesContainerScreen,
     );
@@ -1420,11 +1420,11 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
   /// The [SchedulesSendInvitationLeaderOnlyDialog] widget is created with a new
   /// instance of the [SchedulesSendInvitationLeaderOnlyController],
   /// which is obtained using the Get.put() method.
-  onTapSchedulesSendInvitationLeaderOnly() {
+  void onTapSchedulesSendInvitationLeaderOnly() {
     Get.dialog(AlertDialog(
       backgroundColor: Colors.transparent,
       contentPadding: EdgeInsets.zero,
-      insetPadding: const EdgeInsets.only(),
+      insetPadding: EdgeInsets.zero,
       content: SchedulesSendInvitationLeaderOnlyDialog(
         Get.put(
           SchedulesSendInvitationLeaderOnlyController(),
@@ -1437,7 +1437,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
 
   /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the signinPageScreen.
-  onTapSignInPage() {
+  void onTapSignInPage() {
     Get.toNamed(
       AppRoutes.signinPageScreen,
     );
@@ -1447,7 +1447,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
 
   /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the identityVerificationTermsBottomsheetScreen.
-  onTapIdentityVerificationTermsBottomSheet() {
+  void onTapIdentityVerificationTermsBottomSheet() {
     Get.toNamed(
       AppRoutes.identityVerificationTermsBottomsheetScreen,
     );
@@ -1457,7 +1457,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
 
   /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the identityVerificationEmptyScreen.
-  onTapIdentityVerificationEmpty() {
+  void onTapIdentityVerificationEmpty() {
     Get.toNamed(
       AppRoutes.identityVerificationEmptyScreen,
     );
@@ -1467,7 +1467,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
 
   /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the identityVerificationFilledScreen.
-  onTapIdentityVerificationFilled() {
+  void onTapIdentityVerificationFilled() {
     Get.toNamed(
       AppRoutes.identityVerificationFilledScreen,
     );
@@ -1477,7 +1477,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
 
   /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the personalInfoFormZipCodeScreen.
-  onTapPersonalInfoFormZipCode() {
+  void onTapPersonalInfoFormZipCode() {
     Get.toNamed(
       AppRoutes.personalInfoFormZipCodeScreen,
     );
@@ -1487,7 +1487,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
 
   /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the splashScreenOneScreen.
-  onTapSplashScreenOne() {
+  void onTapSplashScreenOne() {
     Get.toNamed(
       AppRoutes.splashScreenOneScreen,
     );
@@ -1497,7 +1497,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
 
   /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the splashScreenTwoScreen.
-  onTapSplashScreenTwo() {
+  void onTapSplashScreenTwo() {
     Get.toNamed(
       AppRoutes.splashScreenTwoScreen,
     );
@@ -1507,7 +1507,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
 
   /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the licenseRegisterScreen.
-  onTapLicenseRegister() {
+  void onTapLicenseRegister() {
     Get.toNamed(
       AppRoutes.licenseRegisterScreen,
     );
@@ -1517,7 +1517,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
 
   /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the identityVerificationFilledWithTelecomScreen.
-  onTapIdentityVerificationFilledwithTelecom() {
+  void onTapIdentityVerificationFilledwithTelecom() {
     Get.toNamed(
       AppRoutes.identityVerificationFilledWithTelecomScreen,
     );
@@ -1527,7 +1527,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
 
   /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the identityVerificationWaitingWithTelecomScreen.
-  onTapIdentityVerificationWaitingwithTelecom() {
+  void onTapIdentityVerificationWaitingwithTelecom() {
     Get.toNamed(
       AppRoutes.identityVerificationWaitingWithTelecomScreen,
     );
@@ -1537,7 +1537,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
 
   /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the homePageScreen.
-  onTapHomePage() {
+  void onTapHomePage() {
     Get.toNamed(
       AppRoutes.homePageScreen,
     );
@@ -1547,7 +1547,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
 
   /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the schedulesTeamIsNotFullScreen.
-  onTapSchedulesTeamisnotFull() {
+  void onTapSchedulesTeamisnotFull() {
     Get.toNamed(
       AppRoutes.schedulesTeamIsNotFullScreen,
     );
@@ -1557,7 +1557,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
 
   /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the schedulesTeamIsFullScreen.
-  onTapSchedulesTeamisFull() {
+  void onTapSchedulesTeamisFull() {
     Get.toNamed(
       AppRoutes.schedulesTeamIsFullScreen,
     );
@@ -1567,7 +1567,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
 
   /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the smartKeyScreen.
-  onTapSmartKey() {
+  void onTapSmartKey() {
     Get.toNamed(
       AppRoutes.smartKeyScreen,
     );
@@ -1577,7 +1577,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
 
   /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the myPageScreen.
-  onTapMyPage() {
+  void onTapMyPage() {
     Get.toNamed(
       AppRoutes.myPageScreen,
     );
@@ -1587,7 +1587,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
 
   /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the cardListScreen.
-  onTapCardList() {
+  void onTapCardList() {
     Get.toNamed(
       AppRoutes.cardListScreen,
     );
@@ -1598,11 +1598,11 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
   /// The [SchedulesViewScheduledDateSchedulerOnlyDialog] widget is created with a new
   /// instance of the [SchedulesViewScheduledDateSchedulerOnlyController],
   /// which is obtained using the Get.put() method.
-  onTapSchedulesViewScheduledDateSchedulerOnly() {
+  void onTapSchedulesViewScheduledDateSchedulerOnly() {
     Get.dialog(AlertDialog(
       backgroundColor: Colors.transparent,
       contentPadding: EdgeInsets.zero,
-      insetPadding: const EdgeInsets.only(),
+      insetPadding: EdgeInsets.zero,
       content: SchedulesViewScheduledDateSchedulerOnlyDialog(
         Get.put(
           SchedulesViewScheduledDateSchedulerOnlyController(),
@@ -1616,11 +1616,11 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
   /// The [SchedulesViewScheduledDateSchedulerOnlyExpandedDialog] widget is created with a new
   /// instance of the [SchedulesViewScheduledDateSchedulerOnlyExpandedController],
   /// which is obtained using the Get.put() method.
-  onTapSchedulesViewScheduledDateSchedulerOnlyExpanded() {
+  void onTapSchedulesViewScheduledDateSchedulerOnlyExpanded() {
     Get.dialog(AlertDialog(
       backgroundColor: Colors.transparent,
       contentPadding: EdgeInsets.zero,
-      insetPadding: const EdgeInsets.only(),
+      insetPadding: EdgeInsets.zero,
       content: SchedulesViewScheduledDateSchedulerOnlyExpandedDialog(
         Get.put(
           SchedulesViewScheduledDateSchedulerOnlyExpandedController(),
@@ -1633,7 +1633,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
 
   /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the smartKeyAnotherIsCurrentlyUsingScreen.
-  onTapSmartKeyAnotherisCurrentlyUsing() {
+  void onTapSmartKeyAnotherIsCurrentlyUsing() {
     Get.toNamed(
       AppRoutes.smartKeyAnotherIsCurrentlyUsingScreen,
     );
@@ -1643,7 +1643,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
 
   /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the subscribeInfoNoSubscriptionScreen.
-  onTapSubscribeInfoNoSubscription() {
+  void onTapSubscribeInfoNoSubscription() {
     Get.toNamed(
       AppRoutes.subscribeInfoNoSubscriptionScreen,
     );
@@ -1653,7 +1653,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
 
   /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the subscribeInfoScreen.
-  onTapSubscribeInfo() {
+  void onTapSubscribeInfo() {
     Get.toNamed(
       AppRoutes.subscribeInfoScreen,
     );
@@ -1663,7 +1663,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
 
   /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the contactUsEmptyHistoryScreen.
-  onTapContactUsEmptyHistory() {
+  void onTapContactUsEmptyHistory() {
     Get.toNamed(
       AppRoutes.contactUsEmptyHistoryScreen,
     );
@@ -1673,7 +1673,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
 
   /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the contactUsInquiryHistoryExpandedTabContainerScreen.
-  onTapContactUsInquiryHistoryExpandedTabContainer() {
+  void onTapContactUsInquiryHistoryExpandedTabContainer() {
     Get.toNamed(
       AppRoutes.contactUsInquiryHistoryExpandedTabContainerScreen,
     );
@@ -1683,7 +1683,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
 
   /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the unsubscribeScreen.
-  onTapUnsubscribe() {
+  void onTapUnsubscribe() {
     Get.toNamed(
       AppRoutes.unsubscribeScreen,
     );
@@ -1693,7 +1693,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
 
   /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the cardRegisterScreen.
-  onTapCardRegister() {
+  void onTapCardRegister() {
     Get.toNamed(
       AppRoutes.cardRegisterScreen,
     );
@@ -1703,7 +1703,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
 
   /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the noticesScreen.
-  onTapNotices() {
+  void onTapNotices() {
     Get.toNamed(
       AppRoutes.noticesScreen,
     );
@@ -1713,7 +1713,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
 
   /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the contactUs11ContactUsScreen.
-  onTapContactUs11ContactUs() {
+  void onTapContactUs11ContactUs() {
     Get.toNamed(
       AppRoutes.contactUs11ContactUsScreen,
     );
@@ -1723,7 +1723,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
 
   /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the expiringSubscriptionsScreen.
-  onTapExpiringSubscriptions() {
+  void onTapExpiringSubscriptions() {
     Get.toNamed(
       AppRoutes.expiringSubscriptionsScreen,
     );

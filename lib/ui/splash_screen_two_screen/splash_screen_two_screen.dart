@@ -18,8 +18,8 @@ class SplashScreenTwoScreen extends GetWidget<SplashScreenTwoController> {
                 height: mediaQueryData.size.height,
                 decoration: BoxDecoration(
                     gradient: LinearGradient(
-                        begin: const Alignment(0, 0),
-                        end: const Alignment(1, 1),
+                        begin: Alignment.center,
+                        end: Alignment.bottomRight,
                         colors: [appTheme.yellow600, appTheme.yellow300])),
                 child: SizedBox(
                     width: double.maxFinite,

@@ -31,7 +31,7 @@ class SchedulesSendInvitationLeaderOnlyDialog extends StatelessWidget {
                       width: 15.adaptSize,
                       alignment: Alignment.centerRight,
                       margin: EdgeInsets.only(top: 20.v, right: 20.h),
-                      onTap: onTapImgCloseone),
+                      onTap: Get.back),
                   Padding(
                       padding: EdgeInsets.only(left: 20.h, top: 6.v),
                       child: Text('lbl8'.tr,
@@ -58,7 +58,7 @@ class SchedulesSendInvitationLeaderOnlyDialog extends StatelessWidget {
   ///
   /// When the action is triggered, this function uses the [Get] package to
   /// navigate to the previous screen in the navigation stack.
-  onTapImgCloseone() {
+  void onTapImgCloseone() {
     Get.back();
   }
 }

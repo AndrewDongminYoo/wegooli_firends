@@ -14,7 +14,7 @@ class AppointmentEndExpandedController extends GetxController {
 
   SelectionPopupModel? selectedDropDownValue1;
 
-  onSelected(dynamic value) {
+  void onSelected(dynamic value) {
     for (final element
         in appointmentEndExpandedModelObj.value.dropdownItemList.value) {
       element.isSelected = false;
@@ -25,7 +25,7 @@ class AppointmentEndExpandedController extends GetxController {
     appointmentEndExpandedModelObj.value.dropdownItemList.refresh();
   }
 
-  onSelected1(dynamic value) {
+  void onSelected1(dynamic value) {
     for (final element
         in appointmentEndExpandedModelObj.value.dropdownItemList1.value) {
       element.isSelected = false;

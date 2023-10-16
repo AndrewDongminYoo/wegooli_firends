@@ -55,7 +55,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                   clipBehavior: Clip.antiAlias,
                                                   elevation: 0,
                                                   margin:
-                                                      const EdgeInsets.all(0),
+                                                      EdgeInsets.zero,
                                                   color: theme.colorScheme
                                                       .onPrimaryContainer,
                                                   shape: RoundedRectangleBorder(
@@ -534,7 +534,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
   ///
   /// When the action is triggered, this function uses the [Get] package to
   /// navigate to the previous screen in the navigation stack.
-  onTapArrowleftone() {
+  void onTapArrowleftone() {
     Get.back();
   }
 }

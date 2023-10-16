@@ -8,6 +8,7 @@ import '/widgets/custom_outlined_button.dart';
 import 'controller/contact_us_inquiry_history_expanded_controller.dart';
 import 'models/contact_us_inquiry_history_expanded_model.dart';
 
+// ignore: must_be_immutable
 class ContactUsInquiryHistoryExpandedPage extends StatelessWidget {
   ContactUsInquiryHistoryExpandedPage({Key? key})
       : super(key: key);

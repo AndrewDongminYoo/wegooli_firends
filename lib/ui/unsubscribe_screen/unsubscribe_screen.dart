@@ -69,7 +69,7 @@ class UnsubscribeScreen extends GetWidget<UnsubscribeController> {
   ///
   /// When the action is triggered, this function uses the [Get] package to
   /// navigate to the previous screen in the navigation stack.
-  onTapArrowleftone() {
+  void onTapArrowleftone() {
     Get.back();
   }
 }

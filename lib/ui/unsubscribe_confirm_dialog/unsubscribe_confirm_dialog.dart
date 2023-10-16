@@ -35,7 +35,7 @@ class UnsubscribeConfirmDialog extends StatelessWidget {
                                 height: 15.adaptSize,
                                 width: 15.adaptSize,
                                 margin: EdgeInsets.symmetric(vertical: 3.v),
-                                onTap: onTapImgCloseone)
+                                onTap: Get.back)
                           ])),
                   Container(
                       width: 278.h,
@@ -67,7 +67,7 @@ class UnsubscribeConfirmDialog extends StatelessWidget {
   ///
   /// When the action is triggered, this function uses the [Get] package to
   /// navigate to the previous screen in the navigation stack.
-  onTapImgCloseone() {
+  void onTapImgCloseone() {
     Get.back();
   }
 }

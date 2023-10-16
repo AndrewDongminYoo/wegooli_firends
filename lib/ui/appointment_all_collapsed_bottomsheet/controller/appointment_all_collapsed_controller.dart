@@ -12,7 +12,7 @@ class AppointmentAllCollapsedController extends GetxController {
 
   SelectionPopupModel? selectedDropDownValue;
 
-  onSelected(dynamic value) {
+  void onSelected(dynamic value) {
     for (final element
         in appointmentAllCollapsedModelObj.value.dropdownItemList.value) {
       element.isSelected = false;

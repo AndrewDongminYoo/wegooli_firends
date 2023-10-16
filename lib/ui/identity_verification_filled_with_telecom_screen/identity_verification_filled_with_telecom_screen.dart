@@ -155,7 +155,7 @@ class IdentityVerificationFilledWithTelecomScreen
   ///
   /// When the action is triggered, this function uses the [Get] package to
   /// navigate to the previous screen in the navigation stack.
-  onTapArrowleftone() {
+  void onTapArrowleftone() {
     Get.back();
   }
 
@@ -163,7 +163,7 @@ class IdentityVerificationFilledWithTelecomScreen
 
   /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the identityVerificationWaitingWithTelecomScreen.
-  onTaptf() {
+  void onTaptf() {
     Get.toNamed(
       AppRoutes.identityVerificationWaitingWithTelecomScreen,
     );

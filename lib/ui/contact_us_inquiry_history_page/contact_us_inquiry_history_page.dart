@@ -7,6 +7,7 @@ import '/core/app_export.dart';
 import 'controller/contact_us_inquiry_history_controller.dart';
 import 'models/contact_us_inquiry_history_model.dart';
 
+// ignore: must_be_immutable
 class ContactUsInquiryHistoryPage extends StatelessWidget {
   ContactUsInquiryHistoryPage({Key? key})
       : super(key: key);

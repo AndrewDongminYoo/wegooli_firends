@@ -28,7 +28,7 @@ class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
                       height: 15.adaptSize,
                       width: 15.adaptSize,
                       alignment: Alignment.centerRight,
-                      onTap: onTapImgCloseone),
+                      onTap: Get.back),
                   SizedBox(height: 6.v),
                   Text('lbl10'.tr, style: CustomTextStyles.titleMedium18),
                   SizedBox(height: 22.v),
@@ -214,7 +214,7 @@ class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
   ///
   /// When the action is triggered, this function uses the [Get] package to
   /// navigate to the previous screen in the navigation stack.
-  onTapImgCloseone() {
+  void onTapImgCloseone() {
     Get.back();
   }
 }

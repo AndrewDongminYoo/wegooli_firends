@@ -24,7 +24,7 @@ class IdentityVerificationWaitingWithTelecomController extends GetxController {
     phonenumberoneController.dispose();
   }
 
-  onSelected(dynamic value) {
+  void onSelected(dynamic value) {
     for (final element in identityVerificationWaitingWithTelecomModelObj
         .value.dropdownItemList.value) {
       element.isSelected = false;

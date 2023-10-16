@@ -10,6 +10,7 @@ import '/widgets/custom_text_form_field.dart';
 import 'controller/send_bird_chat_controller.dart';
 import 'models/send_bird_chat_model.dart';
 
+// ignore: must_be_immutable
 class SendBirdChatPage extends StatelessWidget {
   SendBirdChatPage({Key? key})
       : super(key: key);

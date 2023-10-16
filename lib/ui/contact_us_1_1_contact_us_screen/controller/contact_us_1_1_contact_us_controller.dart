@@ -20,7 +20,7 @@ class ContactUs11ContactUsController extends GetxController {
     groupTwentySeveController.dispose();
   }
 
-  onSelected(dynamic value) {
+  void onSelected(dynamic value) {
     for (final element
         in contactUs11ContactUsModelObj.value.dropdownItemList.value) {
       element.isSelected = false;

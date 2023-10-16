@@ -27,7 +27,7 @@ class LicenseRegisterController extends GetxController {
     oneController.dispose();
   }
 
-  onSelected(dynamic value) {
+  void onSelected(dynamic value) {
     for (final element
         in licenseRegisterModelObj.value.dropdownItemList.value) {
       element.isSelected = false;
@@ -38,7 +38,7 @@ class LicenseRegisterController extends GetxController {
     licenseRegisterModelObj.value.dropdownItemList.refresh();
   }
 
-  onSelected1(dynamic value) {
+  void onSelected1(dynamic value) {
     for (final element
         in licenseRegisterModelObj.value.dropdownItemList1.value) {
       element.isSelected = false;

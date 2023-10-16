@@ -53,7 +53,7 @@ class ListviewItemWidget extends StatelessWidget {
                   children: [
                     Obx(
                       () => Text(
-                        listviewItemModelObj.Txt!.value,
+                        listviewItemModelObj.value!.value,
                         overflow: TextOverflow.ellipsis,
                         style: theme.textTheme.bodySmall,
                       ),

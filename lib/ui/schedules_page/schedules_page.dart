@@ -10,6 +10,7 @@ import '/widgets/custom_elevated_button.dart';
 import 'controller/schedules_controller.dart';
 import 'models/schedules_model.dart';
 
+// ignore: must_be_immutable
 class SchedulesPage extends StatelessWidget {
   SchedulesPage({Key? key})
       : super(key: key);

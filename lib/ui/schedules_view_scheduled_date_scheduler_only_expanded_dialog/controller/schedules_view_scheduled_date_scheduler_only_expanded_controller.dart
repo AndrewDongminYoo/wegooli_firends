@@ -13,7 +13,7 @@ class SchedulesViewScheduledDateSchedulerOnlyExpandedController
 
   SelectionPopupModel? selectedDropDownValue;
 
-  onSelected(dynamic value) {
+  void onSelected(dynamic value) {
     for (final element
         in schedulesViewScheduledDateSchedulerOnlyExpandedModelObj
             .value.dropdownItemList.value) {

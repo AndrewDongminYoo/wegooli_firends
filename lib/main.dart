@@ -9,9 +9,9 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/core/utils/initial_bindings.dart';
 import '/core/utils/logger.dart';
-import '/localization/app_localization.dart';
 import '/routes/app_routes.dart';
 import '/theme/theme_helper.dart';
+import 'l10n/app_localization.dart';
 
 GlobalKey<ScaffoldMessengerState> globalMessengerKey =
     GlobalKey<ScaffoldMessengerState>();
@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
       theme: theme,
       translations: AppLocalization(),
       locale: Get.deviceLocale, //for setting localization strings
-      fallbackLocale: const Locale('en', 'US'),
+      fallbackLocale: const Locale('ko', 'KR'),
       title: 'wegooli_friends_app',
       initialBinding: InitialBindings(),
       initialRoute: AppRoutes.initialRoute,

@@ -27,7 +27,7 @@ class ContactUsInquiryHistoryPage extends StatelessWidget {
         body: Container(
           width: double.maxFinite,
           decoration: BoxDecoration(
-            color: defaultColors.onPrimaryContainer,
+            color: lightTheme.onPrimaryContainer,
           ),
           child: Obx(
             () => ListView.separated(

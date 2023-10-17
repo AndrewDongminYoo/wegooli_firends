@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 
-const ColorScheme defaultColors = ColorScheme.light(
+const ColorScheme lightTheme = ColorScheme.light(
   // Primary colors
   primary: Color(0xFFFFE041),
   primaryContainer: Color(0xFF3A3C42),
@@ -54,25 +54,25 @@ const ColorScheme defaultColors = ColorScheme.light(
 
 final TextTheme textTheme = TextTheme(
   bodyLarge: TextStyle(
-    color: defaultColors.onPrimary,
+    color: lightTheme.onPrimary,
     fontSize: 16.fSize,
     fontFamily: 'Pretendard',
     fontWeight: FontWeight.w400,
   ),
   bodyMedium: TextStyle(
-    color: defaultColors.onPrimary,
+    color: lightTheme.onPrimary,
     fontSize: 14.fSize,
     fontFamily: 'Pretendard',
     fontWeight: FontWeight.w400,
   ),
   bodySmall: TextStyle(
-    color: defaultColors.onPrimary,
+    color: lightTheme.onPrimary,
     fontSize: 12.fSize,
     fontFamily: 'Pretendard',
     fontWeight: FontWeight.w400,
   ),
   headlineLarge: TextStyle(
-    color: defaultColors.onPrimary,
+    color: lightTheme.onPrimary,
     fontSize: 32.fSize,
     fontFamily: 'Jalnan',
     fontWeight: FontWeight.w700,
@@ -90,13 +90,13 @@ final TextTheme textTheme = TextTheme(
     fontWeight: FontWeight.w500,
   ),
   titleMedium: TextStyle(
-    color: defaultColors.onPrimary,
+    color: lightTheme.onPrimary,
     fontSize: 16.fSize,
     fontFamily: 'Pretendard',
     fontWeight: FontWeight.w700,
   ),
   titleSmall: TextStyle(
-    color: defaultColors.onPrimary,
+    color: lightTheme.onPrimary,
     fontSize: 14.fSize,
     fontFamily: 'Pretendard',
     fontWeight: FontWeight.w500,
@@ -105,9 +105,9 @@ final TextTheme textTheme = TextTheme(
 ThemeData get theme {
   return ThemeData(
     visualDensity: VisualDensity.standard,
-    colorScheme: defaultColors,
+    colorScheme: lightTheme,
     textTheme: textTheme,
-    scaffoldBackgroundColor: defaultColors.onPrimaryContainer,
+    scaffoldBackgroundColor: lightTheme.onPrimaryContainer,
     outlinedButtonTheme: OutlinedButtonThemeData(
       style: OutlinedButton.styleFrom(
         backgroundColor: Colors.transparent,
@@ -127,7 +127,7 @@ ThemeData get theme {
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        backgroundColor: defaultColors.primary,
+        backgroundColor: lightTheme.primary,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(26.h),
         ),
@@ -141,9 +141,9 @@ ThemeData get theme {
     radioTheme: RadioThemeData(
       fillColor: MaterialStateColor.resolveWith((states) {
         if (states.contains(MaterialState.selected)) {
-          return defaultColors.primary;
+          return lightTheme.primary;
         }
-        return defaultColors.onSurface;
+        return lightTheme.onSurface;
       }),
       visualDensity: const VisualDensity(
         vertical: -4,
@@ -151,7 +151,7 @@ ThemeData get theme {
       ),
     ),
     floatingActionButtonTheme: FloatingActionButtonThemeData(
-      backgroundColor: defaultColors.primary,
+      backgroundColor: lightTheme.primary,
     ),
     dividerTheme: const DividerThemeData(
       thickness: 1,

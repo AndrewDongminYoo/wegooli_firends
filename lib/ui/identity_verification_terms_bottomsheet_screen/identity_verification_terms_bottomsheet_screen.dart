@@ -108,7 +108,7 @@ class IdentityVerificationTermsBottomsheetScreen
                                 SizedBox(height: 2.v),
                                 Text('만 26세 미만은 가입이 제한됩니다.',
                                     style: textTheme.bodySmall!.copyWith(
-                                      color: defaultColors.primaryContainer,
+                                      color: lightTheme.primaryContainer,
                                     ))
                               ]),
                           Container(
@@ -231,7 +231,7 @@ class IdentityVerificationTermsBottomsheetScreen
             Align(
                 child: Container(
                     decoration: BoxDecoration(
-                      color: defaultColors.onPrimary.withOpacity(0.4),
+                      color: lightTheme.onPrimary.withOpacity(0.4),
                     ),
                     child: Column(
                         mainAxisSize: MainAxisSize.min,
@@ -243,7 +243,7 @@ class IdentityVerificationTermsBottomsheetScreen
                               child: Column(children: [
                                 Container(
                                     decoration: BoxDecoration(
-                                        color: defaultColors.onPrimaryContainer,
+                                        color: lightTheme.onPrimaryContainer,
                                         borderRadius:
                                             BorderRadiusStyle.customBorderTL10),
                                     child: Column(
@@ -254,7 +254,7 @@ class IdentityVerificationTermsBottomsheetScreen
                                                   horizontal: 16.h,
                                                   vertical: 21.v),
                                               decoration: BoxDecoration(
-                                                color: defaultColors
+                                                color: lightTheme
                                                     .onPrimaryContainer,
                                                 border: Border(
                                                   bottom: BorderSide(
@@ -485,7 +485,7 @@ class IdentityVerificationTermsBottomsheetScreen
                                 Container(
                                     padding: EdgeInsets.all(16.h),
                                     decoration: BoxDecoration(
-                                      color: defaultColors.onPrimaryContainer,
+                                      color: lightTheme.onPrimaryContainer,
                                     ),
                                     child: CustomElevatedButton(
                                         height: 48.v,

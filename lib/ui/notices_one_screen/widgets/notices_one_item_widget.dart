@@ -26,7 +26,7 @@ class NoticesOneItemWidget extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 15.h),
       decoration: BoxDecoration(
-        color: defaultColors.onPrimaryContainer,
+        color: lightTheme.onPrimaryContainer,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -50,7 +50,7 @@ class NoticesOneItemWidget extends StatelessWidget {
             child: Text(
               '2023.08.23',
               style: textTheme.bodySmall!.copyWith(
-                color: defaultColors.onPrimary.withOpacity(0.4),
+                color: lightTheme.onPrimary.withOpacity(0.4),
               ),
             ),
           ),

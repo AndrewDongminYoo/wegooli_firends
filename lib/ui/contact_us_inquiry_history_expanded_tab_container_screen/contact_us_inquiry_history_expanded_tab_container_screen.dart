@@ -44,9 +44,8 @@ class ContactUsInquiryHistoryExpandedTabContainerScreen
                 child: TabBar(
                     controller: controller.tabviewController,
                     isScrollable: true,
-                    labelColor: defaultColors.onPrimary,
-                    unselectedLabelColor:
-                        defaultColors.onPrimary.withOpacity(0.4),
+                    labelColor: lightTheme.onPrimary,
+                    unselectedLabelColor: lightTheme.onPrimary.withOpacity(0.4),
                     tabs: [
                       Tab(
                         child: Container(
@@ -55,7 +54,7 @@ class ContactUsInquiryHistoryExpandedTabContainerScreen
                           decoration: BoxDecoration(
                             border: Border(
                               bottom: BorderSide(
-                                color: defaultColors.primary,
+                                color: lightTheme.primary,
                                 width: 2.h,
                               ),
                             ),

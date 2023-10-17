@@ -96,7 +96,7 @@ class IdentityVerificationFilledWithTelecomScreen
                               SizedBox(height: 3.v),
                               Text('만 26세 미만은 가입이 제한됩니다.',
                                   style: textTheme.bodySmall!.copyWith(
-                                    color: defaultColors.primaryContainer,
+                                    color: lightTheme.primaryContainer,
                                   ))
                             ]),
                         Container(
@@ -170,7 +170,7 @@ class IdentityVerificationFilledWithTelecomScreen
                         ),
                       ),
                       buttonTextStyle: textTheme.titleSmall!.copyWith(
-                        color: defaultColors.onPrimaryContainer,
+                        color: lightTheme.onPrimaryContainer,
                         fontWeight: FontWeight.w700,
                       ),
                       onTap: () {

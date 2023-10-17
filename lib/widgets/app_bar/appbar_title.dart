@@ -30,7 +30,7 @@ class AppbarTitle extends StatelessWidget {
           text,
           style: textTheme.titleMedium!.copyWith(
             fontSize: 18.fSize,
-            color: defaultColors.onPrimary,
+            color: lightTheme.onPrimary,
           ),
         ),
       ),

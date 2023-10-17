@@ -55,7 +55,7 @@ class ExpiringSubscriptionsScreen
                       padding: EdgeInsets.symmetric(
                           horizontal: 10.h, vertical: 20.v),
                       decoration: BoxDecoration(
-                          color: defaultColors.onPrimaryContainer,
+                          color: lightTheme.onPrimaryContainer,
                           border: Border.all(
                             color: const Color(0xFFB9BCC3),
                             width: 1.h,
@@ -89,7 +89,7 @@ class ExpiringSubscriptionsScreen
                                           child: Text('12가 3456',
                                               style:
                                                   textTheme.bodySmall!.copyWith(
-                                                color: defaultColors.onPrimary
+                                                color: lightTheme.onPrimary
                                                     .withOpacity(0.4),
                                               )))
                                     ])),
@@ -102,7 +102,7 @@ class ExpiringSubscriptionsScreen
                                     children: [
                                       Text('월 결제 금액',
                                           style: textTheme.bodyLarge!.copyWith(
-                                            color: defaultColors.onPrimary
+                                            color: lightTheme.onPrimary
                                                 .withOpacity(0.4),
                                           )),
                                       Text('150,000 원',
@@ -117,7 +117,7 @@ class ExpiringSubscriptionsScreen
                                     children: [
                                       Text('구독',
                                           style: textTheme.bodyLarge!.copyWith(
-                                            color: defaultColors.onPrimary
+                                            color: lightTheme.onPrimary
                                                 .withOpacity(0.4),
                                           )),
                                       Text('2023.07.01~2023.08.01',
@@ -132,7 +132,7 @@ class ExpiringSubscriptionsScreen
                                     children: [
                                       Text('해지 예정일',
                                           style: textTheme.bodyLarge!.copyWith(
-                                            color: defaultColors.onPrimary
+                                            color: lightTheme.onPrimary
                                                 .withOpacity(0.4),
                                           )),
                                       Text('2023.08.20',
@@ -144,7 +144,7 @@ class ExpiringSubscriptionsScreen
                                 text: '해지 취소',
                                 margin: EdgeInsets.only(top: 21.v, right: 9.h),
                                 buttonStyle: ElevatedButton.styleFrom(
-                                  backgroundColor: defaultColors.primary,
+                                  backgroundColor: lightTheme.primary,
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(5.h),
                                   ),

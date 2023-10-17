@@ -29,12 +29,12 @@ class ListviewItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: defaultColors.onPrimaryContainer,
+        color: lightTheme.onPrimaryContainer,
         borderRadius: BorderRadiusStyle.roundedBorder10,
       ),
       child: Container(
         decoration: BoxDecoration(
-          color: defaultColors.onPrimaryContainer,
+          color: lightTheme.onPrimaryContainer,
           boxShadow: [
             BoxShadow(
               color: Colors.black.withOpacity(0.1),
@@ -55,7 +55,7 @@ class ListviewItemWidget extends StatelessWidget {
               height: 75.v,
               width: 9.h,
               decoration: BoxDecoration(
-                color: defaultColors.primary,
+                color: lightTheme.primary,
                 borderRadius: BorderRadius.horizontal(
                   left: Radius.circular(10.h),
                 ),

@@ -68,7 +68,7 @@ class SendBirdChatPage extends StatelessWidget {
                     width: 95.h,
                     text: '안녕하세요',
                     buttonStyle: ElevatedButton.styleFrom(
-                      backgroundColor: defaultColors.primary,
+                      backgroundColor: lightTheme.primary,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(17.h),
                       ),
@@ -104,7 +104,7 @@ class SendBirdChatPage extends StatelessWidget {
                             vertical: 6.v,
                           ),
                           decoration: BoxDecoration(
-                            color: defaultColors.primary,
+                            color: lightTheme.primary,
                             borderRadius: BorderRadiusStyle.roundedBorder15,
                           ),
                           child: SizedBox(
@@ -229,7 +229,7 @@ class SendBirdChatPage extends StatelessWidget {
                                       text: '네 깨끗하게 사용할게요',
                                       margin: EdgeInsets.only(left: 5.h),
                                       buttonStyle: ElevatedButton.styleFrom(
-                                        backgroundColor: defaultColors.primary,
+                                        backgroundColor: lightTheme.primary,
                                         shape: RoundedRectangleBorder(
                                           borderRadius:
                                               BorderRadius.circular(17.h),

@@ -86,7 +86,7 @@ class SigninPageScreen extends GetWidget<SigninPageController> {
                 height: 48.v,
                 text: '로그인',
                 buttonStyle: ElevatedButton.styleFrom(
-                  backgroundColor: defaultColors.primary,
+                  backgroundColor: lightTheme.primary,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8.h),
                   ),

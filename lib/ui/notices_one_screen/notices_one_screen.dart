@@ -49,7 +49,7 @@ class NoticesOneScreen extends GetWidget<NoticesOneController> {
                       SizedBox(height: 3.v),
                       Text('2023.08.23',
                           style: textTheme.bodySmall!.copyWith(
-                            color: defaultColors.onPrimary.withOpacity(0.4),
+                            color: lightTheme.onPrimary.withOpacity(0.4),
                           ))
                     ])),
             Expanded(

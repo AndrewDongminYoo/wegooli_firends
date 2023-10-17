@@ -113,7 +113,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                               child: Text(
                                 '1/3',
                                 style: textTheme.bodySmall!.copyWith(
-                                  color: defaultColors.onPrimaryContainer,
+                                  color: lightTheme.onPrimaryContainer,
                                   fontSize: 10.fSize,
                                 ),
                               ),
@@ -137,7 +137,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                     Container(
                       padding: EdgeInsets.symmetric(horizontal: 10.h),
                       decoration: BoxDecoration(
-                        color: defaultColors.onPrimaryContainer,
+                        color: lightTheme.onPrimaryContainer,
                         border: Border.all(
                           color: const Color(0x33A4A8AF),
                           width: 1.h,
@@ -190,7 +190,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                       margin: EdgeInsets.only(left: 16.h),
                       padding: EdgeInsets.symmetric(vertical: 13.v),
                       decoration: BoxDecoration(
-                        color: defaultColors.onPrimaryContainer,
+                        color: lightTheme.onPrimaryContainer,
                         border: Border.all(
                           color: const Color(0x33A4A8AF),
                           width: 1.h,
@@ -246,7 +246,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                   vertical: 15.v,
                 ),
                 decoration: BoxDecoration(
-                  color: defaultColors.onPrimaryContainer,
+                  color: lightTheme.onPrimaryContainer,
                   border: Border.all(
                     color: const Color(0x33A4A8AF),
                     width: 1.h,

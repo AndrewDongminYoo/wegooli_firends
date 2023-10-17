@@ -58,7 +58,7 @@ class ContactUsEmptyHistoryScreen
         bottomNavigationBar: Container(
           margin: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 29.v),
           decoration: BoxDecoration(
-            color: defaultColors.onPrimaryContainer,
+            color: lightTheme.onPrimaryContainer,
             boxShadow: [
               BoxShadow(
                 color: Colors.black.withOpacity(0.1),

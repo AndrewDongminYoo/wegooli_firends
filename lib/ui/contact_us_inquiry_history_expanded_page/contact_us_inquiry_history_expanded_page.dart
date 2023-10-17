@@ -56,8 +56,8 @@ class ContactUsInquiryHistoryExpandedPage extends StatelessWidget {
                                   Text(
                                     '2023.08.23',
                                     style: textTheme.bodySmall!.copyWith(
-                                      color: defaultColors.onPrimary
-                                          .withOpacity(0.4),
+                                      color:
+                                          lightTheme.onPrimary.withOpacity(0.4),
                                     ),
                                   ),
                                 ],
@@ -113,7 +113,7 @@ class ContactUsInquiryHistoryExpandedPage extends StatelessWidget {
                                     Text(
                                       '2023.08.23',
                                       style: textTheme.bodySmall!.copyWith(
-                                        color: defaultColors.onPrimary
+                                        color: lightTheme.onPrimary
                                             .withOpacity(0.4),
                                       ),
                                     ),
@@ -236,7 +236,7 @@ class ContactUsInquiryHistoryExpandedPage extends StatelessWidget {
                                             '2023.08.23',
                                             style:
                                                 textTheme.bodySmall!.copyWith(
-                                              color: defaultColors.onPrimary
+                                              color: lightTheme.onPrimary
                                                   .withOpacity(0.4),
                                             ),
                                           ),
@@ -277,7 +277,7 @@ class ContactUsInquiryHistoryExpandedPage extends StatelessWidget {
                                 vertical: 29.v,
                               ),
                               decoration: BoxDecoration(
-                                color: defaultColors.onPrimaryContainer,
+                                color: lightTheme.onPrimaryContainer,
                                 boxShadow: [
                                   BoxShadow(
                                     color: Colors.black.withOpacity(0.1),

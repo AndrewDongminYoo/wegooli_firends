@@ -93,7 +93,7 @@ class CustomTextFormField extends StatelessWidget {
         suffixIconConstraints: suffixConstraints,
         isDense: true,
         contentPadding: contentPadding ?? EdgeInsets.symmetric(vertical: 9.v),
-        fillColor: fillColor ?? defaultColors.onPrimaryContainer,
+        fillColor: fillColor ?? lightTheme.onPrimaryContainer,
         filled: filled,
         border: borderDecoration ??
             OutlineInputBorder(
@@ -112,7 +112,7 @@ class CustomTextFormField extends StatelessWidget {
         focusedBorder: borderDecoration ??
             OutlineInputBorder(
               borderSide: BorderSide(
-                color: defaultColors.primary,
+                color: lightTheme.primary,
               ),
             ),
       );

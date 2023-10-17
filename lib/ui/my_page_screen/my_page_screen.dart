@@ -73,7 +73,7 @@ class MyPageScreen extends GetWidget<MyPageController> {
                                       Text(
                                         '010-1234-5678',
                                         style: textTheme.bodySmall!.copyWith(
-                                          color: defaultColors.onPrimary
+                                          color: lightTheme.onPrimary
                                               .withOpacity(0.4),
                                         ),
                                       ),
@@ -81,7 +81,7 @@ class MyPageScreen extends GetWidget<MyPageController> {
                                       Text(
                                         'ydm2790@gmail.com',
                                         style: textTheme.bodySmall!.copyWith(
-                                          color: defaultColors.onPrimary
+                                          color: lightTheme.onPrimary
                                               .withOpacity(0.4),
                                         ),
                                       ),

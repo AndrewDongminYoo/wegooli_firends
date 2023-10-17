@@ -70,8 +70,8 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                   Text(
                                     '12가 3456',
                                     style: textTheme.bodySmall!.copyWith(
-                                      color: defaultColors.onPrimary
-                                          .withOpacity(0.4),
+                                      color:
+                                          lightTheme.onPrimary.withOpacity(0.4),
                                     ),
                                   ),
                                   SizedBox(height: 1.v),
@@ -118,7 +118,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                           Text(
                             '상태',
                             style: textTheme.bodySmall!.copyWith(
-                              color: defaultColors.onPrimary.withOpacity(0.4),
+                              color: lightTheme.onPrimary.withOpacity(0.4),
                             ),
                           ),
                           Padding(
@@ -126,7 +126,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                             child: Text(
                               '|',
                               style: textTheme.bodySmall!.copyWith(
-                                color: defaultColors.onPrimary.withOpacity(0.4),
+                                color: lightTheme.onPrimary.withOpacity(0.4),
                               ),
                             ),
                           ),
@@ -183,7 +183,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                               value: 0.57,
                               backgroundColor: const Color(0x33A4A8AF),
                               valueColor: AlwaysStoppedAnimation<Color>(
-                                defaultColors.primary,
+                                lightTheme.primary,
                               ),
                             ),
                           ),
@@ -201,13 +201,13 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                             Text(
                               '12:00',
                               style: textTheme.bodySmall!.copyWith(
-                                color: defaultColors.onPrimary.withOpacity(0.4),
+                                color: lightTheme.onPrimary.withOpacity(0.4),
                               ),
                             ),
                             Text(
                               '13:00',
                               style: textTheme.bodySmall!.copyWith(
-                                color: defaultColors.onPrimary.withOpacity(0.4),
+                                color: lightTheme.onPrimary.withOpacity(0.4),
                               ),
                             ),
                           ],
@@ -268,7 +268,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                                     padding:
                                                         EdgeInsets.all(5.h),
                                                     decoration: BoxDecoration(
-                                                      color: defaultColors
+                                                      color: lightTheme
                                                           .onPrimaryContainer,
                                                       boxShadow: [
                                                         BoxShadow(
@@ -291,7 +291,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                                       height: 120.adaptSize,
                                                       width: 120.adaptSize,
                                                       decoration: BoxDecoration(
-                                                        color: defaultColors
+                                                        color: lightTheme
                                                             .onPrimaryContainer,
                                                         borderRadius:
                                                             BorderRadius
@@ -347,7 +347,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                                     padding:
                                                         EdgeInsets.all(5.h),
                                                     decoration: BoxDecoration(
-                                                      color: defaultColors
+                                                      color: lightTheme
                                                           .onPrimaryContainer,
                                                       boxShadow: [
                                                         BoxShadow(
@@ -370,7 +370,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                                       height: 120.adaptSize,
                                                       width: 120.adaptSize,
                                                       decoration: BoxDecoration(
-                                                        color: defaultColors
+                                                        color: lightTheme
                                                             .onPrimaryContainer,
                                                         borderRadius:
                                                             BorderRadius
@@ -437,7 +437,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                                     padding:
                                                         EdgeInsets.all(5.h),
                                                     decoration: BoxDecoration(
-                                                      color: defaultColors
+                                                      color: lightTheme
                                                           .onPrimaryContainer,
                                                       boxShadow: [
                                                         BoxShadow(
@@ -460,7 +460,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                                       height: 120.adaptSize,
                                                       width: 120.adaptSize,
                                                       decoration: BoxDecoration(
-                                                        color: defaultColors
+                                                        color: lightTheme
                                                             .onPrimaryContainer,
                                                         borderRadius:
                                                             BorderRadius
@@ -508,8 +508,8 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                             margin: EdgeInsets.only(left: 20.h),
                                             padding: EdgeInsets.all(5.h),
                                             decoration: BoxDecoration(
-                                              color: defaultColors
-                                                  .onPrimaryContainer,
+                                              color:
+                                                  lightTheme.onPrimaryContainer,
                                               boxShadow: [
                                                 BoxShadow(
                                                   color: Colors.black
@@ -584,7 +584,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                       width: 189.h,
                                       text: '홍길동님이 사용 중 입니다.',
                                       buttonStyle: ElevatedButton.styleFrom(
-                                        backgroundColor: defaultColors.onPrimary
+                                        backgroundColor: lightTheme.onPrimary
                                             .withOpacity(0.4),
                                         shape: RoundedRectangleBorder(
                                           borderRadius:
@@ -593,7 +593,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                       ),
                                       buttonTextStyle:
                                           textTheme.bodyLarge!.copyWith(
-                                        color: defaultColors.onPrimaryContainer,
+                                        color: lightTheme.onPrimaryContainer,
                                       ),
                                     ),
                                     SizedBox(height: 122.v),
@@ -605,7 +605,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                           vertical: 10.v,
                                         ),
                                         decoration: BoxDecoration(
-                                          color: defaultColors.primary,
+                                          color: lightTheme.primary,
                                           boxShadow: [
                                             BoxShadow(
                                               color:

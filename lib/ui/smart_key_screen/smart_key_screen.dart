@@ -70,7 +70,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                                     Text(
                                       '12가 3456',
                                       style: textTheme.bodySmall!.copyWith(
-                                        color: defaultColors.onPrimary
+                                        color: lightTheme.onPrimary
                                             .withOpacity(0.4),
                                       ),
                                     ),
@@ -118,7 +118,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                             Text(
                               '상태',
                               style: textTheme.bodySmall!.copyWith(
-                                color: defaultColors.onPrimary.withOpacity(0.4),
+                                color: lightTheme.onPrimary.withOpacity(0.4),
                               ),
                             ),
                             Padding(
@@ -126,8 +126,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                               child: Text(
                                 '|',
                                 style: textTheme.bodySmall!.copyWith(
-                                  color:
-                                      defaultColors.onPrimary.withOpacity(0.4),
+                                  color: lightTheme.onPrimary.withOpacity(0.4),
                                 ),
                               ),
                             ),
@@ -411,7 +410,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                                 margin: EdgeInsets.only(left: 20.h),
                                 padding: EdgeInsets.all(5.h),
                                 decoration: BoxDecoration(
-                                  color: defaultColors.onPrimaryContainer,
+                                  color: lightTheme.onPrimaryContainer,
                                   boxShadow: [
                                     BoxShadow(
                                       color: Colors.black.withOpacity(0.1),
@@ -472,7 +471,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                               vertical: 11.v,
                             ),
                             decoration: BoxDecoration(
-                              color: defaultColors.primary,
+                              color: lightTheme.primary,
                               boxShadow: [
                                 BoxShadow(
                                   color: Colors.black.withOpacity(0.1),

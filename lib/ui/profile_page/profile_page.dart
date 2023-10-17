@@ -71,7 +71,7 @@ class ProfilePage extends StatelessWidget {
                                       SizedBox(height: 5.v),
                                       Text('010-1234-5678',
                                           style: textTheme.bodySmall!.copyWith(
-                                            color: defaultColors.onPrimary
+                                            color: lightTheme.onPrimary
                                                 .withOpacity(0.4),
                                           ))
                                     ])),
@@ -180,12 +180,9 @@ class ProfilePage extends StatelessWidget {
                               '· 선택 항목에 동의하지 않아도 서비스 이용은 가능합니다.\n· 수신을 거부하시면 이벤트 관련 안내를 받을 수 없습니다.',
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
-                              style: textTheme.bodySmall!
-                                  .copyWith(
-                                    color: defaultColors.onPrimary
-                                        .withOpacity(0.4),
-                                  )
-                                  .copyWith(height: 1.50)))),
+                              style: textTheme.bodySmall!.copyWith(
+                                  color: lightTheme.onPrimary.withOpacity(0.4),
+                                  height: 1.50)))),
                   SizedBox(height: 21.v),
                   Container(
                       height: 8.v,
@@ -219,13 +216,13 @@ class ProfilePage extends StatelessWidget {
                   SizedBox(height: 21.v),
                   Text('회원 탈퇴',
                       style: textTheme.bodySmall!.copyWith(
-                        color: defaultColors.onPrimary.withOpacity(0.4),
+                        color: lightTheme.onPrimary.withOpacity(0.4),
                       )),
                   SizedBox(height: 1.v),
                   SizedBox(
                       width: 45.h,
-                      child: Divider(
-                          color: defaultColors.onPrimary.withOpacity(0.4)))
+                      child:
+                          Divider(color: lightTheme.onPrimary.withOpacity(0.4)))
                 ],
               ),
             ),

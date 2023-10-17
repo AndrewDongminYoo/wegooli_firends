@@ -27,7 +27,7 @@ class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
             margin: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 238.v),
             padding: EdgeInsets.all(20.h),
             decoration: BoxDecoration(
-                color: defaultColors.onPrimaryContainer,
+                color: lightTheme.onPrimaryContainer,
                 borderRadius: BorderRadiusStyle.roundedBorder10),
             child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -55,7 +55,7 @@ class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
                                 height: 75.v,
                                 width: 288.h,
                                 decoration: BoxDecoration(
-                                    color: defaultColors.onPrimaryContainer,
+                                    color: lightTheme.onPrimaryContainer,
                                     borderRadius: BorderRadius.circular(10.h),
                                     boxShadow: [
                                       BoxShadow(
@@ -72,7 +72,7 @@ class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
                                             .colorScheme.onPrimaryContainer,
                                         valueColor:
                                             AlwaysStoppedAnimation<Color>(
-                                                defaultColors.primary))))),
+                                                lightTheme.primary))))),
                         Align(
                             child: SizedBox(
                                 height: 43.v,
@@ -138,7 +138,7 @@ class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
                                 height: 75.v,
                                 width: 288.h,
                                 decoration: BoxDecoration(
-                                    color: defaultColors.onPrimaryContainer,
+                                    color: lightTheme.onPrimaryContainer,
                                     borderRadius: BorderRadius.circular(10.h),
                                     boxShadow: [
                                       BoxShadow(
@@ -182,7 +182,7 @@ class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
                                 height: 75.v,
                                 width: 288.h,
                                 decoration: BoxDecoration(
-                                    color: defaultColors.onPrimaryContainer,
+                                    color: lightTheme.onPrimaryContainer,
                                     borderRadius: BorderRadius.circular(10.h),
                                     boxShadow: [
                                       BoxShadow(

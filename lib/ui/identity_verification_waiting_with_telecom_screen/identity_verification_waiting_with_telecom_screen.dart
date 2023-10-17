@@ -83,7 +83,7 @@ class IdentityVerificationWaitingWithTelecomScreen
                   SizedBox(height: 3.v),
                   Text('만 26세 미만은 가입이 제한됩니다.',
                       style: textTheme.bodySmall!.copyWith(
-                        color: defaultColors.primaryContainer,
+                        color: lightTheme.primaryContainer,
                       ))
                 ]),
                 Container(
@@ -143,7 +143,7 @@ class IdentityVerificationWaitingWithTelecomScreen
                     ),
                   ),
                   buttonTextStyle: textTheme.titleSmall!.copyWith(
-                    color: defaultColors.onPrimaryContainer,
+                    color: lightTheme.onPrimaryContainer,
                     fontWeight: FontWeight.w700,
                   )),
               SizedBox(height: 20.v),
@@ -166,7 +166,7 @@ class IdentityVerificationWaitingWithTelecomScreen
                             )),
                         Text('3:00',
                             style: textTheme.bodyLarge!.copyWith(
-                              color: defaultColors.primaryContainer,
+                              color: lightTheme.primaryContainer,
                             ))
                       ])),
               SizedBox(height: 5.v)
@@ -174,13 +174,13 @@ class IdentityVerificationWaitingWithTelecomScreen
         bottomNavigationBar: Container(
           margin: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 16.v),
           decoration: BoxDecoration(
-            color: defaultColors.onPrimaryContainer,
+            color: lightTheme.onPrimaryContainer,
           ),
           child: CustomElevatedButton(
               height: 48.v,
               text: '인증하기',
               buttonStyle: ElevatedButton.styleFrom(
-                backgroundColor: defaultColors.primary,
+                backgroundColor: lightTheme.primary,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8.h),
                 ),

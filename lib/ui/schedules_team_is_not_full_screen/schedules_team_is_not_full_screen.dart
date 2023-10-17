@@ -128,7 +128,7 @@ class SchedulesTeamIsNotFullScreen
                               vertical: 22.v,
                             ),
                             decoration: BoxDecoration(
-                              color: defaultColors.onPrimaryContainer,
+                              color: lightTheme.onPrimaryContainer,
                               border: Border.all(
                                 color: const Color(0x33A4A8AF),
                                 width: 1.h,

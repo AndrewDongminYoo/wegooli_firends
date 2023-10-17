@@ -26,7 +26,7 @@ class UnsubscribeConfirmDialog extends StatelessWidget {
         child: Container(
             margin: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 267.v),
             decoration: BoxDecoration(
-                color: defaultColors.onPrimaryContainer,
+                color: lightTheme.onPrimaryContainer,
                 borderRadius: BorderRadiusStyle.roundedBorder10),
             child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -79,7 +79,7 @@ class UnsubscribeConfirmDialog extends StatelessWidget {
                         width: 164.h,
                         text: '해지하기',
                         buttonStyle: ElevatedButton.styleFrom(
-                          backgroundColor: defaultColors.primary,
+                          backgroundColor: lightTheme.primary,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.only(
                               bottomRight: Radius.circular(

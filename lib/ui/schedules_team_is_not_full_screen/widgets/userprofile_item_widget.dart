@@ -36,7 +36,7 @@ class UserprofileItemWidget extends StatelessWidget {
             width: 50.adaptSize,
             padding: EdgeInsets.all(4.h),
             decoration: BoxDecoration(
-              color: defaultColors.primary,
+              color: lightTheme.primary,
               borderRadius: BorderRadiusStyle.circleBorder25,
             ),
             child: CustomImageView(

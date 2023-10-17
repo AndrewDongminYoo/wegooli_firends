@@ -48,7 +48,7 @@ class ListItemWidget extends StatelessWidget {
                   Text(
                     '2023.08.23',
                     style: textTheme.bodySmall!.copyWith(
-                      color: defaultColors.onPrimary.withOpacity(0.4),
+                      color: lightTheme.onPrimary.withOpacity(0.4),
                     ),
                   ),
                 ],

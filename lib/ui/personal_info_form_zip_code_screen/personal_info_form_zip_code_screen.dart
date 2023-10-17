@@ -86,8 +86,8 @@ class PersonalInfoFormZipCodeScreen
                                           buttonTextStyle: theme
                                               .textTheme.titleSmall!
                                               .copyWith(
-                                            color: defaultColors
-                                                .onPrimaryContainer,
+                                            color:
+                                                lightTheme.onPrimaryContainer,
                                             fontWeight: FontWeight.w700,
                                           )))
                                 ]),
@@ -165,7 +165,7 @@ class PersonalInfoFormZipCodeScreen
         bottomNavigationBar: Container(
           margin: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 16.v),
           decoration: BoxDecoration(
-            color: defaultColors.onPrimaryContainer,
+            color: lightTheme.onPrimaryContainer,
           ),
           child: CustomElevatedButton(
               height: 48.v,

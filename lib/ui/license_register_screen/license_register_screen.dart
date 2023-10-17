@@ -64,7 +64,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                   clipBehavior: Clip.antiAlias,
                                                   elevation: 0,
                                                   margin: EdgeInsets.zero,
-                                                  color: defaultColors
+                                                  color: lightTheme
                                                       .onPrimaryContainer,
                                                   shape: RoundedRectangleBorder(
                                                       borderRadius:
@@ -78,7 +78,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                               horizontal: 10.h,
                                                               vertical: 9.v),
                                                       decoration: BoxDecoration(
-                                                          color: defaultColors
+                                                          color: lightTheme
                                                               .onPrimaryContainer,
                                                           borderRadius:
                                                               BorderRadiusStyle
@@ -131,13 +131,13 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                                         decoration: BoxDecoration(
                                                                             color: const Color(0xFF464A70),
                                                                             border: Border.all(
-                                                                              color: defaultColors.onPrimaryContainer,
+                                                                              color: lightTheme.onPrimaryContainer,
                                                                               width: 1.h,
                                                                             ),
                                                                             borderRadius: BorderRadiusStyle.roundedBorder10),
                                                                         child: Text('B',
                                                                             style: textTheme.bodySmall!.copyWith(
-                                                                              color: defaultColors.primary,
+                                                                              color: lightTheme.primary,
                                                                               fontSize: 9.fSize,
                                                                             ))),
                                                                     SizedBox(
@@ -158,13 +158,13 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                                                   decoration: BoxDecoration(
                                                                                       color: const Color(0xFF464A70),
                                                                                       border: Border.all(
-                                                                                        color: defaultColors.onPrimaryContainer,
+                                                                                        color: lightTheme.onPrimaryContainer,
                                                                                         width: 1.h,
                                                                                       ),
                                                                                       borderRadius: BorderRadiusStyle.roundedBorder10),
                                                                                   child: Text('C',
                                                                                       style: textTheme.bodySmall!.copyWith(
-                                                                                        color: defaultColors.primary,
+                                                                                        color: lightTheme.primary,
                                                                                         fontSize: 9.fSize,
                                                                                       ))),
                                                                               CustomIconButton(height: 24.adaptSize, width: 24.adaptSize, child: CustomImageView(svgPath: ImageConstant.imgFrame))
@@ -254,23 +254,13 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                                         )),
                                                                     Align(
                                                                         alignment:
-                                                                            Alignment.centerRight,
+                                                                            Alignment
+                                                                                .centerRight,
                                                                         child: Container(
-                                                                            width: 41.h,
+                                                                            width:
+                                                                                41.h,
                                                                             margin: EdgeInsets.only(top: 37.v, right: 18.h),
-                                                                            child: Text('20XX.01.01\n~20XX.12.31',
-                                                                                maxLines: 2,
-                                                                                overflow: TextOverflow.ellipsis,
-                                                                                textAlign: TextAlign.right,
-                                                                                style: TextStyle(
-                                                                                  color: const Color(0xFF686A71),
-                                                                                  fontSize: 7.fSize,
-                                                                                  fontWeight: FontWeight.w400,
-                                                                                )
-                                                                                    .copyWith(
-                                                                                      fontFamily: 'SUIT',
-                                                                                    )
-                                                                                    .copyWith(height: 1.43)))),
+                                                                            child: Text('20XX.01.01\n~20XX.12.31', maxLines: 2, overflow: TextOverflow.ellipsis, textAlign: TextAlign.right, style: TextStyle(color: const Color(0xFF686A71), fontSize: 7.fSize, fontWeight: FontWeight.w400, fontFamily: 'SUIT', height: 1.43)))),
                                                                     SizedBox(
                                                                         height:
                                                                             8.v),
@@ -376,7 +366,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                                         color: const Color(0xFF464A70),
                                                                         border: Border.all(
                                                                           color:
-                                                                              defaultColors.onPrimaryContainer,
+                                                                              lightTheme.onPrimaryContainer,
                                                                           width:
                                                                               1.h,
                                                                         ),
@@ -384,7 +374,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                                     child: Text('D',
                                                                         style: textTheme.bodySmall!.copyWith(
                                                                           color:
-                                                                              defaultColors.primary,
+                                                                              lightTheme.primary,
                                                                           fontSize:
                                                                               9.fSize,
                                                                         ))))
@@ -401,7 +391,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                       color: const Color(
                                                           0xFF464A70),
                                                       border: Border.all(
-                                                        color: defaultColors
+                                                        color: lightTheme
                                                             .onPrimaryContainer,
                                                         width: 1.h,
                                                       ),
@@ -412,8 +402,8 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                       style: theme
                                                           .textTheme.bodySmall!
                                                           .copyWith(
-                                                        color: defaultColors
-                                                            .primary,
+                                                        color:
+                                                            lightTheme.primary,
                                                         fontSize: 9.fSize,
                                                       ))))
                                         ])),
@@ -466,7 +456,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                       color: const Color(
                                                           0xFF464A70),
                                                       border: Border.all(
-                                                        color: defaultColors
+                                                        color: lightTheme
                                                             .onPrimaryContainer,
                                                         width: 1.h,
                                                       ),
@@ -477,8 +467,8 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                       style: theme
                                                           .textTheme.bodySmall!
                                                           .copyWith(
-                                                        color: defaultColors
-                                                            .primary,
+                                                        color:
+                                                            lightTheme.primary,
                                                         fontSize: 9.fSize,
                                                       ))))
                                         ])),
@@ -587,7 +577,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                                     .textTheme
                                                                     .bodySmall!
                                                                     .copyWith(
-                                                                  color: defaultColors
+                                                                  color: lightTheme
                                                                       .primary,
                                                                   fontSize:
                                                                       9.fSize,
@@ -652,7 +642,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                       color: const Color(
                                                           0xFF464A70),
                                                       border: Border.all(
-                                                        color: defaultColors
+                                                        color: lightTheme
                                                             .onPrimaryContainer,
                                                         width: 1.h,
                                                       ),
@@ -663,8 +653,8 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                       style: theme
                                                           .textTheme.bodySmall!
                                                           .copyWith(
-                                                        color: defaultColors
-                                                            .primary,
+                                                        color:
+                                                            lightTheme.primary,
                                                         fontSize: 9.fSize,
                                                       ))))
                                         ])),
@@ -707,7 +697,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                       color: const Color(
                                                           0xFF464A70),
                                                       border: Border.all(
-                                                        color: defaultColors
+                                                        color: lightTheme
                                                             .onPrimaryContainer,
                                                         width: 1.h,
                                                       ),
@@ -718,8 +708,8 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                       style: theme
                                                           .textTheme.bodySmall!
                                                           .copyWith(
-                                                        color: defaultColors
-                                                            .primary,
+                                                        color:
+                                                            lightTheme.primary,
                                                         fontSize: 9.fSize,
                                                       ))))
                                         ]))

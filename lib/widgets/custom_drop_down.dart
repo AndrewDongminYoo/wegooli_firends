@@ -71,7 +71,7 @@ class CustomDropDown extends StatelessWidget {
           autofocus: autofocus!,
           style: textStyle ??
               textTheme.titleMedium!.copyWith(
-                color: defaultColors.onPrimary.withOpacity(0.4),
+                color: lightTheme.onPrimary.withOpacity(0.4),
               ),
           items: items?.map((DropdownData item) {
             return DropdownMenuItem<DropdownData>(

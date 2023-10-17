@@ -70,7 +70,7 @@ class IdentityVerificationWaitingScreen
                                   SizedBox(height: 3.v),
                                   Text('만 26세 미만은 가입이 제한됩니다.',
                                       style: textTheme.bodySmall!.copyWith(
-                                        color: defaultColors.primaryContainer,
+                                        color: lightTheme.primaryContainer,
                                       ))
                                 ])),
                         Align(
@@ -172,7 +172,7 @@ class IdentityVerificationWaitingScreen
                         ),
                       ),
                       buttonTextStyle: textTheme.titleSmall!.copyWith(
-                        color: defaultColors.onPrimaryContainer,
+                        color: lightTheme.onPrimaryContainer,
                         fontWeight: FontWeight.w700,
                       )),
                   SizedBox(height: 20.v),
@@ -195,7 +195,7 @@ class IdentityVerificationWaitingScreen
                                 )),
                             Text('3:00',
                                 style: textTheme.bodyLarge!.copyWith(
-                                  color: defaultColors.primaryContainer,
+                                  color: lightTheme.primaryContainer,
                                 ))
                           ])),
                   SizedBox(height: 5.v)

@@ -70,8 +70,8 @@ class SmartKeyDetailsPage extends StatelessWidget {
                               children: [
                                 Text('모델',
                                     style: textTheme.bodyLarge!.copyWith(
-                                      color: defaultColors.onPrimary
-                                          .withOpacity(0.4),
+                                      color:
+                                          lightTheme.onPrimary.withOpacity(0.4),
                                     )),
                                 Text('레이 3세대', style: textTheme.bodyLarge)
                               ])),
@@ -83,8 +83,8 @@ class SmartKeyDetailsPage extends StatelessWidget {
                               children: [
                                 Text('차종',
                                     style: textTheme.bodyLarge!.copyWith(
-                                      color: defaultColors.onPrimary
-                                          .withOpacity(0.4),
+                                      color:
+                                          lightTheme.onPrimary.withOpacity(0.4),
                                     )),
                                 Text('소형', style: textTheme.bodyLarge)
                               ])),
@@ -96,8 +96,8 @@ class SmartKeyDetailsPage extends StatelessWidget {
                               children: [
                                 Text('연료',
                                     style: textTheme.bodyLarge!.copyWith(
-                                      color: defaultColors.onPrimary
-                                          .withOpacity(0.4),
+                                      color:
+                                          lightTheme.onPrimary.withOpacity(0.4),
                                     )),
                                 Text('휘발유', style: textTheme.bodyLarge)
                               ])),
@@ -123,8 +123,8 @@ class SmartKeyDetailsPage extends StatelessWidget {
                               children: [
                                 Text('엔진오일 점검일',
                                     style: textTheme.bodyLarge!.copyWith(
-                                      color: defaultColors.onPrimary
-                                          .withOpacity(0.4),
+                                      color:
+                                          lightTheme.onPrimary.withOpacity(0.4),
                                     )),
                                 Text('2023.08.01', style: textTheme.bodyLarge)
                               ])),
@@ -136,8 +136,8 @@ class SmartKeyDetailsPage extends StatelessWidget {
                               children: [
                                 Text('타이어 점검일',
                                     style: textTheme.bodyLarge!.copyWith(
-                                      color: defaultColors.onPrimary
-                                          .withOpacity(0.4),
+                                      color:
+                                          lightTheme.onPrimary.withOpacity(0.4),
                                     )),
                                 Text('2023.08.01', style: textTheme.bodyLarge)
                               ])),
@@ -149,8 +149,8 @@ class SmartKeyDetailsPage extends StatelessWidget {
                               children: [
                                 Text('배터리 상태',
                                     style: textTheme.bodyLarge!.copyWith(
-                                      color: defaultColors.onPrimary
-                                          .withOpacity(0.4),
+                                      color:
+                                          lightTheme.onPrimary.withOpacity(0.4),
                                     )),
                                 Text('양호', style: textTheme.bodyLarge)
                               ])),
@@ -162,8 +162,8 @@ class SmartKeyDetailsPage extends StatelessWidget {
                               children: [
                                 Text('인원',
                                     style: textTheme.bodyLarge!.copyWith(
-                                      color: defaultColors.onPrimary
-                                          .withOpacity(0.4),
+                                      color:
+                                          lightTheme.onPrimary.withOpacity(0.4),
                                     )),
                                 Text('4인승', style: textTheme.bodyLarge)
                               ]))
@@ -171,7 +171,7 @@ class SmartKeyDetailsPage extends StatelessWidget {
         floatingActionButton: CustomFloatingButton(
           height: 70,
           width: 70,
-          backgroundColor: defaultColors.primary,
+          backgroundColor: lightTheme.primary,
           child: CustomImageView(
               svgPath: ImageConstant.imgContactsupport,
               height: 35.0.v,

@@ -28,7 +28,7 @@ class SchedulesSendInvitationLeaderOnlyDialog extends StatelessWidget {
         child: Container(
             margin: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 318.v),
             decoration: BoxDecoration(
-                color: defaultColors.onPrimaryContainer,
+                color: lightTheme.onPrimaryContainer,
                 borderRadius: BorderRadiusStyle.roundedBorder10),
             child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -65,7 +65,7 @@ class SchedulesSendInvitationLeaderOnlyDialog extends StatelessWidget {
                   CustomElevatedButton(
                       text: '복사하기',
                       buttonStyle: ElevatedButton.styleFrom(
-                        backgroundColor: defaultColors.primary,
+                        backgroundColor: lightTheme.primary,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.vertical(
                             bottom: Radius.circular(

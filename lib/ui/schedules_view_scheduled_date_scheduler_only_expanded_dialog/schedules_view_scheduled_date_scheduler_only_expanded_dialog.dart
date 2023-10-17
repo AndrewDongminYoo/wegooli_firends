@@ -31,7 +31,7 @@ class SchedulesViewScheduledDateSchedulerOnlyExpandedDialog
             margin: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 219.v),
             padding: EdgeInsets.all(20.h),
             decoration: BoxDecoration(
-                color: defaultColors.onPrimaryContainer,
+                color: lightTheme.onPrimaryContainer,
                 borderRadius: BorderRadiusStyle.roundedBorder10),
             child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -59,7 +59,7 @@ class SchedulesViewScheduledDateSchedulerOnlyExpandedDialog
                                 height: 113.v,
                                 width: 288.h,
                                 decoration: BoxDecoration(
-                                    color: defaultColors.onPrimaryContainer,
+                                    color: lightTheme.onPrimaryContainer,
                                     borderRadius: BorderRadius.circular(10.h),
                                     boxShadow: [
                                       BoxShadow(
@@ -76,7 +76,7 @@ class SchedulesViewScheduledDateSchedulerOnlyExpandedDialog
                                             .colorScheme.onPrimaryContainer,
                                         valueColor:
                                             AlwaysStoppedAnimation<Color>(
-                                                defaultColors.primary))))),
+                                                lightTheme.primary))))),
                         Align(
                             child: Padding(
                                 padding:
@@ -170,7 +170,7 @@ class SchedulesViewScheduledDateSchedulerOnlyExpandedDialog
                                 height: 75.v,
                                 width: 288.h,
                                 decoration: BoxDecoration(
-                                    color: defaultColors.onPrimaryContainer,
+                                    color: lightTheme.onPrimaryContainer,
                                     borderRadius: BorderRadius.circular(10.h),
                                     boxShadow: [
                                       BoxShadow(
@@ -214,7 +214,7 @@ class SchedulesViewScheduledDateSchedulerOnlyExpandedDialog
                                 height: 75.v,
                                 width: 288.h,
                                 decoration: BoxDecoration(
-                                    color: defaultColors.onPrimaryContainer,
+                                    color: lightTheme.onPrimaryContainer,
                                     borderRadius: BorderRadius.circular(10.h),
                                     boxShadow: [
                                       BoxShadow(

@@ -59,7 +59,7 @@ class CustomBottomBar extends StatelessWidget {
     return Container(
       height: 65.v,
       decoration: BoxDecoration(
-        color: defaultColors.onPrimaryContainer,
+        color: lightTheme.onPrimaryContainer,
         border: Border(
           top: BorderSide(
             color: const Color(0xFFF3F3F6),
@@ -91,14 +91,10 @@ class CustomBottomBar extends StatelessWidget {
                     padding: EdgeInsets.only(top: 7.v),
                     child: Text(
                       bottomMenuList[index].title ?? '',
-                      style: textTheme.bodySmall!
-                          .copyWith(
-                            color: const Color(0xFFB0B2BC),
-                            fontSize: 10.fSize,
-                          )
-                          .copyWith(
-                            color: const Color(0xFFB0B2BC),
-                          ),
+                      style: textTheme.bodySmall!.copyWith(
+                        fontSize: 10.fSize,
+                        color: const Color(0xFFB0B2BC),
+                      ),
                     ),
                   ),
                 ],
@@ -110,19 +106,16 @@ class CustomBottomBar extends StatelessWidget {
                     svgPath: bottomMenuList[index].activeIcon,
                     height: 20.adaptSize,
                     width: 20.adaptSize,
-                    color: defaultColors.onPrimary,
+                    color: lightTheme.onPrimary,
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: 7.v),
                     child: Text(
                       bottomMenuList[index].title ?? '',
-                      style: textTheme.bodySmall!
-                          .copyWith(
-                            fontSize: 10.fSize,
-                          )
-                          .copyWith(
-                            color: defaultColors.onPrimary,
-                          ),
+                      style: textTheme.bodySmall!.copyWith(
+                        fontSize: 10.fSize,
+                        color: lightTheme.onPrimary,
+                      ),
                     ),
                   ),
                 ],

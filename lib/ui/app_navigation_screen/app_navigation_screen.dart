@@ -36,13 +36,13 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
     mediaQueryData = MediaQuery.of(context);
     return SafeArea(
       child: Scaffold(
-        backgroundColor: defaultColors.onSecondary,
+        backgroundColor: lightTheme.onSecondary,
         body: SizedBox(
           width: 375.h,
           child: Column(children: [
             Container(
                 decoration: BoxDecoration(
-                  color: defaultColors.onSecondary,
+                  color: lightTheme.onSecondary,
                 ),
                 child: Column(children: [
                   Align(
@@ -50,25 +50,30 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                       child: Padding(
                           padding: EdgeInsets.symmetric(
                               horizontal: 20.h, vertical: 10.v),
-                          child: Text('Gateway',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 20.fSize,
-                                  fontFamily: 'Roboto',
-                                  fontWeight: FontWeight.w400)))),
+                          child: Text(
+                            'Gateway',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 20.fSize,
+                              fontFamily: 'Roboto',
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ))),
                   Align(
                       alignment: Alignment.centerLeft,
                       child: Padding(
                           padding: EdgeInsets.only(left: 20.h),
                           child: Text(
-                              "Check your app's UI from the below demo screens of your app.",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  color: const Color(0xFF888888),
-                                  fontSize: 16.fSize,
-                                  fontFamily: 'Roboto',
-                                  fontWeight: FontWeight.w400)))),
+                            "Check your app's UI from the below demo screens of your app.",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: const Color(0xFF888888),
+                              fontSize: 16.fSize,
+                              fontFamily: 'Roboto',
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ))),
                   SizedBox(height: 5.v),
                   Divider(height: 1.v, thickness: 1.v, color: Colors.black)
                 ])),
@@ -76,14 +81,14 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                 child: SingleChildScrollView(
                     child: Container(
                         decoration: BoxDecoration(
-                          color: defaultColors.onSecondary,
+                          color: lightTheme.onSecondary,
                         ),
                         child: Column(children: [
                           GestureDetector(
                             onTap: onTapIdentityVerificationWaiting,
                             child: Container(
                               decoration: BoxDecoration(
-                                color: defaultColors.onSecondary,
+                                color: lightTheme.onSecondary,
                               ),
                               child: Column(
                                 children: [
@@ -92,14 +97,16 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('Verification / Waiting',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 20.fSize,
-                                                  fontFamily: 'Roboto',
-                                                  fontWeight:
-                                                      FontWeight.w400)))),
+                                          child: Text(
+                                            'Verification / Waiting',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 20.fSize,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ))),
                                   SizedBox(height: 5.v),
                                   Divider(
                                       height: 1.v,
@@ -113,7 +120,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                             onTap: onTapSendInvitationLeaderOnly,
                             child: Container(
                               decoration: BoxDecoration(
-                                color: defaultColors.onSecondary,
+                                color: lightTheme.onSecondary,
                               ),
                               child: Column(
                                 children: [
@@ -122,14 +129,16 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('Send Invitation',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 20.fSize,
-                                                  fontFamily: 'Roboto',
-                                                  fontWeight:
-                                                      FontWeight.w400)))),
+                                          child: Text(
+                                            'Send Invitation',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 20.fSize,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ))),
                                   SizedBox(height: 5.v),
                                   Divider(
                                       height: 1.v,
@@ -143,7 +152,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                             onTap: onTapViewScheduledDateSchedulerOnly,
                             child: Container(
                               decoration: BoxDecoration(
-                                color: defaultColors.onSecondary,
+                                color: lightTheme.onSecondary,
                               ),
                               child: Column(
                                 children: [
@@ -152,14 +161,16 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('View Scheduled Date',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 20.fSize,
-                                                  fontFamily: 'Roboto',
-                                                  fontWeight:
-                                                      FontWeight.w400)))),
+                                          child: Text(
+                                            'View Scheduled Date',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 20.fSize,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ))),
                                   SizedBox(height: 5.v),
                                   Divider(
                                       height: 1.v,
@@ -173,7 +184,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                             onTap: onTapAppointmentAllCollapsed,
                             child: Container(
                               decoration: BoxDecoration(
-                                color: defaultColors.onSecondary,
+                                color: lightTheme.onSecondary,
                               ),
                               child: Column(
                                 children: [
@@ -182,14 +193,16 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('Appointment / Collapsed',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 20.fSize,
-                                                  fontFamily: 'Roboto',
-                                                  fontWeight:
-                                                      FontWeight.w400)))),
+                                          child: Text(
+                                            'Appointment / Collapsed',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 20.fSize,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ))),
                                   SizedBox(height: 5.v),
                                   Divider(
                                       height: 1.v,
@@ -203,7 +216,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                             onTap: onTapAppointmentStartExpanded,
                             child: Container(
                               decoration: BoxDecoration(
-                                color: defaultColors.onSecondary,
+                                color: lightTheme.onSecondary,
                               ),
                               child: Column(
                                 children: [
@@ -212,14 +225,16 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('Appointment / Start',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 20.fSize,
-                                                  fontFamily: 'Roboto',
-                                                  fontWeight:
-                                                      FontWeight.w400)))),
+                                          child: Text(
+                                            'Appointment / Start',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 20.fSize,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ))),
                                   SizedBox(height: 5.v),
                                   Divider(
                                       height: 1.v,
@@ -233,7 +248,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                             onTap: onTapAppointmentEndExpanded,
                             child: Container(
                               decoration: BoxDecoration(
-                                color: defaultColors.onSecondary,
+                                color: lightTheme.onSecondary,
                               ),
                               child: Column(
                                 children: [
@@ -242,14 +257,16 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('Appointment / End',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 20.fSize,
-                                                  fontFamily: 'Roboto',
-                                                  fontWeight:
-                                                      FontWeight.w400)))),
+                                          child: Text(
+                                            'Appointment / End',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 20.fSize,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ))),
                                   SizedBox(height: 5.v),
                                   Divider(
                                       height: 1.v,
@@ -263,7 +280,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                             onTap: onTapUnsubscribeConfirm,
                             child: Container(
                               decoration: BoxDecoration(
-                                color: defaultColors.onSecondary,
+                                color: lightTheme.onSecondary,
                               ),
                               child: Column(
                                 children: [
@@ -272,14 +289,16 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('Unsubscribe / Confirm',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 20.fSize,
-                                                  fontFamily: 'Roboto',
-                                                  fontWeight:
-                                                      FontWeight.w400)))),
+                                          child: Text(
+                                            'Unsubscribe / Confirm',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 20.fSize,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ))),
                                   SizedBox(height: 5.v),
                                   Divider(
                                       height: 1.v,
@@ -293,7 +312,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                             onTap: onTapSignUpComplete,
                             child: Container(
                               decoration: BoxDecoration(
-                                color: defaultColors.onSecondary,
+                                color: lightTheme.onSecondary,
                               ),
                               child: Column(
                                 children: [
@@ -302,14 +321,16 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('SignUp Complete',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 20.fSize,
-                                                  fontFamily: 'Roboto',
-                                                  fontWeight:
-                                                      FontWeight.w400)))),
+                                          child: Text(
+                                            'SignUp Complete',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 20.fSize,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ))),
                                   SizedBox(height: 5.v),
                                   Divider(
                                       height: 1.v,
@@ -323,7 +344,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                             onTap: onTapNoticesOne,
                             child: Container(
                               decoration: BoxDecoration(
-                                color: defaultColors.onSecondary,
+                                color: lightTheme.onSecondary,
                               ),
                               child: Column(
                                 children: [
@@ -332,14 +353,16 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('Notices',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 20.fSize,
-                                                  fontFamily: 'Roboto',
-                                                  fontWeight:
-                                                      FontWeight.w400)))),
+                                          child: Text(
+                                            'Notices',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 20.fSize,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ))),
                                   SizedBox(height: 5.v),
                                   Divider(
                                       height: 1.v,
@@ -353,7 +376,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                             onTap: onTapNoticesNoNotice,
                             child: Container(
                               decoration: BoxDecoration(
-                                color: defaultColors.onSecondary,
+                                color: lightTheme.onSecondary,
                               ),
                               child: Column(
                                 children: [
@@ -362,14 +385,16 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('No Notice',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 20.fSize,
-                                                  fontFamily: 'Roboto',
-                                                  fontWeight:
-                                                      FontWeight.w400)))),
+                                          child: Text(
+                                            'No Notice',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 20.fSize,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ))),
                                   SizedBox(height: 5.v),
                                   Divider(
                                       height: 1.v,
@@ -383,7 +408,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                             onTap: onTapSchedulesContainer,
                             child: Container(
                               decoration: BoxDecoration(
-                                color: defaultColors.onSecondary,
+                                color: lightTheme.onSecondary,
                               ),
                               child: Column(
                                 children: [
@@ -392,14 +417,16 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('Schedules - Container',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 20.fSize,
-                                                  fontFamily: 'Roboto',
-                                                  fontWeight:
-                                                      FontWeight.w400)))),
+                                          child: Text(
+                                            'Schedules - Container',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 20.fSize,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ))),
                                   SizedBox(height: 5.v),
                                   Divider(
                                       height: 1.v,
@@ -413,7 +440,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                             onTap: onTapSchedulesSendInvitationLeaderOnly,
                             child: Container(
                               decoration: BoxDecoration(
-                                color: defaultColors.onSecondary,
+                                color: lightTheme.onSecondary,
                               ),
                               child: Column(
                                 children: [
@@ -422,14 +449,16 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('Send Invitation',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 20.fSize,
-                                                  fontFamily: 'Roboto',
-                                                  fontWeight:
-                                                      FontWeight.w400)))),
+                                          child: Text(
+                                            'Send Invitation',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 20.fSize,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ))),
                                   SizedBox(height: 5.v),
                                   Divider(
                                       height: 1.v,
@@ -443,7 +472,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                             onTap: onTapSignInPage,
                             child: Container(
                               decoration: BoxDecoration(
-                                color: defaultColors.onSecondary,
+                                color: lightTheme.onSecondary,
                               ),
                               child: Column(
                                 children: [
@@ -452,14 +481,16 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('SignIn',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 20.fSize,
-                                                  fontFamily: 'Roboto',
-                                                  fontWeight:
-                                                      FontWeight.w400)))),
+                                          child: Text(
+                                            'SignIn',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 20.fSize,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ))),
                                   SizedBox(height: 5.v),
                                   Divider(
                                       height: 1.v,
@@ -473,7 +504,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                             onTap: onTapIdentityVerificationTermsBottomSheet,
                             child: Container(
                               decoration: BoxDecoration(
-                                color: defaultColors.onSecondary,
+                                color: lightTheme.onSecondary,
                               ),
                               child: Column(
                                 children: [
@@ -483,14 +514,15 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
                                           child: Text(
-                                              'Verification / BottomSheet',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 20.fSize,
-                                                  fontFamily: 'Roboto',
-                                                  fontWeight:
-                                                      FontWeight.w400)))),
+                                            'Verification / BottomSheet',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 20.fSize,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ))),
                                   SizedBox(height: 5.v),
                                   Divider(
                                       height: 1.v,
@@ -504,7 +536,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                             onTap: onTapIdentityVerificationEmpty,
                             child: Container(
                               decoration: BoxDecoration(
-                                color: defaultColors.onSecondary,
+                                color: lightTheme.onSecondary,
                               ),
                               child: Column(
                                 children: [
@@ -513,14 +545,16 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('Verification / Empty',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 20.fSize,
-                                                  fontFamily: 'Roboto',
-                                                  fontWeight:
-                                                      FontWeight.w400)))),
+                                          child: Text(
+                                            'Verification / Empty',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 20.fSize,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ))),
                                   SizedBox(height: 5.v),
                                   Divider(
                                       height: 1.v,
@@ -534,7 +568,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                             onTap: onTapIdentityVerificationFilled,
                             child: Container(
                               decoration: BoxDecoration(
-                                color: defaultColors.onSecondary,
+                                color: lightTheme.onSecondary,
                               ),
                               child: Column(
                                 children: [
@@ -543,14 +577,16 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('Verification / Filled',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 20.fSize,
-                                                  fontFamily: 'Roboto',
-                                                  fontWeight:
-                                                      FontWeight.w400)))),
+                                          child: Text(
+                                            'Verification / Filled',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 20.fSize,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ))),
                                   SizedBox(height: 5.v),
                                   Divider(
                                       height: 1.v,
@@ -564,7 +600,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                             onTap: onTapPersonalInfoFormZipCode,
                             child: Container(
                               decoration: BoxDecoration(
-                                color: defaultColors.onSecondary,
+                                color: lightTheme.onSecondary,
                               ),
                               child: Column(
                                 children: [
@@ -573,14 +609,16 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('Zip Code',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 20.fSize,
-                                                  fontFamily: 'Roboto',
-                                                  fontWeight:
-                                                      FontWeight.w400)))),
+                                          child: Text(
+                                            'Zip Code',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 20.fSize,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ))),
                                   SizedBox(height: 5.v),
                                   Divider(
                                       height: 1.v,
@@ -594,7 +632,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                             onTap: onTapSplashScreenOne,
                             child: Container(
                               decoration: BoxDecoration(
-                                color: defaultColors.onSecondary,
+                                color: lightTheme.onSecondary,
                               ),
                               child: Column(
                                 children: [
@@ -603,14 +641,16 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('스플래시스크린 1',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 20.fSize,
-                                                  fontFamily: 'Roboto',
-                                                  fontWeight:
-                                                      FontWeight.w400)))),
+                                          child: Text(
+                                            '스플래시스크린 1',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 20.fSize,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ))),
                                   SizedBox(height: 5.v),
                                   Divider(
                                       height: 1.v,
@@ -624,7 +664,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                             onTap: onTapSplashScreenTwo,
                             child: Container(
                               decoration: BoxDecoration(
-                                color: defaultColors.onSecondary,
+                                color: lightTheme.onSecondary,
                               ),
                               child: Column(
                                 children: [
@@ -633,14 +673,16 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('스플래시스크린 2',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 20.fSize,
-                                                  fontFamily: 'Roboto',
-                                                  fontWeight:
-                                                      FontWeight.w400)))),
+                                          child: Text(
+                                            '스플래시스크린 2',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 20.fSize,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ))),
                                   SizedBox(height: 5.v),
                                   Divider(
                                       height: 1.v,
@@ -654,7 +696,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                             onTap: onTapLicenseRegister,
                             child: Container(
                               decoration: BoxDecoration(
-                                color: defaultColors.onSecondary,
+                                color: lightTheme.onSecondary,
                               ),
                               child: Column(
                                 children: [
@@ -663,14 +705,16 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('License Register',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 20.fSize,
-                                                  fontFamily: 'Roboto',
-                                                  fontWeight:
-                                                      FontWeight.w400)))),
+                                          child: Text(
+                                            'License Register',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 20.fSize,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ))),
                                   SizedBox(height: 5.v),
                                   Divider(
                                       height: 1.v,
@@ -684,7 +728,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                             onTap: onTapIdentityVerificationFilledwithTelecom,
                             child: Container(
                               decoration: BoxDecoration(
-                                color: defaultColors.onSecondary,
+                                color: lightTheme.onSecondary,
                               ),
                               child: Column(
                                 children: [
@@ -694,14 +738,15 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
                                           child: Text(
-                                              'Verification / Filled Telecom',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 20.fSize,
-                                                  fontFamily: 'Roboto',
-                                                  fontWeight:
-                                                      FontWeight.w400)))),
+                                            'Verification / Filled Telecom',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 20.fSize,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ))),
                                   SizedBox(height: 5.v),
                                   Divider(
                                       height: 1.v,
@@ -715,7 +760,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                             onTap: onTapIdentityVerificationWaitingwithTelecom,
                             child: Container(
                               decoration: BoxDecoration(
-                                color: defaultColors.onSecondary,
+                                color: lightTheme.onSecondary,
                               ),
                               child: Column(
                                 children: [
@@ -724,14 +769,16 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('Verification / Waiting',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 20.fSize,
-                                                  fontFamily: 'Roboto',
-                                                  fontWeight:
-                                                      FontWeight.w400)))),
+                                          child: Text(
+                                            'Verification / Waiting',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 20.fSize,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ))),
                                   SizedBox(height: 5.v),
                                   Divider(
                                       height: 1.v,
@@ -745,7 +792,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                             onTap: onTapHomePage,
                             child: Container(
                               decoration: BoxDecoration(
-                                color: defaultColors.onSecondary,
+                                color: lightTheme.onSecondary,
                               ),
                               child: Column(
                                 children: [
@@ -754,14 +801,16 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('Home',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 20.fSize,
-                                                  fontFamily: 'Roboto',
-                                                  fontWeight:
-                                                      FontWeight.w400)))),
+                                          child: Text(
+                                            'Home',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 20.fSize,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ))),
                                   SizedBox(height: 5.v),
                                   Divider(
                                       height: 1.v,
@@ -775,7 +824,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                             onTap: onTapSchedulesTeamisnotFull,
                             child: Container(
                               decoration: BoxDecoration(
-                                color: defaultColors.onSecondary,
+                                color: lightTheme.onSecondary,
                               ),
                               child: Column(
                                 children: [
@@ -785,14 +834,15 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
                                           child: Text(
-                                              'Schedules / Team is not Full',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 20.fSize,
-                                                  fontFamily: 'Roboto',
-                                                  fontWeight:
-                                                      FontWeight.w400)))),
+                                            'Schedules / Team is not Full',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 20.fSize,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ))),
                                   SizedBox(height: 5.v),
                                   Divider(
                                       height: 1.v,
@@ -806,7 +856,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                             onTap: onTapSchedulesTeamisFull,
                             child: Container(
                               decoration: BoxDecoration(
-                                color: defaultColors.onSecondary,
+                                color: lightTheme.onSecondary,
                               ),
                               child: Column(
                                 children: [
@@ -816,14 +866,15 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
                                           child: Text(
-                                              'Schedules / Team is Full',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 20.fSize,
-                                                  fontFamily: 'Roboto',
-                                                  fontWeight:
-                                                      FontWeight.w400)))),
+                                            'Schedules / Team is Full',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 20.fSize,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ))),
                                   SizedBox(height: 5.v),
                                   Divider(
                                       height: 1.v,
@@ -837,7 +888,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                             onTap: onTapSmartKey,
                             child: Container(
                               decoration: BoxDecoration(
-                                color: defaultColors.onSecondary,
+                                color: lightTheme.onSecondary,
                               ),
                               child: Column(
                                 children: [
@@ -846,14 +897,16 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('Smart Key',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 20.fSize,
-                                                  fontFamily: 'Roboto',
-                                                  fontWeight:
-                                                      FontWeight.w400)))),
+                                          child: Text(
+                                            'Smart Key',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 20.fSize,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ))),
                                   SizedBox(height: 5.v),
                                   Divider(
                                       height: 1.v,
@@ -867,7 +920,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                             onTap: onTapMyPage,
                             child: Container(
                               decoration: BoxDecoration(
-                                color: defaultColors.onSecondary,
+                                color: lightTheme.onSecondary,
                               ),
                               child: Column(
                                 children: [
@@ -876,14 +929,16 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('My Page',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 20.fSize,
-                                                  fontFamily: 'Roboto',
-                                                  fontWeight:
-                                                      FontWeight.w400)))),
+                                          child: Text(
+                                            'My Page',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 20.fSize,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ))),
                                   SizedBox(height: 5.v),
                                   Divider(
                                       height: 1.v,
@@ -897,7 +952,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                             onTap: onTapCardList,
                             child: Container(
                               decoration: BoxDecoration(
-                                color: defaultColors.onSecondary,
+                                color: lightTheme.onSecondary,
                               ),
                               child: Column(
                                 children: [
@@ -906,14 +961,16 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('Card List',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 20.fSize,
-                                                  fontFamily: 'Roboto',
-                                                  fontWeight:
-                                                      FontWeight.w400)))),
+                                          child: Text(
+                                            'Card List',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 20.fSize,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ))),
                                   SizedBox(height: 5.v),
                                   Divider(
                                       height: 1.v,
@@ -927,7 +984,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                             onTap: onTapSchedulesViewScheduledDateSchedulerOnly,
                             child: Container(
                               decoration: BoxDecoration(
-                                color: defaultColors.onSecondary,
+                                color: lightTheme.onSecondary,
                               ),
                               child: Column(
                                 children: [
@@ -936,14 +993,16 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('View Scheduled Date',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 20.fSize,
-                                                  fontFamily: 'Roboto',
-                                                  fontWeight:
-                                                      FontWeight.w400)))),
+                                          child: Text(
+                                            'View Scheduled Date',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 20.fSize,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ))),
                                   SizedBox(height: 5.v),
                                   Divider(
                                       height: 1.v,
@@ -958,7 +1017,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                 onTapSchedulesViewScheduledDateSchedulerOnlyExpanded,
                             child: Container(
                               decoration: BoxDecoration(
-                                color: defaultColors.onSecondary,
+                                color: lightTheme.onSecondary,
                               ),
                               child: Column(
                                 children: [
@@ -968,14 +1027,15 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
                                           child: Text(
-                                              'View Scheduled Date Expanded',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 20.fSize,
-                                                  fontFamily: 'Roboto',
-                                                  fontWeight:
-                                                      FontWeight.w400)))),
+                                            'View Scheduled Date Expanded',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 20.fSize,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ))),
                                   SizedBox(height: 5.v),
                                   Divider(
                                       height: 1.v,
@@ -989,7 +1049,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                             onTap: onTapSmartKeyAnotherIsCurrentlyUsing,
                             child: Container(
                               decoration: BoxDecoration(
-                                color: defaultColors.onSecondary,
+                                color: lightTheme.onSecondary,
                               ),
                               child: Column(
                                 children: [
@@ -999,14 +1059,15 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
                                           child: Text(
-                                              'Another is Currently Using Car',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 20.fSize,
-                                                  fontFamily: 'Roboto',
-                                                  fontWeight:
-                                                      FontWeight.w400)))),
+                                            'Another is Currently Using Car',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 20.fSize,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ))),
                                   SizedBox(height: 5.v),
                                   Divider(
                                       height: 1.v,
@@ -1020,7 +1081,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                             onTap: onTapSubscribeInfoNoSubscription,
                             child: Container(
                               decoration: BoxDecoration(
-                                color: defaultColors.onSecondary,
+                                color: lightTheme.onSecondary,
                               ),
                               child: Column(
                                 children: [
@@ -1030,14 +1091,15 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
                                           child: Text(
-                                              'Subscribe Info (No Subscription)',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 20.fSize,
-                                                  fontFamily: 'Roboto',
-                                                  fontWeight:
-                                                      FontWeight.w400)))),
+                                            'Subscribe Info (No Subscription)',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 20.fSize,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ))),
                                   SizedBox(height: 5.v),
                                   Divider(
                                       height: 1.v,
@@ -1051,7 +1113,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                             onTap: onTapSubscribeInfo,
                             child: Container(
                               decoration: BoxDecoration(
-                                color: defaultColors.onSecondary,
+                                color: lightTheme.onSecondary,
                               ),
                               child: Column(
                                 children: [
@@ -1060,14 +1122,16 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('Subscribe Info',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 20.fSize,
-                                                  fontFamily: 'Roboto',
-                                                  fontWeight:
-                                                      FontWeight.w400)))),
+                                          child: Text(
+                                            'Subscribe Info',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 20.fSize,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ))),
                                   SizedBox(height: 5.v),
                                   Divider(
                                       height: 1.v,
@@ -1081,7 +1145,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                             onTap: onTapContactUsEmptyHistory,
                             child: Container(
                               decoration: BoxDecoration(
-                                color: defaultColors.onSecondary,
+                                color: lightTheme.onSecondary,
                               ),
                               child: Column(
                                 children: [
@@ -1090,14 +1154,16 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('Empty History',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 20.fSize,
-                                                  fontFamily: 'Roboto',
-                                                  fontWeight:
-                                                      FontWeight.w400)))),
+                                          child: Text(
+                                            'Empty History',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 20.fSize,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ))),
                                   SizedBox(height: 5.v),
                                   Divider(
                                       height: 1.v,
@@ -1112,7 +1178,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                 onTapContactUsInquiryHistoryExpandedTabContainer,
                             child: Container(
                               decoration: BoxDecoration(
-                                color: defaultColors.onSecondary,
+                                color: lightTheme.onSecondary,
                               ),
                               child: Column(
                                 children: [
@@ -1121,14 +1187,16 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('Inquiry History',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 20.fSize,
-                                                  fontFamily: 'Roboto',
-                                                  fontWeight:
-                                                      FontWeight.w400)))),
+                                          child: Text(
+                                            'Inquiry History',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 20.fSize,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ))),
                                   SizedBox(height: 5.v),
                                   Divider(
                                       height: 1.v,
@@ -1142,7 +1210,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                             onTap: onTapUnsubscribe,
                             child: Container(
                               decoration: BoxDecoration(
-                                color: defaultColors.onSecondary,
+                                color: lightTheme.onSecondary,
                               ),
                               child: Column(
                                 children: [
@@ -1151,14 +1219,16 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('Unsubscribe',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 20.fSize,
-                                                  fontFamily: 'Roboto',
-                                                  fontWeight:
-                                                      FontWeight.w400)))),
+                                          child: Text(
+                                            'Unsubscribe',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 20.fSize,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ))),
                                   SizedBox(height: 5.v),
                                   Divider(
                                       height: 1.v,
@@ -1172,7 +1242,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                             onTap: onTapCardRegister,
                             child: Container(
                               decoration: BoxDecoration(
-                                color: defaultColors.onSecondary,
+                                color: lightTheme.onSecondary,
                               ),
                               child: Column(
                                 children: [
@@ -1181,14 +1251,16 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('Card Register',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 20.fSize,
-                                                  fontFamily: 'Roboto',
-                                                  fontWeight:
-                                                      FontWeight.w400)))),
+                                          child: Text(
+                                            'Card Register',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 20.fSize,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ))),
                                   SizedBox(height: 5.v),
                                   Divider(
                                       height: 1.v,
@@ -1202,7 +1274,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                             onTap: onTapNotices,
                             child: Container(
                               decoration: BoxDecoration(
-                                color: defaultColors.onSecondary,
+                                color: lightTheme.onSecondary,
                               ),
                               child: Column(
                                 children: [
@@ -1211,14 +1283,16 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('Notices',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 20.fSize,
-                                                  fontFamily: 'Roboto',
-                                                  fontWeight:
-                                                      FontWeight.w400)))),
+                                          child: Text(
+                                            'Notices',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 20.fSize,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ))),
                                   SizedBox(height: 5.v),
                                   Divider(
                                       height: 1.v,
@@ -1232,7 +1306,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                             onTap: onTapContactUs11ContactUs,
                             child: Container(
                               decoration: BoxDecoration(
-                                color: defaultColors.onSecondary,
+                                color: lightTheme.onSecondary,
                               ),
                               child: Column(
                                 children: [
@@ -1241,14 +1315,16 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                       child: Padding(
                                           padding: EdgeInsets.symmetric(
                                               horizontal: 20.h, vertical: 10.v),
-                                          child: Text('1:1 Contact Us',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 20.fSize,
-                                                  fontFamily: 'Roboto',
-                                                  fontWeight:
-                                                      FontWeight.w400)))),
+                                          child: Text(
+                                            '1:1 Contact Us',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 20.fSize,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ))),
                                   SizedBox(height: 5.v),
                                   Divider(
                                       height: 1.v,
@@ -1262,7 +1338,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                               onTap: onTapExpiringSubscriptions,
                               child: Container(
                                   decoration: BoxDecoration(
-                                    color: defaultColors.onSecondary,
+                                    color: lightTheme.onSecondary,
                                   ),
                                   child: Column(children: [
                                     Align(
@@ -1272,14 +1348,15 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                 horizontal: 20.h,
                                                 vertical: 10.v),
                                             child: Text(
-                                                'Expiring Subscriptions',
-                                                textAlign: TextAlign.center,
-                                                style: TextStyle(
-                                                    color: Colors.black,
-                                                    fontSize: 20.fSize,
-                                                    fontFamily: 'Roboto',
-                                                    fontWeight:
-                                                        FontWeight.w400)))),
+                                              'Expiring Subscriptions',
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 20.fSize,
+                                                fontFamily: 'Roboto',
+                                                fontWeight: FontWeight.w400,
+                                              ),
+                                            ))),
                                     SizedBox(height: 5.v),
                                     Divider(
                                         height: 1.v,

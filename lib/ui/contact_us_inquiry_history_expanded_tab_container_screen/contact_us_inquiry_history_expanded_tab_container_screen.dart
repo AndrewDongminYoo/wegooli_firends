@@ -10,9 +10,9 @@ import '/gen/assets.gen.dart';
 import '/theme/theme_helper.dart';
 import '/ui/contact_us_inquiry_history_expanded_page/contact_us_inquiry_history_expanded_page.dart';
 import '/ui/contact_us_inquiry_history_page/contact_us_inquiry_history_page.dart';
-import '/widgets/app_bar/appbar_image.dart';
 import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
+import '/widgets/custom_image_view.dart';
 import 'controller/contact_us_inquiry_history_expanded_tab_container_controller.dart';
 
 class ContactUsInquiryHistoryExpandedTabContainerScreen
@@ -27,7 +27,7 @@ class ContactUsInquiryHistoryExpandedTabContainerScreen
       child: Scaffold(
         appBar: CustomAppBar(
             leadingWidth: 34.h,
-            leading: AppbarImage(
+            leading: CustomImageView(
               svgPath: Assets.svg.imgArrowleft.path,
               margin: EdgeInsets.only(left: 16.h, top: 19.v, bottom: 18.v),
               onTap: Get.back,
@@ -37,11 +37,12 @@ class ContactUsInquiryHistoryExpandedTabContainerScreen
         body: SizedBox(
           width: mediaQueryData.size.width,
           child: SingleChildScrollView(
-              child: Column(children: [
-            SizedBox(
-                height: 65.v,
-                width: double.maxFinite,
-                child: TabBar(
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 65.v,
+                  width: double.maxFinite,
+                  child: TabBar(
                     controller: controller.tabviewController,
                     isScrollable: true,
                     labelColor: lightTheme.onPrimary,
@@ -92,34 +93,42 @@ class ContactUsInquiryHistoryExpandedTabContainerScreen
                         ),
                       ),
                       Tab(
-                          child: Container(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 39.h, vertical: 11.v),
-                              decoration: BoxDecoration(
-                                border: Border(
-                                  bottom: BorderSide(
-                                    color: const Color(0x33FFE142),
-                                    width: 1.h,
-                                  ),
-                                ),
+                        child: Container(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 39.h, vertical: 11.v),
+                          decoration: BoxDecoration(
+                            border: Border(
+                              bottom: BorderSide(
+                                color: const Color(0x33FFE142),
+                                width: 1.h,
                               ),
-                              child: Column(children: [
-                                const Text('처리중'),
-                                Padding(
-                                    padding: EdgeInsets.only(top: 5.v),
-                                    child: const Text('10'))
-                              ])))
-                    ])),
-            SizedBox(
-                height: 592.v,
-                child: TabBarView(
-                    controller: controller.tabviewController,
-                    children: [
-                      ContactUsInquiryHistoryExpandedPage(),
-                      ContactUsInquiryHistoryExpandedPage(),
-                      ContactUsInquiryHistoryPage()
-                    ]))
-          ])),
+                            ),
+                          ),
+                          child: Column(
+                            children: [
+                              const Text('처리중'),
+                              Padding(
+                                  padding: EdgeInsets.only(top: 5.v),
+                                  child: const Text('10'))
+                            ],
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                SizedBox(
+                    height: 592.v,
+                    child: TabBarView(
+                        controller: controller.tabviewController,
+                        children: [
+                          ContactUsInquiryHistoryExpandedPage(),
+                          ContactUsInquiryHistoryExpandedPage(),
+                          ContactUsInquiryHistoryPage()
+                        ]))
+              ],
+            ),
+          ),
         ),
       ),
     );

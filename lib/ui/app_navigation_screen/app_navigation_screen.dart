@@ -39,1332 +39,1429 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
         backgroundColor: lightTheme.onSecondary,
         body: SizedBox(
           width: 375.h,
-          child: Column(children: [
-            Container(
+          child: Column(
+            children: [
+              Container(
                 decoration: BoxDecoration(
                   color: lightTheme.onSecondary,
                 ),
-                child: Column(children: [
-                  Align(
+                child: Column(
+                  children: [
+                    Align(
                       alignment: Alignment.centerLeft,
                       child: Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 20.h, vertical: 10.v),
-                          child: Text(
-                            'Gateway',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 20.fSize,
-                              fontFamily: 'Roboto',
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ))),
-                  Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                          padding: EdgeInsets.only(left: 20.h),
-                          child: Text(
-                            "Check your app's UI from the below demo screens of your app.",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: const Color(0xFF888888),
-                              fontSize: 16.fSize,
-                              fontFamily: 'Roboto',
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ))),
-                  SizedBox(height: 5.v),
-                  Divider(height: 1.v, thickness: 1.v, color: Colors.black)
-                ])),
-            Expanded(
-                child: SingleChildScrollView(
-                    child: Container(
-                        decoration: BoxDecoration(
-                          color: lightTheme.onSecondary,
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 20.h, vertical: 10.v),
+                        child: Text(
+                          'Gateway',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 20.fSize,
+                            fontFamily: 'Roboto',
+                            fontWeight: FontWeight.w400,
+                          ),
                         ),
-                        child: Column(children: [
-                          GestureDetector(
-                            onTap: onTapIdentityVerificationWaiting,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: lightTheme.onSecondary,
-                              ),
-                              child: Column(
-                                children: [
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                            'Verification / Waiting',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20.fSize,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ))),
-                                  SizedBox(height: 5.v),
-                                  Divider(
-                                      height: 1.v,
-                                      thickness: 1.v,
-                                      color: const Color(0xFF888888))
-                                ],
-                              ),
-                            ),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: EdgeInsets.only(left: 20.h),
+                        child: Text(
+                          "Check your app's UI from the below demo screens of your app.",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: const Color(0xFF888888),
+                            fontSize: 16.fSize,
+                            fontFamily: 'Roboto',
+                            fontWeight: FontWeight.w400,
                           ),
-                          GestureDetector(
-                            onTap: onTapSendInvitationLeaderOnly,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: lightTheme.onSecondary,
-                              ),
-                              child: Column(
-                                children: [
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                            'Send Invitation',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20.fSize,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ))),
-                                  SizedBox(height: 5.v),
-                                  Divider(
-                                      height: 1.v,
-                                      thickness: 1.v,
-                                      color: const Color(0xFF888888))
-                                ],
-                              ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 5.v),
+                    Divider(height: 1.v, thickness: 1.v, color: Colors.black)
+                  ],
+                ),
+              ),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: lightTheme.onSecondary,
+                    ),
+                    child: Column(
+                      children: [
+                        GestureDetector(
+                          onTap: onTapIdentityVerificationWaiting,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: lightTheme.onSecondary,
                             ),
-                          ),
-                          GestureDetector(
-                            onTap: onTapViewScheduledDateSchedulerOnly,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: lightTheme.onSecondary,
-                              ),
-                              child: Column(
-                                children: [
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                            'View Scheduled Date',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20.fSize,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ))),
-                                  SizedBox(height: 5.v),
-                                  Divider(
-                                      height: 1.v,
-                                      thickness: 1.v,
-                                      color: const Color(0xFF888888))
-                                ],
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: onTapAppointmentAllCollapsed,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: lightTheme.onSecondary,
-                              ),
-                              child: Column(
-                                children: [
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                            'Appointment / Collapsed',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20.fSize,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ))),
-                                  SizedBox(height: 5.v),
-                                  Divider(
-                                      height: 1.v,
-                                      thickness: 1.v,
-                                      color: const Color(0xFF888888))
-                                ],
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: onTapAppointmentStartExpanded,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: lightTheme.onSecondary,
-                              ),
-                              child: Column(
-                                children: [
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                            'Appointment / Start',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20.fSize,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ))),
-                                  SizedBox(height: 5.v),
-                                  Divider(
-                                      height: 1.v,
-                                      thickness: 1.v,
-                                      color: const Color(0xFF888888))
-                                ],
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: onTapAppointmentEndExpanded,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: lightTheme.onSecondary,
-                              ),
-                              child: Column(
-                                children: [
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                            'Appointment / End',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20.fSize,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ))),
-                                  SizedBox(height: 5.v),
-                                  Divider(
-                                      height: 1.v,
-                                      thickness: 1.v,
-                                      color: const Color(0xFF888888))
-                                ],
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: onTapUnsubscribeConfirm,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: lightTheme.onSecondary,
-                              ),
-                              child: Column(
-                                children: [
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                            'Unsubscribe / Confirm',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20.fSize,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ))),
-                                  SizedBox(height: 5.v),
-                                  Divider(
-                                      height: 1.v,
-                                      thickness: 1.v,
-                                      color: const Color(0xFF888888))
-                                ],
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: onTapSignUpComplete,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: lightTheme.onSecondary,
-                              ),
-                              child: Column(
-                                children: [
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                            'SignUp Complete',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20.fSize,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ))),
-                                  SizedBox(height: 5.v),
-                                  Divider(
-                                      height: 1.v,
-                                      thickness: 1.v,
-                                      color: const Color(0xFF888888))
-                                ],
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: onTapNoticesOne,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: lightTheme.onSecondary,
-                              ),
-                              child: Column(
-                                children: [
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                            'Notices',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20.fSize,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ))),
-                                  SizedBox(height: 5.v),
-                                  Divider(
-                                      height: 1.v,
-                                      thickness: 1.v,
-                                      color: const Color(0xFF888888))
-                                ],
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: onTapNoticesNoNotice,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: lightTheme.onSecondary,
-                              ),
-                              child: Column(
-                                children: [
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                            'No Notice',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20.fSize,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ))),
-                                  SizedBox(height: 5.v),
-                                  Divider(
-                                      height: 1.v,
-                                      thickness: 1.v,
-                                      color: const Color(0xFF888888))
-                                ],
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: onTapSchedulesContainer,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: lightTheme.onSecondary,
-                              ),
-                              child: Column(
-                                children: [
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                            'Schedules - Container',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20.fSize,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ))),
-                                  SizedBox(height: 5.v),
-                                  Divider(
-                                      height: 1.v,
-                                      thickness: 1.v,
-                                      color: const Color(0xFF888888))
-                                ],
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: onTapSchedulesSendInvitationLeaderOnly,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: lightTheme.onSecondary,
-                              ),
-                              child: Column(
-                                children: [
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                            'Send Invitation',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20.fSize,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ))),
-                                  SizedBox(height: 5.v),
-                                  Divider(
-                                      height: 1.v,
-                                      thickness: 1.v,
-                                      color: const Color(0xFF888888))
-                                ],
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: onTapSignInPage,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: lightTheme.onSecondary,
-                              ),
-                              child: Column(
-                                children: [
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                            'SignIn',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20.fSize,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ))),
-                                  SizedBox(height: 5.v),
-                                  Divider(
-                                      height: 1.v,
-                                      thickness: 1.v,
-                                      color: const Color(0xFF888888))
-                                ],
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: onTapIdentityVerificationTermsBottomSheet,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: lightTheme.onSecondary,
-                              ),
-                              child: Column(
-                                children: [
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                            'Verification / BottomSheet',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20.fSize,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ))),
-                                  SizedBox(height: 5.v),
-                                  Divider(
-                                      height: 1.v,
-                                      thickness: 1.v,
-                                      color: const Color(0xFF888888))
-                                ],
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: onTapIdentityVerificationEmpty,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: lightTheme.onSecondary,
-                              ),
-                              child: Column(
-                                children: [
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                            'Verification / Empty',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20.fSize,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ))),
-                                  SizedBox(height: 5.v),
-                                  Divider(
-                                      height: 1.v,
-                                      thickness: 1.v,
-                                      color: const Color(0xFF888888))
-                                ],
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: onTapIdentityVerificationFilled,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: lightTheme.onSecondary,
-                              ),
-                              child: Column(
-                                children: [
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                            'Verification / Filled',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20.fSize,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ))),
-                                  SizedBox(height: 5.v),
-                                  Divider(
-                                      height: 1.v,
-                                      thickness: 1.v,
-                                      color: const Color(0xFF888888))
-                                ],
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: onTapPersonalInfoFormZipCode,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: lightTheme.onSecondary,
-                              ),
-                              child: Column(
-                                children: [
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                            'Zip Code',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20.fSize,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ))),
-                                  SizedBox(height: 5.v),
-                                  Divider(
-                                      height: 1.v,
-                                      thickness: 1.v,
-                                      color: const Color(0xFF888888))
-                                ],
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: onTapSplashScreenOne,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: lightTheme.onSecondary,
-                              ),
-                              child: Column(
-                                children: [
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                            '스플래시스크린 1',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20.fSize,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ))),
-                                  SizedBox(height: 5.v),
-                                  Divider(
-                                      height: 1.v,
-                                      thickness: 1.v,
-                                      color: const Color(0xFF888888))
-                                ],
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: onTapSplashScreenTwo,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: lightTheme.onSecondary,
-                              ),
-                              child: Column(
-                                children: [
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                            '스플래시스크린 2',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20.fSize,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ))),
-                                  SizedBox(height: 5.v),
-                                  Divider(
-                                      height: 1.v,
-                                      thickness: 1.v,
-                                      color: const Color(0xFF888888))
-                                ],
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: onTapLicenseRegister,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: lightTheme.onSecondary,
-                              ),
-                              child: Column(
-                                children: [
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                            'License Register',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20.fSize,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ))),
-                                  SizedBox(height: 5.v),
-                                  Divider(
-                                      height: 1.v,
-                                      thickness: 1.v,
-                                      color: const Color(0xFF888888))
-                                ],
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: onTapIdentityVerificationFilledwithTelecom,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: lightTheme.onSecondary,
-                              ),
-                              child: Column(
-                                children: [
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                            'Verification / Filled Telecom',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20.fSize,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ))),
-                                  SizedBox(height: 5.v),
-                                  Divider(
-                                      height: 1.v,
-                                      thickness: 1.v,
-                                      color: const Color(0xFF888888))
-                                ],
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: onTapIdentityVerificationWaitingwithTelecom,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: lightTheme.onSecondary,
-                              ),
-                              child: Column(
-                                children: [
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                            'Verification / Waiting',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20.fSize,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ))),
-                                  SizedBox(height: 5.v),
-                                  Divider(
-                                      height: 1.v,
-                                      thickness: 1.v,
-                                      color: const Color(0xFF888888))
-                                ],
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: onTapHomePage,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: lightTheme.onSecondary,
-                              ),
-                              child: Column(
-                                children: [
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                            'Home',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20.fSize,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ))),
-                                  SizedBox(height: 5.v),
-                                  Divider(
-                                      height: 1.v,
-                                      thickness: 1.v,
-                                      color: const Color(0xFF888888))
-                                ],
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: onTapSchedulesTeamisnotFull,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: lightTheme.onSecondary,
-                              ),
-                              child: Column(
-                                children: [
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                            'Schedules / Team is not Full',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20.fSize,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ))),
-                                  SizedBox(height: 5.v),
-                                  Divider(
-                                      height: 1.v,
-                                      thickness: 1.v,
-                                      color: const Color(0xFF888888))
-                                ],
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: onTapSchedulesTeamisFull,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: lightTheme.onSecondary,
-                              ),
-                              child: Column(
-                                children: [
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                            'Schedules / Team is Full',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20.fSize,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ))),
-                                  SizedBox(height: 5.v),
-                                  Divider(
-                                      height: 1.v,
-                                      thickness: 1.v,
-                                      color: const Color(0xFF888888))
-                                ],
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: onTapSmartKey,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: lightTheme.onSecondary,
-                              ),
-                              child: Column(
-                                children: [
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                            'Smart Key',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20.fSize,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ))),
-                                  SizedBox(height: 5.v),
-                                  Divider(
-                                      height: 1.v,
-                                      thickness: 1.v,
-                                      color: const Color(0xFF888888))
-                                ],
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: onTapMyPage,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: lightTheme.onSecondary,
-                              ),
-                              child: Column(
-                                children: [
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                            'My Page',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20.fSize,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ))),
-                                  SizedBox(height: 5.v),
-                                  Divider(
-                                      height: 1.v,
-                                      thickness: 1.v,
-                                      color: const Color(0xFF888888))
-                                ],
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: onTapCardList,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: lightTheme.onSecondary,
-                              ),
-                              child: Column(
-                                children: [
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                            'Card List',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20.fSize,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ))),
-                                  SizedBox(height: 5.v),
-                                  Divider(
-                                      height: 1.v,
-                                      thickness: 1.v,
-                                      color: const Color(0xFF888888))
-                                ],
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: onTapSchedulesViewScheduledDateSchedulerOnly,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: lightTheme.onSecondary,
-                              ),
-                              child: Column(
-                                children: [
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                            'View Scheduled Date',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20.fSize,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ))),
-                                  SizedBox(height: 5.v),
-                                  Divider(
-                                      height: 1.v,
-                                      thickness: 1.v,
-                                      color: const Color(0xFF888888))
-                                ],
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap:
-                                onTapSchedulesViewScheduledDateSchedulerOnlyExpanded,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: lightTheme.onSecondary,
-                              ),
-                              child: Column(
-                                children: [
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                            'View Scheduled Date Expanded',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20.fSize,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ))),
-                                  SizedBox(height: 5.v),
-                                  Divider(
-                                      height: 1.v,
-                                      thickness: 1.v,
-                                      color: const Color(0xFF888888))
-                                ],
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: onTapSmartKeyAnotherIsCurrentlyUsing,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: lightTheme.onSecondary,
-                              ),
-                              child: Column(
-                                children: [
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                            'Another is Currently Using Car',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20.fSize,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ))),
-                                  SizedBox(height: 5.v),
-                                  Divider(
-                                      height: 1.v,
-                                      thickness: 1.v,
-                                      color: const Color(0xFF888888))
-                                ],
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: onTapSubscribeInfoNoSubscription,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: lightTheme.onSecondary,
-                              ),
-                              child: Column(
-                                children: [
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                            'Subscribe Info (No Subscription)',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20.fSize,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ))),
-                                  SizedBox(height: 5.v),
-                                  Divider(
-                                      height: 1.v,
-                                      thickness: 1.v,
-                                      color: const Color(0xFF888888))
-                                ],
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: onTapSubscribeInfo,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: lightTheme.onSecondary,
-                              ),
-                              child: Column(
-                                children: [
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                            'Subscribe Info',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20.fSize,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ))),
-                                  SizedBox(height: 5.v),
-                                  Divider(
-                                      height: 1.v,
-                                      thickness: 1.v,
-                                      color: const Color(0xFF888888))
-                                ],
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: onTapContactUsEmptyHistory,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: lightTheme.onSecondary,
-                              ),
-                              child: Column(
-                                children: [
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                            'Empty History',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20.fSize,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ))),
-                                  SizedBox(height: 5.v),
-                                  Divider(
-                                      height: 1.v,
-                                      thickness: 1.v,
-                                      color: const Color(0xFF888888))
-                                ],
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap:
-                                onTapContactUsInquiryHistoryExpandedTabContainer,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: lightTheme.onSecondary,
-                              ),
-                              child: Column(
-                                children: [
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                            'Inquiry History',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20.fSize,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ))),
-                                  SizedBox(height: 5.v),
-                                  Divider(
-                                      height: 1.v,
-                                      thickness: 1.v,
-                                      color: const Color(0xFF888888))
-                                ],
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: onTapUnsubscribe,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: lightTheme.onSecondary,
-                              ),
-                              child: Column(
-                                children: [
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                            'Unsubscribe',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20.fSize,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ))),
-                                  SizedBox(height: 5.v),
-                                  Divider(
-                                      height: 1.v,
-                                      thickness: 1.v,
-                                      color: const Color(0xFF888888))
-                                ],
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: onTapCardRegister,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: lightTheme.onSecondary,
-                              ),
-                              child: Column(
-                                children: [
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                            'Card Register',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20.fSize,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ))),
-                                  SizedBox(height: 5.v),
-                                  Divider(
-                                      height: 1.v,
-                                      thickness: 1.v,
-                                      color: const Color(0xFF888888))
-                                ],
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: onTapNotices,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: lightTheme.onSecondary,
-                              ),
-                              child: Column(
-                                children: [
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                            'Notices',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20.fSize,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ))),
-                                  SizedBox(height: 5.v),
-                                  Divider(
-                                      height: 1.v,
-                                      thickness: 1.v,
-                                      color: const Color(0xFF888888))
-                                ],
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: onTapContactUs11ContactUs,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: lightTheme.onSecondary,
-                              ),
-                              child: Column(
-                                children: [
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 20.h, vertical: 10.v),
-                                          child: Text(
-                                            '1:1 Contact Us',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20.fSize,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ))),
-                                  SizedBox(height: 5.v),
-                                  Divider(
-                                      height: 1.v,
-                                      thickness: 1.v,
-                                      color: const Color(0xFF888888))
-                                ],
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                              onTap: onTapExpiringSubscriptions,
-                              child: Container(
-                                  decoration: BoxDecoration(
-                                    color: lightTheme.onSecondary,
+                            child: Column(
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20.h, vertical: 10.v),
+                                    child: Text(
+                                      'Verification / Waiting',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20.fSize,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
                                   ),
-                                  child: Column(children: [
-                                    Align(
-                                        alignment: Alignment.centerLeft,
-                                        child: Padding(
-                                            padding: EdgeInsets.symmetric(
-                                                horizontal: 20.h,
-                                                vertical: 10.v),
-                                            child: Text(
-                                              'Expiring Subscriptions',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                color: Colors.black,
-                                                fontSize: 20.fSize,
-                                                fontFamily: 'Roboto',
-                                                fontWeight: FontWeight.w400,
-                                              ),
-                                            ))),
-                                    SizedBox(height: 5.v),
-                                    Divider(
-                                        height: 1.v,
-                                        thickness: 1.v,
-                                        color: const Color(0xFF888888))
-                                  ])))
-                        ]))))
-          ]),
+                                ),
+                                SizedBox(height: 5.v),
+                                Divider(
+                                    height: 1.v,
+                                    thickness: 1.v,
+                                    color: const Color(0xFF888888))
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: onTapSendInvitationLeaderOnly,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: lightTheme.onSecondary,
+                            ),
+                            child: Column(
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20.h, vertical: 10.v),
+                                    child: Text(
+                                      'Send Invitation',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20.fSize,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5.v),
+                                Divider(
+                                    height: 1.v,
+                                    thickness: 1.v,
+                                    color: const Color(0xFF888888))
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: onTapViewScheduledDateSchedulerOnly,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: lightTheme.onSecondary,
+                            ),
+                            child: Column(
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20.h, vertical: 10.v),
+                                    child: Text(
+                                      'View Scheduled Date',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20.fSize,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5.v),
+                                Divider(
+                                    height: 1.v,
+                                    thickness: 1.v,
+                                    color: const Color(0xFF888888))
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: onTapAppointmentAllCollapsed,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: lightTheme.onSecondary,
+                            ),
+                            child: Column(
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20.h, vertical: 10.v),
+                                    child: Text(
+                                      'Appointment / Collapsed',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20.fSize,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5.v),
+                                Divider(
+                                    height: 1.v,
+                                    thickness: 1.v,
+                                    color: const Color(0xFF888888))
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: onTapAppointmentStartExpanded,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: lightTheme.onSecondary,
+                            ),
+                            child: Column(
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20.h, vertical: 10.v),
+                                    child: Text(
+                                      'Appointment / Start',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20.fSize,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5.v),
+                                Divider(
+                                    height: 1.v,
+                                    thickness: 1.v,
+                                    color: const Color(0xFF888888))
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: onTapAppointmentEndExpanded,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: lightTheme.onSecondary,
+                            ),
+                            child: Column(
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20.h, vertical: 10.v),
+                                    child: Text(
+                                      'Appointment / End',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20.fSize,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5.v),
+                                Divider(
+                                    height: 1.v,
+                                    thickness: 1.v,
+                                    color: const Color(0xFF888888))
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: onTapUnsubscribeConfirm,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: lightTheme.onSecondary,
+                            ),
+                            child: Column(
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20.h, vertical: 10.v),
+                                    child: Text(
+                                      'Unsubscribe / Confirm',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20.fSize,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5.v),
+                                Divider(
+                                    height: 1.v,
+                                    thickness: 1.v,
+                                    color: const Color(0xFF888888))
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: onTapSignUpComplete,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: lightTheme.onSecondary,
+                            ),
+                            child: Column(
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20.h, vertical: 10.v),
+                                    child: Text(
+                                      'SignUp Complete',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20.fSize,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5.v),
+                                Divider(
+                                    height: 1.v,
+                                    thickness: 1.v,
+                                    color: const Color(0xFF888888))
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: onTapNoticesOne,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: lightTheme.onSecondary,
+                            ),
+                            child: Column(
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20.h, vertical: 10.v),
+                                    child: Text(
+                                      'Notices',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20.fSize,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5.v),
+                                Divider(
+                                    height: 1.v,
+                                    thickness: 1.v,
+                                    color: const Color(0xFF888888))
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: onTapNoticesNoNotice,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: lightTheme.onSecondary,
+                            ),
+                            child: Column(
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20.h, vertical: 10.v),
+                                    child: Text(
+                                      'No Notice',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20.fSize,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5.v),
+                                Divider(
+                                    height: 1.v,
+                                    thickness: 1.v,
+                                    color: const Color(0xFF888888))
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: onTapSchedulesContainer,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: lightTheme.onSecondary,
+                            ),
+                            child: Column(
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20.h, vertical: 10.v),
+                                    child: Text(
+                                      'Schedules - Container',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20.fSize,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5.v),
+                                Divider(
+                                    height: 1.v,
+                                    thickness: 1.v,
+                                    color: const Color(0xFF888888))
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: onTapSchedulesSendInvitationLeaderOnly,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: lightTheme.onSecondary,
+                            ),
+                            child: Column(
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20.h, vertical: 10.v),
+                                    child: Text(
+                                      'Send Invitation',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20.fSize,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5.v),
+                                Divider(
+                                    height: 1.v,
+                                    thickness: 1.v,
+                                    color: const Color(0xFF888888))
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: onTapSignInPage,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: lightTheme.onSecondary,
+                            ),
+                            child: Column(
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20.h, vertical: 10.v),
+                                    child: Text(
+                                      'SignIn',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20.fSize,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5.v),
+                                Divider(
+                                    height: 1.v,
+                                    thickness: 1.v,
+                                    color: const Color(0xFF888888))
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: onTapIdentityVerificationTermsBottomSheet,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: lightTheme.onSecondary,
+                            ),
+                            child: Column(
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20.h, vertical: 10.v),
+                                    child: Text(
+                                      'Verification / BottomSheet',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20.fSize,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5.v),
+                                Divider(
+                                    height: 1.v,
+                                    thickness: 1.v,
+                                    color: const Color(0xFF888888))
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: onTapIdentityVerificationEmpty,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: lightTheme.onSecondary,
+                            ),
+                            child: Column(
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20.h, vertical: 10.v),
+                                    child: Text(
+                                      'Verification / Empty',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20.fSize,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5.v),
+                                Divider(
+                                    height: 1.v,
+                                    thickness: 1.v,
+                                    color: const Color(0xFF888888))
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: onTapIdentityVerificationFilled,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: lightTheme.onSecondary,
+                            ),
+                            child: Column(
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20.h, vertical: 10.v),
+                                    child: Text(
+                                      'Verification / Filled',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20.fSize,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5.v),
+                                Divider(
+                                    height: 1.v,
+                                    thickness: 1.v,
+                                    color: const Color(0xFF888888))
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: onTapPersonalInfoFormZipCode,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: lightTheme.onSecondary,
+                            ),
+                            child: Column(
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20.h, vertical: 10.v),
+                                    child: Text(
+                                      'Zip Code',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20.fSize,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5.v),
+                                Divider(
+                                    height: 1.v,
+                                    thickness: 1.v,
+                                    color: const Color(0xFF888888))
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: onTapSplashScreenOne,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: lightTheme.onSecondary,
+                            ),
+                            child: Column(
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20.h, vertical: 10.v),
+                                    child: Text(
+                                      '스플래시스크린 1',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20.fSize,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5.v),
+                                Divider(
+                                    height: 1.v,
+                                    thickness: 1.v,
+                                    color: const Color(0xFF888888))
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: onTapSplashScreenTwo,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: lightTheme.onSecondary,
+                            ),
+                            child: Column(
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20.h, vertical: 10.v),
+                                    child: Text(
+                                      '스플래시스크린 2',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20.fSize,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5.v),
+                                Divider(
+                                    height: 1.v,
+                                    thickness: 1.v,
+                                    color: const Color(0xFF888888))
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: onTapLicenseRegister,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: lightTheme.onSecondary,
+                            ),
+                            child: Column(
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20.h, vertical: 10.v),
+                                    child: Text(
+                                      'License Register',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20.fSize,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5.v),
+                                Divider(
+                                    height: 1.v,
+                                    thickness: 1.v,
+                                    color: const Color(0xFF888888))
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: onTapIdentityVerificationFilledwithTelecom,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: lightTheme.onSecondary,
+                            ),
+                            child: Column(
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20.h, vertical: 10.v),
+                                    child: Text(
+                                      'Verification / Filled Telecom',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20.fSize,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5.v),
+                                Divider(
+                                    height: 1.v,
+                                    thickness: 1.v,
+                                    color: const Color(0xFF888888))
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: onTapIdentityVerificationWaitingwithTelecom,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: lightTheme.onSecondary,
+                            ),
+                            child: Column(
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20.h, vertical: 10.v),
+                                    child: Text(
+                                      'Verification / Waiting',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20.fSize,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5.v),
+                                Divider(
+                                    height: 1.v,
+                                    thickness: 1.v,
+                                    color: const Color(0xFF888888))
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: onTapHomePage,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: lightTheme.onSecondary,
+                            ),
+                            child: Column(
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20.h, vertical: 10.v),
+                                    child: Text(
+                                      'Home',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20.fSize,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5.v),
+                                Divider(
+                                    height: 1.v,
+                                    thickness: 1.v,
+                                    color: const Color(0xFF888888))
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: onTapSchedulesTeamisnotFull,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: lightTheme.onSecondary,
+                            ),
+                            child: Column(
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20.h, vertical: 10.v),
+                                    child: Text(
+                                      'Schedules / Team is not Full',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20.fSize,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5.v),
+                                Divider(
+                                    height: 1.v,
+                                    thickness: 1.v,
+                                    color: const Color(0xFF888888))
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: onTapSchedulesTeamisFull,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: lightTheme.onSecondary,
+                            ),
+                            child: Column(
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20.h, vertical: 10.v),
+                                    child: Text(
+                                      'Schedules / Team is Full',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20.fSize,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5.v),
+                                Divider(
+                                    height: 1.v,
+                                    thickness: 1.v,
+                                    color: const Color(0xFF888888))
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: onTapSmartKey,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: lightTheme.onSecondary,
+                            ),
+                            child: Column(
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20.h, vertical: 10.v),
+                                    child: Text(
+                                      'Smart Key',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20.fSize,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5.v),
+                                Divider(
+                                    height: 1.v,
+                                    thickness: 1.v,
+                                    color: const Color(0xFF888888))
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: onTapMyPage,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: lightTheme.onSecondary,
+                            ),
+                            child: Column(
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20.h, vertical: 10.v),
+                                    child: Text(
+                                      'My Page',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20.fSize,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5.v),
+                                Divider(
+                                    height: 1.v,
+                                    thickness: 1.v,
+                                    color: const Color(0xFF888888))
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: onTapCardList,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: lightTheme.onSecondary,
+                            ),
+                            child: Column(
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20.h, vertical: 10.v),
+                                    child: Text(
+                                      'Card List',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20.fSize,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5.v),
+                                Divider(
+                                    height: 1.v,
+                                    thickness: 1.v,
+                                    color: const Color(0xFF888888))
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: onTapSchedulesViewScheduledDateSchedulerOnly,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: lightTheme.onSecondary,
+                            ),
+                            child: Column(
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20.h, vertical: 10.v),
+                                    child: Text(
+                                      'View Scheduled Date',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20.fSize,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5.v),
+                                Divider(
+                                    height: 1.v,
+                                    thickness: 1.v,
+                                    color: const Color(0xFF888888))
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap:
+                              onTapSchedulesViewScheduledDateSchedulerOnlyExpanded,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: lightTheme.onSecondary,
+                            ),
+                            child: Column(
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20.h, vertical: 10.v),
+                                    child: Text(
+                                      'View Scheduled Date Expanded',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20.fSize,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5.v),
+                                Divider(
+                                    height: 1.v,
+                                    thickness: 1.v,
+                                    color: const Color(0xFF888888))
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: onTapSmartKeyAnotherIsCurrentlyUsing,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: lightTheme.onSecondary,
+                            ),
+                            child: Column(
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20.h, vertical: 10.v),
+                                    child: Text(
+                                      'Another is Currently Using Car',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20.fSize,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5.v),
+                                Divider(
+                                    height: 1.v,
+                                    thickness: 1.v,
+                                    color: const Color(0xFF888888))
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: onTapSubscribeInfoNoSubscription,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: lightTheme.onSecondary,
+                            ),
+                            child: Column(
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20.h, vertical: 10.v),
+                                    child: Text(
+                                      'Subscribe Info (No Subscription)',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20.fSize,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5.v),
+                                Divider(
+                                    height: 1.v,
+                                    thickness: 1.v,
+                                    color: const Color(0xFF888888))
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: onTapSubscribeInfo,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: lightTheme.onSecondary,
+                            ),
+                            child: Column(
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20.h, vertical: 10.v),
+                                    child: Text(
+                                      'Subscribe Info',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20.fSize,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5.v),
+                                Divider(
+                                    height: 1.v,
+                                    thickness: 1.v,
+                                    color: const Color(0xFF888888))
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: onTapContactUsEmptyHistory,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: lightTheme.onSecondary,
+                            ),
+                            child: Column(
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20.h, vertical: 10.v),
+                                    child: Text(
+                                      'Empty History',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20.fSize,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5.v),
+                                Divider(
+                                    height: 1.v,
+                                    thickness: 1.v,
+                                    color: const Color(0xFF888888))
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap:
+                              onTapContactUsInquiryHistoryExpandedTabContainer,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: lightTheme.onSecondary,
+                            ),
+                            child: Column(
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20.h, vertical: 10.v),
+                                    child: Text(
+                                      'Inquiry History',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20.fSize,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5.v),
+                                Divider(
+                                    height: 1.v,
+                                    thickness: 1.v,
+                                    color: const Color(0xFF888888))
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: onTapUnsubscribe,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: lightTheme.onSecondary,
+                            ),
+                            child: Column(
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20.h, vertical: 10.v),
+                                    child: Text(
+                                      'Unsubscribe',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20.fSize,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5.v),
+                                Divider(
+                                    height: 1.v,
+                                    thickness: 1.v,
+                                    color: const Color(0xFF888888))
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: onTapCardRegister,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: lightTheme.onSecondary,
+                            ),
+                            child: Column(
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20.h, vertical: 10.v),
+                                    child: Text(
+                                      'Card Register',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20.fSize,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5.v),
+                                Divider(
+                                    height: 1.v,
+                                    thickness: 1.v,
+                                    color: const Color(0xFF888888))
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: onTapNotices,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: lightTheme.onSecondary,
+                            ),
+                            child: Column(
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20.h, vertical: 10.v),
+                                    child: Text(
+                                      'Notices',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20.fSize,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5.v),
+                                Divider(
+                                    height: 1.v,
+                                    thickness: 1.v,
+                                    color: const Color(0xFF888888))
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: onTapContactUs11ContactUs,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: lightTheme.onSecondary,
+                            ),
+                            child: Column(
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20.h, vertical: 10.v),
+                                    child: Text(
+                                      '1:1 Contact Us',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20.fSize,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5.v),
+                                Divider(
+                                    height: 1.v,
+                                    thickness: 1.v,
+                                    color: const Color(0xFF888888))
+                              ],
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: onTapExpiringSubscriptions,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: lightTheme.onSecondary,
+                            ),
+                            child: Column(
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20.h, vertical: 10.v),
+                                    child: Text(
+                                      'Expiring Subscriptions',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20.fSize,
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 5.v),
+                                Divider(
+                                    height: 1.v,
+                                    thickness: 1.v,
+                                    color: const Color(0xFF888888))
+                              ],
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

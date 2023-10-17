@@ -1,6 +1,8 @@
 // 📦 Package imports:
 import 'package:get/instance_manager.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+
+// 🌎 Project imports:
 import '/core/utils/logger.dart';
 
 class PrefUtils {

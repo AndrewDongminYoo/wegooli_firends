@@ -9,7 +9,6 @@ import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
-import '/widgets/app_bar/appbar_image.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/custom_bottom_bar.dart';
 import '/widgets/custom_image_view.dart';
@@ -28,7 +27,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
         appBar: CustomAppBar(
           height: 45.v,
           leadingWidth: 64.h,
-          leading: AppbarImage(
+          leading: CustomImageView(
             svgPath: Assets.svg.imgLocation.path,
             margin: EdgeInsets.only(
               left: 15.h,
@@ -37,7 +36,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
             ),
           ),
           actions: [
-            AppbarImage(
+            CustomImageView(
               svgPath: Assets.svg.imgMenu.path,
               margin: EdgeInsets.fromLTRB(9.h, 13.v, 9.h, 12.v),
             ),

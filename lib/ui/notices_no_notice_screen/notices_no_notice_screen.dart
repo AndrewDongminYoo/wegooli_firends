@@ -8,7 +8,6 @@ import 'package:get/get.dart';
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
 import '/theme/theme_helper.dart';
-import '/widgets/app_bar/appbar_image.dart';
 import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/custom_image_view.dart';
@@ -24,7 +23,7 @@ class NoticesNoNoticeScreen extends GetWidget<NoticesNoNoticeController> {
       child: Scaffold(
         appBar: CustomAppBar(
             leadingWidth: 34.h,
-            leading: AppbarImage(
+            leading: CustomImageView(
               svgPath: Assets.svg.imgArrowleft.path,
               margin: EdgeInsets.only(left: 16.h, top: 19.v, bottom: 18.v),
               onTap: Get.back,

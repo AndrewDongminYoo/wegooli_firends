@@ -9,7 +9,6 @@ import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
-import '/widgets/app_bar/appbar_image.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/custom_bottom_bar.dart';
 import '/widgets/custom_image_view.dart';
@@ -27,7 +26,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
         appBar: CustomAppBar(
           height: 45.v,
           centerTitle: true,
-          title: AppbarImage(
+          title: CustomImageView(
             svgPath: Assets.svg.imgFriends.path,
           ),
           styleType: Style.bgOutline,

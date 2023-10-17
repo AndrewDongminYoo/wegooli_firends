@@ -9,7 +9,6 @@ import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
-import '/widgets/app_bar/appbar_image.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/custom_bottom_bar.dart';
 import '/widgets/custom_elevated_button.dart';
@@ -29,7 +28,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
         appBar: CustomAppBar(
           height: 45.v,
           centerTitle: true,
-          title: AppbarImage(
+          title: CustomImageView(
             svgPath: Assets.svg.imgFriends.path,
           ),
           styleType: Style.bgOutline,
@@ -545,8 +544,8 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                                 mainAxisSize: MainAxisSize.min,
                                                 children: [
                                                   CustomImageView(
-                                                    svgPath:
-                                                        Assets.svg.imgCampaign.path,
+                                                    svgPath: Assets
+                                                        .svg.imgCampaign.path,
                                                     height: 46.adaptSize,
                                                     width: 46.adaptSize,
                                                   ),

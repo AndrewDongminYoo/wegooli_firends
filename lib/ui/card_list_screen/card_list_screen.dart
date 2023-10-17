@@ -7,7 +7,6 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
-import '/widgets/app_bar/appbar_image.dart';
 import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/custom_elevated_button.dart';
@@ -25,7 +24,7 @@ class CardListScreen extends GetWidget<CardListController> {
       child: Scaffold(
         appBar: CustomAppBar(
             leadingWidth: 34.h,
-            leading: AppbarImage(
+            leading: CustomImageView(
               svgPath: Assets.svg.imgArrowleft.path,
               margin: EdgeInsets.only(left: 16.h, top: 19.v, bottom: 18.v),
               onTap: Get.back,
@@ -41,39 +40,43 @@ class CardListScreen extends GetWidget<CardListController> {
               child: Column(
                 children: [
                   Padding(
-                      padding: EdgeInsets.only(right: 1.h),
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Obx(() => CustomRadioButton(
-                                text: '신한 7210 / 개인',
-                                value: '신한 7210 / 개인',
-                                groupValue: controller.radioGroup.value,
-                                onChange: (value) {
-                                  controller.radioGroup.value = value;
-                                })),
-                            CustomImageView(
-                                svgPath: Assets.svg.imgCloseGray700.path,
-                                height: 18.adaptSize,
-                                width: 18.adaptSize)
-                          ])),
+                    padding: EdgeInsets.only(right: 1.h),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Obx(() => CustomRadioButton(
+                            text: '신한 7210 / 개인',
+                            value: '신한 7210 / 개인',
+                            groupValue: controller.radioGroup.value,
+                            onChange: (value) {
+                              controller.radioGroup.value = value;
+                            })),
+                        CustomImageView(
+                            svgPath: Assets.svg.imgCloseGray700.path,
+                            height: 18.adaptSize,
+                            width: 18.adaptSize)
+                      ],
+                    ),
+                  ),
                   Padding(
-                      padding: EdgeInsets.only(top: 13.v, right: 1.h),
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Obx(() => CustomRadioButton(
-                                text: '신한 1210 / 개인',
-                                value: '신한 1210 / 개인',
-                                groupValue: controller.radioGroup1.value,
-                                onChange: (value) {
-                                  controller.radioGroup1.value = value;
-                                })),
-                            CustomImageView(
-                                svgPath: Assets.svg.imgCloseGray700.path,
-                                height: 18.adaptSize,
-                                width: 18.adaptSize)
-                          ])),
+                    padding: EdgeInsets.only(top: 13.v, right: 1.h),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Obx(() => CustomRadioButton(
+                            text: '신한 1210 / 개인',
+                            value: '신한 1210 / 개인',
+                            groupValue: controller.radioGroup1.value,
+                            onChange: (value) {
+                              controller.radioGroup1.value = value;
+                            })),
+                        CustomImageView(
+                            svgPath: Assets.svg.imgCloseGray700.path,
+                            height: 18.adaptSize,
+                            width: 18.adaptSize)
+                      ],
+                    ),
+                  ),
                   SizedBox(height: 31.v),
                   CustomElevatedButton(text: '카드 추가')
                 ],

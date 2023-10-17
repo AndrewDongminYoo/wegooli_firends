@@ -10,7 +10,7 @@ import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
-import '/widgets/custom_image_view.dart';
+import '/widgets/image_view.dart';
 import 'controller/view_scheduled_date_scheduler_only_controller.dart';
 
 // ignore_for_file: must_be_immutable

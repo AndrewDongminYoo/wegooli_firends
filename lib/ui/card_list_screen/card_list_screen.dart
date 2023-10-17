@@ -8,10 +8,10 @@ import 'package:get/get.dart';
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
 import '/widgets/app_bar/appbar_title.dart';
-import '/widgets/app_bar/custom_app_bar.dart';
-import '/widgets/custom_elevated_button.dart';
-import '/widgets/custom_image_view.dart';
-import '/widgets/custom_radio_button.dart';
+import '/widgets/app_bar/app_bar.dart';
+import '/widgets/elevated_button.dart';
+import '/widgets/image_view.dart';
+import '/widgets/radio_button.dart';
 import 'controller/card_list_controller.dart';
 
 class CardListScreen extends GetWidget<CardListController> {

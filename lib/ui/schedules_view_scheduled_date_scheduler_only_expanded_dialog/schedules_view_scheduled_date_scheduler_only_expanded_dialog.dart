@@ -9,9 +9,9 @@ import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
-import '/widgets/custom_drop_down.dart';
-import '/widgets/custom_image_view.dart';
-import '/widgets/custom_outlined_button.dart';
+import '/widgets/drop_down.dart';
+import '/widgets/image_view.dart';
+import '/widgets/outlined_button.dart';
 import 'controller/schedules_view_scheduled_date_scheduler_only_expanded_controller.dart';
 
 // ignore_for_file: must_be_immutable

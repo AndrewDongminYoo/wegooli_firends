@@ -9,8 +9,8 @@ import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
-import '/widgets/custom_elevated_button.dart';
-import '/widgets/custom_image_view.dart';
+import '/widgets/elevated_button.dart';
+import '/widgets/image_view.dart';
 import 'controller/unsubscribe_confirm_controller.dart';
 
 // ignore_for_file: must_be_immutable

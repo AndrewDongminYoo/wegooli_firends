@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
 import '/theme/theme_helper.dart';
-import '/widgets/custom_image_view.dart';
+import '/widgets/image_view.dart';
 import 'controller/splash_screen_two_controller.dart';
 
 class SplashScreenTwoScreen extends GetWidget<SplashScreenTwoController> {

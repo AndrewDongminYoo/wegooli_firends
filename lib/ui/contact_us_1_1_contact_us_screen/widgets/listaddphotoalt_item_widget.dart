@@ -9,8 +9,8 @@ import '../controller/contact_us_1_1_contact_us_controller.dart';
 import '../models/listaddphotoalt_item_model.dart';
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
-import '/widgets/custom_icon_button.dart';
-import '/widgets/custom_image_view.dart';
+import '/widgets/icon_button.dart';
+import '/widgets/image_view.dart';
 
 // ignore: must_be_immutable
 class ListaddphotoaltItemWidget extends StatelessWidget {

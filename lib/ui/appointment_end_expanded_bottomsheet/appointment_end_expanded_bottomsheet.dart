@@ -6,9 +6,9 @@ import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
-import '/widgets/custom_drop_down.dart';
-import '/widgets/custom_elevated_button.dart';
-import '/widgets/custom_image_view.dart';
+import '/widgets/drop_down.dart';
+import '/widgets/elevated_button.dart';
+import '/widgets/image_view.dart';
 import 'controller/appointment_end_expanded_controller.dart';
 
 // 📦 Package imports:

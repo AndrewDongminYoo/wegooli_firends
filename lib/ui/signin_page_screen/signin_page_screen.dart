@@ -8,9 +8,9 @@ import 'package:get/get.dart';
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
 import '/theme/theme_helper.dart';
-import '/widgets/custom_elevated_button.dart';
-import '/widgets/custom_image_view.dart';
-import '/widgets/custom_text_form_field.dart';
+import '/widgets/elevated_button.dart';
+import '/widgets/image_view.dart';
+import '/widgets/text_form_field.dart';
 import 'controller/signin_page_controller.dart';
 
 class SigninPageScreen extends GetWidget<SigninPageController> {

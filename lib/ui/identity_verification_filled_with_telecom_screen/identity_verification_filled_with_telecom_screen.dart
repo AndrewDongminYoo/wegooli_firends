@@ -10,10 +10,10 @@ import '/gen/assets.gen.dart';
 import '/routes/app_routes.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_title.dart';
-import '/widgets/app_bar/custom_app_bar.dart';
-import '/widgets/custom_elevated_button.dart';
-import '/widgets/custom_image_view.dart';
-import '/widgets/custom_text_form_field.dart';
+import '/widgets/app_bar/app_bar.dart';
+import '/widgets/elevated_button.dart';
+import '/widgets/image_view.dart';
+import '/widgets/text_form_field.dart';
 import 'controller/identity_verification_filled_with_telecom_controller.dart';
 
 class IdentityVerificationFilledWithTelecomScreen

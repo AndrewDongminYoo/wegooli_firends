@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
+import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/custom_elevated_button.dart';
@@ -35,7 +35,7 @@ class SendInvitationLeaderOnlyDialog extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   CustomImageView(
-                    svgPath: Assets.imgClose,
+                    svgPath: Assets.svg.imgClose.path,
                     height: 15.adaptSize,
                     width: 15.adaptSize,
                     alignment: Alignment.centerRight,
@@ -61,7 +61,7 @@ class SendInvitationLeaderOnlyDialog extends StatelessWidget {
                       suffix: Container(
                           margin: EdgeInsets.fromLTRB(30.h, 12.v, 12.h, 12.v),
                           child: CustomImageView(
-                              svgPath: Assets.imgEyeCrossedOut)),
+                              svgPath: Assets.svg.imgEyeCrossedOut.path)),
                       suffixConstraints: BoxConstraints(maxHeight: 48.v),
                       contentPadding:
                           EdgeInsets.only(left: 12.h, top: 14.v, bottom: 14.v)),

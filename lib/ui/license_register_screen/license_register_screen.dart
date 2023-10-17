@@ -6,8 +6,8 @@ import 'package:flutter_svg_provider/flutter_svg_provider.dart' as fs;
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
+import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_image.dart';
@@ -33,7 +33,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                 height: 50.v,
                 leadingWidth: 34.h,
                 leading: AppbarImage(
-                  svgPath: Assets.imgArrowleft,
+                  svgPath: Assets.svg.imgArrowleft.path,
                   margin: EdgeInsets.only(left: 16.h, top: 16.v, bottom: 16.v),
                   onTap: Get.back,
                 ),
@@ -88,9 +88,10 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                               Alignment.center,
                                                           children: [
                                                             CustomImageView(
-                                                                svgPath:
-                                                                    Assets
-                                                                        .imgLightbulb,
+                                                                svgPath: Assets
+                                                                    .svg
+                                                                    .imgLightbulb
+                                                                    .path,
                                                                 height: 67.v,
                                                                 width: 64.h),
                                                             Align(
@@ -106,7 +107,9 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                                 decoration: BoxDecoration(
                                                                     image: DecorationImage(
                                                                         image: fs.Svg(Assets
-                                                                            .imgGroup10),
+                                                                            .svg
+                                                                            .imgGroup
+                                                                            .path),
                                                                         fit: BoxFit
                                                                             .cover)),
                                                                 child: Column(
@@ -167,7 +170,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                                                         color: lightTheme.primary,
                                                                                         fontSize: 9.fSize,
                                                                                       ))),
-                                                                              CustomIconButton(height: 24.adaptSize, width: 24.adaptSize, child: CustomImageView(svgPath: Assets.imgFrame))
+                                                                              CustomIconButton(height: 24.adaptSize, width: 24.adaptSize, child: CustomImageView(svgPath: Assets.svg.imgFrame.path))
                                                                             ]))
                                                                   ],
                                                                 ),
@@ -433,8 +436,8 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                         margin: EdgeInsets.only(
                                                             left: 30.h),
                                                         child: CustomImageView(
-                                                            svgPath: Assets
-                                                                .imgCaretdown)),
+                                                            svgPath: Assets.svg
+                                                                .imgCaretdown.path)),
                                                     hintText: '면허증 종류를 선택하세요.',
                                                     items: controller
                                                         .licenseRegister
@@ -537,9 +540,10 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                                               const Color(0xFFB0B2BC),
                                                                         )),
                                                                     CustomImageView(
-                                                                        svgPath:
-                                                                            Assets
-                                                                                .imgCaretdown,
+                                                                        svgPath: Assets
+                                                                            .svg
+                                                                            .imgCaretdown
+                                                                            .path,
                                                                         height: 18
                                                                             .adaptSize,
                                                                         width: 18
@@ -589,8 +593,8 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                   margin: EdgeInsets.only(
                                                       left: 30.h),
                                                   child: CustomImageView(
-                                                      svgPath: Assets
-                                                          .imgCaretdown)),
+                                                      svgPath: Assets.svg
+                                                          .imgCaretdown.path)),
                                               margin: EdgeInsets.only(
                                                   left: 8.h, top: 19.v),
                                               hintText: '11',

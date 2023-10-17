@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
+import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_image.dart';
@@ -29,7 +29,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
           height: 45.v,
           leadingWidth: 64.h,
           leading: AppbarImage(
-            svgPath: Assets.imgLocation,
+            svgPath: Assets.svg.imgLocation.path,
             margin: EdgeInsets.only(
               left: 15.h,
               top: 13.v,
@@ -38,7 +38,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
           ),
           actions: [
             AppbarImage(
-              svgPath: Assets.imgMenu,
+              svgPath: Assets.svg.imgMenu.path,
               margin: EdgeInsets.fromLTRB(9.h, 13.v, 9.h, 12.v),
             ),
           ],
@@ -97,7 +97,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                         alignment: Alignment.bottomRight,
                         children: [
                           CustomImageView(
-                            svgPath: Assets.imgOffer,
+                            svgPath: Assets.svg.imgOffer.path,
                             height: 59.v,
                             width: 89.h,
                             alignment: Alignment.topLeft,
@@ -178,7 +178,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                           ),
                           SizedBox(height: 34.v),
                           CustomImageView(
-                            svgPath: Assets.imgLocationBlack900,
+                            svgPath: Assets.svg.imgLocationBlack900.path,
                             height: 77.v,
                             width: 84.h,
                             alignment: Alignment.centerRight,
@@ -228,7 +228,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                           ),
                           SizedBox(height: 25.v),
                           CustomImageView(
-                            imagePath: Assets.imgLayer2Yellow100,
+                            imagePath: Assets.images.imgLayer2Yellow100.path,
                             height: 70.v,
                             width: 112.h,
                             alignment: Alignment.centerRight,
@@ -284,7 +284,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                       ),
                     ),
                     CustomImageView(
-                      svgPath: Assets.imgGroup,
+                      svgPath: Assets.svg.imgGroup.path,
                       height: 58.v,
                       width: 119.h,
                       margin: EdgeInsets.only(

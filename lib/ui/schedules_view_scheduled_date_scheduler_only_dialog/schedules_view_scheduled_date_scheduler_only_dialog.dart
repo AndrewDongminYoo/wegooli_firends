@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
+import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/custom_image_view.dart';
@@ -34,7 +34,7 @@ class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   CustomImageView(
-                    svgPath: Assets.imgClose,
+                    svgPath: Assets.svg.imgClose.path,
                     height: 15.adaptSize,
                     width: 15.adaptSize,
                     alignment: Alignment.centerRight,
@@ -95,8 +95,8 @@ class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
                                                     style: theme
                                                         .textTheme.bodyLarge),
                                                 CustomImageView(
-                                                    svgPath: Assets
-                                                        .imgArrowleft,
+                                                    svgPath:
+                                                        Assets.svg.imgArrowleft.path,
                                                     height: 18.adaptSize,
                                                     width: 18.adaptSize,
                                                     margin: EdgeInsets.only(
@@ -118,8 +118,8 @@ class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
                                                   style: theme
                                                       .textTheme.bodyLarge),
                                               CustomImageView(
-                                                  svgPath: Assets
-                                                      .imgArrowleft,
+                                                  svgPath:
+                                                      Assets.svg.imgArrowleft.path,
                                                   height: 18.adaptSize,
                                                   width: 18.adaptSize,
                                                   margin: EdgeInsets.only(

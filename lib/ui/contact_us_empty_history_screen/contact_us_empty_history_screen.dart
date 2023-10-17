@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
+import '/gen/assets.gen.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_image.dart';
 import '/widgets/app_bar/appbar_title.dart';
@@ -27,7 +27,7 @@ class ContactUsEmptyHistoryScreen
         appBar: CustomAppBar(
             leadingWidth: 34.h,
             leading: AppbarImage(
-              svgPath: Assets.imgArrowleft,
+              svgPath: Assets.svg.imgArrowleft.path,
               margin: EdgeInsets.only(left: 16.h, top: 19.v, bottom: 18.v),
               onTap: Get.back,
             ),
@@ -44,7 +44,7 @@ class ContactUsEmptyHistoryScreen
                               left: 105.h, right: 105.h, bottom: 5.v),
                           child: Column(children: [
                             CustomImageView(
-                                imagePath: Assets.img,
+                                imagePath: Assets.images.img.path,
                                 height: 177.v,
                                 width: 120.h),
                             SizedBox(height: 21.v),

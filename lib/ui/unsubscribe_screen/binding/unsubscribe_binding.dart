@@ -7,6 +7,6 @@ import '../controller/unsubscribe_controller.dart';
 class UnsubscribeBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => UnsubscribeController());
+    Get.lazyPut(UnsubscribeController.new);
   }
 }

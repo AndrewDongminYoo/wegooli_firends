@@ -7,6 +7,6 @@ import '../controller/subscribe_info_controller.dart';
 class SubscribeInfoBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => SubscribeInfoController());
+    Get.lazyPut(SubscribeInfoController.new);
   }
 }

@@ -7,6 +7,6 @@ import '../controller/contact_us_1_1_contact_us_controller.dart';
 class ContactUs11ContactUsBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => ContactUs11ContactUsController());
+    Get.lazyPut(ContactUs11ContactUsController.new);
   }
 }

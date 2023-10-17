@@ -7,6 +7,6 @@ import '../controller/license_register_controller.dart';
 class LicenseRegisterBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => LicenseRegisterController());
+    Get.lazyPut(LicenseRegisterController.new);
   }
 }

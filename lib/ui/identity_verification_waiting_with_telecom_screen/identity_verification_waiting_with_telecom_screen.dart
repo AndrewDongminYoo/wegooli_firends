@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
+import '/gen/assets.gen.dart';
 import '/routes/app_routes.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_image.dart';
@@ -33,7 +33,7 @@ class IdentityVerificationWaitingWithTelecomScreen
             height: 50.v,
             leadingWidth: 34.h,
             leading: AppbarImage(
-              svgPath: Assets.imgArrowleft,
+              svgPath: Assets.svg.imgArrowleft.path,
               margin: EdgeInsets.only(left: 16.h, top: 16.v, bottom: 16.v),
               onTap: Get.back,
             ),
@@ -48,7 +48,7 @@ class IdentityVerificationWaitingWithTelecomScreen
                 Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
                   Text('이름', style: textTheme.bodySmall),
                   CustomImageView(
-                      svgPath: Assets.imgLabeltext,
+                      svgPath: Assets.svg.imgLabeltext.path,
                       height: 5.adaptSize,
                       width: 5.adaptSize,
                       margin: EdgeInsets.only(left: 2.h, bottom: 10.v))
@@ -63,7 +63,7 @@ class IdentityVerificationWaitingWithTelecomScreen
                   Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
                     Text('주민등록번호 13자리', style: textTheme.bodySmall),
                     CustomImageView(
-                        svgPath: Assets.imgLabeltext,
+                        svgPath: Assets.svg.imgLabeltext.path,
                         height: 5.adaptSize,
                         width: 5.adaptSize,
                         margin: EdgeInsets.only(left: 2.h, bottom: 10.v))
@@ -105,7 +105,7 @@ class IdentityVerificationWaitingWithTelecomScreen
                   Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
                     Text('휴대폰 정보', style: textTheme.bodySmall),
                     CustomImageView(
-                        svgPath: Assets.imgLabeltext,
+                        svgPath: Assets.svg.imgLabeltext.path,
                         height: 5.adaptSize,
                         width: 5.adaptSize,
                         margin: EdgeInsets.only(left: 2.h, bottom: 10.v))
@@ -116,7 +116,7 @@ class IdentityVerificationWaitingWithTelecomScreen
                       icon: Container(
                           margin: EdgeInsets.only(left: 30.h),
                           child: CustomImageView(
-                              svgPath: Assets.imgCaretdown)),
+                              svgPath: Assets.svg.imgCaretdown.path)),
                       hintText: 'KT',
                       hintStyle: textTheme.bodyLarge,
                       items: controller.identityVerificationWaitingWithTelecom

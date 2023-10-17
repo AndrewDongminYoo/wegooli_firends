@@ -7,8 +7,8 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '../controller/view_scheduled_date_scheduler_only_controller.dart';
 import '../models/listview_item_model.dart';
-import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
+import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/custom_image_view.dart';
@@ -88,7 +88,7 @@ class ListviewItemWidget extends StatelessWidget {
               ),
             ),
             CustomImageView(
-              svgPath: Assets.imgOverflowmenuvertical,
+              svgPath: Assets.svg.imgOverflowmenuvertical.path,
               height: 18.adaptSize,
               width: 18.adaptSize,
               margin: EdgeInsets.only(

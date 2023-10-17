@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
+import '/gen/assets.gen.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_image.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
@@ -27,7 +27,7 @@ class MyPageScreen extends GetWidget<MyPageController> {
           height: 45.v,
           centerTitle: true,
           title: AppbarImage(
-            svgPath: Assets.imgFriends,
+            svgPath: Assets.svg.imgFriends.path,
           ),
           styleType: Style.bgOutline_1,
         ),
@@ -49,7 +49,7 @@ class MyPageScreen extends GetWidget<MyPageController> {
                             child: Row(
                               children: [
                                 CustomImageView(
-                                  imagePath: Assets.placeholder,
+                                  imagePath: Assets.images.placeholder.path,
                                   height: 65.adaptSize,
                                   width: 65.adaptSize,
                                   radius: BorderRadius.circular(
@@ -110,7 +110,7 @@ class MyPageScreen extends GetWidget<MyPageController> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               CustomImageView(
-                                svgPath: Assets.imgEditBlack900,
+                                svgPath: Assets.svg.imgEditBlack900.path,
                                 height: 24.adaptSize,
                                 width: 24.adaptSize,
                               ),
@@ -126,7 +126,7 @@ class MyPageScreen extends GetWidget<MyPageController> {
                               ),
                               const Spacer(),
                               CustomImageView(
-                                svgPath: Assets.imgArrowleft,
+                                svgPath: Assets.svg.imgArrowleft.path,
                                 height: 18.adaptSize,
                                 width: 18.adaptSize,
                                 margin: EdgeInsets.symmetric(vertical: 3.v),
@@ -144,7 +144,7 @@ class MyPageScreen extends GetWidget<MyPageController> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               CustomImageView(
-                                svgPath: Assets.imgInformation,
+                                svgPath: Assets.svg.imgInformation.path,
                                 height: 24.adaptSize,
                                 width: 24.adaptSize,
                               ),
@@ -160,7 +160,7 @@ class MyPageScreen extends GetWidget<MyPageController> {
                               ),
                               const Spacer(),
                               CustomImageView(
-                                svgPath: Assets.imgArrowleft,
+                                svgPath: Assets.svg.imgArrowleft.path,
                                 height: 18.adaptSize,
                                 width: 18.adaptSize,
                                 margin: EdgeInsets.symmetric(vertical: 3.v),
@@ -178,7 +178,7 @@ class MyPageScreen extends GetWidget<MyPageController> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               CustomImageView(
-                                svgPath: Assets.imgMenu,
+                                svgPath: Assets.svg.imgMenu.path,
                                 height: 24.adaptSize,
                                 width: 24.adaptSize,
                               ),
@@ -194,7 +194,7 @@ class MyPageScreen extends GetWidget<MyPageController> {
                               ),
                               const Spacer(),
                               CustomImageView(
-                                svgPath: Assets.imgArrowleft,
+                                svgPath: Assets.svg.imgArrowleft.path,
                                 height: 18.adaptSize,
                                 width: 18.adaptSize,
                                 margin: EdgeInsets.symmetric(vertical: 3.v),

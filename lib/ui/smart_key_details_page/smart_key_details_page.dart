@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
+import '/gen/assets.gen.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_image.dart';
 import '/widgets/app_bar/appbar_title.dart';
@@ -31,7 +31,7 @@ class SmartKeyDetailsPage extends StatelessWidget {
         appBar: CustomAppBar(
             leadingWidth: 34.h,
             leading: AppbarImage(
-              svgPath: Assets.imgArrowleft,
+              svgPath: Assets.svg.imgArrowleft.path,
               margin: EdgeInsets.only(left: 16.h, top: 19.v, bottom: 18.v),
               onTap: Get.back,
             ),
@@ -45,7 +45,7 @@ class SmartKeyDetailsPage extends StatelessWidget {
                     padding: EdgeInsets.only(bottom: 136.v),
                     child: Column(children: [
                       CustomImageView(
-                          imagePath: Assets.imgRectangle4640,
+                          imagePath: Assets.images.imgRectangle4640.path,
                           height: 132.v,
                           width: 200.h),
                       SizedBox(height: 20.v),
@@ -173,7 +173,7 @@ class SmartKeyDetailsPage extends StatelessWidget {
           width: 70,
           backgroundColor: lightTheme.primary,
           child: CustomImageView(
-              svgPath: Assets.imgContactsupport,
+              svgPath: Assets.svg.imgContactsupport.path,
               height: 35.0.v,
               width: 35.0.h),
         ),

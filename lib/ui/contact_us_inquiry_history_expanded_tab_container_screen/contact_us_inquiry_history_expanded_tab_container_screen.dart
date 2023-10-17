@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
+import '/gen/assets.gen.dart';
 import '/theme/theme_helper.dart';
 import '/ui/contact_us_inquiry_history_expanded_page/contact_us_inquiry_history_expanded_page.dart';
 import '/ui/contact_us_inquiry_history_page/contact_us_inquiry_history_page.dart';
@@ -28,7 +28,7 @@ class ContactUsInquiryHistoryExpandedTabContainerScreen
         appBar: CustomAppBar(
             leadingWidth: 34.h,
             leading: AppbarImage(
-              svgPath: Assets.imgArrowleft,
+              svgPath: Assets.svg.imgArrowleft.path,
               margin: EdgeInsets.only(left: 16.h, top: 19.v, bottom: 18.v),
               onTap: Get.back,
             ),

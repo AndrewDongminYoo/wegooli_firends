@@ -7,6 +7,6 @@ import '../controller/my_page_controller.dart';
 class MyPageBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => MyPageController());
+    Get.lazyPut(MyPageController.new);
   }
 }

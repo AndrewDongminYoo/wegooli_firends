@@ -7,6 +7,6 @@ import '../controller/identity_verification_terms_bottomsheet_controller.dart';
 class IdentityVerificationTermsBottomsheetBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => IdentityVerificationTermsBottomsheetController());
+    Get.lazyPut(IdentityVerificationTermsBottomsheetController.new);
   }
 }

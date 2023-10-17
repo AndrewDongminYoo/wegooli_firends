@@ -7,6 +7,6 @@ import '../controller/notices_no_notice_controller.dart';
 class NoticesNoNoticeBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => NoticesNoNoticeController());
+    Get.lazyPut(NoticesNoNoticeController.new);
   }
 }

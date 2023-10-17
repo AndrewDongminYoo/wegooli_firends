@@ -7,6 +7,6 @@ import '../controller/signin_page_controller.dart';
 class SigninPageBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => SigninPageController());
+    Get.lazyPut(SigninPageController.new);
   }
 }

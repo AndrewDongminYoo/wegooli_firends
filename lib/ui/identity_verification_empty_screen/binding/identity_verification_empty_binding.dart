@@ -7,6 +7,6 @@ import '../controller/identity_verification_empty_controller.dart';
 class IdentityVerificationEmptyBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => IdentityVerificationEmptyController());
+    Get.lazyPut(IdentityVerificationEmptyController.new);
   }
 }

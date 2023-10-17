@@ -7,8 +7,8 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '../controller/contact_us_inquiry_history_controller.dart';
 import '../models/list_item_model.dart';
-import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
+import '/gen/assets.gen.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/custom_image_view.dart';
 import '/widgets/custom_outlined_button.dart';
@@ -63,7 +63,7 @@ class ListItemWidget extends StatelessWidget {
                 ),
               ),
               CustomImageView(
-                svgPath: Assets.imgArrowleft,
+                svgPath: Assets.svg.imgArrowleft.path,
                 height: 18.adaptSize,
                 width: 18.adaptSize,
                 margin: EdgeInsets.only(

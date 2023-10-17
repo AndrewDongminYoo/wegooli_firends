@@ -7,6 +7,6 @@ import '../controller/identity_verification_waiting_controller.dart';
 class IdentityVerificationWaitingBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => IdentityVerificationWaitingController());
+    Get.lazyPut(IdentityVerificationWaitingController.new);
   }
 }

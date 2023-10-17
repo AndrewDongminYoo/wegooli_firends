@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
+import '/gen/assets.gen.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/custom_image_view.dart';
 
@@ -21,32 +21,32 @@ class CustomBottomBar extends StatelessWidget {
 
   List<BottomMenuModel> bottomMenuList = [
     BottomMenuModel(
-      icon: Assets.imgNavOnPrimary20x20,
-      activeIcon: Assets.imgNavOnPrimary20x20,
+      icon: Assets.svg.imgNavOnprimary20x20.path,
+      activeIcon: Assets.svg.imgNavOnprimary20x20.path,
       title: '홈',
       type: BottomBarEnum.tf,
     ),
     BottomMenuModel(
-      icon: Assets.imgNavBlueGray200,
-      activeIcon: Assets.imgNavBlueGray200,
+      icon: Assets.svg.imgNavBlueGray200.path,
+      activeIcon: Assets.svg.imgNavBlueGray200.path,
       title: '일정',
       type: BottomBarEnum.tf,
     ),
     BottomMenuModel(
-      icon: Assets.imgNavBlueGray20020x20,
-      activeIcon: Assets.imgNavBlueGray20020x20,
+      icon: Assets.svg.imgNavBlueGray20020x20.path,
+      activeIcon: Assets.svg.imgNavBlueGray20020x20.path,
       title: '채팅',
       type: BottomBarEnum.tf,
     ),
     BottomMenuModel(
-      icon: Assets.imgNav20x20,
-      activeIcon: Assets.imgNav20x20,
+      icon: Assets.svg.imgNav20x20.path,
+      activeIcon: Assets.svg.imgNav20x20.path,
       title: '스마트 키',
       type: BottomBarEnum.tf,
     ),
     BottomMenuModel(
-      icon: Assets.imgNav1,
-      activeIcon: Assets.imgNav1,
+      icon: Assets.svg.imgNav1.path,
+      activeIcon: Assets.svg.imgNav1.path,
       title: '마이페이지',
       type: BottomBarEnum.tf,
     )

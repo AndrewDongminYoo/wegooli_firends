@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
+import '/gen/assets.gen.dart';
 import '/widgets/app_bar/appbar_image.dart';
 import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
@@ -26,7 +26,7 @@ class CardListScreen extends GetWidget<CardListController> {
         appBar: CustomAppBar(
             leadingWidth: 34.h,
             leading: AppbarImage(
-              svgPath: Assets.imgArrowleft,
+              svgPath: Assets.svg.imgArrowleft.path,
               margin: EdgeInsets.only(left: 16.h, top: 19.v, bottom: 18.v),
               onTap: Get.back,
             ),
@@ -53,7 +53,7 @@ class CardListScreen extends GetWidget<CardListController> {
                                   controller.radioGroup.value = value;
                                 })),
                             CustomImageView(
-                                svgPath: Assets.imgCloseGray700,
+                                svgPath: Assets.svg.imgCloseGray700.path,
                                 height: 18.adaptSize,
                                 width: 18.adaptSize)
                           ])),
@@ -70,7 +70,7 @@ class CardListScreen extends GetWidget<CardListController> {
                                   controller.radioGroup1.value = value;
                                 })),
                             CustomImageView(
-                                svgPath: Assets.imgCloseGray700,
+                                svgPath: Assets.svg.imgCloseGray700.path,
                                 height: 18.adaptSize,
                                 width: 18.adaptSize)
                           ])),

@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
+import '/gen/assets.gen.dart';
 import '/routes/app_routes.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_image.dart';
@@ -32,7 +32,7 @@ class IdentityVerificationFilledWithTelecomScreen
                 height: 50.v,
                 leadingWidth: 34.h,
                 leading: AppbarImage(
-                  svgPath: Assets.imgArrowleft,
+                  svgPath: Assets.svg.imgArrowleft.path,
                   margin: EdgeInsets.only(left: 16.h, top: 16.v, bottom: 16.v),
                   onTap: Get.back,
                 ),
@@ -50,7 +50,7 @@ class IdentityVerificationFilledWithTelecomScreen
                             children: [
                               Text('이름', style: textTheme.bodySmall),
                               CustomImageView(
-                                  svgPath: Assets.imgLabeltext,
+                                  svgPath: Assets.svg.imgLabeltext.path,
                                   height: 5.adaptSize,
                                   width: 5.adaptSize,
                                   margin:
@@ -74,7 +74,7 @@ class IdentityVerificationFilledWithTelecomScreen
                                     Text('주민등록번호 13자리',
                                         style: textTheme.bodySmall),
                                     CustomImageView(
-                                        svgPath: Assets.imgLabeltext,
+                                        svgPath: Assets.svg.imgLabeltext.path,
                                         height: 5.adaptSize,
                                         width: 5.adaptSize,
                                         margin: EdgeInsets.only(
@@ -124,7 +124,7 @@ class IdentityVerificationFilledWithTelecomScreen
                                   children: [
                                     Text('휴대폰 정보', style: textTheme.bodySmall),
                                     CustomImageView(
-                                        svgPath: Assets.imgLabeltext,
+                                        svgPath: Assets.svg.imgLabeltext.path,
                                         height: 5.adaptSize,
                                         width: 5.adaptSize,
                                         margin: EdgeInsets.only(
@@ -146,7 +146,8 @@ class IdentityVerificationFilledWithTelecomScreen
                                       children: [
                                         Text('KT', style: textTheme.bodyLarge),
                                         CustomImageView(
-                                            svgPath: Assets.imgCaretdown,
+                                            svgPath:
+                                                Assets.svg.imgCaretdown.path,
                                             height: 18.adaptSize,
                                             width: 18.adaptSize,
                                             margin: EdgeInsets.only(left: 65.h))

@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
+import '/gen/assets.gen.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_image.dart';
 import '/widgets/app_bar/appbar_title.dart';
@@ -32,7 +32,7 @@ class ProfilePage extends StatelessWidget {
         appBar: CustomAppBar(
             leadingWidth: 34.h,
             leading: AppbarImage(
-              svgPath: Assets.imgArrowleft,
+              svgPath: Assets.svg.imgArrowleft.path,
               margin: EdgeInsets.only(left: 16.h, top: 19.v, bottom: 18.v),
               onTap: Get.back,
             ),
@@ -52,7 +52,7 @@ class ProfilePage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             CustomImageView(
-                                imagePath: Assets.placeholder,
+                                imagePath: Assets.images.placeholder.path,
                                 height: 65.adaptSize,
                                 width: 65.adaptSize,
                                 radius: BorderRadius.circular(32.h)),
@@ -104,7 +104,7 @@ class ProfilePage extends StatelessWidget {
                           children: [
                             Text('개인정보 변경', style: textTheme.bodyLarge),
                             CustomImageView(
-                                svgPath: Assets.imgArrowleft,
+                                svgPath: Assets.svg.imgArrowleft.path,
                                 height: 18.adaptSize,
                                 width: 18.adaptSize)
                           ])),

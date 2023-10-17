@@ -6,8 +6,8 @@ import 'package:get/get.dart';
 
 // 🌎 Project imports:
 import '../notices_one_screen/widgets/notices_one_item_widget.dart';
-import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
+import '/gen/assets.gen.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_image.dart';
 import '/widgets/app_bar/appbar_title.dart';
@@ -25,7 +25,7 @@ class NoticesOneScreen extends GetWidget<NoticesOneController> {
         appBar: CustomAppBar(
             leadingWidth: 34.h,
             leading: AppbarImage(
-              svgPath: Assets.imgArrowleft,
+              svgPath: Assets.svg.imgArrowleft.path,
               margin: EdgeInsets.only(left: 16.h, top: 19.v, bottom: 18.v),
               onTap: Get.back,
             ),

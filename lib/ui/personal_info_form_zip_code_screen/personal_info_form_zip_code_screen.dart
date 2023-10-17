@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
+import '/gen/assets.gen.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_image.dart';
 import '/widgets/app_bar/appbar_subtitle.dart';
@@ -30,7 +30,7 @@ class PersonalInfoFormZipCodeScreen
             height: 50.v,
             leadingWidth: 34.h,
             leading: AppbarImage(
-              svgPath: Assets.imgArrowleft,
+              svgPath: Assets.svg.imgArrowleft.path,
               margin: EdgeInsets.only(left: 16.h, top: 16.v, bottom: 16.v),
               onTap: Get.back,
             ),
@@ -124,8 +124,8 @@ class PersonalInfoFormZipCodeScreen
                                               top: 7.v,
                                               bottom: 8.v),
                                           child: CustomImageView(
-                                              svgPath: Assets
-                                                  .imgEyeCrossedOut)),
+                                              svgPath:
+                                                  Assets.svg.imgEyeCrossedOut.path)),
                                       suffixConstraints:
                                           BoxConstraints(maxHeight: 39.v))
                                 ]),
@@ -145,7 +145,7 @@ class PersonalInfoFormZipCodeScreen
                                               bottom: 8.v),
                                           child: CustomImageView(
                                               svgPath: Assets
-                                                  .imgEyeCrossedOut)),
+                                                  .svg.imgEyeCrossedOut.path)),
                                       suffixConstraints:
                                           BoxConstraints(maxHeight: 39.v))
                                 ]),

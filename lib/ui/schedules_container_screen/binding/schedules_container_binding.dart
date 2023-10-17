@@ -7,6 +7,6 @@ import '../controller/schedules_container_controller.dart';
 class SchedulesContainerBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => SchedulesContainerController());
+    Get.lazyPut(SchedulesContainerController.new);
   }
 }

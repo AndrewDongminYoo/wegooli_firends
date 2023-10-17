@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
+import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/custom_drop_down.dart';
@@ -38,7 +38,7 @@ class SchedulesViewScheduledDateSchedulerOnlyExpandedDialog
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   CustomImageView(
-                    svgPath: Assets.imgClose,
+                    svgPath: Assets.svg.imgClose.path,
                     height: 15.adaptSize,
                     width: 15.adaptSize,
                     alignment: Alignment.centerRight,
@@ -102,8 +102,8 @@ class SchedulesViewScheduledDateSchedulerOnlyExpandedDialog
                                                         margin: EdgeInsets.only(
                                                             left: 17.h),
                                                         child: CustomImageView(
-                                                            svgPath: Assets
-                                                                .imgArrowleft)),
+                                                            svgPath: Assets.svg
+                                                                .imgArrowleft.path)),
                                                     hintText:
                                                         '8/16 (수) 15:20 ~ 8/17(목) 14:00',
                                                     hintStyle: theme

@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
+import '/gen/assets.gen.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/custom_elevated_button.dart';
 import '/widgets/custom_image_view.dart';
@@ -38,7 +38,7 @@ class SignupCompleteScreen extends GetWidget<SignupCompleteController> {
                     child: Column(
                       children: [
                         CustomImageView(
-                          svgPath: Assets.imgLayer2,
+                          svgPath: Assets.svg.imgLayer2.path,
                           height: 108.v,
                           width: 135.h,
                         ),

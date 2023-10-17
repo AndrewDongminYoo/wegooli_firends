@@ -1,0 +1,709 @@
+/// GENERATED CODE - DO NOT MODIFY BY HAND
+/// *****************************************************
+///  FlutterGen
+/// *****************************************************
+
+// coverage:ignore-file
+// ignore_for_file: type=lint
+// ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal,deprecated_member_use
+
+// 🐦 Flutter imports:
+import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
+
+// 📦 Package imports:
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:lottie/lottie.dart';
+import 'package:rive/rive.dart';
+
+class $AssetsBrandGen {
+  const $AssetsBrandGen();
+
+  /// File path: assets/brand/FRIENDS.png
+  AssetGenImage get friends => const AssetGenImage('assets/brand/FRIENDS.png');
+
+  /// File path: assets/brand/by_wegooli.png
+  AssetGenImage get byWegooli =>
+      const AssetGenImage('assets/brand/by_wegooli.png');
+
+  /// File path: assets/brand/friends_by_wegooli.png
+  AssetGenImage get friendsByWegooli =>
+      const AssetGenImage('assets/brand/friends_by_wegooli.png');
+
+  /// File path: assets/brand/img_wegooli_title.png
+  AssetGenImage get imgWegooliTitle =>
+      const AssetGenImage('assets/brand/img_wegooli_title.png');
+
+  /// File path: assets/brand/wegooli.png
+  AssetGenImage get wegooli => const AssetGenImage('assets/brand/wegooli.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values =>
+      [friends, byWegooli, friendsByWegooli, imgWegooliTitle, wegooli];
+}
+
+class $AssetsCarsGen {
+  const $AssetsCarsGen();
+
+  /// File path: assets/cars/ev6-gt_s_klm.png
+  AssetGenImage get ev6GtSKlm =>
+      const AssetGenImage('assets/cars/ev6-gt_s_klm.png');
+
+  /// File path: assets/cars/ev6_s_glb.png
+  AssetGenImage get ev6SGlb => const AssetGenImage('assets/cars/ev6_s_glb.png');
+
+  /// File path: assets/cars/ev9_s_ism.png
+  AssetGenImage get ev9SIsm => const AssetGenImage('assets/cars/ev9_s_ism.png');
+
+  /// File path: assets/cars/k3-gt_s_cr5.png
+  AssetGenImage get k3GtSCr5 =>
+      const AssetGenImage('assets/cars/k3-gt_s_cr5.png');
+
+  /// File path: assets/cars/k3_s_m4b.png
+  AssetGenImage get k3SM4b => const AssetGenImage('assets/cars/k3_s_m4b.png');
+
+  /// File path: assets/cars/k5_s_agt.png
+  AssetGenImage get k5SAgt => const AssetGenImage('assets/cars/k5_s_agt.png');
+
+  /// File path: assets/cars/k8_s_klg.png
+  AssetGenImage get k8SKlg => const AssetGenImage('assets/cars/k8_s_klg.png');
+
+  /// File path: assets/cars/k9_s_d9b.png
+  AssetGenImage get k9SD9b => const AssetGenImage('assets/cars/k9_s_d9b.png');
+
+  /// File path: assets/cars/niro-ev_s_swp.png
+  AssetGenImage get niroEvSSwp =>
+      const AssetGenImage('assets/cars/niro-ev_s_swp.png');
+
+  /// File path: assets/cars/niro-plus_s_m7g.png
+  AssetGenImage get niroPlusSM7g =>
+      const AssetGenImage('assets/cars/niro-plus_s_m7g.png');
+
+  /// File path: assets/cars/ray-ev_s_eu3.png
+  AssetGenImage get rayEvSEu3 =>
+      const AssetGenImage('assets/cars/ray-ev_s_eu3.png');
+
+  /// File path: assets/cars/ray_s_m9y.png
+  AssetGenImage get raySM9y => const AssetGenImage('assets/cars/ray_s_m9y.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [
+        ev6GtSKlm,
+        ev6SGlb,
+        ev9SIsm,
+        k3GtSCr5,
+        k3SM4b,
+        k5SAgt,
+        k8SKlg,
+        k9SD9b,
+        niroEvSSwp,
+        niroPlusSM7g,
+        rayEvSEu3,
+        raySM9y
+      ];
+}
+
+class $AssetsImagesGen {
+  const $AssetsImagesGen();
+
+  /// File path: assets/images/image_not_found.png
+  AssetGenImage get imageNotFound =>
+      const AssetGenImage('assets/images/image_not_found.png');
+
+  /// File path: assets/images/img_.png
+  AssetGenImage get img => const AssetGenImage('assets/images/img_.png');
+
+  /// File path: assets/images/img_21.png
+  AssetGenImage get img21 => const AssetGenImage('assets/images/img_21.png');
+
+  /// File path: assets/images/img__157x120.png
+  AssetGenImage get img157x120 =>
+      const AssetGenImage('assets/images/img__157x120.png');
+
+  /// File path: assets/images/img_ellipse1.png
+  AssetGenImage get imgEllipse1 =>
+      const AssetGenImage('assets/images/img_ellipse1.png');
+
+  /// File path: assets/images/img_ellipse1_1.png
+  AssetGenImage get imgEllipse11 =>
+      const AssetGenImage('assets/images/img_ellipse1_1.png');
+
+  /// File path: assets/images/img_ellipse1_32x32.png
+  AssetGenImage get imgEllipse132x32 =>
+      const AssetGenImage('assets/images/img_ellipse1_32x32.png');
+
+  /// File path: assets/images/img_ellipse1_42x42.png
+  AssetGenImage get imgEllipse142x42 =>
+      const AssetGenImage('assets/images/img_ellipse1_42x42.png');
+
+  /// File path: assets/images/img_ellipse2.png
+  AssetGenImage get imgEllipse2 =>
+      const AssetGenImage('assets/images/img_ellipse2.png');
+
+  /// File path: assets/images/img_frame34972.png
+  AssetGenImage get imgFrame34972 =>
+      const AssetGenImage('assets/images/img_frame34972.png');
+
+  /// File path: assets/images/img_frame34972_1.png
+  AssetGenImage get imgFrame349721 =>
+      const AssetGenImage('assets/images/img_frame34972_1.png');
+
+  /// File path: assets/images/img_frame34972_2.png
+  AssetGenImage get imgFrame349722 =>
+      const AssetGenImage('assets/images/img_frame34972_2.png');
+
+  /// File path: assets/images/img_frame34972_66x66.png
+  AssetGenImage get imgFrame3497266x66 =>
+      const AssetGenImage('assets/images/img_frame34972_66x66.png');
+
+  /// File path: assets/images/img_layer2_yellow_100.png
+  AssetGenImage get imgLayer2Yellow100 =>
+      const AssetGenImage('assets/images/img_layer2_yellow_100.png');
+
+  /// File path: assets/images/img_rectangle4640.png
+  AssetGenImage get imgRectangle4640 =>
+      const AssetGenImage('assets/images/img_rectangle4640.png');
+
+  /// File path: assets/images/placeholder.png
+  AssetGenImage get placeholder =>
+      const AssetGenImage('assets/images/placeholder.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [
+        imageNotFound,
+        img,
+        img21,
+        img157x120,
+        imgEllipse1,
+        imgEllipse11,
+        imgEllipse132x32,
+        imgEllipse142x42,
+        imgEllipse2,
+        imgFrame34972,
+        imgFrame349721,
+        imgFrame349722,
+        imgFrame3497266x66,
+        imgLayer2Yellow100,
+        imgRectangle4640,
+        placeholder
+      ];
+}
+
+class $AssetsLottiesGen {
+  const $AssetsLottiesGen();
+
+  /// File path: assets/lotties/custom_loader.json
+  LottieGenImage get customLoader =>
+      const LottieGenImage('assets/lotties/custom_loader.json');
+
+  /// List of all assets
+  List<LottieGenImage> get values => [customLoader];
+}
+
+class $AssetsRiveGen {
+  const $AssetsRiveGen();
+
+  /// File path: assets/rive/button.riv
+  RiveGenImage get button => const RiveGenImage('assets/rive/button.riv');
+
+  /// File path: assets/rive/check.riv
+  RiveGenImage get check => const RiveGenImage('assets/rive/check.riv');
+
+  /// File path: assets/rive/confetti.riv
+  RiveGenImage get confetti => const RiveGenImage('assets/rive/confetti.riv');
+
+  /// File path: assets/rive/house.riv
+  RiveGenImage get house => const RiveGenImage('assets/rive/house.riv');
+
+  /// File path: assets/rive/icons.riv
+  RiveGenImage get icons => const RiveGenImage('assets/rive/icons.riv');
+
+  /// File path: assets/rive/menu_button.riv
+  RiveGenImage get menuButton =>
+      const RiveGenImage('assets/rive/menu_button.riv');
+
+  /// File path: assets/rive/shapes.riv
+  RiveGenImage get shapes => const RiveGenImage('assets/rive/shapes.riv');
+
+  /// List of all assets
+  List<RiveGenImage> get values =>
+      [button, check, confetti, house, icons, menuButton, shapes];
+}
+
+class $AssetsSvgGen {
+  const $AssetsSvgGen();
+
+  /// File path: assets/svg/img_addphotoalternate.svg
+  SvgGenImage get imgAddphotoalternate =>
+      const SvgGenImage('assets/svg/img_addphotoalternate.svg');
+
+  /// File path: assets/svg/img_arrowleft.svg
+  SvgGenImage get imgArrowleft =>
+      const SvgGenImage('assets/svg/img_arrowleft.svg');
+
+  /// File path: assets/svg/img_bluetooth.svg
+  SvgGenImage get imgBluetooth =>
+      const SvgGenImage('assets/svg/img_bluetooth.svg');
+
+  /// File path: assets/svg/img_camera.svg
+  SvgGenImage get imgCamera => const SvgGenImage('assets/svg/img_camera.svg');
+
+  /// File path: assets/svg/img_campaign.svg
+  SvgGenImage get imgCampaign =>
+      const SvgGenImage('assets/svg/img_campaign.svg');
+
+  /// File path: assets/svg/img_caretdown.svg
+  SvgGenImage get imgCaretdown =>
+      const SvgGenImage('assets/svg/img_caretdown.svg');
+
+  /// File path: assets/svg/img_caretdown_gray_800.svg
+  SvgGenImage get imgCaretdownGray800 =>
+      const SvgGenImage('assets/svg/img_caretdown_gray_800.svg');
+
+  /// File path: assets/svg/img_check.svg
+  SvgGenImage get imgCheck => const SvgGenImage('assets/svg/img_check.svg');
+
+  /// File path: assets/svg/img_checkcircle.svg
+  SvgGenImage get imgCheckcircle =>
+      const SvgGenImage('assets/svg/img_checkcircle.svg');
+
+  /// File path: assets/svg/img_clear.svg
+  SvgGenImage get imgClear => const SvgGenImage('assets/svg/img_clear.svg');
+
+  /// File path: assets/svg/img_close.svg
+  SvgGenImage get imgClose => const SvgGenImage('assets/svg/img_close.svg');
+
+  /// File path: assets/svg/img_close_gray_700.svg
+  SvgGenImage get imgCloseGray700 =>
+      const SvgGenImage('assets/svg/img_close_gray_700.svg');
+
+  /// File path: assets/svg/img_contactsupport.svg
+  SvgGenImage get imgContactsupport =>
+      const SvgGenImage('assets/svg/img_contactsupport.svg');
+
+  /// File path: assets/svg/img_edit.svg
+  SvgGenImage get imgEdit => const SvgGenImage('assets/svg/img_edit.svg');
+
+  /// File path: assets/svg/img_edit_black_900.svg
+  SvgGenImage get imgEditBlack900 =>
+      const SvgGenImage('assets/svg/img_edit_black_900.svg');
+
+  /// File path: assets/svg/img_eye_crossed_out.svg
+  SvgGenImage get imgEyeCrossedOut =>
+      const SvgGenImage('assets/svg/img_eye_crossed_out.svg');
+
+  /// File path: assets/svg/img_frame.svg
+  SvgGenImage get imgFrame => const SvgGenImage('assets/svg/img_frame.svg');
+
+  /// File path: assets/svg/img_frame19044.svg
+  SvgGenImage get imgFrame19044 =>
+      const SvgGenImage('assets/svg/img_frame19044.svg');
+
+  /// File path: assets/svg/img_friends.svg
+  SvgGenImage get imgFriends => const SvgGenImage('assets/svg/img_friends.svg');
+
+  /// File path: assets/svg/img_friends_onprimary.svg
+  SvgGenImage get imgFriendsOnprimary =>
+      const SvgGenImage('assets/svg/img_friends_onprimary.svg');
+
+  /// File path: assets/svg/img_globe.svg
+  SvgGenImage get imgGlobe => const SvgGenImage('assets/svg/img_globe.svg');
+
+  /// File path: assets/svg/img_grid.svg
+  SvgGenImage get imgGrid => const SvgGenImage('assets/svg/img_grid.svg');
+
+  /// File path: assets/svg/img_group.svg
+  SvgGenImage get imgGroup => const SvgGenImage('assets/svg/img_group.svg');
+
+  /// File path: assets/svg/img_information.svg
+  SvgGenImage get imgInformation =>
+      const SvgGenImage('assets/svg/img_information.svg');
+
+  /// File path: assets/svg/img_labeltext.svg
+  SvgGenImage get imgLabeltext =>
+      const SvgGenImage('assets/svg/img_labeltext.svg');
+
+  /// File path: assets/svg/img_layer2.svg
+  SvgGenImage get imgLayer2 => const SvgGenImage('assets/svg/img_layer2.svg');
+
+  /// File path: assets/svg/img_lightbulb.svg
+  SvgGenImage get imgLightbulb =>
+      const SvgGenImage('assets/svg/img_lightbulb.svg');
+
+  /// File path: assets/svg/img_line45.svg
+  SvgGenImage get imgLine45 => const SvgGenImage('assets/svg/img_line45.svg');
+
+  /// File path: assets/svg/img_location.svg
+  SvgGenImage get imgLocation =>
+      const SvgGenImage('assets/svg/img_location.svg');
+
+  /// File path: assets/svg/img_location_black_900.svg
+  SvgGenImage get imgLocationBlack900 =>
+      const SvgGenImage('assets/svg/img_location_black_900.svg');
+
+  /// File path: assets/svg/img_locked.svg
+  SvgGenImage get imgLocked => const SvgGenImage('assets/svg/img_locked.svg');
+
+  /// File path: assets/svg/img_menu.svg
+  SvgGenImage get imgMenu => const SvgGenImage('assets/svg/img_menu.svg');
+
+  /// File path: assets/svg/img_nav.svg
+  SvgGenImage get imgNav => const SvgGenImage('assets/svg/img_nav.svg');
+
+  /// File path: assets/svg/img_nav_1.svg
+  SvgGenImage get imgNav1 => const SvgGenImage('assets/svg/img_nav_1.svg');
+
+  /// File path: assets/svg/img_nav_2.svg
+  SvgGenImage get imgNav2 => const SvgGenImage('assets/svg/img_nav_2.svg');
+
+  /// File path: assets/svg/img_nav_20x20.svg
+  SvgGenImage get imgNav20x20 =>
+      const SvgGenImage('assets/svg/img_nav_20x20.svg');
+
+  /// File path: assets/svg/img_nav_24x24.svg
+  SvgGenImage get imgNav24x24 =>
+      const SvgGenImage('assets/svg/img_nav_24x24.svg');
+
+  /// File path: assets/svg/img_nav_3.svg
+  SvgGenImage get imgNav3 => const SvgGenImage('assets/svg/img_nav_3.svg');
+
+  /// File path: assets/svg/img_nav_blue_gray_200.svg
+  SvgGenImage get imgNavBlueGray200 =>
+      const SvgGenImage('assets/svg/img_nav_blue_gray_200.svg');
+
+  /// File path: assets/svg/img_nav_blue_gray_200_20x20.svg
+  SvgGenImage get imgNavBlueGray20020x20 =>
+      const SvgGenImage('assets/svg/img_nav_blue_gray_200_20x20.svg');
+
+  /// File path: assets/svg/img_nav_gray_400.svg
+  SvgGenImage get imgNavGray400 =>
+      const SvgGenImage('assets/svg/img_nav_gray_400.svg');
+
+  /// File path: assets/svg/img_nav_gray_400_24x24.svg
+  SvgGenImage get imgNavGray40024x24 =>
+      const SvgGenImage('assets/svg/img_nav_gray_400_24x24.svg');
+
+  /// File path: assets/svg/img_nav_onprimary.svg
+  SvgGenImage get imgNavOnprimary =>
+      const SvgGenImage('assets/svg/img_nav_onprimary.svg');
+
+  /// File path: assets/svg/img_nav_onprimary_20x20.svg
+  SvgGenImage get imgNavOnprimary20x20 =>
+      const SvgGenImage('assets/svg/img_nav_onprimary_20x20.svg');
+
+  /// File path: assets/svg/img_nav_onprimary_24x24.svg
+  SvgGenImage get imgNavOnprimary24x24 =>
+      const SvgGenImage('assets/svg/img_nav_onprimary_24x24.svg');
+
+  /// File path: assets/svg/img_offer.svg
+  SvgGenImage get imgOffer => const SvgGenImage('assets/svg/img_offer.svg');
+
+  /// File path: assets/svg/img_overflowmenuvertical.svg
+  SvgGenImage get imgOverflowmenuvertical =>
+      const SvgGenImage('assets/svg/img_overflowmenuvertical.svg');
+
+  /// File path: assets/svg/img_save.svg
+  SvgGenImage get imgSave => const SvgGenImage('assets/svg/img_save.svg');
+
+  /// File path: assets/svg/img_send.svg
+  SvgGenImage get imgSend => const SvgGenImage('assets/svg/img_send.svg');
+
+  /// File path: assets/svg/img_subdirectoryarrowright.svg
+  SvgGenImage get imgSubdirectoryarrowright =>
+      const SvgGenImage('assets/svg/img_subdirectoryarrowright.svg');
+
+  /// File path: assets/svg/img_taxi.svg
+  SvgGenImage get imgTaxi => const SvgGenImage('assets/svg/img_taxi.svg');
+
+  /// File path: assets/svg/img_unlocked.svg
+  SvgGenImage get imgUnlocked =>
+      const SvgGenImage('assets/svg/img_unlocked.svg');
+
+  /// List of all assets
+  List<SvgGenImage> get values => [
+        imgAddphotoalternate,
+        imgArrowleft,
+        imgBluetooth,
+        imgCamera,
+        imgCampaign,
+        imgCaretdown,
+        imgCaretdownGray800,
+        imgCheck,
+        imgCheckcircle,
+        imgClear,
+        imgClose,
+        imgCloseGray700,
+        imgContactsupport,
+        imgEdit,
+        imgEditBlack900,
+        imgEyeCrossedOut,
+        imgFrame,
+        imgFrame19044,
+        imgFriends,
+        imgFriendsOnprimary,
+        imgGlobe,
+        imgGrid,
+        imgGroup,
+        imgInformation,
+        imgLabeltext,
+        imgLayer2,
+        imgLightbulb,
+        imgLine45,
+        imgLocation,
+        imgLocationBlack900,
+        imgLocked,
+        imgMenu,
+        imgNav,
+        imgNav1,
+        imgNav2,
+        imgNav20x20,
+        imgNav24x24,
+        imgNav3,
+        imgNavBlueGray200,
+        imgNavBlueGray20020x20,
+        imgNavGray400,
+        imgNavGray40024x24,
+        imgNavOnprimary,
+        imgNavOnprimary20x20,
+        imgNavOnprimary24x24,
+        imgOffer,
+        imgOverflowmenuvertical,
+        imgSave,
+        imgSend,
+        imgSubdirectoryarrowright,
+        imgTaxi,
+        imgUnlocked
+      ];
+}
+
+class Assets {
+  Assets._();
+
+  static const $AssetsBrandGen brand = $AssetsBrandGen();
+  static const $AssetsCarsGen cars = $AssetsCarsGen();
+  static const $AssetsImagesGen images = $AssetsImagesGen();
+  static const $AssetsLottiesGen lotties = $AssetsLottiesGen();
+  static const $AssetsRiveGen rive = $AssetsRiveGen();
+  static const $AssetsSvgGen svg = $AssetsSvgGen();
+}
+
+class AssetGenImage {
+  const AssetGenImage(this._assetName);
+
+  final String _assetName;
+
+  Image image({
+    Key? key,
+    AssetBundle? bundle,
+    ImageFrameBuilder? frameBuilder,
+    ImageErrorWidgetBuilder? errorBuilder,
+    String? semanticLabel,
+    bool excludeFromSemantics = false,
+    double? scale,
+    double? width,
+    double? height,
+    Color? color,
+    Animation<double>? opacity,
+    BlendMode? colorBlendMode,
+    BoxFit? fit,
+    AlignmentGeometry alignment = Alignment.center,
+    ImageRepeat repeat = ImageRepeat.noRepeat,
+    Rect? centerSlice,
+    bool matchTextDirection = false,
+    bool gaplessPlayback = false,
+    bool isAntiAlias = false,
+    String? package,
+    FilterQuality filterQuality = FilterQuality.low,
+    int? cacheWidth,
+    int? cacheHeight,
+  }) {
+    return Image.asset(
+      _assetName,
+      key: key,
+      bundle: bundle,
+      frameBuilder: frameBuilder,
+      errorBuilder: errorBuilder,
+      semanticLabel: semanticLabel,
+      excludeFromSemantics: excludeFromSemantics,
+      scale: scale,
+      width: width,
+      height: height,
+      color: color,
+      opacity: opacity,
+      colorBlendMode: colorBlendMode,
+      fit: fit,
+      alignment: alignment,
+      repeat: repeat,
+      centerSlice: centerSlice,
+      matchTextDirection: matchTextDirection,
+      gaplessPlayback: gaplessPlayback,
+      isAntiAlias: isAntiAlias,
+      package: package,
+      filterQuality: filterQuality,
+      cacheWidth: cacheWidth,
+      cacheHeight: cacheHeight,
+    );
+  }
+
+  ImageProvider provider({
+    AssetBundle? bundle,
+    String? package,
+  }) {
+    return AssetImage(
+      _assetName,
+      bundle: bundle,
+      package: package,
+    );
+  }
+
+  String get path => _assetName;
+
+  String get keyName => _assetName;
+}
+
+class SvgGenImage {
+  const SvgGenImage(this._assetName);
+
+  final String _assetName;
+
+  SvgPicture svg({
+    Key? key,
+    bool matchTextDirection = false,
+    AssetBundle? bundle,
+    String? package,
+    double? width,
+    double? height,
+    BoxFit fit = BoxFit.contain,
+    AlignmentGeometry alignment = Alignment.center,
+    bool allowDrawingOutsideViewBox = false,
+    WidgetBuilder? placeholderBuilder,
+    String? semanticsLabel,
+    bool excludeFromSemantics = false,
+    SvgTheme theme = const SvgTheme(),
+    ColorFilter? colorFilter,
+    Clip clipBehavior = Clip.hardEdge,
+    @deprecated Color? color,
+    @deprecated BlendMode colorBlendMode = BlendMode.srcIn,
+    @deprecated bool cacheColorFilter = false,
+  }) {
+    return SvgPicture.asset(
+      _assetName,
+      key: key,
+      matchTextDirection: matchTextDirection,
+      bundle: bundle,
+      package: package,
+      width: width,
+      height: height,
+      fit: fit,
+      alignment: alignment,
+      allowDrawingOutsideViewBox: allowDrawingOutsideViewBox,
+      placeholderBuilder: placeholderBuilder,
+      semanticsLabel: semanticsLabel,
+      excludeFromSemantics: excludeFromSemantics,
+      theme: theme,
+      colorFilter: colorFilter,
+      color: color,
+      colorBlendMode: colorBlendMode,
+      clipBehavior: clipBehavior,
+      cacheColorFilter: cacheColorFilter,
+    );
+  }
+
+  String get path => _assetName;
+
+  String get keyName => _assetName;
+}
+
+class RiveGenImage {
+  const RiveGenImage(this._assetName);
+
+  final String _assetName;
+
+  RiveAnimation rive({
+    String? artboard,
+    List<String> animations = const [],
+    List<String> stateMachines = const [],
+    BoxFit? fit,
+    Alignment? alignment,
+    Widget? placeHolder,
+    bool antialiasing = true,
+    List<RiveAnimationController> controllers = const [],
+    OnInitCallback? onInit,
+  }) {
+    return RiveAnimation.asset(
+      _assetName,
+      artboard: artboard,
+      animations: animations,
+      stateMachines: stateMachines,
+      fit: fit,
+      alignment: alignment,
+      placeHolder: placeHolder,
+      antialiasing: antialiasing,
+      controllers: controllers,
+      onInit: onInit,
+    );
+  }
+
+  String get path => _assetName;
+
+  String get keyName => _assetName;
+}
+
+class LottieGenImage {
+  const LottieGenImage(this._assetName);
+
+  final String _assetName;
+
+  LottieBuilder lottie({
+    Animation<double>? controller,
+    bool? animate,
+    FrameRate? frameRate,
+    bool? repeat,
+    bool? reverse,
+    LottieDelegates? delegates,
+    LottieOptions? options,
+    void Function(LottieComposition)? onLoaded,
+    LottieImageProviderFactory? imageProviderFactory,
+    Key? key,
+    AssetBundle? bundle,
+    Widget Function(BuildContext, Widget, LottieComposition?)? frameBuilder,
+    ImageErrorWidgetBuilder? errorBuilder,
+    double? width,
+    double? height,
+    BoxFit? fit,
+    AlignmentGeometry? alignment,
+    String? package,
+    bool? addRepaintBoundary,
+    FilterQuality? filterQuality,
+    void Function(String)? onWarning,
+  }) {
+    return Lottie.asset(
+      _assetName,
+      controller: controller,
+      animate: animate,
+      frameRate: frameRate,
+      repeat: repeat,
+      reverse: reverse,
+      delegates: delegates,
+      options: options,
+      onLoaded: onLoaded,
+      imageProviderFactory: imageProviderFactory,
+      key: key,
+      bundle: bundle,
+      frameBuilder: frameBuilder,
+      errorBuilder: errorBuilder,
+      width: width,
+      height: height,
+      fit: fit,
+      alignment: alignment,
+      package: package,
+      addRepaintBoundary: addRepaintBoundary,
+      filterQuality: filterQuality,
+      onWarning: onWarning,
+    );
+  }
+
+  String get path => _assetName;
+
+  String get keyName => _assetName;
+}

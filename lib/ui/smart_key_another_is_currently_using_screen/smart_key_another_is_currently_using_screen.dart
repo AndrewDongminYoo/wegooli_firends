@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
+import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_image.dart';
@@ -30,7 +30,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
           height: 45.v,
           centerTitle: true,
           title: AppbarImage(
-            svgPath: Assets.imgFriends,
+            svgPath: Assets.svg.imgFriends.path,
           ),
           styleType: Style.bgOutline,
         ),
@@ -50,7 +50,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             CustomImageView(
-                              imagePath: Assets.imgRectangle4640,
+                              imagePath: Assets.images.imgRectangle4640.path,
                               height: 92.v,
                               width: 139.h,
                             ),
@@ -80,7 +80,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                         CrossAxisAlignment.start,
                                     children: [
                                       CustomImageView(
-                                        svgPath: Assets.imgFrame19044,
+                                        svgPath: Assets.svg.imgFrame19044.path,
                                         height: 24.adaptSize,
                                         width: 24.adaptSize,
                                       ),
@@ -95,7 +95,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                         ),
                                       ),
                                       CustomImageView(
-                                        svgPath: Assets.imgArrowleft,
+                                        svgPath: Assets.svg.imgArrowleft.path,
                                         height: 18.adaptSize,
                                         width: 18.adaptSize,
                                         margin: EdgeInsets.only(
@@ -156,7 +156,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                       ),
                       SizedBox(height: 22.v),
                       CustomImageView(
-                        svgPath: Assets.imgTaxi,
+                        svgPath: Assets.svg.imgTaxi.path,
                         height: 26.adaptSize,
                         width: 26.adaptSize,
                         alignment: Alignment.centerRight,
@@ -317,8 +317,8 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                                           MainAxisSize.min,
                                                       children: [
                                                         CustomImageView(
-                                                          svgPath: Assets
-                                                              .imgUnlocked,
+                                                          svgPath: Assets.svg
+                                                              .imgUnlocked.path,
                                                           height: 46.adaptSize,
                                                           width: 46.adaptSize,
                                                         ),
@@ -396,8 +396,8 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                                           MainAxisSize.min,
                                                       children: [
                                                         CustomImageView(
-                                                          svgPath: Assets
-                                                              .imgLocked,
+                                                          svgPath: Assets.svg
+                                                              .imgLocked.path,
                                                           height: 46.adaptSize,
                                                           width: 46.adaptSize,
                                                         ),
@@ -487,7 +487,9 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                                       children: [
                                                         CustomImageView(
                                                           svgPath: Assets
-                                                              .imgBluetooth,
+                                                              .svg
+                                                              .imgBluetooth
+                                                              .path,
                                                           height: 37.v,
                                                           width: 46.h,
                                                         ),
@@ -543,8 +545,8 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                                 mainAxisSize: MainAxisSize.min,
                                                 children: [
                                                   CustomImageView(
-                                                    svgPath: Assets
-                                                        .imgCampaign,
+                                                    svgPath:
+                                                        Assets.svg.imgCampaign.path,
                                                     height: 46.adaptSize,
                                                     width: 46.adaptSize,
                                                   ),
@@ -627,7 +629,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                               MainAxisAlignment.center,
                                           children: [
                                             CustomImageView(
-                                              svgPath: Assets.imgEdit,
+                                              svgPath: Assets.svg.imgEdit.path,
                                               height: 30.adaptSize,
                                               width: 30.adaptSize,
                                             ),

@@ -7,8 +7,8 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '../controller/contact_us_1_1_contact_us_controller.dart';
 import '../models/listaddphotoalt_item_model.dart';
-import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
+import '/gen/assets.gen.dart';
 import '/widgets/custom_icon_button.dart';
 import '/widgets/custom_image_view.dart';
 
@@ -37,7 +37,7 @@ class ListaddphotoaltItemWidget extends StatelessWidget {
           padding: EdgeInsets.all(16.h),
           decoration: IconButtonStyleHelper.fillBlueGrayTL5,
           child: CustomImageView(
-            svgPath: Assets.imgAddphotoalternate,
+            svgPath: Assets.svg.imgAddphotoalternate.path,
           ),
         ),
       ),

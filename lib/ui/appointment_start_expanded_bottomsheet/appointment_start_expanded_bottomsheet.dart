@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
-import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
+import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/custom_drop_down.dart';
@@ -37,7 +37,7 @@ class AppointmentStartExpandedBottomsheet extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             CustomImageView(
-              svgPath: Assets.imgLine45,
+              svgPath: Assets.svg.imgLine45.path,
               height: 1.v,
               width: 40.h,
             ),
@@ -89,7 +89,7 @@ class AppointmentStartExpandedBottomsheet extends StatelessWidget {
                     icon: Container(
                       margin: EdgeInsets.only(left: 10.h),
                       child: CustomImageView(
-                        svgPath: Assets.imgArrowleft,
+                        svgPath: Assets.svg.imgArrowleft.path,
                       ),
                     ),
                     hintText: '8.1 화 16:00',
@@ -129,7 +129,7 @@ class AppointmentStartExpandedBottomsheet extends StatelessWidget {
                     style: textTheme.titleMedium,
                   ),
                   CustomImageView(
-                    svgPath: Assets.imgArrowleft,
+                    svgPath: Assets.svg.imgArrowleft.path,
                     height: 18.adaptSize,
                     width: 18.adaptSize,
                     margin: EdgeInsets.only(left: 10.h),

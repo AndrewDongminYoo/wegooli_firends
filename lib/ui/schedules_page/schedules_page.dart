@@ -6,8 +6,8 @@ import 'package:get/get.dart';
 
 // 🌎 Project imports:
 import '../schedules_page/widgets/calendar_item_widget.dart';
-import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
+import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_image.dart';
@@ -34,7 +34,7 @@ class SchedulesPage extends StatelessWidget {
           height: 45.v,
           centerTitle: true,
           title: AppbarImage(
-            svgPath: Assets.imgFriends,
+            svgPath: Assets.svg.imgFriends.path,
           ),
           styleType: Style.bgOutline,
         ),
@@ -66,7 +66,7 @@ class SchedulesPage extends StatelessWidget {
                                 Column(
                                   children: [
                                     CustomImageView(
-                                      imagePath: Assets.placeholder,
+                                      imagePath: Assets.images.placeholder.path,
                                       height: 42.adaptSize,
                                       width: 42.adaptSize,
                                       radius: BorderRadius.circular(
@@ -86,7 +86,7 @@ class SchedulesPage extends StatelessWidget {
                                     children: [
                                       CustomImageView(
                                         imagePath:
-                                            Assets.placeholder,
+                                            Assets.images.placeholder.path,
                                         height: 42.adaptSize,
                                         width: 42.adaptSize,
                                         radius: BorderRadius.circular(
@@ -106,7 +106,8 @@ class SchedulesPage extends StatelessWidget {
                                   child: Column(
                                     children: [
                                       CustomImageView(
-                                        imagePath: Assets.placeholder,
+                                        imagePath:
+                                            Assets.images.placeholder.path,
                                         height: 42.adaptSize,
                                         width: 42.adaptSize,
                                         radius: BorderRadius.circular(
@@ -133,7 +134,7 @@ class SchedulesPage extends StatelessWidget {
                           child: Column(
                             children: [
                               CustomImageView(
-                                imagePath: Assets.placeholder,
+                                imagePath: Assets.images.placeholder.path,
                                 height: 42.adaptSize,
                                 width: 42.adaptSize,
                                 radius: BorderRadius.circular(
@@ -206,7 +207,7 @@ class SchedulesPage extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               CustomImageView(
-                                svgPath: Assets.imgArrowleft,
+                                svgPath: Assets.svg.imgArrowleft.path,
                                 height: 18.adaptSize,
                                 width: 18.adaptSize,
                                 margin: EdgeInsets.only(bottom: 1.v),
@@ -216,7 +217,7 @@ class SchedulesPage extends StatelessWidget {
                                 style: textTheme.titleMedium,
                               ),
                               CustomImageView(
-                                svgPath: Assets.imgArrowleft,
+                                svgPath: Assets.svg.imgArrowleft.path,
                                 height: 18.adaptSize,
                                 width: 18.adaptSize,
                                 margin: EdgeInsets.only(bottom: 1.v),

@@ -67,6 +67,9 @@ import '/ui/subscribe_info_screen/subscribe_info_screen.dart';
 import '/ui/unsubscribe_screen/binding/unsubscribe_binding.dart';
 import '/ui/unsubscribe_screen/unsubscribe_screen.dart';
 
+// String initialRoute = AppRoutes.appGateway;
+String initialRoute = AppRoutes.homePageScreen;
+
 class AppRoutes {
   static const String identityVerificationWaitingScreen =
       '/identity_verification_waiting_screen';

@@ -7,8 +7,8 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '../controller/schedules_team_is_not_full_controller.dart';
 import '../models/userprofile_item_model.dart';
-import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
+import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/custom_image_view.dart';
@@ -40,7 +40,7 @@ class UserprofileItemWidget extends StatelessWidget {
               borderRadius: BorderRadiusStyle.circleBorder25,
             ),
             child: CustomImageView(
-              imagePath: Assets.placeholder,
+              imagePath: Assets.images.placeholder.path,
               height: 42.adaptSize,
               width: 42.adaptSize,
               radius: BorderRadius.circular(

@@ -6,8 +6,8 @@ import 'package:get/get.dart';
 
 // 🌎 Project imports:
 import '../contact_us_1_1_contact_us_screen/widgets/listaddphotoalt_item_widget.dart';
-import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
+import '/gen/assets.gen.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_image.dart';
 import '/widgets/app_bar/appbar_title.dart';
@@ -31,7 +31,7 @@ class ContactUs11ContactUsScreen
         appBar: CustomAppBar(
             leadingWidth: 34.h,
             leading: AppbarImage(
-              svgPath: Assets.imgArrowleft,
+              svgPath: Assets.svg.imgArrowleft.path,
               margin: EdgeInsets.only(left: 16.h, top: 19.v, bottom: 18.v),
               onTap: Get.back,
             ),
@@ -54,7 +54,7 @@ class ContactUs11ContactUsScreen
                                             30.h, 12.v, 10.h, 12.v),
                                         child: CustomImageView(
                                             svgPath: Assets
-                                                .imgCaretdownGray800)),
+                                                .svg.imgCaretdownGray800.path)),
                                     margin: EdgeInsets.only(right: 16.h),
                                     hintText: '문의 유형을 선택해주세요.',
                                     hintStyle: textTheme.bodyLarge!.copyWith(

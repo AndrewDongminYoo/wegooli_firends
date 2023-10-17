@@ -7,6 +7,6 @@ import '../controller/app_navigation_controller.dart';
 class AppNavigationBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => AppNavigationController());
+    Get.lazyPut(AppNavigationController.new);
   }
 }

@@ -7,6 +7,6 @@ import '../controller/contact_us_inquiry_history_expanded_tab_container_controll
 class ContactUsInquiryHistoryExpandedTabContainerBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => ContactUsInquiryHistoryExpandedTabContainerController());
+    Get.lazyPut(ContactUsInquiryHistoryExpandedTabContainerController.new);
   }
 }

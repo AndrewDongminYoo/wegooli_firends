@@ -6,8 +6,8 @@ import 'package:get/get.dart';
 
 // 🌎 Project imports:
 import '../view_scheduled_date_scheduler_only_dialog/widgets/listview_item_widget.dart';
-import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
+import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/custom_image_view.dart';
@@ -35,7 +35,7 @@ class ViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   CustomImageView(
-                    svgPath: Assets.imgClose,
+                    svgPath: Assets.svg.imgClose.path,
                     height: 15.adaptSize,
                     width: 15.adaptSize,
                     alignment: Alignment.centerRight,

@@ -7,8 +7,8 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '../schedules_team_is_not_full_screen/widgets/userage_item_widget.dart';
 import '../schedules_team_is_not_full_screen/widgets/userprofile_item_widget.dart';
-import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
+import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_image.dart';
@@ -32,7 +32,7 @@ class SchedulesTeamIsNotFullScreen
           height: 45.v,
           centerTitle: true,
           title: AppbarImage(
-            svgPath: Assets.imgFriends,
+            svgPath: Assets.svg.imgFriends.path,
           ),
           styleType: Style.bgOutline_1,
         ),
@@ -144,7 +144,7 @@ class SchedulesTeamIsNotFullScreen
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     CustomImageView(
-                                      svgPath: Assets.imgArrowleft,
+                                      svgPath: Assets.svg.imgArrowleft.path,
                                       height: 18.adaptSize,
                                       width: 18.adaptSize,
                                       margin: EdgeInsets.only(bottom: 1.v),
@@ -154,7 +154,7 @@ class SchedulesTeamIsNotFullScreen
                                       style: textTheme.titleMedium,
                                     ),
                                     CustomImageView(
-                                      svgPath: Assets.imgArrowleft,
+                                      svgPath: Assets.svg.imgArrowleft.path,
                                       height: 18.adaptSize,
                                       width: 18.adaptSize,
                                       margin: EdgeInsets.only(bottom: 1.v),

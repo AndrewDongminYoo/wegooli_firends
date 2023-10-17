@@ -7,6 +7,6 @@ import '../controller/schedules_team_is_full_controller.dart';
 class SchedulesTeamIsFullBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => SchedulesTeamIsFullController());
+    Get.lazyPut(SchedulesTeamIsFullController.new);
   }
 }

@@ -7,6 +7,6 @@ import '../controller/card_register_controller.dart';
 class CardRegisterBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => CardRegisterController());
+    Get.lazyPut(CardRegisterController.new);
   }
 }

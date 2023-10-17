@@ -7,6 +7,6 @@ import '../controller/smart_key_controller.dart';
 class SmartKeyBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => SmartKeyController());
+    Get.lazyPut(SmartKeyController.new);
   }
 }

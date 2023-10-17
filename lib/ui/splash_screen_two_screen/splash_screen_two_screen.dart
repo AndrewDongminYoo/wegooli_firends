@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
+import '/gen/assets.gen.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/custom_image_view.dart';
 import 'controller/splash_screen_two_controller.dart';
@@ -49,7 +49,7 @@ class SplashScreenTwoScreen extends GetWidget<SplashScreenTwoController> {
                                           .copyWith(height: 1.38))),
                               SizedBox(height: 226.v),
                               CustomImageView(
-                                  svgPath: Assets.imgFriendsOnPrimary,
+                                  svgPath: Assets.svg.imgFriendsOnprimary.path,
                                   height: 21.v,
                                   width: 120.h)
                             ]))))

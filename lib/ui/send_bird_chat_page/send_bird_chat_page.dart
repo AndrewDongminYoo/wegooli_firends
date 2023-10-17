@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
+import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_image.dart';
@@ -35,7 +35,7 @@ class SendBirdChatPage extends StatelessWidget {
           height: 45.v,
           centerTitle: true,
           title: AppbarImage(
-            svgPath: Assets.imgFriends,
+            svgPath: Assets.svg.imgFriends.path,
           ),
           styleType: Style.bgOutline_1,
         ),
@@ -133,7 +133,7 @@ class SendBirdChatPage extends StatelessWidget {
                         child: Column(
                           children: [
                             CustomImageView(
-                              imagePath: Assets.placeholder,
+                              imagePath: Assets.images.placeholder.path,
                               height: 32.adaptSize,
                               width: 32.adaptSize,
                               radius: BorderRadius.circular(
@@ -142,7 +142,7 @@ class SendBirdChatPage extends StatelessWidget {
                             ),
                             SizedBox(height: 101.v),
                             CustomImageView(
-                              imagePath: Assets.placeholder,
+                              imagePath: Assets.images.placeholder.path,
                               height: 32.adaptSize,
                               width: 32.adaptSize,
                               radius: BorderRadius.circular(
@@ -311,7 +311,7 @@ class SendBirdChatPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       CustomImageView(
-                        svgPath: Assets.imgCamera,
+                        svgPath: Assets.svg.imgCamera.path,
                         height: 24.adaptSize,
                         width: 24.adaptSize,
                         margin: EdgeInsets.symmetric(vertical: 6.v),
@@ -336,7 +336,7 @@ class SendBirdChatPage extends StatelessWidget {
                         ),
                       ),
                       CustomImageView(
-                        svgPath: Assets.imgSend,
+                        svgPath: Assets.svg.imgSend.path,
                         height: 22.v,
                         width: 24.h,
                         margin: EdgeInsets.only(

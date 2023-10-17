@@ -8,7 +8,7 @@ import 'package:lottie/lottie.dart';
 class ProgressDialogUtils {
   static bool isProgressVisible = false;
 
-  static String lottiePath = 'assets/lottieFiles/custom_loader.json';
+  static String lottiePath = 'assets/lotties/custom_loader.json';
 
   /// Displays a progress dialog with a Lottie animation.
   ///

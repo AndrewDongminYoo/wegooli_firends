@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
+import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/custom_elevated_button.dart';
@@ -43,7 +43,7 @@ class UnsubscribeConfirmDialog extends StatelessWidget {
                                   fontSize: 18.fSize,
                                 )),
                             CustomImageView(
-                                svgPath: Assets.imgClose,
+                                svgPath: Assets.svg.imgClose.path,
                                 height: 15.adaptSize,
                                 width: 15.adaptSize,
                                 margin: EdgeInsets.symmetric(vertical: 3.v),

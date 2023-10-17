@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
+import '/gen/assets.gen.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/custom_image_view.dart';
 import 'controller/splash_screen_one_controller.dart';
@@ -51,7 +51,7 @@ class SplashScreenOneScreen extends GetWidget<SplashScreenOneController> {
                       child: Column(
                         children: [
                           CustomImageView(
-                            svgPath: Assets.imgFriendsOnPrimary,
+                            svgPath: Assets.svg.imgFriendsOnprimary.path,
                             height: 33.v,
                             width: 172.h,
                           ),

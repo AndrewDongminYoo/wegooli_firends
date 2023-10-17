@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
+import '/gen/assets.gen.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/custom_elevated_button.dart';
 import '/widgets/custom_image_view.dart';
@@ -33,7 +33,7 @@ class SigninPageScreen extends GetWidget<SigninPageController> {
             children: [
               SizedBox(height: 30.v),
               CustomImageView(
-                svgPath: Assets.imgFriendsOnPrimary,
+                svgPath: Assets.svg.imgFriendsOnprimary.path,
                 height: 38.v,
                 width: 193.h,
               ),
@@ -72,7 +72,7 @@ class SigninPageScreen extends GetWidget<SigninPageController> {
                         bottom: 8.v,
                       ),
                       child: CustomImageView(
-                        svgPath: Assets.imgEyeCrossedOut,
+                        svgPath: Assets.svg.imgEyeCrossedOut.path,
                       ),
                     ),
                     suffixConstraints: BoxConstraints(

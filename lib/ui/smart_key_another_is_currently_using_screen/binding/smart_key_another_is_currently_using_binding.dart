@@ -7,6 +7,6 @@ import '../controller/smart_key_another_is_currently_using_controller.dart';
 class SmartKeyAnotherIsCurrentlyUsingBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => SmartKeyAnotherIsCurrentlyUsingController());
+    Get.lazyPut(SmartKeyAnotherIsCurrentlyUsingController.new);
   }
 }

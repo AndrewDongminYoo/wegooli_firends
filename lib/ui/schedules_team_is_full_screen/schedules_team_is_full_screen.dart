@@ -6,8 +6,8 @@ import 'package:get/get.dart';
 
 // 🌎 Project imports:
 import '../schedules_team_is_full_screen/widgets/calendar1_item_widget.dart';
-import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
+import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_image.dart';
@@ -31,7 +31,7 @@ class SchedulesTeamIsFullScreen
           height: 45.v,
           centerTitle: true,
           title: AppbarImage(
-            svgPath: Assets.imgFriends,
+            svgPath: Assets.svg.imgFriends.path,
           ),
           styleType: Style.bgOutline,
         ),
@@ -67,7 +67,7 @@ class SchedulesTeamIsFullScreen
                                         children: [
                                           CustomImageView(
                                             imagePath:
-                                                Assets.placeholder,
+                                                Assets.images.placeholder.path,
                                             height: 42.adaptSize,
                                             width: 42.adaptSize,
                                             radius: BorderRadius.circular(
@@ -86,8 +86,8 @@ class SchedulesTeamIsFullScreen
                                         child: Column(
                                           children: [
                                             CustomImageView(
-                                              imagePath: Assets
-                                                  .placeholder,
+                                              imagePath:
+                                                  Assets.images.placeholder.path,
                                               height: 42.adaptSize,
                                               width: 42.adaptSize,
                                               radius: BorderRadius.circular(
@@ -108,7 +108,7 @@ class SchedulesTeamIsFullScreen
                                           children: [
                                             CustomImageView(
                                               imagePath:
-                                                  Assets.placeholder,
+                                                  Assets.images.placeholder.path,
                                               height: 42.adaptSize,
                                               width: 42.adaptSize,
                                               radius: BorderRadius.circular(
@@ -135,7 +135,7 @@ class SchedulesTeamIsFullScreen
                                 child: Column(
                                   children: [
                                     CustomImageView(
-                                      imagePath: Assets.placeholder,
+                                      imagePath: Assets.images.placeholder.path,
                                       height: 42.adaptSize,
                                       width: 42.adaptSize,
                                       radius: BorderRadius.circular(
@@ -209,7 +209,7 @@ class SchedulesTeamIsFullScreen
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     CustomImageView(
-                                      svgPath: Assets.imgArrowleft,
+                                      svgPath: Assets.svg.imgArrowleft.path,
                                       height: 18.adaptSize,
                                       width: 18.adaptSize,
                                       margin: EdgeInsets.only(bottom: 1.v),
@@ -219,7 +219,7 @@ class SchedulesTeamIsFullScreen
                                       style: textTheme.titleMedium,
                                     ),
                                     CustomImageView(
-                                      svgPath: Assets.imgArrowleft,
+                                      svgPath: Assets.svg.imgArrowleft.path,
                                       height: 18.adaptSize,
                                       width: 18.adaptSize,
                                       margin: EdgeInsets.only(bottom: 1.v),

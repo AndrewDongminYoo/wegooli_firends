@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
+import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_image.dart';
@@ -28,7 +28,7 @@ class ExpiringSubscriptionsScreen
         appBar: CustomAppBar(
             leadingWidth: 34.h,
             leading: AppbarImage(
-              svgPath: Assets.imgArrowleft,
+              svgPath: Assets.svg.imgArrowleft.path,
               margin: EdgeInsets.only(left: 16.h, top: 19.v, bottom: 18.v),
               onTap: Get.back,
             ),
@@ -67,7 +67,7 @@ class ExpiringSubscriptionsScreen
                           children: [
                             SizedBox(height: 10.v),
                             CustomImageView(
-                                imagePath: Assets.img21,
+                                imagePath: Assets.images.img21.path,
                                 height: 96.v,
                                 width: 167.h),
                             SizedBox(height: 30.v),

@@ -10,7 +10,7 @@ import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_title.dart';
-import '/widgets/app_bar/app_bar.dart';
+import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/elevated_button.dart';
 import '/widgets/image_view.dart';
 import 'controller/expiring_subscriptions_controller.dart';
@@ -62,7 +62,7 @@ class ExpiringSubscriptionsScreen
                             color: const Color(0xFFB9BCC3),
                             width: 1.h,
                           ),
-                          borderRadius: BorderRadiusStyle.roundedBorder10),
+                          borderRadius: BorderRadiusStyle.circleBorder10),
                       child: Column(
                           mainAxisSize: MainAxisSize.min,
                           mainAxisAlignment: MainAxisAlignment.end,

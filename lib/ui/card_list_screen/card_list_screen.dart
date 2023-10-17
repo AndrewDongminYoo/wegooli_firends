@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
 import '/widgets/app_bar/appbar_title.dart';
-import '/widgets/app_bar/app_bar.dart';
+import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/elevated_button.dart';
 import '/widgets/image_view.dart';
 import '/widgets/radio_button.dart';

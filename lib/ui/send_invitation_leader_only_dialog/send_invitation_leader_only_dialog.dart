@@ -28,7 +28,7 @@ class SendInvitationLeaderOnlyDialog extends StatelessWidget {
         margin: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 313.v),
         decoration: BoxDecoration(
             color: lightTheme.onPrimaryContainer,
-            borderRadius: BorderRadiusStyle.roundedBorder10),
+            borderRadius: BorderRadiusStyle.circleBorder10),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,

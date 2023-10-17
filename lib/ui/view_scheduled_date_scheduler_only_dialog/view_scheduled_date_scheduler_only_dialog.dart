@@ -29,7 +29,7 @@ class ViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
         padding: EdgeInsets.all(20.h),
         decoration: BoxDecoration(
             color: lightTheme.onPrimaryContainer,
-            borderRadius: BorderRadiusStyle.roundedBorder10),
+            borderRadius: BorderRadiusStyle.circleBorder10),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,

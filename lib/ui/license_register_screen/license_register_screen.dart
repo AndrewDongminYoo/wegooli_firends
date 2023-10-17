@@ -11,7 +11,7 @@ import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_title.dart';
-import '/widgets/app_bar/app_bar.dart';
+import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/drop_down.dart';
 import '/widgets/elevated_button.dart';
 import '/widgets/icon_button.dart';
@@ -68,7 +68,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                   color: lightTheme.onPrimaryContainer,
                                   shape: RoundedRectangleBorder(
                                       borderRadius:
-                                          BorderRadiusStyle.roundedBorder10),
+                                          BorderRadiusStyle.circleBorder10),
                                   child: Container(
                                     height: 160.v,
                                     width: 262.h,
@@ -77,7 +77,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                     decoration: BoxDecoration(
                                         color: lightTheme.onPrimaryContainer,
                                         borderRadius:
-                                            BorderRadiusStyle.roundedBorder10),
+                                            BorderRadiusStyle.circleBorder10),
                                     child: Stack(
                                       alignment: Alignment.center,
                                       children: [
@@ -119,7 +119,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                       ),
                                                       borderRadius:
                                                           BorderRadiusStyle
-                                                              .roundedBorder10),
+                                                              .circleBorder10),
                                                   child: Text(
                                                     'B',
                                                     style: textTheme.bodySmall!
@@ -167,7 +167,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                                     ),
                                                                     borderRadius:
                                                                         BorderRadiusStyle
-                                                                            .roundedBorder10),
+                                                                            .circleBorder10),
                                                             child: Text(
                                                               'C',
                                                               style: textTheme
@@ -360,7 +360,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                   width: 1.h,
                                                 ),
                                                 borderRadius: BorderRadiusStyle
-                                                    .roundedBorder10),
+                                                    .circleBorder10),
                                             child: Text(
                                               'D',
                                               style:
@@ -389,7 +389,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                         width: 1.h,
                                       ),
                                       borderRadius:
-                                          BorderRadiusStyle.roundedBorder10),
+                                          BorderRadiusStyle.circleBorder10),
                                   child: Text(
                                     'A',
                                     style: theme.textTheme.bodySmall!.copyWith(
@@ -446,7 +446,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                         width: 1.h,
                                       ),
                                       borderRadius:
-                                          BorderRadiusStyle.roundedBorder10),
+                                          BorderRadiusStyle.circleBorder10),
                                   child: Text(
                                     'A',
                                     style: theme.textTheme.bodySmall!.copyWith(
@@ -531,7 +531,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                               width: 1.h,
                                             ),
                                             borderRadius: BorderRadiusStyle
-                                                .roundedBorder10),
+                                                .circleBorder10),
                                         child: Text(
                                           'B',
                                           style: theme.textTheme.bodySmall!
@@ -602,7 +602,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                         width: 1.h,
                                       ),
                                       borderRadius:
-                                          BorderRadiusStyle.roundedBorder10),
+                                          BorderRadiusStyle.circleBorder10),
                                   child: Text(
                                     'C',
                                     style: theme.textTheme.bodySmall!.copyWith(
@@ -650,7 +650,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                         width: 1.h,
                                       ),
                                       borderRadius:
-                                          BorderRadiusStyle.roundedBorder10),
+                                          BorderRadiusStyle.circleBorder10),
                                   child: Text(
                                     'D',
                                     style: theme.textTheme.bodySmall!.copyWith(

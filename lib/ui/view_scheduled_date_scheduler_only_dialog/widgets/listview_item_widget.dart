@@ -30,7 +30,7 @@ class ListviewItemWidget extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: lightTheme.onPrimaryContainer,
-        borderRadius: BorderRadiusStyle.roundedBorder10,
+        borderRadius: BorderRadiusStyle.circleBorder10,
       ),
       child: Container(
         decoration: BoxDecoration(
@@ -46,7 +46,7 @@ class ListviewItemWidget extends StatelessWidget {
               ),
             ),
           ],
-          borderRadius: BorderRadiusStyle.roundedBorder10,
+          borderRadius: BorderRadiusStyle.circleBorder10,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,

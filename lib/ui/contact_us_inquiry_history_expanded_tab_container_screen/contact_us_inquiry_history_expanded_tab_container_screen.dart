@@ -11,7 +11,7 @@ import '/theme/theme_helper.dart';
 import '/ui/contact_us_inquiry_history_expanded_page/contact_us_inquiry_history_expanded_page.dart';
 import '/ui/contact_us_inquiry_history_page/contact_us_inquiry_history_page.dart';
 import '/widgets/app_bar/appbar_title.dart';
-import '/widgets/app_bar/app_bar.dart';
+import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/image_view.dart';
 import 'controller/contact_us_inquiry_history_expanded_tab_container_controller.dart';
 

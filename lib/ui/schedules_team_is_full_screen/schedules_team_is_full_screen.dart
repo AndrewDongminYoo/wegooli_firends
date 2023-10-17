@@ -10,7 +10,7 @@ import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
-import '/widgets/app_bar/app_bar.dart';
+import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/bottom_bar.dart';
 import '/widgets/elevated_button.dart';
 import '/widgets/image_view.dart';
@@ -197,7 +197,7 @@ class SchedulesTeamIsFullScreen
                                 color: const Color(0x33A4A8AF),
                                 width: 1.h,
                               ),
-                              borderRadius: BorderRadiusStyle.roundedBorder10,
+                              borderRadius: BorderRadiusStyle.circleBorder10,
                             ),
                             child: Column(
                               mainAxisSize: MainAxisSize.min,

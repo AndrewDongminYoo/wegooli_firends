@@ -9,7 +9,7 @@ import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
-import '/widgets/app_bar/app_bar.dart';
+import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/elevated_button.dart';
 import '/widgets/image_view.dart';
 import '/widgets/text_form_field.dart';
@@ -104,7 +104,7 @@ class SendBirdChatPage extends StatelessWidget {
                           ),
                           decoration: BoxDecoration(
                             color: lightTheme.primary,
-                            borderRadius: BorderRadiusStyle.roundedBorder15,
+                            borderRadius: BorderRadiusStyle.circleBorder15,
                           ),
                           child: SizedBox(
                             width: 210.h,

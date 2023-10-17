@@ -27,33 +27,19 @@ class CustomRadioButton extends StatelessWidget {
   }) : super(key: key);
 
   final BoxDecoration? decoration;
-
   final Alignment? alignment;
-
   final bool? isRightCheck;
-
   final double? iconSize;
-
   String? value;
-
   final String? groupValue;
-
   final Function(String) onChange;
-
   final String? text;
-
   final double? width;
-
   final EdgeInsetsGeometry? margin;
-
   final EdgeInsetsGeometry? padding;
-
   final TextStyle? textStyle;
-
   final TextAlign? textAlignment;
-
   final Gradient? gradient;
-
   final Color? backgroundColor;
 
   @override
@@ -104,7 +90,7 @@ class CustomRadioButton extends StatelessWidget {
   Widget get textWidget => Text(
         text ?? '',
         textAlign: textAlignment ?? TextAlign.center,
-        style: textStyle ?? defaultTextTheme.bodyLarge,
+        style: textStyle ?? textTheme.bodyLarge,
       );
   Widget get radioButtonWidget => SizedBox(
         height: iconSize ?? 20.h,

@@ -8,19 +8,13 @@ import 'package:get/get.dart';
 import '/ui/personal_info_form_zip_code_screen/models/personal_info_form_zip_code_model.dart';
 
 class PersonalInfoFormZipCodeController extends GetxController {
-  TextEditingController postalcodeoneController = TextEditingController();
-
-  TextEditingController defaultaddressController = TextEditingController();
-
-  TextEditingController detailedaddressController = TextEditingController();
-
-  TextEditingController emailaddressController = TextEditingController();
-
-  TextEditingController eyecrossedoutController = TextEditingController();
-
-  TextEditingController passwordreentryController = TextEditingController();
-
-  TextEditingController nicknameinputController = TextEditingController();
+  TextEditingController postalcodeone = TextEditingController();
+  TextEditingController defaultaddress = TextEditingController();
+  TextEditingController detailedaddress = TextEditingController();
+  TextEditingController emailaddress = TextEditingController();
+  TextEditingController eyecrossedout = TextEditingController();
+  TextEditingController passwordreentry = TextEditingController();
+  TextEditingController nicknameinput = TextEditingController();
 
   Rx<PersonalInfoFormZipCodeModel> personalInfoFormZipCode =
       PersonalInfoFormZipCodeModel().obs;
@@ -28,12 +22,12 @@ class PersonalInfoFormZipCodeController extends GetxController {
   @override
   void onClose() {
     super.onClose();
-    postalcodeoneController.dispose();
-    defaultaddressController.dispose();
-    detailedaddressController.dispose();
-    emailaddressController.dispose();
-    eyecrossedoutController.dispose();
-    passwordreentryController.dispose();
-    nicknameinputController.dispose();
+    postalcodeone.dispose();
+    defaultaddress.dispose();
+    detailedaddress.dispose();
+    emailaddress.dispose();
+    eyecrossedout.dispose();
+    passwordreentry.dispose();
+    nicknameinput.dispose();
   }
 }

@@ -13,7 +13,6 @@ class ContactUs11ContactUsController extends GetxController {
 
   Rx<ContactUs11ContactUsModel> contactUs11ContactUs =
       ContactUs11ContactUsModel().obs;
-
   DropdownData? choice;
 
   @override

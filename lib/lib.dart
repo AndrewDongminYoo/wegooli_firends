@@ -211,8 +211,6 @@ export 'ui/view_scheduled_date_scheduler_only_dialog/models/view_scheduled_date_
 export 'ui/view_scheduled_date_scheduler_only_dialog/view_scheduled_date_scheduler_only_dialog.dart';
 export 'ui/view_scheduled_date_scheduler_only_dialog/widgets/listview_item_widget.dart';
 export 'widgets/app_bar/appbar_image.dart';
-export 'widgets/app_bar/appbar_image_1.dart';
-export 'widgets/app_bar/appbar_image_2.dart';
 export 'widgets/app_bar/appbar_subtitle.dart';
 export 'widgets/app_bar/appbar_title.dart';
 export 'widgets/app_bar/custom_app_bar.dart';

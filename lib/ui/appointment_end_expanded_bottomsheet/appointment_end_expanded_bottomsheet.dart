@@ -53,7 +53,7 @@ class AppointmentEndExpandedBottomsheet extends StatelessWidget {
                   '총 2시간 이용\n8.1 화 16:00 ~ 8.1 화 18:00',
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
-                  style: defaultTextTheme.titleMedium!
+                  style: textTheme.titleMedium!
                       .copyWith(
                         color: Colors.black,
                         fontSize: 18.fSize,
@@ -83,7 +83,7 @@ class AppointmentEndExpandedBottomsheet extends StatelessWidget {
                 children: [
                   Text(
                     '이용시작시간',
-                    style: defaultTextTheme.titleMedium!.copyWith(
+                    style: textTheme.titleMedium!.copyWith(
                       color: defaultColors.onPrimary.withOpacity(0.4),
                     ),
                   ),
@@ -124,7 +124,7 @@ class AppointmentEndExpandedBottomsheet extends StatelessWidget {
                 children: [
                   Text(
                     '반납시간',
-                    style: defaultTextTheme.titleMedium!.copyWith(
+                    style: textTheme.titleMedium!.copyWith(
                       color: defaultColors.onPrimary.withOpacity(0.4),
                     ),
                   ),

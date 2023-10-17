@@ -39,7 +39,7 @@ class NoticesItemWidget extends StatelessWidget {
             ),
             child: Text(
               '[공지] 산모퉁이를 돌아 논가 외딴 우물을 홀로 찾아가선',
-              style: defaultTextTheme.titleSmall,
+              style: textTheme.titleSmall,
             ),
           ),
           Padding(
@@ -49,7 +49,7 @@ class NoticesItemWidget extends StatelessWidget {
             ),
             child: Text(
               '2023.08.23',
-              style: defaultTextTheme.bodySmall!.copyWith(
+              style: textTheme.bodySmall!.copyWith(
                 color: defaultColors.onPrimary.withOpacity(0.4),
               ),
             ),

@@ -45,7 +45,7 @@ class NoticesNoNoticeScreen extends GetWidget<NoticesNoNoticeController> {
                       width: 120.h),
                   SizedBox(height: 21.v),
                   Text('작성된 글이 없습니다.',
-                      style: defaultTextTheme.titleMedium!.copyWith(
+                      style: textTheme.titleMedium!.copyWith(
                         color: Colors.black,
                         fontSize: 18.fSize,
                       ))

@@ -50,24 +50,21 @@ class CardRegisterScreen extends GetWidget<CardRegisterController> {
                                     Padding(
                                         padding: EdgeInsets.only(top: 2.v),
                                         child: Text('카드번호',
-                                            style:
-                                                defaultTextTheme.titleMedium)),
+                                            style: textTheme.titleMedium)),
                                     Padding(
                                         padding: EdgeInsets.only(
                                             left: 5.h, bottom: 2.v),
                                         child: Text('*',
-                                            style: defaultTextTheme.titleMedium!
-                                                .copyWith(
+                                            style:
+                                                textTheme.titleMedium!.copyWith(
                                               color: const Color(0xFFDB4646),
                                             )))
                                   ]),
                                   SizedBox(height: 4.v),
                                   CustomTextFormField(
-                                      controller:
-                                          controller.cardnumbervalueController,
+                                      controller: controller.cardnumbervalue,
                                       hintText: '0000  0000  0000  0000',
-                                      hintStyle:
-                                          defaultTextTheme.bodyLarge!.copyWith(
+                                      hintStyle: textTheme.bodyLarge!.copyWith(
                                         color: const Color(0xFF8E9199),
                                       ),
                                       contentPadding: EdgeInsets.symmetric(
@@ -81,24 +78,21 @@ class CardRegisterScreen extends GetWidget<CardRegisterController> {
                                     Padding(
                                         padding: EdgeInsets.only(top: 2.v),
                                         child: Text('유효기간',
-                                            style:
-                                                defaultTextTheme.titleMedium)),
+                                            style: textTheme.titleMedium)),
                                     Padding(
                                         padding: EdgeInsets.only(
                                             left: 5.h, bottom: 2.v),
                                         child: Text('*',
-                                            style: defaultTextTheme.titleMedium!
-                                                .copyWith(
+                                            style:
+                                                textTheme.titleMedium!.copyWith(
                                               color: const Color(0xFFDB4646),
                                             )))
                                   ]),
                                   SizedBox(height: 4.v),
                                   CustomTextFormField(
-                                      controller:
-                                          controller.expirationdatevController,
+                                      controller: controller.expirationdatev,
                                       hintText: 'MM/YY',
-                                      hintStyle:
-                                          defaultTextTheme.bodyLarge!.copyWith(
+                                      hintStyle: textTheme.bodyLarge!.copyWith(
                                         color: const Color(0xFF8E9199),
                                       ),
                                       contentPadding: EdgeInsets.symmetric(
@@ -112,14 +106,13 @@ class CardRegisterScreen extends GetWidget<CardRegisterController> {
                                     Padding(
                                         padding: EdgeInsets.only(top: 2.v),
                                         child: Text('주민등록번호 앞자리',
-                                            style:
-                                                defaultTextTheme.titleMedium)),
+                                            style: textTheme.titleMedium)),
                                     Padding(
                                         padding: EdgeInsets.only(
                                             left: 5.h, bottom: 2.v),
                                         child: Text('*',
-                                            style: defaultTextTheme.titleMedium!
-                                                .copyWith(
+                                            style:
+                                                textTheme.titleMedium!.copyWith(
                                               color: const Color(0xFFDB4646),
                                             )))
                                   ]),
@@ -127,8 +120,7 @@ class CardRegisterScreen extends GetWidget<CardRegisterController> {
                                   CustomTextFormField(
                                       controller: controller.zipcodeController,
                                       hintText: '940812',
-                                      hintStyle:
-                                          defaultTextTheme.bodyLarge!.copyWith(
+                                      hintStyle: textTheme.bodyLarge!.copyWith(
                                         color: const Color(0xFF8E9199),
                                       ),
                                       contentPadding: EdgeInsets.symmetric(
@@ -145,14 +137,13 @@ class CardRegisterScreen extends GetWidget<CardRegisterController> {
                                     Padding(
                                         padding: EdgeInsets.only(top: 2.v),
                                         child: Text('카드 비밀번호 앞 2자리',
-                                            style:
-                                                defaultTextTheme.titleMedium)),
+                                            style: textTheme.titleMedium)),
                                     Padding(
                                         padding: EdgeInsets.only(
                                             left: 5.h, bottom: 2.v),
                                         child: Text('*',
-                                            style: defaultTextTheme.titleMedium!
-                                                .copyWith(
+                                            style:
+                                                textTheme.titleMedium!.copyWith(
                                               color: const Color(0xFFDB4646),
                                             )))
                                   ]),
@@ -187,7 +178,7 @@ class CardRegisterScreen extends GetWidget<CardRegisterController> {
                   borderRadius: BorderRadius.circular(26.h),
                 ),
               ),
-              buttonTextStyle: defaultTextTheme.titleMedium!.copyWith(
+              buttonTextStyle: textTheme.titleMedium!.copyWith(
                 color: const Color(0xFFB0B2BC),
                 fontSize: 18.fSize,
               )),

@@ -75,13 +75,13 @@ class ListviewItemWidget extends StatelessWidget {
                       () => Text(
                         listviewItem.value!.value,
                         overflow: TextOverflow.ellipsis,
-                        style: defaultTextTheme.bodySmall,
+                        style: textTheme.bodySmall,
                       ),
                     ),
                     SizedBox(height: 8.v),
                     Text(
                       '8/16 (수) 15:20 ~ 8/17(목) 14:00',
-                      style: defaultTextTheme.bodyLarge,
+                      style: textTheme.bodyLarge,
                     ),
                   ],
                 ),

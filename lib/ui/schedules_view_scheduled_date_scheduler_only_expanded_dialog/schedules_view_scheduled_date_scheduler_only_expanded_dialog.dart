@@ -46,7 +46,7 @@ class SchedulesViewScheduledDateSchedulerOnlyExpandedDialog
                   ),
                   SizedBox(height: 6.v),
                   Text('일정 확인',
-                      style: defaultTextTheme.titleMedium!.copyWith(
+                      style: textTheme.titleMedium!.copyWith(
                         fontSize: 18.fSize,
                       )),
                   SizedBox(height: 22.v),
@@ -94,7 +94,7 @@ class SchedulesViewScheduledDateSchedulerOnlyExpandedDialog
                                                     alignment:
                                                         Alignment.topLeft,
                                                     child: Text('홍길동',
-                                                        style: defaultTextTheme
+                                                        style: textTheme
                                                             .bodySmall)),
                                                 CustomDropDown(
                                                     width: 258.h,
@@ -198,11 +198,10 @@ class SchedulesViewScheduledDateSchedulerOnlyExpandedDialog
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text('홍길동',
-                                          style: defaultTextTheme.bodySmall),
+                                      Text('홍길동', style: textTheme.bodySmall),
                                       SizedBox(height: 8.v),
                                       Text('8/16 (수) 15:20 ~ 8/17(목) 14:00',
-                                          style: defaultTextTheme.bodyLarge)
+                                          style: textTheme.bodyLarge)
                                     ])))
                       ])),
                   SizedBox(height: 10.v),
@@ -242,11 +241,10 @@ class SchedulesViewScheduledDateSchedulerOnlyExpandedDialog
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text('홍길동',
-                                          style: defaultTextTheme.bodySmall),
+                                      Text('홍길동', style: textTheme.bodySmall),
                                       SizedBox(height: 8.v),
                                       Text('8/16 (수) 15:20 ~ 8/17(목) 14:00',
-                                          style: defaultTextTheme.bodyLarge)
+                                          style: textTheme.bodyLarge)
                                     ])))
                       ])),
                   SizedBox(height: 10.v)

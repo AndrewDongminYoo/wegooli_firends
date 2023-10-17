@@ -42,7 +42,7 @@ class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
                   ),
                   SizedBox(height: 6.v),
                   Text('일정 확인',
-                      style: defaultTextTheme.titleMedium!.copyWith(
+                      style: textTheme.titleMedium!.copyWith(
                         fontSize: 18.fSize,
                       )),
                   SizedBox(height: 22.v),
@@ -83,8 +83,7 @@ class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
                                       Align(
                                           alignment: Alignment.topLeft,
                                           child: Text('홍길동',
-                                              style:
-                                                  defaultTextTheme.bodySmall)),
+                                              style: textTheme.bodySmall)),
                                       Align(
                                           alignment: Alignment.bottomCenter,
                                           child: Row(
@@ -111,8 +110,7 @@ class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
                                                   CrossAxisAlignment.start,
                                               children: [
                                             Text('홍길동',
-                                                style:
-                                                    defaultTextTheme.bodySmall),
+                                                style: textTheme.bodySmall),
                                             SizedBox(height: 7.v),
                                             Row(children: [
                                               Text(
@@ -168,11 +166,10 @@ class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text('홍길동',
-                                          style: defaultTextTheme.bodySmall),
+                                      Text('홍길동', style: textTheme.bodySmall),
                                       SizedBox(height: 8.v),
                                       Text('8/16 (수) 15:20 ~ 8/17(목) 14:00',
-                                          style: defaultTextTheme.bodyLarge)
+                                          style: textTheme.bodyLarge)
                                     ])))
                       ])),
                   SizedBox(height: 10.v),
@@ -212,11 +209,10 @@ class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text('홍길동',
-                                          style: defaultTextTheme.bodySmall),
+                                      Text('홍길동', style: textTheme.bodySmall),
                                       SizedBox(height: 8.v),
                                       Text('8/16 (수) 15:20 ~ 8/17(목) 14:00',
-                                          style: defaultTextTheme.bodyLarge)
+                                          style: textTheme.bodyLarge)
                                     ])))
                       ])),
                   SizedBox(height: 10.v)

@@ -46,7 +46,7 @@ class ExpiringSubscriptionsScreen
                   Padding(
                       padding: EdgeInsets.only(left: 2.h),
                       child: Text('차량 정보',
-                          style: defaultTextTheme.titleMedium!.copyWith(
+                          style: textTheme.titleMedium!.copyWith(
                             color: Colors.black,
                             fontSize: 18.fSize,
                           ))),
@@ -80,15 +80,15 @@ class ExpiringSubscriptionsScreen
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text('모닝',
-                                          style: defaultTextTheme.titleMedium!
-                                              .copyWith(
+                                          style:
+                                              textTheme.titleMedium!.copyWith(
                                             fontSize: 18.fSize,
                                           )),
                                       Padding(
                                           padding: EdgeInsets.only(top: 5.v),
                                           child: Text('12가 3456',
-                                              style: defaultTextTheme.bodySmall!
-                                                  .copyWith(
+                                              style:
+                                                  textTheme.bodySmall!.copyWith(
                                                 color: defaultColors.onPrimary
                                                     .withOpacity(0.4),
                                               )))
@@ -101,13 +101,12 @@ class ExpiringSubscriptionsScreen
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text('월 결제 금액',
-                                          style: defaultTextTheme.bodyLarge!
-                                              .copyWith(
+                                          style: textTheme.bodyLarge!.copyWith(
                                             color: defaultColors.onPrimary
                                                 .withOpacity(0.4),
                                           )),
                                       Text('150,000 원',
-                                          style: defaultTextTheme.bodyLarge)
+                                          style: textTheme.bodyLarge)
                                     ])),
                             Padding(
                                 padding: EdgeInsets.only(
@@ -117,13 +116,12 @@ class ExpiringSubscriptionsScreen
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text('구독',
-                                          style: defaultTextTheme.bodyLarge!
-                                              .copyWith(
+                                          style: textTheme.bodyLarge!.copyWith(
                                             color: defaultColors.onPrimary
                                                 .withOpacity(0.4),
                                           )),
                                       Text('2023.07.01~2023.08.01',
-                                          style: defaultTextTheme.bodyLarge)
+                                          style: textTheme.bodyLarge)
                                     ])),
                             Padding(
                                 padding: EdgeInsets.only(
@@ -133,13 +131,12 @@ class ExpiringSubscriptionsScreen
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text('해지 예정일',
-                                          style: defaultTextTheme.bodyLarge!
-                                              .copyWith(
+                                          style: textTheme.bodyLarge!.copyWith(
                                             color: defaultColors.onPrimary
                                                 .withOpacity(0.4),
                                           )),
                                       Text('2023.08.20',
-                                          style: defaultTextTheme.bodyLarge)
+                                          style: textTheme.bodyLarge)
                                     ])),
                             CustomElevatedButton(
                                 height: 48.v,
@@ -152,7 +149,7 @@ class ExpiringSubscriptionsScreen
                                     borderRadius: BorderRadius.circular(5.h),
                                   ),
                                 ),
-                                buttonTextStyle: defaultTextTheme.titleMedium,
+                                buttonTextStyle: textTheme.titleMedium,
                                 alignment: Alignment.centerRight)
                           ]))
                 ],

@@ -32,43 +32,24 @@ class CustomDropDown extends StatelessWidget {
   }) : super(key: key);
 
   final Alignment? alignment;
-
   final double? width;
-
   final EdgeInsetsGeometry? margin;
-
   final FocusNode? focusNode;
-
   final Widget? icon;
-
   final bool? autofocus;
-
   final TextStyle? textStyle;
-
   final List<DropdownData>? items;
-
   final String? hintText;
-
   final TextStyle? hintStyle;
-
   final Widget? prefix;
-
   final BoxConstraints? prefixConstraints;
-
   final Widget? suffix;
-
   final BoxConstraints? suffixConstraints;
-
   final EdgeInsets? contentPadding;
-
   final InputBorder? borderDecoration;
-
   final Color? fillColor;
-
   final bool? filled;
-
   final FormFieldValidator<DropdownData>? validator;
-
   final Function(DropdownData)? onChanged;
 
   @override
@@ -89,7 +70,7 @@ class CustomDropDown extends StatelessWidget {
           icon: icon,
           autofocus: autofocus!,
           style: textStyle ??
-              defaultTextTheme.titleMedium!.copyWith(
+              textTheme.titleMedium!.copyWith(
                 color: defaultColors.onPrimary.withOpacity(0.4),
               ),
           items: items?.map((DropdownData item) {
@@ -99,7 +80,7 @@ class CustomDropDown extends StatelessWidget {
                 item.title,
                 overflow: TextOverflow.ellipsis,
                 style: hintStyle ??
-                    defaultTextTheme.bodyLarge!.copyWith(
+                    textTheme.bodyLarge!.copyWith(
                       color: const Color(0xFFB0B2BC),
                     ),
               ),
@@ -115,7 +96,7 @@ class CustomDropDown extends StatelessWidget {
   InputDecoration get decoration => InputDecoration(
         hintText: hintText ?? '',
         hintStyle: hintStyle ??
-            defaultTextTheme.bodyLarge!.copyWith(
+            textTheme.bodyLarge!.copyWith(
               color: const Color(0xFFB0B2BC),
             ),
         prefixIcon: prefix,

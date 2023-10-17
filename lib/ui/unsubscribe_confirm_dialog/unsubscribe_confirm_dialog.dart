@@ -39,7 +39,7 @@ class UnsubscribeConfirmDialog extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text('구독 해지 예약',
-                                style: defaultTextTheme.titleMedium!.copyWith(
+                                style: textTheme.titleMedium!.copyWith(
                                   fontSize: 18.fSize,
                                 )),
                             CustomImageView(
@@ -58,8 +58,7 @@ class UnsubscribeConfirmDialog extends StatelessWidget {
                           maxLines: 3,
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.justify,
-                          style: defaultTextTheme.bodyLarge!
-                              .copyWith(height: 1.50))),
+                          style: textTheme.bodyLarge!.copyWith(height: 1.50))),
                   SizedBox(height: 20.v),
                   Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                     CustomElevatedButton(
@@ -75,7 +74,7 @@ class UnsubscribeConfirmDialog extends StatelessWidget {
                             ),
                           ),
                         ),
-                        buttonTextStyle: defaultTextTheme.titleMedium),
+                        buttonTextStyle: textTheme.titleMedium),
                     CustomElevatedButton(
                         width: 164.h,
                         text: '해지하기',
@@ -89,7 +88,7 @@ class UnsubscribeConfirmDialog extends StatelessWidget {
                             ),
                           ),
                         ),
-                        buttonTextStyle: defaultTextTheme.titleMedium)
+                        buttonTextStyle: textTheme.titleMedium)
                   ])
                 ])));
   }

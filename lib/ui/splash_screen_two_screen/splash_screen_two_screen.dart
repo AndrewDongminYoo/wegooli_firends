@@ -45,7 +45,7 @@ class SplashScreenTwoScreen extends GetWidget<SplashScreenTwoController> {
                                       maxLines: 3,
                                       overflow: TextOverflow.ellipsis,
                                       textAlign: TextAlign.center,
-                                      style: defaultTextTheme.headlineLarge!
+                                      style: textTheme.headlineLarge!
                                           .copyWith(height: 1.38))),
                               SizedBox(height: 226.v),
                               CustomImageView(

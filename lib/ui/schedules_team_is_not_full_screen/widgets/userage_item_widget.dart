@@ -35,7 +35,7 @@ class UserageItemWidget extends StatelessWidget {
               () => Text(
                 userageItem.userDay!.value,
                 overflow: TextOverflow.ellipsis,
-                style: defaultTextTheme.titleMedium,
+                style: textTheme.titleMedium,
               ),
             ),
           ),
@@ -44,7 +44,7 @@ class UserageItemWidget extends StatelessWidget {
             () => Text(
               userageItem.userMonth!.value,
               overflow: TextOverflow.ellipsis,
-              style: defaultTextTheme.bodySmall!.copyWith(
+              style: textTheme.bodySmall!.copyWith(
                 color: const Color(0xFF91959D),
               ),
             ),
@@ -58,7 +58,7 @@ class UserageItemWidget extends StatelessWidget {
               () => Text(
                 userageItem.userYear!.value,
                 overflow: TextOverflow.ellipsis,
-                style: defaultTextTheme.bodySmall,
+                style: textTheme.bodySmall,
               ),
             ),
           ),
@@ -71,7 +71,7 @@ class UserageItemWidget extends StatelessWidget {
               () => Text(
                 userageItem.thirty!.value,
                 overflow: TextOverflow.ellipsis,
-                style: defaultTextTheme.bodySmall,
+                style: textTheme.bodySmall,
               ),
             ),
           ),
@@ -80,7 +80,7 @@ class UserageItemWidget extends StatelessWidget {
             () => Text(
               userageItem.thirtyone!.value,
               overflow: TextOverflow.ellipsis,
-              style: defaultTextTheme.bodySmall,
+              style: textTheme.bodySmall,
             ),
           ),
           SizedBox(height: 18.v),
@@ -88,7 +88,7 @@ class UserageItemWidget extends StatelessWidget {
             () => Text(
               userageItem.thirtytwo!.value,
               overflow: TextOverflow.ellipsis,
-              style: defaultTextTheme.bodySmall,
+              style: textTheme.bodySmall,
             ),
           ),
         ],

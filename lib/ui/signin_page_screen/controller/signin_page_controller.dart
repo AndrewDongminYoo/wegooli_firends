@@ -8,16 +8,15 @@ import 'package:get/get.dart';
 import '/ui/signin_page_screen/models/signin_page_model.dart';
 
 class SigninPageController extends GetxController {
-  TextEditingController emailinputoneController = TextEditingController();
-
-  TextEditingController passwordinputController = TextEditingController();
+  TextEditingController emailinputone = TextEditingController();
+  TextEditingController passwordinput = TextEditingController();
 
   Rx<SigninPageModel> signinPage = SigninPageModel().obs;
 
   @override
   void onClose() {
     super.onClose();
-    emailinputoneController.dispose();
-    passwordinputController.dispose();
+    emailinputone.dispose();
+    passwordinput.dispose();
   }
 }

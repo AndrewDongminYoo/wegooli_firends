@@ -9,14 +9,13 @@ import '/ui/send_bird_chat_page/models/send_bird_chat_model.dart';
 
 class SendBirdChatController extends GetxController {
   SendBirdChatController(this.sendBirdChat);
-
-  TextEditingController chatinputoneController = TextEditingController();
+  TextEditingController chatinputone = TextEditingController();
 
   Rx<SendBirdChatModel> sendBirdChat;
 
   @override
   void onClose() {
     super.onClose();
-    chatinputoneController.dispose();
+    chatinputone.dispose();
   }
 }

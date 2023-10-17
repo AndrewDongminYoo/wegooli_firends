@@ -50,7 +50,7 @@ class SignupCompleteScreen extends GetWidget<SignupCompleteController> {
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
                             textAlign: TextAlign.center,
-                            style: defaultTextTheme.headlineSmall!.copyWith(
+                            style: textTheme.headlineSmall!.copyWith(
                               height: 1.42,
                             ),
                           ),

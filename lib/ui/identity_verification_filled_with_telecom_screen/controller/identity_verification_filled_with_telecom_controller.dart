@@ -9,8 +9,7 @@ import '/ui/identity_verification_filled_with_telecom_screen/models/identity_ver
 
 class IdentityVerificationFilledWithTelecomController extends GetxController {
   TextEditingController nameoneController = TextEditingController();
-
-  TextEditingController phonenumberoneController = TextEditingController();
+  TextEditingController phonenumberone = TextEditingController();
 
   Rx<IdentityVerificationFilledWithTelecomModel>
       identityVerificationFilledWithTelecom =
@@ -20,6 +19,6 @@ class IdentityVerificationFilledWithTelecomController extends GetxController {
   void onClose() {
     super.onClose();
     nameoneController.dispose();
-    phonenumberoneController.dispose();
+    phonenumberone.dispose();
   }
 }

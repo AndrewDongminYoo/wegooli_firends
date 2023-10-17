@@ -56,17 +56,16 @@ class IdentityVerificationTermsBottomsheetScreen
                             Padding(
                                 padding: EdgeInsets.only(top: 2.v),
                                 child: Text('이름',
-                                    style: defaultTextTheme.bodySmall!.copyWith(
+                                    style: textTheme.bodySmall!.copyWith(
                                       color: const Color(0xFF5D5D5D),
                                     ))),
                             Padding(
                                 padding:
                                     EdgeInsets.only(left: 2.h, bottom: 2.v),
-                                child: Text('*',
-                                    style: defaultTextTheme.labelLarge))
+                                child: Text('*', style: textTheme.labelLarge))
                           ]),
                           CustomTextFormField(
-                              controller: controller.nameinputoneController,
+                              controller: controller.nameinputone,
                               hintText: '이름을 입력해주세요.',
                               textInputAction: TextInputAction.done)
                         ]),
@@ -82,15 +81,14 @@ class IdentityVerificationTermsBottomsheetScreen
                                   Padding(
                                       padding: EdgeInsets.only(top: 2.v),
                                       child: Text('주민등록번호 13자리',
-                                          style: defaultTextTheme.bodySmall!
-                                              .copyWith(
+                                          style: textTheme.bodySmall!.copyWith(
                                             color: const Color(0xFF5D5D5D),
                                           ))),
                                   Padding(
                                       padding: EdgeInsets.only(
                                           left: 2.h, bottom: 2.v),
                                       child: Text('*',
-                                          style: defaultTextTheme.labelLarge))
+                                          style: textTheme.labelLarge))
                                 ]),
                                 Container(
                                     padding:
@@ -104,13 +102,12 @@ class IdentityVerificationTermsBottomsheetScreen
                                       ),
                                     ),
                                     child: Text('YYMMDD',
-                                        style: defaultTextTheme.bodyLarge!
-                                            .copyWith(
+                                        style: textTheme.bodyLarge!.copyWith(
                                           color: const Color(0xFFB0B2BC),
                                         ))),
                                 SizedBox(height: 2.v),
                                 Text('만 26세 미만은 가입이 제한됩니다.',
-                                    style: defaultTextTheme.bodySmall!.copyWith(
+                                    style: textTheme.bodySmall!.copyWith(
                                       color: defaultColors.primaryContainer,
                                     ))
                               ]),
@@ -126,7 +123,7 @@ class IdentityVerificationTermsBottomsheetScreen
                                 ),
                               ),
                               child: Text('NNNNNNN',
-                                  style: defaultTextTheme.bodyLarge!.copyWith(
+                                  style: textTheme.bodyLarge!.copyWith(
                                     color: const Color(0xFFB0B2BC),
                                   )))
                         ]),
@@ -141,15 +138,14 @@ class IdentityVerificationTermsBottomsheetScreen
                                   Padding(
                                       padding: EdgeInsets.only(top: 2.v),
                                       child: Text('휴대폰 정보',
-                                          style: defaultTextTheme.bodySmall!
-                                              .copyWith(
+                                          style: textTheme.bodySmall!.copyWith(
                                             color: const Color(0xFF5D5D5D),
                                           ))),
                                   Padding(
                                       padding: EdgeInsets.only(
                                           left: 2.h, bottom: 2.v),
                                       child: Text('*',
-                                          style: defaultTextTheme.labelLarge))
+                                          style: textTheme.labelLarge))
                                 ]),
                                 Container(
                                     padding:
@@ -196,7 +192,7 @@ class IdentityVerificationTermsBottomsheetScreen
                                 ),
                               ),
                               child: Text('010-1234-5678',
-                                  style: defaultTextTheme.bodyLarge!.copyWith(
+                                  style: textTheme.bodyLarge!.copyWith(
                                     color: const Color(0xFFB0B2BC),
                                   )))
                         ]),
@@ -208,7 +204,7 @@ class IdentityVerificationTermsBottomsheetScreen
                             color: const Color(0xFFF3F3F6),
                             borderRadius: BorderRadiusStyle.roundedBorder10),
                         child: Text('인증번호 발송',
-                            style: defaultTextTheme.titleSmall!.copyWith(
+                            style: textTheme.titleSmall!.copyWith(
                               color: const Color(0xFFB0B2BC),
                               fontWeight: FontWeight.w700,
                             )))
@@ -227,7 +223,7 @@ class IdentityVerificationTermsBottomsheetScreen
                     borderRadius: BorderRadius.circular(8.h),
                   ),
                 ),
-                buttonTextStyle: defaultTextTheme.titleSmall!.copyWith(
+                buttonTextStyle: textTheme.titleSmall!.copyWith(
                   color: const Color(0xFFB0B2BC),
                   fontWeight: FontWeight.w700,
                 ),
@@ -287,9 +283,8 @@ class IdentityVerificationTermsBottomsheetScreen
                                                       padding: EdgeInsets.only(
                                                           left: 5.h),
                                                       child: Text('전체 동의',
-                                                          style:
-                                                              defaultTextTheme
-                                                                  .bodyMedium))
+                                                          style: textTheme
+                                                              .bodyMedium))
                                                 ],
                                               ),
                                             ),

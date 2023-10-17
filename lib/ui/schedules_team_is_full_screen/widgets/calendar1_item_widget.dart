@@ -35,7 +35,7 @@ class Calendar1ItemWidget extends StatelessWidget {
               () => Text(
                 calendar1Item.day1!.value,
                 overflow: TextOverflow.ellipsis,
-                style: defaultTextTheme.titleMedium,
+                style: textTheme.titleMedium,
               ),
             ),
           ),
@@ -44,7 +44,7 @@ class Calendar1ItemWidget extends StatelessWidget {
             () => Text(
               calendar1Item.day2!.value,
               overflow: TextOverflow.ellipsis,
-              style: defaultTextTheme.bodySmall!.copyWith(
+              style: textTheme.bodySmall!.copyWith(
                 color: const Color(0xFF91959D),
               ),
             ),
@@ -58,7 +58,7 @@ class Calendar1ItemWidget extends StatelessWidget {
               () => Text(
                 calendar1Item.day3!.value,
                 overflow: TextOverflow.ellipsis,
-                style: defaultTextTheme.bodySmall,
+                style: textTheme.bodySmall,
               ),
             ),
           ),
@@ -71,7 +71,7 @@ class Calendar1ItemWidget extends StatelessWidget {
               () => Text(
                 calendar1Item.day4!.value,
                 overflow: TextOverflow.ellipsis,
-                style: defaultTextTheme.bodySmall,
+                style: textTheme.bodySmall,
               ),
             ),
           ),
@@ -80,7 +80,7 @@ class Calendar1ItemWidget extends StatelessWidget {
             () => Text(
               calendar1Item.day5!.value,
               overflow: TextOverflow.ellipsis,
-              style: defaultTextTheme.bodySmall,
+              style: textTheme.bodySmall,
             ),
           ),
           SizedBox(height: 18.v),
@@ -88,7 +88,7 @@ class Calendar1ItemWidget extends StatelessWidget {
             () => Text(
               calendar1Item.day6!.value,
               overflow: TextOverflow.ellipsis,
-              style: defaultTextTheme.bodySmall,
+              style: textTheme.bodySmall,
             ),
           ),
         ],

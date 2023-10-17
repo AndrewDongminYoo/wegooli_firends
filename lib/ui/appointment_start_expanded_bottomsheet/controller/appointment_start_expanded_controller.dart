@@ -8,7 +8,6 @@ import '/ui/appointment_start_expanded_bottomsheet/models/appointment_start_expa
 class AppointmentStartExpandedController extends GetxController {
   Rx<AppointmentStartExpandedModel> appointmentStartExpanded =
       AppointmentStartExpandedModel().obs;
-
   DropdownData? choice;
 
   void onSelected(dynamic value) {

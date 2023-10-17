@@ -64,14 +64,13 @@ class ProfilePage extends StatelessWidget {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text('닉네임',
-                                          style: defaultTextTheme.titleMedium!
-                                              .copyWith(
+                                          style:
+                                              textTheme.titleMedium!.copyWith(
                                             fontSize: 18.fSize,
                                           )),
                                       SizedBox(height: 5.v),
                                       Text('010-1234-5678',
-                                          style: defaultTextTheme.bodySmall!
-                                              .copyWith(
+                                          style: textTheme.bodySmall!.copyWith(
                                             color: defaultColors.onPrimary
                                                 .withOpacity(0.4),
                                           ))
@@ -94,7 +93,7 @@ class ProfilePage extends StatelessWidget {
                       child: Padding(
                           padding: EdgeInsets.only(left: 16.h, top: 21.v),
                           child: Text('가입 정보',
-                              style: defaultTextTheme.titleMedium!.copyWith(
+                              style: textTheme.titleMedium!.copyWith(
                                 fontSize: 18.fSize,
                               )))),
                   Padding(
@@ -103,7 +102,7 @@ class ProfilePage extends StatelessWidget {
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text('개인정보 변경', style: defaultTextTheme.bodyLarge),
+                            Text('개인정보 변경', style: textTheme.bodyLarge),
                             CustomImageView(
                                 svgPath: ImageConstant.imgArrowleft,
                                 height: 18.adaptSize,
@@ -120,7 +119,7 @@ class ProfilePage extends StatelessWidget {
                       child: Padding(
                           padding: EdgeInsets.only(left: 16.h, top: 21.v),
                           child: Text('알림',
-                              style: defaultTextTheme.titleMedium!.copyWith(
+                              style: textTheme.titleMedium!.copyWith(
                                 fontSize: 18.fSize,
                               )))),
                   Padding(
@@ -130,7 +129,7 @@ class ProfilePage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text('앱 푸시 수신 동의',
-                                style: defaultTextTheme.bodyLarge!.copyWith(
+                                style: textTheme.bodyLarge!.copyWith(
                                   color: Colors.black,
                                 )),
                             Obx(() => CustomSwitch(
@@ -146,7 +145,7 @@ class ProfilePage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text('메일 수신 동의',
-                                style: defaultTextTheme.bodyLarge!.copyWith(
+                                style: textTheme.bodyLarge!.copyWith(
                                   color: Colors.black,
                                 )),
                             Obx(() => CustomSwitch(
@@ -162,7 +161,7 @@ class ProfilePage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text('SMS 수신 동의',
-                                style: defaultTextTheme.bodyLarge!.copyWith(
+                                style: textTheme.bodyLarge!.copyWith(
                                   color: Colors.black,
                                 )),
                             Obx(() => CustomSwitch(
@@ -181,7 +180,7 @@ class ProfilePage extends StatelessWidget {
                               '· 선택 항목에 동의하지 않아도 서비스 이용은 가능합니다.\n· 수신을 거부하시면 이벤트 관련 안내를 받을 수 없습니다.',
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
-                              style: defaultTextTheme.bodySmall!
+                              style: textTheme.bodySmall!
                                   .copyWith(
                                     color: defaultColors.onPrimary
                                         .withOpacity(0.4),
@@ -200,13 +199,12 @@ class ProfilePage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text('앱 버전',
-                                style: defaultTextTheme.titleMedium!.copyWith(
+                                style: textTheme.titleMedium!.copyWith(
                                   fontSize: 18.fSize,
                                 )),
                             Padding(
                                 padding: EdgeInsets.only(bottom: 2.v),
-                                child: Text('1.01',
-                                    style: defaultTextTheme.bodyLarge))
+                                child: Text('1.01', style: textTheme.bodyLarge))
                           ])),
                   SizedBox(height: 21.v),
                   Container(
@@ -220,7 +218,7 @@ class ProfilePage extends StatelessWidget {
                           EdgeInsets.only(left: 16.h, top: 20.v, right: 16.h)),
                   SizedBox(height: 21.v),
                   Text('회원 탈퇴',
-                      style: defaultTextTheme.bodySmall!.copyWith(
+                      style: textTheme.bodySmall!.copyWith(
                         color: defaultColors.onPrimary.withOpacity(0.4),
                       )),
                   SizedBox(height: 1.v),

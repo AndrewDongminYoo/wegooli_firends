@@ -10,7 +10,6 @@ import '/core/utils/size_utils.dart';
 import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_image.dart';
-import '/widgets/app_bar/appbar_image_2.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/custom_bottom_bar.dart';
 import '/widgets/custom_image_view.dart';
@@ -38,7 +37,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
             ),
           ),
           actions: [
-            AppbarImage2(
+            AppbarImage(
               svgPath: ImageConstant.imgMenu,
               margin: EdgeInsets.fromLTRB(9.h, 13.v, 9.h, 12.v),
             ),
@@ -71,7 +70,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                         children: [
                           Text(
                             '신규 이벤트',
-                            style: defaultTextTheme.bodySmall!.copyWith(
+                            style: textTheme.bodySmall!.copyWith(
                               color: Colors.black,
                             ),
                           ),
@@ -82,7 +81,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                               '위굴리 프렌즈를 이용하면\n할인 혜택이!',
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
-                              style: defaultTextTheme.titleSmall!.copyWith(
+                              style: textTheme.titleSmall!.copyWith(
                                 color: Colors.black,
                               ),
                             ),
@@ -113,7 +112,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                               ),
                               child: Text(
                                 '1/3',
-                                style: defaultTextTheme.bodySmall!.copyWith(
+                                style: textTheme.bodySmall!.copyWith(
                                   color: defaultColors.onPrimaryContainer,
                                   fontSize: 10.fSize,
                                 ),
@@ -157,7 +156,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                             ),
                             child: Text(
                               '리더 신청',
-                              style: defaultTextTheme.titleMedium!.copyWith(
+                              style: textTheme.titleMedium!.copyWith(
                                 fontFamily: 'NanumSquareRound',
                                 fontWeight: FontWeight.w800,
                               ),
@@ -170,7 +169,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                             ),
                             child: Text(
                               '프렌즈 리더되기',
-                              style: defaultTextTheme.bodySmall!.copyWith(
+                              style: textTheme.bodySmall!.copyWith(
                                 fontFamily: 'NanumSquareRound',
                                 color: const Color(0xFFB0B2BC),
                                 fontSize: 10.fSize,
@@ -207,7 +206,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                             padding: EdgeInsets.only(left: 12.h),
                             child: Text(
                               '같이 쓰기',
-                              style: defaultTextTheme.titleMedium!.copyWith(
+                              style: textTheme.titleMedium!.copyWith(
                                 fontFamily: 'NanumSquareRound',
                                 fontWeight: FontWeight.w800,
                               ),
@@ -220,7 +219,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                             ),
                             child: Text(
                               '프렌즈 같이쓰기',
-                              style: defaultTextTheme.bodySmall!.copyWith(
+                              style: textTheme.bodySmall!.copyWith(
                                 fontFamily: 'NanumSquareRound',
                                 color: const Color(0xFFB0B2BC),
                                 fontSize: 10.fSize,
@@ -266,7 +265,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                           Align(
                             child: Text(
                               '혼자 쓰기',
-                              style: defaultTextTheme.titleMedium!.copyWith(
+                              style: textTheme.titleMedium!.copyWith(
                                 fontFamily: 'NanumSquareRound',
                                 fontWeight: FontWeight.w800,
                               ),
@@ -275,7 +274,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                           SizedBox(height: 4.v),
                           Text(
                             '장기렌트 문의',
-                            style: defaultTextTheme.bodySmall!.copyWith(
+                            style: textTheme.bodySmall!.copyWith(
                               fontFamily: 'NanumSquareRound',
                               color: const Color(0xFFB0B2BC),
                               fontSize: 10.fSize,

@@ -35,9 +35,7 @@ class CustomElevatedButton extends BaseButton {
         );
 
   final BoxDecoration? decoration;
-
   final Widget? leftIcon;
-
   final Widget? rightIcon;
 
   @override
@@ -65,7 +63,7 @@ class CustomElevatedButton extends BaseButton {
               Text(
                 text,
                 style: buttonTextStyle ??
-                    defaultTextTheme.titleMedium!.copyWith(
+                    textTheme.titleMedium!.copyWith(
                       fontSize: 18.fSize,
                     ),
               ),

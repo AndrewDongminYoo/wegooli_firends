@@ -9,7 +9,7 @@ import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
 import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
-import '/widgets/app_bar/appbar_image_1.dart';
+import '/widgets/app_bar/appbar_image.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/custom_bottom_bar.dart';
 import '/widgets/custom_elevated_button.dart';
@@ -29,7 +29,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
         appBar: CustomAppBar(
           height: 45.v,
           centerTitle: true,
-          title: AppbarImage1(
+          title: AppbarImage(
             svgPath: ImageConstant.imgFriends,
           ),
           styleType: Style.bgOutline,
@@ -64,12 +64,12 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                 children: [
                                   Text(
                                     '모닝어반',
-                                    style: defaultTextTheme.titleMedium,
+                                    style: textTheme.titleMedium,
                                   ),
                                   SizedBox(height: 4.v),
                                   Text(
                                     '12가 3456',
-                                    style: defaultTextTheme.bodySmall!.copyWith(
+                                    style: textTheme.bodySmall!.copyWith(
                                       color: defaultColors.onPrimary
                                           .withOpacity(0.4),
                                     ),
@@ -91,7 +91,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                         ),
                                         child: Text(
                                           '휘발유 20%',
-                                          style: defaultTextTheme.bodySmall,
+                                          style: textTheme.bodySmall,
                                         ),
                                       ),
                                       CustomImageView(
@@ -117,7 +117,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                         children: [
                           Text(
                             '상태',
-                            style: defaultTextTheme.bodySmall!.copyWith(
+                            style: textTheme.bodySmall!.copyWith(
                               color: defaultColors.onPrimary.withOpacity(0.4),
                             ),
                           ),
@@ -125,7 +125,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                             padding: EdgeInsets.only(left: 5.h),
                             child: Text(
                               '|',
-                              style: defaultTextTheme.bodySmall!.copyWith(
+                              style: textTheme.bodySmall!.copyWith(
                                 color: defaultColors.onPrimary.withOpacity(0.4),
                               ),
                             ),
@@ -149,7 +149,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                             padding: EdgeInsets.only(left: 2.h),
                             child: Text(
                               '홍길동님이 사용중입니다.',
-                              style: defaultTextTheme.bodySmall,
+                              style: textTheme.bodySmall,
                             ),
                           ),
                         ],
@@ -200,13 +200,13 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                           children: [
                             Text(
                               '12:00',
-                              style: defaultTextTheme.bodySmall!.copyWith(
+                              style: textTheme.bodySmall!.copyWith(
                                 color: defaultColors.onPrimary.withOpacity(0.4),
                               ),
                             ),
                             Text(
                               '13:00',
-                              style: defaultTextTheme.bodySmall!.copyWith(
+                              style: textTheme.bodySmall!.copyWith(
                                 color: defaultColors.onPrimary.withOpacity(0.4),
                               ),
                             ),
@@ -242,8 +242,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                       alignment: Alignment.centerLeft,
                                       child: Text(
                                         '스마트키',
-                                        style: defaultTextTheme.titleMedium!
-                                            .copyWith(
+                                        style: textTheme.titleMedium!.copyWith(
                                           color: Colors.black,
                                           fontSize: 18.fSize,
                                         ),
@@ -326,9 +325,8 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                                         SizedBox(height: 5.v),
                                                         Text(
                                                           '문열기',
-                                                          style:
-                                                              defaultTextTheme
-                                                                  .titleMedium,
+                                                          style: textTheme
+                                                              .titleMedium,
                                                         ),
                                                       ],
                                                     ),
@@ -406,9 +404,8 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                                         SizedBox(height: 5.v),
                                                         Text(
                                                           '문잠금',
-                                                          style:
-                                                              defaultTextTheme
-                                                                  .titleMedium,
+                                                          style: textTheme
+                                                              .titleMedium,
                                                         ),
                                                       ],
                                                     ),
@@ -497,9 +494,8 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                                         SizedBox(height: 14.v),
                                                         Text(
                                                           '비상등',
-                                                          style:
-                                                              defaultTextTheme
-                                                                  .titleMedium,
+                                                          style: textTheme
+                                                              .titleMedium,
                                                         ),
                                                       ],
                                                     ),
@@ -596,7 +592,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                         ),
                                       ),
                                       buttonTextStyle:
-                                          defaultTextTheme.bodyLarge!.copyWith(
+                                          textTheme.bodyLarge!.copyWith(
                                         color: defaultColors.onPrimaryContainer,
                                       ),
                                     ),
@@ -638,8 +634,8 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                             SizedBox(height: 1.v),
                                             Text(
                                               '사고 접수',
-                                              style: defaultTextTheme.bodySmall!
-                                                  .copyWith(
+                                              style:
+                                                  textTheme.bodySmall!.copyWith(
                                                 color: Colors.black,
                                               ),
                                             ),

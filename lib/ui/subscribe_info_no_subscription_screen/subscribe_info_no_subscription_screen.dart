@@ -46,7 +46,7 @@ class SubscribeInfoNoSubscriptionScreen
                       width: 120.h),
                   SizedBox(height: 21.v),
                   Text('구독 정보가 없습니다.',
-                      style: defaultTextTheme.titleMedium!.copyWith(
+                      style: textTheme.titleMedium!.copyWith(
                         color: Colors.black,
                         fontSize: 18.fSize,
                       ))

@@ -42,7 +42,6 @@ class CustomImageView extends StatelessWidget {
 
   /// [file] is required parameter for fetching image file
   File? file;
-
   double? height;
   double? width;
   Color? color;

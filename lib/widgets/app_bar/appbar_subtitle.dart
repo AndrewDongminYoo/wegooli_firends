@@ -14,9 +14,7 @@ class AppbarSubtitle extends StatelessWidget {
   }) : super(key: key);
 
   String text;
-
   EdgeInsetsGeometry? margin;
-
   Function? onTap;
 
   @override
@@ -29,7 +27,7 @@ class AppbarSubtitle extends StatelessWidget {
         padding: margin ?? EdgeInsets.zero,
         child: Text(
           text,
-          style: defaultTextTheme.titleMedium!.copyWith(
+          style: textTheme.titleMedium!.copyWith(
             color: defaultColors.onPrimary,
           ),
         ),

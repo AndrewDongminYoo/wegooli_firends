@@ -9,10 +9,8 @@ import '/ui/identity_verification_waiting_screen/models/identity_verification_wa
 
 class IdentityVerificationWaitingController extends GetxController {
   TextEditingController nameoneController = TextEditingController();
-
   TextEditingController zipcodeController = TextEditingController();
-
-  TextEditingController phonenumberoneController = TextEditingController();
+  TextEditingController phonenumberone = TextEditingController();
 
   Rx<IdentityVerificationWaitingModel> identityVerificationWaiting =
       IdentityVerificationWaitingModel().obs;
@@ -22,6 +20,6 @@ class IdentityVerificationWaitingController extends GetxController {
     super.onClose();
     nameoneController.dispose();
     zipcodeController.dispose();
-    phonenumberoneController.dispose();
+    phonenumberone.dispose();
   }
 }

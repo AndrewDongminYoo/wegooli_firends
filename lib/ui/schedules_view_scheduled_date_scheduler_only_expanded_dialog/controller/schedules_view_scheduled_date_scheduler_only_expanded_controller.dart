@@ -10,7 +10,6 @@ class SchedulesViewScheduledDateSchedulerOnlyExpandedController
   Rx<SchedulesViewScheduledDateSchedulerOnlyExpandedModel>
       schedulesViewScheduledDateSchedulerOnlyExpanded =
       SchedulesViewScheduledDateSchedulerOnlyExpandedModel().obs;
-
   DropdownData? choice;
 
   void onSelected(dynamic value) {

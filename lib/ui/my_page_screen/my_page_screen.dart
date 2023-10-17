@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
 import '/theme/theme_helper.dart';
-import '/widgets/app_bar/appbar_image_1.dart';
+import '/widgets/app_bar/appbar_image.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/custom_bottom_bar.dart';
 import '/widgets/custom_image_view.dart';
@@ -26,7 +26,7 @@ class MyPageScreen extends GetWidget<MyPageController> {
         appBar: CustomAppBar(
           height: 45.v,
           centerTitle: true,
-          title: AppbarImage1(
+          title: AppbarImage(
             svgPath: ImageConstant.imgFriends,
           ),
           styleType: Style.bgOutline_1,
@@ -67,13 +67,12 @@ class MyPageScreen extends GetWidget<MyPageController> {
                                     children: [
                                       Text(
                                         '닉네임',
-                                        style: defaultTextTheme.titleMedium,
+                                        style: textTheme.titleMedium,
                                       ),
                                       SizedBox(height: 7.v),
                                       Text(
                                         '010-1234-5678',
-                                        style: defaultTextTheme.bodySmall!
-                                            .copyWith(
+                                        style: textTheme.bodySmall!.copyWith(
                                           color: defaultColors.onPrimary
                                               .withOpacity(0.4),
                                         ),
@@ -81,8 +80,7 @@ class MyPageScreen extends GetWidget<MyPageController> {
                                       SizedBox(height: 4.v),
                                       Text(
                                         'ydm2790@gmail.com',
-                                        style: defaultTextTheme.bodySmall!
-                                            .copyWith(
+                                        style: textTheme.bodySmall!.copyWith(
                                           color: defaultColors.onPrimary
                                               .withOpacity(0.4),
                                         ),
@@ -123,7 +121,7 @@ class MyPageScreen extends GetWidget<MyPageController> {
                                 ),
                                 child: Text(
                                   '개인 정보',
-                                  style: defaultTextTheme.bodyLarge,
+                                  style: textTheme.bodyLarge,
                                 ),
                               ),
                               const Spacer(),
@@ -157,7 +155,7 @@ class MyPageScreen extends GetWidget<MyPageController> {
                                 ),
                                 child: Text(
                                   '구독 정보',
-                                  style: defaultTextTheme.bodyLarge,
+                                  style: textTheme.bodyLarge,
                                 ),
                               ),
                               const Spacer(),
@@ -191,7 +189,7 @@ class MyPageScreen extends GetWidget<MyPageController> {
                                 ),
                                 child: Text(
                                   '카드 등록',
-                                  style: defaultTextTheme.bodyLarge,
+                                  style: textTheme.bodyLarge,
                                 ),
                               ),
                               const Spacer(),

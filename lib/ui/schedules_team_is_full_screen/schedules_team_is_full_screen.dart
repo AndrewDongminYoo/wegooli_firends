@@ -10,7 +10,7 @@ import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
 import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
-import '/widgets/app_bar/appbar_image_1.dart';
+import '/widgets/app_bar/appbar_image.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/custom_bottom_bar.dart';
 import '/widgets/custom_elevated_button.dart';
@@ -30,7 +30,7 @@ class SchedulesTeamIsFullScreen
         appBar: CustomAppBar(
           height: 45.v,
           centerTitle: true,
-          title: AppbarImage1(
+          title: AppbarImage(
             svgPath: ImageConstant.imgFriends,
           ),
           styleType: Style.bgOutline,
@@ -56,8 +56,7 @@ class SchedulesTeamIsFullScreen
                                 children: [
                                   Text(
                                     '팀원',
-                                    style:
-                                        defaultTextTheme.titleMedium!.copyWith(
+                                    style: textTheme.titleMedium!.copyWith(
                                       fontSize: 18.fSize,
                                     ),
                                   ),
@@ -78,7 +77,7 @@ class SchedulesTeamIsFullScreen
                                           SizedBox(height: 4.v),
                                           Text(
                                             '홍길동',
-                                            style: defaultTextTheme.bodySmall,
+                                            style: textTheme.bodySmall,
                                           ),
                                         ],
                                       ),
@@ -98,7 +97,7 @@ class SchedulesTeamIsFullScreen
                                             SizedBox(height: 4.v),
                                             Text(
                                               '김영희',
-                                              style: defaultTextTheme.bodySmall,
+                                              style: textTheme.bodySmall,
                                             ),
                                           ],
                                         ),
@@ -119,7 +118,7 @@ class SchedulesTeamIsFullScreen
                                             SizedBox(height: 4.v),
                                             Text(
                                               '김희영',
-                                              style: defaultTextTheme.bodySmall,
+                                              style: textTheme.bodySmall,
                                             ),
                                           ],
                                         ),
@@ -146,7 +145,7 @@ class SchedulesTeamIsFullScreen
                                     SizedBox(height: 4.v),
                                     Text(
                                       '김희영',
-                                      style: defaultTextTheme.bodySmall,
+                                      style: textTheme.bodySmall,
                                     ),
                                   ],
                                 ),
@@ -169,7 +168,7 @@ class SchedulesTeamIsFullScreen
                           ),
                           child: Text(
                             '일정',
-                            style: defaultTextTheme.titleMedium!.copyWith(
+                            style: textTheme.titleMedium!.copyWith(
                               fontSize: 18.fSize,
                             ),
                           ),
@@ -217,7 +216,7 @@ class SchedulesTeamIsFullScreen
                                     ),
                                     Text(
                                       '2023년 8월',
-                                      style: defaultTextTheme.titleMedium,
+                                      style: textTheme.titleMedium,
                                     ),
                                     CustomImageView(
                                       svgPath: ImageConstant.imgArrowleft,

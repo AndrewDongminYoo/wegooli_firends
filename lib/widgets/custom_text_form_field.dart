@@ -33,47 +33,26 @@ class CustomTextFormField extends StatelessWidget {
   }) : super(key: key);
 
   final Alignment? alignment;
-
   final double? width;
-
   final EdgeInsetsGeometry? margin;
-
   final TextEditingController? controller;
-
   final FocusNode? focusNode;
-
   final bool? autofocus;
-
   final TextStyle? textStyle;
-
   final bool? obscureText;
-
   final TextInputAction? textInputAction;
-
   final TextInputType? textInputType;
-
   final int? maxLines;
-
   final String? hintText;
-
   final TextStyle? hintStyle;
-
   final Widget? prefix;
-
   final BoxConstraints? prefixConstraints;
-
   final Widget? suffix;
-
   final BoxConstraints? suffixConstraints;
-
   final EdgeInsets? contentPadding;
-
   final InputBorder? borderDecoration;
-
   final Color? fillColor;
-
   final bool? filled;
-
   final FormFieldValidator<String>? validator;
 
   @override
@@ -93,7 +72,7 @@ class CustomTextFormField extends StatelessWidget {
           controller: controller,
           focusNode: focusNode ?? FocusNode(),
           autofocus: autofocus!,
-          style: textStyle ?? defaultTextTheme.bodyLarge,
+          style: textStyle ?? textTheme.bodyLarge,
           obscureText: obscureText!,
           textInputAction: textInputAction,
           keyboardType: textInputType,
@@ -105,7 +84,7 @@ class CustomTextFormField extends StatelessWidget {
   InputDecoration get decoration => InputDecoration(
         hintText: hintText ?? '',
         hintStyle: hintStyle ??
-            defaultTextTheme.bodyLarge!.copyWith(
+            textTheme.bodyLarge!.copyWith(
               color: const Color(0xFFB0B2BC),
             ),
         prefixIcon: prefix,

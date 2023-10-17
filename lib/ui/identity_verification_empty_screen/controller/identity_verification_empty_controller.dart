@@ -8,9 +8,8 @@ import 'package:get/get.dart';
 import '/ui/identity_verification_empty_screen/models/identity_verification_empty_model.dart';
 
 class IdentityVerificationEmptyController extends GetxController {
-  TextEditingController nameinputoneController = TextEditingController();
-
-  TextEditingController phonenumberoneController = TextEditingController();
+  TextEditingController nameinputone = TextEditingController();
+  TextEditingController phonenumberone = TextEditingController();
 
   Rx<IdentityVerificationEmptyModel> identityVerificationEmpty =
       IdentityVerificationEmptyModel().obs;
@@ -18,7 +17,7 @@ class IdentityVerificationEmptyController extends GetxController {
   @override
   void onClose() {
     super.onClose();
-    nameinputoneController.dispose();
-    phonenumberoneController.dispose();
+    nameinputone.dispose();
+    phonenumberone.dispose();
   }
 }

@@ -51,7 +51,7 @@ class UnsubscribeScreen extends GetWidget<UnsubscribeController> {
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.center,
-                          style: defaultTextTheme.titleMedium!
+                          style: textTheme.titleMedium!
                               .copyWith(
                                 color: Colors.black,
                                 fontSize: 18.fSize,
@@ -59,7 +59,7 @@ class UnsubscribeScreen extends GetWidget<UnsubscribeController> {
                               .copyWith(height: 1.44))),
                   SizedBox(height: 23.v),
                   Text('2023년 8월 4일 이후에 구독이 해지됩니다.',
-                      style: defaultTextTheme.bodyLarge!.copyWith(
+                      style: textTheme.bodyLarge!.copyWith(
                         color: Colors.black,
                       )),
                   SizedBox(height: 81.v),

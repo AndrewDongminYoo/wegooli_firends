@@ -19,19 +19,12 @@ class CustomFloatingButton extends StatelessWidget {
   }) : super(key: key);
 
   final Alignment? alignment;
-
   final EdgeInsetsGeometry? margin;
-
   final Color? backgroundColor;
-
   final VoidCallback? onTap;
-
   final double? width;
-
   final double? height;
-
   final BoxDecoration? decoration;
-
   final Widget? child;
 
   @override

@@ -9,8 +9,7 @@ import '/ui/identity_verification_filled_screen/models/identity_verification_fil
 
 class IdentityVerificationFilledController extends GetxController {
   TextEditingController nameoneController = TextEditingController();
-
-  TextEditingController phoneinfooneController = TextEditingController();
+  TextEditingController phoneinfoone = TextEditingController();
 
   Rx<IdentityVerificationFilledModel> identityVerificationFilled =
       IdentityVerificationFilledModel().obs;
@@ -19,6 +18,6 @@ class IdentityVerificationFilledController extends GetxController {
   void onClose() {
     super.onClose();
     nameoneController.dispose();
-    phoneinfooneController.dispose();
+    phoneinfoone.dispose();
   }
 }

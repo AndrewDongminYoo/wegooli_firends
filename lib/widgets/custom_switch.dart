@@ -17,15 +17,10 @@ class CustomSwitch extends StatelessWidget {
   }) : super(key: key);
 
   final Alignment? alignment;
-
   bool? value;
-
   final Function(bool) onChange;
-
   final double? width;
-
   final double? height;
-
   final EdgeInsetsGeometry? margin;
 
   @override

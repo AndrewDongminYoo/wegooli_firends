@@ -18,19 +18,12 @@ class CustomIconButton extends StatelessWidget {
   }) : super(key: key);
 
   final Alignment? alignment;
-
   final EdgeInsetsGeometry? margin;
-
   final double? height;
-
   final double? width;
-
   final EdgeInsetsGeometry? padding;
-
   final BoxDecoration? decoration;
-
   final Widget? child;
-
   final VoidCallback? onTap;
 
   @override

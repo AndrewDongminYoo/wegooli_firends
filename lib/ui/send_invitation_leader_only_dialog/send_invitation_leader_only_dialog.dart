@@ -45,15 +45,15 @@ class SendInvitationLeaderOnlyDialog extends StatelessWidget {
                   Padding(
                       padding: EdgeInsets.only(left: 20.h, top: 6.v),
                       child: Text('초대 코드',
-                          style: defaultTextTheme.titleMedium!.copyWith(
+                          style: textTheme.titleMedium!.copyWith(
                             fontSize: 18.fSize,
                           ))),
                   CustomTextFormField(
-                      controller: controller.invitationcodeController,
+                      controller: controller.invitationcode,
                       margin:
                           EdgeInsets.only(left: 20.h, top: 22.v, right: 20.h),
                       hintText: 'qwer-tyui-asdf-zxcv',
-                      hintStyle: defaultTextTheme.bodyLarge!.copyWith(
+                      hintStyle: textTheme.bodyLarge!.copyWith(
                         color: const Color(0xFF8E9199),
                       ),
                       textInputAction: TextInputAction.done,
@@ -78,7 +78,7 @@ class SendInvitationLeaderOnlyDialog extends StatelessWidget {
                           ),
                         ),
                       ),
-                      buttonTextStyle: defaultTextTheme.titleMedium)
+                      buttonTextStyle: textTheme.titleMedium)
                 ])));
   }
 }

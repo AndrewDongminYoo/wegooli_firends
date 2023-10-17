@@ -42,12 +42,12 @@ class ListItemWidget extends StatelessWidget {
                 children: [
                   Text(
                     '[문의] 우리 애기는 아래발치에서 코올코올. 고양이는 부뜨막에서 가릉가릉,',
-                    style: defaultTextTheme.titleSmall,
+                    style: textTheme.titleSmall,
                   ),
                   SizedBox(height: 3.v),
                   Text(
                     '2023.08.23',
-                    style: defaultTextTheme.bodySmall!.copyWith(
+                    style: textTheme.bodySmall!.copyWith(
                       color: defaultColors.onPrimary.withOpacity(0.4),
                     ),
                   ),

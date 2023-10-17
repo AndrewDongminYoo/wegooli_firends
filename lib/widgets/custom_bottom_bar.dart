@@ -91,7 +91,7 @@ class CustomBottomBar extends StatelessWidget {
                     padding: EdgeInsets.only(top: 7.v),
                     child: Text(
                       bottomMenuList[index].title ?? '',
-                      style: defaultTextTheme.bodySmall!
+                      style: textTheme.bodySmall!
                           .copyWith(
                             color: const Color(0xFFB0B2BC),
                             fontSize: 10.fSize,
@@ -116,7 +116,7 @@ class CustomBottomBar extends StatelessWidget {
                     padding: EdgeInsets.only(top: 7.v),
                     child: Text(
                       bottomMenuList[index].title ?? '',
-                      style: defaultTextTheme.bodySmall!
+                      style: textTheme.bodySmall!
                           .copyWith(
                             fontSize: 10.fSize,
                           )
@@ -155,7 +155,6 @@ class BottomMenuModel {
   String icon;
 
   String activeIcon;
-
   String? title;
 
   BottomBarEnum type;

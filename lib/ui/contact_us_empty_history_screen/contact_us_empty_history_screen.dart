@@ -49,7 +49,7 @@ class ContactUsEmptyHistoryScreen
                                 width: 120.h),
                             SizedBox(height: 21.v),
                             Text('문의내역이 없습니다.',
-                                style: defaultTextTheme.titleMedium!.copyWith(
+                                style: textTheme.titleMedium!.copyWith(
                                   color: Colors.black,
                                   fontSize: 18.fSize,
                                 ))
@@ -79,7 +79,7 @@ class ContactUsEmptyHistoryScreen
                   borderRadius: BorderRadius.circular(26.h),
                 ),
               ),
-              buttonTextStyle: defaultTextTheme.titleMedium!.copyWith(
+              buttonTextStyle: textTheme.titleMedium!.copyWith(
                 color: const Color(0xFFB0B2BC),
                 fontSize: 18.fSize,
               )),

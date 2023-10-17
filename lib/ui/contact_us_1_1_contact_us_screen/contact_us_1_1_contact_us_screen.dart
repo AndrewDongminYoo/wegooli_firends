@@ -57,8 +57,7 @@ class ContactUs11ContactUsScreen
                                                 .imgCaretdownGray800)),
                                     margin: EdgeInsets.only(right: 16.h),
                                     hintText: '문의 유형을 선택해주세요.',
-                                    hintStyle:
-                                        defaultTextTheme.bodyLarge!.copyWith(
+                                    hintStyle: textTheme.bodyLarge!.copyWith(
                                       color: const Color(0xFF8F9199),
                                     ),
                                     items: controller.contactUs11ContactUs.value
@@ -74,8 +73,7 @@ class ContactUs11ContactUsScreen
                                     margin:
                                         EdgeInsets.only(top: 21.v, right: 16.h),
                                     hintText: '내용을 입력해주세요.',
-                                    hintStyle:
-                                        defaultTextTheme.bodyLarge!.copyWith(
+                                    hintStyle: textTheme.bodyLarge!.copyWith(
                                       color: const Color(0xFF8E9199),
                                     ),
                                     textInputAction: TextInputAction.done,
@@ -84,8 +82,7 @@ class ContactUs11ContactUsScreen
                                         horizontal: 12.h, vertical: 14.v)),
                                 SizedBox(height: 21.v),
                                 Text('이미지 첨부',
-                                    style:
-                                        defaultTextTheme.titleMedium!.copyWith(
+                                    style: textTheme.titleMedium!.copyWith(
                                       fontSize: 18.fSize,
                                     )),
                                 Align(

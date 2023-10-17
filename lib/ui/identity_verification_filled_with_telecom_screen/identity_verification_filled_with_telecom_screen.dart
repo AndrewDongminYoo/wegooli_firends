@@ -48,7 +48,7 @@ class IdentityVerificationFilledWithTelecomScreen
                         Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text('이름', style: defaultTextTheme.bodySmall),
+                              Text('이름', style: textTheme.bodySmall),
                               CustomImageView(
                                   svgPath: ImageConstant.imgLabeltext,
                                   height: 5.adaptSize,
@@ -72,7 +72,7 @@ class IdentityVerificationFilledWithTelecomScreen
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text('주민등록번호 13자리',
-                                        style: defaultTextTheme.bodySmall),
+                                        style: textTheme.bodySmall),
                                     CustomImageView(
                                         svgPath: ImageConstant.imgLabeltext,
                                         height: 5.adaptSize,
@@ -92,10 +92,10 @@ class IdentityVerificationFilledWithTelecomScreen
                                     ),
                                   ),
                                   child: Text('940812',
-                                      style: defaultTextTheme.bodyLarge)),
+                                      style: textTheme.bodyLarge)),
                               SizedBox(height: 3.v),
                               Text('만 26세 미만은 가입이 제한됩니다.',
-                                  style: defaultTextTheme.bodySmall!.copyWith(
+                                  style: textTheme.bodySmall!.copyWith(
                                     color: defaultColors.primaryContainer,
                                   ))
                             ]),
@@ -110,8 +110,7 @@ class IdentityVerificationFilledWithTelecomScreen
                                 ),
                               ),
                             ),
-                            child: Text('*******',
-                                style: defaultTextTheme.bodyLarge))
+                            child: Text('*******', style: textTheme.bodyLarge))
                       ]),
                   SizedBox(height: 30.v),
                   Row(
@@ -123,8 +122,7 @@ class IdentityVerificationFilledWithTelecomScreen
                               Row(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text('휴대폰 정보',
-                                        style: defaultTextTheme.bodySmall),
+                                    Text('휴대폰 정보', style: textTheme.bodySmall),
                                     CustomImageView(
                                         svgPath: ImageConstant.imgLabeltext,
                                         height: 5.adaptSize,
@@ -146,8 +144,7 @@ class IdentityVerificationFilledWithTelecomScreen
                                   child: Row(
                                       mainAxisSize: MainAxisSize.min,
                                       children: [
-                                        Text('KT',
-                                            style: defaultTextTheme.bodyLarge),
+                                        Text('KT', style: textTheme.bodyLarge),
                                         CustomImageView(
                                             svgPath: ImageConstant.imgCaretdown,
                                             height: 18.adaptSize,
@@ -157,7 +154,7 @@ class IdentityVerificationFilledWithTelecomScreen
                             ]),
                         CustomTextFormField(
                             width: 216.h,
-                            controller: controller.phonenumberoneController,
+                            controller: controller.phonenumberone,
                             margin: EdgeInsets.only(top: 19.v),
                             hintText: '010-1234-5678',
                             textInputAction: TextInputAction.done)
@@ -172,7 +169,7 @@ class IdentityVerificationFilledWithTelecomScreen
                           borderRadius: BorderRadius.circular(8.h),
                         ),
                       ),
-                      buttonTextStyle: defaultTextTheme.titleSmall!.copyWith(
+                      buttonTextStyle: textTheme.titleSmall!.copyWith(
                         color: defaultColors.onPrimaryContainer,
                         fontWeight: FontWeight.w700,
                       ),
@@ -194,7 +191,7 @@ class IdentityVerificationFilledWithTelecomScreen
                     borderRadius: BorderRadius.circular(8.h),
                   ),
                 ),
-                buttonTextStyle: defaultTextTheme.titleSmall!.copyWith(
+                buttonTextStyle: textTheme.titleSmall!.copyWith(
                   color: const Color(0xFFB0B2BC),
                   fontWeight: FontWeight.w700,
                 ))));

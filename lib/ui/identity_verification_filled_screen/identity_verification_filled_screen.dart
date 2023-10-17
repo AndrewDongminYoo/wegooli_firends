@@ -42,14 +42,14 @@ class IdentityVerificationFilledScreen
             padding: EdgeInsets.symmetric(horizontal: 16.h, vertical: 10.v),
             child: Column(children: [
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Text('이름', style: defaultTextTheme.bodySmall),
+                Text('이름', style: textTheme.bodySmall),
                 SizedBox(height: 3.v),
                 CustomTextFormField(
                     controller: controller.nameoneController, hintText: '홍길동')
               ]),
               SizedBox(height: 30.v),
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Text('주민등록번호 13자리', style: defaultTextTheme.bodySmall),
+                Text('주민등록번호 13자리', style: textTheme.bodySmall),
                 SizedBox(height: 3.v),
                 Container(
                     padding: EdgeInsets.symmetric(vertical: 9.v),
@@ -62,7 +62,7 @@ class IdentityVerificationFilledScreen
                       ),
                     ),
                     child: Row(children: [
-                      Text('940812', style: defaultTextTheme.bodyLarge),
+                      Text('940812', style: textTheme.bodyLarge),
                       const Spacer(),
                       Padding(
                           padding: EdgeInsets.only(top: 10.v, bottom: 6.v),
@@ -70,7 +70,7 @@ class IdentityVerificationFilledScreen
                               child: Divider(color: Color(0xFFB0B2BC)))),
                       Padding(
                           padding: EdgeInsets.only(left: 10.h),
-                          child: Text('2', style: defaultTextTheme.bodyLarge)),
+                          child: Text('2', style: textTheme.bodyLarge)),
                       CustomImageView(
                           svgPath: ImageConstant.imgGlobe,
                           height: 7.adaptSize,
@@ -109,16 +109,16 @@ class IdentityVerificationFilledScreen
                     ])),
                 SizedBox(height: 3.v),
                 Text('만 26세 미만은 가입이 제한됩니다.',
-                    style: defaultTextTheme.bodySmall!.copyWith(
+                    style: textTheme.bodySmall!.copyWith(
                       color: defaultColors.primaryContainer,
                     ))
               ]),
               SizedBox(height: 30.v),
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Text('휴대폰 정보', style: defaultTextTheme.bodySmall),
+                Text('휴대폰 정보', style: textTheme.bodySmall),
                 SizedBox(height: 3.v),
                 CustomTextFormField(
-                    controller: controller.phoneinfooneController,
+                    controller: controller.phoneinfoone,
                     hintText: '010-1234-5678',
                     textInputAction: TextInputAction.done)
               ]),
@@ -132,7 +132,7 @@ class IdentityVerificationFilledScreen
                       borderRadius: BorderRadius.circular(8.h),
                     ),
                   ),
-                  buttonTextStyle: defaultTextTheme.titleSmall!.copyWith(
+                  buttonTextStyle: textTheme.titleSmall!.copyWith(
                     color: defaultColors.onPrimaryContainer,
                     fontWeight: FontWeight.w700,
                   )),
@@ -152,7 +152,7 @@ class IdentityVerificationFilledScreen
                   borderRadius: BorderRadius.circular(8.h),
                 ),
               ),
-              buttonTextStyle: defaultTextTheme.titleSmall!.copyWith(
+              buttonTextStyle: textTheme.titleSmall!.copyWith(
                 color: const Color(0xFFB0B2BC),
                 fontWeight: FontWeight.w700,
               )),

@@ -136,7 +136,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                                             ),
                                                                             borderRadius: BorderRadiusStyle.roundedBorder10),
                                                                         child: Text('B',
-                                                                            style: defaultTextTheme.bodySmall!.copyWith(
+                                                                            style: textTheme.bodySmall!.copyWith(
                                                                               color: defaultColors.primary,
                                                                               fontSize: 9.fSize,
                                                                             ))),
@@ -163,7 +163,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                                                       ),
                                                                                       borderRadius: BorderRadiusStyle.roundedBorder10),
                                                                                   child: Text('C',
-                                                                                      style: defaultTextTheme.bodySmall!.copyWith(
+                                                                                      style: textTheme.bodySmall!.copyWith(
                                                                                         color: defaultColors.primary,
                                                                                         fontSize: 9.fSize,
                                                                                       ))),
@@ -382,7 +382,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                                         ),
                                                                         borderRadius: BorderRadiusStyle.roundedBorder10),
                                                                     child: Text('D',
-                                                                        style: defaultTextTheme.bodySmall!.copyWith(
+                                                                        style: textTheme.bodySmall!.copyWith(
                                                                           color:
                                                                               defaultColors.primary,
                                                                           fontSize:
@@ -435,7 +435,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                     padding: EdgeInsets.only(
                                                         left: 19.h),
                                                     child: Text('면허증 종류',
-                                                        style: defaultTextTheme
+                                                        style: textTheme
                                                             .bodySmall)),
                                                 SizedBox(height: 3.v),
                                                 CustomDropDown(
@@ -633,12 +633,12 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                     padding: EdgeInsets.only(
                                                         left: 19.h),
                                                     child: Text('적성기간 만료일',
-                                                        style: defaultTextTheme
+                                                        style: textTheme
                                                             .bodySmall)),
                                                 SizedBox(height: 3.v),
                                                 CustomTextFormField(
                                                     controller: controller
-                                                        .validityperiodiController,
+                                                        .validityperiodi,
                                                     hintText:
                                                         '적성기간 만료일(숫자만)을 입력해주세요.')
                                               ])),
@@ -686,7 +686,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                     padding: EdgeInsets.only(
                                                         left: 19.h),
                                                     child: Text('면허 발급 일자',
-                                                        style: defaultTextTheme
+                                                        style: textTheme
                                                             .bodySmall)),
                                                 SizedBox(height: 3.v),
                                                 CustomTextFormField(
@@ -735,7 +735,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                     borderRadius: BorderRadius.circular(8.h),
                   ),
                 ),
-                buttonTextStyle: defaultTextTheme.titleSmall!.copyWith(
+                buttonTextStyle: textTheme.titleSmall!.copyWith(
                   color: const Color(0xFFB0B2BC),
                   fontWeight: FontWeight.w700,
                 ))));

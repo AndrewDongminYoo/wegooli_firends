@@ -10,20 +10,18 @@ import '/ui/identity_verification_waiting_with_telecom_screen/models/identity_ve
 
 class IdentityVerificationWaitingWithTelecomController extends GetxController {
   TextEditingController nameoneController = TextEditingController();
-
-  TextEditingController phonenumberoneController = TextEditingController();
+  TextEditingController phonenumberone = TextEditingController();
 
   Rx<IdentityVerificationWaitingWithTelecomModel>
       identityVerificationWaitingWithTelecom =
       IdentityVerificationWaitingWithTelecomModel().obs;
-
   DropdownData? choice;
 
   @override
   void onClose() {
     super.onClose();
     nameoneController.dispose();
-    phonenumberoneController.dispose();
+    phonenumberone.dispose();
   }
 
   void onSelected(dynamic value) {

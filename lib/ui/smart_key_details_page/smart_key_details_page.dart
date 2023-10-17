@@ -59,7 +59,7 @@ class SmartKeyDetailsPage extends StatelessWidget {
                           child: Padding(
                               padding: EdgeInsets.only(left: 16.h, top: 21.v),
                               child: Text('기본 정보',
-                                  style: defaultTextTheme.titleMedium!.copyWith(
+                                  style: textTheme.titleMedium!.copyWith(
                                     fontSize: 18.fSize,
                                   )))),
                       Padding(
@@ -69,12 +69,11 @@ class SmartKeyDetailsPage extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text('모델',
-                                    style: defaultTextTheme.bodyLarge!.copyWith(
+                                    style: textTheme.bodyLarge!.copyWith(
                                       color: defaultColors.onPrimary
                                           .withOpacity(0.4),
                                     )),
-                                Text('레이 3세대',
-                                    style: defaultTextTheme.bodyLarge)
+                                Text('레이 3세대', style: textTheme.bodyLarge)
                               ])),
                       Padding(
                           padding: EdgeInsets.only(
@@ -83,11 +82,11 @@ class SmartKeyDetailsPage extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text('차종',
-                                    style: defaultTextTheme.bodyLarge!.copyWith(
+                                    style: textTheme.bodyLarge!.copyWith(
                                       color: defaultColors.onPrimary
                                           .withOpacity(0.4),
                                     )),
-                                Text('소형', style: defaultTextTheme.bodyLarge)
+                                Text('소형', style: textTheme.bodyLarge)
                               ])),
                       Padding(
                           padding: EdgeInsets.only(
@@ -96,11 +95,11 @@ class SmartKeyDetailsPage extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text('연료',
-                                    style: defaultTextTheme.bodyLarge!.copyWith(
+                                    style: textTheme.bodyLarge!.copyWith(
                                       color: defaultColors.onPrimary
                                           .withOpacity(0.4),
                                     )),
-                                Text('휘발유', style: defaultTextTheme.bodyLarge)
+                                Text('휘발유', style: textTheme.bodyLarge)
                               ])),
                       SizedBox(height: 21.v),
                       Container(
@@ -113,7 +112,7 @@ class SmartKeyDetailsPage extends StatelessWidget {
                           child: Padding(
                               padding: EdgeInsets.only(left: 16.h, top: 21.v),
                               child: Text('정비 상태',
-                                  style: defaultTextTheme.titleMedium!.copyWith(
+                                  style: textTheme.titleMedium!.copyWith(
                                     fontSize: 18.fSize,
                                   )))),
                       Padding(
@@ -123,12 +122,11 @@ class SmartKeyDetailsPage extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text('엔진오일 점검일',
-                                    style: defaultTextTheme.bodyLarge!.copyWith(
+                                    style: textTheme.bodyLarge!.copyWith(
                                       color: defaultColors.onPrimary
                                           .withOpacity(0.4),
                                     )),
-                                Text('2023.08.01',
-                                    style: defaultTextTheme.bodyLarge)
+                                Text('2023.08.01', style: textTheme.bodyLarge)
                               ])),
                       Padding(
                           padding: EdgeInsets.only(
@@ -137,12 +135,11 @@ class SmartKeyDetailsPage extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text('타이어 점검일',
-                                    style: defaultTextTheme.bodyLarge!.copyWith(
+                                    style: textTheme.bodyLarge!.copyWith(
                                       color: defaultColors.onPrimary
                                           .withOpacity(0.4),
                                     )),
-                                Text('2023.08.01',
-                                    style: defaultTextTheme.bodyLarge)
+                                Text('2023.08.01', style: textTheme.bodyLarge)
                               ])),
                       Padding(
                           padding: EdgeInsets.only(
@@ -151,11 +148,11 @@ class SmartKeyDetailsPage extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text('배터리 상태',
-                                    style: defaultTextTheme.bodyLarge!.copyWith(
+                                    style: textTheme.bodyLarge!.copyWith(
                                       color: defaultColors.onPrimary
                                           .withOpacity(0.4),
                                     )),
-                                Text('양호', style: defaultTextTheme.bodyLarge)
+                                Text('양호', style: textTheme.bodyLarge)
                               ])),
                       Padding(
                           padding: EdgeInsets.only(
@@ -164,11 +161,11 @@ class SmartKeyDetailsPage extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text('인원',
-                                    style: defaultTextTheme.bodyLarge!.copyWith(
+                                    style: textTheme.bodyLarge!.copyWith(
                                       color: defaultColors.onPrimary
                                           .withOpacity(0.4),
                                     )),
-                                Text('4인승', style: defaultTextTheme.bodyLarge)
+                                Text('4인승', style: textTheme.bodyLarge)
                               ]))
                     ])))),
         floatingActionButton: CustomFloatingButton(

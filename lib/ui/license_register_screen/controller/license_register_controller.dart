@@ -10,22 +10,18 @@ import '/ui/license_register_screen/models/license_register_model.dart';
 
 class LicenseRegisterController extends GetxController {
   TextEditingController tfController = TextEditingController();
-
-  TextEditingController validityperiodiController = TextEditingController();
-
+  TextEditingController validityperiodi = TextEditingController();
   TextEditingController oneController = TextEditingController();
 
   Rx<LicenseRegisterModel> licenseRegister = LicenseRegisterModel().obs;
-
   DropdownData? choice;
-
   DropdownData? choice1;
 
   @override
   void onClose() {
     super.onClose();
     tfController.dispose();
-    validityperiodiController.dispose();
+    validityperiodi.dispose();
     oneController.dispose();
   }
 

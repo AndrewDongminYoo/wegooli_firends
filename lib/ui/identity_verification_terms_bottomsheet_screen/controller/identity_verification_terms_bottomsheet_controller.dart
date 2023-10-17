@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 import '/ui/identity_verification_terms_bottomsheet_screen/models/identity_verification_terms_bottomsheet_model.dart';
 
 class IdentityVerificationTermsBottomsheetController extends GetxController {
-  TextEditingController nameinputoneController = TextEditingController();
+  TextEditingController nameinputone = TextEditingController();
 
   Rx<IdentityVerificationTermsBottomsheetModel>
       identityVerificationTermsBottomsheet =
@@ -17,6 +17,6 @@ class IdentityVerificationTermsBottomsheetController extends GetxController {
   @override
   void onClose() {
     super.onClose();
-    nameinputoneController.dispose();
+    nameinputone.dispose();
   }
 }

@@ -46,7 +46,7 @@ class IdentityVerificationWaitingWithTelecomScreen
             child: Column(children: [
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                 Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                  Text('이름', style: defaultTextTheme.bodySmall),
+                  Text('이름', style: textTheme.bodySmall),
                   CustomImageView(
                       svgPath: ImageConstant.imgLabeltext,
                       height: 5.adaptSize,
@@ -61,7 +61,7 @@ class IdentityVerificationWaitingWithTelecomScreen
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                   Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                    Text('주민등록번호 13자리', style: defaultTextTheme.bodySmall),
+                    Text('주민등록번호 13자리', style: textTheme.bodySmall),
                     CustomImageView(
                         svgPath: ImageConstant.imgLabeltext,
                         height: 5.adaptSize,
@@ -79,10 +79,10 @@ class IdentityVerificationWaitingWithTelecomScreen
                           ),
                         ),
                       ),
-                      child: Text('940812', style: defaultTextTheme.bodyLarge)),
+                      child: Text('940812', style: textTheme.bodyLarge)),
                   SizedBox(height: 3.v),
                   Text('만 26세 미만은 가입이 제한됩니다.',
-                      style: defaultTextTheme.bodySmall!.copyWith(
+                      style: textTheme.bodySmall!.copyWith(
                         color: defaultColors.primaryContainer,
                       ))
                 ]),
@@ -97,13 +97,13 @@ class IdentityVerificationWaitingWithTelecomScreen
                         ),
                       ),
                     ),
-                    child: Text('*******', style: defaultTextTheme.bodyLarge))
+                    child: Text('*******', style: textTheme.bodyLarge))
               ]),
               SizedBox(height: 30.v),
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                   Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                    Text('휴대폰 정보', style: defaultTextTheme.bodySmall),
+                    Text('휴대폰 정보', style: textTheme.bodySmall),
                     CustomImageView(
                         svgPath: ImageConstant.imgLabeltext,
                         height: 5.adaptSize,
@@ -118,7 +118,7 @@ class IdentityVerificationWaitingWithTelecomScreen
                           child: CustomImageView(
                               svgPath: ImageConstant.imgCaretdown)),
                       hintText: 'KT',
-                      hintStyle: defaultTextTheme.bodyLarge,
+                      hintStyle: textTheme.bodyLarge,
                       items: controller.identityVerificationWaitingWithTelecom
                           .value.choices.value,
                       onChanged: (value) {
@@ -127,7 +127,7 @@ class IdentityVerificationWaitingWithTelecomScreen
                 ]),
                 CustomTextFormField(
                     width: 216.h,
-                    controller: controller.phonenumberoneController,
+                    controller: controller.phonenumberone,
                     margin: EdgeInsets.only(top: 19.v),
                     hintText: '010-1234-5678',
                     textInputAction: TextInputAction.done)
@@ -142,7 +142,7 @@ class IdentityVerificationWaitingWithTelecomScreen
                       borderRadius: BorderRadius.circular(8.h),
                     ),
                   ),
-                  buttonTextStyle: defaultTextTheme.titleSmall!.copyWith(
+                  buttonTextStyle: textTheme.titleSmall!.copyWith(
                     color: defaultColors.onPrimaryContainer,
                     fontWeight: FontWeight.w700,
                   )),
@@ -161,11 +161,11 @@ class IdentityVerificationWaitingWithTelecomScreen
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text('인증번호 입력',
-                            style: defaultTextTheme.bodyLarge!.copyWith(
+                            style: textTheme.bodyLarge!.copyWith(
                               color: const Color(0xFFB0B2BC),
                             )),
                         Text('3:00',
-                            style: defaultTextTheme.bodyLarge!.copyWith(
+                            style: textTheme.bodyLarge!.copyWith(
                               color: defaultColors.primaryContainer,
                             ))
                       ])),
@@ -185,7 +185,7 @@ class IdentityVerificationWaitingWithTelecomScreen
                   borderRadius: BorderRadius.circular(8.h),
                 ),
               ),
-              buttonTextStyle: defaultTextTheme.titleSmall!.copyWith(
+              buttonTextStyle: textTheme.titleSmall!.copyWith(
                 fontWeight: FontWeight.w700,
               ),
               onTap: () =>

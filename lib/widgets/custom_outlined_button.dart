@@ -36,11 +36,8 @@ class CustomOutlinedButton extends BaseButton {
         );
 
   final BoxDecoration? decoration;
-
   final Widget? leftIcon;
-
   final Widget? rightIcon;
-
   final Widget? label;
 
   @override
@@ -68,7 +65,7 @@ class CustomOutlinedButton extends BaseButton {
               Text(
                 text,
                 style: buttonTextStyle ??
-                    defaultTextTheme.bodySmall!.copyWith(
+                    textTheme.bodySmall!.copyWith(
                       color: const Color(0xFF5D5D5D),
                     ),
               ),

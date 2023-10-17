@@ -8,7 +8,6 @@ import '/ui/appointment_all_collapsed_bottomsheet/models/appointment_all_collaps
 class AppointmentAllCollapsedController extends GetxController {
   Rx<AppointmentAllCollapsedModel> appointmentAllCollapsed =
       AppointmentAllCollapsedModel().obs;
-
   DropdownData? choice;
 
   void onSelected(dynamic value) {

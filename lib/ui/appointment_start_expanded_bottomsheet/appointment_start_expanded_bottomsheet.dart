@@ -53,7 +53,7 @@ class AppointmentStartExpandedBottomsheet extends StatelessWidget {
                   '총 2시간 이용\n8.1 화 16:00 ~ 8.1 화 18:00',
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
-                  style: defaultTextTheme.titleMedium!
+                  style: textTheme.titleMedium!
                       .copyWith(
                         color: Colors.black,
                         fontSize: 18.fSize,
@@ -83,7 +83,7 @@ class AppointmentStartExpandedBottomsheet extends StatelessWidget {
                 children: [
                   Text(
                     '이용시작시간',
-                    style: defaultTextTheme.titleMedium!.copyWith(
+                    style: textTheme.titleMedium!.copyWith(
                       color: defaultColors.onPrimary.withOpacity(0.4),
                     ),
                   ),
@@ -124,12 +124,12 @@ class AppointmentStartExpandedBottomsheet extends StatelessWidget {
                 children: [
                   Text(
                     '반납시간',
-                    style: defaultTextTheme.titleMedium,
+                    style: textTheme.titleMedium,
                   ),
                   const Spacer(),
                   Text(
                     '8.1 화 18:00',
-                    style: defaultTextTheme.titleMedium,
+                    style: textTheme.titleMedium,
                   ),
                   CustomImageView(
                     svgPath: ImageConstant.imgArrowleft,
@@ -151,7 +151,7 @@ class AppointmentStartExpandedBottomsheet extends StatelessWidget {
                   children: [
                     Text(
                       'lbl_8_1',
-                      style: defaultTextTheme.bodyLarge!.copyWith(
+                      style: textTheme.bodyLarge!.copyWith(
                         color: defaultColors.onPrimary.withOpacity(0.4),
                       ),
                     ),
@@ -159,7 +159,7 @@ class AppointmentStartExpandedBottomsheet extends StatelessWidget {
                       padding: EdgeInsets.only(left: 81.h),
                       child: Text(
                         '15',
-                        style: defaultTextTheme.bodyLarge!.copyWith(
+                        style: textTheme.bodyLarge!.copyWith(
                           color: defaultColors.onPrimary.withOpacity(0.4),
                         ),
                       ),
@@ -211,15 +211,15 @@ class AppointmentStartExpandedBottomsheet extends StatelessWidget {
                 children: [
                   Text(
                     'lbl_8_2',
-                    style: defaultTextTheme.bodyLarge,
+                    style: textTheme.bodyLarge,
                   ),
                   Text(
                     '16',
-                    style: defaultTextTheme.bodyLarge,
+                    style: textTheme.bodyLarge,
                   ),
                   Text(
                     '00',
-                    style: defaultTextTheme.bodyLarge,
+                    style: textTheme.bodyLarge,
                   ),
                 ],
               ),
@@ -268,7 +268,7 @@ class AppointmentStartExpandedBottomsheet extends StatelessWidget {
                   children: [
                     Text(
                       '17',
-                      style: defaultTextTheme.bodyLarge!.copyWith(
+                      style: textTheme.bodyLarge!.copyWith(
                         color: defaultColors.onPrimary.withOpacity(0.4),
                       ),
                     ),
@@ -276,7 +276,7 @@ class AppointmentStartExpandedBottomsheet extends StatelessWidget {
                       padding: EdgeInsets.only(left: 83.h),
                       child: Text(
                         '10',
-                        style: defaultTextTheme.bodyLarge!.copyWith(
+                        style: textTheme.bodyLarge!.copyWith(
                           color: defaultColors.onPrimary.withOpacity(0.4),
                         ),
                       ),

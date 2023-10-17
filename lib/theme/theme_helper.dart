@@ -52,7 +52,7 @@ const ColorScheme defaultColors = ColorScheme.light(
   onSurfaceVariant: Color(0xFF222222),
 );
 
-final TextTheme defaultTextTheme = TextTheme(
+final TextTheme textTheme = TextTheme(
   bodyLarge: TextStyle(
     color: defaultColors.onPrimary,
     fontSize: 16.fSize,
@@ -106,7 +106,7 @@ ThemeData get theme {
   return ThemeData(
     visualDensity: VisualDensity.standard,
     colorScheme: defaultColors,
-    textTheme: defaultTextTheme,
+    textTheme: textTheme,
     scaffoldBackgroundColor: defaultColors.onPrimaryContainer,
     outlinedButtonTheme: OutlinedButtonThemeData(
       style: OutlinedButton.styleFrom(

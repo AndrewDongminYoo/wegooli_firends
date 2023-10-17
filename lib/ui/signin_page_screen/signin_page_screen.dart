@@ -43,11 +43,11 @@ class SigninPageScreen extends GetWidget<SigninPageController> {
                 children: [
                   Text(
                     '이메일 아이디',
-                    style: defaultTextTheme.bodySmall,
+                    style: textTheme.bodySmall,
                   ),
                   SizedBox(height: 3.v),
                   CustomTextFormField(
-                    controller: controller.emailinputoneController,
+                    controller: controller.emailinputone,
                     hintText: '이메일 입력',
                   ),
                 ],
@@ -58,11 +58,11 @@ class SigninPageScreen extends GetWidget<SigninPageController> {
                 children: [
                   Text(
                     '비밀번호',
-                    style: defaultTextTheme.bodySmall,
+                    style: textTheme.bodySmall,
                   ),
                   SizedBox(height: 3.v),
                   CustomTextFormField(
-                    controller: controller.passwordinputController,
+                    controller: controller.passwordinput,
                     hintText: '비밀번호 입력',
                     textInputAction: TextInputAction.done,
                     suffix: Container(
@@ -91,19 +91,19 @@ class SigninPageScreen extends GetWidget<SigninPageController> {
                     borderRadius: BorderRadius.circular(8.h),
                   ),
                 ),
-                buttonTextStyle: defaultTextTheme.titleSmall!.copyWith(
+                buttonTextStyle: textTheme.titleSmall!.copyWith(
                   fontWeight: FontWeight.w700,
                 ),
               ),
               SizedBox(height: 60.v),
               Text(
                 '회원이 아니신가요?',
-                style: defaultTextTheme.bodySmall,
+                style: textTheme.bodySmall,
               ),
               SizedBox(height: 10.v),
               Text(
                 '회원가입',
-                style: defaultTextTheme.bodySmall!.copyWith(
+                style: textTheme.bodySmall!.copyWith(
                   color: const Color(0xFFB0B2BC),
                 ),
               ),

@@ -54,7 +54,7 @@ class UserprofileItemWidget extends StatelessWidget {
             () => Text(
               userprofileItem.userName!.value,
               overflow: TextOverflow.ellipsis,
-              style: defaultTextTheme.bodySmall,
+              style: textTheme.bodySmall,
             ),
           ),
         ],

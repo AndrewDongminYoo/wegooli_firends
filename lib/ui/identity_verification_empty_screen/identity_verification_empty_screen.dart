@@ -42,15 +42,15 @@ class IdentityVerificationEmptyScreen
             padding: EdgeInsets.symmetric(horizontal: 16.h, vertical: 10.v),
             child: Column(children: [
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Text('이름', style: defaultTextTheme.bodySmall),
+                Text('이름', style: textTheme.bodySmall),
                 SizedBox(height: 3.v),
                 CustomTextFormField(
-                    controller: controller.nameinputoneController,
+                    controller: controller.nameinputone,
                     hintText: '이름을 입력해주세요.')
               ]),
               SizedBox(height: 30.v),
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Text('주민등록번호 13자리', style: defaultTextTheme.bodySmall),
+                Text('주민등록번호 13자리', style: textTheme.bodySmall),
                 SizedBox(height: 3.v),
                 Container(
                     padding: EdgeInsets.symmetric(vertical: 9.v),
@@ -64,7 +64,7 @@ class IdentityVerificationEmptyScreen
                     ),
                     child: Row(children: [
                       Text('6자리 입력',
-                          style: defaultTextTheme.bodyLarge!.copyWith(
+                          style: textTheme.bodyLarge!.copyWith(
                             color: const Color(0xFFB0B2BC),
                           )),
                       const Spacer(),
@@ -110,16 +110,16 @@ class IdentityVerificationEmptyScreen
                     ])),
                 SizedBox(height: 3.v),
                 Text('만 26세 미만은 가입이 제한됩니다.',
-                    style: defaultTextTheme.bodySmall!.copyWith(
+                    style: textTheme.bodySmall!.copyWith(
                       color: defaultColors.primaryContainer,
                     ))
               ]),
               SizedBox(height: 30.v),
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Text('휴대폰 정보', style: defaultTextTheme.bodySmall),
+                Text('휴대폰 정보', style: textTheme.bodySmall),
                 SizedBox(height: 3.v),
                 CustomTextFormField(
-                    controller: controller.phonenumberoneController,
+                    controller: controller.phonenumberone,
                     hintText: '010-1234-5678',
                     textInputAction: TextInputAction.done)
               ]),
@@ -133,7 +133,7 @@ class IdentityVerificationEmptyScreen
                       borderRadius: BorderRadius.circular(8.h),
                     ),
                   ),
-                  buttonTextStyle: defaultTextTheme.titleSmall!.copyWith(
+                  buttonTextStyle: textTheme.titleSmall!.copyWith(
                     color: const Color(0xFFB0B2BC),
                     fontWeight: FontWeight.w700,
                   )),
@@ -153,7 +153,7 @@ class IdentityVerificationEmptyScreen
                   borderRadius: BorderRadius.circular(8.h),
                 ),
               ),
-              buttonTextStyle: defaultTextTheme.titleSmall!.copyWith(
+              buttonTextStyle: textTheme.titleSmall!.copyWith(
                 color: const Color(0xFFB0B2BC),
                 fontWeight: FontWeight.w700,
               )),

@@ -15,9 +15,7 @@ class AppbarTitle extends StatelessWidget {
   }) : super(key: key);
 
   String text;
-
   EdgeInsetsGeometry? margin;
-
   Function? onTap;
 
   @override
@@ -30,13 +28,10 @@ class AppbarTitle extends StatelessWidget {
         padding: margin ?? EdgeInsets.zero,
         child: Text(
           text,
-          style: defaultTextTheme.titleMedium!
-              .copyWith(
-                fontSize: 18.fSize,
-              )
-              .copyWith(
-                color: defaultColors.onPrimary,
-              ),
+          style: textTheme.titleMedium!.copyWith(
+            fontSize: 18.fSize,
+            color: defaultColors.onPrimary,
+          ),
         ),
       ),
     );

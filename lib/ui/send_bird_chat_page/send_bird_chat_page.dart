@@ -9,7 +9,7 @@ import '/core/utils/image_constant.dart';
 import '/core/utils/size_utils.dart';
 import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
-import '/widgets/app_bar/appbar_image_1.dart';
+import '/widgets/app_bar/appbar_image.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/custom_elevated_button.dart';
 import '/widgets/custom_image_view.dart';
@@ -34,7 +34,7 @@ class SendBirdChatPage extends StatelessWidget {
         appBar: CustomAppBar(
           height: 45.v,
           centerTitle: true,
-          title: AppbarImage1(
+          title: AppbarImage(
             svgPath: ImageConstant.imgFriends,
           ),
           styleType: Style.bgOutline_1,
@@ -56,7 +56,7 @@ class SendBirdChatPage extends StatelessWidget {
                     alignment: Alignment.centerLeft,
                     child: Text(
                       '방이름',
-                      style: defaultTextTheme.titleMedium!.copyWith(
+                      style: textTheme.titleMedium!.copyWith(
                         color: Colors.black,
                         fontSize: 18.fSize,
                       ),
@@ -73,7 +73,7 @@ class SendBirdChatPage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(17.h),
                       ),
                     ),
-                    buttonTextStyle: defaultTextTheme.bodyMedium!.copyWith(
+                    buttonTextStyle: textTheme.bodyMedium!.copyWith(
                       fontSize: 15.fSize,
                     ),
                   ),
@@ -92,7 +92,7 @@ class SendBirdChatPage extends StatelessWidget {
                           ),
                           child: Text(
                             '12:20 PM',
-                            style: defaultTextTheme.bodySmall!.copyWith(
+                            style: textTheme.bodySmall!.copyWith(
                               color: const Color(0xFFB9BCC3),
                             ),
                           ),
@@ -114,7 +114,7 @@ class SendBirdChatPage extends StatelessWidget {
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.right,
-                              style: defaultTextTheme.bodyMedium!.copyWith(
+                              style: textTheme.bodyMedium!.copyWith(
                                 fontSize: 15.fSize,
                               ),
                             ),
@@ -160,7 +160,7 @@ class SendBirdChatPage extends StatelessWidget {
                             children: [
                               Text(
                                 '닉네임',
-                                style: defaultTextTheme.bodySmall!.copyWith(
+                                style: textTheme.bodySmall!.copyWith(
                                   color: Colors.black,
                                 ),
                               ),
@@ -184,7 +184,7 @@ class SendBirdChatPage extends StatelessWidget {
                                         ),
                                       ),
                                       buttonTextStyle:
-                                          defaultTextTheme.bodyMedium!.copyWith(
+                                          textTheme.bodyMedium!.copyWith(
                                         color: Colors.black,
                                         fontSize: 15.fSize,
                                       ),
@@ -196,8 +196,7 @@ class SendBirdChatPage extends StatelessWidget {
                                       ),
                                       child: Text(
                                         '12:22 PM',
-                                        style: defaultTextTheme.bodySmall!
-                                            .copyWith(
+                                        style: textTheme.bodySmall!.copyWith(
                                           fontFamily: 'Inter',
                                           color: const Color(0xFFB9BCC3),
                                         ),
@@ -219,8 +218,7 @@ class SendBirdChatPage extends StatelessWidget {
                                       ),
                                       child: Text(
                                         '12:25 PM',
-                                        style: defaultTextTheme.bodySmall!
-                                            .copyWith(
+                                        style: textTheme.bodySmall!.copyWith(
                                           color: const Color(0xFFB9BCC3),
                                         ),
                                       ),
@@ -238,7 +236,7 @@ class SendBirdChatPage extends StatelessWidget {
                                         ),
                                       ),
                                       buttonTextStyle:
-                                          defaultTextTheme.bodyMedium!.copyWith(
+                                          textTheme.bodyMedium!.copyWith(
                                         fontSize: 15.fSize,
                                       ),
                                     ),
@@ -248,7 +246,7 @@ class SendBirdChatPage extends StatelessWidget {
                               SizedBox(height: 26.v),
                               Text(
                                 '닉네임',
-                                style: defaultTextTheme.bodySmall!.copyWith(
+                                style: textTheme.bodySmall!.copyWith(
                                   color: Colors.black,
                                 ),
                               ),
@@ -263,8 +261,7 @@ class SendBirdChatPage extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(17.h),
                                   ),
                                 ),
-                                buttonTextStyle:
-                                    defaultTextTheme.bodyMedium!.copyWith(
+                                buttonTextStyle: textTheme.bodyMedium!.copyWith(
                                   color: Colors.black,
                                   fontSize: 15.fSize,
                                 ),
@@ -284,7 +281,7 @@ class SendBirdChatPage extends StatelessWidget {
                                       ),
                                     ),
                                     buttonTextStyle:
-                                        defaultTextTheme.bodyMedium!.copyWith(
+                                        textTheme.bodyMedium!.copyWith(
                                       color: Colors.black,
                                       fontSize: 15.fSize,
                                     ),
@@ -296,8 +293,7 @@ class SendBirdChatPage extends StatelessWidget {
                                     ),
                                     child: Text(
                                       '12:15 PM',
-                                      style:
-                                          defaultTextTheme.bodySmall!.copyWith(
+                                      style: textTheme.bodySmall!.copyWith(
                                         color: const Color(0xFFB9BCC3),
                                       ),
                                     ),
@@ -322,10 +318,10 @@ class SendBirdChatPage extends StatelessWidget {
                       ),
                       Expanded(
                         child: CustomTextFormField(
-                          controller: controller.chatinputoneController,
+                          controller: controller.chatinputone,
                           margin: EdgeInsets.only(left: 8.h),
                           hintText: '채팅을 입력하세요.',
-                          hintStyle: defaultTextTheme.bodyMedium!.copyWith(
+                          hintStyle: textTheme.bodyMedium!.copyWith(
                             color: const Color(0xFF91969D),
                             fontSize: 15.fSize,
                           ),

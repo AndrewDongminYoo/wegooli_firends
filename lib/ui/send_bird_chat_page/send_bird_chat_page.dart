@@ -35,7 +35,7 @@ class SendBirdChatPage extends StatelessWidget {
           height: 45.v,
           centerTitle: true,
           title: AppbarImage(
-            svgPath: ImageConstant.imgFriends,
+            svgPath: Assets.imgFriends,
           ),
           styleType: Style.bgOutline_1,
         ),
@@ -133,7 +133,7 @@ class SendBirdChatPage extends StatelessWidget {
                         child: Column(
                           children: [
                             CustomImageView(
-                              imagePath: ImageConstant.imgEllipse132x32,
+                              imagePath: Assets.placeholder,
                               height: 32.adaptSize,
                               width: 32.adaptSize,
                               radius: BorderRadius.circular(
@@ -142,7 +142,7 @@ class SendBirdChatPage extends StatelessWidget {
                             ),
                             SizedBox(height: 101.v),
                             CustomImageView(
-                              imagePath: ImageConstant.imgEllipse132x32,
+                              imagePath: Assets.placeholder,
                               height: 32.adaptSize,
                               width: 32.adaptSize,
                               radius: BorderRadius.circular(
@@ -311,7 +311,7 @@ class SendBirdChatPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       CustomImageView(
-                        svgPath: ImageConstant.imgCamera,
+                        svgPath: Assets.imgCamera,
                         height: 24.adaptSize,
                         width: 24.adaptSize,
                         margin: EdgeInsets.symmetric(vertical: 6.v),
@@ -336,7 +336,7 @@ class SendBirdChatPage extends StatelessWidget {
                         ),
                       ),
                       CustomImageView(
-                        svgPath: ImageConstant.imgSend,
+                        svgPath: Assets.imgSend,
                         height: 22.v,
                         width: 24.h,
                         margin: EdgeInsets.only(

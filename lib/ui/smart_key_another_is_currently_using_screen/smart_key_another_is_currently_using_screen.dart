@@ -30,7 +30,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
           height: 45.v,
           centerTitle: true,
           title: AppbarImage(
-            svgPath: ImageConstant.imgFriends,
+            svgPath: Assets.imgFriends,
           ),
           styleType: Style.bgOutline,
         ),
@@ -50,7 +50,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             CustomImageView(
-                              imagePath: ImageConstant.imgRectangle4640,
+                              imagePath: Assets.imgRectangle4640,
                               height: 92.v,
                               width: 139.h,
                             ),
@@ -80,7 +80,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                         CrossAxisAlignment.start,
                                     children: [
                                       CustomImageView(
-                                        svgPath: ImageConstant.imgFrame19044,
+                                        svgPath: Assets.imgFrame19044,
                                         height: 24.adaptSize,
                                         width: 24.adaptSize,
                                       ),
@@ -95,7 +95,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                         ),
                                       ),
                                       CustomImageView(
-                                        svgPath: ImageConstant.imgArrowleft,
+                                        svgPath: Assets.imgArrowleft,
                                         height: 18.adaptSize,
                                         width: 18.adaptSize,
                                         margin: EdgeInsets.only(
@@ -156,7 +156,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                       ),
                       SizedBox(height: 22.v),
                       CustomImageView(
-                        svgPath: ImageConstant.imgTaxi,
+                        svgPath: Assets.imgTaxi,
                         height: 26.adaptSize,
                         width: 26.adaptSize,
                         alignment: Alignment.centerRight,
@@ -317,7 +317,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                                           MainAxisSize.min,
                                                       children: [
                                                         CustomImageView(
-                                                          svgPath: ImageConstant
+                                                          svgPath: Assets
                                                               .imgUnlocked,
                                                           height: 46.adaptSize,
                                                           width: 46.adaptSize,
@@ -396,7 +396,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                                           MainAxisSize.min,
                                                       children: [
                                                         CustomImageView(
-                                                          svgPath: ImageConstant
+                                                          svgPath: Assets
                                                               .imgLocked,
                                                           height: 46.adaptSize,
                                                           width: 46.adaptSize,
@@ -486,7 +486,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                                           MainAxisSize.min,
                                                       children: [
                                                         CustomImageView(
-                                                          svgPath: ImageConstant
+                                                          svgPath: Assets
                                                               .imgBluetooth,
                                                           height: 37.v,
                                                           width: 46.h,
@@ -543,7 +543,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                                 mainAxisSize: MainAxisSize.min,
                                                 children: [
                                                   CustomImageView(
-                                                    svgPath: ImageConstant
+                                                    svgPath: Assets
                                                         .imgCampaign,
                                                     height: 46.adaptSize,
                                                     width: 46.adaptSize,
@@ -627,7 +627,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                               MainAxisAlignment.center,
                                           children: [
                                             CustomImageView(
-                                              svgPath: ImageConstant.imgEdit,
+                                              svgPath: Assets.imgEdit,
                                               height: 30.adaptSize,
                                               width: 30.adaptSize,
                                             ),

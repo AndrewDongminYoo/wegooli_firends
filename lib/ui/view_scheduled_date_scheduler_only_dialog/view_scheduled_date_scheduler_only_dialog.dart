@@ -35,7 +35,7 @@ class ViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   CustomImageView(
-                    svgPath: ImageConstant.imgClose,
+                    svgPath: Assets.imgClose,
                     height: 15.adaptSize,
                     width: 15.adaptSize,
                     alignment: Alignment.centerRight,

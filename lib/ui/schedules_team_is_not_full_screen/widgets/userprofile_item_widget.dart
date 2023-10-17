@@ -40,7 +40,7 @@ class UserprofileItemWidget extends StatelessWidget {
               borderRadius: BorderRadiusStyle.circleBorder25,
             ),
             child: CustomImageView(
-              imagePath: ImageConstant.imgEllipse1,
+              imagePath: Assets.placeholder,
               height: 42.adaptSize,
               width: 42.adaptSize,
               radius: BorderRadius.circular(

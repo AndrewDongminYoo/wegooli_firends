@@ -26,7 +26,7 @@ class SubscribeInfoNoSubscriptionScreen
         appBar: CustomAppBar(
             leadingWidth: 34.h,
             leading: AppbarImage(
-              svgPath: ImageConstant.imgArrowleft,
+              svgPath: Assets.imgArrowleft,
               margin: EdgeInsets.only(left: 16.h, top: 19.v, bottom: 18.v),
               onTap: Get.back,
             ),
@@ -41,7 +41,7 @@ class SubscribeInfoNoSubscriptionScreen
               child: Column(
                 children: [
                   CustomImageView(
-                      imagePath: ImageConstant.img,
+                      imagePath: Assets.img,
                       height: 177.v,
                       width: 120.h),
                   SizedBox(height: 21.v),

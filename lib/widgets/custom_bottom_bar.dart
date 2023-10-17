@@ -21,32 +21,32 @@ class CustomBottomBar extends StatelessWidget {
 
   List<BottomMenuModel> bottomMenuList = [
     BottomMenuModel(
-      icon: ImageConstant.imgNavOnPrimary20x20,
-      activeIcon: ImageConstant.imgNavOnPrimary20x20,
+      icon: Assets.imgNavOnPrimary20x20,
+      activeIcon: Assets.imgNavOnPrimary20x20,
       title: '홈',
       type: BottomBarEnum.tf,
     ),
     BottomMenuModel(
-      icon: ImageConstant.imgNavBlueGray200,
-      activeIcon: ImageConstant.imgNavBlueGray200,
+      icon: Assets.imgNavBlueGray200,
+      activeIcon: Assets.imgNavBlueGray200,
       title: '일정',
       type: BottomBarEnum.tf,
     ),
     BottomMenuModel(
-      icon: ImageConstant.imgNavBlueGray20020x20,
-      activeIcon: ImageConstant.imgNavBlueGray20020x20,
+      icon: Assets.imgNavBlueGray20020x20,
+      activeIcon: Assets.imgNavBlueGray20020x20,
       title: '채팅',
       type: BottomBarEnum.tf,
     ),
     BottomMenuModel(
-      icon: ImageConstant.imgNav20x20,
-      activeIcon: ImageConstant.imgNav20x20,
+      icon: Assets.imgNav20x20,
+      activeIcon: Assets.imgNav20x20,
       title: '스마트 키',
       type: BottomBarEnum.tf,
     ),
     BottomMenuModel(
-      icon: ImageConstant.imgNav1,
-      activeIcon: ImageConstant.imgNav1,
+      icon: Assets.imgNav1,
+      activeIcon: Assets.imgNav1,
       title: '마이페이지',
       type: BottomBarEnum.tf,
     )

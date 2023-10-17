@@ -28,7 +28,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
           height: 45.v,
           centerTitle: true,
           title: AppbarImage(
-            svgPath: ImageConstant.imgFriends,
+            svgPath: Assets.imgFriends,
           ),
           styleType: Style.bgOutline,
         ),
@@ -50,7 +50,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               CustomImageView(
-                                imagePath: ImageConstant.imgRectangle4640,
+                                imagePath: Assets.imgRectangle4640,
                                 height: 92.v,
                                 width: 139.h,
                               ),
@@ -80,7 +80,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         CustomImageView(
-                                          svgPath: ImageConstant.imgSave,
+                                          svgPath: Assets.imgSave,
                                           height: 26.adaptSize,
                                           width: 26.adaptSize,
                                         ),
@@ -95,7 +95,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                                           ),
                                         ),
                                         CustomImageView(
-                                          svgPath: ImageConstant.imgArrowleft,
+                                          svgPath: Assets.imgArrowleft,
                                           height: 18.adaptSize,
                                           width: 18.adaptSize,
                                           margin: EdgeInsets.only(
@@ -240,7 +240,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                                           children: [
                                             CustomImageView(
                                               svgPath:
-                                                  ImageConstant.imgUnlocked,
+                                                  Assets.imgUnlocked,
                                               height: 46.adaptSize,
                                               width: 46.adaptSize,
                                             ),
@@ -309,7 +309,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                                           mainAxisSize: MainAxisSize.min,
                                           children: [
                                             CustomImageView(
-                                              svgPath: ImageConstant.imgLocked,
+                                              svgPath: Assets.imgLocked,
                                               height: 46.adaptSize,
                                               width: 46.adaptSize,
                                             ),
@@ -390,7 +390,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                                           children: [
                                             CustomImageView(
                                               svgPath:
-                                                  ImageConstant.imgBluetooth,
+                                                  Assets.imgBluetooth,
                                               height: 37.v,
                                               width: 46.h,
                                             ),
@@ -442,7 +442,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       CustomImageView(
-                                        svgPath: ImageConstant.imgCampaign,
+                                        svgPath: Assets.imgCampaign,
                                         height: 46.adaptSize,
                                         width: 46.adaptSize,
                                       ),
@@ -490,7 +490,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 CustomImageView(
-                                  svgPath: ImageConstant.imgEdit,
+                                  svgPath: Assets.imgEdit,
                                   height: 30.adaptSize,
                                   width: 30.adaptSize,
                                 ),

@@ -29,7 +29,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
           height: 45.v,
           leadingWidth: 64.h,
           leading: AppbarImage(
-            svgPath: ImageConstant.imgLocation,
+            svgPath: Assets.imgLocation,
             margin: EdgeInsets.only(
               left: 15.h,
               top: 13.v,
@@ -38,7 +38,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
           ),
           actions: [
             AppbarImage(
-              svgPath: ImageConstant.imgMenu,
+              svgPath: Assets.imgMenu,
               margin: EdgeInsets.fromLTRB(9.h, 13.v, 9.h, 12.v),
             ),
           ],
@@ -97,7 +97,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                         alignment: Alignment.bottomRight,
                         children: [
                           CustomImageView(
-                            svgPath: ImageConstant.imgOffer,
+                            svgPath: Assets.imgOffer,
                             height: 59.v,
                             width: 89.h,
                             alignment: Alignment.topLeft,
@@ -178,7 +178,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                           ),
                           SizedBox(height: 34.v),
                           CustomImageView(
-                            svgPath: ImageConstant.imgLocationBlack900,
+                            svgPath: Assets.imgLocationBlack900,
                             height: 77.v,
                             width: 84.h,
                             alignment: Alignment.centerRight,
@@ -228,7 +228,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                           ),
                           SizedBox(height: 25.v),
                           CustomImageView(
-                            imagePath: ImageConstant.imgLayer2Yellow100,
+                            imagePath: Assets.imgLayer2Yellow100,
                             height: 70.v,
                             width: 112.h,
                             alignment: Alignment.centerRight,
@@ -284,7 +284,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                       ),
                     ),
                     CustomImageView(
-                      svgPath: ImageConstant.imgGroup,
+                      svgPath: Assets.imgGroup,
                       height: 58.v,
                       width: 119.h,
                       margin: EdgeInsets.only(

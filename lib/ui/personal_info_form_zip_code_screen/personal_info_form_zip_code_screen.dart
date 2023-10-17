@@ -30,7 +30,7 @@ class PersonalInfoFormZipCodeScreen
             height: 50.v,
             leadingWidth: 34.h,
             leading: AppbarImage(
-              svgPath: ImageConstant.imgArrowleft,
+              svgPath: Assets.imgArrowleft,
               margin: EdgeInsets.only(left: 16.h, top: 16.v, bottom: 16.v),
               onTap: Get.back,
             ),
@@ -124,7 +124,7 @@ class PersonalInfoFormZipCodeScreen
                                               top: 7.v,
                                               bottom: 8.v),
                                           child: CustomImageView(
-                                              svgPath: ImageConstant
+                                              svgPath: Assets
                                                   .imgEyeCrossedOut)),
                                       suffixConstraints:
                                           BoxConstraints(maxHeight: 39.v))
@@ -144,7 +144,7 @@ class PersonalInfoFormZipCodeScreen
                                               top: 7.v,
                                               bottom: 8.v),
                                           child: CustomImageView(
-                                              svgPath: ImageConstant
+                                              svgPath: Assets
                                                   .imgEyeCrossedOut)),
                                       suffixConstraints:
                                           BoxConstraints(maxHeight: 39.v))

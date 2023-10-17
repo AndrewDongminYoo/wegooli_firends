@@ -34,7 +34,7 @@ class SchedulesPage extends StatelessWidget {
           height: 45.v,
           centerTitle: true,
           title: AppbarImage(
-            svgPath: ImageConstant.imgFriends,
+            svgPath: Assets.imgFriends,
           ),
           styleType: Style.bgOutline,
         ),
@@ -66,7 +66,7 @@ class SchedulesPage extends StatelessWidget {
                                 Column(
                                   children: [
                                     CustomImageView(
-                                      imagePath: ImageConstant.imgEllipse1,
+                                      imagePath: Assets.placeholder,
                                       height: 42.adaptSize,
                                       width: 42.adaptSize,
                                       radius: BorderRadius.circular(
@@ -86,7 +86,7 @@ class SchedulesPage extends StatelessWidget {
                                     children: [
                                       CustomImageView(
                                         imagePath:
-                                            ImageConstant.imgEllipse142x42,
+                                            Assets.placeholder,
                                         height: 42.adaptSize,
                                         width: 42.adaptSize,
                                         radius: BorderRadius.circular(
@@ -106,7 +106,7 @@ class SchedulesPage extends StatelessWidget {
                                   child: Column(
                                     children: [
                                       CustomImageView(
-                                        imagePath: ImageConstant.imgEllipse11,
+                                        imagePath: Assets.placeholder,
                                         height: 42.adaptSize,
                                         width: 42.adaptSize,
                                         radius: BorderRadius.circular(
@@ -133,7 +133,7 @@ class SchedulesPage extends StatelessWidget {
                           child: Column(
                             children: [
                               CustomImageView(
-                                imagePath: ImageConstant.imgEllipse11,
+                                imagePath: Assets.placeholder,
                                 height: 42.adaptSize,
                                 width: 42.adaptSize,
                                 radius: BorderRadius.circular(
@@ -206,7 +206,7 @@ class SchedulesPage extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               CustomImageView(
-                                svgPath: ImageConstant.imgArrowleft,
+                                svgPath: Assets.imgArrowleft,
                                 height: 18.adaptSize,
                                 width: 18.adaptSize,
                                 margin: EdgeInsets.only(bottom: 1.v),
@@ -216,7 +216,7 @@ class SchedulesPage extends StatelessWidget {
                                 style: textTheme.titleMedium,
                               ),
                               CustomImageView(
-                                svgPath: ImageConstant.imgArrowleft,
+                                svgPath: Assets.imgArrowleft,
                                 height: 18.adaptSize,
                                 width: 18.adaptSize,
                                 margin: EdgeInsets.only(bottom: 1.v),

@@ -32,7 +32,7 @@ class SchedulesTeamIsNotFullScreen
           height: 45.v,
           centerTitle: true,
           title: AppbarImage(
-            svgPath: ImageConstant.imgFriends,
+            svgPath: Assets.imgFriends,
           ),
           styleType: Style.bgOutline_1,
         ),
@@ -144,7 +144,7 @@ class SchedulesTeamIsNotFullScreen
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     CustomImageView(
-                                      svgPath: ImageConstant.imgArrowleft,
+                                      svgPath: Assets.imgArrowleft,
                                       height: 18.adaptSize,
                                       width: 18.adaptSize,
                                       margin: EdgeInsets.only(bottom: 1.v),
@@ -154,7 +154,7 @@ class SchedulesTeamIsNotFullScreen
                                       style: textTheme.titleMedium,
                                     ),
                                     CustomImageView(
-                                      svgPath: ImageConstant.imgArrowleft,
+                                      svgPath: Assets.imgArrowleft,
                                       height: 18.adaptSize,
                                       width: 18.adaptSize,
                                       margin: EdgeInsets.only(bottom: 1.v),

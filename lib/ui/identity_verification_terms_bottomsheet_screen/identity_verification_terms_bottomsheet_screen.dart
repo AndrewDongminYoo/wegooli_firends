@@ -32,7 +32,7 @@ class IdentityVerificationTermsBottomsheetScreen
             height: 50.v,
             leadingWidth: 34.h,
             leading: AppbarImage(
-              svgPath: ImageConstant.imgArrowleft,
+              svgPath: Assets.imgArrowleft,
               margin: EdgeInsets.only(left: 16.h, top: 16.v, bottom: 16.v),
               onTap: Get.back,
             ),
@@ -173,7 +173,7 @@ class IdentityVerificationTermsBottomsheetScreen
                                                   ))),
                                           CustomImageView(
                                               svgPath:
-                                                  ImageConstant.imgCaretdown,
+                                                  Assets.imgCaretdown,
                                               height: 18.adaptSize,
                                               width: 18.adaptSize,
                                               margin: EdgeInsets.only(
@@ -275,7 +275,7 @@ class IdentityVerificationTermsBottomsheetScreen
                                               child: Row(
                                                 children: [
                                                   CustomImageView(
-                                                      svgPath: ImageConstant
+                                                      svgPath: Assets
                                                           .imgCheckcircle,
                                                       height: 18.adaptSize,
                                                       width: 18.adaptSize),
@@ -299,7 +299,7 @@ class IdentityVerificationTermsBottomsheetScreen
                                                       MainAxisAlignment.center,
                                                   children: [
                                                     CustomImageView(
-                                                        svgPath: ImageConstant
+                                                        svgPath: Assets
                                                             .imgCheck,
                                                         height: 18.adaptSize,
                                                         width: 18.adaptSize),
@@ -314,7 +314,7 @@ class IdentityVerificationTermsBottomsheetScreen
                                                                 .bodyMedium)),
                                                     const Spacer(),
                                                     CustomImageView(
-                                                        svgPath: ImageConstant
+                                                        svgPath: Assets
                                                             .imgArrowleft,
                                                         height: 18.adaptSize,
                                                         width: 18.adaptSize)
@@ -336,7 +336,7 @@ class IdentityVerificationTermsBottomsheetScreen
                                                         children: [
                                                           CustomImageView(
                                                               svgPath:
-                                                                  ImageConstant
+                                                                  Assets
                                                                       .imgCheck,
                                                               height:
                                                                   18.adaptSize,
@@ -354,7 +354,7 @@ class IdentityVerificationTermsBottomsheetScreen
                                                                       .bodyMedium))
                                                         ]),
                                                     CustomImageView(
-                                                        svgPath: ImageConstant
+                                                        svgPath: Assets
                                                             .imgArrowleft,
                                                         height: 18.adaptSize,
                                                         width: 18.adaptSize)
@@ -376,7 +376,7 @@ class IdentityVerificationTermsBottomsheetScreen
                                                         children: [
                                                           CustomImageView(
                                                               svgPath:
-                                                                  ImageConstant
+                                                                  Assets
                                                                       .imgCheck,
                                                               height:
                                                                   18.adaptSize,
@@ -394,7 +394,7 @@ class IdentityVerificationTermsBottomsheetScreen
                                                                       .bodyMedium))
                                                         ]),
                                                     CustomImageView(
-                                                        svgPath: ImageConstant
+                                                        svgPath: Assets
                                                             .imgArrowleft,
                                                         height: 18.adaptSize,
                                                         width: 18.adaptSize)
@@ -416,7 +416,7 @@ class IdentityVerificationTermsBottomsheetScreen
                                                             children: [
                                                           CustomImageView(
                                                               svgPath:
-                                                                  ImageConstant
+                                                                  Assets
                                                                       .imgCheck,
                                                               height:
                                                                   18.adaptSize,
@@ -434,7 +434,7 @@ class IdentityVerificationTermsBottomsheetScreen
                                                                       .bodyMedium))
                                                         ])),
                                                     CustomImageView(
-                                                        svgPath: ImageConstant
+                                                        svgPath: Assets
                                                             .imgArrowleft,
                                                         height: 18.adaptSize,
                                                         width: 18.adaptSize,
@@ -456,7 +456,7 @@ class IdentityVerificationTermsBottomsheetScreen
                                                             children: [
                                                           CustomImageView(
                                                               svgPath:
-                                                                  ImageConstant
+                                                                  Assets
                                                                       .imgCheck,
                                                               height:
                                                                   18.adaptSize,
@@ -474,7 +474,7 @@ class IdentityVerificationTermsBottomsheetScreen
                                                                       .bodyMedium))
                                                         ])),
                                                     CustomImageView(
-                                                        svgPath: ImageConstant
+                                                        svgPath: Assets
                                                             .imgArrowleft,
                                                         height: 18.adaptSize,
                                                         width: 18.adaptSize,

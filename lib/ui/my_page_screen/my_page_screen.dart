@@ -27,7 +27,7 @@ class MyPageScreen extends GetWidget<MyPageController> {
           height: 45.v,
           centerTitle: true,
           title: AppbarImage(
-            svgPath: ImageConstant.imgFriends,
+            svgPath: Assets.imgFriends,
           ),
           styleType: Style.bgOutline_1,
         ),
@@ -49,7 +49,7 @@ class MyPageScreen extends GetWidget<MyPageController> {
                             child: Row(
                               children: [
                                 CustomImageView(
-                                  imagePath: ImageConstant.imgEllipse2,
+                                  imagePath: Assets.placeholder,
                                   height: 65.adaptSize,
                                   width: 65.adaptSize,
                                   radius: BorderRadius.circular(
@@ -110,7 +110,7 @@ class MyPageScreen extends GetWidget<MyPageController> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               CustomImageView(
-                                svgPath: ImageConstant.imgEditBlack900,
+                                svgPath: Assets.imgEditBlack900,
                                 height: 24.adaptSize,
                                 width: 24.adaptSize,
                               ),
@@ -126,7 +126,7 @@ class MyPageScreen extends GetWidget<MyPageController> {
                               ),
                               const Spacer(),
                               CustomImageView(
-                                svgPath: ImageConstant.imgArrowleft,
+                                svgPath: Assets.imgArrowleft,
                                 height: 18.adaptSize,
                                 width: 18.adaptSize,
                                 margin: EdgeInsets.symmetric(vertical: 3.v),
@@ -144,7 +144,7 @@ class MyPageScreen extends GetWidget<MyPageController> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               CustomImageView(
-                                svgPath: ImageConstant.imgInformation,
+                                svgPath: Assets.imgInformation,
                                 height: 24.adaptSize,
                                 width: 24.adaptSize,
                               ),
@@ -160,7 +160,7 @@ class MyPageScreen extends GetWidget<MyPageController> {
                               ),
                               const Spacer(),
                               CustomImageView(
-                                svgPath: ImageConstant.imgArrowleft,
+                                svgPath: Assets.imgArrowleft,
                                 height: 18.adaptSize,
                                 width: 18.adaptSize,
                                 margin: EdgeInsets.symmetric(vertical: 3.v),
@@ -178,7 +178,7 @@ class MyPageScreen extends GetWidget<MyPageController> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               CustomImageView(
-                                svgPath: ImageConstant.imgMenu,
+                                svgPath: Assets.imgMenu,
                                 height: 24.adaptSize,
                                 width: 24.adaptSize,
                               ),
@@ -194,7 +194,7 @@ class MyPageScreen extends GetWidget<MyPageController> {
                               ),
                               const Spacer(),
                               CustomImageView(
-                                svgPath: ImageConstant.imgArrowleft,
+                                svgPath: Assets.imgArrowleft,
                                 height: 18.adaptSize,
                                 width: 18.adaptSize,
                                 margin: EdgeInsets.symmetric(vertical: 3.v),

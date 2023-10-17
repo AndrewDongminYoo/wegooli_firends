@@ -37,7 +37,7 @@ class AppointmentAllCollapsedBottomsheet extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             CustomImageView(
-              svgPath: ImageConstant.imgLine45,
+              svgPath: Assets.imgLine45,
               height: 1.v,
               width: 40.h,
             ),
@@ -88,7 +88,7 @@ class AppointmentAllCollapsedBottomsheet extends StatelessWidget {
                     style: textTheme.titleMedium,
                   ),
                   CustomImageView(
-                    svgPath: ImageConstant.imgArrowleft,
+                    svgPath: Assets.imgArrowleft,
                     height: 18.adaptSize,
                     width: 18.adaptSize,
                     margin: EdgeInsets.only(left: 10.h),
@@ -269,7 +269,7 @@ class AppointmentAllCollapsedBottomsheet extends StatelessWidget {
                     icon: Container(
                       margin: EdgeInsets.only(left: 10.h),
                       child: CustomImageView(
-                        svgPath: ImageConstant.imgArrowleft,
+                        svgPath: Assets.imgArrowleft,
                       ),
                     ),
                     hintText: '8.1 화 18:00',

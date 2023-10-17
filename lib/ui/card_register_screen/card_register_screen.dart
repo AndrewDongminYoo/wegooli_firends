@@ -27,7 +27,7 @@ class CardRegisterScreen extends GetWidget<CardRegisterController> {
         appBar: CustomAppBar(
             leadingWidth: 34.h,
             leading: AppbarImage(
-              svgPath: ImageConstant.imgArrowleft,
+              svgPath: Assets.imgArrowleft,
               margin: EdgeInsets.only(left: 16.h, top: 19.v, bottom: 18.v),
               onTap: Get.back,
             ),

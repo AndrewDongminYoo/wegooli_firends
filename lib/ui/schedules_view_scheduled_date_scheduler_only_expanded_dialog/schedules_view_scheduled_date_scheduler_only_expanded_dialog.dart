@@ -38,7 +38,7 @@ class SchedulesViewScheduledDateSchedulerOnlyExpandedDialog
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   CustomImageView(
-                    svgPath: ImageConstant.imgClose,
+                    svgPath: Assets.imgClose,
                     height: 15.adaptSize,
                     width: 15.adaptSize,
                     alignment: Alignment.centerRight,
@@ -102,7 +102,7 @@ class SchedulesViewScheduledDateSchedulerOnlyExpandedDialog
                                                         margin: EdgeInsets.only(
                                                             left: 17.h),
                                                         child: CustomImageView(
-                                                            svgPath: ImageConstant
+                                                            svgPath: Assets
                                                                 .imgArrowleft)),
                                                     hintText:
                                                         '8/16 (수) 15:20 ~ 8/17(목) 14:00',

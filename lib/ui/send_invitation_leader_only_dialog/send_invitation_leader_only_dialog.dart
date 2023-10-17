@@ -35,7 +35,7 @@ class SendInvitationLeaderOnlyDialog extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   CustomImageView(
-                    svgPath: ImageConstant.imgClose,
+                    svgPath: Assets.imgClose,
                     height: 15.adaptSize,
                     width: 15.adaptSize,
                     alignment: Alignment.centerRight,
@@ -61,7 +61,7 @@ class SendInvitationLeaderOnlyDialog extends StatelessWidget {
                       suffix: Container(
                           margin: EdgeInsets.fromLTRB(30.h, 12.v, 12.h, 12.v),
                           child: CustomImageView(
-                              svgPath: ImageConstant.imgEyeCrossedOut)),
+                              svgPath: Assets.imgEyeCrossedOut)),
                       suffixConstraints: BoxConstraints(maxHeight: 48.v),
                       contentPadding:
                           EdgeInsets.only(left: 12.h, top: 14.v, bottom: 14.v)),

@@ -49,7 +49,7 @@ class SplashScreenTwoScreen extends GetWidget<SplashScreenTwoController> {
                                           .copyWith(height: 1.38))),
                               SizedBox(height: 226.v),
                               CustomImageView(
-                                  svgPath: ImageConstant.imgFriendsOnPrimary,
+                                  svgPath: Assets.imgFriendsOnPrimary,
                                   height: 21.v,
                                   width: 120.h)
                             ]))))

@@ -33,7 +33,7 @@ class SigninPageScreen extends GetWidget<SigninPageController> {
             children: [
               SizedBox(height: 30.v),
               CustomImageView(
-                svgPath: ImageConstant.imgFriendsOnPrimary,
+                svgPath: Assets.imgFriendsOnPrimary,
                 height: 38.v,
                 width: 193.h,
               ),
@@ -72,7 +72,7 @@ class SigninPageScreen extends GetWidget<SigninPageController> {
                         bottom: 8.v,
                       ),
                       child: CustomImageView(
-                        svgPath: ImageConstant.imgEyeCrossedOut,
+                        svgPath: Assets.imgEyeCrossedOut,
                       ),
                     ),
                     suffixConstraints: BoxConstraints(

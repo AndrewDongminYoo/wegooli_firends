@@ -33,7 +33,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                 height: 50.v,
                 leadingWidth: 34.h,
                 leading: AppbarImage(
-                  svgPath: ImageConstant.imgArrowleft,
+                  svgPath: Assets.imgArrowleft,
                   margin: EdgeInsets.only(left: 16.h, top: 16.v, bottom: 16.v),
                   onTap: Get.back,
                 ),
@@ -89,7 +89,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                           children: [
                                                             CustomImageView(
                                                                 svgPath:
-                                                                    ImageConstant
+                                                                    Assets
                                                                         .imgLightbulb,
                                                                 height: 67.v,
                                                                 width: 64.h),
@@ -105,7 +105,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                                             13.v),
                                                                 decoration: BoxDecoration(
                                                                     image: DecorationImage(
-                                                                        image: fs.Svg(ImageConstant
+                                                                        image: fs.Svg(Assets
                                                                             .imgGroup10),
                                                                         fit: BoxFit
                                                                             .cover)),
@@ -167,7 +167,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                                                         color: lightTheme.primary,
                                                                                         fontSize: 9.fSize,
                                                                                       ))),
-                                                                              CustomIconButton(height: 24.adaptSize, width: 24.adaptSize, child: CustomImageView(svgPath: ImageConstant.imgFrame))
+                                                                              CustomIconButton(height: 24.adaptSize, width: 24.adaptSize, child: CustomImageView(svgPath: Assets.imgFrame))
                                                                             ]))
                                                                   ],
                                                                 ),
@@ -433,7 +433,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                         margin: EdgeInsets.only(
                                                             left: 30.h),
                                                         child: CustomImageView(
-                                                            svgPath: ImageConstant
+                                                            svgPath: Assets
                                                                 .imgCaretdown)),
                                                     hintText: '면허증 종류를 선택하세요.',
                                                     items: controller
@@ -538,7 +538,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                                         )),
                                                                     CustomImageView(
                                                                         svgPath:
-                                                                            ImageConstant
+                                                                            Assets
                                                                                 .imgCaretdown,
                                                                         height: 18
                                                                             .adaptSize,
@@ -589,7 +589,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                   margin: EdgeInsets.only(
                                                       left: 30.h),
                                                   child: CustomImageView(
-                                                      svgPath: ImageConstant
+                                                      svgPath: Assets
                                                           .imgCaretdown)),
                                               margin: EdgeInsets.only(
                                                   left: 8.h, top: 19.v),

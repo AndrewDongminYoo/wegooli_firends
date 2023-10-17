@@ -31,7 +31,7 @@ class SchedulesTeamIsFullScreen
           height: 45.v,
           centerTitle: true,
           title: AppbarImage(
-            svgPath: ImageConstant.imgFriends,
+            svgPath: Assets.imgFriends,
           ),
           styleType: Style.bgOutline,
         ),
@@ -67,7 +67,7 @@ class SchedulesTeamIsFullScreen
                                         children: [
                                           CustomImageView(
                                             imagePath:
-                                                ImageConstant.imgEllipse1,
+                                                Assets.placeholder,
                                             height: 42.adaptSize,
                                             width: 42.adaptSize,
                                             radius: BorderRadius.circular(
@@ -86,8 +86,8 @@ class SchedulesTeamIsFullScreen
                                         child: Column(
                                           children: [
                                             CustomImageView(
-                                              imagePath: ImageConstant
-                                                  .imgEllipse142x42,
+                                              imagePath: Assets
+                                                  .placeholder,
                                               height: 42.adaptSize,
                                               width: 42.adaptSize,
                                               radius: BorderRadius.circular(
@@ -108,7 +108,7 @@ class SchedulesTeamIsFullScreen
                                           children: [
                                             CustomImageView(
                                               imagePath:
-                                                  ImageConstant.imgEllipse11,
+                                                  Assets.placeholder,
                                               height: 42.adaptSize,
                                               width: 42.adaptSize,
                                               radius: BorderRadius.circular(
@@ -135,7 +135,7 @@ class SchedulesTeamIsFullScreen
                                 child: Column(
                                   children: [
                                     CustomImageView(
-                                      imagePath: ImageConstant.imgEllipse11,
+                                      imagePath: Assets.placeholder,
                                       height: 42.adaptSize,
                                       width: 42.adaptSize,
                                       radius: BorderRadius.circular(
@@ -209,7 +209,7 @@ class SchedulesTeamIsFullScreen
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     CustomImageView(
-                                      svgPath: ImageConstant.imgArrowleft,
+                                      svgPath: Assets.imgArrowleft,
                                       height: 18.adaptSize,
                                       width: 18.adaptSize,
                                       margin: EdgeInsets.only(bottom: 1.v),
@@ -219,7 +219,7 @@ class SchedulesTeamIsFullScreen
                                       style: textTheme.titleMedium,
                                     ),
                                     CustomImageView(
-                                      svgPath: ImageConstant.imgArrowleft,
+                                      svgPath: Assets.imgArrowleft,
                                       height: 18.adaptSize,
                                       width: 18.adaptSize,
                                       margin: EdgeInsets.only(bottom: 1.v),

@@ -30,7 +30,7 @@ class IdentityVerificationEmptyScreen
             height: 50.v,
             leadingWidth: 34.h,
             leading: AppbarImage(
-              svgPath: ImageConstant.imgArrowleft,
+              svgPath: Assets.imgArrowleft,
               margin: EdgeInsets.only(left: 16.h, top: 16.v, bottom: 16.v),
               onTap: Get.back,
             ),
@@ -73,37 +73,37 @@ class IdentityVerificationEmptyScreen
                           child: const SizedBox(
                               child: Divider(color: Color(0xFFB0B2BC)))),
                       CustomImageView(
-                          svgPath: ImageConstant.imgGlobe,
+                          svgPath: Assets.imgGlobe,
                           height: 7.adaptSize,
                           width: 7.adaptSize,
                           margin: EdgeInsets.only(
                               left: 29.h, top: 6.v, bottom: 6.v)),
                       CustomImageView(
-                          svgPath: ImageConstant.imgGlobe,
+                          svgPath: Assets.imgGlobe,
                           height: 7.adaptSize,
                           width: 7.adaptSize,
                           margin: EdgeInsets.only(
                               left: 4.h, top: 6.v, bottom: 6.v)),
                       CustomImageView(
-                          svgPath: ImageConstant.imgGlobe,
+                          svgPath: Assets.imgGlobe,
                           height: 7.adaptSize,
                           width: 7.adaptSize,
                           margin: EdgeInsets.only(
                               left: 4.h, top: 6.v, bottom: 6.v)),
                       CustomImageView(
-                          svgPath: ImageConstant.imgGlobe,
+                          svgPath: Assets.imgGlobe,
                           height: 7.adaptSize,
                           width: 7.adaptSize,
                           margin: EdgeInsets.only(
                               left: 4.h, top: 6.v, bottom: 6.v)),
                       CustomImageView(
-                          svgPath: ImageConstant.imgGlobe,
+                          svgPath: Assets.imgGlobe,
                           height: 7.adaptSize,
                           width: 7.adaptSize,
                           margin: EdgeInsets.only(
                               left: 4.h, top: 6.v, bottom: 6.v)),
                       CustomImageView(
-                          svgPath: ImageConstant.imgGlobe,
+                          svgPath: Assets.imgGlobe,
                           height: 7.adaptSize,
                           width: 7.adaptSize,
                           margin: EdgeInsets.fromLTRB(4.h, 6.v, 70.h, 6.v))

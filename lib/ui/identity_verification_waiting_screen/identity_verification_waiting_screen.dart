@@ -30,7 +30,7 @@ class IdentityVerificationWaitingScreen
                 height: 50.v,
                 leadingWidth: 34.h,
                 leading: AppbarImage(
-                  svgPath: ImageConstant.imgArrowleft,
+                  svgPath: Assets.imgArrowleft,
                   margin: EdgeInsets.only(left: 16.h, top: 16.v, bottom: 16.v),
                   onTap: Get.back,
                 ),
@@ -103,7 +103,7 @@ class IdentityVerificationWaitingScreen
                                           child: Text('2',
                                               style: textTheme.bodyLarge)),
                                       CustomImageView(
-                                          svgPath: ImageConstant.imgGlobe,
+                                          svgPath: Assets.imgGlobe,
                                           height: 7.adaptSize,
                                           width: 7.adaptSize,
                                           margin: EdgeInsets.only(
@@ -111,7 +111,7 @@ class IdentityVerificationWaitingScreen
                                               top: 6.v,
                                               bottom: 6.v)),
                                       CustomImageView(
-                                          svgPath: ImageConstant.imgGlobe,
+                                          svgPath: Assets.imgGlobe,
                                           height: 7.adaptSize,
                                           width: 7.adaptSize,
                                           margin: EdgeInsets.only(
@@ -119,7 +119,7 @@ class IdentityVerificationWaitingScreen
                                               top: 6.v,
                                               bottom: 6.v)),
                                       CustomImageView(
-                                          svgPath: ImageConstant.imgGlobe,
+                                          svgPath: Assets.imgGlobe,
                                           height: 7.adaptSize,
                                           width: 7.adaptSize,
                                           margin: EdgeInsets.only(
@@ -127,7 +127,7 @@ class IdentityVerificationWaitingScreen
                                               top: 6.v,
                                               bottom: 6.v)),
                                       CustomImageView(
-                                          svgPath: ImageConstant.imgGlobe,
+                                          svgPath: Assets.imgGlobe,
                                           height: 7.adaptSize,
                                           width: 7.adaptSize,
                                           margin: EdgeInsets.only(
@@ -135,7 +135,7 @@ class IdentityVerificationWaitingScreen
                                               top: 6.v,
                                               bottom: 6.v)),
                                       CustomImageView(
-                                          svgPath: ImageConstant.imgGlobe,
+                                          svgPath: Assets.imgGlobe,
                                           height: 7.adaptSize,
                                           width: 7.adaptSize,
                                           margin: EdgeInsets.only(
@@ -143,7 +143,7 @@ class IdentityVerificationWaitingScreen
                                               top: 6.v,
                                               bottom: 6.v)),
                                       CustomImageView(
-                                          svgPath: ImageConstant.imgGlobe,
+                                          svgPath: Assets.imgGlobe,
                                           height: 7.adaptSize,
                                           width: 7.adaptSize,
                                           margin: EdgeInsets.only(

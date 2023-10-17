@@ -26,7 +26,7 @@ class UnsubscribeScreen extends GetWidget<UnsubscribeController> {
         appBar: CustomAppBar(
             leadingWidth: 34.h,
             leading: AppbarImage(
-              svgPath: ImageConstant.imgArrowleft,
+              svgPath: Assets.imgArrowleft,
               margin: EdgeInsets.only(left: 16.h, top: 19.v, bottom: 18.v),
               onTap: Get.back,
             ),
@@ -41,7 +41,7 @@ class UnsubscribeScreen extends GetWidget<UnsubscribeController> {
               child: Column(
                 children: [
                   CustomImageView(
-                      imagePath: ImageConstant.img157x120,
+                      imagePath: Assets.img157x120,
                       height: 157.v,
                       width: 120.h),
                   SizedBox(height: 20.v),

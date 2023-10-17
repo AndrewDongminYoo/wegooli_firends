@@ -31,7 +31,7 @@ class SmartKeyDetailsPage extends StatelessWidget {
         appBar: CustomAppBar(
             leadingWidth: 34.h,
             leading: AppbarImage(
-              svgPath: ImageConstant.imgArrowleft,
+              svgPath: Assets.imgArrowleft,
               margin: EdgeInsets.only(left: 16.h, top: 19.v, bottom: 18.v),
               onTap: Get.back,
             ),
@@ -45,7 +45,7 @@ class SmartKeyDetailsPage extends StatelessWidget {
                     padding: EdgeInsets.only(bottom: 136.v),
                     child: Column(children: [
                       CustomImageView(
-                          imagePath: ImageConstant.imgRectangle4640,
+                          imagePath: Assets.imgRectangle4640,
                           height: 132.v,
                           width: 200.h),
                       SizedBox(height: 20.v),
@@ -173,7 +173,7 @@ class SmartKeyDetailsPage extends StatelessWidget {
           width: 70,
           backgroundColor: lightTheme.primary,
           child: CustomImageView(
-              svgPath: ImageConstant.imgContactsupport,
+              svgPath: Assets.imgContactsupport,
               height: 35.0.v,
               width: 35.0.h),
         ),

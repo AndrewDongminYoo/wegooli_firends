@@ -27,7 +27,7 @@ class SubscribeInfoScreen extends GetWidget<SubscribeInfoController> {
         appBar: CustomAppBar(
             leadingWidth: 34.h,
             leading: AppbarImage(
-              svgPath: ImageConstant.imgArrowleft,
+              svgPath: Assets.imgArrowleft,
               margin: EdgeInsets.only(left: 16.h, top: 19.v, bottom: 18.v),
               onTap: Get.back,
             ),
@@ -66,7 +66,7 @@ class SubscribeInfoScreen extends GetWidget<SubscribeInfoController> {
                           children: [
                             SizedBox(height: 10.v),
                             CustomImageView(
-                                imagePath: ImageConstant.img21,
+                                imagePath: Assets.img21,
                                 height: 96.v,
                                 width: 167.h),
                             SizedBox(height: 30.v),

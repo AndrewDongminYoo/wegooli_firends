@@ -1,18 +1,14 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:get/get.dart';
-
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/elevated_button.dart';
 import '/widgets/image_view.dart';
-import 'controller/signup_complete_controller.dart';
 
-class SignupCompleteScreen extends GetWidget<SignupCompleteController> {
+class SignupCompleteScreen extends StatelessWidget {
   const SignupCompleteScreen({Key? key}) : super(key: key);
 
   @override

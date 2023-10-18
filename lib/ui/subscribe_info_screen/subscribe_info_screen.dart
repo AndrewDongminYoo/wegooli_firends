@@ -13,9 +13,8 @@ import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/elevated_button.dart';
 import '/widgets/image_view.dart';
-import 'controller/subscribe_info_controller.dart';
 
-class SubscribeInfoScreen extends GetWidget<SubscribeInfoController> {
+class SubscribeInfoScreen extends StatelessWidget {
   const SubscribeInfoScreen({Key? key}) : super(key: key);
 
   @override

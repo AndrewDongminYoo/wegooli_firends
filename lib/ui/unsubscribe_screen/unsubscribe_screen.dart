@@ -12,9 +12,8 @@ import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/elevated_button.dart';
 import '/widgets/image_view.dart';
-import 'controller/unsubscribe_controller.dart';
 
-class UnsubscribeScreen extends GetWidget<UnsubscribeController> {
+class UnsubscribeScreen extends StatelessWidget {
   const UnsubscribeScreen({Key? key}) : super(key: key);
 
   @override

@@ -12,10 +12,8 @@ import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/elevated_button.dart';
 import '/widgets/image_view.dart';
-import 'controller/contact_us_empty_history_controller.dart';
 
-class ContactUsEmptyHistoryScreen
-    extends GetWidget<ContactUsEmptyHistoryController> {
+class ContactUsEmptyHistoryScreen extends StatelessWidget {
   const ContactUsEmptyHistoryScreen({Key? key}) : super(key: key);
 
   @override

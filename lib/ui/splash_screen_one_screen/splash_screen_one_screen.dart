@@ -1,17 +1,13 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:get/get.dart';
-
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/image_view.dart';
-import 'controller/splash_screen_one_controller.dart';
 
-class SplashScreenOneScreen extends GetWidget<SplashScreenOneController> {
+class SplashScreenOneScreen extends StatelessWidget {
   const SplashScreenOneScreen({Key? key}) : super(key: key);
 
   @override

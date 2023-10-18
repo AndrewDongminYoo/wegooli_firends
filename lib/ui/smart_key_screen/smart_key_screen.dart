@@ -1,9 +1,6 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:get/get.dart';
-
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
@@ -11,9 +8,8 @@ import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/image_view.dart';
-import 'controller/smart_key_controller.dart';
 
-class SmartKeyScreen extends GetWidget<SmartKeyController> {
+class SmartKeyScreen extends StatelessWidget {
   const SmartKeyScreen({Key? key}) : super(key: key);
 
   @override

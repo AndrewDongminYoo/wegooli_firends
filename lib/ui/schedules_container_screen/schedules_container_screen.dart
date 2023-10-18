@@ -11,9 +11,8 @@ import '/ui/profile_page/profile_page.dart';
 import '/ui/schedules_page/schedules_page.dart';
 import '/ui/send_bird_chat_page/send_bird_chat_page.dart';
 import '/ui/smart_key_details_page/smart_key_details_page.dart';
-import 'controller/schedules_container_controller.dart';
 
-class SchedulesContainerScreen extends GetWidget<SchedulesContainerController> {
+class SchedulesContainerScreen extends StatelessWidget {
   const SchedulesContainerScreen({Key? key}) : super(key: key);
 
   @override

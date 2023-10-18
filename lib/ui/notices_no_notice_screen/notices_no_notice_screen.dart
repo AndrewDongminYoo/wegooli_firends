@@ -11,9 +11,8 @@ import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/image_view.dart';
-import 'controller/notices_no_notice_controller.dart';
 
-class NoticesNoNoticeScreen extends GetWidget<NoticesNoNoticeController> {
+class NoticesNoNoticeScreen extends StatelessWidget {
   const NoticesNoNoticeScreen({Key? key}) : super(key: key);
 
   @override

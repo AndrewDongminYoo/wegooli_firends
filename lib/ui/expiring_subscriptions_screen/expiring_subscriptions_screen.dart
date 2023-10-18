@@ -13,10 +13,8 @@ import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/elevated_button.dart';
 import '/widgets/image_view.dart';
-import 'controller/expiring_subscriptions_controller.dart';
 
-class ExpiringSubscriptionsScreen
-    extends GetWidget<ExpiringSubscriptionsController> {
+class ExpiringSubscriptionsScreen extends StatelessWidget {
   const ExpiringSubscriptionsScreen({Key? key}) : super(key: key);
 
   @override

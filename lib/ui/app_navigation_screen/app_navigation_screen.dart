@@ -26,9 +26,8 @@ import '/ui/unsubscribe_confirm_dialog/controller/unsubscribe_confirm_controller
 import '/ui/unsubscribe_confirm_dialog/unsubscribe_confirm_dialog.dart';
 import '/ui/view_scheduled_date_scheduler_only_dialog/controller/view_scheduled_date_scheduler_only_controller.dart';
 import '/ui/view_scheduled_date_scheduler_only_dialog/view_scheduled_date_scheduler_only_dialog.dart';
-import 'controller/app_navigation_controller.dart';
 
-class AppNavigationScreen extends GetWidget<AppNavigationController> {
+class AppNavigationScreen extends StatelessWidget {
   const AppNavigationScreen({Key? key}) : super(key: key);
 
   @override

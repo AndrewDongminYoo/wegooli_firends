@@ -10,7 +10,6 @@ import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
-import '/widgets/bottom_bar.dart';
 import '/widgets/elevated_button.dart';
 import '/widgets/image_view.dart';
 import 'controller/smart_key_another_is_currently_using_controller.dart';
@@ -658,9 +657,6 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
               ),
             ],
           ),
-        ),
-        bottomNavigationBar: CustomBottomBar(
-          onChanged: (BottomBarEnum type) {},
         ),
       ),
     );

@@ -9,7 +9,6 @@ import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
-import '/widgets/bottom_bar.dart';
 import '/widgets/image_view.dart';
 import 'controller/my_page_controller.dart';
 
@@ -208,9 +207,6 @@ class MyPageScreen extends GetWidget<MyPageController> {
               ),
             ],
           ),
-        ),
-        bottomNavigationBar: CustomBottomBar(
-          onChanged: (BottomBarEnum type) {},
         ),
       ),
     );

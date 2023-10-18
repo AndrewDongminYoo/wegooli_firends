@@ -10,7 +10,6 @@ import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
-import '/widgets/bottom_bar.dart';
 import '/widgets/image_view.dart';
 import 'controller/home_page_controller.dart';
 
@@ -297,9 +296,6 @@ class HomePageScreen extends GetWidget<HomePageController> {
               ),
             ],
           ),
-        ),
-        bottomNavigationBar: CustomBottomBar(
-          onChanged: (BottomBarEnum type) {},
         ),
       ),
     );

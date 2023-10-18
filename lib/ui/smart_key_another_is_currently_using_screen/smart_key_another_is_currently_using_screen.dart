@@ -28,7 +28,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
           height: 45.v,
           centerTitle: true,
           title: CustomImageView(
-            svgPath: Assets.svg.icoFriends.path,
+            svgPath: Assets.svg.imgFriends.path,
           ),
           styleType: Style.bgOutline,
         ),
@@ -78,7 +78,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                         CrossAxisAlignment.start,
                                     children: [
                                       CustomImageView(
-                                        svgPath: Assets.svg.icoFrame19044.path,
+                                        // svgPath: Assets.svg.imgGas.path,
                                         height: 24.adaptSize,
                                         width: 24.adaptSize,
                                       ),
@@ -93,7 +93,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                         ),
                                       ),
                                       CustomImageView(
-                                        svgPath: Assets.svg.icoArrowleft.path,
+                                        svgPath: Assets.svg.icoArrowLeft.path,
                                         height: 18.adaptSize,
                                         width: 18.adaptSize,
                                         margin: EdgeInsets.only(
@@ -484,10 +484,8 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                                           MainAxisSize.min,
                                                       children: [
                                                         CustomImageView(
-                                                          svgPath: Assets
-                                                              .svg
-                                                              .icoBluetooth
-                                                              .path,
+                                                          svgPath: Assets.svg
+                                                              .icoTriangle.path,
                                                           height: 37.v,
                                                           width: 46.h,
                                                         ),

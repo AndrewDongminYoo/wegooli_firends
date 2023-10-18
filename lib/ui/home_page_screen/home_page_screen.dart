@@ -27,7 +27,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
           height: 45.v,
           leadingWidth: 64.h,
           leading: CustomImageView(
-            svgPath: Assets.svg.icoLocation.path,
+            svgPath: Assets.svg.imgFriendsKo.path,
             margin: EdgeInsets.only(
               left: 15.h,
               top: 13.v,
@@ -95,7 +95,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                         alignment: Alignment.bottomRight,
                         children: [
                           CustomImageView(
-                            svgPath: Assets.svg.icoOffer.path,
+                            svgPath: Assets.svg.imgTicket.path,
                             height: 59.v,
                             width: 89.h,
                             alignment: Alignment.topLeft,
@@ -176,7 +176,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                           ),
                           SizedBox(height: 34.v),
                           CustomImageView(
-                            svgPath: Assets.svg.icoLocationBlack900.path,
+                            svgPath: Assets.svg.imgGooliFlag.path,
                             height: 77.v,
                             width: 84.h,
                             alignment: Alignment.centerRight,
@@ -282,7 +282,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                       ),
                     ),
                     CustomImageView(
-                      svgPath: Assets.svg.icoGroup.path,
+                      svgPath: Assets.svg.imgGooliHome.path,
                       height: 58.v,
                       width: 119.h,
                       margin: EdgeInsets.only(

@@ -56,7 +56,7 @@ class SplashScreenTwoScreen extends GetWidget<SplashScreenTwoController> {
                           ),
                           SizedBox(height: 226.v),
                           CustomImageView(
-                              svgPath: Assets.svg.icoFriendsOnprimary.path,
+                              svgPath: Assets.svg.imgFriends.path,
                               height: 21.v,
                               width: 120.h)
                         ],

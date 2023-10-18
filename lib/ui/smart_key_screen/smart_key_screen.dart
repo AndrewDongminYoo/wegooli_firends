@@ -26,7 +26,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
           height: 45.v,
           centerTitle: true,
           title: CustomImageView(
-            svgPath: Assets.svg.icoFriends.path,
+            svgPath: Assets.svg.imgFriends.path,
           ),
           styleType: Style.bgOutline,
         ),
@@ -93,7 +93,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                                           ),
                                         ),
                                         CustomImageView(
-                                          svgPath: Assets.svg.icoArrowleft.path,
+                                          svgPath: Assets.svg.icoArrowLeft.path,
                                           height: 18.adaptSize,
                                           width: 18.adaptSize,
                                           margin: EdgeInsets.only(
@@ -389,7 +389,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                                           children: [
                                             CustomImageView(
                                               svgPath:
-                                                  Assets.svg.icoBluetooth.path,
+                                                  Assets.svg.icoTriangle.path,
                                               height: 37.v,
                                               width: 46.h,
                                             ),

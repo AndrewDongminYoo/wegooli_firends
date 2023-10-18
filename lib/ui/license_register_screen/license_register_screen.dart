@@ -32,7 +32,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
             height: 50.v,
             leadingWidth: 34.h,
             leading: CustomImageView(
-              svgPath: Assets.svg.icoArrowleft.path,
+              svgPath: Assets.svg.icoArrowLeft.path,
               margin: EdgeInsets.only(left: 16.h, top: 16.v, bottom: 16.v),
               onTap: Get.back,
             ),
@@ -82,8 +82,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                       alignment: Alignment.center,
                                       children: [
                                         CustomImageView(
-                                            svgPath:
-                                                Assets.svg.icoLightbulb.path,
+                                            svgPath: Assets.svg.imgGooli.path,
                                             height: 67.v,
                                             width: 64.h),
                                         Align(
@@ -94,7 +93,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                             decoration: BoxDecoration(
                                                 image: DecorationImage(
                                                     image: fs.Svg(Assets
-                                                        .svg.icoGroup.path),
+                                                        .svg.imgGooliHome.path),
                                                     fit: BoxFit.cover)),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.min,
@@ -188,7 +187,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                               child: CustomImageView(
                                                                   svgPath: Assets
                                                                       .svg
-                                                                      .icoFrame
+                                                                      .imgGooliCute
                                                                       .path))
                                                         ]))
                                               ],
@@ -424,7 +423,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                             margin: EdgeInsets.only(left: 30.h),
                                             child: CustomImageView(
                                                 svgPath: Assets
-                                                    .svg.icoCaretdown.path)),
+                                                    .svg.icoCaretDown.path)),
                                         hintText: '면허증 종류를 선택하세요.',
                                         items: controller.licenseRegister.value
                                             .choices.value,
@@ -511,7 +510,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                         )),
                                                     CustomImageView(
                                                         svgPath: Assets.svg
-                                                            .icoCaretdown.path,
+                                                            .icoCaretDown.path,
                                                         height: 18.adaptSize,
                                                         width: 18.adaptSize)
                                                   ]))
@@ -551,7 +550,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                       margin: EdgeInsets.only(left: 30.h),
                                       child: CustomImageView(
                                           svgPath:
-                                              Assets.svg.icoCaretdown.path)),
+                                              Assets.svg.icoCaretDown.path)),
                                   margin: EdgeInsets.only(left: 8.h, top: 19.v),
                                   hintText: '11',
                                   items: controller

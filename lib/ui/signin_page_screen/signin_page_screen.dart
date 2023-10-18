@@ -33,7 +33,7 @@ class SigninPageScreen extends GetWidget<SigninPageController> {
             children: [
               SizedBox(height: 30.v),
               CustomImageView(
-                svgPath: Assets.svg.icoFriendsOnprimary.path,
+                svgPath: Assets.svg.imgFriends.path,
                 height: 38.v,
                 width: 193.h,
               ),

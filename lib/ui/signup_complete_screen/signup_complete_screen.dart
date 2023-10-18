@@ -38,7 +38,7 @@ class SignupCompleteScreen extends GetWidget<SignupCompleteController> {
                     child: Column(
                       children: [
                         CustomImageView(
-                          svgPath: Assets.svg.icoLayer2.path,
+                          svgPath: Assets.svg.imgGooliHappy.path,
                           height: 108.v,
                           width: 135.h,
                         ),

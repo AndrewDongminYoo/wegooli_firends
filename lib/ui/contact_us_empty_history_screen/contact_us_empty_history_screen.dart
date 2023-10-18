@@ -26,7 +26,7 @@ class ContactUsEmptyHistoryScreen
         appBar: CustomAppBar(
             leadingWidth: 34.h,
             leading: CustomImageView(
-              svgPath: Assets.svg.icoArrowleft.path,
+              svgPath: Assets.svg.icoArrowLeft.path,
               margin: EdgeInsets.only(left: 16.h, top: 19.v, bottom: 18.v),
               onTap: Get.back,
             ),

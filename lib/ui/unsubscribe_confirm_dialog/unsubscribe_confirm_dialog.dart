@@ -42,7 +42,7 @@ class UnsubscribeConfirmDialog extends StatelessWidget {
                         fontSize: 18.fSize,
                       )),
                   CustomImageView(
-                      svgPath: Assets.svg.icoClose.path,
+                      svgPath: Assets.svg.icoCloseRound.path,
                       height: 15.adaptSize,
                       width: 15.adaptSize,
                       margin: EdgeInsets.symmetric(vertical: 3.v),

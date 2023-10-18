@@ -72,7 +72,7 @@ class ContactUsInquiryHistoryExpandedPage extends StatelessWidget {
                                 ),
                               ),
                               CustomImageView(
-                                svgPath: Assets.svg.icoArrowleft.path,
+                                svgPath: Assets.svg.icoArrowLeft.path,
                                 height: 18.adaptSize,
                                 width: 18.adaptSize,
                                 margin: EdgeInsets.only(
@@ -129,7 +129,7 @@ class ContactUsInquiryHistoryExpandedPage extends StatelessWidget {
                                   ),
                                 ),
                                 CustomImageView(
-                                  svgPath: Assets.svg.icoArrowleft.path,
+                                  svgPath: Assets.svg.icoArrowLeft.path,
                                   height: 18.adaptSize,
                                   width: 18.adaptSize,
                                   margin: EdgeInsets.only(
@@ -166,7 +166,7 @@ class ContactUsInquiryHistoryExpandedPage extends StatelessWidget {
                               children: [
                                 CustomImageView(
                                   svgPath:
-                                      Assets.svg.icoSubdirectoryarrowright.path,
+                                      Assets.svg.icoSubdirectoryArrowRight.path,
                                   height: 15.adaptSize,
                                   width: 15.adaptSize,
                                   margin: EdgeInsets.only(bottom: 1.v),
@@ -252,7 +252,7 @@ class ContactUsInquiryHistoryExpandedPage extends StatelessWidget {
                                         ),
                                       ),
                                       CustomImageView(
-                                        svgPath: Assets.svg.icoArrowleft.path,
+                                        svgPath: Assets.svg.icoArrowLeft.path,
                                         height: 18.adaptSize,
                                         width: 18.adaptSize,
                                         margin: EdgeInsets.only(

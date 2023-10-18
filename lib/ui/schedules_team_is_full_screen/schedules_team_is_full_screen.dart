@@ -29,7 +29,7 @@ class SchedulesTeamIsFullScreen
           height: 45.v,
           centerTitle: true,
           title: CustomImageView(
-            svgPath: Assets.svg.icoFriends.path,
+            svgPath: Assets.svg.imgFriends.path,
           ),
           styleType: Style.bgOutline,
         ),
@@ -207,7 +207,7 @@ class SchedulesTeamIsFullScreen
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     CustomImageView(
-                                      svgPath: Assets.svg.icoArrowleft.path,
+                                      svgPath: Assets.svg.icoArrowLeft.path,
                                       height: 18.adaptSize,
                                       width: 18.adaptSize,
                                       margin: EdgeInsets.only(bottom: 1.v),
@@ -217,7 +217,7 @@ class SchedulesTeamIsFullScreen
                                       style: textTheme.titleMedium,
                                     ),
                                     CustomImageView(
-                                      svgPath: Assets.svg.icoArrowleft.path,
+                                      svgPath: Assets.svg.icoArrowLeft.path,
                                       height: 18.adaptSize,
                                       width: 18.adaptSize,
                                       margin: EdgeInsets.only(bottom: 1.v),

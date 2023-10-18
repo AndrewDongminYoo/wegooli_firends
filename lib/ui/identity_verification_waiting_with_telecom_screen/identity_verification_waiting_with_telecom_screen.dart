@@ -32,7 +32,7 @@ class IdentityVerificationWaitingWithTelecomScreen
             height: 50.v,
             leadingWidth: 34.h,
             leading: CustomImageView(
-              svgPath: Assets.svg.icoArrowleft.path,
+              svgPath: Assets.svg.icoArrowLeft.path,
               margin: EdgeInsets.only(left: 16.h, top: 16.v, bottom: 16.v),
               onTap: Get.back,
             ),
@@ -52,7 +52,7 @@ class IdentityVerificationWaitingWithTelecomScreen
                     children: [
                       Text('이름', style: textTheme.bodySmall),
                       CustomImageView(
-                          svgPath: Assets.svg.icoLabeltext.path,
+                          svgPath: Assets.svg.icoApostrophe.path,
                           height: 5.adaptSize,
                           width: 5.adaptSize,
                           margin: EdgeInsets.only(left: 2.h, bottom: 10.v))
@@ -75,7 +75,7 @@ class IdentityVerificationWaitingWithTelecomScreen
                         children: [
                           Text('주민등록번호 13자리', style: textTheme.bodySmall),
                           CustomImageView(
-                              svgPath: Assets.svg.icoLabeltext.path,
+                              svgPath: Assets.svg.icoApostrophe.path,
                               height: 5.adaptSize,
                               width: 5.adaptSize,
                               margin: EdgeInsets.only(left: 2.h, bottom: 10.v))
@@ -126,7 +126,7 @@ class IdentityVerificationWaitingWithTelecomScreen
                         children: [
                           Text('휴대폰 정보', style: textTheme.bodySmall),
                           CustomImageView(
-                              svgPath: Assets.svg.icoLabeltext.path,
+                              svgPath: Assets.svg.icoApostrophe.path,
                               height: 5.adaptSize,
                               width: 5.adaptSize,
                               margin: EdgeInsets.only(left: 2.h, bottom: 10.v))
@@ -138,7 +138,7 @@ class IdentityVerificationWaitingWithTelecomScreen
                           icon: Container(
                               margin: EdgeInsets.only(left: 30.h),
                               child: CustomImageView(
-                                  svgPath: Assets.svg.icoCaretdown.path)),
+                                  svgPath: Assets.svg.icoCaretDown.path)),
                           hintText: 'KT',
                           hintStyle: textTheme.bodyLarge,
                           items: controller

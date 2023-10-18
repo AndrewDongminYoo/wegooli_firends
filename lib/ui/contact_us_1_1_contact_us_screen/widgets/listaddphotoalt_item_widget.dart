@@ -37,7 +37,7 @@ class ListaddphotoaltItemWidget extends StatelessWidget {
           padding: EdgeInsets.all(16.h),
           decoration: IconButtonStyleHelper.fillBlueGrayTL5,
           child: CustomImageView(
-            svgPath: Assets.svg.icoAddphotoalternate.path,
+            svgPath: Assets.svg.icoAddPhoto.path,
           ),
         ),
       ),

@@ -31,7 +31,7 @@ class ProfilePage extends StatelessWidget {
         appBar: CustomAppBar(
             leadingWidth: 34.h,
             leading: CustomImageView(
-              svgPath: Assets.svg.icoArrowleft.path,
+              svgPath: Assets.svg.icoArrowLeft.path,
               margin: EdgeInsets.only(left: 16.h, top: 19.v, bottom: 18.v),
               onTap: Get.back,
             ),
@@ -110,7 +110,7 @@ class ProfilePage extends StatelessWidget {
                       children: [
                         Text('개인정보 변경', style: textTheme.bodyLarge),
                         CustomImageView(
-                            svgPath: Assets.svg.icoArrowleft.path,
+                            svgPath: Assets.svg.icoArrowLeft.path,
                             height: 18.adaptSize,
                             width: 18.adaptSize)
                       ],

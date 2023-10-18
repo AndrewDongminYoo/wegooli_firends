@@ -36,7 +36,7 @@ class SchedulesSendInvitationLeaderOnlyDialog extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             CustomImageView(
-              svgPath: Assets.svg.icoClose.path,
+              svgPath: Assets.svg.icoCloseRound.path,
               height: 15.adaptSize,
               width: 15.adaptSize,
               alignment: Alignment.centerRight,

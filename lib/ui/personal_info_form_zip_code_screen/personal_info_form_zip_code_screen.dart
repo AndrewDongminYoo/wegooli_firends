@@ -29,7 +29,7 @@ class PersonalInfoFormZipCodeScreen
             height: 50.v,
             leadingWidth: 34.h,
             leading: CustomImageView(
-              svgPath: Assets.svg.icoArrowleft.path,
+              svgPath: Assets.svg.icoArrowLeft.path,
               margin: EdgeInsets.only(left: 16.h, top: 16.v, bottom: 16.v),
               onTap: Get.back,
             ),

@@ -31,7 +31,7 @@ class IdentityVerificationTermsBottomsheetScreen
             height: 50.v,
             leadingWidth: 34.h,
             leading: CustomImageView(
-              svgPath: Assets.svg.icoArrowleft.path,
+              svgPath: Assets.svg.icoArrowLeft.path,
               margin: EdgeInsets.only(left: 16.h, top: 16.v, bottom: 16.v),
               onTap: Get.back,
             ),
@@ -194,7 +194,7 @@ class IdentityVerificationTermsBottomsheetScreen
                                         ),
                                         CustomImageView(
                                             svgPath:
-                                                Assets.svg.icoCaretdown.path,
+                                                Assets.svg.icoCaretDown.path,
                                             height: 18.adaptSize,
                                             width: 18.adaptSize,
                                             margin: EdgeInsets.only(
@@ -295,7 +295,7 @@ class IdentityVerificationTermsBottomsheetScreen
                                         children: [
                                           CustomImageView(
                                               svgPath: Assets
-                                                  .svg.icoCheckcircle.path,
+                                                  .svg.icoCheckCircle.path,
                                               height: 18.adaptSize,
                                               width: 18.adaptSize),
                                           Padding(
@@ -326,7 +326,7 @@ class IdentityVerificationTermsBottomsheetScreen
                                         const Spacer(),
                                         CustomImageView(
                                             svgPath:
-                                                Assets.svg.icoArrowleft.path,
+                                                Assets.svg.icoArrowLeft.path,
                                             height: 18.adaptSize,
                                             width: 18.adaptSize)
                                       ],
@@ -358,7 +358,7 @@ class IdentityVerificationTermsBottomsheetScreen
                                         ),
                                         CustomImageView(
                                             svgPath:
-                                                Assets.svg.icoArrowleft.path,
+                                                Assets.svg.icoArrowLeft.path,
                                             height: 18.adaptSize,
                                             width: 18.adaptSize)
                                       ],
@@ -391,7 +391,7 @@ class IdentityVerificationTermsBottomsheetScreen
                                         ),
                                         CustomImageView(
                                             svgPath:
-                                                Assets.svg.icoArrowleft.path,
+                                                Assets.svg.icoArrowLeft.path,
                                             height: 18.adaptSize,
                                             width: 18.adaptSize)
                                       ],
@@ -426,7 +426,7 @@ class IdentityVerificationTermsBottomsheetScreen
                                         ),
                                         CustomImageView(
                                             svgPath:
-                                                Assets.svg.icoArrowleft.path,
+                                                Assets.svg.icoArrowLeft.path,
                                             height: 18.adaptSize,
                                             width: 18.adaptSize,
                                             margin: EdgeInsets.only(left: 40.h))
@@ -462,7 +462,7 @@ class IdentityVerificationTermsBottomsheetScreen
                                             ),
                                             CustomImageView(
                                                 svgPath: Assets
-                                                    .svg.icoArrowleft.path,
+                                                    .svg.icoArrowLeft.path,
                                                 height: 18.adaptSize,
                                                 width: 18.adaptSize,
                                                 margin:

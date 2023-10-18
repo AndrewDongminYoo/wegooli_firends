@@ -63,7 +63,7 @@ class ListItemWidget extends StatelessWidget {
                 ),
               ),
               CustomImageView(
-                svgPath: Assets.svg.icoArrowleft.path,
+                svgPath: Assets.svg.icoArrowLeft.path,
                 height: 18.adaptSize,
                 width: 18.adaptSize,
                 margin: EdgeInsets.only(

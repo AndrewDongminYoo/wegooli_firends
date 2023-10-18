@@ -233,17 +233,29 @@ class $AssetsRiveGen {
 class $AssetsSvgGen {
   const $AssetsSvgGen();
 
-  /// File path: assets/svg/ico_addphotoalternate.svg
-  SvgGenImage get icoAddphotoalternate =>
-      const SvgGenImage('assets/svg/ico_addphotoalternate.svg');
+  /// File path: assets/svg/ico_add_photo.svg
+  SvgGenImage get icoAddPhoto =>
+      const SvgGenImage('assets/svg/ico_add_photo.svg');
 
-  /// File path: assets/svg/ico_arrowleft.svg
-  SvgGenImage get icoArrowleft =>
-      const SvgGenImage('assets/svg/ico_arrowleft.svg');
+  /// File path: assets/svg/ico_apostrophe.svg
+  SvgGenImage get icoApostrophe =>
+      const SvgGenImage('assets/svg/ico_apostrophe.svg');
 
-  /// File path: assets/svg/ico_bluetooth.svg
-  SvgGenImage get icoBluetooth =>
-      const SvgGenImage('assets/svg/ico_bluetooth.svg');
+  /// File path: assets/svg/ico_arrow_left.svg
+  SvgGenImage get icoArrowLeft =>
+      const SvgGenImage('assets/svg/ico_arrow_left.svg');
+
+  /// File path: assets/svg/ico_cal_blue_gray.svg
+  SvgGenImage get icoCalBlueGray =>
+      const SvgGenImage('assets/svg/ico_cal_blue_gray.svg');
+
+  /// File path: assets/svg/ico_cal_on_primary.svg
+  SvgGenImage get icoCalOnPrimary =>
+      const SvgGenImage('assets/svg/ico_cal_on_primary.svg');
+
+  /// File path: assets/svg/ico_cal_round.svg
+  SvgGenImage get icoCalRound =>
+      const SvgGenImage('assets/svg/ico_cal_round.svg');
 
   /// File path: assets/svg/ico_camera.svg
   SvgGenImage get icoCamera => const SvgGenImage('assets/svg/ico_camera.svg');
@@ -252,59 +264,54 @@ class $AssetsSvgGen {
   SvgGenImage get icoCampaign =>
       const SvgGenImage('assets/svg/ico_campaign.svg');
 
-  /// File path: assets/svg/ico_caretdown.svg
-  SvgGenImage get icoCaretdown =>
-      const SvgGenImage('assets/svg/ico_caretdown.svg');
+  /// File path: assets/svg/ico_caret_down.svg
+  SvgGenImage get icoCaretDown =>
+      const SvgGenImage('assets/svg/ico_caret_down.svg');
 
-  /// File path: assets/svg/ico_caretdown_gray_800.svg
-  SvgGenImage get icoCaretdownGray800 =>
-      const SvgGenImage('assets/svg/ico_caretdown_gray_800.svg');
+  /// File path: assets/svg/ico_caret_down_gray.svg
+  SvgGenImage get icoCaretDownGray =>
+      const SvgGenImage('assets/svg/ico_caret_down_gray.svg');
+
+  /// File path: assets/svg/ico_chat.svg
+  SvgGenImage get icoChat => const SvgGenImage('assets/svg/ico_chat.svg');
+
+  /// File path: assets/svg/ico_chat_blue_gray.svg
+  SvgGenImage get icoChatBlueGray =>
+      const SvgGenImage('assets/svg/ico_chat_blue_gray.svg');
+
+  /// File path: assets/svg/ico_chat_round.svg
+  SvgGenImage get icoChatRound =>
+      const SvgGenImage('assets/svg/ico_chat_round.svg');
 
   /// File path: assets/svg/ico_check.svg
   SvgGenImage get icoCheck => const SvgGenImage('assets/svg/ico_check.svg');
 
-  /// File path: assets/svg/ico_checkcircle.svg
-  SvgGenImage get icoCheckcircle =>
-      const SvgGenImage('assets/svg/ico_checkcircle.svg');
+  /// File path: assets/svg/ico_check_circle.svg
+  SvgGenImage get icoCheckCircle =>
+      const SvgGenImage('assets/svg/ico_check_circle.svg');
 
-  /// File path: assets/svg/ico_clear.svg
-  SvgGenImage get icoClear => const SvgGenImage('assets/svg/ico_clear.svg');
+  /// File path: assets/svg/ico_close_gray.svg
+  SvgGenImage get icoCloseGray =>
+      const SvgGenImage('assets/svg/ico_close_gray.svg');
 
-  /// File path: assets/svg/ico_close.svg
-  SvgGenImage get icoClose => const SvgGenImage('assets/svg/ico_close.svg');
+  /// File path: assets/svg/ico_close_round.svg
+  SvgGenImage get icoCloseRound =>
+      const SvgGenImage('assets/svg/ico_close_round.svg');
 
-  /// File path: assets/svg/ico_close_gray_700.svg
-  SvgGenImage get icoCloseGray700 =>
-      const SvgGenImage('assets/svg/ico_close_gray_700.svg');
-
-  /// File path: assets/svg/ico_contactsupport.svg
-  SvgGenImage get icoContactsupport =>
-      const SvgGenImage('assets/svg/ico_contactsupport.svg');
+  /// File path: assets/svg/ico_contact_support.svg
+  SvgGenImage get icoContactSupport =>
+      const SvgGenImage('assets/svg/ico_contact_support.svg');
 
   /// File path: assets/svg/ico_edit.svg
   SvgGenImage get icoEdit => const SvgGenImage('assets/svg/ico_edit.svg');
 
-  /// File path: assets/svg/ico_edit_black_900.svg
-  SvgGenImage get icoEditBlack900 =>
-      const SvgGenImage('assets/svg/ico_edit_black_900.svg');
+  /// File path: assets/svg/ico_edit_black.svg
+  SvgGenImage get icoEditBlack =>
+      const SvgGenImage('assets/svg/ico_edit_black.svg');
 
   /// File path: assets/svg/ico_eye_crossed_out.svg
   SvgGenImage get icoEyeCrossedOut =>
       const SvgGenImage('assets/svg/ico_eye_crossed_out.svg');
-
-  /// File path: assets/svg/ico_frame.svg
-  SvgGenImage get icoFrame => const SvgGenImage('assets/svg/ico_frame.svg');
-
-  /// File path: assets/svg/ico_frame19044.svg
-  SvgGenImage get icoFrame19044 =>
-      const SvgGenImage('assets/svg/ico_frame19044.svg');
-
-  /// File path: assets/svg/ico_friends.svg
-  SvgGenImage get icoFriends => const SvgGenImage('assets/svg/ico_friends.svg');
-
-  /// File path: assets/svg/ico_friends_onprimary.svg
-  SvgGenImage get icoFriendsOnprimary =>
-      const SvgGenImage('assets/svg/ico_friends_onprimary.svg');
 
   /// File path: assets/svg/ico_globe.svg
   SvgGenImage get icoGlobe => const SvgGenImage('assets/svg/ico_globe.svg');
@@ -312,34 +319,21 @@ class $AssetsSvgGen {
   /// File path: assets/svg/ico_grid.svg
   SvgGenImage get icoGrid => const SvgGenImage('assets/svg/ico_grid.svg');
 
-  /// File path: assets/svg/ico_group.svg
-  SvgGenImage get icoGroup => const SvgGenImage('assets/svg/ico_group.svg');
-
   /// File path: assets/svg/ico_information.svg
   SvgGenImage get icoInformation =>
       const SvgGenImage('assets/svg/ico_information.svg');
 
-  /// File path: assets/svg/ico_labeltext.svg
-  SvgGenImage get icoLabeltext =>
-      const SvgGenImage('assets/svg/ico_labeltext.svg');
+  /// File path: assets/svg/ico_key_round.svg
+  SvgGenImage get icoKeyRound =>
+      const SvgGenImage('assets/svg/ico_key_round.svg');
 
-  /// File path: assets/svg/ico_layer2.svg
-  SvgGenImage get icoLayer2 => const SvgGenImage('assets/svg/ico_layer2.svg');
+  /// File path: assets/svg/ico_key_sharp_blue_gray.svg
+  SvgGenImage get icoKeySharpBlueGray =>
+      const SvgGenImage('assets/svg/ico_key_sharp_blue_gray.svg');
 
-  /// File path: assets/svg/ico_lightbulb.svg
-  SvgGenImage get icoLightbulb =>
-      const SvgGenImage('assets/svg/ico_lightbulb.svg');
-
-  /// File path: assets/svg/ico_line45.svg
-  SvgGenImage get icoLine45 => const SvgGenImage('assets/svg/ico_line45.svg');
-
-  /// File path: assets/svg/ico_location.svg
-  SvgGenImage get icoLocation =>
-      const SvgGenImage('assets/svg/ico_location.svg');
-
-  /// File path: assets/svg/ico_location_black_900.svg
-  SvgGenImage get icoLocationBlack900 =>
-      const SvgGenImage('assets/svg/ico_location_black_900.svg');
+  /// File path: assets/svg/ico_key_sharp_on_primary.svg
+  SvgGenImage get icoKeySharpOnPrimary =>
+      const SvgGenImage('assets/svg/ico_key_sharp_on_primary.svg');
 
   /// File path: assets/svg/ico_locked.svg
   SvgGenImage get icoLocked => const SvgGenImage('assets/svg/ico_locked.svg');
@@ -347,60 +341,20 @@ class $AssetsSvgGen {
   /// File path: assets/svg/ico_menu.svg
   SvgGenImage get icoMenu => const SvgGenImage('assets/svg/ico_menu.svg');
 
-  /// File path: assets/svg/ico_nav.svg
-  SvgGenImage get icoNav => const SvgGenImage('assets/svg/ico_nav.svg');
+  /// File path: assets/svg/ico_menu_vertical.svg
+  SvgGenImage get icoMenuVertical =>
+      const SvgGenImage('assets/svg/ico_menu_vertical.svg');
 
-  /// File path: assets/svg/ico_nav_1.svg
-  SvgGenImage get icoNav1 => const SvgGenImage('assets/svg/ico_nav_1.svg');
+  /// File path: assets/svg/ico_my_page.svg
+  SvgGenImage get icoMyPage => const SvgGenImage('assets/svg/ico_my_page.svg');
 
-  /// File path: assets/svg/ico_nav_2.svg
-  SvgGenImage get icoNav2 => const SvgGenImage('assets/svg/ico_nav_2.svg');
+  /// File path: assets/svg/ico_profile_black.svg
+  SvgGenImage get icoProfileBlack =>
+      const SvgGenImage('assets/svg/ico_profile_black.svg');
 
-  /// File path: assets/svg/ico_nav_20x20.svg
-  SvgGenImage get icoNav20x20 =>
-      const SvgGenImage('assets/svg/ico_nav_20x20.svg');
-
-  /// File path: assets/svg/ico_nav_24x24.svg
-  SvgGenImage get icoNav24x24 =>
-      const SvgGenImage('assets/svg/ico_nav_24x24.svg');
-
-  /// File path: assets/svg/ico_nav_3.svg
-  SvgGenImage get icoNav3 => const SvgGenImage('assets/svg/ico_nav_3.svg');
-
-  /// File path: assets/svg/ico_nav_blue_gray_200.svg
-  SvgGenImage get icoNavBlueGray200 =>
-      const SvgGenImage('assets/svg/ico_nav_blue_gray_200.svg');
-
-  /// File path: assets/svg/ico_nav_blue_gray_200_20x20.svg
-  SvgGenImage get icoNavBlueGray20020x20 =>
-      const SvgGenImage('assets/svg/ico_nav_blue_gray_200_20x20.svg');
-
-  /// File path: assets/svg/ico_nav_gray_400.svg
-  SvgGenImage get icoNavGray400 =>
-      const SvgGenImage('assets/svg/ico_nav_gray_400.svg');
-
-  /// File path: assets/svg/ico_nav_gray_400_24x24.svg
-  SvgGenImage get icoNavGray40024x24 =>
-      const SvgGenImage('assets/svg/ico_nav_gray_400_24x24.svg');
-
-  /// File path: assets/svg/ico_nav_onprimary.svg
-  SvgGenImage get icoNavOnprimary =>
-      const SvgGenImage('assets/svg/ico_nav_onprimary.svg');
-
-  /// File path: assets/svg/ico_nav_onprimary_20x20.svg
-  SvgGenImage get icoNavOnprimary20x20 =>
-      const SvgGenImage('assets/svg/ico_nav_onprimary_20x20.svg');
-
-  /// File path: assets/svg/ico_nav_onprimary_24x24.svg
-  SvgGenImage get icoNavOnprimary24x24 =>
-      const SvgGenImage('assets/svg/ico_nav_onprimary_24x24.svg');
-
-  /// File path: assets/svg/ico_offer.svg
-  SvgGenImage get icoOffer => const SvgGenImage('assets/svg/ico_offer.svg');
-
-  /// File path: assets/svg/ico_overflowmenuvertical.svg
-  SvgGenImage get icoOverflowmenuvertical =>
-      const SvgGenImage('assets/svg/ico_overflowmenuvertical.svg');
+  /// File path: assets/svg/ico_profile_blue_gray.svg
+  SvgGenImage get icoProfileBlueGray =>
+      const SvgGenImage('assets/svg/ico_profile_blue_gray.svg');
 
   /// File path: assets/svg/ico_save.svg
   SvgGenImage get icoSave => const SvgGenImage('assets/svg/ico_save.svg');
@@ -408,71 +362,108 @@ class $AssetsSvgGen {
   /// File path: assets/svg/ico_send.svg
   SvgGenImage get icoSend => const SvgGenImage('assets/svg/ico_send.svg');
 
-  /// File path: assets/svg/ico_subdirectoryarrowright.svg
-  SvgGenImage get icoSubdirectoryarrowright =>
-      const SvgGenImage('assets/svg/ico_subdirectoryarrowright.svg');
+  /// File path: assets/svg/ico_smart_key.svg
+  SvgGenImage get icoSmartKey =>
+      const SvgGenImage('assets/svg/ico_smart_key.svg');
+
+  /// File path: assets/svg/ico_subdirectory_arrow_right.svg
+  SvgGenImage get icoSubdirectoryArrowRight =>
+      const SvgGenImage('assets/svg/ico_subdirectory_arrow_right.svg');
 
   /// File path: assets/svg/ico_taxi.svg
   SvgGenImage get icoTaxi => const SvgGenImage('assets/svg/ico_taxi.svg');
+
+  /// File path: assets/svg/ico_triangle.svg
+  SvgGenImage get icoTriangle =>
+      const SvgGenImage('assets/svg/ico_triangle.svg');
 
   /// File path: assets/svg/ico_unlocked.svg
   SvgGenImage get icoUnlocked =>
       const SvgGenImage('assets/svg/ico_unlocked.svg');
 
+  /// File path: assets/svg/img_friends.svg
+  SvgGenImage get imgFriends => const SvgGenImage('assets/svg/img_friends.svg');
+
+  /// File path: assets/svg/img_friends_ko.svg
+  SvgGenImage get imgFriendsKo =>
+      const SvgGenImage('assets/svg/img_friends_ko.svg');
+
+  /// File path: assets/svg/img_gooli.svg
+  SvgGenImage get imgGooli => const SvgGenImage('assets/svg/img_gooli.svg');
+
+  /// File path: assets/svg/img_gooli_cute.svg
+  SvgGenImage get imgGooliCute =>
+      const SvgGenImage('assets/svg/img_gooli_cute.svg');
+
+  /// File path: assets/svg/img_gooli_flag.svg
+  SvgGenImage get imgGooliFlag =>
+      const SvgGenImage('assets/svg/img_gooli_flag.svg');
+
+  /// File path: assets/svg/img_gooli_happy.svg
+  SvgGenImage get imgGooliHappy =>
+      const SvgGenImage('assets/svg/img_gooli_happy.svg');
+
+  /// File path: assets/svg/img_gooli_home.svg
+  SvgGenImage get imgGooliHome =>
+      const SvgGenImage('assets/svg/img_gooli_home.svg');
+
+  /// File path: assets/svg/img_ticket.svg
+  SvgGenImage get imgTicket => const SvgGenImage('assets/svg/img_ticket.svg');
+
+  /// File path: assets/svg/line.svg
+  SvgGenImage get line => const SvgGenImage('assets/svg/line.svg');
+
   /// List of all assets
   List<SvgGenImage> get values => [
-        icoAddphotoalternate,
-        icoArrowleft,
-        icoBluetooth,
+        icoAddPhoto,
+        icoApostrophe,
+        icoArrowLeft,
+        icoCalBlueGray,
+        icoCalOnPrimary,
+        icoCalRound,
         icoCamera,
         icoCampaign,
-        icoCaretdown,
-        icoCaretdownGray800,
+        icoCaretDown,
+        icoCaretDownGray,
+        icoChat,
+        icoChatBlueGray,
+        icoChatRound,
         icoCheck,
-        icoCheckcircle,
-        icoClear,
-        icoClose,
-        icoCloseGray700,
-        icoContactsupport,
+        icoCheckCircle,
+        icoCloseGray,
+        icoCloseRound,
+        icoContactSupport,
         icoEdit,
-        icoEditBlack900,
+        icoEditBlack,
         icoEyeCrossedOut,
-        icoFrame,
-        icoFrame19044,
-        icoFriends,
-        icoFriendsOnprimary,
         icoGlobe,
         icoGrid,
-        icoGroup,
         icoInformation,
-        icoLabeltext,
-        icoLayer2,
-        icoLightbulb,
-        icoLine45,
-        icoLocation,
-        icoLocationBlack900,
+        icoKeyRound,
+        icoKeySharpBlueGray,
+        icoKeySharpOnPrimary,
         icoLocked,
         icoMenu,
-        icoNav,
-        icoNav1,
-        icoNav2,
-        icoNav20x20,
-        icoNav24x24,
-        icoNav3,
-        icoNavBlueGray200,
-        icoNavBlueGray20020x20,
-        icoNavGray400,
-        icoNavGray40024x24,
-        icoNavOnprimary,
-        icoNavOnprimary20x20,
-        icoNavOnprimary24x24,
-        icoOffer,
-        icoOverflowmenuvertical,
+        icoMenuVertical,
+        icoMyPage,
+        icoProfileBlack,
+        icoProfileBlueGray,
         icoSave,
         icoSend,
-        icoSubdirectoryarrowright,
+        icoSmartKey,
+        icoSubdirectoryArrowRight,
         icoTaxi,
-        icoUnlocked
+        icoTriangle,
+        icoUnlocked,
+        imgFriends,
+        imgFriendsKo,
+        imgGooli,
+        imgGooliCute,
+        imgGooliFlag,
+        imgGooliHappy,
+        imgGooliHome,
+        imgTicket,
+        line
       ];
 }
 

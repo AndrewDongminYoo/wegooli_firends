@@ -2,13 +2,13 @@
 	renamed:    icoLabeltext -> icoApostrophe
 	renamed:    icoArrowleft -> icoArrowLeft
 	renamed:    icoNav -> icoCalBlueGray
-	renamed:    icoNavOnprimary24X24 -> icoCalOnPrimary
+	renamed:    icoNavOnprimary24x24 -> icoCalOnPrimary
 	renamed:    icoNavBlueGray200 -> icoCalRound
 	renamed:    icoCaretdown -> icoCaretDown
 	renamed:    icoCaretdownGray800 -> icoCaretDownGray
-	renamed:    icoNav24X24 -> icoChat
+	renamed:    icoNav24x24 -> icoChat
 	renamed:    icoNavGray400 -> icoChatBlueGray
-	renamed:    icoNavBlueGray20020X20 -> icoChatRound
+	renamed:    icoNavBlueGray20020x20 -> icoChatRound
 	renamed:    icoCheckcircle -> icoCheckCircle
 	renamed:    icoClear -> icoClearSharp
 	renamed:    icoCloseGray700 -> icoCloseGray
@@ -18,8 +18,8 @@
 	deleted:    icoFrame19044
 	deleted:    icoFriendsOnprimary
 	deleted:    icoGlobe
-	renamed:    icoNav20X20 -> icoKeyRound
-	renamed:    icoNavGray40024X24 -> icoKeySharpBlueGray
+	renamed:    icoNav20x20 -> icoKeyRound
+	renamed:    icoNavGray40024x24 -> icoKeySharpBlueGray
 	renamed:    icoNavOnprimary -> icoKeySharpOnPrimary
 	deleted:    icoLayer2
 	deleted:    icoLine45
@@ -27,7 +27,7 @@
 	renamed:    icoNav1 -> icoMyPage
 	renamed:    icoNav3 -> icoProfileBlack
 	renamed:    icoNav2 -> icoProfileBlueGray
-	renamed:    icoNavOnprimary20X20 -> icoSmartKey
+	renamed:    icoNavOnprimary20x20 -> icoSmartKey
 	renamed:    icoSubdirectoryarrowright -> icoSubdirectoryArrowRight
 	renamed:    icoBluetooth -> icoTriangle
 	renamed:    icoFriends -> imgFriends

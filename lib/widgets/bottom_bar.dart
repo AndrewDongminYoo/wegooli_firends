@@ -21,32 +21,32 @@ class CustomBottomBar extends StatelessWidget {
 
   List<BottomMenuModel> bottomMenuList = [
     BottomMenuModel(
-      icon: Assets.svg.icoNavOnprimary20x20.path,
-      activeIcon: Assets.svg.icoNavOnprimary20x20.path,
+      icon: Assets.svg.icoSmartKey.path,
+      activeIcon: Assets.svg.icoSmartKey.path,
       title: '홈',
       type: BottomBarEnum.tf,
     ),
     BottomMenuModel(
-      icon: Assets.svg.icoNavBlueGray200.path,
-      activeIcon: Assets.svg.icoNavBlueGray200.path,
+      icon: Assets.svg.icoCalRound.path,
+      activeIcon: Assets.svg.icoCalRound.path,
       title: '일정',
       type: BottomBarEnum.tf,
     ),
     BottomMenuModel(
-      icon: Assets.svg.icoNavBlueGray20020x20.path,
-      activeIcon: Assets.svg.icoNavBlueGray20020x20.path,
+      icon: Assets.svg.icoChatRound.path,
+      activeIcon: Assets.svg.icoChatRound.path,
       title: '채팅',
       type: BottomBarEnum.tf,
     ),
     BottomMenuModel(
-      icon: Assets.svg.icoNav20x20.path,
-      activeIcon: Assets.svg.icoNav20x20.path,
+      icon: Assets.svg.icoKeyRound.path,
+      activeIcon: Assets.svg.icoKeyRound.path,
       title: '스마트 키',
       type: BottomBarEnum.tf,
     ),
     BottomMenuModel(
-      icon: Assets.svg.icoNav1.path,
-      activeIcon: Assets.svg.icoNav1.path,
+      icon: Assets.svg.icoMyPage.path,
+      activeIcon: Assets.svg.icoMyPage.path,
       title: '마이페이지',
       type: BottomBarEnum.tf,
     )

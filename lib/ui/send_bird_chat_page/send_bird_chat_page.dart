@@ -34,7 +34,7 @@ class SendBirdChatPage extends StatelessWidget {
           height: 45.v,
           centerTitle: true,
           title: CustomImageView(
-            svgPath: Assets.svg.icoFriends.path,
+            svgPath: Assets.svg.imgFriends.path,
           ),
           styleType: Style.bgOutline_1,
         ),

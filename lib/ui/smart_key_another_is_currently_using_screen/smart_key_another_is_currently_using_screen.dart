@@ -29,7 +29,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
           height: 45.v,
           centerTitle: true,
           title: CustomImageView(
-            svgPath: Assets.svg.imgFriends.path,
+            svgPath: Assets.svg.icoFriends.path,
           ),
           styleType: Style.bgOutline,
         ),
@@ -79,7 +79,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                         CrossAxisAlignment.start,
                                     children: [
                                       CustomImageView(
-                                        svgPath: Assets.svg.imgFrame19044.path,
+                                        svgPath: Assets.svg.icoFrame19044.path,
                                         height: 24.adaptSize,
                                         width: 24.adaptSize,
                                       ),
@@ -94,7 +94,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                         ),
                                       ),
                                       CustomImageView(
-                                        svgPath: Assets.svg.imgArrowleft.path,
+                                        svgPath: Assets.svg.icoArrowleft.path,
                                         height: 18.adaptSize,
                                         width: 18.adaptSize,
                                         margin: EdgeInsets.only(
@@ -155,7 +155,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                       ),
                       SizedBox(height: 22.v),
                       CustomImageView(
-                        svgPath: Assets.svg.imgTaxi.path,
+                        svgPath: Assets.svg.icoTaxi.path,
                         height: 26.adaptSize,
                         width: 26.adaptSize,
                         alignment: Alignment.centerRight,
@@ -317,7 +317,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                                       children: [
                                                         CustomImageView(
                                                           svgPath: Assets.svg
-                                                              .imgUnlocked.path,
+                                                              .icoUnlocked.path,
                                                           height: 46.adaptSize,
                                                           width: 46.adaptSize,
                                                         ),
@@ -396,7 +396,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                                       children: [
                                                         CustomImageView(
                                                           svgPath: Assets.svg
-                                                              .imgLocked.path,
+                                                              .icoLocked.path,
                                                           height: 46.adaptSize,
                                                           width: 46.adaptSize,
                                                         ),
@@ -487,7 +487,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                                         CustomImageView(
                                                           svgPath: Assets
                                                               .svg
-                                                              .imgBluetooth
+                                                              .icoBluetooth
                                                               .path,
                                                           height: 37.v,
                                                           width: 46.h,
@@ -545,7 +545,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                                 children: [
                                                   CustomImageView(
                                                     svgPath: Assets
-                                                        .svg.imgCampaign.path,
+                                                        .svg.icoCampaign.path,
                                                     height: 46.adaptSize,
                                                     width: 46.adaptSize,
                                                   ),
@@ -628,7 +628,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen
                                               MainAxisAlignment.center,
                                           children: [
                                             CustomImageView(
-                                              svgPath: Assets.svg.imgEdit.path,
+                                              svgPath: Assets.svg.icoEdit.path,
                                               height: 30.adaptSize,
                                               width: 30.adaptSize,
                                             ),

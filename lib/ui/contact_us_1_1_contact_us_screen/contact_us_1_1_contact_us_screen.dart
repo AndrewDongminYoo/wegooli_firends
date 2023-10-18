@@ -30,7 +30,7 @@ class ContactUs11ContactUsScreen
         appBar: CustomAppBar(
             leadingWidth: 34.h,
             leading: CustomImageView(
-              svgPath: Assets.svg.imgArrowleft.path,
+              svgPath: Assets.svg.icoArrowleft.path,
               margin: EdgeInsets.only(left: 16.h, top: 19.v, bottom: 18.v),
               onTap: Get.back,
             ),
@@ -54,7 +54,7 @@ class ContactUs11ContactUsScreen
                                     EdgeInsets.fromLTRB(30.h, 12.v, 10.h, 12.v),
                                 child: CustomImageView(
                                     svgPath:
-                                        Assets.svg.imgCaretdownGray800.path)),
+                                        Assets.svg.icoCaretdownGray800.path)),
                             margin: EdgeInsets.only(right: 16.h),
                             hintText: '문의 유형을 선택해주세요.',
                             hintStyle: textTheme.bodyLarge!.copyWith(

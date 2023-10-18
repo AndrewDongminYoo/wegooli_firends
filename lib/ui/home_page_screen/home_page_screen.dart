@@ -28,7 +28,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
           height: 45.v,
           leadingWidth: 64.h,
           leading: CustomImageView(
-            svgPath: Assets.svg.imgLocation.path,
+            svgPath: Assets.svg.icoLocation.path,
             margin: EdgeInsets.only(
               left: 15.h,
               top: 13.v,
@@ -37,7 +37,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
           ),
           actions: [
             CustomImageView(
-              svgPath: Assets.svg.imgMenu.path,
+              svgPath: Assets.svg.icoMenu.path,
               margin: EdgeInsets.fromLTRB(9.h, 13.v, 9.h, 12.v),
             ),
           ],
@@ -96,7 +96,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                         alignment: Alignment.bottomRight,
                         children: [
                           CustomImageView(
-                            svgPath: Assets.svg.imgOffer.path,
+                            svgPath: Assets.svg.icoOffer.path,
                             height: 59.v,
                             width: 89.h,
                             alignment: Alignment.topLeft,
@@ -177,7 +177,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                           ),
                           SizedBox(height: 34.v),
                           CustomImageView(
-                            svgPath: Assets.svg.imgLocationBlack900.path,
+                            svgPath: Assets.svg.icoLocationBlack900.path,
                             height: 77.v,
                             width: 84.h,
                             alignment: Alignment.centerRight,
@@ -283,7 +283,7 @@ class HomePageScreen extends GetWidget<HomePageController> {
                       ),
                     ),
                     CustomImageView(
-                      svgPath: Assets.svg.imgGroup.path,
+                      svgPath: Assets.svg.icoGroup.path,
                       height: 58.v,
                       width: 119.h,
                       margin: EdgeInsets.only(

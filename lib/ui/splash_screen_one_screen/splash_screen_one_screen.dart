@@ -51,7 +51,7 @@ class SplashScreenOneScreen extends GetWidget<SplashScreenOneController> {
                       child: Column(
                         children: [
                           CustomImageView(
-                            svgPath: Assets.svg.imgFriendsOnprimary.path,
+                            svgPath: Assets.svg.icoFriendsOnprimary.path,
                             height: 33.v,
                             width: 172.h,
                           ),

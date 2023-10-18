@@ -25,7 +25,7 @@ class CardListScreen extends GetWidget<CardListController> {
         appBar: CustomAppBar(
             leadingWidth: 34.h,
             leading: CustomImageView(
-              svgPath: Assets.svg.imgArrowleft.path,
+              svgPath: Assets.svg.icoArrowleft.path,
               margin: EdgeInsets.only(left: 16.h, top: 19.v, bottom: 18.v),
               onTap: Get.back,
             ),
@@ -52,7 +52,7 @@ class CardListScreen extends GetWidget<CardListController> {
                               controller.radioGroup.value = value;
                             })),
                         CustomImageView(
-                            svgPath: Assets.svg.imgCloseGray700.path,
+                            svgPath: Assets.svg.icoCloseGray700.path,
                             height: 18.adaptSize,
                             width: 18.adaptSize)
                       ],
@@ -71,7 +71,7 @@ class CardListScreen extends GetWidget<CardListController> {
                               controller.radioGroup1.value = value;
                             })),
                         CustomImageView(
-                            svgPath: Assets.svg.imgCloseGray700.path,
+                            svgPath: Assets.svg.icoCloseGray700.path,
                             height: 18.adaptSize,
                             width: 18.adaptSize)
                       ],

@@ -27,7 +27,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
           height: 45.v,
           centerTitle: true,
           title: CustomImageView(
-            svgPath: Assets.svg.imgFriends.path,
+            svgPath: Assets.svg.icoFriends.path,
           ),
           styleType: Style.bgOutline,
         ),
@@ -79,7 +79,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         CustomImageView(
-                                          svgPath: Assets.svg.imgSave.path,
+                                          svgPath: Assets.svg.icoSave.path,
                                           height: 26.adaptSize,
                                           width: 26.adaptSize,
                                         ),
@@ -94,7 +94,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                                           ),
                                         ),
                                         CustomImageView(
-                                          svgPath: Assets.svg.imgArrowleft.path,
+                                          svgPath: Assets.svg.icoArrowleft.path,
                                           height: 18.adaptSize,
                                           width: 18.adaptSize,
                                           margin: EdgeInsets.only(
@@ -239,7 +239,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                                           children: [
                                             CustomImageView(
                                               svgPath:
-                                                  Assets.svg.imgUnlocked.path,
+                                                  Assets.svg.icoUnlocked.path,
                                               height: 46.adaptSize,
                                               width: 46.adaptSize,
                                             ),
@@ -309,7 +309,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                                           children: [
                                             CustomImageView(
                                               svgPath:
-                                                  Assets.svg.imgLocked.path,
+                                                  Assets.svg.icoLocked.path,
                                               height: 46.adaptSize,
                                               width: 46.adaptSize,
                                             ),
@@ -390,7 +390,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                                           children: [
                                             CustomImageView(
                                               svgPath:
-                                                  Assets.svg.imgBluetooth.path,
+                                                  Assets.svg.icoBluetooth.path,
                                               height: 37.v,
                                               width: 46.h,
                                             ),
@@ -442,7 +442,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       CustomImageView(
-                                        svgPath: Assets.svg.imgCampaign.path,
+                                        svgPath: Assets.svg.icoCampaign.path,
                                         height: 46.adaptSize,
                                         width: 46.adaptSize,
                                       ),
@@ -490,7 +490,7 @@ class SmartKeyScreen extends GetWidget<SmartKeyController> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 CustomImageView(
-                                  svgPath: Assets.svg.imgEdit.path,
+                                  svgPath: Assets.svg.icoEdit.path,
                                   height: 30.adaptSize,
                                   width: 30.adaptSize,
                                 ),

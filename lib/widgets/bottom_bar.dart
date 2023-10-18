@@ -21,32 +21,32 @@ class CustomBottomBar extends StatelessWidget {
 
   List<BottomMenuModel> bottomMenuList = [
     BottomMenuModel(
-      icon: Assets.svg.imgNavOnprimary20x20.path,
-      activeIcon: Assets.svg.imgNavOnprimary20x20.path,
+      icon: Assets.svg.icoNavOnprimary20x20.path,
+      activeIcon: Assets.svg.icoNavOnprimary20x20.path,
       title: '홈',
       type: BottomBarEnum.tf,
     ),
     BottomMenuModel(
-      icon: Assets.svg.imgNavBlueGray200.path,
-      activeIcon: Assets.svg.imgNavBlueGray200.path,
+      icon: Assets.svg.icoNavBlueGray200.path,
+      activeIcon: Assets.svg.icoNavBlueGray200.path,
       title: '일정',
       type: BottomBarEnum.tf,
     ),
     BottomMenuModel(
-      icon: Assets.svg.imgNavBlueGray20020x20.path,
-      activeIcon: Assets.svg.imgNavBlueGray20020x20.path,
+      icon: Assets.svg.icoNavBlueGray20020x20.path,
+      activeIcon: Assets.svg.icoNavBlueGray20020x20.path,
       title: '채팅',
       type: BottomBarEnum.tf,
     ),
     BottomMenuModel(
-      icon: Assets.svg.imgNav20x20.path,
-      activeIcon: Assets.svg.imgNav20x20.path,
+      icon: Assets.svg.icoNav20x20.path,
+      activeIcon: Assets.svg.icoNav20x20.path,
       title: '스마트 키',
       type: BottomBarEnum.tf,
     ),
     BottomMenuModel(
-      icon: Assets.svg.imgNav1.path,
-      activeIcon: Assets.svg.imgNav1.path,
+      icon: Assets.svg.icoNav1.path,
+      activeIcon: Assets.svg.icoNav1.path,
       title: '마이페이지',
       type: BottomBarEnum.tf,
     )

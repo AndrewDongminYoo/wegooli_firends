@@ -34,7 +34,7 @@ class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CustomImageView(
-              svgPath: Assets.svg.imgClose.path,
+              svgPath: Assets.svg.icoClose.path,
               height: 15.adaptSize,
               width: 15.adaptSize,
               alignment: Alignment.centerRight,
@@ -95,7 +95,7 @@ class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
                                 Text('8/16 (수) 15:20 ~ 8/17(목) 14:00',
                                     style: theme.textTheme.bodyLarge),
                                 CustomImageView(
-                                    svgPath: Assets.svg.imgArrowleft.path,
+                                    svgPath: Assets.svg.icoArrowleft.path,
                                     height: 18.adaptSize,
                                     width: 18.adaptSize,
                                     margin: EdgeInsets.only(
@@ -114,7 +114,7 @@ class SchedulesViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
                                   Text('8/16 (수) 15:20 ~ 8/17(목) 14:00',
                                       style: theme.textTheme.bodyLarge),
                                   CustomImageView(
-                                      svgPath: Assets.svg.imgArrowleft.path,
+                                      svgPath: Assets.svg.icoArrowleft.path,
                                       height: 18.adaptSize,
                                       width: 18.adaptSize,
                                       margin: EdgeInsets.only(

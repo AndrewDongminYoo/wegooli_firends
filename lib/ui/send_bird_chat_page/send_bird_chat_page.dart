@@ -34,7 +34,7 @@ class SendBirdChatPage extends StatelessWidget {
           height: 45.v,
           centerTitle: true,
           title: CustomImageView(
-            svgPath: Assets.svg.imgFriends.path,
+            svgPath: Assets.svg.icoFriends.path,
           ),
           styleType: Style.bgOutline_1,
         ),
@@ -310,7 +310,7 @@ class SendBirdChatPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       CustomImageView(
-                        svgPath: Assets.svg.imgCamera.path,
+                        svgPath: Assets.svg.icoCamera.path,
                         height: 24.adaptSize,
                         width: 24.adaptSize,
                         margin: EdgeInsets.symmetric(vertical: 6.v),
@@ -335,7 +335,7 @@ class SendBirdChatPage extends StatelessWidget {
                         ),
                       ),
                       CustomImageView(
-                        svgPath: Assets.svg.imgSend.path,
+                        svgPath: Assets.svg.icoSend.path,
                         height: 22.v,
                         width: 24.h,
                         margin: EdgeInsets.only(

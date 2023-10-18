@@ -29,7 +29,7 @@ class IdentityVerificationFilledScreen
             height: 50.v,
             leadingWidth: 34.h,
             leading: CustomImageView(
-              svgPath: Assets.svg.imgArrowleft.path,
+              svgPath: Assets.svg.icoArrowleft.path,
               margin: EdgeInsets.only(left: 16.h, top: 16.v, bottom: 16.v),
               onTap: Get.back,
             ),
@@ -82,37 +82,37 @@ class IdentityVerificationFilledScreen
                             padding: EdgeInsets.only(left: 10.h),
                             child: Text('2', style: textTheme.bodyLarge)),
                         CustomImageView(
-                            svgPath: Assets.svg.imgGlobe.path,
+                            svgPath: Assets.svg.icoGlobe.path,
                             height: 7.adaptSize,
                             width: 7.adaptSize,
                             margin: EdgeInsets.only(
                                 left: 9.h, top: 6.v, bottom: 6.v)),
                         CustomImageView(
-                            svgPath: Assets.svg.imgGlobe.path,
+                            svgPath: Assets.svg.icoGlobe.path,
                             height: 7.adaptSize,
                             width: 7.adaptSize,
                             margin: EdgeInsets.only(
                                 left: 4.h, top: 6.v, bottom: 6.v)),
                         CustomImageView(
-                            svgPath: Assets.svg.imgGlobe.path,
+                            svgPath: Assets.svg.icoGlobe.path,
                             height: 7.adaptSize,
                             width: 7.adaptSize,
                             margin: EdgeInsets.only(
                                 left: 4.h, top: 6.v, bottom: 6.v)),
                         CustomImageView(
-                            svgPath: Assets.svg.imgGlobe.path,
+                            svgPath: Assets.svg.icoGlobe.path,
                             height: 7.adaptSize,
                             width: 7.adaptSize,
                             margin: EdgeInsets.only(
                                 left: 4.h, top: 6.v, bottom: 6.v)),
                         CustomImageView(
-                            svgPath: Assets.svg.imgGlobe.path,
+                            svgPath: Assets.svg.icoGlobe.path,
                             height: 7.adaptSize,
                             width: 7.adaptSize,
                             margin: EdgeInsets.only(
                                 left: 4.h, top: 6.v, bottom: 6.v)),
                         CustomImageView(
-                            svgPath: Assets.svg.imgGlobe.path,
+                            svgPath: Assets.svg.icoGlobe.path,
                             height: 7.adaptSize,
                             width: 7.adaptSize,
                             margin: EdgeInsets.fromLTRB(4.h, 6.v, 70.h, 6.v))

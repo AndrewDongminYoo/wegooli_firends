@@ -1,66 +1,74 @@
+// 🎯 Dart imports:
+import 'dart:async';
+
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 // 📦 Package imports:
 import 'package:catcher_2/catcher_2.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:get/get.dart';
-import 'package:get/route_manager.dart';
+import 'package:intl/date_symbol_data_local.dart';
 
 // 🌎 Project imports:
-import '/core/utils/initial_bindings.dart';
-import '/core/utils/logger.dart';
-import '/routes/app_routes.dart';
-import '/theme/theme_helper.dart';
-import 'l10n/app_localizations.dart';
+import '/app/my_app.dart';
+import '/firebase_options.dart';
 
-const Locale locale = Locale('ko');
+/// Firebase 로컬 에뮬레이터가 로컬에서 실행 중이어야 합니다.
+/// See https://firebase.flutter.dev/docs/auth/start/#optional-prototype-and-test-with-firebase-local-emulator-suite
+bool shouldUseFirebaseEmulator = false;
 
-GlobalKey<ScaffoldMessengerState> globalMessengerKey =
-    GlobalKey<ScaffoldMessengerState>();
-void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,
-  ]).then((value) {
-    runApp(const MyApp());
-  });
-}
+late final FirebaseApp app;
+late final FirebaseAuth auth;
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+Future<void> main() async {
+  final widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 
-  /// 애플리케이션 전체에서 페이지 탐색 이벤트를 수신하는 데 사용할 수 있는 공유 [RouteObserver]
-  static final rootObserver = RouteObserver<PageRoute>();
+  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+  await initializeDateFormatting('ko');
 
-  @override
-  Widget build(BuildContext context) {
-    FlutterNativeSplash.remove();
-    return GetMaterialApp(
-      title: '위굴리 프렌즈',
-      navigatorKey: Catcher2.navigatorKey,
-      debugShowCheckedModeBanner: false,
-      theme: theme,
-      builder: (BuildContext context, Widget? widget) {
-        Catcher2.addDefaultErrorWidget(
-          title: 'Error 👾',
-          description: 'Unexpected Error 😱',
-          showStacktrace: false,
-        );
-        return widget ?? const CircularProgressIndicator();
-      },
-      defaultTransition: Transition.cupertino,
-      locale: locale,
-      fallbackLocale: Get.deviceLocale,
-      supportedLocales: Localized.supportedLocales,
-      localizationsDelegates: Localized.localizationsDelegates,
-      initialBinding: InitialBindings(),
-      logWriterCallback: (String text, {bool isError = false}) =>
-          isError ? logger.e(text) : logger.d(text),
-      navigatorObservers: [rootObserver],
-      initialRoute: initialRoute,
-      getPages: AppRoutes.pages,
-    );
-  }
+  // 플러그인의 Google 로그인 기능은 아직 DART에서 초기 설정을 지원하지 않기 때문에 WEB가 아닌 플랫폼에서는 수동 설치를 사용하고 있습니다.
+  // 관련 문제를 참조하십시오 : https://github.com/flutter/flutter/issues/96391
+  // 앱과 인증을 저장하여 이름이 지정된 인스턴스로 테스트를보다 쉽게 테스트 할 수 있습니다.
+  // firebase_options.dart 파일 생성 원할 시 `flutterfire configure` 실행
+  app = await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform);
+
+  /// 지정된 [FirebaseApp]을 사용하여 인스턴스를 반환합니다.
+  /// 지속성(persistence)은 웹에서만 사용할 수 있으며 다른 플랫폼에서는 지원되지 않습니다.
+  auth = FirebaseAuth.instanceFor(app: app);
+
+  /// 대화 상자 보고서 모드와 콘솔 핸들러로 구성을 디버그합니다.
+  /// 대화 상자가 표시되고 사용자가 이를 수락하면 콘솔에 오류가 표시됩니다.
+  final debugOptions = Catcher2Options(
+    SilentReportMode(),
+    [
+      ConsoleHandler(
+        enableDeviceParameters: false,
+        enableApplicationParameters: false,
+        handleWhenRejected: true,
+      ),
+    ],
+  );
+
+  /// 구성을 릴리스합니다.
+  /// 위와 동일하지만 사용자가 대화 상자를 수락하면 지원팀에 크래시를 포함한 이메일을 보내라는 메시지가 표시됩니다.
+  final releaseOptions = Catcher2Options(
+    DialogReportMode(),
+    [
+      EmailManualHandler(
+        ['ydm2790@gmail.com'],
+      )
+    ],
+  );
+
+  /// 루트 위젯([MyApp])을 캐쳐 구성과 함께 전달합니다.
+  Catcher2(
+    rootWidget: const MyApp(),
+    debugConfig: debugOptions,
+    releaseConfig: releaseOptions,
+  );
 }

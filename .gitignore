@@ -32,6 +32,7 @@ render.experimental.xml
 *.keystore
 
 # Google Services (e.g. APIs or Firebase)
+firebase_options.dart
 google-services.json
 
 # Android Profiling

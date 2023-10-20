@@ -16,10 +16,10 @@ import 'controller/notices_one_controller.dart';
 
 class NoticesOneScreen extends GetWidget<NoticesOneController> {
   const NoticesOneScreen({Key? key}) : super(key: key);
+  static const routeName = '/notices_1';
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
     return SafeArea(
       child: Scaffold(
         appBar: CustomAppBar(

@@ -15,14 +15,13 @@ import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/image_view.dart';
 import 'controller/contact_us_inquiry_history_expanded_tab_container_controller.dart';
 
-class ContactUsInquiryHistoryExpandedTabContainerScreen
-    extends GetWidget<ContactUsInquiryHistoryExpandedTabContainerController> {
-  const ContactUsInquiryHistoryExpandedTabContainerScreen({Key? key})
-      : super(key: key);
+class ContactUsInquiryHistoryScreen
+    extends GetWidget<ContactUsInquiryHistoryController> {
+  const ContactUsInquiryHistoryScreen({Key? key}) : super(key: key);
+  static const routeName = '/contact_us/history';
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
     return SafeArea(
       child: Scaffold(
         appBar: CustomAppBar(

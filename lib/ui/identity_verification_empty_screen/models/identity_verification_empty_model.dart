@@ -1,1 +1,1 @@
-class IdentityVerificationEmptyModel {}
+class VerificationEmptyModel {}

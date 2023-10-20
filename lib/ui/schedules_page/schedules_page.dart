@@ -19,14 +19,13 @@ import 'models/schedules_model.dart';
 // ignore: must_be_immutable
 class SchedulesPage extends StatelessWidget {
   SchedulesPage({Key? key}) : super(key: key);
+  static const routeName = '/schedules';
 
   SchedulesController controller =
       Get.put(SchedulesController(SchedulesModel().obs));
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
-
     return SafeArea(
       child: Scaffold(
         appBar: CustomAppBar(

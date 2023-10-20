@@ -18,10 +18,10 @@ import 'controller/personal_info_form_zip_code_controller.dart';
 class PersonalInfoFormZipCodeScreen
     extends GetWidget<PersonalInfoFormZipCodeController> {
   const PersonalInfoFormZipCodeScreen({Key? key}) : super(key: key);
+  static const routeName = '/form_zip_code';
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,

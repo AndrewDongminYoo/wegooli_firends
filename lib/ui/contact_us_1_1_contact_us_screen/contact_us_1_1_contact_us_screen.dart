@@ -17,13 +17,12 @@ import '/widgets/image_view.dart';
 import '/widgets/text_form_field.dart';
 import 'controller/contact_us_1_1_contact_us_controller.dart';
 
-class ContactUs11ContactUsScreen
-    extends GetWidget<ContactUs11ContactUsController> {
-  const ContactUs11ContactUsScreen({Key? key}) : super(key: key);
+class OneOnOneScreen extends GetWidget<OneOnOneController> {
+  const OneOnOneScreen({Key? key}) : super(key: key);
+  static const routeName = '/route_name';
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,

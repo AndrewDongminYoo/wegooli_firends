@@ -19,14 +19,13 @@ import 'models/send_bird_chat_model.dart';
 // ignore: must_be_immutable
 class SendBirdChatPage extends StatelessWidget {
   SendBirdChatPage({Key? key}) : super(key: key);
+  static const routeName = '/send_bird_chat';
 
   SendBirdChatController controller =
       Get.put(SendBirdChatController(SendBirdChatModel().obs));
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
-
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,

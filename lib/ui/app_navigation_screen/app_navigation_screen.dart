@@ -6,7 +6,6 @@ import 'package:get/get.dart';
 
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
-import '/routes/app_routes.dart';
 import '/theme/theme_helper.dart';
 import '/ui/appointment_all_collapsed_bottomsheet/appointment_all_collapsed_bottomsheet.dart';
 import '/ui/appointment_all_collapsed_bottomsheet/controller/appointment_all_collapsed_controller.dart';
@@ -14,25 +13,54 @@ import '/ui/appointment_end_expanded_bottomsheet/appointment_end_expanded_bottom
 import '/ui/appointment_end_expanded_bottomsheet/controller/appointment_end_expanded_controller.dart';
 import '/ui/appointment_start_expanded_bottomsheet/appointment_start_expanded_bottomsheet.dart';
 import '/ui/appointment_start_expanded_bottomsheet/controller/appointment_start_expanded_controller.dart';
+import '/ui/card_list_screen/card_list_screen.dart';
+import '/ui/card_register_screen/card_register_screen.dart';
+import '/ui/contact_us_1_1_contact_us_screen/contact_us_1_1_contact_us_screen.dart';
+import '/ui/contact_us_empty_history_screen/contact_us_empty_history_screen.dart';
+import '/ui/contact_us_inquiry_history_expanded_tab_container_screen/contact_us_inquiry_history_expanded_tab_container_screen.dart';
+import '/ui/expiring_subscriptions_screen/expiring_subscriptions_screen.dart';
+import '/ui/home_page_screen/home_page_screen.dart';
+import '/ui/identity_verification_empty_screen/identity_verification_empty_screen.dart';
+import '/ui/identity_verification_filled_screen/identity_verification_filled_screen.dart';
+import '/ui/identity_verification_terms_bottomsheet_screen/identity_verification_terms_bottomsheet_screen.dart';
+import '/ui/identity_verification_waiting_screen/identity_verification_waiting_screen.dart';
+import '/ui/license_register_screen/license_register_screen.dart';
+import '/ui/my_page_screen/my_page_screen.dart';
+import '/ui/notices_no_notice_screen/notices_no_notice_screen.dart';
+import '/ui/notices_one_screen/notices_one_screen.dart';
+import '/ui/notices_screen/notices_screen.dart';
+import '/ui/personal_info_form_zip_code_screen/personal_info_form_zip_code_screen.dart';
+import '/ui/schedules_container_screen/schedules_container_screen.dart';
 import '/ui/schedules_send_invitation_leader_only_dialog/controller/schedules_send_invitation_leader_only_controller.dart';
 import '/ui/schedules_send_invitation_leader_only_dialog/schedules_send_invitation_leader_only_dialog.dart';
+import '/ui/schedules_team_is_full_screen/schedules_team_is_full_screen.dart';
+import '/ui/schedules_team_is_not_full_screen/schedules_team_is_not_full_screen.dart';
 import '/ui/schedules_view_scheduled_date_scheduler_only_dialog/controller/schedules_view_scheduled_date_scheduler_only_controller.dart';
 import '/ui/schedules_view_scheduled_date_scheduler_only_dialog/schedules_view_scheduled_date_scheduler_only_dialog.dart';
 import '/ui/schedules_view_scheduled_date_scheduler_only_expanded_dialog/controller/schedules_view_scheduled_date_scheduler_only_expanded_controller.dart';
 import '/ui/schedules_view_scheduled_date_scheduler_only_expanded_dialog/schedules_view_scheduled_date_scheduler_only_expanded_dialog.dart';
 import '/ui/send_invitation_leader_only_dialog/controller/send_invitation_leader_only_controller.dart';
 import '/ui/send_invitation_leader_only_dialog/send_invitation_leader_only_dialog.dart';
+import '/ui/signin_page_screen/signin_page_screen.dart';
+import '/ui/signup_complete_screen/signup_complete_screen.dart';
+import '/ui/smart_key_another_is_currently_using_screen/smart_key_another_is_currently_using_screen.dart';
+import '/ui/smart_key_screen/smart_key_screen.dart';
+import '/ui/splash_screen_one_screen/splash_screen_one_screen.dart';
+import '/ui/splash_screen_two_screen/splash_screen_two_screen.dart';
+import '/ui/subscribe_info_no_subscription_screen/subscribe_info_no_subscription_screen.dart';
+import '/ui/subscribe_info_screen/subscribe_info_screen.dart';
 import '/ui/unsubscribe_confirm_dialog/controller/unsubscribe_confirm_controller.dart';
 import '/ui/unsubscribe_confirm_dialog/unsubscribe_confirm_dialog.dart';
+import '/ui/unsubscribe_screen/unsubscribe_screen.dart';
 import '/ui/view_scheduled_date_scheduler_only_dialog/controller/view_scheduled_date_scheduler_only_controller.dart';
 import '/ui/view_scheduled_date_scheduler_only_dialog/view_scheduled_date_scheduler_only_dialog.dart';
 
 class AppNavigationScreen extends StatelessWidget {
   const AppNavigationScreen({Key? key}) : super(key: key);
+  static const routeName = '/app_navigation';
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
     return SafeArea(
       child: Scaffold(
         backgroundColor: lightTheme.onSecondary,
@@ -93,7 +121,7 @@ class AppNavigationScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         GestureDetector(
-                          onTap: onTapIdentityVerificationWaiting,
+                          onTap: onTapVerificationWaiting,
                           child: Container(
                             decoration: BoxDecoration(
                               color: lightTheme.onSecondary,
@@ -535,7 +563,7 @@ class AppNavigationScreen extends StatelessWidget {
                           ),
                         ),
                         GestureDetector(
-                          onTap: onTapIdentityVerificationTermsBottomSheet,
+                          onTap: onTapVerificationTermsBottomSheet,
                           child: Container(
                             decoration: BoxDecoration(
                               color: lightTheme.onSecondary,
@@ -569,7 +597,7 @@ class AppNavigationScreen extends StatelessWidget {
                           ),
                         ),
                         GestureDetector(
-                          onTap: onTapIdentityVerificationEmpty,
+                          onTap: onTapVerificationEmpty,
                           child: Container(
                             decoration: BoxDecoration(
                               color: lightTheme.onSecondary,
@@ -603,7 +631,7 @@ class AppNavigationScreen extends StatelessWidget {
                           ),
                         ),
                         GestureDetector(
-                          onTap: onTapIdentityVerificationFilled,
+                          onTap: onTapVerificationFilled,
                           child: Container(
                             decoration: BoxDecoration(
                               color: lightTheme.onSecondary,
@@ -753,74 +781,6 @@ class AppNavigationScreen extends StatelessWidget {
                                         horizontal: 20.h, vertical: 10.v),
                                     child: Text(
                                       'License Register',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20.fSize,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: 5.v),
-                                Divider(
-                                    height: 1.v,
-                                    thickness: 1.v,
-                                    color: const Color(0xFF888888))
-                              ],
-                            ),
-                          ),
-                        ),
-                        GestureDetector(
-                          onTap: onTapIdentityVerificationFilledwithTelecom,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: lightTheme.onSecondary,
-                            ),
-                            child: Column(
-                              children: [
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20.h, vertical: 10.v),
-                                    child: Text(
-                                      'Verification / Filled Telecom',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20.fSize,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: 5.v),
-                                Divider(
-                                    height: 1.v,
-                                    thickness: 1.v,
-                                    color: const Color(0xFF888888))
-                              ],
-                            ),
-                          ),
-                        ),
-                        GestureDetector(
-                          onTap: onTapIdentityVerificationWaitingwithTelecom,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: lightTheme.onSecondary,
-                            ),
-                            child: Column(
-                              children: [
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20.h, vertical: 10.v),
-                                    child: Text(
-                                      'Verification / Waiting',
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
                                         color: Colors.black,
@@ -1250,8 +1210,7 @@ class AppNavigationScreen extends StatelessWidget {
                           ),
                         ),
                         GestureDetector(
-                          onTap:
-                              onTapContactUsInquiryHistoryExpandedTabContainer,
+                          onTap: onTapContactUsInquiryHistory,
                           child: Container(
                             decoration: BoxDecoration(
                               color: lightTheme.onSecondary,
@@ -1387,7 +1346,7 @@ class AppNavigationScreen extends StatelessWidget {
                           ),
                         ),
                         GestureDetector(
-                          onTap: onTapContactUs11ContactUs,
+                          onTap: onTapOneOnOne,
                           child: Container(
                             decoration: BoxDecoration(
                               color: lightTheme.onSecondary,
@@ -1470,9 +1429,9 @@ class AppNavigationScreen extends StatelessWidget {
 
   /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the identityVerificationWaitingScreen.
-  void onTapIdentityVerificationWaiting() {
+  void onTapVerificationWaiting() {
     Get.toNamed(
-      AppRoutes.identityVerificationWaitingScreen,
+      VerificationWaitingScreen.routeName,
     );
   }
 
@@ -1590,7 +1549,7 @@ class AppNavigationScreen extends StatelessWidget {
   /// push the named route for the signupCompleteScreen.
   void onTapSignUpComplete() {
     Get.toNamed(
-      AppRoutes.signupCompleteScreen,
+      SignupCompleteScreen.routeName,
     );
   }
 
@@ -1600,7 +1559,7 @@ class AppNavigationScreen extends StatelessWidget {
   /// push the named route for the noticesOneScreen.
   void onTapNoticesOne() {
     Get.toNamed(
-      AppRoutes.noticesOneScreen,
+      NoticesOneScreen.routeName,
     );
   }
 
@@ -1610,7 +1569,7 @@ class AppNavigationScreen extends StatelessWidget {
   /// push the named route for the noticesNoNoticeScreen.
   void onTapNoticesNoNotice() {
     Get.toNamed(
-      AppRoutes.noticesNoNoticeScreen,
+      EmptyNoticeScreen.routeName,
     );
   }
 
@@ -1620,7 +1579,7 @@ class AppNavigationScreen extends StatelessWidget {
   /// push the named route for the schedulesContainerScreen.
   void onTapSchedulesContainer() {
     Get.toNamed(
-      AppRoutes.schedulesContainerScreen,
+      SchedulesContainerScreen.routeName,
     );
   }
 
@@ -1648,7 +1607,7 @@ class AppNavigationScreen extends StatelessWidget {
   /// push the named route for the signinPageScreen.
   void onTapSignInPage() {
     Get.toNamed(
-      AppRoutes.signinPageScreen,
+      SigninPageScreen.routeName,
     );
   }
 
@@ -1656,9 +1615,9 @@ class AppNavigationScreen extends StatelessWidget {
 
   /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the identityVerificationTermsBottomsheetScreen.
-  void onTapIdentityVerificationTermsBottomSheet() {
+  void onTapVerificationTermsBottomSheet() {
     Get.toNamed(
-      AppRoutes.identityVerificationTermsBottomsheetScreen,
+      TermsBottomsheet.routeName,
     );
   }
 
@@ -1666,9 +1625,9 @@ class AppNavigationScreen extends StatelessWidget {
 
   /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the identityVerificationEmptyScreen.
-  void onTapIdentityVerificationEmpty() {
+  void onTapVerificationEmpty() {
     Get.toNamed(
-      AppRoutes.identityVerificationEmptyScreen,
+      VerificationEmptyScreen.routeName,
     );
   }
 
@@ -1676,9 +1635,9 @@ class AppNavigationScreen extends StatelessWidget {
 
   /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the identityVerificationFilledScreen.
-  void onTapIdentityVerificationFilled() {
+  void onTapVerificationFilled() {
     Get.toNamed(
-      AppRoutes.identityVerificationFilledScreen,
+      VerificationFilledScreen.routeName,
     );
   }
 
@@ -1688,7 +1647,7 @@ class AppNavigationScreen extends StatelessWidget {
   /// push the named route for the personalInfoFormZipCodeScreen.
   void onTapPersonalInfoFormZipCode() {
     Get.toNamed(
-      AppRoutes.personalInfoFormZipCodeScreen,
+      PersonalInfoFormZipCodeScreen.routeName,
     );
   }
 
@@ -1698,7 +1657,7 @@ class AppNavigationScreen extends StatelessWidget {
   /// push the named route for the splashScreenOneScreen.
   void onTapSplashScreenOne() {
     Get.toNamed(
-      AppRoutes.splashScreenOneScreen,
+      SplashScreenOne.routeName,
     );
   }
 
@@ -1708,7 +1667,7 @@ class AppNavigationScreen extends StatelessWidget {
   /// push the named route for the splashScreenTwoScreen.
   void onTapSplashScreenTwo() {
     Get.toNamed(
-      AppRoutes.splashScreenTwoScreen,
+      SplashScreenTwo.routeName,
     );
   }
 
@@ -1718,27 +1677,7 @@ class AppNavigationScreen extends StatelessWidget {
   /// push the named route for the licenseRegisterScreen.
   void onTapLicenseRegister() {
     Get.toNamed(
-      AppRoutes.licenseRegisterScreen,
-    );
-  }
-
-  /// Navigates to the identityVerificationFilledWithTelecomScreen when the action is triggered.
-
-  /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the identityVerificationFilledWithTelecomScreen.
-  void onTapIdentityVerificationFilledwithTelecom() {
-    Get.toNamed(
-      AppRoutes.identityVerificationFilledWithTelecomScreen,
-    );
-  }
-
-  /// Navigates to the identityVerificationWaitingWithTelecomScreen when the action is triggered.
-
-  /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the identityVerificationWaitingWithTelecomScreen.
-  void onTapIdentityVerificationWaitingwithTelecom() {
-    Get.toNamed(
-      AppRoutes.identityVerificationWaitingWithTelecomScreen,
+      LicenseRegisterScreen.routeName,
     );
   }
 
@@ -1748,7 +1687,7 @@ class AppNavigationScreen extends StatelessWidget {
   /// push the named route for the homePageScreen.
   void onTapHomePage() {
     Get.toNamed(
-      AppRoutes.homePageScreen,
+      HomePageScreen.routeName,
     );
   }
 
@@ -1758,7 +1697,7 @@ class AppNavigationScreen extends StatelessWidget {
   /// push the named route for the schedulesTeamIsNotFullScreen.
   void onTapSchedulesTeamisnotFull() {
     Get.toNamed(
-      AppRoutes.schedulesTeamIsNotFullScreen,
+      SchedulesTeamIsNotFullScreen.routeName,
     );
   }
 
@@ -1768,7 +1707,7 @@ class AppNavigationScreen extends StatelessWidget {
   /// push the named route for the schedulesTeamIsFullScreen.
   void onTapSchedulesTeamisFull() {
     Get.toNamed(
-      AppRoutes.schedulesTeamIsFullScreen,
+      SchedulesTeamsFull.routeName,
     );
   }
 
@@ -1778,7 +1717,7 @@ class AppNavigationScreen extends StatelessWidget {
   /// push the named route for the smartKeyScreen.
   void onTapSmartKey() {
     Get.toNamed(
-      AppRoutes.smartKeyScreen,
+      SmartKeyScreen.routeName,
     );
   }
 
@@ -1788,7 +1727,7 @@ class AppNavigationScreen extends StatelessWidget {
   /// push the named route for the myPageScreen.
   void onTapMyPage() {
     Get.toNamed(
-      AppRoutes.myPageScreen,
+      MyPageScreen.routeName,
     );
   }
 
@@ -1798,7 +1737,7 @@ class AppNavigationScreen extends StatelessWidget {
   /// push the named route for the cardListScreen.
   void onTapCardList() {
     Get.toNamed(
-      AppRoutes.cardListScreen,
+      CardListScreen.routeName,
     );
   }
 
@@ -1844,7 +1783,7 @@ class AppNavigationScreen extends StatelessWidget {
   /// push the named route for the smartKeyAnotherIsCurrentlyUsingScreen.
   void onTapSmartKeyAnotherIsCurrentlyUsing() {
     Get.toNamed(
-      AppRoutes.smartKeyAnotherIsCurrentlyUsingScreen,
+      SmartKeyAnotherIsCurrentlyUsingScreen.routeName,
     );
   }
 
@@ -1854,7 +1793,7 @@ class AppNavigationScreen extends StatelessWidget {
   /// push the named route for the subscribeInfoNoSubscriptionScreen.
   void onTapSubscribeInfoNoSubscription() {
     Get.toNamed(
-      AppRoutes.subscribeInfoNoSubscriptionScreen,
+      NoSubscriptionScreen.routeName,
     );
   }
 
@@ -1864,7 +1803,7 @@ class AppNavigationScreen extends StatelessWidget {
   /// push the named route for the subscribeInfoScreen.
   void onTapSubscribeInfo() {
     Get.toNamed(
-      AppRoutes.subscribeInfoScreen,
+      SubscribeInfoScreen.routeName,
     );
   }
 
@@ -1874,17 +1813,17 @@ class AppNavigationScreen extends StatelessWidget {
   /// push the named route for the contactUsEmptyHistoryScreen.
   void onTapContactUsEmptyHistory() {
     Get.toNamed(
-      AppRoutes.contactUsEmptyHistoryScreen,
+      ContactUsEmptyHistoryScreen.routeName,
     );
   }
 
-  /// Navigates to the contactUsInquiryHistoryExpandedTabContainerScreen when the action is triggered.
+  /// Navigates to the contactUsInquiryHistoryScreen when the action is triggered.
 
   /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the contactUsInquiryHistoryExpandedTabContainerScreen.
-  void onTapContactUsInquiryHistoryExpandedTabContainer() {
+  /// push the named route for the contactUsInquiryHistoryScreen.
+  void onTapContactUsInquiryHistory() {
     Get.toNamed(
-      AppRoutes.contactUsInquiryHistoryExpandedTabContainerScreen,
+      ContactUsInquiryHistoryScreen.routeName,
     );
   }
 
@@ -1894,7 +1833,7 @@ class AppNavigationScreen extends StatelessWidget {
   /// push the named route for the unsubscribeScreen.
   void onTapUnsubscribe() {
     Get.toNamed(
-      AppRoutes.unsubscribeScreen,
+      UnsubscribeScreen.routeName,
     );
   }
 
@@ -1904,7 +1843,7 @@ class AppNavigationScreen extends StatelessWidget {
   /// push the named route for the cardRegisterScreen.
   void onTapCardRegister() {
     Get.toNamed(
-      AppRoutes.cardRegisterScreen,
+      CardRegisterScreen.routeName,
     );
   }
 
@@ -1914,7 +1853,7 @@ class AppNavigationScreen extends StatelessWidget {
   /// push the named route for the noticesScreen.
   void onTapNotices() {
     Get.toNamed(
-      AppRoutes.noticesScreen,
+      NoticesScreen.routeName,
     );
   }
 
@@ -1922,9 +1861,9 @@ class AppNavigationScreen extends StatelessWidget {
 
   /// When the action is triggered, this function uses the [Get] package to
   /// push the named route for the contactUs11ContactUsScreen.
-  void onTapContactUs11ContactUs() {
+  void onTapOneOnOne() {
     Get.toNamed(
-      AppRoutes.contactUs11ContactUsScreen,
+      OneOnOneScreen.routeName,
     );
   }
 
@@ -1934,7 +1873,7 @@ class AppNavigationScreen extends StatelessWidget {
   /// push the named route for the expiringSubscriptionsScreen.
   void onTapExpiringSubscriptions() {
     Get.toNamed(
-      AppRoutes.expiringSubscriptionsScreen,
+      ExpiringSubscriptionsScreen.routeName,
     );
   }
 }

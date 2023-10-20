@@ -10,11 +10,10 @@ import '/widgets/image_view.dart';
 
 class SignupCompleteScreen extends StatelessWidget {
   const SignupCompleteScreen({Key? key}) : super(key: key);
+  static const routeName = '/signup_complete';
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
-
     return SafeArea(
       child: Scaffold(
         body: Container(

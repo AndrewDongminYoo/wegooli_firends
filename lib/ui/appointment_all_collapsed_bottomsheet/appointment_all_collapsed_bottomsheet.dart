@@ -24,8 +24,6 @@ class AppointmentAllCollapsedBottomsheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
-
     return SingleChildScrollView(
       child: Container(
         padding: EdgeInsets.symmetric(vertical: 12.v),

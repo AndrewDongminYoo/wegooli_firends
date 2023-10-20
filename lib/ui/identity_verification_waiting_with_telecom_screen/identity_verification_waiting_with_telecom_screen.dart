@@ -7,8 +7,8 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
-import '/routes/app_routes.dart';
 import '/theme/theme_helper.dart';
+import '/ui/personal_info_form_zip_code_screen/personal_info_form_zip_code_screen.dart';
 import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/drop_down.dart';
@@ -17,14 +17,13 @@ import '/widgets/image_view.dart';
 import '/widgets/text_form_field.dart';
 import 'controller/identity_verification_waiting_with_telecom_controller.dart';
 
-class IdentityVerificationWaitingWithTelecomScreen
-    extends GetWidget<IdentityVerificationWaitingWithTelecomController> {
-  const IdentityVerificationWaitingWithTelecomScreen({Key? key})
-      : super(key: key);
+class VerificationWaitingScreen
+    extends GetWidget<VerificationWaitingController> {
+  const VerificationWaitingScreen({Key? key}) : super(key: key);
+  static const routeName = '/verification/waiting';
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
@@ -142,10 +141,7 @@ class IdentityVerificationWaitingWithTelecomScreen
                           hintText: 'KT',
                           hintStyle: textTheme.bodyLarge,
                           items: controller
-                              .identityVerificationWaitingWithTelecom
-                              .value
-                              .choices
-                              .value,
+                              .identityVerificationWaiting.value.choices.value,
                           onChanged: (value) {
                             controller.onSelected(value);
                           })
@@ -220,7 +216,7 @@ class IdentityVerificationWaitingWithTelecomScreen
                 fontWeight: FontWeight.w700,
               ),
               onTap: () =>
-                  Get.toNamed(AppRoutes.personalInfoFormZipCodeScreen)),
+                  Get.toNamed(PersonalInfoFormZipCodeScreen.routeName)),
         ),
       ),
     );

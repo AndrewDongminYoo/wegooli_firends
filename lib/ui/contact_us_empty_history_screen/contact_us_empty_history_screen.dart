@@ -15,10 +15,10 @@ import '/widgets/image_view.dart';
 
 class ContactUsEmptyHistoryScreen extends StatelessWidget {
   const ContactUsEmptyHistoryScreen({Key? key}) : super(key: key);
+  static const routeName = '/contact_us/empty';
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
     return SafeArea(
       child: Scaffold(
         appBar: CustomAppBar(

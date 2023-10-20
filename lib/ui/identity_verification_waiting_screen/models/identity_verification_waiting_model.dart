@@ -1,1 +1,1 @@
-class IdentityVerificationWaitingModel {}
+class VerificationWaitingModel {}

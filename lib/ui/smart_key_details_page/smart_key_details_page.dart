@@ -18,13 +18,13 @@ import 'models/smart_key_details_model.dart';
 // ignore_for_file: must_be_immutable
 class SmartKeyDetailsPage extends StatelessWidget {
   SmartKeyDetailsPage({Key? key}) : super(key: key);
+  static const routeName = '/smart_key_details';
 
   SmartKeyDetailsController controller =
       Get.put(SmartKeyDetailsController(SmartKeyDetailsModel().obs));
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
     return SafeArea(
       child: Scaffold(
         appBar: CustomAppBar(

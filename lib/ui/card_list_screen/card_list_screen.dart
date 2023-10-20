@@ -16,10 +16,10 @@ import 'controller/card_list_controller.dart';
 
 class CardListScreen extends GetWidget<CardListController> {
   const CardListScreen({Key? key}) : super(key: key);
+  static const routeName = '/card_list';
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
     return SafeArea(
       child: Scaffold(
         appBar: CustomAppBar(

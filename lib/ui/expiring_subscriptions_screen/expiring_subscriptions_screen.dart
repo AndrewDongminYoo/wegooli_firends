@@ -16,10 +16,10 @@ import '/widgets/image_view.dart';
 
 class ExpiringSubscriptionsScreen extends StatelessWidget {
   const ExpiringSubscriptionsScreen({Key? key}) : super(key: key);
+  static const routeName = '/expiring_subscription';
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
     return SafeArea(
       child: Scaffold(
         appBar: CustomAppBar(

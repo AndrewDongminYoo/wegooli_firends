@@ -4,9 +4,9 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '../controller/identity_verification_filled_controller.dart';
 
-class IdentityVerificationFilledBinding extends Bindings {
+class VerificationFilledBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(IdentityVerificationFilledController.new);
+    Get.lazyPut(VerificationFilledController.new);
   }
 }

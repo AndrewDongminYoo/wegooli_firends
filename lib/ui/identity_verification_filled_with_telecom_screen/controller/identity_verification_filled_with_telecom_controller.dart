@@ -7,13 +7,12 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/ui/identity_verification_filled_with_telecom_screen/models/identity_verification_filled_with_telecom_model.dart';
 
-class IdentityVerificationFilledWithTelecomController extends GetxController {
+class VerificationFilledController extends GetxController {
   TextEditingController nameoneController = TextEditingController();
   TextEditingController phonenumberone = TextEditingController();
 
-  Rx<IdentityVerificationFilledWithTelecomModel>
-      identityVerificationFilledWithTelecom =
-      IdentityVerificationFilledWithTelecomModel().obs;
+  Rx<VerificationFilledModel> identityVerificationFilled =
+      VerificationFilledModel().obs;
 
   @override
   void onClose() {

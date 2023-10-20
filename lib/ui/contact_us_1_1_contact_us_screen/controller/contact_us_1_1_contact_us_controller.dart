@@ -8,11 +8,10 @@ import 'package:get/get.dart';
 import '/data/models/dropdown_data.dart';
 import '/ui/contact_us_1_1_contact_us_screen/models/contact_us_1_1_contact_us_model.dart';
 
-class ContactUs11ContactUsController extends GetxController {
+class OneOnOneController extends GetxController {
   TextEditingController groupTwentySevenController = TextEditingController();
 
-  Rx<ContactUs11ContactUsModel> contactUs11ContactUs =
-      ContactUs11ContactUsModel().obs;
+  Rx<OneOnOneModel> contactUs11ContactUs = OneOnOneModel().obs;
   DropdownData? choice;
 
   @override

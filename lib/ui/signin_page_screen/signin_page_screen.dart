@@ -15,11 +15,10 @@ import 'controller/signin_page_controller.dart';
 
 class SigninPageScreen extends GetWidget<SigninPageController> {
   const SigninPageScreen({Key? key}) : super(key: key);
+  static const routeName = '/signin';
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
-
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,

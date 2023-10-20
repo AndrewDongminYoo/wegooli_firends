@@ -12,12 +12,12 @@ import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/image_view.dart';
 
-class SubscribeInfoNoSubscriptionScreen extends StatelessWidget {
-  const SubscribeInfoNoSubscriptionScreen({Key? key}) : super(key: key);
+class NoSubscriptionScreen extends StatelessWidget {
+  const NoSubscriptionScreen({Key? key}) : super(key: key);
+  static const routeName = '/no_subscription';
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
     return SafeArea(
       child: Scaffold(
         appBar: CustomAppBar(

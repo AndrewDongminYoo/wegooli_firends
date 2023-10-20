@@ -16,14 +16,12 @@ import '/widgets/image_view.dart';
 import '/widgets/text_form_field.dart';
 import 'controller/identity_verification_terms_bottomsheet_controller.dart';
 
-class IdentityVerificationTermsBottomsheetScreen
-    extends GetWidget<IdentityVerificationTermsBottomsheetController> {
-  const IdentityVerificationTermsBottomsheetScreen({Key? key})
-      : super(key: key);
+class TermsBottomsheet extends GetWidget<TermsOfUseController> {
+  const TermsBottomsheet({Key? key}) : super(key: key);
+  static const routeName = '/route_name';
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,

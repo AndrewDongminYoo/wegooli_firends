@@ -7,12 +7,11 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/ui/identity_verification_terms_bottomsheet_screen/models/identity_verification_terms_bottomsheet_model.dart';
 
-class IdentityVerificationTermsBottomsheetController extends GetxController {
+class TermsOfUseController extends GetxController {
   TextEditingController nameinputone = TextEditingController();
 
-  Rx<IdentityVerificationTermsBottomsheetModel>
-      identityVerificationTermsBottomsheet =
-      IdentityVerificationTermsBottomsheetModel().obs;
+  Rx<VerificationTermsBottomsheetModel> identityVerificationTermsBottomsheet =
+      VerificationTermsBottomsheetModel().obs;
 
   @override
   void onClose() {

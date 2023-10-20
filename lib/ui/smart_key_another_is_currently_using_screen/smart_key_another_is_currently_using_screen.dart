@@ -12,11 +12,10 @@ import '/widgets/image_view.dart';
 
 class SmartKeyAnotherIsCurrentlyUsingScreen extends StatelessWidget {
   const SmartKeyAnotherIsCurrentlyUsingScreen({Key? key}) : super(key: key);
+  static const routeName = '/currently_using';
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
-
     return SafeArea(
       child: Scaffold(
         appBar: CustomAppBar(

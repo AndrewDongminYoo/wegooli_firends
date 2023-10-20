@@ -15,13 +15,13 @@ import '/widgets/image_view.dart';
 import '/widgets/text_form_field.dart';
 import 'controller/identity_verification_waiting_controller.dart';
 
-class IdentityVerificationWaitingScreen
-    extends GetWidget<IdentityVerificationWaitingController> {
-  const IdentityVerificationWaitingScreen({Key? key}) : super(key: key);
+class VerificationWaitingScreen
+    extends GetWidget<VerificationWaitingController> {
+  const VerificationWaitingScreen({Key? key}) : super(key: key);
+  static const routeName = '/route_name';
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,

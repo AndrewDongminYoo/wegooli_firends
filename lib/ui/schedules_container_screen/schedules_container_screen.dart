@@ -5,8 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '/core/utils/size_utils.dart';
-import '/routes/app_routes.dart';
 import '/ui/profile_page/profile_page.dart';
 import '/ui/schedules_page/schedules_page.dart';
 import '/ui/send_bird_chat_page/send_bird_chat_page.dart';
@@ -14,15 +12,15 @@ import '/ui/smart_key_details_page/smart_key_details_page.dart';
 
 class SchedulesContainerScreen extends StatelessWidget {
   const SchedulesContainerScreen({Key? key}) : super(key: key);
+  static const routeName = '/schedules_nav';
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
     return SafeArea(
         child: Scaffold(
             body: Navigator(
                 key: Get.nestedKey(1),
-                initialRoute: AppRoutes.schedulesPage,
+                initialRoute: SchedulesPage.routeName,
                 onGenerateRoute: (routeSetting) => GetPageRoute(
                     page: () => getCurrentPage(routeSetting.name!),
                     transition: Transition.noTransition))));
@@ -31,13 +29,13 @@ class SchedulesContainerScreen extends StatelessWidget {
   /// Handling page based on route
   Widget getCurrentPage(String currentRoute) {
     switch (currentRoute) {
-      case AppRoutes.schedulesPage:
+      case SchedulesPage.routeName:
         return SchedulesPage();
-      case AppRoutes.sendBirdChatPage:
+      case SendBirdChatPage.routeName:
         return SendBirdChatPage();
-      case AppRoutes.smartKeyDetailsPage:
+      case SmartKeyDetailsPage.routeName:
         return SmartKeyDetailsPage();
-      case AppRoutes.profilePage:
+      case ProfilePage.routeName:
         return ProfilePage();
       default:
         return SchedulesPage();

@@ -21,10 +21,10 @@ import 'controller/license_register_controller.dart';
 
 class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
   const LicenseRegisterScreen({Key? key}) : super(key: key);
+  static const routeName = '/license_register';
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,

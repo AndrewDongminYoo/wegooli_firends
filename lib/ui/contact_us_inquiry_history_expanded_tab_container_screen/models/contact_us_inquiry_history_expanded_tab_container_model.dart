@@ -1,1 +1,1 @@
-class ContactUsInquiryHistoryExpandedTabContainerModel {}
+class ContactUsInquiryHistoryModel {}

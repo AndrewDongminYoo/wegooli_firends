@@ -7,12 +7,12 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/ui/identity_verification_filled_screen/models/identity_verification_filled_model.dart';
 
-class IdentityVerificationFilledController extends GetxController {
+class VerificationFilledController extends GetxController {
   TextEditingController nameoneController = TextEditingController();
   TextEditingController phoneinfoone = TextEditingController();
 
-  Rx<IdentityVerificationFilledModel> identityVerificationFilled =
-      IdentityVerificationFilledModel().obs;
+  Rx<VerificationFilledModel> identityVerificationFilled =
+      VerificationFilledModel().obs;
 
   @override
   void onClose() {

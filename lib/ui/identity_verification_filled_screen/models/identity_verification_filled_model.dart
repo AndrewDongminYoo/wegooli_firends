@@ -1,1 +1,1 @@
-class IdentityVerificationFilledModel {}
+class VerificationFilledModel {}

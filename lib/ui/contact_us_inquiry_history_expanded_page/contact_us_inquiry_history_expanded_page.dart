@@ -18,14 +18,11 @@ import 'models/contact_us_inquiry_history_expanded_model.dart';
 class ContactUsInquiryHistoryExpandedPage extends StatelessWidget {
   ContactUsInquiryHistoryExpandedPage({Key? key}) : super(key: key);
 
-  ContactUsInquiryHistoryExpandedController controller = Get.put(
-      ContactUsInquiryHistoryExpandedController(
-          ContactUsInquiryHistoryExpandedModel().obs));
+  final controller = Get.put(ContactUsInquiryHistoryExpandedController(
+      ContactUsInquiryHistoryExpandedModel().obs));
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
-
     return SafeArea(
       child: Scaffold(
         body: SizedBox(

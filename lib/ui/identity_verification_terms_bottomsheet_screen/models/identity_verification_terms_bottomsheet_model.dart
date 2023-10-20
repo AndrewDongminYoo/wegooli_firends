@@ -1,1 +1,1 @@
-class IdentityVerificationTermsBottomsheetModel {}
+class VerificationTermsBottomsheetModel {}

@@ -15,13 +15,12 @@ import '/widgets/image_view.dart';
 import '/widgets/text_form_field.dart';
 import 'controller/identity_verification_filled_controller.dart';
 
-class IdentityVerificationFilledScreen
-    extends GetWidget<IdentityVerificationFilledController> {
-  const IdentityVerificationFilledScreen({Key? key}) : super(key: key);
+class VerificationFilledScreen extends GetWidget<VerificationFilledController> {
+  const VerificationFilledScreen({Key? key}) : super(key: key);
+  static const routeName = '/verification_filled';
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,

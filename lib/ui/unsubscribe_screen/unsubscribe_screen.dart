@@ -15,10 +15,10 @@ import '/widgets/image_view.dart';
 
 class UnsubscribeScreen extends StatelessWidget {
   const UnsubscribeScreen({Key? key}) : super(key: key);
+  static const routeName = '/unsubscribe';
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
     return SafeArea(
       child: Scaffold(
         appBar: CustomAppBar(

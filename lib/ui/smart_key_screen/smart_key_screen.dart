@@ -11,11 +11,10 @@ import '/widgets/image_view.dart';
 
 class SmartKeyScreen extends StatelessWidget {
   const SmartKeyScreen({Key? key}) : super(key: key);
+  static const routeName = '/smart_key';
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
-
     return SafeArea(
       child: Scaffold(
         appBar: CustomAppBar(

@@ -21,8 +21,7 @@ class ListaddphotoaltItemWidget extends StatelessWidget {
 
   ListaddphotoaltItemModel listaddphotoaltItem;
 
-  ContactUs11ContactUsController controller =
-      Get.find<ContactUs11ContactUsController>();
+  OneOnOneController controller = Get.find<OneOnOneController>();
 
   @override
   Widget build(BuildContext context) {

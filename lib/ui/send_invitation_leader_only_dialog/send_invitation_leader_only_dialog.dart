@@ -22,7 +22,6 @@ class SendInvitationLeaderOnlyDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
     return SingleChildScrollView(
       child: Container(
         margin: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 313.v),

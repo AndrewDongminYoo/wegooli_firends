@@ -17,10 +17,10 @@ import 'controller/card_register_controller.dart';
 
 class CardRegisterScreen extends GetWidget<CardRegisterController> {
   const CardRegisterScreen({Key? key}) : super(key: key);
+  static const routeName = '/card_register';
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,

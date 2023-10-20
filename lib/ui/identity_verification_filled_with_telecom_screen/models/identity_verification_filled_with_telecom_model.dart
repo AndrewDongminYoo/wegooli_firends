@@ -1,1 +1,1 @@
-class IdentityVerificationFilledWithTelecomModel {}
+class VerificationFilledModel {}

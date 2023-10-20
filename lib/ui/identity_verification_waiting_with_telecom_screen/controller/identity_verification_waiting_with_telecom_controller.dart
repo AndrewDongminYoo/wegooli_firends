@@ -8,13 +8,12 @@ import 'package:get/get.dart';
 import '/data/models/dropdown_data.dart';
 import '/ui/identity_verification_waiting_with_telecom_screen/models/identity_verification_waiting_with_telecom_model.dart';
 
-class IdentityVerificationWaitingWithTelecomController extends GetxController {
+class VerificationWaitingController extends GetxController {
   TextEditingController nameoneController = TextEditingController();
   TextEditingController phonenumberone = TextEditingController();
 
-  Rx<IdentityVerificationWaitingWithTelecomModel>
-      identityVerificationWaitingWithTelecom =
-      IdentityVerificationWaitingWithTelecomModel().obs;
+  Rx<VerificationWaitingModel> identityVerificationWaiting =
+      VerificationWaitingModel().obs;
   DropdownData? choice;
 
   @override
@@ -25,13 +24,12 @@ class IdentityVerificationWaitingWithTelecomController extends GetxController {
   }
 
   void onSelected(dynamic value) {
-    for (final element
-        in identityVerificationWaitingWithTelecom.value.choices.value) {
+    for (final element in identityVerificationWaiting.value.choices.value) {
       element.isSelected = false;
       if (element.id == value.id) {
         element.isSelected = true;
       }
     }
-    identityVerificationWaitingWithTelecom.value.choices.refresh();
+    identityVerificationWaiting.value.choices.refresh();
   }
 }

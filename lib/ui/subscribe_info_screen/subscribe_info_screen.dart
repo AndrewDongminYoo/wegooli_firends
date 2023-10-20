@@ -16,10 +16,10 @@ import '/widgets/image_view.dart';
 
 class SubscribeInfoScreen extends StatelessWidget {
   const SubscribeInfoScreen({Key? key}) : super(key: key);
+  static const routeName = '/subscribe_info';
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
     return SafeArea(
       child: Scaffold(
         appBar: CustomAppBar(

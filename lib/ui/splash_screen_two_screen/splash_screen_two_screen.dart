@@ -7,12 +7,12 @@ import '/gen/assets.gen.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/image_view.dart';
 
-class SplashScreenTwoScreen extends StatelessWidget {
-  const SplashScreenTwoScreen({Key? key}) : super(key: key);
+class SplashScreenTwo extends StatelessWidget {
+  const SplashScreenTwo({Key? key}) : super(key: key);
+  static const routeName = '/splash_screen_2';
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
     return SafeArea(
       child: Scaffold(
         extendBody: true,

@@ -11,11 +11,10 @@ import '/widgets/image_view.dart';
 
 class HomePageScreen extends StatelessWidget {
   const HomePageScreen({Key? key}) : super(key: key);
+  static const routeName = '/home_page';
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
-
     return SafeArea(
       child: Scaffold(
         backgroundColor: const Color(0xFFF8F8F8),

@@ -22,14 +22,10 @@ import '/ui/identity_verification_empty_screen/binding/identity_verification_emp
 import '/ui/identity_verification_empty_screen/identity_verification_empty_screen.dart';
 import '/ui/identity_verification_filled_screen/binding/identity_verification_filled_binding.dart';
 import '/ui/identity_verification_filled_screen/identity_verification_filled_screen.dart';
-import '/ui/identity_verification_filled_with_telecom_screen/binding/identity_verification_filled_with_telecom_binding.dart';
-import '/ui/identity_verification_filled_with_telecom_screen/identity_verification_filled_with_telecom_screen.dart';
 import '/ui/identity_verification_terms_bottomsheet_screen/binding/identity_verification_terms_bottomsheet_binding.dart';
 import '/ui/identity_verification_terms_bottomsheet_screen/identity_verification_terms_bottomsheet_screen.dart';
 import '/ui/identity_verification_waiting_screen/binding/identity_verification_waiting_binding.dart';
 import '/ui/identity_verification_waiting_screen/identity_verification_waiting_screen.dart';
-import '/ui/identity_verification_waiting_with_telecom_screen/binding/identity_verification_waiting_with_telecom_binding.dart';
-import '/ui/identity_verification_waiting_with_telecom_screen/identity_verification_waiting_with_telecom_screen.dart';
 import '/ui/license_register_screen/binding/license_register_binding.dart';
 import '/ui/license_register_screen/license_register_screen.dart';
 import '/ui/my_page_screen/binding/my_page_binding.dart';
@@ -67,333 +63,224 @@ import '/ui/subscribe_info_screen/subscribe_info_screen.dart';
 import '/ui/unsubscribe_screen/binding/unsubscribe_binding.dart';
 import '/ui/unsubscribe_screen/unsubscribe_screen.dart';
 
-// String initialRoute = AppRoutes.appGateway;
-String initialRoute = AppRoutes.homePageScreen;
+// String initialRoute = AppGateway.routeName;
+String initialRoute = HomePageScreen.routeName;
 
 class AppRoutes {
-  static const String identityVerificationWaitingScreen =
-      '/identity_verification_waiting_screen';
-
-  static const String smartKeyDetailsPage = '/smart_key_details_page';
-
-  static const String signupCompleteScreen = '/signup_complete_screen';
-
-  static const String noticesOneScreen = '/notices_one_screen';
-
-  static const String noticesNoNoticeScreen = '/notices_no_notice_screen';
-
-  static const String profilePage = '/profile_page';
-
-  static const String schedulesPage = '/schedules_page';
-
-  static const String schedulesContainerScreen = '/schedules_container_screen';
-
-  static const String signinPageScreen = '/signin_page_screen';
-
-  static const String identityVerificationTermsBottomsheetScreen =
-      '/identity_verification_terms_bottomsheet_screen';
-
-  static const String identityVerificationEmptyScreen =
-      '/identity_verification_empty_screen';
-
-  static const String identityVerificationFilledScreen =
-      '/identity_verification_filled_screen';
-
-  static const String personalInfoFormZipCodeScreen =
-      '/personal_info_form_zip_code_screen';
-
-  static const String splashScreenOneScreen = '/splash_screen_one_screen';
-
-  static const String splashScreenTwoScreen = '/splash_screen_two_screen';
-
-  static const String licenseRegisterScreen = '/license_register_screen';
-
-  static const String identityVerificationFilledWithTelecomScreen =
-      '/identity_verification_filled_with_telecom_screen';
-
-  static const String identityVerificationWaitingWithTelecomScreen =
-      '/identity_verification_waiting_with_telecom_screen';
-
-  static const String homePageScreen = '/home_page_screen';
-
-  static const String schedulesTeamIsNotFullScreen =
-      '/schedules_team_is_not_full_screen';
-
-  static const String schedulesTeamIsFullScreen =
-      '/schedules_team_is_full_screen';
-
-  static const String sendBirdChatPage = '/send_bird_chat_page';
-
-  static const String smartKeyScreen = '/smart_key_screen';
-
-  static const String myPageScreen = '/my_page_screen';
-
-  static const String cardListScreen = '/card_list_screen';
-
-  static const String smartKeyAnotherIsCurrentlyUsingScreen =
-      '/smart_key_another_is_currently_using_screen';
-
-  static const String subscribeInfoNoSubscriptionScreen =
-      '/subscribe_info_no_subscription_screen';
-
-  static const String subscribeInfoScreen = '/subscribe_info_screen';
-
-  static const String contactUsEmptyHistoryScreen =
-      '/contact_us_empty_history_screen';
-
-  static const String contactUsInquiryHistoryPage =
-      '/contact_us_inquiry_history_page';
-
-  static const String contactUsInquiryHistoryExpandedPage =
-      '/contact_us_inquiry_history_expanded_page';
-
-  static const String contactUsInquiryHistoryExpandedTabContainerScreen =
-      '/contact_us_inquiry_history_expanded_tab_container_screen';
-
-  static const String unsubscribeScreen = '/unsubscribe_screen';
-
-  static const String cardRegisterScreen = '/card_register_screen';
-
-  static const String noticesScreen = '/notices_screen';
-
-  static const String contactUs11ContactUsScreen =
-      '/contact_us_1_1_contact_us_screen';
-
-  static const String expiringSubscriptionsScreen =
-      '/expiring_subscriptions_screen';
-
-  static const String appNavigationScreen = '/app_navigation_screen';
-
-  static const String initialRoute = '/initialRoute';
-
   static List<GetPage> pages = [
     GetPage(
-      name: identityVerificationWaitingScreen,
-      page: () => const IdentityVerificationWaitingScreen(),
+      name: VerificationWaitingScreen.routeName,
+      page: () => const VerificationWaitingScreen(),
       bindings: [
-        IdentityVerificationWaitingBinding(),
+        VerificationWaitingBinding(),
       ],
     ),
     GetPage(
-      name: signupCompleteScreen,
+      name: SignupCompleteScreen.routeName,
       page: () => const SignupCompleteScreen(),
       bindings: [
         SignupCompleteBinding(),
       ],
     ),
     GetPage(
-      name: noticesOneScreen,
+      name: NoticesOneScreen.routeName,
       page: () => const NoticesOneScreen(),
       bindings: [
         NoticesOneBinding(),
       ],
     ),
     GetPage(
-      name: noticesNoNoticeScreen,
-      page: () => const NoticesNoNoticeScreen(),
+      name: EmptyNoticeScreen.routeName,
+      page: () => const EmptyNoticeScreen(),
       bindings: [
         NoticesNoNoticeBinding(),
       ],
     ),
     GetPage(
-      name: schedulesContainerScreen,
+      name: SchedulesContainerScreen.routeName,
       page: () => const SchedulesContainerScreen(),
       bindings: [
         SchedulesContainerBinding(),
       ],
     ),
     GetPage(
-      name: signinPageScreen,
+      name: SigninPageScreen.routeName,
       page: () => const SigninPageScreen(),
       bindings: [
         SigninPageBinding(),
       ],
     ),
     GetPage(
-      name: identityVerificationTermsBottomsheetScreen,
-      page: () => const IdentityVerificationTermsBottomsheetScreen(),
+      name: TermsBottomsheet.routeName,
+      page: () => const TermsBottomsheet(),
       bindings: [
-        IdentityVerificationTermsBottomsheetBinding(),
+        VerificationTermsBottomsheetBinding(),
       ],
     ),
     GetPage(
-      name: identityVerificationEmptyScreen,
-      page: () => const IdentityVerificationEmptyScreen(),
+      name: VerificationEmptyScreen.routeName,
+      page: () => const VerificationEmptyScreen(),
       bindings: [
-        IdentityVerificationEmptyBinding(),
+        VerificationEmptyBinding(),
       ],
     ),
     GetPage(
-      name: identityVerificationFilledScreen,
-      page: () => const IdentityVerificationFilledScreen(),
-      bindings: [
-        IdentityVerificationFilledBinding(),
-      ],
-    ),
-    GetPage(
-      name: personalInfoFormZipCodeScreen,
+      name: PersonalInfoFormZipCodeScreen.routeName,
       page: () => const PersonalInfoFormZipCodeScreen(),
       bindings: [
         PersonalInfoFormZipCodeBinding(),
       ],
     ),
     GetPage(
-      name: splashScreenOneScreen,
-      page: () => const SplashScreenOneScreen(),
+      name: SplashScreenOne.routeName,
+      page: () => const SplashScreenOne(),
       bindings: [
         SplashScreenOneBinding(),
       ],
     ),
     GetPage(
-      name: splashScreenTwoScreen,
-      page: () => const SplashScreenTwoScreen(),
+      name: SplashScreenTwo.routeName,
+      page: () => const SplashScreenTwo(),
       bindings: [
         SplashScreenTwoBinding(),
       ],
     ),
     GetPage(
-      name: licenseRegisterScreen,
+      name: LicenseRegisterScreen.routeName,
       page: () => const LicenseRegisterScreen(),
       bindings: [
         LicenseRegisterBinding(),
       ],
     ),
     GetPage(
-      name: identityVerificationFilledWithTelecomScreen,
-      page: () => const IdentityVerificationFilledWithTelecomScreen(),
+      name: VerificationFilledScreen.routeName,
+      page: () => const VerificationFilledScreen(),
       bindings: [
-        IdentityVerificationFilledWithTelecomBinding(),
+        VerificationFilledBinding(),
       ],
     ),
     GetPage(
-      name: identityVerificationWaitingWithTelecomScreen,
-      page: () => const IdentityVerificationWaitingWithTelecomScreen(),
-      bindings: [
-        IdentityVerificationWaitingWithTelecomBinding(),
-      ],
-    ),
-    GetPage(
-      name: homePageScreen,
+      name: HomePageScreen.routeName,
       page: () => const HomePageScreen(),
       bindings: [
         HomePageBinding(),
       ],
     ),
     GetPage(
-      name: schedulesTeamIsNotFullScreen,
+      name: SchedulesTeamIsNotFullScreen.routeName,
       page: () => const SchedulesTeamIsNotFullScreen(),
       bindings: [
         SchedulesTeamIsNotFullBinding(),
       ],
     ),
     GetPage(
-      name: schedulesTeamIsFullScreen,
-      page: () => const SchedulesTeamIsFullScreen(),
+      name: SchedulesTeamsFull.routeName,
+      page: () => const SchedulesTeamsFull(),
       bindings: [
         SchedulesTeamIsFullBinding(),
       ],
     ),
     GetPage(
-      name: smartKeyScreen,
+      name: SmartKeyScreen.routeName,
       page: () => const SmartKeyScreen(),
       bindings: [
         SmartKeyBinding(),
       ],
     ),
     GetPage(
-      name: myPageScreen,
+      name: MyPageScreen.routeName,
       page: () => const MyPageScreen(),
       bindings: [
         MyPageBinding(),
       ],
     ),
     GetPage(
-      name: cardListScreen,
+      name: CardListScreen.routeName,
       page: () => const CardListScreen(),
       bindings: [
         CardListBinding(),
       ],
     ),
     GetPage(
-      name: smartKeyAnotherIsCurrentlyUsingScreen,
+      name: SmartKeyAnotherIsCurrentlyUsingScreen.routeName,
       page: () => const SmartKeyAnotherIsCurrentlyUsingScreen(),
       bindings: [
         SmartKeyAnotherIsCurrentlyUsingBinding(),
       ],
     ),
     GetPage(
-      name: subscribeInfoNoSubscriptionScreen,
-      page: () => const SubscribeInfoNoSubscriptionScreen(),
+      name: NoSubscriptionScreen.routeName,
+      page: () => const NoSubscriptionScreen(),
       bindings: [
         SubscribeInfoNoSubscriptionBinding(),
       ],
     ),
     GetPage(
-      name: subscribeInfoScreen,
+      name: SubscribeInfoScreen.routeName,
       page: () => const SubscribeInfoScreen(),
       bindings: [
         SubscribeInfoBinding(),
       ],
     ),
     GetPage(
-      name: contactUsEmptyHistoryScreen,
+      name: ContactUsEmptyHistoryScreen.routeName,
       page: () => const ContactUsEmptyHistoryScreen(),
       bindings: [
         ContactUsEmptyHistoryBinding(),
       ],
     ),
     GetPage(
-      name: contactUsInquiryHistoryExpandedTabContainerScreen,
-      page: () => const ContactUsInquiryHistoryExpandedTabContainerScreen(),
+      name: ContactUsInquiryHistoryScreen.routeName,
+      page: () => const ContactUsInquiryHistoryScreen(),
       bindings: [
-        ContactUsInquiryHistoryExpandedTabContainerBinding(),
+        ContactUsInquiryHistoryBinding(),
       ],
     ),
     GetPage(
-      name: unsubscribeScreen,
+      name: UnsubscribeScreen.routeName,
       page: () => const UnsubscribeScreen(),
       bindings: [
         UnsubscribeBinding(),
       ],
     ),
     GetPage(
-      name: cardRegisterScreen,
+      name: CardRegisterScreen.routeName,
       page: () => const CardRegisterScreen(),
       bindings: [
         CardRegisterBinding(),
       ],
     ),
     GetPage(
-      name: noticesScreen,
+      name: NoticesScreen.routeName,
       page: () => const NoticesScreen(),
       bindings: [
         NoticesBinding(),
       ],
     ),
     GetPage(
-      name: contactUs11ContactUsScreen,
-      page: () => const ContactUs11ContactUsScreen(),
+      name: OneOnOneScreen.routeName,
+      page: () => const OneOnOneScreen(),
       bindings: [
-        ContactUs11ContactUsBinding(),
+        OneOnOneBinding(),
       ],
     ),
     GetPage(
-      name: expiringSubscriptionsScreen,
+      name: ExpiringSubscriptionsScreen.routeName,
       page: () => const ExpiringSubscriptionsScreen(),
       bindings: [
         ExpiringSubscriptionsBinding(),
       ],
     ),
     GetPage(
-      name: appNavigationScreen,
+      name: AppNavigationScreen.routeName,
       page: () => const AppNavigationScreen(),
       bindings: [
         AppNavigationBinding(),
       ],
     ),
     GetPage(
-      name: initialRoute,
-      page: () => const SplashScreenTwoScreen(),
+      name: SplashScreenTwo.routeName,
+      page: () => const SplashScreenTwo(),
       bindings: [
         SplashScreenTwoBinding(),
       ],

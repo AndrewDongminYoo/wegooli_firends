@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import '/data/models/dropdown_data.dart';
 import 'listaddphotoalt_item_model.dart';
 
-class ContactUs11ContactUsModel {
+class OneOnOneModel {
   Rx<List<DropdownData>> choices = Rx([
     DropdownData(
       id: 1,

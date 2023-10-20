@@ -15,14 +15,12 @@ import '/widgets/elevated_button.dart';
 import '/widgets/image_view.dart';
 import 'controller/schedules_team_is_full_controller.dart';
 
-class SchedulesTeamIsFullScreen
-    extends GetWidget<SchedulesTeamIsFullController> {
-  const SchedulesTeamIsFullScreen({Key? key}) : super(key: key);
+class SchedulesTeamsFull extends GetWidget<SchedulesTeamIsFullController> {
+  const SchedulesTeamsFull({Key? key}) : super(key: key);
+  static const routeName = '/schedules_teams_full';
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
-
     return SafeArea(
       child: Scaffold(
         appBar: CustomAppBar(

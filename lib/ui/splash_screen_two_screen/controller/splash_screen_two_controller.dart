@@ -2,7 +2,7 @@
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '/routes/app_routes.dart';
+import '/ui/home_page_screen/home_page_screen.dart';
 import '/ui/splash_screen_two_screen/models/splash_screen_two_model.dart';
 
 class SplashScreenTwoController extends GetxController {
@@ -12,7 +12,7 @@ class SplashScreenTwoController extends GetxController {
   void onReady() {
     Future.delayed(const Duration(milliseconds: 3000), () {
       Get.offNamed(
-        AppRoutes.homePageScreen,
+        HomePageScreen.routeName,
       );
     });
   }

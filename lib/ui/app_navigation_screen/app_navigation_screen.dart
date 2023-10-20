@@ -1441,16 +1441,13 @@ class AppNavigationScreen extends StatelessWidget {
   /// instance of the [SendInvitationLeaderOnlyController],
   /// which is obtained using the Get.put() method.
   void onTapSendInvitationLeaderOnly() {
-    Get.dialog(AlertDialog(
-      backgroundColor: Colors.transparent,
-      contentPadding: EdgeInsets.zero,
-      insetPadding: EdgeInsets.zero,
-      content: SendInvitationLeaderOnlyDialog(
+    Get.dialog(
+      SendInvitationLeaderOnlyDialog(
         Get.put(
           SendInvitationLeaderOnlyController(),
         ),
       ),
-    ));
+    );
   }
 
   /// Displays a dialog with the [ViewScheduledDateSchedulerOnlyDialog] content.
@@ -1459,16 +1456,13 @@ class AppNavigationScreen extends StatelessWidget {
   /// instance of the [ViewScheduledDateSchedulerOnlyController],
   /// which is obtained using the Get.put() method.
   void onTapViewScheduledDateSchedulerOnly() {
-    Get.dialog(AlertDialog(
-      backgroundColor: Colors.transparent,
-      contentPadding: EdgeInsets.zero,
-      insetPadding: EdgeInsets.zero,
-      content: ViewScheduledDateSchedulerOnlyDialog(
+    Get.dialog(
+      ViewScheduledDateSchedulerOnlyDialog(
         Get.put(
           ViewScheduledDateSchedulerOnlyController(),
         ),
       ),
-    ));
+    );
   }
 
   /// Displays a scrollable bottom sheet widget using the [Get] package
@@ -1531,16 +1525,13 @@ class AppNavigationScreen extends StatelessWidget {
   /// instance of the [UnsubscribeConfirmController],
   /// which is obtained using the Get.put() method.
   void onTapUnsubscribeConfirm() {
-    Get.dialog(AlertDialog(
-      backgroundColor: Colors.transparent,
-      contentPadding: EdgeInsets.zero,
-      insetPadding: EdgeInsets.zero,
-      content: UnsubscribeConfirmDialog(
+    Get.dialog(
+      UnsubscribeConfirmDialog(
         Get.put(
           UnsubscribeConfirmController(),
         ),
       ),
-    ));
+    );
   }
 
   /// Navigates to the signupCompleteScreen when the action is triggered.
@@ -1589,16 +1580,13 @@ class AppNavigationScreen extends StatelessWidget {
   /// instance of the [SchedulesSendInvitationLeaderOnlyController],
   /// which is obtained using the Get.put() method.
   void onTapSchedulesSendInvitationLeaderOnly() {
-    Get.dialog(AlertDialog(
-      backgroundColor: Colors.transparent,
-      contentPadding: EdgeInsets.zero,
-      insetPadding: EdgeInsets.zero,
-      content: SchedulesSendInvitationLeaderOnlyDialog(
+    Get.dialog(
+      SchedulesSendInvitationLeaderOnlyDialog(
         Get.put(
           SchedulesSendInvitationLeaderOnlyController(),
         ),
       ),
-    ));
+    );
   }
 
   /// Navigates to the signinPageScreen when the action is triggered.
@@ -1747,16 +1735,13 @@ class AppNavigationScreen extends StatelessWidget {
   /// instance of the [SchedulesViewScheduledDateSchedulerOnlyController],
   /// which is obtained using the Get.put() method.
   void onTapSchedulesViewScheduledDateSchedulerOnly() {
-    Get.dialog(AlertDialog(
-      backgroundColor: Colors.transparent,
-      contentPadding: EdgeInsets.zero,
-      insetPadding: EdgeInsets.zero,
-      content: SchedulesViewScheduledDateSchedulerOnlyDialog(
+    Get.dialog(
+      SchedulesViewScheduledDateSchedulerOnlyDialog(
         Get.put(
           SchedulesViewScheduledDateSchedulerOnlyController(),
         ),
       ),
-    ));
+    );
   }
 
   /// Displays a dialog with the [SchedulesViewScheduledDateSchedulerOnlyExpandedDialog] content.
@@ -1765,16 +1750,13 @@ class AppNavigationScreen extends StatelessWidget {
   /// instance of the [SchedulesViewScheduledDateSchedulerOnlyExpandedController],
   /// which is obtained using the Get.put() method.
   void onTapSchedulesViewScheduledDateSchedulerOnlyExpanded() {
-    Get.dialog(AlertDialog(
-      backgroundColor: Colors.transparent,
-      contentPadding: EdgeInsets.zero,
-      insetPadding: EdgeInsets.zero,
-      content: SchedulesViewScheduledDateSchedulerOnlyExpandedDialog(
+    Get.dialog(
+      SchedulesViewScheduledDateSchedulerOnlyExpandedDialog(
         Get.put(
           SchedulesViewScheduledDateSchedulerOnlyExpandedController(),
         ),
       ),
-    ));
+    );
   }
 
   /// Navigates to the smartKeyAnotherIsCurrentlyUsingScreen when the action is triggered.

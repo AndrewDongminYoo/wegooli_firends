@@ -22,45 +22,47 @@ class ViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Container(
-        margin: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 238.v),
-        padding: EdgeInsets.all(20.h),
-        decoration: BoxDecoration(
-            color: lightTheme.onPrimaryContainer,
-            borderRadius: BorderRadiusStyle.circleBorder10),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            CustomImageView(
-              svgPath: Assets.svg.icoCloseRound.path,
-              height: 15.adaptSize,
-              width: 15.adaptSize,
-              alignment: Alignment.centerRight,
-              onTap: Get.back,
-            ),
-            SizedBox(height: 6.v),
-            Text('일정 확인',
-                style: textTheme.titleMedium!.copyWith(
-                  fontSize: 18.fSize,
-                )),
-            SizedBox(height: 22.v),
-            Obx(() => ListView.separated(
-                physics: const NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                separatorBuilder: (context, index) {
-                  return SizedBox(height: 10.v);
-                },
-                itemCount: controller.viewScheduledDateSchedulerOnly.value
-                    .listviewItemList.value.length,
-                itemBuilder: (context, index) {
-                  final model = controller.viewScheduledDateSchedulerOnly.value
-                      .listviewItemList.value[index];
-                  return ListviewItemWidget(model);
-                })),
-            SizedBox(height: 10.v)
-          ],
+    return AlertDialog(
+      content: SingleChildScrollView(
+        child: Container(
+          margin: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 238.v),
+          padding: EdgeInsets.all(20.h),
+          decoration: BoxDecoration(
+              color: lightTheme.onPrimaryContainer,
+              borderRadius: BorderRadiusStyle.circleBorder10),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              CustomImageView(
+                svgPath: Assets.svg.icoCloseRound.path,
+                height: 15.adaptSize,
+                width: 15.adaptSize,
+                alignment: Alignment.centerRight,
+                onTap: Get.back,
+              ),
+              SizedBox(height: 6.v),
+              Text('일정 확인',
+                  style: textTheme.titleMedium!.copyWith(
+                    fontSize: 18.fSize,
+                  )),
+              SizedBox(height: 22.v),
+              Obx(() => ListView.separated(
+                  physics: const NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  separatorBuilder: (context, index) {
+                    return SizedBox(height: 10.v);
+                  },
+                  itemCount: controller.viewScheduledDateSchedulerOnly.value
+                      .listviewItemList.value.length,
+                  itemBuilder: (context, index) {
+                    final model = controller.viewScheduledDateSchedulerOnly
+                        .value.listviewItemList.value[index];
+                    return ListviewItemWidget(model);
+                  })),
+              SizedBox(height: 10.v)
+            ],
+          ),
         ),
       ),
     );

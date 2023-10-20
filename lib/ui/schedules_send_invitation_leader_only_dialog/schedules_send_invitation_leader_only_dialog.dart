@@ -23,12 +23,13 @@ class SchedulesSendInvitationLeaderOnlyDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Container(
-        margin: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 318.v),
-        decoration: BoxDecoration(
-            color: lightTheme.onPrimaryContainer,
-            borderRadius: BorderRadiusStyle.circleBorder10),
+    return AlertDialog(
+      insetPadding: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 318.v),
+      backgroundColor: lightTheme.onPrimaryContainer,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadiusStyle.circleBorder10,
+      ),
+      content: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -54,7 +55,7 @@ class SchedulesSendInvitationLeaderOnlyDialog extends StatelessWidget {
             CustomTextFormField(
                 controller: controller.valueoneController,
                 margin: EdgeInsets.only(left: 20.h, top: 22.v, right: 20.h),
-                hintText: 'qwer-tyui-asdf-zxcv',
+                hintText: '0000-0000-0000-0000',
                 hintStyle: textTheme.bodyLarge!.copyWith(
                   color: const Color(0xFF8E9199),
                 ),

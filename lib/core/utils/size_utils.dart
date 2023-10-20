@@ -14,7 +14,7 @@ MediaQueryData mediaQueryData = MediaQueryData.fromView(
 /// 이들은 피그마 디자인의 뷰포트 값입니다.
 /// 코드에서 UI를 반응형으로 만들기 위한 참조로 사용됩니다.
 const num FIGMA_DESIGN_WIDTH = 360;
-const num FIGMA_DESIGN_HEIGHT = 760;
+const num FIGMA_DESIGN_HEIGHT = 640;
 const num FIGMA_DESIGN_STATUS_BAR = 0;
 
 /// 이 메서드는 디바이스 뷰포트 너비를 가져오는 데 사용됩니다.

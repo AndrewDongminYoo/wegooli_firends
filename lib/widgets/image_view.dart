@@ -1,5 +1,3 @@
-// ignore_for_file: must_be_immutable
-
 // 🎯 Dart imports:
 import 'dart:io';
 
@@ -10,11 +8,15 @@ import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+// 🌎 Project imports:
+import '/core/utils/logger.dart';
+
+// ignore: must_be_immutable
 class CustomImageView extends StatelessWidget {
-  /// a [CustomImageView] it can be used for showing any type of images
-  /// it will shows the placeholder image if image is not found on network image
+  /// 모든 유형의 이미지를 표시하는 데 사용할 수 있는 [CustomImageView]입니다.
+  /// 네트워크 이미지에서 이미지를 찾을 수 없는 경우 플레이스홀더 이미지를 표시합니다.
   CustomImageView({
-    Key? key,
+    super.key,
     this.url,
     this.imagePath,
     this.svgPath,
@@ -28,25 +30,87 @@ class CustomImageView extends StatelessWidget {
     this.radius,
     this.margin,
     this.border,
-    this.placeHolder = 'assets/images/image_not_found.png',
-  }) : super(key: key);
+    this.callbackImage = 'assets/images/image_not_found.png',
+  })  : assert(
+            url != null || imagePath != null || svgPath != null || file != null,
+            '네트워크 이미지 주소, 이미지 경로, SVG 경로 또는 파일 경로 중 하나는 반드시 제공해야 합니다.'),
+        assert(
+            !(url != null &&
+                imagePath != null &&
+                svgPath != null &&
+                file != null),
+            '네트워크 이미지 주소, 이미지 경로, SVG 경로 또는 파일 경로 중 하나만 제공해야 합니다.'),
+        assert(svgPath == null || svgPath.isSvg, '잘못된 확장자명'),
+        assert(url == null || url.isImage, '잘못된 확장자명'),
+        assert(imagePath == null || imagePath.isImage, '잘못된 확장자명'),
+        assert(file == null || file.path.isImage, '잘못된 확장자명');
 
-  /// [url] is required parameter for fetching network image
+  CustomImageView.square({
+    Key? key,
+    required double size,
+    String? icon,
+    String? avatar,
+    String? url,
+    Color? color,
+    Alignment? alignment,
+    EdgeInsetsGeometry? margin,
+    VoidCallback? onTap,
+    BorderRadius? radius,
+    BoxBorder? border,
+  }) : this(
+          key: key,
+          svgPath: icon,
+          imagePath: avatar,
+          url: url,
+          height: size,
+          width: size,
+          color: color,
+          alignment: alignment,
+          margin: margin,
+          onTap: onTap,
+          radius: radius,
+          border: border,
+        );
+
+  CustomImageView.icon(
+    String icon, {
+    Key? key,
+    double size = 18,
+    VoidCallback? onTap,
+    Alignment? alignment,
+    EdgeInsetsGeometry? margin,
+    BorderRadius? radius,
+    BoxBorder? border,
+    Color? color,
+  }) : this.square(
+          key: key,
+          icon: icon,
+          size: size,
+          color: color,
+          alignment: alignment,
+          margin: margin,
+          onTap: onTap,
+          radius: radius,
+          border: border,
+        );
+
+  /// [url]은 네트워크 이미지를 불러오기 위한 필수 파라미터입니다.
   String? url;
 
-  /// [imagePath] is required parameter for showing png,jpg,etc image
+  /// [이미지 경로]는 png, jpg 등의 이미지를 표시하기 위한 필수 파라미터입니다.
   String? imagePath;
 
-  /// [svgPath] is required parameter for showing svg image
+  /// [svgPath]는 svg 이미지를 표시하기 위한 필수 파라미터입니다.
   String? svgPath;
 
-  /// [file] is required parameter for fetching image file
+  /// [파일] 이미지 파일 불러오기 필수 파라미터입니다.
   File? file;
+
   double? height;
   double? width;
   Color? color;
   BoxFit? fit;
-  final String placeHolder;
+  final String callbackImage;
   Alignment? alignment;
   VoidCallback? onTap;
   EdgeInsetsGeometry? margin;
@@ -73,8 +137,8 @@ class CustomImageView extends StatelessWidget {
     );
   }
 
-  /// build the image with border radius
-  dynamic _buildCircleImage() {
+  /// 테두리 반경으로 이미지 빌드
+  Widget _buildCircleImage() {
     if (radius != null) {
       return ClipRRect(
         borderRadius: radius ?? BorderRadius.zero,
@@ -85,7 +149,7 @@ class CustomImageView extends StatelessWidget {
     }
   }
 
-  /// build the image with border and border radius style
+  /// 테두리 및 테두리 반경 스타일로 이미지를 빌드합니다.
   Widget _buildImageWithBorder() {
     if (border != null) {
       return Container(
@@ -114,7 +178,16 @@ class CustomImageView extends StatelessWidget {
           color: color,
         ),
       );
+    } else if (imagePath != null && imagePath!.isNotEmpty) {
+      return Image.asset(
+        imagePath!,
+        height: height,
+        width: width,
+        fit: fit,
+        color: color,
+      );
     } else if (file != null && file!.path.isNotEmpty) {
+      logger.d('Showing file asset: $file');
       return Image.file(
         file!,
         height: height,
@@ -123,6 +196,7 @@ class CustomImageView extends StatelessWidget {
         color: color,
       );
     } else if (url != null && url!.isNotEmpty) {
+      logger.d('Loading network image asset: $url');
       return CachedNetworkImage(
         height: height,
         width: width,
@@ -138,21 +212,25 @@ class CustomImageView extends StatelessWidget {
           ),
         ),
         errorWidget: (context, url, error) => Image.asset(
-          placeHolder,
+          callbackImage,
           height: height,
           width: width,
           fit: fit ?? BoxFit.cover,
         ),
       );
-    } else if (imagePath != null && imagePath!.isNotEmpty) {
-      return Image.asset(
-        imagePath!,
-        height: height,
-        width: width,
-        fit: fit ?? BoxFit.cover,
-        color: color,
-      );
     }
     return const SizedBox();
+  }
+}
+
+extension on String {
+  bool get isSvg => toLowerCase().endsWith('.svg');
+  bool get isImage {
+    final ext = toLowerCase();
+    return ext.endsWith('.jpg') ||
+        ext.endsWith('.jpeg') ||
+        ext.endsWith('.png') ||
+        ext.endsWith('.gif') ||
+        ext.endsWith('.bmp');
   }
 }

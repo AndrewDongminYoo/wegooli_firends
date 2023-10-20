@@ -177,6 +177,10 @@ class $AssetsImagesGen {
   AssetGenImage get imgRectangle4640 =>
       const AssetGenImage('assets/images/img_rectangle4640.png');
 
+  /// File path: assets/images/img_ticket.png
+  AssetGenImage get imgTicket =>
+      const AssetGenImage('assets/images/img_ticket.png');
+
   /// File path: assets/images/placeholder.png
   AssetGenImage get placeholder =>
       const AssetGenImage('assets/images/placeholder.png');
@@ -199,6 +203,7 @@ class $AssetsImagesGen {
         imgGooliHome,
         imgLayer2Yellow100,
         imgRectangle4640,
+        imgTicket,
         placeholder
       ];
 }
@@ -282,9 +287,17 @@ class $AssetsSvgGen {
   SvgGenImage get icoCloseRound =>
       const SvgGenImage('assets/svg/ico_close_round.svg');
 
+  /// File path: assets/svg/ico_community.svg
+  SvgGenImage get icoCommunity =>
+      const SvgGenImage('assets/svg/ico_community.svg');
+
   /// File path: assets/svg/ico_contact_support.svg
   SvgGenImage get icoContactSupport =>
       const SvgGenImage('assets/svg/ico_contact_support.svg');
+
+  /// File path: assets/svg/ico_credit_card.svg
+  SvgGenImage get icoCreditCard =>
+      const SvgGenImage('assets/svg/ico_credit_card.svg');
 
   /// File path: assets/svg/ico_edit.svg
   SvgGenImage get icoEdit => const SvgGenImage('assets/svg/ico_edit.svg');
@@ -296,6 +309,9 @@ class $AssetsSvgGen {
   /// File path: assets/svg/ico_eye_crossed_out.svg
   SvgGenImage get icoEyeCrossedOut =>
       const SvgGenImage('assets/svg/ico_eye_crossed_out.svg');
+
+  /// File path: assets/svg/ico_flag.svg
+  SvgGenImage get icoFlag => const SvgGenImage('assets/svg/ico_flag.svg');
 
   /// File path: assets/svg/ico_globe.svg
   SvgGenImage get icoGlobe => const SvgGenImage('assets/svg/ico_globe.svg');
@@ -365,6 +381,10 @@ class $AssetsSvgGen {
   SvgGenImage get icoUnlocked =>
       const SvgGenImage('assets/svg/ico_unlocked.svg');
 
+  /// File path: assets/svg/ico_user_on_zone.svg
+  SvgGenImage get icoUserOnZone =>
+      const SvgGenImage('assets/svg/ico_user_on_zone.svg');
+
   /// File path: assets/svg/img_friends.svg
   SvgGenImage get imgFriends => const SvgGenImage('assets/svg/img_friends.svg');
 
@@ -408,10 +428,13 @@ class $AssetsSvgGen {
         icoCheckCircle,
         icoCloseGray,
         icoCloseRound,
+        icoCommunity,
         icoContactSupport,
+        icoCreditCard,
         icoEdit,
         icoEditBlack,
         icoEyeCrossedOut,
+        icoFlag,
         icoGlobe,
         icoGrid,
         icoInformation,
@@ -431,6 +454,7 @@ class $AssetsSvgGen {
         icoTaxi,
         icoTriangle,
         icoUnlocked,
+        icoUserOnZone,
         imgFriends,
         imgGooli,
         imgGooliCute,

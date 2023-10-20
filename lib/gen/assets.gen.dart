@@ -29,6 +29,10 @@ class $AssetsBrandGen {
   AssetGenImage get friendsByWegooli =>
       const AssetGenImage('assets/brand/friends_by_wegooli.png');
 
+  /// File path: assets/brand/img_friends_ko.png
+  AssetGenImage get imgFriendsKo =>
+      const AssetGenImage('assets/brand/img_friends_ko.png');
+
   /// File path: assets/brand/img_wegooli_title.png
   AssetGenImage get imgWegooliTitle =>
       const AssetGenImage('assets/brand/img_wegooli_title.png');
@@ -37,8 +41,14 @@ class $AssetsBrandGen {
   AssetGenImage get wegooli => const AssetGenImage('assets/brand/wegooli.png');
 
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [friends, byWegooli, friendsByWegooli, imgWegooliTitle, wegooli];
+  List<AssetGenImage> get values => [
+        friends,
+        byWegooli,
+        friendsByWegooli,
+        imgFriendsKo,
+        imgWegooliTitle,
+        wegooli
+      ];
 }
 
 class $AssetsCarsGen {
@@ -155,6 +165,10 @@ class $AssetsImagesGen {
   AssetGenImage get imgFrame3497266x66 =>
       const AssetGenImage('assets/images/img_frame34972_66x66.png');
 
+  /// File path: assets/images/img_gooli_home.png
+  AssetGenImage get imgGooliHome =>
+      const AssetGenImage('assets/images/img_gooli_home.png');
+
   /// File path: assets/images/img_layer2_yellow_100.png
   AssetGenImage get imgLayer2Yellow100 =>
       const AssetGenImage('assets/images/img_layer2_yellow_100.png');
@@ -182,6 +196,7 @@ class $AssetsImagesGen {
         imgFrame349721,
         imgFrame349722,
         imgFrame3497266x66,
+        imgGooliHome,
         imgLayer2Yellow100,
         imgRectangle4640,
         placeholder
@@ -353,10 +368,6 @@ class $AssetsSvgGen {
   /// File path: assets/svg/img_friends.svg
   SvgGenImage get imgFriends => const SvgGenImage('assets/svg/img_friends.svg');
 
-  /// File path: assets/svg/img_friends_ko.svg
-  SvgGenImage get imgFriendsKo =>
-      const SvgGenImage('assets/svg/img_friends_ko.svg');
-
   /// File path: assets/svg/img_gooli.svg
   SvgGenImage get imgGooli => const SvgGenImage('assets/svg/img_gooli.svg');
 
@@ -371,10 +382,6 @@ class $AssetsSvgGen {
   /// File path: assets/svg/img_gooli_happy.svg
   SvgGenImage get imgGooliHappy =>
       const SvgGenImage('assets/svg/img_gooli_happy.svg');
-
-  /// File path: assets/svg/img_gooli_home.svg
-  SvgGenImage get imgGooliHome =>
-      const SvgGenImage('assets/svg/img_gooli_home.svg');
 
   /// File path: assets/svg/img_ticket.svg
   SvgGenImage get imgTicket => const SvgGenImage('assets/svg/img_ticket.svg');
@@ -425,12 +432,10 @@ class $AssetsSvgGen {
         icoTriangle,
         icoUnlocked,
         imgFriends,
-        imgFriendsKo,
         imgGooli,
         imgGooliCute,
         imgGooliFlag,
         imgGooliHappy,
-        imgGooliHome,
         imgTicket,
         line
       ];

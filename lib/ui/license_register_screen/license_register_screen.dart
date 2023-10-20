@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
-import 'package:flutter_svg_provider/flutter_svg_provider.dart' as fs;
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
@@ -92,8 +91,9 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                 vertical: 13.v),
                                             decoration: BoxDecoration(
                                                 image: DecorationImage(
-                                                    image: fs.Svg(Assets
-                                                        .svg.imgGooliHome.path),
+                                                    image: Assets
+                                                        .images.imgGooliHome
+                                                        .provider(),
                                                     fit: BoxFit.cover)),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.min,

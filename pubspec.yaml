@@ -80,8 +80,6 @@ dependencies:
   flutter_native_splash: ^2.3.2
   # 플러터 SVG 렌더러
   flutter_svg: ^2.0.7
-  # 플러터 SVG 프로바이더 (네트워크 SVG 이미지 지원)
-  flutter_svg_provider: ^1.0.4
   # 폰트어썸 아이콘 폰트 플러그인
   font_awesome_flutter: ^10.6.0
   # CSS 컬러 변환 플러그인
@@ -280,10 +278,10 @@ flutter_launcher_icons:
 
 flutter_native_splash:
   color: "#FFE142"
-  image: assets/images/img_gooli_1.png
-  branding: assets/brand/wegooli.png
+  image: assets/images/img_gooli_home.png
+  branding: assets/brand/img_friends_ko.png
   branding_mode: bottom
   android_12:
-    image: assets/images/img_gooli_1.png
+    image: assets/images/img_gooli_home.png
     color: "#FFE142"
-    branding: assets/brand/wegooli.png
+    branding: assets/brand/img_friends_ko.png

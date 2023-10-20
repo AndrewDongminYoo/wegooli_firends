@@ -22,7 +22,7 @@ class HomePageScreen extends StatelessWidget {
           height: 45.v,
           leadingWidth: 64.h,
           leading: CustomImageView(
-            svgPath: Assets.svg.imgFriendsKo.path,
+            imagePath: Assets.brand.friendsKo.path,
             margin: EdgeInsets.only(
               left: 15.h,
               top: 13.v,
@@ -277,7 +277,7 @@ class HomePageScreen extends StatelessWidget {
                       ),
                     ),
                     CustomImageView(
-                      svgPath: Assets.svg.imgGooliHome.path,
+                      imagePath: Assets.images.imgGooliHome.path,
                       height: 58.v,
                       width: 119.h,
                       margin: EdgeInsets.only(

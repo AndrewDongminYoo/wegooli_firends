@@ -1,0 +1,51 @@
+{
+  "name": "wegooli_friends",
+  "directories": {
+    "lib": "lib"
+  },
+  "keywords": [
+    "wegooli",
+    "mobility",
+    "car sharing",
+    "friends",
+    "app",
+    "iOS",
+    "android",
+    "flutter"
+  ],
+  "author": "Dongmin,Yoo <ydm2790@gmail.com> (https://github.com/AndrewDongminYoo)",
+  "license": "MIT",
+  "scripts": {
+    "build-aab": "flutter build appbundle --release --tree-shake-icons && open:aos",
+    "build-ipa": "flutter build ipa --release --tree-shake-icons && open:ios",
+    "build-apk": "flutter build apk",
+    "build-ios": "flutter build ios",
+    "dev": "flutter run --debug --device-id chrome --web-hostname localhost --target=lib/main.dart --hot --ignore-deprecation",
+    "get": "flutter pub get",
+    "open:ios": "open -a 'Xcode' build/ios/archive/Runner.xcarchive",
+    "open:aos": "open -a 'Android Studio' build/app/outputs/bundle/release",
+    "pub:up": "flutter upgrade && flutter pub upgrade",
+    "pub:dry": "flutter pub outdated && flutter outdated --json > logs/outdated.json",
+    "pub:hard": "flutter upgrade --force && flutter pub upgrade --major-versions",
+    "fmt:hard": "dart format .",
+    "fmt:fix": "dart fix --apply",
+    "fmt:sort": "dart run import_sorter:main -e",
+    "format": "yarn fmt:fix && yarn fmt:sort",
+    "format:hard": "yarn fmt:fix && yarn fmt:sort && yarn fmt:hard",
+    "gen:asset": "dart run build_runner build --delete-conflicting-outputs",
+    "gen:locale": "flutter gen-l10n",
+    "generate": "yarn gen:asset && yarn gen:locale && yarn fmt:sort",
+    "bootstrap": "yarn generate ; yarn format:hard",
+    "clean": "flutter clean",
+    "reinstall": "yarn clean && yarn install && yarn bootstrap",
+    "logs": "flutter logs -d",
+    "deps": "flutter pub deps",
+    "devices:": "flutter custom-devices",
+    "devices:virt": "flutter emulators",
+    "devices:real": "flutter devices --machine",
+    "doctor": "flutter doctor -v",
+    "screenshot": "flutter screenshot",
+    "test": "flutter test",
+    "test:drive": "flutter drive"
+  }
+}

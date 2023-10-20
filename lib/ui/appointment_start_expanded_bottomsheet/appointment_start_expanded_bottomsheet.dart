@@ -31,7 +31,7 @@ class AppointmentStartExpandedBottomsheet extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: 12.v),
         decoration: BoxDecoration(
           color: lightTheme.onPrimaryContainer,
-          borderRadius: BorderRadiusStyle.customBorderTL10,
+          borderRadius: BorderRadiusStyle.customBorderT10,
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,

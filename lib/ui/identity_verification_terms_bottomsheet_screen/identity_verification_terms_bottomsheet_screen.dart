@@ -268,7 +268,7 @@ class IdentityVerificationTermsBottomsheetScreen
                               decoration: BoxDecoration(
                                   color: lightTheme.onPrimaryContainer,
                                   borderRadius:
-                                      BorderRadiusStyle.customBorderTL10),
+                                      BorderRadiusStyle.customBorderT10),
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [

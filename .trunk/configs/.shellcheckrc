@@ -1,0 +1,10 @@
+enable=all
+source-path=SCRIPTDIR
+disable=SC2016 # Expressions don't expand in single quotes, use double quotes for that.
+disable=SC2086 # Double quote to prevent globbing and word splitting.
+disable=SC2154 # var is referenced but not assigned.
+disable=SC2250 # Prefer putting braces around variable references even when not strictly required.
+
+# If you're having issues with shellcheck following source, disable the errors via
+# disable=SC1090
+# disable=SC1091

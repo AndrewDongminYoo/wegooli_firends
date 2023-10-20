@@ -16,6 +16,9 @@ class FontFamily {
   /// Font family: Inter
   static const String inter = 'Inter';
 
+  /// Font family: Jalnan
+  static const String jalnan = 'Jalnan';
+
   /// Font family: NotoSansKR
   static const String notoSansKR = 'NotoSansKR';
 

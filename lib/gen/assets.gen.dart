@@ -14,7 +14,6 @@ import 'package:flutter/widgets.dart';
 // 📦 Package imports:
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lottie/lottie.dart';
-import 'package:rive/rive.dart';
 
 class $AssetsBrandGen {
   const $AssetsBrandGen();
@@ -198,36 +197,6 @@ class $AssetsLottiesGen {
 
   /// List of all assets
   List<LottieGenImage> get values => [customLoader];
-}
-
-class $AssetsRiveGen {
-  const $AssetsRiveGen();
-
-  /// File path: assets/rive/button.riv
-  RiveGenImage get button => const RiveGenImage('assets/rive/button.riv');
-
-  /// File path: assets/rive/check.riv
-  RiveGenImage get check => const RiveGenImage('assets/rive/check.riv');
-
-  /// File path: assets/rive/confetti.riv
-  RiveGenImage get confetti => const RiveGenImage('assets/rive/confetti.riv');
-
-  /// File path: assets/rive/house.riv
-  RiveGenImage get house => const RiveGenImage('assets/rive/house.riv');
-
-  /// File path: assets/rive/icons.riv
-  RiveGenImage get icons => const RiveGenImage('assets/rive/icons.riv');
-
-  /// File path: assets/rive/menu_button.riv
-  RiveGenImage get menuButton =>
-      const RiveGenImage('assets/rive/menu_button.riv');
-
-  /// File path: assets/rive/shapes.riv
-  RiveGenImage get shapes => const RiveGenImage('assets/rive/shapes.riv');
-
-  /// List of all assets
-  List<RiveGenImage> get values =>
-      [button, check, confetti, house, icons, menuButton, shapes];
 }
 
 class $AssetsSvgGen {
@@ -474,7 +443,6 @@ class Assets {
   static const $AssetsCarsGen cars = $AssetsCarsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
   static const $AssetsLottiesGen lotties = $AssetsLottiesGen();
-  static const $AssetsRiveGen rive = $AssetsRiveGen();
   static const $AssetsSvgGen svg = $AssetsSvgGen();
 }
 
@@ -597,41 +565,6 @@ class SvgGenImage {
       colorBlendMode: colorBlendMode,
       clipBehavior: clipBehavior,
       cacheColorFilter: cacheColorFilter,
-    );
-  }
-
-  String get path => _assetName;
-
-  String get keyName => _assetName;
-}
-
-class RiveGenImage {
-  const RiveGenImage(this._assetName);
-
-  final String _assetName;
-
-  RiveAnimation rive({
-    String? artboard,
-    List<String> animations = const [],
-    List<String> stateMachines = const [],
-    BoxFit? fit,
-    Alignment? alignment,
-    Widget? placeHolder,
-    bool antialiasing = true,
-    List<RiveAnimationController> controllers = const [],
-    OnInitCallback? onInit,
-  }) {
-    return RiveAnimation.asset(
-      _assetName,
-      artboard: artboard,
-      animations: animations,
-      stateMachines: stateMachines,
-      fit: fit,
-      alignment: alignment,
-      placeHolder: placeHolder,
-      antialiasing: antialiasing,
-      controllers: controllers,
-      onInit: onInit,
     );
   }
 

@@ -11,8 +11,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 
-class ColorConstant {
-  ColorConstant._();
+class AppColors {
+  AppColors._();
 
   /// Color: #666666
   static const Color calGrey666 = Color(0xFF666666);

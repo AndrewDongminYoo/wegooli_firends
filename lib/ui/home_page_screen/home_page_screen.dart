@@ -22,7 +22,7 @@ class HomePageScreen extends StatelessWidget {
           height: 45.v,
           leadingWidth: 64.h,
           leading: CustomImageView(
-            imagePath: Assets.brand.friendsKo.path,
+            imagePath: Assets.brand.imgFriendsKo.path,
             margin: EdgeInsets.only(
               left: 15.h,
               top: 13.v,

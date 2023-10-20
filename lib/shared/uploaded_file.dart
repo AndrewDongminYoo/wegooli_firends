@@ -1,0 +1,52 @@
+// 🎯 Dart imports:
+import 'dart:convert';
+import 'dart:typed_data' show Uint8List;
+
+class CustomUploadedFile {
+  const CustomUploadedFile({
+    this.name,
+    this.bytes,
+    this.height,
+    this.width,
+    this.blurHash,
+  });
+
+  final String? name;
+  final Uint8List? bytes;
+  final double? height;
+  final double? width;
+  final String? blurHash;
+
+  @override
+  String toString() =>
+      'CustomUploadedFile(name: $name, bytes: ${bytes?.length ?? 0}, height: $height, width: $width, blurHash: $blurHash,)';
+
+  String serialize() => jsonEncode(
+        {
+          'name': name,
+          'bytes': bytes,
+          'height': height,
+          'width': width,
+          'blurHash': blurHash,
+        },
+      );
+
+  // ignore: prefer_constructors_over_static_methods
+  static CustomUploadedFile deserialize(String val) {
+    final serializedData = jsonDecode(val) as Map<String, dynamic>;
+    final data = {
+      'name': serializedData['name'] ?? '',
+      'bytes': serializedData['bytes'] ?? Uint8List.fromList([]),
+      'height': serializedData['height'],
+      'width': serializedData['width'],
+      'blurHash': serializedData['blurHash'],
+    };
+    return CustomUploadedFile(
+      name: data['name'] as String,
+      bytes: Uint8List.fromList(data['bytes'].cast<int>().toList()),
+      height: data['height'] as double?,
+      width: data['width'] as double?,
+      blurHash: data['blurHash'] as String?,
+    );
+  }
+}

@@ -160,3 +160,26 @@ ThemeData get theme {
     ),
   );
 }
+
+/// Class containing custom colors for a primary theme.
+class Palette {
+  static const Color fontBlack = Color(0xFF222222); // #222222
+  static const Color fontGray = Color(0xFF5D5D5D); // #5D5D5D
+
+  static const Color blueGray100 = Color(0xFFBABCC4); // #BABCC4
+  static const Color blueGray200 = Color(0xFFB0B2BC); // #B0B2BC
+  static const Color blueGray300 = Color(0x33A4A8AF); // #33A4A8AF
+  static const Color blueGray400 = Color(0xFF868686); // #868686
+  static const Color blueGray900 = Color(0xFF323232); // #323232
+  static const Color gray100 = Color(0xFFF3F3F6); // #F3F3F6
+  static const Color gray400 = Color(0xFFB9BCC3); // #B9BCC3
+  static const Color gray500 = Color(0xFF8F9199); // #8F9199
+  static const Color gray700 = Color(0xFF666666); // #666666
+
+  static const Color dustGray = Color(0xFF979797); // #979797
+  static const Color dropdown = Color(0xFF91969D); // #91969D
+  static const Color waterloo = Color(0xFF82838D); // #82838D
+
+  static const Color deepPurpleA200 = Color(0xFF7850E9); // #7850E9
+  static const Color red600 = Color(0xFFDB4646); // #DB4646
+}

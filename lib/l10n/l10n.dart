@@ -11,6 +11,6 @@ class CurrentLocale {
 
 Localized l10ns = CurrentLocale._message;
 
-extension AppLocalizationssX on BuildContext {
-  Localized get l10ns => Localized.of(this)!;
+extension AppLocalizationsX on BuildContext {
+  Localized get l10ns => Localized.of(this);
 }

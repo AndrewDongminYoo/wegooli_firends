@@ -69,8 +69,8 @@ abstract class Localized {
 
   final String localeName;
 
-  static Localized? of(BuildContext context) {
-    return Localizations.of<Localized>(context, Localized);
+  static Localized of(BuildContext context) {
+    return Localizations.of<Localized>(context, Localized)!;
   }
 
   static const LocalizationsDelegate<Localized> delegate = _LocalizedDelegate();

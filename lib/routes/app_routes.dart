@@ -64,7 +64,7 @@ import '/ui/unsubscribe_screen/binding/unsubscribe_binding.dart';
 import '/ui/unsubscribe_screen/unsubscribe_screen.dart';
 
 // String initialRoute = AppGateway.routeName;
-String initialRoute = HomePageScreen.routeName;
+String initialRoute = AppNavigationScreen.routeName;
 
 class AppRoutes {
   static List<GetPage> pages = [

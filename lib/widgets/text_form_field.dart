@@ -7,7 +7,7 @@ import '/theme/theme_helper.dart';
 
 class CustomTextFormField extends StatelessWidget {
   CustomTextFormField({
-    Key? key,
+    super.key,
     this.alignment,
     this.width,
     this.margin,
@@ -30,7 +30,7 @@ class CustomTextFormField extends StatelessWidget {
     this.fillColor,
     this.filled = true,
     this.validator,
-  }) : super(key: key);
+  });
 
   final Alignment? alignment;
   final double? width;

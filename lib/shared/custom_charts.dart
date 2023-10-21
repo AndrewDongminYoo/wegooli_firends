@@ -8,15 +8,18 @@ import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:intl/intl.dart';
 
+// 🌎 Project imports:
+import '/core/utils/list_extensions.dart';
+
 class CustomLineChart extends StatelessWidget {
   const CustomLineChart({
-    Key? key,
+    super.key,
     required this.data,
     required this.xAxisLabelInfo,
     required this.yAxisLabelInfo,
     required this.axisBounds,
     this.chartStylingInfo = const ChartStylingInfo(),
-  }) : super(key: key);
+  });
 
   final List<CustomLineChartData> data;
   final AxisLabelInfo xAxisLabelInfo;
@@ -25,7 +28,7 @@ class CustomLineChart extends StatelessWidget {
   final ChartStylingInfo chartStylingInfo;
 
   List<LineChartBarData> get dataWithSpots =>
-      data.map((d) => d.settings.copyWith(spots: d.spots)).toList();
+      data.mapTo((d) => d.settings.copyWith(spots: d.spots));
 
   @override
   Widget build(BuildContext context) => LineChart(
@@ -61,7 +64,7 @@ class CustomLineChart extends StatelessWidget {
 
 class CustomBarChart extends StatelessWidget {
   const CustomBarChart({
-    Key? key,
+    super.key,
     required this.barData,
     required this.xLabels,
     required this.xAxisLabelInfo,
@@ -74,7 +77,7 @@ class CustomBarChart extends StatelessWidget {
     this.groupSpace,
     this.alignment = BarChartAlignment.center,
     this.chartStylingInfo = const ChartStylingInfo(),
-  }) : super(key: key);
+  });
 
   final List<CustomBarChartData> barData;
   final List<String> xLabels;
@@ -89,16 +92,16 @@ class CustomBarChart extends StatelessWidget {
   final BarChartAlignment alignment;
   final ChartStylingInfo chartStylingInfo;
 
-  Map<int, List<double>> get dataMap => xLabels.asMap().map((key, value) =>
-      MapEntry(key, barData.map((data) => data.data[key]).toList()));
+  Map<int, List<double>> get dataMap => xLabels.asMap().map(
+      (key, value) => MapEntry(key, barData.mapTo((data) => data.data[key])));
 
-  List<BarChartGroupData> get groups => dataMap.entries.map((entry) {
+  List<BarChartGroupData> get groups => dataMap.entries.mapTo((entry) {
         final groupInt = entry.key;
         final groupData = entry.value;
         return BarChartGroupData(
             x: groupInt,
             barsSpace: barSpace,
-            barRods: groupData.asMap().entries.map((rod) {
+            barRods: groupData.asMap().entries.mapTo((rod) {
               final rodInt = rod.key;
               final rodSettings = barData[rodInt];
               final rodValue = rod.value;
@@ -112,10 +115,10 @@ class CustomBarChart extends StatelessWidget {
                   color: rodSettings.borderColor,
                 ),
               );
-            }).toList());
-      }).toList();
+            }));
+      });
 
-  List<BarChartGroupData> get stacks => dataMap.entries.map((entry) {
+  List<BarChartGroupData> get stacks => dataMap.entries.mapTo((entry) {
         final groupInt = entry.key;
         final stackData = entry.value;
         return BarChartGroupData(
@@ -126,7 +129,7 @@ class CustomBarChart extends StatelessWidget {
               toY: sum(stackData),
               width: barWidth,
               borderRadius: barBorderRadius,
-              rodStackItems: stackData.asMap().entries.map((stack) {
+              rodStackItems: stackData.asMap().entries.mapTo((stack) {
                 final stackInt = stack.key;
                 final stackSettings = barData[stackInt];
                 final start =
@@ -140,11 +143,11 @@ class CustomBarChart extends StatelessWidget {
                     color: stackSettings.borderColor,
                   ),
                 );
-              }).toList(),
+              }),
             )
           ],
         );
-      }).toList();
+      });
 
   double sum(List<double> list) => list.reduce((a, b) => a + b);
 
@@ -193,14 +196,14 @@ enum PieChartSectionLabelType {
 
 class CustomPieChart extends StatelessWidget {
   const CustomPieChart({
-    Key? key,
+    super.key,
     required this.data,
     this.donutHoleRadius = 0,
     this.donutHoleColor = Colors.transparent,
     this.sectionLabelType = PieChartSectionLabelType.none,
     this.sectionLabelStyle,
     this.labelFormatter = const LabelFormatter(),
-  }) : super(key: key);
+  });
 
   final CustomPieChartData data;
   final double donutHoleRadius;
@@ -217,7 +220,7 @@ class CustomPieChart extends StatelessWidget {
           centerSpaceRadius: donutHoleRadius,
           centerSpaceColor: donutHoleColor,
           sectionsSpace: 0,
-          sections: data.data.asMap().entries.map(
+          sections: data.data.asMap().entries.mapTo(
             (section) {
               String? title;
               final index = section.key;
@@ -256,14 +259,14 @@ class CustomPieChart extends StatelessWidget {
                 title: title,
               );
             },
-          ).toList(),
+          ),
         ),
       );
 }
 
 class CustomChartLegendWidget extends StatelessWidget {
   const CustomChartLegendWidget({
-    Key? key,
+    super.key,
     required this.entries,
     this.width,
     this.height,
@@ -276,7 +279,7 @@ class CustomChartLegendWidget extends StatelessWidget {
     this.indicatorSize = 10,
     this.indicatorBorderRadius,
     this.textPadding = EdgeInsets.zero,
-  }) : super(key: key);
+  });
 
   final List<LegendEntry> entries;
   final double? width;
@@ -305,29 +308,27 @@ class CustomChartLegendWidget extends StatelessWidget {
           ),
         ),
         child: Column(
-          children: entries
-              .map(
-                (entry) => Row(
-                  children: [
-                    Container(
-                      height: indicatorSize,
-                      width: indicatorSize,
-                      decoration: BoxDecoration(
-                        color: entry.color,
-                        borderRadius: indicatorBorderRadius,
-                      ),
-                    ),
-                    Padding(
-                      padding: textPadding,
-                      child: Text(
-                        entry.name,
-                        style: textStyle,
-                      ),
-                    )
-                  ],
+          children: entries.mapTo(
+            (entry) => Row(
+              children: [
+                Container(
+                  height: indicatorSize,
+                  width: indicatorSize,
+                  decoration: BoxDecoration(
+                    color: entry.color,
+                    borderRadius: indicatorBorderRadius,
+                  ),
                 ),
-              )
-              .toList(),
+                Padding(
+                  padding: textPadding,
+                  child: Text(
+                    entry.name,
+                    style: textStyle,
+                  ),
+                )
+              ],
+            ),
+          ),
         ),
       );
 }
@@ -411,10 +412,9 @@ class CustomLineChartData {
     final y = _dataToDouble(yData);
     assert(x.length == y.length, 'X and Y data must be the same length');
 
-    return Iterable<int>.generate(min(x.length, y.length))
-        .where((i) => x[i] != null && y[i] != null)
-        .map((i) => FlSpot(x[i]!, y[i]!))
-        .toList();
+    return Iterable.generate(min(x.length, y.length))
+        .whereTo((i) => x[i] != null && y[i] != null)
+        .mapTo((i) => FlSpot(x[i]!, y[i]!));
   }
 }
 
@@ -431,7 +431,7 @@ class CustomBarChartData {
   final double borderWidth;
   final Color borderColor;
 
-  List<double> get data => _dataToDouble(yData).map((e) => e ?? 0.0).toList();
+  List<double> get data => _dataToDouble(yData).mapTo((e) => e ?? 0.0);
 }
 
 class CustomPieChartData {
@@ -449,7 +449,7 @@ class CustomPieChartData {
   final List<double>? borderWidth;
   final List<Color>? borderColor;
 
-  List<double> get data => _dataToDouble(values).map((e) => e ?? 0.0).toList();
+  List<double> get data => _dataToDouble(values).mapTo((e) => e ?? 0.0);
 }
 
 List<double?> _dataToDouble(List<dynamic> data) {
@@ -457,29 +457,25 @@ List<double?> _dataToDouble(List<dynamic> data) {
     return [];
   }
   if (data.first is double) {
-    return data.map((d) => d as double).toList();
+    return data.mapTo((d) => d as double);
   }
   if (data.first is int) {
-    return data.map((d) => (d as int).toDouble()).toList();
+    return data.mapTo((d) => (d as int).toDouble());
   }
   if (data.first is DateTime) {
-    return data
-        .map((d) => (d as DateTime).millisecondsSinceEpoch.toDouble())
-        .toList();
+    return data.mapTo((d) => (d as DateTime).millisecondsSinceEpoch.toDouble());
   }
   if (data.first is String) {
     // First try to parse as doubles
     if (double.tryParse(data.first as String) != null) {
-      return data.map((d) => double.tryParse(d as String)).toList();
+      return data.mapTo((d) => double.tryParse(d as String));
     }
     if (int.tryParse(data.first as String) != null) {
-      return data.map((d) => int.tryParse(d as String)?.toDouble()).toList();
+      return data.mapTo((d) => int.tryParse(d as String)?.toDouble());
     }
     if (DateTime.tryParse(data.first as String) != null) {
-      return data
-          .map((d) =>
-              DateTime.tryParse(d as String)?.millisecondsSinceEpoch.toDouble())
-          .toList();
+      return data.mapTo((d) =>
+          DateTime.tryParse(d as String)?.millisecondsSinceEpoch.toDouble());
     }
   }
   return [];

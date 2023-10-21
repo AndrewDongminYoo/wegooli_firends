@@ -8,7 +8,7 @@ import '/theme/theme_helper.dart';
 
 class CustomDropDown extends StatelessWidget {
   CustomDropDown({
-    Key? key,
+    super.key,
     this.alignment,
     this.width,
     this.margin,
@@ -29,7 +29,7 @@ class CustomDropDown extends StatelessWidget {
     this.filled = false,
     this.validator,
     this.onChanged,
-  }) : super(key: key);
+  });
 
   final Alignment? alignment;
   final double? width;

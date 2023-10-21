@@ -7,7 +7,7 @@ import '/theme/theme_helper.dart';
 
 class CustomFloatingButton extends StatelessWidget {
   CustomFloatingButton({
-    Key? key,
+    super.key,
     this.alignment,
     this.margin,
     this.backgroundColor,
@@ -16,7 +16,7 @@ class CustomFloatingButton extends StatelessWidget {
     this.height,
     this.decoration,
     this.child,
-  }) : super(key: key);
+  });
 
   final Alignment? alignment;
   final EdgeInsetsGeometry? margin;

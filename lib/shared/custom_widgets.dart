@@ -51,14 +51,14 @@ class CustomButtonOptions {
 
 class CustomButtonWidget extends StatefulWidget {
   const CustomButtonWidget({
-    Key? key,
+    super.key,
     required this.text,
     required this.onPressed,
     this.icon,
     this.iconData,
     required this.options,
     this.showLoadingIndicator = true,
-  }) : super(key: key);
+  });
 
   final String text;
   final Widget? icon;

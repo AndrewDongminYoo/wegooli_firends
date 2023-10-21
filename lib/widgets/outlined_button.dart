@@ -8,7 +8,7 @@ import '/widgets/base_button.dart';
 
 class CustomOutlinedButton extends BaseButton {
   CustomOutlinedButton({
-    Key? key,
+    super.key,
     this.decoration,
     this.leftIcon,
     this.rightIcon,
@@ -23,7 +23,6 @@ class CustomOutlinedButton extends BaseButton {
     EdgeInsets? margin,
     required String text,
   }) : super(
-          key: key,
           text: text,
           onTap: onTap,
           buttonStyle: buttonStyle,

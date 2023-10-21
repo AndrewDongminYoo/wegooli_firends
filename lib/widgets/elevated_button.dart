@@ -8,7 +8,7 @@ import '/widgets/base_button.dart';
 
 class CustomElevatedButton extends BaseButton {
   CustomElevatedButton({
-    Key? key,
+    super.key,
     this.decoration,
     this.leftIcon,
     this.rightIcon,
@@ -22,7 +22,6 @@ class CustomElevatedButton extends BaseButton {
     double? width,
     required String text,
   }) : super(
-          key: key,
           text: text,
           onTap: onTap,
           buttonStyle: buttonStyle,

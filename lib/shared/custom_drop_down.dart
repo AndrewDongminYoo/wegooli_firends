@@ -9,7 +9,7 @@ import '/shared/form_field_controller.dart';
 
 class CustomDropDown<T> extends StatefulWidget {
   const CustomDropDown({
-    Key? key,
+    super.key,
     required this.controller,
     this.hintText,
     this.searchHintText,
@@ -33,7 +33,7 @@ class CustomDropDown<T> extends StatefulWidget {
     this.disabled = false,
     this.isSearchable = false,
     this.isMultiSelect = false,
-  }) : super(key: key);
+  });
 
   final FormFieldController<T> controller;
   final String? hintText;

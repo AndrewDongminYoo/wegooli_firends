@@ -7,14 +7,14 @@ import '/theme/theme_helper.dart';
 // ignore: must_be_immutable
 class CustomSwitch extends StatelessWidget {
   CustomSwitch({
-    Key? key,
+    super.key,
     required this.onChange,
     this.alignment,
     this.value,
     this.width,
     this.height,
     this.margin,
-  }) : super(key: key);
+  });
 
   final Alignment? alignment;
   bool? value;

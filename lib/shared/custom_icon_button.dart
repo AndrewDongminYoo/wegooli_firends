@@ -6,7 +6,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CustomIconButton extends StatefulWidget {
   const CustomIconButton({
-    Key? key,
+    super.key,
     required this.icon,
     this.borderColor,
     this.borderRadius,
@@ -19,7 +19,7 @@ class CustomIconButton extends StatefulWidget {
     this.hoverIconColor,
     this.onPressed,
     this.showLoadingIndicator = false,
-  }) : super(key: key);
+  });
 
   final Widget icon;
   final double? borderRadius;

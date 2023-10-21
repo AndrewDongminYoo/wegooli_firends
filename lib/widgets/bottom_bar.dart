@@ -13,9 +13,9 @@ import '/widgets/image_view.dart';
 // ignore: must_be_immutable
 class CustomBottomBar extends StatelessWidget {
   CustomBottomBar({
-    Key? key,
+    super.key,
     this.onChanged,
-  }) : super(key: key);
+  });
 
   RxInt selectedIndex = 0.obs;
 
@@ -154,7 +154,7 @@ class BottomMenuModel {
 }
 
 class DefaultWidget extends StatelessWidget {
-  const DefaultWidget({Key? key}) : super(key: key);
+  const DefaultWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

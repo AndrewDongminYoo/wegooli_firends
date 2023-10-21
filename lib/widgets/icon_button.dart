@@ -6,7 +6,7 @@ import '/core/utils/size_utils.dart';
 
 class CustomIconButton extends StatelessWidget {
   CustomIconButton({
-    Key? key,
+    super.key,
     this.alignment,
     this.margin,
     this.height,
@@ -15,7 +15,7 @@ class CustomIconButton extends StatelessWidget {
     this.decoration,
     this.child,
     this.onTap,
-  }) : super(key: key);
+  });
 
   final Alignment? alignment;
   final EdgeInsetsGeometry? margin;

@@ -8,7 +8,7 @@ import '/theme/theme_helper.dart';
 // ignore: must_be_immutable
 class CustomRadioButton extends StatelessWidget {
   CustomRadioButton({
-    Key? key,
+    super.key,
     required this.onChange,
     this.decoration,
     this.alignment,
@@ -24,7 +24,7 @@ class CustomRadioButton extends StatelessWidget {
     this.textAlignment,
     this.gradient,
     this.backgroundColor,
-  }) : super(key: key);
+  });
 
   final BoxDecoration? decoration;
   final Alignment? alignment;

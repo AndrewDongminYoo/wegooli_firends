@@ -14,8 +14,8 @@ import '/theme/theme_helper.dart';
 class Calendar1ItemWidget extends StatelessWidget {
   Calendar1ItemWidget(
     this.calendar1Item, {
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   Calendar1ItemModel calendar1Item;
 

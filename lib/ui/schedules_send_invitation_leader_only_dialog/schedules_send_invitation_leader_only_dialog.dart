@@ -16,8 +16,7 @@ import 'controller/schedules_send_invitation_leader_only_controller.dart';
 
 // ignore_for_file: must_be_immutable
 class SchedulesSendInvitationLeaderOnlyDialog extends StatelessWidget {
-  SchedulesSendInvitationLeaderOnlyDialog(this.controller, {Key? key})
-      : super(key: key);
+  SchedulesSendInvitationLeaderOnlyDialog(this.controller, {super.key});
 
   SchedulesSendInvitationLeaderOnlyController controller;
 

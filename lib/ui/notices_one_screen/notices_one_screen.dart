@@ -15,7 +15,7 @@ import '/widgets/image_view.dart';
 import 'controller/notices_one_controller.dart';
 
 class NoticesOneScreen extends GetWidget<NoticesOneController> {
-  const NoticesOneScreen({Key? key}) : super(key: key);
+  const NoticesOneScreen({super.key});
   static const routeName = '/notices_1';
 
   @override

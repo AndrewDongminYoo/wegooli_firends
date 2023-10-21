@@ -16,8 +16,8 @@ import '/widgets/image_view.dart';
 class ListaddphotoaltItemWidget extends StatelessWidget {
   ListaddphotoaltItemWidget(
     this.listaddphotoaltItem, {
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   ListaddphotoaltItemModel listaddphotoaltItem;
 

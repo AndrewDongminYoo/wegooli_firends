@@ -14,7 +14,7 @@ import '/widgets/elevated_button.dart';
 import '/widgets/image_view.dart';
 
 class UnsubscribeScreen extends StatelessWidget {
-  const UnsubscribeScreen({Key? key}) : super(key: key);
+  const UnsubscribeScreen({super.key});
   static const routeName = '/unsubscribe';
 
   @override

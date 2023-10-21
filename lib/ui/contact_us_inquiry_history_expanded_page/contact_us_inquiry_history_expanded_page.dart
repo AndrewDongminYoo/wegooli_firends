@@ -16,7 +16,7 @@ import 'models/contact_us_inquiry_history_expanded_model.dart';
 
 // ignore: must_be_immutable
 class ContactUsInquiryHistoryExpandedPage extends StatelessWidget {
-  ContactUsInquiryHistoryExpandedPage({Key? key}) : super(key: key);
+  ContactUsInquiryHistoryExpandedPage({super.key});
 
   final controller = Get.put(ContactUsInquiryHistoryExpandedController(
       ContactUsInquiryHistoryExpandedModel().obs));

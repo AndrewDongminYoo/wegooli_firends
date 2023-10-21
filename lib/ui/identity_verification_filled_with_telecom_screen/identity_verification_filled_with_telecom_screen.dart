@@ -17,7 +17,7 @@ import '/widgets/text_form_field.dart';
 import 'controller/identity_verification_filled_with_telecom_controller.dart';
 
 class VerificationFilledScreen extends GetWidget<VerificationFilledController> {
-  const VerificationFilledScreen({Key? key}) : super(key: key);
+  const VerificationFilledScreen({super.key});
   static const routeName = '/verification_filled';
 
   @override

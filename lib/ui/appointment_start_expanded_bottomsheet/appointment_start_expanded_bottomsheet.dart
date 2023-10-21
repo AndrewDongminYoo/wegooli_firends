@@ -17,8 +17,8 @@ import 'controller/appointment_start_expanded_controller.dart';
 class AppointmentStartExpandedBottomsheet extends StatelessWidget {
   AppointmentStartExpandedBottomsheet(
     this.controller, {
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   AppointmentStartExpandedController controller;
 
@@ -145,7 +145,7 @@ class AppointmentStartExpandedBottomsheet extends StatelessWidget {
                 child: Row(
                   children: [
                     Text(
-                      'lbl_8_1',
+                      '8/1',
                       style: textTheme.bodyLarge!.copyWith(
                         color: lightTheme.onPrimary.withOpacity(0.4),
                       ),
@@ -205,7 +205,7 @@ class AppointmentStartExpandedBottomsheet extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'lbl_8_2',
+                    '8/2',
                     style: textTheme.bodyLarge,
                   ),
                   Text(

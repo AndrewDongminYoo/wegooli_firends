@@ -17,8 +17,8 @@ import '/widgets/outlined_button.dart';
 class ListItemWidget extends StatelessWidget {
   ListItemWidget(
     this.listItem, {
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   ListItemModel listItem;
 

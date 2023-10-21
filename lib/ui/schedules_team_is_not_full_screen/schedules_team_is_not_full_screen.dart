@@ -18,7 +18,7 @@ import 'controller/schedules_team_is_not_full_controller.dart';
 
 class SchedulesTeamIsNotFullScreen
     extends GetWidget<SchedulesTeamIsNotFullController> {
-  const SchedulesTeamIsNotFullScreen({Key? key}) : super(key: key);
+  const SchedulesTeamIsNotFullScreen({super.key});
   static const routeName = '/schedules_team_is_not_full';
 
   @override

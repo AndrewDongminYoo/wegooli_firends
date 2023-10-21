@@ -14,8 +14,8 @@ import '/theme/theme_helper.dart';
 class NoticesOneItemWidget extends StatelessWidget {
   NoticesOneItemWidget(
     this.noticesOneItem, {
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   NoticesOneItemModel noticesOneItem;
 

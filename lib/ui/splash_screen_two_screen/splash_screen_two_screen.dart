@@ -8,7 +8,7 @@ import '/theme/theme_helper.dart';
 import '/widgets/image_view.dart';
 
 class SplashScreenTwo extends StatelessWidget {
-  const SplashScreenTwo({Key? key}) : super(key: key);
+  const SplashScreenTwo({super.key});
   static const routeName = '/splash_screen_2';
 
   @override

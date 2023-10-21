@@ -18,7 +18,7 @@ import 'models/send_bird_chat_model.dart';
 
 // ignore: must_be_immutable
 class SendBirdChatPage extends StatelessWidget {
-  SendBirdChatPage({Key? key}) : super(key: key);
+  SendBirdChatPage({super.key});
   static const routeName = '/send_bird_chat';
 
   SendBirdChatController controller =

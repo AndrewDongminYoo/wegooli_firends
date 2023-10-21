@@ -15,7 +15,7 @@ import 'controller/unsubscribe_confirm_controller.dart';
 
 // ignore_for_file: must_be_immutable
 class UnsubscribeConfirmDialog extends StatelessWidget {
-  UnsubscribeConfirmDialog(this.controller, {Key? key}) : super(key: key);
+  UnsubscribeConfirmDialog(this.controller, {super.key});
 
   UnsubscribeConfirmController controller;
 

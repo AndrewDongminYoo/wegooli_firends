@@ -1,1 +1,1 @@
-class SchedulesViewScheduledDateSchedulerOnlyModel {}
+class SchedulesViewScheduledDateModel {}

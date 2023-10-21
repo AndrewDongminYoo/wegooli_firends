@@ -18,7 +18,7 @@ import 'models/schedules_model.dart';
 
 // ignore: must_be_immutable
 class SchedulesPage extends StatelessWidget {
-  SchedulesPage({Key? key}) : super(key: key);
+  SchedulesPage({super.key});
   static const routeName = '/schedules';
 
   SchedulesController controller =

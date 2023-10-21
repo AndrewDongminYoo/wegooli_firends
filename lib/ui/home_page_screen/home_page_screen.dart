@@ -10,7 +10,7 @@ import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/image_view.dart';
 
 class HomePageScreen extends StatelessWidget {
-  const HomePageScreen({Key? key}) : super(key: key);
+  const HomePageScreen({super.key});
   static const routeName = '/home_page';
 
   @override

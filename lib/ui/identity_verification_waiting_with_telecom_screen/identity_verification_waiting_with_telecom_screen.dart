@@ -19,7 +19,7 @@ import 'controller/identity_verification_waiting_with_telecom_controller.dart';
 
 class VerificationWaitingScreen
     extends GetWidget<VerificationWaitingController> {
-  const VerificationWaitingScreen({Key? key}) : super(key: key);
+  const VerificationWaitingScreen({super.key});
   static const routeName = '/verification/waiting';
 
   @override

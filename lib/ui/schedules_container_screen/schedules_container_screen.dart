@@ -11,7 +11,7 @@ import '/ui/send_bird_chat_page/send_bird_chat_page.dart';
 import '/ui/smart_key_details_page/smart_key_details_page.dart';
 
 class SchedulesContainerScreen extends StatelessWidget {
-  const SchedulesContainerScreen({Key? key}) : super(key: key);
+  const SchedulesContainerScreen({super.key});
   static const routeName = '/schedules_nav';
 
   @override

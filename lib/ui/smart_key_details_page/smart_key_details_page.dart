@@ -17,7 +17,7 @@ import 'models/smart_key_details_model.dart';
 
 // ignore_for_file: must_be_immutable
 class SmartKeyDetailsPage extends StatelessWidget {
-  SmartKeyDetailsPage({Key? key}) : super(key: key);
+  SmartKeyDetailsPage({super.key});
   static const routeName = '/smart_key_details';
 
   SmartKeyDetailsController controller =

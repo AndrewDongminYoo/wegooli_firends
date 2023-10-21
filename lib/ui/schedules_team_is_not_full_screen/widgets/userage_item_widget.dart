@@ -14,8 +14,8 @@ import '/theme/theme_helper.dart';
 class UserageItemWidget extends StatelessWidget {
   UserageItemWidget(
     this.userageItem, {
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   UserageItemModel userageItem;
 

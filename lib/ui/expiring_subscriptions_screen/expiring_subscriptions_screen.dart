@@ -15,7 +15,7 @@ import '/widgets/elevated_button.dart';
 import '/widgets/image_view.dart';
 
 class ExpiringSubscriptionsScreen extends StatelessWidget {
-  const ExpiringSubscriptionsScreen({Key? key}) : super(key: key);
+  const ExpiringSubscriptionsScreen({super.key});
   static const routeName = '/expiring_subscription';
 
   @override

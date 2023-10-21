@@ -9,7 +9,7 @@ import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/image_view.dart';
 
 class MyPageScreen extends StatelessWidget {
-  const MyPageScreen({Key? key}) : super(key: key);
+  const MyPageScreen({super.key});
   static const routeName = '/my_page';
 
   @override

@@ -17,8 +17,8 @@ import 'controller/appointment_all_collapsed_controller.dart';
 class AppointmentAllCollapsedBottomsheet extends StatelessWidget {
   AppointmentAllCollapsedBottomsheet(
     this.controller, {
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   AppointmentAllCollapsedController controller;
 

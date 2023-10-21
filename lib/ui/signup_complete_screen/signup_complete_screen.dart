@@ -9,7 +9,7 @@ import '/widgets/elevated_button.dart';
 import '/widgets/image_view.dart';
 
 class SignupCompleteScreen extends StatelessWidget {
-  const SignupCompleteScreen({Key? key}) : super(key: key);
+  const SignupCompleteScreen({super.key});
   static const routeName = '/signup_complete';
 
   @override

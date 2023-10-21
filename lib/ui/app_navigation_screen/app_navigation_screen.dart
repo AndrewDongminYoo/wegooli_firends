@@ -54,9 +54,12 @@ import '/ui/unsubscribe_confirm_dialog/unsubscribe_confirm_dialog.dart';
 import '/ui/unsubscribe_screen/unsubscribe_screen.dart';
 import '/ui/view_scheduled_date_scheduler_only_dialog/controller/view_scheduled_date_scheduler_only_controller.dart';
 import '/ui/view_scheduled_date_scheduler_only_dialog/view_scheduled_date_scheduler_only_dialog.dart';
+import 'widgets/gateway_title.dart';
+import 'widgets/route_item.dart';
+import 'widgets/route_modal.dart';
 
 class AppNavigationScreen extends StatelessWidget {
-  const AppNavigationScreen({Key? key}) : super(key: key);
+  const AppNavigationScreen({super.key});
   static const routeName = '/app_navigation';
 
   @override
@@ -68,50 +71,7 @@ class AppNavigationScreen extends StatelessWidget {
           width: 375.h,
           child: Column(
             children: [
-              Container(
-                decoration: BoxDecoration(
-                  color: lightTheme.onSecondary,
-                ),
-                child: Column(
-                  children: [
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 20.h, vertical: 10.v),
-                        child: Text(
-                          'Gateway',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 20.fSize,
-                            fontFamily: 'Roboto',
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                      ),
-                    ),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                        padding: EdgeInsets.only(left: 20.h),
-                        child: Text(
-                          "Check your app's UI from the below demo screens of your app.",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: const Color(0xFF888888),
-                            fontSize: 16.fSize,
-                            fontFamily: 'Roboto',
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 5.v),
-                    Divider(height: 1.v, thickness: 1.v, color: Colors.black)
-                  ],
-                ),
-              ),
+              const GatewayTitle(),
               Expanded(
                 child: SingleChildScrollView(
                   child: Container(
@@ -120,1299 +80,205 @@ class AppNavigationScreen extends StatelessWidget {
                     ),
                     child: Column(
                       children: [
-                        GestureDetector(
-                          onTap: onTapVerificationWaiting,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: lightTheme.onSecondary,
-                            ),
-                            child: Column(
-                              children: [
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20.h, vertical: 10.v),
-                                    child: Text(
-                                      'Verification / Waiting',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20.fSize,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: 5.v),
-                                Divider(
-                                    height: 1.v,
-                                    thickness: 1.v,
-                                    color: const Color(0xFF888888))
-                              ],
+                        RouteModal(
+                          dialogTitle:
+                              'Schedules View Scheduled Dated / Expanded',
+                          dialog: SchedulesViewScheduledDateExpandedDialog(
+                            Get.put(
+                              SchedulesViewScheduledDateExpandedController(),
                             ),
                           ),
                         ),
-                        GestureDetector(
-                          onTap: onTapSendInvitationLeaderOnly,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: lightTheme.onSecondary,
-                            ),
-                            child: Column(
-                              children: [
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20.h, vertical: 10.v),
-                                    child: Text(
-                                      'Send Invitation',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20.fSize,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: 5.v),
-                                Divider(
-                                    height: 1.v,
-                                    thickness: 1.v,
-                                    color: const Color(0xFF888888))
-                              ],
+                        RouteModal(
+                          dialogTitle: 'Send Invitation',
+                          dialog: SendInvitationLeaderOnlyDialog(
+                            Get.put(
+                              SendInvitationLeaderOnlyController(),
                             ),
                           ),
                         ),
-                        GestureDetector(
-                          onTap: onTapViewScheduledDateSchedulerOnly,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: lightTheme.onSecondary,
-                            ),
-                            child: Column(
-                              children: [
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20.h, vertical: 10.v),
-                                    child: Text(
-                                      'View Scheduled Date',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20.fSize,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: 5.v),
-                                Divider(
-                                    height: 1.v,
-                                    thickness: 1.v,
-                                    color: const Color(0xFF888888))
-                              ],
+                        RouteModal(
+                          dialogTitle: 'View Scheduled Date',
+                          dialog: ViewScheduledDateDialog(
+                            Get.put(
+                              ViewScheduledDateController(),
                             ),
                           ),
                         ),
-                        GestureDetector(
-                          onTap: onTapAppointmentAllCollapsed,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: lightTheme.onSecondary,
-                            ),
-                            child: Column(
-                              children: [
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20.h, vertical: 10.v),
-                                    child: Text(
-                                      'Appointment / Collapsed',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20.fSize,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: 5.v),
-                                Divider(
-                                    height: 1.v,
-                                    thickness: 1.v,
-                                    color: const Color(0xFF888888))
-                              ],
+                        RouteModal(
+                          dialogTitle: 'Appointment / Collapsed',
+                          bottomSheet: AppointmentAllCollapsedBottomsheet(
+                            Get.put(
+                              AppointmentAllCollapsedController(),
                             ),
                           ),
                         ),
-                        GestureDetector(
-                          onTap: onTapAppointmentStartExpanded,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: lightTheme.onSecondary,
-                            ),
-                            child: Column(
-                              children: [
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20.h, vertical: 10.v),
-                                    child: Text(
-                                      'Appointment / Start',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20.fSize,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: 5.v),
-                                Divider(
-                                    height: 1.v,
-                                    thickness: 1.v,
-                                    color: const Color(0xFF888888))
-                              ],
+                        RouteModal(
+                          dialogTitle: 'Appointment / Start',
+                          bottomSheet: AppointmentStartExpandedBottomsheet(
+                            Get.put(
+                              AppointmentStartExpandedController(),
                             ),
                           ),
                         ),
-                        GestureDetector(
-                          onTap: onTapAppointmentEndExpanded,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: lightTheme.onSecondary,
-                            ),
-                            child: Column(
-                              children: [
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20.h, vertical: 10.v),
-                                    child: Text(
-                                      'Appointment / End',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20.fSize,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: 5.v),
-                                Divider(
-                                    height: 1.v,
-                                    thickness: 1.v,
-                                    color: const Color(0xFF888888))
-                              ],
+                        RouteModal(
+                          dialogTitle: 'Appointment / End',
+                          bottomSheet: AppointmentEndExpandedBottomsheet(
+                            Get.put(
+                              AppointmentEndExpandedController(),
                             ),
                           ),
                         ),
-                        GestureDetector(
-                          onTap: onTapUnsubscribeConfirm,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: lightTheme.onSecondary,
-                            ),
-                            child: Column(
-                              children: [
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20.h, vertical: 10.v),
-                                    child: Text(
-                                      'Unsubscribe / Confirm',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20.fSize,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: 5.v),
-                                Divider(
-                                    height: 1.v,
-                                    thickness: 1.v,
-                                    color: const Color(0xFF888888))
-                              ],
+                        RouteModal(
+                          dialogTitle: 'Unsubscribe / Confirm',
+                          dialog: UnsubscribeConfirmDialog(
+                            Get.put(
+                              UnsubscribeConfirmController(),
                             ),
                           ),
                         ),
-                        GestureDetector(
-                          onTap: onTapSignUpComplete,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: lightTheme.onSecondary,
-                            ),
-                            child: Column(
-                              children: [
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20.h, vertical: 10.v),
-                                    child: Text(
-                                      'SignUp Complete',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20.fSize,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: 5.v),
-                                Divider(
-                                    height: 1.v,
-                                    thickness: 1.v,
-                                    color: const Color(0xFF888888))
-                              ],
+                        RouteModal(
+                          dialogTitle: 'View Scheduled Date',
+                          dialog: SchedulesViewScheduledDateDialog(
+                            Get.put(
+                              SchedulesViewScheduledDateController(),
                             ),
                           ),
                         ),
-                        GestureDetector(
-                          onTap: onTapNoticesOne,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: lightTheme.onSecondary,
-                            ),
-                            child: Column(
-                              children: [
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20.h, vertical: 10.v),
-                                    child: Text(
-                                      'Notices',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20.fSize,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: 5.v),
-                                Divider(
-                                    height: 1.v,
-                                    thickness: 1.v,
-                                    color: const Color(0xFF888888))
-                              ],
+                        RouteModal(
+                          dialogTitle: 'Send Invitation',
+                          dialog: SchedulesSendInvitationLeaderOnlyDialog(
+                            Get.put(
+                              SchedulesSendInvitationLeaderOnlyController(),
                             ),
                           ),
                         ),
-                        GestureDetector(
-                          onTap: onTapNoticesNoNotice,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: lightTheme.onSecondary,
-                            ),
-                            child: Column(
-                              children: [
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20.h, vertical: 10.v),
-                                    child: Text(
-                                      'No Notice',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20.fSize,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: 5.v),
-                                Divider(
-                                    height: 1.v,
-                                    thickness: 1.v,
-                                    color: const Color(0xFF888888))
-                              ],
-                            ),
-                          ),
+                        const RouteItem(
+                          routeName: 'Verification / Waiting',
+                          routeDestination: VerificationWaitingScreen.routeName,
                         ),
-                        GestureDetector(
-                          onTap: onTapSchedulesContainer,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: lightTheme.onSecondary,
-                            ),
-                            child: Column(
-                              children: [
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20.h, vertical: 10.v),
-                                    child: Text(
-                                      'Schedules - Container',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20.fSize,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: 5.v),
-                                Divider(
-                                    height: 1.v,
-                                    thickness: 1.v,
-                                    color: const Color(0xFF888888))
-                              ],
-                            ),
-                          ),
+                        const RouteItem(
+                          routeName: 'SignUp Complete',
+                          routeDestination: SignupCompleteScreen.routeName,
                         ),
-                        GestureDetector(
-                          onTap: onTapSchedulesSendInvitationLeaderOnly,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: lightTheme.onSecondary,
-                            ),
-                            child: Column(
-                              children: [
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20.h, vertical: 10.v),
-                                    child: Text(
-                                      'Send Invitation',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20.fSize,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: 5.v),
-                                Divider(
-                                    height: 1.v,
-                                    thickness: 1.v,
-                                    color: const Color(0xFF888888))
-                              ],
-                            ),
-                          ),
+                        const RouteItem(
+                          routeName: 'Notices',
+                          routeDestination: NoticesScreen.routeName,
                         ),
-                        GestureDetector(
-                          onTap: onTapSignInPage,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: lightTheme.onSecondary,
-                            ),
-                            child: Column(
-                              children: [
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20.h, vertical: 10.v),
-                                    child: Text(
-                                      'SignIn',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20.fSize,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: 5.v),
-                                Divider(
-                                    height: 1.v,
-                                    thickness: 1.v,
-                                    color: const Color(0xFF888888))
-                              ],
-                            ),
-                          ),
+                        const RouteItem(
+                          routeName: 'Notices',
+                          routeDestination: NoticesOneScreen.routeName,
                         ),
-                        GestureDetector(
-                          onTap: onTapVerificationTermsBottomSheet,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: lightTheme.onSecondary,
-                            ),
-                            child: Column(
-                              children: [
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20.h, vertical: 10.v),
-                                    child: Text(
-                                      'Verification / BottomSheet',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20.fSize,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: 5.v),
-                                Divider(
-                                    height: 1.v,
-                                    thickness: 1.v,
-                                    color: const Color(0xFF888888))
-                              ],
-                            ),
-                          ),
+                        const RouteItem(
+                          routeName: 'No Notice',
+                          routeDestination: EmptyNoticeScreen.routeName,
                         ),
-                        GestureDetector(
-                          onTap: onTapVerificationEmpty,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: lightTheme.onSecondary,
-                            ),
-                            child: Column(
-                              children: [
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20.h, vertical: 10.v),
-                                    child: Text(
-                                      'Verification / Empty',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20.fSize,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: 5.v),
-                                Divider(
-                                    height: 1.v,
-                                    thickness: 1.v,
-                                    color: const Color(0xFF888888))
-                              ],
-                            ),
-                          ),
+                        const RouteItem(
+                          routeName: 'Schedules - Container',
+                          routeDestination: SchedulesContainerScreen.routeName,
                         ),
-                        GestureDetector(
-                          onTap: onTapVerificationFilled,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: lightTheme.onSecondary,
-                            ),
-                            child: Column(
-                              children: [
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20.h, vertical: 10.v),
-                                    child: Text(
-                                      'Verification / Filled',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20.fSize,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: 5.v),
-                                Divider(
-                                    height: 1.v,
-                                    thickness: 1.v,
-                                    color: const Color(0xFF888888))
-                              ],
-                            ),
-                          ),
+                        const RouteItem(
+                          routeName: 'SignIn',
+                          routeDestination: SigninPageScreen.routeName,
                         ),
-                        GestureDetector(
-                          onTap: onTapPersonalInfoFormZipCode,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: lightTheme.onSecondary,
-                            ),
-                            child: Column(
-                              children: [
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20.h, vertical: 10.v),
-                                    child: Text(
-                                      'Zip Code',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20.fSize,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: 5.v),
-                                Divider(
-                                    height: 1.v,
-                                    thickness: 1.v,
-                                    color: const Color(0xFF888888))
-                              ],
-                            ),
-                          ),
+                        const RouteItem(
+                          routeName: 'Verification / BottomSheet',
+                          routeDestination: TermsBottomsheet.routeName,
                         ),
-                        GestureDetector(
-                          onTap: onTapSplashScreenOne,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: lightTheme.onSecondary,
-                            ),
-                            child: Column(
-                              children: [
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20.h, vertical: 10.v),
-                                    child: Text(
-                                      '스플래시스크린 1',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20.fSize,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: 5.v),
-                                Divider(
-                                    height: 1.v,
-                                    thickness: 1.v,
-                                    color: const Color(0xFF888888))
-                              ],
-                            ),
-                          ),
+                        const RouteItem(
+                          routeName: 'Verification / Empty',
+                          routeDestination: VerificationEmptyScreen.routeName,
                         ),
-                        GestureDetector(
-                          onTap: onTapSplashScreenTwo,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: lightTheme.onSecondary,
-                            ),
-                            child: Column(
-                              children: [
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20.h, vertical: 10.v),
-                                    child: Text(
-                                      '스플래시스크린 2',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20.fSize,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: 5.v),
-                                Divider(
-                                    height: 1.v,
-                                    thickness: 1.v,
-                                    color: const Color(0xFF888888))
-                              ],
-                            ),
-                          ),
+                        const RouteItem(
+                          routeName: 'Verification / Filled',
+                          routeDestination: VerificationFilledScreen.routeName,
                         ),
-                        GestureDetector(
-                          onTap: onTapLicenseRegister,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: lightTheme.onSecondary,
-                            ),
-                            child: Column(
-                              children: [
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20.h, vertical: 10.v),
-                                    child: Text(
-                                      'License Register',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20.fSize,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: 5.v),
-                                Divider(
-                                    height: 1.v,
-                                    thickness: 1.v,
-                                    color: const Color(0xFF888888))
-                              ],
-                            ),
-                          ),
+                        const RouteItem(
+                          routeName: 'Zip Code',
+                          routeDestination:
+                              PersonalInfoFormZipCodeScreen.routeName,
                         ),
-                        GestureDetector(
-                          onTap: onTapHomePage,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: lightTheme.onSecondary,
-                            ),
-                            child: Column(
-                              children: [
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20.h, vertical: 10.v),
-                                    child: Text(
-                                      'Home',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20.fSize,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: 5.v),
-                                Divider(
-                                    height: 1.v,
-                                    thickness: 1.v,
-                                    color: const Color(0xFF888888))
-                              ],
-                            ),
-                          ),
+                        const RouteItem(
+                          routeName: '스플래시스크린 1',
+                          routeDestination: SplashScreenOne.routeName,
                         ),
-                        GestureDetector(
-                          onTap: onTapSchedulesTeamisnotFull,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: lightTheme.onSecondary,
-                            ),
-                            child: Column(
-                              children: [
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20.h, vertical: 10.v),
-                                    child: Text(
-                                      'Schedules / Team is not Full',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20.fSize,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: 5.v),
-                                Divider(
-                                    height: 1.v,
-                                    thickness: 1.v,
-                                    color: const Color(0xFF888888))
-                              ],
-                            ),
-                          ),
+                        const RouteItem(
+                          routeName: '스플래시스크린 2',
+                          routeDestination: SplashScreenTwo.routeName,
                         ),
-                        GestureDetector(
-                          onTap: onTapSchedulesTeamisFull,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: lightTheme.onSecondary,
-                            ),
-                            child: Column(
-                              children: [
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20.h, vertical: 10.v),
-                                    child: Text(
-                                      'Schedules / Team is Full',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20.fSize,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: 5.v),
-                                Divider(
-                                    height: 1.v,
-                                    thickness: 1.v,
-                                    color: const Color(0xFF888888))
-                              ],
-                            ),
-                          ),
+                        const RouteItem(
+                          routeName: 'License Register',
+                          routeDestination: LicenseRegisterScreen.routeName,
                         ),
-                        GestureDetector(
-                          onTap: onTapSmartKey,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: lightTheme.onSecondary,
-                            ),
-                            child: Column(
-                              children: [
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20.h, vertical: 10.v),
-                                    child: Text(
-                                      'Smart Key',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20.fSize,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: 5.v),
-                                Divider(
-                                    height: 1.v,
-                                    thickness: 1.v,
-                                    color: const Color(0xFF888888))
-                              ],
-                            ),
-                          ),
+                        const RouteItem(
+                          routeName: 'Home',
+                          routeDestination: HomePageScreen.routeName,
                         ),
-                        GestureDetector(
-                          onTap: onTapMyPage,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: lightTheme.onSecondary,
-                            ),
-                            child: Column(
-                              children: [
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20.h, vertical: 10.v),
-                                    child: Text(
-                                      'My Page',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20.fSize,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: 5.v),
-                                Divider(
-                                    height: 1.v,
-                                    thickness: 1.v,
-                                    color: const Color(0xFF888888))
-                              ],
-                            ),
-                          ),
+                        const RouteItem(
+                          routeName: 'Schedules / Team is not Full',
+                          routeDestination:
+                              SchedulesTeamIsNotFullScreen.routeName,
                         ),
-                        GestureDetector(
-                          onTap: onTapCardList,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: lightTheme.onSecondary,
-                            ),
-                            child: Column(
-                              children: [
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20.h, vertical: 10.v),
-                                    child: Text(
-                                      'Card List',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20.fSize,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: 5.v),
-                                Divider(
-                                    height: 1.v,
-                                    thickness: 1.v,
-                                    color: const Color(0xFF888888))
-                              ],
-                            ),
-                          ),
+                        const RouteItem(
+                          routeName: 'Schedules / Team is Full',
+                          routeDestination: SchedulesTeamsFull.routeName,
                         ),
-                        GestureDetector(
-                          onTap: onTapSchedulesViewScheduledDateSchedulerOnly,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: lightTheme.onSecondary,
-                            ),
-                            child: Column(
-                              children: [
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20.h, vertical: 10.v),
-                                    child: Text(
-                                      'View Scheduled Date',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20.fSize,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: 5.v),
-                                Divider(
-                                    height: 1.v,
-                                    thickness: 1.v,
-                                    color: const Color(0xFF888888))
-                              ],
-                            ),
-                          ),
+                        const RouteItem(
+                          routeName: 'Smart Key',
+                          routeDestination: SmartKeyScreen.routeName,
                         ),
-                        GestureDetector(
-                          onTap:
-                              onTapSchedulesViewScheduledDateSchedulerOnlyExpanded,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: lightTheme.onSecondary,
-                            ),
-                            child: Column(
-                              children: [
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20.h, vertical: 10.v),
-                                    child: Text(
-                                      'View Scheduled Date Expanded',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20.fSize,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: 5.v),
-                                Divider(
-                                    height: 1.v,
-                                    thickness: 1.v,
-                                    color: const Color(0xFF888888))
-                              ],
-                            ),
-                          ),
+                        const RouteItem(
+                          routeName: 'My Page',
+                          routeDestination: MyPageScreen.routeName,
                         ),
-                        GestureDetector(
-                          onTap: onTapSmartKeyAnotherIsCurrentlyUsing,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: lightTheme.onSecondary,
-                            ),
-                            child: Column(
-                              children: [
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20.h, vertical: 10.v),
-                                    child: Text(
-                                      'Another is Currently Using Car',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20.fSize,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: 5.v),
-                                Divider(
-                                    height: 1.v,
-                                    thickness: 1.v,
-                                    color: const Color(0xFF888888))
-                              ],
-                            ),
-                          ),
+                        const RouteItem(
+                          routeName: 'Card List',
+                          routeDestination: CardListScreen.routeName,
                         ),
-                        GestureDetector(
-                          onTap: onTapSubscribeInfoNoSubscription,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: lightTheme.onSecondary,
-                            ),
-                            child: Column(
-                              children: [
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20.h, vertical: 10.v),
-                                    child: Text(
-                                      'Subscribe Info (No Subscription)',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20.fSize,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: 5.v),
-                                Divider(
-                                    height: 1.v,
-                                    thickness: 1.v,
-                                    color: const Color(0xFF888888))
-                              ],
-                            ),
-                          ),
+                        const RouteItem(
+                          routeName: 'Another is Currently Using Car',
+                          routeDestination:
+                              SmartKeyAnotherIsCurrentlyUsingScreen.routeName,
                         ),
-                        GestureDetector(
-                          onTap: onTapSubscribeInfo,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: lightTheme.onSecondary,
-                            ),
-                            child: Column(
-                              children: [
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20.h, vertical: 10.v),
-                                    child: Text(
-                                      'Subscribe Info',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20.fSize,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: 5.v),
-                                Divider(
-                                    height: 1.v,
-                                    thickness: 1.v,
-                                    color: const Color(0xFF888888))
-                              ],
-                            ),
-                          ),
+                        const RouteItem(
+                          routeName: 'Subscribe Info (No Subscription)',
+                          routeDestination: NoSubscriptionScreen.routeName,
                         ),
-                        GestureDetector(
-                          onTap: onTapContactUsEmptyHistory,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: lightTheme.onSecondary,
-                            ),
-                            child: Column(
-                              children: [
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20.h, vertical: 10.v),
-                                    child: Text(
-                                      'Empty History',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20.fSize,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: 5.v),
-                                Divider(
-                                    height: 1.v,
-                                    thickness: 1.v,
-                                    color: const Color(0xFF888888))
-                              ],
-                            ),
-                          ),
+                        const RouteItem(
+                          routeName: 'Subscribe Info',
+                          routeDestination: SubscribeInfoScreen.routeName,
                         ),
-                        GestureDetector(
-                          onTap: onTapContactUsInquiryHistory,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: lightTheme.onSecondary,
-                            ),
-                            child: Column(
-                              children: [
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20.h, vertical: 10.v),
-                                    child: Text(
-                                      'Inquiry History',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20.fSize,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: 5.v),
-                                Divider(
-                                    height: 1.v,
-                                    thickness: 1.v,
-                                    color: const Color(0xFF888888))
-                              ],
-                            ),
-                          ),
+                        const RouteItem(
+                          routeName: 'Empty History',
+                          routeDestination:
+                              ContactUsEmptyHistoryScreen.routeName,
                         ),
-                        GestureDetector(
-                          onTap: onTapUnsubscribe,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: lightTheme.onSecondary,
-                            ),
-                            child: Column(
-                              children: [
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20.h, vertical: 10.v),
-                                    child: Text(
-                                      'Unsubscribe',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20.fSize,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: 5.v),
-                                Divider(
-                                    height: 1.v,
-                                    thickness: 1.v,
-                                    color: const Color(0xFF888888))
-                              ],
-                            ),
-                          ),
+                        const RouteItem(
+                          routeName: 'Inquiry History',
+                          routeDestination:
+                              ContactUsInquiryHistoryScreen.routeName,
                         ),
-                        GestureDetector(
-                          onTap: onTapCardRegister,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: lightTheme.onSecondary,
-                            ),
-                            child: Column(
-                              children: [
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20.h, vertical: 10.v),
-                                    child: Text(
-                                      'Card Register',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20.fSize,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: 5.v),
-                                Divider(
-                                    height: 1.v,
-                                    thickness: 1.v,
-                                    color: const Color(0xFF888888))
-                              ],
-                            ),
-                          ),
+                        const RouteItem(
+                          routeName: 'Unsubscribe',
+                          routeDestination: UnsubscribeScreen.routeName,
                         ),
-                        GestureDetector(
-                          onTap: onTapNotices,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: lightTheme.onSecondary,
-                            ),
-                            child: Column(
-                              children: [
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20.h, vertical: 10.v),
-                                    child: Text(
-                                      'Notices',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20.fSize,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: 5.v),
-                                Divider(
-                                    height: 1.v,
-                                    thickness: 1.v,
-                                    color: const Color(0xFF888888))
-                              ],
-                            ),
-                          ),
+                        const RouteItem(
+                          routeName: 'Card Register',
+                          routeDestination: CardRegisterScreen.routeName,
                         ),
-                        GestureDetector(
-                          onTap: onTapOneOnOne,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: lightTheme.onSecondary,
-                            ),
-                            child: Column(
-                              children: [
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20.h, vertical: 10.v),
-                                    child: Text(
-                                      '1:1 Contact Us',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20.fSize,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: 5.v),
-                                Divider(
-                                    height: 1.v,
-                                    thickness: 1.v,
-                                    color: const Color(0xFF888888))
-                              ],
-                            ),
-                          ),
+                        const RouteItem(
+                          routeName: 'Notices',
+                          routeDestination: NoticesScreen.routeName,
                         ),
-                        GestureDetector(
-                          onTap: onTapExpiringSubscriptions,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: lightTheme.onSecondary,
-                            ),
-                            child: Column(
-                              children: [
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20.h, vertical: 10.v),
-                                    child: Text(
-                                      'Expiring Subscriptions',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20.fSize,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: 5.v),
-                                Divider(
-                                    height: 1.v,
-                                    thickness: 1.v,
-                                    color: const Color(0xFF888888))
-                              ],
-                            ),
-                          ),
-                        )
+                        const RouteItem(
+                          routeName: '1:1 Contact Us',
+                          routeDestination: OneOnOneScreen.routeName,
+                        ),
+                        const RouteItem(
+                          routeName: 'Expiring Subscriptions',
+                          routeDestination:
+                              ExpiringSubscriptionsScreen.routeName,
+                        ),
                       ],
                     ),
                   ),
@@ -1422,440 +288,6 @@ class AppNavigationScreen extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-
-  /// Navigates to the identityVerificationWaitingScreen when the action is triggered.
-
-  /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the identityVerificationWaitingScreen.
-  void onTapVerificationWaiting() {
-    Get.toNamed(
-      VerificationWaitingScreen.routeName,
-    );
-  }
-
-  /// Displays a dialog with the [SendInvitationLeaderOnlyDialog] content.
-  ///
-  /// The [SendInvitationLeaderOnlyDialog] widget is created with a new
-  /// instance of the [SendInvitationLeaderOnlyController],
-  /// which is obtained using the Get.put() method.
-  void onTapSendInvitationLeaderOnly() {
-    Get.dialog(
-      SendInvitationLeaderOnlyDialog(
-        Get.put(
-          SendInvitationLeaderOnlyController(),
-        ),
-      ),
-    );
-  }
-
-  /// Displays a dialog with the [ViewScheduledDateSchedulerOnlyDialog] content.
-  ///
-  /// The [ViewScheduledDateSchedulerOnlyDialog] widget is created with a new
-  /// instance of the [ViewScheduledDateSchedulerOnlyController],
-  /// which is obtained using the Get.put() method.
-  void onTapViewScheduledDateSchedulerOnly() {
-    Get.dialog(
-      ViewScheduledDateSchedulerOnlyDialog(
-        Get.put(
-          ViewScheduledDateSchedulerOnlyController(),
-        ),
-      ),
-    );
-  }
-
-  /// Displays a scrollable bottom sheet widget using the [Get] package
-  /// and the [AppointmentAllCollapsedBottomsheet] widget.
-  ///
-  /// The bottom sheet is controlled by the [AppointmentAllCollapsedController]
-  /// and is displayed using the [Get.bottomSheet] method with
-  /// [isScrollControlled] set to true.
-
-  void onTapAppointmentAllCollapsed() {
-    Get.bottomSheet(
-      AppointmentAllCollapsedBottomsheet(
-        Get.put(
-          AppointmentAllCollapsedController(),
-        ),
-      ),
-      isScrollControlled: true,
-    );
-  }
-
-  /// Displays a scrollable bottom sheet widget using the [Get] package
-  /// and the [AppointmentStartExpandedBottomsheet] widget.
-  ///
-  /// The bottom sheet is controlled by the [AppointmentStartExpandedController]
-  /// and is displayed using the [Get.bottomSheet] method with
-  /// [isScrollControlled] set to true.
-
-  void onTapAppointmentStartExpanded() {
-    Get.bottomSheet(
-      AppointmentStartExpandedBottomsheet(
-        Get.put(
-          AppointmentStartExpandedController(),
-        ),
-      ),
-      isScrollControlled: true,
-    );
-  }
-
-  /// Displays a scrollable bottom sheet widget using the [Get] package
-  /// and the [AppointmentEndExpandedBottomsheet] widget.
-  ///
-  /// The bottom sheet is controlled by the [AppointmentEndExpandedController]
-  /// and is displayed using the [Get.bottomSheet] method with
-  /// [isScrollControlled] set to true.
-
-  void onTapAppointmentEndExpanded() {
-    Get.bottomSheet(
-      AppointmentEndExpandedBottomsheet(
-        Get.put(
-          AppointmentEndExpandedController(),
-        ),
-      ),
-      isScrollControlled: true,
-    );
-  }
-
-  /// Displays a dialog with the [UnsubscribeConfirmDialog] content.
-  ///
-  /// The [UnsubscribeConfirmDialog] widget is created with a new
-  /// instance of the [UnsubscribeConfirmController],
-  /// which is obtained using the Get.put() method.
-  void onTapUnsubscribeConfirm() {
-    Get.dialog(
-      UnsubscribeConfirmDialog(
-        Get.put(
-          UnsubscribeConfirmController(),
-        ),
-      ),
-    );
-  }
-
-  /// Navigates to the signupCompleteScreen when the action is triggered.
-
-  /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the signupCompleteScreen.
-  void onTapSignUpComplete() {
-    Get.toNamed(
-      SignupCompleteScreen.routeName,
-    );
-  }
-
-  /// Navigates to the noticesOneScreen when the action is triggered.
-
-  /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the noticesOneScreen.
-  void onTapNoticesOne() {
-    Get.toNamed(
-      NoticesOneScreen.routeName,
-    );
-  }
-
-  /// Navigates to the noticesNoNoticeScreen when the action is triggered.
-
-  /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the noticesNoNoticeScreen.
-  void onTapNoticesNoNotice() {
-    Get.toNamed(
-      EmptyNoticeScreen.routeName,
-    );
-  }
-
-  /// Navigates to the schedulesContainerScreen when the action is triggered.
-
-  /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the schedulesContainerScreen.
-  void onTapSchedulesContainer() {
-    Get.toNamed(
-      SchedulesContainerScreen.routeName,
-    );
-  }
-
-  /// Displays a dialog with the [SchedulesSendInvitationLeaderOnlyDialog] content.
-  ///
-  /// The [SchedulesSendInvitationLeaderOnlyDialog] widget is created with a new
-  /// instance of the [SchedulesSendInvitationLeaderOnlyController],
-  /// which is obtained using the Get.put() method.
-  void onTapSchedulesSendInvitationLeaderOnly() {
-    Get.dialog(
-      SchedulesSendInvitationLeaderOnlyDialog(
-        Get.put(
-          SchedulesSendInvitationLeaderOnlyController(),
-        ),
-      ),
-    );
-  }
-
-  /// Navigates to the signinPageScreen when the action is triggered.
-
-  /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the signinPageScreen.
-  void onTapSignInPage() {
-    Get.toNamed(
-      SigninPageScreen.routeName,
-    );
-  }
-
-  /// Navigates to the identityVerificationTermsBottomsheetScreen when the action is triggered.
-
-  /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the identityVerificationTermsBottomsheetScreen.
-  void onTapVerificationTermsBottomSheet() {
-    Get.toNamed(
-      TermsBottomsheet.routeName,
-    );
-  }
-
-  /// Navigates to the identityVerificationEmptyScreen when the action is triggered.
-
-  /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the identityVerificationEmptyScreen.
-  void onTapVerificationEmpty() {
-    Get.toNamed(
-      VerificationEmptyScreen.routeName,
-    );
-  }
-
-  /// Navigates to the identityVerificationFilledScreen when the action is triggered.
-
-  /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the identityVerificationFilledScreen.
-  void onTapVerificationFilled() {
-    Get.toNamed(
-      VerificationFilledScreen.routeName,
-    );
-  }
-
-  /// Navigates to the personalInfoFormZipCodeScreen when the action is triggered.
-
-  /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the personalInfoFormZipCodeScreen.
-  void onTapPersonalInfoFormZipCode() {
-    Get.toNamed(
-      PersonalInfoFormZipCodeScreen.routeName,
-    );
-  }
-
-  /// Navigates to the splashScreenOneScreen when the action is triggered.
-
-  /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the splashScreenOneScreen.
-  void onTapSplashScreenOne() {
-    Get.toNamed(
-      SplashScreenOne.routeName,
-    );
-  }
-
-  /// Navigates to the splashScreenTwoScreen when the action is triggered.
-
-  /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the splashScreenTwoScreen.
-  void onTapSplashScreenTwo() {
-    Get.toNamed(
-      SplashScreenTwo.routeName,
-    );
-  }
-
-  /// Navigates to the licenseRegisterScreen when the action is triggered.
-
-  /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the licenseRegisterScreen.
-  void onTapLicenseRegister() {
-    Get.toNamed(
-      LicenseRegisterScreen.routeName,
-    );
-  }
-
-  /// Navigates to the homePageScreen when the action is triggered.
-
-  /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the homePageScreen.
-  void onTapHomePage() {
-    Get.toNamed(
-      HomePageScreen.routeName,
-    );
-  }
-
-  /// Navigates to the schedulesTeamIsNotFullScreen when the action is triggered.
-
-  /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the schedulesTeamIsNotFullScreen.
-  void onTapSchedulesTeamisnotFull() {
-    Get.toNamed(
-      SchedulesTeamIsNotFullScreen.routeName,
-    );
-  }
-
-  /// Navigates to the schedulesTeamIsFullScreen when the action is triggered.
-
-  /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the schedulesTeamIsFullScreen.
-  void onTapSchedulesTeamisFull() {
-    Get.toNamed(
-      SchedulesTeamsFull.routeName,
-    );
-  }
-
-  /// Navigates to the smartKeyScreen when the action is triggered.
-
-  /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the smartKeyScreen.
-  void onTapSmartKey() {
-    Get.toNamed(
-      SmartKeyScreen.routeName,
-    );
-  }
-
-  /// Navigates to the myPageScreen when the action is triggered.
-
-  /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the myPageScreen.
-  void onTapMyPage() {
-    Get.toNamed(
-      MyPageScreen.routeName,
-    );
-  }
-
-  /// Navigates to the cardListScreen when the action is triggered.
-
-  /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the cardListScreen.
-  void onTapCardList() {
-    Get.toNamed(
-      CardListScreen.routeName,
-    );
-  }
-
-  /// Displays a dialog with the [SchedulesViewScheduledDateSchedulerOnlyDialog] content.
-  ///
-  /// The [SchedulesViewScheduledDateSchedulerOnlyDialog] widget is created with a new
-  /// instance of the [SchedulesViewScheduledDateSchedulerOnlyController],
-  /// which is obtained using the Get.put() method.
-  void onTapSchedulesViewScheduledDateSchedulerOnly() {
-    Get.dialog(
-      SchedulesViewScheduledDateSchedulerOnlyDialog(
-        Get.put(
-          SchedulesViewScheduledDateSchedulerOnlyController(),
-        ),
-      ),
-    );
-  }
-
-  /// Displays a dialog with the [SchedulesViewScheduledDateSchedulerOnlyExpandedDialog] content.
-  ///
-  /// The [SchedulesViewScheduledDateSchedulerOnlyExpandedDialog] widget is created with a new
-  /// instance of the [SchedulesViewScheduledDateSchedulerOnlyExpandedController],
-  /// which is obtained using the Get.put() method.
-  void onTapSchedulesViewScheduledDateSchedulerOnlyExpanded() {
-    Get.dialog(
-      SchedulesViewScheduledDateSchedulerOnlyExpandedDialog(
-        Get.put(
-          SchedulesViewScheduledDateSchedulerOnlyExpandedController(),
-        ),
-      ),
-    );
-  }
-
-  /// Navigates to the smartKeyAnotherIsCurrentlyUsingScreen when the action is triggered.
-
-  /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the smartKeyAnotherIsCurrentlyUsingScreen.
-  void onTapSmartKeyAnotherIsCurrentlyUsing() {
-    Get.toNamed(
-      SmartKeyAnotherIsCurrentlyUsingScreen.routeName,
-    );
-  }
-
-  /// Navigates to the subscribeInfoNoSubscriptionScreen when the action is triggered.
-
-  /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the subscribeInfoNoSubscriptionScreen.
-  void onTapSubscribeInfoNoSubscription() {
-    Get.toNamed(
-      NoSubscriptionScreen.routeName,
-    );
-  }
-
-  /// Navigates to the subscribeInfoScreen when the action is triggered.
-
-  /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the subscribeInfoScreen.
-  void onTapSubscribeInfo() {
-    Get.toNamed(
-      SubscribeInfoScreen.routeName,
-    );
-  }
-
-  /// Navigates to the contactUsEmptyHistoryScreen when the action is triggered.
-
-  /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the contactUsEmptyHistoryScreen.
-  void onTapContactUsEmptyHistory() {
-    Get.toNamed(
-      ContactUsEmptyHistoryScreen.routeName,
-    );
-  }
-
-  /// Navigates to the contactUsInquiryHistoryScreen when the action is triggered.
-
-  /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the contactUsInquiryHistoryScreen.
-  void onTapContactUsInquiryHistory() {
-    Get.toNamed(
-      ContactUsInquiryHistoryScreen.routeName,
-    );
-  }
-
-  /// Navigates to the unsubscribeScreen when the action is triggered.
-
-  /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the unsubscribeScreen.
-  void onTapUnsubscribe() {
-    Get.toNamed(
-      UnsubscribeScreen.routeName,
-    );
-  }
-
-  /// Navigates to the cardRegisterScreen when the action is triggered.
-
-  /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the cardRegisterScreen.
-  void onTapCardRegister() {
-    Get.toNamed(
-      CardRegisterScreen.routeName,
-    );
-  }
-
-  /// Navigates to the noticesScreen when the action is triggered.
-
-  /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the noticesScreen.
-  void onTapNotices() {
-    Get.toNamed(
-      NoticesScreen.routeName,
-    );
-  }
-
-  /// Navigates to the contactUs11ContactUsScreen when the action is triggered.
-
-  /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the contactUs11ContactUsScreen.
-  void onTapOneOnOne() {
-    Get.toNamed(
-      OneOnOneScreen.routeName,
-    );
-  }
-
-  /// Navigates to the expiringSubscriptionsScreen when the action is triggered.
-
-  /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the expiringSubscriptionsScreen.
-  void onTapExpiringSubscriptions() {
-    Get.toNamed(
-      ExpiringSubscriptionsScreen.routeName,
     );
   }
 }

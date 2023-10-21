@@ -17,7 +17,7 @@ import 'controller/personal_info_form_zip_code_controller.dart';
 
 class PersonalInfoFormZipCodeScreen
     extends GetWidget<PersonalInfoFormZipCodeController> {
-  const PersonalInfoFormZipCodeScreen({Key? key}) : super(key: key);
+  const PersonalInfoFormZipCodeScreen({super.key});
   static const routeName = '/form_zip_code';
 
   @override

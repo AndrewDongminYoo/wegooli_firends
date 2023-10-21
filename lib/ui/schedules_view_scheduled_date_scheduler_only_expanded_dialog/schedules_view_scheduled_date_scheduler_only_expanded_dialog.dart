@@ -15,13 +15,10 @@ import '/widgets/outlined_button.dart';
 import 'controller/schedules_view_scheduled_date_scheduler_only_expanded_controller.dart';
 
 // ignore_for_file: must_be_immutable
-class SchedulesViewScheduledDateSchedulerOnlyExpandedDialog
-    extends StatelessWidget {
-  SchedulesViewScheduledDateSchedulerOnlyExpandedDialog(this.controller,
-      {Key? key})
-      : super(key: key);
+class SchedulesViewScheduledDateExpandedDialog extends StatelessWidget {
+  SchedulesViewScheduledDateExpandedDialog(this.controller, {super.key});
 
-  SchedulesViewScheduledDateSchedulerOnlyExpandedController controller;
+  SchedulesViewScheduledDateExpandedController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -109,7 +106,7 @@ class SchedulesViewScheduledDateSchedulerOnlyExpandedDialog
                                       hintStyle: theme.textTheme.bodyLarge,
                                       alignment: Alignment.bottomCenter,
                                       items: controller
-                                          .schedulesViewScheduledDateSchedulerOnlyExpanded
+                                          .schedulesViewScheduledDateExpanded
                                           .value
                                           .choices
                                           .value,

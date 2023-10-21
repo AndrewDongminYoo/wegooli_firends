@@ -17,13 +17,13 @@ import '/widgets/image_view.dart';
 class ListviewItemWidget extends StatelessWidget {
   ListviewItemWidget(
     this.listviewItem, {
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   ListviewItemModel listviewItem;
 
-  ViewScheduledDateSchedulerOnlyController controller =
-      Get.find<ViewScheduledDateSchedulerOnlyController>();
+  ViewScheduledDateController controller =
+      Get.find<ViewScheduledDateController>();
 
   @override
   Widget build(BuildContext context) {

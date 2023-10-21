@@ -16,7 +16,7 @@ import '/widgets/image_view.dart';
 import 'controller/schedules_team_is_full_controller.dart';
 
 class SchedulesTeamsFull extends GetWidget<SchedulesTeamIsFullController> {
-  const SchedulesTeamsFull({Key? key}) : super(key: key);
+  const SchedulesTeamsFull({super.key});
   static const routeName = '/schedules_teams_full';
 
   @override

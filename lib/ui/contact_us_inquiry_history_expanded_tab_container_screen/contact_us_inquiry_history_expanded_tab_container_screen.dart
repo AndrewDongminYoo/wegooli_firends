@@ -17,7 +17,7 @@ import 'controller/contact_us_inquiry_history_expanded_tab_container_controller.
 
 class ContactUsInquiryHistoryScreen
     extends GetWidget<ContactUsInquiryHistoryController> {
-  const ContactUsInquiryHistoryScreen({Key? key}) : super(key: key);
+  const ContactUsInquiryHistoryScreen({super.key});
   static const routeName = '/contact_us/history';
 
   @override

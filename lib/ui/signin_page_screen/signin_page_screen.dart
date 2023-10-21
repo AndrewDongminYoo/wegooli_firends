@@ -14,7 +14,7 @@ import '/widgets/text_form_field.dart';
 import 'controller/signin_page_controller.dart';
 
 class SigninPageScreen extends GetWidget<SigninPageController> {
-  const SigninPageScreen({Key? key}) : super(key: key);
+  const SigninPageScreen({super.key});
   static const routeName = '/signin';
 
   @override

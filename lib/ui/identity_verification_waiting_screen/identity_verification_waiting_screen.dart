@@ -17,7 +17,7 @@ import 'controller/identity_verification_waiting_controller.dart';
 
 class VerificationWaitingScreen
     extends GetWidget<VerificationWaitingController> {
-  const VerificationWaitingScreen({Key? key}) : super(key: key);
+  const VerificationWaitingScreen({super.key});
   static const routeName = '/route_name';
 
   @override

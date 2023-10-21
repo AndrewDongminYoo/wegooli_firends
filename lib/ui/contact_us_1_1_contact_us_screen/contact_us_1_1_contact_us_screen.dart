@@ -18,7 +18,7 @@ import '/widgets/text_form_field.dart';
 import 'controller/contact_us_1_1_contact_us_controller.dart';
 
 class OneOnOneScreen extends GetWidget<OneOnOneController> {
-  const OneOnOneScreen({Key? key}) : super(key: key);
+  const OneOnOneScreen({super.key});
   static const routeName = '/route_name';
 
   @override

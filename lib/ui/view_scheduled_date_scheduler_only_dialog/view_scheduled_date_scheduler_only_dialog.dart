@@ -14,11 +14,10 @@ import '/widgets/image_view.dart';
 import 'controller/view_scheduled_date_scheduler_only_controller.dart';
 
 // ignore_for_file: must_be_immutable
-class ViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
-  ViewScheduledDateSchedulerOnlyDialog(this.controller, {Key? key})
-      : super(key: key);
+class ViewScheduledDateDialog extends StatelessWidget {
+  ViewScheduledDateDialog(this.controller, {super.key});
 
-  ViewScheduledDateSchedulerOnlyController controller;
+  ViewScheduledDateController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -53,11 +52,11 @@ class ViewScheduledDateSchedulerOnlyDialog extends StatelessWidget {
                   separatorBuilder: (context, index) {
                     return SizedBox(height: 10.v);
                   },
-                  itemCount: controller.viewScheduledDateSchedulerOnly.value
-                      .listviewItemList.value.length,
+                  itemCount: controller
+                      .viewScheduledDate.value.listviewItemList.value.length,
                   itemBuilder: (context, index) {
-                    final model = controller.viewScheduledDateSchedulerOnly
-                        .value.listviewItemList.value[index];
+                    final model = controller
+                        .viewScheduledDate.value.listviewItemList.value[index];
                     return ListviewItemWidget(model);
                   })),
               SizedBox(height: 10.v)

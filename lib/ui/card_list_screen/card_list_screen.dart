@@ -15,7 +15,7 @@ import '/widgets/radio_button.dart';
 import 'controller/card_list_controller.dart';
 
 class CardListScreen extends GetWidget<CardListController> {
-  const CardListScreen({Key? key}) : super(key: key);
+  const CardListScreen({super.key});
   static const routeName = '/card_list';
 
   @override

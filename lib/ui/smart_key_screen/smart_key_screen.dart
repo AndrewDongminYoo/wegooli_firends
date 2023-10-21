@@ -10,7 +10,7 @@ import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/image_view.dart';
 
 class SmartKeyScreen extends StatelessWidget {
-  const SmartKeyScreen({Key? key}) : super(key: key);
+  const SmartKeyScreen({super.key});
   static const routeName = '/smart_key';
 
   @override

@@ -19,7 +19,7 @@ import '/widgets/text_form_field.dart';
 import 'controller/license_register_controller.dart';
 
 class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
-  const LicenseRegisterScreen({Key? key}) : super(key: key);
+  const LicenseRegisterScreen({super.key});
   static const routeName = '/license_register';
 
   @override

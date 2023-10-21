@@ -16,7 +16,7 @@ import '/widgets/text_form_field.dart';
 import 'controller/card_register_controller.dart';
 
 class CardRegisterScreen extends GetWidget<CardRegisterController> {
-  const CardRegisterScreen({Key? key}) : super(key: key);
+  const CardRegisterScreen({super.key});
   static const routeName = '/card_register';
 
   @override

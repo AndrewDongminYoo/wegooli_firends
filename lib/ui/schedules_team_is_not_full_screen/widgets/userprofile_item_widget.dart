@@ -17,8 +17,8 @@ import '/widgets/image_view.dart';
 class UserprofileItemWidget extends StatelessWidget {
   UserprofileItemWidget(
     this.userprofileItem, {
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   UserprofileItemModel userprofileItem;
 

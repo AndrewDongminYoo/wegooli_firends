@@ -17,7 +17,7 @@ import '/widgets/text_form_field.dart';
 import 'controller/identity_verification_terms_bottomsheet_controller.dart';
 
 class TermsBottomsheet extends GetWidget<TermsOfUseController> {
-  const TermsBottomsheet({Key? key}) : super(key: key);
+  const TermsBottomsheet({super.key});
   static const routeName = '/route_name';
 
   @override

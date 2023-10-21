@@ -17,8 +17,8 @@ import 'controller/appointment_end_expanded_controller.dart';
 class AppointmentEndExpandedBottomsheet extends StatelessWidget {
   AppointmentEndExpandedBottomsheet(
     this.controller, {
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   AppointmentEndExpandedController controller;
 

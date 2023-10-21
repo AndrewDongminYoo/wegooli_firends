@@ -14,7 +14,7 @@ import '/widgets/elevated_button.dart';
 import '/widgets/image_view.dart';
 
 class ContactUsEmptyHistoryScreen extends StatelessWidget {
-  const ContactUsEmptyHistoryScreen({Key? key}) : super(key: key);
+  const ContactUsEmptyHistoryScreen({super.key});
   static const routeName = '/contact_us/empty';
 
   @override

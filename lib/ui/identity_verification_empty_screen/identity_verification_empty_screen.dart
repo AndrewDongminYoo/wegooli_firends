@@ -16,7 +16,7 @@ import '/widgets/text_form_field.dart';
 import 'controller/identity_verification_empty_controller.dart';
 
 class VerificationEmptyScreen extends GetWidget<VerificationEmptyController> {
-  const VerificationEmptyScreen({Key? key}) : super(key: key);
+  const VerificationEmptyScreen({super.key});
   static const routeName = '/verification_empty';
 
   @override

@@ -14,7 +14,7 @@ import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/elevated_button.dart';
 import '/widgets/image_view.dart';
 import '/widgets/text_form_field.dart';
-import 'controller/identity_verification_filled_with_telecom_controller.dart';
+import 'controller/verification_filled_controller.dart';
 
 class VerificationFilledScreen extends GetWidget<VerificationFilledController> {
   const VerificationFilledScreen({super.key});

@@ -2,7 +2,7 @@
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '../controller/identity_verification_filled_with_telecom_controller.dart';
+import '../controller/verification_filled_controller.dart';
 
 class VerificationFilledBinding extends Bindings {
   @override

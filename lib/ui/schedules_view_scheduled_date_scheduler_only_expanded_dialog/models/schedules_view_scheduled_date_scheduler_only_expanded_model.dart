@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/data/models/dropdown_data.dart';
 
-class SchedulesViewScheduledDateExpandedModel {
+class ScheduledDateModel {
   Rx<List<DropdownData>> choices = Rx([
     DropdownData(
       id: 1,

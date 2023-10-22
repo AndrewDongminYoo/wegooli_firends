@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '../contact_us_1_1_contact_us_screen/widgets/listaddphotoalt_item_widget.dart';
+import '../one_on_one_screen/widgets/listaddphotoalt_item_widget.dart';
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
 import '/theme/theme_helper.dart';
@@ -15,7 +15,7 @@ import '/widgets/drop_down.dart';
 import '/widgets/elevated_button.dart';
 import '/widgets/image_view.dart';
 import '/widgets/text_form_field.dart';
-import 'controller/contact_us_1_1_contact_us_controller.dart';
+import 'controller/one_on_one_controller.dart';
 
 class OneOnOneScreen extends GetWidget<OneOnOneController> {
   const OneOnOneScreen({super.key});
@@ -105,7 +105,7 @@ class OneOnOneScreen extends GetWidget<OneOnOneController> {
                                         .value
                                         .listaddphotoaltItemList
                                         .value[index];
-                                    return ListaddphotoaltItemWidget(model);
+                                    return ListAddPhotoAltItemWidget(model);
                                   }),
                             ),
                           ),

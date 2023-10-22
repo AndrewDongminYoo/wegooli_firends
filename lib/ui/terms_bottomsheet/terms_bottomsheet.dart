@@ -14,7 +14,7 @@ import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/elevated_button.dart';
 import '/widgets/image_view.dart';
 import '/widgets/text_form_field.dart';
-import 'controller/identity_verification_terms_bottomsheet_controller.dart';
+import 'controller/terms_bottomsheet_controller.dart';
 
 class TermsBottomsheet extends GetWidget<TermsOfUseController> {
   const TermsBottomsheet({super.key});

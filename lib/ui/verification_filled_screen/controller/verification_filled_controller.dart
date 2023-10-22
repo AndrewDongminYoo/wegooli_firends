@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '/ui/identity_verification_filled_with_telecom_screen/models/identity_verification_filled_with_telecom_model.dart';
+import '/ui/verification_filled_screen/models/verification_filled_model.dart';
 
 class VerificationFilledController extends GetxController {
   TextEditingController nameoneController = TextEditingController();

@@ -15,20 +15,19 @@ import '/ui/appointment_start_expanded_bottomsheet/appointment_start_expanded_bo
 import '/ui/appointment_start_expanded_bottomsheet/controller/appointment_start_expanded_controller.dart';
 import '/ui/card_list_screen/card_list_screen.dart';
 import '/ui/card_register_screen/card_register_screen.dart';
-import '/ui/contact_us_1_1_contact_us_screen/contact_us_1_1_contact_us_screen.dart';
 import '/ui/contact_us_empty_history_screen/contact_us_empty_history_screen.dart';
 import '/ui/contact_us_inquiry_history_expanded_tab_container_screen/contact_us_inquiry_history_expanded_tab_container_screen.dart';
 import '/ui/expiring_subscriptions_screen/expiring_subscriptions_screen.dart';
 import '/ui/home_page_screen/home_page_screen.dart';
 import '/ui/identity_verification_empty_screen/identity_verification_empty_screen.dart';
 import '/ui/identity_verification_filled_screen/identity_verification_filled_screen.dart';
-import '/ui/identity_verification_terms_bottomsheet_screen/identity_verification_terms_bottomsheet_screen.dart';
 import '/ui/identity_verification_waiting_screen/identity_verification_waiting_screen.dart';
 import '/ui/license_register_screen/license_register_screen.dart';
 import '/ui/my_page_screen/my_page_screen.dart';
 import '/ui/notices_no_notice_screen/notices_no_notice_screen.dart';
 import '/ui/notices_one_screen/notices_one_screen.dart';
 import '/ui/notices_screen/notices_screen.dart';
+import '/ui/one_on_one_screen/one_on_one_screen.dart';
 import '/ui/personal_info_form_zip_code_screen/personal_info_form_zip_code_screen.dart';
 import '/ui/schedules_container_screen/schedules_container_screen.dart';
 import '/ui/schedules_send_invitation_leader_only_dialog/controller/schedules_send_invitation_leader_only_controller.dart';
@@ -49,6 +48,7 @@ import '/ui/splash_screen_one_screen/splash_screen_one_screen.dart';
 import '/ui/splash_screen_two_screen/splash_screen_two_screen.dart';
 import '/ui/subscribe_info_no_subscription_screen/subscribe_info_no_subscription_screen.dart';
 import '/ui/subscribe_info_screen/subscribe_info_screen.dart';
+import '/ui/terms_bottomsheet/terms_bottomsheet.dart';
 import '/ui/unsubscribe_confirm_dialog/controller/unsubscribe_confirm_controller.dart';
 import '/ui/unsubscribe_confirm_dialog/unsubscribe_confirm_dialog.dart';
 import '/ui/unsubscribe_screen/unsubscribe_screen.dart';
@@ -81,16 +81,15 @@ class AppNavigationScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         RouteModal(
-                          dialogTitle:
-                              'Schedules View Scheduled Dated / Expanded',
-                          dialog: SchedulesViewScheduledDateExpandedDialog(
+                          title: 'Schedules View Scheduled Dated / Expanded',
+                          dialog: ScheduledDateDialog(
                             Get.put(
-                              SchedulesViewScheduledDateExpandedController(),
+                              ScheduledDateController(),
                             ),
                           ),
                         ),
                         RouteModal(
-                          dialogTitle: 'Send Invitation',
+                          title: 'Send Invitation',
                           dialog: SendInvitationLeaderOnlyDialog(
                             Get.put(
                               SendInvitationLeaderOnlyController(),
@@ -98,7 +97,7 @@ class AppNavigationScreen extends StatelessWidget {
                           ),
                         ),
                         RouteModal(
-                          dialogTitle: 'View Scheduled Date',
+                          title: 'View Scheduled Date',
                           dialog: ViewScheduledDateDialog(
                             Get.put(
                               ViewScheduledDateController(),
@@ -106,7 +105,7 @@ class AppNavigationScreen extends StatelessWidget {
                           ),
                         ),
                         RouteModal(
-                          dialogTitle: 'Appointment / Collapsed',
+                          title: 'Appointment / Collapsed',
                           bottomSheet: AppointmentAllCollapsedBottomsheet(
                             Get.put(
                               AppointmentAllCollapsedController(),
@@ -114,7 +113,7 @@ class AppNavigationScreen extends StatelessWidget {
                           ),
                         ),
                         RouteModal(
-                          dialogTitle: 'Appointment / Start',
+                          title: 'Appointment / Start',
                           bottomSheet: AppointmentStartExpandedBottomsheet(
                             Get.put(
                               AppointmentStartExpandedController(),
@@ -122,7 +121,7 @@ class AppNavigationScreen extends StatelessWidget {
                           ),
                         ),
                         RouteModal(
-                          dialogTitle: 'Appointment / End',
+                          title: 'Appointment / End',
                           bottomSheet: AppointmentEndExpandedBottomsheet(
                             Get.put(
                               AppointmentEndExpandedController(),
@@ -130,7 +129,7 @@ class AppNavigationScreen extends StatelessWidget {
                           ),
                         ),
                         RouteModal(
-                          dialogTitle: 'Unsubscribe / Confirm',
+                          title: 'Unsubscribe / Confirm',
                           dialog: UnsubscribeConfirmDialog(
                             Get.put(
                               UnsubscribeConfirmController(),
@@ -138,7 +137,7 @@ class AppNavigationScreen extends StatelessWidget {
                           ),
                         ),
                         RouteModal(
-                          dialogTitle: 'View Scheduled Date',
+                          title: 'View Scheduled Date',
                           dialog: SchedulesViewScheduledDateDialog(
                             Get.put(
                               SchedulesViewScheduledDateController(),
@@ -146,7 +145,7 @@ class AppNavigationScreen extends StatelessWidget {
                           ),
                         ),
                         RouteModal(
-                          dialogTitle: 'Send Invitation',
+                          title: 'Send Invitation',
                           dialog: SchedulesSendInvitationLeaderOnlyDialog(
                             Get.put(
                               SchedulesSendInvitationLeaderOnlyController(),
@@ -154,130 +153,125 @@ class AppNavigationScreen extends StatelessWidget {
                           ),
                         ),
                         const RouteItem(
-                          routeName: 'Verification / Waiting',
-                          routeDestination: VerificationWaitingScreen.routeName,
+                          title: 'Verification / Waiting',
+                          routeName: VerificationWaitingScreen.routeName,
                         ),
                         const RouteItem(
-                          routeName: 'SignUp Complete',
-                          routeDestination: SignupCompleteScreen.routeName,
+                          title: 'SignUp Complete',
+                          routeName: SignupCompleteScreen.routeName,
                         ),
                         const RouteItem(
-                          routeName: 'Notices',
-                          routeDestination: NoticesScreen.routeName,
+                          title: 'Notices',
+                          routeName: NoticesScreen.routeName,
                         ),
                         const RouteItem(
-                          routeName: 'Notices',
-                          routeDestination: NoticesOneScreen.routeName,
+                          title: 'Notices',
+                          routeName: NoticesOneScreen.routeName,
                         ),
                         const RouteItem(
-                          routeName: 'No Notice',
-                          routeDestination: EmptyNoticeScreen.routeName,
+                          title: 'No Notice',
+                          routeName: EmptyNoticeScreen.routeName,
                         ),
                         const RouteItem(
-                          routeName: 'Schedules - Container',
-                          routeDestination: SchedulesContainerScreen.routeName,
+                          title: 'Schedules - Container',
+                          routeName: SchedulesContainerScreen.routeName,
                         ),
                         const RouteItem(
-                          routeName: 'SignIn',
-                          routeDestination: SigninPageScreen.routeName,
+                          title: 'SignIn',
+                          routeName: SigninPageScreen.routeName,
                         ),
                         const RouteItem(
-                          routeName: 'Verification / BottomSheet',
-                          routeDestination: TermsBottomsheet.routeName,
+                          title: 'Verification / BottomSheet',
+                          routeName: TermsBottomsheet.routeName,
                         ),
                         const RouteItem(
-                          routeName: 'Verification / Empty',
-                          routeDestination: VerificationEmptyScreen.routeName,
+                          title: 'Verification / Empty',
+                          routeName: VerificationEmptyScreen.routeName,
                         ),
                         const RouteItem(
-                          routeName: 'Verification / Filled',
-                          routeDestination: VerificationFilledScreen.routeName,
+                          title: 'Verification / Filled',
+                          routeName: VerificationFilledScreen.routeName,
                         ),
                         const RouteItem(
-                          routeName: 'Zip Code',
-                          routeDestination:
-                              PersonalInfoFormZipCodeScreen.routeName,
+                          title: 'Zip Code',
+                          routeName: PersonalInfoFormZipCodeScreen.routeName,
                         ),
                         const RouteItem(
-                          routeName: '스플래시스크린 1',
-                          routeDestination: SplashScreenOne.routeName,
+                          title: '스플래시스크린 1',
+                          routeName: SplashScreenOne.routeName,
                         ),
                         const RouteItem(
-                          routeName: '스플래시스크린 2',
-                          routeDestination: SplashScreenTwo.routeName,
+                          title: '스플래시스크린 2',
+                          routeName: SplashScreenTwo.routeName,
                         ),
                         const RouteItem(
-                          routeName: 'License Register',
-                          routeDestination: LicenseRegisterScreen.routeName,
+                          title: 'License Register',
+                          routeName: LicenseRegisterScreen.routeName,
                         ),
                         const RouteItem(
-                          routeName: 'Home',
-                          routeDestination: HomePageScreen.routeName,
+                          title: 'Home',
+                          routeName: HomePageScreen.routeName,
                         ),
                         const RouteItem(
-                          routeName: 'Schedules / Team is not Full',
-                          routeDestination:
-                              SchedulesTeamIsNotFullScreen.routeName,
+                          title: 'Schedules / Team is not Full',
+                          routeName: SchedulesTeamIsNotFullScreen.routeName,
                         ),
                         const RouteItem(
-                          routeName: 'Schedules / Team is Full',
-                          routeDestination: SchedulesTeamsFull.routeName,
+                          title: 'Schedules / Team is Full',
+                          routeName: SchedulesTeamsFull.routeName,
                         ),
                         const RouteItem(
-                          routeName: 'Smart Key',
-                          routeDestination: SmartKeyScreen.routeName,
+                          title: 'Smart Key',
+                          routeName: SmartKeyScreen.routeName,
                         ),
                         const RouteItem(
-                          routeName: 'My Page',
-                          routeDestination: MyPageScreen.routeName,
+                          title: 'My Page',
+                          routeName: MyPageScreen.routeName,
                         ),
                         const RouteItem(
-                          routeName: 'Card List',
-                          routeDestination: CardListScreen.routeName,
+                          title: 'Card List',
+                          routeName: CardListScreen.routeName,
                         ),
                         const RouteItem(
-                          routeName: 'Another is Currently Using Car',
-                          routeDestination:
+                          title: 'Another is Currently Using Car',
+                          routeName:
                               SmartKeyAnotherIsCurrentlyUsingScreen.routeName,
                         ),
                         const RouteItem(
-                          routeName: 'Subscribe Info (No Subscription)',
-                          routeDestination: NoSubscriptionScreen.routeName,
+                          title: 'Subscribe Info (No Subscription)',
+                          routeName: NoSubscriptionScreen.routeName,
                         ),
                         const RouteItem(
-                          routeName: 'Subscribe Info',
-                          routeDestination: SubscribeInfoScreen.routeName,
+                          title: 'Subscribe Info',
+                          routeName: SubscribeInfoScreen.routeName,
                         ),
                         const RouteItem(
-                          routeName: 'Empty History',
-                          routeDestination:
-                              ContactUsEmptyHistoryScreen.routeName,
+                          title: 'Empty History',
+                          routeName: ContactUsEmptyHistoryScreen.routeName,
                         ),
                         const RouteItem(
-                          routeName: 'Inquiry History',
-                          routeDestination:
-                              ContactUsInquiryHistoryScreen.routeName,
+                          title: 'Inquiry History',
+                          routeName: ContactUsInquiryHistoryScreen.routeName,
                         ),
                         const RouteItem(
-                          routeName: 'Unsubscribe',
-                          routeDestination: UnsubscribeScreen.routeName,
+                          title: 'Unsubscribe',
+                          routeName: UnsubscribeScreen.routeName,
                         ),
                         const RouteItem(
-                          routeName: 'Card Register',
-                          routeDestination: CardRegisterScreen.routeName,
+                          title: 'Card Register',
+                          routeName: CardRegisterScreen.routeName,
                         ),
                         const RouteItem(
-                          routeName: 'Notices',
-                          routeDestination: NoticesScreen.routeName,
+                          title: 'Notices',
+                          routeName: NoticesScreen.routeName,
                         ),
                         const RouteItem(
-                          routeName: '1:1 Contact Us',
-                          routeDestination: OneOnOneScreen.routeName,
+                          title: '1:1 Contact Us',
+                          routeName: OneOnOneScreen.routeName,
                         ),
                         const RouteItem(
-                          routeName: 'Expiring Subscriptions',
-                          routeDestination:
-                              ExpiringSubscriptionsScreen.routeName,
+                          title: 'Expiring Subscriptions',
+                          routeName: ExpiringSubscriptionsScreen.routeName,
                         ),
                       ],
                     ),

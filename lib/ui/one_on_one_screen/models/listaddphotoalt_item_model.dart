@@ -1,8 +1,8 @@
 // 📦 Package imports:
 import 'package:get/get.dart';
 
-class ListaddphotoaltItemModel {
-  ListaddphotoaltItemModel({this.id}) {
+class ListAddPhotoAltItemModel {
+  ListAddPhotoAltItemModel({this.id}) {
     id = id ?? Rx('');
   }
 

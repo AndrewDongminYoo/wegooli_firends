@@ -11,17 +11,17 @@ import '/theme/theme_helper.dart';
 class RouteItem extends StatelessWidget {
   const RouteItem({
     super.key,
-    required this.routeDestination,
     required this.routeName,
+    required this.title,
   });
-  final String routeDestination;
   final String routeName;
+  final String title;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.of(context).pushNamed(routeDestination);
+        Navigator.of(context).pushNamed(routeName);
       },
       child: Container(
         decoration: BoxDecoration(color: lightTheme.onSecondary),
@@ -31,7 +31,7 @@ class RouteItem extends StatelessWidget {
               child: Padding(
                 padding: getPadding(horizontal: 20, vertical: 10),
                 child: Text(
-                  routeName,
+                  title,
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.center,
                   style: AppTextStyle(

@@ -2,7 +2,7 @@
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '../controller/contact_us_1_1_contact_us_controller.dart';
+import '../controller/one_on_one_controller.dart';
 
 class OneOnOneBinding extends Bindings {
   @override

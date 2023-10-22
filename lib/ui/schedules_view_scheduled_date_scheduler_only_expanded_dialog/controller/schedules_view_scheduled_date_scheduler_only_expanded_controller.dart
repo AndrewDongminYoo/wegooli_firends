@@ -5,10 +5,9 @@ import 'package:get/get.dart';
 import '/data/models/dropdown_data.dart';
 import '/ui/schedules_view_scheduled_date_scheduler_only_expanded_dialog/models/schedules_view_scheduled_date_scheduler_only_expanded_model.dart';
 
-class SchedulesViewScheduledDateExpandedController extends GetxController {
-  Rx<SchedulesViewScheduledDateExpandedModel>
-      schedulesViewScheduledDateExpanded =
-      SchedulesViewScheduledDateExpandedModel().obs;
+class ScheduledDateController extends GetxController {
+  Rx<ScheduledDateModel> schedulesViewScheduledDateExpanded =
+      ScheduledDateModel().obs;
   DropdownData? choice;
 
   void onSelected(dynamic value) {

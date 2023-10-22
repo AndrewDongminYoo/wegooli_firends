@@ -17,12 +17,12 @@ class RouteModal extends StatelessWidget {
     super.key,
     this.dialog,
     this.bottomSheet,
-    required this.dialogTitle,
+    required this.title,
   }) : assert(!(dialog == null && bottomSheet == null));
 
   final Widget? dialog;
   final Widget? bottomSheet;
-  final String dialogTitle;
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +44,7 @@ class RouteModal extends StatelessWidget {
               child: Padding(
                 padding: getPadding(horizontal: 20, vertical: 10),
                 child: Text(
-                  dialogTitle,
+                  title,
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.center,
                   style: AppTextStyle(

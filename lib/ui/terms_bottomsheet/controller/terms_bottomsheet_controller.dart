@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '/ui/identity_verification_terms_bottomsheet_screen/models/identity_verification_terms_bottomsheet_model.dart';
+import '/ui/terms_bottomsheet/models/terms_bottomsheet_model.dart';
 
 class TermsOfUseController extends GetxController {
   TextEditingController nameinputone = TextEditingController();

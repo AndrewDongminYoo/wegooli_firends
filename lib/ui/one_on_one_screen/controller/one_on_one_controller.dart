@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 
 // 🌎 Project imports:
 import '/data/models/dropdown_data.dart';
-import '/ui/contact_us_1_1_contact_us_screen/models/contact_us_1_1_contact_us_model.dart';
+import '/ui/one_on_one_screen/models/one_on_one_model.dart';
 
 class OneOnOneController extends GetxController {
   TextEditingController groupTwentySevenController = TextEditingController();

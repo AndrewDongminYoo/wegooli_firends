@@ -5,6 +5,6 @@ import 'package:get/get.dart';
 import 'calendar1_item_model.dart';
 
 class SchedulesTeamIsFullModel {
-  Rx<List<Calendar1ItemModel>> calendar1ItemList =
-      Rx(List.generate(7, (index) => Calendar1ItemModel()));
+  Rx<List<CalendarItemModel>> calendar1ItemList =
+      Rx(List.generate(7, (index) => CalendarItemModel()));
 }

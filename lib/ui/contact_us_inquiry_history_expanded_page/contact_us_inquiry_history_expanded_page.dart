@@ -12,14 +12,12 @@ import '/widgets/elevated_button.dart';
 import '/widgets/image_view.dart';
 import '/widgets/outlined_button.dart';
 import 'controller/contact_us_inquiry_history_expanded_controller.dart';
-import 'models/contact_us_inquiry_history_expanded_model.dart';
 
 // ignore: must_be_immutable
 class ContactUsInquiryHistoryExpandedPage extends StatelessWidget {
   ContactUsInquiryHistoryExpandedPage({super.key});
 
-  final controller = Get.put(ContactUsInquiryHistoryExpandedController(
-      ContactUsInquiryHistoryExpandedModel().obs));
+  final controller = Get.put(ContactUsInquiryHistoryExpandedController());
 
   @override
   Widget build(BuildContext context) {

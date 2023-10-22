@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 
 // 🌎 Project imports:
 import '/ui/app_navigation_screen/app_navigation_screen.dart';
-import '/ui/app_navigation_screen/binding/app_navigation_binding.dart';
 import '/ui/card_list_screen/binding/card_list_binding.dart';
 import '/ui/card_list_screen/card_list_screen.dart';
 import '/ui/card_register_screen/binding/card_register_binding.dart';
@@ -12,6 +11,8 @@ import '/ui/contact_us_empty_history_screen/binding/contact_us_empty_history_bin
 import '/ui/contact_us_empty_history_screen/contact_us_empty_history_screen.dart';
 import '/ui/contact_us_inquiry_history_expanded_tab_container_screen/binding/contact_us_inquiry_history_expanded_tab_container_binding.dart';
 import '/ui/contact_us_inquiry_history_expanded_tab_container_screen/contact_us_inquiry_history_expanded_tab_container_screen.dart';
+import '/ui/empty_notice_screen/binding/notices_no_notice_binding.dart';
+import '/ui/empty_notice_screen/empty_notice_screen.dart';
 import '/ui/expiring_subscriptions_screen/binding/expiring_subscriptions_binding.dart';
 import '/ui/expiring_subscriptions_screen/expiring_subscriptions_screen.dart';
 import '/ui/home_page_screen/binding/home_page_binding.dart';
@@ -26,8 +27,6 @@ import '/ui/license_register_screen/binding/license_register_binding.dart';
 import '/ui/license_register_screen/license_register_screen.dart';
 import '/ui/my_page_screen/binding/my_page_binding.dart';
 import '/ui/my_page_screen/my_page_screen.dart';
-import '/ui/notices_no_notice_screen/binding/notices_no_notice_binding.dart';
-import '/ui/notices_no_notice_screen/notices_no_notice_screen.dart';
 import '/ui/notices_one_screen/binding/notices_one_binding.dart';
 import '/ui/notices_one_screen/notices_one_screen.dart';
 import '/ui/notices_screen/binding/notices_binding.dart';
@@ -38,10 +37,10 @@ import '/ui/personal_info_form_zip_code_screen/binding/personal_info_form_zip_co
 import '/ui/personal_info_form_zip_code_screen/personal_info_form_zip_code_screen.dart';
 import '/ui/schedules_container_screen/binding/schedules_container_binding.dart';
 import '/ui/schedules_container_screen/schedules_container_screen.dart';
-import '/ui/schedules_team_is_full_screen/binding/schedules_team_is_full_binding.dart';
-import '/ui/schedules_team_is_full_screen/schedules_team_is_full_screen.dart';
 import '/ui/schedules_team_is_not_full_screen/binding/schedules_team_is_not_full_binding.dart';
 import '/ui/schedules_team_is_not_full_screen/schedules_team_is_not_full_screen.dart';
+import '/ui/schedules_teams_full/binding/schedules_team_is_full_binding.dart';
+import '/ui/schedules_teams_full/schedules_teams_full.dart';
 import '/ui/signin_page_screen/binding/signin_page_binding.dart';
 import '/ui/signin_page_screen/signin_page_screen.dart';
 import '/ui/signup_complete_screen/binding/signup_complete_binding.dart';
@@ -274,9 +273,6 @@ class AppRoutes {
     GetPage(
       name: AppNavigationScreen.routeName,
       page: () => const AppNavigationScreen(),
-      bindings: [
-        AppNavigationBinding(),
-      ],
     ),
     GetPage(
       name: SplashScreenTwo.routeName,

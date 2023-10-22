@@ -14,15 +14,13 @@ import '/widgets/elevated_button.dart';
 import '/widgets/image_view.dart';
 import '/widgets/text_form_field.dart';
 import 'controller/send_bird_chat_controller.dart';
-import 'models/send_bird_chat_model.dart';
 
 // ignore: must_be_immutable
 class SendBirdChatPage extends StatelessWidget {
   SendBirdChatPage({super.key});
   static const routeName = '/send_bird_chat';
 
-  SendBirdChatController controller =
-      Get.put(SendBirdChatController(SendBirdChatModel().obs));
+  SendBirdChatController controller = Get.put(SendBirdChatController());
 
   @override
   Widget build(BuildContext context) {

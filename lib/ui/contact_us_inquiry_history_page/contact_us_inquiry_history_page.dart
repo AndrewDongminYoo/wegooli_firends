@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '../contact_us_inquiry_history_page/widgets/list_item_widget.dart';
 import '/core/utils/size_utils.dart';
 import '/theme/theme_helper.dart';
+import '/ui/contact_us_inquiry_history_page/widgets/list_item_widget.dart';
 import 'controller/contact_us_inquiry_history_controller.dart';
 import 'models/contact_us_inquiry_history_model.dart';
 

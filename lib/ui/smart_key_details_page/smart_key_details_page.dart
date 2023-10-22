@@ -13,15 +13,13 @@ import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/floating_button.dart';
 import '/widgets/image_view.dart';
 import 'controller/smart_key_details_controller.dart';
-import 'models/smart_key_details_model.dart';
 
 // ignore_for_file: must_be_immutable
 class SmartKeyDetailsPage extends StatelessWidget {
   SmartKeyDetailsPage({super.key});
   static const routeName = '/smart_key_details';
 
-  SmartKeyDetailsController controller =
-      Get.put(SmartKeyDetailsController(SmartKeyDetailsModel().obs));
+  SmartKeyDetailsController controller = Get.put(SmartKeyDetailsController());
 
   @override
   Widget build(BuildContext context) {

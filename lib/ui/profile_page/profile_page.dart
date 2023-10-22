@@ -15,14 +15,13 @@ import '/widgets/image_view.dart';
 import '/widgets/outlined_button.dart';
 import '/widgets/switch.dart';
 import 'controller/profile_controller.dart';
-import 'models/profile_model.dart';
 
 // ignore_for_file: must_be_immutable
 class ProfilePage extends StatelessWidget {
   ProfilePage({super.key});
   static const routeName = '/profile';
 
-  final controller = Get.put(ProfileController(ProfileModel().obs));
+  final controller = Get.put(ProfileController());
 
   @override
   Widget build(BuildContext context) {

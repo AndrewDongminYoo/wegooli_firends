@@ -5,19 +5,19 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '../view_scheduled_date_scheduler_only_dialog/widgets/listview_item_widget.dart';
+import '../scheduled_date_dialog/controller/scheduled_date_controller.dart';
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
+import '/ui/view_scheduled_date_dialog/widgets/listview_item_widget.dart';
 import '/widgets/image_view.dart';
-import 'controller/view_scheduled_date_scheduler_only_controller.dart';
 
 // ignore_for_file: must_be_immutable
 class ViewScheduledDateDialog extends StatelessWidget {
   ViewScheduledDateDialog(this.controller, {super.key});
 
-  ViewScheduledDateController controller;
+  ScheduledDateController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -52,11 +52,11 @@ class ViewScheduledDateDialog extends StatelessWidget {
                   separatorBuilder: (context, index) {
                     return SizedBox(height: 10.v);
                   },
-                  itemCount: controller
-                      .viewScheduledDate.value.listviewItemList.value.length,
+                  itemCount:
+                      controller.scheduledDate.value.listItems.value.length,
                   itemBuilder: (context, index) {
-                    final model = controller
-                        .viewScheduledDate.value.listviewItemList.value[index];
+                    final model =
+                        controller.scheduledDate.value.listItems.value[index];
                     return ListviewItemWidget(model);
                   })),
               SizedBox(height: 10.v)

@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 
 // 🌎 Project imports:
 import '/data/models/dropdown_data.dart';
+import '/ui/view_scheduled_date_dialog/models/listview_item_model.dart';
 
 class ScheduledDateModel {
   Rx<List<DropdownData>> choices = Rx([
@@ -20,4 +21,7 @@ class ScheduledDateModel {
       title: 'Item Three',
     )
   ]);
+
+  Rx<List<ListviewItemModel>> listItems =
+      Rx(List.generate(3, (index) => ListviewItemModel()));
 }

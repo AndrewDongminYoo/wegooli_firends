@@ -5,12 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '../controller/view_scheduled_date_scheduler_only_controller.dart';
 import '../models/listview_item_model.dart';
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
+import '/ui/scheduled_date_dialog/controller/scheduled_date_controller.dart';
 import '/widgets/image_view.dart';
 
 // ignore: must_be_immutable
@@ -22,8 +22,7 @@ class ListviewItemWidget extends StatelessWidget {
 
   ListviewItemModel listviewItem;
 
-  ViewScheduledDateController controller =
-      Get.find<ViewScheduledDateController>();
+  ScheduledDateController controller = Get.find<ScheduledDateController>();
 
   @override
   Widget build(BuildContext context) {

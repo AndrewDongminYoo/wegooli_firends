@@ -1,8 +1,8 @@
 // 📦 Package imports:
 import 'package:get/get.dart';
 
-class Calendar1ItemModel {
-  Calendar1ItemModel({
+class CalendarItemModel {
+  CalendarItemModel({
     this.day1,
     this.day2,
     this.day3,

@@ -5,11 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // 🌎 Project imports:
-import '../schedules_page/widgets/calendar_item_widget.dart';
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
+import '/ui/schedules_page/widgets/calendar_item_widget.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/elevated_button.dart';
 import '/widgets/image_view.dart';

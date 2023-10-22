@@ -9,21 +9,23 @@ import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
+import '/widgets/drop_down.dart';
 import '/widgets/image_view.dart';
-import 'controller/schedules_view_scheduled_date_scheduler_only_controller.dart';
+import '/widgets/outlined_button.dart';
+import 'controller/scheduled_date_controller.dart';
 
 // ignore_for_file: must_be_immutable
-class SchedulesViewScheduledDateDialog extends StatelessWidget {
-  SchedulesViewScheduledDateDialog(this.controller, {super.key});
+class ScheduledDateDialog extends StatelessWidget {
+  ScheduledDateDialog(this.controller, {super.key});
 
-  SchedulesViewScheduledDateController controller;
+  ScheduledDateController controller;
 
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
       content: SingleChildScrollView(
         child: Container(
-          margin: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 238.v),
+          margin: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 219.v),
           padding: EdgeInsets.all(20.h),
           decoration: BoxDecoration(
               color: lightTheme.onPrimaryContainer,
@@ -46,14 +48,14 @@ class SchedulesViewScheduledDateDialog extends StatelessWidget {
                   )),
               SizedBox(height: 22.v),
               SizedBox(
-                height: 75.v,
+                height: 113.v,
                 width: 288.h,
                 child: Stack(
                   alignment: Alignment.center,
                   children: [
                     Align(
                         child: Container(
-                      height: 75.v,
+                      height: 113.v,
                       width: 288.h,
                       decoration: BoxDecoration(
                         color: lightTheme.onPrimaryContainer,
@@ -77,50 +79,72 @@ class SchedulesViewScheduledDateDialog extends StatelessWidget {
                       ),
                     )),
                     Align(
-                      child: SizedBox(
-                        height: 43.v,
-                        width: 258.h,
-                        child: Stack(
-                          alignment: Alignment.bottomCenter,
+                      child: Padding(
+                        padding: EdgeInsets.only(left: 20.h, right: 10.h),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
                           children: [
-                            Align(
-                                alignment: Alignment.topLeft,
-                                child: Text('홍길동', style: textTheme.bodySmall)),
-                            Align(
-                              alignment: Alignment.bottomCenter,
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
+                            SizedBox(
+                              height: 43.v,
+                              width: 258.h,
+                              child: Stack(
+                                alignment: Alignment.bottomCenter,
                                 children: [
-                                  Text('8/16 (수) 15:20 ~ 8/17(목) 14:00',
-                                      style: theme.textTheme.bodyLarge),
-                                  CustomImageView(
-                                      svgPath: Assets.svg.icoArrowLeft.path,
-                                      height: 18.adaptSize,
-                                      width: 18.adaptSize,
-                                      margin: EdgeInsets.only(
-                                          left: 17.h, bottom: 2.v))
+                                  Align(
+                                      alignment: Alignment.topLeft,
+                                      child: Text('홍길동',
+                                          style: textTheme.bodySmall)),
+                                  CustomDropDown(
+                                      width: 258.h,
+                                      icon: Container(
+                                          margin: EdgeInsets.only(left: 17.h),
+                                          child: CustomImageView(
+                                              svgPath: Assets
+                                                  .svg.icoArrowLeft.path)),
+                                      hintText:
+                                          '8/16 (수) 15:20 ~ 8/17(목) 14:00',
+                                      hintStyle: theme.textTheme.bodyLarge,
+                                      alignment: Alignment.bottomCenter,
+                                      items: controller
+                                          .scheduledDate.value.choices.value,
+                                      onChanged: (value) {
+                                        controller.onSelected(value);
+                                      }),
+                                  Align(
+                                      alignment: Alignment.centerLeft,
+                                      child: Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text('홍길동',
+                                                style:
+                                                    theme.textTheme.bodySmall),
+                                            SizedBox(height: 8.v),
+                                            Text(
+                                                '8/16 (수) 15:20 ~ 8/17(목) 14:00'
+                                                    .tr,
+                                                style:
+                                                    theme.textTheme.bodyLarge)
+                                          ]))
                                 ],
                               ),
                             ),
-                            Align(
-                                child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                  Text('홍길동', style: textTheme.bodySmall),
-                                  SizedBox(height: 7.v),
-                                  Row(children: [
-                                    Text('8/16 (수) 15:20 ~ 8/17(목) 14:00',
-                                        style: theme.textTheme.bodyLarge),
-                                    CustomImageView(
-                                        svgPath: Assets.svg.icoArrowLeft.path,
-                                        height: 18.adaptSize,
-                                        width: 18.adaptSize,
-                                        margin: EdgeInsets.only(
-                                            left: 17.h, bottom: 2.v))
-                                  ])
-                                ]))
+                            SizedBox(height: 10.v),
+                            Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Expanded(
+                                    child: CustomOutlinedButton(
+                                      text: '수정',
+                                      margin: EdgeInsets.only(right: 5.h),
+                                    ),
+                                  ),
+                                  Expanded(
+                                      child: CustomOutlinedButton(
+                                          text: '삭제',
+                                          margin: EdgeInsets.only(left: 5.h)))
+                                ])
                           ],
                         ),
                       ),

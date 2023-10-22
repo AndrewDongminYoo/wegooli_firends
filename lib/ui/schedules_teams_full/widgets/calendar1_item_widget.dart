@@ -11,13 +11,13 @@ import '/core/utils/size_utils.dart';
 import '/theme/theme_helper.dart';
 
 // ignore: must_be_immutable
-class Calendar1ItemWidget extends StatelessWidget {
-  Calendar1ItemWidget(
+class CalendarItemWidget extends StatelessWidget {
+  CalendarItemWidget(
     this.calendar1Item, {
     super.key,
   });
 
-  Calendar1ItemModel calendar1Item;
+  CalendarItemModel calendar1Item;
 
   SchedulesTeamIsFullController controller =
       Get.find<SchedulesTeamIsFullController>();

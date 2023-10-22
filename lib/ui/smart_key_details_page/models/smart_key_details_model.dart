@@ -1,1 +1,1 @@
-class SmartKeyDetailsModel {}
+

@@ -1,9 +1,13 @@
+// 🐦 Flutter imports:
+import 'package:flutter/material.dart';
+
 // 📦 Package imports:
 import 'package:get/instance_manager.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 // 🌎 Project imports:
 import '/core/utils/logger.dart';
+import '/data/custom/user.model.dart';
 
 class PrefUtils {
   // ignore: prefer_constructors_over_static_methods
@@ -19,7 +23,10 @@ class PrefUtils {
     _store = await Hive.openBox('WEGOOLI');
   }
 
+  final String _usersInfo = 'USER_INFO';
   final String _tokenData = 'WEGOOLI_TOKEN_DATA';
+  final String _themeData = 'APP_THEME_MODE';
+
   Future<void> clearAll() async {
     await _store?.clear();
   }
@@ -48,8 +55,26 @@ class PrefUtils {
     return token;
   }
 
+  ThemeMode get themeMode {
+    final darkMode = _store?.get(_themeData);
+    return darkMode == null
+        ? ThemeMode.system
+        : darkMode
+            ? ThemeMode.dark
+            : ThemeMode.light;
+  }
+
+  void saveThemeMode(ThemeMode mode) => mode == ThemeMode.system
+      ? _store?.delete(_themeData)
+      : _store?.put(_themeData, mode == ThemeMode.dark);
+
   Future<void> setToken(String token) {
     logger.i('[pref] SET token: $token');
     return setData(_tokenData, token);
+  }
+
+  Future<void> saveCurrentUser(User user) {
+    logger.i('[pref] set user: $user');
+    return setData(_usersInfo, user);
   }
 }

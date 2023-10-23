@@ -17,7 +17,11 @@ class NetworkException implements Exception {}
 /// can be used for throwing [NoInternetException]
 class NoInternetException implements Exception {
   NoInternetException([String message = 'NoInternetException Occurred']) {
-    Get.showSnackbar(GetSnackBar(messageText: Text(message)));
+    Get.showSnackbar(GetSnackBar(
+      title: message,
+      messageText: Text(message),
+      duration: 1.seconds,
+    ));
     _message = message;
   }
 
@@ -41,14 +45,6 @@ class CustomException implements Exception {
       return 'Exception';
     }
     return 'Exception: $message';
-  }
-
-  SnackbarController showToast() {
-    return Get.showSnackbar(GetSnackBar(
-      title: message,
-      message: message,
-      duration: 1.seconds,
-    ));
   }
 }
 

@@ -1,4 +1,4 @@
 // 📦 Package imports:
-import 'package:get/get.dart';
+import 'package:get/get_connect.dart';
 
 class ApiClient extends GetConnect {}

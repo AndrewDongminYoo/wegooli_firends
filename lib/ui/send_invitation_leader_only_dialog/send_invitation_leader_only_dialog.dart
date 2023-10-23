@@ -53,7 +53,7 @@ class SendInvitationDialog extends StatelessWidget {
                 ),
               ),
               CustomTextFormField(
-                  controller: controller.invitationcode,
+                  controller: controller.invitationCode,
                   margin: EdgeInsets.only(left: 20.h, top: 22.v, right: 20.h),
                   hintText: 'asdf-asdf-asdf-asdf',
                   hintStyle: textTheme.bodyLarge!.copyWith(

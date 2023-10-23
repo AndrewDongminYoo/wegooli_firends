@@ -59,7 +59,7 @@ class OneOnOneScreen extends GetWidget<OneOnOneController> {
                             hintStyle: textTheme.bodyLarge!.copyWith(
                               color: const Color(0xFF8F9199),
                             ),
-                            items: controller
+                            options: controller
                                 .contactUs11ContactUs.value.choices.value,
                             contentPadding: EdgeInsets.only(
                                 left: 10.h, top: 14.v, bottom: 14.v),

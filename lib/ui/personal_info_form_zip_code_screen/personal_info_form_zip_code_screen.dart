@@ -62,7 +62,7 @@ class PersonalInfoFormZipCodeScreen
                                     SizedBox(height: 3.v),
                                     CustomTextFormField(
                                         width: 160.h,
-                                        controller: controller.postalcodeone,
+                                        controller: controller.postCode,
                                         hintText: '우편번호')
                                   ],
                                 ),
@@ -90,11 +90,10 @@ class PersonalInfoFormZipCodeScreen
                         ),
                         SizedBox(height: 10.v),
                         CustomTextFormField(
-                            controller: controller.defaultaddress,
-                            hintText: '기본주소'),
+                            controller: controller.address1, hintText: '기본주소'),
                         SizedBox(height: 10.v),
                         CustomTextFormField(
-                            controller: controller.detailedaddress,
+                            controller: controller.address2,
                             hintText: '동·호수 등 상세 주소'),
                         SizedBox(height: 30.v),
                         Column(
@@ -103,7 +102,7 @@ class PersonalInfoFormZipCodeScreen
                             Text('아이디', style: textTheme.bodySmall),
                             SizedBox(height: 3.v),
                             CustomTextFormField(
-                                controller: controller.emailaddress,
+                                controller: controller.usermail,
                                 hintText: '이메일 주소 입력')
                           ],
                         ),
@@ -114,7 +113,7 @@ class PersonalInfoFormZipCodeScreen
                             Text('비밀번호', style: textTheme.bodySmall),
                             SizedBox(height: 3.v),
                             CustomTextFormField(
-                                controller: controller.eyecrossedout,
+                                controller: controller.password,
                                 hintText: '영문/숫자/특수문자 조합 (6~12자)',
                                 suffix: Container(
                                     margin: EdgeInsets.only(
@@ -133,7 +132,7 @@ class PersonalInfoFormZipCodeScreen
                             Text('비밀번호 확인', style: textTheme.bodySmall),
                             SizedBox(height: 3.v),
                             CustomTextFormField(
-                                controller: controller.passwordreentry,
+                                controller: controller.passpass,
                                 hintText: '비밀번호 재입력',
                                 suffix: Container(
                                     margin: EdgeInsets.only(
@@ -152,7 +151,7 @@ class PersonalInfoFormZipCodeScreen
                               Text('닉네임', style: textTheme.bodySmall),
                               SizedBox(height: 3.v),
                               CustomTextFormField(
-                                  controller: controller.nicknameinput,
+                                  controller: controller.nickname,
                                   hintText: '닉네임 입력 (8자 이내)',
                                   textInputAction: TextInputAction.done)
                             ])

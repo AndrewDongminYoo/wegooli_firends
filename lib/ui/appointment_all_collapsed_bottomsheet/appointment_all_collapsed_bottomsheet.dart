@@ -269,7 +269,7 @@ class AppointmentAllCollapsedBottomsheet extends StatelessWidget {
                                 svgPath: Assets.svg.icoArrowLeft.path),
                           ),
                           hintText: '8.1 화 18:00',
-                          items: controller
+                          options: controller
                               .appointmentAllCollapsed.value.choices.value,
                           onChanged: (value) {
                             controller.onSelected(value);

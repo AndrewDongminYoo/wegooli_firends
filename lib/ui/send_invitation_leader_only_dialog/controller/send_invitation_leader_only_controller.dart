@@ -5,11 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 
 class SendInvitationLeaderOnlyController extends GetxController {
-  TextEditingController invitationcode = TextEditingController();
+  TextEditingController invitationCode = TextEditingController();
 
   @override
   void onClose() {
     super.onClose();
-    invitationcode.dispose();
+    invitationCode.dispose();
   }
 }

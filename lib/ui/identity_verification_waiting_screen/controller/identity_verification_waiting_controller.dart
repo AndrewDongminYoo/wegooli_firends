@@ -5,16 +5,16 @@ import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 
 class VerificationWaitingController extends GetxController {
-  TextEditingController realName = TextEditingController();
+  TextEditingController realname = TextEditingController();
   TextEditingController birthday = TextEditingController();
   TextEditingController socialId = TextEditingController();
-  TextEditingController phoneNum = TextEditingController();
+  TextEditingController phonenum = TextEditingController();
 
   @override
   void onClose() {
     super.onClose();
-    realName.dispose();
+    realname.dispose();
     birthday.dispose();
-    phoneNum.dispose();
+    phonenum.dispose();
   }
 }

@@ -5,13 +5,13 @@ import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 
 class VerificationEmptyController extends GetxController {
-  TextEditingController nameinputone = TextEditingController();
-  TextEditingController phonenumberone = TextEditingController();
+  TextEditingController realname = TextEditingController();
+  TextEditingController phonenum = TextEditingController();
 
   @override
   void onClose() {
     super.onClose();
-    nameinputone.dispose();
-    phonenumberone.dispose();
+    realname.dispose();
+    phonenum.dispose();
   }
 }

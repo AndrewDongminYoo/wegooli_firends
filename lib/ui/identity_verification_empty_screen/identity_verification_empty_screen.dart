@@ -47,8 +47,7 @@ class VerificationEmptyScreen extends GetWidget<VerificationEmptyController> {
                   Text('이름', style: textTheme.bodySmall),
                   SizedBox(height: 3.v),
                   CustomTextFormField(
-                      controller: controller.nameinputone,
-                      hintText: '이름을 입력해주세요.')
+                      controller: controller.realname, hintText: '이름을 입력해주세요.')
                 ],
               ),
               SizedBox(height: 30.v),
@@ -133,7 +132,7 @@ class VerificationEmptyScreen extends GetWidget<VerificationEmptyController> {
                   Text('휴대폰 정보', style: textTheme.bodySmall),
                   SizedBox(height: 3.v),
                   CustomTextFormField(
-                      controller: controller.phonenumberone,
+                      controller: controller.phonenum,
                       hintText: '010-1234-5678',
                       textInputAction: TextInputAction.done)
                 ],

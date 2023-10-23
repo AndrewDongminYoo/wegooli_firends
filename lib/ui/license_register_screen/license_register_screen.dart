@@ -453,8 +453,8 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                   Assets.svg.icoCaretDown.path),
                                         ),
                                         hintText: '면허증 종류를 선택하세요.',
-                                        items: controller.licenseRegister.value
-                                            .choices.value,
+                                        options: controller.licenseRegister
+                                            .value.choices.value,
                                         onChanged: (value) {
                                           controller.onSelected(value);
                                         })
@@ -596,7 +596,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                     top: 19.v,
                                   ),
                                   hintText: '11',
-                                  items: controller
+                                  options: controller
                                       .licenseRegister.value.choices1.value,
                                   onChanged: (value) {
                                     controller.onSelected1(value);
@@ -605,7 +605,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                           ),
                         ),
                         CustomTextFormField(
-                            controller: controller.tfController,
+                            controller: controller.licenseNums,
                             margin: EdgeInsets.only(
                               left: 16.h,
                               top: 10.v,
@@ -633,7 +633,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                     ),
                                     SizedBox(height: 3.v),
                                     CustomTextFormField(
-                                        controller: controller.validityPeriod,
+                                        controller: controller.validPeriod,
                                         hintText: '적성기간 만료일(숫자만)을 입력해주세요.')
                                   ],
                                 ),
@@ -686,7 +686,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                     ),
                                     SizedBox(height: 3.v),
                                     CustomTextFormField(
-                                      controller: controller.oneController,
+                                      controller: controller.firstIssued,
                                       hintText: '면허 발급 일자(숫자만)를 입력해주세요.',
                                       textInputAction: TextInputAction.done,
                                     )

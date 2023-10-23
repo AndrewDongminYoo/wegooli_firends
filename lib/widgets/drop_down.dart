@@ -1,7 +1,11 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+// 📦 Package imports:
+import 'package:dropdown_button2/dropdown_button2.dart';
+
 // 🌎 Project imports:
+import '/core/utils/list_extensions.dart';
 import '/core/utils/size_utils.dart';
 import '/data/models/dropdown_data.dart';
 import '/theme/theme_helper.dart';
@@ -9,122 +13,95 @@ import '/theme/theme_helper.dart';
 class CustomDropDown extends StatelessWidget {
   CustomDropDown({
     super.key,
-    this.alignment,
-    this.width,
-    this.margin,
-    this.focusNode,
-    this.icon,
-    this.autofocus = true,
-    this.textStyle,
-    this.items,
-    this.hintText,
-    this.hintStyle,
-    this.prefix,
-    this.prefixConstraints,
-    this.suffix,
-    this.suffixConstraints,
+    required this.options,
+    this.borderColor,
+    this.borderRadius,
+    this.borderWidth,
     this.contentPadding,
-    this.borderDecoration,
-    this.fillColor,
-    this.filled = false,
-    this.validator,
+    this.hintStyle,
+    this.hintText,
+    this.icon,
+    this.margin,
     this.onChanged,
+    this.textStyle,
+    this.validator,
+    this.width,
   });
 
-  final Alignment? alignment;
   final double? width;
-  final EdgeInsetsGeometry? margin;
-  final FocusNode? focusNode;
-  final Widget? icon;
-  final bool? autofocus;
-  final TextStyle? textStyle;
-  final List<DropdownData>? items;
-  final String? hintText;
-  final TextStyle? hintStyle;
-  final Widget? prefix;
-  final BoxConstraints? prefixConstraints;
-  final Widget? suffix;
-  final BoxConstraints? suffixConstraints;
   final EdgeInsets? contentPadding;
-  final InputBorder? borderDecoration;
-  final Color? fillColor;
-  final bool? filled;
+  final EdgeInsetsGeometry? margin;
   final FormFieldValidator<DropdownData>? validator;
   final Function(DropdownData)? onChanged;
+  final Color? borderColor;
+  final double? borderRadius;
+  final double? borderWidth;
+  final List<DropdownData> options;
+  final String? hintText;
+  final TextStyle? hintStyle;
+  final TextStyle? textStyle;
+  final Widget? icon;
 
   @override
   Widget build(BuildContext context) {
-    return alignment != null
-        ? Align(
-            alignment: alignment ?? Alignment.center,
-            child: dropDownWidget,
-          )
-        : dropDownWidget;
+    return Container(
+      width: width ?? double.maxFinite,
+      margin: margin,
+      child: DropdownButtonFormField2<DropdownData>(
+        style: textStyle ??
+            textTheme.titleMedium!.copyWith(
+              color: lightTheme.onPrimary.withOpacity(0.4),
+            ),
+        items: options.mapTo((DropdownData option) {
+          return DropdownMenuItem<DropdownData>(
+            value: option,
+            child: Text(
+              option.title,
+              overflow: TextOverflow.ellipsis,
+              style: hintStyle ??
+                  textTheme.bodyLarge!.copyWith(
+                    color: const Color(0xFFB0B2BC),
+                  ),
+            ),
+          );
+        }),
+        decoration: decoration,
+        validator: validator,
+        onChanged: (value) {
+          onChanged!(value!);
+        },
+      ),
+    );
   }
 
-  Widget get dropDownWidget => Container(
-        width: width ?? double.maxFinite,
-        margin: margin,
-        child: DropdownButtonFormField<DropdownData>(
-          focusNode: focusNode ?? FocusNode(),
-          icon: icon,
-          autofocus: autofocus!,
-          style: textStyle ??
-              textTheme.titleMedium!.copyWith(
-                color: lightTheme.onPrimary.withOpacity(0.4),
-              ),
-          items: items?.map((DropdownData item) {
-            return DropdownMenuItem<DropdownData>(
-              value: item,
-              child: Text(
-                item.title,
-                overflow: TextOverflow.ellipsis,
-                style: hintStyle ??
-                    textTheme.bodyLarge!.copyWith(
-                      color: const Color(0xFFB0B2BC),
-                    ),
-              ),
-            );
-          }).toList(),
-          decoration: decoration,
-          validator: validator,
-          onChanged: (value) {
-            onChanged!(value!);
-          },
-        ),
-      );
   InputDecoration get decoration => InputDecoration(
         hintText: hintText ?? '',
         hintStyle: hintStyle ??
             textTheme.bodyLarge!.copyWith(
               color: const Color(0xFFB0B2BC),
             ),
-        prefixIcon: prefix,
-        prefixIconConstraints: prefixConstraints,
-        suffixIcon: suffix,
-        suffixIconConstraints: suffixConstraints,
         isDense: true,
         contentPadding: contentPadding ?? EdgeInsets.symmetric(vertical: 9.v),
-        fillColor: fillColor,
-        filled: filled,
-        border: borderDecoration ??
-            const OutlineInputBorder(
-              borderSide: BorderSide(
-                color: Color(0xFFB0B2BC),
-              ),
-            ),
-        enabledBorder: borderDecoration ??
-            const OutlineInputBorder(
-              borderSide: BorderSide(
-                color: Color(0xFFB0B2BC),
-              ),
-            ),
-        focusedBorder: borderDecoration ??
-            OutlineInputBorder(
-              borderRadius: BorderRadius.circular(4.h),
-              borderSide: const BorderSide(
-                color: Color(0xFFB9BCC3),
-              ),
-            ),
+        border: UnderlineInputBorder(
+          borderRadius: BorderRadius.circular(borderRadius ?? 4.h),
+          borderSide: BorderSide(
+            width: borderWidth ?? 1.0,
+            color: borderColor ?? const Color(0xFFB0B2BC),
+          ),
+        ),
+        enabledBorder: UnderlineInputBorder(
+          borderRadius: BorderRadius.circular(borderRadius ?? 4.h),
+          borderSide: BorderSide(
+            width: borderWidth ?? 1.0,
+            color: borderColor ?? const Color(0xFFB0B2BC),
+          ),
+        ),
+        focusedBorder: UnderlineInputBorder(
+          borderRadius: BorderRadius.circular(borderRadius ?? 4.h),
+          borderSide: BorderSide(
+            width: borderWidth ?? 1.0,
+            color: borderColor ?? const Color(0xFFB9BCC3),
+          ),
+        ),
       );
 }

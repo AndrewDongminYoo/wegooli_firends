@@ -9,9 +9,9 @@ import '/data/models/dropdown_data.dart';
 import '/ui/license_register_screen/models/license_register_model.dart';
 
 class LicenseRegisterController extends GetxController {
-  TextEditingController tfController = TextEditingController();
-  TextEditingController validityPeriod = TextEditingController();
-  TextEditingController oneController = TextEditingController();
+  TextEditingController licenseNums = TextEditingController();
+  TextEditingController validPeriod = TextEditingController();
+  TextEditingController firstIssued = TextEditingController();
 
   Rx<LicenseRegisterModel> licenseRegister = LicenseRegisterModel().obs;
   DropdownData? choice;
@@ -20,9 +20,9 @@ class LicenseRegisterController extends GetxController {
   @override
   void onClose() {
     super.onClose();
-    tfController.dispose();
-    validityPeriod.dispose();
-    oneController.dispose();
+    licenseNums.dispose();
+    validPeriod.dispose();
+    firstIssued.dispose();
   }
 
   void onSelected(dynamic value) {

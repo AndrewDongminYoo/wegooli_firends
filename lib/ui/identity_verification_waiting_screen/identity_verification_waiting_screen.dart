@@ -47,7 +47,7 @@ class VerificationWaitingScreen
                   Text('이름', style: textTheme.bodySmall),
                   SizedBox(height: 3.v),
                   CustomTextFormField(
-                      controller: controller.realName, hintText: '홍길동')
+                      controller: controller.realname, hintText: '홍길동')
                 ],
               ),
               SizedBox(height: 30.v),
@@ -99,7 +99,7 @@ class VerificationWaitingScreen
                   Text('휴대폰 정보', style: textTheme.bodySmall),
                   SizedBox(height: 3.v),
                   CustomTextFormField(
-                      controller: controller.phoneNum,
+                      controller: controller.phonenum,
                       hintText: '010-1234-5678',
                       textInputAction: TextInputAction.done)
                 ],

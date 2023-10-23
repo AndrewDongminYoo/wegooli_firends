@@ -5,13 +5,13 @@ import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 
 class SigninPageController extends GetxController {
-  TextEditingController emailinputone = TextEditingController();
-  TextEditingController passwordinput = TextEditingController();
+  TextEditingController loginName = TextEditingController();
+  TextEditingController loginPass = TextEditingController();
 
   @override
   void onClose() {
     super.onClose();
-    emailinputone.dispose();
-    passwordinput.dispose();
+    loginName.dispose();
+    loginPass.dispose();
   }
 }

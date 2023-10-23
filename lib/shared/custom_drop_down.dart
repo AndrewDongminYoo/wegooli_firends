@@ -5,105 +5,97 @@ import 'package:flutter/material.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 
 // 🌎 Project imports:
+import '/core/utils/size_utils.dart';
+import '/data/models/dropdown_data.dart';
 import '/shared/form_field_controller.dart';
 import '/theme/custom_text_style.dart';
 
-class CustomDropDown<T> extends StatefulWidget {
+class CustomDropDown extends StatefulWidget {
   const CustomDropDown({
     super.key,
-    required this.controller,
-    this.hintText,
-    this.searchHintText,
     required this.options,
-    this.optionLabels,
+    this.borderColor,
+    this.borderRadius,
+    this.borderWidth,
+    this.contentPadding,
+    this.controller,
+    this.disabled = false,
+    this.fillColor,
+    this.height,
+    this.hidesUnderline = false,
+    this.hintStyle,
+    this.hintText,
+    this.icon,
+    this.isMultiSelect = false,
+    this.isSearchable = false,
+    this.margin,
     this.onChanged,
     this.onChangedForMultiSelect,
-    this.icon,
-    this.width,
-    this.height,
-    this.fillColor,
-    this.searchHintTextStyle,
     this.searchCursorColor,
-    required this.textStyle,
-    required this.elevation,
-    required this.borderWidth,
-    required this.borderRadius,
-    required this.borderColor,
-    required this.margin,
-    this.hidesUnderline = false,
-    this.disabled = false,
-    this.isSearchable = false,
-    this.isMultiSelect = false,
+    this.searchHintText,
+    this.textStyle,
+    this.width,
   });
 
-  final FormFieldController<T> controller;
+  final bool disabled;
+  final bool hidesUnderline;
+  final bool isMultiSelect;
+  final bool isSearchable;
+  final Color? borderColor;
+  final Color? fillColor;
+  final Color? searchCursorColor;
+  final double? borderRadius;
+  final double? borderWidth;
+  final double? height;
+  final double? width;
+  final EdgeInsetsGeometry? contentPadding;
+  final EdgeInsetsGeometry? margin;
+  final FormFieldController<DropdownData>? controller;
+  final Function(List<DropdownData>?)? onChangedForMultiSelect;
+  final Function(DropdownData?)? onChanged;
+  final List<DropdownData> options;
   final String? hintText;
   final String? searchHintText;
-  final List<T> options;
-  final List<String>? optionLabels;
-  final Function(T?)? onChanged;
-  final Function(List<T>?)? onChangedForMultiSelect;
+  final TextStyle? hintStyle;
+  final TextStyle? textStyle;
   final Widget? icon;
-  final double? width;
-  final double? height;
-  final Color? fillColor;
-  final TextStyle? searchHintTextStyle;
-  final Color? searchCursorColor;
-  final TextStyle textStyle;
-  final double elevation;
-  final double borderWidth;
-  final double borderRadius;
-  final Color borderColor;
-  final EdgeInsetsGeometry margin;
-  final bool hidesUnderline;
-  final bool disabled;
-  final bool isSearchable;
-  final bool isMultiSelect;
 
   @override
-  State<CustomDropDown<T>> createState() => _CustomDropDownState<T>();
+  State<CustomDropDown> createState() => _CustomDropDownState();
 }
 
-class _CustomDropDownState<T> extends State<CustomDropDown<T>> {
+class _CustomDropDownState extends State<CustomDropDown> {
   final TextEditingController _textEditingController = TextEditingController();
 
   void Function() get listener => widget.isMultiSelect
       ? () {}
-      : () => widget.onChanged!(widget.controller.value);
+      : () => widget.onChanged!(widget.controller?.value);
 
   @override
   void initState() {
-    widget.controller.addListener(listener);
+    widget.controller?.addListener(listener);
     super.initState();
   }
 
   @override
   void dispose() {
-    widget.controller.removeListener(listener);
+    widget.controller?.removeListener(listener);
     super.dispose();
   }
 
-  List<T> selectedItems = [];
+  List<DropdownData> selectedItems = [];
 
   @override
   Widget build(BuildContext context) {
-    final optionToDisplayValue = Map.fromEntries(
-      widget.options.asMap().entries.map((option) => MapEntry(
-          option.value,
-          widget.optionLabels == null ||
-                  widget.optionLabels!.length < option.key + 1
-              ? option.value.toString()
-              : widget.optionLabels![option.key])),
-    );
-    final value = widget.options.contains(widget.controller.value)
-        ? widget.controller.value
+    final value = widget.options.contains(widget.controller?.value)
+        ? widget.controller?.value
         : null;
     final items = widget.options
         .map(
-          (option) => DropdownMenuItem<T>(
+          (option) => DropdownMenuItem<DropdownData>(
             value: option,
             child: Text(
-              optionToDisplayValue[option] ?? '',
+              option.title,
               style: widget.textStyle,
             ),
           ),
@@ -114,11 +106,10 @@ class _CustomDropDownState<T> extends State<CustomDropDown<T>> {
         : null;
     final onChanged = widget.disabled || widget.isMultiSelect
         ? null
-        : (value) => widget.controller.value = value;
+        : (value) => widget.controller?.value = value;
     final dropdownWidget = widget.isMultiSelect
         ? _buildMultiSelectDropdown(
             hintText,
-            optionToDisplayValue,
             widget.isSearchable,
             widget.onChangedForMultiSelect!,
             widget.disabled,
@@ -129,20 +120,20 @@ class _CustomDropDownState<T> extends State<CustomDropDown<T>> {
                 items,
                 onChanged,
                 hintText,
-                optionToDisplayValue,
               )
             : _buildNonSearchableDropdown(value, items, onChanged, hintText);
-    final childWidget = DecoratedBox(
+    final childWidget = Container(
+      margin: widget.margin,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(widget.borderRadius),
+        borderRadius: BorderRadius.circular(widget.borderRadius ?? 4.h),
         border: Border.all(
-          color: widget.borderColor,
-          width: widget.borderWidth,
+          color: widget.borderColor ?? const Color(0xFFB0B2BC),
+          width: widget.borderWidth ?? 1.adaptSize,
         ),
         color: widget.fillColor,
       ),
       child: Padding(
-        padding: widget.margin,
+        padding: widget.contentPadding ?? EdgeInsets.symmetric(vertical: 9.v),
         child: widget.hidesUnderline
             ? DropdownButtonHideUnderline(child: dropdownWidget)
             : dropdownWidget,
@@ -159,16 +150,15 @@ class _CustomDropDownState<T> extends State<CustomDropDown<T>> {
   }
 
   Widget _buildNonSearchableDropdown(
-    T? value,
-    List<DropdownMenuItem<T>>? items,
-    void Function(T?)? onChanged,
+    DropdownData? value,
+    List<DropdownMenuItem<DropdownData>>? items,
+    void Function(DropdownData?)? onChanged,
     Text? hintText,
   ) {
-    return DropdownButton<T>(
+    return DropdownButton<DropdownData>(
       value: value,
       hint: hintText,
       items: items,
-      elevation: widget.elevation.toInt(),
       onChanged: onChanged,
       icon: widget.icon,
       isExpanded: true,
@@ -178,29 +168,26 @@ class _CustomDropDownState<T> extends State<CustomDropDown<T>> {
   }
 
   Widget _buildSearchableDropdown(
-    T? value,
-    List<DropdownMenuItem<T>>? items,
-    void Function(T?)? onChanged,
+    DropdownData? value,
+    List<DropdownMenuItem<DropdownData>>? items,
+    void Function(DropdownData?)? onChanged,
     Text? hintText,
-    Map<T, String> optionLabels,
   ) {
     final overlayColor = MaterialStateProperty.resolveWith<Color?>((states) =>
         states.contains(MaterialState.focused) ? Colors.transparent : null);
     final iconStyleData = widget.icon != null
         ? IconStyleData(icon: widget.icon!)
         : const IconStyleData();
-    return DropdownButton2<T>(
+    return DropdownButton2<DropdownData>(
       value: value,
       hint: hintText,
       items: items,
       iconStyleData: iconStyleData,
       buttonStyleData: ButtonStyleData(
-        elevation: widget.elevation.toInt(),
         overlayColor: overlayColor,
       ),
       menuItemStyleData: MenuItemStyleData(overlayColor: overlayColor),
       dropdownStyleData: DropdownStyleData(
-        elevation: widget.elevation.toInt(),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(4),
           color: widget.fillColor,
@@ -208,7 +195,7 @@ class _CustomDropDownState<T> extends State<CustomDropDown<T>> {
       ),
       onChanged: onChanged,
       isExpanded: true,
-      dropdownSearchData: DropdownSearchData<T>(
+      dropdownSearchData: DropdownSearchData<DropdownData>(
         searchController: _textEditingController,
         searchInnerWidgetHeight: 50,
         searchInnerWidget: Container(
@@ -231,7 +218,7 @@ class _CustomDropDownState<T> extends State<CustomDropDown<T>> {
                 vertical: 8,
               ),
               hintText: widget.searchHintText,
-              hintStyle: widget.searchHintTextStyle,
+              hintStyle: widget.hintStyle,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8),
               ),
@@ -239,7 +226,7 @@ class _CustomDropDownState<T> extends State<CustomDropDown<T>> {
           ),
         ),
         searchMatchFn: (item, searchValue) {
-          return (optionLabels[item.value] ?? '')
+          return item.value!.title
               .toLowerCase()
               .contains(searchValue.toLowerCase());
         },
@@ -256,9 +243,8 @@ class _CustomDropDownState<T> extends State<CustomDropDown<T>> {
 
   Widget _buildMultiSelectDropdown(
     Text? hintText,
-    Map<T, String> optionLabels,
     bool isSearchable,
-    Function(List<T>?) onChangedForMultiSelect,
+    Function(List<DropdownData>?) onChangedForMultiSelect,
     bool disabled,
   ) {
     final overlayColor = MaterialStateProperty.resolveWith<Color?>((states) =>
@@ -266,7 +252,7 @@ class _CustomDropDownState<T> extends State<CustomDropDown<T>> {
     final iconStyleData = widget.icon != null
         ? IconStyleData(icon: widget.icon!)
         : const IconStyleData();
-    return DropdownButton2<T>(
+    return DropdownButton2<DropdownData>(
       value: selectedItems.isEmpty ? null : selectedItems.last,
       hint: hintText,
       items: widget.options.map((item) {
@@ -317,12 +303,10 @@ class _CustomDropDownState<T> extends State<CustomDropDown<T>> {
       }).toList(),
       iconStyleData: iconStyleData,
       buttonStyleData: ButtonStyleData(
-        elevation: widget.elevation.toInt(),
         overlayColor: overlayColor,
       ),
       menuItemStyleData: MenuItemStyleData(overlayColor: overlayColor),
       dropdownStyleData: DropdownStyleData(
-        elevation: widget.elevation.toInt(),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(4),
           color: widget.fillColor,
@@ -350,7 +334,7 @@ class _CustomDropDownState<T> extends State<CustomDropDown<T>> {
         ).toList();
       },
       dropdownSearchData: isSearchable
-          ? DropdownSearchData<T>(
+          ? DropdownSearchData<DropdownData>(
               searchController: _textEditingController,
               searchInnerWidgetHeight: 50,
               searchInnerWidget: Container(
@@ -373,7 +357,7 @@ class _CustomDropDownState<T> extends State<CustomDropDown<T>> {
                       vertical: 8,
                     ),
                     hintText: widget.searchHintText,
-                    hintStyle: widget.searchHintTextStyle,
+                    hintStyle: widget.hintStyle,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8),
                     ),
@@ -381,7 +365,7 @@ class _CustomDropDownState<T> extends State<CustomDropDown<T>> {
                 ),
               ),
               searchMatchFn: (item, searchValue) {
-                return (optionLabels[item.value] ?? '')
+                return item.value!.title
                     .toLowerCase()
                     .contains(searchValue.toLowerCase());
               },

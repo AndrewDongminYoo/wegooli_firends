@@ -66,7 +66,7 @@ class CardRegisterScreen extends GetWidget<CardRegisterController> {
                             ),
                             SizedBox(height: 4.v),
                             CustomTextFormField(
-                                controller: controller.cardnumbervalue,
+                                controller: controller.cardNum,
                                 hintText: '0000  0000  0000  0000',
                                 hintStyle: textTheme.bodyLarge!.copyWith(
                                   color: const Color(0xFF8E9199),
@@ -96,7 +96,7 @@ class CardRegisterScreen extends GetWidget<CardRegisterController> {
                             ),
                             SizedBox(height: 4.v),
                             CustomTextFormField(
-                                controller: controller.expirationdatev,
+                                controller: controller.cardExp,
                                 hintText: 'MM/YY',
                                 hintStyle: textTheme.bodyLarge!.copyWith(
                                   color: const Color(0xFF8E9199),
@@ -126,7 +126,7 @@ class CardRegisterScreen extends GetWidget<CardRegisterController> {
                             ),
                             SizedBox(height: 4.v),
                             CustomTextFormField(
-                                controller: controller.zipcodeController,
+                                controller: controller.birthday,
                                 hintText: '940812',
                                 hintStyle: textTheme.bodyLarge!.copyWith(
                                   color: const Color(0xFF8E9199),
@@ -160,7 +160,7 @@ class CardRegisterScreen extends GetWidget<CardRegisterController> {
                               ),
                               SizedBox(height: 4.v),
                               CustomTextFormField(
-                                  controller: controller.edittextController,
+                                  controller: controller.cardPin,
                                   textInputAction: TextInputAction.done)
                             ])
                       ],

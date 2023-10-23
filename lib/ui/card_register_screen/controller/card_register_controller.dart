@@ -5,17 +5,17 @@ import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 
 class CardRegisterController extends GetxController {
-  TextEditingController cardnumbervalue = TextEditingController();
-  TextEditingController expirationdatev = TextEditingController();
-  TextEditingController zipcodeController = TextEditingController();
-  TextEditingController edittextController = TextEditingController();
+  TextEditingController cardNum = TextEditingController();
+  TextEditingController cardExp = TextEditingController();
+  TextEditingController birthday = TextEditingController();
+  TextEditingController cardPin = TextEditingController();
 
   @override
   void onClose() {
     super.onClose();
-    cardnumbervalue.dispose();
-    expirationdatev.dispose();
-    zipcodeController.dispose();
-    edittextController.dispose();
+    cardNum.dispose();
+    cardExp.dispose();
+    birthday.dispose();
+    cardPin.dispose();
   }
 }

@@ -5,23 +5,23 @@ import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 
 class PersonalInfoFormZipCodeController extends GetxController {
-  TextEditingController postalcodeone = TextEditingController();
-  TextEditingController defaultaddress = TextEditingController();
-  TextEditingController detailedaddress = TextEditingController();
-  TextEditingController emailaddress = TextEditingController();
-  TextEditingController eyecrossedout = TextEditingController();
-  TextEditingController passwordreentry = TextEditingController();
-  TextEditingController nicknameinput = TextEditingController();
+  TextEditingController postCode = TextEditingController();
+  TextEditingController address1 = TextEditingController();
+  TextEditingController address2 = TextEditingController();
+  TextEditingController usermail = TextEditingController();
+  TextEditingController password = TextEditingController();
+  TextEditingController passpass = TextEditingController();
+  TextEditingController nickname = TextEditingController();
 
   @override
   void onClose() {
     super.onClose();
-    postalcodeone.dispose();
-    defaultaddress.dispose();
-    detailedaddress.dispose();
-    emailaddress.dispose();
-    eyecrossedout.dispose();
-    passwordreentry.dispose();
-    nicknameinput.dispose();
+    postCode.dispose();
+    address1.dispose();
+    address2.dispose();
+    usermail.dispose();
+    password.dispose();
+    passpass.dispose();
+    nickname.dispose();
   }
 }

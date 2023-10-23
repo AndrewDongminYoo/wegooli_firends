@@ -46,7 +46,7 @@ class SigninPageScreen extends GetWidget<SigninPageController> {
                   ),
                   SizedBox(height: 3.v),
                   CustomTextFormField(
-                    controller: controller.emailinputone,
+                    controller: controller.loginName,
                     hintText: '이메일 입력',
                   ),
                 ],
@@ -61,7 +61,7 @@ class SigninPageScreen extends GetWidget<SigninPageController> {
                   ),
                   SizedBox(height: 3.v),
                   CustomTextFormField(
-                    controller: controller.passwordinput,
+                    controller: controller.loginPass,
                     hintText: '비밀번호 입력',
                     textInputAction: TextInputAction.done,
                     suffix: Container(

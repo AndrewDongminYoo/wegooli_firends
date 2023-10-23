@@ -90,7 +90,7 @@ class AppointmentStartExpandedBottomsheet extends StatelessWidget {
                           svgPath: Assets.svg.icoArrowLeft.path),
                     ),
                     hintText: '8.1 화 16:00',
-                    items:
+                    options:
                         controller.appointmentStartExpanded.value.choices.value,
                     onChanged: (value) {
                       controller.onSelected(value);

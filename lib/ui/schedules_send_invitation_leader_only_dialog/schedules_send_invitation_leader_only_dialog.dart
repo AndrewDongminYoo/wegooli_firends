@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 // 📦 Package imports:
-import 'package:get/get.dart';
+import 'package:get/route_manager.dart';
+import 'package:get/utils.dart';
 
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';

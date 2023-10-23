@@ -1,5 +1,5 @@
 // 📦 Package imports:
-import 'package:get/get.dart';
+import 'package:get/instance_manager.dart';
 
 // 🌎 Project imports:
 import '../controller/personal_info_form_zip_code_controller.dart';

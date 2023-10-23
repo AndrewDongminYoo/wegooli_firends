@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
-import 'package:get/get.dart';
+import 'package:get/instance_manager.dart';
 
 // 🌎 Project imports:
 import '../controller/notices_controller.dart';

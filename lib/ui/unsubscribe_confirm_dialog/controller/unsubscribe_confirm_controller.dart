@@ -1,4 +1,4 @@
 // 📦 Package imports:
-import 'package:get/get.dart';
+import 'package:get/state_manager.dart';
 
 class UnsubscribeConfirmController extends GetxController {}

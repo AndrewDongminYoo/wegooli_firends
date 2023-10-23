@@ -1,5 +1,5 @@
 // 📦 Package imports:
-import 'package:get/get.dart';
+import 'package:get/instance_manager.dart';
 
 // 🌎 Project imports:
 import '../controller/one_on_one_controller.dart';

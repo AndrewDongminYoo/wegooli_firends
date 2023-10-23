@@ -1,5 +1,5 @@
 // 📦 Package imports:
-import 'package:get/get.dart';
+import 'package:get/instance_manager.dart';
 
 // 🌎 Project imports:
 import '../controller/smart_key_another_is_currently_using_controller.dart';

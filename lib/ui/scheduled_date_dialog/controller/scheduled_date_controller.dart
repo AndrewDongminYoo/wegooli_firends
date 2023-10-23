@@ -1,5 +1,5 @@
 // 📦 Package imports:
-import 'package:get/get.dart';
+import 'package:get/state_manager.dart';
 
 // 🌎 Project imports:
 import '../models/scheduled_date_model.dart';

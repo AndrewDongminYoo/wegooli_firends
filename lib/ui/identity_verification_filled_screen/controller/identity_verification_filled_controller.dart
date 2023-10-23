@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
-import 'package:get/get.dart';
+import 'package:get/state_manager.dart';
 
 class VerificationFilledController extends GetxController {
   TextEditingController nameoneController = TextEditingController();

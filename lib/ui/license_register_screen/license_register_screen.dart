@@ -2,7 +2,9 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
-import 'package:get/get.dart';
+import 'package:get/route_manager.dart';
+import 'package:get/state_manager.dart';
+import 'package:get/utils.dart';
 
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';

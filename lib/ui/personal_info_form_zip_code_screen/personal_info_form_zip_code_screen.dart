@@ -165,9 +165,7 @@ class PersonalInfoFormZipCodeScreen
         ),
         bottomNavigationBar: Container(
           margin: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 16.v),
-          decoration: BoxDecoration(
-            color: lightTheme.onPrimaryContainer,
-          ),
+          decoration: BoxDecoration(color: lightTheme.onPrimaryContainer),
           child: CustomElevatedButton(
               height: 48.v,
               text: '입력 완료',

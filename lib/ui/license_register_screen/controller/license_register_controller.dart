@@ -10,7 +10,7 @@ import '/ui/license_register_screen/models/license_register_model.dart';
 
 class LicenseRegisterController extends GetxController {
   TextEditingController tfController = TextEditingController();
-  TextEditingController validityperiodi = TextEditingController();
+  TextEditingController validityPeriod = TextEditingController();
   TextEditingController oneController = TextEditingController();
 
   Rx<LicenseRegisterModel> licenseRegister = LicenseRegisterModel().obs;
@@ -21,7 +21,7 @@ class LicenseRegisterController extends GetxController {
   void onClose() {
     super.onClose();
     tfController.dispose();
-    validityperiodi.dispose();
+    validityPeriod.dispose();
     oneController.dispose();
   }
 

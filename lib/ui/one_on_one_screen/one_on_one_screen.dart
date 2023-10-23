@@ -78,9 +78,8 @@ class OneOnOneScreen extends GetWidget<OneOnOneController> {
                                 horizontal: 12.h, vertical: 14.v)),
                         SizedBox(height: 21.v),
                         Text('이미지 첨부',
-                            style: textTheme.titleMedium!.copyWith(
-                              fontSize: 18.fSize,
-                            )),
+                            style: textTheme.titleMedium!
+                                .copyWith(fontSize: 18.fSize)),
                         Align(
                           alignment: Alignment.centerRight,
                           child: SizedBox(
@@ -120,9 +119,7 @@ class OneOnOneScreen extends GetWidget<OneOnOneController> {
         ),
         bottomNavigationBar: Container(
           margin: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 29.v),
-          decoration: BoxDecoration(
-            color: lightTheme.onPrimaryContainer,
-          ),
+          decoration: BoxDecoration(color: lightTheme.onPrimaryContainer),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,

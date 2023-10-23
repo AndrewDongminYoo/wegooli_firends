@@ -71,12 +71,9 @@ class SigninPageScreen extends GetWidget<SigninPageController> {
                         bottom: 8.v,
                       ),
                       child: CustomImageView(
-                        svgPath: Assets.svg.icoEyeCrossedOut.path,
-                      ),
+                          svgPath: Assets.svg.icoEyeCrossedOut.path),
                     ),
-                    suffixConstraints: BoxConstraints(
-                      maxHeight: 39.v,
-                    ),
+                    suffixConstraints: BoxConstraints(maxHeight: 39.v),
                   ),
                 ],
               ),
@@ -90,9 +87,8 @@ class SigninPageScreen extends GetWidget<SigninPageController> {
                     borderRadius: BorderRadius.circular(8.h),
                   ),
                 ),
-                buttonTextStyle: textTheme.titleSmall!.copyWith(
-                  fontWeight: FontWeight.w700,
-                ),
+                buttonTextStyle:
+                    textTheme.titleSmall!.copyWith(fontWeight: FontWeight.w700),
               ),
               SizedBox(height: 60.v),
               Text(

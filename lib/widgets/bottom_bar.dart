@@ -168,9 +168,7 @@ class DefaultWidget extends StatelessWidget {
           children: [
             Text(
               'Please replace the respective Widget here',
-              style: TextStyle(
-                fontSize: 18,
-              ),
+              style: TextStyle(fontSize: 18),
             ),
           ],
         ),

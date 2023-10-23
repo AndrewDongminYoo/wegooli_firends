@@ -111,9 +111,7 @@ class CustomTextFormField extends StatelessWidget {
             ),
         focusedBorder: borderDecoration ??
             OutlineInputBorder(
-              borderSide: BorderSide(
-                color: lightTheme.primary,
-              ),
+              borderSide: BorderSide(color: lightTheme.primary),
             ),
       );
 }

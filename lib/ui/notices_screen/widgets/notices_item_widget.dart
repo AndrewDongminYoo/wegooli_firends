@@ -25,9 +25,7 @@ class NoticesItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 15.h),
-      decoration: BoxDecoration(
-        color: lightTheme.onPrimaryContainer,
-      ),
+      decoration: BoxDecoration(color: lightTheme.onPrimaryContainer),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.end,

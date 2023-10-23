@@ -21,9 +21,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen extends StatelessWidget {
         appBar: CustomAppBar(
           height: 45.v,
           centerTitle: true,
-          title: CustomImageView(
-            svgPath: Assets.svg.imgFriends.path,
-          ),
+          title: CustomImageView(svgPath: Assets.svg.imgFriends.path),
           styleType: Style.bgOutline,
         ),
         body: SizedBox(
@@ -42,7 +40,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             CustomImageView(
-                              imagePath: Assets.images.imgRectangle4640.path,
+                              imagePath: Assets.cars.k3GtSCr5.path,
                               height: 92.v,
                               width: 139.h,
                             ),
@@ -72,7 +70,7 @@ class SmartKeyAnotherIsCurrentlyUsingScreen extends StatelessWidget {
                                         CrossAxisAlignment.start,
                                     children: [
                                       CustomImageView(
-                                        // svgPath: Assets.svg.imgGas.path,
+                                        svgPath: getGasImg(level: 1).path,
                                         height: 24.adaptSize,
                                         width: 24.adaptSize,
                                       ),
@@ -543,8 +541,8 @@ class SmartKeyAnotherIsCurrentlyUsingScreen extends StatelessWidget {
                                                   SizedBox(height: 5.v),
                                                   Text(
                                                     '경적',
-                                                    style: theme
-                                                        .textTheme.titleMedium,
+                                                    style:
+                                                        textTheme.titleMedium,
                                                   ),
                                                 ],
                                               ),
@@ -583,10 +581,10 @@ class SmartKeyAnotherIsCurrentlyUsingScreen extends StatelessWidget {
                                               BorderRadius.circular(22.h),
                                         ),
                                       ),
-                                      buttonTextStyle:
-                                          textTheme.bodyLarge!.copyWith(
-                                        color: lightTheme.onPrimaryContainer,
-                                      ),
+                                      buttonTextStyle: textTheme.bodyLarge!
+                                          .copyWith(
+                                              color: lightTheme
+                                                  .onPrimaryContainer),
                                     ),
                                     SizedBox(height: 122.v),
                                     Align(
@@ -626,10 +624,9 @@ class SmartKeyAnotherIsCurrentlyUsingScreen extends StatelessWidget {
                                             SizedBox(height: 1.v),
                                             Text(
                                               '사고 접수',
-                                              style:
-                                                  textTheme.bodySmall!.copyWith(
-                                                color: Colors.black,
-                                              ),
+                                              style: textTheme.bodySmall!
+                                                  .copyWith(
+                                                      color: Colors.black),
                                             ),
                                             SizedBox(height: 3.v),
                                           ],
@@ -652,5 +649,32 @@ class SmartKeyAnotherIsCurrentlyUsingScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  SvgGenImage getGasImg({required int level}) {
+    switch (level) {
+      case 0:
+      case 1:
+        return const SvgGenImage('assets/svg/gas/img_gas_per_10.svg');
+      case 2:
+        return const SvgGenImage('assets/svg/gas/img_gas_per_20.svg');
+      case 3:
+        return const SvgGenImage('assets/svg/gas/img_gas_per_30.svg');
+      case 4:
+        return const SvgGenImage('assets/svg/gas/img_gas_per_40.svg');
+      case 5:
+        return const SvgGenImage('assets/svg/gas/img_gas_per_50.svg');
+      case 6:
+        return const SvgGenImage('assets/svg/gas/img_gas_per_60.svg');
+      case 7:
+        return const SvgGenImage('assets/svg/gas/img_gas_per_70.svg');
+      case 8:
+        return const SvgGenImage('assets/svg/gas/img_gas_per_80.svg');
+      case 9:
+        return const SvgGenImage('assets/svg/gas/img_gas_per_90.svg');
+      case 10:
+      default:
+        return const SvgGenImage('assets/svg/gas/img_gas_per_100.svg');
+    }
   }
 }

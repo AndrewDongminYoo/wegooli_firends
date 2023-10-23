@@ -67,7 +67,7 @@ class ExpiringSubscriptionsScreen extends StatelessWidget {
                           children: [
                             SizedBox(height: 10.v),
                             CustomImageView(
-                                imagePath: Assets.images.img21.path,
+                                imagePath: Assets.cars.ev6GtSKlm.path,
                                 height: 96.v,
                                 width: 167.h),
                             SizedBox(height: 30.v),
@@ -80,9 +80,8 @@ class ExpiringSubscriptionsScreen extends StatelessWidget {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text('모닝',
-                                      style: textTheme.titleMedium!.copyWith(
-                                        fontSize: 18.fSize,
-                                      )),
+                                      style: textTheme.titleMedium!
+                                          .copyWith(fontSize: 18.fSize)),
                                   Padding(
                                       padding: EdgeInsets.only(top: 5.v),
                                       child: Text('12가 3456',

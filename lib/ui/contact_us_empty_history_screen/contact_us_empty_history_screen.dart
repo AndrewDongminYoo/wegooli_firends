@@ -43,7 +43,7 @@ class ContactUsEmptyHistoryScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         CustomImageView(
-                            imagePath: Assets.images.img.path,
+                            imagePath: Assets.images.imgGooli4.path,
                             height: 177.v,
                             width: 120.h),
                         SizedBox(height: 21.v),

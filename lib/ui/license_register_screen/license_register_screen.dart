@@ -28,15 +28,20 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: CustomAppBar(
-            height: 50.v,
-            leadingWidth: 34.h,
-            leading: CustomImageView(
-              svgPath: Assets.svg.icoArrowLeft.path,
-              margin: EdgeInsets.only(left: 16.h, top: 16.v, bottom: 16.v),
-              onTap: Get.back,
+          height: 50.v,
+          leadingWidth: 34.h,
+          leading: CustomImageView(
+            svgPath: Assets.svg.icoArrowLeft.path,
+            margin: EdgeInsets.only(
+              left: 16.h,
+              top: 16.v,
+              bottom: 16.v,
             ),
-            centerTitle: true,
-            title: AppbarTitle(text: '운전면허 등록')),
+            onTap: Get.back,
+          ),
+          centerTitle: true,
+          title: AppbarTitle(text: '운전면허 등록'),
+        ),
         body: SizedBox(
           width: double.maxFinite,
           child: Column(
@@ -52,7 +57,9 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                           height: 200.v,
                           width: double.maxFinite,
                           padding: EdgeInsets.symmetric(
-                              horizontal: 40.h, vertical: 20.v),
+                            horizontal: 40.h,
+                            vertical: 20.v,
+                          ),
                           decoration: const BoxDecoration(
                             color: Color(0xFFE2E8F6),
                           ),
@@ -72,7 +79,9 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                     height: 160.v,
                                     width: 262.h,
                                     padding: EdgeInsets.symmetric(
-                                        horizontal: 10.h, vertical: 9.v),
+                                      horizontal: 10.h,
+                                      vertical: 9.v,
+                                    ),
                                     decoration: BoxDecoration(
                                         color: lightTheme.onPrimaryContainer,
                                         borderRadius:
@@ -81,20 +90,23 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                       alignment: Alignment.center,
                                       children: [
                                         CustomImageView(
-                                            svgPath: Assets.svg.imgGooli.path,
-                                            height: 67.v,
-                                            width: 64.h),
+                                          svgPath: Assets.svg.imgGooliCute.path,
+                                          height: 67.v,
+                                          width: 64.h,
+                                        ),
                                         Align(
                                           child: Container(
                                             margin: EdgeInsets.only(left: 6.h),
                                             padding: EdgeInsets.symmetric(
                                                 vertical: 13.v),
                                             decoration: BoxDecoration(
-                                                image: DecorationImage(
-                                                    image: Assets
-                                                        .images.imgGooliHome
-                                                        .provider(),
-                                                    fit: BoxFit.cover)),
+                                              image: DecorationImage(
+                                                image: Assets
+                                                    .images.imgGooliProfile
+                                                    .provider(),
+                                                fit: BoxFit.cover,
+                                              ),
+                                            ),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.min,
                                               crossAxisAlignment:
@@ -106,8 +118,9 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                   margin: EdgeInsets.only(
                                                       left: 69.h),
                                                   padding: EdgeInsets.symmetric(
-                                                      horizontal: 4.h,
-                                                      vertical: 2.v),
+                                                    horizontal: 4.h,
+                                                    vertical: 2.v,
+                                                  ),
                                                   decoration: BoxDecoration(
                                                       color: const Color(
                                                           0xFF464A70),
@@ -130,66 +143,62 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                 ),
                                                 SizedBox(height: 65.v),
                                                 Align(
-                                                    alignment:
-                                                        Alignment.centerRight,
-                                                    child: Row(
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .end,
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        children: [
-                                                          Container(
-                                                            margin:
-                                                                EdgeInsets.only(
-                                                                    top: 3.v,
-                                                                    bottom:
-                                                                        5.v),
-                                                            padding: EdgeInsets
-                                                                .symmetric(
-                                                                    horizontal:
-                                                                        4.h,
-                                                                    vertical:
-                                                                        2.v),
-                                                            decoration:
-                                                                BoxDecoration(
-                                                                    color: const Color(
-                                                                        0xFF464A70),
-                                                                    border:
-                                                                        Border
-                                                                            .all(
-                                                                      color: lightTheme
-                                                                          .onPrimaryContainer,
-                                                                      width:
-                                                                          1.h,
-                                                                    ),
-                                                                    borderRadius:
-                                                                        BorderRadiusStyle
-                                                                            .circleBorder10),
-                                                            child: Text(
-                                                              'C',
-                                                              style: textTheme
-                                                                  .bodySmall!
-                                                                  .copyWith(
-                                                                color: lightTheme
-                                                                    .primary,
-                                                                fontSize:
-                                                                    9.fSize,
-                                                              ),
-                                                            ),
+                                                  alignment:
+                                                      Alignment.centerRight,
+                                                  child: Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment.end,
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    children: [
+                                                      Container(
+                                                        margin: EdgeInsets.only(
+                                                          top: 3.v,
+                                                          bottom: 5.v,
+                                                        ),
+                                                        padding: EdgeInsets
+                                                            .symmetric(
+                                                          horizontal: 4.h,
+                                                          vertical: 2.v,
+                                                        ),
+                                                        decoration:
+                                                            BoxDecoration(
+                                                                color: const Color(
+                                                                    0xFF464A70),
+                                                                border:
+                                                                    Border.all(
+                                                                  color: lightTheme
+                                                                      .onPrimaryContainer,
+                                                                  width: 1.h,
+                                                                ),
+                                                                borderRadius:
+                                                                    BorderRadiusStyle
+                                                                        .circleBorder10),
+                                                        child: Text(
+                                                          'C',
+                                                          style: textTheme
+                                                              .bodySmall!
+                                                              .copyWith(
+                                                            color: lightTheme
+                                                                .primary,
+                                                            fontSize: 9.fSize,
                                                           ),
-                                                          CustomIconButton(
-                                                              height:
-                                                                  24.adaptSize,
-                                                              width:
-                                                                  24.adaptSize,
-                                                              child: CustomImageView(
-                                                                  svgPath: Assets
-                                                                      .svg
-                                                                      .imgGooliCute
-                                                                      .path))
-                                                        ]))
+                                                        ),
+                                                      ),
+                                                      CustomIconButton(
+                                                        height: 24.adaptSize,
+                                                        width: 24.adaptSize,
+                                                        child: CustomImageView(
+                                                          svgPath: Assets
+                                                              .svg
+                                                              .imgGooliCute
+                                                              .path,
+                                                        ),
+                                                      )
+                                                    ],
+                                                  ),
+                                                )
                                               ],
                                             ),
                                           ),
@@ -204,51 +213,57 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.start,
                                               children: [
-                                                Text('자동차 운전면허증'.tr,
-                                                    style: TextStyle(
-                                                      color: const Color(
-                                                          0xFF686A71),
-                                                      fontSize: 7.fSize,
-                                                      fontWeight:
-                                                          FontWeight.w400,
-                                                      fontFamily: 'SUIT',
-                                                    )),
+                                                Text(
+                                                  '자동차 운전면허증'.tr,
+                                                  style: TextStyle(
+                                                    color:
+                                                        const Color(0xFF686A71),
+                                                    fontSize: 7.fSize,
+                                                    fontWeight: FontWeight.w400,
+                                                    fontFamily: 'SUIT',
+                                                  ),
+                                                ),
                                                 SizedBox(height: 6.v),
-                                                Text('11-12-345678-90'.tr,
-                                                    style: theme
-                                                        .textTheme.bodyMedium!
-                                                        .copyWith(
-                                                      color: const Color(
-                                                          0xFF686A71),
-                                                      fontSize: 13.fSize,
-                                                    )),
+                                                Text(
+                                                  '11-12-345678-90'.tr,
+                                                  style: textTheme.bodyMedium!
+                                                      .copyWith(
+                                                    color:
+                                                        const Color(0xFF686A71),
+                                                    fontSize: 13.fSize,
+                                                  ),
+                                                ),
                                                 SizedBox(height: 11.v),
-                                                Text('홍길동'.tr,
-                                                    style: TextStyle(
-                                                      color: const Color(
-                                                          0xFF686A71),
-                                                      fontSize: 7.fSize,
-                                                      fontWeight:
-                                                          FontWeight.w400,
-                                                      fontFamily: 'SUIT',
-                                                    )),
+                                                Text(
+                                                  '홍길동'.tr,
+                                                  style: TextStyle(
+                                                    color:
+                                                        const Color(0xFF686A71),
+                                                    fontSize: 7.fSize,
+                                                    fontWeight: FontWeight.w400,
+                                                    fontFamily: 'SUIT',
+                                                  ),
+                                                ),
                                                 SizedBox(height: 1.v),
-                                                Text('000000-1000000'.tr,
-                                                    style: TextStyle(
-                                                      color: const Color(
-                                                          0xFF686A71),
-                                                      fontSize: 7.fSize,
-                                                      fontWeight:
-                                                          FontWeight.w400,
-                                                      fontFamily: 'SUIT',
-                                                    )),
+                                                Text(
+                                                  '000000-1000000'.tr,
+                                                  style: TextStyle(
+                                                    color:
+                                                        const Color(0xFF686A71),
+                                                    fontSize: 7.fSize,
+                                                    fontWeight: FontWeight.w400,
+                                                    fontFamily: 'SUIT',
+                                                  ),
+                                                ),
                                                 Align(
                                                   alignment:
                                                       Alignment.centerRight,
                                                   child: Container(
                                                     width: 41.h,
                                                     margin: EdgeInsets.only(
-                                                        top: 37.v, right: 18.h),
+                                                      top: 37.v,
+                                                      right: 18.h,
+                                                    ),
                                                     child: Text(
                                                       '20XX.01.01\n~20XX.12.31',
                                                       maxLines: 2,
@@ -257,26 +272,28 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                       textAlign:
                                                           TextAlign.right,
                                                       style: TextStyle(
-                                                          color: const Color(
-                                                              0xFF686A71),
-                                                          fontSize: 7.fSize,
-                                                          fontWeight:
-                                                              FontWeight.w400,
-                                                          fontFamily: 'SUIT',
-                                                          height: 1.43),
+                                                        color: const Color(
+                                                            0xFF686A71),
+                                                        fontSize: 7.fSize,
+                                                        fontWeight:
+                                                            FontWeight.w400,
+                                                        fontFamily: 'SUIT',
+                                                        height: 1.43,
+                                                      ),
                                                     ),
                                                   ),
                                                 ),
                                                 SizedBox(height: 8.v),
-                                                Text('20XX.01.01'.tr,
-                                                    style: TextStyle(
-                                                      color: const Color(
-                                                          0xFF686A71),
-                                                      fontSize: 7.fSize,
-                                                      fontWeight:
-                                                          FontWeight.w400,
-                                                      fontFamily: 'SUIT',
-                                                    ))
+                                                Text(
+                                                  '20XX.01.01'.tr,
+                                                  style: TextStyle(
+                                                    color:
+                                                        const Color(0xFF686A71),
+                                                    fontSize: 7.fSize,
+                                                    fontWeight: FontWeight.w400,
+                                                    fontFamily: 'SUIT',
+                                                  ),
+                                                )
                                               ],
                                             ),
                                           ),
@@ -290,9 +307,9 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                               borderRadius:
                                                   BorderRadius.circular(2.h),
                                               border: Border.all(
-                                                  color:
-                                                      const Color(0xFF464A70),
-                                                  width: 2.h),
+                                                color: const Color(0xFF464A70),
+                                                width: 2.h,
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -305,9 +322,9 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                               borderRadius:
                                                   BorderRadius.circular(2.h),
                                               border: Border.all(
-                                                  color:
-                                                      const Color(0xFF464A70),
-                                                  width: 2.h),
+                                                color: const Color(0xFF464A70),
+                                                width: 2.h,
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -317,14 +334,16 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                             height: 23.v,
                                             width: 124.h,
                                             margin: EdgeInsets.only(
-                                                top: 15.v, right: 24.h),
+                                              top: 15.v,
+                                              right: 24.h,
+                                            ),
                                             decoration: BoxDecoration(
                                               borderRadius:
                                                   BorderRadius.circular(2.h),
                                               border: Border.all(
-                                                  color:
-                                                      const Color(0xFF464A70),
-                                                  width: 2.h),
+                                                color: const Color(0xFF464A70),
+                                                width: 2.h,
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -334,14 +353,16 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                             height: 26.v,
                                             width: 107.h,
                                             margin: EdgeInsets.only(
-                                                right: 41.h, bottom: 18.v),
+                                              right: 41.h,
+                                              bottom: 18.v,
+                                            ),
                                             decoration: BoxDecoration(
                                               borderRadius:
                                                   BorderRadius.circular(2.h),
                                               border: Border.all(
-                                                  color:
-                                                      const Color(0xFF464A70),
-                                                  width: 2.h),
+                                                color: const Color(0xFF464A70),
+                                                width: 2.h,
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -350,7 +371,9 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                           child: Container(
                                             margin: EdgeInsets.only(left: 75.h),
                                             padding: EdgeInsets.symmetric(
-                                                horizontal: 4.h, vertical: 2.v),
+                                              horizontal: 4.h,
+                                              vertical: 2.v,
+                                            ),
                                             decoration: BoxDecoration(
                                                 color: const Color(0xFF464A70),
                                                 border: Border.all(
@@ -380,7 +403,9 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                 child: Container(
                                   margin: EdgeInsets.only(top: 10.v),
                                   padding: EdgeInsets.symmetric(
-                                      horizontal: 5.h, vertical: 2.v),
+                                    horizontal: 5.h,
+                                    vertical: 2.v,
+                                  ),
                                   decoration: BoxDecoration(
                                       color: const Color(0xFF464A70),
                                       border: Border.all(
@@ -414,16 +439,20 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
-                                        padding: EdgeInsets.only(left: 19.h),
-                                        child: Text('면허증 종류',
-                                            style: textTheme.bodySmall)),
+                                      padding: EdgeInsets.only(left: 19.h),
+                                      child: Text(
+                                        '면허증 종류',
+                                        style: textTheme.bodySmall,
+                                      ),
+                                    ),
                                     SizedBox(height: 3.v),
                                     CustomDropDown(
                                         icon: Container(
-                                            margin: EdgeInsets.only(left: 30.h),
-                                            child: CustomImageView(
-                                                svgPath: Assets
-                                                    .svg.icoCaretDown.path)),
+                                          margin: EdgeInsets.only(left: 30.h),
+                                          child: CustomImageView(
+                                              svgPath:
+                                                  Assets.svg.icoCaretDown.path),
+                                        ),
                                         hintText: '면허증 종류를 선택하세요.',
                                         items: controller.licenseRegister.value
                                             .choices.value,
@@ -437,7 +466,9 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                 alignment: Alignment.topLeft,
                                 child: Container(
                                   padding: EdgeInsets.symmetric(
-                                      horizontal: 5.h, vertical: 2.v),
+                                    horizontal: 5.h,
+                                    vertical: 2.v,
+                                  ),
                                   decoration: BoxDecoration(
                                       color: const Color(0xFF464A70),
                                       border: Border.all(
@@ -460,7 +491,10 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                         ),
                         Padding(
                           padding: EdgeInsets.only(
-                              left: 16.h, top: 30.v, right: 16.h),
+                            left: 16.h,
+                            top: 30.v,
+                            right: 16.h,
+                          ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -477,43 +511,48 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Padding(
-                                              padding:
-                                                  EdgeInsets.only(left: 19.h),
-                                              child: Text('면허증 번호',
-                                                  style: theme
-                                                      .textTheme.bodySmall)),
+                                            padding:
+                                                EdgeInsets.only(left: 19.h),
+                                            child: Text('면허증 번호',
+                                                style:
+                                                    theme.textTheme.bodySmall),
+                                          ),
                                           SizedBox(height: 3.v),
                                           Container(
-                                              width: 160.h,
-                                              padding: EdgeInsets.symmetric(
-                                                  vertical: 9.v),
-                                              decoration: BoxDecoration(
-                                                border: Border(
-                                                  bottom: BorderSide(
-                                                    color:
-                                                        const Color(0xFFB0B2BC),
-                                                    width: 1.h,
-                                                  ),
+                                            width: 160.h,
+                                            padding: EdgeInsets.symmetric(
+                                                vertical: 9.v),
+                                            decoration: BoxDecoration(
+                                              border: Border(
+                                                bottom: BorderSide(
+                                                  color:
+                                                      const Color(0xFFB0B2BC),
+                                                  width: 1.h,
                                                 ),
                                               ),
-                                              child: Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceBetween,
-                                                  children: [
-                                                    Text('지역'.tr,
-                                                        style: theme.textTheme
-                                                            .bodyLarge!
-                                                            .copyWith(
-                                                          color: const Color(
-                                                              0xFFB0B2BC),
-                                                        )),
-                                                    CustomImageView(
-                                                        svgPath: Assets.svg
-                                                            .icoCaretDown.path,
-                                                        height: 18.adaptSize,
-                                                        width: 18.adaptSize)
-                                                  ]))
+                                            ),
+                                            child: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              children: [
+                                                Text(
+                                                  '지역'.tr,
+                                                  style: textTheme.bodyLarge!
+                                                      .copyWith(
+                                                    color:
+                                                        const Color(0xFFB0B2BC),
+                                                  ),
+                                                ),
+                                                CustomImageView(
+                                                  svgPath: Assets
+                                                      .svg.icoCaretDown.path,
+                                                  height: 18.adaptSize,
+                                                  width: 18.adaptSize,
+                                                )
+                                              ],
+                                            ),
+                                          )
                                         ],
                                       ),
                                     ),
@@ -521,7 +560,9 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                       alignment: Alignment.topLeft,
                                       child: Container(
                                         padding: EdgeInsets.symmetric(
-                                            horizontal: 4.h, vertical: 2.v),
+                                          horizontal: 4.h,
+                                          vertical: 2.v,
+                                        ),
                                         decoration: BoxDecoration(
                                             color: const Color(0xFF464A70),
                                             border: Border.all(
@@ -547,11 +588,14 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                               CustomDropDown(
                                   width: 160.h,
                                   icon: Container(
-                                      margin: EdgeInsets.only(left: 30.h),
-                                      child: CustomImageView(
-                                          svgPath:
-                                              Assets.svg.icoCaretDown.path)),
-                                  margin: EdgeInsets.only(left: 8.h, top: 19.v),
+                                    margin: EdgeInsets.only(left: 30.h),
+                                    child: CustomImageView(
+                                        svgPath: Assets.svg.icoCaretDown.path),
+                                  ),
+                                  margin: EdgeInsets.only(
+                                    left: 8.h,
+                                    top: 19.v,
+                                  ),
                                   hintText: '11',
                                   items: controller
                                       .licenseRegister.value.choices1.value,
@@ -564,7 +608,10 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                         CustomTextFormField(
                             controller: controller.tfController,
                             margin: EdgeInsets.only(
-                                left: 16.h, top: 10.v, right: 16.h),
+                              left: 16.h,
+                              top: 10.v,
+                              right: 16.h,
+                            ),
                             hintText: 'msg7'),
                         SizedBox(height: 30.v),
                         SizedBox(
@@ -579,12 +626,15 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
-                                        padding: EdgeInsets.only(left: 19.h),
-                                        child: Text('적성기간 만료일',
-                                            style: textTheme.bodySmall)),
+                                      padding: EdgeInsets.only(left: 19.h),
+                                      child: Text(
+                                        '적성기간 만료일',
+                                        style: textTheme.bodySmall,
+                                      ),
+                                    ),
                                     SizedBox(height: 3.v),
                                     CustomTextFormField(
-                                        controller: controller.validityperiodi,
+                                        controller: controller.validityPeriod,
                                         hintText: '적성기간 만료일(숫자만)을 입력해주세요.')
                                   ],
                                 ),
@@ -593,7 +643,9 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                 alignment: Alignment.topLeft,
                                 child: Container(
                                   padding: EdgeInsets.symmetric(
-                                      horizontal: 4.h, vertical: 2.v),
+                                    horizontal: 4.h,
+                                    vertical: 2.v,
+                                  ),
                                   decoration: BoxDecoration(
                                       color: const Color(0xFF464A70),
                                       border: Border.all(
@@ -616,24 +668,29 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                         ),
                         SizedBox(height: 30.v),
                         SizedBox(
-                            height: 58.v,
-                            width: 328.h,
-                            child:
-                                Stack(alignment: Alignment.topLeft, children: [
+                          height: 58.v,
+                          width: 328.h,
+                          child: Stack(
+                            alignment: Alignment.topLeft,
+                            children: [
                               Align(
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
-                                        padding: EdgeInsets.only(left: 19.h),
-                                        child: Text('면허 발급 일자',
-                                            style: textTheme.bodySmall)),
+                                      padding: EdgeInsets.only(left: 19.h),
+                                      child: Text(
+                                        '면허 발급 일자',
+                                        style: textTheme.bodySmall,
+                                      ),
+                                    ),
                                     SizedBox(height: 3.v),
                                     CustomTextFormField(
-                                        controller: controller.oneController,
-                                        hintText: '면허 발급 일자(숫자만)를 입력해주세요.',
-                                        textInputAction: TextInputAction.done)
+                                      controller: controller.oneController,
+                                      hintText: '면허 발급 일자(숫자만)를 입력해주세요.',
+                                      textInputAction: TextInputAction.done,
+                                    )
                                   ],
                                 ),
                               ),
@@ -641,7 +698,9 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                 alignment: Alignment.topLeft,
                                 child: Container(
                                   padding: EdgeInsets.symmetric(
-                                      horizontal: 4.h, vertical: 2.v),
+                                    horizontal: 4.h,
+                                    vertical: 2.v,
+                                  ),
                                   decoration: BoxDecoration(
                                       color: const Color(0xFF464A70),
                                       border: Border.all(
@@ -659,7 +718,9 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                   ),
                                 ),
                               )
-                            ]))
+                            ],
+                          ),
+                        )
                       ],
                     ),
                   ),
@@ -671,7 +732,11 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
         bottomNavigationBar: CustomElevatedButton(
           height: 48.v,
           text: '등록 완료',
-          margin: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 16.v),
+          margin: EdgeInsets.only(
+            left: 16.h,
+            right: 16.h,
+            bottom: 16.v,
+          ),
           buttonStyle: ElevatedButton.styleFrom(
             backgroundColor: const Color(0xFFF3F3F6),
             shape: RoundedRectangleBorder(

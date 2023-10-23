@@ -70,9 +70,8 @@ class VerificationWaitingScreen
                               hintText: '940812'),
                           SizedBox(height: 3.v),
                           Text('만 26세 미만은 가입이 제한됩니다.',
-                              style: textTheme.bodySmall!.copyWith(
-                                color: lightTheme.primaryContainer,
-                              ))
+                              style: textTheme.bodySmall!
+                                  .copyWith(color: lightTheme.primaryContainer))
                         ],
                       ),
                     ),
@@ -195,9 +194,8 @@ class VerificationWaitingScreen
                           color: const Color(0xFFB0B2BC),
                         )),
                     Text('3:00',
-                        style: textTheme.bodyLarge!.copyWith(
-                          color: lightTheme.primaryContainer,
-                        ))
+                        style: textTheme.bodyLarge!
+                            .copyWith(color: lightTheme.primaryContainer))
                   ],
                 ),
               ),

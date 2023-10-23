@@ -20,9 +20,7 @@ class SmartKeyScreen extends StatelessWidget {
         appBar: CustomAppBar(
           height: 45.v,
           centerTitle: true,
-          title: CustomImageView(
-            svgPath: Assets.svg.imgFriends.path,
-          ),
+          title: CustomImageView(svgPath: Assets.svg.imgFriends.path),
           styleType: Style.bgOutline,
         ),
         body: SizedBox(
@@ -43,7 +41,7 @@ class SmartKeyScreen extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               CustomImageView(
-                                imagePath: Assets.images.imgRectangle4640.path,
+                                imagePath: Assets.cars.k3GtSCr5.path,
                                 height: 92.v,
                                 width: 139.h,
                               ),
@@ -491,9 +489,8 @@ class SmartKeyScreen extends StatelessWidget {
                                 SizedBox(height: 1.v),
                                 Text(
                                   '사고 접수',
-                                  style: textTheme.bodySmall!.copyWith(
-                                    color: Colors.black,
-                                  ),
+                                  style: textTheme.bodySmall!
+                                      .copyWith(color: Colors.black),
                                 ),
                               ],
                             ),

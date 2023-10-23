@@ -112,6 +112,113 @@ class $AssetsCarsGen {
       ];
 }
 
+class $AssetsGoogleFontsGen {
+  const $AssetsGoogleFontsGen();
+
+  /// File path: assets/google_fonts/Inter-Black.ttf
+  String get interBlack => 'assets/google_fonts/Inter-Black.ttf';
+
+  /// File path: assets/google_fonts/Inter-Bold.ttf
+  String get interBold => 'assets/google_fonts/Inter-Bold.ttf';
+
+  /// File path: assets/google_fonts/Inter-ExtraBold.ttf
+  String get interExtraBold => 'assets/google_fonts/Inter-ExtraBold.ttf';
+
+  /// File path: assets/google_fonts/Inter-ExtraLight.ttf
+  String get interExtraLight => 'assets/google_fonts/Inter-ExtraLight.ttf';
+
+  /// File path: assets/google_fonts/Inter-Light.ttf
+  String get interLight => 'assets/google_fonts/Inter-Light.ttf';
+
+  /// File path: assets/google_fonts/Inter-Medium.ttf
+  String get interMedium => 'assets/google_fonts/Inter-Medium.ttf';
+
+  /// File path: assets/google_fonts/Inter-Regular.ttf
+  String get interRegular => 'assets/google_fonts/Inter-Regular.ttf';
+
+  /// File path: assets/google_fonts/Inter-SemiBold.ttf
+  String get interSemiBold => 'assets/google_fonts/Inter-SemiBold.ttf';
+
+  /// File path: assets/google_fonts/Inter-Thin.ttf
+  String get interThin => 'assets/google_fonts/Inter-Thin.ttf';
+
+  /// File path: assets/google_fonts/NotoSansKR-Black.ttf
+  String get notoSansKRBlack => 'assets/google_fonts/NotoSansKR-Black.ttf';
+
+  /// File path: assets/google_fonts/NotoSansKR-Bold.ttf
+  String get notoSansKRBold => 'assets/google_fonts/NotoSansKR-Bold.ttf';
+
+  /// File path: assets/google_fonts/NotoSansKR-ExtraBold.ttf
+  String get notoSansKRExtraBold =>
+      'assets/google_fonts/NotoSansKR-ExtraBold.ttf';
+
+  /// File path: assets/google_fonts/NotoSansKR-ExtraLight.ttf
+  String get notoSansKRExtraLight =>
+      'assets/google_fonts/NotoSansKR-ExtraLight.ttf';
+
+  /// File path: assets/google_fonts/NotoSansKR-Light.ttf
+  String get notoSansKRLight => 'assets/google_fonts/NotoSansKR-Light.ttf';
+
+  /// File path: assets/google_fonts/NotoSansKR-Medium.ttf
+  String get notoSansKRMedium => 'assets/google_fonts/NotoSansKR-Medium.ttf';
+
+  /// File path: assets/google_fonts/NotoSansKR-Regular.ttf
+  String get notoSansKRRegular => 'assets/google_fonts/NotoSansKR-Regular.ttf';
+
+  /// File path: assets/google_fonts/NotoSansKR-SemiBold.ttf
+  String get notoSansKRSemiBold =>
+      'assets/google_fonts/NotoSansKR-SemiBold.ttf';
+
+  /// File path: assets/google_fonts/NotoSansKR-Thin.ttf
+  String get notoSansKRThin => 'assets/google_fonts/NotoSansKR-Thin.ttf';
+
+  /// File path: assets/google_fonts/Roboto-Black.ttf
+  String get robotoBlack => 'assets/google_fonts/Roboto-Black.ttf';
+
+  /// File path: assets/google_fonts/Roboto-Bold.ttf
+  String get robotoBold => 'assets/google_fonts/Roboto-Bold.ttf';
+
+  /// File path: assets/google_fonts/Roboto-Light.ttf
+  String get robotoLight => 'assets/google_fonts/Roboto-Light.ttf';
+
+  /// File path: assets/google_fonts/Roboto-Medium.ttf
+  String get robotoMedium => 'assets/google_fonts/Roboto-Medium.ttf';
+
+  /// File path: assets/google_fonts/Roboto-Regular.ttf
+  String get robotoRegular => 'assets/google_fonts/Roboto-Regular.ttf';
+
+  /// File path: assets/google_fonts/Roboto-Thin.ttf
+  String get robotoThin => 'assets/google_fonts/Roboto-Thin.ttf';
+
+  /// List of all assets
+  List<String> get values => [
+        interBlack,
+        interBold,
+        interExtraBold,
+        interExtraLight,
+        interLight,
+        interMedium,
+        interRegular,
+        interSemiBold,
+        interThin,
+        notoSansKRBlack,
+        notoSansKRBold,
+        notoSansKRExtraBold,
+        notoSansKRExtraLight,
+        notoSansKRLight,
+        notoSansKRMedium,
+        notoSansKRRegular,
+        notoSansKRSemiBold,
+        notoSansKRThin,
+        robotoBlack,
+        robotoBold,
+        robotoLight,
+        robotoMedium,
+        robotoRegular,
+        robotoThin
+      ];
+}
+
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
@@ -119,63 +226,37 @@ class $AssetsImagesGen {
   AssetGenImage get imageNotFound =>
       const AssetGenImage('assets/images/image_not_found.png');
 
-  /// File path: assets/images/img_.png
-  AssetGenImage get img => const AssetGenImage('assets/images/img_.png');
+  /// File path: assets/images/img_gooli_0.png
+  AssetGenImage get imgGooli0 =>
+      const AssetGenImage('assets/images/img_gooli_0.png');
 
-  /// File path: assets/images/img_21.png
-  AssetGenImage get img21 => const AssetGenImage('assets/images/img_21.png');
+  /// File path: assets/images/img_gooli_1.png
+  AssetGenImage get imgGooli1 =>
+      const AssetGenImage('assets/images/img_gooli_1.png');
 
-  /// File path: assets/images/img__157x120.png
-  AssetGenImage get img157x120 =>
-      const AssetGenImage('assets/images/img__157x120.png');
+  /// File path: assets/images/img_gooli_2.png
+  AssetGenImage get imgGooli2 =>
+      const AssetGenImage('assets/images/img_gooli_2.png');
 
-  /// File path: assets/images/img_ellipse1.png
-  AssetGenImage get imgEllipse1 =>
-      const AssetGenImage('assets/images/img_ellipse1.png');
+  /// File path: assets/images/img_gooli_4.png
+  AssetGenImage get imgGooli4 =>
+      const AssetGenImage('assets/images/img_gooli_4.png');
 
-  /// File path: assets/images/img_ellipse1_1.png
-  AssetGenImage get imgEllipse11 =>
-      const AssetGenImage('assets/images/img_ellipse1_1.png');
-
-  /// File path: assets/images/img_ellipse1_32x32.png
-  AssetGenImage get imgEllipse132x32 =>
-      const AssetGenImage('assets/images/img_ellipse1_32x32.png');
-
-  /// File path: assets/images/img_ellipse1_42x42.png
-  AssetGenImage get imgEllipse142x42 =>
-      const AssetGenImage('assets/images/img_ellipse1_42x42.png');
-
-  /// File path: assets/images/img_ellipse2.png
-  AssetGenImage get imgEllipse2 =>
-      const AssetGenImage('assets/images/img_ellipse2.png');
-
-  /// File path: assets/images/img_frame34972.png
-  AssetGenImage get imgFrame34972 =>
-      const AssetGenImage('assets/images/img_frame34972.png');
-
-  /// File path: assets/images/img_frame34972_1.png
-  AssetGenImage get imgFrame349721 =>
-      const AssetGenImage('assets/images/img_frame34972_1.png');
-
-  /// File path: assets/images/img_frame34972_2.png
-  AssetGenImage get imgFrame349722 =>
-      const AssetGenImage('assets/images/img_frame34972_2.png');
-
-  /// File path: assets/images/img_frame34972_66x66.png
-  AssetGenImage get imgFrame3497266x66 =>
-      const AssetGenImage('assets/images/img_frame34972_66x66.png');
+  /// File path: assets/images/img_gooli_5.png
+  AssetGenImage get imgGooli5 =>
+      const AssetGenImage('assets/images/img_gooli_5.png');
 
   /// File path: assets/images/img_gooli_home.png
   AssetGenImage get imgGooliHome =>
       const AssetGenImage('assets/images/img_gooli_home.png');
 
-  /// File path: assets/images/img_layer2_yellow_100.png
-  AssetGenImage get imgLayer2Yellow100 =>
-      const AssetGenImage('assets/images/img_layer2_yellow_100.png');
+  /// File path: assets/images/img_gooli_profile.png
+  AssetGenImage get imgGooliProfile =>
+      const AssetGenImage('assets/images/img_gooli_profile.png');
 
-  /// File path: assets/images/img_rectangle4640.png
-  AssetGenImage get imgRectangle4640 =>
-      const AssetGenImage('assets/images/img_rectangle4640.png');
+  /// File path: assets/images/img_license_example.png
+  AssetGenImage get imgLicenseExample =>
+      const AssetGenImage('assets/images/img_license_example.png');
 
   /// File path: assets/images/img_ticket.png
   AssetGenImage get imgTicket =>
@@ -185,26 +266,39 @@ class $AssetsImagesGen {
   AssetGenImage get placeholder =>
       const AssetGenImage('assets/images/placeholder.png');
 
+  /// File path: assets/images/placeholder_01.png
+  AssetGenImage get placeholder01 =>
+      const AssetGenImage('assets/images/placeholder_01.png');
+
+  /// File path: assets/images/placeholder_02.png
+  AssetGenImage get placeholder02 =>
+      const AssetGenImage('assets/images/placeholder_02.png');
+
+  /// File path: assets/images/placeholder_03.png
+  AssetGenImage get placeholder03 =>
+      const AssetGenImage('assets/images/placeholder_03.png');
+
+  /// File path: assets/images/placeholder_04.png
+  AssetGenImage get placeholder04 =>
+      const AssetGenImage('assets/images/placeholder_04.png');
+
   /// List of all assets
   List<AssetGenImage> get values => [
         imageNotFound,
-        img,
-        img21,
-        img157x120,
-        imgEllipse1,
-        imgEllipse11,
-        imgEllipse132x32,
-        imgEllipse142x42,
-        imgEllipse2,
-        imgFrame34972,
-        imgFrame349721,
-        imgFrame349722,
-        imgFrame3497266x66,
+        imgGooli0,
+        imgGooli1,
+        imgGooli2,
+        imgGooli4,
+        imgGooli5,
         imgGooliHome,
-        imgLayer2Yellow100,
-        imgRectangle4640,
+        imgGooliProfile,
+        imgLicenseExample,
         imgTicket,
-        placeholder
+        placeholder,
+        placeholder01,
+        placeholder02,
+        placeholder03,
+        placeholder04
       ];
 }
 
@@ -470,6 +564,7 @@ class Assets {
 
   static const $AssetsBrandGen brand = $AssetsBrandGen();
   static const $AssetsCarsGen cars = $AssetsCarsGen();
+  static const $AssetsGoogleFontsGen googleFonts = $AssetsGoogleFontsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
   static const $AssetsLottiesGen lotties = $AssetsLottiesGen();
   static const $AssetsSvgGen svg = $AssetsSvgGen();

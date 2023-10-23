@@ -63,9 +63,8 @@ class HomePageScreen extends StatelessWidget {
                         children: [
                           Text(
                             '신규 이벤트',
-                            style: textTheme.bodySmall!.copyWith(
-                              color: Colors.black,
-                            ),
+                            style: textTheme.bodySmall!
+                                .copyWith(color: Colors.black),
                           ),
                           SizedBox(height: 4.v),
                           SizedBox(
@@ -74,9 +73,8 @@ class HomePageScreen extends StatelessWidget {
                               '위굴리 프렌즈를 이용하면\n할인 혜택이!',
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
-                              style: textTheme.titleSmall!.copyWith(
-                                color: Colors.black,
-                              ),
+                              style: textTheme.titleSmall!
+                                  .copyWith(color: Colors.black),
                             ),
                           ),
                         ],
@@ -221,7 +219,7 @@ class HomePageScreen extends StatelessWidget {
                           ),
                           SizedBox(height: 25.v),
                           CustomImageView(
-                            imagePath: Assets.images.imgLayer2Yellow100.path,
+                            imagePath: Assets.images.imgGooli2.path,
                             height: 70.v,
                             width: 112.h,
                             alignment: Alignment.centerRight,

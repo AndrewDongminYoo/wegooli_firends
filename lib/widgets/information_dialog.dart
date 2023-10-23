@@ -89,10 +89,10 @@ class InformationalDialog extends StatelessWidget {
                 height: 52.v,
                 text: cancelText ?? '취소',
                 buttonStyle: ElevatedButton.styleFrom(
-                    backgroundColor: Palette.gray400,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadiusStyle.customBorderBL10,
-                    )).noEffect,
+                        backgroundColor: Palette.gray400,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadiusStyle.customBorderBL10))
+                    .noEffect,
                 buttonTextStyle: textTheme.titleMedium!
                     .copyWith(fontSize: TextSize.md.fSize),
                 onTap: cancelCallback ?? () => Navigator.of(context).pop(false),
@@ -102,10 +102,10 @@ class InformationalDialog extends StatelessWidget {
                 height: 52.v,
                 text: confirmText ?? '확인',
                 buttonStyle: ElevatedButton.styleFrom(
-                    backgroundColor: lightTheme.primary,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadiusStyle.customBorderBR10,
-                    )).noEffect,
+                        backgroundColor: lightTheme.primary,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadiusStyle.customBorderBR10))
+                    .noEffect,
                 buttonTextStyle: textTheme.titleMedium!
                     .copyWith(fontSize: TextSize.md.fSize),
                 onTap: confirmCallback ?? () => Navigator.of(context).pop(true),
@@ -116,10 +116,10 @@ class InformationalDialog extends StatelessWidget {
           CustomElevatedButton(
             text: l10ns.confirm,
             buttonStyle: ElevatedButton.styleFrom(
-                backgroundColor: lightTheme.primary,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadiusStyle.customBorderB10,
-                )).noEffect,
+                    backgroundColor: lightTheme.primary,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadiusStyle.customBorderB10))
+                .noEffect,
             height: 53.v,
             onTap: confirmCallback ?? () => Navigator.of(context).pop(true),
             buttonTextStyle: AppTextStyle(

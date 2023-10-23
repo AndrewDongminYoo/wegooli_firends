@@ -75,10 +75,10 @@ class SchedulesSendInvitationDialog extends StatelessWidget {
                 text: '복사하기',
                 margin: getMargin(top: 25),
                 buttonStyle: ElevatedButton.styleFrom(
-                    backgroundColor: lightTheme.primary,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadiusStyle.customBorderB10,
-                    )).noEffect,
+                        backgroundColor: lightTheme.primary,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadiusStyle.customBorderB10))
+                    .noEffect,
                 buttonTextStyle: textTheme.titleMedium,
               )
           ]),

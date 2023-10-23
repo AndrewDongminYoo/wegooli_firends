@@ -39,7 +39,7 @@ class UnsubscribeScreen extends StatelessWidget {
               child: Column(
                 children: [
                   CustomImageView(
-                      imagePath: Assets.images.img157x120.path,
+                      imagePath: Assets.images.imgGooli5.path,
                       height: 157.v,
                       width: 120.h),
                   SizedBox(height: 20.v),
@@ -58,9 +58,8 @@ class UnsubscribeScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 23.v),
                   Text('2023년 8월 4일 이후에 구독이 해지됩니다.',
-                      style: textTheme.bodyLarge!.copyWith(
-                        color: Colors.black,
-                      )),
+                      style:
+                          textTheme.bodyLarge!.copyWith(color: Colors.black)),
                   SizedBox(height: 81.v),
                   Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,

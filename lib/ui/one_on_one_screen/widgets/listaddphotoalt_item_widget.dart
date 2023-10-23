@@ -35,9 +35,7 @@ class ListAddPhotoAltItemWidget extends StatelessWidget {
           margin: EdgeInsets.only(top: 5.v),
           padding: EdgeInsets.all(16.h),
           decoration: IconButtonStyleHelper.fillBlueGrayTL5,
-          child: CustomImageView(
-            svgPath: Assets.svg.icoAddPhoto.path,
-          ),
+          child: CustomImageView(svgPath: Assets.svg.icoAddPhoto.path),
         ),
       ),
     );

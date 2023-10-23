@@ -121,9 +121,8 @@ class VerificationEmptyScreen extends GetWidget<VerificationEmptyController> {
                   ),
                   SizedBox(height: 3.v),
                   Text('만 26세 미만은 가입이 제한됩니다.',
-                      style: textTheme.bodySmall!.copyWith(
-                        color: lightTheme.primaryContainer,
-                      ))
+                      style: textTheme.bodySmall!
+                          .copyWith(color: lightTheme.primaryContainer))
                 ],
               ),
               SizedBox(height: 30.v),
@@ -158,9 +157,7 @@ class VerificationEmptyScreen extends GetWidget<VerificationEmptyController> {
         ),
         bottomNavigationBar: Container(
           margin: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 16.v),
-          decoration: BoxDecoration(
-            color: lightTheme.onPrimaryContainer,
-          ),
+          decoration: BoxDecoration(color: lightTheme.onPrimaryContainer),
           child: CustomElevatedButton(
               height: 48.v,
               text: '인증하기',

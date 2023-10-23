@@ -45,9 +45,8 @@ class SignupCompleteScreen extends StatelessWidget {
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
                             textAlign: TextAlign.center,
-                            style: textTheme.headlineSmall!.copyWith(
-                              height: 1.42,
-                            ),
+                            style:
+                                textTheme.headlineSmall!.copyWith(height: 1.42),
                           ),
                         ),
                       ],

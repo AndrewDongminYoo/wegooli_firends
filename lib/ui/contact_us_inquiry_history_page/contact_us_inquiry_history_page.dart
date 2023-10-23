@@ -24,9 +24,7 @@ class ContactUsInquiryHistoryPage extends StatelessWidget {
       child: Scaffold(
         body: Container(
           width: double.maxFinite,
-          decoration: BoxDecoration(
-            color: lightTheme.onPrimaryContainer,
-          ),
+          decoration: BoxDecoration(color: lightTheme.onPrimaryContainer),
           child: Obx(
             () => ListView.separated(
               physics: const BouncingScrollPhysics(),
@@ -35,9 +33,7 @@ class ContactUsInquiryHistoryPage extends StatelessWidget {
                 context,
                 index,
               ) {
-                return SizedBox(
-                  height: 1.v,
-                );
+                return SizedBox(height: 1.v);
               },
               itemCount: controller
                   .contactUsInquiryHistory.value.listItemList.value.length,

@@ -67,10 +67,10 @@ class UnsubscribeConfirmDialog extends StatelessWidget {
               height: 52.v,
               text: '취소',
               buttonStyle: ElevatedButton.styleFrom(
-                  backgroundColor: Palette.gray400,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadiusStyle.customBorderBL10,
-                  )).noEffect,
+                      backgroundColor: Palette.gray400,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadiusStyle.customBorderBL10))
+                  .noEffect,
               buttonTextStyle:
                   textTheme.titleMedium!.copyWith(fontSize: 16.fSize),
               onTap: () => Get.back(result: false),
@@ -80,10 +80,10 @@ class UnsubscribeConfirmDialog extends StatelessWidget {
               height: 52.v,
               text: '해지하기',
               buttonStyle: ElevatedButton.styleFrom(
-                  backgroundColor: lightTheme.primary,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadiusStyle.customBorderBR10,
-                  )).noEffect,
+                      backgroundColor: lightTheme.primary,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadiusStyle.customBorderBR10))
+                  .noEffect,
               buttonTextStyle:
                   textTheme.titleMedium!.copyWith(fontSize: 16.fSize),
               onTap: () => Get.back(result: true),

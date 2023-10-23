@@ -27,9 +27,7 @@ class SchedulesScreen extends GetWidget<SchedulesController> {
         appBar: CustomAppBar(
           height: 45.v,
           centerTitle: true,
-          title: CustomImageView(
-            svgPath: Assets.svg.imgFriends.path,
-          ),
+          title: CustomImageView(svgPath: Assets.svg.imgFriends.path),
           styleType: Style.bgOutline_1,
         ),
         body: SizedBox(
@@ -48,9 +46,8 @@ class SchedulesScreen extends GetWidget<SchedulesController> {
                           padding: EdgeInsets.only(left: 16.h),
                           child: Text(
                             '팀원',
-                            style: textTheme.titleMedium!.copyWith(
-                              fontSize: 18.fSize,
-                            ),
+                            style: textTheme.titleMedium!
+                                .copyWith(fontSize: 18.fSize),
                           ),
                         ),
                         SizedBox(
@@ -67,15 +64,13 @@ class SchedulesScreen extends GetWidget<SchedulesController> {
                                 context,
                                 index,
                               ) {
-                                return SizedBox(
-                                  width: 15.h,
-                                );
+                                return SizedBox(width: 15.h);
                               },
                               itemCount: controller.scheduleModel.value
                                   .userprofileItemList.value.length,
                               itemBuilder: (context, index) {
-                                final model = controller.scheduleModel
-                                    .value.userprofileItemList.value[index];
+                                final model = controller.scheduleModel.value
+                                    .userprofileItemList.value[index];
                                 return UserprofileItemWidget(
                                   model,
                                 );
@@ -98,9 +93,8 @@ class SchedulesScreen extends GetWidget<SchedulesController> {
                           ),
                           child: Text(
                             '일정',
-                            style: textTheme.titleMedium!.copyWith(
-                              fontSize: 18.fSize,
-                            ),
+                            style: textTheme.titleMedium!
+                                .copyWith(fontSize: 18.fSize),
                           ),
                         ),
                         CustomElevatedButton(
@@ -168,22 +162,13 @@ class SchedulesScreen extends GetWidget<SchedulesController> {
                                         context,
                                         index,
                                       ) {
-                                        return SizedBox(
-                                          width: 25.h,
-                                        );
+                                        return SizedBox(width: 25.h);
                                       },
-                                      itemCount: controller
-                                          .scheduleModel
-                                          .value
-                                          .userageItemList
-                                          .value
-                                          .length,
+                                      itemCount: controller.scheduleModel.value
+                                          .userageItemList.value.length,
                                       itemBuilder: (context, index) {
-                                        final model = controller
-                                            .scheduleModel
-                                            .value
-                                            .userageItemList
-                                            .value[index];
+                                        final model = controller.scheduleModel
+                                            .value.userageItemList.value[index];
                                         return UserageItemWidget(
                                           model,
                                         );

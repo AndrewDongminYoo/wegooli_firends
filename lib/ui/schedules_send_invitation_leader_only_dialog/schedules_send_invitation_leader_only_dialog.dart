@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 // 📦 Package imports:
-import 'package:get/route_manager.dart' show Get, ExtensionSnackbar, GetSnackBar;
+import 'package:get/route_manager.dart';
 import 'package:get/utils.dart';
+import 'package:go_router/go_router.dart';
 
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
@@ -55,7 +56,7 @@ class SchedulesSendInvitationDialog extends StatelessWidget {
                         Assets.svg.icoCloseGray.path,
                         size: 13.adaptSize,
                         margin: getMargin(bottom: 15),
-                        onTap: () => Navigator.of(context).pop(false),
+                        onTap: () => GoRouter.of(context).pop(false),
                       ),
                     ])),
             CustomTextFormField(

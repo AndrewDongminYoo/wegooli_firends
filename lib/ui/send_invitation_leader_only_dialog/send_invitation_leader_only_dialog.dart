@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
-import 'package:get/route_manager.dart' show Get, GetNavigation;
+import 'package:get/route_manager.dart';
 
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';

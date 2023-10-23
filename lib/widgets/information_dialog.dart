@@ -1,6 +1,9 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+// 📦 Package imports:
+import 'package:go_router/go_router.dart';
+
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/l10n/l10n.dart';
@@ -95,7 +98,7 @@ class InformationalDialog extends StatelessWidget {
                     .noEffect,
                 buttonTextStyle: textTheme.titleMedium!
                     .copyWith(fontSize: TextSize.md.fSize),
-                onTap: cancelCallback ?? () => Navigator.of(context).pop(false),
+                onTap: cancelCallback ?? () => GoRouter.of(context).pop(false),
               ),
               CustomElevatedButton(
                 width: 145.h,
@@ -108,7 +111,7 @@ class InformationalDialog extends StatelessWidget {
                     .noEffect,
                 buttonTextStyle: textTheme.titleMedium!
                     .copyWith(fontSize: TextSize.md.fSize),
-                onTap: confirmCallback ?? () => Navigator.of(context).pop(true),
+                onTap: confirmCallback ?? () => GoRouter.of(context).pop(true),
               ),
             ],
           ),
@@ -121,7 +124,7 @@ class InformationalDialog extends StatelessWidget {
                         borderRadius: BorderRadiusStyle.customBorderB10))
                 .noEffect,
             height: 53.v,
-            onTap: confirmCallback ?? () => Navigator.of(context).pop(true),
+            onTap: confirmCallback ?? () => GoRouter.of(context).pop(true),
             buttonTextStyle: AppTextStyle(
               fontWeight: FontWeight.bold,
               lineHeight: Leading.normal,

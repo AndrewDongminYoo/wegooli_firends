@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 // 📦 Package imports:
 import 'package:catcher_2/catcher_2.dart';
-import 'package:get/route_manager.dart' show ExtensionBottomSheet, ExtensionDialog, Get;
+import 'package:get/route_manager.dart';
 
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
@@ -30,8 +30,22 @@ class RouteModal extends StatelessWidget {
       onTap: () {
         try {
           dialog != null
-              ? Get.dialog(dialog!)
-              : Get.bottomSheet(bottomSheet!, isScrollControlled: true);
+              ? Get.dialog(
+                  dialog!,
+                  barrierDismissible: true,
+                  useSafeArea: true,
+                )
+              : Navigator.of(context).push(
+                  GetModalBottomSheetRoute(
+                    builder: (_) => bottomSheet!,
+                    isPersistent: true,
+                    theme: Theme.of(context),
+                    isScrollControlled: true,
+                    barrierLabel: MaterialLocalizations.of(context)
+                        .modalBarrierDismissLabel,
+                    backgroundColor: Colors.transparent,
+                  ),
+                );
         } catch (error, stackTrace) {
           Catcher2.reportCheckedError(error, stackTrace);
         }

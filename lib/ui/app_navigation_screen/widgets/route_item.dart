@@ -1,6 +1,9 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+// 📦 Package imports:
+import 'package:go_router/go_router.dart';
+
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/fonts.gen.dart';
@@ -21,7 +24,7 @@ class RouteItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.of(context).pushNamed(routeName);
+        GoRouter.of(context).pushNamed(routeName);
       },
       child: Container(
         decoration: BoxDecoration(color: lightTheme.onSecondary),

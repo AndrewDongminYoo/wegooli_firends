@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
-import 'package:get/route_manager.dart' show Get, ExtensionDialog, ExtensionSnackbar, GetSnackBar;
+import 'package:get/route_manager.dart';
 import 'package:get/utils.dart';
 
 // 🌎 Project imports:

@@ -83,7 +83,7 @@ class PersonalInfoFormZipCodeScreen
                                     buttonTextStyle:
                                         theme.textTheme.titleSmall!.copyWith(
                                       color: lightTheme.onPrimaryContainer,
-                                      fontWeight: FontWeight.w700,
+                                      fontWeight: FontWeight.bold,
                                     )))
                           ],
                         ),
@@ -177,7 +177,7 @@ class PersonalInfoFormZipCodeScreen
               ),
               buttonTextStyle: textTheme.titleSmall!.copyWith(
                 color: const Color(0xFFB0B2BC),
-                fontWeight: FontWeight.w700,
+                fontWeight: FontWeight.bold,
               )),
         ),
       ),

@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
+import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/image_view.dart';
 
@@ -161,14 +162,14 @@ class DefaultWidget extends StatelessWidget {
     return Container(
       color: Colors.white,
       padding: const EdgeInsets.all(10),
-      child: const Center(
+      child: Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               'Please replace the respective Widget here',
-              style: TextStyle(fontSize: 18),
+              style: AppTextStyle(fontSize: 18),
             ),
           ],
         ),

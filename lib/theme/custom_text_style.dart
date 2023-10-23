@@ -19,15 +19,18 @@ class AppTextStyle extends TextStyle {
     this.lineHeight,
     this.letterSpacing,
     this.textBaseline = TextBaseline.alphabetic,
+    this.overflow,
   }) : super(
-            color: color,
-            decoration: decoration,
-            fontFamily: fontFamily,
-            fontSize: fontSize?.fSize ?? TextSize.md.fSize,
-            fontWeight: fontWeight,
-            textBaseline: textBaseline,
-            height: lineHeight,
-            letterSpacing: letterSpacing);
+          color: color,
+          decoration: decoration,
+          fontFamily: fontFamily,
+          fontSize: (fontSize ?? TextSize.md).fSize,
+          fontWeight: fontWeight,
+          textBaseline: textBaseline,
+          height: lineHeight,
+          letterSpacing: letterSpacing,
+          overflow: overflow,
+        );
 
   /// An [AppTextStyle] with default properties.
   static AppTextStyle basic = AppTextStyle();
@@ -47,6 +50,8 @@ class AppTextStyle extends TextStyle {
   final double? letterSpacing;
   @override
   final TextBaseline? textBaseline;
+  @override
+  final TextOverflow? overflow;
 }
 
 abstract class AppTextStyles {

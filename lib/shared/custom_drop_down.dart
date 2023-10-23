@@ -6,6 +6,7 @@ import 'package:dropdown_button2/dropdown_button2.dart';
 
 // 🌎 Project imports:
 import '/shared/form_field_controller.dart';
+import '/theme/custom_text_style.dart';
 
 class CustomDropDown<T> extends StatefulWidget {
   const CustomDropDown({
@@ -334,7 +335,7 @@ class _CustomDropDownState<T> extends State<CustomDropDown<T>> {
               alignment: AlignmentDirectional.center,
               child: Text(
                 selectedItems.join(', '),
-                style: const TextStyle(
+                style: AppTextStyle(
                   fontSize: 14,
                   overflow: TextOverflow.ellipsis,
                 ),

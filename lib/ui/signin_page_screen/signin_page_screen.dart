@@ -88,7 +88,7 @@ class SigninPageScreen extends GetWidget<SigninPageController> {
                   ),
                 ),
                 buttonTextStyle:
-                    textTheme.titleSmall!.copyWith(fontWeight: FontWeight.w700),
+                    textTheme.titleSmall!.copyWith(fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 60.v),
               Text(

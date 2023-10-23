@@ -9,6 +9,7 @@ import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
 import '/gen/fonts.gen.dart';
 import '/theme/app_decoration.dart';
+import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
@@ -216,11 +217,10 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                               children: [
                                                 Text(
                                                   '자동차 운전면허증'.tr,
-                                                  style: TextStyle(
+                                                  style: AppTextStyle(
                                                     color:
                                                         const Color(0xFF686A71),
                                                     fontSize: 7.fSize,
-                                                    fontWeight: FontWeight.w400,
                                                     fontFamily: FontFamily.suit,
                                                   ),
                                                 ),
@@ -237,22 +237,20 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                 SizedBox(height: 11.v),
                                                 Text(
                                                   '홍길동'.tr,
-                                                  style: TextStyle(
+                                                  style: AppTextStyle(
                                                     color:
                                                         const Color(0xFF686A71),
                                                     fontSize: 7.fSize,
-                                                    fontWeight: FontWeight.w400,
                                                     fontFamily: FontFamily.suit,
                                                   ),
                                                 ),
                                                 SizedBox(height: 1.v),
                                                 Text(
                                                   '000000-1000000'.tr,
-                                                  style: TextStyle(
+                                                  style: AppTextStyle(
                                                     color:
                                                         const Color(0xFF686A71),
                                                     fontSize: 7.fSize,
-                                                    fontWeight: FontWeight.w400,
                                                     fontFamily: FontFamily.suit,
                                                   ),
                                                 ),
@@ -272,15 +270,13 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                           TextOverflow.ellipsis,
                                                       textAlign:
                                                           TextAlign.right,
-                                                      style: TextStyle(
+                                                      style: AppTextStyle(
                                                         color: const Color(
                                                             0xFF686A71),
                                                         fontSize: 7.fSize,
-                                                        fontWeight:
-                                                            FontWeight.w400,
                                                         fontFamily:
                                                             FontFamily.suit,
-                                                        height: 1.43,
+                                                        lineHeight: 1.43,
                                                       ),
                                                     ),
                                                   ),
@@ -288,11 +284,10 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                 SizedBox(height: 8.v),
                                                 Text(
                                                   '20XX.01.01'.tr,
-                                                  style: TextStyle(
+                                                  style: AppTextStyle(
                                                     color:
                                                         const Color(0xFF686A71),
                                                     fontSize: 7.fSize,
-                                                    fontWeight: FontWeight.w400,
                                                     fontFamily: FontFamily.suit,
                                                   ),
                                                 )
@@ -747,7 +742,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
           ),
           buttonTextStyle: textTheme.titleSmall!.copyWith(
             color: const Color(0xFFB0B2BC),
-            fontWeight: FontWeight.w700,
+            fontWeight: FontWeight.bold,
           ),
         ),
       ),

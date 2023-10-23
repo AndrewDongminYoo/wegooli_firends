@@ -148,7 +148,7 @@ class VerificationFilledScreen extends GetWidget<VerificationFilledController> {
                   ),
                   buttonTextStyle: textTheme.titleSmall!.copyWith(
                     color: lightTheme.onPrimaryContainer,
-                    fontWeight: FontWeight.w700,
+                    fontWeight: FontWeight.bold,
                   )),
               SizedBox(height: 5.v)
             ],
@@ -168,7 +168,7 @@ class VerificationFilledScreen extends GetWidget<VerificationFilledController> {
               ),
               buttonTextStyle: textTheme.titleSmall!.copyWith(
                 color: const Color(0xFFB0B2BC),
-                fontWeight: FontWeight.w700,
+                fontWeight: FontWeight.bold,
               )),
         ),
       ),

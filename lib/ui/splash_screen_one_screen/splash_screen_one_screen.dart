@@ -57,7 +57,7 @@ class SplashScreenOne extends StatelessWidget {
                             style: textTheme.titleSmall!.copyWith(
                               fontFamily: FontFamily.nanumSquareRound,
                               color: Colors.black,
-                              fontWeight: FontWeight.w700,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ],

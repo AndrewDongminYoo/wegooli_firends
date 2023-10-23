@@ -37,10 +37,9 @@ class SendInvitationDialog extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              CustomImageView(
-                svgPath: Assets.svg.icoCloseRound.path,
-                height: 15.adaptSize,
-                width: 15.adaptSize,
+              customIcon(
+                Assets.svg.icoCloseRound.path,
+                size: 15.adaptSize,
                 alignment: Alignment.centerRight,
                 margin: EdgeInsets.only(top: 20.v, right: 20.h),
                 onTap: Get.back,

@@ -88,10 +88,9 @@ class AppointmentAllCollapsedBottomsheet extends StatelessWidget {
                           '8.1 화 16:00',
                           style: textTheme.titleMedium,
                         ),
-                        CustomImageView(
-                          svgPath: Assets.svg.icoArrowLeft.path,
-                          height: 18.adaptSize,
-                          width: 18.adaptSize,
+                        customIcon(
+                          Assets.svg.icoArrowRight.path,
+                          size: 18.adaptSize,
                           margin: EdgeInsets.only(left: 10.h),
                         ),
                       ],
@@ -266,7 +265,7 @@ class AppointmentAllCollapsedBottomsheet extends StatelessWidget {
                           icon: Container(
                             margin: EdgeInsets.only(left: 10.h),
                             child: CustomImageView(
-                                svgPath: Assets.svg.icoArrowLeft.path),
+                                svgPath: Assets.svg.icoArrowRight.path),
                           ),
                           hintText: '8.1 화 18:00',
                           options: controller

@@ -39,10 +39,9 @@ class UserprofileItemWidget extends StatelessWidget {
               color: lightTheme.primary,
               borderRadius: BorderRadiusStyle.circleBorder25,
             ),
-            child: CustomImageView(
-              imagePath: Assets.images.placeholder.path,
-              height: 42.adaptSize,
-              width: 42.adaptSize,
+            child: customAvatar(
+              Assets.images.placeholder.path,
+              size: 42.adaptSize,
               radius: BorderRadius.circular(
                 21.h,
               ),

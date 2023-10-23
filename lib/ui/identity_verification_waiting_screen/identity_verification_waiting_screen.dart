@@ -2,17 +2,14 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
-import 'package:get/route_manager.dart';
 import 'package:get/state_manager.dart';
 
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
-import '/gen/assets.gen.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/elevated_button.dart';
-import '/widgets/image_view.dart';
 import '/widgets/text_form_field.dart';
 import 'controller/identity_verification_waiting_controller.dart';
 
@@ -29,11 +26,7 @@ class VerificationWaitingScreen
         appBar: CustomAppBar(
             height: 50.v,
             leadingWidth: 34.h,
-            leading: CustomImageView(
-              svgPath: Assets.svg.icoArrowLeft.path,
-              margin: EdgeInsets.only(left: 16.h, top: 16.v, bottom: 16.v),
-              onTap: Get.back,
-            ),
+            leading: const GetBackIcon(),
             title: AppbarTitle(text: '본인 인증')),
         body: Container(
           width: double.maxFinite,

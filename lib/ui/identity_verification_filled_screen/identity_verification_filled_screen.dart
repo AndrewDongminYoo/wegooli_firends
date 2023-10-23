@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
-import 'package:get/route_manager.dart';
 import 'package:get/state_manager.dart';
 
 // 🌎 Project imports:
@@ -28,11 +27,7 @@ class VerificationFilledScreen extends GetWidget<VerificationFilledController> {
         appBar: CustomAppBar(
             height: 50.v,
             leadingWidth: 34.h,
-            leading: CustomImageView(
-              svgPath: Assets.svg.icoArrowLeft.path,
-              margin: EdgeInsets.only(left: 16.h, top: 16.v, bottom: 16.v),
-              onTap: Get.back,
-            ),
+            leading: const GetBackIcon(),
             title: AppbarTitle(text: '본인 인증'),
             styleType: Style.bgFill),
         body: Container(
@@ -80,40 +75,28 @@ class VerificationFilledScreen extends GetWidget<VerificationFilledController> {
                         Padding(
                             padding: EdgeInsets.only(left: 10.h),
                             child: Text('2', style: textTheme.bodyLarge)),
-                        CustomImageView(
-                            svgPath: Assets.svg.icoGlobe.path,
-                            height: 7.adaptSize,
-                            width: 7.adaptSize,
+                        customIcon(Assets.svg.icoGlobe.path,
+                            size: 7.adaptSize,
                             margin: EdgeInsets.only(
                                 left: 9.h, top: 6.v, bottom: 6.v)),
-                        CustomImageView(
-                            svgPath: Assets.svg.icoGlobe.path,
-                            height: 7.adaptSize,
-                            width: 7.adaptSize,
+                        customIcon(Assets.svg.icoGlobe.path,
+                            size: 7.adaptSize,
                             margin: EdgeInsets.only(
                                 left: 4.h, top: 6.v, bottom: 6.v)),
-                        CustomImageView(
-                            svgPath: Assets.svg.icoGlobe.path,
-                            height: 7.adaptSize,
-                            width: 7.adaptSize,
+                        customIcon(Assets.svg.icoGlobe.path,
+                            size: 7.adaptSize,
                             margin: EdgeInsets.only(
                                 left: 4.h, top: 6.v, bottom: 6.v)),
-                        CustomImageView(
-                            svgPath: Assets.svg.icoGlobe.path,
-                            height: 7.adaptSize,
-                            width: 7.adaptSize,
+                        customIcon(Assets.svg.icoGlobe.path,
+                            size: 7.adaptSize,
                             margin: EdgeInsets.only(
                                 left: 4.h, top: 6.v, bottom: 6.v)),
-                        CustomImageView(
-                            svgPath: Assets.svg.icoGlobe.path,
-                            height: 7.adaptSize,
-                            width: 7.adaptSize,
+                        customIcon(Assets.svg.icoGlobe.path,
+                            size: 7.adaptSize,
                             margin: EdgeInsets.only(
                                 left: 4.h, top: 6.v, bottom: 6.v)),
-                        CustomImageView(
-                            svgPath: Assets.svg.icoGlobe.path,
-                            height: 7.adaptSize,
-                            width: 7.adaptSize,
+                        customIcon(Assets.svg.icoGlobe.path,
+                            size: 7.adaptSize,
                             margin: EdgeInsets.fromLTRB(4.h, 6.v, 70.h, 6.v))
                       ],
                     ),

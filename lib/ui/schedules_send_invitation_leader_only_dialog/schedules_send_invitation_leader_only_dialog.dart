@@ -51,7 +51,7 @@ class SchedulesSendInvitationDialog extends StatelessWidget {
                                 .copyWith(fontSize: TextSize.lg.fSize)
                                 .modest,
                           )),
-                      CustomImageView.icon(
+                      customIcon(
                         Assets.svg.icoCloseGray.path,
                         size: 13.adaptSize,
                         margin: getMargin(bottom: 15),

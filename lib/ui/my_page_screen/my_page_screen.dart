@@ -38,10 +38,9 @@ class MyPageScreen extends StatelessWidget {
                             padding: EdgeInsets.only(left: 16.h),
                             child: Row(
                               children: [
-                                CustomImageView(
-                                  imagePath: Assets.images.placeholder.path,
-                                  height: 65.adaptSize,
-                                  width: 65.adaptSize,
+                                customAvatar(
+                                  Assets.images.placeholder.path,
+                                  size: 65.adaptSize,
                                   radius: BorderRadius.circular(
                                     32.h,
                                   ),
@@ -99,10 +98,9 @@ class MyPageScreen extends StatelessWidget {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              CustomImageView(
-                                svgPath: Assets.svg.icoEditBlack.path,
-                                height: 24.adaptSize,
-                                width: 24.adaptSize,
+                              customIcon(
+                                Assets.svg.icoEditBlack.path,
+                                size: 24.adaptSize,
                               ),
                               Padding(
                                 padding: EdgeInsets.only(
@@ -115,10 +113,9 @@ class MyPageScreen extends StatelessWidget {
                                 ),
                               ),
                               const Spacer(),
-                              CustomImageView(
-                                svgPath: Assets.svg.icoArrowLeft.path,
-                                height: 18.adaptSize,
-                                width: 18.adaptSize,
+                              customIcon(
+                                Assets.svg.icoArrowRight.path,
+                                size: 18.adaptSize,
                                 margin: EdgeInsets.symmetric(vertical: 3.v),
                               ),
                             ],
@@ -133,10 +130,9 @@ class MyPageScreen extends StatelessWidget {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              CustomImageView(
-                                svgPath: Assets.svg.icoInformation.path,
-                                height: 24.adaptSize,
-                                width: 24.adaptSize,
+                              customIcon(
+                                Assets.svg.icoInformation.path,
+                                size: 24.adaptSize,
                               ),
                               Padding(
                                 padding: EdgeInsets.only(
@@ -149,10 +145,9 @@ class MyPageScreen extends StatelessWidget {
                                 ),
                               ),
                               const Spacer(),
-                              CustomImageView(
-                                svgPath: Assets.svg.icoArrowLeft.path,
-                                height: 18.adaptSize,
-                                width: 18.adaptSize,
+                              customIcon(
+                                Assets.svg.icoArrowRight.path,
+                                size: 18.adaptSize,
                                 margin: EdgeInsets.symmetric(vertical: 3.v),
                               ),
                             ],
@@ -167,10 +162,9 @@ class MyPageScreen extends StatelessWidget {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              CustomImageView(
-                                svgPath: Assets.svg.icoMenu.path,
-                                height: 24.adaptSize,
-                                width: 24.adaptSize,
+                              customIcon(
+                                Assets.svg.icoMenu.path,
+                                size: 24.adaptSize,
                               ),
                               Padding(
                                 padding: EdgeInsets.only(
@@ -183,10 +177,9 @@ class MyPageScreen extends StatelessWidget {
                                 ),
                               ),
                               const Spacer(),
-                              CustomImageView(
-                                svgPath: Assets.svg.icoArrowLeft.path,
-                                height: 18.adaptSize,
-                                width: 18.adaptSize,
+                              customIcon(
+                                Assets.svg.icoArrowRight.path,
+                                size: 18.adaptSize,
                                 margin: EdgeInsets.symmetric(vertical: 3.v),
                               ),
                             ],

@@ -132,20 +132,18 @@ class SchedulesScreen extends GetWidget<SchedulesController> {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    CustomImageView(
-                                      svgPath: Assets.svg.icoArrowLeft.path,
-                                      height: 18.adaptSize,
-                                      width: 18.adaptSize,
+                                    customIcon(
+                                      Assets.svg.icoArrowRight.path,
+                                      size: 18.adaptSize,
                                       margin: EdgeInsets.only(bottom: 1.v),
                                     ),
                                     Text(
                                       '2023년 8월',
                                       style: textTheme.titleMedium,
                                     ),
-                                    CustomImageView(
-                                      svgPath: Assets.svg.icoArrowLeft.path,
-                                      height: 18.adaptSize,
-                                      width: 18.adaptSize,
+                                    customIcon(
+                                      Assets.svg.icoArrowRight.path,
+                                      size: 18.adaptSize,
                                       margin: EdgeInsets.only(bottom: 1.v),
                                     ),
                                   ],

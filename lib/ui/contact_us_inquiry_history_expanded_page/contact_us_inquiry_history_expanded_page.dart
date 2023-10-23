@@ -66,10 +66,9 @@ class ContactUsInquiryHistoryExpandedPage extends StatelessWidget {
                                   bottom: 2.v,
                                 ),
                               ),
-                              CustomImageView(
-                                svgPath: Assets.svg.icoArrowLeft.path,
-                                height: 18.adaptSize,
-                                width: 18.adaptSize,
+                              customIcon(
+                                Assets.svg.icoArrowRight.path,
+                                size: 18.adaptSize,
                                 margin: EdgeInsets.only(
                                   left: 10.h,
                                   top: 9.v,
@@ -123,10 +122,9 @@ class ContactUsInquiryHistoryExpandedPage extends StatelessWidget {
                                     bottom: 2.v,
                                   ),
                                 ),
-                                CustomImageView(
-                                  svgPath: Assets.svg.icoArrowLeft.path,
-                                  height: 18.adaptSize,
-                                  width: 18.adaptSize,
+                                customIcon(
+                                  Assets.svg.icoArrowRight.path,
+                                  size: 18.adaptSize,
                                   margin: EdgeInsets.only(
                                     left: 10.h,
                                     top: 9.v,
@@ -158,11 +156,9 @@ class ContactUsInquiryHistoryExpandedPage extends StatelessWidget {
                             ),
                             child: Row(
                               children: [
-                                CustomImageView(
-                                  svgPath:
-                                      Assets.svg.icoSubdirectoryArrowRight.path,
-                                  height: 15.adaptSize,
-                                  width: 15.adaptSize,
+                                customIcon(
+                                  Assets.svg.icoSubdirectoryArrowRight.path,
+                                  size: 15.adaptSize,
                                   margin: EdgeInsets.only(bottom: 1.v),
                                 ),
                                 Padding(
@@ -244,10 +240,9 @@ class ContactUsInquiryHistoryExpandedPage extends StatelessWidget {
                                           bottom: 2.v,
                                         ),
                                       ),
-                                      CustomImageView(
-                                        svgPath: Assets.svg.icoArrowLeft.path,
-                                        height: 18.adaptSize,
-                                        width: 18.adaptSize,
+                                      customIcon(
+                                        Assets.svg.icoArrowRight.path,
+                                        size: 18.adaptSize,
                                         margin: EdgeInsets.only(
                                           left: 10.h,
                                           top: 9.v,

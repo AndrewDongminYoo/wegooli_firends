@@ -87,7 +87,7 @@ class AppointmentEndExpandedBottomsheet extends StatelessWidget {
                     icon: Container(
                       margin: EdgeInsets.only(left: 10.h),
                       child: CustomImageView(
-                          svgPath: Assets.svg.icoArrowLeft.path),
+                          svgPath: Assets.svg.icoArrowRight.path),
                     ),
                     hintText: '8.1 화 16:00',
                     options:
@@ -127,7 +127,7 @@ class AppointmentEndExpandedBottomsheet extends StatelessWidget {
                     icon: Container(
                       margin: EdgeInsets.only(left: 10.h),
                       child: CustomImageView(
-                          svgPath: Assets.svg.icoArrowLeft.path),
+                          svgPath: Assets.svg.icoArrowRight.path),
                     ),
                     hintText: '8.1 화 18:00',
                     options:

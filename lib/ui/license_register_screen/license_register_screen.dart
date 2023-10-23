@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
-import 'package:get/route_manager.dart';
 import 'package:get/state_manager.dart';
 import 'package:get/utils.dart';
 
@@ -34,15 +33,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
         appBar: CustomAppBar(
           height: 50.v,
           leadingWidth: 34.h,
-          leading: CustomImageView(
-            svgPath: Assets.svg.icoArrowLeft.path,
-            margin: EdgeInsets.only(
-              left: 16.h,
-              top: 16.v,
-              bottom: 16.v,
-            ),
-            onTap: Get.back,
-          ),
+          leading: const GetBackIcon(),
           title: AppbarTitle(text: '운전면허 등록'),
         ),
         body: SizedBox(
@@ -542,11 +533,9 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                         const Color(0xFFB0B2BC),
                                                   ),
                                                 ),
-                                                CustomImageView(
-                                                  svgPath: Assets
-                                                      .svg.icoCaretDown.path,
-                                                  height: 18.adaptSize,
-                                                  width: 18.adaptSize,
+                                                customIcon(
+                                                  Assets.svg.icoCaretDown.path,
+                                                  size: 18.adaptSize,
                                                 )
                                               ],
                                             ),

@@ -82,10 +82,9 @@ class CustomBottomBar extends StatelessWidget {
               icon: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  CustomImageView(
-                    svgPath: bottomMenuList[index].icon,
-                    height: 20.adaptSize,
-                    width: 20.adaptSize,
+                  customIcon(
+                    bottomMenuList[index].icon,
+                    size: 20.adaptSize,
                     color: const Color(0xFFB0B2BC),
                   ),
                   Padding(
@@ -103,10 +102,9 @@ class CustomBottomBar extends StatelessWidget {
               activeIcon: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  CustomImageView(
-                    svgPath: bottomMenuList[index].activeIcon,
-                    height: 20.adaptSize,
-                    width: 20.adaptSize,
+                  customIcon(
+                    bottomMenuList[index].activeIcon,
+                    size: 20.adaptSize,
                     color: lightTheme.onPrimary,
                   ),
                   Padding(

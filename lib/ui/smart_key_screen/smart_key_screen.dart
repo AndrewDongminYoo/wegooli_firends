@@ -69,10 +69,9 @@ class SmartKeyScreen extends StatelessWidget {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        CustomImageView(
-                                          svgPath: Assets.svg.icoSave.path,
-                                          height: 26.adaptSize,
-                                          width: 26.adaptSize,
+                                        customIcon(
+                                          Assets.svg.icoSave.path,
+                                          size: 26.adaptSize,
                                         ),
                                         Padding(
                                           padding: EdgeInsets.only(
@@ -84,10 +83,9 @@ class SmartKeyScreen extends StatelessWidget {
                                             style: textTheme.bodySmall,
                                           ),
                                         ),
-                                        CustomImageView(
-                                          svgPath: Assets.svg.icoArrowLeft.path,
-                                          height: 18.adaptSize,
-                                          width: 18.adaptSize,
+                                        customIcon(
+                                          Assets.svg.icoArrowRight.path,
+                                          size: 18.adaptSize,
                                           margin: EdgeInsets.only(
                                             left: 51.h,
                                             bottom: 7.v,
@@ -228,11 +226,9 @@ class SmartKeyScreen extends StatelessWidget {
                                         child: Column(
                                           mainAxisSize: MainAxisSize.min,
                                           children: [
-                                            CustomImageView(
-                                              svgPath:
-                                                  Assets.svg.icoUnlocked.path,
-                                              height: 46.adaptSize,
-                                              width: 46.adaptSize,
+                                            customIcon(
+                                              Assets.svg.icoUnlocked.path,
+                                              size: 46.adaptSize,
                                             ),
                                             SizedBox(height: 5.v),
                                             Text(
@@ -298,11 +294,9 @@ class SmartKeyScreen extends StatelessWidget {
                                         child: Column(
                                           mainAxisSize: MainAxisSize.min,
                                           children: [
-                                            CustomImageView(
-                                              svgPath:
-                                                  Assets.svg.icoLocked.path,
-                                              height: 46.adaptSize,
-                                              width: 46.adaptSize,
+                                            customIcon(
+                                              Assets.svg.icoLocked.path,
+                                              size: 46.adaptSize,
                                             ),
                                             SizedBox(height: 5.v),
                                             Text(
@@ -432,10 +426,9 @@ class SmartKeyScreen extends StatelessWidget {
                                   child: Column(
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
-                                      CustomImageView(
-                                        svgPath: Assets.svg.icoCampaign.path,
-                                        height: 46.adaptSize,
-                                        width: 46.adaptSize,
+                                      customIcon(
+                                        Assets.svg.icoCampaign.path,
+                                        size: 46.adaptSize,
                                       ),
                                       SizedBox(height: 5.v),
                                       Text(
@@ -480,10 +473,9 @@ class SmartKeyScreen extends StatelessWidget {
                               mainAxisSize: MainAxisSize.min,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                CustomImageView(
-                                  svgPath: Assets.svg.icoEdit.path,
-                                  height: 30.adaptSize,
-                                  width: 30.adaptSize,
+                                customIcon(
+                                  Assets.svg.icoEdit.path,
+                                  size: 30.adaptSize,
                                 ),
                                 SizedBox(height: 1.v),
                                 Text(

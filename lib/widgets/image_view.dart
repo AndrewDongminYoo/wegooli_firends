@@ -10,6 +10,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 // 🌎 Project imports:
 import '/core/utils/logger.dart';
+import '/core/utils/size_utils.dart';
 
 // ignore: must_be_immutable
 class CustomImageView extends StatelessWidget {
@@ -45,7 +46,7 @@ class CustomImageView extends StatelessWidget {
         assert(imagePath == null || imagePath.isImage, '잘못된 확장자명'),
         assert(file == null || file.path.isImage, '잘못된 확장자명');
 
-  CustomImageView.square({
+  CustomImageView._square({
     Key? key,
     required double size,
     String? icon,
@@ -64,28 +65,6 @@ class CustomImageView extends StatelessWidget {
           url: url,
           height: size,
           width: size,
-          color: color,
-          alignment: alignment,
-          margin: margin,
-          onTap: onTap,
-          radius: radius,
-          border: border,
-        );
-
-  CustomImageView.icon(
-    String icon, {
-    Key? key,
-    double size = 18,
-    VoidCallback? onTap,
-    Alignment? alignment,
-    EdgeInsetsGeometry? margin,
-    BorderRadius? radius,
-    BoxBorder? border,
-    Color? color,
-  }) : this.square(
-          key: key,
-          icon: icon,
-          size: size,
           color: color,
           alignment: alignment,
           margin: margin,
@@ -233,4 +212,52 @@ extension on String {
         ext.endsWith('.gif') ||
         ext.endsWith('.bmp');
   }
+}
+
+CustomImageView customIcon(
+  String icon, {
+  Key? key,
+  double? size,
+  VoidCallback? onTap,
+  Alignment? alignment,
+  EdgeInsetsGeometry? margin,
+  BorderRadius? radius,
+  BoxBorder? border,
+  Color? color,
+}) {
+  return CustomImageView._square(
+    key: key,
+    icon: icon,
+    size: size ?? 18.adaptSize,
+    color: color,
+    alignment: alignment,
+    margin: margin,
+    onTap: onTap,
+    radius: radius,
+    border: border,
+  );
+}
+
+CustomImageView customAvatar(
+  String avatar, {
+  Key? key,
+  double? size,
+  VoidCallback? onTap,
+  Alignment? alignment,
+  EdgeInsetsGeometry? margin,
+  BorderRadius? radius,
+  BoxBorder? border,
+  Color? color,
+}) {
+  return CustomImageView._square(
+    key: key,
+    avatar: avatar,
+    size: size ?? 65.adaptSize,
+    color: color,
+    alignment: alignment,
+    margin: margin,
+    onTap: onTap,
+    radius: radius,
+    border: border,
+  );
 }

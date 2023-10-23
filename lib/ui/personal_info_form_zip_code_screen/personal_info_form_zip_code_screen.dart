@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
-import 'package:get/route_manager.dart';
 import 'package:get/state_manager.dart';
 
 // 🌎 Project imports:
@@ -29,11 +28,7 @@ class PersonalInfoFormZipCodeScreen
         appBar: CustomAppBar(
             height: 50.v,
             leadingWidth: 34.h,
-            leading: CustomImageView(
-              svgPath: Assets.svg.icoArrowLeft.path,
-              margin: EdgeInsets.only(left: 16.h, top: 16.v, bottom: 16.v),
-              onTap: Get.back,
-            ),
+            leading: const GetBackIcon(),
             title: AppbarTitle(text: '정보 입력'),
             styleType: Style.bgFill),
         body: SizedBox(

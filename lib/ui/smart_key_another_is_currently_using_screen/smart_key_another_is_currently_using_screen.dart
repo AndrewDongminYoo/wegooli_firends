@@ -68,10 +68,9 @@ class SmartKeyAnotherIsCurrentlyUsingScreen extends StatelessWidget {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      CustomImageView(
-                                        svgPath: getGasImg(level: 1).path,
-                                        height: 24.adaptSize,
-                                        width: 24.adaptSize,
+                                      customIcon(
+                                        getGasImg(level: 1).path,
+                                        size: 24.adaptSize,
                                       ),
                                       Padding(
                                         padding: EdgeInsets.only(
@@ -83,10 +82,9 @@ class SmartKeyAnotherIsCurrentlyUsingScreen extends StatelessWidget {
                                           style: textTheme.bodySmall,
                                         ),
                                       ),
-                                      CustomImageView(
-                                        svgPath: Assets.svg.icoArrowLeft.path,
-                                        height: 18.adaptSize,
-                                        width: 18.adaptSize,
+                                      customIcon(
+                                        Assets.svg.icoArrowRight.path,
+                                        size: 18.adaptSize,
                                         margin: EdgeInsets.only(
                                           left: 54.h,
                                           bottom: 4.v,
@@ -144,10 +142,9 @@ class SmartKeyAnotherIsCurrentlyUsingScreen extends StatelessWidget {
                         ],
                       ),
                       SizedBox(height: 22.v),
-                      CustomImageView(
-                        svgPath: Assets.svg.icoTaxi.path,
-                        height: 26.adaptSize,
-                        width: 26.adaptSize,
+                      customIcon(
+                        Assets.svg.icoTaxi.path,
+                        size: 26.adaptSize,
                         alignment: Alignment.centerRight,
                       ),
                       Padding(
@@ -305,11 +302,10 @@ class SmartKeyAnotherIsCurrentlyUsingScreen extends StatelessWidget {
                                                       mainAxisSize:
                                                           MainAxisSize.min,
                                                       children: [
-                                                        CustomImageView(
-                                                          svgPath: Assets.svg
-                                                              .icoUnlocked.path,
-                                                          height: 46.adaptSize,
-                                                          width: 46.adaptSize,
+                                                        customIcon(
+                                                          Assets.svg.icoUnlocked
+                                                              .path,
+                                                          size: 46.adaptSize,
                                                         ),
                                                         SizedBox(height: 5.v),
                                                         Text(
@@ -384,11 +380,10 @@ class SmartKeyAnotherIsCurrentlyUsingScreen extends StatelessWidget {
                                                       mainAxisSize:
                                                           MainAxisSize.min,
                                                       children: [
-                                                        CustomImageView(
-                                                          svgPath: Assets.svg
-                                                              .icoLocked.path,
-                                                          height: 46.adaptSize,
-                                                          width: 46.adaptSize,
+                                                        customIcon(
+                                                          Assets.svg.icoLocked
+                                                              .path,
+                                                          size: 46.adaptSize,
                                                         ),
                                                         SizedBox(height: 5.v),
                                                         Text(
@@ -531,11 +526,9 @@ class SmartKeyAnotherIsCurrentlyUsingScreen extends StatelessWidget {
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.min,
                                                 children: [
-                                                  CustomImageView(
-                                                    svgPath: Assets
-                                                        .svg.icoCampaign.path,
-                                                    height: 46.adaptSize,
-                                                    width: 46.adaptSize,
+                                                  customIcon(
+                                                    Assets.svg.icoCampaign.path,
+                                                    size: 46.adaptSize,
                                                   ),
                                                   SizedBox(height: 5.v),
                                                   Text(
@@ -615,10 +608,9 @@ class SmartKeyAnotherIsCurrentlyUsingScreen extends StatelessWidget {
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
                                           children: [
-                                            CustomImageView(
-                                              svgPath: Assets.svg.icoEdit.path,
-                                              height: 30.adaptSize,
-                                              width: 30.adaptSize,
+                                            customIcon(
+                                              Assets.svg.icoEdit.path,
+                                              size: 30.adaptSize,
                                             ),
                                             SizedBox(height: 1.v),
                                             Text(

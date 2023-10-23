@@ -125,10 +125,9 @@ class AppointmentStartExpandedBottomsheet extends StatelessWidget {
                     '8.1 화 18:00',
                     style: textTheme.titleMedium,
                   ),
-                  CustomImageView(
-                    svgPath: Assets.svg.icoArrowRight.path,
-                    height: 18.adaptSize,
-                    width: 18.adaptSize,
+                  customIcon(
+                    Assets.svg.icoArrowRight.path,
+                    size: 18.adaptSize,
                     margin: EdgeInsets.only(left: 10.h),
                   ),
                 ],

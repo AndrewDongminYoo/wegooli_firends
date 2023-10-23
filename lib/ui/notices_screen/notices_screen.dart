@@ -2,17 +2,14 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
-import 'package:get/route_manager.dart';
 import 'package:get/state_manager.dart';
 
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
-import '/gen/assets.gen.dart';
 import '/theme/theme_helper.dart';
 import '/ui/notices_screen/widgets/notices_item_widget.dart';
 import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
-import '/widgets/image_view.dart';
 import 'controller/notices_controller.dart';
 
 class NoticesScreen extends GetWidget<NoticesController> {
@@ -25,12 +22,7 @@ class NoticesScreen extends GetWidget<NoticesController> {
       child: Scaffold(
         appBar: CustomAppBar(
             leadingWidth: 34.h,
-            leading: CustomImageView(
-              svgPath: Assets.svg.icoArrowLeft.path,
-              margin: EdgeInsets.only(left: 16.h, top: 19.v, bottom: 18.v),
-              onTap: Get.back,
-            ),
-            centerTitle: true,
+            leading: const GetBackIcon(),
             title: AppbarTitle(text: '공지사항')),
         body: SizedBox(
           width: double.maxFinite,

@@ -1,9 +1,6 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:get/route_manager.dart';
-
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
@@ -22,12 +19,7 @@ class NoSubscriptionScreen extends StatelessWidget {
       child: Scaffold(
         appBar: CustomAppBar(
             leadingWidth: 34.h,
-            leading: CustomImageView(
-              svgPath: Assets.svg.icoArrowLeft.path,
-              margin: EdgeInsets.only(left: 16.h, top: 19.v, bottom: 18.v),
-              onTap: Get.back,
-            ),
-            centerTitle: true,
+            leading: const GetBackIcon(),
             title: AppbarTitle(text: '구독 정보')),
         body: SizedBox(
           width: mediaQueryData.size.width,

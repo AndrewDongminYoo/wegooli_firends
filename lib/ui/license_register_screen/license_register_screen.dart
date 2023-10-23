@@ -43,7 +43,6 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
             ),
             onTap: Get.back,
           ),
-          centerTitle: true,
           title: AppbarTitle(text: '운전면허 등록'),
         ),
         body: SizedBox(

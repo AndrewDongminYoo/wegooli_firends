@@ -2,18 +2,15 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
-import 'package:get/route_manager.dart';
 import 'package:get/state_manager.dart';
 
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
-import '/gen/assets.gen.dart';
 import '/theme/theme_helper.dart';
 import '/ui/contact_us_inquiry_history_expanded_page/contact_us_inquiry_history_expanded_page.dart';
 import '/ui/contact_us_inquiry_history_page/contact_us_inquiry_history_page.dart';
 import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
-import '/widgets/image_view.dart';
 import 'controller/contact_us_inquiry_history_expanded_tab_container_controller.dart';
 
 class ContactUsInquiryHistoryScreen
@@ -27,12 +24,7 @@ class ContactUsInquiryHistoryScreen
       child: Scaffold(
         appBar: CustomAppBar(
             leadingWidth: 34.h,
-            leading: CustomImageView(
-              svgPath: Assets.svg.icoArrowLeft.path,
-              margin: EdgeInsets.only(left: 16.h, top: 19.v, bottom: 18.v),
-              onTap: Get.back,
-            ),
-            centerTitle: true,
+            leading: const GetBackIcon(),
             title: AppbarTitle(text: '문의하기')),
         body: SizedBox(
           width: mediaQueryData.size.width,

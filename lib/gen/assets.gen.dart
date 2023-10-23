@@ -324,9 +324,21 @@ class $AssetsSvgGen {
   SvgGenImage get icoApostrophe =>
       const SvgGenImage('assets/svg/ico_apostrophe.svg');
 
+  /// File path: assets/svg/ico_arrow_down.svg
+  SvgGenImage get icoArrowDown =>
+      const SvgGenImage('assets/svg/ico_arrow_down.svg');
+
   /// File path: assets/svg/ico_arrow_left.svg
   SvgGenImage get icoArrowLeft =>
       const SvgGenImage('assets/svg/ico_arrow_left.svg');
+
+  /// File path: assets/svg/ico_arrow_right.svg
+  SvgGenImage get icoArrowRight =>
+      const SvgGenImage('assets/svg/ico_arrow_right.svg');
+
+  /// File path: assets/svg/ico_arrow_up.svg
+  SvgGenImage get icoArrowUp =>
+      const SvgGenImage('assets/svg/ico_arrow_up.svg');
 
   /// File path: assets/svg/ico_cal_blue_gray.svg
   SvgGenImage get icoCalBlueGray =>
@@ -507,7 +519,10 @@ class $AssetsSvgGen {
   List<SvgGenImage> get values => [
         icoAddPhoto,
         icoApostrophe,
+        icoArrowDown,
         icoArrowLeft,
+        icoArrowRight,
+        icoArrowUp,
         icoCalBlueGray,
         icoCalOnPrimary,
         icoCalRound,

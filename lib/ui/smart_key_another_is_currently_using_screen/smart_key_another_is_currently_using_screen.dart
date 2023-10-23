@@ -20,7 +20,6 @@ class SmartKeyAnotherIsCurrentlyUsingScreen extends StatelessWidget {
       child: Scaffold(
         appBar: CustomAppBar(
           height: 45.v,
-          centerTitle: true,
           title: CustomImageView(svgPath: Assets.svg.imgFriends.path),
           styleType: Style.bgOutline,
         ),

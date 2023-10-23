@@ -34,7 +34,6 @@ class PersonalInfoFormZipCodeScreen
               margin: EdgeInsets.only(left: 16.h, top: 16.v, bottom: 16.v),
               onTap: Get.back,
             ),
-            centerTitle: true,
             title: AppbarTitle(text: '정보 입력'),
             styleType: Style.bgFill),
         body: SizedBox(

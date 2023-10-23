@@ -34,7 +34,6 @@ class VerificationWaitingScreen
               margin: EdgeInsets.only(left: 16.h, top: 16.v, bottom: 16.v),
               onTap: Get.back,
             ),
-            centerTitle: true,
             title: AppbarTitle(text: '본인 인증')),
         body: Container(
           width: double.maxFinite,

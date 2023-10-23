@@ -42,7 +42,7 @@ dependencies:
   collection: ^1.17.1
   # [Dart] 컬러 클래스 및 변환도구 (hex, rgb, xyz, hsl, hsv 등)
   color: ^3.0.0
-  #
+  # 네트워크 연결 상태 플러그인
   connectivity_plus: ^4.0.2
   # [Dart] 신용카드 번호, CVC 번호 유효성 검사 및 카드사 식별 등을 제공하는 플러그인
   credit_card_validator: ^2.1.0

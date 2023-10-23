@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
+import '/gen/fonts.gen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
@@ -148,7 +149,7 @@ class HomePageScreen extends StatelessWidget {
                             child: Text(
                               '리더 신청',
                               style: textTheme.titleMedium!.copyWith(
-                                fontFamily: 'NanumSquareRound',
+                                fontFamily: FontFamily.nanumSquareRound,
                                 fontWeight: FontWeight.w800,
                               ),
                             ),
@@ -161,7 +162,7 @@ class HomePageScreen extends StatelessWidget {
                             child: Text(
                               '프렌즈 리더되기',
                               style: textTheme.bodySmall!.copyWith(
-                                fontFamily: 'NanumSquareRound',
+                                fontFamily: FontFamily.nanumSquareRound,
                                 color: const Color(0xFFB0B2BC),
                                 fontSize: 10.fSize,
                               ),
@@ -198,7 +199,7 @@ class HomePageScreen extends StatelessWidget {
                             child: Text(
                               '같이 쓰기',
                               style: textTheme.titleMedium!.copyWith(
-                                fontFamily: 'NanumSquareRound',
+                                fontFamily: FontFamily.nanumSquareRound,
                                 fontWeight: FontWeight.w800,
                               ),
                             ),
@@ -211,7 +212,7 @@ class HomePageScreen extends StatelessWidget {
                             child: Text(
                               '프렌즈 같이쓰기',
                               style: textTheme.bodySmall!.copyWith(
-                                fontFamily: 'NanumSquareRound',
+                                fontFamily: FontFamily.nanumSquareRound,
                                 color: const Color(0xFFB0B2BC),
                                 fontSize: 10.fSize,
                               ),
@@ -257,7 +258,7 @@ class HomePageScreen extends StatelessWidget {
                             child: Text(
                               '혼자 쓰기',
                               style: textTheme.titleMedium!.copyWith(
-                                fontFamily: 'NanumSquareRound',
+                                fontFamily: FontFamily.nanumSquareRound,
                                 fontWeight: FontWeight.w800,
                               ),
                             ),
@@ -266,7 +267,7 @@ class HomePageScreen extends StatelessWidget {
                           Text(
                             '장기렌트 문의',
                             style: textTheme.bodySmall!.copyWith(
-                              fontFamily: 'NanumSquareRound',
+                              fontFamily: FontFamily.nanumSquareRound,
                               color: const Color(0xFFB0B2BC),
                               fontSize: 10.fSize,
                             ),

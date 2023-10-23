@@ -19,6 +19,9 @@ class FontFamily {
   /// Font family: Jalnan
   static const String jalnan = 'Jalnan';
 
+  /// Font family: Nanum Square Round
+  static const String nanumSquareRound = 'Nanum Square Round';
+
   /// Font family: NotoSansKR
   static const String notoSansKR = 'NotoSansKR';
 
@@ -28,8 +31,8 @@ class FontFamily {
   /// Font family: Roboto
   static const String roboto = 'Roboto';
 
-  /// Font family: SF-Pro-Text
-  static const String sFProText = 'SF-Pro-Text';
+  /// Font family: SF Pro Text
+  static const String sFProText = 'SF Pro Text';
 
   /// Font family: SUIT
   static const String suit = 'SUIT';

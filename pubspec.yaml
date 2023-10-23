@@ -188,7 +188,7 @@ flutter:
         - asset: assets/fonts/Pretendard-Regular.otf
         - asset: assets/fonts/Pretendard-SemiBold.otf
         - asset: assets/fonts/Pretendard-Thin.otf
-    - family: SF-Pro-Text
+    - family: SF Pro Text
       # https://developer.apple.com/fonts
       fonts:
         - asset: assets/fonts/SF-Pro-Text-Black.otf
@@ -200,6 +200,13 @@ flutter:
         - asset: assets/fonts/SF-Pro-Text-Semibold.otf
         - asset: assets/fonts/SF-Pro-Text-Thin.otf
         - asset: assets/fonts/SF-Pro-Text-Ultralight.otf
+    - family: Nanum Square Round
+      # https://hangeul.naver.com/font/nanum
+      fonts:
+        - asset: assets/fonts/Nanum-Square-Round-Bold.ttf
+        - asset: assets/fonts/Nanum-Square-Round-ExtraBold.ttf
+        - asset: assets/fonts/Nanum-Square-Round-Light.ttf
+        - asset: assets/fonts/Nanum-Square-Round-Regular.ttf
     - family: CookieRun
       # https://www.cookierunfont.com
       fonts:

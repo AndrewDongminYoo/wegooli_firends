@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
+import '/gen/fonts.gen.dart';
 
 const ColorScheme lightTheme = ColorScheme.light(
   // Primary colors
@@ -56,49 +57,49 @@ final TextTheme textTheme = TextTheme(
   bodyLarge: TextStyle(
     color: lightTheme.onPrimary,
     fontSize: 16.fSize,
-    fontFamily: 'Pretendard',
+    fontFamily: FontFamily.pretendard,
     fontWeight: FontWeight.w400,
   ),
   bodyMedium: TextStyle(
     color: lightTheme.onPrimary,
     fontSize: 14.fSize,
-    fontFamily: 'Pretendard',
+    fontFamily: FontFamily.pretendard,
     fontWeight: FontWeight.w400,
   ),
   bodySmall: TextStyle(
     color: lightTheme.onPrimary,
     fontSize: 12.fSize,
-    fontFamily: 'Pretendard',
+    fontFamily: FontFamily.pretendard,
     fontWeight: FontWeight.w400,
   ),
   headlineLarge: TextStyle(
     color: lightTheme.onPrimary,
     fontSize: 32.fSize,
-    fontFamily: 'Jalnan',
+    fontFamily: FontFamily.jalnan,
     fontWeight: FontWeight.w700,
   ),
   headlineSmall: TextStyle(
     color: Colors.black,
     fontSize: 24.fSize,
-    fontFamily: 'Pretendard',
+    fontFamily: FontFamily.pretendard,
     fontWeight: FontWeight.w700,
   ),
   labelLarge: TextStyle(
     color: const Color(0xFFDB4646),
     fontSize: 12.fSize,
-    fontFamily: 'Pretendard',
+    fontFamily: FontFamily.pretendard,
     fontWeight: FontWeight.w500,
   ),
   titleMedium: TextStyle(
     color: lightTheme.onPrimary,
     fontSize: 16.fSize,
-    fontFamily: 'Pretendard',
+    fontFamily: FontFamily.pretendard,
     fontWeight: FontWeight.w700,
   ),
   titleSmall: TextStyle(
     color: lightTheme.onPrimary,
     fontSize: 14.fSize,
-    fontFamily: 'Pretendard',
+    fontFamily: FontFamily.pretendard,
     fontWeight: FontWeight.w500,
   ),
 );

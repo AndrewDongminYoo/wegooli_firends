@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
+import '/gen/fonts.gen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_title.dart';
@@ -220,7 +221,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                         const Color(0xFF686A71),
                                                     fontSize: 7.fSize,
                                                     fontWeight: FontWeight.w400,
-                                                    fontFamily: 'SUIT',
+                                                    fontFamily: FontFamily.suit,
                                                   ),
                                                 ),
                                                 SizedBox(height: 6.v),
@@ -241,7 +242,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                         const Color(0xFF686A71),
                                                     fontSize: 7.fSize,
                                                     fontWeight: FontWeight.w400,
-                                                    fontFamily: 'SUIT',
+                                                    fontFamily: FontFamily.suit,
                                                   ),
                                                 ),
                                                 SizedBox(height: 1.v),
@@ -252,7 +253,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                         const Color(0xFF686A71),
                                                     fontSize: 7.fSize,
                                                     fontWeight: FontWeight.w400,
-                                                    fontFamily: 'SUIT',
+                                                    fontFamily: FontFamily.suit,
                                                   ),
                                                 ),
                                                 Align(
@@ -277,7 +278,8 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                         fontSize: 7.fSize,
                                                         fontWeight:
                                                             FontWeight.w400,
-                                                        fontFamily: 'SUIT',
+                                                        fontFamily:
+                                                            FontFamily.suit,
                                                         height: 1.43,
                                                       ),
                                                     ),
@@ -291,7 +293,7 @@ class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
                                                         const Color(0xFF686A71),
                                                     fontSize: 7.fSize,
                                                     fontWeight: FontWeight.w400,
-                                                    fontFamily: 'SUIT',
+                                                    fontFamily: FontFamily.suit,
                                                   ),
                                                 )
                                               ],

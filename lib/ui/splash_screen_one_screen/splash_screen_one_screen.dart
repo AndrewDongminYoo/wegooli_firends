@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
+import '/gen/fonts.gen.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/image_view.dart';
 
@@ -54,7 +55,7 @@ class SplashScreenOne extends StatelessWidget {
                           Text(
                             '우리가 만드는 카셰어링',
                             style: textTheme.titleSmall!.copyWith(
-                              fontFamily: 'NanumSquareRound',
+                              fontFamily: FontFamily.nanumSquareRound,
                               color: Colors.black,
                               fontWeight: FontWeight.w700,
                             ),

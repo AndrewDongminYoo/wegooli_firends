@@ -122,10 +122,18 @@ class CustomTextFormField extends StatelessWidget {
                 width: 2.adaptSize,
               ),
             ),
+        focusedErrorBorder: borderDecoration ??
+            UnderlineInputBorder(
+              borderRadius: BorderRadius.circular(4.h),
+              borderSide: BorderSide(
+                color: Palette.red600,
+                width: 2.adaptSize,
+              ),
+            ),
       );
 }
 
-/// Extension on [CustomTextFormField] to facilitate inclusion of all types of border style etc
+/// 모든 유형의 테두리 스타일 등을 쉽게 포함할 수 있도록 [CustomTextFormField]를 확장합니다.
 extension TextFormFieldStyleHelper on CustomTextFormField {
   static UnderlineInputBorder get fillBlueGray => UnderlineInputBorder(
         borderRadius: BorderRadius.circular(18.h),

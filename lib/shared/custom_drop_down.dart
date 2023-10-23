@@ -245,7 +245,7 @@ class _CustomDropDownState<T> extends State<CustomDropDown<T>> {
         },
       ),
 
-      // This to clear the search value when you close the menu
+      /// 메뉴를 닫을 때 검색 값을 지웁니다.
       onMenuStateChange: (isOpen) {
         if (!isOpen) {
           _textEditingController.clear();
@@ -272,7 +272,8 @@ class _CustomDropDownState<T> extends State<CustomDropDown<T>> {
       items: widget.options.map((item) {
         return DropdownMenuItem(
           value: item,
-          // Disable default onTap to avoid closing menu when selecting an item
+
+          /// 항목을 선택할 때 메뉴가 닫히지 않도록 기본 [onTap]을 비활성화합니다.
           enabled: false,
           child: StatefulBuilder(
             builder: (context, menuSetState) {
@@ -283,9 +284,11 @@ class _CustomDropDownState<T> extends State<CustomDropDown<T>> {
                       ? selectedItems.remove(item)
                       : selectedItems.add(item);
                   onChangedForMultiSelect(selectedItems);
-                  //This rebuilds the StatefulWidget to update the button's text
+
+                  /// 버튼의 텍스트를 업데이트하기 위해 [StatefulWidget]을 리빌드합니다.
                   setState(() {});
-                  //This rebuilds the dropdownMenu Widget to update the check mark
+
+                  /// [dropdownMenu] 위젯을 리빌드하여 체크 표시를 업데이트합니다.
                   menuSetState(() {});
                 },
                 child: Container(
@@ -325,7 +328,8 @@ class _CustomDropDownState<T> extends State<CustomDropDown<T>> {
           color: widget.fillColor,
         ),
       ),
-      // onChanged is handled by the onChangedForMultiSelect function
+
+      /// [onChanged]는 [onChangedForMultiSelect] 함수에 의해 처리됩니다.
       onChanged: disabled ? null : (val) {},
       isExpanded: true,
       selectedItemBuilder: (context) {
@@ -383,7 +387,8 @@ class _CustomDropDownState<T> extends State<CustomDropDown<T>> {
               },
             )
           : null,
-      // This to clear the search value when you close the menu
+
+      /// 메뉴를 닫을 때 검색 값을 지웁니다.
       onMenuStateChange: isSearchable
           ? (isOpen) {
               if (!isOpen) {

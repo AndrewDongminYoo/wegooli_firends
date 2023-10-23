@@ -7,7 +7,7 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/route_manager.dart';
 
 // 🌎 Project imports:
-import '/core/utils/initial_bindings.dart';
+import '/app/initial_bindings.dart';
 import '/core/utils/logger.dart';
 import '/l10n/app_localizations.dart';
 import '/routes/app_routes.dart';

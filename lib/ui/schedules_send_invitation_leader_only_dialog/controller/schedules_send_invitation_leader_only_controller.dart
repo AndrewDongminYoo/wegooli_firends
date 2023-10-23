@@ -5,11 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class SchedulesSendInvitationLeaderOnlyController extends GetxController {
-  TextEditingController valueoneController = TextEditingController();
+  TextEditingController teamCode =
+      TextEditingController(text: 'asdf-asdf-asdf-asdf');
 
   @override
   void onClose() {
     super.onClose();
-    valueoneController.dispose();
+    teamCode.dispose();
   }
 }

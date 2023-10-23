@@ -15,14 +15,17 @@ import '/widgets/text_form_field.dart';
 import 'controller/send_invitation_leader_only_controller.dart';
 
 // ignore_for_file: must_be_immutable
-class SendInvitationLeaderOnlyDialog extends StatelessWidget {
-  SendInvitationLeaderOnlyDialog(this.controller, {super.key});
+class SendInvitationDialog extends StatelessWidget {
+  SendInvitationDialog(this.controller, {super.key});
 
   SendInvitationLeaderOnlyController controller;
 
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
+      backgroundColor: Colors.transparent,
+      contentPadding: EdgeInsets.zero,
+      insetPadding: EdgeInsets.zero,
       content: SingleChildScrollView(
         child: Container(
           margin: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 313.v),

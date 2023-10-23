@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'userage_item_model.dart';
 import 'userprofile_item_model.dart';
 
-class SchedulesTeamIsNotFullModel {
+class SchedulesModel {
   Rx<List<UserprofileItemModel>> userprofileItemList =
       Rx(List.generate(4, (index) => UserprofileItemModel()));
 

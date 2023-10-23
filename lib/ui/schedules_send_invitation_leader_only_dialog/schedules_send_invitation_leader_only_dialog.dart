@@ -1,5 +1,6 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 // 📦 Package imports:
 import 'package:get/get.dart';
@@ -7,7 +8,10 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
+import '/l10n/l10n.dart';
 import '/theme/app_decoration.dart';
+import '/theme/button_styles.dart';
+import '/theme/text_styles.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/elevated_button.dart';
 import '/widgets/image_view.dart';
@@ -15,70 +19,69 @@ import '/widgets/text_form_field.dart';
 import 'controller/schedules_send_invitation_leader_only_controller.dart';
 
 // ignore_for_file: must_be_immutable
-class SchedulesSendInvitationLeaderOnlyDialog extends StatelessWidget {
-  SchedulesSendInvitationLeaderOnlyDialog(this.controller, {super.key});
+class SchedulesSendInvitationDialog extends StatelessWidget {
+  SchedulesSendInvitationDialog(this.controller, {super.key});
 
   SchedulesSendInvitationLeaderOnlyController controller;
 
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      insetPadding: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 318.v),
-      backgroundColor: lightTheme.onPrimaryContainer,
+      contentPadding: EdgeInsets.zero,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadiusStyle.circleBorder10,
-      ),
-      content: SingleChildScrollView(
-        child: Column(
+          borderRadius: BorderRadiusStyle.circleBorder10),
+      content: Column(
           mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            CustomImageView(
-              svgPath: Assets.svg.icoCloseRound.path,
-              height: 15.adaptSize,
-              width: 15.adaptSize,
-              alignment: Alignment.centerRight,
-              margin: EdgeInsets.only(top: 20.v, right: 20.h),
-              onTap: Get.back,
-            ),
             Padding(
-              padding: EdgeInsets.only(left: 20.h, top: 6.v),
-              child: Text(
-                '초대 코드',
-                style: textTheme.titleMedium!.copyWith(
-                  fontSize: 18.fSize,
-                ),
-              ),
-            ),
-            CustomTextFormField(
-                controller: controller.valueoneController,
-                margin: EdgeInsets.only(left: 20.h, top: 22.v, right: 20.h),
-                hintText: '0000-0000-0000-0000',
-                hintStyle: textTheme.bodyLarge!.copyWith(
-                  color: const Color(0xFF8E9199),
-                ),
-                textInputAction: TextInputAction.done,
-                alignment: Alignment.center,
-                contentPadding:
-                    EdgeInsets.symmetric(horizontal: 12.h, vertical: 14.v)),
-            SizedBox(height: 20.v),
-            CustomElevatedButton(
-                text: '복사하기',
-                buttonStyle: ElevatedButton.styleFrom(
-                  backgroundColor: lightTheme.primary,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.vertical(
-                      bottom: Radius.circular(
-                        10.h,
+                padding: getPadding(left: 25, top: 15, right: 15),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                          padding: getPadding(top: 6),
+                          child: Text(
+                            l10ns.invitationCode,
+                            overflow: TextOverflow.ellipsis,
+                            textAlign: TextAlign.left,
+                            style: textTheme.titleMedium!
+                                .copyWith(fontSize: TextSize.lg.fSize)
+                                .modest,
+                          )),
+                      CustomImageView.icon(
+                        Assets.svg.icoCloseGray.path,
+                        size: 13.adaptSize,
+                        margin: getMargin(bottom: 15),
+                        onTap: () => Navigator.of(context).pop(false),
                       ),
-                    ),
-                  ),
-                ),
-                buttonTextStyle: textTheme.titleMedium)
-          ],
-        ),
-      ),
+                    ])),
+            CustomTextFormField(
+              controller: controller.teamCode,
+              margin: getMargin(left: 25, top: 17, right: 25),
+            ),
+            if (true)
+              CustomElevatedButton(
+                onTap: () {
+                  Clipboard.setData(
+                      ClipboardData(text: controller.teamCode.text));
+                  Get.showSnackbar(GetSnackBar(
+                    title: '복사 완료',
+                    message: controller.teamCode.text,
+                    duration: 1.seconds,
+                  ));
+                },
+                text: '복사하기',
+                margin: getMargin(top: 25),
+                buttonStyle: ElevatedButton.styleFrom(
+                    backgroundColor: lightTheme.primary,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadiusStyle.customBorderB10,
+                    )).noEffect,
+                buttonTextStyle: textTheme.titleMedium,
+              )
+          ]),
     );
   }
 }

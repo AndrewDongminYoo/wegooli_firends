@@ -19,7 +19,7 @@ import 'controller/one_on_one_controller.dart';
 
 class OneOnOneScreen extends GetWidget<OneOnOneController> {
   const OneOnOneScreen({super.key});
-  static const routeName = '/route_name';
+  static const routeName = '/one_on_one_screen';
 
   @override
   Widget build(BuildContext context) {
@@ -122,17 +122,6 @@ class OneOnOneScreen extends GetWidget<OneOnOneController> {
           margin: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 29.v),
           decoration: BoxDecoration(
             color: lightTheme.onPrimaryContainer,
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.1),
-                spreadRadius: 2.h,
-                blurRadius: 2.h,
-                offset: const Offset(
-                  2,
-                  2,
-                ),
-              ),
-            ],
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,

@@ -4,9 +4,9 @@ import 'package:get/get.dart';
 // 🌎 Project imports:
 import '../controller/schedules_team_is_not_full_controller.dart';
 
-class SchedulesTeamIsNotFullBinding extends Bindings {
+class SchedulesBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(SchedulesTeamIsNotFullController.new);
+    Get.lazyPut(SchedulesController.new);
   }
 }

@@ -16,9 +16,8 @@ import '/widgets/elevated_button.dart';
 import '/widgets/image_view.dart';
 import 'controller/schedules_team_is_not_full_controller.dart';
 
-class SchedulesTeamIsNotFullScreen
-    extends GetWidget<SchedulesTeamIsNotFullController> {
-  const SchedulesTeamIsNotFullScreen({super.key});
+class SchedulesScreen extends GetWidget<SchedulesController> {
+  const SchedulesScreen({super.key});
   static const routeName = '/schedules_team_is_not_full';
 
   @override
@@ -72,10 +71,10 @@ class SchedulesTeamIsNotFullScreen
                                   width: 15.h,
                                 );
                               },
-                              itemCount: controller.schedulesTeamIsNotFull.value
+                              itemCount: controller.scheduleModel.value
                                   .userprofileItemList.value.length,
                               itemBuilder: (context, index) {
-                                final model = controller.schedulesTeamIsNotFull
+                                final model = controller.scheduleModel
                                     .value.userprofileItemList.value[index];
                                 return UserprofileItemWidget(
                                   model,
@@ -174,14 +173,14 @@ class SchedulesTeamIsNotFullScreen
                                         );
                                       },
                                       itemCount: controller
-                                          .schedulesTeamIsNotFull
+                                          .scheduleModel
                                           .value
                                           .userageItemList
                                           .value
                                           .length,
                                       itemBuilder: (context, index) {
                                         final model = controller
-                                            .schedulesTeamIsNotFull
+                                            .scheduleModel
                                             .value
                                             .userageItemList
                                             .value[index];

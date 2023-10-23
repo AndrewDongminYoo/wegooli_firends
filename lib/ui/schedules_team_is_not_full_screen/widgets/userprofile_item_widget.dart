@@ -22,8 +22,7 @@ class UserprofileItemWidget extends StatelessWidget {
 
   UserprofileItemModel userprofileItem;
 
-  SchedulesTeamIsNotFullController controller =
-      Get.find<SchedulesTeamIsNotFullController>();
+  SchedulesController controller = Get.find<SchedulesController>();
 
   @override
   Widget build(BuildContext context) {

@@ -22,13 +22,17 @@ class ViewScheduledDateDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      content: SingleChildScrollView(
-        child: Container(
-          margin: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 238.v),
-          padding: EdgeInsets.all(20.h),
-          decoration: BoxDecoration(
-              color: lightTheme.onPrimaryContainer,
-              borderRadius: BorderRadiusStyle.circleBorder10),
+      backgroundColor: Colors.transparent,
+      contentPadding: EdgeInsets.zero,
+      insetPadding: EdgeInsets.zero,
+      content: Container(
+        width: mediaQueryData.size.width,
+        margin: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 238.v),
+        padding: EdgeInsets.all(20.h),
+        decoration: BoxDecoration(
+            color: lightTheme.onPrimaryContainer,
+            borderRadius: BorderRadiusStyle.circleBorder10),
+        child: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,

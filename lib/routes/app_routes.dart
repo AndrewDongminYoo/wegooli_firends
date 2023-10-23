@@ -27,20 +27,14 @@ import '/ui/license_register_screen/binding/license_register_binding.dart';
 import '/ui/license_register_screen/license_register_screen.dart';
 import '/ui/my_page_screen/binding/my_page_binding.dart';
 import '/ui/my_page_screen/my_page_screen.dart';
-import '/ui/notices_one_screen/binding/notices_one_binding.dart';
-import '/ui/notices_one_screen/notices_one_screen.dart';
 import '/ui/notices_screen/binding/notices_binding.dart';
 import '/ui/notices_screen/notices_screen.dart';
 import '/ui/one_on_one_screen/binding/one_on_one_binding.dart';
 import '/ui/one_on_one_screen/one_on_one_screen.dart';
 import '/ui/personal_info_form_zip_code_screen/binding/personal_info_form_zip_code_binding.dart';
 import '/ui/personal_info_form_zip_code_screen/personal_info_form_zip_code_screen.dart';
-import '/ui/schedules_container_screen/binding/schedules_container_binding.dart';
-import '/ui/schedules_container_screen/schedules_container_screen.dart';
 import '/ui/schedules_team_is_not_full_screen/binding/schedules_team_is_not_full_binding.dart';
 import '/ui/schedules_team_is_not_full_screen/schedules_team_is_not_full_screen.dart';
-import '/ui/schedules_teams_full/binding/schedules_team_is_full_binding.dart';
-import '/ui/schedules_teams_full/schedules_teams_full.dart';
 import '/ui/signin_page_screen/binding/signin_page_binding.dart';
 import '/ui/signin_page_screen/signin_page_screen.dart';
 import '/ui/signup_complete_screen/binding/signup_complete_binding.dart';
@@ -57,8 +51,6 @@ import '/ui/subscribe_info_no_subscription_screen/binding/subscribe_info_no_subs
 import '/ui/subscribe_info_no_subscription_screen/subscribe_info_no_subscription_screen.dart';
 import '/ui/subscribe_info_screen/binding/subscribe_info_binding.dart';
 import '/ui/subscribe_info_screen/subscribe_info_screen.dart';
-import '/ui/terms_bottomsheet/binding/terms_bottomsheet_binding.dart';
-import '/ui/terms_bottomsheet/terms_bottomsheet.dart';
 import '/ui/unsubscribe_screen/binding/unsubscribe_binding.dart';
 import '/ui/unsubscribe_screen/unsubscribe_screen.dart';
 
@@ -82,13 +74,6 @@ class AppRoutes {
       ],
     ),
     GetPage(
-      name: NoticesOneScreen.routeName,
-      page: () => const NoticesOneScreen(),
-      bindings: [
-        NoticesOneBinding(),
-      ],
-    ),
-    GetPage(
       name: EmptyNoticeScreen.routeName,
       page: () => const EmptyNoticeScreen(),
       bindings: [
@@ -96,24 +81,10 @@ class AppRoutes {
       ],
     ),
     GetPage(
-      name: SchedulesContainerScreen.routeName,
-      page: () => const SchedulesContainerScreen(),
-      bindings: [
-        SchedulesContainerBinding(),
-      ],
-    ),
-    GetPage(
       name: SigninPageScreen.routeName,
       page: () => const SigninPageScreen(),
       bindings: [
         SigninPageBinding(),
-      ],
-    ),
-    GetPage(
-      name: TermsBottomsheet.routeName,
-      page: () => const TermsBottomsheet(),
-      bindings: [
-        VerificationTermsBottomsheetBinding(),
       ],
     ),
     GetPage(
@@ -166,17 +137,10 @@ class AppRoutes {
       ],
     ),
     GetPage(
-      name: SchedulesTeamIsNotFullScreen.routeName,
-      page: () => const SchedulesTeamIsNotFullScreen(),
+      name: SchedulesScreen.routeName,
+      page: () => const SchedulesScreen(),
       bindings: [
-        SchedulesTeamIsNotFullBinding(),
-      ],
-    ),
-    GetPage(
-      name: SchedulesTeamsFull.routeName,
-      page: () => const SchedulesTeamsFull(),
-      bindings: [
-        SchedulesTeamIsFullBinding(),
+        SchedulesBinding(),
       ],
     ),
     GetPage(

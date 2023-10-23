@@ -19,8 +19,7 @@ class UserageItemWidget extends StatelessWidget {
 
   UserageItemModel userageItem;
 
-  SchedulesTeamIsNotFullController controller =
-      Get.find<SchedulesTeamIsNotFullController>();
+  SchedulesController controller = Get.find<SchedulesController>();
 
   @override
   Widget build(BuildContext context) {

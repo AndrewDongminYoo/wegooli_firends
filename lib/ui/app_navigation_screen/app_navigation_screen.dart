@@ -25,18 +25,13 @@ import '/ui/identity_verification_filled_screen/identity_verification_filled_scr
 import '/ui/identity_verification_waiting_screen/identity_verification_waiting_screen.dart';
 import '/ui/license_register_screen/license_register_screen.dart';
 import '/ui/my_page_screen/my_page_screen.dart';
-import '/ui/notices_one_screen/notices_one_screen.dart';
 import '/ui/notices_screen/notices_screen.dart';
 import '/ui/one_on_one_screen/one_on_one_screen.dart';
 import '/ui/personal_info_form_zip_code_screen/personal_info_form_zip_code_screen.dart';
 import '/ui/scheduled_date_dialog/controller/scheduled_date_controller.dart';
-import '/ui/scheduled_date_dialog/scheduled_date_dialog.dart';
-import '/ui/scheduled_date_dialog/scheduled_date_dialog_1.dart';
-import '/ui/schedules_container_screen/schedules_container_screen.dart';
 import '/ui/schedules_send_invitation_leader_only_dialog/controller/schedules_send_invitation_leader_only_controller.dart';
 import '/ui/schedules_send_invitation_leader_only_dialog/schedules_send_invitation_leader_only_dialog.dart';
 import '/ui/schedules_team_is_not_full_screen/schedules_team_is_not_full_screen.dart';
-import '/ui/schedules_teams_full/schedules_teams_full.dart';
 import '/ui/send_invitation_leader_only_dialog/controller/send_invitation_leader_only_controller.dart';
 import '/ui/send_invitation_leader_only_dialog/send_invitation_leader_only_dialog.dart';
 import '/ui/signin_page_screen/signin_page_screen.dart';
@@ -47,7 +42,6 @@ import '/ui/splash_screen_one_screen/splash_screen_one_screen.dart';
 import '/ui/splash_screen_two_screen/splash_screen_two_screen.dart';
 import '/ui/subscribe_info_no_subscription_screen/subscribe_info_no_subscription_screen.dart';
 import '/ui/subscribe_info_screen/subscribe_info_screen.dart';
-import '/ui/terms_bottomsheet/terms_bottomsheet.dart';
 import '/ui/unsubscribe_confirm_dialog/controller/unsubscribe_confirm_controller.dart';
 import '/ui/unsubscribe_confirm_dialog/unsubscribe_confirm_dialog.dart';
 import '/ui/unsubscribe_screen/unsubscribe_screen.dart';
@@ -79,16 +73,8 @@ class AppNavigationScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         RouteModal(
-                          title: 'Schedules View Scheduled Dated / Expanded',
-                          dialog: ScheduledDateDialog(
-                            Get.put(
-                              ScheduledDateController(),
-                            ),
-                          ),
-                        ),
-                        RouteModal(
                           title: 'Send Invitation',
-                          dialog: SendInvitationLeaderOnlyDialog(
+                          dialog: SendInvitationDialog(
                             Get.put(
                               SendInvitationLeaderOnlyController(),
                             ),
@@ -135,16 +121,8 @@ class AppNavigationScreen extends StatelessWidget {
                           ),
                         ),
                         RouteModal(
-                          title: 'View Scheduled Date',
-                          dialog: SchedulesViewScheduledDateDialog(
-                            Get.put(
-                              ScheduledDateController(),
-                            ),
-                          ),
-                        ),
-                        RouteModal(
                           title: 'Send Invitation',
-                          dialog: SchedulesSendInvitationLeaderOnlyDialog(
+                          dialog: SchedulesSendInvitationDialog(
                             Get.put(
                               SchedulesSendInvitationLeaderOnlyController(),
                             ),
@@ -163,24 +141,12 @@ class AppNavigationScreen extends StatelessWidget {
                           routeName: NoticesScreen.routeName,
                         ),
                         const RouteItem(
-                          title: 'Notices',
-                          routeName: NoticesOneScreen.routeName,
-                        ),
-                        const RouteItem(
                           title: 'No Notice',
                           routeName: EmptyNoticeScreen.routeName,
                         ),
                         const RouteItem(
-                          title: 'Schedules - Container',
-                          routeName: SchedulesContainerScreen.routeName,
-                        ),
-                        const RouteItem(
                           title: 'SignIn',
                           routeName: SigninPageScreen.routeName,
-                        ),
-                        const RouteItem(
-                          title: 'Verification / BottomSheet',
-                          routeName: TermsBottomsheet.routeName,
                         ),
                         const RouteItem(
                           title: 'Verification / Empty',
@@ -195,11 +161,11 @@ class AppNavigationScreen extends StatelessWidget {
                           routeName: PersonalInfoFormZipCodeScreen.routeName,
                         ),
                         const RouteItem(
-                          title: '스플래시스크린 1',
+                          title: 'SplashScreen 1',
                           routeName: SplashScreenOne.routeName,
                         ),
                         const RouteItem(
-                          title: '스플래시스크린 2',
+                          title: 'SplashScreen 2',
                           routeName: SplashScreenTwo.routeName,
                         ),
                         const RouteItem(
@@ -211,12 +177,8 @@ class AppNavigationScreen extends StatelessWidget {
                           routeName: HomePageScreen.routeName,
                         ),
                         const RouteItem(
-                          title: 'Schedules / Team is not Full',
-                          routeName: SchedulesTeamIsNotFullScreen.routeName,
-                        ),
-                        const RouteItem(
-                          title: 'Schedules / Team is Full',
-                          routeName: SchedulesTeamsFull.routeName,
+                          title: 'Schedules',
+                          routeName: SchedulesScreen.routeName,
                         ),
                         const RouteItem(
                           title: 'Smart Key',

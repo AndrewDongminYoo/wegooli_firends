@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 // 📦 Package imports:
 import 'package:catcher_2/catcher_2.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:get/route_manager.dart';
+import 'package:get/route_manager.dart' show Get, GetMaterialApp, GetNavigation, Transition;
 
 // 🌎 Project imports:
 import '/app/initial_bindings.dart';

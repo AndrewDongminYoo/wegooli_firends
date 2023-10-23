@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
-import 'package:get/route_manager.dart';
+import 'package:get/route_manager.dart' show Get, ExtensionDialog, GetNavigation;
 import 'package:lottie/lottie.dart';
 
 class ProgressDialogUtils {

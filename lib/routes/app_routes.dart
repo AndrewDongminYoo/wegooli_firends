@@ -1,5 +1,5 @@
 // 📦 Package imports:
-import 'package:get/route_manager.dart';
+import 'package:get/route_manager.dart' show GetPage;
 
 // 🌎 Project imports:
 import '/ui/app_navigation_screen/app_navigation_screen.dart';

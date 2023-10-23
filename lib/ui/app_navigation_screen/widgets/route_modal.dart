@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 // 📦 Package imports:
 import 'package:catcher_2/catcher_2.dart';
-import 'package:get/route_manager.dart';
+import 'package:get/route_manager.dart' show ExtensionBottomSheet, ExtensionDialog, Get;
 
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';

@@ -5,15 +5,16 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class VerificationWaitingController extends GetxController {
-  TextEditingController nameoneController = TextEditingController();
-  TextEditingController zipcodeController = TextEditingController();
-  TextEditingController phonenumberone = TextEditingController();
+  TextEditingController realName = TextEditingController();
+  TextEditingController birthday = TextEditingController();
+  TextEditingController socialId = TextEditingController();
+  TextEditingController phoneNum = TextEditingController();
 
   @override
   void onClose() {
     super.onClose();
-    nameoneController.dispose();
-    zipcodeController.dispose();
-    phonenumberone.dispose();
+    realName.dispose();
+    birthday.dispose();
+    phoneNum.dispose();
   }
 }

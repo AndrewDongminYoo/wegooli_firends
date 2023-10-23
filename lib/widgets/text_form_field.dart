@@ -21,6 +21,8 @@ class CustomTextFormField extends StatelessWidget {
     this.maxLines,
     this.hintText,
     this.hintStyle,
+    this.counterText,
+    this.counterStyle,
     this.prefix,
     this.prefixConstraints,
     this.suffix,
@@ -44,7 +46,9 @@ class CustomTextFormField extends StatelessWidget {
   final TextInputType? textInputType;
   final int? maxLines;
   final String? hintText;
+  final String? counterText;
   final TextStyle? hintStyle;
+  final TextStyle? counterStyle;
   final Widget? prefix;
   final BoxConstraints? prefixConstraints;
   final Widget? suffix;
@@ -82,6 +86,8 @@ class CustomTextFormField extends StatelessWidget {
         ),
       );
   InputDecoration get decoration => InputDecoration(
+        counterText: counterText,
+        counterStyle: counterStyle,
         hintText: hintText ?? '',
         hintStyle: hintStyle ??
             textTheme.bodyLarge!.copyWith(
@@ -96,21 +102,21 @@ class CustomTextFormField extends StatelessWidget {
         fillColor: fillColor ?? lightTheme.onPrimaryContainer,
         filled: filled,
         border: borderDecoration ??
-            OutlineInputBorder(
+            UnderlineInputBorder(
               borderRadius: BorderRadius.circular(5.h),
               borderSide: const BorderSide(
                 color: Color(0xFFB9BCC3),
               ),
             ),
         enabledBorder: borderDecoration ??
-            OutlineInputBorder(
+            UnderlineInputBorder(
               borderRadius: BorderRadius.circular(5.h),
               borderSide: const BorderSide(
                 color: Color(0xFFB9BCC3),
               ),
             ),
         focusedBorder: borderDecoration ??
-            OutlineInputBorder(
+            UnderlineInputBorder(
               borderSide: BorderSide(color: lightTheme.primary),
             ),
       );
@@ -118,11 +124,11 @@ class CustomTextFormField extends StatelessWidget {
 
 /// Extension on [CustomTextFormField] to facilitate inclusion of all types of border style etc
 extension TextFormFieldStyleHelper on CustomTextFormField {
-  static OutlineInputBorder get fillBlueGray => OutlineInputBorder(
+  static UnderlineInputBorder get fillBlueGray => UnderlineInputBorder(
         borderRadius: BorderRadius.circular(18.h),
         borderSide: BorderSide.none,
       );
-  static OutlineInputBorder get outlineGrayTL5 => OutlineInputBorder(
+  static UnderlineInputBorder get outlineGrayTL5 => UnderlineInputBorder(
         borderRadius: BorderRadius.circular(5.h),
         borderSide: const BorderSide(
           color: Color(0xFFB9BCC3),

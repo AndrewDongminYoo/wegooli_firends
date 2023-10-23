@@ -46,7 +46,7 @@ class VerificationWaitingScreen
                   Text('이름', style: textTheme.bodySmall),
                   SizedBox(height: 3.v),
                   CustomTextFormField(
-                      controller: controller.nameoneController, hintText: '홍길동')
+                      controller: controller.realName, hintText: '홍길동')
                 ],
               ),
               SizedBox(height: 30.v),
@@ -66,7 +66,7 @@ class VerificationWaitingScreen
                           SizedBox(height: 3.v),
                           CustomTextFormField(
                               width: 156.h,
-                              controller: controller.zipcodeController,
+                              controller: controller.birthday,
                               hintText: '940812'),
                           SizedBox(height: 3.v),
                           Text('만 26세 미만은 가입이 제한됩니다.',
@@ -77,75 +77,17 @@ class VerificationWaitingScreen
                     ),
                     Align(
                         alignment: Alignment.centerRight,
-                        child: Container(
-                          height: 39.v,
-                          width: 156.h,
-                          decoration: BoxDecoration(
-                            border: Border(
-                              bottom: BorderSide(
-                                  color: const Color(0xFFB0B2BC), width: 1.h),
-                            ),
-                          ),
-                        )),
-                    Align(
-                      alignment: Alignment.topRight,
-                      child: Padding(
-                        padding: EdgeInsets.only(top: 24.v, right: 76.h),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
+                        child: Column(
                           mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Padding(
-                              padding: EdgeInsets.only(top: 10.v, bottom: 8.v),
-                              child: const SizedBox(
-                                child: Divider(
-                                  color: Color(0xFFB0B2BC),
-                                ),
-                              ),
+                            CustomTextFormField(
+                              width: 156.h,
+                              controller: controller.socialId,
+                              hintText: '2 ⁕⁕⁕⁕⁕⁕',
                             ),
-                            Padding(
-                                padding: EdgeInsets.only(left: 10.h),
-                                child: Text('2', style: textTheme.bodyLarge)),
-                            CustomImageView(
-                                svgPath: Assets.svg.icoGlobe.path,
-                                height: 7.adaptSize,
-                                width: 7.adaptSize,
-                                margin: EdgeInsets.only(
-                                    left: 4.h, top: 6.v, bottom: 6.v)),
-                            CustomImageView(
-                                svgPath: Assets.svg.icoGlobe.path,
-                                height: 7.adaptSize,
-                                width: 7.adaptSize,
-                                margin: EdgeInsets.only(
-                                    left: 4.h, top: 6.v, bottom: 6.v)),
-                            CustomImageView(
-                                svgPath: Assets.svg.icoGlobe.path,
-                                height: 7.adaptSize,
-                                width: 7.adaptSize,
-                                margin: EdgeInsets.only(
-                                    left: 4.h, top: 6.v, bottom: 6.v)),
-                            CustomImageView(
-                                svgPath: Assets.svg.icoGlobe.path,
-                                height: 7.adaptSize,
-                                width: 7.adaptSize,
-                                margin: EdgeInsets.only(
-                                    left: 4.h, top: 6.v, bottom: 6.v)),
-                            CustomImageView(
-                                svgPath: Assets.svg.icoGlobe.path,
-                                height: 7.adaptSize,
-                                width: 7.adaptSize,
-                                margin: EdgeInsets.only(
-                                    left: 4.h, top: 6.v, bottom: 6.v)),
-                            CustomImageView(
-                                svgPath: Assets.svg.icoGlobe.path,
-                                height: 7.adaptSize,
-                                width: 7.adaptSize,
-                                margin: EdgeInsets.only(
-                                    left: 4.h, top: 6.v, bottom: 6.v))
                           ],
-                        ),
-                      ),
-                    )
+                        )),
                   ],
                 ),
               ),
@@ -156,7 +98,7 @@ class VerificationWaitingScreen
                   Text('휴대폰 정보', style: textTheme.bodySmall),
                   SizedBox(height: 3.v),
                   CustomTextFormField(
-                      controller: controller.phonenumberone,
+                      controller: controller.phoneNum,
                       hintText: '010-1234-5678',
                       textInputAction: TextInputAction.done)
                 ],
@@ -176,28 +118,10 @@ class VerificationWaitingScreen
                     fontWeight: FontWeight.w700,
                   )),
               SizedBox(height: 20.v),
-              Container(
-                padding: EdgeInsets.symmetric(vertical: 9.v),
-                decoration: BoxDecoration(
-                  border: Border(
-                    bottom: BorderSide(
-                      color: const Color(0xFFB0B2BC),
-                      width: 1.h,
-                    ),
-                  ),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text('인증번호 입력',
-                        style: textTheme.bodyLarge!.copyWith(
-                          color: const Color(0xFFB0B2BC),
-                        )),
-                    Text('3:00',
-                        style: textTheme.bodyLarge!
-                            .copyWith(color: lightTheme.primaryContainer))
-                  ],
-                ),
+              CustomTextFormField(
+                contentPadding: EdgeInsets.symmetric(vertical: 9.v),
+                hintText: '인증번호 입력',
+                suffix: const Text('3:00'),
               ),
               SizedBox(height: 5.v)
             ],

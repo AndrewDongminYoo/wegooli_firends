@@ -11,7 +11,7 @@ part 'schedule_model.g.dart';
   explicitToJson: true,
 )
 class ScheduleModel extends Equatable {
-  /// Returns a new [ScheduleModel] instance.
+  /// 새 [ScheduleModel] 인스턴스를 반환합니다.
   const ScheduleModel({
     this.seq,
     this.delYn,

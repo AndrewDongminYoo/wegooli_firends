@@ -17,7 +17,7 @@ class PrefUtils {
   // ignore: unused_field
   Box? _store;
 
-  /// for initialling app local storage
+  /// 앱 로컬 스토리지 초기화 (비동기)
   Future<void> initAppStorage() async {
     await Hive.initFlutter();
     _store = await Hive.openBox('WEGOOLI');

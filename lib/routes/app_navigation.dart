@@ -51,9 +51,8 @@ extension NavigationExtensions on BuildContext {
               extra: extra,
             );
 
+  /// 스택에 경로가 하나만 있는 경우 팝업 대신 초기 페이지로 이동합니다.
   void safePop() {
-    // If there is only one route on the stack, navigate to the initial
-    // page instead of popping.
     if (canPop()) {
       pop();
     } else {

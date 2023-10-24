@@ -14,7 +14,7 @@ class AppRouter {
 
   static void showSnackbar({String message = '', SnackType? type}) {
     final snackBar = SnackBar(
-      /// need to set following properties for best effect of awesome_snackbar_content
+      /// awesome_snackbar_content의 효과를 극대화하하기 위한 설정
       elevation: 0,
       behavior: SnackBarBehavior.floating,
       backgroundColor: Colors.transparent,

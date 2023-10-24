@@ -19,11 +19,10 @@ class AppStateNotifier extends ChangeNotifier {
   bool showSplashImage = true;
   String? _redirectLocation;
 
-  /// Determines whether the app will refresh and build again when a sign
-  /// in or sign out happens. This is useful when the app is launched or
-  /// on an unexpected logout. However, this must be turned off when we
-  /// intend to sign in/out and then navigate or perform any actions after.
-  /// Otherwise, this will trigger a refresh and interrupt the action(s).
+  /// 로그인 또는 로그아웃 시 앱을 새로 고치고 다시 빌드할지 여부를 결정합니다.
+  /// 앱을 시작하거나 예기치 않게 로그아웃할 때 유용합니다.
+  /// 그러나 로그인/로그아웃한 후 탐색하거나 다른 작업을 수행하려는 경우에는 이 옵션을 꺼야 합니다.
+  /// 그렇지 않으면 새로 고침이 트리거되어 작업이 중단됩니다.
   bool notifyOnAuthChange = true;
 
   bool get loading => showSplashImage;
@@ -40,13 +39,14 @@ class AppStateNotifier extends ChangeNotifier {
     final shouldUpdate = user?.id == null || user?.id != newUser.id;
     initialUser ??= newUser;
     user = newUser;
-    // Refresh the app on auth change unless explicitly marked otherwise.
-    // No need to update unless the user has changed.
+
+    /// 명시적으로 달리 표시하지 않는 한 인증 변경 시 앱을 새로 고칩니다.
+    /// 사용자가 변경되지 않는 한 업데이트할 필요가 없습니다.
     if (notifyOnAuthChange && shouldUpdate) {
       notifyListeners();
     }
-    // Once again mark the notifier as needing to update on auth change
-    // (in order to catch sign in / out events).
+
+    /// 다시 한 번 알림에 인증 변경 시 업데이트가 필요한 것으로 표시합니다(로그인/아웃 이벤트를 포착하기 위해).
     notifyOnAuthChange = true;
   }
 

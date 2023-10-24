@@ -1,8 +1,7 @@
 // 📦 Package imports:
-import 'package:get/state_manager.dart';
+import 'package:get/get_rx/get_rx.dart';
 
-/// DropdownData is common model
-/// used for setting data into dropdowns
+/// 드롭다운데이터는 데이터를 드롭다운으로 설정하는 데 사용되는 일반적인 모델입니다.
 class DropdownData {
   DropdownData({
     this.id,

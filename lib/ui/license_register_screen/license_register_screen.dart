@@ -3,20 +3,16 @@ import 'package:flutter/material.dart';
 
 // 📦 Package imports:
 import 'package:get/instance_manager.dart';
-import 'package:get/utils.dart';
 
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
-import '/gen/fonts.gen.dart';
 import '/theme/app_decoration.dart';
-import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/drop_down.dart';
 import '/widgets/elevated_button.dart';
-import '/widgets/icon_button.dart';
 import '/widgets/image_view.dart';
 import '/widgets/text_form_field.dart';
 import 'controller/license_register_controller.dart';
@@ -49,371 +45,17 @@ class LicenseRegisterScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         Container(
+                          width: 360.h,
                           height: 200.v,
-                          width: double.maxFinite,
                           padding: EdgeInsets.symmetric(
-                            horizontal: 40.h,
-                            vertical: 20.v,
-                          ),
-                          decoration: const BoxDecoration(
-                            color: Color(0xFFE2E8F6),
-                          ),
-                          child: Stack(
-                            alignment: Alignment.topLeft,
-                            children: [
-                              Align(
-                                child: Card(
-                                  clipBehavior: Clip.antiAlias,
-                                  elevation: 0,
-                                  margin: EdgeInsets.zero,
-                                  color: lightTheme.onPrimaryContainer,
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius:
-                                          BorderRadiusStyle.circleBorder10),
-                                  child: Container(
-                                    height: 160.v,
-                                    width: 262.h,
-                                    padding: EdgeInsets.symmetric(
-                                      horizontal: 10.h,
-                                      vertical: 9.v,
-                                    ),
-                                    decoration: BoxDecoration(
-                                        color: lightTheme.onPrimaryContainer,
-                                        borderRadius:
-                                            BorderRadiusStyle.circleBorder10),
-                                    child: Stack(
-                                      alignment: Alignment.center,
-                                      children: [
-                                        CustomImageView(
-                                          svgPath: Assets.svg.imgGooliCute.path,
-                                          height: 67.v,
-                                          width: 64.h,
-                                        ),
-                                        Align(
-                                          child: Container(
-                                            margin: EdgeInsets.only(left: 6.h),
-                                            padding: EdgeInsets.symmetric(
-                                                vertical: 13.v),
-                                            decoration: BoxDecoration(
-                                              image: DecorationImage(
-                                                image: Assets
-                                                    .images.imgGooliProfile
-                                                    .provider(),
-                                                fit: BoxFit.cover,
-                                              ),
-                                            ),
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.min,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                Container(
-                                                  margin: EdgeInsets.only(
-                                                      left: 69.h),
-                                                  padding: EdgeInsets.symmetric(
-                                                    horizontal: 4.h,
-                                                    vertical: 2.v,
-                                                  ),
-                                                  decoration: BoxDecoration(
-                                                      color: const Color(
-                                                          0xFF464A70),
-                                                      border: Border.all(
-                                                        color: lightTheme
-                                                            .onPrimaryContainer,
-                                                        width: 1.h,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadiusStyle
-                                                              .circleBorder10),
-                                                  child: Text(
-                                                    'B',
-                                                    style: textTheme.bodySmall!
-                                                        .copyWith(
-                                                      color: lightTheme.primary,
-                                                      fontSize: 9.fSize,
-                                                    ),
-                                                  ),
-                                                ),
-                                                SizedBox(height: 65.v),
-                                                Align(
-                                                  alignment:
-                                                      Alignment.centerRight,
-                                                  child: Row(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.end,
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .start,
-                                                    children: [
-                                                      Container(
-                                                        margin: EdgeInsets.only(
-                                                          top: 3.v,
-                                                          bottom: 5.v,
-                                                        ),
-                                                        padding: EdgeInsets
-                                                            .symmetric(
-                                                          horizontal: 4.h,
-                                                          vertical: 2.v,
-                                                        ),
-                                                        decoration:
-                                                            BoxDecoration(
-                                                                color: const Color(
-                                                                    0xFF464A70),
-                                                                border:
-                                                                    Border.all(
-                                                                  color: lightTheme
-                                                                      .onPrimaryContainer,
-                                                                  width: 1.h,
-                                                                ),
-                                                                borderRadius:
-                                                                    BorderRadiusStyle
-                                                                        .circleBorder10),
-                                                        child: Text(
-                                                          'C',
-                                                          style: textTheme
-                                                              .bodySmall!
-                                                              .copyWith(
-                                                            color: lightTheme
-                                                                .primary,
-                                                            fontSize: 9.fSize,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      CustomIconButton(
-                                                        height: 24.adaptSize,
-                                                        width: 24.adaptSize,
-                                                        child: CustomImageView(
-                                                          svgPath: Assets
-                                                              .svg
-                                                              .imgGooliCute
-                                                              .path,
-                                                        ),
-                                                      )
-                                                    ],
-                                                  ),
-                                                )
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                        Align(
-                                          alignment: Alignment.centerRight,
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsets.only(right: 28.h),
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.min,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  '자동차 운전면허증'.tr,
-                                                  style: AppTextStyle(
-                                                    color:
-                                                        const Color(0xFF686A71),
-                                                    fontSize: 7.fSize,
-                                                    fontFamily: FontFamily.suit,
-                                                  ),
-                                                ),
-                                                SizedBox(height: 6.v),
-                                                Text(
-                                                  '11-12-345678-90'.tr,
-                                                  style: textTheme.bodyMedium!
-                                                      .copyWith(
-                                                    color:
-                                                        const Color(0xFF686A71),
-                                                    fontSize: 13.fSize,
-                                                  ),
-                                                ),
-                                                SizedBox(height: 11.v),
-                                                Text(
-                                                  '홍길동'.tr,
-                                                  style: AppTextStyle(
-                                                    color:
-                                                        const Color(0xFF686A71),
-                                                    fontSize: 7.fSize,
-                                                    fontFamily: FontFamily.suit,
-                                                  ),
-                                                ),
-                                                SizedBox(height: 1.v),
-                                                Text(
-                                                  '000000-1000000'.tr,
-                                                  style: AppTextStyle(
-                                                    color:
-                                                        const Color(0xFF686A71),
-                                                    fontSize: 7.fSize,
-                                                    fontFamily: FontFamily.suit,
-                                                  ),
-                                                ),
-                                                Align(
-                                                  alignment:
-                                                      Alignment.centerRight,
-                                                  child: Container(
-                                                    width: 41.h,
-                                                    margin: EdgeInsets.only(
-                                                      top: 37.v,
-                                                      right: 18.h,
-                                                    ),
-                                                    child: Text(
-                                                      '20XX.01.01\n~20XX.12.31',
-                                                      maxLines: 2,
-                                                      overflow:
-                                                          TextOverflow.ellipsis,
-                                                      textAlign:
-                                                          TextAlign.right,
-                                                      style: AppTextStyle(
-                                                        color: const Color(
-                                                            0xFF686A71),
-                                                        fontSize: 7.fSize,
-                                                        fontFamily:
-                                                            FontFamily.suit,
-                                                        lineHeight: 1.43,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                                SizedBox(height: 8.v),
-                                                Text(
-                                                  '20XX.01.01'.tr,
-                                                  style: AppTextStyle(
-                                                    color:
-                                                        const Color(0xFF686A71),
-                                                    fontSize: 7.fSize,
-                                                    fontFamily: FontFamily.suit,
-                                                  ),
-                                                )
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                        Align(
-                                          alignment: Alignment.topLeft,
-                                          child: Container(
-                                            height: 17.v,
-                                            width: 48.h,
-                                            decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(2.h),
-                                              border: Border.all(
-                                                color: const Color(0xFF464A70),
-                                                width: 2.h,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Align(
-                                          alignment: Alignment.bottomCenter,
-                                          child: Container(
-                                            height: 17.v,
-                                            width: 58.h,
-                                            decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(2.h),
-                                              border: Border.all(
-                                                color: const Color(0xFF464A70),
-                                                width: 2.h,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Align(
-                                          alignment: Alignment.topRight,
-                                          child: Container(
-                                            height: 23.v,
-                                            width: 124.h,
-                                            margin: EdgeInsets.only(
-                                              top: 15.v,
-                                              right: 24.h,
-                                            ),
-                                            decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(2.h),
-                                              border: Border.all(
-                                                color: const Color(0xFF464A70),
-                                                width: 2.h,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Align(
-                                          alignment: Alignment.bottomRight,
-                                          child: Container(
-                                            height: 26.v,
-                                            width: 107.h,
-                                            margin: EdgeInsets.only(
-                                              right: 41.h,
-                                              bottom: 18.v,
-                                            ),
-                                            decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(2.h),
-                                              border: Border.all(
-                                                color: const Color(0xFF464A70),
-                                                width: 2.h,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Align(
-                                          alignment: Alignment.bottomLeft,
-                                          child: Container(
-                                            margin: EdgeInsets.only(left: 75.h),
-                                            padding: EdgeInsets.symmetric(
-                                              horizontal: 4.h,
-                                              vertical: 2.v,
-                                            ),
-                                            decoration: BoxDecoration(
-                                                color: const Color(0xFF464A70),
-                                                border: Border.all(
-                                                  color: lightTheme
-                                                      .onPrimaryContainer,
-                                                  width: 1.h,
-                                                ),
-                                                borderRadius: BorderRadiusStyle
-                                                    .circleBorder10),
-                                            child: Text(
-                                              'D',
-                                              style:
-                                                  textTheme.bodySmall!.copyWith(
-                                                color: lightTheme.primary,
-                                                fontSize: 9.fSize,
-                                              ),
-                                            ),
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Align(
-                                alignment: Alignment.topLeft,
-                                child: Container(
-                                  margin: EdgeInsets.only(top: 10.v),
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 5.h,
-                                    vertical: 2.v,
-                                  ),
-                                  decoration: BoxDecoration(
-                                      color: const Color(0xFF464A70),
-                                      border: Border.all(
-                                        color: lightTheme.onPrimaryContainer,
-                                        width: 1.h,
-                                      ),
-                                      borderRadius:
-                                          BorderRadiusStyle.circleBorder10),
-                                  child: Text(
-                                    'A',
-                                    style: theme.textTheme.bodySmall!.copyWith(
-                                      color: lightTheme.primary,
-                                      fontSize: 9.fSize,
-                                    ),
-                                  ),
-                                ),
-                              )
-                            ],
+                              horizontal: 49.h, vertical: 20.v),
+                          clipBehavior: Clip.antiAlias,
+                          decoration:
+                              const BoxDecoration(color: Color(0xFFE2E8F6)),
+                          child: CustomImageView(
+                            imagePath: Assets.images.imgLicenseExample.path,
+                            width: 262.h,
+                            height: 160.v,
                           ),
                         ),
                         SizedBox(height: 20.v),
@@ -527,7 +169,7 @@ class LicenseRegisterScreen extends StatelessWidget {
                                                       .spaceBetween,
                                               children: [
                                                 Text(
-                                                  '지역'.tr,
+                                                  '지역',
                                                   style: textTheme.bodyLarge!
                                                       .copyWith(
                                                     color:
@@ -584,7 +226,6 @@ class LicenseRegisterScreen extends StatelessWidget {
                                     left: 8.h,
                                     top: 19.v,
                                   ),
-                                  hintText: '11',
                                   options: controller
                                       .licenseRegister.value.choices1.value,
                                   onChanged: (value) {
@@ -596,11 +237,11 @@ class LicenseRegisterScreen extends StatelessWidget {
                         CustomTextFormField(
                             controller: controller.licenseNums,
                             margin: EdgeInsets.only(
-                              left: 16.h,
+                              left: 19.h,
+                              right: 19.h,
                               top: 10.v,
-                              right: 16.h,
                             ),
-                            hintText: 'msg7'),
+                            hintText: '면허증 번호를 입력하세요.'),
                         SizedBox(height: 30.v),
                         SizedBox(
                           height: 58.v,
@@ -623,7 +264,7 @@ class LicenseRegisterScreen extends StatelessWidget {
                                     SizedBox(height: 3.v),
                                     CustomTextFormField(
                                         controller: controller.validPeriod,
-                                        hintText: '적성기간 만료일(숫자만)을 입력해주세요.')
+                                        hintText: '적성기간 만료일(YYMMDD)을 입력해주세요.')
                                   ],
                                 ),
                               ),
@@ -676,7 +317,7 @@ class LicenseRegisterScreen extends StatelessWidget {
                                     SizedBox(height: 3.v),
                                     CustomTextFormField(
                                       controller: controller.firstIssued,
-                                      hintText: '면허 발급 일자(숫자만)를 입력해주세요.',
+                                      hintText: '면허 발급 일자(YYMMDD)를 입력해주세요.',
                                       textInputAction: TextInputAction.done,
                                     )
                                   ],

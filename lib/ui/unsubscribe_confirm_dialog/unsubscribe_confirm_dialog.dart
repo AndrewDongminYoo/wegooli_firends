@@ -1,9 +1,11 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+// 📦 Package imports:
+import 'package:go_router/go_router.dart';
+
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
-import '/routes/app_router.dart';
 import '/theme/app_decoration.dart';
 import '/theme/button_styles.dart';
 import '/theme/custom_text_style.dart';
@@ -68,7 +70,7 @@ class UnsubscribeConfirmDialog extends StatelessWidget {
                   .noEffect,
               buttonTextStyle:
                   textTheme.titleMedium!.copyWith(fontSize: 16.fSize),
-              onTap: () => AppRouter.back(result: false),
+              onTap: () => GoRouter.of(context).pop(false),
             ),
             CustomElevatedButton(
               width: 145.h,
@@ -81,7 +83,7 @@ class UnsubscribeConfirmDialog extends StatelessWidget {
                   .noEffect,
               buttonTextStyle:
                   textTheme.titleMedium!.copyWith(fontSize: 16.fSize),
-              onTap: () => AppRouter.back(result: true),
+              onTap: () => GoRouter.of(context).pop(true),
             ),
           ],
         ),

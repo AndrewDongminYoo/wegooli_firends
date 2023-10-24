@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 
 // 📦 Package imports:
 import 'package:get/instance_manager.dart';
+import 'package:go_router/go_router.dart';
 
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
-import '/routes/app_router.dart';
 import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/elevated_button.dart';
@@ -43,7 +43,7 @@ class SendInvitationDialog extends StatelessWidget {
                 size: 15.adaptSize,
                 alignment: Alignment.centerRight,
                 margin: EdgeInsets.only(top: 20.v, right: 20.h),
-                onTap: AppRouter.back,
+                onTap: GoRouter.of(context).pop,
               ),
               Padding(
                 padding: EdgeInsets.only(left: 20.h, top: 6.v),

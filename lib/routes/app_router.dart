@@ -1,49 +1,33 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+// 📦 Package imports:
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
+
+// 🌎 Project imports:
+import '/gen/colors.gen.dart';
+
 class AppRouter {
-  static GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
-  static GlobalKey<ScaffoldMessengerState> messengerKey =
-      GlobalKey<ScaffoldMessengerState>();
+  // ignore: type_annotate_public_apis
+  static var key = GlobalKey<NavigatorState>();
+  static BuildContext get _context => key.currentContext!;
 
-  static BuildContext? get context => navigatorKey.currentContext;
-  static NavigatorState? get navigator => navigatorKey.currentState;
-  static ScaffoldMessengerState? get messenger => messengerKey.currentState;
-
-  static Future<dynamic> toNamed(String routeName, {dynamic arguments}) async {
-    return navigator?.pushNamed(routeName, arguments: arguments);
-  }
-
-  static dynamic back<T>({T? result}) {
-    return navigator?.pop<T>(result);
-  }
-
-  static Future<dynamic> offNamedUntil(String routeName,
-      {bool routePredicate = false, dynamic arguments}) async {
-    return navigator?.pushNamedAndRemoveUntil(
-        routeName, (route) => routePredicate,
-        arguments: arguments);
-  }
-
-  static Future<dynamic> offNamed(String routeName, {dynamic arguments}) async {
-    return navigator?.popAndPushNamed(routeName, arguments: arguments);
-  }
-
-  static void showSnackbar({String message = ''}) {
+  static void showSnackbar({String message = '', SnackType? type}) {
     final snackBar = SnackBar(
-      content: Text(
-        message,
-        style: const TextStyle(
-          color: Colors.black,
-          fontWeight: FontWeight.w300,
-          fontSize: 14,
-        ),
+      /// need to set following properties for best effect of awesome_snackbar_content
+      elevation: 0,
+      behavior: SnackBarBehavior.floating,
+      backgroundColor: Colors.transparent,
+      content: AwesomeSnackbarContent(
+        title: message,
+        message: message,
+        contentType: type.type,
       ),
-      margin: const EdgeInsets.symmetric(horizontal: 10),
-      duration: const Duration(seconds: 3),
-      backgroundColor: Colors.grey.withOpacity(0.2),
     );
-    messenger!.showSnackBar(snackBar);
+
+    ScaffoldMessenger.of(_context)
+      ..hideCurrentSnackBar()
+      ..showSnackBar(snackBar);
   }
 
   static Future<T?> showDialog<T>({
@@ -58,16 +42,16 @@ class AppRouter {
     TraversalEdgeBehavior? traversalEdgeBehavior,
   }) {
     final themes = InheritedTheme.capture(
-      from: context!,
+      from: _context,
       to: Navigator.of(
-        context!,
+        _context,
         rootNavigator: useRootNavigator,
       ).context,
     );
 
-    return Navigator.of(context!, rootNavigator: useRootNavigator)
+    return Navigator.of(_context, rootNavigator: useRootNavigator)
         .push<T>(DialogRoute<T>(
-      context: context!,
+      context: _context,
       builder: builder,
       barrierColor: barrierColor,
       barrierDismissible: barrierDismissible,
@@ -79,5 +63,23 @@ class AppRouter {
       traversalEdgeBehavior:
           traversalEdgeBehavior ?? TraversalEdgeBehavior.closedLoop,
     ));
+  }
+}
+
+enum SnackType {
+  help,
+  failure,
+  success,
+  warning,
+}
+
+extension SnackBarType on SnackType? {
+  ContentType get type {
+    return switch (this) {
+      SnackType.failure => ContentType('failure', AppColors.statusError),
+      SnackType.success => ContentType('success', AppColors.statusPass),
+      SnackType.warning => ContentType('warning', AppColors.statusWarn),
+      _ => ContentType('help', AppColors.wegooli),
+    };
   }
 }

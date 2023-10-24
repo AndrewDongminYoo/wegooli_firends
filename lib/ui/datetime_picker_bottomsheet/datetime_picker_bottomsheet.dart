@@ -8,7 +8,6 @@ import 'package:get/utils.dart';
 // 🌎 Project imports:
 import '/core/utils/datetime_utils.dart';
 import '/core/utils/list_extensions.dart';
-import '/core/utils/logger.dart';
 import '/core/utils/size_utils.dart';
 import '/data/custom/schedule.dart';
 import '/gen/colors.gen.dart';
@@ -110,7 +109,6 @@ class _DatetimePickerBottomSheetState extends State<DatetimePickerBottomSheet> {
               dividerColor: AppColors.separationBar,
               materialGapSize: 0,
               expansionCallback: (tapped, expand) {
-                logger.d('panelIndex: $tapped &isExpanded: $expand');
                 setState(() {
                   openIdx = expand ? tapped : -1;
                 });
@@ -159,8 +157,6 @@ class _DatetimePickerBottomSheetState extends State<DatetimePickerBottomSheet> {
                           backgroundColor: Colors.white,
                           initialDateTime: item.date,
                           onDateTimeChanged: (DateTime changed) {
-                            logger.d(
-                                '${item.title} 설정 : ${changed.formatClient}');
                             setState(() {
                               // 예약시작시간 설정이면
                               if (index == 0) {

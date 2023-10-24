@@ -35,6 +35,9 @@ render.experimental.xml
 firebase_options.dart
 google-services.json
 
+# Constants
+lib/core/constants/
+
 # Android Profiling
 *.hprof
 

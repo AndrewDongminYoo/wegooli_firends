@@ -1,11 +1,9 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:get/route_manager.dart';
-
 // 🌎 Project imports:
 import '/gen/assets.gen.dart';
+import '/routes/app_router.dart';
 
 class ProgressDialogUtils {
   static bool isProgressVisible = false;
@@ -19,24 +17,26 @@ class ProgressDialogUtils {
   /// 이 메서드는 Get 패키지를 사용하여 대화 상자를 표시합니다.
   static void showProgressDialog({bool isCancellable = false}) {
     if (!isProgressVisible) {
-      Get.dialog(
-        Center(
-          child: customLottie.lottie(
-            height: 250,
-            width: 250,
-          ),
-        ),
+      AppRouter.showDialog(
+        builder: (_) {
+          return Center(
+            child: customLottie.lottie(
+              height: 250,
+              width: 250,
+            ),
+          );
+        },
       );
     }
     isProgressVisible = true;
   }
 
   /// 표시된 진행률 대화 상자를 숨깁니다.
-  /// 진행률 대화 상자가 표시되면 이 함수는 [Get.back()]을 호출하여 대화 상자를 해제합니다.
+  /// 진행률 대화 상자가 표시되면 이 함수는 [Go.back()]을 호출하여 대화 상자를 해제합니다.
   /// 대화 상자를 숨긴 후 [isProgressVisible] 플래그는 `false`로 설정됩니다.
   static void hideProgressDialog() {
     if (isProgressVisible) {
-      Get.back();
+      AppRouter.back();
     }
     isProgressVisible = false;
   }

@@ -1,11 +1,5 @@
-// 🐦 Flutter imports:
-import 'package:flutter/material.dart';
-
-// 📦 Package imports:
-import 'package:get/route_manager.dart';
-import 'package:get/utils.dart';
-
 // 🌎 Project imports:
+import '/routes/app_router.dart';
 import '/widgets/information_dialog.dart';
 
 class ServerException implements Exception {}
@@ -17,11 +11,7 @@ class NetworkException implements Exception {}
 /// can be used for throwing [NoInternetException]
 class NoInternetException implements Exception {
   NoInternetException([String message = 'NoInternetException Occurred']) {
-    Get.showSnackbar(GetSnackBar(
-      title: message,
-      messageText: Text(message),
-      duration: 1.seconds,
-    ));
+    AppRouter.showSnackbar(message: message);
     _message = message;
   }
 
@@ -54,8 +44,8 @@ class AuthFailureException implements Exception {
         // '사용자가 인증되지 않았습니다. 회원가입이나 로그인이 필요합니다.',
         // '사용자ID가 없습니다. 앱 재실행 후 다시 로그인 해보세요.',
         ) {
-    Get.dialog(
-      const InformationalDialog(
+    AppRouter.showDialog(
+      builder: (_) => const InformationalDialog(
         information: '로그인 후 사용해주세요.',
       ),
     );

@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 
 // 📦 Package imports:
 import 'package:catcher_2/catcher_2.dart';
-import 'package:get/route_manager.dart';
 
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/fonts.gen.dart';
+import '/routes/app_router.dart';
 import '/theme/custom_text_style.dart';
 import '/theme/text_styles.dart';
 import '/theme/theme_helper.dart';
@@ -30,16 +30,14 @@ class RouteModal extends StatelessWidget {
       onTap: () {
         try {
           dialog != null
-              ? Get.dialog(
-                  dialog!,
+              ? AppRouter.showDialog(
+                  builder: (_) => dialog!,
                   barrierDismissible: true,
                   useSafeArea: true,
                 )
               : Navigator.of(context).push(
-                  GetModalBottomSheetRoute(
+                  ModalBottomSheetRoute(
                     builder: (_) => bottomSheet!,
-                    isPersistent: true,
-                    theme: Theme.of(context),
                     isScrollControlled: true,
                     barrierLabel: MaterialLocalizations.of(context)
                         .modalBarrierDismissLabel,

@@ -2,11 +2,9 @@
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
-import '/core/utils/size_utils.dart';
 import '/gen/colors.gen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/custom_text_style.dart';
-import '/theme/text_styles.dart';
 
 /// 시각적 밀도의 기본값은 세로 및 가로 밀도 모두 0이며, 이는 [VisualDensity.standard]에 해당합니다.
 /// 텍스트 크기, 아이콘 크기 또는 패딩 값에는 영향을 미치지 않습니다.
@@ -21,7 +19,7 @@ ButtonStyle get defaultButtontStyle {
     /// 예를 들어, [ElevatedButton]에 적용하는 경우 탭할 때 [ElevatedButton]의 기본 잉크 스플래시인 [ripple] 잉크 스플래시를 그리지 않습니다:
     splashFactory: NoSplash.splashFactory,
     textStyle: AppTextStyle(
-      fontSize: TextSize.lg.fSize,
+      fontSize: TextSize.lg,
       fontWeight: FontWeight.bold,
     ),
 

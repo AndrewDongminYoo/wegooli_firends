@@ -57,40 +57,40 @@ const ColorScheme lightTheme = ColorScheme.light(
 final TextTheme textTheme = TextTheme(
   bodyLarge: AppTextStyle(
     color: lightTheme.onPrimary,
-    fontSize: 16.fSize,
+    fontSize: 16,
   ),
   bodyMedium: AppTextStyle(
     color: lightTheme.onPrimary,
-    fontSize: 14.fSize,
+    fontSize: 14,
   ),
   bodySmall: AppTextStyle(
     color: lightTheme.onPrimary,
-    fontSize: 12.fSize,
+    fontSize: 12,
   ),
   headlineLarge: AppTextStyle(
     color: lightTheme.onPrimary,
-    fontSize: 32.fSize,
+    fontSize: 32,
     fontFamily: FontFamily.jalnan,
     fontWeight: FontWeight.bold,
   ),
   headlineSmall: AppTextStyle(
     color: Colors.black,
-    fontSize: 24.fSize,
+    fontSize: 24,
     fontWeight: FontWeight.bold,
   ),
   labelLarge: AppTextStyle(
     color: const Color(0xFFDB4646),
-    fontSize: 12.fSize,
+    fontSize: 12,
     fontWeight: FontWeight.w500,
   ),
   titleMedium: AppTextStyle(
     color: lightTheme.onPrimary,
-    fontSize: 16.fSize,
+    fontSize: 16,
     fontWeight: FontWeight.bold,
   ),
   titleSmall: AppTextStyle(
     color: lightTheme.onPrimary,
-    fontSize: 14.fSize,
+    fontSize: 14,
     fontWeight: FontWeight.w500,
   ),
 );

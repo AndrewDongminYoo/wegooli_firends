@@ -29,122 +29,122 @@ import '/ui/unsubscribe_screen/unsubscribe_screen.dart';
 
 final List<AppRoute> pages = [
   AppRoute(
-    name: VerificationWaitingScreen.routeName,
+    path: VerificationWaitingScreen.routeName,
     builder: (context, params) => const VerificationWaitingScreen(),
   ),
   AppRoute(
-    name: SignupCompleteScreen.routeName,
+    path: SignupCompleteScreen.routeName,
     builder: (context, params) => const SignupCompleteScreen(),
   ),
   AppRoute(
-    name: EmptyNoticeScreen.routeName,
+    path: EmptyNoticeScreen.routeName,
     builder: (context, params) => const EmptyNoticeScreen(),
     requireAuth: true,
   ),
   AppRoute(
-    name: SigninPageScreen.routeName,
+    path: SigninPageScreen.routeName,
     builder: (context, params) => const SigninPageScreen(),
   ),
   AppRoute(
-    name: VerificationEmptyScreen.routeName,
+    path: VerificationEmptyScreen.routeName,
     builder: (context, params) => const VerificationEmptyScreen(),
   ),
   AppRoute(
-    name: PersonalInfoFormZipCodeScreen.routeName,
+    path: PersonalInfoFormZipCodeScreen.routeName,
     builder: (context, params) => const PersonalInfoFormZipCodeScreen(),
   ),
   AppRoute(
-    name: SplashScreenOne.routeName,
+    path: SplashScreenOne.routeName,
     builder: (context, params) => const SplashScreenOne(),
   ),
   AppRoute(
-    name: SplashScreenTwo.routeName,
+    path: SplashScreenTwo.routeName,
     builder: (context, params) => const SplashScreenTwo(),
   ),
   AppRoute(
-    name: LicenseRegisterScreen.routeName,
+    path: LicenseRegisterScreen.routeName,
     builder: (context, params) => const LicenseRegisterScreen(),
   ),
   AppRoute(
-    name: VerificationFilledScreen.routeName,
+    path: VerificationFilledScreen.routeName,
     builder: (context, params) => const VerificationFilledScreen(),
   ),
   AppRoute(
-    name: HomePageScreen.routeName,
+    path: HomePageScreen.routeName,
     builder: (context, params) => const HomePageScreen(),
     requireAuth: true,
   ),
   AppRoute(
-    name: SchedulesScreen.routeName,
+    path: SchedulesScreen.routeName,
     builder: (context, params) => const SchedulesScreen(),
     requireAuth: true,
   ),
   AppRoute(
-    name: SmartKeyScreen.routeName,
+    path: SmartKeyScreen.routeName,
     builder: (context, params) => const SmartKeyScreen(),
     requireAuth: true,
   ),
   AppRoute(
-    name: MyPageScreen.routeName,
+    path: MyPageScreen.routeName,
     builder: (context, params) => const MyPageScreen(),
     requireAuth: true,
   ),
   AppRoute(
-    name: CardListScreen.routeName,
+    path: CardListScreen.routeName,
     builder: (context, params) => const CardListScreen(),
     requireAuth: true,
   ),
   AppRoute(
-    name: AnotherIsUsingScreen.routeName,
+    path: AnotherIsUsingScreen.routeName,
     builder: (context, params) => const AnotherIsUsingScreen(),
     requireAuth: true,
   ),
   AppRoute(
-    name: NoSubscriptionScreen.routeName,
+    path: NoSubscriptionScreen.routeName,
     builder: (context, params) => const NoSubscriptionScreen(),
     requireAuth: true,
   ),
   AppRoute(
-    name: SubscribeInfoScreen.routeName,
+    path: SubscribeInfoScreen.routeName,
     builder: (context, params) => const SubscribeInfoScreen(),
     requireAuth: true,
   ),
   AppRoute(
-    name: ContactUsEmptyHistoryScreen.routeName,
+    path: ContactUsEmptyHistoryScreen.routeName,
     builder: (context, params) => const ContactUsEmptyHistoryScreen(),
     requireAuth: true,
   ),
   AppRoute(
-    name: ContactUsHistoryScreen.routeName,
+    path: ContactUsHistoryScreen.routeName,
     builder: (context, params) => const ContactUsHistoryScreen(),
     requireAuth: true,
   ),
   AppRoute(
-    name: UnsubscribeScreen.routeName,
+    path: UnsubscribeScreen.routeName,
     builder: (context, params) => const UnsubscribeScreen(),
     requireAuth: true,
   ),
   AppRoute(
-    name: CardRegisterScreen.routeName,
+    path: CardRegisterScreen.routeName,
     builder: (context, params) => const CardRegisterScreen(),
   ),
   AppRoute(
-    name: NoticesScreen.routeName,
+    path: NoticesScreen.routeName,
     builder: (context, params) => const NoticesScreen(),
     requireAuth: true,
   ),
   AppRoute(
-    name: OneOnOneScreen.routeName,
+    path: OneOnOneScreen.routeName,
     builder: (context, params) => const OneOnOneScreen(),
     requireAuth: true,
   ),
   AppRoute(
-    name: ExpiringSubscriptionsScreen.routeName,
+    path: ExpiringSubscriptionsScreen.routeName,
     builder: (context, params) => const ExpiringSubscriptionsScreen(),
     requireAuth: true,
   ),
   AppRoute(
-    name: AppNavigationScreen.routeName,
+    path: AppNavigationScreen.routeName,
     builder: (context, params) => const AppNavigationScreen(),
   ),
 ];

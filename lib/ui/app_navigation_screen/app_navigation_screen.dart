@@ -7,16 +7,12 @@ import 'package:get/instance_manager.dart';
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/theme/theme_helper.dart';
-import '/ui/appointment_all_collapsed_bottomsheet/appointment_all_collapsed_bottomsheet.dart';
-import '/ui/appointment_all_collapsed_bottomsheet/controller/appointment_all_collapsed_controller.dart';
-import '/ui/appointment_end_expanded_bottomsheet/appointment_end_expanded_bottomsheet.dart';
-import '/ui/appointment_end_expanded_bottomsheet/controller/appointment_end_expanded_controller.dart';
-import '/ui/appointment_start_expanded_bottomsheet/appointment_start_expanded_bottomsheet.dart';
-import '/ui/appointment_start_expanded_bottomsheet/controller/appointment_start_expanded_controller.dart';
 import '/ui/card_list_screen/card_list_screen.dart';
 import '/ui/card_register_screen/card_register_screen.dart';
 import '/ui/contact_us_empty_history_screen/contact_us_empty_history_screen.dart';
 import '/ui/contact_us_inquiry_history_expanded_tab_container_screen/contact_us_inquiry_history_expanded_tab_container_screen.dart';
+import '/ui/datetime_picker_bottomsheet/controller/datetime_picker_controller.dart';
+import '/ui/datetime_picker_bottomsheet/datetime_picker_bottomsheet.dart';
 import '/ui/empty_notice_screen/empty_notice_screen.dart';
 import '/ui/expiring_subscriptions_screen/expiring_subscriptions_screen.dart';
 import '/ui/home_page_screen/home_page_screen.dart';
@@ -29,8 +25,6 @@ import '/ui/notices_screen/notices_screen.dart';
 import '/ui/one_on_one_screen/one_on_one_screen.dart';
 import '/ui/personal_info_form_zip_code_screen/personal_info_form_zip_code_screen.dart';
 import '/ui/scheduled_date_dialog/controller/scheduled_date_controller.dart';
-import '/ui/schedules_send_invitation_leader_only_dialog/controller/schedules_send_invitation_leader_only_controller.dart';
-import '/ui/schedules_send_invitation_leader_only_dialog/schedules_send_invitation_leader_only_dialog.dart';
 import '/ui/schedules_team_is_not_full_screen/schedules_team_is_not_full_screen.dart';
 import '/ui/send_invitation_leader_only_dialog/controller/send_invitation_leader_only_controller.dart';
 import '/ui/send_invitation_leader_only_dialog/send_invitation_leader_only_dialog.dart';
@@ -64,6 +58,11 @@ class AppNavigationScreen extends StatelessWidget {
           child: Column(
             children: [
               const GatewayTitle(),
+              const CheckYourAppUI(),
+              Padding(
+                  padding: getPadding(top: 5),
+                  child: Divider(
+                      height: 5.v, thickness: 5.v, color: Palette.blueGray400)),
               Expanded(
                 child: SingleChildScrollView(
                   child: Container(
@@ -87,26 +86,10 @@ class AppNavigationScreen extends StatelessWidget {
                           ),
                         ),
                         RouteModal(
-                          title: 'Appointment / Collapsed',
-                          bottomSheet: AppointmentAllCollapsedBottomsheet(
+                          title: 'Appointment Picker',
+                          bottomSheet: DatetimePickerBottomSheet(
                             Get.put(
-                              AppointmentAllCollapsedController(),
-                            ),
-                          ),
-                        ),
-                        RouteModal(
-                          title: 'Appointment / Start',
-                          bottomSheet: AppointmentStartExpandedBottomsheet(
-                            Get.put(
-                              AppointmentStartExpandedController(),
-                            ),
-                          ),
-                        ),
-                        RouteModal(
-                          title: 'Appointment / End',
-                          bottomSheet: AppointmentEndExpandedBottomsheet(
-                            Get.put(
-                              AppointmentEndExpandedController(),
+                              DatetimePickerController(),
                             ),
                           ),
                         ),
@@ -115,14 +98,6 @@ class AppNavigationScreen extends StatelessWidget {
                           dialog: UnsubscribeConfirmDialog(
                             Get.put(
                               UnsubscribeConfirmController(),
-                            ),
-                          ),
-                        ),
-                        RouteModal(
-                          title: 'Send Invitation',
-                          dialog: SchedulesSendInvitationDialog(
-                            Get.put(
-                              SchedulesSendInvitationLeaderOnlyController(),
                             ),
                           ),
                         ),

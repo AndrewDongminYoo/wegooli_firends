@@ -5,7 +5,9 @@ import 'package:get/instance_manager.dart';
 // 🌎 Project imports:
 import '/core/network/network_info.dart';
 import '/core/utils/pref_utils.dart';
-import '/data/apiClient/api_client.dart';
+import '/data/client/api_client.dart';
+
+final initialBinding = InitialBindings();
 
 class InitialBindings extends Bindings {
   @override

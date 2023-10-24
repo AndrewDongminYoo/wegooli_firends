@@ -1,4 +1,5 @@
 // 🐦 Flutter imports:
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
@@ -39,15 +40,15 @@ class MyApp extends StatelessWidget {
       },
       defaultTransition: Transition.cupertino,
       locale: locale,
-      fallbackLocale: Get.deviceLocale,
+      fallbackLocale: PlatformDispatcher.instance.locale,
       supportedLocales: Localized.supportedLocales,
       localizationsDelegates: Localized.localizationsDelegates,
-      initialBinding: InitialBindings(),
+      initialBinding: initialBinding,
       logWriterCallback: (String text, {bool isError = false}) =>
           isError ? logger.e(text) : logger.d(text),
       navigatorObservers: [rootObserver],
-      initialRoute: initialRoute,
-      getPages: AppRoutes.pages,
+      initialRoute: '/app_navigation',
+      getPages: getPages,
     );
   }
 }

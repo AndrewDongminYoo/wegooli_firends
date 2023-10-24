@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
-import 'package:get/state_manager.dart';
+import 'package:get/instance_manager.dart';
 
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
@@ -13,13 +13,13 @@ import '/widgets/elevated_button.dart';
 import '/widgets/text_form_field.dart';
 import 'controller/identity_verification_waiting_controller.dart';
 
-class VerificationWaitingScreen
-    extends GetWidget<VerificationWaitingController> {
+class VerificationWaitingScreen extends StatelessWidget {
   const VerificationWaitingScreen({super.key});
   static const routeName = '/verification_waiting';
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(VerificationWaitingController());
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,

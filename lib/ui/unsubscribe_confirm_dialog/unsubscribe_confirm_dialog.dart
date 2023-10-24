@@ -10,13 +10,10 @@ import '/theme/custom_text_style.dart';
 import '/theme/text_styles.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/elevated_button.dart';
-import 'controller/unsubscribe_confirm_controller.dart';
 
 // ignore_for_file: must_be_immutable
 class UnsubscribeConfirmDialog extends StatelessWidget {
-  UnsubscribeConfirmDialog(this.controller, {super.key});
-
-  UnsubscribeConfirmController controller;
+  UnsubscribeConfirmDialog({super.key});
 
   @override
   Widget build(BuildContext context) {

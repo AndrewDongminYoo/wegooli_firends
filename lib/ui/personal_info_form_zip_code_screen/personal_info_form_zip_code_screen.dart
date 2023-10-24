@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
-import 'package:get/state_manager.dart';
+import 'package:get/instance_manager.dart';
 
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
@@ -15,13 +15,13 @@ import '/widgets/image_view.dart';
 import '/widgets/text_form_field.dart';
 import 'controller/personal_info_form_zip_code_controller.dart';
 
-class PersonalInfoFormZipCodeScreen
-    extends GetWidget<PersonalInfoFormZipCodeController> {
+class PersonalInfoFormZipCodeScreen extends StatelessWidget {
   const PersonalInfoFormZipCodeScreen({super.key});
   static const routeName = '/form_zip_code';
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(PersonalInfoFormZipCodeController());
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,

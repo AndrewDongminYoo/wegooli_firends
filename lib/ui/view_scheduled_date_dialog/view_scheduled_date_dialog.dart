@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
+import 'package:get/instance_manager.dart';
 import 'package:get/state_manager.dart';
 
 // 🌎 Project imports:
@@ -16,9 +17,9 @@ import '/widgets/image_view.dart';
 
 // ignore_for_file: must_be_immutable
 class ViewScheduledDateDialog extends StatelessWidget {
-  ViewScheduledDateDialog(this.controller, {super.key});
+  ViewScheduledDateDialog({super.key});
 
-  ScheduledDateController controller;
+  ScheduledDateController controller = Get.put(ScheduledDateController());
 
   @override
   Widget build(BuildContext context) {

@@ -1,6 +1,9 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+// 📦 Package imports:
+import 'package:get/instance_manager.dart';
+
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
@@ -10,13 +13,13 @@ import '/theme/theme_helper.dart';
 import '/widgets/elevated_button.dart';
 import '/widgets/image_view.dart';
 import '/widgets/text_form_field.dart';
-import 'controller/send_invitation_leader_only_controller.dart';
+import 'controller/send_invitation_controller.dart';
 
 // ignore_for_file: must_be_immutable
 class SendInvitationDialog extends StatelessWidget {
-  SendInvitationDialog(this.controller, {super.key});
+  SendInvitationDialog({super.key});
 
-  SendInvitationLeaderOnlyController controller;
+  InvitationController controller = Get.put(InvitationController());
 
   @override
   Widget build(BuildContext context) {

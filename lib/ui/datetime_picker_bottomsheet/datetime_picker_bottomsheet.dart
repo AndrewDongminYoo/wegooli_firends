@@ -19,17 +19,14 @@ import '/theme/custom_text_style.dart';
 import '/theme/text_styles.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/elevated_button.dart';
-import 'controller/datetime_picker_controller.dart';
 import 'models/datetime_picker_model.dart';
 
 class DatetimePickerBottomSheet extends StatefulWidget {
-  const DatetimePickerBottomSheet(
-    this.controller, {
+  const DatetimePickerBottomSheet({
     super.key,
     this.schedule,
   });
 
-  final DatetimePickerController controller;
   // 수정할 타겟 스케줄
   final Schedule? schedule;
 

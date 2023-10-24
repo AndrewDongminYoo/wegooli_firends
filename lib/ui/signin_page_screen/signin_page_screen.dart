@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
-import 'package:get/state_manager.dart';
+import 'package:get/instance_manager.dart';
 
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
@@ -13,12 +13,13 @@ import '/widgets/image_view.dart';
 import '/widgets/text_form_field.dart';
 import 'controller/signin_page_controller.dart';
 
-class SigninPageScreen extends GetWidget<SigninPageController> {
+class SigninPageScreen extends StatelessWidget {
   const SigninPageScreen({super.key});
   static const routeName = '/signin';
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(SigninPageController());
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,

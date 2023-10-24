@@ -21,7 +21,7 @@ class UserprofileItemWidget extends StatelessWidget {
     super.key,
   });
 
-  UserprofileItemModel userprofileItem;
+  ProfileModel userprofileItem;
 
   SchedulesController controller = Get.find<SchedulesController>();
 

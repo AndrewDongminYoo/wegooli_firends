@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
-import 'package:get/state_manager.dart';
+import 'package:get/instance_manager.dart';
 
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
@@ -15,12 +15,13 @@ import '/widgets/image_view.dart';
 import '/widgets/text_form_field.dart';
 import 'controller/identity_verification_filled_controller.dart';
 
-class VerificationFilledScreen extends GetWidget<VerificationFilledController> {
+class VerificationFilledScreen extends StatelessWidget {
   const VerificationFilledScreen({super.key});
   static const routeName = '/verification_filled';
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(VerificationFilledController());
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,

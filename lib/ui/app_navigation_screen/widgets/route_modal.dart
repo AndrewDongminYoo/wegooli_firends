@@ -7,7 +7,6 @@ import 'package:catcher_2/catcher_2.dart';
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/fonts.gen.dart';
-import '/routes/app_router.dart';
 import '/theme/custom_text_style.dart';
 import '/theme/text_styles.dart';
 import '/theme/theme_helper.dart';
@@ -30,10 +29,15 @@ class RouteModal extends StatelessWidget {
       onTap: () {
         try {
           dialog != null
-              ? AppRouter.showDialog(
-                  builder: (_) => dialog!,
+              ? showDialog(
+                  context: context,
+                  builder: (_) {
+                    return Theme(data: theme, child: dialog!);
+                  },
                   barrierDismissible: true,
-                  useSafeArea: true,
+                  barrierLabel: MaterialLocalizations.of(context)
+                      .modalBarrierDismissLabel,
+                  barrierColor: Colors.black54,
                 )
               : Navigator.of(context).push(
                   ModalBottomSheetRoute(

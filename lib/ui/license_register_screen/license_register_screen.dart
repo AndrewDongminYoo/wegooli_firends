@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
-import 'package:get/state_manager.dart';
+import 'package:get/instance_manager.dart';
 import 'package:get/utils.dart';
 
 // 🌎 Project imports:
@@ -21,12 +21,13 @@ import '/widgets/image_view.dart';
 import '/widgets/text_form_field.dart';
 import 'controller/license_register_controller.dart';
 
-class LicenseRegisterScreen extends GetWidget<LicenseRegisterController> {
+class LicenseRegisterScreen extends StatelessWidget {
   const LicenseRegisterScreen({super.key});
   static const routeName = '/license_register';
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(LicenseRegisterController());
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,

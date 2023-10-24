@@ -23,5 +23,5 @@ class ScheduledDateModel {
   ]);
 
   Rx<List<ListviewItemModel>> listItems =
-      Rx(List.generate(3, (index) => ListviewItemModel()));
+      Rx(List.generate(3, (_) => ListviewItemModel()));
 }

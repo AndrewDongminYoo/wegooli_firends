@@ -12,13 +12,13 @@ import '/core/utils/size_utils.dart';
 import '/theme/theme_helper.dart';
 
 // ignore: must_be_immutable
-class UserageItemWidget extends StatelessWidget {
-  UserageItemWidget(
+class UserAgeWidget extends StatelessWidget {
+  UserAgeWidget(
     this.userageItem, {
     super.key,
   });
 
-  UserageItemModel userageItem;
+  UserAgeModel userageItem;
 
   SchedulesController controller = Get.find<SchedulesController>();
 

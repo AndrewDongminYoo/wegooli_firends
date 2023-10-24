@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
+import 'package:get/instance_manager.dart';
 import 'package:get/state_manager.dart';
 
 // 🌎 Project imports:
@@ -17,12 +18,13 @@ import '/widgets/image_view.dart';
 import '/widgets/text_form_field.dart';
 import 'controller/one_on_one_controller.dart';
 
-class OneOnOneScreen extends GetWidget<OneOnOneController> {
+class OneOnOneScreen extends StatelessWidget {
   const OneOnOneScreen({super.key});
   static const routeName = '/one_on_one_screen';
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(OneOnOneController());
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
@@ -53,15 +55,14 @@ class OneOnOneScreen extends GetWidget<OneOnOneController> {
                             hintStyle: textTheme.bodyLarge!.copyWith(
                               color: const Color(0xFF8F9199),
                             ),
-                            options: controller
-                                .contactUs11ContactUs.value.choices.value,
+                            options: controller.oneOnOne.value.choices.value,
                             contentPadding: EdgeInsets.only(
                                 left: 10.h, top: 14.v, bottom: 14.v),
                             onChanged: (value) {
                               controller.onSelected(value);
                             }),
                         CustomTextFormField(
-                            controller: controller.groupTwentySevenController,
+                            controller: controller.inquiryContent,
                             margin: EdgeInsets.only(top: 21.v, right: 16.h),
                             hintText: '내용을 입력해주세요.',
                             hintStyle: textTheme.bodyLarge!.copyWith(
@@ -81,26 +82,20 @@ class OneOnOneScreen extends GetWidget<OneOnOneController> {
                             height: 78.v,
                             child: Obx(
                               () => ListView.separated(
-                                  padding: EdgeInsets.only(
-                                      left: 76.h, top: 7.v, right: 45.h),
-                                  scrollDirection: Axis.horizontal,
-                                  separatorBuilder: (context, index) {
-                                    return SizedBox(width: 5.h);
-                                  },
-                                  itemCount: controller
-                                      .contactUs11ContactUs
-                                      .value
-                                      .listaddphotoaltItemList
-                                      .value
-                                      .length,
-                                  itemBuilder: (context, index) {
-                                    final model = controller
-                                        .contactUs11ContactUs
-                                        .value
-                                        .listaddphotoaltItemList
-                                        .value[index];
-                                    return ListAddPhotoAltItemWidget(model);
-                                  }),
+                                padding: EdgeInsets.only(
+                                    left: 76.h, top: 7.v, right: 45.h),
+                                scrollDirection: Axis.horizontal,
+                                separatorBuilder: (context, index) {
+                                  return SizedBox(width: 5.h);
+                                },
+                                itemCount: controller
+                                    .oneOnOne.value.items.value.length,
+                                itemBuilder: (context, index) {
+                                  final model = controller
+                                      .oneOnOne.value.items.value[index];
+                                  return AddPhotoWidget(model);
+                                },
+                              ),
                             ),
                           ),
                         )
@@ -129,9 +124,10 @@ class OneOnOneScreen extends GetWidget<OneOnOneController> {
                     ),
                   )),
               CustomElevatedButton(
-                  width: 216.h,
-                  text: '문의하기',
-                  margin: EdgeInsets.only(left: 8.h))
+                width: 216.h,
+                text: '문의하기',
+                margin: EdgeInsets.only(left: 8.h),
+              )
             ],
           ),
         ),

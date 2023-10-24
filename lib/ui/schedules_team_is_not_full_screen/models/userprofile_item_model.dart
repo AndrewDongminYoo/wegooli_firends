@@ -1,8 +1,8 @@
 // 📦 Package imports:
 import 'package:get/state_manager.dart';
 
-class UserprofileItemModel {
-  UserprofileItemModel({
+class ProfileModel {
+  ProfileModel({
     this.userName,
     this.id,
   }) {

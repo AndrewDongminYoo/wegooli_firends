@@ -16,8 +16,7 @@ import 'models/contact_us_inquiry_history_model.dart';
 class ContactUsInquiryHistoryPage extends StatelessWidget {
   ContactUsInquiryHistoryPage({super.key});
 
-  final controller = Get.put(
-      ContactUsInquiryHistoryController(ContactUsInquiryHistoryModel().obs));
+  final controller = Get.put(ContactUsHistoryController(HistoryModel().obs));
 
   @override
   Widget build(BuildContext context) {
@@ -36,11 +35,9 @@ class ContactUsInquiryHistoryPage extends StatelessWidget {
               ) {
                 return SizedBox(height: 1.v);
               },
-              itemCount: controller
-                  .contactUsInquiryHistory.value.listItemList.value.length,
+              itemCount: controller.history.value.items.value.length,
               itemBuilder: (context, index) {
-                final model = controller
-                    .contactUsInquiryHistory.value.listItemList.value[index];
+                final model = controller.history.value.items.value[index];
                 return ListItemWidget(
                   model,
                 );

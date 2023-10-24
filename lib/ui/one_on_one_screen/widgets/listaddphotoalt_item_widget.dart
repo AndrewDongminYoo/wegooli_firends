@@ -13,8 +13,8 @@ import '/widgets/icon_button.dart';
 import '/widgets/image_view.dart';
 
 // ignore: must_be_immutable
-class ListAddPhotoAltItemWidget extends StatelessWidget {
-  ListAddPhotoAltItemWidget(
+class AddPhotoWidget extends StatelessWidget {
+  AddPhotoWidget(
     this.listaddphotoaltItem, {
     super.key,
   });

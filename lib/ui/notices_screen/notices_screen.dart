@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
+import 'package:get/instance_manager.dart';
 import 'package:get/state_manager.dart';
 
 // 🌎 Project imports:
@@ -12,12 +13,13 @@ import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import 'controller/notices_controller.dart';
 
-class NoticesScreen extends GetWidget<NoticesController> {
+class NoticesScreen extends StatelessWidget {
   const NoticesScreen({super.key});
   static const routeName = '/notices';
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(NoticesController());
     return SafeArea(
       child: Scaffold(
         appBar: CustomAppBar(
@@ -65,11 +67,10 @@ class NoticesScreen extends GetWidget<NoticesController> {
                           ),
                         );
                       },
-                      itemCount:
-                          controller.notices.value.noticesItemList.value.length,
+                      itemCount: controller.notices.value.items.value.length,
                       itemBuilder: (context, index) {
-                        final model = controller
-                            .notices.value.noticesItemList.value[index];
+                        final model =
+                            controller.notices.value.items.value[index];
                         return NoticesItemWidget(model);
                       })))
             ],

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 // 📦 Package imports:
 import 'package:get/state_manager.dart';
 
-class SendInvitationLeaderOnlyController extends GetxController {
+class InvitationController extends GetxController {
   TextEditingController invitationCode = TextEditingController();
 
   @override

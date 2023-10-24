@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
+import 'package:get/instance_manager.dart';
 import 'package:get/state_manager.dart';
 
 // 🌎 Project imports:
@@ -16,12 +17,13 @@ import '/widgets/elevated_button.dart';
 import '/widgets/image_view.dart';
 import 'controller/schedules_team_is_not_full_controller.dart';
 
-class SchedulesScreen extends GetWidget<SchedulesController> {
+class SchedulesScreen extends StatelessWidget {
   const SchedulesScreen({super.key});
   static const routeName = '/schedules_team_is_not_full';
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(SchedulesController());
     return SafeArea(
       child: Scaffold(
         appBar: CustomAppBar(
@@ -65,11 +67,11 @@ class SchedulesScreen extends GetWidget<SchedulesController> {
                               ) {
                                 return SizedBox(width: 15.h);
                               },
-                              itemCount: controller.scheduleModel.value
-                                  .userprofileItemList.value.length,
+                              itemCount: controller
+                                  .scheduleModel.value.profiles.value.length,
                               itemBuilder: (context, index) {
-                                final model = controller.scheduleModel.value
-                                    .userprofileItemList.value[index];
+                                final model = controller
+                                    .scheduleModel.value.profiles.value[index];
                                 return UserprofileItemWidget(
                                   model,
                                 );
@@ -162,11 +164,11 @@ class SchedulesScreen extends GetWidget<SchedulesController> {
                                         return SizedBox(width: 25.h);
                                       },
                                       itemCount: controller.scheduleModel.value
-                                          .userageItemList.value.length,
+                                          .ages.value.length,
                                       itemBuilder: (context, index) {
                                         final model = controller.scheduleModel
-                                            .value.userageItemList.value[index];
-                                        return UserageItemWidget(
+                                            .value.ages.value[index];
+                                        return UserAgeWidget(
                                           model,
                                         );
                                       },

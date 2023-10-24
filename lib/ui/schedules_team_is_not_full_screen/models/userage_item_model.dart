@@ -1,8 +1,8 @@
 // 📦 Package imports:
 import 'package:get/state_manager.dart';
 
-class UserageItemModel {
-  UserageItemModel({
+class UserAgeModel {
+  UserAgeModel({
     this.userDay,
     this.userMonth,
     this.userYear,

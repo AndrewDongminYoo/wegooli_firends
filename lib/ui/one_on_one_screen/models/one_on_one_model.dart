@@ -22,6 +22,6 @@ class OneOnOneModel {
     )
   ]);
 
-  Rx<List<ListAddPhotoAltItemModel>> listaddphotoaltItemList =
-      Rx(List.generate(5, (index) => ListAddPhotoAltItemModel()));
+  Rx<List<ListAddPhotoAltItemModel>> items =
+      Rx(List.generate(5, (_) => ListAddPhotoAltItemModel()));
 }

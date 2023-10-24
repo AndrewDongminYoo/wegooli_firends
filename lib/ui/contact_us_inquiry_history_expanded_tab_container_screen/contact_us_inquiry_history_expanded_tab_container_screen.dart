@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
-import 'package:get/state_manager.dart';
+import 'package:get/instance_manager.dart';
 
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
@@ -13,13 +13,13 @@ import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import 'controller/contact_us_inquiry_history_expanded_tab_container_controller.dart';
 
-class ContactUsInquiryHistoryScreen
-    extends GetWidget<ContactUsInquiryHistoryController> {
+class ContactUsInquiryHistoryScreen extends StatelessWidget {
   const ContactUsInquiryHistoryScreen({super.key});
   static const routeName = '/contact_us/history';
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(ContactUsInquiryHistoryController());
     return SafeArea(
       child: Scaffold(
         appBar: CustomAppBar(

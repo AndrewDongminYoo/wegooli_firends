@@ -6,9 +6,7 @@ import 'userage_item_model.dart';
 import 'userprofile_item_model.dart';
 
 class SchedulesModel {
-  Rx<List<UserprofileItemModel>> userprofileItemList =
-      Rx(List.generate(4, (index) => UserprofileItemModel()));
+  Rx<List<ProfileModel>> profiles = Rx(List.generate(4, (_) => ProfileModel()));
 
-  Rx<List<UserageItemModel>> userageItemList =
-      Rx(List.generate(7, (index) => UserageItemModel()));
+  Rx<List<UserAgeModel>> ages = Rx(List.generate(7, (_) => UserAgeModel()));
 }

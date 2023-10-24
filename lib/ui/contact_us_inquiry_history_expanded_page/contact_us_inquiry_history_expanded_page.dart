@@ -1,9 +1,6 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:get/instance_manager.dart';
-
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
@@ -11,13 +8,10 @@ import '/theme/theme_helper.dart';
 import '/widgets/elevated_button.dart';
 import '/widgets/image_view.dart';
 import '/widgets/outlined_button.dart';
-import 'controller/contact_us_inquiry_history_expanded_controller.dart';
 
 // ignore: must_be_immutable
 class ContactUsInquiryHistoryExpandedPage extends StatelessWidget {
   ContactUsInquiryHistoryExpandedPage({super.key});
-
-  final controller = Get.put(ContactUsInquiryHistoryExpandedController());
 
   @override
   Widget build(BuildContext context) {

@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
+import 'package:get/instance_manager.dart';
 import 'package:get/state_manager.dart';
 
 // 🌎 Project imports:
@@ -14,12 +15,13 @@ import '/widgets/image_view.dart';
 import '/widgets/radio_button.dart';
 import 'controller/card_list_controller.dart';
 
-class CardListScreen extends GetWidget<CardListController> {
+class CardListScreen extends StatelessWidget {
   const CardListScreen({super.key});
   static const routeName = '/card_list';
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(CardListController());
     return SafeArea(
       child: Scaffold(
         appBar: CustomAppBar(

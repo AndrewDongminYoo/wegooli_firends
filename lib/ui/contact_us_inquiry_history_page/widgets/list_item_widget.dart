@@ -22,8 +22,8 @@ class ListItemWidget extends StatelessWidget {
 
   ListItemModel listItem;
 
-  ContactUsInquiryHistoryController controller =
-      Get.find<ContactUsInquiryHistoryController>();
+  ContactUsHistoryController controller =
+      Get.find<ContactUsHistoryController>();
 
   @override
   Widget build(BuildContext context) {

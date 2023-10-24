@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
-import 'package:get/state_manager.dart';
+import 'package:get/instance_manager.dart';
 
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
@@ -13,12 +13,13 @@ import '/widgets/elevated_button.dart';
 import '/widgets/text_form_field.dart';
 import 'controller/card_register_controller.dart';
 
-class CardRegisterScreen extends GetWidget<CardRegisterController> {
+class CardRegisterScreen extends StatelessWidget {
   const CardRegisterScreen({super.key});
   static const routeName = '/card_register';
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(CardRegisterController());
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,

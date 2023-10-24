@@ -4,8 +4,8 @@ import 'package:get/state_manager.dart';
 // 🌎 Project imports:
 import '/ui/contact_us_inquiry_history_page/models/contact_us_inquiry_history_model.dart';
 
-class ContactUsInquiryHistoryController extends GetxController {
-  ContactUsInquiryHistoryController(this.contactUsInquiryHistory);
+class ContactUsHistoryController extends GetxController {
+  ContactUsHistoryController(this.history);
 
-  Rx<ContactUsInquiryHistoryModel> contactUsInquiryHistory;
+  Rx<HistoryModel> history;
 }

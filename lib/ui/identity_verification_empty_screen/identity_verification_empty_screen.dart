@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
-import 'package:get/state_manager.dart';
+import 'package:get/instance_manager.dart';
 
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
@@ -15,12 +15,13 @@ import '/widgets/image_view.dart';
 import '/widgets/text_form_field.dart';
 import 'controller/identity_verification_empty_controller.dart';
 
-class VerificationEmptyScreen extends GetWidget<VerificationEmptyController> {
+class VerificationEmptyScreen extends StatelessWidget {
   const VerificationEmptyScreen({super.key});
   static const routeName = '/verification_empty';
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(VerificationEmptyController());
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,

@@ -1,9 +1,6 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:get/instance_manager.dart';
-
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/theme/theme_helper.dart';
@@ -11,7 +8,6 @@ import '/ui/card_list_screen/card_list_screen.dart';
 import '/ui/card_register_screen/card_register_screen.dart';
 import '/ui/contact_us_empty_history_screen/contact_us_empty_history_screen.dart';
 import '/ui/contact_us_inquiry_history_expanded_tab_container_screen/contact_us_inquiry_history_expanded_tab_container_screen.dart';
-import '/ui/datetime_picker_bottomsheet/controller/datetime_picker_controller.dart';
 import '/ui/datetime_picker_bottomsheet/datetime_picker_bottomsheet.dart';
 import '/ui/empty_notice_screen/empty_notice_screen.dart';
 import '/ui/expiring_subscriptions_screen/expiring_subscriptions_screen.dart';
@@ -24,10 +20,8 @@ import '/ui/my_page_screen/my_page_screen.dart';
 import '/ui/notices_screen/notices_screen.dart';
 import '/ui/one_on_one_screen/one_on_one_screen.dart';
 import '/ui/personal_info_form_zip_code_screen/personal_info_form_zip_code_screen.dart';
-import '/ui/scheduled_date_dialog/controller/scheduled_date_controller.dart';
 import '/ui/schedules_team_is_not_full_screen/schedules_team_is_not_full_screen.dart';
-import '/ui/send_invitation_leader_only_dialog/controller/send_invitation_leader_only_controller.dart';
-import '/ui/send_invitation_leader_only_dialog/send_invitation_leader_only_dialog.dart';
+import '/ui/send_invitation_dialog/send_invitation_dialog.dart';
 import '/ui/signin_page_screen/signin_page_screen.dart';
 import '/ui/signup_complete_screen/signup_complete_screen.dart';
 import '/ui/smart_key_another_is_currently_using_screen/smart_key_another_is_currently_using_screen.dart';
@@ -36,7 +30,6 @@ import '/ui/splash_screen_one_screen/splash_screen_one_screen.dart';
 import '/ui/splash_screen_two_screen/splash_screen_two_screen.dart';
 import '/ui/subscribe_info_no_subscription_screen/subscribe_info_no_subscription_screen.dart';
 import '/ui/subscribe_info_screen/subscribe_info_screen.dart';
-import '/ui/unsubscribe_confirm_dialog/controller/unsubscribe_confirm_controller.dart';
 import '/ui/unsubscribe_confirm_dialog/unsubscribe_confirm_dialog.dart';
 import '/ui/unsubscribe_screen/unsubscribe_screen.dart';
 import '/ui/view_scheduled_date_dialog/view_scheduled_date_dialog.dart';
@@ -71,35 +64,19 @@ class AppNavigationScreen extends StatelessWidget {
                       children: [
                         RouteModal(
                           title: 'Send Invitation',
-                          dialog: SendInvitationDialog(
-                            Get.put(
-                              SendInvitationLeaderOnlyController(),
-                            ),
-                          ),
+                          dialog: SendInvitationDialog(),
                         ),
                         RouteModal(
                           title: 'View Scheduled Date',
-                          dialog: ViewScheduledDateDialog(
-                            Get.put(
-                              ScheduledDateController(),
-                            ),
-                          ),
+                          dialog: ViewScheduledDateDialog(),
                         ),
-                        RouteModal(
+                        const RouteModal(
                           title: 'Appointment Picker',
-                          bottomSheet: DatetimePickerBottomSheet(
-                            Get.put(
-                              DatetimePickerController(),
-                            ),
-                          ),
+                          bottomSheet: DatetimePickerBottomSheet(),
                         ),
                         RouteModal(
                           title: 'Unsubscribe / Confirm',
-                          dialog: UnsubscribeConfirmDialog(
-                            Get.put(
-                              UnsubscribeConfirmController(),
-                            ),
-                          ),
+                          dialog: UnsubscribeConfirmDialog(),
                         ),
                         const RouteItem(
                           title: 'Verification / Waiting',

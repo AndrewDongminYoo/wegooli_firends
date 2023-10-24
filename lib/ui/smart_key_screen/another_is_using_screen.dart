@@ -10,8 +10,8 @@ import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/elevated_button.dart';
 import '/widgets/image_view.dart';
 
-class SmartKeyAnotherIsCurrentlyUsingScreen extends StatelessWidget {
-  const SmartKeyAnotherIsCurrentlyUsingScreen({super.key});
+class AnotherIsUsingScreen extends StatelessWidget {
+  const AnotherIsUsingScreen({super.key});
   static const routeName = '/currently_using';
 
   @override

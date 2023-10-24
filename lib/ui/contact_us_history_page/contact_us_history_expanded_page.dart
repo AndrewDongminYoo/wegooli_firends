@@ -10,8 +10,8 @@ import '/widgets/image_view.dart';
 import '/widgets/outlined_button.dart';
 
 // ignore: must_be_immutable
-class ContactUsInquiryHistoryExpandedPage extends StatelessWidget {
-  ContactUsInquiryHistoryExpandedPage({super.key});
+class ContactUsHistoryExpandedPage extends StatelessWidget {
+  ContactUsHistoryExpandedPage({super.key});
 
   @override
   Widget build(BuildContext context) {

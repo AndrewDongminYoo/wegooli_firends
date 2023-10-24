@@ -6,8 +6,8 @@ import 'package:get/instance_manager.dart';
 import 'package:get/state_manager.dart';
 
 // 🌎 Project imports:
-import '../controller/schedules_team_is_not_full_controller.dart';
-import '../models/userage_item_model.dart';
+import '../controller/schedules_controller.dart';
+import '../models/user_age_model.dart';
 import '/core/utils/size_utils.dart';
 import '/theme/theme_helper.dart';
 

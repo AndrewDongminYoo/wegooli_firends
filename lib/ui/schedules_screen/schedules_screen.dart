@@ -10,16 +10,16 @@ import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
-import '/ui/schedules_team_is_not_full_screen/widgets/userage_item_widget.dart';
-import '/ui/schedules_team_is_not_full_screen/widgets/userprofile_item_widget.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/elevated_button.dart';
 import '/widgets/image_view.dart';
-import 'controller/schedules_team_is_not_full_controller.dart';
+import 'controller/schedules_controller.dart';
+import 'widgets/user_age_widget.dart';
+import 'widgets/user_profile_widget.dart';
 
 class SchedulesScreen extends StatelessWidget {
   const SchedulesScreen({super.key});
-  static const routeName = '/schedules_team_is_not_full';
+  static const routeName = '/schedules';
 
   @override
   Widget build(BuildContext context) {
@@ -72,7 +72,7 @@ class SchedulesScreen extends StatelessWidget {
                               itemBuilder: (context, index) {
                                 final model = controller
                                     .scheduleModel.value.profiles.value[index];
-                                return UserprofileItemWidget(
+                                return UserProfileWidget(
                                   model,
                                 );
                               },

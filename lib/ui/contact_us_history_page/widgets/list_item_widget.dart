@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/instance_manager.dart';
 
 // 🌎 Project imports:
-import '../controller/contact_us_inquiry_history_controller.dart';
+import '../controller/contact_us_history_controller.dart';
 import '../models/list_item_model.dart';
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';

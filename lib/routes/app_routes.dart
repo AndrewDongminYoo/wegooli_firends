@@ -3,8 +3,8 @@ import '/routes/route_model.dart';
 import '/ui/app_navigation_screen/app_navigation_screen.dart';
 import '/ui/card_list_screen/card_list_screen.dart';
 import '/ui/card_register_screen/card_register_screen.dart';
-import '/ui/contact_us_empty_history_screen/contact_us_empty_history_screen.dart';
-import '/ui/contact_us_inquiry_history_expanded_tab_container_screen/contact_us_inquiry_history_expanded_tab_container_screen.dart';
+import '/ui/contact_us_history_page/contact_us_empty_history_screen.dart';
+import '/ui/contact_us_history_screen/contact_us_history_screen.dart';
 import '/ui/empty_notice_screen/empty_notice_screen.dart';
 import '/ui/expiring_subscriptions_screen/expiring_subscriptions_screen.dart';
 import '/ui/home_page_screen/home_page_screen.dart';
@@ -16,10 +16,10 @@ import '/ui/my_page_screen/my_page_screen.dart';
 import '/ui/notices_screen/notices_screen.dart';
 import '/ui/one_on_one_screen/one_on_one_screen.dart';
 import '/ui/personal_info_form_zip_code_screen/personal_info_form_zip_code_screen.dart';
-import '/ui/schedules_team_is_not_full_screen/schedules_team_is_not_full_screen.dart';
+import '/ui/schedules_screen/schedules_screen.dart';
 import '/ui/signin_page_screen/signin_page_screen.dart';
 import '/ui/signup_complete_screen/signup_complete_screen.dart';
-import '/ui/smart_key_another_is_currently_using_screen/smart_key_another_is_currently_using_screen.dart';
+import '/ui/smart_key_screen/another_is_using_screen.dart';
 import '/ui/smart_key_screen/smart_key_screen.dart';
 import '/ui/splash_screen_one_screen/splash_screen_one_screen.dart';
 import '/ui/splash_screen_two_screen/splash_screen_two_screen.dart';
@@ -95,8 +95,8 @@ final List<AppRoute> pages = [
     requireAuth: true,
   ),
   AppRoute(
-    name: SmartKeyAnotherIsCurrentlyUsingScreen.routeName,
-    builder: (context, params) => const SmartKeyAnotherIsCurrentlyUsingScreen(),
+    name: AnotherIsUsingScreen.routeName,
+    builder: (context, params) => const AnotherIsUsingScreen(),
     requireAuth: true,
   ),
   AppRoute(
@@ -115,8 +115,8 @@ final List<AppRoute> pages = [
     requireAuth: true,
   ),
   AppRoute(
-    name: ContactUsInquiryHistoryScreen.routeName,
-    builder: (context, params) => const ContactUsInquiryHistoryScreen(),
+    name: ContactUsHistoryScreen.routeName,
+    builder: (context, params) => const ContactUsHistoryScreen(),
     requireAuth: true,
   ),
   AppRoute(

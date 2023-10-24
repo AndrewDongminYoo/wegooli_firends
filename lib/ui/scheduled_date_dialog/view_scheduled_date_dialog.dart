@@ -7,13 +7,13 @@ import 'package:get/state_manager.dart';
 import 'package:go_router/go_router.dart';
 
 // 🌎 Project imports:
-import '../scheduled_date_dialog/controller/scheduled_date_controller.dart';
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
-import '/ui/view_scheduled_date_dialog/widgets/listview_item_widget.dart';
 import '/widgets/image_view.dart';
+import 'controller/scheduled_date_controller.dart';
+import 'widgets/list_item_widget.dart';
 
 // ignore_for_file: must_be_immutable
 class ViewScheduledDateDialog extends StatelessWidget {
@@ -60,7 +60,7 @@ class ViewScheduledDateDialog extends StatelessWidget {
                   itemBuilder: (context, index) {
                     final model =
                         controller.scheduledDate.value.listItems.value[index];
-                    return ListviewItemWidget(model);
+                    return ListItemWidget(model);
                   })),
               SizedBox(height: 10.v)
             ],

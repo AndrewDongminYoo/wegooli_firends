@@ -2,7 +2,7 @@
 import 'package:get/state_manager.dart';
 
 // 🌎 Project imports:
-import 'userage_item_model.dart';
+import 'user_age_model.dart';
 import 'userprofile_item_model.dart';
 
 class SchedulesModel {

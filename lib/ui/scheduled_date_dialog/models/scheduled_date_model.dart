@@ -2,7 +2,7 @@
 import 'package:get/state_manager.dart';
 
 // 🌎 Project imports:
-import '/ui/view_scheduled_date_dialog/models/listview_item_model.dart';
+import 'list_item_model.dart';
 
 class ScheduledDateModel {
   Rx<List<ListItemModel>> listItems =

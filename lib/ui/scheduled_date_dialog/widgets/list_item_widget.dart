@@ -6,17 +6,17 @@ import 'package:get/instance_manager.dart';
 import 'package:get/state_manager.dart';
 
 // 🌎 Project imports:
-import '../models/listview_item_model.dart';
+import '../controller/scheduled_date_controller.dart';
+import '../models/list_item_model.dart';
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
-import '/ui/scheduled_date_dialog/controller/scheduled_date_controller.dart';
 import '/widgets/image_view.dart';
 
 // ignore: must_be_immutable
-class ListviewItemWidget extends StatelessWidget {
-  ListviewItemWidget(
+class ListItemWidget extends StatelessWidget {
+  ListItemWidget(
     this.listItem, {
     super.key,
   });

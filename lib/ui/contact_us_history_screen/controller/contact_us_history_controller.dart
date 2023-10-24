@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/instance_manager.dart';
 import 'package:get/state_manager.dart';
 
-class ContactUsInquiryHistoryController extends GetxController
+class ContactUsHistoryController extends GetxController
     with GetSingleTickerProviderStateMixin {
   late TabController tabviewController =
       Get.put(TabController(vsync: this, length: 3));

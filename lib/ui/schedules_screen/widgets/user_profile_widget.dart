@@ -6,7 +6,7 @@ import 'package:get/instance_manager.dart';
 import 'package:get/state_manager.dart';
 
 // 🌎 Project imports:
-import '../controller/schedules_team_is_not_full_controller.dart';
+import '../controller/schedules_controller.dart';
 import '../models/userprofile_item_model.dart';
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
@@ -15,8 +15,8 @@ import '/theme/theme_helper.dart';
 import '/widgets/image_view.dart';
 
 // ignore: must_be_immutable
-class UserprofileItemWidget extends StatelessWidget {
-  UserprofileItemWidget(
+class UserProfileWidget extends StatelessWidget {
+  UserProfileWidget(
     this.userprofileItem, {
     super.key,
   });

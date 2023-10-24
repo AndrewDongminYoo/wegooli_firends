@@ -6,9 +6,9 @@ import '/core/utils/size_utils.dart';
 import '/theme/theme_helper.dart';
 import '/ui/card_list_screen/card_list_screen.dart';
 import '/ui/card_register_screen/card_register_screen.dart';
-import '/ui/contact_us_empty_history_screen/contact_us_empty_history_screen.dart';
-import '/ui/contact_us_inquiry_history_expanded_tab_container_screen/contact_us_inquiry_history_expanded_tab_container_screen.dart';
-import '/ui/datetime_picker_bottomsheet/datetime_picker_bottomsheet.dart';
+import '/ui/contact_us_history_page/contact_us_empty_history_screen.dart';
+import '/ui/contact_us_history_screen/contact_us_history_screen.dart';
+import '/ui/datetime_picker_bottom_sheet/datetime_picker_bottom_sheet.dart';
 import '/ui/empty_notice_screen/empty_notice_screen.dart';
 import '/ui/expiring_subscriptions_screen/expiring_subscriptions_screen.dart';
 import '/ui/home_page_screen/home_page_screen.dart';
@@ -20,11 +20,12 @@ import '/ui/my_page_screen/my_page_screen.dart';
 import '/ui/notices_screen/notices_screen.dart';
 import '/ui/one_on_one_screen/one_on_one_screen.dart';
 import '/ui/personal_info_form_zip_code_screen/personal_info_form_zip_code_screen.dart';
-import '/ui/schedules_team_is_not_full_screen/schedules_team_is_not_full_screen.dart';
+import '/ui/scheduled_date_dialog/view_scheduled_date_dialog.dart';
+import '/ui/schedules_screen/schedules_screen.dart';
 import '/ui/send_invitation_dialog/send_invitation_dialog.dart';
 import '/ui/signin_page_screen/signin_page_screen.dart';
 import '/ui/signup_complete_screen/signup_complete_screen.dart';
-import '/ui/smart_key_another_is_currently_using_screen/smart_key_another_is_currently_using_screen.dart';
+import '/ui/smart_key_screen/another_is_using_screen.dart';
 import '/ui/smart_key_screen/smart_key_screen.dart';
 import '/ui/splash_screen_one_screen/splash_screen_one_screen.dart';
 import '/ui/splash_screen_two_screen/splash_screen_two_screen.dart';
@@ -32,7 +33,6 @@ import '/ui/subscribe_info_no_subscription_screen/subscribe_info_no_subscription
 import '/ui/subscribe_info_screen/subscribe_info_screen.dart';
 import '/ui/unsubscribe_confirm_dialog/unsubscribe_confirm_dialog.dart';
 import '/ui/unsubscribe_screen/unsubscribe_screen.dart';
-import '/ui/view_scheduled_date_dialog/view_scheduled_date_dialog.dart';
 import 'widgets/gateway_title.dart';
 import 'widgets/route_item.dart';
 import 'widgets/route_modal.dart';
@@ -144,8 +144,7 @@ class AppNavigationScreen extends StatelessWidget {
                         ),
                         const RouteItem(
                           title: 'Another is Currently Using Car',
-                          routeName:
-                              SmartKeyAnotherIsCurrentlyUsingScreen.routeName,
+                          routeName: AnotherIsUsingScreen.routeName,
                         ),
                         const RouteItem(
                           title: 'Subscribe Info (No Subscription)',
@@ -161,7 +160,7 @@ class AppNavigationScreen extends StatelessWidget {
                         ),
                         const RouteItem(
                           title: 'Inquiry History',
-                          routeName: ContactUsInquiryHistoryScreen.routeName,
+                          routeName: ContactUsHistoryScreen.routeName,
                         ),
                         const RouteItem(
                           title: 'Unsubscribe',

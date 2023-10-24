@@ -6,7 +6,7 @@ import 'package:dropdown_button2/dropdown_button2.dart';
 
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
-import '/data/models/dropdown_data.dart';
+import '/data/common/dropdown_data.dart';
 import '/shared/form_field_controller.dart';
 import '/theme/custom_text_style.dart';
 

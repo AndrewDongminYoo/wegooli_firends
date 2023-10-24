@@ -1,8 +1,8 @@
 // 📦 Package imports:
 import 'package:get/state_manager.dart';
 
-class ListAddPhotoAltItemModel {
-  ListAddPhotoAltItemModel({this.id}) {
+class AddPhotoItem {
+  AddPhotoItem({this.id}) {
     id = id ?? Rx('');
   }
 

@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 
 // 🌎 Project imports:
-import '/data/models/dropdown_data.dart';
+import '/data/common/dropdown_data.dart';
 import '/ui/license_register_screen/models/license_register_model.dart';
 
 class LicenseRegisterController extends GetxController {
@@ -13,9 +13,9 @@ class LicenseRegisterController extends GetxController {
   TextEditingController validPeriod = TextEditingController();
   TextEditingController firstIssued = TextEditingController();
 
-  Rx<LicenseRegisterModel> licenseRegister = LicenseRegisterModel().obs;
-  DropdownData? choice;
-  DropdownData? choice1;
+  Rx<LicenseRegisterModel> license = LicenseRegisterModel().obs;
+  DropdownData? licenseType;
+  DropdownData? issuedYear;
 
   @override
   void onClose() {
@@ -23,25 +23,5 @@ class LicenseRegisterController extends GetxController {
     licenseNums.dispose();
     validPeriod.dispose();
     firstIssued.dispose();
-  }
-
-  void onSelected(dynamic value) {
-    for (final element in licenseRegister.value.choices.value) {
-      element.isSelected = false;
-      if (element.id == value.id) {
-        element.isSelected = true;
-      }
-    }
-    licenseRegister.value.choices.refresh();
-  }
-
-  void onSelected1(dynamic value) {
-    for (final element in licenseRegister.value.choices1.value) {
-      element.isSelected = false;
-      if (element.id == value.id) {
-        element.isSelected = true;
-      }
-    }
-    licenseRegister.value.choices1.refresh();
   }
 }

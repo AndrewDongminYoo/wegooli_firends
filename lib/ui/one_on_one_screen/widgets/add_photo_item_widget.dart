@@ -6,7 +6,7 @@ import 'package:get/instance_manager.dart';
 
 // 🌎 Project imports:
 import '../controller/one_on_one_controller.dart';
-import '../models/listaddphotoalt_item_model.dart';
+import '../models/add_photo_item.dart';
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
 import '/widgets/icon_button.dart';
@@ -19,7 +19,7 @@ class AddPhotoWidget extends StatelessWidget {
     super.key,
   });
 
-  ListAddPhotoAltItemModel listaddphotoaltItem;
+  AddPhotoItem listaddphotoaltItem;
 
   OneOnOneController controller = Get.find<OneOnOneController>();
 

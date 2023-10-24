@@ -1,8 +1,8 @@
 // 📦 Package imports:
 import 'package:get/state_manager.dart';
 
-class ListviewItemModel {
-  ListviewItemModel({
+class ListItemModel {
+  ListItemModel({
     this.value,
     this.id,
   }) {
@@ -11,6 +11,5 @@ class ListviewItemModel {
   }
 
   Rx<String>? value;
-
   Rx<String>? id;
 }

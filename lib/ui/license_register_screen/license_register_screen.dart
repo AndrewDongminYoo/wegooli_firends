@@ -6,6 +6,7 @@ import 'package:get/instance_manager.dart';
 
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
+import '/data/common/dropdown_data.dart';
 import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/theme_helper.dart';
@@ -86,10 +87,12 @@ class LicenseRegisterScreen extends StatelessWidget {
                                                   Assets.svg.icoCaretDown.path),
                                         ),
                                         hintText: '면허증 종류를 선택하세요.',
-                                        options: controller.licenseRegister
-                                            .value.choices.value,
-                                        onChanged: (value) {
-                                          controller.onSelected(value);
+                                        options: controller
+                                            .license.value.licenseTypes.value,
+                                        onChanged: (DropdownData value) {
+                                          controller.license.value.licenseTypes
+                                              .onSelected(value);
+                                          controller.licenseType = value;
                                         })
                                   ],
                                 ),
@@ -227,9 +230,11 @@ class LicenseRegisterScreen extends StatelessWidget {
                                     top: 19.v,
                                   ),
                                   options: controller
-                                      .licenseRegister.value.choices1.value,
-                                  onChanged: (value) {
-                                    controller.onSelected1(value);
+                                      .license.value.issuedYears.value,
+                                  onChanged: (DropdownData value) {
+                                    controller.license.value.issuedYears
+                                        .onSelected(value);
+                                    controller.issuedYear = value;
                                   })
                             ],
                           ),

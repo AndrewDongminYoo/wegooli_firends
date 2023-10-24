@@ -7,9 +7,9 @@ import 'package:get/state_manager.dart';
 
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
+import '/data/common/dropdown_data.dart';
 import '/gen/assets.gen.dart';
 import '/theme/theme_helper.dart';
-import '/ui/one_on_one_screen/widgets/listaddphotoalt_item_widget.dart';
 import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/drop_down.dart';
@@ -17,6 +17,7 @@ import '/widgets/elevated_button.dart';
 import '/widgets/image_view.dart';
 import '/widgets/text_form_field.dart';
 import 'controller/one_on_one_controller.dart';
+import 'widgets/add_photo_item_widget.dart';
 
 class OneOnOneScreen extends StatelessWidget {
   const OneOnOneScreen({super.key});
@@ -55,11 +56,14 @@ class OneOnOneScreen extends StatelessWidget {
                             hintStyle: textTheme.bodyLarge!.copyWith(
                               color: const Color(0xFF8F9199),
                             ),
-                            options: controller.oneOnOne.value.choices.value,
+                            options:
+                                controller.oneOnOne.value.inquiryTypes.value,
                             contentPadding: EdgeInsets.only(
                                 left: 10.h, top: 14.v, bottom: 14.v),
-                            onChanged: (value) {
-                              controller.onSelected(value);
+                            onChanged: (DropdownData value) {
+                              controller.oneOnOne.value.inquiryTypes
+                                  .onSelected(value);
+                              controller.inquiryType = value;
                             }),
                         CustomTextFormField(
                             controller: controller.inquiryContent,

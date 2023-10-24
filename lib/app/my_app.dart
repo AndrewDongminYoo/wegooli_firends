@@ -1,20 +1,19 @@
 // 🐦 Flutter imports:
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
 import 'package:catcher_2/catcher_2.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:get/route_manager.dart';
+import 'package:go_router/go_router.dart';
 
 // 🌎 Project imports:
-import '/app/initial_bindings.dart';
-import '/core/utils/logger.dart';
+import '/app/app_state_notifier.dart';
+import '/core/utils/list_extensions.dart';
 import '/l10n/app_localizations.dart';
 import '/routes/app_routes.dart';
 import '/theme/theme_helper.dart';
-
-const Locale locale = Locale('ko');
+import '/ui/home_page_screen/home_page_screen.dart';
+import '/ui/signin_page_screen/signin_page_screen.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -25,11 +24,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     FlutterNativeSplash.remove();
-    return GetMaterialApp(
+    return MaterialApp.router(
       title: '위굴리 프렌즈',
-      navigatorKey: Catcher2.navigatorKey,
       debugShowCheckedModeBanner: false,
       theme: theme,
+      themeMode: ThemeMode.light,
       builder: (BuildContext context, Widget? widget) {
         Catcher2.addDefaultErrorWidget(
           title: 'Error 👾',
@@ -38,17 +37,19 @@ class MyApp extends StatelessWidget {
         );
         return widget ?? const CircularProgressIndicator();
       },
-      defaultTransition: Transition.cupertino,
-      locale: locale,
-      fallbackLocale: PlatformDispatcher.instance.locale,
+      locale: const Locale('ko'),
       supportedLocales: Localized.supportedLocales,
       localizationsDelegates: Localized.localizationsDelegates,
-      initialBinding: initialBinding,
-      logWriterCallback: (String text, {bool isError = false}) =>
-          isError ? logger.e(text) : logger.d(text),
-      navigatorObservers: [rootObserver],
-      initialRoute: '/app_navigation',
-      getPages: getPages,
+      routerConfig: GoRouter(
+        navigatorKey: Catcher2.navigatorKey,
+        initialLocation: '/app_navigation',
+        debugLogDiagnostics: true,
+        refreshListenable: AppStateNotifier.I,
+        errorBuilder: (context, state) => AppStateNotifier.I.loggedIn
+            ? const HomePageScreen()
+            : const SigninPageScreen(),
+        routes: pages.mapTo((r) => r.convertToRoute(AppStateNotifier.I)),
+      ),
     );
   }
 }

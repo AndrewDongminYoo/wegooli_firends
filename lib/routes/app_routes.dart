@@ -1,244 +1,150 @@
-// 📦 Package imports:
-import 'package:get/route_manager.dart';
-
 // 🌎 Project imports:
+import '/routes/route_model.dart';
 import '/ui/app_navigation_screen/app_navigation_screen.dart';
-import '/ui/card_list_screen/binding/card_list_binding.dart';
 import '/ui/card_list_screen/card_list_screen.dart';
-import '/ui/card_register_screen/binding/card_register_binding.dart';
 import '/ui/card_register_screen/card_register_screen.dart';
-import '/ui/contact_us_empty_history_screen/binding/contact_us_empty_history_binding.dart';
 import '/ui/contact_us_empty_history_screen/contact_us_empty_history_screen.dart';
-import '/ui/contact_us_inquiry_history_expanded_tab_container_screen/binding/contact_us_inquiry_history_expanded_tab_container_binding.dart';
 import '/ui/contact_us_inquiry_history_expanded_tab_container_screen/contact_us_inquiry_history_expanded_tab_container_screen.dart';
-import '/ui/empty_notice_screen/binding/notices_no_notice_binding.dart';
 import '/ui/empty_notice_screen/empty_notice_screen.dart';
-import '/ui/expiring_subscriptions_screen/binding/expiring_subscriptions_binding.dart';
 import '/ui/expiring_subscriptions_screen/expiring_subscriptions_screen.dart';
-import '/ui/home_page_screen/binding/home_page_binding.dart';
 import '/ui/home_page_screen/home_page_screen.dart';
-import '/ui/identity_verification_empty_screen/binding/identity_verification_empty_binding.dart';
 import '/ui/identity_verification_empty_screen/identity_verification_empty_screen.dart';
-import '/ui/identity_verification_filled_screen/binding/identity_verification_filled_binding.dart';
 import '/ui/identity_verification_filled_screen/identity_verification_filled_screen.dart';
-import '/ui/identity_verification_waiting_screen/binding/identity_verification_waiting_binding.dart';
 import '/ui/identity_verification_waiting_screen/identity_verification_waiting_screen.dart';
-import '/ui/license_register_screen/binding/license_register_binding.dart';
 import '/ui/license_register_screen/license_register_screen.dart';
-import '/ui/my_page_screen/binding/my_page_binding.dart';
 import '/ui/my_page_screen/my_page_screen.dart';
-import '/ui/notices_screen/binding/notices_binding.dart';
 import '/ui/notices_screen/notices_screen.dart';
-import '/ui/one_on_one_screen/binding/one_on_one_binding.dart';
 import '/ui/one_on_one_screen/one_on_one_screen.dart';
-import '/ui/personal_info_form_zip_code_screen/binding/personal_info_form_zip_code_binding.dart';
 import '/ui/personal_info_form_zip_code_screen/personal_info_form_zip_code_screen.dart';
-import '/ui/schedules_team_is_not_full_screen/binding/schedules_team_is_not_full_binding.dart';
 import '/ui/schedules_team_is_not_full_screen/schedules_team_is_not_full_screen.dart';
-import '/ui/signin_page_screen/binding/signin_page_binding.dart';
 import '/ui/signin_page_screen/signin_page_screen.dart';
-import '/ui/signup_complete_screen/binding/signup_complete_binding.dart';
 import '/ui/signup_complete_screen/signup_complete_screen.dart';
-import '/ui/smart_key_another_is_currently_using_screen/binding/smart_key_another_is_currently_using_binding.dart';
 import '/ui/smart_key_another_is_currently_using_screen/smart_key_another_is_currently_using_screen.dart';
-import '/ui/smart_key_screen/binding/smart_key_binding.dart';
 import '/ui/smart_key_screen/smart_key_screen.dart';
-import '/ui/splash_screen_one_screen/binding/splash_screen_one_binding.dart';
 import '/ui/splash_screen_one_screen/splash_screen_one_screen.dart';
-import '/ui/splash_screen_two_screen/binding/splash_screen_two_binding.dart';
 import '/ui/splash_screen_two_screen/splash_screen_two_screen.dart';
-import '/ui/subscribe_info_no_subscription_screen/binding/subscribe_info_no_subscription_binding.dart';
 import '/ui/subscribe_info_no_subscription_screen/subscribe_info_no_subscription_screen.dart';
-import '/ui/subscribe_info_screen/binding/subscribe_info_binding.dart';
 import '/ui/subscribe_info_screen/subscribe_info_screen.dart';
-import '/ui/unsubscribe_screen/binding/unsubscribe_binding.dart';
 import '/ui/unsubscribe_screen/unsubscribe_screen.dart';
 
-List<GetPage> getPages = [
-  GetPage(
+final List<AppRoute> pages = [
+  AppRoute(
     name: VerificationWaitingScreen.routeName,
-    page: () => const VerificationWaitingScreen(),
-    bindings: [
-      VerificationWaitingBinding(),
-    ],
+    builder: (context, params) => const VerificationWaitingScreen(),
   ),
-  GetPage(
+  AppRoute(
     name: SignupCompleteScreen.routeName,
-    page: () => const SignupCompleteScreen(),
-    bindings: [
-      SignupCompleteBinding(),
-    ],
+    builder: (context, params) => const SignupCompleteScreen(),
   ),
-  GetPage(
+  AppRoute(
     name: EmptyNoticeScreen.routeName,
-    page: () => const EmptyNoticeScreen(),
-    bindings: [
-      NoticesNoNoticeBinding(),
-    ],
+    builder: (context, params) => const EmptyNoticeScreen(),
+    requireAuth: true,
   ),
-  GetPage(
+  AppRoute(
     name: SigninPageScreen.routeName,
-    page: () => const SigninPageScreen(),
-    bindings: [
-      SigninPageBinding(),
-    ],
+    builder: (context, params) => const SigninPageScreen(),
   ),
-  GetPage(
+  AppRoute(
     name: VerificationEmptyScreen.routeName,
-    page: () => const VerificationEmptyScreen(),
-    bindings: [
-      VerificationEmptyBinding(),
-    ],
+    builder: (context, params) => const VerificationEmptyScreen(),
   ),
-  GetPage(
+  AppRoute(
     name: PersonalInfoFormZipCodeScreen.routeName,
-    page: () => const PersonalInfoFormZipCodeScreen(),
-    bindings: [
-      PersonalInfoFormZipCodeBinding(),
-    ],
+    builder: (context, params) => const PersonalInfoFormZipCodeScreen(),
   ),
-  GetPage(
+  AppRoute(
     name: SplashScreenOne.routeName,
-    page: () => const SplashScreenOne(),
-    bindings: [
-      SplashScreenOneBinding(),
-    ],
+    builder: (context, params) => const SplashScreenOne(),
   ),
-  GetPage(
+  AppRoute(
     name: SplashScreenTwo.routeName,
-    page: () => const SplashScreenTwo(),
-    bindings: [
-      SplashScreenTwoBinding(),
-    ],
+    builder: (context, params) => const SplashScreenTwo(),
   ),
-  GetPage(
+  AppRoute(
     name: LicenseRegisterScreen.routeName,
-    page: () => const LicenseRegisterScreen(),
-    bindings: [
-      LicenseRegisterBinding(),
-    ],
+    builder: (context, params) => const LicenseRegisterScreen(),
   ),
-  GetPage(
+  AppRoute(
     name: VerificationFilledScreen.routeName,
-    page: () => const VerificationFilledScreen(),
-    bindings: [
-      VerificationFilledBinding(),
-    ],
+    builder: (context, params) => const VerificationFilledScreen(),
   ),
-  GetPage(
+  AppRoute(
     name: HomePageScreen.routeName,
-    page: () => const HomePageScreen(),
-    bindings: [
-      HomePageBinding(),
-    ],
+    builder: (context, params) => const HomePageScreen(),
+    requireAuth: true,
   ),
-  GetPage(
+  AppRoute(
     name: SchedulesScreen.routeName,
-    page: () => const SchedulesScreen(),
-    bindings: [
-      SchedulesBinding(),
-    ],
+    builder: (context, params) => const SchedulesScreen(),
+    requireAuth: true,
   ),
-  GetPage(
+  AppRoute(
     name: SmartKeyScreen.routeName,
-    page: () => const SmartKeyScreen(),
-    bindings: [
-      SmartKeyBinding(),
-    ],
+    builder: (context, params) => const SmartKeyScreen(),
+    requireAuth: true,
   ),
-  GetPage(
+  AppRoute(
     name: MyPageScreen.routeName,
-    page: () => const MyPageScreen(),
-    bindings: [
-      MyPageBinding(),
-    ],
+    builder: (context, params) => const MyPageScreen(),
+    requireAuth: true,
   ),
-  GetPage(
+  AppRoute(
     name: CardListScreen.routeName,
-    page: () => const CardListScreen(),
-    bindings: [
-      CardListBinding(),
-    ],
+    builder: (context, params) => const CardListScreen(),
+    requireAuth: true,
   ),
-  GetPage(
+  AppRoute(
     name: SmartKeyAnotherIsCurrentlyUsingScreen.routeName,
-    page: () => const SmartKeyAnotherIsCurrentlyUsingScreen(),
-    bindings: [
-      SmartKeyAnotherIsCurrentlyUsingBinding(),
-    ],
+    builder: (context, params) => const SmartKeyAnotherIsCurrentlyUsingScreen(),
+    requireAuth: true,
   ),
-  GetPage(
+  AppRoute(
     name: NoSubscriptionScreen.routeName,
-    page: () => const NoSubscriptionScreen(),
-    bindings: [
-      SubscribeInfoNoSubscriptionBinding(),
-    ],
+    builder: (context, params) => const NoSubscriptionScreen(),
+    requireAuth: true,
   ),
-  GetPage(
+  AppRoute(
     name: SubscribeInfoScreen.routeName,
-    page: () => const SubscribeInfoScreen(),
-    bindings: [
-      SubscribeInfoBinding(),
-    ],
+    builder: (context, params) => const SubscribeInfoScreen(),
+    requireAuth: true,
   ),
-  GetPage(
+  AppRoute(
     name: ContactUsEmptyHistoryScreen.routeName,
-    page: () => const ContactUsEmptyHistoryScreen(),
-    bindings: [
-      ContactUsEmptyHistoryBinding(),
-    ],
+    builder: (context, params) => const ContactUsEmptyHistoryScreen(),
+    requireAuth: true,
   ),
-  GetPage(
+  AppRoute(
     name: ContactUsInquiryHistoryScreen.routeName,
-    page: () => const ContactUsInquiryHistoryScreen(),
-    bindings: [
-      ContactUsInquiryHistoryBinding(),
-    ],
+    builder: (context, params) => const ContactUsInquiryHistoryScreen(),
+    requireAuth: true,
   ),
-  GetPage(
+  AppRoute(
     name: UnsubscribeScreen.routeName,
-    page: () => const UnsubscribeScreen(),
-    bindings: [
-      UnsubscribeBinding(),
-    ],
+    builder: (context, params) => const UnsubscribeScreen(),
+    requireAuth: true,
   ),
-  GetPage(
+  AppRoute(
     name: CardRegisterScreen.routeName,
-    page: () => const CardRegisterScreen(),
-    bindings: [
-      CardRegisterBinding(),
-    ],
+    builder: (context, params) => const CardRegisterScreen(),
   ),
-  GetPage(
+  AppRoute(
     name: NoticesScreen.routeName,
-    page: () => const NoticesScreen(),
-    bindings: [
-      NoticesBinding(),
-    ],
+    builder: (context, params) => const NoticesScreen(),
+    requireAuth: true,
   ),
-  GetPage(
+  AppRoute(
     name: OneOnOneScreen.routeName,
-    page: () => const OneOnOneScreen(),
-    bindings: [
-      OneOnOneBinding(),
-    ],
+    builder: (context, params) => const OneOnOneScreen(),
+    requireAuth: true,
   ),
-  GetPage(
+  AppRoute(
     name: ExpiringSubscriptionsScreen.routeName,
-    page: () => const ExpiringSubscriptionsScreen(),
-    bindings: [
-      ExpiringSubscriptionsBinding(),
-    ],
+    builder: (context, params) => const ExpiringSubscriptionsScreen(),
+    requireAuth: true,
   ),
-  GetPage(
+  AppRoute(
     name: AppNavigationScreen.routeName,
-    page: () => const AppNavigationScreen(),
+    builder: (context, params) => const AppNavigationScreen(),
   ),
-  GetPage(
-    name: SplashScreenTwo.routeName,
-    page: () => const SplashScreenTwo(),
-    bindings: [
-      SplashScreenTwoBinding(),
-    ],
-  )
 ];

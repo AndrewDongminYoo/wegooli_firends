@@ -2,9 +2,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:get/utils.dart';
-
 // 🌎 Project imports:
 import '/core/utils/datetime_utils.dart';
 import '/core/utils/list_extensions.dart';
@@ -34,9 +31,11 @@ class DatetimePickerBottomSheet extends StatefulWidget {
       _DatetimePickerBottomSheetState();
 }
 
+Duration twoHours = const Duration(minutes: 2 * Duration.minutesPerHour);
+
 class _DatetimePickerBottomSheetState extends State<DatetimePickerBottomSheet> {
   DateTime start = DateTime.now().withoutSeconds;
-  DateTime end = DateTime.now().add(2.hours).withoutSeconds;
+  DateTime end = DateTime.now().add(twoHours).withoutSeconds;
   int openIdx = 1;
 
   @override

@@ -1,5 +1,5 @@
 // 📦 Package imports:
-import 'package:get/state_manager.dart';
+import 'package:get/get_rx/get_rx.dart';
 
 // 🌎 Project imports:
 import 'user_age_model.dart';

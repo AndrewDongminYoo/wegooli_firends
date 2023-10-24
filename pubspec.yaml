@@ -28,69 +28,130 @@ environment:
 # 또는 아래의 버전 번호를 pub.dev에서 사용 가능한 최신 버전으로 변경하여 # 종속성을 수동으로 업데이트할 수 있음.
 # 사용 가능한 최신 버전이 있는 종속성을 확인하려면 `flutter pub outdated`를 실행함.
 dependencies:
+  # 특정 경계에 딱 맞게 자동으로 텍스트 사이즈를 조절할 수 있는 AutoSizeText 위젯
   auto_size_text: ^3.0.0
+  # 독특한 UI 디자인의 스낵바 메세지
+  awesome_snackbar_content: ^0.1.3
+  # 온라인 이미지를 표시하고 캐싱하는 플러그인
   cached_network_image: ^3.2.3
+  # 인피니티 스크롤과 커스텀 차일드 위젯을 쉽게 쓸 수 있는 캐러셀 위젯
   carousel_slider: ^4.2.1
+  # 오류 / 예외를 자동으로 포착하고 설정에 따라 보고하거나 기록하는 도구
   catcher_2: ^1.0.0-alpha.1
+  # 실시간 동기화 noSQL 데이터베이스 Cloud Firestore용 Flutter 플러그인
   cloud_firestore: ^4.11.0
+  # [Dart] dart:collection을 확장한 유틸리티 컬렉션
   collection: ^1.17.1
+  # [Dart] 컬러 클래스 및 변환도구 (hex, rgb, xyz, hsl, hsv 등)
   color: ^3.0.0
+  # 네트워크 연결 상태 플러그인
   connectivity_plus: ^4.0.2
+  # [Dart] 신용카드 번호, CVC 번호 유효성 검사 및 카드사 식별 등을 제공하는 플러그인
   credit_card_validator: ^2.1.0
+  # SHA, MD5, HMAC 암호화 기능 구현.
   crypto: any
+  # 사용하기 쉽고 기능이 풍부한 채팅 UI 패키지
   dash_chat_2: ^0.0.18
+  # 현재 기기 정보(설정)를 쉽게 확인하는 도구
   device_info_plus: ^9.0.3
+  # [Dart] 인터셉터, 요청 취소, 타임아웃, 어댑터, 트랜스포머, 폼데이터, 파일 업로드/다운로드 등을 지원하는 HTTP 패키지
   dio: ^5.3.2
+  # 드롭다운 버튼
   dropdown_button2: ^2.3.9
+  # [Dart] ==, hashCode 속성을 자동으로 처리해주는 이퀄 컨버터
   equatable: ^2.0.5
+  # 파일 선택기
   file_picker: ^6.0.0
+  # 파이어베이스 인증 모듈
   firebase_auth: ^4.9.0
+  # 파이어베이스 코어 모듈
   firebase_core: ^2.15.1
+  # 파이어베이스 크래시리틱스 모듈 (충돌/에러 리포트)
   firebase_crashlytics: ^3.3.6
+  # 파이어베이스 메세징 (인앱 푸시/로컬 알람)
   firebase_messaging: ^14.6.0
+  # 네이티브 오브젝트 스토리지 Firebase 클라우드 스토리지용 Flutter 플러그인
   firebase_storage: ^11.3.1
+  # 플러터 차트 라이브러리
   fl_chart: ^0.64.0
   flutter:
     sdk: flutter
+  # 플러터 애니메이션 효과
   flutter_animate: ^4.2.0+1
+  # 플러터 환경변수 (.env) 플러그인
   flutter_dotenv: ^5.1.0
   flutter_localizations:
     sdk: flutter
+  # 플러터 마크다운 위젯
   flutter_markdown: ^0.6.17+2
+  # 플러터 네이티브 스플래시
   flutter_native_splash: ^2.3.2
+  # 플러터 스핀킷 (로딩 인디케이터)
   flutter_spinkit: ^5.2.0
+  # 플러터 SVG 렌더러
   flutter_svg: ^2.0.7
+  # 폰트어썸 아이콘 폰트 플러그인
   font_awesome_flutter: ^10.6.0
+  # CSS 컬러 변환 플러그인
   from_css_color: ^2.0.0
+  # Getx 상태관리/라우터/의존성주입
   get: ^4.6.5
+  # 고 라우터
   go_router: ^12.0.0
+  # 구글 폰트
   google_fonts: ^4.0.4
+  # 구글 로그인
   google_sign_in: ^6.1.5
+  # 하이브 (크로스플랫폼 NoSQL DB)
   hive_flutter: ^1.1.0
+  # 이미지 선택기
   image_picker: ^1.0.4
   intl: any
+  # [Dart] json_serializable에서 사용하는 어노테이션
   json_annotation: ^4.8.1
+  # [Dart] json 객체로부터 . 접근자로 속성에 접근하는 도구 JsonPath(r'$..teamSeq');
   json_path: ^0.6.3
+  # [Dart] JSON 데이터를 모델 클래스로 쉽게 변환해주는 빌드 러너 제너레이터
   json_serializable: ^6.7.1
+  # 우편번호 검색 웹뷰
   kpostal: ^0.5.1
+  # 로컬 인증 (PIN, Face ID, Touch ID)
   local_auth: ^2.1.7
+  # [Dart] 가독성 좋은 로그 작성을 도와주는 로깅 도구
   logger: ^1.4.0
+  # 로티.json 애니메이션
   lottie: ^2.6.0
+  # [Dart] 'text/plain; charset=UTF-8'과 같은 MIME 타입을 쉽게 다루는 도구
   mime_type: ^1.0.0
+  # 앱 정보 패키지
   package_info_plus: ^4.1.0
+  # 페이지 전환 패키지
   page_transition: ^2.0.3
+  # [Dart] 다른 언어의 path 패키지들처럼 플랫폼 별 경로를 쉽게 다루기 위한 도구
   path: ^1.8.3
+  # 앱 전용 디렉토리, 기기의 다운로드 디렉토리 등을 쉽게 접근할 수 있는 도구
   path_provider: ^2.1.1
+  # 프로바이더 (상태관리)
   provider: ^6.0.5
+  # 반응형 프로그래밍 다트
   rxdart: any
+  # 센드버드 메세지/채팅 SDK
   sendbird_sdk: ^3.2.17
+  # 셰어드 프리퍼런스 (키-밸류 단순 저장소)
   shared_preferences: ^2.2.2
+  # 애플 로그인
   sign_in_with_apple: ^5.0.0
+  # 온보딩 스크린 등에 많이 쓰는 페이지 인디케이터
   smooth_page_indicator: ^1.1.0
+  # 스트림 트랜스폼
   stream_transform: ^2.1.0
+  # 테이블 캘린더
   table_calendar: ^3.0.9
+  # [Dart] '15 분 전, 1년 전'과 같이 상대적인 시간을 쉽게 표현할 수 있는 도구
   timeago: ^3.5.0
+  # URL 실행 도구
   url_launcher: ^6.1.14
+  # 크로스플랫폼 비디오 플레이어
   video_player: ^2.7.2
 
 dev_dependencies:

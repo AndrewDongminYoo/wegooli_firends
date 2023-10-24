@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
+import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
@@ -19,21 +20,27 @@ class UnsubscribeScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: CustomAppBar(
-            leadingWidth: 34.h,
-            leading: const GetBackIcon(),
-            title: AppbarTitle(text: '구독 해지 예약')),
+          leadingWidth: 34.h,
+          leading: const GetBackIcon(),
+          title: AppbarTitle(text: '구독 해지 예약'),
+        ),
         body: SizedBox(
           width: mediaQueryData.size.width,
           child: SingleChildScrollView(
             padding: EdgeInsets.only(top: 50.v),
             child: Padding(
-              padding: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 5.v),
+              padding: EdgeInsets.only(
+                left: 16.h,
+                right: 16.h,
+                bottom: 5.v,
+              ),
               child: Column(
                 children: [
                   CustomImageView(
-                      imagePath: Assets.images.imgGooli5.path,
-                      height: 157.v,
-                      width: 120.h),
+                    imagePath: Assets.images.imgGooli5.path,
+                    height: 157.v,
+                    width: 120.h,
+                  ),
                   SizedBox(height: 20.v),
                   SizedBox(
                     width: 179.h,
@@ -43,30 +50,34 @@ class UnsubscribeScreen extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.center,
                       style: textTheme.titleMedium!.copyWith(
-                          color: Colors.black,
-                          fontSize: 18.fSize,
-                          height: 1.44),
+                        color: Colors.black,
+                        fontSize: TextSize.lg.fSize,
+                        height: Leading.snug,
+                      ),
                     ),
                   ),
                   SizedBox(height: 23.v),
-                  Text('2023년 8월 4일 이후에 구독이 해지됩니다.',
-                      style:
-                          textTheme.bodyLarge!.copyWith(color: Colors.black)),
+                  Text(
+                    '2023년 8월 4일 이후에 구독이 해지됩니다.',
+                    style: textTheme.bodyLarge!.tint(Colors.black),
+                  ),
                   SizedBox(height: 81.v),
                   Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        CustomElevatedButton(
-                            width: 104.h,
-                            text: '취소',
-                            buttonStyle: ElevatedButton.styleFrom(
-                              backgroundColor: const Color(0xFFB9BCC3),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(26.h),
-                              ),
-                            )),
-                        CustomElevatedButton(width: 216.h, text: '구독 해지하기')
-                      ])
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      CustomElevatedButton(
+                        width: 104.h,
+                        text: '취소',
+                        buttonStyle: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xFFB9BCC3),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(26.h),
+                          ),
+                        ),
+                      ),
+                      CustomElevatedButton(width: 216.h, text: '구독 해지하기'),
+                    ],
+                  ),
                 ],
               ),
             ),

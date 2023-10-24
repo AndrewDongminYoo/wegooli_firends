@@ -9,6 +9,8 @@ import 'package:go_router/go_router.dart';
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
+import '/theme/button_styles.dart';
+import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/elevated_button.dart';
 import '/widgets/image_view.dart';
@@ -29,10 +31,15 @@ class SendInvitationDialog extends StatelessWidget {
       insetPadding: EdgeInsets.zero,
       content: SingleChildScrollView(
         child: Container(
-          margin: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 313.v),
+          margin: EdgeInsets.only(
+            left: 16.h,
+            right: 16.h,
+            bottom: 313.v,
+          ),
           decoration: BoxDecoration(
-              color: lightTheme.onPrimaryContainer,
-              borderRadius: BorderRadiusStyle.circleBorder10),
+            color: lightTheme.onPrimaryContainer,
+            borderRadius: BorderRadiusStyle.circleBorder10,
+          ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,23 +49,32 @@ class SendInvitationDialog extends StatelessWidget {
                 Assets.svg.icoCloseRound.path,
                 size: 15.adaptSize,
                 alignment: Alignment.centerRight,
-                margin: EdgeInsets.only(top: 20.v, right: 20.h),
+                margin: EdgeInsets.only(
+                  top: 20.v,
+                  right: 20.h,
+                ),
                 onTap: GoRouter.of(context).pop,
               ),
               Padding(
-                padding: EdgeInsets.only(left: 20.h, top: 6.v),
+                padding: EdgeInsets.only(
+                  left: 20.h,
+                  top: 6.v,
+                ),
                 child: Text(
                   '초대 코드',
-                  style: textTheme.titleMedium!.copyWith(fontSize: 18.fSize),
+                  style: textTheme.titleMedium!
+                      .copyWith(fontSize: TextSize.lg.fSize),
                 ),
               ),
               CustomTextFormField(
                   controller: controller.invitationCode,
-                  margin: EdgeInsets.only(left: 20.h, top: 22.v, right: 20.h),
-                  hintText: 'asdf-asdf-asdf-asdf',
-                  hintStyle: textTheme.bodyLarge!.copyWith(
-                    color: const Color(0xFF8E9199),
+                  margin: EdgeInsets.only(
+                    left: 20.h,
+                    top: 22.v,
+                    right: 20.h,
                   ),
+                  hintText: 'asdf-asdf-asdf-asdf',
+                  hintStyle: textTheme.bodyLarge!.tint(const Color(0xFF8E9199)),
                   textInputAction: TextInputAction.done,
                   alignment: Alignment.center,
                   suffix: Container(
@@ -80,7 +96,7 @@ class SendInvitationDialog extends StatelessWidget {
                         ),
                       ),
                     ),
-                  ),
+                  ).noEffect,
                   buttonTextStyle: textTheme.titleMedium)
             ],
           ),

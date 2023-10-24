@@ -9,6 +9,7 @@ import 'package:get/state_manager.dart';
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
+import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/elevated_button.dart';
@@ -48,7 +49,7 @@ class SchedulesScreen extends StatelessWidget {
                           child: Text(
                             '팀원',
                             style: textTheme.titleMedium!
-                                .copyWith(fontSize: 18.fSize),
+                                .copyWith(fontSize: TextSize.lg.fSize),
                           ),
                         ),
                         SizedBox(
@@ -95,7 +96,7 @@ class SchedulesScreen extends StatelessWidget {
                           child: Text(
                             '일정',
                             style: textTheme.titleMedium!
-                                .copyWith(fontSize: 18.fSize),
+                                .copyWith(fontSize: TextSize.lg.fSize),
                           ),
                         ),
                         CustomElevatedButton(

@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
+import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/image_view.dart';
@@ -161,7 +162,7 @@ class SmartKeyScreen extends StatelessWidget {
                               '스마트키',
                               style: textTheme.titleMedium!.copyWith(
                                 color: Colors.black,
-                                fontSize: 18.fSize,
+                                fontSize: TextSize.lg.fSize,
                               ),
                             ),
                           ),
@@ -222,7 +223,8 @@ class SmartKeyScreen extends StatelessWidget {
                                     Align(
                                       child: Padding(
                                         padding: EdgeInsets.symmetric(
-                                            horizontal: 42.h),
+                                          horizontal: 42.h,
+                                        ),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.min,
                                           children: [
@@ -290,7 +292,8 @@ class SmartKeyScreen extends StatelessWidget {
                                     Align(
                                       child: Padding(
                                         padding: EdgeInsets.symmetric(
-                                            horizontal: 42.h),
+                                          horizontal: 42.h,
+                                        ),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.min,
                                           children: [
@@ -369,7 +372,8 @@ class SmartKeyScreen extends StatelessWidget {
                                     Align(
                                       child: Padding(
                                         padding: EdgeInsets.symmetric(
-                                            horizontal: 42.h),
+                                          horizontal: 42.h,
+                                        ),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.min,
                                           children: [
@@ -480,8 +484,8 @@ class SmartKeyScreen extends StatelessWidget {
                                 SizedBox(height: 1.v),
                                 Text(
                                   '사고 접수',
-                                  style: textTheme.bodySmall!
-                                      .copyWith(color: Colors.black),
+                                  style:
+                                      textTheme.bodySmall!.tint(Colors.black),
                                 ),
                               ],
                             ),

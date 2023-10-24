@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
+import '/theme/button_styles.dart';
 import '/theme/theme_helper.dart';
 
 // ignore: must_be_immutable
@@ -96,10 +97,7 @@ class CustomRadioButton extends StatelessWidget {
         height: iconSize ?? 20.h,
         width: iconSize ?? 20.h,
         child: Radio<String>(
-          visualDensity: const VisualDensity(
-            vertical: -4,
-            horizontal: -4,
-          ),
+          visualDensity: buttonDensity,
           value: value ?? '',
           groupValue: groupValue,
           onChanged: (value) {

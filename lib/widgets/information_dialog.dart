@@ -10,7 +10,6 @@ import '/l10n/l10n.dart';
 import '/theme/app_decoration.dart';
 import '/theme/button_styles.dart';
 import '/theme/custom_text_style.dart';
-import '/theme/text_styles.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/elevated_button.dart';
 
@@ -38,7 +37,8 @@ class InformationalDialog extends StatelessWidget {
     final maxLines = _getMaxLines(information);
     return AlertDialog(
       shape: RoundedRectangleBorder(
-          borderRadius: BorderRadiusStyle.circleBorder10),
+        borderRadius: BorderRadiusStyle.circleBorder10,
+      ),
 
       /// 대화 상자 상단의 (선택 사항) [icon] 아래에 큰 글꼴로 표시됩니다.
       /// 일반적으로 [Text] 위젯입니다.
@@ -49,9 +49,9 @@ class InformationalDialog extends StatelessWidget {
               textAlign: TextAlign.left,
             )
           : null,
-      titlePadding: getPadding(top: 20, left: 20),
+      titlePadding: EdgeInsets.only(top: 20.v, left: 20.h),
       titleTextStyle: AppTextStyle(
-        fontSize: TextSize.lg.fSize,
+        fontSize: TextSize.lg,
         fontWeight: FontWeight.bold,
       ),
 
@@ -65,15 +65,15 @@ class InformationalDialog extends StatelessWidget {
         maxLines: maxLines,
         textAlign: maxLines > 2 ? TextAlign.left : TextAlign.center,
       ),
-      contentPadding: getPadding(all: 20),
+      contentPadding: EdgeInsets.all(20.adaptSize),
       contentTextStyle: maxLines > 2
           ? AppTextStyle(
-              fontSize: TextSize.md.fSize,
+              fontSize: TextSize.md,
               lineHeight: Leading.tight,
               letterSpacing: LetterSpacing.tight,
             )
           : AppTextStyle(
-              fontSize: TextSize.lg.fSize,
+              fontSize: TextSize.lg,
               fontWeight: FontWeight.w600,
               lineHeight: Leading.tight,
               letterSpacing: LetterSpacing.normal,
@@ -92,10 +92,11 @@ class InformationalDialog extends StatelessWidget {
                 height: 52.v,
                 text: cancelText ?? '취소',
                 buttonStyle: ElevatedButton.styleFrom(
-                        backgroundColor: Palette.gray400,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadiusStyle.customBorderBL10))
-                    .noEffect,
+                  backgroundColor: Palette.gray400,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadiusStyle.customBorderBL10,
+                  ),
+                ).noEffect,
                 buttonTextStyle: textTheme.titleMedium!
                     .copyWith(fontSize: TextSize.md.fSize),
                 onTap: cancelCallback ?? () => GoRouter.of(context).pop(false),

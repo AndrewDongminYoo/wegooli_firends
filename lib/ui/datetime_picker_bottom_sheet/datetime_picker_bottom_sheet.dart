@@ -12,7 +12,6 @@ import '/l10n/l10n.dart';
 import '/theme/app_decoration.dart';
 import '/theme/button_styles.dart';
 import '/theme/custom_text_style.dart';
-import '/theme/text_styles.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/elevated_button.dart';
 import 'models/datetime_picker_model.dart';
@@ -23,7 +22,6 @@ class DatetimePickerBottomSheet extends StatefulWidget {
     this.schedule,
   });
 
-  // 수정할 타겟 스케줄
   final Schedule? schedule;
 
   @override
@@ -41,7 +39,6 @@ class _DatetimePickerBottomSheetState extends State<DatetimePickerBottomSheet> {
   @override
   void initState() {
     super.initState();
-    // 수정할 스케줄이 있으면 이용시간과 반납시간을 해당 시간으로 셋팅
     if (widget.schedule != null) {
       start = widget.schedule!.startAt;
       end = widget.schedule!.endAt;
@@ -51,9 +48,7 @@ class _DatetimePickerBottomSheetState extends State<DatetimePickerBottomSheet> {
   @override
   Widget build(BuildContext context) {
     final buttonTextStyle = textTheme.titleMedium;
-    // True 는 일정 수정, False는 일정 추가
     final isEditMode = widget.schedule != null;
-    // 총 렌탈 시간
     final rentalTime = end.difference(start);
     final items = List.of([
       BookItem(
@@ -79,17 +74,17 @@ class _DatetimePickerBottomSheetState extends State<DatetimePickerBottomSheet> {
               alignment: Alignment.centerLeft,
               width: mediaQueryData.size.width,
               height: 85.v,
-              padding: getPadding(left: 20, top: 20),
+              padding: EdgeInsets.only(left: 20.h, top: 20.v),
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: const BorderRadius.vertical(
                     top: Radius.circular(10),
                   ),
                   border: Border(
-                    top: _borderSide(1.v),
-                    right: _borderSide(1.v),
-                    left: _borderSide(1.v),
-                    bottom: _borderSide(8.v),
+                    top: _borderSide(1),
+                    right: _borderSide(1),
+                    left: _borderSide(1),
+                    bottom: _borderSide(8),
                   )),
               child: Text(
                 l10ns.reservationTotalPeriod(
@@ -157,7 +152,6 @@ class _DatetimePickerBottomSheetState extends State<DatetimePickerBottomSheet> {
                           initialDateTime: item.date,
                           onDateTimeChanged: (DateTime changed) {
                             setState(() {
-                              // 예약시작시간 설정이면
                               if (index == 0) {
                                 start = changed;
                               } else {
@@ -176,7 +170,7 @@ class _DatetimePickerBottomSheetState extends State<DatetimePickerBottomSheet> {
           Container(
               color: Colors.white,
               height: 106.v,
-              padding: getPadding(horizontal: 16),
+              padding: EdgeInsets.symmetric(horizontal: 16.h),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -185,10 +179,11 @@ class _DatetimePickerBottomSheetState extends State<DatetimePickerBottomSheet> {
                     height: 52.v,
                     text: l10ns.cancel,
                     buttonStyle: ElevatedButton.styleFrom(
-                        backgroundColor: Palette.gray400,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadiusStyle.circleBorder25,
-                        )).noEffect,
+                      backgroundColor: Palette.gray400,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadiusStyle.circleBorder25,
+                      ),
+                    ).noEffect,
                     buttonTextStyle: textTheme.titleMedium!
                         .copyWith(fontSize: TextSize.lg.fSize),
                     onTap: () {
@@ -213,5 +208,5 @@ class _DatetimePickerBottomSheetState extends State<DatetimePickerBottomSheet> {
   }
 
   BorderSide _borderSide(double width) =>
-      BorderSide(width: width, color: AppColors.separationBar);
+      BorderSide(width: width.adaptSize, color: AppColors.separationBar);
 }

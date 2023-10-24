@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
+import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
@@ -26,18 +27,23 @@ class EmptyNoticeScreen extends StatelessWidget {
           child: SingleChildScrollView(
             padding: EdgeInsets.only(top: 50.v),
             child: Padding(
-              padding: EdgeInsets.only(left: 103.h, right: 103.h, bottom: 5.v),
+              padding: EdgeInsets.only(
+                left: 103.h,
+                right: 103.h,
+                bottom: 5.v,
+              ),
               child: Column(
                 children: [
                   CustomImageView(
-                      imagePath: Assets.images.imgGooli4.path,
-                      height: 177.v,
-                      width: 120.h),
+                    imagePath: Assets.images.imgGooli4.path,
+                    height: 177.v,
+                    width: 120.h,
+                  ),
                   SizedBox(height: 21.v),
                   Text('작성된 글이 없습니다.',
                       style: textTheme.titleMedium!.copyWith(
                         color: Colors.black,
-                        fontSize: 18.fSize,
+                        fontSize: TextSize.lg.fSize,
                       ))
                 ],
               ),

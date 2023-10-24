@@ -23,9 +23,10 @@ class ContactUsHistoryScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: CustomAppBar(
-            leadingWidth: 34.h,
-            leading: const GetBackIcon(),
-            title: AppbarTitle(text: '문의하기')),
+          leadingWidth: 34.h,
+          leading: const GetBackIcon(),
+          title: AppbarTitle(text: '문의하기'),
+        ),
         body: SizedBox(
           width: mediaQueryData.size.width,
           child: SingleChildScrollView(
@@ -43,7 +44,9 @@ class ContactUsHistoryScreen extends StatelessWidget {
                       Tab(
                         child: Container(
                           padding: EdgeInsets.symmetric(
-                              horizontal: 46.h, vertical: 11.v),
+                            horizontal: 46.h,
+                            vertical: 11.v,
+                          ),
                           decoration: BoxDecoration(
                             border: Border(
                               bottom: BorderSide(
@@ -56,8 +59,9 @@ class ContactUsHistoryScreen extends StatelessWidget {
                             children: [
                               const Text('전체'),
                               Padding(
-                                  padding: EdgeInsets.only(top: 5.v),
-                                  child: const Text('10'))
+                                padding: EdgeInsets.only(top: 5.v),
+                                child: const Text('10'),
+                              ),
                             ],
                           ),
                         ),
@@ -65,7 +69,9 @@ class ContactUsHistoryScreen extends StatelessWidget {
                       Tab(
                         child: Container(
                           padding: EdgeInsets.symmetric(
-                              horizontal: 30.h, vertical: 11.v),
+                            horizontal: 30.h,
+                            vertical: 11.v,
+                          ),
                           decoration: BoxDecoration(
                             border: Border(
                               bottom: BorderSide(
@@ -78,8 +84,9 @@ class ContactUsHistoryScreen extends StatelessWidget {
                             children: [
                               const Text('답변 완료'),
                               Padding(
-                                  padding: EdgeInsets.only(top: 6.v),
-                                  child: const Text('10'))
+                                padding: EdgeInsets.only(top: 6.v),
+                                child: const Text('10'),
+                              ),
                             ],
                           ),
                         ),
@@ -87,7 +94,9 @@ class ContactUsHistoryScreen extends StatelessWidget {
                       Tab(
                         child: Container(
                           padding: EdgeInsets.symmetric(
-                              horizontal: 39.h, vertical: 11.v),
+                            horizontal: 39.h,
+                            vertical: 11.v,
+                          ),
                           decoration: BoxDecoration(
                             border: Border(
                               bottom: BorderSide(
@@ -100,24 +109,27 @@ class ContactUsHistoryScreen extends StatelessWidget {
                             children: [
                               const Text('처리중'),
                               Padding(
-                                  padding: EdgeInsets.only(top: 5.v),
-                                  child: const Text('10'))
+                                padding: EdgeInsets.only(top: 5.v),
+                                child: const Text('10'),
+                              ),
                             ],
                           ),
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
                 SizedBox(
-                    height: 592.v,
-                    child: TabBarView(
-                        controller: controller.tabviewController,
-                        children: [
-                          ContactUsHistoryExpandedPage(),
-                          ContactUsHistoryExpandedPage(),
-                          ContactUsHistoryPage()
-                        ]))
+                  height: 592.v,
+                  child: TabBarView(
+                    controller: controller.tabviewController,
+                    children: [
+                      ContactUsHistoryExpandedPage(),
+                      ContactUsHistoryExpandedPage(),
+                      ContactUsHistoryPage(),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),

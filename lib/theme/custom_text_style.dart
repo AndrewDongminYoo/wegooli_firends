@@ -147,17 +147,26 @@ extension TextStyleX on TextStyle {
   TextStyle get cozy => copyWith(height: Leading.normal);
 
   /// Font Color
-  TextStyle color(Color color) => copyWith(color: color);
+  TextStyle tint(Color color) => copyWith(color: color);
 }
 
 /// 이 클래스는 텍스트의 Letter Spacing을 설정하는 데 사용됩니다.
 class LetterSpacing {
   LetterSpacing._();
 
+  /// letterSpacing: 0.02
   static const double tighter = 0.02;
+
+  /// letterSpacing: 0.03
   static const double tight = 0.03;
+
+  /// letterSpacing: 0.04
   static const double normal = 0.04;
+
+  /// letterSpacing: 0.05
   static const double wide = 0.05;
+
+  /// letterSpacing: 0.06
   static const double wider = 0.06;
 }
 
@@ -168,22 +177,46 @@ class LetterSpacing {
 class Leading {
   Leading._();
 
+  /// lineHeight: 1.12
   static const double tighter = 1.12;
+
+  /// lineHeight: 1.25
   static const double tight = 1.25;
+
+  /// lineHeight: 1.375
   static const double hugging = 1.375;
+
+  /// lineHeight: 1.44
   static const double snug = 1.44;
+
+  /// lineHeight: 1.50
   static const double normal = 1.50;
+
+  /// lineHeight: 1.625
   static const double relaxed = 1.625;
 }
 
 class TextSize {
   TextSize._();
 
+  /// fontSize: 10
   static const double xxs = 10;
+
+  /// fontSize: 12
   static const double xs = 12;
+
+  /// fontSize: 14
   static const double sm = 14;
+
+  /// fontSize: 16
   static const double md = 16;
+
+  /// fontSize: 18
   static const double lg = 18;
+
+  /// fontSize: 20
   static const double xl = 20;
+
+  /// fontSize: 24
   static const double xxl = 24;
 }

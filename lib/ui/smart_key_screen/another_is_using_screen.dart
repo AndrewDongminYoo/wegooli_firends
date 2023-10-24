@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
+import '/theme/button_styles.dart';
+import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/elevated_button.dart';
@@ -230,7 +232,7 @@ class AnotherIsUsingScreen extends StatelessWidget {
                                         '스마트키',
                                         style: textTheme.titleMedium!.copyWith(
                                           color: Colors.black,
-                                          fontSize: 18.fSize,
+                                          fontSize: TextSize.lg.fSize,
                                         ),
                                       ),
                                     ),
@@ -297,7 +299,8 @@ class AnotherIsUsingScreen extends StatelessWidget {
                                                   child: Padding(
                                                     padding:
                                                         EdgeInsets.symmetric(
-                                                            horizontal: 42.h),
+                                                      horizontal: 42.h,
+                                                    ),
                                                     child: Column(
                                                       mainAxisSize:
                                                           MainAxisSize.min,
@@ -375,7 +378,8 @@ class AnotherIsUsingScreen extends StatelessWidget {
                                                   child: Padding(
                                                     padding:
                                                         EdgeInsets.symmetric(
-                                                            horizontal: 42.h),
+                                                      horizontal: 42.h,
+                                                    ),
                                                     child: Column(
                                                       mainAxisSize:
                                                           MainAxisSize.min,
@@ -464,7 +468,8 @@ class AnotherIsUsingScreen extends StatelessWidget {
                                                   child: Padding(
                                                     padding:
                                                         EdgeInsets.symmetric(
-                                                            horizontal: 42.h),
+                                                      horizontal: 42.h,
+                                                    ),
                                                     child: Column(
                                                       mainAxisSize:
                                                           MainAxisSize.min,
@@ -572,7 +577,7 @@ class AnotherIsUsingScreen extends StatelessWidget {
                                           borderRadius:
                                               BorderRadius.circular(22.h),
                                         ),
-                                      ),
+                                      ).noEffect,
                                       buttonTextStyle: textTheme.bodyLarge!
                                           .copyWith(
                                               color: lightTheme
@@ -615,9 +620,10 @@ class AnotherIsUsingScreen extends StatelessWidget {
                                             SizedBox(height: 1.v),
                                             Text(
                                               '사고 접수',
-                                              style: textTheme.bodySmall!
-                                                  .copyWith(
-                                                      color: Colors.black),
+                                              style:
+                                                  textTheme.bodySmall!.copyWith(
+                                                color: Colors.black,
+                                              ),
                                             ),
                                             SizedBox(height: 3.v),
                                           ],

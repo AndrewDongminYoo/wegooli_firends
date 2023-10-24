@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
+import '/theme/button_styles.dart';
+import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/elevated_button.dart';
 import '/widgets/image_view.dart';
@@ -273,17 +275,17 @@ class ContactUsHistoryExpandedPage extends StatelessWidget {
                                 ],
                               ),
                               child: CustomElevatedButton(
-                                text: '버튼명',
+                                text: '확인',
                                 buttonStyle: ElevatedButton.styleFrom(
                                   backgroundColor: const Color(0xFFF3F3F6),
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(26.h),
                                   ),
-                                ),
+                                ).noEffect,
                                 buttonTextStyle:
                                     textTheme.titleMedium!.copyWith(
                                   color: const Color(0xFFB0B2BC),
-                                  fontSize: 18.fSize,
+                                  fontSize: TextSize.lg.fSize,
                                 ),
                               ),
                             ),

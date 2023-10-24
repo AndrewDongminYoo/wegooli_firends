@@ -9,6 +9,7 @@ import 'package:get/state_manager.dart';
 import '../controller/schedules_controller.dart';
 import '../models/user_age_model.dart';
 import '/core/utils/size_utils.dart';
+import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 
 // ignore: must_be_immutable
@@ -44,9 +45,7 @@ class UserAgeWidget extends StatelessWidget {
             () => Text(
               userageItem.userMonth!.value,
               overflow: TextOverflow.ellipsis,
-              style: textTheme.bodySmall!.copyWith(
-                color: const Color(0xFF91959D),
-              ),
+              style: textTheme.bodySmall!.tint(const Color(0xFF91959D)),
             ),
           ),
           Padding(

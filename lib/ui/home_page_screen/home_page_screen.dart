@@ -6,6 +6,7 @@ import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
 import '/gen/fonts.gen.dart';
 import '/theme/app_decoration.dart';
+import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/image_view.dart';
@@ -64,8 +65,7 @@ class HomePageScreen extends StatelessWidget {
                         children: [
                           Text(
                             '신규 이벤트',
-                            style: textTheme.bodySmall!
-                                .copyWith(color: Colors.black),
+                            style: textTheme.bodySmall!.tint(Colors.black),
                           ),
                           SizedBox(height: 4.v),
                           SizedBox(
@@ -74,8 +74,7 @@ class HomePageScreen extends StatelessWidget {
                               '위굴리 프렌즈를 이용하면\n할인 혜택이!',
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
-                              style: textTheme.titleSmall!
-                                  .copyWith(color: Colors.black),
+                              style: textTheme.titleSmall!.tint(Colors.black),
                             ),
                           ),
                         ],
@@ -106,7 +105,7 @@ class HomePageScreen extends StatelessWidget {
                                 '1/3',
                                 style: textTheme.bodySmall!.copyWith(
                                   color: lightTheme.onPrimaryContainer,
-                                  fontSize: 10.fSize,
+                                  fontSize: TextSize.xxs.fSize,
                                 ),
                               ),
                             ),
@@ -164,7 +163,7 @@ class HomePageScreen extends StatelessWidget {
                               style: textTheme.bodySmall!.copyWith(
                                 fontFamily: FontFamily.nanumSquareRound,
                                 color: const Color(0xFFB0B2BC),
-                                fontSize: 10.fSize,
+                                fontSize: TextSize.xxs.fSize,
                               ),
                             ),
                           ),
@@ -214,7 +213,7 @@ class HomePageScreen extends StatelessWidget {
                               style: textTheme.bodySmall!.copyWith(
                                 fontFamily: FontFamily.nanumSquareRound,
                                 color: const Color(0xFFB0B2BC),
-                                fontSize: 10.fSize,
+                                fontSize: TextSize.xxs.fSize,
                               ),
                             ),
                           ),
@@ -269,7 +268,7 @@ class HomePageScreen extends StatelessWidget {
                             style: textTheme.bodySmall!.copyWith(
                               fontFamily: FontFamily.nanumSquareRound,
                               color: const Color(0xFFB0B2BC),
-                              fontSize: 10.fSize,
+                              fontSize: TextSize.xxs.fSize,
                             ),
                           ),
                         ],

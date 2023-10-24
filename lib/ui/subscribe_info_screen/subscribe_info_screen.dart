@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
+import '/theme/button_styles.dart';
+import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
@@ -20,15 +22,20 @@ class SubscribeInfoScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: CustomAppBar(
-            leadingWidth: 34.h,
-            leading: const GetBackIcon(),
-            title: AppbarTitle(text: '구독 정보')),
+          leadingWidth: 34.h,
+          leading: const GetBackIcon(),
+          title: AppbarTitle(text: '구독 정보'),
+        ),
         body: SizedBox(
           width: mediaQueryData.size.width,
           child: SingleChildScrollView(
             padding: EdgeInsets.only(top: 22.v),
             child: Padding(
-              padding: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 5.v),
+              padding: EdgeInsets.only(
+                left: 16.h,
+                right: 16.h,
+                bottom: 5.v,
+              ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -38,116 +45,146 @@ class SubscribeInfoScreen extends StatelessWidget {
                       '차량 정보',
                       style: textTheme.titleMedium!.copyWith(
                         color: Colors.black,
-                        fontSize: 18.fSize,
+                        fontSize: TextSize.lg.fSize,
                       ),
                     ),
                   ),
                   SizedBox(height: 12.v),
                   Container(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: 10.h, vertical: 20.v),
-                      decoration: BoxDecoration(
-                          color: lightTheme.onPrimaryContainer,
-                          border: Border.all(
-                            color: const Color(0xFFB9BCC3),
-                            width: 1.h,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 10.h,
+                      vertical: 20.v,
+                    ),
+                    decoration: BoxDecoration(
+                      color: lightTheme.onPrimaryContainer,
+                      border: Border.all(
+                        color: const Color(0xFFB9BCC3),
+                        width: 1.h,
+                      ),
+                      borderRadius: BorderRadiusStyle.circleBorder10,
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        SizedBox(height: 10.v),
+                        CustomImageView(
+                          imagePath: Assets.cars.niroEvSSwp.path,
+                          height: 96.v,
+                          width: 167.h,
+                        ),
+                        SizedBox(height: 30.v),
+                        const Divider(),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            left: 9.h,
+                            top: 21.v,
+                            right: 9.h,
                           ),
-                          borderRadius: BorderRadiusStyle.circleBorder10),
-                      child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            SizedBox(height: 10.v),
-                            CustomImageView(
-                                imagePath: Assets.cars.niroEvSSwp.path,
-                                height: 96.v,
-                                width: 167.h),
-                            SizedBox(height: 30.v),
-                            const Divider(),
-                            Padding(
-                              padding: EdgeInsets.only(
-                                  left: 9.h, top: 21.v, right: 9.h),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text('모닝',
-                                      style: textTheme.titleMedium!
-                                          .copyWith(fontSize: 18.fSize)),
-                                  Padding(
-                                      padding: EdgeInsets.only(
-                                          top: 4.v, bottom: 2.v),
-                                      child: Text('12가 3456',
-                                          style: textTheme.bodySmall!.copyWith(
-                                            color: lightTheme.onPrimary
-                                                .withOpacity(0.4),
-                                          )))
-                                ],
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                '모닝',
+                                style: textTheme.titleMedium!
+                                    .copyWith(fontSize: TextSize.lg.fSize),
                               ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(
-                                  left: 9.h, top: 13.v, right: 9.h),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text('월 결제 금액',
-                                      style: textTheme.bodyLarge!.copyWith(
-                                        color: lightTheme.onPrimary
-                                            .withOpacity(0.4),
-                                      )),
-                                  Text('150,000 원', style: textTheme.bodyLarge)
-                                ],
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(
-                                  left: 9.h, top: 3.v, right: 9.h),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text('구독',
-                                      style: textTheme.bodyLarge!.copyWith(
-                                        color: lightTheme.onPrimary
-                                            .withOpacity(0.4),
-                                      )),
-                                  Text('2023.07.01~2023.08.01',
-                                      style: textTheme.bodyLarge)
-                                ],
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(
-                                  left: 9.h, top: 3.v, right: 9.h),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text('결제 예정일',
-                                      style: textTheme.bodyLarge!.copyWith(
-                                        color: lightTheme.onPrimary
-                                            .withOpacity(0.4),
-                                      )),
-                                  Text('2023.08.20', style: textTheme.bodyLarge)
-                                ],
-                              ),
-                            ),
-                            CustomElevatedButton(
-                                height: 48.v,
-                                width: 160.h,
-                                text: '해지하기',
-                                margin: EdgeInsets.only(top: 21.v, right: 9.h),
-                                buttonStyle: ElevatedButton.styleFrom(
-                                  backgroundColor: lightTheme.primary,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(5.h),
+                              Padding(
+                                padding: EdgeInsets.only(
+                                  top: 4.v,
+                                  bottom: 2.v,
+                                ),
+                                child: Text(
+                                  '12가 3456',
+                                  style: textTheme.bodySmall!.copyWith(
+                                    color:
+                                        lightTheme.onPrimary.withOpacity(0.4),
                                   ),
                                 ),
-                                buttonTextStyle: textTheme.titleMedium,
-                                alignment: Alignment.centerRight)
-                          ]))
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            left: 9.h,
+                            top: 13.v,
+                            right: 9.h,
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                '월 결제 금액',
+                                style: textTheme.bodyLarge!.copyWith(
+                                  color: lightTheme.onPrimary.withOpacity(0.4),
+                                ),
+                              ),
+                              Text('150,000 원', style: textTheme.bodyLarge),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            left: 9.h,
+                            top: 3.v,
+                            right: 9.h,
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                '구독',
+                                style: textTheme.bodyLarge!.copyWith(
+                                  color: lightTheme.onPrimary.withOpacity(0.4),
+                                ),
+                              ),
+                              Text(
+                                '2023.07.01~2023.08.01',
+                                style: textTheme.bodyLarge,
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            left: 9.h,
+                            top: 3.v,
+                            right: 9.h,
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                '결제 예정일',
+                                style: textTheme.bodyLarge!.copyWith(
+                                  color: lightTheme.onPrimary.withOpacity(0.4),
+                                ),
+                              ),
+                              Text('2023.08.20', style: textTheme.bodyLarge),
+                            ],
+                          ),
+                        ),
+                        CustomElevatedButton(
+                          height: 48.v,
+                          width: 160.h,
+                          text: '해지하기',
+                          margin: EdgeInsets.only(
+                            top: 21.v,
+                            right: 9.h,
+                          ),
+                          buttonStyle: ElevatedButton.styleFrom(
+                            backgroundColor: lightTheme.primary,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(5.h),
+                            ),
+                          ).noEffect,
+                          buttonTextStyle: textTheme.titleMedium,
+                          alignment: Alignment.centerRight,
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),

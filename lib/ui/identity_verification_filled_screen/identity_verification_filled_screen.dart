@@ -7,6 +7,8 @@ import 'package:get/instance_manager.dart';
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
+import '/theme/button_styles.dart';
+import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
@@ -26,30 +28,42 @@ class VerificationFilledScreen extends StatelessWidget {
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: CustomAppBar(
-            height: 50.v,
-            leadingWidth: 34.h,
-            leading: const GetBackIcon(),
-            title: AppbarTitle(text: '본인 인증'),
-            styleType: Style.bgFill),
+          height: 50.v,
+          leadingWidth: 34.h,
+          leading: const GetBackIcon(),
+          title: AppbarTitle(text: '본인 인증'),
+          styleType: Style.bgFill,
+        ),
         body: Container(
           width: double.maxFinite,
-          padding: EdgeInsets.symmetric(horizontal: 16.h, vertical: 10.v),
+          padding: EdgeInsets.symmetric(
+            horizontal: 16.h,
+            vertical: 10.v,
+          ),
           child: Column(
             children: [
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('이름', style: textTheme.bodySmall),
+                  Text(
+                    '이름',
+                    style: textTheme.bodySmall,
+                  ),
                   SizedBox(height: 3.v),
                   CustomTextFormField(
-                      controller: controller.realname, hintText: '홍길동')
+                    controller: controller.realname,
+                    hintText: '홍길동',
+                  ),
                 ],
               ),
               SizedBox(height: 30.v),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('주민등록번호 13자리', style: textTheme.bodySmall),
+                  Text(
+                    '주민등록번호 13자리',
+                    style: textTheme.bodySmall,
+                  ),
                   SizedBox(height: 3.v),
                   Container(
                     padding: EdgeInsets.symmetric(vertical: 9.v),
@@ -63,10 +77,16 @@ class VerificationFilledScreen extends StatelessWidget {
                     ),
                     child: Row(
                       children: [
-                        Text('940812', style: textTheme.bodyLarge),
+                        Text(
+                          '940812',
+                          style: textTheme.bodyLarge,
+                        ),
                         const Spacer(),
                         Padding(
-                          padding: EdgeInsets.only(top: 10.v, bottom: 6.v),
+                          padding: EdgeInsets.only(
+                            top: 10.v,
+                            bottom: 6.v,
+                          ),
                           child: const SizedBox(
                             child: Divider(
                               color: Color(0xFFB0B2BC),
@@ -74,86 +94,126 @@ class VerificationFilledScreen extends StatelessWidget {
                           ),
                         ),
                         Padding(
-                            padding: EdgeInsets.only(left: 10.h),
-                            child: Text('2', style: textTheme.bodyLarge)),
-                        customIcon(Assets.svg.icoGlobe.path,
-                            size: 7.adaptSize,
-                            margin: EdgeInsets.only(
-                                left: 9.h, top: 6.v, bottom: 6.v)),
-                        customIcon(Assets.svg.icoGlobe.path,
-                            size: 7.adaptSize,
-                            margin: EdgeInsets.only(
-                                left: 4.h, top: 6.v, bottom: 6.v)),
-                        customIcon(Assets.svg.icoGlobe.path,
-                            size: 7.adaptSize,
-                            margin: EdgeInsets.only(
-                                left: 4.h, top: 6.v, bottom: 6.v)),
-                        customIcon(Assets.svg.icoGlobe.path,
-                            size: 7.adaptSize,
-                            margin: EdgeInsets.only(
-                                left: 4.h, top: 6.v, bottom: 6.v)),
-                        customIcon(Assets.svg.icoGlobe.path,
-                            size: 7.adaptSize,
-                            margin: EdgeInsets.only(
-                                left: 4.h, top: 6.v, bottom: 6.v)),
-                        customIcon(Assets.svg.icoGlobe.path,
-                            size: 7.adaptSize,
-                            margin: EdgeInsets.fromLTRB(4.h, 6.v, 70.h, 6.v))
+                          padding: EdgeInsets.only(left: 10.h),
+                          child: Text('2', style: textTheme.bodyLarge),
+                        ),
+                        customIcon(
+                          Assets.svg.icoGlobe.path,
+                          size: 7.adaptSize,
+                          margin: EdgeInsets.only(
+                            left: 9.h,
+                            top: 6.v,
+                            bottom: 6.v,
+                          ),
+                        ),
+                        customIcon(
+                          Assets.svg.icoGlobe.path,
+                          size: 7.adaptSize,
+                          margin: EdgeInsets.only(
+                            left: 4.h,
+                            top: 6.v,
+                            bottom: 6.v,
+                          ),
+                        ),
+                        customIcon(
+                          Assets.svg.icoGlobe.path,
+                          size: 7.adaptSize,
+                          margin: EdgeInsets.only(
+                            left: 4.h,
+                            top: 6.v,
+                            bottom: 6.v,
+                          ),
+                        ),
+                        customIcon(
+                          Assets.svg.icoGlobe.path,
+                          size: 7.adaptSize,
+                          margin: EdgeInsets.only(
+                            left: 4.h,
+                            top: 6.v,
+                            bottom: 6.v,
+                          ),
+                        ),
+                        customIcon(
+                          Assets.svg.icoGlobe.path,
+                          size: 7.adaptSize,
+                          margin: EdgeInsets.only(
+                            left: 4.h,
+                            top: 6.v,
+                            bottom: 6.v,
+                          ),
+                        ),
+                        customIcon(
+                          Assets.svg.icoGlobe.path,
+                          size: 7.adaptSize,
+                          margin: EdgeInsets.fromLTRB(4.h, 6.v, 70.h, 6.v),
+                        ),
                       ],
                     ),
                   ),
                   SizedBox(height: 3.v),
-                  Text('만 26세 미만은 가입이 제한됩니다.',
-                      style: textTheme.bodySmall!
-                          .copyWith(color: lightTheme.primaryContainer))
+                  Text(
+                    '만 26세 미만은 가입이 제한됩니다.',
+                    style:
+                        textTheme.bodySmall!.tint(lightTheme.primaryContainer),
+                  ),
                 ],
               ),
               SizedBox(height: 30.v),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('휴대폰 정보', style: textTheme.bodySmall),
+                  Text(
+                    '휴대폰 정보',
+                    style: textTheme.bodySmall,
+                  ),
                   SizedBox(height: 3.v),
                   CustomTextFormField(
-                      controller: controller.phonenum,
-                      hintText: '010-1234-5678',
-                      textInputAction: TextInputAction.done)
+                    controller: controller.phonenum,
+                    hintText: '010-1234-5678',
+                    textInputAction: TextInputAction.done,
+                  ),
                 ],
               ),
               SizedBox(height: 20.v),
               CustomElevatedButton(
-                  height: 42.v,
-                  text: '인증번호 발송',
-                  buttonStyle: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF464A70),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8.h),
-                    ),
+                height: 42.v,
+                text: '인증번호 발송',
+                buttonStyle: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xFF464A70),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.h),
                   ),
-                  buttonTextStyle: textTheme.titleSmall!.copyWith(
-                    color: lightTheme.onPrimaryContainer,
-                    fontWeight: FontWeight.bold,
-                  )),
-              SizedBox(height: 5.v)
+                ).noEffect,
+                buttonTextStyle: textTheme.titleSmall!.copyWith(
+                  color: lightTheme.onPrimaryContainer,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 5.v),
             ],
           ),
         ),
         bottomNavigationBar: Container(
-          margin: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 16.v),
+          margin: EdgeInsets.only(
+            left: 16.h,
+            right: 16.h,
+            bottom: 16.v,
+          ),
           decoration: BoxDecoration(color: lightTheme.onPrimaryContainer),
           child: CustomElevatedButton(
-              height: 48.v,
-              text: '인증하기',
-              buttonStyle: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFFF3F3F6),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8.h),
-                ),
+            height: 48.v,
+            text: '인증하기',
+            buttonStyle: ElevatedButton.styleFrom(
+              backgroundColor: const Color(0xFFF3F3F6),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8.h),
               ),
-              buttonTextStyle: textTheme.titleSmall!.copyWith(
-                color: const Color(0xFFB0B2BC),
-                fontWeight: FontWeight.bold,
-              )),
+            ).noEffect,
+            buttonTextStyle: textTheme.titleSmall!.copyWith(
+              color: const Color(0xFFB0B2BC),
+              fontWeight: FontWeight.bold,
+            ),
+          ),
         ),
       ),
     );

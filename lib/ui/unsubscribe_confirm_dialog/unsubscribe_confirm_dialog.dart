@@ -9,7 +9,6 @@ import '/core/utils/size_utils.dart';
 import '/theme/app_decoration.dart';
 import '/theme/button_styles.dart';
 import '/theme/custom_text_style.dart';
-import '/theme/text_styles.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/elevated_button.dart';
 
@@ -21,7 +20,8 @@ class UnsubscribeConfirmDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     return AlertDialog(
       shape: RoundedRectangleBorder(
-          borderRadius: BorderRadiusStyle.circleBorder10),
+        borderRadius: BorderRadiusStyle.circleBorder10,
+      ),
 
       /// 대화 상자 상단의 (선택 사항) [icon] 아래에 큰 글꼴로 표시됩니다.
       /// 일반적으로 [Text] 위젯입니다.
@@ -30,9 +30,9 @@ class UnsubscribeConfirmDialog extends StatelessWidget {
         overflow: TextOverflow.ellipsis,
         textAlign: TextAlign.left,
       ),
-      titlePadding: getPadding(top: 20, left: 20),
+      titlePadding: EdgeInsets.only(top: 20.v, left: 20.h),
       titleTextStyle: AppTextStyle(
-        fontSize: 18.fSize,
+        fontSize: TextSize.lg,
         fontWeight: FontWeight.bold,
       ),
 
@@ -45,9 +45,9 @@ class UnsubscribeConfirmDialog extends StatelessWidget {
         overflow: TextOverflow.ellipsis,
         textAlign: TextAlign.center,
       ),
-      contentPadding: getPadding(all: 20),
+      contentPadding: EdgeInsets.all(20.adaptSize),
       contentTextStyle: AppTextStyle(
-        fontSize: 16.fSize,
+        fontSize: TextSize.md,
         lineHeight: Leading.tight,
         letterSpacing: LetterSpacing.tight,
       ),
@@ -64,12 +64,13 @@ class UnsubscribeConfirmDialog extends StatelessWidget {
               height: 52.v,
               text: '취소',
               buttonStyle: ElevatedButton.styleFrom(
-                      backgroundColor: Palette.gray400,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadiusStyle.customBorderBL10))
-                  .noEffect,
+                backgroundColor: Palette.gray400,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadiusStyle.customBorderBL10,
+                ),
+              ).noEffect,
               buttonTextStyle:
-                  textTheme.titleMedium!.copyWith(fontSize: 16.fSize),
+                  textTheme.titleMedium!.copyWith(fontSize: TextSize.md.fSize),
               onTap: () => GoRouter.of(context).pop(false),
             ),
             CustomElevatedButton(
@@ -77,12 +78,13 @@ class UnsubscribeConfirmDialog extends StatelessWidget {
               height: 52.v,
               text: '해지하기',
               buttonStyle: ElevatedButton.styleFrom(
-                      backgroundColor: lightTheme.primary,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadiusStyle.customBorderBR10))
-                  .noEffect,
+                backgroundColor: lightTheme.primary,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadiusStyle.customBorderBR10,
+                ),
+              ).noEffect,
               buttonTextStyle:
-                  textTheme.titleMedium!.copyWith(fontSize: 16.fSize),
+                  textTheme.titleMedium!.copyWith(fontSize: TextSize.md.fSize),
               onTap: () => GoRouter.of(context).pop(true),
             ),
           ],

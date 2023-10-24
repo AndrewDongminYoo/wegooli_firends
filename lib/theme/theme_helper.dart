@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '/core/utils/size_utils.dart';
 import '/gen/fonts.gen.dart';
 import '/theme/custom_text_style.dart';
+import 'button_styles.dart';
 
 const ColorScheme lightTheme = ColorScheme.light(
   // Primary colors
@@ -57,15 +58,15 @@ const ColorScheme lightTheme = ColorScheme.light(
 final TextTheme textTheme = TextTheme(
   bodyLarge: AppTextStyle(
     color: lightTheme.onPrimary,
-    fontSize: 16,
+    fontSize: TextSize.md,
   ),
   bodyMedium: AppTextStyle(
     color: lightTheme.onPrimary,
-    fontSize: 14,
+    fontSize: TextSize.sm,
   ),
   bodySmall: AppTextStyle(
     color: lightTheme.onPrimary,
-    fontSize: 12,
+    fontSize: TextSize.xs,
   ),
   headlineLarge: AppTextStyle(
     color: lightTheme.onPrimary,
@@ -75,22 +76,22 @@ final TextTheme textTheme = TextTheme(
   ),
   headlineSmall: AppTextStyle(
     color: Colors.black,
-    fontSize: 24,
+    fontSize: TextSize.xxl,
     fontWeight: FontWeight.bold,
   ),
   labelLarge: AppTextStyle(
     color: const Color(0xFFDB4646),
-    fontSize: 12,
+    fontSize: TextSize.xs,
     fontWeight: FontWeight.w500,
   ),
   titleMedium: AppTextStyle(
     color: lightTheme.onPrimary,
-    fontSize: 16,
+    fontSize: TextSize.md,
     fontWeight: FontWeight.bold,
   ),
   titleSmall: AppTextStyle(
     color: lightTheme.onPrimary,
-    fontSize: 14,
+    fontSize: TextSize.sm,
     fontWeight: FontWeight.w500,
   ),
 );
@@ -111,10 +112,7 @@ ThemeData get theme {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(14.h),
         ),
-        visualDensity: const VisualDensity(
-          vertical: -4,
-          horizontal: -4,
-        ),
+        visualDensity: buttonDensity,
         padding: EdgeInsets.zero,
       ),
     ),
@@ -124,10 +122,7 @@ ThemeData get theme {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(26.h),
         ),
-        visualDensity: const VisualDensity(
-          vertical: -4,
-          horizontal: -4,
-        ),
+        visualDensity: buttonDensity,
         padding: EdgeInsets.zero,
       ),
     ),
@@ -138,10 +133,7 @@ ThemeData get theme {
         }
         return lightTheme.onSurface;
       }),
-      visualDensity: const VisualDensity(
-        vertical: -4,
-        horizontal: -4,
-      ),
+      visualDensity: buttonDensity,
     ),
     floatingActionButtonTheme: FloatingActionButtonThemeData(
       backgroundColor: lightTheme.primary,

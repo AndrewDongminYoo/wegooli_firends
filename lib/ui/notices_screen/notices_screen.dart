@@ -32,7 +32,10 @@ class NoticesScreen extends StatelessWidget {
             children: [
               Container(
                 width: double.maxFinite,
-                padding: EdgeInsets.symmetric(horizontal: 16.h, vertical: 15.v),
+                padding: EdgeInsets.symmetric(
+                  horizontal: 16.h,
+                  vertical: 15.v,
+                ),
                 decoration: const BoxDecoration(
                   color: Color(0x33FFE142),
                 ),
@@ -40,8 +43,10 @@ class NoticesScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('[공지] 산모퉁이를 돌아 논가 외딴 우물을 홀로 찾아가선',
-                        style: textTheme.titleSmall),
+                    Text(
+                      '[공지] 산모퉁이를 돌아 논가 외딴 우물을 홀로 찾아가선',
+                      style: textTheme.titleSmall,
+                    ),
                     SizedBox(height: 3.v),
                     Text('2023.08.23',
                         style: textTheme.bodySmall!.copyWith(

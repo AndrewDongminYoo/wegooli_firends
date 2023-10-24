@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
+import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 
 class CustomTextFormField extends StatelessWidget {
@@ -89,10 +90,8 @@ class CustomTextFormField extends StatelessWidget {
         counterText: counterText,
         counterStyle: counterStyle,
         hintText: hintText ?? '',
-        hintStyle: hintStyle ??
-            textTheme.bodyLarge!.copyWith(
-              color: const Color(0xFFB0B2BC),
-            ),
+        hintStyle:
+            hintStyle ?? textTheme.bodyLarge!.tint(const Color(0xFFB0B2BC)),
         prefixIcon: prefix,
         prefixIconConstraints: prefixConstraints,
         suffixIcon: suffix,

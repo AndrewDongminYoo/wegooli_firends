@@ -7,6 +7,8 @@ import 'package:get/instance_manager.dart';
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
+import '/theme/button_styles.dart';
+import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/elevated_button.dart';
 import '/widgets/image_view.dart';
@@ -87,9 +89,8 @@ class SigninPageScreen extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8.h),
                   ),
-                ),
-                buttonTextStyle:
-                    textTheme.titleSmall!.copyWith(fontWeight: FontWeight.bold),
+                ).noEffect,
+                buttonTextStyle: textTheme.titleSmall!.bold,
               ),
               SizedBox(height: 60.v),
               Text(
@@ -99,9 +100,7 @@ class SigninPageScreen extends StatelessWidget {
               SizedBox(height: 10.v),
               Text(
                 '회원가입',
-                style: textTheme.bodySmall!.copyWith(
-                  color: const Color(0xFFB0B2BC),
-                ),
+                style: textTheme.bodySmall!.tint(const Color(0xFFB0B2BC)),
               ),
               SizedBox(height: 1.v),
               SizedBox(

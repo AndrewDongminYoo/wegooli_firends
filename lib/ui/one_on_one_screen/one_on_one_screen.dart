@@ -9,6 +9,8 @@ import 'package:get/state_manager.dart';
 import '/core/utils/size_utils.dart';
 import '/data/common/dropdown_data.dart';
 import '/gen/assets.gen.dart';
+import '/theme/button_styles.dart';
+import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
@@ -30,9 +32,10 @@ class OneOnOneScreen extends StatelessWidget {
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: CustomAppBar(
-            leadingWidth: 34.h,
-            leading: const GetBackIcon(),
-            title: AppbarTitle(text: '1:1 문의하기')),
+          leadingWidth: 34.h,
+          leading: const GetBackIcon(),
+          title: AppbarTitle(text: '1:1 문의하기'),
+        ),
         body: SizedBox(
           width: double.maxFinite,
           child: Column(
@@ -41,45 +44,58 @@ class OneOnOneScreen extends StatelessWidget {
               Expanded(
                 child: SingleChildScrollView(
                   child: Padding(
-                    padding: EdgeInsets.only(left: 16.h, bottom: 5.v),
+                    padding: EdgeInsets.only(
+                      left: 16.h,
+                      bottom: 5.v,
+                    ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         CustomDropDown(
-                            icon: Container(
-                                margin:
-                                    EdgeInsets.fromLTRB(30.h, 12.v, 10.h, 12.v),
-                                child: CustomImageView(
-                                    svgPath: Assets.svg.icoCaretDownGray.path)),
-                            margin: EdgeInsets.only(right: 16.h),
-                            hintText: '문의 유형을 선택해주세요.',
-                            hintStyle: textTheme.bodyLarge!.copyWith(
-                              color: const Color(0xFF8F9199),
+                          icon: Container(
+                            margin: EdgeInsets.fromLTRB(30.h, 12.v, 10.h, 12.v),
+                            child: CustomImageView(
+                              svgPath: Assets.svg.icoCaretDownGray.path,
                             ),
-                            options:
-                                controller.oneOnOne.value.inquiryTypes.value,
-                            contentPadding: EdgeInsets.only(
-                                left: 10.h, top: 14.v, bottom: 14.v),
-                            onChanged: (DropdownData value) {
-                              controller.oneOnOne.value.inquiryTypes
-                                  .onSelected(value);
-                              controller.inquiryType = value;
-                            }),
+                          ),
+                          margin: EdgeInsets.only(right: 16.h),
+                          hintText: '문의 유형을 선택해주세요.',
+                          hintStyle: textTheme.bodyLarge!
+                              .tint(const Color(0xFF8F9199)),
+                          options: controller.oneOnOne.value.inquiryTypes.value,
+                          contentPadding: EdgeInsets.only(
+                            left: 10.h,
+                            top: 14.v,
+                            bottom: 14.v,
+                          ),
+                          onChanged: (DropdownData value) {
+                            controller.oneOnOne.value.inquiryTypes
+                                .onSelected(value);
+                            controller.inquiryType = value;
+                          },
+                        ),
                         CustomTextFormField(
-                            controller: controller.inquiryContent,
-                            margin: EdgeInsets.only(top: 21.v, right: 16.h),
-                            hintText: '내용을 입력해주세요.',
-                            hintStyle: textTheme.bodyLarge!.copyWith(
-                              color: const Color(0xFF8E9199),
-                            ),
-                            textInputAction: TextInputAction.done,
-                            maxLines: 15,
-                            contentPadding: EdgeInsets.symmetric(
-                                horizontal: 12.h, vertical: 14.v)),
+                          controller: controller.inquiryContent,
+                          margin: EdgeInsets.only(
+                            top: 21.v,
+                            right: 16.h,
+                          ),
+                          hintText: '내용을 입력해주세요.',
+                          hintStyle: textTheme.bodyLarge!
+                              .tint(const Color(0xFF8E9199)),
+                          textInputAction: TextInputAction.done,
+                          maxLines: 15,
+                          contentPadding: EdgeInsets.symmetric(
+                            horizontal: 12.h,
+                            vertical: 14.v,
+                          ),
+                        ),
                         SizedBox(height: 21.v),
-                        Text('이미지 첨부',
-                            style: textTheme.titleMedium!
-                                .copyWith(fontSize: 18.fSize)),
+                        Text(
+                          '이미지 첨부',
+                          style: textTheme.titleMedium!
+                              .copyWith(fontSize: TextSize.lg.fSize),
+                        ),
                         Align(
                           alignment: Alignment.centerRight,
                           child: SizedBox(
@@ -87,7 +103,10 @@ class OneOnOneScreen extends StatelessWidget {
                             child: Obx(
                               () => ListView.separated(
                                 padding: EdgeInsets.only(
-                                    left: 76.h, top: 7.v, right: 45.h),
+                                  left: 76.h,
+                                  top: 7.v,
+                                  right: 45.h,
+                                ),
                                 scrollDirection: Axis.horizontal,
                                 separatorBuilder: (context, index) {
                                   return SizedBox(width: 5.h);
@@ -102,36 +121,41 @@ class OneOnOneScreen extends StatelessWidget {
                               ),
                             ),
                           ),
-                        )
+                        ),
                       ],
                     ),
                   ),
                 ),
-              )
+              ),
             ],
           ),
         ),
         bottomNavigationBar: Container(
-          margin: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 29.v),
+          margin: EdgeInsets.only(
+            left: 16.h,
+            right: 16.h,
+            bottom: 29.v,
+          ),
           decoration: BoxDecoration(color: lightTheme.onPrimaryContainer),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: [
               CustomElevatedButton(
-                  width: 104.h,
-                  text: '취소',
-                  buttonStyle: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFFB9BCC3),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(26.h),
-                    ),
-                  )),
+                width: 104.h,
+                text: '취소',
+                buttonStyle: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xFFB9BCC3),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(26.h),
+                  ),
+                ).noEffect,
+              ),
               CustomElevatedButton(
                 width: 216.h,
                 text: '문의하기',
                 margin: EdgeInsets.only(left: 8.h),
-              )
+              ),
             ],
           ),
         ),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
+import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/base_button.dart';
 
@@ -64,9 +65,7 @@ class CustomOutlinedButton extends BaseButton {
               Text(
                 text,
                 style: buttonTextStyle ??
-                    textTheme.bodySmall!.copyWith(
-                      color: const Color(0xFF5D5D5D),
-                    ),
+                    textTheme.bodySmall!.tint(const Color(0xFF5D5D5D)),
               ),
               rightIcon ?? const SizedBox.shrink(),
             ],

@@ -53,7 +53,7 @@ class AppNavigationScreen extends StatelessWidget {
               const GatewayTitle(),
               const CheckYourAppUI(),
               Padding(
-                  padding: getPadding(top: 5),
+                  padding: EdgeInsets.only(top: 5.v),
                   child: Divider(
                       height: 5.v, thickness: 5.v, color: Palette.blueGray400)),
               Expanded(

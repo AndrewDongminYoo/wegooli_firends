@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import '/core/utils/size_utils.dart';
 import '/l10n/l10n.dart';
 import '/theme/custom_text_style.dart';
-import '/theme/text_styles.dart';
 import '/theme/theme_helper.dart';
 
 class GatewayTitle extends StatelessWidget {
@@ -16,12 +15,15 @@ class GatewayTitle extends StatelessWidget {
     return Align(
         alignment: Alignment.centerLeft,
         child: Padding(
-          padding: getPadding(horizontal: 20, vertical: 10),
+          padding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 10.v),
           child: Text(
             'App Navigation',
             overflow: TextOverflow.ellipsis,
             textAlign: TextAlign.center,
-            style: AppTextStyle(color: Colors.black, fontSize: TextSize.xl),
+            style: AppTextStyle(
+              color: Colors.black,
+              fontSize: TextSize.xl,
+            ),
           ),
         ));
   }
@@ -35,7 +37,7 @@ class CheckYourAppUI extends StatelessWidget {
     return Align(
         alignment: Alignment.centerLeft,
         child: Padding(
-          padding: getPadding(left: 20),
+          padding: EdgeInsets.only(left: 20.h),
           child: Text(
             l10ns.checkYourAppUI,
             overflow: TextOverflow.ellipsis,

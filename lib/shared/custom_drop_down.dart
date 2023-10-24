@@ -324,7 +324,7 @@ class _CustomDropDownState extends State<CustomDropDown> {
               child: Text(
                 selectedItems.join(', '),
                 style: AppTextStyle(
-                  fontSize: 14,
+                  fontSize: TextSize.sm,
                   overflow: TextOverflow.ellipsis,
                 ),
                 maxLines: 1,

@@ -92,7 +92,7 @@ class CustomBottomBar extends StatelessWidget {
                     child: Text(
                       bottomMenuList[index].title ?? '',
                       style: textTheme.bodySmall!.copyWith(
-                        fontSize: 10.fSize,
+                        fontSize: TextSize.xxs.fSize,
                         color: const Color(0xFFB0B2BC),
                       ),
                     ),
@@ -112,7 +112,7 @@ class CustomBottomBar extends StatelessWidget {
                     child: Text(
                       bottomMenuList[index].title ?? '',
                       style: textTheme.bodySmall!.copyWith(
-                        fontSize: 10.fSize,
+                        fontSize: TextSize.xxs.fSize,
                         color: lightTheme.onPrimary,
                       ),
                     ),
@@ -167,7 +167,7 @@ class DefaultWidget extends StatelessWidget {
           children: [
             Text(
               'Please replace the respective Widget here',
-              style: AppTextStyle(fontSize: 18),
+              style: AppTextStyle(fontSize: TextSize.lg),
             ),
           ],
         ),

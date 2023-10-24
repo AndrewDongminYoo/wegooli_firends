@@ -8,7 +8,6 @@ import 'package:go_router/go_router.dart';
 import '/core/utils/size_utils.dart';
 import '/gen/fonts.gen.dart';
 import '/theme/custom_text_style.dart';
-import '/theme/text_styles.dart';
 import '/theme/theme_helper.dart';
 
 class RouteItem extends StatelessWidget {
@@ -32,19 +31,20 @@ class RouteItem extends StatelessWidget {
           Align(
               alignment: Alignment.centerLeft,
               child: Padding(
-                padding: getPadding(horizontal: 20, vertical: 10),
+                padding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 10.v),
                 child: Text(
                   title,
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.center,
                   style: AppTextStyle(
-                      color: Colors.black,
-                      fontSize: TextSize.xl,
-                      fontFamily: FontFamily.roboto),
+                    color: Colors.black,
+                    fontSize: TextSize.xl,
+                    fontFamily: FontFamily.roboto,
+                  ),
                 ),
               )),
           Padding(
-              padding: getPadding(top: 5),
+              padding: EdgeInsets.only(top: 5.v),
               child: Divider(
                   height: 1.v, thickness: 1.v, color: Palette.blueGray400)),
         ]),

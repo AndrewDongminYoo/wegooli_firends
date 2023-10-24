@@ -1,6 +1,9 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+// 📦 Package imports:
+import 'package:auto_size_text/auto_size_text.dart';
+
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
@@ -36,12 +39,15 @@ class SplashScreenTwo extends StatelessWidget {
                   child: SingleChildScrollView(
                     child: Padding(
                       padding: EdgeInsets.only(
-                          left: 116.h, right: 116.h, bottom: 113.v),
+                        left: 116.h,
+                        right: 116.h,
+                        bottom: 113.v,
+                      ),
                       child: Column(
                         children: [
                           SizedBox(
                             width: 128.h,
-                            child: Text(
+                            child: AutoSizeText(
                               '우리가\n만드는\n카셰어링',
                               maxLines: 3,
                               overflow: TextOverflow.ellipsis,

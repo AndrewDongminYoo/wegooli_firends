@@ -8,6 +8,7 @@ import 'package:dropdown_button2/dropdown_button2.dart';
 import '/core/utils/list_extensions.dart';
 import '/core/utils/size_utils.dart';
 import '/data/common/dropdown_data.dart';
+import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 
 class CustomDropDown extends StatelessWidget {
@@ -59,9 +60,7 @@ class CustomDropDown extends StatelessWidget {
               option.title,
               overflow: TextOverflow.ellipsis,
               style: hintStyle ??
-                  textTheme.bodyLarge!.copyWith(
-                    color: const Color(0xFFB0B2BC),
-                  ),
+                  textTheme.bodyLarge!.tint(const Color(0xFFB0B2BC)),
             ),
           );
         }),
@@ -76,10 +75,8 @@ class CustomDropDown extends StatelessWidget {
 
   InputDecoration get decoration => InputDecoration(
         hintText: hintText ?? '',
-        hintStyle: hintStyle ??
-            textTheme.bodyLarge!.copyWith(
-              color: const Color(0xFFB0B2BC),
-            ),
+        hintStyle:
+            hintStyle ?? textTheme.bodyLarge!.tint(const Color(0xFFB0B2BC)),
         isDense: true,
         contentPadding: contentPadding ?? EdgeInsets.symmetric(vertical: 9.v),
         border: UnderlineInputBorder(

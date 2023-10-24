@@ -10,6 +10,7 @@ import 'package:go_router/go_router.dart';
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
+import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/image_view.dart';
 import 'controller/scheduled_date_controller.dart';
@@ -29,11 +30,16 @@ class ViewScheduledDateDialog extends StatelessWidget {
       insetPadding: EdgeInsets.zero,
       content: Container(
         width: mediaQueryData.size.width,
-        margin: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 238.v),
+        margin: EdgeInsets.only(
+          left: 16.h,
+          right: 16.h,
+          bottom: 238.v,
+        ),
         padding: EdgeInsets.all(20.h),
         decoration: BoxDecoration(
-            color: lightTheme.onPrimaryContainer,
-            borderRadius: BorderRadiusStyle.circleBorder10),
+          color: lightTheme.onPrimaryContainer,
+          borderRadius: BorderRadiusStyle.circleBorder10,
+        ),
         child: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -47,7 +53,8 @@ class ViewScheduledDateDialog extends StatelessWidget {
               ),
               SizedBox(height: 6.v),
               Text('일정 확인',
-                  style: textTheme.titleMedium!.copyWith(fontSize: 18.fSize)),
+                  style: textTheme.titleMedium!
+                      .copyWith(fontSize: TextSize.lg.fSize)),
               SizedBox(height: 22.v),
               Obx(() => ListView.separated(
                   physics: const NeverScrollableScrollPhysics(),

@@ -123,7 +123,11 @@ class GetBackIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomImageView(
       svgPath: Assets.svg.icoArrowLeft.path,
-      margin: EdgeInsets.only(left: 16.h, top: 19.v, bottom: 18.v),
+      margin: EdgeInsets.only(
+        left: 16.h,
+        top: 19.v,
+        bottom: 18.v,
+      ),
       onTap: GoRouter.of(context).pop,
     );
   }

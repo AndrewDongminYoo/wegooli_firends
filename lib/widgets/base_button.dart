@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class BaseButton extends StatelessWidget {
   BaseButton({
-    Key? key,
+    super.key,
     required this.text,
     this.onTap,
     this.buttonStyle,
@@ -13,24 +13,16 @@ class BaseButton extends StatelessWidget {
     this.width,
     this.margin,
     this.alignment,
-  }) : super(key: key);
+  });
 
   final String text;
-
   final VoidCallback? onTap;
-
   final ButtonStyle? buttonStyle;
-
   final TextStyle? buttonTextStyle;
-
   final bool? isDisabled;
-
   final double? height;
-
   final double? width;
-
   final EdgeInsets? margin;
-
   final Alignment? alignment;
 
   @override

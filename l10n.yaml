@@ -1,0 +1,15 @@
+# run `flutter gen-l10n` after updating arb files
+# https://docs.flutter.dev/ui/accessibility-and-internationalization/internationalization#configuring-the-l10nyaml-file
+
+arb-dir: lib/l10n/arb
+output-class: Localized
+output-dir: lib/l10n
+output-localization-file: app_localizations.dart
+preferred-supported-locales: [ko]
+project-dir: lib
+synthetic-package: false
+template-arb-file: app_ko.arb
+use-escaping: false
+nullable-getter: false
+suppress-warnings: true
+format: true

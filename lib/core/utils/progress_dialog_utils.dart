@@ -2,54 +2,41 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
-import 'package:lottie/lottie.dart';
+import 'package:get/route_manager.dart';
 
 // 🌎 Project imports:
-import '/core/app_export.dart';
+import '/gen/assets.gen.dart';
 
 class ProgressDialogUtils {
   static bool isProgressVisible = false;
 
-  static String lottiePath = 'assets/lottieFiles/custom_loader.json';
+  static LottieGenImage customLottie = Assets.lotties.customLoader;
 
-  /// Displays a progress dialog with a Lottie animation.
-  ///
-  /// The [isCancellable] parameter determines whether the progress dialog can be cancelled
-  /// by tapping outside the dialog area. If set to true, the dialog can be cancelled;
-  /// otherwise, it remains non-cancellable.
-  ///
-  /// If the progress dialog is already visible, this method does nothing.
-  /// The Lottie animation used in the dialog is loaded from a file specified by the [lottiePath] variable.
-  /// This method uses the `showDialog` function from the Flutter framework to display the dialog.
+  /// 로티 애니메이션과 함께 진행률 대화 상자를 표시합니다.
+  /// [isCancellable] 매개변수는 대화 영역 외부를 탭하여 진행률 대화 상자를 취소할 수 있는지 여부를 결정합니다.
+  /// true로 설정하면 대화 상자를 취소할 수 있으며, 그렇지 않으면 취소할 수 없는 상태로 유지됩니다.진행률 대화 상자가 이미 표시된 경우 이 메서드는 아무 작업도 수행하지 않습니다.
+  /// 대화 상자에 사용되는 로티 애니메이션은 [lottiePath] 변수로 지정된 파일에서 로드됩니다.
+  /// 이 메서드는 Get 패키지를 사용하여 대화 상자를 표시합니다.
   static void showProgressDialog({bool isCancellable = false}) {
-    if (!isProgressVisible &&
-        NavigatorService.navigatorKey.currentState?.overlay?.context != null) {
-      showDialog(
-        barrierDismissible: isCancellable,
-        context: NavigatorService.navigatorKey.currentState!.overlay!.context,
-        builder: (BuildContext context) {
-          return Center(
-            child: Lottie.asset(
-              lottiePath,
-              height: 250,
-              width: 250,
-            ),
-          );
-        },
+    if (!isProgressVisible) {
+      Get.dialog(
+        Center(
+          child: customLottie.lottie(
+            height: 250,
+            width: 250,
+          ),
+        ),
       );
     }
     isProgressVisible = true;
   }
 
-  /// Hides the displayed progress dialog.
-  /// If a progress dialog is visible, this function dismisses it by calling Navigator.pop
-  /// with the overlay context obtained from the NavigatorService.navigatorKey.
-  ///
-  /// After hiding the dialog, the isProgressVisible flag is set to false.
+  /// 표시된 진행률 대화 상자를 숨깁니다.
+  /// 진행률 대화 상자가 표시되면 이 함수는 [Get.back()]을 호출하여 대화 상자를 해제합니다.
+  /// 대화 상자를 숨긴 후 [isProgressVisible] 플래그는 `false`로 설정됩니다.
   static void hideProgressDialog() {
     if (isProgressVisible) {
-      Navigator.pop(
-          NavigatorService.navigatorKey.currentState!.overlay!.context);
+      Get.back();
     }
     isProgressVisible = false;
   }

@@ -1,14 +1,16 @@
-/// This class is used in the [userprofile_item_widget] screen.
+// 📦 Package imports:
+import 'package:get/state_manager.dart';
+
 class UserprofileItemModel {
   UserprofileItemModel({
     this.userName,
     this.id,
   }) {
-    userName = userName ?? '홍길동';
-    id = id ?? '';
+    userName = userName ?? Rx('홍길동');
+    id = id ?? Rx('');
   }
 
-  String? userName;
+  Rx<String>? userName;
 
-  String? id;
+  Rx<String>? id;
 }

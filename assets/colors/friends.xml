@@ -1,0 +1,30 @@
+<!-- Color palette -->
+<resources>
+    <color name="status_pass">#38DD66</color>
+    <color name="status_warn">#FF9A3D</color>
+    <color name="status_error">#E92222</color>
+    <color name="font_black_disabled">#828282</color>
+    <color name="font_black">#222222</color>
+    <color name="font_error">#DC4747</color>
+    <color name="font_gray">#5D5D5D</color>
+    <color name="font_white">#FFFFFF</color>
+    <color name="grey_grey_10">#484848</color>
+    <color name="neutral_black">#09101D</color>
+    <color name="neutral_dark_gray">#686B72</color>
+    <color name="neutral_default">#BABCC3</color>
+    <color name="neutral_disabled">#D7DBE2</color>
+    <color name="neutral_gray">#B0B3BC</color>
+    <color name="neutral_inverted_disabled">#CCFFFFFF</color>
+    <color name="neutral_inverted">#FFFFFF</color>
+    <color name="neutral_pressed">#91969D</color>
+    <color name="cal_grey_666">#666666</color>
+    <color name="cal_grey_eee">#EEEEEE</color>
+    <color name="primary_default">#FFE142</color>
+    <color name="primary_disabled">#FFF9D9</color>
+    <color name="primary_inverted">#FFFFFF</color>
+    <color name="primary_pressed">#FFD600</color>
+    <color name="secondary_button">#464A70</color>
+    <color name="secondary_default">#7951EA</color>
+    <color name="separation_bar">#F6F7F7</color>
+    <color name="wegooli">#FFE041</color>
+</resources>

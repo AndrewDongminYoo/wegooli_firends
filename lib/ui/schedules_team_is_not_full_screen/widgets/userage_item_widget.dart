@@ -1,18 +1,26 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+// 📦 Package imports:
+import 'package:get/instance_manager.dart';
+import 'package:get/state_manager.dart';
+
 // 🌎 Project imports:
-import '/core/app_export.dart';
-import '/ui/schedules_team_is_not_full_screen/models/userage_item_model.dart';
+import '../controller/schedules_team_is_not_full_controller.dart';
+import '../models/userage_item_model.dart';
+import '/core/utils/size_utils.dart';
+import '/theme/theme_helper.dart';
 
 // ignore: must_be_immutable
 class UserageItemWidget extends StatelessWidget {
   UserageItemWidget(
-    this.userageItemModelObj, {
-    Key? key,
-  }) : super(key: key);
+    this.userageItem, {
+    super.key,
+  });
 
-  UserageItemModel userageItemModelObj;
+  UserageItemModel userageItem;
+
+  SchedulesController controller = Get.find<SchedulesController>();
 
   @override
   Widget build(BuildContext context) {
@@ -23,27 +31,35 @@ class UserageItemWidget extends StatelessWidget {
         children: [
           Align(
             alignment: Alignment.centerLeft,
-            child: Text(
-              userageItemModelObj.userDay!,
-              overflow: TextOverflow.ellipsis,
-              style: theme.textTheme.titleMedium,
+            child: Obx(
+              () => Text(
+                userageItem.userDay!.value,
+                overflow: TextOverflow.ellipsis,
+                style: textTheme.titleMedium,
+              ),
             ),
           ),
           SizedBox(height: 19.v),
-          Text(
-            userageItemModelObj.userMonth!,
-            overflow: TextOverflow.ellipsis,
-            style: CustomTextStyles.bodySmallGray50003,
+          Obx(
+            () => Text(
+              userageItem.userMonth!.value,
+              overflow: TextOverflow.ellipsis,
+              style: textTheme.bodySmall!.copyWith(
+                color: const Color(0xFF91959D),
+              ),
+            ),
           ),
           Padding(
             padding: EdgeInsets.only(
               top: 19.v,
               right: 3.h,
             ),
-            child: Text(
-              userageItemModelObj.userYear!,
-              overflow: TextOverflow.ellipsis,
-              style: theme.textTheme.bodySmall,
+            child: Obx(
+              () => Text(
+                userageItem.userYear!.value,
+                overflow: TextOverflow.ellipsis,
+                style: textTheme.bodySmall,
+              ),
             ),
           ),
           Padding(
@@ -51,23 +67,29 @@ class UserageItemWidget extends StatelessWidget {
               top: 18.v,
               right: 1.h,
             ),
-            child: Text(
-              userageItemModelObj.thirty!,
-              overflow: TextOverflow.ellipsis,
-              style: theme.textTheme.bodySmall,
+            child: Obx(
+              () => Text(
+                userageItem.thirty!.value,
+                overflow: TextOverflow.ellipsis,
+                style: textTheme.bodySmall,
+              ),
             ),
           ),
           SizedBox(height: 19.v),
-          Text(
-            userageItemModelObj.thirtyone!,
-            overflow: TextOverflow.ellipsis,
-            style: theme.textTheme.bodySmall,
+          Obx(
+            () => Text(
+              userageItem.thirtyone!.value,
+              overflow: TextOverflow.ellipsis,
+              style: textTheme.bodySmall,
+            ),
           ),
           SizedBox(height: 18.v),
-          Text(
-            userageItemModelObj.thirtytwo!,
-            overflow: TextOverflow.ellipsis,
-            style: theme.textTheme.bodySmall,
+          Obx(
+            () => Text(
+              userageItem.thirtytwo!.value,
+              overflow: TextOverflow.ellipsis,
+              style: textTheme.bodySmall,
+            ),
           ),
         ],
       ),

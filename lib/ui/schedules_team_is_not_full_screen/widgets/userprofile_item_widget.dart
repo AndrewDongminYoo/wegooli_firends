@@ -1,18 +1,29 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+// 📦 Package imports:
+import 'package:get/instance_manager.dart';
+import 'package:get/state_manager.dart';
+
 // 🌎 Project imports:
-import '/core/app_export.dart';
-import '/ui/schedules_team_is_not_full_screen/models/userprofile_item_model.dart';
+import '../controller/schedules_team_is_not_full_controller.dart';
+import '../models/userprofile_item_model.dart';
+import '/core/utils/size_utils.dart';
+import '/gen/assets.gen.dart';
+import '/theme/app_decoration.dart';
+import '/theme/theme_helper.dart';
+import '/widgets/image_view.dart';
 
 // ignore: must_be_immutable
 class UserprofileItemWidget extends StatelessWidget {
   UserprofileItemWidget(
-    this.userprofileItemModelObj, {
-    Key? key,
-  }) : super(key: key);
+    this.userprofileItem, {
+    super.key,
+  });
 
-  UserprofileItemModel userprofileItemModelObj;
+  UserprofileItemModel userprofileItem;
+
+  SchedulesController controller = Get.find<SchedulesController>();
 
   @override
   Widget build(BuildContext context) {
@@ -24,13 +35,13 @@ class UserprofileItemWidget extends StatelessWidget {
             height: 50.adaptSize,
             width: 50.adaptSize,
             padding: EdgeInsets.all(4.h),
-            decoration: AppDecoration.fillPrimary.copyWith(
+            decoration: BoxDecoration(
+              color: lightTheme.primary,
               borderRadius: BorderRadiusStyle.circleBorder25,
             ),
-            child: CustomImageView(
-              imagePath: ImageConstant.imgEllipse1,
-              height: 42.adaptSize,
-              width: 42.adaptSize,
+            child: customAvatar(
+              Assets.images.placeholder.path,
+              size: 42.adaptSize,
               radius: BorderRadius.circular(
                 21.h,
               ),
@@ -38,10 +49,12 @@ class UserprofileItemWidget extends StatelessWidget {
             ),
           ),
           SizedBox(height: 4.v),
-          Text(
-            userprofileItemModelObj.userName!,
-            overflow: TextOverflow.ellipsis,
-            style: theme.textTheme.bodySmall,
+          Obx(
+            () => Text(
+              userprofileItem.userName!.value,
+              overflow: TextOverflow.ellipsis,
+              style: textTheme.bodySmall,
+            ),
           ),
         ],
       ),

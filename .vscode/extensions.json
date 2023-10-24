@@ -1,0 +1,19 @@
+{
+  "recommendations": [
+    "vivaxy.vscode-conventional-commits",
+    "dart-code.dart-code",
+    "miquelddg.dart-barrel-file-generator",
+    "figma.figma-vscode-extension",
+    "dart-code.flutter",
+    "circlecodesolution.ccs-flutter-color",
+    "marcelovelasquez.flutter-tree",
+    "eamodio.gitlens",
+    "wix.vscode-import-cost",
+    "quicktype.quicktype",
+    "jeroen-meijer.pubspec-assist",
+    "everettjf.pubspec-dependency-search",
+    "pflannery.vscode-versionlens",
+    "nash.awesome-flutter-snippets",
+    "hirantha.json-to-dart"
+  ]
+}

@@ -1,84 +1,89 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+// 📦 Package imports:
+import 'package:get/route_manager.dart';
+import 'package:get/utils.dart';
+import 'package:go_router/go_router.dart';
 
 // 🌎 Project imports:
-import '/core/app_export.dart';
-import '/ui/schedules_send_invitation_leader_only_dialog/bloc/schedules_send_invitation_leader_only_bloc.dart';
-import '/ui/schedules_send_invitation_leader_only_dialog/models/schedules_send_invitation_leader_only_model.dart';
-import '/widgets/custom_elevated_button.dart';
-import '/widgets/custom_text_form_field.dart';
+import '/core/utils/size_utils.dart';
+import '/gen/assets.gen.dart';
+import '/l10n/l10n.dart';
+import '/theme/app_decoration.dart';
+import '/theme/button_styles.dart';
+import '/theme/text_styles.dart';
+import '/theme/theme_helper.dart';
+import '/widgets/elevated_button.dart';
+import '/widgets/image_view.dart';
+import '/widgets/text_form_field.dart';
+import 'controller/schedules_send_invitation_leader_only_controller.dart';
 
-class SchedulesSendInvitationLeaderOnlyDialog extends StatelessWidget {
-  const SchedulesSendInvitationLeaderOnlyDialog({Key? key}) : super(key: key);
+// ignore_for_file: must_be_immutable
+class SchedulesSendInvitationDialog extends StatelessWidget {
+  SchedulesSendInvitationDialog(this.controller, {super.key});
 
-  static Widget builder(BuildContext context) {
-    return BlocProvider<SchedulesSendInvitationLeaderOnlyBloc>(
-        create: (context) => SchedulesSendInvitationLeaderOnlyBloc(
-            SchedulesSendInvitationLeaderOnlyState(
-                schedulesSendInvitationLeaderOnlyModelObj:
-                    SchedulesSendInvitationLeaderOnlyModel()))
-          ..add(SchedulesSendInvitationLeaderOnlyInitialEvent()),
-        child: const SchedulesSendInvitationLeaderOnlyDialog());
-  }
+  SchedulesSendInvitationLeaderOnlyController controller;
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
-    return SingleChildScrollView(
-        child: Container(
-            margin: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 318.v),
-            decoration: AppDecoration.fillOnPrimaryContainer
-                .copyWith(borderRadius: BorderRadiusStyle.roundedBorder10),
-            child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  CustomImageView(
-                      svgPath: ImageConstant.imgClose,
-                      height: 15.adaptSize,
-                      width: 15.adaptSize,
-                      alignment: Alignment.centerRight,
-                      margin: EdgeInsets.only(top: 20.v, right: 20.h),
-                      onTap: () {
-                        onTapImgCloseone(context);
-                      }),
-                  Padding(
-                      padding: EdgeInsets.only(left: 20.h, top: 6.v),
-                      child: Text('lbl15'.tr,
-                          style: CustomTextStyles.titleMedium18)),
-                  BlocSelector<
-                          SchedulesSendInvitationLeaderOnlyBloc,
-                          SchedulesSendInvitationLeaderOnlyState,
-                          TextEditingController?>(
-                      selector: (state) => state.valueoneController,
-                      builder: (context, valueoneController) {
-                        return CustomTextFormField(
-                            controller: valueoneController,
-                            margin: EdgeInsets.only(
-                                left: 20.h, top: 22.v, right: 20.h),
-                            hintText: 'msg_qwer_tyui_asdf_zxcv'.tr,
-                            hintStyle: CustomTextStyles.bodyLargeGray50004,
-                            textInputAction: TextInputAction.done,
-                            alignment: Alignment.center,
-                            contentPadding: EdgeInsets.symmetric(
-                                horizontal: 12.h, vertical: 14.v));
-                      }),
-                  SizedBox(height: 20.v),
-                  CustomElevatedButton(
-                      text: 'lbl16'.tr,
-                      buttonStyle: CustomButtonStyles.fillPrimary,
-                      buttonTextStyle: theme.textTheme.titleMedium)
-                ])));
-  }
-
-  /// Navigates to the previous screen.
-  ///
-  /// This function takes a [BuildContext] object as a parameter, which is
-  /// used to build the navigation stack. When the action is triggered, this
-  /// function uses the [NavigatorService] to navigate to the previous screen
-  /// in the navigation stack.
-  void onTapImgCloseone(BuildContext context) {
-    NavigatorService.goBack();
+    return AlertDialog(
+      contentPadding: EdgeInsets.zero,
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadiusStyle.circleBorder10),
+      content: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Padding(
+                padding: getPadding(left: 25, top: 15, right: 15),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                          padding: getPadding(top: 6),
+                          child: Text(
+                            l10ns.invitationCode,
+                            overflow: TextOverflow.ellipsis,
+                            textAlign: TextAlign.left,
+                            style: textTheme.titleMedium!
+                                .copyWith(fontSize: TextSize.lg.fSize)
+                                .modest,
+                          )),
+                      customIcon(
+                        Assets.svg.icoCloseGray.path,
+                        size: 13.adaptSize,
+                        margin: getMargin(bottom: 15),
+                        onTap: () => GoRouter.of(context).pop(false),
+                      ),
+                    ])),
+            CustomTextFormField(
+              controller: controller.teamCode,
+              margin: getMargin(left: 25, top: 17, right: 25),
+            ),
+            if (true)
+              CustomElevatedButton(
+                onTap: () {
+                  Clipboard.setData(
+                      ClipboardData(text: controller.teamCode.text));
+                  Get.showSnackbar(GetSnackBar(
+                    title: '복사 완료',
+                    message: controller.teamCode.text,
+                    duration: 1.seconds,
+                  ));
+                },
+                text: '복사하기',
+                margin: getMargin(top: 25),
+                buttonStyle: ElevatedButton.styleFrom(
+                        backgroundColor: lightTheme.primary,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadiusStyle.customBorderB10))
+                    .noEffect,
+                buttonTextStyle: textTheme.titleMedium,
+              )
+          ]),
+    );
   }
 }

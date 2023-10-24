@@ -1,35 +1,34 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+// 📦 Package imports:
+import 'package:get/route_manager.dart';
+
 // 🌎 Project imports:
-import '/core/app_export.dart';
+import '/core/utils/size_utils.dart';
+import '/gen/assets.gen.dart';
+import '/widgets/image_view.dart';
 
 // ignore: must_be_immutable
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   CustomAppBar({
-    Key? key,
+    super.key,
     this.height,
     this.styleType,
     this.leadingWidth,
     this.leading,
     this.title,
-    this.centerTitle,
+    this.centerTitle = true,
     this.actions,
-  }) : super(key: key);
-
-  final double? height;
-
-  final Style? styleType;
-
-  final double? leadingWidth;
-
-  final Widget? leading;
-
-  final Widget? title;
+  });
 
   final bool? centerTitle;
-
+  final double? height;
+  final double? leadingWidth;
   final List<Widget>? actions;
+  final Style? styleType;
+  final Widget? leading;
+  final Widget? title;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +37,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       toolbarHeight: height ?? 55.v,
       automaticallyImplyLeading: false,
       backgroundColor: Colors.transparent,
-      flexibleSpace: _getStyle(),
+      flexibleSpace: _flexibleSpace,
       leadingWidth: leadingWidth ?? 0,
       leading: leading,
       title: title,
@@ -53,22 +52,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         mediaQueryData.size.width,
         height ?? 55.v,
       );
-  Container? _getStyle() {
+  Container? get _flexibleSpace {
     switch (styleType) {
-      case Style.bgOutline_1:
-        return Container(
-          height: 45.v,
-          width: double.maxFinite,
-          decoration: BoxDecoration(
-            color: theme.colorScheme.onPrimaryContainer,
-            border: Border(
-              bottom: BorderSide(
-                color: appTheme.blueGray30033,
-                width: 1.h,
-              ),
-            ),
-          ),
-        );
       case Style.bgOutline:
         return Container(
           height: 45.v,
@@ -76,7 +61,21 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           decoration: BoxDecoration(
             border: Border(
               bottom: BorderSide(
-                color: appTheme.blueGray30033,
+                color: const Color(0x33A4A8AF),
+                width: 1.h,
+              ),
+            ),
+          ),
+        );
+      case Style.bgOutline_1:
+        return Container(
+          height: 45.v,
+          width: double.maxFinite,
+          decoration: BoxDecoration(
+            color: const Color(0xFFFFFFFF),
+            border: Border(
+              bottom: BorderSide(
+                color: const Color(0x33A4A8AF),
                 width: 1.h,
               ),
             ),
@@ -87,10 +86,10 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           height: 45.v,
           width: double.maxFinite,
           decoration: BoxDecoration(
-            color: theme.colorScheme.onPrimaryContainer,
+            color: const Color(0xFFFFFFFF),
             border: Border(
               bottom: BorderSide(
-                color: appTheme.gray400,
+                color: const Color(0xFFB9BCC3),
                 width: 1.h,
               ),
             ),
@@ -100,8 +99,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         return Container(
           height: 50.v,
           width: double.maxFinite,
-          decoration: BoxDecoration(
-            color: theme.colorScheme.onPrimaryContainer,
+          decoration: const BoxDecoration(
+            color: Color(0xFFFFFFFF),
           ),
         );
       default:
@@ -111,8 +110,21 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 }
 
 enum Style {
-  bgOutline_1,
   bgOutline,
+  bgOutline_1,
   bgOutline_2,
   bgFill,
+}
+
+class GetBackIcon extends StatelessWidget {
+  const GetBackIcon({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomImageView(
+      svgPath: Assets.svg.icoArrowLeft.path,
+      margin: EdgeInsets.only(left: 16.h, top: 19.v, bottom: 18.v),
+      onTap: Get.back,
+    );
+  }
 }

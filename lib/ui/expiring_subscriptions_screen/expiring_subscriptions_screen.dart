@@ -2,177 +2,157 @@
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
-import '/core/app_export.dart';
-import '/ui/expiring_subscriptions_screen/bloc/expiring_subscriptions_bloc.dart';
-import '/ui/expiring_subscriptions_screen/models/expiring_subscriptions_model.dart';
-import '/widgets/app_bar/appbar_image_1.dart';
+import '/core/utils/size_utils.dart';
+import '/gen/assets.gen.dart';
+import '/theme/app_decoration.dart';
+import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
-import '/widgets/custom_elevated_button.dart';
+import '/widgets/elevated_button.dart';
+import '/widgets/image_view.dart';
 
 class ExpiringSubscriptionsScreen extends StatelessWidget {
-  const ExpiringSubscriptionsScreen({Key? key}) : super(key: key);
-
-  static Widget builder(BuildContext context) {
-    return BlocProvider<ExpiringSubscriptionsBloc>(
-        create: (context) => ExpiringSubscriptionsBloc(
-            ExpiringSubscriptionsState(
-                expiringSubscriptionsModelObj: ExpiringSubscriptionsModel()))
-          ..add(ExpiringSubscriptionsInitialEvent()),
-        child: const ExpiringSubscriptionsScreen());
-  }
+  const ExpiringSubscriptionsScreen({super.key});
+  static const routeName = '/expiring_subscription';
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
-    return BlocBuilder<ExpiringSubscriptionsBloc, ExpiringSubscriptionsState>(
-        builder: (context, state) {
-      return SafeArea(
-          child: Scaffold(
-              appBar: CustomAppBar(
-                  leadingWidth: 34.h,
-                  leading: AppbarImage1(
-                      svgPath: ImageConstant.imgArrowrightOnPrimary,
-                      margin:
-                          EdgeInsets.only(left: 16.h, top: 19.v, bottom: 18.v),
-                      onTap: () {
-                        onTapArrowleftone(context);
-                      }),
-                  centerTitle: true,
-                  title: AppbarTitle(text: 'lbl123'.tr)),
-              body: SizedBox(
-                  width: mediaQueryData.size.width,
-                  child: SingleChildScrollView(
-                      padding: EdgeInsets.only(top: 22.v),
-                      child: Padding(
-                          padding: EdgeInsets.only(
-                              left: 16.h, right: 16.h, bottom: 5.v),
-                          child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Padding(
-                                    padding: EdgeInsets.only(left: 2.h),
-                                    child: Text('lbl131'.tr,
-                                        style: CustomTextStyles
-                                            .titleMediumBlack90018)),
-                                SizedBox(height: 12.v),
-                                Container(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 10.h, vertical: 20.v),
-                                    decoration: AppDecoration.outlineGray
-                                        .copyWith(
-                                            borderRadius: BorderRadiusStyle
-                                                .roundedBorder10),
-                                    child: Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.end,
-                                        children: [
-                                          SizedBox(height: 10.v),
-                                          CustomImageView(
-                                              imagePath: ImageConstant.img21,
-                                              height: 96.v,
-                                              width: 167.h),
-                                          SizedBox(height: 30.v),
-                                          const Divider(),
-                                          Padding(
-                                              padding: EdgeInsets.only(
-                                                  left: 9.h,
-                                                  top: 20.v,
-                                                  right: 9.h),
-                                              child: Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceBetween,
-                                                  children: [
-                                                    Text('lbl132'.tr,
-                                                        style: CustomTextStyles
-                                                            .titleMedium18),
-                                                    Padding(
-                                                        padding:
-                                                            EdgeInsets.only(
-                                                                top: 5.v),
-                                                        child: Text(
-                                                            'lbl_12_3456'.tr,
-                                                            style: CustomTextStyles
-                                                                .bodySmallOnPrimary))
-                                                  ])),
-                                          Padding(
-                                              padding: EdgeInsets.only(
-                                                  left: 9.h,
-                                                  top: 14.v,
-                                                  right: 9.h),
-                                              child: Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceBetween,
-                                                  children: [
-                                                    Text('lbl133'.tr,
-                                                        style: CustomTextStyles
-                                                            .bodyLargeOnPrimary),
-                                                    Text('lbl_150_000'.tr,
-                                                        style: theme.textTheme
-                                                            .bodyLarge)
-                                                  ])),
-                                          Padding(
-                                              padding: EdgeInsets.only(
-                                                  left: 9.h,
-                                                  top: 3.v,
-                                                  right: 9.h),
-                                              child: Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceBetween,
-                                                  children: [
-                                                    Text('lbl134'.tr,
-                                                        style: CustomTextStyles
-                                                            .bodyLargeOnPrimary),
-                                                    Text(
-                                                        'msg_2023_07_01_2023_08_01'
-                                                            .tr,
-                                                        style: theme.textTheme
-                                                            .bodyLarge)
-                                                  ])),
-                                          Padding(
-                                              padding: EdgeInsets.only(
-                                                  left: 9.h,
-                                                  top: 3.v,
-                                                  right: 9.h),
-                                              child: Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceBetween,
-                                                  children: [
-                                                    Text('lbl150'.tr,
-                                                        style: CustomTextStyles
-                                                            .bodyLargeOnPrimary),
-                                                    Text('lbl_2023_08_20'.tr,
-                                                        style: theme.textTheme
-                                                            .bodyLarge)
-                                                  ])),
-                                          CustomElevatedButton(
-                                              height: 48.v,
-                                              width: 160.h,
-                                              text: 'lbl151'.tr,
-                                              margin: EdgeInsets.only(
-                                                  top: 21.v, right: 9.h),
-                                              buttonStyle: CustomButtonStyles
-                                                  .fillPrimaryTL5,
-                                              buttonTextStyle:
-                                                  theme.textTheme.titleMedium,
-                                              alignment: Alignment.centerRight)
-                                        ]))
-                              ]))))));
-    });
-  }
-
-  /// Navigates to the previous screen.
-  ///
-  /// This function takes a [BuildContext] object as a parameter, which is
-  /// used to build the navigation stack. When the action is triggered, this
-  /// function uses the [NavigatorService] to navigate to the previous screen
-  /// in the navigation stack.
-  void onTapArrowleftone(BuildContext context) {
-    NavigatorService.goBack();
+    return SafeArea(
+      child: Scaffold(
+        appBar: CustomAppBar(
+            leadingWidth: 34.h,
+            leading: const GetBackIcon(),
+            title: AppbarTitle(text: '구독 정보')),
+        body: SizedBox(
+          width: mediaQueryData.size.width,
+          child: SingleChildScrollView(
+            padding: EdgeInsets.only(top: 22.v),
+            child: Padding(
+              padding: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 5.v),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(left: 2.h),
+                    child: Text(
+                      '차량 정보',
+                      style: textTheme.titleMedium!.copyWith(
+                        color: Colors.black,
+                        fontSize: 18.fSize,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 12.v),
+                  Container(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 10.h, vertical: 20.v),
+                      decoration: BoxDecoration(
+                          color: lightTheme.onPrimaryContainer,
+                          border: Border.all(
+                            color: const Color(0xFFB9BCC3),
+                            width: 1.h,
+                          ),
+                          borderRadius: BorderRadiusStyle.circleBorder10),
+                      child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            SizedBox(height: 10.v),
+                            CustomImageView(
+                                imagePath: Assets.cars.ev6GtSKlm.path,
+                                height: 96.v,
+                                width: 167.h),
+                            SizedBox(height: 30.v),
+                            const Divider(),
+                            Padding(
+                              padding: EdgeInsets.only(
+                                  left: 9.h, top: 20.v, right: 9.h),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text('모닝',
+                                      style: textTheme.titleMedium!
+                                          .copyWith(fontSize: 18.fSize)),
+                                  Padding(
+                                      padding: EdgeInsets.only(top: 5.v),
+                                      child: Text('12가 3456',
+                                          style: textTheme.bodySmall!.copyWith(
+                                            color: lightTheme.onPrimary
+                                                .withOpacity(0.4),
+                                          )))
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(
+                                  left: 9.h, top: 14.v, right: 9.h),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text('월 결제 금액',
+                                      style: textTheme.bodyLarge!.copyWith(
+                                        color: lightTheme.onPrimary
+                                            .withOpacity(0.4),
+                                      )),
+                                  Text('150,000 원', style: textTheme.bodyLarge)
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(
+                                  left: 9.h, top: 3.v, right: 9.h),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text('구독',
+                                      style: textTheme.bodyLarge!.copyWith(
+                                        color: lightTheme.onPrimary
+                                            .withOpacity(0.4),
+                                      )),
+                                  Text('2023.07.01~2023.08.01',
+                                      style: textTheme.bodyLarge)
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(
+                                  left: 9.h, top: 3.v, right: 9.h),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text('해지 예정일',
+                                      style: textTheme.bodyLarge!.copyWith(
+                                        color: lightTheme.onPrimary
+                                            .withOpacity(0.4),
+                                      )),
+                                  Text('2023.08.20', style: textTheme.bodyLarge)
+                                ],
+                              ),
+                            ),
+                            CustomElevatedButton(
+                                height: 48.v,
+                                width: 160.h,
+                                text: '해지 취소',
+                                margin: EdgeInsets.only(top: 21.v, right: 9.h),
+                                buttonStyle: ElevatedButton.styleFrom(
+                                  backgroundColor: lightTheme.primary,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(5.h),
+                                  ),
+                                ),
+                                buttonTextStyle: textTheme.titleMedium,
+                                alignment: Alignment.centerRight)
+                          ]))
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }

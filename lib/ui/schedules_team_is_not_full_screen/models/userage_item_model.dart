@@ -1,4 +1,6 @@
-/// This class is used in the [userage_item_widget] screen.
+// 📦 Package imports:
+import 'package:get/state_manager.dart';
+
 class UserageItemModel {
   UserageItemModel({
     this.userDay,
@@ -9,26 +11,26 @@ class UserageItemModel {
     this.thirtytwo,
     this.id,
   }) {
-    userDay = userDay ?? '30';
-    userMonth = userMonth ?? '30';
-    userYear = userYear ?? '6';
-    thirty = thirty ?? '13';
-    thirtyone = thirtyone ?? '20';
-    thirtytwo = thirtytwo ?? '27';
-    id = id ?? '';
+    userDay = userDay ?? Rx('일');
+    userMonth = userMonth ?? Rx('30');
+    userYear = userYear ?? Rx('6');
+    thirty = thirty ?? Rx('13');
+    thirtyone = thirtyone ?? Rx('20');
+    thirtytwo = thirtytwo ?? Rx('27');
+    id = id ?? Rx('');
   }
 
-  String? userDay;
+  Rx<String>? userDay;
 
-  String? userMonth;
+  Rx<String>? userMonth;
 
-  String? userYear;
+  Rx<String>? userYear;
 
-  String? thirty;
+  Rx<String>? thirty;
 
-  String? thirtyone;
+  Rx<String>? thirtyone;
 
-  String? thirtytwo;
+  Rx<String>? thirtytwo;
 
-  String? id;
+  Rx<String>? id;
 }

@@ -1,0 +1,42 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "wegooli_friends",
+      "request": "launch",
+      "type": "dart",
+      "flutterPlatform": "default",
+      "flutterMode": "debug",
+      "console": "debugConsole",
+      "args": ["--hot", "--ignore-deprecation", "--route=/shared_schedule"],
+      "openDevTools": "logging",
+      "program": "lib/main.dart",
+      "suppressWebServerDeviceBrowserLaunch": true
+    },
+    {
+      "name": "wegooli_friends (profile mode)",
+      "request": "launch",
+      "type": "dart",
+      "flutterPlatform": "default",
+      "flutterMode": "profile",
+      "console": "debugConsole",
+      "args": ["--hot", "--ignore-deprecation", "--route=/shared_schedule"],
+      "openDevTools": "performance",
+      "program": "lib/main.dart"
+    },
+    {
+      "name": "wegooli_friends (release mode)",
+      "request": "launch",
+      "type": "dart",
+      "flutterPlatform": "default",
+      "flutterMode": "release",
+      "console": "debugConsole",
+      "args": ["--hot", "--ignore-deprecation", "--route=/shared_schedule"],
+      "openDevTools": "network",
+      "program": "lib/main.dart"
+    }
+  ]
+}

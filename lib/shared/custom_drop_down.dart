@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 
 // 🌎 Project imports:
+import '/core/utils/list_extensions.dart';
 import '/core/utils/size_utils.dart';
 import '/data/common/dropdown_data.dart';
 import '/shared/form_field_controller.dart';
@@ -90,17 +91,15 @@ class _CustomDropDownState extends State<CustomDropDown> {
     final value = widget.options.contains(widget.controller?.value)
         ? widget.controller?.value
         : null;
-    final items = widget.options
-        .map(
-          (option) => DropdownMenuItem<DropdownData>(
-            value: option,
-            child: Text(
-              option.title,
-              style: widget.textStyle,
-            ),
-          ),
-        )
-        .toList();
+    final items = widget.options.mapTo(
+      (option) => DropdownMenuItem<DropdownData>(
+        value: option,
+        child: Text(
+          option.title,
+          style: widget.textStyle,
+        ),
+      ),
+    );
     final hintText = widget.hintText != null
         ? Text(widget.hintText!, style: widget.textStyle)
         : null;
@@ -183,9 +182,7 @@ class _CustomDropDownState extends State<CustomDropDown> {
       hint: hintText,
       items: items,
       iconStyleData: iconStyleData,
-      buttonStyleData: ButtonStyleData(
-        overlayColor: overlayColor,
-      ),
+      buttonStyleData: ButtonStyleData(overlayColor: overlayColor),
       menuItemStyleData: MenuItemStyleData(overlayColor: overlayColor),
       dropdownStyleData: DropdownStyleData(
         decoration: BoxDecoration(
@@ -255,7 +252,7 @@ class _CustomDropDownState extends State<CustomDropDown> {
     return DropdownButton2<DropdownData>(
       value: selectedItems.isEmpty ? null : selectedItems.last,
       hint: hintText,
-      items: widget.options.map((item) {
+      items: widget.options.mapTo((item) {
         return DropdownMenuItem(
           value: item,
 
@@ -300,11 +297,9 @@ class _CustomDropDownState extends State<CustomDropDown> {
             },
           ),
         );
-      }).toList(),
+      }),
       iconStyleData: iconStyleData,
-      buttonStyleData: ButtonStyleData(
-        overlayColor: overlayColor,
-      ),
+      buttonStyleData: ButtonStyleData(overlayColor: overlayColor),
       menuItemStyleData: MenuItemStyleData(overlayColor: overlayColor),
       dropdownStyleData: DropdownStyleData(
         decoration: BoxDecoration(
@@ -317,7 +312,7 @@ class _CustomDropDownState extends State<CustomDropDown> {
       onChanged: disabled ? null : (val) {},
       isExpanded: true,
       selectedItemBuilder: (context) {
-        return widget.options.map(
+        return widget.options.mapTo(
           (item) {
             return Container(
               alignment: AlignmentDirectional.center,
@@ -331,7 +326,7 @@ class _CustomDropDownState extends State<CustomDropDown> {
               ),
             );
           },
-        ).toList();
+        );
       },
       dropdownSearchData: isSearchable
           ? DropdownSearchData<DropdownData>(

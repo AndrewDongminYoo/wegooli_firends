@@ -153,8 +153,10 @@ class CustomImageView extends StatelessWidget {
           height: height,
           width: width,
           fit: fit ?? BoxFit.contain,
-          // ignore: deprecated_member_use
-          color: color,
+          colorFilter: ColorFilter.mode(
+            color ?? Colors.transparent,
+            BlendMode.srcIn,
+          ),
         ),
       );
     } else if (imagePath != null && imagePath!.isNotEmpty) {

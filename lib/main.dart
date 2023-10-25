@@ -59,15 +59,25 @@ Future<void> main() async {
   auth = FirebaseAuth.instanceFor(app: app);
 
   /// 대화 상자 보고서 모드와 콘솔 핸들러로 구성을 디버그합니다.
-  /// 대화 상자가 표시되고 사용자가 이를 수락하면 콘솔에 오류가 표시됩니다.
+  /// [DialogReportMode] 대화 상자가 표시되고 사용자가 이를 수락하면 콘솔에 오류가 표시됩니다.
+  /// [SilentReportMode] 대화 상자가 표시되지 않고 콘솔에 오류가 표시됩니다.
   final debugOptions = Catcher2Options(
     SilentReportMode(),
     [
       ConsoleHandler(
+        // 기기 관련 파라미터 출력
         enableDeviceParameters: false,
+        // 앱 정보 파라미터 출력
         enableApplicationParameters: false,
+        // 스택 트레이스 출력
+        enableStackTrace: false,
+        // 사용자 확인 없이 보고서 모드를 자동으로 확인해야 하는지 확인합니다.
         handleWhenRejected: true,
       ),
+    ],
+    localizationOptions: [
+      // 로컬라이제이션 옵션을 명시적으로 입력하지 않아도 기기의 옵션을 읽어들일 수 있습니다.
+      LocalizationOptions.buildDefaultKoreanOptions()
     ],
   );
 

@@ -22,7 +22,6 @@ class LongPressableButton extends StatefulWidget {
     this.vibrate = true,
     this.animate = false,
     this.isThreeD = false,
-    this.reversePosition = false,
     this.shadowColor,
     this.backgroundColor,
     this.subtitle,
@@ -30,7 +29,6 @@ class LongPressableButton extends StatefulWidget {
     this.height,
     this.title,
     this.child,
-    this.rowChildren,
     this.iconWidget,
     this.gradient,
     this.asset,
@@ -50,13 +48,6 @@ class LongPressableButton extends StatefulWidget {
             '데코레이션을 사용할 경우 배경색과 그림자는 데코레이션에서 명시해야 합니다.'),
         assert(
             child == null || (title == null), '자식 위젯을 사용할 경우 제목 속성은 비워둬야 합니다.'),
-        assert(
-            rowChildren == null ||
-                (title == null &&
-                    child == null &&
-                    asset == null &&
-                    iconWidget == null),
-            'Row 위젯 리스트를 사용할 경우 title, child, asset, iconWidget은 사용할 수 없습니다.'),
         assert(!(animate == true && height == null),
             'animate 기능을 사용할 때는 height 속성을 명시해주세요.'),
         assert(!(pressed == Pressed.pressed && animate == false),
@@ -101,16 +92,11 @@ class LongPressableButton extends StatefulWidget {
   /// 이를 사용하여 버튼 속성을 진동하거나 진동하지 않도록 설정할 수 있음.
   final bool vibrate;
 
-  final List<Widget>? rowChildren;
-
   /// [isThreeD]가 켜져있을 때 버튼에 색상을 지정하지 않으면 하단이 버튼에 3D 효과를 적용하는 데
   /// 사용되는 그림자 색상과 동일한 색상을 사용하기 때문에 3D 효과가 표현되지 않음.
   /// 이렇게하면 기본적으로 그림자에 대한 4가지 기본 값을 가질 수 있음.
   /// => 기본 박스셰도우 3D 효과를 얻으려면 [true]로 설정.
   final bool isThreeD;
-
-  /// 아이콘과 텍스트의 위치를 반전시킵니다.
-  final bool reversePosition;
 
   /// 버튼을 눌렀을 때 실행되는 onPressed 함수
   final void Function()? onPressed;
@@ -285,10 +271,8 @@ class _LongPressableButtonState extends State<LongPressableButton>
                               widget.onPressed != null
                           ? (_) async {
                               const condition = true;
-
                               if (widget.animate && condition) {
                                 animationStart = !animationStart;
-
                                 if (animationStart) {
                                   await _controller?.forward();
                                 } else {
@@ -310,12 +294,74 @@ class _LongPressableButtonState extends State<LongPressableButton>
                           width: widget.width,
                           padding: widget.padding,
                           child: Center(
-                              child: Row(
-                            mainAxisAlignment: widget.mainAxis,
-                            children: widget.reversePosition
-                                ? listOfRow().reversed.toList()
-                                : widget.rowChildren ?? listOfRow(),
-                          )),
+                            child: Row(
+                              mainAxisAlignment: widget.mainAxis,
+                              children: [
+                                Builder(
+                                  builder: (context) {
+                                    final padding =
+                                        widget.child == null ? 0.0 : 10.0;
+                                    if (widget.iconWidget != null) {
+                                      return Padding(
+                                          padding:
+                                              const EdgeInsets.only(right: 10),
+                                          child: widget.iconWidget);
+                                    }
+                                    if (widget.asset != null) {
+                                      /// SVG인지 일반 에셋인지 파악합니다.
+                                      if (widget.asset?.isSvg ?? false) {
+                                        print('${widget.asset}은 SVG 이미지입니다.');
+                                        return Padding(
+                                          padding:
+                                              EdgeInsets.only(right: padding),
+                                          child: SvgPicture.asset(
+                                            widget.asset!.assetPath,
+                                            height: widget.asset?.height,
+                                            width: widget.asset?.height,
+                                            colorFilter: ColorFilter.mode(
+                                              widget.asset!.color ??
+                                                  Colors.transparent,
+                                              BlendMode.srcIn,
+                                            ),
+                                          ),
+                                        );
+                                      }
+                                      return Padding(
+                                        padding:
+                                            EdgeInsets.only(right: padding),
+                                        child: Image.asset(
+                                          widget.asset!.assetPath,
+                                          height: widget.asset?.height,
+                                          width: widget.asset?.width,
+                                        ),
+                                      );
+                                    }
+                                    return Container();
+                                  },
+                                ),
+                                Column(
+                                  crossAxisAlignment: widget.crossAxis,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Center(
+                                      child: widget.child ??
+                                          Text(
+                                            widget.title ?? '',
+                                            style: const TextStyle(
+                                                color: Colors.white),
+                                          ),
+                                    ),
+                                    if (widget.subtitle != null)
+                                      Flexible(
+                                        child: widget.subtitle!,
+                                      )
+                                    else
+                                      Container()
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
                         ),
                       ),
                     ),
@@ -333,82 +379,6 @@ class _LongPressableButtonState extends State<LongPressableButton>
             ),
           );
   }
-
-  List<Widget> listOfRow() {
-    return [
-      Builder(
-        builder: (context) {
-          if (widget.iconWidget != null) {
-            return Padding(
-                padding: EdgeInsets.only(
-                  right: widget.reversePosition ? 0 : 10,
-                  left: widget.reversePosition ? 10 : 0,
-                ),
-                child: widget.iconWidget);
-          } else if (widget.asset != null) {
-            var padding = 10.0;
-            if (widget.child == null) {
-              padding = 0;
-            }
-
-            /// SVG인지 일반 에셋인지 파악합니다.
-            final isSvg = widget.asset?.assetPath.endsWith('.svg') ?? false;
-            if (isSvg) {
-              print('${widget.asset?.assetPath}는 SVG 이미지입니다.');
-              return Padding(
-                padding: EdgeInsets.only(
-                  right: widget.reversePosition ? 0 : padding,
-                  left: widget.reversePosition ? padding : 0,
-                ),
-                child: SvgPicture.asset(
-                  widget.asset!.assetPath,
-                  height: widget.asset?.height,
-                  width: widget.asset?.height,
-                  colorFilter: ColorFilter.mode(
-                    widget.asset!.color ?? Colors.transparent,
-                    BlendMode.srcIn,
-                  ),
-                ),
-              );
-            } else {
-              return Padding(
-                padding: EdgeInsets.only(
-                  right: widget.reversePosition ? 0 : padding,
-                  left: widget.reversePosition ? padding : 0,
-                ),
-                child: Image.asset(
-                  widget.asset!.assetPath,
-                  height: widget.asset?.height,
-                  width: widget.asset?.width,
-                ),
-              );
-            }
-          } else {
-            return Container();
-          }
-        },
-      ),
-      Column(
-        crossAxisAlignment: widget.crossAxis,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Center(
-            child: widget.child ??
-                Text(
-                  widget.title ?? '',
-                  style: const TextStyle(color: Colors.white),
-                ),
-          ),
-          if (widget.subtitle != null)
-            Flexible(
-              child: widget.subtitle!,
-            )
-          else
-            Container()
-        ],
-      )
-    ];
-  }
 }
 
 class ButtonAsset {
@@ -417,4 +387,6 @@ class ButtonAsset {
   double? width;
   double? height;
   Color? color;
+
+  bool get isSvg => assetPath.endsWith('.svg');
 }

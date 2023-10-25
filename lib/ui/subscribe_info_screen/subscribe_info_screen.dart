@@ -101,8 +101,7 @@ class SubscribeInfoScreen extends StatelessWidget {
                                 child: Text(
                                   '12가 3456',
                                   style: textTheme.bodySmall!.copyWith(
-                                    color:
-                                        lightTheme.onPrimary.withOpacity(0.4),
+                                    color: Palette.fontBlack66,
                                   ),
                                 ),
                               ),
@@ -121,7 +120,7 @@ class SubscribeInfoScreen extends StatelessWidget {
                               Text(
                                 '월 결제 금액',
                                 style: textTheme.bodyLarge!.copyWith(
-                                  color: lightTheme.onPrimary.withOpacity(0.4),
+                                  color: Palette.fontBlack66,
                                 ),
                               ),
                               Text('150,000 원', style: textTheme.bodyLarge),
@@ -140,7 +139,7 @@ class SubscribeInfoScreen extends StatelessWidget {
                               Text(
                                 '구독',
                                 style: textTheme.bodyLarge!.copyWith(
-                                  color: lightTheme.onPrimary.withOpacity(0.4),
+                                  color: Palette.fontBlack66,
                                 ),
                               ),
                               Text(
@@ -162,7 +161,7 @@ class SubscribeInfoScreen extends StatelessWidget {
                               Text(
                                 '결제 예정일',
                                 style: textTheme.bodyLarge!.copyWith(
-                                  color: lightTheme.onPrimary.withOpacity(0.4),
+                                  color: Palette.fontBlack66,
                                 ),
                               ),
                               Text('2023.08.20', style: textTheme.bodyLarge),

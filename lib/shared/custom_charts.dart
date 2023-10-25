@@ -48,10 +48,7 @@ class CustomLineChart extends StatelessWidget {
             ),
             show: chartStylingInfo.showBorder,
           ),
-          titlesData: getTitlesData(
-            xAxisLabelInfo,
-            yAxisLabelInfo,
-          ),
+          titlesData: getTitlesData(xAxisLabelInfo, yAxisLabelInfo),
           lineBarsData: dataWithSpots,
           minX: axisBounds.minX,
           minY: axisBounds.minY,

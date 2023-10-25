@@ -27,18 +27,13 @@ class ContactUsHistoryPage extends StatelessWidget {
             () => ListView.separated(
               physics: const BouncingScrollPhysics(),
               shrinkWrap: true,
-              separatorBuilder: (
-                context,
-                index,
-              ) {
+              separatorBuilder: (context, index) {
                 return SizedBox(height: 1.v);
               },
               itemCount: controller.history.value.items.value.length,
               itemBuilder: (context, index) {
                 final model = controller.history.value.items.value[index];
-                return ListItemWidget(
-                  model,
-                );
+                return ListItemWidget(model);
               },
             ),
           ),

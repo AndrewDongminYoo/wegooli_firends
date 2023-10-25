@@ -66,8 +66,7 @@ class SmartKeyScreen extends StatelessWidget {
                                     Text(
                                       '12가 3456',
                                       style: textTheme.bodySmall!.copyWith(
-                                        color: lightTheme.onPrimary
-                                            .withOpacity(0.4),
+                                        color: Palette.fontBlack66,
                                       ),
                                     ),
                                     SizedBox(height: 1.v),
@@ -109,7 +108,7 @@ class SmartKeyScreen extends StatelessWidget {
                             Text(
                               '상태',
                               style: textTheme.bodySmall!.copyWith(
-                                color: lightTheme.onPrimary.withOpacity(0.4),
+                                color: Palette.fontBlack66,
                               ),
                             ),
                             Padding(
@@ -117,7 +116,7 @@ class SmartKeyScreen extends StatelessWidget {
                               child: Text(
                                 '|',
                                 style: textTheme.bodySmall!.copyWith(
-                                  color: lightTheme.onPrimary.withOpacity(0.4),
+                                  color: Palette.fontBlack66,
                                 ),
                               ),
                             ),

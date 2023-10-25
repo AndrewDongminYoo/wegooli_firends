@@ -62,16 +62,14 @@ class MyPageScreen extends StatelessWidget {
                                       Text(
                                         '010-1234-5678',
                                         style: textTheme.bodySmall!.copyWith(
-                                          color: lightTheme.onPrimary
-                                              .withOpacity(0.4),
+                                          color: Palette.fontBlack66,
                                         ),
                                       ),
                                       SizedBox(height: 4.v),
                                       Text(
                                         'ydm2790@gmail.com',
                                         style: textTheme.bodySmall!.copyWith(
-                                          color: lightTheme.onPrimary
-                                              .withOpacity(0.4),
+                                          color: Palette.fontBlack66,
                                         ),
                                       ),
                                     ],

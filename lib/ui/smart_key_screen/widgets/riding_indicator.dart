@@ -137,7 +137,7 @@ class RidingIndicator extends StatelessWidget {
       child: Text(
         '13:00',
         style: textTheme.bodySmall!.copyWith(
-          color: lightTheme.onPrimary.withOpacity(0.4),
+          color: Palette.fontBlack66,
         ),
       ),
     );
@@ -150,7 +150,7 @@ class RidingIndicator extends StatelessWidget {
       child: Text(
         '12:00',
         style: textTheme.bodySmall!.copyWith(
-          color: lightTheme.onPrimary.withOpacity(0.4),
+          color: Palette.fontBlack66,
         ),
       ),
     );

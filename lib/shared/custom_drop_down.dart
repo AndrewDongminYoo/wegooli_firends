@@ -114,12 +114,7 @@ class _CustomDropDownState extends State<CustomDropDown> {
             widget.disabled,
           )
         : widget.isSearchable
-            ? _buildSearchableDropdown(
-                value,
-                items,
-                onChanged,
-                hintText,
-              )
+            ? _buildSearchableDropdown(value, items, onChanged, hintText)
             : _buildNonSearchableDropdown(value, items, onChanged, hintText);
     final childWidget = Container(
       margin: widget.margin,

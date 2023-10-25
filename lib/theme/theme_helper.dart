@@ -152,6 +152,7 @@ ThemeData get theme {
 /// 기본 테마에 대한 사용자 지정 색상이 포함된 클래스입니다.
 class Palette {
   static const Color fontBlack = Color(0xFF222222); // #222222
+  static const Color fontBlack66 = Color(0x66222222); // #66222222
   static const Color fontGray = Color(0xFF5D5D5D); // #5D5D5D
 
   static const Color blueGray100 = Color(0xFFBABCC4); // #BABCC4

@@ -51,7 +51,7 @@ class CustomDropDown extends StatelessWidget {
       child: DropdownButtonFormField2<DropdownData>(
         style: textStyle ??
             textTheme.titleMedium!.copyWith(
-              color: lightTheme.onPrimary.withOpacity(0.4),
+              color: Palette.fontBlack66,
             ),
         items: options.mapTo((DropdownData option) {
           return DropdownMenuItem<DropdownData>(

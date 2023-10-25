@@ -62,10 +62,7 @@ class SchedulesScreen extends StatelessWidget {
                                 right: 16.h,
                               ),
                               scrollDirection: Axis.horizontal,
-                              separatorBuilder: (
-                                context,
-                                index,
-                              ) {
+                              separatorBuilder: (context, index) {
                                 return SizedBox(width: 15.h);
                               },
                               itemCount: controller
@@ -73,9 +70,7 @@ class SchedulesScreen extends StatelessWidget {
                               itemBuilder: (context, index) {
                                 final model = controller
                                     .scheduleModel.value.profiles.value[index];
-                                return UserProfileWidget(
-                                  model,
-                                );
+                                return UserProfileWidget(model);
                               },
                             ),
                           ),
@@ -163,10 +158,7 @@ class SchedulesScreen extends StatelessWidget {
                                       padding: EdgeInsets.fromLTRB(
                                           6.h, 26.v, 10.h, 2.v),
                                       scrollDirection: Axis.horizontal,
-                                      separatorBuilder: (
-                                        context,
-                                        index,
-                                      ) {
+                                      separatorBuilder: (context, index) {
                                         return SizedBox(width: 25.h);
                                       },
                                       itemCount: controller.scheduleModel.value
@@ -174,9 +166,7 @@ class SchedulesScreen extends StatelessWidget {
                                       itemBuilder: (context, index) {
                                         final model = controller.scheduleModel
                                             .value.ages.value[index];
-                                        return UserAgeWidget(
-                                          model,
-                                        );
+                                        return UserAgeWidget(model);
                                       },
                                     ),
                                   ),

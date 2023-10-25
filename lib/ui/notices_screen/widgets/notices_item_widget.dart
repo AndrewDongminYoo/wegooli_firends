@@ -45,7 +45,7 @@ class NoticesItemWidget extends StatelessWidget {
             child: Text(
               '2023.08.23',
               style: textTheme.bodySmall!.copyWith(
-                color: lightTheme.onPrimary.withOpacity(0.4),
+                color: Palette.fontBlack66,
               ),
             ),
           ),

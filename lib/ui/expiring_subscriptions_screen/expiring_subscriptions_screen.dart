@@ -95,7 +95,7 @@ class ExpiringSubscriptionsScreen extends StatelessWidget {
                                 child: Text(
                                   '12가 3456',
                                   style: textTheme.bodySmall!.tint(
-                                    lightTheme.onPrimary.withOpacity(0.4),
+                                    Palette.fontBlack66,
                                   ),
                                 ),
                               ),
@@ -114,7 +114,7 @@ class ExpiringSubscriptionsScreen extends StatelessWidget {
                               Text(
                                 '월 결제 금액',
                                 style: textTheme.bodyLarge!.tint(
-                                  lightTheme.onPrimary.withOpacity(0.4),
+                                  Palette.fontBlack66,
                                 ),
                               ),
                               Text('150,000 원', style: textTheme.bodyLarge),
@@ -133,7 +133,7 @@ class ExpiringSubscriptionsScreen extends StatelessWidget {
                               Text(
                                 '구독',
                                 style: textTheme.bodyLarge!.tint(
-                                  lightTheme.onPrimary.withOpacity(0.4),
+                                  Palette.fontBlack66,
                                 ),
                               ),
                               Text(
@@ -155,7 +155,7 @@ class ExpiringSubscriptionsScreen extends StatelessWidget {
                               Text(
                                 '해지 예정일',
                                 style: textTheme.bodyLarge!.tint(
-                                  lightTheme.onPrimary.withOpacity(0.4),
+                                  Palette.fontBlack66,
                                 ),
                               ),
                               Text('2023.08.20', style: textTheme.bodyLarge),

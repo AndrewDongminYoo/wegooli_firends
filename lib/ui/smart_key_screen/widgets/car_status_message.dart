@@ -16,7 +16,7 @@ class CarStatusMessage extends StatelessWidget {
         Text(
           '상태',
           style: textTheme.bodySmall!.copyWith(
-            color: lightTheme.onPrimary.withOpacity(0.4),
+            color: Palette.fontBlack66,
           ),
         ),
         Padding(
@@ -24,7 +24,7 @@ class CarStatusMessage extends StatelessWidget {
           child: Text(
             '|',
             style: textTheme.bodySmall!.copyWith(
-              color: lightTheme.onPrimary.withOpacity(0.4),
+              color: Palette.fontBlack66,
             ),
           ),
         ),

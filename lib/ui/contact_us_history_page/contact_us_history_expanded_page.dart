@@ -48,8 +48,7 @@ class ContactUsHistoryExpandedPage extends StatelessWidget {
                                   Text(
                                     '2023.08.23',
                                     style: textTheme.bodySmall!.copyWith(
-                                      color:
-                                          lightTheme.onPrimary.withOpacity(0.4),
+                                      color: Palette.fontBlack66,
                                     ),
                                   ),
                                 ],
@@ -104,8 +103,7 @@ class ContactUsHistoryExpandedPage extends StatelessWidget {
                                     Text(
                                       '2023.08.23',
                                       style: textTheme.bodySmall!.copyWith(
-                                        color: lightTheme.onPrimary
-                                            .withOpacity(0.4),
+                                        color: Palette.fontBlack66,
                                       ),
                                     ),
                                   ],
@@ -222,8 +220,7 @@ class ContactUsHistoryExpandedPage extends StatelessWidget {
                                             '2023.08.23',
                                             style:
                                                 textTheme.bodySmall!.copyWith(
-                                              color: lightTheme.onPrimary
-                                                  .withOpacity(0.4),
+                                              color: Palette.fontBlack66,
                                             ),
                                           ),
                                         ],
@@ -268,10 +265,7 @@ class ContactUsHistoryExpandedPage extends StatelessWidget {
                                     color: Colors.black.withOpacity(0.1),
                                     spreadRadius: 2.h,
                                     blurRadius: 2.h,
-                                    offset: const Offset(
-                                      2,
-                                      2,
-                                    ),
+                                    offset: const Offset(2, 2),
                                   ),
                                 ],
                               ),

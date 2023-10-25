@@ -36,7 +36,7 @@ class ContactUsHistoryScreen extends StatelessWidget {
                     controller: controller.tabController,
                     isScrollable: true,
                     labelColor: lightTheme.onPrimary,
-                    unselectedLabelColor: lightTheme.onPrimary.withOpacity(0.4),
+                    unselectedLabelColor: Palette.fontBlack66,
                     tabs: [
                       Tab(
                         child: Container(

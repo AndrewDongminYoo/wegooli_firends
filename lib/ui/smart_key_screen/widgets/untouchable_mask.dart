@@ -39,7 +39,7 @@ class UntouchableMask extends StatelessWidget {
               width: 189.h,
               text: '홍길동님이 사용 중 입니다.',
               buttonStyle: ElevatedButton.styleFrom(
-                backgroundColor: lightTheme.onPrimary.withOpacity(0.4),
+                backgroundColor: Palette.fontBlack66,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(22.h),
                 ),

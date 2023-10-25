@@ -68,8 +68,7 @@ class AnotherIsUsingScreen extends StatelessWidget {
                                   Text(
                                     '12가 3456',
                                     style: textTheme.bodySmall!.copyWith(
-                                      color:
-                                          lightTheme.onPrimary.withOpacity(0.4),
+                                      color: Palette.fontBlack66,
                                     ),
                                   ),
                                   SizedBox(height: 1.v),

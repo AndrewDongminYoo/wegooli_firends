@@ -12,75 +12,80 @@ class ControllButton extends StatelessWidget {
     this.title,
     this.iconPath, {
     super.key,
+    this.onPressed,
     this.isRightSide = false,
   });
 
   final String title;
   final String iconPath;
   final bool isRightSide;
+  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 130.adaptSize,
-      width: 130.adaptSize,
-      margin: isRightSide ? EdgeInsets.only(left: 16.h) : null,
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          Align(
-            child: Container(
-              padding: EdgeInsets.all(5.h),
-              decoration: BoxDecoration(
-                color: lightTheme.onPrimaryContainer,
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.1),
-                    spreadRadius: 2.h,
-                    blurRadius: 2.h,
-                    offset: const Offset(2, 2),
-                  ),
-                ],
-                borderRadius: BorderRadiusStyle.circleBorder65,
-              ),
+    return InkWell(
+      onTap: onPressed,
+      child: Container(
+        height: 130.adaptSize,
+        width: 130.adaptSize,
+        margin: isRightSide ? EdgeInsets.only(left: 16.h) : null,
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            Align(
               child: Container(
-                height: 120.adaptSize,
-                width: 120.adaptSize,
+                padding: EdgeInsets.all(5.h),
                 decoration: BoxDecoration(
                   color: lightTheme.onPrimaryContainer,
-                  borderRadius: BorderRadius.circular(
-                    60.h,
-                  ),
-                  border: Border.all(
-                    color: const Color(0x33A4A8AF),
-                    width: 1.h,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.1),
+                      spreadRadius: 2.h,
+                      blurRadius: 2.h,
+                      offset: const Offset(2, 2),
+                    ),
+                  ],
+                  borderRadius: BorderRadiusStyle.circleBorder65,
+                ),
+                child: Container(
+                  height: 120.adaptSize,
+                  width: 120.adaptSize,
+                  decoration: BoxDecoration(
+                    color: lightTheme.onPrimaryContainer,
+                    borderRadius: BorderRadius.circular(
+                      60.h,
+                    ),
+                    border: Border.all(
+                      color: const Color(0x33A4A8AF),
+                      width: 1.h,
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
-          Align(
-            child: Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: 42.h,
-              ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  customIcon(
-                    iconPath,
-                    size: 46.adaptSize,
-                  ),
-                  SizedBox(height: 5.v),
-                  Text(
-                    title,
-                    style: textTheme.titleMedium,
-                  ),
-                ],
+            Align(
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 42.h,
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    customIcon(
+                      iconPath,
+                      size: 46.adaptSize,
+                    ),
+                    SizedBox(height: 5.v),
+                    Text(
+                      title,
+                      style: textTheme.titleMedium,
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

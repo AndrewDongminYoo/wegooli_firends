@@ -8,7 +8,9 @@ import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/image_view.dart';
+import 'controller/smart_key_controller.dart';
 import 'widgets/controll_button.dart';
+import 'widgets/crash_report_floating_button.dart';
 
 class SmartKeyScreen extends StatelessWidget {
   const SmartKeyScreen({super.key});
@@ -16,6 +18,7 @@ class SmartKeyScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = SmartKeyController.to;
     return SafeArea(
       child: Scaffold(
         appBar: CustomAppBar(
@@ -179,11 +182,13 @@ class SmartKeyScreen extends StatelessWidget {
                               ControllButton(
                                 '문열기',
                                 Assets.svg.icoUnlocked.path,
+                                onPressed: controller.openDoor,
                               ),
                               ControllButton(
                                 '문잠금',
                                 Assets.svg.icoLocked.path,
                                 isRightSide: true,
+                                onPressed: controller.closeDoor,
                               ),
                             ],
                           ),
@@ -200,11 +205,13 @@ class SmartKeyScreen extends StatelessWidget {
                               ControllButton(
                                 '비상등',
                                 Assets.svg.icoTriangle.path,
+                                onPressed: controller.emergencyLight,
                               ),
                               ControllButton(
                                 '경적',
                                 Assets.svg.icoCampaign.path,
                                 isRightSide: true,
+                                onPressed: controller.horn,
                               ),
                             ],
                           ),
@@ -217,25 +224,7 @@ class SmartKeyScreen extends StatelessWidget {
             ],
           ),
         ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          tooltip: '사고 접수',
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              customIcon(
-                Assets.svg.icoEdit.path,
-                size: 30.adaptSize,
-              ),
-              SizedBox(height: 1.v),
-              Text(
-                '사고 접수',
-                style: textTheme.bodySmall!.tint(Colors.black).bold,
-              ),
-            ],
-          ),
-        ),
+        floatingActionButton: const CrashReportFAB(),
       ),
     );
   }

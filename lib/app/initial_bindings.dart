@@ -1,6 +1,6 @@
 // 📦 Package imports:
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:get/instance_manager.dart';
+import 'package:get_it/get_it.dart';
 
 // 🌎 Project imports:
 import '/core/network/network_info.dart';
@@ -9,14 +9,13 @@ import '/data/client/api_client.dart';
 
 final initialBinding = InitialBindings();
 
-class InitialBindings extends Bindings {
-  @override
+class InitialBindings {
   void dependencies() {
-    Get.putAsync(() async {
+    GetIt.I.registerSingletonAsync(() async {
       await PrefUtils().initAppStorage();
       return PrefUtils.I;
     });
-    Get.put(ApiClient());
-    Get.put(NetworkInfo(Connectivity()));
+    GetIt.I.registerSingleton(ApiClient());
+    GetIt.I.registerSingleton(NetworkInfo(Connectivity()));
   }
 }

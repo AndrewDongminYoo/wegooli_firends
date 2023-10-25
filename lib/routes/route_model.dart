@@ -32,7 +32,7 @@ class AppRoute {
   final List<GoRoute> routes;
 
   GoRoute convertToRoute(AppStateNotifier appStateNotifier) => GoRoute(
-        name: path.toName,
+        name: path,
         path: path,
         redirect: (context, state) {
           if (appStateNotifier.shouldRedirect) {
@@ -74,10 +74,6 @@ class AppRoute {
         },
         routes: routes,
       );
-}
-
-extension on String {
-  String get toName => replaceFirst('/', '').replaceAll('_', ' ');
 }
 
 extension _GoRouterStateExtensions on GoRouterState {

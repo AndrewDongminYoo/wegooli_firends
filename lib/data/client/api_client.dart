@@ -2,8 +2,8 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get_connect.dart';
-import 'package:get/instance_manager.dart';
 import 'package:get/utils.dart';
+import 'package:get_it/get_it.dart';
 
 // 🌎 Project imports:
 import '/data/auth/api_key_auth.dart';
@@ -40,9 +40,9 @@ class ApiClient extends GetHttpClient {
   }
 
   // ignore: prefer_constructors_over_static_methods
-  static ApiClient get instance => Get.isRegistered<ApiClient>()
-      ? Get.find<ApiClient>()
-      : Get.put(ApiClient());
+  static ApiClient get instance => GetIt.I.isRegistered<ApiClient>()
+      ? GetIt.I.get<ApiClient>()
+      : GetIt.I.registerSingleton(ApiClient());
 
   @override
   String get baseUrl => baseURL;

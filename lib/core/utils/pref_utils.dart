@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
-import 'package:get/instance_manager.dart';
+import 'package:get_it/get_it.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 // 🌎 Project imports:
@@ -11,8 +11,9 @@ import '/data/custom/user.model.dart';
 
 class PrefUtils {
   // ignore: prefer_constructors_over_static_methods
-  static PrefUtils get I =>
-      Get.isRegistered() ? Get.find() : Get.put(PrefUtils());
+  static PrefUtils get I => GetIt.I.isRegistered()
+      ? GetIt.I.get()
+      : GetIt.I.registerSingleton(PrefUtils());
 
   // ignore: unused_field
   Box? _store;

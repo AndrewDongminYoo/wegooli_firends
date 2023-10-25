@@ -11,14 +11,14 @@ class ControllButton extends StatelessWidget {
     this.title,
     this.iconPath, {
     super.key,
-    this.onPressed,
+    required this.onPressed,
     this.isRightSide = false,
   });
 
   final String title;
   final String iconPath;
   final bool isRightSide;
-  final VoidCallback? onPressed;
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {

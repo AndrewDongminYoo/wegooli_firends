@@ -103,7 +103,7 @@ class LongPressableButton extends StatefulWidget {
   final bool isThreeD;
 
   /// 버튼을 눌렀을 때 실행되는 onPressed 함수
-  final void Function()? onPressed;
+  final void Function() onPressed;
 
   /// 버튼에 자막과 제목을 지정할 때 열의 교차축 값을 변경하려는 경우 사용
   final CrossAxisAlignment crossAxis;
@@ -210,47 +210,27 @@ class _LongPressableButtonState extends State<LongPressableButton>
                 DecoratedBox(
                   decoration: widget.decoration ??
                       BoxDecoration(
-                          borderRadius: widget.borderRadius != null
-                              ? BorderRadius.circular(widget.borderRadius ?? 0)
-                              : null,
-                          gradient: widget.gradient,
-                          color: widget.isThreeD
-                              ? widget.backgroundColor
-                              : Colors.black,
+                        borderRadius: widget.borderRadius != null
+                            ? BorderRadius.circular(widget.borderRadius ?? 0)
+                            : null,
+                        gradient: widget.gradient,
+                        color: widget.isThreeD
+                            ? widget.backgroundColor
+                            : Colors.black,
 
-                          /// 3D 스타일 버튼을 만들려면 박스셰도우만 사용하세요.
-                          boxShadow: widget.isThreeD == true
-                              ? widget.boxShadow ??
-                                  [
-                                    //bottom
-                                    BoxShadow(
-                                      color: widget.shadowColor ??
-                                          const Color(0xFFFFD600),
-                                      offset: Offset(0, _animation?.value ?? 4),
-                                    ),
-                                    BoxShadow(
-                                      color: widget.shadowColor ??
-                                          const Color(0xFFFFD600),
-                                      offset: const Offset(0, -1.5),
-                                    ),
-                                    BoxShadow(
-                                      color: widget.shadowColor ??
-                                          const Color(0xFFFFD600),
-                                      offset: const Offset(1.5, 0),
-                                    ),
-                                    BoxShadow(
-                                      color: widget.shadowColor ??
-                                          const Color(0xFFFFD600),
-                                      offset: const Offset(-1.5, 0),
-                                    ),
-                                  ]
-                              : null),
+                        /// 3D 스타일 버튼을 만들려면 박스셰도우만 사용하세요.
+                        boxShadow: widget.isThreeD == true
+                            ? widget.boxShadow ??
+                                _defaultBoxShadow(widget.shadowColor)
+                            : null,
+                      ),
                   child: Material(
                     type: MaterialType.transparency,
                     child: InkWell(
-                      onTapDown: !(pressed == Pressed.pressed) &&
-                              widget.onPressed != null
-                          ? (value) {
+                      mouseCursor: MouseCursor.uncontrolled,
+                      splashFactory: NoSplash.splashFactory,
+                      onTapDown: !(pressed == Pressed.pressed)
+                          ? (TapDownDetails value) {
                               if (widget.animate) {
                                 setState(() {
                                   animationStart = true;
@@ -271,9 +251,8 @@ class _LongPressableButtonState extends State<LongPressableButton>
                       },
                       borderRadius:
                           BorderRadius.circular(widget.borderRadius ?? 0),
-                      onTapUp: !(pressed == Pressed.pressed) &&
-                              widget.onPressed != null
-                          ? (_) async {
+                      onTapUp: !(pressed == Pressed.pressed)
+                          ? (TapUpDetails _) async {
                               const condition = true;
                               if (widget.animate && condition) {
                                 animationStart = !animationStart;
@@ -284,76 +263,12 @@ class _LongPressableButtonState extends State<LongPressableButton>
                                 }
                                 setState(() {});
                               }
-                              widget.onPressed!();
+                              widget.onPressed();
                             }
                           : null,
-                      child: Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          Align(
-                            child: Container(
-                              padding: EdgeInsets.all(5.h),
-                              decoration: BoxDecoration(
-                                // color: lightTheme.onPrimaryContainer,
-                                color: lightTheme.onPrimaryContainer,
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.black.withOpacity(0.1),
-                                    spreadRadius: 2.h,
-                                    blurRadius: 2.h,
-                                    offset: const Offset(2, 2),
-                                  ),
-                                ],
-                                borderRadius: BorderRadiusStyle.circleBorder65,
-                              ),
-                              child: Container(
-                                height: 120.adaptSize,
-                                width: 120.adaptSize,
-                                decoration: BoxDecoration(
-                                  color: animationStart
-                                      ? AppColors.primaryDefault
-                                      : AppColors.primaryInverted,
-                                  borderRadius: BorderRadius.circular(
-                                    60.h,
-                                  ),
-                                  border: Border.all(
-                                    color: const Color(0x33A4A8AF),
-                                    width: 1.h,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          Align(
-                            child: Padding(
-                              padding: EdgeInsets.symmetric(
-                                horizontal: 42.h,
-                              ),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  SvgPicture.asset(
-                                    widget.asset!.assetPath,
-                                    height: widget.asset?.height,
-                                    width: widget.asset?.height,
-                                    colorFilter: ColorFilter.mode(
-                                      animationStart
-                                          ? AppColors.primaryInverted
-                                          : AppColors.primaryDefault,
-                                      BlendMode.srcIn,
-                                    ),
-                                  ),
-                                  SizedBox(height: 5.v),
-                                  Text(
-                                    widget.title ?? '',
-                                    style: textTheme.titleMedium!.bold,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
+                      child: Tooltip(
+                        message: _tooltip(widget.title),
+                        child: stackedButton()),
                     ),
                   ),
                 ),
@@ -369,14 +284,121 @@ class _LongPressableButtonState extends State<LongPressableButton>
             ),
           );
   }
+
+  List<BoxShadow> _defaultBoxShadow(Color? shadowColor) {
+    return [
+      //bottom
+      BoxShadow(
+        color: shadowColor ?? const Color(0xFFFFD600),
+        offset: Offset(0, _animation?.value ?? 4),
+      ),
+      BoxShadow(
+        color: shadowColor ?? const Color(0xFFFFD600),
+        offset: const Offset(0, -1.5),
+      ),
+      BoxShadow(
+        color: shadowColor ?? const Color(0xFFFFD600),
+        offset: const Offset(1.5, 0),
+      ),
+      BoxShadow(
+        color: shadowColor ?? const Color(0xFFFFD600),
+        offset: const Offset(-1.5, 0),
+      ),
+    ];
+  }
+
+  Stack stackedButton() {
+    return Stack(
+      alignment: Alignment.center,
+      children: [
+        Align(
+          child: Container(
+            padding: EdgeInsets.all(5.h),
+            decoration: BoxDecoration(
+              // color: lightTheme.onPrimaryContainer,
+              color: lightTheme.onPrimaryContainer,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.1),
+                  spreadRadius: 2.h,
+                  blurRadius: 2.h,
+                  offset: const Offset(2, 2),
+                ),
+              ],
+              borderRadius: BorderRadiusStyle.circleBorder65,
+            ),
+            child: Container(
+              height: 120.adaptSize,
+              width: 120.adaptSize,
+              decoration: BoxDecoration(
+                color: animationStart
+                    ? AppColors.primaryDefault
+                    : AppColors.primaryInverted,
+                borderRadius: BorderRadius.circular(
+                  60.h,
+                ),
+                border: Border.all(
+                  color: const Color(0x33A4A8AF),
+                  width: 1.h,
+                ),
+              ),
+            ),
+          ),
+        ),
+        Align(
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: 42.h,
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                SvgPicture.asset(
+                  widget.asset!.assetPath,
+                  height: widget.asset?.height,
+                  width: widget.asset?.height,
+                  colorFilter: ColorFilter.mode(
+                    animationStart
+                        ? AppColors.primaryInverted
+                        : AppColors.primaryDefault,
+                    BlendMode.srcIn,
+                  ),
+                ),
+                SizedBox(height: 5.v),
+                Text(
+                  widget.title ?? '',
+                  style: textTheme.titleMedium!.bold,
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  String _tooltip(String? title) {
+    return switch(title) {
+      '문열기' => '차량 문 잠금 풀기',
+      '문잠금' => '차량 문 잠그기',
+      '비상등' => '비상등 켜기',
+      _ => '차량 위치 확인을 위해 경적 울리기'
+    };
+  }
 }
 
 class ButtonAsset {
-  ButtonAsset(this.assetPath, {this.width, this.height, this.color});
-  String assetPath;
-  double? width;
-  double? height;
-  Color? color;
+  const ButtonAsset(
+    this.assetPath, {
+    this.width,
+    this.height,
+    this.color,
+  });
+
+  final String assetPath;
+  final double? width;
+  final double? height;
+  final Color? color;
 
   bool get isSvg => assetPath.endsWith('.svg');
 }

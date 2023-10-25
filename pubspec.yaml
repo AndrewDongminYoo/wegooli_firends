@@ -192,7 +192,7 @@ flutter:
     - assets/images/
     - assets/lotties/
     - assets/svg/
-    - assets/svg/gas
+    - assets/svg/gas/
   fonts:
     - family: NotoSansKR
       # https://fonts.google.com/specimen/Noto+Sans+KR

@@ -11,6 +11,7 @@ class BorderRadiusStyle {
   static BorderRadius get circleBorder35 => BorderRadius.circular(35.h);
   static BorderRadius get circleBorder60 => BorderRadius.circular(60.h);
   static BorderRadius get circleBorder65 => BorderRadius.circular(65.h);
+  static BorderRadius get circleBorder100 => BorderRadius.circular(100.h);
   static BorderRadius get circleBorder7 => BorderRadius.circular(7.h);
 
   // Custom borders

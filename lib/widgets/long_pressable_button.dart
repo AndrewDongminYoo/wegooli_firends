@@ -267,8 +267,8 @@ class _LongPressableButtonState extends State<LongPressableButton>
                             }
                           : null,
                       child: Tooltip(
-                        message: _tooltip(widget.title),
-                        child: stackedButton()),
+                          message: _tooltip(widget.title),
+                          child: stackedButton()),
                     ),
                   ),
                 ),
@@ -378,7 +378,7 @@ class _LongPressableButtonState extends State<LongPressableButton>
   }
 
   String _tooltip(String? title) {
-    return switch(title) {
+    return switch (title) {
       '문열기' => '차량 문 잠금 풀기',
       '문잠금' => '차량 문 잠그기',
       '비상등' => '비상등 켜기',

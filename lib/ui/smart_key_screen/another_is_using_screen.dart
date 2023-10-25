@@ -4,16 +4,17 @@ import 'package:flutter/material.dart';
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
-import '/routes/app_router.dart';
 import '/theme/app_decoration.dart';
-import '/theme/button_styles.dart';
 import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
-import '/widgets/elevated_button.dart';
 import '/widgets/image_view.dart';
+import 'controller/smart_key_controller.dart';
+import 'widgets/car_status_message.dart';
+import 'widgets/controll_button.dart';
 import 'widgets/gas_icon.dart';
 import 'widgets/riding_indicator.dart';
+import 'widgets/untouchable_mask.dart';
 
 class AnotherIsUsingScreen extends StatelessWidget {
   const AnotherIsUsingScreen({super.key});
@@ -22,6 +23,8 @@ class AnotherIsUsingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const remainingGas = 20;
+    const progress = 0.0;
+    final controller = SmartKeyController.to;
     return SafeArea(
       child: Scaffold(
         appBar: CustomAppBar(
@@ -102,74 +105,9 @@ class AnotherIsUsingScreen extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: 6.v),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            '상태',
-                            style: textTheme.bodySmall!.copyWith(
-                              color: lightTheme.onPrimary.withOpacity(0.4),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(left: 5.h),
-                            child: Text(
-                              '|',
-                              style: textTheme.bodySmall!.copyWith(
-                                color: lightTheme.onPrimary.withOpacity(0.4),
-                              ),
-                            ),
-                          ),
-                          Container(
-                            height: 4.adaptSize,
-                            width: 4.adaptSize,
-                            margin: EdgeInsets.only(
-                              left: 5.h,
-                              top: 5.v,
-                              bottom: 5.v,
-                            ),
-                            decoration: BoxDecoration(
-                              color: const Color(0xFFE82121),
-                              borderRadius: BorderRadius.circular(
-                                2.h,
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(left: 2.h),
-                            child: Text(
-                              '홍길동님이 사용중입니다.',
-                              style: textTheme.bodySmall,
-                            ),
-                          ),
-                        ],
-                      ),
+                      const CarStatusMessage(),
                       SizedBox(height: 22.v),
-                      const RidingIndicator(progress: 0.6),
-                      Padding(
-                        padding: EdgeInsets.only(
-                          left: 16.h,
-                          top: 4.v,
-                          right: 16.h,
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              '12:00',
-                              style: textTheme.bodySmall!.copyWith(
-                                color: lightTheme.onPrimary.withOpacity(0.4),
-                              ),
-                            ),
-                            Text(
-                              '13:00',
-                              style: textTheme.bodySmall!.copyWith(
-                                color: lightTheme.onPrimary.withOpacity(0.4),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+                      const RidingIndicator(progress: progress),
                       SizedBox(height: 11.v),
                       Container(
                         height: 8.v,
@@ -220,75 +158,19 @@ class AnotherIsUsingScreen extends StatelessWidget {
                                             child: Stack(
                                               alignment: Alignment.center,
                                               children: [
-                                                Align(
-                                                  child: Container(
-                                                    padding:
-                                                        EdgeInsets.all(5.h),
-                                                    decoration: BoxDecoration(
-                                                      color: lightTheme
-                                                          .onPrimaryContainer,
-                                                      boxShadow: [
-                                                        BoxShadow(
-                                                          color: const Color(
-                                                                  0xFF000000)
-                                                              .withOpacity(0.1),
-                                                          spreadRadius: 2.h,
-                                                          blurRadius: 2.h,
-                                                          offset: const Offset(
-                                                            2,
-                                                            2,
-                                                          ),
-                                                        ),
-                                                      ],
-                                                      borderRadius:
-                                                          BorderRadiusStyle
-                                                              .circleBorder65,
-                                                    ),
-                                                    child: Container(
-                                                      height: 120.adaptSize,
-                                                      width: 120.adaptSize,
-                                                      decoration: BoxDecoration(
-                                                        color: lightTheme
-                                                            .onPrimaryContainer,
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(
-                                                          60.h,
-                                                        ),
-                                                        border: Border.all(
-                                                          color: const Color(
-                                                              0x33A4A8AF),
-                                                          width: 1.h,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
+                                                ControllButton(
+                                                  '문열기',
+                                                  Assets.svg.icoUnlocked.path,
+                                                  onPressed:
+                                                      controller.openDoor,
                                                 ),
-                                                Align(
-                                                  child: Padding(
-                                                    padding:
-                                                        EdgeInsets.symmetric(
-                                                      horizontal: 42.h,
-                                                    ),
-                                                    child: Column(
-                                                      mainAxisSize:
-                                                          MainAxisSize.min,
-                                                      children: [
-                                                        customIcon(
-                                                          Assets.svg.icoUnlocked
-                                                              .path,
-                                                          size: 46.adaptSize,
-                                                        ),
-                                                        SizedBox(height: 5.v),
-                                                        Text(
-                                                          '문열기',
-                                                          style: textTheme
-                                                              .titleMedium,
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                ),
+                                                ControllButton(
+                                                  '문잠금',
+                                                  Assets.svg.icoLocked.path,
+                                                  isRightSide: true,
+                                                  onPressed:
+                                                      controller.closeDoor,
+                                                )
                                               ],
                                             ),
                                           ),
@@ -299,74 +181,17 @@ class AnotherIsUsingScreen extends StatelessWidget {
                                             child: Stack(
                                               alignment: Alignment.center,
                                               children: [
-                                                Align(
-                                                  child: Container(
-                                                    padding:
-                                                        EdgeInsets.all(5.h),
-                                                    decoration: BoxDecoration(
-                                                      color: lightTheme
-                                                          .onPrimaryContainer,
-                                                      boxShadow: [
-                                                        BoxShadow(
-                                                          color: const Color(
-                                                                  0xFF000000)
-                                                              .withOpacity(0.1),
-                                                          spreadRadius: 2.h,
-                                                          blurRadius: 2.h,
-                                                          offset: const Offset(
-                                                            2,
-                                                            2,
-                                                          ),
-                                                        ),
-                                                      ],
-                                                      borderRadius:
-                                                          BorderRadiusStyle
-                                                              .circleBorder65,
-                                                    ),
-                                                    child: Container(
-                                                      height: 120.adaptSize,
-                                                      width: 120.adaptSize,
-                                                      decoration: BoxDecoration(
-                                                        color: lightTheme
-                                                            .onPrimaryContainer,
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(
-                                                          60.h,
-                                                        ),
-                                                        border: Border.all(
-                                                          color: const Color(
-                                                              0x33A4A8AF),
-                                                          width: 1.h,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
+                                                ControllButton(
+                                                  '비상등',
+                                                  Assets.svg.icoTriangle.path,
+                                                  onPressed:
+                                                      controller.emergencyLight,
                                                 ),
-                                                Align(
-                                                  child: Padding(
-                                                    padding:
-                                                        EdgeInsets.symmetric(
-                                                      horizontal: 42.h,
-                                                    ),
-                                                    child: Column(
-                                                      mainAxisSize:
-                                                          MainAxisSize.min,
-                                                      children: [
-                                                        customIcon(
-                                                          Assets.svg.icoLocked
-                                                              .path,
-                                                          size: 46.adaptSize,
-                                                        ),
-                                                        SizedBox(height: 5.v),
-                                                        Text(
-                                                          '문잠금',
-                                                          style: textTheme
-                                                              .titleMedium,
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
+                                                ControllButton(
+                                                  '경적',
+                                                  Assets.svg.icoCampaign.path,
+                                                  isRightSide: true,
+                                                  onPressed: controller.horn,
                                                 ),
                                               ],
                                             ),
@@ -404,9 +229,7 @@ class AnotherIsUsingScreen extends StatelessWidget {
                                                           spreadRadius: 2.h,
                                                           blurRadius: 2.h,
                                                           offset: const Offset(
-                                                            2,
-                                                            2,
-                                                          ),
+                                                              2, 2),
                                                         ),
                                                       ],
                                                       borderRadius:
@@ -474,10 +297,7 @@ class AnotherIsUsingScreen extends StatelessWidget {
                                                       .withOpacity(0.1),
                                                   spreadRadius: 2.h,
                                                   blurRadius: 2.h,
-                                                  offset: const Offset(
-                                                    2,
-                                                    2,
-                                                  ),
+                                                  offset: const Offset(2, 2),
                                                 ),
                                               ],
                                               borderRadius: BorderRadiusStyle
@@ -521,92 +341,7 @@ class AnotherIsUsingScreen extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            Align(
-                              child: Container(
-                                padding: EdgeInsets.symmetric(
-                                  horizontal: 16.h,
-                                  vertical: 50.v,
-                                ),
-                                decoration: const BoxDecoration(
-                                  color: Color(0x33A4A8AF),
-                                ),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    SizedBox(height: 160.v),
-                                    CustomElevatedButton(
-                                      onTap: () => AppRouter.showSnackbar(
-                                        message: '홍길동님이 사용 중 입니다.',
-                                        type: SnackType.help,
-                                      ),
-                                      height: 44.v,
-                                      width: 189.h,
-                                      text: '홍길동님이 사용 중 입니다.',
-                                      buttonStyle: ElevatedButton.styleFrom(
-                                        backgroundColor: lightTheme.onPrimary
-                                            .withOpacity(0.4),
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(22.h),
-                                        ),
-                                      ).noEffect,
-                                      buttonTextStyle: textTheme.bodyLarge!
-                                          .copyWith(
-                                              color: lightTheme
-                                                  .onPrimaryContainer),
-                                    ),
-                                    SizedBox(height: 122.v),
-                                    Align(
-                                      alignment: Alignment.centerRight,
-                                      child: Container(
-                                        padding: EdgeInsets.symmetric(
-                                          horizontal: 12.h,
-                                          vertical: 10.v,
-                                        ),
-                                        decoration: BoxDecoration(
-                                          color: lightTheme.primary,
-                                          boxShadow: [
-                                            BoxShadow(
-                                              color:
-                                                  Colors.black.withOpacity(0.1),
-                                              spreadRadius: 2.h,
-                                              blurRadius: 2.h,
-                                              offset: const Offset(
-                                                2,
-                                                2,
-                                              ),
-                                            ),
-                                          ],
-                                          borderRadius:
-                                              BorderRadiusStyle.circleBorder35,
-                                        ),
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.min,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            customIcon(
-                                              Assets.svg.icoEdit.path,
-                                              size: 30.adaptSize,
-                                            ),
-                                            SizedBox(height: 1.v),
-                                            Text(
-                                              '사고 접수',
-                                              style:
-                                                  textTheme.bodySmall!.copyWith(
-                                                color: Colors.black,
-                                              ),
-                                            ),
-                                            SizedBox(height: 3.v),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
+                            const UntouchableMask(),
                           ],
                         ),
                       ),

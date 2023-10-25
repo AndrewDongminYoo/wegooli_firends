@@ -1,9 +1,17 @@
 // 🐦 Flutter imports:
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 // 📦 Package imports:
 import 'package:flutter_svg/svg.dart';
+
+// 🌎 Project imports:
+import '/core/utils/size_utils.dart';
+import '/gen/colors.gen.dart';
+import '/theme/app_decoration.dart';
+import '/theme/custom_text_style.dart';
+import '/theme/theme_helper.dart';
 
 enum Pressed {
   // 버튼이 눌려진 상태
@@ -16,7 +24,6 @@ class LongPressableButton extends StatefulWidget {
   const LongPressableButton({
     Key? key,
     required this.onPressed,
-    this.pressed = Pressed.notPressed,
     this.crossAxis = CrossAxisAlignment.start,
     this.mainAxis = MainAxisAlignment.center,
     this.vibrate = true,
@@ -50,8 +57,6 @@ class LongPressableButton extends StatefulWidget {
             child == null || (title == null), '자식 위젯을 사용할 경우 제목 속성은 비워둬야 합니다.'),
         assert(!(animate == true && height == null),
             'animate 기능을 사용할 때는 height 속성을 명시해주세요.'),
-        assert(!(pressed == Pressed.pressed && animate == false),
-            'pressed 속성은 animate 기능을 사용할 때에만 명시합니다.'),
         super(key: key);
 
   /// 위젯에 제목을 지정
@@ -101,11 +106,6 @@ class LongPressableButton extends StatefulWidget {
   /// 버튼을 눌렀을 때 실행되는 onPressed 함수
   final void Function()? onPressed;
 
-  /// 애니메이션 프로퍼티가 true로 설정되어 있고 [isThree]도 [true] 일 때 버튼의 값
-  /// [Pressed.pressed] 값을 사용하여 버튼이 내부에서 눌려지는 비활성화 된 버튼 효과를 가질 수 있으며,
-  /// 기본값 [Pressed.notPressed]를 사용하여 버튼을 3D 버전으로 복원 할 수 있습니다.
-  final Pressed pressed;
-
   /// 버튼에 자막과 제목을 지정할 때 열의 교차축 값을 변경하려는 경우 사용
   final CrossAxisAlignment crossAxis;
 
@@ -127,6 +127,10 @@ class LongPressableButton extends StatefulWidget {
 
 class _LongPressableButtonState extends State<LongPressableButton>
     with SingleTickerProviderStateMixin {
+  /// 애니메이션 프로퍼티가 true로 설정되어 있고 [isThree]도 [true] 일 때 버튼의 값
+  /// [Pressed.pressed] 값을 사용하여 버튼이 내부에서 눌려지는 비활성화 된 버튼 효과를 가질 수 있으며,
+  /// 기본값 [Pressed.notPressed]를 사용하여 버튼을 3D 버전으로 복원 할 수 있습니다.
+  Pressed pressed = Pressed.notPressed;
   bool animationStart = false;
   AnimationController? _controller;
   Animation<double>? _animation;
@@ -134,7 +138,6 @@ class _LongPressableButtonState extends State<LongPressableButton>
   @override
   void initState() {
     super.initState();
-
     _controller = AnimationController(
       duration: const Duration(milliseconds: 150),
       vsync: this,
@@ -159,20 +162,22 @@ class _LongPressableButtonState extends State<LongPressableButton>
   /// 이 함수는 버튼 기본값이 [Pressed.pressed]로 설정되어 있을 때 동작
   /// 이 함수는 컨트롤러가 앞으로 이동하도록 트리거하고 값이 [Pressed.notPressed]로 돌아 오면 컨트롤러가 원래 위치로 반전
   void _checkState() {
-    final pressed = widget.pressed;
-
     if (pressed == Pressed.notPressed) {
       if (change) {
         return;
       }
       animationStart = false;
       change = true;
+
+      /// 이 애니메이션을 역방향(처음 방향)으로 실행하기 시작합니다.
       _controller?.reverse();
     }
 
     if (widget.animate && pressed == Pressed.pressed) {
       change = false;
       animationStart = true;
+
+      /// 이 애니메이션을 앞으로(끝을 향해) 실행하기 시작합니다.
       _controller?.forward();
     }
   }
@@ -244,7 +249,7 @@ class _LongPressableButtonState extends State<LongPressableButton>
                   child: Material(
                     type: MaterialType.transparency,
                     child: InkWell(
-                      onTapDown: !(widget.pressed == Pressed.pressed) &&
+                      onTapDown: !(pressed == Pressed.pressed) &&
                               widget.onPressed != null
                           ? (value) {
                               if (widget.animate) {
@@ -253,7 +258,7 @@ class _LongPressableButtonState extends State<LongPressableButton>
                                   _controller?.forward();
                                 });
                               }
-                              if (widget.vibrate) {
+                              if (widget.vibrate && !kIsWeb) {
                                 HapticFeedback.lightImpact();
                               }
                             }
@@ -267,7 +272,7 @@ class _LongPressableButtonState extends State<LongPressableButton>
                       },
                       borderRadius:
                           BorderRadius.circular(widget.borderRadius ?? 0),
-                      onTapUp: !(widget.pressed == Pressed.pressed) &&
+                      onTapUp: !(pressed == Pressed.pressed) &&
                               widget.onPressed != null
                           ? (_) async {
                               const condition = true;
@@ -283,86 +288,72 @@ class _LongPressableButtonState extends State<LongPressableButton>
                               widget.onPressed!();
                             }
                           : null,
-                      child: Ink(
-                        decoration: BoxDecoration(
-                          borderRadius:
-                              BorderRadius.circular(widget.borderRadius ?? 0),
-                          color: widget.backgroundColor,
-                        ),
-                        child: Container(
-                          height: widget.height,
-                          width: widget.width,
-                          padding: widget.padding,
-                          child: Center(
-                            child: Row(
-                              mainAxisAlignment: widget.mainAxis,
-                              children: [
-                                Builder(
-                                  builder: (context) {
-                                    final padding =
-                                        widget.child == null ? 0.0 : 10.0;
-                                    if (widget.iconWidget != null) {
-                                      return Padding(
-                                          padding:
-                                              const EdgeInsets.only(right: 10),
-                                          child: widget.iconWidget);
-                                    }
-                                    if (widget.asset != null) {
-                                      /// SVG인지 일반 에셋인지 파악합니다.
-                                      if (widget.asset?.isSvg ?? false) {
-                                        print('${widget.asset}은 SVG 이미지입니다.');
-                                        return Padding(
-                                          padding:
-                                              EdgeInsets.only(right: padding),
-                                          child: SvgPicture.asset(
-                                            widget.asset!.assetPath,
-                                            height: widget.asset?.height,
-                                            width: widget.asset?.height,
-                                            colorFilter: ColorFilter.mode(
-                                              widget.asset!.color ??
-                                                  Colors.transparent,
-                                              BlendMode.srcIn,
-                                            ),
-                                          ),
-                                        );
-                                      }
-                                      return Padding(
-                                        padding:
-                                            EdgeInsets.only(right: padding),
-                                        child: Image.asset(
-                                          widget.asset!.assetPath,
-                                          height: widget.asset?.height,
-                                          width: widget.asset?.width,
-                                        ),
-                                      );
-                                    }
-                                    return Container();
-                                  },
+                      child: Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          Align(
+                            child: Container(
+                              padding: EdgeInsets.all(5.h),
+                              decoration: BoxDecoration(
+                                // color: lightTheme.onPrimaryContainer,
+                                color: lightTheme.onPrimaryContainer,
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(0.1),
+                                    spreadRadius: 2.h,
+                                    blurRadius: 2.h,
+                                    offset: const Offset(2, 2),
+                                  ),
+                                ],
+                                borderRadius: BorderRadiusStyle.circleBorder65,
+                              ),
+                              child: Container(
+                                height: 120.adaptSize,
+                                width: 120.adaptSize,
+                                decoration: BoxDecoration(
+                                  color: animationStart
+                                      ? AppColors.primaryDefault
+                                      : AppColors.primaryInverted,
+                                  borderRadius: BorderRadius.circular(
+                                    60.h,
+                                  ),
+                                  border: Border.all(
+                                    color: const Color(0x33A4A8AF),
+                                    width: 1.h,
+                                  ),
                                 ),
-                                Column(
-                                  crossAxisAlignment: widget.crossAxis,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Center(
-                                      child: widget.child ??
-                                          Text(
-                                            widget.title ?? '',
-                                            style: const TextStyle(
-                                                color: Colors.white),
-                                          ),
-                                    ),
-                                    if (widget.subtitle != null)
-                                      Flexible(
-                                        child: widget.subtitle!,
-                                      )
-                                    else
-                                      Container()
-                                  ],
-                                )
-                              ],
+                              ),
                             ),
                           ),
-                        ),
+                          Align(
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 42.h,
+                              ),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  SvgPicture.asset(
+                                    widget.asset!.assetPath,
+                                    height: widget.asset?.height,
+                                    width: widget.asset?.height,
+                                    colorFilter: ColorFilter.mode(
+                                      animationStart
+                                          ? AppColors.primaryInverted
+                                          : AppColors.primaryDefault,
+                                      BlendMode.srcIn,
+                                    ),
+                                  ),
+                                  SizedBox(height: 5.v),
+                                  Text(
+                                    widget.title ?? '',
+                                    style: textTheme.titleMedium!.bold,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),

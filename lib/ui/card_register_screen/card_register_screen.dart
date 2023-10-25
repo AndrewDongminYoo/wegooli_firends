@@ -1,9 +1,6 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:get/instance_manager.dart';
-
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/layout/unfocused.dart';
@@ -22,7 +19,7 @@ class CardRegisterScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(CardRegisterController());
+    final controller = CardRegisterController.to;
     final isValid = ValueNotifier(false);
     return SafeArea(
       child: Scaffold(

@@ -1,9 +1,6 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:get/instance_manager.dart';
-
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/theme/button_styles.dart';
@@ -21,7 +18,7 @@ class VerificationWaitingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(VerificationWaitingController());
+    final controller = VerificationWaitingController.to;
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,

@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
-import 'package:get/instance_manager.dart';
 import 'package:get/state_manager.dart';
 
 // 🌎 Project imports:
@@ -10,13 +9,12 @@ import '/core/utils/size_utils.dart';
 import '/theme/theme_helper.dart';
 import '/ui/contact_us_history_page/widgets/list_item_widget.dart';
 import 'controller/contact_us_history_controller.dart';
-import 'models/contact_us_history_model.dart';
 
 // ignore: must_be_immutable
 class ContactUsHistoryPage extends StatelessWidget {
   ContactUsHistoryPage({super.key});
 
-  final controller = Get.put(ContactUsHistoryController(HistoryModel().obs));
+  final controller = ContactUsHistoryController.to;
 
   @override
   Widget build(BuildContext context) {

@@ -1,9 +1,6 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:get/instance_manager.dart';
-
 // 🌎 Project imports:
 import '../controller/contact_us_history_controller.dart';
 import '../models/list_item_model.dart';
@@ -21,9 +18,7 @@ class ListItemWidget extends StatelessWidget {
   });
 
   ListItemModel listItem;
-
-  ContactUsHistoryController controller =
-      Get.find<ContactUsHistoryController>();
+  ContactUsHistoryController controller = ContactUsHistoryController.to;
 
   @override
   Widget build(BuildContext context) {

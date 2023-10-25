@@ -1,9 +1,6 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:get/instance_manager.dart';
-
 // 🌎 Project imports:
 import '../controller/notices_controller.dart';
 import '../models/notices_item_model.dart';
@@ -19,7 +16,7 @@ class NoticesItemWidget extends StatelessWidget {
 
   NoticesItemModel noticesItem;
 
-  NoticesController controller = Get.find<NoticesController>();
+  NoticesController controller = NoticesController.to;
 
   @override
   Widget build(BuildContext context) {

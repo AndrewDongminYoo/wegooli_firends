@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
-import 'package:get/instance_manager.dart';
 import 'package:get/state_manager.dart';
 
 // 🌎 Project imports:
@@ -27,7 +26,7 @@ class OneOnOneScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(OneOnOneController());
+    final controller = OneOnOneController.to;
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,

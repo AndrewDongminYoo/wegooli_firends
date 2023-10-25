@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
-import 'package:get/instance_manager.dart';
 import 'package:get/state_manager.dart';
 
 // 🌎 Project imports:
@@ -23,7 +22,7 @@ class ListItemWidget extends StatelessWidget {
 
   ListItemModel listItem;
 
-  ScheduledDateController controller = Get.find<ScheduledDateController>();
+  ScheduledDateController controller = ScheduledDateController.to;
 
   @override
   Widget build(BuildContext context) {

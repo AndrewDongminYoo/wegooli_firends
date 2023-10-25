@@ -1,9 +1,6 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:get/instance_manager.dart';
-
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/data/common/dropdown_data.dart';
@@ -25,7 +22,7 @@ class LicenseRegisterScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(LicenseRegisterController());
+    final controller = LicenseRegisterController.to;
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,

@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
-import 'package:get/instance_manager.dart';
 import 'package:get/state_manager.dart';
 
 // 🌎 Project imports:
@@ -21,7 +20,7 @@ class UserAgeWidget extends StatelessWidget {
 
   UserAgeModel userageItem;
 
-  SchedulesController controller = Get.find<SchedulesController>();
+  SchedulesController controller = SchedulesController.to;
 
   @override
   Widget build(BuildContext context) {

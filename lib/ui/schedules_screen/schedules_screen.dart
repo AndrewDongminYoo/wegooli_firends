@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
-import 'package:get/instance_manager.dart';
 import 'package:get/state_manager.dart';
 
 // 🌎 Project imports:
@@ -24,7 +23,7 @@ class SchedulesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(SchedulesController());
+    final controller = SchedulesController.to;
     return SafeArea(
       child: Scaffold(
         appBar: CustomAppBar(

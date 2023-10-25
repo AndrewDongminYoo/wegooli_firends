@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
-import 'package:get/instance_manager.dart';
 import 'package:go_router/go_router.dart';
 
 // 🌎 Project imports:
@@ -21,7 +20,7 @@ import 'controller/send_invitation_controller.dart';
 class SendInvitationDialog extends StatelessWidget {
   SendInvitationDialog({super.key});
 
-  InvitationController controller = Get.put(InvitationController());
+  InvitationController controller = InvitationController.to;
 
   @override
   Widget build(BuildContext context) {

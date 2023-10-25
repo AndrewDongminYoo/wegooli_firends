@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
-import 'package:get/instance_manager.dart';
 import 'package:get/state_manager.dart';
 import 'package:go_router/go_router.dart';
 
@@ -20,7 +19,7 @@ import 'widgets/list_item_widget.dart';
 class ViewScheduledDateDialog extends StatelessWidget {
   ViewScheduledDateDialog({super.key});
 
-  ScheduledDateController controller = Get.put(ScheduledDateController());
+  ScheduledDateController controller = ScheduledDateController.to;
 
   @override
   Widget build(BuildContext context) {

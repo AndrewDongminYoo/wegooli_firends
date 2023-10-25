@@ -1,9 +1,6 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:get/instance_manager.dart';
-
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
@@ -21,7 +18,7 @@ class SigninPageScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(SigninPageController());
+    final controller = SigninPageController.to;
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,

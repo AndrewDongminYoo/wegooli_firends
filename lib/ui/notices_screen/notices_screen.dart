@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
-import 'package:get/instance_manager.dart';
 import 'package:get/state_manager.dart';
 
 // 🌎 Project imports:
@@ -19,7 +18,7 @@ class NoticesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(NoticesController());
+    final controller = NoticesController.to;
     return SafeArea(
       child: Scaffold(
         appBar: CustomAppBar(

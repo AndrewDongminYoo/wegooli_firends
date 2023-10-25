@@ -1,9 +1,6 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:get/instance_manager.dart';
-
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/theme/theme_helper.dart';
@@ -19,7 +16,7 @@ class ContactUsHistoryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(ContactUsHistoryController());
+    final controller = ContactUsHistoryController.to;
     return SafeArea(
       child: Scaffold(
         appBar: CustomAppBar(
@@ -36,7 +33,7 @@ class ContactUsHistoryScreen extends StatelessWidget {
                   height: 65.v,
                   width: double.maxFinite,
                   child: TabBar(
-                    controller: controller.tabviewController,
+                    controller: controller.tabController,
                     isScrollable: true,
                     labelColor: lightTheme.onPrimary,
                     unselectedLabelColor: lightTheme.onPrimary.withOpacity(0.4),
@@ -122,7 +119,7 @@ class ContactUsHistoryScreen extends StatelessWidget {
                 SizedBox(
                   height: 592.v,
                   child: TabBarView(
-                    controller: controller.tabviewController,
+                    controller: controller.tabController,
                     children: [
                       ContactUsHistoryExpandedPage(),
                       ContactUsHistoryExpandedPage(),

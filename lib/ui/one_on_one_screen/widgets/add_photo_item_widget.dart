@@ -1,9 +1,6 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:get/instance_manager.dart';
-
 // 🌎 Project imports:
 import '../controller/one_on_one_controller.dart';
 import '../models/add_photo_item.dart';
@@ -21,7 +18,7 @@ class AddPhotoWidget extends StatelessWidget {
 
   AddPhotoItem listaddphotoaltItem;
 
-  OneOnOneController controller = Get.find<OneOnOneController>();
+  OneOnOneController controller = OneOnOneController.to;
 
   @override
   Widget build(BuildContext context) {

@@ -1,9 +1,6 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:get/instance_manager.dart';
-
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
@@ -23,7 +20,7 @@ class VerificationEmptyScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(VerificationEmptyController());
+    final controller = VerificationEmptyController.to;
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,

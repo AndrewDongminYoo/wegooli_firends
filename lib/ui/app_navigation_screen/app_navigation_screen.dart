@@ -7,7 +7,7 @@ import '/theme/theme_helper.dart';
 import '/ui/card_list_screen/card_list_screen.dart';
 import '/ui/card_register_screen/card_register_screen.dart';
 import '/ui/contact_us_history_page/contact_us_empty_history_screen.dart';
-import '/ui/contact_us_history_screen/contact_us_history_screen.dart';
+import '/ui/contact_us_history_page/contact_us_history_screen.dart';
 import '/ui/datetime_picker_bottom_sheet/datetime_picker_bottom_sheet.dart';
 import '/ui/empty_notice_screen/empty_notice_screen.dart';
 import '/ui/expiring_subscriptions_screen/expiring_subscriptions_screen.dart';

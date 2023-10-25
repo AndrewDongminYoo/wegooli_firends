@@ -64,20 +64,6 @@ class ContactUsEmptyHistoryScreen extends StatelessWidget {
             right: 16.h,
             bottom: 29.v,
           ),
-          decoration: BoxDecoration(
-            color: lightTheme.onPrimaryContainer,
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.1),
-                spreadRadius: 2.h,
-                blurRadius: 2.h,
-                offset: const Offset(
-                  2,
-                  2,
-                ),
-              ),
-            ],
-          ),
           child: CustomElevatedButton(
               text: '확인',
               buttonStyle: ElevatedButton.styleFrom(

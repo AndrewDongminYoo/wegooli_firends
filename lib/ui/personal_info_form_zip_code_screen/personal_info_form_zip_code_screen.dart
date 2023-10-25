@@ -1,9 +1,6 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:get/instance_manager.dart';
-
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
@@ -22,7 +19,7 @@ class PersonalInfoFormZipCodeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(PersonalInfoFormZipCodeController());
+    final controller = PersonalInfoFormZipCodeController.to;
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,

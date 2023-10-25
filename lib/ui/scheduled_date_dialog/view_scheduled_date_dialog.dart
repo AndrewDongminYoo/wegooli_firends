@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 
 // 📦 Package imports:
 import 'package:get/state_manager.dart';
-import 'package:go_router/go_router.dart';
 
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
+import '/routes/app_navigation.dart';
 import '/theme/app_decoration.dart';
 import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
@@ -48,7 +48,7 @@ class ViewScheduledDateDialog extends StatelessWidget {
                 Assets.svg.icoCloseRound.path,
                 size: 15.adaptSize,
                 alignment: Alignment.centerRight,
-                onTap: GoRouter.of(context).pop,
+                onTap: context.safePop,
               ),
               SizedBox(height: 6.v),
               Text('일정 확인',

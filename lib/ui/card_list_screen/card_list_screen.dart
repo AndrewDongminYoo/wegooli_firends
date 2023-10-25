@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 
 // 📦 Package imports:
 import 'package:get/state_manager.dart';
+import 'package:go_router/go_router.dart';
 
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
+import '/ui/card_register_screen/card_register_screen.dart';
 import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/elevated_button.dart';
@@ -90,7 +92,10 @@ class CardListScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 31.v),
-                  CustomElevatedButton(text: '카드 추가'),
+                  CustomElevatedButton(
+                    text: '카드 추가',
+                    onTap: () => context.goNamed(CardRegisterScreen.routeName),
+                  ),
                 ],
               ),
             ),

@@ -1,12 +1,12 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
-
-// 📦 Package imports:
-import 'package:go_router/go_router.dart';
+import 'package:flutter/services.dart';
 
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
+import '/routes/app_navigation.dart';
+import '/routes/app_router.dart';
 import '/theme/app_decoration.dart';
 import '/theme/button_styles.dart';
 import '/theme/custom_text_style.dart';
@@ -52,7 +52,7 @@ class SendInvitationDialog extends StatelessWidget {
                   top: 20.v,
                   right: 20.h,
                 ),
-                onTap: GoRouter.of(context).pop,
+                onTap: context.safePop,
               ),
               Padding(
                 padding: EdgeInsets.only(
@@ -85,6 +85,17 @@ class SendInvitationDialog extends StatelessWidget {
                       EdgeInsets.only(left: 12.h, top: 14.v, bottom: 14.v)),
               SizedBox(height: 20.v),
               CustomElevatedButton(
+                  onTap: () {
+                    Clipboard.setData(
+                      ClipboardData(
+                        text: controller.invitationCode.text,
+                      ),
+                    );
+                    AppRouter.showSnackbar(
+                      type: SnackType.success,
+                      message: controller.invitationCode.text,
+                    );
+                  },
                   text: '복사하기',
                   buttonStyle: ElevatedButton.styleFrom(
                     backgroundColor: lightTheme.primary,

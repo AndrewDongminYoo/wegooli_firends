@@ -1,10 +1,14 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+// 📦 Package imports:
+import 'package:go_router/go_router.dart';
+
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
 import '/theme/theme_helper.dart';
+import '/ui/home_page_screen/home_page_screen.dart';
 import '/widgets/elevated_button.dart';
 import '/widgets/image_view.dart';
 
@@ -58,6 +62,7 @@ class SignupCompleteScreen extends StatelessWidget {
           ),
         ),
         bottomNavigationBar: CustomElevatedButton(
+          onTap: () => context.goNamed(HomePageScreen.routeName),
           text: '시작하기',
           margin: EdgeInsets.only(
             left: 16.h,

@@ -4,8 +4,11 @@ import 'package:flutter/material.dart';
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
+import '/routes/app_navigation.dart';
+import '/routes/app_router.dart';
 import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
+import '/ui/unsubscribe_confirm_dialog/unsubscribe_confirm_dialog.dart';
 import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/elevated_button.dart';
@@ -66,6 +69,7 @@ class UnsubscribeScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       CustomElevatedButton(
+                        onTap: context.safePop,
                         width: 104.h,
                         text: '취소',
                         buttonStyle: ElevatedButton.styleFrom(
@@ -75,7 +79,16 @@ class UnsubscribeScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      CustomElevatedButton(width: 216.h, text: '구독 해지하기'),
+                      CustomElevatedButton(
+                        onTap: () {
+                          // 해지 재확인 다이얼로그
+                          AppRouter.showDialog(builder: (_) {
+                            return UnsubscribeConfirmDialog();
+                          });
+                        },
+                        width: 216.h,
+                        text: '구독 해지하기',
+                      ),
                     ],
                   ),
                 ],

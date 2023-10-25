@@ -375,6 +375,8 @@ class LicenseRegisterScreen extends StatelessWidget {
           ),
         ),
         bottomNavigationBar: CustomElevatedButton(
+          // TODO: 운전면허증 등록
+          onTap: controller.update,
           height: 48.v,
           text: '등록 완료',
           margin: EdgeInsets.only(

@@ -6,7 +6,6 @@ import 'package:go_router/go_router.dart';
 
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
-import '/l10n/l10n.dart';
 import '/theme/app_decoration.dart';
 import '/theme/button_styles.dart';
 import '/theme/custom_text_style.dart';
@@ -118,7 +117,7 @@ class InformationalDialog extends StatelessWidget {
           ),
         if (!isSelection)
           CustomElevatedButton(
-            text: l10ns.confirm,
+            text: '확인',
             buttonStyle: ElevatedButton.styleFrom(
                     backgroundColor: lightTheme.primary,
                     shape: RoundedRectangleBorder(

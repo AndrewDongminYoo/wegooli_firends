@@ -1,12 +1,10 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:go_router/go_router.dart';
-
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
+import '/routes/app_navigation.dart';
 import '/widgets/image_view.dart';
 
 // ignore: must_be_immutable
@@ -128,7 +126,7 @@ class GetBackIcon extends StatelessWidget {
         top: 19.v,
         bottom: 18.v,
       ),
-      onTap: GoRouter.of(context).pop,
+      onTap: context.safePop,
     );
   }
 }

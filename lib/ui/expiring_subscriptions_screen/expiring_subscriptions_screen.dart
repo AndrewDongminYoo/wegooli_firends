@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
+import '/routes/app_navigation.dart';
 import '/theme/app_decoration.dart';
 import '/theme/button_styles.dart';
 import '/theme/custom_text_style.dart';
@@ -162,6 +163,7 @@ class ExpiringSubscriptionsScreen extends StatelessWidget {
                           ),
                         ),
                         CustomElevatedButton(
+                          onTap: context.safePop,
                           height: 48.v,
                           width: 160.h,
                           text: '해지 취소',

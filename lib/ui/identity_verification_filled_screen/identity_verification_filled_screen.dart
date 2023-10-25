@@ -173,6 +173,8 @@ class VerificationFilledScreen extends StatelessWidget {
               ),
               SizedBox(height: 20.v),
               CustomElevatedButton(
+                // TODO: 인증번호 발송
+                onTap: () => print(controller.phonenum),
                 height: 42.v,
                 text: '인증번호 발송',
                 buttonStyle: ElevatedButton.styleFrom(
@@ -198,6 +200,8 @@ class VerificationFilledScreen extends StatelessWidget {
           ),
           decoration: BoxDecoration(color: lightTheme.onPrimaryContainer),
           child: CustomElevatedButton(
+            // TODO: 인증번호 확인
+            onTap: () => print(controller.phonenum),
             height: 48.v,
             text: '인증하기',
             buttonStyle: ElevatedButton.styleFrom(

@@ -79,6 +79,11 @@ class SigninPageScreen extends StatelessWidget {
               ),
               SizedBox(height: 30.v),
               CustomElevatedButton(
+                onTap: () {
+                  // TODO: 로그인 로직
+                  print(
+                      'usermail: ${controller.loginName}, password: ${controller.loginPass}');
+                },
                 height: 48.v,
                 text: '로그인',
                 buttonStyle: ElevatedButton.styleFrom(

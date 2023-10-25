@@ -10,6 +10,7 @@ import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
+import '/ui/datetime_picker_bottom_sheet/datetime_picker_bottom_sheet.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/elevated_button.dart';
 import '/widgets/image_view.dart';
@@ -99,6 +100,11 @@ class SchedulesScreen extends StatelessWidget {
                           ),
                         ),
                         CustomElevatedButton(
+                          onTap: () => showDialog(
+                            context: context,
+                            builder: (context) =>
+                                const DatetimePickerBottomSheet(),
+                          ),
                           text: '일정 추가 +',
                           margin: EdgeInsets.only(
                             left: 16.h,

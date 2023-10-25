@@ -1,11 +1,16 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+// 📦 Package imports:
+import 'package:go_router/go_router.dart';
+
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
+import '/routes/app_navigation.dart';
 import '/theme/button_styles.dart';
 import '/theme/theme_helper.dart';
+import '/ui/license_register_screen/license_register_screen.dart';
 import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/elevated_button.dart';
@@ -70,6 +75,8 @@ class PersonalInfoFormZipCodeScreen extends StatelessWidget {
                             ),
                             Expanded(
                               child: CustomElevatedButton(
+                                // TODO: Kpostal 호출
+                                onTap: context.safePop,
                                 height: 42.v,
                                 text: '주소 검색',
                                 margin: EdgeInsets.only(
@@ -202,6 +209,8 @@ class PersonalInfoFormZipCodeScreen extends StatelessWidget {
           ),
           decoration: BoxDecoration(color: lightTheme.onPrimaryContainer),
           child: CustomElevatedButton(
+            // TODO: 주소 입력 다음 화면으로
+            onTap: () => context.goNamed(LicenseRegisterScreen.routeName),
             height: 48.v,
             text: '입력 완료',
             buttonStyle: ElevatedButton.styleFrom(

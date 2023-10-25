@@ -2,6 +2,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+// 📦 Package imports:
+import 'package:go_router/go_router.dart';
+
 // 🌎 Project imports:
 import '/core/utils/datetime_utils.dart';
 import '/core/utils/list_extensions.dart';
@@ -9,10 +12,12 @@ import '/core/utils/size_utils.dart';
 import '/data/custom/schedule.dart';
 import '/gen/colors.gen.dart';
 import '/l10n/l10n.dart';
+import '/routes/app_navigation.dart';
 import '/theme/app_decoration.dart';
 import '/theme/button_styles.dart';
 import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
+import '/ui/schedules_screen/schedules_screen.dart';
 import '/widgets/elevated_button.dart';
 import 'models/datetime_picker_model.dart';
 
@@ -177,7 +182,7 @@ class _DatetimePickerBottomSheetState extends State<DatetimePickerBottomSheet> {
                   CustomElevatedButton(
                     width: 104.h,
                     height: 52.v,
-                    text: l10ns.cancel,
+                    text: '수정',
                     buttonStyle: ElevatedButton.styleFrom(
                       backgroundColor: Palette.gray400,
                       shape: RoundedRectangleBorder(
@@ -187,18 +192,20 @@ class _DatetimePickerBottomSheetState extends State<DatetimePickerBottomSheet> {
                     buttonTextStyle: textTheme.titleMedium!
                         .copyWith(fontSize: TextSize.lg.fSize),
                     onTap: () {
-                      Navigator.pop<bool>(context, false);
+                      context.pop(true);
                     },
                   ),
                   if (isEditMode)
                     CustomElevatedButton(
-                      text: l10ns.edit,
+                      onTap: context.safePop,
+                      text: '수정',
                       buttonTextStyle: buttonTextStyle,
                       width: 216.h,
                     )
                   else
                     CustomElevatedButton(
-                      text: l10ns.confirm,
+                      onTap: () => context.goNamed(SchedulesScreen.routeName),
+                      text: '확인',
                       buttonTextStyle: buttonTextStyle,
                       width: 216.h,
                     )

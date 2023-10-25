@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
+import '/routes/app_router.dart';
 import '/theme/app_decoration.dart';
 import '/theme/button_styles.dart';
 import '/theme/custom_text_style.dart';
@@ -535,6 +536,10 @@ class AnotherIsUsingScreen extends StatelessWidget {
                                   children: [
                                     SizedBox(height: 160.v),
                                     CustomElevatedButton(
+                                      onTap: () => AppRouter.showSnackbar(
+                                        message: '홍길동님이 사용 중 입니다.',
+                                        type: SnackType.help,
+                                      ),
                                       height: 44.v,
                                       width: 189.h,
                                       text: '홍길동님이 사용 중 입니다.',

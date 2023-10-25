@@ -117,6 +117,8 @@ class VerificationWaitingScreen extends StatelessWidget {
               ),
               SizedBox(height: 20.v),
               CustomElevatedButton(
+                // TODO: 인증번호 발송
+                onTap: () => print(controller.phonenum),
                 height: 42.v,
                 text: '인증번호 발송',
                 buttonStyle: ElevatedButton.styleFrom(
@@ -141,6 +143,8 @@ class VerificationWaitingScreen extends StatelessWidget {
           ),
         ),
         bottomNavigationBar: CustomElevatedButton(
+          // TODO: 인증번호 확인
+          onTap: () => print(controller.phonenum),
           height: 48.v,
           text: '인증하기',
           margin: EdgeInsets.only(

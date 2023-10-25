@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
+import '/routes/app_navigation.dart';
 import '/theme/button_styles.dart';
 import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
@@ -65,6 +66,7 @@ class ContactUsEmptyHistoryScreen extends StatelessWidget {
             bottom: 29.v,
           ),
           child: CustomElevatedButton(
+              onTap: context.safePop,
               text: '확인',
               buttonStyle: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFFF3F3F6),

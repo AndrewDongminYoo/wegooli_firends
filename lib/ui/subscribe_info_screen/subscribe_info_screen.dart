@@ -1,6 +1,9 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+// 📦 Package imports:
+import 'package:go_router/go_router.dart';
+
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
@@ -8,6 +11,7 @@ import '/theme/app_decoration.dart';
 import '/theme/button_styles.dart';
 import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
+import '/ui/unsubscribe_screen/unsubscribe_screen.dart';
 import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/elevated_button.dart';
@@ -166,6 +170,10 @@ class SubscribeInfoScreen extends StatelessWidget {
                           ),
                         ),
                         CustomElevatedButton(
+                          onTap: () {
+                            // 해지 재확인 다이얼로그
+                            context.goNamed(UnsubscribeScreen.routeName);
+                          },
                           height: 48.v,
                           width: 160.h,
                           text: '해지하기',

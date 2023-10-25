@@ -8,6 +8,7 @@ import 'package:get/state_manager.dart';
 import '/core/utils/size_utils.dart';
 import '/data/common/dropdown_data.dart';
 import '/gen/assets.gen.dart';
+import '/routes/app_navigation.dart';
 import '/theme/button_styles.dart';
 import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
@@ -141,6 +142,7 @@ class OneOnOneScreen extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               CustomElevatedButton(
+                onTap: context.safePop,
                 width: 104.h,
                 text: '취소',
                 buttonStyle: ElevatedButton.styleFrom(
@@ -151,6 +153,9 @@ class OneOnOneScreen extends StatelessWidget {
                 ).noEffect,
               ),
               CustomElevatedButton(
+                // TODO: 문의하기 내용 등록
+                onTap: () =>
+                    print(controller.oneOnOne.value.inquiryTypes.value),
                 width: 216.h,
                 text: '문의하기',
                 margin: EdgeInsets.only(left: 8.h),

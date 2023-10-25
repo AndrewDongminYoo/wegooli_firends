@@ -9,6 +9,7 @@ class DropdownData {
     this.value,
     this.isSelected = false,
   });
+
   final int? id;
   final String title;
   final dynamic value;

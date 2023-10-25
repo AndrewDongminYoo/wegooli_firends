@@ -6,6 +6,7 @@ class BookItem {
     this.minDateTime,
     this.maxDateTime,
   });
+
   final String title;
   DateTime date;
   bool isExpanded;

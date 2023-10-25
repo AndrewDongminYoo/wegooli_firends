@@ -22,7 +22,7 @@ enum Pressed {
 
 class LongPressableButton extends StatefulWidget {
   const LongPressableButton({
-    Key? key,
+    super.key,
     required this.onPressed,
     this.crossAxis = CrossAxisAlignment.start,
     this.mainAxis = MainAxisAlignment.center,
@@ -56,8 +56,7 @@ class LongPressableButton extends StatefulWidget {
         assert(
             child == null || (title == null), '자식 위젯을 사용할 경우 제목 속성은 비워둬야 합니다.'),
         assert(!(animate == true && height == null),
-            'animate 기능을 사용할 때는 height 속성을 명시해주세요.'),
-        super(key: key);
+            'animate 기능을 사용할 때는 height 속성을 명시해주세요.');
 
   /// 위젯에 제목을 지정
   final String? title;

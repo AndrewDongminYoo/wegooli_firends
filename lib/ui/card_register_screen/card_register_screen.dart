@@ -1,9 +1,6 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:get/get.dart';
-
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/layout/unfocused.dart';
@@ -231,7 +228,7 @@ class CardRegisterScreen extends StatelessWidget {
             ],
           ),
           child: CustomElevatedButton(
-            onTap: () => controller.printInfo,
+            onTap: controller.printFormFields,
             text: '확인',
             isDisabled: !isValid.value,
             buttonStyle: ElevatedButton.styleFrom(

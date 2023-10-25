@@ -21,4 +21,9 @@ class VerificationEmptyController extends GetxController {
     realname.dispose();
     phonenum.dispose();
   }
+
+  void printFormFields() {
+    print('이메일: $realname'
+        '비밀번호: $phonenum');
+  }
 }

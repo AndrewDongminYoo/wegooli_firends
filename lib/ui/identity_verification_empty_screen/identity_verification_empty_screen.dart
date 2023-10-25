@@ -1,9 +1,6 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-// 📦 Package imports:
-import 'package:get/get.dart';
-
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
@@ -174,7 +171,7 @@ class VerificationEmptyScreen extends StatelessWidget {
               SizedBox(height: 17.v),
               CustomElevatedButton(
                 // TODO: 인증번호 발송
-                onTap: controller.printInfo,
+                onTap: controller.printFormFields,
                 height: 42.v,
                 text: '인증번호 발송',
                 buttonStyle: ElevatedButton.styleFrom(
@@ -201,7 +198,7 @@ class VerificationEmptyScreen extends StatelessWidget {
           decoration: BoxDecoration(color: lightTheme.onPrimaryContainer),
           child: CustomElevatedButton(
             // TODO: 인증번호 확인 로직
-            onTap: controller.printInfo,
+            onTap: controller.printFormFields,
             height: 48.v,
             text: '인증하기',
             buttonStyle: ElevatedButton.styleFrom(

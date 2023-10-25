@@ -9,6 +9,7 @@ class SeperateTextFormatter extends TextInputFormatter {
     required this.sample,
     required this.separator,
   });
+
   final String sample;
   final String separator;
 

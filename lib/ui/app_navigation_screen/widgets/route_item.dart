@@ -16,6 +16,7 @@ class RouteItem extends StatelessWidget {
     required this.routeName,
     required this.title,
   });
+
   final String routeName;
   final String title;
 

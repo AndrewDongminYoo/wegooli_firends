@@ -17,6 +17,13 @@ class CardRegisterController extends GetxController {
   TextEditingController birthday = TextEditingController();
   TextEditingController cardPin = TextEditingController();
 
+  void printFormFields() {
+    print('카드번호: $cardNum'
+        '카드유효기간: $cardExp'
+        '본인생년월일: $birthday'
+        '카드비밀번호: $cardPin');
+  }
+
   @override
   void onClose() {
     super.onClose();

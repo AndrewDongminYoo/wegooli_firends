@@ -34,6 +34,8 @@ class AppTextStyle extends TextStyle {
   /// An [AppTextStyle] with default properties.
   static AppTextStyle basic = AppTextStyle();
 
+  /// [TextStyle]의 height 속성 (의도 명확하게 lien height)
+  final double? lineHeight;
   @override
   final Color color;
   @override
@@ -44,7 +46,6 @@ class AppTextStyle extends TextStyle {
   final double? fontSize;
   @override
   final FontWeight fontWeight;
-  final double? lineHeight;
   @override
   final double? letterSpacing;
   @override

@@ -96,6 +96,8 @@ dependencies:
   from_css_color: ^2.0.0
   # Getx 상태관리/라우터/의존성주입
   get: ^4.6.5
+  # 의존성 주입 모듈
+  get_it: ^7.6.4
   # 고 라우터
   go_router: ^12.0.0
   # 구글 폰트
@@ -104,6 +106,8 @@ dependencies:
   google_sign_in: ^6.1.5
   # 하이브 (크로스플랫폼 NoSQL DB)
   hive_flutter: ^1.1.0
+  # Riverpod 훅
+  hooks_riverpod: ^2.4.4
   # 이미지 선택기
   image_picker: ^1.0.4
   intl: any
@@ -181,6 +185,7 @@ flutter:
 
   # 애플리케이션에 에셋을 추가하려면 다음과 같이 에셋 섹션을 추가함:
   assets:
+    - ".env"
     - assets/google_fonts/
     - assets/brand/
     - assets/cars/

@@ -2,26 +2,20 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
-import 'package:get_it/get_it.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 // 🌎 Project imports:
 import '/core/utils/logger.dart';
 import '/data/custom/user.model.dart';
 
-class PrefUtils {
-  // ignore: prefer_constructors_over_static_methods
-  static PrefUtils get I => GetIt.I.isRegistered()
-      ? GetIt.I.get()
-      : GetIt.I.registerSingleton(PrefUtils());
-
-  // ignore: unused_field
+class AppStorage {
   Box? _store;
 
   /// 앱 로컬 스토리지 초기화 (비동기)
-  Future<void> initAppStorage() async {
+  Future<Box> initAppStorage() async {
     await Hive.initFlutter();
-    _store = await Hive.openBox('WEGOOLI');
+    return _store ??= await Hive.openBox('WEGOOLI');
   }
 
   final String _usersInfo = 'USER_INFO';
@@ -79,3 +73,9 @@ class PrefUtils {
     return setData(_usersInfo, user);
   }
 }
+
+final appStorageProvider = Provider<AppStorage>(
+  (_) {
+    throw UnimplementedError();
+  },
+);

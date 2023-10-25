@@ -11,7 +11,7 @@ import '/data/auth/basic_auth.dart';
 import '/data/auth/bearer_auth.dart';
 import '/data/auth/oauth.dart';
 
-final String baseURL = DotEnv().get('BASE_URL');
+final String baseURL = dotenv.get('BASE_URL');
 
 class ApiClient extends GetHttpClient {
   /// 적절한 기본 URL, 타임아웃, 인증 인터셉터로 [Dio] 인스턴스를 준비합니다.

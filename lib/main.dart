@@ -7,13 +7,20 @@ import 'package:flutter/services.dart';
 
 // 📦 Package imports:
 import 'package:catcher_2/catcher_2.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:get_it/get_it.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/date_symbol_data_local.dart';
 
 // 🌎 Project imports:
 import '/app/my_app.dart';
+import '/core/network/network_info.dart';
+import '/core/utils/app_storage.dart';
+import '/data/client/api_client.dart';
 import '/firebase_options.dart';
 
 /// Firebase 로컬 에뮬레이터가 로컬에서 실행 중이어야 합니다.
@@ -23,10 +30,20 @@ bool shouldUseFirebaseEmulator = false;
 late final FirebaseApp app;
 late final FirebaseAuth auth;
 
+Future<void> setupDependencies() async {
+  GetIt.I.registerSingleton(ApiClient());
+  GetIt.I.registerSingleton(NetworkInfo(Connectivity()));
+}
+
 Future<void> main() async {
   final widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 
+  final appStorage = AppStorage();
+  await appStorage.initAppStorage();
+
+  await dotenv.load();
+  await setupDependencies();
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   await initializeDateFormatting('ko');
 
@@ -67,7 +84,12 @@ Future<void> main() async {
 
   /// 루트 위젯([MyApp])을 캐쳐 구성과 함께 전달합니다.
   Catcher2(
-    rootWidget: const MyApp(),
+    rootWidget: ProviderScope(
+      overrides: [
+        appStorageProvider.overrideWithValue(appStorage),
+      ],
+      child: const MyApp(),
+    ),
     debugConfig: debugOptions,
     releaseConfig: releaseOptions,
   );

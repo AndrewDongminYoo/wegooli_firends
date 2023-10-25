@@ -14,6 +14,7 @@ class VerificationEmptyController extends GetxController {
 
   TextEditingController realname = TextEditingController();
   TextEditingController phonenum = TextEditingController();
+  final ValueNotifier<bool> canSubmit = ValueNotifier(false);
 
   @override
   void onClose() {

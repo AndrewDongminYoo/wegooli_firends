@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
+import '/layout/unfocused.dart';
 import '/theme/button_styles.dart';
 import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
@@ -19,6 +20,7 @@ class SigninPageScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = SigninPageController.to;
+
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
@@ -28,7 +30,8 @@ class SigninPageScreen extends StatelessWidget {
             horizontal: 16.h,
             vertical: 50.v,
           ),
-          child: Column(
+          child: UnfocusedForm(
+            canSubmit: controller.canSubmit,
             children: [
               SizedBox(height: 30.v),
               CustomImageView(
@@ -79,11 +82,9 @@ class SigninPageScreen extends StatelessWidget {
               ),
               SizedBox(height: 30.v),
               CustomElevatedButton(
-                onTap: () {
-                  // TODO: 로그인 로직
-                  print(
-                      'usermail: ${controller.loginName}, password: ${controller.loginPass}');
-                },
+                isDisabled: !controller.canSubmit.value,
+                // TODO: 로그인 로직
+                onTap: controller.printAll,
                 height: 48.v,
                 text: '로그인',
                 buttonStyle: ElevatedButton.styleFrom(
@@ -104,9 +105,9 @@ class SigninPageScreen extends StatelessWidget {
                 '회원가입',
                 style: textTheme.bodySmall!.tint(const Color(0xFFB0B2BC)),
               ),
-              SizedBox(height: 1.v),
               SizedBox(
                 width: 42.h,
+                height: 1.v,
                 child: const Divider(
                   color: Color(0xFFB0B2BC),
                 ),

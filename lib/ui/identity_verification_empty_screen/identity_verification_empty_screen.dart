@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
+import '/layout/unfocused.dart';
 import '/theme/button_styles.dart';
 import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
@@ -21,6 +22,7 @@ class VerificationEmptyScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = VerificationEmptyController.to;
+
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
@@ -37,7 +39,8 @@ class VerificationEmptyScreen extends StatelessWidget {
             horizontal: 16.h,
             vertical: 10.v,
           ),
-          child: Column(
+          child: UnfocusedForm(
+            canSubmit: controller.canSubmit,
             children: [
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -170,6 +173,7 @@ class VerificationEmptyScreen extends StatelessWidget {
               ),
               SizedBox(height: 17.v),
               CustomElevatedButton(
+                isDisabled: !controller.canSubmit.value,
                 // TODO: 인증번호 발송
                 onTap: controller.printFormFields,
                 height: 42.v,
@@ -197,6 +201,7 @@ class VerificationEmptyScreen extends StatelessWidget {
           ),
           decoration: BoxDecoration(color: lightTheme.onPrimaryContainer),
           child: CustomElevatedButton(
+            isDisabled: !controller.canSubmit.value,
             // TODO: 인증번호 확인 로직
             onTap: controller.printFormFields,
             height: 48.v,

@@ -19,6 +19,7 @@ class PersonalInfoFormZipCodeController extends GetxController {
   TextEditingController password = TextEditingController();
   TextEditingController passpass = TextEditingController();
   TextEditingController nickname = TextEditingController();
+  final ValueNotifier<bool> canSubmit = ValueNotifier(false);
 
   @override
   void onClose() {

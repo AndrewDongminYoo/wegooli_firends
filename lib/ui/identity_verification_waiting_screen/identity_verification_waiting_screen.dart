@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
+import '/layout/unfocused.dart';
 import '/theme/button_styles.dart';
 import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
@@ -19,6 +20,7 @@ class VerificationWaitingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = VerificationWaitingController.to;
+
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
@@ -34,7 +36,8 @@ class VerificationWaitingScreen extends StatelessWidget {
             horizontal: 16.h,
             vertical: 10.v,
           ),
-          child: Column(
+          child: UnfocusedForm(
+            canSubmit: controller.canSubmit,
             children: [
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -117,6 +120,7 @@ class VerificationWaitingScreen extends StatelessWidget {
               ),
               SizedBox(height: 20.v),
               CustomElevatedButton(
+                isDisabled: !controller.canSubmit.value,
                 // TODO: 인증번호 발송
                 onTap: () => print(controller.phonenum),
                 height: 42.v,
@@ -143,6 +147,7 @@ class VerificationWaitingScreen extends StatelessWidget {
           ),
         ),
         bottomNavigationBar: CustomElevatedButton(
+          isDisabled: !controller.canSubmit.value,
           // TODO: 인증번호 확인
           onTap: () => print(controller.phonenum),
           height: 48.v,

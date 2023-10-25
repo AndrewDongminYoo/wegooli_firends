@@ -8,6 +8,7 @@ import 'package:get/state_manager.dart';
 import '/core/utils/size_utils.dart';
 import '/data/common/dropdown_data.dart';
 import '/gen/assets.gen.dart';
+import '/layout/unfocused.dart';
 import '/routes/app_navigation.dart';
 import '/theme/button_styles.dart';
 import '/theme/custom_text_style.dart';
@@ -28,6 +29,7 @@ class OneOnOneScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = OneOnOneController.to;
+
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
@@ -38,7 +40,8 @@ class OneOnOneScreen extends StatelessWidget {
         ),
         body: SizedBox(
           width: double.maxFinite,
-          child: Column(
+          child: UnfocusedForm(
+            canSubmit: controller.canSubmit,
             children: [
               SizedBox(height: 27.v),
               Expanded(
@@ -142,6 +145,7 @@ class OneOnOneScreen extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               CustomElevatedButton(
+                isDisabled: !controller.canSubmit.value,
                 onTap: context.safePop,
                 width: 104.h,
                 text: '취소',
@@ -153,6 +157,7 @@ class OneOnOneScreen extends StatelessWidget {
                 ).noEffect,
               ),
               CustomElevatedButton(
+                isDisabled: !controller.canSubmit.value,
                 // TODO: 문의하기 내용 등록
                 onTap: () =>
                     print(controller.oneOnOne.value.inquiryTypes.value),

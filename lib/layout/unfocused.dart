@@ -6,13 +6,20 @@ import 'package:flutter/material.dart';
 class UnfocusedForm extends StatefulWidget {
   UnfocusedForm({
     super.key,
-    required this.child,
-    required this.isValid,
+    this.child,
+    this.children,
+    required this.canSubmit,
     this.autoValidate = true,
-  });
+  }) : assert(!(child == null && children == null),
+            'child 또는 children 둘 중 하나는 반드시 필요합니다.');
 
-  final Widget child;
-  final ValueNotifier<bool> isValid;
+  /// Column이나 Container 등 세부 속성을 추가해야 하는 경우 사용
+  final Widget? child;
+
+  /// Column 위젯 확장 지원을 위해 추가됨 (Column 세부 속성 미지원)
+  final List<Widget>? children;
+
+  final ValueNotifier<bool> canSubmit;
   final bool autoValidate;
 
   @override
@@ -48,11 +55,16 @@ class _UnfocusedFormState extends State<UnfocusedForm> with ChangeNotifier {
         autovalidateMode: widget.autoValidate
             ? AutovalidateMode.onUserInteraction
             : AutovalidateMode.disabled,
-        child: widget.child,
+        child: widget.children != null
+            ? Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: widget.children!,
+              )
+            : widget.child!,
         onChanged: () {
           final isValid = formKey.currentState!.validate();
-          widget.isValid.value = isValid;
-          widget.isValid.notifyListeners();
+          widget.canSubmit.value = isValid;
+          widget.canSubmit.notifyListeners();
         },
       ),
     );

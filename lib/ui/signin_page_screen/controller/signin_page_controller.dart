@@ -14,11 +14,16 @@ class SigninPageController extends GetxController {
 
   TextEditingController loginName = TextEditingController();
   TextEditingController loginPass = TextEditingController();
+  final ValueNotifier<bool> canSubmit = ValueNotifier(false);
 
   @override
   void onClose() {
     super.onClose();
     loginName.dispose();
     loginPass.dispose();
+  }
+
+  void printAll() {
+    print('사용자 이메일: $loginName, 사용자 비밀번호: $loginPass');
   }
 }

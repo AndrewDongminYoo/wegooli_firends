@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '/core/utils/size_utils.dart';
 import '/data/common/dropdown_data.dart';
 import '/gen/assets.gen.dart';
+import '/layout/unfocused.dart';
 import '/theme/app_decoration.dart';
 import '/theme/button_styles.dart';
 import '/theme/theme_helper.dart';
@@ -23,6 +24,7 @@ class LicenseRegisterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = LicenseRegisterController.to;
+
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
@@ -41,7 +43,8 @@ class LicenseRegisterScreen extends StatelessWidget {
                 child: SingleChildScrollView(
                   child: Padding(
                     padding: EdgeInsets.only(bottom: 5.v),
-                    child: Column(
+                    child: UnfocusedForm(
+                      canSubmit: controller.canSubmit,
                       children: [
                         Container(
                           width: 360.h,
@@ -375,6 +378,7 @@ class LicenseRegisterScreen extends StatelessWidget {
           ),
         ),
         bottomNavigationBar: CustomElevatedButton(
+          isDisabled: !controller.canSubmit.value,
           // TODO: 운전면허증 등록
           onTap: controller.update,
           height: 48.v,

@@ -19,6 +19,7 @@ class OneOnOneController extends GetxController {
 
   Rx<OneOnOneModel> oneOnOne = OneOnOneModel().obs;
   DropdownData? inquiryType;
+  final ValueNotifier<bool> canSubmit = ValueNotifier(false);
 
   @override
   void onClose() {

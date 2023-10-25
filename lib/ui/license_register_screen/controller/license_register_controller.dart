@@ -23,6 +23,7 @@ class LicenseRegisterController extends GetxController {
   Rx<LicenseRegisterModel> license = LicenseRegisterModel().obs;
   DropdownData? licenseType;
   DropdownData? issuedYear;
+  final ValueNotifier<bool> canSubmit = ValueNotifier(false);
 
   @override
   void onClose() {

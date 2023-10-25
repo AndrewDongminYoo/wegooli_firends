@@ -16,6 +16,7 @@ class VerificationWaitingController extends GetxController {
   TextEditingController birthday = TextEditingController();
   TextEditingController socialId = TextEditingController();
   TextEditingController phonenum = TextEditingController();
+  final ValueNotifier<bool> canSubmit = ValueNotifier(false);
 
   @override
   void onClose() {

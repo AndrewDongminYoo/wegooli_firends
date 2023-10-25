@@ -7,6 +7,7 @@ import 'package:go_router/go_router.dart';
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
+import '/layout/unfocused.dart';
 import '/routes/app_navigation.dart';
 import '/theme/button_styles.dart';
 import '/theme/theme_helper.dart';
@@ -25,6 +26,7 @@ class PersonalInfoFormZipCodeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = PersonalInfoFormZipCodeController.to;
+
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
@@ -37,7 +39,8 @@ class PersonalInfoFormZipCodeScreen extends StatelessWidget {
         ),
         body: SizedBox(
           width: double.maxFinite,
-          child: Column(
+          child: UnfocusedForm(
+            canSubmit: controller.canSubmit,
             children: [
               SizedBox(height: 10.v),
               Expanded(
@@ -75,6 +78,7 @@ class PersonalInfoFormZipCodeScreen extends StatelessWidget {
                             ),
                             Expanded(
                               child: CustomElevatedButton(
+                                isDisabled: !controller.canSubmit.value,
                                 // TODO: Kpostal 호출
                                 onTap: context.safePop,
                                 height: 42.v,
@@ -209,6 +213,7 @@ class PersonalInfoFormZipCodeScreen extends StatelessWidget {
           ),
           decoration: BoxDecoration(color: lightTheme.onPrimaryContainer),
           child: CustomElevatedButton(
+            isDisabled: !controller.canSubmit.value,
             // TODO: 주소 입력 다음 화면으로
             onTap: () => context.goNamed(LicenseRegisterScreen.routeName),
             height: 48.v,

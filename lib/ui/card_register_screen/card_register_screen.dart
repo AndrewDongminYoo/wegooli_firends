@@ -20,7 +20,7 @@ class CardRegisterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = CardRegisterController.to;
-    final isValid = ValueNotifier(false);
+
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
@@ -32,179 +32,177 @@ class CardRegisterScreen extends StatelessWidget {
         body: SizedBox(
           width: double.maxFinite,
           child: UnfocusedForm(
-            isValid: isValid,
-            child: Column(
-              children: [
-                SizedBox(height: 30.v),
-                Expanded(
-                  child: SingleChildScrollView(
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                        left: 16.h,
-                        right: 16.h,
-                        bottom: 5.v,
-                      ),
-                      child: Column(
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.only(top: 2.v),
-                                    child: Text(
-                                      '카드번호',
-                                      style: textTheme.titleMedium,
-                                    ),
+            canSubmit: controller.canSubmit,
+            children: [
+              SizedBox(height: 30.v),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Padding(
+                    padding: EdgeInsets.only(
+                      left: 16.h,
+                      right: 16.h,
+                      bottom: 5.v,
+                    ),
+                    child: Column(
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.only(top: 2.v),
+                                  child: Text(
+                                    '카드번호',
+                                    style: textTheme.titleMedium,
                                   ),
-                                  Padding(
-                                    padding: EdgeInsets.only(
-                                      left: 5.h,
-                                      bottom: 2.v,
-                                    ),
-                                    child: Text(
-                                      '*',
-                                      style: textTheme.titleMedium!
-                                          .tint(const Color(0xFFDB4646)),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              SizedBox(height: 4.v),
-                              CustomTextFormField(
-                                controller: controller.cardNum,
-                                hintText: '0000  0000  0000  0000',
-                                hintStyle: textTheme.bodyLarge!
-                                    .tint(const Color(0xFF8E9199)),
-                                contentPadding: EdgeInsets.symmetric(
-                                  horizontal: 8.h,
-                                  vertical: 14.v,
                                 ),
-                              ),
-                            ],
-                          ),
-                          SizedBox(height: 26.v),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.only(top: 2.v),
-                                    child: Text(
-                                      '유효기간',
-                                      style: textTheme.titleMedium,
-                                    ),
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                    left: 5.h,
+                                    bottom: 2.v,
                                   ),
-                                  Padding(
-                                    padding: EdgeInsets.only(
-                                      left: 5.h,
-                                      bottom: 2.v,
-                                    ),
-                                    child: Text(
-                                      '*',
-                                      style: textTheme.titleMedium!
-                                          .tint(const Color(0xFFDB4646)),
-                                    ),
+                                  child: Text(
+                                    '*',
+                                    style: textTheme.titleMedium!
+                                        .tint(const Color(0xFFDB4646)),
                                   ),
-                                ],
-                              ),
-                              SizedBox(height: 4.v),
-                              CustomTextFormField(
-                                controller: controller.cardExp,
-                                hintText: 'MM/YY',
-                                hintStyle: textTheme.bodyLarge!
-                                    .tint(const Color(0xFF8E9199)),
-                                contentPadding: EdgeInsets.symmetric(
-                                  horizontal: 8.h,
-                                  vertical: 14.v,
                                 ),
+                              ],
+                            ),
+                            SizedBox(height: 4.v),
+                            CustomTextFormField(
+                              controller: controller.cardNum,
+                              hintText: '0000  0000  0000  0000',
+                              hintStyle: textTheme.bodyLarge!
+                                  .tint(const Color(0xFF8E9199)),
+                              contentPadding: EdgeInsets.symmetric(
+                                horizontal: 8.h,
+                                vertical: 14.v,
                               ),
-                            ],
-                          ),
-                          SizedBox(height: 26.v),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.only(top: 2.v),
-                                    child: Text(
-                                      '주민등록번호 앞자리',
-                                      style: textTheme.titleMedium,
-                                    ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 26.v),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.only(top: 2.v),
+                                  child: Text(
+                                    '유효기간',
+                                    style: textTheme.titleMedium,
                                   ),
-                                  Padding(
-                                    padding: EdgeInsets.only(
-                                      left: 5.h,
-                                      bottom: 2.v,
-                                    ),
-                                    child: Text(
-                                      '*',
-                                      style: textTheme.titleMedium!
-                                          .tint(const Color(0xFFDB4646)),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              SizedBox(height: 4.v),
-                              CustomTextFormField(
-                                controller: controller.birthday,
-                                hintText: '940812',
-                                hintStyle: textTheme.bodyLarge!
-                                    .tint(const Color(0xFF8E9199)),
-                                contentPadding: EdgeInsets.symmetric(
-                                  horizontal: 8.h,
-                                  vertical: 14.v,
                                 ),
-                                borderDecoration:
-                                    TextFormFieldStyleHelper.outlineGrayTL5,
-                                fillColor: const Color(0x33A4A8AF),
-                              ),
-                            ],
-                          ),
-                          SizedBox(height: 26.v),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.only(top: 2.v),
-                                    child: Text(
-                                      '카드 비밀번호 앞 2자리',
-                                      style: textTheme.titleMedium,
-                                    ),
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                    left: 5.h,
+                                    bottom: 2.v,
                                   ),
-                                  Padding(
-                                    padding: EdgeInsets.only(
-                                      left: 5.h,
-                                      bottom: 2.v,
-                                    ),
-                                    child: Text(
-                                      '*',
-                                      style: textTheme.titleMedium!
-                                          .tint(const Color(0xFFDB4646)),
-                                    ),
+                                  child: Text(
+                                    '*',
+                                    style: textTheme.titleMedium!
+                                        .tint(const Color(0xFFDB4646)),
                                   ),
-                                ],
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 4.v),
+                            CustomTextFormField(
+                              controller: controller.cardExp,
+                              hintText: 'MM/YY',
+                              hintStyle: textTheme.bodyLarge!
+                                  .tint(const Color(0xFF8E9199)),
+                              contentPadding: EdgeInsets.symmetric(
+                                horizontal: 8.h,
+                                vertical: 14.v,
                               ),
-                              SizedBox(height: 4.v),
-                              CustomTextFormField(
-                                controller: controller.cardPin,
-                                textInputAction: TextInputAction.done,
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 26.v),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.only(top: 2.v),
+                                  child: Text(
+                                    '주민등록번호 앞자리',
+                                    style: textTheme.titleMedium,
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                    left: 5.h,
+                                    bottom: 2.v,
+                                  ),
+                                  child: Text(
+                                    '*',
+                                    style: textTheme.titleMedium!
+                                        .tint(const Color(0xFFDB4646)),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 4.v),
+                            CustomTextFormField(
+                              controller: controller.birthday,
+                              hintText: '940812',
+                              hintStyle: textTheme.bodyLarge!
+                                  .tint(const Color(0xFF8E9199)),
+                              contentPadding: EdgeInsets.symmetric(
+                                horizontal: 8.h,
+                                vertical: 14.v,
                               ),
-                            ],
-                          ),
-                        ],
-                      ),
+                              borderDecoration:
+                                  TextFormFieldStyleHelper.outlineGrayTL5,
+                              fillColor: const Color(0x33A4A8AF),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 26.v),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.only(top: 2.v),
+                                  child: Text(
+                                    '카드 비밀번호 앞 2자리',
+                                    style: textTheme.titleMedium,
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                    left: 5.h,
+                                    bottom: 2.v,
+                                  ),
+                                  child: Text(
+                                    '*',
+                                    style: textTheme.titleMedium!
+                                        .tint(const Color(0xFFDB4646)),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 4.v),
+                            CustomTextFormField(
+                              controller: controller.cardPin,
+                              textInputAction: TextInputAction.done,
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
         bottomNavigationBar: Container(
@@ -228,9 +226,9 @@ class CardRegisterScreen extends StatelessWidget {
             ],
           ),
           child: CustomElevatedButton(
+            isDisabled: !controller.canSubmit.value,
             onTap: controller.printFormFields,
             text: '확인',
-            isDisabled: !isValid.value,
             buttonStyle: ElevatedButton.styleFrom(
               backgroundColor: const Color(0xFFF3F3F6),
               shape: RoundedRectangleBorder(

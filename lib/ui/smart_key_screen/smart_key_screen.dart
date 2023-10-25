@@ -11,6 +11,7 @@ import '/widgets/image_view.dart';
 import 'controller/smart_key_controller.dart';
 import 'widgets/controll_button.dart';
 import 'widgets/crash_report_floating_button.dart';
+import 'widgets/gas_icon.dart';
 
 class SmartKeyScreen extends StatelessWidget {
   const SmartKeyScreen({super.key});
@@ -18,6 +19,7 @@ class SmartKeyScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const remainingGas = 40;
     final controller = SmartKeyController.to;
     return SafeArea(
       child: Scaffold(
@@ -73,17 +75,14 @@ class SmartKeyScreen extends StatelessWidget {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        customIcon(
-                                          Assets.svg.icoSave.path,
-                                          size: 26.adaptSize,
-                                        ),
+                                        gasStationIcon(level: remainingGas),
                                         Padding(
                                           padding: EdgeInsets.only(
                                             left: 5.h,
                                             top: 9.v,
                                           ),
                                           child: Text(
-                                            '휘발유 40%',
+                                            '휘발유 $remainingGas%',
                                             style: textTheme.bodySmall,
                                           ),
                                         ),

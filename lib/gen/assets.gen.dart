@@ -316,6 +316,8 @@ class $AssetsLottiesGen {
 class $AssetsSvgGen {
   const $AssetsSvgGen();
 
+  $AssetsSvgGasGen get gas => const $AssetsSvgGasGen();
+
   /// File path: assets/svg/ico_add_photo.svg
   SvgGenImage get icoAddPhoto =>
       const SvgGenImage('assets/svg/ico_add_photo.svg');
@@ -571,6 +573,69 @@ class $AssetsSvgGen {
         imgGooliHappy,
         imgTicket,
         line
+      ];
+}
+
+class $AssetsSvgGasGen {
+  const $AssetsSvgGasGen();
+
+  /// File path: assets/svg/gas/img_empty_gas.svg
+  SvgGenImage get imgEmptyGas =>
+      const SvgGenImage('assets/svg/gas/img_empty_gas.svg');
+
+  /// File path: assets/svg/gas/img_gas_per_10.svg
+  SvgGenImage get imgGasPer10 =>
+      const SvgGenImage('assets/svg/gas/img_gas_per_10.svg');
+
+  /// File path: assets/svg/gas/img_gas_per_100.svg
+  SvgGenImage get imgGasPer100 =>
+      const SvgGenImage('assets/svg/gas/img_gas_per_100.svg');
+
+  /// File path: assets/svg/gas/img_gas_per_20.svg
+  SvgGenImage get imgGasPer20 =>
+      const SvgGenImage('assets/svg/gas/img_gas_per_20.svg');
+
+  /// File path: assets/svg/gas/img_gas_per_30.svg
+  SvgGenImage get imgGasPer30 =>
+      const SvgGenImage('assets/svg/gas/img_gas_per_30.svg');
+
+  /// File path: assets/svg/gas/img_gas_per_40.svg
+  SvgGenImage get imgGasPer40 =>
+      const SvgGenImage('assets/svg/gas/img_gas_per_40.svg');
+
+  /// File path: assets/svg/gas/img_gas_per_50.svg
+  SvgGenImage get imgGasPer50 =>
+      const SvgGenImage('assets/svg/gas/img_gas_per_50.svg');
+
+  /// File path: assets/svg/gas/img_gas_per_60.svg
+  SvgGenImage get imgGasPer60 =>
+      const SvgGenImage('assets/svg/gas/img_gas_per_60.svg');
+
+  /// File path: assets/svg/gas/img_gas_per_70.svg
+  SvgGenImage get imgGasPer70 =>
+      const SvgGenImage('assets/svg/gas/img_gas_per_70.svg');
+
+  /// File path: assets/svg/gas/img_gas_per_80.svg
+  SvgGenImage get imgGasPer80 =>
+      const SvgGenImage('assets/svg/gas/img_gas_per_80.svg');
+
+  /// File path: assets/svg/gas/img_gas_per_90.svg
+  SvgGenImage get imgGasPer90 =>
+      const SvgGenImage('assets/svg/gas/img_gas_per_90.svg');
+
+  /// List of all assets
+  List<SvgGenImage> get values => [
+        imgEmptyGas,
+        imgGasPer10,
+        imgGasPer100,
+        imgGasPer20,
+        imgGasPer30,
+        imgGasPer40,
+        imgGasPer50,
+        imgGasPer60,
+        imgGasPer70,
+        imgGasPer80,
+        imgGasPer90
       ];
 }
 

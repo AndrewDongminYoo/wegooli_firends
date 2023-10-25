@@ -11,6 +11,8 @@ import '/theme/theme_helper.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/elevated_button.dart';
 import '/widgets/image_view.dart';
+import 'widgets/gas_icon.dart';
+import 'widgets/riding_indicator.dart';
 
 class AnotherIsUsingScreen extends StatelessWidget {
   const AnotherIsUsingScreen({super.key});
@@ -18,6 +20,7 @@ class AnotherIsUsingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const remainingGas = 20;
     return SafeArea(
       child: Scaffold(
         appBar: CustomAppBar(
@@ -35,13 +38,13 @@ class AnotherIsUsingScreen extends StatelessWidget {
                   child: Column(
                     children: [
                       Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 15.h),
+                        padding: EdgeInsets.symmetric(horizontal: 16.h),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             CustomImageView(
-                              imagePath: Assets.cars.k3GtSCr5.path,
+                              imagePath: Assets.cars.rayEvSEu3.path,
                               height: 92.v,
                               width: 139.h,
                             ),
@@ -54,7 +57,7 @@ class AnotherIsUsingScreen extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    '모닝어반',
+                                    '더뉴레이',
                                     style: textTheme.titleMedium,
                                   ),
                                   SizedBox(height: 4.v),
@@ -70,17 +73,14 @@ class AnotherIsUsingScreen extends StatelessWidget {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      customIcon(
-                                        getGasImg(level: 1).path,
-                                        size: 24.adaptSize,
-                                      ),
+                                      gasStationIcon(level: remainingGas),
                                       Padding(
                                         padding: EdgeInsets.only(
                                           left: 5.h,
-                                          top: 7.v,
+                                          top: 9.v,
                                         ),
                                         child: Text(
-                                          '휘발유 20%',
+                                          '휘발유 $remainingGas%',
                                           style: textTheme.bodySmall,
                                         ),
                                       ),
@@ -144,39 +144,7 @@ class AnotherIsUsingScreen extends StatelessWidget {
                         ],
                       ),
                       SizedBox(height: 22.v),
-                      customIcon(
-                        Assets.svg.icoTaxi.path,
-                        size: 26.adaptSize,
-                        alignment: Alignment.centerRight,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                          left: 16.h,
-                          right: 15.h,
-                        ),
-                        child: Container(
-                          height: 10.v,
-                          width: 328.h,
-                          decoration: BoxDecoration(
-                            color: const Color(0x33A4A8AF),
-                            borderRadius: BorderRadius.circular(
-                              5.h,
-                            ),
-                          ),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(
-                              5.h,
-                            ),
-                            child: LinearProgressIndicator(
-                              value: 0.57,
-                              backgroundColor: const Color(0x33A4A8AF),
-                              valueColor: AlwaysStoppedAnimation<Color>(
-                                lightTheme.primary,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
+                      const RidingIndicator(progress: 0.6),
                       Padding(
                         padding: EdgeInsets.only(
                           left: 16.h,
@@ -646,32 +614,5 @@ class AnotherIsUsingScreen extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  SvgGenImage getGasImg({required int level}) {
-    switch (level) {
-      case 0:
-      case 1:
-        return const SvgGenImage('assets/svg/gas/img_gas_per_10.svg');
-      case 2:
-        return const SvgGenImage('assets/svg/gas/img_gas_per_20.svg');
-      case 3:
-        return const SvgGenImage('assets/svg/gas/img_gas_per_30.svg');
-      case 4:
-        return const SvgGenImage('assets/svg/gas/img_gas_per_40.svg');
-      case 5:
-        return const SvgGenImage('assets/svg/gas/img_gas_per_50.svg');
-      case 6:
-        return const SvgGenImage('assets/svg/gas/img_gas_per_60.svg');
-      case 7:
-        return const SvgGenImage('assets/svg/gas/img_gas_per_70.svg');
-      case 8:
-        return const SvgGenImage('assets/svg/gas/img_gas_per_80.svg');
-      case 9:
-        return const SvgGenImage('assets/svg/gas/img_gas_per_90.svg');
-      case 10:
-      default:
-        return const SvgGenImage('assets/svg/gas/img_gas_per_100.svg');
-    }
   }
 }

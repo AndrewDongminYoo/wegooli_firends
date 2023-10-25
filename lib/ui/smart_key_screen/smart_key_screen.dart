@@ -9,6 +9,7 @@ import '/theme/theme_helper.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/image_view.dart';
 import 'controller/smart_key_controller.dart';
+import 'widgets/car_status_message.dart';
 import 'widgets/controll_button.dart';
 import 'widgets/crash_report_floating_button.dart';
 import 'widgets/gas_icon.dart';
@@ -102,48 +103,7 @@ class SmartKeyScreen extends StatelessWidget {
                           ),
                         ),
                         SizedBox(height: 6.v),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              '상태',
-                              style: textTheme.bodySmall!.copyWith(
-                                color: Palette.fontBlack66,
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(left: 5.h),
-                              child: Text(
-                                '|',
-                                style: textTheme.bodySmall!.copyWith(
-                                  color: Palette.fontBlack66,
-                                ),
-                              ),
-                            ),
-                            Container(
-                              height: 4.adaptSize,
-                              width: 4.adaptSize,
-                              margin: EdgeInsets.only(
-                                left: 5.h,
-                                top: 5.v,
-                                bottom: 5.v,
-                              ),
-                              decoration: BoxDecoration(
-                                color: const Color(0xFF38DD66),
-                                borderRadius: BorderRadius.circular(
-                                  2.h,
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(left: 2.h),
-                              child: Text(
-                                '사용 가능합니다.',
-                                style: textTheme.bodySmall,
-                              ),
-                            ),
-                          ],
-                        ),
+                        const CarStatusMessage(),
                         SizedBox(height: 31.v),
                         Container(
                           height: 8.v,

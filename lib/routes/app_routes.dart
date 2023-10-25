@@ -30,7 +30,7 @@ import '/ui/unsubscribe_screen/unsubscribe_screen.dart';
 // ignore_for_file: avoid_redundant_argument_values
 /// 개발 중 Auth 필터링 꺼두고 싶을 때 false로 설정.
 const requireAuth = false;
-const initialLocation = SmartKeyScreen.routeName;
+const initialLocation = AnotherIsUsingScreen.routeName;
 
 final List<AppRoute> pages = [
   AppRoute(

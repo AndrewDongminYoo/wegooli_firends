@@ -3,13 +3,10 @@ import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
-import '/gen/assets.gen.dart';
 import '/routes/app_router.dart';
-import '/theme/app_decoration.dart';
 import '/theme/button_styles.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/elevated_button.dart';
-import '/widgets/image_view.dart';
 
 class UntouchableMask extends StatelessWidget {
   const UntouchableMask({super.key});
@@ -29,7 +26,7 @@ class UntouchableMask extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            SizedBox(height: 160.v),
+            SizedBox(height: 100.v),
             CustomElevatedButton(
               onTap: () => AppRouter.showSnackbar(
                 message: '홍길동님이 사용 중 입니다.',
@@ -54,36 +51,6 @@ class UntouchableMask extends StatelessWidget {
                 padding: EdgeInsets.symmetric(
                   horizontal: 12.h,
                   vertical: 10.v,
-                ),
-                decoration: BoxDecoration(
-                  color: lightTheme.primary,
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.1),
-                      spreadRadius: 2.h,
-                      blurRadius: 2.h,
-                      offset: const Offset(2, 2),
-                    ),
-                  ],
-                  borderRadius: BorderRadiusStyle.circleBorder35,
-                ),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    customIcon(
-                      Assets.svg.icoEdit.path,
-                      size: 30.adaptSize,
-                    ),
-                    SizedBox(height: 1.v),
-                    Text(
-                      '사고 접수',
-                      style: textTheme.bodySmall!.copyWith(
-                        color: Colors.black,
-                      ),
-                    ),
-                    SizedBox(height: 3.v),
-                  ],
                 ),
               ),
             ),

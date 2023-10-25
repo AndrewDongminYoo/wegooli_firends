@@ -4,7 +4,7 @@ import '/ui/app_navigation_screen/app_navigation_screen.dart';
 import '/ui/card_list_screen/card_list_screen.dart';
 import '/ui/card_register_screen/card_register_screen.dart';
 import '/ui/contact_us_history_page/contact_us_empty_history_screen.dart';
-import '/ui/contact_us_history_screen/contact_us_history_screen.dart';
+import '/ui/contact_us_history_page/contact_us_history_screen.dart';
 import '/ui/empty_notice_screen/empty_notice_screen.dart';
 import '/ui/expiring_subscriptions_screen/expiring_subscriptions_screen.dart';
 import '/ui/home_page_screen/home_page_screen.dart';
@@ -27,6 +27,11 @@ import '/ui/subscribe_info_no_subscription_screen/subscribe_info_no_subscription
 import '/ui/subscribe_info_screen/subscribe_info_screen.dart';
 import '/ui/unsubscribe_screen/unsubscribe_screen.dart';
 
+// ignore_for_file: avoid_redundant_argument_values
+/// 개발 중 Auth 필터링 꺼두고 싶을 때 false로 설정.
+const requireAuth = false;
+const initialLocation = SmartKeyScreen.routeName;
+
 final List<AppRoute> pages = [
   AppRoute(
     path: VerificationWaitingScreen.routeName,
@@ -39,7 +44,7 @@ final List<AppRoute> pages = [
   AppRoute(
     path: EmptyNoticeScreen.routeName,
     builder: (context, params) => const EmptyNoticeScreen(),
-    requireAuth: true,
+    requireAuth: requireAuth,
   ),
   AppRoute(
     path: SigninPageScreen.routeName,
@@ -72,57 +77,57 @@ final List<AppRoute> pages = [
   AppRoute(
     path: HomePageScreen.routeName,
     builder: (context, params) => const HomePageScreen(),
-    requireAuth: true,
+    requireAuth: requireAuth,
   ),
   AppRoute(
     path: SchedulesScreen.routeName,
     builder: (context, params) => const SchedulesScreen(),
-    requireAuth: true,
+    requireAuth: requireAuth,
   ),
   AppRoute(
     path: SmartKeyScreen.routeName,
     builder: (context, params) => const SmartKeyScreen(),
-    requireAuth: true,
+    requireAuth: requireAuth,
   ),
   AppRoute(
     path: MyPageScreen.routeName,
     builder: (context, params) => const MyPageScreen(),
-    requireAuth: true,
+    requireAuth: requireAuth,
   ),
   AppRoute(
     path: CardListScreen.routeName,
     builder: (context, params) => const CardListScreen(),
-    requireAuth: true,
+    requireAuth: requireAuth,
   ),
   AppRoute(
     path: AnotherIsUsingScreen.routeName,
     builder: (context, params) => const AnotherIsUsingScreen(),
-    requireAuth: true,
+    requireAuth: requireAuth,
   ),
   AppRoute(
     path: NoSubscriptionScreen.routeName,
     builder: (context, params) => const NoSubscriptionScreen(),
-    requireAuth: true,
+    requireAuth: requireAuth,
   ),
   AppRoute(
     path: SubscribeInfoScreen.routeName,
     builder: (context, params) => const SubscribeInfoScreen(),
-    requireAuth: true,
+    requireAuth: requireAuth,
   ),
   AppRoute(
     path: ContactUsEmptyHistoryScreen.routeName,
     builder: (context, params) => const ContactUsEmptyHistoryScreen(),
-    requireAuth: true,
+    requireAuth: requireAuth,
   ),
   AppRoute(
     path: ContactUsHistoryScreen.routeName,
     builder: (context, params) => const ContactUsHistoryScreen(),
-    requireAuth: true,
+    requireAuth: requireAuth,
   ),
   AppRoute(
     path: UnsubscribeScreen.routeName,
     builder: (context, params) => const UnsubscribeScreen(),
-    requireAuth: true,
+    requireAuth: requireAuth,
   ),
   AppRoute(
     path: CardRegisterScreen.routeName,
@@ -131,17 +136,17 @@ final List<AppRoute> pages = [
   AppRoute(
     path: NoticesScreen.routeName,
     builder: (context, params) => const NoticesScreen(),
-    requireAuth: true,
+    requireAuth: requireAuth,
   ),
   AppRoute(
     path: OneOnOneScreen.routeName,
     builder: (context, params) => const OneOnOneScreen(),
-    requireAuth: true,
+    requireAuth: requireAuth,
   ),
   AppRoute(
     path: ExpiringSubscriptionsScreen.routeName,
     builder: (context, params) => const ExpiringSubscriptionsScreen(),
-    requireAuth: true,
+    requireAuth: requireAuth,
   ),
   AppRoute(
     path: AppNavigationScreen.routeName,

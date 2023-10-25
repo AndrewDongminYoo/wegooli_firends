@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
-import '/theme/app_decoration.dart';
 import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/image_view.dart';
+import 'widgets/controll_button.dart';
 
 class SmartKeyScreen extends StatelessWidget {
   const SmartKeyScreen({super.key});
@@ -41,7 +41,7 @@ class SmartKeyScreen extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               CustomImageView(
-                                imagePath: Assets.cars.k3GtSCr5.path,
+                                imagePath: Assets.cars.rayEvSEu3.path,
                                 height: 92.v,
                                 width: 139.h,
                               ),
@@ -54,7 +54,7 @@ class SmartKeyScreen extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      '모닝어반',
+                                      '더뉴레이',
                                       style: textTheme.titleMedium,
                                     ),
                                     SizedBox(height: 4.v),
@@ -176,142 +176,14 @@ class SmartKeyScreen extends StatelessWidget {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              SizedBox(
-                                height: 130.adaptSize,
-                                width: 130.adaptSize,
-                                child: Stack(
-                                  alignment: Alignment.center,
-                                  children: [
-                                    Align(
-                                      child: Container(
-                                        padding: EdgeInsets.all(5.h),
-                                        decoration: BoxDecoration(
-                                          color: theme
-                                              .colorScheme.onPrimaryContainer,
-                                          boxShadow: [
-                                            BoxShadow(
-                                              color:
-                                                  Colors.black.withOpacity(0.1),
-                                              spreadRadius: 2.h,
-                                              blurRadius: 2.h,
-                                              offset: const Offset(
-                                                2,
-                                                2,
-                                              ),
-                                            ),
-                                          ],
-                                          borderRadius:
-                                              BorderRadiusStyle.circleBorder65,
-                                        ),
-                                        child: Container(
-                                          height: 120.adaptSize,
-                                          width: 120.adaptSize,
-                                          decoration: BoxDecoration(
-                                            color: theme
-                                                .colorScheme.onPrimaryContainer,
-                                            borderRadius: BorderRadius.circular(
-                                              60.h,
-                                            ),
-                                            border: Border.all(
-                                              color: const Color(0x33A4A8AF),
-                                              width: 1.h,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    Align(
-                                      child: Padding(
-                                        padding: EdgeInsets.symmetric(
-                                          horizontal: 42.h,
-                                        ),
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.min,
-                                          children: [
-                                            customIcon(
-                                              Assets.svg.icoUnlocked.path,
-                                              size: 46.adaptSize,
-                                            ),
-                                            SizedBox(height: 5.v),
-                                            Text(
-                                              '문열기',
-                                              style: textTheme.titleMedium,
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
+                              ControllButton(
+                                '문열기',
+                                Assets.svg.icoUnlocked.path,
                               ),
-                              Container(
-                                height: 130.adaptSize,
-                                width: 130.adaptSize,
-                                margin: EdgeInsets.only(left: 20.h),
-                                child: Stack(
-                                  alignment: Alignment.center,
-                                  children: [
-                                    Align(
-                                      child: Container(
-                                        padding: EdgeInsets.all(5.h),
-                                        decoration: BoxDecoration(
-                                          color: theme
-                                              .colorScheme.onPrimaryContainer,
-                                          boxShadow: [
-                                            BoxShadow(
-                                              color:
-                                                  Colors.black.withOpacity(0.1),
-                                              spreadRadius: 2.h,
-                                              blurRadius: 2.h,
-                                              offset: const Offset(
-                                                2,
-                                                2,
-                                              ),
-                                            ),
-                                          ],
-                                          borderRadius:
-                                              BorderRadiusStyle.circleBorder65,
-                                        ),
-                                        child: Container(
-                                          height: 120.adaptSize,
-                                          width: 120.adaptSize,
-                                          decoration: BoxDecoration(
-                                            color: theme
-                                                .colorScheme.onPrimaryContainer,
-                                            borderRadius: BorderRadius.circular(
-                                              60.h,
-                                            ),
-                                            border: Border.all(
-                                              color: const Color(0x33A4A8AF),
-                                              width: 1.h,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    Align(
-                                      child: Padding(
-                                        padding: EdgeInsets.symmetric(
-                                          horizontal: 42.h,
-                                        ),
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.min,
-                                          children: [
-                                            customIcon(
-                                              Assets.svg.icoLocked.path,
-                                              size: 46.adaptSize,
-                                            ),
-                                            SizedBox(height: 5.v),
-                                            Text(
-                                              '문잠금',
-                                              style: textTheme.titleMedium,
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
+                              ControllButton(
+                                '문잠금',
+                                Assets.svg.icoLocked.path,
+                                isRightSide: true,
                               ),
                             ],
                           ),
@@ -325,176 +197,41 @@ class SmartKeyScreen extends StatelessWidget {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              SizedBox(
-                                height: 130.adaptSize,
-                                width: 130.adaptSize,
-                                child: Stack(
-                                  alignment: Alignment.center,
-                                  children: [
-                                    Align(
-                                      child: Container(
-                                        padding: EdgeInsets.all(5.h),
-                                        decoration: BoxDecoration(
-                                          color: theme
-                                              .colorScheme.onPrimaryContainer,
-                                          boxShadow: [
-                                            BoxShadow(
-                                              color:
-                                                  Colors.black.withOpacity(0.1),
-                                              spreadRadius: 2.h,
-                                              blurRadius: 2.h,
-                                              offset: const Offset(
-                                                2,
-                                                2,
-                                              ),
-                                            ),
-                                          ],
-                                          borderRadius:
-                                              BorderRadiusStyle.circleBorder65,
-                                        ),
-                                        child: Container(
-                                          height: 120.adaptSize,
-                                          width: 120.adaptSize,
-                                          decoration: BoxDecoration(
-                                            color: theme
-                                                .colorScheme.onPrimaryContainer,
-                                            borderRadius: BorderRadius.circular(
-                                              60.h,
-                                            ),
-                                            border: Border.all(
-                                              color: const Color(0x33A4A8AF),
-                                              width: 1.h,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    Align(
-                                      child: Padding(
-                                        padding: EdgeInsets.symmetric(
-                                          horizontal: 42.h,
-                                        ),
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.min,
-                                          children: [
-                                            CustomImageView(
-                                              svgPath:
-                                                  Assets.svg.icoTriangle.path,
-                                              height: 37.v,
-                                              width: 46.h,
-                                            ),
-                                            SizedBox(height: 14.v),
-                                            Text(
-                                              '비상등',
-                                              style: textTheme.titleMedium,
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
+                              ControllButton(
+                                '비상등',
+                                Assets.svg.icoTriangle.path,
                               ),
-                              Container(
-                                margin: EdgeInsets.only(left: 20.h),
-                                padding: EdgeInsets.all(5.h),
-                                decoration: BoxDecoration(
-                                  color: lightTheme.onPrimaryContainer,
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.black.withOpacity(0.1),
-                                      spreadRadius: 2.h,
-                                      blurRadius: 2.h,
-                                      offset: const Offset(
-                                        2,
-                                        2,
-                                      ),
-                                    ),
-                                  ],
-                                  borderRadius:
-                                      BorderRadiusStyle.circleBorder65,
-                                ),
-                                child: Container(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 37.h,
-                                    vertical: 24.v,
-                                  ),
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                      color: const Color(0x33A4A8AF),
-                                      width: 1.h,
-                                    ),
-                                    borderRadius:
-                                        BorderRadiusStyle.circleBorder60,
-                                  ),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      customIcon(
-                                        Assets.svg.icoCampaign.path,
-                                        size: 46.adaptSize,
-                                      ),
-                                      SizedBox(height: 5.v),
-                                      Text(
-                                        '경적',
-                                        style: textTheme.titleMedium,
-                                      ),
-                                    ],
-                                  ),
-                                ),
+                              ControllButton(
+                                '경적',
+                                Assets.svg.icoCampaign.path,
+                                isRightSide: true,
                               ),
                             ],
-                          ),
-                        ),
-                        Align(
-                          alignment: Alignment.centerRight,
-                          child: Container(
-                            margin: EdgeInsets.only(
-                              left: 22.h,
-                              top: 30.v,
-                              right: 22.h,
-                            ),
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 12.h,
-                              vertical: 11.v,
-                            ),
-                            decoration: BoxDecoration(
-                              color: lightTheme.primary,
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.black.withOpacity(0.1),
-                                  spreadRadius: 2.h,
-                                  blurRadius: 2.h,
-                                  offset: const Offset(
-                                    2,
-                                    2,
-                                  ),
-                                ),
-                              ],
-                              borderRadius: BorderRadiusStyle.circleBorder35,
-                            ),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                customIcon(
-                                  Assets.svg.icoEdit.path,
-                                  size: 30.adaptSize,
-                                ),
-                                SizedBox(height: 1.v),
-                                Text(
-                                  '사고 접수',
-                                  style:
-                                      textTheme.bodySmall!.tint(Colors.black),
-                                ),
-                              ],
-                            ),
                           ),
                         ),
                       ],
                     ),
                   ),
                 ),
+              ),
+            ],
+          ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          tooltip: '사고 접수',
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              customIcon(
+                Assets.svg.icoEdit.path,
+                size: 30.adaptSize,
+              ),
+              SizedBox(height: 1.v),
+              Text(
+                '사고 접수',
+                style: textTheme.bodySmall!.tint(Colors.black).bold,
               ),
             ],
           ),

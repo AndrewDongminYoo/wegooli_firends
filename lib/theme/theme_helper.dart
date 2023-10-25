@@ -137,6 +137,9 @@ ThemeData get theme {
     ),
     floatingActionButtonTheme: FloatingActionButtonThemeData(
       backgroundColor: lightTheme.primary,
+      foregroundColor: Colors.black,
+      enableFeedback: true,
+      sizeConstraints: BoxConstraints(minHeight: 70.v, minWidth: 70.h),
     ),
     dividerTheme: const DividerThemeData(
       thickness: 1,

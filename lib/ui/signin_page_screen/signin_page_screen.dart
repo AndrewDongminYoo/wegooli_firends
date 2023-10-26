@@ -84,7 +84,7 @@ class SigninPageScreen extends StatelessWidget {
               CustomElevatedButton(
                 isDisabled: !controller.canSubmit.value,
                 // TODO: 로그인 로직
-                onTap: controller.printAll,
+                onTap: controller.printFormFields,
                 height: 48.v,
                 text: '로그인',
                 buttonStyle: ElevatedButton.styleFrom(

@@ -7,10 +7,10 @@ import 'package:get/state_manager.dart';
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/theme/theme_helper.dart';
-import '/ui/notices_screen/widgets/notices_item_widget.dart';
 import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import 'controller/notices_controller.dart';
+import 'widgets/notices_item_widget.dart';
 
 class NoticesScreen extends StatelessWidget {
   const NoticesScreen({super.key});

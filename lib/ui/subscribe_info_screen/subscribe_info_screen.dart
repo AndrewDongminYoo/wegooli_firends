@@ -11,7 +11,7 @@ import '/theme/app_decoration.dart';
 import '/theme/button_styles.dart';
 import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
-import '/ui/unsubscribe_screen/unsubscribe_screen.dart';
+import '/ui/subscribe_info_screen/unsubscribe_screen.dart';
 import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/elevated_button.dart';

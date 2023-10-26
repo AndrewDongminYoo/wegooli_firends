@@ -5,6 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 import 'package:get_it/get_it.dart';
 
+// 🌎 Project imports:
+import '/core/utils/logger.dart';
+
 class CardController extends GetxController {
   // ignore: prefer_constructors_over_static_methods
   static CardController get to => GetIt.I.isRegistered<CardController>()
@@ -29,9 +32,9 @@ class CardController extends GetxController {
   }
 
   void printFormFields() {
-    print('카드번호: $cardNum'
-        '카드유효기간: $cardExp'
-        '본인생년월일: $birthday'
-        '카드비밀번호: $cardPin');
+    logger.i('카드번호: ${cardNum.text}'
+        '카드유효기간: ${cardExp.text}'
+        '본인생년월일: ${birthday.text}'
+        '카드비밀번호: ${cardPin.text}');
   }
 }

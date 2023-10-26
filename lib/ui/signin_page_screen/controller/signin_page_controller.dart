@@ -5,6 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 import 'package:get_it/get_it.dart';
 
+// 🌎 Project imports:
+import '/core/utils/logger.dart';
+
 class SigninPageController extends GetxController {
   // ignore: prefer_constructors_over_static_methods
   static SigninPageController get to =>
@@ -23,7 +26,7 @@ class SigninPageController extends GetxController {
     loginPass.dispose();
   }
 
-  void printAll() {
-    print('사용자 이메일: $loginName, 사용자 비밀번호: $loginPass');
+  void printFormFields() {
+    logger.i('사용자 이메일: ${loginName.text}, 사용자 비밀번호: ${loginPass.text}');
   }
 }

@@ -8,13 +8,13 @@ import 'package:go_router/go_router.dart';
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
-import '/ui/card_register_screen/card_register_screen.dart';
+import '/ui/card_screen/card_register_screen.dart';
 import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/elevated_button.dart';
 import '/widgets/image_view.dart';
 import '/widgets/radio_button.dart';
-import 'controller/card_list_controller.dart';
+import 'controller/card_controller.dart';
 
 class CardListScreen extends StatelessWidget {
   const CardListScreen({super.key});
@@ -22,7 +22,7 @@ class CardListScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = CardListController.to;
+    final controller = CardController.to;
     return SafeArea(
       child: Scaffold(
         appBar: CustomAppBar(

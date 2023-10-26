@@ -1,8 +1,8 @@
 // 🌎 Project imports:
 import '/routes/route_model.dart';
 import '/ui/app_navigation_screen/app_navigation_screen.dart';
-import '/ui/card_list_screen/card_list_screen.dart';
-import '/ui/card_register_screen/card_register_screen.dart';
+import '/ui/card_screen/card_list_screen.dart';
+import '/ui/card_screen/card_register_screen.dart';
 import '/ui/contact_us_history_page/contact_us_empty_history_screen.dart';
 import '/ui/contact_us_history_page/contact_us_history_screen.dart';
 import '/ui/empty_notice_screen/empty_notice_screen.dart';

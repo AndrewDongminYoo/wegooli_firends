@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/theme/theme_helper.dart';
-import '/ui/card_list_screen/card_list_screen.dart';
-import '/ui/card_register_screen/card_register_screen.dart';
+import '/ui/card_screen/card_list_screen.dart';
+import '/ui/card_screen/card_register_screen.dart';
 import '/ui/contact_us_history_page/contact_us_empty_history_screen.dart';
 import '/ui/contact_us_history_page/contact_us_history_screen.dart';
 import '/ui/datetime_picker_bottom_sheet/datetime_picker_bottom_sheet.dart';

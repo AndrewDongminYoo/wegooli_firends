@@ -11,7 +11,7 @@ import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/elevated_button.dart';
 import '/widgets/text_form_field.dart';
-import 'controller/card_register_controller.dart';
+import 'controller/card_controller.dart';
 
 class CardRegisterScreen extends StatelessWidget {
   const CardRegisterScreen({super.key});
@@ -19,7 +19,7 @@ class CardRegisterScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = CardRegisterController.to;
+    final controller = CardController.to;
 
     return SafeArea(
       child: Scaffold(

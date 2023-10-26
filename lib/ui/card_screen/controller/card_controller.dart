@@ -5,17 +5,18 @@ import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 import 'package:get_it/get_it.dart';
 
-class CardRegisterController extends GetxController {
+class CardController extends GetxController {
   // ignore: prefer_constructors_over_static_methods
-  static CardRegisterController get to =>
-      GetIt.I.isRegistered<CardRegisterController>()
-          ? GetIt.I.get<CardRegisterController>()
-          : GetIt.I.registerSingleton(CardRegisterController());
+  static CardController get to => GetIt.I.isRegistered<CardController>()
+      ? GetIt.I.get<CardController>()
+      : GetIt.I.registerSingleton(CardController());
 
   TextEditingController cardNum = TextEditingController();
   TextEditingController cardExp = TextEditingController();
   TextEditingController birthday = TextEditingController();
   TextEditingController cardPin = TextEditingController();
+  Rx<String> radioGroup = ''.obs;
+  Rx<String> radioGroup1 = ''.obs;
   final ValueNotifier<bool> canSubmit = ValueNotifier(false);
 
   @override

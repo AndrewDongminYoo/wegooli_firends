@@ -32,6 +32,7 @@ dependencies:
   auto_size_text: ^3.0.0
   # 독특한 UI 디자인의 스낵바 메세지
   awesome_snackbar_content: ^0.1.3
+  barcode_widget: ^2.0.4
   # 온라인 이미지를 표시하고 캐싱하는 플러그인
   cached_network_image: ^3.2.3
   # 인피니티 스크롤과 커스텀 차일드 위젯을 쉽게 쓸 수 있는 캐러셀 위젯
@@ -50,6 +51,7 @@ dependencies:
   credit_card_validator: ^2.1.0
   # SHA, MD5, HMAC 암호화 기능 구현.
   crypto: any
+  cupertino_icons: ^1.0.0
   # 사용하기 쉽고 기능이 풍부한 채팅 UI 패키지
   dash_chat_2: ^0.0.18
   # 현재 기기 정보(설정)를 쉽게 확인하는 도구
@@ -78,6 +80,8 @@ dependencies:
     sdk: flutter
   # 플러터 애니메이션 효과
   flutter_animate: ^4.2.0+1
+  flutter_cache_manager: ^3.3.1
+  flutter_datetime_picker_plus: ^2.1.0
   # 플러터 환경변수 (.env) 플러그인
   flutter_dotenv: ^5.1.0
   flutter_localizations:
@@ -86,6 +90,7 @@ dependencies:
   flutter_markdown: ^0.6.17+2
   # 플러터 네이티브 스플래시
   flutter_native_splash: ^2.3.2
+  flutter_plugin_android_lifecycle: ^2.0.16
   # 플러터 스핀킷 (로딩 인디케이터)
   flutter_spinkit: ^5.2.0
   # 플러터 SVG 렌더러
@@ -135,8 +140,11 @@ dependencies:
   path: ^1.8.3
   # 앱 전용 디렉토리, 기기의 다운로드 디렉토리 등을 쉽게 접근할 수 있는 도구
   path_provider: ^2.1.1
+  percent_indicator: ^4.2.3
+  plugin_platform_interface: ^2.1.6
   # 프로바이더 (상태관리)
   provider: ^6.0.5
+  rive: ^0.11.4
   # 반응형 프로그래밍 다트
   rxdart: any
   # 센드버드 메세지/채팅 SDK
@@ -147,6 +155,7 @@ dependencies:
   sign_in_with_apple: ^5.0.0
   # 온보딩 스크린 등에 많이 쓰는 페이지 인디케이터
   smooth_page_indicator: ^1.1.0
+  sqflite: ^2.3.0
   # 스트림 트랜스폼
   stream_transform: ^2.1.0
   # 테이블 캘린더

@@ -37,9 +37,9 @@ import 'widgets/gateway_title.dart';
 import 'widgets/route_item.dart';
 import 'widgets/route_modal.dart';
 
-class AppNavigationScreen extends StatelessWidget {
-  const AppNavigationScreen({super.key});
-  static const routeName = '/app_navigation';
+class AppGatewayScreen extends StatelessWidget {
+  const AppGatewayScreen({super.key});
+  static const routeName = '/app_gateway';
 
   @override
   Widget build(BuildContext context) {

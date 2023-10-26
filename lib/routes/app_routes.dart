@@ -1,5 +1,5 @@
 // 🌎 Project imports:
-import '/routes/app_navigation_screen/app_navigation_screen.dart';
+import '/routes/app_gateway.dart';
 import '/routes/route_model.dart';
 import '/ui/card_screen/card_list_screen.dart';
 import '/ui/card_screen/card_register_screen.dart';
@@ -30,7 +30,7 @@ import '/ui/zip_code_screen/personal_info_form_zip_code_screen.dart';
 // ignore_for_file: avoid_redundant_argument_values
 /// 개발 중 Auth 필터링 꺼두고 싶을 때 false로 설정.
 const requireAuth = false;
-const initialLocation = AnotherIsUsingScreen.routeName;
+const initialLocation = AppGatewayScreen.routeName;
 
 final List<AppRoute> pages = [
   AppRoute(
@@ -149,7 +149,7 @@ final List<AppRoute> pages = [
     requireAuth: requireAuth,
   ),
   AppRoute(
-    path: AppNavigationScreen.routeName,
-    builder: (context, params) => const AppNavigationScreen(),
+    path: AppGatewayScreen.routeName,
+    builder: (context, params) => const AppGatewayScreen(),
   ),
 ];

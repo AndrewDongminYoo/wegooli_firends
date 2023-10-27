@@ -49,7 +49,7 @@ class SchedulesScreen extends StatelessWidget {
                           child: Text(
                             '팀원',
                             style: textTheme.titleMedium!
-                                .copyWith(fontSize: TextSize.lg.sp),
+                                .copyWith(fontSize: TextSize.lg),
                           ),
                         ),
                         SizedBox(
@@ -91,7 +91,7 @@ class SchedulesScreen extends StatelessWidget {
                           child: Text(
                             '일정',
                             style: textTheme.titleMedium!
-                                .copyWith(fontSize: TextSize.lg.sp),
+                                .copyWith(fontSize: TextSize.lg),
                           ),
                         ),
                         CustomElevatedButton(

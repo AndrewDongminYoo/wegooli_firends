@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
-import '/core/utils/size_utils.dart';
 import '/theme/text_styles.dart';
 import '/theme/theme_helper.dart';
 
@@ -30,7 +29,7 @@ class AppbarTitle extends StatelessWidget {
         child: Text(
           text,
           style: textTheme.titleMedium!.copyWith(
-            fontSize: TextSize.lg.sp,
+            fontSize: TextSize.lg,
             color: lightTheme.onPrimary,
           ),
         ),

@@ -98,7 +98,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
                     child: Text(
                       bottomMenuList[index].title ?? '',
                       style: textTheme.bodySmall!.copyWith(
-                        fontSize: TextSize.xxs.sp,
+                        fontSize: TextSize.xxs,
                         color: const Color(0xFFB0B2BC),
                       ),
                     ),
@@ -118,7 +118,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
                     child: Text(
                       bottomMenuList[index].title ?? '',
                       style: textTheme.bodySmall!.copyWith(
-                        fontSize: TextSize.xxs.sp,
+                        fontSize: TextSize.xxs,
                         color: lightTheme.onPrimary,
                       ),
                     ),

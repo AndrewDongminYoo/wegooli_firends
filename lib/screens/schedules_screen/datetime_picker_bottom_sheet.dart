@@ -101,7 +101,7 @@ class _DatetimePickerBottomSheetState extends State<DatetimePickerBottomSheet> {
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.left,
                 style: textTheme.titleMedium!
-                    .copyWith(fontSize: TextSize.lg.sp)
+                    .copyWith(fontSize: TextSize.lg)
                     .modest,
               )),
           ExpansionPanelList(
@@ -189,8 +189,8 @@ class _DatetimePickerBottomSheetState extends State<DatetimePickerBottomSheet> {
                         borderRadius: BorderRadiusStyle.circleBorder25,
                       ),
                     ).noEffect,
-                    buttonTextStyle: textTheme.titleMedium!
-                        .copyWith(fontSize: TextSize.lg.sp),
+                    buttonTextStyle:
+                        textTheme.titleMedium!.copyWith(fontSize: TextSize.lg),
                     onTap: () {
                       context.pop(true);
                     },

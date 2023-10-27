@@ -97,8 +97,8 @@ class InformationalDialog extends StatelessWidget {
                     borderRadius: BorderRadiusStyle.customBorderBL10,
                   ),
                 ).noEffect,
-                buttonTextStyle: textTheme.titleMedium!
-                    .copyWith(fontSize: TextSize.md.sp),
+                buttonTextStyle:
+                    textTheme.titleMedium!.copyWith(fontSize: TextSize.md),
                 onTap: cancelCallback ?? () => GoRouter.of(context).pop(false),
               ),
               CustomElevatedButton(
@@ -110,8 +110,8 @@ class InformationalDialog extends StatelessWidget {
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadiusStyle.customBorderBR10))
                     .noEffect,
-                buttonTextStyle: textTheme.titleMedium!
-                    .copyWith(fontSize: TextSize.md.sp),
+                buttonTextStyle:
+                    textTheme.titleMedium!.copyWith(fontSize: TextSize.md),
                 onTap: confirmCallback ?? () => GoRouter.of(context).pop(true),
               ),
             ],

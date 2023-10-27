@@ -97,7 +97,7 @@ class OneOnOneScreen extends StatelessWidget {
                         Text(
                           '이미지 첨부',
                           style: textTheme.titleMedium!
-                              .copyWith(fontSize: TextSize.lg.sp),
+                              .copyWith(fontSize: TextSize.lg),
                         ),
                         Align(
                           alignment: Alignment.centerRight,

@@ -123,7 +123,7 @@ class SmartKeyScreen extends StatelessWidget {
                               '스마트키',
                               style: textTheme.titleMedium!.copyWith(
                                 color: Colors.black,
-                                fontSize: TextSize.lg.sp,
+                                fontSize: TextSize.lg,
                               ),
                             ),
                           ),

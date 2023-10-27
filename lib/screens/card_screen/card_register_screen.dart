@@ -234,7 +234,7 @@ class CardRegisterScreen extends StatelessWidget {
             ).noEffect,
             buttonTextStyle: textTheme.titleMedium!.copyWith(
               color: const Color(0xFFB0B2BC),
-              fontSize: TextSize.lg.sp,
+              fontSize: TextSize.lg,
             ),
           ),
         ),

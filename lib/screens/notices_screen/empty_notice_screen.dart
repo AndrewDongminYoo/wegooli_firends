@@ -43,7 +43,7 @@ class EmptyNoticeScreen extends StatelessWidget {
                   Text('작성된 글이 없습니다.',
                       style: textTheme.titleMedium!.copyWith(
                         color: Colors.black,
-                        fontSize: TextSize.lg.sp,
+                        fontSize: TextSize.lg,
                       ))
                 ],
               ),

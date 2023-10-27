@@ -60,8 +60,7 @@ class SendInvitationDialog extends StatelessWidget {
                 ),
                 child: Text(
                   '초대 코드',
-                  style: textTheme.titleMedium!
-                      .copyWith(fontSize: TextSize.lg.sp),
+                  style: textTheme.titleMedium!.copyWith(fontSize: TextSize.lg),
                 ),
               ),
               CustomTextFormField(

@@ -54,7 +54,7 @@ class UnsubscribeScreen extends StatelessWidget {
                       textAlign: TextAlign.center,
                       style: textTheme.titleMedium!.copyWith(
                         color: Colors.black,
-                        fontSize: TextSize.lg.sp,
+                        fontSize: TextSize.lg,
                         height: Leading.snug,
                       ),
                     ),

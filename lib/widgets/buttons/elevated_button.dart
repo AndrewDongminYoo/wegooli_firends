@@ -76,7 +76,7 @@ class CustomElevatedButton extends BaseButton {
                       text,
                       style: buttonTextStyle ??
                           textTheme.titleMedium!
-                              .copyWith(fontSize: TextSize.lg.sp),
+                              .copyWith(fontSize: TextSize.lg),
                     ),
                 ],
               ),

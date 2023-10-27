@@ -49,7 +49,7 @@ class SubscribeInfoScreen extends StatelessWidget {
                       '차량 정보',
                       style: textTheme.titleMedium!.copyWith(
                         color: Colors.black,
-                        fontSize: TextSize.lg.sp,
+                        fontSize: TextSize.lg,
                       ),
                     ),
                   ),
@@ -91,7 +91,7 @@ class SubscribeInfoScreen extends StatelessWidget {
                               Text(
                                 '모닝',
                                 style: textTheme.titleMedium!
-                                    .copyWith(fontSize: TextSize.lg.sp),
+                                    .copyWith(fontSize: TextSize.lg),
                               ),
                               Padding(
                                 padding: EdgeInsets.only(

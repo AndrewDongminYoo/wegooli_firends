@@ -52,8 +52,8 @@ class ViewScheduledDateDialog extends StatelessWidget {
               ),
               SizedBox(height: 6.h),
               Text('일정 확인',
-                  style: textTheme.titleMedium!
-                      .copyWith(fontSize: TextSize.lg.sp)),
+                  style:
+                      textTheme.titleMedium!.copyWith(fontSize: TextSize.lg)),
               SizedBox(height: 22.h),
               Obx(() => ListView.separated(
                   physics: const NeverScrollableScrollPhysics(),

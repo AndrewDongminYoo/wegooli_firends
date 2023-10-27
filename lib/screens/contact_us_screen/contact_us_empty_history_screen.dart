@@ -49,7 +49,7 @@ class ContactUsEmptyHistoryScreen extends StatelessWidget {
                         Text('문의내역이 없습니다.',
                             style: textTheme.titleMedium!.copyWith(
                               color: Colors.black,
-                              fontSize: TextSize.lg.sp,
+                              fontSize: TextSize.lg,
                             ))
                       ],
                     ),
@@ -76,7 +76,7 @@ class ContactUsEmptyHistoryScreen extends StatelessWidget {
               ).noEffect,
               buttonTextStyle: textTheme.titleMedium!.copyWith(
                 color: const Color(0xFFB0B2BC),
-                fontSize: TextSize.lg.sp,
+                fontSize: TextSize.lg,
               )),
         ),
       ),

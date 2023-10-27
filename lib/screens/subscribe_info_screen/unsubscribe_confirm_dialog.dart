@@ -71,7 +71,7 @@ class UnsubscribeConfirmDialog extends StatelessWidget {
                 ),
               ).noEffect,
               buttonTextStyle:
-                  textTheme.titleMedium!.copyWith(fontSize: TextSize.md.sp),
+                  textTheme.titleMedium!.copyWith(fontSize: TextSize.md),
               onTap: () => GoRouter.of(context).pop(false),
             ),
             CustomElevatedButton(
@@ -85,7 +85,7 @@ class UnsubscribeConfirmDialog extends StatelessWidget {
                 ),
               ).noEffect,
               buttonTextStyle:
-                  textTheme.titleMedium!.copyWith(fontSize: TextSize.md.sp),
+                  textTheme.titleMedium!.copyWith(fontSize: TextSize.md),
               onTap: () => GoRouter.of(context).pop(true),
             ),
           ],

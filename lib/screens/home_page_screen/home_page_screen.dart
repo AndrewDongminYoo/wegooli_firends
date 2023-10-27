@@ -105,7 +105,7 @@ class HomePageScreen extends StatelessWidget {
                                 '1/3',
                                 style: textTheme.bodySmall!.copyWith(
                                   color: lightTheme.onPrimaryContainer,
-                                  fontSize: TextSize.xxs.sp,
+                                  fontSize: TextSize.xxs,
                                 ),
                               ),
                             ),
@@ -163,7 +163,7 @@ class HomePageScreen extends StatelessWidget {
                               style: textTheme.bodySmall!.copyWith(
                                 fontFamily: FontFamily.nanumSquareRound,
                                 color: const Color(0xFFB0B2BC),
-                                fontSize: TextSize.xxs.sp,
+                                fontSize: TextSize.xxs,
                               ),
                             ),
                           ),
@@ -213,7 +213,7 @@ class HomePageScreen extends StatelessWidget {
                               style: textTheme.bodySmall!.copyWith(
                                 fontFamily: FontFamily.nanumSquareRound,
                                 color: const Color(0xFFB0B2BC),
-                                fontSize: TextSize.xxs.sp,
+                                fontSize: TextSize.xxs,
                               ),
                             ),
                           ),
@@ -268,7 +268,7 @@ class HomePageScreen extends StatelessWidget {
                             style: textTheme.bodySmall!.copyWith(
                               fontFamily: FontFamily.nanumSquareRound,
                               color: const Color(0xFFB0B2BC),
-                              fontSize: TextSize.xxs.sp,
+                              fontSize: TextSize.xxs,
                             ),
                           ),
                         ],

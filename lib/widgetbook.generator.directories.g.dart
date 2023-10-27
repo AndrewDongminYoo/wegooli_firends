@@ -19,6 +19,7 @@ import 'package:wegooli_friends/components/custom_card.dart' as _i2;
 import 'package:wegooli_friends/components/custom_text_field.dart' as _i3;
 import 'package:wegooli_friends/customs/custom_knob.dart' as _i4;
 import 'package:wegooli_friends/widgets/information_dialog.dart' as _i6;
+import 'package:wegooli_friends/widgets/long_pressable_button.dart' as _i7;
 
 final directories = <_i1.WidgetbookNode>[
   _i1.WidgetbookFolder(
@@ -101,6 +102,15 @@ final directories = <_i1.WidgetbookNode>[
             name: 'With Information 3',
             builder: _i6.signInOrSignUpFirst,
           ),
+        ],
+      ),
+      _i1.WidgetbookComponent(
+        name: 'LongPressableButton',
+        useCases: [
+          _i1.WidgetbookUseCase(
+            name: "Lock You Car's Door",
+            builder: _i7.areYouSureWantToSinOut,
+          )
         ],
       ),
     ],

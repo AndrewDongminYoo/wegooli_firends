@@ -5,9 +5,11 @@ import 'package:flutter/services.dart';
 
 // 📦 Package imports:
 import 'package:flutter_svg/svg.dart';
+import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
+import '/gen/assets.gen.dart';
 import '/gen/colors.gen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/custom_text_style.dart';
@@ -401,4 +403,34 @@ class ButtonAsset {
   final Color? color;
 
   bool get isSvg => assetPath.endsWith('.svg');
+}
+
+@widgetbook.UseCase(
+  name: "Lock You Car's Door",
+  type: LongPressableButton,
+)
+LongPressableButton areYouSureWantToSinOut(BuildContext context) {
+  return LongPressableButton(
+    onPressed: () => print('loo-ong presssed'),
+    animate: true,
+    isThreeD: true,
+    title: '문잠금',
+    height: 130.adaptSize,
+    width: 130.adaptSize,
+    borderRadius: 65.adaptSize,
+    backgroundColor: lightTheme.onPrimaryContainer,
+    boxShadow: [
+      BoxShadow(
+        color: Colors.black.withOpacity(0.1),
+        spreadRadius: 2.h,
+        blurRadius: 2.h,
+        offset: const Offset(2, 2),
+      ),
+    ],
+    asset: ButtonAsset(
+      Assets.svg.icoLocked.path,
+      height: 46.adaptSize,
+      width: 46.adaptSize,
+    ),
+  );
 }

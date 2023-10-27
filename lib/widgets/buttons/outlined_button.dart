@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 import '/core/utils/size_utils.dart';
 import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
-import '/widgets/base_button.dart';
+import '/widgets/buttons/base_button.dart';
 
 class CustomOutlinedButton extends BaseButton {
-  CustomOutlinedButton({
+  const CustomOutlinedButton({
     super.key,
     this.decoration,
     this.leftIcon,

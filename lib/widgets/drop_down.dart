@@ -12,7 +12,7 @@ import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 
 class CustomDropDown extends StatelessWidget {
-  CustomDropDown({
+  const CustomDropDown({
     super.key,
     required this.options,
     this.borderColor,

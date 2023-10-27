@@ -11,7 +11,7 @@ import '/theme/app_decoration.dart';
 import '/theme/button_styles.dart';
 import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
-import '/widgets/elevated_button.dart';
+import '/widgets/buttons/elevated_button.dart';
 
 class InformationalDialog extends StatelessWidget {
   const InformationalDialog({

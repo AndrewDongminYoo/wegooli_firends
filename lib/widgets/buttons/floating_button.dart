@@ -6,7 +6,7 @@ import '/core/utils/size_utils.dart';
 import '/theme/theme_helper.dart';
 
 class CustomFloatingButton extends StatelessWidget {
-  CustomFloatingButton({
+  const CustomFloatingButton({
     super.key,
     this.alignment,
     this.margin,

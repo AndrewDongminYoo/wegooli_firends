@@ -8,13 +8,13 @@ import '/routes/app_navigation.dart';
 import '/theme/button_styles.dart';
 import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
-import '/widgets/elevated_button.dart';
+import '/widgets/buttons/elevated_button.dart';
+import '/widgets/buttons/outlined_button.dart';
 import '/widgets/image_view.dart';
-import '/widgets/outlined_button.dart';
 
 // ignore: must_be_immutable
 class ContactUsHistoryExpandedPage extends StatelessWidget {
-  ContactUsHistoryExpandedPage({super.key});
+  const ContactUsHistoryExpandedPage({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -8,7 +8,7 @@ import '/theme/theme_helper.dart';
 
 // ignore: must_be_immutable
 class CustomRadioButton extends StatelessWidget {
-  CustomRadioButton({
+  const CustomRadioButton({
     super.key,
     required this.onChange,
     this.decoration,
@@ -31,7 +31,7 @@ class CustomRadioButton extends StatelessWidget {
   final Alignment? alignment;
   final bool? isRightCheck;
   final double? iconSize;
-  String? value;
+  final String? value;
   final String? groupValue;
   final Function(String) onChange;
   final String? text;

@@ -10,11 +10,12 @@ import '/theme/app_decoration.dart';
 import '/theme/button_styles.dart';
 import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
-import '/widgets/elevated_button.dart';
+import '/widgets/buttons/elevated_button.dart';
 
 // ignore_for_file: must_be_immutable
 class UnsubscribeConfirmDialog extends StatelessWidget {
-  UnsubscribeConfirmDialog({super.key});
+  const UnsubscribeConfirmDialog({super.key});
+  static const routeName = '/unsubscribe_confirm_dialog';
 
   @override
   Widget build(BuildContext context) {

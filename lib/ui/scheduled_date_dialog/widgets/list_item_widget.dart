@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 
 // 🌎 Project imports:
-import '../controller/scheduled_date_controller.dart';
 import '../models/list_item_model.dart';
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
@@ -15,14 +14,12 @@ import '/widgets/image_view.dart';
 
 // ignore: must_be_immutable
 class ListItemWidget extends StatelessWidget {
-  ListItemWidget(
+  const ListItemWidget(
     this.listItem, {
     super.key,
   });
 
-  ListItemModel listItem;
-
-  ScheduledDateController controller = ScheduledDateController.to;
+  final ListItemModel listItem;
 
   @override
   Widget build(BuildContext context) {

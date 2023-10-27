@@ -12,12 +12,11 @@ import 'widgets/list_item_widget.dart';
 
 // ignore: must_be_immutable
 class ContactUsHistoryPage extends StatelessWidget {
-  ContactUsHistoryPage({super.key});
-
-  final controller = ContactUsHistoryController.to;
+  const ContactUsHistoryPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = ContactUsHistoryController.to;
     return SafeArea(
       child: Scaffold(
         body: Container(

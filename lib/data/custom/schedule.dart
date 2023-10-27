@@ -13,7 +13,7 @@ final kToday = DateTime.now();
 /// 스케쥴 이벤트의 예시입니다.
 /// [/data/model/schedule_model.dart] 참조
 class Schedule {
-  Schedule({
+  const Schedule({
     required this.accountId,
     this.seq,
     this.teamSeq,
@@ -23,6 +23,7 @@ class Schedule {
     required this.createdAt,
     required this.updatedAt,
   });
+
   Schedule.fromModel(ScheduleModel model)
       : this(
           accountId: model.accountId!,

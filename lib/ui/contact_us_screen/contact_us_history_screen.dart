@@ -22,7 +22,7 @@ class ContactUsHistoryScreen extends StatelessWidget {
         appBar: CustomAppBar(
           leadingWidth: 34.h,
           leading: const GetBackIcon(),
-          title: AppbarTitle(text: '문의하기'),
+          title: const AppbarTitle(text: '문의하기'),
         ),
         body: SizedBox(
           width: mediaQueryData.size.width,
@@ -120,7 +120,7 @@ class ContactUsHistoryScreen extends StatelessWidget {
                   height: 592.v,
                   child: TabBarView(
                     controller: controller.tabController,
-                    children: [
+                    children: const [
                       ContactUsHistoryExpandedPage(),
                       ContactUsHistoryExpandedPage(),
                       ContactUsHistoryPage(),

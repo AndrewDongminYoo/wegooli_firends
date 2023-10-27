@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 
 // 🌎 Project imports:
-import '../controller/schedules_controller.dart';
 import '../models/user_age_model.dart';
 import '/core/utils/size_utils.dart';
 import '/theme/custom_text_style.dart';
@@ -13,14 +12,12 @@ import '/theme/theme_helper.dart';
 
 // ignore: must_be_immutable
 class UserAgeWidget extends StatelessWidget {
-  UserAgeWidget(
-    this.userageItem, {
+  const UserAgeWidget(
+    this.userAgeModel, {
     super.key,
   });
 
-  UserAgeModel userageItem;
-
-  SchedulesController controller = SchedulesController.to;
+  final UserAgeModel userAgeModel;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +30,7 @@ class UserAgeWidget extends StatelessWidget {
             alignment: Alignment.centerLeft,
             child: Obx(
               () => Text(
-                userageItem.userDay!.value,
+                userAgeModel.userDay!.value,
                 overflow: TextOverflow.ellipsis,
                 style: textTheme.titleMedium,
               ),
@@ -42,7 +39,7 @@ class UserAgeWidget extends StatelessWidget {
           SizedBox(height: 19.v),
           Obx(
             () => Text(
-              userageItem.userMonth!.value,
+              userAgeModel.userMonth!.value,
               overflow: TextOverflow.ellipsis,
               style: textTheme.bodySmall!.tint(const Color(0xFF91959D)),
             ),
@@ -54,7 +51,7 @@ class UserAgeWidget extends StatelessWidget {
             ),
             child: Obx(
               () => Text(
-                userageItem.userYear!.value,
+                userAgeModel.userYear!.value,
                 overflow: TextOverflow.ellipsis,
                 style: textTheme.bodySmall,
               ),
@@ -67,7 +64,7 @@ class UserAgeWidget extends StatelessWidget {
             ),
             child: Obx(
               () => Text(
-                userageItem.thirty!.value,
+                userAgeModel.thirty!.value,
                 overflow: TextOverflow.ellipsis,
                 style: textTheme.bodySmall,
               ),
@@ -76,7 +73,7 @@ class UserAgeWidget extends StatelessWidget {
           SizedBox(height: 19.v),
           Obx(
             () => Text(
-              userageItem.thirtyone!.value,
+              userAgeModel.thirtyone!.value,
               overflow: TextOverflow.ellipsis,
               style: textTheme.bodySmall,
             ),
@@ -84,7 +81,7 @@ class UserAgeWidget extends StatelessWidget {
           SizedBox(height: 18.v),
           Obx(
             () => Text(
-              userageItem.thirtytwo!.value,
+              userAgeModel.thirtytwo!.value,
               overflow: TextOverflow.ellipsis,
               style: textTheme.bodySmall,
             ),

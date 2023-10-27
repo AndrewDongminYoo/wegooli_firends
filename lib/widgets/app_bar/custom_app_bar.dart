@@ -9,7 +9,7 @@ import '/widgets/image_view.dart';
 
 // ignore: must_be_immutable
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  CustomAppBar({
+  const CustomAppBar({
     super.key,
     this.height,
     this.styleType,

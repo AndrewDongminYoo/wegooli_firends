@@ -15,8 +15,8 @@ import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
+import '/widgets/buttons/elevated_button.dart';
 import '/widgets/drop_down.dart';
-import '/widgets/elevated_button.dart';
 import '/widgets/image_view.dart';
 import '/widgets/text_form_field.dart';
 import 'controller/one_on_one_controller.dart';
@@ -36,7 +36,7 @@ class OneOnOneScreen extends StatelessWidget {
         appBar: CustomAppBar(
           leadingWidth: 34.h,
           leading: const GetBackIcon(),
-          title: AppbarTitle(text: '1:1 문의하기'),
+          title: const AppbarTitle(text: '1:1 문의하기'),
         ),
         body: SizedBox(
           width: double.maxFinite,

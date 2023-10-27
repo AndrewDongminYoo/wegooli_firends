@@ -35,7 +35,6 @@ import '/ui/subscribe_info_screen/unsubscribe_screen.dart';
 import '/ui/zip_code_screen/personal_info_form_zip_code_screen.dart';
 import 'widgets/gateway_title.dart';
 import 'widgets/route_item.dart';
-import 'widgets/route_modal.dart';
 
 class AppGatewayScreen extends StatelessWidget {
   const AppGatewayScreen({super.key});
@@ -60,121 +59,121 @@ class AppGatewayScreen extends StatelessWidget {
                 child: SingleChildScrollView(
                   child: Container(
                     decoration: BoxDecoration(color: lightTheme.onSecondary),
-                    child: Column(
+                    child: const Column(
                       children: [
-                        const RouteItem(
+                        RouteItem(
                           title: '스플래시 스크린 1',
                           routeName: SplashScreenOne.routeName,
                         ),
-                        const RouteItem(
+                        RouteItem(
                           title: '스플래시 스크린 2',
                           routeName: SplashScreenTwo.routeName,
                         ),
-                        const RouteItem(
+                        RouteItem(
                           title: '홈',
                           routeName: HomePageScreen.routeName,
                         ),
-                        RouteModal(
+                        RouteItem(
                           title: '팀 초대하기',
-                          dialog: SendInvitationDialog(),
+                          routeName: SendInvitationDialog.routeName,
                         ),
-                        const RouteItem(
+                        RouteItem(
                           title: '일정 확인',
                           routeName: SchedulesScreen.routeName,
                         ),
-                        RouteModal(
+                        RouteItem(
                           title: '예약 확인 (다이얼로그)',
-                          dialog: ViewScheduledDateDialog(),
+                          routeName: ViewScheduledDateDialog.routeName,
                         ),
-                        const RouteModal(
+                        RouteItem(
                           title: '예약하기 (바텀시트)',
-                          bottomSheet: DatetimePickerBottomSheet(),
+                          routeName: DatetimePickerBottomSheet.routeName,
                         ),
-                        const RouteItem(
+                        RouteItem(
                           title: '로그인',
                           routeName: SigninPageScreen.routeName,
                         ),
-                        const RouteItem(
+                        RouteItem(
                           title: '전화 인증 (입력 전)',
                           routeName: VerificationEmptyScreen.routeName,
                         ),
-                        const RouteItem(
+                        RouteItem(
                           title: '전화 인증 (대기 중)',
                           routeName: VerificationWaitingScreen.routeName,
                         ),
-                        const RouteItem(
+                        RouteItem(
                           title: '전화 인증 (입력 완)',
                           routeName: VerificationFilledScreen.routeName,
                         ),
-                        const RouteItem(
+                        RouteItem(
                           title: '주소 입력',
                           routeName: PersonalInfoFormZipCodeScreen.routeName,
                         ),
-                        const RouteItem(
+                        RouteItem(
                           title: '면허증 입력',
                           routeName: LicenseRegisterScreen.routeName,
                         ),
-                        const RouteItem(
+                        RouteItem(
                           title: '카드 입력',
                           routeName: CardRegisterScreen.routeName,
                         ),
-                        const RouteItem(
+                        RouteItem(
                           title: '가입 완료',
                           routeName: SignupCompleteScreen.routeName,
                         ),
-                        const RouteItem(
+                        RouteItem(
                           title: '스마트키',
                           routeName: SmartKeyScreen.routeName,
                         ),
-                        const RouteItem(
+                        RouteItem(
                           title: '스마트키 (사용중)',
                           routeName: AnotherIsUsingScreen.routeName,
                         ),
-                        const RouteItem(
+                        RouteItem(
                           title: '마이 페이지',
                           routeName: MyPageScreen.routeName,
                         ),
-                        const RouteItem(
+                        RouteItem(
                           title: '카드 목록',
                           routeName: CardListScreen.routeName,
                         ),
-                        const RouteItem(
+                        RouteItem(
                           title: '구독 정보',
                           routeName: SubscribeInfoScreen.routeName,
                         ),
-                        const RouteItem(
+                        RouteItem(
                           title: '구독 해지',
                           routeName: UnsubscribeScreen.routeName,
                         ),
-                        RouteModal(
+                        RouteItem(
                           title: '해지 확인',
-                          dialog: UnsubscribeConfirmDialog(),
+                          routeName: UnsubscribeConfirmDialog.routeName,
                         ),
-                        const RouteItem(
+                        RouteItem(
                           title: '구독 정보 (만료 예정)',
                           routeName: ExpiringSubscriptionsScreen.routeName,
                         ),
-                        const RouteItem(
+                        RouteItem(
                           title: '구독 정보 (구독 없음)',
                           routeName: NoSubscriptionScreen.routeName,
                         ),
-                        const RouteItem(
+                        RouteItem(
                           title: '1:1 문의 (문의없음)',
                           routeName: ContactUsEmptyHistoryScreen.routeName,
                         ),
-                        const RouteItem(
+                        RouteItem(
                           title: '1:1 문의 (문의하기)',
                           routeName: OneOnOneScreen.routeName,
                         ),
-                        const RouteItem(
+                        RouteItem(
                           title: '1:1 문의 (문의내역)',
                           routeName: ContactUsHistoryScreen.routeName,
                         ),
-                        const RouteItem(
+                        RouteItem(
                           title: '공지사항',
                           routeName: NoticesScreen.routeName,
                         ),
-                        const RouteItem(
+                        RouteItem(
                           title: '공지사항 없음',
                           routeName: EmptyNoticeScreen.routeName,
                         ),

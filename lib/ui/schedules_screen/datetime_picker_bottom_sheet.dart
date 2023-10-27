@@ -18,7 +18,7 @@ import '/theme/button_styles.dart';
 import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 import '/ui/schedules_screen/schedules_screen.dart';
-import '/widgets/elevated_button.dart';
+import '/widgets/buttons/elevated_button.dart';
 import 'models/datetime_picker_model.dart';
 
 class DatetimePickerBottomSheet extends StatefulWidget {
@@ -26,7 +26,7 @@ class DatetimePickerBottomSheet extends StatefulWidget {
     super.key,
     this.schedule,
   });
-
+  static const routeName = '/datetime_picker_bottom_sheet';
   final Schedule? schedule;
 
   @override

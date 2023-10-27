@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
-import '/routes/app_router.dart';
+import '/routes/app_navigation.dart';
 import '/theme/button_styles.dart';
 import '/theme/theme_helper.dart';
-import '/widgets/elevated_button.dart';
+import '/widgets/buttons/elevated_button.dart';
 
 class UntouchableMask extends StatelessWidget {
   const UntouchableMask({super.key});
@@ -28,7 +28,7 @@ class UntouchableMask extends StatelessWidget {
           children: [
             SizedBox(height: 100.v),
             CustomElevatedButton(
-              onTap: () => AppRouter.showSnackbar(
+              onTap: () => context.showSnackbar(
                 message: '홍길동님이 사용 중 입니다.',
                 type: SnackType.help,
               ),

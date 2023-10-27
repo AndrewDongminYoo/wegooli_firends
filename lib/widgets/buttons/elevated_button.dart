@@ -7,10 +7,10 @@ import '/gen/colors.gen.dart';
 import '/theme/button_styles.dart';
 import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
-import '/widgets/base_button.dart';
+import '/widgets/buttons/base_button.dart';
 
 class CustomElevatedButton extends BaseButton {
-  CustomElevatedButton({
+  const CustomElevatedButton({
     super.key,
     this.decoration,
     this.focusNode,
@@ -52,32 +52,36 @@ class CustomElevatedButton extends BaseButton {
         : buildElevatedButtonWidget;
   }
 
-  Widget get buildElevatedButtonWidget => Container(
-        height: height ?? 52.v,
-        width: width ?? double.maxFinite,
-        margin: margin,
-        decoration: decoration,
-        child: ElevatedButton(
-          focusNode: focusNode,
-          style: buttonStyle ?? defaultButtontStyle,
-          onPressed: (isDisabled || isLoading) ? null : onTap,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              if (isLoading)
-                const CircularProgressIndicator(
-                  color: AppColors.neutralGray,
-                  strokeWidth: 2,
-                )
-              else
-                Text(
-                  text,
-                  style: buttonTextStyle ??
-                      textTheme.titleMedium!
-                          .copyWith(fontSize: TextSize.lg.fSize),
-                ),
-            ],
-          ),
-        ),
+  Widget get buildElevatedButtonWidget => StatefulBuilder(
+        builder: (context, setState) {
+          return Container(
+            height: height ?? 52.v,
+            width: width ?? double.maxFinite,
+            margin: margin,
+            decoration: decoration,
+            child: ElevatedButton(
+              focusNode: focusNode,
+              style: buttonStyle ?? defaultButtontStyle,
+              onPressed: (isDisabled || isLoading) ? null : onTap,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  if (isLoading)
+                    const CircularProgressIndicator(
+                      color: AppColors.neutralGray,
+                      strokeWidth: 2,
+                    )
+                  else
+                    Text(
+                      text,
+                      style: buttonTextStyle ??
+                          textTheme.titleMedium!
+                              .copyWith(fontSize: TextSize.lg.fSize),
+                    ),
+                ],
+              ),
+            ),
+          );
+        },
       );
 }

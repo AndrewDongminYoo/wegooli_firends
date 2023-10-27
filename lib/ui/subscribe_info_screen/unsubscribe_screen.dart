@@ -11,7 +11,7 @@ import '/theme/theme_helper.dart';
 import '/ui/subscribe_info_screen/unsubscribe_confirm_dialog.dart';
 import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
-import '/widgets/elevated_button.dart';
+import '/widgets/buttons/elevated_button.dart';
 import '/widgets/image_view.dart';
 
 class UnsubscribeScreen extends StatelessWidget {
@@ -25,7 +25,7 @@ class UnsubscribeScreen extends StatelessWidget {
         appBar: CustomAppBar(
           leadingWidth: 34.h,
           leading: const GetBackIcon(),
-          title: AppbarTitle(text: '구독 해지 예약'),
+          title: const AppbarTitle(text: '구독 해지 예약'),
         ),
         body: SizedBox(
           width: mediaQueryData.size.width,
@@ -82,9 +82,10 @@ class UnsubscribeScreen extends StatelessWidget {
                       CustomElevatedButton(
                         onTap: () {
                           // 해지 재확인 다이얼로그
-                          AppRouter.showDialog(builder: (_) {
-                            return UnsubscribeConfirmDialog();
-                          });
+                          AppRouter.showDialog(
+                            context: context,
+                            dialog: const UnsubscribeConfirmDialog(),
+                          );
                         },
                         width: 216.h,
                         text: '구독 해지하기',

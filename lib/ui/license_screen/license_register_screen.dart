@@ -11,8 +11,8 @@ import '/theme/button_styles.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
+import '/widgets/buttons/elevated_button.dart';
 import '/widgets/drop_down.dart';
-import '/widgets/elevated_button.dart';
 import '/widgets/image_view.dart';
 import '/widgets/text_form_field.dart';
 import 'controller/license_register_controller.dart';
@@ -32,7 +32,7 @@ class LicenseRegisterScreen extends StatelessWidget {
           height: 50.v,
           leadingWidth: 34.h,
           leading: const GetBackIcon(),
-          title: AppbarTitle(text: '운전면허 등록'),
+          title: const AppbarTitle(text: '운전면허 등록'),
         ),
         body: SizedBox(
           width: double.maxFinite,

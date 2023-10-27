@@ -8,16 +8,16 @@ import '/theme/theme_helper.dart';
 
 // ignore: must_be_immutable
 class AppbarTitle extends StatelessWidget {
-  AppbarTitle({
+  const AppbarTitle({
     super.key,
     required this.text,
     this.margin,
     this.onTap,
   });
 
-  String text;
-  EdgeInsetsGeometry? margin;
-  Function? onTap;
+  final String text;
+  final EdgeInsetsGeometry? margin;
+  final Function? onTap;
 
   @override
   Widget build(BuildContext context) {

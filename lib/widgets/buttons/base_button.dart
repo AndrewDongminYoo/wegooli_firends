@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 abstract class BaseButton extends StatelessWidget {
-  BaseButton({
+  const BaseButton({
     super.key,
     required this.text,
     this.onTap,

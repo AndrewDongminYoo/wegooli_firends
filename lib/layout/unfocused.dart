@@ -4,14 +4,17 @@ import 'package:flutter/material.dart';
 /// `Unfocused` 클래스는 하위 위젯 외부를 탭할 때 현재 포커스를 해제하기 위해 하위 [Form] 위젯을 `GestureDetector`로 래핑하는 위젯
 // ignore: must_be_immutable
 class UnfocusedForm extends StatefulWidget {
-  UnfocusedForm({
+  const UnfocusedForm({
     super.key,
     this.child,
     this.children,
+    this.align,
     required this.canSubmit,
     this.autoValidate = true,
-  }) : assert(!(child == null && children == null),
-            'child 또는 children 둘 중 하나는 반드시 필요합니다.');
+  })  : assert(!(child == null && children == null),
+            'child 또는 children 둘 중 하나는 반드시 필요합니다.'),
+        assert(!(children == null && align != null),
+            'align 속성은 Column을 필요로 하는 children 사용 시에만 필요합니다.');
 
   /// Column이나 Container 등 세부 속성을 추가해야 하는 경우 사용
   final Widget? child;
@@ -21,6 +24,7 @@ class UnfocusedForm extends StatefulWidget {
 
   final ValueNotifier<bool> canSubmit;
   final bool autoValidate;
+  final CrossAxisAlignment? align;
 
   @override
   State<UnfocusedForm> createState() => _UnfocusedFormState();
@@ -57,7 +61,7 @@ class _UnfocusedFormState extends State<UnfocusedForm> with ChangeNotifier {
             : AutovalidateMode.disabled,
         child: widget.children != null
             ? Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: widget.align ?? CrossAxisAlignment.center,
                 children: widget.children!,
               )
             : widget.child!,

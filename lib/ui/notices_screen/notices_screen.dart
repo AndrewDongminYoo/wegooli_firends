@@ -24,7 +24,7 @@ class NoticesScreen extends StatelessWidget {
         appBar: CustomAppBar(
             leadingWidth: 34.h,
             leading: const GetBackIcon(),
-            title: AppbarTitle(text: '공지사항')),
+            title: const AppbarTitle(text: '공지사항')),
         body: SizedBox(
           width: double.maxFinite,
           child: Column(

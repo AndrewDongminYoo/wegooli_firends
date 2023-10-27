@@ -14,7 +14,7 @@ import '/theme/theme_helper.dart';
 import '/ui/subscribe_info_screen/unsubscribe_screen.dart';
 import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
-import '/widgets/elevated_button.dart';
+import '/widgets/buttons/elevated_button.dart';
 import '/widgets/image_view.dart';
 
 class SubscribeInfoScreen extends StatelessWidget {
@@ -28,7 +28,7 @@ class SubscribeInfoScreen extends StatelessWidget {
         appBar: CustomAppBar(
           leadingWidth: 34.h,
           leading: const GetBackIcon(),
-          title: AppbarTitle(text: '구독 정보'),
+          title: const AppbarTitle(text: '구독 정보'),
         ),
         body: SizedBox(
           width: mediaQueryData.size.width,

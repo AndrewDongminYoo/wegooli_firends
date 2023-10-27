@@ -24,13 +24,13 @@ class WidgetbookApp extends StatelessWidget {
       addons: [
         ThemeAddon<AppThemeData>(
           themes: [
-            WidgetbookTheme(
+            const WidgetbookTheme(
               name: 'Blue',
               data: AppThemeData(
                 color: Colors.blue,
               ),
             ),
-            WidgetbookTheme(
+            const WidgetbookTheme(
               name: 'Yellow',
               data: AppThemeData(
                 color: Colors.yellow,

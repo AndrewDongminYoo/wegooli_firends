@@ -11,9 +11,9 @@ import '/gen/assets.gen.dart';
 import '/ui/card_screen/card_register_screen.dart';
 import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
-import '/widgets/elevated_button.dart';
+import '/widgets/buttons/elevated_button.dart';
+import '/widgets/buttons/radio_button.dart';
 import '/widgets/image_view.dart';
-import '/widgets/radio_button.dart';
 import 'controller/card_controller.dart';
 
 class CardListScreen extends StatelessWidget {
@@ -28,7 +28,7 @@ class CardListScreen extends StatelessWidget {
         appBar: CustomAppBar(
           leadingWidth: 34.h,
           leading: const GetBackIcon(),
-          title: AppbarTitle(text: '카드 등록'),
+          title: const AppbarTitle(text: '카드 등록'),
         ),
         body: SizedBox(
           width: mediaQueryData.size.width,

@@ -10,7 +10,7 @@ import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
-import '/widgets/elevated_button.dart';
+import '/widgets/buttons/elevated_button.dart';
 import '/widgets/image_view.dart';
 import '/widgets/text_form_field.dart';
 import 'controller/verification_controller.dart';
@@ -30,7 +30,7 @@ class VerificationEmptyScreen extends StatelessWidget {
           height: 50.v,
           leadingWidth: 34.h,
           leading: const GetBackIcon(),
-          title: AppbarTitle(text: '본인 인증'),
+          title: const AppbarTitle(text: '본인 인증'),
           styleType: Style.bgFill,
         ),
         body: Container(

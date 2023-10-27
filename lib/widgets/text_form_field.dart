@@ -7,7 +7,7 @@ import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  CustomTextFormField({
+  const CustomTextFormField({
     super.key,
     this.alignment,
     this.width,

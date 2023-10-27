@@ -8,6 +8,7 @@ class DialogPage<T> extends Page<T> {
     this.barrierColor = Colors.black87,
     this.barrierDismissible = true,
     this.barrierLabel,
+    this.label,
     this.useSafeArea = true,
     this.themes,
     super.key,
@@ -20,22 +21,38 @@ class DialogPage<T> extends Page<T> {
   final Color? barrierColor;
   final bool barrierDismissible;
   final String? barrierLabel;
+  final String? label;
   final bool useSafeArea;
   final CapturedThemes? themes;
   final WidgetBuilder builder;
 
   @override
-  Route<T> createRoute(BuildContext context) => DialogRoute<T>(
-        context: context,
-        settings: this,
-        builder: (context) => Dialog(
-          child: builder(context),
-        ),
-        anchorPoint: anchorPoint,
-        barrierColor: barrierColor,
-        barrierDismissible: barrierDismissible,
-        barrierLabel: barrierLabel,
-        useSafeArea: useSafeArea,
-        themes: themes,
-      );
+  Route<T> createRoute(BuildContext context) {
+    return DialogRoute<T>(
+      context: context,
+      settings: this,
+      builder: (BuildContext _context) {
+        Widget dialogChild = IntrinsicWidth(
+          stepWidth: 56,
+          child: builder(_context),
+        );
+        if (label != null) {
+          dialogChild = Semantics(
+            scopesRoute: true,
+            explicitChildNodes: true,
+            namesRoute: true,
+            label: label,
+            child: dialogChild,
+          );
+        }
+        return Dialog(child: dialogChild);
+      },
+      anchorPoint: anchorPoint,
+      barrierColor: barrierColor,
+      barrierDismissible: barrierDismissible,
+      barrierLabel: barrierLabel,
+      useSafeArea: useSafeArea,
+      themes: themes,
+    );
+  }
 }

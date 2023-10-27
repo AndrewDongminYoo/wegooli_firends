@@ -13,7 +13,7 @@ import '/theme/theme_helper.dart';
 import '/ui/license_screen/license_register_screen.dart';
 import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
-import '/widgets/elevated_button.dart';
+import '/widgets/buttons/elevated_button.dart';
 import '/widgets/image_view.dart';
 import '/widgets/text_form_field.dart';
 import 'controller/personal_info_form_zip_code_controller.dart';
@@ -33,7 +33,7 @@ class PersonalInfoFormZipCodeScreen extends StatelessWidget {
           height: 50.v,
           leadingWidth: 34.h,
           leading: const GetBackIcon(),
-          title: AppbarTitle(text: '정보 입력'),
+          title: const AppbarTitle(text: '정보 입력'),
           styleType: Style.bgFill,
         ),
         body: SizedBox(

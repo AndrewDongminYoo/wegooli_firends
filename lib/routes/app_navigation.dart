@@ -2,11 +2,13 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
 // 🌎 Project imports:
 import '/app/app_state_notifier.dart';
+import '/gen/colors.gen.dart';
 
 extension NavParamExtensions on Map<String, String?> {
   Map<String, String> get withoutNulls => Map.fromEntries(
@@ -17,6 +19,24 @@ extension NavParamExtensions on Map<String, String?> {
 }
 
 extension NavigationExtensions on BuildContext {
+  void showSnackbar({String message = '', SnackType? type}) {
+    final snackBar = SnackBar(
+      /// awesome_snackbar_content의 효과를 극대화하하기 위한 설정
+      elevation: 0,
+      behavior: SnackBarBehavior.floating,
+      backgroundColor: Colors.transparent,
+      content: AwesomeSnackbarContent(
+        title: message,
+        message: message,
+        contentType: type.type,
+      ),
+    );
+
+    ScaffoldMessenger.of(this)
+      ..hideCurrentSnackBar()
+      ..showSnackBar(snackBar);
+  }
+
   void goNamedAuth(
     String name,
     bool mounted, {
@@ -92,4 +112,22 @@ class RootPageContext {
         value: RootPageContext(true, errorRoute),
         child: child,
       );
+}
+
+enum SnackType {
+  help,
+  failure,
+  success,
+  warning,
+}
+
+extension SnackBarType on SnackType? {
+  ContentType get type {
+    return switch (this) {
+      SnackType.failure => ContentType('failure', AppColors.statusError),
+      SnackType.success => ContentType('success', AppColors.statusPass),
+      SnackType.warning => ContentType('warning', AppColors.statusWarn),
+      _ => ContentType('help', AppColors.wegooli),
+    };
+  }
 }

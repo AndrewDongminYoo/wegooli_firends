@@ -17,12 +17,12 @@ import 'widgets/list_item_widget.dart';
 
 // ignore_for_file: must_be_immutable
 class ViewScheduledDateDialog extends StatelessWidget {
-  ViewScheduledDateDialog({super.key});
-
-  ScheduledDateController controller = ScheduledDateController.to;
+  const ViewScheduledDateDialog({super.key});
+  static const routeName = '/view_scheduled_date';
 
   @override
   Widget build(BuildContext context) {
+    final controller = ScheduledDateController.to;
     return AlertDialog(
       backgroundColor: Colors.transparent,
       contentPadding: EdgeInsets.zero,

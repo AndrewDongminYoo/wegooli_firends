@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import '/core/utils/size_utils.dart';
 
 class CustomIconButton extends StatelessWidget {
-  CustomIconButton({
+  const CustomIconButton({
     super.key,
     this.alignment,
     this.margin,

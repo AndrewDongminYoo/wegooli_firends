@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/theme/theme_helper.dart';
-import '/widgets/long_pressable_button.dart';
+import '/widgets/buttons/long_pressable.dart';
 
 class ControllButton extends StatelessWidget {
   const ControllButton(

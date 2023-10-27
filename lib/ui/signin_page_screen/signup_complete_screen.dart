@@ -9,7 +9,7 @@ import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
 import '/theme/theme_helper.dart';
 import '/ui/home_page_screen/home_page_screen.dart';
-import '/widgets/elevated_button.dart';
+import '/widgets/buttons/elevated_button.dart';
 import '/widgets/image_view.dart';
 
 class SignupCompleteScreen extends StatelessWidget {

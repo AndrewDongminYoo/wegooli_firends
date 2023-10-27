@@ -1,4 +1,12 @@
+// 📦 Package imports:
+import 'package:go_router/go_router.dart';
+
 // 🌎 Project imports:
+import '../ui/scheduled_date_dialog/view_scheduled_date_dialog.dart';
+import '../ui/schedules_screen/datetime_picker_bottom_sheet.dart';
+import '../ui/send_invitation_dialog/send_invitation_dialog.dart';
+import '../ui/subscribe_info_screen/unsubscribe_confirm_dialog.dart';
+import '../widgets/dialogue.dart';
 import '/routes/app_gateway.dart';
 import '/routes/route_model.dart';
 import '/ui/card_screen/card_list_screen.dart';
@@ -151,5 +159,32 @@ final pages = [
   AppRoute(
     path: AppGatewayScreen.routeName,
     builder: (context, params) => const AppGatewayScreen(),
+  ),
+];
+
+final dialogues = [
+  GoRoute(
+    name: '팀 초대하기',
+    path: SendInvitationDialog.routeName,
+    pageBuilder: (context, state) =>
+        DialogPage(builder: (_) => const SendInvitationDialog()),
+  ),
+  GoRoute(
+    name: '예약 확인 (다이얼로그)',
+    path: ViewScheduledDateDialog.routeName,
+    pageBuilder: (context, state) =>
+        DialogPage(builder: (_) => const ViewScheduledDateDialog()),
+  ),
+  GoRoute(
+    name: '예약하기 (바텀시트)',
+    path: DatetimePickerBottomSheet.routeName,
+    pageBuilder: (context, state) =>
+        DialogPage(builder: (_) => const DatetimePickerBottomSheet()),
+  ),
+  GoRoute(
+    name: '해지 확인',
+    path: UnsubscribeConfirmDialog.routeName,
+    pageBuilder: (context, state) =>
+        DialogPage(builder: (_) => const UnsubscribeConfirmDialog()),
   ),
 ];

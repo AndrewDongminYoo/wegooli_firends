@@ -2,23 +2,20 @@
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
-import '../controller/one_on_one_controller.dart';
 import '../models/add_photo_item.dart';
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
-import '/widgets/icon_button.dart';
+import '/widgets/buttons/icon_button.dart';
 import '/widgets/image_view.dart';
 
 // ignore: must_be_immutable
 class AddPhotoWidget extends StatelessWidget {
-  AddPhotoWidget(
-    this.listaddphotoaltItem, {
+  const AddPhotoWidget(
+    this.addPhotoItem, {
     super.key,
   });
 
-  AddPhotoItem listaddphotoaltItem;
-
-  OneOnOneController controller = OneOnOneController.to;
+  final AddPhotoItem addPhotoItem;
 
   @override
   Widget build(BuildContext context) {

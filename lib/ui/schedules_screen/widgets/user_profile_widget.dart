@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 
 // 🌎 Project imports:
-import '../controller/schedules_controller.dart';
 import '../models/userprofile_item_model.dart';
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
@@ -15,14 +14,12 @@ import '/widgets/image_view.dart';
 
 // ignore: must_be_immutable
 class UserProfileWidget extends StatelessWidget {
-  UserProfileWidget(
-    this.userprofileItem, {
+  const UserProfileWidget(
+    this.userProfile, {
     super.key,
   });
 
-  ProfileModel userprofileItem;
-
-  SchedulesController controller = SchedulesController.to;
+  final ProfileModel userProfile;
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +47,7 @@ class UserProfileWidget extends StatelessWidget {
           SizedBox(height: 4.v),
           Obx(
             () => Text(
-              userprofileItem.userName!.value,
+              userProfile.userName!.value,
               overflow: TextOverflow.ellipsis,
               style: textTheme.bodySmall,
             ),

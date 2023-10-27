@@ -21,7 +21,7 @@ class NoSubscriptionScreen extends StatelessWidget {
         appBar: CustomAppBar(
             leadingWidth: 34.h,
             leading: const GetBackIcon(),
-            title: AppbarTitle(text: '구독 정보')),
+            title: const AppbarTitle(text: '구독 정보')),
         body: SizedBox(
           width: mediaQueryData.size.width,
           child: SingleChildScrollView(

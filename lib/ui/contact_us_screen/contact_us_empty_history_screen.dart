@@ -10,7 +10,7 @@ import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
-import '/widgets/elevated_button.dart';
+import '/widgets/buttons/elevated_button.dart';
 import '/widgets/image_view.dart';
 
 class ContactUsEmptyHistoryScreen extends StatelessWidget {
@@ -24,7 +24,7 @@ class ContactUsEmptyHistoryScreen extends StatelessWidget {
         appBar: CustomAppBar(
             leadingWidth: 34.h,
             leading: const GetBackIcon(),
-            title: AppbarTitle(text: '문의하기')),
+            title: const AppbarTitle(text: '문의하기')),
         body: SizedBox(
           width: double.maxFinite,
           child: Column(

@@ -13,11 +13,11 @@ import '/data/custom/schedule.dart';
 import '/gen/colors.gen.dart';
 import '/l10n/l10n.dart';
 import '/routes/app_navigation.dart';
+import '/screens/schedules_screen/schedules_screen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/button_styles.dart';
 import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
-import '/ui/schedules_screen/schedules_screen.dart';
 import '/widgets/buttons/elevated_button.dart';
 import 'models/datetime_picker_model.dart';
 

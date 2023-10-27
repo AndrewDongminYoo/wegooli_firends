@@ -12,7 +12,7 @@ import 'package:page_transition/page_transition.dart';
 import '/app/app_state_notifier.dart';
 import '/routes/app_parameters.dart';
 import '/routes/transition_info.dart';
-import '/ui/signin_page_screen/signin_page_screen.dart';
+import '/screens/signin_page_screen/signin_page_screen.dart';
 
 const kTransitionInfoKey = '__transition_info__';
 

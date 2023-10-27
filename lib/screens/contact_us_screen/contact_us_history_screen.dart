@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
+import '/screens/contact_us_screen/contact_us_history_expanded_page.dart';
+import '/screens/contact_us_screen/contact_us_history_page.dart';
 import '/theme/theme_helper.dart';
-import '/ui/contact_us_screen/contact_us_history_expanded_page.dart';
-import '/ui/contact_us_screen/contact_us_history_page.dart';
 import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import 'controller/contact_us_history_controller.dart';

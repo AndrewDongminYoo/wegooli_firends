@@ -7,8 +7,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '/app/app_state_notifier.dart';
 import '/core/utils/list_extensions.dart';
 import '/routes/app_routes.dart';
-import '/ui/home_page_screen/home_page_screen.dart';
-import '/ui/signin_page_screen/signin_page_screen.dart';
+import '/screens/home_page_screen/home_page_screen.dart';
+import '/screens/signin_page_screen/signin_page_screen.dart';
 
 final _appStateNotifier = AppStateNotifier.I;
 

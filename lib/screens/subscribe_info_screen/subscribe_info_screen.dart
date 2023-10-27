@@ -7,11 +7,11 @@ import 'package:go_router/go_router.dart';
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
+import '/screens/subscribe_info_screen/unsubscribe_screen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/button_styles.dart';
 import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
-import '/ui/subscribe_info_screen/unsubscribe_screen.dart';
 import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/buttons/elevated_button.dart';

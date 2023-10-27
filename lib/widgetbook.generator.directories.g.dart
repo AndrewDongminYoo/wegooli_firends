@@ -18,9 +18,8 @@ import 'package:wegooli_friends/components/container.dart' as _i5;
 import 'package:wegooli_friends/components/custom_card.dart' as _i2;
 import 'package:wegooli_friends/components/custom_text_field.dart' as _i3;
 import 'package:wegooli_friends/customs/custom_knob.dart' as _i4;
-import 'package:wegooli_friends/widgets/information_dialog.dart' as _i6;
-
 import 'package:wegooli_friends/widgets/buttons/long_pressable.dart' as _i7;
+import 'package:wegooli_friends/widgets/information_dialog.dart' as _i6;
 
 final directories = <_i1.WidgetbookNode>[
   _i1.WidgetbookFolder(

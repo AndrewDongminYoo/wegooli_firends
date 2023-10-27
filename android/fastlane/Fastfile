@@ -1,0 +1,119 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+update_fastlane
+
+default_platform(:android)
+
+platform :android do
+  def increment_version_code()
+    path = '../app/build.gradle'
+    re = /versionCode\s+(\d+)/
+
+    s = File.read(path)
+    versionCode = s[re, 1].to_i
+    s[re, 1] = (versionCode + 1).to_s
+
+    f = File.new(path, 'w')
+    f.write(s)
+    f.close
+  end
+
+  def increment_version_number(bump_type: nil, version_number: nil)
+    path = '../app/build.gradle'
+    re = /versionName\s+("\d+.\d+.\d+")/
+    s = File.read(path)
+    versionName = s[re, 1].gsub!('"','').split('.')
+
+    major = versionName[0].to_i
+    minor = versionName[1].to_i
+    patch = versionName[2].to_i
+
+    if (bump_type == 'major')
+        major += 1
+        minor = 0
+        patch = 0
+    elsif (bump_type == 'minor')
+        minor += 1
+        patch = 0
+    elsif (bump_type == 'patch')
+        patch += 1
+    end
+
+    if(version_number)
+      s[re, 1] = "\"#{version_number}\""
+    else
+      s[re, 1] = "\"#{major}.#{minor}.#{patch}\""
+    end
+
+    f = File.new(path, 'w')
+    f.write(s)
+    f.close
+    increment_version_code()
+  end
+
+  def updateVersion(options)
+    if options[:version]
+      version = options[:version]
+    else
+      version = prompt(text: "버전을 입력해주세요 (ex 1.0.0) : ")
+    end
+
+    re = /\d+.\d+.\d+/
+    versionNum = version[re, 0]
+
+    if (versionNum)
+      increment_version_number(
+        version_number: versionNum
+      )
+    elsif (version == 'major' || version == 'minor' || version == 'patch')
+      increment_version_number(
+        bump_type: version
+      )
+    else
+      UI.user_error!("[ERROR] Wrong version!!!!!!")
+    end
+  end
+
+  desc "모든 테스트 실행"
+  lane :test do
+    gradle(task: "test")
+  end
+
+  desc "크래시라이틱스 베타에 새로운 베타 빌드 제출"
+  lane :beta do
+    gradle(task: "clean assembleRelease")
+    crashlytics
+    firebase_app_distribution(
+      app: "1:599714471577:android:285b172998ea40d051e208",
+      testers: "ydm2790@gmail.com,kcy7870@wegooli.com,radislabtest@gmail.com",
+      release_notes: "에러 픽스 적용 👋 _Italic_ formatted text can be used for description or release notes. https://docs.fastlane.tools/actions/firebase_app_distribution/"
+    )
+    upload_to_play_store(
+      skip_upload_metadata: true,
+      skip_upload_changelogs: true,
+      skip_upload_screenshots: true,
+      skip_upload_images: true,
+      track: 'internal'
+    )
+
+    # sh "your_script.sh"
+    # You can also use other beta testing services here
+  end
+
+  desc "구글 플레이스토어에 새로운 버전 제출"
+  lane :deploy do
+    gradle(task: "clean assembleRelease")
+    upload_to_play_store
+  end
+end

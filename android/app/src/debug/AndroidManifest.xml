@@ -1,7 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wegooli.friends">
-    <!-- Flutter needs it to communicate with the running application
-         to allow setting breakpoints, to provide hot reload, etc.
+    <!-- 개발에는 인터넷 권한이 필요합니다.
+        특히 Flutter 툴이 실행 중인 애플리케이션과 통신하려면 이 권한이 필요합니다.
+        중단점 설정, 핫 리로드 등을 허용하기 위해 필요합니다.
     -->
     <uses-permission android:name="android.permission.INTERNET"/>
 </manifest>

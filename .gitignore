@@ -258,6 +258,7 @@ xcuserdata/
 .mason/bricks.json
 
 # Fastlane
+**/fastlane/Appfile
 **/fastlane/report.xml
 
 # Node.js 아티팩트 파일
@@ -308,4 +309,5 @@ logs/**/*.*
 # Google Firebase 설정 파일
 macos/Runner/GoogleService-Info.plist
 ios/Runner/GoogleService-Info.plist
+ios/firebase_app_id_file.json
 android/app/google-services.json

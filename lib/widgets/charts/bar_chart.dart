@@ -6,11 +6,11 @@ import 'package:fl_chart/fl_chart.dart';
 
 // 🌎 Project imports:
 import '/core/utils/list_extensions.dart';
-import 'axis_label_info.dart';
 import 'bar_chart.data.dart';
-import 'chart_styling_info.dart';
-import 'get_titles_data.dart';
 import 'line_chart.dart';
+import 'utils/chart.axis_label.dart';
+import 'utils/chart.styling_info.dart';
+import 'utils/get_titles_data.dart';
 
 class CustomBarChart extends StatelessWidget {
   const CustomBarChart({

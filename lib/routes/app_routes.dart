@@ -164,25 +164,25 @@ final pages = [
 
 final dialogues = [
   GoRoute(
-    name: '팀 초대하기',
+    name: SendInvitationDialog.routeName,
     path: SendInvitationDialog.routeName,
     pageBuilder: (context, state) =>
         DialogPage(builder: (_) => const SendInvitationDialog()),
   ),
   GoRoute(
-    name: '예약 확인 (다이얼로그)',
+    name: ViewScheduledDateDialog.routeName,
     path: ViewScheduledDateDialog.routeName,
     pageBuilder: (context, state) =>
         DialogPage(builder: (_) => const ViewScheduledDateDialog()),
   ),
   GoRoute(
-    name: '예약하기 (바텀시트)',
+    name: DatetimePickerBottomSheet.routeName,
     path: DatetimePickerBottomSheet.routeName,
     pageBuilder: (context, state) =>
         DialogPage(builder: (_) => const DatetimePickerBottomSheet()),
   ),
   GoRoute(
-    name: '해지 확인',
+    name: UnsubscribeConfirmDialog.routeName,
     path: UnsubscribeConfirmDialog.routeName,
     pageBuilder: (context, state) =>
         DialogPage(builder: (_) => const UnsubscribeConfirmDialog()),

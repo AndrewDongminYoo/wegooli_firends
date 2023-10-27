@@ -31,7 +31,9 @@ class RangeKnob extends Knob<RangeValues> {
           name: 'min-$label',
           initialValue: value.start,
           onChanged: (context, value) {
-            if (value == null) return;
+            if (value == null) {
+              return;
+            }
 
             final state = WidgetbookState.of(context);
             final endValue = (state.knobs[label]!.value as RangeValues).end;
@@ -46,7 +48,9 @@ class RangeKnob extends Knob<RangeValues> {
           name: 'max-$label',
           initialValue: value.end,
           onChanged: (context, value) {
-            if (value == null) return;
+            if (value == null) {
+              return;
+            }
 
             final state = WidgetbookState.of(context);
             final startValue = (state.knobs[label]!.value as RangeValues).start;

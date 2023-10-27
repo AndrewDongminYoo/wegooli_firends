@@ -28,7 +28,9 @@ class WidgetbookApp extends StatelessWidget {
       // Use the generated directories variable
       directories: directories,
       addons: [
+        DeviceFrameAddon(devices: Devices.ios.all),
         AlignmentAddon(),
+        ZoomAddon(),
       ],
     );
   }

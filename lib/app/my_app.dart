@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
-import 'package:catcher_2/catcher_2.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -26,14 +25,7 @@ class MyApp extends ConsumerWidget {
       debugShowCheckedModeBanner: false,
       theme: theme,
       themeMode: ThemeMode.light,
-      builder: (BuildContext context, Widget? widget) {
-        Catcher2.addDefaultErrorWidget(
-          title: 'Error 👾',
-          description: '알 수 없는 에러가 발생했습니다. 😱',
-          showStacktrace: false,
-        );
-        return widget ?? const CircularProgressIndicator();
-      },
+      builder: (_, widget) => widget ?? const CircularProgressIndicator(),
       locale: const Locale('ko'),
       supportedLocales: Localized.supportedLocales,
       localizationsDelegates: Localized.localizationsDelegates,

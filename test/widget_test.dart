@@ -10,14 +10,22 @@ import 'package:flutter/material.dart';
 
 // 📦 Package imports:
 import 'package:flutter_test/flutter_test.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 // 🌎 Project imports:
 import 'package:wegooli_friends/app/my_app.dart';
 
 void main() {
+  // Arrange
+  TestWidgetsFlutterBinding.ensureInitialized();
+
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(
+      const ProviderScope(
+        child: MyApp(),
+      ),
+    );
 
     // Finds MaterialApp
     expect(find.byType(MaterialApp), findsOneWidget);

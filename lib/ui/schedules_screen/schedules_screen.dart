@@ -136,7 +136,7 @@ class SchedulesScreen extends StatelessWidget {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     customIcon(
-                                      Assets.svg.icoArrowRight.path,
+                                      Assets.svg.icoArrowLeft.path,
                                       size: 18.adaptSize,
                                       margin: EdgeInsets.only(bottom: 1.v),
                                     ),

@@ -33,13 +33,13 @@ class SmartKeyScreen extends StatelessWidget {
           width: double.maxFinite,
           child: Column(
             children: [
-              SizedBox(height: 24.v),
               Expanded(
                 child: SingleChildScrollView(
                   child: Padding(
                     padding: EdgeInsets.only(bottom: 5.v),
                     child: Column(
                       children: [
+                        SizedBox(height: 24.v),
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: 16.h),
                           child: Row(

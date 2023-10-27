@@ -36,11 +36,11 @@ class AnotherIsUsingScreen extends StatelessWidget {
           width: double.maxFinite,
           child: Column(
             children: [
-              SizedBox(height: 24.v),
               Expanded(
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
+                      SizedBox(height: 24.v),
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 16.h),
                         child: Row(

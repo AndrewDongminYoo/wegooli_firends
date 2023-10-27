@@ -8,7 +8,6 @@ import 'package:go_router/go_router.dart';
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
 import '/layout/unfocused.dart';
-import '/routes/app_navigation.dart';
 import '/theme/button_styles.dart';
 import '/theme/theme_helper.dart';
 import '/ui/license_screen/license_register_screen.dart';
@@ -78,10 +77,10 @@ class PersonalInfoFormZipCodeScreen extends StatelessWidget {
                             ),
                             Expanded(
                               child: CustomElevatedButton(
-                                isDisabled: !controller.canSubmit.value,
-                                // TODO: Kpostal 호출
-                                onTap: context.safePop,
-                                height: 42.v,
+                                onTap: () async {
+                                  await controller.acceptZipCode(context);
+                                },
+                                height: 36.v,
                                 text: '주소 검색',
                                 margin: EdgeInsets.only(
                                   left: 4.h,
@@ -215,7 +214,10 @@ class PersonalInfoFormZipCodeScreen extends StatelessWidget {
           child: CustomElevatedButton(
             isDisabled: !controller.canSubmit.value,
             // TODO: 주소 입력 다음 화면으로
-            onTap: () => context.goNamed(LicenseRegisterScreen.routeName),
+            onTap: () {
+              controller.printFormFields();
+              context.goNamed(LicenseRegisterScreen.routeName);
+            },
             height: 48.v,
             text: '입력 완료',
             buttonStyle: ElevatedButton.styleFrom(

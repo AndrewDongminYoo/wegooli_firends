@@ -10,7 +10,7 @@
 
 
     <application
-        android:label="wegooli_friends_app"
+        android:label="wegooli_friends"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

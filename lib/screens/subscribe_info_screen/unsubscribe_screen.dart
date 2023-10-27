@@ -23,30 +23,30 @@ class UnsubscribeScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: CustomAppBar(
-          leadingWidth: 34.h,
+          leadingWidth: 34.w,
           leading: const GetBackIcon(),
           title: const AppbarTitle(text: '구독 해지 예약'),
         ),
         body: SizedBox(
           width: mediaQueryData.size.width,
           child: SingleChildScrollView(
-            padding: EdgeInsets.only(top: 50.v),
+            padding: EdgeInsets.only(top: 50.h),
             child: Padding(
               padding: EdgeInsets.only(
-                left: 16.h,
-                right: 16.h,
-                bottom: 5.v,
+                left: 16.w,
+                right: 16.w,
+                bottom: 5.h,
               ),
               child: Column(
                 children: [
                   CustomImageView(
                     imagePath: Assets.images.imgGooli5.path,
-                    height: 157.v,
-                    width: 120.h,
+                    height: 157.h,
+                    width: 120.w,
                   ),
-                  SizedBox(height: 20.v),
+                  SizedBox(height: 20.h),
                   SizedBox(
-                    width: 179.h,
+                    width: 179.w,
                     child: Text(
                       '(닉네임)님 정말로 구독을\n해지하시겠습니까?',
                       maxLines: 2,
@@ -54,28 +54,28 @@ class UnsubscribeScreen extends StatelessWidget {
                       textAlign: TextAlign.center,
                       style: textTheme.titleMedium!.copyWith(
                         color: Colors.black,
-                        fontSize: TextSize.lg.fSize,
+                        fontSize: TextSize.lg.sp,
                         height: Leading.snug,
                       ),
                     ),
                   ),
-                  SizedBox(height: 23.v),
+                  SizedBox(height: 23.h),
                   Text(
                     '2023년 8월 4일 이후에 구독이 해지됩니다.',
                     style: textTheme.bodyLarge!.tint(Colors.black),
                   ),
-                  SizedBox(height: 81.v),
+                  SizedBox(height: 81.h),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       CustomElevatedButton(
                         onTap: context.safePop,
-                        width: 104.h,
+                        width: 104.w,
                         text: '취소',
                         buttonStyle: ElevatedButton.styleFrom(
                           backgroundColor: const Color(0xFFB9BCC3),
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(26.h),
+                            borderRadius: BorderRadius.circular(26.w),
                           ),
                         ),
                       ),
@@ -87,7 +87,7 @@ class UnsubscribeScreen extends StatelessWidget {
                             dialog: const UnsubscribeConfirmDialog(),
                           );
                         },
-                        width: 216.h,
+                        width: 216.w,
                         text: '구독 해지하기',
                       ),
                     ],

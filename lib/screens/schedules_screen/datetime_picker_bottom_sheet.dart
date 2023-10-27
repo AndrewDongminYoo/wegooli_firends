@@ -78,8 +78,8 @@ class _DatetimePickerBottomSheetState extends State<DatetimePickerBottomSheet> {
           Container(
               alignment: Alignment.centerLeft,
               width: mediaQueryData.size.width,
-              height: 85.v,
-              padding: EdgeInsets.only(left: 20.h, top: 20.v),
+              height: 85.h,
+              padding: EdgeInsets.only(left: 20.w, top: 20.h),
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: const BorderRadius.vertical(
@@ -101,7 +101,7 @@ class _DatetimePickerBottomSheetState extends State<DatetimePickerBottomSheet> {
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.left,
                 style: textTheme.titleMedium!
-                    .copyWith(fontSize: TextSize.lg.fSize)
+                    .copyWith(fontSize: TextSize.lg.sp)
                     .modest,
               )),
           ExpansionPanelList(
@@ -140,7 +140,7 @@ class _DatetimePickerBottomSheetState extends State<DatetimePickerBottomSheet> {
                     },
                     isExpanded: item.isExpanded,
                     body: Container(
-                      height: 100.v,
+                      height: 100.h,
                       alignment: Alignment.center,
                       width: mediaQueryData.size.width,
                       child: CupertinoTheme(
@@ -174,14 +174,14 @@ class _DatetimePickerBottomSheetState extends State<DatetimePickerBottomSheet> {
               )),
           Container(
               color: Colors.white,
-              height: 106.v,
-              padding: EdgeInsets.symmetric(horizontal: 16.h),
+              height: 106.h,
+              padding: EdgeInsets.symmetric(horizontal: 16.w),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   CustomElevatedButton(
-                    width: 104.h,
-                    height: 52.v,
+                    width: 104.w,
+                    height: 52.h,
                     text: '수정',
                     buttonStyle: ElevatedButton.styleFrom(
                       backgroundColor: Palette.gray400,
@@ -190,7 +190,7 @@ class _DatetimePickerBottomSheetState extends State<DatetimePickerBottomSheet> {
                       ),
                     ).noEffect,
                     buttonTextStyle: textTheme.titleMedium!
-                        .copyWith(fontSize: TextSize.lg.fSize),
+                        .copyWith(fontSize: TextSize.lg.sp),
                     onTap: () {
                       context.pop(true);
                     },
@@ -200,14 +200,14 @@ class _DatetimePickerBottomSheetState extends State<DatetimePickerBottomSheet> {
                       onTap: context.safePop,
                       text: '수정',
                       buttonTextStyle: buttonTextStyle,
-                      width: 216.h,
+                      width: 216.w,
                     )
                   else
                     CustomElevatedButton(
                       onTap: () => context.goNamed(SchedulesScreen.routeName),
                       text: '확인',
                       buttonTextStyle: buttonTextStyle,
-                      width: 216.h,
+                      width: 216.w,
                     )
                 ],
               )),
@@ -215,5 +215,5 @@ class _DatetimePickerBottomSheetState extends State<DatetimePickerBottomSheet> {
   }
 
   BorderSide _borderSide(double width) =>
-      BorderSide(width: width.adaptSize, color: AppColors.separationBar);
+      BorderSide(width: width.w, color: AppColors.separationBar);
 }

@@ -27,8 +27,8 @@ class VerificationFilledScreen extends StatelessWidget {
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: CustomAppBar(
-          height: 50.v,
-          leadingWidth: 34.h,
+          height: 50.h,
+          leadingWidth: 34.w,
           leading: const GetBackIcon(),
           title: const AppbarTitle(text: '본인 인증'),
           styleType: Style.bgFill,
@@ -38,8 +38,8 @@ class VerificationFilledScreen extends StatelessWidget {
           child: Container(
             width: double.maxFinite,
             padding: EdgeInsets.symmetric(
-              horizontal: 16.h,
-              vertical: 10.v,
+              horizontal: 16.w,
+              vertical: 10.h,
             ),
             child: Column(
               children: [
@@ -47,24 +47,24 @@ class VerificationFilledScreen extends StatelessWidget {
                   '이름',
                   style: textTheme.bodySmall,
                 ),
-                SizedBox(height: 3.v),
+                SizedBox(height: 3.h),
                 CustomTextFormField(
                   controller: controller.realname,
                   hintText: '홍길동',
                 ),
-                SizedBox(height: 30.v),
+                SizedBox(height: 30.h),
                 Text(
                   '주민등록번호 13자리',
                   style: textTheme.bodySmall,
                 ),
-                SizedBox(height: 3.v),
+                SizedBox(height: 3.h),
                 Container(
-                  padding: EdgeInsets.symmetric(vertical: 9.v),
+                  padding: EdgeInsets.symmetric(vertical: 9.h),
                   decoration: BoxDecoration(
                     border: Border(
                       bottom: BorderSide(
                         color: const Color(0xFFB0B2BC),
-                        width: 1.h,
+                        width: 1.w,
                       ),
                     ),
                   ),
@@ -77,8 +77,8 @@ class VerificationFilledScreen extends StatelessWidget {
                       const Spacer(),
                       Padding(
                         padding: EdgeInsets.only(
-                          top: 10.v,
-                          bottom: 6.v,
+                          top: 10.h,
+                          bottom: 6.h,
                         ),
                         child: const SizedBox(
                           child: Divider(
@@ -87,89 +87,89 @@ class VerificationFilledScreen extends StatelessWidget {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.only(left: 10.h),
+                        padding: EdgeInsets.only(left: 10.w),
                         child: Text('2', style: textTheme.bodyLarge),
                       ),
                       customIcon(
                         Assets.svg.icoGlobe.path,
-                        size: 7.adaptSize,
+                        size: 7.w,
                         margin: EdgeInsets.only(
-                          left: 9.h,
-                          top: 6.v,
-                          bottom: 6.v,
+                          left: 9.w,
+                          top: 6.h,
+                          bottom: 6.h,
                         ),
                       ),
                       customIcon(
                         Assets.svg.icoGlobe.path,
-                        size: 7.adaptSize,
+                        size: 7.w,
                         margin: EdgeInsets.only(
-                          left: 4.h,
-                          top: 6.v,
-                          bottom: 6.v,
+                          left: 4.w,
+                          top: 6.h,
+                          bottom: 6.h,
                         ),
                       ),
                       customIcon(
                         Assets.svg.icoGlobe.path,
-                        size: 7.adaptSize,
+                        size: 7.w,
                         margin: EdgeInsets.only(
-                          left: 4.h,
-                          top: 6.v,
-                          bottom: 6.v,
+                          left: 4.w,
+                          top: 6.h,
+                          bottom: 6.h,
                         ),
                       ),
                       customIcon(
                         Assets.svg.icoGlobe.path,
-                        size: 7.adaptSize,
+                        size: 7.w,
                         margin: EdgeInsets.only(
-                          left: 4.h,
-                          top: 6.v,
-                          bottom: 6.v,
+                          left: 4.w,
+                          top: 6.h,
+                          bottom: 6.h,
                         ),
                       ),
                       customIcon(
                         Assets.svg.icoGlobe.path,
-                        size: 7.adaptSize,
+                        size: 7.w,
                         margin: EdgeInsets.only(
-                          left: 4.h,
-                          top: 6.v,
-                          bottom: 6.v,
+                          left: 4.w,
+                          top: 6.h,
+                          bottom: 6.h,
                         ),
                       ),
                       customIcon(
                         Assets.svg.icoGlobe.path,
-                        size: 7.adaptSize,
-                        margin: EdgeInsets.fromLTRB(4.h, 6.v, 70.h, 6.v),
+                        size: 7.w,
+                        margin: EdgeInsets.fromLTRB(4.w, 6.h, 70.w, 6.h),
                       ),
                     ],
                   ),
                 ),
-                SizedBox(height: 3.v),
+                SizedBox(height: 3.h),
                 Text(
                   '만 26세 미만은 가입이 제한됩니다.',
                   style: textTheme.bodySmall!.tint(lightTheme.primaryContainer),
                 ),
-                SizedBox(height: 30.v),
+                SizedBox(height: 30.h),
                 Text(
                   '휴대폰 정보',
                   style: textTheme.bodySmall,
                 ),
-                SizedBox(height: 3.v),
+                SizedBox(height: 3.h),
                 CustomTextFormField(
                   controller: controller.phonenum,
                   hintText: '010-1234-5678',
                   textInputAction: TextInputAction.done,
                 ),
-                SizedBox(height: 20.v),
+                SizedBox(height: 20.h),
                 CustomElevatedButton(
                   isDisabled: !controller.canSubmit.value,
                   // TODO: 인증번호 발송
                   onTap: () => print(controller.phonenum),
-                  height: 42.v,
+                  height: 42.h,
                   text: '인증번호 발송',
                   buttonStyle: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF464A70),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8.h),
+                      borderRadius: BorderRadius.circular(8.w),
                     ),
                   ).noEffect,
                   buttonTextStyle: textTheme.titleSmall!.copyWith(
@@ -177,28 +177,28 @@ class VerificationFilledScreen extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height: 5.v),
+                SizedBox(height: 5.h),
               ],
             ),
           ),
         ),
         bottomNavigationBar: Container(
           margin: EdgeInsets.only(
-            left: 16.h,
-            right: 16.h,
-            bottom: 16.v,
+            left: 16.w,
+            right: 16.w,
+            bottom: 16.h,
           ),
           decoration: BoxDecoration(color: lightTheme.onPrimaryContainer),
           child: CustomElevatedButton(
             isDisabled: !controller.canSubmit.value,
             // TODO: 인증번호 확인
             onTap: () => print(controller.phonenum),
-            height: 48.v,
+            height: 48.h,
             text: '인증하기',
             buttonStyle: ElevatedButton.styleFrom(
               backgroundColor: const Color(0xFFF3F3F6),
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8.h),
+                borderRadius: BorderRadius.circular(8.w),
               ),
             ).noEffect,
             buttonTextStyle: textTheme.titleSmall!.copyWith(

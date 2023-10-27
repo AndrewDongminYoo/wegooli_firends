@@ -27,23 +27,23 @@ class ControllButton extends StatelessWidget {
       animate: true,
       isThreeD: true,
       title: title,
-      height: 130.adaptSize,
-      width: 130.adaptSize,
-      borderRadius: 65.adaptSize,
+      height: 130.w,
+      width: 130.w,
+      borderRadius: 65.w,
       backgroundColor: lightTheme.onPrimaryContainer,
-      margin: isRightSide ? EdgeInsets.only(left: 16.h) : null,
+      margin: isRightSide ? EdgeInsets.only(left: 16.w) : null,
       boxShadow: [
         BoxShadow(
           color: Colors.black.withOpacity(0.1),
-          spreadRadius: 2.h,
-          blurRadius: 2.h,
+          spreadRadius: 2.w,
+          blurRadius: 2.w,
           offset: const Offset(2, 2),
         ),
       ],
       asset: ButtonAsset(
         iconPath,
-        height: 46.adaptSize,
-        width: 46.adaptSize,
+        height: 46.w,
+        width: 46.w,
       ),
     );
   }

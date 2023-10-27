@@ -25,7 +25,7 @@ class CardRegisterScreen extends StatelessWidget {
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: CustomAppBar(
-          leadingWidth: 34.h,
+          leadingWidth: 34.w,
           leading: const GetBackIcon(),
           title: const AppbarTitle(text: '카드 등록'),
         ),
@@ -34,14 +34,14 @@ class CardRegisterScreen extends StatelessWidget {
           child: UnfocusedForm(
             canSubmit: controller.canSubmit,
             children: [
-              SizedBox(height: 30.v),
+              SizedBox(height: 30.h),
               Expanded(
                 child: SingleChildScrollView(
                   child: Padding(
                     padding: EdgeInsets.only(
-                      left: 16.h,
-                      right: 16.h,
-                      bottom: 5.v,
+                      left: 16.w,
+                      right: 16.w,
+                      bottom: 5.h,
                     ),
                     child: Column(
                       children: [
@@ -51,7 +51,7 @@ class CardRegisterScreen extends StatelessWidget {
                             Row(
                               children: [
                                 Padding(
-                                  padding: EdgeInsets.only(top: 2.v),
+                                  padding: EdgeInsets.only(top: 2.h),
                                   child: Text(
                                     '카드번호',
                                     style: textTheme.titleMedium,
@@ -59,8 +59,8 @@ class CardRegisterScreen extends StatelessWidget {
                                 ),
                                 Padding(
                                   padding: EdgeInsets.only(
-                                    left: 5.h,
-                                    bottom: 2.v,
+                                    left: 5.w,
+                                    bottom: 2.h,
                                   ),
                                   child: Text(
                                     '*',
@@ -70,27 +70,27 @@ class CardRegisterScreen extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            SizedBox(height: 4.v),
+                            SizedBox(height: 4.h),
                             CustomTextFormField(
                               controller: controller.cardNum,
                               hintText: '0000  0000  0000  0000',
                               hintStyle: textTheme.bodyLarge!
                                   .tint(const Color(0xFF8E9199)),
                               contentPadding: EdgeInsets.symmetric(
-                                horizontal: 8.h,
-                                vertical: 14.v,
+                                horizontal: 8.w,
+                                vertical: 14.h,
                               ),
                             ),
                           ],
                         ),
-                        SizedBox(height: 26.v),
+                        SizedBox(height: 26.h),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Row(
                               children: [
                                 Padding(
-                                  padding: EdgeInsets.only(top: 2.v),
+                                  padding: EdgeInsets.only(top: 2.h),
                                   child: Text(
                                     '유효기간',
                                     style: textTheme.titleMedium,
@@ -98,8 +98,8 @@ class CardRegisterScreen extends StatelessWidget {
                                 ),
                                 Padding(
                                   padding: EdgeInsets.only(
-                                    left: 5.h,
-                                    bottom: 2.v,
+                                    left: 5.w,
+                                    bottom: 2.h,
                                   ),
                                   child: Text(
                                     '*',
@@ -109,27 +109,27 @@ class CardRegisterScreen extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            SizedBox(height: 4.v),
+                            SizedBox(height: 4.h),
                             CustomTextFormField(
                               controller: controller.cardExp,
                               hintText: 'MM/YY',
                               hintStyle: textTheme.bodyLarge!
                                   .tint(const Color(0xFF8E9199)),
                               contentPadding: EdgeInsets.symmetric(
-                                horizontal: 8.h,
-                                vertical: 14.v,
+                                horizontal: 8.w,
+                                vertical: 14.h,
                               ),
                             ),
                           ],
                         ),
-                        SizedBox(height: 26.v),
+                        SizedBox(height: 26.h),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Row(
                               children: [
                                 Padding(
-                                  padding: EdgeInsets.only(top: 2.v),
+                                  padding: EdgeInsets.only(top: 2.h),
                                   child: Text(
                                     '주민등록번호 앞자리',
                                     style: textTheme.titleMedium,
@@ -137,8 +137,8 @@ class CardRegisterScreen extends StatelessWidget {
                                 ),
                                 Padding(
                                   padding: EdgeInsets.only(
-                                    left: 5.h,
-                                    bottom: 2.v,
+                                    left: 5.w,
+                                    bottom: 2.h,
                                   ),
                                   child: Text(
                                     '*',
@@ -148,15 +148,15 @@ class CardRegisterScreen extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            SizedBox(height: 4.v),
+                            SizedBox(height: 4.h),
                             CustomTextFormField(
                               controller: controller.birthday,
                               hintText: '940812',
                               hintStyle: textTheme.bodyLarge!
                                   .tint(const Color(0xFF8E9199)),
                               contentPadding: EdgeInsets.symmetric(
-                                horizontal: 8.h,
-                                vertical: 14.v,
+                                horizontal: 8.w,
+                                vertical: 14.h,
                               ),
                               borderDecoration:
                                   TextFormFieldStyleHelper.outlineGrayTL5,
@@ -164,14 +164,14 @@ class CardRegisterScreen extends StatelessWidget {
                             ),
                           ],
                         ),
-                        SizedBox(height: 26.v),
+                        SizedBox(height: 26.h),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Row(
                               children: [
                                 Padding(
-                                  padding: EdgeInsets.only(top: 2.v),
+                                  padding: EdgeInsets.only(top: 2.h),
                                   child: Text(
                                     '카드 비밀번호 앞 2자리',
                                     style: textTheme.titleMedium,
@@ -179,8 +179,8 @@ class CardRegisterScreen extends StatelessWidget {
                                 ),
                                 Padding(
                                   padding: EdgeInsets.only(
-                                    left: 5.h,
-                                    bottom: 2.v,
+                                    left: 5.w,
+                                    bottom: 2.h,
                                   ),
                                   child: Text(
                                     '*',
@@ -190,7 +190,7 @@ class CardRegisterScreen extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            SizedBox(height: 4.v),
+                            SizedBox(height: 4.h),
                             CustomTextFormField(
                               controller: controller.cardPin,
                               textInputAction: TextInputAction.done,
@@ -207,17 +207,17 @@ class CardRegisterScreen extends StatelessWidget {
         ),
         bottomNavigationBar: Container(
           margin: EdgeInsets.only(
-            left: 16.h,
-            right: 16.h,
-            bottom: 29.v,
+            left: 16.w,
+            right: 16.w,
+            bottom: 29.h,
           ),
           decoration: BoxDecoration(
             color: lightTheme.onPrimaryContainer,
             boxShadow: [
               BoxShadow(
                 color: Colors.black.withOpacity(0.1),
-                spreadRadius: 2.h,
-                blurRadius: 2.h,
+                spreadRadius: 2.w,
+                blurRadius: 2.w,
                 offset: const Offset(2, 2),
               ),
             ],
@@ -229,12 +229,12 @@ class CardRegisterScreen extends StatelessWidget {
             buttonStyle: ElevatedButton.styleFrom(
               backgroundColor: const Color(0xFFF3F3F6),
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(26.h),
+                borderRadius: BorderRadius.circular(26.w),
               ),
             ).noEffect,
             buttonTextStyle: textTheme.titleMedium!.copyWith(
               color: const Color(0xFFB0B2BC),
-              fontSize: TextSize.lg.fSize,
+              fontSize: TextSize.lg.sp,
             ),
           ),
         ),

@@ -20,13 +20,13 @@ class RidingIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 328.h,
-      height: 57.v,
+      width: 328.w,
+      height: 57.h,
       child: Stack(
         children: [
           Positioned(
-            left: 0.h,
-            top: 39.v,
+            left: 0.w,
+            top: 39.h,
             child: Text(
               '12:00',
               style: AppTextStyle(
@@ -38,8 +38,8 @@ class RidingIndicator extends StatelessWidget {
             ),
           ),
           Positioned(
-            right: 0.h,
-            top: 39.v,
+            right: 0.w,
+            top: 39.h,
             child: Text(
               '13:00',
               textAlign: TextAlign.right,
@@ -52,19 +52,19 @@ class RidingIndicator extends StatelessWidget {
             ),
           ),
           Positioned(
-            left: 0.h,
-            top: 0.v,
+            left: 0.w,
+            top: 0.h,
             child: SizedBox(
-              width: 328.h,
-              height: 36.v,
+              width: 328.w,
+              height: 36.h,
               child: Stack(
                 children: [
                   Positioned(
-                    left: 0.h,
-                    top: 26.v,
+                    left: 0.w,
+                    top: 26.h,
                     child: Container(
-                      width: 328.h,
-                      height: 10.v,
+                      width: 328.w,
+                      height: 10.h,
                       decoration: ShapeDecoration(
                         color: const Color(0x33A4A8AF),
                         shape: RoundedRectangleBorder(
@@ -74,11 +74,11 @@ class RidingIndicator extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    left: 0.h,
-                    top: 26.v,
+                    left: 0.w,
+                    top: 26.h,
                     child: Container(
-                      width: (progress * 328).h,
-                      height: 10.v,
+                      width: (progress * 328).w,
+                      height: 10.h,
                       decoration: ShapeDecoration(
                         color: const Color(0xFFFFE041),
                         shape: RoundedRectangleBorder(
@@ -88,17 +88,17 @@ class RidingIndicator extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    left: (progress * 302).h,
-                    top: 0.v,
+                    left: (progress * 302).w,
+                    top: 0.h,
                     child: Container(
-                      width: 26.h,
-                      height: 26.v,
+                      width: 26.w,
+                      height: 26.h,
                       clipBehavior: Clip.antiAlias,
                       decoration: const BoxDecoration(),
                       child: Stack(children: [
                         customIcon(
                           Assets.svg.icoTaxi.path,
-                          size: 30.adaptSize,
+                          size: 30.w,
                           color: Colors.red,
                         ),
                       ]),
@@ -115,11 +115,11 @@ class RidingIndicator extends StatelessWidget {
 
   Positioned bar() {
     return Positioned(
-      left: 0.h,
-      top: 26.v.v,
+      left: 0.w,
+      top: 26.h.h,
       child: Container(
-        width: 328.h.h,
-        height: 10.v.v,
+        width: 328.w.w,
+        height: 10.h.h,
         decoration: ShapeDecoration(
           color: const Color(0x33A4A8AF),
           shape: RoundedRectangleBorder(
@@ -132,8 +132,8 @@ class RidingIndicator extends StatelessWidget {
 
   Widget endTime() {
     return Positioned(
-      left: 0.h.h,
-      top: 39.v.v,
+      left: 0.w.w,
+      top: 39.h.h,
       child: Text(
         '13:00',
         style: textTheme.bodySmall!.copyWith(
@@ -145,8 +145,8 @@ class RidingIndicator extends StatelessWidget {
 
   Widget startTime() {
     return Positioned(
-      right: 0.h.h,
-      top: 39.v.v,
+      right: 0.w.w,
+      top: 39.h.h,
       child: Text(
         '12:00',
         style: textTheme.bodySmall!.copyWith(
@@ -159,11 +159,11 @@ class RidingIndicator extends StatelessWidget {
   Padding indicator() {
     return Padding(
       padding: EdgeInsets.symmetric(
-        horizontal: 16.h,
+        horizontal: 16.w,
       ),
       child: SizedBox(
-        height: 10.v.v,
-        width: 328.h.h,
+        height: 10.h.h,
+        width: 328.w.w,
         child: ClipRRect(
           borderRadius: BorderRadiusStyle.circleBorder65,
           child: LinearProgressIndicator(
@@ -180,12 +180,12 @@ class RidingIndicator extends StatelessWidget {
 
   Positioned taxi() {
     return Positioned(
-      width: 328.h.h,
-      height: 30.v.v,
-      left: (progress * 328).h,
+      width: 328.w.w,
+      height: 30.h.h,
+      left: (progress * 328).w,
       child: customIcon(
         Assets.svg.icoTaxi.path,
-        size: 30.adaptSize,
+        size: 30.w,
         color: Colors.red,
       ),
     );

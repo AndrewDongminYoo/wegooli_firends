@@ -46,15 +46,15 @@ class AppGatewayScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: lightTheme.onSecondary,
         body: SizedBox(
-          width: 375.h,
+          width: 375.w,
           child: Column(
             children: [
               const GatewayTitle(),
               const CheckYourAppUI(),
               Padding(
-                  padding: EdgeInsets.only(top: 5.v),
+                  padding: EdgeInsets.only(top: 5.h),
                   child: Divider(
-                      height: 5.v, thickness: 5.v, color: Palette.blueGray400)),
+                      height: 5.h, thickness: 5.h, color: Palette.blueGray400)),
               Expanded(
                 child: SingleChildScrollView(
                   child: Container(

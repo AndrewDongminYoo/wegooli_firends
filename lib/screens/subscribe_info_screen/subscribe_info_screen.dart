@@ -26,44 +26,44 @@ class SubscribeInfoScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: CustomAppBar(
-          leadingWidth: 34.h,
+          leadingWidth: 34.w,
           leading: const GetBackIcon(),
           title: const AppbarTitle(text: '구독 정보'),
         ),
         body: SizedBox(
           width: mediaQueryData.size.width,
           child: SingleChildScrollView(
-            padding: EdgeInsets.only(top: 22.v),
+            padding: EdgeInsets.only(top: 22.h),
             child: Padding(
               padding: EdgeInsets.only(
-                left: 16.h,
-                right: 16.h,
-                bottom: 5.v,
+                left: 16.w,
+                right: 16.w,
+                bottom: 5.h,
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(left: 2.h),
+                    padding: EdgeInsets.only(left: 2.w),
                     child: Text(
                       '차량 정보',
                       style: textTheme.titleMedium!.copyWith(
                         color: Colors.black,
-                        fontSize: TextSize.lg.fSize,
+                        fontSize: TextSize.lg.sp,
                       ),
                     ),
                   ),
-                  SizedBox(height: 12.v),
+                  SizedBox(height: 12.h),
                   Container(
                     padding: EdgeInsets.symmetric(
-                      horizontal: 10.h,
-                      vertical: 20.v,
+                      horizontal: 10.w,
+                      vertical: 20.h,
                     ),
                     decoration: BoxDecoration(
                       color: lightTheme.onPrimaryContainer,
                       border: Border.all(
                         color: const Color(0xFFB9BCC3),
-                        width: 1.h,
+                        width: 1.w,
                       ),
                       borderRadius: BorderRadiusStyle.circleBorder10,
                     ),
@@ -71,19 +71,19 @@ class SubscribeInfoScreen extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        SizedBox(height: 10.v),
+                        SizedBox(height: 10.h),
                         CustomImageView(
                           imagePath: Assets.cars.niroEvSSwp.path,
-                          height: 96.v,
-                          width: 167.h,
+                          height: 96.h,
+                          width: 167.w,
                         ),
-                        SizedBox(height: 30.v),
+                        SizedBox(height: 30.h),
                         const Divider(),
                         Padding(
                           padding: EdgeInsets.only(
-                            left: 9.h,
-                            top: 21.v,
-                            right: 9.h,
+                            left: 9.w,
+                            top: 21.h,
+                            right: 9.w,
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -91,12 +91,12 @@ class SubscribeInfoScreen extends StatelessWidget {
                               Text(
                                 '모닝',
                                 style: textTheme.titleMedium!
-                                    .copyWith(fontSize: TextSize.lg.fSize),
+                                    .copyWith(fontSize: TextSize.lg.sp),
                               ),
                               Padding(
                                 padding: EdgeInsets.only(
-                                  top: 4.v,
-                                  bottom: 2.v,
+                                  top: 4.h,
+                                  bottom: 2.h,
                                 ),
                                 child: Text(
                                   '12가 3456',
@@ -110,9 +110,9 @@ class SubscribeInfoScreen extends StatelessWidget {
                         ),
                         Padding(
                           padding: EdgeInsets.only(
-                            left: 9.h,
-                            top: 13.v,
-                            right: 9.h,
+                            left: 9.w,
+                            top: 13.h,
+                            right: 9.w,
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -129,9 +129,9 @@ class SubscribeInfoScreen extends StatelessWidget {
                         ),
                         Padding(
                           padding: EdgeInsets.only(
-                            left: 9.h,
-                            top: 3.v,
-                            right: 9.h,
+                            left: 9.w,
+                            top: 3.h,
+                            right: 9.w,
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -151,9 +151,9 @@ class SubscribeInfoScreen extends StatelessWidget {
                         ),
                         Padding(
                           padding: EdgeInsets.only(
-                            left: 9.h,
-                            top: 3.v,
-                            right: 9.h,
+                            left: 9.w,
+                            top: 3.h,
+                            right: 9.w,
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -173,17 +173,17 @@ class SubscribeInfoScreen extends StatelessWidget {
                             // 해지 재확인 다이얼로그
                             context.goNamed(UnsubscribeScreen.routeName);
                           },
-                          height: 48.v,
-                          width: 160.h,
+                          height: 48.h,
+                          width: 160.w,
                           text: '해지하기',
                           margin: EdgeInsets.only(
-                            top: 21.v,
-                            right: 9.h,
+                            top: 21.h,
+                            right: 9.w,
                           ),
                           buttonStyle: ElevatedButton.styleFrom(
                             backgroundColor: lightTheme.primary,
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(5.h),
+                              borderRadius: BorderRadius.circular(5.w),
                             ),
                           ).noEffect,
                           buttonTextStyle: textTheme.titleMedium,

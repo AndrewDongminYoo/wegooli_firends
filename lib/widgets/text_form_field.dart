@@ -97,19 +97,19 @@ class CustomTextFormField extends StatelessWidget {
         suffixIcon: suffix,
         suffixIconConstraints: suffixConstraints,
         isDense: true,
-        contentPadding: contentPadding ?? EdgeInsets.symmetric(vertical: 9.v),
+        contentPadding: contentPadding ?? EdgeInsets.symmetric(vertical: 9.h),
         fillColor: fillColor ?? lightTheme.onPrimaryContainer,
         filled: filled,
         border: borderDecoration ??
             UnderlineInputBorder(
-              borderRadius: BorderRadius.circular(5.h),
+              borderRadius: BorderRadius.circular(5.w),
               borderSide: const BorderSide(
                 color: Color(0xFFB9BCC3),
               ),
             ),
         enabledBorder: borderDecoration ??
             UnderlineInputBorder(
-              borderRadius: BorderRadius.circular(5.h),
+              borderRadius: BorderRadius.circular(5.w),
               borderSide: const BorderSide(
                 color: Color(0xFFB9BCC3),
               ),
@@ -118,15 +118,15 @@ class CustomTextFormField extends StatelessWidget {
             UnderlineInputBorder(
               borderSide: BorderSide(
                 color: lightTheme.primary,
-                width: 2.adaptSize,
+                width: 2.w,
               ),
             ),
         focusedErrorBorder: borderDecoration ??
             UnderlineInputBorder(
-              borderRadius: BorderRadius.circular(4.h),
+              borderRadius: BorderRadius.circular(4.w),
               borderSide: BorderSide(
                 color: Palette.red600,
-                width: 2.adaptSize,
+                width: 2.w,
               ),
             ),
       );
@@ -135,11 +135,11 @@ class CustomTextFormField extends StatelessWidget {
 /// 모든 유형의 테두리 스타일 등을 쉽게 포함할 수 있도록 [CustomTextFormField]를 확장합니다.
 extension TextFormFieldStyleHelper on CustomTextFormField {
   static UnderlineInputBorder get fillBlueGray => UnderlineInputBorder(
-        borderRadius: BorderRadius.circular(18.h),
+        borderRadius: BorderRadius.circular(18.w),
         borderSide: BorderSide.none,
       );
   static UnderlineInputBorder get outlineGrayTL5 => UnderlineInputBorder(
-        borderRadius: BorderRadius.circular(5.h),
+        borderRadius: BorderRadius.circular(5.w),
         borderSide: const BorderSide(
           color: Color(0xFFB9BCC3),
         ),

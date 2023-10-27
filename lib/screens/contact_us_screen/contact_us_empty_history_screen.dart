@@ -22,34 +22,34 @@ class ContactUsEmptyHistoryScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: CustomAppBar(
-            leadingWidth: 34.h,
+            leadingWidth: 34.w,
             leading: const GetBackIcon(),
             title: const AppbarTitle(text: '문의하기')),
         body: SizedBox(
           width: double.maxFinite,
           child: Column(
             children: [
-              SizedBox(height: 50.v),
+              SizedBox(height: 50.h),
               Expanded(
                 child: SingleChildScrollView(
                   child: Padding(
                     padding: EdgeInsets.only(
-                      left: 105.h,
-                      right: 105.h,
-                      bottom: 5.v,
+                      left: 105.w,
+                      right: 105.w,
+                      bottom: 5.h,
                     ),
                     child: Column(
                       children: [
                         CustomImageView(
                           imagePath: Assets.images.imgGooli4.path,
-                          height: 177.v,
-                          width: 120.h,
+                          height: 177.h,
+                          width: 120.w,
                         ),
-                        SizedBox(height: 21.v),
+                        SizedBox(height: 21.h),
                         Text('문의내역이 없습니다.',
                             style: textTheme.titleMedium!.copyWith(
                               color: Colors.black,
-                              fontSize: TextSize.lg.fSize,
+                              fontSize: TextSize.lg.sp,
                             ))
                       ],
                     ),
@@ -61,9 +61,9 @@ class ContactUsEmptyHistoryScreen extends StatelessWidget {
         ),
         bottomNavigationBar: Container(
           margin: EdgeInsets.only(
-            left: 16.h,
-            right: 16.h,
-            bottom: 29.v,
+            left: 16.w,
+            right: 16.w,
+            bottom: 29.h,
           ),
           child: CustomElevatedButton(
               onTap: context.safePop,
@@ -71,12 +71,12 @@ class ContactUsEmptyHistoryScreen extends StatelessWidget {
               buttonStyle: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFFF3F3F6),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(26.h),
+                  borderRadius: BorderRadius.circular(26.w),
                 ),
               ).noEffect,
               buttonTextStyle: textTheme.titleMedium!.copyWith(
                 color: const Color(0xFFB0B2BC),
-                fontSize: TextSize.lg.fSize,
+                fontSize: TextSize.lg.sp,
               )),
         ),
       ),

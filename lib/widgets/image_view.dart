@@ -230,7 +230,7 @@ CustomImageView customIcon(
   return CustomImageView._square(
     key: key,
     icon: icon,
-    size: size ?? 18.adaptSize,
+    size: size ?? 18.w,
     color: color,
     alignment: alignment,
     margin: margin,
@@ -254,7 +254,7 @@ CustomImageView customAvatar(
   return CustomImageView._square(
     key: key,
     avatar: avatar,
-    size: size ?? 65.adaptSize,
+    size: size ?? 65.w,
     color: color,
     alignment: alignment,
     margin: margin,

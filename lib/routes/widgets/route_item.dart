@@ -32,7 +32,7 @@ class RouteItem extends StatelessWidget {
           Align(
               alignment: Alignment.centerLeft,
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 10.v),
+                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
                 child: Text(
                   title,
                   overflow: TextOverflow.ellipsis,
@@ -45,9 +45,9 @@ class RouteItem extends StatelessWidget {
                 ),
               )),
           Padding(
-              padding: EdgeInsets.only(top: 5.v),
+              padding: EdgeInsets.only(top: 5.h),
               child: Divider(
-                  height: 1.v, thickness: 1.v, color: Palette.blueGray400)),
+                  height: 1.h, thickness: 1.h, color: Palette.blueGray400)),
         ]),
       ),
     );

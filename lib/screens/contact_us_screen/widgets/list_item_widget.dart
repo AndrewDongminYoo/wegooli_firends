@@ -21,11 +21,11 @@ class ListItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 15.h),
+      padding: EdgeInsets.symmetric(horizontal: 15.w),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          SizedBox(height: 15.v),
+          SizedBox(height: 15.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.end,
@@ -37,7 +37,7 @@ class ListItemWidget extends StatelessWidget {
                     '[문의] 우리 애기는 아래발치에서 코올코올. 고양이는 부뜨막에서 가릉가릉,',
                     style: textTheme.titleSmall,
                   ),
-                  SizedBox(height: 3.v),
+                  SizedBox(height: 3.h),
                   Text(
                     '2023.08.23',
                     style: textTheme.bodySmall!.copyWith(
@@ -47,26 +47,26 @@ class ListItemWidget extends StatelessWidget {
                 ],
               ),
               CustomOutlinedButton(
-                width: 52.h,
+                width: 52.w,
                 text: '처리중',
                 margin: EdgeInsets.only(
-                  left: 42.h,
-                  top: 4.v,
-                  bottom: 2.v,
+                  left: 42.w,
+                  top: 4.h,
+                  bottom: 2.h,
                 ),
               ),
               customIcon(
                 Assets.svg.icoArrowRight.path,
-                size: 18.adaptSize,
+                size: 18.w,
                 margin: EdgeInsets.only(
-                  left: 10.h,
-                  top: 9.v,
-                  bottom: 7.v,
+                  left: 10.w,
+                  top: 9.h,
+                  bottom: 7.h,
                 ),
               ),
             ],
           ),
-          SizedBox(height: 17.v),
+          SizedBox(height: 17.h),
           const Divider(),
         ],
       ),

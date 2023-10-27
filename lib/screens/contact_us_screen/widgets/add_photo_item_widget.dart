@@ -20,14 +20,14 @@ class AddPhotoWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 66.h,
+      width: 66.w,
       child: Align(
         alignment: Alignment.centerRight,
         child: CustomIconButton(
-          height: 66.adaptSize,
-          width: 66.adaptSize,
-          margin: EdgeInsets.only(top: 5.v),
-          padding: EdgeInsets.all(16.h),
+          height: 66.w,
+          width: 66.w,
+          margin: EdgeInsets.only(top: 5.h),
+          padding: EdgeInsets.all(16.w),
           decoration: IconButtonStyleHelper.fillBlueGrayTL5,
           child: CustomImageView(svgPath: Assets.svg.icoAddPhoto.path),
         ),

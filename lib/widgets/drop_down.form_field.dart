@@ -119,15 +119,15 @@ class _CustomDropDownFormFieldState extends State<CustomDropDownFormField> {
     final childWidget = Container(
       margin: widget.margin,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(widget.borderRadius ?? 4.h),
+        borderRadius: BorderRadius.circular(widget.borderRadius ?? 4.w),
         border: Border.all(
           color: widget.borderColor ?? const Color(0xFFB0B2BC),
-          width: widget.borderWidth ?? 1.adaptSize,
+          width: widget.borderWidth ?? 1.w,
         ),
         color: widget.fillColor,
       ),
       child: Padding(
-        padding: widget.contentPadding ?? EdgeInsets.symmetric(vertical: 9.v),
+        padding: widget.contentPadding ?? EdgeInsets.symmetric(vertical: 9.h),
         child: widget.hidesUnderline
             ? DropdownButtonHideUnderline(child: dropdownWidget)
             : dropdownWidget,

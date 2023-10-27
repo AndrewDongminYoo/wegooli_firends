@@ -15,7 +15,7 @@ class GatewayTitle extends StatelessWidget {
     return Align(
         alignment: Alignment.centerLeft,
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 10.v),
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
           child: Text(
             'App Navigation',
             overflow: TextOverflow.ellipsis,
@@ -37,7 +37,7 @@ class CheckYourAppUI extends StatelessWidget {
     return Align(
         alignment: Alignment.centerLeft,
         child: Padding(
-          padding: EdgeInsets.only(left: 20.h),
+          padding: EdgeInsets.only(left: 20.w),
           child: Text(
             l10ns.checkYourAppUI,
             overflow: TextOverflow.ellipsis,

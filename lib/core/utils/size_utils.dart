@@ -32,17 +32,14 @@ num get _height {
 
 extension ResponsiveExtension on num {
   /// 이 메서드는 뷰포트 너비에 따라 화면 또는 위젯의 패딩/여백(왼쪽 및 오른쪽)과 너비를 설정하는 데 사용됩니다.
-  double get h => (this * _width) / FIGMA_DESIGN_WIDTH;
+  double get w => (this * _width) / FIGMA_DESIGN_WIDTH;
 
   /// 이 메서드는 뷰포트 높이에 따라 화면 또는 위젯의 패딩/여백(위쪽 및 아래쪽) 및 높이를 설정하는 데 사용됩니다.
-  double get v =>
+  double get h =>
       (this * _height) / (FIGMA_DESIGN_HEIGHT - FIGMA_DESIGN_STATUS_BAR);
 
-  /// 이 메서드는 이미지 높이와 너비에서 최소 픽셀을 설정하는 데 사용됩니다.
-  double get adaptSize => v < h ? v.toDoubleValue() : h.toDoubleValue();
-
   /// 이 메서드는 뷰포트에 따라 텍스트 폰트 크기를 설정하는 데 사용됩니다.
-  double get fSize => adaptSize;
+  double get sp => h < w ? h.toDoubleValue() : w.toDoubleValue();
 }
 
 extension on double {

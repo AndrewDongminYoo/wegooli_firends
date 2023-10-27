@@ -19,31 +19,31 @@ class EmptyNoticeScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: CustomAppBar(
-            leadingWidth: 34.h,
+            leadingWidth: 34.w,
             leading: const GetBackIcon(),
             title: const AppbarTitle(text: '공지사항')),
         body: SizedBox(
           width: mediaQueryData.size.width,
           child: SingleChildScrollView(
-            padding: EdgeInsets.only(top: 50.v),
+            padding: EdgeInsets.only(top: 50.h),
             child: Padding(
               padding: EdgeInsets.only(
-                left: 103.h,
-                right: 103.h,
-                bottom: 5.v,
+                left: 103.w,
+                right: 103.w,
+                bottom: 5.h,
               ),
               child: Column(
                 children: [
                   CustomImageView(
                     imagePath: Assets.images.imgGooli4.path,
-                    height: 177.v,
-                    width: 120.h,
+                    height: 177.h,
+                    width: 120.w,
                   ),
-                  SizedBox(height: 21.v),
+                  SizedBox(height: 21.h),
                   Text('작성된 글이 없습니다.',
                       style: textTheme.titleMedium!.copyWith(
                         color: Colors.black,
-                        fontSize: TextSize.lg.fSize,
+                        fontSize: TextSize.lg.sp,
                       ))
                 ],
               ),

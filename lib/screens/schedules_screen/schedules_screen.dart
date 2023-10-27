@@ -28,7 +28,7 @@ class SchedulesScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: CustomAppBar(
-          height: 45.v,
+          height: 45.h,
           title: CustomImageView(svgPath: Assets.svg.imgFriends.path),
           styleType: Style.bgOutline_1,
         ),
@@ -36,34 +36,34 @@ class SchedulesScreen extends StatelessWidget {
           width: double.maxFinite,
           child: Column(
             children: [
-              SizedBox(height: 21.v),
+              SizedBox(height: 21.h),
               Expanded(
                 child: SingleChildScrollView(
                   child: Padding(
-                    padding: EdgeInsets.only(bottom: 5.v),
+                    padding: EdgeInsets.only(bottom: 5.h),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsets.only(left: 16.h),
+                          padding: EdgeInsets.only(left: 16.w),
                           child: Text(
                             '팀원',
                             style: textTheme.titleMedium!
-                                .copyWith(fontSize: TextSize.lg.fSize),
+                                .copyWith(fontSize: TextSize.lg.sp),
                           ),
                         ),
                         SizedBox(
-                          height: 81.v,
+                          height: 81.h,
                           child: Obx(
                             () => ListView.separated(
                               padding: EdgeInsets.only(
-                                left: 16.h,
-                                top: 12.v,
-                                right: 16.h,
+                                left: 16.w,
+                                top: 12.h,
+                                right: 16.w,
                               ),
                               scrollDirection: Axis.horizontal,
                               separatorBuilder: (context, index) {
-                                return SizedBox(width: 15.h);
+                                return SizedBox(width: 15.w);
                               },
                               itemCount: controller
                                   .scheduleModel.value.profiles.value.length,
@@ -75,9 +75,9 @@ class SchedulesScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                        SizedBox(height: 21.v),
+                        SizedBox(height: 21.h),
                         Container(
-                          height: 8.v,
+                          height: 8.h,
                           width: double.maxFinite,
                           decoration: const BoxDecoration(
                             color: Color(0xFFF6F7F7),
@@ -85,13 +85,13 @@ class SchedulesScreen extends StatelessWidget {
                         ),
                         Padding(
                           padding: EdgeInsets.only(
-                            left: 16.h,
-                            top: 21.v,
+                            left: 16.w,
+                            top: 21.h,
                           ),
                           child: Text(
                             '일정',
                             style: textTheme.titleMedium!
-                                .copyWith(fontSize: TextSize.lg.fSize),
+                                .copyWith(fontSize: TextSize.lg.sp),
                           ),
                         ),
                         CustomElevatedButton(
@@ -102,28 +102,28 @@ class SchedulesScreen extends StatelessWidget {
                           ),
                           text: '일정 추가 +',
                           margin: EdgeInsets.only(
-                            left: 16.h,
-                            top: 12.v,
-                            right: 16.h,
+                            left: 16.w,
+                            top: 12.h,
+                            right: 16.w,
                           ),
                           alignment: Alignment.center,
                         ),
                         Align(
                           child: Container(
                             margin: EdgeInsets.only(
-                              left: 15.h,
-                              top: 20.v,
-                              right: 15.h,
+                              left: 15.w,
+                              top: 20.h,
+                              right: 15.w,
                             ),
                             padding: EdgeInsets.symmetric(
-                              horizontal: 25.h,
-                              vertical: 22.v,
+                              horizontal: 25.w,
+                              vertical: 22.h,
                             ),
                             decoration: BoxDecoration(
                               color: lightTheme.onPrimaryContainer,
                               border: Border.all(
                                 color: const Color(0x33A4A8AF),
-                                width: 1.h,
+                                width: 1.w,
                               ),
                               borderRadius: BorderRadiusStyle.circleBorder10,
                             ),
@@ -137,8 +137,8 @@ class SchedulesScreen extends StatelessWidget {
                                   children: [
                                     customIcon(
                                       Assets.svg.icoArrowLeft.path,
-                                      size: 18.adaptSize,
-                                      margin: EdgeInsets.only(bottom: 1.v),
+                                      size: 18.w,
+                                      margin: EdgeInsets.only(bottom: 1.h),
                                     ),
                                     Text(
                                       '2023년 8월',
@@ -146,20 +146,20 @@ class SchedulesScreen extends StatelessWidget {
                                     ),
                                     customIcon(
                                       Assets.svg.icoArrowRight.path,
-                                      size: 18.adaptSize,
-                                      margin: EdgeInsets.only(bottom: 1.v),
+                                      size: 18.w,
+                                      margin: EdgeInsets.only(bottom: 1.h),
                                     ),
                                   ],
                                 ),
                                 SizedBox(
-                                  height: 218.v,
+                                  height: 218.h,
                                   child: Obx(
                                     () => ListView.separated(
                                       padding: EdgeInsets.fromLTRB(
-                                          6.h, 26.v, 10.h, 2.v),
+                                          6.w, 26.h, 10.w, 2.h),
                                       scrollDirection: Axis.horizontal,
                                       separatorBuilder: (context, index) {
-                                        return SizedBox(width: 25.h);
+                                        return SizedBox(width: 25.w);
                                       },
                                       itemCount: controller.scheduleModel.value
                                           .ages.value.length,

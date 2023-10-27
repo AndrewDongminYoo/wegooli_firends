@@ -30,9 +30,9 @@ class SendInvitationDialog extends StatelessWidget {
       content: SingleChildScrollView(
         child: Container(
           margin: EdgeInsets.only(
-            left: 16.h,
-            right: 16.h,
-            bottom: 313.v,
+            left: 16.w,
+            right: 16.w,
+            bottom: 313.h,
           ),
           decoration: BoxDecoration(
             color: lightTheme.onPrimaryContainer,
@@ -45,45 +45,45 @@ class SendInvitationDialog extends StatelessWidget {
             children: [
               customIcon(
                 Assets.svg.icoCloseRound.path,
-                size: 15.adaptSize,
+                size: 15.w,
                 alignment: Alignment.centerRight,
                 margin: EdgeInsets.only(
-                  top: 20.v,
-                  right: 20.h,
+                  top: 20.h,
+                  right: 20.w,
                 ),
                 onTap: context.safePop,
               ),
               Padding(
                 padding: EdgeInsets.only(
-                  left: 20.h,
-                  top: 6.v,
+                  left: 20.w,
+                  top: 6.h,
                 ),
                 child: Text(
                   '초대 코드',
                   style: textTheme.titleMedium!
-                      .copyWith(fontSize: TextSize.lg.fSize),
+                      .copyWith(fontSize: TextSize.lg.sp),
                 ),
               ),
               CustomTextFormField(
                 controller: controller.invitationCode,
                 margin: EdgeInsets.only(
-                  left: 20.h,
-                  top: 22.v,
-                  right: 20.h,
+                  left: 20.w,
+                  top: 22.h,
+                  right: 20.w,
                 ),
                 hintText: 'asdf-asdf-asdf-asdf',
                 hintStyle: textTheme.bodyLarge!.tint(const Color(0xFF8E9199)),
                 textInputAction: TextInputAction.done,
                 alignment: Alignment.center,
                 suffix: Container(
-                    margin: EdgeInsets.fromLTRB(30.h, 12.v, 12.h, 12.v),
+                    margin: EdgeInsets.fromLTRB(30.w, 12.h, 12.w, 12.h),
                     child: CustomImageView(
                         svgPath: Assets.svg.icoEyeCrossedOut.path)),
-                suffixConstraints: BoxConstraints(maxHeight: 48.v),
+                suffixConstraints: BoxConstraints(maxHeight: 48.h),
                 contentPadding:
-                    EdgeInsets.only(left: 12.h, top: 14.v, bottom: 14.v),
+                    EdgeInsets.only(left: 12.w, top: 14.h, bottom: 14.h),
               ),
-              SizedBox(height: 20.v),
+              SizedBox(height: 20.h),
               CustomElevatedButton(
                 onTap: () {
                   final content = controller.invitationCode.text;
@@ -101,7 +101,7 @@ class SendInvitationDialog extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.vertical(
                       bottom: Radius.circular(
-                        10.h,
+                        10.w,
                       ),
                     ),
                   ),

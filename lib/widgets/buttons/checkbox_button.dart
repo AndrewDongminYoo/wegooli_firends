@@ -102,8 +102,8 @@ class _CustomCheckboxButtonState extends State<CustomCheckboxButton> {
       );
 
   Widget get checkboxWidget => SizedBox(
-        height: widget.iconSize ?? 20.h,
-        width: widget.iconSize ?? 20.h,
+        height: widget.iconSize ?? 20.w,
+        width: widget.iconSize ?? 20.w,
         child: Checkbox(
           activeColor: AppColors.primaryPressed,
           checkColor: AppColors.primaryInverted,

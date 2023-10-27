@@ -30,11 +30,11 @@ class ViewScheduledDateDialog extends StatelessWidget {
       content: Container(
         width: mediaQueryData.size.width,
         margin: EdgeInsets.only(
-          left: 16.h,
-          right: 16.h,
-          bottom: 238.v,
+          left: 16.w,
+          right: 16.w,
+          bottom: 238.h,
         ),
-        padding: EdgeInsets.all(20.h),
+        padding: EdgeInsets.all(20.w),
         decoration: BoxDecoration(
           color: lightTheme.onPrimaryContainer,
           borderRadius: BorderRadiusStyle.circleBorder10,
@@ -46,20 +46,20 @@ class ViewScheduledDateDialog extends StatelessWidget {
             children: [
               customIcon(
                 Assets.svg.icoCloseRound.path,
-                size: 15.adaptSize,
+                size: 15.w,
                 alignment: Alignment.centerRight,
                 onTap: context.safePop,
               ),
-              SizedBox(height: 6.v),
+              SizedBox(height: 6.h),
               Text('일정 확인',
                   style: textTheme.titleMedium!
-                      .copyWith(fontSize: TextSize.lg.fSize)),
-              SizedBox(height: 22.v),
+                      .copyWith(fontSize: TextSize.lg.sp)),
+              SizedBox(height: 22.h),
               Obx(() => ListView.separated(
                   physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
                   separatorBuilder: (context, index) {
-                    return SizedBox(height: 10.v);
+                    return SizedBox(height: 10.h);
                   },
                   itemCount:
                       controller.scheduledDate.value.listItems.value.length,
@@ -68,7 +68,7 @@ class ViewScheduledDateDialog extends StatelessWidget {
                         controller.scheduledDate.value.listItems.value[index];
                     return ListItemWidget(model);
                   })),
-              SizedBox(height: 10.v)
+              SizedBox(height: 10.h)
             ],
           ),
         ),

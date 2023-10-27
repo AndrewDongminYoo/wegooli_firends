@@ -20,7 +20,7 @@ class ContactUsHistoryScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: CustomAppBar(
-          leadingWidth: 34.h,
+          leadingWidth: 34.w,
           leading: const GetBackIcon(),
           title: const AppbarTitle(text: '문의하기'),
         ),
@@ -30,7 +30,7 @@ class ContactUsHistoryScreen extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(
-                  height: 65.v,
+                  height: 65.h,
                   width: double.maxFinite,
                   child: TabBar(
                     controller: controller.tabController,
@@ -41,14 +41,14 @@ class ContactUsHistoryScreen extends StatelessWidget {
                       Tab(
                         child: Container(
                           padding: EdgeInsets.symmetric(
-                            horizontal: 46.h,
-                            vertical: 11.v,
+                            horizontal: 46.w,
+                            vertical: 11.h,
                           ),
                           decoration: BoxDecoration(
                             border: Border(
                               bottom: BorderSide(
                                 color: lightTheme.primary,
-                                width: 2.h,
+                                width: 2.w,
                               ),
                             ),
                           ),
@@ -56,7 +56,7 @@ class ContactUsHistoryScreen extends StatelessWidget {
                             children: [
                               const Text('전체'),
                               Padding(
-                                padding: EdgeInsets.only(top: 5.v),
+                                padding: EdgeInsets.only(top: 5.h),
                                 child: const Text('10'),
                               ),
                             ],
@@ -66,14 +66,14 @@ class ContactUsHistoryScreen extends StatelessWidget {
                       Tab(
                         child: Container(
                           padding: EdgeInsets.symmetric(
-                            horizontal: 30.h,
-                            vertical: 11.v,
+                            horizontal: 30.w,
+                            vertical: 11.h,
                           ),
                           decoration: BoxDecoration(
                             border: Border(
                               bottom: BorderSide(
                                 color: const Color(0x33FFE142),
-                                width: 1.h,
+                                width: 1.w,
                               ),
                             ),
                           ),
@@ -81,7 +81,7 @@ class ContactUsHistoryScreen extends StatelessWidget {
                             children: [
                               const Text('답변 완료'),
                               Padding(
-                                padding: EdgeInsets.only(top: 6.v),
+                                padding: EdgeInsets.only(top: 6.h),
                                 child: const Text('10'),
                               ),
                             ],
@@ -91,14 +91,14 @@ class ContactUsHistoryScreen extends StatelessWidget {
                       Tab(
                         child: Container(
                           padding: EdgeInsets.symmetric(
-                            horizontal: 39.h,
-                            vertical: 11.v,
+                            horizontal: 39.w,
+                            vertical: 11.h,
                           ),
                           decoration: BoxDecoration(
                             border: Border(
                               bottom: BorderSide(
                                 color: const Color(0x33FFE142),
-                                width: 1.h,
+                                width: 1.w,
                               ),
                             ),
                           ),
@@ -106,7 +106,7 @@ class ContactUsHistoryScreen extends StatelessWidget {
                             children: [
                               const Text('처리중'),
                               Padding(
-                                padding: EdgeInsets.only(top: 5.v),
+                                padding: EdgeInsets.only(top: 5.h),
                                 child: const Text('10'),
                               ),
                             ],
@@ -117,7 +117,7 @@ class ContactUsHistoryScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 592.v,
+                  height: 592.h,
                   child: TabBarView(
                     controller: controller.tabController,
                     children: const [

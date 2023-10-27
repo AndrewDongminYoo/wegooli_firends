@@ -32,7 +32,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       elevation: 0,
-      toolbarHeight: height ?? 55.v,
+      toolbarHeight: height ?? 55.h,
       automaticallyImplyLeading: false,
       backgroundColor: Colors.transparent,
       flexibleSpace: _flexibleSpace,
@@ -48,54 +48,54 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Size get preferredSize => Size(
         mediaQueryData.size.width,
-        height ?? 55.v,
+        height ?? 55.h,
       );
   Container? get _flexibleSpace {
     switch (styleType) {
       case Style.bgOutline:
         return Container(
-          height: 45.v,
+          height: 45.h,
           width: double.maxFinite,
           decoration: BoxDecoration(
             border: Border(
               bottom: BorderSide(
                 color: const Color(0x33A4A8AF),
-                width: 1.h,
+                width: 1.w,
               ),
             ),
           ),
         );
       case Style.bgOutline_1:
         return Container(
-          height: 45.v,
+          height: 45.h,
           width: double.maxFinite,
           decoration: BoxDecoration(
             color: const Color(0xFFFFFFFF),
             border: Border(
               bottom: BorderSide(
                 color: const Color(0x33A4A8AF),
-                width: 1.h,
+                width: 1.w,
               ),
             ),
           ),
         );
       case Style.bgOutline_2:
         return Container(
-          height: 45.v,
+          height: 45.h,
           width: double.maxFinite,
           decoration: BoxDecoration(
             color: const Color(0xFFFFFFFF),
             border: Border(
               bottom: BorderSide(
                 color: const Color(0xFFB9BCC3),
-                width: 1.h,
+                width: 1.w,
               ),
             ),
           ),
         );
       case Style.bgFill:
         return Container(
-          height: 50.v,
+          height: 50.h,
           width: double.maxFinite,
           decoration: const BoxDecoration(
             color: Color(0xFFFFFFFF),
@@ -122,9 +122,9 @@ class GetBackIcon extends StatelessWidget {
     return CustomImageView(
       svgPath: Assets.svg.icoArrowLeft.path,
       margin: EdgeInsets.only(
-        left: 16.h,
-        top: 19.v,
-        bottom: 18.v,
+        left: 16.w,
+        top: 19.h,
+        bottom: 18.h,
       ),
       onTap: context.safePop,
     );

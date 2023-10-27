@@ -9,7 +9,7 @@ import '/widgets/image_view.dart';
 CustomImageView gasStationIcon({required int level, VoidCallback? onTap}) {
   return customIcon(
     _getAssetSvgImage(level),
-    size: 26.adaptSize,
+    size: 26.w,
     onTap: onTap,
   );
 }

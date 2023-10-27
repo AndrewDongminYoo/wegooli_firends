@@ -48,7 +48,7 @@ class CustomIconButton extends StatelessWidget {
               decoration: decoration ??
                   BoxDecoration(
                     color: const Color(0xFF4D598D),
-                    borderRadius: BorderRadius.circular(1.h),
+                    borderRadius: BorderRadius.circular(1.w),
                   ),
               child: child,
             ),
@@ -62,10 +62,10 @@ class CustomIconButton extends StatelessWidget {
 extension IconButtonStyleHelper on CustomIconButton {
   static BoxDecoration get fillGray => BoxDecoration(
         color: const Color(0xFFB9BCC3),
-        borderRadius: BorderRadius.circular(24.h),
+        borderRadius: BorderRadius.circular(24.w),
       );
   static BoxDecoration get fillBlueGrayTL5 => BoxDecoration(
         color: const Color(0x33A4A8AF),
-        borderRadius: BorderRadius.circular(5.h),
+        borderRadius: BorderRadius.circular(5.w),
       );
 }

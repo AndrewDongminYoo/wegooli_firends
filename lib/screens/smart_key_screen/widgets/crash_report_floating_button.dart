@@ -30,9 +30,9 @@ class CrashReportFAB extends StatelessWidget {
         children: [
           customIcon(
             Assets.svg.icoEdit.path,
-            size: 30.adaptSize,
+            size: 30.w,
           ),
-          SizedBox(height: 1.v),
+          SizedBox(height: 1.h),
           Text(
             '사고 접수',
             style: textTheme.bodySmall!.tint(Colors.black).bold,

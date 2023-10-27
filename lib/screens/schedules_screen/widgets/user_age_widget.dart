@@ -22,7 +22,7 @@ class UserAgeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 17.h,
+      width: 17.w,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
@@ -36,7 +36,7 @@ class UserAgeWidget extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 19.v),
+          SizedBox(height: 19.h),
           Obx(
             () => Text(
               userAgeModel.userMonth!.value,
@@ -46,8 +46,8 @@ class UserAgeWidget extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.only(
-              top: 19.v,
-              right: 3.h,
+              top: 19.h,
+              right: 3.w,
             ),
             child: Obx(
               () => Text(
@@ -59,8 +59,8 @@ class UserAgeWidget extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.only(
-              top: 18.v,
-              right: 1.h,
+              top: 18.h,
+              right: 1.w,
             ),
             child: Obx(
               () => Text(
@@ -70,7 +70,7 @@ class UserAgeWidget extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 19.v),
+          SizedBox(height: 19.h),
           Obx(
             () => Text(
               userAgeModel.thirtyone!.value,
@@ -78,7 +78,7 @@ class UserAgeWidget extends StatelessWidget {
               style: textTheme.bodySmall,
             ),
           ),
-          SizedBox(height: 18.v),
+          SizedBox(height: 18.h),
           Obx(
             () => Text(
               userAgeModel.thirtytwo!.value,

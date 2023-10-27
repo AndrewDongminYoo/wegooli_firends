@@ -34,8 +34,8 @@ class ListItemWidget extends StatelessWidget {
           boxShadow: [
             BoxShadow(
               color: Colors.black.withOpacity(0.1),
-              spreadRadius: 2.h,
-              blurRadius: 2.h,
+              spreadRadius: 2.w,
+              blurRadius: 2.w,
               offset: const Offset(2, 2),
             ),
           ],
@@ -45,21 +45,21 @@ class ListItemWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              height: 75.v,
-              width: 9.h,
+              height: 75.h,
+              width: 9.w,
               decoration: BoxDecoration(
                 color: lightTheme.primary,
                 borderRadius: BorderRadius.horizontal(
-                  left: Radius.circular(10.h),
+                  left: Radius.circular(10.w),
                 ),
               ),
             ),
             Expanded(
               child: Padding(
                 padding: EdgeInsets.only(
-                  left: 10.h,
-                  top: 15.v,
-                  bottom: 15.v,
+                  left: 10.w,
+                  top: 15.h,
+                  bottom: 15.h,
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -71,7 +71,7 @@ class ListItemWidget extends StatelessWidget {
                         style: textTheme.bodySmall,
                       ),
                     ),
-                    SizedBox(height: 8.v),
+                    SizedBox(height: 8.h),
                     Text(
                       '8/16 (수) 15:20 ~ 8/17(목) 14:00',
                       style: textTheme.bodyLarge,
@@ -82,11 +82,11 @@ class ListItemWidget extends StatelessWidget {
             ),
             customIcon(
               Assets.svg.icoMenuVertical.path,
-              size: 18.adaptSize,
+              size: 18.w,
               margin: EdgeInsets.only(
-                left: 27.h,
-                top: 6.v,
-                bottom: 51.v,
+                left: 27.w,
+                top: 6.h,
+                bottom: 51.h,
               ),
             ),
           ],

@@ -22,7 +22,7 @@ class NoticesScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: CustomAppBar(
-            leadingWidth: 34.h,
+            leadingWidth: 34.w,
             leading: const GetBackIcon(),
             title: const AppbarTitle(text: '공지사항')),
         body: SizedBox(
@@ -32,8 +32,8 @@ class NoticesScreen extends StatelessWidget {
               Container(
                 width: double.maxFinite,
                 padding: EdgeInsets.symmetric(
-                  horizontal: 16.h,
-                  vertical: 15.v,
+                  horizontal: 16.w,
+                  vertical: 15.h,
                 ),
                 decoration: const BoxDecoration(
                   color: Color(0x33FFE142),
@@ -46,7 +46,7 @@ class NoticesScreen extends StatelessWidget {
                       '[공지] 산모퉁이를 돌아 논가 외딴 우물을 홀로 찾아가선',
                       style: textTheme.titleSmall,
                     ),
-                    SizedBox(height: 3.v),
+                    SizedBox(height: 3.h),
                     Text('2023.08.23',
                         style: textTheme.bodySmall!.copyWith(
                           color: Palette.fontBlack66,
@@ -60,12 +60,12 @@ class NoticesScreen extends StatelessWidget {
                       shrinkWrap: true,
                       separatorBuilder: (context, index) {
                         return Padding(
-                          padding: EdgeInsets.symmetric(vertical: 0.5.v),
+                          padding: EdgeInsets.symmetric(vertical: 0.5.h),
                           child: SizedBox(
-                            width: 329.h,
+                            width: 329.w,
                             child: Divider(
-                              height: 1.v,
-                              thickness: 1.v,
+                              height: 1.h,
+                              thickness: 1.h,
                               color: const Color(0x33A4A8AF),
                             ),
                           ),

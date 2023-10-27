@@ -22,28 +22,28 @@ class SignupCompleteScreen extends StatelessWidget {
       child: Scaffold(
         body: Container(
           width: double.maxFinite,
-          padding: EdgeInsets.symmetric(vertical: 50.v),
+          padding: EdgeInsets.symmetric(vertical: 50.h),
           child: Column(
             children: [
-              SizedBox(height: 159.v),
+              SizedBox(height: 159.h),
               Expanded(
                 child: SingleChildScrollView(
                   child: Padding(
                     padding: EdgeInsets.only(
-                      left: 103.h,
-                      right: 103.h,
-                      bottom: 5.v,
+                      left: 103.w,
+                      right: 103.w,
+                      bottom: 5.h,
                     ),
                     child: Column(
                       children: [
                         CustomImageView(
                           svgPath: Assets.svg.imgGooliHappy.path,
-                          height: 108.v,
-                          width: 135.h,
+                          height: 108.h,
+                          width: 135.w,
                         ),
-                        SizedBox(height: 32.v),
+                        SizedBox(height: 32.h),
                         SizedBox(
-                          width: 153.h,
+                          width: 153.w,
                           child: Text(
                             '회원가입이\n완료되었습니다.',
                             maxLines: 2,
@@ -65,9 +65,9 @@ class SignupCompleteScreen extends StatelessWidget {
           onTap: () => context.goNamed(HomePageScreen.routeName),
           text: '시작하기',
           margin: EdgeInsets.only(
-            left: 16.h,
-            right: 16.h,
-            bottom: 50.v,
+            left: 16.w,
+            right: 16.w,
+            bottom: 50.h,
           ),
         ),
       ),

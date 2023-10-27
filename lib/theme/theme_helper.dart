@@ -107,10 +107,10 @@ ThemeData get theme {
         backgroundColor: Colors.transparent,
         side: BorderSide(
           color: const Color(0x33A4A8AF),
-          width: 1.h,
+          width: 1.w,
         ),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(14.h),
+          borderRadius: BorderRadius.circular(14.w),
         ),
         visualDensity: buttonDensity,
         padding: EdgeInsets.zero,
@@ -120,7 +120,7 @@ ThemeData get theme {
       style: ElevatedButton.styleFrom(
         backgroundColor: lightTheme.primary,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(26.h),
+          borderRadius: BorderRadius.circular(26.w),
         ),
         visualDensity: buttonDensity,
         padding: EdgeInsets.zero,
@@ -139,7 +139,7 @@ ThemeData get theme {
       backgroundColor: lightTheme.primary,
       foregroundColor: Colors.black,
       enableFeedback: true,
-      sizeConstraints: BoxConstraints(minHeight: 70.v, minWidth: 70.h),
+      sizeConstraints: BoxConstraints(minHeight: 70.h, minWidth: 70.w),
     ),
     dividerTheme: const DividerThemeData(
       thickness: 1,

@@ -27,7 +27,7 @@ class ContactUsHistoryPage extends StatelessWidget {
               physics: const BouncingScrollPhysics(),
               shrinkWrap: true,
               separatorBuilder: (context, index) {
-                return SizedBox(height: 1.v);
+                return SizedBox(height: 1.h);
               },
               itemCount: controller.history.value.items.value.length,
               itemBuilder: (context, index) {

@@ -16,8 +16,8 @@ class UntouchableMask extends StatelessWidget {
     return Align(
       child: Container(
         padding: EdgeInsets.symmetric(
-          horizontal: 16.h,
-          vertical: 50.v,
+          horizontal: 16.w,
+          vertical: 50.h,
         ),
         decoration: const BoxDecoration(
           color: Color(0x33A4A8AF),
@@ -26,31 +26,31 @@ class UntouchableMask extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            SizedBox(height: 100.v),
+            SizedBox(height: 100.h),
             CustomElevatedButton(
               onTap: () => context.showSnackbar(
                 message: '홍길동님이 사용 중 입니다.',
                 type: SnackType.help,
               ),
-              height: 44.v,
-              width: 189.h,
+              height: 44.h,
+              width: 189.w,
               text: '홍길동님이 사용 중 입니다.',
               buttonStyle: ElevatedButton.styleFrom(
                 backgroundColor: Palette.fontBlack66,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(22.h),
+                  borderRadius: BorderRadius.circular(22.w),
                 ),
               ).noEffect,
               buttonTextStyle: textTheme.bodyLarge!
                   .copyWith(color: lightTheme.onPrimaryContainer),
             ),
-            SizedBox(height: 122.v),
+            SizedBox(height: 122.h),
             Align(
               alignment: Alignment.centerRight,
               child: Container(
                 padding: EdgeInsets.symmetric(
-                  horizontal: 12.h,
-                  vertical: 10.v,
+                  horizontal: 12.w,
+                  vertical: 10.h,
                 ),
               ),
             ),

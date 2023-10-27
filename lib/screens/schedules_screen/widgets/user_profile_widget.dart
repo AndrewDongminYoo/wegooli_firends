@@ -24,27 +24,27 @@ class UserProfileWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 50.h,
+      width: 50.w,
       child: Column(
         children: [
           Container(
-            height: 50.adaptSize,
-            width: 50.adaptSize,
-            padding: EdgeInsets.all(4.h),
+            height: 50.w,
+            width: 50.w,
+            padding: EdgeInsets.all(4.w),
             decoration: BoxDecoration(
               color: lightTheme.primary,
               borderRadius: BorderRadiusStyle.circleBorder25,
             ),
             child: customAvatar(
               Assets.images.placeholder.path,
-              size: 42.adaptSize,
+              size: 42.w,
               radius: BorderRadius.circular(
-                21.h,
+                21.w,
               ),
               alignment: Alignment.center,
             ),
           ),
-          SizedBox(height: 4.v),
+          SizedBox(height: 4.h),
           Obx(
             () => Text(
               userProfile.userName!.value,

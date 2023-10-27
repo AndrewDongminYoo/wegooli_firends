@@ -20,7 +20,7 @@ class CarStatusMessage extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(left: 5.h),
+          padding: EdgeInsets.only(left: 5.w),
           child: Text(
             '|',
             style: textTheme.bodySmall!.copyWith(
@@ -29,22 +29,22 @@ class CarStatusMessage extends StatelessWidget {
           ),
         ),
         Container(
-          height: 4.adaptSize,
-          width: 4.adaptSize,
+          height: 4.w,
+          width: 4.w,
           margin: EdgeInsets.only(
-            left: 5.h,
-            top: 5.v,
-            bottom: 5.v,
+            left: 5.w,
+            top: 5.h,
+            bottom: 5.h,
           ),
           decoration: BoxDecoration(
             color: const Color(0xFFE82121),
             borderRadius: BorderRadius.circular(
-              2.h,
+              2.w,
             ),
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(left: 2.h),
+          padding: EdgeInsets.only(left: 2.w),
           child: Text(
             '홍길동님이 사용중입니다.',
             style: textTheme.bodySmall,

@@ -78,23 +78,23 @@ class CustomDropDown extends StatelessWidget {
         hintStyle:
             hintStyle ?? textTheme.bodyLarge!.tint(const Color(0xFFB0B2BC)),
         isDense: true,
-        contentPadding: contentPadding ?? EdgeInsets.symmetric(vertical: 9.v),
+        contentPadding: contentPadding ?? EdgeInsets.symmetric(vertical: 9.h),
         border: UnderlineInputBorder(
-          borderRadius: BorderRadius.circular(borderRadius ?? 4.h),
+          borderRadius: BorderRadius.circular(borderRadius ?? 4.w),
           borderSide: BorderSide(
             width: borderWidth ?? 1.0,
             color: borderColor ?? const Color(0xFFB0B2BC),
           ),
         ),
         enabledBorder: UnderlineInputBorder(
-          borderRadius: BorderRadius.circular(borderRadius ?? 4.h),
+          borderRadius: BorderRadius.circular(borderRadius ?? 4.w),
           borderSide: BorderSide(
             width: borderWidth ?? 1.0,
             color: borderColor ?? const Color(0xFFB0B2BC),
           ),
         ),
         focusedBorder: UnderlineInputBorder(
-          borderRadius: BorderRadius.circular(borderRadius ?? 4.h),
+          borderRadius: BorderRadius.circular(borderRadius ?? 4.w),
           borderSide: BorderSide(
             width: borderWidth ?? 1.0,
             color: borderColor ?? const Color(0xFFB9BCC3),

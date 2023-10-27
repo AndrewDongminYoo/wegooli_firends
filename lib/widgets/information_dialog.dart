@@ -49,7 +49,7 @@ class InformationalDialog extends StatelessWidget {
               textAlign: TextAlign.left,
             )
           : null,
-      titlePadding: EdgeInsets.only(top: 20.v, left: 20.h),
+      titlePadding: EdgeInsets.only(top: 20.h, left: 20.w),
       titleTextStyle: AppTextStyle(
         fontSize: TextSize.lg,
         fontWeight: FontWeight.bold,
@@ -65,7 +65,7 @@ class InformationalDialog extends StatelessWidget {
         maxLines: maxLines,
         textAlign: maxLines > 2 ? TextAlign.left : TextAlign.center,
       ),
-      contentPadding: EdgeInsets.all(20.adaptSize),
+      contentPadding: EdgeInsets.all(20.w),
       contentTextStyle: maxLines > 2
           ? AppTextStyle(
               fontSize: TextSize.md,
@@ -88,8 +88,8 @@ class InformationalDialog extends StatelessWidget {
           Row(
             children: [
               CustomElevatedButton(
-                width: 145.h,
-                height: 52.v,
+                width: 145.w,
+                height: 52.h,
                 text: cancelText ?? '취소',
                 buttonStyle: ElevatedButton.styleFrom(
                   backgroundColor: Palette.gray400,
@@ -98,12 +98,12 @@ class InformationalDialog extends StatelessWidget {
                   ),
                 ).noEffect,
                 buttonTextStyle: textTheme.titleMedium!
-                    .copyWith(fontSize: TextSize.md.fSize),
+                    .copyWith(fontSize: TextSize.md.sp),
                 onTap: cancelCallback ?? () => GoRouter.of(context).pop(false),
               ),
               CustomElevatedButton(
-                width: 145.h,
-                height: 52.v,
+                width: 145.w,
+                height: 52.h,
                 text: confirmText ?? '확인',
                 buttonStyle: ElevatedButton.styleFrom(
                         backgroundColor: lightTheme.primary,
@@ -111,7 +111,7 @@ class InformationalDialog extends StatelessWidget {
                             borderRadius: BorderRadiusStyle.customBorderBR10))
                     .noEffect,
                 buttonTextStyle: textTheme.titleMedium!
-                    .copyWith(fontSize: TextSize.md.fSize),
+                    .copyWith(fontSize: TextSize.md.sp),
                 onTap: confirmCallback ?? () => GoRouter.of(context).pop(true),
               ),
             ],
@@ -124,7 +124,7 @@ class InformationalDialog extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadiusStyle.customBorderB10))
                 .noEffect,
-            height: 53.v,
+            height: 53.h,
             onTap: confirmCallback ?? () => GoRouter.of(context).pop(true),
             buttonTextStyle: AppTextStyle(
               fontWeight: FontWeight.bold,

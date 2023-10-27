@@ -21,20 +21,20 @@ class HomePageScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: const Color(0xFFF8F8F8),
         appBar: CustomAppBar(
-          height: 45.v,
-          leadingWidth: 64.h,
+          height: 45.h,
+          leadingWidth: 64.w,
           leading: CustomImageView(
             imagePath: Assets.brand.imgFriendsKo.path,
             margin: EdgeInsets.only(
-              left: 15.h,
-              top: 13.v,
-              bottom: 13.v,
+              left: 15.w,
+              top: 13.h,
+              bottom: 13.h,
             ),
           ),
           actions: [
             CustomImageView(
               svgPath: Assets.svg.icoMenu.path,
-              margin: EdgeInsets.fromLTRB(9.h, 13.v, 9.h, 12.v),
+              margin: EdgeInsets.fromLTRB(9.w, 13.h, 9.w, 12.h),
             ),
           ],
           styleType: Style.bgOutline_1,
@@ -46,8 +46,8 @@ class HomePageScreen extends StatelessWidget {
               Container(
                 width: double.maxFinite,
                 padding: EdgeInsets.symmetric(
-                  horizontal: 16.h,
-                  vertical: 8.v,
+                  horizontal: 16.w,
+                  vertical: 8.h,
                 ),
                 decoration: const BoxDecoration(
                   color: Color(0xFFE5FAFF),
@@ -57,8 +57,8 @@ class HomePageScreen extends StatelessWidget {
                   children: [
                     Padding(
                       padding: EdgeInsets.only(
-                        top: 5.v,
-                        bottom: 3.v,
+                        top: 5.h,
+                        bottom: 3.h,
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -67,9 +67,9 @@ class HomePageScreen extends StatelessWidget {
                             '신규 이벤트',
                             style: textTheme.bodySmall!.tint(Colors.black),
                           ),
-                          SizedBox(height: 4.v),
+                          SizedBox(height: 4.h),
                           SizedBox(
-                            width: 140.h,
+                            width: 140.w,
                             child: Text(
                               '위굴리 프렌즈를 이용하면\n할인 혜택이!',
                               maxLines: 2,
@@ -81,22 +81,22 @@ class HomePageScreen extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      height: 61.v,
-                      width: 96.h,
-                      margin: EdgeInsets.only(top: 3.v),
+                      height: 61.h,
+                      width: 96.w,
+                      margin: EdgeInsets.only(top: 3.h),
                       child: Stack(
                         alignment: Alignment.bottomRight,
                         children: [
                           CustomImageView(
                             svgPath: Assets.svg.imgTicket.path,
-                            height: 59.v,
-                            width: 89.h,
+                            height: 59.h,
+                            width: 89.w,
                             alignment: Alignment.topLeft,
                           ),
                           Align(
                             alignment: Alignment.bottomRight,
                             child: Container(
-                              padding: EdgeInsets.symmetric(horizontal: 8.h),
+                              padding: EdgeInsets.symmetric(horizontal: 8.w),
                               decoration: BoxDecoration(
                                 color: Colors.black.withOpacity(0.4),
                                 borderRadius: BorderRadiusStyle.circleBorder7,
@@ -105,7 +105,7 @@ class HomePageScreen extends StatelessWidget {
                                 '1/3',
                                 style: textTheme.bodySmall!.copyWith(
                                   color: lightTheme.onPrimaryContainer,
-                                  fontSize: TextSize.xxs.fSize,
+                                  fontSize: TextSize.xxs.sp,
                                 ),
                               ),
                             ),
@@ -118,20 +118,20 @@ class HomePageScreen extends StatelessWidget {
               ),
               Padding(
                 padding: EdgeInsets.only(
-                  left: 16.h,
-                  top: 16.v,
-                  right: 16.h,
+                  left: 16.w,
+                  top: 16.h,
+                  right: 16.w,
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: 10.h),
+                      padding: EdgeInsets.symmetric(horizontal: 10.w),
                       decoration: BoxDecoration(
                         color: lightTheme.onPrimaryContainer,
                         border: Border.all(
                           color: const Color(0x33A4A8AF),
-                          width: 1.h,
+                          width: 1.w,
                         ),
                         borderRadius: BorderRadiusStyle.circleBorder10,
                       ),
@@ -142,8 +142,8 @@ class HomePageScreen extends StatelessWidget {
                         children: [
                           Padding(
                             padding: EdgeInsets.only(
-                              left: 1.h,
-                              top: 13.v,
+                              left: 1.w,
+                              top: 13.h,
                             ),
                             child: Text(
                               '리더 신청',
@@ -155,36 +155,36 @@ class HomePageScreen extends StatelessWidget {
                           ),
                           Padding(
                             padding: EdgeInsets.only(
-                              left: 1.h,
-                              top: 4.v,
+                              left: 1.w,
+                              top: 4.h,
                             ),
                             child: Text(
                               '프렌즈 리더되기',
                               style: textTheme.bodySmall!.copyWith(
                                 fontFamily: FontFamily.nanumSquareRound,
                                 color: const Color(0xFFB0B2BC),
-                                fontSize: TextSize.xxs.fSize,
+                                fontSize: TextSize.xxs.sp,
                               ),
                             ),
                           ),
-                          SizedBox(height: 34.v),
+                          SizedBox(height: 34.h),
                           CustomImageView(
                             svgPath: Assets.svg.imgGooliFlag.path,
-                            height: 77.v,
-                            width: 84.h,
+                            height: 77.h,
+                            width: 84.w,
                             alignment: Alignment.centerRight,
                           ),
                         ],
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(left: 16.h),
-                      padding: EdgeInsets.symmetric(vertical: 13.v),
+                      margin: EdgeInsets.only(left: 16.w),
+                      padding: EdgeInsets.symmetric(vertical: 13.h),
                       decoration: BoxDecoration(
                         color: lightTheme.onPrimaryContainer,
                         border: Border.all(
                           color: const Color(0x33A4A8AF),
-                          width: 1.h,
+                          width: 1.w,
                         ),
                         borderRadius: BorderRadiusStyle.circleBorder10,
                       ),
@@ -194,7 +194,7 @@ class HomePageScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Padding(
-                            padding: EdgeInsets.only(left: 12.h),
+                            padding: EdgeInsets.only(left: 12.w),
                             child: Text(
                               '같이 쓰기',
                               style: textTheme.titleMedium!.copyWith(
@@ -205,23 +205,23 @@ class HomePageScreen extends StatelessWidget {
                           ),
                           Padding(
                             padding: EdgeInsets.only(
-                              left: 12.h,
-                              top: 4.v,
+                              left: 12.w,
+                              top: 4.h,
                             ),
                             child: Text(
                               '프렌즈 같이쓰기',
                               style: textTheme.bodySmall!.copyWith(
                                 fontFamily: FontFamily.nanumSquareRound,
                                 color: const Color(0xFFB0B2BC),
-                                fontSize: TextSize.xxs.fSize,
+                                fontSize: TextSize.xxs.sp,
                               ),
                             ),
                           ),
-                          SizedBox(height: 25.v),
+                          SizedBox(height: 25.h),
                           CustomImageView(
                             imagePath: Assets.images.imgGooli2.path,
-                            height: 70.v,
-                            width: 112.h,
+                            height: 70.h,
+                            width: 112.w,
                             alignment: Alignment.centerRight,
                           ),
                         ],
@@ -231,16 +231,16 @@ class HomePageScreen extends StatelessWidget {
                 ),
               ),
               Container(
-                margin: EdgeInsets.fromLTRB(16.h, 16.v, 16.h, 5.v),
+                margin: EdgeInsets.fromLTRB(16.w, 16.h, 16.w, 5.h),
                 padding: EdgeInsets.symmetric(
-                  horizontal: 12.h,
-                  vertical: 15.v,
+                  horizontal: 12.w,
+                  vertical: 15.h,
                 ),
                 decoration: BoxDecoration(
                   color: lightTheme.onPrimaryContainer,
                   border: Border.all(
                     color: const Color(0x33A4A8AF),
-                    width: 1.h,
+                    width: 1.w,
                   ),
                   borderRadius: BorderRadiusStyle.circleBorder10,
                 ),
@@ -249,7 +249,7 @@ class HomePageScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(bottom: 27.v),
+                      padding: EdgeInsets.only(bottom: 27.h),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -262,13 +262,13 @@ class HomePageScreen extends StatelessWidget {
                               ),
                             ),
                           ),
-                          SizedBox(height: 4.v),
+                          SizedBox(height: 4.h),
                           Text(
                             '장기렌트 문의',
                             style: textTheme.bodySmall!.copyWith(
                               fontFamily: FontFamily.nanumSquareRound,
                               color: const Color(0xFFB0B2BC),
-                              fontSize: TextSize.xxs.fSize,
+                              fontSize: TextSize.xxs.sp,
                             ),
                           ),
                         ],
@@ -276,12 +276,12 @@ class HomePageScreen extends StatelessWidget {
                     ),
                     CustomImageView(
                       imagePath: Assets.images.imgGooliHome.path,
-                      height: 58.v,
-                      width: 119.h,
+                      height: 58.h,
+                      width: 119.w,
                       margin: EdgeInsets.only(
-                        top: 3.v,
-                        right: 1.h,
-                        bottom: 2.v,
+                        top: 3.h,
+                        right: 1.w,
+                        bottom: 2.h,
                       ),
                     ),
                   ],

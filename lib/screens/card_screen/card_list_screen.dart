@@ -26,24 +26,24 @@ class CardListScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: CustomAppBar(
-          leadingWidth: 34.h,
+          leadingWidth: 34.w,
           leading: const GetBackIcon(),
           title: const AppbarTitle(text: '카드 등록'),
         ),
         body: SizedBox(
           width: mediaQueryData.size.width,
           child: SingleChildScrollView(
-            padding: EdgeInsets.only(top: 22.v),
+            padding: EdgeInsets.only(top: 22.h),
             child: Padding(
               padding: EdgeInsets.only(
-                left: 16.h,
-                right: 16.h,
-                bottom: 5.v,
+                left: 16.w,
+                right: 16.w,
+                bottom: 5.h,
               ),
               child: Column(
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(right: 1.h),
+                    padding: EdgeInsets.only(right: 1.w),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -59,16 +59,16 @@ class CardListScreen extends StatelessWidget {
                         ),
                         CustomImageView(
                           svgPath: Assets.svg.icoCloseGray.path,
-                          height: 18.adaptSize,
-                          width: 18.adaptSize,
+                          height: 18.w,
+                          width: 18.w,
                         ),
                       ],
                     ),
                   ),
                   Padding(
                     padding: EdgeInsets.only(
-                      top: 13.v,
-                      right: 1.h,
+                      top: 13.h,
+                      right: 1.w,
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -85,13 +85,13 @@ class CardListScreen extends StatelessWidget {
                         ),
                         CustomImageView(
                           svgPath: Assets.svg.icoCloseGray.path,
-                          height: 18.adaptSize,
-                          width: 18.adaptSize,
+                          height: 18.w,
+                          width: 18.w,
                         ),
                       ],
                     ),
                   ),
-                  SizedBox(height: 31.v),
+                  SizedBox(height: 31.h),
                   CustomElevatedButton(
                     text: '카드 추가',
                     onTap: () => context.goNamed(CardRegisterScreen.routeName),

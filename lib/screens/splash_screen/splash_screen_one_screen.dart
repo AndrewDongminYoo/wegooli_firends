@@ -35,23 +35,23 @@ class SplashScreenOne extends StatelessWidget {
             width: double.maxFinite,
             child: Column(
               children: [
-                SizedBox(height: 289.v),
+                SizedBox(height: 289.h),
                 Expanded(
                   child: SingleChildScrollView(
                     child: Padding(
                       padding: EdgeInsets.only(
-                        left: 94.h,
-                        right: 94.h,
-                        bottom: 360.v,
+                        left: 94.w,
+                        right: 94.w,
+                        bottom: 360.h,
                       ),
                       child: Column(
                         children: [
                           CustomImageView(
                             svgPath: Assets.svg.imgFriends.path,
-                            height: 33.v,
-                            width: 172.h,
+                            height: 33.h,
+                            width: 172.w,
                           ),
-                          SizedBox(height: 14.v),
+                          SizedBox(height: 14.h),
                           Text(
                             '우리가 만드는 카셰어링',
                             style: textTheme.titleSmall!.copyWith(

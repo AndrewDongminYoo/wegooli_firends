@@ -55,7 +55,7 @@ class CustomElevatedButton extends BaseButton {
   Widget get buildElevatedButtonWidget => StatefulBuilder(
         builder: (context, setState) {
           return Container(
-            height: height ?? 52.v,
+            height: height ?? 52.h,
             width: width ?? double.maxFinite,
             margin: margin,
             decoration: decoration,
@@ -76,7 +76,7 @@ class CustomElevatedButton extends BaseButton {
                       text,
                       style: buttonTextStyle ??
                           textTheme.titleMedium!
-                              .copyWith(fontSize: TextSize.lg.fSize),
+                              .copyWith(fontSize: TextSize.lg.sp),
                     ),
                 ],
               ),

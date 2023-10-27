@@ -64,13 +64,13 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 65.v,
+      height: 65.h,
       decoration: BoxDecoration(
         color: lightTheme.onPrimaryContainer,
         border: Border(
           top: BorderSide(
             color: const Color(0xFFF3F3F6),
-            width: 1.h,
+            width: 1.w,
           ),
         ),
       ),
@@ -90,15 +90,15 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
                 children: [
                   customIcon(
                     bottomMenuList[index].icon,
-                    size: 20.adaptSize,
+                    size: 20.w,
                     color: const Color(0xFFB0B2BC),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 7.v),
+                    padding: EdgeInsets.only(top: 7.h),
                     child: Text(
                       bottomMenuList[index].title ?? '',
                       style: textTheme.bodySmall!.copyWith(
-                        fontSize: TextSize.xxs.fSize,
+                        fontSize: TextSize.xxs.sp,
                         color: const Color(0xFFB0B2BC),
                       ),
                     ),
@@ -110,15 +110,15 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
                 children: [
                   customIcon(
                     bottomMenuList[index].activeIcon,
-                    size: 20.adaptSize,
+                    size: 20.w,
                     color: lightTheme.onPrimary,
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 7.v),
+                    padding: EdgeInsets.only(top: 7.h),
                     child: Text(
                       bottomMenuList[index].title ?? '',
                       style: textTheme.bodySmall!.copyWith(
-                        fontSize: TextSize.xxs.fSize,
+                        fontSize: TextSize.xxs.sp,
                         color: lightTheme.onPrimary,
                       ),
                     ),

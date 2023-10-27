@@ -315,33 +315,33 @@ class _LongPressableButtonState extends State<LongPressableButton>
       children: [
         Align(
           child: Container(
-            padding: EdgeInsets.all(5.h),
+            padding: EdgeInsets.all(5.w),
             decoration: BoxDecoration(
               // color: lightTheme.onPrimaryContainer,
               color: lightTheme.onPrimaryContainer,
               boxShadow: [
                 BoxShadow(
                   color: Colors.black.withOpacity(0.1),
-                  spreadRadius: 2.h,
-                  blurRadius: 2.h,
+                  spreadRadius: 2.w,
+                  blurRadius: 2.w,
                   offset: const Offset(2, 2),
                 ),
               ],
               borderRadius: BorderRadiusStyle.circleBorder65,
             ),
             child: Container(
-              height: 120.adaptSize,
-              width: 120.adaptSize,
+              height: 120.w,
+              width: 120.w,
               decoration: BoxDecoration(
                 color: animationStart
                     ? AppColors.primaryDefault
                     : AppColors.primaryInverted,
                 borderRadius: BorderRadius.circular(
-                  60.h,
+                  60.w,
                 ),
                 border: Border.all(
                   color: const Color(0x33A4A8AF),
-                  width: 1.h,
+                  width: 1.w,
                 ),
               ),
             ),
@@ -350,7 +350,7 @@ class _LongPressableButtonState extends State<LongPressableButton>
         Align(
           child: Padding(
             padding: EdgeInsets.symmetric(
-              horizontal: 42.h,
+              horizontal: 42.w,
             ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -366,7 +366,7 @@ class _LongPressableButtonState extends State<LongPressableButton>
                     BlendMode.srcIn,
                   ),
                 ),
-                SizedBox(height: 5.v),
+                SizedBox(height: 5.h),
                 Text(
                   widget.title ?? '',
                   style: textTheme.titleMedium!.bold,
@@ -415,22 +415,22 @@ LongPressableButton areYouSureWantToSinOut(BuildContext context) {
     animate: true,
     isThreeD: true,
     title: '문잠금',
-    height: 130.adaptSize,
-    width: 130.adaptSize,
-    borderRadius: 65.adaptSize,
+    height: 130.w,
+    width: 130.w,
+    borderRadius: 65.w,
     backgroundColor: lightTheme.onPrimaryContainer,
     boxShadow: [
       BoxShadow(
         color: Colors.black.withOpacity(0.1),
-        spreadRadius: 2.h,
-        blurRadius: 2.h,
+        spreadRadius: 2.w,
+        blurRadius: 2.w,
         offset: const Offset(2, 2),
       ),
     ],
     asset: ButtonAsset(
       Assets.svg.icoLocked.path,
-      height: 46.adaptSize,
-      width: 46.adaptSize,
+      height: 46.w,
+      width: 46.w,
     ),
   );
 }

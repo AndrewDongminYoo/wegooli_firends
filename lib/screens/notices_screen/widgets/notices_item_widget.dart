@@ -18,7 +18,7 @@ class NoticesItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 15.h),
+      padding: EdgeInsets.symmetric(horizontal: 15.w),
       decoration: BoxDecoration(color: lightTheme.onPrimaryContainer),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -26,8 +26,8 @@ class NoticesItemWidget extends StatelessWidget {
         children: [
           Padding(
             padding: EdgeInsets.only(
-              left: 1.h,
-              top: 15.v,
+              left: 1.w,
+              top: 15.h,
             ),
             child: Text(
               '[공지] 산모퉁이를 돌아 논가 외딴 우물을 홀로 찾아가선',
@@ -36,8 +36,8 @@ class NoticesItemWidget extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.only(
-              left: 1.h,
-              top: 3.v,
+              left: 1.w,
+              top: 3.h,
             ),
             child: Text(
               '2023.08.23',
@@ -46,7 +46,7 @@ class NoticesItemWidget extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 16.v),
+          SizedBox(height: 16.h),
           const Divider(),
         ],
       ),

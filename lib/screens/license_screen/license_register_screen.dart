@@ -29,8 +29,8 @@ class LicenseRegisterScreen extends StatelessWidget {
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: CustomAppBar(
-          height: 50.v,
-          leadingWidth: 34.h,
+          height: 50.h,
+          leadingWidth: 34.w,
           leading: const GetBackIcon(),
           title: const AppbarTitle(text: '운전면허 등록'),
         ),
@@ -38,34 +38,34 @@ class LicenseRegisterScreen extends StatelessWidget {
           width: double.maxFinite,
           child: Column(
             children: [
-              SizedBox(height: 8.v),
+              SizedBox(height: 8.h),
               Expanded(
                 child: SingleChildScrollView(
                   child: Padding(
-                    padding: EdgeInsets.only(bottom: 5.v),
+                    padding: EdgeInsets.only(bottom: 5.h),
                     child: UnfocusedForm(
                       canSubmit: controller.canSubmit,
                       children: [
                         Container(
-                          width: 360.h,
-                          height: 200.v,
+                          width: 360.w,
+                          height: 200.h,
                           padding: EdgeInsets.symmetric(
-                            horizontal: 49.h,
-                            vertical: 20.v,
+                            horizontal: 49.w,
+                            vertical: 20.h,
                           ),
                           clipBehavior: Clip.antiAlias,
                           decoration:
                               const BoxDecoration(color: Color(0xFFE2E8F6)),
                           child: CustomImageView(
                             imagePath: Assets.images.imgLicenseExample.path,
-                            width: 262.h,
-                            height: 160.v,
+                            width: 262.w,
+                            height: 160.h,
                           ),
                         ),
-                        SizedBox(height: 20.v),
+                        SizedBox(height: 20.h),
                         SizedBox(
-                          height: 58.v,
-                          width: 328.h,
+                          height: 58.h,
+                          width: 328.w,
                           child: Stack(
                             alignment: Alignment.topLeft,
                             children: [
@@ -75,16 +75,16 @@ class LicenseRegisterScreen extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsets.only(left: 19.h),
+                                      padding: EdgeInsets.only(left: 19.w),
                                       child: Text(
                                         '면허증 종류',
                                         style: textTheme.bodySmall,
                                       ),
                                     ),
-                                    SizedBox(height: 3.v),
+                                    SizedBox(height: 3.h),
                                     CustomDropDown(
                                       icon: Container(
-                                        margin: EdgeInsets.only(left: 30.h),
+                                        margin: EdgeInsets.only(left: 30.w),
                                         child: CustomImageView(
                                           svgPath: Assets.svg.icoCaretDown.path,
                                         ),
@@ -105,14 +105,14 @@ class LicenseRegisterScreen extends StatelessWidget {
                                 alignment: Alignment.topLeft,
                                 child: Container(
                                   padding: EdgeInsets.symmetric(
-                                    horizontal: 5.h,
-                                    vertical: 2.v,
+                                    horizontal: 5.w,
+                                    vertical: 2.h,
                                   ),
                                   decoration: BoxDecoration(
                                     color: const Color(0xFF464A70),
                                     border: Border.all(
                                       color: lightTheme.onPrimaryContainer,
-                                      width: 1.h,
+                                      width: 1.w,
                                     ),
                                     borderRadius:
                                         BorderRadiusStyle.circleBorder10,
@@ -121,7 +121,7 @@ class LicenseRegisterScreen extends StatelessWidget {
                                     'A',
                                     style: theme.textTheme.bodySmall!.copyWith(
                                       color: lightTheme.primary,
-                                      fontSize: 9.fSize,
+                                      fontSize: 9.sp,
                                     ),
                                   ),
                                 ),
@@ -131,16 +131,16 @@ class LicenseRegisterScreen extends StatelessWidget {
                         ),
                         Padding(
                           padding: EdgeInsets.only(
-                            left: 16.h,
-                            top: 30.v,
-                            right: 16.h,
+                            left: 16.w,
+                            top: 30.h,
+                            right: 16.w,
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               SizedBox(
-                                height: 58.v,
-                                width: 160.h,
+                                height: 58.h,
+                                width: 160.w,
                                 child: Stack(
                                   alignment: Alignment.topLeft,
                                   children: [
@@ -152,24 +152,24 @@ class LicenseRegisterScreen extends StatelessWidget {
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsets.only(left: 19.h),
+                                                EdgeInsets.only(left: 19.w),
                                             child: Text(
                                               '면허증 번호',
                                               style: theme.textTheme.bodySmall,
                                             ),
                                           ),
-                                          SizedBox(height: 3.v),
+                                          SizedBox(height: 3.h),
                                           Container(
-                                            width: 160.h,
+                                            width: 160.w,
                                             padding: EdgeInsets.symmetric(
-                                              vertical: 9.v,
+                                              vertical: 9.h,
                                             ),
                                             decoration: BoxDecoration(
                                               border: Border(
                                                 bottom: BorderSide(
                                                   color:
                                                       const Color(0xFFB0B2BC),
-                                                  width: 1.h,
+                                                  width: 1.w,
                                                 ),
                                               ),
                                             ),
@@ -188,7 +188,7 @@ class LicenseRegisterScreen extends StatelessWidget {
                                                 ),
                                                 customIcon(
                                                   Assets.svg.icoCaretDown.path,
-                                                  size: 18.adaptSize,
+                                                  size: 18.w,
                                                 ),
                                               ],
                                             ),
@@ -200,15 +200,15 @@ class LicenseRegisterScreen extends StatelessWidget {
                                       alignment: Alignment.topLeft,
                                       child: Container(
                                         padding: EdgeInsets.symmetric(
-                                          horizontal: 4.h,
-                                          vertical: 2.v,
+                                          horizontal: 4.w,
+                                          vertical: 2.h,
                                         ),
                                         decoration: BoxDecoration(
                                           color: const Color(0xFF464A70),
                                           border: Border.all(
                                             color: theme
                                                 .colorScheme.onPrimaryContainer,
-                                            width: 1.h,
+                                            width: 1.w,
                                           ),
                                           borderRadius:
                                               BorderRadiusStyle.circleBorder10,
@@ -218,7 +218,7 @@ class LicenseRegisterScreen extends StatelessWidget {
                                           style: theme.textTheme.bodySmall!
                                               .copyWith(
                                             color: lightTheme.primary,
-                                            fontSize: 9.fSize,
+                                            fontSize: 9.sp,
                                           ),
                                         ),
                                       ),
@@ -227,16 +227,16 @@ class LicenseRegisterScreen extends StatelessWidget {
                                 ),
                               ),
                               CustomDropDown(
-                                width: 160.h,
+                                width: 160.w,
                                 icon: Container(
-                                  margin: EdgeInsets.only(left: 30.h),
+                                  margin: EdgeInsets.only(left: 30.w),
                                   child: CustomImageView(
                                     svgPath: Assets.svg.icoCaretDown.path,
                                   ),
                                 ),
                                 margin: EdgeInsets.only(
-                                  left: 8.h,
-                                  top: 19.v,
+                                  left: 8.w,
+                                  top: 19.h,
                                 ),
                                 options:
                                     controller.license.value.issuedYears.value,
@@ -252,16 +252,16 @@ class LicenseRegisterScreen extends StatelessWidget {
                         CustomTextFormField(
                           controller: controller.licenseNums,
                           margin: EdgeInsets.only(
-                            left: 19.h,
-                            right: 19.h,
-                            top: 10.v,
+                            left: 19.w,
+                            right: 19.w,
+                            top: 10.h,
                           ),
                           hintText: '면허증 번호를 입력하세요.',
                         ),
-                        SizedBox(height: 30.v),
+                        SizedBox(height: 30.h),
                         SizedBox(
-                          height: 58.v,
-                          width: 328.h,
+                          height: 58.h,
+                          width: 328.w,
                           child: Stack(
                             alignment: Alignment.topLeft,
                             children: [
@@ -271,13 +271,13 @@ class LicenseRegisterScreen extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsets.only(left: 19.h),
+                                      padding: EdgeInsets.only(left: 19.w),
                                       child: Text(
                                         '적성기간 만료일',
                                         style: textTheme.bodySmall,
                                       ),
                                     ),
-                                    SizedBox(height: 3.v),
+                                    SizedBox(height: 3.h),
                                     CustomTextFormField(
                                       controller: controller.validPeriod,
                                       hintText: '적성기간 만료일(YYMMDD)을 입력해주세요.',
@@ -289,14 +289,14 @@ class LicenseRegisterScreen extends StatelessWidget {
                                 alignment: Alignment.topLeft,
                                 child: Container(
                                   padding: EdgeInsets.symmetric(
-                                    horizontal: 4.h,
-                                    vertical: 2.v,
+                                    horizontal: 4.w,
+                                    vertical: 2.h,
                                   ),
                                   decoration: BoxDecoration(
                                     color: const Color(0xFF464A70),
                                     border: Border.all(
                                       color: lightTheme.onPrimaryContainer,
-                                      width: 1.h,
+                                      width: 1.w,
                                     ),
                                     borderRadius:
                                         BorderRadiusStyle.circleBorder10,
@@ -305,7 +305,7 @@ class LicenseRegisterScreen extends StatelessWidget {
                                     'C',
                                     style: theme.textTheme.bodySmall!.copyWith(
                                       color: lightTheme.primary,
-                                      fontSize: 9.fSize,
+                                      fontSize: 9.sp,
                                     ),
                                   ),
                                 ),
@@ -313,10 +313,10 @@ class LicenseRegisterScreen extends StatelessWidget {
                             ],
                           ),
                         ),
-                        SizedBox(height: 30.v),
+                        SizedBox(height: 30.h),
                         SizedBox(
-                          height: 58.v,
-                          width: 328.h,
+                          height: 58.h,
+                          width: 328.w,
                           child: Stack(
                             alignment: Alignment.topLeft,
                             children: [
@@ -326,13 +326,13 @@ class LicenseRegisterScreen extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsets.only(left: 19.h),
+                                      padding: EdgeInsets.only(left: 19.w),
                                       child: Text(
                                         '면허 발급 일자',
                                         style: textTheme.bodySmall,
                                       ),
                                     ),
-                                    SizedBox(height: 3.v),
+                                    SizedBox(height: 3.h),
                                     CustomTextFormField(
                                       controller: controller.firstIssued,
                                       hintText: '면허 발급 일자(YYMMDD)를 입력해주세요.',
@@ -345,14 +345,14 @@ class LicenseRegisterScreen extends StatelessWidget {
                                 alignment: Alignment.topLeft,
                                 child: Container(
                                   padding: EdgeInsets.symmetric(
-                                    horizontal: 4.h,
-                                    vertical: 2.v,
+                                    horizontal: 4.w,
+                                    vertical: 2.h,
                                   ),
                                   decoration: BoxDecoration(
                                     color: const Color(0xFF464A70),
                                     border: Border.all(
                                       color: lightTheme.onPrimaryContainer,
-                                      width: 1.h,
+                                      width: 1.w,
                                     ),
                                     borderRadius:
                                         BorderRadiusStyle.circleBorder10,
@@ -361,7 +361,7 @@ class LicenseRegisterScreen extends StatelessWidget {
                                     'D',
                                     style: theme.textTheme.bodySmall!.copyWith(
                                       color: lightTheme.primary,
-                                      fontSize: 9.fSize,
+                                      fontSize: 9.sp,
                                     ),
                                   ),
                                 ),
@@ -381,17 +381,17 @@ class LicenseRegisterScreen extends StatelessWidget {
           isDisabled: !controller.canSubmit.value,
           // TODO: 운전면허증 등록
           onTap: controller.update,
-          height: 48.v,
+          height: 48.h,
           text: '등록 완료',
           margin: EdgeInsets.only(
-            left: 16.h,
-            right: 16.h,
-            bottom: 16.v,
+            left: 16.w,
+            right: 16.w,
+            bottom: 16.h,
           ),
           buttonStyle: ElevatedButton.styleFrom(
             backgroundColor: const Color(0xFFF3F3F6),
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8.h),
+              borderRadius: BorderRadius.circular(8.w),
             ),
           ).noEffect,
           buttonTextStyle: textTheme.titleSmall!.copyWith(

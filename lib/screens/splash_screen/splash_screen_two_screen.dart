@@ -34,19 +34,19 @@ class SplashScreenTwo extends StatelessWidget {
             width: double.maxFinite,
             child: Column(
               children: [
-                SizedBox(height: 220.v),
+                SizedBox(height: 220.h),
                 Expanded(
                   child: SingleChildScrollView(
                     child: Padding(
                       padding: EdgeInsets.only(
-                        left: 116.h,
-                        right: 116.h,
-                        bottom: 113.v,
+                        left: 116.w,
+                        right: 116.w,
+                        bottom: 113.h,
                       ),
                       child: Column(
                         children: [
                           SizedBox(
-                            width: 128.h,
+                            width: 128.w,
                             child: AutoSizeText(
                               '우리가\n만드는\n카셰어링',
                               maxLines: 3,
@@ -56,11 +56,11 @@ class SplashScreenTwo extends StatelessWidget {
                                   .copyWith(height: 1.38),
                             ),
                           ),
-                          SizedBox(height: 226.v),
+                          SizedBox(height: 226.h),
                           CustomImageView(
                               svgPath: Assets.svg.imgFriends.path,
-                              height: 21.v,
-                              width: 120.h)
+                              height: 21.h,
+                              width: 120.w)
                         ],
                       ),
                     ),

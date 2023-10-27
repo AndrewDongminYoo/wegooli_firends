@@ -30,8 +30,8 @@ class PersonalInfoFormZipCodeScreen extends StatelessWidget {
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: CustomAppBar(
-          height: 50.v,
-          leadingWidth: 34.h,
+          height: 50.h,
+          leadingWidth: 34.w,
           leading: const GetBackIcon(),
           title: const AppbarTitle(text: '정보 입력'),
           styleType: Style.bgFill,
@@ -41,14 +41,14 @@ class PersonalInfoFormZipCodeScreen extends StatelessWidget {
           child: UnfocusedForm(
             canSubmit: controller.canSubmit,
             children: [
-              SizedBox(height: 10.v),
+              SizedBox(height: 10.h),
               Expanded(
                 child: SingleChildScrollView(
                   child: Padding(
                     padding: EdgeInsets.only(
-                      left: 16.h,
-                      right: 16.h,
-                      bottom: 5.v,
+                      left: 16.w,
+                      right: 16.w,
+                      bottom: 5.h,
                     ),
                     child: Column(
                       children: [
@@ -57,7 +57,7 @@ class PersonalInfoFormZipCodeScreen extends StatelessWidget {
                           children: [
                             Expanded(
                               child: Padding(
-                                padding: EdgeInsets.only(right: 4.h),
+                                padding: EdgeInsets.only(right: 4.w),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
@@ -65,9 +65,9 @@ class PersonalInfoFormZipCodeScreen extends StatelessWidget {
                                       '집주소',
                                       style: textTheme.bodySmall,
                                     ),
-                                    SizedBox(height: 3.v),
+                                    SizedBox(height: 3.h),
                                     CustomTextFormField(
-                                      width: 160.h,
+                                      width: 160.w,
                                       controller: controller.postCode,
                                       hintText: '우편번호',
                                     ),
@@ -80,16 +80,16 @@ class PersonalInfoFormZipCodeScreen extends StatelessWidget {
                                 onTap: () async {
                                   await controller.acceptZipCode(context);
                                 },
-                                height: 36.v,
+                                height: 36.h,
                                 text: '주소 검색',
                                 margin: EdgeInsets.only(
-                                  left: 4.h,
-                                  top: 15.v,
+                                  left: 4.w,
+                                  top: 15.h,
                                 ),
                                 buttonStyle: ElevatedButton.styleFrom(
                                   backgroundColor: const Color(0xFF464A70),
                                   shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(8.h),
+                                    borderRadius: BorderRadius.circular(8.w),
                                   ),
                                 ).noEffect,
                                 buttonTextStyle:
@@ -101,17 +101,17 @@ class PersonalInfoFormZipCodeScreen extends StatelessWidget {
                             ),
                           ],
                         ),
-                        SizedBox(height: 10.v),
+                        SizedBox(height: 10.h),
                         CustomTextFormField(
                           controller: controller.address1,
                           hintText: '기본주소',
                         ),
-                        SizedBox(height: 10.v),
+                        SizedBox(height: 10.h),
                         CustomTextFormField(
                           controller: controller.address2,
                           hintText: '동·호수 등 상세 주소',
                         ),
-                        SizedBox(height: 30.v),
+                        SizedBox(height: 30.h),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -119,14 +119,14 @@ class PersonalInfoFormZipCodeScreen extends StatelessWidget {
                               '아이디',
                               style: textTheme.bodySmall,
                             ),
-                            SizedBox(height: 3.v),
+                            SizedBox(height: 3.h),
                             CustomTextFormField(
                               controller: controller.usermail,
                               hintText: '이메일 주소 입력',
                             ),
                           ],
                         ),
-                        SizedBox(height: 30.v),
+                        SizedBox(height: 30.h),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -134,26 +134,26 @@ class PersonalInfoFormZipCodeScreen extends StatelessWidget {
                               '비밀번호',
                               style: textTheme.bodySmall,
                             ),
-                            SizedBox(height: 3.v),
+                            SizedBox(height: 3.h),
                             CustomTextFormField(
                               controller: controller.password,
                               hintText: '영문/숫자/특수문자 조합 (6~12자)',
                               suffix: Container(
                                 margin: EdgeInsets.only(
-                                  left: 30.h,
-                                  top: 7.v,
-                                  bottom: 8.v,
+                                  left: 30.w,
+                                  top: 7.h,
+                                  bottom: 8.h,
                                 ),
                                 child: CustomImageView(
                                   svgPath: Assets.svg.icoEyeCrossedOut.path,
                                 ),
                               ),
                               suffixConstraints:
-                                  BoxConstraints(maxHeight: 39.v),
+                                  BoxConstraints(maxHeight: 39.h),
                             ),
                           ],
                         ),
-                        SizedBox(height: 30.v),
+                        SizedBox(height: 30.h),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -161,26 +161,26 @@ class PersonalInfoFormZipCodeScreen extends StatelessWidget {
                               '비밀번호 확인',
                               style: textTheme.bodySmall,
                             ),
-                            SizedBox(height: 3.v),
+                            SizedBox(height: 3.h),
                             CustomTextFormField(
                               controller: controller.passpass,
                               hintText: '비밀번호 재입력',
                               suffix: Container(
                                 margin: EdgeInsets.only(
-                                  left: 30.h,
-                                  top: 7.v,
-                                  bottom: 8.v,
+                                  left: 30.w,
+                                  top: 7.h,
+                                  bottom: 8.h,
                                 ),
                                 child: CustomImageView(
                                   svgPath: Assets.svg.icoEyeCrossedOut.path,
                                 ),
                               ),
                               suffixConstraints:
-                                  BoxConstraints(maxHeight: 39.v),
+                                  BoxConstraints(maxHeight: 39.h),
                             ),
                           ],
                         ),
-                        SizedBox(height: 30.v),
+                        SizedBox(height: 30.h),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -188,7 +188,7 @@ class PersonalInfoFormZipCodeScreen extends StatelessWidget {
                               '닉네임',
                               style: textTheme.bodySmall,
                             ),
-                            SizedBox(height: 3.v),
+                            SizedBox(height: 3.h),
                             CustomTextFormField(
                               controller: controller.nickname,
                               hintText: '닉네임 입력 (8자 이내)',
@@ -206,9 +206,9 @@ class PersonalInfoFormZipCodeScreen extends StatelessWidget {
         ),
         bottomNavigationBar: Container(
           margin: EdgeInsets.only(
-            left: 16.h,
-            right: 16.h,
-            bottom: 16.v,
+            left: 16.w,
+            right: 16.w,
+            bottom: 16.h,
           ),
           decoration: BoxDecoration(color: lightTheme.onPrimaryContainer),
           child: CustomElevatedButton(
@@ -218,12 +218,12 @@ class PersonalInfoFormZipCodeScreen extends StatelessWidget {
               controller.printFormFields();
               context.goNamed(LicenseRegisterScreen.routeName);
             },
-            height: 48.v,
+            height: 48.h,
             text: '입력 완료',
             buttonStyle: ElevatedButton.styleFrom(
               backgroundColor: const Color(0xFFF3F3F6),
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8.h),
+                borderRadius: BorderRadius.circular(8.w),
               ),
             ).noEffect,
             buttonTextStyle: textTheme.titleSmall!.copyWith(

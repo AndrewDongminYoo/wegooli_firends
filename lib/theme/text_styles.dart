@@ -23,7 +23,7 @@ class AppTextStyle extends TextStyle {
           color: color,
           decoration: decoration,
           fontFamily: fontFamily,
-          fontSize: (fontSize ?? TextSize.md).fSize,
+          fontSize: (fontSize ?? TextSize.md).sp,
           fontWeight: fontWeight,
           textBaseline: textBaseline,
           height: lineHeight,

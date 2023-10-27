@@ -1,6 +1,6 @@
 platform :osx, '10.14'
 
-# CocoaPods analytics sends network stats synchronously affecting flutter build latency.
+# 코코아팟 분석은 플러터 빌드 지연 시간에 영향을 미치는 네트워크 통계를 동시에 전송합니다.
 ENV['COCOAPODS_DISABLE_STATS'] = 'true'
 
 project 'Runner', {

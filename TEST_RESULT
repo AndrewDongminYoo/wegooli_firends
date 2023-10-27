@@ -1,0 +1,204 @@
+
+00:00 +0: loading /Users/dongminyu/Downloads/wegooli_friends/test/widget_test.dart
+00:01 +0: loading /Users/dongminyu/Downloads/wegooli_friends/test/widget_test.dart
+00:02 +0: loading /Users/dongminyu/Downloads/wegooli_friends/test/widget_test.dart
+00:03 +0: loading /Users/dongminyu/Downloads/wegooli_friends/test/widget_test.dart
+00:04 +0: loading /Users/dongminyu/Downloads/wegooli_friends/test/widget_test.dart
+00:05 +0: loading /Users/dongminyu/Downloads/wegooli_friends/test/widget_test.dart
+00:05 +0: loading /Users/dongminyu/Downloads/wegooli_friends/test/hook_consumer_test.dart
+00:05 +0: /Users/dongminyu/Downloads/wegooli_friends/test/hook_consumer_test.dart: HookConsumer can both use hooks and listen to providers
+00:05 +1: /Users/dongminyu/Downloads/wegooli_friends/test/widget_test.dart: MyApp renders
+00:06 +1: /Users/dongminyu/Downloads/wegooli_friends/test/widget_test.dart: MyApp renders
+00:06 +2: /Users/dongminyu/Downloads/wegooli_friends/test/widget_test.dart: MyApp renders
+00:06 +3: /Users/dongminyu/Downloads/wegooli_friends/test/widget_test.dart: MyApp renders
+00:06 +3: /Users/dongminyu/Downloads/wegooli_friends/test/widget_test.dart: MyApp renders
+══╡ EXCEPTION CAUGHT BY WIDGETS LIBRARY ╞═══════════════════════════════════════════════════════════
+The following StateError was thrown building MyApp(dirty, state: _ConsumerState#683d8):
+Bad state: No ProviderScope found
+
+The relevant error-causing widget was:
+  MyApp MyApp:file:///Users/dongminyu/Downloads/wegooli_friends/test/widget_test.dart:20:35
+
+When the exception was thrown, this was the stack:
+#0      ProviderScope.containerOf (package:flutter_riverpod/src/framework.dart:107:7)
+#1      ConsumerStatefulElement.read (package:flutter_riverpod/src/consumer.dart:623:26)
+#2      MyApp.build (package:wegooli_friends/app/my_app.dart:23:30)
+#3      _ConsumerState.build (package:flutter_riverpod/src/consumer.dart:479:19)
+#4      StatefulElement.build (package:flutter/src/widgets/framework.dart:5409:27)
+#5      ConsumerStatefulElement.build (package:flutter_riverpod/src/consumer.dart:542:20)
+#6      ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5297:15)
+#7      StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:5462:11)
+#8      Element.rebuild (package:flutter/src/widgets/framework.dart:5016:7)
+#9      ComponentElement._firstBuild (package:flutter/src/widgets/framework.dart:5279:5)
+#10     StatefulElement._firstBuild (package:flutter/src/widgets/framework.dart:5453:11)
+#11     ComponentElement.mount (package:flutter/src/widgets/framework.dart:5273:5)
+#12     Element.inflateWidget (package:flutter/src/widgets/framework.dart:4182:16)
+#13     Element.updateChild (package:flutter/src/widgets/framework.dart:3701:20)
+#14     ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5322:16)
+#15     Element.rebuild (package:flutter/src/widgets/framework.dart:5016:7)
+#16     ProxyElement.update (package:flutter/src/widgets/framework.dart:5628:5)
+#17     Element.updateChild (package:flutter/src/widgets/framework.dart:3685:15)
+#18     ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5322:16)
+#19     StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:5462:11)
+#20     Element.rebuild (package:flutter/src/widgets/framework.dart:5016:7)
+#21     StatefulElement.update (package:flutter/src/widgets/framework.dart:5485:5)
+#22     Element.updateChild (package:flutter/src/widgets/framework.dart:3685:15)
+#23     ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5322:16)
+#24     Element.rebuild (package:flutter/src/widgets/framework.dart:5016:7)
+#25     ProxyElement.update (package:flutter/src/widgets/framework.dart:5628:5)
+#26     Element.updateChild (package:flutter/src/widgets/framework.dart:3685:15)
+#27     ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5322:16)
+#28     Element.rebuild (package:flutter/src/widgets/framework.dart:5016:7)
+#29     StatelessElement.update (package:flutter/src/widgets/framework.dart:5373:5)
+#30     Element.updateChild (package:flutter/src/widgets/framework.dart:3685:15)
+#31     RenderObjectToWidgetElement._rebuild (package:flutter/src/widgets/binding.dart:1253:16)
+#32     RenderObjectToWidgetElement.update (package:flutter/src/widgets/binding.dart:1230:5)
+#33     RenderObjectToWidgetElement.performRebuild (package:flutter/src/widgets/binding.dart:1244:7)
+#34     Element.rebuild (package:flutter/src/widgets/framework.dart:5016:7)
+#35     BuildOwner.buildScope (package:flutter/src/widgets/framework.dart:2779:19)
+#36     AutomatedTestWidgetsFlutterBinding.drawFrame (package:flutter_test/src/binding.dart:1378:19)
+#37     RendererBinding._handlePersistentFrameCallback (package:flutter/src/rendering/binding.dart:360:5)
+#38     SchedulerBinding._invokeFrameCallback (package:flutter/src/scheduler/binding.dart:1297:15)
+#39     SchedulerBinding.handleDrawFrame (package:flutter/src/scheduler/binding.dart:1227:9)
+#40     AutomatedTestWidgetsFlutterBinding.pump.<anonymous closure> (package:flutter_test/src/binding.dart:1233:9)
+#43     TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:68:41)
+#44     AutomatedTestWidgetsFlutterBinding.pump (package:flutter_test/src/binding.dart:1220:27)
+#45     WidgetTester._pumpWidget (package:flutter_test/src/widget_tester.dart:587:20)
+#46     WidgetTester.pumpWidget.<anonymous closure> (package:flutter_test/src/widget_tester.dart:572:14)
+#49     TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:68:41)
+#50     WidgetTester.pumpWidget (package:flutter_test/src/widget_tester.dart:571:27)
+#51     main.<anonymous closure> (file:///Users/dongminyu/Downloads/wegooli_friends/test/widget_test.dart:20:18)
+#52     testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:165:29)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided 5 frames from dart:async and package:stack_trace)
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: exactly one matching node in the widget tree
+  Actual: _WidgetTypeFinder:<zero widgets with type "MaterialApp" (ignoring offstage widgets)>
+   Which: means none were found but one was expected
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure> (file:///Users/dongminyu/Downloads/wegooli_friends/test/widget_test.dart:21:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///Users/dongminyu/Downloads/wegooli_friends/test/widget_test.dart line 21
+The test description was:
+  MyApp renders
+════════════════════════════════════════════════════════════════════════════════════════════════════
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following message was thrown:
+Multiple exceptions (2) were detected during the running of the current test, and at least one was
+unexpected.
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+00:06 +3 -1: /Users/dongminyu/Downloads/wegooli_friends/test/widget_test.dart: MyApp renders [E]
+  Test failed. See exception logs above.
+  The test description was: MyApp renders
+
+
+To run this test again: /Users/dongminyu/Development/flutter/bin/cache/dart-sdk/bin/dart test /Users/dongminyu/Downloads/wegooli_friends/test/widget_test.dart -p vm --plain-name 'MyApp renders'
+
+00:06 +3 -1: /Users/dongminyu/Downloads/wegooli_friends/test/widget_test.dart: MyApp sets up routes
+00:06 +3 -1: /Users/dongminyu/Downloads/wegooli_friends/test/widget_test.dart: MyApp sets up routes
+══╡ EXCEPTION CAUGHT BY WIDGETS LIBRARY ╞═══════════════════════════════════════════════════════════
+The following StateError was thrown building MyApp(dirty, state: _ConsumerState#87ec4):
+Bad state: No ProviderScope found
+
+The relevant error-causing widget was:
+  MyApp MyApp:file:///Users/dongminyu/Downloads/wegooli_friends/test/widget_test.dart:25:35
+
+When the exception was thrown, this was the stack:
+#0      ProviderScope.containerOf (package:flutter_riverpod/src/framework.dart:107:7)
+#1      ConsumerStatefulElement.read (package:flutter_riverpod/src/consumer.dart:623:26)
+#2      MyApp.build (package:wegooli_friends/app/my_app.dart:23:30)
+#3      _ConsumerState.build (package:flutter_riverpod/src/consumer.dart:479:19)
+#4      StatefulElement.build (package:flutter/src/widgets/framework.dart:5409:27)
+#5      ConsumerStatefulElement.build (package:flutter_riverpod/src/consumer.dart:542:20)
+#6      ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5297:15)
+#7      StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:5462:11)
+#8      Element.rebuild (package:flutter/src/widgets/framework.dart:5016:7)
+#9      ComponentElement._firstBuild (package:flutter/src/widgets/framework.dart:5279:5)
+#10     StatefulElement._firstBuild (package:flutter/src/widgets/framework.dart:5453:11)
+#11     ComponentElement.mount (package:flutter/src/widgets/framework.dart:5273:5)
+#12     Element.inflateWidget (package:flutter/src/widgets/framework.dart:4182:16)
+#13     Element.updateChild (package:flutter/src/widgets/framework.dart:3701:20)
+#14     ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5322:16)
+#15     Element.rebuild (package:flutter/src/widgets/framework.dart:5016:7)
+#16     ProxyElement.update (package:flutter/src/widgets/framework.dart:5628:5)
+#17     Element.updateChild (package:flutter/src/widgets/framework.dart:3685:15)
+#18     ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5322:16)
+#19     StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:5462:11)
+#20     Element.rebuild (package:flutter/src/widgets/framework.dart:5016:7)
+#21     StatefulElement.update (package:flutter/src/widgets/framework.dart:5485:5)
+#22     Element.updateChild (package:flutter/src/widgets/framework.dart:3685:15)
+#23     ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5322:16)
+#24     Element.rebuild (package:flutter/src/widgets/framework.dart:5016:7)
+#25     ProxyElement.update (package:flutter/src/widgets/framework.dart:5628:5)
+#26     Element.updateChild (package:flutter/src/widgets/framework.dart:3685:15)
+#27     ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5322:16)
+#28     Element.rebuild (package:flutter/src/widgets/framework.dart:5016:7)
+#29     StatelessElement.update (package:flutter/src/widgets/framework.dart:5373:5)
+#30     Element.updateChild (package:flutter/src/widgets/framework.dart:3685:15)
+#31     RenderObjectToWidgetElement._rebuild (package:flutter/src/widgets/binding.dart:1253:16)
+#32     RenderObjectToWidgetElement.update (package:flutter/src/widgets/binding.dart:1230:5)
+#33     RenderObjectToWidgetElement.performRebuild (package:flutter/src/widgets/binding.dart:1244:7)
+#34     Element.rebuild (package:flutter/src/widgets/framework.dart:5016:7)
+#35     BuildOwner.buildScope (package:flutter/src/widgets/framework.dart:2779:19)
+#36     AutomatedTestWidgetsFlutterBinding.drawFrame (package:flutter_test/src/binding.dart:1378:19)
+#37     RendererBinding._handlePersistentFrameCallback (package:flutter/src/rendering/binding.dart:360:5)
+#38     SchedulerBinding._invokeFrameCallback (package:flutter/src/scheduler/binding.dart:1297:15)
+#39     SchedulerBinding.handleDrawFrame (package:flutter/src/scheduler/binding.dart:1227:9)
+#40     AutomatedTestWidgetsFlutterBinding.pump.<anonymous closure> (package:flutter_test/src/binding.dart:1233:9)
+#43     TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:68:41)
+#44     AutomatedTestWidgetsFlutterBinding.pump (package:flutter_test/src/binding.dart:1220:27)
+#45     WidgetTester._pumpWidget (package:flutter_test/src/widget_tester.dart:587:20)
+#46     WidgetTester.pumpWidget.<anonymous closure> (package:flutter_test/src/widget_tester.dart:572:14)
+#49     TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:68:41)
+#50     WidgetTester.pumpWidget (package:flutter_test/src/widget_tester.dart:571:27)
+#51     main.<anonymous closure> (file:///Users/dongminyu/Downloads/wegooli_friends/test/widget_test.dart:25:18)
+#52     testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:165:29)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided 5 frames from dart:async and package:stack_trace)
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: exactly one matching node in the widget tree
+  Actual: _WidgetTypeFinder:<zero widgets with type "GoRouter" (ignoring offstage widgets)>
+   Which: means none were found but one was expected
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure> (file:///Users/dongminyu/Downloads/wegooli_friends/test/widget_test.dart:26:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///Users/dongminyu/Downloads/wegooli_friends/test/widget_test.dart line 26
+The test description was:
+  MyApp sets up routes
+════════════════════════════════════════════════════════════════════════════════════════════════════
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following message was thrown:
+Multiple exceptions (2) were detected during the running of the current test, and at least one was
+unexpected.
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+00:06 +3 -2: /Users/dongminyu/Downloads/wegooli_friends/test/widget_test.dart: MyApp sets up routes [E]
+  Test failed. See exception logs above.
+  The test description was: MyApp sets up routes
+
+
+To run this test again: /Users/dongminyu/Development/flutter/bin/cache/dart-sdk/bin/dart test /Users/dongminyu/Downloads/wegooli_friends/test/widget_test.dart -p vm --plain-name 'MyApp sets up routes'
+
+00:06 +3 -2: loading /Users/dongminyu/Downloads/wegooli_friends/test/internal_test.dart
+00:06 +3 -2: /Users/dongminyu/Downloads/wegooli_friends/test/internal_test.dart: ref.watch supports changing the provider
+00:06 +4 -2: /Users/dongminyu/Downloads/wegooli_friends/test/internal_test.dart: ref.watch supports changing the provider
+00:06 +4 -2: Some tests failed.

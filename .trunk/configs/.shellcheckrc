@@ -1,10 +1,10 @@
 enable=all
 source-path=SCRIPTDIR
-disable=SC2016 # Expressions don't expand in single quotes, use double quotes for that.
-disable=SC2086 # Double quote to prevent globbing and word splitting.
-disable=SC2154 # var is referenced but not assigned.
-disable=SC2250 # Prefer putting braces around variable references even when not strictly required.
+disable=SC2016 # 표현식은 작은따옴표로 확장되지 않으므로 큰따옴표를 사용하세요.
+disable=SC2086 # 큰따옴표는 글로빙과 단어 분할을 방지합니다.
+disable=SC2154 # 변수는 참조되지만 할당되지 않습니다.
+disable=SC2250 # 꼭 필요하지 않은 경우에도 변수 참조 주위에 중괄호를 사용하는 것이 좋습니다.
 
-# If you're having issues with shellcheck following source, disable the errors via
+# 셸체크에 다음 이슈들로 문제가 있는 경우 주석을 해제해 오류를 비활성화하세요.
 # disable=SC1090
 # disable=SC1091

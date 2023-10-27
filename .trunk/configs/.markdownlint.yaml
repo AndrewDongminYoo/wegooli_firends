@@ -1,4 +1,4 @@
-# Autoformatter friendly markdownlint config (all formatting rules disabled)
+# 자동 서식 지정 친화적인 마크다운린트 구성(모든 서식 지정 규칙 비활성화)
 default: true
 blank_lines: false
 bullet: false

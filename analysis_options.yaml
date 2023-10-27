@@ -1,33 +1,15 @@
-# This file configures the analyzer, which statically analyzes Dart code to
-# check for errors, warnings, and lints.
+# 이 파일은 오류, 경고 및 줄 바꿈이 있는지 확인하기 위해 Dart 코드를 정적으로 분석하는 분석기를 구성합니다.
 #
-# The issues identified by the analyzer are surfaced in the UI of Dart-enabled
-# IDEs (https://dart.dev/tools#ides-and-editors). The analyzer can also be
-# invoked from the command line by running `flutter analyze`.
-
-# The following line activates a set of recommended lints for Flutter apps,
-# packages, and plugins designed to encourage good coding practices.
+# 분석기가 식별한 문제는 Dart 지원 IDE의 UI에 표시됩니다(https://dart.dev/tools#ides-and-editors).
+# 분석기는 명령줄에서 `flutter analyze`를 실행하여 호출할 수도 있습니다.
+# 다음 줄은 올바른 코딩 관행을 장려하기 위해 설계된 Flutter 앱, 패키지 및 플러그인에 대한 권장 린트 집합을 활성화합니다.
 include: all_lint_rules.yaml
 
 linter:
-  # The lint rules applied to this project can be customized in the
-  # section below to disable rules from the `package:flutter_lints/flutter.yaml`
-  # included above or to enable additional rules. A list of all available lints
-  # and their documentation is published at
-  # https://dart-lang.github.io/linter/lints/index.html.
-  #
-  # Instead of disabling a lint rule for the entire project in the
-  # section below, it can also be suppressed for a single line of code
-  # or a specific dart file by using the `// ignore: name_of_lint` and
-  # `// ignore_for_file: name_of_lint` syntax on the line or in the file
-  # producing the lint.
+  # 아래 섹션에서 전체 프로젝트에 대한 린트 규칙을 비활성화하는 대신 린트를 생성하는 코드 줄 또는 파일에서
+  # `// ignore: name_of_lint` 또는 `// ignore_for_file: name_of_lint`
+  # 구문을 사용하여 한 줄의 코드 또는 특정 다트 파일에 대해 린트 규칙을 비활성화할 수도 있습니다.
 
-  # [🔰 core] : 다트 내장 린터
-  # [🔵 recommend] : 플러터 공식 추천 린터
-  # [🦩 flutter] : 플러터에만 해당되는 린터 설정
-  # [🔧 fixable] : dart fix --apply 가능한 린터
-  # [🧪 experimental] : 실험적인 린터
-  # [❕ removed/deprecated] : 더이상 지원하지 않는/않을 예정인 린터
   rules:
     # 코드가 너무 장황해지며, 재할당을 사전에 막을 수 있는 `parameter_assignments` 규칙을 사용할때에는 그다지 큰 문제가 되지 않습니다.
     prefer_final_parameters: false
@@ -54,6 +36,9 @@ linter:
     # 일부 위젯에서 사용하는 `Key key`와 `@required Widget child`를
     # 마지막에 배치하는 규칙과 충돌합니다.
     always_put_required_named_parameters_first: false
+    # `as`는 잘 사용한다면 그렇게 나쁘지 않습니다(특히 곧 출시될 널러블 타입의 경우).
+    # 명시적 예외는 암시적 예외보다 낫습니다.
+    avoid_as: false
     # 이 프로젝트는 Flutter 스타일의 todo를 사용하지 않습니다.
     flutter_style_todos: false
     # on 구문을 사용하기에는 너무 복잡한 경우,
@@ -102,13 +87,8 @@ linter:
     use_build_context_synchronously: false
 
 analyzer:
-  # DIFFERENT FROM FLUTTER/FLUTTER
-  exclude:
-    # Fixture depends on dart:ui and raises false positives.
-    - test/*.dart
-    - lib/l10n/app_localizations.dart
   errors:
-    included_file_warning: ignore
+    # 미사용 선언 전부 에러로 표시 (for autofix)
     unused_element: error
     unused_field: error
     unused_local_variable: error
@@ -116,3 +96,9 @@ analyzer:
     unused_import: error
     unused_result: error
     avoid_unused_constructor_parameters: error
+    # 사용하지 않는 try/catch 조항
+    unused_catch_clause: warning
+    # 불필요한 toString 메서드 경고
+    noop_primitive_operations: warning
+    # all_lint_rules.yaml 파일에 대해 린트 규칙을 적용하지 않음
+    included_file_warning: ignore

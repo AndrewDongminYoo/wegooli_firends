@@ -28,7 +28,7 @@ class UnsubscribeScreen extends StatelessWidget {
           title: const AppbarTitle(text: '구독 해지 예약'),
         ),
         body: SizedBox(
-          width: mediaQueryData.size.width,
+          width: MediaQuery.of(context).size.width,
           child: SingleChildScrollView(
             padding: EdgeInsets.only(top: 50.h),
             child: Padding(

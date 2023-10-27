@@ -28,7 +28,7 @@ class ViewScheduledDateDialog extends StatelessWidget {
       contentPadding: EdgeInsets.zero,
       insetPadding: EdgeInsets.zero,
       content: Container(
-        width: mediaQueryData.size.width,
+        width: MediaQuery.of(context).size.width,
         margin: EdgeInsets.only(
           left: 16.w,
           right: 16.w,

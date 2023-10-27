@@ -31,7 +31,7 @@ class CardListScreen extends StatelessWidget {
           title: const AppbarTitle(text: '카드 등록'),
         ),
         body: SizedBox(
-          width: mediaQueryData.size.width,
+          width: MediaQuery.of(context).size.width,
           child: SingleChildScrollView(
             padding: EdgeInsets.only(top: 22.h),
             child: Padding(

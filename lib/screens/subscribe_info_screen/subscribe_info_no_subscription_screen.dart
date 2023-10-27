@@ -23,7 +23,7 @@ class NoSubscriptionScreen extends StatelessWidget {
             leading: const GetBackIcon(),
             title: const AppbarTitle(text: '구독 정보')),
         body: SizedBox(
-          width: mediaQueryData.size.width,
+          width: MediaQuery.of(context).size.width,
           child: SingleChildScrollView(
             padding: EdgeInsets.only(top: 50.h),
             child: Padding(

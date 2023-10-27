@@ -19,8 +19,8 @@ class SplashScreenOne extends StatelessWidget {
         extendBody: true,
         extendBodyBehindAppBar: true,
         body: Container(
-          width: mediaQueryData.size.width,
-          height: mediaQueryData.size.height,
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
           decoration: const BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.center,

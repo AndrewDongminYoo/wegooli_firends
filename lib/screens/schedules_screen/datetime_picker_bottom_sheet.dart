@@ -77,7 +77,7 @@ class _DatetimePickerBottomSheetState extends State<DatetimePickerBottomSheet> {
         children: [
           Container(
               alignment: Alignment.centerLeft,
-              width: mediaQueryData.size.width,
+              width: MediaQuery.of(context).size.width,
               height: 85.h,
               padding: EdgeInsets.only(left: 20.w, top: 20.h),
               decoration: BoxDecoration(
@@ -142,7 +142,7 @@ class _DatetimePickerBottomSheetState extends State<DatetimePickerBottomSheet> {
                     body: Container(
                       height: 100.h,
                       alignment: Alignment.center,
-                      width: mediaQueryData.size.width,
+                      width: MediaQuery.of(context).size.width,
                       child: CupertinoTheme(
                         data: CupertinoThemeData(
                           textTheme: CupertinoTextThemeData(

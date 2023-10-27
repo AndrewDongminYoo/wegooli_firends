@@ -23,7 +23,7 @@ class EmptyNoticeScreen extends StatelessWidget {
             leading: const GetBackIcon(),
             title: const AppbarTitle(text: '공지사항')),
         body: SizedBox(
-          width: mediaQueryData.size.width,
+          width: MediaQuery.of(context).size.width,
           child: SingleChildScrollView(
             padding: EdgeInsets.only(top: 50.h),
             child: Padding(

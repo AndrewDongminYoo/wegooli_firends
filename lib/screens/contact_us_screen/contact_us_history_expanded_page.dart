@@ -21,7 +21,7 @@ class ContactUsHistoryExpandedPage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: SizedBox(
-          width: mediaQueryData.size.width,
+          width: MediaQuery.of(context).size.width,
           child: SingleChildScrollView(
             child: Column(
               children: [

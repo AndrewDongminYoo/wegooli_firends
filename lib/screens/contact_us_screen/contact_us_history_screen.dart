@@ -25,7 +25,7 @@ class ContactUsHistoryScreen extends StatelessWidget {
           title: const AppbarTitle(text: '문의하기'),
         ),
         body: SizedBox(
-          width: mediaQueryData.size.width,
+          width: MediaQuery.of(context).size.width,
           child: SingleChildScrollView(
             child: Column(
               children: [

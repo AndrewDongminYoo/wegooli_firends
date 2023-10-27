@@ -47,7 +47,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Size get preferredSize => Size(
-        mediaQueryData.size.width,
+        MediaQueryData.fromView(
+          WidgetsBinding.instance.platformDispatcher.views.first,
+        ).size.width,
         height ?? 55.h,
       );
   Container? get _flexibleSpace {

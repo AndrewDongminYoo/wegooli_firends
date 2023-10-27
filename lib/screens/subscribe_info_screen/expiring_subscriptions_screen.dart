@@ -28,7 +28,7 @@ class ExpiringSubscriptionsScreen extends StatelessWidget {
           title: const AppbarTitle(text: '구독 정보'),
         ),
         body: SizedBox(
-          width: mediaQueryData.size.width,
+          width: MediaQuery.of(context).size.width,
           child: SingleChildScrollView(
             padding: EdgeInsets.only(top: 22.h),
             child: Padding(

@@ -312,7 +312,7 @@ analyzer:
 flutter_launcher_icons:
   image_path: assets/icons/app_icon_1024.png
   ios: true
-  remove_alpha_ios: true
+  remove_alpha_ios: false
   android: ic_launcher
   min_sdk_android: 21
   web:

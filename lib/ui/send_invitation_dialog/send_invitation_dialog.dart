@@ -21,7 +21,7 @@ import 'controller/send_invitation_controller.dart';
 class SendInvitationDialog extends StatelessWidget {
   SendInvitationDialog({super.key});
 
-  final InvitationController controller = InvitationController.to;
+  final controller = InvitationController.to;
 
   @override
   Widget build(BuildContext context) {

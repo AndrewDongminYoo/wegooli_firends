@@ -18,9 +18,9 @@ class AppStorage {
     return _store ??= await Hive.openBox('WEGOOLI');
   }
 
-  final String _usersInfo = 'USER_INFO';
-  final String _tokenData = 'WEGOOLI_TOKEN_DATA';
-  final String _themeData = 'APP_THEME_MODE';
+  final _usersInfo = 'USER_INFO';
+  final _tokenData = 'WEGOOLI_TOKEN_DATA';
+  final _themeData = 'APP_THEME_MODE';
 
   Future<void> clearAll() async {
     await _store?.clear();

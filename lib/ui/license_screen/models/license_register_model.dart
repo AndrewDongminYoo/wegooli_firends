@@ -5,14 +5,14 @@ import 'package:get/get_rx/get_rx.dart';
 import '/data/common/dropdown_data.dart';
 
 class LicenseRegisterModel {
-  Rx<List<DropdownData>> licenseTypes = Rx([
+  final licenseTypes = Rx([
     DropdownData(id: 1, title: '1종보통'),
     DropdownData(id: 2, title: '2종보통'),
     DropdownData(id: 3, title: '1종대형'),
     DropdownData(id: 4, title: '2종오토'),
   ]);
 
-  Rx<List<DropdownData>> issuedYears = Rx([
+  final issuedYears = Rx([
     DropdownData(id: 11, title: '11', value: DateTime(2011)),
     DropdownData(id: 12, title: '12', value: DateTime(2012)),
     DropdownData(id: 13, title: '13', value: DateTime(2013)),

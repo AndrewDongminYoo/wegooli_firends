@@ -6,7 +6,9 @@ import 'package:get/state_manager.dart';
 import 'package:get_it/get_it.dart';
 
 // 🌎 Project imports:
+import '../model/phone.dart';
 import '/core/utils/logger.dart';
+import '/data/common/dropdown_data.dart';
 
 class VerificationController extends GetxController {
   // ignore: prefer_constructors_over_static_methods
@@ -15,11 +17,13 @@ class VerificationController extends GetxController {
           ? GetIt.I.get<VerificationController>()
           : GetIt.I.registerSingleton(VerificationController());
 
-  TextEditingController realname = TextEditingController();
-  TextEditingController birthday = TextEditingController();
-  TextEditingController socialId = TextEditingController();
-  TextEditingController phonenum = TextEditingController();
-  final ValueNotifier<bool> canSubmit = ValueNotifier(false);
+  final realname = TextEditingController();
+  final birthday = TextEditingController();
+  final socialId = TextEditingController();
+  final phonenum = TextEditingController();
+  DropdownData? telecom;
+  final telecoms = Telecom().obs;
+  final canSubmit = ValueNotifier(false);
 
   @override
   void onClose() {

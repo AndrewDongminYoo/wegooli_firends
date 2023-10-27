@@ -15,8 +15,8 @@ class InvitationController extends GetxController {
           ? GetIt.I.get<InvitationController>()
           : GetIt.I.registerSingleton(InvitationController());
 
-  TextEditingController invitationCode = TextEditingController();
-  final ValueNotifier<bool> canSubmit = ValueNotifier(false);
+  final invitationCode = TextEditingController();
+  final canSubmit = ValueNotifier(false);
 
   @override
   void onClose() {

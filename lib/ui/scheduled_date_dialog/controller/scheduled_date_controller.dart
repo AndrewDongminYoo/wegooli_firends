@@ -12,5 +12,5 @@ class ScheduledDateController extends GetxController {
           ? GetIt.I.get<ScheduledDateController>()
           : GetIt.I.registerSingleton(ScheduledDateController());
 
-  Rx<ScheduledDateModel> scheduledDate = ScheduledDateModel().obs;
+  final scheduledDate = ScheduledDateModel().obs;
 }

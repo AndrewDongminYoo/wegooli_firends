@@ -15,14 +15,14 @@ class PersonalInfoFormZipCodeController extends GetxController {
           ? GetIt.I.get<PersonalInfoFormZipCodeController>()
           : GetIt.I.registerSingleton(PersonalInfoFormZipCodeController());
 
-  TextEditingController postCode = TextEditingController();
-  TextEditingController address1 = TextEditingController();
-  TextEditingController address2 = TextEditingController();
-  TextEditingController usermail = TextEditingController();
-  TextEditingController password = TextEditingController();
-  TextEditingController passpass = TextEditingController();
-  TextEditingController nickname = TextEditingController();
-  final ValueNotifier<bool> canSubmit = ValueNotifier(false);
+  final postCode = TextEditingController();
+  final address1 = TextEditingController();
+  final address2 = TextEditingController();
+  final usermail = TextEditingController();
+  final password = TextEditingController();
+  final passpass = TextEditingController();
+  final nickname = TextEditingController();
+  final canSubmit = ValueNotifier(false);
 
   @override
   void onClose() {

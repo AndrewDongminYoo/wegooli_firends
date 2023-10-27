@@ -6,7 +6,7 @@ import 'package:flutter/foundation.dart';
 // 📦 Package imports:
 import 'package:logger/logger.dart';
 
-final Logger logger = Logger(printer: logPrinter, filter: logFilter);
+final logger = Logger(printer: logPrinter, filter: logFilter);
 
 final logPrinter = PrettyPrinter(
   /// 로그 줄에 이모티콘을 접두사로 붙일지 여부.

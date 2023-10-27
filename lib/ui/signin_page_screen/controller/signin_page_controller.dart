@@ -15,9 +15,9 @@ class SigninPageController extends GetxController {
           ? GetIt.I.get<SigninPageController>()
           : GetIt.I.registerSingleton(SigninPageController());
 
-  TextEditingController loginName = TextEditingController();
-  TextEditingController loginPass = TextEditingController();
-  final ValueNotifier<bool> canSubmit = ValueNotifier(false);
+  final loginName = TextEditingController();
+  final loginPass = TextEditingController();
+  final canSubmit = ValueNotifier(false);
 
   @override
   void onClose() {

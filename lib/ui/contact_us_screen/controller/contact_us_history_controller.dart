@@ -16,7 +16,7 @@ class ContactUsHistoryController extends GetxController
           ? GetIt.I.get<ContactUsHistoryController>()
           : GetIt.I.registerSingleton(ContactUsHistoryController());
 
-  Rx<HistoryModel> history = HistoryModel().obs;
+  final history = HistoryModel().obs;
   late TabController tabController =
       GetIt.I.registerSingleton(TabController(vsync: this, length: 3));
 }

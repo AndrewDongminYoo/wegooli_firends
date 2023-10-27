@@ -11,6 +11,5 @@ class ProfileModel {
   }
 
   Rx<String>? userName;
-
   Rx<String>? id;
 }

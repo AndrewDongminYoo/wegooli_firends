@@ -13,9 +13,9 @@ MediaQueryData mediaQueryData = MediaQueryData.fromView(
 /// 주의! 이 값들이 정적 UI를 빌드하는 데 사용되는 정적 값이라고 생각하면 안 됩니다.
 /// 이들은 피그마 디자인의 뷰포트 값입니다.
 /// 코드에서 UI를 반응형으로 만들기 위한 참조로 사용됩니다.
-const num FIGMA_DESIGN_WIDTH = 360;
-const num FIGMA_DESIGN_HEIGHT = 640;
-const num FIGMA_DESIGN_STATUS_BAR = 0;
+const FIGMA_DESIGN_WIDTH = 360;
+const FIGMA_DESIGN_HEIGHT = 640;
+const FIGMA_DESIGN_STATUS_BAR = 0;
 
 /// 이 메서드는 디바이스 뷰포트 너비를 가져오는 데 사용됩니다.
 double get _width {
@@ -24,9 +24,9 @@ double get _width {
 
 /// 이 메서드는 디바이스 뷰포트 높이를 가져오는 데 사용됩니다.
 num get _height {
-  final num statusBar = mediaQueryData.viewPadding.top;
-  final num bottomBar = mediaQueryData.viewPadding.bottom;
-  final num screenHeight = mediaQueryData.size.height - statusBar - bottomBar;
+  final statusBar = mediaQueryData.viewPadding.top;
+  final bottomBar = mediaQueryData.viewPadding.bottom;
+  final screenHeight = mediaQueryData.size.height - statusBar - bottomBar;
   return screenHeight;
 }
 

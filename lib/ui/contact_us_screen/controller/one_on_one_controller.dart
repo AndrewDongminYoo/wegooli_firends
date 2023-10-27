@@ -16,11 +16,11 @@ class OneOnOneController extends GetxController {
       ? GetIt.I.get<OneOnOneController>()
       : GetIt.I.registerSingleton(OneOnOneController());
 
-  TextEditingController inquiryContent = TextEditingController();
+  final inquiryContent = TextEditingController();
 
-  Rx<OneOnOneModel> oneOnOne = OneOnOneModel().obs;
+  final oneOnOne = OneOnOneModel().obs;
   DropdownData? inquiryType;
-  final ValueNotifier<bool> canSubmit = ValueNotifier(false);
+  final canSubmit = ValueNotifier(false);
 
   @override
   void onClose() {

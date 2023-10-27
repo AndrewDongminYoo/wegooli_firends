@@ -14,13 +14,13 @@ class CardController extends GetxController {
       ? GetIt.I.get<CardController>()
       : GetIt.I.registerSingleton(CardController());
 
-  TextEditingController cardNum = TextEditingController();
-  TextEditingController cardExp = TextEditingController();
-  TextEditingController birthday = TextEditingController();
-  TextEditingController cardPin = TextEditingController();
-  Rx<String> radioGroup = ''.obs;
-  Rx<String> radioGroup1 = ''.obs;
-  final ValueNotifier<bool> canSubmit = ValueNotifier(false);
+  final cardNum = TextEditingController();
+  final cardExp = TextEditingController();
+  final birthday = TextEditingController();
+  final cardPin = TextEditingController();
+  final radioGroup = ''.obs;
+  final radioGroup1 = ''.obs;
+  final canSubmit = ValueNotifier(false);
 
   @override
   void onClose() {

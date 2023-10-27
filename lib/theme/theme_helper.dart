@@ -55,7 +55,7 @@ const ColorScheme lightTheme = ColorScheme.light(
   onSurfaceVariant: Color(0xFF222222),
 );
 
-final TextTheme textTheme = TextTheme(
+final textTheme = TextTheme(
   bodyLarge: AppTextStyle(
     color: lightTheme.onPrimary,
     fontSize: TextSize.md,

@@ -5,6 +5,5 @@ import 'package:get/get_rx/get_rx.dart';
 import 'list_item_model.dart';
 
 class ScheduledDateModel {
-  Rx<List<ListItemModel>> listItems =
-      Rx(List.generate(3, (_) => ListItemModel()));
+  final listItems = Rx(List.generate(3, (_) => ListItemModel()));
 }

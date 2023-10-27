@@ -32,7 +32,7 @@ import '/ui/zip_code_screen/personal_info_form_zip_code_screen.dart';
 const requireAuth = false;
 const initialLocation = AppGatewayScreen.routeName;
 
-final List<AppRoute> pages = [
+final pages = [
   AppRoute(
     path: VerificationWaitingScreen.routeName,
     builder: (context, params) => const VerificationWaitingScreen(),

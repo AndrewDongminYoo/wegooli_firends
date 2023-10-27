@@ -66,7 +66,7 @@ class CustomDropDown extends StatefulWidget {
 }
 
 class _CustomDropDownState extends State<CustomDropDown> {
-  final TextEditingController _textEditingController = TextEditingController();
+  final _textEditingController = TextEditingController();
 
   void Function() get listener => widget.isMultiSelect
       ? () {}

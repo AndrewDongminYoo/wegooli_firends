@@ -17,14 +17,14 @@ class LicenseRegisterController extends GetxController {
           ? GetIt.I.get<LicenseRegisterController>()
           : GetIt.I.registerSingleton(LicenseRegisterController());
 
-  TextEditingController licenseNums = TextEditingController();
-  TextEditingController validPeriod = TextEditingController();
-  TextEditingController firstIssued = TextEditingController();
+  final licenseNums = TextEditingController();
+  final validPeriod = TextEditingController();
+  final firstIssued = TextEditingController();
 
-  Rx<LicenseRegisterModel> license = LicenseRegisterModel().obs;
+  final license = LicenseRegisterModel().obs;
   DropdownData? licenseType;
   DropdownData? issuedYear;
-  final ValueNotifier<bool> canSubmit = ValueNotifier(false);
+  final canSubmit = ValueNotifier(false);
 
   @override
   void onClose() {

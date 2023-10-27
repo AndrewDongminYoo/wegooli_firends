@@ -11,5 +11,5 @@ class NoticesController extends GetxController {
       ? GetIt.I.get<NoticesController>()
       : GetIt.I.registerSingleton(NoticesController());
 
-  Rx<NoticesModel> notices = NoticesModel().obs;
+  final notices = NoticesModel().obs;
 }

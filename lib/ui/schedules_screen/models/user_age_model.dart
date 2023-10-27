@@ -21,16 +21,10 @@ class UserAgeModel {
   }
 
   Rx<String>? userDay;
-
   Rx<String>? userMonth;
-
   Rx<String>? userYear;
-
   Rx<String>? thirty;
-
   Rx<String>? thirtyone;
-
   Rx<String>? thirtytwo;
-
   Rx<String>? id;
 }

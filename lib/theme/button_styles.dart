@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 // 🌎 Project imports:
 import '/gen/colors.gen.dart';
 import '/theme/app_decoration.dart';
-import '/theme/custom_text_style.dart';
+import 'text_styles.dart';
 
 /// 시각적 밀도의 기본값은 세로 및 가로 밀도 모두 0이며, 이는 [VisualDensity.standard]에 해당합니다.
 /// 텍스트 크기, 아이콘 크기 또는 패딩 값에는 영향을 미치지 않습니다.

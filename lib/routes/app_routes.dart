@@ -2,7 +2,6 @@
 import 'package:go_router/go_router.dart';
 
 // 🌎 Project imports:
-import '../widgets/dialogue.dart';
 import '/routes/app_gateway.dart';
 import '/routes/route_model.dart';
 import '/screens/card_screen/card_list_screen.dart';
@@ -34,6 +33,7 @@ import '/screens/subscribe_info_screen/subscribe_info_screen.dart';
 import '/screens/subscribe_info_screen/unsubscribe_confirm_dialog.dart';
 import '/screens/subscribe_info_screen/unsubscribe_screen.dart';
 import '/screens/zip_code_screen/personal_info_form_zip_code_screen.dart';
+import '/widgets/dialog_page.dart';
 
 // ignore_for_file: avoid_redundant_argument_values
 /// 개발 중 Auth 필터링 꺼두고 싶을 때 false로 설정.

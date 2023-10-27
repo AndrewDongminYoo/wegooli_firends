@@ -8,7 +8,7 @@ import '/gen/assets.gen.dart';
 import '/routes/app_navigation.dart';
 import '/theme/app_decoration.dart';
 import '/theme/button_styles.dart';
-import '/theme/custom_text_style.dart';
+import '/theme/text_styles.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/buttons/elevated_button.dart';
 import '/widgets/image_view.dart';

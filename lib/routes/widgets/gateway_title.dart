@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/l10n/l10n.dart';
-import '/theme/custom_text_style.dart';
+import '/theme/text_styles.dart';
 import '/theme/theme_helper.dart';
 
 class GatewayTitle extends StatelessWidget {

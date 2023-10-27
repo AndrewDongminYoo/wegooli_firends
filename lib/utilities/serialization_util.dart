@@ -9,10 +9,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:from_css_color/from_css_color.dart';
 
 // 🌎 Project imports:
-import '/shared/deserialization_util.dart';
-import '/shared/lat_lng.dart';
-import '/shared/place.dart';
-import '/shared/uploaded_file.dart';
+import '/utilities/deserialization_util.dart';
+import '/utilities/lat_lng.dart';
+import '/utilities/place.dart';
+import '/utilities/uploaded_file.dart';
 
 /// SERIALIZATION HELPERS
 

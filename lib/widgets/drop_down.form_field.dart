@@ -8,11 +8,10 @@ import 'package:dropdown_button2/dropdown_button2.dart';
 import '/core/utils/list_extensions.dart';
 import '/core/utils/size_utils.dart';
 import '/data/common/dropdown_data.dart';
-import '/shared/form_field_controller.dart';
-import '/theme/custom_text_style.dart';
+import '/theme/text_styles.dart';
 
-class CustomDropDown extends StatefulWidget {
-  const CustomDropDown({
+class CustomDropDownFormField extends StatefulWidget {
+  const CustomDropDownFormField({
     super.key,
     required this.options,
     this.borderColor,
@@ -62,10 +61,11 @@ class CustomDropDown extends StatefulWidget {
   final Widget? icon;
 
   @override
-  State<CustomDropDown> createState() => _CustomDropDownState();
+  State<CustomDropDownFormField> createState() =>
+      _CustomDropDownFormFieldState();
 }
 
-class _CustomDropDownState extends State<CustomDropDown> {
+class _CustomDropDownFormFieldState extends State<CustomDropDownFormField> {
   final _textEditingController = TextEditingController();
 
   void Function() get listener => widget.isMultiSelect
@@ -372,4 +372,12 @@ class _CustomDropDownState extends State<CustomDropDown> {
           : null,
     );
   }
+}
+
+class FormFieldController<T> extends ValueNotifier<T?> {
+  FormFieldController(this.initialValue) : super(initialValue);
+
+  final T? initialValue;
+
+  void reset() => value = initialValue;
 }

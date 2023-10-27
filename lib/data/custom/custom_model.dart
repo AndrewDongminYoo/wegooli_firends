@@ -6,39 +6,8 @@ import 'package:flutter/scheduler.dart';
 import 'package:collection/collection.dart';
 import 'package:provider/provider.dart';
 
-Widget wrapWithModel<T extends CustomModel>({
-  required T model,
-  required Widget child,
-  required VoidCallback updateCallback,
-  bool updateOnChange = false,
-}) {
-  // Set the component to optionally update the page on updates.
-  model.setOnUpdate(
-    onUpdate: updateCallback,
-    updateOnChange: updateOnChange,
-  );
-  // Models for components within a page will be disposed by the page's model,
-  // so we don't want the component widget to dispose them until the page is
-  // itself disposed.
-  model.disposeOnWidgetDisposal = false;
-  // Wrap in a Provider so that the model can be accessed by the component.
-  return Provider<T>.value(
-    value: model,
-    child: child,
-  );
-}
-
-T createModel<T extends CustomModel>(
-  BuildContext context,
-  T Function() defaultBuilder,
-) {
-  final model = context.read<T?>() ?? defaultBuilder();
-  model._init(context);
-  return model;
-}
-
 abstract class CustomModel<W extends Widget> {
-  // Initialization methods
+  // 초기화 메서드
   bool _isInitialized = false;
   void initState(BuildContext context);
   void _init(BuildContext context) {
@@ -51,30 +20,30 @@ abstract class CustomModel<W extends Widget> {
     }
   }
 
-  // The widget associated with this model. This is useful for accessing the
-  // parameters of the widget, for example.
+  /// 이 모델과 연결된 위젯입니다.
+  /// 예를 들어 위젯의 파라미터에 액세스할 때 유용합니다.
   W? _widget;
-  // This will always be non-null when used, but is nullable to allow us to
-  // dispose of the widget in the [dispose] method (for garbage collection).
+
+  /// 이 메서드는 사용될 때 항상 널이 아니지만, 가비지 컬렉션을 위해 [dispose] 메서드에서 위젯을 폐기할 수 있도록 널로 설정할 수 있습니다.
   W get widget => _widget!;
 
-  // Dispose methods
-  // Whether to dispose this model when the corresponding widget is
-  // disposed. By default this is true for pages and false for components,
-  // as page/component models handle the disposal of their children.
+  /// dispose 메서드 해당 위젯이 dispose될 때 이 모델을 dispose할지 여부입니다.
+  /// 페이지/컴포넌트 모델이 하위 모델의 폐기를 처리하므로 기본적으로 이 값은 페이지의 경우 참이고 컴포넌트의 경우 거짓입니다.
   bool disposeOnWidgetDisposal = true;
   void dispose();
   void maybeDispose() {
     if (disposeOnWidgetDisposal) {
       dispose();
     }
-    // Remove reference to widget for garbage collection purposes.
+
+    // 가비지 컬렉션을 위해 위젯에 대한 참조를 제거합니다.
     _widget = null;
   }
 
-  // Whether to update the containing page / component on updates.
+  /// 업데이트 시 포함된 페이지/컴포넌트를 업데이트할지 여부입니다.
   bool updateOnChange = false;
-  // Function to call when the model receives an update.
+
+  /// 모델이 업데이트를 받을 때 호출할 함수입니다.
   VoidCallback _updateCallback = () {};
   void onUpdate() => updateOnChange ? _updateCallback() : () {};
   CustomModel setOnUpdate({
@@ -84,7 +53,8 @@ abstract class CustomModel<W extends Widget> {
       this
         .._updateCallback = onUpdate
         ..updateOnChange = updateOnChange;
-  // Update the containing page when this model received an update.
+
+  // 이 모델이 업데이트를 받으면 포함 페이지를 업데이트합니다.
   void updatePage(VoidCallback callback) {
     callback();
     _updateCallback();
@@ -107,12 +77,11 @@ class CustomDynamicModels<T extends CustomModel> {
 
   List<S> getValues<S>(S? Function(T) getValue) {
     return _childrenIndexes.entries
-        // Sort keys by index.
+        // 인덱스별로 키를 정렬합니다.
         .sorted((a, b) => a.value.compareTo(b.value))
         .where((e) => _childrenModels[e.key] != null)
-        // Map each model to the desired value and return as list. In order
-        // to preserve index order, rather than removing null values we provide
-        // default values (for types with reasonable defaults).
+        // 각 모델을 원하는 값에 매핑하여 목록으로 반환합니다.
+        // 인덱스 순서를 유지하기 위해 널 값을 제거하는 대신 기본값을 제공합니다(합리적인 기본값이 있는 유형의 경우).
         .map((e) => getValue(_childrenModels[e.key]!) ?? _getDefaultValue<S>()!)
         .toList();
   }
@@ -140,21 +109,49 @@ class CustomDynamicModels<T extends CustomModel> {
     _activeKeys!.add(uniqueKey);
 
     if (shouldResetActiveKeys) {
-      // Add a post-frame callback to remove and dispose of unused models after
-      // we're done building, then reset `_activeKeys` to null so we know to do
-      // this again next build.
+      /// 빌드가 완료된 후 사용하지 않는 모델을 제거하고 폐기하는 포스트 프레임 콜백을 추가한 다음,
+      /// 다음 빌드에서 이 작업을 다시 수행할 수 있도록 `_activeKeys`를 null로 재설정합니다.
       SchedulerBinding.instance.addPostFrameCallback((_) {
         _childrenIndexes.removeWhere((k, _) => !_activeKeys!.contains(k));
         _childrenModels.keys
             .toSet()
             .difference(_activeKeys!)
-            // Remove and dispose of unused models since they are  not being used
-            // elsewhere and would not otherwise be disposed.
+
+            /// 사용하지 않는 모델은 다른 곳에서 사용되지 않고 다른 방법으로 폐기되지 않으므로 제거하고 폐기합니다.
             .forEach((k) => _childrenModels.remove(k)?.dispose());
         _activeKeys = null;
       });
     }
   }
+}
+
+Widget wrapWithModel<T extends CustomModel>({
+  required T model,
+  required Widget child,
+  required VoidCallback updateCallback,
+  bool updateOnChange = false,
+}) {
+  // 컴포넌트가 업데이트 시 페이지를 선택적으로 업데이트하도록 설정합니다.
+  model.setOnUpdate(
+    onUpdate: updateCallback,
+    updateOnChange: updateOnChange,
+  );
+  // 페이지 내 컴포넌트의 모델은 페이지의 모델에 의해 폐기되므로 페이지 자체가 폐기될 때까지 컴포넌트 위젯이 폐기하지 않기를 원합니다.
+  model.disposeOnWidgetDisposal = false;
+  // 컴포넌트에서 모델에 액세스할 수 있도록 프로바이더로 감싸주세요.
+  return Provider<T>.value(
+    value: model,
+    child: child,
+  );
+}
+
+T createModel<T extends CustomModel>(
+  BuildContext context,
+  T Function() defaultBuilder,
+) {
+  final model = context.read<T?>() ?? defaultBuilder();
+  model._init(context);
+  return model;
 }
 
 T? _getDefaultValue<T>() {

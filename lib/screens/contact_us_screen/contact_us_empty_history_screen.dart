@@ -6,7 +6,7 @@ import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
 import '/routes/app_navigation.dart';
 import '/theme/button_styles.dart';
-import '/theme/custom_text_style.dart';
+import '/theme/text_styles.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';

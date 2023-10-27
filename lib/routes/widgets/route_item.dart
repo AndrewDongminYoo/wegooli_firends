@@ -7,7 +7,7 @@ import 'package:go_router/go_router.dart';
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/fonts.gen.dart';
-import '/theme/custom_text_style.dart';
+import '/theme/text_styles.dart';
 import '/theme/theme_helper.dart';
 
 class RouteItem extends StatelessWidget {

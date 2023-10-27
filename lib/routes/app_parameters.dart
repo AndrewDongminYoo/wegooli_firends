@@ -6,7 +6,7 @@ import 'package:go_router/go_router.dart';
 
 // 🌎 Project imports:
 import '/routes/route_model.dart';
-import '/shared/deserialization_util.dart';
+import '/utilities/deserialization_util.dart';
 
 class AppParameters {
   AppParameters(this.state, [this.asyncParams = const {}]);

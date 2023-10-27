@@ -5,49 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class CustomButtonOptions {
-  const CustomButtonOptions({
-    this.textStyle,
-    this.elevation,
-    this.height,
-    this.width,
-    this.padding,
-    this.color,
-    this.disabledColor,
-    this.disabledTextColor,
-    this.splashColor,
-    this.iconSize,
-    this.iconColor,
-    this.iconPadding,
-    this.borderRadius,
-    this.borderSide,
-    this.hoverColor,
-    this.hoverBorderSide,
-    this.hoverTextColor,
-    this.hoverElevation,
-    this.maxLines,
-  });
-
-  final TextStyle? textStyle;
-  final double? elevation;
-  final double? height;
-  final double? width;
-  final EdgeInsetsGeometry? padding;
-  final Color? color;
-  final Color? disabledColor;
-  final Color? disabledTextColor;
-  final int? maxLines;
-  final Color? splashColor;
-  final double? iconSize;
-  final Color? iconColor;
-  final EdgeInsetsGeometry? iconPadding;
-  final BorderRadius? borderRadius;
-  final BorderSide? borderSide;
-  final Color? hoverColor;
-  final BorderSide? hoverBorderSide;
-  final Color? hoverTextColor;
-  final double? hoverElevation;
-}
+// 🌎 Project imports:
+import 'custom_button.options.dart';
 
 class CustomButtonWidget extends StatefulWidget {
   const CustomButtonWidget({
@@ -84,6 +43,12 @@ class _CustomButtonWidgetState extends State<CustomButtonWidget> {
               width: 23,
               height: 23,
               child: CircularProgressIndicator(
+                /// 항상 주어진 값에서 멈추는 애니메이션입니다.
+                /// [status]는 항상 [AnimationStatus.forward]입니다.
+                /// 주어진 값으로 [AlwaysStoppedAnimation]을 생성합니다.
+                /// [AlwaysStoppedAnimation]의 [value]과 [status]는 절대 변경될 수 없으므로 리스너를 호출할 수 없습니다.
+                /// 따라서 [AlwaysStoppedAnimation] 인스턴스를 여러 곳에서 재사용해도 안전합니다.
+                /// 컴파일 시점에 사용할 [value]을 알 수 있는 경우 생성자를 `const` 생성자로 호출해야 합니다.
                 valueColor: AlwaysStoppedAnimation<Color>(
                   widget.options.textStyle!.color ?? Colors.white,
                 ),
@@ -92,7 +57,7 @@ class _CustomButtonWidgetState extends State<CustomButtonWidget> {
           )
         : AutoSizeText(
             widget.text,
-            style: widget.options.textStyle?.withoutColor(),
+            style: widget.options.textStyle,
             maxLines: maxLines,
             overflow: TextOverflow.ellipsis,
           );
@@ -210,35 +175,4 @@ class _CustomButtonWidgetState extends State<CustomButtonWidget> {
       ),
     );
   }
-}
-
-extension _WithoutColorExtension on TextStyle {
-  TextStyle withoutColor() => TextStyle(
-        inherit: inherit,
-        backgroundColor: backgroundColor,
-        fontSize: fontSize,
-        fontWeight: fontWeight,
-        fontStyle: fontStyle,
-        letterSpacing: letterSpacing,
-        wordSpacing: wordSpacing,
-        textBaseline: textBaseline,
-        height: height,
-        leadingDistribution: leadingDistribution,
-        locale: locale,
-        foreground: foreground,
-        background: background,
-        shadows: shadows,
-        fontFeatures: fontFeatures,
-        decoration: decoration,
-        decorationColor: decorationColor,
-        decorationStyle: decorationStyle,
-        decorationThickness: decorationThickness,
-        debugLabel: debugLabel,
-        fontFamily: fontFamily,
-        fontFamilyFallback: fontFamilyFallback,
-        // The _package field is private so unfortunately we can't set it here,
-        // but it's almost always unset anyway.
-        // package: _package,
-        overflow: overflow,
-      );
 }

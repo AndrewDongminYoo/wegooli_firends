@@ -1,5 +1,5 @@
 // 🌎 Project imports:
-import '/shared/lat_lng.dart';
+import '/utilities/lat_lng.dart';
 
 class CustomPlace {
   const CustomPlace({

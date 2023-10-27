@@ -7,7 +7,7 @@ import 'package:url_launcher/url_launcher_string.dart';
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
-import '/theme/custom_text_style.dart';
+import '/theme/text_styles.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/image_view.dart';
 

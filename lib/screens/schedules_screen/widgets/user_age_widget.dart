@@ -7,7 +7,7 @@ import 'package:get/state_manager.dart';
 // 🌎 Project imports:
 import '../models/user_age_model.dart';
 import '/core/utils/size_utils.dart';
-import '/theme/custom_text_style.dart';
+import '/theme/text_styles.dart';
 import '/theme/theme_helper.dart';
 
 // ignore: must_be_immutable

@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
 import '/gen/fonts.gen.dart';
-import '/theme/custom_text_style.dart';
 import 'button_styles.dart';
+import 'text_styles.dart';
 
 const ColorScheme lightTheme = ColorScheme.light(
   // Primary colors

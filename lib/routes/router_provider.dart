@@ -14,13 +14,15 @@ final _appStateNotifier = AppStateNotifier.I;
 
 final routerProvider = Provider<GoRouter>(
   (ref) => GoRouter(
-    navigatorKey: Catcher2.navigatorKey,
-    initialLocation: initialLocation,
-    debugLogDiagnostics: true,
-    refreshListenable: _appStateNotifier,
-    errorBuilder: (context, state) => _appStateNotifier.loggedIn
-        ? const HomePageScreen()
-        : const SigninPageScreen(),
-    routes: pages.mapTo((r) => r.convertToRoute(_appStateNotifier)),
-  ),
+      navigatorKey: Catcher2.navigatorKey,
+      initialLocation: initialLocation,
+      debugLogDiagnostics: true,
+      refreshListenable: _appStateNotifier,
+      errorBuilder: (context, state) => _appStateNotifier.loggedIn
+          ? const HomePageScreen()
+          : const SigninPageScreen(),
+      routes: [
+        ...pages.mapTo((r) => r.convertToRoute(_appStateNotifier)),
+        ...dialogues
+      ]),
 );

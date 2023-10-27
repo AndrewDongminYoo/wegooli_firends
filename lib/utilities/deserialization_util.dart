@@ -9,10 +9,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:from_css_color/from_css_color.dart';
 
 // 🌎 Project imports:
-import '/shared/lat_lng.dart';
-import '/shared/place.dart';
-import '/shared/serialization_util.dart';
-import '/shared/uploaded_file.dart';
+import '/utilities/lat_lng.dart';
+import '/utilities/place.dart';
+import '/utilities/serialization_util.dart';
+import '/utilities/uploaded_file.dart';
 
 DateTimeRange? dateTimeRangeFromString(String dateTimeRangeStr) {
   final pieces = dateTimeRangeStr.split('|');

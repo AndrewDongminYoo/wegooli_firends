@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 // 📦 Package imports:
 import 'package:go_router/go_router.dart';
+import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
@@ -146,4 +147,49 @@ int _getMaxLines(String? text) {
   } else {
     return (text.length / 18).ceil();
   }
+}
+
+@widgetbook.UseCase(
+  name: 'With Information 1',
+  type: InformationalDialog,
+)
+InformationalDialog thatCarIsAlreadyTaken(BuildContext context) {
+  return const InformationalDialog(
+    information: '선택한 시간에 차량이\n이미 예약되어 있습니다.',
+  );
+}
+
+@widgetbook.UseCase(
+  name: 'With Information 2',
+  type: InformationalDialog,
+)
+InformationalDialog thePasswordAndIdNotMatched(BuildContext context) {
+  return const InformationalDialog(
+    information: '아이디/비밀번호가\n맞지 않습니다.',
+  );
+}
+
+@widgetbook.UseCase(
+  name: 'With Information 3',
+  type: InformationalDialog,
+)
+InformationalDialog signInOrSignUpFirst(BuildContext context) {
+  return const InformationalDialog(
+    information: '로그인 후 사용해주세요.',
+  );
+}
+
+@widgetbook.UseCase(
+  name: 'Full Property - Sign Out Confirm',
+  type: InformationalDialog,
+)
+InformationalDialog areYouSureWantToSinOut(BuildContext context) {
+  return InformationalDialog(
+    dialogTitle: '회원탈퇴',
+    information: '위굴리 프렌즈의 회원을 탈퇴하시겠습니까?',
+    cancelText: '취소',
+    confirmText: '탈퇴',
+    cancelCallback: () => print('cancel'),
+    confirmCallback: () => print('confirm'),
+  );
 }

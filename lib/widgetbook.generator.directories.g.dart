@@ -18,6 +18,7 @@ import 'package:wegooli_friends/components/container.dart' as _i5;
 import 'package:wegooli_friends/components/custom_card.dart' as _i2;
 import 'package:wegooli_friends/components/custom_text_field.dart' as _i3;
 import 'package:wegooli_friends/customs/custom_knob.dart' as _i4;
+import 'package:wegooli_friends/widgets/information_dialog.dart' as _i6;
 
 final directories = <_i1.WidgetbookNode>[
   _i1.WidgetbookFolder(
@@ -80,7 +81,28 @@ final directories = <_i1.WidgetbookNode>[
             builder: _i5.greenContainerUseCase,
           ),
         ],
-      )
+      ),
+      _i1.WidgetbookComponent(
+        name: 'InformationalDialog',
+        useCases: [
+          _i1.WidgetbookUseCase(
+            name: 'Full Property - Sign Out Confirm',
+            builder: _i6.areYouSureWantToSinOut,
+          ),
+          _i1.WidgetbookUseCase(
+            name: 'With Information 1',
+            builder: _i6.thatCarIsAlreadyTaken,
+          ),
+          _i1.WidgetbookUseCase(
+            name: 'With Information 2',
+            builder: _i6.thePasswordAndIdNotMatched,
+          ),
+          _i1.WidgetbookUseCase(
+            name: 'With Information 3',
+            builder: _i6.signInOrSignUpFirst,
+          ),
+        ],
+      ),
     ],
   ),
 ];

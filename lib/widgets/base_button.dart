@@ -1,7 +1,7 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-class BaseButton extends StatelessWidget {
+abstract class BaseButton extends StatelessWidget {
   BaseButton({
     super.key,
     required this.text,

@@ -10,42 +10,43 @@ import '/gen/assets.gen.dart';
 import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/image_view.dart';
+import 'bottom_bar.item.dart';
 
 // ignore: must_be_immutable
-class CustomBottomBar extends StatelessWidget {
-  CustomBottomBar({
+class CustomBottomNavBar extends StatelessWidget {
+  CustomBottomNavBar({
     super.key,
     this.onChanged,
   });
 
   RxInt selectedIndex = 0.obs;
 
-  List<BottomMenuModel> bottomMenuList = [
-    BottomMenuModel(
+  List<BottomNavBarModel> bottomMenuList = [
+    BottomNavBarModel(
       icon: Assets.svg.icoSmartKey.path,
       activeIcon: Assets.svg.icoSmartKey.path,
       title: '홈',
       type: BottomBarEnum.tf,
     ),
-    BottomMenuModel(
+    BottomNavBarModel(
       icon: Assets.svg.icoCalRound.path,
       activeIcon: Assets.svg.icoCalRound.path,
       title: '일정',
       type: BottomBarEnum.tf,
     ),
-    BottomMenuModel(
+    BottomNavBarModel(
       icon: Assets.svg.icoChatRound.path,
       activeIcon: Assets.svg.icoChatRound.path,
       title: '채팅',
       type: BottomBarEnum.tf,
     ),
-    BottomMenuModel(
+    BottomNavBarModel(
       icon: Assets.svg.icoKeyRound.path,
       activeIcon: Assets.svg.icoKeyRound.path,
       title: '스마트 키',
       type: BottomBarEnum.tf,
     ),
-    BottomMenuModel(
+    BottomNavBarModel(
       icon: Assets.svg.icoMyPage.path,
       activeIcon: Assets.svg.icoMyPage.path,
       title: '마이페이지',
@@ -134,44 +135,4 @@ class CustomBottomBar extends StatelessWidget {
 
 enum BottomBarEnum {
   tf,
-}
-
-class BottomMenuModel {
-  BottomMenuModel({
-    required this.icon,
-    required this.activeIcon,
-    this.title,
-    required this.type,
-  });
-
-  String icon;
-
-  String activeIcon;
-  String? title;
-
-  BottomBarEnum type;
-}
-
-class DefaultWidget extends StatelessWidget {
-  const DefaultWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white,
-      padding: const EdgeInsets.all(10),
-      child: Center(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Please replace the respective Widget here',
-              style: AppTextStyle(fontSize: TextSize.lg),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
 }

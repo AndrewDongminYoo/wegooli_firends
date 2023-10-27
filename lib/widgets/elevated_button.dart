@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
 import '/core/utils/size_utils.dart';
+import '/gen/colors.gen.dart';
+import '/theme/button_styles.dart';
 import '/theme/custom_text_style.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/base_button.dart';
@@ -11,14 +13,14 @@ class CustomElevatedButton extends BaseButton {
   CustomElevatedButton({
     super.key,
     this.decoration,
-    this.leftIcon,
-    this.rightIcon,
+    this.focusNode,
+    this.isDisabled = false,
+    this.isLoading = false,
     EdgeInsets? margin,
     VoidCallback? onTap,
     ButtonStyle? buttonStyle,
     Alignment? alignment,
     TextStyle? buttonTextStyle,
-    bool? isDisabled,
     double? height,
     double? width,
     required String text,
@@ -26,7 +28,6 @@ class CustomElevatedButton extends BaseButton {
           text: text,
           onTap: onTap,
           buttonStyle: buttonStyle,
-          isDisabled: isDisabled,
           buttonTextStyle: buttonTextStyle,
           height: height,
           width: width,
@@ -35,8 +36,11 @@ class CustomElevatedButton extends BaseButton {
         );
 
   final BoxDecoration? decoration;
-  final Widget? leftIcon;
-  final Widget? rightIcon;
+  final FocusNode? focusNode;
+  @override
+  // ignore: overridden_fields
+  final bool isDisabled;
+  final bool isLoading;
 
   @override
   Widget build(BuildContext context) {
@@ -54,19 +58,24 @@ class CustomElevatedButton extends BaseButton {
         margin: margin,
         decoration: decoration,
         child: ElevatedButton(
-          style: buttonStyle,
-          onPressed: isDisabled ?? false ? null : onTap ?? () {},
+          focusNode: focusNode,
+          style: buttonStyle ?? defaultButtontStyle,
+          onPressed: (isDisabled || isLoading) ? null : onTap,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              leftIcon ?? const SizedBox.shrink(),
-              Text(
-                text,
-                style: buttonTextStyle ??
-                    textTheme.titleMedium!
-                        .copyWith(fontSize: TextSize.lg.fSize),
-              ),
-              rightIcon ?? const SizedBox.shrink(),
+              if (isLoading)
+                const CircularProgressIndicator(
+                  color: AppColors.neutralGray,
+                  strokeWidth: 2,
+                )
+              else
+                Text(
+                  text,
+                  style: buttonTextStyle ??
+                      textTheme.titleMedium!
+                          .copyWith(fontSize: TextSize.lg.fSize),
+                ),
             ],
           ),
         ),

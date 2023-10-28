@@ -75,7 +75,7 @@ class UnsubscribeScreen extends StatelessWidget {
                         width: 104.w,
                         text: '취소',
                         buttonStyle: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xFFB9BCC3),
+                          backgroundColor: Palette.gray400,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(26.w),
                           ),

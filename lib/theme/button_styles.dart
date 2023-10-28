@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
-import '/gen/colors.gen.dart';
 import '/theme/app_decoration.dart';
+import '/theme/theme_helper.dart';
 import 'text_styles.dart';
 
 /// 시각적 밀도의 기본값은 세로 및 가로 밀도 모두 0이며, 이는 [VisualDensity.standard]에 해당합니다.
@@ -41,11 +41,11 @@ ButtonStyle get defaultButtontStyle {
     /// https://material.io/design/interaction/states.html#pressed
     backgroundColor: MaterialStateColor.resolveWith((states) {
       if (states.contains(MaterialState.disabled)) {
-        return AppColors.primaryDisabled;
+        return Palette.disabled;
       } else if (states.contains(MaterialState.pressed)) {
-        return AppColors.primaryPressed;
+        return Palette.pressed;
       } else {
-        return AppColors.primaryDefault;
+        return Palette.button1;
       }
     }),
     shape: RoundedRectangleBorder(

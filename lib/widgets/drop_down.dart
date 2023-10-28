@@ -59,8 +59,8 @@ class CustomDropDown extends StatelessWidget {
             child: Text(
               option.title,
               overflow: TextOverflow.ellipsis,
-              style: hintStyle ??
-                  textTheme.bodyLarge!.tint(const Color(0xFFB0B2BC)),
+              style:
+                  hintStyle ?? textTheme.bodyLarge!.tint(Palette.blueGray200),
             ),
           );
         }),
@@ -75,29 +75,28 @@ class CustomDropDown extends StatelessWidget {
 
   InputDecoration get decoration => InputDecoration(
         hintText: hintText ?? '',
-        hintStyle:
-            hintStyle ?? textTheme.bodyLarge!.tint(const Color(0xFFB0B2BC)),
+        hintStyle: hintStyle ?? textTheme.bodyLarge!.tint(Palette.blueGray200),
         isDense: true,
         contentPadding: contentPadding ?? EdgeInsets.symmetric(vertical: 9.h),
         border: UnderlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadius ?? 4.w),
           borderSide: BorderSide(
             width: borderWidth ?? 1.0,
-            color: borderColor ?? const Color(0xFFB0B2BC),
+            color: borderColor ?? Palette.blueGray200,
           ),
         ),
         enabledBorder: UnderlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadius ?? 4.w),
           borderSide: BorderSide(
             width: borderWidth ?? 1.0,
-            color: borderColor ?? const Color(0xFFB0B2BC),
+            color: borderColor ?? Palette.blueGray200,
           ),
         ),
         focusedBorder: UnderlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadius ?? 4.w),
           borderSide: BorderSide(
             width: borderWidth ?? 1.0,
-            color: borderColor ?? const Color(0xFFB9BCC3),
+            color: borderColor ?? Palette.gray400,
           ),
         ),
       );

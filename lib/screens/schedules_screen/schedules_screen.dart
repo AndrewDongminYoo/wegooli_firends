@@ -13,6 +13,7 @@ import '/theme/theme_helper.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/buttons/elevated_button.dart';
 import '/widgets/image_view.dart';
+import '/widgets/separation_bar.dart';
 import 'controller/schedules_controller.dart';
 import 'datetime_picker_bottom_sheet.dart';
 import 'widgets/user_age_widget.dart';
@@ -76,13 +77,7 @@ class SchedulesScreen extends StatelessWidget {
                           ),
                         ),
                         SizedBox(height: 21.h),
-                        Container(
-                          height: 8.h,
-                          width: double.maxFinite,
-                          decoration: const BoxDecoration(
-                            color: Color(0xFFF6F7F7),
-                          ),
-                        ),
+                        const SeparationBar(),
                         Padding(
                           padding: EdgeInsets.only(
                             left: 16.w,
@@ -122,7 +117,7 @@ class SchedulesScreen extends StatelessWidget {
                             decoration: BoxDecoration(
                               color: lightTheme.onPrimaryContainer,
                               border: Border.all(
-                                color: const Color(0x33A4A8AF),
+                                color: Palette.blueGray300,
                                 width: 1.w,
                               ),
                               borderRadius: BorderRadiusStyle.circleBorder10,

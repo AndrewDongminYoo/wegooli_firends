@@ -65,7 +65,7 @@ class VerificationFilledScreen extends StatelessWidget {
                   decoration: BoxDecoration(
                     border: Border(
                       bottom: BorderSide(
-                        color: const Color(0xFFB0B2BC),
+                        color: Palette.blueGray200,
                         width: 1.w,
                       ),
                     ),
@@ -84,12 +84,12 @@ class VerificationFilledScreen extends StatelessWidget {
                         ),
                         child: const SizedBox(
                           child: Divider(
-                            color: Color(0xFFB0B2BC),
+                            color: Palette.blueGray200,
                           ),
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.only(left: 10.w),
+                        padding: EdgeInsets.only(left: 10.w, right: 5.w),
                         child: Text('2', style: textTheme.bodyLarge),
                       ),
                       customIcon(
@@ -169,7 +169,7 @@ class VerificationFilledScreen extends StatelessWidget {
                   height: 42.h,
                   text: '인증번호 발송',
                   buttonStyle: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF464A70),
+                    backgroundColor: Palette.button2,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8.w),
                     ),
@@ -198,13 +198,13 @@ class VerificationFilledScreen extends StatelessWidget {
             height: 48.h,
             text: '인증하기',
             buttonStyle: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xFFF3F3F6),
+              backgroundColor: Palette.gray100,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8.w),
               ),
             ).noEffect,
             buttonTextStyle: textTheme.titleSmall!.copyWith(
-              color: const Color(0xFFB0B2BC),
+              color: Palette.blueGray200,
               fontWeight: FontWeight.bold,
             ),
           ),

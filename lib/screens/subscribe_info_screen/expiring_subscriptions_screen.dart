@@ -61,7 +61,7 @@ class ExpiringSubscriptionsScreen extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: lightTheme.onPrimaryContainer,
                       border: Border.all(
-                        color: const Color(0xFFB9BCC3),
+                        color: Palette.gray400,
                         width: 1.w,
                       ),
                       borderRadius: BorderRadiusStyle.circleBorder10,

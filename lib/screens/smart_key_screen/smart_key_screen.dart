@@ -10,6 +10,7 @@ import '/theme/text_styles.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/image_view.dart';
+import '/widgets/separation_bar.dart';
 import 'controller/smart_key_controller.dart';
 import 'widgets/car_status_message.dart';
 import 'widgets/controll_button.dart';
@@ -107,13 +108,7 @@ class SmartKeyScreen extends StatelessWidget {
                         SizedBox(height: 6.h),
                         const CarStatusMessage(),
                         SizedBox(height: 31.h),
-                        Container(
-                          height: 8.h,
-                          width: double.maxFinite,
-                          decoration: const BoxDecoration(
-                            color: Color(0xFFF6F7F7),
-                          ),
-                        ),
+                        const SeparationBar(),
                         Align(
                           alignment: Alignment.centerLeft,
                           child: Padding(

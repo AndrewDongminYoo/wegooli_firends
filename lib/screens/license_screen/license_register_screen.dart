@@ -111,7 +111,7 @@ class LicenseRegisterScreen extends StatelessWidget {
                                     vertical: 2.h,
                                   ),
                                   decoration: BoxDecoration(
-                                    color: const Color(0xFF464A70),
+                                    color: Palette.button2,
                                     border: Border.all(
                                       color: lightTheme.onPrimaryContainer,
                                       width: 1.w,
@@ -169,8 +169,7 @@ class LicenseRegisterScreen extends StatelessWidget {
                                             decoration: BoxDecoration(
                                               border: Border(
                                                 bottom: BorderSide(
-                                                  color:
-                                                      const Color(0xFFB0B2BC),
+                                                  color: Palette.blueGray200,
                                                   width: 1.w,
                                                 ),
                                               ),
@@ -184,8 +183,7 @@ class LicenseRegisterScreen extends StatelessWidget {
                                                   '지역',
                                                   style: textTheme.bodyLarge!
                                                       .copyWith(
-                                                    color:
-                                                        const Color(0xFFB0B2BC),
+                                                    color: Palette.blueGray200,
                                                   ),
                                                 ),
                                                 customIcon(
@@ -206,7 +204,7 @@ class LicenseRegisterScreen extends StatelessWidget {
                                           vertical: 2.h,
                                         ),
                                         decoration: BoxDecoration(
-                                          color: const Color(0xFF464A70),
+                                          color: Palette.button2,
                                           border: Border.all(
                                             color: theme
                                                 .colorScheme.onPrimaryContainer,
@@ -295,7 +293,7 @@ class LicenseRegisterScreen extends StatelessWidget {
                                     vertical: 2.h,
                                   ),
                                   decoration: BoxDecoration(
-                                    color: const Color(0xFF464A70),
+                                    color: Palette.button2,
                                     border: Border.all(
                                       color: lightTheme.onPrimaryContainer,
                                       width: 1.w,
@@ -351,7 +349,7 @@ class LicenseRegisterScreen extends StatelessWidget {
                                     vertical: 2.h,
                                   ),
                                   decoration: BoxDecoration(
-                                    color: const Color(0xFF464A70),
+                                    color: Palette.button2,
                                     border: Border.all(
                                       color: lightTheme.onPrimaryContainer,
                                       width: 1.w,
@@ -391,13 +389,13 @@ class LicenseRegisterScreen extends StatelessWidget {
             bottom: 16.h,
           ),
           buttonStyle: ElevatedButton.styleFrom(
-            backgroundColor: const Color(0xFFF3F3F6),
+            backgroundColor: Palette.gray100,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8.w),
             ),
           ).noEffect,
           buttonTextStyle: textTheme.titleSmall!.copyWith(
-            color: const Color(0xFFB0B2BC),
+            color: Palette.blueGray200,
             fontWeight: FontWeight.bold,
           ),
         ),

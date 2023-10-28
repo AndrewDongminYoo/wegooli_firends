@@ -73,7 +73,7 @@ class SendInvitationDialog extends StatelessWidget {
                   right: 20.w,
                 ),
                 hintText: 'asdf-asdf-asdf-asdf',
-                hintStyle: textTheme.bodyLarge!.tint(const Color(0xFF8E9199)),
+                hintStyle: textTheme.bodyLarge!.tint(Palette.gray500),
                 textInputAction: TextInputAction.done,
                 alignment: Alignment.center,
                 suffix: Container(

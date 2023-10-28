@@ -9,6 +9,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '/core/utils/list_extensions.dart';
 import '/data/common/dropdown_data.dart';
 import '/theme/text_styles.dart';
+import '/theme/theme_helper.dart';
 
 class CustomDropDownFormField extends StatefulWidget {
   const CustomDropDownFormField({
@@ -121,7 +122,7 @@ class _CustomDropDownFormFieldState extends State<CustomDropDownFormField> {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(widget.borderRadius ?? 4.w),
         border: Border.all(
-          color: widget.borderColor ?? const Color(0xFFB0B2BC),
+          color: widget.borderColor ?? Palette.blueGray200,
           width: widget.borderWidth ?? 1.w,
         ),
         color: widget.fillColor,

@@ -264,7 +264,7 @@ class ContactUsHistoryExpandedPage extends StatelessWidget {
                                 color: lightTheme.onPrimaryContainer,
                                 boxShadow: [
                                   BoxShadow(
-                                    color: Colors.black.withOpacity(0.1),
+                                    color: Palette.shadow,
                                     spreadRadius: 2.w,
                                     blurRadius: 2.w,
                                     offset: const Offset(2, 2),
@@ -275,14 +275,14 @@ class ContactUsHistoryExpandedPage extends StatelessWidget {
                                 onTap: context.safePop,
                                 text: '확인',
                                 buttonStyle: ElevatedButton.styleFrom(
-                                  backgroundColor: const Color(0xFFF3F3F6),
+                                  backgroundColor: Palette.gray100,
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(26.w),
                                   ),
                                 ).noEffect,
                                 buttonTextStyle:
                                     textTheme.titleMedium!.copyWith(
-                                  color: const Color(0xFFB0B2BC),
+                                  color: Palette.blueGray200,
                                   fontSize: TextSize.lg,
                                 ),
                               ),

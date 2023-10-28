@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
+import 'package:get_it/get_it.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -10,6 +11,11 @@ import '/core/utils/logger.dart';
 import '/data/custom/user.model.dart';
 
 class AppStorage {
+  // ignore: prefer_constructors_over_static_methods
+  static AppStorage get I => GetIt.I.isRegistered<AppStorage>()
+      ? GetIt.I.get<AppStorage>()
+      : GetIt.I.registerSingleton(AppStorage());
+
   Box? _store;
 
   /// 앱 로컬 스토리지 초기화 (비동기)
@@ -71,6 +77,10 @@ class AppStorage {
   Future<void> saveCurrentUser(User user) {
     logger.i('[pref] set user: $user');
     return setData(_usersInfo, user);
+  }
+
+  User? getCurrentUser() {
+    return getData(_usersInfo, defaultValue: null);
   }
 }
 

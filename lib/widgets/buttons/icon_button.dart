@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 // 📦 Package imports:
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+// 🌎 Project imports:
+import '/theme/theme_helper.dart';
+
 class CustomIconButton extends StatelessWidget {
   const CustomIconButton({
     super.key,
@@ -61,11 +64,11 @@ class CustomIconButton extends StatelessWidget {
 /// Extension on [CustomIconButton] to facilitate inclusion of all types of border style etc
 extension IconButtonStyleHelper on CustomIconButton {
   static BoxDecoration get fillGray => BoxDecoration(
-        color: const Color(0xFFB9BCC3),
+        color: Palette.gray400,
         borderRadius: BorderRadius.circular(24.w),
       );
   static BoxDecoration get fillBlueGrayTL5 => BoxDecoration(
-        color: const Color(0x33A4A8AF),
+        color: Palette.blueGray300,
         borderRadius: BorderRadius.circular(5.w),
       );
 }

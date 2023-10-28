@@ -67,7 +67,7 @@ class CardRegisterScreen extends StatelessWidget {
                                   child: Text(
                                     '*',
                                     style: textTheme.titleMedium!
-                                        .tint(const Color(0xFFDB4646)),
+                                        .tint(Palette.red600),
                                   ),
                                 ),
                               ],
@@ -76,8 +76,8 @@ class CardRegisterScreen extends StatelessWidget {
                             CustomTextFormField(
                               controller: controller.cardNum,
                               hintText: '0000  0000  0000  0000',
-                              hintStyle: textTheme.bodyLarge!
-                                  .tint(const Color(0xFF8E9199)),
+                              hintStyle:
+                                  textTheme.bodyLarge!.tint(Palette.gray500),
                               contentPadding: EdgeInsets.symmetric(
                                 horizontal: 8.w,
                                 vertical: 14.h,
@@ -106,7 +106,7 @@ class CardRegisterScreen extends StatelessWidget {
                                   child: Text(
                                     '*',
                                     style: textTheme.titleMedium!
-                                        .tint(const Color(0xFFDB4646)),
+                                        .tint(Palette.red600),
                                   ),
                                 ),
                               ],
@@ -115,8 +115,8 @@ class CardRegisterScreen extends StatelessWidget {
                             CustomTextFormField(
                               controller: controller.cardExp,
                               hintText: 'MM/YY',
-                              hintStyle: textTheme.bodyLarge!
-                                  .tint(const Color(0xFF8E9199)),
+                              hintStyle:
+                                  textTheme.bodyLarge!.tint(Palette.gray500),
                               contentPadding: EdgeInsets.symmetric(
                                 horizontal: 8.w,
                                 vertical: 14.h,
@@ -145,7 +145,7 @@ class CardRegisterScreen extends StatelessWidget {
                                   child: Text(
                                     '*',
                                     style: textTheme.titleMedium!
-                                        .tint(const Color(0xFFDB4646)),
+                                        .tint(Palette.red600),
                                   ),
                                 ),
                               ],
@@ -154,15 +154,15 @@ class CardRegisterScreen extends StatelessWidget {
                             CustomTextFormField(
                               controller: controller.birthday,
                               hintText: '940812',
-                              hintStyle: textTheme.bodyLarge!
-                                  .tint(const Color(0xFF8E9199)),
+                              hintStyle:
+                                  textTheme.bodyLarge!.tint(Palette.gray500),
                               contentPadding: EdgeInsets.symmetric(
                                 horizontal: 8.w,
                                 vertical: 14.h,
                               ),
                               borderDecoration:
                                   TextFormFieldStyleHelper.outlineGrayTL5,
-                              fillColor: const Color(0x33A4A8AF),
+                              fillColor: Palette.blueGray300,
                             ),
                           ],
                         ),
@@ -187,7 +187,7 @@ class CardRegisterScreen extends StatelessWidget {
                                   child: Text(
                                     '*',
                                     style: textTheme.titleMedium!
-                                        .tint(const Color(0xFFDB4646)),
+                                        .tint(Palette.red600),
                                   ),
                                 ),
                               ],
@@ -217,7 +217,7 @@ class CardRegisterScreen extends StatelessWidget {
             color: lightTheme.onPrimaryContainer,
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.1),
+                color: Palette.shadow,
                 spreadRadius: 2.w,
                 blurRadius: 2.w,
                 offset: const Offset(2, 2),
@@ -229,13 +229,13 @@ class CardRegisterScreen extends StatelessWidget {
             onTap: controller.printFormFields,
             text: '확인',
             buttonStyle: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xFFF3F3F6),
+              backgroundColor: Palette.gray100,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(26.w),
               ),
             ).noEffect,
             buttonTextStyle: textTheme.titleMedium!.copyWith(
-              color: const Color(0xFFB0B2BC),
+              color: Palette.blueGray200,
               fontSize: TextSize.lg,
             ),
           ),

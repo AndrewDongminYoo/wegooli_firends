@@ -92,8 +92,7 @@ class CustomTextFormField extends StatelessWidget {
         counterText: counterText,
         counterStyle: counterStyle,
         hintText: hintText ?? '',
-        hintStyle:
-            hintStyle ?? textTheme.bodyLarge!.tint(const Color(0xFFB0B2BC)),
+        hintStyle: hintStyle ?? textTheme.bodyLarge!.tint(Palette.blueGray200),
         prefixIcon: prefix,
         prefixIconConstraints: prefixConstraints,
         suffixIcon: suffix,
@@ -106,14 +105,14 @@ class CustomTextFormField extends StatelessWidget {
             UnderlineInputBorder(
               borderRadius: BorderRadius.circular(5.w),
               borderSide: const BorderSide(
-                color: Color(0xFFB9BCC3),
+                color: Palette.gray400,
               ),
             ),
         enabledBorder: borderDecoration ??
             UnderlineInputBorder(
               borderRadius: BorderRadius.circular(5.w),
               borderSide: const BorderSide(
-                color: Color(0xFFB9BCC3),
+                color: Palette.gray400,
               ),
             ),
         focusedBorder: borderDecoration ??
@@ -143,7 +142,7 @@ extension TextFormFieldStyleHelper on CustomTextFormField {
   static UnderlineInputBorder get outlineGrayTL5 => UnderlineInputBorder(
         borderRadius: BorderRadius.circular(5.w),
         borderSide: const BorderSide(
-          color: Color(0xFFB9BCC3),
+          color: Palette.gray400,
         ),
       );
 }

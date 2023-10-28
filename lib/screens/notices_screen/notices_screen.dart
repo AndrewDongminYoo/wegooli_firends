@@ -36,7 +36,7 @@ class NoticesScreen extends StatelessWidget {
                   vertical: 15.h,
                 ),
                 decoration: const BoxDecoration(
-                  color: Color(0x33FFE142),
+                  color: Palette.disabled,
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -66,7 +66,7 @@ class NoticesScreen extends StatelessWidget {
                             child: Divider(
                               height: 1.h,
                               thickness: 1.h,
-                              color: const Color(0x33A4A8AF),
+                              color: Palette.blueGray300,
                             ),
                           ),
                         );

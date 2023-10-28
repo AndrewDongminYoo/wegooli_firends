@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // 🌎 Project imports:
-import '/gen/colors.gen.dart';
 import '/theme/button_styles.dart';
 import '/theme/text_styles.dart';
 import '/theme/theme_helper.dart';
@@ -70,7 +69,7 @@ class CustomElevatedButton extends BaseButton {
                 children: [
                   if (isLoading)
                     const CircularProgressIndicator(
-                      color: AppColors.neutralGray,
+                      color: Palette.blueGray200,
                       strokeWidth: 2,
                     )
                   else

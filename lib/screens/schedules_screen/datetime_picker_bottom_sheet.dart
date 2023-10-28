@@ -10,7 +10,6 @@ import 'package:go_router/go_router.dart';
 import '/core/utils/datetime_utils.dart';
 import '/core/utils/list_extensions.dart';
 import '/data/custom/schedule.dart';
-import '/gen/colors.gen.dart';
 import '/l10n/l10n.dart';
 import '/routes/app_navigation.dart';
 import '/screens/schedules_screen/schedules_screen.dart';
@@ -105,7 +104,7 @@ class _DatetimePickerBottomSheetState extends State<DatetimePickerBottomSheet> {
                     .modest,
               )),
           ExpansionPanelList(
-              dividerColor: AppColors.separationBar,
+              dividerColor: Palette.separator,
               materialGapSize: 0,
               expansionCallback: (tapped, expand) {
                 setState(() {
@@ -120,8 +119,8 @@ class _DatetimePickerBottomSheetState extends State<DatetimePickerBottomSheet> {
                     headerBuilder: (context, isExpanded) {
                       final panelTextStyle = AppTextStyle(
                         color: isExpanded
-                            ? AppColors.fontBlack
-                            : AppColors.fontBlackDisabled,
+                            ? Palette.fontBlack
+                            : Palette.blueGray400,
                         fontWeight: FontWeight.bold,
                         lineHeight: Leading.normal,
                         letterSpacing: LetterSpacing.tight,
@@ -215,5 +214,5 @@ class _DatetimePickerBottomSheetState extends State<DatetimePickerBottomSheet> {
   }
 
   BorderSide _borderSide(double width) =>
-      BorderSide(width: width.w, color: AppColors.separationBar);
+      BorderSide(width: width.w, color: Palette.separator);
 }

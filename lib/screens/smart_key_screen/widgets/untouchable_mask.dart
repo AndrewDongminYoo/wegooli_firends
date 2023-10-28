@@ -22,7 +22,7 @@ class UntouchableMask extends StatelessWidget {
           vertical: 50.h,
         ),
         decoration: const BoxDecoration(
-          color: Color(0x33A4A8AF),
+          color: Palette.blueGray300,
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,

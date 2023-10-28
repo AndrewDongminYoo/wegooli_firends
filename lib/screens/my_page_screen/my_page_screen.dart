@@ -9,6 +9,7 @@ import '/gen/assets.gen.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/custom_app_bar.dart';
 import '/widgets/image_view.dart';
+import '/widgets/separation_bar.dart';
 
 class MyPageScreen extends StatelessWidget {
   const MyPageScreen({super.key});
@@ -82,13 +83,7 @@ class MyPageScreen extends StatelessWidget {
                           ),
                         ),
                         SizedBox(height: 20.h),
-                        Container(
-                          height: 8.h,
-                          width: double.maxFinite,
-                          decoration: const BoxDecoration(
-                            color: Color(0xFFF6F7F7),
-                          ),
-                        ),
+                        const SeparationBar(),
                         Padding(
                           padding: EdgeInsets.only(
                             left: 16.w,

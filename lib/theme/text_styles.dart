@@ -7,12 +7,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // 🌎 Project imports:
-import '/gen/colors.gen.dart';
 import '/gen/fonts.gen.dart';
+import '/theme/theme_helper.dart';
 
 class AppTextStyle extends TextStyle {
   AppTextStyle({
-    this.color = AppColors.fontBlack,
+    this.color = Palette.fontBlack,
     this.decoration = TextDecoration.none,
     this.fontFamily = FontFamily.pretendard,
     this.fontSize,

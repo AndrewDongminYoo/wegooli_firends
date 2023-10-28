@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // 🌎 Project imports:
-import '/gen/colors.gen.dart';
 import '/theme/button_styles.dart';
 import '/theme/theme_helper.dart';
 
@@ -107,8 +106,8 @@ class _CustomCheckboxButtonState extends State<CustomCheckboxButton> {
         height: widget.iconSize ?? 20.w,
         width: widget.iconSize ?? 20.w,
         child: Checkbox(
-          activeColor: AppColors.primaryPressed,
-          checkColor: AppColors.primaryInverted,
+          activeColor: Palette.pressed,
+          checkColor: Palette.inverted,
           visualDensity: buttonDensity,
           value: widget.value ?? false,
           onChanged: (value) {

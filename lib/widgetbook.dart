@@ -56,9 +56,9 @@ class WidgetbookApp extends StatelessWidget {
                 ),
                 WidgetbookUseCase(
                   name: 'With Custom Background Color',
-                  builder: (context) => CustomCard(
-                    backgroundColor: Colors.green.shade100,
-                    child: const Text(
+                  builder: (context) => const CustomCard(
+                    backgroundColor: Color(0xFFC8E6C9),
+                    child: Text(
                       'This is a custom card with a custom background color',
                     ),
                   ),

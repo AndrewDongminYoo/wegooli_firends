@@ -71,13 +71,13 @@ class ContactUsEmptyHistoryScreen extends StatelessWidget {
               onTap: context.safePop,
               text: '확인',
               buttonStyle: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFFF3F3F6),
+                backgroundColor: Palette.gray100,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(26.w),
                 ),
               ).noEffect,
               buttonTextStyle: textTheme.titleMedium!.copyWith(
-                color: const Color(0xFFB0B2BC),
+                color: Palette.blueGray200,
                 fontSize: TextSize.lg,
               )),
         ),

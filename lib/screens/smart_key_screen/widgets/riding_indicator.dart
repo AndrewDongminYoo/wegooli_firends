@@ -32,7 +32,7 @@ class RidingIndicator extends StatelessWidget {
             child: Text(
               '12:00',
               style: AppTextStyle(
-                color: const Color(0x66222222),
+                color: Palette.fontBlack66,
                 fontSize: 12,
                 lineHeight: 0.12,
                 letterSpacing: 0.02,
@@ -46,7 +46,7 @@ class RidingIndicator extends StatelessWidget {
               '13:00',
               textAlign: TextAlign.right,
               style: AppTextStyle(
-                color: const Color(0x66222222),
+                color: Palette.fontBlack66,
                 fontSize: 12,
                 lineHeight: 0.12,
                 letterSpacing: 0.02,
@@ -68,7 +68,7 @@ class RidingIndicator extends StatelessWidget {
                       width: 328.w,
                       height: 10.h,
                       decoration: ShapeDecoration(
-                        color: const Color(0x33A4A8AF),
+                        color: Palette.blueGray300,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(100),
                         ),
@@ -123,7 +123,7 @@ class RidingIndicator extends StatelessWidget {
         width: 328.w.w,
         height: 10.h.h,
         decoration: ShapeDecoration(
-          color: const Color(0x33A4A8AF),
+          color: Palette.blueGray300,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadiusStyle.circleBorder100,
           ),
@@ -170,7 +170,7 @@ class RidingIndicator extends StatelessWidget {
           borderRadius: BorderRadiusStyle.circleBorder65,
           child: LinearProgressIndicator(
             value: progress,
-            backgroundColor: const Color(0x33A4A8AF),
+            backgroundColor: Palette.blueGray300,
             valueColor: AlwaysStoppedAnimation<Color>(
               lightTheme.primary,
             ),

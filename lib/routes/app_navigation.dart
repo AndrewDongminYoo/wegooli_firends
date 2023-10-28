@@ -8,7 +8,7 @@ import 'package:provider/provider.dart';
 
 // 🌎 Project imports:
 import '/app/app_state_notifier.dart';
-import '/gen/colors.gen.dart';
+import '/theme/theme_helper.dart';
 
 extension NavParamExtensions on Map<String, String?> {
   Map<String, String> get withoutNulls => Map.fromEntries(
@@ -124,10 +124,10 @@ enum SnackType {
 extension SnackBarType on SnackType? {
   ContentType get type {
     return switch (this) {
-      SnackType.failure => ContentType('failure', AppColors.statusError),
-      SnackType.success => ContentType('success', AppColors.statusPass),
-      SnackType.warning => ContentType('warning', AppColors.statusWarn),
-      _ => ContentType('help', AppColors.wegooli),
+      SnackType.failure => ContentType('failure', Palette.error),
+      SnackType.success => ContentType('success', Palette.pass),
+      SnackType.warning => ContentType('warning', Palette.warn),
+      _ => ContentType('help', lightTheme.primary),
     };
   }
 }

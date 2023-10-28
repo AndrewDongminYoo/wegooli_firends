@@ -72,7 +72,7 @@ class VerificationEmptyScreen extends StatelessWidget {
                     decoration: BoxDecoration(
                       border: Border(
                         bottom: BorderSide(
-                          color: const Color(0xFFB0B2BC),
+                          color: Palette.blueGray200,
                           width: 1.w,
                         ),
                       ),
@@ -81,8 +81,7 @@ class VerificationEmptyScreen extends StatelessWidget {
                       children: [
                         Text(
                           '6자리 입력',
-                          style: textTheme.bodyLarge!
-                              .tint(const Color(0xFFB0B2BC)),
+                          style: textTheme.bodyLarge!.tint(Palette.blueGray200),
                         ),
                         const Spacer(),
                         Padding(
@@ -92,7 +91,7 @@ class VerificationEmptyScreen extends StatelessWidget {
                           ),
                           child: const SizedBox(
                             child: Divider(
-                              color: Color(0xFFB0B2BC),
+                              color: Palette.blueGray200,
                             ),
                           ),
                         ),
@@ -181,13 +180,13 @@ class VerificationEmptyScreen extends StatelessWidget {
                 height: 42.h,
                 text: '인증번호 발송',
                 buttonStyle: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFFF3F3F6),
+                  backgroundColor: Palette.gray100,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8.w),
                   ),
                 ).noEffect,
                 buttonTextStyle: textTheme.titleSmall!.copyWith(
-                  color: const Color(0xFFB0B2BC),
+                  color: Palette.blueGray200,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -209,13 +208,13 @@ class VerificationEmptyScreen extends StatelessWidget {
             height: 48.h,
             text: '인증하기',
             buttonStyle: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xFFF3F3F6),
+              backgroundColor: Palette.gray100,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8.w),
               ),
             ).noEffect,
             buttonTextStyle: textTheme.titleSmall!.copyWith(
-              color: const Color(0xFFB0B2BC),
+              color: Palette.blueGray200,
               fontWeight: FontWeight.bold,
             ),
           ),

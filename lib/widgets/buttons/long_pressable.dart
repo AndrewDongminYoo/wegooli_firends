@@ -10,7 +10,6 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 
 // 🌎 Project imports:
 import '/gen/assets.gen.dart';
-import '/gen/colors.gen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/text_styles.dart';
 import '/theme/theme_helper.dart';
@@ -291,19 +290,19 @@ class _LongPressableButtonState extends State<LongPressableButton>
     return [
       //bottom
       BoxShadow(
-        color: shadowColor ?? const Color(0xFFFFD600),
+        color: shadowColor ?? Palette.pressed,
         offset: Offset(0, _animation?.value ?? 4),
       ),
       BoxShadow(
-        color: shadowColor ?? const Color(0xFFFFD600),
+        color: shadowColor ?? Palette.pressed,
         offset: const Offset(0, -1.5),
       ),
       BoxShadow(
-        color: shadowColor ?? const Color(0xFFFFD600),
+        color: shadowColor ?? Palette.pressed,
         offset: const Offset(1.5, 0),
       ),
       BoxShadow(
-        color: shadowColor ?? const Color(0xFFFFD600),
+        color: shadowColor ?? Palette.pressed,
         offset: const Offset(-1.5, 0),
       ),
     ];
@@ -321,7 +320,7 @@ class _LongPressableButtonState extends State<LongPressableButton>
               color: lightTheme.onPrimaryContainer,
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.1),
+                  color: Palette.shadow,
                   spreadRadius: 2.w,
                   blurRadius: 2.w,
                   offset: const Offset(2, 2),
@@ -333,14 +332,12 @@ class _LongPressableButtonState extends State<LongPressableButton>
               height: 120.w,
               width: 120.w,
               decoration: BoxDecoration(
-                color: animationStart
-                    ? AppColors.primaryDefault
-                    : AppColors.primaryInverted,
+                color: animationStart ? Palette.button1 : Palette.inverted,
                 borderRadius: BorderRadius.circular(
                   60.w,
                 ),
                 border: Border.all(
-                  color: const Color(0x33A4A8AF),
+                  color: Palette.blueGray300,
                   width: 1.w,
                 ),
               ),
@@ -360,9 +357,7 @@ class _LongPressableButtonState extends State<LongPressableButton>
                   height: widget.asset?.height,
                   width: widget.asset?.height,
                   colorFilter: ColorFilter.mode(
-                    animationStart
-                        ? AppColors.primaryInverted
-                        : AppColors.primaryDefault,
+                    animationStart ? Palette.inverted : Palette.button1,
                     BlendMode.srcIn,
                   ),
                 ),
@@ -421,7 +416,7 @@ LongPressableButton areYouSureWantToSinOut(BuildContext context) {
     backgroundColor: lightTheme.onPrimaryContainer,
     boxShadow: [
       BoxShadow(
-        color: Colors.black.withOpacity(0.1),
+        color: Palette.shadow,
         spreadRadius: 2.w,
         blurRadius: 2.w,
         offset: const Offset(2, 2),

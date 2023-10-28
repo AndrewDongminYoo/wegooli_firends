@@ -105,13 +105,13 @@ class SigninPageScreen extends StatelessWidget {
               SizedBox(height: 10.h),
               Text(
                 '회원가입',
-                style: textTheme.bodySmall!.tint(const Color(0xFFB0B2BC)),
+                style: textTheme.bodySmall!.tint(Palette.blueGray200),
               ),
               SizedBox(
                 width: 42.w,
                 height: 1.h,
                 child: const Divider(
-                  color: Color(0xFFB0B2BC),
+                  color: Palette.blueGray200,
                 ),
               ),
             ],

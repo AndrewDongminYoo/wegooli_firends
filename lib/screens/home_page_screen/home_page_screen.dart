@@ -100,7 +100,7 @@ class HomePageScreen extends StatelessWidget {
                             child: Container(
                               padding: EdgeInsets.symmetric(horizontal: 8.w),
                               decoration: BoxDecoration(
-                                color: Colors.black.withOpacity(0.4),
+                                color: const Color(0x66000000),
                                 borderRadius: BorderRadiusStyle.circleBorder7,
                               ),
                               child: Text(
@@ -132,7 +132,7 @@ class HomePageScreen extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: lightTheme.onPrimaryContainer,
                         border: Border.all(
-                          color: const Color(0x33A4A8AF),
+                          color: Palette.blueGray300,
                           width: 1.w,
                         ),
                         borderRadius: BorderRadiusStyle.circleBorder10,
@@ -164,7 +164,7 @@ class HomePageScreen extends StatelessWidget {
                               '프렌즈 리더되기',
                               style: textTheme.bodySmall!.copyWith(
                                 fontFamily: FontFamily.nanumSquareRound,
-                                color: const Color(0xFFB0B2BC),
+                                color: Palette.blueGray200,
                                 fontSize: TextSize.xxs,
                               ),
                             ),
@@ -185,7 +185,7 @@ class HomePageScreen extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: lightTheme.onPrimaryContainer,
                         border: Border.all(
-                          color: const Color(0x33A4A8AF),
+                          color: Palette.blueGray300,
                           width: 1.w,
                         ),
                         borderRadius: BorderRadiusStyle.circleBorder10,
@@ -214,7 +214,7 @@ class HomePageScreen extends StatelessWidget {
                               '프렌즈 같이쓰기',
                               style: textTheme.bodySmall!.copyWith(
                                 fontFamily: FontFamily.nanumSquareRound,
-                                color: const Color(0xFFB0B2BC),
+                                color: Palette.blueGray200,
                                 fontSize: TextSize.xxs,
                               ),
                             ),
@@ -241,7 +241,7 @@ class HomePageScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: lightTheme.onPrimaryContainer,
                   border: Border.all(
-                    color: const Color(0x33A4A8AF),
+                    color: Palette.blueGray300,
                     width: 1.w,
                   ),
                   borderRadius: BorderRadiusStyle.circleBorder10,
@@ -269,7 +269,7 @@ class HomePageScreen extends StatelessWidget {
                             '장기렌트 문의',
                             style: textTheme.bodySmall!.copyWith(
                               fontFamily: FontFamily.nanumSquareRound,
-                              color: const Color(0xFFB0B2BC),
+                              color: Palette.blueGray200,
                               fontSize: TextSize.xxs,
                             ),
                           ),

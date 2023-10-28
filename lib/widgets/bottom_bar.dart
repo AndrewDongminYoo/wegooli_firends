@@ -69,7 +69,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
         color: lightTheme.onPrimaryContainer,
         border: Border(
           top: BorderSide(
-            color: const Color(0xFFF3F3F6),
+            color: Palette.gray100,
             width: 1.w,
           ),
         ),
@@ -91,7 +91,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
                   customIcon(
                     bottomMenuList[index].icon,
                     size: 20.w,
-                    color: const Color(0xFFB0B2BC),
+                    color: Palette.blueGray200,
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: 7.h),
@@ -99,7 +99,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
                       bottomMenuList[index].title ?? '',
                       style: textTheme.bodySmall!.copyWith(
                         fontSize: TextSize.xxs,
-                        color: const Color(0xFFB0B2BC),
+                        color: Palette.blueGray200,
                       ),
                     ),
                   ),

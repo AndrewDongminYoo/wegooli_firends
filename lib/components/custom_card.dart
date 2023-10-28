@@ -43,8 +43,8 @@ CustomCard defaultCustomCard(BuildContext context) {
   type: CustomCard,
 )
 CustomCard customBackgroundCustomCard(BuildContext context) {
-  return CustomCard(
-    backgroundColor: Colors.green.shade100,
-    child: const Text('This is a custom card with a custom background color'),
+  return const CustomCard(
+    backgroundColor: Color(0xFFC8E6C9),
+    child: Text('This is a custom card with a custom background color'),
   );
 }

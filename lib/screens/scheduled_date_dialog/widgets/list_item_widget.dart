@@ -33,7 +33,7 @@ class ListItemWidget extends StatelessWidget {
           color: lightTheme.onPrimaryContainer,
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.1),
+              color: Palette.shadow,
               spreadRadius: 2.w,
               blurRadius: 2.w,
               offset: const Offset(2, 2),

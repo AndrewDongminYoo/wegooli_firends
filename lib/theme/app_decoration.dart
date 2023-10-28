@@ -6,13 +6,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BorderRadiusStyle {
   // Circle borders
+  static BorderRadius get circleBorder7 => BorderRadius.circular(7.w);
+  static BorderRadius get circleBorder14 => BorderRadius.circular(14.w);
   static BorderRadius get circleBorder21 => BorderRadius.circular(21.w);
   static BorderRadius get circleBorder25 => BorderRadius.circular(25.w);
   static BorderRadius get circleBorder35 => BorderRadius.circular(35.w);
   static BorderRadius get circleBorder60 => BorderRadius.circular(60.w);
   static BorderRadius get circleBorder65 => BorderRadius.circular(65.w);
   static BorderRadius get circleBorder100 => BorderRadius.circular(100.w);
-  static BorderRadius get circleBorder7 => BorderRadius.circular(7.w);
 
   // Custom borders
   static BorderRadius get customBorderT10 =>

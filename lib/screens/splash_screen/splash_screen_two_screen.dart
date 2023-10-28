@@ -27,7 +27,7 @@ class SplashScreenTwo extends StatelessWidget {
             gradient: LinearGradient(
               begin: Alignment.center,
               end: Alignment.bottomRight,
-              colors: [Color(0xFFFFDC27), Color(0xFFFFF96D)],
+              colors: [Palette.sunglow, Palette.parisDaisy],
             ),
           ),
           child: SizedBox(

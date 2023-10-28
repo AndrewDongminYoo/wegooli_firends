@@ -36,7 +36,7 @@ class ControllButton extends StatelessWidget {
       margin: isRightSide ? EdgeInsets.only(left: 16.w) : null,
       boxShadow: [
         BoxShadow(
-          color: Colors.black.withOpacity(0.1),
+          color: Palette.shadow,
           spreadRadius: 2.w,
           blurRadius: 2.w,
           offset: const Offset(2, 2),

@@ -87,7 +87,7 @@ class PersonalInfoFormZipCodeScreen extends StatelessWidget {
                                   top: 15.h,
                                 ),
                                 buttonStyle: ElevatedButton.styleFrom(
-                                  backgroundColor: const Color(0xFF464A70),
+                                  backgroundColor: Palette.button2,
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(8.w),
                                   ),
@@ -221,13 +221,13 @@ class PersonalInfoFormZipCodeScreen extends StatelessWidget {
             height: 48.h,
             text: '입력 완료',
             buttonStyle: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xFFF3F3F6),
+              backgroundColor: Palette.gray100,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8.w),
               ),
             ).noEffect,
             buttonTextStyle: textTheme.titleSmall!.copyWith(
-              color: const Color(0xFFB0B2BC),
+              color: Palette.blueGray200,
               fontWeight: FontWeight.bold,
             ),
           ),

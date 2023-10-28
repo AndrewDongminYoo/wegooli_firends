@@ -10,15 +10,14 @@ import 'package:go_router/go_router.dart';
 import '/core/utils/datetime_utils.dart';
 import '/core/utils/list_extensions.dart';
 import '/data/custom/schedule.dart';
-import '/l10n/l10n.dart';
 import '/routes/app_navigation.dart';
-import '/screens/schedules_screen/schedules_screen.dart';
 import '/theme/app_decoration.dart';
 import '/theme/button_styles.dart';
 import '/theme/text_styles.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/buttons/elevated_button.dart';
 import 'models/datetime_picker_model.dart';
+import 'schedules_screen.dart';
 
 class DatetimePickerBottomSheet extends StatefulWidget {
   const DatetimePickerBottomSheet({
@@ -91,11 +90,7 @@ class _DatetimePickerBottomSheetState extends State<DatetimePickerBottomSheet> {
                     bottom: _borderSide(8),
                   )),
               child: Text(
-                l10ns.reservationTotalPeriod(
-                  '${rentalTime.inHours} 시간 ${rentalTime.inMinutes.remainder(60)} 분',
-                  start.formatClient,
-                  end.formatClient,
-                ),
+                reservationTotalPeriod(rentalTime, start, end),
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.left,
@@ -211,6 +206,14 @@ class _DatetimePickerBottomSheetState extends State<DatetimePickerBottomSheet> {
                 ],
               )),
         ]);
+  }
+
+  String reservationTotalPeriod(
+      Duration rentalTime, DateTime start, DateTime end) {
+    return '총 ${rentalTime.inHours} 시간'
+        '${rentalTime.inMinutes.remainder(60)} 분 이용\n'
+        '${start.formatClient} ~'
+        '${end.formatClient}';
   }
 
   BorderSide _borderSide(double width) =>

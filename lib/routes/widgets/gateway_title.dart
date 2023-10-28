@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // 🌎 Project imports:
-import '/l10n/l10n.dart';
 import '/theme/text_styles.dart';
 import '/theme/theme_helper.dart';
 
@@ -41,7 +40,7 @@ class CheckYourAppUI extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.only(left: 20.w),
           child: Text(
-            l10ns.checkYourAppUI,
+            '아래 데모 화면에서 앱의 UI를 확인하세요.',
             overflow: TextOverflow.ellipsis,
             textAlign: TextAlign.center,
             style: AppTextStyle(color: Palette.blueGray400),

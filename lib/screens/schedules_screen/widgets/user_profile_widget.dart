@@ -3,14 +3,15 @@ import 'package:flutter/material.dart';
 
 // 📦 Package imports:
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/state_manager.dart';
+import 'package:from_css_color/from_css_color.dart';
 
 // 🌎 Project imports:
 import '../models/userprofile_item_model.dart';
-import '/gen/assets.gen.dart';
 import '/theme/app_decoration.dart';
-import '/theme/theme_helper.dart';
+import '/theme/text_styles.dart';
 import '/widgets/image_view.dart';
+
+String imagePathPrefix = 'http://13.209.6.245:3333';
 
 // ignore: must_be_immutable
 class UserProfileWidget extends StatelessWidget {
@@ -24,36 +25,36 @@ class UserProfileWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 50.w,
-      child: Column(
-        children: [
-          Container(
-            height: 50.w,
-            width: 50.w,
-            padding: EdgeInsets.all(4.w),
-            decoration: BoxDecoration(
-              color: lightTheme.primary,
-              borderRadius: BorderRadiusStyle.circleBorder25,
-            ),
-            child: customAvatar(
-              Assets.images.placeholder.path,
-              size: 42.w,
-              radius: BorderRadius.circular(
-                21.w,
-              ),
-              alignment: Alignment.center,
-            ),
+      width: 105.w,
+      height: 80.h,
+      child: Column(mainAxisSize: MainAxisSize.min, children: [
+        Container(
+          height: 50.r,
+          width: 50.r,
+          margin: const EdgeInsets.only(bottom: 3),
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+            color: fromCssColor(userProfile.personalColor!.value),
+            borderRadius: BorderRadiusStyle.circleBorder32,
           ),
-          SizedBox(height: 4.h),
-          Obx(
-            () => Text(
-              userProfile.userName!.value,
-              overflow: TextOverflow.ellipsis,
-              style: textTheme.bodySmall,
-            ),
+          child: customAvatar(
+            imagePathPrefix + userProfile.avatarImagePath!.value,
+            size: 42.r,
+            radius: BorderRadiusStyle.circleBorder32,
+            alignment: Alignment.center,
           ),
-        ],
-      ),
+        ),
+        Text(
+          userProfile.name!.value, // '일이삼사오육칠팔',
+          overflow: TextOverflow.ellipsis,
+          textAlign: TextAlign.center, // left -> center
+          style: AppTextStyle(
+            fontSize: TextSize.xs,
+            lineHeight: Leading.normal,
+            letterSpacing: LetterSpacing.tighter,
+          ),
+        )
+      ]),
     );
   }
 }

@@ -1,9 +1,11 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+// 📦 Package imports:
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 // 🌎 Project imports:
 import '../models/add_photo_item.dart';
-import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
 import '/widgets/buttons/icon_button.dart';
 import '/widgets/image_view.dart';

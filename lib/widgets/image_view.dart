@@ -6,11 +6,11 @@ import 'package:flutter/material.dart';
 
 // 📦 Package imports:
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 // 🌎 Project imports:
 import '/core/utils/logger.dart';
-import '/core/utils/size_utils.dart';
 
 // ignore: must_be_immutable
 class CustomImageView extends StatelessWidget {

@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 
 // 📦 Package imports:
 import 'package:dropdown_button2/dropdown_button2.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // 🌎 Project imports:
 import '/core/utils/list_extensions.dart';
-import '/core/utils/size_utils.dart';
 import '/data/common/dropdown_data.dart';
 import '/theme/text_styles.dart';
 import '/theme/theme_helper.dart';

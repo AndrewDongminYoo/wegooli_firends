@@ -2,11 +2,11 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/state_manager.dart';
 
 // 🌎 Project imports:
 import '../models/user_age_model.dart';
-import '/core/utils/size_utils.dart';
 import '/theme/text_styles.dart';
 import '/theme/theme_helper.dart';
 

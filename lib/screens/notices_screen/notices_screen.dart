@@ -2,10 +2,10 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/state_manager.dart';
 
 // 🌎 Project imports:
-import '/core/utils/size_utils.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/app_bar/appbar_title.dart';
 import '/widgets/app_bar/custom_app_bar.dart';

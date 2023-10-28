@@ -91,6 +91,8 @@ dependencies:
   # 플러터 네이티브 스플래시
   flutter_native_splash: ^2.3.2
   flutter_plugin_android_lifecycle: ^2.0.16
+  # 화면 및 글꼴 크기 조정: 다양한 화면 크기에 적합한 레이아웃 표시
+  flutter_screenutil: ^5.9.0
   # 플러터 스핀킷 (로딩 인디케이터)
   flutter_spinkit: ^5.2.0
   # 플러터 SVG 렌더러

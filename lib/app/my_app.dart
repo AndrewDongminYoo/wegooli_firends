@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 // 📦 Package imports:
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 // 🌎 Project imports:
@@ -20,16 +21,23 @@ class MyApp extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     FlutterNativeSplash.remove();
     final routerConfig = ref.read(routerProvider);
-    return MaterialApp.router(
-      title: '위굴리 프렌즈',
-      debugShowCheckedModeBanner: false,
-      theme: theme,
-      themeMode: ThemeMode.light,
-      builder: (_, widget) => widget ?? const CircularProgressIndicator(),
-      locale: const Locale('ko'),
-      supportedLocales: Localized.supportedLocales,
-      localizationsDelegates: Localized.localizationsDelegates,
-      routerConfig: routerConfig,
+    return ScreenUtilInit(
+      designSize: const Size(360, 640),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, widget) {
+        return MaterialApp.router(
+          title: '위굴리 프렌즈',
+          debugShowCheckedModeBanner: false,
+          theme: theme,
+          themeMode: ThemeMode.light,
+          builder: (_, widget) => widget ?? const CircularProgressIndicator(),
+          locale: const Locale('ko'),
+          supportedLocales: Localized.supportedLocales,
+          localizationsDelegates: Localized.localizationsDelegates,
+          routerConfig: routerConfig,
+        );
+      },
     );
   }
 }

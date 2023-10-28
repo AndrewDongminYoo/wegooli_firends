@@ -3,12 +3,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 // 🌎 Project imports:
 import '/core/utils/datetime_utils.dart';
 import '/core/utils/list_extensions.dart';
-import '/core/utils/size_utils.dart';
 import '/data/custom/schedule.dart';
 import '/gen/colors.gen.dart';
 import '/l10n/l10n.dart';

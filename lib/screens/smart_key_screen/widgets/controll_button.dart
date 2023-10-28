@@ -1,8 +1,10 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+// 📦 Package imports:
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 // 🌎 Project imports:
-import '/core/utils/size_utils.dart';
 import '/theme/theme_helper.dart';
 import '/widgets/buttons/long_pressable.dart';
 

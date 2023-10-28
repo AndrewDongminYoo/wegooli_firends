@@ -1,8 +1,10 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+// 📦 Package imports:
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 // 🌎 Project imports:
-import '/core/utils/size_utils.dart';
 import '/data/common/dropdown_data.dart';
 import '/gen/assets.gen.dart';
 import '/layout/unfocused.dart';

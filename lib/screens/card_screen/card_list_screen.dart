@@ -2,11 +2,11 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/state_manager.dart';
 import 'package:go_router/go_router.dart';
 
 // 🌎 Project imports:
-import '/core/utils/size_utils.dart';
 import '/gen/assets.gen.dart';
 import '/screens/card_screen/card_register_screen.dart';
 import '/widgets/app_bar/appbar_title.dart';

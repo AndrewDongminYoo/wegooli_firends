@@ -104,12 +104,17 @@ final directories = <_i1.WidgetbookNode>[
           ),
         ],
       ),
-      _i1.WidgetbookComponent(
-        name: 'LongPressableButton',
-        useCases: [
-          _i1.WidgetbookUseCase(
-            name: "Lock You Car's Door",
-            builder: _i7.areYouSureWantToSinOut,
+      _i1.WidgetbookFolder(
+        name: 'buttons',
+        children: [
+          _i1.WidgetbookComponent(
+            name: 'LongPressableButton',
+            useCases: [
+              _i1.WidgetbookUseCase(
+                name: 'Lock You Car\'s Door',
+                builder: _i7.areYouSureWantToSinOut,
+              )
+            ],
           )
         ],
       ),

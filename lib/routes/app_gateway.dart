@@ -1,8 +1,10 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
+// 📦 Package imports:
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 // 🌎 Project imports:
-import '/core/utils/size_utils.dart';
 import '/screens/card_screen/card_list_screen.dart';
 import '/screens/card_screen/card_register_screen.dart';
 import '/screens/contact_us_screen/contact_us_empty_history_screen.dart';

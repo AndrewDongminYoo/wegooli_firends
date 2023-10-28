@@ -40,7 +40,7 @@ class InformationalDialog extends StatelessWidget {
         borderRadius: BorderRadiusStyle.circleBorder10,
       ),
 
-      /// 대화 상자 상단의 (선택 사항) [icon] 아래에 큰 글꼴로 표시됩니다.
+      /// 대화 상자 상단의 제목. (선택 사항) [icon] 아래에 큰 글꼴로 표시됩니다.
       /// 일반적으로 [Text] 위젯입니다.
       title: dialogTitle != null
           ? Text(
@@ -87,32 +87,56 @@ class InformationalDialog extends StatelessWidget {
         if (isSelection)
           Row(
             children: [
-              CustomElevatedButton(
-                width: 145.w,
-                height: 52.h,
-                text: cancelText ?? '취소',
-                buttonStyle: ElevatedButton.styleFrom(
-                  backgroundColor: Palette.gray400,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadiusStyle.customBorderBL10,
+              Flexible(
+                fit: FlexFit.tight,
+                child: SizedBox(
+                  height: 52.h,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Palette.gray400,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadiusStyle.customBorderBL10,
+                      ),
+                    ).noEffect,
+                    onPressed: cancelCallback ??
+                        () => Navigator.of(context).pop(false),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          cancelText ?? '취소',
+                          style: textTheme.titleMedium!
+                              .copyWith(fontSize: TextSize.md),
+                        ),
+                      ],
+                    ),
                   ),
-                ).noEffect,
-                buttonTextStyle:
-                    textTheme.titleMedium!.copyWith(fontSize: TextSize.md),
-                onTap: cancelCallback ?? () => GoRouter.of(context).pop(false),
+                ),
               ),
-              CustomElevatedButton(
-                width: 145.w,
-                height: 52.h,
-                text: confirmText ?? '확인',
-                buttonStyle: ElevatedButton.styleFrom(
+              Flexible(
+                fit: FlexFit.tight,
+                child: SizedBox(
+                  height: 52.h,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
                         backgroundColor: lightTheme.primary,
                         shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadiusStyle.customBorderBR10))
-                    .noEffect,
-                buttonTextStyle:
-                    textTheme.titleMedium!.copyWith(fontSize: TextSize.md),
-                onTap: confirmCallback ?? () => GoRouter.of(context).pop(true),
+                          borderRadius: BorderRadiusStyle.customBorderBR10,
+                        )).noEffect,
+                    onPressed:
+                        confirmCallback ?? () => GoRouter.of(context).pop(true),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          confirmText ?? '확인',
+                          style: textTheme.titleMedium!
+                              .copyWith(fontSize: TextSize.md),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
@@ -120,10 +144,10 @@ class InformationalDialog extends StatelessWidget {
           CustomElevatedButton(
             text: '확인',
             buttonStyle: ElevatedButton.styleFrom(
-                    backgroundColor: lightTheme.primary,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadiusStyle.customBorderB10))
-                .noEffect,
+                backgroundColor: lightTheme.primary,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadiusStyle.customBorderB10,
+                )).noEffect,
             height: 53.h,
             onTap: confirmCallback ?? () => GoRouter.of(context).pop(true),
             buttonTextStyle: AppTextStyle(

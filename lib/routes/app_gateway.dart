@@ -35,6 +35,7 @@ import '/screens/zip_code_screen/personal_info_form_zip_code_screen.dart';
 import '/theme/theme_helper.dart';
 import 'widgets/gateway_title.dart';
 import 'widgets/route_item.dart';
+import 'widgets/route_modal.dart';
 
 class AppGatewayScreen extends StatelessWidget {
   const AppGatewayScreen({super.key});
@@ -73,21 +74,21 @@ class AppGatewayScreen extends StatelessWidget {
                           title: '홈',
                           routeName: HomePageScreen.routeName,
                         ),
-                        RouteItem(
+                        RouteModal(
                           title: '팀 초대하기',
-                          routeName: SendInvitationDialog.routeName,
+                          dialog: SendInvitationDialog(),
                         ),
                         RouteItem(
                           title: '일정 확인',
                           routeName: SchedulesScreen.routeName,
                         ),
-                        RouteItem(
+                        RouteModal(
                           title: '예약 확인 (다이얼로그)',
-                          routeName: ViewScheduledDateDialog.routeName,
+                          dialog: ViewScheduledDateDialog(),
                         ),
-                        RouteItem(
+                        RouteModal(
                           title: '예약하기 (바텀시트)',
-                          routeName: DatetimePickerBottomSheet.routeName,
+                          bottomSheet: DatetimePickerBottomSheet(),
                         ),
                         RouteItem(
                           title: '로그인',
@@ -145,9 +146,9 @@ class AppGatewayScreen extends StatelessWidget {
                           title: '구독 해지',
                           routeName: UnsubscribeScreen.routeName,
                         ),
-                        RouteItem(
+                        RouteModal(
                           title: '해지 확인',
-                          routeName: UnsubscribeConfirmDialog.routeName,
+                          dialog: UnsubscribeConfirmDialog(),
                         ),
                         RouteItem(
                           title: '구독 정보 (만료 예정)',

@@ -1,6 +1,3 @@
-// 📦 Package imports:
-import 'package:go_router/go_router.dart';
-
 // 🌎 Project imports:
 import '/routes/app_gateway.dart';
 import '/routes/route_model.dart';
@@ -17,10 +14,7 @@ import '/screens/license_screen/license_register_screen.dart';
 import '/screens/my_page_screen/my_page_screen.dart';
 import '/screens/notices_screen/empty_notice_screen.dart';
 import '/screens/notices_screen/notices_screen.dart';
-import '/screens/scheduled_date_dialog/view_scheduled_date_dialog.dart';
-import '/screens/schedules_screen/datetime_picker_bottom_sheet.dart';
 import '/screens/schedules_screen/schedules_screen.dart';
-import '/screens/send_invitation_dialog/send_invitation_dialog.dart';
 import '/screens/signin_page_screen/signin_page_screen.dart';
 import '/screens/signin_page_screen/signup_complete_screen.dart';
 import '/screens/smart_key_screen/another_is_using_screen.dart';
@@ -30,10 +24,8 @@ import '/screens/splash_screen/splash_screen_two_screen.dart';
 import '/screens/subscribe_info_screen/expiring_subscriptions_screen.dart';
 import '/screens/subscribe_info_screen/subscribe_info_no_subscription_screen.dart';
 import '/screens/subscribe_info_screen/subscribe_info_screen.dart';
-import '/screens/subscribe_info_screen/unsubscribe_confirm_dialog.dart';
 import '/screens/subscribe_info_screen/unsubscribe_screen.dart';
 import '/screens/zip_code_screen/personal_info_form_zip_code_screen.dart';
-import '/widgets/dialog_page.dart';
 
 // ignore_for_file: avoid_redundant_argument_values
 /// 개발 중 Auth 필터링 꺼두고 싶을 때 false로 설정.
@@ -159,32 +151,5 @@ final pages = [
   AppRoute(
     path: AppGatewayScreen.routeName,
     builder: (context, params) => const AppGatewayScreen(),
-  ),
-];
-
-final dialogues = [
-  GoRoute(
-    name: SendInvitationDialog.routeName,
-    path: SendInvitationDialog.routeName,
-    pageBuilder: (context, state) =>
-        DialogPage(builder: (_) => const SendInvitationDialog()),
-  ),
-  GoRoute(
-    name: ViewScheduledDateDialog.routeName,
-    path: ViewScheduledDateDialog.routeName,
-    pageBuilder: (context, state) =>
-        DialogPage(builder: (_) => const ViewScheduledDateDialog()),
-  ),
-  GoRoute(
-    name: DatetimePickerBottomSheet.routeName,
-    path: DatetimePickerBottomSheet.routeName,
-    pageBuilder: (context, state) =>
-        DialogPage(builder: (_) => const DatetimePickerBottomSheet()),
-  ),
-  GoRoute(
-    name: UnsubscribeConfirmDialog.routeName,
-    path: UnsubscribeConfirmDialog.routeName,
-    pageBuilder: (context, state) =>
-        DialogPage(builder: (_) => const UnsubscribeConfirmDialog()),
   ),
 ];

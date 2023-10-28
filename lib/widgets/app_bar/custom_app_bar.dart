@@ -7,9 +7,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 // 🌎 Project imports:
 import '/gen/assets.gen.dart';
 import '/routes/app_navigation.dart';
+import '/theme/theme_helper.dart';
 import '/widgets/image_view.dart';
 
-// ignore: must_be_immutable
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({
     super.key,
@@ -36,7 +36,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       elevation: 0,
       toolbarHeight: height ?? 55.h,
       automaticallyImplyLeading: false,
-      backgroundColor: Colors.transparent,
+      backgroundColor: Colors.white,
+      scrolledUnderElevation: 0,
       flexibleSpace: _flexibleSpace,
       leadingWidth: leadingWidth ?? 0,
       leading: leading,
@@ -49,21 +50,19 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Size get preferredSize => Size(
-        MediaQueryData.fromView(
-          WidgetsBinding.instance.platformDispatcher.views.first,
-        ).size.width,
+        double.maxFinite,
         height ?? 55.h,
       );
   Container? get _flexibleSpace {
     switch (styleType) {
       case Style.bgOutline:
         return Container(
-          height: 45.h,
+          // height: 45.h,
           width: double.maxFinite,
           decoration: BoxDecoration(
             border: Border(
               bottom: BorderSide(
-                color: const Color(0x33A4A8AF),
+                color: Palette.blueGray300,
                 width: 1.w,
               ),
             ),
@@ -71,13 +70,13 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         );
       case Style.bgOutline_1:
         return Container(
-          height: 45.h,
+          // height: 45.h,
           width: double.maxFinite,
           decoration: BoxDecoration(
-            color: const Color(0xFFFFFFFF),
+            color: lightTheme.onPrimaryContainer,
             border: Border(
               bottom: BorderSide(
-                color: const Color(0x33A4A8AF),
+                color: Palette.blueGray300,
                 width: 1.w,
               ),
             ),
@@ -88,10 +87,10 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           height: 45.h,
           width: double.maxFinite,
           decoration: BoxDecoration(
-            color: const Color(0xFFFFFFFF),
+            color: lightTheme.onPrimaryContainer,
             border: Border(
               bottom: BorderSide(
-                color: const Color(0xFFB9BCC3),
+                color: Palette.gray400,
                 width: 1.w,
               ),
             ),
@@ -99,10 +98,10 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         );
       case Style.bgFill:
         return Container(
-          height: 50.h,
+          // height: 50.h,
           width: double.maxFinite,
-          decoration: const BoxDecoration(
-            color: Color(0xFFFFFFFF),
+          decoration: BoxDecoration(
+            color: lightTheme.onPrimaryContainer,
           ),
         );
       default:

@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:from_css_color/from_css_color.dart';
 
 // 🌎 Project imports:
-import '/core/utils/datetime_utils.dart';
+import '/core/utils/date_time_utils.dart';
 import '/data/model/schedule_model.dart';
 
 final kToday = DateTime.now();

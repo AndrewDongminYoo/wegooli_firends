@@ -146,7 +146,7 @@ dependencies:
   plugin_platform_interface: ^2.1.6
   # 프로바이더 (상태관리)
   provider: ^6.0.5
-  rive: ^0.11.4
+  rive: ^0.12.3
   # 반응형 프로그래밍 다트
   rxdart: any
   # 센드버드 메세지/채팅 SDK

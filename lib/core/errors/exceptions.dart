@@ -1,9 +1,3 @@
-class ServerException implements Exception {}
-
-class CacheException implements Exception {}
-
-class NetworkException implements Exception {}
-
 class NoInternetException implements Exception {
   NoInternetException([String message = 'NoInternetException Occurred']) {
     _message = message;

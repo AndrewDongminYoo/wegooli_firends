@@ -7,7 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 // 🌎 Project imports:
-import '/core/utils/datetime_utils.dart';
+import '/core/utils/date_time_utils.dart';
 import '/core/utils/list_extensions.dart';
 import '/data/custom/schedule.dart';
 import '/routes/app_navigation.dart';

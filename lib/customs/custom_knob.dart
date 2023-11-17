@@ -1,6 +1,6 @@
-/// A custom knob example for Widgetbook
+/// 위젯북의 커스텀 노브 예시
 ///
-/// [Ref link]: https://docs.widgetbook.io/knobs/custom-knob
+/// [참조 링크]: https://docs.widgetbook.io/knobs/custom-knob
 
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
@@ -29,15 +29,24 @@ class RangeKnob extends Knob<RangeValues> {
   List<Field> get fields => [
         DoubleInputField(
           name: 'min-$label',
-          initialValue: value.start,
+          initialValue: initialValue.start,
+          /// 'onChanged'는 더 이상 사용되지 않으므로 사용해서는 안 됩니다.
+          // ignore: deprecated_member_use
           onChanged: (context, value) {
             if (value == null) {
               return;
             }
 
             final state = WidgetbookState.of(context);
+
+            /// 'value'는 더 이상 사용되지 않으므로 사용해서는 안 됩니다.
+            /// 노브는 상태 비저장형 위젯입니다.
+            /// 노브는 [valueFromQueryGroup]에서 해당 값을 알고 있습니다.
+            /// 기본값을 설정하려면 [initialValue]를 사용할 수 있습니다.
+            // ignore: deprecated_member_use
             final endValue = (state.knobs[label]!.value as RangeValues).end;
 
+            // ignore: deprecated_member_use
             state.knobs.updateValue<RangeValues>(
               label,
               RangeValues(value, endValue),
@@ -46,15 +55,31 @@ class RangeKnob extends Knob<RangeValues> {
         ),
         DoubleInputField(
           name: 'max-$label',
-          initialValue: value.end,
+
+          /// 'value'는 더 이상 사용되지 않으므로 사용해서는 안 됩니다.
+          /// 노브는 상태 비저장형 위젯입니다.
+          /// 노브는 [valueFromQueryGroup]에서 해당 값을 알고 있습니다.
+          /// 기본값을 설정하려면 [initialValue]를 사용할 수 있습니다.
+          // ignore: deprecated_member_use
+          initialValue: value!.end,
+          /// 'onChanged'는 더 이상 사용되지 않으므로 사용해서는 안 됩니다.
+          // ignore: deprecated_member_use
           onChanged: (context, value) {
             if (value == null) {
               return;
             }
 
             final state = WidgetbookState.of(context);
+
+            /// 'value'는 더 이상 사용되지 않으므로 사용해서는 안 됩니다.
+            /// 노브는 상태 비저장형 위젯입니다.
+            /// 노브는 [valueFromQueryGroup]에서 해당 값을 알고 있습니다.
+            /// 기본값을 설정하려면 [initialValue]를 사용할 수 있습니다.
+            // ignore: deprecated_member_use
             final startValue = (state.knobs[label]!.value as RangeValues).start;
 
+            /// 'onChanged'는 더 이상 사용되지 않으므로 사용해서는 안 됩니다.
+            // ignore: deprecated_member_use
             state.knobs.updateValue<RangeValues>(
               label,
               RangeValues(startValue, value),

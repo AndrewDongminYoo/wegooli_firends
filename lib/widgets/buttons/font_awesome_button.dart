@@ -130,7 +130,9 @@ class _CustomIconButtonState extends State<CustomIconButton> {
       width: widget.buttonSize,
       height: widget.buttonSize,
       child: Theme(
-        data: Theme.of(context).copyWith(useMaterial3: true),
+        /// [Theme.useMaterial3]은 더 이상 사용되지 않으므로 사용해서는 안 됩니다.
+        /// 대신 [ThemeData] 생성자(.from, .light 또는 .dark)의 [useMaterial3] 속성을 사용하세요.
+        data: ThemeData.light(useMaterial3: true),
         child: IgnorePointer(
           ignoring: widget.showLoadingIndicator && loading,
           child: IconButton(

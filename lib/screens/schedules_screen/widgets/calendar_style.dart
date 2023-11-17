@@ -6,8 +6,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 // 🌎 Project imports:
-import '/theme/theme_helper.dart';
 import '/theme/text_styles.dart';
+import '/theme/theme_helper.dart';
 
 /// Creates a `CalendarStyle` used by `TableCalendar` widget.
 CalendarStyle calendarStyle = CalendarStyle(

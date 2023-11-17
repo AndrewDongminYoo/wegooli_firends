@@ -11,7 +11,7 @@ import 'package:widgetbook/widgetbook.dart' hide AlignmentAddon;
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 
 // 🌎 Project imports:
-import 'customs/custom_addon.dart';
+import 'customs/custom_addon.dart' hide ZoomAddon;
 import 'widgetbook.generator.directories.g.dart';
 
 void main() {

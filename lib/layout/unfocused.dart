@@ -55,7 +55,14 @@ class _UnfocusedFormState extends State<UnfocusedForm> with ChangeNotifier {
 
         /// 폼이 포함된 [ModalRoute]를 해제하려는 시도를 거부할 수 있도록 합니다.
         /// 입력에서 [Future<false>] 를 반환하면 폼의 라우트가 팝업되지 않습니다.
-        onWillPop: () async => false,
+        /// 더 이상 사용되지 않습니다. 대신 [canPop] 및/또는 [onPopInvoke]를 사용하세요.
+        // onWillPop: () async => false,
+
+        /// 입력에서 [false] 를 반환하면 폼의 라우트가 팝업되지 않습니다.
+        /// 여기에는 루트 경로가 포함되며, 이 경로가 팝업되면 Flutter 앱은 종료됩니다.
+        /// 경로의 위젯 하위 트리에 여러 개의 [PopScope] 위젯이 표시되는 경우에는 경로가 팝될 수 있으려면 각각의 모든 `canPop`이 `true`여야 합니다.
+        canPop: false,
+
         autovalidateMode: widget.autoValidate
             ? AutovalidateMode.onUserInteraction
             : AutovalidateMode.disabled,

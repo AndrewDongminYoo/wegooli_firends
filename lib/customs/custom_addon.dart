@@ -10,11 +10,12 @@ import 'package:widgetbook/widgetbook.dart';
 
 class AlignmentAddon extends WidgetbookAddon<Alignment> {
   AlignmentAddon({
-    Alignment initialAlignment = Alignment.center,
+    this.initialAlignment = Alignment.center,
   }) : super(
           name: 'Alignment',
-          initialSetting: initialAlignment,
         );
+
+  final Alignment initialAlignment;
 
   @override
   Widget buildUseCase(
@@ -34,7 +35,7 @@ class AlignmentAddon extends WidgetbookAddon<Alignment> {
     return [
       ListField<Alignment>(
         name: 'alignment',
-        initialValue: initialSetting,
+        initialValue: initialAlignment,
         values: [
           Alignment.topLeft,
           Alignment.topCenter,
@@ -58,17 +59,18 @@ class AlignmentAddon extends WidgetbookAddon<Alignment> {
 
 /// A [WidgetbookAddon] for zoom/scaling.
 class ZoomAddon extends WidgetbookAddon<double> {
-  ZoomAddon({double initialZoom = 1.0})
+  ZoomAddon({this.initialZoom = 1.0})
       : super(
           name: 'Zoom',
-          initialSetting: initialZoom,
         );
+
+  final double initialZoom;
 
   @override
   List<Field> get fields => [
         DoubleSliderField(
           name: 'zoom',
-          initialValue: initialSetting,
+          initialValue: initialZoom,
           min: 0.5,
           max: 3,
           divisions: 25,

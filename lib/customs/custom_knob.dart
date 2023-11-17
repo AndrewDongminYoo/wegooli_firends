@@ -30,6 +30,7 @@ class RangeKnob extends Knob<RangeValues> {
         DoubleInputField(
           name: 'min-$label',
           initialValue: initialValue.start,
+
           /// 'onChanged'는 더 이상 사용되지 않으므로 사용해서는 안 됩니다.
           // ignore: deprecated_member_use
           onChanged: (context, value) {
@@ -43,9 +44,11 @@ class RangeKnob extends Knob<RangeValues> {
             /// 노브는 상태 비저장형 위젯입니다.
             /// 노브는 [valueFromQueryGroup]에서 해당 값을 알고 있습니다.
             /// 기본값을 설정하려면 [initialValue]를 사용할 수 있습니다.
-            // ignore: deprecated_member_use
-            final endValue = (state.knobs[label]!.value as RangeValues).end;
+            final endValue =
+                (state.knobs[label]!.initialValue as RangeValues).end;
 
+            /// 노브 값은 더 이상 업데이트할 수 없으며 쿼리 그룹에 의존합니다.
+            /// 'updateValue'는 더 이상 사용되지 않으므로 사용해서는 안 됩니다.
             // ignore: deprecated_member_use
             state.knobs.updateValue<RangeValues>(
               label,
@@ -60,8 +63,8 @@ class RangeKnob extends Knob<RangeValues> {
           /// 노브는 상태 비저장형 위젯입니다.
           /// 노브는 [valueFromQueryGroup]에서 해당 값을 알고 있습니다.
           /// 기본값을 설정하려면 [initialValue]를 사용할 수 있습니다.
-          // ignore: deprecated_member_use
-          initialValue: value!.end,
+          initialValue: initialValue.end,
+
           /// 'onChanged'는 더 이상 사용되지 않으므로 사용해서는 안 됩니다.
           // ignore: deprecated_member_use
           onChanged: (context, value) {
@@ -75,10 +78,11 @@ class RangeKnob extends Knob<RangeValues> {
             /// 노브는 상태 비저장형 위젯입니다.
             /// 노브는 [valueFromQueryGroup]에서 해당 값을 알고 있습니다.
             /// 기본값을 설정하려면 [initialValue]를 사용할 수 있습니다.
-            // ignore: deprecated_member_use
-            final startValue = (state.knobs[label]!.value as RangeValues).start;
+            final startValue =
+                (state.knobs[label]!.initialValue as RangeValues).start;
 
-            /// 'onChanged'는 더 이상 사용되지 않으므로 사용해서는 안 됩니다.
+            /// 노브 값은 더 이상 업데이트할 수 없으며 쿼리 그룹에 의존합니다.
+            /// 'updateValue'는 더 이상 사용되지 않으므로 사용해서는 안 됩니다.
             // ignore: deprecated_member_use
             state.knobs.updateValue<RangeValues>(
               label,

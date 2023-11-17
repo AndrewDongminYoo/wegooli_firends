@@ -14,7 +14,7 @@ import 'package:widgetbook/widgetbook.dart' hide AlignmentAddon;
 import 'components/container.dart';
 import 'components/custom_card.dart';
 import 'components/custom_text_field.dart';
-import 'customs/custom_addon.dart' hide ZoomAddon;
+import 'customs/custom_addon.dart';
 import 'customs/custom_knob.dart';
 
 void main() {

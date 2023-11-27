@@ -119,7 +119,7 @@ Map<String, dynamic> _readLinuxDeviceInfo(LinuxDeviceInfo data) {
 
 Map<String, dynamic> _readWebBrowserInfo(WebBrowserInfo data) {
   return <String, dynamic>{
-    'browserName': describeEnum(data.browserName),
+    'browserName': data.browserName.name,
     'appCodeName': data.appCodeName,
     'appName': data.appName,
     'appVersion': data.appVersion,
